@@ -1,0 +1,7 @@
+Code-Review+2: Nodir Turakulov <nodir@chromium.org>
+Verified+1: Sergiy Byelozyorov <sergiyb@chromium.org>
+Submitted-by: Sergiy Byelozyorov <sergiyb@chromium.org>
+Submitted-at: Wed, 19 Aug 2015 16:47:41 +0000
+Reviewed-on: https://chromium-review.googlesource.com/294400
+Project: chromium/tools/depot_tools
+Branch: refs/heads/infra/config

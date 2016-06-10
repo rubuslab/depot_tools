@@ -2861,7 +2861,7 @@ def DownloadGerritHook(force):
   Args:
     force: True to update hooks. False to install hooks if not present.
   """
-  if not settings.GetIsGerrit():
+  if False and not settings.GetIsGerrit():
     return
   src = 'https://gerrit-review.googlesource.com/tools/hooks/commit-msg'
   dst = os.path.join(settings.GetRoot(), '.git', 'hooks', 'commit-msg')
@@ -2870,10 +2870,15 @@ def DownloadGerritHook(force):
       if not force:
         return
     try:
-      print(
-          'WARNING: installing Gerrit commit-msg hook.\n'
-          '         This behavior of git cl will soon be disabled.\n'
-          '         See bug http://crbug.com/579176.')
+      if (RunGit(['config', '--bool', 'gerrit.squash-uploads'],
+                 error_ok=True).strip() != 'false'):
+        print('Hi! You are using git cl upload in --no-squash mode. '
+              'Chrome infrastructure wants to make --squash the default.\n'
+              'To ensure that --no-squash is still the default for YOU do:\n'
+              '   git config --bool gerrit.squash-uploads false\n'
+              'See https://goo.gl/dnK2gV (use chromium.org account!) and '
+              'let us know what you think. Thanks!\n'
+              'BUG: http://crbug.com/611892')
       urlretrieve(src, dst)
       if not hasSheBang(dst):
         DieWithError('Not a script: %s\n'

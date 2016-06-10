@@ -2874,7 +2874,7 @@ def DownloadGerritHook(force):
   Args:
     force: True to update hooks. False to install hooks if not present.
   """
-  if not settings.GetIsGerrit():
+  if False and not settings.GetIsGerrit():
     return
   src = 'https://gerrit-review.googlesource.com/tools/hooks/commit-msg'
   dst = os.path.join(settings.GetRoot(), '.git', 'hooks', 'commit-msg')

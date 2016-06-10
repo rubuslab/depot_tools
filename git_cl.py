@@ -770,7 +770,7 @@ class Settings(object):
     if self.squash_gerrit_uploads is None:
       self.squash_gerrit_uploads = (
           RunGit(['config', '--bool', 'gerrit.squash-uploads'],
-                 error_ok=True).strip() == 'true')
+                 error_ok=True).strip() != 'false')
     return self.squash_gerrit_uploads
 
   def GetGerritSkipEnsureAuthenticated(self):

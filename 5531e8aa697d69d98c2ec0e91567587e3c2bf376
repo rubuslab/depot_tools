@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74af42f6_d2a22495",
+        "filename": "recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-04T09:16:33Z",
+      "side": 1,
+      "message": "this line isn\u0027t covered. Run \"./recipes.py simulation_test\" and see it fail because of this. Then add a test case to examples.py (next to this file) and re-run simulation with \"train\" and the re-upload your patch.\n\nbtw, it\u0027s a good idea to just run CQ Dry RUn after upload.",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "54823e83_61cd365e",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1154,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-04T09:16:33Z",
+      "side": 1,
+      "message": "i\u0027d add doc here, something like:\n# git rebase requires a branch to operate on.",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d4c8eee8_e5d83623",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1155,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-04T09:16:33Z",
+      "side": 1,
+      "message": "well, don\u0027t forget to clean out this branch:\n  try:\n    ok \u003d False\n    git(\u0027checkout\u0027, \u0027-b\u0027, temp_branch_name, cwd\u003droot)\n    ...\n    # important, get off the branch and into detached head state\n    cur_rev \u003d git(\u0027rev-parse\u0027, \u0027HEAD\u0027, cwd\u003droot).strip()\n    git(\u0027checkout\u0027, cur_rev)\n    ok \u003d True\n  finally:\n    if not ok:\n      # important, get off the branch and into detached head state\n      git(\u0027checkout\u0027, base_rev)\n    git(\u0027branch\u0027, \u0027-D\u0027, temp_branch_name)\n\n\nmaybe there is easier way here, but I don\u0027t see it immediately.",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "540f9ee2_d9a25395",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1156,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-04T09:16:33Z",
+      "side": 1,
+      "message": "don\u0027t do this: see my comment about sync below + what this fetches isn\u0027t actually clear - it depends on what was configured in .git/config of this checkout for a given remote. And that\u0027s why FETCH_HEAD below isn\u0027t quite clear either.",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d4c8eee8_c5dd3a11",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1157,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-04T09:16:33Z",
+      "side": 1,
+      "message": "s/\u0027fetch_head\u0027/base_rev\n\nbut I\u0027m not sure it does what we want. Have you actually checked?",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "94103607_332d68fd",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1392,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-04T09:16:33Z",
+      "side": 1,
+      "message": "1. I don\u0027t understand why extra condition.\n2. Assuming extra condition is right, just use False on line 1394.",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "94103607_f322d00d",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1474,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-04T09:16:33Z",
+      "side": 1,
+      "message": "i\u0027d use \"gerrit_rebase_patch_ref\" instead and description \"Rebase gerrit patch ref instead of checking it out directly\". \n\nThis is because another parameter of bot_update controls what would be the base (typically, refs/heads/master or just HEAD) (see bot_update cmd invocations in recipe expectations). The SHA1 of the base would then be stored in got_revision mapping, which is then used by lots of recipes. Thus, I\u0027d not mention the word \"sync\" in this option at all.\n\nbtw, what does \"client\" mean here?",
+      "range": {
+        "startLine": 1474,
+        "startChar": 55,
+        "endLine": 1474,
+        "endChar": 61
+      },
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

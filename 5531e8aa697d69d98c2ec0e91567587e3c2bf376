@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "99f5cf93_f167e051",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1154,
+      "author": {
+        "id": 1115495
+      },
+      "writtenOn": "2016-08-08T21:56:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54823e83_61cd365e",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4c8eee8_e5d83623",
         "filename": "recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 1
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "99f5cf93_71be507a",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1156,
+      "author": {
+        "id": 1115495
+      },
+      "writtenOn": "2016-08-08T21:56:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "540f9ee2_d9a25395",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4c8eee8_c5dd3a11",
         "filename": "recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 1
@@ -81,6 +117,24 @@
       "writtenOn": "2016-08-04T09:16:33Z",
       "side": 1,
       "message": "s/\u0027fetch_head\u0027/base_rev\n\nbut I\u0027m not sure it does what we want. Have you actually checked?",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99f5cf93_11b9cc90",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1157,
+      "author": {
+        "id": 1115495
+      },
+      "writtenOn": "2016-08-08T21:56:00Z",
+      "side": 1,
+      "message": "Replaced with base_rev\n\nYes. It does what we want in this case, but as you said it doesn’t appear to be deterministic due to .git/config.",
+      "parentUuid": "d4c8eee8_c5dd3a11",
       "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "99f5cf93_f1b240e0",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1392,
+      "author": {
+        "id": 1115495
+      },
+      "writtenOn": "2016-08-08T21:56:00Z",
+      "side": 1,
+      "message": "1. I don’t want this function called if gerrit_rebase_and_sync is True since it’s already been called on 1356.\n2. Done.",
+      "parentUuid": "94103607_332d68fd",
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "94103607_f322d00d",
         "filename": "recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 1
@@ -121,6 +193,24 @@
         "endLine": 1474,
         "endChar": 61
       },
+      "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99f5cf93_11aa6c6f",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1474,
+      "author": {
+        "id": 1115495
+      },
+      "writtenOn": "2016-08-08T21:56:00Z",
+      "side": 1,
+      "message": "Reworked the wording and description.\n\n“Client” is just the git workspace.",
+      "parentUuid": "94103607_f322d00d",
       "revId": "5531e8aa697d69d98c2ec0e91567587e3c2bf376",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

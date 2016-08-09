@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79e73b25_d28024f6",
+        "filename": "recipe_modules/bot_update/example.expected/gerrit_rebase_patch_ref.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-09T18:22:19Z",
+      "side": 1,
+      "message": "heh, SVN is still here. But don\u0027t worry, it\u0027s not your CL.",
+      "revId": "4079b5a6a11ff6a256263b64ca8bb2f5df14003d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79c2db72_5a8d5525",
+        "filename": "recipe_modules/bot_update/example.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-09T18:22:19Z",
+      "side": 1,
+      "message": "omg, \"True if X else False\" is insanity, just use \nbool(api.properties.get(...))",
+      "revId": "4079b5a6a11ff6a256263b64ca8bb2f5df14003d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9d5eb2a_7690303f",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-09T18:22:19Z",
+      "side": 1,
+      "message": "root is printed on 1146 already, so remove this line.",
+      "range": {
+        "startLine": 1150,
+        "startChar": 4,
+        "endLine": 1150,
+        "endChar": 40
+      },
+      "revId": "4079b5a6a11ff6a256263b64ca8bb2f5df14003d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9d5eb2a_568d3425",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1363,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-09T18:22:19Z",
+      "side": 1,
+      "message": "I think 1370..1371 should go here, so that output made sense. Note that *this* patching primary purpose is update DEPS files. If the patch doesn\u0027t touch DEPS file, there is no reason to apply it here, but it doesn\u0027t hurt to apply the WHOLE patch anyway.",
+      "revId": "4079b5a6a11ff6a256263b64ca8bb2f5df14003d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99c86f9a_938abc10",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-09T18:22:19Z",
+      "side": 1,
+      "message": "I saw your reasoning for adding \"not gerrit_rebase_ref\" here, and I\u0027m not 100% sure it\u0027d would fully work with patches that modify DEPS file - i\u0027d not be surprised if gclient has some logic to detect that just DEPS file was changed, and somehow do sync in special way.\n\nIt could also be that this patch application logic was originally designed to work with multirepo patches, and since we don\u0027t support it any more, we don\u0027t have to keep this patch application logic.\n\nThat said,  imo, we should support multi-repo patches -\u003e http://crbug.com/615290",
+      "range": {
+        "startLine": 1405,
+        "startChar": 26,
+        "endLine": 1405,
+        "endChar": 49
+      },
+      "revId": "4079b5a6a11ff6a256263b64ca8bb2f5df14003d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -130,6 +130,24 @@
     },
     {
       "key": {
+        "uuid": "39b863f5_7890213f",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1363,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-09T18:38:38Z",
+      "side": 1,
+      "message": "yes, that\u0027s what I meant. Solution is gclient solution, and one .gclient checkout could have several solutions. This is important for to trying patches for multiple repositories.",
+      "parentUuid": "f9ac0bb7_24115600",
+      "revId": "4079b5a6a11ff6a256263b64ca8bb2f5df14003d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "99c86f9a_938abc10",
         "filename": "recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 3
@@ -165,6 +183,24 @@
       "side": 1,
       "message": "I’m unclear on the suggestion, here.",
       "parentUuid": "99c86f9a_938abc10",
+      "revId": "4079b5a6a11ff6a256263b64ca8bb2f5df14003d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d9d2e743_958aa410",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-08-09T18:38:38Z",
+      "side": 1,
+      "message": "ah, forgot it to write conclusion:\nso, let\u0027s land this and see how it works :)",
+      "parentUuid": "f9ac0bb7_64075ec9",
       "revId": "4079b5a6a11ff6a256263b64ca8bb2f5df14003d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

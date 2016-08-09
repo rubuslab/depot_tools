@@ -148,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "f9ac0bb7_442d8240",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1363,
+      "author": {
+        "id": 1115495
+      },
+      "writtenOn": "2016-08-09T18:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39b863f5_7890213f",
+      "revId": "4079b5a6a11ff6a256263b64ca8bb2f5df14003d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "99c86f9a_938abc10",
         "filename": "recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 3

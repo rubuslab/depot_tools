@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4b6e2b0f_d93657fc",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-08T18:22:59Z",
+      "side": 1,
+      "message": "oh, everybody uses different style in depot_tools",
+      "revId": "3a5fc02aba8f86000e8ce4a60b824588a1cd4210",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0b12739d_8afaafc7",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-08T18:22:59Z",
+      "side": 1,
+      "message": "e.http_status !\u003d 422 isn\u0027t sufficient?",
+      "revId": "3a5fc02aba8f86000e8ce4a60b824588a1cd4210",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0b64332d_57ffae8b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-08T18:22:59Z",
+      "side": 1,
+      "message": "can this be done with print() statement as elswehere in git cl maybe with clear \"WARNING:...\" as we do elsewhere?",
+      "revId": "3a5fc02aba8f86000e8ce4a60b824588a1cd4210",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2bc73767_cd8a2468",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-11-08T18:45:49Z",
+      "side": 1,
+      "message": "yup, huzzah",
+      "parentUuid": "4b6e2b0f_d93657fc",
+      "revId": "3a5fc02aba8f86000e8ce4a60b824588a1cd4210",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0b12739d_8afaafc7",
         "filename": "gerrit_util.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "2bc73767_0d089c04",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-11-08T18:45:49Z",
+      "side": 1,
+      "message": "Good point, done.",
+      "parentUuid": "0b12739d_8afaafc7",
+      "revId": "3a5fc02aba8f86000e8ce4a60b824588a1cd4210",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0b64332d_57ffae8b",
         "filename": "gerrit_util.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2016-11-08T18:22:59Z",
       "side": 1,
       "message": "can this be done with print() statement as elswehere in git cl maybe with clear \"WARNING:...\" as we do elsewhere?",
+      "revId": "3a5fc02aba8f86000e8ce4a60b824588a1cd4210",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2bc73767_8d14ac26",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-11-08T18:45:49Z",
+      "side": 1,
+      "message": "It shows up with \"WARNING:\" at the front, due to using the logger. There are only three other \u0027print\u0027s in this file, and one could argue that they should switch to using the logger instead.",
+      "parentUuid": "0b64332d_57ffae8b",
       "revId": "3a5fc02aba8f86000e8ce4a60b824588a1cd4210",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

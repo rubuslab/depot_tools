@@ -627,12 +627,20 @@ def AddReviewers(host, change, add=None, is_reviewer=True):
     add = (add,)
   path = 'changes/%s/reviewers' % change
   for r in add:
+    state = 'REVIEWER' if is_reviewer else 'CC'
     body = {
       'reviewer': r,
-      'state': 'REVIEWER' if is_reviewer else 'CC',
+      'state': state,
     }
-    conn = CreateHttpConn(host, path, reqtype='POST', body=body)
-    jmsg = ReadHttpJsonResponse(conn, ignore_404=False)
+    try:
+      conn = CreateHttpConn(host, path, reqtype='POST', body=body)
+      jmsg = ReadHttpJsonResponse(conn, ignore_404=False)
+    except GerritError as e:
+      if e.message.startswith('(422) Unprocessable Entity'):
+        LOGGER.warn('Failed to add "%s" as a %s' % (r, state.lower()))
+        return None
+      else:
+        raise
   return jmsg
 
 

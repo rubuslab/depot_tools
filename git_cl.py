@@ -2834,6 +2834,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       self.SetIssue(change_numbers[0])
       self._GitSetBranchConfigValue('gerritsquashhash', ref_to_push)
 
+    self.SetPatchset(self.GetMostRecentPatchset())
+
     # Add cc's from the CC_LIST and --cc flag (if any).
     cc = self.GetCCList().split(',')
     if options.cc:

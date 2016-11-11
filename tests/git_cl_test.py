@@ -973,6 +973,7 @@ class TestGitCl(TestCase):
              'abcdef0123456789'],), ''),
       ]
     calls += [
+        ((['git', 'config', 'branch.master.gerritpatchset', '3'],), ''),
         ((['git', 'config', 'rietveld.cc'],), ''),
         ((['AddReviewers', 'chromium-review.googlesource.com',
            123456 if squash else None,
@@ -1013,6 +1014,10 @@ class TestGitCl(TestCase):
     self.mock(git_cl.gclient_utils, 'RunEditor',
               lambda *_, **__: self._mocked_call(['RunEditor']))
     self.mock(git_cl, 'DownloadGerritHook', self._mocked_call)
+    self.mock(git_cl._GerritChangelistImpl, '_GetChangeDetail',
+              lambda *args: {'change_id': '123456789',
+                             'revisions': {1: {'_number': 3}},
+                             'current_revision': 1})
     self.mock(git_cl.gerrit_util, 'AddReviewers',
               lambda h, i, add, is_reviewer: self._mocked_call(
                   ['AddReviewers', h, i, add, is_reviewer]))

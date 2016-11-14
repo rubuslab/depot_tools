@@ -1595,7 +1595,9 @@ class Changelist(object):
       if not options.reviewers and hook_results.reviewers:
         options.reviewers = hook_results.reviewers.split(',')
 
-    if self.GetIssue():
+    # TODO(tandrii): Checking local patchset against remote patchset is only
+    # supported for Rietveld. Extend it for Gerrit or remove it completely.
+    if self.GetIssue() and not self.IsGerrit():
       latest_patchset = self.GetMostRecentPatchset()
       local_patchset = self.GetPatchset()
       if (latest_patchset and local_patchset and

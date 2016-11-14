@@ -16,6 +16,24 @@
       "revId": "6d5bcc2bb6fadf25c0ccc17461bf254d17e4ce3e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d0472c8e_0f7eb583",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2016-11-14T23:57:40Z",
+      "side": 1,
+      "message": "Interesting. \"/%s\" seems like it\u0027d have to parse the \"%s\", then can preallocate/concat, but \"+\" should be able to directly concatenate w/ full awareness of destination buffer size - same thing minus the parse step.\n\nI\u0027d expect \"%s\" to be faster for multiple concats (\"%s/%s/%s\" vs. a + \u0027/\u0027 + b ...) b/c it can know destination buffer size in advance, but for concatenating exactly two strings, I\u0027d hope + is faster. Idunno, no real basis for this, just intuitively seems like if it isn\u0027t, someone messed up in cPython land.\n\nAnyway not that it really matters here :)",
+      "parentUuid": "d0472c8e_efe6e966",
+      "revId": "6d5bcc2bb6fadf25c0ccc17461bf254d17e4ce3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

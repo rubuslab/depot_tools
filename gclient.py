@@ -98,6 +98,7 @@ import urlparse
 import fix_encoding
 import gclient_scm
 import gclient_utils
+import gclient_eval
 import git_cache
 from third_party.repo.progress import Progress
 import subcommand
@@ -609,6 +610,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       # Eval the content.
       try:
         exec(deps_content, global_scope, local_scope)
+        if self._get_option('validate_syntax', False):
+          gclient_eval.Check(deps_content, filepath, local_scope)
+
       except SyntaxError as e:
         gclient_utils.SyntaxErrorToError(filepath, e)
       if use_strict:
@@ -725,6 +729,12 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     self.add_dependencies_and_close(deps_to_add, hooks_to_run)
     logging.info('ParseDepsFile(%s) done' % self.name)
 
+  def _get_option(self, attr, default):
+    obj = self
+    while not hasattr(obj, '_options'):
+      obj = obj.parent
+    return getattr(obj._options, attr, default)
+
   def add_dependencies_and_close(self, deps_to_add, hooks):
     """Adds the dependencies, hooks and mark the parsing as done."""
     for dep in deps_to_add:
@@ -761,7 +771,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # When running runhooks, there's no need to consult the SCM.
     # All known hooks are expected to run unconditionally regardless of working
     # copy state, so skip the SCM status check.
-    run_scm = command not in ('runhooks', 'recurse', None)
+    run_scm = command not in ('runhooks', 'recurse', 'validate', None)
     parsed_url = self.LateOverride(self.url)
     file_list = [] if not options.nohooks else None
     revision_override = revision_overrides.pop(self.name, None)
@@ -1377,7 +1387,8 @@ it or fix the checkout.
     revision_overrides = {}
     # It's unnecessary to check for revision overrides for 'recurse'.
     # Save a few seconds by not calling _EnforceRevisions() in that case.
-    if command not in ('diff', 'recurse', 'runhooks', 'status', 'revert'):
+    if command not in ('diff', 'recurse', 'runhooks', 'status', 'revert',
+                       'validate'):
       self._CheckConfig()
       revision_overrides = self._EnforceRevisions()
     pm = None
@@ -1385,7 +1396,7 @@ it or fix the checkout.
     if (setup_color.IS_TTY and not self._options.verbose and progress):
       if command in ('update', 'revert'):
         pm = Progress('Syncing projects', 1)
-      elif command == 'recurse':
+      elif command in ('recurse', 'validate'):
         pm = Progress(' '.join(args), 1)
     work_queue = gclient_utils.ExecutionQueue(
         self._options.jobs, pm, ignore_requirements=ignore_requirements,
@@ -1917,6 +1928,9 @@ def CMDsync(parser, args):
                     help='DEPRECATED: This is a no-op.')
   parser.add_option('-m', '--manually_grab_svn_rev', action='store_true',
                     help='DEPRECATED: This is a no-op.')
+  parser.add_option('--validate-syntax', action='store_true',
+                    help=('Validate the .gclient and DEPS syntax with the new'
+                          'parser.'))
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
 
@@ -1945,6 +1959,14 @@ def CMDsync(parser, args):
 
 
 CMDupdate = CMDsync
+
+
+def CMDvalidate(parser, args):
+  """Validates the .gclient and DEPS syntax using the new parser."""
+  options, args = parser.parse_args(args)
+  options.validate_syntax = True
+  client = GClient.LoadCurrentConfig(options)
+  return client.RunOnDeps('validate', args)
 
 
 def CMDdiff(parser, args):

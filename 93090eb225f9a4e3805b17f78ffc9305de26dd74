@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0472c8e_93714202",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2016-11-15T22:22:34Z",
+      "side": 1,
+      "message": "Content might be undefined if path doesn\u0027t exist",
+      "range": {
+        "startLine": 134,
+        "startChar": 4,
+        "endLine": 134,
+        "endChar": 11
+      },
+      "revId": "93090eb225f9a4e3805b17f78ffc9305de26dd74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d0472c8e_b3971ed5",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2016-11-15T22:22:34Z",
+      "side": 1,
+      "message": "Also print the error message too?",
+      "range": {
+        "startLine": 155,
+        "startChar": 29,
+        "endLine": 155,
+        "endChar": 34
+      },
+      "revId": "93090eb225f9a4e3805b17f78ffc9305de26dd74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

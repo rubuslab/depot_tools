@@ -9,6 +9,7 @@ https://gerrit-review.googlesource.com/Documentation/rest-api.html
 """
 
 import base64
+import contextlib
 import cookielib
 import httplib
 import json
@@ -16,9 +17,11 @@ import logging
 import netrc
 import os
 import re
+import shutil
 import socket
 import stat
 import sys
+import tempfile
 import time
 import urllib
 import urlparse
@@ -33,21 +36,6 @@ TRY_LIMIT = 5
 # This is parameterized primarily to enable GerritTestCase.
 GERRIT_PROTOCOL = 'https'
 
-
-# Processing comments in "netrc" can trigger a bug in Windows.
-# See crbug.com/664664
-class safeNetrc(netrc.netrc):
-  # pylint: disable=redefined-builtin
-  def __init__(self, file=None):
-    self._orig_parse, self._parse = self._parse, self._safe_parse
-    netrc.netrc.__init__(self, file=file)
-
-  # pylint: disable=redefined-builtin
-  def _safe_parse(self, file, fp, default_netrc):
-    # Buffer the file.
-    sio = StringIO(''.join(l for l in fp
-                           if l.strip() and not l.strip().startswith('#')))
-    return self._orig_parse(file, sio, default_netrc)
 
 
 class GerritError(Exception):
@@ -129,15 +117,31 @@ class CookiesAuthenticator(Authenticator):
 
   @classmethod
   def _get_netrc(cls):
+    # Buffer the '.netrc' path. Use an empty file if it doesn't exist.
     path = cls.get_netrc_path()
-    if not os.path.exists(path):
-      return safeNetrc(os.devnull)
+    if os.path.exists(path):
+      with open(path) as fd:
+        content = fd.read()
+    else:
+      content = ''
 
+    # Load the '.netrc' file. We strip comments from it because processing them
+    # can trigger a bug in Windows. See crbug.com/664664.
+    content = '\n'.join(l for l in content.splitlines()
+                        if l.strip() and not l.strip().startswith('#'))
+    with tempdir() as tdir:
+      netrc_path = os.path.join(tdir, 'netrc')
+      with open(netrc_path, 'w') as fd:
+        fd.write(content)
+      return cls._get_netrc_from_path(netrc_path)
+
+  @classmethod
+  def _get_netrc_from_path(cls, path):
     try:
-      return safeNetrc(path)
+      return netrc.netrc(path)
     except IOError:
       print >> sys.stderr, 'WARNING: Could not read netrc file %s' % path
-      return safeNetrc(os.devnull)
+      return netrc.netrc(os.devnull)
     except netrc.NetrcParseError:
       st = os.stat(path)
       if st.st_mode & (stat.S_IRWXG | stat.S_IRWXO):
@@ -149,7 +153,7 @@ class CookiesAuthenticator(Authenticator):
         print >> sys.stderr, ('ERROR: Cannot use netrc file %s due to a '
                               'parsing error.' % path)
         raise
-      return safeNetrc(os.devnull)
+      return netrc.netrc(os.devnull)
 
   @classmethod
   def get_gitcookies_path(cls):
@@ -749,3 +753,14 @@ def ResetReviewLabels(host, change, label, value='0', message=None,
   elif jmsg[0]['current_revision'] != revision:
     raise GerritError(200, 'While resetting labels on change "%s", '
                    'a new patchset was uploaded.' % change)
+
+
+@contextlib.contextmanager
+def tempdir():
+  tdir = None
+  try:
+    tdir = tempfile.mkdtemp(suffix='gerrit_util')
+    yield tdir
+  finally:
+    if tdir:
+      shutil.rmtree(tdir)

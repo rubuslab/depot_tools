@@ -199,6 +199,8 @@ class GceAuthenticator(Authenticator):
 
   @classmethod
   def is_gce(cls):
+    if os.getenv('DO_NOT_USE_GCE'):
+      return False
     if cls._cache_is_gce is None:
       cls._cache_is_gce = cls._test_is_gce()
     return cls._cache_is_gce

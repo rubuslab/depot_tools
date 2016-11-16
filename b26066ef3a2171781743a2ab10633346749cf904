@@ -50,6 +50,24 @@
       "revId": "b26066ef3a2171781743a2ab10633346749cf904",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d0472c8e_d947641a",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4188,
+      "author": {
+        "id": 1002190
+      },
+      "writtenOn": "2016-11-16T13:34:40Z",
+      "side": 1,
+      "message": "Yep. I found that it was not triggering because my TBR line was blank. But adding something there triggers it.",
+      "parentUuid": "301c08af_06fcfa96",
+      "revId": "b26066ef3a2171781743a2ab10633346749cf904",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

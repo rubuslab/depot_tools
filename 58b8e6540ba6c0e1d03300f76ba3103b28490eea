@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0472c8e_db8c741b",
+        "filename": "recipe_modules/gsutil/resources/gsutil_wrapper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-16T19:38:05Z",
+      "side": 1,
+      "message": "can we name this gsutil_smart_retry.py or something? \"wrapper\" is generic.",
+      "revId": "58b8e6540ba6c0e1d03300f76ba3103b28490eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

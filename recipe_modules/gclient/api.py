@@ -117,7 +117,8 @@ class GclientApi(recipe_api.RecipeApi):
   def get_config_defaults(self):
     return {
       'USE_MIRROR': self.use_mirror,
-      'CACHE_DIR': self.m.path['git_cache'],
+      'CACHE_DIR': self.m.path.get(
+          'git_cache', self.m.path['cache'].join('git')),
     }
 
   @staticmethod
@@ -212,6 +213,10 @@ class GclientApi(recipe_api.RecipeApi):
           if custom_var not in cfg.solutions[0].custom_vars or override:
             cfg.solutions[0].custom_vars[custom_var] = val
 
+  @property
+  def checkout_dir(self):
+    return self.m.path.get('slave_build', self.m.path.get('cwd'))
+
   def checkout(self, gclient_config=None, revert=RevertOnTryserver,
                inject_parent_got_revision=True, with_branch_heads=False,
                **kwargs):
@@ -240,7 +245,7 @@ class GclientApi(recipe_api.RecipeApi):
         name = 'recurse (git config %s)' % var
         self(name, ['recurse', 'git', 'config', var, val], **kwargs)
     finally:
-      cwd = kwargs.get('cwd', self.m.path['slave_build'])
+      cwd = kwargs.get('cwd', self.checkout_dir)
       if 'checkout' not in self.m.path:
         self.m.path['checkout'] = cwd.join(
           *cfg.solutions[0].name.split(self.m.path.sep))
@@ -299,7 +304,7 @@ class GclientApi(recipe_api.RecipeApi):
                 print 'deleting %s' % path_to_file
                 os.remove(path_to_file)
       """,
-      args=[self.m.path['slave_build']],
+      args=[self.checkout_dir],
       infra_step=True,
     )
 

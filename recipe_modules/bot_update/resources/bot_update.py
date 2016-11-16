@@ -544,14 +544,15 @@ def git_checkout(solutions, revisions, shallow, refs, git_cache_dir):
           print 'Git repo %s appears to be broken, removing it' % sln_dir
           remove(sln_dir)
 
+        # Use "tries=1", since we retry manually in this loop.
         if not path.isdir(sln_dir):
-          git(*clone_cmd)
+          git(*clone_cmd, tries=1)
         else:
-          git('remote', 'set-url', 'origin', mirror_dir, cwd=sln_dir)
-          git('fetch', 'origin', cwd=sln_dir)
+          git('remote', 'set-url', 'origin', mirror_dir, cwd=sln_dir, tries=1)
+          git('fetch', 'origin', cwd=sln_dir, tries=1)
         for ref in refs:
           refspec = '%s:%s' % (ref, ref.lstrip('+'))
-          git('fetch', 'origin', refspec, cwd=sln_dir)
+          git('fetch', 'origin', refspec, cwd=sln_dir, tries=1)
 
         # Windows sometimes has trouble deleting files.
         # This can make git commands that rely on locks fail.

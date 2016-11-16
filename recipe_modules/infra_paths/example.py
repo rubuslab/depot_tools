@@ -26,3 +26,14 @@ def GenTests(api):
           api.platform.name(platform) +
           api.properties(path_config=path_config)
       )
+    yield (
+        api.test('paths_luci_%s' % platform) +
+        api.platform.name(platform) +
+        api.properties(**{
+          'path_config': 'luci',
+          '$recipe_engine/path': {
+            'cache_dir': '/b/c',
+            'temp_dir': '/b/c',
+          },
+        })
+    )

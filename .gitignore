@@ -28,6 +28,7 @@
 /git-*_bin
 /svn_bin
 /external_bin
+/recipe_modules/gsutil/resources/external_bin
 /win_toolchain/vs2013_files
 /win_toolchain/vs_files
 /win_toolchain/*.timestamps

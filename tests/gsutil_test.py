@@ -23,7 +23,8 @@ import zipfile
 # Add depot_tools to path
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 DEPOT_TOOLS_DIR = os.path.dirname(THIS_DIR)
-sys.path.append(DEPOT_TOOLS_DIR)
+sys.path.append(os.path.join(DEPOT_TOOLS_DIR, 'recipe_modules', 'gsutil',
+                             'resources'))
 
 import gsutil
 

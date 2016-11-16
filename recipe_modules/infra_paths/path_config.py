@@ -53,6 +53,8 @@ def infra_kitchen(c):
       c.base_paths[path] = c.base_paths['cache'] + (path,)
 
 
+# DEPRECATED in favor of path config "luci". See api.py
+# TODO(nodir): remove
 @CONFIG_CTX(includes=['infra_buildbot'])
 def infra_swarmbucket(c):
   c.base_paths['git_cache'] = c.CURRENT_WORKING_DIR + ('git_cache',)

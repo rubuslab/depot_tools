@@ -2639,6 +2639,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       else:
         print('OK, will keep Gerrit commit-msg hook in place.')
 
+  # rmistry
   def CMDUploadChange(self, options, args, change):
     """Upload the current branch to Gerrit."""
     if options.squash and options.no_squash:
@@ -2850,6 +2851,9 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           self._GetGerritHost(), self.GetIssue(), cc, is_reviewer=False)
       if errors:
         return 1
+    if options.approve:
+      gerrit_util.SetReview(
+          self._GetGerritHost(), self.GetIssue(), labels={'Code-Review':1})
 
     return 0
 
@@ -4116,6 +4120,7 @@ def cleanup_list(l):
   return sorted(filter(None, stripped_items))
 
 
+# rmistry
 @subcommand.usage('[args to "git diff"]')
 def CMDupload(parser, args):
   """Uploads the current changelist to codereview.
@@ -4178,6 +4183,9 @@ def CMDupload(parser, args):
                     action='store_true',
                     help='Send the patchset to do a CQ dry run right after '
                          'upload.')
+  parser.add_option('-a', '--approve', action='store_true',
+                    help='+1 the Code-Review label after the upload. Only '
+                         'valid for Gerrit CLs.')
   parser.add_option('--dependencies', action='store_true',
                     help='Uploads CLs of all the local branches that depend on '
                          'the current branch')

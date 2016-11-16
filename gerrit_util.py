@@ -192,6 +192,7 @@ class CookiesAuthenticator(Authenticator):
     if not auth:
       auth = self.netrc.authenticators(host)
     if auth:
+      print auth[0], auth[2]
       return 'Basic %s' % (base64.b64encode('%s:%s' % (auth[0], auth[2])))
     return None
 
@@ -277,6 +278,8 @@ def CreateHttpConn(host, path, reqtype='GET', headers=None, body=None):
   bare_host = host.partition(':')[0]
 
   auth = Authenticator.get().get_auth_header(bare_host)
+  print 'HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH'
+  print auth
   if auth:
     headers.setdefault('Authorization', auth)
   else:

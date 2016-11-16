@@ -61,7 +61,10 @@ def RunSteps(api):
   for config_name in TEST_CONFIGS:
     api.gclient.make_config(config_name)
 
-  src_cfg = api.gclient.make_config(CACHE_DIR='[ROOT]/git_cache')
+  if api.properties.get('auto_cache_dir'):
+    src_cfg = api.gclient.make_config()
+  else:
+    src_cfg = api.gclient.make_config(CACHE_DIR='[ROOT]/git_cache')
   soln = src_cfg.solutions.add()
   soln.name = 'src'
   soln.url = 'https://chromium.googlesource.com/chromium/src.git'
@@ -81,7 +84,7 @@ def RunSteps(api):
   api.gclient.checkout(
       gclient_config=bl_cfg,
       with_branch_heads=True,
-      cwd=api.path['slave_build'].join('src', 'third_party'))
+      cwd=api.gclient.default_checkout_dir.join('src', 'third_party'))
 
   api.gclient.break_locks()
 
@@ -98,3 +101,8 @@ def GenTests(api):
   yield api.test('revision') + api.properties(revision='abc')
 
   yield api.test('tryserver') + api.properties.tryserver()
+
+  yield api.test('luci') + api.properties(
+      path_config='luci',
+      auto_cache_dir=True,
+  )

@@ -13,7 +13,11 @@ DEPS = [
 def RunSteps(api):
   api.gclient.use_mirror = True
 
-  src_cfg = api.gclient.make_config(CACHE_DIR='[GIT_CACHE]')
+  if api.properties.get('auto_cache_dir'):
+    src_cfg = api.gclient.make_config()
+  else:
+    src_cfg = api.gclient.make_config(CACHE_DIR='[GIT_CACHE]')
+
   soln = src_cfg.solutions.add()
   soln.name = 'src'
   soln.url = 'https://chromium.googlesource.com/chromium/src.git'
@@ -159,4 +163,9 @@ def GenTests(api):
           'https://chromium-review.googlesource.com/#/c/338811',
         'event.patchSet.ref': 'refs/changes/11/338811/3',
       }
+  )
+
+  yield api.test('luci') + api.properties(
+      path_config='luci',
+      auto_cache_dir=True,
   )

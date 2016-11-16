@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b028f8c6_0a6ebbde",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-16T13:31:10Z",
+      "side": 1,
+      "message": "remove :)",
+      "revId": "b26066ef3a2171781743a2ab10633346749cf904",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d0e3acee_5b5d0306",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-16T13:31:10Z",
+      "side": 1,
+      "message": "haha, i see we share the dbeugging approaches % my alphabet consists of 6 letters \"cfktuw\" resulting in mostly two abbreviations :D",
+      "revId": "b26066ef3a2171781743a2ab10633346749cf904",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "301c08af_06fcfa96",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4188,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-16T13:31:10Z",
+      "side": 1,
+      "message": "this is how it works already if you specify TBR. Maybe you can re-use that?",
+      "revId": "b26066ef3a2171781743a2ab10633346749cf904",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

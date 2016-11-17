@@ -10,3 +10,4 @@ class InfraPathsApi(recipe_api.RecipeApi):
     # TODO(phajdan.jr): remove dupes from the engine and delete infra_ prefix.
     self.m.path.set_config(
         'infra_' + self.m.properties.get('path_config', 'buildbot'))
+    self._depot_tools_path = self.package_repo_resource()

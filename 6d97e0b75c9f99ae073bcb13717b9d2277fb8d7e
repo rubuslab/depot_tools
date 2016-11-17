@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f0943052_062faee5",
+        "filename": "recipe_modules/infra_paths/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-17T21:44:45Z",
+      "side": 1,
+      "message": "s/disign/design/",
+      "revId": "6d97e0b75c9f99ae073bcb13717b9d2277fb8d7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

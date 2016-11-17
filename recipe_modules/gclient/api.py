@@ -251,8 +251,17 @@ class GclientApi(recipe_api.RecipeApi):
     alias = self.spec_alias
     prefix = '%sgclient ' % (('[spec: %s] ' % alias) if alias else '')
 
-    return self.m.python(prefix + 'revert',
-        self.m.path['build'].join('scripts', 'slave', 'gclient_safe_revert.py'),
+    try:
+      build_path = self.m.path['build']
+    except KeyError:
+      raise Exception(
+          'path["build"] is not defined. '
+          'Possibly this is a LUCI build. '
+          'gclient.revert is not supported in LUCI builds, use bot_update.')
+
+    return self.m.python(
+        prefix + 'revert',
+        build_path.join('scripts', 'slave', 'gclient_safe_revert.py'),
         ['.', self.m.path['depot_tools'].join('gclient',
                                               platform_ext={'win': '.bat'})],
         infra_step=True,

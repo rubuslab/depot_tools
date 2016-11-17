@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f0943052_a155e415",
+        "filename": "recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2016-11-17T23:00:36Z",
+      "side": 1,
+      "message": "ah right, but certainly not in build/site_config. I will make it fail for now and punt on this problem.",
+      "parentUuid": "f0943052_86c8fe44",
+      "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f0943052_46629652",
         "filename": "recipe_modules/bot_update/api.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-11-17T21:40:26Z",
       "side": 1,
       "message": "let\u0027s just let this crash under LUCI so we don\u0027t have a silent error",
+      "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0943052_c1cf50b9",
+        "filename": "recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2016-11-17T23:00:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0943052_46629652",
       "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "f0943052_01da387a",
+        "filename": "recipe_modules/gclient/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2016-11-17T23:00:36Z",
+      "side": 1,
+      "message": "done https://chromium-review.googlesource.com/c/412265/",
+      "parentUuid": "f0943052_e65aa29a",
+      "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f0943052_4649b6d0",
         "filename": "recipe_modules/rietveld/api.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2016-11-17T21:40:26Z",
       "side": 1,
       "message": "crash?",
+      "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0943052_e170cc87",
+        "filename": "recipe_modules/rietveld/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2016-11-17T23:00:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0943052_4649b6d0",
       "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

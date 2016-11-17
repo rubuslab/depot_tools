@@ -1,5 +1,6 @@
 DEPS = [
   'infra_paths',
+  'platform'
   'recipe_engine/json',
   'recipe_engine/path',
   'recipe_engine/platform',

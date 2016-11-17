@@ -11,7 +11,11 @@
       "-p",
       "1",
       "-s",
-      "http://review_tool.url"
+      "http://review_tool.url",
+      "-E",
+      "[BUILD]/site_config/.rietveld_client_email",
+      "-k",
+      "[BUILD]/site_config/.rietveld_secret_key"
     ],
     "name": "apply_issue",
     "~followup_annotations": [

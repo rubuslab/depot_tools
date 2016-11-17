@@ -7,6 +7,7 @@ from recipe_engine import recipe_api
 
 class InfraPathsApi(recipe_api.RecipeApi):
   def initialize(self):
-    # TODO(phajdan.jr): remove dupes from the engine and delete infra_ prefix.
-    self.m.path.set_config(
-        'infra_' + self.m.properties.get('path_config', 'buildbot'))
+    path_config = self.m.properties.get('path_config')
+    if path_config:
+      # TODO(phajdan.jr): remove dupes from the engine and delete infra_ prefix.
+      self.m.path.set_config('infra_' + path_config)

@@ -16,6 +16,57 @@
       "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0943052_46629652",
+        "filename": "recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-17T21:40:26Z",
+      "side": 1,
+      "message": "let\u0027s just let this crash under LUCI so we don\u0027t have a silent error",
+      "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0943052_e65aa29a",
+        "filename": "recipe_modules/gclient/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-17T21:40:26Z",
+      "side": 1,
+      "message": "I don\u0027t think anything uses this function any more",
+      "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0943052_4649b6d0",
+        "filename": "recipe_modules/rietveld/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-17T21:40:26Z",
+      "side": 1,
+      "message": "crash?",
+      "revId": "436c730648ffbbc1d2e7d1e0c4bf5545a4c2a31b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

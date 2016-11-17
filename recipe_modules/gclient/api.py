@@ -245,20 +245,6 @@ class GclientApi(recipe_api.RecipeApi):
 
     return sync_step
 
-  def revert(self, **kwargs):  # pragma: no cover
-    """Return a gclient_safe_revert step."""
-    # Not directly calling gclient, so don't use self().
-    alias = self.spec_alias
-    prefix = '%sgclient ' % (('[spec: %s] ' % alias) if alias else '')
-
-    return self.m.python(prefix + 'revert',
-        self.m.path['build'].join('scripts', 'slave', 'gclient_safe_revert.py'),
-        ['.', self.m.path['depot_tools'].join('gclient',
-                                              platform_ext={'win': '.bat'})],
-        infra_step=True,
-        **kwargs
-    )
-
   def runhooks(self, args=None, name='runhooks', **kwargs):
     args = args or []
     assert isinstance(args, (list, tuple))

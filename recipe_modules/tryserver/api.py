@@ -284,12 +284,17 @@ class TryserverApi(recipe_api.RecipeApi):
     except self.m.step.StepFailure as e:
       self.add_failure_reason(e.reason)
 
-      failure_hash = hashlib.sha1()
-      failure_hash.update(self.m.json.dumps(self._failure_reasons))
+      step_result = None
+      try:
+        step_result = self.m.step.active_result
+      except ValueError:
+        pass
 
-      step_result = self.m.step.active_result
-      step_result.presentation.properties['failure_hash'] = \
-          failure_hash.hexdigest()
+      if step_result is not None:
+        failure_hash = hashlib.sha1()
+        failure_hash.update(self.m.json.dumps(self._failure_reasons))
+        step_result.presentation.properties['failure_hash'] = \
+            failure_hash.hexdigest()
 
       raise
 

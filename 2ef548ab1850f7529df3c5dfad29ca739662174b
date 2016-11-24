@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b04b9845_328b9040",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3155,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-24T19:32:36Z",
+      "side": 1,
+      "message": "Good thinking! I really appreciate your question. My answer is two-fold:\n\nFirst, if there is no pending ref, git cl doesn\u0027t do (git push fail? rebases \u0026 retry) like CQ does. When I port this code to CQ, it\u0027d indeed be an issue though.\n\nSecond, if there is pending ref, git cl does cherry-pick + rebase + retry. This can is indeed no handled and that\u0027s part of TODO I left there. I haven\u0027t decided what to do there yet, but the easiest approach is saving original description, but that\u0027s not part of this function of course.",
+      "parentUuid": "905054f1_d41872f1",
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f044303c_0c6757cf",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
         "endLine": 3160,
         "endChar": 46
       },
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "705120f4_30e5481d",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3160,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-24T19:32:36Z",
+      "side": 1,
+      "message": "it\u0027s actually not even used, this regex is already existing in git_footers.py",
+      "parentUuid": "f044303c_0c6757cf",
       "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -65,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "f044303c_ec784b6c",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3165,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-24T19:32:36Z",
+      "side": 1,
+      "message": "bcz we don\u0027t care about SVN any more :D Adding better comment.",
+      "parentUuid": "5056dcee_8f797573",
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "103c64a3_6de7f563",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "b03478bf_cd3d3d24",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3171,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-24T19:32:36Z",
+      "side": 1,
+      "message": "that\u0027s how gnumbd works. We can\u0027t keep the last line, because then git_footers won\u0027t consider it a valid footer.",
+      "parentUuid": "103c64a3_6de7f563",
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b04b9845_326470c8",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -99,6 +171,24 @@
       "writtenOn": "2016-11-24T17:18:37Z",
       "side": 1,
       "message": "Why is this needed?",
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5056dcee_0f158503",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3175,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-24T19:32:36Z",
+      "side": 1,
+      "message": "Again, that\u0027s how gnumbd works. Best illustration is a reland, in which case prior footers are preserved in rietveld but of course for a re-land they are wrong. So, we change them. For example, see https://chromium.googlesource.com/v8/v8/+/e108f90d5c17588910f1f91c56ceba2580277000",
+      "parentUuid": "b04b9845_326470c8",
       "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -128,6 +218,24 @@
     },
     {
       "key": {
+        "uuid": "303fa899_f1c74231",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3176,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-24T19:32:36Z",
+      "side": 1,
+      "message": "oh yeah!",
+      "parentUuid": "5056dcee_cf737d8d",
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "705120f4_f01bc058",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -151,6 +259,24 @@
     },
     {
       "key": {
+        "uuid": "b04b9845_d22a4441",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3182,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-24T19:32:36Z",
+      "side": 1,
+      "message": "your example is correct. Again, this is gnumbd design. The reasons are sound, but I think adding them here isn\u0027t worth the duplication of the go/gnumbd doc.",
+      "parentUuid": "705120f4_f01bc058",
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "905054f1_14ad9a66",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -168,6 +294,24 @@
         "endLine": 4501,
         "endChar": 35
       },
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b03478bf_ed4201ab",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4501,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-24T19:32:36Z",
+      "side": 1,
+      "message": "done. That\u0027s the second part of my answer above.",
+      "parentUuid": "905054f1_14ad9a66",
       "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

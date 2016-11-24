@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5056dcee_af255972",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T17:18:37Z",
+      "side": 1,
+      "message": "Why is this parent bad? Explain in a comment or even better - in the test name, e.g.\n\ntest_git_number_parent_has_no_commit_position",
+      "range": {
+        "startLine": 282,
+        "startChar": 29,
+        "endLine": 282,
+        "endChar": 35
+      },
+      "revId": "75d72f238b388fe0083ee90dd9d689ae5c9682de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

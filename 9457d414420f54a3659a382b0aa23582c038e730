@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b04b9845_b2a78058",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-24T09:41:15Z",
+      "side": 1,
+      "message": "Not fully understanding how that value ends up there. In _land_rietveld_common it wasn\u0027t there yet. Also there\u0027s only one rietveld section in git config. But there might be branches with and branches without prefix?",
+      "range": {
+        "startLine": 903,
+        "startChar": 27,
+        "endLine": 903,
+        "endChar": 54
+      },
+      "revId": "9457d414420f54a3659a382b0aa23582c038e730",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

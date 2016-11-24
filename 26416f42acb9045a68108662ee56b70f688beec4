@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8dee7b71_24779cb4",
+        "filename": "cipd.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-24T02:14:02Z",
+      "side": 1,
+      "message": "-NoProfile: don\u0027t load a \u0027profile\u0027 script (kinda like sitecustomize in python land). There\u0027s no need to load it, even if it existed, which it probably doesn\u0027t.\n\n-ExecutionPolicy RemoteSigned: only require signatures for scripts which a browser indicated were downloaded from the internet. The default is AllSigned, which would prevent the running of cipd.ps1 (unless we signed it). Bypass or Unrestricted would be weaker. RemoteSigned is the strongest policy that works.\n\n\"%~dp0\": Expand argument 0\u0027s drive and path (e.g. \"C:\\foo\\bar\\script.bat\" -\u003e \"C:\\foo\\bar\\\")\n\n%*: All the other arguments",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_8491c8a6",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-24T02:14:02Z",
+      "side": 1,
+      "message": "parent of my invocation\u0027s command path (so \"C:\\foo\\bar\")",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_84a788f3",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-24T02:14:02Z",
+      "side": 1,
+      "message": "This horrific function can test to see if basically any resource you could think of exists. Files, network shares, environment variables, registry entries, whatever.",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_e481b44e",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-24T02:14:02Z",
+      "side": 1,
+      "message": "takes a key and a script block (whose result should be the default value). If the key is defined in the environ, return that, otherwise invoke the script block and return its value.",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_84be6807",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-24T02:14:02Z",
+      "side": 1,
+      "message": "I assume that we\u0027ll never need 32bit cipd on windows? I also assume that the only way this script would be invoked would be on windows.",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_64ac84d5",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-24T02:14:02Z",
+      "side": 1,
+      "message": "I spent a couple hours playing around with this. Either I can get a progress bar and the download slows down 100x, or the script hangs (threading/async/event issues I don\u0027t fully understand). This method will download the file, quite quickly, and block the script while that occurs.",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

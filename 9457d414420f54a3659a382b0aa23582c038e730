@@ -22,6 +22,24 @@
       "revId": "9457d414420f54a3659a382b0aa23582c038e730",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d06c8cba_938ffc7e",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-24T15:27:22Z",
+      "side": 1,
+      "message": "these are put there when reading codereview.settings file. IMO, that\u0027s really bad exactly as you say - some branches might have it, others won\u0027t. So, I chose a different approach for my new value config option in the follow CL: https://chromium-review.googlesource.com/c/414465",
+      "parentUuid": "b04b9845_b2a78058",
+      "revId": "9457d414420f54a3659a382b0aa23582c038e730",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

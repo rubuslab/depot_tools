@@ -927,6 +927,69 @@ class TestGitCl(TestCase):
     ]
     git_cl.main(['land'])
 
+  def test_land_rietveld_git_numberer(self):
+    self._land_rietveld_common()
+    self.mock(git_cl, 'ShouldGenerateGitNumberFooters',
+              lambda *a: self._mocked_call(['ShouldGenerateGitNumberFooters']))
+    self.calls += [
+      ((['git', 'config', 'rietveld.pending-ref-prefix'],), CERR1),
+      ((['ShouldGenerateGitNumberFooters'],), True),
+
+      ((['git', 'show', '-s', '--format=%B', 'fake_ancestor_sha'],),
+       'This is parent commit.\n'
+       '\n'
+       'Cr-Commit-Position: refs/heads/master@{#543}\n'
+       'Cr-Branched-From: refs/svn/2014@{#2208}'),
+
+      ((['git', 'commit', '--amend', '-m',
+        'Issue: 123\n\nR=john@chromium.org\n'
+        '\n'
+        'Review URL: https://codereview.chromium.org/123 .\n'
+        '\n'
+        'Cr-Commit-Position: refs/heads/master@{#544}\n'
+        'Cr-Branched-From: refs/svn/2014@{#2208}'],), ''),
+
+      ((['git', 'push', '--porcelain', 'origin', 'HEAD:refs/heads/master'],),
+       ''),
+      ((['git', 'rev-parse', 'HEAD'],), 'fake_sha_rebased'),
+      ((['git', 'checkout', '-q', 'feature'],), ''),
+      ((['git', 'branch', '-D', 'git-cl-commit'],), ''),
+      ((['git', 'config', 'rietveld.viewvc-url'],),
+       'https://chromium.googlesource.com/infra/infra/+/'),
+      ((['update_description', 123,
+         'Issue: 123\n\nR=john@chromium.org\n'
+         '\n'
+         'Review URL: https://codereview.chromium.org/123 .\n'
+         '\n'
+         'Cr-Commit-Position: refs/heads/master@{#544}\n'
+         'Cr-Branched-From: refs/svn/2014@{#2208}\n'
+         'Committed: '
+         'https://chromium.googlesource.com/infra/infra/+/fake_sha_rebased'],),
+       ''),
+      ((['add_comment', 123, 'Committed patchset #2 (id:20001) manually as '
+                             'fake_sha_rebased (presubmit successful).'],), ''),
+    ]
+    git_cl.main(['land'])
+
+  def test_land_rietveld_git_numberer_bad_parent(self):
+    self._land_rietveld_common()
+    self.mock(git_cl, 'ShouldGenerateGitNumberFooters',
+              lambda *a: self._mocked_call(['ShouldGenerateGitNumberFooters']))
+    self.calls += [
+      ((['git', 'config', 'rietveld.pending-ref-prefix'],), CERR1),
+      ((['ShouldGenerateGitNumberFooters'],), True),
+
+      ((['git', 'show', '-s', '--format=%B', 'fake_ancestor_sha'],),
+       'This is parent commit with no footer.'),
+
+      ((['git', 'checkout', '-q', 'feature'],), ''),
+      ((['git', 'branch', '-D', 'git-cl-commit'],), ''),
+    ]
+    with self.assertRaises(ValueError) as cm:
+      git_cl.main(['land'])
+    self.assertEqual(cm.exception.message,
+                     'Unable to infer commit position from footers')
+
   def test_ShouldGenerateGitNumberFooters(self):
     self.mock(git_cl, 'FindCodereviewSettingsFile', lambda: StringIO.StringIO(
       '# The only true value is true\n'

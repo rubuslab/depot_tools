@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "905054f1_d41872f1",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3155,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T17:18:37Z",
+      "side": 1,
+      "message": "Since this is running on the client, someone can push another CL with the same generated number and user will be forced to rebase, which would require reverting the description to what it was before (perhaps using Cr-Original-... headers) and running this algorithm again.",
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f044303c_0c6757cf",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3160,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T17:18:37Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be a const next to CHERRY_PICK_LINE?",
+      "range": {
+        "startLine": 3160,
+        "startChar": 29,
+        "endLine": 3160,
+        "endChar": 46
+      },
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5056dcee_8f797573",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3165,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T17:18:37Z",
+      "side": 1,
+      "message": "Why is it OK?",
+      "range": {
+        "startLine": 3165,
+        "startChar": 49,
+        "endLine": 3165,
+        "endChar": 60
+      },
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "103c64a3_6de7f563",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3171,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T17:18:37Z",
+      "side": 1,
+      "message": "Why are we removing cherry-pick line and then re-add it? What if it\u0027s not the last line? Add a comment.",
+      "range": {
+        "startLine": 3168,
+        "startChar": 0,
+        "endLine": 3171,
+        "endChar": 45
+      },
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b04b9845_326470c8",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3175,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T17:18:37Z",
+      "side": 1,
+      "message": "Why is this needed?",
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5056dcee_cf737d8d",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3176,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T17:18:37Z",
+      "side": 1,
+      "message": "you can write\n\nfor i, (k, v) in enumerate(parsed_footers):\n\nand then remove next line",
+      "range": {
+        "startLine": 3176,
+        "startChar": 8,
+        "endLine": 3176,
+        "endChar": 13
+      },
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "705120f4_f01bc058",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3182,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T17:18:37Z",
+      "side": 1,
+      "message": "This is quite complicated piece of code. I\u0027d add comments to it. If I understand it correctly, then for the tree like this\n\n    [master]            [branch A]              [branch B]\n\n     (1234)   -...-\u003e      (321)      -...-\u003e   (current commit)\n       |                    |\n       V                    V\n (other commits)      (other commits)\n\nit will generate\n\n  Cr-Branched-From: master@{1234}\n  Cr-Branched-From: A@{321}\n\nIMHO the first line duplicates the information from commit 1 on branch A. But if this is intention, please document it.",
+      "range": {
+        "startLine": 3182,
+        "startChar": 14,
+        "endLine": 3182,
+        "endChar": 59
+      },
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "905054f1_14ad9a66",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4501,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T17:18:37Z",
+      "side": 1,
+      "message": "about",
+      "range": {
+        "startLine": 4501,
+        "startChar": 30,
+        "endLine": 4501,
+        "endChar": 35
+      },
+      "revId": "2ef548ab1850f7529df3c5dfad29ca739662174b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

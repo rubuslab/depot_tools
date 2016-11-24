@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b03478bf_0d7f551a",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-24T16:06:57Z",
+      "side": 1,
+      "message": "imho remove this line... it\u0027s rather confusing",
+      "range": {
+        "startLine": 932,
+        "startChar": 6,
+        "endLine": 932,
+        "endChar": 39
+      },
+      "revId": "ce1766f166f712a1f834b945a3538fcc140f8a2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

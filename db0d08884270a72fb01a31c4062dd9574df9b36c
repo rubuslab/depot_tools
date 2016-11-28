@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5056dcee_12d3ea69",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3002,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-28T16:01:46Z",
+      "side": 1,
+      "message": "this is copy-pasta from gnumbd. But done.",
+      "parentUuid": "4d90030a_dff0db22",
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b04b9845_d53b0ede",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -42,6 +60,42 @@
     },
     {
       "key": {
+        "uuid": "b04b9845_9568a6d4",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3160,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-28T16:01:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b04b9845_d53b0ede",
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d06c8cba_d67242c2",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3160,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-28T16:01:46Z",
+      "side": 1,
+      "message": "the best I have is https://goo.gl/WMmpDe, but that does look lame :(",
+      "parentUuid": "b04b9845_d53b0ede",
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "303fa899_31b62adc",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -59,6 +113,24 @@
         "endLine": 3166,
         "endChar": 35
       },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d06c8cba_f6773eaf",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3166,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-28T16:01:46Z",
+      "side": 1,
+      "message": "well, the same author + I actually read \u0026 tested code afterwards. That said, both gnumbd and git_footers are stricter than Gerrit\u0027s (JGit, really) rules which allows malformed footers in last paragraph.",
+      "parentUuid": "303fa899_31b62adc",
       "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -111,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "d06c8cba_165d9a34",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3185,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-28T16:01:46Z",
+      "side": 1,
+      "message": "yeah.",
+      "parentUuid": "5056dcee_92befa07",
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "103c64a3_d0508250",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -128,6 +218,24 @@
         "endLine": 3188,
         "endChar": 53
       },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d06c8cba_365a963d",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3188,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-28T16:01:46Z",
+      "side": 1,
+      "message": "a list.\nthis map is Footer-Name -\u003e [footer values]",
+      "parentUuid": "103c64a3_d0508250",
       "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -157,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "5056dcee_f2a4a6ec",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-28T16:01:46Z",
+      "side": 1,
+      "message": "added a two more to show the limitations of this code, and yes, the rest is handled by validator.",
+      "parentUuid": "4d90030a_1f1e438b",
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5056dcee_726436f7",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 4
@@ -174,6 +300,24 @@
         "endLine": 316,
         "endChar": 20
       },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b03478bf_304e30df",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-28T16:01:46Z",
+      "side": 1,
+      "message": "gnumbd does it too. IT doesn\u0027t say why, but I think because it\u0027s easiest to ensure that Cr-{Branched-Form, Commit-Position} are exactly the right values it intends them to be.\n\nFor re-lands, I actually think that\u0027s quite useful one can figure out where original landed, of course if the author preserved footers.",
+      "parentUuid": "5056dcee_726436f7",
       "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

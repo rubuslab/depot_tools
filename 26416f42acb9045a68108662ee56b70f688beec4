@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "4d0d632b_c5b219c6",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:42:56Z",
+      "side": 1,
+      "message": "is this really set?",
+      "range": {
+        "startLine": 34,
+        "startChar": 9,
+        "endLine": 34,
+        "endChar": 13
+      },
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d0d632b_e5ce3d44",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:42:56Z",
+      "side": 1,
+      "message": "can you please add some distinct user agent string? Bonus points if it includes git hash of depot_tools.",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 8
+      },
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dee7b71_24779cb4",
         "filename": "cipd.bat",
         "patchSetId": 3
@@ -13,6 +59,29 @@
       "writtenOn": "2016-11-24T02:14:02Z",
       "side": 1,
       "message": "-NoProfile: don\u0027t load a \u0027profile\u0027 script (kinda like sitecustomize in python land). There\u0027s no need to load it, even if it existed, which it probably doesn\u0027t.\n\n-ExecutionPolicy RemoteSigned: only require signatures for scripts which a browser indicated were downloaded from the internet. The default is AllSigned, which would prevent the running of cipd.ps1 (unless we signed it). Bypass or Unrestricted would be weaker. RemoteSigned is the strongest policy that works.\n\n\"%~dp0\": Expand argument 0\u0027s drive and path (e.g. \"C:\\foo\\bar\\script.bat\" -\u003e \"C:\\foo\\bar\\\")\n\n%*: All the other arguments",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d0d632b_85d0a1b8",
+        "filename": "cipd.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:42:56Z",
+      "side": 1,
+      "message": "nit: this won\u0027t work on older windowses (\u003c\u003dVista, I think). Would it be hard to add a fallback that says \"Powershell is required\"? Though it would probably be obvious from the error message...",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 10
+      },
       "revId": "26416f42acb9045a68108662ee56b70f688beec4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -36,6 +105,29 @@
     },
     {
       "key": {
+        "uuid": "4d0d632b_c539f901",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:42:56Z",
+      "side": 1,
+      "message": "smells like ruby 🤔",
+      "range": {
+        "startLine": 7,
+        "startChar": 34,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dee7b71_84a788f3",
         "filename": "cipd.ps1",
         "patchSetId": 3
@@ -47,6 +139,24 @@
       "writtenOn": "2016-11-24T02:14:02Z",
       "side": 1,
       "message": "This horrific function can test to see if basically any resource you could think of exists. Files, network shares, environment variables, registry entries, whatever.",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d0d632b_c560d915",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:42:56Z",
+      "side": 1,
+      "message": ":D Did they implement \"everything is a file\" unix philosophy in .NET land? :)",
+      "parentUuid": "8dee7b71_84a788f3",
       "revId": "26416f42acb9045a68108662ee56b70f688beec4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -70,6 +180,29 @@
     },
     {
       "key": {
+        "uuid": "4d0d632b_e5119d77",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:42:56Z",
+      "side": 1,
+      "message": "nit: can this be made multiline for better readability?",
+      "range": {
+        "startLine": 14,
+        "startChar": 45,
+        "endLine": 14,
+        "endChar": 47
+      },
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dee7b71_84be6807",
         "filename": "cipd.ps1",
         "patchSetId": 3
@@ -87,6 +220,24 @@
     },
     {
       "key": {
+        "uuid": "4d0d632b_e5eabd2b",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:42:56Z",
+      "side": 1,
+      "message": "depot_tools runs on end-user machines. Who knows. Maybe some are still using 32 bit. Is it very difficult to add 32bit check?\n\nAlso we do build 32bit version, so there is at least one 32bit machine in our fleet :)",
+      "parentUuid": "8dee7b71_84be6807",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dee7b71_64ac84d5",
         "filename": "cipd.ps1",
         "patchSetId": 3
@@ -98,6 +249,47 @@
       "writtenOn": "2016-11-24T02:14:02Z",
       "side": 1,
       "message": "I spent a couple hours playing around with this. Either I can get a progress bar and the download slows down 100x, or the script hangs (threading/async/event issues I don\u0027t fully understand). This method will download the file, quite quickly, and block the script while that occurs.",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d0d632b_65246dc5",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:42:56Z",
+      "side": 1,
+      "message": "1. Please verify it respects SSL certs.\n2. Add a user agent header, if possible.",
+      "parentUuid": "8dee7b71_64ac84d5",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d0d632b_058a51a9",
+        "filename": "cipd_client_version",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:42:56Z",
+      "side": 1,
+      "message": "this effectively disables tag cache mechanism and makes selfupdate do backend queries all the time. Will you change this to a tag later?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 6
+      },
       "revId": "26416f42acb9045a68108662ee56b70f688beec4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

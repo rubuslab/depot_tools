@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "705120f4_b35782e6",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4525,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T13:24:02Z",
+      "side": 1,
+      "message": "What if somebody with a screwed up local clock tries to commit something that\u0027s in a far away future?",
+      "range": {
+        "startLine": 4525,
+        "startChar": 10,
+        "endLine": 4525,
+        "endChar": 57
+      },
+      "revId": "54450d7e25972ca976bbe03eac36ef63d347bda2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b04b9845_b5004a1e",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1

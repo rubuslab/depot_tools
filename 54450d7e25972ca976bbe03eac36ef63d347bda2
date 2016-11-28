@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b04b9845_b5004a1e",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-11-28T12:16:08Z",
+      "side": 1,
+      "message": "Why is this necesary? The default value is already False.",
+      "range": {
+        "startLine": 1027,
+        "startChar": 31,
+        "endLine": 1027,
+        "endChar": 49
+      },
+      "revId": "54450d7e25972ca976bbe03eac36ef63d347bda2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

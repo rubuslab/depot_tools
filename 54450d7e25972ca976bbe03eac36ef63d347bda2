@@ -22,6 +22,24 @@
       "revId": "54450d7e25972ca976bbe03eac36ef63d347bda2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "303fa899_91799e73",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-11-28T12:21:44Z",
+      "side": 1,
+      "message": "more as a note to self if the test fails. This is because there is try: finally: inside CMDLand,  which means that if test fails somewhere inside try: block, the actual error thrown will be from finally catch not matching expectations :(",
+      "parentUuid": "b04b9845_b5004a1e",
+      "revId": "54450d7e25972ca976bbe03eac36ef63d347bda2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

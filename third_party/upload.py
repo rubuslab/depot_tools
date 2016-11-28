@@ -1039,6 +1039,8 @@ class VersionControlSystem(object):
       for t in threads:
         print(t.get(timeout=60))
 
+    raise "Chill bro baggins"
+
     max_attempts = 3
     success = False
     for _ in range(max_attempts):

@@ -48,6 +48,24 @@
     },
     {
       "key": {
+        "uuid": "4d0d632b_85c3019a",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2016-11-28T23:45:55Z",
+      "side": 1,
+      "message": "Actually, wdyt about teaching cipd client to send custom user agent with depot_tools git hash in it as a poor mans deployment tracking/debugging tool.\n\ne.g. \u0027cipd -http-user-agent \"depot_tools 12312fdea\" \"${@}\"\n\n(and make cipd append this custom user agent to existing user agent string it sends)\n\nWe could later extract them from BigQuery dump of GAE logs.",
+      "parentUuid": "4d0d632b_e5ce3d44",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dee7b71_24779cb4",
         "filename": "cipd.bat",
         "patchSetId": 3

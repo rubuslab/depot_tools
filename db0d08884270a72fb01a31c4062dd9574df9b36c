@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4d90030a_dff0db22",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3002,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "nit: Since you intend to use this with \"match\", maybe add explicit ^$\n\nI find it more clear as without it, it looks as if it\u0027s intended to be used with \"search\".",
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b04b9845_d53b0ede",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3160,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "nit: you don\u0027t need /edit\n\nnitnit: is there maybe a better, permanent public link? E.g. wrap this in the public infra docs?",
+      "range": {
+        "startLine": 3160,
+        "startChar": 84,
+        "endLine": 3160,
+        "endChar": 88
+      },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "303fa899_31b62adc",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3166,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "Was there any review ensuring that git_footers is doing the same thing as gnumbd?",
+      "range": {
+        "startLine": 3166,
+        "startChar": 24,
+        "endLine": 3166,
+        "endChar": 35
+      },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d041ec2c_543c82f2",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3173,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "nit: This is",
+      "range": {
+        "startLine": 3173,
+        "startChar": 41,
+        "endLine": 3173,
+        "endChar": 45
+      },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5056dcee_92befa07",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3185,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "will that make it Cr-Original-Original- on a re-re-land?",
+      "range": {
+        "startLine": 3185,
+        "startChar": 50,
+        "endLine": 3185,
+        "endChar": 58
+      },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "103c64a3_d0508250",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3188,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "What does this return if the parent has several Cr-Branched-From?",
+      "range": {
+        "startLine": 3188,
+        "startChar": 37,
+        "endLine": 3188,
+        "endChar": 53
+      },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d90030a_1f1e438b",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "You could test more error scenarios with wrong/corrupt parent CP footers. Of course everything that can go wrong should be caught by the validator plugin.",
+      "range": {
+        "startLine": 281,
+        "startChar": 14,
+        "endLine": 281,
+        "endChar": 26
+      },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5056dcee_726436f7",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "Why do we need to add Original? Can we not just keep the other footers? E.g. typical re-landed CL where the same CL is used that already has footers. Or is gnumbd adding the original as well?",
+      "range": {
+        "startLine": 316,
+        "startChar": 12,
+        "endLine": 316,
+        "endChar": 20
+      },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b03478bf_b01300d3",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "how about a test that branches from a branch?",
+      "range": {
+        "startLine": 338,
+        "startChar": 9,
+        "endLine": 338,
+        "endChar": 25
+      },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d06c8cba_b646a66f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-11-28T14:05:30Z",
+      "side": 1,
+      "message": "The other cases have double \\n here.",
+      "range": {
+        "startLine": 1061,
+        "startChar": 49,
+        "endLine": 1061,
+        "endChar": 51
+      },
+      "revId": "db0d08884270a72fb01a31c4062dd9574df9b36c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

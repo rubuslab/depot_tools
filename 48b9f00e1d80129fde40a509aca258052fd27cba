@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8dee7b71_8fb2f4e2",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3159,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:13:02Z",
+      "side": 1,
+      "message": "Let\u0027s just have the public link",
+      "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_cf97dc31",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3175,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:13:02Z",
+      "side": 1,
+      "message": "does this expose previous gerrit-provided footers to the new commit?",
+      "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_8fc2f323",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4498,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:13:02Z",
+      "side": 1,
+      "message": "IIRC `git cl land` used to do this when pushing to pending... but not any more?",
+      "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_8fdb130a",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4507,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:13:02Z",
+      "side": 1,
+      "message": "?",
+      "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_8f8d5316",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4521,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:13:02Z",
+      "side": 1,
+      "message": "lol",
+      "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

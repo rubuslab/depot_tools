@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "4d0d632b_8511c13d",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:47:44Z",
+      "side": 1,
+      "message": "Oops. This is supposed to be $UNAME. Done",
+      "parentUuid": "4d0d632b_c5b219c6",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d0d632b_e5ce3d44",
         "filename": "cipd",
         "patchSetId": 3
@@ -60,6 +78,24 @@
       "side": 1,
       "message": "Actually, wdyt about teaching cipd client to send custom user agent with depot_tools git hash in it as a poor mans deployment tracking/debugging tool.\n\ne.g. \u0027cipd -http-user-agent \"depot_tools 12312fdea\" \"${@}\"\n\n(and make cipd append this custom user agent to existing user agent string it sends)\n\nWe could later extract them from BigQuery dump of GAE logs.",
       "parentUuid": "4d0d632b_e5ce3d44",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_4f506b7c",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:47:44Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "4d0d632b_85c3019a",
       "revId": "26416f42acb9045a68108662ee56b70f688beec4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "8dee7b71_af4b77a0",
+        "filename": "cipd.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:47:44Z",
+      "side": 1,
+      "message": "Yeah I know. I\u0027m OK with that. If it turns out vista support is important (I don\u0027t believe it is, apparently we have ~4 vista machines in the fleet), I\u0027ll add manual instructions.",
+      "parentUuid": "4d0d632b_85d0a1b8",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dee7b71_8491c8a6",
         "filename": "cipd.ps1",
         "patchSetId": 3
@@ -140,6 +194,24 @@
         "endLine": 7,
         "endChar": 47
       },
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_ef0e1f53",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:47:44Z",
+      "side": 1,
+      "message": "type annotations? Or the \u0027block\u0027 thing? :)",
+      "parentUuid": "4d0d632b_c539f901",
       "revId": "26416f42acb9045a68108662ee56b70f688beec4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -221,6 +293,24 @@
     },
     {
       "key": {
+        "uuid": "8dee7b71_af96d79a",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:47:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d0d632b_e5119d77",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dee7b71_84be6807",
         "filename": "cipd.ps1",
         "patchSetId": 3
@@ -250,6 +340,24 @@
       "side": 1,
       "message": "depot_tools runs on end-user machines. Who knows. Maybe some are still using 32 bit. Is it very difficult to add 32bit check?\n\nAlso we do build 32bit version, so there is at least one 32bit machine in our fleet :)",
       "parentUuid": "8dee7b71_84be6807",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_8fc8b3b4",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:47:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d0d632b_e5eabd2b",
       "revId": "26416f42acb9045a68108662ee56b70f688beec4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -291,6 +399,24 @@
     },
     {
       "key": {
+        "uuid": "8dee7b71_4fd2ab66",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:47:44Z",
+      "side": 1,
+      "message": "1. Yes it does (using system certs)\n2. Done",
+      "parentUuid": "4d0d632b_65246dc5",
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d0d632b_058a51a9",
         "filename": "cipd_client_version",
         "patchSetId": 3
@@ -308,6 +434,24 @@
         "endLine": 1,
         "endChar": 6
       },
+      "revId": "26416f42acb9045a68108662ee56b70f688beec4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dee7b71_2fb8870d",
+        "filename": "cipd_client_version",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-11-29T20:47:44Z",
+      "side": 1,
+      "message": "Yeah going to change this to a git_revision tag once things are done",
+      "parentUuid": "4d0d632b_058a51a9",
       "revId": "26416f42acb9045a68108662ee56b70f688beec4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

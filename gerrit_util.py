@@ -600,11 +600,12 @@ def DeletePendingChangeEdit(host, change):
       raise
 
 
-def SetCommitMessage(host, change, description):
+def SetCommitMessage(host, change, description, notify='ALL'):
   """Updates a commit message."""
+  assert notify in ('ALL', 'NONE')
   # First, edit the commit message in a draft.
   path = 'changes/%s/edit:message' % change
-  body = {'message': description}
+  body = {'message': description, 'notify': notify}
   conn = CreateHttpConn(host, path, reqtype='PUT', body=body)
   try:
     ReadHttpResponse(conn, ignore_404=False)

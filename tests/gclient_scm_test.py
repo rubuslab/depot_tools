@@ -496,11 +496,10 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
     options = self.Options()
     scm = gclient_scm.CreateSCM(url=self.url, root_dir=self.root_dir,
                                 relpath=self.relpath)
-    file_path = join(self.base_path, '.git', 'index.lock')
-    with open(file_path, 'w'):
+    scm.update(options, (), [])
+    with open(join(self.base_path, '.git', 'index.lock'), 'w'):
       pass
-    with self.assertRaisesRegexp(subprocess2.CalledProcessError,
-                                 'Unable to create.*/index.lock'):
+    with self.assertRaises(subprocess2.CalledProcessError):
       scm.update(options, (), [])
     sys.stdout.close()
 

@@ -499,9 +499,13 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
     file_path = join(self.base_path, '.git', 'index.lock')
     with open(file_path, 'w'):
       pass
-    with self.assertRaisesRegexp(subprocess2.CalledProcessError,
-                                 'Unable to create.*/index.lock'):
-      scm.update(options, (), [])
+    try:
+      with self.assertRaisesRegexp(subprocess2.CalledProcessError,
+                                   'Unable to create.*/index.lock'):
+        scm.update(options, (), [])
+    finally:
+      with open("/tmp/heck", "w") as f:
+        f.write(sys.stdout.getvalue())
     sys.stdout.close()
 
   def testUpdateLockedBreak(self):

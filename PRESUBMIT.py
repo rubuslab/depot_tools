@@ -60,6 +60,11 @@ def CommonChecks(input_api, output_api, tests_to_black_list):
   else:
     print('Warning: not running unit tests on Windows')
   results.extend(input_api.RunTests(tests))
+  try:
+    with open("/tmp/heck") as f:
+      print('\nheck: \n' + f.read() + '\n\nend heck')
+  except (OSError, IOError):
+    print('no file')
   return results
 
 

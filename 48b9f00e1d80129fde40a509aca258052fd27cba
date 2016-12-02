@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "adbc1f98_edb2c197",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3159,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-02T13:35:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8dee7b71_8fb2f4e2",
+      "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dee7b71_cf97dc31",
         "filename": "git_cl.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-11-29T20:13:02Z",
       "side": 1,
       "message": "does this expose previous gerrit-provided footers to the new commit?",
+      "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4db723b6_8a320b4e",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3175,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-02T13:35:23Z",
+      "side": 1,
+      "message": "i don\u0027t understand the question.\nThis is code is for Rietveld CLs or just raw commits with no CL URL attached.\n\nAre you asking for the case when somebody lands a CL with Gerrit which has Change-Id on master branch, and then uses git drover which creates a Rietveld CL with Cherry-Pick? If so, then yeah, end result here would be that prior footers will end as footers in new commit too. In fact, it\u0027s already the case for pure Gerrit repos -\u003e if one does cherry-pick, there would be *two* change-ids in the footer, and the last one wins.",
+      "parentUuid": "8dee7b71_cf97dc31",
       "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "cdc95346_0e006bb3",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4498,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-02T13:35:23Z",
+      "side": 1,
+      "message": "your memory is right, rephrased my comment.",
+      "parentUuid": "8dee7b71_8fc2f323",
+      "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dee7b71_8fdb130a",
         "filename": "git_cl.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2016-11-29T20:13:02Z",
       "side": 1,
       "message": "?",
+      "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4dde43f8_321d8edd",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4507,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-02T13:35:23Z",
+      "side": 1,
+      "message": "replaced with better comment.",
+      "parentUuid": "8dee7b71_8fdb130a",
       "revId": "48b9f00e1d80129fde40a509aca258052fd27cba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

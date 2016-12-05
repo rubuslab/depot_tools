@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2d04af97_668d2ec1",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-05T13:38:52Z",
+      "side": 1,
+      "message": "1:1 copy of the chromium version of https://cs.chromium.org/search/?q\u003d_CheckAuthorizedAuthor\u0026sq\u003dpackage:chromium\u0026type\u003dcs shared between chromium and V8.",
+      "revId": "9971c25f785a90335f7525e0ed997a43b6108d19",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

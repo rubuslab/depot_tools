@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4dec833c_5f574b72",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1140,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:49:27Z",
+      "side": 1,
+      "message": "ok - disregard my other comment in the test file...",
+      "range": {
+        "startLine": 1140,
+        "startChar": 6,
+        "endLine": 1140,
+        "endChar": 42
+      },
+      "revId": "a4ae9ea0c1b9f91a98c0e271f6a557deb853a35d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4dec833c_1f4dc3e0",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1024,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:49:27Z",
+      "side": 1,
+      "message": "Are there cases when a git cache is used where remote.origin.url just refers to the cache? E.g. I wonder if it will return the right result here:\nhttps://build.chromium.org/p/client.v8.branches/builders/Auto-tag/builds/623/steps/git%20cl/logs/stdio\n\nNever mind. Saw the logic in the other file.",
+      "range": {
+        "startLine": 1024,
+        "startChar": 27,
+        "endLine": 1024,
+        "endChar": 44
+      },
+      "revId": "a4ae9ea0c1b9f91a98c0e271f6a557deb853a35d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df58ffe_7ec051e9",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1188,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:49:27Z",
+      "side": 1,
+      "message": "Are the values used in codereview.settings and in gnumbd/config-main actually different in regards to the trailing /? Can this lead to any problems later like a missing or a double /? Or is the code robust in that regard?",
+      "range": {
+        "startLine": 1188,
+        "startChar": 61,
+        "endLine": 1188,
+        "endChar": 62
+      },
+      "revId": "a4ae9ea0c1b9f91a98c0e271f6a557deb853a35d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

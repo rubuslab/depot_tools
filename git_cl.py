@@ -87,6 +87,12 @@ Fore = colorama.Fore
 # Initialized in main()
 settings = None
 
+# Used by tests/git_cl_test.py to add extra logging.
+# Inside the weirdly failing test, add this:
+# >>> self.mock(git_cl, '_IS_BEING_TESTED', True)
+# And scroll up to see the strack trace printed.
+_IS_BEING_TESTED = False
+
 
 def DieWithError(message):
   print(message, file=sys.stderr)
@@ -1028,19 +1034,6 @@ class Settings(object):
     return RunGit(['config', param], **kwargs).strip()
 
 
-def ShouldGenerateGitNumberFooters():
-  """Decides depending on codereview.settings file in the current checkout HEAD.
-  """
-  # TODO(tandrii): this has to be removed after Rietveld is read-only.
-  # see also bugs http://crbug.com/642493 and http://crbug.com/600469.
-  cr_settings_file = FindCodereviewSettingsFile()
-  if not cr_settings_file:
-    return False
-  keyvals = gclient_utils.ParseCodereviewSettingsContent(
-      cr_settings_file.read())
-  return keyvals.get('GENERATE_GIT_NUMBER_FOOTERS', '').lower() == 'true'
-
-
 class _GitNumbererState(object):
   KNOWN_PROJECTS_WHITELIST = [
       'chromium/src',
@@ -1126,6 +1119,8 @@ class _GitNumbererState(object):
           return out.strip().splitlines()
         return []
       enabled, disabled = map(get_opts, ['enabled', 'disabled'])
+    logging.info('read enabled %s disabled %s refglobs for validator plugin '
+                 '(this ref: %s)', enabled, disabled, ref)
 
     if cls.match_refglobs(ref, disabled):
       return False
@@ -1152,8 +1147,13 @@ class _GitNumbererState(object):
 
   def __init__(self, pending_prefix, validator_enabled):
     # TODO(tandrii): remove pending_prefix after gnumbd is no more.
+    if pending_prefix:
+      if not pending_prefix.endswith('/'):
+        pending_prefix += '/'
     self._pending_prefix = pending_prefix or None
     self._validator_enabled = validator_enabled or False
+    logging.debug('_GitNumbererState(pending: %s, validator: %s)',
+                  self._pending_prefix, self._validator_enabled)
 
   @property
   def pending_prefix(self):
@@ -2351,8 +2351,10 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
                                   self.GetUpstreamBranch().split('/')[-1])
     if remote_url:
       remote, remote_branch = self.GetRemoteBranch()
-      target_ref = GetTargetRef(remote, remote_branch, options.target_branch,
-                                settings.GetPendingRefPrefix())
+      target_ref = GetTargetRef(
+          remote, remote_branch, options.target_branch,
+          _GitNumbererState.load(self.GetRemoteUrl(),
+                                 remote_branch).pending_prefix)
       if target_ref:
         upload_args.extend(['--target_ref', target_ref])
 
@@ -4636,10 +4638,17 @@ def SendUpstream(parser, args, cmd):
     if cmd == 'land':
       remote, branch = cl.FetchUpstreamTuple(cl.GetBranch())
       mirror = settings.GetGitMirror(remote)
-      pushurl = mirror.url if mirror else remote
-      pending_prefix = settings.GetPendingRefPrefix()
+      if mirror:
+        pushurl = mirror.url
+        git_numberer = _GitNumbererState.load(pushurl, branch)
+      else:
+        pushurl = remote  # Usually, this is 'origin'.
+        git_numberer = _GitNumbererState.load(
+            RunGit(['config', 'remote.%s.url' % remote]).strip(), branch)
 
-      if ShouldGenerateGitNumberFooters():
+      pending_prefix = git_numberer.pending_prefix
+
+      if git_numberer.should_git_number:
         # TODO(tandrii): run git fetch in a loop + autorebase when there there
         # is no pending ref to push to?
         logging.debug('Adding git number footers')
@@ -4699,6 +4708,12 @@ def SendUpstream(parser, args, cmd):
         revision = re.match(
           '.*?\nCommitted r(\\d+)', output, re.DOTALL).group(1)
     logging.debug(output)
+  except:  # pylint: disable=W0702
+    if _IS_BEING_TESTED:
+      logging.exception('this is likely your ACTUAL cause of test failure.\n'
+                        + '-' * 30 + '8<' + '-' * 30)
+      logging.error('\n' + '-' * 30 + '8<' + '-' * 30 + '\n\n\n')
+    raise
   finally:
     # And then swap back to the original branch and clean up.
     RunGit(['checkout', '-q', cl.GetBranch()])
@@ -4721,7 +4736,6 @@ def SendUpstream(parser, args, cmd):
       killed = True
 
   if cl.GetIssue():
-    # TODO(tandrii): figure out story of to pending + git numberer.
     to_pending = ' to pending queue' if pushed_to_pending else ''
     viewvc_url = settings.GetViewVCUrl()
     if not to_pending:

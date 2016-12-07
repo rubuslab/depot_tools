@@ -289,6 +289,24 @@
     },
     {
       "key": {
+        "uuid": "2df58ffe_1e114d18",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1144,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T19:19:45Z",
+      "side": 1,
+      "message": "Hmm, the one in codereview.settings maybe. But the one in gnumbd config? I\u0027d say if gnumbd config says that pending prefix should be used, but the validator isn\u0027t on, that\u0027d be bad, right? Though, it\u0027s not really the concern of this piece of code to make sure of it.",
+      "parentUuid": "ade17f42_228a2eaa",
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2df58ffe_3e39a934",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 3

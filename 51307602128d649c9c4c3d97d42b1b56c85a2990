@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2d602f88_460b328f",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1057,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "Now that I just ran into this gotcha, I think I better comment on it. But you\u0027re save as all whitelisted repos end with c or 8 :)",
+      "range": {
+        "startLine": 1057,
+        "startChar": 53,
+        "endLine": 1057,
+        "endChar": 60
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df58ffe_1e366d44",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "Why only debug? Since this shouldn\u0027t happen ever, maybe print this hint more aggressively?",
+      "range": {
+        "startLine": 1074,
+        "startChar": 14,
+        "endLine": 1074,
+        "endChar": 19
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df58ffe_7e333154",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "Maybe print something in all error cases?",
+      "range": {
+        "startLine": 1084,
+        "startChar": 7,
+        "endLine": 1084,
+        "endChar": 12
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df58ffe_5e30f545",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "Maybe add a longer prefix to the files to easily recognize them in case something goes wrong with the deletion.",
+      "range": {
+        "startLine": 1113,
+        "startChar": 18,
+        "endLine": 1113,
+        "endChar": 36
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df58ffe_deb08594",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "Suggestion: since there is only one ref throughout the whole function call, you could lift the matching into the get_opts logic. E.g. resulting code:\nif matches_any_opts(\u0027disabled\u0027):\n  return False\nreturn matches_any_opts(\u0027enabled\u0027)",
+      "range": {
+        "startLine": 1128,
+        "startChar": 29,
+        "endLine": 1128,
+        "endChar": 32
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df58ffe_3eb6c98d",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "return ref \u003d\u003d refglob or fnmatch.fnmatch(ref, refglob)",
+      "range": {
+        "startLine": 1134,
+        "startChar": 4,
+        "endLine": 1134,
+        "endChar": 22
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6db5c743_d01cdce2",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1144,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "Maybe add:\nassert validator_enabled or not pending_prefix",
+      "range": {
+        "startLine": 1144,
+        "startChar": 21,
+        "endLine": 1144,
+        "endChar": 54
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df58ffe_3e39a934",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1169,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "nit: In which sense wrong? It\u0027s just a no-footer repo.",
+      "range": {
+        "startLine": 1169,
+        "startChar": 28,
+        "endLine": 1169,
+        "endChar": 33
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6db5c743_30d568d5",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1229,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "How about adding a test where also gnumbd has a refglob with *?",
+      "range": {
+        "startLine": 1229,
+        "startChar": 28,
+        "endLine": 1229,
+        "endChar": 34
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df58ffe_de4365af",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1235,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "nit: tabs",
+      "range": {
+        "startLine": 1235,
+        "startChar": 0,
+        "endLine": 1235,
+        "endChar": 1
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6de78757_e01cc2e2",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1249,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-07T09:32:11Z",
+      "side": 1,
+      "message": "nit: have",
+      "range": {
+        "startLine": 1249,
+        "startChar": 27,
+        "endLine": 1249,
+        "endChar": 31
+      },
+      "revId": "51307602128d649c9c4c3d97d42b1b56c85a2990",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

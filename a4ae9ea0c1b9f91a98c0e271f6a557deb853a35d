@@ -68,6 +68,24 @@
       "revId": "a4ae9ea0c1b9f91a98c0e271f6a557deb853a35d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df58ffe_3e5a496d",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1188,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-07T11:13:44Z",
+      "side": 1,
+      "message": "yes, they are :) and i see tha tyou saw that i ensure that\u0027/\u0027 is appended to the end of pending_preifx in gitnumberer state.",
+      "parentUuid": "2df58ffe_7ec051e9",
+      "revId": "a4ae9ea0c1b9f91a98c0e271f6a557deb853a35d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

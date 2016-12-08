@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2df58ffe_e14320af",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4659,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-08T14:24:18Z",
+      "side": 1,
+      "message": "nit: double there",
+      "range": {
+        "startLine": 4659,
+        "startChar": 67,
+        "endLine": 4659,
+        "endChar": 72
+      },
+      "revId": "39b469ffb6bb5d83b793d9971effad0a850fed85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -5,6 +5,8 @@
 
 """Display active git branches and code changes in a chromiumos workspace."""
 
+# Why does this exist
+
 import gclient_utils
 import os
 import re

@@ -339,7 +339,7 @@ def gclient_configure(solutions, target_os, target_os_only, git_cache_dir):
         solutions, target_os, target_os_only, git_cache_dir))
 
 
-def gclient_sync(with_branch_heads, shallow, break_repo_locks):
+def gclient_sync(with_branch_heads, shallow, break_repo_locks, revisions):
   # We just need to allocate a filename.
   fd, gclient_output_file = tempfile.mkstemp(suffix='.json')
   os.close(fd)
@@ -353,6 +353,8 @@ def gclient_sync(with_branch_heads, shallow, break_repo_locks):
     args += ['--shallow']
   if break_repo_locks:
     args += ['--break_repo_locks']
+  for name, revision in revisions.iteritems():
+    args += ['--revision', '%s@%s' % (name, revision)]
 
   try:
     call_gclient(*args, tries=1)
@@ -809,18 +811,18 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
   # Let gclient do the DEPS syncing.
   # The branch-head refspec is a special case because its possible Chrome
   # src, which contains the branch-head refspecs, is DEPSed in.
+  dir_names = {sln['name'] for sln in solutions}
+  deps_revisions = [
+      (name, revision) for name, revision in revisions.iteritems()
+      if name not in dir_names]
   gclient_output = gclient_sync(BRANCH_HEADS_REFSPEC in refs, shallow,
-                                break_repo_locks)
+                                break_repo_locks, deps_revisions)
 
   # Now that gclient_sync has finished, we should revert any .DEPS.git so that
   # presubmit doesn't complain about it being modified.
   if git('ls-files', '.DEPS.git', cwd=first_sln).strip():
     git('checkout', 'HEAD', '--', '.DEPS.git', cwd=first_sln)
 
-  # Finally, ensure that all DEPS are pinned to the correct revision.
-  dir_names = [sln['name'] for sln in solutions]
-  ensure_deps_revisions(gclient_output.get('solutions', {}),
-                        dir_names, revisions)
   # Apply the rest of the patch here (sans DEPS)
   if issue:
     apply_rietveld_issue(issue, patchset, patch_root, rietveld_server,

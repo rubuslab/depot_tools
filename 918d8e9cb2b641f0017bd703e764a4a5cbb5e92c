@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd6cf3ba_531484f6",
+        "filename": "git_edit_diff.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1115859
+      },
+      "writtenOn": "2016-12-12T06:17:28Z",
+      "side": 1,
+      "message": "Does not work if the editor command has command line args e.g. \"subl -w\".",
+      "range": {
+        "startLine": 34,
+        "startChar": 26,
+        "endLine": 34,
+        "endChar": 32
+      },
+      "revId": "918d8e9cb2b641f0017bd703e764a4a5cbb5e92c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

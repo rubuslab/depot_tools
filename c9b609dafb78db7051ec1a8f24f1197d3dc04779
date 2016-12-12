@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "daff4b21_9ed239b6",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-12T16:58:31Z",
+      "side": 1,
+      "message": "also KeyboardInterrupt",
+      "range": {
+        "startLine": 635,
+        "startChar": 9,
+        "endLine": 635,
+        "endChar": 20
+      },
+      "revId": "c9b609dafb78db7051ec1a8f24f1197d3dc04779",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5af43b41_e25be83c",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-12T16:58:31Z",
+      "side": 1,
+      "message": "this may also raises, which will make prior exception ignored. I\u0027d surround by try: except: logging.exception(\u0027while cleaning up\u0027)",
+      "revId": "c9b609dafb78db7051ec1a8f24f1197d3dc04779",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

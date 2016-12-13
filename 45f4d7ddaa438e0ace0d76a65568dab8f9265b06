@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dabcabd0_5326c4e7",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-13T20:12:09Z",
+      "side": 1,
+      "message": "if we really want to save on typing, can this made a top-level\n_path_join \u003d presubmit.os.path.join?",
+      "range": {
+        "startLine": 557,
+        "startChar": 4,
+        "endLine": 557,
+        "endChar": 8
+      },
+      "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fabfafbf_54ab0c27",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-13T20:12:09Z",
+      "side": 1,
+      "message": "nit: I\u0027d keep as before.",
+      "range": {
+        "startLine": 731,
+        "startChar": 4,
+        "endLine": 731,
+        "endChar": 33
+      },
+      "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aa6fbc4_2fa64960",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-13T19:17:51Z",
+      "side": 1,
+      "message": "wait, why raise? I\u0027d go for the above line to be LOGGER.exception() so it prints first stack trace of the cleanup, and then no raise on this line, but raise on line 643 as before, s.t. at the end the main stack trace is shown",
+      "range": {
+        "startLine": 642,
+        "startChar": 6,
+        "endLine": 642,
+        "endChar": 11
+      },
+      "revId": "91763bce9f5b82bbd54d3b69f07fd7ee82fad1fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

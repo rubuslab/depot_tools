@@ -40,6 +40,24 @@
       "revId": "91763bce9f5b82bbd54d3b69f07fd7ee82fad1fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa6fbc4_8fb49583",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-13T19:57:10Z",
+      "side": 1,
+      "message": "i\u0027m with you that re-raising it is important, but that is done in 643 but only if 642 is commented out.\n\nAnd turns out you have to wrap this cleanup in a function so to avoid corrupting the source of sys.exc_info().\nSee this: https://paste.googleplex.com/5037003041144832",
+      "parentUuid": "1a280382_f8836aeb",
+      "revId": "91763bce9f5b82bbd54d3b69f07fd7ee82fad1fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

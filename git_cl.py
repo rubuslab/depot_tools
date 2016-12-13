@@ -66,9 +66,8 @@ __version__ = '2.0'
 
 COMMIT_BOT_EMAIL = 'commit-bot@chromium.org'
 DEFAULT_SERVER = 'https://codereview.chromium.org'
-POSTUPSTREAM_HOOK_PATTERN = '.git/hooks/post-cl-%s'
+POSTUPSTREAM_HOOK_PATTERN = '.git/hooks/post-cl-land'
 DESCRIPTION_BACKUP_FILE = '~/.git_cl_description_backup'
-GIT_INSTRUCTIONS_URL = 'http://code.google.com/p/chromium/wiki/UsingGit'
 REFS_THAT_ALIAS_TO_OTHER_REFS = {
     'refs/remotes/origin/lkgr': 'refs/remotes/origin/master',
     'refs/remotes/origin/lkcr': 'refs/remotes/origin/master',
@@ -701,48 +700,6 @@ def write_try_results_json(output_file, builds):
   write_json(output_file, converted)
 
 
-def MatchSvnGlob(url, base_url, glob_spec, allow_wildcards):
-  """Return the corresponding git ref if |base_url| together with |glob_spec|
-  matches the full |url|.
-
-  If |allow_wildcards| is true, |glob_spec| can contain wildcards (see below).
-  """
-  fetch_suburl, as_ref = glob_spec.split(':')
-  if allow_wildcards:
-    glob_match = re.match('(.+/)?(\*|{[^/]*})(/.+)?', fetch_suburl)
-    if glob_match:
-      # Parse specs like "branches/*/src:refs/remotes/svn/*" or
-      # "branches/{472,597,648}/src:refs/remotes/svn/*".
-      branch_re = re.escape(base_url)
-      if glob_match.group(1):
-        branch_re += '/' + re.escape(glob_match.group(1))
-      wildcard = glob_match.group(2)
-      if wildcard == '*':
-        branch_re += '([^/]*)'
-      else:
-        # Escape and replace surrounding braces with parentheses and commas
-        # with pipe symbols.
-        wildcard = re.escape(wildcard)
-        wildcard = re.sub('^\\\\{', '(', wildcard)
-        wildcard = re.sub('\\\\,', '|', wildcard)
-        wildcard = re.sub('\\\\}$', ')', wildcard)
-        branch_re += wildcard
-      if glob_match.group(3):
-        branch_re += re.escape(glob_match.group(3))
-      match = re.match(branch_re, url)
-      if match:
-        return re.sub('\*$', match.group(1), as_ref)
-
-  # Parse specs like "trunk/src:refs/remotes/origin/trunk".
-  if fetch_suburl:
-    full_url = base_url + '/' + fetch_suburl
-  else:
-    full_url = base_url
-  if full_url == url:
-    return as_ref
-  return None
-
-
 def print_stats(similarity, find_copies, args):
   """Prints statistics about the change to the user."""
   # --no-ext-diff is broken in some versions of Git, so try to work around
@@ -776,8 +733,6 @@ class Settings(object):
     self.default_server = None
     self.cc = None
     self.root = None
-    self.is_git_svn = None
-    self.svn_branch = None
     self.tree_status_url = None
     self.viewvc_url = None
     self.updated = False
@@ -838,87 +793,6 @@ class Settings(object):
     if mirror.exists():
       return mirror
     return None
-
-  def GetIsGitSvn(self):
-    """Return true if this repo looks like it's using git-svn."""
-    if self.is_git_svn is None:
-      if self.GetPendingRefPrefix():
-        # If PENDING_REF_PREFIX is set then it's a pure git repo no matter what.
-        self.is_git_svn = False
-      else:
-        # If you have any "svn-remote.*" config keys, we think you're using svn.
-        self.is_git_svn = RunGitWithCode(
-            ['config', '--local', '--get-regexp', r'^svn-remote\.'])[0] == 0
-    return self.is_git_svn
-
-  def GetSVNBranch(self):
-    if self.svn_branch is None:
-      if not self.GetIsGitSvn():
-        DieWithError('Repo doesn\'t appear to be a git-svn repo.')
-
-      # Try to figure out which remote branch we're based on.
-      # Strategy:
-      # 1) iterate through our branch history and find the svn URL.
-      # 2) find the svn-remote that fetches from the URL.
-
-      # regexp matching the git-svn line that contains the URL.
-      git_svn_re = re.compile(r'^\s*git-svn-id: (\S+)@', re.MULTILINE)
-
-      # We don't want to go through all of history, so read a line from the
-      # pipe at a time.
-      # The -100 is an arbitrary limit so we don't search forever.
-      cmd = ['git', 'log', '-100', '--pretty=medium']
-      proc = subprocess2.Popen(cmd, stdout=subprocess2.PIPE,
-                               env=GetNoGitPagerEnv())
-      url = None
-      for line in proc.stdout:
-        match = git_svn_re.match(line)
-        if match:
-          url = match.group(1)
-          proc.stdout.close()  # Cut pipe.
-          break
-
-      if url:
-        svn_remote_re = re.compile(r'^svn-remote\.([^.]+)\.url (.*)$')
-        remotes = RunGit(['config', '--get-regexp',
-                          r'^svn-remote\..*\.url']).splitlines()
-        for remote in remotes:
-          match = svn_remote_re.match(remote)
-          if match:
-            remote = match.group(1)
-            base_url = match.group(2)
-            rewrite_root = RunGit(
-                ['config', 'svn-remote.%s.rewriteRoot' % remote],
-                error_ok=True).strip()
-            if rewrite_root:
-              base_url = rewrite_root
-            fetch_spec = RunGit(
-                ['config', 'svn-remote.%s.fetch' % remote],
-                error_ok=True).strip()
-            if fetch_spec:
-              self.svn_branch = MatchSvnGlob(url, base_url, fetch_spec, False)
-              if self.svn_branch:
-                break
-            branch_spec = RunGit(
-                ['config', 'svn-remote.%s.branches' % remote],
-                error_ok=True).strip()
-            if branch_spec:
-              self.svn_branch = MatchSvnGlob(url, base_url, branch_spec, True)
-              if self.svn_branch:
-                break
-            tag_spec = RunGit(
-                ['config', 'svn-remote.%s.tags' % remote],
-                error_ok=True).strip()
-            if tag_spec:
-              self.svn_branch = MatchSvnGlob(url, base_url, tag_spec, True)
-              if self.svn_branch:
-                break
-
-      if not self.svn_branch:
-        DieWithError('Can\'t guess svn branch -- try specifying it on the '
-            'command line')
-
-    return self.svn_branch
 
   def GetTreeStatusUrl(self, error_ok=False):
     if not self.tree_status_url:
@@ -1397,28 +1271,19 @@ class Changelist(object):
       if upstream_branch:
         remote = RunGit(['config', 'rietveld.upstream-remote']).strip()
       else:
-        # Fall back on trying a git-svn upstream branch.
-        if settings.GetIsGitSvn():
-          upstream_branch = settings.GetSVNBranch()
+        # Else, try to guess the origin remote.
+        remote_branches = RunGit(['branch', '-r']).split()
+        if 'origin/master' in remote_branches:
+          # Fall back on origin/master if it exits.
+          remote = 'origin'
+          upstream_branch = 'refs/heads/master'
         else:
-          # Else, try to guess the origin remote.
-          remote_branches = RunGit(['branch', '-r']).split()
-          if 'origin/master' in remote_branches:
-            # Fall back on origin/master if it exits.
-            remote = 'origin'
-            upstream_branch = 'refs/heads/master'
-          elif 'origin/trunk' in remote_branches:
-            # Fall back on origin/trunk if it exists. Generally a shared
-            # git-svn clone
-            remote = 'origin'
-            upstream_branch = 'refs/heads/trunk'
-          else:
-            DieWithError(
-               'Unable to determine default branch to diff against.\n'
-               'Either pass complete "git diff"-style arguments, like\n'
-               '  git cl upload origin/master\n'
-               'or verify this branch is set up to track another \n'
-               '(via the --track argument to "git checkout -b ...").')
+          DieWithError(
+             'Unable to determine default branch to diff against.\n'
+             'Either pass complete "git diff"-style arguments, like\n'
+             '  git cl upload origin/master\n'
+             'or verify this branch is set up to track another \n'
+             '(via the --track argument to "git checkout -b ...").')
 
     return remote, upstream_branch
 
@@ -1457,17 +1322,11 @@ class Changelist(object):
           remote, = remotes
         elif 'origin' in remotes:
           remote = 'origin'
-          logging.warning('Could not determine which remote this change is '
-                          'associated with, so defaulting to "%s".  This may '
-                          'not be what you want.  You may prevent this message '
-                          'by running "git svn info" as documented here:  %s',
-                          self._remote,
-                          GIT_INSTRUCTIONS_URL)
+          logging.warn('Could not determine which remote this change is '
+                       'associated with, so defaulting to "%s".' % self._remote)
         else:
           logging.warn('Could not determine which remote this change is '
-                       'associated with.  You may prevent this message by '
-                       'running "git svn info" as documented here:  %s',
-                       GIT_INSTRUCTIONS_URL)
+                       'associated with.')
         branch = 'HEAD'
       if branch.startswith('refs/remotes'):
         self._remote = (remote, branch)
@@ -1525,19 +1384,6 @@ class Changelist(object):
     Returns None if it is not set.
     """
     return self._GitGetBranchConfigValue('base-url')
-
-  def GetGitSvnRemoteUrl(self):
-    """Return the configured git-svn remote URL parsed from git svn info.
-
-    Returns None if it is not set.
-    """
-    # URL is dependent on the current directory.
-    data = RunGit(['svn', 'info'], cwd=settings.GetRoot())
-    if data:
-      keys = dict(line.split(': ', 1) for line in data.splitlines()
-                  if ': ' in line)
-      return keys.get('URL', None)
-    return None
 
   def GetRemoteUrl(self):
     """Return the configured remote URL, e.g. 'git://example.org/foo.git/'.
@@ -2293,8 +2139,12 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
     else:
       if options.title is not None:
         upload_args.extend(['--title', options.title])
-      message = (options.title or options.message or
-                 CreateDescriptionFromLog(args))
+      if options.message:
+        message = options.message
+      else:
+        message = CreateDescriptionFromLog(args)
+        if options.title:
+          message = options.title + '\n\n' + message
       change_desc = ChangeDescription(message)
       if options.reviewers or options.tbr_owners:
         change_desc.update_reviewers(options.reviewers,
@@ -2343,12 +2193,9 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
     # projects that have their source spread across multiple repos.
     remote_url = self.GetGitBaseUrlFromConfig()
     if not remote_url:
-      if settings.GetIsGitSvn():
-        remote_url = self.GetGitSvnRemoteUrl()
-      else:
-        if self.GetRemoteUrl() and '/' in self.GetUpstreamBranch():
-          remote_url = '%s@%s' % (self.GetRemoteUrl(),
-                                  self.GetUpstreamBranch().split('/')[-1])
+      if self.GetRemoteUrl() and '/' in self.GetUpstreamBranch():
+        remote_url = '%s@%s' % (self.GetRemoteUrl(),
+                                self.GetUpstreamBranch().split('/')[-1])
     if remote_url:
       remote, remote_branch = self.GetRemoteBranch()
       target_ref = GetTargetRef(remote, remote_branch, options.target_branch,
@@ -4346,13 +4193,14 @@ def CMDupload(parser, args):
                     help='bypass watchlists auto CC-ing reviewers')
   parser.add_option('-f', action='store_true', dest='force',
                     help="force yes to questions (don't prompt)")
-  parser.add_option('-m', dest='message', help='message for patchset')
+  parser.add_option('--message', '-m', dest='message',
+                    help='message for patchset')
   parser.add_option('-b', '--bug',
                     help='pre-populate the bug number(s) for this issue. '
                          'If several, separate with commas')
   parser.add_option('--message-file', dest='message_file',
                     help='file which contains message for patchset')
-  parser.add_option('-t', dest='title',
+  parser.add_option('--title', '-t', dest='title',
                     help='title for patchset (Rietveld only)')
   parser.add_option('-r', '--reviewers',
                     action='append', default=[],
@@ -4425,14 +4273,6 @@ def CMDupload(parser, args):
   return cl.CMDUpload(options, args, orig_args)
 
 
-def IsSubmoduleMergeCommit(ref):
-  # When submodules are added to the repo, we expect there to be a single
-  # non-git-svn merge commit at remote HEAD with a signature comment.
-  pattern = '^SVN changes up to revision [0-9]*$'
-  cmd = ['rev-list', '--merges', '--grep=%s' % pattern, '%s^!' % ref]
-  return RunGit(cmd) != ''
-
-
 def SendUpstream(parser, args, cmd):
   """Common code for CMDland and CmdDCommit
 
@@ -4486,7 +4326,7 @@ def SendUpstream(parser, args, cmd):
 
   current = cl.GetBranch()
   remote, upstream_branch = cl.FetchUpstreamTuple(cl.GetBranch())
-  if not settings.GetIsGitSvn() and remote == '.':
+  if remote == '.':
     print()
     print('Attempting to push branch %r into another local branch!' % current)
     print()
@@ -4499,7 +4339,7 @@ def SendUpstream(parser, args, cmd):
     print('  Current parent: %r' % upstream_branch)
     return 1
 
-  if not args or cmd == 'land':
+  if not args:
     # Default to merging against our best guess of the upstream branch.
     args = [cl.GetUpstreamBranch()]
 
@@ -4509,9 +4349,8 @@ def SendUpstream(parser, args, cmd):
       return 1
 
   base_branch = args[0]
-  base_has_submodules = IsSubmoduleMergeCommit(base_branch)
 
-  if git_common.is_dirty_git_tree(cmd):
+  if git_common.is_dirty_git_tree('land'):
     return 1
 
   # This rev-list syntax means "show all commits not in my branch that
@@ -4521,29 +4360,8 @@ def SendUpstream(parser, args, cmd):
   if upstream_commits:
     print('Base branch "%s" has %d commits '
           'not in this branch.' % (base_branch, len(upstream_commits)))
-    print('Run "git merge %s" before attempting to %s.' % (base_branch, cmd))
+    print('Run "git merge %s" before attempting to land.' % base_branch)
     return 1
-
-  # This is the revision `svn dcommit` will commit on top of.
-  svn_head = None
-  if cmd == 'dcommit' or base_has_submodules:
-    svn_head = RunGit(['log', '--grep=^git-svn-id:', '-1',
-                       '--pretty=format:%H'])
-
-  if cmd == 'dcommit':
-    # If the base_head is a submodule merge commit, the first parent of the
-    # base_head should be a git-svn commit, which is what we're interested in.
-    base_svn_head = base_branch
-    if base_has_submodules:
-      base_svn_head += '^1'
-
-    extra_commits = RunGit(['rev-list', '^' + svn_head, base_svn_head])
-    if extra_commits:
-      print('This branch has %d additional commits not upstreamed yet.'
-            % len(extra_commits.splitlines()))
-      print('Upstream "%s" or rebase this branch on top of the upstream trunk '
-            'before attempting to %s.' % (base_branch, cmd))
-      return 1
 
   merge_base = RunGit(['merge-base', base_branch, 'HEAD']).strip()
   if not options.bypass_hooks:
@@ -4562,11 +4380,11 @@ def SendUpstream(parser, args, cmd):
     status = GetTreeStatus()
     if 'closed' == status:
       print('The tree is closed.  Please wait for it to reopen. Use '
-            '"git cl %s --bypass-hooks" to commit on a closed tree.' % cmd)
+            '"git cl land --bypass-hooks" to commit on a closed tree.')
       return 1
     elif 'unknown' == status:
       print('Unable to determine tree status.  Please verify manually and '
-            'use "git cl %s --bypass-hooks" to commit on a closed tree.' % cmd)
+            'use "git cl land --bypass-hooks" to commit on a closed tree.')
       return 1
 
   change_desc = ChangeDescription(options.message)
@@ -4606,9 +4424,7 @@ def SendUpstream(parser, args, cmd):
 
   # We want to squash all this branch's commits into one commit with the proper
   # description. We do this by doing a "reset --soft" to the base branch (which
-  # keeps the working copy the same), then dcommitting that.  If origin/master
-  # has a submodule merge commit, we'll also need to cherry-pick the squashed
-  # commit onto a branch based on the git-svn head.
+  # keeps the working copy the same), then dcommitting that.
   MERGE_BRANCH = 'git-cl-commit'
   CHERRY_PICK_BRANCH = 'git-cl-cherry-pick'
   # Delete the branches if they exist.
@@ -4643,84 +4459,60 @@ def SendUpstream(parser, args, cmd):
           ])
     else:
       RunGit(['commit', '-m', commit_desc.description])
-    if base_has_submodules:
-      cherry_pick_commit = RunGit(['rev-list', 'HEAD^!']).rstrip()
-      RunGit(['branch', CHERRY_PICK_BRANCH, svn_head])
-      RunGit(['checkout', CHERRY_PICK_BRANCH])
-      RunGit(['cherry-pick', cherry_pick_commit])
-    if cmd == 'land':
-      remote, branch = cl.FetchUpstreamTuple(cl.GetBranch())
-      logging.debug('remote: %s, branch %s', remote, branch)
-      mirror = settings.GetGitMirror(remote)
-      if mirror:
-        pushurl = mirror.url
-        git_numberer = _GitNumbererState.load(pushurl, branch)
-      else:
-        pushurl = remote  # Usually, this is 'origin'.
-        git_numberer = _GitNumbererState.load(
-            RunGit(['config', 'remote.%s.url' % remote]).strip(), branch)
+
+    remote, branch = cl.FetchUpstreamTuple(cl.GetBranch())
+    mirror = settings.GetGitMirror(remote)
+    if mirror:
+      pushurl = mirror.url
+      git_numberer = _GitNumbererState.load(pushurl, branch)
+    else:
+      pushurl = remote  # Usually, this is 'origin'.
+      git_numberer = _GitNumbererState.load(
+          RunGit(['config', 'remote.%s.url' % remote]).strip(), branch)
 
       pending_prefix = git_numberer.pending_prefix
 
-      if git_numberer.should_git_number:
-        # TODO(tandrii): run git fetch in a loop + autorebase when there there
-        # is no pending ref to push to?
-        logging.debug('Adding git number footers')
-        parent_msg = RunGit(['show', '-s', '--format=%B', merge_base]).strip()
-        commit_desc.update_with_git_number_footers(merge_base, parent_msg,
-                                                   branch)
-        # Ensure timestamps are monotonically increasing.
-        timestamp = max(1 + _get_committer_timestamp(merge_base),
-                        _get_committer_timestamp('HEAD'))
-        _git_amend_head(commit_desc.description, timestamp)
-        change_desc = ChangeDescription(commit_desc.description)
-        # If gnumbd is sitll ON and we ultimately push to branch with
-        # pending_prefix, gnumbd will modify footers we've just inserted with
-        # 'Original-', which is annoying but still technically correct.
+    if git_numberer.should_git_number:
+      # TODO(tandrii): run git fetch in a loop + autorebase when there there
+      # is no pending ref to push to?
+      logging.debug('Adding git number footers')
+      parent_msg = RunGit(['show', '-s', '--format=%B', merge_base]).strip()
+      commit_desc.update_with_git_number_footers(merge_base, parent_msg,
+                                                 branch)
+      # Ensure timestamps are monotonically increasing.
+      timestamp = max(1 + _get_committer_timestamp(merge_base),
+                      _get_committer_timestamp('HEAD'))
+      _git_amend_head(commit_desc.description, timestamp)
+      change_desc = ChangeDescription(commit_desc.description)
+      # If gnumbd is sitll ON and we ultimately push to branch with
+      # pending_prefix, gnumbd will modify footers we've just inserted with
+      # 'Original-', which is annoying but still technically correct.
 
-      if not pending_prefix or branch.startswith(pending_prefix):
-        # If not using refs/pending/heads/* at all, or target ref is already set
-        # to pending, then push to the target ref directly.
-        # NB(tandrii): I think branch.startswith(pending_prefix) never happens
-        # in practise. I really tried to create a new branch tracking
-        # refs/pending/heads/master directly and git cl land failed long before
-        # reaching this. Disagree? Comment on http://crbug.com/642493.
-        if pending_prefix:
-          print('\n\nYOU GOT A CHANCE TO WIN A FREE GIFT!\n\n'
-                'Grab your .git/config, add instructions how to reproduce '
-                'this, and post it to http://crbug.com/642493.\n'
-                'The first reporter gets a free "Black Swan" book from '
-                'tandrii@\n\n')
-        retcode, output = RunGitWithCode(
-            ['push', '--porcelain', pushurl, 'HEAD:%s' % branch])
-        pushed_to_pending = pending_prefix and branch.startswith(pending_prefix)
-      else:
-        # Cherry-pick the change on top of pending ref and then push it.
-        assert branch.startswith('refs/'), branch
-        assert pending_prefix[-1] == '/', pending_prefix
-        pending_ref = pending_prefix + branch[len('refs/'):]
-        retcode, output = PushToGitPending(pushurl, pending_ref)
-        pushed_to_pending = (retcode == 0)
-      if retcode == 0:
-        revision = RunGit(['rev-parse', 'HEAD']).strip()
+    if not pending_prefix or branch.startswith(pending_prefix):
+      # If not using refs/pending/heads/* at all, or target ref is already set
+      # to pending, then push to the target ref directly.
+      # NB(tandrii): I think branch.startswith(pending_prefix) never happens
+      # in practise. I really tried to create a new branch tracking
+      # refs/pending/heads/master directly and git cl land failed long before
+      # reaching this. Disagree? Comment on http://crbug.com/642493.
+      if pending_prefix:
+        print('\n\nYOU GOT A CHANCE TO WIN A FREE GIFT!\n\n'
+              'Grab your .git/config, add instructions how to reproduce '
+              'this, and post it to http://crbug.com/642493.\n'
+              'The first reporter gets a free "Black Swan" book from '
+              'tandrii@\n\n')
+      retcode, output = RunGitWithCode(
+          ['push', '--porcelain', pushurl, 'HEAD:%s' % branch])
+      pushed_to_pending = pending_prefix and branch.startswith(pending_prefix)
     else:
-      # dcommit the merge branch.
-      cmd_args = [
-        'svn', 'dcommit',
-        '-C%s' % options.similarity,
-        '--no-rebase', '--rmdir',
-      ]
-      if settings.GetForceHttpsCommitUrl():
-        # Allow forcing https commit URLs for some projects that don't allow
-        # committing to http URLs (like Google Code).
-        remote_url = cl.GetGitSvnRemoteUrl()
-        if urlparse.urlparse(remote_url).scheme == 'http':
-          remote_url = remote_url.replace('http://', 'https://')
-        cmd_args.append('--commit-url=%s' % remote_url)
-      _, output = RunGitWithCode(cmd_args)
-      if 'Committed r' in output:
-        revision = re.match(
-          '.*?\nCommitted r(\\d+)', output, re.DOTALL).group(1)
+      # Cherry-pick the change on top of pending ref and then push it.
+      assert branch.startswith('refs/'), branch
+      assert pending_prefix[-1] == '/', pending_prefix
+      pending_ref = pending_prefix + branch[len('refs/'):]
+      retcode, output = PushToGitPending(pushurl, pending_ref)
+      pushed_to_pending = (retcode == 0)
+    if retcode == 0:
+      revision = RunGit(['rev-parse', 'HEAD']).strip()
     logging.debug(output)
   except:  # pylint: disable=W0702
     if _IS_BEING_TESTED:
@@ -4732,8 +4524,6 @@ def SendUpstream(parser, args, cmd):
     # And then swap back to the original branch and clean up.
     RunGit(['checkout', '-q', cl.GetBranch()])
     RunGit(['branch', '-D', MERGE_BRANCH])
-    if base_has_submodules:
-      RunGit(['branch', '-D', CHERRY_PICK_BRANCH])
 
   if not revision:
     print('Failed to push. If this persists, please file a bug.')
@@ -4778,7 +4568,7 @@ def SendUpstream(parser, args, cmd):
     print('It will show up on %s in ~1 min, once it gets a Cr-Commit-Position '
           'footer.' % branch)
 
-  hook = POSTUPSTREAM_HOOK_PATTERN % cmd
+  hook = POSTUPSTREAM_HOOK_PATTERN
   if os.path.isfile(hook):
     RunCommand([hook, merge_base], error_ok=True)
 
@@ -4878,40 +4668,18 @@ def IsFatalPushFailure(push_stdout):
   return '(prohibited by Gerrit)' in push_stdout
 
 
-@subcommand.usage('[upstream branch to apply against]')
+@subcommand.usage('DEPRECATED')
 def CMDdcommit(parser, args):
-  """Commits the current changelist via git-svn."""
-  if not settings.GetIsGitSvn():
-    if git_footers.get_footer_svn_id():
-      # If it looks like previous commits were mirrored with git-svn.
-      message = """This repository appears to be a git-svn mirror, but we
-don't support git-svn mirrors anymore."""
-    else:
-      message = """This doesn't appear to be an SVN repository.
-If your project has a true, writeable git repository, you probably want to run
-'git cl land' instead.
-If your project has a git mirror of an upstream SVN master, you probably need
-to run 'git svn init'.
-
-Using the wrong command might cause your commit to appear to succeed, and the
-review to be closed, without actually landing upstream. If you choose to
-proceed, please verify that the commit lands upstream as expected."""
-    print(message)
-    ask_for_data('[Press enter to dcommit or ctrl-C to quit]')
-  print('WARNING: chrome infrastructure is migrating SVN repos to Git.\n'
-        'Please let us know of this project you are committing to:'
-        '    http://crbug.com/600451')
-  return SendUpstream(parser, args, 'dcommit')
+  """DEPRECATED: Used to commit the current changelist via git-svn."""
+  message = ('git-cl no longer supports committing to SVN repositories via '
+             'git-svn. You probably want to use `git cl land` instead.')
+  print(message)
+  return 1
 
 
 @subcommand.usage('[upstream branch to apply against]')
 def CMDland(parser, args):
   """Commits the current changelist via git."""
-  if settings.GetIsGitSvn() or git_footers.get_footer_svn_id():
-    print('This appears to be an SVN repository.')
-    print('Are you sure you didn\'t mean \'git cl dcommit\'?')
-    print('(Ignore if this is the first commit after migrating from svn->git)')
-    ask_for_data('[Press enter to push or ctrl-C to quit]')
   return SendUpstream(parser, args, 'land')
 
 
@@ -5003,16 +4771,6 @@ def CMDpatch(parser, args):
 
   return cl.CMDPatchIssue(args[0], options.reject, options.nocommit,
                           options.directory)
-
-
-def CMDrebase(parser, args):
-  """Rebases current branch on top of svn repo."""
-  # Provide a wrapper for git svn rebase to help avoid accidental
-  # git svn dcommit.
-  # It's the only command that doesn't use parser at all since we just defer
-  # execution to git-svn.
-
-  return RunGitWithCode(['svn', 'rebase'] + args)[1]
 
 
 def GetTreeStatus(url=None):

@@ -22,6 +22,24 @@
       "revId": "91763bce9f5b82bbd54d3b69f07fd7ee82fad1fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a280382_f8836aeb",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-13T19:38:11Z",
+      "side": 1,
+      "message": "Because if it was a keyboardinterrupt, reraising that isn\u0027t very important. I guess I could capture the gerriterror and keyboardinterrupt separately and handle them differently but ew that\u0027s ugly",
+      "parentUuid": "5aa6fbc4_2fa64960",
+      "revId": "91763bce9f5b82bbd54d3b69f07fd7ee82fad1fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "5a199b0d_57a42c8b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:50:23Z",
+      "side": 1,
+      "message": "yep, edit in UI makes sense, because your primary email is @google.com and your accounts are likely linked. All good here.",
+      "parentUuid": "ba99b795_97405675",
+      "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dabcabd0_5326c4e7",
         "filename": "tests/presubmit_unittest.py",
         "patchSetId": 2

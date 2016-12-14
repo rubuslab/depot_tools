@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fabfafbf_f465f8f5",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 1,
+      "message": "nit: no longer \"PATTERN\"",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 25
+      },
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba9b777b_327dd05a",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4204,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 4204,
+        "startChar": 45,
+        "endLine": 4204,
+        "endChar": 60
+      },
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fabfafbf_d468fcd0",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4276,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 1,
+      "message": "remove this. It\u0027s always \"land\"",
+      "range": {
+        "startLine": 4276,
+        "startChar": 31,
+        "endLine": 4276,
+        "endChar": 34
+      },
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa940f52_6f8f6d0f",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4427,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 1,
+      "message": "does dcommit still work?",
+      "range": {
+        "startLine": 4427,
+        "startChar": 43,
+        "endLine": 4427,
+        "endChar": 54
+      },
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a149fd4_787a8128",
+        "filename": "tests/push-from-logs.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 1,
+      "message": "leftover debug comment or forgot to uncomment?",
+      "range": {
+        "startLine": 60,
+        "startChar": 6,
+        "endLine": 60,
+        "endChar": 10
+      },
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

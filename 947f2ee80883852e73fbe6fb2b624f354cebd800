@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa073a7_51f094df",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 0,
+      "message": "please keep this.",
+      "range": {
+        "startLine": 946,
+        "startChar": 6,
+        "endLine": 946,
+        "endChar": 27
+      },
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa1ffa9_f06500f6",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 0,
+      "message": "and this.",
+      "range": {
+        "startLine": 1021,
+        "startChar": 6,
+        "endLine": 1021,
+        "endChar": 24
+      },
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac72367_55194c5f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1086,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 0,
+      "message": "and this.",
+      "range": {
+        "startLine": 1086,
+        "startChar": 6,
+        "endLine": 1086,
+        "endChar": 37
+      },
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa073a7_71f598ce",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1208,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 0,
+      "message": "and all the way to this.",
+      "range": {
+        "startLine": 1208,
+        "startChar": 6,
+        "endLine": 1208,
+        "endChar": 41
+      },
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a199b0d_378418f4",
+        "filename": "tests/push-basic.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 0,
+      "message": "why is this script going away?",
+      "range": {
+        "startLine": 1,
+        "startChar": 19,
+        "endLine": 1,
+        "endChar": 0
+      },
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a322788_9672cc4f",
+        "filename": "tests/rename.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:26:01Z",
+      "side": 0,
+      "message": "and why this is gone?",
+      "range": {
+        "startLine": 1,
+        "startChar": 15,
+        "endLine": 1,
+        "endChar": 19
+      },
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

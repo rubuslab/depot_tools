@@ -22,6 +22,24 @@
       "revId": "f3a4ff195af6738ab1fe02d7954dc5e4646dcea7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba99b795_0b730508",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2016-12-14T00:45:55Z",
+      "side": 1,
+      "message": "Good point, questions should be in the code review request email rather than in the CL description.\n\nIn the main function in presubmit_support.py, may_prompt is defaulted to False, and in the run_presubmit recipe, no value is given for may_prompt, so this would change the behavior of run_presubmit to pass on warnings, instead of failing as it would now.\n\nThere\u0027s currently no test in run_presubmit.py that covers this case, since the recipe test for run_presubmit doesn\u0027t run the presubmit script, it just replaces the \"presubmit\" step with different step data (including return code 0, 1, and 2).\n\nNote, though, that in any case, presubmit errors are still errors and will always cause presubmit to fail regardless of the value of may_prompt.",
+      "parentUuid": "5aa6fbc4_2fcd6920",
+      "revId": "f3a4ff195af6738ab1fe02d7954dc5e4646dcea7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

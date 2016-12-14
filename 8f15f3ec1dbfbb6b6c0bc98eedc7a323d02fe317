@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba99b795_49afd2c6",
+        "filename": "bootstrap/win/git_bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-12-14T19:07:01Z",
+      "side": 0,
+      "message": "actually this is wrongish. I just want to remove the bootstrap line",
+      "revId": "8f15f3ec1dbfbb6b6c0bc98eedc7a323d02fe317",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

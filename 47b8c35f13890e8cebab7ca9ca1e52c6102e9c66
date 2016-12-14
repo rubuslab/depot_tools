@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa1ffa9_1078c469",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2016-12-14T18:18:43Z",
+      "side": 1,
+      "message": "please avoid committing names of actual users to code - to avoid emails getting into spam databases... use \"test@chromium.org\"",
+      "range": {
+        "startLine": 414,
+        "startChar": 13,
+        "endLine": 414,
+        "endChar": 23
+      },
+      "revId": "47b8c35f13890e8cebab7ca9ca1e52c6102e9c66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -43,17 +43,6 @@ def clean_up_old_git_installations(git_directory):
       shutil.rmtree(full_entry, ignore_errors=True)
 
 
-def bootstrap_cipd(cipd_directory, cipd_platform):
-  """Bootstraps CIPD client into |cipd_directory|."""
-  _check_call([
-      sys.executable,
-      os.path.join(ROOT_DIR, 'recipe_modules', 'cipd', 'resources',
-                   'bootstrap.py'),
-      '--platform', cipd_platform,
-      '--dest-directory', cipd_directory
-  ])
-
-
 def cipd_install(args, dest_directory, package, version):
   """Installs CIPD |package| at |version| into |dest_directory|."""
   manifest_file = tempfile.mktemp()
@@ -104,9 +93,7 @@ def need_to_install_git(args, git_directory):
 def install_git(args, git_version, git_directory):
   """Installs |git_version| into |git_directory|."""
   cipd_platform = 'windows-%s' % ('amd64' if args.bits == 64 else '386')
-  if not args.cipd_client:
-    bootstrap_cipd(ROOT_DIR, cipd_platform)
-    args.cipd_client = os.path.join(ROOT_DIR, 'cipd')
+  args.cipd_client = os.path.join(ROOT_DIR, 'cipd')
   temp_dir = tempfile.mkdtemp()
   try:
     cipd_install(args,

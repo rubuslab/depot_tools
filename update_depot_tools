@@ -96,15 +96,20 @@ function update_git_repo {
   fi
 
   git fetch -q origin &> /dev/null
-  local REBASE_TXT STATUS
-  REBASE_TXT=$(git rebase -q origin/master 2>&1)
-  STATUS=$?
-  if [[ $STATUS -ne 0 ]]; then
-    echo "depot_tools update failed. Conflict in $base_dir" >&2
-    echo "$REBASE_TXT" >&2
-    git rebase --abort 2> /dev/null
+
+  if [[ "$CHROME_HEADLESS" -eq 1 ]]; then
+    git checkout -f origin/master
+  else
+    local REBASE_TXT STATUS
+    REBASE_TXT=$(git rebase -q origin/master 2>&1)
+    STATUS=$?
+    if [[ $STATUS -ne 0 ]]; then
+      echo "depot_tools update failed. Conflict in $base_dir" >&2
+      echo "$REBASE_TXT" >&2
+      git rebase --abort 2> /dev/null
+    fi
+    return $STATUS
   fi
-  return $STATUS
 }
 
 # Update git checkouts.

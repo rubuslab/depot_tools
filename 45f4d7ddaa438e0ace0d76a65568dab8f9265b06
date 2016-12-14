@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "ba99b795_97405675",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2016-12-14T17:38:31Z",
+      "side": 1,
+      "message": "Nope, this wasn\u0027t intentional -- I wonder whether it happened when I did a new upload (because of some git settings changing, perhaps? although I don\u0027t remember changing it) or whether it happened when I edited the commit description through the Gerrit UI.",
+      "parentUuid": "dabcabd0_d67f227c",
+      "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dabcabd0_5326c4e7",
         "filename": "tests/presubmit_unittest.py",
         "patchSetId": 2
@@ -78,6 +96,24 @@
       "side": 1,
       "message": "so, i took another look, and now I wonder, why even include \"presubmit.\" there if it\u0027s really just os.path.join \u0026\u0026 os is imported here too.",
       "parentUuid": "1a280382_b364e55f",
+      "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba99b795_7756f246",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2016-12-14T17:38:31Z",
+      "side": 1,
+      "message": "I guess it would only matter if presubmit.os.path.join was somehow overridden at some point, replaced with a mock or changed to always join with forward slashes even on windows.\n\nI don\u0027t think that\u0027s the case though, so using os.path.join everywhere would probably also be fine.",
+      "parentUuid": "fa940f52_0f46e9c4",
       "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

@@ -22,6 +22,24 @@
       "revId": "47b8c35f13890e8cebab7ca9ca1e52c6102e9c66",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a322788_b677c83e",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T18:35:43Z",
+      "side": 1,
+      "message": "i don\u0027t buy spam database argument any more. All these emails are in git commit history. It\u0027s super unlikely those structured data sources aren\u0027t used to fill databases. But, these TBRs useless in this test. Removed.",
+      "parentUuid": "7aa1ffa9_1078c469",
+      "revId": "47b8c35f13890e8cebab7ca9ca1e52c6102e9c66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

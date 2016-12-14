@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "dabcabd0_d67f227c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T16:39:36Z",
+      "side": 1,
+      "message": "and how did you get diff author and committer? was this really intentional?",
+      "range": {
+        "startLine": 4,
+        "startChar": 29,
+        "endLine": 4,
+        "endChar": 53
+      },
+      "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dabcabd0_5326c4e7",
         "filename": "tests/presubmit_unittest.py",
         "patchSetId": 2
@@ -37,6 +60,24 @@
       "side": 1,
       "message": "I kept this shortcut here just for consistency, but if you\u0027re OK with changing all uses of this to presubmit.os.path.join then I would be in favor of that. (Now done.)",
       "parentUuid": "dabcabd0_5326c4e7",
+      "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa940f52_0f46e9c4",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T16:39:36Z",
+      "side": 1,
+      "message": "so, i took another look, and now I wonder, why even include \"presubmit.\" there if it\u0027s really just os.path.join \u0026\u0026 os is imported here too.",
+      "parentUuid": "1a280382_b364e55f",
       "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

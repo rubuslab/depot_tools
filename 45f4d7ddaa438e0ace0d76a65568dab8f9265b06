@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "1a280382_b364e55f",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2016-12-14T00:22:08Z",
+      "side": 1,
+      "message": "I kept this shortcut here just for consistency, but if you\u0027re OK with changing all uses of this to presubmit.os.path.join then I would be in favor of that. (Now done.)",
+      "parentUuid": "dabcabd0_5326c4e7",
+      "revId": "45f4d7ddaa438e0ace0d76a65568dab8f9265b06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fabfafbf_54ab0c27",
         "filename": "tests/presubmit_unittest.py",
         "patchSetId": 2

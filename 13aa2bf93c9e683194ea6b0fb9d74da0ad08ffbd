@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aca276f_998ddfc7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T16:39:36Z",
+      "side": 1,
+      "message": "i wonder how did this change.",
+      "range": {
+        "startLine": 4,
+        "startChar": 29,
+        "endLine": 4,
+        "endChar": 51
+      },
+      "revId": "13aa2bf93c9e683194ea6b0fb9d74da0ad08ffbd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa940f52_8f39f934",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-14T16:39:36Z",
+      "side": 1,
+      "message": "aha",
+      "range": {
+        "startLine": 27,
+        "startChar": 28,
+        "endLine": 27,
+        "endChar": 37
+      },
+      "revId": "13aa2bf93c9e683194ea6b0fb9d74da0ad08ffbd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

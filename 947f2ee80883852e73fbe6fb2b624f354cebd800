@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "ba99b795_0e7d4859",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-14T23:46:22Z",
+      "side": 0,
+      "message": "Totally redid the test removals, PTAnotherL.",
+      "parentUuid": "9aa073a7_51f094df",
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa1ffa9_f06500f6",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 2
@@ -117,6 +135,24 @@
     },
     {
       "key": {
+        "uuid": "ba99b795_f371ef84",
+        "filename": "tests/push-basic.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-14T23:46:22Z",
+      "side": 0,
+      "message": "Because tests/basic.sh used to test committing to SVN, but now I made it test pushing to Git, so this test is redundant. (In fact, the new tests/basic.sh is just a rename of this file.)",
+      "parentUuid": "5a199b0d_378418f4",
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a322788_9672cc4f",
         "filename": "tests/rename.sh",
         "patchSetId": 2
@@ -134,6 +170,24 @@
         "endLine": 1,
         "endChar": 19
       },
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba99b795_f39d6fa5",
+        "filename": "tests/rename.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-14T23:46:22Z",
+      "side": 0,
+      "message": "Because it wasn\u0027t actually testing what it claimed to be (see line 30). What was here was just a rehash of other tests.",
+      "parentUuid": "3a322788_9672cc4f",
       "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "ba99b795_93518327",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-14T23:46:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fabfafbf_f465f8f5",
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba9b777b_327dd05a",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -42,6 +60,24 @@
         "endLine": 4204,
         "endChar": 60
       },
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba99b795_f3744fad",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4204,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-14T23:46:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba9b777b_327dd05a",
       "revId": "370911d2e93b5dca623bb24282fafdff34134101",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "ba99b795_53665b02",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4276,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-14T23:46:22Z",
+      "side": 1,
+      "message": "I removed SendUpstream entirely, and moved all the code into CMDland.",
+      "parentUuid": "fabfafbf_d468fcd0",
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa940f52_6f8f6d0f",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -94,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "ba99b795_f38b2f72",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4427,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-14T23:46:22Z",
+      "side": 1,
+      "message": "Nope, missed this.",
+      "parentUuid": "fa940f52_6f8f6d0f",
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a149fd4_787a8128",
         "filename": "tests/push-from-logs.sh",
         "patchSetId": 2
@@ -111,6 +183,24 @@
         "endLine": 60,
         "endChar": 10
       },
+      "revId": "370911d2e93b5dca623bb24282fafdff34134101",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba99b795_b3ea47f0",
+        "filename": "tests/push-from-logs.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-14T23:46:22Z",
+      "side": 1,
+      "message": "Just doesn\u0027t actually work. Couldn\u0027t figure out any way to make it successful. Left it for someone else to tackle some other time.",
+      "parentUuid": "7a149fd4_787a8128",
       "revId": "370911d2e93b5dca623bb24282fafdff34134101",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

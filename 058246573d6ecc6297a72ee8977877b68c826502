@@ -22,6 +22,24 @@
       "revId": "058246573d6ecc6297a72ee8977877b68c826502",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ab57f43_f01640bf",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2982,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T19:49:33Z",
+      "side": 1,
+      "message": "the error message is pretty unique; actual refspec is printed right above.  So, I don\u0027t think there is any value in full stacktrace.",
+      "parentUuid": "ba99b795_3f90352d",
+      "revId": "058246573d6ecc6297a72ee8977877b68c826502",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

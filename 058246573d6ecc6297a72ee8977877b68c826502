@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba99b795_3f90352d",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2982,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2016-12-15T17:01:37Z",
+      "side": 1,
+      "message": "WDYT about raising on verbose, just to make it easier to pinpoint where the problem is happening?",
+      "range": {
+        "startLine": 2982,
+        "startChar": 6,
+        "endLine": 2982,
+        "endChar": 18
+      },
+      "revId": "058246573d6ecc6297a72ee8977877b68c826502",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -53,13 +53,11 @@ def cipd_install(args, dest_directory, package, version):
       f.write('%s %s\n' % (package, version))
 
     cipd_args = [
-      args.cipd_client,
+      os.path.join(ROOT_DIR, 'cipd'+BAT_EXT),
       'ensure',
       '-list', manifest_file,
       '-root', dest_directory,
     ]
-    if args.cipd_cache_directory:
-      cipd_args.extend(['-cache-dir', args.cipd_cache_directory])
     if args.verbose:
       cipd_args.append('-verbose')
     _check_call(cipd_args)
@@ -160,11 +158,6 @@ def main(argv):
   parser = argparse.ArgumentParser()
   parser.add_argument('--bits', type=int, choices=(32,64), default=64,
                       help='Bitness of the client to install.')
-  parser.add_argument('--cipd-client',
-                      help='Path to CIPD client binary. default: %(default)s',
-                      default=os.path.join(ROOT_DIR, 'cipd'+BAT_EXT))
-  parser.add_argument('--cipd-cache-directory',
-                      help='Path to CIPD cache directory.')
   parser.add_argument('--force', action='store_true',
                       help='Always re-install git.')
   parser.add_argument('--verbose', action='store_true')

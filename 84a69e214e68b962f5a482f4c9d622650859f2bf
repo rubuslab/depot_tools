@@ -1,0 +1,303 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ade17f42_62bd5664",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "sort imports",
+      "range": {
+        "startLine": 5,
+        "startChar": 7,
+        "endLine": 5,
+        "endChar": 9
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "daa58b1c_eb72d14f",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "imo, confusing. how about\nbut add ability to wait with timeout for process completion.",
+      "range": {
+        "startLine": 20,
+        "startChar": 32,
+        "endLine": 20,
+        "endChar": 49
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acce7f8_e672fe4f",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "_read_trace, it\u0027s not supposed to be public.",
+      "range": {
+        "startLine": 55,
+        "startChar": 6,
+        "endLine": 55,
+        "endChar": 16
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac9e3ea_856d0276",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "does this work on win  if trace_file is being opened for writing by git fetch itself?",
+      "range": {
+        "startLine": 58,
+        "startChar": 4,
+        "endLine": 58,
+        "endChar": 36
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "faa88ff5_8c6d2776",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "are you sure git flushes file on line boundaries always? If not, your script could read line half way first, and then another half next time this is called, missing a R_ACTIVE match.",
+      "range": {
+        "startLine": 60,
+        "startChar": 6,
+        "endLine": 60,
+        "endChar": 20
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acce7f8_c677023e",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "_new_state",
+      "range": {
+        "startLine": 64,
+        "startChar": 6,
+        "endLine": 64,
+        "endChar": 15
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa30717_6e870ffb",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "i\u0027d also assert that state is in (self.NOT_STARTED, self.ACTIVE)\nOR \nis it possible that git trace is first ACTIVE then INACTIVE then ACTIVE again?",
+      "range": {
+        "startLine": 69,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 21
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa30717_0e7acb26",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "nit: file, i think",
+      "range": {
+        "startLine": 79,
+        "startChar": 41,
+        "endLine": 79,
+        "endChar": 42
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "faa88ff5_ec72eb4f",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "assert self.kill_reason is None, \"don\u0027t call should_kill after it returned True\"",
+      "range": {
+        "startLine": 81,
+        "startChar": 5,
+        "endLine": 81,
+        "endChar": 6
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa30717_4e84d3f4",
+        "filename": "igit.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "i think this could also raise, and then you\u0027d end up not removing tempdir.",
+      "range": {
+        "startLine": 115,
+        "startChar": 9,
+        "endLine": 115,
+        "endChar": 19
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa00309_4d9b394d",
+        "filename": "tests/igit_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "tearDown",
+      "range": {
+        "startLine": 44,
+        "startChar": 6,
+        "endLine": 44,
+        "endChar": 13
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad35b96_678732fb",
+        "filename": "tests/igit_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "either \\n here or splitlines(True)",
+      "range": {
+        "startLine": 68,
+        "startChar": 15,
+        "endLine": 68,
+        "endChar": 16
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac9e3ea_e572f64f",
+        "filename": "tests/igit_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-15T16:41:54Z",
+      "side": 1,
+      "message": "either \\n here or splitlines(True)",
+      "range": {
+        "startLine": 94,
+        "startChar": 14,
+        "endLine": 94,
+        "endChar": 50
+      },
+      "revId": "84a69e214e68b962f5a482f4c9d622650859f2bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

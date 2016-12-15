@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba99b795_8d84b4f5",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1281,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2016-12-15T22:27:20Z",
+      "side": 0,
+      "message": "In the original, if:\n - errors is empty\n - warnings is non-empty\n - may_prompt is false\n\nThen it will go to the else branch and call output.fail().",
+      "revId": "9b713dd18b0674a362e723d81e3a378d657e54db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

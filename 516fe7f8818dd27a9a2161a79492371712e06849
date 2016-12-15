@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba99b795_8d9b944c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1281,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2016-12-15T22:27:20Z",
+      "side": 1,
+      "message": "In the changed version, if\n - errors is empty\n - warnings is non-empty\n - may_prompt is false\n\nThen it will go to the elif branch and print a message, but it will not go to the if branch inside of that.",
+      "revId": "516fe7f8818dd27a9a2161a79492371712e06849",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

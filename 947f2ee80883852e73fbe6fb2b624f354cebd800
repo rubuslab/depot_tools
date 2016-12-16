@@ -153,6 +153,24 @@
     },
     {
       "key": {
+        "uuid": "daa58b1c_ab728900",
+        "filename": "tests/push-basic.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-16T13:59:14Z",
+      "side": 0,
+      "message": "ah, gotcha.",
+      "parentUuid": "ba99b795_f371ef84",
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a322788_9672cc4f",
         "filename": "tests/rename.sh",
         "patchSetId": 2
@@ -188,6 +206,24 @@
       "side": 0,
       "message": "Because it wasn\u0027t actually testing what it claimed to be (see line 30). What was here was just a rehash of other tests.",
       "parentUuid": "3a322788_9672cc4f",
+      "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "daa58b1c_8b77cdf0",
+        "filename": "tests/rename.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2016-12-16T13:59:14Z",
+      "side": 0,
+      "message": "line 30 - lol. yeah, let\u0027s kill it.",
+      "parentUuid": "ba99b795_f39d6fa5",
       "revId": "947f2ee80883852e73fbe6fb2b624f354cebd800",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

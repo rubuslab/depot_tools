@@ -22,6 +22,30 @@
       "revId": "90dbf6cbbdde401d314adbea3ae1be28a4d1d6e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a3f8799_296eb63e",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2016-12-18T19:11:44Z",
+      "side": 1,
+      "message": "Oh, you\u0027re right. I\u0027ll revise this.",
+      "parentUuid": "3a3f8799_6ec52449",
+      "range": {
+        "startLine": 106,
+        "startChar": 4,
+        "endLine": 107,
+        "endChar": 60
+      },
+      "revId": "90dbf6cbbdde401d314adbea3ae1be28a4d1d6e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

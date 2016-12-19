@@ -16,6 +16,24 @@
       "revId": "b4f95eda6f5a944700c6895c2f3350b88f774974",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a3f8799_5fac946b",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2016-12-19T18:38:38Z",
+      "side": 1,
+      "message": "I forget what I was writing :-P I probably wanted to say that it\u0027s an example presubmit script that produces an error or warning depending on the tags in the description. Although this probably isn\u0027t necessary to say... now removed.",
+      "parentUuid": "3a3f8799_24db3b3a",
+      "revId": "b4f95eda6f5a944700c6895c2f3350b88f774974",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -87,12 +87,13 @@ def _RightHandSideLinesImpl(affected_files):
 
 
 class PresubmitOutput(object):
+
   def __init__(self, input_stream=None, output_stream=None):
     self.input_stream = input_stream
     self.output_stream = output_stream
     self.reviewers = []
     self.written_output = []
-    self.error_count = 0
+    self.failed = False
 
   def prompt_yes_no(self, prompt_string):
     self.write(prompt_string)
@@ -104,10 +105,10 @@ class PresubmitOutput(object):
       self.fail()
 
   def fail(self):
-    self.error_count += 1
+    self.failed = True
 
   def should_continue(self):
-    return not self.error_count
+    return not self.failed
 
   def write(self, s):
     self.written_output.append(s)

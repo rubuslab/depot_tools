@@ -31,7 +31,6 @@ from textwrap import dedent
 
 
 SHA1_RE = re.compile('^[a-fA-F0-9]{40}$')
-GIT_SVN_ID_RE = re.compile('^git-svn-id: .*@([0-9]+) .*$')
 ROLL_DESCRIPTION_STR = (
 '''Roll %(dep_path)s %(before_rev)s:%(after_rev)s%(svn_range)s
 
@@ -100,92 +99,12 @@ def verify_git_revision(dep_path, revision):
   return result
 
 
-def get_svn_revision(dep_path, git_revision):
-  """Given a git revision, return the corresponding svn revision."""
-  p = Popen(['git', 'log', '-n', '1', '--pretty=format:%B', git_revision],
-            stdout=PIPE, cwd=dep_path)
-  (log, _) = p.communicate()
-  assert p.returncode == 0, 'git log %s failed.' % git_revision
-  for line in reversed(log.splitlines()):
-    m = GIT_SVN_ID_RE.match(line.strip())
-    if m:
-      return m.group(1)
-  return None
-
-
-def convert_svn_revision(dep_path, revision):
-  """Find the git revision corresponding to an svn revision."""
-  err_msg = 'Unknown error'
-  revision = int(revision)
-  latest_svn_rev = None
-  with open(os.devnull, 'w') as devnull:
-    for ref in ('HEAD', 'origin/master'):
-      try:
-        log_p = Popen(['git', 'log', ref],
-                      cwd=dep_path, stdout=PIPE, stderr=devnull)
-        grep_p = Popen(['grep', '-e', '^commit ', '-e', '^ *git-svn-id: '],
-                       stdin=log_p.stdout, stdout=PIPE, stderr=devnull)
-        git_rev = None
-        prev_svn_rev = None
-        for line in grep_p.stdout:
-          if line.startswith('commit '):
-            git_rev = line.split()[1]
-            continue
-          try:
-            svn_rev = int(line.split()[1].partition('@')[2])
-          except (IndexError, ValueError):
-            print >> sys.stderr, (
-                'WARNING: Could not parse svn revision out of "%s"' % line)
-            continue
-          if not latest_svn_rev or int(svn_rev) > int(latest_svn_rev):
-            latest_svn_rev = svn_rev
-          if svn_rev == revision:
-            return git_rev
-          if svn_rev > revision:
-            prev_svn_rev = svn_rev
-            continue
-          if prev_svn_rev:
-            err_msg = 'git history skips from revision %d to revision %d.' % (
-                svn_rev, prev_svn_rev)
-          else:
-            err_msg = (
-                'latest available revision is %d; you may need to '
-                '"git fetch origin" to get the latest commits.' %
-                latest_svn_rev)
-      finally:
-        log_p.terminate()
-        grep_p.terminate()
-  raise RuntimeError('No match for revision %d; %s' % (revision, err_msg))
-
-
 def get_git_revision(dep_path, revision):
   """Convert the revision argument passed to the script to a git revision."""
-  svn_revision = None
-  if revision.startswith('r'):
-    git_revision = convert_svn_revision(dep_path, revision[1:])
-    svn_revision = revision[1:]
-  elif re.search('[a-fA-F]', revision):
-    git_revision = verify_git_revision(dep_path, revision)
-    if not git_revision:
-      raise RuntimeError('Please \'git fetch origin\' in %s' % dep_path)
-    svn_revision = get_svn_revision(dep_path, git_revision)
-  elif len(revision) > 6:
-    git_revision = verify_git_revision(dep_path, revision)
-    if git_revision:
-      svn_revision = get_svn_revision(dep_path, git_revision)
-    else:
-      git_revision = convert_svn_revision(dep_path, revision)
-      svn_revision = revision
-  else:
-    try:
-      git_revision = convert_svn_revision(dep_path, revision)
-      svn_revision = revision
-    except RuntimeError:
-      git_revision = verify_git_revision(dep_path, revision)
-      if not git_revision:
-        raise
-      svn_revision = get_svn_revision(dep_path, git_revision)
-  return git_revision, svn_revision
+  git_revision = verify_git_revision(dep_path, revision)
+  if not git_revision:
+    raise RuntimeError('Please \'git fetch origin\' in %s' % dep_path)
+  return git_revision
 
 
 def ast_err_msg(node):
@@ -284,20 +203,10 @@ def generate_commit_message(deps_section, dep_path, dep_name, new_rev):
   old_rev_short = short_rev(old_rev, dep_path)
   new_rev_short = short_rev(new_rev, dep_path)
   url += '/+log/%s..%s' % (old_rev_short, new_rev_short)
-  try:
-    old_svn_rev = get_svn_revision(dep_path, old_rev)
-    new_svn_rev = get_svn_revision(dep_path, new_rev)
-  except Exception:
-    # Ignore failures that might arise from the repo not being checked out.
-    old_svn_rev = new_svn_rev = None
-  svn_range_str = ''
-  if old_svn_rev and new_svn_rev:
-    svn_range_str = ' (svn %s:%s)' % (old_svn_rev, new_svn_rev)
   return dedent(ROLL_DESCRIPTION_STR % {
     'dep_path': shorten_dep_path(dep_name),
     'before_rev': old_rev_short,
     'after_rev': new_rev_short,
-    'svn_range': svn_range_str,
     'revlog_url': url,
   })
 
@@ -311,7 +220,7 @@ def update_deps_entry(deps_lines, deps_ast, value_node, new_rev, comment):
     deps_lines[line_idx] = content.rstrip()
 
 
-def update_deps(deps_file, dep_path, dep_name, new_rev, comment):
+def update_deps(deps_file, dep_path, dep_name, new_rev, comment=None):
   """Update the DEPS file with the new git revision."""
   commit_msg = ''
   with open(deps_file) as fh:
@@ -367,9 +276,7 @@ def main(argv):
   parser = optparse.OptionParser(usage=usage, description=__doc__)
   parser.add_option('--no-verify-revision',
                     help='Don\'t verify the revision passed in. This '
-                         'also skips adding an svn revision comment '
-                         'for git dependencies and requires the passed '
-                         'revision to be a git hash.',
+                         'requires the passed revision to be a git hash.',
                     default=False, action='store_true')
   options, args = parser.parse_args(argv)
   if len(args) not in (2, 3):
@@ -399,14 +306,12 @@ def main(argv):
           'verification.' % revision)
       return 1
     git_rev = revision
-    comment = None
   else:
-    git_rev, svn_rev = get_git_revision(dep_path, revision)
-    comment = ('from svn revision %s' % svn_rev) if svn_rev else None
+    git_rev = get_git_revision(dep_path, revision)
     if not git_rev:
       print >> sys.stderr, 'Could not find git revision matching %s.' % revision
       return 1
-  return update_deps(deps_file, dep_path, dep_name, git_rev, comment)
+  return update_deps(deps_file, dep_path, dep_name, git_rev)
 
 
 if __name__ == '__main__':

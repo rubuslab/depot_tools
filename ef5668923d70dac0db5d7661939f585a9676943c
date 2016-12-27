@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "773d9abc_369fe09e",
+        "filename": "roll_dep_svn.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-27T21:09:09Z",
+      "side": 1,
+      "message": "You removed passing this below. So this here should go away too.",
+      "range": {
+        "startLine": 35,
+        "startChar": 49,
+        "endLine": 35,
+        "endChar": 62
+      },
+      "revId": "ef5668923d70dac0db5d7661939f585a9676943c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "773d9abc_f6b8380f",
+        "filename": "roll_dep_svn.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-27T21:09:09Z",
+      "side": 1,
+      "message": "nit: comment seems to be always None now. Maybe also rip it out entirely? Also the if part in the method above?",
+      "range": {
+        "startLine": 223,
+        "startChar": 56,
+        "endLine": 223,
+        "endChar": 68
+      },
+      "revId": "ef5668923d70dac0db5d7661939f585a9676943c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "773d9abc_16a4dcec",
+        "filename": "roll_dep_svn.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2016-12-27T21:09:09Z",
+      "side": 1,
+      "message": "nit: This is dead code.",
+      "range": {
+        "startLine": 311,
+        "startChar": 4,
+        "endLine": 313,
+        "endChar": 14
+      },
+      "revId": "ef5668923d70dac0db5d7661939f585a9676943c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

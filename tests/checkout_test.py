@@ -321,6 +321,21 @@ class GitCheckout(GitBaseTest):
       ])
     self.assertEquals(expected, out)
 
+  def testPatchWithRemovedFilesAndPatchLevel(self):
+    co = self._get_co(None)
+    patches = patch.PatchSet([
+        patch.FilePatchDelete('third_party/webrtc/extra', False),
+    ])
+    patches.patchlevel = 2
+    co.apply_patch(patches)
+    # Make sure 'extra' files is deleted.
+    root = os.path.join(self.root_dir, self.name)
+    tree = self.get_trunk(False)
+    del tree['extra']
+    print patchset[0].get()
+    print fake_repos.read_tree(root)
+    self.assertTree(tree, root)
+
 
 if __name__ == '__main__':
   if '-v' in sys.argv:

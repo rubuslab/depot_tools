@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f74a6a97_4ff09d1d",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-28T21:52:26Z",
+      "side": 1,
+      "message": "Many changes list multiple bugs on the BUG\u003d line, or have multiple BUG\u003d lines.",
+      "revId": "95054f49fae07e5873a3dd1daec1bccbe6227464",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f74a6a97_8feaa52b",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-28T21:52:26Z",
+      "side": 1,
+      "message": "See comment on flag below; would prefer this be json.dump()",
+      "revId": "95054f49fae07e5873a3dd1daec1bccbe6227464",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f74a6a97_afede147",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2016-12-28T21:52:26Z",
+      "side": 1,
+      "message": "Most infra tools that output json do so to a file, rather than to the terminal. This makes it easier for the data to be persisted, shared by other tools, and in particular for large amounts of data to be input/output. So this flag should probably take a filename, rather than just being boolean.",
+      "revId": "95054f49fae07e5873a3dd1daec1bccbe6227464",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

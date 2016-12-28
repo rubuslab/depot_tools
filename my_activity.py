@@ -35,6 +35,7 @@ import subprocess
 import sys
 import urllib
 import urllib2
+import re
 
 import auth
 import fix_encoding
@@ -246,18 +247,38 @@ class MyActivity(object):
 
     return issues
 
+  def extract_bug_number_from_description(self, issue):
+    description = None
+
+    if 'description' in issue:
+      # Getting the  description for Rietveld
+      description = issue['description']
+    elif 'revisions' in issue:
+      # Getting the description for REST Gerrit
+      revision = issue['revisions'][issue['current_revision']]
+      description = revision['commit']['message']
+
+    if description:
+      match = re.search('BUG=(((\d+)(,\s?)?)+)', description)
+      if match:
+        return match.group(1).replace(' ', '').split(',')
+
+    return []
+
   def process_rietveld_issue(self, instance, issue):
     ret = {}
     ret['owner'] = issue['owner_email']
     ret['author'] = ret['owner']
 
     ret['reviewers'] = set(issue['reviewers'])
+    ret['closed'] = issue['closed']
+    ret['landed_days_ago'] = issue['landed_days_ago']
 
     shorturl = instance['url']
     if 'shorturl' in instance:
       shorturl = instance['shorturl']
 
-    ret['review_url'] = 'http://%s/%d' % (shorturl, issue['issue'])
+    ret['url'] = 'http://%s/%d' % (shorturl, issue['issue'])
 
     # Rietveld sometimes has '\r\n' instead of '\n'.
     ret['header'] = issue['description'].replace('\r', '').split('\n')[0]
@@ -265,6 +286,7 @@ class MyActivity(object):
     ret['modified'] = datetime_from_rietveld(issue['modified'])
     ret['created'] = datetime_from_rietveld(issue['created'])
     ret['replies'] = self.process_rietveld_replies(issue['messages'])
+    ret['bug'] = self.extract_bug_number_from_description(issue)
 
     return ret
 
@@ -302,7 +324,8 @@ class MyActivity(object):
       # Instantiate the generator to force all the requests now and catch the
       # errors here.
       return list(gerrit_util.GenerateAllChanges(instance['url'], req,
-          o_params=['MESSAGES', 'LABELS', 'DETAILED_ACCOUNTS']))
+          o_params=['MESSAGES', 'LABELS', 'DETAILED_ACCOUNTS', 'CURRENT_REVISION',
+                    'CURRENT_COMMIT']))
     except gerrit_util.GerritError, e:
       print 'ERROR: Looking up %r: %s' % (instance['url'], e)
       return []
@@ -333,9 +356,9 @@ class MyActivity(object):
 
   def process_gerrit_ssh_issue(self, instance, issue):
     ret = {}
-    ret['review_url'] = issue['url']
+    ret['url'] = issue['url']
     if 'shorturl' in instance:
-      ret['review_url'] = 'http://%s/%s' % (instance['shorturl'],
+      ret['url'] = 'http://%s/%s' % (instance['shorturl'],
                                             issue['number'])
     ret['header'] = issue['subject']
     ret['owner'] = issue['owner']['email']
@@ -348,6 +371,7 @@ class MyActivity(object):
       ret['replies'] = []
     ret['reviewers'] = set(r['author'] for r in ret['replies'])
     ret['reviewers'].discard(ret['author'])
+    ret['bug'] = self.extract_bug_number_from_description(issue)
     return ret
 
   @staticmethod
@@ -364,11 +388,11 @@ class MyActivity(object):
 
   def process_gerrit_rest_issue(self, instance, issue):
     ret = {}
-    ret['review_url'] = 'https://%s/%s' % (instance['url'], issue['_number'])
+    ret['url'] = 'https://%s/%s' % (instance['url'], issue['_number'])
     if 'shorturl' in instance:
       # TODO(deymo): Move this short link to https once crosreview.com supports
       # it.
-      ret['review_url'] = 'http://%s/%s' % (instance['shorturl'],
+      ret['url'] = 'http://%s/%s' % (instance['shorturl'],
                                             issue['_number'])
     ret['header'] = issue['subject']
     ret['owner'] = issue['owner']['email']
@@ -381,6 +405,7 @@ class MyActivity(object):
       ret['replies'] = []
     ret['reviewers'] = set(r['author'] for r in ret['replies'])
     ret['reviewers'].discard(ret['author'])
+    ret['bug'] = self.extract_bug_number_from_description(issue)
     return ret
 
   @staticmethod
@@ -424,14 +449,20 @@ class MyActivity(object):
     if 'items' in content:
       items = content['items']
       for item in items:
+        if instance.get('shorturl'):
+          item_url = "https://%s/%d" % (instance['shorturl'], item["id"])
+        else:
+          item_url = "https://bugs.chromium.org/p/%s/issues/detail?id=%d" % (
+              instance["name"], item["id"])
         issue = {
           "header": item["title"],
           "created": item["published"],
           "modified": item["updated"],
           "author": item["author"]["name"],
-          "url": "https://code.google.com/p/%s/issues/detail?id=%s" % (
-              instance["name"], item["id"]),
-          "comments": []
+          "url": item_url,
+          "comments": [],
+          "labels": [],
+          "components": []
         }
         if 'owner' in item:
           issue['owner'] = item['owner']['name']
@@ -439,6 +470,10 @@ class MyActivity(object):
           issue['owner'] = 'None'
         if issue['owner'] == user_str or issue['author'] == user_str:
           issues.append(issue)
+        if 'labels' in item:
+          issue['labels'] = item['labels']
+        if 'components' in item:
+          issue['components'] = item["components"]
 
     return issues
 
@@ -453,7 +488,7 @@ class MyActivity(object):
     self.print_generic(self.options.output_format,
                        self.options.output_format_changes,
                        change['header'],
-                       change['review_url'],
+                       change['url'],
                        change['author'],
                        optional_values)
 
@@ -472,7 +507,7 @@ class MyActivity(object):
     self.print_generic(self.options.output_format,
                        self.options.output_format_reviews,
                        review['header'],
-                       review['review_url'],
+                       review['url'],
                        review['author'])
 
   @staticmethod
@@ -570,6 +605,28 @@ class MyActivity(object):
     self.print_reviews()
     self.print_issues()
 
+  def dump_json(self, ignore_keys=['replies']):
+    def format_for_json_dump(in_array):
+      output = {}
+      for item in in_array:
+        output[item['url']] = dict(
+            (k, v) for k,v in item.iteritems() if k not in ignore_keys)
+      return output
+
+    class PythonObjectEncoder(json.JSONEncoder):
+      def default(self, obj):
+        if isinstance(obj, datetime):
+          return obj.isoformat()
+        if isinstance(obj, set):
+          return list(obj)
+        return json.JSONEncoder.default(self, obj)
+
+    output = {
+      'reviews': format_for_json_dump(self.reviews),
+      'changes': format_for_json_dump(self.changes),
+      'issues': format_for_json_dump(self.issues)
+    }
+    print json.dumps(output, indent=2, cls=PythonObjectEncoder)
 
 def main():
   # Silence upload.py.
@@ -660,6 +717,9 @@ def main():
       '-m', '--markdown', action='store_true',
       help='Use markdown-friendly output (overrides --output-format '
            'and --output-format-heading)')
+  output_format_group.add_option(
+      '-j', '--json', action='store_true',
+      help='Output json data (overrides other format options)')
   parser.add_option_group(output_format_group)
   auth.add_auth_options(parser)
 
@@ -731,9 +791,13 @@ def main():
 
   print '\n\n\n'
 
-  my_activity.print_changes()
-  my_activity.print_reviews()
-  my_activity.print_issues()
+  if options.json:
+      my_activity.dump_json()
+  else:
+      my_activity.print_changes()
+      my_activity.print_reviews()
+      my_activity.print_issues()
+
   return 0
 
 

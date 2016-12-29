@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f74a6a97_5a52192b",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2016-12-29T00:28:19Z",
+      "side": 0,
+      "message": "technically clients lose the ability to version cipd. So when repos depend on depot_tools, they depend on the version that\u0027s pinned (in a file somewhere, right? I\u0027m not familiar with how cipd is version into depot_tools)",
+      "range": {
+        "startLine": 43,
+        "startChar": 53,
+        "endLine": 43,
+        "endChar": 60
+      },
+      "revId": "c6569aab121ed8e2859438fddf03dda81831252b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

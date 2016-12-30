@@ -5150,7 +5150,6 @@ def BuildGitDiffCmd(diff_type, upstream_commit, args):
   # Generate diff for the current branch's changes.
   diff_cmd = ['diff', '--no-ext-diff', '--no-prefix', diff_type,
               upstream_commit, '--' ]
-
   if args:
     for arg in args:
       if os.path.isdir(arg) or os.path.isfile(arg):
@@ -5178,6 +5177,10 @@ def CMDformat(parser, args):
   parser.add_option('--diff', action='store_true',
                     help='Print diff to stdout rather than modifying files.')
   opts, args = parser.parse_args(args)
+
+  # Normalize any remaining args against the current path, so paths relative to
+  # the current directory are still resolved as expected.
+  args = [os.path.join(os.getcwd(), arg) for arg in args]
 
   # git diff generates paths against the root of the repository.  Change
   # to that directory so clang-format can find files even within subdirs.

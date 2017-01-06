@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7134a0f_549c4c42",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2719,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-06T22:44:29Z",
+      "side": 1,
+      "message": "really, folks use git cl upload --title \"blabla\" expecting it to become message? well, i guess it makes some sense.",
+      "range": {
+        "startLine": 2719,
+        "startChar": 12,
+        "endLine": 2719,
+        "endChar": 54
+      },
+      "revId": "0b7fcf4198324a9474b5eec9d278d71ad7aaa4f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f7134a0f_749fc838",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2723,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-06T22:44:29Z",
+      "side": 1,
+      "message": "always",
+      "range": {
+        "startLine": 2723,
+        "startChar": 45,
+        "endLine": 2723,
+        "endChar": 51
+      },
+      "revId": "0b7fcf4198324a9474b5eec9d278d71ad7aaa4f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

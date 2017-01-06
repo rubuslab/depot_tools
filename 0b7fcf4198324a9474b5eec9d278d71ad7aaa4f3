@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "77acba9b_3b9f463a",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2719,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-01-06T23:24:40Z",
+      "side": 1,
+      "message": "Yeah, it becomes the first line of the message, and therefore the title of the CL. It makes sense if you presuppose the twisted logic where --title and --message already mean completely different things for initial upload and subsequent patchset upload.",
+      "parentUuid": "f7134a0f_549c4c42",
+      "revId": "0b7fcf4198324a9474b5eec9d278d71ad7aaa4f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f7134a0f_749fc838",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -42,6 +60,24 @@
         "endLine": 2723,
         "endChar": 51
       },
+      "revId": "0b7fcf4198324a9474b5eec9d278d71ad7aaa4f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77acba9b_5b9cfa42",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2723,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-01-06T23:24:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7134a0f_749fc838",
       "revId": "0b7fcf4198324a9474b5eec9d278d71ad7aaa4f3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

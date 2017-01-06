@@ -3,6 +3,9 @@
 This package contains tools for working with Chromium development. It requires
 python 2.7.
 
+##
+
+More testing.
 
 ## Tools
 

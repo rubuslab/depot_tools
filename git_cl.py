@@ -4373,6 +4373,67 @@ def PushToGitPending(remote, pending_ref):
   return code, out
 
 
+def PushToGitWithAutoRebase(remote, real_ref, retries=2):
+  """Attempts to push with retries which do rebase before pushing.
+
+  Returns:
+    (retcode of last operation, output log of last operation).
+  """
+  assert real_ref.startswith('refs/'), real_ref
+  local_pending_ref = 'refs/git-cl/' + pending_ref[len('refs/'):]
+  cherry = RunGit(['rev-parse', 'HEAD']).strip()
+  code = 0
+  out = ''
+  max_attempts = 3
+  attempts_left = max_attempts
+  while attempts_left:
+    if attempts_left != max_attempts:
+      print('Retrying, %d attempts left...' % (attempts_left - 1,))
+    attempts_left -= 1
+
+    # Fetch. Retry fetch errors.
+    print('Fetching pending ref %s...' % pending_ref)
+    code, out = RunGitWithCode(
+        ['retry', 'fetch', remote, '+%s:%s' % (pending_ref, local_pending_ref)])
+    if code:
+      print('Fetch failed with exit code %d.' % code)
+      if out.strip():
+        print(out.strip())
+      continue
+
+    # Try to cherry pick. Abort on merge conflicts.
+    print('Cherry-picking commit on top of pending ref...')
+    RunGitWithCode(['checkout', local_pending_ref], suppress_stderr=True)
+    code, out = RunGitWithCode(['cherry-pick', cherry])
+    if code:
+      print('Your patch doesn\'t apply cleanly to ref \'%s\', '
+            'the following files have merge conflicts:' % pending_ref)
+      print(RunGit(['diff', '--name-status', '--diff-filter=U']).strip())
+      print('Please rebase your patch and try again.')
+      RunGitWithCode(['cherry-pick', '--abort'])
+      return code, out
+
+    # Applied cleanly, try to push now. Retry on error (flake or non-ff push).
+    print('Pushing commit to %s... It can take a while.' % pending_ref)
+    code, out = RunGitWithCode(
+        ['retry', 'push', '--porcelain', remote, 'HEAD:%s' % pending_ref])
+    if code == 0:
+      # Success.
+      print('Commit pushed to pending ref successfully!')
+      return code, out
+
+    print('Push failed with exit code %d.' % code)
+    if out.strip():
+      print(out.strip())
+    if IsFatalPushFailure(out):
+      print('Fatal push error. Make sure your .netrc credentials and git '
+            'user.email are correct and you have push access to the repo.')
+      return code, out
+
+  print('All attempts to push to pending ref failed.')
+  return code, out
+
+
 def IsFatalPushFailure(push_stdout):
   """True if retrying push won't help."""
   return '(prohibited by Gerrit)' in push_stdout
@@ -4615,8 +4676,11 @@ def CMDland(parser, args):
               'this, and post it to http://crbug.com/642493.\n'
               'The first reporter gets a free "Black Swan" book from '
               'tandrii@\n\n')
-      retcode, output = RunGitWithCode(
-          ['push', '--porcelain', pushurl, 'HEAD:%s' % branch])
+      if False:
+        retcode, output = RunGitWithCode(
+            ['push', '--porcelain', pushurl, 'HEAD:%s' % branch])
+      else:
+        retcode, output = PushToGitWithAutoRebase(pushurl, branch)
       pushed_to_pending = pending_prefix and branch.startswith(pending_prefix)
     else:
       # Cherry-pick the change on top of pending ref and then push it.

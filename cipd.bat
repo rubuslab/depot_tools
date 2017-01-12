@@ -3,4 +3,9 @@
 :: Use of this source code is governed by a BSD-style license that can be
 :: found in the LICENSE file.
 
+:: To allow this powershell script to run if it was a byproduct of downloading
+:: and unzipping the depot_tools.zip distribution, we clear the Zone.Identifier
+:: alternate data stream.
+echo.>"%~dp0\cipd.ps1:Zone.Identifier"
+
 powershell -NoProfile -ExecutionPolicy RemoteSigned -File "%~dp0\cipd.ps1" %*

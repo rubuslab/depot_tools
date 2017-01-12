@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83de51f5_0a6041dd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-12T18:56:18Z",
+      "side": 1,
+      "message": "yep, definitely! Good catch.",
+      "range": {
+        "startLine": 10,
+        "startChar": 35,
+        "endLine": 10,
+        "endChar": 38
+      },
+      "revId": "197c3245806e83ca733737346a91fcab402ebc85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

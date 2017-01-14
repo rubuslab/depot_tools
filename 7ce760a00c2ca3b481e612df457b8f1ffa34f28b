@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3a049a8_3ddcbaf8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-14T02:38:15Z",
+      "side": 1,
+      "message": "how about s/output/output_fn?\nI know it\u0027s not your naming; feel free to ignore, unless you like my suggestion.",
+      "range": {
+        "startLine": 862,
+        "startChar": 4,
+        "endLine": 862,
+        "endChar": 10
+      },
+      "revId": "7ce760a00c2ca3b481e612df457b8f1ffa34f28b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

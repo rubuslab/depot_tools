@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3a049a8_1a3d3cfa",
+        "filename": "gerrit_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-01-14T01:20:02Z",
+      "side": 1,
+      "message": "2017",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "a0219aab7459def93b074666a66d0a0b11bd7d03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3a049a8_5a1ee491",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-01-14T01:20:02Z",
+      "side": 1,
+      "message": "new?",
+      "range": {
+        "startLine": 792,
+        "startChar": 8,
+        "endLine": 792,
+        "endChar": 11
+      },
+      "revId": "a0219aab7459def93b074666a66d0a0b11bd7d03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3a049a8_3a004021",
+        "filename": "recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-01-14T01:20:02Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to reference the gerrit docs, since they aren\u0027t used directly here, and are already referenced in gerrit_utils, where they actually are used.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 93
+      },
+      "revId": "a0219aab7459def93b074666a66d0a0b11bd7d03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

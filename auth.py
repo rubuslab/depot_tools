@@ -68,6 +68,7 @@ AuthConfig = collections.namedtuple('AuthConfig', [
     'save_cookies', # deprecated, will be removed
     'use_local_webserver',
     'webserver_port',
+    'raw_access_token',
     'refresh_token_json',
 ])
 
@@ -107,6 +108,7 @@ def make_auth_config(
     save_cookies=None,
     use_local_webserver=None,
     webserver_port=None,
+    raw_access_token=None,
     refresh_token_json=None):
   """Returns new instance of AuthConfig.
 
@@ -120,6 +122,7 @@ def make_auth_config(
       default(save_cookies, True),
       default(use_local_webserver, not _is_headless()),
       default(webserver_port, 8090),
+      default(raw_access_token, ''),
       default(refresh_token_json, ''))
 
 
@@ -166,6 +169,10 @@ def add_auth_options(parser, default_config=None):
       help='Port a local web server should listen on. Used only if '
           '--auth-no-local-webserver is not set. [default: %default]')
   parser.auth_group.add_option(
+      '--auth-access-token',
+      default=default_config.raw_access_token,
+      help='Role account access token to use.')
+  parser.auth_group.add_option(
       '--auth-refresh-token-json',
       default=default_config.refresh_token_json,
       help='Path to a JSON file with role account refresh token to use.')
@@ -181,6 +188,7 @@ def extract_auth_config_from_options(options):
       save_cookies=False if options.use_oauth2 else options.save_cookies,
       use_local_webserver=options.use_local_webserver,
       webserver_port=options.auth_host_port,
+      raw_access_token=options.auth_access_token,
       refresh_token_json=options.auth_refresh_token_json)
 
 
@@ -253,6 +261,8 @@ class Authenticator(object):
     self._token_cache_key = token_cache_key
     self._external_token = None
     self._scopes = scopes
+    if config.raw_access_token:
+      self._access_token = AccessToken(config.raw_access_token, None)
     if config.refresh_token_json:
       self._external_token = _read_refresh_token_json(config.refresh_token_json)
     logging.debug('Using auth config %r', config)

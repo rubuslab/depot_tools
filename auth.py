@@ -69,6 +69,7 @@ AuthConfig = collections.namedtuple('AuthConfig', [
     'use_local_webserver',
     'webserver_port',
     'refresh_token_json',
+    'service_account_json',
 ])
 
 
@@ -107,7 +108,8 @@ def make_auth_config(
     save_cookies=None,
     use_local_webserver=None,
     webserver_port=None,
-    refresh_token_json=None):
+    refresh_token_json=None,
+    service_account_json=None):
   """Returns new instance of AuthConfig.
 
   If some config option is None, it will be set to a reasonable default value.
@@ -120,7 +122,8 @@ def make_auth_config(
       default(save_cookies, True),
       default(use_local_webserver, not _is_headless()),
       default(webserver_port, 8090),
-      default(refresh_token_json, ''))
+      default(refresh_token_json, ''),
+      default(service_account_json, ''))
 
 
 def add_auth_options(parser, default_config=None):
@@ -169,7 +172,10 @@ def add_auth_options(parser, default_config=None):
       '--auth-refresh-token-json',
       default=default_config.refresh_token_json,
       help='Path to a JSON file with role account refresh token to use.')
-
+  parser.auth_group.add_option(
+      '--auth-service-account-json',
+      default=default_config.service_account_json,
+      help='Path to a JSON file with service account information.')
 
 def extract_auth_config_from_options(options):
   """Given OptionParser parsed options, extracts AuthConfig from it.
@@ -181,7 +187,8 @@ def extract_auth_config_from_options(options):
       save_cookies=False if options.use_oauth2 else options.save_cookies,
       use_local_webserver=options.use_local_webserver,
       webserver_port=options.auth_host_port,
-      refresh_token_json=options.auth_refresh_token_json)
+      refresh_token_json=options.auth_refresh_token_json,
+      service_account_json=options.auth_service_account_json)
 
 
 def auth_config_to_command_options(auth_config):
@@ -206,6 +213,9 @@ def auth_config_to_command_options(auth_config):
   if auth_config.refresh_token_json != defaults.refresh_token_json:
     opts.extend([
         '--auth-refresh-token-json', str(auth_config.refresh_token_json)])
+  if auth_config.service_account_json != defaults.service_account_json:
+    opts.extend([
+        '--auth-service-account-json', str(auth_config.service_account_json)])
   return opts
 
 
@@ -253,8 +263,12 @@ class Authenticator(object):
     self._token_cache_key = token_cache_key
     self._external_token = None
     self._scopes = scopes
+    self._service_account_data = None
     if config.refresh_token_json:
       self._external_token = _read_refresh_token_json(config.refresh_token_json)
+    if config.service_account_json:
+      with open(config.service_account_json, 'r') as service_account_file:
+        self._service_account_data = service_account_file.read()
     logging.debug('Using auth config %r', config)
 
   def login(self):
@@ -437,6 +451,13 @@ class Authenticator(object):
       credentials.set_store(storage)
       storage.put(credentials)
       return credentials
+
+    if not credentials and self._service_account_data:
+      logging.debug('Creating service account JSON from provided JSON')
+      credentials = client.Credentials.from_json(
+        self._service_account_data)
+      credentials.set_store(storage)
+      storage.put(credentials)
 
     # Not using external refresh token -> return whatever is cached.
     return credentials if (credentials and not credentials.invalid) else None

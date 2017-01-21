@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e8852ac9_781d05dc",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-01-21T21:02:59Z",
+      "side": 1,
+      "message": "the mix of CameCase and snake_case in this file is amusing",
+      "range": {
+        "startLine": 148,
+        "startChar": 4,
+        "endLine": 148,
+        "endChar": 23
+      },
+      "revId": "89d71d0f23764ae6fd62a74c012602b78a662f73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -22,6 +22,24 @@
       "revId": "89d71d0f23764ae6fd62a74c012602b78a662f73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "68993a37_8192fcaa",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-21T21:09:59Z",
+      "side": 1,
+      "message": "yep, and since i prefer this_case_whatever_its_name, i added my method right on the boundary :D",
+      "parentUuid": "e8852ac9_781d05dc",
+      "revId": "89d71d0f23764ae6fd62a74c012602b78a662f73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

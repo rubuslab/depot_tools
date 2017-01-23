@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e8852ac9_54c8052a",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5180,
+      "author": {
+        "id": 1002115
+      },
+      "writtenOn": "2017-01-23T20:54:01Z",
+      "side": 1,
+      "message": "maybe for now we should just do something like:\n\n  \n  parser.add_option(\u0027--js\u0027, ...)\n  \n  # ...\n  \n  if opts.js:\n    CLANG_EXTS.append(\u0027.js\u0027)\n  \n\nwhile we figure out how to handle LayoutTests?",
+      "revId": "06dba1b15977eb58f8ef4ea9377197da7c67dd38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

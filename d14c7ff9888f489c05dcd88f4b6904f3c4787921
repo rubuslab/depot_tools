@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf786f5b_2ddd27bb",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-01-24T18:10:40Z",
+      "side": 1,
+      "message": "Really, what do we need ALL_COMMITS for? We generally don\u0027t need info about anything other than the latest patchset.",
+      "revId": "d14c7ff9888f489c05dcd88f4b6904f3c4787921",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

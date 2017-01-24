@@ -129,9 +129,12 @@ class BranchMapper(object):
     if (self.verbosity >= 2):
       # Avoid heavy import unless necessary.
       from git_cl import get_cl_statuses, color_for_status, Changelist
+      import auth
 
-      change_cls = [Changelist(branchref='refs/heads/'+b)
-                    for b in self.__branches_info.keys() if b]
+      auth_config = auth.make_auth_config()
+      change_cls = [
+          Changelist(branchref='refs/heads/'+b, auth_config=auth_config)
+          for b in self.__branches_info.keys() if b]
       status_info = get_cl_statuses(change_cls,
                                     fine_grained=self.verbosity > 2,
                                     max_processes=self.maxjobs)

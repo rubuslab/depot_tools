@@ -23,7 +23,8 @@ class GerritApi(recipe_api.RecipeApi):
                          infra_step=infra_step,
                          **kwargs)
 
-  def create_gerrit_branch(self, host, project, branch, commit, **kwargs):
+  def create_gerrit_branch(self, host, project, branch, commit,
+                           add_json_log=True, **kwargs):
     """
     Create a new branch from given project and commit
 
@@ -36,14 +37,15 @@ class GerritApi(recipe_api.RecipeApi):
         '--project', project,
         '--branch', branch,
         '--commit', commit,
-        '--json_file', self.m.json.output()
+        '--json_file', self.m.json.output(add_json_log=add_json_log)
     ]
     step_name = 'create_gerrit_branch'
     step_result = self(step_name, args, **kwargs)
     ref = step_result.json.output.get('ref')
     return ref
 
-  def get_gerrit_branch(self, host, project, branch, **kwargs):
+  def get_gerrit_branch(self, host, project, branch, add_json_log=True,
+                        **kwargs):
     """
     Get a branch from given project and commit
 
@@ -55,7 +57,7 @@ class GerritApi(recipe_api.RecipeApi):
         '--host', host,
         '--project', project,
         '--branch', branch,
-        '--json_file', self.m.json.output()
+        '--json_file', self.m.json.output(add_json_log=add_json_log)
     ]
     step_name='get_gerrit_branch'
     step_result = self(step_name, args, **kwargs)

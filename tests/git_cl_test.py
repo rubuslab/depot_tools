@@ -530,8 +530,6 @@ class TestGitCl(TestCase):
       ((['git', 'config', '--unset-all', 'rietveld.cpplint-ignore-regex'],),
         CERR1),
       ((['git', 'config', '--unset-all', 'rietveld.project'],), CERR1),
-      ((['git', 'config', '--unset-all', 'rietveld.pending-ref-prefix'],),
-        CERR1),
       ((['git', 'config', '--unset-all', 'rietveld.run-post-upload-hook'],),
         CERR1),
       ((['git', 'config', 'gerrit.host', 'true'],), ''),
@@ -922,7 +920,7 @@ class TestGitCl(TestCase):
       ((['_GitNumbererState',
          'https://chromium.googlesource.com/infra/infra',
          'refs/heads/master'],),
-       git_cl._GitNumbererState(None, False)),
+       git_cl._GitNumbererState(False)),
       ((['git', 'push', '--porcelain', 'origin', 'HEAD:refs/heads/master'],),
        ''),
       ((['git', 'rev-parse', 'HEAD'],), 'fake_sha_rebased'),
@@ -936,46 +934,6 @@ class TestGitCl(TestCase):
        ''),
       ((['add_comment', 123, 'Committed patchset #2 (id:20001) manually as '
                              'fake_sha_rebased (presubmit successful).'],), ''),
-    ]
-    git_cl.main(['land'])
-
-  def test_land_rietveld_gnumbd(self):
-    self._land_rietveld_common(debug=False)
-    self.mock(git_cl, 'WaitForRealCommit',
-              lambda *a: self._mocked_call(['WaitForRealCommit'] + list(a)))
-    self.calls += [
-      ((['git', 'config', 'remote.origin.url'],),
-       'https://chromium.googlesource.com/chromium/src'),
-      ((['_GitNumbererState',
-         'https://chromium.googlesource.com/chromium/src',
-         'refs/heads/master'],),
-       git_cl._GitNumbererState('refs/pending', True)),
-      ((['git', 'rev-parse', 'HEAD'],), 'fake_sha_rebased'),
-      ((['git', 'retry', 'fetch', 'origin',
-         '+refs/pending/heads/master:refs/git-cl/pending/heads/master'],), ''),
-      ((['git', 'checkout', 'refs/git-cl/pending/heads/master'],), ''),
-      ((['git', 'cherry-pick', 'fake_sha_rebased'],), ''),
-
-      ((['git', 'retry', 'push', '--porcelain', 'origin',
-        'HEAD:refs/pending/heads/master'],),''),
-      ((['git', 'rev-parse', 'HEAD'],), 'fake_sha_rebased_on_pending'),
-
-      ((['git', 'checkout', '-q', 'feature'],), ''),
-      ((['git', 'branch', '-D', 'git-cl-commit'],), ''),
-
-      ((['WaitForRealCommit', 'origin', 'fake_sha_rebased_on_pending',
-         'refs/remotes/origin/master', 'refs/heads/master'],),
-         'fake_sha_gnumbded'),
-
-      ((['git', 'config', 'rietveld.viewvc-url'],),
-       'https://chromium.googlesource.com/infra/infra/+/'),
-      ((['update_description', 123,
-         'Issue: 123\n\nR=john@chromium.org\n\nCommitted: '
-         'https://chromium.googlesource.com/infra/infra/+/fake_sha_gnumbded'],),
-       ''),
-      ((['add_comment', 123, 'Committed patchset #2 (id:20001) manually as '
-                             'fake_sha_gnumbded (presubmit successful).'],),
-       ''),
     ]
     git_cl.main(['land'])
 
@@ -995,7 +953,7 @@ class TestGitCl(TestCase):
       ((['_GitNumbererState',
          'https://chromium.googlesource.com/chromium/src',
          'refs/heads/master'],),
-       git_cl._GitNumbererState(None, True)),
+       git_cl._GitNumbererState(True)),
 
       ((['git', 'show', '-s', '--format=%B', 'fake_ancestor_sha'],),
        'This is parent commit.\n'
@@ -1043,7 +1001,7 @@ class TestGitCl(TestCase):
        'https://chromium.googlesource.com/v8/v8'),
       ((['_GitNumbererState',
          'https://chromium.googlesource.com/v8/v8', 'refs/heads/master'],),
-       git_cl._GitNumbererState(None, True)),
+       git_cl._GitNumbererState(True)),
 
       ((['git', 'show', '-s', '--format=%B', 'fake_ancestor_sha'],),
        'This is parent commit with no footer.'),
@@ -1057,48 +1015,21 @@ class TestGitCl(TestCase):
                      'Unable to infer commit position from footers')
 
   def test_GitNumbererState_not_whitelisted_repo(self):
-    self.calls = [
-        ((['git', 'config', 'rietveld.autoupdate'],), CERR1),
-        ((['git', 'config', 'rietveld.pending-ref-prefix'],), CERR1),
-    ]
+    self.calls = []
     res = git_cl._GitNumbererState.load(
         remote_url='https://chromium.googlesource.com/chromium/tools/build',
         remote_ref='refs/whatever')
-    self.assertEqual(res.pending_prefix, None)
     self.assertEqual(res.should_add_git_number, False)
 
   def test_GitNumbererState_fail_fetch(self):
     self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
     self.calls = [
         ((['git', 'fetch', 'https://chromium.googlesource.com/chromium/src',
-           '+refs/meta/config:refs/git_cl/meta/config',
-           '+refs/gnumbd-config/main:refs/git_cl/gnumbd-config/main'],), CERR1),
-        ((['git', 'config', 'rietveld.autoupdate'],), CERR1),
-        ((['git', 'config', 'rietveld.pending-ref-prefix'],),
-         'refs/pending-prefix'),
+           '+refs/meta/config:refs/git_cl/meta/config'],), CERR1),
     ]
     res = git_cl._GitNumbererState.load(
         remote_url='https://chromium.googlesource.com/chromium/src',
         remote_ref='refs/whatever')
-    self.assertEqual(res.pending_prefix, 'refs/pending-prefix/')
-    self.assertEqual(res.should_add_git_number, False)
-
-  def test_GitNumbererState_fail_gnumbd_and_validator(self):
-    self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
-    self.calls = [
-        ((['git', 'fetch', 'https://chromium.googlesource.com/chromium/src',
-           '+refs/meta/config:refs/git_cl/meta/config',
-           '+refs/gnumbd-config/main:refs/git_cl/gnumbd-config/main'],), ''),
-        ((['git', 'show', 'refs/git_cl/gnumbd-config/main:config.json'],),
-         'ba d conig'),
-        ((['git', 'config', 'rietveld.autoupdate'],), CERR1),
-        ((['git', 'config', 'rietveld.pending-ref-prefix'],), CERR1),
-        ((['git', 'show', 'refs/git_cl/meta/config:project.config'],), CERR1),
-    ]
-    res = git_cl._GitNumbererState.load(
-        remote_url='https://chromium.googlesource.com/chromium/src',
-        remote_ref='refs/whatever')
-    self.assertEqual(res.pending_prefix, None)
     self.assertEqual(res.should_add_git_number, False)
 
   def test_GitNumbererState_valid_configs(self):
@@ -1113,17 +1044,7 @@ class TestGitCl(TestCase):
   def _test_GitNumbererState_valid_configs_inner(self, tempdir):
     self.calls = [
         ((['git', 'fetch', 'https://chromium.googlesource.com/chromium/src',
-           '+refs/meta/config:refs/git_cl/meta/config',
-           '+refs/gnumbd-config/main:refs/git_cl/gnumbd-config/main'],), ''),
-        ((['git', 'show', 'refs/git_cl/gnumbd-config/main:config.json'],),
-         '''{
-              "pending_tag_prefix": "refs/pending-tags",
-              "pending_ref_prefix": "refs/pending",
-              "enabled_refglobs": [
-                "refs/heads/m*"
-              ]
-            }
-         '''),
+           '+refs/meta/config:refs/git_cl/meta/config'],), ''),
         ((['git', 'show', 'refs/git_cl/meta/config:project.config'],),
          '''
           [plugin "git-numberer"]
@@ -1140,24 +1061,16 @@ class TestGitCl(TestCase):
            '--get-all', 'plugin.git-numberer.validate-disabled-refglob'],),
          'refs/heads/disabled\n'
          'refs/branch-heads/*\n'),
-    ] * 4  # 4 tests below have exactly same IO.
-
-    res = git_cl._GitNumbererState.load(
-        remote_url='https://chromium.googlesource.com/chromium/src',
-        remote_ref='refs/heads/master')
-    self.assertEqual(res.pending_prefix, 'refs/pending/')
-    self.assertEqual(res.should_add_git_number, False)
+    ] * 3  # 3 tests below have exactly the same IO.
 
     res = git_cl._GitNumbererState.load(
         remote_url='https://chromium.googlesource.com/chromium/src',
         remote_ref='refs/heads/test')
-    self.assertEqual(res.pending_prefix, None)
     self.assertEqual(res.should_add_git_number, True)
 
     res = git_cl._GitNumbererState.load(
         remote_url='https://chromium.googlesource.com/chromium/src',
         remote_ref='refs/heads/disabled')
-    self.assertEqual(res.pending_prefix, None)
     self.assertEqual(res.should_add_git_number, False)
 
     # Validator is disabled by default, even if it's not explicitely in disabled
@@ -1165,7 +1078,6 @@ class TestGitCl(TestCase):
     res = git_cl._GitNumbererState.load(
         remote_url='https://chromium.googlesource.com/chromium/src',
         remote_ref='refs/arbitrary/ref')
-    self.assertEqual(res.pending_prefix, None)
     self.assertEqual(res.should_add_git_number, False)
 
   @classmethod
@@ -1631,33 +1543,33 @@ class TestGitCl(TestCase):
 
   def test_get_target_ref(self):
     # Check remote or remote branch not present.
-    self.assertEqual(None, git_cl.GetTargetRef('origin', None, 'master', False))
+    self.assertEqual(None, git_cl.GetTargetRef('origin', None, 'master'))
     self.assertEqual(None, git_cl.GetTargetRef(None,
                                                'refs/remotes/origin/master',
-                                               'master', False))
+                                               'master'))
 
     # Check default target refs for branches.
     self.assertEqual('refs/heads/master',
                      git_cl.GetTargetRef('origin', 'refs/remotes/origin/master',
-                                         None, False))
+                                         None))
     self.assertEqual('refs/heads/master',
                      git_cl.GetTargetRef('origin', 'refs/remotes/origin/lkgr',
-                                         None, False))
+                                         None))
     self.assertEqual('refs/heads/master',
                      git_cl.GetTargetRef('origin', 'refs/remotes/origin/lkcr',
-                                         None, False))
+                                         None))
     self.assertEqual('refs/branch-heads/123',
                      git_cl.GetTargetRef('origin',
                                          'refs/remotes/branch-heads/123',
-                                         None, False))
+                                         None))
     self.assertEqual('refs/diff/test',
                      git_cl.GetTargetRef('origin',
                                          'refs/remotes/origin/refs/diff/test',
-                                         None, False))
+                                         None))
     self.assertEqual('refs/heads/chrome/m42',
                      git_cl.GetTargetRef('origin',
                                          'refs/remotes/origin/chrome/m42',
-                                         None, False))
+                                         None))
 
     # Check target refs for user-specified target branch.
     for branch in ('branch-heads/123', 'remotes/branch-heads/123',
@@ -1665,26 +1577,18 @@ class TestGitCl(TestCase):
       self.assertEqual('refs/branch-heads/123',
                        git_cl.GetTargetRef('origin',
                                            'refs/remotes/origin/master',
-                                           branch, False))
+                                           branch))
     for branch in ('origin/master', 'remotes/origin/master',
                    'refs/remotes/origin/master'):
       self.assertEqual('refs/heads/master',
                        git_cl.GetTargetRef('origin',
                                            'refs/remotes/branch-heads/123',
-                                           branch, False))
+                                           branch))
     for branch in ('master', 'heads/master', 'refs/heads/master'):
       self.assertEqual('refs/heads/master',
                        git_cl.GetTargetRef('origin',
                                            'refs/remotes/branch-heads/123',
-                                           branch, False))
-
-    # Check target refs for pending prefix.
-    self.mock(git_cl._GitNumbererState, 'load',
-              classmethod(lambda *_: git_cl._GitNumbererState('prefix', False)))
-    self.assertEqual('prefix/heads/master',
-                     git_cl.GetTargetRef('origin', 'refs/remotes/origin/master',
-                                         None, True,
-                                         'https://remote.url/some.git'))
+                                           branch))
 
   def test_patch_when_dirty(self):
     # Patch when local tree is dirty

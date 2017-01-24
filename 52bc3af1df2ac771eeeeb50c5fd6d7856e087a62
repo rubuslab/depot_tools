@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "88902e0b_d380d4e5",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2797,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-24T15:51:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68993a37_4738843c",
+      "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a864120b_470f1818",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1
@@ -118,6 +136,24 @@
       "writtenOn": "2017-01-24T15:43:49Z",
       "side": 1,
       "message": "Perhaps another test to test that no_cache invalidates all different option types, e.g.\n\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027A\u0027, \u0027B\u0027, \u0027C\u0027]), \u0027cab\u0027)  # Miss.\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027D\u0027, \u0027E\u0027]), \u0027de\u0027)  # Miss.\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027A\u0027, \u0027B\u0027, \u0027C\u0027]), \u0027cab\u0027)\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027E\u0027, \u0027D\u0027], no_cache\u003dTrue), \u0027de\u0027)  # Miss.\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027C\u0027, \u0027B\u0027, \u0027A\u0027]), \u0027cab\u0027)  # Miss, because we cleared cache for entire issue.",
+      "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a88b32df_66e90af9",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2846,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-24T15:51:08Z",
+      "side": 1,
+      "message": "good idea. at the end of prior test because it already has a nice setup.",
+      "parentUuid": "a864120b_470f1818",
       "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

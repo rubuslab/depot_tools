@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "48963609_a315be68",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2512,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-01-24T15:43:49Z",
+      "side": 1,
+      "message": "Perhaps go through the list in reversed order, so that you get the most fresh result.",
+      "range": {
+        "startLine": 2512,
+        "startChar": 38,
+        "endLine": 2512,
+        "endChar": 71
+      },
+      "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c88a26db_95947429",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -37,6 +60,64 @@
       "side": 1,
       "message": "i\u0027m popping all cached items for given issue. Here I\u0027m adding 1 item for specific combination of some issue. There might be prior items cached for this issue (see tests)",
       "parentUuid": "c88a26db_95947429",
+      "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e86e0ae9_2389b80b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2530,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-01-24T15:43:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c87306cf_4875e734",
+      "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "68993a37_4738843c",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2797,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-01-24T15:43:49Z",
+      "side": 1,
+      "message": "I\u0027m somewhat confused by \"init\" part of the name... it looks like it\u0027s setting up mocking rather than initializing the cache. Perhaps \"_mock_gerrit_changes_for_detail_cache\"?",
+      "range": {
+        "startLine": 2797,
+        "startChar": 6,
+        "endLine": 2797,
+        "endChar": 38
+      },
+      "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a864120b_470f1818",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2846,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-01-24T15:43:49Z",
+      "side": 1,
+      "message": "Perhaps another test to test that no_cache invalidates all different option types, e.g.\n\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027A\u0027, \u0027B\u0027, \u0027C\u0027]), \u0027cab\u0027)  # Miss.\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027D\u0027, \u0027E\u0027]), \u0027de\u0027)  # Miss.\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027A\u0027, \u0027B\u0027, \u0027C\u0027]), \u0027cab\u0027)\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027E\u0027, \u0027D\u0027], no_cache\u003dTrue), \u0027de\u0027)  # Miss.\nself.assertEqual(cl._GetChangeDetail(options\u003d[\u0027C\u0027, \u0027B\u0027, \u0027A\u0027]), \u0027cab\u0027)  # Miss, because we cleared cache for entire issue.",
       "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

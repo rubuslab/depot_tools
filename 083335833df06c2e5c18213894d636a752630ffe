@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3dae0c_9e006f22",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-01-24T22:35:44Z",
+      "side": 1,
+      "message": "Seems like this whole function should be contained in gerrit_util, and use the chromium-review.googlesource/project/project%2Aname/config API instead of using git fetch. But that certainly has different latency characteristics, and should be investigated as an independent change.",
+      "revId": "083335833df06c2e5c18213894d636a752630ffe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3cc326a0_d31f0f7b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-24T19:56:49Z",
+      "side": 0,
+      "message": "I think I can completely replace this with just 1 function.",
+      "range": {
+        "startLine": 904,
+        "startChar": 6,
+        "endLine": 904,
+        "endChar": 23
+      },
+      "revId": "d0e1d9d9c5e60567b1b83e5d24a608e6a342006c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

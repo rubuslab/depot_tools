@@ -464,6 +464,9 @@ class TestGitCl(TestCase):
     self.mock(git_cl.upload, 'RealMain', self.fail)
     self.mock(git_cl.watchlists, 'Watchlists', WatchlistsMock)
     self.mock(git_cl.auth, 'get_authenticator_for_host', AuthenticatorMock)
+    self.mock(git_cl.gerrit_util, 'GetChangeDetail',
+              lambda _host, issue, options, **__: self._mocked_call(
+                  'GetChangeDetail', issue, options))
     self.mock(git_cl.gerrit_util.GceAuthenticator, 'is_gce',
               classmethod(lambda _: False))
     self.mock(git_cl, 'DieWithError',
@@ -1190,7 +1193,7 @@ class TestGitCl(TestCase):
     return calls
 
   @classmethod
-  def _gerrit_base_calls(cls, issue=None):
+  def _gerrit_base_calls(cls, issue=None, fetched_description=None):
     return [
         ((['git', 'symbolic-ref', 'HEAD'],), 'master'),
         ((['git', 'config', 'branch.master.git-cl-similarity'],),
@@ -1220,7 +1223,16 @@ class TestGitCl(TestCase):
            'fake_ancestor_sha...', '.'],),
          'M\t.gitignore\n'),
         ((['git', 'config', 'branch.master.gerritpatchset'],), CERR1),
-      ] + ([] if issue else [
+      ] + ([
+        (('GetChangeDetail', '123456', ['CURRENT_REVISION', 'CURRENT_COMMIT']),
+         {
+           'change_id': '123456789',
+           'current_revision': 'sha1_of_current_revision',
+           'revisions': { 'sha1_of_current_revision': {
+             'commit': {'message': fetched_description},
+           }},
+         }),
+      ] if issue else [
         ((['git',
            'log', '--pretty=format:%s%n%n%b', 'fake_ancestor_sha...'],),
          'foo'),
@@ -1359,9 +1371,9 @@ class TestGitCl(TestCase):
       ]
     calls += [
         ((['git', 'config', 'rietveld.cc'],), ''),
-        ((['AddReviewers', 'chromium-review.googlesource.com',
+        (('AddReviewers', 'chromium-review.googlesource.com',
            123456 if squash else None,
-          ['joe@example.com'] + cc, False, notify],), ''),
+          ['joe@example.com'] + cc, False, notify), ''),
     ]
     calls += cls._git_post_upload_calls()
     return calls
@@ -1401,9 +1413,11 @@ class TestGitCl(TestCase):
     self.mock(git_cl, 'DownloadGerritHook', self._mocked_call)
     self.mock(git_cl.gerrit_util, 'AddReviewers',
               lambda h, i, add, is_reviewer, notify: self._mocked_call(
-                  ['AddReviewers', h, i, add, is_reviewer, notify]))
+                  'AddReviewers', h, i, add, is_reviewer, notify))
 
-    self.calls = self._gerrit_base_calls(issue=issue)
+    self.calls = self._gerrit_base_calls(
+        issue=issue,
+        fetched_description=description)
     self.calls += self._gerrit_upload_calls(
         description, reviewers, squash,
         squash_mode=squash_mode,
@@ -1476,9 +1490,6 @@ class TestGitCl(TestCase):
         cc=['more@example.com', 'people@example.com'])
 
   def test_gerrit_upload_squash_first_is_default(self):
-    # Mock Gerrit CL description to indicate the first upload.
-    self.mock(git_cl.Changelist, 'GetDescription',
-              lambda *_: None)
     self._run_gerrit_upload_test(
         [],
         'desc\nBUG=\n\nChange-Id: 123456789',
@@ -1486,9 +1497,6 @@ class TestGitCl(TestCase):
         expected_upstream_ref='origin/master')
 
   def test_gerrit_upload_squash_first(self):
-    # Mock Gerrit CL description to indicate the first upload.
-    self.mock(git_cl.Changelist, 'GetDescription',
-              lambda *_: None)
     self._run_gerrit_upload_test(
         ['--squash'],
         'desc\nBUG=\n\nChange-Id: 123456789',
@@ -1499,12 +1507,10 @@ class TestGitCl(TestCase):
   def test_gerrit_upload_squash_reupload(self):
     description = 'desc\nBUG=\n\nChange-Id: 123456789'
     # Mock Gerrit CL description to indicate re-upload.
-    self.mock(git_cl.Changelist, 'GetDescription',
-              lambda *args: description)
-    self.mock(git_cl.Changelist, 'GetMostRecentPatchset',
-              lambda *args: 1)
-    self.mock(git_cl._GerritChangelistImpl, '_GetChangeDetail',
-              lambda *args: {'change_id': '123456789'})
+    #self.mock(git_cl.Changelist, 'GetMostRecentPatchset',
+    #          lambda *args: 1)
+    #self.mock(git_cl._GerritChangelistImpl, '_GetChangeDetail',
+    #          lambda *args: {'change_id': '123456789'})
     self._run_gerrit_upload_test(
         ['--squash'],
         description,
@@ -1701,27 +1707,27 @@ class TestGitCl(TestCase):
     self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
     self.mock(git_cl._RietveldChangelistImpl, 'GetMostRecentPatchset',
               lambda x: '60001')
-    self.mock(git_cl._GerritChangelistImpl, '_GetChangeDetail',
-              lambda *args: {
-                'current_revision': '7777777777',
-                'revisions': {
-                  '1111111111': {
-                    '_number': 1,
-                    'fetch': {'http': {
-                      'url': 'https://chromium.googlesource.com/my/repo',
-                      'ref': 'refs/changes/56/123456/1',
-                    }},
-                  },
-                  '7777777777': {
-                    '_number': 7,
-                    'fetch': {'http': {
-                      'url': 'https://chromium.googlesource.com/my/repo',
-                      'ref': 'refs/changes/56/123456/7',
-                    }},
-                  },
-                },
-              })
-    self.mock(git_cl.Changelist, 'GetDescription',
+    # self.mock(git_cl._GerritChangelistImpl, '_GetChangeDetail',
+    #           lambda *args: {
+    #             'current_revision': '7777777777',
+    #             'revisions': {
+    #               '1111111111': {
+    #                 '_number': 1,
+    #                 'fetch': {'http': {
+    #                   'url': 'https://chromium.googlesource.com/my/repo',
+    #                   'ref': 'refs/changes/56/123456/1',
+    #                 }},
+    #               },
+    #               '7777777777': {
+    #                 '_number': 7,
+    #                 'fetch': {'http': {
+    #                   'url': 'https://chromium.googlesource.com/my/repo',
+    #                   'ref': 'refs/changes/56/123456/7',
+    #                 }},
+    #               },
+    #             },
+    #           })
+    self.mock(git_cl._RietveldChangelistImpl, 'FetchDescription',
               lambda *args: 'Description')
     self.mock(git_cl, 'IsGitVersionAtLeast', lambda *args: True)
 
@@ -1743,6 +1749,29 @@ class TestGitCl(TestCase):
         self.calls += [
           ((['git', 'config', 'gerrit.host'],), 'true'),
         ]
+
+      self.calls += [
+        (('GetChangeDetail', '123456', ['ALL_REVISIONS', 'CURRENT_COMMIT']),
+         {
+           'current_revision': '7777777777',
+           'revisions': {
+             '1111111111': {
+               '_number': 1,
+               'fetch': {'http': {
+                 'url': 'https://chromium.googlesource.com/my/repo',
+                 'ref': 'refs/changes/56/123456/1',
+               }},
+             },
+             '7777777777': {
+               '_number': 7,
+               'fetch': {'http': {
+                 'url': 'https://chromium.googlesource.com/my/repo',
+                 'ref': 'refs/changes/56/123456/7',
+               }},
+             },
+           },
+         }),
+      ]
     else:
       self.calls += [
         ((['git', 'config', 'gerrit.host'],), CERR1),
@@ -1781,17 +1810,14 @@ class TestGitCl(TestCase):
 
   def test_gerrit_patch_successful(self):
     self._patch_common(is_gerrit=True)
+    self.mock(git_cl._GerritChangelistImpl, 'GetCodereviewServer',
+              lambda _: 'https://chromium-review.googlesource.com')
     self.calls += [
       ((['git', 'fetch', 'https://chromium.googlesource.com/my/repo',
          'refs/changes/56/123456/7'],), ''),
       ((['git', 'cherry-pick', 'FETCH_HEAD'],), ''),
       ((['git', 'config', 'branch.master.gerritissue', '123456'],),
        ''),
-      ((['git', 'config', 'branch.master.gerritserver'],), ''),
-      ((['git', 'config', 'branch.master.merge'],), 'master'),
-      ((['git', 'config', 'branch.master.remote'],), 'origin'),
-      ((['git', 'config', 'remote.origin.url'],),
-       'https://chromium.googlesource.com/my/repo'),
       ((['git', 'config', 'branch.master.gerritserver',
         'https://chromium-review.googlesource.com'],), ''),
       ((['git', 'config', 'branch.master.gerritpatchset', '7'],), ''),
@@ -1800,6 +1826,8 @@ class TestGitCl(TestCase):
 
   def test_patch_force_codereview(self):
     self._patch_common(is_gerrit=True, force_codereview=True)
+    self.mock(git_cl._GerritChangelistImpl, 'GetCodereviewServer',
+              lambda _: 'https://chromium-review.googlesource.com')
     self.calls += [
       ((['git', 'fetch', 'https://chromium.googlesource.com/my/repo',
          'refs/changes/56/123456/7'],), ''),
@@ -1807,11 +1835,6 @@ class TestGitCl(TestCase):
       ((['git', 'symbolic-ref', 'HEAD'],), 'master'),
       ((['git', 'config', 'branch.master.gerritissue', '123456'],),
        ''),
-      ((['git', 'config', 'branch.master.gerritserver'],), ''),
-      ((['git', 'config', 'branch.master.merge'],), 'master'),
-      ((['git', 'config', 'branch.master.remote'],), 'origin'),
-      ((['git', 'config', 'remote.origin.url'],),
-       'https://chromium.googlesource.com/my/repo'),
       ((['git', 'config', 'branch.master.gerritserver',
         'https://chromium-review.googlesource.com'],), ''),
       ((['git', 'config', 'branch.master.gerritpatchset', '7'],), ''),
@@ -2093,7 +2116,15 @@ class TestGitCl(TestCase):
   def test_description_gerrit(self):
     out = StringIO.StringIO()
     self.mock(git_cl.sys, 'stdout', out)
-    self.mock(git_cl.Changelist, 'GetDescription', lambda *args: 'foobar')
+    self.calls = [
+        (('GetChangeDetail', '123123', ['CURRENT_REVISION', 'CURRENT_COMMIT']),
+         {
+           'current_revision': 'sha1',
+           'revisions': {'sha1': {
+             'commit': {'message': 'foobar'},
+           }},
+         }),
+    ]
 
     self.assertEqual(0, git_cl.main([
         'description', 'https://code.review.org/123123', '-d', '--gerrit']))
@@ -2796,14 +2827,11 @@ class TestGitCl(TestCase):
 
   def _mock_gerrit_changes_for_detail_cache(self):
     self.mock(git_cl._GerritChangelistImpl, '_GetGerritHost', lambda _: 'host')
-    self.mock(git_cl.gerrit_util, 'GetChangeDetail',
-              lambda _, issue, options, **__:
-                  self._mocked_call('RPC', issue, options))
 
   def test_gerrit_change_detail_cache_normalize(self):
     self._mock_gerrit_changes_for_detail_cache()
     self.calls = [
-        (('RPC', '2', ['CASE']), 'b'),
+        (('GetChangeDetail', '2', ['CASE']), 'b'),
     ]
     cl = git_cl.Changelist(codereview='gerrit')
     self.assertEqual(cl._GetChangeDetail(issue=2, options=['CaSe']), 'b')
@@ -2814,9 +2842,9 @@ class TestGitCl(TestCase):
   def test_gerrit_change_detail_cache_simple(self):
     self._mock_gerrit_changes_for_detail_cache()
     self.calls = [
-        (('RPC', '1', []), 'a'),
-        (('RPC', '2', []), 'b'),
-        (('RPC', '2', []), 'b2'),
+        (('GetChangeDetail', '1', []), 'a'),
+        (('GetChangeDetail', '2', []), 'b'),
+        (('GetChangeDetail', '2', []), 'b2'),
     ]
     cl = git_cl.Changelist(issue=1, codereview='gerrit')
     self.assertEqual(cl._GetChangeDetail(), 'a')  # Miss.
@@ -2829,10 +2857,10 @@ class TestGitCl(TestCase):
   def test_gerrit_change_detail_cache_options(self):
     self._mock_gerrit_changes_for_detail_cache()
     self.calls = [
-        (('RPC', '1', ['C', 'A', 'B']), 'cab'),
-        (('RPC', '1', ['A', 'D']), 'ad'),
-        (('RPC', '1', ['A']), 'a'),  # no_cache=True
-        (('RPC', '1', ['B']), 'b'),  # no longer in cache.
+        (('GetChangeDetail', '1', ['C', 'A', 'B']), 'cab'),
+        (('GetChangeDetail', '1', ['A', 'D']), 'ad'),
+        (('GetChangeDetail', '1', ['A']), 'a'),  # no_cache=True
+        (('GetChangeDetail', '1', ['B']), 'b'),  # no longer in cache.
     ]
     cl = git_cl.Changelist(issue=1, codereview='gerrit')
     self.assertEqual(cl._GetChangeDetail(options=['C', 'A', 'B']), 'cab')

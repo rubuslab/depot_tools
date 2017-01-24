@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a88b32df_066fdea2",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3828,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-01-24T16:06:04Z",
+      "side": 1,
+      "message": "Nice way to find first matching entry, but somewhat confusing to read. I\u0027ll leave it up to you whether to leave this as is or rewrite as a loop:\n\nfor cl in changes:\n  if cl.GetBranch() \u003d\u003d branch:\n    break",
+      "range": {
+        "startLine": 3828,
+        "startChar": 7,
+        "endLine": 3828,
+        "endChar": 60
+      },
+      "revId": "c78a994fa0689f955ac2ab8dfabfefd419698b1a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

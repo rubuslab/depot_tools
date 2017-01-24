@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ab1f398_cc5c2224",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 899,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-24T20:32:38Z",
+      "side": 1,
+      "message": "there is no new functionally new code here, but quite restructured.Even though tests give me confidence, I\u0027d still appreciate review from Python PoV.",
+      "range": {
+        "startLine": 899,
+        "startChar": 4,
+        "endLine": 899,
+        "endChar": 35
+      },
+      "revId": "a12fce75bab51f3b40dab95dbf59bc1194ba56a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

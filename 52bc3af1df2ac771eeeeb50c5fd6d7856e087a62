@@ -22,6 +22,24 @@
       "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c87306cf_4875e734",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2530,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-24T15:14:28Z",
+      "side": 1,
+      "message": "i\u0027m popping all cached items for given issue. Here I\u0027m adding 1 item for specific combination of some issue. There might be prior items cached for this issue (see tests)",
+      "parentUuid": "c88a26db_95947429",
+      "revId": "52bc3af1df2ac771eeeeb50c5fd6d7856e087a62",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

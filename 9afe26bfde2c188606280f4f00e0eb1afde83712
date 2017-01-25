@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03280620_f1a8081b",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-25T10:42:11Z",
+      "side": 1,
+      "message": "not that it\u0027s needed since message comes from git objects fetched,\nbut this doen\u0027t hurt and code is simpler in git_cl.py",
+      "range": {
+        "startLine": 1664,
+        "startChar": 39,
+        "endLine": 1664,
+        "endChar": 53
+      },
+      "revId": "9afe26bfde2c188606280f4f00e0eb1afde83712",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c035782_0e0f5a72",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2029,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-25T10:42:11Z",
+      "side": 1,
+      "message": "bug is fixed.",
+      "range": {
+        "startLine": 2029,
+        "startChar": 10,
+        "endLine": 2029,
+        "endChar": 47
+      },
+      "revId": "9afe26bfde2c188606280f4f00e0eb1afde83712",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

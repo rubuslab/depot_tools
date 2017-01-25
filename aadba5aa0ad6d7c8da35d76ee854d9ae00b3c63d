@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6deefd1_dbe369f4",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-01-25T14:11:37Z",
+      "side": 1,
+      "message": "nit: have",
+      "range": {
+        "startLine": 483,
+        "startChar": 12,
+        "endLine": 483,
+        "endChar": 15
+      },
+      "revId": "aadba5aa0ad6d7c8da35d76ee854d9ae00b3c63d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4774b979_eea5d707",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-01-25T14:11:37Z",
+      "side": 1,
+      "message": "nit: missing \"know\"",
+      "range": {
+        "startLine": 487,
+        "startChar": 24,
+        "endLine": 487,
+        "endChar": 25
+      },
+      "revId": "aadba5aa0ad6d7c8da35d76ee854d9ae00b3c63d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

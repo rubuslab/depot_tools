@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "046351c6_4ef247b8",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2035,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-25T10:34:39Z",
+      "side": 1,
+      "message": "this shows actual bug: the URL of the server is specified  in \"git cl description\" invocation below. This is fixed in follow up CL.",
+      "range": {
+        "startLine": 2035,
+        "startChar": 8,
+        "endLine": 2035,
+        "endChar": 53
+      },
+      "revId": "a4d3677a60f3e67318bbe7027a9bdc68f3b111b5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

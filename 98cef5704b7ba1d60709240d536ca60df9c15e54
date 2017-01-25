@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c440f4b_704db3c9",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-01-25T14:13:55Z",
+      "side": 0,
+      "message": "IMHO this is just as readable and take just one line",
+      "revId": "98cef5704b7ba1d60709240d536ca60df9c15e54",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

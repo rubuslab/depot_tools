@@ -16,6 +16,23 @@
       "revId": "98cef5704b7ba1d60709240d536ca60df9c15e54",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be3fc237_049499e7",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-25T14:21:29Z",
+      "side": 0,
+      "message": "Done",
+      "revId": "98cef5704b7ba1d60709240d536ca60df9c15e54",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "488d594c_667db237",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2233,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-01-25T18:51:34Z",
+      "side": 1,
+      "message": "Seems like this was for local development and should be removed?",
+      "revId": "2642f44ccab63aef10dbe8122ba7c7849c1c638d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

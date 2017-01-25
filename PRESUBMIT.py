@@ -35,6 +35,14 @@ def DepotToolsPylint(input_api, output_api):
     'R0401',  # Cyclic import
     'W0613',  # Unused argument
   ]
+  removed = False
+  for l in os.listdir('./'):
+    if l.endswith('.pyc'):
+      print('Removing .pyc: %s' % l)
+      os.remove(l)
+      removed = True
+  if not removed:
+    print('no pyc files removed')
   return input_api.canned_checks.GetPylint(
       input_api,
       output_api,

@@ -29,6 +29,7 @@ from datetime import datetime
 from datetime import timedelta
 from functools import partial
 import json
+import logging
 import optparse
 import os
 import subprocess
@@ -48,14 +49,14 @@ from third_party import httplib2
 try:
   from dateutil.relativedelta import relativedelta # pylint: disable=import-error
 except ImportError:
-  print 'python-dateutil package required'
+  sys.stderr.write('python-dateutil package required')
   exit(1)
 
 # python-keyring provides easy access to the system keyring.
 try:
   import keyring  # pylint: disable=unused-import,F0401
 except ImportError:
-  print 'Consider installing python-keyring'
+  sys.stderr.write('Consider installing python-keyring')
 
 rietveld_instances = [
   {
@@ -115,6 +116,30 @@ google_code_projects = [
     'name': 'skia',
   },
 ]
+
+
+class Log(object):
+  def __init__(self):
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+    console_handler.setFormatter(logging.Formatter('%(message)s'))
+    logger = logging.getLogger(__name__)
+    logger.addHandler(console_handler)
+    logger.setLevel(logging.INFO)
+    logger.propagate = False  # The root logger duplicates logs otherwise.
+    self.logger = logger
+
+  def info(self, message):
+    self.logger.info(message)
+
+  def output(self, message):
+    print message
+
+
+# Handles printing the different types of messages to the appropriate
+# destination.
+log = Log()
+
 
 def username(email):
   """Keeps the username of an email address."""
@@ -195,11 +220,11 @@ class MyActivity(object):
       instance['auth'] = has_cookie(instance)
 
     if filtered_instances:
-      print ('No cookie found for the following Rietveld instance%s:' %
+      log.info('No cookie found for the following Rietveld instance%s:' %
              ('s' if len(filtered_instances) > 1 else ''))
       for instance in filtered_instances:
-        print '\t' + instance['url']
-      print 'Use --auth if you would like to authenticate to them.\n'
+        log.info('\t' + instance['url'])
+      log.info('Use --auth if you would like to authenticate to them.\n')
 
   def rietveld_search(self, instance, owner=None, reviewer=None):
     if instance['requires_auth'] and not instance['auth']:
@@ -304,7 +329,7 @@ class MyActivity(object):
       return list(gerrit_util.GenerateAllChanges(instance['url'], req,
           o_params=['MESSAGES', 'LABELS', 'DETAILED_ACCOUNTS']))
     except gerrit_util.GerritError, e:
-      print 'ERROR: Looking up %r: %s' % (instance['url'], e)
+      log.info('ERROR: Looking up %r: %s' % (instance['url'], e))
       return []
 
   def gerrit_search(self, instance, owner=None, reviewer=None):
@@ -416,8 +441,8 @@ class MyActivity(object):
     _, body = http.request(url)
     content = json.loads(body)
     if not content:
-      print "Unable to parse %s response from projecthosting." % (
-          instance["name"])
+      log.info("Unable to parse %s response from projecthosting." % (
+          instance["name"]))
       return []
 
     issues = []
@@ -446,8 +471,8 @@ class MyActivity(object):
     return issues
 
   def print_heading(self, heading):
-    print
-    print self.options.output_format_heading.format(heading=heading)
+    log.output('')
+    log.output(self.options.output_format_heading.format(heading=heading))
 
   def print_change(self, change):
     optional_values = {
@@ -494,7 +519,7 @@ class MyActivity(object):
       values = dict(required_values.items() + optional_values.items())
     else:
       values = required_values
-    print output_format.format(**values).encode(sys.getdefaultencoding())
+    log.output(output_format.format(**values).encode(sys.getdefaultencoding()))
 
 
   def filter_issue(self, issue, should_filter_by_user=True):
@@ -703,8 +728,8 @@ def main():
     options.output_format = ' * [{title}]({url})'
     options.output_format_heading = '### {heading} ###'
 
-  print 'Searching for activity by %s' % options.user
-  print 'Using range %s to %s' % (options.begin, options.end)
+  log.info('Searching for activity by %s' % options.user)
+  log.info('Using range %s to %s' % (options.begin, options.end))
 
   my_activity = MyActivity(options)
 
@@ -720,7 +745,7 @@ def main():
   if options.reviews:
     my_activity.auth_for_reviews()
 
-  print 'Looking up activity.....'
+  log.info('Looking up activity.....')
 
   try:
     if options.changes:
@@ -730,9 +755,9 @@ def main():
     if options.issues:
       my_activity.get_issues()
   except auth.AuthenticationError as e:
-    print "auth.AuthenticationError: %s" % e
+    log.info("auth.AuthenticationError: %s" % e)
 
-  print '\n\n\n'
+  log.info('\n\n\n')
 
   my_activity.print_changes()
   my_activity.print_reviews()

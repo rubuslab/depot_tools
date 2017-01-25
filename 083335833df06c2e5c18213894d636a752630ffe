@@ -16,6 +16,23 @@
       "revId": "083335833df06c2e5c18213894d636a752630ffe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f5fc8e2_cb1eaf2b",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-25T08:48:33Z",
+      "side": 1,
+      "message": "I actually considered that. Latency should actually be better (worst case) than 5+ minutes long git fetch op, as reported by primiano@.\nBut the downside is potentially wrong cookies for chromium-review.googlesource.com vs chromium.googlesource.com and since this is for Rietveld, I am not convinced this is worth the trouble.",
+      "revId": "083335833df06c2e5c18213894d636a752630ffe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

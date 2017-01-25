@@ -936,6 +936,7 @@ def parse_args():
                     help='Always pass --with_branch_heads to gclient.  This '
                           'does the same thing as --refs +refs/branch-heads/*')
   parse.add_option('--git-cache-dir', help='Path to git cache directory.')
+  parse.add_option('--max-attempts', help='Limit retries to this number.')
 
 
   options, args = parse.parse_args()
@@ -967,6 +968,9 @@ def parse_args():
   # parsed as "E:[\x08][\x08]uild".
   if sys.platform.startswith('win'):
     options.git_cache_dir = options.git_cache_dir.replace('\\', '\\\\')
+
+  if options.max_attempts:
+    ATTEMPTS = options.max_attempts
 
   return options, args
 

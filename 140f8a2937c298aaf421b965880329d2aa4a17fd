@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc536c54_a2fd0154",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-25T12:49:05Z",
+      "side": 1,
+      "message": "I think this should instead be inside _RietveldChangelistImpl constructor instead, smth like:\n\nself._auth_config \u003d auth_config or auth.make_auth_config()\n\nthis way problem is solved once and for all :)",
+      "range": {
+        "startLine": 134,
+        "startChar": 6,
+        "endLine": 134,
+        "endChar": 43
+      },
+      "revId": "140f8a2937c298aaf421b965880329d2aa4a17fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

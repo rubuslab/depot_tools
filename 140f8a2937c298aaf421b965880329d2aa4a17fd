@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "c92b43dc_e42a0c1b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-25T12:52:37Z",
+      "side": 1,
+      "message": "can I see complete stack trace? I\u0027ve landed a CL yesterday which likely caused it. If you give me stacktrace, I\u0027ll create a fix.",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 53
+      },
+      "revId": "140f8a2937c298aaf421b965880329d2aa4a17fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fc536c54_a2fd0154",
         "filename": "git_map_branches.py",
         "patchSetId": 1

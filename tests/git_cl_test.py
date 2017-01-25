@@ -687,7 +687,7 @@ class TestGitCl(TestCase):
         '--cc', ','.join(['joe@example.com'] + cc),
     ] + (['--private'] if private else []) + [
         '--git_similarity', similarity or '50'
-    ] + (['--git_no_find_copies'] if find_copies == False else []) + [
+    ] + (['--git_no_find_copies'] if find_copies is False else []) + [
         'fake_ancestor_sha', 'HEAD'
     ]
 
@@ -2725,7 +2725,7 @@ class TestGitCl(TestCase):
     self.assertEqual(cl._GetChangeDetail(), 'a')  # Miss.
     self.assertEqual(cl._GetChangeDetail(), 'a')
     self.assertEqual(cl._GetChangeDetail(issue=2), 'b')  # Miss.
-    self.assertEqual(cl._GetChangeDetail(issue=2, no_cache=True), 'b2') # Miss.
+    self.assertEqual(cl._GetChangeDetail(issue=2, no_cache=True), 'b2')  # Miss.
     self.assertEqual(cl._GetChangeDetail(), 'a')
     self.assertEqual(cl._GetChangeDetail(issue=2), 'b2')
 

@@ -2291,6 +2291,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
               '  Your current remote is: %s'  % self.GetRemoteUrl())
         self._gerrit_host = '%s.googlesource.com' % self._gerrit_host
         self._gerrit_server = 'https://%s' % self._gerrit_host
+    assert self._gerrit_host, 'test mocking is wrong'
     return self._gerrit_host
 
   def _GetGitHost(self):

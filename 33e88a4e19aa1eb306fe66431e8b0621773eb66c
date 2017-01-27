@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4775c669_0943a83a",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2396,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-01-27T17:45:29Z",
+      "side": 1,
+      "message": "nit: I\u0027d reverse the order of this statement, since it reads better as \"if the message author isn\u0027t the owner\".",
+      "revId": "33e88a4e19aa1eb306fe66431e8b0621773eb66c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "revId": "33e88a4e19aa1eb306fe66431e8b0621773eb66c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95382807_ccea3fa4",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2396,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-01-29T15:07:55Z",
+      "side": 1,
+      "message": "follow up https://chromium-review.googlesource.com/434477",
+      "revId": "33e88a4e19aa1eb306fe66431e8b0621773eb66c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -264,8 +264,14 @@ def _ReportErrorFileAndLine(filename, line_num, dummy_line):
   return '%s:%s' % (filename, line_num)
 
 
+def _ExtractFileExtension(affected_file):
+  """Default function to get the file extension for _FindNewViolationsOfRule."""
+  return str(affected_file.LocalPath()).rsplit('.', 1)[-1]
+
+
 def _FindNewViolationsOfRule(callable_rule, input_api, source_file_filter=None,
-                             error_formatter=_ReportErrorFileAndLine):
+                             error_formatter=_ReportErrorFileAndLine,
+                             extract_file_extension=_ExtractFileExtension):
   """Find all newly introduced violations of a per-line rule (a callable).
 
   Arguments:
@@ -275,6 +281,8 @@ def _FindNewViolationsOfRule(callable_rule, input_api, source_file_filter=None,
     source_file_filter: a filter to be passed to the input api.
     error_formatter: a callable taking (filename, line_number, line) and
       returning a formatted error string.
+    extract_file_extension: a callable taking AffectedFile and returning
+      the file extension that will be passed to callable_rule as first argument
 
   Returns:
     A list of the newly-introduced violations reported by the rule.
@@ -286,7 +294,7 @@ def _FindNewViolationsOfRule(callable_rule, input_api, source_file_filter=None,
     # to the SCM to determine the changed region can be quite expensive on
     # Win32.  Assuming that most files will be kept problem-free, we can
     # skip the SCM operations most of the time.
-    extension = str(f.LocalPath()).rsplit('.', 1)[-1]
+    extension = extract_file_extension(f)
     if all(callable_rule(extension, line) for line in f.NewContents()):
       continue  # No violation found in full text: can skip considering diff.
 
@@ -348,23 +356,30 @@ def CheckLongLines(input_api, output_api, maxlen, source_file_filter=None):
   """Checks that there aren't any lines longer than maxlen characters in any of
   the text files to be submitted.
   """
+  # Fake extension used for header file (.h) that have a corresponding
+  # Objective-C implementation file (.m or .mm) as they have a different
+  # line length limit (this extension use a character that is invalid in
+  # a filename on all OS so that we are sure this is a generated one).
+  header_ext = 'h'
+  objc_header_ext = '\0'
   maxlens = {
       'java': 100,
+      'm': 100,
+      'mm': 100,
+      objc_header_ext: 100,
       # This is specifically for Android's handwritten makefiles (Android.mk).
       'mk': 200,
       '': maxlen,
   }
 
   # Language specific exceptions to max line length.
-  # '.h' is considered an obj-c file extension, since OBJC_EXCEPTIONS are a
-  # superset of CPP_EXCEPTIONS.
-  CPP_FILE_EXTS = ('c', 'cc')
+  CPP_FILE_EXTS = ('h', 'c', 'cc')
   CPP_EXCEPTIONS = ('#define', '#endif', '#if', '#include', '#pragma')
   JAVA_FILE_EXTS = ('java',)
   JAVA_EXCEPTIONS = ('import ', 'package ')
   JS_FILE_EXTS = ('js',)
   JS_EXCEPTIONS = ("GEN('#include",)
-  OBJC_FILE_EXTS = ('h', 'm', 'mm')
+  OBJC_FILE_EXTS = (objc_header_ext, 'm', 'mm')
   OBJC_EXCEPTIONS = ('#define', '#endif', '#if', '#import', '#include',
                      '#pragma')
   PY_FILE_EXTS = ('py',)
@@ -378,7 +393,21 @@ def CheckLongLines(input_api, output_api, maxlen, source_file_filter=None):
     (PY_FILE_EXTS, PY_EXCEPTIONS),
   ]
 
-  def no_long_lines(file_extension, line):
+  def get_file_extension(affected_file):
+    filename = str(affected_file.AbsoluteLocalPath())
+    filestem, file_extension = filename.rsplit('.', 1)
+    if file_extension != header_ext:
+      return file_extension
+
+    for extension in filter(lambda x: x != objc_header_ext, OBJC_FILE_EXTS):
+      impl_filename = filestem + '.' + extension
+      if _os.path.isfile(impl_filename):
+        return objc_header_ext
+
+    return file_extension
+
+  def no_long_lines(file_abspath, line):
+    file_extension = get_file_extension(file_abspath)
     # Check for language specific exceptions.
     if any(file_extension in exts and line.startswith(exceptions)
            for exts, exceptions in LANGUAGE_EXCEPTIONS):
@@ -420,7 +449,8 @@ def CheckLongLines(input_api, output_api, maxlen, source_file_filter=None):
 
   errors = _FindNewViolationsOfRule(no_long_lines, input_api,
                                     source_file_filter,
-                                    error_formatter=format_error)
+                                    error_formatter=format_error,
+                                    extract_file_extension=get_file_extension)
   if errors:
     msg = 'Found lines longer than %s characters (first 5 shown).' % maxlen
     return [output_api.PresubmitPromptWarning(msg, items=errors[:5])]

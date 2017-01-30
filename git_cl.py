@@ -2779,17 +2779,20 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       print('Adding self-LGTM (Code-Review +1) because of TBRs')
       refspec_opts.append('l=Code-Review+1')
 
+    # TODO(tandrii): migrate all the refspec options to push_options.
+    push_options = []
+
     if title:
-      if not re.match(r'^[\w ]+$', title):
-        title = re.sub(r'[^\w ]', '', title)
+      if '\n' in title or '\0' in title:
+        # Per https://git-scm.com/docs/git-push#git-push---push-option doc.
+        title = title.replace('\0', '').replace('\n', ' ')
         if not automatic_title:
-          print('WARNING: Patchset title may only contain alphanumeric chars '
-                'and spaces. Cleaned up title:\n%s' % title)
+          print('WARNING: Patchset title may not contains LF or NUL chars. '
+                'Cleaned up title:\n%s' % title)
           if not options.force:
             ask_for_data('Press enter to continue, Ctrl+C to abort')
-      # Per doc, spaces must be converted to underscores, and Gerrit will do the
-      # reverse on its side.
-      refspec_opts.append('m=' + title.replace(' ', '_'))
+      # push_options.append('--push-option=m=%s' % title)
+      push_options.extend(['-o', 'm=%s' % title])
 
     if options.send_mail:
       if not change_desc.get_reviewers():
@@ -2819,7 +2822,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
 
     try:
       push_stdout = gclient_utils.CheckCallAndFilter(
-          ['git', 'push', gerrit_remote, refspec],
+          ['git', 'push'] + push_options + [gerrit_remote, refspec],
           print_stdout=True,
           # Flush after every line: useful for seeing progress when running as
           # recipe.

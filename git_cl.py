@@ -3461,18 +3461,17 @@ def get_cl_statuses(changes, fine_grained, max_processes=None):
       yield (cl, 'waiting' if cl.GetIssueURL() else 'error')
     return
 
-  # First, sort out authentication issues.
-  logging.debug('ensuring credentials exist')
-  for cl in changes:
-    cl.EnsureAuthenticated(force=False, refresh=True)
-
   def fetch(cl):
     try:
       return (cl, cl.GetStatus())
     except:
       # See http://crbug.com/629863.
-      logging.exception('failed to fetch status for %s:', cl)
-      raise
+      cl.EnsureAuthenticated(force=False, refresh=True)
+      try:
+        return (cl, cl.GetStatus())
+      except:
+        logging.exception('failed to fetch status for %s:', cl)
+        raise
 
   threads_count = len(changes)
   if max_processes:

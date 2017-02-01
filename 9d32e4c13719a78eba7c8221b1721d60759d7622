@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e5bb38e6_60882c22",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3467,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-02-01T11:44:59Z",
+      "side": 0,
+      "message": "the purpose of this line is not ensuring that cl.GetStatus() succeeds.\nInstead, it\u0027s to fail early \u0026\u0026 in case of Rietveld\u0027s refresh tokens it allows to refresh it only once, instead of once per branch.\n\nAlso, EnsureAuthenticated may have allowed for user action in the past, so doing so from the main thread was important.\n\nI think somehow caching results of EnsureAuthenticated for Gerrit (as it\u0027s done for Rietveld) is the way to go.",
+      "range": {
+        "startLine": 3467,
+        "startChar": 4,
+        "endLine": 3467,
+        "endChar": 53
+      },
+      "revId": "9d32e4c13719a78eba7c8221b1721d60759d7622",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

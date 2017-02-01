@@ -469,11 +469,15 @@ def force_revision(folder_name, revision):
     # Support for "branch:revision" syntax.
     branch, revision = split_revision
 
+  # git checkout is needed to switch current branch. It can preserve local
+  # modifications, so use git reset --hard to remove any.
   if revision and revision.upper() != 'HEAD':
     git('checkout', '--force', revision, cwd=folder_name, tries=1)
+    git('reset', '--hard', revision, cwd=folder_name, tries=1)
   else:
     ref = branch if branch.startswith('refs/') else 'origin/%s' % branch
     git('checkout', '--force', ref, cwd=folder_name, tries=1)
+    git('reset', '--hard', ref, cwd=folder_name, tries=1)
 
 
 def is_broken_repo_dir(repo_dir):

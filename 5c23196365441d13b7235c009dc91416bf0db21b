@@ -22,6 +22,24 @@
       "revId": "5c23196365441d13b7235c009dc91416bf0db21b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fffe8bdf_06281fe6",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-02-02T21:08:52Z",
+      "side": 1,
+      "message": "I think that reasoning explains why checkout --force doesn\u0027t work.\n\nDo you have an argument why reset --hard (which I\u0027m adding) wouldn\u0027t work?\n\n\u003d\u003d\u003d\n           --hard\n               Resets the index and working tree. Any changes to tracked files in the working tree since \u003ccommit\u003e are discarded.\n\u003d\u003d\u003d",
+      "parentUuid": "c70ff2ab_8e1c7bbd",
+      "revId": "5c23196365441d13b7235c009dc91416bf0db21b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

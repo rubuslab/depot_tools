@@ -203,6 +203,30 @@
     "name": "git bundle"
   },
   {
+    "cmd": [
+      "git",
+      "notes",
+      "add",
+      "-m",
+      "TestNotes",
+      "--force",
+      "--ref",
+      "test_ref"
+    ],
+    "cwd": "[START_DIR]/src",
+    "name": "git notes"
+  },
+  {
+    "cmd": [
+      "git",
+      "log",
+      "--notes=version"
+    ],
+    "cwd": "[START_DIR]/src",
+    "name": "test git notes",
+    "stdout": "/path/to/tmp/"
+  },
+  {
     "name": "$result",
     "recipe_result": null,
     "status_code": 0

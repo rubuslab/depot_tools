@@ -212,6 +212,30 @@
     "name": "git bundle"
   },
   {
+    "cmd": [
+      "RECIPE_PACKAGE_REPO[depot_tools]\\git.bat",
+      "notes",
+      "add",
+      "-m",
+      "TestNotes",
+      "--force",
+      "--ref",
+      "test_ref"
+    ],
+    "cwd": "[START_DIR]\\src",
+    "name": "git notes"
+  },
+  {
+    "cmd": [
+      "RECIPE_PACKAGE_REPO[depot_tools]\\git.bat",
+      "log",
+      "--notes=version"
+    ],
+    "cwd": "[START_DIR]\\src",
+    "name": "test git notes",
+    "stdout": "/path/to/tmp/"
+  },
+  {
     "name": "$result",
     "recipe_result": null,
     "status_code": 0

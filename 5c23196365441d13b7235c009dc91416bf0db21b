@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c70ff2ab_8e1c7bbd",
+        "filename": "recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2017-02-02T21:04:50Z",
+      "side": 1,
+      "message": "Does this work? The docs say (emphasis mine):\n\u003d\u003d\u003d\n--force\nWhen switching branches, proceed even if the index or the working tree differs from HEAD. _This is used to throw away local changes._\n\nWhen checking out paths from the index, do not fail upon unmerged entries; instead, unmerged entries are ignored.\n\u003d\u003d\u003d\n\nI\u0027m not actually sure how the changes in the bug got there, but unless the documentation is wrong this wouldn\u0027t fix things.",
+      "range": {
+        "startLine": 472,
+        "startChar": 56,
+        "endLine": 472,
+        "endChar": 74
+      },
+      "revId": "5c23196365441d13b7235c009dc91416bf0db21b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -88,6 +88,12 @@ def RunSteps(api):
   api.git.bundle_create(
         api.path['start_dir'].join('all.bundle'))
 
+  api.git.add_notes(notes='TestNotes', force=True, notes_ref='test_ref')
+  step_result = api.git('log', '--notes=version',
+                        stdout=api.raw_io.output(), name='test git notes')
+  if step_result.stdout and 'TestNotes' in step_result.stdout:
+    pass  # Success!
+
 
 def GenTests(api):
   yield api.test('basic')
@@ -155,3 +161,9 @@ def GenTests(api):
   yield (
       api.test('git-cache-checkout') +
       api.properties(use_git_cache=True))
+
+  yield (
+      api.test('notes_test') +
+      api.step_data('test git notes',
+                    stdout=api.raw_io.output('TestNotes')))
+

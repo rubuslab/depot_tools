@@ -430,3 +430,18 @@ class GitApi(recipe_api.RecipeApi):
     if not name:
       name = 'git new-branch %s' % branch
     return self(*args, name=name, env=env, **kwargs)
+
+  def add_notes(self, notes, force=False, notes_ref=None, **kwargs):
+    """Runs 'git notes add' on a Git repository, default to HEAD.
+
+    Args:
+      notes (str): The notes to be added to the current commit.
+      force (bool): If true any existing note will be overriden.
+      notes_ref (str): Notes reaf to manipulate (instead of refs/notes/commits).
+    """
+    args = ['notes', 'add', '-m', notes]
+    if force:
+      args.append('--force')
+    if notes_ref:
+      args.extend(['--ref', notes_ref])
+    return self(*args, **kwargs)

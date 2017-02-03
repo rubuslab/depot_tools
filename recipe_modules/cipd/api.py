@@ -142,12 +142,12 @@ class CIPDApi(recipe_api.RecipeApi):
 
     package_list = ['%s %s' % (name, version)
                     for name, version in sorted(packages.items())]
-    list_data = self.m.raw_io.input('\n'.join(package_list))
+    ensure_file = self.m.raw_io.input('\n'.join(package_list))
     cmd = [
       self._cipd_executable,
       'ensure',
       '--root', root,
-      '--list', list_data,
+      '--ensure-file', ensure_file,
       '--json-output', self.m.json.output(),
     ]
     if self._cipd_credentials:

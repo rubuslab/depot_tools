@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2685af52_4d3ced9d",
+        "filename": "recipe_modules/gclient/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-02-06T15:10:49Z",
+      "side": 1,
+      "message": "I\u0027m concerned that this won\u0027t work \u0026 that hooks should be something like List(Dict(value_type\u003dbasestring)), but it\u0027s hard to say for certain. I don\u0027t see anything wrong with your hooks themselves, though, and so I\u0027m ok with you landing this as-is and then updating it as necessary.",
+      "revId": "67899936b71684cc1c3ec06f18275a9408c39842",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

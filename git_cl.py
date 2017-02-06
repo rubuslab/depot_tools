@@ -2817,9 +2817,15 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           'spaces not allowed in refspec: "%s"' % refspec_suffix)
     refspec = '%s:refs/for/%s%s' % (ref_to_push, branch, refspec_suffix)
 
+    mirror = settings.GetGitMirror(gerrit_remote)
+    if mirror:
+      push_url = mirror.url
+    else:
+      push_url = gerrit_remote
+
     try:
       push_stdout = gclient_utils.CheckCallAndFilter(
-          ['git', 'push', gerrit_remote, refspec],
+          ['git', 'push', push_url, refspec],
           print_stdout=True,
           # Flush after every line: useful for seeing progress when running as
           # recipe.

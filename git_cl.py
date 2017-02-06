@@ -2630,6 +2630,11 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     # We assume the remote called "origin" is the one we want.
     # It is probably not worthwhile to support different workflows.
     gerrit_remote = 'origin'
+    mirror = settings.GetGitMirror(gerrit_remote)
+    if mirror:
+      push_url = mirror.url
+    else:
+      push_url = gerrit_remote
 
     remote, remote_branch = self.GetRemoteBranch()
     branch = GetTargetRef(remote, remote_branch, options.target_branch)
@@ -2819,7 +2824,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
 
     try:
       push_stdout = gclient_utils.CheckCallAndFilter(
-          ['git', 'push', gerrit_remote, refspec],
+          ['git', 'push', push_url, refspec],
           print_stdout=True,
           # Flush after every line: useful for seeing progress when running as
           # recipe.

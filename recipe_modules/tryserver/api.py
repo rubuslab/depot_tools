@@ -85,16 +85,16 @@ class TryserverApi(recipe_api.RecipeApi):
       issue_root = self.m.rietveld.calculate_issue_root()
       root = self.m.path['checkout'].join(issue_root)
 
-    patch_file = self.m.raw_io.output('.diff')
+    patch_file = self.m.raw_io.output_text('.diff')
     ext = '.bat' if self.m.platform.is_win else ''
     svn_cmd = ['svn' + ext, 'export', '--force', patch_url, patch_file]
 
     result = self.m.step('download patch', svn_cmd,
                          step_test_data=self.test_api.patch_content)
     result.presentation.logs['patch.diff'] = (
-        result.raw_io.output.split('\n'))
+        result.raw_io.output_text.split('\n'))
 
-    patch_content = self.m.raw_io.input(result.raw_io.output)
+    patch_content = self.m.raw_io.input(result.raw_io.output_text)
     self._apply_patch_step(patch_content=patch_content, root=root)
 
   def apply_from_git(self, cwd):

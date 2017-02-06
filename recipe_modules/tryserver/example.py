@@ -48,7 +48,7 @@ def RunSteps(api):
 
 def GenTests(api):
   description_step = api.override_step_data(
-      'git_cl description', stdout=api.raw_io.output('foobar'))
+      'git_cl description', stdout=api.raw_io.output_text('foobar'))
   yield (api.test('with_svn_patch') +
          api.properties(patch_url='svn://checkout.url'))
 

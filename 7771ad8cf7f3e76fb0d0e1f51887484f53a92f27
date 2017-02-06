@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3401d519_a9694df1",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2635,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-02-06T14:25:17Z",
+      "side": 1,
+      "message": "Maybe move variable to where it is used?",
+      "range": {
+        "startLine": 2635,
+        "startChar": 6,
+        "endLine": 2635,
+        "endChar": 27
+      },
+      "revId": "7771ad8cf7f3e76fb0d0e1f51887484f53a92f27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

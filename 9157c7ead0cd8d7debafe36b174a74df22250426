@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa3a1c09_d5e11e08",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5176,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2017-02-06T21:05:15Z",
+      "side": 1,
+      "message": "Robbie would say that depot_tools shouldn\u0027t know about chrome if it can be helped. Is there any way to do this without hardcoding chrome paths here?",
+      "revId": "9157c7ead0cd8d7debafe36b174a74df22250426",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

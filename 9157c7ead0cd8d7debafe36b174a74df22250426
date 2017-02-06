@@ -16,6 +16,24 @@
       "revId": "9157c7ead0cd8d7debafe36b174a74df22250426",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "889a9e74_fc25941c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5176,
+      "author": {
+        "id": 1103654
+      },
+      "writtenOn": "2017-02-06T22:55:04Z",
+      "side": 1,
+      "message": "So one option I can think of that won\u0027t be Chromium-specific is to generalize this in some way - i.e. to allow a repository to contain something like a FORMAT.py file at its root (similar to PRESUBMIT.py) - and for this code to delegate the validation to that, if it exists. Then, this logic can exist in that file instead. What do you think? It does add a layer of indirection and hides a bit what\u0027s happening - but does allow projects to define their own validators which is potentially useful to other repositories.\n\nWDYT?\n\n(Other options I rejected is superficially generalizing this - like still looking at the filenames but not their paths - and going up the tree to find a pretty_print.py - which doesn\u0027t really make it less Chromium specific in practice.)",
+      "parentUuid": "fa3a1c09_d5e11e08",
+      "revId": "9157c7ead0cd8d7debafe36b174a74df22250426",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

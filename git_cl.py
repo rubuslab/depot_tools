@@ -1355,8 +1355,8 @@ class Changelist(object):
       return None
     return '%s/%s' % (self._codereview_impl.GetCodereviewServer(), issue)
 
-  def GetDescription(self, pretty=False):
-    if not self.has_description:
+  def GetDescription(self, pretty=False, force=False):
+    if not self.has_description or force:
       if self.GetIssue():
         self.description = self._codereview_impl.FetchDescription()
       self.has_description = True
@@ -1459,9 +1459,11 @@ class Changelist(object):
         upstream=upstream_branch)
 
   def UpdateDescription(self, description, force=False):
-    self.description = description
-    return self._codereview_impl.UpdateDescriptionRemote(
+    self._codereview_impl.UpdateDescriptionRemote(
         description, force=force)
+    # Only update description on success, ie the above didn't raise.
+    self.description = description
+    self.has_description = True
 
   def RunHook(self, committing, may_prompt, verbose, change):
     """Calls sys.exit() if the hook fails; returns a HookResults otherwise."""
@@ -1938,7 +1940,7 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
     return 'waiting'
 
   def UpdateDescriptionRemote(self, description, force=False):
-    return self.RpcServer().update_description(
+    self.RpcServer().update_description(
         self.GetIssue(), self.description)
 
   def CloseIssue(self):

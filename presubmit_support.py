@@ -1096,6 +1096,35 @@ def DoPostUploadExecuter(change,
   return results
 
 
+# This helper function should be used by any PostUploadHook wishing to
+# add entries to the CQ_INCLUDE_TRYBOTS line. It returns the results
+# that should be returned from the PostUploadHook.
+def EnsureCQIncludeTrybotsAreAdded(cl, bots_to_include, message, output_api):
+  rietveld_obj = cl.RpcServer()
+  issue = cl.issue
+  description = rietveld_obj.get_description(issue)
+  all_bots = []
+  include_re = re.compile(r'^CQ_INCLUDE_TRYBOTS=(.*)', re.M | re.I)
+  m = include_re.search(description)
+  if m:
+    all_bots = m.group(1).split(';')
+  bots_dirty = False
+  for b in bots_to_include:
+    if b not in all_bots:
+      all_bots.append(b)
+      bots_dirty = True
+  if not bots_dirty:
+    return []
+  # Sort the bots to keep them in some consistent order -- not required.
+  all_bots.sort()
+  new_include_trybots = 'CQ_INCLUDE_TRYBOTS=%s' % ';'.join(all_bots)
+  new_description = include_re.sub(new_include_trybots, description)
+  results = []
+  results.append(output_api.PresubmitNotifyResult(message))
+  rietveld_obj.update_description(issue, new_description)
+  return results
+
+
 class PresubmitExecuter(object):
   def __init__(self, change, committing, rietveld_obj, verbose,
                gerrit_obj=None, dry_run=None):

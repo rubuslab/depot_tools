@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd69afd3_2a7eb188",
+        "filename": "recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-02-07T00:39:33Z",
+      "side": 0,
+      "message": "Are you sure it\u0027s not used somewhere downstream? I am surprised this is svn only, TBH.",
+      "range": {
+        "startLine": 23,
+        "startChar": 6,
+        "endLine": 23,
+        "endChar": 15
+      },
+      "revId": "328b00f95cf79961f698e3b16c0ee45881e10463",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

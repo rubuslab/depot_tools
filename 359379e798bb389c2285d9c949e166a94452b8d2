@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "753dd6d3_30141444",
+        "filename": "cipd_client_version",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-07T05:50:30Z",
+      "side": 1,
+      "message": "$ cipd resolve infra/tools/cipd/ -version git_revision:cab5d6e40d1fba9e69b32a901e9de01dd8f75881\nPackages:\n  infra/tools/cipd/android-amd64:672c66f729d5e5c60453d2e66a972e584ee8aac7\n  infra/tools/cipd/android-armv6l:ca5542ef08ca120c0d7e52b4ca49b8ee1b55cc7a\n  infra/tools/cipd/linux-386:f571508560a149da649e20c321c717409bc6ebcc\n  infra/tools/cipd/linux-amd64:977090f9bb0e6fc1361188769ecfbab08b907fee\n  infra/tools/cipd/linux-arm64:229ca251f9d113f3e250c944554eda93463576ed\n  infra/tools/cipd/linux-armv6l:d8c124fb71164774510a58870000857b973fc7f4\n  infra/tools/cipd/linux-mips64:a303b701ccf426156ec451a9306cea4b0b30c439\n  infra/tools/cipd/mac-amd64:26bac56ffec0eaa79c5e0f0dbe6697804c1dc3bf\n  infra/tools/cipd/windows-386:03c02259c1005fa8c5c98c7cfba3d80e17af0326\n  infra/tools/cipd/windows-amd64:5ba91f2f6fe51081eb7c5be484fe903fbb77b0c8",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "359379e798bb389c2285d9c949e166a94452b8d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

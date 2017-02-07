@@ -22,6 +22,24 @@
       "revId": "b9118783cdfd4ca73ad6d732834861063d5f87e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72d84934_00b5d6fb",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1110,
+      "author": {
+        "id": 1105344
+      },
+      "writtenOn": "2017-02-07T23:22:17Z",
+      "side": 1,
+      "message": "I\u0027ve updated the documentation. Per offline discussion, I\u0027m going to land this, and let\u0027s add Gerrit support afterward. Doing so will not impact the API exposed to Chromium.",
+      "parentUuid": "2e56c26d_e252aae1",
+      "revId": "b9118783cdfd4ca73ad6d732834861063d5f87e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

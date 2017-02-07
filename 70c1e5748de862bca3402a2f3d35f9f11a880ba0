@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c97e560_b4846f3c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1462,
+      "author": {
+        "id": 1105344
+      },
+      "writtenOn": "2017-02-07T23:04:45Z",
+      "side": 1,
+      "message": "The return value from this call is lost. Is that an issue?",
+      "range": {
+        "startLine": 1462,
+        "startChar": 8,
+        "endLine": 1462,
+        "endChar": 9
+      },
+      "revId": "70c1e5748de862bca3402a2f3d35f9f11a880ba0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92b20791_dea79a62",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1941,
+      "author": {
+        "id": 1105344
+      },
+      "writtenOn": "2017-02-07T23:04:45Z",
+      "side": 1,
+      "message": "Same here. Is that OK?",
+      "revId": "70c1e5748de862bca3402a2f3d35f9f11a880ba0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "revId": "67899936b71684cc1c3ec06f18275a9408c39842",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e50f97e_5b1d7017",
+        "filename": "recipe_modules/gclient/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-02-07T22:28:13Z",
+      "side": 1,
+      "message": "\u003e I\u0027m concerned that this won\u0027t work \u0026 that hooks should be something like List(Dict(value_type\u003dbasestring)), but it\u0027s hard to say for certain. I don\u0027t see anything wrong with your hooks themselves, though, and so I\u0027m ok with you landing this as-is and then updating it as necessary.\n\nDoes this really work? c.hooks seems to be dead code unless I\u0027m missing something.\n\nI\u0027m fine with some level of speculation and follow-up, just wanted to check if this even has a chance of not being a no-op.",
+      "parentUuid": "2685af52_4d3ced9d",
+      "revId": "67899936b71684cc1c3ec06f18275a9408c39842",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

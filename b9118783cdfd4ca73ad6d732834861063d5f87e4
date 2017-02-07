@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e56c26d_e252aae1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1110,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-02-07T22:51:49Z",
+      "side": 1,
+      "message": "git_cl.Changelist\nthis was important to me, since I thought it was the thin Change object.\ngit_cl.Changelist has properly abstracted two methods:\n\nGetDescription\nUpdateDescription\n\nwhich will give us Gerrit compatibility immediately if used here.\nI\u0027ve sent you two CLs to improve those two methods as they are somewhat buggy atm:\n  https://chromium-review.googlesource.com/c/439445/\n  https://chromium-review.googlesource.com/c/439186/",
+      "range": {
+        "startLine": 1110,
+        "startChar": 12,
+        "endLine": 1110,
+        "endChar": 22
+      },
+      "revId": "b9118783cdfd4ca73ad6d732834861063d5f87e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

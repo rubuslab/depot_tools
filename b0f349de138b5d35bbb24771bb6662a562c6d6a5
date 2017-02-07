@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d127f29_2863965b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1099,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-02-07T14:11:51Z",
+      "side": 1,
+      "message": "I\u0027d prefer a proper docstring.",
+      "revId": "b0f349de138b5d35bbb24771bb6662a562c6d6a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "520d6e53_0f7b435b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1110,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-02-07T14:11:51Z",
+      "side": 1,
+      "message": "all_bots \u003d [i.strip() for i in m.group(1).split(\u0027;\u0027) if i.strip()]\n\nthis helps with potentially user edited line that added spaces by accident without messing up.",
+      "revId": "b0f349de138b5d35bbb24771bb6662a562c6d6a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0e83e8a_ea8fa799",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1112,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-02-07T14:11:51Z",
+      "side": 1,
+      "message": "if not (set(all_bots) - set(bots_to_include)):\n  return\nall_bots \u003d sorted(set(all_bots) | set(bots_to_include))",
+      "revId": "b0f349de138b5d35bbb24771bb6662a562c6d6a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13a7c84f_fd84107a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-02-07T14:11:51Z",
+      "side": 1,
+      "message": "return output_api.PresubmitNotifyResult(message)\n\nno need for results named variable",
+      "revId": "b0f349de138b5d35bbb24771bb6662a562c6d6a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

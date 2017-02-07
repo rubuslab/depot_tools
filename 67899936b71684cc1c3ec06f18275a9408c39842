@@ -52,6 +52,24 @@
       "revId": "67899936b71684cc1c3ec06f18275a9408c39842",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "646b3f1a_e3de2c17",
+        "filename": "recipe_modules/gclient/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1163549
+      },
+      "writtenOn": "2017-02-07T22:41:02Z",
+      "side": 1,
+      "message": "\u003e My best guess is that this gets written to the spec here: https://codesearch.chromium.org/chromium/tools/depot_tools/recipe_modules/gclient/api.py?rcl\u003d52a23b3594e63f98d786c60b367e1130a5577080\u0026l\u003d226\n\u003e \n\u003e That said, yeah, no one else seems to use c.hooks, so we\u0027ll see.\n\nAssuming that\u0027s the case, then config_to_pythonish should eventually call ConfigGroup\u0027s as_jsonish (https://cs.chromium.org/chromium/infra/recipes-py/recipe_engine/config.py?q\u003dconfiggroup\u0026dr\u003dCSs\u0026l\u003d406), which should loop over all the fields in the type map passed to the constructor, which includes hooks (https://cs.chromium.org/chromium/tools/depot_tools/recipe_modules/gclient/config.py?l\u003d35).",
+      "parentUuid": "b656d256_7947b4c3",
+      "revId": "67899936b71684cc1c3ec06f18275a9408c39842",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

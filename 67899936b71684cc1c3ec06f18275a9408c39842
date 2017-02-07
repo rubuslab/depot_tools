@@ -34,6 +34,24 @@
       "revId": "67899936b71684cc1c3ec06f18275a9408c39842",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b656d256_7947b4c3",
+        "filename": "recipe_modules/gclient/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-02-07T22:30:17Z",
+      "side": 1,
+      "message": "My best guess is that this gets written to the spec here: https://codesearch.chromium.org/chromium/tools/depot_tools/recipe_modules/gclient/api.py?rcl\u003d52a23b3594e63f98d786c60b367e1130a5577080\u0026l\u003d226\n\nThat said, yeah, no one else seems to use c.hooks, so we\u0027ll see.",
+      "parentUuid": "0e50f97e_5b1d7017",
+      "revId": "67899936b71684cc1c3ec06f18275a9408c39842",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -248,9 +248,10 @@ class GclientApi(recipe_api.RecipeApi):
   def runhooks(self, args=None, name='runhooks', **kwargs):
     args = args or []
     assert isinstance(args, (list, tuple))
-    kwargs.setdefault('cwd', self.m.path['checkout'])
-    return self(
-      name, ['runhooks'] + list(args), infra_step=False, **kwargs)
+    with self.m.step.context({
+        'cwd': self.m.step.get_from_context('cwd', self.m.path['checkout'])}):
+      return self(
+        name, ['runhooks'] + list(args), infra_step=False, **kwargs)
 
   @property
   def is_blink_mode(self):

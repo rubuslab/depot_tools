@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9248b2b8_4c2f0546",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-09T20:46:49Z",
+      "side": 1,
+      "message": "\\n",
+      "revId": "658067c5f6cb978b62b3babe829b35d44defb0fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1402968_fe4aa5bb",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-09T20:46:49Z",
+      "side": 1,
+      "message": "Is it \"check_type\". Please spell it like \"check_type\" :( \n\n(Note, we use snake_case).",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 6
+      },
+      "revId": "658067c5f6cb978b62b3babe829b35d44defb0fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "085815a6_f0eacbd0",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-09T20:46:49Z",
+      "side": 1,
+      "message": "\\n\n\n(you get the idea)",
+      "revId": "658067c5f6cb978b62b3babe829b35d44defb0fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c73b5b1_eaf90f92",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-09T20:46:49Z",
+      "side": 1,
+      "message": "Use either \" or \u0027 consistently, at least within a line...\n\nLooks like \u0027 dominates this file, so please switch to \u0027",
+      "range": {
+        "startLine": 27,
+        "startChar": 19,
+        "endLine": 27,
+        "endChar": 20
+      },
+      "revId": "658067c5f6cb978b62b3babe829b35d44defb0fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a63bc0a_496ccdfd",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-09T20:46:49Z",
+      "side": 1,
+      "message": "_check_in\n\nwhy the sudden switch to camelCase?",
+      "range": {
+        "startLine": 54,
+        "startChar": 6,
+        "endLine": 54,
+        "endChar": 14
+      },
+      "revId": "658067c5f6cb978b62b3babe829b35d44defb0fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05349b37_db5db650",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-09T20:46:49Z",
+      "side": 1,
+      "message": "regexps! cipd source code comment is inconsistent...\n\nhttps://github.com/luci/luci-go/blob/master/cipd/client/cipd/local/pkgdef.go#L217\n\nThe are applies to a slash-separate path (independent of the OS) relative to dir_path",
+      "range": {
+        "startLine": 65,
+        "startChar": 31,
+        "endLine": 65,
+        "endChar": 46
+      },
+      "revId": "658067c5f6cb978b62b3babe829b35d44defb0fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "857a722d_28e20c9d",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-09T20:46:49Z",
+      "side": 1,
+      "message": "I\u0027m not 100% sure cipd will like absolute path names in *.yaml, even if they are under the root. Please verify.",
+      "range": {
+        "startLine": 119,
+        "startChar": 17,
+        "endLine": 119,
+        "endChar": 23
+      },
+      "revId": "658067c5f6cb978b62b3babe829b35d44defb0fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f93911e3_acb44829",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-09T20:46:49Z",
+      "side": 1,
+      "message": "\u0027",
+      "range": {
+        "startLine": 254,
+        "startChar": 8,
+        "endLine": 254,
+        "endChar": 9
+      },
+      "revId": "658067c5f6cb978b62b3babe829b35d44defb0fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "060965e0_dbab8fb8",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-09T20:46:49Z",
+      "side": 1,
+      "message": "\u0027",
+      "range": {
+        "startLine": 257,
+        "startChar": 36,
+        "endLine": 257,
+        "endChar": 37
+      },
+      "revId": "658067c5f6cb978b62b3babe829b35d44defb0fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

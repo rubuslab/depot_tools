@@ -301,6 +301,8 @@ class GitWrapper(SCMWrapper):
     self._UpdateBranchHeads(options, fetch=False)
 
     self._Fetch(options, prune=True, quiet=options.verbose)
+    if revision.upper() == 'HEAD':
+      revision = 'origin/master'
     self._Run(['reset', '--hard', revision] + quiet, options)
     if file_list is not None:
       files = self._Capture(['ls-files']).splitlines()

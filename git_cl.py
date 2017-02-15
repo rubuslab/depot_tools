@@ -1816,7 +1816,9 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
     issue = self.GetIssue()
     assert issue
     try:
-      return self.RpcServer().get_description(issue).strip()
+      res = self.RpcServer().get_description(issue).strip()
+      print('\n' + '=' * 80 + '\n' + res + '\n' + '=' * 80 + '\n')
+      return res
     except urllib2.HTTPError as e:
       if e.code == 404:
         DieWithError(
@@ -5231,6 +5233,23 @@ def CMDlol(parser, args):
       'JAnN+lAXsOMJ90GANAi43mq5/VeeacylKVgi8o6F1SC63FxnagHfJUTfUYdCR/W'
       'Ofe+0dHL7PicpytKP750Fh1q2qnLVof4w8OZWNY')))
   return 0
+
+
+def CMDrepro(parser, args):
+  cl = Changelist()
+  assert cl.GetIssue()
+  assert cl.IsGerrit()
+  desc = cl.GetDescription(force=True).strip()
+  n = int((desc.splitlines() or ['INC=0'])[-1].strip('INC='))
+  desc2 = desc + '\n' + 'INC=%d' % (n+1)
+  cl.UpdateDescription(desc2, force=True)
+  desc3 = cl.GetDescription(force=True).strip()
+  assert desc3 == desc2
+
+  desc4 = desc2 + '\n' + 'INC=%d' % (n+2)
+  cl.UpdateDescription(desc4, force=True)
+  desc5 = cl.GetDescription(force=True).strip()
+  assert desc4 == desc5
 
 
 class OptionParser(optparse.OptionParser):

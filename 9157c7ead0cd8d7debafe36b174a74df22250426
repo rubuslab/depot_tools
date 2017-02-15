@@ -52,6 +52,24 @@
       "revId": "9157c7ead0cd8d7debafe36b174a74df22250426",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3922e7ac_b998bf90",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5176,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-02-15T21:48:24Z",
+      "side": 1,
+      "message": "Yeah, Nico knows me too well :)\n\nA FORMAT.py would be generally useful; I worry that this (and, well, other chromium-specific customizations in git_cl) make it difficult to extend in a testable way (since the tool is now defined by the @HEAD representation of files in a particular repo, namely chromium/src).\n\nI\u0027ve filed a bug to track this here: crbug.com/692752\n\nAs for this particular CL, I don\u0027t think it would be fair to ask for a FORMAT.py implementation first, considering how much junk has already been admitted to this implementation :(.",
+      "parentUuid": "b14253b8_59b4f1e7",
+      "revId": "9157c7ead0cd8d7debafe36b174a74df22250426",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

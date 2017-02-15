@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3bce9981_44f2e394",
+        "filename": "recipe_modules/git_cl/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-02-15T19:24:24Z",
+      "side": 1,
+      "message": "I /think/ this actually means\n\n  `self.c.repo_location if self.c else None`\n\nwhich would be clearer",
+      "revId": "3c2e098bc02bb3f5d08d32ab3c2fd602d380e0ab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

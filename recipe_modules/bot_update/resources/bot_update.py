@@ -908,7 +908,7 @@ def parse_args():
                    help='Bypass rebase of Gerrit patch ref after checkout.')
   parse.add_option('--gerrit_no_reset', action='store_true',
                    help='Bypass calling reset after applying a gerrit ref.')
-  parse.add_option('--specs', help='Gcilent spec.')
+  parse.add_option('--spec', help='Gclient spec.')
   parse.add_option('--revision_mapping_file',
                    help=('Path to a json file of the form '
                          '{"path/to/repo/": "property_name"}'))
@@ -1121,9 +1121,9 @@ def main():
   print_debug_info()
 
   # Parse, manipulate, and print the gclient solutions.
-  specs = {}
-  exec(options.specs, specs)
-  orig_solutions = specs.get('solutions', [])
+  spec = {}
+  exec(options.spec, spec)
+  orig_solutions = spec.get('solutions', [])
   git_slns = modify_solutions(orig_solutions)
 
   solutions_printer(git_slns)
@@ -1131,7 +1131,7 @@ def main():
   try:
     # Dun dun dun, the main part of bot_update.
     revisions, step_text, shallow = prepare(options, git_slns, active)
-    checkout(options, git_slns, specs, revisions, step_text, shallow)
+    checkout(options, git_slns, spec, revisions, step_text, shallow)
 
   except PatchFailed as e:
     # Return a specific non-zero exit code for patch failure (because it is

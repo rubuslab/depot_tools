@@ -1095,7 +1095,11 @@ class GitWrapper(SCMWrapper):
     kwargs.setdefault('cwd', self.checkout_path)
     kwargs.setdefault('stderr', subprocess2.PIPE)
     env = scm.GIT.ApplyEnvVars(kwargs)
-    return subprocess2.check_output(['git'] + args, env=env, **kwargs).strip()
+    cmd = ['git']
+    if args and args[0] != 'retry':
+      cmd += ['retry']
+    cmd += args
+    return subprocess2.check_output(cmd, env=env, **kwargs).strip()
 
   def _Checkout(self, options, ref, force=False, quiet=None):
     """Performs a 'git-checkout' operation.
@@ -1161,7 +1165,10 @@ class GitWrapper(SCMWrapper):
     kwargs['filter_fn'] = self.filter
     kwargs.setdefault('print_stdout', False)
     env = scm.GIT.ApplyEnvVars(kwargs)
-    cmd = ['git'] + args
+    cmd = ['git']
+    if args and args[0] != 'retry':
+      cmd += ['retry']
+    cmd += args
     if show_header:
       gclient_utils.CheckCallAndFilterAndHeader(cmd, env=env, **kwargs)
     else:

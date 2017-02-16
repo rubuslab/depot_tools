@@ -98,6 +98,10 @@ GIT_TRANSIENT_ERRORS = (
     r'Unable to look up',
 
     r'Couldn\'t resolve host',
+
+    # Only in conjunction with GIT_HTTP_LOW_SPEED_LIMIT and
+    # GIT_HTTP_LOW_SPEED_TIME
+    r'Operation too slow',
 )
 
 GIT_TRANSIENT_ERRORS_RE = re.compile('|'.join(GIT_TRANSIENT_ERRORS),

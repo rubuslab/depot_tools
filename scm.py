@@ -17,6 +17,7 @@ from xml.etree import ElementTree
 import gclient_utils
 import subprocess2
 
+DEPOT_TOOLS_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 def ValidateEmail(email):
   return (re.match(r"^[a-zA-Z0-9._%-+]+@[a-zA-Z0-9._%-]+.[a-zA-Z]{2,6}$", email)
@@ -109,6 +110,8 @@ class GIT(object):
     env.setdefault('SSH_ASKPASS', 'true')
     # 'cat' is a magical git string that disables pagers on all platforms.
     env.setdefault('GIT_PAGER', 'cat')
+    # We should always have depot_tools in the path.
+    env['PATH'] = env.get('PATH', '') + os.pathsep + DEPOT_TOOLS_ROOT
     return env
 
   @staticmethod

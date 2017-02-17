@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51d26cd3_3b7da4d7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-02-17T00:11:41Z",
+      "side": 1,
+      "message": "nit: status",
+      "range": {
+        "startLine": 307,
+        "startChar": 24,
+        "endLine": 307,
+        "endChar": 36
+      },
+      "revId": "1aefcc587559619641c5bb46158ca9d805b9d39f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a9d4fbb_1a08e3a3",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-02-17T00:11:41Z",
+      "side": 1,
+      "message": "Maybe mention \"v1: \"",
+      "range": {
+        "startLine": 309,
+        "startChar": 10,
+        "endLine": 309,
+        "endChar": 21
+      },
+      "revId": "1aefcc587559619641c5bb46158ca9d805b9d39f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42b1d112_d106ac2e",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-02-17T00:11:41Z",
+      "side": 1,
+      "message": "Isn\u0027t this implicit in the \"Print\"?",
+      "range": {
+        "startLine": 313,
+        "startChar": 24,
+        "endLine": 313,
+        "endChar": 42
+      },
+      "revId": "1aefcc587559619641c5bb46158ca9d805b9d39f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d897aa37_d333b38c",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-02-17T00:11:41Z",
+      "side": 1,
+      "message": "Other reviewers: note that this will catch untracked files as well, e.g., \".svn_backup\". (Not ignored) This might be good! Anything come to mind why we shouldn\u0027t do this?",
+      "range": {
+        "startLine": 314,
+        "startChar": 10,
+        "endLine": 314,
+        "endChar": 39
+      },
+      "revId": "1aefcc587559619641c5bb46158ca9d805b9d39f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

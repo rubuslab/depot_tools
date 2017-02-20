@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "f384351b_7a7e1596",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-02-20T14:03:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61a9384a_a73d8aa5",
+      "range": {
+        "startLine": 7,
+        "startChar": 7,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "d5e77f60fba1bc3885be7780ea030879298e9f5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d83bacb4_f3fbf10a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-02-20T14:03:20Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "1fcdc38d_9f349280",
+      "range": {
+        "startLine": 4,
+        "startChar": 36,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "d5e77f60fba1bc3885be7780ea030879298e9f5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d081d35b_ff0c78c7",
         "filename": "git_cl.py",
         "patchSetId": 1

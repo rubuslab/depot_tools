@@ -1164,3 +1164,21 @@ def CheckGNFormatted(input_api, output_api):
   # It's just a warning, so ignore other types of failures assuming they'll be
   # caught elsewhere.
   return warnings
+
+
+def CheckConflictsUnderCaseInsensitiveFilesystem(input_api, output_api):
+  affected_files = [
+      f.AbsoluteLocalPath() for f in input_api.change.AffectedFiles()]
+  warnings = []
+  finished_dirs = []
+  for f in affected_files:
+    dirname = _os.path.dirname(f)
+    if dirname in finished_dirs:
+      continue
+    names = [name.lower() for name in _os.listdir(dirname)]
+    if len(set(names)) != len(names):
+      warnings.append(output_api.PresubmitPromptWarning(
+          '%s contains conflicts under case-insensitive filesystem.' % (
+              dirname)))
+    finished_dirs.append(dirname)
+  return warnings

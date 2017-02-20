@@ -1544,6 +1544,7 @@ class Changelist(object):
 
   def CMDUpload(self, options, git_diff_args, orig_args):
     """Uploads a change to codereview."""
+
     if git_diff_args:
       # TODO(ukai): is it ok for gerrit case?
       base_branch = git_diff_args[0]

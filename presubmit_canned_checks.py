@@ -1164,3 +1164,43 @@ def CheckGNFormatted(input_api, output_api):
   # It's just a warning, so ignore other types of failures assuming they'll be
   # caught elsewhere.
   return warnings
+
+
+def CheckConflictsUnderCaseInsensitiveFilesystem(input_api, output_api):
+  warnings = []
+  finished_dirs = []
+  # If directory exists, lowercase_dirs would have mapping from
+  # dirname to True.  Otherwise, it will have mapping from dirname to False.
+  # If both True and False exists to the same dirname, that should mean
+  # renaming should not be accepted under case insensitive file system.
+  lowercase_dirs = {}
+  for dirname in input_api.LocalPaths():
+    while dirname and dirname != '.':
+      dirname = _os.path.dirname(dirname)
+      if dirname == '':
+        dirname = '.'
+      if dirname in finished_dirs:
+        continue
+      lower_dirname = dirname.lower()
+      if not _os.path.isdir(dirname):
+        if lower_dirname in lowercase_dirs and lowercase_dirs[lower_dirname]:
+          warnings.append(output_api.PresubmitPromptWarning(
+              'Renaming on %s will cause conflicts under case-insensitive '
+              'filesystem.' % dirname))
+        else:
+          lowercase_dirs[lower_dirname] = False
+      else:
+        names = [name.lower() for name in _os.listdir(dirname)]
+        if len(set(names)) != len(names):
+          warnings.append(output_api.PresubmitPromptWarning(
+              '%s has filename conflicts under case-insensitive '
+              'filesystem.' % dirname))
+        if (lower_dirname in lowercase_dirs and
+            not lowercase_dirs[lower_dirname]):
+          warnings.append(output_api.PresubmitPromptWarning(
+              'Renaming on %s will cause conflicts under case-insensitive '
+              'filesystem.' % dirname))
+        else:
+          lowercase_dirs[lower_dirname] = True
+      finished_dirs.append(dirname)
+  return warnings

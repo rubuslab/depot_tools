@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06cdef13_9a2fdfcd",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-02-21T19:57:13Z",
+      "side": 1,
+      "message": "No, he meant that you probably want to add the check here, which is called by virtually all PRESUBMIT files",
+      "revId": "008be4f557e46c59e7109f8e732a88b8686c49dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

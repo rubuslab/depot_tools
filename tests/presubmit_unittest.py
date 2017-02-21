@@ -1638,6 +1638,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
       'CheckChangeHasTestField',
       'CheckChangeLintsClean',
       'CheckChangeWasUploaded',
+      'CheckConflictsUnderCaseInsensitiveFilesystem',
       'CheckDoNotSubmit',
       'CheckDoNotSubmitInDescription', 'CheckDoNotSubmitInFiles',
       'CheckGenderNeutral',

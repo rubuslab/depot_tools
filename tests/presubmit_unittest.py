@@ -1638,6 +1638,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
       'CheckChangeHasTestField',
       'CheckChangeLintsClean',
       'CheckChangeWasUploaded',
+      'CheckConflictsUnderCaseInsensitiveFilesystem',
       'CheckDoNotSubmit',
       'CheckDoNotSubmitInDescription', 'CheckDoNotSubmitInFiles',
       'CheckGenderNeutral',
@@ -2666,6 +2667,9 @@ class CannedChecksUnittest(PresubmitTestsBase):
     input_api.ReadFile(affected_file, 'rb').AndReturn(
         'Hey!\nHo!\nHey!\nHo!\n\n')
     affected_file.LocalPath()
+    input_api.LocalPaths().AndReturn(['hello.py'])
+    input_api.os_path.isdir('.').AndReturn(True)
+    input_api.os_listdir('.').AndReturn(['hello.py'])
 
     self.mox.ReplayAll()
     results = presubmit_canned_checks.PanProjectChecks(

@@ -16,6 +16,24 @@
       "revId": "008be4f557e46c59e7109f8e732a88b8686c49dd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "536dad30_60338947",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2017-02-22T01:42:17Z",
+      "side": 1,
+      "message": "If I add the check here, I might need to make mox allow to use os.path.isdir and os.listdir.  What is the expected way to do that?  I guess updating InputApi, but I am not sure.",
+      "parentUuid": "06cdef13_9a2fdfcd",
+      "revId": "008be4f557e46c59e7109f8e732a88b8686c49dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

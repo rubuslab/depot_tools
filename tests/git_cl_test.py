@@ -2124,13 +2124,13 @@ class TestGitCl(TestCase):
           '# The first line will also be used as the subject of the review.\n'
           '#--------------------This line is 72 characters long'
           '--------------------\n'
-          'Some.\n\nBUG=\n\nChange-Id: xxx',
+          'Some.\n\nChange-Id: xxx\nBug: ',
           desc)
       # Simulate user changing something.
-      return 'Some.\n\nBUG=123\n\nChange-Id: xxx'
+      return 'Some.\n\nChange-Id: xxx\nBug: 123'
 
     def UpdateDescriptionRemote(_, desc, force=False):
-      self.assertEquals(desc, 'Some.\n\nBUG=123\n\nChange-Id: xxx')
+      self.assertEquals(desc, 'Some.\n\nChange-Id: xxx\nBug: 123')
 
     self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
     self.mock(git_cl.Changelist, 'GetDescription',

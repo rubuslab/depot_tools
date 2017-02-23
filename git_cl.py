@@ -2095,7 +2095,7 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
                                      options.tbr_owners,
                                      change)
       if not options.force:
-        change_desc.prompt(bug=options.bug)
+        change_desc.prompt(bug=options.bug, git_footer=False)
 
       if not change_desc.description:
         print('Description is empty; aborting.')
@@ -3077,7 +3077,7 @@ class ChangeDescription(object):
       if new_tbr_line:
         self.append_footer(new_tbr_line)
 
-  def prompt(self, bug=None):
+  def prompt(self, bug=None, git_footer=True):
     """Asks the user to update the description."""
     self.set_description([
       '# Enter a description of the change.',
@@ -3091,9 +3091,11 @@ class ChangeDescription(object):
     if not any((regexp.match(line) for line in self._description_lines)):
       prefix = settings.GetBugPrefix()
       values = list(_get_bug_line_values(prefix, bug or '')) or [prefix]
-      for value in values:
-        # TODO(tandrii): change this to 'Bug: xxx' to be a proper Gerrit footer.
-        self.append_footer('BUG=%s' % value)
+      if git_footer:
+        self.append_footer('Bug: %s' % ', '.join(values))
+      else:
+        for value in values:
+          self.append_footer('BUG=%s' % value)
 
     content = gclient_utils.RunEditor(self.description, True,
                                       git_editor=settings.GetGitEditor())
@@ -3976,7 +3978,7 @@ def CMDdescription(parser, args):
 
     description.set_description(text)
   else:
-    description.prompt()
+    description.prompt(git_footer=cl.IsGerrit())
 
   if cl.GetDescription() != description.description:
     cl.UpdateDescription(description.description, force=options.force)

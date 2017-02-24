@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e3b7bf0_2a6ac344",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-02-24T23:00:22Z",
+      "side": 1,
+      "message": "this is always forward-slash separated\n\nbasically, package definition YAML is assumed to be cross-platform. It uses linux-style paths, even on Windows.\n\nSee \"filepath.FromSlash\":\nhttps://github.com/luci/luci-go/blob/master/cipd/client/cipd/local/pkgdef.go#L142\nhttps://github.com/luci/luci-go/blob/master/cipd/client/cipd/local/pkgdef.go#L147\n\n(Also your CL introduced a bug: https://github.com/luci/luci-go/blob/master/cipd/client/cipd/local/pkgdef.go#L140 should have FromSlash too)",
+      "range": {
+        "startLine": 67,
+        "startChar": 24,
+        "endLine": 67,
+        "endChar": 66
+      },
+      "revId": "db98a71dec6c55ddad80734b6ca92951a24fe792",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

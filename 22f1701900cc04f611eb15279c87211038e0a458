@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84e72d55_9caa4d62",
+        "filename": "owners.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2017-03-02T15:44:17Z",
+      "side": 1,
+      "message": "if you want, you can do\n\n  for lineno, lin in enumerate(self.fopen(...), 1):\n\nand delete the lines before and after this line",
+      "revId": "22f1701900cc04f611eb15279c87211038e0a458",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

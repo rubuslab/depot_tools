@@ -2752,8 +2752,7 @@ def CheckForNonStandardConstructs(filename, clean_lines, linenum,
   # Look for single-argument constructors that aren't marked explicit.
   # Technically a valid construct, but against style.
   explicit_constructor_match = Match(
-      r'\s+(?:(?:inline|constexpr)\s+)*(explicit\s+)?'
-      r'(?:(?:inline|constexpr)\s+)*%s\s*'
+      r'\s+(?:inline\s+)?(explicit\s+)?(?:inline\s+)?%s\s*'
       r'\(((?:[^()]|\([^()]*\))*)\)'
       % re.escape(base_classname),
       line)

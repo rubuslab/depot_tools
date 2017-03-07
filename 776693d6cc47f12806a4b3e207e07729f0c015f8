@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65fd40be_3c987758",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:15:53Z",
+      "side": 1,
+      "message": "action\u003d\u0027store_const\u0027, const\u003d2, default\u003d1, dest\u003d\u0027verbosity\u0027,",
+      "revId": "776693d6cc47f12806a4b3e207e07729f0c015f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cdbd9e2a_8693f5ff",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:15:53Z",
+      "side": 1,
+      "message": "action\u003d\u0027store_const\u0027, dest\u003d\u0027verbosity\u0027, const\u003d0,",
+      "revId": "776693d6cc47f12806a4b3e207e07729f0c015f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e98bb21_719e9993",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:15:53Z",
+      "side": 1,
+      "message": "logging.basicConfig(level\u003d[logging.INFO, logging.WARN, logging.ERROR][args.verbosity])",
+      "revId": "776693d6cc47f12806a4b3e207e07729f0c015f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

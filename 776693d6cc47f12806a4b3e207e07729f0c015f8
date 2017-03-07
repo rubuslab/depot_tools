@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1de5a0d2_eee61ecb",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T13:28:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "65fd40be_3c987758",
+      "revId": "776693d6cc47f12806a4b3e207e07729f0c015f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cdbd9e2a_8693f5ff",
         "filename": "my_activity.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0a9e4227_8ca51509",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T13:28:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "cdbd9e2a_8693f5ff",
+      "revId": "776693d6cc47f12806a4b3e207e07729f0c015f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e98bb21_719e9993",
         "filename": "my_activity.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2017-03-07T13:15:53Z",
       "side": 1,
       "message": "logging.basicConfig(level\u003d[logging.INFO, logging.WARN, logging.ERROR][args.verbosity])",
+      "revId": "776693d6cc47f12806a4b3e207e07729f0c015f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e222fb20_65921545",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T13:28:24Z",
+      "side": 1,
+      "message": "Done. Used the constants directly in the options to avoid the array. WDYT?",
+      "parentUuid": "2e98bb21_719e9993",
       "revId": "776693d6cc47f12806a4b3e207e07729f0c015f8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

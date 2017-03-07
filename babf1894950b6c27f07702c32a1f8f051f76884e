@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "cfe9c82c_bc5bdf06",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T13:57:40Z",
+      "side": 1,
+      "message": "It makes it easy to cope with any code paths that don\u0027t provide a particular format value, outputting \u0027\u0027 in that case. This makes it easy to create one tsv containing reviews, issues, and changes with a consistent set of columns throughout.\n\nI\u0027m happy to take alternate suggestions, or disagreements, but I thought I\u0027d explain my thinking before removing it.",
+      "parentUuid": "b457a31f_801a5989",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "78827e3f_9360ba3e",
         "filename": "my_activity.py",
         "patchSetId": 2

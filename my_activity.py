@@ -23,39 +23,40 @@ Example:
 # check those details to determine if there was activity in the given period.
 # This means that query time scales mostly with (today() - begin).
 
-import cookielib
-import datetime
 from datetime import datetime
 from datetime import timedelta
 from functools import partial
 import json
+import logging
 import optparse
 import os
 import subprocess
+from string import Formatter
 import sys
 import urllib
-import urllib2
 
 import auth
 import fix_encoding
 import gerrit_util
 import rietveld
-from third_party import upload
 
-import auth
 from third_party import httplib2
 
 try:
   from dateutil.relativedelta import relativedelta # pylint: disable=import-error
 except ImportError:
-  print 'python-dateutil package required'
+  logging.error('python-dateutil package required')
   exit(1)
 
-# python-keyring provides easy access to the system keyring.
-try:
-  import keyring  # pylint: disable=unused-import,F0401
-except ImportError:
-  print 'Consider installing python-keyring'
+class DefaultFormatter(Formatter):
+  def __init__(self, default = ''):
+    super(DefaultFormatter, self).__init__()
+    self.default = ''
+
+  def get_value(self, key, args, kwds):
+    if isinstance(key, basestring) and key not in kwds:
+      return self.default
+    return Formatter.get_value(self, key, args, kwds)
 
 rietveld_instances = [
   {
@@ -195,11 +196,11 @@ class MyActivity(object):
       instance['auth'] = has_cookie(instance)
 
     if filtered_instances:
-      print ('No cookie found for the following Rietveld instance%s:' %
-             ('s' if len(filtered_instances) > 1 else ''))
+      logging.warn('No cookie found for the following Rietveld instance%s:',
+                   's' if len(filtered_instances) > 1 else '')
       for instance in filtered_instances:
-        print '\t' + instance['url']
-      print 'Use --auth if you would like to authenticate to them.\n'
+        logging.warn('\t' + instance['url'])
+      logging.warn('Use --auth if you would like to authenticate to them.')
 
   def rietveld_search(self, instance, owner=None, reviewer=None):
     if instance['requires_auth'] and not instance['auth']:
@@ -238,7 +239,7 @@ class MyActivity(object):
         issues)
 
     should_filter_by_user = True
-    issues = map(partial(self.process_rietveld_issue, instance), issues)
+    issues = map(partial(self.process_rietveld_issue, remote, instance), issues)
     issues = filter(
         partial(self.filter_issue, should_filter_by_user=should_filter_by_user),
         issues)
@@ -246,8 +247,30 @@ class MyActivity(object):
 
     return issues
 
-  def process_rietveld_issue(self, instance, issue):
+  def process_rietveld_issue(self, remote, instance, issue):
     ret = {}
+    if self.options.deltas:
+      patchset_props = remote.get_patchset_properties(
+          issue['issue'],
+          issue['patchsets'][-1])
+      insertions = 0
+      deletions = 0
+      for changed_file in patchset_props['files'].itervalues():
+        insertions += changed_file['num_added']
+        deletions += changed_file['num_removed']
+      ret['delta'] = DefaultFormatter().format(
+          '+{0},-{1}',
+          insertions, deletions)
+
+    if issue['landed_days_ago'] != 'unknown':
+      ret['status'] = 'committed'
+    elif issue['closed']:
+      ret['status'] = 'closed'
+    elif len(issue['reviewers']) and issue['all_required_reviewers_approved']:
+      ret['status'] = 'ready'
+    else:
+      ret['status'] = 'open'
+
     ret['owner'] = issue['owner_email']
     ret['author'] = ret['owner']
 
@@ -304,7 +327,7 @@ class MyActivity(object):
       return list(gerrit_util.GenerateAllChanges(instance['url'], req,
           o_params=['MESSAGES', 'LABELS', 'DETAILED_ACCOUNTS']))
     except gerrit_util.GerritError, e:
-      print 'ERROR: Looking up %r: %s' % (instance['url'], e)
+      logging.error('Looking up %r: %s', instance['url'], e)
       return []
 
   def gerrit_search(self, instance, owner=None, reviewer=None):
@@ -333,6 +356,11 @@ class MyActivity(object):
 
   def process_gerrit_ssh_issue(self, instance, issue):
     ret = {}
+    if self.options.deltas:
+      ret['delta'] = DefaultFormatter().format(
+          '+{insertions},-{deletions}',
+          **issue)
+    ret['status'] = issue['status']
     ret['review_url'] = issue['url']
     if 'shorturl' in instance:
       ret['review_url'] = 'http://%s/%s' % (instance['shorturl'],
@@ -364,6 +392,11 @@ class MyActivity(object):
 
   def process_gerrit_rest_issue(self, instance, issue):
     ret = {}
+    if self.options.deltas:
+      ret['delta'] = DefaultFormatter().format(
+          '+{insertions},-{deletions}',
+          **issue)
+    ret['status'] = issue['status']
     ret['review_url'] = 'https://%s/%s' % (instance['url'], issue['_number'])
     if 'shorturl' in instance:
       # TODO(deymo): Move this short link to https once crosreview.com supports
@@ -416,7 +449,7 @@ class MyActivity(object):
     _, body = http.request(url)
     content = json.loads(body)
     if not content:
-      print "Unable to parse %s response from projecthosting." % (
+      logging.error("Unable to parse %s response from projecthosting.",
           instance["name"])
       return []
 
@@ -431,7 +464,8 @@ class MyActivity(object):
           "author": item["author"]["name"],
           "url": "https://code.google.com/p/%s/issues/detail?id=%s" % (
               instance["name"], item["id"]),
-          "comments": []
+          "comments": [],
+          "status": item["status"]
         }
         if 'shorturl' in instance:
           issue['url'] = 'http://%s/%d' % (instance['shorturl'], item['id'])
@@ -449,10 +483,28 @@ class MyActivity(object):
     print
     print self.options.output_format_heading.format(heading=heading)
 
+  def match(self, author):
+    if '@' in self.user:
+      return author == self.user
+    else:
+      return author.startswith(self.user + '@')
+
   def print_change(self, change):
+    activity = len([
+        reply
+        for reply in change['replies']
+        if self.match(reply['author'])
+    ])
     optional_values = {
-        'reviewers': ', '.join(change['reviewers'])
+        'reviewers': ', '.join(change['reviewers']),
+        'created': str(change['created'])[:10],
+        'modified': str(change['modified'])[:10],
+        'status': change['status'],
+        'activity': activity
     }
+    if self.options.deltas:
+        optional_values['delta'] = change['delta']
+
     self.print_generic(self.options.output_format,
                        self.options.output_format_changes,
                        change['header'],
@@ -463,6 +515,9 @@ class MyActivity(object):
   def print_issue(self, issue):
     optional_values = {
         'owner': issue['owner'],
+        'status': issue['status'],
+        'created': str(issue['created'])[:10],
+        'modified': str(issue['modified'])[:10]
     }
     self.print_generic(self.options.output_format,
                        self.options.output_format_issues,
@@ -472,11 +527,22 @@ class MyActivity(object):
                        optional_values)
 
   def print_review(self, review):
+    activity = len([
+        reply
+        for reply in review['replies']
+        if self.match(reply['author'])
+    ])
+    optional_values = {
+        'created': str(review['created'])[:10],
+        'modified': str(review['modified'])[:10],
+        'activity': activity
+    }
     self.print_generic(self.options.output_format,
                        self.options.output_format_reviews,
                        review['header'],
                        review['review_url'],
-                       review['author'])
+                       review['author'],
+                       optional_values)
 
   @staticmethod
   def print_generic(default_fmt, specific_fmt,
@@ -484,17 +550,15 @@ class MyActivity(object):
                     optional_values=None):
     output_format = specific_fmt if specific_fmt is not None else default_fmt
     output_format = unicode(output_format)
-    required_values = {
+    values = {
         'title': title,
         'url': url,
         'author': author,
     }
-    # Merge required and optional values.
     if optional_values is not None:
-      values = dict(required_values.items() + optional_values.items())
-    else:
-      values = required_values
-    print output_format.format(**values).encode(sys.getdefaultencoding())
+      values.update(optional_values)
+    print DefaultFormatter().format(output_format, **values).encode(
+        sys.getdefaultencoding())
 
 
   def filter_issue(self, issue, should_filter_by_user=True):
@@ -608,6 +672,10 @@ def main():
       '-a', '--auth',
       action='store_true',
       help='Ask to authenticate for instances with no auth cookie')
+  parser.add_option(
+      '-d', '--deltas',
+      action='store_true',
+      help='Fetch deltas for changes (slow).')
 
   activity_types_group = optparse.OptionGroup(parser, 'Activity Types',
                                'By default, all activity will be looked up and '
@@ -666,6 +734,16 @@ def main():
   parser.add_option_group(output_format_group)
   auth.add_auth_options(parser)
 
+  parser.add_option(
+      '-v', '--verbose', dest='verbosity', action='store_const',
+      default=logging.WARN,
+      const=logging.INFO,
+  )
+  parser.add_option(
+      '-q', '--quiet', dest='verbosity', action='store_const',
+      const=logging.ERROR,
+  )
+
   # Remove description formatting
   parser.format_description = (
       lambda _: parser.description)  # pylint: disable=no-member
@@ -676,8 +754,15 @@ def main():
     parser.error('Args unsupported')
   if not options.user:
     parser.error('USER is not set, please use -u')
-
   options.user = username(options.user)
+
+  logging.basicConfig(stream=sys.stderr, level=options.verbosity)
+
+  # python-keyring provides easy access to the system keyring.
+  try:
+    import keyring  # pylint: disable=unused-import,F0401
+  except ImportError:
+    logging.warn('Consider installing python-keyring')
 
   if not options.begin:
     if options.last_quarter:
@@ -702,9 +787,8 @@ def main():
   if options.markdown:
     options.output_format = ' * [{title}]({url})'
     options.output_format_heading = '### {heading} ###'
-
-  print 'Searching for activity by %s' % options.user
-  print 'Using range %s to %s' % (options.begin, options.end)
+  logging.info('Searching for activity by %s', options.user)
+  logging.info('Using range %s to %s', options.begin, options.end)
 
   my_activity = MyActivity(options)
 
@@ -720,7 +804,7 @@ def main():
   if options.reviews:
     my_activity.auth_for_reviews()
 
-  print 'Looking up activity.....'
+  logging.info('Looking up activity.....')
 
   try:
     if options.changes:
@@ -730,9 +814,7 @@ def main():
     if options.issues:
       my_activity.get_issues()
   except auth.AuthenticationError as e:
-    print "auth.AuthenticationError: %s" % e
-
-  print '\n\n\n'
+    logging.error("auth.AuthenticationError: %s", e)
 
   my_activity.print_changes()
   my_activity.print_reviews()

@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "c4fb923c_8736cb59",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78827e3f_9360ba3e",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "626ca5cc_3a30f17f",
         "filename": "my_activity.py",
         "patchSetId": 2
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "914ddd38_98e84dc0",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "626ca5cc_3a30f17f",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ceb250e3_a3526f52",
         "filename": "my_activity.py",
         "patchSetId": 2
@@ -100,6 +136,24 @@
       "writtenOn": "2017-03-07T13:38:00Z",
       "side": 1,
       "message": "Please consistently switch to single quotes, at least on the modified lines.",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3cf17962_550873c1",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Done. Didn\u0027t add much to the CL to fix it everywhere.",
+      "parentUuid": "ceb250e3_a3526f52",
       "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -123,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "919d4a1b_8759b47f",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2bf9f4f2_f5eb8ab7",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "64d4d3a0_8b5f7028",
         "filename": "my_activity.py",
         "patchSetId": 2
@@ -137,6 +209,24 @@
       "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3410af2e_4d3cde18",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64d4d3a0_8b5f7028",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -157,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "c3c191e7_fb81b9bf",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Done. I had kept the existing behaviour, but I agree that the trailing comma is better.",
+      "parentUuid": "08bfe518_613e99c3",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0461a1f3_0f58b94e",
         "filename": "my_activity.py",
         "patchSetId": 2
@@ -174,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "9082f9c6_7c85e38d",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0461a1f3_0f58b94e",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "334bec32_63f0f999",
         "filename": "my_activity.py",
         "patchSetId": 2
@@ -185,6 +311,24 @@
       "writtenOn": "2017-03-07T13:38:00Z",
       "side": 1,
       "message": "why str() ?",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff34fd7c_5756099f",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Laziness because some cases were datetime objects and some were strings. Fixed this.",
+      "parentUuid": "334bec32_63f0f999",
       "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -208,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "1417868e_8adc72d9",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 745,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Is this better?",
+      "parentUuid": "40ef50e9_05e09648",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b1085113_2d5d4492",
         "filename": "my_activity.py",
         "patchSetId": 2
@@ -219,6 +381,24 @@
       "writtenOn": "2017-03-07T13:38:00Z",
       "side": 1,
       "message": "I thought stream\u003dsys.stderr is the default?",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82649e2c_21300ea2",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 1133706
+      },
+      "writtenOn": "2017-03-07T14:56:04Z",
+      "side": 1,
+      "message": "Yes it is. Removed it.",
+      "parentUuid": "b1085113_2d5d4492",
       "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

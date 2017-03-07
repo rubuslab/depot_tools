@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b457a31f_801a5989",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "I don\u0027t see the value in this. This increases the code entropy without much value IMHO. Please remove.",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78827e3f_9360ba3e",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "s/warn/warning/g",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "626ca5cc_3a30f17f",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "num_added \u003d sum(f[\u0027num_added\u0027] for f in patchset_props[\u0027files\u0027].itervalues())\nnum_removed \u003d sum(f[\u0027num_removed\u0027] for f in patchset_props[\u0027files\u0027].itervalues())\nret[\u0027delta\u0027] \u003d \u0027+%d,-%d\u0027 % (num_added, num_removed)",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ceb250e3_a3526f52",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "Please consistently switch to single quotes, at least on the modified lines.",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bf9f4f2_f5eb8ab7",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "like here; sadly this wasn\u0027t caught in the initial review. I\u0027d say to switch all the quotes above.",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64d4d3a0_8b5f7028",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "else not necessary",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08bfe518_613e99c3",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "always keep trailing comma. This enable adding a line later and not having to modify the previous line.",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0461a1f3_0f58b94e",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "please keep alignment consistent at +2",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "334bec32_63f0f999",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "why str() ?",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40ef50e9_05e09648",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 745,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "this file doesn\u0027t use this style.",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1085113_2d5d4492",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "I thought stream\u003dsys.stderr is the default?",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

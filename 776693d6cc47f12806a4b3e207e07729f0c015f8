@@ -104,6 +104,24 @@
       "revId": "776693d6cc47f12806a4b3e207e07729f0c015f8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59467451_29502bfb",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T13:38:00Z",
+      "side": 1,
+      "message": "Duh, yes, thanks. (Obvious in hindsight).",
+      "parentUuid": "e222fb20_65921545",
+      "revId": "776693d6cc47f12806a4b3e207e07729f0c015f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

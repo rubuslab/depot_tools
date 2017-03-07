@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "f9a6be73_03f72f08",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-07T14:00:24Z",
+      "side": 1,
+      "message": "Fair enough.",
+      "parentUuid": "cfe9c82c_bc5bdf06",
+      "revId": "babf1894950b6c27f07702c32a1f8f051f76884e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "78827e3f_9360ba3e",
         "filename": "my_activity.py",
         "patchSetId": 2

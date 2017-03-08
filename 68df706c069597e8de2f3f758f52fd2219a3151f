@@ -22,6 +22,30 @@
       "revId": "68df706c069597e8de2f3f758f52fd2219a3151f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27a065fd_ffa1b55f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2017-03-08T18:31:43Z",
+      "side": 1,
+      "message": "\u003e kudos\n\nWish Gitiles made it easier to grab those, though.",
+      "parentUuid": "04a62b3f_2c344dd0",
+      "range": {
+        "startLine": 20,
+        "startChar": 48,
+        "endLine": 20,
+        "endChar": 60
+      },
+      "revId": "68df706c069597e8de2f3f758f52fd2219a3151f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

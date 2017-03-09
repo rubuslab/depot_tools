@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "29f6fd33_9df3454d",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-09T15:28:58Z",
+      "side": 1,
+      "message": "nit: this and above line should be CERR1, not \u0027\u0027",
+      "range": {
+        "startLine": 645,
+        "startChar": 57,
+        "endLine": 645,
+        "endChar": 59
+      },
+      "revId": "91a86125e6fc35da4c801d8204d84a5d2eca6a5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

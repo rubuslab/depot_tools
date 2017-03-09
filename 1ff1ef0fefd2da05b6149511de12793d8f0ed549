@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca70c884_4e244235",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-09T14:35:35Z",
+      "side": 1,
+      "message": "nit: it\u0027s actually Gerrit style",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "1ff1ef0fefd2da05b6149511de12793d8f0ed549",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1059c8e7_d7dd1286",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-09T14:35:35Z",
+      "side": 1,
+      "message": "heh, was this actually helpful for you too? :)",
+      "range": {
+        "startLine": 504,
+        "startChar": 10,
+        "endLine": 504,
+        "endChar": 40
+      },
+      "revId": "1ff1ef0fefd2da05b6149511de12793d8f0ed549",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

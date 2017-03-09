@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "52733953_7d887b5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2017-03-09T15:25:49Z",
+      "side": 1,
+      "message": "\u003e nit: it\u0027s actually Gerrit style\n\nUpdated. I assumed it was broader than Gerrit because I know that it’s also the style that the Linux people use for things like Signed-Off-By.",
+      "parentUuid": "ca70c884_4e244235",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "1ff1ef0fefd2da05b6149511de12793d8f0ed549",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1059c8e7_d7dd1286",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "1ff1ef0fefd2da05b6149511de12793d8f0ed549",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2771457_f72488a2",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2017-03-09T15:25:49Z",
+      "side": 1,
+      "message": "\u003e heh, was this actually helpful for you too? :)\n\nI wish I could say it was, it probably would have saved me time! But by the time I saw this message roll by, I had already dug into the test and figured out what it wanted from me.",
+      "parentUuid": "1059c8e7_d7dd1286",
+      "range": {
+        "startLine": 504,
+        "startChar": 10,
+        "endLine": 504,
+        "endChar": 40
+      },
+      "revId": "1ff1ef0fefd2da05b6149511de12793d8f0ed549",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

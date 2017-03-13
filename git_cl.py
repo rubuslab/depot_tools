@@ -3443,21 +3443,6 @@ def CMDconfig(parser, args):
   return 0
 
 
-def CMDbaseurl(parser, args):
-  """Gets or sets base-url for this branch."""
-  branchref = RunGit(['symbolic-ref', 'HEAD']).strip()
-  branch = ShortBranchName(branchref)
-  _, args = parser.parse_args(args)
-  if not args:
-    print('Current base-url:')
-    return RunGit(['config', 'branch.%s.base-url' % branch],
-                  error_ok=False).strip()
-  else:
-    print('Setting base-url to %s' % args[0])
-    return RunGit(['config', 'branch.%s.base-url' % branch, args[0]],
-                  error_ok=False).strip()
-
-
 def color_for_status(status):
   """Maps a Changelist status to color, for CMDstatus and other tools."""
   return {

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ca6ccbc_e799c3ad",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2447,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-13T18:59:39Z",
+      "side": 0,
+      "message": "Will it still be clear what\u0027s going to happen when this piece is missing?",
+      "range": {
+        "startLine": 2447,
+        "startChar": 13,
+        "endLine": 2447,
+        "endChar": 55
+      },
+      "revId": "ffb3c439a29258daaeb113d0657fbae02c96eb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

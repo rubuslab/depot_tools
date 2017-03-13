@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0352fc8_ff8da3d7",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-13T18:59:39Z",
+      "side": 1,
+      "message": "Don\u0027t return as return value is never read.",
+      "revId": "6d6bc290999a9c6bedba30c2a99e59483c33cc19",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d145050a_dda4ffb1",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2662,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-13T18:59:39Z",
+      "side": 1,
+      "message": "Suggestion: I think it\u0027d be more user-friendly if the no-case was tested explicitly as well. Otherwise any small typo like yess is interpreted as no. Though that\u0027d make the code more complicated and e.g. would require retrying?\n\nThe old version was a bit more forgiving by just checking the first letter.",
+      "range": {
+        "startLine": 2662,
+        "startChar": 6,
+        "endLine": 2662,
+        "endChar": 11
+      },
+      "revId": "6d6bc290999a9c6bedba30c2a99e59483c33cc19",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

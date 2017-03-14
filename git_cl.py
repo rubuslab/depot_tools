@@ -3489,6 +3489,35 @@ def _configure_gitcookies_path(gitcookies_path):
   print('Configured git to use .gitcookies from %s' % gitcookies_path)
 
 
+_GOOGLE_GERRIT_HOST_REGEX = re.compile(r'^.*\.googlesource\.com$')
+
+
+def _get_git_creds_hosts(include_netrc=False):
+  a = gerrit_util.CookiesAuthenticator()
+  hosts = []
+  if include_netrc:
+    for host, (user, _, _) in a.netrc.hosts.iteritems():
+      if _GOOGLE_GERRIT_HOST_REGEX.match(host):
+        hosts.append((host, user, '.netrc'))
+  for host, (user, _) in a.gitcookies.iteritems():
+    if _GOOGLE_GERRIT_HOST_REGEX.match(host):
+      hosts.append((host, user, '.gitcookies'))
+  return hosts
+
+
+def _print_current_gitcookies(include_netrc=False):
+  hosts = sorted(_get_git_creds_hosts(include_netrc=include_netrc))
+  if not hosts:
+    print('no Git/Gerrit credentials found')
+    return
+  lengths = [max(map(len, (row[i] for row in hosts))) for i in xrange(3)]
+  header = [('Host', 'User', 'Which file'),
+            ['=' * l for l in lengths]]
+  for row in (header + hosts):
+    print('\t'.join((('%%+%ds' % l) % s)
+                     for l, s in zip(lengths, row)))
+
+
 def CMDcreds_check(parser, args):
   """Checks credentials and suggests changes."""
   _, _ = parser.parse_args(args)
@@ -3503,7 +3532,9 @@ def CMDcreds_check(parser, args):
     _ensure_default_gitcookies_path(configured_gitcookies_path, gitcookies_path)
   else:
     _configure_gitcookies_path(gitcookies_path)
-  # TODO(tandrii): finish this.
+
+  print('Your .netrc and .gitcookies have credentails for these hosts:')
+  _print_current_gitcookies(include_netrc=True)
   return 0
 
 

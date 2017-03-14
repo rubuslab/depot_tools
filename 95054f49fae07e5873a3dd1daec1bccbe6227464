@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "773d9abc_b93aa3f2",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1123275
+      },
+      "writtenOn": "2017-03-14T15:58:23Z",
+      "side": 1,
+      "message": "That already handles something like \"BUG\u003d12345, 56846,12345\", as I also use that quite often. Added multiline BUG handling",
+      "parentUuid": "f74a6a97_4ff09d1d",
+      "revId": "95054f49fae07e5873a3dd1daec1bccbe6227464",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f74a6a97_8feaa52b",
         "filename": "my_activity.py",
         "patchSetId": 1
@@ -50,6 +68,23 @@
       "revId": "95054f49fae07e5873a3dd1daec1bccbe6227464",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "345529b7_31ddf17a",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1123275
+      },
+      "writtenOn": "2017-03-14T15:58:23Z",
+      "side": 1,
+      "message": "dumping to a file can be done as needed by redirecting stdio, and to other tools piping is also easier than having a temporary file just for that. The purpose of this one is really for devs as a transient thing, right? just like the current one just outputs to the terminal. \n\nA recent patch separated the logging to be redirected to stderr while the actual output stays on stdio, so piping and redirection to files seem like the easiest and most standard way to have the output go to a given file.",
+      "revId": "95054f49fae07e5873a3dd1daec1bccbe6227464",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -293,8 +293,16 @@ def modify_solutions(input_solutions):
   return solutions
 
 
-def remove(target):
-  """Remove a target by moving it into build.dead."""
+def remove(target, no_build_dead):
+  """Removes the specified target.
+
+  If no_build_dead is True then the specified target is deleted else the
+  target is moved into build.dead.
+  """
+  if no_build_dead:
+    shutil.rmtree(target)
+    return
+
   dead_folder = path.join(BUILDER_DIR, 'build.dead')
   if not path.exists(dead_folder):
     os.makedirs(dead_folder)
@@ -307,7 +315,7 @@ def remove(target):
     raise
 
 
-def ensure_no_checkout(dir_names):
+def ensure_no_checkout(dir_names, no_build_dead):
   """Ensure that there is no undesired checkout under build/."""
   build_dir = os.getcwd()
   has_checkout = any(path.exists(path.join(build_dir, dir_name, '.git'))
@@ -316,7 +324,7 @@ def ensure_no_checkout(dir_names):
     for filename in os.listdir(build_dir):
       deletion_target = path.join(build_dir, filename)
       print '.git detected in checkout, deleting %s...' % deletion_target,
-      remove(deletion_target)
+      remove(deletion_target, no_build_dead)
       print 'done'
 
 
@@ -504,7 +512,8 @@ def _maybe_break_locks(checkout_path):
           raise
 
 
-def git_checkout(solutions, revisions, shallow, refs, git_cache_dir):
+def git_checkout(solutions, revisions, shallow, refs, git_cache_dir,
+                 no_build_dead):
   build_dir = os.getcwd()
   # Before we do anything, break all git_cache locks.
   if path.isdir(git_cache_dir):
@@ -546,7 +555,7 @@ def git_checkout(solutions, revisions, shallow, refs, git_cache_dir):
         # state.
         if path.exists(sln_dir) and is_broken_repo_dir(sln_dir):
           print 'Git repo %s appears to be broken, removing it' % sln_dir
-          remove(sln_dir)
+          remove(sln_dir, no_build_dead)
 
         # Use "tries=1", since we retry manually in this loop.
         if not path.isdir(sln_dir):
@@ -587,7 +596,7 @@ def git_checkout(solutions, revisions, shallow, refs, git_cache_dir):
         sleep_secs = 2**tries
         print 'waiting %s seconds and trying again...' % sleep_secs
         time.sleep(sleep_secs)
-        remove(sln_dir)
+        remove(sln_dir, no_build_dead)
 
     git('clean', '-dff', cwd=sln_dir)
 
@@ -765,13 +774,14 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
                     gerrit_ref, gerrit_rebase_patch_ref, revision_mapping,
                     apply_issue_email_file, apply_issue_key_file,
                     apply_issue_oauth2_file, shallow, refs, git_cache_dir,
-                    gerrit_reset):
+                    gerrit_reset, no_build_dead):
   # Get a checkout of each solution, without DEPS or hooks.
   # Calling git directly because there is no way to run Gclient without
   # invoking DEPS.
   print 'Fetching Git checkout'
 
-  git_ref = git_checkout(solutions, revisions, shallow, refs, git_cache_dir)
+  git_ref = git_checkout(solutions, revisions, shallow, refs, git_cache_dir,
+                         no_build_dead)
 
   print '===Processing patch solutions==='
   already_patched = []
@@ -931,6 +941,9 @@ def parse_args():
   parse.add_option('--no_shallow', action='store_true',
                    help='Bypass disk detection and never shallow clone. '
                         'Does not override the --shallow flag')
+  parse.add_option('--no_build_dead', action='store_true',
+                   help='Does not remove artifacts by putting them into the '
+                        'build.dead directory. Deletes them instead')
   parse.add_option('--refs', action='append',
                    help='Also fetch this refspec for the main solution(s). '
                         'Eg. +refs/branch-heads/*')
@@ -977,7 +990,7 @@ def prepare(options, git_slns, active):
   """Prepares the target folder before we checkout."""
   dir_names = [sln.get('name') for sln in git_slns if 'name' in sln]
   if options.clobber:
-    ensure_no_checkout(dir_names)
+    ensure_no_checkout(dir_names, options.no_build_dead)
   # Make sure we tell recipes that we didn't run if the script exits here.
   emit_json(options.output_json, did_run=active)
 
@@ -1043,11 +1056,12 @@ def checkout(options, git_slns, specs, revisions, step_text, shallow):
           shallow=shallow,
           refs=options.refs,
           git_cache_dir=options.git_cache_dir,
-          gerrit_reset=not options.gerrit_no_reset)
+          gerrit_reset=not options.gerrit_no_reset,
+          no_build_dead=options.no_build_dead)
       gclient_output = ensure_checkout(**checkout_parameters)
     except GclientSyncFailed:
       print 'We failed gclient sync, lets delete the checkout and retry.'
-      ensure_no_checkout(dir_names)
+      ensure_no_checkout(dir_names, options.no_build_dead)
       gclient_output = ensure_checkout(**checkout_parameters)
   except PatchFailed as e:
     if options.output_json:

@@ -77,7 +77,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       output_manifest=True, clobber=False,
                       root_solution_revision=None, rietveld=None, issue=None,
                       patchset=None, gerrit_no_reset=False,
-                      gerrit_no_rebase_patch_ref=False, **kwargs):
+                      gerrit_no_rebase_patch_ref=False, no_build_dead=False,
+                      **kwargs):
     """
     Args:
       use_site_config_creds: If the oauth2 credentials are in the buildbot
@@ -229,6 +230,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
       cmd.append('--clobber')
     if no_shallow:
       cmd.append('--no_shallow')
+    if no_build_dead:
+      cmd.append('--no_build_dead')
     if output_manifest:
       cmd.append('--output_manifest')
     if with_branch_heads or cfg.with_branch_heads:

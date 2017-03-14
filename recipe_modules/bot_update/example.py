@@ -27,6 +27,7 @@ def RunSteps(api):
   patch = api.properties.get('patch', True)
   clobber = True if api.properties.get('clobber') else False
   no_shallow = True if api.properties.get('no_shallow') else False
+  no_build_dead = True if api.properties.get('no_build_dead') else False
   output_manifest = api.properties.get('output_manifest', False)
   with_branch_heads = api.properties.get('with_branch_heads', False)
   refs = api.properties.get('refs', [])
@@ -46,6 +47,7 @@ def RunSteps(api):
   else:
     api.bot_update.ensure_checkout(
         no_shallow=no_shallow,
+        no_build_dead=no_build_dead,
         patch=patch,
         with_branch_heads=with_branch_heads,
         output_manifest=output_manifest,
@@ -121,6 +123,9 @@ def GenTests(api):
   ) + api.step_data('bot_update', retcode=87)
   yield api.test('no_shallow') + api.properties(
       no_shallow=1
+  )
+  yield api.test('no_build_dead') + api.properties(
+      no_build_dead=1
   )
   yield api.test('clobber') + api.properties(
       clobber=1

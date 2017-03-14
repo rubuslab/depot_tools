@@ -34,6 +34,7 @@ import subprocess
 from string import Formatter
 import sys
 import urllib
+import re
 
 import auth
 import fix_encoding
@@ -250,6 +251,26 @@ class MyActivity(object):
 
     return issues
 
+  def extract_bug_number_from_description(self, issue):
+    description = None
+
+    if 'description' in issue:
+      # Getting the  description for Rietveld
+      description = issue['description']
+    elif 'revisions' in issue:
+      # Getting the description for REST Gerrit
+      revision = issue['revisions'][issue['current_revision']]
+      description = revision['commit']['message']
+
+    bugs = []
+    if description:
+      matches = re.findall('BUG=(((\d+)(,\s?)?)+)', description)
+      if matches:
+        for match in matches:
+          bugs.extend(match[0].replace(' ', '').split(','))
+
+    return bugs
+
   def process_rietveld_issue(self, remote, instance, issue):
     ret = {}
     if self.options.deltas:
@@ -287,6 +308,9 @@ class MyActivity(object):
     ret['created'] = datetime_from_rietveld(issue['created'])
     ret['replies'] = self.process_rietveld_replies(issue['messages'])
 
+    ret['bug'] = self.extract_bug_number_from_description(issue)
+    ret['landed_days_ago'] = issue['landed_days_ago']
+
     return ret
 
   @staticmethod
@@ -323,7 +347,8 @@ class MyActivity(object):
       # Instantiate the generator to force all the requests now and catch the
       # errors here.
       return list(gerrit_util.GenerateAllChanges(instance['url'], req,
-          o_params=['MESSAGES', 'LABELS', 'DETAILED_ACCOUNTS']))
+          o_params=['MESSAGES', 'LABELS', 'DETAILED_ACCOUNTS',
+                    'CURRENT_REVISION', 'CURRENT_COMMIT']))
     except gerrit_util.GerritError, e:
       logging.error('Looking up %r: %s', instance['url'], e)
       return []
@@ -374,6 +399,7 @@ class MyActivity(object):
       ret['replies'] = []
     ret['reviewers'] = set(r['author'] for r in ret['replies'])
     ret['reviewers'].discard(ret['author'])
+    ret['bug'] = self.extract_bug_number_from_description(issue)
     return ret
 
   @staticmethod
@@ -412,6 +438,7 @@ class MyActivity(object):
       ret['replies'] = []
     ret['reviewers'] = set(r['author'] for r in ret['replies'])
     ret['reviewers'].discard(ret['author'])
+    ret['bug'] = self.extract_bug_number_from_description(issue)
     return ret
 
   @staticmethod
@@ -455,15 +482,21 @@ class MyActivity(object):
     if 'items' in content:
       items = content['items']
       for item in items:
+        if instance.get('shorturl'):
+          item_url = 'https://%s/%d' % (instance['shorturl'], item['id'])
+        else:
+          item_url = 'https://bugs.chromium.org/p/%s/issues/detail?id=%d' % (
+              instance['name'], item['id'])
         issue = {
           'header': item['title'],
           'created': dateutil.parser.parse(item['published']),
           'modified': dateutil.parser.parse(item['updated']),
           'author': item['author']['name'],
-          'url': 'https://code.google.com/p/%s/issues/detail?id=%s' % (
-              instance['name'], item['id']),
+          'url': item_url,
           'comments': [],
           'status': item['status'],
+          'labels': [],
+          'components': []
         }
         if 'shorturl' in instance:
           issue['url'] = 'http://%s/%d' % (instance['shorturl'], item['id'])
@@ -474,6 +507,10 @@ class MyActivity(object):
           issue['owner'] = 'None'
         if issue['owner'] == user_str or issue['author'] == user_str:
           issues.append(issue)
+        if 'labels' in item:
+          issue['labels'] = item['labels']
+        if 'components' in item:
+          issue['components'] = item['components']
 
     return issues
 
@@ -634,6 +671,35 @@ class MyActivity(object):
     self.print_reviews()
     self.print_issues()
 
+  def dump_json(self, ignore_keys=None):
+    if ignore_keys is None:
+      ignore_keys = ['replies']
+
+    def format_for_json_dump(in_array):
+      output = {}
+      for item in in_array:
+        url = item.get('url') or item.get('review_url')
+        if not url:
+          raise Exception('Dumped item %s does not specify url' % item)
+        output[url] = dict(
+            (k, v) for k,v in item.iteritems() if k not in ignore_keys)
+      return output
+
+    class PythonObjectEncoder(json.JSONEncoder):
+      def default(self, obj):  # pylint: disable=method-hidden
+        if isinstance(obj, datetime):
+          return obj.isoformat()
+        if isinstance(obj, set):
+          return list(obj)
+        return json.JSONEncoder.default(self, obj)
+
+    output = {
+      'reviews': format_for_json_dump(self.reviews),
+      'changes': format_for_json_dump(self.changes),
+      'issues': format_for_json_dump(self.issues)
+    }
+    print json.dumps(output, indent=2, cls=PythonObjectEncoder)
+
 
 def main():
   # Silence upload.py.
@@ -728,6 +794,9 @@ def main():
       '-m', '--markdown', action='store_true',
       help='Use markdown-friendly output (overrides --output-format '
            'and --output-format-heading)')
+  output_format_group.add_option(
+      '-j', '--json', action='store_true',
+      help='Output json data (overrides other format options)')
   parser.add_option_group(output_format_group)
   auth.add_auth_options(parser)
 
@@ -819,9 +888,12 @@ def main():
   except auth.AuthenticationError as e:
     logging.error('auth.AuthenticationError: %s', e)
 
-  my_activity.print_changes()
-  my_activity.print_reviews()
-  my_activity.print_issues()
+  if options.json:
+    my_activity.dump_json()
+  else:
+    my_activity.print_changes()
+    my_activity.print_reviews()
+    my_activity.print_issues()
   return 0
 
 

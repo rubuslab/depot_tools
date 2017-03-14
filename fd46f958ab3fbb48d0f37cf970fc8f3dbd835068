@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7d655d23_167957db",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3486,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-14T16:27:30Z",
+      "side": 1,
+      "message": "Hmm, wait, does this need to be done before one runs into a potential problem?",
+      "range": {
+        "startLine": 3484,
+        "startChar": 9,
+        "endLine": 3486,
+        "endChar": 68
+      },
+      "revId": "fd46f958ab3fbb48d0f37cf970fc8f3dbd835068",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

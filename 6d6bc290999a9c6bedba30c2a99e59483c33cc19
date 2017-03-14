@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b9b964c2_8580d6a8",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-14T13:50:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0352fc8_ff8da3d7",
+      "revId": "6d6bc290999a9c6bedba30c2a99e59483c33cc19",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d145050a_dda4ffb1",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -39,6 +57,30 @@
       "revId": "6d6bc290999a9c6bedba30c2a99e59483c33cc19",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f88402a2_45401162",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2662,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-14T13:50:34Z",
+      "side": 1,
+      "message": "well, let\u0027s add a loop: what I used to do in CS101 :)",
+      "parentUuid": "d145050a_dda4ffb1",
+      "range": {
+        "startLine": 2662,
+        "startChar": 6,
+        "endLine": 2662,
+        "endChar": 11
+      },
+      "revId": "6d6bc290999a9c6bedba30c2a99e59483c33cc19",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

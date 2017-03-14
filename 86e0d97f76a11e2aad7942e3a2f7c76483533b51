@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cee9721f_a83ac389",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-03-14T01:28:16Z",
+      "side": 1,
+      "message": "yeah probably right. meh.",
+      "parentUuid": "52c253a3_2a5f13c5",
+      "range": {
+        "startLine": 88,
+        "startChar": 6,
+        "endLine": 88,
+        "endChar": 19
+      },
+      "revId": "86e0d97f76a11e2aad7942e3a2f7c76483533b51",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e157e0ec_6478164e",
         "filename": "recipe_modules/cipd/api.py",
         "patchSetId": 7
@@ -45,6 +69,30 @@
       "revId": "86e0d97f76a11e2aad7942e3a2f7c76483533b51",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f663735_0dad1bec",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-03-14T01:28:16Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "e157e0ec_6478164e",
+      "range": {
+        "startLine": 159,
+        "startChar": 23,
+        "endLine": 159,
+        "endChar": 74
+      },
+      "revId": "86e0d97f76a11e2aad7942e3a2f7c76483533b51",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "c5b108c1_3056c7f5",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-03-14T01:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "716f1f3f_96e0924e",
+      "range": {
+        "startLine": 290,
+        "startChar": 42,
+        "endLine": 291,
+        "endChar": 8
+      },
+      "revId": "86e0d97f76a11e2aad7942e3a2f7c76483533b51",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9edb2112_18145bc5",
         "filename": "recipe_modules/cipd/api.py",
         "patchSetId": 7
@@ -91,6 +163,30 @@
       "revId": "86e0d97f76a11e2aad7942e3a2f7c76483533b51",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23c12a35_ff76d142",
+        "filename": "recipe_modules/cipd/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-03-14T01:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9edb2112_18145bc5",
+      "range": {
+        "startLine": 296,
+        "startChar": 36,
+        "endLine": 296,
+        "endChar": 74
+      },
+      "revId": "86e0d97f76a11e2aad7942e3a2f7c76483533b51",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

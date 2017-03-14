@@ -85,6 +85,24 @@
       "revId": "95054f49fae07e5873a3dd1daec1bccbe6227464",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50c5075d_ce335a27",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-03-14T22:32:55Z",
+      "side": 1,
+      "message": "Piping and redirection don\u0027t work well from inside other python scripts. If anyone ever wants to automate or wrap use of this script, they\u0027ll want to explicitly send it through a file.\n\nIt would be great if --json took a filename as an argument, but the empty string defaulted back to stdout.",
+      "parentUuid": "345529b7_31ddf17a",
+      "revId": "95054f49fae07e5873a3dd1daec1bccbe6227464",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

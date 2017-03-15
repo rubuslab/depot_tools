@@ -22,6 +22,30 @@
       "revId": "fd46f958ab3fbb48d0f37cf970fc8f3dbd835068",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "288b94b1_fee2193a",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3486,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-15T10:40:54Z",
+      "side": 1,
+      "message": "by something wrong i meant a bug/failure/user abort during git cl creds-check (that is currently running command).",
+      "parentUuid": "7d655d23_167957db",
+      "range": {
+        "startLine": 3484,
+        "startChar": 9,
+        "endLine": 3486,
+        "endChar": 68
+      },
+      "revId": "fd46f958ab3fbb48d0f37cf970fc8f3dbd835068",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "79086410_28b5efba",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3516,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-15T16:14:12Z",
+      "side": 1,
+      "message": "that\u0027ll be in next CL, i\u0027d prefer to avoid extra work *now*. but yes, that\u0027s how i should have done the first time.",
+      "parentUuid": "b05f635e_68e51589",
+      "range": {
+        "startLine": 3516,
+        "startChar": 33,
+        "endLine": 3516,
+        "endChar": 52
+      },
+      "revId": "2883c550f771bbb5cc03fc540584378b7b26ffdc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5ccec086_612707db",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-03-15T15:06:04Z",
       "side": 1,
       "message": "s !\u003d \u0027.netrc\u0027 ???",
+      "range": {
+        "startLine": 3530,
+        "startChar": 56,
+        "endLine": 3530,
+        "endChar": 69
+      },
+      "revId": "2883c550f771bbb5cc03fc540584378b7b26ffdc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d6571f6_5c0348e7",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3530,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-15T16:14:12Z",
+      "side": 1,
+      "message": "oops. Done and added test.",
+      "parentUuid": "5ccec086_612707db",
       "range": {
         "startLine": 3530,
         "startChar": 56,

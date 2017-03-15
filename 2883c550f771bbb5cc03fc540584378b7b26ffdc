@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b05f635e_68e51589",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3516,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-15T15:06:04Z",
+      "side": 1,
+      "message": "Maybe first introduce this distinction when it\u0027s needed?",
+      "range": {
+        "startLine": 3516,
+        "startChar": 33,
+        "endLine": 3516,
+        "endChar": 52
+      },
+      "revId": "2883c550f771bbb5cc03fc540584378b7b26ffdc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ccec086_612707db",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3530,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-15T15:06:04Z",
+      "side": 1,
+      "message": "s !\u003d \u0027.netrc\u0027 ???",
+      "range": {
+        "startLine": 3530,
+        "startChar": 56,
+        "endLine": 3530,
+        "endChar": 69
+      },
+      "revId": "2883c550f771bbb5cc03fc540584378b7b26ffdc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

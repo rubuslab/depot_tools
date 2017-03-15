@@ -3453,6 +3453,11 @@ class _GitCookiesChecker(object):
     # Cached list of [host, identity, source], where source is either
     # .gitcookies or .netrc.
     self._all_hosts = None
+    # Cached map from canonic _GOOGLESOURCE host to (git, gerrit) identities.
+    self._host_to_identity_pairs = None
+    # Cached map of domain to list of usernames of identities referenced in
+    # .gitcookies.
+    self._identities_by_domain = None
 
   def ensure_configured_gitcookies(self):
     """Runs checks and suggests fixes to make git use .gitcookies from default
@@ -3541,6 +3546,91 @@ class _GitCookiesChecker(object):
       print('\t'.join((('%%+%ds' % l) % s)
                        for l, s in zip(lengths, row)))
 
+  @staticmethod
+  def _parse_identity(identity):
+    """Parses identity "git-<ldap>.example.com" into <ldap> and domain."""
+    username, domain = identity.split('.', 1)
+    if username.startswith('git-'):
+      username = username[len('git-'):]
+    return username, domain
+
+  def _get_usernames_of_domain(self, domain):
+    """Returns list of usernames referenced by .gitcookies in a given domain."""
+    if self._identities_by_domain is None:
+      self._identities_by_domain = {}
+      for _, identity, _ in self.get_hosts_with_creds():
+        username, domain = self._parse_gitcookiess_identity(identity)
+        self._identities_by_domain.setdefault(domain, []).append(username)
+
+    return self._identities_by_domain.get(domain)
+
+  def _canonical_git_googlesource_host(self, host):
+    """Normalizes Gerrit hosts (with '-review') go Git host."""
+    assert host.endswith(self._GOOGLESOURCE)
+    # Prefix doesn't include '.' at the end.
+    prefix = host[:-(1 + len(self._GOOGLESOURCE))]
+    if prefix.endswith('-review'):
+      prefix = prefix[:-len('-review')]
+    return prefix + '.' + self._GOOGLESOURCE
+
+  def has_generic_host(self):
+    """Returns whether generic .googlesource.com has been configured.
+
+    Chrome Infra recommends to use explicit ${host}.googlesource.com instead.
+    """
+    for host, _, _ in self.get_hosts_with_creds(include_netrc=False):
+      if host == '.' + self._GOOGLESOURCE:
+        return True
+    return False
+
+  def _get_git_gerrit_identity_pairs_per_host(self):
+    """Returns map from canonic host to pair of identities (Git, Gerrit).
+
+    One of identities might be None, meaning not configured.
+    """
+    if self._host_to_identity_pairs is None:
+      self._host_to_identity_pairs = {}
+      for host, identity, _ in self.get_hosts_with_creds():
+        canonical = self._canonical_git_googlesource_host(host)
+        pair = self._host_to_identity_pairs.setdefault(canonical, [None, None])
+        idx = 0 if canonical == host else 1
+        pair[idx] = identity
+    return self._host_to_identity_pairs
+
+  def get_partially_configured_hosts(self):
+    return set(
+        host for host, identities_pair in
+        self._get_git_gerrit_identity_pairs_per_host().iteritems()
+        if None in identities_pair)
+
+  def get_conflicting_hosts(self):
+    return set(
+        host for host, (i1, i2) in
+        self._get_git_gerrit_identity_pairs_per_host().iteritems()
+        if None not in (i1, i2) and i1 != i2)
+
+  def get_duplicated_hosts(self):
+    counters = collections.Counter(h for h, _, _ in self.get_hosts_with_creds())
+    return set(host for host, count in counters.iteritems() if count > 1)
+
+  def get_hosts_with_wrong_identities(self):
+    """Finds hosts which **likely** reference wrong identities.
+
+    Note: skips hosts which have conflicting identities for Git and Gerrit.
+    """
+    expected = [
+      ('chromium.googlesource.com', 'chromium.org'),
+      ('chrome-internal.googlesource.com', 'google.com'),
+    ]
+    hosts = set()
+    for host, expected_id_domain in expected_host_to_identity_domain:
+      pair = self._get_git_gerrit_identity_pairs_per_host().get(host)
+      if pair and pair[0] == pair[1]:
+        _, domain = self._parse_gitcookiess_identity(pair[0])
+        if domain != expected_id_domain:
+          hosts.add(host)
+    return hosts
+
 
 def CMDcreds_check(parser, args):
   """Checks credentials and suggests changes."""
@@ -3555,7 +3645,7 @@ def CMDcreds_check(parser, args):
   print('Your .netrc and .gitcookies have credentails for these hosts:')
   checker.print_current_creds(include_netrc=True)
 
-  # TODO(tandrii): finish this.
+  # TODO(tandrii): add report && autofixes.
   return 0
 
 

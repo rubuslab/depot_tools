@@ -447,6 +447,66 @@ class TestGitClBasic(unittest.TestCase):
         'Cr-Branched-From: somehash-refs/heads/master@{#12}')
 
 
+class GitCookiesCheckerTest(unittest.TestCase):
+  def setUp(self):
+    super(GitCookiesCheckerTest, self).setUp()
+    self.c = git_cl._GitCookiesChecker()
+
+  def mock_hosts_creds(self, subhost_identity_pairs):
+    def ensure_googlesource(h):
+      if not h.endswith(self.c._GOOGLESOURCE):
+        assert not h.endswith('.')
+        return h + '.' + self.c._GOOGLESOURCE
+      return h
+    self.c._all_hosts = [(ensure_googlesource(h), i, '.gitcookies')
+                         for h, i in subhost_identity_pairs]
+
+  def test_has_generic_host(self):
+    self.assertFalse(self.c.has_generic_host())
+    self.mock_hosts_creds([
+      ('.' + self.c._GOOGLESOURCE, 'any'),
+      ('host',                     'first'),
+    ])
+    self.assertTrue(self.c.has_generic_host())
+
+  def test_get_conflicting_hosts(self):
+    self.mock_hosts_creds([
+      ('host',        'first'),
+      ('host-review', 'second'),
+      ('host2',        'second'),
+      ('host2-review', 'second'),
+    ])
+    self.assertEqual(set(['host.googlesource.com']),
+                     self.c.get_conflicting_hosts())
+
+  def test_get_duplicated_hosts(self):
+    self.mock_hosts_creds([
+      ('host',  'first'),
+      ('host',  'second'),
+      ('host2', 'second'),
+    ])
+    self.assertEqual(set(['host.googlesource.com']),
+                     self.c.get_duplicated_hosts())
+
+  def test_get_partially_configured_hosts(self):
+    self.mock_hosts_creds([
+      ('host',        'first'),
+      ('host2',        'second'),
+      ('host2-review', 'second'),
+    ])
+    self.assertEqual(set(['host.googlesource.com']),
+                     self.c.get_partially_configured_hosts())
+
+  def test_canonical_git_googlesource_host(self):
+    f = self.c._canonical_git_googlesource_host
+    self.assertEqual(f('x.' + self.c._GOOGLESOURCE),
+                     'x.' + self.c._GOOGLESOURCE)
+    self.assertEqual(f('x-review.' + self.c._GOOGLESOURCE),
+                     'x.' + self.c._GOOGLESOURCE)
+    self.assertEqual(f('.' + self.c._GOOGLESOURCE),
+                     '.' + self.c._GOOGLESOURCE)
+
+
 class TestGitCl(TestCase):
   def setUp(self):
     super(TestGitCl, self).setUp()
@@ -488,7 +548,6 @@ class TestGitCl(TestCase):
               lambda msg, change=None: self._mocked_call(['DieWithError', msg]))
     # It's important to reset settings to not have inter-tests interference.
     git_cl.settings = None
-
 
   def tearDown(self):
     try:

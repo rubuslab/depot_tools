@@ -3573,6 +3573,11 @@ class _GitCookiesChecker(object):
       prefix = prefix[:-len('-review')]
     return prefix + '.' + self._GOOGLESOURCE
 
+  def _canonical_gerrit_googlesource_host(self, host):
+    git = self._canonical_git_googlesource_host(host)
+    prefix = host.split('.', 1)[0]
+    return prefix + '-review.' + self._GOOGLESOURCE
+
   def has_generic_host(self):
     """Returns whether generic .googlesource.com has been configured.
 
@@ -3632,6 +3637,63 @@ class _GitCookiesChecker(object):
           hosts.add(host)
     return hosts
 
+  @staticmethod
+  def print_hosts(hosts, extra_column_func=None):
+    hosts = sorted(hosts)
+    assert hosts
+    if extra_column_func is None:
+      extras = [''] * len(hosts)
+    else:
+      extras = [extra_column_func(host) for host in hosts]
+    tmpl = '    %%-%ds %%-%ds' % (max(map(len, hosts)), max(map(len, extras)))
+    for he in zip(hosts, extras):
+      print(tmpl % he)
+    print()
+
+  def find_and_report_problems(self):
+    """Returns True if there was at least one problem, else False."""
+    problems = []
+    def add_problem():
+      if not problems:
+        print('.gitcookies problem report:\n')
+      problems.append(1)
+
+    if self.has_generic_host():
+      add_problem()
+      print('  .googlesource.com record detected\n'
+            '    Chrome Infrastructure team recommends to list full host names '
+            'explicitely.\n')
+
+    dups = self.get_duplicated_hosts()
+    if dups:
+      add_problem()
+      print('  The following hosts were defined twice:\n')
+      self.print_hosts(dups)
+
+    partial = self.get_partially_configured_hosts()
+    if partial:
+      add_problem()
+      print('  Credentials should come in pairs for Git and Gerrit hosts. '
+            'These hosts are missing:')
+      self.print_hosts(partial)
+
+    conflicting = self.get_conflicting_hosts()
+    if conflicting:
+      add_problem()
+      print('  The following Git hosts have differing credentials from their '
+            'Gerrit counterparts:\n')
+      self.print_hosts(conflicting, lambda host: '%s vs %s' %
+                       tuple(self._get_git_gerrit_identity_pairs()[host]))
+
+    wrong = self.get_hosts_with_wrong_identities()
+    if wrong:
+      add_problem()
+      print('  These hosts likely use wrong identity:\n')
+      self.print_hosts(wrong, lambda host: '%s but %s recommended' %
+                       (self._get_git_gerrit_identity_pairs()[host][0],
+                        self._EXPECTED_HOST_IDENTITY_DOMAINS[host]))
+    return len(problems) > 0
+
 
 def CMDcreds_check(parser, args):
   """Checks credentials and suggests changes."""
@@ -3643,11 +3705,13 @@ def CMDcreds_check(parser, args):
   checker = _GitCookiesChecker()
   checker.ensure_configured_gitcookies()
 
-  print('Your .netrc and .gitcookies have credentails for these hosts:')
+  print('Your .netrc and .gitcookies have credentials for these hosts:')
   checker.print_current_creds(include_netrc=True)
 
-  # TODO(tandrii): add report && autofixes.
-  return 0
+  if not checker.find_and_report_problems():
+    print('\nNo problems detected in your .gitcookies')
+    return 0
+  return 1
 
 
 @subcommand.usage('[repo root containing codereview.settings]')

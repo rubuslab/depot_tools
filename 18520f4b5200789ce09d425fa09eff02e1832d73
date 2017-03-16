@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d52eacf5_ccf36759",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3568,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T10:13:01Z",
+      "side": 1,
+      "message": "nit: to?",
+      "range": {
+        "startLine": 3568,
+        "startChar": 48,
+        "endLine": 3568,
+        "endChar": 50
+      },
+      "revId": "18520f4b5200789ce09d425fa09eff02e1832d73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dcabf164_584ebb6a",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3591,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T10:13:01Z",
+      "side": 1,
+      "message": "Is it really necessary to have the cache logic for other things than get_hosts_with_creds? The latter is cached already - everything done on top are simple in-memory calculations, should be lightning fast. Might make code a bit simpler.",
+      "range": {
+        "startLine": 3591,
+        "startChar": 4,
+        "endLine": 3591,
+        "endChar": 44
+      },
+      "revId": "18520f4b5200789ce09d425fa09eff02e1832d73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fe76935_cf04f6dd",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3629,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T10:13:01Z",
+      "side": 1,
+      "message": "Is pair \u003d\u003d [None, None] possible here?",
+      "range": {
+        "startLine": 3629,
+        "startChar": 9,
+        "endLine": 3629,
+        "endChar": 13
+      },
+      "revId": "18520f4b5200789ce09d425fa09eff02e1832d73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

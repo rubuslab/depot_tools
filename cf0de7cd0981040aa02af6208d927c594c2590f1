@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8b3e68ce_3051f5f8",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3655,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T10:35:04Z",
+      "side": 1,
+      "message": "The length of this seems to not play a role. How about making this a boolean flag?",
+      "range": {
+        "startLine": 3655,
+        "startChar": 4,
+        "endLine": 3655,
+        "endChar": 17
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e1a5c71_933e050e",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3665,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T10:35:04Z",
+      "side": 1,
+      "message": "nit: explicitly",
+      "range": {
+        "startLine": 3665,
+        "startChar": 13,
+        "endLine": 3665,
+        "endChar": 24
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3703622d_32e93037",
+        "filename": "tests/git_cl_creds_check_report.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T10:35:04Z",
+      "side": 1,
+      "message": "So, what\u0027s the action that needs to be taken? Remove one line?",
+      "range": {
+        "startLine": 6,
+        "startChar": 2,
+        "endLine": 6,
+        "endChar": 41
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9e56541_419dba30",
+        "filename": "tests/git_cl_creds_check_report.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T10:35:04Z",
+      "side": 1,
+      "message": "Maybe, where you can, you could state concrete actions. E.g. suggest the exact line that needs to be added.",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 28
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c657274b_214310d5",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T10:35:04Z",
+      "side": 1,
+      "message": "nit: Remove this?",
+      "range": {
+        "startLine": 509,
+        "startChar": 4,
+        "endLine": 509,
+        "endChar": 51
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

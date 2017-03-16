@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "84a96755_099e21f9",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3655,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-16T15:13:35Z",
+      "side": 1,
+      "message": "it\u0027s a hack to avoid writing \"global\" inside add_problem :)",
+      "parentUuid": "8b3e68ce_3051f5f8",
+      "range": {
+        "startLine": 3655,
+        "startChar": 4,
+        "endLine": 3655,
+        "endChar": 17
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6e1a5c71_933e050e",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "91cd846d_19df2b55",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3665,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-16T15:13:35Z",
+      "side": 1,
+      "message": "Done here and elsewhere.",
+      "parentUuid": "6e1a5c71_933e050e",
+      "range": {
+        "startLine": 3665,
+        "startChar": 13,
+        "endLine": 3665,
+        "endChar": 24
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3703622d_32e93037",
         "filename": "tests/git_cl_creds_check_report.txt",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2017-03-16T10:35:04Z",
       "side": 1,
       "message": "So, what\u0027s the action that needs to be taken? Remove one line?",
+      "range": {
+        "startLine": 6,
+        "startChar": 2,
+        "endLine": 6,
+        "endChar": 41
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65e3331c_8d88b1a2",
+        "filename": "tests/git_cl_creds_check_report.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-16T15:13:35Z",
+      "side": 1,
+      "message": "for now, no actions. Originally, I wanted to suggest actions after print report (s.t. report can be easily shared in a bug report).",
+      "parentUuid": "3703622d_32e93037",
       "range": {
         "startLine": 6,
         "startChar": 2,
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "6affcbbc_28e29987",
+        "filename": "tests/git_cl_creds_check_report.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-16T15:13:35Z",
+      "side": 1,
+      "message": "same as above.",
+      "parentUuid": "e9e56541_419dba30",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 28
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c657274b_214310d5",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 2
@@ -114,6 +210,30 @@
       "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2059d814_28408bac",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-16T15:13:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c657274b_214310d5",
+      "range": {
+        "startLine": 509,
+        "startChar": 4,
+        "endLine": 509,
+        "endChar": 51
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

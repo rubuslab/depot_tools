@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "806ee8e1_ffc1da98",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3612,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T10:34:31Z",
+      "side": 1,
+      "message": "For a better fix recommendation later it might be necessary to know if the lines are exact duplicates (i.e. same keys) or have different keys. Exact equality means one line can be dropped. In case of different keys, I assume the latter overwrites the former and one could recommend to drop the former, though not really required.",
+      "range": {
+        "startLine": 3612,
+        "startChar": 6,
+        "endLine": 3612,
+        "endChar": 26
+      },
+      "revId": "c65fae501253b02b20983eb6f832caad320e7cd3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

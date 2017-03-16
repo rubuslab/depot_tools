@@ -16,6 +16,24 @@
       "revId": "3421b4202409bbb872dc14c5caf92e7b88fb64b1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf31ad9b_4306df6a",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4082,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-16T17:33:03Z",
+      "side": 1,
+      "message": "If I don\u0027t keep \u0027or rietveld\u0027, invocation\n$ git cl commend -i 123 -a \u0027comment\u0027\nwill stop working. I don\u0027t want to revert this CL if I break some tooling, but I want to break and fix that tooling anyway :)",
+      "parentUuid": "50368e60_f2a1e1a9",
+      "revId": "3421b4202409bbb872dc14c5caf92e7b88fb64b1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

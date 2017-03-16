@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b912423a_fcf5ec1c",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3568,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-16T15:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d52eacf5_ccf36759",
+      "range": {
+        "startLine": 3568,
+        "startChar": 48,
+        "endLine": 3568,
+        "endChar": 50
+      },
+      "revId": "18520f4b5200789ce09d425fa09eff02e1832d73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dcabf164_584ebb6a",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "51192ab4_1a9000e0",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3591,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-16T15:04:28Z",
+      "side": 1,
+      "message": "I think that\u0027s true. The reason I added them originally was that it took \u003e2 seconds on my machine, but now I think it was due to a  bug in looping (I got O(n!), where n \u003d number of gitcookies entries). Cleaned.",
+      "parentUuid": "dcabf164_584ebb6a",
+      "range": {
+        "startLine": 3591,
+        "startChar": 4,
+        "endLine": 3591,
+        "endChar": 44
+      },
+      "revId": "18520f4b5200789ce09d425fa09eff02e1832d73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fe76935_cf04f6dd",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -68,6 +116,30 @@
       "revId": "18520f4b5200789ce09d425fa09eff02e1832d73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "516fd265_f50ee5e7",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3629,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-16T15:04:28Z",
+      "side": 1,
+      "message": "No, by construction the _get_git_gerrit_identity_pairs dict has its key inserted followed immediately by setting one element of pair.",
+      "parentUuid": "8fe76935_cf04f6dd",
+      "range": {
+        "startLine": 3629,
+        "startChar": 9,
+        "endLine": 3629,
+        "endChar": 13
+      },
+      "revId": "18520f4b5200789ce09d425fa09eff02e1832d73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "89f795d3_a86b20e4",
+        "filename": "recipe_modules/gclient/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-03-16T20:00:01Z",
+      "side": 1,
+      "message": "Is this a common enough pattern that there should be a helper for it?",
+      "revId": "1f09fe0feceaa743d26d9104566d4915a72f3596",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

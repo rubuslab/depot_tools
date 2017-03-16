@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7a3278eb_d4fb545b",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3655,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-16T15:15:34Z",
+      "side": 1,
+      "message": "how about:\nhas_problems \u003d [False]\n\nand in the function:\nhas_problems[0] \u003d True",
+      "parentUuid": "84a96755_099e21f9",
+      "range": {
+        "startLine": 3655,
+        "startChar": 4,
+        "endLine": 3655,
+        "endChar": 17
+      },
+      "revId": "cf0de7cd0981040aa02af6208d927c594c2590f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6e1a5c71_933e050e",
         "filename": "git_cl.py",
         "patchSetId": 2

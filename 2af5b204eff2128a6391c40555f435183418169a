@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15e74555_3db66e53",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1956,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-17T14:48:48Z",
+      "side": 1,
+      "message": "maybe inline messages?",
+      "range": {
+        "startLine": 1956,
+        "startChar": 4,
+        "endLine": 1956,
+        "endChar": 12
+      },
+      "revId": "2af5b204eff2128a6391c40555f435183418169a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a631e550_0498e6e4",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4285,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-17T14:48:48Z",
+      "side": 1,
+      "message": "Is this UTC for sure?",
+      "range": {
+        "startLine": 4285,
+        "startChar": 51,
+        "endLine": 4285,
+        "endChar": 54
+      },
+      "revId": "2af5b204eff2128a6391c40555f435183418169a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

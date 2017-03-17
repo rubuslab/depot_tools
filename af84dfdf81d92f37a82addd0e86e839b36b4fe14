@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "d18c2d35_5cb539cd",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2539,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-17T15:20:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c28dbe0_973cd0fb",
+      "range": {
+        "startLine": 2539,
+        "startChar": 6,
+        "endLine": 2539,
+        "endChar": 49
+      },
+      "revId": "af84dfdf81d92f37a82addd0e86e839b36b4fe14",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "840f022b_992e6621",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 2
@@ -69,6 +93,30 @@
       "revId": "af84dfdf81d92f37a82addd0e86e839b36b4fe14",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a05af192_d7e0de7c",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3237,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-17T15:20:16Z",
+      "side": 1,
+      "message": "Broken as intended. there is comment in the main code as to why.",
+      "parentUuid": "840f022b_992e6621",
+      "range": {
+        "startLine": 3237,
+        "startChar": 27,
+        "endLine": 3237,
+        "endChar": 41
+      },
+      "revId": "af84dfdf81d92f37a82addd0e86e839b36b4fe14",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

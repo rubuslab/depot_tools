@@ -4260,7 +4260,7 @@ def CMDcomments(parser, args):
   """Shows or posts review comments for any changelist."""
   parser.add_option('-a', '--add-comment', dest='comment',
                     help='comment to add to an issue')
-  parser.add_option('-i', dest='issue',
+  parser.add_option('-i', '--issue', dest='issue',
                     help='review issue id (defaults to current issue)')
   parser.add_option('-j', '--json-file',
                     help='File to write JSON summary to')
@@ -4278,9 +4278,7 @@ def CMDcomments(parser, args):
       DieWithError('A review issue id is expected to be a number')
 
   cl = Changelist(issue=issue,
-                  # TODO(tandrii): remove 'rietveld' default.
-                  codereview=options.forced_codereview or (
-                      'rietveld' if issue else None),
+                  codereview=options.forced_codereview,
                   auth_config=auth_config)
 
   if options.comment:

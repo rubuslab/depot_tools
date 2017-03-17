@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e5cf9fc7_9a084356",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2539,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-17T15:16:09Z",
+      "side": 1,
+      "message": "They could change the formatting at any time which would break this code. Eg. if they don\u0027t print right-padding zeros.",
+      "range": {
+        "startLine": 2539,
+        "startChar": 6,
+        "endLine": 2539,
+        "endChar": 49
+      },
+      "revId": "af84dfdf81d92f37a82addd0e86e839b36b4fe14",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "840f022b_992e6621",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3237,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-17T15:16:09Z",
+      "side": 1,
+      "message": "THis looks weird.",
+      "range": {
+        "startLine": 3237,
+        "startChar": 27,
+        "endLine": 3237,
+        "endChar": 41
+      },
+      "revId": "af84dfdf81d92f37a82addd0e86e839b36b4fe14",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

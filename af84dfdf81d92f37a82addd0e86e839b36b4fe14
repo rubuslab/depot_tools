@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1c28dbe0_973cd0fb",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2539,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-17T15:19:10Z",
+      "side": 1,
+      "message": "yeah :( that\u0027s why assert + comment is here, s.t. it\u0027s faster to diagnose what is wrong.",
+      "parentUuid": "e5cf9fc7_9a084356",
+      "range": {
+        "startLine": 2539,
+        "startChar": 6,
+        "endLine": 2539,
+        "endChar": 49
+      },
+      "revId": "af84dfdf81d92f37a82addd0e86e839b36b4fe14",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "840f022b_992e6621",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 2

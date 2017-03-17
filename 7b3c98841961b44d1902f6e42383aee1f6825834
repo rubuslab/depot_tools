@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e4741939_bb9ce7ec",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3174,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-17T15:07:03Z",
+      "side": 1,
+      "message": "almost the same test as above for Rietveld. The idea is that at some point the Rietveld test will be removed, but this test should still provide coverage.",
+      "range": {
+        "startLine": 3174,
+        "startChar": 6,
+        "endLine": 3174,
+        "endChar": 39
+      },
+      "revId": "7b3c98841961b44d1902f6e42383aee1f6825834",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

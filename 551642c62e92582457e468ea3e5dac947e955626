@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4b5fd32_77971909",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2017-03-18T01:19:15Z",
+      "side": 1,
+      "message": "The name of this class doesn\u0027t seem quite right now. I\u0027m open to ideas...",
+      "range": {
+        "startLine": 577,
+        "startChar": 6,
+        "endLine": 577,
+        "endChar": 16
+      },
+      "revId": "551642c62e92582457e468ea3e5dac947e955626",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1553,7 +1553,7 @@ class Changelist(object):
     # expensive hooks if uploading is likely to fail anyway. Passing these
     # checks does not guarantee that uploading will not fail.
     self._codereview_impl.EnsureAuthenticated(force=options.force)
-    self._codereview_impl.EnsureCanUploadPatchset()
+    self._codereview_impl.EnsureCanUploadPatchset(force=options.force)
 
     # Apply watchlists on upload.
     change = self.GetChange(base_branch, None)
@@ -1822,12 +1822,15 @@ class _ChangelistCodereviewBase(object):
     """
     raise NotImplementedError()
 
-  def EnsureCanUploadPatchset(self):
+  def EnsureCanUploadPatchset(self, force):
     """Best effort check that uploading isn't supposed to fail for predictable
     reasons.
 
     This method should raise informative exception if uploading shouldn't
     proceed.
+
+    Arguments:
+      force: whether to skip confirmation questions.
     """
     pass
 
@@ -2396,25 +2399,41 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
                      cookie_auth.get_netrc_path(),
                      cookie_auth.get_new_password_message(git_host)))
 
-  def EnsureCanUploadPatchset(self):
-    """Best effort check that uploading isn't supposed to fail for predictable
-    reasons.
-
-    This method should raise informative exception if uploading shouldn't
-    proceed.
-    """
+  def EnsureCanUploadPatchset(self, force):
     if not self.GetIssue():
       return
 
     # Warm change details cache now to avoid RPCs later, reducing latency for
     # developers.
-    self.FetchDescription()
+    self._GetChangeDetail(
+        ['DETAILED_ACCOUNTS', 'CURRENT_REVISION', 'CURRENT_COMMIT'])
 
     status = self._GetChangeDetail()['status']
     if status in ('MERGED', 'ABANDONED'):
       DieWithError('Change %s has been %s, new uploads are not allowed' %
                    (self.GetIssueURL(),
                     'submitted' if status == 'MERGED' else 'abandoned'))
+
+    if gerrit_util.GceAuthenticator.is_gce():
+      return
+    cookies_user = gerrit_util.CookiesAuthenticator().get_auth_email(
+        self._GetGerritHost())
+    if self.GetIssueOwner() == cookies_user:
+      return
+    logging.debug('change %s owner is %s, cookies user is %s',
+                  self.GetIssue(), self.GetIssueOwner(), cookies_user)
+    # Maybe user has linked accounts or smth like that,
+    # so ask what Gerrit thinks of this user.
+    details = gerrit_util.GetAccountDetails(self._GetGerritHost(), 'self')
+    if details['email'] == self.GetIssueOwner():
+      return
+    print('WARNING: change %s is owned by %s, but you authenticate to Gerrit '
+          'as %s.\n'
+          'Uploading may fail due to lack of permissions.' %
+          (self.GetIssue(), self.GetIssueOwner(), details['email']))
+    if not force:
+      confirm_or_exit(action='upload')
+
 
   def _PostUnsetIssueProperties(self):
     """Which branch-specific properties to erase when unsetting issue."""

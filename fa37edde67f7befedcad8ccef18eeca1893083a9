@@ -46,6 +46,30 @@
       "revId": "fa37edde67f7befedcad8ccef18eeca1893083a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "948a3760_58378c8e",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T15:55:30Z",
+      "side": 1,
+      "message": "you have quotes around the www_authenticate, making it a string, not a var.",
+      "parentUuid": "b5e71875_b848e0f3",
+      "range": {
+        "startLine": 334,
+        "startChar": 8,
+        "endLine": 334,
+        "endChar": 38
+      },
+      "revId": "fa37edde67f7befedcad8ccef18eeca1893083a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

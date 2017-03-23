@@ -70,6 +70,30 @@
       "revId": "fa37edde67f7befedcad8ccef18eeca1893083a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f99b99c6_6e542ed1",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2017-03-23T15:57:55Z",
+      "side": 1,
+      "message": "Argh, brain fart from a previous version of the patch :(",
+      "parentUuid": "948a3760_58378c8e",
+      "range": {
+        "startLine": 334,
+        "startChar": 8,
+        "endLine": 334,
+        "endChar": 38
+      },
+      "revId": "fa37edde67f7befedcad8ccef18eeca1893083a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

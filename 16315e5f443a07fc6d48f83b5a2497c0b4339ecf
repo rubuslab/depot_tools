@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "587b9c31_8e9d3574",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-03-23T20:24:14Z",
+      "side": 1,
+      "message": "I don\u0027t know why some files exist only in the .25008 tree, and some only in the .25017 tree, but that\u0027s the way it is.\n\nI\u0027m sure this will need tweaking on every update.",
+      "revId": "16315e5f443a07fc6d48f83b5a2497c0b4339ecf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "c9afab9f_1473b921",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1825,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T17:14:17Z",
+      "side": 1,
+      "message": "the only important docstring is here.",
+      "range": {
+        "startLine": 1825,
+        "startChar": 6,
+        "endLine": 1825,
+        "endChar": 29
+      },
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ae3d0887_a2548f40",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -13,6 +36,24 @@
       "writtenOn": "2017-03-23T16:58:48Z",
       "side": 1,
       "message": "Don\u0027t remove this docstring.",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af6bffd2_bc564e17",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2402,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T17:14:17Z",
+      "side": 1,
+      "message": "IMO, keeping two of the doc strings in sync is hard, and i\u0027d rather have no doc here than have to conflicting docs.",
+      "parentUuid": "ae3d0887_a2548f40",
       "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -33,6 +74,24 @@
       "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b10a929c_6023b691",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2434,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T17:14:17Z",
+      "side": 1,
+      "message": "Good point. I thought of round trips too - see warming of cache above and that why I first check .gitcookies, but your idea is a good one, too.",
+      "parentUuid": "dd95b58c_25f02030",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

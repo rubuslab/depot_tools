@@ -49,6 +49,53 @@
     },
     {
       "key": {
+        "uuid": "5cc8c452_cf9f5ce7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "yep, I\u0027m responsible for teaching bugdroid in 2016.",
+      "parentUuid": "a61beb25_dad0a73f",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 3
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "32b8008f_269fbf3b",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4834,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "constant, but not global. I\u0027ll make it as such.",
+      "range": {
+        "startLine": 4834,
+        "startChar": 2,
+        "endLine": 4834,
+        "endChar": 20
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1764e186_09be806b",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -60,6 +107,30 @@
       "writtenOn": "2017-03-23T08:56:24Z",
       "side": 1,
       "message": "In the code of PushToGitWithAutoRebase you use pushurl as remote. Will that work with mirrors or is it to circumvent the mirror?",
+      "range": {
+        "startLine": 4877,
+        "startChar": 8,
+        "endLine": 4877,
+        "endChar": 15
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ede4cb44_e5d73d84",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4877,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "I pass pushurl here precisely to take care of mirrors. I call it remote in PushToGitWithAutoRebase because it is used not only for pushing :) Any better idea?",
+      "parentUuid": "1764e186_09be806b",
       "range": {
         "startLine": 4877,
         "startChar": 8,
@@ -95,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "33eb6662_74644dc4",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4878,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "because it WAS not a global constant.",
+      "parentUuid": "b05d8a2b_fb75b9e7",
+      "range": {
+        "startLine": 4878,
+        "startChar": 8,
+        "endLine": 4878,
+        "endChar": 26
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "25902e7b_46afeb4a",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -115,6 +210,30 @@
       "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62fa5981_90303e24",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4882,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "typo, indeed. It didn\u0027t crash because the correct var has been defined above. However, I don\u0027t understand I don\u0027t see a description on RIeveld not containing git-numbers... I suspect I modified something after testing and introduced this typo.",
+      "parentUuid": "25902e7b_46afeb4a",
+      "range": {
+        "startLine": 4882,
+        "startChar": 8,
+        "endLine": 4882,
+        "endChar": 19
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -141,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "ccf0158b_7775a806",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4885,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "good idea. done.",
+      "parentUuid": "d6bfd4af_7ade79ac",
+      "range": {
+        "startLine": 4885,
+        "startChar": 4,
+        "endLine": 4885,
+        "endChar": 25
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b17009f7_7ff662f1",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -152,6 +295,30 @@
       "writtenOn": "2017-03-23T08:56:24Z",
       "side": 1,
       "message": "nit: Maybe make this a global constant? How was it in the old coded that did autorebase?",
+      "range": {
+        "startLine": 4944,
+        "startChar": 17,
+        "endLine": 4944,
+        "endChar": 18
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2197bac_27e837b0",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4944,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "exactly like this :)",
+      "parentUuid": "b17009f7_7ff662f1",
       "range": {
         "startLine": 4944,
         "startChar": 17,
@@ -187,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "3a25bd51_318d2828",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4948,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "559737bf_17abc3dd",
+      "range": {
+        "startLine": 4948,
+        "startChar": 12,
+        "endLine": 4948,
+        "endChar": 65
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cbbb271e_0c8b70c9",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -207,6 +398,30 @@
       "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af5dcc2f_9f6d30db",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4951,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbbb271e_0c8b70c9",
+      "range": {
+        "startLine": 4951,
+        "startChar": 31,
+        "endLine": 4951,
+        "endChar": 36
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -233,6 +448,30 @@
     },
     {
       "key": {
+        "uuid": "9723e00c_89921fef",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4959,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc1f4ec0_2890bcae",
+      "range": {
+        "startLine": 4959,
+        "startChar": 6,
+        "endLine": 4959,
+        "endChar": 21
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2879ea81_d293aad2",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -256,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "ba41ec77_5454b6a6",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4989,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "this is using actual URL for pushing, so it totally bypasses the cache. The downside is that it might pollute the .git/ dir of checkout with objects that will eventually make it to cache anyway. Avoiding that means more complexity, which isn\u0027t justified IMO.",
+      "parentUuid": "2879ea81_d293aad2",
+      "range": {
+        "startLine": 4989,
+        "startChar": 32,
+        "endLine": 4989,
+        "endChar": 38
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c0ee544_a1b8a110",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -276,6 +539,30 @@
       "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5aaf633_5b8a9700",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5001,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T18:39:16Z",
+      "side": 1,
+      "message": "well, again that\u0027s how it used to be. I am not aware of any better way, but this seems to have been worked (or at least we survived 2 years without this working :))",
+      "parentUuid": "1c0ee544_a1b8a110",
+      "range": {
+        "startLine": 5001,
+        "startChar": 10,
+        "endLine": 5001,
+        "endChar": 32
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

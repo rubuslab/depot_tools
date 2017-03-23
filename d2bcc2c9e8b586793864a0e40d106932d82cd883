@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "80818a7f_858b7f66",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4877,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T21:22:48Z",
+      "side": 1,
+      "message": "No fine, I was just trying to understand... more loud thinking...",
+      "parentUuid": "ede4cb44_e5d73d84",
+      "range": {
+        "startLine": 4877,
+        "startChar": 8,
+        "endLine": 4877,
+        "endChar": 15
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b05d8a2b_fb75b9e7",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -178,6 +202,30 @@
       "side": 1,
       "message": "because it WAS not a global constant.",
       "parentUuid": "b05d8a2b_fb75b9e7",
+      "range": {
+        "startLine": 4878,
+        "startChar": 8,
+        "endLine": 4878,
+        "endChar": 26
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2db2313e_7604134d",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4878,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T21:22:48Z",
+      "side": 1,
+      "message": "Ah - seeing that now. Wasn\u0027t easy to see though. Just scrolled a bit up and saw something that looked like a constant (and is written in all caps). But didn\u0027t notice the indentation level :(",
+      "parentUuid": "33eb6662_74644dc4",
       "range": {
         "startLine": 4878,
         "startChar": 8,
@@ -328,6 +376,30 @@
       "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa68d9d7_5f98f2b4",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4944,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T21:22:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f2197bac_27e837b0",
+      "range": {
+        "startLine": 4944,
+        "startChar": 17,
+        "endLine": 4944,
+        "endChar": 18
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -519,6 +591,30 @@
     },
     {
       "key": {
+        "uuid": "03607aed_5a5c7f74",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4989,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T21:22:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ba41ec77_5454b6a6",
+      "range": {
+        "startLine": 4989,
+        "startChar": 32,
+        "endLine": 4989,
+        "endChar": 38
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c0ee544_a1b8a110",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -554,6 +650,30 @@
       "side": 1,
       "message": "well, again that\u0027s how it used to be. I am not aware of any better way, but this seems to have been worked (or at least we survived 2 years without this working :))",
       "parentUuid": "1c0ee544_a1b8a110",
+      "range": {
+        "startLine": 5001,
+        "startChar": 10,
+        "endLine": 5001,
+        "endChar": 32
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3cdc268_a0068f62",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5001,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T21:22:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c5aaf633_5b8a9700",
       "range": {
         "startLine": 5001,
         "startChar": 10,

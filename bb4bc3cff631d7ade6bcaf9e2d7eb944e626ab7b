@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e055353_c844b57b",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4983,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T21:22:48Z",
+      "side": 1,
+      "message": "This should probably print out now? Don\u0027t you want to print whatever the last out is in all cases, e.g. after the loop before the return? Then it\u0027s closer to the old logic. But printing the outcome of the push each time might also make sense.",
+      "range": {
+        "startLine": 4983,
+        "startChar": 18,
+        "endLine": 4983,
+        "endChar": 24
+      },
+      "revId": "bb4bc3cff631d7ade6bcaf9e2d7eb944e626ab7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2af49f1d_754475cb",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4990,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T21:22:48Z",
+      "side": 1,
+      "message": "Remove out",
+      "range": {
+        "startLine": 4990,
+        "startChar": 13,
+        "endLine": 4990,
+        "endChar": 18
+      },
+      "revId": "bb4bc3cff631d7ade6bcaf9e2d7eb944e626ab7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

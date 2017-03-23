@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81dd0c3c_2ffb2194",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "Does bugdroid understand BUG:?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 3
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1764e186_09be806b",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4877,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "In the code of PushToGitWithAutoRebase you use pushurl as remote. Will that work with mirrors or is it to circumvent the mirror?",
+      "range": {
+        "startLine": 4877,
+        "startChar": 8,
+        "endLine": 4877,
+        "endChar": 15
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b05d8a2b_fb75b9e7",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4878,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "Why pass CHERRY_PICK_BRANCH if it\u0027s a global constant? Will anything else be passed ever? In the tests?",
+      "range": {
+        "startLine": 4878,
+        "startChar": 8,
+        "endLine": 4878,
+        "endChar": 26
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25902e7b_46afeb4a",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4882,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "change_desc - is this dead code or how could it not have failed here when testing manually?",
+      "range": {
+        "startLine": 4882,
+        "startChar": 8,
+        "endLine": 4882,
+        "endChar": 19
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6bfd4af_7ade79ac",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4885,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "How about logging output within PushToGitWithAutoRebase instead of returning it for logging it outside?",
+      "range": {
+        "startLine": 4885,
+        "startChar": 4,
+        "endLine": 4885,
+        "endChar": 25
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b17009f7_7ff662f1",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4944,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "nit: Maybe make this a global constant? How was it in the old coded that did autorebase?",
+      "range": {
+        "startLine": 4944,
+        "startChar": 17,
+        "endLine": 4944,
+        "endChar": 18
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "559737bf_17abc3dd",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4948,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "How about \"Attempt X of Y\". Like that you know in which attempt we are and how many are left in one line.",
+      "range": {
+        "startLine": 4948,
+        "startChar": 12,
+        "endLine": 4948,
+        "endChar": 65
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbbb271e_0c8b70c9",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4951,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "nit: local",
+      "range": {
+        "startLine": 4951,
+        "startChar": 31,
+        "endLine": 4951,
+        "endChar": 36
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc1f4ec0_2890bcae",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4959,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "Maybe unconditionally print. Worst case we get an empty line. But it\u0027d be less code here.",
+      "range": {
+        "startLine": 4959,
+        "startChar": 6,
+        "endLine": 4959,
+        "endChar": 21
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2879ea81_d293aad2",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4989,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "Is the remote to fetch from and the remote to push to the same? How does this work with git cache?\n\nHmm... thinking more, this won\u0027t work with git cache anyways I guess (by design), as during retrying nobody updates the cache...",
+      "range": {
+        "startLine": 4989,
+        "startChar": 32,
+        "endLine": 4989,
+        "endChar": 38
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c0ee544_a1b8a110",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5001,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-03-23T08:56:24Z",
+      "side": 1,
+      "message": "Any possibility for something more formal? E.g. a different return code from git on that kind of failure.If not, never mind.",
+      "range": {
+        "startLine": 5001,
+        "startChar": 10,
+        "endLine": 5001,
+        "endChar": 32
+      },
+      "revId": "d2bcc2c9e8b586793864a0e40d106932d82cd883",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

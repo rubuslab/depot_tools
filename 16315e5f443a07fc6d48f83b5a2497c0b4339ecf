@@ -16,6 +16,29 @@
       "revId": "16315e5f443a07fc6d48f83b5a2497c0b4339ecf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03c5ea2d_3df91ffa",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-03-23T20:34:13Z",
+      "side": 1,
+      "message": "not isdir() checks that it exists so this is redundant, unless you want to split and report that it\u0027s a regular file.",
+      "range": {
+        "startLine": 127,
+        "startChar": 7,
+        "endLine": 127,
+        "endChar": 39
+      },
+      "revId": "16315e5f443a07fc6d48f83b5a2497c0b4339ecf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

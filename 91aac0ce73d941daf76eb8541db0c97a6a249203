@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "925b73ab_9b983b51",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1684,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T19:02:01Z",
+      "side": 1,
+      "message": "and this...",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c9afab9f_1473b921",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -42,6 +59,24 @@
     },
     {
       "key": {
+        "uuid": "369fea72_f8d1a537",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1835,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T19:02:01Z",
+      "side": 1,
+      "message": "because having no implementation for this one is not wrong. That said, i fixed htis.",
+      "parentUuid": "ec7f6b1a_1235061f",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "022f80ba_242d0b49",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -53,6 +88,24 @@
       "writtenOn": "2017-03-23T17:28:37Z",
       "side": 1,
       "message": "Some of these don\u0027t have docstrings. If all the docstrings should be in the base class, then *all* the docstrings should be in the base class.",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f777d5d_2c8cab00",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1852,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T19:02:01Z",
+      "side": 1,
+      "message": "it\u0027s more complicated: there is also GetIssueOwner in Changelist class itself, and that\u0027s where I documented it.\n\nI still don\u0027t yet have a good object model for Changelist. If you have ideas, LMK.\n\nCurrently I have:\nclass Changelist:\n  # which has \n  self._codereview_impl \n  # which is instance of either:\n  _RietveldChangelistImpl or _GerritChangelistImpl\n\nSome methods are defined on Changelist but are immediately propagated to _coderview_impl (like GetIssueOwner)\nOthers like EnsureCanUploadPatchset are not defined on Changelist because they were originally supposed to be called only from inside Changelist itself.\nHowever, there is __getattr__ magic to forward undefined attrs of Changelist to `codereview_impl`, and the same thing backwards. This was the only way I knew to let me add Gerrit specific code without breaking existing Rietveld and a more readable form then if conditions.\nThe problem with these __getattr__ is that now even Gerrit code relies on it.",
+      "parentUuid": "022f80ba_242d0b49",
       "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -106,6 +159,24 @@
       "side": 1,
       "message": "I agree in languages like Java where you mark \"@override\". But these classes are sufficiently complex that it isn\u0027t always obvious which methods are class-specific and which are implementations of the base class. At the very least, that should be noted.",
       "parentUuid": "af6bffd2_bc564e17",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17cca0be_f5debcd4",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2402,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-23T19:02:01Z",
+      "side": 1,
+      "message": "I orient myself this way: all non-protected (not _xxx) are overrides. Protected ones though could be both, maybe I should have used __ for really private ones like _GetChangeDetail().\nStill, ptal at my reply on line 1852. I don\u0027t mind adding @override or smth like that, but then for every method in both Rietveld and Gerrit implementations AND in a follow up CL.",
+      "parentUuid": "fde57687_7b0338f9",
       "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae3d0887_a2548f40",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2402,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-03-23T16:58:48Z",
+      "side": 1,
+      "message": "Don\u0027t remove this docstring.",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd95b58c_25f02030",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2434,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-03-23T16:58:48Z",
+      "side": 1,
+      "message": "This whole warning thing is multiple round-trips to the server. Maybe put the whole thing inside \"if not force\", instead of just the confirm prompt? That would speed up execution for folks who are (probably) trying to be speedy. Or not, either way, just an idea.",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

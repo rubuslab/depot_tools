@@ -25,6 +25,40 @@
     },
     {
       "key": {
+        "uuid": "ec7f6b1a_1235061f",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1835,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-03-23T17:28:37Z",
+      "side": 1,
+      "message": "It isn\u0027t clear to me why this one is \u0027pass\u0027 instead of \u0027raise NotImplementedError\u0027 like all the others. Make the abstract base class truly abstract.",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "022f80ba_242d0b49",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1852,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-03-23T17:28:37Z",
+      "side": 1,
+      "message": "Some of these don\u0027t have docstrings. If all the docstrings should be in the base class, then *all* the docstrings should be in the base class.",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ae3d0887_a2548f40",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -54,6 +88,24 @@
       "side": 1,
       "message": "IMO, keeping two of the doc strings in sync is hard, and i\u0027d rather have no doc here than have to conflicting docs.",
       "parentUuid": "ae3d0887_a2548f40",
+      "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fde57687_7b0338f9",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2402,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-03-23T17:28:37Z",
+      "side": 1,
+      "message": "I agree in languages like Java where you mark \"@override\". But these classes are sufficiently complex that it isn\u0027t always obvious which methods are class-specific and which are implementations of the base class. At the very least, that should be noted.",
+      "parentUuid": "af6bffd2_bc564e17",
       "revId": "91aac0ce73d941daf76eb8541db0c97a6a249203",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

@@ -16,8 +16,10 @@ DEPS = [
 def RunSteps(api):
   api.step('show cache path', [])
   api.step.active_result.presentation.logs['result'] = [
-    str(api.path['cache']),
-    str(api.infra_paths.default_git_cache_dir),
+    'cache: %s' % api.path['cache'],
+    'builder_cache: %s' % api.path['builder_cache'],
+    'git_cache: %s' % api.path['git_cache'],
+    'goma_cache: %s' % api.path['goma_cache'],
   ]
 
 
@@ -25,7 +27,7 @@ def GenTests(api):
   yield api.test('basic')
 
   for platform in ('linux', 'mac', 'win'):
-    for path_config in ('buildbot', 'kitchen', 'swarmbucket'):
+    for path_config in ('buildbot', 'kitchen', 'generic'):
       yield (
           api.test('paths_%s_%s' % (path_config, platform)) +
           api.platform.name(platform) +

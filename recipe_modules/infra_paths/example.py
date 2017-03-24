@@ -18,6 +18,7 @@ def RunSteps(api):
   api.step.active_result.presentation.logs['result'] = [
     str(api.path['cache']),
     str(api.infra_paths.default_git_cache_dir),
+    str(api.infra_paths.default_git_cache_dir),
   ]
 
 
@@ -25,7 +26,7 @@ def GenTests(api):
   yield api.test('basic')
 
   for platform in ('linux', 'mac', 'win'):
-    for path_config in ('buildbot', 'kitchen', 'swarmbucket'):
+    for path_config in ('buildbot', 'kitchen', 'generic'):
       yield (
           api.test('paths_%s_%s' % (path_config, platform)) +
           api.platform.name(platform) +

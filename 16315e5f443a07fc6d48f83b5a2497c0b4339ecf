@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d0f5351e_2ec9f0cb",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-03-24T00:38:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "587b9c31_8e9d3574",
+      "revId": "16315e5f443a07fc6d48f83b5a2497c0b4339ecf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "03c5ea2d_3df91ffa",
         "filename": "win_toolchain/package_from_installed.py",
         "patchSetId": 2
@@ -39,6 +57,30 @@
       "revId": "16315e5f443a07fc6d48f83b5a2497c0b4339ecf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab023d6b_4e901dc5",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-03-24T00:38:17Z",
+      "side": 1,
+      "message": "I split it, and also removed the assert that follows, since it is now redundant. BTW, the reason for raise Exception was so that I could display the name that was missing, for better diagnostics.",
+      "parentUuid": "03c5ea2d_3df91ffa",
+      "range": {
+        "startLine": 127,
+        "startChar": 7,
+        "endLine": 127,
+        "endChar": 39
+      },
+      "revId": "16315e5f443a07fc6d48f83b5a2497c0b4339ecf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

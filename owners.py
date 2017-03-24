@@ -68,6 +68,11 @@ EVERYONE = '*'
 BASIC_EMAIL_REGEXP = r'^[\w\-\+\%\.]+\@[\w\-\+\%\.]+$'
 
 
+# Key for global comments per email address. Should be unlikely to be a
+# pathname.
+GLOBAL_STATUS = '*'
+
+
 def _assert_is_collection(obj):
   assert not isinstance(obj, basestring)
   # Module 'collections' has no 'Iterable' member
@@ -196,6 +201,7 @@ class Database(object):
     return dirpath
 
   def load_data_needed_for(self, files):
+    self._read_global_comments()
     for f in files:
       dirpath = self.os_path.dirname(f)
       while not self._owners_for(dirpath):
@@ -267,6 +273,40 @@ class Database(object):
       self._add_entry(dirpath, line, owners_path, lineno,
                       ' '.join(comment))
 
+  def _read_global_comments(self):
+    owners_status_path = self.os_path.join(self.root, 'build', 'OWNERS.status')
+    if not self.os_path.exists(owners_status_path):
+      return
+
+    if owners_status_path in self.read_files:
+      return
+
+    self.read_files.add(owners_status_path)
+
+    lineno = 0
+    for line in self.fopen(owners_status_path):
+      lineno += 1
+      line = line.strip()
+      if line.startswith('#'):
+        continue
+      if line == '':
+        continue
+
+      m = re.match('(.+?):(.+)', line)
+      if m:
+        owner = m.group(1).strip()
+        comment = m.group(2).strip()
+        if not self.email_regexp.match(owner):
+          raise SyntaxErrorInOwnersFile(owners_status_path, lineno,
+              'invalid email address: "%s"' % owner)
+
+        self.comments.setdefault(owner, {})
+        self.comments[owner][GLOBAL_STATUS] = comment
+        continue
+
+      raise SyntaxErrorInOwnersFile(owners_status_path, lineno,
+          'cannot parse status entry: "%s"' % line.strip())
+
   def _add_entry(self, owned_paths, directive, owners_path, lineno, comment):
     if directive == 'set noparent':
       self._stop_looking.add(owned_paths)
@@ -281,8 +321,9 @@ class Database(object):
         self._owners_to_paths.setdefault(owner, set()).add(owned_paths)
         self._paths_to_owners.setdefault(owned_paths, set()).add(owner)
     elif self.email_regexp.match(directive) or directive == EVERYONE:
-      self.comments.setdefault(directive, {})
-      self.comments[directive][owned_paths] = comment
+      if comment:
+        self.comments.setdefault(directive, {})
+        self.comments[directive][owned_paths] = comment
       self._owners_to_paths.setdefault(directive, set()).add(owned_paths)
       self._paths_to_owners.setdefault(owned_paths, set()).add(directive)
     else:

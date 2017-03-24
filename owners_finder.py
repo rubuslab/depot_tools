@@ -207,8 +207,17 @@ class OwnersFinder(object):
     else:
       self.writeln(self.bold_name(owner) + ' is commented as:')
       self.indent()
+      if owners_module.GLOBAL_STATUS in self.comments[owner]:
+        self.writeln(
+            self.greyed(self.comments[owner][owners_module.GLOBAL_STATUS]) +
+            ' (global status)')
+        if len(self.comments[owner]) == 1:
+          self.unindent()
+          return
       for path in self.comments[owner]:
-        if len(self.comments[owner][path]) > 0:
+        if path == owners_module.GLOBAL_STATUS:
+          continue
+        elif len(self.comments[owner][path]) > 0:
           self.writeln(self.greyed(self.comments[owner][path]) +
                        ' (at ' + self.bold(path or '<root>') + ')')
         else:

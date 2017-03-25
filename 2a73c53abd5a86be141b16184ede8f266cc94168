@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22c0b9d6_ebbd8e45",
+        "filename": "recipe_modules/infra_paths/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-03-25T00:02:11Z",
+      "side": 1,
+      "message": "I suppose we can delete this in a later CL?",
+      "revId": "2a73c53abd5a86be141b16184ede8f266cc94168",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b951214f_ca6e6136",
+        "filename": "recipe_modules/infra_paths/example.expected/basic.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-03-25T00:02:11Z",
+      "side": 1,
+      "message": "tmp_base looks pretty wrong here. Not sure if this reflects reality? Maybe should be /b/t/ ?",
+      "revId": "2a73c53abd5a86be141b16184ede8f266cc94168",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

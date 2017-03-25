@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3c1737f1_2ef76cc5",
+        "filename": "recipe_modules/infra_paths/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-03-25T01:17:44Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "22c0b9d6_ebbd8e45",
+      "revId": "2a73c53abd5a86be141b16184ede8f266cc94168",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b951214f_ca6e6136",
         "filename": "recipe_modules/infra_paths/example.expected/basic.json",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "2a73c53abd5a86be141b16184ede8f266cc94168",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "452a5a38_be395f9b",
+        "filename": "recipe_modules/infra_paths/example.expected/basic.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-03-25T01:17:44Z",
+      "side": 1,
+      "message": "https://github.com/luci/recipes-py/blob/master/recipe_modules/path/api.py#L203\n¯\\_(ツ)_/¯",
+      "parentUuid": "b951214f_ca6e6136",
+      "revId": "2a73c53abd5a86be141b16184ede8f266cc94168",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "32c5e512_dbe87807",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3725,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-03-27T15:40:16Z",
+      "side": 1,
+      "message": "Why two of them? It stars with a new line already, but needs to have extra line before.",
+      "range": {
+        "startLine": 3725,
+        "startChar": 15,
+        "endLine": 3725,
+        "endChar": 19
+      },
+      "revId": "d54a436251c7d237a64ea895f0dd79e34cafb51b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

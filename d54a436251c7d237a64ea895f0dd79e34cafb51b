@@ -22,6 +22,30 @@
       "revId": "d54a436251c7d237a64ea895f0dd79e34cafb51b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9eabf10e_b116efc1",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3725,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-03-27T16:09:02Z",
+      "side": 1,
+      "message": "WAI, so there is a huge visual gap of 2 lines.",
+      "parentUuid": "32c5e512_dbe87807",
+      "range": {
+        "startLine": 3725,
+        "startChar": 15,
+        "endLine": 3725,
+        "endChar": 19
+      },
+      "revId": "d54a436251c7d237a64ea895f0dd79e34cafb51b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

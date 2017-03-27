@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "22e7cd7e_7527e5be",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-03-27T23:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2209d59b_b705f2ce",
+      "revId": "63dc3285b089a6645d2a83f6076ec15a3feb3fa5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5ce2890_7209b64b",
         "filename": "recipes/recipe_modules/infra_paths/example.py",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "63dc3285b089a6645d2a83f6076ec15a3feb3fa5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ebce9b6_2b24a725",
+        "filename": "recipes/recipe_modules/infra_paths/example.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-03-27T23:38:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b5ce2890_7209b64b",
+      "revId": "63dc3285b089a6645d2a83f6076ec15a3feb3fa5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7df7b13b_d938fc9d",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1188132
+      },
+      "writtenOn": "2017-03-28T21:29:19Z",
+      "side": 1,
+      "message": "way not:\n```\nif combined.count(\u0027\\\\x64\\\\\u0027) \u003e 0:\n  good_dbghelp_path \u003d os.path.join(good_dbghelp_path, \u0027x64\u0027)\ncombined \u003d os.path.join(good_dbghelp_path, \u0027dbghelp.dll\u0027)\n```",
+      "revId": "af0fd4eb99437a7a914d26d2fca409fc3547e674",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80731a68_3fd18e8b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-03-28T19:56:30Z",
+      "side": 1,
+      "message": "Frankly I\u0027d just do filepath \u003d newpath.replace(\u0027\\\\\u0027, \u0027/\u0027)",
+      "revId": "522325f4cc0cecfeff42b04b4deea0efd313a679",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "revId": "b82d8bc0065ff2c6341dcbd910d0d7c1c87ae1d8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "023d8f67_0978cfbe",
+        "filename": "infra/config/recipes.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-03-29T21:51:24Z",
+      "side": 1,
+      "message": "they\u0027re alphabetical",
+      "parentUuid": "b4b245d2_ddf7a88b",
+      "revId": "b82d8bc0065ff2c6341dcbd910d0d7c1c87ae1d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

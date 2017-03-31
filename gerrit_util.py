@@ -120,7 +120,8 @@ class CookiesAuthenticator(Authenticator):
     content = ''
     if os.path.exists(path):
       st = os.stat(path)
-      if st.st_mode & (stat.S_IRWXG | stat.S_IRWXO):
+      if (st.st_mode & (stat.S_IRWXG | stat.S_IRWXO) and
+          not sys.platform.startswith('win')):
         print >> sys.stderr, (
             'WARNING: netrc file %s cannot be used because its file '
             'permissions are insecure.  netrc file permissions should be '

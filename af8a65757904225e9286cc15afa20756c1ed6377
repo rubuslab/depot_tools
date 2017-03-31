@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e30511ba_139364a9",
+        "filename": "bootstrap/win/git_bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-03-31T16:10:54Z",
+      "side": 1,
+      "message": "do we want to keep this print?",
+      "revId": "af8a65757904225e9286cc15afa20756c1ed6377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

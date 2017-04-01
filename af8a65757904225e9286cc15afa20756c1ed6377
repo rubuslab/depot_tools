@@ -16,6 +16,24 @@
       "revId": "af8a65757904225e9286cc15afa20756c1ed6377",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2b2e81a_a6c4e0fc",
+        "filename": "bootstrap/win/git_bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1149194
+      },
+      "writtenOn": "2017-04-01T12:26:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e30511ba_139364a9",
+      "revId": "af8a65757904225e9286cc15afa20756c1ed6377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8dddf117_0a3d18f5",
+        "filename": "git_map.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-04-01T17:54:44Z",
+      "side": 1,
+      "message": "--help will only actually get to this point in the code if this script is invoked directly (like git_map.py) instead of via git (git map --help)",
+      "revId": "0ac2c0f915a9818118892d302d52c1db3156ed9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

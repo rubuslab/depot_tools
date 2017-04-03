@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21c3e9dc_55bec68a",
+        "filename": "owners_finder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-04-03T20:17:00Z",
+      "side": 1,
+      "message": "I think it\u0027s better to default to None rather than to default to //build/OWNERS.status, and then error out if the value is configured but the file doesn\u0027t exist (when you actually try to read it). \n\nI\u0027d also put this function in presubmit_support as a method on the Change object; I don\u0027t think owners_finder is the right place for it.",
+      "revId": "9b2966642e6d2ee885facc798e12ba7730478581",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

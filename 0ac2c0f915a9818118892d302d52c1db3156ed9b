@@ -16,6 +16,24 @@
       "revId": "0ac2c0f915a9818118892d302d52c1db3156ed9b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "117c915a_3800b3a3",
+        "filename": "git_map.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1149194
+      },
+      "writtenOn": "2017-04-03T03:11:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8dddf117_0a3d18f5",
+      "revId": "0ac2c0f915a9818118892d302d52c1db3156ed9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

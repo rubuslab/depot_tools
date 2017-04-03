@@ -78,7 +78,7 @@ class _BaseTestCase(unittest.TestCase):
     root = root or self.root
     fopen = fopen or self.fopen
     os_path = os_path or self.repo
-    return owners.Database(root, fopen, os_path)
+    return owners.Database(root, None, fopen, os_path)
 
 
 class OwnersDatabaseTest(_BaseTestCase):

@@ -121,11 +121,15 @@ index fe3de7b..54ae6e1 100755
       def RepositoryRoot(self):
         return self._root
 
+    def FakeOwnersStatusFile(root, os_path):
+      return os_path.join('build', 'OWNERS.status')
+
     self.mox.StubOutWithMock(presubmit, 'random')
     self.mox.StubOutWithMock(presubmit, 'warn')
     presubmit._ASKED_FOR_FEEDBACK = False
     self.fake_root_dir = self.RootDir()
     self.fake_change = FakeChange(self)
+    presubmit.GetOwnersStatusFile = FakeOwnersStatusFile
 
     # Special mocks.
     def MockAbsPath(f):
@@ -155,8 +159,8 @@ class PresubmitUnittest(PresubmitTestsBase):
     self.mox.ReplayAll()
     members = [
       'AffectedFile', 'Change',
-      'DoPostUploadExecuter', 'DoPresubmitChecks', 'GetPostUploadExecuter',
-      'GitAffectedFile', 'CallCommand', 'CommandData',
+      'DoPostUploadExecuter', 'DoPresubmitChecks', 'GetOwnersStatusFile',
+      'GetPostUploadExecuter', 'GitAffectedFile', 'CallCommand', 'CommandData',
       'GitChange', 'InputApi', 'ListRelevantPresubmitFiles', 'main',
       'NonexistantCannedCheckFilter', 'OutputApi', 'ParseFiles',
       'PresubmitFailure', 'PresubmitExecuter', 'PresubmitOutput', 'ScanSubDirs',

@@ -7,11 +7,27 @@
 import os
 import copy
 import owners as owners_module
+import subprocess2
 
 
 def first(iterable):
   for element in iterable:
     return element
+
+
+def GetOwnersStatusFile(root, os_path):
+  """Returns the name of the global OWNERS status file."""
+
+  status_file = None
+  try:
+    status_file = subprocess2.check_output(
+        ['git', 'config', 'rietveld.owners-status-file'], cwd=root)
+  except:
+    pass
+  if not status_file:
+    status_file = os_path.join('build', 'OWNERS.status')
+
+  return status_file
 
 
 class OwnersFinder(object):
@@ -22,7 +38,7 @@ class OwnersFinder(object):
 
   indentation = 0
 
-  def __init__(self, files, local_root, author,
+  def __init__(self, files, local_root, owners_status_file, author,
                fopen, os_path,
                email_postfix='@chromium.org',
                disable_color=False):
@@ -34,7 +50,8 @@ class OwnersFinder(object):
       self.COLOR_GREY = ''
       self.COLOR_RESET = ''
 
-    self.db = owners_module.Database(local_root, fopen, os_path)
+    self.db = owners_module.Database(local_root, owners_status_file, fopen,
+                                     os_path)
     self.db.load_data_needed_for(files)
 
     self.os_path = os_path
@@ -51,7 +68,8 @@ class OwnersFinder(object):
     if len(filtered_files) != len(files):
       files = filtered_files
       # Reload the database.
-      self.db = owners_module.Database(local_root, fopen, os_path)
+      self.db = owners_module.Database(local_root, owners_status_file, fopen,
+                                       os_path)
       self.db.load_data_needed_for(files)
 
     self.all_possible_owners = self.db.all_possible_owners(files, None)
@@ -207,8 +225,17 @@ class OwnersFinder(object):
     else:
       self.writeln(self.bold_name(owner) + ' is commented as:')
       self.indent()
+      if owners_module.GLOBAL_STATUS in self.comments[owner]:
+        self.writeln(
+            self.greyed(self.comments[owner][owners_module.GLOBAL_STATUS]) +
+            ' (global status)')
+        if len(self.comments[owner]) == 1:
+          self.unindent()
+          return
       for path in self.comments[owner]:
-        if len(self.comments[owner][path]) > 0:
+        if path == owners_module.GLOBAL_STATUS:
+          continue
+        elif len(self.comments[owner][path]) > 0:
           self.writeln(self.greyed(self.comments[owner][path]) +
                        ' (at ' + self.bold(path or '<root>') + ')')
         else:

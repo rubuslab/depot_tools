@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3321d653_eca605c3",
+        "filename": "recipes/recipe_modules/infra_paths/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-04-03T20:22:43Z",
+      "side": 1,
+      "message": "why do you have to do this? this does not match CL description too. I am worried because this is change of default recipe behavior, and thus it will cause recipe expectations in build.git to change. Let\u0027s avoid this by using b_dir(c) and kitchen_cache(c) functions, see other comment",
+      "revId": "5d7e321cf91e0ce5720ac34adf8437ea1012d0fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10e2785b_35972f49",
+        "filename": "recipes/recipe_modules/infra_paths/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-04-03T20:22:43Z",
+      "side": 1,
+      "message": "nit: base paths",
+      "range": {
+        "startLine": 34,
+        "startChar": 68,
+        "endLine": 34,
+        "endChar": 79
+      },
+      "revId": "5d7e321cf91e0ce5720ac34adf8437ea1012d0fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28896151_afa5c382",
+        "filename": "recipes/recipe_modules/infra_paths/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-04-03T20:22:43Z",
+      "side": 1,
+      "message": "nit: base paths",
+      "range": {
+        "startLine": 37,
+        "startChar": 53,
+        "endLine": 37,
+        "endChar": 68
+      },
+      "revId": "5d7e321cf91e0ce5720ac34adf8437ea1012d0fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3211bd1_a2bddcc0",
+        "filename": "recipes/recipe_modules/infra_paths/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-04-03T20:22:43Z",
+      "side": 1,
+      "message": "nit: return [\n  # comment\n  item,\n  # comment2\n  item2,\n]",
+      "revId": "5d7e321cf91e0ce5720ac34adf8437ea1012d0fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e824b8d4_afb2280b",
+        "filename": "recipes/recipe_modules/infra_paths/example.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-04-03T20:22:43Z",
+      "side": 1,
+      "message": "i don\u0027t think you are supposed to call this function yourself. It should have been called by recipe engine by this time",
+      "revId": "5d7e321cf91e0ce5720ac34adf8437ea1012d0fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9cae5fc7_9a924ad9",
+        "filename": "recipes/recipe_modules/infra_paths/path_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-04-03T20:22:43Z",
+      "side": 1,
+      "message": "introducing new base paths is expanding API surface. Let\u0027s not do that, we don\u0027t have to introduce new base paths to solve this problem.\n\nLet\u0027s define functions \n\ndef b_dir(c):\n  return ...\n\ndef kitchen_cache(c):\n  return ...\n\nand use them here and in api.py.",
+      "revId": "5d7e321cf91e0ce5720ac34adf8437ea1012d0fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "630f356c_c10e06f5",
+        "filename": "recipes/recipe_modules/infra_paths/path_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-04-03T20:22:43Z",
+      "side": 1,
+      "message": "i think it is fine to use b_dir(c) here which is a search up the dir tree instead of START_DIR[-4] because they\u0027d have the same value on buildbot",
+      "revId": "5d7e321cf91e0ce5720ac34adf8437ea1012d0fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

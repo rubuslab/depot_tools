@@ -19,6 +19,11 @@ def RunSteps(api):
     'base_paths: %r' % (api.path.c.base_paths,),
   ]
 
+  api.step('show all builder cache dirs', [])
+  api.infra_paths.initialize()
+  api.step.active_result.presentation.logs['result'] = [
+      str(d) for d in api.infra_paths.all_builder_cache_dirs()]
+
 
 def GenTests(api):
   yield api.test('basic')

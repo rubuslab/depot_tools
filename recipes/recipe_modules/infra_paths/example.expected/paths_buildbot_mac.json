@@ -3,7 +3,17 @@
     "cmd": [],
     "name": "show cache path",
     "~followup_annotations": [
-      "@@@STEP_LOG_LINE@result@base_paths: {'depot_tools': ('depot_tools',), 'build_internal': ('build_internal',), 'cache': ('build', 'slave', 'cache'), 'goma_cache': ('build', 'slave', 'goma_cache'), 'start_dir': ('/', 'b', 'FakeTestingCWD'), 'build': ('build',), 'git_cache': ('build', 'slave', 'cache_dir'), 'root': (), 'tmp_base': ('/',)}@@@",
+      "@@@STEP_LOG_LINE@result@base_paths: {'depot_tools': ('depot_tools',), 'build_internal': ('build_internal',), 'cache': ('build', 'slave', 'cache'), 'goma_cache': ('build', 'slave', 'goma_cache'), 'infra_kitchen_cache': ('/', 'b', 'c'), 'start_dir': ('/', 'b', 'FakeTestingCWD'), 'infra_b_dir': (), 'build': ('build',), 'git_cache': ('build', 'slave', 'cache_dir'), 'root': (), 'tmp_base': ('/',)}@@@",
+      "@@@STEP_LOG_END@result@@@"
+    ]
+  },
+  {
+    "cmd": [],
+    "name": "show all builder cache dirs",
+    "~followup_annotations": [
+      "@@@STEP_LOG_LINE@result@[INFRA_B_DIR]/build/slave/cache@@@",
+      "@@@STEP_LOG_LINE@result@[INFRA_KITCHEN_CACHE]/b@@@",
+      "@@@STEP_LOG_LINE@result@[CACHE]/builder@@@",
       "@@@STEP_LOG_END@result@@@"
     ]
   },

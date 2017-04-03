@@ -13,6 +13,8 @@ class InfraPathsApi(recipe_api.RecipeApi):
     if path_config:
       # TODO(phajdan.jr): remove dupes from the engine and delete infra_ prefix.
       self.m.path.set_config('infra_' + path_config)
+    else:
+      self.m.path.set_config('path_base')
 
   @property
   def default_git_cache_dir(self):
@@ -27,3 +29,25 @@ class InfraPathsApi(recipe_api.RecipeApi):
       return self.m.path['git_cache']
     except KeyError:
       return self.m.path['cache'].join('git')
+
+  def all_builder_cache_dirs(self):
+    """Returns (set of Path): A set of all possible "builder_cache" directories.
+
+    This implements the superset of all configs defined in "path_config.py"
+    to create a list of all possible "builder_cache" directory names for the
+    current platform.
+    """
+    # Collect a list of all possible "cache" path values for this platform.
+    all_cache_dirs = []
+
+    # infra_buildbot
+    all_cache_dirs.append(self.m.path['infra_b_dir'].join(
+        'build', 'slave', 'cache'))
+
+    # infra_kitchen
+    all_cache_dirs.append(self.m.path['infra_kitchen_cache'].join('b'))
+
+    # infra_generic
+    all_cache_dirs.append(self.m.path['cache'].join('builder'))
+
+    return all_cache_dirs

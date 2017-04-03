@@ -49,6 +49,7 @@ import presubmit_canned_checks
 import rietveld
 import scm
 import subprocess2 as subprocess  # Exposed through the API.
+from owners_finder import GetOwnersStatusFile
 
 
 # Ask for feedback only once in program lifetime.
@@ -418,9 +419,11 @@ class InputApi(object):
     # We carry the canned checks so presubmit scripts can easily use them.
     self.canned_checks = presubmit_canned_checks
 
+
     # TODO(dpranke): figure out a list of all approved owners for a repo
     # in order to be able to handle wildcard OWNERS files?
     self.owners_db = owners.Database(change.RepositoryRoot(),
+        GetOwnersStatusFile(root=change.RepositoryRoot(), os_path=self.os_path),
         fopen=file, os_path=self.os_path)
     self.verbose = verbose
     self.Command = CommandData

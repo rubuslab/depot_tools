@@ -281,8 +281,7 @@ class Database(object):
 
     owners_status_path = self.os_path.join(self.root, self.status_file)
     if not self.os_path.exists(owners_status_path):
-      raise IOError('Could not find global status file "%s"' % 
-                    owners_status_path)
+      return
 
     if owners_status_path in self.read_files:
       return

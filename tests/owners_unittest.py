@@ -338,7 +338,10 @@ class OwnersDatabaseTest(_BaseTestCase):
     db = self.db(status_file='does_not_exist')
     self.files['/foo/OWNERS'] = brett
     self.files['/foo/DEPS'] = ''
-    self.assertRaises(IOError, db.reviewers_for, ['foo/DEPS'], None)
+    try:
+      db.reviewers_for(['foo/DEPS'], None)
+    except IOError:
+      self.fail('Non-existant global owners status file throws')
 
 
 class ReviewersForTest(_BaseTestCase):

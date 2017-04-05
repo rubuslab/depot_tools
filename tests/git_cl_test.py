@@ -220,23 +220,29 @@ class TestGitClBasic(unittest.TestCase):
       'Gnarly-Dude: beans',
     ])
 
-  def _test_ParseIssueUrl(self, func, url, issue, patchset, hostname, fail):
-    parsed = urlparse.urlparse(url)
-    result = func(parsed)
-    if fail:
-      self.assertIsNone(result)
-      return None
+class TestParsingIssueNumberArgument(unittest.TestCase):
+  def _validate(self, result, issue=None, patchset=None, hostname=None,
+                fail=False):
     self.assertIsNotNone(result)
-    self.assertEqual(result.issue, issue)
-    self.assertEqual(result.patchset, patchset)
-    self.assertEqual(result.hostname, hostname)
-    return result
+    if fail:
+      self.assertFalse(result.valid)
+    else:
+      self.assertEqual(result.issue, issue)
+      self.assertEqual(result.patchset, patchset)
+      self.assertEqual(result.hostname, hostname)
+
+  def _validate_ParseIssueURL(self, func, url, *args, **kwargs):
+    parsed_url = urlparse.urlparse(url)
+    result = func(parsed_url)
+    if kwargs.pop('fail', False):
+      self.assertIsNone(result)
+    else:
+      self._validate(result, *args, **kwargs)
 
   def test_ParseIssueURL_rietveld(self):
-    def test(url, issue=None, patchset=None, hostname=None, fail=None):
-      self._test_ParseIssueUrl(
-          git_cl._RietveldChangelistImpl.ParseIssueURL,
-          url, issue, patchset, hostname, fail)
+    def test(url, *args, **kwargs):
+      self._validate_ParseIssueURL(
+          git_cl._RietveldChangelistImpl.ParseIssueURL, url, *args, **kwargs)
 
     test('http://codereview.chromium.org/123',
          123, None, 'codereview.chromium.org')
@@ -260,10 +266,9 @@ class TestGitClBasic(unittest.TestCase):
     test('http://codereview.chromium.org/download/issue123_4.diffff', fail=True)
 
   def test_ParseIssueURL_gerrit(self):
-    def test(url, issue=None, patchset=None, hostname=None, fail=None):
-      self._test_ParseIssueUrl(
-          git_cl._GerritChangelistImpl.ParseIssueURL,
-          url, issue, patchset, hostname, fail)
+    def test(url, *args, **kwargs):
+      self._validate_ParseIssueURL(
+          git_cl._GerritChangelistImpl.ParseIssueURL, url, *args, **kwargs)
 
     test('http://chrome-review.source.com/c/123',
          123, None, 'chrome-review.source.com')
@@ -285,30 +290,26 @@ class TestGitClBasic(unittest.TestCase):
     test('ssh://chrome-review.source.com/c/123/1/', fail=True)
 
   def test_ParseIssueNumberArgument(self):
-    def test(arg, issue=None, patchset=None, hostname=None, fail=False):
+    def test(arg, *args, **kwargs):
       result = git_cl.ParseIssueNumberArgument(arg)
-      self.assertIsNotNone(result)
-      if fail:
-        self.assertFalse(result.valid)
-      else:
-        self.assertEqual(result.issue, issue)
-        self.assertEqual(result.patchset, patchset)
-        self.assertEqual(result.hostname, hostname)
+      self._test(result, *args, **kwargs)
 
     test('123', 123)
+
     test('', fail=True)
     test('abc', fail=True)
     test('123/1', fail=True)
     test('123a', fail=True)
     test('ssh://chrome-review.source.com/#/c/123/4/', fail=True)
-    # Rietveld.
-    test('https://codereview.source.com/123',
-         123, None, 'codereview.source.com')
+    # Bad Rietveld-like.
     test('https://codereview.source.com/www123', fail=True)
-    # Gerrrit.
-    test('https://chrome-review.source.com/c/123/4',
-         123, 4, 'chrome-review.source.com')
+    # Bad Gerrit-like.
     test('https://chrome-review.source.com/bad/123/4', fail=True)
+    # Both Gerrit and Rietveld match, not enough info to guess.
+    test('https://codereview.source.com/123', fail=True)
+
+    test('https://chrome-review.source.com/c/123/4',
+         123, 4, 'chrome-review.source.com', 'gerrit')
 
   def test_get_bug_line_values(self):
     f = lambda p, bugs: list(git_cl._get_bug_line_values(p, bugs))

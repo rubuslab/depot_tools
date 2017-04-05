@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cefa5095_45e23af3",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2955,
+      "author": {
+        "id": 1116954
+      },
+      "writtenOn": "2017-04-05T12:29:30Z",
+      "side": 1,
+      "message": "nit: remove spaces to align \"for\"",
+      "range": {
+        "startLine": 2955,
+        "startChar": 23,
+        "endLine": 2955,
+        "endChar": 26
+      },
+      "revId": "4d4b930c4ca4c3bad621b7a5e1999beb37229208",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "730f6646_a3c12c2e",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2965,
+      "author": {
+        "id": 1116954
+      },
+      "writtenOn": "2017-04-05T12:29:30Z",
+      "side": 1,
+      "message": "IMHO this should be push_cmd, since it contains \u0027git\u0027",
+      "range": {
+        "startLine": 2965,
+        "startChar": 4,
+        "endLine": 2965,
+        "endChar": 13
+      },
+      "revId": "4d4b930c4ca4c3bad621b7a5e1999beb37229208",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee7c099a_e8f01c4a",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2966,
+      "author": {
+        "id": 1116954
+      },
+      "writtenOn": "2017-04-05T12:29:30Z",
+      "side": 1,
+      "message": "replace with \"Sort to make tests deterministic.\", IMHO it reads better",
+      "range": {
+        "startLine": 2966,
+        "startChar": 37,
+        "endLine": 2966,
+        "endChar": 76
+      },
+      "revId": "4d4b930c4ca4c3bad621b7a5e1999beb37229208",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

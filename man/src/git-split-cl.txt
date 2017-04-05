@@ -1,0 +1,38 @@
+git-split-cl(1)
+===============
+
+NAME
+----
+git-split-cl -
+include::_git-split-cl_desc.helper.txt[]
+
+SYNOPSIS
+--------
+[verse]
+'git split-cl -d <description file> -c <comment file>'
+
+DESCRIPTION
+-----------
+
+`git split-cl` creates a new branch and uploads a CL for every file affected by
+the current changelist.
+
+OPTIONS
+-------
+
+-d, --description::
+  File that contains a description for uploaded CLs. The following replacements
+  are made:
+
+    $file_path: Path to the file affected by the uploaded CL, relative to the
+    root of the repository.
+
+    $file_name: Name of the file affected by the uploaded CL.
+
+-c, --comment::
+  File that contains a comment posted on uploaded CLs. The same replacements as
+  for the --description flag are made.
+
+include::_footer.txt[]
+
+// vim: ft:asciidoc:

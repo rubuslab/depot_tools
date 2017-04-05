@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9cfff3e2_f0773e22",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2947,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-05T11:45:06Z",
+      "side": 0,
+      "message": "*this* is the purpose of the CL :)",
+      "range": {
+        "startLine": 2944,
+        "startChar": 10,
+        "endLine": 2947,
+        "endChar": 47
+      },
+      "revId": "4c2b5f2cd79c3f197c4faaffb0eeb40bc4c48ce6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6faea315_fb0d1a6d",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-05T11:45:06Z",
+      "side": 0,
+      "message": "removing *this* test is the purpose of the CL :)",
+      "range": {
+        "startLine": 1655,
+        "startChar": 6,
+        "endLine": 1655,
+        "endChar": 33
+      },
+      "revId": "4c2b5f2cd79c3f197c4faaffb0eeb40bc4c48ce6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

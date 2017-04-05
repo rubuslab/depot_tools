@@ -2932,29 +2932,22 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
 
     # Extra options that can be specified at push time. Doc:
     # https://gerrit-review.googlesource.com/Documentation/user-upload.html
-    refspec_opts = []
+    # This can be done either through use of refspec OR by using --push-option
+    # as documented here: https://git-scm.com/docs/git-push#git-push--o .
+    push_opts = []
     if change_desc.get_reviewers(tbr_only=True):
       print('Adding self-LGTM (Code-Review +1) because of TBRs')
-      refspec_opts.append('l=Code-Review+1')
+      push_opts.append('l=Code-Review+1')
 
     if title:
-      if not re.match(r'^[\w ]+$', title):
-        title = re.sub(r'[^\w ]', '', title)
-        if not automatic_title:
-          print('WARNING: Patchset title may only contain alphanumeric chars '
-                'and spaces. You can edit it in the UI. '
-                'See https://crbug.com/663787.\n'
-                'Cleaned up title: %s' % title)
-      # Per doc, spaces must be converted to underscores, and Gerrit will do the
-      # reverse on its side.
-      refspec_opts.append('m=' + title.replace(' ', '_'))
+      push_opts.append('m=' + title)
 
     if options.send_mail:
       if not change_desc.get_reviewers():
         DieWithError('Must specify reviewers to send email.', change_desc)
-      refspec_opts.append('notify=ALL')
+      push_opts.append('notify=ALL')
     else:
-      refspec_opts.append('notify=NONE')
+      push_opts.append('notify=NONE')
 
     reviewers = change_desc.get_reviewers()
     if reviewers:
@@ -2962,28 +2955,24 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       # side for real (b/34702620).
       def clean_invisible_chars(email):
         return email.decode('unicode_escape').encode('ascii', 'ignore')
-      refspec_opts.extend('r=' + clean_invisible_chars(email).strip()
+      push_opts.extend('r=' + clean_invisible_chars(email).strip()
                           for email in reviewers)
 
     if options.private:
-      refspec_opts.append('draft')
+      push_opts.append('draft')
 
     if options.topic:
       # Documentation on Gerrit topics is here:
       # https://gerrit-review.googlesource.com/Documentation/user-upload.html#topic
-      refspec_opts.append('topic=%s' % options.topic)
+      push_opts.append('topic=%s' % options.topic)
 
-    refspec_suffix = ''
-    if refspec_opts:
-      refspec_suffix = '%' + ','.join(refspec_opts)
-      assert ' ' not in refspec_suffix, (
-          'spaces not allowed in refspec: "%s"' % refspec_suffix)
-    refspec = '%s:refs/for/%s%s' % (ref_to_push, branch, refspec_suffix)
-
+    push_args = ['git', 'push']
+    for opt in sorted(push_opts):  # Sorting purpose is deterministic tests.
+      push_args += ['-o', opt]
+    push_args += [self.GetRemoteUrl(), '%s:refs/for/%s' % (ref_to_push, branch)]
     try:
       push_stdout = gclient_utils.CheckCallAndFilter(
-          ['git', 'push', self.GetRemoteUrl(), refspec],
-          print_stdout=True,
+          push_args, print_stdout=True,
           # Flush after every line: useful for seeing progress when running as
           # recipe.
           filter_fn=lambda _: sys.stdout.flush())

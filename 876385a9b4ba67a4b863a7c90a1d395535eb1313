@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bda2ad84_37e42e4e",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2520,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-07T08:58:58Z",
+      "side": 1,
+      "message": "I wasn\u0027t sure from the docs that \"approved\" is set for all labels, but I believe you :)",
+      "range": {
+        "startLine": 2520,
+        "startChar": 33,
+        "endLine": 2520,
+        "endChar": 43
+      },
+      "revId": "876385a9b4ba67a4b863a7c90a1d395535eb1313",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "37678ae2_0f259dc1",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3882,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-07T08:58:58Z",
+      "side": 1,
+      "message": "yeah!",
+      "range": {
+        "startLine": 3882,
+        "startChar": 3,
+        "endLine": 3882,
+        "endChar": 25
+      },
+      "revId": "876385a9b4ba67a4b863a7c90a1d395535eb1313",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

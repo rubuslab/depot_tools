@@ -22,6 +22,30 @@
       "revId": "65bf925ea17acd83805120709f43b41aa1a58285",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c2e645d_fe8b7280",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2950,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-10T12:58:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfa13069_05cb1e47",
+      "range": {
+        "startLine": 2950,
+        "startChar": 47,
+        "endLine": 2950,
+        "endChar": 51
+      },
+      "revId": "65bf925ea17acd83805120709f43b41aa1a58285",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

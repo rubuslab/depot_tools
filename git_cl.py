@@ -2987,9 +2987,13 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           # Flush after every line: useful for seeing progress when running as
           # recipe.
           filter_fn=lambda _: sys.stdout.flush())
-    except subprocess2.CalledProcessError:
+    except subprocess2.CalledProcessError as error:
       DieWithError('Failed to create a change. Please examine output above '
-                   'for the reason of the failure. ', change_desc)
+                   'for the reason of the failure.\n'
+                   'Hint: run command below to diangose common Git/Gerrit '
+                   'credential problems:\n'
+                   '  git cl creds-check\n',
+                   change_desc)
 
     if options.squash:
       regex = re.compile(r'remote:\s+https?://[\w\-\.\/]*/(\d+)\s.*')
@@ -5045,7 +5049,10 @@ def PushToGitWithAutoRebase(remote, branch, original_description,
       break
     if IsFatalPushFailure(out):
       print('Fatal push error. Make sure your .netrc credentials and git '
-            'user.email are correct and you have push access to the repo.')
+            'user.email are correct and you have push access to the repo.\n'
+            'Hint: run command below to diangose common Git/Gerrit credential '
+            'problems:\n'
+            '  git cl creds-check\n')
       break
   return code
 

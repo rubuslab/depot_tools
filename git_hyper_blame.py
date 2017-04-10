@@ -344,7 +344,8 @@ def main(args, stdout=sys.stdout, stderr=sys.stderr):
   parser.add_argument('--ignore-file', metavar='FILE',
                       type=argparse.FileType('r'), dest='ignore_file',
                       help='a file containing a list of revisions to ignore')
-  parser.add_argument('--no-default-ignores', dest='no_default_ignores',
+  parser.add_argument('--no-default-ignores', action='store_true',
+                      dest='no_default_ignores',
                       help='Do not ignore commits from .git-blame-ignore-revs.')
   parser.add_argument('revision', nargs='?', default='HEAD', metavar='REVISION',
                       help='revision to look at')

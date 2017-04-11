@@ -268,15 +268,6 @@ def main():
     else:
       parser.error('Couldn\'t determine the scm')
 
-    # TODO(maruel): HACK, remove me.
-    # When run a build slave, make sure buildbot knows that the checkout was
-    # modified.
-    if options.root_dir == 'src' and getpass.getuser() == 'chrome-bot':
-      # See sourcedirIsPatched() in:
-      # http://src.chromium.org/viewvc/chrome/trunk/tools/build/scripts/slave/
-      #    chromium_commands.py?view=markup
-      open('.buildbot-patched', 'w').close()
-
     print('\nApplying the patch from %s' % issue_url)
     try:
       scm_obj.apply_patch(patchset, verbose=True)

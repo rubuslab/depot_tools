@@ -22,6 +22,30 @@
       "revId": "9611c4cee58b192af10706bb719717b43e954a61",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d55283dd_fb32163c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2031,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-04-11T23:37:42Z",
+      "side": 0,
+      "message": "Looks like I never uploaded my second patchset which does basically that and also fixes some tests. Uploaded now.",
+      "parentUuid": "5e18c277_05eda5ba",
+      "range": {
+        "startLine": 2031,
+        "startChar": 23,
+        "endLine": 2031,
+        "endChar": 46
+      },
+      "revId": "9611c4cee58b192af10706bb719717b43e954a61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

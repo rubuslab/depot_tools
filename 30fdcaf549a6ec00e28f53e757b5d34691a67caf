@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2c75236f_af64ec64",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2017-04-12T18:54:02Z",
+      "side": 1,
+      "message": "Don\u0027t need this anymore",
+      "revId": "30fdcaf549a6ec00e28f53e757b5d34691a67caf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

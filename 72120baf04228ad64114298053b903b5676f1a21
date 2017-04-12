@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1bbba313_19a857d4",
+        "filename": "apply_change.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-12T10:33:27Z",
+      "side": 1,
+      "message": "based on https://cs.chromium.org/chromium/tools/depot_tools/recipes/recipe_modules/bot_update/resources/bot_update.py?type\u003dcs\u0026q\u003dapply_gerrit_ref\u0026l\u003d655 \nbut doesn\u0027t do hard resets and cleaning, as this is only necessary on bots and hence will still be done by bot_update.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 68
+      },
+      "revId": "72120baf04228ad64114298053b903b5676f1a21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

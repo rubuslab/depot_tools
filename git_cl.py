@@ -5537,11 +5537,18 @@ def CMDowners(parser, args):
     base_branch = cl.GetCommonAncestorWithUpstream()
 
   change = cl.GetChange(base_branch, None)
+
+  def added_owners_files(f):
+    return f.Action()[0] == 'A' and os.path.split(f.LocalPath())[1] == 'OWNERS'
+
+  new_owners_files = set([f.LocalPath() for f in
+      change.AffectedFiles(file_filter=added_owners_files)])
+
   return owners_finder.OwnersFinder(
       [f.LocalPath() for f in
           cl.GetChange(base_branch, None).AffectedFiles()],
       change.RepositoryRoot(),
-      author, fopen=file, os_path=os.path,
+      author, new_owners_files=new_owners_files, fopen=file, os_path=os.path,
       disable_color=options.no_color).run()
 
 

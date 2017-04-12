@@ -345,8 +345,9 @@ class OwnersDatabaseTest(_BaseTestCase):
 
 class ReviewersForTest(_BaseTestCase):
   def assert_reviewers_for(self, files, potential_suggested_reviewers,
-                           author=None):
+                           author=None, ignore_owners_files=None):
     db = self.db()
+    db.ignore_owners_files = ignore_owners_files or []
     suggested_reviewers = db.reviewers_for(set(files), author)
     self.assertTrue(suggested_reviewers in
         [set(suggestion) for suggestion in potential_suggested_reviewers])
@@ -462,6 +463,10 @@ class ReviewersForTest(_BaseTestCase):
                               [[peter]])
     self.assert_reviewers_for(['content/garply/bar.cc'],
                               [[brett]])
+
+  def test_ignore_owners_files(self):
+    self.assert_reviewers_for(['content/baz/froboz.h'], [[john], [darin]],
+                              ignore_owners_files=['content/baz/OWNERS'])
 
 
 class LowestCostOwnersTest(_BaseTestCase):

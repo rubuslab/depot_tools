@@ -141,6 +141,9 @@ class Database(object):
     # File with global status lines for owners.
     self._status_file = None
 
+    # Set of newly added OWNERS files that should be ignored.
+    self.ignore_owners_files = []
+
   def reviewers_for(self, files, author):
     """Returns a suggested set of reviewers that will cover the files.
 
@@ -227,6 +230,9 @@ class Database(object):
   def _read_owners(self, path):
     owners_path = self.os_path.join(self.root, path)
     if not self.os_path.exists(owners_path):
+      return
+
+    if path in self.ignore_owners_files:
       return
 
     if owners_path in self.read_files:

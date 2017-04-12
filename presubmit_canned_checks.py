@@ -879,6 +879,12 @@ def CheckOwners(input_api, output_api, source_file_filter=None):
     needed = 'OWNER reviewers'
     output_fn = output_api.PresubmitNotifyResult
 
+  def added_owners_files(f):
+    return (f.Action()[0] == 'A' and
+            input_api.os_path.split(f.LocalPath())[1] == 'OWNERS')
+
+  new_owners_files = set([f.LocalPath() for f in
+      input_api.change.AffectedFiles(file_filter=added_owners_files)])
   affected_files = set([f.LocalPath() for f in
       input_api.change.AffectedFiles(file_filter=source_file_filter)])
 
@@ -889,6 +895,8 @@ def CheckOwners(input_api, output_api, source_file_filter=None):
       approval_needed=input_api.is_committing)
 
   owner_email = owner_email or input_api.change.author_email
+
+  owners_db.ignore_owners_files = new_owners_files
 
   if owner_email:
     reviewers_plus_owner = set([owner_email]).union(reviewers)

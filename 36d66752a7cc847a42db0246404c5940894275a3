@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e0c4f4bc_1fdb9dc0",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-12T11:24:56Z",
+      "side": 1,
+      "message": "qq: will this take care of any leftovers from the patch which are not in the tree at the revision you want to checkout?",
+      "range": {
+        "startLine": 375,
+        "startChar": 4,
+        "endLine": 375,
+        "endChar": 64
+      },
+      "revId": "36d66752a7cc847a42db0246404c5940894275a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

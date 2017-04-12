@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "486ea161_5e0dd6c3",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2017-04-12T18:31:26Z",
+      "side": 1,
+      "message": "This should be an infra failure, as per comments.",
+      "revId": "78f13bbfa4240e7986821aaeb492e76ab554ad9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f9d528c_3a922d90",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2017-04-12T18:31:26Z",
+      "side": 1,
+      "message": "Something tells me this was actually meant for the non-infra failure case...",
+      "range": {
+        "startLine": 297,
+        "startChar": 36,
+        "endLine": 297,
+        "endChar": 48
+      },
+      "revId": "78f13bbfa4240e7986821aaeb492e76ab554ad9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "077cbdde_489cad8e",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2017-04-12T18:31:26Z",
+      "side": 1,
+      "message": "No need for this anymore!",
+      "range": {
+        "startLine": 302,
+        "startChar": 36,
+        "endLine": 302,
+        "endChar": 73
+      },
+      "revId": "78f13bbfa4240e7986821aaeb492e76ab554ad9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

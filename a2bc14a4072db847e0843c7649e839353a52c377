@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3e40445_ecec7735",
+        "filename": "recipes/recipe_modules/gclient/tests/patch_project.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-04-12T18:48:47Z",
+      "side": 1,
+      "message": "nit: I think this is extra whitespace?",
+      "revId": "a2bc14a4072db847e0843c7649e839353a52c377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

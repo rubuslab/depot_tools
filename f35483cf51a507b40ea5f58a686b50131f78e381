@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83154314_d47a1704",
+        "filename": "setup_color.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-12T11:28:50Z",
+      "side": 1,
+      "message": "there is no diff, i just removed executable flag on linux.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "f35483cf51a507b40ea5f58a686b50131f78e381",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

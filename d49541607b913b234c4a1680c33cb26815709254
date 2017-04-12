@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe7e0854_c7cea849",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-12T10:26:21Z",
+      "side": 1,
+      "message": "NOTE: WIP.\n\nTests are still missing, though I did test it end to end with various options by hand.\nI\u0027ll add tests if the proposed name of the command and arguments are OK with reviewers.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 59
+      },
+      "revId": "d49541607b913b234c4a1680c33cb26815709254",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15efec65_715ab7b4",
+        "filename": "apply_change.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-12T10:26:21Z",
+      "side": 1,
+      "message": "this is based on https://cs.chromium.org/chromium/build/scripts/slave/bot_update.py?q\u003dapply_gerrit_ref\u0026dr\u003dCSs\u0026l\u003d1068",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 20
+      },
+      "revId": "d49541607b913b234c4a1680c33cb26815709254",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

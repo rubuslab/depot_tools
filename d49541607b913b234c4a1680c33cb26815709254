@@ -45,6 +45,30 @@
       "revId": "d49541607b913b234c4a1680c33cb26815709254",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d6440ad3_bb913e82",
+        "filename": "apply_change.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-12T10:31:54Z",
+      "side": 1,
+      "message": "err, bad link: https://cs.chromium.org/chromium/tools/depot_tools/recipes/recipe_modules/bot_update/resources/bot_update.py?type\u003dcs\u0026q\u003dapply_gerrit_ref\u0026l\u003d655",
+      "parentUuid": "15efec65_715ab7b4",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 20
+      },
+      "revId": "d49541607b913b234c4a1680c33cb26815709254",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

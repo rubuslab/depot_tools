@@ -16,6 +16,24 @@
       "revId": "cc2c1edc1f58a2a85e3f2d1e98dfac8b8abf53af",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd8d66d8_3c5e14d0",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1149194
+      },
+      "writtenOn": "2017-04-13T17:07:56Z",
+      "side": 1,
+      "message": "I like that. But there will be KeyError with {NO UPSTREAM} , and escaping it will make the plain text explanation less clear.",
+      "parentUuid": "5e9ec3e2_2fcaad6f",
+      "revId": "cc2c1edc1f58a2a85e3f2d1e98dfac8b8abf53af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -16,6 +16,24 @@
       "revId": "7ac2c9a29242f68a56d8765d377128e1ebeb0b1f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5978ca6b_7abc7e08",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1149194
+      },
+      "writtenOn": "2017-04-13T17:07:56Z",
+      "side": 0,
+      "message": "I tried it, but argparse reformats the description according to screen size, so formatting is lost. Implementing a custom help formatter just didn\u0027t worth it. I am not aware how docs get argument help. If they execute main() with -h option, they will get the same output.",
+      "parentUuid": "da40a666_cc251efa",
+      "revId": "7ac2c9a29242f68a56d8765d377128e1ebeb0b1f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

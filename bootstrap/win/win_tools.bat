@@ -58,6 +58,12 @@ set ERRORLEVEL=1
 goto :END
 
 :GIT_CHECK
+:: git bootstrap requires working CIPD client
+if exist "%WIN_TOOLS_ROOT_DIR%\.cipd_client.exe" goto GIT_BOOTSTRAP
+call "%WIN_TOOLS_ROOT_DIR%\python.bat" "%~dp0cipd_bootstrap.py"
+
+:GIT_BOOTSTRAP
+
 "%WIN_TOOLS_ROOT_DIR%\python.bat" "%~dp0git_bootstrap.py"
 goto :END
 

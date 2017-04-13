@@ -3,10 +3,18 @@
 :: Use of this source code is governed by a BSD-style license that can be
 :: found in the LICENSE file.
 
-:: To allow this powershell script to run if it was a byproduct of downloading
-:: and unzipping the depot_tools.zip distribution, we clear the Zone.Identifier
-:: alternate data stream. This is equivalent to clicking the "Unblock" button
-:: in the file's properties dialog.
-echo.>"%~dp0\cipd.ps1:Zone.Identifier"
+:: Set variable from file contents
+set /p BUILD=<"%~dp0\cipd_client_version"
 
-powershell -NoProfile -ExecutionPolicy RemoteSigned -File "%~dp0\cipd.ps1" %*
+:: Set variable from command output (2^> NUL silences errors)
+for /f %%a in ('git -C %~dp0 rev-parse HEAD 2^> NUL') do set GITREV=%%a
+
+if "%GITREV%" == "" (
+  set CIPD_HTTP_USER_AGENT_PREFIX=depot_tools/???
+) else (
+  set CIPD_HTTP_USER_AGENT_PREFIX=depot_tools/%GITREV%
+)
+
+
+"%~dp0\.cipd_client.exe" selfupdate -version %BUILD%
+"%~dp0\.cipd_client.exe" %*

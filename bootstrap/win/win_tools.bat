@@ -58,6 +58,8 @@ set ERRORLEVEL=1
 goto :END
 
 :GIT_CHECK
+:: git bootstrap requires working CIPD client, which is downloaded
+:: automatically when cpid.bat is called
 "%WIN_TOOLS_ROOT_DIR%\python.bat" "%~dp0git_bootstrap.py"
 goto :END
 

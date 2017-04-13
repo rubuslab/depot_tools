@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da40a666_cc251efa",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1160910
+      },
+      "writtenOn": "2017-04-13T14:30:13Z",
+      "side": 0,
+      "message": "As long as we are writing escape sequences directly, why not construct the string before this and set it as the |description| ? That way we can use the generated argument help. That way the docs will also include generated argument help.\n\nThe cost of always generating the description string isn\u0027t an issue.",
+      "revId": "7ac2c9a29242f68a56d8765d377128e1ebeb0b1f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

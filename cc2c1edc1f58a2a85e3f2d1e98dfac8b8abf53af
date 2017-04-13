@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e9ec3e2_2fcaad6f",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1160910
+      },
+      "writtenOn": "2017-04-13T14:30:13Z",
+      "side": 1,
+      "message": "Probably easier to markup __doc__ using {fieldname}, and then calling str.format() on it with a dictionary mapping known colors to colorized names.\n\nE.g.:\n\n    o \u003d {}\n    for k in Fore.__dict__.iterkeys():\n      o[k.lower()] \u003d getattr(Fore, k) + k.lower + Fore.RESET\n    return __doc__.format(o)",
+      "revId": "cc2c1edc1f58a2a85e3f2d1e98dfac8b8abf53af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

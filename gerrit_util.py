@@ -375,6 +375,8 @@ def ReadHttpResponse(conn, accept_statuses=None):
 def ReadHttpJsonResponse(conn, accept_statuses=None):
   """Parses an https response as json."""
   fh = ReadHttpResponse(conn, accept_statuses)
+  print fh.read()
+  fh.seek(0)
   # The first line of the response should always be: )]}'
   s = fh.readline()
   if s and s.rstrip() != ")]}'":
@@ -676,12 +678,13 @@ def AddReviewers(host, change, reviewers=None, ccs=None, notify=True):
      'notify': 'NONE',  # We handled `notify` argument above.
    })
 
-  print json.dumps(body)
+  print json.dumps(body, separators=(',', ': '))
   conn = CreateHttpConn(host, path, reqtype='POST', body=body)
   # Gerrit will return 400 if one or more of the requested reviewers are
   # unprocessable. We read the response object to see which were rejected,
   # warn about them, and retry with the remainder.
   resp = ReadHttpJsonResponse(conn, accept_statuses=[200, 400, 422])
+  print json.dumps(resp, separators=(',', ': '))
 
   retry = False
   retry_body = {

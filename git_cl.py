@@ -2931,6 +2931,10 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       change_desc.update_reviewers(options.reviewers, options.tbr_owners,
                                    change)
 
+    if options.send_mail:
+      if not change_desc.get_reviewers():
+        DieWithError('Must specify reviewers to send email.', change_desc)
+
     # Extra options that can be specified at push time. Doc:
     # https://gerrit-review.googlesource.com/Documentation/user-upload.html
     refspec_opts = []
@@ -2954,16 +2958,9 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       # reverse on its side.
       refspec_opts.append('m=' + title.replace(' ', '_'))
 
-    if options.send_mail:
-      if not change_desc.get_reviewers():
-        DieWithError('Must specify reviewers to send email.', change_desc)
-      refspec_opts.append('notify=ALL')
-    else:
-      refspec_opts.append('notify=NONE')
-
-    reviewers = change_desc.get_reviewers()
-    if reviewers:
-      refspec_opts.extend('r=' + email.strip() for email in reviewers)
+    # Never notify now because no one is on the review. Notify when we add
+    # reviewers and CCs below.
+    refspec_opts.append('notify=NONE')
 
     if options.private:
       refspec_opts.append('draft')
@@ -3007,6 +3004,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       self.SetIssue(change_numbers[0])
       self._GitSetBranchConfigValue('gerritsquashhash', ref_to_push)
 
+    reviewers = sorted(change_desc.get_reviewers())
+
     # Add cc's from the CC_LIST and --cc flag (if any).
     cc = self.GetCCList().split(',')
     if options.cc:
@@ -3014,10 +3013,11 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     cc = filter(None, [email.strip() for email in cc])
     if change_desc.get_cced():
       cc.extend(change_desc.get_cced())
-    if cc:
-      gerrit_util.AddReviewers(
-          self._GetGerritHost(), self.GetIssue(), cc,
-          is_reviewer=False, notify=bool(options.send_mail))
+
+    gerrit_util.AddReviewers(
+        self._GetGerritHost(), self.GetIssue(), reviewers, cc,
+        notify=bool(options.send_mail))
+
     return 0
 
   def _ComputeParent(self, remote, upstream_branch, change_desc):

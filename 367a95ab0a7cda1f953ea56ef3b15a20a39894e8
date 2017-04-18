@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f6283fe_0d8da28b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-04-18T18:57:55Z",
+      "side": 1,
+      "message": "so on a 404 it won\u0027t raise an exception? That seems weird (or maybe I don\u0027t understand what\u0027s happening).\n\nAlso a tuple would work here too :)",
+      "revId": "367a95ab0a7cda1f953ea56ef3b15a20a39894e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "revId": "367a95ab0a7cda1f953ea56ef3b15a20a39894e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd7ec238_1fc75cce",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-04-18T20:46:31Z",
+      "side": 1,
+      "message": "You understand correctly. I\u0027d like to remove 404 from the default arguments, but that\u0027s changing functionality instead of just interface, so I didn\u0027t want to do that in this CL. (previously, ignore_404 defaulted to True).\n\nThe reason for ignoring 404s is that all of the \"DeleteFoo\" operations return 404 if the object has already been deleted. In a future CL, we\u0027ll remove 404 from the default and only pass it in from the DeleteFoo function calls.",
+      "parentUuid": "7f6283fe_0d8da28b",
+      "revId": "367a95ab0a7cda1f953ea56ef3b15a20a39894e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "873d0bea_98956e64",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-04-18T18:32:57Z",
+      "side": 1,
+      "message": "Yeah there is, of course, but none of it calls these underlying helper methods as far as I can tell. Just stuff like .GetChangeDetail() and .CreateGerritBranch().",
+      "parentUuid": "b8ca460c_d41f363c",
+      "range": {
+        "startLine": 326,
+        "startChar": 4,
+        "endLine": 326,
+        "endChar": 20
+      },
+      "revId": "17739ff7647b1396ef84796b776cb08a9905c3aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1faa500a_3f9c532c",
         "filename": "gerrit_util.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "17739ff7647b1396ef84796b776cb08a9905c3aa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2defe2fe_ff878bea",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-04-18T18:32:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1faa500a_3f9c532c",
+      "range": {
+        "startLine": 335,
+        "startChar": 39,
+        "endLine": 335,
+        "endChar": 52
+      },
+      "revId": "17739ff7647b1396ef84796b776cb08a9905c3aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

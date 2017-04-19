@@ -2883,16 +2883,16 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         automatic_title = True
         if not change_desc.description:
           DieWithError("Description is empty. Aborting...")
-        message = change_desc.description
-        change_ids = git_footers.get_footer_change_id(message)
+        change_ids = git_footers.get_footer_change_id(change_desc.description)
         if len(change_ids) > 1:
           DieWithError('too many Change-Id footers, at most 1 allowed.')
         if not change_ids:
           # Generate the Change-Id automatically.
-          message = git_footers.add_footer_change_id(
-              message, GenerateGerritChangeId(message))
-          change_desc.set_description(message)
-          change_ids = git_footers.get_footer_change_id(message)
+          cid = GenerateGerritChangeId(change_desc.description)
+          change_desc.set_description(git_footers.add_footer_change_id(
+              change_desc.description, cid))
+          change_ids = git_footers.get_footer_change_id(
+            change_desc.description)
           assert len(change_ids) == 1
         change_id = change_ids[0]
 

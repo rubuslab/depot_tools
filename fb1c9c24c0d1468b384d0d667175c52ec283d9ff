@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fcf76fc7_f1d07bdf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-04-19T23:27:37Z",
+      "side": 1,
+      "message": "Let\u0027s try for something clearer than this :)",
+      "revId": "fb1c9c24c0d1468b384d0d667175c52ec283d9ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae1c227a_f672072b",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2895,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-19T19:21:15Z",
+      "side": 1,
+      "message": "i\u0027ll eliminate `message` from here entirely as a follow up.",
+      "range": {
+        "startLine": 2886,
+        "startChar": 8,
+        "endLine": 2895,
+        "endChar": 64
+      },
+      "revId": "b6d288b8bb1d4cb820471887304d4706b2faad8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

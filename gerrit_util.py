@@ -792,7 +792,7 @@ def GetGerritBranch(host, project, branch):
   """
   path = 'projects/%s/branches/%s' % (project, branch)
   conn = CreateHttpConn(host, path, reqtype='GET')
-  response = ReadHttpJsonResponse(conn)
+  response = ReadHttpJsonResponse(conn, accept_statuses=[201])
   if response:
     return response
   raise GerritError(200, 'Unable to get gerrit branch')

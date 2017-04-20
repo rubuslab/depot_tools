@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "54dadf22_1daf319c",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-20T14:18:23Z",
+      "side": 1,
+      "message": "ah, that\u0027s true.",
+      "parentUuid": "d1aa0fdc_888bc990",
+      "range": {
+        "startLine": 184,
+        "startChar": 6,
+        "endLine": 184,
+        "endChar": 49
+      },
+      "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cd9f28d7_a8090ef2",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 2
@@ -107,6 +131,30 @@
       "side": 1,
       "message": "My thought was: This is a recipe_module resource and as such private to the module. So this is an API private to the module that should be changeable like any variable name...",
       "parentUuid": "cd9f28d7_a8090ef2",
+      "range": {
+        "startLine": 190,
+        "startChar": 12,
+        "endLine": 190,
+        "endChar": 33
+      },
+      "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "771b1b21_cb17a935",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-20T14:18:23Z",
+      "side": 1,
+      "message": "also true. encapsulation is good :)",
+      "parentUuid": "ce06ec65_c9e67e87",
       "range": {
         "startLine": 190,
         "startChar": 12,

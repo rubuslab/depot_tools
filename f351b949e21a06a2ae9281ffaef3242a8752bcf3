@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "d1aa0fdc_888bc990",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-04-20T14:14:18Z",
+      "side": 1,
+      "message": "Nope, can\u0027t be sure. But at least that part would already be caught when running recipe simulation for e.g. build when rolling.\n\nIf such cases exist, they\u0027d all be bugs anyways.",
+      "parentUuid": "914f031c_740681ed",
+      "range": {
+        "startLine": 184,
+        "startChar": 6,
+        "endLine": 184,
+        "endChar": 49
+      },
+      "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cd9f28d7_a8090ef2",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 2
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "ce06ec65_c9e67e87",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-04-20T14:14:18Z",
+      "side": 1,
+      "message": "My thought was: This is a recipe_module resource and as such private to the module. So this is an API private to the module that should be changeable like any variable name...",
+      "parentUuid": "cd9f28d7_a8090ef2",
+      "range": {
+        "startLine": 190,
+        "startChar": 12,
+        "endLine": 190,
+        "endChar": 33
+      },
+      "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f2fb1a27_33c59b27",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 2
@@ -82,6 +130,30 @@
       "writtenOn": "2017-04-20T14:07:21Z",
       "side": 1,
       "message": "_properties and return full list of properties\n\nas i think callers have to make conscious decision to drop properties if they are more than one, instead of doing it implicitly\nbecause if implicit reader of caller\u0027s code may think that there is just 1 property, until of course reading this doc.",
+      "range": {
+        "startLine": 367,
+        "startChar": 6,
+        "endLine": 367,
+        "endChar": 27
+      },
+      "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76860a2c_ca1560dc",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-04-20T14:14:18Z",
+      "side": 1,
+      "message": "Good idea, will wait for other reviewers opinion on that and if there\u0027s no opposition change it to:\nget_revision_properties and let the call sites pick and/or check. E.g. in line 362:\nif rev_properties and bot_update_json[\u0027properties\u0027].get(rev_properties[0]):",
+      "parentUuid": "f2fb1a27_33c59b27",
       "range": {
         "startLine": 367,
         "startChar": 6,

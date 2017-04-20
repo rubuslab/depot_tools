@@ -167,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "17077326_902187b2",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-04-20T20:55:31Z",
+      "side": 1,
+      "message": "Yes, the bot_update used by this module should be considered an implementation detail of this module.",
+      "parentUuid": "771b1b21_cb17a935",
+      "range": {
+        "startLine": 190,
+        "startChar": 12,
+        "endLine": 190,
+        "endChar": 33
+      },
+      "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f2fb1a27_33c59b27",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 2
@@ -208,6 +232,23 @@
         "endLine": 367,
         "endChar": 27
       },
+      "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5693b5d_88660b78",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-04-20T20:55:31Z",
+      "side": 1,
+      "message": "document arg + return value types:\n\nArgs:\n  project_name (str) - The project to get the property for.\n\nReturns (str|None) - The property name (if project was found) or None",
       "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

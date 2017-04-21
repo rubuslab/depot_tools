@@ -357,7 +357,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
   # TODO(machenbach): Replace usages of this method eventually by direct calls
   # to the manifest output.
-  def get_project_revision_properties(self, project_name):
+  def get_project_revision_properties(self, project_name, gclient_config=None):
     """Returns all property names used for storing the checked-out revision of
     a given project.
 
@@ -368,10 +368,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
     Returns (list of str): All properties that'll hold the checked-out revision
         of the given project. An empty list if no such properties exist.
     """
+    cfg = gclient_config or self.m.gclient.c
     # Sort for determinism. We might have several properties for the same
     # project, e.g. got_revision and got_webrtc_revision.
-    rev_reverse_map = self.m.gclient.got_revision_reverse_mapping(
-        self.m.gclient.c)
+    rev_reverse_map = self.m.gclient.got_revision_reverse_mapping(cfg)
     return sorted(
         prop
         for prop, project in rev_reverse_map.iteritems()

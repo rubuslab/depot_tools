@@ -252,6 +252,24 @@
       "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79472dbc_a145ee31",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-04-21T06:44:50Z",
+      "side": 1,
+      "message": "ok - I\u0027ll implement Andrii\u0027s suggestion above then (return list of props) and properly document it...",
+      "parentUuid": "b5693b5d_88660b78",
+      "revId": "f351b949e21a06a2ae9281ffaef3242a8752bcf3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

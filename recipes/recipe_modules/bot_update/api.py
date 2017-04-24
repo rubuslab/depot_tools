@@ -275,7 +275,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
         if update_presentation:
           # Set properties such as got_revision.
-          for prop_name, prop_value in (
+          for prop_name, prop_value in sorted(
               self.last_returned_properties.iteritems()):
             step_result.presentation.properties[prop_name] = prop_value
         # Add helpful step description in the step UI.

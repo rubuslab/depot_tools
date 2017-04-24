@@ -42,7 +42,7 @@ class BotUpdateTestApi(recipe_test_api.RecipeTestApi):
             'repository': 'https://fake.org/%s.git' % project_name,
             'revision': self.gen_revision(project_name),
           }
-          for project_name in set(revision_mapping.values())
+          for project_name in sorted(set(revision_mapping.values()))
         }
       })
 

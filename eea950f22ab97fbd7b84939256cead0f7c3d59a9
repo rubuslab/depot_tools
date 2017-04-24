@@ -46,6 +46,30 @@
       "revId": "eea950f22ab97fbd7b84939256cead0f7c3d59a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca83f095_b1008b61",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-04-24T12:59:01Z",
+      "side": 1,
+      "message": "I did some tracing and I believe .presentation refers to StepPresentation in recipes-py/recipe_engine/types.py . Its _properties is a regular dict and not an OrderedDict, so this change won\u0027t have any effect.\n\nIt\u0027d be better to change recipe engine to sort properties before emitting them. This way we wouldn\u0027t need to update all call sites to sort properties to keep expectations deterministic. I recommend keeping other recipe owners in the loop for that change.",
+      "parentUuid": "933f1448_a33efbf7",
+      "range": {
+        "startLine": 278,
+        "startChar": 39,
+        "endLine": 278,
+        "endChar": 45
+      },
+      "revId": "eea950f22ab97fbd7b84939256cead0f7c3d59a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

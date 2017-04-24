@@ -70,6 +70,30 @@
       "revId": "eea950f22ab97fbd7b84939256cead0f7c3d59a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bad60477_49d5b930",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-04-24T13:01:08Z",
+      "side": 1,
+      "message": "Yea, looks like it. I\u0027ll propose a change to keep the properties in an ordered dict in the first place.",
+      "parentUuid": "ca83f095_b1008b61",
+      "range": {
+        "startLine": 278,
+        "startChar": 39,
+        "endLine": 278,
+        "endChar": 45
+      },
+      "revId": "eea950f22ab97fbd7b84939256cead0f7c3d59a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

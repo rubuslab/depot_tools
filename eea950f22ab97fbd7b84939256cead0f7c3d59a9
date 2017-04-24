@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "933f1448_a33efbf7",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-04-24T12:52:58Z",
+      "side": 1,
+      "message": "Just checking: does the order or iteration matter here? Is underlying dict an OrderedDict? If so, could you point right to it for easier verification?",
+      "range": {
+        "startLine": 278,
+        "startChar": 39,
+        "endLine": 278,
+        "endChar": 45
+      },
+      "revId": "eea950f22ab97fbd7b84939256cead0f7c3d59a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

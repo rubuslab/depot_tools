@@ -22,6 +22,30 @@
       "revId": "eea950f22ab97fbd7b84939256cead0f7c3d59a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c57a5413_2c2d1dfa",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-04-24T12:58:44Z",
+      "side": 1,
+      "message": "https://cs.chromium.org/chromium/infra/recipes-py/recipe_engine/types.py?dr\u0026q\u003dpresentation+file:%5Einfra/recipes-py/+package:%5Echromium$\u0026l\u003d157 doesn\u0027t look very ordered to me. But I assume that\u0027s the production part. Do you know where the simulation part is?",
+      "parentUuid": "933f1448_a33efbf7",
+      "range": {
+        "startLine": 278,
+        "startChar": 39,
+        "endLine": 278,
+        "endChar": 45
+      },
+      "revId": "eea950f22ab97fbd7b84939256cead0f7c3d59a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

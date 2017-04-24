@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63670400_69938b4d",
+        "filename": "recipes/recipe_modules/bot_update/example.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-04-24T11:30:36Z",
+      "side": 0,
+      "message": "Those local tests are the only ones that still switched it to False, hence the expectation changes here. Downstream, however, this should be a noop as it\u0027s True everywhere.",
+      "range": {
+        "startLine": 34,
+        "startChar": 58,
+        "endLine": 34,
+        "endChar": 63
+      },
+      "revId": "c180dc40305d69db346d9e6369dd8dcd87076be8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

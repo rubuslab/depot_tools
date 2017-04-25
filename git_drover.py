@@ -9,6 +9,7 @@ import cPickle
 import functools
 import logging
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -256,6 +257,14 @@ class _Drover(object):
     with open(os.path.join(self._workdir, '.git', 'drover'), 'wb') as f:
       cPickle.dump(self, f)
 
+  def _collect_reviewers(self):
+    reviewers = []
+    message = self._run_git_command(['log', '-1', '--format=%B'])
+    for match in re.finditer(
+        r'^[ \t]*(TBR|R)[ \t]*=[ \t]*(.*?)[ \t]*$', message, re.M):
+      reviewers += filter(None, [s.strip() for s in match.group(2).split(',')])
+    return sorted(set(reviewers))
+
   def _prepare_manual_resolve(self):
     """Prepare the workdir for the user to manually resolve the cherry-pick."""
     # Files that have been deleted between branch and cherry-pick will not have
@@ -274,7 +283,9 @@ class _Drover(object):
       return True
 
     self._run_git_command(['reset', '--hard'])
-    self._run_git_command(['cl', 'upload'],
+
+    reviewers = self._collect_reviewers()
+    self._run_git_command(['cl', 'upload', '--tbr', ','.join(reviewers)],
                           error_message='Upload failed',
                           interactive=True)
 
@@ -293,6 +304,9 @@ class _Drover(object):
       interactive: A bool containing whether the command requires user
           interaction. If false, the command will be provided with no input and
           the output is captured.
+
+    Returns:
+      stdout as a string, or stdout interleaved with stderr if self._verbose
 
     Raises:
       Error: The command failed to complete successfully.
@@ -320,6 +334,9 @@ class _Drover(object):
     Args:
       args: A list of strings containing the args to pass to git.
       stdin: A string to provide on stdin.
+
+    Returns:
+      stdout as a string, or stdout interleaved with stderr if self._verbose
 
     Raises:
       Error: The command failed to complete successfully.

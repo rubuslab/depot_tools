@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "acae73cd_d1fc8f38",
+        "filename": "git_drover.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-04-25T21:29:39Z",
+      "side": 1,
+      "message": "git log doesn\u0027t output to stderr unless things are so wrong that this log command is going to fail completely anyway.",
+      "parentUuid": "e40abc33_2d382fe2",
+      "range": {
+        "startLine": 262,
+        "startChar": 4,
+        "endLine": 262,
+        "endChar": 65
+      },
+      "revId": "bc7559554ccdc19ae4969eeaaec2c21360373901",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4982ec56_24af862e",
         "filename": "git_drover.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-25T18:43:21Z",
       "side": 1,
       "message": "not bad for a copy-paste in light of yesterday\u0027s discussion.",
+      "range": {
+        "startLine": 264,
+        "startChar": 7,
+        "endLine": 264,
+        "endChar": 67
+      },
+      "revId": "bc7559554ccdc19ae4969eeaaec2c21360373901",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d9244fd7_b0d91d35",
+        "filename": "git_drover.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-04-25T21:29:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4982ec56_24af862e",
       "range": {
         "startLine": 264,
         "startChar": 7,

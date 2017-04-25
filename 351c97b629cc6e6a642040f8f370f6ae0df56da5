@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b31fee7f_d0b62699",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1105344
+      },
+      "writtenOn": "2017-04-25T00:08:29Z",
+      "side": 1,
+      "message": "The issue is that re.split places an empty string at the end of the array to indicate there was \"nothing\" after that match. I\u0027ve added a filter operation to take care of this.",
+      "parentUuid": "dd4c8862_cf233d12",
+      "range": {
+        "startLine": 316,
+        "startChar": 10,
+        "endLine": 316,
+        "endChar": 25
+      },
+      "revId": "351c97b629cc6e6a642040f8f370f6ae0df56da5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5c966648_13eb851e",
         "filename": "tests/presubmit_unittest.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2017-04-24T23:11:52Z",
       "side": 1,
       "message": "Would be good to also have a test case for starting with both a CQ_INCLUDE_TRYBOTS line and a Change-Id line.",
+      "revId": "351c97b629cc6e6a642040f8f370f6ae0df56da5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34ce5ae5_ba95fccd",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1464,
+      "author": {
+        "id": 1105344
+      },
+      "writtenOn": "2017-04-25T00:08:29Z",
+      "side": 1,
+      "message": "Done. Also added a test for newline present/absent after Change-Id:.",
+      "parentUuid": "5c966648_13eb851e",
       "revId": "351c97b629cc6e6a642040f8f370f6ae0df56da5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

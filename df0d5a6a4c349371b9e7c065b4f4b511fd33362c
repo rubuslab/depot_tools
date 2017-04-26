@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6cb2d302_055f80e2",
+        "filename": "git_footers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-26T23:20:41Z",
+      "side": 1,
+      "message": "O(f^2), but doesn\u0027t matter :)",
+      "range": {
+        "startLine": 113,
+        "startChar": 4,
+        "endLine": 115,
+        "endChar": 51
+      },
+      "revId": "df0d5a6a4c349371b9e7c065b4f4b511fd33362c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fae55d87_ff655414",
+        "filename": "git_footers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-26T23:20:41Z",
+      "side": 1,
+      "message": "remove, and eliminate 125..126  + update comment \"even if there\u0027s conflict with before_indices",
+      "range": {
+        "startLine": 120,
+        "startChar": 25,
+        "endLine": 120,
+        "endChar": 39
+      },
+      "revId": "df0d5a6a4c349371b9e7c065b4f4b511fd33362c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

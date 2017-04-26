@@ -46,6 +46,11 @@ My commit message is my best friend. It is my life. I must master it.
                                                 + self._position_footer),
         { 'Cr-Commit-Position': [ self._position, self._position ] })
 
+  def testEmptyFooter(self):
+    self.assertEqual(
+        git_footers.split_footers('H\n\nBug:\nAlso: footer'),
+        (['H', '', 'Bug:', 'Also: footer'], [], []))
+
   def testGetFooterChangeId(self):
     msg = '\n'.join(['whatever',
                      '',

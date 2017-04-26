@@ -1,0 +1,14 @@
+[
+  {
+    "cmd": [
+      "echo",
+      "{\"hello\": \"world\", \"recipe\": \"hello_world\", \"yes\": 1}"
+    ],
+    "name": "dump properties"
+  },
+  {
+    "name": "$result",
+    "recipe_result": null,
+    "status_code": 0
+  }
+]

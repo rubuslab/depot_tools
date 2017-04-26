@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "501ec2e8_57f580ec",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-26T22:24:03Z",
+      "side": 1,
+      "message": "nit: shouldn\u0027t this be CQ bcz CQ is an acronym?\n\nI realize that this won\u0027t change anything functionally.",
+      "range": {
+        "startLine": 295,
+        "startChar": 38,
+        "endLine": 295,
+        "endChar": 40
+      },
+      "revId": "51c1c4dbbc2c3a1830ae705ac0c1ebb9c8bf26d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad4ce9e6_e67fa4d2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-26T22:24:03Z",
+      "side": 1,
+      "message": "is discarding of prior tag lines content intentional? Or should this be +\u003d?",
+      "range": {
+        "startLine": 301,
+        "startChar": 19,
+        "endLine": 301,
+        "endChar": 20
+      },
+      "revId": "51c1c4dbbc2c3a1830ae705ac0c1ebb9c8bf26d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3489791d_d8f085fa",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-26T22:24:03Z",
+      "side": 1,
+      "message": "nit: i\u0027d move this join above since it is independent of codereview.",
+      "range": {
+        "startLine": 311,
+        "startChar": 45,
+        "endLine": 311,
+        "endChar": 63
+      },
+      "revId": "51c1c4dbbc2c3a1830ae705ac0c1ebb9c8bf26d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba4e14b4_5f693466",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-26T22:24:03Z",
+      "side": 1,
+      "message": "tbh, I have no idea what the point of this test is.",
+      "range": {
+        "startLine": 165,
+        "startChar": 7,
+        "endLine": 165,
+        "endChar": 18
+      },
+      "revId": "51c1c4dbbc2c3a1830ae705ac0c1ebb9c8bf26d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "12e50764_4b52be1b",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1500,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-26T22:24:03Z",
+      "side": 1,
+      "message": "i do find it ugly, but less than CQ_INCLUDE",
+      "range": {
+        "startLine": 1500,
+        "startChar": 0,
+        "endLine": 1500,
+        "endChar": 2
+      },
+      "revId": "51c1c4dbbc2c3a1830ae705ac0c1ebb9c8bf26d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "909bad0e_d61635f0",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1525,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-26T22:24:03Z",
+      "side": 1,
+      "message": "oh, we don\u0027t actually merge builders of the same master",
+      "range": {
+        "startLine": 1525,
+        "startChar": 20,
+        "endLine": 1525,
+        "endChar": 128
+      },
+      "revId": "51c1c4dbbc2c3a1830ae705ac0c1ebb9c8bf26d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

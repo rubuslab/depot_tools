@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be965e2d_3cb3ec7e",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-04-27T15:39:27Z",
+      "side": 1,
+      "message": "This retains old behavior. Android never had a got_revision field.",
+      "range": {
+        "startLine": 179,
+        "startChar": 2,
+        "endLine": 179,
+        "endChar": 52
+      },
+      "revId": "aaace08b019d0528f0bcb1dfb8298f5f5f76a7a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

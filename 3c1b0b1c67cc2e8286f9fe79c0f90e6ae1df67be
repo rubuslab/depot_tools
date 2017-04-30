@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a842aa2_80beb7b2",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-30T05:27:22Z",
+      "side": 1,
+      "message": "frozenset(...)",
+      "range": {
+        "startLine": 663,
+        "startChar": 14,
+        "endLine": 663,
+        "endChar": 29
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8649610a_5c0ad8ee",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-30T05:27:22Z",
+      "side": 1,
+      "message": "frozenset(...)",
+      "range": {
+        "startLine": 664,
+        "startChar": 8,
+        "endLine": 664,
+        "endChar": 17
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8cb23bb_ca7d33c8",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-30T05:27:22Z",
+      "side": 1,
+      "message": "sorted(reviewers | ccs)",
+      "range": {
+        "startLine": 671,
+        "startChar": 11,
+        "endLine": 671,
+        "endChar": 26
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc600130_55fc7d85",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-30T05:27:22Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 679,
+        "startChar": 2,
+        "endLine": 679,
+        "endChar": 24
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19fea139_0af1aee9",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-04-30T05:27:22Z",
+      "side": 1,
+      "message": "the lines below suggest that Gerrit returns exactly the same set of reviewers as body[\u0027reviewers\u0027] before.\nSince Gerrit can change this semantics, I think it\u0027s more robust for git cl to first compute\n`not_added \u003d set()`\nand then re-try for with ((reviewers | ccs) - not_added)\nperhaps we can just make recursive call with retry\u003dFalse and accept_statuses\u003d[200]",
+      "range": {
+        "startLine": 691,
+        "startChar": 16,
+        "endLine": 691,
+        "endChar": 41
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

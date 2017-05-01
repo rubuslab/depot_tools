@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68009b21_5c9af073",
+        "filename": "vpython",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-01T22:26:31Z",
+      "side": 1,
+      "message": "Let\u0027s actually run this via sourcing it, not executing.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 1
+      },
+      "revId": "4296a29dd10cac2e6b1638255bb219783c24a51e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

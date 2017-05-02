@@ -895,7 +895,7 @@ class TestGitCl(TestCase):
   def test_no_reviewer(self):
     self._run_reviewer_test(
         [],
-        'desc\n\nBUG=',
+        'desc\n\nBUG=none',
         '# Blah blah comment.\ndesc\n\nBUG=',
         'desc\n\nBUG=',
         [])
@@ -903,7 +903,7 @@ class TestGitCl(TestCase):
   def test_keep_similarity(self):
     self._run_reviewer_test(
         ['--similarity', '70'],
-        'desc\n\nBUG=',
+        'desc\n\nBUG=none',
         '# Blah blah comment.\ndesc\n\nBUG=',
         'desc\n\nBUG=',
         [])
@@ -911,7 +911,7 @@ class TestGitCl(TestCase):
   def test_keep_find_copies(self):
     self._run_reviewer_test(
         ['--no-find-copies'],
-        'desc\n\nBUG=',
+        'desc\n\nBUG=none',
         '# Blah blah comment.\ndesc\n\nBUG=\n',
         'desc\n\nBUG=',
         [])
@@ -919,14 +919,14 @@ class TestGitCl(TestCase):
   def test_private(self):
     self._run_reviewer_test(
         ['--private'],
-        'desc\n\nBUG=',
+        'desc\n\nBUG=none',
         '# Blah blah comment.\ndesc\n\nBUG=\n',
         'desc\n\nBUG=',
         [])
 
   def test_reviewers_cmd_line(self):
     # Reviewer is passed as-is
-    description = 'desc\n\nR=foo@example.com\nBUG='
+    description = 'desc\n\nR=foo@example.com\nBUG=none'
     self._run_reviewer_test(
         ['-r' 'foo@example.com'],
         description,
@@ -940,7 +940,7 @@ class TestGitCl(TestCase):
     description = 'Foo Bar\n\nTBR=reviewer@example.com'
     self._run_reviewer_test(
         ['-r' 'foo@example.com'],
-        'desc\n\nR=foo@example.com\nBUG=',
+        'desc\n\nR=foo@example.com\nBUG=none',
         description.strip('\n'),
         description,
         ['--reviewers=reviewer@example.com'])
@@ -952,7 +952,7 @@ class TestGitCl(TestCase):
         'CC=more@example.com,people@example.com')
     self._run_reviewer_test(
         [],
-        'desc\n\nBUG=',
+        'desc\n\nBUG=none',
         description,
         description,
         ['--reviewers=another@example.com,reviewer@example.com'],
@@ -963,7 +963,7 @@ class TestGitCl(TestCase):
     description = 'Foo Bar\nR=reviewer@example.com'
     self._run_reviewer_test(
         ['--send-mail'],
-        'desc\n\nBUG=',
+        'desc\n\nBUG=none',
         description.strip('\n'),
         description,
         ['--reviewers=reviewer@example.com', '--send_mail'])
@@ -2485,7 +2485,7 @@ class TestGitCl(TestCase):
           '# The first line will also be used as the subject of the review.\n'
           '#--------------------This line is 72 characters long'
           '--------------------\n'
-          'Some.\n\nChange-Id: xxx\nBug: ',
+          'Some.\n\nChange-Id: xxx\nBug: none',
           desc)
       # Simulate user changing something.
       return 'Some.\n\nChange-Id: xxx\nBug: 123'

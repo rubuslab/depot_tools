@@ -3337,6 +3337,8 @@ class ChangeDescription(object):
     if not any((regexp.match(line) for line in self._description_lines)):
       prefix = settings.GetBugPrefix()
       values = list(_get_bug_line_values(prefix, bug or '')) or [prefix]
+      if len(values) == 1 and values[0] == '':
+        values = ['none']
       if git_footer:
         self.append_footer('Bug: %s' % ', '.join(values))
       else:

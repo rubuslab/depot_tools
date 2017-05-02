@@ -47,7 +47,7 @@ BRANCH_HEADS_REFSPEC = '+refs/branch-heads/*'
 TAGS_REFSPEC = '+refs/tags/*'
 
 # Regular expression that matches a single commit footer line.
-COMMIT_FOOTER_ENTRY_RE = re.compile(r'([^:]+):\s+(.+)')
+COMMIT_FOOTER_ENTRY_RE = re.compile(r'([^:]+):\s*(.*)')
 
 # Footer metadata keys for regular and gsubtreed mirrored commit positions.
 COMMIT_POSITION_FOOTER_KEY = 'Cr-Commit-Position'
@@ -415,7 +415,15 @@ def get_commit_message_footer_map(message):
       footers.clear()
       return footers
     footers[m.group(1)] = m.group(2).strip()
+  print footers
   return footers
+
+
+assert get_commit_message_footer_map("""Title
+
+Bug:
+Normal: value
+""") == {'Bug': '', 'Normal': 'value'}
 
 
 def get_commit_message_footer(message, key):

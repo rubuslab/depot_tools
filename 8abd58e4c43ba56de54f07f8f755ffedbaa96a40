@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "323c98c1_ff80d3d9",
+        "filename": "bootstrap/win/git_bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-05-03T22:43:56Z",
+      "side": 1,
+      "message": "switch to -ensure-file while we are it",
+      "range": {
+        "startLine": 59,
+        "startChar": 7,
+        "endLine": 59,
+        "endChar": 12
+      },
+      "revId": "8abd58e4c43ba56de54f07f8f755ffedbaa96a40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -4,3 +4,6 @@
 
 # vpython.
 infra/tools/luci/vpython/${platform}  git_revision:589bb41ab0ab9134d2555d7d3051d678d37b3238
+
+# we only support git on 64bit windows
+infra/git/${platform=windows-amd64} version:2.12.2.2.chromium1

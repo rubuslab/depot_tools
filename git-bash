@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+WIN_BASE=`dirname $0`
+UNIX_BASE=`cygpath "$WIN_BASE"`
+if [[ $# > 0 ]]; then
+  # We had arguments, so pass them through to the base program
+  $UNIX_BASE/.cipd_bin/bin/bash.exe "$@"
+else
+  # launches a nice terminal emulator for bash
+  $UNIX_BASE/.cipd_bin/git-bash.exe &
+fi

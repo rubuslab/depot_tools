@@ -29,7 +29,9 @@ $url = "$cipdClientSrv/client?platform=$plat-$arch&version=$cipdClientVer"
 $client = Join-Path $myPath -ChildPath ".cipd_client.exe"
 
 try {
-  $depot_tools_version = &git -C $myPath rev-parse HEAD 2>&1
+  # to avoid a circular dependency, invoke the .cipd_bin version of git
+  # directly.
+  $depot_tools_version = &.\.cipd_bin\bin\git.exe -C $myPath rev-parse HEAD 2>&1
   if ($LastExitCode -eq 0) {
     $user_agent = "depot_tools/$depot_tools_version"
   } else {

@@ -109,8 +109,8 @@ def SyntaxErrorToError(filename, e):
       error_message = 'There is a syntax error in %s\n' % filename
     else:
       error_message = 'There is a syntax error\n'
-    error_message += 'Line #%s, character %s: "%s"' % (
-        e.lineno, e.offset, re.sub(r'[\r\n]*$', '', e.text))
+    error_message += 'Line #%s, character %s: "%s"; %r' % (
+        e.lineno, e.offset, re.sub(r'[\r\n]*$', '', e.text, e))
   except:
     # Something went wrong, re-raise the original exception
     raise e

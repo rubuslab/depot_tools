@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4cd372e7_de304d17",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-05T21:31:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a842aa2_80beb7b2",
+      "range": {
+        "startLine": 663,
+        "startChar": 14,
+        "endLine": 663,
+        "endChar": 29
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8649610a_5c0ad8ee",
         "filename": "gerrit_util.py",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58c6e062_f4a4d31e",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-05T21:31:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8649610a_5c0ad8ee",
+      "range": {
+        "startLine": 664,
+        "startChar": 8,
+        "endLine": 664,
+        "endChar": 17
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "e7300439_fe68042a",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-05T21:31:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8cb23bb_ca7d33c8",
+      "range": {
+        "startLine": 671,
+        "startChar": 11,
+        "endLine": 671,
+        "endChar": 26
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bc600130_55fc7d85",
         "filename": "gerrit_util.py",
         "patchSetId": 3
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "b5087c36_1abc3e3c",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-05T21:31:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc600130_55fc7d85",
+      "range": {
+        "startLine": 679,
+        "startChar": 2,
+        "endLine": 679,
+        "endChar": 24
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "19fea139_0af1aee9",
         "filename": "gerrit_util.py",
         "patchSetId": 3
@@ -114,6 +210,30 @@
       "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61f9ed96_83579d6f",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-05T21:31:40Z",
+      "side": 1,
+      "message": "Yeah, that makes sense. I didn\u0027t make it recursive, since I\u0027m not sure that actually makes it easier to read. I could though if you feel strongly.",
+      "parentUuid": "19fea139_0af1aee9",
+      "range": {
+        "startLine": 691,
+        "startChar": 16,
+        "endLine": 691,
+        "endChar": 41
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

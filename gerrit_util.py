@@ -315,7 +315,7 @@ def CreateHttpConn(host, path, reqtype='GET', headers=None, body=None):
   conn = GetConnectionObject()
   conn.req_host = host
   conn.req_params = {
-      'uri': urlparse.urljoin('%s://%s' % (GERRIT_PROTOCOL, host), url),
+      'uri': urlparse.urljoin('%s://canary-%s' % (GERRIT_PROTOCOL, host), url),
       'method': reqtype,
       'headers': headers,
       'body': body,
@@ -653,8 +653,7 @@ def GetReview(host, change, revision):
   return ReadHttpJsonResponse(CreateHttpConn(host, path))
 
 
-def AddReviewers(host, change, reviewers=None, ccs=None, notify=True,
-                 accept_statuses=frozenset([200, 400, 422])):
+def AddReviewers(host, change, reviewers=None, ccs=None, notify=True):
   """Add reviewers to a change."""
   if not reviewers and not ccs:
     return None
@@ -674,11 +673,14 @@ def AddReviewers(host, change, reviewers=None, ccs=None, notify=True,
      'notify': 'NONE',  # We handled `notify` argument above.
    })
 
+  print 'POSTing to', path
+  print json.dumps(body, separators=(',', ': '), indent=2)
   conn = CreateHttpConn(host, path, reqtype='POST', body=body)
   # Gerrit will return 400 if one or more of the requested reviewers are
   # unprocessable. We read the response object to see which were rejected,
   # warn about them, and retry with the remainder.
-  resp = ReadHttpJsonResponse(conn, accept_statuses=accept_statuses)
+  resp = ReadHttpJsonResponse(conn, accept_statuses=[200, 400, 422])
+  print json.dumps(resp, separators=(',', ': '), indent=2)
 
   errored = set()
   for result in resp.get('reviewers', {}).itervalues():
@@ -688,9 +690,21 @@ def AddReviewers(host, change, reviewers=None, ccs=None, notify=True,
       errored.add(r)
       LOGGER.warn('Note: "%s" not added as a %s' % (r, state.lower()))
   if errored:
-    # Try again, adding only those that didn't fail, and only accepting 200.
-    AddReviewers(host, change, reviewers=(reviewers-errored),
-                 ccs=(ccs-errored), notify=notify, accept_statuses=[200])
+    body = {
+      'reviewers': [],
+      'notify': 'ALL' if notify else 'NONE',
+    }
+    for r in sorted((reviewers | ccs) - errored):
+      state = 'REVIEWER' if r in reviewers else 'CC'
+      body['reviewers'].append({
+       'reviewer': r,
+       'state': state,
+       'notify': 'NONE',
+     })
+    conn = CreateHttpConn(host, path, reqtype='POST', body=body)
+    # We don't accept 400 this time, as we should have weeded out all the
+    # unprocessable entities.
+    resp = ReadHttpJsonResponse(conn)
 
 
 def RemoveReviewers(host, change, remove=None):

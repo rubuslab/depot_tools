@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "6f0d0af5_34bcdf31",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-06T06:46:32Z",
+      "side": 1,
+      "message": "I assume you\u0027ve checked that this is not used.",
+      "range": {
+        "startLine": 527,
+        "startChar": 47,
+        "endLine": 527,
+        "endChar": 69
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a842aa2_80beb7b2",
         "filename": "gerrit_util.py",
         "patchSetId": 3
@@ -225,6 +248,30 @@
       "side": 1,
       "message": "Yeah, that makes sense. I didn\u0027t make it recursive, since I\u0027m not sure that actually makes it easier to read. I could though if you feel strongly.",
       "parentUuid": "19fea139_0af1aee9",
+      "range": {
+        "startLine": 691,
+        "startChar": 16,
+        "endLine": 691,
+        "endChar": 41
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49a9f486_757aac54",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-06T06:46:32Z",
+      "side": 1,
+      "message": "not strongly, more like as a suggestion.\n\nupdate: i see that you actually did recursion.",
+      "parentUuid": "61f9ed96_83579d6f",
       "range": {
         "startLine": 691,
         "startChar": 16,

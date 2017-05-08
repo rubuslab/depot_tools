@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3e1d0d67_af8fb9ed",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-08T17:28:28Z",
+      "side": 1,
+      "message": "This part of the diff from patchset 3 to latest is actually from a rebase, not from this CL.",
+      "parentUuid": "6f0d0af5_34bcdf31",
+      "range": {
+        "startLine": 527,
+        "startChar": 47,
+        "endLine": 527,
+        "endChar": 69
+      },
+      "revId": "3c1b0b1c67cc2e8286f9fe79c0f90e6ae1df67be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a842aa2_80beb7b2",
         "filename": "gerrit_util.py",
         "patchSetId": 3

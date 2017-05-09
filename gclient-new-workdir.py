@@ -31,6 +31,9 @@ def parse_options():
       Works similarly to 'git new-workdir'.''')
   parser.add_argument('repository', help='should contain a .gclient file')
   parser.add_argument('new_workdir', help='must not exist')
+  parser.add_argument('--reflink', action='store_true',
+                      help='''use "cp --reflink" for speed and disk space.
+                              need supported FS like btrfs or ZFS.''')
   args = parser.parse_args()
 
   args.repository = os.path.abspath(args.repository)
@@ -60,9 +63,24 @@ def main():
     if '.git' in dirs:
       workdir = root.replace(args.repository, args.new_workdir, 1)
       print('Creating: %s' % workdir)
+
+      if args.reflink:
+        if not os.path.exists(workdir):
+          print('Copying: %s' % workdir)
+          subprocess.check_call(['cp', '-a', '--reflink', root, workdir])
+        shutil.rmtree(os.path.join(workdir, '.git'))
+
       git_common.make_workdir(os.path.join(root, '.git'),
                               os.path.join(workdir, '.git'))
-      subprocess.check_call(['git', 'checkout', '-f'], cwd=workdir)
+      if args.reflink:
+        subprocess.check_call(['cp', '-a', '--reflink',
+                              os.path.join(root, '.git', 'index'),
+                              os.path.join(workdir, '.git', 'index')])
+      else:
+        subprocess.check_call(['git', 'checkout', '-f'], cwd=workdir)
+
+      if args.reflink:
+        subprocess.check_call(['git', 'clean', '-df'], cwd=workdir)
 
 
 if __name__ == '__main__':

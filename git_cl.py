@@ -3,8 +3,6 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# Copyright (C) 2008 Evan Martin <martine@danga.com>
-
 """A git-command for integrating reviews on Rietveld and Gerrit."""
 
 from __future__ import print_function

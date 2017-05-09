@@ -674,6 +674,7 @@ def AddReviewers(host, change, reviewers=None, ccs=None, notify=True,
      'notify': 'NONE',  # We handled `notify` argument above.
    })
 
+  print json.dumps(body, separators=(',', ': '), indent=2)
   conn = CreateHttpConn(host, path, reqtype='POST', body=body)
   # Gerrit will return 400 if one or more of the requested reviewers are
   # unprocessable. We read the response object to see which were rejected,

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "964f3fa6_b7d24327",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-09T02:42:42Z",
+      "side": 1,
+      "message": "would it make more sense to probe `cp` to see if this is supported automatically? Otherwise no one will know/remember to use this. If it\u0027s possible to probe, then everyone will benefit from it automatically.",
+      "revId": "04c0383d9b76754ff9dddf94039ab21a0a1e07de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

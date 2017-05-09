@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ef67832_31191e16",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-09T20:34:03Z",
+      "side": 1,
+      "message": "Nit: maybe resort the keys so that they\u0027re alphabetical?",
+      "revId": "499a084008b302ec9b2d575afce80f93e037c2c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

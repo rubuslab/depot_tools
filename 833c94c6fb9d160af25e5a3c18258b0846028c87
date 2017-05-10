@@ -82,6 +82,30 @@
     },
     {
       "key": {
+        "uuid": "c9161f12_5bc8027c",
+        "filename": "gerrit_util.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 1142386
+      },
+      "writtenOn": "2017-05-10T17:34:08Z",
+      "side": 1,
+      "message": "it has been fixed it in https://chromium.googlesource.com/chromium/tools/depot_tools/+/7d1af2b930e57e4afb409503f1702bab4577714f",
+      "parentUuid": "6a30a292_984e0042",
+      "range": {
+        "startLine": 789,
+        "startChar": 20,
+        "endLine": 789,
+        "endChar": 23
+      },
+      "revId": "833c94c6fb9d160af25e5a3c18258b0846028c87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9a83c046_9eaac8ba",
         "filename": "gerrit_util.py",
         "patchSetId": 6
@@ -102,6 +126,30 @@
       "revId": "833c94c6fb9d160af25e5a3c18258b0846028c87",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14d8331c_e44441df",
+        "filename": "gerrit_util.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 1142386
+      },
+      "writtenOn": "2017-05-10T17:34:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a83c046_9eaac8ba",
+      "range": {
+        "startLine": 805,
+        "startChar": 20,
+        "endLine": 805,
+        "endChar": 23
+      },
+      "revId": "833c94c6fb9d160af25e5a3c18258b0846028c87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

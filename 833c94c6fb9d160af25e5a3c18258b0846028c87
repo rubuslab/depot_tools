@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "19760434_e0a067ff",
+        "filename": "gerrit_client.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-10T17:09:49Z",
+      "side": 1,
+      "message": "If this file continues to develop like this, it will end up having a 1:1 matching function for every function in gerrit_util.py. That seems wasteful. Maybe it should simply have a dictionary of \"first command line argument maps to this gerrit_util function\", and then call that function with the other command line arguments in order. Then it wouldn\u0027t have to have as much boilerplate.",
+      "revId": "833c94c6fb9d160af25e5a3c18258b0846028c87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a1f5205b_4f3470de",
         "filename": "gerrit_client.py",
         "patchSetId": 6
@@ -36,6 +53,69 @@
         "endLine": 66,
         "endChar": 18
       },
+      "revId": "833c94c6fb9d160af25e5a3c18258b0846028c87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a30a292_984e0042",
+        "filename": "gerrit_util.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-10T17:09:49Z",
+      "side": 1,
+      "message": "It won\u0027t have returned a 200, this number should be whatever the API docs say the failure return code will be.",
+      "range": {
+        "startLine": 789,
+        "startChar": 20,
+        "endLine": 789,
+        "endChar": 23
+      },
+      "revId": "833c94c6fb9d160af25e5a3c18258b0846028c87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a83c046_9eaac8ba",
+        "filename": "gerrit_util.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-10T17:09:49Z",
+      "side": 1,
+      "message": "Same here.",
+      "range": {
+        "startLine": 805,
+        "startChar": 20,
+        "endLine": 805,
+        "endChar": 23
+      },
+      "revId": "833c94c6fb9d160af25e5a3c18258b0846028c87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98ae8eba_cdb5cceb",
+        "filename": "recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-10T17:09:49Z",
+      "side": 1,
+      "message": "Similar comment here as in gerrit_client. I\u0027m not sure what the best way to do it here would be (maybe there is no good way) but it seems wasteful to have this much boilerplate and duplication of code.\n\nAnd if the answer is \"no, we need to have this much duplication\", then please make sure the names are consistent everywhere. For example, this doesn\u0027t need to be \"create_gerrit_branch\" -- we already know it is gerrit because it will be called as \"api.gerrit.create...\". The method names here should match the names in gerrit_util, and those should match the names defined by the gerrit API itself.",
       "revId": "833c94c6fb9d160af25e5a3c18258b0846028c87",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

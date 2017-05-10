@@ -59,6 +59,31 @@ My commit message is my best friend. It is my life. I must master it.
         { 'Bug': [''],
           'Cr-Commit-Position': [ self._position ] })
 
+  def testSkippingBadFooterLines(self):
+    self.maxDiff = 100000
+    self.assertEqual(
+        git_footers.split_footers(
+          'Title.\n'
+          '\n'
+          'Last: paragraph starts\n'
+          'It-may: contain\n'
+          'bad lines, which should be skipped\n'
+          'For: example\n'
+          '(cherry picked from)\n'
+          'And-only-valid: footers taken'),
+        (['Title.',
+          ''],
+         ['Last: paragraph starts',
+          'It-may: contain',
+          'bad lines, which should be skipped',
+          'For: example',
+          '(cherry picked from)',
+          'And-only-valid: footers taken'],
+         [('Last', 'paragraph starts'),
+          ('It-may', 'contain'),
+          ('For', 'example'),
+          ('And-only-valid', 'footers taken')]))
+
 
   def testGetFooterChangeId(self):
     msg = '\n'.join(['whatever',

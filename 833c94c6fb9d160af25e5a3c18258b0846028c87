@@ -106,6 +106,30 @@
     },
     {
       "key": {
+        "uuid": "25a31f60_44416f69",
+        "filename": "gerrit_util.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-10T17:38:14Z",
+      "side": 1,
+      "message": "Sorry, I didn\u0027t look at the date on this CL, I just saw that tandrii had left some comments and dove in for a review.\n\nBut still, that\u0027s not what I meant by this comment. This \u0027200\u0027 should actually be \u0027400\u0027 or \u0027404\u0027 or whatever status code is returned by the API upon failure. We only use 200 here when we have no idea what the actual error code was.",
+      "parentUuid": "c9161f12_5bc8027c",
+      "range": {
+        "startLine": 789,
+        "startChar": 20,
+        "endLine": 789,
+        "endChar": 23
+      },
+      "revId": "833c94c6fb9d160af25e5a3c18258b0846028c87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9a83c046_9eaac8ba",
         "filename": "gerrit_util.py",
         "patchSetId": 6

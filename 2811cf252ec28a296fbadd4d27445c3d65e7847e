@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f7d55b0c_d106ddd2",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1144344
+      },
+      "writtenOn": "2017-05-11T07:09:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ddf99e4_e380dbee",
+      "revId": "2811cf252ec28a296fbadd4d27445c3d65e7847e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "869ed92e_63e6f539",
         "filename": "gclient-new-workdir.py",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "2811cf252ec28a296fbadd4d27445c3d65e7847e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72a950db_4e8a43aa",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1144344
+      },
+      "writtenOn": "2017-05-11T07:09:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "869ed92e_63e6f539",
+      "revId": "2811cf252ec28a296fbadd4d27445c3d65e7847e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

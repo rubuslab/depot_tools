@@ -22,6 +22,30 @@
       "revId": "1dd9a3225519ca08de8b85def5dc290436ebf1cb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c390a6ef_37f154eb",
+        "filename": "git_footers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-11T12:43:20Z",
+      "side": 1,
+      "message": "Fix:L https://chromium-review.googlesource.com/c/502809/",
+      "parentUuid": "6684b09e_41d7e4c2",
+      "range": {
+        "startLine": 52,
+        "startChar": 11,
+        "endLine": 52,
+        "endChar": 15
+      },
+      "revId": "1dd9a3225519ca08de8b85def5dc290436ebf1cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

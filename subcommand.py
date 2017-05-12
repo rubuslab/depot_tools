@@ -70,9 +70,8 @@ def CMDhelp(parser, args):
   # wanted.
   if not any(i in ('-h', '--help') for i in args):
     args = args + ['--help']
-  _, args = parser.parse_args(args)
-  # Never gets there.
-  assert False
+  parser.print_help()
+  return 0
 
 
 def _get_color_module():
@@ -255,7 +254,9 @@ class CommandDispatcher(object):
     if cmdhelp:
       # Not a known command. Default to help.
       self._add_command_usage(parser, cmdhelp)
-      return cmdhelp(parser, args)
+      # Make sure we return a non-zero exit code for unknown commands.
+      rc = cmdhelp(parser, args)
+      return rc if rc != 0 else 2
 
     # Nothing can be done.
     return 2

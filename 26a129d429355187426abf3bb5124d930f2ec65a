@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5eebe0a8_0fc74fee",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 884,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-15T22:49:33Z",
+      "side": 1,
+      "message": "isn\u0027t the spirit of these functions to obtain the reviewers for the CL, not strictly from the description?",
+      "revId": "26a129d429355187426abf3bb5124d930f2ec65a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

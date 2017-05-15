@@ -3,7 +3,7 @@
 :: Use of this source code is governed by a BSD-style license that can be
 :: found in the LICENSE file.
 
-:: This script will determine if python, git, or svn binaries need updates.  It
+:: This script will determine if the python binaries need updates. It
 :: returns 123 if the user's shell must restart, otherwise !0 is failure
 
 :: Sadly, we can't use SETLOCAL here otherwise it ERRORLEVEL is not correctly
@@ -29,7 +29,6 @@ if "%1" == "force" (
 if not exist "%WIN_TOOLS_ROOT_DIR%\python276_bin" goto :PY27_INSTALL
 if not exist "%WIN_TOOLS_ROOT_DIR%\python.bat" goto :PY27_INSTALL
 set ERRORLEVEL=0
-goto :GIT_CHECK
 
 
 :PY27_INSTALL
@@ -48,17 +47,12 @@ call copy /y "%~dp0python276.new.bat" "%WIN_TOOLS_ROOT_DIR%\python.bat" 1>nul
 call copy /y "%~dp0pylint.new.bat" "%WIN_TOOLS_ROOT_DIR%\pylint.bat" 1>nul
 del "%ZIP_DIR%\python276_bin.zip"
 set ERRORLEVEL=0
-goto :GIT_CHECK
 
 
 :PYTHON_FAIL
 echo ... Failed to checkout python automatically.
 echo You should get the "prebaked" version at %PYTHON_URL%
 set ERRORLEVEL=1
-goto :END
-
-:GIT_CHECK
-"%WIN_TOOLS_ROOT_DIR%\python.bat" "%~dp0git_bootstrap.py"
 goto :END
 
 :returncode

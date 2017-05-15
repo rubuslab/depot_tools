@@ -1,0 +1,268 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a50f7fd7_e8b561f7",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "nit refactor:\n  def format_name(d):\n     if include_url: return \u0027%s(%s)\u0027 % (d.name, d.url)\n     return d.name\n\nout \u003d format_name(self)\n...\nwhile ...:\n  out \u003d \u0027%s -\u003e %s\u0027 (format_name(i), out)",
+      "range": {
+        "startLine": 1090,
+        "startChar": 4,
+        "endLine": 1090,
+        "endChar": 19
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa5a3845_caafa510",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1638,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "output DEPS file",
+      "range": {
+        "startLine": 1638,
+        "startChar": 50,
+        "endLine": 1638,
+        "endChar": 61
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3aa37a9_19d8d581",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1638,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "how about \n  --output-deps\nsince we already have --output-json below",
+      "range": {
+        "startLine": 1638,
+        "startChar": 23,
+        "endLine": 1638,
+        "endChar": 29
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0384e708_ebde654c",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "nit: wdyt about\n  code \u003d ...\n  if code !\u003d 0:\n    ...",
+      "range": {
+        "startLine": 1651,
+        "startChar": 5,
+        "endLine": 1651,
+        "endChar": 8
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b73cac21_ef260912",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1688,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "dict of what? dict (deps name -\u003e revision)? \n\nafter more reading, seems to be dict (name -\u003e Dependency)",
+      "range": {
+        "startLine": 1688,
+        "startChar": 10,
+        "endLine": 1688,
+        "endChar": 14
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1da504c7_3aea40ca",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1689,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "list of ((solution name? or just Dependency?), hook)",
+      "range": {
+        "startLine": 1689,
+        "startChar": 11,
+        "endLine": 1689,
+        "endChar": 15
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3af1707f_f5866578",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1690,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1690,
+        "startChar": 20,
+        "endLine": 1690,
+        "endChar": 24
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10543350_a1fc1d08",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1691,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af9ac0d3_7f6ddce6",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1743,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "why dep.url and not dep? This is inconsistent from the deps dict.",
+      "range": {
+        "startLine": 1743,
+        "startChar": 29,
+        "endLine": 1743,
+        "endChar": 37
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97422dd7_c2c417ac",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "nit:\nfor name, dep in deps.iteritems():\n  ... dep.hierarchy, dep.url",
+      "range": {
+        "startLine": 1749,
+        "startChar": 21,
+        "endLine": 1749,
+        "endChar": 25
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a4024c6_8f066c33",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1778,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "this is hard to read, and if not for comments, i\u0027d use pprint.pprint() on it.\nWhat is clear, however, is that this CL lacks test to assert the correctness of this string manipulation",
+      "range": {
+        "startLine": 1761,
+        "startChar": 2,
+        "endLine": 1778,
+        "endChar": 21
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b75a3594_00743675",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2001,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-15T12:46:21Z",
+      "side": 1,
+      "message": "imo, use this form instead of --output.",
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

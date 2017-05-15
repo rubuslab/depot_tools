@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb0241a2_273db350",
+        "filename": "owners.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-15T18:17:04Z",
+      "side": 1,
+      "message": "why not just `all_possible_owners.items()`?",
+      "revId": "0e55eaeb234669f2863a0646cc3310ab66e4d1ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

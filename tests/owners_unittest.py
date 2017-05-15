@@ -467,6 +467,13 @@ class ReviewersForTest(_BaseTestCase):
     self.assert_reviewers_for(['chrome/gpu/gpu_channel.h'],
                               [[ben], [brett]], author=ken)
 
+
+  def test_reviewers_for__ignores_unowned_files(self):
+    # Clear the root OWNERS file.
+    self.files['/OWNERS'] = ''
+    self.assert_reviewers_for(['base/vlog.h', 'chrome/browser/deafults/h'],
+                              [[brett]])
+
   def test_reviewers_file_includes__absolute(self):
     self.assert_reviewers_for(['content/qux/foo.cc'],
                               [[peter], [brett], [john], [darin]])
@@ -499,6 +506,16 @@ class ReviewersForTest(_BaseTestCase):
                                 override_files={'content/baz/OWNERS': [jochen]})
       self.assert_reviewers_for(['content/baz/froboz.h'], [[john],[darin]],
                                 override_files={'content/baz/OWNERS': []})
+
+
+
+class _BaseTestCase(unittest.TestCase):
+  def setUp(self):
+    self.repo = test_repo()
+    self.files = self.repo.files
+    self.root = '/'
+    self.fopen = self.repo.open_for_reading
+
 
 
 class LowestCostOwnersTest(_BaseTestCase):

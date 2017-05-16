@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "03669886_678184f8",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1649,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-05-16T19:10:26Z",
+      "side": 1,
+      "message": "Yeah, workarounds with things like /dev/stdout (although not cross-platform) are why I\u0027m not too worried about it. Supporting \"-\" might be nice, although I\u0027m not sure if there is precedent with gclient or depot_tools in general, so it might be confusing to have it here and not in other places. Not requiring it just seemed like the simplest \"least common denominator\" solution.",
+      "parentUuid": "089fe91a_71759c36",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7633f458_3c54de3e",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 7
@@ -69,6 +87,24 @@
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66cfadba_29f58516",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-05-16T19:10:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "89da7989_60aca06e",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

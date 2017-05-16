@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2b1b9b17_92f6e06f",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1707,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T15:19:51Z",
+      "side": 1,
+      "message": "why is this necessary?",
+      "range": {
+        "startLine": 1707,
+        "startChar": 18,
+        "endLine": 1707,
+        "endChar": 34
+      },
+      "revId": "bec413d7181070a3ddc535a6d216f112561ad8e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

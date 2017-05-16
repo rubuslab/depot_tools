@@ -140,6 +140,30 @@
       "revId": "69b52ebaa8007d8e2cc6ebb05bfad9d00fec9333",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "225f4cde_de054d11",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T15:19:51Z",
+      "side": 1,
+      "message": "hm, not exactly, but this test already pigy backs on some existing folder structure created in setUp method somewhere in parent classes. perhaps you can extend it to create recursive deps?",
+      "parentUuid": "b4adfd56_ed16433a",
+      "range": {
+        "startLine": 561,
+        "startChar": 8,
+        "endLine": 561,
+        "endChar": 44
+      },
+      "revId": "69b52ebaa8007d8e2cc6ebb05bfad9d00fec9333",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

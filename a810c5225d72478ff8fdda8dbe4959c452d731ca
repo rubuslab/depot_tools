@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "1fc57c75_e89d1558",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1722,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T18:32:34Z",
+      "side": 1,
+      "message": "is the order actually important here?",
+      "range": {
+        "startLine": 1722,
+        "startChar": 26,
+        "endLine": 1722,
+        "endChar": 32
+      },
+      "revId": "a810c5225d72478ff8fdda8dbe4959c452d731ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "991b2ba9_99fac612",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1724,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T18:32:34Z",
+      "side": 1,
+      "message": "i don\u0027t like O(n^2) when O(n) is feasible:\n\ndeps_by_name \u003d dict((d.name, d) for d in deps.dependencies)\nfor recurse_dep_name in sorted(dep.recursedeps or []):\n  _FlattenRecurse(deps_by_name[recurse_dep_name], ...)\n\nand I\u0027d inline _FlattenRecurse here anyway",
+      "range": {
+        "startLine": 1722,
+        "startChar": 2,
+        "endLine": 1724,
+        "endChar": 42
+      },
+      "revId": "a810c5225d72478ff8fdda8dbe4959c452d731ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41df8c9d_7620c6ec",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1750,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T18:32:34Z",
+      "side": 1,
+      "message": "why not move this inside the _FlattenDep?",
+      "range": {
+        "startLine": 1748,
+        "startChar": 2,
+        "endLine": 1750,
+        "endChar": 0
+      },
+      "revId": "a810c5225d72478ff8fdda8dbe4959c452d731ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "df42c392_91c85500",
         "filename": "testing_support/fake_repos.py",
         "patchSetId": 5

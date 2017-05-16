@@ -16,6 +16,24 @@
       "revId": "a6f9c99df2247bee528a3450022d1a5b6cd5407c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56a6e8f1_6d2a42ff",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-16T01:12:39Z",
+      "side": 1,
+      "message": "Follow-up CL.",
+      "parentUuid": "84bb5fe6_11020199",
+      "revId": "a6f9c99df2247bee528a3450022d1a5b6cd5407c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

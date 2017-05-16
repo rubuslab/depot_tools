@@ -46,6 +46,30 @@
       "revId": "93248c5ccbaab4d3a43bc86681ff21bdbb932f6c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5abb2d39_4f08755a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T18:24:17Z",
+      "side": 0,
+      "message": "ah, of course! SGTM!",
+      "parentUuid": "d435c4a6_7bcbd9cf",
+      "range": {
+        "startLine": 44,
+        "startChar": 2,
+        "endLine": 44,
+        "endChar": 27
+      },
+      "revId": "93248c5ccbaab4d3a43bc86681ff21bdbb932f6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

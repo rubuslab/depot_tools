@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07bedeb1_dc9a012e",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1649,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-05-16T19:02:23Z",
+      "side": 1,
+      "message": "I\u0027m not sure I would require this, although it\u0027s not a big deal either way. It might be convenient sometimes to output to stdout, like to quickly grep through the flattened DEPS.",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7633f458_3c54de3e",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-05-16T19:02:23Z",
+      "side": 1,
+      "message": "Maybe add a test to make sure it also handles solutions with custom_deps overrides?",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4450398d_0cc773f5",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1692,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T14:56:54Z",
+      "side": 1,
+      "message": "nitty nit: IMO, \"str\" is less useful than \"name\"; maybe:\ndeps (dict): will be filled with all Dependency objects indexed by their name.",
+      "range": {
+        "startLine": 1692,
+        "startChar": 18,
+        "endLine": 1692,
+        "endChar": 21
+      },
+      "revId": "69b52ebaa8007d8e2cc6ebb05bfad9d00fec9333",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af26cbe6_8ff33577",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1696,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T14:56:54Z",
+      "side": 1,
+      "message": "ditto, name to URL.",
+      "range": {
+        "startLine": 1696,
+        "startChar": 27,
+        "endLine": 1696,
+        "endChar": 37
+      },
+      "revId": "69b52ebaa8007d8e2cc6ebb05bfad9d00fec9333",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f089b3ab_49d62105",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T14:56:54Z",
+      "side": 1,
+      "message": "it seems to me that flattening isn\u0027t excersied here. perhaps we want src/repo2 to have its own DEPS pointing to repo3?",
+      "range": {
+        "startLine": 561,
+        "startChar": 8,
+        "endLine": 561,
+        "endChar": 44
+      },
+      "revId": "69b52ebaa8007d8e2cc6ebb05bfad9d00fec9333",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -413,6 +413,30 @@
     },
     {
       "key": {
+        "uuid": "a63f55ad_49f48708",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1743,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T14:56:54Z",
+      "side": 1,
+      "message": "i know you don\u0027t, but it\u0027s not different from perf PoV, yet it\u0027s easier to read if this dict is same as as deps dict.",
+      "parentUuid": "994d3475_c68c0245",
+      "range": {
+        "startLine": 1743,
+        "startChar": 29,
+        "endLine": 1743,
+        "endChar": 37
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "97422dd7_c2c417ac",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -448,6 +472,30 @@
       "side": 1,
       "message": "We need predictable output for testing, hence sorting.\n\nLet me know if there\u0027s a way to easily combine the two.",
       "parentUuid": "97422dd7_c2c417ac",
+      "range": {
+        "startLine": 1749,
+        "startChar": 21,
+        "endLine": 1749,
+        "endChar": 25
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea2d9d21_f8667f0d",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T14:56:54Z",
+      "side": 1,
+      "message": "ah, sorry forgot sorted:\nfor name, dep in sorted(deps.iteritems()):",
+      "parentUuid": "305e50f0_af0c2e22",
       "range": {
         "startLine": 1749,
         "startChar": 21,

@@ -535,6 +535,61 @@ class GClientSmokeGIT(GClientSmokeBase):
           })
     self.check((out, '', 0), results)
 
+  def testFlatten(self):
+    if not self.enabled:
+      return
+
+    output_deps = os.path.join(self.root_dir, 'DEPS.flattened')
+    self.assertFalse(os.path.exists(output_deps))
+
+    self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
+    self.gclient(['sync'])
+    self.gclient(['flatten', '--output-deps', output_deps])
+
+    with open(output_deps) as f:
+      deps_contents = f.read()
+
+    self.assertEqual([
+        'deps = {',
+        '  # src',
+        '  "src": "git://127.0.0.1:20000/git/repo_1",',
+        '',
+        '  # src -> src/repo2',
+        '  "src/repo2": "git://127.0.0.1:20000/git/repo_2@%s",' % (
+            self.githash('repo_2', 1)[:7]),
+        '',
+        '  # src -> src/repo2/repo_renamed',
+        '  "src/repo2/repo_renamed": "From(\'src/repo2\', \'foo/bar\')",',
+        '',
+        '}',
+        '',
+        'hooks = [',
+        '  # src',
+        '  {',
+        '    "pattern": ".",',
+        '    "action": [',
+        '        "python",',
+        '        "-c",',
+        '        "open(\'src/git_hooked1\', \'w\').write(\'git_hooked1\')",',
+        '    ]',
+        '  },',
+        '',
+        '  # src',
+        '  {',
+        '    "pattern": "nonexistent",',
+        '    "action": [',
+        '        "python",',
+        '        "-c",',
+        '        "open(\'src/git_hooked2\', \'w\').write(\'git_hooked2\')",',
+        '    ]',
+        '  },',
+        '',
+        ']',
+        '',
+        'pre_deps_hooks = [',
+        ']'
+    ], deps_contents.splitlines())
+
 
 class GClientSmokeGITMutates(GClientSmokeBase):
   """testRevertAndStatus mutates the git repo so move it to its own suite."""

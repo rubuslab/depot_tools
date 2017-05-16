@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68d58ba8_3083ac0a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-16T07:18:39Z",
+      "side": 0,
+      "message": "i have no idea what\u0027s this for; are you sure it\u0027s OK to drop?",
+      "range": {
+        "startLine": 44,
+        "startChar": 2,
+        "endLine": 44,
+        "endChar": 27
+      },
+      "revId": "93248c5ccbaab4d3a43bc86681ff21bdbb932f6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

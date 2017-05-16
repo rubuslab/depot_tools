@@ -164,6 +164,30 @@
       "revId": "69b52ebaa8007d8e2cc6ebb05bfad9d00fec9333",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "128ef967_411656d3",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T18:09:41Z",
+      "side": 1,
+      "message": "Found a way to do that.\n\nIn course of doing so, discovered several bugs.\n\nNow it also returns expected results when processing chromium/src .",
+      "parentUuid": "225f4cde_de054d11",
+      "range": {
+        "startLine": 561,
+        "startChar": 8,
+        "endLine": 561,
+        "endChar": 44
+      },
+      "revId": "69b52ebaa8007d8e2cc6ebb05bfad9d00fec9333",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

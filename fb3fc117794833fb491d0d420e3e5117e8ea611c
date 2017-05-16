@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "089fe91a_71759c36",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1649,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T19:06:22Z",
+      "side": 1,
+      "message": "I was thinking about this.\n\nIdeally we\u0027d upgrade to argparse which makes that very easy. However, it may be non-trivial to migrate gclient from optparse to argparse.\n\nWe could also explicitly handle \"-\".\n\nMeanwhile, passing --output-deps /dev/stdout works.",
+      "parentUuid": "07bedeb1_dc9a012e",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7633f458_3c54de3e",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2017-05-16T19:02:23Z",
       "side": 1,
       "message": "Maybe add a test to make sure it also handles solutions with custom_deps overrides?",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89da7989_60aca06e",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T19:06:22Z",
+      "side": 1,
+      "message": "OK to defer to a future CL?",
+      "parentUuid": "7633f458_3c54de3e",
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

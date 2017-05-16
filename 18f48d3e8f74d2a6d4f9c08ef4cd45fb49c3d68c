@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf17975e_416c0224",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a50f7fd7_e8b561f7",
+      "range": {
+        "startLine": 1090,
+        "startChar": 4,
+        "endLine": 1090,
+        "endChar": 19
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aa5a3845_caafa510",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -71,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "150f2f99_0babc29e",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1638,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa5a3845_caafa510",
+      "range": {
+        "startLine": 1638,
+        "startChar": 50,
+        "endLine": 1638,
+        "endChar": 61
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d4c976ac_9e5c2fdf",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1638,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3aa37a9_19d8d581",
+      "range": {
+        "startLine": 1638,
+        "startChar": 23,
+        "endLine": 1638,
+        "endChar": 29
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0384e708_ebde654c",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -91,6 +163,30 @@
       "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "436c1644_b7d5cfc7",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0384e708_ebde654c",
+      "range": {
+        "startLine": 1651,
+        "startChar": 5,
+        "endLine": 1651,
+        "endChar": 8
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "45b3832e_fa75c90f",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1688,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b73cac21_ef260912",
+      "range": {
+        "startLine": 1688,
+        "startChar": 10,
+        "endLine": 1688,
+        "endChar": 14
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1da504c7_3aea40ca",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -137,6 +257,30 @@
       "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c00d2ca_684d9ed4",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1689,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1da504c7_3aea40ca",
+      "range": {
+        "startLine": 1689,
+        "startChar": 11,
+        "endLine": 1689,
+        "endChar": 15
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "907eea5e_25868515",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1690,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3af1707f_f5866578",
+      "range": {
+        "startLine": 1690,
+        "startChar": 20,
+        "endLine": 1690,
+        "endChar": 24
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "10543350_a1fc1d08",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -180,6 +348,24 @@
     },
     {
       "key": {
+        "uuid": "45d3bf66_bae48c8c",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1691,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10543350_a1fc1d08",
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af9ac0d3_7f6ddce6",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -191,6 +377,30 @@
       "writtenOn": "2017-05-15T12:46:21Z",
       "side": 1,
       "message": "why dep.url and not dep? This is inconsistent from the deps dict.",
+      "range": {
+        "startLine": 1743,
+        "startChar": 29,
+        "endLine": 1743,
+        "endChar": 37
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "994d3475_c68c0245",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1743,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "We don\u0027t need full dep object for unpinned_deps.",
+      "parentUuid": "af9ac0d3_7f6ddce6",
       "range": {
         "startLine": 1743,
         "startChar": 29,
@@ -226,6 +436,30 @@
     },
     {
       "key": {
+        "uuid": "305e50f0_af0c2e22",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "We need predictable output for testing, hence sorting.\n\nLet me know if there\u0027s a way to easily combine the two.",
+      "parentUuid": "97422dd7_c2c417ac",
+      "range": {
+        "startLine": 1749,
+        "startChar": 21,
+        "endLine": 1749,
+        "endChar": 25
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a4024c6_8f066c33",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -249,6 +483,30 @@
     },
     {
       "key": {
+        "uuid": "38870153_619fb72e",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1778,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Added a test.",
+      "parentUuid": "2a4024c6_8f066c33",
+      "range": {
+        "startLine": 1761,
+        "startChar": 2,
+        "endLine": 1778,
+        "endChar": 21
+      },
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b75a3594_00743675",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -260,6 +518,24 @@
       "writtenOn": "2017-05-15T12:46:21Z",
       "side": 1,
       "message": "imo, use this form instead of --output.",
+      "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7468c728_81afac65",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2001,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T14:15:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b75a3594_00743675",
       "revId": "18f48d3e8f74d2a6d4f9c08ef4cd45fb49c3d68c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

@@ -22,6 +22,30 @@
       "revId": "921e1534217687e41f563c276f84d4e59691de59",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "104c69e1_6cf2f10b",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1699,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T18:27:04Z",
+      "side": 1,
+      "message": "Yes. I found other debug logs useful, and thought these would be useful to keep as well.",
+      "parentUuid": "78d8e2c9_1869eb7b",
+      "range": {
+        "startLine": 1699,
+        "startChar": 10,
+        "endLine": 1699,
+        "endChar": 15
+      },
+      "revId": "921e1534217687e41f563c276f84d4e59691de59",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

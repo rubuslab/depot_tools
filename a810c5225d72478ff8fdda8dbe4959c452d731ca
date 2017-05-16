@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2f5d7021_603929b3",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-16T18:27:04Z",
+      "side": 1,
+      "message": "Eh, removed the copypasta.",
+      "parentUuid": "df42c392_91c85500",
+      "range": {
+        "startLine": 478,
+        "startChar": 24,
+        "endLine": 478,
+        "endChar": 47
+      },
+      "revId": "a810c5225d72478ff8fdda8dbe4959c452d731ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "41547008_14fd659d",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 5

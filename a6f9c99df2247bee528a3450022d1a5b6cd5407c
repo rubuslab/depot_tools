@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84bb5fe6_11020199",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2017-05-16T00:59:48Z",
+      "side": 1,
+      "message": "Might as well remove this too? (And associated kwargs)",
+      "revId": "a6f9c99df2247bee528a3450022d1a5b6cd5407c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

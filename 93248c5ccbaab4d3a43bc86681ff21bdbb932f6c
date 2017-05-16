@@ -22,6 +22,30 @@
       "revId": "93248c5ccbaab4d3a43bc86681ff21bdbb932f6c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d435c4a6_7bcbd9cf",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-16T16:53:49Z",
+      "side": 0,
+      "message": "I completely dropped the CheckChangeHasTestField, ...HasTestedField, and ...HasQaField methods. (The diffing here is a little weird, I only changed the implementation of the ...HasBugField method, but it is diffing it against ...HasTestField for maximum confusion.) Those methods don\u0027t show up in internal or external codesearch, nor in any repos I have locally via grepping. That\u0027s as sure as I can get.",
+      "parentUuid": "68d58ba8_3083ac0a",
+      "range": {
+        "startLine": 44,
+        "startChar": 2,
+        "endLine": 44,
+        "endChar": 27
+      },
+      "revId": "93248c5ccbaab4d3a43bc86681ff21bdbb932f6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

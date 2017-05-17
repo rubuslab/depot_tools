@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "43bd7180_11e7a3c0",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1100,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-17T01:44:46Z",
+      "side": 1,
+      "message": "I don\u0027t actually understand what hierarchy() is supposed to do; the while loop on 1102 makes it difficult for me to understand what is going on is there supposed to be a +\u003d somewhere instead of an \u003d, maybe?\n\nAt least as far as flatten goes, what I think I want to see is which DEPS file produced each dependency or hook. Ideally, we\u0027d print this once for each *group* of dependencies (i.e., once per each DEPS file), rather than for each dependency. And, if I understand correctly, this routine will be called for each dependency? But, this might also be complicated by the ordering of dependencies and hooks, maybe?\n\nOTOH, maybe Michael and/or other consumers of flattened DEPS files would rather see a comment per dependency?",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6160de04_5a3af7d1",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1645,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-17T01:44:46Z",
+      "side": 1,
+      "message": "I wonder if it makes more sense to split this into two commands, one to flatten and one to check for unpinned revs? I don\u0027t really know the answer here, just a thought.",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "07bedeb1_dc9a012e",
         "filename": "gclient.py",
         "patchSetId": 7
@@ -49,6 +83,109 @@
       "side": 1,
       "message": "Yeah, workarounds with things like /dev/stdout (although not cross-platform) are why I\u0027m not too worried about it. Supporting \"-\" might be nice, although I\u0027m not sure if there is precedent with gclient or depot_tools in general, so it might be confusing to have it here and not in other places. Not requiring it just seemed like the simplest \"least common denominator\" solution.",
       "parentUuid": "089fe91a_71759c36",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a6a09512_f6ae17f5",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1649,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-17T01:44:46Z",
+      "side": 1,
+      "message": "I would either make it optional and default to stdout, or add support for \"-\". I don\u0027t have a strong leaning as to which, but I don\u0027t like \"/dev/stdout\" as the alternative as much.",
+      "parentUuid": "03669886_678184f8",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8127dc4_7cc7f7f2",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1675,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-17T01:44:46Z",
+      "side": 1,
+      "message": "Nit: I think you should add a trailing newline here, else the last line won\u0027t be newline-terminated?",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d1eeebb_ca41a5f1",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1680,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-17T01:44:46Z",
+      "side": 1,
+      "message": "Nit: I probably wouldn\u0027t print anything on success.",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89f19dd1_0a829a33",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1698,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-17T01:44:46Z",
+      "side": 1,
+      "message": "Can you add something that talks about how deps_os and hooks_os are handled?",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "215a1b33_154e935e",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1775,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-17T01:44:46Z",
+      "side": 1,
+      "message": "Do we know if we actually still need to support FromImpl(), or any other non-string URL?\n\nAlso, this function is really doing two things: checking if something is unpinned, and adding the dependency. I\u0027d split it into two functions to make that clearer.",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf8fe922_dcf8c48c",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-17T01:44:46Z",
+      "side": 1,
+      "message": "Why add the comment about where the hooks are run from? Inside the test data seems like the wrong place for it ...",
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -105,6 +242,23 @@
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4815553_2a22ea27",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-17T01:44:46Z",
+      "side": 1,
+      "message": "I don\u0027t understand this notation; is it supposed to be the chain of DEPS files that produced this?",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4eb03c40_ec0f9481",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1100,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-05-17T03:41:30Z",
+      "side": 1,
+      "message": "I hadn\u0027t really envisioned any additional comments in the flattened DEPS, but I\u0027m not opposed to it, and seeing the example in the test case, I think it could be handy (for instance, it probably would have saved me some time just today figuring out which DEPS file the \"src/pdf: None\" buildspec entry came from, which gclient validate was complaining about).",
+      "parentUuid": "43bd7180_11e7a3c0",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6160de04_5a3af7d1",
         "filename": "gclient.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2017-05-17T01:44:46Z",
       "side": 1,
       "message": "I wonder if it makes more sense to split this into two commands, one to flatten and one to check for unpinned revs? I don\u0027t really know the answer here, just a thought.",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a049cbab_c76e68db",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1645,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-05-17T03:41:30Z",
+      "side": 1,
+      "message": "Maybe \"--require-pinned-revisions\" could be a flag on \u0027validate\u0027 instead?",
+      "parentUuid": "6160de04_5a3af7d1",
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -152,6 +188,24 @@
       "writtenOn": "2017-05-17T01:44:46Z",
       "side": 1,
       "message": "Can you add something that talks about how deps_os and hooks_os are handled?",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c897a4d8_070bba27",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1698,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-05-17T03:41:30Z",
+      "side": 1,
+      "message": "Based on the TODO below, I assumed that handling was still forthcoming.",
+      "parentUuid": "89f19dd1_0a829a33",
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

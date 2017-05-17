@@ -34,6 +34,10 @@ def RunSteps(api):
       'presubmit_support_py_path',
       ['ls', api.depot_tools.presubmit_support_py_path])
 
+  api.step(
+      'depot_tools_path',
+      ['ls', api.depot_tools.depot_tools_path])
+
 
 def GenTests(api):
   yield api.test('basic')

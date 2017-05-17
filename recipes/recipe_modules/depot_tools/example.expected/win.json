@@ -49,6 +49,13 @@
     "name": "presubmit_support_py_path"
   },
   {
+    "cmd": [
+      "ls",
+      "RECIPE_PACKAGE_REPO[depot_tools]"
+    ],
+    "name": "depot_tool_path"
+  },
+  {
     "name": "$result",
     "recipe_result": null,
     "status_code": 0

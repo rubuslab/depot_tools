@@ -35,3 +35,8 @@ class DepotToolsApi(recipe_api.RecipeApi):
   @property
   def presubmit_support_py_path(self):
     return self.package_repo_resource('presubmit_support.py')
+
+  @property
+  def depot_tool_path(self):
+    # This exits to give an easy way to get a depot tools checkout.
+    return self.package_repo_resource()

@@ -10,11 +10,11 @@ from recipe_engine import recipe_test_api
 
 class GitilesTestApi(recipe_test_api.RecipeTestApi):
 
-  def _make_gitiles_response_json(self, data):
-    return self.m.json.output(data)
-
   def make_refs_test_data(self, *refs):
-    return self._make_gitiles_response_json({ref: None for ref in refs})
+    return {ref: None for ref in refs}
+
+  def refs(self, step_name, *refs):
+    return self.m.url.json(step_name, self.make_refs_test_data(*refs))
 
   def make_log_test_data(self, s, n=3, cursor=None):
     result = {
@@ -30,9 +30,12 @@ class GitilesTestApi(recipe_test_api.RecipeTestApi):
     }
     if cursor:
       result['next'] = cursor
-    return self._make_gitiles_response_json(result)
+    return result
 
-  def make_commit_test_data(self, commit, msg, new_files=None, email=None):
+  def logs(self, step_name, s, n=3):
+    return self.m.url.json(step_name, self.make_log_test_data(s, n=n))
+
+  def make_commit_gitiles_dict(self, commit, msg, new_files, email=None):
     """Constructs fake Gitiles commit JSON test output.
 
     This data structure conforms to the JSON response that Gitiles provides when
@@ -48,10 +51,6 @@ class GitilesTestApi(recipe_test_api.RecipeTestApi):
           committer's and author's emails.
     Returns: (raw_io.Output) A simulated Gitiles fetch 'json' output.
     """
-    commit = self.make_commit_gitiles_dict(commit, msg, new_files, email)
-    return self._make_gitiles_response_json(commit)
-
-  def make_commit_gitiles_dict(self, commit, msg, new_files, email=None):
     if email is None:
       name = 'Test Author'
       email = 'testauthor@fake.chromium.org'
@@ -86,10 +85,16 @@ class GitilesTestApi(recipe_test_api.RecipeTestApi):
       } for f in new_files)
     return d
 
-  def make_hash(self, *bases):
-    return hashlib.sha1(':'.join(bases)).hexdigest()
+  def commit(self, step_name, commit, msg, new_files, email=None):
+    return self.m.url.json(
+        step_name,
+        self.make_commit_gitiles_dict(commit, msg, new_files, email=email))
 
   def make_encoded_file(self, data):
-    return self.m.json.output({
-        'value': base64.b64encode(data),
-    })
+    return base64.b64encode(data)
+
+  def encoded_file(self, step_name, content):
+    return self.m.url.text(step_name, self.make_encoded_file(content))
+
+  def make_hash(self, *bases):
+    return hashlib.sha1(':'.join(bases)).hexdigest()

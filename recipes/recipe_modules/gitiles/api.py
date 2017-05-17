@@ -10,46 +10,38 @@ from recipe_engine import recipe_api
 class Gitiles(recipe_api.RecipeApi):
   """Module for polling a git repository using the Gitiles web interface."""
 
-  def _fetch(self, url, step_name, fmt, attempts=None, add_json_log=True,
-             log_limit=None, log_start=None, **kwargs):
-    """Fetches information from Gitiles.
+  def _fetch_json(self, url, step_name, default_test_data, add_log=True):
+    """Fetches JSON data from Gitiles.
 
     Arguments:
-      log_limit: for log URLs, limit number of results. None implies 1 page,
-        as returned by Gitiles.
-      log_start: for log URLs, the start cursor for paging.
-      add_json_log: if True, will spill out json into log.
+      add_log: if True, will spill out json into log.
     """
-    assert fmt in ('json', 'text')
-    args = [
-        '--json-file', self.m.json.output(add_json_log=add_json_log),
-        '--url', url,
-        '--format', fmt,
-    ]
-    if attempts:
-      args.extend(['--attempts', attempts])
-    if log_limit is not None:
-      args.extend(['--log-limit', log_limit])
-    if log_start is not None:
-      args.extend(['--log-start', log_start])
-    a = self.m.python(
-        step_name, self.resource('gerrit_client.py'), args, **kwargs)
-    return a
+    return self.m.url.get_json(
+        url,
+        step_name=step_name,
+        log=add_log,
+        strip_prefix=self.m.url.GERRIT_JSON_PREFIX,
+        default_test_data=default_test_data,
+    ).output
 
-  def refs(self, url, step_name='refs', attempts=None):
-    """Returns a list of refs in the remote repository."""
-    step_result = self._fetch(
+  def refs(self, url, step_name=None, default_test_data=None):
+    """Returns a list of refs in the remote repository.
+
+    Arguments:
+      default_test_data (dict): Default step test data, if none is supplied.
+          Should be formatted like test API's "make_refs_test_data".
+    """
+    output = self._fetch_json(
         self.m.url.join(url, '+refs'),
-        step_name,
-        fmt='json',
-        attempts=attempts)
+        step_name or 'refs',
+        default_test_data)
 
-    refs = sorted(str(ref) for ref in step_result.json.output)
-    step_result.presentation.logs['refs'] = refs
+    refs = sorted(str(ref) for ref in output)
+    self.m.step.active_result.presentation.logs['refs'] = refs
     return refs
 
-  def log(self, url, ref, limit=0, cursor=None,
-          step_name=None, attempts=None, **kwargs):
+  def log(self, url, ref, limit=None, cursor=None, step_name=None,
+          default_test_data=None):
     """Returns the most recent commits under the given ref with properties.
 
     Args:
@@ -62,56 +54,71 @@ class Gitiles(recipe_api.RecipeApi):
         commits, but all fetched commits will be returned.
       cursor (str or None): The paging cursor used to fetch the next page.
       step_name (str): Custom name for this step (optional).
+      default_test_data (dict): Default step test data, if none is supplied.
+          Should be formatted like test API's make_log_test_data".
 
-    Returns:
-      A tuple of (commits, cursor).
-      Commits are a list of commits (as Gitiles dict structure) in reverse
-      chronological order. The number of commits may be higher than limit
-      argument.
-      Cursor can be used for subsequent calls to log for paging. If None,
-      signals that there are no more commits to fetch.
+    Returns: (commits, cursor).
+      commits (list): A list of commits (as Gitiles dict structure) in reverse
+          chronological order. The number of commits may be higher than limit
+          argument.
+      cursor (str or None): a string that can be used for subsequent calls to
+          log for paging. If None, signals that there are no more commits to
+          fetch.
     """
+    limit = limit or 0
+    step_name = step_name or 'gitiles log: %s' % (ref,)
+
     assert limit >= 0
-    step_name = step_name or 'gitiles log: %s%s' % (
-        ref, ' from %s' % cursor if cursor else '')
+    commits = []
+    with self.m.step.nest(step_name) as nested_step:
+      # Loop until we have exhausted our limit.
+      while True:
+        url = self.m.url.join(url, '+log/%s' % ref)
+        if cursor:
+          url += '?s=%s' % (cursor,)
+          iter_name = '%s...' % (cursor,)
+        else:
+          iter_name = 'initial'
 
-    step_result = self._fetch(
-        self.m.url.join(url, '+log/%s' % ref),
-        step_name,
-        log_limit=limit,
-        log_start=cursor,
-        attempts=attempts,
-        fmt='json',
-        add_json_log=True,
-        **kwargs)
+        output = self._fetch_json(
+            url,
+            iter_name,
+            default_test_data)
 
-    # The output is formatted as a JSON dict with a "log" key. The "log" key
-    # is a list of commit dicts, which contain information about the commit.
-    commits = step_result.json.output['log']
-    cursor = step_result.json.output.get('next')
+        # The first commit in `output` is not necessarily the parent of the
+        # last commit in result so far!  This is because log command can be done
+        # on one file object, for example:
+        # https://gerrit.googlesource.com/gitiles/+log/1c21279f337da8130/COPYING
+        #
+        # Even when getting log for the whole repository, there could be merge
+        # commits.
+        commits.extend(output['log'])
+        cursor = output.get('next')
 
-    step_result.presentation.step_text = (
+        if not cursor or (limit-len(commits)) <= 0:
+          break
+
+    nested_step.presentation.step_text = (
         '<br />%d commits fetched' % len(commits))
     return commits, cursor
 
-  def commit_log(self, url, commit, step_name=None, attempts=None):
+  def commit_log(self, url, commit, step_name=None, default_test_data=None):
     """Returns: (dict) the Gitiles commit log structure for a given commit.
 
     Args:
       url (str): The base repository URL.
       commit (str): The commit hash.
       step_name (str): If not None, override the step name.
-      attempts (int): Number of times to try the request before failing.
+      default_test_data (dict): Default step test data, if none is supplied.
+          Should be formatted like test API's "make_commit_gitiles_dict".
     """
-    step_name = step_name or 'commit log: %s' % commit
-
-    commit_url = '%s/+/%s' % (url, commit)
-    step_result = self._fetch(commit_url, step_name, attempts=attempts,
-                              fmt='json')
-    return step_result.json.output
+    return self._fetch_json(
+        '%s/+/%s' % (url, commit),
+        step_name or 'commit log: %s' % commit,
+        default_test_data)
 
   def download_file(self, repository_url, file_path, branch='master',
-                    step_name=None, attempts=None, **kwargs):
+                    step_name=None, default_test_data=None):
     """Downloads raw file content from a Gitiles repository.
 
     Args:
@@ -119,17 +126,15 @@ class Gitiles(recipe_api.RecipeApi):
       branch (str): Branch of the repository.
       file_path (str): Relative path to the file from the repository root.
       step_name (str): Custom name for this step (optional).
-      attempts (int): Number of times to try the request before failing.
+      default_test_data (str or None): Default step test data, if none is
+          supplied. Should be formatted like test API's "make_encoded_file".
 
     Returns:
       Raw file content.
     """
     fetch_url = self.m.url.join(repository_url, '+/%s/%s' % (branch, file_path))
-    step_result = self._fetch(
+    output = self.m.url.get_text(
         fetch_url,
         step_name or 'fetch %s:%s' % (branch, file_path,),
-        attempts=attempts,
-        fmt='text',
-        add_json_log=False,
-        **kwargs)
-    return base64.b64decode(step_result.json.output['value'])
+        default_test_data=default_test_data).output
+    return base64.b64decode(output)

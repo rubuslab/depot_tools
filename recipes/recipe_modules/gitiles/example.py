@@ -11,12 +11,11 @@ DEPS = [
 def RunSteps(api):
   url = 'https://chromium.googlesource.com/chromium/src'
   for ref in api.gitiles.refs(url):
-    _, cursor = api.gitiles.log(url, ref)
-    if cursor:
-      api.gitiles.log(url, ref, limit=10, cursor=cursor)
+    logs, _ = api.gitiles.log(url, ref)
+    assert len(logs) == 3
   api.gitiles.commit_log(url, api.properties['commit_log_hash'])
 
-  data = api.gitiles.download_file(url, 'OWNERS', attempts=5)
+  data = api.gitiles.download_file(url, 'OWNERS')
   assert data == 'foobar'
 
 
@@ -26,36 +25,34 @@ def GenTests(api):
       + api.properties(
           commit_log_hash=api.gitiles.make_hash('commit'),
       )
-      + api.step_data('refs', api.gitiles.make_refs_test_data(
+      + api.gitiles.refs('refs',
           'HEAD',
           'refs/heads/A',
           'refs/tags/B',
-      ))
-      + api.step_data(
-          'gitiles log: HEAD',
-          api.gitiles.make_log_test_data('HEAD', cursor='deadbeaf'),
       )
-      + api.step_data(
-          'gitiles log: HEAD from deadbeaf',
-          api.gitiles.make_log_test_data('HEAD'),
+      + api.gitiles.logs(
+          'gitiles log: HEAD.initial',
+          'HEAD',
       )
-      + api.step_data(
-          'gitiles log: refs/heads/A',
-          api.gitiles.make_log_test_data('A'),
+      + api.gitiles.logs(
+          'gitiles log: refs/heads/A.initial',
+          'HEAD',
       )
-      + api.step_data(
-          'gitiles log: refs/tags/B',
-          api.gitiles.make_log_test_data('B')
+      + api.gitiles.logs(
+          'gitiles log: refs/tags/B.initial',
+          'HEAD',
       )
-      + api.step_data(
+      + api.gitiles.commit(
           'commit log: %s' % (api.gitiles.make_hash('commit')),
-          api.gitiles.make_commit_test_data('commit', 'C', new_files=[
+          'commit',
+          'C',
+          [
               'foo/bar',
               'baz/qux',
-          ])
+          ],
       )
-      + api.step_data(
+      + api.gitiles.encoded_file(
           'fetch master:OWNERS',
-          api.gitiles.make_encoded_file('foobar')
+          'foobar',
       )
   )

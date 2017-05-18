@@ -427,6 +427,24 @@
     },
     {
       "key": {
+        "uuid": "f56e1749_52270b90",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1775,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-18T20:29:31Z",
+      "side": 1,
+      "message": "I would be fine with removing FromImpl, yes, though it\u0027s not urgent.",
+      "parentUuid": "4b8974ae_c2b9799e",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bf8fe922_dcf8c48c",
         "filename": "testing_support/fake_repos.py",
         "patchSetId": 7

@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0200fe7_69ad110e",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-18T02:07:54Z",
+      "side": 1,
+      "message": "is this right? shouldn\u0027t this be \u0027lower\u0027?",
+      "range": {
+        "startLine": 62,
+        "startChar": 60,
+        "endLine": 62,
+        "endChar": 66
+      },
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "860ad508_5cf069c5",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-18T02:07:54Z",
+      "side": 1,
+      "message": "why not just let the step api number these automatically? \u0027initial\u0027 isn\u0027t going to make much sense when looking at it on the builder page, I don\u0027t think (especially since most use cases probably will ONLY have `initial`)",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62b16b8e_6d471947",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-18T02:07:54Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be indented?",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d0e6d8d_98a6a4b3",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-18T02:07:54Z",
+      "side": 1,
+      "message": "maybe: \"Default step test data, if the test doesn\u0027t supply any. ...\"",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10789408_eeb8340a",
+        "filename": "recipes/recipe_modules/gitiles/example.expected/basic.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-18T02:07:54Z",
+      "side": 1,
+      "message": "this is going to be weird... is this the url module naming it? probably should change it to only name the outputs if there\u0027s more than one on the step (I think there\u0027s only one, right?)",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1f609d5_28b49397",
+        "filename": "recipes/recipe_modules/gitiles/test_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-18T02:07:54Z",
+      "side": 1,
+      "message": "docstrings will probably help",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

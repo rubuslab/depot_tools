@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "f45478e4_6a43ce0f",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1100,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T16:23:59Z",
+      "side": 1,
+      "message": "I think it\u0027s most straightforward to keep one comment per dependency.\n\nIn the 1102 loop, note \"out\" is referenced on the right-hand side of \"%\". It looks correct to me (and I\u0027m not changing existing code there).",
+      "parentUuid": "4eb03c40_ec0f9481",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6160de04_5a3af7d1",
         "filename": "gclient.py",
         "patchSetId": 7
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Maybe \"--require-pinned-revisions\" could be a flag on \u0027validate\u0027 instead?",
       "parentUuid": "6160de04_5a3af7d1",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "abc8ec49_a375e5cb",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1645,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T16:23:59Z",
+      "side": 1,
+      "message": "Dirk, this is based on your earlier https://codereview.chromium.org/2474543002/ and mirrors the approach used in that CL.\n\nI don\u0027t have a strong opinion either way.",
+      "parentUuid": "a049cbab_c76e68db",
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -143,6 +179,24 @@
     },
     {
       "key": {
+        "uuid": "1e13b251_7c6df8c6",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1649,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T16:23:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6a09512_f6ae17f5",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e8127dc4_7cc7f7f2",
         "filename": "gclient.py",
         "patchSetId": 7
@@ -160,6 +214,24 @@
     },
     {
       "key": {
+        "uuid": "d7584451_268f80fe",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1675,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T16:23:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8127dc4_7cc7f7f2",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7d1eeebb_ca41a5f1",
         "filename": "gclient.py",
         "patchSetId": 7
@@ -174,6 +246,24 @@
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bcb797a_8793ec68",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1680,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T16:23:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d1eeebb_ca41a5f1",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -212,6 +302,24 @@
     },
     {
       "key": {
+        "uuid": "c378f7ab_c8da6dde",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1698,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T16:23:59Z",
+      "side": 1,
+      "message": "Yup.",
+      "parentUuid": "c897a4d8_070bba27",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "215a1b33_154e935e",
         "filename": "gclient.py",
         "patchSetId": 7
@@ -229,6 +337,24 @@
     },
     {
       "key": {
+        "uuid": "9cd4530b_15dfc188",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1775,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T16:23:59Z",
+      "side": 1,
+      "message": "\u003e Do we know if we actually still need to support FromImpl(), or any other non-string URL?\n\nThis came up in some of my tests.\n\n\u003e Also, this function is really doing two things: checking if something is unpinned, and adding the dependency. I\u0027d split it into two functions to make that clearer.\n\nDo you have a more specific suggestion? It could be considered part of this function, since the intention is to perform this check any time we add a dep. Splitting off these few lines doesn\u0027t seem that useful, although could be done if you insist.",
+      "parentUuid": "215a1b33_154e935e",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bf8fe922_dcf8c48c",
         "filename": "testing_support/fake_repos.py",
         "patchSetId": 7
@@ -240,6 +366,24 @@
       "writtenOn": "2017-05-17T01:44:46Z",
       "side": 1,
       "message": "Why add the comment about where the hooks are run from? Inside the test data seems like the wrong place for it ...",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9a9e55d_545fe72b",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T16:23:59Z",
+      "side": 1,
+      "message": "Ah, this was just copy-pasted from repo_1 above.",
+      "parentUuid": "bf8fe922_dcf8c48c",
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -310,6 +454,24 @@
       "writtenOn": "2017-05-17T01:44:46Z",
       "side": 1,
       "message": "I don\u0027t understand this notation; is it supposed to be the chain of DEPS files that produced this?",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "905d454a_623a1ce0",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T16:23:59Z",
+      "side": 1,
+      "message": "Yes - this is what hierarchy() returns.",
+      "parentUuid": "b4815553_2a22ea27",
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

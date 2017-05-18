@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "af462cea_9bcb4614",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1100,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-18T17:47:18Z",
+      "side": 1,
+      "message": "Ah, right, I wasn\u0027t following the code correctly.",
+      "parentUuid": "f45478e4_6a43ce0f",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6160de04_5a3af7d1",
         "filename": "gclient.py",
         "patchSetId": 7
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "Dirk, this is based on your earlier https://codereview.chromium.org/2474543002/ and mirrors the approach used in that CL.\n\nI don\u0027t have a strong opinion either way.",
       "parentUuid": "a049cbab_c76e68db",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "874a7777_39965ef0",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1645,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-18T17:47:18Z",
+      "side": 1,
+      "message": "I don\u0027t have a strong opinion either. I\u0027m happy to leave as-is and we can change later if need be.",
+      "parentUuid": "abc8ec49_a375e5cb",
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -355,6 +391,24 @@
     },
     {
       "key": {
+        "uuid": "85946810_a08c8170",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1775,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-18T17:47:18Z",
+      "side": 1,
+      "message": "Did FromImpl come up in (current) real-world usage? I thought it only ever worked correctly for SVN, which we don\u0027t support any more.\n\nI won\u0027t insist on splitting the function up, but I think the code would be clearer if you split handling the unpinned deps out from the pinned deps.",
+      "parentUuid": "9cd4530b_15dfc188",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bf8fe922_dcf8c48c",
         "filename": "testing_support/fake_repos.py",
         "patchSetId": 7
@@ -472,6 +526,24 @@
       "side": 1,
       "message": "Yes - this is what hierarchy() returns.",
       "parentUuid": "b4815553_2a22ea27",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "293ca311_8f72009a",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-18T17:47:18Z",
+      "side": 1,
+      "message": "Okay. I still find the notation non-obvious, but I\u0027m not immediately sure what would be clearer.",
+      "parentUuid": "905d454a_623a1ce0",
       "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

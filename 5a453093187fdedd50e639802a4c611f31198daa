@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba4ca411_464732d9",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-18T17:47:18Z",
+      "side": 1,
+      "message": "This should maybe write to stderr or something, else you\u0027ll corrupt the intended output here as well if output_deps is None.",
+      "revId": "5a453093187fdedd50e639802a4c611f31198daa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "802b7bc8_61416644",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1674,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-18T17:47:18Z",
+      "side": 1,
+      "message": "interesting, I usually do \u0027\\n\u0027.join(arr) + \u0027\\n\u0027. It had never occurred to me to do what you\u0027re doing.\n\nYou could also just do f.write(flattened_deps + \u0027\\n\u0027) on line 1679; the print() call on 1681 will also add a \u0027\\n\u0027, so you\u0027ll end up with a blank line at the end on stdout.",
+      "revId": "5a453093187fdedd50e639802a4c611f31198daa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c82a52cf_77bd782b",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1748,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-18T17:47:18Z",
+      "side": 1,
+      "message": "and now hooks_os",
+      "revId": "5a453093187fdedd50e639802a4c611f31198daa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

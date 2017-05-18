@@ -409,6 +409,24 @@
     },
     {
       "key": {
+        "uuid": "4b8974ae_c2b9799e",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1775,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T20:26:02Z",
+      "side": 1,
+      "message": "\u003e Did FromImpl come up in (current) real-world usage?\n\nNo. A previous version of the test was hitting it. The current one doesn\u0027t, so I just simplified the logic.\n\n\u003e I thought it only ever worked correctly for SVN, which we don\u0027t support any more.\n\nShould I look into removing FromImpl then?\n\n\u003e I won\u0027t insist on splitting the function up, but I think the code would be clearer if you split handling the unpinned deps out from the pinned deps.\n\nNow that the code is simplified even further, the version as written in the CL seems the clearest to me.",
+      "parentUuid": "85946810_a08c8170",
+      "revId": "fb3fc117794833fb491d0d420e3e5117e8ea611c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bf8fe922_dcf8c48c",
         "filename": "testing_support/fake_repos.py",
         "patchSetId": 7

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "57383dd0_d5d9ea7f",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T20:26:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba4ca411_464732d9",
+      "revId": "5a453093187fdedd50e639802a4c611f31198daa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "802b7bc8_61416644",
         "filename": "gclient.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "955b332e_317dab25",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1674,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T20:26:02Z",
+      "side": 1,
+      "message": "It\u0027s not obvious to me if you consider current version of code acceptable, or are you requesting it to be changed.\n\nPlease clarify - either way, we probably shouldn\u0027t be spending ~2 round-trips on intricacies of handling newlines.",
+      "parentUuid": "802b7bc8_61416644",
+      "revId": "5a453093187fdedd50e639802a4c611f31198daa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c82a52cf_77bd782b",
         "filename": "gclient.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2017-05-18T17:47:18Z",
       "side": 1,
       "message": "and now hooks_os",
+      "revId": "5a453093187fdedd50e639802a4c611f31198daa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "36b152b4_bff5f60d",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1748,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-18T20:26:02Z",
+      "side": 1,
+      "message": "Right, added a TODO some lines above.",
+      "parentUuid": "c82a52cf_77bd782b",
       "revId": "5a453093187fdedd50e639802a4c611f31198daa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

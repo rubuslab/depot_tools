@@ -44,7 +44,7 @@ esac
 URL="$CIPD_CLIENT_SRV/client?platform=${PLAT}-${ARCH}&version=$CIPD_CLIENT_VER"
 CLIENT="$MYPATH/.cipd_client"
 
-USER_AGENT="depot_tools/$(git -C $MYPATH rev-parse HEAD 2>/dev/null || echo "???")"
+USER_AGENT="depot_tools/$($MYPATH/.cipd_bin/bin/git -C $MYPATH rev-parse HEAD 2>/dev/null || echo "???")"
 
 if [ ! -e "$CLIENT" ]; then
   echo "Bootstrapping cipd client for ${PLAT}-${ARCH}..."

@@ -8,3 +8,4 @@ infra/tools/luci/vpython/${platform}  git_revision:00f5394a90dfa98e53e191d5a6b54
 
 # git
 infra/git/${platform=windows-amd64,windows-386} version:2.12.2.2.chromium2
+infra/git/${os=linux,mac}-${arch=amd64,386} version:2.12.2.chromium2

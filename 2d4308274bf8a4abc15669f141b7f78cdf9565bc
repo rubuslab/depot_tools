@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e164a753_b233709a",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-20T00:50:24Z",
+      "side": 1,
+      "message": "Note you can also do:\n\n  infra/git/windows-${arch\u003damd64,386}\n\nI\u0027m not sure if that\u0027s a good change or not though. I suspect that the windows versions will very infrequently match the linux/mac versions.",
+      "revId": "2d4308274bf8a4abc15669f141b7f78cdf9565bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92b88191_e7bf73fa",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-20T00:50:24Z",
+      "side": 1,
+      "message": "And here you can do:\n  infra/git/${os\u003dmac,linux}-${arch\u003damd64,386}\n\nWhich will match all four combinations.",
+      "revId": "2d4308274bf8a4abc15669f141b7f78cdf9565bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "eeecb6fc_d4ded73c",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-20T01:20:22Z",
+      "side": 1,
+      "message": "The windows version will never match the linux/mac version, since the git-on-windows project appends an additional version number of their on. That\u0027s why this is 2.12.2.2.chromium2, while the unixy ones are just 2.12.2.chromium2.\n\nAnyway, if we do change the way this platform spec is formatted, it would be the CL that you own :)",
+      "parentUuid": "e164a753_b233709a",
+      "revId": "2d4308274bf8a4abc15669f141b7f78cdf9565bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "92b88191_e7bf73fa",
         "filename": "cipd_manifest.txt",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "revId": "2d4308274bf8a4abc15669f141b7f78cdf9565bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92eb1139_a617812a",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-20T01:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92b88191_e7bf73fa",
+      "revId": "2d4308274bf8a4abc15669f141b7f78cdf9565bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

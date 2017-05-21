@@ -10,19 +10,39 @@ from recipe_engine import recipe_test_api
 
 class GitilesTestApi(recipe_test_api.RecipeTestApi):
 
-  def _make_gitiles_response_json(self, data):
-    return self.m.json.output(data)
+  def make_refs_dict(self, *refs):
+    """Returns (dict): test object for the `refs` API call.
 
-  def make_refs_test_data(self, *refs):
-    return self._make_gitiles_response_json({ref: None for ref in refs})
+    Use `refs` to generate actual test data.
 
-  def make_log_test_data(self, s, n=3, cursor=None):
+    Args:
+      refs (str): Names of refs to return.
+    """
+    return {ref: None for ref in refs}
+
+  def refs(self, step_name, *refs):
+    """Returns: step test data for a `refs` API call.
+
+    Args: See `make_refs_dict`
+    """
+    return self.m.url.json(step_name, self.make_refs_dict(*refs))
+
+  def make_log_dict(self, s='log_test', n=3, cursor=None):
+    """Returns (dict): test object for the `log` API call.
+
+    Use `logs` to generate actual test data.
+
+    Args:
+      s (str): Base string to use in log messages.
+      n (int): Number of log entries to use.
+      cursor (str or None): If not None, return this as the cursor value.
+    """
     result = {
         'log': [
-            self.make_commit_gitiles_dict(
+            self.make_commit_dict(
                 commit='fake %s hash %d' % (s, i),
                 msg='fake %s msg %d' % (s, i),
-                new_files=['%s.py' % (chr(i + ord('a')))],
+                new_files=['file_%d.py' % (i,)],
                 email='fake_%s@fake_%i.email.com' % (s, i),
             )
             for i in xrange(n)
@@ -30,10 +50,19 @@ class GitilesTestApi(recipe_test_api.RecipeTestApi):
     }
     if cursor:
       result['next'] = cursor
-    return self._make_gitiles_response_json(result)
+    return result
 
-  def make_commit_test_data(self, commit, msg, new_files=None, email=None):
+  def logs(self, step_name, s, n=3):
+    """Returns: step test data for a `log` API call.
+
+    Args: See `make_log_dict`
+    """
+    return self.m.url.json(step_name, self.make_log_dict(s, n=n))
+
+  def make_commit_dict(self, commit, msg, new_files, email=None):
     """Constructs fake Gitiles commit JSON test output.
+
+    Use `commit` to generate actual test data.
 
     This data structure conforms to the JSON response that Gitiles provides when
     a commit is queried. For example:
@@ -46,12 +75,9 @@ class GitilesTestApi(recipe_test_api.RecipeTestApi):
           added in this commit.
       email: if not None, a proper email with '@' in it to be used for
           committer's and author's emails.
-    Returns: (raw_io.Output) A simulated Gitiles fetch 'json' output.
-    """
-    commit = self.make_commit_gitiles_dict(commit, msg, new_files, email)
-    return self._make_gitiles_response_json(commit)
 
-  def make_commit_gitiles_dict(self, commit, msg, new_files, email=None):
+    Returns: (dict) A simulated Gitiles fetch 'json' output.
+    """
     if email is None:
       name = 'Test Author'
       email = 'testauthor@fake.chromium.org'
@@ -86,10 +112,39 @@ class GitilesTestApi(recipe_test_api.RecipeTestApi):
       } for f in new_files)
     return d
 
-  def make_hash(self, *bases):
-    return hashlib.sha1(':'.join(bases)).hexdigest()
+  def commit(self, step_name, commit, msg, new_files, email=None):
+    """Returns: step test data for a `commit_log` API call.
+
+    Args: See `make_commit_dict`
+    """
+    return self.m.url.json(
+        step_name,
+        self.make_commit_dict(commit, msg, new_files, email=email))
 
   def make_encoded_file(self, data):
-    return self.m.json.output({
-        'value': base64.b64encode(data),
-    })
+    """Returns (str): encoded test data for a `download_file` API call.
+
+    Use `encoded_file` to generate actual test data.
+
+    Args:
+      data (str): Base data to encode.
+    """
+    return base64.b64encode(data)
+
+  def encoded_file(self, step_name, content):
+    """Returns: step test data for a `download_file` API call.
+
+    Args: See `make_refs_test_data`
+    """
+    return self.m.url.text(step_name, self.make_encoded_file(content))
+
+  def make_hash(self, *bases):
+    """Returns (str): a hash generated from the values in "bases".
+
+    This is a utility function to generate a hash by combining the values of
+    "bases".
+
+    Args:
+      bases (str): Base values to fold together into a hash.
+    """
+    return hashlib.sha1(':'.join(bases)).hexdigest()

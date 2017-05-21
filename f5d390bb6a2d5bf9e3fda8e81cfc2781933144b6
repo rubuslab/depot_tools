@@ -119,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "eec89e96_17d237ac",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-21T18:38:10Z",
+      "side": 1,
+      "message": "So it probably works because the presentation object stays open until the next step runs (which is already weird). I\u0027d indent it just \u0027cuz.",
+      "parentUuid": "caf90fe9_64d75d14",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5d0e6d8d_98a6a4b3",
         "filename": "recipes/recipe_modules/gitiles/api.py",
         "patchSetId": 1
@@ -183,6 +201,24 @@
       "side": 1,
       "message": "The \"url\" module is naming it. Is this bad?",
       "parentUuid": "10789408_eeb8340a",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87e3bfd4_bc4d449e",
+        "filename": "recipes/recipe_modules/gitiles/example.expected/basic.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-21T18:38:10Z",
+      "side": 1,
+      "message": "It\u0027s not /bad/ but it will look strange on buildbot (the link will be \u0027json.output[output]\u0027)",
+      "parentUuid": "4c234ef2_ab6a3a32",
       "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

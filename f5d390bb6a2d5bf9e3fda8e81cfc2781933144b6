@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c09ea19d_ceb59614",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-21T18:30:50Z",
+      "side": 1,
+      "message": "Nope, higher b/c this logic lets Gitiles upper-bound the number of commits, so if I ask for 20 and it hands me 100, this function will return 100. Not a really great API, but this isn\u0027t something I\u0027m adding. We probably should change it to not be as weird in future versions (e.g., log HEAD~%d?).",
+      "parentUuid": "d0200fe7_69ad110e",
+      "range": {
+        "startLine": 62,
+        "startChar": 60,
+        "endLine": 62,
+        "endChar": 66
+      },
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "860ad508_5cf069c5",
         "filename": "recipes/recipe_modules/gitiles/api.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2017-05-18T02:07:54Z",
       "side": 1,
       "message": "why not just let the step api number these automatically? \u0027initial\u0027 isn\u0027t going to make much sense when looking at it on the builder page, I don\u0027t think (especially since most use cases probably will ONLY have `initial`)",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aea6006a_66dbd240",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-21T18:30:50Z",
+      "side": 1,
+      "message": "Maybe I\u0027ll just have it start with the ref for the first round.\n\nWRT auto-naming, I like adding the previous commit into the log message. I think that may be useful.",
+      "parentUuid": "860ad508_5cf069c5",
       "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "caf90fe9_64d75d14",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-21T18:30:50Z",
+      "side": 1,
+      "message": "Hmm ... don\u0027t really know TBH. The variable outlives the \"with\" scope - the difference is whether \"with\" exiting affects the step\u0027s ability to be augmented. I\u0027ll move it inside though b/c it does make more visual sense.",
+      "parentUuid": "62b16b8e_6d471947",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5d0e6d8d_98a6a4b3",
         "filename": "recipes/recipe_modules/gitiles/api.py",
         "patchSetId": 1
@@ -73,6 +133,24 @@
       "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01e07264_9242ff4c",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-21T18:30:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d0e6d8d_98a6a4b3",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "4c234ef2_ab6a3a32",
+        "filename": "recipes/recipe_modules/gitiles/example.expected/basic.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-21T18:30:50Z",
+      "side": 1,
+      "message": "The \"url\" module is naming it. Is this bad?",
+      "parentUuid": "10789408_eeb8340a",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c1f609d5_28b49397",
         "filename": "recipes/recipe_modules/gitiles/test_api.py",
         "patchSetId": 1
@@ -107,6 +203,24 @@
       "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3da0481_a078081a",
+        "filename": "recipes/recipe_modules/gitiles/test_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-21T18:30:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c1f609d5_28b49397",
+      "revId": "f5d390bb6a2d5bf9e3fda8e81cfc2781933144b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

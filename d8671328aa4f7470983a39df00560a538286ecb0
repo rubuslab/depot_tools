@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "302f9f34_ae7f93d6",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-22T15:52:28Z",
+      "side": 1,
+      "message": "Nit: can you remove the comment about File() as well?",
+      "revId": "d8671328aa4f7470983a39df00560a538286ecb0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "112abd54_faabc57c",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-22T15:52:28Z",
+      "side": 1,
+      "message": "and here too?",
+      "revId": "d8671328aa4f7470983a39df00560a538286ecb0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

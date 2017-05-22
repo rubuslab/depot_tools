@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "445a2340_cad97ee8",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2059,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-05-22T17:57:45Z",
+      "side": 1,
+      "message": "Nit: I might call this --disable-syntax-validation and get rid of the --validate-syntax option (possibly the latter needs to be a separate CL); we don\u0027t really need both options.",
+      "revId": "2fadca92f7fd6cbd6059166b73dec3987abf87a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

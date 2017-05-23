@@ -2056,6 +2056,9 @@ def CMDsync(parser, args):
                     help='DEPRECATED: This is a no-op.')
   parser.add_option('--validate-syntax', action='store_true',
                     help='Validate the .gclient and DEPS syntax')
+  parser.add_option('--disable-syntax-validation', action='store_false',
+                    dest='validate_syntax',
+                    help='Disable validation of .gclient and DEPS syntax.')
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
 

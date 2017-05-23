@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "68401546_66eb494b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-23T13:04:03Z",
+      "side": 1,
+      "message": "\u003e qq: is it possible to land validation which would emit loud warning but otherwise not abort the operation s.t. we know what will be broken without actually breaking it?\n\nhttps://chromium-review.googlesource.com/c/498911/ was the closest to that.\n\nI\u0027m not aware of a good way to detect the issues at scale, other than instrumenting gclient with event_mon, which is not a small project and has its own challenges.\n\nSuggestions welcome of course (I\u0027m considering a follow-up c-i-t thread).",
+      "parentUuid": "0cdc4fb9_e17d488e",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 79
+      },
+      "revId": "1fd48c58f1b41546fa88957f86a5f5e968ddcac2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1a16cb3d_3cc1f324",
         "filename": "gclient.py",
         "patchSetId": 1

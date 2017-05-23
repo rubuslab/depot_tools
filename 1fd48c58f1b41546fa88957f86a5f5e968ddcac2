@@ -22,6 +22,29 @@
       "revId": "1fd48c58f1b41546fa88957f86a5f5e968ddcac2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a16cb3d_3cc1f324",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2061,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-23T13:02:42Z",
+      "side": 1,
+      "message": "this need a \nTODO(phajdan): make use of this option or remove it per http://crbug.com/570091",
+      "range": {
+        "startLine": 2059,
+        "startChar": 2,
+        "endLine": 2061,
+        "endChar": 75
+      },
+      "revId": "1fd48c58f1b41546fa88957f86a5f5e968ddcac2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

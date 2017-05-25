@@ -128,6 +128,30 @@
       "revId": "ada95e992f44bf5504cabf5a2d7d6700ac8ff120",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2f379ad_38d3a623",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-05-25T23:30:30Z",
+      "side": 1,
+      "message": "Hmm, I wonder why. Well, OK.",
+      "parentUuid": "e89198ec_871355a8",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 12
+      },
+      "revId": "ada95e992f44bf5504cabf5a2d7d6700ac8ff120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

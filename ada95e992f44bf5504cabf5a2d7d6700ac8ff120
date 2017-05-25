@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3e395d11_296c2f01",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-05-25T23:25:03Z",
+      "side": 1,
+      "message": "Done. I was copying the previous pattern which had just one blank line before the first function, and that pattern is somewhat common, but not justified by the style guide. Fixed.",
+      "parentUuid": "d2f37eab_d049b846",
+      "revId": "ada95e992f44bf5504cabf5a2d7d6700ac8ff120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c667d605_fee14cd8",
         "filename": "win_toolchain/package_from_installed.py",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "8cbf301c_04d63a12",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-05-25T23:25:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c667d605_fee14cd8",
+      "range": {
+        "startLine": 52,
+        "startChar": 16,
+        "endLine": 52,
+        "endChar": 20
+      },
+      "revId": "ada95e992f44bf5504cabf5a2d7d6700ac8ff120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "02884942_18890281",
         "filename": "win_toolchain/package_from_installed.py",
         "patchSetId": 1
@@ -62,6 +104,30 @@
       "revId": "ada95e992f44bf5504cabf5a2d7d6700ac8ff120",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e89198ec_871355a8",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-05-25T23:25:03Z",
+      "side": 1,
+      "message": "The script breaks if os.path.normpath() is removed.",
+      "parentUuid": "02884942_18890281",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 12
+      },
+      "revId": "ada95e992f44bf5504cabf5a2d7d6700ac8ff120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

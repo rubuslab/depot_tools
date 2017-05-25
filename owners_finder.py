@@ -26,7 +26,8 @@ class OwnersFinder(object):
                fopen, os_path,
                email_postfix='@chromium.org',
                disable_color=False,
-               override_files=None):
+               override_files=None,
+               verbose=True):
     self.email_postfix = email_postfix
 
     if os.name == 'nt' or disable_color:
@@ -40,8 +41,8 @@ class OwnersFinder(object):
     self.db.load_data_needed_for(files)
 
     self.os_path = os_path
-
     self.author = author
+    self.verbose = verbose
 
     filtered_files = files
 
@@ -347,7 +348,8 @@ class OwnersFinder(object):
     return '  ' * self.indentation
 
   def writeln(self, text=''):
-    print self.print_indent() + text
+    if self.verbose:
+      print self.print_indent() + text
 
   def hr(self):
     self.writeln('=====================')

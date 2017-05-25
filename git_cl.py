@@ -59,6 +59,7 @@ import owners_finder
 import presubmit_support
 import rietveld
 import scm
+import split_cl
 import subcommand
 import subprocess2
 import watchlists
@@ -5257,6 +5258,18 @@ def CMDpatch(parser, args):
 
   return cl.CMDPatchWithParsedIssue(target_issue_arg, options.reject,
                                     options.nocommit, options.directory)
+
+
+@subcommand.usage('--description=<description file>')
+def CMDsplit(parser, args):
+  """Splits a branch into smaller branches and uploads CLs.
+
+  Creates a branch and uploads a CL for each group of files modified in the
+  current branch that share a common OWNERS file. In the CL description and
+  commment, the string '$directory', is replaced with the directory containing
+  the shared OWNERS file.
+  """
+  return split_cl.SplitCl(parser, args)
 
 
 def GetTreeStatus(url=None):

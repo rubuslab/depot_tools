@@ -45,6 +45,54 @@
       "revId": "e5f48374845ce03aa70ed9c2929b04bdf78c6a91",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0e35a87_32e9316d",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1174230
+      },
+      "writtenOn": "2017-05-25T15:55:07Z",
+      "side": 1,
+      "message": "Hm, no good reason. Removed.",
+      "parentUuid": "94121f72_ae31b376",
+      "range": {
+        "startLine": 264,
+        "startChar": 17,
+        "endLine": 264,
+        "endChar": 42
+      },
+      "revId": "e5f48374845ce03aa70ed9c2929b04bdf78c6a91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d6092148_318f5076",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1174230
+      },
+      "writtenOn": "2017-05-25T15:55:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3f6266f_cdc0807c",
+      "range": {
+        "startLine": 264,
+        "startChar": 52,
+        "endLine": 264,
+        "endChar": 53
+      },
+      "revId": "e5f48374845ce03aa70ed9c2929b04bdf78c6a91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2f37eab_d049b846",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-05-25T21:48:30Z",
+      "side": 1,
+      "message": "nit; two \\n before function (for some reason)",
+      "revId": "ada95e992f44bf5504cabf5a2d7d6700ac8ff120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c667d605_fee14cd8",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-05-25T21:48:30Z",
+      "side": 1,
+      "message": "str() seems unnecessary.\n\n\u003e\u003e\u003e import subprocess\n\u003e\u003e\u003e type(subprocess.check_output(\u0027echo hi\u0027, shell\u003dTrue))\n\u003ctype \u0027str\u0027\u003e",
+      "range": {
+        "startLine": 52,
+        "startChar": 16,
+        "endLine": 52,
+        "endChar": 20
+      },
+      "revId": "ada95e992f44bf5504cabf5a2d7d6700ac8ff120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02884942_18890281",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-05-25T21:48:30Z",
+      "side": 1,
+      "message": "glob.glob() should accept \u0027blah/*\u0027 though? (It\u0027ll still return \\ I imagine though.)",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 12
+      },
+      "revId": "ada95e992f44bf5504cabf5a2d7d6700ac8ff120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

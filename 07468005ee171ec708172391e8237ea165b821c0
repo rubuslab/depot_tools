@@ -1,0 +1,403 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f3066262_1bd31070",
+        "filename": "man/src/git-cl.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "Since you\u0027ve modified this, please run ./man/src/make_docs.sh and include the result in this CL.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b26e3fe_e0f30df5",
+        "filename": "owners_finder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "You don\u0027t need to suppress this as well?",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29dfcb39_6a4dcb35",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "This circular dependency makes me nervous. Can it be avoided by having git-cl pass the Changelist object into this script?",
+      "range": {
+        "startLine": 8,
+        "startChar": 7,
+        "endLine": 8,
+        "endChar": 13
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "118919fd_b8ba9bef",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "nit: we separate our python builtin imports (os, sys, etc) from our local imports (git_cl, git_common, etc) with an empty line.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16b5fb39_50fd9c4d",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "Use argparse; optparse was deprecated in python 2.7.",
+      "range": {
+        "startLine": 10,
+        "startChar": 7,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db05ffc3_aef917d3",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "nit: chromium python style is to include two blank lines between top-level entities like constants and functions.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "749387a1_147e2df9",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "Please have docstrings for all of your functions.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 26
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7067172c_af73842f",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "\u0027git rev-parse\u0027 is significantly faster.",
+      "range": {
+        "startLine": 35,
+        "startChar": 11,
+        "endLine": 35,
+        "endChar": 17
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f1a8c9b_a40cca8e",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "fwiw, this isn\u0027t strictly necessary -- git doesn\u0027t mind if your branches have slashes in them -- but I understand why you\u0027re doing it. Only thing is that I\u0027d probably use a different separator for the prefix/directory and the pieces of the directory path. Maybe like \"prefix-path_to_dir\" or \"prefix_path-to-dir\" or even (if you wanted to be fun) \"prefix/path/to/dir\".",
+      "range": {
+        "startLine": 38,
+        "startChar": 42,
+        "endLine": 38,
+        "endChar": 68
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "390f4cfc_567a7e91",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "Would it not be better to simply list all currently-extant branches, and then create the branch with a number one higher than the current highest? That way you\u0027d always succeed.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d44072f0_949b47bb",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "This assumes that the branch being split up was also tracking origin/master. It might be more flexible to use \"git checkout -t \u003cupstream of original branch\u003e -b \u003cbranch\u003e\".",
+      "range": {
+        "startLine": 41,
+        "startChar": 15,
+        "endLine": 41,
+        "endChar": 25
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52260472_84118bca",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "If the original message had no footers, this will insert your new line immediately after the last line of the description, without an empty line in between. It looks like you want it to be a separate paragraph, so you might want to check for that case.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d8cc516_f79af307",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "It strikes me that a really cool way to do this -- that wouldn\u0027t necessitate doing so many git-rms and git-checkouts -- would be to use \"git filter-branch --index-filter\" to simply remove from the index any files that aren\u0027t part of the current directory of concern. Without even checking out the tree once, it could use that to synthesize a commit for each directory branch and commit it to its repsective branch, and then only start doing checkouts when it is time to upload each CL.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "881f01a7_d2d78abd",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "You can run git-rm on many files at a time. Much better to do that than to do it once per file, which could be hundreds of files.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a9a45ff_2f2cbf5c",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e75541e_c4fecabf",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "why do you set delete\u003dFalse, but then also explicitly os.remove() it at the end of the block?",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7564112_9dccb62e",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "It would be really nice if some of this logic were hoisted up into git-cl itself, so that rather than running \"git cl upload\" as a subprocess, you could just call CMDUpload from within git_cl.py. Or you could call that function by passing it into this file as the \"upload_function\" or something like that. This comment isn\u0027t necessary, but it\u0027s something to consider.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55bfde6e_5de8854e",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "I would advise leaving off --send-mail if you\u0027re also going to upload+publish a separate comment, to avoid spamming folks.",
+      "range": {
+        "startLine": 87,
+        "startChar": 61,
+        "endLine": 87,
+        "endChar": 72
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "236ed930_b217ffb4",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "owners.py already has \"enclosing_dir_with_owners()\" for this functionality.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7541dee_cd94385b",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "Just use a defaultdict(list) instead of having to have this if-block.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d36232fe_71f71a85",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-26T00:04:57Z",
+      "side": 1,
+      "message": "Please handle this argument parsing in git-cl itself, and then just farm out the heavy lifting to this helper library file.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

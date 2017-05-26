@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "70cb5504_f7fad66a",
+        "filename": "owners_finder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "self.hr() calls self.writeln() which does nothing when !self.verbose",
+      "parentUuid": "1b26e3fe_e0f30df5",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29dfcb39_6a4dcb35",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -59,6 +77,30 @@
     },
     {
       "key": {
+        "uuid": "12ad6998_6fe5d2d4",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29dfcb39_6a4dcb35",
+      "range": {
+        "startLine": 8,
+        "startChar": 7,
+        "endLine": 8,
+        "endChar": 13
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "118919fd_b8ba9bef",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -73,6 +115,24 @@
       "revId": "07468005ee171ec708172391e8237ea165b821c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "faea0b80_c5f7824f",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "118919fd_b8ba9bef",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -99,6 +159,30 @@
     },
     {
       "key": {
+        "uuid": "59b5756a_68ca27f2",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done (no longer using argparse or optparse in this file)",
+      "parentUuid": "16b5fb39_50fd9c4d",
+      "range": {
+        "startLine": 10,
+        "startChar": 7,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "db05ffc3_aef917d3",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -113,6 +197,24 @@
       "revId": "07468005ee171ec708172391e8237ea165b821c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50d468b4_ef98091b",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db05ffc3_aef917d3",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -139,6 +241,30 @@
     },
     {
       "key": {
+        "uuid": "f299211c_e50c617c",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "749387a1_147e2df9",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 26
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7067172c_af73842f",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -159,6 +285,30 @@
       "revId": "07468005ee171ec708172391e8237ea165b821c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d68c53cd_599c1610",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7067172c_af73842f",
+      "range": {
+        "startLine": 35,
+        "startChar": 11,
+        "endLine": 35,
+        "endChar": 17
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -185,6 +335,30 @@
     },
     {
       "key": {
+        "uuid": "713406c4_a2df5904",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "I previously assumed that / wasn\u0027t allowed in a branch name. I prefer keeping / to make it easier to checkout a branch by copy-pasting a directory name from code review.",
+      "parentUuid": "8f1a8c9b_a40cca8e",
+      "range": {
+        "startLine": 38,
+        "startChar": 42,
+        "endLine": 38,
+        "endChar": 68
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "390f4cfc_567a7e91",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -199,6 +373,24 @@
       "revId": "07468005ee171ec708172391e8237ea165b821c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35b955f4_9f894500",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "390f4cfc_567a7e91",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -225,6 +417,30 @@
     },
     {
       "key": {
+        "uuid": "de8a5d63_5049a6aa",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d44072f0_949b47bb",
+      "range": {
+        "startLine": 41,
+        "startChar": 15,
+        "endLine": 41,
+        "endChar": 25
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "52260472_84118bca",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -242,6 +458,24 @@
     },
     {
       "key": {
+        "uuid": "d8a6a869_b03d9217",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52260472_84118bca",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9d8cc516_f79af307",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -253,6 +487,24 @@
       "writtenOn": "2017-05-26T00:04:57Z",
       "side": 1,
       "message": "It strikes me that a really cool way to do this -- that wouldn\u0027t necessitate doing so many git-rms and git-checkouts -- would be to use \"git filter-branch --index-filter\" to simply remove from the index any files that aren\u0027t part of the current directory of concern. Without even checking out the tree once, it could use that to synthesize a commit for each directory branch and commit it to its repsective branch, and then only start doing checkouts when it is time to upload each CL.",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9fddc91d_3c609ce3",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "I\u0027m not too familiar with \u0027git filter-branch\u0027. Isn\u0027t it a way to rewrite existing commits rather than creating new ones?",
+      "parentUuid": "9d8cc516_f79af307",
       "revId": "07468005ee171ec708172391e8237ea165b821c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -276,6 +528,24 @@
     },
     {
       "key": {
+        "uuid": "7d1e327b_07817a90",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "881f01a7_d2d78abd",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a9a45ff_2f2cbf5c",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -290,6 +560,24 @@
       "revId": "07468005ee171ec708172391e8237ea165b821c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6978615_4bd4bf8f",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a9a45ff_2f2cbf5c",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -310,6 +598,24 @@
     },
     {
       "key": {
+        "uuid": "9fbcb1a4_93544403",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Added comment:\n  # The temporary file is created with delete\u003dFalse so that it\n  # can be deleted manually after git has read it rather than automatically\n  # when it is closed.",
+      "parentUuid": "0e75541e_c4fecabf",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7564112_9dccb62e",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -324,6 +630,24 @@
       "revId": "07468005ee171ec708172391e8237ea165b821c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db63736b_350fc682",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7564112_9dccb62e",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -350,6 +674,30 @@
     },
     {
       "key": {
+        "uuid": "485ebe7b_18e34815",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55bfde6e_5de8854e",
+      "range": {
+        "startLine": 87,
+        "startChar": 61,
+        "endLine": 87,
+        "endChar": 72
+      },
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "236ed930_b217ffb4",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -364,6 +712,24 @@
       "revId": "07468005ee171ec708172391e8237ea165b821c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59f2fc65_0b2b33a5",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "236ed930_b217ffb4",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -384,6 +750,24 @@
     },
     {
       "key": {
+        "uuid": "3373112a_c6f75a56",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7541dee_cd94385b",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d36232fe_71f71a85",
         "filename": "split_cl.py",
         "patchSetId": 9
@@ -398,6 +782,24 @@
       "revId": "07468005ee171ec708172391e8237ea165b821c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe7620ba_afe5d221",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-26T17:37:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d36232fe_71f71a85",
+      "revId": "07468005ee171ec708172391e8237ea165b821c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

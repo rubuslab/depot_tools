@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e94c55c4_43ffb6a8",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-05-27T02:07:47Z",
+      "side": 1,
+      "message": "is there a readme that you could point to?",
+      "revId": "36395929bc03c39d4a2c114f927298d5187c1d2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

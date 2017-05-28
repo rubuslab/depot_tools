@@ -3,5 +3,9 @@
 :: Use of this source code is governed by a BSD-style license that can be
 :: found in the LICENSE file.
 
+:: Ensure that "depot_tools" is somewhere in PATH so this tool can be used
+:: standalone, but allow other PATH manipulations to take priority.
+PATH=%PATH%;%~dp0
+
 :: Defer control.
-%~dp0python "%~dp0\roll_dep.py" %*
+python "%~dp0\roll_dep.py" %*

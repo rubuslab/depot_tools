@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e4ba2d6_f0b472f7",
+        "filename": "clang_format_merge_driver.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-05-28T21:14:34Z",
+      "side": 1,
+      "message": "doesn\u0027t there need to be `set`?",
+      "revId": "968345f2a16cce145077fda76cd68c5273c08376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

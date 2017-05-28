@@ -16,6 +16,24 @@
       "revId": "968345f2a16cce145077fda76cd68c5273c08376",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ff5e2b3_94cfc99b",
+        "filename": "clang_format_merge_driver.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-28T21:51:06Z",
+      "side": 1,
+      "message": "Not sure. I modeled this after the lines that I removed from a previous patch set: https://chromium.googlesource.com/chromium/tools/depot_tools/+/1b9a43aab385070fd75263a9e0f4b4312b5f510e%5E%21/#F0",
+      "parentUuid": "2e4ba2d6_f0b472f7",
+      "revId": "968345f2a16cce145077fda76cd68c5273c08376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

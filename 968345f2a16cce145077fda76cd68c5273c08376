@@ -34,6 +34,70 @@
       "revId": "968345f2a16cce145077fda76cd68c5273c08376",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "108c103b_abed22d2",
+        "filename": "clang_format_merge_driver.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-05-29T01:27:10Z",
+      "side": 1,
+      "message": "IIRC PATH\u003d is a special snowflake. I\u0027d recommend to use set just for consistency and reduce surprise for readers.",
+      "parentUuid": "6ff5e2b3_94cfc99b",
+      "revId": "968345f2a16cce145077fda76cd68c5273c08376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6233abb0_c3f2c228",
+        "filename": "roll-dep-svn.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-05-29T01:27:10Z",
+      "side": 1,
+      "message": "I guess it\u0027s time to axe this one (as a separate CL).",
+      "range": {
+        "startLine": 1,
+        "startChar": 10,
+        "endLine": 1,
+        "endChar": 0
+      },
+      "revId": "968345f2a16cce145077fda76cd68c5273c08376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13dbce8d_54d65af7",
+        "filename": "roll-dep.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-05-29T01:27:10Z",
+      "side": 1,
+      "message": "All the scripts must have setlocal, otherwise environment modification persists after.",
+      "range": {
+        "startLine": 5,
+        "startChar": 1,
+        "endLine": 5,
+        "endChar": 0
+      },
+      "revId": "968345f2a16cce145077fda76cd68c5273c08376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

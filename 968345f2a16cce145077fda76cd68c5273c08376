@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "e4007583_829f2811",
+        "filename": "clang_format_merge_driver.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-29T16:32:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "108c103b_abed22d2",
+      "revId": "968345f2a16cce145077fda76cd68c5273c08376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6233abb0_c3f2c228",
         "filename": "roll-dep-svn.bat",
         "patchSetId": 2
@@ -78,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "dbc20f65_d6c106e8",
+        "filename": "roll-dep-svn.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-29T16:32:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6233abb0_c3f2c228",
+      "range": {
+        "startLine": 1,
+        "startChar": 10,
+        "endLine": 1,
+        "endChar": 0
+      },
+      "revId": "968345f2a16cce145077fda76cd68c5273c08376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13dbce8d_54d65af7",
         "filename": "roll-dep.bat",
         "patchSetId": 2
@@ -98,6 +140,30 @@
       "revId": "968345f2a16cce145077fda76cd68c5273c08376",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e27f902_572bf995",
+        "filename": "roll-dep.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-05-29T16:32:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13dbce8d_54d65af7",
+      "range": {
+        "startLine": 5,
+        "startChar": 1,
+        "endLine": 5,
+        "endChar": 0
+      },
+      "revId": "968345f2a16cce145077fda76cd68c5273c08376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

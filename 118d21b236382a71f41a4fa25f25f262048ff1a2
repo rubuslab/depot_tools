@@ -16,6 +16,24 @@
       "revId": "118d21b236382a71f41a4fa25f25f262048ff1a2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6be8eb0c_500fecb1",
+        "filename": "apply_issue.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-05-30T17:16:39Z",
+      "side": 1,
+      "message": "setlocal just means that cmd.exe won\u0027t affect *the parent process environment variables*\nWindows defaults to the reverse behavior than bash.",
+      "parentUuid": "48f2548e_6ab0bdf1",
+      "revId": "118d21b236382a71f41a4fa25f25f262048ff1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

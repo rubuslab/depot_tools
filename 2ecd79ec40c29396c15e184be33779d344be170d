@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d5d6dec7_141ef576",
+        "filename": "git_common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-30T18:45:04Z",
+      "side": 1,
+      "message": "use_limit\u003dTrue",
+      "range": {
+        "startLine": 331,
+        "startChar": 13,
+        "endLine": 331,
+        "endChar": 29
+      },
+      "revId": "2ecd79ec40c29396c15e184be33779d344be170d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "049fe905_0438fca9",
+        "filename": "split_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-30T18:45:04Z",
+      "side": 1,
+      "message": "nit: \u0027r\u0027 is already the default mode, you can remove it if you like",
+      "range": {
+        "startLine": 24,
+        "startChar": 21,
+        "endLine": 24,
+        "endChar": 26
+      },
+      "revId": "2ecd79ec40c29396c15e184be33779d344be170d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02fbd6ce_6afb8d98",
+        "filename": "split_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-30T18:45:04Z",
+      "side": 1,
+      "message": "nit: maybe also separate number from directory with an underscore",
+      "range": {
+        "startLine": 53,
+        "startChar": 30,
+        "endLine": 53,
+        "endChar": 32
+      },
+      "revId": "2ecd79ec40c29396c15e184be33779d344be170d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

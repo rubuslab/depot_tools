@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "14abf458_0bedc3d2",
+        "filename": "git_common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-30T19:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5d6dec7_141ef576",
+      "range": {
+        "startLine": 331,
+        "startChar": 13,
+        "endLine": 331,
+        "endChar": 29
+      },
+      "revId": "2ecd79ec40c29396c15e184be33779d344be170d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "049fe905_0438fca9",
         "filename": "split_cl.py",
         "patchSetId": 12
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "ec4a17e0_c857e1d1",
+        "filename": "split_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-30T19:11:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "049fe905_0438fca9",
+      "range": {
+        "startLine": 24,
+        "startChar": 21,
+        "endLine": 24,
+        "endChar": 26
+      },
+      "revId": "2ecd79ec40c29396c15e184be33779d344be170d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "02fbd6ce_6afb8d98",
         "filename": "split_cl.py",
         "patchSetId": 12
@@ -68,6 +116,30 @@
       "revId": "2ecd79ec40c29396c15e184be33779d344be170d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4419f2e_62a1b4e6",
+        "filename": "split_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2017-05-30T19:11:50Z",
+      "side": 1,
+      "message": "No longer using a number. After discussing with gab@ who used the script, it is better not to upload CLs for branches that already exist. It makes it possible to re-run the script after it was stopped in the middle of its execution.",
+      "parentUuid": "02fbd6ce_6afb8d98",
+      "range": {
+        "startLine": 53,
+        "startChar": 30,
+        "endLine": 53,
+        "endChar": 32
+      },
+      "revId": "2ecd79ec40c29396c15e184be33779d344be170d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

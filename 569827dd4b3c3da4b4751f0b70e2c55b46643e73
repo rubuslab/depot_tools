@@ -16,6 +16,24 @@
       "revId": "569827dd4b3c3da4b4751f0b70e2c55b46643e73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1cb99325_3d6d91df",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-05-30T18:15:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d2c9b6a_caff031a",
+      "revId": "569827dd4b3c3da4b4751f0b70e2c55b46643e73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

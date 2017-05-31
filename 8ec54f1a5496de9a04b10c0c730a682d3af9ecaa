@@ -22,6 +22,52 @@
       "revId": "8ec54f1a5496de9a04b10c0c730a682d3af9ecaa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e187f4af_273d18ef",
+        "filename": "WATCHLISTS",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-31T19:01:29Z",
+      "side": 0,
+      "message": "This is a comment that I save but don\u0027t publish",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 14
+      },
+      "revId": "8ec54f1a5496de9a04b10c0c730a682d3af9ecaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9df5145c_b3c87287",
+        "filename": "WATCHLISTS",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-31T19:01:29Z",
+      "side": 0,
+      "message": "This is a comment that I won\u0027t save until after I upload a new patchset",
+      "range": {
+        "startLine": 22,
+        "startChar": 3,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "8ec54f1a5496de9a04b10c0c730a682d3af9ecaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

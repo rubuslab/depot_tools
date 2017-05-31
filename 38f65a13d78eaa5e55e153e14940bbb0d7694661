@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4fdadb8d_2a1b527f",
+        "filename": "autoninja",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-05-31T21:23:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ade2f3e3_83a7d1cc",
+      "revId": "38f65a13d78eaa5e55e153e14940bbb0d7694661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "824d49b9_55633db8",
         "filename": "autoninja.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2017-05-31T01:32:32Z",
       "side": 1,
       "message": "better to make sure compiler_proxy running with goma_ctl.py ensure_start ?",
+      "revId": "38f65a13d78eaa5e55e153e14940bbb0d7694661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93cc82d2_9b466682",
+        "filename": "autoninja.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-05-31T21:23:09Z",
+      "side": 1,
+      "message": "I experimented with this a bit. One problem is that it adds a dependency on where goma is installed - need to check args.gn and then have correct fallbacks. The other problem is that it adds approximately three seconds to each invocation of autoninja - that\u0027s too long. Any delay longer than ~0.5 s is too long. Note that if goma_ctl.py just exited when it detected that the compiler proxy was running then that target would be achieved. I filed b/62231716 to request this.\n\nThis is the code I\u0027m using in autoninja.py to test this:\n\n        use_goma \u003d True\n        if sys.platform.startswith(\u0027win\u0027):\n          goma_ctl_path \u003d r\u0027c:\\goma\\goma-win64\\goma_ctl.py\u0027\n          if os.path.exists(goma_ctl_path):\n            # Ensure that goma is running. Use check_output to swallow the\n            # output to avoid having the calling batch file run it.\n            subprocess.check_output([\u0027python\u0027, goma_ctl_path, \u0027ensure_start\u0027])",
+      "parentUuid": "824d49b9_55633db8",
       "revId": "38f65a13d78eaa5e55e153e14940bbb0d7694661",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa350d00_e951ac80",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2491,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-31T18:40:38Z",
+      "side": 1,
+      "message": "derp",
+      "range": {
+        "startLine": 2491,
+        "startChar": 6,
+        "endLine": 2491,
+        "endChar": 32
+      },
+      "revId": "c1123aa0653078a057719f2c5ed46648ed2d1ef0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

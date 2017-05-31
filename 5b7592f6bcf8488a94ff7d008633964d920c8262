@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c0f63bc_3cc1279c",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-05-31T15:16:02Z",
+      "side": 1,
+      "message": "nit: typo",
+      "range": {
+        "startLine": 182,
+        "startChar": 26,
+        "endLine": 182,
+        "endChar": 30
+      },
+      "revId": "5b7592f6bcf8488a94ff7d008633964d920c8262",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

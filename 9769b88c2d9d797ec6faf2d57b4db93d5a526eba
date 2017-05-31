@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a3fb71a6_07091323",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1696,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-05-31T18:37:19Z",
+      "side": 1,
+      "message": "%s here\nand below\n% (\u0027to trigger %s\u0027 % new_state if new_state !\u003d _CQState.NONE else \u0027cancel CQ\u0027)",
+      "range": {
+        "startLine": 1696,
+        "startChar": 29,
+        "endLine": 1696,
+        "endChar": 39
+      },
+      "revId": "9769b88c2d9d797ec6faf2d57b4db93d5a526eba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

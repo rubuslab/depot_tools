@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "34f87f8f_057e8023",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-31T22:43:00Z",
+      "side": 1,
+      "message": "deletion counts!",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "bec1603082708235838986140ccbff5bcc7c1048",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3346bc24_4634e5a9",
+        "filename": "WATCHLISTS",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-31T22:43:00Z",
+      "side": 1,
+      "message": "something",
+      "revId": "bec1603082708235838986140ccbff5bcc7c1048",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6b066e14_16efbb18",
         "filename": "codereview.settings",
         "patchSetId": 2

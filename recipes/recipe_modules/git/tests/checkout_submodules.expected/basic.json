@@ -1,0 +1,170 @@
+[
+  {
+    "cmd": [
+      "python",
+      "-u",
+      "\nimport sys, os\npath = sys.argv[1]\nmode = int(sys.argv[2])\nif not os.path.isdir(path):\n  if os.path.exists(path):\n    print \"%s exists but is not a dir\" % path\n    sys.exit(1)\n  os.makedirs(path, mode)\n",
+      "[TMP_BASE]/checkout_tmp_1/checkout",
+      "511"
+    ],
+    "name": "makedirs repo",
+    "~followup_annotations": [
+      "@@@STEP_LOG_LINE@python.inline@@@@",
+      "@@@STEP_LOG_LINE@python.inline@import sys, os@@@",
+      "@@@STEP_LOG_LINE@python.inline@path = sys.argv[1]@@@",
+      "@@@STEP_LOG_LINE@python.inline@mode = int(sys.argv[2])@@@",
+      "@@@STEP_LOG_LINE@python.inline@if not os.path.isdir(path):@@@",
+      "@@@STEP_LOG_LINE@python.inline@  if os.path.exists(path):@@@",
+      "@@@STEP_LOG_LINE@python.inline@    print \"%s exists but is not a dir\" % path@@@",
+      "@@@STEP_LOG_LINE@python.inline@    sys.exit(1)@@@",
+      "@@@STEP_LOG_LINE@python.inline@  os.makedirs(path, mode)@@@",
+      "@@@STEP_LOG_END@python.inline@@@"
+    ]
+  },
+  {
+    "cmd": [
+      "git",
+      "init"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/checkout",
+    "infra_step": true,
+    "name": "git init"
+  },
+  {
+    "cmd": [
+      "git",
+      "submodule",
+      "add",
+      "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
+      "foo"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/checkout",
+    "infra_step": true,
+    "name": "git submodule"
+  },
+  {
+    "cmd": [
+      "git",
+      "submodule",
+      "add",
+      "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
+      "bar"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/checkout",
+    "infra_step": true,
+    "name": "git submodule (2)"
+  },
+  {
+    "cmd": [
+      "git",
+      "commit",
+      "-a",
+      "--no-verify",
+      "-m",
+      "Submodules"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/checkout",
+    "infra_step": true,
+    "name": "git commit"
+  },
+  {
+    "cmd": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/checkout",
+    "infra_step": true,
+    "name": "git rev-parse HEAD",
+    "stdout": "/path/to/tmp/"
+  },
+  {
+    "cmd": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/checkout/foo",
+    "infra_step": true,
+    "name": "git rev-parse HEAD (2)",
+    "stdout": "/path/to/tmp/"
+  },
+  {
+    "cmd": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/checkout/bar",
+    "infra_step": true,
+    "name": "git rev-parse HEAD (3)",
+    "stdout": "/path/to/tmp/"
+  },
+  {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_MODULE[depot_tools::git]/resources/git_util.py",
+      "--git-cache-dir",
+      "[CACHE]/git",
+      "--output-json",
+      "/path/to/tmp/json",
+      "ensure_checkout",
+      "--url",
+      "file://[TMP_BASE]/checkout_tmp_1/checkout",
+      "--dir",
+      "[TMP_BASE]/checkout_tmp_1/working",
+      "--recurse",
+      "--clean"
+    ],
+    "name": "git checkout"
+  },
+  {
+    "cmd": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/working",
+    "infra_step": true,
+    "name": "git rev-parse HEAD (4)",
+    "stdout": "/path/to/tmp/"
+  },
+  {
+    "cmd": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/checkout/foo",
+    "infra_step": true,
+    "name": "git rev-parse HEAD (5)",
+    "stdout": "/path/to/tmp/"
+  },
+  {
+    "cmd": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "[TMP_BASE]/checkout_tmp_1/checkout/bar",
+    "infra_step": true,
+    "name": "git rev-parse HEAD (6)",
+    "stdout": "/path/to/tmp/"
+  },
+  {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_MODULE[recipe_engine::shutil]/resources/rmtree.py",
+      "[TMP_BASE]/checkout_tmp_1"
+    ],
+    "infra_step": true,
+    "name": "rmtree [TMP_BASE]/checkout_tmp_1"
+  },
+  {
+    "name": "$result",
+    "recipe_result": null,
+    "status_code": 0
+  }
+]

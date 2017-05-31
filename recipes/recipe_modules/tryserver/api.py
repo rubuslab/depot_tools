@@ -71,19 +71,10 @@ class TryserverApi(recipe_api.RecipeApi):
     patch_ref = self.m.properties['patch_ref']
 
     patch_dir = self.m.path.mkdtemp('patch')
-    try:
-      build_path = self.m.path['build']
-    except KeyError:
-      raise self.m.step.StepFailure(
-          'path["build"] is not defined. '
-          'Possibly this is a LUCI build. '
-          'tryserver.apply_from_git is not supported in LUCI builds.')
-
-    git_setup_py = build_path.join('scripts', 'slave', 'git_setup.py')
-    git_setup_args = ['--path', patch_dir, '--url', patch_repo_url]
+    repo = self.m.git.repository(patch_repo_url, patch_dir)
+    self.m.git.setup(repo)
     patch_path = patch_dir.join('patch.diff')
 
-    self.m.python('patch git setup', git_setup_py, git_setup_args)
     with self.m.context(cwd=patch_dir):
       self.m.git('fetch', 'origin', patch_ref, name='patch fetch')
       self.m.git('clean', '-f', '-d', '-x', name='patch clean')

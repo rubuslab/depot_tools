@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ade2f3e3_83a7d1cc",
+        "filename": "autoninja",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2017-05-31T01:32:32Z",
+      "side": 1,
+      "message": "nit:\nexec $command\n?",
+      "revId": "38f65a13d78eaa5e55e153e14940bbb0d7694661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "824d49b9_55633db8",
+        "filename": "autoninja.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2017-05-31T01:32:32Z",
+      "side": 1,
+      "message": "better to make sure compiler_proxy running with goma_ctl.py ensure_start ?",
+      "revId": "38f65a13d78eaa5e55e153e14940bbb0d7694661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

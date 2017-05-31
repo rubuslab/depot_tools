@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b066e14_16efbb18",
+        "filename": "codereview.settings",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-05-31T21:56:04Z",
+      "side": 1,
+      "message": "This is a file comment on the right hand side in PS2",
+      "revId": "bec1603082708235838986140ccbff5bcc7c1048",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

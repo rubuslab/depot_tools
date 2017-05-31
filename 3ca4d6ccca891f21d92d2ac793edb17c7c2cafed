@@ -16,6 +16,24 @@
       "revId": "3ca4d6ccca891f21d92d2ac793edb17c7c2cafed",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53fb02c1_0954afb8",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-05-31T23:33:17Z",
+      "side": 1,
+      "message": "Heh. Yep. Done.\n\nThe comment at the top is also hopelessly out of date. I\u0027m inclined to delete most of that comment since keeping it up-to-date is challenging.",
+      "parentUuid": "e23f46c8_1c307c31",
+      "revId": "3ca4d6ccca891f21d92d2ac793edb17c7c2cafed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

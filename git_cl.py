@@ -1681,22 +1681,20 @@ class Changelist(object):
     return ret
 
   def SetCQState(self, new_state):
-    """Update the CQ state for latest patchset.
+    """Updates the CQ state for the latest patchset.
 
     Issue must have been already uploaded and known.
     """
     assert new_state in _CQState.ALL_STATES
     assert self.GetIssue()
+    if new_state == _CQState.DRY_RUN:
+      return self._TriggerDryRun()
     return self._codereview_impl.SetCQState(new_state)
 
-  def TriggerDryRun(self):
+  def _TriggerDryRun(self):
     """Triggers a dry run and prints a warning on failure."""
-    # TODO(qyearsley): Either re-use this method in CMDset_commit
-    # and CMDupload, or change CMDtry to trigger dry runs with
-    # just SetCQState, and catch keyboard interrupt and other
-    # errors in that method.
     try:
-      self.SetCQState(_CQState.DRY_RUN)
+      self._codereview_impl.SetCQState(_CQState.DRY_RUN)
       print('scheduled CQ Dry Run on %s' % self.GetIssueURL())
       return 0
     except KeyboardInterrupt:
@@ -5401,7 +5399,7 @@ def CMDtry(parser, args):
   if not buckets:
     if options.verbose:
       print('git cl try with no bots now defaults to CQ Dry Run.')
-    return cl.TriggerDryRun()
+    return cl.SetCQState(_CQState.DRY_RUN)
 
   for builders in buckets.itervalues():
     if any('triggered' in b for b in builders):
@@ -5545,7 +5543,6 @@ def CMDset_commit(parser, args):
   if options.clear:
     state = _CQState.NONE
   elif options.dry_run:
-      # TODO(qyearsley): Use cl.TriggerDryRun.
     state = _CQState.DRY_RUN
   else:
     state = _CQState.COMMIT

@@ -3,13 +3,14 @@
     "cmd": [
       "python",
       "-u",
-      "[BUILD]/scripts/slave/git_setup.py",
-      "--path",
-      "[TMP_BASE]/patch_tmp_1",
+      "RECIPE_MODULE[depot_tools::git]/resources/git_util.py",
+      "setup",
       "--url",
-      "http://patch.url/"
+      "http://patch.url/",
+      "--dir",
+      "[TMP_BASE]/patch_tmp_1"
     ],
-    "name": "patch git setup"
+    "name": "git setup"
   },
   {
     "cmd": [

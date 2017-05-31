@@ -46,6 +46,30 @@
       "revId": "7ccf9ce76009b9f098aa80c16ba65ae656ba5e37",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "100f630a_7242a276",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1691,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-05-31T18:33:47Z",
+      "side": 1,
+      "message": "Alright, now updated and changed the message that is printed. Does the message in the latest patchset seem accurate?",
+      "parentUuid": "59e75e21_be1ff605",
+      "range": {
+        "startLine": 1690,
+        "startChar": 3,
+        "endLine": 1691,
+        "endChar": 34
+      },
+      "revId": "7ccf9ce76009b9f098aa80c16ba65ae656ba5e37",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

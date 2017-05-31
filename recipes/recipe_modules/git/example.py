@@ -22,22 +22,16 @@ def RunSteps(api):
   if api.properties.get('use_curl_trace'):
     curl_trace_file = api.path['start_dir'].join('curl_trace.log')
 
-  submodule_update_force = api.properties.get('submodule_update_force', False)
-  submodule_update_recursive = api.properties.get('submodule_update_recursive',
-          True)
-
   # You can use api.git.checkout to perform all the steps of a safe checkout.
   retVal = api.git.checkout(
       url,
       ref=api.properties.get('revision'),
       recursive=True,
-      submodule_update_force=submodule_update_force,
       set_got_revision=api.properties.get('set_got_revision'),
+      keep_paths=api.properties.get('keep_paths', None),
       curl_trace_file=curl_trace_file,
       remote_name=api.properties.get('remote_name'),
       display_fetch_size=api.properties.get('display_fetch_size'),
-      file_name=api.properties.get('checkout_file_name'),
-      submodule_update_recursive=submodule_update_recursive,
       use_git_cache=api.properties.get('use_git_cache'))
 
   assert retVal == "deadbeef", (
@@ -97,9 +91,6 @@ def GenTests(api):
   yield api.test('basic_branch') + api.properties(revision='refs/heads/testing')
   yield api.test('basic_hash') + api.properties(
       revision='abcdef0123456789abcdef0123456789abcdef01')
-  yield api.test('basic_file_name') + api.properties(checkout_file_name='DEPS')
-  yield api.test('basic_submodule_update_force') + api.properties(
-      submodule_update_force=True)
 
   yield api.test('platform_win') + api.platform.name('win')
 
@@ -119,6 +110,11 @@ def GenTests(api):
   yield (
     api.test('set_got_revision') +
     api.properties(set_got_revision=True)
+  )
+
+  yield (
+    api.test('keep_paths') +
+    api.properties(keep_paths=['foo/**', 'bar/**'])
   )
 
   yield (

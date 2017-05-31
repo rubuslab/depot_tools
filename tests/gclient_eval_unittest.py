@@ -126,6 +126,19 @@ deps_os = {
         {},
         {'recursedeps': [['src/third_party/angle', 'DEPS.chromium']]})
 
+  def test_ordered_vars(self):
+    gclient_eval.Check(
+        '\n'.join([
+            'vars = {',
+            '  "foo": True,',
+            '  "bar": foo or False,',
+            '  "baz": bar and not foo,',
+            '}',
+        ]),
+        '<string>',
+        {},
+        {'vars': {'foo': True, 'bar': True, 'baz': False}})
+
 
 if __name__ == '__main__':
   level = logging.DEBUG if '-v' in sys.argv else logging.FATAL

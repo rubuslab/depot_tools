@@ -3,6 +3,8 @@
 # found in the LICENSE file.
 
 import ast
+import copy
+import functools
 
 from third_party import schema
 
@@ -96,33 +98,48 @@ _GCLIENT_SCHEMA = schema.Schema({
     schema.Optional('use_relative_paths'): bool,
 
     # Variables that can be referenced using Var() - see 'deps'.
-    schema.Optional('vars'): {schema.Optional(basestring): basestring},
+    schema.Optional('vars'): {
+        schema.Optional(basestring): schema.Or(basestring, bool)
+    },
 })
 
 
-def _gclient_eval(node_or_string, global_scope, filename='<unknown>'):
+def _gclient_eval(
+    node_or_string, global_scope, filename='<unknown>', expose_vars=False):
   """Safely evaluates a single expression. Returns the result."""
   _allowed_names = {'None': None, 'True': True, 'False': False}
   if isinstance(node_or_string, basestring):
     node_or_string = ast.parse(node_or_string, filename=filename, mode='eval')
   if isinstance(node_or_string, ast.Expression):
     node_or_string = node_or_string.body
-  def _convert(node):
+  def _convert(node, vars_dict=None):
+    if not vars_dict:
+      vars_dict = {}
+    vars_dict = copy.deepcopy(vars_dict)
+    vars_dict.update(_allowed_names)
+    vars_convert = functools.partial(_convert, vars_dict=vars_dict)
     if isinstance(node, ast.Str):
       return node.s
     elif isinstance(node, ast.Tuple):
-      return tuple(map(_convert, node.elts))
+      return tuple(map(vars_convert, node.elts))
     elif isinstance(node, ast.List):
-      return list(map(_convert, node.elts))
+      return list(map(vars_convert, node.elts))
     elif isinstance(node, ast.Dict):
-      return dict((_convert(k), _convert(v))
-                  for k, v in zip(node.keys, node.values))
+      result = {}
+      for k, v in zip(node.keys, node.values):
+        c_k = _convert(k, vars_dict=vars_dict)
+        c_v = _convert(v, vars_dict=vars_dict)
+        if expose_vars:
+          vars_dict[c_k] = c_v
+        result[c_k] = c_v
+      return result
     elif isinstance(node, ast.Name):
-      if node.id not in _allowed_names:
+      if node.id not in vars_dict:
         raise ValueError(
-            'invalid name %r (file %r, line %s)' % (
-                node.id, filename, getattr(node, 'lineno', '<unknown>')))
-      return _allowed_names[node.id]
+            'invalid name %r; available names: %r (file %r, line %s)' % (
+                node.id, vars_dict, filename,
+                getattr(node, 'lineno', '<unknown>')))
+      return vars_dict[node.id]
     elif isinstance(node, ast.Call):
       if not isinstance(node.func, ast.Name):
         raise ValueError(
@@ -132,12 +149,26 @@ def _gclient_eval(node_or_string, global_scope, filename='<unknown>'):
         raise ValueError(
             'invalid call: use only regular args (file %r, line %s)' % (
                 filename, getattr(node, 'lineno', '<unknown>')))
-      args = map(_convert, node.args)
+      args = map(vars_convert, node.args)
       return global_scope[node.func.id](*args)
     elif isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
-      return _convert(node.left) + _convert(node.right)
+      return vars_convert(node.left) + vars_convert(node.right)
     elif isinstance(node, ast.BinOp) and isinstance(node.op, ast.Mod):
-      return _convert(node.left) % _convert(node.right)
+      return vars_convert(node.left) % vars_convert(node.right)
+    elif isinstance(node, ast.BoolOp) and isinstance(node.op, ast.Or):
+      if len(node.values) != 2:
+        raise ValueError(
+            'invalid "or": exactly 2 operands required (file %r, line %s)' % (
+                filename, getattr(node, 'lineno', '<unknown>')))
+      return vars_convert(node.values[0]) or vars_convert(node.values[1])
+    elif isinstance(node, ast.BoolOp) and isinstance(node.op, ast.And):
+      if len(node.values) != 2:
+        raise ValueError(
+            'invalid "and": exactly 2 operands required (file %r, line %s)' % (
+                filename, getattr(node, 'lineno', '<unknown>')))
+      return vars_convert(node.values[0]) and vars_convert(node.values[1])
+    elif isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.Not):
+      return not vars_convert(node.operand)
     else:
       raise ValueError(
           'unexpected AST node: %s %s (file %r, line %s)' % (
@@ -166,7 +197,9 @@ def _gclient_exec(node_or_string, global_scope, filename='<unknown>'):
         raise ValueError(
             'invalid assignment: target should be a name (file %r, line %s)' % (
                 filename, getattr(node, 'lineno', '<unknown>')))
-      value = _gclient_eval(node.value, global_scope, filename=filename)
+      value = _gclient_eval(
+          node.value, global_scope, filename=filename,
+          expose_vars=(target.id == 'vars'))
 
       if target.id in result_scope:
         raise ValueError(

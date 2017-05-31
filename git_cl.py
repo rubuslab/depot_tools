@@ -91,7 +91,7 @@ settings = None
 # Used by tests/git_cl_test.py to add extra logging.
 # Inside the weirdly failing test, add this:
 # >>> self.mock(git_cl, '_IS_BEING_TESTED', True)
-# And scroll up to see the strack trace printed.
+# And scroll up to see the stack trace printed.
 _IS_BEING_TESTED = False
 
 
@@ -274,7 +274,7 @@ def _git_set_branch_config_value(key, value, branch=None, **kwargs):
 
 
 def _get_committer_timestamp(commit):
-  """Returns unix timestamp as integer of a committer in a commit.
+  """Returns Unix timestamp as integer of a committer in a commit.
 
   Commit can be whatever git show would recognize, such as HEAD, sha1 or ref.
   """
@@ -306,6 +306,7 @@ def add_git_similarity(parser):
       help='Disallows git from looking for copies.')
 
   old_parser_args = parser.parse_args
+
   def Parse(args):
     options, args = old_parser_args(args)
 
@@ -326,6 +327,7 @@ def add_git_similarity(parser):
       _git_set_branch_config_value('git-find-copies', bool(options.find_copies))
 
     return options, args
+
   parser.parse_args = Parse
 
 
@@ -497,7 +499,7 @@ def _trigger_try_jobs(auth_config, changelist, buckets, options,
       issue=changelist.GetIssue(),
       patch=patchset)
 
-  shared_parameters_properties = changelist.GetTryjobProperties(patchset)
+  shared_parameters_properties = changelist.GetTryJobProperties(patchset)
   shared_parameters_properties['category'] = category
   if options.clobber:
     shared_parameters_properties['clobber'] = True
@@ -856,7 +858,7 @@ class Settings(object):
     return self._GetRietveldConfig('private', error_ok=True)
 
   def GetIsGerrit(self):
-    """Return true if this repo is assosiated with gerrit code review system."""
+    """Return true if this repo is associated with gerrit code review system."""
     if self.is_gerrit is None:
       self.is_gerrit = (
           self._GetConfig('gerrit.host', error_ok=True).lower() == 'true')
@@ -1190,9 +1192,10 @@ class Changelist(object):
     return self._codereview == 'gerrit'
 
   def GetCCList(self):
-    """Return the users cc'd on this CL.
+    """Returns the users cc'd on this CL.
 
-    Return is a string suitable for passing to git cl with the --cc flag.
+    The return value is a string suitable for passing to git cl with the --cc
+    flag.
     """
     if self.cc is None:
       base_cc = settings.GetDefaultCCList()
@@ -1207,8 +1210,8 @@ class Changelist(object):
     return self.cc
 
   def SetWatchers(self, watchers):
-    """Set the list of email addresses that should be cc'd based on the changed
-       files in this CL.
+    """Sets the list of email addresses that should be cc'd based on the changed
+    files in this CL.
     """
     self.watchers = watchers
 
@@ -1559,7 +1562,7 @@ class Changelist(object):
       return presubmit_support.DoPresubmitChecks(change, committing,
           verbose=verbose, output_stream=sys.stdout, input_stream=sys.stdin,
           default_presubmit=None, may_prompt=may_prompt,
-          rietveld_obj=self._codereview_impl.GetRieveldObjForPresubmit(),
+          rietveld_obj=self._codereview_impl.GetRietveldObjForPresubmit(),
           gerrit_obj=self._codereview_impl.GetGerritObjForPresubmit())
     except presubmit_support.PresubmitFailure as e:
       DieWithError(
@@ -1744,12 +1747,12 @@ class Changelist(object):
     return self._codereview_impl.GetMostRecentPatchset()
 
   def CannotTriggerTryJobReason(self):
-    """Returns reason (str) if unable trigger tryjobs on this CL or None."""
+    """Returns reason (str) if unable trigger try jobs on this CL or None."""
     return self._codereview_impl.CannotTriggerTryJobReason()
 
-  def GetTryjobProperties(self, patchset=None):
-    """Returns dictionary of properties to launch tryjob."""
-    return self._codereview_impl.GetTryjobProperties(patchset=patchset)
+  def GetTryJobProperties(self, patchset=None):
+    """Returns dictionary of properties to launch try job."""
+    return self._codereview_impl.GetTryJobProperties(patchset=patchset)
 
   def __getattr__(self, attr):
     # This is because lots of untested code accesses Rietveld-specific stuff
@@ -1806,12 +1809,12 @@ class _ChangelistCodereviewBase(object):
     raise NotImplementedError()
 
   def _PostUnsetIssueProperties(self):
-    """Which branch-specific properties to erase when unsettin issue."""
+    """Which branch-specific properties to erase when unsetting issue."""
     return []
 
-  def GetRieveldObjForPresubmit(self):
+  def GetRietveldObjForPresubmit(self):
     # This is an unfortunate Rietveld-embeddedness in presubmit.
-    # For non-Rietveld codereviews, this probably should return a dummy object.
+    # For non-Rietveld code reviews, this probably should return a dummy object.
     raise NotImplementedError()
 
   def GetGerritObjForPresubmit(self):
@@ -1884,24 +1887,25 @@ class _ChangelistCodereviewBase(object):
     raise NotImplementedError()
 
   def SetCQState(self, new_state):
-    """Update the CQ state for latest patchset.
+    """Updates the CQ state for the latest patchset.
 
     Issue must have been already uploaded and known.
     """
     raise NotImplementedError()
 
   def CannotTriggerTryJobReason(self):
-    """Returns reason (str) if unable trigger tryjobs on this CL or None."""
+    """Returns reason (str) if unable trigger try jobs on this CL or None."""
     raise NotImplementedError()
 
   def GetIssueOwner(self):
     raise NotImplementedError()
 
-  def GetTryjobProperties(self, patchset=None):
+  def GetTryJobProperties(self, patchset=None):
     raise NotImplementedError()
 
 
 class _RietveldChangelistImpl(_ChangelistCodereviewBase):
+
   def __init__(self, changelist, auth_config=None, codereview_host=None):
     super(_RietveldChangelistImpl, self).__init__(changelist)
     assert settings, 'must be initialized in _ChangelistCodereviewBase'
@@ -1984,8 +1988,8 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
       return 'CL %s is private' % self.GetIssue()
     return None
 
-  def GetTryjobProperties(self, patchset=None):
-    """Returns dictionary of properties to launch tryjob."""
+  def GetTryJobProperties(self, patchset=None):
+    """Returns dictionary of properties to launch try job."""
     project = (self.GetIssueProperties() or {}).get('project')
     return {
       'issue': self.GetIssue(),
@@ -2015,7 +2019,7 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
     return summary
 
   def GetStatus(self):
-    """Apply a rough heuristic to give a simple summary of an issue's review
+    """Applies a rough heuristic to give a simple summary of an issue's review
     or CQ status, assuming adherence to a common workflow.
 
     Returns None if no issue for this branch, or one of the following keywords:
@@ -2116,7 +2120,7 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
   def CodereviewServerConfigKey(cls):
     return 'rietveldserver'
 
-  def GetRieveldObjForPresubmit(self):
+  def GetRietveldObjForPresubmit(self):
     return self.RpcServer()
 
   def SetCQState(self, new_state):
@@ -2467,7 +2471,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       return
     logging.debug('change %s owner is %s, cookies user is %s',
                   self.GetIssue(), self.GetIssueOwner(), cookies_user)
-    # Maybe user has linked accounts or smth like that,
+    # Maybe user has linked accounts or something like that,
     # so ask what Gerrit thinks of this user.
     details = gerrit_util.GetAccountDetails(self._GetGerritHost(), 'self')
     if details['email'] == self.GetIssueOwner():
@@ -2484,7 +2488,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     """Which branch-specific properties to erase when unsetting issue."""
     return ['gerritsquashhash']
 
-  def GetRieveldObjForPresubmit(self):
+  def GetRietveldObjForPresubmit(self):
     class ThisIsNotRietveldIssue(object):
       def __nonzero__(self):
         # This is a hack to make presubmit_support think that rietveld is not
@@ -2496,7 +2500,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         print(
             'You aren\'t using Rietveld at the moment, but Gerrit.\n'
             'Using Rietveld in your PRESUBMIT scripts won\'t work.\n'
-            'Please, either change your PRESUBIT to not use rietveld_obj.%s,\n'
+            'Please, either change your PRESUBMIT to not use rietveld_obj.%s,\n'
             'or use Rietveld for codereview.\n'
             'See also http://crbug.com/579160.' % attr)
         raise NotImplementedError()
@@ -3006,7 +3010,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     except subprocess2.CalledProcessError:
       DieWithError('Failed to create a change. Please examine output above '
                    'for the reason of the failure.\n'
-                   'Hint: run command below to diangose common Git/Gerrit '
+                   'Hint: run command below to diagnose common Git/Gerrit '
                    'credential problems:\n'
                    '  git cl creds-check\n',
                    change_desc)
@@ -3138,8 +3142,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     if data['status'] in ('ABANDONED', 'MERGED'):
       return 'CL %s is closed' % self.GetIssue()
 
-  def GetTryjobProperties(self, patchset=None):
-    """Returns dictionary of properties to launch tryjob."""
+  def GetTryJobProperties(self, patchset=None):
+    """Returns dictionary of properties to launch try job."""
     data = self._GetChangeDetail(['ALL_REVISIONS'])
     patchset = int(patchset or self.GetPatchset())
     assert patchset
@@ -3296,7 +3300,7 @@ class ChangeDescription(object):
       'R': reviewers,
     }
 
-    # Get the set of R= and TBR= lines and remove them from the desciption.
+    # Get the set of R= and TBR= lines and remove them from the description.
     regexp = re.compile(self.R_LINE)
     matches = [regexp.match(line) for line in self._description_lines]
     new_desc = [l for i, l in enumerate(self._description_lines)
@@ -3645,7 +3649,7 @@ def GetRietveldCodereviewSettingsInteractively():
 
 
 class _GitCookiesChecker(object):
-  """Provides facilties for validating and suggesting fixes to .gitcookies."""
+  """Provides facilities for validating and suggesting fixes to .gitcookies."""
 
   _GOOGLESOURCE = 'googlesource.com'
 
@@ -4329,7 +4333,7 @@ def colorize_CMDstatus_doc():
   def colorize_line(line):
     for color in colors:
       if color in line.upper():
-        # Extract whitespaces first and the leading '-'.
+        # Extract whitespace first and the leading '-'.
         indent = len(line) - len(line.lstrip(' ')) + 1
         return line[:indent] + getattr(Fore, color) + line[indent:] + Fore.RESET
     return line
@@ -4666,7 +4670,7 @@ def GetTargetRef(remote, remote_branch, target_branch):
     return None
 
   if target_branch:
-    # Cannonicalize branch references to the equivalent local full symbolic
+    # Canonicalize branch references to the equivalent local full symbolic
     # refs, which are then translated into the remote full symbolic refs
     # below.
     if '/' not in target_branch:
@@ -4826,7 +4830,7 @@ def CMDsplit(parser, args):
 
   Creates a branch and uploads a CL for each group of files modified in the
   current branch that share a common OWNERS file. In the CL description and
-  commment, the string '$directory', is replaced with the directory containing
+  comment, the string '$directory', is replaced with the directory containing
   the shared OWNERS file.
   """
   parser.add_option("-d", "--description", dest="description_file",
@@ -4932,7 +4936,7 @@ def CMDland(parser, args):
 
   if options.contributor:
     if not re.match('^.*\s<\S+@\S+>$', options.contributor):
-      print("Please provide contibutor as 'First Last <email@example.com>'")
+      print("Please provide contributor as 'First Last <email@example.com>'")
       return 1
 
   base_branch = args[0]
@@ -5627,7 +5631,7 @@ def CMDdiff(parser, args):
 
 
 def CMDowners(parser, args):
-  """Interactively find the owners for reviewing."""
+  """Interactively finds potential owners for reviewing."""
   parser.add_option(
       '--no-color',
       action='store_true',

@@ -2,6 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+import collections
 import itertools
 import re
 
@@ -9,6 +10,10 @@ from recipe_engine import recipe_api
 
 class GitApi(recipe_api.RecipeApi):
   _GIT_HASH_RE = re.compile('[0-9a-f]{40}', re.IGNORECASE)
+
+  # A Git repository definition.
+  Repository = collections.namedtuple('Repository', (
+      'url', 'path', 'use_git_cache', 'remote_name'))
 
   def __init__(self, *args, **kwargs):
     super(GitApi, self).__init__(*args, **kwargs)
@@ -127,14 +132,119 @@ class GitApi(recipe_api.RecipeApi):
         raise recipe_api.InfraFailure('count-objects failed: %s' % ex)
       return None
 
+  def repository(self, url, path, remote_name=None, use_git_cache=False):
+    """Returns (Repository): A repository specification.
+
+      url (str): url of remote repo to use as upstream
+      path (Path): directory to clone into
+      remote_name (str): name of the git remote to use
+      use_git_cache (bool): if True, git cache will be used for this checkout.
+          WARNING, this is EXPERIMENTAL!!! This wasn't tested with:
+           * submodules
+           * since origin url is modified
+             to a local path, may cause problem with scripts that do
+             "git fetch origin" or "git push origin".
+           * arbitrary refs such refs/whatever/not-fetched-by-default-to-cache
+    """
+    return self.Repository(
+        url=url,
+        path=path,
+        use_git_cache=use_git_cache,
+        remote_name=remote_name,
+    )
+
+  def setup(self, repo, step_name=None):
+    """Ensure that the specified Git checkout exists and is configured for
+    operation.
+
+    This is a simpler form of "checkout".
+
+    Args:
+      repo (Repository): the repository to setup.
+      step_name (str): If not None, use this as the step name.
+    """
+    args = []
+    if self.m.platform.is_win:
+      self.ensure_win_git_tooling()
+      args += ['--git-cmd-path', self.package_repo_resource('git.bat')]
+    if repo.use_git_cache:
+      args += ['--git-cache-dir', self.m.infra_paths.default_git_cache_dir]
+
+    args += [
+        'setup',
+        '--url', repo.url,
+        '--dir', repo.path,
+    ]
+    if repo.remote_name:
+      args += ['--remote-name', repo.remote_name]
+
+    self.m.python(
+        step_name or 'git setup',
+        self.resource('git_util.py'),
+        args=args,
+    )
+
+
+  def ensure_checkout(self, repo, ref=None, recursive=False,
+                      clean=None, step_name=None):
+    """Performs a full git checkout and returns sha1 of checked out revision.
+
+    This is a simpler form of "checkout".
+
+    Args:
+      repo (Repository): the repository to check out.
+      ref (str): ref to fetch and check out
+      recursive (bool): whether to recursively fetch submodules or not
+      clean (bool or list): If True, clean the target repository after checkout.
+          If iterable, exempt each entry is a gitignore-style path to exempt
+          from cleaning.
+      step_name (str): If not None, use this as the step name.
+
+    Returns: If the checkout was successful, this returns the commit hash of
+      the checked-out-repo. Otherwise this returns None.
+    """
+    args = []
+    if self.m.platform.is_win:
+      self.ensure_win_git_tooling()
+      args += ['--git-cmd-path', self.package_repo_resource('git.bat')]
+    if repo.use_git_cache:
+      args += ['--git-cache-dir', self.m.infra_paths.default_git_cache_dir]
+
+    args += [
+        '--output-json', self.m.json.output(add_json_log=False),
+        'ensure_checkout',
+        '--url', repo.url,
+        '--dir', repo.path,
+    ]
+    if ref:
+      args += ['--ref', ref]
+    if recursive:
+      args += ['--recurse']
+    if repo.remote_name:
+      args += ['--remote-name', repo.remote_name]
+    if clean:
+      args += ['--clean']
+      try:
+        for k in iter(clean):
+          args += ['--clean-keep', k]
+      except TypeError:
+        pass
+
+    result = self.m.python(
+        step_name or 'git checkout',
+        self.resource('git_util.py'),
+        args=args,
+        step_test_data=lambda: self.m.json.test_api.output({
+            'head': 'deadbeef',
+        }),
+    )
+    return result.json.output['head']
+
+
   def checkout(self, url, ref=None, dir_path=None, recursive=False,
-               submodules=True, submodule_update_force=False,
-               keep_paths=None, step_suffix=None,
-               curl_trace_file=None, can_fail_build=True,
-               set_got_revision=False, remote_name=None,
-               display_fetch_size=None, file_name=None,
-               submodule_update_recursive=True,
-               use_git_cache=False):
+               submodules=True, keep_paths=None, step_suffix=None,
+               curl_trace_file=None, set_got_revision=False, remote_name=None,
+               display_fetch_size=None, use_git_cache=False):
     """Performs a full git checkout and returns sha1 of checked out revision.
 
     Args:
@@ -143,22 +253,17 @@ class GitApi(recipe_api.RecipeApi):
       dir_path (Path): optional directory to clone into
       recursive (bool): whether to recursively fetch submodules or not
       submodules (bool): whether to sync and update submodules or not
-      submodule_update_force (bool): whether to update submodules with --force
       keep_paths (iterable of strings): paths to ignore during git-clean;
           paths are gitignore-style patterns relative to checkout_path.
       step_suffix (str): suffix to add to a each step name
       curl_trace_file (Path): if not None, dump GIT_CURL_VERBOSE=1 trace to that
           file. Useful for debugging git issue reproducible only on bots. It has
           a side effect of all stderr output of 'git fetch' going to that file.
-      can_fail_build (bool): if False, ignore errors during fetch or checkout.
       set_got_revision (bool): if True, resolves HEAD and sets got_revision
           property.
       remote_name (str): name of the git remote to use
       display_fetch_size (bool): if True, run `git count-objects` before and
         after fetch and display delta. Adds two more steps. Defaults to False.
-      file_name (str): optional path to a single file to checkout.
-      submodule_update_recursive (bool): if True, updates submodules
-          recursively.
       use_git_cache (bool): if True, git cache will be used for this checkout.
           WARNING, this is EXPERIMENTAL!!! This wasn't tested with:
            * submodules
@@ -187,149 +292,47 @@ class GitApi(recipe_api.RecipeApi):
 
       dir_path = self.m.path['start_dir'].join(dir_path)
 
+    repo = self.repository(
+        url,
+        dir_path,
+        remote_name=remote_name,
+        use_git_cache=use_git_cache)
+
     if 'checkout' not in self.m.path:
       self.m.path['checkout'] = dir_path
 
-    git_setup_args = ['--path', dir_path, '--url', url]
-
-    if remote_name:
-      git_setup_args += ['--remote', remote_name]
-    else:
-      remote_name = 'origin'
-
-    if self.m.platform.is_win:
-      self.ensure_win_git_tooling()
-      git_setup_args += [
-          '--git_cmd_path', self.package_repo_resource('git.bat')]
-
     step_suffix = '' if step_suffix is  None else ' (%s)' % step_suffix
-    self.m.python(
-        'git setup%s' % step_suffix,
-        self.resource('git_setup.py'),
-        git_setup_args)
+    self.setup(
+        repo,
+        step_name='git setup%s' % step_suffix)
 
-    # Some of the commands below require depot_tools to be in PATH.
-    path = self.m.path.pathsep.join([
-        str(self.package_repo_resource()), '%(PATH)s'])
-
-    with self.m.context(cwd=dir_path):
-      if use_git_cache:
-        with self.m.context(env={'PATH': path}):
-          self('retry', 'cache', 'populate', '-c',
-               self.m.infra_paths.default_git_cache_dir, url,
-
-               name='populate cache',
-               can_fail_build=can_fail_build)
-          dir_cmd = self(
-              'cache', 'exists', '--quiet',
-              '--cache-dir', self.m.infra_paths.default_git_cache_dir, url,
-              can_fail_build=can_fail_build,
-              stdout=self.m.raw_io.output(),
-              step_test_data=lambda:
-                  self.m.raw_io.test_api.stream_output('mirror_dir'))
-          mirror_dir = dir_cmd.stdout.strip()
-          self('remote', 'set-url', 'origin', mirror_dir,
-               can_fail_build=can_fail_build)
-
-      # There are five kinds of refs we can be handed:
-      # 0) None. In this case, we default to properties['branch'].
-      # 1) A 40-character SHA1 hash.
-      # 2) A fully-qualifed arbitrary ref, e.g. 'refs/foo/bar/baz'.
-      # 3) A fully qualified branch name, e.g. 'refs/heads/master'.
-      #    Chop off 'refs/heads' and now it matches case (4).
-      # 4) A branch name, e.g. 'master'.
-      # Note that 'FETCH_HEAD' can be many things (and therefore not a valid
-      # checkout target) if many refs are fetched, but we only explicitly fetch
-      # one ref here, so this is safe.
-      fetch_args = []
-      if not ref:                                  # Case 0
-        fetch_remote = remote_name
-        fetch_ref = self.m.properties.get('branch') or 'master'
-        checkout_ref = 'FETCH_HEAD'
-      elif self._GIT_HASH_RE.match(ref):        # Case 1.
-        fetch_remote = remote_name
-        fetch_ref = ''
-        checkout_ref = ref
-      elif ref.startswith('refs/heads/'):       # Case 3.
-        fetch_remote = remote_name
-        fetch_ref = ref[len('refs/heads/'):]
-        checkout_ref = 'FETCH_HEAD'
-      else:                                     # Cases 2 and 4.
-        fetch_remote = remote_name
-        fetch_ref = ref
-        checkout_ref = 'FETCH_HEAD'
-
-      fetch_args = [x for x in (fetch_remote, fetch_ref) if x]
-      if recursive:
-        fetch_args.append('--recurse-submodules')
-
-      fetch_env = {'PATH': path}
-      fetch_stderr = None
-      if curl_trace_file:
-        fetch_env['GIT_CURL_VERBOSE'] = '1'
-        fetch_stderr = self.m.raw_io.output(leak_to=curl_trace_file)
-
-      fetch_step_name = 'git fetch%s' % step_suffix
-      if display_fetch_size:
+    fetch_step_name = 'git fetch%s' % step_suffix
+    if display_fetch_size:
+      with self.m.context(cwd=dir_path):
         count_objects_before_fetch = self.count_objects(
             name='count-objects before %s' % fetch_step_name,
             step_test_data=lambda: self.m.raw_io.test_api.stream_output(
                 self.test_api.count_objects_output(1000)))
-      with self.m.context(env=fetch_env):
-        self('retry', 'fetch', *fetch_args,
-          name=fetch_step_name,
-          stderr=fetch_stderr,
-          can_fail_build=can_fail_build)
-      if display_fetch_size:
+
+    retVal = self.ensure_checkout(
+        repo,
+        ref=ref,
+        recursive=recursive,
+        clean=keep_paths or True,
+        step_name=fetch_step_name,
+    )
+    self.m.step.active_result.presentation.step_text = (
+        "<br/>checked out %r<br/>" % retVal)
+    if set_got_revision:
+      self.m.step.active_result.presentation.properties['got_revision'] = retVal
+
+    if display_fetch_size:
+      with self.m.context(cwd=dir_path):
         self.count_objects(
             name='count-objects after %s' % fetch_step_name,
             previous_result=count_objects_before_fetch,
             step_test_data=lambda: self.m.raw_io.test_api.stream_output(
                 self.test_api.count_objects_output(2000)))
-
-      if file_name:
-        self('checkout', '-f', checkout_ref, '--', file_name,
-          name='git checkout%s' % step_suffix,
-          can_fail_build=can_fail_build)
-
-      else:
-        self('checkout', '-f', checkout_ref,
-          name='git checkout%s' % step_suffix,
-          can_fail_build=can_fail_build)
-
-      rev_parse_step = self('rev-parse', 'HEAD',
-                           name='read revision',
-                           stdout=self.m.raw_io.output(),
-                           can_fail_build=False,
-                           step_test_data=lambda:
-                              self.m.raw_io.test_api.stream_output('deadbeef'))
-
-      if rev_parse_step.presentation.status == 'SUCCESS':
-        sha = rev_parse_step.stdout.strip()
-        retVal = sha
-        rev_parse_step.presentation.step_text = "<br/>checked out %r<br/>" % sha
-        if set_got_revision:
-          rev_parse_step.presentation.properties['got_revision'] = sha
-
-      clean_args = list(itertools.chain(
-          *[('-e', path) for path in keep_paths or []]))
-
-      self('clean', '-f', '-d', '-x', *clean_args,
-        name='git clean%s' % step_suffix,
-        can_fail_build=can_fail_build)
-
-      if submodules:
-        self('submodule', 'sync',
-          name='submodule sync%s' % step_suffix,
-          can_fail_build=can_fail_build)
-        submodule_update = ['submodule', 'update', '--init']
-        if submodule_update_recursive:
-          submodule_update.append('--recursive')
-        if submodule_update_force:
-          submodule_update.append('--force')
-        self(*submodule_update,
-          name='submodule update%s' % step_suffix,
-          can_fail_build=can_fail_build)
 
     return retVal
 

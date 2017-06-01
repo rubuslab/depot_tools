@@ -22,6 +22,30 @@
       "revId": "2f5f0b7a99c9df653b090e3ef00d13a2cab00a8d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5ca957a_0f7ceaba",
+        "filename": "gclient.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-06-01T20:43:44Z",
+      "side": 1,
+      "message": "Ah shoot, reverted.",
+      "parentUuid": "9d6b9e37_1a6074c6",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "2f5f0b7a99c9df653b090e3ef00d13a2cab00a8d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

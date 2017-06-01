@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c1e0e30e_a4612d3d",
+        "filename": "tests/gclient_eval_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-01T05:06:57Z",
+      "side": 1,
+      "message": "In the spec, I had the complex written as quoted strings, e.g., `\"bar\": \"foo or False\",`, and only simple booleans were unquoted. I don\u0027t remember why I allowed simple booleans to be unquoted, except that maybe it seemed safe enough to do so.\n\nRegardless, requiring quoted strings rather than bare expressions meant that you could defer the conditional processing to a later phase. You also *had* to do this since we were using \u0026\u0026 and ||. If we switch to a pythonic syntax, that reason goes away, but I\u0027m wondering if it makes things clearer to keep the string as a conditional? Then eval\u0027ing the dict just means converting it to an OrderedDict() which you can then walk in a subsequent phase.",
+      "revId": "66c2f72fba72bfffa8294c7cd2af61edfe6967de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

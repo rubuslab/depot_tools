@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9193484c_dd736231",
+        "filename": "cpplint.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-06-01T20:53:40Z",
+      "side": 1,
+      "message": "This is the only one that calls python, maybe make it consistent too.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 5
+      },
+      "revId": "f1d5c6bb48ffe0ae150af9d62839fec3e8e5eba3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

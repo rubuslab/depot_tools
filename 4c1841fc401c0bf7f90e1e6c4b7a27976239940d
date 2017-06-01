@@ -16,6 +16,24 @@
       "revId": "4c1841fc401c0bf7f90e1e6c4b7a27976239940d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c9169a3_d7ac3239",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-06-01T20:57:31Z",
+      "side": 1,
+      "message": "That\u0027s just how cmd works, quotes suppress path search.\n\nc:\\src\u003ewhere python\nc:\\src\\depot_tools\\python.bat\n\nc:\\src\u003e\"python\"\nThe system cannot find the path specified.\n\nc:\\src\u003e\"python.bat\"\nThe system cannot find the path specified.\n\nc:\\src\u003e\"c:\\src\\depot_tools\\python\"\nPython 2.7.6 (default, Nov 10 2013, 19:24:18) [MSC v.1500 32 bit (Intel)] on win32\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n\u003e\u003e\u003e ^Z\n\n\nc:\\src\u003e\"c:\\src\\depot_tools\\python.bat\"\nPython 2.7.6 (default, Nov 10 2013, 19:24:18) [MSC v.1500 32 bit (Intel)] on win32\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n\u003e\u003e\u003e ^Z\n\n\nc:\\src\u003epython\nPython 2.7.6 (default, Nov 10 2013, 19:24:18) [MSC v.1500 32 bit (Intel)] on win32\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n\u003e\u003e\u003e ^Z\n\n\nc:\\src\u003epython.bat\nPython 2.7.6 (default, Nov 10 2013, 19:24:18) [MSC v.1500 32 bit (Intel)] on win32\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n\u003e\u003e\u003e ^Z",
+      "parentUuid": "1926e6c2_480c3c6a",
+      "revId": "4c1841fc401c0bf7f90e1e6c4b7a27976239940d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -46,6 +46,30 @@
       "revId": "f1d5c6bb48ffe0ae150af9d62839fec3e8e5eba3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b72fe598_19cfa5dd",
+        "filename": "cpplint.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-06-01T21:03:21Z",
+      "side": 1,
+      "message": "Yes, call will return after execution of the command, without \"call\", it will not (sort of like an \"exec\"). However, it\u0027s hella confusing, because that only applies if the command named \"python\" is a .bat file. If it\u0027s an .exe or .com (i.e. something that can\u0027t be interpreted by the command interpreter) it\u0027ll come back.\n\nThe comment that\u0027s cargo culted in the other .bats that says \"Defer control\" is trying to tell you that it ain\u0027t coming back because here we know python is a .bat. Except that we don\u0027t now since you\u0027re fiddling with what \"python\" will be. :)\n\n(I think this is generally going to be a bit annoying since now people are going to forget to use shell\u003dTrue from python because some places will have a python.exe in the path and others will be python.bat from depot_tools. But anyway. We\u0027ll see.)",
+      "parentUuid": "87c0fa57_52fe1774",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 5
+      },
+      "revId": "f1d5c6bb48ffe0ae150af9d62839fec3e8e5eba3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

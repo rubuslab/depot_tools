@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1926e6c2_480c3c6a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-06-01T20:54:04Z",
+      "side": 1,
+      "message": "unclear what was wrong with quotes, but the change lgtm",
+      "revId": "4c1841fc401c0bf7f90e1e6c4b7a27976239940d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

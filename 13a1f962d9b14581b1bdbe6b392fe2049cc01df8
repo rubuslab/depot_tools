@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1d9717f0_369e69bc",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-06-01T18:30:18Z",
+      "side": 1,
+      "message": "Maybe use BASEDIR instead of \u0027.\u0027 - using \u0027.\u0027 is more context dependent and fragile, it seems.",
+      "revId": "13a1f962d9b14581b1bdbe6b392fe2049cc01df8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39d59491_7693650a",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-06-01T18:30:18Z",
+      "side": 1,
+      "message": "What does os.path.join(BASEDIR) do? Isn\u0027t that just equivalent to BASEDIR? And is the os.path.normpath call needed? I would have hoped that BASEDIR was already normalized (but I could be wrong).",
+      "revId": "13a1f962d9b14581b1bdbe6b392fe2049cc01df8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce798cf7_68a38f04",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-06-01T18:30:18Z",
+      "side": 1,
+      "message": "We haven\u0027t supported VS 2013 for a while and have been deleting references to it. Might as well get rid of these while you\u0027re here.",
+      "revId": "13a1f962d9b14581b1bdbe6b392fe2049cc01df8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

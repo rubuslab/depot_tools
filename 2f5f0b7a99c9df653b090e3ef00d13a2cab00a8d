@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d6b9e37_1a6074c6",
+        "filename": "gclient.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-06-01T20:42:27Z",
+      "side": 1,
+      "message": "This isn\u0027t going to find python in the cwd because it\u0027s in quotes. (All Windows devs are currently broken)",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "2f5f0b7a99c9df653b090e3ef00d13a2cab00a8d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

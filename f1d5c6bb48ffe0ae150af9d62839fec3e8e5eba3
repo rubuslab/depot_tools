@@ -22,6 +22,30 @@
       "revId": "f1d5c6bb48ffe0ae150af9d62839fec3e8e5eba3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87c0fa57_52fe1774",
+        "filename": "cpplint.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-06-01T20:54:29Z",
+      "side": 1,
+      "message": "Might as well. I assumed there was a reason the author chose to use \"call\" here. Is there any difference between the two?",
+      "parentUuid": "9193484c_dd736231",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 5
+      },
+      "revId": "f1d5c6bb48ffe0ae150af9d62839fec3e8e5eba3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

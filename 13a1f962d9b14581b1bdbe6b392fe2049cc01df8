@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f90d6271_d1874c45",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-06-01T18:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d9717f0_369e69bc",
+      "revId": "13a1f962d9b14581b1bdbe6b392fe2049cc01df8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "39d59491_7693650a",
         "filename": "win_toolchain/get_toolchain_if_necessary.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fb977dbd_a4448237",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-06-01T18:37:46Z",
+      "side": 1,
+      "message": "Nothing. It\u0027s useless, but I transplanted it from the previous code. I\u0027ll delete it.",
+      "parentUuid": "39d59491_7693650a",
+      "revId": "13a1f962d9b14581b1bdbe6b392fe2049cc01df8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ce798cf7_68a38f04",
         "filename": "win_toolchain/get_toolchain_if_necessary.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2017-06-01T18:30:18Z",
       "side": 1,
       "message": "We haven\u0027t supported VS 2013 for a while and have been deleting references to it. Might as well get rid of these while you\u0027re here.",
+      "revId": "13a1f962d9b14581b1bdbe6b392fe2049cc01df8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea046309_af820dec",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-06-01T18:37:46Z",
+      "side": 1,
+      "message": "Let\u0027s do that in a separate CL. I\u0027m wary of breaking things and this isn\u0027t a codebase that I usually work in, so I\u0027d rather not overreach.",
+      "parentUuid": "ce798cf7_68a38f04",
       "revId": "13a1f962d9b14581b1bdbe6b392fe2049cc01df8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

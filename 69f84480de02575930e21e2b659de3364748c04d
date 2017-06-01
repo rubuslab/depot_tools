@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2dbfb451_4ad0a291",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2639,
+      "author": {
+        "id": 1148065
+      },
+      "writtenOn": "2017-06-01T21:22:22Z",
+      "side": 1,
+      "message": "I suspect most tools will only parse path_str if it looks like the output of the compiler, i.e. like:\n\npath/to/file.cc:123:\n\nat the beginning of the line.",
+      "revId": "69f84480de02575930e21e2b659de3364748c04d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

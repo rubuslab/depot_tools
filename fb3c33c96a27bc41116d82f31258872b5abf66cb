@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ea7516c_7db5ea99",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2608,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-06-01T18:24:18Z",
+      "side": 1,
+      "message": "nit: consider adding human readable patchset name",
+      "range": {
+        "startLine": 2608,
+        "startChar": 21,
+        "endLine": 2608,
+        "endChar": 50
+      },
+      "revId": "fb3c33c96a27bc41116d82f31258872b5abf66cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "84e3d1fa_83367cd8",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3471,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-06-01T18:24:18Z",
+      "side": 1,
+      "message": "can you add line comment too?",
+      "range": {
+        "startLine": 3471,
+        "startChar": 8,
+        "endLine": 3471,
+        "endChar": 9
+      },
+      "revId": "fb3c33c96a27bc41116d82f31258872b5abf66cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

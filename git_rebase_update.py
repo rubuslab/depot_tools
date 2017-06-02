@@ -4,7 +4,7 @@
 # found in the LICENSE file.
 
 """
-Tool to update all branches to have the latest changes from their upstreams.
+Tool to update branches to have the latest changes from their upstreams.
 """
 
 import argparse
@@ -73,7 +73,6 @@ def fetch_remotes(branch_tree):
   else:
     fetch_args.append('--multiple')
     fetch_args.extend(remotes)
-  # TODO(iannucci): Should we fetch git-svn?
 
   if not fetch_args:  # pragma: no cover
     print 'Nothing to fetch.'
@@ -217,6 +216,14 @@ def rebase_branch(branch, parent, start_hash):
 def main(args=None):
   parser = argparse.ArgumentParser()
   parser.add_argument('--verbose', '-v', action='store_true')
+  parser.add_argument('--subtree', '-s', action='store_true',
+                      help='Only process all branches in a subtree rooted in '
+                           'current branch. Excludes this branch and implies '
+                           '--no_fetch.\n'
+                           'This is useful if you want to avoid rebasing other '
+                           'un-related branches that are current under review '
+                           'as rebase artifacts would show in diff between '
+                           'patchests after next upload')
   parser.add_argument('--keep-going', '-k', action='store_true',
                       help='Keep processing past failed rebases.')
   parser.add_argument('--no_fetch', '--no-fetch', '-n',
@@ -256,6 +263,10 @@ def main(args=None):
   skipped, branch_tree = git.get_branch_tree()
   for branch in skipped:
     print 'Skipping %s: No upstream specified' % branch
+
+  if opts.subtree:
+    opts.no_fetch = True
+    branch_tree = git.get_branch_subtree(return_branch, branch_tree)
 
   if not opts.no_fetch:
     fetch_remotes(branch_tree)

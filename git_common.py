@@ -488,6 +488,32 @@ def get_branch_tree():
   return skipped, branch_tree
 
 
+def get_branch_subtree(root, branch_tree=None):
+  """Get the dictionary of {branch: parent} starting at given root.
+
+  If branch_tree is not provided, it is obtained by calleing get_branch_tree().
+
+  Returns a <branch_tree dict> with all branches descending from given root.
+  """
+  if branch_tree is None:
+    _, branch_tree = get_branch_tree()
+    logging.info('wtf: %s', branch_tree)
+
+  children_of = collections.defaultdict(list)
+  for branch, parent in branch_tree.iteritems():
+    children_of[parent].append(branch)
+
+  sub_tree = {}
+  q = [root]
+  while q:
+    parent = q.pop()
+    for child in children_of[parent]:
+      sub_tree[child] = parent
+    q.extend(children_of[parent])
+
+  return sub_tree
+
+
 def get_or_create_merge_base(branch, parent=None):
   """Finds the configured merge base for branch.
 

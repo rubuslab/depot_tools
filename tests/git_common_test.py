@@ -648,6 +648,17 @@ class GitMutableStructuredTest(git_test_utils.GitRepoReadWriteTestBase,
       ('root_A', 'root_X'),
     ])
 
+    self.assertEqual(
+        self.repo.run(lambda: self.gc.get_branch_subtree('root_X')),
+        self.gc.get_branch_subtree('root_X', tree))
+    self.assertEqual(self.gc.get_branch_subtree('branch_G', tree), {
+      'branch_K': 'branch_G',
+      'branch_L': 'branch_K',
+    })
+    self.assertEqual(self.gc.get_branch_subtree('branch_K', tree), {
+      'branch_L': 'branch_K',
+    })
+
   def testIsGitTreeDirty(self):
     retval = []
     self.repo.capture_stdio(

@@ -1,0 +1,39 @@
+/*.bat recipes
+/*.exe recipes
+/*.py  recipes
+/*.sh  recipes
+/git*  recipes
+
+/fetch           recipes
+/fetch_configs/* recipes
+
+/support/* recipes
+
+# TODO: There are some really junky dependencies in here that we should probably
+# move to vpython/cipd.
+/third_party/** recipes
+
+/win_toolchain/** recipes
+
+
+/cbuildbot      recipes
+/chrome_set_ver recipes
+/cros           recipes
+/cros_sdk       recipes
+
+/apply_issue                  recipes
+/clang-format                 recipes
+/clang_format_merge_driver    recipes
+/depot-tools-auth             recipes
+/download_from_google_storage recipes
+/gclient                      recipes
+/gn                           recipes
+/ninja                        recipes
+/ninja-linux32                recipes
+/ninja-linux64                recipes
+/ninja-mac                    recipes
+/pylint                       recipes
+/pylintrc                     recipes
+/repo                         recipes
+/roll-dep                     recipes
+/roll-dep-svn                 recipes

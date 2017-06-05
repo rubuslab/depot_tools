@@ -34,6 +34,24 @@
       "revId": "69f84480de02575930e21e2b659de3364748c04d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61d51261_7320e2ea",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2639,
+      "author": {
+        "id": 1148065
+      },
+      "writtenOn": "2017-06-05T17:10:42Z",
+      "side": 1,
+      "message": "I tried and I can confirm that it fails with vim\u0027s default errorformat for the QuickFix feature. One can change the errorformat to match this, but then they lose quickfix for compilation errors.\n\nThat\u0027s the tool that I use, I don\u0027t know how others behave.",
+      "parentUuid": "d5e87cf7_8c75b981",
+      "revId": "69f84480de02575930e21e2b659de3364748c04d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -16,6 +16,24 @@
       "revId": "69f84480de02575930e21e2b659de3364748c04d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5e87cf7_8c75b981",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2639,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-06-05T16:57:18Z",
+      "side": 1,
+      "message": "Can you please confirm that suspicion before I make changes that I believe will degrade the readability of this output? You can patch this change into your local depot_tools to test it with \"git cl patch --gerrit 520722\".",
+      "parentUuid": "2dbfb451_4ad0a291",
+      "revId": "69f84480de02575930e21e2b659de3364748c04d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

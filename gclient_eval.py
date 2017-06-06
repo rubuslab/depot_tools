@@ -59,6 +59,18 @@ _GCLIENT_SCHEMA = schema.Schema({
         }
     },
 
+    # List of .gni files to create - declaring args corresponding to
+    # gclient variables.
+    schema.Optional('gni_outputs'): [
+        schema.Optional({
+            # Path where to write the .gni file.
+            'path': basestring,
+
+            # List of variable names to write as declared args.
+            'args': [schema.Optional(basestring)],
+        }),
+    ],
+
     # Hooks executed after gclient sync (unless suppressed), or explicitly
     # on gclient hooks. See _GCLIENT_HOOKS_SCHEMA for details.
     # Also see 'pre_deps_hooks'.

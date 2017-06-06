@@ -81,6 +81,7 @@ from __future__ import print_function
 __version__ = '0.7'
 
 import ast
+import collections
 import copy
 import json
 import logging
@@ -100,6 +101,7 @@ import gclient_eval
 import gclient_scm
 import gclient_utils
 import git_cache
+from third_party.gn import gn_helpers
 from third_party.repo.progress import Progress
 import subcommand
 import subprocess2
@@ -155,6 +157,11 @@ def ast2str(node, indent=0):
   else:
     raise gclient_utils.Error("Unexpected AST node at line %d, column %d: %s"
                               % (node.lineno, node.col_offset, t))
+
+
+# Describes what .gni files (for GN) to write."""
+GNIOutput = collections.namedtuple(
+    'GNIOutput', ['gclient_vars', 'path', 'gn_args'])
 
 
 class GClientKeywords(object):
@@ -315,6 +322,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # hosts will be allowed. Non-empty set means whitelist of hosts.
     # allowed_hosts var is scoped to its DEPS file, and so it isn't recursive.
     self._allowed_hosts = frozenset()
+    # List of .gni file specs to write (instances of GNIOutput).
+    self._gni_outputs = []
     # If it is not set to True, the dependency wasn't processed for its child
     # dependency, i.e. its DEPS wasn't read.
     self._deps_parsed = False
@@ -657,6 +666,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             'ParseDepsFile(%s): allowed_hosts must be absent '
             'or a non-empty iterable' % self.name)
 
+    # Parse .gni outputs. Rely on gclient_eval schema to check types.
+    for gni_output in local_scope.get('gni_outputs', []):
+      self._gni_outputs.append(GNIOutput(
+          gclient_vars=local_scope.get('vars', {}),
+          path=gni_output['path'],
+          gn_args=gni_output['args']))
+
     # Convert the deps into real Dependency.
     deps_to_add = []
     for name, dep_value in deps.iteritems():
@@ -790,6 +806,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
     # Always parse the DEPS file.
     self.ParseDepsFile()
+    if command == 'update':
+      self.WriteGNIOutputs()
     self._run_is_done(file_list or [], parsed_url)
     if command in ('update', 'revert') and not options.noprehooks:
       self.RunPreDepsHooks()
@@ -855,6 +873,15 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         else:
           print('Skipped missing %s' % cwd, file=sys.stderr)
 
+  def WriteGNIOutputs(self):
+    for gni_output in self._gni_outputs:
+      lines = ['# Generated from %r' % self.deps_file, 'declare_args() {']
+      for arg in gni_output.gn_args:
+        lines.append('  %s = %s' % (
+            arg, gn_helpers.ToGNString(gni_output.gclient_vars[arg])))
+      lines.append('}')
+      with open(os.path.join(self.root.root_dir, gni_output.path), 'w') as f:
+        f.write('\n'.join(lines))
 
   @gclient_utils.lockedmethod
   def _run_is_done(self, file_list, parsed_url):

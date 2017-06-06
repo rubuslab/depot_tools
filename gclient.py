@@ -157,6 +157,50 @@ def ast2str(node, indent=0):
                               % (node.lineno, node.col_offset, t))
 
 
+class GNException(Exception):
+  pass
+
+
+def ToGNString(value, allow_dicts = True):
+  """Returns a stringified GN equivalent of the Python value.
+
+  allow_dicts indicates if this function will allow converting dictionaries
+  to GN scopes. This is only possible at the top level, you can't nest a
+  GN scope in a list, so this should be set to False for recursive calls."""
+  if isinstance(value, basestring):
+    if value.find('\n') >= 0:
+      raise GNException("Trying to print a string with a newline in it.")
+    return '"' + \
+        value.replace('\\', '\\\\').replace('"', '\\"').replace('$', '\\$') + \
+        '"'
+
+  if isinstance(value, unicode):
+    return ToGNString(value.encode('utf-8'))
+
+  if isinstance(value, bool):
+    if value:
+      return "true"
+    return "false"
+
+  if isinstance(value, list):
+    return '[ %s ]' % ', '.join(ToGNString(v) for v in value)
+
+  if isinstance(value, dict):
+    if not allow_dicts:
+      raise GNException("Attempting to recursively print a dictionary.")
+    result = ""
+    for key in sorted(value):
+      if not isinstance(key, basestring):
+        raise GNException("Dictionary key is not a string.")
+      result += "%s = %s\n" % (key, ToGNString(value[key], False))
+    return result
+
+  if isinstance(value, int):
+    return str(value)
+
+  raise GNException("Unsupported type when printing to GN.")
+
+
 class GClientKeywords(object):
   class VarImpl(object):
     def __init__(self, custom_vars, local_scope):
@@ -307,6 +351,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # Calculates properties:
     self._parsed_url = None
     self._dependencies = []
+    self._vars = {}
     # A cache of the files affected by the current operation, necessary for
     # hooks.
     self._file_list = []
@@ -315,6 +360,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # hosts will be allowed. Non-empty set means whitelist of hosts.
     # allowed_hosts var is scoped to its DEPS file, and so it isn't recursive.
     self._allowed_hosts = frozenset()
+    # Spec for .gni output to write (if any).
+    self._gni_file = None
+    self._gni_args = []
     # If it is not set to True, the dependency wasn't processed for its child
     # dependency, i.e. its DEPS wasn't read.
     self._deps_parsed = False
@@ -582,6 +630,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
               'ParseDepsFile(%s): Strict mode disallows %r -> %r' %
               (self.name, key, val))
 
+    self._vars = local_scope.get('vars', {})
+
     deps = local_scope.get('deps', {})
     if 'recursion' in local_scope:
       self.recursion_override = local_scope.get('recursion')
@@ -656,6 +706,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         raise gclient_utils.Error(
             'ParseDepsFile(%s): allowed_hosts must be absent '
             'or a non-empty iterable' % self.name)
+
+    self._gni_file = local_scope.get('gclient_gni_file')
+    self._gni_args = local_scope.get('gclient_gni_args', [])
 
     # Convert the deps into real Dependency.
     deps_to_add = []
@@ -790,6 +843,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
     # Always parse the DEPS file.
     self.ParseDepsFile()
+    if self._gni_file and command == 'update':
+      self.WriteGNIOutput()
     self._run_is_done(file_list or [], parsed_url)
     if command in ('update', 'revert') and not options.noprehooks:
       self.RunPreDepsHooks()
@@ -855,6 +910,12 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         else:
           print('Skipped missing %s' % cwd, file=sys.stderr)
 
+  def WriteGNIOutput(self):
+    lines = ['# Generated from %r' % self.deps_file]
+    for arg in self._gni_args:
+      lines.append('%s = %s' % (arg, ToGNString(self._vars[arg])))
+    with open(os.path.join(self.root.root_dir, self._gni_file), 'w') as f:
+      f.write('\n'.join(lines))
 
   @gclient_utils.lockedmethod
   def _run_is_done(self, file_list, parsed_url):

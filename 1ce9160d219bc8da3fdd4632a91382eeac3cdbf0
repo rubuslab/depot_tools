@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a431cbe0_b8a64e47",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-06T21:36:10Z",
+      "side": 1,
+      "message": "Let\u0027s change this to just allow bools and strings for now; I\u0027m worried that lists or dicts will allow for more flexibility than we really need and I\u0027m not sure how we\u0027d even really be able to use such values on the GN side.",
+      "revId": "1ce9160d219bc8da3fdd4632a91382eeac3cdbf0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37ca6035_61861244",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-06T21:36:10Z",
+      "side": 1,
+      "message": "s/gclient_gni_file/gclient_gn_args_file/",
+      "revId": "1ce9160d219bc8da3fdd4632a91382eeac3cdbf0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7da9cad7_aecf4b80",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-06T21:36:10Z",
+      "side": 1,
+      "message": "s/gclient_gni_args/gclient_gn_args/",
+      "revId": "1ce9160d219bc8da3fdd4632a91382eeac3cdbf0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b372d70f_dac9e3cd",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-06T21:36:10Z",
+      "side": 1,
+      "message": "Maybe call this WriteGNArgsFile() ?",
+      "revId": "1ce9160d219bc8da3fdd4632a91382eeac3cdbf0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20ab42f6_13d648a9",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-06T17:49:42Z",
+      "side": 1,
+      "message": "Do the values from an outer DEPS file (or gclient) get propagated into the local scope? We need the outer values to override the inner ones.",
+      "revId": "389832e728e86039fc53b54ea0d1f5c3aff89f8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

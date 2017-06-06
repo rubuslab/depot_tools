@@ -16,6 +16,24 @@
       "revId": "389832e728e86039fc53b54ea0d1f5c3aff89f8e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9807c25_2377e163",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-06-06T18:13:35Z",
+      "side": 1,
+      "message": "For now interactions across DEPS files are not possible.\n\nWe can consider that in the future. For now we expose smallest API surface possible.",
+      "parentUuid": "20ab42f6_13d648a9",
+      "revId": "389832e728e86039fc53b54ea0d1f5c3aff89f8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

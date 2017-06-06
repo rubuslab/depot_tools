@@ -2860,6 +2860,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     title = options.title
     automatic_title = False
 
+    print(options.squash)
     if options.squash:
       self._GerritCommitMsgHookCheck(offer_removal=not options.force)
       if self.GetIssue():

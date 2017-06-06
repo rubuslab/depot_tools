@@ -2959,6 +2959,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       tree = RunGit(['rev-parse', 'HEAD:']).strip()
       ref_to_push = RunGit(['commit-tree', tree, '-p', parent,
                             '-m', change_desc.description]).strip()
+      print(ref_to_push)
     else:
       change_desc = ChangeDescription(
           options.message or CreateDescriptionFromLog(git_diff_args))

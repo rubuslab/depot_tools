@@ -324,6 +324,9 @@ class FakeRepos(FakeReposBase):
 vars = {
   'DummyVariable': 'repo',
 }
+gni_outputs = [
+  {'path': 'src/gclient.gni', 'args': ['DummyVariable']}
+]
 deps = {
   'src/repo2': {
     'url': '%(git_base)srepo_2',

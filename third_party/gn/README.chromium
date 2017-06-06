@@ -1,0 +1,11 @@
+Name: gn
+URL: https://chromium.googlesource.com/chromium/src/+/master/build/gn_helpers.py
+Version: 3737d9dc0a52a4a3ce1692059a9d304e5b5436d1
+License: BSD
+
+Description:
+GN helper files copied from Chromium repo.
+
+Modifications:
+None.
+

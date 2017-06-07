@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ceb67da7_2625d5f8",
+        "filename": ".gitattributes",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-06-07T19:56:30Z",
+      "side": 1,
+      "message": "please add a comment what \"recipes\" attr means",
+      "revId": "8a540163758bf2db310d9acc61c7f630ceac1a53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

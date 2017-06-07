@@ -16,6 +16,24 @@
       "revId": "bd2ef630d64c0b0a16817c340b2354ff93876c3f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba89fdf3_379f5e63",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-06-07T17:11:41Z",
+      "side": 1,
+      "message": "I refrained from relying on \"PATH\" because it changes the current behavior, which doesn\u0027t rely on \"depot_tools\" being on PATH ATM. I can see some people cloning \"depot_tools\" and just calling \"gsutil.py\" and expecting it to work. Hell, I just did that on the GCE instance that I tested on. I didn\u0027t want to break this expectation.",
+      "parentUuid": "29ddfbb6_4c8c56ce",
+      "revId": "bd2ef630d64c0b0a16817c340b2354ff93876c3f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

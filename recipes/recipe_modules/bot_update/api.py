@@ -97,6 +97,11 @@ class BotUpdateApi(recipe_api.RecipeApi):
         Needed as migration paths for recipes dealing with older revisions,
         such as bisect.
     """
+    cwd = self.m.context.cwd or self.m.path['start_dir']
+    cleanup_dir = cwd.join('.bot_update_cleanup')
+    if self.m.path.exists(cleanup_dir):
+      self.m.file.rmtree('bot_update cleanup', cleanup_dir)
+
     refs = refs or []
     # We can re-use the gclient spec from the gclient module, since all the
     # data bot_update needs is already configured into the gclient spec.
@@ -182,6 +187,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
         ['--patch_root', root],
         ['--revision_mapping_file', self.m.json.input(reverse_rev_map)],
         ['--git-cache-dir', cfg.cache_dir],
+        ['--cleanup-dir', cleanup_dir],
 
         # How to find the patch, if any (issue/patchset).
         ['--issue', issue],
@@ -194,7 +200,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
         ['--apply_issue_oauth2_file', oauth2_json_file],
 
         # Hookups to JSON output back into recipes.
-        ['--output_json', self.m.json.output()],]
+        ['--output_json', self.m.json.output()],
+    ]
 
 
     # Collect all fixed revisions to simulate them in the json output.
@@ -315,9 +322,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
         # first solution.
         if result['did_run']:
           co_root = result['root']
-          cwd = self.m.context.cwd or self.m.path['start_dir']
           if 'checkout' not in self.m.path:
-            self.m.path['checkout'] = cwd.join(*co_root.split(self.m.path.sep))
+            self.m.path['checkout'] =  cwd.join(*co_root.split(self.m.path.sep))
 
     return step_result
 

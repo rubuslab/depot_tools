@@ -12,6 +12,8 @@
       "{\"got_cr_revision\": \"src\", \"got_revision\": \"src\"}",
       "--git-cache-dir",
       "[GIT_CACHE]",
+      "--cleanup-dir",
+      "[START_DIR]/.bot_update_cleanup",
       "--issue",
       "12345",
       "--patchset",

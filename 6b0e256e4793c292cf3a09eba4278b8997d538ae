@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6eada96_ae02a90f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-06-08T11:29:18Z",
+      "side": 1,
+      "message": "👍",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 23
+      },
+      "revId": "6b0e256e4793c292cf3a09eba4278b8997d538ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc1861bb_e628b223",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2816,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-06-08T11:29:18Z",
+      "side": 1,
+      "message": ".strip() here instead of below.",
+      "range": {
+        "startLine": 2816,
+        "startChar": 55,
+        "endLine": 2816,
+        "endChar": 56
+      },
+      "revId": "6b0e256e4793c292cf3a09eba4278b8997d538ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdae0501_4174206a",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2134,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-06-08T11:29:18Z",
+      "side": 1,
+      "message": "👍",
+      "range": {
+        "startLine": 2133,
+        "startChar": 5,
+        "endLine": 2134,
+        "endChar": 79
+      },
+      "revId": "6b0e256e4793c292cf3a09eba4278b8997d538ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

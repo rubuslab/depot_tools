@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40c7e1f9_4e50d895",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-06-08T00:07:56Z",
+      "side": 1,
+      "message": "if this is intended, it should definitely be a different cl",
+      "revId": "2d16f427094e30938e0fcd132c8fd2340e120f76",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -69,7 +69,7 @@ def GenTests(api):
   yield api.test('basic') + api.properties(
       patch=False,
       revision='abc'
-  )
+  ) + api.path.exists(api.path['start_dir'].join('.bot_update_cleanup'))
   yield api.test('buildbot') + api.properties(
       path_config='buildbot',
       patch=False,

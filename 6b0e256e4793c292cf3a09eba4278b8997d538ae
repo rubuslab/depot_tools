@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "83790c6e_76b17512",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2816,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-06-08T17:50:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc1861bb_e628b223",
+      "range": {
+        "startLine": 2816,
+        "startChar": 55,
+        "endLine": 2816,
+        "endChar": 56
+      },
+      "revId": "6b0e256e4793c292cf3a09eba4278b8997d538ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bdae0501_4174206a",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1

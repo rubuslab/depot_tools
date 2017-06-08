@@ -34,6 +34,24 @@
       "revId": "bd2ef630d64c0b0a16817c340b2354ff93876c3f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ff720ff_011bfd7c",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-06-08T00:08:33Z",
+      "side": 1,
+      "message": "Talked offline; this will cause excessive downloads of vpython on bots which is badness.",
+      "parentUuid": "ba89fdf3_379f5e63",
+      "revId": "bd2ef630d64c0b0a16817c340b2354ff93876c3f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

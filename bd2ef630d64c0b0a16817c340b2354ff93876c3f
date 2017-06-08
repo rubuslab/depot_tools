@@ -52,6 +52,24 @@
       "revId": "bd2ef630d64c0b0a16817c340b2354ff93876c3f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a44ccca1_b5c5b7de",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-06-08T05:57:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ff720ff_011bfd7c",
+      "revId": "bd2ef630d64c0b0a16817c340b2354ff93876c3f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

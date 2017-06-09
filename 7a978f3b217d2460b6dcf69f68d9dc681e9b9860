@@ -16,6 +16,24 @@
       "revId": "7a978f3b217d2460b6dcf69f68d9dc681e9b9860",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "356f9086_65ccddf4",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2423,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-06-09T17:32:21Z",
+      "side": 1,
+      "message": "dunno about exactly wildcard, but i have a good proxy. PTAL.",
+      "parentUuid": "396df388_df884b5e",
+      "revId": "7a978f3b217d2460b6dcf69f68d9dc681e9b9860",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

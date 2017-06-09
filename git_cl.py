@@ -2420,6 +2420,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           '           %s\n'
           '        Consider running the following command:\n'
           '          git cl creds-check\n'
+          '        Hint: consider removing creds for .googlesource.com if any\n'
           '        %s') %
           (git_host, self._gerrit_host,
            cookie_auth.get_new_password_message(git_host)))

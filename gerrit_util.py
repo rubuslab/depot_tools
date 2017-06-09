@@ -732,7 +732,7 @@ def SetReview(host, change, msg=None, labels=None, notify=None):
   if labels:
     body['labels'] = labels
   if notify:
-    body['notify'] = notify
+    body['notify'] = 'ALL'
   conn = CreateHttpConn(host, path, reqtype='POST', body=body)
   response = ReadHttpJsonResponse(conn)
   if labels:
@@ -771,7 +771,7 @@ def ResetReviewLabels(host, change, label, value='0', message=None,
           'on_behalf_of': review['_account_id'],
       }
       if notify:
-        body['notify'] = notify
+        body['notify'] = 'ALL'
       conn = CreateHttpConn(
           host, path, reqtype='POST', body=body)
       response = ReadHttpJsonResponse(conn)

@@ -1581,8 +1581,7 @@ class TestGitCl(TestCase):
     if tbr:
       calls += [
         (('SetReview', 'chromium-review.googlesource.com',
-          123456 if squash else None, {'Code-Review': 1},
-          'ALL' if notify else 'NONE'), ''),
+          123456 if squash else None, {'Code-Review': 1}, notify), ''),
       ]
     calls += cls._git_post_upload_calls()
     return calls

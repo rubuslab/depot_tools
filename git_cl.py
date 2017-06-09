@@ -3102,8 +3102,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       print('Adding self-LGTM (Code-Review +1) because of TBRs.')
       gerrit_util.SetReview(
           self._GetGerritHost(), self.GetIssue(),
-          labels={'Code-Review': 1},
-          notify='ALL' if options.send_mail else 'NONE')
+          labels={'Code-Review': 1}, notify=bool(options.send_mail))
 
     return 0
 

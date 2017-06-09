@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "396df388_df884b5e",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2423,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-06-09T16:29:56Z",
+      "side": 1,
+      "message": "It should be easy to check if there\u0027s a .googlesource.com wildcard cred, right?\n\nIf so, just directly tell them to remove it and replace it with host-specific ones.",
+      "revId": "7a978f3b217d2460b6dcf69f68d9dc681e9b9860",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83c193a7_73ce92fe",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-12T22:49:45Z",
+      "side": 1,
+      "message": "Maybe we should only raise an error if we\u0027re validating the syntax? Or, put the equivalent check inside validate and leave this alone or something?\n\nI\u0027m a bit worried about needing to provide some option for backwards compatibility.",
+      "revId": "4e4f3b1f221eb424916ecc065120090c4c7ce084",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

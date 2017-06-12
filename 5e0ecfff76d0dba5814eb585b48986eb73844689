@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86b2e59b_68491926",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1243,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-06-12T15:18:43Z",
+      "side": 1,
+      "message": "nit: maybe add that this is copy from infra libs at @\u003crevision\u003e?",
+      "range": {
+        "startLine": 1243,
+        "startChar": 0,
+        "endLine": 1243,
+        "endChar": 16
+      },
+      "revId": "5e0ecfff76d0dba5814eb585b48986eb73844689",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

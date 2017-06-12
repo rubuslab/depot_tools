@@ -46,6 +46,30 @@
       "revId": "5e0ecfff76d0dba5814eb585b48986eb73844689",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c06eaa3e_2b8dc14b",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1243,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-06-12T15:22:49Z",
+      "side": 1,
+      "message": "I think comment in code in case someone decides to modify the code later. For those new to codebase in particular, it\u0027d won\u0027t be obvious to look into blame in order to see where this came from.",
+      "parentUuid": "175dc64c_2f7c0742",
+      "range": {
+        "startLine": 1243,
+        "startChar": 0,
+        "endLine": 1243,
+        "endChar": 16
+      },
+      "revId": "5e0ecfff76d0dba5814eb585b48986eb73844689",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

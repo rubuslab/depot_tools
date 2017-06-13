@@ -16,6 +16,24 @@
       "revId": "4e4f3b1f221eb424916ecc065120090c4c7ce084",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "708917a8_491dca7b",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-13T21:57:24Z",
+      "side": 1,
+      "message": "After thinking about this further, let\u0027s see if we can get away with just pre-announcing this change on infra-dev/infra-announce and seeing if anyone objects, and then landing and see what breaks.",
+      "parentUuid": "83c193a7_73ce92fe",
+      "revId": "4e4f3b1f221eb424916ecc065120090c4c7ce084",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

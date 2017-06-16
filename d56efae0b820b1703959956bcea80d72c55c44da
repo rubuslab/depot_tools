@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6cb46ea_c644b510",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2017-06-16T16:58:31Z",
+      "side": 1,
+      "message": "Can we do this iff len(dirname) \u003e 259?",
+      "revId": "d56efae0b820b1703959956bcea80d72c55c44da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

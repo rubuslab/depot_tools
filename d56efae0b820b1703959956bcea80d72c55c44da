@@ -52,6 +52,24 @@
       "revId": "d56efae0b820b1703959956bcea80d72c55c44da",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5d84a69_3c0d0db6",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1116007
+      },
+      "writtenOn": "2017-06-16T17:10:09Z",
+      "side": 1,
+      "message": "Also, that would not work, it is basically len(dirname) + len(LONGEST_FILE_PATH_IN_TAR) that would need to be checked. I think this is always supported on windows",
+      "parentUuid": "82f14cbf_0133a3f4",
+      "revId": "d56efae0b820b1703959956bcea80d72c55c44da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

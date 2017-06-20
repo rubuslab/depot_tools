@@ -51,6 +51,24 @@
       "revId": "86312eb8b66fe66a4c65493fd6366438d3096b01",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec95b32b_a6f712ac",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-20T19:30:08Z",
+      "side": 1,
+      "message": "Hm. It doesn\u0027t seem like it should be all that complicated to me, but I\u0027ll take your word for it, given that it may not be an issue in practice and conditions will replace this.",
+      "parentUuid": "90091972_9fcbf320",
+      "revId": "86312eb8b66fe66a4c65493fd6366438d3096b01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

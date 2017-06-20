@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c1a287a8_af9a9529",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-20T17:55:34Z",
+      "side": 1,
+      "message": "There\u0027s no correctness harm, but it would make the checkout larger.",
+      "revId": "86312eb8b66fe66a4c65493fd6366438d3096b01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf5740cd_132090e5",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-06-20T17:55:34Z",
+      "side": 1,
+      "message": "Can you support \u0027None\u0027 by just marking the merged dependency as should_process\u003dFalse?",
+      "revId": "86312eb8b66fe66a4c65493fd6366438d3096b01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

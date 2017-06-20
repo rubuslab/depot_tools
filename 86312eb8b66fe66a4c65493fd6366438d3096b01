@@ -33,6 +33,24 @@
       "revId": "86312eb8b66fe66a4c65493fd6366438d3096b01",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90091972_9fcbf320",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-06-20T19:17:27Z",
+      "side": 1,
+      "message": "\u003e Can you support \u0027None\u0027 by just marking the merged dependency as should_process\u003dFalse?\n\nI don\u0027t see a reasonable way to do that (I\u0027ve tried).\n\nIf we try, we immediately get into messes such as whether we encounter None first or a different override first, and IMO it\u0027s really simpler to ignore None in this context, since the only use I found so far turned out to be invalid, and refers to a non-existent dep (src/pdf).",
+      "parentUuid": "bf5740cd_132090e5",
+      "revId": "86312eb8b66fe66a4c65493fd6366438d3096b01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

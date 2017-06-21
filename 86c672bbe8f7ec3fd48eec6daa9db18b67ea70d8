@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bbdb3ee3_f179c264",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-06-21T12:07:38Z",
+      "side": 1,
+      "message": "This is crucial part of the fix.",
+      "range": {
+        "startLine": 580,
+        "startChar": 38,
+        "endLine": 580,
+        "endChar": 40
+      },
+      "revId": "86c672bbe8f7ec3fd48eec6daa9db18b67ea70d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea28c713_f6cd660c",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-06-21T12:07:38Z",
+      "side": 1,
+      "message": "FWIW, before the fix, should_process would be False here.",
+      "range": {
+        "startLine": 590,
+        "startChar": 35,
+        "endLine": 590,
+        "endChar": 39
+      },
+      "revId": "86c672bbe8f7ec3fd48eec6daa9db18b67ea70d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

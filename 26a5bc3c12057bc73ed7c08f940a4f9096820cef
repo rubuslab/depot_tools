@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ee6ba61_648a7d96",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-06-21T12:18:14Z",
+      "side": 1,
+      "message": "how about \"Normalize value to be a dict which contains `should_process` metadata.\" (not sure IIUC)",
+      "range": {
+        "startLine": 555,
+        "startChar": 43,
+        "endLine": 555,
+        "endChar": 50
+      },
+      "revId": "26a5bc3c12057bc73ed7c08f940a4f9096820cef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

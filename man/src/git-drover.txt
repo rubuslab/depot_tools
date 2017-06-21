@@ -85,6 +85,10 @@ Manual Merge Example
 ^^^^^^^^^^^^^^^^^^^^
 demo:3[]
 
+If `git cl upload` errors out, the branch you're uploading to probably has a CL
+with the same Change-Id. Instead of cherry-picking manually, use the Reland
+button in the Gerrit UI to create a new CL, and patch that CL into your client.
+
 SEE ALSO
 --------
 linkgit:git-cherry-pick[1], linkgit:git-revert[1]

@@ -971,6 +971,13 @@ class Change(object):
     files = self.AffectedFiles(file_filter=owners_file_filter)
     return dict([(f.LocalPath(), f.OldContents()) for f in files])
 
+  def FindOwners(self, current_reviewers):
+    owners_db = owners.Database(self.RepositoryRoot(),
+                                fopen=file, os_path=os.path)
+    missing_files = owners_db.files_not_covered_by(
+        self.LocalPaths(), current_reviewers)
+    return owners_db.reviewers_for(missing_files, self.author_email)
+
 
 class GitChange(Change):
   _AFFECTED_FILES = GitAffectedFile

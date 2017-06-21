@@ -2877,8 +2877,11 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     # This may be None; default fallback value is determined in logic below.
     title = options.title
     automatic_title = False
+    reviewers = set(options.reviewers)
+    tbrs = set(options.tbrs)
+    ccs = set(options.cc)
 
-    if options.squash:
+    if options.squash:  # The default case.
       self._GerritCommitMsgHookCheck(offer_removal=not options.force)
       if self.GetIssue():
         # Try to get the message from a previous upload.
@@ -2966,9 +2969,14 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           assert len(change_ids) == 1
         change_id = change_ids[0]
 
-      if options.reviewers or options.tbrs or options.add_owners_to:
-        change_desc.update_reviewers(options.reviewers, options.tbrs,
-                                     options.add_owners_to, change)
+      reviewers.update(change_desc.pop_footer('R'))
+      tbrs.update(change_desc.pop_footer('Tbr'))
+      if options.update_owners_to == 'R':
+        reviewers.update(change.FindOwners(reviewers | tbrs))
+      elif options.update_owners_to == 'TBR':
+        tbrs.update(change.FindOwners(reviewers | tbrs))
+      ccs.update(change_desc.pop_footer('Cc'))
+      change_desc.append_footer('Tbr: %s' % ', '.join(sorted(tbrs)))
 
       remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
       parent = self._ComputeParent(remote, upstream_branch, custom_cl_base,
@@ -2976,7 +2984,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       tree = RunGit(['rev-parse', 'HEAD:']).strip()
       ref_to_push = RunGit(['commit-tree', tree, '-p', parent,
                             '-m', change_desc.description]).strip()
-    else:
+    else:  # if not options.squash, which should be rare
       change_desc = ChangeDescription(
           options.message or CreateDescriptionFromLog(git_diff_args))
       if not change_desc.description:
@@ -2986,15 +2994,23 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         DownloadGerritHook(False)
         change_desc.set_description(
             self._AddChangeIdToCommitMessage(options, git_diff_args))
-      if options.reviewers or options.tbrs or options.add_owners_to:
-        change_desc.update_reviewers(options.reviewers, options.tbrs,
-                                     options.add_owners_to, change)
+
+      reviewers.update(change_desc.pop_footer('R'))
+      tbrs.update(change_desc.pop_footer('Tbr'))
+      if options.update_owners_to == 'R':
+        reviewers.update(change.FindOwners(reviewers | tbrs))
+      elif options.update_owners_to == 'TBR':
+        tbrs.update(change.FindOwners(reviewers | tbrs))
+      ccs.update(change_desc.pop_footer('Cc'))
+      change_desc.append_footer('Tbr: %s' % ', '.join(sorted(tbrs)))
+
       ref_to_push = 'HEAD'
       # For no-squash mode, we assume the remote called "origin" is the one we
       # want. It is not worthwhile to support different workflows for
       # no-squash mode.
       parent = 'origin/%s' % branch
       change_id = git_footers.get_footer_change_id(change_desc.description)[0]
+
 
     assert change_desc
     commits = RunGitSilent(['rev-list', '%s..%s' % (parent,
@@ -3007,13 +3023,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
             'single commit.')
       confirm_or_exit(action='upload')
 
-    if options.reviewers or options.tbrs or options.add_owners_to:
-      change_desc.update_reviewers(options.reviewers, options.tbrs,
-                                   options.add_owners_to, change)
-
-    if options.send_mail:
-      if not change_desc.get_reviewers():
-        DieWithError('Must specify reviewers to send email.', change_desc)
+    if options.send_mail and not reviewers and not tbrs:
+      DieWithError('Must specify reviewers to send email.', change_desc)
 
     # Extra options that can be specified at push time. Doc:
     # https://gerrit-review.googlesource.com/Documentation/user-upload.html
@@ -3080,24 +3091,15 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       self.SetIssue(change_numbers[0])
       self._GitSetBranchConfigValue('gerritsquashhash', ref_to_push)
 
-    reviewers = sorted(change_desc.get_reviewers())
-
-    # Add cc's from the CC_LIST and --cc flag (if any).
+    # Add CCs from the CC_LIST and WATCHLISTS.
     if not options.private:
-      cc = self.GetCCList().split(',')
-    else:
-      cc = []
-    if options.cc:
-      cc.extend(options.cc)
-    cc = filter(None, [email.strip() for email in cc])
-    if change_desc.get_cced():
-      cc.extend(change_desc.get_cced())
+      ccs.update(self.GetCCList().split(','))
 
     gerrit_util.AddReviewers(
-        self._GetGerritHost(), self.GetIssue(), reviewers, cc,
+        self._GetGerritHost(), self.GetIssue(), reviewers | tbrs, ccs,
         notify=bool(options.send_mail))
 
-    if change_desc.get_reviewers(tbr_only=True):
+    if tbrs:
       print('Adding self-LGTM (Code-Review +1) because of TBRs.')
       gerrit_util.SetReview(
           self._GetGerritHost(), self.GetIssue(),
@@ -3470,6 +3472,14 @@ class ChangeDescription(object):
       top_lines.append('')
     top_lines.append(line)
     self._description_lines = top_lines + separator + gerrit_footers
+
+  def pop_footer(self, footer):
+    tag = footer.replace('-', '_').upper()
+    r = r'^[ \t]*(?:(%s)[ \t]*=|%s: )[ \t]*(.*?)[ \t]*$' % (tag, footer)
+
+
+
+
 
   def get_reviewers(self, tbr_only=False):
     """Retrieves the list of reviewers."""

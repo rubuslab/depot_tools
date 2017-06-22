@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a19f880_35c4588f",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-06-22T17:17:49Z",
+      "side": 1,
+      "message": "80col",
+      "revId": "36a76a2da3eecf4ee057ab05f3fa165c1a95cc3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7b76688_4060ae41",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-06-22T17:17:49Z",
+      "side": 1,
+      "message": "https://",
+      "range": {
+        "startLine": 139,
+        "startChar": 58,
+        "endLine": 139,
+        "endChar": 67
+      },
+      "revId": "36a76a2da3eecf4ee057ab05f3fa165c1a95cc3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7f3a062_d9df0675",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-06-22T17:17:49Z",
+      "side": 1,
+      "message": "let\u0027s",
+      "range": {
+        "startLine": 139,
+        "startChar": 13,
+        "endLine": 139,
+        "endChar": 17
+      },
+      "revId": "36a76a2da3eecf4ee057ab05f3fa165c1a95cc3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09c7e4e6_00101bdb",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2017-06-22T17:17:49Z",
+      "side": 1,
+      "message": "maybe f.lower()? shrug",
+      "range": {
+        "startLine": 140,
+        "startChar": 11,
+        "endLine": 140,
+        "endChar": 12
+      },
+      "revId": "36a76a2da3eecf4ee057ab05f3fa165c1a95cc3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

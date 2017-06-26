@@ -265,7 +265,14 @@ class MyActivity(object):
 
     bugs = []
     if description:
+      # Rietveld-style bug notation
       matches = re.findall('BUG=(((\d+)(,\s?)?)+)', description)
+      if matches:
+        for match in matches:
+          bugs.extend(match[0].replace(' ', '').split(','))
+
+      # Gerrit-style bug notation
+      matches = re.findall('Bug:\s?(((\d+)(,\s?)?)+)', description)
       if matches:
         for match in matches:
           bugs.extend(match[0].replace(' ', '').split(','))

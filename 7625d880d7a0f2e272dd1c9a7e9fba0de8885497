@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3bcc7c63_f260a925",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3016,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-06-27T17:48:58Z",
+      "side": 0,
+      "message": "What happens now if I do `git cl upload --gerrit --send-mail` and don\u0027t specify any reviewers?",
+      "revId": "7625d880d7a0f2e272dd1c9a7e9fba0de8885497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

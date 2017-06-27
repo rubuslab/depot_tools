@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "592387f2_fcb3df9c",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1530,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-06-27T17:48:58Z",
+      "side": 1,
+      "message": "These tests are always pretty difficult to understand :-/\n\nIt looks like:\n\n - This is in a function which returns a list of canned return values for function calls to use in tests when testing CL uploads to Gerrit.\n - The difference that this CL makes is in the \"refspec flags\", which are used to pass arguments about CL state to Gerrit, like \"wip\" means \"turn on WIP mode for this CL\", and \"m\u003dfoo\" means \"the patchset title is foo\".\n\nIs that right?",
+      "revId": "644fdb00735e29e7162d567b4b37e0623ed20c55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

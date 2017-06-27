@@ -16,6 +16,24 @@
       "revId": "644fdb00735e29e7162d567b4b37e0623ed20c55",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9b13c1d_a39284fb",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1530,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-06-27T20:11:13Z",
+      "side": 1,
+      "message": "Yep, these tests are awful, but also yes, your understanding is exactly correct.",
+      "parentUuid": "592387f2_fcb3df9c",
+      "revId": "644fdb00735e29e7162d567b4b37e0623ed20c55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

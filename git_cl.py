@@ -3016,10 +3016,16 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     # https://gerrit-review.googlesource.com/Documentation/user-upload.html
     refspec_opts = []
 
-    if options.send_mail:
-      refspec_opts.append('ready')
+    if not self.GetIssue():
+      if options.send_mail:
+        refspec_opts.append('ready')
+      else:
+        refspec_opts.append('wip')
     else:
-      refspec_opts.append('wip')
+      if options.send_mail:
+        refspec_opts.append('notify=ALL')
+      else:
+        refspec_opts.append('notify=NONE')
 
     # TODO(tandrii): options.message should be posted as a comment
     # if --send-email is set on non-initial upload as Rietveld used to do it.

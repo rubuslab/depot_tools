@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fbcf6e8_e6676969",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2318,
+      "author": {
+        "id": 1115495
+      },
+      "writtenOn": "2017-06-29T18:24:11Z",
+      "side": 1,
+      "message": "I wish we had remote aggregated logs :P",
+      "range": {
+        "startLine": 2315,
+        "startChar": 0,
+        "endLine": 2318,
+        "endChar": 13
+      },
+      "revId": "1972545cbc4a005ba5636afeb54640a765d714ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

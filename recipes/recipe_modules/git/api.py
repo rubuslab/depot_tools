@@ -209,27 +209,27 @@ class GitApi(recipe_api.RecipeApi):
         git_setup_args)
 
     # Some of the commands below require depot_tools to be in PATH.
-    path = self.m.path.pathsep.join([
-        str(self.package_repo_resource()), '%(PATH)s'])
+    env_prefixes = {
+        'PATH': [self.m.depot_tools.root],
+    }
 
-    with self.m.context(cwd=dir_path):
+    with self.m.context(cwd=dir_path, env_prefixes=env_prefixes):
       if use_git_cache:
-        with self.m.context(env={'PATH': path}):
-          self('retry', 'cache', 'populate', '-c',
-               self.m.infra_paths.default_git_cache_dir, url,
+        self('retry', 'cache', 'populate', '-c',
+             self.m.infra_paths.default_git_cache_dir, url,
 
-               name='populate cache',
-               can_fail_build=can_fail_build)
-          dir_cmd = self(
-              'cache', 'exists', '--quiet',
-              '--cache-dir', self.m.infra_paths.default_git_cache_dir, url,
-              can_fail_build=can_fail_build,
-              stdout=self.m.raw_io.output(),
-              step_test_data=lambda:
-                  self.m.raw_io.test_api.stream_output('mirror_dir'))
-          mirror_dir = dir_cmd.stdout.strip()
-          self('remote', 'set-url', 'origin', mirror_dir,
-               can_fail_build=can_fail_build)
+             name='populate cache',
+             can_fail_build=can_fail_build)
+        dir_cmd = self(
+            'cache', 'exists', '--quiet',
+            '--cache-dir', self.m.infra_paths.default_git_cache_dir, url,
+            can_fail_build=can_fail_build,
+            stdout=self.m.raw_io.output(),
+            step_test_data=lambda:
+                self.m.raw_io.test_api.stream_output('mirror_dir'))
+        mirror_dir = dir_cmd.stdout.strip()
+        self('remote', 'set-url', 'origin', mirror_dir,
+             can_fail_build=can_fail_build)
 
       # There are five kinds of refs we can be handed:
       # 0) None. In this case, we default to properties['branch'].
@@ -263,7 +263,7 @@ class GitApi(recipe_api.RecipeApi):
       if recursive:
         fetch_args.append('--recurse-submodules')
 
-      fetch_env = {'PATH': path}
+      fetch_env = {}
       fetch_stderr = None
       if curl_trace_file:
         fetch_env['GIT_CURL_VERBOSE'] = '1'
@@ -410,13 +410,13 @@ class GitApi(recipe_api.RecipeApi):
       upstream (str): to origin/master.
       kwargs: Forwarded to '__call__'.
     """
-    env = self.m.context.env
-    env['PATH'] = self.m.path.pathsep.join([
-        str(self.package_repo_resource()), '%(PATH)s'])
+    env_prefixes = {
+        'PATH': [self.m.depot_tools.root],
+    }
     args = ['new-branch', branch]
     if upstream:
       args.extend(['--upstream', upstream])
     if not name:
       name = 'git new-branch %s' % branch
-    with self.m.context(env=env):
+    with self.m.context(env_prefixes=env_prefixes):
       return self(*args, name=name, **kwargs)

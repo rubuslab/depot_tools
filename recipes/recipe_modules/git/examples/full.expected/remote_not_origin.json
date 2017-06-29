@@ -23,8 +23,10 @@
       "--recurse-submodules"
     ],
     "cwd": "[START_DIR]/src",
-    "env": {
-      "PATH": "RECIPE_PACKAGE_REPO[depot_tools]:<PATH>"
+    "env_prefixes": {
+      "PATH": [
+        "RECIPE_PACKAGE_REPO[depot_tools]"
+      ]
     },
     "infra_step": true,
     "name": "git fetch"
@@ -37,6 +39,11 @@
       "FETCH_HEAD"
     ],
     "cwd": "[START_DIR]/src",
+    "env_prefixes": {
+      "PATH": [
+        "RECIPE_PACKAGE_REPO[depot_tools]"
+      ]
+    },
     "infra_step": true,
     "name": "git checkout"
   },
@@ -47,6 +54,11 @@
       "HEAD"
     ],
     "cwd": "[START_DIR]/src",
+    "env_prefixes": {
+      "PATH": [
+        "RECIPE_PACKAGE_REPO[depot_tools]"
+      ]
+    },
     "infra_step": true,
     "name": "read revision",
     "stdout": "/path/to/tmp/",
@@ -63,6 +75,11 @@
       "-x"
     ],
     "cwd": "[START_DIR]/src",
+    "env_prefixes": {
+      "PATH": [
+        "RECIPE_PACKAGE_REPO[depot_tools]"
+      ]
+    },
     "infra_step": true,
     "name": "git clean"
   },
@@ -73,6 +90,11 @@
       "sync"
     ],
     "cwd": "[START_DIR]/src",
+    "env_prefixes": {
+      "PATH": [
+        "RECIPE_PACKAGE_REPO[depot_tools]"
+      ]
+    },
     "infra_step": true,
     "name": "submodule sync"
   },
@@ -85,6 +107,11 @@
       "--recursive"
     ],
     "cwd": "[START_DIR]/src",
+    "env_prefixes": {
+      "PATH": [
+        "RECIPE_PACKAGE_REPO[depot_tools]"
+      ]
+    },
     "infra_step": true,
     "name": "submodule update"
   },
@@ -174,8 +201,10 @@
       "refactor"
     ],
     "cwd": "[START_DIR]/src",
-    "env": {
-      "PATH": "RECIPE_PACKAGE_REPO[depot_tools]:<PATH>"
+    "env_prefixes": {
+      "PATH": [
+        "RECIPE_PACKAGE_REPO[depot_tools]"
+      ]
     },
     "infra_step": true,
     "name": "git new-branch refactor"
@@ -189,8 +218,10 @@
       "refactor"
     ],
     "cwd": "[START_DIR]/src",
-    "env": {
-      "PATH": "RECIPE_PACKAGE_REPO[depot_tools]:<PATH>"
+    "env_prefixes": {
+      "PATH": [
+        "RECIPE_PACKAGE_REPO[depot_tools]"
+      ]
     },
     "infra_step": true,
     "name": "git new-branch feature"

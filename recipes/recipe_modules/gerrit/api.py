@@ -12,12 +12,10 @@ class GerritApi(recipe_api.RecipeApi):
     assert isinstance(cmd, (list, tuple))
     prefix = 'gerrit '
 
-    env = self.m.context.env
-    env.setdefault('PATH', '%(PATH)s')
-    env['PATH'] = self.m.path.pathsep.join([
-        env['PATH'], str(self._module.PACKAGE_REPO_ROOT)])
-
-    with self.m.context(env=env):
+    env_prefixes = {
+        'PATH': [self.m.depot_tools.root],
+    }
+    with self.m.context(env_prefixes=env_prefixes):
       return self.m.python(prefix + name,
                            self.package_repo_resource('gerrit_client.py'),
                            cmd,

@@ -213,7 +213,7 @@ class Database(object):
     for f in files:
       dirpath = self.os_path.dirname(f)
       while not self._owners_for(dirpath):
-        self._read_owners(self.os_path.join(dirpath, 'OWNERS'))
+        self.read_owners(self.os_path.join(dirpath, 'OWNERS'))
         if self._should_stop_looking(dirpath):
           break
         dirpath = self.os_path.dirname(dirpath)
@@ -229,7 +229,7 @@ class Database(object):
         obj_owners |= path_owners
     return obj_owners
 
-  def _read_owners(self, path):
+  def read_owners(self, path):
     owners_path = self.os_path.join(self.root, path)
     if not self.os_path.exists(owners_path):
       return
@@ -309,7 +309,7 @@ class Database(object):
   def _read_global_comments(self):
     if not self._status_file:
       if not 'OWNERS' in self.read_files:
-        self._read_owners('OWNERS')
+        self.read_owners('OWNERS')
       if not self._status_file:
         return
 

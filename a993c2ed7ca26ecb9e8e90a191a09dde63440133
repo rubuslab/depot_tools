@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "cf360f65_eed498a4",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-05T14:37:24Z",
+      "side": 1,
+      "message": "yeah, i guess my preference.",
+      "parentUuid": "7dc24292_cbed295a",
+      "range": {
+        "startLine": 29,
+        "startChar": 18,
+        "endLine": 29,
+        "endChar": 30
+      },
+      "revId": "a993c2ed7ca26ecb9e8e90a191a09dde63440133",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0f26b3ae_b343d4b6",
         "filename": "recipes/recipe_modules/gerrit/test_api.py",
         "patchSetId": 6

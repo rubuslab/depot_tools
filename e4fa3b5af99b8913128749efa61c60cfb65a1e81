@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "8b9e0cb9_07bee05b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-07-05T18:36:19Z",
+      "side": 1,
+      "message": "Oh, I wasn\u0027t saying it should be changed. Your comment about using a normal dict was clearly correct. That\u0027s why I +1\u0027d the CL. I don\u0027t think there\u0027s an easy way to do an actual multidict here, precisely because there isn\u0027t a builtin multidict in 2.7. It still makes me sad, though.",
+      "parentUuid": "4fe4752b_528a1fa8",
+      "range": {
+        "startLine": 396,
+        "startChar": 4,
+        "endLine": 397,
+        "endChar": 63
+      },
+      "revId": "e4fa3b5af99b8913128749efa61c60cfb65a1e81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60485c44_2a2b6981",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 10

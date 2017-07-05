@@ -22,6 +22,30 @@
       "revId": "e4fa3b5af99b8913128749efa61c60cfb65a1e81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fe4752b_528a1fa8",
+        "filename": "gerrit_util.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-05T18:28:26Z",
+      "side": 1,
+      "message": "I actually thought of this before asking to change interface, but decided in favor of tuples because\nmultidict isn\u0027t in stdlib py2.7.\n-\u003e So, one has improvise with some kind of collections.defaultdict(list).\n-\u003e But simple usage gets more verbose {k: [v]} than just [(k, v)].\n-\u003e Worse, easy to mistakenly abuse and pass smth like {\"k\": \"value\"} which would become \"k\" -\u003e [\u0027v\u0027, \u0027a\u0027, \u0027l\u0027, \u0027u\u0027, \u0027e\u0027]\n-\u003e So, one has to write assertions for types passed. \nOverall, so much work for the only gain of indexability, which can be trivially achieved with one comprehension wherver necessary.",
+      "parentUuid": "94a8077b_ab9342c7",
+      "range": {
+        "startLine": 396,
+        "startChar": 4,
+        "endLine": 397,
+        "endChar": 63
+      },
+      "revId": "e4fa3b5af99b8913128749efa61c60cfb65a1e81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

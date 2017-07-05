@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b408d64f_574e89e0",
+        "filename": "gerrit_client.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-05T11:51:21Z",
+      "side": 1,
+      "message": "dict is unfortunate here because it precludes queries like\n\n  label\u003dCR\u003e1 \u0026 label\u003dCQ\u003d0\n\nor \n  \n  is:owner \u0026 is:submittable\n\nWDYT about changing QueryChanges signature to take an iterable of kv pairs? I do realize it\u0027s more work, but better now than later :)",
+      "range": {
+        "startLine": 80,
+        "startChar": 6,
+        "endLine": 80,
+        "endChar": 55
+      },
+      "revId": "a993c2ed7ca26ecb9e8e90a191a09dde63440133",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2555f7d9_4cdb6c38",
+        "filename": "gerrit_client.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-05T11:51:21Z",
+      "side": 1,
+      "message": "either remove, or log just total number or list of CL numbers (like 558939,444312).",
+      "range": {
+        "startLine": 84,
+        "startChar": 2,
+        "endLine": 84,
+        "endChar": 22
+      },
+      "revId": "a993c2ed7ca26ecb9e8e90a191a09dde63440133",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "897bc856_289fddcc",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-05T11:51:21Z",
+      "side": 1,
+      "message": "remove \"_\" otherwise URL doesn\u0027t lead to what it should.",
+      "range": {
+        "startLine": 73,
+        "startChar": 80,
+        "endLine": 73,
+        "endChar": 81
+      },
+      "revId": "a993c2ed7ca26ecb9e8e90a191a09dde63440133",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de645a40_afac7342",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-05T11:51:21Z",
+      "side": 1,
+      "message": "nit: \"Commit-Queue\"",
+      "range": {
+        "startLine": 29,
+        "startChar": 18,
+        "endLine": 29,
+        "endChar": 30
+      },
+      "revId": "a993c2ed7ca26ecb9e8e90a191a09dde63440133",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f26b3ae_b343d4b6",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-05T11:51:21Z",
+      "side": 1,
+      "message": "add \u0027_number\u0027: 123456",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 7
+      },
+      "revId": "a993c2ed7ca26ecb9e8e90a191a09dde63440133",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7faff24_912fc2b1",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-05T11:51:21Z",
+      "side": 1,
+      "message": "Ideadbeef\n\nto avoid confusion with change number.",
+      "range": {
+        "startLine": 31,
+        "startChar": 23,
+        "endLine": 31,
+        "endChar": 28
+      },
+      "revId": "a993c2ed7ca26ecb9e8e90a191a09dde63440133",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

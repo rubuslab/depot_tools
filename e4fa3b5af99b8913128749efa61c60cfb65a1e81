@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "94a8077b_ab9342c7",
+        "filename": "gerrit_util.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-07-05T18:14:09Z",
+      "side": 1,
+      "message": "This makes me sad; a multidict is really the right layer of abstraction for this.",
+      "range": {
+        "startLine": 396,
+        "startChar": 4,
+        "endLine": 397,
+        "endChar": 63
+      },
+      "revId": "e4fa3b5af99b8913128749efa61c60cfb65a1e81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,3 +22,16 @@ class GerritTestApi(recipe_test_api.RecipeTestApi):
       "ref": "refs/heads/master",
       "revision": "67ebf73496383c6777035e374d2d664009e2aa5c"
     })
+
+  def get_changes_response_data(self):
+    return self._make_gerrit_response_json([
+      {
+        'status': 'NEW',
+        'created': '2017-01-30 13:11:20.000000000',
+        'change_id': 'I12345',
+        'project': 'chromium/src',
+        'has_review_started': False,
+        'branch': 'master',
+        'subject': 'Change title',
+      },
+    ])

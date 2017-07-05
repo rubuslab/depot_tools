@@ -46,6 +46,29 @@
       "revId": "e4fa3b5af99b8913128749efa61c60cfb65a1e81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60485c44_2a2b6981",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-05T18:31:45Z",
+      "side": 1,
+      "message": "I\u0027ll wait for reviewers to agree and then also fix this one accordingly...",
+      "range": {
+        "startLine": 66,
+        "startChar": 30,
+        "endLine": 66,
+        "endChar": 40
+      },
+      "revId": "e4fa3b5af99b8913128749efa61c60cfb65a1e81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

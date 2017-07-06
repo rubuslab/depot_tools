@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c33eee7e_6b7477d6",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1738,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-06T15:30:19Z",
+      "side": 1,
+      "message": "nit: why not call it \"run\" then?",
+      "range": {
+        "startLine": 1738,
+        "startChar": 6,
+        "endLine": 1738,
+        "endChar": 13
+      },
+      "revId": "9eb2af2120b1eae77d8ff218d918c63ebd39af52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25bd0a8f_e4160d3d",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-06T15:30:19Z",
+      "side": 1,
+      "message": "Since flatten() can only be called once on an instance, how about:\n1. s/flatten/_flatten\n2. __init__ runs _flatten() as the last thing.\n3. Add method like get_deps_string() to produce resulting concatenation of strings (you can even do store its result locally and expose as property).\n\u003d\u003e usage is nicer: \n\u003e\u003e\u003e Flattener(clinet).get_deps_string()",
+      "range": {
+        "startLine": 1743,
+        "startChar": 4,
+        "endLine": 1753,
+        "endChar": 47
+      },
+      "revId": "9eb2af2120b1eae77d8ff218d918c63ebd39af52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -50,7 +50,16 @@ if [ ! -e "$CLIENT" ]; then
   echo "Bootstrapping cipd client for ${PLAT}-${ARCH}..."
   echo "From $URL"
   if hash curl 2> /dev/null ; then
-    curl "$URL" -A "$USER_AGENT"  -L -o "$CLIENT"
+    # Download the client into the trash directory to have "cipd selfupdate"
+    # automatically cleanup any stray artifacts.
+    #
+    # This tempdir method works on Linux and Mac.
+    CIPD_CLIENT_TMP=$(\
+      mktemp -p "$MYPATH" 2>/dev/null || \
+      mktemp "$MYPATH/.cipd_client.XXXXXXX")
+
+    curl "$URL" -A "$USER_AGENT"  -L -o "$CIPD_CLIENT_TMP"
+    mv "$CIPD_CLIENT_TMP" "$CLIENT"
     chmod +x "$CLIENT"
   else
     echo Your platform is missing the \`curl\` command. Please use your package

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08bc09fb_d05322d1",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1742,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-06T15:36:37Z",
+      "side": 1,
+      "message": "define it in constructor first.",
+      "revId": "4ee634d9d567703be536d6206ec551fd6bc1f39c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

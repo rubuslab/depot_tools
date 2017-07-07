@@ -1695,6 +1695,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
       'CheckLongLines', 'CheckTreeIsOpen', 'PanProjectChecks',
       'CheckLicense',
       'CheckOwners',
+      'CheckOwnersFileFormat',
       'CheckPatchFormatted',
       'CheckGNFormatted',
       'CheckRietveldTryJobExecution',
@@ -2627,6 +2628,28 @@ class CannedChecksUnittest(PresubmitTestsBase):
     self.AssertOwnersWorks(approvers=set(['ben@example.com']),
                            is_committing=False,
                            uncovered_files=set())
+
+  def testCheckOwnersFileFormat(self):
+    affected_file = self.mox.CreateMock(presubmit.GitAffectedFile)
+    change = presubmit.Change('name', 'description', self.fake_root_dir,
+                              affected_file, 0, 0, None)
+    input_api = self.MockInputApi(change, False)
+
+    input_api.AffectedFiles(
+            include_deletes=False,
+            file_filter=mox.IgnoreArg()).AndReturn([affected_file])
+    affected_file.LocalPath().AndReturn('OWNERS')
+
+
+
+    self.mox.ReplayAll()
+
+    output_api = presubmit.OutputApi(False)
+    result = presubmit_canned_checks.CheckOwnersFileFormat(input_api,
+                                                           output_api)
+
+  def testCheckOwnersFileFormat_failure(self):
+      pass
 
   def testCannedRunUnitTests(self):
     change = presubmit.Change(

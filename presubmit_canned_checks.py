@@ -1069,6 +1069,9 @@ def PanProjectChecks(input_api, output_api,
   snapshot("checking license")
   results.extend(input_api.canned_checks.CheckLicense(
       input_api, output_api, license_header, source_file_filter=sources))
+  snapshot("checking OWNERS file syntax")
+  results.extend(
+      input_api.canned_checks.CheckOwnersFileFormat(input_api, output_api))
 
   if input_api.is_committing:
     snapshot("checking was uploaded")
@@ -1125,3 +1128,23 @@ def CheckGNFormatted(input_api, output_api):
   # It's just a warning, so ignore other types of failures assuming they'll be
   # caught elsewhere.
   return warnings
+
+
+def CheckOwnersFileFormat(input_api, output_api):
+  import owners
+  affected_files = input_api.change.AffectedFiles(
+      include_deletes=False,
+      file_filter=lambda x: x.LocalPath().index('OWNERS') == 0)
+
+  result = []
+  for f in affected_files:
+    try:
+      owners = owners.get_owners_from_file(
+          f, input_api.change.RepositoryRoot())
+    except owners.SyntaxErrorInOwnersFile as err:
+      result.append(output_api.PresubmitError(
+          'Syntax error in OWNERS file %s: %s' % (
+                  f.AbsoluteLocalPath(), str(err))))
+
+  return result
+

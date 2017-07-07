@@ -58,6 +58,7 @@ import collections
 import fnmatch
 import random
 import re
+import os
 
 
 # If this is present by itself on a line, this means that everyone can review.
@@ -91,6 +92,89 @@ class SyntaxErrorInOwnersFile(Exception):
 
   def __str__(self):
     return '%s:%d syntax error: %s' % (self.path, self.lineno, self.msg)
+
+
+def _resolve_include(path, start, root, os_path):
+  if path.startswith('//'):
+    include_path = path[2:]
+  else:
+    assert start.startswith(root)
+    start = os_path.dirname(os_path.relpath(start, root))
+    include_path = os_path.join(start, path)
+
+  owners_path = os_path.join(root, include_path)
+  if not os_path.exists(owners_path):
+    return None
+
+  return include_path
+
+
+def _match_email_and_comment(line, email_regexp):
+  m = re.match('(.+?):(.+)', line)
+  if m:
+    owner = m.group(1).strip()
+    comment = m.group(2).strip()
+    if email_regexp.match(owner):
+      return owner, comment
+  elif email_regexp.match(line):
+    return line, None
+  return None, None
+
+
+def get_owners_from_file(
+    f, root, os_path=os.path, fopen=file, email_regexp=None,
+    skip_descent=False, visited_files=None):
+  """
+  Gets a list of all the emails listed in a single file. Ignores comments,
+  per-file, and set noparent. Descends into sub-included files and extracts
+  owners there too.
+  """
+  if not visited_files:
+      visited_files = set()
+  if not email_regexp:
+    email_regexp = re.compile(BASIC_EMAIL_REGEXP)
+
+  if f in visited_files:
+    return []
+  visited_files.add(f)
+
+  lineno = 0
+  owners = set()
+  for line in fopen(os_path.join(root, f)):
+    lineno += 1
+    line = line.strip()
+    if (line.startswith('#') or line == '' or
+          line.startswith('set noparent') or
+          line.startswith('per-file')):
+      continue
+
+    if line == EVERYONE:
+      owners.add(line)
+      continue
+
+    if line.startswith('file:'):
+      if skip_descent:
+        continue
+      sub_include_file = _resolve_include(line[5:], f, root, os_path)
+      if not sub_include_file:
+        raise SyntaxErrorInOwnersFile(f, lineno,
+            ('%s does not refer to an existing file' % line[5:]))
+      sub_owners = get_owners_from_file(
+          sub_include_file, root, os_path, fopen, email_regexp,
+          skip_descent, visited_files)
+      owners.update(sub_owners)
+      continue
+
+    email, _ = _match_email_and_comment(line, email_regexp)
+    if (email):
+      owners.add(email)
+      continue
+
+    raise SyntaxErrorInOwnersFile(file, lineno,
+      ('"%s" is not a "set noparent", file include, "*", '
+       'or an email address.' % (line,)))
+
+  return owners
 
 
 class Database(object):
@@ -192,7 +276,7 @@ class Database(object):
     while True:
       for reviewer in reviewers:
         for owned_pattern in self._owners_to_paths.get(reviewer, set()):
-          if fnmatch.fnmatch(objname, owned_pattern):
+          if self._fnmatch(objname, owned_pattern):
             return True
       if self._should_stop_looking(objname):
         break
@@ -213,7 +297,7 @@ class Database(object):
     for f in files:
       dirpath = self.os_path.dirname(f)
       while not self._owners_for(dirpath):
-        self._read_owners(self.os_path.join(dirpath, 'OWNERS'))
+        self.read_owners(self.os_path.join(dirpath, 'OWNERS'))
         if self._should_stop_looking(dirpath):
           break
         dirpath = self.os_path.dirname(dirpath)
@@ -229,7 +313,7 @@ class Database(object):
         obj_owners |= path_owners
     return obj_owners
 
-  def _read_owners(self, path):
+  def read_owners(self, path):
     owners_path = self.os_path.join(self.root, path)
     if not self.os_path.exists(owners_path):
       return
@@ -309,7 +393,7 @@ class Database(object):
   def _read_global_comments(self):
     if not self._status_file:
       if not 'OWNERS' in self.read_files:
-        self._read_owners('OWNERS')
+        self.read_owners('OWNERS')
       if not self._status_file:
         return
 
@@ -332,14 +416,8 @@ class Database(object):
       if line == '':
         continue
 
-      m = re.match('(.+?):(.+)', line)
-      if m:
-        owner = m.group(1).strip()
-        comment = m.group(2).strip()
-        if not self.email_regexp.match(owner):
-          raise SyntaxErrorInOwnersFile(owners_status_path, lineno,
-              'invalid email address: "%s"' % owner)
-
+      owner, comment = _match_email_and_comment(line, self.email_regexp)
+      if owner and comment:
         self.comments.setdefault(owner, {})
         self.comments[owner][GLOBAL_STATUS] = comment
         continue
@@ -351,12 +429,17 @@ class Database(object):
     if directive == 'set noparent':
       self._stop_looking.add(owned_paths)
     elif directive.startswith('file:'):
-      include_file = self._resolve_include(directive[5:], owners_path)
+      include_file = _resolve_include(
+          directive[5:], owners_path, self.root, self.os_path)
       if not include_file:
         raise SyntaxErrorInOwnersFile(owners_path, lineno,
             ('%s does not refer to an existing file.' % directive[5:]))
 
-      included_owners = self._read_just_the_owners(include_file)
+      included_owners = get_owners_from_file(owners_path,
+                                             self.root,
+                                             self.os_path,
+                                             self.fopen,
+                                             self.email_regexp)
       for owner in included_owners:
         self._owners_to_paths.setdefault(owner, set()).add(owned_paths)
         self._paths_to_owners.setdefault(owned_paths, set()).add(owner)
@@ -370,49 +453,6 @@ class Database(object):
       raise SyntaxErrorInOwnersFile(owners_path, lineno,
           ('"%s" is not a "set noparent", file include, "*", '
            'or an email address.' % (directive,)))
-
-  def _resolve_include(self, path, start):
-    if path.startswith('//'):
-      include_path = path[2:]
-    else:
-      assert start.startswith(self.root)
-      start = self.os_path.dirname(self.os_path.relpath(start, self.root))
-      include_path = self.os_path.join(start, path)
-
-    owners_path = self.os_path.join(self.root, include_path)
-    if not self.os_path.exists(owners_path):
-      return None
-
-    return include_path
-
-  def _read_just_the_owners(self, include_file):
-    if include_file in self._included_files:
-      return self._included_files[include_file]
-
-    owners = set()
-    self._included_files[include_file] = owners
-    lineno = 0
-    for line in self.fopen(self.os_path.join(self.root, include_file)):
-      lineno += 1
-      line = line.strip()
-      if (line.startswith('#') or line == '' or
-              line.startswith('set noparent') or
-              line.startswith('per-file')):
-        continue
-
-      if self.email_regexp.match(line) or line == EVERYONE:
-        owners.add(line)
-        continue
-      if line.startswith('file:'):
-        sub_include_file = self._resolve_include(line[5:], include_file)
-        sub_owners = self._read_just_the_owners(sub_include_file)
-        owners.update(sub_owners)
-        continue
-
-      raise SyntaxErrorInOwnersFile(include_file, lineno,
-          ('"%s" is not a "set noparent", file include, "*", '
-           'or an email address.' % (line,)))
-    return owners
 
   def _covering_set_of_owners_for(self, files, author):
     dirs_remaining = set(self.enclosing_dir_with_owners(f) for f in files)

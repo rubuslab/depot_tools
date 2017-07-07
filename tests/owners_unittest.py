@@ -112,6 +112,46 @@ class OwnersDatabaseTest(_BaseTestCase):
     self.assertEquals(db.files_not_covered_by(set(files), set(reviewers)),
                       set(unreviewed_files))
 
+  def test_get_owners_from_file(self):
+    self.assertEquals(
+        owners.get_owners_from_file(
+            '/content/qux/OWNERS',
+            self.root,
+            self.repo,
+            self.fopen,
+            skip_descent=True),
+        set([peter]))
+    self.assertEquals(
+        owners.get_owners_from_file(
+            '/OWNERS',
+            self.root,
+            self.repo,
+            self.fopen,
+            skip_descent=True),
+        set([owners.EVERYONE]))
+
+  def test_get_owners_from_file__invalid_file(self):
+    self.files['/OWNERS'] = owners_file(lines=['invalid'])
+    self.assertRaises(
+        owners.SyntaxErrorInOwnersFile,
+        owners.get_owners_from_file,
+                '/OWNERS',
+                self.root,
+                self.repo,
+                self.fopen,
+                skip_descent=True)
+
+  def test_get_owners_from_file__descent(self):
+    self.assertEquals(
+        owners.get_owners_from_file(
+            '/content/qux/OWNERS',
+            self.root,
+            self.repo,
+            self.fopen,
+            skip_descent=False),
+        set([peter, brett]))
+
+
   def test_files_not_covered_by__owners_propagates_down(self):
     self.assert_files_not_covered_by(
       ['chrome/gpu/gpu_channel.h', 'chrome/renderer/gpu/gpu_channel_host.h'],
@@ -298,7 +338,7 @@ class OwnersDatabaseTest(_BaseTestCase):
         [ken], ['content/qux/foo.cc'])
     self.assert_files_not_covered_by(
         ['content/baz/baz.cc', 'content/qux/foo.cc'],
-        [ken, john], [])
+        [john], [])
 
   def test_file_include_recursive_loop(self):
     self.files['/content/baz/OWNERS'] = owners_file(brett,

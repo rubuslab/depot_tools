@@ -24,15 +24,37 @@ if "%1" == "force" (
   shift /1
 )
 
+if exist "%WIN_TOOLS_ROOT_DIR%\.python_bleeding_edge" (
+  set PYTHON_MANIFEST="python_version_bleeding_edge.txt"
+  set PYTHON_BIN="python27_bin"
+) else (
+  set PYTHON_MANIFEST="legacy"
+  set PYTHON_BIN="python276_bin"
+)
 
 :PYTHON_CHECK
-if not exist "%WIN_TOOLS_ROOT_DIR%\python276_bin" goto :PY27_INSTALL
-if not exist "%WIN_TOOLS_ROOT_DIR%\python.bat" goto :PY27_INSTALL
-set ERRORLEVEL=0
-goto :GIT_CHECK
+if not exist "%WIN_TOOLS_ROOT_DIR%\%PYTHON_BIN%" goto :PY27_DO_INSTALL
+if not exist "%WIN_TOOLS_ROOT_DIR%\python.bat" goto :PY27_DO_INSTALL
+if NOT "%PYTHON_MANIFEST%"=="legacy" (
+  set /p PYTHON_VERSION=<"%~dp0%PYTHON_MANIFEST%"
+  if exist "%WIN_TOOLS_ROOT_DIR%\python.stamp" (
+    set /p PYTHON_CURRENT_VERSION=<"%WIN_TOOLS_ROOT_DIR%\python.stamp"
+  ) else (
+    set PYTHON_CURRENT_VERSION=""
+  )
+  if NOT "%PYTHON_CURRENT_VERSION%"=="%PYTHON_VERSION%" goto :PY27_DO_INSTALL
+)
+goto :PYTHON_POSTCHECK
 
+:PY27_DO_INSTALL
+if exist "%WIN_TOOLS_ROOT_DIR%\%PYTHON_BIN%\." rd /q /s "%WIN_TOOLS_ROOT_DIR%\%PYTHON_BIN"
+if "%PYTHON_MANIFEST%"=="legacy" (
+  goto :PY27_LEGACY_INSTALL
+) else (
+  goto :PY27_CIPD_INSTALL
+)
 
-:PY27_INSTALL
+:PY27_LEGACY_INSTALL
 echo Installing python 2.7.6...
 :: Cleanup python directory if it was existing.
 set PYTHON_URL=%CHROME_INFRA_URL%python276_bin.zip
@@ -40,22 +62,35 @@ if exist "%WIN_TOOLS_ROOT_DIR%\python276_bin\." rd /q /s "%WIN_TOOLS_ROOT_DIR%\p
 if exist "%ZIP_DIR%\python276.zip" del "%ZIP_DIR%\python276.zip"
 echo Fetching from %PYTHON_URL%
 cscript //nologo //e:jscript "%~dp0get_file.js" %PYTHON_URL% "%ZIP_DIR%\python276_bin.zip"
-if errorlevel 1 goto :PYTHON_FAIL
+if errorlevel 1 goto :PYTHON_LEGACY_FAIL
 :: Will create python276_bin\...
-cscript //nologo //e:jscript "%~dp0unzip.js" "%ZIP_DIR%\python276_bin.zip" "%WIN_TOOLS_ROOT_DIR%"
-:: Create the batch files.
 call copy /y "%~dp0python276.new.bat" "%WIN_TOOLS_ROOT_DIR%\python.bat" 1>nul
-call copy /y "%~dp0pylint.new.bat" "%WIN_TOOLS_ROOT_DIR%\pylint.bat" 1>nul
+cscript //nologo //e:jscript "%~dp0unzip.js" "%ZIP_DIR%\python276_bin.zip" "%WIN_TOOLS_ROOT_DIR%"
 del "%ZIP_DIR%\python276_bin.zip"
-set ERRORLEVEL=0
-goto :GIT_CHECK
+goto :PYTHON_POSTINSTALL
 
-
-:PYTHON_FAIL
+:PYTHON_LEGACY_FAIL
 echo ... Failed to checkout python automatically.
 echo You should get the "prebaked" version at %PYTHON_URL%
 set ERRORLEVEL=1
 goto :END
+
+:PY27_CIPD_INSTALL
+echo Installing python %PYTHON_VERSION%...
+mkdir "%WIN_TOOLS_ROOT_DIR%\%PYTHON_BIN%"
+call "%WIN_TOOLS_ROOT_DIR%\cipd.bat" -ensure-file "%~dp0%PYTHON_MANIFEST%" -root "%WIN_TOOLS_ROOT_DIR%\%PYTHON_BIN%"
+call copy /y "%~dp0python27.new.bat" "%WIN_TOOLS_ROOT_DIR%\python.bat" 1>nul
+@echo "%PYTHON_VERSION%"> "%WIN_TOOLS_ROOT_DIR%\python.stamp"
+goto :PYTHON_POSTINSTALL
+
+:PYTHON_POSTINSTALL
+:: Create the batch files.
+call copy /y "%~dp0pylint.new.bat" "%WIN_TOOLS_ROOT_DIR%\pylint.bat" 1>nul
+goto :PYTHON_POSTCHECK
+
+:PYTHON_POSTCHECK
+set ERRORLEVEL=0
+goto :GIT_CHECK
 
 :GIT_CHECK
 "%WIN_TOOLS_ROOT_DIR%\python.bat" "%~dp0git_bootstrap.py"

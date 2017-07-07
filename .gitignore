@@ -15,8 +15,10 @@
 /gitk.bat
 /pylint.bat
 /.pylint.d/
+/.python_bleeding_edge
 /python
 /python.bat
+/python.stamp
 /ssh.bat
 /ssh-keygen.bat
 /svn

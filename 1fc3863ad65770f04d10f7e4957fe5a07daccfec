@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "36ce5ba5_e02b281f",
+        "filename": "cipd.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-07T21:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1f93030_6ae6cdd1",
+      "revId": "1fc3863ad65770f04d10f7e4957fe5a07daccfec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9cb7a82c_d1102d48",
         "filename": "cipd.bat",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "1fc3863ad65770f04d10f7e4957fe5a07daccfec",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f67d98b_ec515f4f",
+        "filename": "cipd.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-07T21:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9cb7a82c_d1102d48",
+      "revId": "1fc3863ad65770f04d10f7e4957fe5a07daccfec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -19,6 +19,17 @@ IF "%~nx0"=="update_depot_tools.bat" (
 set DEPOT_TOOLS_DIR=%~1
 SHIFT
 
+:: Systems that commit to supplying their own versions of bootstrapped tooling
+:: in PATH may explicitly request that tooling bootstraps be disabled to prevent
+:: unintended installations. This can also be used to prevent "gclient" from
+:: syncing build-specific "depot_tools" checkouts (e.g., recipe engine).
+IF NOT "%INFRA_DISABLE_UPDATE%" == "" GOTO :EOF
+
+:: If ".disable_auto_update" file exists, do not perform any updates.
+::
+:: Repositories which include "depot_tools" in DEPS can invoke
+:: "update_depot_tools_toggle.py --disable" in their runhooks to prevent tooling
+:: invoked from those repositories from refreshing "depot_tools".
 IF EXIST "%DEPOT_TOOLS_DIR%.disable_auto_update" GOTO :EOF
 
 set GIT_URL=https://chromium.googlesource.com/chromium/tools/depot_tools.git

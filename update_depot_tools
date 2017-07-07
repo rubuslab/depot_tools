@@ -39,6 +39,19 @@ else
   fi
 fi
 
+# Systems that commit to supplying their own versions of bootstrapped tooling
+# in PATH may explicitly request that tooling bootstraps be disabled to prevent
+# unintended installations. This can also be used to prevent "gclient" from
+# syncing build-specific "depot_tools" checkouts (e.g., recipe engine).
+if [ ! -z "$INFRA_DISABLE_UPDATE" ]; then
+  exit
+fi
+
+# If ".disable_auto_update" file exists, do not perform any updates.
+#
+# Repositories which include "depot_tools" in DEPS can invoke
+# "update_depot_tools_toggle.py --disable" in their runhooks to prevent tooling
+# invoked from those repositories from refreshing "depot_tools".
 if [ -e $base_dir/.disable_auto_update ]; then
   exit
 fi

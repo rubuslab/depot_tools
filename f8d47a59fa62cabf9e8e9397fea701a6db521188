@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b7f77c6f_6039738c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-07T17:46:24Z",
+      "side": 1,
+      "message": "this one might be an issue, but I guess we\u0027ll find out :)",
+      "range": {
+        "startLine": 22,
+        "startChar": 2,
+        "endLine": 22,
+        "endChar": 67
+      },
+      "revId": "f8d47a59fa62cabf9e8e9397fea701a6db521188",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d1dd5c2_09fec0de",
+        "filename": "bootstrap/win/python_version_bleeding_edge.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-07T17:46:24Z",
+      "side": 1,
+      "message": "let\u0027s start by just changing the deploy mechanism",
+      "range": {
+        "startLine": 1,
+        "startChar": 44,
+        "endLine": 1,
+        "endChar": 45
+      },
+      "revId": "f8d47a59fa62cabf9e8e9397fea701a6db521188",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93b29973_5df27018",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-07T17:46:24Z",
+      "side": 1,
+      "message": "false",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "f8d47a59fa62cabf9e8e9397fea701a6db521188",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "940c69ce_f908b859",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-07T17:46:24Z",
+      "side": 1,
+      "message": "idk?",
+      "revId": "f8d47a59fa62cabf9e8e9397fea701a6db521188",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75afb3a1_300a8420",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-07T17:46:24Z",
+      "side": 1,
+      "message": "let\u0027s just call ensure every time",
+      "range": {
+        "startLine": 45,
+        "startChar": 44,
+        "endLine": 45,
+        "endChar": 49
+      },
+      "revId": "f8d47a59fa62cabf9e8e9397fea701a6db521188",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33dd18bf_ef559563",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-07T17:46:24Z",
+      "side": 1,
+      "message": "BOOLLLLLSHEEEETTTT\n\nendlocal \u0026 (\n  set \"ERRORLEVEL\u003d%ERRORLEVEL%\"\n)",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 8
+      },
+      "revId": "f8d47a59fa62cabf9e8e9397fea701a6db521188",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

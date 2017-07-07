@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e1f93030_6ae6cdd1",
+        "filename": "cipd.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-07T20:15:05Z",
+      "side": 1,
+      "message": "move deez comments",
+      "revId": "1fc3863ad65770f04d10f7e4957fe5a07daccfec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9cb7a82c_d1102d48",
+        "filename": "cipd.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-07T20:15:05Z",
+      "side": 1,
+      "message": "drop it",
+      "revId": "1fc3863ad65770f04d10f7e4957fe5a07daccfec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

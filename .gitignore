@@ -15,6 +15,7 @@
 /gitk.bat
 /pylint.bat
 /.pylint.d/
+/.python_bleeding_edge
 /python
 /python.bat
 /ssh.bat

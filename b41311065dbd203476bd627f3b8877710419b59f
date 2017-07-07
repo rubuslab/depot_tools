@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a98539cf_93ce4720",
+        "filename": "bootstrap/win/git_bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-07T17:31:58Z",
+      "side": 1,
+      "message": "I\u0027d keep the newline",
+      "range": {
+        "startLine": 101,
+        "startChar": 21,
+        "endLine": 101,
+        "endChar": 22
+      },
+      "revId": "b41311065dbd203476bd627f3b8877710419b59f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

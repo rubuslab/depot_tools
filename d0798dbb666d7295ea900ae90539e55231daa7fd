@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "616cdb38_e9539123",
+        "filename": "bootstrap/win/git_bootstrap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-07T23:13:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53c5d61a_0b7f7065",
+      "range": {
+        "startLine": 179,
+        "startChar": 2,
+        "endLine": 179,
+        "endChar": 14
+      },
+      "revId": "d0798dbb666d7295ea900ae90539e55231daa7fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8aa3b942_e0d5b959",
         "filename": "bootstrap/win/git_bootstrap.py",
         "patchSetId": 4
@@ -45,6 +69,30 @@
       "revId": "d0798dbb666d7295ea900ae90539e55231daa7fd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3182130f_e96f1b3b",
+        "filename": "bootstrap/win/git_bootstrap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-07T23:13:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8aa3b942_e0d5b959",
+      "range": {
+        "startLine": 184,
+        "startChar": 2,
+        "endLine": 185,
+        "endChar": 55
+      },
+      "revId": "d0798dbb666d7295ea900ae90539e55231daa7fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

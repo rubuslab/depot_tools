@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0703fdaf_0875df50",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-08T01:58:22Z",
+      "side": 1,
+      "message": "duplicate line with below",
+      "range": {
+        "startLine": 61,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 8
+      },
+      "revId": "4426f385361d8d3774f266cf5faee73ee747852d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f720436e_af399a7d",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-08T01:58:22Z",
+      "side": 1,
+      "message": "ditch this",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 4
+      },
+      "revId": "4426f385361d8d3774f266cf5faee73ee747852d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a1f1a2f_42509287",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-08T01:58:22Z",
+      "side": 1,
+      "message": "no",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 4
+      },
+      "revId": "4426f385361d8d3774f266cf5faee73ee747852d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

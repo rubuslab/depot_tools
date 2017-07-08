@@ -1,0 +1,5 @@
+@Subdir python
+infra/python/cpython/windows-386 version:2.7.6
+
+@Subdir git
+infra/git/${platform} version:2.10.0

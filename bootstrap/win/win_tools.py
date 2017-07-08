@@ -5,10 +5,12 @@
 import argparse
 import contextlib
 import fnmatch
+import hashlib
 import logging
 import os
 import platform
 import shutil
+import string
 import subprocess
 import sys
 import tempfile
@@ -21,7 +23,6 @@ DEVNULL = open(os.devnull, 'w')
 
 BAT_EXT = '.bat' if sys.platform.startswith('win') else ''
 
-
 # Top-level stubs to generate that fall through to executables within the Git
 # directory.
 STUBS = {
@@ -32,13 +33,22 @@ STUBS = {
 }
 
 
-def _check_call(argv, input=None, **kwargs):
+def _in_use(path):
+  """Checks if a Windows file is in use."""
+  try:
+    with open(path, 'r+'):
+      return False
+  except IOError:
+    return True
+
+
+def _check_call(argv, stdin_input=None, **kwargs):
   """Wrapper for subprocess.check_call that adds logging."""
   logging.info('running %r', argv)
-  if input is not None:
+  if stdin_input is not None:
     kwargs['stdin'] = subprocess.PIPE
   proc = subprocess.Popen(argv, **kwargs)
-  proc.communicate(input=input)
+  proc.communicate(input=stdin_input)
   if proc.returncode:
     raise subprocess.CalledProcessError(proc.returncode, argv, None)
 
@@ -83,8 +93,7 @@ def get_os_bitness():
 
 def get_target_git_version(args):
   """Returns git version that should be installed."""
-  if (args.bleeding_edge or
-      os.path.exists(os.path.join(ROOT_DIR, '.git_bleeding_edge'))):
+  if args.bleeding_edge:
     git_version_file = 'git_version_bleeding_edge.txt'
   else:
     git_version_file = 'git_version.txt'
@@ -101,21 +110,83 @@ def clean_up_old_git_installations(git_directory, force):
       _safe_rmtree(full_entry)
 
 
-def cipd_install(args, dest_directory, package, version):
-  """Installs CIPD |package| at |version| into |dest_directory|."""
-  logging.info('Installing CIPD package %r @ %r', package, version)
-  manifest = '%s %s\n' % (package, version)
+def clean_up_old_python_installations(skip_dir):
+  """Removes Python installations other than |skip_dir|.
+  
+  This includes an "in-use" check against the "python.exe" in a given directory
+  to avoid removing Python executables that are currently ruinning. We need
+  this because our Python bootstrap may be run after (and by) other software
+  that is using the bootstrapped Python!
+  """
+  for entry in fnmatch.filter(os.listdir(ROOT_DIR), 'python27*_bin'):
+    full_entry = os.path.join(ROOT_DIR, entry)
+    if full_entry == skip_dir:
+      continue
+
+    logging.info('Cleaning up old Python installation %r', entry)
+    for python_exe in (
+        os.path.join(full_entry, 'bin', 'python.exe'), # CIPD Python bundles.
+        os.path.join(full_entry, 'python.exe'), # Legacy ZIP distributions.
+        ):
+      if os.path.isfile(python_exe) and _in_use(python_exe):
+        logging.info('Python executable %r is in-use; skipping', python_exe)
+        break
+    else:
+      _safe_rmtree(full_entry)
+
+
+def python_version_from_manifest(path, version_tag):
+  """Extracts the Python version referenced by a CIPD Python manifest.
+
+  This performs minimal manifest file parsing:
+  - Ignores blank lines and comments.
+  - Splits "package version".
+
+  After identifying a line with a |version_tag| tag, it will return that tag's
+  value.
+
+  Raises:
+    ValueError: if no version is identified.
+  """
+  token = version_tag + ':'
+  with open(path, 'r') as fd:
+    for line in fd:
+      line = line.strip()
+      if len(line) == 0 or line.startswith('#'):
+        continue
+      idx = line.find(token)
+      if idx > 0:
+        return line[idx+len(token):]
+  raise ValueError('No manifest entry found containing %r.' % (token,))
+
+
+def cipd_ensure(args, dest_directory, package=None, version=None,
+                manifest_path=None):
+  """Installs a CIPD manifest using "ensure".
+  
+  Either (|package|, |version|) or a |manifest_path| must be supplied.
+  """
+  if package and version:
+    logging.info('Installing CIPD package %r @ %r', package, version)
+    manifest_text = '%s %s\n' % (package, version)
+    manifest_path = '-'
+  elif manifest_path:
+    logging.info('Installing CIPD manifest: %r', manifest_path)
+    manifest_text = None
+  else:
+    raise ValueError('No package or manifest was supplied.')
+
   cipd_args = [
     args.cipd_client,
     'ensure',
-    '-ensure-file', '-',
+    '-ensure-file', manifest_path,
     '-root', dest_directory,
   ]
   if args.cipd_cache_directory:
     cipd_args.extend(['-cache-dir', args.cipd_cache_directory])
   if args.verbose:
     cipd_args.append('-verbose')
-  _check_call(cipd_args, input=manifest)
+  _check_call(cipd_args, stdin_input=manifest_text)
 
 
 def need_to_install_git(args, git_directory, legacy):
@@ -159,10 +230,9 @@ def need_to_install_git(args, git_directory, legacy):
 def install_git_legacy(args, git_version, git_directory, cipd_platform):
   _safe_rmtree(git_directory)
   with _tempdir() as temp_dir:
-    cipd_install(args,
-                 temp_dir,
-                 'infra/depot_tools/git_installer/%s' % cipd_platform,
-                 'v' + git_version.replace('.', '_'))
+    cipd_ensure(args, temp_dir,
+        package='infra/depot_tools/git_installer/%s' % cipd_platform,
+        version='v' + git_version.replace('.', '_'))
 
     # 7-zip has weird expectations for command-line syntax. Pass it as a string
     # to avoid subprocess module quoting breaking it. Also double-escape
@@ -188,11 +258,9 @@ def install_git(args, git_version, git_directory, legacy):
       logging.info('Deleting legacy Git directory: %s', git_directory)
       _safe_rmtree(git_directory)
 
-    cipd_install(
-        args,
-        git_directory,
-        'infra/git/%s' % (cipd_platform,),
-        git_version)
+    cipd_ensure(args, git_directory,
+        package='infra/git/%s' % (cipd_platform,),
+        version=git_version)
 
   # Create Git templates and configure its base layout.
   with open(os.path.join(THIS_DIR, 'git.template.bat')) as f:
@@ -224,28 +292,45 @@ def install_git(args, git_version, git_directory, legacy):
   _check_call([git_bat_path, 'config', '--system', 'core.fscache', 'true'])
 
 
-def main(argv):
-  parser = argparse.ArgumentParser()
-  parser.add_argument('--bits', type=int, choices=(32,64),
-                      help='Bitness of the client to install. Default on this'
-                      ' system: %(default)s', default=get_os_bitness())
-  parser.add_argument('--cipd-client',
-                      help='Path to CIPD client binary. default: %(default)s',
-                      default=os.path.join(ROOT_DIR, 'cipd'+BAT_EXT))
-  parser.add_argument('--cipd-cache-directory',
-                      help='Path to CIPD cache directory.')
-  parser.add_argument('--bleeding-edge', action='store_true',
-                      help='Force bleeding edge Git.')
-  parser.add_argument('--force', action='store_true',
-                      help='Always re-install git.')
-  parser.add_argument('--verbose', action='store_true')
-  args = parser.parse_args(argv)
+def install_python(args):
+  if not args.python_manifest:
+    logging.info('No Python manifest supplied; refraining from installation.')
+    return
 
-  if os.environ.get('WIN_TOOLS_FORCE') == '1':
-    args.force = True
+  # Load our Python manifest, and parse it to determine our Python installation
+  # directory.
+  #
+  # The installation directory must correspond to the directory pattern used in
+  # clean_up_old_python_installations.
+  name = python_version_from_manifest(args.python_manifest, 'version')
+  name = name.replace('.', '_')
+  if args.bleeding_edge:
+    name += '_be'
+  install_reldir = 'python27-%s_bin' % (name,)
+  install_dir = os.path.join(ROOT_DIR, install_reldir)
 
-  logging.basicConfig(level=logging.INFO if args.verbose else logging.WARN)
+  # Ensure our Python installation.
+  cipd_ensure(args, install_dir, manifest_path=args.python_manifest)
 
+  # Install a ".bat" file for the latest Python instance, templatizing it.
+  with open(os.path.join(THIS_DIR, 'python27.new.bat'), 'r') as fd:
+    python_bat = string.Template(fd.read())
+
+  with open(os.path.join(ROOT_DIR, 'python.bat'), 'w') as fd:
+    fd.write(python_bat.safe_substitute({
+      'PYTHON_RELDIR': install_reldir,
+    }))
+
+  # Install Python-related shims.
+  shutil.copyfile(
+      os.path.join(THIS_DIR, 'pylint.new.bat'),
+      os.path.join(ROOT_DIR, 'pylint.bat'))
+
+  # Clean up any old Python installations.
+  clean_up_old_python_installations(install_dir)
+
+
+def install_git(args):
   git_version = get_target_git_version(args)
 
   git_directory_tag = git_version.split(':')
@@ -266,6 +351,33 @@ def main(argv):
   docsrc = os.path.join(ROOT_DIR, 'man', 'html')
   for name in os.listdir(docsrc):
     shutil.copy2(os.path.join(docsrc, name), os.path.join(git_docs_dir, name))
+
+
+def main(argv):
+  parser = argparse.ArgumentParser()
+  parser.add_argument('--force', action='store_true',
+                      help='Always re-install everything.')
+  parser.add_argument('--python-manifest',
+                      help='The Python manifest to use. If empty, disable '
+                           'Python installation.')
+  parser.add_argument('--bleeding-edge', action='store_true',
+                      help='Force bleeding edge Git.')
+  parser.add_argument('--bits', type=int, choices=(32,64),
+                      help='Bitness of the client to install. Default on this'
+                      ' system: %(default)s', default=get_os_bitness())
+  parser.add_argument('--cipd-client',
+                      help='Path to CIPD client binary. default: %(default)s',
+                      default=os.path.join(ROOT_DIR, 'cipd'+BAT_EXT))
+  parser.add_argument('--cipd-cache-directory',
+                      help='Path to CIPD cache directory.')
+  parser.add_argument('--verbose', action='store_true')
+  args = parser.parse_args(argv)
+
+  logging.basicConfig(level=logging.DEBUG if args.verbose else logging.WARN)
+
+  install_python(args)
+  install_git(args)
+
 
   return 0
 

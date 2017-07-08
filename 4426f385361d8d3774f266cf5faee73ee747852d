@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c5ec5a87_8eaf1f6e",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-08T02:31:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0703fdaf_0875df50",
+      "range": {
+        "startLine": 61,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 8
+      },
+      "revId": "4426f385361d8d3774f266cf5faee73ee747852d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f720436e_af399a7d",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 11
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "77a7e9f0_c02d9463",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-08T02:31:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f720436e_af399a7d",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 4
+      },
+      "revId": "4426f385361d8d3774f266cf5faee73ee747852d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8a1f1a2f_42509287",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 11
@@ -68,6 +116,30 @@
       "revId": "4426f385361d8d3774f266cf5faee73ee747852d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0712847e_9ef6ea5f",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-08T02:31:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a1f1a2f_42509287",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 4
+      },
+      "revId": "4426f385361d8d3774f266cf5faee73ee747852d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

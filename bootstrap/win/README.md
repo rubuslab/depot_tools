@@ -18,41 +18,31 @@ work.
 package is present, and if so, if it's the expected version. If either of those
 cases is not true, it will download and unpack the respective binary.
 
-Downloading is done with [get_file.js](./get_file.js), which is a windows script
-host javascript utility to vaguely impersonate `wget`.
+Installation of Git and Python is done by the [win_tools.bat](./win_tools.bat)
+script, which uses CIPD (via the [cipd](/cipd.bat) bootstrap) to acquire and
+install each package into the root of the `depot_tools` repository. Afterwards,
+the [win_tools.py](./win_tools.py) Python script is invoked to install stubs,
+wrappers, and support scripts into `depot_tools` for end-users.
 
-Through a comedy of history, each binary is stored and retrieved differently.
+### Manifest
 
-### Git
+The Git and Python versions are specified in [manifest.txt](./manifest.txt).
 
-Git installs are mirrored versions of the official Git-for-Windows Portable
-releases.
-  * Original: `https://github.com/git-for-windows/git/releases`
-  * Mirror: `gs://chrome-infra/PortableGit*.7z.exe`
+There is an associated file,
+[manifest_bleeding_edge.txt](./manifest_bleeding_edge.txt), that can be used
+to canary new versions on select bots. Any bots with a `.bleeding_edge` file
+in their `depot_tools` root will automatically use the bleeding edge manifest.
+This allows opt-in systems to test against new versions of Python or Git. Once
+those versions have been verified correct, `manifest.txt` can be updated to the
+same specification, which will cause the remainder of systems to update.
 
-#### Updating git version
-  1. Download the new `PortableGit-X.Y.Z-{32,64}.7z.exe` from the
-     git-for-windows release page.
-  1. From either console.developers.google.com or the CLI, do:
-    1. Upload those to the gs://chrome-infra Google Storage bucket.
-    1. Set the `allUsers Reader` permission (click the "Public link" checkbox
-       next to the binaries).
-  1. Edit the `git_version.txt` or `git_version_bleeding_edge.txt` file to
-     be the new version.
-    1. You can use the bleeding edge version to get early feedback/stage a
-       rollout/etc. Users can select this version by 'touch'ing the
-       `.git_bleeding_edge` file in the root depot_tools directory.
-  1. Commit the CL.
+### Bundles
+
+Git and Python bundle construction is documented in
+[infra packaging](https://chromium.googlesource.com/infra/infra/+/master/doc/packaging/).
 
 Note that in order for the update to take effect, `gclient` currently needs to
 run twice. The first time it will update the `depot_tools` repo, and the second
 time it will see the new git version and update to it. This is a bug that should
 be fixed, in case you're reading this and this paragraph infuriates you more
 than the rest of this README.
-
-### Python
-
-Python installs are sourced from gs://chrome-infra/python276_bin.zip .
-
-The process to create them is sort-of-documented in the README of the python
-zip file.

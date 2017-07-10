@@ -22,6 +22,30 @@
       "revId": "f639cc06164dbe25272e91ec2ee8ae44a000ffcf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1437c48c_5a90d51c",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1123275
+      },
+      "writtenOn": "2017-07-10T15:49:12Z",
+      "side": 1,
+      "message": "Done. I\u0027m surprised \\s worked without that...",
+      "parentUuid": "20e02ba3_9a1751ac",
+      "range": {
+        "startLine": 270,
+        "startChar": 27,
+        "endLine": 270,
+        "endChar": 28
+      },
+      "revId": "f639cc06164dbe25272e91ec2ee8ae44a000ffcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

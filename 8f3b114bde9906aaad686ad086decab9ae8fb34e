@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3399c9e6_11f7bd4a",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:38:46Z",
+      "side": 1,
+      "message": "while this is fine, IMO re-use existing QueryChanges with limit\u003d1 change:\u003cid\u003e. there is no efficiency gain as in Gerrit backend codepath is the same either way and there is no readability gain from having yet another CMD boilerplate.",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 37
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "64051c64_fdda4506",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 1
@@ -18,6 +41,116 @@
         "startChar": 6,
         "endLine": 66,
         "endChar": 16
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e5be77f_17f0794f",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:38:46Z",
+      "side": 1,
+      "message": "i\u0027d rename the above to get_commit_branch() (but that\u0027s for other CL)\nand this one get_cl_branch()",
+      "parentUuid": "64051c64_fdda4506",
+      "range": {
+        "startLine": 66,
+        "startChar": 6,
+        "endLine": 66,
+        "endChar": 16
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "149fa400_c8886f77",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:38:46Z",
+      "side": 1,
+      "message": "CL",
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4e9f8b2_0472f0eb",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:38:46Z",
+      "side": 1,
+      "message": "number and assert int() to avoid incorrect usage as Change-Id isn\u0027t unique*.\n\n*Change-Id is unique only with \"project~branch~change-id\", which Gerrit recognizes.",
+      "range": {
+        "startLine": 72,
+        "startChar": 25,
+        "endLine": 72,
+        "endChar": 27
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "336213c0_8e766a96",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:38:46Z",
+      "side": 1,
+      "message": "return self.get_changes(host, [(\u0027change\u0027, str(change))], limit\u003d1, **kw)[0][\u0027branch\u0027]\n\nfor nicety, perhaps allow name override in get_changes s.t.\nkw.setdefault(\u0027name\u0027, \u0027get-cl-branch\u0027)  can be done above here.",
+      "range": {
+        "startLine": 77,
+        "startChar": 4,
+        "endLine": 77,
+        "endChar": 16
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4bdba700_5222f712",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:38:46Z",
+      "side": 1,
+      "message": "neato!",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 27
       },
       "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",

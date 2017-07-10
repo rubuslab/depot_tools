@@ -9,13 +9,6 @@
   {
     "cmd": [
       "ls",
-      "RECIPE_PACKAGE_REPO[depot_tools]/download_from_google_storage.py"
-    ],
-    "name": "download_from_google_storage"
-  },
-  {
-    "cmd": [
-      "ls",
       "RECIPE_PACKAGE_REPO[depot_tools]/upload_to_google_storage.py"
     ],
     "name": "upload_to_google_storage"

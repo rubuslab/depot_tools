@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f2a806e_c207d3f8",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:54:29Z",
+      "side": 1,
+      "message": "don\u0027t support this. It can only happen with old gerrit buildbot tryserver, and I think the last use of them stopped.",
+      "range": {
+        "startLine": 270,
+        "startChar": 7,
+        "endLine": 271,
+        "endChar": 55
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdadd954_4e0760f5",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:54:29Z",
+      "side": 1,
+      "message": "rename to patch_url here and below.",
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e58d720a_63172656",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:54:29Z",
+      "side": 1,
+      "message": "rstrip",
+      "range": {
+        "startLine": 274,
+        "startChar": 52,
+        "endLine": 274,
+        "endChar": 57
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "959e8efc_8a3d5f7c",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:54:29Z",
+      "side": 1,
+      "message": "so for Rietveld, this always returns latest description because descr is not pinned in Rietveld.\nBut desc is pinned in Gerrit, so IMO you should take patch_set into account here.",
+      "range": {
+        "startLine": 284,
+        "startChar": 26,
+        "endLine": 284,
+        "endChar": 48
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78b3ecd9_91027ba7",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:54:29Z",
+      "side": 1,
+      "message": "Pawel, can s/patch/patch_url kwarg name in get_description too? If not yet in this CL, please add a TODO to git_cl module to use patch_url.",
+      "range": {
+        "startLine": 285,
+        "startChar": 10,
+        "endLine": 285,
+        "endChar": 15
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54c9b012_5d4f735f",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.expected/with_gerrit_patch.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:54:29Z",
+      "side": 1,
+      "message": "meh?",
+      "range": {
+        "startLine": 22,
+        "startChar": 3,
+        "endLine": 26,
+        "endChar": 5
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "abfdf463_47479ad4",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.expected/with_gerrit_patch_deprecated.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T15:54:29Z",
+      "side": 1,
+      "message": "assuming this is expectation for that old gerrit CL style, just ignore it :)",
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

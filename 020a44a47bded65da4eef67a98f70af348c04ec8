@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3b246a2e_1f10e142",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-07-10T16:15:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f2a806e_c207d3f8",
+      "range": {
+        "startLine": 270,
+        "startChar": 7,
+        "endLine": 271,
+        "endChar": 55
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bdadd954_4e0760f5",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 1
@@ -39,6 +63,24 @@
       "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c490e07_4d0b73db",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-07-10T16:15:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdadd954_4e0760f5",
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "64ec7231_93fca3ba",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-07-10T16:15:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e58d720a_63172656",
+      "range": {
+        "startLine": 274,
+        "startChar": 52,
+        "endLine": 274,
+        "endChar": 57
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "959e8efc_8a3d5f7c",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 1
@@ -76,6 +142,30 @@
       "writtenOn": "2017-07-10T15:54:29Z",
       "side": 1,
       "message": "so for Rietveld, this always returns latest description because descr is not pinned in Rietveld.\nBut desc is pinned in Gerrit, so IMO you should take patch_set into account here.",
+      "range": {
+        "startLine": 284,
+        "startChar": 26,
+        "endLine": 284,
+        "endChar": 48
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ce13def_5cc0d8ea",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-07-10T16:15:41Z",
+      "side": 1,
+      "message": "My tests indicate from end user perspective, the UI/API always returns latest description, see e.g. https://chromium-review.googlesource.com/c/565501/2 .\n\nIf we really need to, we could change that in the future, as obviously commit message is part of what Gerrit presents for review, so it has to be versioned per patchset.",
+      "parentUuid": "959e8efc_8a3d5f7c",
       "range": {
         "startLine": 284,
         "startChar": 26,
@@ -108,6 +198,30 @@
       "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81e1c068_98a6ae8e",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-07-10T16:15:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78b3ecd9_91027ba7",
+      "range": {
+        "startLine": 285,
+        "startChar": 10,
+        "endLine": 285,
+        "endChar": 15
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "d1ecf207_94106d3b",
+        "filename": "bootstrap/win/git-bash.template.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "oops, shouldn\u0027t have a \"%\". No idea, was copying that from previous version assuming there was a purpose there.",
+      "parentUuid": "44f05fb3_f30d6b9e",
+      "range": {
+        "startLine": 5,
+        "startChar": 57,
+        "endLine": 5,
+        "endChar": 66
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fe0f48bd_21c46120",
         "filename": "bootstrap/win/python27.new.bat",
         "patchSetId": 18
@@ -62,6 +86,24 @@
       "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd0b9af6_4681dac5",
+        "filename": "bootstrap/win/python27.new.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe0f48bd_21c46120",
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -112,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "a9b1599d_02257e1e",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "I suppose we could, but I\u0027d be inclined not so, since:\n1) This only works on Windows, and\n2) Git/Python are a different tier of primitive, and it seems wise to keep them isolated from higher level functionality in case something goes wrong somewhere.\n\nSo long as this is implicit and a dependency of developers and systems, I think we should not do this. Once we have an explicit update mechanism like \"depot_tool\", yes please.\n\nSee: https://bugs.chromium.org/p/chromium/issues/detail?id\u003d740269",
+      "parentUuid": "de5bfe43_6401c342",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d4724e4b_9cc7df09",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 18
@@ -123,6 +189,30 @@
       "writtenOn": "2017-07-10T21:46:16Z",
       "side": 1,
       "message": "upgrade?",
+      "range": {
+        "startLine": 30,
+        "startChar": 21,
+        "endLine": 30,
+        "endChar": 30
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c238b51d_a97ad85c",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "yep, done.",
+      "parentUuid": "d4724e4b_9cc7df09",
       "range": {
         "startLine": 30,
         "startChar": 21,
@@ -182,6 +272,30 @@
     },
     {
       "key": {
+        "uuid": "c7bed9c1_96dc4d04",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d826157_3d0f708c",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 47,
+        "endChar": 15
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c133bf7_7013bd09",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 18
@@ -229,6 +343,30 @@
     },
     {
       "key": {
+        "uuid": "198b1fae_408091f2",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b6781ba_a9cd3534",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 18
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eb6fcde3_17669ba5",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 18
@@ -252,6 +390,30 @@
     },
     {
       "key": {
+        "uuid": "f88f3e6b_ab78b18e",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb6fcde3_17669ba5",
+      "range": {
+        "startLine": 92,
+        "startChar": 33,
+        "endLine": 92,
+        "endChar": 41
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "728ded7e_45cbbeb1",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 18
@@ -263,6 +425,30 @@
       "writtenOn": "2017-07-10T21:46:16Z",
       "side": 1,
       "message": "can we break of the for loop?",
+      "range": {
+        "startLine": 100,
+        "startChar": 45,
+        "endLine": 100,
+        "endChar": 59
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d79742b3_78cf9e2a",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "I can\u0027t seem to find a good one :( This is fast, though, and the manifest is short after this line anyway, so I don\u0027t think it\u0027s a huge gain or worth complexity.\n\nIf there was a simple way to break out, I\u0027d do it, but if there is not, I don\u0027t think it\u0027s a big deal.",
+      "parentUuid": "728ded7e_45cbbeb1",
       "range": {
         "startLine": 100,
         "startChar": 45,
@@ -292,6 +478,24 @@
     },
     {
       "key": {
+        "uuid": "ccc5476c_4523809a",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "Yeah seems to be. Delayed expansion only affects the \"for\" loop AFAIK, so nothing changes here.",
+      "parentUuid": "04ed80fb_7440e6b6",
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c926f3f1_6c297d87",
         "filename": "bootstrap/win/win_tools_reldir.new.txt",
         "patchSetId": 18
@@ -312,6 +516,30 @@
       "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b5ba134_f469493c",
+        "filename": "bootstrap/win/win_tools_reldir.new.txt",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T22:36:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c926f3f1_6c297d87",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 18
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

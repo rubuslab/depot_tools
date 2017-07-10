@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "503540d2_2a4325c6",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T15:56:49Z",
+      "side": 1,
+      "message": "Done. Will add missing test coverage later...",
+      "parentUuid": "3399c9e6_11f7bd4a",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 37
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "64051c64_fdda4506",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 1
@@ -69,6 +93,30 @@
       "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "571a2888_cd668d62",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T15:56:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e5be77f_17f0794f",
+      "range": {
+        "startLine": 66,
+        "startChar": 6,
+        "endLine": 66,
+        "endChar": 16
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

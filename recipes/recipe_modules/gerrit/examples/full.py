@@ -32,6 +32,8 @@ def RunSteps(api):
       limit=1,
   )
 
+  api.gerrit.get_cl_branch(host, change=123)
+
 def GenTests(api):
   yield (
       api.test('basic')

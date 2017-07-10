@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6763ad12_ab8c2eee",
+        "filename": "bootstrap/win/git-bash.template.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T20:01:55Z",
+      "side": 1,
+      "message": "All of these templates are filled in by \"win_tools.py\" now using Python string templating.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 19
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe0f48bd_21c46120",
+        "filename": "bootstrap/win/python27.new.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T20:01:55Z",
+      "side": 1,
+      "message": "In theory, we can:\n1) delete this sled w/out a problem, as existing \".bat\" will just terminate upon truncation.\n2) Never update this file again, since we point to the directory externally, avoiding this stupid issue.\n\nI might change \"win_tools_reldir\" to \"python_reldir\" since it\u0027s only used by this script.",
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fedc1f3_7524a529",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T20:01:55Z",
+      "side": 1,
+      "message": "This is largely obsolete, but I\u0027ve already started commenting on this PS. This should read:\n\n1) Use CIPD to install both Git and Python at once.\n2) Use \"win_tools.py\" as a post-processor to install generated files and fix-ups.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12542dd5_09c70198",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T20:01:55Z",
+      "side": 1,
+      "message": "I can change this back to ZIP_DIR now that I\u0027m not doing the bootstrap approach.",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 47,
+        "endChar": 15
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4c133bf7_7013bd09",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-10T20:01:55Z",
+      "side": 1,
+      "message": "Sloppy, this can be deleted.",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 18
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

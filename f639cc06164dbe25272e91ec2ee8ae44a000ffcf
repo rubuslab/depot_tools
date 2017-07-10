@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20e02ba3_9a1751ac",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-07-10T14:43:32Z",
+      "side": 1,
+      "message": "include a r prefix as in r\u0027BUG...\u0027, it was forgotten.",
+      "range": {
+        "startLine": 270,
+        "startChar": 27,
+        "endLine": 270,
+        "endChar": 28
+      },
+      "revId": "f639cc06164dbe25272e91ec2ee8ae44a000ffcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

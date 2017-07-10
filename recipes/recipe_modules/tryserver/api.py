@@ -265,16 +265,21 @@ class TryserverApi(recipe_api.RecipeApi):
     """
     if patch_text is None:
       codereview = None
-      if not self.can_apply_issue: #pragma: no cover
-        raise recipe_api.StepFailure("Cannot get tags from gerrit yet.")
-      else:
+      if self.is_gerrit_issue:
+        codereview = 'gerrit'
+        patch_url = (
+            self.m.properties['patch_gerrit_url'].rstrip('/') + '/' +
+            str(self.m.properties['patch_issue']))
+      elif self.can_apply_issue:
         codereview = 'rietveld'
-        patch = (
-            self.m.properties['rietveld'].strip('/') + '/' +
+        patch_url = (
+            self.m.properties['rietveld'].rstrip('/') + '/' +
             str(self.m.properties['issue']))
+      else:  # pragma: no cover
+        raise recipe_api.StepFailure('Unknown patch storage.')
 
       patch_text = self.m.git_cl.get_description(
-          patch=patch, codereview=codereview).stdout
+          patch_url=patch_url, codereview=codereview).stdout
 
     result = self.m.python(
         'parse description', self.package_repo_resource('git_footers.py'),

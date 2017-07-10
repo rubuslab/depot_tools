@@ -463,13 +463,13 @@ remote_name (str): the remote name to rebase from if not origin
 
 &mdash; **def [\_\_call\_\_](/recipes/recipe_modules/git_cl/api.py#10)(self, subcmd, args, name=None, \*\*kwargs):**
 
-&mdash; **def [get\_description](/recipes/recipe_modules/git_cl/api.py#23)(self, patch=None, codereview=None, \*\*kwargs):**
+&mdash; **def [get\_description](/recipes/recipe_modules/git_cl/api.py#23)(self, patch_url=None, codereview=None, \*\*kwargs):**
 
-&mdash; **def [issue](/recipes/recipe_modules/git_cl/api.py#51)(self, \*\*kwargs):**
+&mdash; **def [issue](/recipes/recipe_modules/git_cl/api.py#53)(self, \*\*kwargs):**
 
-&mdash; **def [set\_description](/recipes/recipe_modules/git_cl/api.py#32)(self, description, patch=None, codereview=None, \*\*kwargs):**
+&mdash; **def [set\_description](/recipes/recipe_modules/git_cl/api.py#33)(self, description, patch_url=None, codereview=None, \*\*kwargs):**
 
-&mdash; **def [upload](/recipes/recipe_modules/git_cl/api.py#44)(self, message, upload_args=None, \*\*kwargs):**
+&mdash; **def [upload](/recipes/recipe_modules/git_cl/api.py#46)(self, message, upload_args=None, \*\*kwargs):**
 ### *recipe_modules* / [gitiles](/recipes/recipe_modules/gitiles)
 
 [DEPS](/recipes/recipe_modules/gitiles/__init__.py#1): [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/url][recipe_engine/recipe_modules/url]
@@ -671,7 +671,7 @@ TODO(tandrii): remove this doc.
 Unless you use patch_root=None, in which case old behavior is used
 which returns paths relative to checkout aka solution[0].name.
 
-&mdash; **def [get\_footer](/recipes/recipe_modules/tryserver/api.py#285)(self, tag, patch_text=None):**
+&mdash; **def [get\_footer](/recipes/recipe_modules/tryserver/api.py#290)(self, tag, patch_text=None):**
 
 Gets a specific tag from a CL description
 

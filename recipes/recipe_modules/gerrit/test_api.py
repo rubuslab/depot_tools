@@ -23,6 +23,9 @@ class GerritTestApi(recipe_test_api.RecipeTestApi):
       "revision": "67ebf73496383c6777035e374d2d664009e2aa5c"
     })
 
+  def get_branch_response_data(self):
+    return self._make_gerrit_response_json("master")
+
   def get_changes_response_data(self):
     # Exemplary list of changes. Note: This contains only a subset of the
     # key/value pairs present in production to limit recipe simulation output.

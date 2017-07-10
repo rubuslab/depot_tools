@@ -312,7 +312,18 @@ Create a new branch from given project and commit
 Returns:
   the ref of the branch created
 
-&mdash; **def [get\_changes](/recipes/recipe_modules/gerrit/api.py#66)(self, host, query_params, start=None, limit=None, \*\*kwargs):**
+&mdash; **def [get\_branch](/recipes/recipe_modules/gerrit/api.py#66)(self, host, change, \*\*kwargs):**
+
+Get the upstream branch for a given commit.
+
+Args:
+  host: Gerrit host to query.
+  change: The change ID.
+
+Returns:
+  the name of the branch
+
+&mdash; **def [get\_changes](/recipes/recipe_modules/gerrit/api.py#89)(self, host, query_params, start=None, limit=None, \*\*kwargs):**
 
 Query changes for the given host.
 

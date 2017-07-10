@@ -63,6 +63,29 @@ class GerritApi(recipe_api.RecipeApi):
     revision = step_result.json.output.get('revision')
     return revision
 
+  def get_branch(self, host, change, **kwargs):
+    """
+    Get the upstream branch for a given commit.
+
+    Args:
+      host: Gerrit host to query.
+      change: The change ID.
+
+    Returns:
+      the name of the branch
+    """
+    return self(
+        'get-branch',
+        [
+          'get-branch',
+          '--host', host,
+          '--change', str(change),
+          '--json_file', self.m.json.output(),
+        ],
+        step_test_data=lambda: self.test_api.get_branch_response_data(),
+        **kwargs
+    ).json.output
+
   def get_changes(self, host, query_params, start=None, limit=None, **kwargs):
     """
     Query changes for the given host.

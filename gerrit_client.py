@@ -85,6 +85,20 @@ def CMDchanges(parser, args):
   write_result(result, opt)
 
 
+@subcommand.usage('[args ...]')
+def CMDget_branch(parser, args):
+  parser.add_option('-c', '--change', dest='change', help='change ID')
+
+  (opt, args) = parser.parse_args(args)
+
+  result = gerrit_util.GetChangeDetail(
+      urlparse.urlparse(opt.host).netloc,
+      opt.change,
+  )
+  logging.info(result['branch'])
+  write_result(result['branch'], opt)
+
+
 class OptionParser(optparse.OptionParser):
   """Creates the option parse and add --verbose support."""
   def __init__(self, *args, **kwargs):

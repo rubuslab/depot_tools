@@ -178,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "a58bfcb2_8753f091",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-10T16:25:06Z",
+      "side": 1,
+      "message": "I don\u0027t buy UI argument. This is a tryserver module of a recipe, which means it runs pinned to patchset. Ignoring patchset is asking for flakiness. Since you say in IM that \"git cl description https://host/cl/patchset\" ignores patchset, there are two ways out:\n * fix git_cl https://cs.chromium.org/chromium/tools/depot_tools/git_cl.py?q\u003dgit_cl.py+CMDdescription\u0026sq\u003dpackage:chromium\u0026l\u003d4574 by taking .patchset from target_issue_arg if available.\n * even better: use gerrit recipe module\u0027s new API to get change details with specific patchset: add another method to gerrit module to get_cl_description(self, change_id, patchset\u003dNone) and make use existing get changes and specify ALL_REVISIONS, CURRENT_COMMIT in oparams,  and then iterate over all revisions until its _number matchets patchset (similar thing being done by machenbach@ now: https://chromium-review.googlesource.com/c/565560)",
+      "parentUuid": "3ce13def_5cc0d8ea",
+      "range": {
+        "startLine": 284,
+        "startChar": 26,
+        "endLine": 284,
+        "endChar": 48
+      },
+      "revId": "020a44a47bded65da4eef67a98f70af348c04ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "78b3ecd9_91027ba7",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 1

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "64051c64_fdda4506",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T14:50:58Z",
+      "side": 1,
+      "message": "How about this name? There\u0027s already a get_gerrit_branch method here...",
+      "range": {
+        "startLine": 66,
+        "startChar": 6,
+        "endLine": 66,
+        "endChar": 16
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

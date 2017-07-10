@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "e20b8b5b_d8d447d1",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3970,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T13:21:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9f8e9f54_b7957d79",
+      "range": {
+        "startLine": 3968,
+        "startChar": 6,
+        "endLine": 3970,
+        "endChar": 50
+      },
+      "revId": "85779cd14d95862297b2759ef7895e9546c30bc6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e87a149a_b443b111",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -131,6 +155,30 @@
       "side": 1,
       "message": "my hope here is raising awareness before blindly clicking the links. For people with 1 account, it doesn\u0027t matter, but in case when people used @chromium.org for internal domain, IMO useful on top of a few lines above warning in report about likely incorrect account used\nUnfortunately, I don\u0027t have a good way to figure what account because I can\u0027t separate these cases reliably:\n  {Google interns/drive-by engineers | Googler-committer | committers with @chromium.org | contributors with company addresses}",
       "parentUuid": "e87a149a_b443b111",
+      "range": {
+        "startLine": 3981,
+        "startChar": 38,
+        "endLine": 3981,
+        "endChar": 58
+      },
+      "revId": "85779cd14d95862297b2759ef7895e9546c30bc6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6bb56d_30552771",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3981,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T13:21:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "50353231_0e0fc7a9",
       "range": {
         "startLine": 3981,
         "startChar": 38,
@@ -187,6 +235,30 @@
       "revId": "85779cd14d95862297b2759ef7895e9546c30bc6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8902dc88_46143047",
+        "filename": "tests/git_cl_creds_check_report.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T13:21:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "38cc29a2_a0f44f84",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 57
+      },
+      "revId": "85779cd14d95862297b2759ef7895e9546c30bc6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

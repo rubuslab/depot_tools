@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "44f05fb3_f30d6b9e",
+        "filename": "bootstrap/win/git-bash.template.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-10T21:46:16Z",
+      "side": 1,
+      "message": "why does this have a %?\n\nIs the Scripts really necessary in bash? I don\u0027t think any of them are +x, are they?",
+      "range": {
+        "startLine": 5,
+        "startChar": 57,
+        "endLine": 5,
+        "endChar": 66
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fe0f48bd_21c46120",
         "filename": "bootstrap/win/python27.new.bat",
         "patchSetId": 18
@@ -65,6 +88,53 @@
     },
     {
       "key": {
+        "uuid": "de5bfe43_6401c342",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-10T21:46:16Z",
+      "side": 1,
+      "message": "Since we\u0027re using subdirs, can we install python+git into the existing manifest so that git, python, led and vpython all get installed/ensured in one invocation?",
+      "parentUuid": "4fedc1f3_7524a529",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4724e4b_9cc7df09",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-10T21:46:16Z",
+      "side": 1,
+      "message": "upgrade?",
+      "range": {
+        "startLine": 30,
+        "startChar": 21,
+        "endLine": 30,
+        "endChar": 30
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "12542dd5_09c70198",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 18
@@ -88,6 +158,30 @@
     },
     {
       "key": {
+        "uuid": "2d826157_3d0f708c",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-10T21:46:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "12542dd5_09c70198",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 47,
+        "endChar": 15
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c133bf7_7013bd09",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 18
@@ -103,6 +197,116 @@
         "startLine": 65,
         "startChar": 4,
         "endLine": 65,
+        "endChar": 18
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b6781ba_a9cd3534",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-10T21:46:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4c133bf7_7013bd09",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 18
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eb6fcde3_17669ba5",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-10T21:46:16Z",
+      "side": 1,
+      "message": "version",
+      "range": {
+        "startLine": 92,
+        "startChar": 33,
+        "endLine": 92,
+        "endChar": 41
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "728ded7e_45cbbeb1",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-10T21:46:16Z",
+      "side": 1,
+      "message": "can we break of the for loop?",
+      "range": {
+        "startLine": 100,
+        "startChar": 45,
+        "endLine": 100,
+        "endChar": 59
+      },
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04ed80fb_7440e6b6",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 18
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-10T21:46:16Z",
+      "side": 1,
+      "message": "is this dance necessary because of delayed expansion?",
+      "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c926f3f1_6c297d87",
+        "filename": "bootstrap/win/win_tools_reldir.new.txt",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-10T21:46:16Z",
+      "side": 1,
+      "message": "would it be easier to just echo this to the file instead of checking in this wussy template?",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
         "endChar": 18
       },
       "revId": "66405e8a758710f46e8bddd08968a98e68c55ee0",

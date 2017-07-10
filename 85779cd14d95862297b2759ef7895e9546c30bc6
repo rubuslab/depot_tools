@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7c76f28_6c4e08d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T11:13:12Z",
+      "side": 1,
+      "message": "nit: recommendation",
+      "range": {
+        "startLine": 7,
+        "startChar": 51,
+        "endLine": 7,
+        "endChar": 64
+      },
+      "revId": "85779cd14d95862297b2759ef7895e9546c30bc6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96e8392d_8eaecf7a",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3970,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T11:13:12Z",
+      "side": 1,
+      "message": "nit nit suggestion: to avoid the continuous check here, maybe just build a list with all the lines to be printed and then below do:\nif lines:\n  print header\n  print all lines",
+      "range": {
+        "startLine": 3968,
+        "startChar": 6,
+        "endLine": 3970,
+        "endChar": 50
+      },
+      "revId": "85779cd14d95862297b2759ef7895e9546c30bc6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e87a149a_b443b111",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3981,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T11:13:12Z",
+      "side": 1,
+      "message": "Is \"correct account\" clear? Or asking differently: Will mentioning \"correct account\" be enough to help users that used an incorrect account?",
+      "range": {
+        "startLine": 3981,
+        "startChar": 38,
+        "endLine": 3981,
+        "endChar": 58
+      },
+      "revId": "85779cd14d95862297b2759ef7895e9546c30bc6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d32c06da_2862ff3f",
+        "filename": "tests/git_cl_creds_check_report.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-10T11:13:12Z",
+      "side": 1,
+      "message": "I though the new-password page is under the non-review link? E.g.:\nhttps://chromium.googlesource.com/new-password\n\nOr does it not matter?\n\nAlso what exactly is meant with corresponding? E.g. does the link  https://partial-review.googlesource.com/new-password suggest to delete also the line for partial.googlesource.com from the file?",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 57
+      },
+      "revId": "85779cd14d95862297b2759ef7895e9546c30bc6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,6 +1,32 @@
 [
   {
     "cmd": [
+      "RECIPE_PACKAGE_REPO[depot_tools]/git_cl.py",
+      "description",
+      "-d",
+      "--gerrit",
+      "https://chromium-review.googlesource.com/456789"
+    ],
+    "name": "git_cl description",
+    "stdout": "/path/to/tmp/"
+  },
+  {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_PACKAGE_REPO[depot_tools]/git_footers.py",
+      "--json",
+      "/path/to/tmp/json"
+    ],
+    "name": "parse description",
+    "~followup_annotations": [
+      "@@@STEP_LOG_END@json.output (invalid)@@@",
+      "@@@STEP_LOG_LINE@json.output (exception)@No JSON object could be decoded@@@",
+      "@@@STEP_LOG_END@json.output (exception)@@@"
+    ]
+  },
+  {
+    "cmd": [
       "git",
       "diff",
       "--cached",

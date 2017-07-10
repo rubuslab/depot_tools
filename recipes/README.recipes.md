@@ -671,7 +671,7 @@ TODO(tandrii): remove this doc.
 Unless you use patch_root=None, in which case old behavior is used
 which returns paths relative to checkout aka solution[0].name.
 
-&mdash; **def [get\_footer](/recipes/recipe_modules/tryserver/api.py#285)(self, tag, patch_text=None):**
+&mdash; **def [get\_footer](/recipes/recipe_modules/tryserver/api.py#293)(self, tag, patch_text=None):**
 
 Gets a specific tag from a CL description
 

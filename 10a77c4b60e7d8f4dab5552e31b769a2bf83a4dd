@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed73f573_e941eb67",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T13:44:24Z",
+      "side": 1,
+      "message": "can you add a comment here that a) this will run twice with and without patch \u0026\u0026 b) it could be cached if efficiency reasons make it necessary because (CL -\u003e Branch) will not change.",
+      "range": {
+        "startLine": 125,
+        "startChar": 6,
+        "endLine": 129,
+        "endChar": 0
+      },
+      "revId": "10a77c4b60e7d8f4dab5552e31b769a2bf83a4dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2c0e130_0922f7fa",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T13:44:24Z",
+      "side": 1,
+      "message": "move inside function.",
+      "range": {
+        "startLine": 240,
+        "startChar": 4,
+        "endLine": 245,
+        "endChar": 67
+      },
+      "revId": "10a77c4b60e7d8f4dab5552e31b769a2bf83a4dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78660297_33c6e716",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T13:44:24Z",
+      "side": 1,
+      "message": "i\u0027d add **kwargs and override the dict fields to _make_gerrit_response_json.",
+      "revId": "10a77c4b60e7d8f4dab5552e31b769a2bf83a4dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

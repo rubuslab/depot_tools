@@ -109,6 +109,16 @@ class BotUpdateApi(recipe_api.RecipeApi):
       root = self.m.gclient.calculate_patch_root(
           self.m.properties.get('patch_project'), cfg)
 
+    # Query Gerrit to check if a CL's destination branch differs from master.
+    # TODO(machenbach): The first condition is for a gradual roll-out of this
+    # feature. Relax and finally remove the condition step-by-step.
+    destination_branch = 'master'
+    if (self.m.properties.get('patch_project') == 'v8/v8' and
+        self.m.tryserver.is_gerrit_issue and self._gerrit and self._issue):
+      destination_branch = self.m.gerrit.get_change_destination_branch(
+          host=self._gerrit,
+          change=self._issue)
+
     if patch:
       issue = issue or self._issue
       patchset = patchset or self._patchset
@@ -215,6 +225,15 @@ class BotUpdateApi(recipe_api.RecipeApi):
       revisions[cfg.solutions[0].name] = root_solution_revision
     # Allow for overrides required to bisect into rolls.
     revisions.update(self._deps_revision_overrides)
+
+    # Update revisions with destination branch of CL if available. Note that
+    # we the revisions shouldn't get further updated after this.
+    # TODO(machenbach): The condition is for a gradual roll-out of this
+    # feature. Relax and finally remove the condition step-by-step.
+    if self.m.properties.get('patch_project') == 'v8/v8':
+      self.m.gclient.update_revision_destination_branch(
+          self.m.properties.get('patch_project'), destination_branch, cfg)
+
     for name, revision in sorted(revisions.items()):
       fixed_revision = self.m.gclient.resolve_revision(revision)
       if fixed_revision:

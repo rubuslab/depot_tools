@@ -5,6 +5,7 @@
 DEPS = [
   'bot_update',
   'gclient',
+  'gerrit',
   'recipe_engine/path',
   'recipe_engine/platform',
   'recipe_engine/properties',
@@ -26,6 +27,7 @@ def RunSteps(api):
     api.gclient.c.got_revision_reverse_mapping['got_cr_revision'] = 'src'
     api.gclient.c.got_revision_reverse_mapping['got_revision'] = 'src'
   api.gclient.c.patch_projects['v8'] = ('src/v8', 'HEAD')
+  api.gclient.c.patch_projects['v8/v8'] = ('src/v8', 'HEAD')
   api.gclient.c.patch_projects['angle/angle'] = ('src/third_party/angle',
                                                  'HEAD')
   patch = api.properties.get('patch', True)
@@ -163,6 +165,28 @@ def GenTests(api):
   )
   yield api.test('tryjob_gerrit_angle') + api.properties.tryserver(
       gerrit_project='angle/angle',
+      patch_issue=338811,
+      patch_set=3,
+  )
+  yield api.test('tryjob_gerrit_v8') + api.properties.tryserver(
+      gerrit_project='v8/v8',
+      patch_issue=338811,
+      patch_set=3,
+  )
+  yield api.test('tryjob_gerrit_v8_feature_branch') + api.properties.tryserver(
+      gerrit_project='v8/v8',
+      patch_issue=338811,
+      patch_set=3,
+  ) + api.step_data(
+      'gerrit get_change_destination_branch',
+      api.gerrit.get_changes_response_data_feature_branch(),
+  ) + api.step_data(
+      'gerrit get_change_destination_branch (without patch)',
+      api.gerrit.get_changes_response_data_feature_branch())
+  # TODO(machenbach): Add test data for get_change_destination_branch as soon
+  # as chromium/src is whitelisted for using feature branches.
+  yield api.test('tryjob_gerrit_feature_branch') + api.properties.tryserver(
+      gerrit_project='chromium/src',
       patch_issue=338811,
       patch_set=3,
   )

@@ -5,6 +5,19 @@
 from recipe_engine import recipe_test_api
 
 
+# Exemplary change. Note: This contains only a subset of the key/value pairs
+# present in production to limit recipe simulation output.
+EXAMPLE_COMMIT = {
+  'status': 'NEW',
+  'created': '2017-01-30 13:11:20.000000000',
+  '_number': '91827',
+  'change_id': 'Ideadbeef',
+  'project': 'chromium/src',
+  'has_review_started': False,
+  'branch': 'master',
+  'subject': 'Change title',
+}
+
 class GerritTestApi(recipe_test_api.RecipeTestApi):
 
   def _make_gerrit_response_json(self, data):
@@ -24,20 +37,12 @@ class GerritTestApi(recipe_test_api.RecipeTestApi):
     })
 
   def get_changes_response_data(self):
-    # Exemplary list of changes. Note: This contains only a subset of the
-    # key/value pairs present in production to limit recipe simulation output.
-    return self._make_gerrit_response_json([
-      {
-        'status': 'NEW',
-        'created': '2017-01-30 13:11:20.000000000',
-        '_number': '91827',
-        'change_id': 'Ideadbeef',
-        'project': 'chromium/src',
-        'has_review_started': False,
-        'branch': 'master',
-        'subject': 'Change title',
-      },
-    ])
+    return self._make_gerrit_response_json([EXAMPLE_COMMIT])
+
+  def get_changes_response_data_feature_branch(self):
+    commit = EXAMPLE_COMMIT.copy()
+    commit['branch'] = 'experimental/feature'
+    return self._make_gerrit_response_json([commit])
 
   def get_empty_changes_response_data(self):
     return self._make_gerrit_response_json([])

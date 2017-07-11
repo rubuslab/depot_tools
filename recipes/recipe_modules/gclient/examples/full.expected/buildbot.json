@@ -115,6 +115,8 @@
       "--delete_unversioned_trees",
       "--revision",
       "src/third_party/angle@refs/heads/lkgr",
+      "--revision",
+      "src/third_party/my/stuff@feature:HEAD",
       "--output-json",
       "/path/to/tmp/json"
     ],

@@ -109,6 +109,24 @@ class BotUpdateApi(recipe_api.RecipeApi):
       root = self.m.gclient.calculate_patch_root(
           self.m.properties.get('patch_project'), cfg)
 
+    # Add suffixes to the step name, if specified.
+    name_suffix = ''
+    if not patch:
+      name_suffix = ' (without patch)'
+    if suffix:
+      name_suffix = ' - %s' % suffix
+
+    # Query Gerrit to check if a CL's destination branch differs from master.
+    # TODO(machenbach): The first condition is for a gradual roll-out of this
+    # feature. Relax and finally remove the condition step-by-step.
+    destination_branch = 'master'
+    if (self.m.properties.get('patch_project') == 'v8/v8' and
+        self.m.tryserver.is_gerrit_issue and self._gerrit and self._issue):
+      destination_branch = self.m.gerrit.get_change_destination_branch(
+          host=self._gerrit,
+          change=self._issue,
+          name='get_change_destination_branch' + name_suffix)
+
     if patch:
       issue = issue or self._issue
       patchset = patchset or self._patchset
@@ -215,6 +233,16 @@ class BotUpdateApi(recipe_api.RecipeApi):
       revisions[cfg.solutions[0].name] = root_solution_revision
     # Allow for overrides required to bisect into rolls.
     revisions.update(self._deps_revision_overrides)
+
+    # Update revisions with destination branch of CL if available. Note that
+    # the revisions shouldn't get further updated after this to avoid
+    # unintended override.
+    # TODO(machenbach): The condition is for a gradual roll-out of this
+    # feature. Relax and finally remove the condition step-by-step.
+    if self.m.properties.get('patch_project') == 'v8/v8':
+      self.m.gclient.update_revision_destination_branch(
+          self.m.properties.get('patch_project'), destination_branch, cfg)
+
     for name, revision in sorted(revisions.items()):
       fixed_revision = self.m.gclient.resolve_revision(revision)
       if fixed_revision:
@@ -250,20 +278,14 @@ class BotUpdateApi(recipe_api.RecipeApi):
         root, first_sln, reverse_rev_map, self._fail_patch,
         fixed_revisions=fixed_revisions)
 
-    # Add suffixes to the step name, if specified.
-    name = 'bot_update'
-    if not patch:
-      name += ' (without patch)'
-    if suffix:
-      name += ' - %s' % suffix
-
     # Ah hah! Now that everything is in place, lets run bot_update!
     step_result = None
     try:
       # 87 and 88 are the 'patch failure' codes for patch download and patch
       # apply, respectively. We don't actually use the error codes, and instead
       # rely on emitted json to determine cause of failure.
-      step_result = self(name, cmd, step_test_data=step_test_data,
+      step_result = self(
+           'bot_update' + name_suffix, cmd, step_test_data=step_test_data,
            ok_ret=(0, 87, 88), **kwargs)
     except self.m.step.StepFailure as f:
       step_result = f.result

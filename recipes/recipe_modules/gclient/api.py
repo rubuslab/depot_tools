@@ -344,3 +344,23 @@ class GclientApi(recipe_api.RecipeApi):
     path, revision = cfg.patch_projects.get(patch_project, (None, None))
     if path and revision and path not in cfg.revisions:
       cfg.revisions[path] = revision
+
+  def update_revision_destination_branch(
+      self, patch_project, destination_branch, gclient_config=None):
+    """Updates config revision with destination branch if different from
+    master.
+
+    This will update a patch project's revision if the patch project was
+    specified. Otherwise, it will fall back to the first solution's revision.
+    """
+    assert patch_project is None or isinstance(patch_project, basestring)
+    cfg = gclient_config or self.c
+    path, _ = cfg.patch_projects.get(
+        patch_project, (cfg.solutions[0].name, None))
+    # Update requested revision only if destination branch differs from master
+    # as that's bot_update.py's default. If a specific revision was set, a
+    # branch specification doesn't make sense.
+    if (destination_branch != 'master' and
+        path in cfg.revisions and
+        cfg.revisions[path] == 'HEAD'):
+      cfg.revisions[path] = destination_branch + ':HEAD'

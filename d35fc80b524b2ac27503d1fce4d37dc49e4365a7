@@ -213,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "88362221_8c501965",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:36:09Z",
+      "side": 1,
+      "message": "0) I think random 500s would result in get_changes() raising exception instead of returning empty list and let alone \u003e1 changes. Do I get it wrong?\n1) the above should be changed to, I overlooked it in prior CL -\u003e I can will fix it if you agree 0) is correct.",
+      "parentUuid": "3f7ef319_8a72e59d",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 42
+      },
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aa301c03_7f0776eb",
         "filename": "recipes/recipe_modules/git_cl/api.py",
         "patchSetId": 3
@@ -274,6 +298,24 @@
       "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fcc1c7e3_2d2e855c",
+        "filename": "recipes/recipe_modules/git_cl/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:36:09Z",
+      "side": 1,
+      "message": "ack",
+      "parentUuid": "6f9826d6_caada378",
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

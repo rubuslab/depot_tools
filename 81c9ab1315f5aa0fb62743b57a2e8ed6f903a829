@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02229635_480867f2",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_v8_head_by_default.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-11T14:03:06Z",
+      "side": 1,
+      "message": "Fly-by fix of the example output. The second bot_update run should always request specific revisions.",
+      "range": {
+        "startLine": 100,
+        "startChar": 14,
+        "endLine": 100,
+        "endChar": 54
+      },
+      "revId": "81c9ab1315f5aa0fb62743b57a2e8ed6f903a829",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -137,6 +137,24 @@
     },
     {
       "key": {
+        "uuid": "661637ce_8660ab81",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-11T07:50:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "149fa400_c8886f77",
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c4e9f8b2_0472f0eb",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 1
@@ -160,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "377951d2_3c62fc3f",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-11T07:50:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4e9f8b2_0472f0eb",
+      "range": {
+        "startLine": 72,
+        "startChar": 25,
+        "endLine": 72,
+        "endChar": 27
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "336213c0_8e766a96",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 1
@@ -180,6 +222,30 @@
       "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75bee8b6_be36b753",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-11T07:50:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "336213c0_8e766a96",
+      "range": {
+        "startLine": 77,
+        "startChar": 4,
+        "endLine": 77,
+        "endChar": 16
+      },
+      "revId": "8f3b114bde9906aaad686ad086decab9ae8fb34e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

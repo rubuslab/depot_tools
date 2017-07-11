@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "291fe659_a80319c8",
+        "filename": "gerrit_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:24:33Z",
+      "side": 1,
+      "message": "nit: add comma",
+      "range": {
+        "startLine": 85,
+        "startChar": 27,
+        "endLine": 85,
+        "endChar": 28
+      },
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b918078_ed58bb03",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:24:33Z",
+      "side": 1,
+      "message": "assert int(change), change\nassert int(patchset), patcshset\n\n(to prevent incorrect usage as one may pass \"Change-Id\" and it may even work in some cases)",
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe6070f3_ef07e080",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:24:33Z",
+      "side": 1,
+      "message": "how about a sentinel instead\ncl \u003d cls[0] if len(cls) \u003d\u003d 1 else {\u0027revisions\u0027: {}}\nfor ri in cl[\u0027revisions\u0027]:\n\n\nsuch that 115 is raised in all error cases?",
+      "range": {
+        "startLine": 110,
+        "startChar": 4,
+        "endLine": 110,
+        "endChar": 29
+      },
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8720e054_fd244dc0",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:24:33Z",
+      "side": 1,
+      "message": "can you add\n# TODO(tandrii): add support for patchset\u003d\u003d\u0027current\u0027",
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06360d3f_277302d0",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:24:33Z",
+      "side": 1,
+      "message": "how about \u0027CL %r patchset %r doesn\\\u0027t exist or not visible on host %r\u0027?",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 42
+      },
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa301c03_7f0776eb",
+        "filename": "recipes/recipe_modules/git_cl/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:24:33Z",
+      "side": 1,
+      "message": "WDYT about:\n\"\"\"Deprecated. Consider using gerrit.get_change_description instead.\"\"\"",
+      "range": {
+        "startLine": 23,
+        "startChar": 6,
+        "endLine": 23,
+        "endChar": 21
+      },
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f9826d6_caada378",
+        "filename": "recipes/recipe_modules/git_cl/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:24:33Z",
+      "side": 1,
+      "message": "thanks!",
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca333501_90a3d726",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T14:24:33Z",
+      "side": 1,
+      "message": "TIL str.title. Thanks!",
+      "range": {
+        "startLine": 292,
+        "startChar": 22,
+        "endLine": 292,
+        "endChar": 34
+      },
+      "revId": "d35fc80b524b2ac27503d1fce4d37dc49e4365a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

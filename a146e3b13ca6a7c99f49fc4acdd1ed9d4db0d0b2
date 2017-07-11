@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce4984ad_581196ea",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-11T00:22:54Z",
+      "side": 1,
+      "message": "why not just jump to PY27_INSTALL?",
+      "revId": "a146e3b13ca6a7c99f49fc4acdd1ed9d4db0d0b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

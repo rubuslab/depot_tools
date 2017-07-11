@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab7ea4f1_fbe52f59",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-11T08:39:55Z",
+      "side": 1,
+      "message": "nit: we are trying to get rid of \"issue\" when referring to CL. Maybe just \u0027...for branch of CL %s\u0027 % change.",
+      "range": {
+        "startLine": 90,
+        "startChar": 42,
+        "endLine": 90,
+        "endChar": 47
+      },
+      "revId": "ce8cebb0f6f6f698b7575fc3194de69ee040a2b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

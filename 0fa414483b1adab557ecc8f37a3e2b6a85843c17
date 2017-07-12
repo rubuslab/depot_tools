@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ac0da77_bccfb1a6",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-12T10:11:31Z",
+      "side": 1,
+      "message": "i thought you wanted to remove this one,.",
+      "range": {
+        "startLine": 348,
+        "startChar": 6,
+        "endLine": 348,
+        "endChar": 28
+      },
+      "revId": "0fa414483b1adab557ecc8f37a3e2b6a85843c17",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

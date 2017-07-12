@@ -5808,6 +5808,8 @@ def CMDformat(parser, args):
                     help='Format javascript code with clang-format.')
   parser.add_option('--diff', action='store_true',
                     help='Print diff to stdout rather than modifying files.')
+  parser.add_option('--presubmit', action='store_true',
+                    help='Used when running the script from a presubmit.')
   opts, args = parser.parse_args(args)
 
   # Normalize any remaining args against the current path, so paths relative to
@@ -5950,16 +5952,17 @@ def CMDformat(parser, args):
         DieWithError("gn format failed on " + gn_diff_file +
                      "\nTry running 'gn format' on this file manually.")
 
-  for xml_dir in GetDirtyMetricsDirs(diff_files):
-    tool_dir = os.path.join(top_dir, xml_dir)
-    cmd = [os.path.join(tool_dir, 'pretty_print.py'), '--non-interactive']
-    if opts.dry_run or opts.diff:
-      cmd.append('--diff')
-    stdout = RunCommand(cmd, cwd=top_dir)
-    if opts.diff:
-      sys.stdout.write(stdout)
-    if opts.dry_run and stdout:
-      return_value = 2  # Not formatted.
+  if not opts.presubmit:
+    for xml_dir in GetDirtyMetricsDirs(diff_files):
+      tool_dir = os.path.join(top_dir, xml_dir)
+      cmd = [os.path.join(tool_dir, 'pretty_print.py'), '--non-interactive']
+      if opts.dry_run or opts.diff:
+        cmd.append('--diff')
+        stdout = RunCommand(cmd, cwd=top_dir)
+      if opts.diff:
+        sys.stdout.write(stdout)
+      if opts.dry_run and stdout:
+        return_value = 2  # Not formatted.
 
   return return_value
 

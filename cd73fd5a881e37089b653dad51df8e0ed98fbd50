@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9040c243_138d77e7",
+        "filename": "git_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-12T19:29:25Z",
+      "side": 1,
+      "message": "(\"git.exe\", \"git.bat)",
+      "range": {
+        "startLine": 46,
+        "startChar": 21,
+        "endLine": 46,
+        "endChar": 31
+      },
+      "revId": "cd73fd5a881e37089b653dad51df8e0ed98fbd50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6467c089_3f1a7d32",
+        "filename": "git_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-12T19:29:25Z",
+      "side": 1,
+      "message": "path",
+      "range": {
+        "startLine": 49,
+        "startChar": 15,
+        "endLine": 49,
+        "endChar": 24
+      },
+      "revId": "cd73fd5a881e37089b653dad51df8e0ed98fbd50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

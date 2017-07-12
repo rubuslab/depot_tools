@@ -62,6 +62,8 @@ def RunSteps(api):
   soln.url = 'https://chromium.googlesource.com/angle/angle.git'
   bl_cfg.revisions['src/third_party/angle'] = 'refs/heads/lkgr'
 
+  assert api.gclient.get_patch_project_path(None, bl_cfg) == 'Angle'
+
   bl_cfg.got_revision_mapping['src/blatley'] = 'got_blatley_revision'
   with api.context(cwd=api.path['start_dir'].join('src', 'third_party')):
     api.gclient.checkout(

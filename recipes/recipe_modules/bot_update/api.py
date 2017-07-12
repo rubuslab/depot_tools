@@ -25,6 +25,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
     self._deps_revision_overrides = deps_revision_overrides
     self._fail_patch = fail_patch
 
+    # Controls if we query Gerrit for the destination branch of a change.
+    # TODO(machenbach): Deprecate when default is True.
+    self._enable_destination_branch_check = False
+
     self._last_returned_properties = {}
     super(BotUpdateApi, self).__init__(*args, **kwargs)
 
@@ -215,11 +219,19 @@ class BotUpdateApi(recipe_api.RecipeApi):
       revisions[cfg.solutions[0].name] = root_solution_revision
     # Allow for overrides required to bisect into rolls.
     revisions.update(self._deps_revision_overrides)
+
+    # Path to the associated patch project if specified or the main solution.
+    patch_project_path = self.m.gclient.get_patch_project_path(
+        self.m.properties.get('patch_project'), cfg)
+
+    # Compute command-line parameters for requested revisions.
     for name, revision in sorted(revisions.items()):
       fixed_revision = self.m.gclient.resolve_revision(revision)
       if fixed_revision:
         fixed_revisions[name] = fixed_revision
-        flags.append(['--revision', '%s@%s' % (name, fixed_revision)])
+        flags.append(['--revision', '%s@%s' % (
+            name, self._revision_with_destination_branch(
+                patch_project_path, name, fixed_revision))])
 
     # Add extra fetch refspecs.
     for ref in refs:
@@ -263,7 +275,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
       # 87 and 88 are the 'patch failure' codes for patch download and patch
       # apply, respectively. We don't actually use the error codes, and instead
       # rely on emitted json to determine cause of failure.
-      step_result = self(name, cmd, step_test_data=step_test_data,
+      step_result = self(
+           name, cmd, step_test_data=step_test_data,
            ok_ret=(0, 87, 88), **kwargs)
     except self.m.step.StepFailure as f:
       step_result = f.result
@@ -317,6 +330,38 @@ class BotUpdateApi(recipe_api.RecipeApi):
           self.m.path['checkout'] = cwd.join(*co_root.split(self.m.path.sep))
 
     return step_result
+
+  # TODO(machenbach): This switch is for a gradual roll-out of the feature.
+  # Downstream recipe's can set this to True. Deprecate it when it's true
+  # everywhere.
+  def enable_destination_branch_check(self):
+    self._enable_destination_branch_check = True
+
+  def _revision_with_destination_branch(
+      self, patch_project_path, path, revision):
+    if (not self._enable_destination_branch_check or
+        not self.m.tryserver.is_gerrit_issue or
+        not self._gerrit or not self._issue):
+      return revision
+
+    # Ignore other project paths than the one belonging to the CL. Also if a
+    # specific revision was set, a branch specification doesn't make sense.
+    if path != patch_project_path or revision.upper() != 'HEAD':
+      return revision
+
+    # Query Gerrit to check if a CL's destination branch differs from master.
+    destination_branch = self.m.gerrit.get_change_destination_branch(
+        host=self._gerrit,
+        change=self._issue,
+        name='get_patch_destination_branch',
+    )
+
+    # Update requested revision only if destination branch differs from
+    # master as that's bot_update.py's default.
+    if destination_branch != 'master':
+      return destination_branch + ':HEAD'
+    else:
+      return revision
 
   def _resolve_fixed_revisions(self, bot_update_json):
     """Set all fixed revisions from the first sync to their respective

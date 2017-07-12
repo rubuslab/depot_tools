@@ -46,6 +46,30 @@
       "revId": "0fa414483b1adab557ecc8f37a3e2b6a85843c17",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0d92335_a7fc6ea3",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-12T11:32:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c6cfbc2_26f71044",
+      "range": {
+        "startLine": 348,
+        "startChar": 6,
+        "endLine": 348,
+        "endChar": 28
+      },
+      "revId": "0fa414483b1adab557ecc8f37a3e2b6a85843c17",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

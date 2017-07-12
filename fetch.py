@@ -87,9 +87,20 @@ class GclientCheckout(Checkout):
 
 class GitCheckout(Checkout):
 
+  @staticmethod
+  def win_find_executable(name):
+    pathexts = (os.environ.get('PATHEXT', '').split(os.pathsep) or
+                ('.exe', '.bat'))
+    for elem in os.environ.get('PATH', '').split(os.pathsep):
+      for ext in pathexts:
+        candidate = os.path.join(elem, ext)
+        if os.path.isfile(candidate):
+          return candidate
+    raise ValueError('Could not find %r on PATH.' % (name,))
+
   def run_git(self, *cmd, **kwargs):
-    if sys.platform == 'win32' and not spawn.find_executable('git'):
-      git_path = os.path.join(SCRIPT_PATH, 'git.bat')
+    if sys.platform == 'win32':
+      git_path = self.win_find_executable('git')
     else:
       git_path = 'git'
     return self.run((git_path,) + cmd, **kwargs)

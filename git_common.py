@@ -37,8 +37,21 @@ from StringIO import StringIO
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 IS_WIN = sys.platform == 'win32'
-GIT_EXE = ROOT+'\\git.bat' if IS_WIN else 'git'
 TEST_MODE = False
+
+
+def win_find_executable(name):
+  pathexts = os.environ.get('PATHEXT', '').split(os.pathsep) or ('.exe', '.bat')
+  for elem in os.environ.get('PATH', '').split(os.pathsep):
+    for ext in pathexts:
+      candidate = os.path.join(elem, ext)
+      if os.path.isfile(candidate):
+        return candidate
+  raise ValueError('Could not find %r on PATH.' % (name,))
+
+
+GIT_EXE = 'git' if not IS_WIN else win_find_executable('git')
+
 
 FREEZE = 'FREEZE'
 FREEZE_SECTIONS = {

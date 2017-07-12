@@ -12,6 +12,16 @@ import subprocess
 import sys
 
 
+def win_find_executable(name):
+  pathexts = os.environ.get('PATHEXT', '').split(os.pathsep) or ('.exe', '.bat')
+  for elem in os.environ.get('PATH', '').split(os.pathsep):
+    for ext in pathexts:
+      candidate = os.path.join(elem, ext)
+      if os.path.isfile(candidate):
+        return candidate
+  raise ValueError('Could not find %r on PATH.' % (name,))
+
+
 def run_git(git_cmd, *args, **kwargs):
   """Runs git with given arguments.
 
@@ -31,9 +41,6 @@ def main():
                       required=True)
   parser.add_argument('--url', help='URL of remote to make origin.',
                       required=True)
-  parser.add_argument('--git_cmd_path',
-                      help='Path to the git command to run.',
-                      default='git')
   parser.add_argument('--remote', help='Name of the git remote.',
                       default='origin')
   parser.add_argument('-v', '--verbose', action='store_true')
@@ -48,12 +55,13 @@ def main():
   if not os.path.exists(path):
     os.makedirs(path)
 
+  git_cmd = 'git' if not sys.platform == 'win32' else win_find_executable('git')
   if os.path.exists(os.path.join(path, '.git')):
-    run_git(opts.git_cmd_path, 'config', '--remove-section',
+    run_git(git_cmd, 'config', '--remove-section',
             'remote.%s' % remote, cwd=path)
   else:
-    run_git(opts.git_cmd_path, 'init', cwd=path)
-  run_git(opts.git_cmd_path, 'remote', 'add', remote, url, cwd=path)
+    run_git(git_cmd, 'init', cwd=path)
+  run_git(git_cmd, 'remote', 'add', remote, url, cwd=path)
   return 0
 
 

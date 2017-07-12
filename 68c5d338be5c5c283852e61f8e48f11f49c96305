@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e60337cd_ba838631",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-12T01:35:27Z",
+      "side": 1,
+      "message": "I actually already updated it :)\n\nCheck it out! https://chromium.googlesource.com/chromium/tools/depot_tools/+/master/bootstrap/win/",
+      "parentUuid": "2f96bbc5_889dcf1a",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 8
+      },
+      "revId": "68c5d338be5c5c283852e61f8e48f11f49c96305",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8e997542_49b266a5",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 1
@@ -83,6 +107,30 @@
       "writtenOn": "2017-07-12T01:29:50Z",
       "side": 1,
       "message": "is this still valid?",
+      "range": {
+        "startLine": 38,
+        "startChar": 48,
+        "endLine": 38,
+        "endChar": 61
+      },
+      "revId": "68c5d338be5c5c283852e61f8e48f11f49c96305",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8be7d63a_1565e99f",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-12T01:35:27Z",
+      "side": 1,
+      "message": "Nope, good catch. Where\u0027s my \"batlint\" when I need it?",
+      "parentUuid": "b42af936_7d2b3c2c",
       "range": {
         "startLine": 38,
         "startChar": 48,

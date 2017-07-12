@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "157e58c6_a619289f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-12T15:56:35Z",
+      "side": 1,
+      "message": "FYI: The right thing to use here would be \u0027master\u0027 and then likewise to pass --revision src@master to botupdate. But that\u0027d cause a gazillion of expectation changes that I don\u0027t want to trigger now. Hence keeping the status-quo of passing --revision src@HEAD",
+      "range": {
+        "startLine": 338,
+        "startChar": 20,
+        "endLine": 338,
+        "endChar": 35
+      },
+      "revId": "3822e8c11ae3069e8d488bad017c813606e19e83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

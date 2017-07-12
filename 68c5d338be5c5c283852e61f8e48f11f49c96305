@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "0d26c180_8b00a9ab",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-12T01:31:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8e997542_49b266a5",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 2,
+        "endChar": 3
+      },
+      "revId": "68c5d338be5c5c283852e61f8e48f11f49c96305",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b42af936_7d2b3c2c",
         "filename": "bootstrap/win/win_tools.bat",
         "patchSetId": 1

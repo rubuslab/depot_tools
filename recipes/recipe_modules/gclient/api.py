@@ -344,3 +344,12 @@ class GclientApi(recipe_api.RecipeApi):
     path, revision = cfg.patch_projects.get(patch_project, (None, None))
     if path and revision and path not in cfg.revisions:
       cfg.revisions[path] = revision
+
+  def get_patch_project_path(self, patch_project, gclient_config=None):
+    """Returns the path of the patch project if available, otherwise the main
+    solution's path.
+    """
+    assert patch_project is None or isinstance(patch_project, basestring)
+    cfg = gclient_config or self.c
+    return cfg.patch_projects.get(
+        patch_project, (cfg.solutions[0].name, None))[0]

@@ -39,6 +39,10 @@ if exist "%WIN_TOOLS_ROOT_DIR%\python_bin_reldir.txt" (
 
 if not exist "%WIN_TOOLS_ROOT_DIR%\python276_bin" goto :PY27_INSTALL
 if not exist "%WIN_TOOLS_ROOT_DIR%\python.bat" goto :PY27_INSTALL
+
+:: Temporary fix, always install "python.bat" (crbug.com/741650).
+call copy /y "%~dp0python276.new.bat" "%WIN_TOOLS_ROOT_DIR%\python.bat" 1>nul
+
 set ERRORLEVEL=0
 goto :GIT_CHECK
 

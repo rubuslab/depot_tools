@@ -22,6 +22,30 @@
       "revId": "a876eb5080f401b7d7cfdbfbefed764754707d02",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf0e31c3_6a5f9d77",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-13T23:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5955efe1_99661cbf",
+      "range": {
+        "startLine": 29,
+        "startChar": 3,
+        "endLine": 29,
+        "endChar": 27
+      },
+      "revId": "a876eb5080f401b7d7cfdbfbefed764754707d02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

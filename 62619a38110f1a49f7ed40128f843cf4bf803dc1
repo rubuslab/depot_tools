@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9d060db_72e5520e",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2813,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2017-07-13T15:09:29Z",
+      "side": 1,
+      "message": "I just saw this message and wasn\u0027t sure what \"that\" refers to here. If I want to create a local commit which does not have the same hash? If I want to upload changes based on top of this branch? If the latter, what would `git cl patch --force` do differently?\n\nNow that I found this CL and read the CL description, I understand it, but previously I didn\u0027t.\n\nI\u0027d either:\n- remove this message completely, it\u0027s mostly noise\n- say something like \"applied patch relative to current HEAD, use `git cl patch --force` to reset HEAD to patch base from gerrit before applying\" (which imho is both shorter and clearer)",
+      "range": {
+        "startLine": 2813,
+        "startChar": 31,
+        "endLine": 2813,
+        "endChar": 35
+      },
+      "revId": "62619a38110f1a49f7ed40128f843cf4bf803dc1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

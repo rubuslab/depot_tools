@@ -22,6 +22,30 @@
       "revId": "62619a38110f1a49f7ed40128f843cf4bf803dc1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f411f62_45aae22a",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2813,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-07-13T16:19:22Z",
+      "side": 1,
+      "message": "Seems like the antecedent of \"that\" is pretty clearly \"upload changes based on top of this branch\".\n\nThe reason that I don\u0027t want to use a message like \"use git cl patch --force to reset HEAD to patch base from gerrit before applying\" is that it doesn\u0027t tell people *why* they\u0027d want to do that. It doesn\u0027t actually matter what --force does. What matters is that it lets you base new changes on top of someone else\u0027s change. That\u0027s why the message is phrased the way it is.",
+      "parentUuid": "d9d060db_72e5520e",
+      "range": {
+        "startLine": 2813,
+        "startChar": 31,
+        "endLine": 2813,
+        "endChar": 35
+      },
+      "revId": "62619a38110f1a49f7ed40128f843cf4bf803dc1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

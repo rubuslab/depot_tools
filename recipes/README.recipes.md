@@ -195,8 +195,6 @@ Example:
 
 &emsp; **@property**<br>&mdash; **def [cros\_path](/recipes/recipe_modules/depot_tools/api.py#21)(self):**
 
-&emsp; **@property**<br>&mdash; **def [download\_from\_google\_storage\_path](/recipes/recipe_modules/depot_tools/api.py#8)(self):**
-
 &emsp; **@property**<br>&mdash; **def [gn\_py\_path](/recipes/recipe_modules/depot_tools/api.py#25)(self):**
 
 &emsp; **@property**<br>&mdash; **def [gsutil\_py\_path](/recipes/recipe_modules/depot_tools/api.py#31)(self):**

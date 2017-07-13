@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5955efe1_99661cbf",
+        "filename": "bootstrap/win/win_tools.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-13T23:43:39Z",
+      "side": 1,
+      "message": "dunno if this comment still needs to be here",
+      "range": {
+        "startLine": 29,
+        "startChar": 3,
+        "endLine": 29,
+        "endChar": 27
+      },
+      "revId": "a876eb5080f401b7d7cfdbfbefed764754707d02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -33,14 +33,20 @@ while [ -n "$1" ]; do
   else
     commit_pos="${1#*Cr-Commit-Position: }"
   fi
+
   ref="${commit_pos%@\{#*\}}"
+
   if [ "$ref" = "$commit_pos" -o -z "$ref" ]; then
     ref="refs/heads/master"
   fi
+
   remote_ref="${ref/refs\/heads/refs\/remotes\/origin}"
   remote_ref="${remote_ref/refs\/branch-heads/refs\/remotes\/branch-heads}"
+  remote_ref="${remote_ref//\\}"
+
   num="${commit_pos#*@\{\#}"
   num="${num%\}}"
+
   if [ -z "$ref" -o -z "$num" ]; then
     git rev-parse "$1"
   else

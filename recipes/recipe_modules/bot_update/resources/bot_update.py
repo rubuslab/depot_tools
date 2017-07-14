@@ -452,17 +452,20 @@ def force_revision(folder_name, revision):
     # Support for "branch:revision" syntax.
     branch, revision = split_revision
 
-  if revision and revision.upper() != 'HEAD':
-    git('checkout', '--force', revision, cwd=folder_name)
+  if revision and revision.startswith('refs/branch-heads'):
+    # Gerrit stores branch-head destination branches as refs/branch-heads/*
+    # but we need to checkout refs/remotes/branch-heads/*.
+    # gclient sync accepts refs/branch-heads/* and also auto-corrects it.
+    ref = 'refs/remotes/branch-heads' + revision[len('refs/branch-heads'):]
+  elif revision and revision.upper() != 'HEAD':
+    ref = revision
   else:
-    # TODO(machenbach): This won't work with branch-heads, as Gerrit's
-    # destination branch would be e.g. refs/branch-heads/123. But here
-    # we need to pass refs/remotes/branch-heads/123 to check out.
-    # This will also not work if somebody passes a local refspec like
+    # Note, this will not work if somebody passes a local refspec like
     # refs/heads/master. It needs to translate to refs/remotes/origin/master
-    # first. See also https://crbug.com/740456 .
+    # first.
     ref = branch if branch.startswith('refs/') else 'origin/%s' % branch
-    git('checkout', '--force', ref, cwd=folder_name)
+
+  git('checkout', '--force', ref, cwd=folder_name)
 
 
 def is_broken_repo_dir(repo_dir):

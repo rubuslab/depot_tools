@@ -227,6 +227,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
         if fixed_revision.upper() == 'HEAD':
           # Sync to correct destination branch if HEAD was specified.
           fixed_revision = self._destination_branch(cfg, name)
+        if 'branch-heads' in fixed_revision:
+          # Fetch branch-heads on demand.
+          with_branch_heads = True
         flags.append(['--revision', '%s@%s' % (name, fixed_revision)])
 
     # Add extra fetch refspecs.

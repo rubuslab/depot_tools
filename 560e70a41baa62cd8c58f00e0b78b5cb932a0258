@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5668272_0769604b",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_gerrit_angle.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-14T10:23:17Z",
+      "side": 1,
+      "message": "This test case is bad. the got_revision_mapping wasn\u0027t set up for angle. therefore it doesn\u0027t simulate which revision it got in the first round. therefore we see a second check of the destination branch and get also the wrong spec here.",
+      "range": {
+        "startLine": 184,
+        "startChar": 7,
+        "endLine": 184,
+        "endChar": 33
+      },
+      "revId": "560e70a41baa62cd8c58f00e0b78b5cb932a0258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

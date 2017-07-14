@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fd1630fe_3fe68328",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-14T14:52:12Z",
+      "side": 1,
+      "message": "Hmm, this seems to add the refspec to .git/config indeed, which is unfortunate. I executed locally in a chromium checkout:\ngclient sync --revision src/v8@refs/branch-heads/6.0 --with_branch_heads\n\nThis adds to v8\u0027s config:\n\tfetch \u003d +refs/branch-heads/*:refs/remotes/branch-heads/*\n\nThat\u0027ll stay there permanently and influence subsequent tryjobs that don\u0027t want branch-heads, e.g. make them slower. I don\u0027t know how much slower and if this is a big deal still...",
+      "parentUuid": "d478e981_3c466eb3",
+      "range": {
+        "startLine": 230,
+        "startChar": 8,
+        "endLine": 232,
+        "endChar": 34
+      },
+      "revId": "a9d4adeec54a8ea4febf9f279724e22beb895877",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0c29475f_6c1ae53d",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 2

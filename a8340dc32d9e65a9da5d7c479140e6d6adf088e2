@@ -16,6 +16,24 @@
       "revId": "a8340dc32d9e65a9da5d7c479140e6d6adf088e2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f8f792b_2755a86b",
+        "filename": "recipes/recipe_modules/cipd/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-17T05:24:14Z",
+      "side": 1,
+      "message": "yarp, see https://chromium.googlesource.com/chromium/tools/build/+/0a5555052694b4d6dc827c4eb2c2c68cdfda29ac/scripts/slave/infra_platform.py#112",
+      "parentUuid": "67481ccf_47bb3bc0",
+      "revId": "a8340dc32d9e65a9da5d7c479140e6d6adf088e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

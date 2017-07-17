@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea400c34_936ec88d",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_gerrit_angle.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-07-17T07:04:13Z",
+      "side": 1,
+      "message": "The fix. Second bot_update run syncs to the version checked out in the first. Also above second destination-branch lookup is not needed anymore.",
+      "range": {
+        "startLine": 148,
+        "startChar": 29,
+        "endLine": 148,
+        "endChar": 69
+      },
+      "revId": "dd27924608f3fa28c64f569cefdd2038c0cc39b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

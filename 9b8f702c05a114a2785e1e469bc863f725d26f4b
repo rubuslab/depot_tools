@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "97597fd4_c735ac14",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-18T09:34:51Z",
+      "side": 1,
+      "message": "is not None\nhere makes sense to.",
+      "range": {
+        "startLine": 722,
+        "startChar": 10,
+        "endLine": 722,
+        "endChar": 11
+      },
+      "revId": "9b8f702c05a114a2785e1e469bc863f725d26f4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

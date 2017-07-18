@@ -22,6 +22,30 @@
       "revId": "9b8f702c05a114a2785e1e469bc863f725d26f4b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06ceb2ee_396aca85",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-07-18T16:27:12Z",
+      "side": 1,
+      "message": "I considered it, but it makes less sense: notify can have (effectively) three values: missing, ALL, or NONE. Ready can only have two: missing, or True. The \"False\" value for ready is actually \"wip: True\", and we\u0027re (currently) not letting this code put changes back into WIP mode. So using \"if ready is not None\" would mean that \"ready\u003dFalse\" would either a) end up setting \"ready\u003dTrue\" (oh god), or would set \"ready\u003dFalse\", which is meaningless. So I decided not to do it.",
+      "parentUuid": "97597fd4_c735ac14",
+      "range": {
+        "startLine": 722,
+        "startChar": 10,
+        "endLine": 722,
+        "endChar": 11
+      },
+      "revId": "9b8f702c05a114a2785e1e469bc863f725d26f4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

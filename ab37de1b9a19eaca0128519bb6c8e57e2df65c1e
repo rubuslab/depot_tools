@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "52e841b9_334b4bcf",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1486,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-19T20:11:31Z",
+      "side": 1,
+      "message": "please print the the \"Change-Id: Ixxxx\" line, so that developer can easily re-insert it back if necessary.\n\nIf somebody edits message *before* calling git cl issue, they may have modified Change-Id to be of some other issue already (I kid you not, one V8 dev came to me with a problem which he ultimately tried to resolve by doing this)",
+      "range": {
+        "startLine": 1486,
+        "startChar": 14,
+        "endLine": 1486,
+        "endChar": 28
+      },
+      "revId": "ab37de1b9a19eaca0128519bb6c8e57e2df65c1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "afcf0277_f4d8c9dd",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-20T22:49:05Z",
+      "side": 1,
+      "message": "will the call above log at least, or should we log here?",
+      "revId": "c9d63eeceaa1b20853565cfad9fd4411315f3241",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "90e41d46_a494e12d",
+        "filename": "bootstrap/win/python27.new.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1003211
+      },
+      "writtenOn": "2017-07-20T02:26:38Z",
+      "side": 0,
+      "message": "So by removing a ton of characters here, when the batch file gets reloaded Windows will jump to the same offset, which is now past the end and just restart from the top?",
+      "revId": "ca01e2c8dc422db8166f382a1618decac61ae416",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

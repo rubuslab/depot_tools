@@ -102,6 +102,17 @@ class BotUpdateApi(recipe_api.RecipeApi):
     # Only one of these should exist.
     assert not (oauth2_json and patch_oauth2)
 
+    # Creating hardlinks during a build can interact with git reset in
+    # unfortunate ways if git's index isn't refreshed beforehand. (See
+    # crbug.com/330461#c13 for an explanation.)
+    try:
+      self.m.gclient(
+          'refresh git indices%s%s' % ('' if patch else ' (without patch)',
+                                       ' - %s' % suffix if suffix else ''),
+          ['recurse', '-v', 'git', 'update-index', '--refresh'])
+    except self.m.step.StepFailure as f:
+      f.result.presentation.status = self.m.step.WARNING
+
     # Construct our bot_update command.  This basically be inclusive of
     # everything required for bot_update to know:
     root = patch_root

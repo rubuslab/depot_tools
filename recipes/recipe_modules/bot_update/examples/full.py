@@ -207,3 +207,11 @@ def GenTests(api):
         'event.patchSet.ref': 'refs/changes/11/338811/3',
       }
   )
+  yield api.test('git_refresh_fails') + api.properties(
+      repository='chromium',
+      patch=False,
+      revision='abc'
+  ) + api.step_data(
+      'gclient refresh git indices (without patch)',
+      retcode=1
+  )

@@ -1,5 +1,22 @@
 [
   {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_PACKAGE_REPO[depot_tools]/gclient.py",
+      "recurse",
+      "-v",
+      "git",
+      "update-index",
+      "--refresh"
+    ],
+    "env": {
+      "PATH": "<PATH>:RECIPE_PACKAGE_REPO[depot_tools]"
+    },
+    "infra_step": true,
+    "name": "gclient refresh git indices"
+  },
+  {
     "name": "$result",
     "reason": "build path is not defined. This is normal for LUCI builds. In LUCI, use_site_config_creds parameter of bot_update.ensure_checkout is not supported",
     "recipe_result": null,

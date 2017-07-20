@@ -49,7 +49,7 @@ Wrapper for easy calling of bot_update.
 
 &mdash; **def [apply\_gerrit\_ref](/recipes/recipe_modules/bot_update/api.py#49)(self, root, gerrit_no_reset=False, gerrit_no_rebase_patch_ref=False, \*\*kwargs):**
 
-&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#427)(self, bot_update_step):**
+&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#438)(self, bot_update_step):**
 
 Deapplies a patch, taking care of DEPS and solution revisions properly.
     
@@ -71,7 +71,7 @@ Args:
     Needed as migration paths for recipes dealing with older revisions,
     such as bisect.
 
-&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#404)(self, project_name, gclient_config=None):**
+&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#415)(self, project_name, gclient_config=None):**
 
 Returns all property names used for storing the checked-out revision of
 a given project.

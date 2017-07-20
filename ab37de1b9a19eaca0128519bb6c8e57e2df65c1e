@@ -22,6 +22,30 @@
       "revId": "ab37de1b9a19eaca0128519bb6c8e57e2df65c1e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8ef6d73_61088ac1",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1486,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-07-20T00:07:22Z",
+      "side": 1,
+      "message": "If they\u0027ve already found the change-id, they know where to find it again. And I\u0027d prefer not to encourage/enable the manual use of change-ids, especially since this removal is just a stopgap before we stop including them in commit messages all together.",
+      "parentUuid": "52e841b9_334b4bcf",
+      "range": {
+        "startLine": 1486,
+        "startChar": 14,
+        "endLine": 1486,
+        "endChar": 28
+      },
+      "revId": "ab37de1b9a19eaca0128519bb6c8e57e2df65c1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

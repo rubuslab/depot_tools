@@ -16,6 +16,24 @@
       "revId": "cdb10cb670684aad7a4cea3f59d819eb530a92d6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62d29913_cf625439",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-07-20T19:17:47Z",
+      "side": 1,
+      "message": "Sure. Done.\n\nMy only concern is that there\u0027s no good way to indicate that this failed at the build level if we move it in to the bot_update script. A separate step can do so. I don\u0027t think that\u0027s a big deal, though.",
+      "parentUuid": "84c9def6_bfc77b75",
+      "revId": "cdb10cb670684aad7a4cea3f59d819eb530a92d6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

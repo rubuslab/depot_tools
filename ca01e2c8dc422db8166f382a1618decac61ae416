@@ -34,6 +34,24 @@
       "revId": "ca01e2c8dc422db8166f382a1618decac61ae416",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec7d24a1_6f034c01",
+        "filename": "bootstrap/win/python27.new.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1003211
+      },
+      "writtenOn": "2017-07-20T02:32:23Z",
+      "side": 0,
+      "message": "Then to the Duff brewery.",
+      "parentUuid": "58b07276_2f1cf33e",
+      "revId": "ca01e2c8dc422db8166f382a1618decac61ae416",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "099d8378_6aee43c1",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1146,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-07-21T13:19:06Z",
+      "side": 1,
+      "message": "Only difference between this and the original is w/ the arguments here -- previously, I passed them into call_gclient as a list.",
+      "revId": "37d1fe773df328de27860bd4210dd42036680aa7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

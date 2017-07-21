@@ -16,6 +16,24 @@
       "revId": "c9d63eeceaa1b20853565cfad9fd4411315f3241",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d013317_728cfc43",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-07-21T01:08:15Z",
+      "side": 1,
+      "message": "Should probably log here. Added.",
+      "parentUuid": "afcf0277_f4d8c9dd",
+      "revId": "c9d63eeceaa1b20853565cfad9fd4411315f3241",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc0af347_231f87b7",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2195,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-07-21T18:38:48Z",
+      "side": 1,
+      "message": "Okay, after chatting w/ you over IM, I think I understand this CL better. You\u0027re not really ignoring the deps_os entries, you\u0027re just not merging them in ParseDepsFile. And there isn\u0027t really a case where you want the user to set this flag, you just need it in order to be able to pass state around.\n\nSo, I suggest we change the flag to be named something really long and explicit, like --do-not-merge-deps-os-entries and add a comment or a help string saying that this isn\u0027t meant to be user-specified, if that all makes sense. argparse actually has a \"hidden\" flag for this purpose, but I don\u0027t think optparse does, unfortunately.",
+      "revId": "0455685a19cb968fb92623709cddd40a21ff0e7f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

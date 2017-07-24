@@ -1763,6 +1763,9 @@ class Flattener(object):
     self._flatten_dep(solution)
     self._flatten_recurse(solution)
 
+  def _rewrite_var_name(self, dep, var_name):
+    return '%s_%s' % (re.sub(r'[^a-zA-Z0-9.]', '_', dep.name), var_name)
+
   def _flatten_dep(self, dep):
     """Visits a dependency in order to flatten it (see CMDflatten).
 
@@ -1775,8 +1778,9 @@ class Flattener(object):
     self._deps[dep.name] = dep
 
     for key, value in dep.get_vars().iteritems():
-      assert key not in self._vars
-      self._vars[key] = (dep, value)
+      rewritten_key = self._rewrite_var_name(dep, key)
+      assert rewritten_key not in self._vars
+      self._vars[rewritten_key] = (dep, value)
 
     self._hooks.extend([(dep, hook) for hook in dep.deps_hooks])
     self._pre_deps_hooks.extend([(dep, hook) for hook in dep.pre_deps_hooks])
@@ -1788,6 +1792,10 @@ class Flattener(object):
     self._add_deps_os(dep)
 
     deps_by_name = dict((d.name, d) for d in dep.dependencies)
+    for dep_os, os_deps in dep.os_dependencies.iteritems():
+      for os_dep in os_deps:
+        if os_dep.name not in deps_by_name:
+          deps_by_name[os_dep.name] = os_dep
     for recurse_dep_name in (dep.recursedeps or []):
       self._flatten_recurse(deps_by_name[recurse_dep_name])
 

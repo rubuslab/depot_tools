@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08f83719_ecf02d8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-07-24T23:38:23Z",
+      "side": 1,
+      "message": "You\u0027re actually doing more than what you\u0027re saying here, since you\u0027re *adding* support for variable placeholders and then taking advantage of that to allow us to preserve the data in flatten.\n\nIn addition, you\u0027re implementing Var() in terms of the placeholder, and so this is probably a point at which we\u0027d deprecate Var() as well.\n\nCan you rewrite the description a bit to make this clearer?",
+      "revId": "9bb837ab9a221ec5665abac436c15d8bd3d8c1f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2010c9e7_3cf3dd7e",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-07-24T23:38:23Z",
+      "side": 1,
+      "message": "clever! :).",
+      "revId": "9bb837ab9a221ec5665abac436c15d8bd3d8c1f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

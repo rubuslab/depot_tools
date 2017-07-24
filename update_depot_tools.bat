@@ -54,3 +54,6 @@ call git fetch -q origin > NUL
 call git rebase -q origin/master > NUL
 if errorlevel 1 echo Failed to update depot_tools.
 goto :EOF
+
+:: Sync CIPD and CIPD client tools.
+call "%~dp0\cipd_bin_setup.bat" > nul

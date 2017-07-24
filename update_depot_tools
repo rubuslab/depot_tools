@@ -120,3 +120,7 @@ then
 fi
 
 find "$base_dir" -iname "*.pyc" -exec rm -f {} \;
+
+# Sync CIPD and CIPD client tools.
+source "$base_dir/cipd_bin_setup.sh"
+cipd_bin_setup

@@ -58,4 +58,4 @@ if errorlevel 1 (
 )
 
 :: Sync CIPD and CIPD client tools.
-call "%~dp0\cipd_bin_setup.bat"
+call "%~dp0\cipd_bin_setup.bat" > "%DEPOT_TOOLS_DIR%.cipd.log" 2>&1

@@ -2,6 +2,7 @@
 *.pyc
 
 # ignore cipd client files
+/.cipd.log
 /.cipd_bin
 /.cipd_client*
 /.versions

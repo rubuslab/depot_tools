@@ -3,5 +3,6 @@
 :: Use of this source code is governed by a BSD-style license that can be
 :: found in the LICENSE file.
 
-call "%~dp0\cipd_bin_setup.bat" > nul 2>&1
+set DEPOT_TOOLS_DIR=%~1
+call "%~dp0\cipd_bin_setup.bat" > "%DEPOT_TOOLS_DIR%.cipd.log" 2>&1
 "%~dp0\.cipd_bin\vpython.exe" %*

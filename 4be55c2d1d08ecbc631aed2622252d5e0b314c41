@@ -22,6 +22,30 @@
       "revId": "4be55c2d1d08ecbc631aed2622252d5e0b314c41",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31ccf9b4_2dfe9d15",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1116444
+      },
+      "writtenOn": "2017-07-26T22:52:20Z",
+      "side": 1,
+      "message": "Yep! Done.",
+      "parentUuid": "80e5f87a_5e655cf5",
+      "range": {
+        "startLine": 51,
+        "startChar": 23,
+        "endLine": 51,
+        "endChar": 56
+      },
+      "revId": "4be55c2d1d08ecbc631aed2622252d5e0b314c41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

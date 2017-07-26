@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5c649d27_c2170538",
+        "filename": "led.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-07-26T01:05:24Z",
+      "side": 1,
+      "message": "We could also do %DEPOT_TOOLS_DIR% below.",
+      "parentUuid": "d79eef8b_197ad642",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 23
+      },
+      "revId": "6752f0073cdd8227ce273e676b1121a1e3eaad3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "99a92da1_2c286c0d",
         "filename": "led.bat",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-07-26T01:00:12Z",
       "side": 1,
       "message": "will it be depot_tools\\.cipd.log or depot_tools.cipd.log? What guarantees there\u0027s \u0027\\\u0027 there?",
+      "range": {
+        "startLine": 7,
+        "startChar": 35,
+        "endLine": 7,
+        "endChar": 61
+      },
+      "revId": "6752f0073cdd8227ce273e676b1121a1e3eaad3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "963dcfc6_2873ad88",
+        "filename": "led.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-07-26T01:05:24Z",
+      "side": 1,
+      "message": "the %~1 gives you the dirname plus the slash, I believe.",
+      "parentUuid": "99a92da1_2c286c0d",
       "range": {
         "startLine": 7,
         "startChar": 35,

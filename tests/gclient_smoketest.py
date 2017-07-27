@@ -598,7 +598,7 @@ class GClientSmokeGIT(GClientSmokeBase):
         '',
         '  # src -> src/repo2',
         '  "src/repo2": {',
-        '    "url": "git://127.0.0.1:20000/git/repo_2@%s",' % (
+        '    "url": "{git_base}repo_2@%s",' % (
                  self.githash('repo_2', 1)[:7]),
         '    "condition": "True",',
         '  },',
@@ -700,6 +700,9 @@ class GClientSmokeGIT(GClientSmokeBase):
         '  # src',
         '  "DummyVariable": \'repo\',',
         '',
+        '  # src',
+        '  "git_base": \'git://127.0.0.1:20000/git/\',',
+        '',
         '}',
         '',
     ], deps_contents.splitlines())
@@ -741,7 +744,7 @@ class GClientSmokeGIT(GClientSmokeBase):
         '',
         '  # src -> src/repo2',
         '  "src/repo2": {',
-        '    "url": "git://127.0.0.1:20000/git/repo_2@%s",' % (
+        '    "url": "{git_base}repo_2@%s",' % (
                  self.githash('repo_2', 1)[:7]),
         '    "condition": "True",',
         '  },',
@@ -843,6 +846,9 @@ class GClientSmokeGIT(GClientSmokeBase):
         'vars = {',
         '  # src',
         '  "DummyVariable": \'repo\',',
+        '',
+        '  # src',
+        '  "git_base": \'git://127.0.0.1:20000/git/\',',
         '',
         '}',
         '',

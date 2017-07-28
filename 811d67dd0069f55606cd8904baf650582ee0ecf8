@@ -16,6 +16,24 @@
       "revId": "811d67dd0069f55606cd8904baf650582ee0ecf8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be5848f8_ae2ec65c",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-07-28T11:04:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e3a04808_232b591a",
+      "revId": "811d67dd0069f55606cd8904baf650582ee0ecf8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

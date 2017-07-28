@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e3a04808_232b591a",
+        "filename": "cipd.ps1",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-07-28T09:16:29Z",
+      "side": 1,
+      "message": "can probably delete this since it seems like we won\u0027t really want this ever",
+      "revId": "811d67dd0069f55606cd8904baf650582ee0ecf8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

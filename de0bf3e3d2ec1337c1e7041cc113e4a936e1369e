@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df8919b7_23663f26",
+        "filename": "recipes/recipes/fetch_end_to_end_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-31T17:58:21Z",
+      "side": 1,
+      "message": "is there any way to instruct fetch to use git cache to avoid hitting GoB for chromium and all its deps?",
+      "range": {
+        "startLine": 35,
+        "startChar": 10,
+        "endLine": 35,
+        "endChar": 23
+      },
+      "revId": "de0bf3e3d2ec1337c1e7041cc113e4a936e1369e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

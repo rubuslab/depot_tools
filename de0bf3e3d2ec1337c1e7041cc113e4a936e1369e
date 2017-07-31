@@ -46,6 +46,30 @@
       "revId": "de0bf3e3d2ec1337c1e7041cc113e4a936e1369e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5cd86c0c_80d2e056",
+        "filename": "recipes/recipes/fetch_end_to_end_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-07-31T18:03:09Z",
+      "side": 1,
+      "message": "Well, for you own use -\u003e sgtm then. Also, you can trigger this in scheduler every 6 hours.",
+      "parentUuid": "1d0a66f9_d082f9fb",
+      "range": {
+        "startLine": 35,
+        "startChar": 10,
+        "endLine": 35,
+        "endChar": 23
+      },
+      "revId": "de0bf3e3d2ec1337c1e7041cc113e4a936e1369e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

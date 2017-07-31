@@ -22,6 +22,30 @@
       "revId": "de0bf3e3d2ec1337c1e7041cc113e4a936e1369e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d0a66f9_d082f9fb",
+        "filename": "recipes/recipes/fetch_end_to_end_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-07-31T18:00:51Z",
+      "side": 1,
+      "message": "Not that I know of, and trying to add one might be hard (see the source code). Suggestions are welcome of course.\n\nThis wouldn\u0027t run on every commit though. I intend to have an optional trybot for automated testing of known fetch configs. Example use case are my gclient changes (syntax, schema, conditions, etc).",
+      "parentUuid": "df8919b7_23663f26",
+      "range": {
+        "startLine": 35,
+        "startChar": 10,
+        "endLine": 35,
+        "endChar": 23
+      },
+      "revId": "de0bf3e3d2ec1337c1e7041cc113e4a936e1369e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

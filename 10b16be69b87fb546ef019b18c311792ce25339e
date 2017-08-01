@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31460bcf_e1d647db",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1265,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-08-01T17:13:33Z",
+      "side": 1,
+      "message": "nit: I think you can do: config_dict.get(\u0027cache_dir\u0027, self._options.cache_dir)",
+      "revId": "10b16be69b87fb546ef019b18c311792ce25339e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35801342_e77ad594",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2418,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-08-01T17:13:33Z",
+      "side": 1,
+      "message": "nit: \", None\" is not necessary.",
+      "range": {
+        "startLine": 2418,
+        "startChar": 50,
+        "endLine": 2418,
+        "endChar": 56
+      },
+      "revId": "10b16be69b87fb546ef019b18c311792ce25339e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

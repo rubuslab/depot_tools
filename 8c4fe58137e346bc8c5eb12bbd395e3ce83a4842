@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd1ff55d_3a099bb9",
+        "filename": "my_activity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-08-02T19:28:52Z",
+      "side": 1,
+      "message": "Nit: protocol \u003d instance.get(\u0027short_url_protocol\u0027, \u0027http\u0027)",
+      "revId": "8c4fe58137e346bc8c5eb12bbd395e3ce83a4842",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -70,6 +70,7 @@ rietveld_instances = [
     'supports_owner_modified_query': True,
     'requires_auth': False,
     'email_domain': 'chromium.org',
+    'short_url_protocol': 'https',
   },
   {
     'url': 'chromereviews.googleplex.com',
@@ -96,10 +97,12 @@ gerrit_instances = [
   {
     'url': 'chromium-review.googlesource.com',
     'shorturl': 'crrev.com/c',
+    'short_url_protocol': 'https',
   },
   {
     'url': 'chrome-internal-review.googlesource.com',
     'shorturl': 'crrev.com/i',
+    'short_url_protocol': 'https',
   },
   {
     'url': 'android-review.googlesource.com',
@@ -110,6 +113,7 @@ google_code_projects = [
   {
     'name': 'chromium',
     'shorturl': 'crbug.com',
+    'short_url_protocol': 'https',
   },
   {
     'name': 'google-breakpad',
@@ -302,8 +306,12 @@ class MyActivity(object):
     shorturl = instance['url']
     if 'shorturl' in instance:
       shorturl = instance['shorturl']
+    if 'short_url_protocol' in instance:
+      protocol = instance['short_url_protocol']
+    else:
+      protocol = 'http'
 
-    ret['review_url'] = 'http://%s/%d' % (shorturl, issue['issue'])
+    ret['review_url'] = '%s://%s/%d' % (protocol, shorturl, issue['issue'])
 
     # Rietveld sometimes has '\r\n' instead of '\n'.
     ret['header'] = issue['description'].replace('\r', '').split('\n')[0]
@@ -389,9 +397,13 @@ class MyActivity(object):
           **issue)
     ret['status'] = issue['status']
     ret['review_url'] = issue['url']
+    if 'short_url_protocol' in instance:
+      protocol = instance['short_url_protocol']
+    else:
+      protocol = 'http'
     if 'shorturl' in instance:
-      ret['review_url'] = 'http://%s/%s' % (instance['shorturl'],
-                                            issue['number'])
+      ret['review_url'] = '%s://%s/%s' % (protocol, instance['shorturl'],
+                                          issue['number'])
     ret['header'] = issue['subject']
     ret['owner'] = issue['owner']['email']
     ret['author'] = ret['owner']
@@ -426,11 +438,15 @@ class MyActivity(object):
           **issue)
     ret['status'] = issue['status']
     ret['review_url'] = 'https://%s/%s' % (instance['url'], issue['_number'])
+    if 'short_url_protocol' in instance:
+      protocol = instance['short_url_protocol']
+    else:
+      protocol = 'http'
     if 'shorturl' in instance:
       # TODO(deymo): Move this short link to https once crosreview.com supports
       # it.
-      ret['review_url'] = 'http://%s/%s' % (instance['shorturl'],
-                                            issue['_number'])
+      ret['review_url'] = '%s://%s/%s' % (protocol, instance['shorturl'],
+                                          issue['_number'])
     ret['header'] = issue['subject']
     ret['owner'] = issue['owner']['email']
     ret['author'] = ret['owner']
@@ -502,8 +518,13 @@ class MyActivity(object):
           'labels': [],
           'components': []
         }
+        if 'short_url_protocol' in instance:
+          protocol = instance['short_url_protocol']
+        else:
+          protocol = 'http'
         if 'shorturl' in instance:
-          issue['url'] = 'http://%s/%d' % (instance['shorturl'], item['id'])
+          issue['url'] = '%s://%s/%d' % (protocol, instance['shorturl'],
+                                         item['id'])
 
         if 'owner' in item:
           issue['owner'] = item['owner']['name']
@@ -902,7 +923,7 @@ def main():
       logging.info('Printing output to "%s"', options.output)
       sys.stdout = output_file
   except (IOError, OSError) as e:
-     logging.error('Unable to write output: %s', e)
+    logging.error('Unable to write output: %s', e)
   else:
     if options.json:
       my_activity.dump_json()

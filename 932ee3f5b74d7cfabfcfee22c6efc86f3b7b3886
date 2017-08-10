@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ece4ad70_ab5e8be2",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1767,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-08-10T11:06:41Z",
+      "side": 0,
+      "message": "ah, this is totally gone. Makes sense, sorry didn\u0027t notice at first.",
+      "range": {
+        "startLine": 1765,
+        "startChar": 3,
+        "endLine": 1767,
+        "endChar": 30
+      },
+      "revId": "932ee3f5b74d7cfabfcfee22c6efc86f3b7b3886",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

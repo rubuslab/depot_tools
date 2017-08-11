@@ -16,6 +16,24 @@
       "revId": "e71a59c25b1e7370f396d06c33ada781251c893a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be629d66_ae6eef5c",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1738,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-08-11T15:04:53Z",
+      "side": 1,
+      "message": "Good point. Updated patch. PTAL.",
+      "parentUuid": "8151cbc2_943491fa",
+      "revId": "e71a59c25b1e7370f396d06c33ada781251c893a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

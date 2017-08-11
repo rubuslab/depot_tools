@@ -1735,7 +1735,7 @@ class Flattener(object):
         if dep.parsed_url is None:
           continue
         url, revision = gclient_utils.SplitUrlRevision(dep.parsed_url)
-        if revision and gclient_utils.IsGitSha(revision):
+        if revision:
           continue
         scm = gclient_scm.CreateSCM(
             dep.parsed_url, self._client.root_dir, dep.name, dep.outbuf)

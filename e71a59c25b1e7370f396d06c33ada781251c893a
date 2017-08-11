@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8151cbc2_943491fa",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1738,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-08-11T13:11:27Z",
+      "side": 1,
+      "message": "I don\u0027t think this is quite what we want, since pinning should always use an explicit hash. For instance, given:\nfoo.git@refs/heads/bar\n\nThe previous implementation would replace that with something like:\nfoo.git@refs/heads/bar@12345ABCDE\n\nThis change would accept any revision value as properly pinned, so just return:\nfoo.git@refs/heads/bar\n \nBut that\u0027s not really pinned, because the ref could change. The true pinned output should actually be:\nfoo.git@12345ABCDE\n\nSo I think it still has to check IsGitSha(), but if the revision isn\u0027t a proper hash, it has to replace it, not append to it, with a proper hash.",
+      "revId": "e71a59c25b1e7370f396d06c33ada781251c893a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

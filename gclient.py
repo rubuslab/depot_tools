@@ -1731,17 +1731,24 @@ class Flattener(object):
       self._flatten_dep(solution)
 
     if pin_all_deps:
-      for dep in self._deps.itervalues():
-        if dep.parsed_url is None:
+      def all_deps():
+        for deps in [self._deps] + [self._deps_os[k] for k in
+                                    self._deps_os.keys()]:
+          for dep in deps.itervalues():
+            yield dep
+
+      for dep in all_deps():
+        parsed_url = dep.parsed_url or dep.url
+        if parsed_url is None:
           continue
 
         scm = gclient_scm.CreateSCM(
-            dep.parsed_url, self._client.root_dir, dep.name, dep.outbuf)
+            parsed_url, self._client.root_dir, dep.name, dep.outbuf)
         revinfo = scm.revinfo(self._client._options, [], None)
 
         # Make sure the revision is always fully specified (a hash),
         # as opposed to refs or tags which might change.
-        url, revision = gclient_utils.SplitUrlRevision(dep.parsed_url)
+        url, revision = gclient_utils.SplitUrlRevision(parsed_url)
         if revision and gclient_utils.IsGitSha(revision):
           continue
         dep._parsed_url = dep._url = '%s@%s' % (url, revinfo)

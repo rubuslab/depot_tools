@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0544fdf0_a159c2ae",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5955,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-08-15T23:49:00Z",
+      "side": 1,
+      "message": "Please add a comment here about why we want to skip this during presubmit.",
+      "revId": "85ad63c22d7a5dff949ca1d5506bb5f35d4e1908",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d848b0da_ea2386ce",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1741,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-08-16T14:41:26Z",
+      "side": 1,
+      "message": "It looks like \u0027.parsed_url\u0027 is never set for deps_os entries, and I don\u0027t really know why, so I\u0027m letting it fallback to \u0027.url\u0027 in that case. I\u0027m not too sure if it\u0027s legitimate to use them interchangeably like that. It seems to work for my buildspec testing purposes, but I might be missing some subtle but significant difference between them.",
+      "revId": "0582628b38d84d17dc89c47a0efef50144901749",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

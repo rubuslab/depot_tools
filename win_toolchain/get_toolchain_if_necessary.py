@@ -213,11 +213,19 @@ def SaveTimestampsAndHash(root, sha1):
 
 def HaveSrcInternalAccess():
   """Checks whether access to src-internal is available."""
-  with open(os.devnull, 'w') as nul:
-    return subprocess.call(
-        ['git', '-c', 'core.askpass=true', 'remote', 'show',
-         'https://chrome-internal.googlesource.com/chrome/src-internal/'],
-        shell=True, stdin=nul, stdout=nul, stderr=nul) == 0
+  # TODO(scottmg): This check broke (prompts with a modal dialog) after
+  # updating to git 2.14.1 for Windows. See https://crbug.com/755694 and
+  # upstream at
+  # https://github.com/Microsoft/Git-Credential-Manager-for-Windows/issues/482.
+  # This will result in slightly more confusing error messages, so it would
+  # be nice to fix it someday.
+  #
+  # with open(os.devnull, 'w') as nul:
+  #  return subprocess.call(
+  #      ['git', '-c', 'core.askpass=true', 'remote', 'show',
+  #       'https://chrome-internal.googlesource.com/chrome/src-internal/'],
+  #      shell=True, stdin=nul, stdout=nul, stderr=nul) == 0
+  return False
 
 
 def LooksLikeGoogler():

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e5b6bb8_5aa5470f",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1218,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-08-17T20:12:54Z",
+      "side": 1,
+      "message": "We should validate that all(x in DEPS_OS_CHOICES.values() for x in enforced_os) here, I think. But, I\u0027d probably do that in a separate CL, since I suppose that might break any users that might be using a non-standard DEPS file.",
+      "revId": "02cf85381cc8b40db105b7b6e7c62df20d236726",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

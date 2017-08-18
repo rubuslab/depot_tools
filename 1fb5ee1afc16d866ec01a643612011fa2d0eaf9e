@@ -16,6 +16,24 @@
       "revId": "1fb5ee1afc16d866ec01a643612011fa2d0eaf9e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53b3273e_15f57b2e",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1775,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-08-18T18:30:08Z",
+      "side": 1,
+      "message": "It will, if the repo is pinned. If not, use --pin-all-deps to ensure it is.\n\nOr do you mean to always include revisions there, even if otherwise not pinning?",
+      "parentUuid": "6adaeba1_d700d414",
+      "revId": "1fb5ee1afc16d866ec01a643612011fa2d0eaf9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

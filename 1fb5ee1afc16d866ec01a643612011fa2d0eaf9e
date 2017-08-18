@@ -34,6 +34,24 @@
       "revId": "1fb5ee1afc16d866ec01a643612011fa2d0eaf9e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40b7dae5_13d1f0e5",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1775,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-08-18T18:33:08Z",
+      "side": 1,
+      "message": "Ah, thanks, I was looking at the test output and missed that some have the \"@%s\" to include the revision.",
+      "parentUuid": "53b3273e_15f57b2e",
+      "revId": "1fb5ee1afc16d866ec01a643612011fa2d0eaf9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

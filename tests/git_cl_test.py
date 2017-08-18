@@ -5,6 +5,7 @@
 
 """Unit tests for git_cl.py."""
 
+import copy
 import json
 import os
 import StringIO
@@ -265,6 +266,9 @@ class TestGitCl(TestCase):
                   self._mocked_call(['get_or_create_merge_base']+list(a))))
     self.mock(git_cl, 'BranchExists', lambda _: True)
     self.mock(git_cl, 'FindCodereviewSettingsFile', lambda: '')
+    self.mock(git_cl, 'time_sleep',
+              lambda seconds: self._mocked_call(['time_sleep', seconds]))
+    self.mock(git_cl, 'time_time', lambda: self._mocked_call(['time_time']))
     self.mock(git_cl, 'ask_for_data', self._mocked_call)
     self.mock(git_cl, 'write_json', lambda path, contents:
         self._mocked_call('write_json', path, contents))
@@ -2086,11 +2090,12 @@ class TestGitCl(TestCase):
       ((['git', 'config', 'rietveld.autoupdate'],), CERR1),
       ((['git', 'config', 'rietveld.server'],), 'codereview.example.com'),
       ((['git', 'config', 'branch.feature.rietveldpatchset'],), '20001'),
+      ((['time_time'],), 1000.0),
       ((['git', 'config', 'branch.feature.rietveldserver'],),
        'codereview.example.com'),
       ((['get_authenticator_for_host', 'codereview.example.com'],),
        AuthenticatorMock()),
-    ] + [((['_buildbucket_retry'],), r) for r in request_results]
+    ] + [((['_buildbucket_retry'],), copy.deepcopy(r)) for r in request_results]
 
   def test_fetch_try_jobs_none_rietveld(self):
     self._setup_fetch_try_jobs_rietveld({})
@@ -2118,11 +2123,12 @@ class TestGitCl(TestCase):
       ((['git', 'config', 'branch.feature.gerritissue'],), '1'),
       # Simulate that Gerrit has more patchsets than local.
       ((['git', 'config', 'branch.feature.gerritpatchset'],), '12'),
+      ((['time_time'],), 1000.0),
       ((['git', 'config', 'branch.feature.gerritserver'],),
        'https://x-review.googlesource.com'),
       ((['get_authenticator_for_host', 'x-review.googlesource.com'],),
        AuthenticatorMock()),
-    ] + [((['_buildbucket_retry'],), r) for r in request_results]
+    ] + [((['_buildbucket_retry'],), copy.deepcopy(r)) for r in request_results]
 
   def test_fetch_try_jobs_none_gerrit(self):
     self._setup_fetch_try_jobs_gerrit({})
@@ -2146,6 +2152,36 @@ class TestGitCl(TestCase):
     self.assertRegexpMatches(sys.stdout.getvalue(), '^Failures:')
     self.assertRegexpMatches(sys.stdout.getvalue(), 'Started:')
     self.assertRegexpMatches(sys.stdout.getvalue(), '2 try jobs')
+
+  def test_fetch_try_jobs_some_gerrit_wait(self):
+    # Sort jobs by ID for determinism.
+    some_incomplete = copy.deepcopy([
+      b for _, b in sorted(self.BUILDBUCKET_BUILDS_MAP.iteritems())])
+    self.assertEqual(some_incomplete[0]['id'], '8000')
+    self.assertEqual(some_incomplete[0]['status'], 'COMPLETED')
+    self.assertEqual(some_incomplete[1]['id'], '9000')
+    self.assertEqual(some_incomplete[1]['status'], 'STARTED')
+    all_complete = copy.deepcopy(some_incomplete)
+    all_complete[1]['status'] = 'COMPLETED'
+
+    self._setup_fetch_try_jobs_gerrit({'builds': some_incomplete})
+    self.calls += [
+      ((['time_time'],), 1010.0),
+      ((['time_sleep', 10],), None),
+      ((['get_authenticator_for_host', 'x-review.googlesource.com'],),
+       AuthenticatorMock()),
+      ((['_buildbucket_retry'],), {'builds': all_complete}),
+    ]
+    self.assertEqual(0, git_cl.main(['try-results', '-w']))
+
+  def test_fetch_try_jobs_gerrit_wait_timeout(self):
+    self._setup_fetch_try_jobs_gerrit({
+      'builds': self.BUILDBUCKET_BUILDS_MAP.values(),  # Not all complete.
+    })
+    self.calls += [
+      ((['time_time'],), 1000.0 + 60 * 60 + 1), # Simulate running for too long.
+    ]
+    self.assertEqual(3, git_cl.main(['try-results', '-w']))
 
 
 if __name__ == '__main__':

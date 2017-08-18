@@ -23,7 +23,6 @@ import re
 import stat
 import sys
 import textwrap
-import time
 import traceback
 import urllib
 import urllib2
@@ -147,6 +146,19 @@ def BranchExists(branch):
                            suppress_stderr=True)
   return not code
 
+
+def time_sleep(seconds):
+  # Use this so that it can be mocked in tests without interfering with python
+  # system machinery.
+  import time  # Local import to discourage others from importing time globally.
+  return time.sleep(seconds)
+
+
+def time_time():
+  # Use this so that it can be mocked in tests without interfering with python
+  # system machinery.
+  import time  # Local import to discourage others from importing time globally.
+  return time.time()
 
 def ask_for_data(prompt):
   try:
@@ -313,7 +325,7 @@ def _buildbucket_retry(operation_name, http, *args, **kwargs):
 
     # status >= 500 means transient failures.
     logging.debug('Transient errors when %s. Will retry.', operation_name)
-    time.sleep(0.5 + 1.5*try_count)
+    time_sleep(0.5 + 1.5*try_count)
     try_count += 1
   assert False, 'unreachable'
 
@@ -450,6 +462,11 @@ def fetch_try_jobs(auth_config, changelist, buildbucket_host,
     else:
       break
   return builds
+
+
+def _count_unfinished_tryjobs(jobs):
+  """Returns number of unfinished jobs from fetch_try_jobs result."""
+  return sum(b['status'] != 'COMPLETED' for b in jobs.itervalues())
 
 
 def print_try_jobs(options, builds):
@@ -4896,6 +4913,11 @@ def CMDtry_results(parser, args):
       help='Host of buildbucket. The default host is %default.')
   group.add_option(
       '--json', help='Path of JSON output file to write try job results to.')
+  group.add_option(
+      '-w', '--wait-till-finished', action='store_true', default=False,
+      help='Keep checking buildbucket until either all jobs finish. '
+           'If after 1 hour jobs are still running, aborts and returns error '
+           'code 3.')
   parser.add_option_group(group)
   auth.add_auth_options(parser)
   options, args = parser.parse_args(args)
@@ -4923,15 +4945,32 @@ def CMDtry_results(parser, args):
             'By default, git cl try-results uses the latest patchset from '
             'codereview, continuing to use patchset %s.\n' %
             (patchset, cl.GetPatchset(), patchset))
-  try:
-    jobs = fetch_try_jobs(auth_config, cl, options.buildbucket_host, patchset)
-  except BuildbucketResponseException as ex:
-    print('Buildbucket error: %s' % ex)
-    return 1
-  if options.json:
-    write_try_results_json(options.json, jobs)
-  else:
-    print_try_jobs(options, jobs)
+
+  start_time = time_time()
+  while True:
+    try:
+      jobs = fetch_try_jobs(auth_config, cl, options.buildbucket_host, patchset)
+    except BuildbucketResponseException as ex:
+      print('Buildbucket error: %s' % ex)
+      return 1
+    if options.json:
+      write_try_results_json(options.json, jobs)
+    else:
+      print_try_jobs(options, jobs)
+    if not options.wait_till_finished:
+      return 0
+
+    # Only if --wait-till-finished is specified.
+    unfinished = _count_unfinished_tryjobs(jobs)
+    if not unfinished:
+      return 0
+    passed = time_time() - start_time
+    print('After %.0f seconds waiting, %d jobs still running\n\n' %
+          (passed, unfinished))
+    if passed > 3600:
+      print('Ran for too long, aborting now.')
+      return 3
+    time_sleep(10)  # Limit unnecessary load on buildbucket.
   return 0
 
 

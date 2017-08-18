@@ -22,6 +22,30 @@
       "revId": "64c0fbb0f0f7fc67b954321d5b5071a0af0dc970",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "869c5d19_afa1dc59",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1874,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-08-18T15:43:36Z",
+      "side": 1,
+      "message": "It is. However, one can run gclient sync with --process-all-deps flag. We can consider updating this help message to mention it.",
+      "parentUuid": "37b6bd9b_b1de29a9",
+      "range": {
+        "startLine": 1874,
+        "startChar": 55,
+        "endLine": 1874,
+        "endChar": 61
+      },
+      "revId": "64c0fbb0f0f7fc67b954321d5b5071a0af0dc970",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

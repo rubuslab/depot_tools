@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20578b6f_8d6f1f0e",
+        "filename": "git_iles.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-08-24T18:02:04Z",
+      "side": 1,
+      "message": "Should be able to do this just by passing --short when you rev-parse the current HEAD. It will make sure it has enough characters to be unique in whatever repo you\u0027re in.",
+      "revId": "0af86a0118522ef768eecf9d24803cfcf53e341a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1793fd11_e502807b",
+        "filename": "git_iles.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-08-24T18:02:04Z",
+      "side": 1,
+      "message": "This won\u0027t work for szager, who uses the git-cache for local development. Up to you whether you care or not.",
+      "revId": "0af86a0118522ef768eecf9d24803cfcf53e341a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

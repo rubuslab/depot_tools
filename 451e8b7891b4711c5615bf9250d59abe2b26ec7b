@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07b3cb8f_4099bb5f",
+        "filename": "compile_single_file.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-08-25T21:46:55Z",
+      "side": 1,
+      "message": "This would be more readable if broken up, IMHO. For instance:\n\nx \u003d os.path.relpath(options.build_dir, src_dir))\ny \u003d os.path.join(src_dir, x)\n\nbut with more readable name to indicate what \u0027x\u0027 and \u0027y\u0027 are.\n\nAlso, I don\u0027t understand the os.path.repath() call that uses build_dir. If build_dir is relative to the src directory (as it should be) then don\u0027t you need to start with something like:\n\nabs_build_dir \u003d os.path.join(src_dir, options.build_dir)?\n\nOtherwise you\u0027re asking for a relpath to a relative path, which may depend on what the current directory is.",
+      "revId": "451e8b7891b4711c5615bf9250d59abe2b26ec7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ec3608f_9db5a350",
+        "filename": "compile_single_file.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-08-25T21:46:55Z",
+      "side": 1,
+      "message": "Instead of \"calling directly ninja\" say \"calling ninja directly\"",
+      "range": {
+        "startLine": 53,
+        "startChar": 20,
+        "endLine": 53,
+        "endChar": 25
+      },
+      "revId": "451e8b7891b4711c5615bf9250d59abe2b26ec7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

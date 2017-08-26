@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "649e7c75_44003cfa",
+        "filename": "compile_single_file.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-08-26T23:01:18Z",
+      "side": 1,
+      "message": "Should be \"python -u \" so that output isn\u0027t buffered unnecessarily.",
+      "revId": "451e8b7891b4711c5615bf9250d59abe2b26ec7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c13d569d_d09745fd",
+        "filename": "compile_single_file.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-08-26T23:01:18Z",
+      "side": 1,
+      "message": "This loop is not guaranteed to terminate. Once it gets to C:\\ it starts looping. So, you need to detect if new_candidate \u003d\u003d old_candidate and then abort with an error message.",
+      "revId": "451e8b7891b4711c5615bf9250d59abe2b26ec7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "07b3cb8f_4099bb5f",
         "filename": "compile_single_file.py",
         "patchSetId": 2
@@ -36,6 +70,23 @@
         "endLine": 53,
         "endChar": 25
       },
+      "revId": "451e8b7891b4711c5615bf9250d59abe2b26ec7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "503bcb03_228cdfb4",
+        "filename": "compile_single_file.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-08-26T23:01:18Z",
+      "side": 1,
+      "message": "With Visual Studio this leads to double spacing. Odd but true. It can\u0027t handle the \\r\\n line endings. This works:\n\nprint proc.communicate()[0].replace(\"\\r\\n\", \"\\n\")\n\nHopefully you can just always do this replacement. If not it can be on a flag.\n\nAlso, it appears that nothing is printed until the build has finished. Sometimes there may be hundreds or thousands of build steps before a file can be compiled and displaying intermediate data is important. This works better (if you run with python -u) but is still imperfect.\n\n  for line in proc.stdout:\n      print line.strip()\n\nLots of discussion of how to do this here:\nhttps://stackoverflow.com/questions/18421757/live-output-from-subprocess-command",
       "revId": "451e8b7891b4711c5615bf9250d59abe2b26ec7b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78b19a34_09ed0261",
+        "filename": "third_party/cq_client/v1/cq_pb2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-08-28T19:41:47Z",
+      "side": 1,
+      "message": "or do, i\u0027m a sign not a cop :)\n\nsorry, couldn\u0027t resist. LGTM.",
+      "range": {
+        "startLine": 1,
+        "startChar": 46,
+        "endLine": 1,
+        "endChar": 58
+      },
+      "revId": "a539defa840bd22a7eb1fa297e05ddd64635f86a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "89a4c337_7b3af93e",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-08-28T14:11:27Z",
+      "side": 1,
+      "message": "The whole function should be removed but people kept asking for it...",
+      "revId": "d564d47b7025044a815dab0a53260bfdda26ec4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

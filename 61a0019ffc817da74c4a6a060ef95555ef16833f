@@ -34,6 +34,24 @@
       "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a059d853_a1a5ef6f",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-08-29T18:03:34Z",
+      "side": 1,
+      "message": "Yeah, the rest looks fine.",
+      "parentUuid": "d940b053_57b3c380",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

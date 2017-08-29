@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "87ab2f4a_5474a4d9",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1155,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-08-29T20:02:49Z",
+      "side": 1,
+      "message": "Also, host_os should be a string, not a list of strings. It doesn\u0027t make sense to have more than one host_os (or host_arch) value at a time.",
+      "parentUuid": "1257a4f5_f544c1c8",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "484e489a_6f3c480c",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 2

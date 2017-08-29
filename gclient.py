@@ -1150,7 +1150,12 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
   def get_vars(self):
     """Returns a dictionary of effective variable values
     (DEPS file contents with applied custom_vars overrides)."""
-    result = dict(self._vars)
+    # Provide some built-in variables.
+    result = {
+        'gclient_host_os': repr(self.root.enforced_os),
+    }
+    # Variables defined in DEPS file override built-in ones.
+    result.update(self._vars)
     result.update(self.custom_vars or {})
     return result
 

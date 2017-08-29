@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "484e489a_6f3c480c",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-08-29T17:56:29Z",
+      "side": 1,
+      "message": "Would this (and the ones below) be different if the tests were run on Mac/Win? And if so, is that a concern?",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

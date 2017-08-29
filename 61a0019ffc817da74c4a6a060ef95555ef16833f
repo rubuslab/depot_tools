@@ -16,6 +16,24 @@
       "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d940b053_57b3c380",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-08-29T18:02:24Z",
+      "side": 1,
+      "message": "\u003e Would this (and the ones below) be different if the tests were run on Mac/Win?\n\nYes.\n\n\u003e And if so, is that a concern?\n\nTo some degree yes. I can make this unambiguous by making tests pass command-line flags setting this. Didn\u0027t do yet so I can get early feedback on this. Adding the flags is a trivial change if everything else looks good.",
+      "parentUuid": "484e489a_6f3c480c",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

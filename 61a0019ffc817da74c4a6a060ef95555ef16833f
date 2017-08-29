@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1257a4f5_f544c1c8",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1155,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-08-29T20:01:02Z",
+      "side": 1,
+      "message": "1) I think enforced_os is a list of deps_os values; that\u0027s probably the wrong thing to use here?\n\n2) I\u0027d prefer it we didn\u0027t use \"gclient_\" in the variable names; that feels implied to me.\n\n3) I\u0027d also prefer it if we used the same values we use in GN, so that they are compatible and we don\u0027t have to map things across. The primary implication of this is that we\u0027d use \"linux\" instead of \"unix\", which is a bit weird since we use \"unix\" for deps_os now, but I think it\u0027s the right thing to migrate to.\n\nDo you have any strong leanings on the latter two things?",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "484e489a_6f3c480c",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 2

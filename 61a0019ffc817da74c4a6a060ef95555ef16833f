@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "df9b3f37_f6bac27e",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1155,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-08-30T01:01:24Z",
+      "side": 1,
+      "message": "I *think* we probably only need to predefine host_os, host_cpu. target_os and target_cpu don\u0027t match quite as well, because in gclient\u0027s case it does make sense for them to be lists (I might want the deps for android, linux, and chromeos, and possibly even more if I\u0027m trying to cross-compile for windows or something).\n\nThe spec has target_os being a list, but you wouldn\u0027t propagate that list on to GN. Instead we probably want a set of booleans that represent which sets of dependencies are present on disk. See the sample DEPS file in the spec, which has things like \"sync_linux_deps\" which could be used both directly in a gclient conditional and propagated on to GN.\n\nBut I don\u0027t have as strong a leaning here, or a sense of what we\u0027ll actually want, so see what you think looks best. If it\u0027s not built-in, it is at least in theory much easier to change later.",
+      "parentUuid": "ac921fc2_b3a53cc8",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "484e489a_6f3c480c",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 2
@@ -192,6 +210,24 @@
       "side": 1,
       "message": "\u003e I wouldn\u0027t actually expect host_os to be added to the flattened output. Does it need to be? \n\nWe emit the variables so that they can be referenced by the flattened DEPS file, and also ChromeOS (see https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/561681).\n\nIt may make sense not to emit built-in variables if they match their default value. Would that behavior make sense to you?\n\n\u003e That said, we\u0027re going to need some sort of --arg name\u003dvalue command line arg regardless so that users can set args in `gclient config` and/or `gclient sync`, so adding one as part of this seems fine. I think it\u0027s also good if you can override the built-in variables via the command line (you can do this with GN as well), so I don\u0027t think you\u0027ll need to special-case that.\n\ncustom_vars should already work for this, and for command line yes, I\u0027d probably add --var key value or --custom-var key\u003dvalue. Let me know if you have any strong preferences.",
       "parentUuid": "2bf90943_423cebde",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1c8d8db_aa916eec",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-08-30T01:01:24Z",
+      "side": 1,
+      "message": "\u003e It may make sense not to emit built-in variables if they match their default value. \n\u003e Would that behavior make sense to you?\n\nYes, that would make sense. I\u0027m not sure if it makes sense to ever emit the built-in variables (i.e., to record them in the flattened output). It would be interesting to see if its possible for this to matter (i.e., the flattened output would change depending on the value of the host_os/host_cpu), and whether we\u0027d want to allow that.\n\n\u003e for command line yes, I\u0027d probably add --var key value or --custom-var key\u003dvalue. \n\u003e Let me know if you have any strong preferences.\n\nNo strong preferences. GN uses --args\u003d\"string containing values\", so you might consider using that if it\u0027s possible, but I\u0027ve never actually been that much of a fan of that, so something like --var could work also.",
+      "parentUuid": "2eaed135_74f88a8e",
       "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

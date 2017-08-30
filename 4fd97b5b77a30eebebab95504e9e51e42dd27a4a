@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba111e47_42055001",
+        "filename": "compile_single_file.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-08-30T20:46:04Z",
+      "side": 1,
+      "message": "Maybe calculate this one and stored it in abs_build_dir instead of calculating it twice?",
+      "range": {
+        "startLine": 65,
+        "startChar": 12,
+        "endLine": 65,
+        "endChar": 52
+      },
+      "revId": "4fd97b5b77a30eebebab95504e9e51e42dd27a4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

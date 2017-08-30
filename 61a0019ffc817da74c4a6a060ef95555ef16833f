@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ac921fc2_b3a53cc8",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1155,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-08-30T00:48:53Z",
+      "side": 1,
+      "message": "Alright then. Some good points here.\n\nWhat then should we predefine in gclient so that we can replace hooks hackery and hooks_os with conditions? Should this actually be gclient_target_os? If yes, how do you suggest the value to be determined?",
+      "parentUuid": "bd71a073_ef91ac8b",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "484e489a_6f3c480c",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 2
@@ -156,6 +174,24 @@
       "side": 1,
       "message": "I wouldn\u0027t actually expect host_os to be added to the flattened output. Does it need to be? \n\nThat said, we\u0027re going to need some sort of --arg name\u003dvalue command line arg regardless so that users can set args in `gclient config` and/or `gclient sync`, so adding one as part of this seems fine. I think it\u0027s also good if you can override the built-in variables via the command line (you can do this with GN as well), so I don\u0027t think you\u0027ll need to special-case that.",
       "parentUuid": "84c975d5_405506f9",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2eaed135_74f88a8e",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-08-30T00:48:53Z",
+      "side": 1,
+      "message": "\u003e I wouldn\u0027t actually expect host_os to be added to the flattened output. Does it need to be? \n\nWe emit the variables so that they can be referenced by the flattened DEPS file, and also ChromeOS (see https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/561681).\n\nIt may make sense not to emit built-in variables if they match their default value. Would that behavior make sense to you?\n\n\u003e That said, we\u0027re going to need some sort of --arg name\u003dvalue command line arg regardless so that users can set args in `gclient config` and/or `gclient sync`, so adding one as part of this seems fine. I think it\u0027s also good if you can override the built-in variables via the command line (you can do this with GN as well), so I don\u0027t think you\u0027ll need to special-case that.\n\ncustom_vars should already work for this, and for command line yes, I\u0027d probably add --var key value or --custom-var key\u003dvalue. Let me know if you have any strong preferences.",
+      "parentUuid": "2bf90943_423cebde",
       "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

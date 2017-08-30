@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "43c3878b_084ee97e",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1155,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-08-30T00:16:30Z",
+      "side": 1,
+      "message": "1) It\u0027s a list (tuple), yes. I\u0027ve been thinking what would be best to use, but enforced_os seemed the best one available. Do you have a specific suggestion what to use otherwise? Should we add something new, and if so, how should it interact with enforced_os (if at all)? It\u0027d make sense to add an independent similarly detected value.\n\n2) Fine, although if we emit it this way to GN it may conflict with variables defined on the GN side. Not sure if that\u0027s intended.\n\n3) Is there a list of GN values somewhere? Please note either way something is not going to match something else, so in a way this is an arbitrary tradeoff. I\u0027m fine with you picking one of the options.",
+      "parentUuid": "87ab2f4a_5474a4d9",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "484e489a_6f3c480c",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 2
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "Yeah, the rest looks fine.",
       "parentUuid": "d940b053_57b3c380",
+      "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84c975d5_405506f9",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-08-30T00:16:30Z",
+      "side": 1,
+      "message": "\u003e Would this (and the ones below) be different if the tests were run on Mac/Win? And if so, is that a concern?\n\nDirk, I\u0027d be interested in your thoughts on this. If we roll yet another codepath just for this, we may need a yet another command line flag to override it.",
+      "parentUuid": "a059d853_a1a5ef6f",
       "revId": "61a0019ffc817da74c4a6a060ef95555ef16833f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

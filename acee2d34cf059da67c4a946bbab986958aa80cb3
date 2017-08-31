@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb322674_54e0c814",
+        "filename": "compile_single_file",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-08-31T00:29:56Z",
+      "side": 1,
+      "message": "Your editor got in the way of copy pasting.",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eeeaf12f_35bef13b",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-08-31T00:29:56Z",
+      "side": 1,
+      "message": "not a fan of this kind of wrapping, it makes follow up changes harder.",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e74b6b40_727ad273",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-08-31T00:29:56Z",
+      "side": 1,
+      "message": "if sys.platform \u003d\u003d \u0027win32\u0027:\n\nwin64 died a long time ago",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "996475c3_4980a875",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-08-31T00:29:56Z",
+      "side": 1,
+      "message": "That\u0027s weird? I don\u0027t understand",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df4bd424_2f277b2b",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-08-31T00:29:56Z",
+      "side": 1,
+      "message": "Why are you doing this? Just do:\n\nreturn subprocess.call(command, shell\u003dsys.platform\u003d\u003d\u0027win32\u0027)",
+      "range": {
+        "startLine": 73,
+        "startChar": 6,
+        "endLine": 73,
+        "endChar": 10
+      },
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

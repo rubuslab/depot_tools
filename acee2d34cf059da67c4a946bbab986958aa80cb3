@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "e0925dc8_778d6dcf",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-08-31T17:08:29Z",
+      "side": 1,
+      "message": "The current wrapping makes it hard when looking at the second line to scan what kind of arguments it is. An option is:\n\n  parser.add_option(\u0027--file-path\u0027, help\u003d\u0027The file path, could be absolute or \u0027\n                                        \u0027relative to the current directory.\u0027)\n\nbut that\u0027s not efficient. Another one is:\n  parser.add_option(\u0027--file-path\u0027,\n                    help\u003d\u0027The file path, could be absolute or relative \u0027\n                         \u0027to the current directory.\u0027)\n\nbut my preferred stays:\n\n  parser.add_option(\n      \u0027--file-path\u0027,\n      help\u003d\u0027The file path, could be absolute or relative to the current \u0027\n           \u0027directory.\u0027)",
+      "parentUuid": "9ae0ed52_f46f42eb",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e74b6b40_727ad273",
         "filename": "compile_single_file.py",
         "patchSetId": 4
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "I\u0027ve tried to run with |shell\u003dFalse| on Windows but it seems to drop the carets characters at the end of the command... (as the caret is an escape character on Windows). The trick might be to use 4 carets instead of 2, I can\u0027t test right now as I don\u0027t have access to my Windows box.",
       "parentUuid": "996475c3_4980a875",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b304759_22d5b688",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-08-31T17:08:29Z",
+      "side": 1,
+      "message": "Please try with quad carets without shell\u003dTrue.",
+      "parentUuid": "112b83a5_0accfcfe",
       "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

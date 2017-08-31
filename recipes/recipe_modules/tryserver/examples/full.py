@@ -33,8 +33,7 @@ def RunSteps(api):
   api.tryserver.get_files_affected_by_patch(
       api.properties.get('test_patch_root'))
 
-  if api.tryserver.is_tryserver:
-    api.tryserver.set_subproject_tag('v8')
+  api.tryserver.set_subproject_tag('v8')
 
   api.tryserver.set_patch_failure_tryjob_result()
   api.tryserver.set_compile_failure_tryjob_result()

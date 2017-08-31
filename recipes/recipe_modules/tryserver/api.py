@@ -106,7 +106,8 @@ class TryserverApi(recipe_api.RecipeApi):
     This can be used to distinguish between builds that execute different steps
     depending on what was patched, e.g. blink vs. pure chromium patches.
     """
-    assert self.is_tryserver
+    if not self.is_tryserver:
+      return
 
     step_result = self.m.step.active_result
     step_result.presentation.properties['subproject_tag'] = subproject_tag

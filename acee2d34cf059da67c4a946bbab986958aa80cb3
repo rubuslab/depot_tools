@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9ae0ed52_f46f42eb",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1161299
+      },
+      "writtenOn": "2017-08-31T16:23:20Z",
+      "side": 1,
+      "message": "Are you talking about the help text? What\u0027d be your preference here?",
+      "parentUuid": "eeeaf12f_35bef13b",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e74b6b40_727ad273",
         "filename": "compile_single_file.py",
         "patchSetId": 4
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "2cb52137_4cac6f81",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1161299
+      },
+      "writtenOn": "2017-08-31T16:23:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e74b6b40_727ad273",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "996475c3_4980a875",
         "filename": "compile_single_file.py",
         "patchSetId": 4
@@ -64,6 +100,24 @@
       "writtenOn": "2017-08-31T00:29:56Z",
       "side": 1,
       "message": "That\u0027s weird? I don\u0027t understand",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "112b83a5_0accfcfe",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1161299
+      },
+      "writtenOn": "2017-08-31T16:23:20Z",
+      "side": 1,
+      "message": "I\u0027ve tried to run with |shell\u003dFalse| on Windows but it seems to drop the carets characters at the end of the command... (as the caret is an escape character on Windows). The trick might be to use 4 carets instead of 2, I can\u0027t test right now as I don\u0027t have access to my Windows box.",
+      "parentUuid": "996475c3_4980a875",
       "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -90,6 +144,30 @@
       "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4a85768_d41b6505",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1161299
+      },
+      "writtenOn": "2017-08-31T16:23:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df4bd424_2f277b2b",
+      "range": {
+        "startLine": 73,
+        "startChar": 6,
+        "endLine": 73,
+        "endChar": 10
+      },
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

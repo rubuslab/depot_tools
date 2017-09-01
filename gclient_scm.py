@@ -543,6 +543,16 @@ class GitWrapper(SCMWrapper):
 
     self._UpdateBranchHeads(options, fetch=True)
 
+    try:
+      revision_hash = self._Capture(['rev-parse', revision])
+    except subprocess2.CalledProcessError:
+      self._Fetch(options, refspec=revision)
+      revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
+    else:
+      if not gclient_utils.IsGitSha(revision_hash):
+        self._Fetch(options, refspec=revision)
+        revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
+
     # This is a big hammer, debatable if it should even be here...
     if options.force or options.reset:
       target = 'HEAD'
@@ -1148,12 +1158,15 @@ class GitWrapper(SCMWrapper):
     checkout_args.append(ref)
     return self._Capture(checkout_args)
 
-  def _Fetch(self, options, remote=None, prune=False, quiet=False):
+  def _Fetch(self, options, remote=None, prune=False, quiet=False,
+             refspec=None):
     cfg = gclient_utils.DefaultIndexPackConfig(self.url)
     fetch_cmd =  cfg + [
         'fetch',
         remote or self.remote,
     ]
+    if refspec:
+      fetch_cmd.append(refspec)
 
     if prune:
       fetch_cmd.append('--prune')

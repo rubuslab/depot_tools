@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3dcde05b_bbf4bd9e",
+        "filename": "compile_single_file.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-09-05T20:57:42Z",
+      "side": 1,
+      "message": "forgot to mention, we generally prefer argparse for new code.",
+      "range": {
+        "startLine": 6,
+        "startChar": 7,
+        "endLine": 6,
+        "endChar": 15
+      },
+      "revId": "e55bb8f5e2757e82bfca02ac78da51af171f66aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3b50770_490e1aec",
+        "filename": "compile_single_file.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-09-05T20:57:42Z",
+      "side": 1,
+      "message": "s/files/directory/ ?",
+      "revId": "e55bb8f5e2757e82bfca02ac78da51af171f66aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8981e8d1_4ec53cd0",
+        "filename": "compile_single_file.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-09-05T20:57:42Z",
+      "side": 1,
+      "message": "with argparse, you can specify required\u003dTrue\nthen you don\u0027t need lines 44-47",
+      "revId": "e55bb8f5e2757e82bfca02ac78da51af171f66aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "c473f175_6e82a693",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1161299
+      },
+      "writtenOn": "2017-09-05T20:38:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0925dc8_778d6dcf",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e74b6b40_727ad273",
         "filename": "compile_single_file.py",
         "patchSetId": 4
@@ -154,6 +172,24 @@
       "side": 1,
       "message": "Please try with quad carets without shell\u003dTrue.",
       "parentUuid": "112b83a5_0accfcfe",
+      "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d6974c5_eeda284c",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1161299
+      },
+      "writtenOn": "2017-09-05T20:38:24Z",
+      "side": 1,
+      "message": "I\u0027ve tried, doesn\u0027t work... With 4 carets I get this error message:\n\"ninja: error: unknown target \u0027../../base/at_exit.cc^^^\u0027, did you mean \u0027../../base/at_exit.cc\u0027?\"\nAnd with 3 carets the following one:\n\"ninja: error: unknown target \u0027../../base/at_exit.cc^^\u0027, did you mean \u0027../../base/at_exit.cc\u0027?\"",
+      "parentUuid": "3b304759_22d5b688",
       "revId": "acee2d34cf059da67c4a946bbab986958aa80cb3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

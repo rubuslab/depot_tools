@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d26978c_ac2ed9e3",
+        "filename": "OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2017-09-05T13:00:35Z",
+      "side": 1,
+      "message": "We probably want to add scottmg@chromium.org too",
+      "revId": "09ab9763384e1b52147ef26a0566dad12bd49978",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

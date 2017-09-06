@@ -5686,6 +5686,9 @@ def CMDset_close(parser, args):
   auth.add_auth_options(parser)
   options, args = parser.parse_args(args)
   _process_codereview_issue_select_options(parser, options)
+  if not options.issue:
+    print('ERROR No issue to close')
+    return 1
   auth_config = auth.extract_auth_config_from_options(options)
   if args:
     parser.error('Unrecognized args: %s' % ' '.join(args))

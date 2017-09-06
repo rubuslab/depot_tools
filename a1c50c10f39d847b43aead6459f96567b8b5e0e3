@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "04695743_a7f82976",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-09-06T19:35:56Z",
+      "side": 1,
+      "message": "Can we move this up to the detection section? Would make code a bit simpler:\n\nCIPD_CLIENT_TMP\u003d...\n\nif hash curl ...; then\n  curl \"$URL\" ...\nelif hash wget ...; then\n  wget \"$URL\" ...\nelse\n  echo Your platform ...\n  rm \"${CIPD_CLIENT_TMP}\"\n  exit 1\nfi\n\n# Common code...",
+      "range": {
+        "startLine": 70,
+        "startChar": 2,
+        "endLine": 76,
+        "endChar": 42
+      },
+      "revId": "a1c50c10f39d847b43aead6459f96567b8b5e0e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

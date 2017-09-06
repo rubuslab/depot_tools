@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41b2e2c6_57e2464d",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1201,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-09-06T22:11:47Z",
+      "side": 1,
+      "message": "And what if this _Fetch fails?",
+      "revId": "ef97d816cbbb42b5a298282089e14dc32a217779",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

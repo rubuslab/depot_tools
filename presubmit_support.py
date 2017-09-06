@@ -333,6 +333,14 @@ class OutputApi(object):
     return [self.PresubmitNotifyResult(message)]
 
 
+def _CaptureInterrupt():
+  """Capture ctrl-c / sigint and exit gracefully instead of stacktracing."""
+  CTRL_C = signal.SIGINT
+  if sys.platform == 'win32':
+    CTRL_C = signal.CTRL_C_EVENT
+  signal.signal(CTRL_C, lambda x, y: sys.exit(1))
+
+
 class InputApi(object):
   """An instance of this object is passed to presubmit scripts so they can
   know stuff about the change they're looking at.
@@ -442,13 +450,8 @@ class InputApi(object):
     # things relative to the current working directory).
     # We capture ctrl-c in the initializer to prevent massive console spew when
     # cancelling all of the processes with ctrl-c.
-    def _capture_interrupt():
-      CTRL_C = signal.SIGINT
-      if sys.platform == 'win32':
-        CTRL_C = signal.CTRL_C_EVENT
-      signal.signal(CTRL_C, lambda x, y: sys.exit(1))
     self._run_tests_pool = multiprocessing.Pool(
-        self.cpu_count, _capture_interrupt)
+        self.cpu_count, _CaptureInterrupt)
 
     # The local path of the currently-being-processed presubmit script.
     self._current_presubmit_path = os.path.dirname(presubmit_path)

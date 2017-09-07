@@ -16,6 +16,24 @@
       "revId": "750d1f1714573e3344ce1813f74b9b6ca5361b4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b690861_3509570b",
+        "filename": "my_reviews.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2017-09-07T19:01:09Z",
+      "side": 1,
+      "message": "Oops, done.",
+      "parentUuid": "cf1b89d4_d6d2b25b",
+      "revId": "750d1f1714573e3344ce1813f74b9b6ca5361b4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

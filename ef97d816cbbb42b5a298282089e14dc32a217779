@@ -16,6 +16,24 @@
       "revId": "ef97d816cbbb42b5a298282089e14dc32a217779",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed0a46ff_294d1fa7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1201,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-09-07T08:34:09Z",
+      "side": 1,
+      "message": "The exception should bubble up and make the command fail.\n\nWe execute _AutoFetchRef after other generic fetch operations like \"fetch origin\". We only try the fetch if rev-parse doesn\u0027t already recognize the revision (in which case, I don\u0027t see how a checkout could succeed), so it makes sense to me to bail out.\n\nIn case I missed something (always a possibility), we could make this non-fatal, or otherwise rethink the change taking new information into account.",
+      "parentUuid": "41b2e2c6_57e2464d",
+      "revId": "ef97d816cbbb42b5a298282089e14dc32a217779",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

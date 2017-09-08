@@ -70,6 +70,30 @@
       "revId": "23836a643f480b21e91340f2f9845619ebf6f9c4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1004da51_2affc4dc",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1176174
+      },
+      "writtenOn": "2017-09-08T15:17:12Z",
+      "side": 0,
+      "message": "add PyOpenSSL to the gsutil.vpython you mean?",
+      "parentUuid": "498ea500_d874823f",
+      "range": {
+        "startLine": 133,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 80
+      },
+      "revId": "23836a643f480b21e91340f2f9845619ebf6f9c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

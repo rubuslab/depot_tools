@@ -46,6 +46,30 @@
       "revId": "23836a643f480b21e91340f2f9845619ebf6f9c4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "498ea500_d874823f",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-09-08T00:57:34Z",
+      "side": 0,
+      "message": "It\u0027s possible, but counter to our overall design for running Python scripts. The appropriate follow-up here is to add the missing package (PyOpenSSL).",
+      "parentUuid": "f6f34e03_84b34c29",
+      "range": {
+        "startLine": 133,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 80
+      },
+      "revId": "23836a643f480b21e91340f2f9845619ebf6f9c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -22,6 +22,30 @@
       "revId": "23836a643f480b21e91340f2f9845619ebf6f9c4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6f34e03_84b34c29",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1176174
+      },
+      "writtenOn": "2017-09-08T00:14:46Z",
+      "side": 0,
+      "message": "is it possible to detect when in a GCE environment and use vpython only in GCE? This worked fine on our (re: chromecast internal) GCE builders but was broken on the Ganeti builders",
+      "parentUuid": "dd05ef25_1245ab5b",
+      "range": {
+        "startLine": 133,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 80
+      },
+      "revId": "23836a643f480b21e91340f2f9845619ebf6f9c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8caffb50_438cbbdc",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-09-11T16:40:09Z",
+      "side": 1,
+      "message": "nit: period at the end.",
+      "range": {
+        "startLine": 969,
+        "startChar": 38,
+        "endLine": 969,
+        "endChar": 39
+      },
+      "revId": "f3eca96296aa048a6bbb46dcadc583dbf0420af1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

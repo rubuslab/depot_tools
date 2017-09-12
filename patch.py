@@ -34,6 +34,7 @@ class FilePatchBase(object):
   def __init__(self, filename):
     assert self.__class__ is not FilePatchBase
     self.filename = self._process_filename(filename)
+    self.patchlevel = 0
     # Set when the file is copied or moved.
     self.source_filename = None
 
@@ -64,6 +65,13 @@ class FilePatchBase(object):
       raise UnsupportedPatchFormat(
           filename, 'Filename can\'t be \'%s\'.' % filename)
     return filename
+
+  def filename_after_patchlevel(self):
+    return self.mangle(self.filename)
+
+  def mangle(self, string):
+    """Mangle a file path."""
+    return '/'.join(string.replace('\\', '/').split('/')[self.patchlevel:])
 
   def set_relpath(self, relpath):
     if not relpath:
@@ -163,7 +171,6 @@ class FilePatchDiff(FilePatchBase):
     self.diff_header, self.diff_hunks = self._split_header(diff)
     self.svn_properties = svn_properties or []
     self.is_git_diff = self._is_git_diff_header(self.diff_header)
-    self.patchlevel = 0
     if self.is_git_diff:
       self._verify_git_header()
     else:
@@ -313,10 +320,6 @@ class FilePatchDiff(FilePatchBase):
     if self.is_delete and hunks:
       hunks[0].start_src -= 1
     return hunks
-
-  def mangle(self, string):
-    """Mangle a file path."""
-    return '/'.join(string.replace('\\', '/').split('/')[self.patchlevel:])
 
   def _verify_git_header(self):
     """Sanity checks the header.

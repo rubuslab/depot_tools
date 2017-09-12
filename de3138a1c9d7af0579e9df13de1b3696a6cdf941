@@ -22,6 +22,52 @@
       "revId": "de3138a1c9d7af0579e9df13de1b3696a6cdf941",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5135850f_6b01aa6e",
+        "filename": "patch.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-09-12T19:26:39Z",
+      "side": 1,
+      "message": "This should have a more descriptive name (replacing slashes counts as mangling, removing path prefixes is less intuitive), and it should probably be a _private method.",
+      "range": {
+        "startLine": 72,
+        "startChar": 6,
+        "endLine": 72,
+        "endChar": 12
+      },
+      "revId": "de3138a1c9d7af0579e9df13de1b3696a6cdf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9e41f02_30e30a12",
+        "filename": "patch.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-09-12T19:26:39Z",
+      "side": 1,
+      "message": "More descriptive docstring too :)",
+      "range": {
+        "startLine": 73,
+        "startChar": 7,
+        "endLine": 73,
+        "endChar": 13
+      },
+      "revId": "de3138a1c9d7af0579e9df13de1b3696a6cdf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

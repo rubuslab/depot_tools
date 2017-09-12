@@ -235,6 +235,14 @@ class GitCheckout(CheckoutBase):
     """Gets the current revision (in unicode) from the local branch."""
     return unicode(self._check_output_git(['rev-parse', 'HEAD']).strip())
 
+  def _get_patch_filename(self, p):
+    """Removes the leading p.patchlevel-1 slashes from p.filename.
+
+    This way the patch filename is the same as the one that would be used by
+    git-apply.
+    """
+    return '/'.join(p.filename.split('/')[p.patchlevel-1:])
+
   def apply_patch(self, patches, post_processors=None, verbose=False):
     """Applies a patch on 'working_branch' and switches to it.
 
@@ -252,7 +260,7 @@ class GitCheckout(CheckoutBase):
     for index, p in enumerate(patches):
       stdout = []
       try:
-        filepath = os.path.join(self.project_path, p.filename)
+        filepath = os.path.join(self.project_path, self._get_patch_filename(p))
         if p.is_delete:
           if (not os.path.exists(filepath) and
               any(p1.source_filename == p.filename for p1 in patches[0:index])):
@@ -260,11 +268,12 @@ class GitCheckout(CheckoutBase):
             # was already processed because 'git apply' did it for us.
             pass
           else:
-            stdout.append(self._check_output_git(['rm', p.filename]))
+            stdout.append(self._check_output_git(
+                ['rm', self._get_patch_filename(p)]))
             assert(not os.path.exists(filepath))
             stdout.append('Deleted.')
         else:
-          dirname = os.path.dirname(p.filename)
+          dirname = os.path.dirname(self._get_patch_filename(p))
           full_dir = os.path.join(self.project_path, dirname)
           if dirname and not os.path.isdir(full_dir):
             os.makedirs(full_dir)
@@ -274,7 +283,7 @@ class GitCheckout(CheckoutBase):
             with open(filepath, 'wb') as f:
               f.write(content)
             stdout.append('Added binary file %d bytes' % len(content))
-            cmd = ['add', p.filename]
+            cmd = ['add', self._get_patch_filename(p)]
             if verbose:
               cmd.append('--verbose')
             stdout.append(self._check_output_git(cmd))

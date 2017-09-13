@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8699aeea_653b1b01",
+        "filename": ".gitattributes",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-09-13T15:08:25Z",
+      "side": 1,
+      "message": "Let\u0027s just be explicit here and call out \"gsutil.vpython\". Can reduce to glob later if others are added.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 18
+      },
+      "revId": "86220a204ba8a4b2e83748b2a3fb1a845f32b0ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

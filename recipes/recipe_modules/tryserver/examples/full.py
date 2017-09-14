@@ -28,7 +28,7 @@ def RunSteps(api):
             'Foo', api.properties['patch_text']))])
     return
 
-  if api.tryserver.can_apply_issue or api.tryserver.is_gerrit_issue:
+  if api.tryserver.is_gerrit_issue:
     api.tryserver.get_footers()
   api.tryserver.get_files_affected_by_patch(
       api.properties.get('test_patch_root'))
@@ -65,15 +65,7 @@ def GenTests(api):
              patch_repo_url='http://patch.url/',
              patch_ref='johndoe#123.diff'))
 
-  yield (api.test('with_rietveld_patch') +
-         api.properties.tryserver() +
-         description_step)
-
   yield (api.test('with_wrong_patch') + api.platform('win', 32))
-
-  yield (api.test('with_rietveld_patch_new') +
-         api.properties.tryserver(test_patch_root='sub/project') +
-         description_step)
 
   yield (api.test('with_gerrit_patch') +
          api.properties.tryserver(gerrit_project='infra/infra'))

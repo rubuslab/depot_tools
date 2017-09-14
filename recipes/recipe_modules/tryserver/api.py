@@ -17,15 +17,7 @@ class TryserverApi(recipe_api.RecipeApi):
   @property
   def is_tryserver(self):
     """Returns true iff we can apply_issue or patch."""
-    return (
-        self.can_apply_issue or self.is_patch_in_git or self.is_gerrit_issue)
-
-  @property
-  def can_apply_issue(self):
-    """Returns true iff the properties exist to apply_issue from rietveld."""
-    return (self.m.properties.get('rietveld')
-            and 'issue' in self.m.properties
-            and 'patchset' in self.m.properties)
+    return (self.is_patch_in_git or self.is_gerrit_issue)
 
   @property
   def is_gerrit_issue(self):
@@ -191,12 +183,6 @@ class TryserverApi(recipe_api.RecipeApi):
             self.m.properties['patch_gerrit_url'],
             self.m.properties['patch_issue'],
             self.m.properties['patch_set'])
-      elif self.can_apply_issue:
-        patch_url = (
-            self.m.properties['rietveld'].rstrip('/') + '/' +
-            str(self.m.properties['issue']))
-        patch_text = self.m.git_cl.get_description(
-            patch_url=patch_url, codereview='rietveld').stdout
       else:  # pragma: no cover
         raise recipe_api.StepFailure('Unknown patch storage.')
 

@@ -3045,16 +3045,9 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     # if --send-mail is set on non-initial upload as Rietveld used to do it.
 
     if title:
-      if not re.match(r'^[\w ]+$', title):
-        title = re.sub(r'[^\w ]', '', title)
-        if not automatic_title:
-          print('WARNING: Patchset title may only contain alphanumeric chars '
-                'and spaces. You can edit it in the UI. '
-                'See https://crbug.com/663787.\n'
-                'Cleaned up title: %s' % title)
       # Per doc, spaces must be converted to underscores, and Gerrit will do the
       # reverse on its side.
-      refspec_opts.append('m=' + title.replace(' ', '_'))
+      refspec_opts.append('m=' + gerrit_util.PercentEncodeForGitRef(title))
 
     if options.private:
       refspec_opts.append('private')

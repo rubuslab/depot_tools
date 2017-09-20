@@ -824,6 +824,17 @@ def GetAccountDetails(host, account_id='self'):
   return ReadHttpJsonResponse(conn)
 
 
+def PercentEncodeForGitRef(original):
+  # https://git-scm.com/docs/git-check-ref-format has lots of rules about
+  # punctuation.
+  safe = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 '
+  # Use URL-style percent-encoding, with the limited character set above. Note
+  # that this is more restrictive than, say, urllib.quote().
+  encoded = ''.join(c if c in safe else '%%%02X' % ord(c) for c in original)
+  # Gerrit historically converts spaces to underscores, so do that too.
+  return encoded.replace(' ', '_')
+
+
 @contextlib.contextmanager
 def tempdir():
   tdir = None

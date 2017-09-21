@@ -149,7 +149,7 @@ class GclientApi(recipe_api.RecipeApi):
       return revision.resolve(self.m.properties)
     return revision
 
-  def sync(self, cfg, with_branch_heads=False, **kwargs):
+  def sync(self, cfg, with_branch_heads=True, **kwargs):
     revisions = []
     self.set_patch_project_revision(self.m.properties.get('patch_project'), cfg)
     for i, s in enumerate(cfg.solutions):
@@ -185,8 +185,10 @@ class GclientApi(recipe_api.RecipeApi):
       # dir for git-based builds (e.g. maybe some combination of 'git
       # reset/clean -fx' and removing the 'out' directory).
       j = '-j2' if self.m.platform.is_win else '-j8'
-      args = ['sync', '--verbose', '--with_branch_heads', '--nohooks', j,
-              '--reset', '--force', '--upstream', '--no-nag-max']
+      args = ['sync', '--verbose', '--nohooks', j, '--reset', '--force',
+              '--upstream', '--no-nag-max']
+      if with_branch_heads:
+        args.extend(['--with_branch_heads', '--with_tags'])
       if cfg.delete_unversioned_trees:
         args.append('--delete_unversioned_trees')
       self('sync', args + revisions +

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c61d04ee_348283a9",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-09-22T07:59:51Z",
+      "side": 1,
+      "message": "If we want to pass this conditionally, I\u0027d suggest to have a separate arg for this. Should that arg default to True (we previously didn\u0027t pass --with_tags)?",
+      "range": {
+        "startLine": 191,
+        "startChar": 47,
+        "endLine": 191,
+        "endChar": 56
+      },
+      "revId": "dd1f1d806091ff73ed78d3d2f65f0915b021b0cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

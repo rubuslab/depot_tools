@@ -22,6 +22,30 @@
       "revId": "dd1f1d806091ff73ed78d3d2f65f0915b021b0cd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b9b3487_547082c1",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-09-22T15:25:36Z",
+      "side": 1,
+      "message": "I added that because I think it generally makes sense to use them together (and was kind of surprised that it wasn\u0027t already in the default args). I could make it controlled by a separate arg, but I really, really doubt anyone would actually ever set it separately.",
+      "parentUuid": "c61d04ee_348283a9",
+      "range": {
+        "startLine": 191,
+        "startChar": 47,
+        "endLine": 191,
+        "endChar": 56
+      },
+      "revId": "dd1f1d806091ff73ed78d3d2f65f0915b021b0cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

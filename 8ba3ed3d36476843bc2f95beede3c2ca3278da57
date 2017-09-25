@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9c3d66a_77ce8132",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-09-25T15:31:50Z",
+      "side": 1,
+      "message": "do you actually need arbitrary or merely CR+2 because your max CR value is 2?\nIf former, i\u0027d like to know why.\nI suspect the latter, in which case the extra --cmd-arg can be avoided if you use cl._GetChangeDetail() with perhaps \"LABELS\" [1] and then determine max based on Gerrit\u0027s output.\n\n[1] https://cs.chromium.org/chromium/tools/depot_tools/git_cl.py?q\u003dgit_cl.py\u0026sq\u003dpackage:chromium\u0026dr\u003dC\u0026l\u003d2679",
+      "range": {
+        "startLine": 7,
+        "startChar": 19,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "8ba3ed3d36476843bc2f95beede3c2ca3278da57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

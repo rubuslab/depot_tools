@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe7e3895_25242b1d",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1155,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-09-25T16:51:00Z",
+      "side": 1,
+      "message": "I think we need a \u0027checkout_fuchsia\u0027 as well.",
+      "revId": "575cc52291fe37fafa1d94d303f7997866577818",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

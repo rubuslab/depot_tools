@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2d02980b_de410e32",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1159394
+      },
+      "writtenOn": "2017-09-25T09:52:14Z",
+      "side": 1,
+      "message": "OK, flipped to True and removed test.",
+      "parentUuid": "5f52a176_bbc7c148",
+      "range": {
+        "startLine": 117,
+        "startChar": 45,
+        "endLine": 117,
+        "endChar": 50
+      },
+      "revId": "7346c48dd0881ecb37a91da1671745749510569c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8d43b8ac_72846e10",
         "filename": "recipes/recipe_modules/git/examples/full.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "7346c48dd0881ecb37a91da1671745749510569c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e70555ff_bf3fa39d",
+        "filename": "recipes/recipe_modules/git/examples/full.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1159394
+      },
+      "writtenOn": "2017-09-25T09:52:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d43b8ac_72846e10",
+      "range": {
+        "startLine": 42,
+        "startChar": 6,
+        "endLine": 42,
+        "endChar": 14
+      },
+      "revId": "7346c48dd0881ecb37a91da1671745749510569c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c92eec2_46c1312d",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-09-25T18:50:33Z",
+      "side": 1,
+      "message": "If we make this `str(variables[arg])` instead, would that allow us to have `checkout_nacl \u003d True`, etc.? Think that\u0027d be an improvement?",
+      "revId": "779c5a88930f341db1295d3847b3747c3ff1f90f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

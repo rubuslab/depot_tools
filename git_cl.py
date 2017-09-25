@@ -3116,10 +3116,12 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         notify=bool(options.send_mail))
 
     if change_desc.get_reviewers(tbr_only=True):
-      print('Adding self-LGTM (Code-Review +1) because of TBRs.')
+      print('Adding self-LGTM (Code-Review +%d) '
+            'because of TBRs.' % options.tbr_score)
       gerrit_util.SetReview(
           self._GetGerritHost(), self.GetIssue(),
-          msg='Self-approving for TBR', labels={'Code-Review': 1})
+          msg='Self-approving for TBR',
+          labels={'Code-Review': options.tbr_score})
 
     return 0
 
@@ -4876,6 +4878,8 @@ def CMDupload(parser, args):
   parser.add_option('--tbrs',
                     action='append', default=[],
                     help='TBR email addresses')
+  parser.add_option('--tbr-score', type="int", default='1',
+                    help='set what Code-Review score is used for TBR.')
   parser.add_option('--cc',
                     action='append', default=[],
                     help='cc email addresses')

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f52a176_bbc7c148",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-09-25T09:41:44Z",
+      "side": 1,
+      "message": "Consider adding a TODO to flip this to True, or just go ahead and always pass it.\n\nThe point is, I\u0027d prefer to avoid having too many \"do the right thing\" knobs that people need to know about (or in other words, other may hit the same issue as you, and I\u0027d like to fix this systemically).",
+      "range": {
+        "startLine": 117,
+        "startChar": 45,
+        "endLine": 117,
+        "endChar": 50
+      },
+      "revId": "7346c48dd0881ecb37a91da1671745749510569c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d43b8ac_72846e10",
+        "filename": "recipes/recipe_modules/git/examples/full.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-09-25T09:41:44Z",
+      "side": 1,
+      "message": "Instead of an additional test, I\u0027d just suggest passing True here.",
+      "range": {
+        "startLine": 42,
+        "startChar": 6,
+        "endLine": 42,
+        "endChar": 14
+      },
+      "revId": "7346c48dd0881ecb37a91da1671745749510569c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

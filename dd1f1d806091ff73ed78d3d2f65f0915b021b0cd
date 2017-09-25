@@ -46,6 +46,30 @@
       "revId": "dd1f1d806091ff73ed78d3d2f65f0915b021b0cd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9dd005f6_2bbe4931",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-09-25T16:20:33Z",
+      "side": 1,
+      "message": "Sure. It\u0027s just really weird to have this work differently than every other place.\n\nIf you\u0027re really interested, feel free to merge meaning of --with_branch_heads and --with_tags in gclient.\n\nEither adding with_tags parameter, or unconditionally passing --with_branch_heads --with_tags here would be acceptable to me.",
+      "parentUuid": "1b9b3487_547082c1",
+      "range": {
+        "startLine": 191,
+        "startChar": 47,
+        "endLine": 191,
+        "endChar": 56
+      },
+      "revId": "dd1f1d806091ff73ed78d3d2f65f0915b021b0cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

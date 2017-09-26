@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f985fc7d_ad8460bf",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1630,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-09-26T06:36:00Z",
+      "side": 1,
+      "message": "no -2? have you disabled that intentionally? (no need to change test, this is good as is)",
+      "revId": "8ef8917207779413cbb9273a412a44b28e425dc4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

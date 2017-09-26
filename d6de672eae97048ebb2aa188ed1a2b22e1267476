@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f0248f28_068730b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-09-26T04:26:35Z",
+      "side": 1,
+      "message": "sets",
+      "range": {
+        "startLine": 9,
+        "startChar": 24,
+        "endLine": 9,
+        "endChar": 27
+      },
+      "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "438d6121_4280447a",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2467,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-09-26T04:26:35Z",
+      "side": 1,
+      "message": "add \"LABELS\" here, so we don\u0027t have to query Gerrit twice.",
+      "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

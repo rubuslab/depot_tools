@@ -1659,6 +1659,9 @@ class TestGitCl(TestCase):
                 same_auth=('git-owner.example.com', '', 'pass')))
     self.mock(git_cl._GerritChangelistImpl, '_GerritCommitMsgHookCheck',
               lambda _, offer_removal: None)
+    if tbr:
+      self.mock(git_cl._GerritChangelistImpl, '_GetChangeDetail',
+                lambda _, options: {})
     self.mock(git_cl.gclient_utils, 'RunEditor',
               lambda *_, **__: self._mocked_call(['RunEditor']))
     self.mock(git_cl, 'DownloadGerritHook', lambda force: self._mocked_call(

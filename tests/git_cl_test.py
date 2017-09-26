@@ -1617,9 +1617,21 @@ class TestGitCl(TestCase):
     ]
     if tbr:
       calls += [
+        (('GetChangeDetail', 'chromium-review.googlesource.com', '123456',
+          ['LABELS']), {
+              'labels': {
+                  'Code-Review': {
+                      'values': {
+                          '-100': 'looks extremely bad to me.',
+                          '0': 'no score',
+                          '+100': 'looks extremely good to me.',
+                      }
+                  }
+              }
+          }),
         (('SetReview', 'chromium-review.googlesource.com',
           123456 if squash else None, 'Self-approving for TBR',
-          {'Code-Review': 1}, None), ''),
+          {'Code-Review': 100}, None), ''),
       ]
     calls += cls._git_post_upload_calls()
     return calls
@@ -1743,10 +1755,9 @@ class TestGitCl(TestCase):
         [],
         'desc\nTBR=reviewer@example.com\nBUG=\nR=another@example.com\n'
         'CC=more@example.com,people@example.com\n\n'
-        'Change-Id: 123456789\n',
+        'Change-Id: 123456789',
         ['reviewer@example.com', 'another@example.com'],
-        squash=False,
-        squash_mode='override_nosquash',
+        expected_upstream_ref='origin/master',
         cc=['more@example.com', 'people@example.com'],
         tbr='reviewer@example.com')
 

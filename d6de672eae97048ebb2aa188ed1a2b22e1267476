@@ -39,6 +39,64 @@
       "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e993c251_a32fa909",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2467,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-09-26T04:34:52Z",
+      "side": 1,
+      "message": "i take it back. Don\u0027t do this, because --tbrs is typically set on initial upload anyway, so we won\u0027t be saving RPCs for the common case. And this won\u0027t fix tests anyway.",
+      "parentUuid": "438d6121_4280447a",
+      "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08c86bc5_3db44e42",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1619,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-09-26T04:34:52Z",
+      "side": 1,
+      "message": "I believe the expectation should be added here:\n  ((\u0027GetChangeDetails\u0027, ...)",
+      "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cae15210_9b898842",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-09-26T04:34:52Z",
+      "side": 1,
+      "message": "don\u0027t do this, the mock already exists at gerrit_util.GetChangeDetail level. Instead add smth like line \ncalls +\u003d [\n  ((\u0027GetChangeDetail\u0027, \u0027chromium-review.googlesource.com\u0027,\n          \u0027123456\u0027,\n          [\u0027LABELS\u0027]),\n         {\n           // TODO\n         })]\n\nat the right test expectation that uses --tbrs (see above).",
+      "range": {
+        "startLine": 1662,
+        "startChar": 4,
+        "endLine": 1664,
+        "endChar": 38
+      },
+      "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

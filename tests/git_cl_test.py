@@ -1477,7 +1477,7 @@ class TestGitCl(TestCase):
       assert squash_mode in ('squash', 'nosquash')
 
     # If issue is given, then description is fetched from Gerrit instead.
-    if issue is None:
+    if issue is None or tbr:
       calls += [
         ((['git', 'log', '--pretty=format:%s\n\n%b',
            ((custom_cl_base + '..') if custom_cl_base else
@@ -1612,14 +1612,26 @@ class TestGitCl(TestCase):
     calls += [
         ((['git', 'config', 'rietveld.cc'],), ''),
         (('AddReviewers', 'chromium-review.googlesource.com',
-           123456 if squash else None, sorted(reviewers),
+           123456 if squash or tbr else None, sorted(reviewers),
           ['joe@example.com'] + cc, notify), ''),
     ]
     if tbr:
       calls += [
+        (('GetChangeDetail', 'chromium-review.googlesource.com', '123456',
+          ['LABELS']), {
+              'labels': {
+                  'Code-Review': {
+                      'values': {
+                          '-100': 'looks extremely bad to me.',
+                          '0': 'no score',
+                          '+100': 'looks extremely good to me.',
+                      }
+                  }
+              }
+          }),
         (('SetReview', 'chromium-review.googlesource.com',
-          123456 if squash else None, 'Self-approving for TBR',
-          {'Code-Review': 1}, None), ''),
+          123456 if squash or tbr else None, 'Self-approving for TBR',
+          {'Code-Review': 100}, None), ''),
       ]
     calls += cls._git_post_upload_calls()
     return calls
@@ -1747,6 +1759,7 @@ class TestGitCl(TestCase):
         ['reviewer@example.com', 'another@example.com'],
         squash=False,
         squash_mode='override_nosquash',
+        issue=123456,
         cc=['more@example.com', 'people@example.com'],
         tbr='reviewer@example.com')
 

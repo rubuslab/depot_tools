@@ -3116,10 +3116,15 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         notify=bool(options.send_mail))
 
     if change_desc.get_reviewers(tbr_only=True):
-      print('Adding self-LGTM (Code-Review +1) because of TBRs.')
+      labels = self._GetChangeDetail(['LABELS']).get('labels', {})
+      score = 1
+      if 'Code-Review' in labels and 'values' in labels['Code-Review']:
+        score = max([int(x) for x in labels['Code-Review']['values'].keys()])
+      print('Adding self-LGTM (Code-Review +%d) because of TBRs.' % score)
       gerrit_util.SetReview(
           self._GetGerritHost(), self.GetIssue(),
-          msg='Self-approving for TBR', labels={'Code-Review': 1})
+          msg='Self-approving for TBR',
+          labels={'Code-Review': score})
 
     return 0
 

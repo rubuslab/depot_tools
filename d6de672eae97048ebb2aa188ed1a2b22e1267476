@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "412ed574_9a67b19d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2017-09-26T05:35:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0248f28_068730b2",
+      "range": {
+        "startLine": 9,
+        "startChar": 24,
+        "endLine": 9,
+        "endChar": 27
+      },
+      "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "438d6121_4280447a",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -77,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "33911ea8_dfee274b",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1619,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2017-09-26T05:35:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08c86bc5_3db44e42",
+      "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cae15210_9b898842",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 4
@@ -88,6 +130,30 @@
       "writtenOn": "2017-09-26T04:34:52Z",
       "side": 1,
       "message": "don\u0027t do this, the mock already exists at gerrit_util.GetChangeDetail level. Instead add smth like line \ncalls +\u003d [\n  ((\u0027GetChangeDetail\u0027, \u0027chromium-review.googlesource.com\u0027,\n          \u0027123456\u0027,\n          [\u0027LABELS\u0027]),\n         {\n           // TODO\n         })]\n\nat the right test expectation that uses --tbrs (see above).",
+      "range": {
+        "startLine": 1662,
+        "startChar": 4,
+        "endLine": 1664,
+        "endChar": 38
+      },
+      "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d56f7e9_1db8303e",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2017-09-26T05:35:07Z",
+      "side": 1,
+      "message": "It hit assert because issue is None in self._GetChangeDetail, and to skip the assert this was needed.\n\nHowever, if we give issue in _run_gerrit_upload_test, the test also fails because executed git command become different.",
+      "parentUuid": "cae15210_9b898842",
       "range": {
         "startLine": 1662,
         "startChar": 4,

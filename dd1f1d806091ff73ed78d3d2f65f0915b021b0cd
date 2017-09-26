@@ -70,6 +70,30 @@
       "revId": "dd1f1d806091ff73ed78d3d2f65f0915b021b0cd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "203a0c40_617b779a",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-09-26T19:14:28Z",
+      "side": 1,
+      "message": "I don\u0027t really want to complicate things by adding more args that probably nobody will ever use, so I\u0027ll just get rid of \"with_branch_heads\" and include those as default flags, similar to the existing behavior.",
+      "parentUuid": "9dd005f6_2bbe4931",
+      "range": {
+        "startLine": 191,
+        "startChar": 47,
+        "endLine": 191,
+        "endChar": 56
+      },
+      "revId": "dd1f1d806091ff73ed78d3d2f65f0915b021b0cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

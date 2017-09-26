@@ -1617,6 +1617,11 @@ class TestGitCl(TestCase):
     ]
     if tbr:
       calls += [
+        (('GetChangeDetail', 'chromium-review.googlesource.com', '123456',
+          ['LABELS']), {
+            # TODO(yyanagisawa): find actual Gerrit output and paste relevant
+            # bits here.
+          }),
         (('SetReview', 'chromium-review.googlesource.com',
           123456 if squash else None, 'Self-approving for TBR',
           {'Code-Review': 1}, None), ''),
@@ -1743,10 +1748,9 @@ class TestGitCl(TestCase):
         [],
         'desc\nTBR=reviewer@example.com\nBUG=\nR=another@example.com\n'
         'CC=more@example.com,people@example.com\n\n'
-        'Change-Id: 123456789\n',
+        'Change-Id: 123456789',
         ['reviewer@example.com', 'another@example.com'],
-        squash=False,
-        squash_mode='override_nosquash',
+        expected_upstream_ref='origin/master',
         cc=['more@example.com', 'people@example.com'],
         tbr='reviewer@example.com')
 

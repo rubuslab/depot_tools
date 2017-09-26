@@ -163,6 +163,30 @@
       "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "449d2e77_f7499ab7",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-09-26T05:54:29Z",
+      "side": 1,
+      "message": "Ah, that\u0027s because the test of tbrs uses unsupported nosquash mode. I switched it to squash, and now it passes, however see TODO.",
+      "parentUuid": "8d56f7e9_1db8303e",
+      "range": {
+        "startLine": 1662,
+        "startChar": 4,
+        "endLine": 1664,
+        "endChar": 38
+      },
+      "revId": "d6de672eae97048ebb2aa188ed1a2b22e1267476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

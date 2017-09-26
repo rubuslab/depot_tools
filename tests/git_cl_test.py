@@ -1620,6 +1620,8 @@ class TestGitCl(TestCase):
         (('SetReview', 'chromium-review.googlesource.com',
           123456 if squash else None, 'Self-approving for TBR',
           {'Code-Review': 1}, None), ''),
+        (('GetChangeDetail', 'chromium-review.googlesource.com', '123456',
+          ['LABELS']), {}),
       ]
     calls += cls._git_post_upload_calls()
     return calls

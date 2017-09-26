@@ -16,6 +16,24 @@
       "revId": "8ef8917207779413cbb9273a412a44b28e425dc4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "38c19166_8c8f726e",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1630,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2017-09-26T06:43:09Z",
+      "side": 1,
+      "message": "If there is +2, you may think it natural to have -2.\nI guess -1 is enough sign for CQ to stop merging the change, and we actually do not use -2.  The project I want to use this change does not have -2.",
+      "parentUuid": "f985fc7d_ad8460bf",
+      "revId": "8ef8917207779413cbb9273a412a44b28e425dc4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

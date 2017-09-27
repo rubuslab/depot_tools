@@ -88,6 +88,24 @@
       "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6916d237_6e36a0aa",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2017-09-27T23:52:21Z",
+      "side": 1,
+      "message": "Correct. In the normal case (where the PRESUBMIT.py lives within the target repo), nothing changes. But in the case where it lives above the target repo, I\u0027m changing it to run inside the target repo (so that when it uses \"git\", git finds the correct files).",
+      "parentUuid": "6ce74b25_71c1d1b8",
+      "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

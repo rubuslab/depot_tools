@@ -70,6 +70,24 @@
       "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ce74b25_71c1d1b8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-09-27T22:54:40Z",
+      "side": 1,
+      "message": "Oh, I think I was confused. When you say that previously it would format all the code \"within the directory\", you meant, including subdirectories, and so either way it would format the whole subtree, you\u0027re just adjusting where it starts from?",
+      "parentUuid": "345c6d97_0d535f96",
+      "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

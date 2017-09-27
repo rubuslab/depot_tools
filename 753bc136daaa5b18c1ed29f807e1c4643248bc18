@@ -16,6 +16,24 @@
       "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e0ed9ba_d35d8378",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2017-09-27T19:17:42Z",
+      "side": 1,
+      "message": "What is did previously, is format all of the changes that appear within the directory of the PRESUBMIT.py. This makes sense until you add a \"inherit-review-settings-ok\" file, in which case the PRESUBMIT.py can now exist in a parent repository.\n\nSo... What we actually want is to format all code within the directory of the PRESUBMIT.py, unless the PRESUBMIT.py is above the root of the repository. In this case, we want to just format the whole repository.\n\nWhat was happening, was that I\u0027d run \"git cl presubmit -u\" in //src/clank, and then the check would run \"git cl format\" within //src.",
+      "parentUuid": "8bde5a47_7073b631",
+      "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

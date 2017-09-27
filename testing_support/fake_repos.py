@@ -329,9 +329,9 @@ class FakeRepos(FakeReposBase):
       'DEPS': """
 vars = {
   'DummyVariable': 'repo',
-  'false_var': 'False',
-  'true_var': 'True',
-  'str_var': '"abc"',
+  'false_var': False,
+  'true_var': True,
+  'str_var': 'abc',
 }
 gclient_gn_args_file = 'src/gclient.args'
 gclient_gn_args = [
@@ -475,9 +475,9 @@ vars = {
   'hook1_contents': 'git_hooked1',
   'repo5_var': '/repo_5',
 
-  'false_var': 'False',
-  'true_var': 'True',
-  'str_var': '"abc"',
+  'false_var': False,
+  'true_var': True,
+  'str_var': 'abc',
 }
 
 gclient_gn_args_file = 'src/gclient.args'

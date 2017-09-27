@@ -120,7 +120,9 @@ _GCLIENT_SCHEMA = schema.Schema({
     schema.Optional('use_relative_paths'): bool,
 
     # Variables that can be referenced using Var() - see 'deps'.
-    schema.Optional('vars'): {schema.Optional(basestring): basestring},
+    schema.Optional('vars'): {
+        schema.Optional(basestring): schema.Or(basestring, bool),
+    },
 })
 
 
@@ -237,6 +239,14 @@ def EvaluateCondition(condition, variables, referenced_variables=None):
       elif node.id in _allowed_names:
         return _allowed_names[node.id]
       elif node.id in variables:
+        value = variables[node.id]
+
+        # Allow using "native" types, without wrapping everything in strings.
+        # Note that schema constraints still apply to variables.
+        if not isinstance(value, basestring):
+          return value
+
+        # Recursively evaluate the variable reference.
         return EvaluateCondition(
             variables[node.id],
             variables,

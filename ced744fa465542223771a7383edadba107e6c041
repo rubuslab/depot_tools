@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "25cfadcf_86f8162e",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-09-27T18:20:36Z",
+      "side": 0,
+      "message": "Don\u0027t you need this line, in case the arg is a condition?",
+      "revId": "ced744fa465542223771a7383edadba107e6c041",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c1b638e_5a186647",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-09-27T18:20:36Z",
+      "side": 1,
+      "message": "Should we also have a test for \u0027false_var\u0027: \u0027False\u0027?\n\nAnd, apparently, a test for \u0027cond_var\u0027: \u0027false_var\u0027 or some such?",
+      "revId": "10db30106f1affccf6b31ac64aa65b7570cdcc26",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

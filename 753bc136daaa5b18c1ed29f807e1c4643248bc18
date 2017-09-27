@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8bde5a47_7073b631",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-09-27T18:26:20Z",
+      "side": 1,
+      "message": "This seems a little strange, although I guess it is what the current code does; why wouldn\u0027t we expect the formatting to always recurse down into child directories?",
+      "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

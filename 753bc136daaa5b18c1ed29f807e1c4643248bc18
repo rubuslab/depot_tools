@@ -34,6 +34,24 @@
       "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6c0cb1d_60eef4f8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-09-27T19:54:52Z",
+      "side": 1,
+      "message": "Right, I understood the prior behavior. However, it seems like this change is combining two different things: look in parent dir for the check, and whether to recurse into subdirs, and it seems like they shouldn\u0027t be coupled implicitly like this; maybe //src/clank should have its own entry in a PRESUBMIT file to indicate that we want to format the whole repo instead?",
+      "parentUuid": "3e0ed9ba_d35d8378",
+      "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

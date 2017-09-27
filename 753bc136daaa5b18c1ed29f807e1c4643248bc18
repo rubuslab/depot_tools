@@ -106,6 +106,24 @@
       "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d549fa32_ec38889a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-09-27T23:53:25Z",
+      "side": 1,
+      "message": "Okay, got it. Sorry for the confusion on my part.",
+      "parentUuid": "6916d237_6e36a0aa",
+      "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

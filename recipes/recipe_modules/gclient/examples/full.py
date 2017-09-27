@@ -65,7 +65,8 @@ def RunSteps(api):
   bl_cfg.got_revision_mapping['src/blatley'] = 'got_blatley_revision'
   with api.context(cwd=api.path['start_dir'].join('src', 'third_party')):
     api.gclient.checkout(
-        gclient_config=bl_cfg)
+        gclient_config=bl_cfg,
+        with_branch_heads=True)
 
   api.gclient.got_revision_reverse_mapping(bl_cfg)
 

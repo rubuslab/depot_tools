@@ -52,6 +52,24 @@
       "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "345c6d97_0d535f96",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2017-09-27T20:30:14Z",
+      "side": 1,
+      "message": "I don\u0027t follow...\n* inherit-review-settings-ok is already a thing, I\u0027m not adding it here.\n* Recursing into subdirectories is also already a thing, which I\u0027m not changing.\n* Presubmit checks that use input_api to do their logic (most of them) work fine with inherit-review-settings-ok\n* This check is broken in this context though, because it\u0027s not using input_api, but rather calling out to git.\n\nEven if I added an explicit call to CheckPatchFormatted() from clank\u0027s PRESUBMIT.py, this would still do the wrong thing (modify files in the parent repo) if I add inherit-review-settings-ok.",
+      "parentUuid": "d6c0cb1d_60eef4f8",
+      "revId": "753bc136daaa5b18c1ed29f807e1c4643248bc18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

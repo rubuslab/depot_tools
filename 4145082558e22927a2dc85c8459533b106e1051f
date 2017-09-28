@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "94446258_08b506e4",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-09-28T16:51:50Z",
+      "side": 0,
+      "message": "Would \u0027\"abc\"\u0027 evaluate to \u0027abc\u0027 or \u0027\"abc\"\u0027 now?",
+      "revId": "4145082558e22927a2dc85c8459533b106e1051f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

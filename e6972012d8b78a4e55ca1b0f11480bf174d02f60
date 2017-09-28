@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f73d906_bafcfd6b",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-09-28T18:14:38Z",
+      "side": 1,
+      "message": "how hard would it be to use a different variable for this instead of overloading patch_projects?",
+      "range": {
+        "startLine": 36,
+        "startChar": 16,
+        "endLine": 36,
+        "endChar": 30
+      },
+      "revId": "e6972012d8b78a4e55ca1b0f11480bf174d02f60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

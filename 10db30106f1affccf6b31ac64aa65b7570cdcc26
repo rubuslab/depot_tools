@@ -16,6 +16,24 @@
       "revId": "10db30106f1affccf6b31ac64aa65b7570cdcc26",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e453ac2_ab900111",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-09-28T11:06:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c1b638e_5a186647",
+      "revId": "10db30106f1affccf6b31ac64aa65b7570cdcc26",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

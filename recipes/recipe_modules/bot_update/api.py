@@ -109,7 +109,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
     root = patch_root
     if root is None:
       root = self.m.gclient.calculate_patch_root(
-          self.m.properties.get('patch_project'), cfg)
+          self.m.properties.get('patch_project'),
+          self._repository, cfg)
 
     if patch:
       issue = issue or self._issue

@@ -2849,14 +2849,14 @@ class TestGitCl(TestCase):
                       u'revision': None}],
         u'properties': {
           u'category': u'git_cl_try',
-           u'issue': 123,
-           u'key': u'val',
-           u'json': [{u'a': 1}, None],
-           u'master': u'tryserver.chromium',
-           u'patch_project': u'depot_tools',
-           u'patch_storage': u'rietveld',
-           u'patchset': 20001,
-           u'rietveld': u'https://codereview.chromium.org',
+          u'issue': 123,
+          u'key': u'val',
+          u'json': [{u'a': 1}, None],
+          u'master': u'tryserver.chromium',
+          u'patch_project': u'depot_tools',
+          u'patch_storage': u'rietveld',
+          u'patchset': 20001,
+          u'rietveld': u'https://codereview.chromium.org',
         }
       })
       self.assertEqual(build, {
@@ -2890,6 +2890,7 @@ class TestGitCl(TestCase):
          'https://chromium-review.googlesource.com'),
         (('GetChangeDetail', 'chromium-review.googlesource.com', '123456',
          ['DETAILED_ACCOUNTS', 'ALL_REVISIONS', 'CURRENT_COMMIT']), {
+          'branch': 'master',
           'project': 'depot_tools',
           'status': 'OPEN',
           'owner': {'email': 'owner@e.mail'},
@@ -2920,19 +2921,19 @@ class TestGitCl(TestCase):
                       u'revision': None}],
         u'properties': {
           u'category': u'git_cl_try',
-           u'key': u'val',
-           u'json': [{u'a': 1}, None],
-           u'master': u'tryserver.chromium',
-
-           u'patch_gerrit_url':
-             u'https://chromium-review.googlesource.com',
-           u'patch_issue': 123456,
-           u'patch_project': u'depot_tools',
-           u'patch_ref': u'refs/changes/56/123456/7',
-           u'patch_repository_url':
-             u'https://chromium.googlesource.com/depot_tools',
-           u'patch_set': 7,
-           u'patch_storage': u'gerrit',
+          u'key': u'val',
+          u'json': [{u'a': 1}, None],
+          u'master': u'tryserver.chromium',
+          u'branch': u'master',
+          u'patch_gerrit_url':
+            u'https://chromium-review.googlesource.com',
+          u'patch_issue': 123456,
+          u'patch_project': u'depot_tools',
+          u'patch_ref': u'refs/changes/56/123456/7',
+          u'patch_repository_url':
+            u'https://chromium.googlesource.com/depot_tools',
+          u'patch_set': 7,
+          u'patch_storage': u'gerrit',
         }
       })
       self.assertEqual(build, {

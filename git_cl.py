@@ -3236,6 +3236,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       raise Exception('Patchset %d is not known in Gerrit change %d' %
                       (patchset, self.GetIssue()))
     return {
+      'branch': data.get('branch'),
       'patch_issue': self.GetIssue(),
       'patch_set': patchset or self.GetPatchset(),
       'patch_project': data['project'],

@@ -123,11 +123,16 @@ def ensure_gsutil(version, target, clean):
   return gsutil_bin
 
 
-def run_gsutil(force_version, fallback, target, args, clean=False):
+def run_gsutil(force_version, fallback, target, args, clean=False,
+               ensure_only=False):
   if force_version:
     gsutil_bin = ensure_gsutil(force_version, target, clean)
   else:
     gsutil_bin = fallback
+
+  if ensure_only:
+    return 0
+
   disable_update = ['-o', 'GSUtil:software_update_check_period=0']
 
   # Run "gsutil" through "vpython". We need to do this because on GCE instances,
@@ -147,6 +152,9 @@ def parse_args():
 
   parser = argparse.ArgumentParser()
   parser.add_argument('--force-version', default='4.13')
+  parser.add_argument('--ensure-gsutil', action='store_true',
+      help='Ensure that the specified "gsutil" package is downloaded, but '
+           'do not run any "gsutil" commands.')
   parser.add_argument('--clean', action='store_true',
       help='Clear any existing gsutil package, forcing a new download.')
   parser.add_argument('--fallback', default=DEFAULT_FALLBACK_GSUTIL)
@@ -166,7 +174,7 @@ def parse_args():
 def main():
   args = parse_args()
   return run_gsutil(args.force_version, args.fallback, args.target, args.args,
-                    clean=args.clean)
+                    clean=args.clean, ensure_only=args.ensure_gsutil)
 
 if __name__ == '__main__':
   sys.exit(main())

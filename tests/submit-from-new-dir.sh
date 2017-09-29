@@ -40,3 +40,4 @@ cleanup
 if [ $SUCCESS == 0 ]; then
   echo PASS
 fi
+

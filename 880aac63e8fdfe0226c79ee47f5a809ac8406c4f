@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6d7836a5_35d9ee2d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-09-29T01:42:03Z",
+      "side": 1,
+      "message": "yayaya",
+      "parentUuid": "a148a500_0e59fb45",
+      "range": {
+        "startLine": 9,
+        "startChar": 7,
+        "endLine": 9,
+        "endChar": 23
+      },
+      "revId": "880aac63e8fdfe0226c79ee47f5a809ac8406c4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bbac7310_f346ff6f",
         "filename": "sync_depot_tools",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-09-29T01:10:17Z",
       "side": 1,
       "message": "\"sync_depot_tools ... will not ... sync the \"depot_tools\" repository\"\n\nhmmmmmmmmmmmmmmm",
+      "range": {
+        "startLine": 9,
+        "startChar": 16,
+        "endLine": 9,
+        "endChar": 54
+      },
+      "revId": "880aac63e8fdfe0226c79ee47f5a809ac8406c4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0a26609_cf08f8e0",
+        "filename": "sync_depot_tools",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-09-29T01:42:03Z",
+      "side": 1,
+      "message": "Named \"ensure_bootstrap\".",
+      "parentUuid": "bbac7310_f346ff6f",
       "range": {
         "startLine": 9,
         "startChar": 16,

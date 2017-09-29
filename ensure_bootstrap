@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Copyright 2017 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# This is a shell script to sync "depot_tools" and all of its bootstrap
+# depenencies. Unlike "update_depot_tools", this script works with the current
+# checkout, and will not update/sync the "depot_tools" repository.
+
+set -x
+
+# Test if this script is running under a MinGW install.  If it is, we will
+# hardcode the paths to Git where possible.
+OUTPUT="$(uname | grep 'MINGW')"
+MINGW=$?
+
+if [ $MINGW = 0 ]; then
+  base_dir="${0%/*}"
+else
+  base_dir=$(dirname "${BASH_SOURCE[0]}")
+  if [ -L "$base_dir" ]; then
+    base_dir=`cd "$base_dir" && pwd -P`
+  fi
+fi
+
+# Sync CIPD-boostrapped packages.
+source "$base_dir/cipd_bin_setup.sh"
+cipd_bin_setup
+
+# Sync "gsutil.py".
+python "$base_dir/gsutil.py" --ensure-gsutil
+
+# Cleanup.
+find "$base_dir" -iname "*.pyc" -delete || true

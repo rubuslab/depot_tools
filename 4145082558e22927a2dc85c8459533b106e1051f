@@ -16,6 +16,24 @@
       "revId": "4145082558e22927a2dc85c8459533b106e1051f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5bae862_ade10a41",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-09-29T07:16:11Z",
+      "side": 0,
+      "message": "If the string contained quotes, they\u0027d be preserved now.",
+      "parentUuid": "94446258_08b506e4",
+      "revId": "4145082558e22927a2dc85c8459533b106e1051f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

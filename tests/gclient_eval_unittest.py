@@ -145,6 +145,10 @@ class EvaluateConditionTest(unittest.TestCase):
     self.assertFalse(gclient_eval.EvaluateCondition(
         'foo == "bar"', {'foo': '"baz"'}))
 
+  def test_string_inequality(self):
+    self.assertTrue(gclient_eval.EvaluateCondition(
+        'foo != "bar"', {'foo': '"baz"'}))
+
   def test_string_bool(self):
     self.assertFalse(gclient_eval.EvaluateCondition(
         'false_str_var and true_var',

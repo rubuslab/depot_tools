@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c692276_4e72d299",
+        "filename": "tests/gclient_eval_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1003211
+      },
+      "writtenOn": "2017-10-06T01:25:31Z",
+      "side": 1,
+      "message": "I\u0027d probably also assertFalse(foo !\u003d \"baz\") (and assertTrue(foo \u003d\u003d \"baz\") above), but maybe that\u0027s overkill.",
+      "revId": "48b3c9e520e8812690b10a16c454c0419a82063b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -8,6 +8,25 @@
 from recipe_engine import recipe_api
 
 
+def to_manifest(step_result):
+  """Returns the jsonpb form of source_manifest.proto
+
+  Input: A bot_update step_result JSON
+  """
+  # Currently the only valid version is 0.
+  data = {'version': 0}
+  dirs = {}
+  for dirname, info in step_result.get('manifest', {}).iteritems():
+    dirs[dirname] = {
+        'git_checkout': {
+            'repo_url': info.get('repository', ''),
+            'revision': info.get('revision', ''),
+        }
+    }
+  data['directories'] = dirs
+  return data
+
+
 class BotUpdateApi(recipe_api.RecipeApi):
 
   def __init__(self, issue, patch_issue, patchset, patch_set, patch_project,
@@ -111,11 +130,13 @@ class BotUpdateApi(recipe_api.RecipeApi):
       root = self.m.gclient.calculate_patch_root(
           self.m.properties.get('patch_project'), cfg)
 
+    manifest_name = "UNPATCHED"
     if patch:
       issue = issue or self._issue
       patchset = patchset or self._patchset
       gerrit_repo = self._repository
       gerrit_ref = self._gerrit_ref
+      manifest_name = "PATCHED"
     else:
       # The trybot recipe sometimes wants to de-apply the patch. In which case
       # we pretend the issue/patchset never existed.
@@ -295,6 +316,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
         if 'step_text' in result:
           step_text = result['step_text']
           step_result.presentation.step_text = step_text
+
+        # Export the step results as a Source Manifest to LogDog.
+        data = to_manifest(result)
+        self.m.source_manifest.set_json_manifest(manifest_name, data)
 
         # Set the "checkout" path for the main solution.
         # This is used by the Chromium module to figure out where to look for

@@ -278,7 +278,7 @@ class DownloadTests(unittest.TestCase):
     stdout_queue = Queue.Queue()
     download_from_google_storage._downloader_worker_thread(
         0, self.queue, True, self.base_url, self.gsutil,
-        stdout_queue, self.ret_codes, True, True, delete=False)
+        stdout_queue, self.ret_codes, True, delete=False)
     expected_calls = [
         ('check_call',
             ('ls', input_filename)),
@@ -345,7 +345,6 @@ class DownloadTests(unittest.TestCase):
         output=output_filename,
         ignore_errors=False,
         sha1_file=False,
-        verbose=True,
         auto_platform=False,
         extract=False)
     expected_calls = [
@@ -403,7 +402,6 @@ class DownloadTests(unittest.TestCase):
         output=None,
         ignore_errors=False,
         sha1_file=False,
-        verbose=True,
         auto_platform=False,
         extract=False)
     expected_calls = [

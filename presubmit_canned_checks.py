@@ -1131,3 +1131,50 @@ def CheckGNFormatted(input_api, output_api):
   # It's just a warning, so ignore other types of failures assuming they'll be
   # caught elsewhere.
   return warnings
+
+
+def CheckCIPDManifest(input_api, output_api, path_or_content):
+  """Verifies that a CIPD ensure file manifest is valid against all platforms.
+
+  Args:
+    path_or_content (str): If this resolves to a file (via isfile), the
+        path of the CIPD manifest to check. Otherwise, it is interpreted as
+        the raw content of the CIPD manifest.
+  """
+  cipd_bin = 'cipd' if not input_api.is_windows else 'cipd.bat'
+  cmd = [cipd_bin, 'ensure-file-verify']
+  kwargs = {}
+
+  if input_api.is_windows:
+    # Needs to be able to resolve "cipd.bat".
+    kwargs['shell'] = True
+
+  if input_api.verbose:
+    cmd += ['-log-level', 'debug']
+  if input_api.os_path.isfile(path_or_content):
+    cmd += ['-ensure-file', path_or_content]
+  else:
+    cmd += ['-ensure-file=-']
+    kwargs['stdin'] = path_or_content
+
+  return input_api.Command(
+      'Check CIPD manifest',
+      cmd,
+      kwargs,
+      output_api.PresubmitError)
+
+
+def CheckCIPDPackages(input_api, output_api, platforms, packages):
+  """Verifies that all named CIPD packages can be resolved against all supplied
+  platforms.
+
+  Args:
+    platforms (list): List of CIPD platforms to verify.
+    packages (dict): Mapping of package name to version.
+  """
+  manifest = []
+  for p in platforms:
+    manifest.append('$VerifiedPlatform %s' % (p,))
+  for k, v in packages.iteritems():
+    manifest.append('%s %s' % (k, v))
+  return CheckCIPDManifest(input_api, output_api, '\n'.join(manifest))

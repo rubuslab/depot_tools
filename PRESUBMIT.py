@@ -45,6 +45,8 @@ def DepotToolsPylint(input_api, output_api):
 
 def CommonChecks(input_api, output_api, tests_to_black_list):
   results = []
+  tests = []
+  """
   results.extend(input_api.canned_checks.CheckOwners(input_api, output_api))
   # TODO(maruel): Make sure at least one file is modified first.
   # TODO(maruel): If only tests are modified, only run them.
@@ -59,6 +61,17 @@ def CommonChecks(input_api, output_api, tests_to_black_list):
     tests.extend(unit_tests)
   else:
     print('Warning: not running unit tests on Windows')
+  """
+
+  # Validate CIPD manifests.
+  for path in (
+      ('cipd_manifest.txt',),
+      ('bootstrap', 'win', 'manifest.txt'),
+      ('bootstrap', 'win', 'manifest_bleeding_edge.txt'),
+      ):
+    tests.append(input_api.canned_checks.CheckCIPDManifest(
+        input_api, output_api, input_api.os_path.join(*path)))
+
   results.extend(input_api.RunTests(tests))
   return results
 

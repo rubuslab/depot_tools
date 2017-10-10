@@ -16,6 +16,24 @@
       "revId": "7b845301d7940298ded4c7816957e517ac7685c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58ccfbe2_21aec3de",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2017-10-10T21:37:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56d15400_f79304a3",
+      "revId": "7b845301d7940298ded4c7816957e517ac7685c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

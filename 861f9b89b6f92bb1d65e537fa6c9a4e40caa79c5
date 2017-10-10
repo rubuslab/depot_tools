@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9492f3a_dd21e2d1",
+        "filename": "roll_dep_svn.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-10-10T10:10:29Z",
+      "side": 1,
+      "message": "nit: node",
+      "range": {
+        "startLine": 266,
+        "startChar": 19,
+        "endLine": 266,
+        "endChar": 22
+      },
+      "revId": "861f9b89b6f92bb1d65e537fa6c9a4e40caa79c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

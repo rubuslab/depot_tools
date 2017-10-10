@@ -70,6 +70,30 @@
       "revId": "77b7687e4837223f820e1e98c369d36696f3f2b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc632556_564fe4f2",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.expected/with_git_patch_luci.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-10-10T21:04:45Z",
+      "side": 0,
+      "message": "ok, i suspect it might break. I am not really sure. I also have no idea what we run bisect on.",
+      "parentUuid": "f2cf5f76_c4a42036",
+      "range": {
+        "startLine": 14,
+        "startChar": 30,
+        "endLine": 14,
+        "endChar": 33
+      },
+      "revId": "77b7687e4837223f820e1e98c369d36696f3f2b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

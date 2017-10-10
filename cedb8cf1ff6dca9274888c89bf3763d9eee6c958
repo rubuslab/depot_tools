@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e9746d8a_9b245e60",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2017-10-10T21:48:56Z",
+      "side": 1,
+      "message": "Don\u0027t need this comment change anymore.",
+      "revId": "cedb8cf1ff6dca9274888c89bf3763d9eee6c958",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

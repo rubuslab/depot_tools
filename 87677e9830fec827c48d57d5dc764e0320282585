@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d6f4334_71107234",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2357,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-10T16:51:39Z",
+      "side": 0,
+      "message": "I would either remove all usages of this flag first, or make this deprecated (but don\u0027t remove it)\n\nIt would be best to do the first (remove usages), so that way this code can actually die.",
+      "range": {
+        "startLine": 2357,
+        "startChar": 9,
+        "endLine": 2357,
+        "endChar": 19
+      },
+      "revId": "87677e9830fec827c48d57d5dc764e0320282585",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "revId": "cedb8cf1ff6dca9274888c89bf3763d9eee6c958",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c6f0590_29296a21",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2017-10-10T22:02:22Z",
+      "side": 1,
+      "message": "But it future-proofs the comment :-)",
+      "parentUuid": "e9746d8a_9b245e60",
+      "revId": "cedb8cf1ff6dca9274888c89bf3763d9eee6c958",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

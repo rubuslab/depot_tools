@@ -2828,11 +2828,13 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
             'uploading changes based on top of this branch difficult.\n'
             'If you want to do that, use "git cl patch --force" instead.')
 
-    self.SetIssue(parsed_issue_arg.issue)
-    self.SetPatchset(patchset)
-    fetched_hash = RunGit(['rev-parse', 'FETCH_HEAD']).strip()
-    self._GitSetBranchConfigValue('last-upload-hash', fetched_hash)
-    self._GitSetBranchConfigValue('gerritsquashhash', fetched_hash)
+    if self.GetBranch():
+      self.SetIssue(parsed_issue_arg.issue)
+      self.SetPatchset(patchset)
+      fetched_hash = RunGit(['rev-parse', 'FETCH_HEAD']).strip()
+      self._GitSetBranchConfigValue('last-upload-hash', fetched_hash)
+      self._GitSetBranchConfigValue('gerritsquashhash', fetched_hash)
+
     return 0
 
   @staticmethod
@@ -5402,8 +5404,6 @@ def CMDpatch(parser, args):
       RunGit(['branch', '-D', options.newbranch],
              stderr=subprocess2.PIPE, error_ok=True)
     RunGit(['new-branch', options.newbranch])
-  elif not GetCurrentBranch():
-    DieWithError('A branch is required to apply patch. Hint: use -b option.')
 
   cl = Changelist(**cl_kwargs)
 

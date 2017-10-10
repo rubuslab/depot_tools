@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba4819f3_00ccf49f",
+        "filename": "gsutil.vpython",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-10T03:20:08Z",
+      "side": 1,
+      "message": "oops, outdated \"depot_tools\". This is already on HEAD :x",
+      "parentUuid": "f6bfcf9a_4dccd273",
+      "range": {
+        "startLine": 16,
+        "startChar": 20,
+        "endLine": 16,
+        "endChar": 25
+      },
+      "revId": "d2105a2323e6ece6f4fa0bd2b4bda0050f7badc0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc407f37_634b816f",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2017-10-09T21:43:00Z",
       "side": 1,
       "message": "hm.. this seems like a disaster waiting to happen; if the path is missing somehow then suddenly it will behave like content?\n\nI think a safer check would be `\u0027\\n\u0027 in path_or_content`.",
+      "range": {
+        "startLine": 1154,
+        "startChar": 23,
+        "endLine": 1154,
+        "endChar": 29
+      },
+      "revId": "d2105a2323e6ece6f4fa0bd2b4bda0050f7badc0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26c66151_48789b6f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1154,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-10T03:20:08Z",
+      "side": 1,
+      "message": "Went with keyword arguments - \"path\u003d\" or \"content\u003d\".",
+      "parentUuid": "dc407f37_634b816f",
       "range": {
         "startLine": 1154,
         "startChar": 23,

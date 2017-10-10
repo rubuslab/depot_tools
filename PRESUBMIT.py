@@ -59,6 +59,16 @@ def CommonChecks(input_api, output_api, tests_to_black_list):
     tests.extend(unit_tests)
   else:
     print('Warning: not running unit tests on Windows')
+
+  # Validate CIPD manifests.
+  for path in (
+      ('cipd_manifest.txt',),
+      ('bootstrap', 'win', 'manifest.txt'),
+      ('bootstrap', 'win', 'manifest_bleeding_edge.txt'),
+      ):
+    tests.append(input_api.canned_checks.CheckCIPDManifest(
+        input_api, output_api, path=input_api.os_path.join(*path)))
+
   results.extend(input_api.RunTests(tests))
   return results
 

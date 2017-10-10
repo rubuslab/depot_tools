@@ -22,6 +22,30 @@
       "revId": "77b7687e4837223f820e1e98c369d36696f3f2b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2cf5f76_c4a42036",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.expected/with_git_patch_luci.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-10-10T00:01:09Z",
+      "side": 0,
+      "message": "I don\u0027t think so. The only use I see is in the bisect bots (https://cs.chromium.org/chromium/build/scripts/slave/recipe_modules/auto_bisect/api.py?type\u003dcs\u0026q\u003d%22tryserver.get_files_affected_by_patch%22\u0026sq\u003dpackage:chromium\u0026l\u003d369) which shouldn\u0027t be hitting any of the mappings actually contained in the rietveld module (https://cs.chromium.org/chromium/tools/depot_tools/recipes/recipe_modules/rietveld/api.py?type\u003dcs\u0026q\u003d%22calculate_issue_root%22\u0026sq\u003dpackage:chromium\u0026l\u003d37) because they should be pure chromium. Do we actually run bisect bots  on non-chromium changes? We just bisect for the DEPS roll, right?",
+      "parentUuid": "ce42cc1f_e53da617",
+      "range": {
+        "startLine": 14,
+        "startChar": 30,
+        "endLine": 14,
+        "endChar": 33
+      },
+      "revId": "77b7687e4837223f820e1e98c369d36696f3f2b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

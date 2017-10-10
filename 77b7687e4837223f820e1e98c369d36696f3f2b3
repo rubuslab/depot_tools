@@ -46,6 +46,30 @@
       "revId": "77b7687e4837223f820e1e98c369d36696f3f2b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fe9cb1a_a2c4d8e1",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.expected/with_git_patch_luci.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-10-10T00:06:11Z",
+      "side": 0,
+      "message": "But just in case, I\u0027m trying to fix them too, and massively failing: https://chromium-review.googlesource.com/c/chromium/tools/build/+/708050",
+      "parentUuid": "f2cf5f76_c4a42036",
+      "range": {
+        "startLine": 14,
+        "startChar": 30,
+        "endLine": 14,
+        "endChar": 33
+      },
+      "revId": "77b7687e4837223f820e1e98c369d36696f3f2b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

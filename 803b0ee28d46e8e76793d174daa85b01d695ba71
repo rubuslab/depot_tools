@@ -16,6 +16,24 @@
       "revId": "803b0ee28d46e8e76793d174daa85b01d695ba71",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f171096f_cb94d2fd",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-11T17:47:44Z",
+      "side": 1,
+      "message": "I figure it makes it trivial to add additional manifests, which seems like saving enough.",
+      "parentUuid": "0a4c0216_0fbf89e8",
+      "revId": "803b0ee28d46e8e76793d174daa85b01d695ba71",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

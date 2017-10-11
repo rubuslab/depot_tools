@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd6f6715_d4b92027",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1146,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-10-11T14:40:19Z",
+      "side": 1,
+      "message": "Not sure what it\u0027s supposed to be doing, but note that there\u0027s usually no .gclient file on disc at that point. gclient recurse will need one and search one.\n\nBot_update writes a .gclient file in ensure_checkout - so I assume this here will usually get a stale .gclient file from a previous run. This makes it hard to update .gclient with something new, e.g. new custom vars or deps.\n\nThis fails here, when we switch a variable:\nhttps://luci-logdog.appspot.com/v/?s\u003dchromium%2Fbb%2Ftryserver.v8%2Fv8_linux64_msan_rel%2F222%2F%2B%2Frecipes%2Fsteps%2Fbot_update%2F0%2Fstdout\n\nMaybe you have to make sure that https://cs.chromium.org/chromium/src/third_party/depot_tools/recipes/recipe_modules/bot_update/resources/bot_update.py?q\u003dbot_update.py\u0026sq\u003dpackage:chromium\u0026dr\u0026l\u003d319 is run before this?",
+      "range": {
+        "startLine": 1146,
+        "startChar": 4,
+        "endLine": 1146,
+        "endChar": 69
+      },
+      "revId": "cba3ea7973e55c072a01a05f736aeca230346080",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

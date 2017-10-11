@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a4c0216_0fbf89e8",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-11T17:45:18Z",
+      "side": 1,
+      "message": "not sure this loop really saves anything :)",
+      "revId": "803b0ee28d46e8e76793d174daa85b01d695ba71",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "7d05ba9caa2afe78d015c1cbfafafc8c1429d9bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fe24386_efe9f308",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5406,
+      "author": {
+        "id": 1001706
+      },
+      "writtenOn": "2017-10-12T01:07:31Z",
+      "side": 0,
+      "message": "I disagree that this is helpful for most devs.  I almost always run afoul of this.  I think it\u0027s different when working on chromium, because checkouts are very heavy weight.\n\nWhen I use \u0027git cl patch\u0027, it\u0027s *never* because I want to resume work on a patch from a different checkout.  Doing that is too painful, because the resulting compilation will almost always be very big.\n\nThe most common use case is that another developer asks me to try out their patch.  Typically, my checkout will be on a branch tracking origin/master, with a chromium build that is up-to-date with my branch.  When someone asks me to look at their unrelated patch, this is what I want to do:\n\n$ git checkout origin/master\n$ git cl patch \u003cissue\u003e\n$ ninja ...\n\nThis works well because I don\u0027t have to run \u0027gclient sync\u0027, and it means that there will be very little work to do an incremental build -- basically, it reverts whatever I\u0027m working on, and applies the other patch.  I don\u0027t want to apply the patch on top of my working branch,  because I don\u0027t want to mix up my changes with the patch.\n\nI don\u0027t really see what problem --apply-outside-of-branch solves.  It\u0027s a very wordy and difficult-to-remember option, and I will *always* omit it on the first try.  I don\u0027t think it\u0027s at all weird or misleading to allow applying a patch in detached HEAD; the idiomatic behavior for git commands generally is to allow detached HEAD, and I don\u0027t see why this should be any different.",
+      "parentUuid": "dbc5b601_6dba60aa",
+      "range": {
+        "startLine": 5406,
+        "startChar": 4,
+        "endLine": 5406,
+        "endChar": 77
+      },
+      "revId": "7d05ba9caa2afe78d015c1cbfafafc8c1429d9bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

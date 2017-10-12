@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85f5d853_e86ec4e5",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2837,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-10-12T17:34:58Z",
+      "side": 1,
+      "message": "Please include:\n    \n    else:\n      print(\u0027Something to the effect of how this isn\u0027t setting the config values, and you can\u0027t upload from here\u0027)",
+      "revId": "0ecc7041058489bba7aec6f3a907575eb2716ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

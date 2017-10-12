@@ -70,6 +70,30 @@
       "revId": "7d05ba9caa2afe78d015c1cbfafafc8c1429d9bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7924c831_edd24897",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5406,
+      "author": {
+        "id": 1002871
+      },
+      "writtenOn": "2017-10-12T17:27:20Z",
+      "side": 0,
+      "message": "I honestly think that just a warning is the right tradeoff between preventing people to shoot in their foot, and allowing people who want to try a patch quickly to succeed.\n\nSomething like:\n\"\nWARNING: you are in detached head state. In this state you won\u0027t be able to upload back new patchsets and you\u0027ll very likley lose your local changes. Perhaps you meant to create a branch using the -b branchname option?\n\" \n\nExperienced people will just ignore it. Non experienced ones will backtrack.\n\nMy $0.02",
+      "parentUuid": "d41c310b_4a5b475b",
+      "range": {
+        "startLine": 5406,
+        "startChar": 4,
+        "endLine": 5406,
+        "endChar": 77
+      },
+      "revId": "7d05ba9caa2afe78d015c1cbfafafc8c1429d9bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -46,6 +46,30 @@
       "revId": "7d05ba9caa2afe78d015c1cbfafafc8c1429d9bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d41c310b_4a5b475b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5406,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-10-12T01:21:31Z",
+      "side": 0,
+      "message": "I didn\u0027t think of incremental compile. That\u0027s a very good point.\nAlso, I didn\u0027t mean that my flag be added to this CL verbatim, i made it verbose to illustrate intent.\n\nAs for what problem it solves: I observed myself/of heard from newcomers to Chrome (but really, Git) that detached HEAD is really confusing. Thus, I thought, suggesting \u0027-b\u0027 is doing the right thing for them.\n\nHowever, you\u0027ve convinced me that overall this CL will gain CHromium devs productivity, even though it may cause extra stumbling for git newcomers. Thank you very much for detailed and patient explanation. I keep forgetting about ninja/compile caches.\n\nMind waiting for agable@ to chime in?",
+      "parentUuid": "6fe24386_efe9f308",
+      "range": {
+        "startLine": 5406,
+        "startChar": 4,
+        "endLine": 5406,
+        "endChar": 77
+      },
+      "revId": "7d05ba9caa2afe78d015c1cbfafafc8c1429d9bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

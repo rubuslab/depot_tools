@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbc5b601_6dba60aa",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5406,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-10-12T00:36:34Z",
+      "side": 0,
+      "message": "I think this is helpful message for most devs.\nFrom my usage, it\u0027s rare that I need to apply patch in detached head, and when I do need it, I do usually just copy-paste stuff from Gerrit\u0027s \"download\" options. So, I guess I\u0027d prefer another option instead:\n --apply-outside-of-branch",
+      "range": {
+        "startLine": 5406,
+        "startChar": 4,
+        "endLine": 5406,
+        "endChar": 77
+      },
+      "revId": "7d05ba9caa2afe78d015c1cbfafafc8c1429d9bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

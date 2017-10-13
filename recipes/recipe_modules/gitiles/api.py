@@ -137,4 +137,7 @@ class Gitiles(recipe_api.RecipeApi):
         fmt='text',
         add_json_log=False,
         **kwargs)
-    return base64.b64decode(step_result.json.output['value'])
+    if step_result.json.output['value'] is not None:
+      return base64.b64decode(step_result.json.output['value'])
+    else:
+      return None

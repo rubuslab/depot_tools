@@ -800,9 +800,9 @@ like checkout or compile), and some of these tests have failed.
 &mdash; **def [RunSteps](/recipes/recipe_modules/git_cl/examples/full.py#17)(api):**
 ### *recipes* / [gitiles:examples/full](/recipes/recipe_modules/gitiles/examples/full.py)
 
-[DEPS](/recipes/recipe_modules/gitiles/examples/full.py#5): [gitiles](#recipe_modules-gitiles), [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/properties][recipe_engine/recipe_modules/properties]
+[DEPS](/recipes/recipe_modules/gitiles/examples/full.py#5): [gitiles](#recipe_modules-gitiles), [recipe\_engine/properties][recipe_engine/recipe_modules/properties]
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/gitiles/examples/full.py#12)(api):**
+&mdash; **def [RunSteps](/recipes/recipe_modules/gitiles/examples/full.py#11)(api):**
 ### *recipes* / [gsutil:examples/full](/recipes/recipe_modules/gsutil/examples/full.py)
 
 [DEPS](/recipes/recipe_modules/gsutil/examples/full.py#5): [gsutil](#recipe_modules-gsutil), [recipe\_engine/path][recipe_engine/recipe_modules/path]

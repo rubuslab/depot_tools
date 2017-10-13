@@ -22,6 +22,30 @@
       "revId": "a99d9100866c23b577c1e51c03a54d056bd4ab4f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61f2e7c2_e777e878",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2017-10-13T14:39:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba886062_26a5364e",
+      "range": {
+        "startLine": 140,
+        "startChar": 40,
+        "endLine": 140,
+        "endChar": 51
+      },
+      "revId": "a99d9100866c23b577c1e51c03a54d056bd4ab4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

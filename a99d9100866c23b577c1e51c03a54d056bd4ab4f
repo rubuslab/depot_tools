@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba886062_26a5364e",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1002740
+      },
+      "writtenOn": "2017-10-13T14:23:35Z",
+      "side": 1,
+      "message": "nit: Consider changing order of branches to avoid double negation (actually \"else\" should not be needed):\n\nif output is None:\n  return None\nreturn b64encode(...)",
+      "range": {
+        "startLine": 140,
+        "startChar": 40,
+        "endLine": 140,
+        "endChar": 51
+      },
+      "revId": "a99d9100866c23b577c1e51c03a54d056bd4ab4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

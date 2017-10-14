@@ -111,11 +111,13 @@ class BotUpdateApi(recipe_api.RecipeApi):
       root = self.m.gclient.calculate_patch_root(
           self.m.properties.get('patch_project'), cfg, self._repository)
 
+    manifest_name = "CLEAN"
     if patch:
       issue = issue or self._issue
       patchset = patchset or self._patchset
       gerrit_repo = self._repository
       gerrit_ref = self._gerrit_ref
+      manifest_name = "PATCHED"
     else:
       # The trybot recipe sometimes wants to de-apply the patch. In which case
       # we pretend the issue/patchset never existed.
@@ -295,6 +297,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
         if 'step_text' in result:
           step_text = result['step_text']
           step_result.presentation.step_text = step_text
+
+        # Export the step results as a Source Manifest to LogDog.
+        self.m.source_manifest.set_json_manifest(
+            manifest_name, result.get('manifest', {}))
 
         # Set the "checkout" path for the main solution.
         # This is used by the Chromium module to figure out where to look for

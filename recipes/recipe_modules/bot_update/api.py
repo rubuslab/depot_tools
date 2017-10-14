@@ -261,11 +261,14 @@ class BotUpdateApi(recipe_api.RecipeApi):
         root, first_sln, reverse_rev_map, self._fail_patch,
         fixed_revisions=fixed_revisions)
 
-    # Add suffixes to the step name, if specified.
+    # Add suffixes to the step and manifest names, if specified.
+    manifest_name = "checkout"
     name = 'bot_update'
     if not patch:
+      manifest_name = 'checkout_unpatched'
       name += ' (without patch)'
     if suffix:
+      manifest_name += '_%s' % suffix.replace(' ', '_')
       name += ' - %s' % suffix
 
     # Ah hah! Now that everything is in place, lets run bot_update!
@@ -295,6 +298,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
         if 'step_text' in result:
           step_text = result['step_text']
           step_result.presentation.step_text = step_text
+
+        # Export the step results as a Source Manifest to LogDog.
+        self.m.source_manifest.set_json_manifest(
+            manifest_name, result.get('manifest', {}))
 
         # Set the "checkout" path for the main solution.
         # This is used by the Chromium module to figure out where to look for

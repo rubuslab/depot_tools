@@ -16,6 +16,24 @@
       "revId": "f9282271469908a25161ca4755f4102666977617",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1e72c76_581a36c4",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3000,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-10-17T19:23:01Z",
+      "side": 1,
+      "message": "Whoops, that\u0027s a local diff I have hanging around. Removed.",
+      "parentUuid": "b1ac976a_086cb889",
+      "revId": "f9282271469908a25161ca4755f4102666977617",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

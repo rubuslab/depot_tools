@@ -2990,16 +2990,16 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           assert len(change_ids) == 1
         change_id = change_ids[0]
 
-      if options.reviewers or options.tbrs or options.add_owners_to:
-        change_desc.update_reviewers(options.reviewers, options.tbrs,
-                                     options.add_owners_to, change)
-
       remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
       parent = self._ComputeParent(remote, upstream_branch, custom_cl_base,
                                    options.force, change_desc)
       tree = RunGit(['rev-parse', 'HEAD:']).strip()
       ref_to_push = RunGit(['commit-tree', tree, '-p', parent,
                             '-m', change_desc.description]).strip()
+
+      if options.reviewers or options.tbrs or options.add_owners_to:
+        change_desc.update_reviewers(options.reviewers, options.tbrs,
+                                     options.add_owners_to, change)
     else:
       change_desc = ChangeDescription(
           options.message or CreateDescriptionFromLog(git_diff_args))

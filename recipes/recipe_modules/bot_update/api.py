@@ -77,7 +77,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       root_solution_revision=None, rietveld=None, issue=None,
                       patchset=None, gerrit_no_reset=False,
                       gerrit_no_rebase_patch_ref=False,
-                      disable_syntax_validation=False, **kwargs):
+                      disable_syntax_validation=False, manifest_name=None,
+                      **kwargs):
     """
     Args:
       use_site_config_creds: If the oauth2 credentials are in the buildbot
@@ -261,7 +262,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
         root, first_sln, reverse_rev_map, self._fail_patch,
         fixed_revisions=fixed_revisions)
 
-    # Add suffixes to the step name, if specified.
     name = 'bot_update'
     if not patch:
       name += ' (without patch)'
@@ -295,6 +295,14 @@ class BotUpdateApi(recipe_api.RecipeApi):
         if 'step_text' in result:
           step_text = result['step_text']
           step_result.presentation.step_text = step_text
+
+        # Export the step results as a Source Manifest to LogDog.
+        if not manifest_name:
+          manifest_name = "checkout"
+          if not patch:
+            manifest_name = 'checkout_unpatched'
+        self.m.source_manifest.set_json_manifest(
+            manifest_name, result.get('manifest', {}))
 
         # Set the "checkout" path for the main solution.
         # This is used by the Chromium module to figure out where to look for

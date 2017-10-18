@@ -5,6 +5,8 @@
 """Generic presubmit checks that can be reused by other presubmit checks."""
 
 import os as _os
+
+
 _HERE = _os.path.dirname(_os.path.abspath(__file__))
 
 # Justifications for each filter:
@@ -38,6 +40,108 @@ BLACKLIST_LINT_FILTERS = [
 ]
 
 ### Description checks
+def CheckChangedConfigs(input_api, output_api):
+  import auth
+  import git_common as git
+  import git_cl
+  import urllib2
+  import json
+  import collections
+
+  LUCI_CONFIG_HOST_NAME = 'luci-config.appspot.com'
+  CONFIG_SET_URL = ('https://luci-config.appspot.com/'
+                    '_ah/api/config/v1/config-sets?')
+  VALIDATION_URL = ('https://luci-config.appspot.com/'
+                    '_ah/api/config/v1/validate-config?alt=json')
+
+  location_to_AffectedFiles = collections.defaultdict(list)
+  config_set_to_locations = collections.defaultdict(list)
+  config_set_to_prefix = {}
+
+  for changed_file in input_api.AffectedFiles():
+    remote_host_url = git.get_remote_url()
+    if remote_host_url is None:
+      return [output_api.PresubmitError('Remote host url for git has not been '
+                                        'defined')]
+
+    cl = git_cl.Changelist()
+    _, remote_branch = cl.FetchUpstreamTuple(cl.GetBranch())
+    if remote_branch is None:
+      return [output_api.PresubmitError('Upstream branch has not been set')]
+    
+    file_absolute_local_path = changed_file.AbsoluteLocalPath()
+    local_repo_root = git.repo_root()
+    file_path = file_absolute_local_path.replace(local_repo_root, '')
+    # for windows machines
+    if _os.altsep:
+      file_path.replace(_os.sep, _os.altsep)
+    location = (remote_host_url.replace('.git', '') + '/+/' + remote_branch
+                + file_path)
+    location_to_AffectedFiles[location].append(changed_file)
+
+  # authentication
+  try:
+    authenticator = auth.get_authenticator_for_host(LUCI_CONFIG_HOST_NAME,
+                                                    auth.make_auth_config())
+    acc_tkn = authenticator.get_access_token(allow_user_interaction=True).token
+  except auth.AuthenticationError as e:
+    return [output_api.PresubmitError('Error in authenticating user.',
+                                      long_text=str(e))]
+
+  config_set_request = urllib2.Request(CONFIG_SET_URL)
+  config_set_request.add_header('Authorization', 'Bearer %s' % acc_tkn)
+  config_set_response = urllib2.urlopen(config_set_request)
+  config_set_data = json.load(config_set_response)
+  if not 'config_sets' in config_set_data:
+    return [output_api.PresubmitWarning('No config_sets were returned')]
+  config_set_info_list = config_set_data['config_sets']
+
+  for config_set_info in config_set_info_list:
+    for location in location_to_AffectedFiles:
+      pref = config_set_info['location']
+      if location.startswith(pref):
+        config_set = config_set_info['config_set']
+        config_set_to_locations[config_set].append(location)
+        config_set_to_prefix[config_set] = pref
+
+  outputs = []
+  for config_set in config_set_to_locations:
+    files_to_be_validated = []
+    for location in config_set_to_locations[config_set]:
+      files_to_be_validated.extend([
+        (location, f) for f in location_to_AffectedFiles[location]])
+    config_file_dict_list = []
+    for location, f in files_to_be_validated:
+      # derive path
+      path = (location.replace(config_set_to_prefix[config_set], '')
+              .strip('/'))
+      content = '\n'.join(line for line in f.NewContents())
+      config_file_dict_list.append({'path': path, 'content': content})
+
+    req_data = json.dumps({'config_set': config_set,
+                           'files': config_file_dict_list})
+    config_validation_request = urllib2.Request(VALIDATION_URL, req_data)
+    config_validation_request.add_header('Authorization', 'Bearer %s' % acc_tkn)
+    config_validation_request.add_header('Content-Type', 'application/json')
+    validation_response = urllib2.urlopen(config_validation_request)
+    validation_data = json.load(validation_response)
+    if 'messages' in validation_data:
+      for msg in validation_data['messages']:
+        sev = msg['severity']
+        txt = msg['text']
+        if sev == 'WARNING':
+          outputs.append(
+              output_api.PresubmitPromptWarning(
+                  'Warning in config validation: %s', txt))
+        elif sev == 'ERROR' or sev == 'CRITICAL':
+          outputs.append(
+              output_api.PresubmitError('Error in config validation: %s' % txt))
+        else:
+          outputs.append(
+              output_api.PresubmitNotifyResult(
+                  'Result from config validation: %s' % txt))
+  return outputs
+
 
 def CheckChangeHasBugField(input_api, output_api):
   """Requires that the changelist have a Bug: field."""
@@ -45,7 +149,7 @@ def CheckChangeHasBugField(input_api, output_api):
     return []
   else:
     return [output_api.PresubmitNotifyResult(
-        'If this change has an associated bug, add Bug: [bug number].')]
+      'If this change has an associated bug, add Bug: [bug number].')]
 
 
 def CheckDoNotSubmitInDescription(input_api, output_api):
@@ -54,7 +158,7 @@ def CheckDoNotSubmitInDescription(input_api, output_api):
   keyword = 'DO NOT ''SUBMIT'
   if keyword in input_api.change.DescriptionText():
     return [output_api.PresubmitError(
-        keyword + ' is present in the changelist description.')]
+      keyword + ' is present in the changelist description.')]
   else:
     return []
 
@@ -89,30 +193,30 @@ def CheckAuthorizedAuthor(input_api, output_api):
     input_api.logging.info('No author, skipping AUTHOR check')
     return []
   authors_path = input_api.os_path.join(
-      input_api.PresubmitLocalPath(), 'AUTHORS')
+    input_api.PresubmitLocalPath(), 'AUTHORS')
   valid_authors = (
-      input_api.re.match(r'[^#]+\s+\<(.+?)\>\s*$', line)
-      for line in open(authors_path))
+    input_api.re.match(r'[^#]+\s+\<(.+?)\>\s*$', line)
+    for line in open(authors_path))
   valid_authors = [item.group(1).lower() for item in valid_authors if item]
   if not any(input_api.fnmatch.fnmatch(author.lower(), valid)
              for valid in valid_authors):
     input_api.logging.info('Valid authors are %s', ', '.join(valid_authors))
     return [output_api.PresubmitPromptWarning(
-        ('%s is not in AUTHORS file. If you are a new contributor, please visit'
-        '\n'
-        'http://www.chromium.org/developers/contributing-code and read the '
-        '"Legal" section\n'
-        'If you are a chromite, verify the contributor signed the CLA.') %
-        author)]
+      ('%s is not in AUTHORS file. If you are a new contributor, please visit'
+       '\n'
+       'http://www.chromium.org/developers/contributing-code and read the '
+       '"Legal" section\n'
+       'If you are a chromite, verify the contributor signed the CLA.') %
+      author)]
   return []
 
 
 def CheckDoNotSubmitInFiles(input_api, output_api):
   """Checks that the user didn't add 'DO NOT ''SUBMIT' to any files."""
   # We want to check every text file, not just source files.
-  file_filter = lambda x : x
+  file_filter = lambda x: x
   keyword = 'DO NOT ''SUBMIT'
-  errors = _FindNewViolationsOfRule(lambda _, line : keyword not in line,
+  errors = _FindNewViolationsOfRule(lambda _, line: keyword not in line,
                                     input_api, file_filter)
   text = '\n'.join('Found %s in %s' % (keyword, loc) for loc in errors)
   if text:
@@ -167,7 +271,7 @@ def CheckChangeHasNoCR(input_api, output_api, source_file_filter=None):
       cr_files.append(f.LocalPath())
   if cr_files:
     return [output_api.PresubmitPromptWarning(
-        'Found a CR character in these files:', items=cr_files)]
+      'Found a CR character in these files:', items=cr_files)]
   return []
 
 
@@ -205,19 +309,20 @@ def CheckChangeHasNoCrAndHasOnlyOneEol(input_api, output_api,
   outputs = []
   if cr_files:
     outputs.append(output_api.PresubmitPromptWarning(
-        'Found a CR character in these files:', items=cr_files))
+      'Found a CR character in these files:', items=cr_files))
   if eof_files:
     outputs.append(output_api.PresubmitPromptWarning(
       'These files should end in one (and only one) newline character:',
       items=eof_files))
   return outputs
 
+
 def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
   """Checks that there are no gendered pronouns in any of the text files to be
   submitted.
   """
   gendered_re = input_api.re.compile(
-      '(^|\s|\(|\[)([Hh]e|[Hh]is|[Hh]ers?|[Hh]im|[Ss]he|[Gg]uys?)\\b')
+    '(^|\s|\(|\[)([Hh]e|[Hh]is|[Hh]ers?|[Hh]im|[Ss]he|[Gg]uys?)\\b')
 
   errors = []
   for f in input_api.AffectedFiles(include_deletes=False,
@@ -230,7 +335,6 @@ def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
     return [output_api.PresubmitPromptWarning('Found a gendered pronoun in:',
                                               long_text='\n'.join(errors))]
   return []
-
 
 
 def _ReportErrorFileAndLine(filename, line_num, dummy_line):
@@ -279,13 +383,14 @@ def CheckChangeHasNoTabs(input_api, output_api, source_file_filter=None):
   if not source_file_filter:
     # It's the default filter.
     source_file_filter = input_api.FilterSourceFile
+
   def filter_more(affected_file):
     basename = input_api.os_path.basename(affected_file.LocalPath())
     return (not (basename in ('Makefile', 'makefile') or
                  basename.endswith('.mk')) and
             source_file_filter(affected_file))
 
-  tabs = _FindNewViolationsOfRule(lambda _, line : '\t' not in line,
+  tabs = _FindNewViolationsOfRule(lambda _, line: '\t' not in line,
                                   input_api, filter_more)
 
   if tabs:
@@ -298,7 +403,7 @@ def CheckChangeTodoHasOwner(input_api, output_api, source_file_filter=None):
   """Checks that the user didn't add TODO(name) without an owner."""
 
   unowned_todo = input_api.re.compile('TO''DO[^(]')
-  errors = _FindNewViolationsOfRule(lambda _, x : not unowned_todo.search(x),
+  errors = _FindNewViolationsOfRule(lambda _, x: not unowned_todo.search(x),
                                     input_api, source_file_filter)
   errors = ['Found TO''DO with no owner in ' + x for x in errors]
   if errors:
@@ -309,12 +414,12 @@ def CheckChangeTodoHasOwner(input_api, output_api, source_file_filter=None):
 def CheckChangeHasNoStrayWhitespace(input_api, output_api,
                                     source_file_filter=None):
   """Checks that there is no stray whitespace at source lines end."""
-  errors = _FindNewViolationsOfRule(lambda _, line : line.rstrip() == line,
+  errors = _FindNewViolationsOfRule(lambda _, line: line.rstrip() == line,
                                     input_api, source_file_filter)
   if errors:
     return [output_api.PresubmitPromptWarning(
-        'Found line ending with white spaces in:',
-        long_text='\n'.join(errors))]
+      'Found line ending with white spaces in:',
+      long_text='\n'.join(errors))]
   return []
 
 
@@ -323,10 +428,10 @@ def CheckLongLines(input_api, output_api, maxlen, source_file_filter=None):
   the text files to be submitted.
   """
   maxlens = {
-      'java': 100,
-      # This is specifically for Android's handwritten makefiles (Android.mk).
-      'mk': 200,
-      '': maxlen,
+    'java': 100,
+    # This is specifically for Android's handwritten makefiles (Android.mk).
+    'mk': 200,
+    '': maxlen,
   }
 
   # Language specific exceptions to max line length.
@@ -390,7 +495,7 @@ def CheckLongLines(input_api, output_api, maxlen, source_file_filter=None):
       return True
 
     return input_api.re.match(
-        r'.*[A-Za-z][A-Za-z_0-9]{%d,}.*' % long_symbol, line)
+      r'.*[A-Za-z][A-Za-z_0-9]{%d,}.*' % long_symbol, line)
 
   def format_error(filename, line_num, line):
     return '%s, line %s, %s chars' % (filename, line_num, len(line))
@@ -406,7 +511,7 @@ def CheckLongLines(input_api, output_api, maxlen, source_file_filter=None):
 
 
 def CheckLicense(input_api, output_api, license_re, source_file_filter=None,
-    accept_empty_files=True):
+                 accept_empty_files=True):
   """Verifies the license header.
   """
   license_re = input_api.re.compile(license_re, input_api.re.MULTILINE)
@@ -419,8 +524,8 @@ def CheckLicense(input_api, output_api, license_re, source_file_filter=None,
       bad_files.append(f.LocalPath())
   if bad_files:
     return [output_api.PresubmitPromptWarning(
-        'License must match:\n%s\n' % license_re.pattern +
-        'Found a bad license header in these files:', items=bad_files)]
+      'License must match:\n%s\n' % license_re.pattern +
+      'Found a bad license header in these files:', items=bad_files)]
   return []
 
 
@@ -428,9 +533,9 @@ def CheckLicense(input_api, output_api, license_re, source_file_filter=None,
 
 def CheckDoNotSubmit(input_api, output_api):
   return (
-      CheckDoNotSubmitInDescription(input_api, output_api) +
-      CheckDoNotSubmitInFiles(input_api, output_api)
-      )
+    CheckDoNotSubmitInDescription(input_api, output_api) +
+    CheckDoNotSubmitInFiles(input_api, output_api)
+  )
 
 
 def CheckTreeIsOpen(input_api, output_api,
@@ -473,8 +578,9 @@ def CheckTreeIsOpen(input_api, output_api,
                                       long_text=str(e))]
   return []
 
+
 def GetUnitTestsInDirectory(
-    input_api, output_api, directory, whitelist=None, blacklist=None, env=None):
+        input_api, output_api, directory, whitelist=None, blacklist=None, env=None):
   """Lists all files in a directory and runs them. Doesn't recurse.
 
   It's mainly a wrapper for RunUnitTests. Use whitelist and blacklist to filter
@@ -482,7 +588,7 @@ def GetUnitTestsInDirectory(
   """
   unit_tests = []
   test_path = input_api.os_path.abspath(
-      input_api.os_path.join(input_api.PresubmitLocalPath(), directory))
+    input_api.os_path.join(input_api.PresubmitLocalPath(), directory))
 
   def check(filename, filters):
     return any(True for i in filters if input_api.re.match(i, filename))
@@ -503,9 +609,9 @@ def GetUnitTestsInDirectory(
                           % (found, to_run))
   if not to_run:
     return [
-        output_api.PresubmitPromptWarning(
-          'Out of %d files, found none that matched w=%r, b=%r in directory %s'
-          % (found, whitelist, blacklist, directory))
+      output_api.PresubmitPromptWarning(
+        'Out of %d files, found none that matched w=%r, b=%r in directory %s'
+        % (found, whitelist, blacklist, directory))
     ]
   return GetUnitTests(input_api, output_api, unit_tests, env)
 
@@ -534,10 +640,10 @@ def GetUnitTests(input_api, output_api, unit_tests, env=None):
     if env:
       kwargs['env'] = env
     results.append(input_api.Command(
-        name=unit_test,
-        cmd=cmd,
-        kwargs=kwargs,
-        message=message_type))
+      name=unit_test,
+      cmd=cmd,
+      kwargs=kwargs,
+      message=message_type))
   return results
 
 
@@ -548,6 +654,7 @@ def GetUnitTestsRecursively(input_api, output_api, directory,
   Restricts itself to only find files within the Change's source repo, not
   dependencies.
   """
+
   def check(filename):
     return (any(input_api.re.match(f, filename) for f in whitelist) and
             not any(input_api.re.match(f, filename) for f in blacklist))
@@ -563,9 +670,9 @@ def GetUnitTestsRecursively(input_api, output_api, directory,
   input_api.logging.debug('Found %d files, running %d' % (found, to_run))
   if not to_run:
     return [
-        output_api.PresubmitPromptWarning(
-          'Out of %d files, found none that matched w=%r, b=%r in directory %s'
-          % (found, whitelist, blacklist, directory))
+      output_api.PresubmitPromptWarning(
+        'Out of %d files, found none that matched w=%r, b=%r in directory %s'
+        % (found, whitelist, blacklist, directory))
     ]
 
   return GetUnitTests(input_api, output_api, tests)
@@ -601,17 +708,17 @@ def GetPythonUnitTests(input_api, output_api, unit_tests):
       env = input_api.environ.copy()
       # At least on Windows, it seems '.' must explicitly be in PYTHONPATH
       backpath = [
-          '.', input_api.os_path.pathsep.join(['..'] * (cwd.count('/') + 1))
-        ]
+        '.', input_api.os_path.pathsep.join(['..'] * (cwd.count('/') + 1))
+      ]
       if env.get('PYTHONPATH'):
         backpath.append(env.get('PYTHONPATH'))
       env['PYTHONPATH'] = input_api.os_path.pathsep.join((backpath))
     cmd = [input_api.python_executable, '-m', '%s' % unit_test]
     results.append(input_api.Command(
-        name=unit_test_name,
-        cmd=cmd,
-        kwargs={'env': env, 'cwd': cwd},
-        message=message_type))
+      name=unit_test_name,
+      cmd=cmd,
+      kwargs={'env': env, 'cwd': cwd},
+      message=message_type))
   return results
 
 
@@ -622,7 +729,7 @@ def RunUnitTestsInDirectory(input_api, *args, **kwargs):
   pass to input_api.RunTests.
   """
   return input_api.RunTests(
-      GetUnitTestsInDirectory(input_api, *args, **kwargs), False)
+    GetUnitTestsInDirectory(input_api, *args, **kwargs), False)
 
 
 def RunUnitTests(input_api, *args, **kwargs):
@@ -640,11 +747,12 @@ def RunPythonUnitTests(input_api, *args, **kwargs):
   DEPRECATED
   """
   return input_api.RunTests(
-      GetPythonUnitTests(input_api, *args, **kwargs), False)
+    GetPythonUnitTests(input_api, *args, **kwargs), False)
 
 
 def _FetchAllFiles(input_api, white_list, black_list):
   """Hack to fetch all files."""
+
   # We cannot use AffectedFiles here because we want to test every python
   # file on each single python change. It's because a change in a python file
   # can break another unmodified file.
@@ -661,7 +769,7 @@ def _FetchAllFiles(input_api, white_list, black_list):
   files = []
   path_len = len(input_api.PresubmitLocalPath())
   for dirpath, dirnames, filenames in input_api.os_walk(
-      input_api.PresubmitLocalPath()):
+          input_api.PresubmitLocalPath()):
     # Passes dirnames in black list to speed up search.
     for item in dirnames[:]:
       filepath = input_api.os_path.join(dirpath, item)[path_len + 1:]
@@ -692,20 +800,23 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
   # Only trigger if there is at least one python file affected.
   def rel_path(regex):
     """Modifies a regex for a subject to accept paths relative to root."""
+
     def samefile(a, b):
       # Default implementation for platforms lacking os.path.samefile
       # (like Windows).
       return input_api.os_path.abspath(a) == input_api.os_path.abspath(b)
+
     samefile = getattr(input_api.os_path, 'samefile', samefile)
     if samefile(input_api.PresubmitLocalPath(),
                 input_api.change.RepositoryRoot()):
       return regex
 
     prefix = input_api.os_path.join(input_api.os_path.relpath(
-        input_api.PresubmitLocalPath(), input_api.change.RepositoryRoot()), '')
+      input_api.PresubmitLocalPath(), input_api.change.RepositoryRoot()), '')
     return input_api.re.escape(prefix) + regex
+
   src_filter = lambda x: input_api.FilterSourceFile(
-      x, map(rel_path, white_list), map(rel_path, black_list))
+    x, map(rel_path, white_list), map(rel_path, black_list))
   if not input_api.AffectedSourceFiles(src_filter):
     input_api.logging.info('Skipping pylint: no matching changes.')
     return []
@@ -730,7 +841,7 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
   env = input_api.environ.copy()
   import sys
   env['PYTHONPATH'] = input_api.os_path.pathsep.join(
-      extra_paths_list + sys.path).encode('utf8')
+    extra_paths_list + sys.path).encode('utf8')
 
   def GetPylintCmd(flist, extra, parallel):
     # Windows needs help running python files so we explicitly specify
@@ -753,10 +864,10 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
       description += ' on %d cores' % input_api.cpu_count
 
     return input_api.Command(
-        name='Pylint (%s)' % description,
-        cmd=cmd,
-        kwargs={'env': env, 'stdin': '\n'.join(args + flist)},
-        message=error_type)
+      name='Pylint (%s)' % description,
+      cmd=cmd,
+      kwargs={'env': env, 'stdin': '\n'.join(args + flist)},
+      message=error_type)
 
   # Always run pylint and pass it all the py files at once.
   # Passing py files one at time is slower and can produce
@@ -777,7 +888,7 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
         GetPylintCmd(files, ["--disable=all", "--enable=cyclic-import"], False)
       ]
     else:
-      return [ GetPylintCmd(files, [], True) ]
+      return [GetPylintCmd(files, [], True)]
 
   else:
     return map(lambda x: GetPylintCmd([x], [], 1), files)
@@ -797,12 +908,12 @@ def CheckRietveldTryJobExecution(dummy_input_api, output_api,
                                  dummy_owner):
   return [
     output_api.PresubmitNotifyResult(
-        'CheckRietveldTryJobExecution is deprecated, please remove it.')
+      'CheckRietveldTryJobExecution is deprecated, please remove it.')
   ]
 
 
 def CheckBuildbotPendingBuilds(input_api, output_api, url, max_pendings,
-    ignored):
+                               ignored):
   try:
     connection = input_api.urllib2.urlopen(url)
     raw_data = connection.read()
@@ -825,12 +936,12 @@ def CheckBuildbotPendingBuilds(input_api, output_api, url, max_pendings,
     pending_builds_len = len(builder.get('pending_builds', []))
     if pending_builds_len > max_pendings:
       out.append('%s has %d build(s) pending' %
-                  (builder_name, pending_builds_len))
+                 (builder_name, pending_builds_len))
   if out:
     return [output_api.PresubmitPromptWarning(
-        'Build(s) pending. It is suggested to wait that no more than %d '
-            'builds are pending.' % max_pendings,
-        long_text='\n'.join(out))]
+      'Build(s) pending. It is suggested to wait that no more than %d '
+      'builds are pending.' % max_pendings,
+      long_text='\n'.join(out))]
   return []
 
 
@@ -838,65 +949,68 @@ def CheckOwners(input_api, output_api, source_file_filter=None):
   if input_api.is_committing:
     if input_api.tbr:
       return [output_api.PresubmitNotifyResult(
-          '--tbr was specified, skipping OWNERS check')]
+        '--tbr was specified, skipping OWNERS check')]
     needed = 'LGTM from an OWNER'
     output_fn = output_api.PresubmitError
     if input_api.change.issue:
       if input_api.dry_run:
         output_fn = lambda text: output_api.PresubmitNotifyResult(
-            'This is a dry run, but these failures would be reported on ' +
-            'commit:\n' + text)
+          'This is a dry run, but these failures would be reported on ' +
+          'commit:\n' + text)
     else:
       return [output_api.PresubmitError("OWNERS check failed: this change has "
-          "no Rietveld issue number, so we can't check it for approvals.")]
+                                        "no Rietveld issue number, so we can't check it for approvals.")]
   else:
     needed = 'OWNER reviewers'
     output_fn = output_api.PresubmitNotifyResult
 
   affected_files = set([f.LocalPath() for f in
-      input_api.change.AffectedFiles(file_filter=source_file_filter)])
+                        input_api.change.AffectedFiles(file_filter=source_file_filter)])
 
   owners_db = input_api.owners_db
   owners_db.override_files = input_api.change.OriginalOwnersFiles()
   owner_email, reviewers = GetCodereviewOwnerAndReviewers(
-      input_api,
-      owners_db.email_regexp,
-      approval_needed=input_api.is_committing)
+    input_api,
+    owners_db.email_regexp,
+    approval_needed=input_api.is_committing)
 
   owner_email = owner_email or input_api.change.author_email
 
   if owner_email:
     reviewers_plus_owner = set([owner_email]).union(reviewers)
     missing_files = owners_db.files_not_covered_by(affected_files,
-        reviewers_plus_owner)
+                                                   reviewers_plus_owner)
   else:
     missing_files = owners_db.files_not_covered_by(affected_files, reviewers)
 
   if missing_files:
     output_list = [
-        output_fn('Missing %s for these files:\n    %s' %
-                  (needed, '\n    '.join(sorted(missing_files))))]
+      output_fn('Missing %s for these files:\n    %s' %
+                (needed, '\n    '.join(sorted(missing_files))))]
     if not input_api.is_committing:
       suggested_owners = owners_db.reviewers_for(missing_files, owner_email)
       finder = input_api.owners_finder(
-          missing_files, input_api.change.RepositoryRoot(),
-          owner_email, fopen=file, os_path=input_api.os_path,
-          email_postfix='', disable_color=True,
-          override_files=input_api.change.OriginalOwnersFiles())
+        missing_files, input_api.change.RepositoryRoot(),
+        owner_email, fopen=file, os_path=input_api.os_path,
+        email_postfix='', disable_color=True,
+        override_files=input_api.change.OriginalOwnersFiles())
       owners_with_comments = []
+
       def RecordComments(text):
         owners_with_comments.append(finder.print_indent() + text)
+
       finder.writeln = RecordComments
       for owner in suggested_owners:
         finder.print_comments(owner)
       output_list.append(output_fn('Suggested OWNERS: ' +
-          '(Use "git-cl owners" to interactively select owners.)\n    %s' %
-          ('\n    '.join(owners_with_comments))))
+                                   '(Use "git-cl owners" to interactively select owners.)\n    %s' %
+                                   ('\n    '.join(owners_with_comments))))
     return output_list
 
   if input_api.is_committing and not reviewers:
     return [output_fn('Missing LGTM from someone other than %s' % owner_email)]
   return []
+
 
 def GetCodereviewOwnerAndReviewers(input_api, email_regexp, approval_needed):
   """Return the owner and reviewers of a change, if any.
@@ -916,7 +1030,7 @@ def _GetRietveldIssueProps(input_api, messages):
   issue = input_api.change.issue
   if issue and input_api.rietveld:
     return input_api.rietveld.get_issue_properties(
-        issue=int(issue), messages=messages)
+      issue=int(issue), messages=messages)
 
 
 def _ReviewersFromChange(change):
@@ -931,6 +1045,7 @@ def _ReviewersFromChange(change):
 
 def _match_reviewer_email(r, owner_email, email_regexp):
   return email_regexp.match(r) and r != owner_email
+
 
 def _RietveldOwnerAndReviewers(input_api, email_regexp, approval_needed=False):
   """Return the owner and reviewers of a change, if any.
@@ -950,9 +1065,9 @@ def _RietveldOwnerAndReviewers(input_api, email_regexp, approval_needed=False):
 
   messages = issue_props.get('messages', [])
   approvers = set(
-      m['sender'] for m in messages
-      if m.get('approval') and _match_reviewer_email(m['sender'], owner_email,
-                                                     email_regexp))
+    m['sender'] for m in messages
+    if m.get('approval') and _match_reviewer_email(m['sender'], owner_email,
+                                                   email_regexp))
   return owner_email, approvers
 
 
@@ -969,8 +1084,8 @@ def _GerritOwnerAndReviewers(input_api, email_regexp, approval_needed=False):
 
   owner_email = input_api.gerrit.GetChangeOwner(issue)
   reviewers = set(
-      r for r in input_api.gerrit.GetChangeReviewers(issue, approval_needed)
-      if _match_reviewer_email(r, owner_email, email_regexp))
+    r for r in input_api.gerrit.GetChangeReviewers(issue, approval_needed)
+    if _match_reviewer_email(r, owner_email, email_regexp))
   input_api.logging.debug('owner: %s; approvals given by: %s',
                           owner_email, ', '.join(sorted(reviewers)))
   return owner_email, reviewers
@@ -980,7 +1095,7 @@ def CheckSingletonInHeaders(input_api, output_api, source_file_filter=None):
   """Deprecated, must be removed."""
   return [
     output_api.PresubmitNotifyResult(
-        'CheckSingletonInHeaders is deprecated, please remove it.')
+      'CheckSingletonInHeaders is deprecated, please remove it.')
   ]
 
 
@@ -1007,8 +1122,8 @@ def PanProjectChecks(input_api, output_api,
   """
   excluded_paths = tuple(excluded_paths or [])
   text_files = tuple(text_files or (
-      r'.+\.txt$',
-      r'.+\.json$',
+    r'.+\.txt$',
+    r'.+\.json$',
   ))
   project_name = project_name or 'Chromium'
 
@@ -1021,15 +1136,15 @@ def PanProjectChecks(input_api, output_api,
 
   # The (c) is deprecated, but tolerate it until it's removed from all files.
   license_header = license_header or (
-      r'.*? Copyright (\(c\) )?%(year)s The %(project)s Authors\. '
-        r'All rights reserved\.\n'
-      r'.*? Use of this source code is governed by a BSD-style license that '
-        r'can be\n'
-      r'.*? found in the LICENSE file\.(?: \*/)?\n'
-  ) % {
-      'year': years_re,
-      'project': project_name,
-  }
+                                       r'.*? Copyright (\(c\) )?%(year)s The %(project)s Authors\. '
+                                       r'All rights reserved\.\n'
+                                       r'.*? Use of this source code is governed by a BSD-style license that '
+                                       r'can be\n'
+                                       r'.*? found in the LICENSE file\.(?: \*/)?\n'
+                                     ) % {
+                                       'year': years_re,
+                                       'project': project_name,
+                                     }
 
   results = []
   # This code loads the default black list (e.g. third_party, experimental, etc)
@@ -1040,14 +1155,15 @@ def PanProjectChecks(input_api, output_api,
   white_list = input_api.DEFAULT_WHITE_LIST + text_files
   sources = lambda x: input_api.FilterSourceFile(x, black_list=black_list)
   text_files = lambda x: input_api.FilterSourceFile(
-      x, black_list=black_list, white_list=white_list)
+    x, black_list=black_list, white_list=white_list)
 
   snapshot_memory = []
+
   def snapshot(msg):
     """Measures & prints performance warning if a rule is running slow."""
     dt2 = input_api.time.clock()
     if snapshot_memory:
-      delta_ms = int(1000*(dt2 - snapshot_memory[0]))
+      delta_ms = int(1000 * (dt2 - snapshot_memory[0]))
       if delta_ms > 500:
         print "  %s took a long time: %dms" % (snapshot_memory[1], delta_ms)
     snapshot_memory[:] = (dt2, msg)
@@ -1055,33 +1171,33 @@ def PanProjectChecks(input_api, output_api,
   if owners_check:
     snapshot("checking owners")
     results.extend(input_api.canned_checks.CheckOwners(
-        input_api, output_api, source_file_filter=None))
+      input_api, output_api, source_file_filter=None))
 
   snapshot("checking long lines")
   results.extend(input_api.canned_checks.CheckLongLines(
-      input_api, output_api, maxlen, source_file_filter=sources))
-  snapshot( "checking tabs")
+    input_api, output_api, maxlen, source_file_filter=sources))
+  snapshot("checking tabs")
   results.extend(input_api.canned_checks.CheckChangeHasNoTabs(
-      input_api, output_api, source_file_filter=sources))
-  snapshot( "checking stray whitespace")
+    input_api, output_api, source_file_filter=sources))
+  snapshot("checking stray whitespace")
   results.extend(input_api.canned_checks.CheckChangeHasNoStrayWhitespace(
-      input_api, output_api, source_file_filter=sources))
+    input_api, output_api, source_file_filter=sources))
   snapshot("checking license")
   results.extend(input_api.canned_checks.CheckLicense(
-      input_api, output_api, license_header, source_file_filter=sources))
+    input_api, output_api, license_header, source_file_filter=sources))
 
   if input_api.is_committing:
     snapshot("checking was uploaded")
     results.extend(input_api.canned_checks.CheckChangeWasUploaded(
-        input_api, output_api))
+      input_api, output_api))
     snapshot("checking description")
     results.extend(input_api.canned_checks.CheckChangeHasDescription(
-        input_api, output_api))
+      input_api, output_api))
     results.extend(input_api.canned_checks.CheckDoNotSubmitInDescription(
-        input_api, output_api))
+      input_api, output_api))
     snapshot("checking do not submit in files")
     results.extend(input_api.canned_checks.CheckDoNotSubmitInFiles(
-        input_api, output_api))
+      input_api, output_api))
   snapshot("done")
   return results
 
@@ -1093,7 +1209,7 @@ def CheckPatchFormatted(input_api, output_api, check_js=False):
   if check_js:
     cmd.append('--js')
   presubmit_subdir = input_api.os_path.relpath(
-      input_api.PresubmitLocalPath(), input_api.change.RepositoryRoot())
+    input_api.PresubmitLocalPath(), input_api.change.RepositoryRoot())
   if presubmit_subdir.startswith('..') or presubmit_subdir == '.':
     presubmit_subdir = ''
   # If the PRESUBMIT.py is in a parent repository, then format the entire
@@ -1116,18 +1232,18 @@ def CheckPatchFormatted(input_api, output_api, check_js=False):
 def CheckGNFormatted(input_api, output_api):
   import gn
   affected_files = input_api.AffectedFiles(
-      include_deletes=False,
-      file_filter=lambda x: x.LocalPath().endswith('.gn') or
-                            x.LocalPath().endswith('.gni') or
-                            x.LocalPath().endswith('.typemap'))
+    include_deletes=False,
+    file_filter=lambda x: x.LocalPath().endswith('.gn') or
+                          x.LocalPath().endswith('.gni') or
+                          x.LocalPath().endswith('.typemap'))
   warnings = []
   for f in affected_files:
     cmd = ['gn', 'format', '--dry-run', f.AbsoluteLocalPath()]
     rc = gn.main(cmd)
     if rc == 2:
       warnings.append(output_api.PresubmitPromptWarning(
-          '%s requires formatting. Please run:\n  gn format %s' % (
-              f.AbsoluteLocalPath(), f.LocalPath())))
+        '%s requires formatting. Please run:\n  gn format %s' % (
+          f.AbsoluteLocalPath(), f.LocalPath())))
   # It's just a warning, so ignore other types of failures assuming they'll be
   # caught elsewhere.
   return warnings

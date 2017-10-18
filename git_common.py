@@ -953,6 +953,12 @@ def tree(treeref, recurse=False):
     return None
   return ret
 
+# to see if this would work or not..
+def get_remote_url():
+  try:
+    return run('config', '--get', 'remote.origin.url')
+  except subprocess2.CalledProcessError:
+    return None
 
 def upstream(branch):
   try:

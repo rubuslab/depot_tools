@@ -38,6 +38,108 @@ BLACKLIST_LINT_FILTERS = [
 ]
 
 ### Description checks
+def CheckChangedConfigs(input_api, output_api):
+  import auth
+  import git_common as git
+  import git_cl
+  import urllib2
+  import json
+  import collections
+
+  LUCI_CONFIG_HOST_NAME = 'luci-config.appspot.com'
+  CONFIG_SET_URL = ('https://luci-config.appspot.com/'
+                    '_ah/api/config/v1/config-sets?')
+  VALIDATION_URL = ('https://luci-config.appspot.com/'
+                    '_ah/api/config/v1/validate-config?alt=json')
+
+  location_to_AffectedFiles = collections.defaultdict(list)
+  config_set_to_locations = collections.defaultdict(list)
+  config_set_to_prefix = {}
+
+  for changed_file in input_api.AffectedFiles():
+    remote_host_url = git.get_remote_url()
+    if remote_host_url is None:
+      return [output_api.PresubmitError('Remote host url for git has not been '
+                                        'defined')]
+
+    cl = git_cl.Changelist()
+    _, remote_branch = cl.FetchUpstreamTuple(cl.GetBranch())
+    if remote_branch is None:
+      return [output_api.PresubmitError('Upstream branch has not been set')]
+
+    file_absolute_local_path = changed_file.AbsoluteLocalPath()
+    local_repo_root = git.repo_root()
+    file_path = file_absolute_local_path.replace(local_repo_root, '')
+    # for windows machines
+    if _os.altsep:
+      file_path.replace(_os.sep, _os.altsep)
+    location = (remote_host_url.replace('.git', '') + '/+/' + remote_branch
+                + file_path)
+    location_to_AffectedFiles[location].append(changed_file)
+
+  # authentication
+  try:
+    authenticator = auth.get_authenticator_for_host(LUCI_CONFIG_HOST_NAME,
+                                                    auth.make_auth_config())
+    acc_tkn = authenticator.get_access_token(allow_user_interaction=True).token
+  except auth.AuthenticationError as e:
+    return [output_api.PresubmitError('Error in authenticating user.',
+                                      long_text=str(e))]
+
+  config_set_request = urllib2.Request(CONFIG_SET_URL)
+  config_set_request.add_header('Authorization', 'Bearer %s' % acc_tkn)
+  config_set_response = urllib2.urlopen(config_set_request)
+  config_set_data = json.load(config_set_response)
+  if not 'config_sets' in config_set_data:
+    return [output_api.PresubmitWarning('No config_sets were returned')]
+  config_set_info_list = config_set_data['config_sets']
+
+  for config_set_info in config_set_info_list:
+    for location in location_to_AffectedFiles:
+      pref = config_set_info['location']
+      if location.startswith(pref):
+        config_set = config_set_info['config_set']
+        config_set_to_locations[config_set].append(location)
+        config_set_to_prefix[config_set] = pref
+
+  outputs = []
+  for config_set in config_set_to_locations:
+    files_to_be_validated = []
+    for location in config_set_to_locations[config_set]:
+      files_to_be_validated.extend([
+        (location, f) for f in location_to_AffectedFiles[location]])
+    config_file_dict_list = []
+    for location, f in files_to_be_validated:
+      # derive path
+      path = (location.replace(config_set_to_prefix[config_set], '')
+              .strip('/'))
+      content = '\n'.join(line for line in f.NewContents())
+      config_file_dict_list.append({'path': path, 'content': content})
+
+    req_data = json.dumps({'config_set': config_set,
+                           'files': config_file_dict_list})
+    config_validation_request = urllib2.Request(VALIDATION_URL, req_data)
+    config_validation_request.add_header('Authorization', 'Bearer %s' % acc_tkn)
+    config_validation_request.add_header('Content-Type', 'application/json')
+    validation_response = urllib2.urlopen(config_validation_request)
+    validation_data = json.load(validation_response)
+    if 'messages' in validation_data:
+      for msg in validation_data['messages']:
+        sev = msg['severity']
+        txt = msg['text']
+        if sev == 'WARNING':
+          outputs.append(
+              output_api.PresubmitPromptWarning(
+                  'Warning in config validation: %s', txt))
+        elif sev == 'ERROR' or sev == 'CRITICAL':
+          outputs.append(
+              output_api.PresubmitError('Error in config validation: %s' % txt))
+        else:
+          outputs.append(
+              output_api.PresubmitNotifyResult(
+                  'Result from config validation: %s' % txt))
+  return outputs
+
 
 def CheckChangeHasBugField(input_api, output_api):
   """Requires that the changelist have a Bug: field."""

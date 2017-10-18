@@ -954,6 +954,12 @@ def tree(treeref, recurse=False):
   return ret
 
 
+def get_remote_url():
+  try:
+    return run('config', '--get', 'remote.origin.url')
+  except subprocess2.CalledProcessError:
+    return None
+
 def upstream(branch):
   try:
     return run('rev-parse', '--abbrev-ref', '--symbolic-full-name',

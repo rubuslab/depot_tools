@@ -38,6 +38,108 @@ BLACKLIST_LINT_FILTERS = [
 ]
 
 ### Description checks
+def CheckChangedConfigs(input_api, output_api):
+  import auth
+  import git_common as git
+  import git_cl
+  import urllib2
+  import json
+  import collections
+
+  LUCI_CONFIG_HOST_NAME = 'luci-config.appspot.com'
+  CONFIG_SET_URL = ('https://luci-config.appspot.com/'
+                    '_ah/api/config/v1/config-sets?')
+  VALIDATION_URL = ('https://luci-config.appspot.com/'
+                    '_ah/api/config/v1/validate-config?alt=json')
+
+  location_to_AffectedFiles = collections.defaultdict(list)
+  config_set_to_locations = collections.defaultdict(list)
+  config_set_to_prefix = {}
+
+  for changed_file in input_api.AffectedFiles():
+    remote_host_url = git.get_remote_url()
+    if remote_host_url is None:
+      return [output_api.PresubmitError('Remote host url for git has not been '
+                                        'defined')]
+
+    cl = git_cl.Changelist()
+    _, remote_branch = cl.FetchUpstreamTuple(cl.GetBranch())
+    if remote_branch is None:
+      return [output_api.PresubmitError('Upstream branch has not been set')]
+
+    file_absolute_local_path = changed_file.AbsoluteLocalPath()
+    local_repo_root = git.repo_root()
+    file_path = file_absolute_local_path.replace(local_repo_root, '')
+    # for windows machines
+    if _os.altsep:
+      file_path.replace(_os.sep, _os.altsep)
+    location = (remote_host_url.replace('.git', '') + '/+/' + remote_branch
+                + file_path)
+    location_to_AffectedFiles[location].append(changed_file)
+
+  # authentication
+  try:
+    authenticator = auth.get_authenticator_for_host(LUCI_CONFIG_HOST_NAME,
+                                                    auth.make_auth_config())
+    acc_tkn = authenticator.get_access_token(allow_user_interaction=True).token
+  except auth.AuthenticationError as e:
+    return [output_api.PresubmitError('Error in authenticating user.',
+                                      long_text=str(e))]
+
+  config_set_request = urllib2.Request(CONFIG_SET_URL)
+  config_set_request.add_header('Authorization', 'Bearer %s' % acc_tkn)
+  config_set_response = urllib2.urlopen(config_set_request)
+  config_set_data = json.load(config_set_response)
+  if not 'config_sets' in config_set_data:
+    return [output_api.PresubmitWarning('No config_sets were returned')]
+  config_set_info_list = config_set_data['config_sets']
+
+  for config_set_info in config_set_info_list:
+    for location in location_to_AffectedFiles:
+      pref = config_set_info['location']
+      if location.startswith(pref):
+        config_set = config_set_info['config_set']
+        config_set_to_locations[config_set].append(location)
+        config_set_to_prefix[config_set] = pref
+
+  outputs = []
+  for config_set in config_set_to_locations:
+    files_to_be_validated = []
+    for location in config_set_to_locations[config_set]:
+      files_to_be_validated.extend([
+        (location, f) for f in location_to_AffectedFiles[location]])
+    config_file_dict_list = []
+    for location, f in files_to_be_validated:
+      # derive path
+      path = (location.replace(config_set_to_prefix[config_set], '')
+              .strip('/'))
+      content = '\n'.join(line for line in f.NewContents())
+      config_file_dict_list.append({'path': path, 'content': content})
+
+    req_data = json.dumps({'config_set': config_set,
+                           'files': config_file_dict_list})
+    config_validation_request = urllib2.Request(VALIDATION_URL, req_data)
+    config_validation_request.add_header('Authorization', 'Bearer %s' % acc_tkn)
+    config_validation_request.add_header('Content-Type', 'application/json')
+    validation_response = urllib2.urlopen(config_validation_request)
+    validation_data = json.load(validation_response)
+    if 'messages' in validation_data:
+      for msg in validation_data['messages']:
+        sev = msg['severity']
+        txt = msg['text']
+        if sev == 'WARNING':
+          outputs.append(
+              output_api.PresubmitPromptWarning(
+                  'Warning in config validation: %s', txt))
+        elif sev == 'ERROR' or sev == 'CRITICAL':
+          outputs.append(
+              output_api.PresubmitError('Error in config validation: %s' % txt))
+        else:
+          outputs.append(
+              output_api.PresubmitNotifyResult(
+                  'Result from config validation: %s' % txt))
+  return outputs
+
 
 def CheckChangeHasBugField(input_api, output_api):
   """Requires that the changelist have a Bug: field."""
@@ -212,12 +314,13 @@ def CheckChangeHasNoCrAndHasOnlyOneEol(input_api, output_api,
       items=eof_files))
   return outputs
 
+
 def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
   """Checks that there are no gendered pronouns in any of the text files to be
   submitted.
   """
   gendered_re = input_api.re.compile(
-      '(^|\s|\(|\[)([Hh]e|[Hh]is|[Hh]ers?|[Hh]im|[Ss]he|[Gg]uys?)\\b')
+    '(^|\s|\(|\[)([Hh]e|[Hh]is|[Hh]ers?|[Hh]im|[Ss]he|[Gg]uys?)\\b')
 
   errors = []
   for f in input_api.AffectedFiles(include_deletes=False,
@@ -230,7 +333,6 @@ def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
     return [output_api.PresubmitPromptWarning('Found a gendered pronoun in:',
                                               long_text='\n'.join(errors))]
   return []
-
 
 
 def _ReportErrorFileAndLine(filename, line_num, dummy_line):
@@ -473,6 +575,7 @@ def CheckTreeIsOpen(input_api, output_api,
                                       long_text=str(e))]
   return []
 
+
 def GetUnitTestsInDirectory(
     input_api, output_api, directory, whitelist=None, blacklist=None, env=None):
   """Lists all files in a directory and runs them. Doesn't recurse.
@@ -548,6 +651,7 @@ def GetUnitTestsRecursively(input_api, output_api, directory,
   Restricts itself to only find files within the Change's source repo, not
   dependencies.
   """
+
   def check(filename):
     return (any(input_api.re.match(f, filename) for f in whitelist) and
             not any(input_api.re.match(f, filename) for f in blacklist))
@@ -601,11 +705,11 @@ def GetPythonUnitTests(input_api, output_api, unit_tests):
       env = input_api.environ.copy()
       # At least on Windows, it seems '.' must explicitly be in PYTHONPATH
       backpath = [
-          '.', input_api.os_path.pathsep.join(['..'] * (cwd.count('/') + 1))
-        ]
+        '.', input_api.os_path.pathsep.join(['..'] * (cwd.count('/') + 1))
+      ]
       if env.get('PYTHONPATH'):
         backpath.append(env.get('PYTHONPATH'))
-      env['PYTHONPATH'] = input_api.os_path.pathsep.join((backpath))
+        env['PYTHONPATH'] = input_api.os_path.pathsep.join((backpath))
     cmd = [input_api.python_executable, '-m', '%s' % unit_test]
     results.append(input_api.Command(
         name=unit_test_name,
@@ -645,6 +749,7 @@ def RunPythonUnitTests(input_api, *args, **kwargs):
 
 def _FetchAllFiles(input_api, white_list, black_list):
   """Hack to fetch all files."""
+
   # We cannot use AffectedFiles here because we want to test every python
   # file on each single python change. It's because a change in a python file
   # can break another unmodified file.
@@ -692,10 +797,12 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
   # Only trigger if there is at least one python file affected.
   def rel_path(regex):
     """Modifies a regex for a subject to accept paths relative to root."""
+
     def samefile(a, b):
       # Default implementation for platforms lacking os.path.samefile
       # (like Windows).
       return input_api.os_path.abspath(a) == input_api.os_path.abspath(b)
+
     samefile = getattr(input_api.os_path, 'samefile', samefile)
     if samefile(input_api.PresubmitLocalPath(),
                 input_api.change.RepositoryRoot()):
@@ -704,6 +811,7 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
     prefix = input_api.os_path.join(input_api.os_path.relpath(
         input_api.PresubmitLocalPath(), input_api.change.RepositoryRoot()), '')
     return input_api.re.escape(prefix) + regex
+
   src_filter = lambda x: input_api.FilterSourceFile(
       x, map(rel_path, white_list), map(rel_path, black_list))
   if not input_api.AffectedSourceFiles(src_filter):
@@ -884,8 +992,10 @@ def CheckOwners(input_api, output_api, source_file_filter=None):
           email_postfix='', disable_color=True,
           override_files=input_api.change.OriginalOwnersFiles())
       owners_with_comments = []
+
       def RecordComments(text):
         owners_with_comments.append(finder.print_indent() + text)
+
       finder.writeln = RecordComments
       for owner in suggested_owners:
         finder.print_comments(owner)

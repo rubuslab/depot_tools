@@ -212,7 +212,7 @@ class Hook(object):
     try:
       start_time = time.time()
       gclient_utils.CheckCallAndFilterAndHeader(
-          cmd, cwd=cwd, always=True)
+          cmd, cwd=cwd, always=False)
     except (gclient_utils.Error, subprocess2.CalledProcessError) as e:
       # Use a discrete exit status code of 2 to indicate that a hook action
       # failed.  Users of this script may wish to treat hook action failures
@@ -1013,11 +1013,18 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         dep.WriteGNArgsFile()
       self.WriteGNArgsFilesRecursively(dep.dependencies)
 
-  def RunHooksRecursively(self, options):
+  def RunHooksRecursively(self, options, progress):
     assert self.hooks_ran == False
     self._hooks_ran = True
-    for hook in self.GetHooks(options):
+    hooks = self.GetHooks(options)
+    if progress:
+      progress._total = len(hooks)
+    for hook in hooks:
       hook.run(self.root.root_dir)
+      if progress:
+        progress.update()
+    if progress:
+      progress.end()
 
   def RunPreDepsHooks(self):
     assert self.processed
@@ -1491,7 +1498,9 @@ it or fix the checkout.
       self.WriteGNArgsFilesRecursively(self.dependencies)
 
     if not self._options.nohooks:
-      self.RunHooksRecursively(self._options)
+      if pm:
+        pm = Progress('Running hooks', 1)
+      self.RunHooksRecursively(self._options, pm)
 
     if command == 'update':
       # Notify the user if there is an orphaned entry in their working copy.

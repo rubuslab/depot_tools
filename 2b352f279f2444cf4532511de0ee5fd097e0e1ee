@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd333429_219f293c",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-18T23:18:37Z",
+      "side": 1,
+      "message": ".googlesource.com\n\n(note the . prefix)",
+      "range": {
+        "startLine": 377,
+        "startChar": 28,
+        "endLine": 377,
+        "endChar": 40
+      },
+      "revId": "2b352f279f2444cf4532511de0ee5fd097e0e1ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77f58c50_4793a236",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-18T23:18:37Z",
+      "side": 1,
+      "message": "path \u003d p.path.lstrip(\u0027/a\u0027).rstrip(\u0027.git\u0027)\n\nEMBRACE THE PYTHON! FEAR THE PYTHON!",
+      "range": {
+        "startLine": 380,
+        "startChar": 0,
+        "endLine": 380,
+        "endChar": 15
+      },
+      "revId": "2b352f279f2444cf4532511de0ee5fd097e0e1ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d919ba81_e0527138",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-18T23:18:37Z",
+      "side": 1,
+      "message": "what? how can the output not contain the revision?",
+      "range": {
+        "startLine": 415,
+        "startChar": 6,
+        "endLine": 415,
+        "endChar": 38
+      },
+      "revId": "2b352f279f2444cf4532511de0ee5fd097e0e1ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49a31322_205d1560",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-18T23:18:37Z",
+      "side": 1,
+      "message": "todo: include the patch_revision?",
+      "range": {
+        "startLine": 429,
+        "startChar": 0,
+        "endLine": 429,
+        "endChar": 71
+      },
+      "revId": "2b352f279f2444cf4532511de0ee5fd097e0e1ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

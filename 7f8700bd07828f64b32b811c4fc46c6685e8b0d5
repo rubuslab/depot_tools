@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bda76e0c_18580dac",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2017-10-19T20:37:13Z",
+      "side": 1,
+      "message": "The docstring made it pretty clear that this was optional. I guess I didn\u0027t read closely enough...",
+      "range": {
+        "startLine": 1032,
+        "startChar": 39,
+        "endLine": 1032,
+        "endChar": 45
+      },
+      "revId": "7f8700bd07828f64b32b811c4fc46c6685e8b0d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

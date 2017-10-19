@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "30db9596_cc09aad3",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-10-19T16:02:47Z",
+      "side": 1,
+      "message": "I guess I\u0027m more minimalist in this case than you :).",
+      "parentUuid": "89a5cb9b_08037303",
+      "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5aa44c1_53828c14",
         "filename": "gclient.py",
         "patchSetId": 2

@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "47120e81_87697551",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2017-10-19T17:33:18Z",
+      "side": 1,
+      "message": "It\u0027s possible you\u0027re in the right here.\n\nOne thing I do want to say is that I think that output locally for devs and on the bots should be identical (except for the overprinting; it\u0027d be a new line on the bots of course). The bots should run in some \"verbose\" mode while devs don\u0027t. If you still think that not printing anything for successful commands is the right thing, I\u0027d be happy if we tried that. (For the \"compiler update\" example, I think it\u0027s useful to see the \"update\" message, but we also log the clang revision as build metadata, so it\u0027s not really getting lost if it\u0027s not printed.) If it turns out that the output is too terse then, we can always paddle back.",
+      "parentUuid": "30db9596_cc09aad3",
+      "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5aa44c1_53828c14",
         "filename": "gclient.py",
         "patchSetId": 2

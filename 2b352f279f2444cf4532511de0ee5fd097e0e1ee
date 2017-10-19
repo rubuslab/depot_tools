@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "462ccb20_b570063a",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-19T00:41:03Z",
+      "side": 1,
+      "message": "oh boo.",
+      "parentUuid": "0c15256e_474d3ae4",
+      "range": {
+        "startLine": 380,
+        "startChar": 0,
+        "endLine": 380,
+        "endChar": 15
+      },
+      "revId": "2b352f279f2444cf4532511de0ee5fd097e0e1ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d919ba81_e0527138",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 11
@@ -131,6 +155,30 @@
       "side": 1,
       "message": "gclient doesn\u0027t store the revision in the URL for the main solution (instead it is in the \"revision\" key).  It does for everything else iirc.",
       "parentUuid": "d919ba81_e0527138",
+      "range": {
+        "startLine": 415,
+        "startChar": 6,
+        "endLine": 415,
+        "endChar": 38
+      },
+      "revId": "2b352f279f2444cf4532511de0ee5fd097e0e1ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1295d058_17c6c9db",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-19T00:41:03Z",
+      "side": 1,
+      "message": "wierd :(",
+      "parentUuid": "9d6eb542_d5b1ab9f",
       "range": {
         "startLine": 415,
         "startChar": 6,

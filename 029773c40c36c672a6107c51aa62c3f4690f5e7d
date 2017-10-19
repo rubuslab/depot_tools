@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "89a5cb9b_08037303",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2017-10-19T02:37:01Z",
+      "side": 1,
+      "message": "I think we always want to see the output if there\u0027s output. If a hook says \"downloaded new compiler\" (for example), that\u0027s useful information. So this shouldn\u0027t hide output of successful commands. We should just require that commands are silent in the did-nothing case. (I believe that\u0027s what this CL currently does?)",
+      "parentUuid": "becfd733_3cce5f65",
+      "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5aa44c1_53828c14",
         "filename": "gclient.py",
         "patchSetId": 2

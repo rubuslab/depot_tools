@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ddd9dca_4136c96a",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2017-10-19T00:30:40Z",
+      "side": 1,
+      "message": "Cool! The way I imagined this was that we\u0027d pass the hook name as \u0027extra\u0027 here, and not print the command. And if a command does produce output, we\u0027d print the command and its output then.\n\nAs-is, I think this overwrites the last line of a command\u0027s output, which probably is not good.",
+      "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

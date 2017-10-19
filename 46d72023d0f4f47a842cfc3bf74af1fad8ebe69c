@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "552d0a02_28b310cb",
+        "filename": "gclient_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2017-10-19T18:41:04Z",
+      "side": 1,
+      "message": "Slightly hacky, but the alternative was to plumb in |progress| as well. However, since |progress| and |always| are not necessarily antonyms for each other, I thought this would be a bit confusing--so I just used always as an imperfect proxy for \u0027probably printing progress\u0027.",
+      "revId": "46d72023d0f4f47a842cfc3bf74af1fad8ebe69c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

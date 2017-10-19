@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "becfd733_3cce5f65",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2017-10-19T01:09:57Z",
+      "side": 1,
+      "message": "Done (with passing hook name as the extra arg).\n\nIn empirical testing, it doesn\u0027t seem to be eating the last line of output (the output from the one hook that currently always generates output is the same whether or not I run with -v). Here\u0027s the output without -v:\n$ gclient sync -j20 -D -f                                              \ndepot_tools update failed. Conflict in /usr/local/google/home/dcheng/src/depot_tools                   \nCannot rebase: You have unstaged changes.          \nPlease commit or stash them.                       \nSyncing projects: 100% (162/162), done.                                                                \n________ running \u0027/usr/bin/python src/tools/perf/conditionally_execute --gyp-condition fetch_telemetry_dependencies\u003d1 src/third_party/catapult/telemetry/bin/fetch_telemetry_binary_dependencies\u0027 in \u0027/usr/local/google/home/dcheng/src/chrome\u0027                  \nNot found \"fetch_telemetry_dependencies\u003d1\" condition in GYP_DEFINES\u003d\"[]\". Skip script execution.       \nRunning hooks: 100% (65/65), done.\n\nAnd with -v (trimmed to just the failing hook and some surrounding lines):\n________ running \u0027/usr/bin/python src/third_party/depot_tools/download_from_google_storage.py --no_resume --extract --no_auth --bucket chromium-nodejs/6.9.4 -s src/third_party/node/linux/node-linux-x64.tar.gz.sha1\u0027 in \u0027/usr/local/google/home/dcheng/src/chrome\u0027                                                 \n________ running \u0027/usr/bin/python src/third_party/depot_tools/download_from_google_storage.py --no_resume --extract --no_auth --bucket chromium-nodejs -s src/third_party/node/node_modules.tar.gz.sha1\u0027 in \u0027/usr/local/google/home/dcheng/src/chrome\u0027                                                               \n________ running \u0027/usr/bin/python src/tools/perf/conditionally_execute --gyp-condition fetch_telemetry_dependencies\u003d1 src/third_party/catapult/telemetry/bin/fetch_telemetry_binary_dependencies\u0027 in \u0027/usr/local/google/home/dcheng/src/chrome\u0027                                                                      \nNot found \"fetch_telemetry_dependencies\u003d1\" condition in GYP_DEFINES\u003d\"[]\". Skip script execution.       ________ running \u0027/usr/bin/python src/third_party/depot_tools/download_from_google_storage.py --no_resu\nme --no_auth --num_threads\u003d4 --bucket chromium-tools-traffic_annotation -d src/tools/traffic_annotation/bin/linux64\u0027 in \u0027/usr/local/google/home/dcheng/src/chrome\u0027                                            \n________ running \u0027/usr/bin/python src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --num_threads\u003d4 --bucket chromium-binary-patching -d src/chrome/installer/zucchini/testdat\na\u0027 in \u0027/usr/local/google/home/dcheng/src/chrome\u0027",
+      "parentUuid": "fde6fb0e_9cc1a4bd",
+      "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5aa44c1_53828c14",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -51,6 +69,24 @@
       "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98a2aea2_55f43c9a",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1506,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2017-10-19T01:09:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5aa44c1_53828c14",
+      "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

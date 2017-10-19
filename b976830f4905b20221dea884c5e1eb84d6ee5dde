@@ -34,6 +34,24 @@
       "revId": "b976830f4905b20221dea884c5e1eb84d6ee5dde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42c34bbc_93fa0e84",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-10-19T00:49:35Z",
+      "side": 1,
+      "message": "Oh, you\u0027re right, never mind. I",
+      "parentUuid": "98e6b916_d8bfbad6",
+      "revId": "b976830f4905b20221dea884c5e1eb84d6ee5dde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

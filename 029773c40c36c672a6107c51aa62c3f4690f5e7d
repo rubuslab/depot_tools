@@ -16,6 +16,41 @@
       "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fde6fb0e_9cc1a4bd",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-10-19T00:49:35Z",
+      "side": 1,
+      "message": "I\u0027d think we want to get to a point where we don\u0027t print the output on success unless someone specified -v, too, right? But not in this CL?",
+      "parentUuid": "5ddd9dca_4136c96a",
+      "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5aa44c1_53828c14",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1506,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-10-19T00:49:35Z",
+      "side": 1,
+      "message": "I think you need to modify this so that you create a pm if the command \u003d\u003d \u0027runhooks\u0027, because otherise it\u0027s null and this makes `gclient runhooks` be too silent.",
+      "revId": "029773c40c36c672a6107c51aa62c3f4690f5e7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

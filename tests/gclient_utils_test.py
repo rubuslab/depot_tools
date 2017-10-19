@@ -69,7 +69,7 @@ class CheckCallAndFilterTestCase(GclientUtilBase):
     self._inner(args, test_string)
     self.checkstdout('________ running \'boo foo bar\' in \'bleh\'\n'
         'ahah\naccb\nallo\naddb\n'
-        '________ running \'boo foo bar\' in \'bleh\'\nahah\naccb\nallo\naddb'
+        '\n________ running \'boo foo bar\' in \'bleh\'\nahah\naccb\nallo\naddb'
         '\n')
 
 

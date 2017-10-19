@@ -1,0 +1,722 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf7601a4_c716dd62",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "--get is unnecessary\n\n  git config remote.origin.url\n\nwould return the same thing",
+      "range": {
+        "startLine": 959,
+        "startChar": 24,
+        "endLine": 959,
+        "endChar": 34
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca728aa8_0f9bd196",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "this assumes that current branch directly or indirectly tracks a branch on remote named origin. Although it is true for most of cases, it is not correct in the general case. Please accept name of the remote as parameter",
+      "range": {
+        "startLine": 959,
+        "startChar": 42,
+        "endLine": 959,
+        "endChar": 48
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eedb8eb3_1cb5dce9",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "nit: 2 blank lines",
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb7be67c_95541513",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "nit: 2 blank lines before function declaration",
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0de45617_028350e6",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "split imports into blocks: stdlib, then depot_tool imports",
+      "range": {
+        "startLine": 42,
+        "startChar": 2,
+        "endLine": 47,
+        "endChar": 20
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e69ac73_b926fcdb",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "we are hardcoding the host twice. Please do it once\n\n\u0027https://%s/_ah/api/config/v1/config-sets?\u0027 % LUCI_CONFIG_HOST_NAME",
+      "range": {
+        "startLine": 50,
+        "startChar": 29,
+        "endLine": 50,
+        "endChar": 52
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0ba174b_2016f0ee",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "CONFIG_SETS_URL",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 16
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad88306f_c74ecd3a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "nit:\n\n  CONFIG_SET_URL \u003d (\n      \u0027https://luci-config.appspot.com/\u0027\u0027_ah/api/config/v1/config-sets?\u0027)\n\nwould be more readable and occupy same number of lines",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 51,
+        "endChar": 53
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c51dc0f2_9df88e10",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 52,
+        "startChar": 2,
+        "endLine": 53,
+        "endChar": 65
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "018195c3_cb3b2c19",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "please move these variable declarations as close to their usage as possible",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 57,
+        "endChar": 27
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3898b37d_ae992b5d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "this is the name of the remote. Please pass it to get_remote_url",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a1339da_78f5dc8e",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "none of this depends on changed_file, yet we run this len(input_put.AffectedFiles()) times. please move out of the loop",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 0
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50768f20_32de56c8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "compute this once, not in the loop",
+      "range": {
+        "startLine": 71,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 37
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22107c64_852b30f2",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "this is noop because returned value is not used",
+      "range": {
+        "startLine": 75,
+        "startChar": 6,
+        "endLine": 75,
+        "endChar": 44
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c2979ae_3e679bcd",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "use string formatting, i.e. \u0027%s/+/%s%s\u0027 % (foo, bar, qux)",
+      "range": {
+        "startLine": 76,
+        "startChar": 52,
+        "endLine": 76,
+        "endChar": 62
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9332b4f7_af1b1e2c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "this is incorrect, e.g. it would break a repo https://something.gitplace.com/a/b\nplease remove only suffix\n\ndo this once, not for every file, so that remote_host_url does not have .git suffix in the first place",
+      "range": {
+        "startLine": 76,
+        "startChar": 31,
+        "endLine": 76,
+        "endChar": 51
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59da923e_3e1b11a3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "i am not sure what we are trying to do here\nlocation is unique to the changed_file because it incorporates its unique file_path\n\u003d\u003e we will have exactly one element in each dict value\nalso location can be easily derived from changed_file, so I don\u0027t see a point of building this dict \u003d\u003e i don\u0027t see a point of this loop",
+      "range": {
+        "startLine": 78,
+        "startChar": 29,
+        "endLine": 78,
+        "endChar": 39
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86e25750_9fca0776",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "i think breaking the line after paren here would be more readable b/c args would be on the same line",
+      "range": {
+        "startLine": 82,
+        "startChar": 51,
+        "endLine": 82,
+        "endChar": 52
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b0bb244_d0892675",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "nit: please break the line after (",
+      "range": {
+        "startLine": 86,
+        "startChar": 37,
+        "endLine": 86,
+        "endChar": 39
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a70e7cc_9e682da5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "some of these variables have to be this long because this function is big (100LOC). Consider decomposing it into a couple of internal ones, e.g. I can see _GetConfigSets function that makes this requests and uses shorter variables names, e.g. req and res",
+      "range": {
+        "startLine": 89,
+        "startChar": 2,
+        "endLine": 89,
+        "endChar": 20
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5241afa5_03103c9a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "check HTTP status code before reading response",
+      "range": {
+        "startLine": 92,
+        "startChar": 30,
+        "endLine": 92,
+        "endChar": 49
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7344bf22_3dabc54a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "this reads from config_set_data twice (`in` here and [\u0027config_sets\u0027] below) twice, hardcodes the name of the key twice and assumes that presence of \u0027config_sets\u0027 key implies it is not empty\n\nconsider\n\n  config_sets \u003d config_set_data.get(\u0027config_sets\u0027)\n  if not config_sets:\n     ....",
+      "range": {
+        "startLine": 93,
+        "startChar": 2,
+        "endLine": 94,
+        "endChar": 72
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be587da6_e34b0ab9",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "consider using a shorter name, e.g. config_sets",
+      "range": {
+        "startLine": 95,
+        "startChar": 2,
+        "endLine": 95,
+        "endChar": 22
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12364ea4_7adeffc5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "i think locations of individual files only complicate things without providing value\n\nwe could filter config sets out based on remote_host_url and remote_branch that we\u0027ve computed earlier. For the remaining config sets, we could build a map dir-\u003econfig_set. Then we could iterate over changed files (for the first time), and map config sets to file paths (not locations that contain repo URL and remote branch)",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 60
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8905f8a_cb8446e7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "pref is config set location exactly, so I think this is a dict of locations. I think the same can be achieved with simpler\nconfig_sets \u003d {cs[\u0027config_set\u0027]: cs for cs in config_set_data[\u0027config_sets\u0027]}",
+      "range": {
+        "startLine": 103,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 47
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02d8db18_0aee2443",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "\u0027\\n\u0027.join(f.NewContents())",
+      "range": {
+        "startLine": 116,
+        "startChar": 26,
+        "endLine": 116,
+        "endChar": 58
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4950868d_a0f21261",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "break line after {",
+      "range": {
+        "startLine": 119,
+        "startChar": 26,
+        "endLine": 119,
+        "endChar": 27
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f442c47_182cb43d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "check http status code",
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff05ec2b_d60c9ff7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "please extract RPC code to a separate function",
+      "range": {
+        "startLine": 121,
+        "startChar": 4,
+        "endLine": 125,
+        "endChar": 52
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3e55497_eea64963",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "no need for if\n\n  for msg in validation_data.get(\u0027messages\u0027, []):",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 45
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "096782ff_d73623ea",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "i think we should indicate that it is a warning only once. presubmit system will properly decorate message output as warning. Please ensure that presubmit message prefixes are identical regardless of severity",
+      "range": {
+        "startLine": 132,
+        "startChar": 40,
+        "endLine": 133,
+        "endChar": 26
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4723d14_ca7f1d4a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-19T06:58:53Z",
+      "side": 1,
+      "message": "%",
+      "range": {
+        "startLine": 133,
+        "startChar": 52,
+        "endLine": 133,
+        "endChar": 53
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

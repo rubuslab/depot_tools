@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d55ba67a_b9bc8011",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2017-10-19T00:00:14Z",
+      "side": 1,
+      "message": "You don\u0027t need the `if progress`es.",
+      "revId": "b976830f4905b20221dea884c5e1eb84d6ee5dde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

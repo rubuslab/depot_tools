@@ -76,7 +76,7 @@ def check_gsutil(gsutil_bin):
   """Run gsutil version and make sure it runs."""
   return subprocess.call(
       [sys.executable, gsutil_bin, 'version'],
-      stdout=subprocess.PIPE, stderr=subprocess.STDOUT) == 0
+      stdout=sys.stdout, stderr=subprocess.STDOUT) == 0
 
 @contextlib.contextmanager
 def temporary_directory(base):

@@ -91,6 +91,8 @@ def _upload_worker(
               '%d> File %s already exists and MD5 matches, upload skipped' %
               (thread_num, filename))
           continue
+    else:
+      print 'blas'
     stdout_queue.put('%d> Uploading %s...' % (
         thread_num, filename))
     gsutil_args = ['cp']

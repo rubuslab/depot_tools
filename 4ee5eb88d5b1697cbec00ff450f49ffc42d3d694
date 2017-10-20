@@ -39,6 +39,30 @@
       "revId": "4ee5eb88d5b1697cbec00ff450f49ffc42d3d694",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "291f9ff4_f8969c2c",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1134874
+      },
+      "writtenOn": "2017-10-20T01:47:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64c50d2c_5aac1f41",
+      "range": {
+        "startLine": 508,
+        "startChar": 43,
+        "endLine": 508,
+        "endChar": 44
+      },
+      "revId": "4ee5eb88d5b1697cbec00ff450f49ffc42d3d694",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

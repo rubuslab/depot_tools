@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "1cc1790c_7faeec05",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca728aa8_0f9bd196",
+      "range": {
+        "startLine": 959,
+        "startChar": 42,
+        "endLine": 959,
+        "endChar": 48
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "12e870ba_56f2140d",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf7601a4_c716dd62",
+      "range": {
+        "startLine": 959,
+        "startChar": 24,
+        "endLine": 959,
+        "endChar": 34
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eedb8eb3_1cb5dce9",
         "filename": "git_common.py",
         "patchSetId": 4
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "5930874e_fd42e932",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eedb8eb3_1cb5dce9",
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eb7be67c_95541513",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -79,6 +145,24 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60f27eb4_51febfcb",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb7be67c_95541513",
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -102,6 +186,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78409f7f_676eaa7d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0de45617_028350e6",
+      "range": {
+        "startLine": 42,
+        "startChar": 2,
+        "endLine": 47,
+        "endChar": 20
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -151,6 +259,54 @@
     },
     {
       "key": {
+        "uuid": "3df2b7b8_9da4ab02",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e69ac73_b926fcdb",
+      "range": {
+        "startLine": 50,
+        "startChar": 29,
+        "endLine": 50,
+        "endChar": 52
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "948869a6_2fb90ef9",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0ba174b_2016f0ee",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 16
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ad88306f_c74ecd3a",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -171,6 +327,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27d828d0_ed8cb5ab",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad88306f_c74ecd3a",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 51,
+        "endChar": 53
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -197,6 +377,30 @@
     },
     {
       "key": {
+        "uuid": "b9c97718_549437ea",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c51dc0f2_9df88e10",
+      "range": {
+        "startLine": 52,
+        "startChar": 2,
+        "endLine": 53,
+        "endChar": 65
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "018195c3_cb3b2c19",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -217,6 +421,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8cf355b8_cb2b7495",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "018195c3_cb3b2c19",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 57,
+        "endChar": 27
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -243,6 +471,30 @@
     },
     {
       "key": {
+        "uuid": "337f4aa4_8cd96f63",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3898b37d_ae992b5d",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a1339da_78f5dc8e",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -263,6 +515,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "412e292d_7922fc2e",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a1339da_78f5dc8e",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 0
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -289,6 +565,30 @@
     },
     {
       "key": {
+        "uuid": "2188f52a_9dbfbfcd",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50768f20_32de56c8",
+      "range": {
+        "startLine": 71,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 37
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "22107c64_852b30f2",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -309,6 +609,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "deab0f65_aa581dc3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22107c64_852b30f2",
+      "range": {
+        "startLine": 75,
+        "startChar": 6,
+        "endLine": 75,
+        "endChar": 44
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -358,6 +682,54 @@
     },
     {
       "key": {
+        "uuid": "9e820042_ed301414",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9332b4f7_af1b1e2c",
+      "range": {
+        "startLine": 76,
+        "startChar": 31,
+        "endLine": 76,
+        "endChar": 51
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e855d93_3002e149",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c2979ae_3e679bcd",
+      "range": {
+        "startLine": 76,
+        "startChar": 52,
+        "endLine": 76,
+        "endChar": 62
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "59da923e_3e1b11a3",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -378,6 +750,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67fc36e4_e19748d5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59da923e_3e1b11a3",
+      "range": {
+        "startLine": 78,
+        "startChar": 29,
+        "endLine": 78,
+        "endChar": 39
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -404,6 +800,30 @@
     },
     {
       "key": {
+        "uuid": "c87dd9aa_5b0abaf2",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "86e25750_9fca0776",
+      "range": {
+        "startLine": 82,
+        "startChar": 51,
+        "endLine": 82,
+        "endChar": 52
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b0bb244_d0892675",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -424,6 +844,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "238a50ef_145131f9",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b0bb244_d0892675",
+      "range": {
+        "startLine": 86,
+        "startChar": 37,
+        "endLine": 86,
+        "endChar": 39
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -450,6 +894,30 @@
     },
     {
       "key": {
+        "uuid": "9c59bc98_5f84afb0",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a70e7cc_9e682da5",
+      "range": {
+        "startLine": 89,
+        "startChar": 2,
+        "endLine": 89,
+        "endChar": 20
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5241afa5_03103c9a",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -470,6 +938,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f24d2317_71297a2f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5241afa5_03103c9a",
+      "range": {
+        "startLine": 92,
+        "startChar": 30,
+        "endLine": 92,
+        "endChar": 49
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -496,6 +988,30 @@
     },
     {
       "key": {
+        "uuid": "ec5f6c47_36ca1083",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7344bf22_3dabc54a",
+      "range": {
+        "startLine": 93,
+        "startChar": 2,
+        "endLine": 94,
+        "endChar": 72
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be587da6_e34b0ab9",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -519,6 +1035,30 @@
     },
     {
       "key": {
+        "uuid": "704f7ef4_6b4dc2fc",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be587da6_e34b0ab9",
+      "range": {
+        "startLine": 95,
+        "startChar": 2,
+        "endLine": 95,
+        "endChar": 22
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "12364ea4_7adeffc5",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -530,6 +1070,30 @@
       "writtenOn": "2017-10-19T06:58:53Z",
       "side": 1,
       "message": "i think locations of individual files only complicate things without providing value\n\nwe could filter config sets out based on remote_host_url and remote_branch that we\u0027ve computed earlier. For the remaining config sets, we could build a map dir-\u003econfig_set. Then we could iterate over changed files (for the first time), and map config sets to file paths (not locations that contain repo URL and remote branch)",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 60
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "305d0c2d_90fd0788",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Ah I see what you mean. This is definitely much simpler than what I was originally thinking.\nPlease let me know if the newer version is more in line with what you were thinking!",
+      "parentUuid": "12364ea4_7adeffc5",
       "range": {
         "startLine": 102,
         "startChar": 8,
@@ -565,6 +1129,30 @@
     },
     {
       "key": {
+        "uuid": "ca122f96_aebc28af",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8905f8a_cb8446e7",
+      "range": {
+        "startLine": 103,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 47
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "02d8db18_0aee2443",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -588,6 +1176,30 @@
     },
     {
       "key": {
+        "uuid": "227b1b5f_6fcd3de2",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02d8db18_0aee2443",
+      "range": {
+        "startLine": 116,
+        "startChar": 26,
+        "endLine": 116,
+        "endChar": 58
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4950868d_a0f21261",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -608,6 +1220,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4823d4c_5c79ccf1",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4950868d_a0f21261",
+      "range": {
+        "startLine": 119,
+        "startChar": 26,
+        "endLine": 119,
+        "endChar": 27
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -651,6 +1287,48 @@
     },
     {
       "key": {
+        "uuid": "0c4cb631_b4625656",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff05ec2b_d60c9ff7",
+      "range": {
+        "startLine": 121,
+        "startChar": 4,
+        "endLine": 125,
+        "endChar": 52
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "745d9b00_157356ce",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f442c47_182cb43d",
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b3e55497_eea64963",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -671,6 +1349,30 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8887e5e5_49f872be",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3e55497_eea64963",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 45
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -717,6 +1419,54 @@
       "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c288a60a_458a91ac",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4723d14_ca7f1d4a",
+      "range": {
+        "startLine": 133,
+        "startChar": 52,
+        "endLine": 133,
+        "endChar": 53
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fc2aa8d0_86721d42",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-20T01:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "096782ff_d73623ea",
+      "range": {
+        "startLine": 132,
+        "startChar": 40,
+        "endLine": 133,
+        "endChar": 26
+      },
+      "revId": "32ca5b38093130138517b8a728285dd53ce9f184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

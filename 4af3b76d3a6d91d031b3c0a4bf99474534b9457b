@@ -1,0 +1,521 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "969d5ba2_318d2103",
+        "filename": "git_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "nit: there should be 2 blank lines",
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf6eee45_da757b74",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "nit: there was a blank line after this comment, now it is gone, please restore it",
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41973e1d_b6824c3f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "not remote_branch",
+      "range": {
+        "startLine": 55,
+        "startChar": 5,
+        "endLine": 55,
+        "endChar": 26
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "587a7eb1_ee263159",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "not remote_host_url",
+      "range": {
+        "startLine": 58,
+        "startChar": 5,
+        "endLine": 58,
+        "endChar": 28
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "039465a6_13efdfb7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "location_pref \u0027https://a.com/b\u0027 would match location \u0027https://a.com/bx\u0027\n\nplease add / after %s",
+      "range": {
+        "startLine": 63,
+        "startChar": 24,
+        "endLine": 63,
+        "endChar": 26
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63ce7ba8_8edc8fe3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "not need to accept it as a parameter here. It is available to this function already",
+      "range": {
+        "startLine": 74,
+        "startChar": 14,
+        "endLine": 74,
+        "endChar": 23
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e613f78d_166130f9",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "unnecessary",
+      "range": {
+        "startLine": 75,
+        "startChar": 30,
+        "endLine": 75,
+        "endChar": 31
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b716d31_8fa6fb94",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "unnecessary",
+      "range": {
+        "startLine": 76,
+        "startChar": 29,
+        "endLine": 76,
+        "endChar": 38
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22c8abec_20374010",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "looks like request function calls two completely different APIs depending on whether we pass body or not. This behavior is not obvious.\n\nI understand that you want to reduce code repetition in these 2 cases. We can still achieve it without baking specific of the cases in this function.\n\nPlease define\n\ndef request(endpoint, body\u003dNone):\n  ...\n\nand then make calls like this\n\nconfig_sets \u003d request(\u0027config-sets\u0027)\n...\nvalidation_data \u003d request(\u0027validate-config\u0027, body\u003d{...})",
+      "range": {
+        "startLine": 77,
+        "startChar": 4,
+        "endLine": 77,
+        "endChar": 50
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "886ffb0f_a25eb889",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "use LUCI_CONFIG_HOST_NAME defined above",
+      "range": {
+        "startLine": 78,
+        "startChar": 23,
+        "endLine": 78,
+        "endChar": 46
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "921de8b0_176106d6",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "this function accepts raw (json string) request body  but returns parsed responses body. This is inconsistent. Please accept request body as json-dumpable object, not string",
+      "range": {
+        "startLine": 79,
+        "startChar": 35,
+        "endLine": 79,
+        "endChar": 43
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9670b516_e49670e3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "break line after [",
+      "range": {
+        "startLine": 94,
+        "startChar": 24,
+        "endLine": 94,
+        "endChar": 25
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f877e12_a9781f45",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "use dict comprehension",
+      "range": {
+        "startLine": 96,
+        "startChar": 2,
+        "endLine": 98,
+        "endChar": 21
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5546f58d_3d3d0f8a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "with a slash in the end of prefix, we don\u0027t need this",
+      "range": {
+        "startLine": 98,
+        "startChar": 55,
+        "endLine": 98,
+        "endChar": 57
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15fa98a0_eed5863c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "for dr, cs in dir_to_config_set.iteritems():",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 32
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d108aa21_46b334cd",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "i don\u0027t see where we guarantee that dr ends with slash",
+      "range": {
+        "startLine": 103,
+        "startChar": 30,
+        "endLine": 103,
+        "endChar": 32
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17bc64c4_436de6c7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "see above, unnecessary",
+      "range": {
+        "startLine": 104,
+        "startChar": 8,
+        "endLine": 104,
+        "endChar": 34
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bebd578_5459f3a2",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "inline",
+      "range": {
+        "startLine": 105,
+        "startChar": 8,
+        "endLine": 105,
+        "endChar": 15
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46c7ec49_1a3009e7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "cs_to_files[cs].append({\n          \u0027path\u0027: ....,\n          \u0027content\u0027: .....  \n        })",
+      "range": {
+        "startLine": 106,
+        "startChar": 25,
+        "endLine": 106,
+        "endChar": 31
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9457ba92_bc7db81b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "lstrip, to clarify intention",
+      "range": {
+        "startLine": 107,
+        "startChar": 41,
+        "endLine": 107,
+        "endChar": 46
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b2b561d_d550c5b2",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "use iteritems alike above",
+      "range": {
+        "startLine": 110,
+        "startChar": 54,
+        "endLine": 110,
+        "endChar": 69
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "baa38ccb_9078bc83",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "the code handling of urllib2.HTTPError is pretty much the same for all requests here. Please declare one big try..except block that catches urllib2.HTTPError",
+      "range": {
+        "startLine": 113,
+        "startChar": 4,
+        "endLine": 115,
+        "endChar": 67
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47d19dc7_d25f7f51",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-20T06:02:32Z",
+      "side": 1,
+      "message": "in these 3 cases the only thing that differs is the function that we call to create an output object. move the rest after the if statements\n\n      if sev \u003d\u003d \u0027WARNING\u0027:\n        out_f \u003d output_api.PresubmitPromptWarning\n      elif sev \u003d\u003d \u0027ERROR\u0027 or sev \u003d\u003d \u0027CRITICAL\u0027:\n        out_f \u003d output_api.PresubmitError\n      else:\n        out_f \u003d output_api.PresubmitNotifyResult\n      outputs.append(out_f(...))\n\ninline txt, since there will be only one usage",
+      "range": {
+        "startLine": 119,
+        "startChar": 6,
+        "endLine": 129,
+        "endChar": 43
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

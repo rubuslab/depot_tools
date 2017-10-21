@@ -3067,7 +3067,9 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       refspec_opts.append('m=' + title.replace(' ', '_'))
 
     if options.private:
-      refspec_opts.append('private')
+      # refspec_opts.append('private')
+      # TODO(agable): re-enable private for Gerrit.
+      DieWithError('private isn\'t supported with Gerrit')
 
     if options.topic:
       # Documentation on Gerrit topics is here:

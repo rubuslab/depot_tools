@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1013b140_074df561",
+        "filename": "gsutil.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-21T06:40:31Z",
+      "side": 1,
+      "message": "Is the creation of gsutil_bin an atomic action? Maybe a flag file that\u0027s created after the package is installed?",
+      "range": {
+        "startLine": 87,
+        "startChar": 54,
+        "endLine": 88,
+        "endChar": 25
+      },
+      "revId": "f53268121bea8480b1c09d1cbffcded12b0974d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "baf878f2_27710e29",
+        "filename": "gsutil.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-21T06:40:31Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is great; I think I would:\n  * check to see if a flag file exists\n  * do the installation\n  * check the installation (as before)\n  * drop the flag file",
+      "range": {
+        "startLine": 117,
+        "startChar": 9,
+        "endLine": 117,
+        "endChar": 23
+      },
+      "revId": "f53268121bea8480b1c09d1cbffcded12b0974d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -124,12 +124,6 @@ class GsutilUnitTests(unittest.TestCase):
     gsutil_bin = os.path.join(gsutil_dir, 'gsutil')
     os.makedirs(gsutil_dir)
 
-    self.fake.add_expectation(
-        [sys.executable, gsutil_bin, 'version'], stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT, _returns=1)
-
-    with open(gsutil_bin, 'w') as f:
-      f.write('Foobar')
     zip_filename = 'gsutil_%s.zip' % version
     url = '%s%s' % (gsutil.GSUTIL_URL, zip_filename)
     _, tempzip = tempfile.mkstemp()
@@ -138,14 +132,9 @@ class GsutilUnitTests(unittest.TestCase):
       zf.writestr('gsutil/gsutil', fake_gsutil)
     with open(tempzip, 'rb') as f:
       self.fake.add_expectation(url, _returns=Buffer(f.read()))
-    self.fake.add_expectation(
-        [sys.executable, gsutil_bin, 'version'], stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT, _returns=1)
 
-    # This should delete the old bin and rewrite it with 'Fake gsutil'
-    self.assertRaises(
-        gsutil.InvalidGsutilError, gsutil.ensure_gsutil, version, self.tempdir,
-        False)
+    # This should write the gsutil_bin with 'Fake gsutil'
+    gsutil.ensure_gsutil(version, self.tempdir, False)
     self.assertTrue(os.path.exists(gsutil_bin))
     with open(gsutil_bin, 'r') as f:
       self.assertEquals(f.read(), fake_gsutil)
@@ -156,11 +145,6 @@ class GsutilUnitTests(unittest.TestCase):
     gsutil_dir = os.path.join(self.tempdir, 'gsutil_%s' % version, 'gsutil')
     gsutil_bin = os.path.join(gsutil_dir, 'gsutil')
     os.makedirs(gsutil_dir)
-
-    # Mock out call().
-    self.fake.add_expectation(
-        [sys.executable, gsutil_bin, 'version'],
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, _returns=0)
 
     with open(gsutil_bin, 'w') as f:
       f.write('Foobar')

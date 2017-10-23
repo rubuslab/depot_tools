@@ -91,6 +91,52 @@
       "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b64ecfd2_2d4dbe77",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-10-23T23:30:03Z",
+      "side": 1,
+      "message": "how fast is this call? If it\u0027s like 1s, I don\u0027t mind serial execution. If 10s, then I personally would prefer parallel execution (in this CL, just a #TODO to parallelize later).",
+      "range": {
+        "startLine": 107,
+        "startChar": 6,
+        "endLine": 108,
+        "endChar": 65
+      },
+      "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a26a5a9_d6fba6c8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-10-23T23:30:03Z",
+      "side": 1,
+      "message": "try..except should cover as little as possible. I recommend removing giant try..except and instead surrounding just the `res \u003d requst(...)...` lines:\n\ntry:\n  res \u003d request(\n          \u0027validate-config\u0027, body\u003d{\u0027config_set\u0027: cs, \u0027files\u0027: f})\nexcept urllib2.HTTPError as e:\n    return [output_api.PresubmitError(\n        \u0027Request to luci-config failed\u0027, long_text\u003dstr(e))]\n\nand the same above. It\u0027s a bit of copy-pasta, but makes it easier to read and discourages later changes that would add more exception classes to giant except clause.",
+      "range": {
+        "startLine": 119,
+        "startChar": 2,
+        "endLine": 121,
+        "endChar": 59
+      },
+      "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

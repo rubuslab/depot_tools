@@ -1012,6 +1012,30 @@
     },
     {
       "key": {
+        "uuid": "b63df1ae_8f736888",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "i meant that this applies to both get-config-sets and validation requests. see also comment in the new patchset",
+      "parentUuid": "6e30fc62_a88e6c57",
+      "range": {
+        "startLine": 113,
+        "startChar": 4,
+        "endLine": 115,
+        "endChar": 67
+      },
+      "revId": "4af3b76d3a6d91d031b3c0a4bf99474534b9457b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "47d19dc7_d25f7f51",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 7

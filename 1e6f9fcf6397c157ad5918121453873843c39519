@@ -1,0 +1,297 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0c353012_11f4b98a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "unnecessary",
+      "range": {
+        "startLine": 61,
+        "startChar": 5,
+        "endLine": 61,
+        "endChar": 6
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "784df891_f818c3a7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "please move declaration of location_pref as close to usage as possible",
+      "range": {
+        "startLine": 63,
+        "startChar": 2,
+        "endLine": 63,
+        "endChar": 15
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2fd398d_c52ff9f5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "what if body is {}? we should pass \u0027{}\u0027 then, not None.\n\n  None if body is None else json.dumps(body)\n\nwould solve this, however one line below we have the same kind of check.\n\nit would be simpler to have one if condition for this one case instead of two if conditions. please remove this arg and below write\n\nif body is not None:\n  req.add_data(...)\n  req.add_header(...)",
+      "range": {
+        "startLine": 77,
+        "startChar": 55,
+        "endLine": 77,
+        "endChar": 59
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2dcd250_aa3342d4",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "nit: we have unconditional req construction (L77), then conditional content header (L79) and then again unconditional auth header here. Ideally it would be all unconditional stuff first, and then conditional stuff\n\nplease put this right after req creation or pass headers argument to urllib2.Request",
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8067cb00_dbf96c73",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "nit: inline",
+      "range": {
+        "startLine": 81,
+        "startChar": 4,
+        "endLine": 81,
+        "endChar": 8
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db3a5f40_734e6059",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "from the user perspective, all http errors from luci-config is pretty much the same thing. Please define one big try..except block for http errors of both config-set and validation requests and make the error message saying that luci-config request failed",
+      "range": {
+        "startLine": 86,
+        "startChar": 2,
+        "endLine": 88,
+        "endChar": 62
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9cfa8574_8fb0d003",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "filtered_config_set is used only in dir_to_conifg_set which is a comprehension itself. it would be simpler to move the if statement to the dict comprehension",
+      "range": {
+        "startLine": 93,
+        "startChar": 31,
+        "endLine": 93,
+        "endChar": 74
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd9317f7_40bb838f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "cs[\u0027location\u0027] may end with slash",
+      "range": {
+        "startLine": 95,
+        "startChar": 9,
+        "endLine": 95,
+        "endChar": 10
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fe02be4_8355707f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "why this is needed? LocalPath cannot have back slashes \n\nhttps://cs.chromium.org/chromium/tools/depot_tools/presubmit_support.py?q\u003dLocalPath+file:depot_to\u0026sq\u003dpackage:chromium\u0026l\u003d689\n\nhttps://cs.chromium.org/chromium/tools/depot_tools/presubmit_support.py?q\u003dLocalPath+file:depot_to\u0026sq\u003dpackage:chromium\u0026l\u003d75\n\nthis wasn\u0027t obvious though b/c LocalPath docstring does not mention that. Let\u0027s update the docstring instead",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 56
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08938f0c_3ac641d6",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "nit: inline",
+      "range": {
+        "startLine": 114,
+        "startChar": 6,
+        "endLine": 114,
+        "endChar": 10
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b89b33d7_f80693d5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "nit: rename to res",
+      "range": {
+        "startLine": 115,
+        "startChar": 6,
+        "endLine": 115,
+        "endChar": 21
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4fd513d_040d5076",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "remove, this is a string for humans",
+      "range": {
+        "startLine": 124,
+        "startChar": 36,
+        "endLine": 124,
+        "endChar": 37
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68069282_be883bae",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T19:54:48Z",
+      "side": 1,
+      "message": "nit: there is no reason to have return outside of the try..except block. please move it inside and then you can move the declaration of outputs into the try..except block too",
+      "range": {
+        "startLine": 128,
+        "startChar": 2,
+        "endLine": 128,
+        "endChar": 16
+      },
+      "revId": "1e6f9fcf6397c157ad5918121453873843c39519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

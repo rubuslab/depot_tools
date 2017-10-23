@@ -39,10 +39,6 @@ else
   fi
 fi
 
-if [ -e "$base_dir/.disable_auto_update" ]; then
-  exit
-fi
-
 # We want to update the bundled tools even under MinGW.
 if [ $MINGW = 0 ]; then
   $COMSPEC /c `cygpath -w "$base_dir/bootstrap/win/win_tools.bat"`
@@ -56,6 +52,10 @@ if [ $MINGW = 0 ]; then
     *)
       exit $?
   esac
+fi
+
+if [ -e "$base_dir/.disable_auto_update" ]; then
+  exit
 fi
 
 CANONICAL_GIT_URL="https://chromium.googlesource.com/chromium/tools/depot_tools.git"

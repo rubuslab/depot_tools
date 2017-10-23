@@ -19,15 +19,15 @@ IF "%~nx0"=="update_depot_tools.bat" (
 set DEPOT_TOOLS_DIR=%~1
 SHIFT
 
-IF EXIST "%DEPOT_TOOLS_DIR%.disable_auto_update" GOTO :EOF
-
-set GIT_URL=https://chromium.googlesource.com/chromium/tools/depot_tools.git
-
 :: Will download git and python.
 call "%DEPOT_TOOLS_DIR%bootstrap\win\win_tools.bat"
 if errorlevel 1 goto :EOF
 :: Now clear errorlevel so it can be set by other programs later.
 set errorlevel=
+
+IF EXIST "%DEPOT_TOOLS_DIR%.disable_auto_update" GOTO :EOF
+
+set GIT_URL=https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
 :: Shall skip automatic update?
 IF "%DEPOT_TOOLS_UPDATE%" == "0" GOTO :EOF

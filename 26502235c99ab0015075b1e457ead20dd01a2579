@@ -137,6 +137,29 @@
       "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf274380_b5933de9",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1871,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-10-23T23:33:34Z",
+      "side": 1,
+      "message": "please add a test for your new config validation. This test could be a good start to fake local file changes.\nUnfortunately, this tests are still living in ~2009 with Py 2.5 and mox library :(",
+      "range": {
+        "startLine": 1871,
+        "startChar": 6,
+        "endLine": 1871,
+        "endChar": 36
+      },
+      "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

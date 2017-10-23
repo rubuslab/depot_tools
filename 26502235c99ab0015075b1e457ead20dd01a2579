@@ -140,6 +140,30 @@
     },
     {
       "key": {
+        "uuid": "cbb8ae47_8e2eed8e",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T23:34:34Z",
+      "side": 1,
+      "message": "FWIW myjang@ had individual try..except blocks and I\u0027ve recommended one try..except because luci-config is the only service we talk to and HTTPError from any luci-config methods is treated the same way\n\nbut you and myjang@ are right, better to have smaller try..except blocks",
+      "parentUuid": "5a26a5a9_d6fba6c8",
+      "range": {
+        "startLine": 119,
+        "startChar": 2,
+        "endLine": 121,
+        "endChar": 59
+      },
+      "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cf274380_b5933de9",
         "filename": "tests/presubmit_unittest.py",
         "patchSetId": 12

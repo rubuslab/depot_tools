@@ -9,6 +9,7 @@
 import argparse
 import base64
 import contextlib
+import datetime
 import hashlib
 import json
 import os
@@ -72,12 +73,6 @@ def download_gsutil(version, target_dir):
   return target_filename
 
 
-def check_gsutil(gsutil_bin):
-  """Run gsutil version and make sure it runs."""
-  return subprocess.call(
-      [sys.executable, gsutil_bin, 'version'],
-      stdout=subprocess.PIPE, stderr=subprocess.STDOUT) == 0
-
 @contextlib.contextmanager
 def temporary_directory(base):
   tmpdir = tempfile.mkdtemp(prefix='gsutil_py', dir=base)
@@ -90,7 +85,10 @@ def temporary_directory(base):
 def ensure_gsutil(version, target, clean):
   bin_dir = os.path.join(target, 'gsutil_%s' % version)
   gsutil_bin = os.path.join(bin_dir, 'gsutil', 'gsutil')
-  if not clean and os.path.isfile(gsutil_bin) and check_gsutil(gsutil_bin):
+  gsutil_flag = os.path.join(bin_dir, 'gsutil', 'flag.CHROMIUM')
+  # We assume that if gsutil_bin exists, then we have a good version
+  # of the gsutil package.
+  if not clean and os.path.isfile(gsutil_flag):
     # Everything is awesome! we're all done here.
     return gsutil_bin
 
@@ -116,9 +114,12 @@ def ensure_gsutil(version, target, clean):
     except (OSError, IOError):
       # Something else did this in parallel.
       pass
+    # Drop a flag file.
+    with open(gsutil_flag, 'w') as f:
+      f.write(datetime.datetime.utcnow().isoformat())
 
   # Final check that the gsutil bin is okay.  This should never fail.
-  if not check_gsutil(gsutil_bin):
+  if not os.path.isfile(gsutil_bin):
     raise InvalidGsutilError()
   return gsutil_bin
 

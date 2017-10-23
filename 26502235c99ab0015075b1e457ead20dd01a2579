@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4df0ae03_c65d0843",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T22:11:43Z",
+      "side": 1,
+      "message": "nit: for dicts and lists, the indentation should be 2 spaces, so please -2 space indent here. thank you",
+      "range": {
+        "startLine": 89,
+        "startChar": 6,
+        "endLine": 89,
+        "endChar": 8
+      },
+      "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73860e50_010ed411",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T22:11:43Z",
+      "side": 1,
+      "message": "nit: please  move if to the next line",
+      "range": {
+        "startLine": 90,
+        "startChar": 29,
+        "endLine": 90,
+        "endChar": 30
+      },
+      "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2faf962a_9181ef41",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T22:11:43Z",
+      "side": 1,
+      "message": "luci-config always uses forward slashes\nthis code assumes that _os.altsep\u003d\u003d\u0027/\u0027\n\nI\u0027d rather you do\n\n  file_path \u003d f.LocalPath().replace(_os.sep, \u0027/\u0027)\n\nwhich would also be 1 line vs 3",
+      "range": {
+        "startLine": 96,
+        "startChar": 6,
+        "endLine": 97,
+        "endChar": 58
+      },
+      "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2113c763_d4277832",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-10-23T22:11:43Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 101,
+        "startChar": 13,
+        "endLine": 101,
+        "endChar": 15
+      },
+      "revId": "26502235c99ab0015075b1e457ead20dd01a2579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

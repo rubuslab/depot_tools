@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12f5931e_965e3477",
+        "filename": "gsutil.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-23T18:09:43Z",
+      "side": 1,
+      "message": "install.flag is probably a better name; I don\u0027t think this really has anything to do with chromium?",
+      "range": {
+        "startLine": 88,
+        "startChar": 49,
+        "endLine": 88,
+        "endChar": 62
+      },
+      "revId": "741c16ede4a9146fb396b29261482485ebfb0cd1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8a950be_783ba860",
+        "filename": "gsutil.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-23T18:09:43Z",
+      "side": 1,
+      "message": "gsutil_flag",
+      "range": {
+        "startLine": 89,
+        "startChar": 22,
+        "endLine": 89,
+        "endChar": 32
+      },
+      "revId": "741c16ede4a9146fb396b29261482485ebfb0cd1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bcbd617f_b57e63be",
+        "filename": "gsutil.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-23T18:09:43Z",
+      "side": 1,
+      "message": "I think the mtime of the file would be good enough for debugging?",
+      "range": {
+        "startLine": 119,
+        "startChar": 14,
+        "endLine": 119,
+        "endChar": 52
+      },
+      "revId": "741c16ede4a9146fb396b29261482485ebfb0cd1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea31e7ad_03e84ea2",
+        "filename": "gsutil.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-23T18:09:43Z",
+      "side": 1,
+      "message": "this check should happen before the flag file drop",
+      "range": {
+        "startLine": 121,
+        "startChar": 4,
+        "endLine": 121,
+        "endChar": 69
+      },
+      "revId": "741c16ede4a9146fb396b29261482485ebfb0cd1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

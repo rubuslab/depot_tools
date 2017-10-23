@@ -1705,6 +1705,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
       'GetCodereviewOwnerAndReviewers',
       'GetPythonUnitTests', 'GetPylint',
       'GetUnitTests', 'GetUnitTestsInDirectory', 'GetUnitTestsRecursively',
+      'CheckChangedConfigs',
     ]
     # If this test fails, you should add the relevant test.
     self.compareMembers(presubmit_canned_checks, members)

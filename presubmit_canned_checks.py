@@ -37,7 +37,94 @@ BLACKLIST_LINT_FILTERS = [
   '-build/c++11',
 ]
 
+
 ### Description checks
+
+def CheckChangedConfigs(input_api, output_api):
+  import urllib2
+  import json
+  import collections
+
+  import auth
+  import git_common as git
+  import git_cl
+
+  LUCI_CONFIG_HOST_NAME = 'luci-config.appspot.com'
+
+  cl = git_cl.Changelist()
+  remote, remote_branch = cl.FetchUpstreamTuple(cl.GetBranch())
+  if not remote_branch:
+    return [output_api.PresubmitError('Upstream branch has not been set')]
+  remote_host_url = git.get_remote_url(remote=remote)
+  if not remote_host_url:
+    return [output_api.PresubmitError(
+        'Remote host url for git has not been defined')]
+  if (remote_host_url.endswith('.git')):
+    remote_host_url = remote_host_url[:-len('.git')]
+  location_pref = '%s/+/%s/' % (remote_host_url, remote_branch)
+
+  # authentication
+  try:
+    authenticator = auth.get_authenticator_for_host(
+        LUCI_CONFIG_HOST_NAME, auth.make_auth_config())
+    acc_tkn = authenticator.get_access_token(allow_user_interaction=True).token
+  except auth.AuthenticationError as e:
+    return [output_api.PresubmitError(
+        'Error in authenticating user.', long_text=str(e))]
+
+  def request(endpoint, body=None):
+    api_url = ('https://%s/_ah/api/config/v1/%s'
+               % (LUCI_CONFIG_HOST_NAME, endpoint))
+    req = urllib2.Request(api_url, json.dumps(body) if body else None)
+    if body:
+      req.add_header('Content-Type', 'application/json')
+    req.add_header('Authorization', 'Bearer %s' % acc_tkn)
+    resp = urllib2.urlopen(req)
+    return json.load(resp)
+
+  try:
+    config_sets = request('config-sets').get('config_sets')
+  except urllib2.HTTPError as e:
+    return [output_api.PresubmitError(
+        'Error in requesting config_sets.', long_text=str(e))]
+  if not config_sets:
+    return [output_api.PresubmitWarning('No config_sets were returned')]
+
+  filtered_config_set = [
+      cs for cs in config_sets if cs['location'].startswith(location_pref)]
+  dir_to_config_set = {
+      '%s/' % cs['location'][len(location_pref):]: cs['config_set']
+      for cs in filtered_config_set
+  }
+  cs_to_files = collections.defaultdict(list)
+  for f in input_api.AffectedFiles():
+    file_path = f.LocalPath()
+    for dr, cs in dir_to_config_set.iteritems():
+      if file_path.startswith(dr):
+        cs_to_files[cs].append({
+             'path': file_path[len(dr):].lstrip('/'),
+             'content': '\n'.join(f.NewContents())
+        })
+
+  outputs = []
+  try:
+    for cs, f in cs_to_files.iteritems():
+      body = {'config_set': cs, 'files': f}
+      validation_data = request('validate-config', body=body)
+      for msg in validation_data.get('messages', []):
+        sev = msg['severity']
+        if sev == 'WARNING':
+          out_f = output_api.PresubmitPromptWarning
+        elif sev == 'ERROR' or sev == 'CRITICAL':
+          out_f = output_api.PresubmitError
+        else:
+          out_f = output_api.PresubmitNotifyResult
+        outputs.append(out_f('Config_validation: %s' % msg['text']))
+  except urllib2.HTTPError as e:
+    return [output_api.PresubmitError(
+        'Error in sending validation request', long_text=str(e))]
+  return outputs
+
 
 def CheckChangeHasBugField(input_api, output_api):
   """Requires that the changelist have a Bug: field."""

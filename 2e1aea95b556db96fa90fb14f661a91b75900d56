@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "d83cfac2_3b691183",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-25T19:30:45Z",
+      "side": 1,
+      "message": "Yeah - I guess what I\u0027m saying is that either *all* pre-upload errors should be optional. If any are severe enough to block upload, this is probably one of them.",
+      "parentUuid": "6a727bc2_5fca0eb7",
+      "range": {
+        "startLine": 1215,
+        "startChar": 30,
+        "endLine": 1215,
+        "endChar": 52
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6cbf737a_4cc297f3",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "How?",
       "parentUuid": "6cbf737a_4cc297f3",
+      "range": {
+        "startLine": 1218,
+        "startChar": 31,
+        "endLine": 1218,
+        "endChar": 32
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "372c4684_13313d90",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1218,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-25T19:30:45Z",
+      "side": 1,
+      "message": "I think the parenthesis are unnecessary?\n\nfile_filter \u003d file_filter or lambda f: f.LocalPath().wndswith(\u0027.vpython\u0027)\n\nCould be wrong, though.",
+      "parentUuid": "bb03247b_122ab730",
       "range": {
         "startLine": 1218,
         "startChar": 31,
@@ -143,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "bd0fc784_62bcc014",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-25T19:30:45Z",
+      "side": 1,
+      "message": "That is not correct. A repository can have as many \".vpython\" files as they want, and they can have as many \"XXX.vpython\" files as they want.",
+      "parentUuid": "7a675a08_a6ac3fa2",
+      "range": {
+        "startLine": 1220,
+        "startChar": 2,
+        "endLine": 1220,
+        "endChar": 25
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c3a4ac2e_55163b76",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -178,6 +250,30 @@
       "side": 1,
       "message": "It is logged via str(e) below, which prints stdout and stderr. See tests for an example.",
       "parentUuid": "c3a4ac2e_55163b76",
+      "range": {
+        "startLine": 1228,
+        "startChar": 0,
+        "endLine": 1228,
+        "endChar": 35
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3ae07d3_e69c66d2",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-25T19:30:45Z",
+      "side": 1,
+      "message": "OK, I didn\u0027t realize that CalledProcessError includes STDOUT.",
+      "parentUuid": "049a6cdc_288a8307",
       "range": {
         "startLine": 1228,
         "startChar": 0,

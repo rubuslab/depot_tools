@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65d78785_95c83a73",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-10-25T18:08:01Z",
+      "side": 1,
+      "message": "I added this in the case where the location does not end with a \u0027/\u0027 and the loc_pref exactly matches the location field of a config_set.\n\nThis comes up with projects/chromium configset where the location is\nhttps://chromium.googlesource.com/chromium/src/+/refs/heads/infra/config\n\nIn this case, the prefix generated here would be\nhttps://chromium.googlesource.com/chromium/src/+/refs/heads/infra/config/\n\nwhich would incorrectly skip over this config set as the one not corresponding to the changes made.",
+      "range": {
+        "startLine": 95,
+        "startChar": 4,
+        "endLine": 95,
+        "endChar": 40
+      },
+      "revId": "83552cd9bc68ac5e51e5ae80d905f2abe384ddc8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "093e09ec_91bb89b6",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1925,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-10-25T21:58:05Z",
+      "side": 1,
+      "message": "lambda: affected_files\nand you don\u0027t need test.",
+      "range": {
+        "startLine": 1925,
+        "startChar": 30,
+        "endLine": 1925,
+        "endChar": 34
+      },
+      "revId": "2705d4b8cdb97f412d7c3feb780023ff978af6d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

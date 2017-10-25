@@ -1131,3 +1131,29 @@ def CheckGNFormatted(input_api, output_api):
   # It's just a warning, so ignore other types of failures assuming they'll be
   # caught elsewhere.
   return warnings
+
+
+def CheckVPythonSpec(input_api, output_api):
+  """Validates any changed .vpython files with vpython verification tool."""
+  if input_api.is_committing:
+    message_type = output_api.PresubmitError
+  else:
+    message_type = output_api.PresubmitPromptWarning
+
+  warnings = []
+  affected_files = input_api.AffectedFiles(
+      # This captures both global .vpython files and script-specific
+      # <script-file>.vpython files.
+      file_filter=lambda f: f.LocalPath().endswith('.vpython'))
+  for f in affected_files:
+    try:
+      input_api.subprocess.check_output([
+        'vpython',
+        '-vpython-spec', f.AbsoluteLocalPath(),
+        '-vpython-tool', 'verify'
+      ], stderr=input_api.subprocess.STDOUT)
+    except input_api.subprocess.CalledProcessError as e:
+      warnings.append(message_type(
+        'VPython verification tool returned non-zero code for %s: %d' % (
+          f.AbsoluteLocalPath(), e.returncode), long_text=str(e)))
+  return warnings

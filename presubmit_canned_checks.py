@@ -1193,3 +1193,40 @@ def CheckCIPDPackages(input_api, output_api, platforms, packages):
   for k, v in packages.iteritems():
     manifest.append('%s %s' % (k, v))
   return CheckCIPDManifest(input_api, output_api, content='\n'.join(manifest))
+
+
+def CheckVPythonSpec(input_api, output_api, file_filter=None):
+  """Validates any changed .vpython files with vpython verification tool.
+
+  Args:
+    input_api: Bag of input related interfaces.
+    output_api: Bag of output related interfaces.
+    file_filter: Custom function that takes a path (relative to client root) and
+      returns boolean, which is used to filter files for which to apply the
+      verification to. Defaults to any path ending with .vpython, which captures
+      both global .vpython and <script>.vpython files.
+
+  Returns:
+    A list of warning or error objects.
+  """
+  if input_api.is_committing:
+    message_type = output_api.PresubmitError
+  else:
+    message_type = output_api.PresubmitPromptWarning
+
+  warnings = []
+  file_filter = file_filter or (lambda f: f.LocalPath().endswith('.vpython'))
+  affected_files = input_api.AffectedFiles(file_filter=file_filter)
+  for f in affected_files:
+    try:
+      input_api.subprocess.check_output([
+        'vpython',
+        '-vpython-spec', f.AbsoluteLocalPath(),
+        '-vpython-tool', 'verify'
+      ], stderr=input_api.subprocess.STDOUT)
+    except input_api.subprocess.CalledProcessError as e:
+      warnings.append(message_type(
+        'VPython verification tool returned non-zero code for %s: %d' % (
+          f.AbsoluteLocalPath(), e.returncode), long_text=str(e)))
+
+  return warnings

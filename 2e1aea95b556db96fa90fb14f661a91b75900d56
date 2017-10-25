@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33f524dd_f7e26419",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-25T12:26:58Z",
+      "side": 1,
+      "message": "Why do this? If the spec is invalid, committing should not happen. I think we should enforce 100% of the time.",
+      "range": {
+        "startLine": 1215,
+        "startChar": 30,
+        "endLine": 1215,
+        "endChar": 52
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cbf737a_4cc297f3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1218,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-25T12:26:58Z",
+      "side": 1,
+      "message": "nit: can get rid of this lambda",
+      "range": {
+        "startLine": 1218,
+        "startChar": 31,
+        "endLine": 1218,
+        "endChar": 32
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d220914c_c4630bed",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-25T12:26:58Z",
+      "side": 1,
+      "message": "We should run these checks in parallel.",
+      "range": {
+        "startLine": 1220,
+        "startChar": 2,
+        "endLine": 1220,
+        "endChar": 25
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3a4ac2e_55163b76",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-25T12:26:58Z",
+      "side": 1,
+      "message": "The output of verification is really useful, since it specifies which entries failed to verify. I think that you should include this in the error message.",
+      "range": {
+        "startLine": 1228,
+        "startChar": 0,
+        "endLine": 1228,
+        "endChar": 35
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

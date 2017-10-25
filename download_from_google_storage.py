@@ -343,6 +343,8 @@ def download_from_google_storage(
     input_filename, base_url, gsutil, num_threads, directory, recursive,
     force, output, ignore_errors, sha1_file, verbose, auto_platform, extract):
   # Start up all the worker threads.
+  if num_threads > 1:
+    gsutil.check_call('version')  # Call this once to ensure it exists.
   all_threads = []
   download_start = time.time()
   stdout_queue = Queue.Queue()
@@ -488,7 +490,6 @@ def main(args):
   else:
     parser.error('gsutil not found in %s, bad depot_tools checkout?' %
                  GSUTIL_DEFAULT_PATH)
-  gsutil.check_call('version')  # Call this once to ensure it exists.
 
   # Passing in -g/--config will run our copy of GSUtil, then quit.
   if options.config:

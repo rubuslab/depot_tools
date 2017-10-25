@@ -217,6 +217,7 @@ def CheckChangeHasNoCrAndHasOnlyOneEol(input_api, output_api,
       items=eof_files))
   return outputs
 
+
 def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
   """Checks that there are no gendered pronouns in any of the text files to be
   submitted.
@@ -236,6 +237,22 @@ def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
                                               long_text='\n'.join(errors))]
   return []
 
+
+def CheckPrivateKeys(input_api, output_api, source_file_filter=None):
+  """Checks that there are no private keys included in the CL
+  """
+  private_key_re = input_api.re.compile('-----BEGIN PRIVATE KEY-----')
+
+  errors = []
+  for f in input_api.AffectedFiles(include_deletes=False,
+                                   file_filter=source_file_filter):
+    for line_num, line in f.ChangedFileContents():
+      if private_key_re.search(line):
+        errors.append('%s (%d): %s' % (f.LocalPath(), line_num, line))
+
+    return [output_api.PresubmitPromptWarning('Found a private key in:',
+                                              long_text='\n'.join(errors))]
+  return []
 
 
 def _ReportErrorFileAndLine(filename, line_num, dummy_line):

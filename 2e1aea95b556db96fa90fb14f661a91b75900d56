@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6a727bc2_5fca0eb7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-25T17:10:32Z",
+      "side": 1,
+      "message": "This is for uploading to Gerrit. It will ask the user if they want to upload anyway. Presubmit before commit will fail as per other branch of this if-statement.",
+      "parentUuid": "33f524dd_f7e26419",
+      "range": {
+        "startLine": 1215,
+        "startChar": 30,
+        "endLine": 1215,
+        "endChar": 52
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6cbf737a_4cc297f3",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2017-10-25T12:26:58Z",
       "side": 1,
       "message": "nit: can get rid of this lambda",
+      "range": {
+        "startLine": 1218,
+        "startChar": 31,
+        "endLine": 1218,
+        "endChar": 32
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb03247b_122ab730",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1218,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-25T17:10:32Z",
+      "side": 1,
+      "message": "How?",
+      "parentUuid": "6cbf737a_4cc297f3",
       "range": {
         "startLine": 1218,
         "startChar": 31,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7a675a08_a6ac3fa2",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-25T17:10:32Z",
+      "side": 1,
+      "message": "AFAIK, we only have one . vpython file per repository. Also this only affects changed files. Finally, this whole loop runs in parallel to other checks. Unless there is an obvious easy way to do this, I don\u0027t see a point overcomplicating this code.",
+      "parentUuid": "d220914c_c4630bed",
+      "range": {
+        "startLine": 1220,
+        "startChar": 2,
+        "endLine": 1220,
+        "endChar": 25
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c3a4ac2e_55163b76",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -91,6 +163,30 @@
       "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "049a6cdc_288a8307",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-25T17:10:32Z",
+      "side": 1,
+      "message": "It is logged via str(e) below, which prints stdout and stderr. See tests for an example.",
+      "parentUuid": "c3a4ac2e_55163b76",
+      "range": {
+        "startLine": 1228,
+        "startChar": 0,
+        "endLine": 1228,
+        "endChar": 35
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

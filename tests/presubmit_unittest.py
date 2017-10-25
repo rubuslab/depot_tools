@@ -1700,6 +1700,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
       'CheckGNFormatted',
       'CheckRietveldTryJobExecution',
       'CheckSingletonInHeaders',
+      'CheckVPythonSpec',
       'RunPythonUnitTests', 'RunPylint',
       'RunUnitTests', 'RunUnitTestsInDirectory',
       'GetCodereviewOwnerAndReviewers',
@@ -2728,6 +2729,47 @@ class CannedChecksUnittest(PresubmitTestsBase):
     self.assertEqual(
         'Found line ending with white spaces in:', results[0]._message)
     self.checkstdout('')
+
+  def testCannedCheckVPythonSpec(self):
+    change = presubmit.Change('a', 'b', self.fake_root_dir, None, 0, 0, None)
+    # Store subprocess.CalledProcessError before entire subprocess module is
+    # mocked and then restore it, to be able to throw and capture the exception.
+    orig_called_process_error = subprocess.CalledProcessError
+    input_api = self.MockInputApi(change, False)
+    input_api.subprocess.CalledProcessError = orig_called_process_error
+    affected_file1 = self.mox.CreateMock(presubmit.GitAffectedFile)
+    affected_file2 = self.mox.CreateMock(presubmit.GitAffectedFile)
+    input_api.AffectedFiles(file_filter=mox.IgnoreArg()).AndReturn(
+        [affected_file1, affected_file2])
+    affected_file1.AbsoluteLocalPath().AndReturn('/path1/to/.vpython')
+    input_api.subprocess.check_output([
+      'vpython',
+      '-vpython-spec', '/path1/to/.vpython',
+      '-vpython-tool', 'verify'
+    ], stderr=input_api.subprocess.STDOUT)
+    affected_file2.AbsoluteLocalPath().AndReturn('/path2/to/.vpython')
+    input_api.subprocess.check_output([
+      'vpython',
+      '-vpython-spec', '/path2/to/.vpython',
+      '-vpython-tool', 'verify'
+    ], stderr=input_api.subprocess.STDOUT).AndRaise(
+        input_api.subprocess.CalledProcessError(
+          1, ['vpython', '...'], 'cwd', 'stdout', 'stderr')
+    )
+
+    affected_file2.AbsoluteLocalPath().AndReturn('/path2/to/.vpython')
+
+    self.mox.ReplayAll()
+
+    results = presubmit_canned_checks.CheckVPythonSpec(
+        input_api, presubmit.OutputApi)
+    self.assertEqual(1, len(results))
+    self.assertEqual(
+        'VPython verification tool returned non-zero code for '
+        '/path2/to/.vpython: 1', results[0]._message)
+    self.assertEqual(
+        'Command \'vpython ...\' returned non-zero exit status 1 in cwd\n'
+        'stdout\nstderr', results[0]._long_text)
 
 
 if __name__ == '__main__':

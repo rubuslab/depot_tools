@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "717229f3_9b68279a",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2906,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-10-26T16:44:11Z",
+      "side": 1,
+      "message": "Since you\u0027re using re.match, no need for the \u0027^\u0027 at the beginning or the \u0027.*\u0027 at the end of the match; these just make the regex engine slower. At the same time, it might make sense to use the re.I mode to get case-insensitive matching on \u0027bug|fix\u0027.\n\nFinally, I\u0027d introduce a \u0027bug\u0027 variable, initialized to options.bug, and only perform this matching if !bug. Then change the \u0027options.bug or bug_from_branch\u0027 below to just be \u0027bug\u003dbug\u0027.",
+      "revId": "01bd336a8ec99b84e7c5109f41795b5e85756b30",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

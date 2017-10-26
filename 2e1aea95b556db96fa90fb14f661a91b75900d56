@@ -168,6 +168,30 @@
     },
     {
       "key": {
+        "uuid": "da2d141c_3b1ec248",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1218,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-26T14:56:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "07e24307_11dd0ba8",
+      "range": {
+        "startLine": 1218,
+        "startChar": 31,
+        "endLine": 1218,
+        "endChar": 32
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d220914c_c4630bed",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -275,6 +299,30 @@
       "side": 1,
       "message": "Dan: I wasn\u0027t saying that repository can\u0027t have many .vpython files. I was just saying the we currently only have 1. But even without this, this presubmit will ONLY run for changed .vpython files, so it won\u0027t affect anyone who doesn\u0027t make changes to them. I don\u0027t think that changing more than a few files will be all that frequent. Anyway, changed it to be parallel.\n\nAndrii: It takes 2s for V8, 4s for Chromium.",
       "parentUuid": "d171fd3f_38172480",
+      "range": {
+        "startLine": 1220,
+        "startChar": 2,
+        "endLine": 1220,
+        "endChar": 25
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "044740fd_0f0dc0e8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-26T14:56:56Z",
+      "side": 1,
+      "message": "How long verification takes depends on the number of packages and network latency. I\u0027d expect cases where users update all of their files to roll new versions of packages or add a new dependency universally to be common. TBH these files probably won\u0027t be updated much at all, but when they are, it is entirely likely that they would be updated in batch.\n\nMore importantly, though: is there any reason *not* to take advantage of the fact that PRESUBMIT is designed to run tests in parallel? You return a list instead of an object; it\u0027s not like this would require you to write a lot of code. Return a list, get free parallelism - this doesn\u0027t seem like it should be a contentious issue. Parallel is a better user experience than serial, is more robust to all types of changes, and is trivial to enable. What\u0027s the counter-argument to not use it? Every little bit helps.",
+      "parentUuid": "8901eb88_e6c21dfd",
       "range": {
         "startLine": 1220,
         "startChar": 2,

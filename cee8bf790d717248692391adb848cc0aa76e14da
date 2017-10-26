@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7000395a_323f831f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-26T14:56:56Z",
+      "side": 1,
+      "message": "I still don\u0027t see any value in offering users the option of uploading a demonstrably invalid specification file. IMO, if the file is invalid, we should assert as strongly as possible that it become value before uploading. If the user wants to insist on uploading anyway, they can run \"--bypass-hooks\".",
+      "range": {
+        "startLine": 1215,
+        "startChar": 4,
+        "endLine": 1215,
+        "endChar": 52
+      },
+      "revId": "cee8bf790d717248692391adb848cc0aa76e14da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f13c4e5_05f31d0c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1222,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-26T14:56:56Z",
+      "side": 1,
+      "message": "Why did you choose to actually run and block on Popen here? Generally, PRESUBMIT operates in two stages:\n1) Collect the series of checks/tests to run.\n2) Pass them to a test runner, which runs them in parallel.\n\nI pointed you to CheckCIPDManifest, which operates this way. Do you see an advantage to not using this methodology here? I\u0027d prefer that you return a list of \"input_api.Command\" for consumption along with all of the other tests.",
+      "range": {
+        "startLine": 1222,
+        "startChar": 2,
+        "endLine": 1222,
+        "endChar": 12
+      },
+      "revId": "cee8bf790d717248692391adb848cc0aa76e14da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7421222_692b2a8a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1239,
+      "author": {
+        "id": 1109829
+      },
+      "writtenOn": "2017-10-26T14:56:56Z",
+      "side": 1,
+      "message": "nit: the tool name is \"vpython\", no need for capitalization here.",
+      "range": {
+        "startLine": 1239,
+        "startChar": 9,
+        "endLine": 1239,
+        "endChar": 16
+      },
+      "revId": "cee8bf790d717248692391adb848cc0aa76e14da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

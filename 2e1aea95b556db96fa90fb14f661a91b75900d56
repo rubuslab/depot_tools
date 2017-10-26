@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "07e24307_11dd0ba8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1218,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-26T14:39:10Z",
+      "side": 1,
+      "message": "It\u0027s a syntax error without parentheses:\n\n$ python tests/presubmit_unittest.py\nTraceback (most recent call last):\n  File \"tests/presubmit_unittest.py\", line 28, in \u003cmodule\u003e\n    import presubmit_support as presubmit\n  File \"/usr/local/google/home/sergiyb/infra/depot_tools/presubmit_support.py\", line 51, in \u003cmodule\u003e\n    import presubmit_canned_checks\n  File \"/usr/local/google/home/sergiyb/infra/depot_tools/presubmit_canned_checks.py\", line 1218\n    file_filter \u003d file_filter or lambda f: f.LocalPath().endswith(\u0027.vpython\u0027)\n                                      ^\nSyntaxError: invalid syntax",
+      "parentUuid": "372c4684_13313d90",
+      "range": {
+        "startLine": 1218,
+        "startChar": 31,
+        "endLine": 1218,
+        "endChar": 32
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d220914c_c4630bed",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -236,6 +260,30 @@
       "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8901eb88_e6c21dfd",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-26T14:39:10Z",
+      "side": 1,
+      "message": "Dan: I wasn\u0027t saying that repository can\u0027t have many .vpython files. I was just saying the we currently only have 1. But even without this, this presubmit will ONLY run for changed .vpython files, so it won\u0027t affect anyone who doesn\u0027t make changes to them. I don\u0027t think that changing more than a few files will be all that frequent. Anyway, changed it to be parallel.\n\nAndrii: It takes 2s for V8, 4s for Chromium.",
+      "parentUuid": "d171fd3f_38172480",
+      "range": {
+        "startLine": 1220,
+        "startChar": 2,
+        "endLine": 1220,
+        "endChar": 25
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

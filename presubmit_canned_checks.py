@@ -1193,3 +1193,52 @@ def CheckCIPDPackages(input_api, output_api, platforms, packages):
   for k, v in packages.iteritems():
     manifest.append('%s %s' % (k, v))
   return CheckCIPDManifest(input_api, output_api, content='\n'.join(manifest))
+
+
+def CheckVPythonSpec(input_api, output_api, file_filter=None):
+  """Validates any changed .vpython files with vpython verification tool.
+
+  Args:
+    input_api: Bag of input related interfaces.
+    output_api: Bag of output related interfaces.
+    file_filter: Custom function that takes a path (relative to client root) and
+      returns boolean, which is used to filter files for which to apply the
+      verification to. Defaults to any path ending with .vpython, which captures
+      both global .vpython and <script>.vpython files.
+
+  Returns:
+    A list of warning or error objects.
+  """
+  if input_api.is_committing:
+    message_type = output_api.PresubmitError
+  else:
+    message_type = output_api.PresubmitPromptWarning
+
+  file_filter = file_filter or (lambda f: f.LocalPath().endswith('.vpython'))
+  affected_files = input_api.AffectedFiles(file_filter=file_filter)
+  affected_files = map(lambda f: f.AbsoluteLocalPath(), affected_files)
+
+  # Run verification tool in parallel for all affected files.
+  procs = []
+  for f in affected_files:
+    procs.append(input_api.subprocess.Popen([
+      'vpython',
+      '-vpython-spec', f,
+      '-vpython-tool', 'verify'
+    ], stdout=input_api.subprocess.PIPE, stderr=input_api.subprocess.STDOUT))
+
+  # Wait for all processes and collect their stdout, stderr is ignored because
+  # it is redirected into stdout above.
+  outputs = map(lambda p: p.communicate()[0], procs)
+
+  # Check the verification results for warnings.
+  warnings = []
+  for i, p in enumerate(procs):
+    if p.returncode != 0:
+      warnings.append(message_type(
+        'VPython verification tool returned non-zero code for %s: %d' % (
+          affected_files[i], p.returncode),
+        long_text=outputs[i]
+      ))
+
+  return warnings

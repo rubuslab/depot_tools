@@ -1702,6 +1702,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
       'CheckGNFormatted',
       'CheckRietveldTryJobExecution',
       'CheckSingletonInHeaders',
+      'CheckVPythonSpec',
       'RunPythonUnitTests', 'RunPylint',
       'RunUnitTests', 'RunUnitTestsInDirectory',
       'GetCodereviewOwnerAndReviewers',
@@ -2774,6 +2775,54 @@ class CannedChecksUnittest(PresubmitTestsBase):
     self.assertEquals(command.cmd,
         ['cipd', 'ensure-file-verify', '-ensure-file=-'])
     self.assertEquals(command.kwargs, {'stdin': content})
+
+  def testCannedCheckVPythonSpec(self):
+    change = presubmit.Change('a', 'b', self.fake_root_dir, None, 0, 0, None)
+    input_api = self.MockInputApi(change, False)
+
+    affected_file1 = self.mox.CreateMock(presubmit.GitAffectedFile)
+    affected_file1.AbsoluteLocalPath().AndReturn('/path1/to/.vpython')
+    affected_file2 = self.mox.CreateMock(presubmit.GitAffectedFile)
+    affected_file2.AbsoluteLocalPath().AndReturn('/path2/to/.vpython')
+    input_api.AffectedFiles(file_filter=mox.IgnoreArg()).AndReturn(
+        [affected_file1, affected_file2])
+
+    proc1 = self.mox.CreateMock(subprocess.Popen)
+    input_api.subprocess.Popen(
+        [
+          'vpython',
+          '-vpython-spec', '/path1/to/.vpython',
+          '-vpython-tool', 'verify'
+        ],
+        stdout=input_api.subprocess.PIPE,
+        stderr=input_api.subprocess.STDOUT
+    ).AndReturn(proc1)
+    proc1.communicate().AndReturn(('', ''))
+    proc1.returncode = 0
+
+    proc2 = self.mox.CreateMock(subprocess.Popen)
+    input_api.subprocess.Popen(
+        [
+          'vpython',
+          '-vpython-spec', '/path2/to/.vpython',
+          '-vpython-tool', 'verify'
+        ],
+        stdout=input_api.subprocess.PIPE,
+        stderr=input_api.subprocess.STDOUT
+    ).AndReturn(proc2)
+    proc2.communicate().AndReturn(('stdout-mixed-with-stderr', ''))
+    proc2.returncode = 1
+
+    self.mox.ReplayAll()
+
+    results = presubmit_canned_checks.CheckVPythonSpec(
+        input_api, presubmit.OutputApi)
+    self.assertEqual(1, len(results))
+    self.assertEqual(
+        'VPython verification tool returned non-zero code for '
+        '/path2/to/.vpython: 1', results[0]._message)
+    self.assertEqual(
+        'stdout-mixed-with-stderr', results[0]._long_text)
 
 
 if __name__ == '__main__':

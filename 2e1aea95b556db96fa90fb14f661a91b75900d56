@@ -335,6 +335,30 @@
     },
     {
       "key": {
+        "uuid": "fd6dac99_7bdeb9ff",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-27T00:06:15Z",
+      "side": 1,
+      "message": "The reason is that implementing this requires me learning how PRESUBMITs are to be written, which is also not free.",
+      "parentUuid": "044740fd_0f0dc0e8",
+      "range": {
+        "startLine": 1220,
+        "startChar": 2,
+        "endLine": 1220,
+        "endChar": 25
+      },
+      "revId": "2e1aea95b556db96fa90fb14f661a91b75900d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c3a4ac2e_55163b76",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4

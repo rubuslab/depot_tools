@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "18adc40a_f2439144",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-27T00:06:15Z",
+      "side": 1,
+      "message": "This was a pattern proposed here: http://dev.chromium.org/developers/how-tos/depottools/presubmit-scripts, so I\u0027ve just followed it and I think it makes sense. But if you feel so strongly about it... done",
+      "parentUuid": "7000395a_323f831f",
+      "range": {
+        "startLine": 1215,
+        "startChar": 4,
+        "endLine": 1215,
+        "endChar": 52
+      },
+      "revId": "cee8bf790d717248692391adb848cc0aa76e14da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0f13c4e5_05f31d0c",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "75223864_c8cd83fc",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1222,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-27T00:06:15Z",
+      "side": 1,
+      "message": "I was not aware that a check can return anything but a list of warnings. It is not documented on http://dev.chromium.org/developers/how-tos/depottools/presubmit-scripts. \n\nAnd it looks like I did not realize why you were pointing me to CheckCIPDManifest. Btw, where was that? I can\u0027t seem to find your pointer to CheckCIPDManifest neither in chat nor in your comments on this CL.",
+      "parentUuid": "0f13c4e5_05f31d0c",
+      "range": {
+        "startLine": 1222,
+        "startChar": 2,
+        "endLine": 1222,
+        "endChar": 12
+      },
+      "revId": "cee8bf790d717248692391adb848cc0aa76e14da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7421222_692b2a8a",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 6
@@ -68,6 +116,30 @@
       "revId": "cee8bf790d717248692391adb848cc0aa76e14da",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f2c224b_7da78190",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1239,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-10-27T00:06:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7421222_692b2a8a",
+      "range": {
+        "startLine": 1239,
+        "startChar": 9,
+        "endLine": 1239,
+        "endChar": 16
+      },
+      "revId": "cee8bf790d717248692391adb848cc0aa76e14da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

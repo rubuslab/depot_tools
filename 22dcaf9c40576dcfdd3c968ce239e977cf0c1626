@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "d025f4b8_1a787aba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-10-31T19:15:24Z",
+      "side": 1,
+      "message": "nit; please format the message to 72 columns. Because we live in 2017 :p",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 69
+      },
+      "revId": "22dcaf9c40576dcfdd3c968ce239e977cf0c1626",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d1aa1c3b_ae49a4cd",
         "filename": "gsutil.py",
         "patchSetId": 2

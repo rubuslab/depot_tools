@@ -19,9 +19,11 @@ def main(args):
                       help=(
                         'Print a colorized wordwise diff '
                         'instead of line-wise diff'))
+  parser.add_argument('branch', nargs='?', default=None,
+                      help='Show changes from a different branch')
   opts, extra_args = parser.parse_known_args(args)
 
-  cur = git.current_branch()
+  cur = opts.branch if opts.branch else git.current_branch()
   if not cur or cur == 'HEAD':
     print 'fatal: Cannot perform git-upstream-diff while not on a branch'
     return 1
@@ -34,7 +36,7 @@ def main(args):
   cmd = [git.GIT_EXE, 'diff', '--patience', '-C', '-C']
   if opts.wordwise:
     cmd += ['--word-diff=color', r'--word-diff-regex=(\w+|[^[:space:]])']
-  cmd += [git.get_or_create_merge_base(cur, par)]
+  cmd += [git.get_or_create_merge_base(cur, par), cur]
 
   cmd += extra_args
 

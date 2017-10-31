@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d1aa1c3b_ae49a4cd",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-10-31T17:15:45Z",
+      "side": 1,
+      "message": "nit: please use 2 spaces for block indentation, as in the rest of this file",
+      "range": {
+        "startLine": 134,
+        "startChar": 2,
+        "endLine": 134,
+        "endChar": 8
+      },
+      "revId": "22dcaf9c40576dcfdd3c968ce239e977cf0c1626",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

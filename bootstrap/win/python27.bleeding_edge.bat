@@ -41,6 +41,6 @@ if not "%PYTHON_BAT_RUNNER%" == "1" goto :END
 
 for /f %%i in (%~dp0python_bin_reldir.txt) do set PYTHON_BIN_RELDIR=%%i
 set PATH=%~dp0%PYTHON_BIN_RELDIR%;%~dp0%PYTHON_BIN_RELDIR%\Scripts;%PATH%
-"%~dp0%PYTHON_BIN_RELDIR%\python.exe" %*
+"%~dp0%PYTHON_BIN_RELDIR%\python2.exe" %*
 
 :END

@@ -681,7 +681,7 @@ def GetPythonUnitTests(input_api, output_api, unit_tests):
     cwd = None
     env = None
     unit_test_name = unit_test
-    # 'python -m test.unit_test' doesn't work. We need to change to the right
+    # 'python2 -m test.unit_test' doesn't work. We need to change to the right
     # directory instead.
     if '.' in unit_test:
       # Tests imported in submodules (subdirectories) assume that the current

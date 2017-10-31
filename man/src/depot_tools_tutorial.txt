@@ -111,18 +111,18 @@ Add a PATH user variable: `C:\workspace\depot_tools;%PATH%`.
 
 From a `cmd.exe` shell, run the command `gclient` (without arguments). On first
 run, gclient will install all the Windows-specific bits needed to work with the
-code, including msysgit and python.
+code, including msysgit and python2.
 
 [NOTE]
 =====
 * If you run gclient from a non-cmd shell (e.g., cygwin, PowerShell), it
-  may appear to run properly, but msysgit, python, and other tools may not get
+  may appear to run properly, but msysgit, python2, and other tools may not get
   installed correctly.
 * If you see strange errors with the file system on the first run of gclient,
   you may want to link:http://tortoisesvn.tigris.org/faq.html#cantmove2[disable
   Windows Indexing].
-* After running gclient open a command prompt and type `where python` and confirm that
-  the depot_tools python.bat comes ahead of any copies of python.exe. Failing to ensure
+* After running gclient open a command prompt and type `where python2` and confirm that
+  the depot_tools python2.bat comes ahead of any copies of python2.exe. Failing to ensure
   this can lead to overbuilding when using gn - see
   link:https://bugs.chromium.org/p/chromium/issues/detail?id=611087[crbug.com/611087].
 =====

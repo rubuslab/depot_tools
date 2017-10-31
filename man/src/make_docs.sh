@@ -106,7 +106,7 @@ EOF
 H
 12
 c
-	    s/\[[^]]*\]//;
+        s/\[[^]]*\]//;
 .
 wq
 EOF
@@ -135,7 +135,7 @@ EOF
 (?su)[\\\\]?(?P<name>demo):(?P<target>\S*?)\[\]=
 
 [demo-inlinemacro]
-{sys3:cd $(pwd); ./{docname}.demo.{target}.sh | python filter_demo_output.py {backend} }
+{sys3:cd $(pwd); ./{docname}.demo.{target}.sh | python2 filter_demo_output.py {backend} }
 EOF
 
 fi

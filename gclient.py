@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # Copyright (c) 2012 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -38,7 +38,7 @@
 #                any.  An action command will run at most one time per gclient
 #                invocation, regardless of how many files matched the pattern.
 #                The action is executed in the same directory as the .gclient
-#                file.  If the first item in the list is the string "python",
+#                file.  If the first item in the list is the string "python2",
 #                the current Python interpreter (sys.executable) will be used
 #                to run the command. If the list contains string
 #                "$matching_files" it will be removed from the list and the list
@@ -49,10 +49,10 @@
 #   Example:
 #     hooks = [
 #       { "pattern": "\\.(gif|jpe?g|pr0n|png)$",
-#         "action":  ["python", "image_indexer.py", "--all"]},
+#         "action":  ["python2", "image_indexer.py", "--all"]},
 #       { "pattern": ".",
 #         "name": "gyp",
-#         "action":  ["python", "src/build/gyp_chromium"]},
+#         "action":  ["python2", "src/build/gyp_chromium"]},
 #     ]
 #
 # Pre-DEPS Hooks

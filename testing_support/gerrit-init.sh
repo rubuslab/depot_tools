@@ -53,7 +53,7 @@ username='test-username'
 #
 #     http://gerrit-releases.storage.googleapis.com/index.html
 url='https://www.googleapis.com/storage/v1/b/gerrit-releases/o?projection=noAcl'
-curl --retry 30 --ssl-reqd -s $url | python <(cat <<EOF
+curl --retry 30 --ssl-reqd -s $url | python2 <(cat <<EOF
 # Receives Gerrit version via command line and reads json-encoded
 # text from stdin in the format:
 #
@@ -152,18 +152,18 @@ fi
 mkdir -p "${rundir}/etc"
 cat <<EOF > "${rundir}/etc/gerrit.config"
 [auth]
-	type = DEVELOPMENT_BECOME_ANY_ACCOUNT
-	gitBasicAuth = true
+    type = DEVELOPMENT_BECOME_ANY_ACCOUNT
+    gitBasicAuth = true
 [gerrit]
-	canonicalWebUrl = http://$(hostname):${http_port}/
+    canonicalWebUrl = http://$(hostname):${http_port}/
 [httpd]
-	listenUrl = http://*:${http_port}/
+    listenUrl = http://*:${http_port}/
 [sshd]
-	listenAddress = *:${ssh_port}
+    listenAddress = *:${ssh_port}
 [sendemail]
-	enable = false
+    enable = false
 [container]
-	javaOptions = -Duser.home=${rundir}/tmp
+    javaOptions = -Duser.home=${rundir}/tmp
 EOF
 
 # Initialize the gerrit instance.

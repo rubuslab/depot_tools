@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # Copyright 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -133,8 +133,11 @@ def run_gsutil(force_version, fallback, target, args, clean=False):
   # Run "gsutil" through "vpython". We need to do this because on GCE instances,
   # expectations are made about Python having access to "google-compute-engine"
   # and "boto" packages that are not met with non-system Python (e.g., bundles).
+  # Make sure to set the interpreter, since otherwise it runs "python", which
+  # might be "python3".
   cmd = [
       'vpython',
+      '-vpython-interpreter', sys.executable,
       '-vpython-spec', os.path.join(THIS_DIR, 'gsutil.vpython'),
       '--',
       gsutil_bin

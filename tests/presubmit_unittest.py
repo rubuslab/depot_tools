@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # Copyright (c) 2012 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -2085,7 +2085,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
 
   def testCheckLicenseSuccess(self):
     text = (
-        "#!/bin/python\n"
+        "#!/bin/python2\n"
         "# Copyright (c) 2037 Nobody.\n"
         "# All Rights Reserved.\n"
         "print 'foo'\n"
@@ -2098,7 +2098,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
 
   def testCheckLicenseFailCommit(self):
     text = (
-        "#!/bin/python\n"
+        "#!/bin/python2\n"
         "# Copyright (c) 2037 Nobody.\n"
         "# All Rights Reserved.\n"
         "print 'foo'\n"
@@ -2112,7 +2112,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
 
   def testCheckLicenseFailUpload(self):
     text = (
-        "#!/bin/python\n"
+        "#!/bin/python2\n"
         "# Copyright (c) 2037 Nobody.\n"
         "# All Rights Reserved.\n"
         "print 'foo'\n"

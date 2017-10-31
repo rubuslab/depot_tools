@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f6f7f333_cbe3d339",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1119169
+      },
+      "writtenOn": "2017-10-31T19:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d025f4b8_1a787aba",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 69
+      },
+      "revId": "22dcaf9c40576dcfdd3c968ce239e977cf0c1626",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1aa1c3b_ae49a4cd",
         "filename": "gsutil.py",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "22dcaf9c40576dcfdd3c968ce239e977cf0c1626",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1fe498a_ae3e95c2",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1119169
+      },
+      "writtenOn": "2017-10-31T19:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1aa1c3b_ae49a4cd",
+      "range": {
+        "startLine": 134,
+        "startChar": 2,
+        "endLine": 134,
+        "endChar": 8
+      },
+      "revId": "22dcaf9c40576dcfdd3c968ce239e977cf0c1626",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

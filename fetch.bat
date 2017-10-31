@@ -12,4 +12,4 @@ call "%~dp0\update_depot_tools.bat"
 set PATH=%PATH%;%~dp0
 
 :: Defer control.
-python "%~dp0\fetch.py" %*
+python2 "%~dp0\fetch.py" %*

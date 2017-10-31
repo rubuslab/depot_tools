@@ -33,7 +33,7 @@ source "$base_dir/cipd_bin_setup.sh"
 cipd_bin_setup
 
 # Sync "gsutil.py".
-python "$base_dir/gsutil.py" -- version 1> /dev/null
+python2 "$base_dir/gsutil.py" -- version 1> /dev/null
 
 # Cleanup.
 find "$base_dir" -iname "*.pyc" -delete || true

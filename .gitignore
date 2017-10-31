@@ -15,8 +15,8 @@
 /gitk.bat
 /pylint.bat
 /.pylint.d/
-/python
-/python.bat
+/python2
+/python2.bat
 /ssh.bat
 /ssh-keygen.bat
 /svn

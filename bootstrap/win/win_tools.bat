@@ -3,7 +3,7 @@
 :: Use of this source code is governed by a BSD-style license that can be
 :: found in the LICENSE file.
 
-:: This script will determine if python or git binaries need updates. It
+:: This script will determine if python2 or git binaries need updates. It
 :: returns !0 as failure
 
 :: Note: we set EnableDelayedExpansion so we can perform string manipulations
@@ -62,7 +62,7 @@ call "%CIPD_EXE%" ensure -log-level warning -ensure-file "%~dp0%CIPD_MANIFEST%" 
 if errorlevel 1 goto :END
 
 :: This executes "win_tools.py" using the bundle's Python interpreter.
-set WIN_TOOLS_PYTHON_BIN=%WIN_TOOLS_PATH%\python\bin\python.exe
+set WIN_TOOLS_PYTHON_BIN=%WIN_TOOLS_PATH%\python\bin\python2.exe
 call "%WIN_TOOLS_PYTHON_BIN%" "%~dp0win_tools.py" %WIN_TOOLS_EXTRA_ARGS%
 
 

@@ -77,7 +77,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       root_solution_revision=None, rietveld=None, issue=None,
                       patchset=None, gerrit_no_reset=False,
                       gerrit_no_rebase_patch_ref=False,
-                      disable_syntax_validation=False, manifest_name=None,
+                      disable_syntax_validation=False, manifest_name='checkout',
                       **kwargs):
     """
     Args:

@@ -379,6 +379,54 @@ def create_manifest():
   return manifest
 
 
+# TODO(hinoka): Include patch revision.
+def create_manifest(gclient_output, patch_root, gerrit_ref):
+  """Return the JSONPB equivilent of the source manifest proto.
+
+  The source manifest proto is defined here:
+  https://chromium.googlesource.com/infra/luci/recipes-py/+/master/recipe_engine/source_manifest.proto
+
+  This is based off of:
+  * The gclient_output (from calling gclient.py --output-json) which contains
+    the directory -> repo:revision mapping.
+  * Gerrit Patch info which contains info about patched revisions.
+
+  We normalize the URLs such that if they are googlesource.com urls, they:
+  """
+  manifest = {
+      'version': 0,  # Currently the only valid version is 0.
+  }
+  dirs = {}
+  if patch_root:
+    patch_root = patch_root.strip('/')  # Normalize directory names.
+  for directory, info in gclient_output.get('solutions', {}).iteritems():
+    directory = directory.strip('/')  # Normalize the directory name.
+    # There are two places to the the revision from, we do it in this order:
+    # 1. In the "revision" field
+    # 2. At the end of the URL, after @
+    repo = ''
+    revision = info.get('revision', '')
+    # The format of the url is "https://repo.url/blah.git@abcdefabcdef" or
+    # just "https://repo.url/blah.git"
+    url_split = info.get('url', '').split('@')
+    if not revision and len(url_split) == 2:
+      revision = url_split[1]
+    if url_split:
+      repo = normalize_git_url(url_split[0])
+    if repo:
+      dirs[directory] = {
+        'git_checkout': {
+          'repo_url': repo,
+          'revision': revision,
+        }
+      }
+      if patch_root == directory:
+        dirs[directory]['git_checkout']['patch_fetch_ref'] = gerrit_ref
+
+  manifest['directories'] = dirs
+  return manifest
+
+
 def get_commit_message_footer_map(message):
   """Returns: (dict) A dictionary of commit message footer entries.
   """

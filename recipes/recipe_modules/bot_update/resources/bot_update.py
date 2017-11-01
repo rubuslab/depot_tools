@@ -400,6 +400,7 @@ def create_manifest_old():
       }
     else:
       print "WARNING: Couldn't match revinfo line:\n%s" % line
+  return manifest
 
 
 # TODO(hinoka): Include patch revision.

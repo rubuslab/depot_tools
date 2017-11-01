@@ -2,12 +2,12 @@
 .\"     Title: git-upstream-diff
 .\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
 .\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
-.\"      Date: 02/27/2017
+.\"      Date: 10/31/2017
 .\"    Manual: Chromium depot_tools Manual
-.\"    Source: depot_tools a6ba28f5
+.\"    Source: depot_tools bbb9b488
 .\"  Language: English
 .\"
-.TH "GIT\-UPSTREAM\-DIFF" "1" "02/27/2017" "depot_tools a6ba28f5" "Chromium depot_tools Manual"
+.TH "GIT\-UPSTREAM\-DIFF" "1" "10/31/2017" "depot_tools bbb9b488" "Chromium depot_tools Manual"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -32,12 +32,12 @@ git-upstream-diff \- Print a diff of the current branch, compared to its upstrea
 .SH "SYNOPSIS"
 .sp
 .nf
-\fIgit upstream\-diff\fR [\-\-wordwise] [<extra args for git\-diff>*]
+\fIgit upstream\-diff\fR [\-\-wordwise] [branch] [<extra args for git\-diff>*]
 .fi
 .sp
 .SH "DESCRIPTION"
 .sp
-Shows a diff between your current branch and it\(cqs upstream\&. This is \fIroughly\fR the same as:
+Shows a diff between a branch and its upstream\&. This is \fIroughly\fR the same as:
 .sp
 .if n \{\
 .RS 4
@@ -65,6 +65,17 @@ The \-\-wordwise option also allows git\-diff to do word\-by\-word comparison in
 \-\-wordwise
 .RS 4
 Print a colorized word\-wise diff instead of a line\-wise diff\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Show a diff between the specified branch and its upstream, instead of using
+the current branch\&.
+.fi
+.if n \{\
+.RE
+.\}
 .RE
 .PP
 <extra args for git\-diff>

@@ -9,13 +9,12 @@ include::_git-upstream-diff_desc.helper.txt[]
 SYNOPSIS
 --------
 [verse]
-'git upstream-diff' [--wordwise] [<extra args for git-diff>*]
+'git upstream-diff' [--wordwise] [branch] [<extra args for git-diff>*]
 
 DESCRIPTION
 -----------
 
-Shows a diff between your current branch and it's upstream. This is 'roughly' the
-same as:
+Shows a diff between a branch and its upstream. This is 'roughly' the same as:
 
 ----
 git diff --patience -C -C HEAD@{upstream}  <1> <2>
@@ -40,6 +39,10 @@ OPTIONS
 
 --wordwise::
   Print a colorized word-wise diff instead of a line-wise diff.
+
+[branch]
+  Show a diff between the specified branch and its upstream, instead of using
+  the current branch.
 
 <extra args for git-diff>::
   Extra arguments are included in the invocation of linkgit:git-diff[1]. These

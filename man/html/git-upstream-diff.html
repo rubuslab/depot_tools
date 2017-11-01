@@ -755,7 +755,7 @@ git-upstream-diff(1) Manual Page
 <h2 id="_synopsis">SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git upstream-diff</em> [--wordwise] [&lt;extra args for git-diff&gt;*]</pre>
+<pre class="content"><em>git upstream-diff</em> [--wordwise] [branch] [&lt;extra args for git-diff&gt;*]</pre>
 <div class="attribution">
 </div></div>
 </div>
@@ -763,8 +763,7 @@ git-upstream-diff(1) Manual Page
 <div class="sect1">
 <h2 id="_description">DESCRIPTION</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Shows a diff between your current branch and it&#8217;s upstream. This is <em>roughly</em> the
-same as:</p></div>
+<div class="paragraph"><p>Shows a diff between a branch and its upstream. This is <em>roughly</em> the same as:</p></div>
 <div class="listingblock">
 <div class="content">
 <pre><code>git diff --patience -C -C HEAD@{upstream}  <b>&lt;1&gt;</b> <b>&lt;2&gt;</b></code></pre>
@@ -803,6 +802,11 @@ so it is disabled by default.</p></div>
 <p>
   Print a colorized word-wise diff instead of a line-wise diff.
 </p>
+<div class="literalblock">
+<div class="content">
+<pre><code>Show a diff between the specified branch and its upstream, instead of using
+the current branch.</code></pre>
+</div></div>
 </dd>
 <dt class="hdlist1">
 &lt;extra args for git-diff&gt;
@@ -891,7 +895,7 @@ from <a href="https://chromium.googlesource.com/chromium/tools/depot_tools.git">
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-02-27 13:47:35 PST
+Last updated 2017-10-31 12:30:40 PDT
 </div>
 </div>
 </body>

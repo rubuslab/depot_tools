@@ -513,7 +513,8 @@ class PresubmitUnittest(PresubmitTestsBase):
         0,
         0,
         None)
-    executer = presubmit.PresubmitExecuter(change, False, None, False)
+    executer = presubmit.PresubmitExecuter(
+        change, False, None, False, None, False)
     self.failIf(executer.ExecPresubmitScript('', fake_presubmit))
     # No error if no on-upload entry point
     self.failIf(executer.ExecPresubmitScript(
@@ -522,7 +523,8 @@ class PresubmitUnittest(PresubmitTestsBase):
       fake_presubmit
     ))
 
-    executer = presubmit.PresubmitExecuter(change, True, None, False)
+    executer = presubmit.PresubmitExecuter(
+        change, True, None, False, None, False)
     # No error if no on-commit entry point
     self.failIf(executer.ExecPresubmitScript(
       ('def CheckChangeOnUpload(input_api, output_api):\n'
@@ -916,7 +918,8 @@ def CheckChangeOnCommit(input_api, output_api):
     presubmit.DoPresubmitChecks(mox.IgnoreArg(), False, False,
                                 mox.IgnoreArg(),
                                 mox.IgnoreArg(),
-                                None, False, None, None, None).AndReturn(output)
+                                None, False, None, None, True,
+                                None, None).AndReturn(output)
     self.mox.ReplayAll()
 
     self.assertEquals(
@@ -1004,10 +1007,13 @@ class InputApiUnittest(PresubmitTestsBase):
         'verbose',
         'dry_run',
         'gerrit',
+        'access_token',
+        'allow_interaction'
     ]
     # If this test fails, you should add the relevant test.
     self.compareMembers(
-        presubmit.InputApi(self.fake_change, './.', False, None, False),
+        presubmit.InputApi(
+            self.fake_change, './.', False, None, False, None, False),
         members)
 
   def testInputApiConstruction(self):
@@ -1015,7 +1021,8 @@ class InputApiUnittest(PresubmitTestsBase):
     api = presubmit.InputApi(
         self.fake_change,
         presubmit_path='foo/path/PRESUBMIT.py',
-        is_committing=False, rietveld_obj=None, verbose=False)
+        is_committing=False, rietveld_obj=None, verbose=False,
+        access_token=None, allow_interaction=True)
     self.assertEquals(api.PresubmitLocalPath(), 'foo/path')
     self.assertEquals(api.change, self.fake_change)
     self.assertEquals(api.host_url, 'http://codereview.chromium.org')
@@ -1060,7 +1067,7 @@ class InputApiUnittest(PresubmitTestsBase):
     input_api = presubmit.InputApi(
         change,
         presubmit.os.path.join(self.fake_root_dir, 'foo', 'PRESUBMIT.py'),
-        False, None, False)
+        False, None, False, None, False)
     # Doesn't filter much
     got_files = input_api.AffectedFiles()
     self.assertEquals(len(got_files), 7)
@@ -1159,7 +1166,7 @@ class InputApiUnittest(PresubmitTestsBase):
       ),
     ]
     input_api = presubmit.InputApi(
-        self.fake_change, './PRESUBMIT.py', False, None, False)
+        self.fake_change, './PRESUBMIT.py', False, None, False, None, False)
     self.mox.ReplayAll()
 
     self.assertEqual(len(input_api.DEFAULT_WHITE_LIST), 22)
@@ -1188,7 +1195,7 @@ class InputApiUnittest(PresubmitTestsBase):
     input_api = presubmit.InputApi(
         change,
         presubmit.os.path.join(self.fake_root_dir, 'PRESUBMIT.py'),
-        False, None, False)
+        False, None, False, None, False)
     got_files = input_api.AffectedSourceFiles(FilterSourceFile)
     self.assertEquals(len(got_files), 2)
     self.assertEquals(got_files[0].LocalPath(), 'eeaee')
@@ -1206,7 +1213,7 @@ class InputApiUnittest(PresubmitTestsBase):
     change = presubmit.GitChange(
         'mychange', '', self.fake_root_dir, files, 0, 0, None)
     input_api = presubmit.InputApi(
-        change, './PRESUBMIT.py', False, None, False)
+        change, './PRESUBMIT.py', False, None, False, None, False)
     # Sample usage of overiding the default white and black lists.
     got_files = input_api.AffectedSourceFiles(
         lambda x: input_api.FilterSourceFile(x, white_list, black_list))
@@ -1250,7 +1257,8 @@ class InputApiUnittest(PresubmitTestsBase):
         self.fake_root_dir, 'isdir', 'PRESUBMIT.py')
     api = presubmit.InputApi(
         change=change, presubmit_path=presubmit_path,
-        is_committing=True, rietveld_obj=None, verbose=False)
+        is_committing=True, rietveld_obj=None, verbose=False,
+        access_token=None, allow_interaction=True)
     paths_from_api = api.AbsoluteLocalPaths()
     self.assertEqual(len(paths_from_api), 2)
     for absolute_paths in [paths_from_change, paths_from_api]:
@@ -1272,7 +1280,7 @@ class InputApiUnittest(PresubmitTestsBase):
     api = presubmit.InputApi(
         change,
         presubmit.os.path.join(self.fake_root_dir, 'foo', 'PRESUBMIT.py'), True,
-        None, False)
+        None, False, None, False)
     api.AffectedTestableFiles(include_deletes=False)
 
   def testReadFileStringDenied(self):
@@ -1282,7 +1290,7 @@ class InputApiUnittest(PresubmitTestsBase):
         'foo', 'foo', self.fake_root_dir, [('M', 'AA')], 0, 0, None)
     input_api = presubmit.InputApi(
         change, presubmit.os.path.join(self.fake_root_dir, '/p'), False,
-        None, False)
+        None, False, None, False)
     self.assertRaises(IOError, input_api.ReadFile, 'boo', 'x')
 
   def testReadFileStringAccepted(self):
@@ -1294,7 +1302,7 @@ class InputApiUnittest(PresubmitTestsBase):
         'foo', 'foo', self.fake_root_dir, [('M', 'AA')], 0, 0, None)
     input_api = presubmit.InputApi(
         change, presubmit.os.path.join(self.fake_root_dir, '/p'), False,
-        None, False)
+        None, False, None, False)
     input_api.ReadFile(path, 'x')
 
   def testReadFileAffectedFileDenied(self):
@@ -1306,7 +1314,7 @@ class InputApiUnittest(PresubmitTestsBase):
         'foo', 'foo', self.fake_root_dir, [('M', 'AA')], 0, 0, None)
     input_api = presubmit.InputApi(
         change, presubmit.os.path.join(self.fake_root_dir, '/p'), False,
-        None, False)
+        None, False, None, False)
     self.assertRaises(IOError, input_api.ReadFile, fileobj, 'x')
 
   def testReadFileAffectedFileAccepted(self):
@@ -1320,7 +1328,7 @@ class InputApiUnittest(PresubmitTestsBase):
         'foo', 'foo', self.fake_root_dir, [('M', 'AA')], 0, 0, None)
     input_api = presubmit.InputApi(
         change, presubmit.os.path.join(self.fake_root_dir, '/p'), False,
-        None, False)
+        None, False, None, False)
     input_api.ReadFile(fileobj, 'x')
 
 
@@ -1920,7 +1928,8 @@ class CannedChecksUnittest(PresubmitTestsBase):
     affected_files = (affected_file1, affected_file2)
 
     input_api.AffectedFiles = lambda: affected_files
-
+    input_api.access_token = None
+    input_api.allow_interaction = True
     self.mox.ReplayAll()
 
     results = presubmit_canned_checks.CheckChangedConfigs(

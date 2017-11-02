@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa96fe69_fd103d22",
+        "filename": "watchlists.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1231539
+      },
+      "writtenOn": "2017-11-02T18:33:14Z",
+      "side": 1,
+      "message": "\u003e creating them*\n\nBTW, I suggest putting the dict of compiled regexes into a different member variable instead of replacing self._defns.",
+      "revId": "83affe8b43dab720879c4553797acbeecb144326",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68d98534_ae20345b",
+        "filename": "watchlists.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1231539
+      },
+      "writtenOn": "2017-11-02T18:33:14Z",
+      "side": 1,
+      "message": "rex_str should now be regex or something (without _str, since it is not a string any more).",
+      "revId": "83affe8b43dab720879c4553797acbeecb144326",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

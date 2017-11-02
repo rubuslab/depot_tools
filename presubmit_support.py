@@ -378,7 +378,8 @@ class InputApi(object):
   )
 
   def __init__(self, change, presubmit_path, is_committing,
-      rietveld_obj, verbose, gerrit_obj=None, dry_run=None):
+               rietveld_obj, verbose, acc_tkn, disable_interaction,
+               gerrit_obj=None, dry_run=None):
     """Builds an InputApi object.
 
     Args:
@@ -400,7 +401,9 @@ class InputApi(object):
     self.host_url = 'http://codereview.chromium.org'
     if self.rietveld:
       self.host_url = self.rietveld.url
-
+    # For config validation
+    self.acc_tkn = acc_tkn
+    self.disable_interaction = disable_interaction
     # We expose various modules and functions as attributes of the input_api
     # so that presubmit scripts don't have to import them.
     self.ast = ast
@@ -1216,6 +1219,7 @@ def DoPostUploadExecuter(change,
 
 class PresubmitExecuter(object):
   def __init__(self, change, committing, rietveld_obj, verbose,
+               acc_tkn, disable_interaction,
                gerrit_obj=None, dry_run=None):
     """
     Args:
@@ -1231,6 +1235,8 @@ class PresubmitExecuter(object):
     self.gerrit = gerrit_obj
     self.verbose = verbose
     self.dry_run = dry_run
+    self.acc_tkn = acc_tkn
+    self.disable_interaction = disable_interaction
 
   def ExecPresubmitScript(self, script_text, presubmit_path):
     """Executes a single presubmit script.
@@ -1251,6 +1257,7 @@ class PresubmitExecuter(object):
     # Load the presubmit script into context.
     input_api = InputApi(self.change, presubmit_path, self.committing,
                          self.rietveld, self.verbose,
+                         self.acc_tkn, self.disable_interaction,
                          gerrit_obj=self.gerrit, dry_run=self.dry_run)
     context = {}
     try:
@@ -1295,6 +1302,8 @@ def DoPresubmitChecks(change,
                       default_presubmit,
                       may_prompt,
                       rietveld_obj,
+                      acc_tkn=None,
+                      disable_interaction=False,
                       gerrit_obj=None,
                       dry_run=None):
   """Runs all presubmit checks that apply to the files in the change.
@@ -1345,6 +1354,7 @@ def DoPresubmitChecks(change,
       output.write("Warning, no PRESUBMIT.py found.\n")
     results = []
     executer = PresubmitExecuter(change, committing, rietveld_obj, verbose,
+                                 acc_tkn, disable_interaction,
                                  gerrit_obj, dry_run)
     if default_presubmit:
       if verbose:
@@ -1534,6 +1544,10 @@ def main(argv=None):
   parser.add_option("--rietveld_email_file", help=optparse.SUPPRESS_HELP)
   parser.add_option("--rietveld_private_key_file", help=optparse.SUPPRESS_HELP)
 
+  # These are for  OAuth authentication for bots for config validation.
+  parser.add_option("--acc_tkn", default=None)
+  parser.add_option("--disable_interaction", action="store_true", default=False)
+
   auth.add_auth_options(parser)
   options, args = parser.parse_args(argv)
   auth_config = auth.extract_auth_config_from_options(options)
@@ -1562,6 +1576,9 @@ def main(argv=None):
   if not change_class:
     parser.error('For unversioned directory, <files> is not optional.')
   logging.info('Found %d file(s).', len(files))
+
+  if options.acc_tkn and not options.disable_interaction:
+    parser.error('User interaction cannot be allowed if access token is given.')
 
   rietveld_obj, gerrit_obj = None, None
 
@@ -1595,6 +1612,11 @@ def main(argv=None):
     logging.info('Got author: "%s"', options.author)
     logging.info('Got description: """\n%s\n"""', options.description)
 
+  # logic for the new options
+  if options.acc_tkn:
+    logging.info('Got access token: %s', options.acc_tkn)
+    options.disable_interaction = True
+
   try:
     with canned_check_filter(options.skip_canned):
       results = DoPresubmitChecks(
@@ -1613,6 +1635,8 @@ def main(argv=None):
           options.default_presubmit,
           options.may_prompt,
           rietveld_obj,
+          options.acc_tkn,
+          options.disable_interaction,
           gerrit_obj,
           options.dry_run)
     return not results.should_continue()

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "50230e74_2940c589",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1224,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-02T23:48:37Z",
+      "side": 1,
+      "message": "문 FYI: I only now realized how easy is to make parallel checks. Perhaps, you can do the same for luci-config!",
+      "range": {
+        "startLine": 1216,
+        "startChar": 1,
+        "endLine": 1224,
+        "endChar": 17
+      },
+      "revId": "3fc9cd39479fe9fad1b70f7ac4dda0e63e344430",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

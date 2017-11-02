@@ -378,7 +378,8 @@ class InputApi(object):
   )
 
   def __init__(self, change, presubmit_path, is_committing,
-      rietveld_obj, verbose, gerrit_obj=None, dry_run=None):
+               rietveld_obj, verbose, access_token, allow_interaction,
+               gerrit_obj=None, dry_run=None):
     """Builds an InputApi object.
 
     Args:
@@ -388,6 +389,8 @@ class InputApi(object):
       rietveld_obj: rietveld.Rietveld client object
       gerrit_obj: provides basic Gerrit codereview functionality.
       dry_run: if true, some Checks will be skipped.
+      access_token: the token for authenticatication.
+      allow_interaction: if true, allows user interaction.
     """
     # Version number of the presubmit_support script.
     self.version = [int(x) for x in __version__.split('.')]
@@ -400,7 +403,8 @@ class InputApi(object):
     self.host_url = 'http://codereview.chromium.org'
     if self.rietveld:
       self.host_url = self.rietveld.url
-
+    self.access_token = access_token
+    self.allow_interaction = allow_interaction
     # We expose various modules and functions as attributes of the input_api
     # so that presubmit scripts don't have to import them.
     self.ast = ast
@@ -1216,6 +1220,7 @@ def DoPostUploadExecuter(change,
 
 class PresubmitExecuter(object):
   def __init__(self, change, committing, rietveld_obj, verbose,
+               access_token, allow_interaction,
                gerrit_obj=None, dry_run=None):
     """
     Args:
@@ -1231,6 +1236,8 @@ class PresubmitExecuter(object):
     self.gerrit = gerrit_obj
     self.verbose = verbose
     self.dry_run = dry_run
+    self.access_token = access_token
+    self.allow_interaction = allow_interaction
 
   def ExecPresubmitScript(self, script_text, presubmit_path):
     """Executes a single presubmit script.
@@ -1251,6 +1258,7 @@ class PresubmitExecuter(object):
     # Load the presubmit script into context.
     input_api = InputApi(self.change, presubmit_path, self.committing,
                          self.rietveld, self.verbose,
+                         self.access_token, self.allow_interaction,
                          gerrit_obj=self.gerrit, dry_run=self.dry_run)
     context = {}
     try:
@@ -1295,6 +1303,8 @@ def DoPresubmitChecks(change,
                       default_presubmit,
                       may_prompt,
                       rietveld_obj,
+                      access_token=None,
+                      allow_interaction=True,
                       gerrit_obj=None,
                       dry_run=None):
   """Runs all presubmit checks that apply to the files in the change.
@@ -1345,6 +1355,7 @@ def DoPresubmitChecks(change,
       output.write("Warning, no PRESUBMIT.py found.\n")
     results = []
     executer = PresubmitExecuter(change, committing, rietveld_obj, verbose,
+                                 access_token, allow_interaction,
                                  gerrit_obj, dry_run)
     if default_presubmit:
       if verbose:
@@ -1534,6 +1545,11 @@ def main(argv=None):
   parser.add_option("--rietveld_email_file", help=optparse.SUPPRESS_HELP)
   parser.add_option("--rietveld_private_key_file", help=optparse.SUPPRESS_HELP)
 
+  # These are for OAuth authentication for bots for config validation.
+  parser.add_option("--access_token", help=optparse.SUPPRESS_HELP)
+  parser.add_option(
+      "--allow_interaction", default=True, help=optparse.SUPPRESS_HELP)
+
   auth.add_auth_options(parser)
   options, args = parser.parse_args(argv)
   auth_config = auth.extract_auth_config_from_options(options)
@@ -1562,6 +1578,7 @@ def main(argv=None):
   if not change_class:
     parser.error('For unversioned directory, <files> is not optional.')
   logging.info('Found %d file(s).', len(files))
+
 
   rietveld_obj, gerrit_obj = None, None
 
@@ -1613,6 +1630,8 @@ def main(argv=None):
           options.default_presubmit,
           options.may_prompt,
           rietveld_obj,
+          options.access_token,
+          options.allow_interaction,
           gerrit_obj,
           options.dry_run)
     return not results.should_continue()

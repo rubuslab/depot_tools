@@ -62,13 +62,20 @@ def CheckChangedConfigs(input_api, output_api):
     remote_host_url = remote_host_url[:-len('.git')]
 
   # authentication
-  try:
-    authenticator = auth.get_authenticator_for_host(
-        LUCI_CONFIG_HOST_NAME, auth.make_auth_config())
-    acc_tkn = authenticator.get_access_token(allow_user_interaction=True).token
-  except auth.AuthenticationError as e:
-    return [output_api.PresubmitError(
-        'Error in authenticating user.', long_text=str(e))]
+  acc_tkn = input_api.acc_tkn
+  if not acc_tkn:
+    if not input_api.allow_interaction:
+      return [output_api.PresubmitPromptWarning(
+          'No configuration validation has occurred as no access token has '
+          'been provided and user interaction is not allowed')]
+    try:
+      authenticator = auth.get_authenticator_for_host(
+          LUCI_CONFIG_HOST_NAME, auth.make_auth_config())
+      acc_tkn = authenticator.get_access_token(
+          allow_user_interaction=True).token
+    except auth.AuthenticationError as e:
+      return [output_api.PresubmitError(
+          'Error in authenticating user.', long_text=str(e))]
 
   def request(endpoint, body=None):
     api_url = ('https://%s/_ah/api/config/v1/%s'

@@ -1,0 +1,210 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a868fce6_8f5678d1",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "a user may ask \"why?\"\nexplain why please",
+      "range": {
+        "startLine": 69,
+        "startChar": 38,
+        "endLine": 69,
+        "endChar": 52
+      },
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b6cc340_1173261b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "i think \"allow\" would better express that intention that we allow or disallow interaction\n\nalso it is a positive word. Positives are easier to reason about when they are negated, as opposed to double negations",
+      "range": {
+        "startLine": 381,
+        "startChar": 47,
+        "endLine": 381,
+        "endChar": 54
+      },
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "686b56f2_2e412f7a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "shortened names are fine for local variables, but not exported symbols, i.e. APIs.\n\nplease name to access_token here and below",
+      "range": {
+        "startLine": 381,
+        "startChar": 38,
+        "endLine": 381,
+        "endChar": 45
+      },
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d4e7885_508123af",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "document new parameters",
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd04038d_adda0a9b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "not necessarily for config validation.\nthese attributes are generic enough to be used something else too",
+      "range": {
+        "startLine": 404,
+        "startChar": 4,
+        "endLine": 404,
+        "endChar": 27
+      },
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10bc9ddb_62e2b9a9",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "either pass help text or optparge.SUPPRESS_HELP like other options do, same below",
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9369b361_454b91c8",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "would not passing default\u003dNone have same effect?",
+      "range": {
+        "startLine": 1548,
+        "startChar": 33,
+        "endLine": 1548,
+        "endChar": 45
+      },
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e98989d9_b7b915c6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1549,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "here is double negation",
+      "range": {
+        "startLine": 1549,
+        "startChar": 74,
+        "endLine": 1549,
+        "endChar": 79
+      },
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e606266_5d02b81b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1581,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "i see no reason for this prohibition\n\noffline we discussed that (account token specifies) implies (interaction is not allowed), but now that I am thinking about it, I am not sure about that either, since not all interaction is necessarily related to authentication.\n\ni think we can omit this",
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b129dab_331a3090",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1618,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-02T21:00:19Z",
+      "side": 1,
+      "message": "given the error condition above, it seems that this is already True (otherwise it would error out earlier). However, now I think we should not do this, see above",
+      "revId": "210e975d510f6405aa2ad3831291fb8e8e9bcbe2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

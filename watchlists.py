@@ -88,6 +88,15 @@ class Watchlists(object):
     self._defns = defns
     self._watchlists = watchlists
 
+    # Compile the regular expressions ahead of time to avoid creating the
+    # on-the-fly multiple times per file.
+    for name, rule in self._defns.iteritems():
+      filepath = rule.get('filepath')
+      if not filepath:
+        continue
+      rule['filepath'] = re.compile(filepath)
+      self._defns[name] = rule
+
     # Verify that all watchlist names are defined
     for name in watchlists:
       if name not in defns:
@@ -111,7 +120,7 @@ class Watchlists(object):
         rex_str = rule.get('filepath')
         if not rex_str:
           continue
-        if re.search(rex_str, path):
+        if rex_str.search(path):
           map(watchers.add, self._watchlists[name])
     return list(watchers)
 

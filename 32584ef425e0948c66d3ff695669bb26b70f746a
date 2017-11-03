@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18232209_9532d644",
+        "filename": "man/src/git-upstream-diff.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-03T07:32:31Z",
+      "side": 1,
+      "message": "If the branch is omitted, the tool shows the diff for the current branch.",
+      "range": {
+        "startLine": 17,
+        "startChar": 47,
+        "endLine": 17,
+        "endChar": 48
+      },
+      "revId": "32584ef425e0948c66d3ff695669bb26b70f746a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2af00c35_12563a57",
+        "filename": "man/src/git-upstream-diff.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-03T07:32:31Z",
+      "side": 1,
+      "message": "branch",
+      "range": {
+        "startLine": 20,
+        "startChar": 26,
+        "endLine": 20,
+        "endChar": 30
+      },
+      "revId": "32584ef425e0948c66d3ff695669bb26b70f746a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0996d003_1eeea66b",
+        "filename": "man/src/git-upstream-diff.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-03T07:32:31Z",
+      "side": 1,
+      "message": "branch",
+      "range": {
+        "startLine": 26,
+        "startChar": 24,
+        "endLine": 26,
+        "endChar": 28
+      },
+      "revId": "32584ef425e0948c66d3ff695669bb26b70f746a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

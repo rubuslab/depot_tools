@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6c92d101_dd6a2cfc",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3008,
+      "author": {
+        "id": 1231539
+      },
+      "writtenOn": "2017-11-03T19:44:56Z",
+      "side": 1,
+      "message": "A small concern: if we crash at RunGit, the temporary file will stay on the disk (until reboot perhaps?).\n\nWould the default `delete\u003dTrue` avoid this problem? If yes, we can do:\n\nwith tempfile.NamedTemporaryFile() as desc_tempfile:\n    desc_tempfile.write(...)\n    desc_tempfile.flush()\n    ... RunGit\n \n(The file will be closed and unlinked automatically on exiting the with scope.)",
+      "revId": "6ce2bc88405ae3c601ac57f3fc8745b24abb0628",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

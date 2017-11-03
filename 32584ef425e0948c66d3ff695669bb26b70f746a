@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "09c71991_0de010d3",
+        "filename": "man/src/git-upstream-diff.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1002844
+      },
+      "writtenOn": "2017-11-03T21:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18232209_9532d644",
+      "range": {
+        "startLine": 17,
+        "startChar": 47,
+        "endLine": 17,
+        "endChar": 48
+      },
+      "revId": "32584ef425e0948c66d3ff695669bb26b70f746a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2af00c35_12563a57",
         "filename": "man/src/git-upstream-diff.txt",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "2e58275e_b9a3fed1",
+        "filename": "man/src/git-upstream-diff.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1002844
+      },
+      "writtenOn": "2017-11-03T21:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2af00c35_12563a57",
+      "range": {
+        "startLine": 20,
+        "startChar": 26,
+        "endLine": 20,
+        "endChar": 30
+      },
+      "revId": "32584ef425e0948c66d3ff695669bb26b70f746a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0996d003_1eeea66b",
         "filename": "man/src/git-upstream-diff.txt",
         "patchSetId": 2
@@ -68,6 +116,30 @@
       "revId": "32584ef425e0948c66d3ff695669bb26b70f746a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5cca59a6_24c1ea56",
+        "filename": "man/src/git-upstream-diff.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1002844
+      },
+      "writtenOn": "2017-11-03T21:51:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0996d003_1eeea66b",
+      "range": {
+        "startLine": 26,
+        "startChar": 24,
+        "endLine": 26,
+        "endChar": 28
+      },
+      "revId": "32584ef425e0948c66d3ff695669bb26b70f746a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

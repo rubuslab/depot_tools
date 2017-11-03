@@ -16,6 +16,24 @@
       "revId": "6ce2bc88405ae3c601ac57f3fc8745b24abb0628",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a387b11_18c62622",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3008,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-03T20:30:34Z",
+      "side": 1,
+      "message": "Yep, that is the concern, but it\u0027s not possible unfortunately. On non-Posix platforms, the file can\u0027t be opened for reading (by git) until it has been closed from writing (by this script). With the default delete\u003dTrue, closing the file will cause it to immediately be deleted. So we have to have delete\u003dFalse, and then non-atomically delete it ourselves later.\n\nFortunately, commit-tree is not one of the operations particularly likely to crash in this script, since it doesn\u0027t have any network activity. So I\u0027m not too concerned about this possibility materializing.",
+      "parentUuid": "6c92d101_dd6a2cfc",
+      "revId": "6ce2bc88405ae3c601ac57f3fc8745b24abb0628",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

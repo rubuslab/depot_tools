@@ -62,13 +62,22 @@ def CheckChangedConfigs(input_api, output_api):
     remote_host_url = remote_host_url[:-len('.git')]
 
   # authentication
-  try:
-    authenticator = auth.get_authenticator_for_host(
-        LUCI_CONFIG_HOST_NAME, auth.make_auth_config())
-    acc_tkn = authenticator.get_access_token(allow_user_interaction=True).token
-  except auth.AuthenticationError as e:
-    return [output_api.PresubmitError(
-        'Error in authenticating user.', long_text=str(e))]
+  if auth.has_local_auth():
+    try:
+      loc_auth = auth._load_local_auth()
+    except auth.BadLuciContextParameters as e:
+      return [output_api.PresubmitError(
+          'Could not load local auth', long_text=str(e))]
+    acc_tkn = auth._get_luci_context_access_token(loc_auth)
+  else :
+    try:
+      authenticator = auth.get_authenticator_for_host(
+          LUCI_CONFIG_HOST_NAME, auth.make_auth_config())
+      acc_tkn = authenticator.get_access_token(
+          allow_user_interaction=False).token
+    except auth.AuthenticationError as e:
+      return [output_api.PresubmitError(
+          'Error in authenticating user.', long_text=str(e))]
 
   def request(endpoint, body=None):
     api_url = ('https://%s/_ah/api/config/v1/%s'

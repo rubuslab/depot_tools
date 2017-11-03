@@ -16,6 +16,7 @@ import os
 import socket
 import sys
 import threading
+import time
 import urllib
 import urlparse
 import webbrowser
@@ -24,6 +25,7 @@ from third_party import httplib2
 from third_party.oauth2client import client
 from third_party.oauth2client import multistore_file
 
+import luci_context
 
 # depot_tools/.
 DEPOT_TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -87,6 +89,23 @@ RefreshToken = collections.namedtuple('RefreshToken', [
 ])
 
 
+# LUCI context parameters as loaded from JSON file.
+#
+# See https://github.com/luci/luci-py/blob/master/client/LUCI_CONTEXT.md.
+LocalAuthParameters = collections.namedtuple('LocalAuthParameters', [
+  'rpc_port',
+  'secret',
+  'accounts',
+  'default_account_id',
+])
+
+
+# Values of 'accounts' section of LUCI_CONTEXT["local_auth"].
+LocalAuthAccount = collections.namedtuple('LocalAuthAccount', [
+  'id',
+])
+
+
 class AuthenticationError(Exception):
   """Raised on errors related to authentication."""
 
@@ -100,6 +119,130 @@ class LoginRequiredError(AuthenticationError):
         'You are not logged in. Please login first by running:\n'
         '  depot-tools-auth login %s' % token_cache_key)
     super(LoginRequiredError, self).__init__(msg)
+
+
+class BadLuciContextParameters(Exception):
+  """LUCI context JSON parameters are missing or not valid."""
+
+
+def has_local_auth():
+  """Checks LUCI_CONTEXT to see if we should enable ambient authentication."""
+  if not luci_context.read('local_auth'):
+    return False
+  try:
+    params = _load_local_auth()
+  except BadLuciContextParameters as exc:
+    logging.error('LUCI_CONTEXT["local_auth"] is broken, ignoring it: %s', exc)
+    return False
+  # Old protocol doesn't specify 'accounts' at all. It has only one account that
+  # is always enabled.
+  #
+  # TODO(vadimsh): Get rid of support of old protocol when it isn't deployed
+  # anywhere anymore.
+  if not params.accounts:
+    return True
+  # In the new protocol (when 'accounts' are always specified), use ambient
+  # authentication only if it is explicitly enabled in LUCI_CONTEXT by non-None
+  # 'default_account_id'.
+  return bool(params.default_account_id)
+
+
+def _load_local_auth():
+  """Returns a LocalAuthParameters tuple from LUCI_CONTEXT.
+  Returns:
+    LocalAuthParameters for connecting to a local auth server.
+  Raises:
+    BadLuciContextParameters if file is missing or not valid.
+  """
+  data = luci_context.read('local_auth')
+  if data is None:
+    raise BadLuciContextParameters('Missing "local_auth" in LUCI_CONTEXT')
+  try:
+    return LocalAuthParameters(
+        rpc_port=int(data['rpc_port']),
+        secret=str(data['secret']),
+        accounts=[
+          LocalAuthAccount(id=acc['id']) for acc in data.get('accounts', [])
+        ],
+        default_account_id=data.get('default_account_id'))
+  except (ValueError, KeyError):
+    data['secret'] = '...'  # note: 'data' is a copy, it's fine to mutate it
+    raise BadLuciContextParameters(
+        'Invalid "local_auth" section in LUCI_CONTEXT: %r' % (data,))
+
+
+def _get_luci_context_access_token(local_auth):
+  """Returns a valid AccessToken from the local LUCI context auth server.
+  Returns:
+    AccessToken on success.
+    None on failure.
+  """
+  logging.debug(
+      'local_auth: requesting an access token for account "%s"',
+      local_auth.default_account_id)
+  body = json.dumps({
+    'account_id': local_auth.default_account_id,  # may be None for old protocol
+    'scopes': [OAUTH_SCOPES],
+    'secret': local_auth.secret,
+  })
+  http = httplib2.Http()
+  host = 'http://127.0.0.1:%d' % local_auth.rpc_port
+  resp, content = http.request(
+      uri='%s/rpc/LuciLocalAuthService.GetOAuthToken' % host,
+      method='POST',
+      body=body,
+      headers={'Content-Type': 'application/json'})
+  if resp.status != 200:
+    logging.error(
+        'local_auth: Failed to grab access token from LUCI context server: %r',
+        content)
+    return None
+  try:
+    token = json.loads(content)
+    error_code = token.get('error_code')
+    error_message = token.get('error_message')
+    access_token = token.get('access_token')
+    expiry = token.get('expiry')
+  except (KeyError, ValueError) as e:
+    logging.error('local_auth: Unexpected access token response format: %s', e)
+    return None
+  if error_code or not access_token:
+    logging.error(
+        'local_auth: Error %d in retrieving access token: %s',
+        error_code, error_message)
+    return None
+  try:
+    expiry_dt = datetime.datetime.utcfromtimestamp(expiry)
+  except (TypeError, ValueError) as e:
+    logging.error('Invalid expiry in returned token: %s', e)
+    return None
+  logging.debug(
+      'local_auth: got an access token for account "%s" that expires in %d sec',
+       local_auth.default_account_id, expiry - time.time())
+  access_token = AccessToken(access_token, expiry_dt)
+  if not _validate_luci_context_access_token(access_token):
+    logging.error('local_auth: the returned access token is invalid')
+    return None
+  return access_token
+
+
+def _validate_luci_context_access_token(access_token):
+  """Validates access_token to be a valid AccessToken.
+  Args:
+    access_token: an AccessToken instance to validate.
+  Returns:
+    True if a valid AccessToken that is not expired.
+    False otherwise.
+  """
+  if isinstance(access_token, AccessToken) and access_token.token:
+    # Valid if expires_at is None or it is not expired soon
+    if access_token.expires_at:
+      if (not isinstance(access_token.expires_at, datetime.datetime) or
+          datetime.datetime.utcfromtimestamp(time.time()) >
+          access_token.expires_at - datetime.timedelta(seconds=60)):
+        return False
+    return True
+  return False
 
 
 def make_auth_config(

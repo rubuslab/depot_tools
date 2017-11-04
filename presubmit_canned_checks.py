@@ -52,6 +52,8 @@ def CheckChangedConfigs(input_api, output_api):
 
   cl = git_cl.Changelist()
   remote, remote_branch = cl.FetchUpstreamTuple(cl.GetBranch())
+  while (remote == '.'):
+    remote, remote_branch = cl.FetchUpstreamTuple(remote_branch)
   if not remote_branch:
     return [output_api.PresubmitError('Upstream branch has not been set')]
   remote_host_url = git.get_remote_url(remote=remote)

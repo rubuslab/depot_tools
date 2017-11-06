@@ -415,6 +415,7 @@ class InputApi(object):
     self.os_listdir = os.listdir
     self.os_walk = os.walk
     self.os_path = os.path
+    self.os_remove = os.remove
     self.os_stat = os.stat
     self.pickle = pickle
     self.marshal = marshal

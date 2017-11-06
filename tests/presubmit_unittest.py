@@ -985,6 +985,7 @@ class InputApiUnittest(PresubmitTestsBase):
         'os_listdir',
         'os_walk',
         'os_path',
+        'os_remove',
         'os_stat',
         'owners_db',
         'owners_finder',

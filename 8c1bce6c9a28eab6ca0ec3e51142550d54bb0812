@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2644740_30e8b6f0",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-06T18:52:50Z",
+      "side": 1,
+      "message": "nit: this is more readable:\nremote_branch, _ \u003d cl.GetRemoteBranch()",
+      "revId": "8c1bce6c9a28eab6ca0ec3e51142550d54bb0812",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d1457c3_f9d696a6",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-06T18:52:50Z",
+      "side": 1,
+      "message": "please add also another replace to take care of refs/branch-heads/*:\n  remote_branch \u003d remote_branch.replace(\u0027refs/remotes/branch-heads/\u0027, \u0027refs/branch-heads/\u0027)\n\nI can\u0027t find an existing way to get actual remote branch either. I have no idea why cl.GetRemoteBranch() appends refs/remotes :(",
+      "range": {
+        "startLine": 55,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 47
+      },
+      "revId": "8c1bce6c9a28eab6ca0ec3e51142550d54bb0812",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

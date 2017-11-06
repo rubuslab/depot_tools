@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "afd831d9_d8354938",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-06T18:58:46Z",
+      "side": 1,
+      "message": "what if someone named their remote differently? i think we should check that it starts with refs/remotes/, but then replace remotes/\u003cwhatever\u003e/",
+      "range": {
+        "startLine": 54,
+        "startChar": 44,
+        "endLine": 54,
+        "endChar": 50
+      },
+      "revId": "8c1bce6c9a28eab6ca0ec3e51142550d54bb0812",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4d1457c3_f9d696a6",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 3
@@ -35,6 +58,29 @@
         "startChar": 4,
         "endLine": 56,
         "endChar": 47
+      },
+      "revId": "8c1bce6c9a28eab6ca0ec3e51142550d54bb0812",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa0e87f6_8189023b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-06T18:58:46Z",
+      "side": 1,
+      "message": "may crash if GetRemoteUrl returns None",
+      "range": {
+        "startLine": 57,
+        "startChar": 37,
+        "endLine": 57,
+        "endChar": 49
       },
       "revId": "8c1bce6c9a28eab6ca0ec3e51142550d54bb0812",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",

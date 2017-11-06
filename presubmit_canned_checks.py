@@ -45,16 +45,16 @@ def CheckChangedConfigs(input_api, output_api):
   import collections
 
   import auth
-  import git_common as git
   import git_cl
 
   LUCI_CONFIG_HOST_NAME = 'luci-config.appspot.com'
 
   cl = git_cl.Changelist()
-  remote, remote_branch = cl.FetchUpstreamTuple(cl.GetBranch())
-  if not remote_branch:
-    return [output_api.PresubmitError('Upstream branch has not been set')]
-  remote_host_url = git.get_remote_url(remote=remote)
+  remote_branch = cl.GetRemoteBranch()[1]
+  if remote_branch.startswith('refs/remotes/origin'):
+    remote_branch = remote_branch.replace(
+        'refs/remotes/origin', 'refs/heads', 1)
+  remote_host_url = cl.GetRemoteUrl().rstrip('/')
   if not remote_host_url:
     return [output_api.PresubmitError(
         'Remote host url for git has not been defined')]

@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "7e42fae4_74d7df64",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T08:26:04Z",
+      "side": 1,
+      "message": "iannucci explained:\n\n\u003e it\u0027s chromium\u0027s hack for release branches\n\u003e they can\u0027t be normal branches under refs/heads because that would be too \n\u003e normal\n\nso, i am not sure we need to handle branch-heads in this code at all. Live configs should never be on release branches and running validation against non-live configs does not make much sense. Andrii, WDYT?",
+      "parentUuid": "53dd482f_b487762e",
+      "range": {
+        "startLine": 59,
+        "startChar": 38,
+        "endLine": 59,
+        "endChar": 57
+      },
+      "revId": "3e4925c98ffe6860c078a8585c0b3dfc24964821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bde58954_914b53ec",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4

@@ -1,0 +1,203 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e142587_bc32ec9a",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "this repo is stale\nuse https://chromium.googlesource.com/infra/luci/luci-py/",
+      "range": {
+        "startLine": 94,
+        "startChar": 6,
+        "endLine": 94,
+        "endChar": 37
+      },
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df5e9e4d_64d3eff4",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "no public function in this package can throw this\n\u003d\u003e this exception should not be public",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee371721_6eb11d4e",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "this CL should add only one new public function to this module: get_local_auth_token which returns the token if it local auth is present and valid, and returns None otherwise",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3beecb3d_3481c076",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "both L130 and L157 read luci context. It is fine with full fledged luci context implementation because it has caching, but not ok without caching. Let\u0027s just read it once: inline _load_local_auth",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e61378ba_be5320e6",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "nit: blank space after first docstring sentence",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa5450f9_415a31c9",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "blank line before Raises\nhttps://google.github.io/styleguide/pyguide.html#Comments",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ff0cd14_52e59399",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "s/ if/:/\nhttps://google.github.io/styleguide/pyguide.html#Comments",
+      "range": {
+        "startLine": 155,
+        "startChar": 28,
+        "endLine": 155,
+        "endChar": 31
+      },
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15abb5bf_8f1b0022",
+        "filename": "luci_context/luci_context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "luci_context package from luci-py has far more than we need. Long term, I don\u0027t think we will need full luci context implementation in depot_tools.\nPlease inline luci_context code in auth.py at call sites, delete code paths that are not needed and delete luci_context package.",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db677415_520b96df",
+        "filename": "luci_context/luci_context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "we don\u0027t need a global caching/lock",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58d7db35_f344f42c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "this is encapsulation violation. We should not access private symbols of another package",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52fdc22e_3e713bd0",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T02:29:46Z",
+      "side": 1,
+      "message": "i believe we should extend get_access_token to return a token from luci context if it is present and if our usual way of getting token failed",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

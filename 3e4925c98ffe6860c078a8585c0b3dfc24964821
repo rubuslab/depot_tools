@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "1471bf97_469f3eec",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-07T08:53:31Z",
+      "side": 1,
+      "message": "i\u0027ve asked to add support for refs/branch-heads here in prior patchset,\nbecause I don\u0027t see anything wrong with configs being outside of refs/heads/*.\nIMO, what\u0027s live and not live should be up to project\u0027s config.\n\n\nAnd FTR, one of the good reasons to store chromium branches in refs/branch-heads/* is to reduce checkout size in default \"git clone ...\" which gets only refs/heads/* by default. It\u0027s not just about complexity :P",
+      "parentUuid": "7e42fae4_74d7df64",
+      "range": {
+        "startLine": 59,
+        "startChar": 38,
+        "endLine": 59,
+        "endChar": 57
+      },
+      "revId": "3e4925c98ffe6860c078a8585c0b3dfc24964821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bde58954_914b53ec",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -83,6 +107,30 @@
       "writtenOn": "2017-11-07T08:17:33Z",
       "side": 1,
       "message": "i believe we can do it in L61\n\u003d\u003e less code and `if not remote_host_url` is slightly more useful\nand then, maybe we should move the if statement after trimming .git too, so that we transform first, and then check",
+      "range": {
+        "startLine": 65,
+        "startChar": 35,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "3e4925c98ffe6860c078a8585c0b3dfc24964821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1537ed00_d5005045",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-07T08:53:31Z",
+      "side": 1,
+      "message": "https://cs.chromium.org/chromium/tools/depot_tools/git_cl.py?q\u003dGetRemoteUrl\u0026sq\u003dpackage:chromium\u0026l\u003d1386\nGetRemoteUrl() returns None if there is no remote.",
+      "parentUuid": "bde58954_914b53ec",
       "range": {
         "startLine": 65,
         "startChar": 35,

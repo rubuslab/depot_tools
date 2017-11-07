@@ -328,6 +328,7 @@ def main(argv):
       ('git-bash.template.sh', 'git-bash'),
       ('pylint.new.bat', 'pylint.bat'),
       (python_bat_template, 'python.bat'),
+      (python_bat_template, 'python2.bat'),
       ):
     template.maybe_install(src_name, os.path.join(ROOT_DIR, dst_name))
 

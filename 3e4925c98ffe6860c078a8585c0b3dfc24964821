@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "3f752abd_0357fa33",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T08:59:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1471bf97_469f3eec",
+      "range": {
+        "startLine": 59,
+        "startChar": 38,
+        "endLine": 59,
+        "endChar": 57
+      },
+      "revId": "3e4925c98ffe6860c078a8585c0b3dfc24964821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bde58954_914b53ec",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4
@@ -140,6 +164,30 @@
       "revId": "3e4925c98ffe6860c078a8585c0b3dfc24964821",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79618ee0_1bde3ba5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T08:59:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1537ed00_d5005045",
+      "range": {
+        "startLine": 65,
+        "startChar": 35,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "3e4925c98ffe6860c078a8585c0b3dfc24964821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

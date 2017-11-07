@@ -114,7 +114,7 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
       [f.LocalPath() for f in files], author)
   upload_args = ['-f', '--cq-dry-run', '-r', ','.join(reviewers)]
   if not comment:
-    upload_args.append('--send-email')
+    upload_args.append('--send-mail')
   print 'Uploading CL for ' + directory + '.'
   cmd_upload(upload_args)
   if comment:

@@ -46,6 +46,30 @@
       "revId": "ff8d6ee142c3cff852993ac5717a353db1c759f0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71238601_c19547a9",
+        "filename": "gerrit_util.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-07T01:03:59Z",
+      "side": 1,
+      "message": "The breakpoint for set() being faster than a raw str is somewhere between \"Initial upload\" and \"Fix a bunch of tests for the \u0027OH SNAP IT NEVER WORKS\u0027 problem\". Wrote a little script to time running each version 100,000 times on strings of different lengths:\n\n\u003e ./setvstr.py\nTesting \"Initial upload\"\nstr: 0.318958997726\nset: 0.473040819168\nTesting \"Fix a bunch of tests for the \"OH SNAP IT NEVER WORKS\" problem\"\nstr: 1.01372504234\nset: 0.896082878113\nTesting \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet scelerisque lectus ut euismod. Mauris porttitor turpis nec velit viverra, nec convallis sem tempus. Ut non ex sed massa ultricies aliquam. Proin sit amet enim sed ante venenatis lacinia in vehicula lacus. Nullam ut volutpat eros. Praesent pulvinar tellus ut tortor condimentum, nec vehicula nulla semper. Suspendisse tortor diam, semper et nulla quis, convallis placerat ex. Maecenas sagittis eros sed bibendum eleifend. Duis vehicula odio velit, sed suscipit velit mollis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam purus nunc, gravida vitae arcu non, mollis iaculis libero. Ut porta non turpis et accumsan. Pellentesque a porta erat. Nulla posuere, nibh vitae pharetra scelerisque, quam urna dignissim enim, a ullamcorper nisi risus quis diam. Praesent feugiat massa eget imperdiet molestie. Donec ultrices non arcu at ultricies. Mauris dignissim fermentum dolor. Suspendisse vel efficitur libero. Proin in ultricies diam. Duis ut velit nulla. Mauris aliquam, dolor sed ultrices cursus, mauris justo scelerisque est, eget suscipit sapien arcu suscipit purus. Nam consequat consectetur tristique.\"\nstr: 12.6172299385\nset: 10.8771309853",
+      "parentUuid": "51aad31b_9541023d",
+      "range": {
+        "startLine": 845,
+        "startChar": 9,
+        "endLine": 845,
+        "endChar": 74
+      },
+      "revId": "ff8d6ee142c3cff852993ac5717a353db1c759f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

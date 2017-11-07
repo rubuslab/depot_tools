@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e95f1cf6_b6c73806",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T08:17:33Z",
+      "side": 1,
+      "message": "this is better than what i\u0027ve suggested, nice",
+      "range": {
+        "startLine": 54,
+        "startChar": 48,
+        "endLine": 54,
+        "endChar": 57
+      },
+      "revId": "3e4925c98ffe6860c078a8585c0b3dfc24964821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "53dd482f_b487762e",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T08:17:33Z",
+      "side": 1,
+      "message": "i believe branch-heads is something Chromium invented and it can exist only locally, i.e. i highly doubt we can have branch-heads on the server, so this should be refs/heads/",
+      "range": {
+        "startLine": 59,
+        "startChar": 38,
+        "endLine": 59,
+        "endChar": 57
+      },
+      "revId": "3e4925c98ffe6860c078a8585c0b3dfc24964821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bde58954_914b53ec",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-07T08:17:33Z",
+      "side": 1,
+      "message": "i believe we can do it in L61\n\u003d\u003e less code and `if not remote_host_url` is slightly more useful\nand then, maybe we should move the if statement after trimming .git too, so that we transform first, and then check",
+      "range": {
+        "startLine": 65,
+        "startChar": 35,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "3e4925c98ffe6860c078a8585c0b3dfc24964821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

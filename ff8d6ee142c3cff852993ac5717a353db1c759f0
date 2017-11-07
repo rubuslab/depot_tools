@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3365071e_ecd98f7d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-07T00:32:33Z",
+      "side": 1,
+      "message": "nit: make it a set set(...)",
+      "range": {
+        "startLine": 845,
+        "startChar": 9,
+        "endLine": 845,
+        "endChar": 74
+      },
+      "revId": "ff8d6ee142c3cff852993ac5717a353db1c759f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

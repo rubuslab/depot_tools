@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "38c4d1e1_ab9048b7",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e142587_bc32ec9a",
+      "range": {
+        "startLine": 94,
+        "startChar": 6,
+        "endLine": 94,
+        "endChar": 37
+      },
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df5e9e4d_64d3eff4",
         "filename": "auth.py",
         "patchSetId": 1
@@ -39,6 +63,24 @@
       "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6599502_54ce3ee0",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df5e9e4d_64d3eff4",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "ca0887f9_eddc9b58",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee371721_6eb11d4e",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3beecb3d_3481c076",
         "filename": "auth.py",
         "patchSetId": 1
@@ -73,6 +133,24 @@
       "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "140629a1_e491d934",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3beecb3d_3481c076",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "40e94f42_1a856710",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e61378ba_be5320e6",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aa5450f9_415a31c9",
         "filename": "auth.py",
         "patchSetId": 1
@@ -107,6 +203,24 @@
       "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9696dab_9b8b3844",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa5450f9_415a31c9",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -133,6 +247,30 @@
     },
     {
       "key": {
+        "uuid": "213b9f94_40a5c58e",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ff0cd14_52e59399",
+      "range": {
+        "startLine": 155,
+        "startChar": 28,
+        "endLine": 155,
+        "endChar": 31
+      },
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "15abb5bf_8f1b0022",
         "filename": "luci_context/luci_context.py",
         "patchSetId": 1
@@ -147,6 +285,24 @@
       "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d8840c9_8ca3deb0",
+        "filename": "luci_context/luci_context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15abb5bf_8f1b0022",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -167,6 +323,24 @@
     },
     {
       "key": {
+        "uuid": "e07866cb_7ed99194",
+        "filename": "luci_context/luci_context.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db677415_520b96df",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "58d7db35_f344f42c",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 1
@@ -184,6 +358,24 @@
     },
     {
       "key": {
+        "uuid": "40c47d8b_61386bb3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58d7db35_f344f42c",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "52fdc22e_3e713bd0",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 1
@@ -195,6 +387,24 @@
       "writtenOn": "2017-11-07T02:29:46Z",
       "side": 1,
       "message": "i believe we should extend get_access_token to return a token from luci context if it is present and if our usual way of getting token failed",
+      "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3d2757c_6b19a826",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-07T20:53:37Z",
+      "side": 1,
+      "message": "Would it be acceptable to simply check for luci_context if this block throws an exception?",
+      "parentUuid": "52fdc22e_3e713bd0",
       "revId": "9d9041ef15f3caf23210732c3807c006fad5228e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

@@ -94,6 +94,30 @@
       "revId": "ff8d6ee142c3cff852993ac5717a353db1c759f0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7eff30b3_268cd556",
+        "filename": "gerrit_util.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-07T01:13:49Z",
+      "side": 1,
+      "message": "Actually, further testing shows that using just a str wins pretty consistently up through 72-character messages (which is the longest anything related to a git commit should be), and its winning margin is bigger when the string consists mostly of letters/numbers (as we expect most of them to).\n\nThe hash table wins on really big inputs, and gets closer to winning on inputs that have lots of crazy characters (where the \"not in\" logic is faster), but yeah it doesn\u0027t appear to be worth it for this particular case.",
+      "parentUuid": "71238601_c19547a9",
+      "range": {
+        "startLine": 845,
+        "startChar": 9,
+        "endLine": 845,
+        "endChar": 74
+      },
+      "revId": "ff8d6ee142c3cff852993ac5717a353db1c759f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

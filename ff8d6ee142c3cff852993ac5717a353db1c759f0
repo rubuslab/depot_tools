@@ -70,6 +70,30 @@
       "revId": "ff8d6ee142c3cff852993ac5717a353db1c759f0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d821d0b1_5378a3a2",
+        "filename": "gerrit_util.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-07T01:12:52Z",
+      "side": 1,
+      "message": "tl;dr let\u0027s keep as is.\n\nIn [96]: %%timeit\n    ...:  original \u003d \"that\u0027s my new patchset #12, which fixes and rebases on top of cl/821744\"\n    ...:  safe \u003d frozenset(\u0027abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 \u0027)\n    ...:  encoded \u003d \u0027\u0027.join(c if c in safe else \u0027%%%02X\u0027 % ord(c) for c in original)\n    ...: \nThe slowest run took 7.66 times longer than the fastest. This could mean that an intermediate result is being cached.\n100000 loops, best of 3: 9.4 µs per loop\n\nIn [97]: %%timeit\n    ...:  original \u003d \"that\u0027s my new patchset #12, which fixes and rebases on top of cl/821744\"\n    ...:  safe \u003d set(\u0027abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 \u0027)\n    ...:  encoded \u003d \u0027\u0027.join(c if c in safe else \u0027%%%02X\u0027 % ord(c) for c in original)\n    ...: \nThe slowest run took 10.51 times longer than the fastest. This could mean that an intermediate result is being cached.\n100000 loops, best of 3: 9.33 µs per loop\n\nIn [98]: %%timeit\n    ...:  original \u003d \"that\u0027s my new patchset #12, which fixes and rebases on top of cl/821744\"\n    ...:  safe \u003d \u0027abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 \u0027\n    ...:  encoded \u003d \u0027\u0027.join(c if c in safe else \u0027%%%02X\u0027 % ord(c) for c in original)\n    ...: \nThe slowest run took 6.84 times longer than the fastest. This could mean that an intermediate result is being cached.\n100000 loops, best of 3: 8.92 µs per loop",
+      "parentUuid": "51aad31b_9541023d",
+      "range": {
+        "startLine": 845,
+        "startChar": 9,
+        "endLine": 845,
+        "endChar": 74
+      },
+      "revId": "ff8d6ee142c3cff852993ac5717a353db1c759f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

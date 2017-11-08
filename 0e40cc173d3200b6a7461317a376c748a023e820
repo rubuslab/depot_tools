@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ed51ae4_b82fda2e",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-08T17:47:46Z",
+      "side": 1,
+      "message": "This should be self._named_temporary_files, since no consumer of InputApi should be accessing it directly.\n\nIt could probably also be a set().",
+      "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e0f44f9_4ab826ef",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-08T17:47:46Z",
+      "side": 1,
+      "message": "Perhaps give this **kwargs, rather than naming each of these, so that we don\u0027t have to hardcode the same defaults that NamedTemporaryFile has.",
+      "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98001663_677353c4",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-08T17:47:46Z",
+      "side": 1,
+      "message": "As above, simply pass (delete\u003dFalse, **kwargs) to retain the same defaults as the underlying library.",
+      "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "986ef148_2865334a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-08T17:47:46Z",
+      "side": 1,
+      "message": "Rather than giving InputApi an explicit RemoveTemporaryFiles method, and then telling users of the InputApi not to call it, why doesn\u0027t this just do map(os.remove, input_api._named_temporary_files) itself?",
+      "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

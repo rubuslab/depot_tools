@@ -14,6 +14,7 @@ import logging
 import multiprocessing
 import os
 import sys
+import tempfile
 import time
 import unittest
 import urllib2
@@ -957,12 +958,14 @@ class InputApiUnittest(PresubmitTestsBase):
         'AffectedTextFiles',
         'DEFAULT_BLACK_LIST',
         'DEFAULT_WHITE_LIST',
+        'CreateTemporaryFile',
         'FilterSourceFile',
         'LocalPaths',
         'Command',
         'RunTests',
         'PresubmitLocalPath',
         'ReadFile',
+        'RemoveTemporaryFiles',
         'RightHandSideLines',
         'ShutdownPool',
         'ast',
@@ -982,6 +985,7 @@ class InputApiUnittest(PresubmitTestsBase):
         'json',
         'logging',
         'marshal',
+        'named_temporary_files',
         'os_listdir',
         'os_walk',
         'os_path',
@@ -1322,6 +1326,44 @@ class InputApiUnittest(PresubmitTestsBase):
         change, presubmit.os.path.join(self.fake_root_dir, '/p'), False,
         None, False)
     input_api.ReadFile(fileobj, 'x')
+
+  def testCreateTemporaryFile(self):
+    class MockTemporaryFile(object):
+      def __init__(self, name):
+        self.name = name
+
+      def __enter__(self):
+        return self
+
+      def __exit__(self, *args):
+        pass
+
+    input_api = presubmit.InputApi(
+        self.fake_change,
+        presubmit_path='foo/path/PRESUBMIT.py',
+        is_committing=False, rietveld_obj=None, verbose=False)
+    input_api.tempfile.NamedTemporaryFile = self.mox.CreateMock(
+        input_api.tempfile.NamedTemporaryFile)
+    input_api.tempfile.NamedTemporaryFile(
+        bufsize=-1, suffix='', prefix='tmp', dir=None, delete=False
+        ).AndReturn(MockTemporaryFile('foo'))
+    input_api.tempfile.NamedTemporaryFile(
+        bufsize=-1, suffix='', prefix='tmp', dir=None, delete=False
+        ).AndReturn(MockTemporaryFile('bar'))
+    presubmit.os.remove('bar')
+    presubmit.os.remove('foo')
+    self.mox.ReplayAll()
+
+    self.assertEqual(0, len(input_api.named_temporary_files))
+    with input_api.CreateTemporaryFile():
+      self.assertEqual(1, len(input_api.named_temporary_files))
+    self.assertEqual(['foo'], input_api.named_temporary_files)
+    with input_api.CreateTemporaryFile():
+      self.assertEqual(2, len(input_api.named_temporary_files))
+    self.assertEqual(2, len(input_api.named_temporary_files))
+    self.assertEqual(['foo', 'bar'], input_api.named_temporary_files)
+    input_api.RemoveTemporaryFiles()
+    self.assertEqual(0, len(input_api.named_temporary_files))
 
 
 class OutputApiUnittest(PresubmitTestsBase):

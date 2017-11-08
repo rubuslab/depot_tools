@@ -65,9 +65,12 @@ def CheckChangedConfigs(input_api, output_api):
   try:
     authenticator = auth.get_authenticator_for_host(
         LUCI_CONFIG_HOST_NAME, auth.make_auth_config())
-    acc_tkn = authenticator.get_access_token(allow_user_interaction=True).token
-  except auth.AuthenticationError as e:
-    return [output_api.PresubmitError(
+    acc_tkn = authenticator.get_access_token().token
+  except (auth.AuthenticationError, auth.LoginRequiredError) as e:
+    luci_ctx_acc_tkn = auth.get_luci_context_access_token()
+    acc_tkn = luci_ctx_acc_tkn.token if luci_ctx_acc_tkn else None
+    if not acc_tkn:
+      return [output_api.PresubmitError(
         'Error in authenticating user.', long_text=str(e))]
 
   def request(endpoint, body=None):

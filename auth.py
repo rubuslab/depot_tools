@@ -6,6 +6,7 @@
 
 import BaseHTTPServer
 import collections
+import copy
 import datetime
 import functools
 import hashlib
@@ -16,6 +17,7 @@ import os
 import socket
 import sys
 import threading
+import time
 import urllib
 import urlparse
 import webbrowser
@@ -28,6 +30,8 @@ from third_party.oauth2client import multistore_file
 # depot_tools/.
 DEPOT_TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# luci-context variables
+_ENV_KEY = 'LUCI_CONTEXT'
 
 # Google OAuth2 clients always have a secret, even if the client is an installed
 # application/utility such as this. Of course, in such cases the "secret" is
@@ -100,6 +104,130 @@ class LoginRequiredError(AuthenticationError):
         'You are not logged in. Please login first by running:\n'
         '  depot-tools-auth login %s' % token_cache_key)
     super(LoginRequiredError, self).__init__(msg)
+
+
+def _to_utf8(obj):
+  if isinstance(obj, dict):
+    return {_to_utf8(key): _to_utf8(value) for key, value in obj.iteritems()}
+  if isinstance(obj, list):
+    return [_to_utf8(item) for item in obj]
+  if isinstance(obj, unicode):
+    return obj.encode('utf-8')
+  return obj
+
+
+def _check_ok(data):
+  if not isinstance(data, dict):
+    logging.error(
+      'LUCI_CONTEXT does not contain a dict: %s', type(data).__name__)
+    return False
+  bad = False
+  for k, v in data.iteritems():
+    if not isinstance(v, dict):
+      bad = True
+      logging.error(
+        'LUCI_CONTEXT[%r] is not a dict: %s', k, type(v).__name__)
+  return not bad
+
+
+def get_luci_context_access_token():
+  """Returns a valid AccessToken from the local LUCI context auth server.
+
+  Adapted from
+  https://chromium.googlesource.com/infra/luci/luci-py/+/master/client/libs/luci_context/luci_context.py
+  See the link above for more details.
+
+  Returns:
+    AccessToken on success.
+    None on failure.
+  """
+  ctx_path = os.environ.get(_ENV_KEY)
+  if ctx_path:
+    ctx_path = ctx_path.decode(sys.getfilesystemencoding())
+    logging.debug('Loading LUCI_CONTEXT: %r', ctx_path)
+    try:
+      with open(ctx_path, 'r') as f:
+        loaded = _to_utf8(json.load(f))
+        if _check_ok(loaded):
+          local_auth = loaded.get('local_auth', None)
+    except OSError as ex:
+      logging.error('LUCI_CONTEXT failed to open: %s', ex)
+    except IOError as ex:
+      logging.error('LUCI_CONTEXT failed to read: %s', ex)
+    except ValueError as ex:
+      logging.error('LUCI_CONTEXT failed to decode: %s', ex)
+  # failed to grab local_auth from LUCI context
+  if not local_auth:
+    return None
+
+  logging.debug(
+      'local_auth: requesting an access token for account "%s"',
+      local_auth.default_account_id)
+  body = json.dumps({
+    'account_id': local_auth['default_account_id'],
+    'scopes': [OAUTH_SCOPES],
+    'secret': str(local_auth['secret']),
+  })
+  http = httplib2.Http()
+  host = '127.0.0.1:%d' % int(local_auth['rpc_port'])
+  resp, content = http.request(
+      uri='http://%s/rpc/LuciLocalAuthService.GetOAuthToken' % host,
+      method='POST',
+      body=body,
+      headers={'Content-Type': 'application/json'})
+  if resp.status != 200:
+    logging.error(
+        'local_auth: Failed to grab access token from LUCI context server: %r',
+        content)
+    return None
+  try:
+    token = json.loads(content)
+    error_code = token.get('error_code')
+    error_message = token.get('error_message')
+    access_token = token.get('access_token')
+    expiry = token.get('expiry')
+  except (KeyError, ValueError) as e:
+    logging.error('local_auth: Unexpected access token response format: %s', e)
+    return None
+  if error_code or not access_token:
+    logging.error(
+        'local_auth: Error %d in retrieving access token: %s',
+        error_code, error_message)
+    return None
+  try:
+    expiry_dt = datetime.datetime.utcfromtimestamp(expiry)
+  except (TypeError, ValueError) as e:
+    logging.error('Invalid expiry in returned token: %s', e)
+    return None
+  logging.debug(
+      'local_auth: got an access token for account "%s" that expires in %d sec',
+       local_auth['default_account_id'], expiry - time.time())
+  access_token = AccessToken(access_token, expiry_dt)
+  if not _validate_luci_context_access_token(access_token):
+    logging.error('local_auth: the returned access token is invalid')
+    return None
+  return access_token
+
+
+def _validate_luci_context_access_token(access_token):
+  """Validates access_token to be a valid AccessToken.
+
+  Args:
+    access_token: an AccessToken instance to validate.
+
+  Returns:
+    True if a valid AccessToken that is not expired.
+    False otherwise.
+  """
+  if not isinstance(access_token, AccessToken) or not access_token.token:
+    return False
+  # Valid if expires_at is None or it is not expired soon
+  if access_token.expires_at:
+    if (not isinstance(access_token.expires_at, datetime.datetime) or
+        datetime.datetime.now() >
+        access_token.expires_at - datetime.timedelta(minutes=60)):
+      return False
+  return True
 
 
 def make_auth_config(

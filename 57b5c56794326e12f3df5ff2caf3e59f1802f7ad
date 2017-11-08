@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ebd546f_adff47a7",
+        "filename": "recipes/recipe_modules/luci_migration/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T04:17:00Z",
+      "side": 1,
+      "message": "any reason not to add is_prod in the same way in this CL?",
+      "revId": "57b5c56794326e12f3df5ff2caf3e59f1802f7ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e61a267_131800f1",
+        "filename": "recipes/recipe_modules/luci_migration/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T04:17:00Z",
+      "side": 1,
+      "message": "i think users won\u0027t have to do this, see https://bugs.chromium.org/p/chromium/issues/detail?id\u003d782460\u0026can\u003d2\u0026start\u003d0\u0026num\u003d100\u0026q\u003downer%3Ame\u0026colspec\u003dID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified\u0026groupby\u003d\u0026sort\u003d\u0026hotlist_id\u003d\u0026desc\u003d2#maincol",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 29,
+        "endChar": 0
+      },
+      "revId": "57b5c56794326e12f3df5ff2caf3e59f1802f7ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "132bc77b_f42349f6",
+        "filename": "recipes/recipe_modules/luci_migration/test_api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T04:17:00Z",
+      "side": 1,
+      "message": "nit: would `ret.properties[...] \u003d ...` be simpler?",
+      "revId": "57b5c56794326e12f3df5ff2caf3e59f1802f7ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

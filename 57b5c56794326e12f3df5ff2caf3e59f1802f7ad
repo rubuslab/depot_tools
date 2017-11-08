@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9c0840b4_a82ee56c",
+        "filename": "recipes/recipe_modules/luci_migration/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-08T07:21:04Z",
+      "side": 1,
+      "message": "copyright everywhere probably",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 4
+      },
+      "revId": "57b5c56794326e12f3df5ff2caf3e59f1802f7ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ebd546f_adff47a7",
         "filename": "recipes/recipe_modules/luci_migration/__init__.py",
         "patchSetId": 2
@@ -78,6 +101,23 @@
         "endLine": 29,
         "endChar": 0
       },
+      "revId": "57b5c56794326e12f3df5ff2caf3e59f1802f7ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eaeb9209_6ebc6ddc",
+        "filename": "recipes/recipe_modules/luci_migration/test_api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-08T07:21:04Z",
+      "side": 1,
+      "message": "docstring pls",
       "revId": "57b5c56794326e12f3df5ff2caf3e59f1802f7ad",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

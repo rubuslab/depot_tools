@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30b84efd_5f469866",
+        "filename": "recipes/recipe_modules/luci_migration/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-08T22:01:47Z",
+      "side": 1,
+      "message": "to modify steps which produce external side-effects so that non-production runs of the recipe do not affect production data. \n\nExamples:\n  * Uploading to an alternate google storage file name when in non-prod mode\n  * Appending a \u0027non-production\u0027 tag to external RPCs",
+      "range": {
+        "startLine": 27,
+        "startChar": 24,
+        "endLine": 29,
+        "endChar": 26
+      },
+      "revId": "34851ba4a69c11b6cdc612e2fb574127908be5eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f7dbf5d_d9e17ae1",
+        "filename": "recipes/recipe_modules/luci_migration/examples/full.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-08T22:01:47Z",
+      "side": 1,
+      "message": "I would move this to tests/basic.py instead of examples/full.py",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 11
+      },
+      "revId": "34851ba4a69c11b6cdc612e2fb574127908be5eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44be7ed2_c997e1da",
+        "filename": "recipes/recipe_modules/luci_migration/examples/full.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-08T22:01:47Z",
+      "side": 1,
+      "message": "just add True/False here and then skip the loop. The 5 expectations aren\u0027t buying anything.",
+      "range": {
+        "startLine": 22,
+        "startChar": 18,
+        "endLine": 22,
+        "endChar": 25
+      },
+      "revId": "34851ba4a69c11b6cdc612e2fb574127908be5eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

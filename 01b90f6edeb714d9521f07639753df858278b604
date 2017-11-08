@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efdf1c74_fe22d9b2",
+        "filename": "recipes/recipe_modules/luci_migration/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-08T22:15:15Z",
+      "side": 1,
+      "message": "this recipe is currently running on LUCI stack",
+      "range": {
+        "startLine": 20,
+        "startChar": 15,
+        "endLine": 20,
+        "endChar": 19
+      },
+      "revId": "01b90f6edeb714d9521f07639753df858278b604",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3044563c_cfa6107e",
+        "filename": "recipes/recipe_modules/luci_migration/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-08T22:15:15Z",
+      "side": 1,
+      "message": "this recipe is currently running in production",
+      "range": {
+        "startLine": 25,
+        "startChar": 15,
+        "endLine": 25,
+        "endChar": 27
+      },
+      "revId": "01b90f6edeb714d9521f07639753df858278b604",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

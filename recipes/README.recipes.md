@@ -13,6 +13,7 @@
   * [gitiles](#recipe_modules-gitiles)
   * [gsutil](#recipe_modules-gsutil)
   * [infra_paths](#recipe_modules-infra_paths)
+  * [luci_migration](#recipe_modules-luci_migration)
   * [presubmit](#recipe_modules-presubmit)
   * [rietveld](#recipe_modules-rietveld)
   * [tryserver](#recipe_modules-tryserver)
@@ -31,6 +32,7 @@
   * [gitiles:examples/full](#recipes-gitiles_examples_full)
   * [gsutil:examples/full](#recipes-gsutil_examples_full)
   * [infra_paths:examples/full](#recipes-infra_paths_examples_full)
+  * [luci_migration:examples/full](#recipes-luci_migration_examples_full)
   * [presubmit:examples/full](#recipes-presubmit_examples_full)
   * [rietveld:examples/full](#recipes-rietveld_examples_full)
   * [tryserver:examples/full](#recipes-tryserver_examples_full)
@@ -612,6 +614,43 @@ It returns git_cache path if it is defined (Buildbot world), otherwise
 uses the more generic [CACHE]/git path (LUCI world).
 
 &mdash; **def [initialize](/recipes/recipe_modules/infra_paths/api.py#11)(self):**
+### *recipe_modules* / [luci\_migration](/recipes/recipe_modules/luci_migration)
+
+[DEPS](/recipes/recipe_modules/luci_migration/__init__.py#1): [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/properties][recipe_engine/recipe_modules/properties]
+
+#### **class [LuciMigrationApi](/recipes/recipe_modules/luci_migration/api.py#8)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
+
+This module assists in migrating builders from Buildbot to pure LUCI stack.
+
+Finishing migration means you no longer depend on this module.
+
+Usage:
+
+    1. Add the "migrating_to_luci:true" to recipe properties of a builder in
+    your cr-buildbucket.cfg.
+
+            bucket {
+              ...
+              builders{
+                name: "this builder is on luci"
+                ...
+                recipe{
+                  ...
+                  properties_j: "$depot_tools/luci_migration:{"is_luci": true}"
+              }
+              ...
+            }
+
+    2. In your recipe, you may add conditional execution:
+
+            if api.luci_migration.is_luci:
+              do_luci_specific_stuff()
+            else:
+              do_buildbot_stuff()
+
+&emsp; **@property**<br>&mdash; **def [is\_luci](/recipes/recipe_modules/luci_migration/api.py#42)(self):**
+
+True if runs on LUCI stack.
 ### *recipe_modules* / [presubmit](/recipes/recipe_modules/presubmit)
 
 [DEPS](/recipes/recipe_modules/presubmit/__init__.py#1): [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/step][recipe_engine/recipe_modules/step]
@@ -817,6 +856,11 @@ Move things around in a loop!
 [DEPS](/recipes/recipe_modules/infra_paths/examples/full.py#7): [infra\_paths](#recipe_modules-infra_paths), [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
 &mdash; **def [RunSteps](/recipes/recipe_modules/infra_paths/examples/full.py#16)(api):**
+### *recipes* / [luci\_migration:examples/full](/recipes/recipe_modules/luci_migration/examples/full.py)
+
+[DEPS](/recipes/recipe_modules/luci_migration/examples/full.py#7): [luci\_migration](#recipe_modules-luci_migration), [recipe\_engine/step][recipe_engine/recipe_modules/step]
+
+&mdash; **def [RunSteps](/recipes/recipe_modules/luci_migration/examples/full.py#13)(api):**
 ### *recipes* / [presubmit:examples/full](/recipes/recipe_modules/presubmit/examples/full.py)
 
 [DEPS](/recipes/recipe_modules/presubmit/examples/full.py#5): [presubmit](#recipe_modules-presubmit)

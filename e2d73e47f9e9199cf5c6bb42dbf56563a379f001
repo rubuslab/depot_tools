@@ -1,0 +1,233 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2a5782c0_4f292dfd",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "no public method returns this, so it should not be public\n\nmoreover, there is only one place that returns it and only place that consumes it (both internal), so I am not sure this type does not deserve to exist. Consider returning a tuple with all these values",
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6658f01_82cd9be7",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "never used, so can be entirely omitted",
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b713e4d9_6769bce8",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "same here. It is a tuple to avoid breaking code that we don\u0027t control,  but in this file we control all usages, so we can return a list of ids, as opposed to list of tuples with ids\n\nbut then, looks like we don\u0027t need it",
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc93b085_95fa1a05",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "we don\u0027t need this customizability. \u0027local_auth \u0027 is the only key we care about in this file. Please delete the docstring and inline the function.",
+      "range": {
+        "startLine": 132,
+        "startChar": 10,
+        "endLine": 132,
+        "endChar": 21
+      },
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8eab19d6_c0f3837f",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "it is ok not to cache luci context, and it would be much less code. please just read the file, parse as JSON and retrieve local_auth. Please delete _read_full and _initial_load",
+      "range": {
+        "startLine": 158,
+        "startChar": 9,
+        "endLine": 158,
+        "endChar": 36
+      },
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2ca8774_38fe880c",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "host cannot have URL schema. Please move http:// from here to L261",
+      "range": {
+        "startLine": 259,
+        "startChar": 10,
+        "endLine": 259,
+        "endChar": 17
+      },
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e11d5244_c507f885",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "invert the condition to reduce indentation",
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22161344_6ebea614",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "datetime.datetime.now()",
+      "range": {
+        "startLine": 313,
+        "startChar": 10,
+        "endLine": 313,
+        "endChar": 57
+      },
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3095d31f_17971e33",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "nit: minutes\u003d1",
+      "range": {
+        "startLine": 314,
+        "startChar": 55,
+        "endLine": 314,
+        "endChar": 65
+      },
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce29290a_3db32072",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "this is default, and I believe this default is good, so I think it is safe not to pass the parameter",
+      "range": {
+        "startLine": 68,
+        "startChar": 45,
+        "endLine": 69,
+        "endChar": 36
+      },
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "821922da_a3357ab9",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-08T18:31:38Z",
+      "side": 1,
+      "message": "any reason not to assign the returned value to acc_tkn directly? This is what we ultimately do in L75",
+      "range": {
+        "startLine": 71,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 16
+      },
+      "revId": "e2d73e47f9e9199cf5c6bb42dbf56563a379f001",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

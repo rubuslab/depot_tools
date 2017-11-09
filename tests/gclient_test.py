@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # Copyright (c) 2012 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -477,7 +477,7 @@ class GclientTest(trial_dir.TestCase):
         '  {\n'
         '    "name": "a",\n'
         '    "pattern": ".",\n'
-        '    "action": [ "python", "do_a" ],\n'
+        '    "action": [ "python2", "do_a" ],\n'
         '  },\n'
         ']\n'
         '\n'
@@ -486,7 +486,7 @@ class GclientTest(trial_dir.TestCase):
         '    {\n'
         '      "name": "b",\n'
         '      "pattern": ".",\n'
-        '      "action": [ "python", "do_b" ],\n'
+        '      "action": [ "python2", "do_b" ],\n'
         '    },\n'
         '  ],\n'
         '}\n')
@@ -510,7 +510,7 @@ class GclientTest(trial_dir.TestCase):
         [('.', 'svn://example.com/'),],
         sorted(self._get_processed()))
     self.assertEquals(all_hooks,
-                      [('python', 'do_a')])
+                      [('python2', 'do_a')])
 
     # Test for OS that has extra hooks in hooks_os.
     parser = gclient.OptionParser()
@@ -525,8 +525,8 @@ class GclientTest(trial_dir.TestCase):
         [('.', 'svn://example.com/'),],
         sorted(self._get_processed()))
     self.assertEquals(all_hooks,
-                      [('python', 'do_a'),
-                       ('python', 'do_b')])
+                      [('python2', 'do_a'),
+                       ('python2', 'do_b')])
 
 
   def testUpdateWithOsDeps(self):

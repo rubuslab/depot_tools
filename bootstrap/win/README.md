@@ -60,8 +60,8 @@ than the rest of this README.
 After any modification to this script set, a test sequence should be run on a
 Windows bot.
 
-The post-processing will regenerate "python.bat" to point to the current
-Python instance. Any previous Python installations will stick around, but
+The post-processing will regenerate "python2.bat" to point to the current
+Python2 instance. Any previous Python2 installations will stick around, but
 new invocations will use the new instance. Old installations will die
 off either due to processes terminating or systems restarting. When this
 happens, they will be cleaned up by the post-processing script.
@@ -77,7 +77,7 @@ they are working:
 gclient version
 
 # Assert that Python fundamentally works.
-python -c "import psutil; print dir(psutil)"
+python2 -c "import psutil; print dir(psutil)"
 
 # Assert that Python scripts work from `cmd.exe`.
 git map-branches
@@ -86,7 +86,7 @@ git map-branches
 git bash
 
 ## (Within `git bash`) assert that Python fundamentally works.
-python -c "import psutil; print dir(psutil)"
+python2 -c "import psutil; print dir(psutil)"
 ## (Within `git bash`) assert that Python scripts work.
 git map-branches
 ```
@@ -97,10 +97,10 @@ Run this sequence through the following upgrade/downgrade procedures:
   - Clean `depot_tools` via: `git clean -x -f -d .`
   - Run through test steps.
   - Test upgrade to bleeding edge (if it differs).
-    - Run `python.bat` in another shell, keep it open
+    - Run `python2.bat` in another shell, keep it open
     - Add `.bleeding_edge` to `depot_tools` root.
     - Run through test steps.
-    - In the old `python.bat` shell, run `import psutil`, confirm that it
+    - In the old `python2.bat` shell, run `import psutil`, confirm that it
       works.
     - Close the Python shell, run `gclient version`, ensure that old directory
       is cleaned.
@@ -109,20 +109,20 @@ Run this sequence through the following upgrade/downgrade procedures:
   - Add `.bleeding_edge` to `depot_tools` root.
   - Run through test steps.
   - Test downgrade to default (if it differs).
-    - Run `python.bat` in another shell, keep it open
+    - Run `python2.bat` in another shell, keep it open
     - Delete `.bleeding_edge` from `depot_tools` root.
     - Run through test steps.
-    - In the old `python.bat` shell, run `import psutil`, confirm that it
+    - In the old `python2.bat` shell, run `import psutil`, confirm that it
       works.
     - Close the Python shell, run `gclient version`, ensure that old directory
       is cleaned.
 * Warm bleeding edge upgrade.
   - Clean `depot_tools` via: `git clean -x -f -d .`
   - Run `gclient version` to load defaults.
-  - Run `python.bat` in another shell, keep it open
+  - Run `python2.bat` in another shell, keep it open
   - Add `.bleeding_edge` to `depot_tools` root.
   - Run through test steps.
-  - In the old `python.bat` shell, run `import psutil`, confirm that it
+  - In the old `python2.bat` shell, run `import psutil`, confirm that it
     works.
   - Close the Python shell, run `gclient version`, ensure that old directory is
     cleaned.

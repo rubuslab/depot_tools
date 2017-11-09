@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # Copyright 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -198,7 +198,7 @@ def call(*args, **kwargs):  # pragma: no cover
 def git(*args, **kwargs):  # pragma: no cover
   """Wrapper around call specifically for Git commands."""
   if args and args[0] == 'cache':
-    # Rewrite "git cache" calls into "python git_cache.py".
+    # Rewrite "git cache" calls into "python2 git_cache.py".
     cmd = (sys.executable, '-u', GIT_CACHE_PATH) + args[1:]
   else:
     git_executable = 'git'

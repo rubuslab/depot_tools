@@ -902,7 +902,7 @@ autoupdate itself. You can use &#8220;Extract all&#8230;&#8221; from the context
 Python). Assuming you unzipped the bundle to <code>C:\workspace\depot_tools</code>:</p></div>
 <div class="dlist"><dl>
 <dt class="hdlist1">
-With Administrator access: 
+With Administrator access:
 </dt>
 <dd>
 <p>
@@ -911,7 +911,7 @@ With Administrator access:
 <div class="paragraph"><p>Modify the PATH system variable to include <code>C:\workspace\depot_tools</code>.</p></div>
 </dd>
 <dt class="hdlist1">
-Without Administrator access: 
+Without Administrator access:
 </dt>
 <dd>
 <p>
@@ -922,7 +922,7 @@ Without Administrator access:
 </dl></div>
 <div class="paragraph"><p>From a <code>cmd.exe</code> shell, run the command <code>gclient</code> (without arguments). On first
 run, gclient will install all the Windows-specific bits needed to work with the
-code, including msysgit and python.</p></div>
+code, including msysgit and python2.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -933,7 +933,7 @@ code, including msysgit and python.</p></div>
 <li>
 <p>
 If you run gclient from a non-cmd shell (e.g., cygwin, PowerShell), it
-  may appear to run properly, but msysgit, python, and other tools may not get
+  may appear to run properly, but msysgit, python2, and other tools may not get
   installed correctly.
 </p>
 </li>
@@ -946,8 +946,8 @@ If you see strange errors with the file system on the first run of gclient,
 </li>
 <li>
 <p>
-After running gclient open a command prompt and type <code>where python</code> and confirm that
-  the depot_tools python.bat comes ahead of any copies of python.exe. Failing to ensure
+After running gclient open a command prompt and type <code>where python2</code> and confirm that
+  the depot_tools python2.bat comes ahead of any copies of python2.exe. Failing to ensure
   this can lead to overbuilding when using gn - see
   <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=611087">crbug.com/611087</a>.
 </p>
@@ -1244,14 +1244,14 @@ It was a Domo-Kuun.
 [fix_typo 615ffa7] Fix terrible typo.
  1 file changed, 1 insertion(+), 1 deletion(-)
 <span style="font-weight: bold; color: #ffffff">$ git map</span>
-* <span style="font-weight: bold; color: #e42e16">615ffa7	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; fix_typo</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
-* <span style="font-weight: bold; color: #e42e16">beec6f4	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(fix_typo)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
-* <span style="font-weight: bold; color: #e42e16">41290e0	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
-* <span style="font-weight: bold; color: #e42e16">a76fde7	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
-* <span style="font-weight: bold; color: #e42e16">9de7a71	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
-* <span style="font-weight: bold; color: #e42e16">073b0c2	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
-* <span style="font-weight: bold; color: #e42e16">2250f53	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
-* <span style="font-weight: bold; color: #e42e16">33a7a74	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
+* <span style="font-weight: bold; color: #e42e16">615ffa7   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; fix_typo</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
+* <span style="font-weight: bold; color: #e42e16">beec6f4   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(fix_typo)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
+* <span style="font-weight: bold; color: #e42e16">41290e0   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
+* <span style="font-weight: bold; color: #e42e16">a76fde7   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
+* <span style="font-weight: bold; color: #e42e16">9de7a71   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
+* <span style="font-weight: bold; color: #e42e16">073b0c2   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
+* <span style="font-weight: bold; color: #e42e16">2250f53   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
+* <span style="font-weight: bold; color: #e42e16">33a7a74   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
 <span style="font-weight: bold; color: #ffffff">$ git status</span>
 # On branch fix_typo
 # Your branch is ahead of 'origin/master' by 1 commit.
@@ -1279,7 +1279,7 @@ EOF
 #   (use "git add &lt;file&gt;..." to update what will be committed)
 #   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 #
-#	<span style="color: #e42e16">modified:   build/whitespace_file.txt</span>
+#   <span style="color: #e42e16">modified:   build/whitespace_file.txt</span>
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 </code></pre></div></div><p><div class="paragraph"> Someone on the code review pointed out that our typo-fix has a typo :( We're still working on 'chap2' but we really want to land 'fix_typo', so let's switch over and fix it.</p></div><div class="listingblock"><div class="content"><pre><code><span style="font-weight: bold; color: #ffffff">$ git freeze</span>
@@ -1312,17 +1312,17 @@ It was a Domo-<span style="color: #e42e16">Banana</span><span style="color: #19c
 ... truncated output ...
 </code></pre></div></div><p><div class="paragraph"> Since we got lgtm, let the CQ land it.</p></div><div class="listingblock"><div class="content"><pre><code><span style="font-weight: bold; color: #ffffff">$ git cl set_commit</span>
 <span style="font-weight: bold; color: #ffffff">$ git map</span>
-* <span style="font-weight: bold; color: #e42e16">0e2e52e	</span><span style="color: #19c518"> (</span><span style="color: #19c518"></span><span style="font-weight: bold; color: #19c518">chap2</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ FREEZE.unindexed
-<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">2c0ad9c	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; fix_typo</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Fix typo for good!
-<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">615ffa7	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
+* <span style="font-weight: bold; color: #e42e16">0e2e52e   </span><span style="color: #19c518"> (</span><span style="color: #19c518"></span><span style="font-weight: bold; color: #19c518">chap2</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ FREEZE.unindexed
+<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">2c0ad9c </span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; fix_typo</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Fix typo for good!
+<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">615ffa7 </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
 <span style="color: #e42e16">|</span><span style="color: #e42e16">/</span>
-* <span style="font-weight: bold; color: #e42e16">beec6f4	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap2, fix_typo)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
-* <span style="font-weight: bold; color: #e42e16">41290e0	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
-* <span style="font-weight: bold; color: #e42e16">a76fde7	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
-* <span style="font-weight: bold; color: #e42e16">9de7a71	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
-* <span style="font-weight: bold; color: #e42e16">073b0c2	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
-* <span style="font-weight: bold; color: #e42e16">2250f53	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
-* <span style="font-weight: bold; color: #e42e16">33a7a74	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
+* <span style="font-weight: bold; color: #e42e16">beec6f4   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap2, fix_typo)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
+* <span style="font-weight: bold; color: #e42e16">41290e0   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
+* <span style="font-weight: bold; color: #e42e16">a76fde7   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
+* <span style="font-weight: bold; color: #e42e16">9de7a71   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
+* <span style="font-weight: bold; color: #e42e16">073b0c2   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
+* <span style="font-weight: bold; color: #e42e16">2250f53   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
+* <span style="font-weight: bold; color: #e42e16">33a7a74   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
 </code></pre></div></div><p><div class="paragraph"> Switch back to where we were using the nav* commands (for fun... git checkout would work here too)</p></div><div class="listingblock"><div class="content"><pre><code><span style="font-weight: bold; color: #ffffff">$ git map-branches</span>
 <span style="color: #e42e16"></span><span style="color: #e42e16">origin/master
 </span><span style="color: #19c518"></span><span style="color: #19c518">  chap2
@@ -1390,17 +1390,17 @@ EOF
 [chap2 ceef712] Finish chapter 2
  1 file changed, 6 insertions(+)
 <span style="font-weight: bold; color: #ffffff">$ git map</span>
-* <span style="font-weight: bold; color: #e42e16">ceef712	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; chap2</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Finish chapter 2
-<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">2c0ad9c	</span><span style="color: #19c518"> (</span><span style="color: #19c518"></span><span style="font-weight: bold; color: #19c518">fix_typo</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Fix typo for good!
-<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">615ffa7	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
+* <span style="font-weight: bold; color: #e42e16">ceef712   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; chap2</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Finish chapter 2
+<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">2c0ad9c </span><span style="color: #19c518"> (</span><span style="color: #19c518"></span><span style="font-weight: bold; color: #19c518">fix_typo</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Fix typo for good!
+<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">615ffa7 </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
 <span style="color: #e42e16">|</span><span style="color: #e42e16">/</span>
-* <span style="font-weight: bold; color: #e42e16">beec6f4	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap2, fix_typo)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
-* <span style="font-weight: bold; color: #e42e16">41290e0	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
-* <span style="font-weight: bold; color: #e42e16">a76fde7	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
-* <span style="font-weight: bold; color: #e42e16">9de7a71	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
-* <span style="font-weight: bold; color: #e42e16">073b0c2	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
-* <span style="font-weight: bold; color: #e42e16">2250f53	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
-* <span style="font-weight: bold; color: #e42e16">33a7a74	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
+* <span style="font-weight: bold; color: #e42e16">beec6f4   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap2, fix_typo)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
+* <span style="font-weight: bold; color: #e42e16">41290e0   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
+* <span style="font-weight: bold; color: #e42e16">a76fde7   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
+* <span style="font-weight: bold; color: #e42e16">9de7a71   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
+* <span style="font-weight: bold; color: #e42e16">073b0c2   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
+* <span style="font-weight: bold; color: #e42e16">2250f53   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
+* <span style="font-weight: bold; color: #e42e16">33a7a74   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
 <span style="font-weight: bold; color: #ffffff">$ git cl upload -r domo@chromium.org --send-mail</span>
 ... truncated output ...
 </code></pre></div></div><p><div class="paragraph"> We poke a committer until they lgtm :)</p></div><div class="listingblock"><div class="content"><pre><code><span style="font-weight: bold; color: #ffffff">$ git cl set_commit</span>
@@ -1415,18 +1415,18 @@ EOF
 [chap3 7d4238a] beginning of chapter 3
  1 file changed, 4 insertions(+)
 <span style="font-weight: bold; color: #ffffff">$ git map</span>
-* <span style="font-weight: bold; color: #e42e16">7d4238a	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; chap3</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ beginning of chapter 3
-* <span style="font-weight: bold; color: #e42e16">ceef712	</span><span style="color: #19c518"> (</span><span style="color: #19c518"></span><span style="font-weight: bold; color: #19c518">chap2</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Finish chapter 2<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap3)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
-<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">2c0ad9c	</span><span style="color: #19c518"> (</span><span style="color: #19c518"></span><span style="font-weight: bold; color: #19c518">fix_typo</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Fix typo for good!
-<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">615ffa7	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
+* <span style="font-weight: bold; color: #e42e16">7d4238a   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; chap3</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ beginning of chapter 3
+* <span style="font-weight: bold; color: #e42e16">ceef712   </span><span style="color: #19c518"> (</span><span style="color: #19c518"></span><span style="font-weight: bold; color: #19c518">chap2</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Finish chapter 2<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap3)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
+<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">2c0ad9c </span><span style="color: #19c518"> (</span><span style="color: #19c518"></span><span style="font-weight: bold; color: #19c518">fix_typo</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Fix typo for good!
+<span style="color: #e42e16">|</span> * <span style="font-weight: bold; color: #e42e16">615ffa7 </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
 <span style="color: #e42e16">|</span><span style="color: #e42e16">/</span>
-* <span style="font-weight: bold; color: #e42e16">beec6f4	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap2, fix_typo)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
-* <span style="font-weight: bold; color: #e42e16">41290e0	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
-* <span style="font-weight: bold; color: #e42e16">a76fde7	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
-* <span style="font-weight: bold; color: #e42e16">9de7a71	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
-* <span style="font-weight: bold; color: #e42e16">073b0c2	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
-* <span style="font-weight: bold; color: #e42e16">2250f53	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
-* <span style="font-weight: bold; color: #e42e16">33a7a74	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
+* <span style="font-weight: bold; color: #e42e16">beec6f4   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap2, fix_typo)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
+* <span style="font-weight: bold; color: #e42e16">41290e0   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
+* <span style="font-weight: bold; color: #e42e16">a76fde7   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
+* <span style="font-weight: bold; color: #e42e16">9de7a71   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
+* <span style="font-weight: bold; color: #e42e16">073b0c2   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
+* <span style="font-weight: bold; color: #e42e16">2250f53   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
+* <span style="font-weight: bold; color: #e42e16">33a7a74   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
 </code></pre></div></div><p><div class="paragraph"> We haven't updated the code in a while, so let's do that now.</p></div><div class="listingblock"><div class="content"><pre><code><span style="font-weight: bold; color: #ffffff">$ git rebase-update</span>
 Fetching origin
 From https://upstream
@@ -1441,20 +1441,20 @@ Deleted branch chap2 (was 5d26fec).
 </code></pre></div></div><p><div class="paragraph"> Well look at that. The CQ landed our typo and chapter2 branches  already and git rebase-update cleaned them up for us.</p></div><div class="listingblock"><div class="content"><pre><code><span style="font-weight: bold; color: #ffffff">$ gclient sync</span>
 ... truncated output ...
 <span style="font-weight: bold; color: #ffffff">$ git map</span>
-* <span style="font-weight: bold; color: #e42e16">93fe917	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; chap3</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ beginning of chapter 3
-* <span style="font-weight: bold; color: #e42e16">5d26fec	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Finish chapter 2<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap3)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
-* <span style="font-weight: bold; color: #e42e16">df7fefb	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Revert 255617, due to it not tracking use of the link doctor page properly.
-* <span style="font-weight: bold; color: #e42e16">4b39cda	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
-* <span style="font-weight: bold; color: #e42e16">248c5b6	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Temporarily CHECK(trial) in ChromeRenderProcessObserver::OnSetFieldTrialGroup.
-* <span style="font-weight: bold; color: #e42e16">8171df8	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Remove AMD family check for the flapper crypto accelerator.
-* <span style="font-weight: bold; color: #e42e16">d6a30d2	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Change the Pica load benchmark to listen for the polymer-ready event
-* <span style="font-weight: bold; color: #e42e16">beec6f4	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes
-* <span style="font-weight: bold; color: #e42e16">41290e0	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
-* <span style="font-weight: bold; color: #e42e16">a76fde7	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
-* <span style="font-weight: bold; color: #e42e16">9de7a71	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
-* <span style="font-weight: bold; color: #e42e16">073b0c2	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
-* <span style="font-weight: bold; color: #e42e16">2250f53	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
-* <span style="font-weight: bold; color: #e42e16">33a7a74	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
+* <span style="font-weight: bold; color: #e42e16">93fe917   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; chap3</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ beginning of chapter 3
+* <span style="font-weight: bold; color: #e42e16">5d26fec   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Finish chapter 2<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap3)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
+* <span style="font-weight: bold; color: #e42e16">df7fefb   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Revert 255617, due to it not tracking use of the link doctor page properly.
+* <span style="font-weight: bold; color: #e42e16">4b39cda   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
+* <span style="font-weight: bold; color: #e42e16">248c5b6   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Temporarily CHECK(trial) in ChromeRenderProcessObserver::OnSetFieldTrialGroup.
+* <span style="font-weight: bold; color: #e42e16">8171df8   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Remove AMD family check for the flapper crypto accelerator.
+* <span style="font-weight: bold; color: #e42e16">d6a30d2   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Change the Pica load benchmark to listen for the polymer-ready event
+* <span style="font-weight: bold; color: #e42e16">beec6f4   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes
+* <span style="font-weight: bold; color: #e42e16">41290e0   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
+* <span style="font-weight: bold; color: #e42e16">a76fde7   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
+* <span style="font-weight: bold; color: #e42e16">9de7a71   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
+* <span style="font-weight: bold; color: #e42e16">073b0c2   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
+* <span style="font-weight: bold; color: #e42e16">2250f53   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
+* <span style="font-weight: bold; color: #e42e16">33a7a74   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
 </code></pre></div></div><p><div class="paragraph"> Someone on IRC mentions that they actually landed a chapter 3 already! We should pull their changes before continuing. Brace for a code conflict!</p></div><div class="listingblock"><div class="content"><pre><code><span style="font-weight: bold; color: #ffffff">$ git rebase-update</span>
 Fetching origin
 From https://upstream
@@ -1499,23 +1499,23 @@ chap3 up-to-date
 <span style="font-weight: bold; color: #ffffff">$ gclient sync</span>
 ... truncated output ...
 <span style="font-weight: bold; color: #ffffff">$ git map</span>
-* <span style="font-weight: bold; color: #e42e16">1cb4f5b	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; chap3</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ beginning of chapter 3
-* <span style="font-weight: bold; color: #e42e16">59cdb73	</span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Refactor data interchange format.<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap3)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
-* <span style="font-weight: bold; color: #e42e16">34676a3	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Ensure FS is exited for all not-in-same-page navigations.
-* <span style="font-weight: bold; color: #e42e16">7d4784e	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Add best chapter2 ever!
-* <span style="font-weight: bold; color: #e42e16">5d26fec	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Finish chapter 2
-* <span style="font-weight: bold; color: #e42e16">df7fefb	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Revert 255617, due to it not tracking use of the link doctor page properly.
-* <span style="font-weight: bold; color: #e42e16">4b39cda	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
-* <span style="font-weight: bold; color: #e42e16">248c5b6	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Temporarily CHECK(trial) in ChromeRenderProcessObserver::OnSetFieldTrialGroup.
-* <span style="font-weight: bold; color: #e42e16">8171df8	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Remove AMD family check for the flapper crypto accelerator.
-* <span style="font-weight: bold; color: #e42e16">d6a30d2	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Change the Pica load benchmark to listen for the polymer-ready event
-* <span style="font-weight: bold; color: #e42e16">beec6f4	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes
-* <span style="font-weight: bold; color: #e42e16">41290e0	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
-* <span style="font-weight: bold; color: #e42e16">a76fde7	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
-* <span style="font-weight: bold; color: #e42e16">9de7a71	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
-* <span style="font-weight: bold; color: #e42e16">073b0c2	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
-* <span style="font-weight: bold; color: #e42e16">2250f53	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
-* <span style="font-weight: bold; color: #e42e16">33a7a74	</span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
+* <span style="font-weight: bold; color: #e42e16">1cb4f5b   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">HEAD -&gt; chap3</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ beginning of chapter 3
+* <span style="font-weight: bold; color: #e42e16">59cdb73   </span><span style="color: #19c518"> (</span><span style="color: #e42e16">origin/master</span><span style="color: #19c518">, </span><span style="color: #e42e16">origin/HEAD</span><span style="color: #19c518">) </span><span style="color: #e7e71c">2014-04-10</span> ~ Refactor data interchange format.<span style="font-weight: bold"></span><span style="font-weight: bold; color: #ffffff">    &lt;(chap3)</span><span style="font-weight: bold"></span><span style="font-weight: bold"></span>
+* <span style="font-weight: bold; color: #e42e16">34676a3   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Ensure FS is exited for all not-in-same-page navigations.
+* <span style="font-weight: bold; color: #e42e16">7d4784e   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Add best chapter2 ever!
+* <span style="font-weight: bold; color: #e42e16">5d26fec   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Finish chapter 2
+* <span style="font-weight: bold; color: #e42e16">df7fefb   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Revert 255617, due to it not tracking use of the link doctor page properly.
+* <span style="font-weight: bold; color: #e42e16">4b39cda   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Fix terrible typo.
+* <span style="font-weight: bold; color: #e42e16">248c5b6   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Temporarily CHECK(trial) in ChromeRenderProcessObserver::OnSetFieldTrialGroup.
+* <span style="font-weight: bold; color: #e42e16">8171df8   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Remove AMD family check for the flapper crypto accelerator.
+* <span style="font-weight: bold; color: #e42e16">d6a30d2   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Change the Pica load benchmark to listen for the polymer-ready event
+* <span style="font-weight: bold; color: #e42e16">beec6f4   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Make ReflectorImpl use mailboxes
+* <span style="font-weight: bold; color: #e42e16">41290e0   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ don't use glibc-specific execinfo.h on uclibc builds
+* <span style="font-weight: bold; color: #e42e16">a76fde7   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ [fsp] Add requestUnmount() method together with the request manager.
+* <span style="font-weight: bold; color: #e42e16">9de7a71   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ linux_aura: Use system configuration for middle clicking the titlebar.
+* <span style="font-weight: bold; color: #e42e16">073b0c2   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ContentView-&gt;ContentViewCore in ContentViewRenderView
+* <span style="font-weight: bold; color: #e42e16">2250f53   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ ozone: evdev: Filter devices by path
+* <span style="font-weight: bold; color: #e42e16">33a7a74   </span><span style="color: #19c518"></span> <span style="color: #e7e71c">2014-04-10</span> ~ Always output seccomp error messages to stderr
 <span style="font-weight: bold; color: #ffffff">$ git cl upload</span>
 ... truncated output ...
 </code></pre></div></div><p><div class="paragraph"></p></div>

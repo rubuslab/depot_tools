@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # Copyright 2013 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -414,7 +414,7 @@ def main():
     # This script requires Windows Python, so invoke with depot_tools' Python.
     def winpath(path):
       return subprocess.check_output(['cygpath', '-w', path]).strip()
-    python = os.path.join(DEPOT_TOOLS_PATH, 'python.bat')
+    python = os.path.join(DEPOT_TOOLS_PATH, 'python2.bat')
     cmd = [python, winpath(__file__)]
     if options.output_json:
       cmd.extend(['--output-json', winpath(options.output_json)])

@@ -97,15 +97,15 @@ Install via `pip`_:
 
 ::
 
-	$ pip install boto
+    $ pip install boto
 
 Install from source:
 
 ::
 
-	$ git clone git://github.com/boto/boto.git
-	$ cd boto
-	$ python setup.py install
+    $ git clone git://github.com/boto/boto.git
+    $ cd boto
+    $ python2 setup.py install
 
 **********
 ChangeLogs

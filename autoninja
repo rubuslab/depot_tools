@@ -7,6 +7,6 @@
 
 # Execute whatever is printed by autoninja.py.
 # Also print it to reassure that the right settings are being used.
-command=$(python $(dirname -- "$0")/autoninja.py "$@")
+command=$(python2 $(dirname -- "$0")/autoninja.py "$@")
 echo $command
 exec $command

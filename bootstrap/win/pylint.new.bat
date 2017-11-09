@@ -4,4 +4,4 @@
 :: found in the LICENSE file.
 
 setlocal
-call python "%~dp0pylint.py" %*
+call python2 "%~dp0pylint.py" %*

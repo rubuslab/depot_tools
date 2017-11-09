@@ -9,7 +9,7 @@
 
 ## Example:
 ## echo ". python_runner.sh" > git-foo-command
-## ./git-foo-command  #=> runs `python git_foo_command.py`
+## ./git-foo-command  #=> runs `python2 git_foo_command.py`
 
 ## Constants
 PYTHONDONTWRITEBYTECODE=1
@@ -45,10 +45,10 @@ fi
 SCRIPT="${SCRIPT-${BASENAME//-/_}.py}"
 
 if [[ $PYTHON_DIRECT = 1 ]]; then
-  python.exe "$DEPOT_TOOLS\\$SCRIPT" "$@"
+  python2.exe "$DEPOT_TOOLS\\$SCRIPT" "$@"
 else
-  if [[ -e "$DEPOT_TOOLS/python.bat" && $OSTYPE = msys ]]; then
-    cmd.exe //c "$DEPOT_TOOLS\\python.bat" "$DEPOT_TOOLS\\$SCRIPT" "$@"
+  if [[ -e "$DEPOT_TOOLS/python2.bat" && $OSTYPE = msys ]]; then
+    cmd.exe //c "$DEPOT_TOOLS\\python2.bat" "$DEPOT_TOOLS\\$SCRIPT" "$@"
   else
     exec "$DEPOT_TOOLS/$SCRIPT" "$@"
   fi

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # coding=utf8
 # Copyright (c) 2011 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
@@ -42,7 +42,7 @@ class FixEncodingTest(unittest.TestCase):
       return
     # This should fail if not redirected, e.g. run directly instead of through
     # the presubmit check. Can be checked with:
-    # python tests\fix_encoding_test.py
+    # python2 tests\fix_encoding_test.py
     self.assertEquals(
         sys.stdout.__class__, fix_encoding.WinUnicodeOutput)
     self.assertEquals(

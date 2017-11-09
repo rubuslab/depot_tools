@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "66fb3af9_528defc0",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2017-11-09T11:03:02Z",
+      "side": 1,
+      "message": "Done, but I didn\u0027t change it to a set because that makes testing more difficult when one needs to verify the files have been removed (especially with mocks involved).",
+      "parentUuid": "4ed51ae4_b82fda2e",
+      "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e0f44f9_4ab826ef",
         "filename": "presubmit_support.py",
         "patchSetId": 3
@@ -33,6 +51,24 @@
       "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a361c0b6_4fbf6232",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2017-11-09T11:03:02Z",
+      "side": 1,
+      "message": "I did this mostly to prevent somewhat-cryptic errors like \"got multiple values for keyword argument \u0027delete\u0027\" if a caller also sets it, but that works too.",
+      "parentUuid": "8e0f44f9_4ab826ef",
+      "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "00e3198d_e817d2cc",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2017-11-09T11:03:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98001663_677353c4",
+      "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "986ef148_2865334a",
         "filename": "presubmit_support.py",
         "patchSetId": 3
@@ -67,6 +121,24 @@
       "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94c8871b_c70433b2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2017-11-09T11:03:02Z",
+      "side": 1,
+      "message": "This also works, but makes testing a bit more annoying, as it\u0027s not possible to just test file removal in the InputApi unit tests; I\u0027ve added another test to PresubmitUnittest for that.",
+      "parentUuid": "986ef148_2865334a",
+      "revId": "0e40cc173d3200b6a7461317a376c748a023e820",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

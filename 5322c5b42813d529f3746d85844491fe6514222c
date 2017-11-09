@@ -378,6 +378,30 @@
     },
     {
       "key": {
+        "uuid": "6fa7f777_966eac15",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T18:39:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e3148827_833eb9ac",
+      "range": {
+        "startLine": 166,
+        "startChar": 14,
+        "endLine": 166,
+        "endChar": 18
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a185f7cf_05f2feea",
         "filename": "auth.py",
         "patchSetId": 6
@@ -504,6 +528,30 @@
       "revId": "5322c5b42813d529f3746d85844491fe6514222c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aadb5e65_72c571f8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T18:39:17Z",
+      "side": 1,
+      "message": "oh I see now",
+      "parentUuid": "5e8f3bd1_9add2522",
+      "range": {
+        "startLine": 70,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 66
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

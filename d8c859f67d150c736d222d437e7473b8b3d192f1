@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "de4bd9ee_a650a35d",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T18:39:17Z",
+      "side": 1,
+      "message": "strictly speaking, this is a part of parsing too and may raise AttributeError if loaded is not a dict",
+      "range": {
+        "startLine": 142,
+        "startChar": 14,
+        "endLine": 142,
+        "endChar": 25
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11bc1b6d_ba84a228",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T18:39:17Z",
+      "side": 1,
+      "message": "if local_auth is not a dict, this will raise AttributeError",
+      "range": {
+        "startLine": 148,
+        "startChar": 27,
+        "endLine": 148,
+        "endChar": 31
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f59c6442_d643b73d",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T18:39:17Z",
+      "side": 1,
+      "message": "I don\u0027t see what may raise KeyError. dict.get does not raise that. I think you meant to do local_auth[\u0027foobar\u0027]",
+      "range": {
+        "startLine": 151,
+        "startChar": 10,
+        "endLine": 151,
+        "endChar": 18
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c8ed786_f2703743",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T18:39:17Z",
+      "side": 1,
+      "message": "logging.exception\nand then you don\u0027t need e",
+      "range": {
+        "startLine": 152,
+        "startChar": 12,
+        "endLine": 152,
+        "endChar": 17
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "187ed660_45409e9c",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T18:39:17Z",
+      "side": 1,
+      "message": "remove space",
+      "range": {
+        "startLine": 163,
+        "startChar": 11,
+        "endLine": 163,
+        "endChar": 12
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

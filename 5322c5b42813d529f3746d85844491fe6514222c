@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b00b581_248e2bce",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "nit: +2 space indent",
+      "range": {
+        "startLine": 119,
+        "startChar": 4,
+        "endLine": 119,
+        "endChar": 6
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31b6b7b4_51362936",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "we don\u0027t really care about any keys besides local_auth. If this requirement is lifted upstream, this code will start failing. Please check only local_auth\n\nthen this function would become very small, can be inlined\n\nbesides, _check_ok is a very generic name and one would not understand that it is specific to luci context\n\n--\n\nstepping back, this validation is insufficient. Below we assume that default_account_id is in local_auth without validation like this. I think we should either validate everything we read below, or simply omit validation, e.g. catch KeyError and ValueError when retrieving values from local_auth",
+      "range": {
+        "startLine": 122,
+        "startChar": 2,
+        "endLine": 126,
+        "endChar": 66
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cff0e625_fbf86875",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "+2 space indent",
+      "range": {
+        "startLine": 126,
+        "startChar": 6,
+        "endLine": 126,
+        "endChar": 8
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bbf8c93c_994e4886",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "please invert condition and unindent code below",
+      "range": {
+        "startLine": 142,
+        "startChar": 2,
+        "endLine": 142,
+        "endChar": 14
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "654a3cd3_58839b21",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "unnecessary because it is the default",
+      "range": {
+        "startLine": 146,
+        "startChar": 24,
+        "endLine": 146,
+        "endChar": 29
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f64ad939_3a4bc6aa",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "does not have to be done with f open. please dedent",
+      "range": {
+        "startLine": 148,
+        "startChar": 8,
+        "endLine": 149,
+        "endChar": 53
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7e181b8_73bfb1f2",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "consider inlining. Then we would have a nice request call with everything in it (no references)",
+      "range": {
+        "startLine": 163,
+        "startChar": 2,
+        "endLine": 163,
+        "endChar": 6
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c32a64be_0bd85ef2",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "why is this needed?",
+      "range": {
+        "startLine": 166,
+        "startChar": 14,
+        "endLine": 166,
+        "endChar": 18
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a185f7cf_05f2feea",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "we should include status because it is the status that we checked",
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a904fa6_86557b08",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "here we do not do validation but simply use this kind of exception catching. We could use the same approach when reading luci context file. It would be more consistent",
+      "range": {
+        "startLine": 186,
+        "startChar": 9,
+        "endLine": 186,
+        "endChar": 37
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9199696_f644e4e4",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-09T10:39:44Z",
+      "side": 1,
+      "message": "how is this different from\n\n  acc_tkn \u003d auth.get_luci_context_access_token()\n\n?",
+      "range": {
+        "startLine": 70,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 66
+      },
+      "revId": "5322c5b42813d529f3746d85844491fe6514222c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

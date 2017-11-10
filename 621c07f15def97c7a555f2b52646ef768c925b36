@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d640e73b_00754642",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-10T15:27:10Z",
+      "side": 1,
+      "message": "If you\u0027re worried about \"got multiple values\" errors, you can .pop(\u0027delete\u0027, None) from kwargs before passing it forward.",
+      "revId": "621c07f15def97c7a555f2b52646ef768c925b36",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

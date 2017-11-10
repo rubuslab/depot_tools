@@ -52,6 +52,24 @@
       "revId": "621c07f15def97c7a555f2b52646ef768c925b36",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "185a112b_f4b28a63",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2017-11-10T15:51:55Z",
+      "side": 1,
+      "message": "Sorry, I might be missing something obvious here. My point is that right now both input_api.CreateTemporaryFile(delete\u003dTrue) and input_api.CreateTemporaryFile(delete\u003dFalse) will throw a \"TypeError: ...NamedTemporaryFile() got multiple values for keyword argument \u0027delete\u0027\", whereas\n\n    kwargs.pop(\u0027delete\u0027, None)\n    temp_file \u003d ...NamedTemporaryFile(delete\u003dFalse, **kwargs)\n\nwill cause input_api.CreateTemporaryFile(delete\u003dFalse) to work as intended, while input_api.CreateTemporaryFile(delete\u003dTrue) will just silently work but do the opposite (the file will not be deleted right after temp_file.__exit__() is called).\n\nIMHO the current approach at least matches what the function\u0027s docstring says and forbids delete from being passed as a temporary argument regardless of its value.",
+      "parentUuid": "18f1ad83_aee3d4eb",
+      "revId": "621c07f15def97c7a555f2b52646ef768c925b36",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

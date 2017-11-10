@@ -16,6 +16,24 @@
       "revId": "465c2638cd2e3d1deecfdcd142ae48b852d4751b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "852f2114_7eca67b4",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2017-11-10T17:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d841522e_02af4e1f",
+      "revId": "465c2638cd2e3d1deecfdcd142ae48b852d4751b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

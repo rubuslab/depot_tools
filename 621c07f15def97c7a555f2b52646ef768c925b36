@@ -70,6 +70,24 @@
       "revId": "621c07f15def97c7a555f2b52646ef768c925b36",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eab12857_be633b0c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-10T16:34:51Z",
+      "side": 1,
+      "message": "The problem is that \"NamedTemporaryFile() got multiple values for keyword argument \u0027delete\u0027\" is a bad and hard-to-debug message, especially for folks in far-flung repos trying to write their own PRESUBMIT files without much knowledge of the inner workings of presubmit_support.\n\nPopping delete from the **kwargs at least means they can\u0027t get a weird error message. If they pass delete\u003dFalse, then they get the behavior they expect. If they pass delete\u003dTrue, they won\u0027t get the exact behavior they expect, but the file will still eventually be deleted, so it isn\u0027t all bad.\n\nBut if you really want to make sure that people who pass delete\u003dTrue aren\u0027t confused, just say\n\n  if kwargs.pop(\u0027delete\u0027, None):\n    raise SomeSpecializedError(\u0027with a descriptive message\u0027)\n\nThat both removes the user\u0027s preference, so we can override it with delete\u003dFalse, and it only raises an error if the user\u0027s expectations are going to be violated.",
+      "parentUuid": "185a112b_f4b28a63",
+      "revId": "621c07f15def97c7a555f2b52646ef768c925b36",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

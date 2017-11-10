@@ -16,6 +16,24 @@
       "revId": "621c07f15def97c7a555f2b52646ef768c925b36",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3df5c82f_ba809a14",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2017-11-10T15:34:32Z",
+      "side": 1,
+      "message": "If a user calls CreateTemporaryFile(delete\u003dTrue), isn\u0027t .pop(\u0027delete\u0027, None) just silently going to do the opposite? I can throw a ValueError if \u0027delete\u0027 is passed in kwargs, otherwise I think we can just leave it as-is.",
+      "parentUuid": "d640e73b_00754642",
+      "revId": "621c07f15def97c7a555f2b52646ef768c925b36",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -203,11 +203,11 @@ class Hook(object):
 
     cmd = [arg.format(**self._variables) for arg in self._action]
 
+    # Run python scripts using the same interpreter.
     if cmd[0] == 'python':
-      # If the hook specified "python" as the first item, the action is a
-      # Python script.  Run it by starting a new copy of the same
-      # interpreter.
       cmd[0] = sys.executable
+    elif cmd[0] == 'vpython' and '-vpython-interpreter' not in cmd:
+      cmd[1:1] = ['-vpython-interpreter', sys.executable]
 
     cwd = root
     if self._cwd:

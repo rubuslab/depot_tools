@@ -208,6 +208,8 @@ class Hook(object):
       # Python script.  Run it by starting a new copy of the same
       # interpreter.
       cmd[0] = sys.executable
+    elif cmd[0] == 'vpython' and '-vpython-interpreter' not in cmd:
+      cmd[1:1] = ['-vpython-interpreter', sys.executable]
 
     cwd = root
     if self._cwd:

@@ -34,6 +34,24 @@
       "revId": "621c07f15def97c7a555f2b52646ef768c925b36",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "18f1ad83_aee3d4eb",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-11-10T15:42:44Z",
+      "side": 1,
+      "message": "Except that you\u0027re also explicitly passing delete\u003dTrue. The same thing could be accomplished with\n\n    kwargs[\u0027delete\u0027] \u003d True\n    temp_file \u003d ...NamedTemporaryFile(**kwargs)\n\nIt would simply override whatever the user set, regardless of what they wanted.",
+      "parentUuid": "3df5c82f_ba809a14",
+      "revId": "621c07f15def97c7a555f2b52646ef768c925b36",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

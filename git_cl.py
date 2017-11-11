@@ -3052,11 +3052,10 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     if options.send_mail:
       refspec_opts.append('ready')
       refspec_opts.append('notify=ALL')
+    elif not self.GetIssue():
+      refspec_opts.append('wip')
     else:
-      if not self.GetIssue():
-        refspec_opts.append('wip')
-      else:
-        refspec_opts.append('notify=NONE')
+      refspec_opts.append('notify=NONE')
 
     # TODO(tandrii): options.message should be posted as a comment
     # if --send-mail is set on non-initial upload as Rietveld used to do it.
@@ -3072,6 +3071,13 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       # Documentation on Gerrit topics is here:
       # https://gerrit-review.googlesource.com/Documentation/user-upload.html#topic
       refspec_opts.append('topic=%s' % options.topic)
+
+    # Gerrit sorts tags, so order is not important.
+    tags = {self.SanitizeTag(t) for t in options.tags}
+    # Derive tags from description only if it is a new CL.
+    if change_id is None:
+      tags.update(self.GetHashTags(change_desc.description))
+    refspec_opts += ['hashtag=%s' % t for t in sorted(tags)]
 
     refspec_suffix = ''
     if refspec_opts:
@@ -3136,6 +3142,27 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           labels={'Code-Review': score})
 
     return 0
+
+  _BAD_TAG_CHUNK = re.compile(r'[^a-zA-Z0-9]+')
+
+  @classmethod
+  def SanitizeTag(cls, tag):
+    return cls._BAD_TAG_CHUNK.sub('-', tag.strip())
+
+  @classmethod
+  def GetHashTags(cls, description):
+    """Extracts ans sanitizes a list of tags from a CL description."""
+    tag_rgx = re.compile(r'\[([^\]]+)\]\s*')
+
+    tags = []
+    start = 0
+    while True:
+      m = tag_rgx.match(description, start)
+      if not m:
+        break
+      tags.append(cls.SanitizeTag(m.group(1)))
+      start = m.end()
+    return tags
 
   def _ComputeParent(self, remote, upstream_branch, custom_cl_base, force,
                      change_desc):
@@ -4897,6 +4924,9 @@ def CMDupload(parser, args):
   parser.add_option('--cc',
                     action='append', default=[],
                     help='cc email addresses')
+  parser.add_option('--tag', dest='tags',
+                    action='append', default=[],
+                    help='hashtags for new CL; can be applied multiple times')
   parser.add_option('-s', '--send-mail', action='store_true',
                     help='send email to reviewer(s) and cc(s) immediately')
   parser.add_option('--emulate_svn_auto_props',
@@ -4907,22 +4937,17 @@ def CMDupload(parser, args):
   parser.add_option('-c', '--use-commit-queue', action='store_true',
                     help='tell the commit queue to commit this patchset; '
                           'implies --send-mail')
-  parser.add_option('--private', action='store_true',
-                    help='set the review private (rietveld only)')
   parser.add_option('--target_branch',
                     '--target-branch',
                     metavar='TARGET',
                     help='Apply CL to remote ref TARGET.  ' +
                          'Default: remote branch head, or master')
   parser.add_option('--squash', action='store_true',
-                    help='Squash multiple commits into one (Gerrit only)')
+                    help='Squash multiple commits into one')
   parser.add_option('--no-squash', action='store_true',
-                    help='Don\'t squash multiple commits into one ' +
-                         '(Gerrit only)')
+                    help='Don\'t squash multiple commits into one')
   parser.add_option('--topic', default=None,
-                    help='Topic to specify when uploading (Gerrit only)')
-  parser.add_option('--email', default=None,
-                    help='email address to use to connect to Rietveld')
+                    help='Topic to specify when uploading')
   parser.add_option('--tbr-owners', dest='add_owners_to', action='store_const',
                     const='TBR', help='add a set of OWNERS to TBR')
   parser.add_option('--r-owners', dest='add_owners_to', action='store_const',
@@ -4934,6 +4959,12 @@ def CMDupload(parser, args):
   parser.add_option('--dependencies', action='store_true',
                     help='Uploads CLs of all the local branches that depend on '
                          'the current branch')
+
+  # TODO: remove Rietveld flags
+  parser.add_option('--private', action='store_true',
+                    help='set the review private (rietveld only)')
+  parser.add_option('--email', default=None,
+                    help='email address to use to connect to Rietveld')
 
   orig_args = args
   add_git_similarity(parser)

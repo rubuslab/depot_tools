@@ -3052,11 +3052,10 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     if options.send_mail:
       refspec_opts.append('ready')
       refspec_opts.append('notify=ALL')
+    elif not self.GetIssue():
+      refspec_opts.append('wip')
     else:
-      if not self.GetIssue():
-        refspec_opts.append('wip')
-      else:
-        refspec_opts.append('notify=NONE')
+      refspec_opts.append('notify=NONE')
 
     # TODO(tandrii): options.message should be posted as a comment
     # if --send-mail is set on non-initial upload as Rietveld used to do it.
@@ -3072,6 +3071,14 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       # Documentation on Gerrit topics is here:
       # https://gerrit-review.googlesource.com/Documentation/user-upload.html#topic
       refspec_opts.append('topic=%s' % options.topic)
+
+    # Add hash tag.
+    tag_string = re.match(
+        r'((\[[^\]]+\])\s*)*', change_desc.description).group(2)
+    refspec_opts += [
+      'hashtag=%s' % re.sub(r'[^a-zA-Z ]+', ' ', t).replace(' ', '_')
+      for t in re.split(r'\]\s*\[', tag_string.lstrip('[').rstrip(']'))
+    ]
 
     refspec_suffix = ''
     if refspec_opts:

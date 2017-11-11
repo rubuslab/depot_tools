@@ -3052,11 +3052,10 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     if options.send_mail:
       refspec_opts.append('ready')
       refspec_opts.append('notify=ALL')
+    elif not self.GetIssue():
+      refspec_opts.append('wip')
     else:
-      if not self.GetIssue():
-        refspec_opts.append('wip')
-      else:
-        refspec_opts.append('notify=NONE')
+      refspec_opts.append('notify=NONE')
 
     # TODO(tandrii): options.message should be posted as a comment
     # if --send-mail is set on non-initial upload as Rietveld used to do it.
@@ -3072,6 +3071,12 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       # Documentation on Gerrit topics is here:
       # https://gerrit-review.googlesource.com/Documentation/user-upload.html#topic
       refspec_opts.append('topic=%s' % options.topic)
+
+    if change_id is None:
+      refspec_opts += [
+        'hashtag=%s' % t
+        for t in self.GetHashTags(change_desc.description)
+      ]
 
     refspec_suffix = ''
     if refspec_opts:
@@ -3136,6 +3141,22 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           labels={'Code-Review': score})
 
     return 0
+
+  @staticmethod
+  def GetHashTags(description):
+    """Extracts a list of hash tags from a CL description."""
+    tag_rgx = re.compile(r'\[([^\]]+)\]\s*')
+    bad_rgx = re.compile(r'[^a-zA-Z0-9]+')
+
+    tags = []
+    start = 0
+    while True:
+      m = tag_rgx.match(description, start)
+      if not m:
+        break
+      tags.append(bad_rgx.sub('-', m.group(1)))
+      start = m.end()
+    return tags
 
   def _ComputeParent(self, remote, upstream_branch, custom_cl_base, force,
                      change_desc):

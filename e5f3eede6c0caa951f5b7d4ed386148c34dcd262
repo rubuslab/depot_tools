@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "d4dbe982_081abaac",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-11T16:57:14Z",
+      "side": 1,
+      "message": "buildset property should be a list of strings, because buildset tag can have multiple values (e.g. because a build may be associated with multiple CLs)\n\nhowever, see my design comments in the bug. I am not sure we should land this CL",
+      "revId": "e5f3eede6c0caa951f5b7d4ed386148c34dcd262",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "30135f18_26f3bdf4",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1

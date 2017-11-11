@@ -502,6 +502,7 @@ def _trigger_try_jobs(auth_config, changelist, buckets, options,
 
   shared_parameters_properties = changelist.GetTryJobProperties(patchset)
   shared_parameters_properties['category'] = category
+  shared_parameters_properties['buildset'] = buildset
   if options.clobber:
     shared_parameters_properties['clobber'] = True
   extra_properties = _get_properties_from_options(options)

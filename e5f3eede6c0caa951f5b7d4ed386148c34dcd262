@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30135f18_26f3bdf4",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2864,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-11-11T03:44:01Z",
+      "side": 1,
+      "message": "lol",
+      "range": {
+        "startLine": 2864,
+        "startChar": 31,
+        "endLine": 2864,
+        "endChar": 39
+      },
+      "revId": "e5f3eede6c0caa951f5b7d4ed386148c34dcd262",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

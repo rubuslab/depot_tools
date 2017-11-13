@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "78b8d8ff_3b4717c2",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-11-13T23:24:05Z",
+      "side": 1,
+      "message": "this is not enough, there are 3 potential outcomes:\n\n1. LUCI_CONTEXT is present and everything works.\n2. LUCI_CONTEXT is absent and the context auth is skipped.\n3. LUCI_CONTEXT is present, but something is wrong.\n\n(2) and (3) are different and should be handled differently.\n\nConsider returning None for (2) and raising an exception for (3).",
+      "range": {
+        "startLine": 124,
+        "startChar": 4,
+        "endLine": 125,
+        "endChar": 20
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21f44b6c_98294c35",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-11-13T23:24:05Z",
+      "side": 1,
+      "message": "this is not necessary, it\u0027s fine to use unicode",
+      "range": {
+        "startLine": 134,
+        "startChar": 15,
+        "endLine": 134,
+        "endChar": 24
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3bb1957b_8864c7f0",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-11-13T23:24:05Z",
+      "side": 1,
+      "message": "maybe\n\nexcept (OSError, IOError, ValueError) as ex:\n  logging.error(...)\n  raise\n\n?\n\nShorter. Also \u0027raise\u0027 is important there, without it the scrip would just fail on line 142 with more cryptic error.",
+      "range": {
+        "startLine": 135,
+        "startChar": 2,
+        "endLine": 140,
+        "endChar": 58
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "de4bd9ee_a650a35d",
         "filename": "auth.py",
         "patchSetId": 9
@@ -41,6 +110,29 @@
         "startChar": 27,
         "endLine": 148,
         "endChar": 31
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31ba3822_1e46b616",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-11-13T23:24:05Z",
+      "side": 1,
+      "message": "nit: .get here makes little sense. If rpc_port is not present, int(None) would just fail with TypeError.\n\nKeep KeyError handling, but remove .get(...). It would be cleaner.",
+      "range": {
+        "startLine": 150,
+        "startChar": 29,
+        "endLine": 150,
+        "endChar": 34
       },
       "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
@@ -94,6 +186,23 @@
     },
     {
       "key": {
+        "uuid": "efdb529a_ff2490ce",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-11-13T23:24:05Z",
+      "side": 1,
+      "message": "add here:\n\n if not account_id:\n   return None\n\nThis is possible. If account_id is not specified, LUCI_CONTEXT stuff shouldn\u0027t be picked up automatically.",
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "187ed660_45409e9c",
         "filename": "auth.py",
         "patchSetId": 9
@@ -110,6 +219,75 @@
         "startChar": 11,
         "endLine": 163,
         "endChar": 12
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e21568de_fa3b3270",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-11-13T23:24:05Z",
+      "side": 1,
+      "message": "nit: OAUTH_SCOPES.split(\u0027 \u0027)\n\nOAUTH_SCOPES is \"List of space separated OAuth scopes for generated tokens\". But GetOAuthToken requires a (JSON) list of scopes. Thus split(\u0027 \u0027).",
+      "range": {
+        "startLine": 165,
+        "startChar": 19,
+        "endLine": 165,
+        "endChar": 31
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05d59f18_6415dc55",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-11-13T23:24:05Z",
+      "side": 1,
+      "message": "this will never happen since you are using .get(...)",
+      "range": {
+        "startLine": 182,
+        "startChar": 10,
+        "endLine": 182,
+        "endChar": 19
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e81ce84f_9b711f11",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-11-13T23:24:05Z",
+      "side": 1,
+      "message": "I was hoping for luci_context stuff be integrated into auth.get_authenticator_for_host stuff, so it works everywhere where get_authenticator_for_host is currently used...",
+      "range": {
+        "startLine": 70,
+        "startChar": 4,
+        "endLine": 70,
+        "endChar": 50
       },
       "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",

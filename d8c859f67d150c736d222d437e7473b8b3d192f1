@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a2588b2f_11e50b6a",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78b8d8ff_3b4717c2",
+      "range": {
+        "startLine": 124,
+        "startChar": 4,
+        "endLine": 125,
+        "endChar": 20
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21f44b6c_98294c35",
         "filename": "auth.py",
         "patchSetId": 9
@@ -45,6 +69,30 @@
       "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61452ba6_4ba41335",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21f44b6c_98294c35",
+      "range": {
+        "startLine": 134,
+        "startChar": 15,
+        "endLine": 134,
+        "endChar": 24
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "d9277f05_e99c6fc8",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bb1957b_8864c7f0",
+      "range": {
+        "startLine": 135,
+        "startChar": 2,
+        "endLine": 140,
+        "endChar": 58
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "de4bd9ee_a650a35d",
         "filename": "auth.py",
         "patchSetId": 9
@@ -91,6 +163,30 @@
       "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa1948d0_dd532b76",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de4bd9ee_a650a35d",
+      "range": {
+        "startLine": 142,
+        "startChar": 14,
+        "endLine": 142,
+        "endChar": 25
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "da662c23_731c5068",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11bc1b6d_ba84a228",
+      "range": {
+        "startLine": 148,
+        "startChar": 27,
+        "endLine": 148,
+        "endChar": 31
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "31ba3822_1e46b616",
         "filename": "auth.py",
         "patchSetId": 9
@@ -137,6 +257,30 @@
       "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ea2eb83_d57e7a97",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31ba3822_1e46b616",
+      "range": {
+        "startLine": 150,
+        "startChar": 29,
+        "endLine": 150,
+        "endChar": 34
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "f20c7afd_8166d4ba",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f59c6442_d643b73d",
+      "range": {
+        "startLine": 151,
+        "startChar": 10,
+        "endLine": 151,
+        "endChar": 18
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3c8ed786_f2703743",
         "filename": "auth.py",
         "patchSetId": 9
@@ -186,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "4793ecc7_79734dac",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c8ed786_f2703743",
+      "range": {
+        "startLine": 152,
+        "startChar": 12,
+        "endLine": 152,
+        "endChar": 17
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "efdb529a_ff2490ce",
         "filename": "auth.py",
         "patchSetId": 9
@@ -200,6 +392,24 @@
       "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4402f6c7_f70e2955",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "efdb529a_ff2490ce",
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -226,6 +436,30 @@
     },
     {
       "key": {
+        "uuid": "7b338edf_72ade8a1",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "187ed660_45409e9c",
+      "range": {
+        "startLine": 163,
+        "startChar": 11,
+        "endLine": 163,
+        "endChar": 12
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e21568de_fa3b3270",
         "filename": "auth.py",
         "patchSetId": 9
@@ -246,6 +480,30 @@
       "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31db51d2_0a10746d",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e21568de_fa3b3270",
+      "range": {
+        "startLine": 165,
+        "startChar": 19,
+        "endLine": 165,
+        "endChar": 31
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -272,6 +530,30 @@
     },
     {
       "key": {
+        "uuid": "e6e1a854_022024c6",
+        "filename": "auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05d59f18_6415dc55",
+      "range": {
+        "startLine": 182,
+        "startChar": 10,
+        "endLine": 182,
+        "endChar": 19
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e81ce84f_9b711f11",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 9
@@ -283,6 +565,30 @@
       "writtenOn": "2017-11-13T23:24:05Z",
       "side": 1,
       "message": "I was hoping for luci_context stuff be integrated into auth.get_authenticator_for_host stuff, so it works everywhere where get_authenticator_for_host is currently used...",
+      "range": {
+        "startLine": 70,
+        "startChar": 4,
+        "endLine": 70,
+        "endChar": 50
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e862033f_158679f1",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T19:44:35Z",
+      "side": 1,
+      "message": "Could this be a separate CL? I could definitely be wrong but it appears that the objective of this is slightly different from the objective of the fix that this CL is supposed to be.\nFor now, I could add a TODO for myself and then return to it right after.",
+      "parentUuid": "e81ce84f_9b711f11",
       "range": {
         "startLine": 70,
         "startChar": 4,

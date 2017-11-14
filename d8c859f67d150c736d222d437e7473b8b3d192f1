@@ -598,6 +598,30 @@
       "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46970ca8_7a07cbfd",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-14T21:44:52Z",
+      "side": 1,
+      "message": "Nevermind, after talking offline with nodir, this will be included in this CL.",
+      "parentUuid": "e862033f_158679f1",
+      "range": {
+        "startLine": 70,
+        "startChar": 4,
+        "endLine": 70,
+        "endChar": 50
+      },
+      "revId": "d8c859f67d150c736d222d437e7473b8b3d192f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

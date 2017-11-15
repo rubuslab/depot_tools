@@ -39,7 +39,7 @@ BLACKLIST_LINT_FILTERS = [
 
 ### Description checks
 
-def CheckChangedConfigs(input_api, output_api):
+def CheckChangedLUCIConfigs(input_api, output_api):
   import collections
   import base64
   import json

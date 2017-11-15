@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be569fd5_a0ff0ab3",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-15T23:51:33Z",
+      "side": 0,
+      "message": "note that this overwrites outer tries variable, and hence makes exponential back off (sleeping) no longer exponential.",
+      "range": {
+        "startLine": 643,
+        "startChar": 8,
+        "endLine": 643,
+        "endChar": 17
+      },
+      "revId": "996bd0cb6df3c786204f9295b94323b53a541ba3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -1888,8 +1888,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
     token_mock = self.mox.CreateMock(auth.AccessToken)
     token_mock.token = 123
     auth_mock = self.mox.CreateMock(auth.Authenticator)
-    auth_mock.get_access_token(
-        allow_user_interaction=True).AndReturn(token_mock)
+    auth_mock.get_access_token(use_luci_context=True).AndReturn(token_mock)
     self.mox.StubOutWithMock(auth, 'get_authenticator_for_host')
     auth.get_authenticator_for_host(
         mox.IgnoreArg(), mox.IgnoreArg()).AndReturn(auth_mock)

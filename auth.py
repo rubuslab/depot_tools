@@ -16,6 +16,7 @@ import os
 import socket
 import sys
 import threading
+import time
 import urllib
 import urlparse
 import webbrowser
@@ -100,6 +101,134 @@ class LoginRequiredError(AuthenticationError):
         'You are not logged in. Please login first by running:\n'
         '  depot-tools-auth login %s' % token_cache_key)
     super(LoginRequiredError, self).__init__(msg)
+
+
+class LuciContextAuthError(Exception):
+  """Raised on errors realted to unsuccessful attempts to load LUCI_CONTEXT"""
+
+
+def get_luci_context_access_token():
+  """Returns a valid AccessToken from the local LUCI context auth server.
+
+  Adapted from
+  https://chromium.googlesource.com/infra/luci/luci-py/+/master/client/libs/luci_context/luci_context.py
+  See the link above for more details.
+
+  Returns:
+    AccessToken if LUCI_CONTEXT is present and attempt to load it is successful.
+    None if LUCI_CONTEXT is absent.
+
+  Raises:
+    LuciContextAuthError if the attempt to load LUCI_CONTEXT
+        and request its access token is unsuccessful.
+  """
+  ctx_path = os.environ.get('LUCI_CONTEXT')
+  if not ctx_path:
+    return None
+  ctx_path = ctx_path.decode(sys.getfilesystemencoding())
+  logging.debug('Loading LUCI_CONTEXT: %r', ctx_path)
+  try:
+    with open(ctx_path) as f:
+      loaded = json.load(f)
+  except (OSError, IOError, ValueError) as ex:
+    err = 'LUCI_CONTEXT failed to open, read or decode: %s' % ex
+    logging.error(err)
+    raise LuciContextAuthError(err)
+  try:
+    local_auth = loaded.get('local_auth', None)
+  except AttributeError as ex:
+    err = 'LUCI_CONTEXT not in proper format: %s' % ex
+    logging.error(err)
+    raise LuciContextAuthError(err)
+  # failed to grab local_auth from LUCI context
+  if not local_auth:
+    logging.debug('local_auth: no local auth found')
+    return None
+  try:
+    account_id = local_auth['default_account_id']
+    secret = local_auth['secret']
+    rpc_port = int(local_auth['rpc_port'])
+  except (AttributeError, KeyError, ValueError) as ex:
+    err = 'local_auth: unexpected local auth format: %s' % ex
+    logging.error(err)
+    raise LuciContextAuthError(err)
+
+  # if account_id is not specificed, LUCI_CONTEXT should not be picked up
+  if not account_id:
+    err = "local_auth: account_id is not specified."
+    logging.error(err)
+    raise LuciContextAuthError(err)
+
+  logging.debug(
+      'local_auth: requesting an access token for account "%s"',
+      local_auth.default_account_id)
+  http = httplib2.Http()
+  host = '127.0.0.1:%d' % rpc_port
+  resp, content = http.request(
+      uri='http://%s/rpc/LuciLocalAuthService.GetOAuthToken' % host,
+      method='POST',
+      body=json.dumps({
+        'account_id': account_id,
+        'scopes': OAUTH_SCOPES.split(' '),
+        'secret': secret,
+      }),
+      headers={'Content-Type': 'application/json'})
+  if resp.status != 200:
+    err = ('local_auth: Failed to grab access token from '
+           'LUCI context server with status %d: %r' % (resp.status, content))
+    logging.error(err)
+    raise LuciContextAuthError(err)
+  try:
+    token = json.loads(content)
+    error_code = token.get('error_code')
+    error_message = token.get('error_message')
+    access_token = token.get('access_token')
+    expiry = token.get('expiry')
+  except ValueError as ex:
+    err = 'local_auth: Unexpected access token response format: %s' % ex
+    logging.error(err)
+    raise LuciContextAuthError(err)
+  if error_code or not access_token:
+    err = ('local_auth: Error %d in retrieving access '
+           'token: %s' % (error_code, error_message))
+    logging.error(err)
+    raise LuciContextAuthError(err)
+  try:
+    expiry_dt = datetime.datetime.utcfromtimestamp(expiry)
+  except (TypeError, ValueError) as ex:
+    err = 'Invalid expiry in returned token: %s' % ex
+    logging.error(err)
+    raise LuciContextAuthError(err)
+  logging.debug(
+      'local_auth: got an access token for account "%s" that expires in %d sec',
+       account_id, expiry - time.time())
+  access_token = AccessToken(access_token, expiry_dt)
+  if not _validate_luci_context_access_token(access_token):
+    err = 'local_auth: the returned access token is invalid'
+    logging.error(err)
+    raise LuciContextAuthError(err)
+  return access_token
+
+
+def _validate_luci_context_access_token(access_token):
+  """Validates access_token to be a valid AccessToken.
+
+  Args:
+    access_token: an AccessToken instance to validate.
+
+  Returns:
+    True if a valid AccessToken that is not expired.
+    False otherwise.
+  """
+  if not isinstance(access_token, AccessToken) or not access_token.token:
+    return False
+  # Valid if expires_at is None or it is not expired soon
+  if access_token.expires_at:
+    if (not isinstance(access_token.expires_at, datetime.datetime) or
+        datetime.datetime.now() >
+        access_token.expires_at - datetime.timedelta(minutes=60)):
+      return False
+  return True
 
 
 def make_auth_config(
@@ -219,6 +348,9 @@ def get_authenticator_for_host(hostname, config):
 
   Returns:
     Authenticator object.
+
+  Raises:
+    AuthenticationError if hostname is invalid.
   """
   hostname = hostname.lower().rstrip('/')
   # Append some scheme, otherwise urlparse puts hostname into parsed.path.
@@ -303,12 +435,14 @@ class Authenticator(object):
     with self._lock:
       return bool(self._get_cached_credentials())
 
-  def get_access_token(self, force_refresh=False, allow_user_interaction=False):
+  def get_access_token(self, force_refresh=False, allow_user_interaction=False,
+                       use_local_auth=True):
     """Returns AccessToken, refreshing it if necessary.
 
     Args:
       force_refresh: forcefully refresh access token even if it is not expired.
       allow_user_interaction: True to enable blocking for user input if needed.
+      use_local_auth: default to local auth if needed.
 
     Raises:
       AuthenticationError on error or if authentication flow was interrupted.
@@ -318,8 +452,22 @@ class Authenticator(object):
     with self._lock:
       if force_refresh:
         logging.debug('Forcing access token refresh')
-        self._access_token = self._create_access_token(allow_user_interaction)
-        return self._access_token
+        try:
+          self._access_token = self._create_access_token(allow_user_interaction)
+          return self._access_token
+        except LoginRequiredError as ex:
+          logging.error('Failed to create access token')
+          if not use_local_auth:
+            raise ex
+          try:
+            self._access_token = get_luci_context_access_token()
+            if not self._access_token:
+              raise ex
+            return self._access_token
+          except LuciContextAuthError:
+            logging.exception('Failed to use local auth')
+            # raise the LoginRequiredError instead
+            raise ex
 
       # Load from on-disk cache on a first access.
       if not self._access_token:
@@ -331,7 +479,21 @@ class Authenticator(object):
         self._access_token = self._load_access_token()
         # Nope, still expired, need to run the refresh flow.
         if not self._access_token or _needs_refresh(self._access_token):
-          self._access_token = self._create_access_token(allow_user_interaction)
+          try:
+            self._access_token = self._create_access_token(
+                allow_user_interaction)
+          except LoginRequiredError as ex:
+            logging.error('Failed to create access token')
+            if not use_local_auth:
+              raise ex
+            try:
+              self._access_token = get_luci_context_access_token()
+              if not self._access_token:
+                raise ex
+            except LuciContextAuthError:
+              logging.exception('Failed to use local auth')
+              # raise the LoginRequiredError instead
+              raise ex
 
       return self._access_token
 

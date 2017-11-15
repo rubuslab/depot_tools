@@ -22,6 +22,30 @@
       "revId": "28f6769e93ba9818b21981ce08a2f35ce46b3873",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7001c5ec_626f2c00",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 1134874
+      },
+      "writtenOn": "2017-11-15T23:55:15Z",
+      "side": 1,
+      "message": "Never mind; https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/771857 :D",
+      "parentUuid": "e32c4590_fc11882e",
+      "range": {
+        "startLine": 599,
+        "startChar": 0,
+        "endLine": 600,
+        "endChar": 20
+      },
+      "revId": "28f6769e93ba9818b21981ce08a2f35ce46b3873",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

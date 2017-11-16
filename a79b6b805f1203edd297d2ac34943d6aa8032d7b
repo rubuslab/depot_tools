@@ -1,0 +1,284 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33ba91a3_036efb44",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 107,
+        "startChar": 22,
+        "endLine": 107,
+        "endChar": 29
+      },
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8741e463_c65c4ed2",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "this reads are as LUCI_CONTEXT failed to open, open or decode something, but it is unclear what that something is. Consider rephrasing this to \u0027Failed to open, read or decode LUCI_CONTEXT: %s\u0027",
+      "range": {
+        "startLine": 134,
+        "startChar": 11,
+        "endLine": 134,
+        "endChar": 54
+      },
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0ed2686_e8eef02b",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "unnecessary, this is default",
+      "range": {
+        "startLine": 138,
+        "startChar": 40,
+        "endLine": 138,
+        "endChar": 46
+      },
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "432a7d8e_16dbf567",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "Vadim has requested to return None in this case",
+      "range": {
+        "startLine": 158,
+        "startChar": 4,
+        "endLine": 160,
+        "endChar": 35
+      },
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff9d6368_dd6a404f",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "have the same 2 lines of code repeated over and over. Consider \n\ndef authErr(ex, msg, *args):\n  err \u003d msg % args\n  logging.exception(msg)\n  raise LuciContextAuthErr(\u0027%s: %s\u0027 % (err, ex))\n\nthen logs contain stack trace",
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d37eb16_ebafdfc1",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "now this is inconsistent with L151. Please check same exception types and use token[...] where appropriate",
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89f532aa_7e6c984c",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "if it is None if token didn\u0027t have it. Consider being consistent with L151 by using token[\u0027expiry\u0027] and checking same exception types",
+      "range": {
+        "startLine": 197,
+        "startChar": 51,
+        "endLine": 197,
+        "endChar": 57
+      },
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4754df18_d1f3be1b",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "what may raise this? I don\u0027t see it in https://docs.python.org/2/library/datetime.html#datetime.datetime.utcfromtimestamp",
+      "range": {
+        "startLine": 198,
+        "startChar": 10,
+        "endLine": 198,
+        "endChar": 19
+      },
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6262e2b0_d672333d",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "it is early to print that if we manage to get a token from the local auth down the road",
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf1367d8_88704911",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "just `raise`, so that stack trace is not lost",
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "269ef394_9746c3ad",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a986f52_b8bd0285",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "this looses ex\u0027s original stack trace because current exception is now LuciContextAuthError. please use something like https://chromium.googlesource.com/infra/infra/+/b2be909d4a209c7bb0d1ffc20a046d5b9faa4085/appengine/cr-buildbucket/service.py#484",
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "006f2379_8e238d7b",
+        "filename": "auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "please fine a way to reduce duplication",
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88ccf14a_7c5b2b5b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T10:08:01Z",
+      "side": 1,
+      "message": "LoginRequiredError is a subclass of AuthenticationError, so this change is unnecessary",
+      "range": {
+        "startLine": 69,
+        "startChar": 10,
+        "endLine": 69,
+        "endChar": 34
+      },
+      "revId": "a79b6b805f1203edd297d2ac34943d6aa8032d7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

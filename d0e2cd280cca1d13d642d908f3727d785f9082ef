@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4301a491_7c87f85a",
+        "filename": "git_cl.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3152,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-16T08:42:58Z",
+      "side": 1,
+      "message": "_SanitizeHashTag\nbecause there are too many \"tags\" in this file (FYI: \"R\u003dXXXX\" is also called tag)\nand it\u0027s not called from outside the class",
+      "range": {
+        "startLine": 3152,
+        "startChar": 6,
+        "endLine": 3152,
+        "endChar": 17
+      },
+      "revId": "d0e2cd280cca1d13d642d908f3727d785f9082ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09303d0e_2c6839b1",
+        "filename": "git_cl.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3153,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-16T08:42:58Z",
+      "side": 1,
+      "message": "i think you mean \"git push refspec parameter\", right?",
+      "range": {
+        "startLine": 3153,
+        "startChar": 59,
+        "endLine": 3153,
+        "endChar": 68
+      },
+      "revId": "d0e2cd280cca1d13d642d908f3727d785f9082ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c040914_01be8012",
+        "filename": "git_cl.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3157,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-16T08:42:58Z",
+      "side": 1,
+      "message": "_GetHashTags if you keep it in this class.\n\nBut I propose to move this tag extraction code into ChangeDescription class. It already has parsing of gerrit footers, Rietveld/Critique-like \"TAGS\u003dvalue\", and in fact it keeps description as array of lines, so it\u0027s more efficient.",
+      "range": {
+        "startLine": 3157,
+        "startChar": 6,
+        "endLine": 3157,
+        "endChar": 17
+      },
+      "revId": "d0e2cd280cca1d13d642d908f3727d785f9082ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "645d8192_e45b9ab4",
+        "filename": "git_cl.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3158,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-16T08:42:58Z",
+      "side": 1,
+      "message": "Gerrit hash tags",
+      "range": {
+        "startLine": 3158,
+        "startChar": 40,
+        "endLine": 3158,
+        "endChar": 44
+      },
+      "revId": "d0e2cd280cca1d13d642d908f3727d785f9082ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87ed0f93_f3a35098",
+        "filename": "git_cl.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3174,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-16T08:42:58Z",
+      "side": 1,
+      "message": "personal thanks :)",
+      "range": {
+        "startLine": 3174,
+        "startChar": 14,
+        "endLine": 3174,
+        "endChar": 38
+      },
+      "revId": "d0e2cd280cca1d13d642d908f3727d785f9082ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

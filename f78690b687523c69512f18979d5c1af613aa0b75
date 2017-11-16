@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9352c961_28638226",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-11-16T08:20:12Z",
+      "side": 1,
+      "message": "I never really understood this. Is this an svn holdover?\n\nI think passing either a ref expression or a revision should suffice. Why would I need to say on which ref a revision is on?\n\nI think we should somehow try to get rid of this feature. It\u0027s however non-trivial to identify if somebody passes revisions like this...",
+      "range": {
+        "startLine": 522,
+        "startChar": 19,
+        "endLine": 522,
+        "endChar": 34
+      },
+      "revId": "f78690b687523c69512f18979d5c1af613aa0b75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

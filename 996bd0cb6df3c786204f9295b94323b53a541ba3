@@ -93,6 +93,30 @@
       "revId": "996bd0cb6df3c786204f9295b94323b53a541ba3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7fcf370b_25b92bdd",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-16T01:39:03Z",
+      "side": 0,
+      "message": "non-happy path raises on line 662, so it never reaches this line, not obvious, huh?",
+      "parentUuid": "777caa16_e12949b7",
+      "range": {
+        "startLine": 671,
+        "startChar": 2,
+        "endLine": 671,
+        "endChar": 35
+      },
+      "revId": "996bd0cb6df3c786204f9295b94323b53a541ba3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

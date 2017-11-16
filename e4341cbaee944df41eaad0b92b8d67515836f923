@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "809efe41_c217be39",
+        "filename": "auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T21:57:04Z",
+      "side": 1,
+      "message": "this API is confusing because in \n\n  authErr(\u0027foo %s had bar %s\u0027, foo, bar)\n\nwon\u0027t work the way it is read, because here e\u003dfoo and args\u003d[bar]\n\nanother reason for confusion is there is a parameter between format and format args. Format args should go right after format.\n\n--\n\nsince we pass ex only if there is current exception in the thread, consider using\nhttps://docs.python.org/2/library/sys.html#sys.exc_info\nand remove ex param. Then the signature is simpler and you have the exception and logging.exception is called only if there is an exception is actually being handled (as opposed to if ex parameter is passed)\n\nthen you don\u0027t need ` as ex` below",
+      "range": {
+        "startLine": 131,
+        "startChar": 20,
+        "endLine": 131,
+        "endChar": 25
+      },
+      "revId": "e4341cbaee944df41eaad0b92b8d67515836f923",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a5a51cc_8d25c420",
+        "filename": "auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T21:57:04Z",
+      "side": 1,
+      "message": "we probably should not call logging.exception if there is no exception",
+      "revId": "e4341cbaee944df41eaad0b92b8d67515836f923",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e18a8e4_c61ae7fe",
+        "filename": "auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-16T21:57:04Z",
+      "side": 1,
+      "message": "this does not work the way you expect",
+      "revId": "e4341cbaee944df41eaad0b92b8d67515836f923",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

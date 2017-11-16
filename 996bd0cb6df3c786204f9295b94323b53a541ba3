@@ -69,6 +69,30 @@
       "revId": "996bd0cb6df3c786204f9295b94323b53a541ba3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "777caa16_e12949b7",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 1134874
+      },
+      "writtenOn": "2017-11-16T01:35:43Z",
+      "side": 0,
+      "message": "Oh, I meant even in the non-happy path case. If that\u0027s intended though that\u0027s fine.",
+      "parentUuid": "bf309f61_a8c56c5b",
+      "range": {
+        "startLine": 671,
+        "startChar": 2,
+        "endLine": 671,
+        "endChar": 35
+      },
+      "revId": "996bd0cb6df3c786204f9295b94323b53a541ba3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -22,6 +22,30 @@
       "revId": "f78690b687523c69512f18979d5c1af613aa0b75",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c51d1282_54f7714b",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-16T08:27:06Z",
+      "side": 1,
+      "message": "No idea either.\nSo, maybe the right way forward is to get rid of branch:revision at first, and then introduce this:\n\u003cproject\u003e@\u003cref\u003e:\u003crev\u003e (e.g. src@refs/branch-heads/1.2.3:deadbeef).\n\nUnfortunately, the reason I touch this code is to optimize bot_update invocation in case required revision is already present in checkout, hence \"git fetch remote...\" can and should be avoided.",
+      "parentUuid": "9352c961_28638226",
+      "range": {
+        "startLine": 522,
+        "startChar": 19,
+        "endLine": 522,
+        "endChar": 34
+      },
+      "revId": "f78690b687523c69512f18979d5c1af613aa0b75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

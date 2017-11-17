@@ -71,6 +71,8 @@ class ChangelistMock(object):
 class PresubmitMock(object):
   def __init__(self, *args, **kwargs):
     self.reviewers = []
+    self.more_cc = []
+
   @staticmethod
   def should_continue():
     return True

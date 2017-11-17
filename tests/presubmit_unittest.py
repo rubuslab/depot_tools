@@ -1403,9 +1403,16 @@ class OutputApiUnittest(PresubmitTestsBase):
   def testMembersChanged(self):
     self.mox.ReplayAll()
     members = [
-      'MailTextResult', 'PresubmitError', 'PresubmitNotifyResult',
-      'PresubmitPromptWarning', 'PresubmitPromptOrNotify', 'PresubmitResult',
-      'is_committing', 'EnsureCQIncludeTrybotsAreAdded',
+        'AppendCC',
+        'MailTextResult',
+        'PresubmitError',
+        'PresubmitNotifyResult',
+        'PresubmitPromptWarning',
+        'PresubmitPromptOrNotify',
+        'PresubmitResult',
+        'is_committing',
+        'more_cc',
+        'EnsureCQIncludeTrybotsAreAdded',
     ]
     # If this test fails, you should add the relevant test.
     self.compareMembers(presubmit.OutputApi(False), members)

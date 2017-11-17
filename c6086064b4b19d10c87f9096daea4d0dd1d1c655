@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a3cdf1e2_758ea688",
+        "filename": "auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-17T18:37:25Z",
+      "side": 1,
+      "message": "I just changed everything here to get just to keep it uniform.\nAlso in L161, I have added a check to see if secret is there.",
+      "parentUuid": "66310555_5748b143",
+      "range": {
+        "startLine": 154,
+        "startChar": 27,
+        "endLine": 154,
+        "endChar": 28
+      },
+      "revId": "c6086064b4b19d10c87f9096daea4d0dd1d1c655",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "90fadb9d_e81d4a6f",
         "filename": "auth.py",
         "patchSetId": 19
@@ -39,6 +63,24 @@
       "revId": "c6086064b4b19d10c87f9096daea4d0dd1d1c655",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ee15b35_57ae10fa",
+        "filename": "auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-17T18:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90fadb9d_e81d4a6f",
+      "revId": "c6086064b4b19d10c87f9096daea4d0dd1d1c655",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -62,6 +104,30 @@
       "revId": "c6086064b4b19d10c87f9096daea4d0dd1d1c655",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4291865_7b2e2e99",
+        "filename": "auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-17T18:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e8e736a_94901981",
+      "range": {
+        "startLine": 203,
+        "startChar": 51,
+        "endLine": 203,
+        "endChar": 61
+      },
+      "revId": "c6086064b4b19d10c87f9096daea4d0dd1d1c655",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

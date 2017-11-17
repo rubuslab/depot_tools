@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18cc33bc_0609bba1",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1006,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-17T20:16:16Z",
+      "side": 1,
+      "message": "derp. This isn\u0027t argparse library, required known arg.",
+      "range": {
+        "startLine": 1006,
+        "startChar": 36,
+        "endLine": 1006,
+        "endChar": 50
+      },
+      "revId": "331a276b54282b46381c1c0aff7f4a26afbb21ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

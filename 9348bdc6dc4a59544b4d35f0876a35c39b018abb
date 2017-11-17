@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "154b720e_e9a5a92c",
+        "filename": "auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-17T00:45:25Z",
+      "side": 1,
+      "message": "i just meant that calling logging.exception without a currently-handled exception does not make a lot of sense, but it still makes sense to log in a different way, e.g. logging.error",
+      "revId": "9348bdc6dc4a59544b4d35f0876a35c39b018abb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

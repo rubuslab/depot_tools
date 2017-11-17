@@ -34,6 +34,24 @@
       "revId": "9348bdc6dc4a59544b4d35f0876a35c39b018abb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "caf9f502_1a2b03a6",
+        "filename": "auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-17T17:49:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "154b720e_e9a5a92c",
+      "revId": "9348bdc6dc4a59544b4d35f0876a35c39b018abb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

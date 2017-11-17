@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "90fadb9d_e81d4a6f",
+        "filename": "auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-17T17:49:23Z",
+      "side": 1,
+      "message": "ugh, i know that I\u0027ve suggested that we should use [] where appropriate in patchset15, but looks like i was wrong. I am not sure error_code will be present in the dict if there is no error. And conversely, i am not sure access token will be present if there is an error. My comment was entirely wrong. Please restore this piece of code from patchset15, it was good\n\nand then we should check if expiry was there before trying to parse it in L195.",
+      "revId": "c6086064b4b19d10c87f9096daea4d0dd1d1c655",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e8e736a_94901981",
+        "filename": "auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-17T17:49:23Z",
+      "side": 1,
+      "message": "i think this will essentially treat all access tokens expired because they usually live for an hour. Please reuse _needs_refresh",
+      "range": {
+        "startLine": 203,
+        "startChar": 51,
+        "endLine": 203,
+        "endChar": 61
+      },
+      "revId": "c6086064b4b19d10c87f9096daea4d0dd1d1c655",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

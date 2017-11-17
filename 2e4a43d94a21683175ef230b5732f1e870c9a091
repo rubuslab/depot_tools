@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d274c24f_22166757",
+        "filename": "auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-17T19:11:05Z",
+      "side": 1,
+      "message": "is secret is not there, that\u0027s a violation of the protocol and should be treated as an error",
+      "range": {
+        "startLine": 161,
+        "startChar": 27,
+        "endLine": 161,
+        "endChar": 33
+      },
+      "revId": "2e4a43d94a21683175ef230b5732f1e870c9a091",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "197030f9_ef5b1f50",
+        "filename": "auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-17T19:11:05Z",
+      "side": 1,
+      "message": "what if local auth implements unexpiring tokens? please change this to\n\nexpiry_dt \u003d None\nif expiry:\n   try ... except ...\n\nnote that _needs_refresh handles absence of expiry just fine",
+      "revId": "2e4a43d94a21683175ef230b5732f1e870c9a091",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

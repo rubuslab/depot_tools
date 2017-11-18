@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ed690e96_b23b0d52",
+        "filename": "auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-18T00:39:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d274c24f_22166757",
+      "range": {
+        "startLine": 161,
+        "startChar": 27,
+        "endLine": 161,
+        "endChar": 33
+      },
+      "revId": "2e4a43d94a21683175ef230b5732f1e870c9a091",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "197030f9_ef5b1f50",
         "filename": "auth.py",
         "patchSetId": 20
@@ -39,6 +63,24 @@
       "revId": "2e4a43d94a21683175ef230b5732f1e870c9a091",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be9b0a54_abef42b0",
+        "filename": "auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-18T00:39:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "197030f9_ef5b1f50",
+      "revId": "2e4a43d94a21683175ef230b5732f1e870c9a091",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

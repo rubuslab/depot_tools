@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "db7d8f29_e151d009",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-21T20:36:46Z",
+      "side": 1,
+      "message": "please use http://www.voidspace.org.uk/python/mock/, it is more standard\n\nit is imported as\n\n  import mock",
+      "revId": "cdb89e9602afeed1c67a906e16e048e6c2b7ffd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

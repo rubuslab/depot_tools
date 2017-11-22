@@ -620,7 +620,11 @@ def _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
   deadline = time.time() + 60
   tries = 0
   while True:
-    git(*populate_cmd)
+    # TODO(tikuta): remove GIT_TRACE after fixing crbug.com/749709
+    env = {}
+    if url == CHROMIUM_SRC_URL or url + '.git' == CHROMIUM_SRC_URL:
+      env = {'GIT_TRACE': 'true'}
+    git(*populate_cmd, env=env)
     mirror_dir = git(
         'cache', 'exists', '--quiet',
         '--cache-dir', git_cache_dir, url).strip()

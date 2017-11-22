@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43e589c8_778c29c6",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-22T07:52:34Z",
+      "side": 1,
+      "message": "mocking so low level stuff may be dangerous, i.e. it may break the testing framework itself\n\nlet\u0027s extract reading LUCI_CONTEXT env var to a separate small function and mock that\n\nalternatively, make an _get_luci_context_access_token that accepts the env var value as a parameter and test that. Then get_luci_context_access_token will simply delegate to _get_luci_context_access_token",
+      "revId": "324ec7f22b11974edac817d58574a8c4ac3edc63",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0b3b297_a5c0d3a9",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-22T07:52:34Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 37,
+        "startChar": 14,
+        "endLine": 37,
+        "endChar": 34
+      },
+      "revId": "324ec7f22b11974edac817d58574a8c4ac3edc63",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91155621_bf145dfd",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-22T07:52:34Z",
+      "side": 1,
+      "message": "we are mixing camelCase and snake_case in this class. Please use choose one",
+      "range": {
+        "startLine": 46,
+        "startChar": 6,
+        "endLine": 46,
+        "endChar": 32
+      },
+      "revId": "324ec7f22b11974edac817d58574a8c4ac3edc63",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6983e051_faa9c656",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-22T07:52:34Z",
+      "side": 1,
+      "message": "with self.assertRaises(auth.LuciContextAuthError):\n  auth.get_luci_context_access_token()\n\nsame pattern below",
+      "revId": "324ec7f22b11974edac817d58574a8c4ac3edc63",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d4b586c_ba41918f",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-22T07:52:34Z",
+      "side": 1,
+      "message": "this is seconds since Epoch right? we can use something obviously in the past, like 1\n\nstrictly speaking, we should be mocking time.time too so that our tests do not depend on current time. This can done by passing \"now\" parameter to _get_luci_context_access_token",
+      "range": {
+        "startLine": 75,
+        "startChar": 16,
+        "endLine": 75,
+        "endChar": 62
+      },
+      "revId": "324ec7f22b11974edac817d58574a8c4ac3edc63",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

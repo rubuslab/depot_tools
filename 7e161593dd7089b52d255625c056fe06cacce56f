@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4cdd0fa1_2aad25af",
+        "filename": "auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-22T18:50:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ada9314a_042a1855",
+      "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c4d975f_82e6023d",
         "filename": "auth.py",
         "patchSetId": 25
@@ -33,6 +51,24 @@
       "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a566c27d_bdc95108",
+        "filename": "auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-22T18:50:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c4d975f_82e6023d",
+      "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "ae6f0b00_027393b7",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-22T18:50:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34c15054_5be21696",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 19
+      },
+      "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c6d1e339_5fd517f1",
         "filename": "tests/auth_test.py",
         "patchSetId": 25
@@ -79,6 +139,30 @@
       "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58843a47_93a8a583",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1246322
+      },
+      "writtenOn": "2017-11-22T18:50:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6d1e339_5fd517f1",
+      "range": {
+        "startLine": 80,
+        "startChar": 41,
+        "endLine": 80,
+        "endChar": 42
+      },
+      "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

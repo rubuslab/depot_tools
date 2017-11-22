@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0fe118ad_5826d8c3",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2017-11-22T23:15:18Z",
+      "side": 1,
+      "message": "I mean in this command, or whichever command is taking the longest time right now.",
+      "revId": "ba3735b3d41d3afee6f520639e669cfc737ee2ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

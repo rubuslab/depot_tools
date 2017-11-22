@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ada9314a_042a1855",
+        "filename": "auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-22T18:44:28Z",
+      "side": 1,
+      "message": "please undo this change between ps 24 and 25",
+      "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c4d975f_82e6023d",
+        "filename": "auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-22T18:44:28Z",
+      "side": 1,
+      "message": "now \u003d now or datetime.datetime.utcnow()",
+      "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34c15054_5be21696",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-22T18:44:28Z",
+      "side": 1,
+      "message": "please inline",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 19
+      },
+      "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6d1e339_5fd517f1",
+        "filename": "tests/auth_test.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-22T18:44:28Z",
+      "side": 1,
+      "message": "break line after (",
+      "range": {
+        "startLine": 80,
+        "startChar": 41,
+        "endLine": 80,
+        "endChar": 42
+      },
+      "revId": "7e161593dd7089b52d255625c056fe06cacce56f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

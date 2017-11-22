@@ -207,6 +207,12 @@ def git(*args, **kwargs):  # pragma: no cover
     if sys.platform.startswith('win'):
       git_executable += '.bat'
     cmd = (git_executable,) + args
+
+  # TODO(tikuta): remove this after fixing crbug.com/749709
+  new_env = kwargs.get('env', {}).copy()
+  new_env['GIT_TRACE']='true'
+  kwargs['env'] = new_env
+
   return call(*cmd, **kwargs)
 
 

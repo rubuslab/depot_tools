@@ -16,6 +16,24 @@
       "revId": "ba3735b3d41d3afee6f520639e669cfc737ee2ed",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6bea8cdd_f4bf9391",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 1151126
+      },
+      "writtenOn": "2017-11-22T23:36:59Z",
+      "side": 1,
+      "message": "Done\nI added TRACE here and `git fetch`.",
+      "parentUuid": "0fe118ad_5826d8c3",
+      "revId": "ba3735b3d41d3afee6f520639e669cfc737ee2ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

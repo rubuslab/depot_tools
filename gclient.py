@@ -1332,8 +1332,9 @@ it or fix the checkout.
       cache_dir = os.path.abspath(cache_dir)
       # If running on a bot, force break any stale git cache locks.
       if os.path.exists(cache_dir) and os.environ.get('CHROME_HEADLESS'):
-        subprocess2.check_call(['git', 'cache', 'unlock', '--cache-dir',
-                                cache_dir, '--force', '--all'])
+        git_cache.Mirror.SetCachePath(cache_dir)
+        git_cache.Mirror.UnlockAll()
+
     gclient_scm.GitWrapper.cache_dir = cache_dir
     git_cache.Mirror.SetCachePath(cache_dir)
 

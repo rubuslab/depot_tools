@@ -45,6 +45,23 @@
       "revId": "5f892488bc0bcf24a0f01b953b3da2b4168fffaa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a545f23c_309802d4",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2017-11-23T13:43:03Z",
+      "side": 1,
+      "message": "\"Appending ^{commit} ensures that the object is a commit\"\n\nOtherwise any object will incorrectly interpreted as valid. That said, handling the caret will be fun on Windows.",
+      "revId": "5f892488bc0bcf24a0f01b953b3da2b4168fffaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

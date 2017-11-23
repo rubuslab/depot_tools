@@ -184,13 +184,13 @@ def call(*args, **kwargs):  # pragma: no cover
   elapsed_time = ((time.time() - start_time) / 60.0)
   outval = out.getvalue()
   if code:
-    print '===Failed in %.1f mins===' % elapsed_time
+    print '===Failed in %.1f mins of %s ===' % (elapsed_time, ' '.join(args))
     print
     raise SubprocessFailed('%s failed with code %d in %s.' %
                            (' '.join(args), code, cwd),
                            code, outval)
 
-  print '===Succeeded in %.1f mins===' % elapsed_time
+  print '===Succeeded in %.1f mins of %s ===' % (elapsed_time, ' '.join(args))
   print
   return outval
 

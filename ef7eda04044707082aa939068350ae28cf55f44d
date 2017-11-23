@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "05a9781e_cd40f161",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-11-23T09:55:55Z",
+      "side": 1,
+      "message": "shouldn\u0027t you reset start_time here again?",
+      "revId": "ef7eda04044707082aa939068350ae28cf55f44d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "182a94c2_8c001ce0",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2017-11-23T09:55:55Z",
+      "side": 1,
+      "message": ".1?",
+      "range": {
+        "startLine": 400,
+        "startChar": 54,
+        "endLine": 400,
+        "endChar": 56
+      },
+      "revId": "ef7eda04044707082aa939068350ae28cf55f44d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

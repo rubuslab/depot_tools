@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e62abd3d_ac88502d",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-23T22:44:26Z",
+      "side": 1,
+      "message": "this is to ensure that recipe roller actually rolls this CL asap, as well as its revert.",
+      "revId": "7f1d6ae802dee5f023610d5748363f8b5e314b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

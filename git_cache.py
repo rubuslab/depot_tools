@@ -411,6 +411,17 @@ class Mirror(object):
       return False
     return True
 
+  def contains_revision(self, revision):
+    if not self.exists():
+      return False
+    try:
+      # cat-file exists with 0 on success, that is git object of given hash was
+      # found.
+      self.RunGit(['cat-file', '-e', str(revision)])
+      return True
+    except subprocess.CalledProcessError:
+      return False
+
   def exists(self):
     return os.path.isfile(os.path.join(self.mirror_path, 'config'))
 

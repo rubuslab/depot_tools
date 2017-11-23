@@ -324,11 +324,10 @@ class Mirror(object):
           cwd=cwd)
 
   def bootstrap_repo(self, directory):
-    """Bootstrap the repo from Google Stroage if possible.
+    """Bootstrap the repo from Google Storage if possible.
 
     More apt-ly named bootstrap_repo_from_cloud_if_possible_else_do_nothing().
     """
-
     if not self.bootstrap_bucket:
       return False
     python_fallback = False
@@ -344,20 +343,27 @@ class Mirror(object):
     gs_folder = 'gs://%s/%s' % (self.bootstrap_bucket, self.basedir)
     gsutil = Gsutil(self.gsutil_exe, boto_path=None)
     # Get the most recent version of the zipfile.
-    _, ls_out, _ = gsutil.check_call('ls', gs_folder)
+    _, ls_out, ls_err = gsutil.check_call('ls', gs_folder)
     ls_out_sorted = sorted(ls_out.splitlines())
     if not ls_out_sorted:
       # This repo is not on Google Storage.
+      self.print('No bootstrap file for %s found in %s, stderr:\n  %s' %
+                 (self.mirror_path, self.bootstrap_bucket,
+                  '  '.join((ls_err or '').splitlines(True))))
       return False
     latest_checkout = ls_out_sorted[-1]
 
     # Download zip file to a temporary directory.
+    start_time = time.time()
+    elapsed_mins = lambda: (time.time() - start_time) / 60.0
     try:
       tempdir = tempfile.mkdtemp(prefix='_cache_tmp', dir=self.GetCachePath())
       self.print('Downloading %s' % latest_checkout)
       code = gsutil.call('cp', latest_checkout, tempdir)
       if code:
+        self.print('Dowload failed in %.1f min' % elapsed_mins())
         return False
+      self.print('Dowload finished in %.1f min' % elapsed_mins())
       filename = os.path.join(tempdir, latest_checkout.split('/')[-1])
 
       # Unpack the file with 7z on Windows, unzip on linux, or fallback.
@@ -391,9 +397,10 @@ class Mirror(object):
 
     if retcode:
       self.print(
-          'Extracting bootstrap zipfile %s failed.\n'
-          'Resuming normal operations.' % filename)
+          'Extracting bootstrap zipfile %s failed in %1.f min.\n'
+          'Resuming normal operations.' % (filename, elapsed_mins()))
       return False
+    self.print('Re-bootstrap finished in %.1f min' % elapsed_mins())
     return True
 
   def exists(self):
@@ -432,6 +439,8 @@ class Mirror(object):
 
     if os.path.isdir(pack_dir):
       pack_files = [f for f in os.listdir(pack_dir) if f.endswith('.pack')]
+      self.print('%s has %d .pack files, re-bootstrapping if >%d' %
+                 (self.mirror_path, len(pack_files), GC_AUTOPACKLIMIT))
 
     should_bootstrap = (force or
                         not self.exists() or
@@ -455,8 +464,8 @@ class Mirror(object):
       else:
         # Bootstrap failed, previous cache exists; warn and continue.
         logging.warn(
-            'Git cache has a lot of pack files (%d).  Tried to re-bootstrap '
-            'but failed.  Continuing with non-optimized repository.'
+            'Git cache has a lot of pack files (%d). Tried to re-bootstrap '
+            'but failed. Continuing with non-optimized repository.'
             % len(pack_files))
         gclient_utils.rmtree(tempdir)
         tempdir = None

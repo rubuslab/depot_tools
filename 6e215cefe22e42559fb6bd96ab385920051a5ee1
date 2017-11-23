@@ -34,6 +34,24 @@
       "revId": "6e215cefe22e42559fb6bd96ab385920051a5ee1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e049bb0_fe23c1f7",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1151126
+      },
+      "writtenOn": "2017-11-23T01:02:28Z",
+      "side": 0,
+      "message": "OK. I use led next time.",
+      "parentUuid": "ed5fe912_be4d430e",
+      "revId": "6e215cefe22e42559fb6bd96ab385920051a5ee1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

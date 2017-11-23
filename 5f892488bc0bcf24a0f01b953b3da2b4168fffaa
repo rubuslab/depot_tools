@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b21f2191_7a6a65a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-11-23T12:25:59Z",
+      "side": 1,
+      "message": "I checked some V8 code (which I suspected was misusing this). Judging after these test expectations: https://cs.chromium.org/chromium/src/v8/tools/release/test_scripts.py?l\u003d1097\nWe first update v8 in chromium with a separate fetch and then call roll-dep-svn https://cs.chromium.org/chromium/src/v8/tools/release/test_scripts.py?l\u003d1116 - the roll-dep tool requires the revision you want to roll to exists (which it wouldn\u0027t now after a simple gclient sync after your change).\n\nOur reverse roller looked more suspicious:\nhttps://cs.chromium.org/chromium/build/scripts/slave/recipes/v8/auto_roll_v8_deps.py?l\u003d153\n\nIt updates chromium solution, but doesn\u0027t fetch the subrepos we want to update. But we pass the --no-verify-revision parameter, which skips the revision checking.\n\nSo, while I\u0027m somewhat confident about the V8 auto-rollers now, I can\u0027t speak for the rest of the chromium code base.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 73
+      },
+      "revId": "5f892488bc0bcf24a0f01b953b3da2b4168fffaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32f4603c_63211a13",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2017-11-23T12:25:59Z",
+      "side": 1,
+      "message": "nit: exits",
+      "range": {
+        "startLine": 418,
+        "startChar": 17,
+        "endLine": 418,
+        "endChar": 23
+      },
+      "revId": "5f892488bc0bcf24a0f01b953b3da2b4168fffaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

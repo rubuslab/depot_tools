@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "06fda957_0fb55a9c",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-23T10:21:20Z",
+      "side": 1,
+      "message": "to indent error so it visually stands out from next line - note the same two spaces after \\n in format str.",
+      "parentUuid": "556f8028_239cbc47",
+      "range": {
+        "startLine": 352,
+        "startChar": 19,
+        "endLine": 352,
+        "endChar": 21
+      },
+      "revId": "ef7eda04044707082aa939068350ae28cf55f44d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "05a9781e_cd40f161",
         "filename": "git_cache.py",
         "patchSetId": 3

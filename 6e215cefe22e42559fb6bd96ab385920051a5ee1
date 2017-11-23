@@ -16,6 +16,24 @@
       "revId": "6e215cefe22e42559fb6bd96ab385920051a5ee1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed5fe912_be4d430e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-23T00:58:20Z",
+      "side": 0,
+      "message": "I don\u0027t know. \n\nShameless plug: use led tool (go/led-talk) to test your ideas first (i do, though sometimes I cause bot_update failures just like this one (happened last friday :\u0027( )",
+      "parentUuid": "6bcb81bc_4b93cf19",
+      "revId": "6e215cefe22e42559fb6bd96ab385920051a5ee1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

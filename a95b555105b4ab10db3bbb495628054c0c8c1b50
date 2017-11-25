@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95f78c5f_da0fbe99",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-11-25T02:05:36Z",
+      "side": 1,
+      "message": "whitespace change here to ensure recipe roller rolls this CL,\nand even more importantly that it rolls the reverts of this CL.",
+      "revId": "a95b555105b4ab10db3bbb495628054c0c8c1b50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

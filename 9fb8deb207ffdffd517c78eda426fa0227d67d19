@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d4ded740_0e446cbe",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-27T19:34:07Z",
+      "side": 1,
+      "message": "this if condition is redundant with L200. L206 can be moved to L203 and L211 can become an else block of \"if\" at L200",
+      "range": {
+        "startLine": 205,
+        "startChar": 1,
+        "endLine": 205,
+        "endChar": 15
+      },
+      "revId": "9fb8deb207ffdffd517c78eda426fa0227d67d19",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

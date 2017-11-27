@@ -202,9 +202,16 @@ def _get_luci_context_access_token(env, now):
       expiry_dt = datetime.datetime.utcfromtimestamp(expiry)
     except (TypeError, ValueError):
       authErr('Invalid expiry in returned token')
-  logging.debug(
-      'local_auth: got an access token for account "%s" that expires in %d sec',
-      account_id, expiry - time.mktime(now.timetuple()))
+  if expiry_dt:
+    logging.debug(
+        'local_auth: got an access token for '
+        'account "%s" that expires in %d sec',
+        account_id, (expiry_dt - now).total_seconds())
+  else:
+    logging.debug(
+        'local auth: got an access token for '
+        'account "%s" that does not expire',
+        account_id)
   access_token = AccessToken(access_token, expiry_dt)
   if _needs_refresh(access_token, now=now):
     authErr('local_auth: the returned access token needs to be refreshed')

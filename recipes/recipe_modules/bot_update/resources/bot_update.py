@@ -536,7 +536,7 @@ def force_solution_revision(solution_name, git_url, revisions, cwd):
     # refs/heads/master. It needs to translate to refs/remotes/origin/master
     # first. See also https://crbug.com/740456 .
     ref = branch if branch.startswith('refs/') else 'origin/%s' % branch
-    git('checkout', '--force', ref, cwd=cwd)
+    git('checkout', '--force', ref, '--', cwd=cwd)
 
 
 def is_broken_repo_dir(repo_dir):

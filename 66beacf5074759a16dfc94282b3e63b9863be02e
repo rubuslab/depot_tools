@@ -34,6 +34,24 @@
       "revId": "66beacf5074759a16dfc94282b3e63b9863be02e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aefaee18_2ee9ab0a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-30T22:39:24Z",
+      "side": 1,
+      "message": "whatever you find making most sense, probably not L22. Currently code does not explain why we pass -- at all.",
+      "parentUuid": "8bd2a502_64e2ca6e",
+      "revId": "66beacf5074759a16dfc94282b3e63b9863be02e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2593389d_2323fdab",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-11-30T23:51:41Z",
+      "side": 1,
+      "message": "maybe \"treeish\" or something like that?",
+      "range": {
+        "startLine": 538,
+        "startChar": 4,
+        "endLine": 538,
+        "endChar": 8
+      },
+      "revId": "e692bc4c7b0639769898d2582f42b867614f84f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

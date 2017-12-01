@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6b11306_18e52fea",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-12-01T23:48:35Z",
+      "side": 1,
+      "message": "it just occurred to me that CheckChangedLUCIConfigs is in description checks section. This is not correct, see other checks in this section. Please find a better one or create a new one.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 22
+      },
+      "revId": "794f8091bcf030f3e64809c64c809583e7a47daf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

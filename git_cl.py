@@ -6088,7 +6088,9 @@ def GetDirtyMetricsDirs(diff_files):
 @subcommand.usage('<codereview url or issue id>')
 def CMDcheckout(parser, args):
   """Checks out a branch associated with a given Rietveld or Gerrit issue."""
-  _, args = parser.parse_args(args)
+  parser.add_option('--print', action='store_true',
+                    help='Just print the branch name and do not checkout')
+  options, args = parser.parse_args(args)
 
   if len(args) != 1:
     parser.print_help()
@@ -6114,19 +6116,25 @@ def CMDcheckout(parser, args):
   if len(branches) == 0:
     print('No branch found for issue %s.' % target_issue)
     return 1
-  if len(branches) == 1:
-    RunGit(['checkout', branches[0]])
-  else:
-    print('Multiple branches match issue %s:' % target_issue)
-    for i in range(len(branches)):
-      print('%d: %s' % (i, branches[i]))
-    which = raw_input('Choose by index: ')
-    try:
-      RunGit(['checkout', branches[int(which)]])
-    except (IndexError, ValueError):
-      print('Invalid selection, not checking out any branch.')
-      return 1
 
+  if len(branches) == 1:
+    if options.print:
+      print(branches[0])
+    else:
+      RunGit(['checkout', branches[0]])
+    return 0
+
+  print('Multiple branches match issue %s:' % target_issue)
+  for i in range(len(branches)):
+    print('%d: %s' % (i, branches[i]))
+  if options.print:
+    return 0
+  which = raw_input('Choose by index: ')
+  try:
+    RunGit(['checkout', branches[int(which)]])
+  except (IndexError, ValueError):
+    print('Invalid selection, not checking out any branch.')
+    return 1
   return 0
 
 

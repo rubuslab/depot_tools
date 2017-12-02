@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b11e467e_5c8c072c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1318,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-12-02T06:49:07Z",
+      "side": 1,
+      "message": "unnecessary blank line :P",
+      "revId": "17995a9f128290b66e16f2fdfba96b4369425f8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

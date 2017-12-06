@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d43d142d_4ebf0b05",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-12-06T18:20:26Z",
+      "side": 1,
+      "message": "consider running these tests only when CL touches corresponding files, since they are pretty isolated",
+      "range": {
+        "startLine": 46,
+        "startChar": 4,
+        "endLine": 46,
+        "endChar": 16
+      },
+      "revId": "477299a53525dce37ab5a31c92c314084bea5c3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4266dcac_66e64d96",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-12-06T18:20:26Z",
+      "side": 1,
+      "message": "noice 👍\n\nBut what CIPD client is used to run CheckCIPDManifest? If CL breaks cipd_client_version, it might not be able to run the test. Though it may break it only on e.g Windows, but the test runs on Linux, so there\u0027s a value in having it in this case too.",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 74
+      },
+      "revId": "477299a53525dce37ab5a31c92c314084bea5c3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42938d2e_14281eac",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-06T17:36:49Z",
+      "side": 1,
+      "message": "dnj: this part is new",
+      "range": {
+        "startLine": 73,
+        "startChar": 2,
+        "endLine": 83,
+        "endChar": 10
+      },
+      "revId": "6e400f4e4a9757658e51486d0824b4143d43f013",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

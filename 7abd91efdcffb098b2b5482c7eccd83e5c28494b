@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "508347cd_c0990de7",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-07T00:05:23Z",
+      "side": 1,
+      "message": "sleep time, not all time,\nbecause Gerrit responses are also slow, particularly mutating ones - CQ regularly experiences 10s+ :(",
+      "range": {
+        "startLine": 34,
+        "startChar": 19,
+        "endLine": 34,
+        "endChar": 23
+      },
+      "revId": "7abd91efdcffb098b2b5482c7eccd83e5c28494b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f8154526_9080bd83",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-07T00:05:23Z",
+      "side": 1,
+      "message": "ah, actually this isn\u0027t a call to Gerrit, this is for fetching auth tokens on GCE machines. It\u0027s failures are less likely as of today,\nbut your code change is good.",
+      "range": {
+        "startLine": 270,
+        "startChar": 0,
+        "endLine": 276,
+        "endChar": 27
+      },
+      "revId": "7abd91efdcffb098b2b5482c7eccd83e5c28494b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

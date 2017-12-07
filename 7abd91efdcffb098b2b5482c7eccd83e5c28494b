@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c362d4c0_b41a5b6d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-07T19:48:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "508347cd_c0990de7",
+      "range": {
+        "startLine": 34,
+        "startChar": 19,
+        "endLine": 34,
+        "endChar": 23
+      },
+      "revId": "7abd91efdcffb098b2b5482c7eccd83e5c28494b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f8154526_9080bd83",
         "filename": "gerrit_util.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-07T00:05:23Z",
       "side": 1,
       "message": "ah, actually this isn\u0027t a call to Gerrit, this is for fetching auth tokens on GCE machines. It\u0027s failures are less likely as of today,\nbut your code change is good.",
+      "range": {
+        "startLine": 270,
+        "startChar": 0,
+        "endLine": 276,
+        "endChar": 27
+      },
+      "revId": "7abd91efdcffb098b2b5482c7eccd83e5c28494b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c1bb50c6_0d4eda2f",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-07T19:48:05Z",
+      "side": 1,
+      "message": "Yeah, just figured it was sane to make all the retry code look the same even though it isn\u0027t feasible to totally reuse it because of the other operations going on in each loop.",
+      "parentUuid": "f8154526_9080bd83",
       "range": {
         "startLine": 270,
         "startChar": 0,

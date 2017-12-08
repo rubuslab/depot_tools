@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4124aa56_6126509f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-08T00:57:25Z",
+      "side": 1,
+      "message": "may want to change this part of the commit message",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 97
+      },
+      "revId": "26b827c1802d038a72ed0d7aada5e88b5c1da0fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

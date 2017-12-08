@@ -1,7 +1,34 @@
-#!/usr/bin/env python
+#!/usr/bin/env vpython
 # Copyright (c) 2011 The Chromium OS Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
+
+# [VPYTHON:BEGIN]
+# wheel: <
+#   name: "infra/python/wheels/httplib2-py2_py3"
+#   version: "version:0.10.3"
+# >
+# wheel: <
+#   name: "infra/python/wheels/oauth2client-py2_py3"
+#   version: "version:4.0.0"
+# >
+# wheel: <
+#   name: "infra/python/wheels/pyasn1_modules-py2_py3"
+#   version: "version:0.0.8"
+# >
+# wheel: <
+#   name: "infra/python/wheels/pyasn1-py2_py3"
+#   version: "version:0.2.3"
+# >
+# wheel: <
+#   name: "infra/python/wheels/rsa-py2_py3"
+#   version: "version:3.4.2"
+# >
+# wheel: <
+#   name: "infra/python/wheels/six-py2_py3"
+#   version: "version:1.10.0"
+# >
+# [VPYTHON:END]
 
 """Wrapper for chromite tools.
 

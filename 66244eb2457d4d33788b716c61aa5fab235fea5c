@@ -45,6 +45,30 @@
       "revId": "66244eb2457d4d33788b716c61aa5fab235fea5c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea0c2d5c_2cd9eca9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2017-12-08T00:07:20Z",
+      "side": 1,
+      "message": "I tried, but I already had oauth2client installed, which kinda ruined my plans\n\nLemme see if I can uninstall it or something",
+      "parentUuid": "bfc5062f_d4d8194c",
+      "range": {
+        "startLine": 18,
+        "startChar": 1,
+        "endLine": 18,
+        "endChar": 57
+      },
+      "revId": "66244eb2457d4d33788b716c61aa5fab235fea5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

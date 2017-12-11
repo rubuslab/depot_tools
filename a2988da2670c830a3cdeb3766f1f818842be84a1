@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fb4d7350_6e9a9a2e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-12-11T23:00:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4111fb05_d082275c",
+      "range": {
+        "startLine": 10,
+        "startChar": 18,
+        "endLine": 10,
+        "endChar": 31
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f342fd84_db91459b",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -45,6 +69,30 @@
       "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5495811b_95682b0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-12-11T23:00:50Z",
+      "side": 1,
+      "message": "This is an important thing to consider, but I believe it\u0027s not currently an issue for the WPT importer bot, since it only triggers CQ on the last patchset and then doesn\u0027t upload any more patchsets after that.",
+      "parentUuid": "f342fd84_db91459b",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 22
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5149c98c_747a347c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-12-11T23:00:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81e68cb5_1f12dcda",
+      "range": {
+        "startLine": 19,
+        "startChar": 42,
+        "endLine": 19,
+        "endChar": 43
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "30c98e07_4e0a9054",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "73125097_e4dcf8a5",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-12-11T23:00:50Z",
+      "side": 1,
+      "message": "Ah, I see. Now changed the wording here to just say that the contents may vary.",
+      "parentUuid": "30c98e07_4e0a9054",
+      "range": {
+        "startLine": 720,
+        "startChar": 12,
+        "endLine": 721,
+        "endChar": 72
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a8354a2_0a005342",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -114,6 +210,30 @@
       "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b942b6c6_87e92e02",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-12-11T23:00:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a8354a2_0a005342",
+      "range": {
+        "startLine": 726,
+        "startChar": 12,
+        "endLine": 726,
+        "endChar": 18
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

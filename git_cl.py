@@ -718,12 +718,16 @@ def write_try_results_json(output_file, builds):
   def convert_build_dict(build):
     return {
         'buildbucket_id': build.get('id'),
-        'status': build.get('status'),
-        'result': build.get('result'),
         'bucket': build.get('bucket'),
         'builder_name': json.loads(
             build.get('parameters_json', '{}')).get('builder_name'),
+        'created_ts': build.get('created_ts'),
+        'experimental': build.get('experimental'),
         'failure_reason': build.get('failure_reason'),
+        'result': build.get('result'),
+        'result_details_json': json.loads(build.get('result_details_json')),
+        'status': build.get('status'),
+        'tags': build.get('tags'),
         'url': build.get('url'),
     }
 

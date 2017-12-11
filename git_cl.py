@@ -716,14 +716,26 @@ def write_try_results_json(output_file, builds):
   """
 
   def convert_build_dict(build):
+    """Extracts a subset of the information from the build dict."""
+    # Note: The "parameters_json" and "result_details_json" fields of the build
+    # dict are optional and specific to the build system (e.g. Buildbot). The
+    # format isn't guaranteed, so some fields may be missing or None.
+    parameters = json.loads(build.get('parameters_json', '{}')) or {}
+    parameters_properties = parameters.get('properties') or {}
+    result_details = json.loads(build.get('result_details_json', '{}')) or {}
+    result_details_properties = result_details.get('properties') or {}
     return {
         'buildbucket_id': build.get('id'),
-        'status': build.get('status'),
-        'result': build.get('result'),
         'bucket': build.get('bucket'),
-        'builder_name': json.loads(
-            build.get('parameters_json', '{}')).get('builder_name'),
+        'builder_name': parameters.get('builder_name'),
+        'build_number': result_details_properties.get('buildnumber'),
+        'category': parameters_properties.get('category'),
+        'created_ts': build.get('created_ts'),
+        'experimental': build.get('experimental'),
         'failure_reason': build.get('failure_reason'),
+        'result': build.get('result'),
+        'status': build.get('status'),
+        'tags': build.get('tags'),
         'url': build.get('url'),
     }
 

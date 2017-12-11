@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4111fb05_d082275c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-11T20:30:10Z",
+      "side": 1,
+      "message": "del",
+      "range": {
+        "startLine": 10,
+        "startChar": 18,
+        "endLine": 10,
+        "endChar": 31
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f342fd84_db91459b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-11T20:30:10Z",
+      "side": 1,
+      "message": "oh, i see. Then, you might have a problem: Gerrit CQ re-uses tryjobs from prior patches in some cases (you can also see the same being done in Gerrit UI: if you edit commit message and refresh, you\u0027d still see tryjobs from prior patchset shown).\n\nUnfortunately, I don\u0027t have a good solution for you, because CQ still doesn\u0027t expose its state. But, if you know for sure your CL has exactly 1 patchset, then no problem (but the assumption is very fragile)",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 22
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81e68cb5_1f12dcda",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-11T20:30:10Z",
+      "side": 1,
+      "message": "or \"git_cl_try\" :)",
+      "range": {
+        "startLine": 19,
+        "startChar": 42,
+        "endLine": 19,
+        "endChar": 43
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30c98e07_4e0a9054",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-11T20:30:10Z",
+      "side": 1,
+      "message": "that\u0027s not true: both fields are available for all buildbucket builds, but which fields inside those is indeed build specific",
+      "range": {
+        "startLine": 720,
+        "startChar": 12,
+        "endLine": 721,
+        "endChar": 72
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a8354a2_0a005342",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-11T20:30:10Z",
+      "side": 1,
+      "message": "result_properties\n(these are props at the end of the build vs parameters_properties which were their at the triggering time)",
+      "range": {
+        "startLine": 726,
+        "startChar": 12,
+        "endLine": 726,
+        "endChar": 18
+      },
+      "revId": "a2988da2670c830a3cdeb3766f1f818842be84a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

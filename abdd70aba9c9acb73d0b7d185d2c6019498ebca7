@@ -84,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "953a59d7_94e6aebd",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-12T18:09:08Z",
+      "side": 1,
+      "message": "i don\u0027t approve of that hack and personally I\u0027d go for dumping all properties here and taking buildnumber from them. But this is up to you in your tool :) This is CL is for git cl and is fine as is.",
+      "parentUuid": "0bc09573_13d0b39f",
+      "range": {
+        "startLine": 721,
+        "startChar": 4,
+        "endLine": 721,
+        "endChar": 12
+      },
+      "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ca5a5db_518bc8d1",
         "filename": "git_cl.py",
         "patchSetId": 7
@@ -143,6 +167,30 @@
       "side": 1,
       "message": "builder_name is fine to keep, we\u0027ll be supporting it.",
       "parentUuid": "034864b1_f3eb7952",
+      "range": {
+        "startLine": 724,
+        "startChar": 8,
+        "endLine": 724,
+        "endChar": 55
+      },
+      "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b9a8eb5_bdb4e007",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-12T18:09:08Z",
+      "side": 1,
+      "message": "Oh, I realized where confusion came from - I meant to leave first comment of this thread under build_number, not build_name. Sorry.",
+      "parentUuid": "c2c209ff_9e134afe",
       "range": {
         "startLine": 724,
         "startChar": 8,

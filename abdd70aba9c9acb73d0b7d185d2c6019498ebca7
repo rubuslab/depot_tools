@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ca5a5db_518bc8d1",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-12T01:04:51Z",
+      "side": 1,
+      "message": "I\u0027m against exposing this because eventually foundation team would really like to drop support for incremental build numbers.",
+      "range": {
+        "startLine": 724,
+        "startChar": 8,
+        "endLine": 724,
+        "endChar": 55
+      },
+      "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

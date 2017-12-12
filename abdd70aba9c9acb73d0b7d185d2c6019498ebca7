@@ -22,6 +22,30 @@
       "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "034864b1_f3eb7952",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-12-12T16:25:51Z",
+      "side": 1,
+      "message": "builder_name as well?\n\nI was planning to keep builder_name at least temporarily because wpt importer uses it.",
+      "parentUuid": "7ca5a5db_518bc8d1",
+      "range": {
+        "startLine": 724,
+        "startChar": 8,
+        "endLine": 724,
+        "endChar": 55
+      },
+      "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

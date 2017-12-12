@@ -84,7 +84,6 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
     changelist: The Changelist class.
     cmd_upload: The function associated with the git cl upload command.
   """
-
   # Create a branch.
   if not CreateBranchForDirectory(
       refactor_branch, directory, refactor_branch_upstream):
@@ -136,7 +135,36 @@ def GetFilesSplitByOwners(owners_database, files):
   return files_split_by_owners
 
 
-def SplitCl(description_file, comment_file, changelist, cmd_upload):
+def PrintClDryRunInfo(cl_num, owners_database, directory, files, description,
+                      author):
+  """Prints info about one CL during a dry run
+
+  Args:
+    cl_num: The number of this CL.
+    owners_database: An owners.Database instance.
+    directory: Path to the directory that contains the OWNERS file for which
+        to upload a CL.
+    files: List of AffectedFile instances to include in the uploaded CL.
+    description: Description of the uploaded CL.
+    description: Description of the uploaded CL.
+    author: Email address of the user running this script.
+  """
+  affected_files = [f.LocalPath() for f in files]
+  affected_files_str = '\n'.join(affected_files)
+  reviewers = owners_database.reviewers_for(affected_files, author)
+  desc_lines = FormatDescriptionOrComment(description, directory).splitlines()
+  desc = '\n'.join(['    ' + l for l in desc_lines])
+
+  print '-' * 80
+  print '{:^80}\n'.format(' CL {} '.format(cl_num))
+  print 'Path:      {}'.format(directory)
+  print 'Reviewers: {}'.format(','.join(reviewers))
+  print '\n' + desc + '\n'
+  print affected_files_str
+  print
+
+
+def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run):
   """"Splits a branch into smaller branches and uploads CLs.
 
   Args:
@@ -144,6 +172,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload):
     comment_file: File containing the comment of uploaded CLs.
     changelist: The Changelist class.
     cmd_upload: The function associated with the git cl upload command.
+    dry_run: Whether this is a dry run (no branches or CLs created).
 
   Returns:
     0 in case of success. 1 in case of error.
@@ -152,7 +181,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload):
   comment = ReadFile(comment_file) if comment_file else None
 
   try:
-    EnsureInGitRepository();
+    EnsureInGitRepository()
 
     cl = changelist()
     change = cl.GetChange(cl.GetCommonAncestorWithUpstream(), None)
@@ -175,17 +204,22 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload):
     files_split_by_owners = GetFilesSplitByOwners(
         owners_database, files)
 
-    print ('Will split current branch (' + refactor_branch +') in ' +
+    print ('Will split current branch (' + refactor_branch +') into ' +
            str(len(files_split_by_owners)) + ' CLs.\n')
 
-    for directory, files in files_split_by_owners.iteritems():
+    for cl_num, (directory, files) in \
+        enumerate(files_split_by_owners.iteritems(), 1):
       # Use '/' as a path separator in the branch name and the CL description
       # and comment.
       directory = directory.replace(os.path.sep, '/')
-      # Upload the CL.
-      UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
-               author, description, comment, owners_database, changelist,
-               cmd_upload)
+
+      if dry_run:
+        PrintClDryRunInfo(cl_num, owners_database, directory, files,
+                          description, author)
+      else:
+        UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
+                 author, description, comment, owners_database, changelist,
+                 cmd_upload)
 
     # Go back to the original branch.
     git.run('checkout', refactor_branch)

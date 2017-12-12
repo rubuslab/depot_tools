@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b45d6801_1bfe5928",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-12-12T18:01:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "127e246c_8b0be330",
+      "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f77e4f5_89cb6d65",
         "filename": "git_cl.py",
         "patchSetId": 7
@@ -39,6 +57,30 @@
       "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bc09573_13d0b39f",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2017-12-12T18:01:35Z",
+      "side": 1,
+      "message": "Although it\u0027s hacky, we currently extract build number from the URL (if the URL appears to end in a number...)\n\nThe main purpose of this CL was to allow WPT import to know which tryjobs are non-experimental CQ tryjobs (bug 792652) -- exposing build_number was kind of a separate thing that I thought might provide a less hacky way of getting the build number.\n\nNote, for Buildbot builds, build number (if available) is also generally available through the \u0027build_address\u0027 tag.",
+      "parentUuid": "3f77e4f5_89cb6d65",
+      "range": {
+        "startLine": 721,
+        "startChar": 4,
+        "endLine": 721,
+        "endChar": 12
+      },
+      "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

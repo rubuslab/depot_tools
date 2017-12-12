@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "127e246c_8b0be330",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-12T17:40:17Z",
+      "side": 1,
+      "message": "update this line ;)",
+      "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f77e4f5_89cb6d65",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-12T17:40:17Z",
+      "side": 1,
+      "message": "Quinten, I thought you intended to dump the whole results_details[\u0027properties\u0027], did I get it wrong? In other words, how do you intend to extra build_number for your current WPT-importer usage?",
+      "range": {
+        "startLine": 721,
+        "startChar": 4,
+        "endLine": 721,
+        "endChar": 12
+      },
+      "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7ca5a5db_518bc8d1",
         "filename": "git_cl.py",
         "patchSetId": 7
@@ -46,6 +86,30 @@
       "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2c209ff_9e134afe",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-12T17:40:17Z",
+      "side": 1,
+      "message": "builder_name is fine to keep, we\u0027ll be supporting it.",
+      "parentUuid": "034864b1_f3eb7952",
+      "range": {
+        "startLine": 724,
+        "startChar": 8,
+        "endLine": 724,
+        "endChar": 55
+      },
+      "revId": "abdd70aba9c9acb73d0b7d185d2c6019498ebca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

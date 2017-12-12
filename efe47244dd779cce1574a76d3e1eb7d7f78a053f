@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9e62b4d_328b5317",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-12T18:21:23Z",
+      "side": 1,
+      "message": "Feel free to ignore, but: I would call this \"PrintClInfo\", add a --verbose flag as well, and then also print this during real runs if -v is set.",
+      "range": {
+        "startLine": 138,
+        "startChar": 4,
+        "endLine": 138,
+        "endChar": 21
+      },
+      "revId": "efe47244dd779cce1574a76d3e1eb7d7f78a053f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1df7e091_86fc9059",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-12T18:21:23Z",
+      "side": 1,
+      "message": "This is misleading; this is the index of the change in the set of all changes created by this command, not the number that will be assigned to this CL when it is uploaded to Gerrit. I would name and describe this differently to avoid confusion.",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 34
+      },
+      "revId": "efe47244dd779cce1574a76d3e1eb7d7f78a053f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a8d2f9e_ef9ecbea",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-12T18:21:23Z",
+      "side": 1,
+      "message": "presubmit_support.AffectedFile I believe",
+      "range": {
+        "startLine": 147,
+        "startChar": 19,
+        "endLine": 147,
+        "endChar": 31
+      },
+      "revId": "efe47244dd779cce1574a76d3e1eb7d7f78a053f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "011faf99_5c320aed",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-12T18:21:23Z",
+      "side": 1,
+      "message": "remove duplicate line",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 48
+      },
+      "revId": "efe47244dd779cce1574a76d3e1eb7d7f78a053f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "241ab340_d59592c3",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-12T18:21:23Z",
+      "side": 1,
+      "message": "If you\u0027re centering this inside an 80-character span anyway, no need for whitespace on either side of this string.",
+      "range": {
+        "startLine": 159,
+        "startChar": 27,
+        "endLine": 159,
+        "endChar": 34
+      },
+      "revId": "efe47244dd779cce1574a76d3e1eb7d7f78a053f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c421c7fe_4987a29f",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-12T18:21:23Z",
+      "side": 1,
+      "message": "I would also change how the number is presented to the user, so they don\u0027t think that this would be the change number on Gerrit.",
+      "range": {
+        "startLine": 159,
+        "startChar": 0,
+        "endLine": 159,
+        "endChar": 51
+      },
+      "revId": "efe47244dd779cce1574a76d3e1eb7d7f78a053f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1f5b686_aed5f895",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-12T18:21:23Z",
+      "side": 1,
+      "message": "nit: \u0027, \u0027.join(reviewers) for easier readability",
+      "range": {
+        "startLine": 161,
+        "startChar": 32,
+        "endLine": 161,
+        "endChar": 33
+      },
+      "revId": "efe47244dd779cce1574a76d3e1eb7d7f78a053f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b1b3d6d_e0267039",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-12T18:21:23Z",
+      "side": 1,
+      "message": "You duplicate the\n\n    reviewers \u003d owners_database.reviewers_for(affected_files, author)\n\ncode in both UploadCl and PrintClInfo. Refactor that out to here, and then pass the list of reviewers instead of the owners_database and author to both functions. You could also do the same for FormatDescriptionOrComment if you like.",
+      "revId": "efe47244dd779cce1574a76d3e1eb7d7f78a053f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

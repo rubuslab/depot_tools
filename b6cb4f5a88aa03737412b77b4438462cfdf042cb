@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76a6562f_360d0e43",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-13T20:53:45Z",
+      "side": 1,
+      "message": "Replied on https://bugs.chromium.org/p/chromium/issues/detail?id\u003d749709#c89",
+      "revId": "b6cb4f5a88aa03737412b77b4438462cfdf042cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

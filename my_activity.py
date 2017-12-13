@@ -678,7 +678,7 @@ def main():
   quarter_begin, quarter_end = get_quarter_of(datetime.today() -
                                               relativedelta(months=2))
   parser.add_option(
-      '-Q', '--last_quarter', action='store_true',
+      '-Q', '--last_quarter', action='count',
       help='Use last quarter\'s dates, i.e. %s to %s' % (
         quarter_begin.strftime('%Y-%m-%d'), quarter_end.strftime('%Y-%m-%d')))
   parser.add_option(
@@ -800,7 +800,9 @@ def main():
 
   if not options.begin:
     if options.last_quarter:
-      begin, end = quarter_begin, quarter_end
+      begin, end = get_quarter_of(
+          datetime.today() -
+          relativedelta(months=2 + 3 * (options.last_quarter-1)))
     elif options.this_year:
       begin, end = get_year_of(datetime.today())
     elif options.week_of:

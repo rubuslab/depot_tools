@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fbd85e04_877cee0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-14T02:10:53Z",
+      "side": 1,
+      "message": "per our offline discussion: this CL -\u003e LGTM, but we should try to measure better the impact of newer git on performance. Current results are inconclusive, partially because of noise created by re-bootstrapping in ~10% of builds. So, we keep this CL on hold a few days.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "756089755dde77fd0c750aae2c456a9a22dec39f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

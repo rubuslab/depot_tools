@@ -118,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "dddf99bb_f809a5a7",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1742,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-15T23:26:59Z",
+      "side": 1,
+      "message": "Can you elaborate on this? I\u0027m not sure whether you mean multiple packages in the same subdir or multiple packages in the same cipd root or something else.",
+      "parentUuid": "5a1aa278_7fdc7fdc",
+      "range": {
+        "startLine": 1742,
+        "startChar": 43,
+        "endLine": 1742,
+        "endChar": 62
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "06b01c1b_a001e9c9",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -199,6 +223,30 @@
       "writtenOn": "2017-12-15T23:21:56Z",
       "side": 1,
       "message": "honestly... not a huge fan of this, especially since it\u0027s asymmetric with git dependencies. What about something like `\"url\": \"cipd://path/to/package@version\"`? Maybe allow it to be a list to allow multiple packages?",
+      "range": {
+        "startLine": 1792,
+        "startChar": 7,
+        "endLine": 1792,
+        "endChar": 33
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c28a205_c42e8411",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1792,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-15T23:26:59Z",
+      "side": 1,
+      "message": "If we\u0027re going to have a URL in there, I\u0027d strongly prefer it be something that actually resolves.",
+      "parentUuid": "fbc67ecf_e60b4a6e",
       "range": {
         "startLine": 1792,
         "startChar": 7,

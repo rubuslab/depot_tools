@@ -375,6 +375,24 @@
       "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fdab5da4_6bb72e39",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-15T23:37:43Z",
+      "side": 1,
+      "message": "cipd doesn\u0027t have a standard URI scheme, unfortunately (though maybe we should make it have one... that would definitely expand the scope of this CL a lot though, and I\u0027m not sure if it\u0027s worth it).",
+      "parentUuid": "06609b94_adcdd30f",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

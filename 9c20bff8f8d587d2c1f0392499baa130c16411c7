@@ -142,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "baedebca_e50b7beb",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1742,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-15T23:35:57Z",
+      "side": 1,
+      "message": "Multiple packages in the same subdir. We do this, for example, to put vpython and the git wrapper into the same directory (which we then put on $PATH). We do this in depot_tools to put led, vpython and the mac toolchain downloader in the same dir (again, to put on $PATH): https://chromium.googlesource.com/chromium/tools/depot_tools/+/master/cipd_manifest.txt\n\nStuff like that. I\u0027m not sure about having the implementation in gclient make such a policy decision... maybe that\u0027s what\u0027s best for gclient and all its users, but I\u0027m just pointing out that this would be too restrictive for many of the use cases we have for cipd elsewhere.",
+      "parentUuid": "dddf99bb_f809a5a7",
+      "range": {
+        "startLine": 1742,
+        "startChar": 43,
+        "endLine": 1742,
+        "endChar": 62
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "06b01c1b_a001e9c9",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -265,6 +289,30 @@
       "side": 1,
       "message": "If we\u0027re going to have a URL in there, I\u0027d strongly prefer it be something that actually resolves.",
       "parentUuid": "fbc67ecf_e60b4a6e",
+      "range": {
+        "startLine": 1792,
+        "startChar": 7,
+        "endLine": 1792,
+        "endChar": 33
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e77fbbd2_e0df4755",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1792,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-15T23:35:57Z",
+      "side": 1,
+      "message": "That\u0027s probably difficult to do without adding a lot more to cipd\u0027s frontend. Regardless, I\u0027m still not a huge fan of doing this asymmetric pseudo-explicit tagging :)\n\nFWIW, I don\u0027t think non-resolvable URIs are the worst thing...",
+      "parentUuid": "9c28a205_c42e8411",
       "range": {
         "startLine": 1792,
         "startChar": 7,

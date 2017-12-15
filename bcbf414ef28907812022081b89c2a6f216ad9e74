@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "89027854_2c28daf2",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2017-12-15T02:43:38Z",
+      "side": 1,
+      "message": "nit: not a fan of the capitalization in the name. IMO on_path is just as informative, but less irregular.",
+      "range": {
+        "startLine": 50,
+        "startChar": 6,
+        "endLine": 50,
+        "endChar": 13
+      },
+      "revId": "bcbf414ef28907812022081b89c2a6f216ad9e74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

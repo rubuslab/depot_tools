@@ -21,6 +21,18 @@ _GCLIENT_DEPS_SCHEMA = {
             # Optional condition string. The dep will only be processed
             # if the condition evaluates to True.
             schema.Optional('condition'): basestring,
+
+            schema.Optional('dep_type', default='git'): basestring,
+        },
+        # CIPD package.
+        {
+            'package': basestring,
+
+            'version': basestring,
+
+            schema.Optional('condition'): basestring,
+
+            schema.Optional('dep_type', default='cipd'): basestring,
         },
     ),
 }

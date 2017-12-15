@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "2be66650_b5a5a9e8",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-15T23:21:56Z",
+      "side": 1,
+      "message": "Note that `cipd ensure` can currently only talk to one service URL per invocation. I think this is a fine restriction to have (especially if we invoke `cipd ensure` once per DEPS file). With that in mind, it would be easy to add a global \u0027cipd_service_host \u003d \"other-host.appspot.com\"\u0027 option to DEPS.",
+      "range": {
+        "startLine": 677,
+        "startChar": 33,
+        "endLine": 677,
+        "endChar": 72
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1bccc761_153f8ed9",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-15T23:21:56Z",
+      "side": 1,
+      "message": "if we have the condition and the condition value, why not just do the evaluation here? (it\u0027s possible I misunderstand this too)",
+      "range": {
+        "startLine": 683,
+        "startChar": 16,
+        "endLine": 683,
+        "endChar": 42
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f9911516_716b0a0b",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -46,6 +92,29 @@
       "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a1aa278_7fdc7fdc",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1742,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-15T23:21:56Z",
+      "side": 1,
+      "message": "what happens when we want to have multiple CIPD packages at the same location? We\u0027ve seen this happen very frequently in infra applications (~90% of our uses of cipd use this feature).",
+      "range": {
+        "startLine": 1742,
+        "startChar": 43,
+        "endLine": 1742,
+        "endChar": 62
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     },
     {
       "key": {
@@ -98,6 +167,47 @@
       "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "900a7947_18aef7bb",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1781,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-15T23:21:56Z",
+      "side": 1,
+      "message": "I assume it\u0027s a hack to make pylint shut up about an unused parameter?",
+      "parentUuid": "fb9f8c65_07e3da74",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbc67ecf_e60b4a6e",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1792,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2017-12-15T23:21:56Z",
+      "side": 1,
+      "message": "honestly... not a huge fan of this, especially since it\u0027s asymmetric with git dependencies. What about something like `\"url\": \"cipd://path/to/package@version\"`? Maybe allow it to be a list to allow multiple packages?",
+      "range": {
+        "startLine": 1792,
+        "startChar": 7,
+        "endLine": 1792,
+        "endChar": 33
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     },
     {
       "key": {

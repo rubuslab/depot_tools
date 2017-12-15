@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f9911516_716b0a0b",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1008,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-15T23:01:59Z",
+      "side": 1,
+      "message": "I mention this again below in gclient_scm.py, but I don\u0027t think that hoisting these methods into this class and then overriding them in CipdDependency is the best way to do this.",
+      "range": {
+        "startLine": 1002,
+        "startChar": 2,
+        "endLine": 1008,
+        "endChar": 0
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06b01c1b_a001e9c9",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-15T23:01:59Z",
+      "side": 1,
+      "message": "At the least, comment that this is an override method.",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb9f8c65_07e3da74",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1781,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-15T23:01:59Z",
+      "side": 1,
+      "message": "Huh?",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eca43c51_5438eab5",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-15T23:01:59Z",
+      "side": 1,
+      "message": "I would prefer that you integrate the creation of CipdWrapper objects into this method, rather than having half of the Wrapper-creation logic in an override method in gclient.py, and half here.\n\nEither that, or remove this method entirely and break gclient\u0027s Dependency class into a GitDependency and a CipdDependency, but then that brings into question the division of labor between Dependency objects and Wrapper objects.",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

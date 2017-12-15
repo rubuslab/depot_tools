@@ -212,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "40ee1c39_3c550890",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1781,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-15T23:34:14Z",
+      "side": 1,
+      "message": "Just prefix the parameter with an underscore.",
+      "parentUuid": "900a7947_18aef7bb",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fbc67ecf_e60b4a6e",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -288,6 +306,24 @@
       "side": 1,
       "message": "\u003e I would prefer that you integrate the creation of CipdWrapper objects into this method, rather than having half of the Wrapper-creation logic in an override method in gclient.py, and half here.\n\nOne of my early implementations did this, but it required GetScmName know how to determine that a URL was a CIPD one, either by messing with the protocol or by explicitly checking the host name. Both of those seemed bad.\n\n\u003e \n\u003e Either that, or remove this method entirely and break gclient\u0027s Dependency class into a GitDependency and a CipdDependency, but then that brings into question the division of labor between Dependency objects and Wrapper objects.\n\nI\u0027ll look into this, though.",
       "parentUuid": "eca43c51_5438eab5",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06609b94_adcdd30f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-15T23:34:14Z",
+      "side": 1,
+      "message": "GetScmName already parses the url for ending in .git or using one of the various git protocols. It should do the same for CIPD, especially if cipd uses \"cipd://package/path\" urls.",
+      "parentUuid": "4059f145_c09a33ff",
       "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

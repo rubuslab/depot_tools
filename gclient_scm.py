@@ -6,13 +6,17 @@
 
 from __future__ import print_function
 
+import collections
+import contextlib
 import errno
+import json
 import logging
 import os
 import posixpath
 import re
 import sys
 import tempfile
+import threading
 import traceback
 import urlparse
 
@@ -1230,3 +1234,127 @@ class GitWrapper(SCMWrapper):
       gclient_utils.CheckCallAndFilterAndHeader(cmd, env=env, **kwargs)
     else:
       gclient_utils.CheckCallAndFilter(cmd, env=env, **kwargs)
+
+
+class CipdWrapper(SCMWrapper):
+  """Wrapper for CIPD.
+
+  Currently only supports chrome-infra-packages.appspot.com.
+  """
+  CipdPackage = collections.namedtuple('CipdPackage', ('name', 'version'))
+
+  class Root(object):
+    """A representation of a single CIPD root."""
+    def __init__(self, root_dir, service_url):
+      self._mutator_lock = threading.Lock()
+      self._packages = collections.defaultdict(list)
+      self._root_dir = root_dir
+      self._service_url = service_url
+
+    def add_package(self, subdir, package):
+      self._packages[subdir].append(package)
+
+    def clobber(self):
+      with self._mutator_lock:
+        cipd_cache_dir = os.path.join(self._cipd_root, '.cipd')
+        try:
+          shutil.rmtree(os.path.join(cipd_cache_dir))
+        except OSError:
+          if os.path.exists(cipd_cache_dir):
+            raise
+
+    @contextlib.contextmanager
+    def _create_ensure_file(self):
+      try:
+        with tempfile.NamedTemporaryFile(
+            suffix='.ensure', delete=False) as ensure_file:
+          for subdir, packages in sorted(self._packages.iteritems()):
+            ensure_file.write('@Subdir %s\n' % subdir)
+            for package in packages:
+              ensure_file.write('%s %s\n' % (package.name, package.version))
+            ensure_file.write('\n')
+        yield ensure_file.name
+      finally:
+        os.remove(ensure_file.name)
+
+    def ensure(self):
+      with self._mutator_lock:
+        with self._create_ensure_file() as ensure_file:
+          cmd = [
+              'cipd', 'ensure',
+              '-log-level', 'error',
+              '-root', self.root_dir,
+              '-ensure-file', ensure_file
+          ]
+          gclient_utils.CheckCallAndFilterAndHeader(cmd)
+
+    @property
+    def service_url(self):
+      return self._service_url
+
+    @property
+    def root_dir(self):
+      return self._root_dir
+
+
+  def __init__(self, url=None, root_dir=None, relpath=None, out_fh=None,
+               out_cb=None, root=None, package=None, version=None):
+    super(CipdWrapper, self).__init__(
+        url=url, root_dir=root_dir, relpath=relpath, out_fh=out_fh,
+        out_cb=out_cb)
+    self._package = package
+    self._root = root
+    self._version = version
+
+  #override
+  def GetCacheMirror(self):
+    return None
+
+  #override
+  def GetActualRemoteURL(self, options):
+    return self._root.service_url
+
+  #override
+  def DoesRemoteURLMatch(self, options):
+    del options
+    return True
+
+  def revert(self, options, args, file_list):
+    """Deletes .cipd and reruns ensure."""
+    self._root.clobber()
+    self._root.ensure()
+
+  def diff(self, options, args, file_list):
+    """CIPD has no notion of diffing."""
+    pass
+
+  def pack(self, options, args, file_list):
+    """CIPD has no notion of diffing."""
+    pass
+
+  def revinfo(self, options, args, file_list):
+    """Grab the instance ID."""
+    try:
+      tmpdir = tempfile.mkdtemp()
+      describe_json_path = os.path.join(tmpdir, 'describe.json')
+      cmd = [
+          'cipd', 'describe',
+          self._package,
+          '-log-level', 'error',
+          '-version', self._version,
+          '-json-output', describe_json_path
+      ]
+      gclient_utils.CheckCallAndFilter(
+          cmd, filter_fn=lambda _line: None, print_stdout=False)
+      with open(describe_json_path) as f:
+        describe_json = json.load(f)
+      return describe_json.get('result', {}).get('pin', {}).get('instance_id')
+    finally:
+      shutil.rmtree(tmpdir)
+
+  def status(self, options, args, file_list):
+    pass
+
+  def update(self, options, args, file_list):
+    """Runs ensure."""
+    self._root.ensure()

@@ -60,15 +60,19 @@ elif sys.platform == "cygwin":
     print ''
     raise
 
+print "foo 1"
+
 BASEDIR = os.path.dirname(os.path.abspath(__file__))
 DEPOT_TOOLS_PATH = os.path.join(BASEDIR, '..')
 sys.path.append(DEPOT_TOOLS_PATH)
+print "foo 2: " + sys.path
 try:
   import download_from_google_storage
 except ImportError:
   # Allow use of utility functions in this script from package_from_installed
   # on bare VM that doesn't have a full depot_tools.
   pass
+print "foo 3"
 
 
 def GetFileList(root):
@@ -397,6 +401,7 @@ def EnableCrashDumpCollection():
 
 
 def main():
+  print "foo 4"
   parser = optparse.OptionParser(description=sys.modules[__name__].__doc__)
   parser.add_option('--output-json', metavar='FILE',
                     help='write information about toolchain to FILE')
@@ -411,6 +416,7 @@ def main():
     return 0
 
   if sys.platform == 'cygwin':
+    print "foo 5a"
     # This script requires Windows Python, so invoke with depot_tools' Python.
     def winpath(path):
       return subprocess.check_output(['cygpath', '-w', path]).strip()
@@ -419,18 +425,23 @@ def main():
     if options.output_json:
       cmd.extend(['--output-json', winpath(options.output_json)])
     cmd.extend(args)
+    print "foo 6a"
     sys.exit(subprocess.call(cmd))
   assert sys.platform != 'cygwin'
+  print "foo 6"
 
   if len(args) == 0:
+    print "error: Desired hash is required"
     sys.exit('Desired hash is required.')
   desired_hash = args[0]
+  print "Desired hash is " + desired_hash
 
   # Create our toolchain destination and "chdir" to it.
   toolchain_dir = os.path.abspath(options.toolchain_dir)
   if not os.path.isdir(toolchain_dir):
     os.makedirs(toolchain_dir)
   os.chdir(toolchain_dir)
+  print "foo 7"
 
   # Move to depot_tools\win_toolchain where we'll store our files, and where
   # the downloader script is.
@@ -441,6 +452,7 @@ def main():
   if not os.path.isdir(target_dir):
     os.mkdir(target_dir)
   toolchain_target_dir = os.path.join(target_dir, desired_hash)
+  print "foo 8"
 
   abs_toolchain_target_dir = os.path.abspath(toolchain_target_dir)
 
@@ -450,8 +462,11 @@ def main():
   # Typically this script is only run when the .sha1 one file is updated, but
   # directly calling "gclient runhooks" will also run it, so we cache
   # based on timestamps to make that case fast.
+  print "foo 9"
   current_hashes = CalculateToolchainHashes(target_dir, True)
+  print "foo 10"
   if desired_hash not in current_hashes:
+    print "foo desired_hash not in current_hashes"
     should_use_gs = False
     if (HaveSrcInternalAccess() or
         LooksLikeGoogler() or

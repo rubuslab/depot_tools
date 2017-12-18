@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39448b06_fadd4603",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-12-18T18:32:31Z",
+      "side": 1,
+      "message": "remove 1 blank line",
+      "revId": "8bb0218fe84d1d2e128a604bdbaef4bf6ee60050",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7450df5_b72e2c9c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1305,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2017-12-18T18:32:31Z",
+      "side": 1,
+      "message": "i believe logging this would be useful too",
+      "range": {
+        "startLine": 1305,
+        "startChar": 8,
+        "endLine": 1305,
+        "endChar": 19
+      },
+      "revId": "8bb0218fe84d1d2e128a604bdbaef4bf6ee60050",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

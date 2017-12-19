@@ -22,6 +22,30 @@
       "revId": "27b17fbf9d2744f7461d2ff213a5c9889cf07c81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b4b5334_3fd6f916",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2017-12-19T19:34:04Z",
+      "side": 1,
+      "message": "Yep, precisely (in https://canary-chromium-review.googlesource.com/c/infra/luci/recipes-py/+/833490). There are a lot of test expectations which assume Rietveld, and those will require a non-trivial roll, but that\u0027s fine. The real problem is the few places where the test code itself assumes Rietveld, and this is taking care of one of those spots.",
+      "parentUuid": "344994f5_f511a9c7",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "27b17fbf9d2744f7461d2ff213a5c9889cf07c81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0faad05a_86e1222f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1248,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-19T23:16:09Z",
+      "side": 1,
+      "message": "don\u0027t do this, see comment below.",
+      "range": {
+        "startLine": 1248,
+        "startChar": 20,
+        "endLine": 1248,
+        "endChar": 38
+      },
+      "revId": "a33dab6b7d0868efcb91822291aad96331f71c04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ebfe0d4_4ae4d9a3",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-19T23:16:09Z",
+      "side": 1,
+      "message": "sorry, i wrote GetDestBranch in a comment elsewhere, but it\u0027s a common bad idea.\n\ns/Branch/Ref\n\nand then below, please do:\nref \u003d self.GetChangeInfo(issue)[\u0027branch\u0027]\nif not ref.startswith(\u0027refs/\u0027):\n  # NOTE: it is apparently possible to create \u0027refs/x\u0027 branch, \n  # aka \u0027refs/heads/refs/x\u0027. If somebody does that, they\u0027re gonna have a bad time,\n  # (but since they are so smart, they\u0027d probably enjoy this time).\n  ref \u003d \u0027refs/heads/%s\u0027 % ref",
+      "range": {
+        "startLine": 248,
+        "startChar": 13,
+        "endLine": 248,
+        "endChar": 19
+      },
+      "revId": "a33dab6b7d0868efcb91822291aad96331f71c04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

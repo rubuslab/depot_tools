@@ -1022,10 +1022,12 @@ class InputApiUnittest(PresubmitTestsBase):
         'cpu_count',
         'environ',
         'fnmatch',
+        'gerrit_object',
         'glob',
         'host_url',
         'is_committing',
         'is_windows',
+        'issue',
         'json',
         'logging',
         'marshal',
@@ -2002,6 +2004,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
     input_api = self.MockInputApi(change1, False)
     affected_files = (affected_file1, affected_file2)
 
+    input_api.gerrit_object = None
     input_api.AffectedFiles = lambda: affected_files
 
     self.mox.ReplayAll()

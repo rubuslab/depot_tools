@@ -245,6 +245,9 @@ class GerritAccessor(object):
 
     return rev_info['commit']['message']
 
+  def GetDestBranch(self, issue):
+    return self.GetChangeInfo(issue)['branch']
+
   def GetChangeOwner(self, issue):
     return self.GetChangeInfo(issue)['owner']['email']
 
@@ -623,6 +626,15 @@ class InputApi(object):
   def tbr(self):
     """Returns if a change is TBR'ed."""
     return 'TBR' in self.change.tags or self.change.TBRsFromDescription()
+
+  @property
+  def issue(self):
+    """Returns the issue number associated with the change."""
+    return self.change.issue
+
+  @property
+  def gerrit_object(self):
+    return self.gerrit
 
   def RunTests(self, tests_mix, parallel=True):
     tests = []

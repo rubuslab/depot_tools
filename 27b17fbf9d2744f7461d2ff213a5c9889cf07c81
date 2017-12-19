@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "344994f5_f511a9c7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2017-12-19T19:24:11Z",
+      "side": 1,
+      "message": "ah, i see now - you intend to \"magically\" replace test_api.properties.tryserver to return Gerrit patch fake. LGTM.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "27b17fbf9d2744f7461d2ff213a5c9889cf07c81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -245,6 +245,9 @@ class GerritAccessor(object):
 
     return rev_info['commit']['message']
 
+  def GetDestBranch(self, issue):
+    return self.GetChangeInfo(issue)['branch']
+
   def GetChangeOwner(self, issue):
     return self.GetChangeInfo(issue)['owner']['email']
 

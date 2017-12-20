@@ -1310,7 +1310,9 @@ def CheckChangedLUCIConfigs(input_api, output_api):
           'content': base64.b64encode(
               '\n'.join(f.NewContents()).encode('utf-8'))
         })
-  logging.debug('cs_to_files: %s', cs_to_files)
+  logging.debug(
+      'cs_to_files: %s',
+      {cs: [f['path'] for f in cs_to_files[cs]] for cs in cs_to_files})
   outputs = []
   for cs, f in cs_to_files.iteritems():
     try:

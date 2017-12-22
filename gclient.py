@@ -1021,10 +1021,16 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         dep.WriteGNArgsFile()
       self.WriteGNArgsFilesRecursively(dep.dependencies)
 
-  def RunHooksRecursively(self, options, progress):
+  def RunHooksRecursively(self, options, args, progress):
     assert self.hooks_ran == False
     self._hooks_ran = True
     hooks = self.GetHooks(options)
+    if args != []:
+      hook_names = [hook.name for hook in hooks]
+      unknown_args = [arg for arg in args if arg not in hook_names]
+      if unknown_args != []:
+        raise gclient_utils.Error('The following arguments are not valid hooks: %s.' % ", ".join(unknown_args))
+      hooks = [hook for hook in hooks if hook.name in args]
     if progress:
       progress._total = len(hooks)
     for hook in hooks:
@@ -1507,7 +1513,7 @@ it or fix the checkout.
     if not self._options.nohooks:
       if should_show_progress:
         pm = Progress('Running hooks', 1)
-      self.RunHooksRecursively(self._options, pm)
+      self.RunHooksRecursively(self._options, args, pm)
 
     if command == 'update':
       # Notify the user if there is an orphaned entry in their working copy.
@@ -2495,8 +2501,10 @@ def CMDrevert(parser, args):
   return client.RunOnDeps('revert', args)
 
 
+@subcommand.usage('[args ...]')
 def CMDrunhooks(parser, args):
-  """Runs hooks for files that have been modified in the local working copy."""
+  """Runs hooks for files that have been modified in the local working copy. The
+  list of hooks to run can be specified as arguments."""
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
                     help='override deps for the specified (comma-separated) '
                          'platform(s); \'all\' will process all deps_os '

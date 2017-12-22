@@ -74,6 +74,8 @@ def main():
   args = parse_options()
 
   gclient = os.path.join(args.repository, '.gclient')
+  if os.path.islink(gclient):
+    gclient = os.readlink(gclient)
   new_gclient = os.path.join(args.new_workdir, '.gclient')
 
   if try_vol_snapshot(args.repository, args.new_workdir):

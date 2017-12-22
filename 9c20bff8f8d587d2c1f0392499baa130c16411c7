@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "acc07639_120b6076",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-22T03:26:09Z",
+      "side": 1,
+      "message": "Happy to add something like that as the need arises. Added a note to this comment along those lines.",
+      "parentUuid": "2be66650_b5a5a9e8",
+      "range": {
+        "startLine": 677,
+        "startChar": 33,
+        "endLine": 677,
+        "endChar": 72
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1bccc761_153f8ed9",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cec5de6f_e984ec71",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-22T03:26:09Z",
+      "side": 1,
+      "message": "Whether or not we process a condition isn\u0027t strictly a function of the condition; see the if condition: block up on 667. Additionally, I think the dependency needs to know about its own condition for the purposes of flattening?\n\n(In any event, this handles conditions in the same way in which existing Dependencies do.)",
+      "parentUuid": "1bccc761_153f8ed9",
+      "range": {
+        "startLine": 683,
+        "startChar": 16,
+        "endLine": 683,
+        "endChar": 42
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -166,6 +214,47 @@
     },
     {
       "key": {
+        "uuid": "8159c357_5b2fa22a",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1742,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-22T03:26:09Z",
+      "side": 1,
+      "message": "Ah, ok, I see what you mean. I tried to write parts of this to accommodate having multiple packages in a single subdir (e.g. in CipdWrapper.Root), but then neglected to have a way for a user to specify such a configuration :/\n\nUpdated in the new patchset.",
+      "parentUuid": "baedebca_e50b7beb",
+      "range": {
+        "startLine": 1742,
+        "startChar": 43,
+        "endLine": 1742,
+        "endChar": 62
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae6387d5_ad71be0b",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1750,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-22T03:26:09Z",
+      "side": 1,
+      "message": "To be fair re what I\u0027ve said elsewhere re URLs: I\u0027ve used one here because some of the Dependency logic requires a URL to be present. Its value shows up w/ revinfo but otherwise isn\u0027t used.",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "06b01c1b_a001e9c9",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -180,6 +269,24 @@
       "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "718ec534_80f70cde",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-22T03:26:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06b01c1b_a001e9c9",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -248,6 +355,24 @@
       "side": 1,
       "message": "Just prefix the parameter with an underscore.",
       "parentUuid": "900a7947_18aef7bb",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2a93f9c_14876b75",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1781,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-22T03:26:09Z",
+      "side": 1,
+      "message": "Doing so on an overridden function breaks clients passing in arguments as kwargs.",
+      "parentUuid": "40ee1c39_3c550890",
       "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -325,6 +450,30 @@
     },
     {
       "key": {
+        "uuid": "3363dc1b_600502fd",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1792,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-22T03:26:09Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s great to have a URL that neither the browser nor CIPD itself can understand.\n\nThe tagging bit was why I tried to set the default values for dep_type down in gclient_eval. It works when syntax validation is on up in ParseDepsFile (see validate_syntax) but not otherwise, and syntax validation isn\u0027t enabled in all cases.",
+      "parentUuid": "e77fbbd2_e0df4755",
+      "range": {
+        "startLine": 1792,
+        "startChar": 7,
+        "endLine": 1792,
+        "endChar": 33
+      },
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "eca43c51_5438eab5",
         "filename": "gclient_scm.py",
         "patchSetId": 2
@@ -390,6 +539,24 @@
       "side": 1,
       "message": "cipd doesn\u0027t have a standard URI scheme, unfortunately (though maybe we should make it have one... that would definitely expand the scope of this CL a lot though, and I\u0027m not sure if it\u0027s worth it).",
       "parentUuid": "06609b94_adcdd30f",
+      "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "134d3fd6_19b07961",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2017-12-22T03:26:09Z",
+      "side": 1,
+      "message": "cipd:// was one of my experiments, too, but I wasn\u0027t particularly happy with it (partially because of the resolution issue). I would like to avoid standardizing a URI within the scope of this CL.\n\nNew patchset contains a minimal split of GitDependency. I\u0027m not sure I like it as opposed to just having Dependency \u0026 CipdDependency, but I\u0027m interested to hear what you think.",
+      "parentUuid": "fdab5da4_6bb72e39",
       "revId": "9c20bff8f8d587d2c1f0392499baa130c16411c7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

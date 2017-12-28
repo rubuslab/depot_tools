@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb9e0a09_77b99cf0",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1144344
+      },
+      "writtenOn": "2017-12-28T23:04:20Z",
+      "side": 1,
+      "message": "Might make sense to assert that src is a normal file here.",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 15
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05326eca_a8a4dc1c",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1144344
+      },
+      "writtenOn": "2017-12-28T23:04:20Z",
+      "side": 1,
+      "message": "Is one redirection enough? Assume we use current version of gclient-new-workdir to copy repo1 to repo2, then repo2 to repo3, and use new version to copy repo3 to repo4. In this case, repo4 should point back to repo1, right?",
+      "range": {
+        "startLine": 77,
+        "startChar": 2,
+        "endLine": 77,
+        "endChar": 4
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4030c30f_40c39af1",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1144344
+      },
+      "writtenOn": "2017-12-28T23:04:20Z",
+      "side": 1,
+      "message": "The links created by this script are absolute paths, but it could change, or users could manually change the links. We should either assert that the path is absolute, or normalize it to absolute path here.",
+      "range": {
+        "startLine": 78,
+        "startChar": 17,
+        "endLine": 78,
+        "endChar": 25
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2cdf6765_1ff625ac",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 1144344
+      },
+      "writtenOn": "2017-12-28T23:04:20Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1051,
+        "startChar": 2,
+        "endLine": 1051,
+        "endChar": 4
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68b45cbb_bde90671",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1052,
+      "author": {
+        "id": 1144344
+      },
+      "writtenOn": "2017-12-28T23:04:20Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1052,
+        "startChar": 13,
+        "endLine": 1052,
+        "endChar": 21
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

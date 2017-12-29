@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ebe3df01_baa3eab0",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2017-12-29T11:13:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb9e0a09_77b99cf0",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 15
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "05326eca_a8a4dc1c",
         "filename": "gclient-new-workdir.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba161332_c1c8a0e8",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2017-12-29T11:13:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05326eca_a8a4dc1c",
+      "range": {
+        "startLine": 77,
+        "startChar": 2,
+        "endLine": 77,
+        "endChar": 4
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "fce8bc9e_6d5b4417",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2017-12-29T11:13:57Z",
+      "side": 1,
+      "message": "I addressed both issues by using \u0027os.realpath()\u0027.",
+      "parentUuid": "4030c30f_40c39af1",
+      "range": {
+        "startLine": 78,
+        "startChar": 17,
+        "endLine": 78,
+        "endChar": 25
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2cdf6765_1ff625ac",
         "filename": "git_common.py",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "1117bdfe_c4157332",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2017-12-29T11:13:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2cdf6765_1ff625ac",
+      "range": {
+        "startLine": 1051,
+        "startChar": 2,
+        "endLine": 1051,
+        "endChar": 4
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "68b45cbb_bde90671",
         "filename": "git_common.py",
         "patchSetId": 1
@@ -114,6 +210,30 @@
       "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a7a1775_710491b6",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1052,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2017-12-29T11:13:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68b45cbb_bde90671",
+      "range": {
+        "startLine": 1052,
+        "startChar": 13,
+        "endLine": 1052,
+        "endChar": 21
+      },
+      "revId": "6d48108bdae0d1e3a8d074750744fd4a9d4a4bc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bcb606b9_6b6db1f9",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-02T18:54:09Z",
+      "side": 1,
+      "message": "Seems like this should include \u0027cipd\u0027: gclient_scm.CipdWrapper, even if GetScmName can\u0027t return cipd right now.\n\nAlso, no space before the colon.",
+      "revId": "f284917037e72da950d20139c709f7936dddd97e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -235,6 +235,10 @@ def update_string(deps_lines, string_node, git_revision):
   start_idx = string_node.col_offset - 1
   line = deps_lines[line_idx]
   (prefix, sep, old_rev) = string_node.s.partition('@')
+  if prefix not in line:
+    # This node has already been updated, for instance if the same dir appears
+    # several times in deps_os.
+    return line_idx
   if sep:
     start_idx = line.find(prefix + sep, start_idx) + len(prefix + sep)
     tail_idx = start_idx + len(old_rev)

@@ -16,6 +16,24 @@
       "revId": "f284917037e72da950d20139c709f7936dddd97e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a8ff881_4eb7890e",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-03T16:49:30Z",
+      "side": 1,
+      "message": "\u003e Seems like this should include \u0027cipd\u0027: gclient_scm.CipdWrapper, even if GetScmName can\u0027t return cipd right now.\n\nAdded.\n\n\u003e \n\u003e Also, no space before the colon.\n\nDone.",
+      "parentUuid": "bcb606b9_6b6db1f9",
+      "revId": "f284917037e72da950d20139c709f7936dddd97e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

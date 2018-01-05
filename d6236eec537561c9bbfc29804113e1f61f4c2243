@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2833663_553976eb",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5612,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-05T17:35:22Z",
+      "side": 1,
+      "message": "You need to pass issue\u003doptions.issue here for this to actually work (see similar constructs in CMDtry_results, CMDset_commit, and others).",
+      "revId": "d6236eec537561c9bbfc29804113e1f61f4c2243",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

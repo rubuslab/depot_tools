@@ -13,5 +13,8 @@ infra/tools/luci/vpython/${platform}  git_revision:000e38c9086590a3b76c3add3af8c
 # LUCI editor
 infra/tools/luci/led/${platform}  git_revision:54b6b3102fbb15ca3e3bd762ff3df7b08057d653
 
+# LogDog tool
+infra/tools/luci/logdog/logdog/${platform}  git_revision:f4bb2813735b5a61929f985da3b72d8c7a154b60
+
 # Mac toolchain installer
 infra/tools/mac_toolchain/${os=mac}-${arch} git_revision:2b69be6203f56a970202d9b5984557c0453b4eb0

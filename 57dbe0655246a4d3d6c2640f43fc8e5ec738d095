@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f706ea7_6657c01a",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1144344
+      },
+      "writtenOn": "2018-01-09T21:25:28Z",
+      "side": 1,
+      "message": "When src is a directory, reflink also always succeeds. It\u0027s safer to assert src is a normal file.",
+      "range": {
+        "startLine": 53,
+        "startChar": 51,
+        "endLine": 53,
+        "endChar": 58
+      },
+      "revId": "57dbe0655246a4d3d6c2640f43fc8e5ec738d095",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

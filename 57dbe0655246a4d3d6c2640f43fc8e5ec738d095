@@ -22,6 +22,30 @@
       "revId": "57dbe0655246a4d3d6c2640f43fc8e5ec738d095",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "066ed448_d5741fec",
+        "filename": "gclient-new-workdir.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2018-01-10T11:22:06Z",
+      "side": 1,
+      "message": "Done. Unfortunately, \u0027os.path.isfile\u0027 also succeeds for symlinks, so two checks are needed",
+      "parentUuid": "7f706ea7_6657c01a",
+      "range": {
+        "startLine": 53,
+        "startChar": 51,
+        "endLine": 53,
+        "endChar": 58
+      },
+      "revId": "57dbe0655246a4d3d6c2640f43fc8e5ec738d095",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

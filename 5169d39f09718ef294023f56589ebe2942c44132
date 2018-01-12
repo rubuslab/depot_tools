@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f74a860_ce4e5b44",
+        "filename": "cit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-01-12T23:45:45Z",
+      "side": 1,
+      "message": "A little wary since I don\u0027t know this well enough to know if it is a 100% safe drop-in replacement for subprocess.  But I think we use it in enough places that it is probably fine.",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "5169d39f09718ef294023f56589ebe2942c44132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -37,6 +37,11 @@ BLACKLIST_LINT_FILTERS = [
   '-build/c++11',
 ]
 
+# Bypass the AUTHORS check for email addresses in the following domains:
+AUTHORS_CHECK_BYPASS_DOMAINS = [
+  '@skia-buildbots.google.com.iam.gserviceaccount.com',
+]
+
 ### Description checks
 
 def CheckChangeHasBugField(input_api, output_api):
@@ -93,6 +98,12 @@ def CheckAuthorizedAuthor(input_api, output_api):
   if not author:
     input_api.logging.info('No author, skipping AUTHOR check')
     return []
+
+  for domain in AUTHORS_CHECK_BYPASS_DOMAINS:
+    if author.endswith(domain):
+      input_api.logging.info('Bypassing AUTHOR check for domain %s' % domain)
+      return []
+
   authors_path = input_api.os_path.join(
       input_api.PresubmitLocalPath(), 'AUTHORS')
   valid_authors = (

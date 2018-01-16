@@ -1774,6 +1774,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
     members = [
       'DEFAULT_LINT_FILTERS',
       'BLACKLIST_LINT_FILTERS',
+      'AUTHORS_CHECK_BYPASS_DOMAINS',
       'CheckAuthorizedAuthor',
       'CheckBuildbotPendingBuilds',
       'CheckChangeHasBugField', 'CheckChangeHasDescription',

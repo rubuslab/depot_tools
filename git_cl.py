@@ -3473,9 +3473,8 @@ class ChangeDescription(object):
       DieWithError('Running editor failed')
     lines = content.splitlines()
 
-    # Strip off comments and default inserted "Bug:" line.
-    clean_lines = [line.rstrip() for line in lines if not
-                   (line.startswith('#') or line.rstrip() == "Bug:")]
+    # Strip off comments.
+    clean_lines = [line.rstrip() for line in lines if not line.startswith('#')]
     if not clean_lines:
       DieWithError('No CL description, aborting')
     self.set_description(clean_lines)

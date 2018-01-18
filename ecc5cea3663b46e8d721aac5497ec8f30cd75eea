@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fab2f8c_464210cd",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-18T19:58:58Z",
+      "side": 1,
+      "message": "My preference here would be to leave these as-is, as it makes it easier to tell at a scan that different types of objects are being added.",
+      "parentUuid": "3e9834f4_7a992ccc",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f23a05f_efb17b5f",
         "filename": "gclient.py",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b63ff1d_2d9d51d9",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-18T19:58:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f23a05f_efb17b5f",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "18869e9a_01cb793f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1218,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-18T19:58:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07b80089_5a23ea3e",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8dd17c7b_065c99bd",
         "filename": "gclient_scm.py",
         "patchSetId": 4
@@ -64,6 +118,30 @@
       "writtenOn": "2018-01-18T01:23:10Z",
       "side": 1,
       "message": "Not clear how this is enforced. What\u0027s to stop a root having multiple CipdPackages that all have this property being truthy?",
+      "range": {
+        "startLine": 1221,
+        "startChar": 4,
+        "endLine": 1223,
+        "endChar": 28
+      },
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1acb96c0_fe3ab504",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-18T19:58:58Z",
+      "side": 1,
+      "message": "Within CipdPackage, there is no enforcement, since CipdPackage is basically a struct.\n\nThe CipdRoot that owns the package is responsible for ensuring that only one of its packages has authority to act on behalf of the root. That currently happens (arbitrarily, as you\u0027ve noted) in CipdRoot.add_packages.\n\nIn this patchset, there\u0027s nothing that stops a user from minting a CipdPackage outside of add_packages, granting it whatever authority they want, and using it with an arbitrary CipdRoot. (That sounds somewhat malicious; more realistically, though, there\u0027s nothing to stop someone from accidentally using a CipdPackage created by one CipdRoot from being used with another.)\n\nIn the new patchset, I\u0027ve added a assertion to CipdWrapper to make sure that its package was created by its root.",
+      "parentUuid": "8dd17c7b_065c99bd",
       "range": {
         "startLine": 1221,
         "startChar": 4,
@@ -99,6 +177,30 @@
     },
     {
       "key": {
+        "uuid": "38bb2f0a_45639090",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1265,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-18T19:58:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f115454_bb25feec",
+      "range": {
+        "startLine": 1264,
+        "startChar": 1,
+        "endLine": 1265,
+        "endChar": 75
+      },
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5d4c1473_1dd3a0d6",
         "filename": "gclient_scm.py",
         "patchSetId": 4
@@ -113,6 +215,24 @@
       "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56490e3a_f7fa5da1",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-18T19:58:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d4c1473_1dd3a0d6",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -139,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "6094311a_7bb169e8",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-18T19:58:58Z",
+      "side": 1,
+      "message": "If it\u0027s okay with you, I would prefer to stick with the temporary file rather than muck with either shell pipes or subprocess\u0027s stdin. The context manager makes the state maintenance relatively simple.",
+      "parentUuid": "7ddef05d_cb119091",
+      "range": {
+        "startLine": 1304,
+        "startChar": 6,
+        "endLine": 1304,
+        "endChar": 52
+      },
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a3277eeb_a21ff412",
         "filename": "gclient_scm.py",
         "patchSetId": 4
@@ -153,6 +297,24 @@
       "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f74e8cd7_4a9c2280",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-18T19:58:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3277eeb_a21ff412",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

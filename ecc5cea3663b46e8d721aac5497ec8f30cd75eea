@@ -154,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "15b95be8_ef3129b7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-18T20:11:11Z",
+      "side": 1,
+      "message": "uh, rephrasing one of those sentences to make sense:\n\n\"That sounds somewhat malicious; more realistically, though, there\u0027s nothing to stop someone from accidentally using a CipdPackage created by one CipdRoot with a different CipdRoot.\"",
+      "parentUuid": "1acb96c0_fe3ab504",
+      "range": {
+        "startLine": 1221,
+        "startChar": 4,
+        "endLine": 1223,
+        "endChar": 28
+      },
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8f115454_bb25feec",
         "filename": "gclient_scm.py",
         "patchSetId": 4

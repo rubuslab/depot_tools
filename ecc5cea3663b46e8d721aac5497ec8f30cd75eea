@@ -116,6 +116,29 @@
     },
     {
       "key": {
+        "uuid": "7ddef05d_cb119091",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-01-18T01:27:12Z",
+      "side": 1,
+      "message": "consider passing body of the ensure file via stdin, e.g.\n\necho \u0027a/b/c version\u0027 | cipd ensure -ensure-file - -root ...\n\n(see \"cipd ensure -help\", \u0027-\u0027 indicates to read the ensure file from stdin).\n\nLess state to maintain that way.",
+      "range": {
+        "startLine": 1304,
+        "startChar": 6,
+        "endLine": 1304,
+        "endChar": 52
+      },
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a3277eeb_a21ff412",
         "filename": "gclient_scm.py",
         "patchSetId": 4

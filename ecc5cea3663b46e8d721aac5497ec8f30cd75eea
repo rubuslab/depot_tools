@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3e9834f4_7a992ccc",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-18T01:23:10Z",
+      "side": 1,
+      "message": "nit: here and twice below, the XDependency class name can be pulled up onto the same line as the .append( call. If you feel like it. Just results in 4 fewer spaces of nesting, and causes the opening parens and closing parens to both be one the same line.",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f23a05f_efb17b5f",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-18T01:23:10Z",
+      "side": 1,
+      "message": "I\u0027d really like a comment explicitly saying that GetScmName not being able to return \u0027cipd\u0027 (i.e., we\u0027ll never guess cipd based on the url, only based on other parameters) to avoid confusion for other readers.",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07b80089_5a23ea3e",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1218,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-18T01:23:10Z",
+      "side": 1,
+      "message": "It\u0027s not clear just from the docstrings whether these properties are booleans (yes, it has authority for its root) or strings (yes, it has authority for *this* root). Maybe it\u0027s clear to someone more familiar with cipd but it would be nice to have it documented here as well.",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8dd17c7b_065c99bd",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-18T01:23:10Z",
+      "side": 1,
+      "message": "Not clear how this is enforced. What\u0027s to stop a root having multiple CipdPackages that all have this property being truthy?",
+      "range": {
+        "startLine": 1221,
+        "startChar": 4,
+        "endLine": 1223,
+        "endChar": 28
+      },
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f115454_bb25feec",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1265,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-18T01:23:10Z",
+      "side": 1,
+      "message": "Add a comment saying that selection of which package has \"authority\" is arbitrary: first one to get here wins. Reading through the code above I thought it was going to be some form of special selection or marking so making it clear that arbitrary winners is okay would be good.",
+      "range": {
+        "startLine": 1264,
+        "startChar": 1,
+        "endLine": 1265,
+        "endChar": 75
+      },
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d4c1473_1dd3a0d6",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-18T01:23:10Z",
+      "side": 1,
+      "message": "If the file wasn\u0027t created (because an exception was thrown during the creation of the NamedTemporaryFile itself, rather than later in the loop), then this will raise an OSError of its own for trying to delete a nonexistent file.",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3277eeb_a21ff412",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-18T01:23:10Z",
+      "side": 1,
+      "message": "nit: trailing comma so someone can add another line more easily in the future",
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

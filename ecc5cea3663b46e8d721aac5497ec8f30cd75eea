@@ -331,6 +331,30 @@
     },
     {
       "key": {
+        "uuid": "66889280_b9646322",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-01-19T19:51:38Z",
+      "side": 1,
+      "message": "Yes if you prefer, but I think avoiding subprocess.PIPE is silly. It\u0027s pretty reliable on all platforms.",
+      "parentUuid": "e97ca166_859fb616",
+      "range": {
+        "startLine": 1304,
+        "startChar": 6,
+        "endLine": 1304,
+        "endChar": 52
+      },
+      "revId": "ecc5cea3663b46e8d721aac5497ec8f30cd75eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a3277eeb_a21ff412",
         "filename": "gclient_scm.py",
         "patchSetId": 4

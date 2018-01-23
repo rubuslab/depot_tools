@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f41d95b_2ed94296",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-01-23T19:13:11Z",
+      "side": 1,
+      "message": "Why whitelist a whole domain, rather than an explicit list of users?",
+      "revId": "2da798f85a48805895d63d6efe10d8c16b8db938",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

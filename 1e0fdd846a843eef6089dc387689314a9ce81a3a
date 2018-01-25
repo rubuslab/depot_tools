@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1cc38c54_e22ec0de",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-25T17:21:12Z",
+      "side": 1,
+      "message": "nit: make removing this a TODO",
+      "revId": "1e0fdd846a843eef6089dc387689314a9ce81a3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

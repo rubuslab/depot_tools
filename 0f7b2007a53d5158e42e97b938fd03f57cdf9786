@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7ff4393_f6e45389",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-26T19:12:37Z",
+      "side": 1,
+      "message": "These lines are causing pylint failures: https://logs.chromium.org/v/?s\u003dinfra%2Fbuildbucket%2Fcr-buildbucket.appspot.com%2F8956324192432438128%2F%2B%2Fsteps%2Fpresubmit%2F0%2Fstdout",
+      "range": {
+        "startLine": 942,
+        "startChar": 0,
+        "endLine": 943,
+        "endChar": 33
+      },
+      "revId": "0f7b2007a53d5158e42e97b938fd03f57cdf9786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "828a0c94_3fcd7e50",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-01-26T19:12:37Z",
+      "side": 1,
+      "message": "This one too",
+      "range": {
+        "startLine": 998,
+        "startChar": 0,
+        "endLine": 998,
+        "endChar": 33
+      },
+      "revId": "0f7b2007a53d5158e42e97b938fd03f57cdf9786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

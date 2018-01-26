@@ -528,8 +528,12 @@ class MyActivity(object):
     optional_values = {
         'created': review['created'].date().isoformat(),
         'modified': review['modified'].date().isoformat(),
+        'status': review['status'],
         'activity': activity,
     }
+    if self.options.deltas:
+      optional_values['delta'] = review['delta']
+
     self.print_generic(self.options.output_format,
                        self.options.output_format_reviews,
                        review['header'],

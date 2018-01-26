@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "032bfff8_a4340dd0",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-26T19:22:16Z",
+      "side": 1,
+      "message": "Will upload a fix shortly.",
+      "parentUuid": "a7ff4393_f6e45389",
+      "range": {
+        "startLine": 942,
+        "startChar": 0,
+        "endLine": 943,
+        "endChar": 33
+      },
+      "revId": "0f7b2007a53d5158e42e97b938fd03f57cdf9786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "828a0c94_3fcd7e50",
         "filename": "tests/gclient_scm_test.py",
         "patchSetId": 7
@@ -45,6 +69,30 @@
       "revId": "0f7b2007a53d5158e42e97b938fd03f57cdf9786",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7396ca62_b1f99977",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-01-26T19:22:16Z",
+      "side": 1,
+      "message": "Same.",
+      "parentUuid": "828a0c94_3fcd7e50",
+      "range": {
+        "startLine": 998,
+        "startChar": 0,
+        "endLine": 998,
+        "endChar": 33
+      },
+      "revId": "0f7b2007a53d5158e42e97b938fd03f57cdf9786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

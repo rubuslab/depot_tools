@@ -356,8 +356,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
   def __init__(self, parent, name, raw_url, url, managed, custom_deps,
                custom_vars, custom_hooks, deps_file, should_process,
-               relative, condition, condition_value):
-    gclient_utils.WorkItem.__init__(self, name)
+               relative, condition, condition_value, print_outbuf=False):
+    gclient_utils.WorkItem.__init__(self, name, print_outbuf)
     DependencySettings.__init__(
         self, parent, raw_url, url, managed, custom_deps, custom_vars,
         custom_hooks, deps_file, should_process, relative,
@@ -419,6 +419,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       # The url is usually given to gclient either as https://blah@123
       # or just https://blah.  The @123 portion is irrelevant.
       self.resources.append(url.split('@')[0])
+
+    # LEMUR
+    self.print_outbuf = print_outbuf
 
     if not self.name and self.parent:
       raise gclient_utils.Error('Dependency without name')
@@ -1046,7 +1049,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     scm_class = SCM_MAP[scm_name]
     if not scm_class.BinaryExists():
       raise gclient_utils.Error('%s command not found' % scm_name)
-    return scm_class(url, root_dir, relpath, out_fh, out_cb)
+    # LEMUR
+    return scm_class(url, root_dir, relpath, out_fh, out_cb, self.print_outbuf)
 
   def HasGNArgsFile(self):
     return self._gn_args_file is not None
@@ -1432,6 +1436,7 @@ it or fix the checkout.
             True,
             None,
             None,
+            True,
             True))
       except KeyError:
         raise gclient_utils.Error('Invalid .gclient file. Solution is '

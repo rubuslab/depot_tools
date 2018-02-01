@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "8cd2f91d_83882870",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-01T19:27:56Z",
+      "side": 1,
+      "message": "👍 🎉 nice writeup.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 24
+      },
+      "revId": "93790e34ba932352e446b9a7a89d00e10715d74e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "80893559_68b024d9",
         "filename": "download_from_google_storage.py",
         "patchSetId": 3

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8b7e4135_0d1a5560",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2104,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-02-01T02:07:07Z",
+      "side": 1,
+      "message": "I can imagine cases where you might have unused custom vars, but I\u0027m not sure we need to worry about them.",
+      "revId": "df0d9605dea5c7d8231f370dc24577fb95a8392b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

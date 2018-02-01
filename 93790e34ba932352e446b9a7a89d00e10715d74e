@@ -16,6 +16,58 @@
       "revId": "93790e34ba932352e446b9a7a89d00e10715d74e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b90bac6_e48cb1f7",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-02-01T19:17:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "80893559_68b024d9",
+      "revId": "93790e34ba932352e446b9a7a89d00e10715d74e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9501485e_bb826604",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-02-01T19:17:28Z",
+      "side": 1,
+      "message": "if not force and all(....)",
+      "revId": "93790e34ba932352e446b9a7a89d00e10715d74e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ca3fbab_922e409f",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-02-01T19:17:28Z",
+      "side": 1,
+      "message": "Possible optimization: We only have to do this here if len(input_data) \u003e 1",
+      "revId": "93790e34ba932352e446b9a7a89d00e10715d74e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

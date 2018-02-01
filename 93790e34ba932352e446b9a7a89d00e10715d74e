@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80893559_68b024d9",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2018-02-01T10:50:54Z",
+      "side": 1,
+      "message": "Copy-pasta from line 224 without the error handling. Was too lazy to figure out how to extract and share the code better, since the original makes use of the local var extract_dir later and pushes into the error queue.",
+      "revId": "93790e34ba932352e446b9a7a89d00e10715d74e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

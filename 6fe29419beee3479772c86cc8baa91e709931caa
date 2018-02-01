@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f9f26a7e_2d591530",
+        "filename": "tests/download_from_google_storage_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2018-02-01T10:50:54Z",
+      "side": 0,
+      "message": "redundant, since we compare the queue already",
+      "range": {
+        "startLine": 213,
+        "startChar": 4,
+        "endLine": 213,
+        "endChar": 35
+      },
+      "revId": "6fe29419beee3479772c86cc8baa91e709931caa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

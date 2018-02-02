@@ -885,7 +885,7 @@ def CheckOwners(input_api, output_api, source_file_filter=None):
       suggested_owners = owners_db.reviewers_for(missing_files, owner_email)
       finder = input_api.owners_finder(
           missing_files, input_api.change.RepositoryRoot(),
-          owner_email, fopen=file, os_path=input_api.os_path,
+          owner_email, reviewers, fopen=file, os_path=input_api.os_path,
           email_postfix='', disable_color=True,
           override_files=input_api.change.OriginalOwnersFiles())
       owners_with_comments = []

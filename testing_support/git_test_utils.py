@@ -257,13 +257,13 @@ class GitRepo(object):
   BASE_TEMP_DIR = tempfile.mkdtemp(suffix='base', prefix='git_repo')
   atexit.register(shutil.rmtree, BASE_TEMP_DIR)
 
-  # Singleton objects to specify specific data in a commit dictionary.
-  AUTHOR_NAME = object()
-  AUTHOR_EMAIL = object()
-  AUTHOR_DATE = object()
-  COMMITTER_NAME = object()
-  COMMITTER_EMAIL = object()
-  COMMITTER_DATE = object()
+  # Note: Order is important (AUTHOR_DATE must come before COMMITTER_DATE, to
+  # ensure the automatic date ordering works as expected).
+  SPECIAL_KEYS = []
+  for prefix in ('AUTHOR', 'COMMITTER'):
+    for suffix in ('NAME', 'EMAIL', 'DATE'):
+      SPECIAL_KEYS.append('%s_%s' % (prefix, suffix))
+  SPECIAL_KEYS_SET = frozenset(SPECIAL_KEYS)
 
   DEFAULT_AUTHOR_NAME = 'Author McAuthorly'
   DEFAULT_AUTHOR_EMAIL = 'author@example.com'
@@ -322,6 +322,9 @@ class GitRepo(object):
     env = self.get_git_commit_env(commit_data)
 
     for fname, file_data in commit_data.iteritems():
+      if fname in self.SPECIAL_KEYS_SET:
+        continue
+
       deleted = False
       if 'data' in file_data:
         data = file_data.get('data')
@@ -352,19 +355,15 @@ class GitRepo(object):
   def get_git_commit_env(self, commit_data=None):
     commit_data = commit_data or {}
     env = {}
-    for prefix in ('AUTHOR', 'COMMITTER'):
-      for suffix in ('NAME', 'EMAIL', 'DATE'):
-        singleton = '%s_%s' % (prefix, suffix)
-        key = getattr(self, singleton)
-        if key in commit_data:
-          val = commit_data[key]
-        else:
-          if suffix == 'DATE':
-            val = self._date
-            self._date += datetime.timedelta(days=1)
-          else:
-            val = getattr(self, 'DEFAULT_%s' % singleton)
-        env['GIT_%s' % singleton] = str(val)
+    for key in self.SPECIAL_KEYS:
+      if key in commit_data:
+        val = commit_data[key]
+      elif key.endswith('_DATE'):
+        val = self._date
+        self._date += datetime.timedelta(days=1)
+      else:
+        val = getattr(self, 'DEFAULT_%s' % key)
+      env['GIT_%s' % key] = str(val)
     return env
 
   def git(self, *args, **kwargs):

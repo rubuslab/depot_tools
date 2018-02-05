@@ -7,6 +7,7 @@
 
 import binascii
 import collections
+import datetime
 import os
 import shutil
 import signal
@@ -926,7 +927,7 @@ class GitMakeWorkdir(git_test_utils.GitRepoReadOnlyTestBase, GitCommonTestBase):
 
 class GitTestUtilsTest(git_test_utils.GitRepoReadOnlyTestBase):
   REPO_SCHEMA = """
-  A B
+  A B C
   """
 
   COMMIT_A = {
@@ -935,6 +936,19 @@ class GitTestUtilsTest(git_test_utils.GitRepoReadOnlyTestBase):
 
   COMMIT_B = {
     'file1': {'data': 'file1 changed'},
+  }
+
+  # Test special keys (custom commit data).
+  COMMIT_C = {
+    'AUTHOR_NAME': 'Custom Author',
+    'AUTHOR_EMAIL': 'author@example.com',
+    'AUTHOR_DATE': datetime.datetime(1980, 9, 8, 7, 6, 5,
+                                     tzinfo=git_test_utils.UTC),
+    'COMMITTER_NAME': 'Custom Committer',
+    'COMMITTER_EMAIL': 'committer@example.com',
+    'COMMITTER_DATE': datetime.datetime(1990, 4, 5, 6, 7, 8,
+                                        tzinfo=git_test_utils.UTC),
+    'file1': {'data': 'file1 changed again'},
   }
 
   def testAutomaticCommitDates(self):
@@ -951,6 +965,13 @@ class GitTestUtilsTest(git_test_utils.GitRepoReadOnlyTestBase):
     self.assertEquals('Charles Committish 1970-01-04 00:00:00 +0000',
                       self.repo.show_commit('B', format_string='%cn %ci'))
 
+  def testCustomCommitData(self):
+    self.assertEquals('Custom Author author@example.com '
+                      '1980-09-08 07:06:05 +0000',
+                      self.repo.show_commit('C', format_string='%an %ae %ai'))
+    self.assertEquals('Custom Committer committer@example.com '
+                      '1990-04-05 06:07:08 +0000',
+                      self.repo.show_commit('C', format_string='%cn %ce %ci'))
 
 if __name__ == '__main__':
   sys.exit(coverage_utils.covered_main(

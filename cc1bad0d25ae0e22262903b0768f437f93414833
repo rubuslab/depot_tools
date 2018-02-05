@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa5baf7c_eec33ace",
+        "filename": "testing_support/git_test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1115963
+      },
+      "writtenOn": "2018-02-05T08:00:32Z",
+      "side": 1,
+      "message": "Note: I\u0027m not really sure what this \"singleton\" thing was trying to accomplish. The old code would try to look up an empty object as the key. There aren\u0027t any subclasses of GitRepo that could maybe replace these singletons with real values.\n\nWe just need to look up the key string.",
+      "revId": "cc1bad0d25ae0e22262903b0768f437f93414833",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

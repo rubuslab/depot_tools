@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9a68945_ce56a9de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-06T18:03:45Z",
+      "side": 1,
+      "message": "👍 very good explanation, thanks.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 47
+      },
+      "revId": "bbf8e607f9727f3c0fcc42b2aa68698ffc5440f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

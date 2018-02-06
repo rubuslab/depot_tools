@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06f463b4_a0c05d76",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-02-06T20:19:54Z",
+      "side": 1,
+      "message": "Let\u0027s do the same thing we\u0027re doing w/ the checkout_* variables, above, and expose checkout_arm, checkout_arm64, checkout_x64, checkout_x86 instead of exposing the target_cpu directly.\n\nThe reason we do this is that there\u0027s no \"in\" operator in DEPS, and just like we want to support a list of target_os\u0027es, we want to support a list of target_cpu\u0027s.",
+      "revId": "dadce547b09affc5388895f2e360b91d69a1e4dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b2bccf0_68417226",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-06T00:06:51Z",
+      "side": 1,
+      "message": "So this technically isn\u0027t necessary (i.e. you could pass the empty list here and get the same result). That\u0027s because the lines above (873-878) compute who the owner and reviewers are, get the list of files not already covered by them, and put that list into \u0027missing_files\u0027, which is what gets passed into this function here.\n\nI would consider passing the empty list to make that explicit, or refactoring this whole section such that the computation of \"which files are already covered\" only happens once. Maybe ditch lines 873-878, pass all files into owners_finder, and then print the messaging (e.g. line 882) depending on if it actually returns suggestions or not.",
+      "revId": "d4b529d4d8571ddea334c9715d22e2cf726639be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

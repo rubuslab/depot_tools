@@ -115,6 +115,30 @@
       "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c015b747_6d04058e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-07T23:19:43Z",
+      "side": 1,
+      "message": "so what do you think is incorrect here? (not to say this code is clear, it\u0027s not and should be refactored).\n\ni suspect you\u0027ve missed that between first call, which we only do if it applies to top-level solution, and second call is `gclient sync`.\nIf we apply patch to DEPS-ed in repo before `gclient sync`, patch would be erased. \nSimilarly, a patch to top level solution that changes its deps (typically, DEPS roll) needs to be applied **before** `gclient sync`.",
+      "parentUuid": "1a22b161_0939c84e",
+      "range": {
+        "startLine": 954,
+        "startChar": 0,
+        "endLine": 959,
+        "endChar": 45
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "babd3c87_bcdf9cc8",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5036,
+      "author": {
+        "id": 1003211
+      },
+      "writtenOn": "2018-02-07T03:18:45Z",
+      "side": 1,
+      "message": "Consider writing as \"-r\u003d-owners\" to be closer to what the user actually (likely) typed.",
+      "range": {
+        "startLine": 5036,
+        "startChar": 55,
+        "endLine": 5036,
+        "endChar": 74
+      },
+      "revId": "7118b8a14e88a91f59ed1eb3ae7fe8cc4a1c419f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

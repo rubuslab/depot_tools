@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0b0b2b91_2dbe1dc1",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-07T00:46:21Z",
+      "side": 1,
+      "message": "with hindsight 20/20: this should a branch name, not hardcoded origin/master.",
+      "range": {
+        "startLine": 748,
+        "startChar": 44,
+        "endLine": 748,
+        "endChar": 59
+      },
+      "revId": "fa573785df6f584c03bb0836e8376ffd167de727",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

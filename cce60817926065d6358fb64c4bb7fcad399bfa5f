@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1342e0f9_6bcf8bbd",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-07T21:42:24Z",
+      "side": 1,
+      "message": "document + rename.\n\u0027treeish\u0027 is reference to tree object, while this is a reference to commit object, so perhaps \u0027committish\u0027.",
+      "range": {
+        "startLine": 535,
+        "startChar": 4,
+        "endLine": 535,
+        "endChar": 23
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4da364f_ba4f4a55",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-07T21:42:24Z",
+      "side": 1,
+      "message": "base_ref\n\navoid using \u0027branch\u0027 when it really is ref (and yes, I know, this file is ridden with \u0027branch\u0027 where it should have been ref)",
+      "range": {
+        "startLine": 765,
+        "startChar": 46,
+        "endLine": 765,
+        "endChar": 57
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a599efc4_865d66c4",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-07T21:42:24Z",
+      "side": 1,
+      "message": "why is default value necessary?",
+      "range": {
+        "startLine": 765,
+        "startChar": 57,
+        "endLine": 765,
+        "endChar": 62
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed8cdd65_03043d80",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-07T21:42:24Z",
+      "side": 1,
+      "message": "you also need to support this one.",
+      "range": {
+        "startLine": 954,
+        "startChar": 0,
+        "endLine": 959,
+        "endChar": 45
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

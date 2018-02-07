@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e7948034_7d675edb",
+        "filename": "testing_support/git_test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1115963
+      },
+      "writtenOn": "2018-02-07T02:19:56Z",
+      "side": 1,
+      "message": "FWIW, no, because I was using the set when checking membership, and the list when iterating.\n\nBut this is deleted now.",
+      "parentUuid": "80fbf47e_b9d0d282",
+      "range": {
+        "startLine": 266,
+        "startChar": 21,
+        "endLine": 266,
+        "endChar": 30
+      },
+      "revId": "cc1bad0d25ae0e22262903b0768f437f93414833",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa5baf7c_eec33ace",
         "filename": "testing_support/git_test_utils.py",
         "patchSetId": 1
@@ -54,6 +78,24 @@
       "side": 1,
       "message": "I think the point was to have the dictionary key be the actual singleton; not a string, and so couldn\u0027t possibly overlap with any other keys. e.g. \n\n  {\n    GitRepo.AUTHOR_NAME: \"foobar\", \n  }",
       "parentUuid": "fa5baf7c_eec33ace",
+      "revId": "cc1bad0d25ae0e22262903b0768f437f93414833",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6db47390_00fa7fd8",
+        "filename": "testing_support/git_test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1115963
+      },
+      "writtenOn": "2018-02-07T02:19:56Z",
+      "side": 1,
+      "message": "D\u0027oh!\n\nI completely overlooked that usage. I thought it was telling me to use a string. In hindsight, the documentation for GitRepo doesn\u0027t use quotes around those special key names.\n\nSorry. I guess I shouldn\u0027t have just assumed that was useless.\n\nAnyway, there was still a bug (it was trying to use those special keys as filenames). I\u0027ve reverted most of the changes, fixed the bug, and updated the test to use the correct syntax. PTAL.",
+      "parentUuid": "26b6ddc5_40b61603",
       "revId": "cc1bad0d25ae0e22262903b0768f437f93414833",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

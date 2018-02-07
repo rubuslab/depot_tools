@@ -91,6 +91,30 @@
       "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a22b161_0939c84e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 1179484
+      },
+      "writtenOn": "2018-02-07T22:40:01Z",
+      "side": 1,
+      "message": "I don\u0027t understand this code, and I think it\u0027s because it\u0027s incorrect.\n\nIn the loop above, for every solution that matches the patch root, we call apply_gerrit_ref with the exact same arguments that don\u0027t depend on the solution in any way.\nThen, if it hasn\u0027t been called, we call apply_gerrit_ref with the exact same arguments.\n\nTo rephrase this, N :\u003d the number of solutions that match patch_root. If N \u003d 0, N :\u003d 1. N times call apply_gerrit_ref with the same arguments.",
+      "parentUuid": "ed8cdd65_03043d80",
+      "range": {
+        "startLine": 954,
+        "startChar": 0,
+        "endLine": 959,
+        "endChar": 45
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -5028,6 +5028,13 @@ def CMDupload(parser, args):
   _process_codereview_select_options(parser, options)
   auth_config = auth.extract_auth_config_from_options(options)
 
+  # It's easy to make a typo in '--r-owners' missing first '-',
+  # which is interpreted as '--reviewers=-owners' and it turns out
+  # Gerrit can find a matching user for '-owners' email, see
+  # https://crrev.com/c/899856#message-9786be5958cc894d1c071d495b2285444e820b21
+  if '-owners' in options.reviewers:
+    parser.error('Didn\'t you mean --r-owners (and not --reviewers=-owners)?')
+
   if git_common.is_dirty_git_tree('upload'):
     return 1
 

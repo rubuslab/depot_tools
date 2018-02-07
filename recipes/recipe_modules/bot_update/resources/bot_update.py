@@ -733,34 +733,20 @@ def apply_gerrit_ref(gerrit_repo, gerrit_ref, root, gerrit_reset,
   git('reset', '--hard', cwd=root)
   try:
     git('fetch', gerrit_repo, gerrit_ref, cwd=root)
-    git('checkout', 'FETCH_HEAD', cwd=root)
 
     if gerrit_rebase_patch_ref:
-      print '===Rebasing==='
-      # git rebase requires a branch to operate on.
-      temp_branch_name = 'tmp/' + uuid.uuid4().hex
+      print '===Cherry-picking==='
+      # Assuming that Gerrit's ref has exactly 1 commit compared to the base.
       try:
-        ok = False
-        git('checkout', '-b', temp_branch_name, cwd=root)
-        try:
-          git('-c', 'user.name=chrome-bot',
-              '-c', 'user.email=chrome-bot@chromium.org',
-              'rebase', base_rev, cwd=root)
-        except SubprocessFailed:
-          # Abort the rebase since there were failures.
-          git('rebase', '--abort', cwd=root)
-          raise
-
-        # Get off of the temporary branch since it can't be deleted otherwise.
-        cur_rev = git('rev-parse', 'HEAD', cwd=root).strip()
-        git('checkout', cur_rev, cwd=root)
-        git('branch', '-D', temp_branch_name, cwd=root)
-        ok = True
-      finally:
-        if not ok:
-          # Get off of the temporary branch since it can't be deleted otherwise.
-          git('checkout', base_rev, cwd=root)
-          git('branch', '-D', temp_branch_name, cwd=root)
+        git('-c', 'user.name=chrome-bot',
+            '-c', 'user.email=chrome-bot@chromium.org',
+            'cherry-pick', 'FETCH_HEAD', cwd=root)
+      except SubprocessFailed:
+        # Abort the cherry-pick since there were failures.
+        git('cherry-pick', '--abort', cwd=root)
+        raise
+    else:
+      git('checkout', 'FETCH_HEAD', cwd=root)
 
     if gerrit_reset:
       git('reset', '--soft', base_rev, cwd=root)

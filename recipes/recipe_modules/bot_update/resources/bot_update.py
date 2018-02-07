@@ -532,11 +532,9 @@ def get_target_pin(solution_name, git_url, revisions):
   return None
 
 
-def force_solution_revision(solution_name, git_url, revisions, cwd):
-  branch, revision = _get_target_branch_and_revision(
-      solution_name, git_url, revisions)
+def _get_target_treeish(branch, revision):
   if revision and revision.upper() != 'HEAD':
-    treeish = revision
+    return revision
   else:
     # TODO(machenbach): This won't work with branch-heads, as Gerrit's
     # destination branch would be e.g. refs/branch-heads/123. But here
@@ -544,7 +542,15 @@ def force_solution_revision(solution_name, git_url, revisions, cwd):
     # This will also not work if somebody passes a local refspec like
     # refs/heads/master. It needs to translate to refs/remotes/origin/master
     # first. See also https://crbug.com/740456 .
-    treeish = branch if branch.startswith('refs/') else 'origin/%s' % branch
+    if branch.startswith('refs/'):
+      return branch
+    else:
+      return 'origin/%s' % branch
+
+
+def force_solution_revision(solution_name, git_url, revisions, cwd):
+  treeish = _get_target_treeish(*_get_target_branch_and_revision(
+      solution_name, git_url, revisions))
 
   # Note that -- argument is necessary to ensure that git treats `treeish`
   # argument as revision or ref, and not as a file/directory which happens to
@@ -756,7 +762,7 @@ def apply_rietveld_issue(issue, patchset, root, server, _rev_map, _revision,
     raise PatchFailed(e.message, e.code, e.output)
 
 def apply_gerrit_ref(gerrit_repo, gerrit_ref, root, gerrit_reset,
-                     gerrit_rebase_patch_ref):
+                     gerrit_rebase_patch_ref, base_branch=None):
   gerrit_repo = gerrit_repo or 'origin'
   assert gerrit_ref
   base_rev = git('rev-parse', 'HEAD', cwd=root).strip()
@@ -782,9 +788,10 @@ def apply_gerrit_ref(gerrit_repo, gerrit_ref, root, gerrit_reset,
         ok = False
         git('checkout', '-b', temp_branch_name, cwd=root)
         try:
+          exclude_from = base_branch or base_rev
           git('-c', 'user.name=chrome-bot',
               '-c', 'user.email=chrome-bot@chromium.org',
-              'rebase', base_rev, cwd=root)
+              'rebase', '--onto', base_rev, exclude_from, cwd=root)
         except SubprocessFailed:
           # Abort the rebase since there were failures.
           git('rebase', '--abort', cwd=root)
@@ -891,6 +898,10 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
       relative_root = solution['name'][len(patch_root) + 1:]
       target = '/'.join([relative_root, 'DEPS']).lstrip('/')
       print '  relative root is %r, target is %r' % (relative_root, target)
+      base_branch = _get_target_treeish(*_get_target_branch_and_revision(
+        solution['name'], solution['url'], revisions))
+      print '  base branch is %r' % base_branch
+
       if issue:
         apply_rietveld_issue(issue, patchset, patch_root, rietveld_server,
                              revision_mapping, git_ref, apply_issue_email_file,
@@ -899,7 +910,7 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
         already_patched.append(target)
       elif gerrit_ref:
         apply_gerrit_ref(gerrit_repo, gerrit_ref, patch_root, gerrit_reset,
-                         gerrit_rebase_patch_ref)
+                         gerrit_rebase_patch_ref, base_branch)
         applied_gerrit_patch = True
 
   # Ensure our build/ directory is set up with the correct .gclient file.

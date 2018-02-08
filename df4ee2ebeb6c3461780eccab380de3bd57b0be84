@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ef6d0b94_e9192f2e",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1151126
+      },
+      "writtenOn": "2018-02-08T00:45:57Z",
+      "side": 1,
+      "message": "Can I ask you to add option for autoninja to call this summarize script?",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f0f39d51_a9043275",
         "filename": "post_build_ninja_summary.py",
         "patchSetId": 3

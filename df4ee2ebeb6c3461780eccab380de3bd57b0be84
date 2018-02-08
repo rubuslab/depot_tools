@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b49cbdca_00f7ab1c",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-02-08T02:01:45Z",
+      "side": 1,
+      "message": "Good point. The current implementation is that if you \"set NINJA_SUMMARIZE_BUILD\u003d1\" then this will be run automatically if the build doesn\u0027t fail. This lets me delete the explanations of how to invoke this script and if anybody wants an example they can look in autoninja.bat.\n\nI also need to see about making this work on Linux - that part is not done yet.",
+      "parentUuid": "ef6d0b94_e9192f2e",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f0f39d51_a9043275",
         "filename": "post_build_ninja_summary.py",
         "patchSetId": 3
@@ -33,6 +51,24 @@
       "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "662d56b2_fd74be05",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-02-08T02:01:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0f39d51_a9043275",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "e9067366_303aedca",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-02-08T02:01:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8028bf25_51890152",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "23a7a1a2_dbe5e4dc",
         "filename": "post_build_ninja_summary.py",
         "patchSetId": 3
@@ -67,6 +121,24 @@
       "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "288cd1f1_2706c241",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-02-08T02:01:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23a7a1a2_dbe5e4dc",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "6e8d1748_eb7741b5",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-02-08T02:01:45Z",
+      "side": 1,
+      "message": "I had it printing a warning for a while and after ignoring the warnings for a month I decided that the warning wasn\u0027t adding value. Once the .ninja_log file is corrupted the only way to fix that is to hand edit it or do a gn clean and rebuild. And, I never saw any indication that the corruption *mattered*.",
+      "parentUuid": "3aaa2bdf_62076f06",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "51a657e1_318fab61",
         "filename": "post_build_ninja_summary.py",
         "patchSetId": 3
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "33573af3_2d4fde64",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-02-08T02:01:45Z",
+      "side": 1,
+      "message": "Sometimes I realize how little of Python I really know...",
+      "parentUuid": "51a657e1_318fab61",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5ddf44d_e027c520",
         "filename": "post_build_ninja_summary.py",
         "patchSetId": 3
@@ -118,6 +226,24 @@
       "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9713626_d1fe05e6",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-02-08T02:01:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5ddf44d_e027c520",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

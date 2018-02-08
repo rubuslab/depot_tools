@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f0f39d51_a9043275",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2018-02-08T00:27:19Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8028bf25_51890152",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2018-02-08T00:27:19Z",
+      "side": 1,
+      "message": "blank lines between methods",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23a7a1a2_dbe5e4dc",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2018-02-08T00:27:19Z",
+      "side": 1,
+      "message": "Use CamelCase for all function names.",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3aaa2bdf_62076f06",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2018-02-08T00:27:19Z",
+      "side": 1,
+      "message": "maybe write a warning to stderr (is stderr a thing on windows?)",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51a657e1_318fab61",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2018-02-08T00:27:19Z",
+      "side": 1,
+      "message": "sorted((y, x) for (x, y) in weighted_time_by_ext.items())",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5ddf44d_e027c520",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2018-02-08T00:27:19Z",
+      "side": 1,
+      "message": "maybe return errno.ENOENT here.",
+      "revId": "df4ee2ebeb6c3461780eccab380de3bd57b0be84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

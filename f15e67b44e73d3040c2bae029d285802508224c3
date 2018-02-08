@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "06ba3804_34b4e29e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1166470
+      },
+      "writtenOn": "2018-02-08T20:34:13Z",
+      "side": 1,
+      "message": "we do now, as of the latest patch set.  done",
+      "parentUuid": "72883f26_86167ebc",
+      "revId": "f15e67b44e73d3040c2bae029d285802508224c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5405e3b7_42ed7abc",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "f15e67b44e73d3040c2bae029d285802508224c3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "638306ae_24d98208",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 1166470
+      },
+      "writtenOn": "2018-02-08T20:34:13Z",
+      "side": 1,
+      "message": "ok, reverted the formatting changes",
+      "parentUuid": "5405e3b7_42ed7abc",
+      "revId": "f15e67b44e73d3040c2bae029d285802508224c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

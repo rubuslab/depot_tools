@@ -532,11 +532,10 @@ def get_target_pin(solution_name, git_url, revisions):
   return None
 
 
-def force_solution_revision(solution_name, git_url, revisions, cwd):
-  branch, revision = _get_target_branch_and_revision(
-      solution_name, git_url, revisions)
+def _get_target_commitish(branch, revision):
+  """Returns a commit or branch usable with git, based on the specification."""
   if revision and revision.upper() != 'HEAD':
-    treeish = revision
+    return revision
   else:
     # TODO(machenbach): This won't work with branch-heads, as Gerrit's
     # destination branch would be e.g. refs/branch-heads/123. But here
@@ -544,7 +543,15 @@ def force_solution_revision(solution_name, git_url, revisions, cwd):
     # This will also not work if somebody passes a local refspec like
     # refs/heads/master. It needs to translate to refs/remotes/origin/master
     # first. See also https://crbug.com/740456 .
-    treeish = branch if branch.startswith('refs/') else 'origin/%s' % branch
+    if branch.startswith('refs/'):
+      return branch
+    else:
+      return 'origin/%s' % branch
+
+
+def force_solution_revision(solution_name, git_url, revisions, cwd):
+  treeish = _get_target_commitish(*_get_target_branch_and_revision(
+      solution_name, git_url, revisions))
 
   # Note that -- argument is necessary to ensure that git treats `treeish`
   # argument as revision or ref, and not as a file/directory which happens to
@@ -756,14 +763,14 @@ def apply_rietveld_issue(issue, patchset, root, server, _rev_map, _revision,
     raise PatchFailed(e.message, e.code, e.output)
 
 def apply_gerrit_ref(gerrit_repo, gerrit_ref, root, gerrit_reset,
-                     gerrit_rebase_patch_ref):
+                     gerrit_rebase_patch_ref, base_ref):
   gerrit_repo = gerrit_repo or 'origin'
   assert gerrit_ref
-  base_rev = git('rev-parse', 'HEAD', cwd=root).strip()
+  checkout_rev = git('rev-parse', 'HEAD', cwd=root).strip()
 
   print '===Applying gerrit ref==='
   print 'Repo is %r @ %r, ref is %r, root is %r' % (
-      gerrit_repo, base_rev, gerrit_ref, root)
+      gerrit_repo, checkout_rev, gerrit_ref, root)
   # TODO(tandrii): move the fix below to common rietveld/gerrit codepath.
   # Speculative fix: prior bot_update run with Rietveld patch may leave git
   # index with unmerged paths. bot_update calls 'checkout --force xyz' thus
@@ -782,9 +789,10 @@ def apply_gerrit_ref(gerrit_repo, gerrit_ref, root, gerrit_reset,
         ok = False
         git('checkout', '-b', temp_branch_name, cwd=root)
         try:
+          exclude_from = base_ref or checkout_rev
           git('-c', 'user.name=chrome-bot',
               '-c', 'user.email=chrome-bot@chromium.org',
-              'rebase', base_rev, cwd=root)
+              'rebase', '--onto', checkout_rev, exclude_from, cwd=root)
         except SubprocessFailed:
           # Abort the rebase since there were failures.
           git('rebase', '--abort', cwd=root)
@@ -798,11 +806,11 @@ def apply_gerrit_ref(gerrit_repo, gerrit_ref, root, gerrit_reset,
       finally:
         if not ok:
           # Get off of the temporary branch since it can't be deleted otherwise.
-          git('checkout', base_rev, cwd=root)
+          git('checkout', checkout_rev, cwd=root)
           git('branch', '-D', temp_branch_name, cwd=root)
 
     if gerrit_reset:
-      git('reset', '--soft', base_rev, cwd=root)
+      git('reset', '--soft', checkout_rev, cwd=root)
   except SubprocessFailed as e:
     raise PatchFailed(e.message, e.code, e.output)
 
@@ -883,6 +891,7 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
   already_patched = []
   patch_root = patch_root or ''
   applied_gerrit_patch = False
+  root_base = None
   print 'Patch root is %r' % patch_root
   for solution in solutions:
     print 'Processing solution %r' % solution['name']
@@ -891,6 +900,12 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
       relative_root = solution['name'][len(patch_root) + 1:]
       target = '/'.join([relative_root, 'DEPS']).lstrip('/')
       print '  relative root is %r, target is %r' % (relative_root, target)
+      base = _get_target_commitish(*_get_target_branch_and_revision(
+        solution['name'], solution['url'], revisions))
+      print '  base is %r' % base
+      if not relative_root:
+        root_base = base
+
       if issue:
         apply_rietveld_issue(issue, patchset, patch_root, rietveld_server,
                              revision_mapping, git_ref, apply_issue_email_file,
@@ -899,7 +914,7 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
         already_patched.append(target)
       elif gerrit_ref:
         apply_gerrit_ref(gerrit_repo, gerrit_ref, patch_root, gerrit_reset,
-                         gerrit_rebase_patch_ref)
+                         gerrit_rebase_patch_ref, base)
         applied_gerrit_patch = True
 
   # Ensure our build/ directory is set up with the correct .gclient file.
@@ -945,7 +960,7 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
     # applied above. This chunk is executed only for patches to DEPS-ed in
     # git repositories.
     apply_gerrit_ref(gerrit_repo, gerrit_ref, patch_root, gerrit_reset,
-                     gerrit_rebase_patch_ref)
+                     gerrit_rebase_patch_ref, root_base)
 
   # Reset the deps_file point in the solutions so that hooks get run properly.
   for sln in solutions:

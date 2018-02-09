@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "970ab406_b655d1ca",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-02-09T22:39:55Z",
+      "side": 1,
+      "message": "I think you need to check for both \u0027../\u0027 and \u0027..\\\u0027\n\nConsider these tarfiles with one file each:\n1. ./..\\badfile1.txt\n2. ./../badfile2.txt\n\nOn linux this is fine because 1 will just be a file in the target dir, and 2 is rejected\nOn windows I believe 1 will be rejected, but in the case of 2, python\u0027s open() call transparently rewrites the forward slash to a backslash, so badfile2.txt ends up in the upper directory.\n\nI don\u0027t have a windows machine to test this on right now, but I\u0027m pretty sure it\u0027s true.",
+      "range": {
+        "startLine": 212,
+        "startChar": 14,
+        "endLine": 212,
+        "endChar": 20
+      },
+      "revId": "3851b8e8536952507882347aff205f48dd824c13",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

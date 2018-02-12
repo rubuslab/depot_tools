@@ -22,6 +22,30 @@
       "revId": "3851b8e8536952507882347aff205f48dd824c13",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8de7644c_e11860b7",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-12T17:55:32Z",
+      "side": 1,
+      "message": "Ugh gross. But good call, done.",
+      "parentUuid": "970ab406_b655d1ca",
+      "range": {
+        "startLine": 212,
+        "startChar": 14,
+        "endLine": 212,
+        "endChar": 20
+      },
+      "revId": "3851b8e8536952507882347aff205f48dd824c13",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

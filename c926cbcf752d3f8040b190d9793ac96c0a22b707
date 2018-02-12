@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8f3b568f_27abee04",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-12T23:46:05Z",
+      "side": 1,
+      "message": "As it currently stands, \"gclient sync --force \u0026\u0026 gclient diff\" does *not* result in a clean diff. That\u0027s because some of the hashes that gclient checks out are not on the master branch of their upstream repos -- some are on release branches. We need to be diffing against what the DEPS file thinks should be in place; it\u0027s the only uniform base that makes sense. If you want to diff against master, use \"gclient recurse git diff\".",
+      "parentUuid": "8ab45139_b4e40b83",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 58
+      },
+      "revId": "c926cbcf752d3f8040b190d9793ac96c0a22b707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "217035af_bcf2d0f5",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "c926cbcf752d3f8040b190d9793ac96c0a22b707",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9a74dad_1c6bbdae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-12T23:46:05Z",
+      "side": 1,
+      "message": "Yeah, gclient has never made any effort to be good for managing CLs in multiple repos.",
+      "parentUuid": "217035af_bcf2d0f5",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 68
+      },
+      "revId": "c926cbcf752d3f8040b190d9793ac96c0a22b707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "23ec8d17_b2ce28a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-12T23:46:05Z",
+      "side": 1,
+      "message": "See reply below.",
+      "parentUuid": "84a68e75_788bd502",
+      "range": {
+        "startLine": 18,
+        "startChar": 38,
+        "endLine": 18,
+        "endChar": 49
+      },
+      "revId": "c926cbcf752d3f8040b190d9793ac96c0a22b707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dd149086_e3469a50",
         "filename": "gclient_scm.py",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "9eb4cd0e_b4f9020f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-12T23:46:05Z",
+      "side": 1,
+      "message": "Damn you\u0027re right; --revision is an option on \"gclient sync\" but not \"gclient diff\". Removing this piece of logic.",
+      "parentUuid": "dd149086_e3469a50",
+      "range": {
+        "startLine": 256,
+        "startChar": 14,
+        "endLine": 256,
+        "endChar": 24
+      },
+      "revId": "c926cbcf752d3f8040b190d9793ac96c0a22b707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4f7a2d6d_0d488539",
         "filename": "gclient_scm.py",
         "patchSetId": 1
@@ -114,6 +210,30 @@
       "revId": "c926cbcf752d3f8040b190d9793ac96c0a22b707",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24fab728_64309bbd",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-12T23:46:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f7a2d6d_0d488539",
+      "range": {
+        "startLine": 257,
+        "startChar": 30,
+        "endLine": 257,
+        "endChar": 36
+      },
+      "revId": "c926cbcf752d3f8040b190d9793ac96c0a22b707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

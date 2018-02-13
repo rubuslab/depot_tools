@@ -22,6 +22,30 @@
       "revId": "6efbd85f86f69f8b6b0d1e07919154c476f49a85",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "332bd6f9_eedc74c6",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1455,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-13T00:21:54Z",
+      "side": 1,
+      "message": "me neither, given good messaging above, I think that\u0027s good enough to land.\n\nat the very least, \"^\" will have to become \u0027^\u0027 * (2k), where k in [1..4]",
+      "parentUuid": "0b17cb5c_bc71db92",
+      "range": {
+        "startLine": 1455,
+        "startChar": 50,
+        "endLine": 1455,
+        "endChar": 72
+      },
+      "revId": "6efbd85f86f69f8b6b0d1e07919154c476f49a85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

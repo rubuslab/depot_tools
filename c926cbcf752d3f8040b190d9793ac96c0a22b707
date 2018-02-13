@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "899ef42c_38418a5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-13T00:15:32Z",
+      "side": 1,
+      "message": "perfect counter example!",
+      "parentUuid": "8f3b568f_27abee04",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 58
+      },
+      "revId": "c926cbcf752d3f8040b190d9793ac96c0a22b707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "217035af_bcf2d0f5",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1

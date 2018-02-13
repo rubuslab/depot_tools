@@ -2722,7 +2722,12 @@ class TestGitCl(TestCase):
         ((['git', 'config', '--unset', 'branch.feature.gerritserver'],), ''),
         ((['git', 'config', '--unset', 'branch.feature.gerritsquashhash'],),
          ''),
-        ((['git', 'log', '-1', '--format=%B'],), 'This is a description'),
+        ((['git', 'config', 'branch.feature.merge'],), 'refs/heads/master'),
+        ((['git', 'config', 'branch.feature.remote'],), 'origin'),
+        ((['get_or_create_merge_base', 'feature',
+           'refs/remotes/origin/master'],), 'fakesha'),
+        ((['git', 'log', 'fakesha..HEAD', '--format=%B'],),
+         'This is a description'),
     ]
     self.assertEqual(0, git_cl.main(['issue', '0']))
 
@@ -2743,9 +2748,14 @@ class TestGitCl(TestCase):
         ((['git', 'config', '--unset', 'branch.feature.gerritserver'],), ''),
         ((['git', 'config', '--unset', 'branch.feature.gerritsquashhash'],),
          ''),
-        ((['git', 'log', '-1', '--format=%B'],),
+        ((['git', 'config', 'branch.feature.merge'],), 'refs/heads/master'),
+        ((['git', 'config', 'branch.feature.remote'],), 'origin'),
+        ((['get_or_create_merge_base', 'feature',
+           'refs/remotes/origin/master'],), 'fakesha'),
+        ((['git', 'log', 'fakesha..HEAD', '--format=%B'],),
          'This is a description\n\nChange-Id: Ideadbeef'),
-        ((['git', 'commit', '--amend', '-m', 'This is a description\n'],), ''),
+        ((['git', 'filter-branch', '--msg-filter', 'grep -v "^Change-Id: "',
+           'fakesha..HEAD'],), ''),
     ]
     self.assertEqual(0, git_cl.main(['issue', '0']))
 

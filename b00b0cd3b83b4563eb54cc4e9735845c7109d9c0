@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "32431ca1_73cf32f1",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 967,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-14T19:27:19Z",
+      "side": 1,
+      "message": "this doens\u0027t make sense to me. root_base is base of the gclient solution\u0027s root (ie chromium/src/ for chromium checkouts), but call to apply_gerrit_ref works against some DEPS-ed in repo (like third_party/foo).\n\nWhat we need to know is which ref of DEPS-ed in repo is the one against which patches go. But, we actually have no idea since DEPS contains hashes, not refs. I sorry I didn\u0027t realize this before.\n\nUnless I\u0027m wrong above, we have two ways out:\n1. write your own sequence of steps in your recipe to achieve what you want and which will only work on patches for main repo(~\u003dsolution) (!\u003d DEPS-ed in repos).\n2. Use target ref (gerrit calls it branch) of a gerrit CL being applied as the source of truth for target branch. This is general way, will likely simplify some of this code, but it requires propagating gerrit target_ref from api.py to this resource and hence will be more work than #1. I won\u0027t blame you if you choose approach #1 :)",
+      "range": {
+        "startLine": 967,
+        "startChar": 46,
+        "endLine": 967,
+        "endChar": 55
+      },
+      "revId": "b00b0cd3b83b4563eb54cc4e9735845c7109d9c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

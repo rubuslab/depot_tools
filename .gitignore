@@ -31,6 +31,9 @@
 /.ssh
 /.subversion
 
+# Ignore the directory created when uploading patches
+/chromium-review.googlesource.com
+
 # Ignore locations where third-party tools are placed during bootstrapping.
 /python*_bin
 /python_bin_reldir.txt

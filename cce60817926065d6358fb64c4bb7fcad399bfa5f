@@ -167,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "bfb8aec9_0b40cf47",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 1179484
+      },
+      "writtenOn": "2018-02-14T19:14:37Z",
+      "side": 1,
+      "message": "Re-added the default.\nWe don\u0027t need to change the other script to support this, do we?",
+      "parentUuid": "918136db_f979b707",
+      "range": {
+        "startLine": 765,
+        "startChar": 57,
+        "endLine": 765,
+        "endChar": 62
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "77309f6a_ee0e462d",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 4
@@ -187,6 +211,30 @@
       "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb7dbe3e_c1e8c80e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 1179484
+      },
+      "writtenOn": "2018-02-14T19:14:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77309f6a_ee0e462d",
+      "range": {
+        "startLine": 903,
+        "startChar": 6,
+        "endLine": 903,
+        "endChar": 47
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

@@ -143,6 +143,53 @@
     },
     {
       "key": {
+        "uuid": "918136db_f979b707",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-14T19:04:19Z",
+      "side": 1,
+      "message": "I\u0027ve just realized that you actually need this for backwards compatibility for apply_gerrit_patch recipe method (see api of bot_update recipe module \u0026\u0026 another resource/ file alongside this one.",
+      "parentUuid": "26704104_bcf19799",
+      "range": {
+        "startLine": 765,
+        "startChar": 57,
+        "endLine": 765,
+        "endChar": 62
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77309f6a_ee0e462d",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-14T19:04:19Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 903,
+        "startChar": 6,
+        "endLine": 903,
+        "endChar": 47
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ed8cdd65_03043d80",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 4
@@ -226,6 +273,30 @@
       "side": 1,
       "message": "You\u0027re right about the 2nd call. But the first call is still done in a loop with the same arguments every time.\n\nI added support for this, the best I could, though I don\u0027t know which cases it\u0027s actually used in.\n\nRe-ran previous tasks, still seem to work.\nhttps://ci.chromium.org/swarming/task/3b8f299302b4d910?server\u003dchromium-swarm.appspot.com\nhttps://ci.chromium.org/swarming/task/3b8f296b6fe1e410?server\u003dchromium-swarm.appspot.com",
       "parentUuid": "c015b747_6d04058e",
+      "range": {
+        "startLine": 954,
+        "startChar": 0,
+        "endLine": 959,
+        "endChar": 45
+      },
+      "revId": "cce60817926065d6358fb64c4bb7fcad399bfa5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5d8329_572dd483",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-02-14T19:04:19Z",
+      "side": 1,
+      "message": "First call is inside a loop by behind a condition which is True at most once.",
+      "parentUuid": "50d16448_8cc6c9a8",
       "range": {
         "startLine": 954,
         "startChar": 0,

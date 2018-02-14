@@ -31,6 +31,8 @@ _GCLIENT_DEPS_SCHEMA = {
                     'package': basestring,
 
                     'version': basestring,
+
+                    schema.Optional('condition'): basestring,
                 }
             ],
 

@@ -718,6 +718,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
               # should suffice.
               'https://chrome-infra-packages.appspot.com')
         for package in dep_value.get('packages', []):
+          if 'condition' in package:
+            condition = package['condition']
+            condition_value = gclient_eval.EvaluateCondition(
+                condition, self.get_vars())
+            if not self._get_option('process_all_deps', False):
+              should_process = should_process and condition_value
+
           deps_to_add.append(
               CipdDependency(
                   self, name, package, cipd_root,

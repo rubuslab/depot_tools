@@ -1891,6 +1891,19 @@ class CipdDependency(Dependency):
     self.add_dependencies_and_close([], [])
 
   #override
+  def verify_validity(self):
+    """CIPD dependencies allow duplicate name for packages in same directory."""
+    logging.info('Dependency(%s).verify_validity()' % self.name)
+    if not self.should_process:
+      # Return early, no need to set requirements.
+      return True
+    siblings = [d for d in self.root.subtree(False) if d.name == self.name]
+    for sibling in siblings:
+      logging.warn('Won\'t process duplicate dependency %s' % sibling)
+      return False
+    return True
+
+  #override
   def GetScmName(self, url):
     """Always 'cipd'."""
     del url

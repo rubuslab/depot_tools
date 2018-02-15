@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2cb4275c_c759e080",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1894,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-15T19:38:35Z",
+      "side": 1,
+      "message": "Add a test for this.",
+      "revId": "fc65f15b148eb52d3071a5e9631597015733efb7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64bc8d73_ea405fea",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1903,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-15T19:38:35Z",
+      "side": 1,
+      "message": "Isn\u0027t this the opposite of what you want to do? You want to allow dependencies that have the same name as long as they have different packages, like the example in https://bugs.chromium.org/p/chromium/issues/detail?id\u003d812386, right? What am I missing about how this works?",
+      "range": {
+        "startLine": 1900,
+        "startChar": 0,
+        "endLine": 1903,
+        "endChar": 18
+      },
+      "revId": "fc65f15b148eb52d3071a5e9631597015733efb7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

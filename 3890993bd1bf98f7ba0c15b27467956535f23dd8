@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0b0e3b48_fb092300",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-02-16T01:24:27Z",
+      "side": 1,
+      "message": "This also needs to not break windows.",
+      "range": {
+        "startLine": 125,
+        "startChar": 51,
+        "endLine": 125,
+        "endChar": 67
+      },
+      "revId": "3890993bd1bf98f7ba0c15b27467956535f23dd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f8ff154_6677711e",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-02-16T01:24:27Z",
+      "side": 1,
+      "message": "If you just want to change the environment you can just do it here.",
+      "revId": "3890993bd1bf98f7ba0c15b27467956535f23dd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

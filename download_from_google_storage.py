@@ -16,10 +16,16 @@ import stat
 import sys
 import tarfile
 import threading
+import tempfile
 import time
 
 import subprocess2
 
+
+# Env vars that tempdir can be gotten from; minimally, this
+# needs to match python's tempfile module and match normal
+# unix standards.
+_TEMPDIR_ENV_VARS = ('TMPDIR', 'TEMP', 'TMP')
 
 GSUTIL_DEFAULT_PATH = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), 'gsutil.py')
@@ -50,6 +56,77 @@ def GetNormalizedPlatform():
   if sys.platform == 'cygwin':
     return 'win32'
   return sys.platform
+
+def GetGlobalTempDir():
+  """Get the path to the current global tempdir.
+
+  The global tempdir path can be modified through calls to SetGlobalTempDir.
+  """
+  # pylint: disable=protected-access
+  return tempfile._get_default_tempdir()
+
+def SetGlobalTempDir(tempdir_value, tempdir_env=None):
+  """Set the global temp directory to the specified |tempdir_value|
+
+  Args:
+    tempdir_value: The new location for the global temp directory.
+    tempdir_env: Optional. A list of key/value pairs to set in the
+      environment. If not provided, set all global tempdir environment
+      variables to point at |tempdir_value|.
+
+  Returns:
+    Returns (old_tempdir_value, old_tempdir_env).
+
+    old_tempdir_value: The old value of the global temp directory.
+    old_tempdir_env: A list of the key/value pairs that control the tempdir
+      environment and were set prior to this function. If the environment
+      variable was not set, it is recorded as None.
+  """
+  # pylint: disable=protected-access
+  with tempfile._once_lock:
+    old_tempdir_value = GetGlobalTempDir()
+    old_tempdir_env = tuple((x, os.environ.get(x)) for x in _TEMPDIR_ENV_VARS)
+
+    # Now update TMPDIR/TEMP/TMP, and poke the python
+    # internals to ensure all subprocess/raw tempfile
+    # access goes into this location.
+    if tempdir_env is None:
+      os.environ.update((x, tempdir_value) for x in _TEMPDIR_ENV_VARS)
+    else:
+      for key, value in tempdir_env:
+        if value is None:
+          os.environ.pop(key, None)
+        else:
+          os.environ[key] = value
+
+    # Finally, adjust python's cached value (we know it's cached by here
+    # since we invoked _get_default_tempdir from above).  Note this
+    # is necessary since we want *all* output from that point
+    # forward to go to this location.
+    tempfile.tempdir = tempdir_value
+
+  return (old_tempdir_value, old_tempdir_env)
+
+
+class TempTempDir(object):
+  """Replace global temporary directory temporary for the life of this object.
+  """
+  def __init__(self):
+    self.old_tempdir_value = None
+    self.old_tempdir_env = None
+
+  def __enter__(self):
+    self._setup_temp_dir();
+
+  def __exit__(self, exc_type, value, traceback):
+    self._tear_down_temp_dir();
+
+  def _setup_temp_dir(self):
+    self.old_tempdir_value, self.old_tempdir_env = SetGlobalTempDir('/tmp')
+
+  def _tear_down_temp_dir(self):
+    SetGlobalTempDir(self.old_tempdir_value, self.old_tempdir_env)
+
 
 # Common utilities
 class Gsutil(object):
@@ -87,17 +164,19 @@ class Gsutil(object):
   def call(self, *args):
     cmd = [self.VPYTHON, self.path, '--force-version', self.version]
     cmd.extend(args)
-    return subprocess2.call(cmd, env=self.get_sub_env(), timeout=self.timeout)
+    with TempTempDir():
+      return subprocess2.call(cmd, env=self.get_sub_env(), timeout=self.timeout)
 
   def check_call(self, *args):
     cmd = [self.VPYTHON, self.path, '--force-version', self.version]
     cmd.extend(args)
-    ((out, err), code) = subprocess2.communicate(
-        cmd,
-        stdout=subprocess2.PIPE,
-        stderr=subprocess2.PIPE,
-        env=self.get_sub_env(),
-        timeout=self.timeout)
+    with TempTempDir():
+      ((out, err), code) = subprocess2.communicate(
+          cmd,
+          stdout=subprocess2.PIPE,
+          stderr=subprocess2.PIPE,
+          env=self.get_sub_env(),
+          timeout=self.timeout)
 
     # Parse output.
     status_code_match = re.search('status=([0-9]+)', err)

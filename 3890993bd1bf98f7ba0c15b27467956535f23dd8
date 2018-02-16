@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "55efd3c8_456f9f98",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-02-16T01:47:40Z",
+      "side": 1,
+      "message": "This shouldn\u0027t do anything, once gsutil is shelled out, it starts an entirely new instance of python.",
+      "revId": "3890993bd1bf98f7ba0c15b27467956535f23dd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0b0e3b48_fb092300",
         "filename": "download_from_google_storage.py",
         "patchSetId": 2

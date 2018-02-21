@@ -245,7 +245,7 @@ class DependencySettings(object):
   def __init__(
       self, parent, raw_url, url, managed, custom_deps, custom_vars,
       custom_hooks, deps_file, should_process, relative,
-      condition, condition_value):
+      condition, condition_value, dep_type):
     # These are not mutable:
     self._parent = parent
     self._deps_file = deps_file
@@ -255,6 +255,8 @@ class DependencySettings(object):
     self._condition = condition
     # Boolean value of the condition. If there's no condition, just True.
     self._condition_value = condition_value
+    # The type of dependency. If there is no type or not set, just None.
+    self._dep_type = dep_type
     # 'managed' determines whether or not this dependency is synced/updated by
     # gclient after gclient checks it out initially.  The difference between
     # 'managed' and 'should_process' is that the user specifies 'managed' via
@@ -347,6 +349,10 @@ class DependencySettings(object):
     return self._condition_value
 
   @property
+  def dep_type(self):
+    return self._dep_type
+
+  @property
   def target_os(self):
     if self.local_target_os is not None:
       return tuple(set(self.local_target_os).union(self.parent.target_os))
@@ -370,12 +376,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
   def __init__(self, parent, name, raw_url, url, managed, custom_deps,
                custom_vars, custom_hooks, deps_file, should_process,
-               relative, condition, condition_value, print_outbuf=False):
+               relative, condition, condition_value, print_outbuf=False,
+               dep_type=None):
     gclient_utils.WorkItem.__init__(self, name)
     DependencySettings.__init__(
         self, parent, raw_url, url, managed, custom_deps, custom_vars,
         custom_hooks, deps_file, should_process, relative,
-        condition, condition_value)
+        condition, condition_value, dep_type)
 
     # This is in both .gclient and DEPS files:
     self._deps_hooks = []
@@ -1874,7 +1881,8 @@ class CipdDependency(Dependency):
         cipd_root.service_url, '%s@%s' % (package, version))
     super(CipdDependency, self).__init__(
         parent, name, url, url, None, None, custom_vars,
-        None, None, should_process, relative, condition, condition_value)
+        None, None, should_process, relative, condition, condition_value,
+        dep_type='cipd')
     if relative:
       # TODO(jbudorick): Implement relative if necessary.
       raise gclient_utils.Error(
@@ -1889,6 +1897,12 @@ class CipdDependency(Dependency):
   def ParseDepsFile(self):
     """CIPD dependencies are not currently allowed to have nested deps."""
     self.add_dependencies_and_close([], [])
+
+  #override
+  def verify_validity(self):
+    """CIPD dependencies allow duplicate name for packages in same directory."""
+    logging.info('Dependency(%s).verify_validity()' % self.name)
+    return True
 
   #override
   def GetScmName(self, url):

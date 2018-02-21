@@ -1016,7 +1016,7 @@ class ExecutionQueue(object):
           print >> sys.stdout, self.format_task_output(t.item)
         if self.progress:
           self.progress.update(1, t.item.name)
-        if t.item.name in self.ran:
+        if t.item.name in self.ran and t.item.dep_type != 'cipd':
           raise Error(
               'gclient is confused, "%s" is already in "%s"' % (
                 t.item.name, ', '.join(self.ran)))

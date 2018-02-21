@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "6f527ef4_f6884ecd",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1885,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-21T23:33:04Z",
+      "side": 1,
+      "message": "Shouldn\u0027t you also be setting dep_type\u003d\u0027git\u0027 for git dependencies?\n\n(Unless you get rid of dep_type entirely, since I think it\u0027s unnecessary, as commented below.)",
+      "revId": "3a9b6d466120f7f77cd243b0fbc4fe85b847c979",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c493ae67_bf4f1265",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -36,6 +53,30 @@
       "writtenOn": "2018-02-21T02:40:27Z",
       "side": 1,
       "message": "This is to allow same thread item names for cipd, s.t. cipd dependency thread is allowed even if there are other threads with same directory name.",
+      "range": {
+        "startLine": 1019,
+        "startChar": 39,
+        "endLine": 1019,
+        "endChar": 64
+      },
+      "revId": "3a9b6d466120f7f77cd243b0fbc4fe85b847c979",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58e548c4_71821779",
+        "filename": "gclient_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-21T23:33:04Z",
+      "side": 1,
+      "message": "Why not make the the item name a combination of path and package name for cipd items, rather than just removing all checks on cipd items?",
+      "parentUuid": "9d269c09_210b6b14",
       "range": {
         "startLine": 1019,
         "startChar": 39,

@@ -86,6 +86,30 @@
       "revId": "3a9b6d466120f7f77cd243b0fbc4fe85b847c979",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15504a58_c27efe24",
+        "filename": "gclient_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 1205294
+      },
+      "writtenOn": "2018-02-23T03:24:47Z",
+      "side": 1,
+      "message": "I guess the item name should remain the directory path where packages needs to be located at and better not to be changed? I just tried to change the item name by changing the name of WorkItem to e.g. name + \u0027@\u0027 + package at https://cs.chromium.org/chromium/tools/depot_tools/gclient.py?l\u003d374 . But instead of downloaded in the right location \u0027../android_sdk/public\u0027, the package was downloaded under that modified task item name, which is e.g. \u0027../android_sdk/public@chromium/.../build-tools\u0027. \n\nOr I should change somewhere else?",
+      "parentUuid": "58e548c4_71821779",
+      "range": {
+        "startLine": 1019,
+        "startChar": 39,
+        "endLine": 1019,
+        "endChar": 64
+      },
+      "revId": "3a9b6d466120f7f77cd243b0fbc4fe85b847c979",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

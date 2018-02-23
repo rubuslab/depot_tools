@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c1eb1dac_3404c008",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1876,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-23T22:36:48Z",
+      "side": 1,
+      "message": "nit: I would consider using a \u0027/\u0027 instead of an \u0027@\u0027, since gclient heavily uses \u0027@\u0027 to separate packages from revisions.",
+      "range": {
+        "startLine": 1876,
+        "startChar": 24,
+        "endLine": 1876,
+        "endChar": 25
+      },
+      "revId": "60f3db41867fa88f5bac31f07d27f28a94b6516f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a663c9f_bccf3b7d",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1885,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-23T22:36:48Z",
+      "side": 1,
+      "message": "You should be able to just use the original \"name\" argument, instead of mangling self.name, here.",
+      "range": {
+        "startLine": 1885,
+        "startChar": 41,
+        "endLine": 1885,
+        "endChar": 77
+      },
+      "revId": "60f3db41867fa88f5bac31f07d27f28a94b6516f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

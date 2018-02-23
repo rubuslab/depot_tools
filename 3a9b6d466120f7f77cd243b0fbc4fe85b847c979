@@ -110,6 +110,30 @@
       "revId": "3a9b6d466120f7f77cd243b0fbc4fe85b847c979",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35c386a2_26de3702",
+        "filename": "gclient_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-02-23T19:40:32Z",
+      "side": 1,
+      "message": "That can be fixed on line 1884 of gclient.py, which is where it uses the name to calculate the subdir.",
+      "parentUuid": "15504a58_c27efe24",
+      "range": {
+        "startLine": 1019,
+        "startChar": 39,
+        "endLine": 1019,
+        "endChar": 64
+      },
+      "revId": "3a9b6d466120f7f77cd243b0fbc4fe85b847c979",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

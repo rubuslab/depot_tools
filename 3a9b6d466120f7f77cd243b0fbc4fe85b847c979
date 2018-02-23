@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "de0b1279_57def90d",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1885,
+      "author": {
+        "id": 1205294
+      },
+      "writtenOn": "2018-02-23T21:58:51Z",
+      "side": 1,
+      "message": "Yes, there is no need to have var \u0027dep_type\u0027 with the new logic.",
+      "parentUuid": "6f527ef4_f6884ecd",
+      "revId": "3a9b6d466120f7f77cd243b0fbc4fe85b847c979",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c493ae67_bf4f1265",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -134,6 +152,30 @@
       "revId": "3a9b6d466120f7f77cd243b0fbc4fe85b847c979",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "efeb62b9_2d30e9f4",
+        "filename": "gclient_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 1205294
+      },
+      "writtenOn": "2018-02-23T21:58:51Z",
+      "side": 1,
+      "message": "Thanks for the hint! When change the self._cipd_subdir back to the directory name, the packages would be downloaded in right place.",
+      "parentUuid": "35c386a2_26de3702",
+      "range": {
+        "startLine": 1019,
+        "startChar": 39,
+        "endLine": 1019,
+        "endChar": 64
+      },
+      "revId": "3a9b6d466120f7f77cd243b0fbc4fe85b847c979",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

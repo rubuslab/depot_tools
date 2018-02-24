@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "871db47b_ad8d325a",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1876,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-02-24T00:39:44Z",
+      "side": 1,
+      "message": "/ here seems very easily confused w/ the path separators frequently seen in dependency names?",
+      "parentUuid": "c3d5eb23_cd9a1687",
+      "range": {
+        "startLine": 1876,
+        "startChar": 24,
+        "endLine": 1876,
+        "endChar": 25
+      },
+      "revId": "60f3db41867fa88f5bac31f07d27f28a94b6516f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a663c9f_bccf3b7d",
         "filename": "gclient.py",
         "patchSetId": 3

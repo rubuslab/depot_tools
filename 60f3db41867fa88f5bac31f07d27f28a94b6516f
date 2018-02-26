@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "2d2ed0ab_6985ab31",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1876,
+      "author": {
+        "id": 1205294
+      },
+      "writtenOn": "2018-02-26T19:16:46Z",
+      "side": 1,
+      "message": "I guess Aaron\u0027s suggestion was meant to avoid \u0027@\u0027. As \u0027/\u0027 could also be confused, I suppose it could be replaced by another separator, e.g. \u0027#\u0027, unless Aaron has different opinion.",
+      "parentUuid": "871db47b_ad8d325a",
+      "range": {
+        "startLine": 1876,
+        "startChar": 24,
+        "endLine": 1876,
+        "endChar": 25
+      },
+      "revId": "60f3db41867fa88f5bac31f07d27f28a94b6516f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a663c9f_bccf3b7d",
         "filename": "gclient.py",
         "patchSetId": 3

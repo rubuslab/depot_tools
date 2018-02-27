@@ -22,6 +22,30 @@
       "revId": "9b4d0c77152aee8dcd34065d77c178370ee40f8e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0397a41_53ee9b69",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2018-02-27T02:27:39Z",
+      "side": 1,
+      "message": "Shouldn\u0027t that be part of a more general documentation of recipes and how to use them? Or do you mean to point to the predefined test_api methods?",
+      "parentUuid": "bd3ff02f_3578ad48",
+      "range": {
+        "startLine": 136,
+        "startChar": 22,
+        "endLine": 136,
+        "endChar": 79
+      },
+      "revId": "9b4d0c77152aee8dcd34065d77c178370ee40f8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

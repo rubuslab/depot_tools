@@ -3,9 +3,27 @@
 # found in the LICENSE file.
 
 import ast
+import cStringIO
 import collections
+import tokenize
 
 from third_party import schema
+
+
+def AddNode(obj, node):
+  class ObjPlusNode(type(obj)):
+    pass
+  obj = ObjPlusNode(obj)
+  obj.node = node
+  return obj
+
+
+def AddTokens(obj, tokens):
+  class ObjPlusTokens(type(obj)):
+    pass
+  obj = ObjPlusTokens(obj)
+  obj.tokens = tokens
+  return obj
 
 
 # See https://github.com/keleshev/schema for docs how to configure schema.
@@ -151,17 +169,17 @@ def _gclient_eval(node_or_string, global_scope, filename='<unknown>'):
     node_or_string = node_or_string.body
   def _convert(node):
     if isinstance(node, ast.Str):
-      return node.s
+      return AddNode(node.s, node)
     elif isinstance(node, ast.Num):
-      return node.n
+      return AddNode(node.n, node)
     elif isinstance(node, ast.Tuple):
-      return tuple(map(_convert, node.elts))
+      return AddNode(tuple(map(_convert, node.elts)), node)
     elif isinstance(node, ast.List):
-      return list(map(_convert, node.elts))
+      return AddNode(list(map(_convert, node.elts)), node)
     elif isinstance(node, ast.Dict):
-      return collections.OrderedDict(
+      return AddNode(collections.OrderedDict(
           (_convert(k), _convert(v))
-          for k, v in zip(node.keys, node.values))
+          for k, v in zip(node.keys, node.values)), node)
     elif isinstance(node, ast.Name):
       if node.id not in _allowed_names:
         raise ValueError(
@@ -178,21 +196,26 @@ def _gclient_eval(node_or_string, global_scope, filename='<unknown>'):
             'invalid call: use only regular args (file %r, line %s)' % (
                 filename, getattr(node, 'lineno', '<unknown>')))
       args = map(_convert, node.args)
-      return global_scope[node.func.id](*args)
+      return AddNode(global_scope[node.func.id](*args), node)
     elif isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
-      return _convert(node.left) + _convert(node.right)
+      return AddNode(_convert(node.left) + _convert(node.right), node)
     elif isinstance(node, ast.BinOp) and isinstance(node.op, ast.Mod):
-      return _convert(node.left) % _convert(node.right)
+      return AddNode(_convert(node.left) % _convert(node.right), node)
     else:
       raise ValueError(
           'unexpected AST node: %s %s (file %r, line %s)' % (
               node, ast.dump(node), filename,
               getattr(node, 'lineno', '<unknown>')))
-  return _convert(node_or_string)
+  return AddNode(_convert(node_or_string), node_or_string)
 
 
 def Exec(content, global_scope, local_scope, filename='<unknown>'):
   """Safely execs a set of assignments. Mutates |local_scope|."""
+  tokens = {
+      token[2]: list(token)
+      for token in tokenize.generate_tokens(
+          cStringIO.StringIO(content).readline)
+  }
   node_or_string = ast.parse(content, filename=filename, mode='exec')
   if isinstance(node_or_string, ast.Expression):
     node_or_string = node_or_string.body
@@ -233,7 +256,7 @@ def Exec(content, global_scope, local_scope, filename='<unknown>'):
             filename,
             getattr(node_or_string, 'lineno', '<unknown>')))
 
-  return _GCLIENT_SCHEMA.validate(local_scope)
+  return AddTokens(_GCLIENT_SCHEMA.validate(local_scope), tokens)
 
 
 def EvaluateCondition(condition, variables, referenced_variables=None):
@@ -333,3 +356,73 @@ def EvaluateCondition(condition, variables, referenced_variables=None):
           'unexpected AST node: %s %s (inside %r)' % (
               node, ast.dump(node), condition))
   return _convert(main_node)
+
+
+def WriteToFile(gclient_dict, filename):
+  contents = sorted(gclient_dict.tokens.values(), key=lambda token: token[2])
+  print [c for c in contents if len(c) != 5]
+
+  with open(filename, 'w') as f:
+    f.write(tokenize.untokenize(contents))
+
+
+def _UpdateAstString(tokens, node, value):
+  position = node.lineno, node.col_offset
+  tokens[position][1] = value
+  node.s = value
+
+
+def EditVar(gclient_dict, var_name, value):
+  node = gclient_dict['vars'][var_name].node
+  tokens = gclient_dict.tokens
+  _UpdateAstString(tokens, node, value)
+  gclient_dict['vars'][var_name] = AddNode(value, node)
+
+
+def EditRevision(gclient_dict, global_scope, dep_name, new_revision):
+  def _UpdateRevision(dep):
+    node = dep.node
+    if isinstance(node, ast.BinOp):
+      node = node.right
+    if isinstance(node, ast.Call):
+      EditVar(gclient_dict, node.args[0].s, new_revision)
+      return dep
+    _UpdateAstString(gclient_dict.tokens, node, new_revision)
+    value = _gclient_eval(dep.node, global_scope)
+    return AddNode(value, dep.node)
+
+  if isinstance(gclient_dict['deps'][dep_name], dict):
+    gclient_dict['deps'][dep_name]['url'] = _UpdateRevision(
+        gclient_dict['deps'][dep_name]['url'])
+  else:
+    gclient_dict['deps'][dep_name] = _UpdateRevision(
+        gclient_dict['deps'][dep_name])
+
+
+def main():
+  with open("DEPS") as f:
+    contents = f.read()
+
+  local_scope = {}
+  global_scope = {
+      'Var': lambda x: '{%s}' % x,
+      'deps_os': {},
+  }
+  local_scope = Exec(contents, global_scope, local_scope)
+
+  EditRevision(local_scope, global_scope,
+               'src/v8', 'v8_rev')
+  EditRevision(local_scope, global_scope,
+               'src/third_party/libevdev/src', 'deadbeef')
+  EditRevision(local_scope, global_scope,
+               'src/third_party/libjpeg_turbo', 'lemur_rev')
+
+  print local_scope['deps']['src/v8']
+  print local_scope['deps']['src/third_party/libevdev/src']['url']
+  print local_scope['deps']['src/third_party/libjpeg_turbo']
+
+  WriteToFile(local_scope, "DEPS2")
+
+  return local_scope
+
+main()

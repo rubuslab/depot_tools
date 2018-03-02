@@ -165,12 +165,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
         email_file = '/creds/rietveld/client_email'
         key_file = '/creds/rietveld/secret_key'
 
-    # Allow patch_project's revision if necessary.
-    # This is important for projects which are checked out as DEPS of the
-    # gclient solution.
-    self.m.gclient.set_patch_project_revision(
-        self.m.properties.get('patch_project'), cfg)
-
     reverse_rev_map = self.m.gclient.got_revision_reverse_mapping(cfg)
 
     flags = [
@@ -186,8 +180,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
         ['--issue', issue],
         ['--patchset', patchset],
         ['--rietveld_server', rietveld or self._rietveld],
-        ['--gerrit_repo', gerrit_repo],
-        ['--gerrit_ref', gerrit_ref],
         ['--apply_issue_email_file', email_file],
         ['--apply_issue_key_file', key_file],
         ['--apply_issue_oauth2_file', oauth2_json_file],
@@ -215,6 +207,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
           (k, v) for k, v in self.m.gclient.c.revisions.iteritems() if v)
     if cfg.solutions and root_solution_revision:
       revisions[cfg.solutions[0].name] = root_solution_revision
+    if gerrit_ref:
+      revisions[gerrit_repo] = gerrit_ref
     # Allow for overrides required to bisect into rolls.
     revisions.update(self._deps_revision_overrides)
 

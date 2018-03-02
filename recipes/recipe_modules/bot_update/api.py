@@ -165,12 +165,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
         email_file = '/creds/rietveld/client_email'
         key_file = '/creds/rietveld/secret_key'
 
-    # Allow patch_project's revision if necessary.
-    # This is important for projects which are checked out as DEPS of the
-    # gclient solution.
-    self.m.gclient.set_patch_project_revision(
-        self.m.properties.get('patch_project'), cfg)
-
     reverse_rev_map = self.m.gclient.got_revision_reverse_mapping(cfg)
 
     flags = [
@@ -186,8 +180,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
         ['--issue', issue],
         ['--patchset', patchset],
         ['--rietveld_server', rietveld or self._rietveld],
-        ['--gerrit_repo', gerrit_repo],
-        ['--gerrit_ref', gerrit_ref],
         ['--apply_issue_email_file', email_file],
         ['--apply_issue_key_file', key_file],
         ['--apply_issue_oauth2_file', oauth2_json_file],
@@ -215,6 +207,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
           (k, v) for k, v in self.m.gclient.c.revisions.iteritems() if v)
     if cfg.solutions and root_solution_revision:
       revisions[cfg.solutions[0].name] = root_solution_revision
+    if gerrit_ref:
+      revisions[gerrit_repo] = gerrit_ref
     # Allow for overrides required to bisect into rolls.
     revisions.update(self._deps_revision_overrides)
 
@@ -227,9 +221,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
       fixed_revision = self.m.gclient.resolve_revision(revision)
       if fixed_revision:
         fixed_revisions[name] = fixed_revision
-        if fixed_revision.upper() == 'HEAD':
-          # Sync to correct destination branch if HEAD was specified.
-          fixed_revision = self._destination_branch(cfg, name)
         flags.append(['--revision', '%s@%s' % (name, fixed_revision)])
 
     # Add extra fetch refspecs.
@@ -337,44 +328,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
           self.m.path['checkout'] = cwd.join(*co_root.split(self.m.path.sep))
 
     return step_result
-
-  def _destination_branch(self, cfg, path):
-    """Returns the destination branch of a CL for the matching project
-    if available or HEAD otherwise.
-
-    This is a noop if there's no Gerrit CL associated with the run.
-    Otherwise this queries Gerrit for the correct destination branch, which
-    might differ from master.
-
-    Args:
-      cfg: The used gclient config.
-      path: The DEPS path of the project this prefix is for. E.g. 'src' or
-          'src/v8'. The query will only be made for the project that matches
-          the CL's project.
-    Returns:
-        A destination branch as understood by bot_update.py if available
-        and if different from master, returns 'HEAD' otherwise.
-    """
-    # Bail out if this is not a gerrit issue.
-    if (not self.m.tryserver.is_gerrit_issue or
-        not self._gerrit or not self._issue):
-      return 'HEAD'
-
-    # Ignore other project paths than the one belonging to the CL.
-    if path != cfg.patch_projects.get(
-        self.m.properties.get('patch_project'),
-        (cfg.solutions[0].name, None))[0]:
-      return 'HEAD'
-
-    # Query Gerrit to check if a CL's destination branch differs from master.
-    destination_branch = self.m.gerrit.get_change_destination_branch(
-        host=self._gerrit,
-        change=self._issue,
-        name='get_patch_destination_branch',
-    )
-
-    # Only use prefix if different from bot_update.py's default.
-    return destination_branch if destination_branch != 'master' else 'HEAD'
 
   def _resolve_fixed_revisions(self, bot_update_json):
     """Set all fixed revisions from the first sync to their respective

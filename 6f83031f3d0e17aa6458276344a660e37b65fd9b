@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "35e19bae_2487d921",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-02T19:12:27Z",
+      "side": 0,
+      "message": "I don\u0027t think we\u0027ll need this, right?",
+      "range": {
+        "startLine": 341,
+        "startChar": 6,
+        "endLine": 341,
+        "endChar": 25
+      },
+      "revId": "6f83031f3d0e17aa6458276344a660e37b65fd9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7fd70c34_c2c43844",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-02T19:12:27Z",
+      "side": 0,
+      "message": "Something like this is what would go in gclient, so that it rebases the gerrit ref, right?",
+      "range": {
+        "startLine": 762,
+        "startChar": 4,
+        "endLine": 762,
+        "endChar": 20
+      },
+      "revId": "6f83031f3d0e17aa6458276344a660e37b65fd9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

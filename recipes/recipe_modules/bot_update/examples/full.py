@@ -224,18 +224,12 @@ def GenTests(api):
       gerrit_project='v8/v8',
       patch_issue=338811,
       patch_set=3,
-  ) + api.step_data(
-      'gerrit get_patch_destination_branch',
-      api.gerrit.get_one_change_response_data(branch='experimental/feature'),
   )
   yield api.test('tryjob_gerrit_feature_branch') + api.properties.tryserver(
       buildername='feature_rel',
       gerrit_project='chromium/src',
       patch_issue=338811,
       patch_set=3,
-  ) + api.step_data(
-      'gerrit get_patch_destination_branch',
-      api.gerrit.get_one_change_response_data(branch='experimental/feature'),
   )
   yield api.test('tryjob_gerrit_angle_deprecated') + api.properties.tryserver(
       patch_project='angle/angle',

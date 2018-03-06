@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0188015c_7502400e",
+        "filename": "gclient_eval.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-06T17:15:28Z",
+      "side": 1,
+      "message": "I think you can simplify this class (and remove the need for redefining the __foo__ methods) by making this\n\n  class _NodeDict(collections.OrderedDict):\n    def __init__(self, data, tokens\u003dNone):\n      super(_NodeDict, self).__init__(data)\n      self.tokens \u003d tokens\n\nDoes that work?",
+      "revId": "87af6dd70eb8c4f68bed2ceff988e60c50877478",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25ef6564_53e9f0ec",
+        "filename": "gclient_eval.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-06T17:15:28Z",
+      "side": 1,
+      "message": "Make sure to have a comment describing the (value, node) tuple type being stored in the data map, and the guarantee that it always has exactly two elements.",
+      "range": {
+        "startLine": 32,
+        "startChar": 25,
+        "endLine": 32,
+        "endChar": 28
+      },
+      "revId": "87af6dd70eb8c4f68bed2ceff988e60c50877478",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

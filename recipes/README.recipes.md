@@ -6,6 +6,7 @@
   * [bot_update](#recipe_modules-bot_update) &mdash; Recipe module to ensure a checkout is consistent on a bot.
   * [cipd](#recipe_modules-cipd)
   * [depot_tools](#recipe_modules-depot_tools) &mdash; The `depot_tools` module provides safe functions to access paths within the depot_tools repo.
+  * [deps2submodules](#recipe_modules-deps2submodules)
   * [gclient](#recipe_modules-gclient)
   * [gerrit](#recipe_modules-gerrit)
   * [git](#recipe_modules-git)
@@ -22,6 +23,7 @@
   * [cipd:examples/full](#recipes-cipd_examples_full)
   * [cipd:examples/platform_suffix](#recipes-cipd_examples_platform_suffix)
   * [depot_tools:examples/full](#recipes-depot_tools_examples_full)
+  * [deps2submodules:examples/full](#recipes-deps2submodules_examples_full)
   * [fetch_end_to_end_test](#recipes-fetch_end_to_end_test)
   * [gclient:examples/full](#recipes-gclient_examples_full)
   * [gclient:tests/patch_project](#recipes-gclient_tests_patch_project)
@@ -226,6 +228,22 @@ Example:
 Returns (Path): The "depot_tools" root directory.
 
 &emsp; **@property**<br>&mdash; **def [upload\_to\_google\_storage\_path](/recipes/recipe_modules/depot_tools/api.py#17)(self):**
+### *recipe_modules* / [deps2submodules](/recipes/recipe_modules/deps2submodules)
+
+[DEPS](/recipes/recipe_modules/deps2submodules/__init__.py#5): [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/step][recipe_engine/recipe_modules/step]
+
+#### **class [Deps2SubmodulesApi](/recipes/recipe_modules/deps2submodules/api.py#8)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
+
+&mdash; **def [\_\_call\_\_](/recipes/recipe_modules/deps2submodules/api.py#9)(self, deps_repo, submodules_repo, deps_path='DEPS', enable_recurse_deps=False, deps_path_prefix=None, extra_submodules=None):**
+
+Args:
+  deps_repo: fully-qualified path to the repo containing the DEPS file
+  submodules_repo: fully-qualified path to the repo with the gitmodules
+  deps_path: path to DEPS within deps_repo
+      (default: DEPS)
+  enable_recurse_deps: output submodules for dependencies in recursed DEPS
+  deps_path_prefix: only include deps whose paths start with this
+  extra_submodules: a list of "path=URL" strings added as extra submodules
 ### *recipe_modules* / [gclient](/recipes/recipe_modules/gclient)
 
 [DEPS](/recipes/recipe_modules/gclient/__init__.py#1): [infra\_paths](#recipe_modules-infra_paths), [tryserver](#recipe_modules-tryserver), [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/step][recipe_engine/recipe_modules/step]
@@ -775,6 +793,11 @@ like checkout or compile), and some of these tests have failed.
 [DEPS](/recipes/recipe_modules/depot_tools/examples/full.py#5): [depot\_tools](#recipe_modules-depot_tools), [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/runtime][recipe_engine/recipe_modules/runtime], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
 &mdash; **def [RunSteps](/recipes/recipe_modules/depot_tools/examples/full.py#14)(api):**
+### *recipes* / [deps2submodules:examples/full](/recipes/recipe_modules/deps2submodules/examples/full.py)
+
+[DEPS](/recipes/recipe_modules/deps2submodules/examples/full.py#8): [deps2submodules](#recipe_modules-deps2submodules), [gclient](#recipe_modules-gclient), [git](#recipe_modules-git), [recipe\_engine/path][recipe_engine/recipe_modules/path]
+
+&mdash; **def [RunSteps](/recipes/recipe_modules/deps2submodules/examples/full.py#16)(api):**
 ### *recipes* / [fetch\_end\_to\_end\_test](/recipes/recipes/fetch_end_to_end_test.py)
 
 [DEPS](/recipes/recipes/fetch_end_to_end_test.py#5): [bot\_update](#recipe_modules-bot_update), [gclient](#recipe_modules-gclient), [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/file][recipe_engine/recipe_modules/file], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/step][recipe_engine/recipe_modules/step]

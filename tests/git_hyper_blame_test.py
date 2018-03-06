@@ -128,7 +128,7 @@ class GitHyperBlameMainTest(GitHyperBlameTestBase):
 
     self.assertNotEqual(0, retval)
     self.assertEqual('', stdout.getvalue())
-    self.assertRegexpMatches(stderr.getvalue(), '^fatal: Not a git repository')
+    self.assertRegexpMatches(stderr.getvalue(), '^fatal: not a git repository')
 
   def testBadFilename(self):
     """Tests the main function (bad filename)."""

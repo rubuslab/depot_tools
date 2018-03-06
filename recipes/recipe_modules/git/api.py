@@ -333,7 +333,7 @@ class GitApi(recipe_api.RecipeApi):
     remote_name = remote_name or 'origin'
     with self.m.context(cwd=dir_path):
       try:
-        self('rebase', '%s/master' % remote_name,
+        return self('rebase', '%s/master' % remote_name,
              name="%s rebase" % name_prefix, **kwargs)
       except self.m.step.StepFailure:
         self('rebase', '--abort', name='%s rebase abort' % name_prefix,

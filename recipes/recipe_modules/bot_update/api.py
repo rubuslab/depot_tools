@@ -78,9 +78,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       **kwargs):
     """
     Args:
-      use_site_config_creds: If the oauth2 credentials are in the buildbot
-        site_config. See crbug.com/624212 for more information.
-      gclient_config: The gclient configuration to use when running bot_update.
         If omitted, the current gclient configuration is used.
       rietveld: The rietveld server to use. If omitted, will infer from
         the 'rietveld' property.
@@ -165,12 +162,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
         email_file = '/creds/rietveld/client_email'
         key_file = '/creds/rietveld/secret_key'
 
-    # Allow patch_project's revision if necessary.
-    # This is important for projects which are checked out as DEPS of the
-    # gclient solution.
-    self.m.gclient.set_patch_project_revision(
-        self.m.properties.get('patch_project'), cfg)
-
     reverse_rev_map = self.m.gclient.got_revision_reverse_mapping(cfg)
 
     flags = [
@@ -186,8 +177,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
         ['--issue', issue],
         ['--patchset', patchset],
         ['--rietveld_server', rietveld or self._rietveld],
-        ['--gerrit_repo', gerrit_repo],
-        ['--gerrit_ref', gerrit_ref],
         ['--apply_issue_email_file', email_file],
         ['--apply_issue_key_file', key_file],
         ['--apply_issue_oauth2_file', oauth2_json_file],
@@ -215,6 +204,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
           (k, v) for k, v in self.m.gclient.c.revisions.iteritems() if v)
     if cfg.solutions and root_solution_revision:
       revisions[cfg.solutions[0].name] = root_solution_revision
+    if gerrit_ref:
+      revisions[gerrit_repo] = gerrit_ref
     # Allow for overrides required to bisect into rolls.
     revisions.update(self._deps_revision_overrides)
 
@@ -248,10 +239,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
       cmd.append('--with_branch_heads')
     if with_tags:
       cmd.append('--with_tags')
-    if gerrit_no_reset:
-      cmd.append('--gerrit_no_reset')
-    if gerrit_no_rebase_patch_ref:
-      cmd.append('--gerrit_no_rebase_patch_ref')
     if disable_syntax_validation or cfg.disable_syntax_validation:
       cmd.append('--disable-syntax-validation')
 
@@ -276,6 +263,11 @@ class BotUpdateApi(recipe_api.RecipeApi):
       step_result = self(
            name, cmd, step_test_data=step_test_data,
            ok_ret=(0, 87, 88), **kwargs)
+
+      if gerrit_ref:
+        old_step_result = step_result
+        step_result = self._rebase_gerrit_ref(cfg)
+        step_result.json = old_step_result.json
     except self.m.step.StepFailure as f:
       step_result = f.result
       raise
@@ -438,6 +430,17 @@ class BotUpdateApi(recipe_api.RecipeApi):
         for prop, project in rev_reverse_map.iteritems()
         if project == project_name
     )
+
+  def _rebase_gerrit_ref(self, cfg):
+    patch_project = cfg.patch_projects.get(
+        self.m.properties.get('patch_project'))
+    path = self.m.path['checkout'].join(*patch_project)
+    destination_branch = self.m.gerrit.get_change_destination_branch(
+        host=self._gerrit,
+        change=self._issue,
+        name='get_patch_destination_branch',
+    )
+    return self.m.git.rebase('Rebase patch', destination_branch, path)
 
   def deapply_patch(self, bot_update_step):
     """Deapplies a patch, taking care of DEPS and solution revisions properly.

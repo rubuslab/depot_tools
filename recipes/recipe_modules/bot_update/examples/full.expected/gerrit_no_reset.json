@@ -18,7 +18,6 @@
       "/path/to/tmp/json",
       "--revision",
       "src@HEAD",
-      "--gerrit_no_reset",
       "--disable-syntax-validation"
     ],
     "env_prefixes": {

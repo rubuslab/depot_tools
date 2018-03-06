@@ -1784,6 +1784,7 @@ it or fix the checkout.
 
     if self._options.snapshot:
       new_gclient = ''
+      json_output = []
       # First level at .gclient
       for d in self.dependencies:
         entries = {}
@@ -1802,6 +1803,13 @@ it or fix the checkout.
             custom_deps.append('      \"%s\": \'%s\',\n' % (k, entries[k]))
           else:
             custom_deps.append('      \"%s\": None,\n' % k)
+        json_output.append({
+            'name': d.name,
+            'solution_url': d.url,
+            'deps_file': d.deps_file,
+            'managed': d.managed,
+            'custom_deps': entries,
+        })
         new_gclient += self.DEFAULT_SNAPSHOT_SOLUTION_TEXT % {
             'solution_name': d.name,
             'solution_url': d.url,
@@ -1811,6 +1819,9 @@ it or fix the checkout.
         }
       # Print the snapshot configuration file
       print(self.DEFAULT_SNAPSHOT_FILE_TEXT % {'solution_list': new_gclient})
+      if self._options.output_json:
+        with open(self._options.output_json, 'w') as f:
+          json.dump(json_output, f)
     else:
       entries = {}
       for d in self.root.subtree(False):
@@ -1823,6 +1834,16 @@ it or fix the checkout.
       keys = sorted(entries.keys())
       for x in keys:
         print('%s: %s' % (x, entries[x]))
+      if self._options.output_json:
+        json_output = {
+            name: {
+                'url': rev.split('@')[0],
+                'rev': rev.split('@')[1] if '@' in rev else None,
+            }
+            for name, rev in entries.iteritems()
+        }
+        with open(self._options.output_json, 'w') as f:
+          json.dump(json_output, f)
     logging.info(str(self))
 
   def ParseDepsFile(self):
@@ -2803,6 +2824,9 @@ def CMDrevinfo(parser, args):
   parser.add_option('-p', '--path', action='append',
                      help='Display revision information only for the specified '
                           'paths.')
+  parser.add_option('--output-json',
+                    help='Output a json document to this path containing '
+                         'information about the revisions.')
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
   if not client:

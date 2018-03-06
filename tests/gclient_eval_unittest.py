@@ -83,7 +83,7 @@ class ExecTest(unittest.TestCase):
         'invalid assignment: overrides var \'a\'', str(cm.exception))
 
   def test_schema_unknown_key(self):
-    with self.assertRaises(schema.SchemaWrongKeyError):
+    with self.assertRaises(schema.SchemaError):
       gclient_eval.Exec('foo = "bar"', {}, {}, '<string>')
 
   def test_schema_wrong_type(self):
@@ -92,7 +92,7 @@ class ExecTest(unittest.TestCase):
 
   def test_recursedeps_list(self):
     local_scope = {}
-    gclient_eval.Exec(
+    local_scope = gclient_eval.Exec(
         'recursedeps = [["src/third_party/angle", "DEPS.chromium"]]',
         {}, local_scope,
         '<string>')
@@ -105,7 +105,7 @@ class ExecTest(unittest.TestCase):
     global_scope = {
         'Var': lambda var_name: '{%s}' % var_name,
     }
-    gclient_eval.Exec('\n'.join([
+    local_scope = gclient_eval.Exec('\n'.join([
         'vars = {',
         '  "foo": "bar",',
         '}',

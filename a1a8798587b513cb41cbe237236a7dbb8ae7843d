@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15aa2873_fe62089b",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1812,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-06T23:56:00Z",
+      "side": 1,
+      "message": "If we\u0027re outputting json, we shouldn\u0027t also output plaintext; just one or the other.",
+      "range": {
+        "startLine": 1811,
+        "startChar": 0,
+        "endLine": 1812,
+        "endChar": 41
+      },
+      "revId": "a1a8798587b513cb41cbe237236a7dbb8ae7843d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

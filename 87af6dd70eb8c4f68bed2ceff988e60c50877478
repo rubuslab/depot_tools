@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ebedb355_da4bcc6c",
+        "filename": "gclient_eval.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-06T18:19:33Z",
+      "side": 1,
+      "message": "The probem with inheriting from OrderedDict is that it is not an interface, so if you override only some methods you get inconsistent behavior:\n\n  class A(OrderedDict):\n    def __getitem__(self, key):\n      return \u0027world\u0027 if key \u003d\u003d \u0027hello\u0027 else super().__getitem__(key)\n\n  \u003e\u003e\u003e a \u003d A()\n  \u003e\u003e\u003e a[\u0027hello\u0027]\n  \u0027world\u0027\n  \u003e\u003e\u003e a.get(\u0027hello\u0027)  # returns None\n  \u003e\u003e\u003e \n\nAnd we\u0027d like to override __getitem__ so that it returns only the value, and not the AST node.\n\nSo that\u0027s why I\u0027m inheriting from collections.Mapping, so I get something that behaves like a dict implementing a small set of methods (__getitem__, __iter__ and __len__).",
+      "parentUuid": "0188015c_7502400e",
+      "revId": "87af6dd70eb8c4f68bed2ceff988e60c50877478",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "25ef6564_53e9f0ec",
         "filename": "gclient_eval.py",
         "patchSetId": 3
@@ -39,6 +57,30 @@
       "revId": "87af6dd70eb8c4f68bed2ceff988e60c50877478",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d7fa4bf_984e3b6d",
+        "filename": "gclient_eval.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-06T18:19:33Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "25ef6564_53e9f0ec",
+      "range": {
+        "startLine": 32,
+        "startChar": 25,
+        "endLine": 32,
+        "endChar": 28
+      },
+      "revId": "87af6dd70eb8c4f68bed2ceff988e60c50877478",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

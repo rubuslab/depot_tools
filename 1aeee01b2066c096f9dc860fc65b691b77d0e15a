@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "93a934a6_3b337fed",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1795,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-07T00:48:26Z",
+      "side": 1,
+      "message": "Would be awesome to detect output_json being equal to the string \"--\", and writing to STDOUT in that case.",
+      "range": {
+        "startLine": 1794,
+        "startChar": 0,
+        "endLine": 1795,
+        "endChar": 0
+      },
+      "revId": "1aeee01b2066c096f9dc860fc65b691b77d0e15a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

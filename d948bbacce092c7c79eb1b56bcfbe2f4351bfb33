@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0a744595_caa80268",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T21:52:21Z",
+      "side": 1,
+      "message": "You\u0027re right. Done.",
+      "parentUuid": "51152994_d2fdd30d",
+      "range": {
+        "startLine": 966,
+        "startChar": 75,
+        "endLine": 966,
+        "endChar": 79
+      },
+      "revId": "d948bbacce092c7c79eb1b56bcfbe2f4351bfb33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "416d16a2_40f92f25",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "d948bbacce092c7c79eb1b56bcfbe2f4351bfb33",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7dbe863_10a40d23",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2587,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T21:52:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "416d16a2_40f92f25",
+      "range": {
+        "startLine": 2581,
+        "startChar": 0,
+        "endLine": 2587,
+        "endChar": 56
+      },
+      "revId": "d948bbacce092c7c79eb1b56bcfbe2f4351bfb33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "50688505_375ad6a1",
+        "filename": "recipes/recipe_modules/deps2submodules/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-03-07T00:02:13Z",
+      "side": 1,
+      "message": "I suspect this would be trivial to achieve with a few more tests",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 30
+      },
+      "revId": "fb50099f05ba34ad2049f78431289d442596ec86",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b551694_96398a25",
+        "filename": "recipes/recipe_modules/deps2submodules/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-03-07T00:02:13Z",
+      "side": 1,
+      "message": "if you set this to `()` then I think you don\u0027t need line 22",
+      "range": {
+        "startLine": 11,
+        "startChar": 55,
+        "endLine": 11,
+        "endChar": 59
+      },
+      "revId": "fb50099f05ba34ad2049f78431289d442596ec86",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d687638f_b3538035",
+        "filename": "recipes/recipe_modules/deps2submodules/resources/deps_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-03-07T00:02:13Z",
+      "side": 1,
+      "message": "why is this a separate script?",
+      "range": {
+        "startLine": 6,
+        "startChar": 3,
+        "endLine": 6,
+        "endChar": 51
+      },
+      "revId": "fb50099f05ba34ad2049f78431289d442596ec86",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

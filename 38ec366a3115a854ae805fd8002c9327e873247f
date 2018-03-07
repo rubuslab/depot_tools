@@ -283,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "7ddc4aac_61f183f5",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T23:13:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5028ed9a_37159c1c",
+      "range": {
+        "startLine": 355,
+        "startChar": 26,
+        "endLine": 355,
+        "endChar": 37
+      },
+      "revId": "38ec366a3115a854ae805fd8002c9327e873247f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a227d52_b95a07dd",
         "filename": "recipes/recipe_modules/gclient/api.py",
         "patchSetId": 7
@@ -294,6 +318,30 @@
       "writtenOn": "2018-03-07T21:51:22Z",
       "side": 1,
       "message": "This direct index is dangerous; it\u0027s possible that a bad URL could be passed in and then the output of \"gclient revinfo\" would be an empty dicitonary, and this would IndexError.",
+      "range": {
+        "startLine": 358,
+        "startChar": 36,
+        "endLine": 358,
+        "endChar": 39
+      },
+      "revId": "38ec366a3115a854ae805fd8002c9327e873247f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80904623_16af2b65",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T23:13:07Z",
+      "side": 1,
+      "message": "What about raising a ValueError explaining the error?",
+      "parentUuid": "1a227d52_b95a07dd",
       "range": {
         "startLine": 358,
         "startChar": 36,

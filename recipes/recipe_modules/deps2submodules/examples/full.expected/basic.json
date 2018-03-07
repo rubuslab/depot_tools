@@ -1,0 +1,193 @@
+[
+  {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_PACKAGE_REPO[depot_tools]/gclient.py",
+      "config",
+      "--spec",
+      "cache_dir = '[CACHE]/git'\nsolutions = [{'deps_file': '.DEPS.git', 'managed': True, 'name': 'infra', 'url': 'https://chromium.googlesource.com/infra/infra.git'}]"
+    ],
+    "env": {
+      "PATH": "<PATH>:RECIPE_PACKAGE_REPO[depot_tools]"
+    },
+    "infra_step": true,
+    "name": "gclient setup"
+  },
+  {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_PACKAGE_REPO[depot_tools]/gclient.py",
+      "sync",
+      "--verbose",
+      "--nohooks",
+      "-j8",
+      "--reset",
+      "--force",
+      "--upstream",
+      "--no-nag-max",
+      "--with_branch_heads",
+      "--with_tags",
+      "--delete_unversioned_trees",
+      "--output-json",
+      "/path/to/tmp/json"
+    ],
+    "env": {
+      "PATH": "<PATH>:RECIPE_PACKAGE_REPO[depot_tools]"
+    },
+    "infra_step": true,
+    "name": "gclient sync",
+    "~followup_annotations": [
+      "@@@STEP_LOG_LINE@json.output@{@@@",
+      "@@@STEP_LOG_LINE@json.output@  \"solutions\": {@@@",
+      "@@@STEP_LOG_LINE@json.output@    \"infra/\": {@@@",
+      "@@@STEP_LOG_LINE@json.output@      \"revision\": \"5e03a58dc0850e5137a8ebbce29610670c756aed\"@@@",
+      "@@@STEP_LOG_LINE@json.output@    }@@@",
+      "@@@STEP_LOG_LINE@json.output@  }@@@",
+      "@@@STEP_LOG_LINE@json.output@}@@@",
+      "@@@STEP_LOG_END@json.output@@@",
+      "@@@SET_BUILD_PROPERTY@got_revision@\"5e03a58dc0850e5137a8ebbce29610670c756aed\"@@@"
+    ]
+  },
+  {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_PACKAGE_REPO[depot_tools]/gclient.py",
+      "recurse",
+      "git",
+      "config",
+      "user.name",
+      "local_bot"
+    ],
+    "env": {
+      "PATH": "<PATH>:RECIPE_PACKAGE_REPO[depot_tools]"
+    },
+    "infra_step": true,
+    "name": "gclient recurse (git config user.name)"
+  },
+  {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_PACKAGE_REPO[depot_tools]/gclient.py",
+      "recurse",
+      "git",
+      "config",
+      "user.email",
+      "local_bot@example.com"
+    ],
+    "env": {
+      "PATH": "<PATH>:RECIPE_PACKAGE_REPO[depot_tools]"
+    },
+    "infra_step": true,
+    "name": "gclient recurse (git config user.email)"
+  },
+  {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_MODULE[depot_tools::git]/resources/git_setup.py",
+      "--path",
+      "[START_DIR]/submods",
+      "--url",
+      "https://chromium.googlesource.com/infra/submods"
+    ],
+    "name": "git setup"
+  },
+  {
+    "cmd": [
+      "git",
+      "retry",
+      "fetch",
+      "origin",
+      "master",
+      "--progress"
+    ],
+    "cwd": "[START_DIR]/submods",
+    "env": {
+      "PATH": "RECIPE_PACKAGE_REPO[depot_tools]:<PATH>"
+    },
+    "infra_step": true,
+    "name": "git fetch"
+  },
+  {
+    "cmd": [
+      "git",
+      "checkout",
+      "-f",
+      "FETCH_HEAD"
+    ],
+    "cwd": "[START_DIR]/submods",
+    "infra_step": true,
+    "name": "git checkout"
+  },
+  {
+    "cmd": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "[START_DIR]/submods",
+    "infra_step": true,
+    "name": "read revision",
+    "stdout": "/path/to/tmp/",
+    "~followup_annotations": [
+      "@@@STEP_TEXT@<br/>checked out 'deadbeef'<br/>@@@"
+    ]
+  },
+  {
+    "cmd": [
+      "git",
+      "clean",
+      "-f",
+      "-d",
+      "-x"
+    ],
+    "cwd": "[START_DIR]/submods",
+    "infra_step": true,
+    "name": "git clean"
+  },
+  {
+    "cmd": [
+      "git",
+      "submodule",
+      "sync"
+    ],
+    "cwd": "[START_DIR]/submods",
+    "infra_step": true,
+    "name": "submodule sync"
+  },
+  {
+    "cmd": [
+      "git",
+      "submodule",
+      "update",
+      "--init",
+      "--recursive"
+    ],
+    "cwd": "[START_DIR]/submods",
+    "infra_step": true,
+    "name": "submodule update"
+  },
+  {
+    "cmd": [
+      "python",
+      "RECIPE_MODULE[depot_tools::deps2submodules]/resources/deps2submodules.py",
+      "[START_DIR]/infra/DEPS",
+      "--enable-recurse-deps",
+      "--path-prefix",
+      "infra",
+      "--extra-submodule",
+      "out=https://chromium.googlesource.com/infra/out"
+    ],
+    "cwd": "[START_DIR]/submods",
+    "name": "deps2submodules"
+  },
+  {
+    "name": "$result",
+    "recipe_result": null,
+    "status_code": 0
+  }
+]

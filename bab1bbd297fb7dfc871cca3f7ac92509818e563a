@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eca15d0_a158677b",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T01:18:18Z",
+      "side": 1,
+      "message": "While I implement get_name_by_url.",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 56
+      },
+      "revId": "bab1bbd297fb7dfc871cca3f7ac92509818e563a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e19793a3_cf2baf73",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T01:18:18Z",
+      "side": 1,
+      "message": "TODO",
+      "range": {
+        "startLine": 355,
+        "startChar": 12,
+        "endLine": 355,
+        "endChar": 17
+      },
+      "revId": "bab1bbd297fb7dfc871cca3f7ac92509818e563a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

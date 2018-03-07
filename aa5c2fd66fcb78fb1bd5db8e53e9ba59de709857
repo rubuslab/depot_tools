@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bdd3026c_99f9ff95",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1246212
+      },
+      "writtenOn": "2018-03-07T00:57:49Z",
+      "side": 1,
+      "message": "If you wanted to, you might also say that it makes it easier to reuse in other contexts (er, well, at least in other recipes).  (But it\u0027s also fine not to bother mentioning that.)",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "aa5c2fd66fcb78fb1bd5db8e53e9ba59de709857",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bee0354d_355ccbab",
+        "filename": "recipes/recipe_modules/deps2submodules/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1246212
+      },
+      "writtenOn": "2018-03-07T00:57:49Z",
+      "side": 1,
+      "message": "nit: this implies that the repo must already have the submodules.  But isn\u0027t it true that this works even if it doesn\u0027t (yet)?  In other words, would it be more precise to describe this somehow as the repo upon which the git operations will be performed?",
+      "range": {
+        "startLine": 15,
+        "startChar": 56,
+        "endLine": 15,
+        "endChar": 75
+      },
+      "revId": "aa5c2fd66fcb78fb1bd5db8e53e9ba59de709857",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b29af61_2e431cc2",
+        "filename": "recipes/recipe_modules/deps2submodules/examples/full.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1246212
+      },
+      "writtenOn": "2018-03-07T00:57:49Z",
+      "side": 1,
+      "message": "I suppose if I were to study the checkout method of GitApi I would find that it\u0027s acceptable for the named remote repo not to exist.  But that method\u0027s doc string doesn\u0027t clearly say so.  Would a comment here be worthwhile, just saying that there is no such repo, and that that\u0027s fine because checkout() does blah, blah, blah?",
+      "range": {
+        "startLine": 18,
+        "startChar": 10,
+        "endLine": 18,
+        "endChar": 18
+      },
+      "revId": "aa5c2fd66fcb78fb1bd5db8e53e9ba59de709857",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

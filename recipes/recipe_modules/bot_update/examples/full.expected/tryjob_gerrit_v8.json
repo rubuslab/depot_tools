@@ -3,6 +3,29 @@
     "cmd": [
       "python",
       "-u",
+      "RECIPE_PACKAGE_REPO[depot_tools]/gclient.py",
+      "revinfo",
+      "--output-json",
+      "/path/to/tmp/json",
+      "--url",
+      "https://chromium.googlesource.com/v8/v8"
+    ],
+    "env": {
+      "PATH": "<PATH>:RECIPE_PACKAGE_REPO[depot_tools]"
+    },
+    "infra_step": true,
+    "name": "gclient revinfo gerrit_url",
+    "~followup_annotations": [
+      "@@@STEP_LOG_LINE@json.output@{@@@",
+      "@@@STEP_LOG_LINE@json.output@  \"src/v8\": \"fake rev info\"@@@",
+      "@@@STEP_LOG_LINE@json.output@}@@@",
+      "@@@STEP_LOG_END@json.output@@@"
+    ]
+  },
+  {
+    "cmd": [
+      "python",
+      "-u",
       "RECIPE_PACKAGE_REPO[depot_tools]/gerrit_client.py",
       "changes",
       "--host",
@@ -64,6 +87,10 @@
       "refs/changes/11/338811/3",
       "--output_json",
       "/path/to/tmp/json",
+      "--gerrit_dest_branch",
+      "HEAD",
+      "--revision",
+      "https://chromium.googlesource.com/v8/v8@refs/changes/11/338811/3",
       "--revision",
       "src@HEAD",
       "--revision",
@@ -82,6 +109,7 @@
       "@@@STEP_LOG_LINE@json.output@{@@@",
       "@@@STEP_LOG_LINE@json.output@  \"did_run\": true, @@@",
       "@@@STEP_LOG_LINE@json.output@  \"fixed_revisions\": {@@@",
+      "@@@STEP_LOG_LINE@json.output@    \"https://chromium.googlesource.com/v8/v8\": \"refs/changes/11/338811/3\", @@@",
       "@@@STEP_LOG_LINE@json.output@    \"src\": \"HEAD\", @@@",
       "@@@STEP_LOG_LINE@json.output@    \"src/v8\": \"HEAD\"@@@",
       "@@@STEP_LOG_LINE@json.output@  }, @@@",

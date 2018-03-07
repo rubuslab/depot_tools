@@ -50,7 +50,7 @@ Wrapper for easy calling of bot_update.
 
 &mdash; **def [apply\_gerrit\_ref](/recipes/recipe_modules/bot_update/api.py#46)(self, root, gerrit_no_reset=False, gerrit_no_rebase_patch_ref=False, gerrit_repo=None, gerrit_ref=None, step_name='apply_gerrit', \*\*kwargs):**
 
-&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#442)(self, bot_update_step):**
+&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#420)(self, bot_update_step):**
 
 Deapplies a patch, taking care of DEPS and solution revisions properly.
     
@@ -74,7 +74,7 @@ Args:
   manifest_name: The name of the manifest to upload to LogDog.  This must
     be unique for the whole build.
 
-&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#419)(self, project_name, gclient_config=None):**
+&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#397)(self, project_name, gclient_config=None):**
 
 Returns all property names used for storing the checked-out revision of
 a given project.
@@ -267,6 +267,8 @@ Return a step generator function for gclient checkouts.
 &emsp; **@staticmethod**<br>&mdash; **def [config\_to\_pythonish](/recipes/recipe_modules/gclient/api.py#125)(cfg):**
 
 &mdash; **def [get\_config\_defaults](/recipes/recipe_modules/gclient/api.py#119)(self):**
+
+&mdash; **def [get\_dep\_name\_by\_url](/recipes/recipe_modules/gclient/api.py#354)(self, dep_url):**
 
 &emsp; **@staticmethod**<br>&mdash; **def [got\_revision\_reverse\_mapping](/recipes/recipe_modules/gclient/api.py#130)(cfg):**
 
@@ -782,9 +784,9 @@ like checkout or compile), and some of these tests have failed.
 &mdash; **def [RunSteps](/recipes/recipes/fetch_end_to_end_test.py#16)(api):**
 ### *recipes* / [gclient:examples/full](/recipes/recipe_modules/gclient/examples/full.py)
 
-[DEPS](/recipes/recipe_modules/gclient/examples/full.py#5): [gclient](#recipe_modules-gclient), [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
+[DEPS](/recipes/recipe_modules/gclient/examples/full.py#5): [gclient](#recipe_modules-gclient), [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/gclient/examples/full.py#45)(api):**
+&mdash; **def [RunSteps](/recipes/recipe_modules/gclient/examples/full.py#46)(api):**
 ### *recipes* / [gclient:tests/patch\_project](/recipes/recipe_modules/gclient/tests/patch_project.py)
 
 [DEPS](/recipes/recipe_modules/gclient/tests/patch_project.py#9): [gclient](#recipe_modules-gclient), [recipe\_engine/properties][recipe_engine/recipe_modules/properties]

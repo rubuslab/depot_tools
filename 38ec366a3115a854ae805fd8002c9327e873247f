@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d1d6c546_b82a1607",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T22:16:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b087bf8c_d5a66067",
+      "range": {
+        "startLine": 120,
+        "startChar": 4,
+        "endLine": 120,
+        "endChar": 13
+      },
+      "revId": "38ec366a3115a854ae805fd8002c9327e873247f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ac69548_e4d5ba1e",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2018-03-07T21:51:22Z",
       "side": 1,
       "message": "I don\u0027t think this is necessary, and may even be harmful, since HEAD can do weird things. Is there a reason for this I\u0027m missing?\n\nOh, I see that this is how it is currently done. Fair enough. Include a TODO to investigate removing this.",
+      "range": {
+        "startLine": 177,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 40
+      },
+      "revId": "38ec366a3115a854ae805fd8002c9327e873247f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9bf9edec_3da4594f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T22:16:16Z",
+      "side": 1,
+      "message": "Now that I think about it, it is a bad idea to have it here. We want to rebase on top of master, not HEAD.\nI think it should be OK to remove it, since we\u0027re using the destination branch in a different way (i.e. it\u0027s no longer an argument to gclient sync).",
+      "parentUuid": "9ac69548_e4d5ba1e",
       "range": {
         "startLine": 177,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ff35b472_a859d475",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T22:16:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56d7908a_2b59f863",
+      "range": {
+        "startLine": 765,
+        "startChar": 44,
+        "endLine": 765,
+        "endChar": 48
+      },
+      "revId": "38ec366a3115a854ae805fd8002c9327e873247f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a72e0c66_aef212e4",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 7
@@ -94,6 +166,53 @@
     },
     {
       "key": {
+        "uuid": "7ee557a9_98190c65",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T22:16:16Z",
+      "side": 1,
+      "message": "No. Fixed.",
+      "parentUuid": "a72e0c66_aef212e4",
+      "range": {
+        "startLine": 767,
+        "startChar": 0,
+        "endLine": 767,
+        "endChar": 40
+      },
+      "revId": "38ec366a3115a854ae805fd8002c9327e873247f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31923b05_f2013849",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T22:16:16Z",
+      "side": 1,
+      "message": "Should it be origin/dest_branch?\nAlso, do you know if such reference will already be present, or should we fetch it?",
+      "range": {
+        "startLine": 767,
+        "startChar": 18,
+        "endLine": 767,
+        "endChar": 29
+      },
+      "revId": "38ec366a3115a854ae805fd8002c9327e873247f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e81f7525_76ea416f",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 7
@@ -105,6 +224,30 @@
       "writtenOn": "2018-03-07T21:51:22Z",
       "side": 1,
       "message": "Moving arguments around like this is pretty dangerous, but I guess because this is a recipe resource we know that it doesn\u0027t have any other external callers, so it should be safe this time.",
+      "range": {
+        "startLine": 834,
+        "startChar": 39,
+        "endLine": 834,
+        "endChar": 54
+      },
+      "revId": "38ec366a3115a854ae805fd8002c9327e873247f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c78332f_834b5af5",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T22:16:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e81f7525_76ea416f",
       "range": {
         "startLine": 834,
         "startChar": 39,

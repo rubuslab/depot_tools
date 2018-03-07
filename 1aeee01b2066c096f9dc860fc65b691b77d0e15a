@@ -22,6 +22,30 @@
       "revId": "1aeee01b2066c096f9dc860fc65b691b77d0e15a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba947b83_5c2af320",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1795,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-07T01:04:03Z",
+      "side": 1,
+      "message": "As in --output_json\u003d--?\nIs that it convention? Hadn\u0027t seen it before.",
+      "parentUuid": "93a934a6_3b337fed",
+      "range": {
+        "startLine": 1794,
+        "startChar": 0,
+        "endLine": 1795,
+        "endChar": 0
+      },
+      "revId": "1aeee01b2066c096f9dc860fc65b691b77d0e15a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

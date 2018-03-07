@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51152994_d2fdd30d",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-07T21:23:23Z",
+      "side": 1,
+      "message": "I think this default needs to change to be \u0027revision_override\u0027, so that specifying just \"-r src@foo\" doesn\u0027t get overridden back to None because it wasn\u0027t specified by url.",
+      "range": {
+        "startLine": 966,
+        "startChar": 75,
+        "endLine": 966,
+        "endChar": 79
+      },
+      "revId": "d948bbacce092c7c79eb1b56bcfbe2f4351bfb33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "416d16a2_40f92f25",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2587,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-07T21:23:23Z",
+      "side": 1,
+      "message": "update this doc to show that you can specify URLs as well as paths.",
+      "range": {
+        "startLine": 2581,
+        "startChar": 0,
+        "endLine": 2587,
+        "endChar": 56
+      },
+      "revId": "d948bbacce092c7c79eb1b56bcfbe2f4351bfb33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

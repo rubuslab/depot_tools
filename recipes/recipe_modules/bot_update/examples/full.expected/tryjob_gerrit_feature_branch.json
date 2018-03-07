@@ -64,8 +64,12 @@
       "refs/changes/11/338811/3",
       "--output_json",
       "/path/to/tmp/json",
+      "--gerrit_dest_branch",
+      "experimental/feature",
       "--revision",
-      "src@experimental/feature",
+      "https://chromium.googlesource.com/chromium/src@refs/changes/11/338811/3",
+      "--revision",
+      "src@HEAD",
       "--disable-syntax-validation"
     ],
     "env_prefixes": {
@@ -80,6 +84,7 @@
       "@@@STEP_LOG_LINE@json.output@{@@@",
       "@@@STEP_LOG_LINE@json.output@  \"did_run\": true, @@@",
       "@@@STEP_LOG_LINE@json.output@  \"fixed_revisions\": {@@@",
+      "@@@STEP_LOG_LINE@json.output@    \"https://chromium.googlesource.com/chromium/src\": \"refs/changes/11/338811/3\", @@@",
       "@@@STEP_LOG_LINE@json.output@    \"src\": \"HEAD\"@@@",
       "@@@STEP_LOG_LINE@json.output@  }, @@@",
       "@@@STEP_LOG_LINE@json.output@  \"manifest\": {@@@",
@@ -163,7 +168,7 @@
       "--output_json",
       "/path/to/tmp/json",
       "--revision",
-      "src@f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9"
+      "src@experimental/feature"
     ],
     "env_prefixes": {
       "PATH": [
@@ -177,7 +182,7 @@
       "@@@STEP_LOG_LINE@json.output@{@@@",
       "@@@STEP_LOG_LINE@json.output@  \"did_run\": true, @@@",
       "@@@STEP_LOG_LINE@json.output@  \"fixed_revisions\": {@@@",
-      "@@@STEP_LOG_LINE@json.output@    \"src\": \"f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9\"@@@",
+      "@@@STEP_LOG_LINE@json.output@    \"src\": \"experimental/feature\"@@@",
       "@@@STEP_LOG_LINE@json.output@  }, @@@",
       "@@@STEP_LOG_LINE@json.output@  \"manifest\": {@@@",
       "@@@STEP_LOG_LINE@json.output@    \"src\": {@@@",

@@ -350,3 +350,6 @@ class GclientApi(recipe_api.RecipeApi):
     path, revision = cfg.patch_projects.get(patch_project, (None, None))
     if path and revision and path not in cfg.revisions:
       cfg.revisions[path] = revision
+
+  def get_name_by_url(self, url):
+    return "lemur"

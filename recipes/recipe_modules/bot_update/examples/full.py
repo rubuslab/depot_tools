@@ -209,16 +209,25 @@ def GenTests(api):
   )
   yield api.test('tryjob_v8_head_by_default') + api.properties.tryserver(
       patch_project='v8',
+  ) + api.step_data(
+      'gclient revinfo',
+      api.json.output({'src/v8': 'fake rev info'})
   )
   yield api.test('tryjob_gerrit_angle') + api.properties.tryserver(
       gerrit_project='angle/angle',
       patch_issue=338811,
       patch_set=3,
+  ) + api.step_data(
+      'gclient revinfo',
+      api.json.output({'src/third_party/angle': 'fake rev info'})
   )
   yield api.test('tryjob_gerrit_v8') + api.properties.tryserver(
       gerrit_project='v8/v8',
       patch_issue=338811,
       patch_set=3,
+  ) + api.override_step_data(
+      'gclient revinfo',
+      api.json.output({'src/v8': 'fake rev info'})
   )
   yield api.test('tryjob_gerrit_v8_feature_branch') + api.properties.tryserver(
       gerrit_project='v8/v8',
@@ -227,6 +236,9 @@ def GenTests(api):
   ) + api.step_data(
       'gerrit get_patch_destination_branch',
       api.gerrit.get_one_change_response_data(branch='experimental/feature'),
+  ) + api.step_data(
+      'gclient revinfo',
+      api.json.output({'src/v8': 'fake rev info'})
   )
   yield api.test('tryjob_gerrit_feature_branch') + api.properties.tryserver(
       buildername='feature_rel',
@@ -236,6 +248,9 @@ def GenTests(api):
   ) + api.step_data(
       'gerrit get_patch_destination_branch',
       api.gerrit.get_one_change_response_data(branch='experimental/feature'),
+  ) + api.step_data(
+      'gclient revinfo',
+      api.json.output({'src': 'fake rev info'})
   )
   yield api.test('tryjob_gerrit_angle_deprecated') + api.properties.tryserver(
       patch_project='angle/angle',
@@ -250,10 +265,16 @@ def GenTests(api):
           'https://chromium-review.googlesource.com/#/c/338811',
         'event.patchSet.ref': 'refs/changes/11/338811/3',
       }
+  ) + api.step_data(
+      'gclient revinfo',
+      api.json.output({'src/third_party/angle': 'fake rev info'})
   )
   yield api.test('tryjob_gerrit_webrtc') + api.properties.tryserver(
       gerrit_project='src',
       git_url='https://webrtc.googlesource.com/src',
       patch_issue=338811,
       patch_set=3,
+  ) + api.step_data(
+      'gclient revinfo',
+      api.json.output({'src/third_party/webrtc': 'fake rev info'})
   )

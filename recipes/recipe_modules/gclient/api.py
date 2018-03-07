@@ -350,3 +350,11 @@ class GclientApi(recipe_api.RecipeApi):
     path, revision = cfg.patch_projects.get(patch_project, (None, None))
     if path and revision and path not in cfg.revisions:
       cfg.revisions[path] = revision
+
+  def get_dep_name_by_url(self, dep_url):
+    result = self('revinfo',
+                  ['revinfo', '--output-json', self.m.json.output(),
+                   '--url', dep_url])
+    if not result.json.output: # pragma: no cover
+      raise ValueError('%s does not correspond to the URL of any dependency.')
+    return result.json.output.keys()[0]

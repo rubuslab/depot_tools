@@ -350,3 +350,9 @@ class GclientApi(recipe_api.RecipeApi):
     path, revision = cfg.patch_projects.get(patch_project, (None, None))
     if path and revision and path not in cfg.revisions:
       cfg.revisions[path] = revision
+
+  def get_dep_name_by_url(self, dep_url):
+    result = self('revinfo gerrit_url',
+                  ['revinfo', '--output-json', self.m.json.output(),
+                   '--url', dep_url])
+    return result.json.output.keys()[0]

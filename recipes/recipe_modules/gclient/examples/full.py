@@ -5,6 +5,7 @@
 DEPS = [
   'gclient',
   'recipe_engine/context',
+  'recipe_engine/json',
   'recipe_engine/path',
   'recipe_engine/properties',
   'recipe_engine/step',
@@ -78,6 +79,9 @@ def RunSteps(api):
 
   assert not api.gclient.is_blink_mode
 
+  if 'patch_gerrit_url' in api.properties:
+    assert api.gclient.get_dep_name_by_url('fake_url') == 'src/fake_dep'
+
 
 def GenTests(api):
   yield api.test('basic')
@@ -86,4 +90,6 @@ def GenTests(api):
 
   yield api.test('revision') + api.properties(revision='abc')
 
-  yield api.test('tryserver') + api.properties.tryserver()
+  yield api.test('tryserver') + api.properties.tryserver() + api.step_data(
+      'gclient revinfo gerrit_url',
+      api.json.output({'src/fake_dep': 'fake_rev_info'}))

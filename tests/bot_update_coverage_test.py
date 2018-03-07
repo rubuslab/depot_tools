@@ -155,6 +155,7 @@ class BotUpdateUnittests(unittest.TestCase):
       'gerrit_repo': None,
       'gerrit_ref': None,
       'gerrit_rebase_patch_ref': None,
+      'gerrit_dest_branch': None,
       'revision_mapping': {},
       'apply_issue_email_file': None,
       'apply_issue_key_file': None,

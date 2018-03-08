@@ -6,6 +6,7 @@
 
 import datetime
 import os
+import re
 import shutil
 import StringIO
 import sys
@@ -128,7 +129,9 @@ class GitHyperBlameMainTest(GitHyperBlameTestBase):
 
     self.assertNotEqual(0, retval)
     self.assertEqual('', stdout.getvalue())
-    self.assertRegexpMatches(stderr.getvalue(), '^fatal: Not a git repository')
+    self.assertRegexpMatches(
+        stderr.getvalue(),
+        re.compile('^fatal: not a git repository', flags=re.IGNORECASE))
 
   def testBadFilename(self):
     """Tests the main function (bad filename)."""

@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c3dc03c_7b57d78d",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2834,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-08T22:52:51Z",
+      "side": 1,
+      "message": "Instead of defaulting to the one in the current dir, how about defaulting to the one pointed at by the .gclient file in the root of the gclient checkout?",
+      "range": {
+        "startLine": 2833,
+        "startChar": 54,
+        "endLine": 2834,
+        "endChar": 56
+      },
+      "revId": "dfbaf37a197d8054a77ca6eb86b4c53b0c03f99a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e358e0c_8bfa6520",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2838,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-08T22:52:51Z",
+      "side": 1,
+      "message": "It would be great if all the spots that specify this initial global_scope dict could be unified into a single function that returns a fresh global scope. I think there are two others in this file?",
+      "revId": "dfbaf37a197d8054a77ca6eb86b4c53b0c03f99a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff5912c9_26c7c6aa",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2844,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-08T22:52:51Z",
+      "side": 1,
+      "message": "For consistency with line 1598, specify .split(\u0027@\u0027, 1).",
+      "range": {
+        "startLine": 2844,
+        "startChar": 15,
+        "endLine": 2844,
+        "endChar": 34
+      },
+      "revId": "dfbaf37a197d8054a77ca6eb86b4c53b0c03f99a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "084a2b48_1de19e4c",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2847,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-08T22:52:51Z",
+      "side": 1,
+      "message": "How easy would it be to accept cipd packages with the same -r/--revision flag, and just expect a format of path/to/package:package/name@version? Added bonus, could then add the same logic to CMDsync in a followup CL.",
+      "revId": "dfbaf37a197d8054a77ca6eb86b4c53b0c03f99a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4cd670f_59296054",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2856,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-08T22:52:51Z",
+      "side": 1,
+      "message": "Honestly, since this takes a separate --var flag anyway, I\u0027d bundle it into CMDsetdep since they\u0027re semantically very similar.\n\nA ridiculous bonus would be for this to work:\nvars \u003d {\n  \u0027foo_revision\u0027: \u0027asdf\u0027\n}\ndeps \u003d {\n  \"foo\": \"http://domain.tld/repo.git@\" + Var(\u0027foo_revision\u0027)\n}\n$ gclient setdep -r foo@qwer\n\u003cupdates the value of foo_revision\u003e\nThat would be truly magical. That can come later, if at all.",
+      "revId": "dfbaf37a197d8054a77ca6eb86b4c53b0c03f99a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

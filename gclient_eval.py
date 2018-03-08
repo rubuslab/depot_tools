@@ -37,6 +37,12 @@ _GCLIENT_DEPS_SCHEMA = {
             schema.Optional('condition'): basestring,
 
             schema.Optional('dep_type', default='cipd'): basestring,
+
+            # Location of the CIPD root relative to the gclient root.
+            # If not specified, this defaults to the directory containing
+            # the current DEPS file. This should not typically be used
+            # outside of flattened DEPS.
+            schema.Optional('root_dir'): basestring,
         },
     ),
 }

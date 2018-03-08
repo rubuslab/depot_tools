@@ -1301,7 +1301,7 @@ class CipdRoot(object):
     packages.
     """
     with self._mutator_lock:
-      cipd_cache_dir = os.path.join(self._cipd_root, '.cipd')
+      cipd_cache_dir = os.path.join(self.root_dir, '.cipd')
       try:
         gclient_utils.rmtree(os.path.join(cipd_cache_dir))
       except OSError:

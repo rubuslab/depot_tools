@@ -455,8 +455,6 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     ])
     return s
 
-
-
   @property
   def requirements(self):
     """Calculate the list of requirements."""
@@ -676,7 +674,6 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
   def _deps_to_objects(self, deps, use_relative_paths):
     """Convert a deps dict to a dict of Dependency objects."""
     deps_to_add = []
-    cipd_root = None
     for name, dep_value in deps.iteritems():
       should_process = self.recursion_limit and self.should_process
       deps_file = self.deps_file
@@ -709,14 +706,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
           should_process = should_process and condition_value
 
       if dep_type == 'cipd':
-        if not cipd_root:
-          cipd_root = gclient_scm.CipdRoot(
-              os.path.join(self.root.root_dir, self.name),
-              # TODO(jbudorick): Support other service URLs as necessary.
-              # Service URLs should be constant over the scope of a cipd
-              # root, so a var per DEPS file specifying the service URL
-              # should suffice.
-              'https://chrome-infra-packages.appspot.com')
+        cipd_root = self.GetCipdRoot(
+            dep_value.get('root_dir') or self.name)
         for package in dep_value.get('packages', []):
           if 'version' in package:
             # Matches version to vars value.
@@ -1170,6 +1161,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     for hook in self.pre_deps_hooks:
       hook.run(self.root.root_dir)
 
+  def GetCipdRoot(self, cipd_root):
+    if self.root is self:
+      # Let's not infinitely recurse. If this is root and isn't an
+      # instance of GClient, do nothing.
+      return None
+    return self.root.GetCipdRoot(cipd_root)
+
   def subtree(self, include_all):
     """Breadth first recursion excluding root node."""
     dependencies = self.dependencies
@@ -1409,6 +1407,7 @@ solutions = [
     self._enforced_os = tuple(set(enforced_os))
     self._enforced_cpu = detect_host_arch.HostArch(),
     self._root_dir = root_dir
+    self._cipd_roots = {}
     self.config_content = None
 
   def _CheckConfig(self):
@@ -1822,6 +1821,17 @@ it or fix the checkout.
     print('Loaded .gclient config in %s:\n%s' % (
         self.root_dir, self.config_content))
 
+  def GetCipdRoot(self, cipd_root_dir):
+    if not cipd_root_dir in self._cipd_roots:
+      self._cipd_roots[cipd_root_dir] = gclient_scm.CipdRoot(
+          os.path.join(self.root.root_dir, cipd_root_dir),
+          # TODO(jbudorick): Support other service URLs as necessary.
+          # Service URLs should be constant over the scope of a cipd
+          # root, so a var per DEPS file specifying the service URL
+          # should suffice.
+          'https://chrome-infra-packages.appspot.com')
+    return self._cipd_roots[cipd_root_dir]
+
   @property
   def root_dir(self):
     """Root directory of gclient checkout."""
@@ -1934,10 +1944,14 @@ class CipdDependency(Dependency):
             '        "version": "%s",' % p.version,
             '      },',
         ])
+
+      cipd_root_dir = os.path.relpath(
+          self._cipd_root.root_dir, self.root.root_dir)
       s.extend([
           '    ],',
           '    "dep_type": "cipd",',
       ] + condition_part + [
+          '    "root_dir": "%s",' % cipd_root_dir,
           '  },',
           '',
       ])

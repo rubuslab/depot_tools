@@ -1147,6 +1147,7 @@ class GClientSmokeGIT(GClientSmokeBase):
         '      },',
         '    ],',
         '    "dep_type": "cipd",',
+        '    "root_dir": "src",',
         '  },',
         '',
         '}',

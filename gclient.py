@@ -2818,6 +2818,40 @@ def CMDrevinfo(parser, args):
   return 0
 
 
+def CMDsetdeps(parser, args):
+  parser.add_option('-r', '--revision', action='append',
+                    dest='revisions', metavar='REV', default=[],
+                    help='Sets the revision/hash for the dependencies with the '
+                         'format dep@rev, where dep can be a path such as '
+                         'src/some/dep, and rev can be a git hash or a git '
+                         'ref.')
+  parser.add_option('-c', '--cipd', action='append',
+                    dest='cipd_packages', metavar='CIPD', default=[],
+                    help='Sets the version for a CIPD package with the format '
+                         'path@package:version.')
+  parser.add_option('--deps-file', default='DEPS',
+                    help='The DEPS file to be edited. Defaults to the DEPS '
+                         'file in the current directory.')
+  (options, args) = parser.parse_args(args)
+  # TODO: All error handling.
+
+  global_scope = {'Var': lambda var: '{%s}' % var}
+  with open(options.deps_file) as f:
+    contents = f.read()
+  local_scope = gclient_eval.Exec(contents, global_scope, {})
+
+  for revision in options.revisions:
+    dep, rev = revision.split('@')
+    gclient_eval.EditRevision(local_scope, global_scope, dep, rev)
+
+  for cipd_package in options.cipd_packages:
+    dep, rev = cipd_package.split('@')
+    package, version = rev.split(':')
+    gclient_eval.EditCIPD(local_scope, dep, package, version)
+
+  gclient_eval.WriteToFile(local_scope, options.deps_file)
+
+
 def CMDverify(parser, args):
   """Verifies the DEPS file deps are only from allowed_hosts."""
   (options, args) = parser.parse_args(args)

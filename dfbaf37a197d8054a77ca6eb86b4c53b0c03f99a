@@ -114,6 +114,24 @@
       "revId": "dfbaf37a197d8054a77ca6eb86b4c53b0c03f99a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "548106a0_72060a52",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2856,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-08T23:16:23Z",
+      "side": 1,
+      "message": "Oh man, I totally missed gclient_eval:418. That\u0027s awesome, and should happen in SetCIPD as well. It\u0027s also even more reason to unify these CMDsetdep and CMDsetvar to keep the CLI clean.",
+      "parentUuid": "a9423206_0d2304f2",
+      "revId": "dfbaf37a197d8054a77ca6eb86b4c53b0c03f99a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

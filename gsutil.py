@@ -145,7 +145,7 @@ def run_gsutil(force_version, fallback, target, args, clean=False):
   # and "boto" packages that are not met with non-system Python (e.g., bundles).
   cmd = [
       'vpython',
-      '-vpython-spec', os.path.join(THIS_DIR, 'gsutil.vpython'),
+      '-vpython-spec', os.path.join(THIS_DIR, 'gsutil.py.vpython'),
       '--',
       gsutil_bin
   ] + disable_update + args

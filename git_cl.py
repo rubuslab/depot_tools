@@ -2378,6 +2378,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     self.GetCodereviewServer()
     git_host = self._GetGitHost()
     assert self._gerrit_server and self._gerrit_host
+    if self._gerrit_server.startswith("sso://"):
+      return
     cookie_auth = gerrit_util.CookiesAuthenticator()
 
     gerrit_auth = cookie_auth.get_auth_header(self._gerrit_host)

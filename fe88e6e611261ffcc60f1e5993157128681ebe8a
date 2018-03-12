@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c56978ce_bca564c2",
+        "filename": "recipes/recipe_modules/bot_update/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-12T18:52:54Z",
+      "side": 1,
+      "message": "My version of this patchset (which I never landed due to the same infra downstream roll failures) removes the issue and patchset properties as well. I think it\u0027s safe.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 29
+      },
+      "revId": "fe88e6e611261ffcc60f1e5993157128681ebe8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

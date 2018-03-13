@@ -16,6 +16,24 @@
       "revId": "464b02ac672ea13029600235b8b77e38006aef78",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c32345c5_fc35e6df",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-03-13T18:47:28Z",
+      "side": 1,
+      "message": "no idea :D I\u0027m just a refactor machine :p",
+      "parentUuid": "fe82e7d1_20cd6294",
+      "revId": "464b02ac672ea13029600235b8b77e38006aef78",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

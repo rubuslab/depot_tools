@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe82e7d1_20cd6294",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-13T18:26:54Z",
+      "side": 1,
+      "message": "do you think this cleanup is still worth moving to \"common\" codepath?",
+      "revId": "464b02ac672ea13029600235b8b77e38006aef78",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

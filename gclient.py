@@ -946,6 +946,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
           bad_deps.append(dep)
     return bad_deps
 
+  def _is_gerrit_ref(self, revision):
+    return revision and 'changes' in revision
+
   # Arguments number differs from overridden method
   # pylint: disable=arguments-differ
   def run(self, revision_overrides, command, args, work_queue, options):
@@ -968,7 +971,14 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     if run_scm and parsed_url:
       # Create a shallow copy to mutate revision.
       options = copy.copy(options)
-      options.revision = revision_override
+      if self._is_gerrit_ref(revision_override):
+        url, _, revision = parsed_url.partition('@')
+        options.revision = revision or None
+        options.gerrit_ref = revision_override
+        options.gerrit_repo = url
+      else:
+        options.revision = revision_override
+        options.gerrit_ref = None
       self._used_revision = options.revision
       self._used_scm = self.CreateSCM(
           parsed_url, self.root.root_dir, self.name, self.outbuf,
@@ -2677,6 +2687,9 @@ def CMDsync(parser, args):
   parser.add_option('--disable-syntax-validation', action='store_false',
                     dest='validate_syntax',
                     help='Disable validation of .gclient and DEPS syntax.')
+  parser.add_option('--gerrit_no_rebase_patch_ref', action='store_false',
+                    dest='gerrit_rebase_patch_ref', default=True,
+                    help='Bypass rebase of Gerrit patch ref after checkout.')
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
 

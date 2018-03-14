@@ -58,16 +58,14 @@
       "[GIT_CACHE]",
       "--cleanup-dir",
       "[CLEANUP]/bot_update",
-      "--gerrit_repo",
-      "https://chromium.googlesource.com/v8/v8",
-      "--gerrit_ref",
-      "refs/changes/11/338811/3",
       "--output_json",
       "/path/to/tmp/json",
       "--revision",
       "src@HEAD",
       "--revision",
       "src/v8@HEAD",
+      "--gerrit_ref",
+      "https://chromium.googlesource.com/v8/v8@refs/changes/11/338811/3",
       "--disable-syntax-validation"
     ],
     "env_prefixes": {

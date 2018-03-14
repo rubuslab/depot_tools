@@ -40,7 +40,6 @@ import re
 import auth
 import fix_encoding
 import gerrit_util
-import rietveld
 
 from third_party import httplib2
 
@@ -63,35 +62,6 @@ class DefaultFormatter(Formatter):
       return self.default
     return Formatter.get_value(self, key, args, kwds)
 
-rietveld_instances = [
-  {
-    'url': 'codereview.chromium.org',
-    'shorturl': 'crrev.com',
-    'supports_owner_modified_query': True,
-    'requires_auth': False,
-    'email_domain': 'chromium.org',
-    'short_url_protocol': 'https',
-  },
-  {
-    'url': 'chromereviews.googleplex.com',
-    'shorturl': 'go/chromerev',
-    'supports_owner_modified_query': True,
-    'requires_auth': True,
-    'email_domain': 'google.com',
-  },
-  {
-    'url': 'codereview.appspot.com',
-    'supports_owner_modified_query': True,
-    'requires_auth': False,
-    'email_domain': 'chromium.org',
-  },
-  {
-    'url': 'breakpad.appspot.com',
-    'supports_owner_modified_query': False,
-    'requires_auth': False,
-    'email_domain': 'chromium.org',
-  },
-]
 
 gerrit_instances = [
   {
@@ -204,65 +174,12 @@ class MyActivity(object):
   def check_cookies(self):
     filtered_instances = []
 
-    def has_cookie(instance):
-      auth_config = auth.extract_auth_config_from_options(self.options)
-      a = auth.get_authenticator_for_host(instance['url'], auth_config)
-      return a.has_cached_credentials()
-
-    for instance in rietveld_instances:
-      instance['auth'] = has_cookie(instance)
-
     if filtered_instances:
       logging.warning('No cookie found for the following Rietveld instance%s:',
                    's' if len(filtered_instances) > 1 else '')
       for instance in filtered_instances:
         logging.warning('\t' + instance['url'])
       logging.warning('Use --auth if you would like to authenticate to them.')
-
-  def rietveld_search(self, instance, owner=None, reviewer=None):
-    if instance['requires_auth'] and not instance['auth']:
-      return []
-
-
-    email = None if instance['auth'] else ''
-    auth_config = auth.extract_auth_config_from_options(self.options)
-    remote = rietveld.Rietveld('https://' + instance['url'], auth_config, email)
-
-    # See def search() in rietveld.py to see all the filters you can use.
-    query_modified_after = None
-
-    if instance['supports_owner_modified_query']:
-      query_modified_after = self.modified_after.strftime('%Y-%m-%d')
-
-    # Rietveld does not allow search by both created_before and modified_after.
-    # (And some instances don't allow search by both owner and modified_after)
-    owner_email = None
-    reviewer_email = None
-    if owner:
-      owner_email = owner + '@' + instance['email_domain']
-    if reviewer:
-      reviewer_email = reviewer + '@' + instance['email_domain']
-    issues = remote.search(
-        owner=owner_email,
-        reviewer=reviewer_email,
-        modified_after=query_modified_after,
-        with_messages=True)
-
-    issues = filter(
-        lambda i: (datetime_from_rietveld(i['created']) < self.modified_before),
-        issues)
-    issues = filter(
-        lambda i: (datetime_from_rietveld(i['modified']) > self.modified_after),
-        issues)
-
-    should_filter_by_user = True
-    issues = map(partial(self.process_rietveld_issue, remote, instance), issues)
-    issues = filter(
-        partial(self.filter_issue, should_filter_by_user=should_filter_by_user),
-        issues)
-    issues = sorted(issues, key=lambda i: i['modified'], reverse=True)
-
-    return issues
 
   def extract_bug_number_from_description(self, issue):
     description = None
@@ -592,9 +509,6 @@ class MyActivity(object):
     pass
 
   def get_changes(self):
-    for instance in rietveld_instances:
-      self.changes += self.rietveld_search(instance, owner=self.user)
-
     for instance in gerrit_instances:
       self.changes += self.gerrit_search(instance, owner=self.user)
 
@@ -605,9 +519,6 @@ class MyActivity(object):
         self.print_change(change)
 
   def get_reviews(self):
-    for instance in rietveld_instances:
-      self.reviews += self.rietveld_search(instance, reviewer=self.user)
-
     for instance in gerrit_instances:
       reviews = self.gerrit_search(instance, reviewer=self.user)
       reviews = filter(lambda r: not username(r['owner']) == self.user, reviews)
@@ -665,9 +576,6 @@ class MyActivity(object):
 
 
 def main():
-  # Silence upload.py.
-  rietveld.upload.verbosity = 0
-
   parser = optparse.OptionParser(description=sys.modules[__name__].__doc__)
   parser.add_option(
       '-u', '--user', metavar='<email>',

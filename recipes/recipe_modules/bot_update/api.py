@@ -167,8 +167,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
         # How to find the patch, if any (issue/patchset).
         ['--issue', issue],
         ['--patchset', patchset],
-        ['--gerrit_repo', gerrit_repo],
-        ['--gerrit_ref', gerrit_ref],
         ['--apply_issue_oauth2_file', oauth2_json_file],
 
         # Hookups to JSON output back into recipes.
@@ -219,6 +217,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
     cmd = [item for flag_set in flags
            for item in flag_set if flag_set[1] is not None]
 
+    if gerrit_ref:
+      cmd.extend(['--gerrit_ref', gerrit_repo + '@' + gerrit_ref])
     if clobber:
       cmd.append('--clobber')
     if no_shallow:

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a4e4ae0_bc981a78",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1721,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-14T07:52:50Z",
+      "side": 1,
+      "message": "please add TODO to combine this with _GerritChangelistImpl and perhaps all the way back into ChangeList.",
+      "revId": "80cfc79ab9110da719dc207304d87264d8170903",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -948,7 +948,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
   # Arguments number differs from overridden method
   # pylint: disable=arguments-differ
-  def run(self, revision_overrides, command, args, work_queue, options):
+  def run(self, revision_overrides, command, args, work_queue, options,
+          gerrit_refs):
     """Runs |command| then parse the DEPS file."""
     logging.info('Dependency(%s).run()' % self.name)
     assert self._file_list == []
@@ -968,6 +969,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     if run_scm and parsed_url:
       # Create a shallow copy to mutate revision.
       options = copy.copy(options)
+      options.gerrit_repo = parsed_url.split('@')[0]
+      options.gerrit_ref = gerrit_refs.pop(
+          options.gerrit_repo,
+          gerrit_refs.pop(self.name, None))
       options.revision = revision_override
       self._used_revision = options.revision
       self._used_scm = self.CreateSCM(
@@ -1600,6 +1605,16 @@ it or fix the checkout.
       index += 1
     return revision_overrides
 
+  def _EnforceGerritRefs(self):
+    """Checks for Gerrit refs."""
+    gerrit_refs = {}
+    if not self._options.gerrit_refs:
+      return gerrit_refs
+    for gerrit_ref in self._options.gerrit_refs:
+      gerrit_repo, gerrit_ref = gerrit_ref.split('@', 1)
+      gerrit_refs[gerrit_repo] = gerrit_ref
+    return gerrit_refs
+
   def RunOnDeps(self, command, args, ignore_requirements=False, progress=True):
     """Runs a command on each dependency in a client and its dependencies.
 
@@ -1611,12 +1626,16 @@ it or fix the checkout.
       raise gclient_utils.Error('No solution specified')
 
     revision_overrides = {}
+    gerrit_refs = {}
     # It's unnecessary to check for revision overrides for 'recurse'.
     # Save a few seconds by not calling _EnforceRevisions() in that case.
     if command not in ('diff', 'recurse', 'runhooks', 'status', 'revert',
-                       'validate'):
+                       'validate', 'None'):
       self._CheckConfig()
       revision_overrides = self._EnforceRevisions()
+
+    if command == 'update':
+      gerrit_refs = self._EnforceGerritRefs()
     # Disable progress for non-tty stdout.
     should_show_progress = (
         setup_color.IS_TTY and not self._options.verbose and progress)
@@ -1632,10 +1651,15 @@ it or fix the checkout.
     for s in self.dependencies:
       if s.should_process:
         work_queue.enqueue(s)
-    work_queue.flush(revision_overrides, command, args, options=self._options)
+    work_queue.flush(revision_overrides, command, args, options=self._options,
+                     gerrit_refs=gerrit_refs)
+
     if revision_overrides:
-      print('Please fix your script, having invalid --revision flags will soon '
-            'considered an error.', file=sys.stderr)
+      print('Please fix your script, having invalid --revision flags will be '
+            'soon considered an error.', file=sys.stderr)
+    if gerrit_refs:
+      print('Please fix your script, having invalid --gerrit-ref flags will be '
+            'soon considered an error.', file=sys.stderr)
 
     # Once all the dependencies have been processed, it's now safe to write
     # out any gn_args_files and run the hooks.
@@ -1750,7 +1774,7 @@ it or fix the checkout.
     for s in self.dependencies:
       if s.should_process:
         work_queue.enqueue(s)
-    work_queue.flush({}, None, [], options=self._options)
+    work_queue.flush({}, None, [], options=self._options, gerrit_refs=None)
 
     def ShouldPrintRevision(path, rev):
       if not self._options.path and not self._options.url:
@@ -2606,6 +2630,16 @@ def CMDsync(parser, args):
                          'takes precedence. -r can be used multiple times when '
                          '.gclient has multiple solutions configured, and will '
                          'work even if the src@ part is skipped.')
+  parser.add_option('--gerrit-ref', action='append',
+                    dest='gerrit_refs', metavar='GERRIT_REF', default=[],
+                    help='Patches the given gerrit reference with the format '
+                         'dep@ref. For dep, you can specify URLs as well as '
+                         'paths, with URLs taking preference. '
+                         'The gerrit reference will be applied to the '
+                         'necessary path, will be rebased on top what the '
+                         'dep was synced to, and then will do a soft reset. '
+                         'Use --gerrit-no-rebase-patch-ref and '
+                         '--gerrit-no-reset to disable this behavior.')
   parser.add_option('--with_branch_heads', action='store_true',
                     help='Clone git "branch_heads" refspecs in addition to '
                          'the default refspecs. This adds about 1/2GB to a '
@@ -2677,6 +2711,12 @@ def CMDsync(parser, args):
   parser.add_option('--disable-syntax-validation', action='store_false',
                     dest='validate_syntax',
                     help='Disable validation of .gclient and DEPS syntax.')
+  parser.add_option('--gerrit-no-rebase-patch-ref', action='store_false',
+                    dest='gerrit_rebase_patch_ref', default=True,
+                    help='Bypass rebase of Gerrit patch ref after checkout.')
+  parser.add_option('--gerrit-no-reset', action='store_false',
+                    dest='gerrit_reset', default=True,
+                    help='Bypass calling reset after applying a gerrit ref.')
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
 

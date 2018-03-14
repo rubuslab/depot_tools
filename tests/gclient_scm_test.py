@@ -123,6 +123,9 @@ class BaseGitWrapperTestCase(GCBaseTestCase, StdoutCheck, TestCaseUtils,
       self.jobs = 1
       self.break_repo_locks = False
       self.delete_unversioned_trees = False
+      self.gerrit_ref = None
+      self.gerrit_repo = None
+      self.gerrit_rebase_patch_ref = True
 
   sample_git_import = """blob
 mark :1
@@ -561,6 +564,9 @@ class ManagedGitWrapperTestCaseMox(BaseTestCase):
       self.break_repo_locks = False
       # TODO(maruel): Test --jobs > 1.
       self.jobs = 1
+      self.gerrit_ref = None
+      self.gerrit_repo = None
+      self.gerrit_rebase_patch_ref = True
 
   def Options(self, *args, **kwargs):
     return self.OptionsObject(*args, **kwargs)

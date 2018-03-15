@@ -52,6 +52,12 @@ class Error(Exception):
     super(Error, self).__init__(msg, *args, **kwargs)
 
 
+class SysExit(Error):
+  def __init__(self, code):
+    super(SysExit, self).__init__(str(code))
+    self.code = code
+
+
 def Elapsed(until=None):
   if until is None:
     until = datetime.datetime.now()
@@ -997,6 +1003,8 @@ class ExecutionQueue(object):
       # used, passing a tuple as the first argument doesn't work.
       e, task = self.exceptions.get()
       print >> sys.stderr, self.format_task_output(task.item, 'ERROR')
+      if isinstance(e[1], SysExit):
+        sys.exit(e[1].code)
       raise e[0], e[1], e[2]
     elif self.progress:
       self.progress.end()

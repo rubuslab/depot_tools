@@ -8,6 +8,7 @@ from __future__ import print_function
 
 import collections
 import contextlib
+import copy
 import errno
 import json
 import logging
@@ -19,6 +20,7 @@ import tempfile
 import threading
 import traceback
 import urlparse
+import uuid
 
 import download_from_google_storage
 import gclient_utils
@@ -340,6 +342,30 @@ class GitWrapper(SCMWrapper):
               self.Print('FAILED to break lock: %s: %s' % (to_break, ex))
               raise
 
+  def _apply_gerrit_ref(self, options, file_list):
+    base_rev = self._Capture(['rev-parse', 'HEAD'])
+    self.Print('===Applying gerrit ref===')
+    self.Print('Repo is %r @ %r, ref is %r, root is %r' % (
+        options.gerrit_repo, options.gerrit_ref, base_rev, self.checkout_path))
+    self._Capture(['reset', '--hard'])
+    self._Capture(['fetch', options.gerrit_repo, options.gerrit_ref])
+    file_list.extend(self._GetDiffFilenames('FETCH_HEAD'))
+    self._Capture(['checkout', 'FETCH_HEAD'])
+
+    if options.gerrit_rebase_patch_ref:
+      try:
+        self._Capture(['rebase', base_rev])
+      except subprocess2.CalledProcessError as e:
+        self._Capture(['rebase', '--abort'])
+        self.Print('Failed to apply %r @ %r to %r at %r' % (
+                options.gerrit_repo, options.gerrit_ref, base_rev,
+                self.checkout_path))
+        self.Print('git returned non-zero exit status %s:\n%s' % (
+            e.returncode, e.stderr))
+        raise gclient_utils.SysExit(2)
+    if options.gerrit_reset:
+      self._Capture(['reset', '--soft', base_rev])
+
   def update(self, options, args, file_list):
     """Runs git to update or transparently checkout the working copy.
 
@@ -350,6 +376,13 @@ class GitWrapper(SCMWrapper):
     """
     if args:
       raise gclient_utils.Error("Unsupported argument(s): %s" % ",".join(args))
+    if options.gerrit_ref:
+      if options.gerrit_rebase_patch_ref:
+        new_options = copy.copy(options)
+        new_options.gerrit_ref = None
+        self.update(new_options, args, file_list)
+      self._apply_gerrit_ref(options, file_list)
+      return
 
     self._CheckMinVersion("1.6.6")
 

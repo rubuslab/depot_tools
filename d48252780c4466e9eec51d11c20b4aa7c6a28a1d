@@ -238,6 +238,30 @@
     },
     {
       "key": {
+        "uuid": "950b5cd4_9248ffcc",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T20:45:56Z",
+      "side": 1,
+      "message": "Sorry, posted without seeing your 3rd comment. Didn\u0027t know about from_iterable. Fixed",
+      "parentUuid": "afaff7ed_c572eca0",
+      "range": {
+        "startLine": 647,
+        "startChar": 8,
+        "endLine": 647,
+        "endChar": 12
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "97294ee4_fa5abb03",
         "filename": "my_activity.py",
         "patchSetId": 5

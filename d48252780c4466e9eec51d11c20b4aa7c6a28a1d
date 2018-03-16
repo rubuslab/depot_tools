@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3336884e_5b8e6d3a",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41187be2_4f5cdb81",
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa3f00f5_0328a0ab",
         "filename": "my_activity.py",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd5444e6_7fa355e2",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa3f00f5_0328a0ab",
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "24c652ed_670e974e",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e07322d_7d7bfb8d",
+      "range": {
+        "startLine": 637,
+        "startChar": 55,
+        "endLine": 637,
+        "endChar": 63
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e9c6732f_667acabc",
         "filename": "my_activity.py",
         "patchSetId": 5
@@ -79,6 +139,30 @@
       "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c08d358c_4c72ea48",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Actual syntax would be:\n\n  itertools.chain(*[change[\u0027bugs\u0027] for ...])\n\nwhich still constructs the list.",
+      "parentUuid": "e9c6732f_667acabc",
+      "range": {
+        "startLine": 647,
+        "startChar": 8,
+        "endLine": 647,
+        "endChar": 12
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -105,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "eefe88de_6f1f4e52",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97294ee4_fa5abb03",
+      "range": {
+        "startLine": 651,
+        "startChar": 32,
+        "endLine": 651,
+        "endChar": 34
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e819cc1c_8d91c903",
         "filename": "my_activity.py",
         "patchSetId": 5
@@ -125,6 +233,30 @@
       "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c7adbd9_cfa4b45f",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e819cc1c_8d91c903",
+      "range": {
+        "startLine": 654,
+        "startChar": 31,
+        "endLine": 654,
+        "endChar": 55
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -151,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "78c8c60d_90a5b860",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "No. This will include all *issues* on a given project associated with changes *owned* by the user regardless of whether those issues are owned by them or not. In other words:\n- get list of all issues associated with user changes (referenced_issue_uids)\n- get list of all user issues, which are known to be already fetched (fetched_issue_uids)\n- fetch the remaining issues (missing_issue_uids) grouped by project for batching queries (missing_issues_by_project)",
+      "parentUuid": "caa13794_069adedd",
+      "range": {
+        "startLine": 660,
+        "startChar": 6,
+        "endLine": 661,
+        "endChar": 30
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e32fb14a_ac5e1fed",
         "filename": "my_activity.py",
         "patchSetId": 5
@@ -171,6 +327,30 @@
       "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7209b589_9881b446",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Agreed. We should probably assert, not assume. Fixed",
+      "parentUuid": "e32fb14a_ac5e1fed",
+      "range": {
+        "startLine": 701,
+        "startChar": 6,
+        "endLine": 701,
+        "endChar": 68
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -197,6 +377,30 @@
     },
     {
       "key": {
+        "uuid": "01955d8c_679a6cf0",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Hm, good point, but makes little sense to group by issues if you have no issues (either because all your CLs reference no issues or because you chose not to fetch issues).",
+      "parentUuid": "57aa2884_0727ca94",
+      "range": {
+        "startLine": 707,
+        "startChar": 1,
+        "endLine": 708,
+        "endChar": 29
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "20be1051_0dfb668a",
         "filename": "my_activity.py",
         "patchSetId": 5
@@ -220,6 +424,30 @@
     },
     {
       "key": {
+        "uuid": "ff31f1e9_ded52275",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20be1051_0dfb668a",
+      "range": {
+        "startLine": 710,
+        "startChar": 4,
+        "endLine": 713,
+        "endChar": 0
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fe2f8b4_26b54bb6",
         "filename": "my_activity.py",
         "patchSetId": 5
@@ -240,6 +468,30 @@
       "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a2ed3ce_341c760e",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T19:40:37Z",
+      "side": 1,
+      "message": "Because it slows down execution and I\u0027ve tried not to make changes in behavior unless additional options are specified. Besides, some users may want to have only their stuff in the output of the --changes-by-issue.",
+      "parentUuid": "3fe2f8b4_26b54bb6",
+      "range": {
+        "startLine": 787,
+        "startChar": 0,
+        "endLine": 792,
+        "endChar": 21
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

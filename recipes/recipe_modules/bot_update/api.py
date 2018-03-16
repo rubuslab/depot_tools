@@ -139,10 +139,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
         ['--git-cache-dir', cfg.cache_dir],
         ['--cleanup-dir', self.m.path['cleanup'].join('bot_update')],
 
-        # How to find the patch, if any
-        ['--gerrit_repo', gerrit_repo],
-        ['--gerrit_ref', gerrit_ref],
-
         # Hookups to JSON output back into recipes.
         ['--output_json', self.m.json.output()],
     ]
@@ -191,6 +187,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
     cmd = [item for flag_set in flags
            for item in flag_set if flag_set[1] is not None]
 
+    if gerrit_ref:
+      cmd.extend(['--gerrit_ref', gerrit_repo + '@' + gerrit_ref])
     if clobber:
       cmd.append('--clobber')
     if no_shallow:

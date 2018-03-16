@@ -149,8 +149,7 @@ class BotUpdateUnittests(unittest.TestCase):
       'target_os_only': None,
       'target_cpu': None,
       'patch_root': None,
-      'gerrit_repo': None,
-      'gerrit_ref': None,
+      'gerrit_refs': [],
       'gerrit_rebase_patch_ref': None,
       'shallow': False,
       'refs': [],
@@ -214,6 +213,19 @@ class BotUpdateUnittests(unittest.TestCase):
     self.assertEquals(args[idx_second_revision+1], 'src@origin/master')
     self.assertEquals(args[idx_third_revision+1], 'src/v8@deadbeef')
     return self.call.records
+
+  def testBasicGitRefs(self):
+    self.params['gerrit_refs'] = [
+        'https://chromium.googlesource.com/chromium/src@refs/changes/12/345/6',
+        'https://chromium.googlesource.com/v8/v8@refs/changes/98/76543/21',
+    ]
+    bot_update.ensure_checkout(**self.params)
+    args = self.gclient.records[0]
+    idx_1 = args.index('--gerrit-ref')
+    idx_2 = args.index('--gerrit-ref', idx_1 + 1)
+    self.assertEqual(args[idx_1+1], self.params['gerrit_refs'][0])
+    self.assertEqual(args[idx_2+1], self.params['gerrit_refs'][1])
+    self.assertNotIn('--gerrit-ref', args[idx_2+1:])
 
   def testBreakLocks(self):
     self.overrideSetupForWindows()

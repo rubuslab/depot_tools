@@ -166,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "d301a912_b0701c2c",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T20:18:43Z",
+      "side": 1,
+      "message": "\u003e list(itertools.chain([1,2], [2,3,4]))\n\n[1, 2, 2, 3, 4]",
+      "parentUuid": "c08d358c_4c72ea48",
+      "range": {
+        "startLine": 647,
+        "startChar": 8,
+        "endLine": 647,
+        "endChar": 12
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "97294ee4_fa5abb03",
         "filename": "my_activity.py",
         "patchSetId": 5
@@ -295,6 +319,30 @@
       "side": 1,
       "message": "No. This will include all *issues* on a given project associated with changes *owned* by the user regardless of whether those issues are owned by them or not. In other words:\n- get list of all issues associated with user changes (referenced_issue_uids)\n- get list of all user issues, which are known to be already fetched (fetched_issue_uids)\n- fetch the remaining issues (missing_issue_uids) grouped by project for batching queries (missing_issues_by_project)",
       "parentUuid": "caa13794_069adedd",
+      "range": {
+        "startLine": 660,
+        "startChar": 6,
+        "endLine": 661,
+        "endChar": 30
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf66cb66_2363a82a",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T20:18:43Z",
+      "side": 1,
+      "message": "argh, my bad, I keep confusing issues (bugs) with issues(CLs) :( yueah, this is fine.",
+      "parentUuid": "78c8c60d_90a5b860",
       "range": {
         "startLine": 660,
         "startChar": 6,
@@ -492,6 +540,30 @@
       "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4543960_5f4dc833",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T20:18:43Z",
+      "side": 1,
+      "message": "i meant that I think easier usage would would be w/o this option:\n   --changes-by-issue \u003d\u003e fetches referenced issues.\n  and\n    default case -\u003e same as before (ie, do not fetch referenced issues)\n\nthen if somebody feels really strongly about --chagnes-by-issue w/o fetching referenced issues, then that person can add --changes-by-issue-only-mine or smth like that.",
+      "parentUuid": "0a2ed3ce_341c760e",
+      "range": {
+        "startLine": 787,
+        "startChar": 0,
+        "endLine": 792,
+        "endChar": 21
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

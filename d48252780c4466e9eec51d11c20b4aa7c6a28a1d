@@ -1,0 +1,245 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41187be2_4f5cdb81",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "since you are at this, s/google_code/monorail/",
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa3f00f5_0328a0ab",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "use instance_name, and then get instance value as \n  instance \u003d monorail_instances[name]\nand then name can be addressed directly below.",
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e07322d_7d7bfb8d",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "s/instance/name + see suggestion above",
+      "range": {
+        "startLine": 637,
+        "startChar": 55,
+        "endLine": 637,
+        "endChar": 63
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9c6732f_667acabc",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "nice, but even better to avoid constructing list: itertools.chain(change[\u0027bugs\u0027] for ...)",
+      "range": {
+        "startLine": 647,
+        "startChar": 8,
+        "endLine": 647,
+        "endChar": 12
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97294ee4_fa5abb03",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "collections.defaultdict",
+      "range": {
+        "startLine": 651,
+        "startChar": 32,
+        "endLine": 651,
+        "endChar": 34
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e819cc1c_8d91c903",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": ".setdefault(project, []).append(issue_id) also works.",
+      "range": {
+        "startLine": 654,
+        "startChar": 31,
+        "endLine": 654,
+        "endChar": 55
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "caa13794_069adedd",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "am I right that this will include *all* changes associated with given issue_ids, incl. those not belonging to author? If so, I think you should filter these out.",
+      "range": {
+        "startLine": 660,
+        "startChar": 6,
+        "endLine": 661,
+        "endChar": 30
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e32fb14a_ac5e1fed",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "why assume? It\u0027s the case by construction ~10 lines above.",
+      "range": {
+        "startLine": 701,
+        "startChar": 6,
+        "endLine": 701,
+        "endChar": 68
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57aa2884_0727ca94",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "inconsistent with early exit of this method if there are no issues.",
+      "range": {
+        "startLine": 707,
+        "startChar": 1,
+        "endLine": 708,
+        "endChar": 29
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20be1051_0dfb668a",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "-\u003e indent",
+      "range": {
+        "startLine": 710,
+        "startChar": 4,
+        "endLine": 713,
+        "endChar": 0
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fe2f8b4_26b54bb6",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T19:10:18Z",
+      "side": 1,
+      "message": "why not do this automatically? || ie why have this option?",
+      "range": {
+        "startLine": 787,
+        "startChar": 0,
+        "endLine": 792,
+        "endChar": 21
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

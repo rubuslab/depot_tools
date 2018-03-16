@@ -183,7 +183,7 @@ def datetime_from_rietveld(date_string):
 
 
 def datetime_from_monorail(date_string):
-  return datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S')
+  return datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S.%fZ')
 
 
 class MyActivity(object):
@@ -198,6 +198,11 @@ class MyActivity(object):
     self.referenced_issues = []
     self.check_cookies()
     self.google_code_auth_token = None
+
+  def emit_progress_dot(self):
+    if self.options.progress:
+      sys.stdout.write('.')
+      sys.stdout.flush()
 
   # Check the codereview cookie jar to determine which Rietveld instances to
   # authenticate to.
@@ -247,6 +252,7 @@ class MyActivity(object):
         reviewer=reviewer_email,
         modified_after=query_modified_after,
         with_messages=True)
+    self.emit_progress_dot()
 
     issues = filter(
         lambda i: (datetime_from_rietveld(i['created']) < self.modified_before),
@@ -296,6 +302,7 @@ class MyActivity(object):
       patchset_props = remote.get_patchset_properties(
           issue['issue'],
           issue['patchsets'][-1])
+      self.emit_progress_dot()
       ret['delta'] = '+%d,-%d' % (
           sum(f['num_added'] for f in patchset_props['files'].itervalues()),
           sum(f['num_removed'] for f in patchset_props['files'].itervalues()))
@@ -367,6 +374,7 @@ class MyActivity(object):
     filters = ['-age:%ss' % max_age, user_filter]
 
     issues = self.gerrit_changes_over_rest(instance, filters)
+    self.emit_progress_dot()
     issues = [self.process_gerrit_issue(instance, issue)
               for issue in issues]
 
@@ -430,6 +438,7 @@ class MyActivity(object):
     url = ('https://monorail-prod.appspot.com/_ah/api/monorail/v1/projects'
            '/%s/issues/%s/comments?maxResults=10000') % (project, issue_id)
     _, body = http.request(url)
+    self.emit_progress_dot()
     content = json.loads(body)
     if not content:
       logging.error('Unable to parse %s response from monorail.', project)
@@ -453,6 +462,7 @@ class MyActivity(object):
     query_data = urllib.urlencode(query)
     url = url + '?' + query_data
     _, body = http.request(url)
+    self.emit_progress_dot()
     content = json.loads(body)
     if not content:
       logging.error('Unable to parse %s response from monorail.', project)
@@ -471,8 +481,8 @@ class MyActivity(object):
       issue = {
         'uid': '%s:%s' % (project, item['id']),
         'header': item['title'],
-        'created': datetime_from_monorail(item['published']),
-        'modified': datetime_from_monorail(item['updated']),
+        'created': dateutil.parser.parse(item['published']),
+        'modified': dateutil.parser.parse(item['updated']),
         'author': item['author']['name'],
         'url': item_url,
         'comments': [],
@@ -812,6 +822,10 @@ def main():
       action='store_true',
       help='Fetch deltas for changes.')
   parser.add_option(
+      '-p', '--progress',
+      action='store_true',
+      help='Display dots that show data loading progress to the user.')
+  parser.add_option(
       '--no-referenced-issues',
       action='store_true',
       help='Do not fetch issues referenced by owned changes. Useful in '
@@ -966,6 +980,9 @@ def main():
   logging.info('Using range %s to %s', options.begin, options.end)
 
   my_activity = MyActivity(options)
+  if options.progress:
+    sys.stdout.write('Loading data')
+    sys.stdout.flush()
 
   if not (options.changes or options.reviews or options.issues or
           options.changes_by_issue):
@@ -993,6 +1010,9 @@ def main():
       my_activity.get_referenced_issues()
   except auth.AuthenticationError as e:
     logging.error('auth.AuthenticationError: %s', e)
+
+  if options.progress:
+    print
 
   output_file = None
   try:

@@ -214,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "afaff7ed_c572eca0",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T20:33:06Z",
+      "side": 1,
+      "message": "Here you list 2 arguments manually. What I need is to join lists from a list comprehension into a single flat list. In order words, imaging you have this\n\n  l for l in [[1,2], [2,3,4]]\n\nand you need to flatten it. How do you do that without constructing a list?",
+      "parentUuid": "d301a912_b0701c2c",
+      "range": {
+        "startLine": 647,
+        "startChar": 8,
+        "endLine": 647,
+        "endChar": 12
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "97294ee4_fa5abb03",
         "filename": "my_activity.py",
         "patchSetId": 5
@@ -588,6 +612,30 @@
       "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "156fb4a6_e7c82e7e",
+        "filename": "my_activity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T20:33:06Z",
+      "side": 1,
+      "message": "Good point. Done",
+      "parentUuid": "c4543960_5f4dc833",
+      "range": {
+        "startLine": 787,
+        "startChar": 0,
+        "endLine": 792,
+        "endChar": 21
+      },
+      "revId": "d48252780c4466e9eec51d11c20b4aa7c6a28a1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

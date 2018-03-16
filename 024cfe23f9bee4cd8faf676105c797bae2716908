@@ -93,6 +93,30 @@
       "revId": "024cfe23f9bee4cd8faf676105c797bae2716908",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2f38a464_688b8f41",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T22:55:13Z",
+      "side": 1,
+      "message": "see my top level comment: you\u0027d only \"break\" them if they parse smth after manually copy-pasting stuff. If they pipe output to another tool (which isn\u0027t a good idea either), it\u0027ll work as before.",
+      "parentUuid": "f148feb1_b2617a8c",
+      "range": {
+        "startLine": 824,
+        "startChar": 2,
+        "endLine": 827,
+        "endChar": 71
+      },
+      "revId": "024cfe23f9bee4cd8faf676105c797bae2716908",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

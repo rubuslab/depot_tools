@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7b09195f_a59c838f",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T18:36:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a671d9f6_4d4cf4a4",
+      "range": {
+        "startLine": 643,
+        "startChar": 4,
+        "endLine": 643,
+        "endChar": 36
+      },
+      "revId": "b2c9132246bdc3eeb586f67786c2fa62dc69cf7f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a764923_8cc198f2",
         "filename": "my_activity.py",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "4accd5d7_f2f0121e",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T18:36:42Z",
+      "side": 1,
+      "message": "Ack. Rewrote function.",
+      "parentUuid": "2a764923_8cc198f2",
+      "range": {
+        "startLine": 645,
+        "startChar": 6,
+        "endLine": 645,
+        "endChar": 31
+      },
+      "revId": "b2c9132246bdc3eeb586f67786c2fa62dc69cf7f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "11b06230_6b46260b",
         "filename": "my_activity.py",
         "patchSetId": 3
@@ -68,6 +116,30 @@
       "revId": "b2c9132246bdc3eeb586f67786c2fa62dc69cf7f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "add4aa1a_8dbb6ef0",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-16T18:36:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11b06230_6b46260b",
+      "range": {
+        "startLine": 642,
+        "startChar": 2,
+        "endLine": 662,
+        "endChar": 35
+      },
+      "revId": "b2c9132246bdc3eeb586f67786c2fa62dc69cf7f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

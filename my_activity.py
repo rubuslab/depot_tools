@@ -16,6 +16,7 @@ Example:
 
 # TODO(vadimsh): This script knows too much about ClientLogin and cookies. It
 # will stop to work on ~20 Apr 2015.
+# TODO(sergiyb): Verify the above claim. It's 2018 and it's still working. :D
 
 # These services typically only provide a created time and a last modified time
 # for each item for general queries. This is not enough to determine if there
@@ -181,8 +182,8 @@ def datetime_from_rietveld(date_string):
     return datetime.strptime(date_string, '%Y-%m-%d %H:%M:%S')
 
 
-def datetime_from_google_code(date_string):
-  return datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S.%fZ')
+def datetime_from_monorail(date_string):
+  return datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S')
 
 
 class MyActivity(object):
@@ -417,12 +418,36 @@ class MyActivity(object):
       })
     return ret
 
-  def monorail_query_issues(self, project, query):
-    project_config = monorail_projects.get(project, {})
+  def monorail_get_auth_http(self):
     auth_config = auth.extract_auth_config_from_options(self.options)
     authenticator = auth.get_authenticator_for_host(
         'bugs.chromium.org', auth_config)
-    http = authenticator.authorize(httplib2.Http())
+    return authenticator.authorize(httplib2.Http())
+
+  def monorail_validate_issue_modified(self, issue):
+    http = self.monorail_get_auth_http()
+    project, issue_id = issue['uid'].split(':')
+    url = ('https://monorail-prod.appspot.com/_ah/api/monorail/v1/projects'
+           '/%s/issues/%s/comments?maxResults=10000') % (project, issue_id)
+    _, body = http.request(url)
+    content = json.loads(body)
+    if not content:
+      logging.error('Unable to parse %s response from monorail.', project)
+      return True
+
+    # Search for comments that were posted in the requested time period. All
+    # changes to the issues are also reported as comments by the monorail API.
+    for item in content.get('items', []):
+      comment_published = datetime_from_monorail(item['published'])
+      if self.filter_modified(comment_published):
+        return True
+
+    # Otherwise, this issue is a false positive and has not been modified in the
+    # selected time period.
+    return False
+
+  def monorail_query_issues(self, project, query):
+    http = self.monorail_get_auth_http()
     url = ('https://monorail-prod.appspot.com/_ah/api/monorail/v1/projects'
            '/%s/issues') % project
     query_data = urllib.urlencode(query)
@@ -430,10 +455,11 @@ class MyActivity(object):
     _, body = http.request(url)
     content = json.loads(body)
     if not content:
-      logging.error('Unable to parse %s response from projecthosting.', project)
+      logging.error('Unable to parse %s response from monorail.', project)
       return []
 
     issues = []
+    project_config = monorail_projects.get(project, {})
     for item in content.get('items', []):
       if project_config.get('shorturl'):
         protocol = project_config.get('short_url_protocol', 'http')
@@ -445,8 +471,8 @@ class MyActivity(object):
       issue = {
         'uid': '%s:%s' % (project, item['id']),
         'header': item['title'],
-        'created': dateutil.parser.parse(item['published']),
-        'modified': dateutil.parser.parse(item['updated']),
+        'created': datetime_from_monorail(item['published']),
+        'modified': datetime_from_monorail(item['updated']),
         'author': item['author']['name'],
         'url': item_url,
         'comments': [],
@@ -636,6 +662,10 @@ class MyActivity(object):
   def get_issues(self):
     for project in monorail_projects:
       self.issues += self.monorail_issue_search(project)
+    if self.options.precise_issue_filtering:
+      self.issues = [
+          issue for issue in self.issues
+          if self.monorail_validate_issue_modified(issue)]
 
   def get_referenced_issues(self):
     if not self.issues:
@@ -793,6 +823,15 @@ def main():
       help='Skips listing own issues without changes when showing changes '
            'grouped by referenced issue(s). See --changes-by-issue for more '
            'details.')
+  parser.add_option(
+      '--precise-issue-filtering',
+      action='store_true',
+      help='Fetch issue comments to reliably verify that it was modified in '
+           'the requested time period. This sends significantly more requests, '
+           'but may be useful if you are back-filling your snippets and want '
+           'to exclude issues that were not modified in the specified week (or '
+           'any custom time range that you have specified), but were modified '
+           'later.')
 
   activity_types_group = optparse.OptionGroup(parser, 'Activity Types',
                                'By default, all activity will be looked up and '

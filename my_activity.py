@@ -132,6 +132,11 @@ google_code_projects = [
     'shorturl': 'crbug.com/pdfium',
     'short_url_protocol': 'https',
   },
+  {
+    'name': 'v8',
+    'shorturl': 'crbug.com/v8',
+    'short_url_protocol': 'https',
+  },
 ]
 
 def username(email):
@@ -279,11 +284,14 @@ class MyActivity(object):
     if description:
       # Handle both "Bug: 99999" and "BUG=99999" bug notations
       # Multiple bugs can be noted on a single line or in multiple ones.
-      matches = re.findall(r'BUG[=:]\s?(((\d+)(,\s?)?)+)', description,
-                           flags=re.IGNORECASE)
+      matches = re.findall(
+          r'BUG[=:]\s?((((?:[a-zA-Z0-9-]+:)?\d+)(,\s?)?)+)', description,
+          flags=re.IGNORECASE)
       if matches:
         for match in matches:
           bugs.extend(match[0].replace(' ', '').split(','))
+        # Add default chromium: prefix if none specified.
+        bugs = [bug if ':' in bug else 'chromium:%s' % bug for bug in bugs]
 
     return bugs
 
@@ -327,7 +335,7 @@ class MyActivity(object):
     ret['created'] = datetime_from_rietveld(issue['created'])
     ret['replies'] = self.process_rietveld_replies(issue['messages'])
 
-    ret['bug'] = self.extract_bug_number_from_description(issue)
+    ret['bugs'] = self.extract_bug_number_from_description(issue)
     ret['landed_days_ago'] = issue['landed_days_ago']
 
     return ret
@@ -399,7 +407,7 @@ class MyActivity(object):
       ret['replies'] = []
     ret['reviewers'] = set(r['author'] for r in ret['replies'])
     ret['reviewers'].discard(ret['author'])
-    ret['bug'] = self.extract_bug_number_from_description(issue)
+    ret['bugs'] = self.extract_bug_number_from_description(issue)
     return ret
 
   @staticmethod
@@ -450,6 +458,8 @@ class MyActivity(object):
           item_url = 'https://bugs.chromium.org/p/%s/issues/detail?id=%d' % (
               instance['name'], item['id'])
         issue = {
+          'project': instance['name'],
+          'id': item['id'],
           'header': item['title'],
           'created': dateutil.parser.parse(item['published']),
           'modified': dateutil.parser.parse(item['updated']),
@@ -602,7 +612,7 @@ class MyActivity(object):
     if self.changes:
       self.print_heading('Changes')
       for change in self.changes:
-        self.print_change(change)
+          self.print_change(change)
 
   def get_reviews(self):
     for instance in rietveld_instances:
@@ -628,6 +638,29 @@ class MyActivity(object):
       self.print_heading('Issues')
       for issue in self.issues:
         self.print_issue(issue)
+
+  def print_changes_by_issue(self):
+    if self.issues and self.changes:
+      self.print_heading('Changes by referenced issue(s)')
+      unprinted_change_indicies = self.changes[:]
+      for issue in self.issues:
+        issue_id = '%s:%s' % (issue['project'], issue['id'])
+        self.print_issue(issue)
+        for change in self.changes:
+          if issue_id in change['bugs']:
+            print '',  # this prints one space due to comma, but no newline
+            self.print_change(change)
+            if change in unprinted_change_indicies:
+              unprinted_change_indicies.remove(change)
+      # TODO(sergiyb): Fetch information about issues even if they are not owned
+      # by the user as long as changes are owned by them. Perhaps make it
+      # configurable whether to do that via a flag.
+      if unprinted_change_indicies:
+        print self.options.output_format_no_url.format(title='Other changes')
+        for change in unprinted_change_indicies:
+          print ' ',
+          self.print_change(change)
+
 
   def print_activity(self):
     self.print_changes()
@@ -719,6 +752,9 @@ def main():
       '-r', '--reviews',
       action='store_true',
       help='Show reviews.')
+  activity_types_group.add_option(
+      '--changes-by-issue', action='store_true',
+      help='Show changes group by referenced issue(s).')
   parser.add_option_group(activity_types_group)
 
   output_format_group = optparse.OptionGroup(parser, 'Output Format',
@@ -753,6 +789,9 @@ def main():
       '--output-format-heading', metavar='<format>',
       default=u'{heading}:',
       help='Specifies the format to use when printing headings.')
+  output_format_group.add_option(
+      '--output-format-no-url', default='{title}',
+      help='Specifies the format to use when printing activity without url.')
   output_format_group.add_option(
       '-m', '--markdown', action='store_true',
       help='Use markdown-friendly output (overrides --output-format '
@@ -825,19 +864,21 @@ def main():
   if options.markdown:
     options.output_format = ' * [{title}]({url})'
     options.output_format_heading = '### {heading} ###'
+    options.output_format_no_url = ' * {title}'
   logging.info('Searching for activity by %s', options.user)
   logging.info('Using range %s to %s', options.begin, options.end)
 
   my_activity = MyActivity(options)
 
-  if not (options.changes or options.reviews or options.issues):
+  if not (options.changes or options.reviews or options.issues or
+          options.changes_by_issue):
     options.changes = True
     options.issues = True
     options.reviews = True
 
   # First do any required authentication so none of the user interaction has to
   # wait for actual work.
-  if options.changes:
+  if options.changes or options.changes_by_issue:
     my_activity.auth_for_changes()
   if options.reviews:
     my_activity.auth_for_reviews()
@@ -845,11 +886,11 @@ def main():
   logging.info('Looking up activity.....')
 
   try:
-    if options.changes:
+    if options.changes or options.changes_by_issue:
       my_activity.get_changes()
     if options.reviews:
       my_activity.get_reviews()
-    if options.issues:
+    if options.issues or options.changes_by_issue:
       my_activity.get_issues()
   except auth.AuthenticationError as e:
     logging.error('auth.AuthenticationError: %s', e)
@@ -866,9 +907,14 @@ def main():
     if options.json:
       my_activity.dump_json()
     else:
-      my_activity.print_changes()
-      my_activity.print_reviews()
-      my_activity.print_issues()
+      if options.changes:
+        my_activity.print_changes()
+      if options.reviews:
+        my_activity.print_reviews()
+      if options.issues:
+        my_activity.print_issues()
+      if options.changes_by_issue:
+        my_activity.print_changes_by_issue()
   finally:
     if output_file:
       logging.info('Done printing to file.')

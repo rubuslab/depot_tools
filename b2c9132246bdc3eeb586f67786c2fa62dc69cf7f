@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a671d9f6_4d4cf4a4",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T17:49:21Z",
+      "side": 1,
+      "message": "if not:\n  return\n...",
+      "range": {
+        "startLine": 643,
+        "startChar": 4,
+        "endLine": 643,
+        "endChar": 36
+      },
+      "revId": "b2c9132246bdc3eeb586f67786c2fa62dc69cf7f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a764923_8cc198f2",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T17:49:21Z",
+      "side": 1,
+      "message": "what does it have to do with index? at best it\u0027s remaining_changes. Furthermore, self.changes is a list, and you use remaining_changes as a set, so make it a set.",
+      "range": {
+        "startLine": 645,
+        "startChar": 6,
+        "endLine": 645,
+        "endChar": 31
+      },
+      "revId": "b2c9132246bdc3eeb586f67786c2fa62dc69cf7f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11b06230_6b46260b",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-16T17:49:21Z",
+      "side": 1,
+      "message": "i cringe thinking of O(n^3) for something that should take O(n):\n\nchanges_by_issue \u003d collections.defaultdict(list)\nfor c in self.changes:\n  for i in c.issues:\n    changes_by_issue[i].append(c)\n  else:\n    changes_by_issue[None].append(c)\n\nfor issue in self.issues:\n  for c in changes_by_issue[issue]:\n    ...\nif changes_by_issue[None]:\n  # no issue associated.",
+      "range": {
+        "startLine": 642,
+        "startChar": 2,
+        "endLine": 662,
+        "endChar": 35
+      },
+      "revId": "b2c9132246bdc3eeb586f67786c2fa62dc69cf7f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

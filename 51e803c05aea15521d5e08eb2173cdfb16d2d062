@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c340ae4_5e79aa38",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1608,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T22:10:30Z",
+      "side": 1,
+      "message": "nit: \"Enforce\" makes it sound like it requires that there be gerrit ref flags, or that it requires that those flags take a certain form (e.g. \"repo@ref\"). This function does neither: it\u0027s happy to return an empty dict, and if there is no \u0027@\u0027 in the flag it will map the repo to None, so probably a different name should be picked.",
+      "range": {
+        "startLine": 1608,
+        "startChar": 7,
+        "endLine": 1608,
+        "endChar": 14
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4a7794f_8152940d",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1614,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T22:10:30Z",
+      "side": 1,
+      "message": "This isn\u0027t guaranteed to work: if the gerrit_ref has no \u0027@\u0027 in it, the return value will be a list of length 1, and python will throw a runtime error \"too many values to unpack\", I think. When gclient does this split elsewhere, it first guarantees that the \u0027@\u0027 character exists in the string.",
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39fc9473_68b9a98c",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1633,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T22:10:30Z",
+      "side": 1,
+      "message": "why?",
+      "range": {
+        "startLine": 1633,
+        "startChar": 34,
+        "endLine": 1633,
+        "endChar": 40
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed1a0130_db230837",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1659,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T22:10:30Z",
+      "side": 1,
+      "message": "nit: \"soon be\" is more idiomatic english than \"be soon\".",
+      "range": {
+        "startLine": 1658,
+        "startChar": 74,
+        "endLine": 1659,
+        "endChar": 17
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d02d82b0_c03f2ad4",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2633,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T22:10:30Z",
+      "side": 1,
+      "message": "nit: do we want to call this \"--gerrit-patch-ref\" for sake of consistency with flags below, and to show that it really is about patching, not just checking out? Really not sure of the best answer but worth discussing.",
+      "range": {
+        "startLine": 2633,
+        "startChar": 21,
+        "endLine": 2633,
+        "endChar": 33
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bbf8ed1_6575b9a0",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2717,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T22:10:30Z",
+      "side": 1,
+      "message": "nit: \"--gerrit-no-reset-patch-ref\" for the sake of consistency",
+      "range": {
+        "startLine": 2717,
+        "startChar": 21,
+        "endLine": 2717,
+        "endChar": 38
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0dbcd06b_3b042f81",
+        "filename": "gclient_scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T22:10:30Z",
+      "side": 1,
+      "message": "For posterity: discussion in chat and on the doc has come to the conclusion that using cherry-pick is going to be better.",
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ce6de94_45feb0ab",
+        "filename": "gclient_scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T22:10:30Z",
+      "side": 1,
+      "message": "Whee, this recursive call is fun! I assume you do this because .update() has too many return locations for this to easily be inserted ahead of each different return?\n\nI\u0027d like to look into a way to do this that doesn\u0027t involve a recursive call, if that\u0027s feasible.",
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3260655b_ce3e58dc",
+        "filename": "gclient_scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T22:10:30Z",
+      "side": 1,
+      "message": "Doing this without the recursive update above seems prone to error. In particular, it bypasses all of update()\u0027s \"how to handle various dirty working directory scenarios\" logic (see line 512 and below), and replaces it with a straight-up \"git reset --hard\". I\u0027d prefer to keep gclient\u0027s normal logic if possible, and only do the cherry-picking after everything else has been done.\n\nUgh, or maybe .update() is already so messy and gross that trying to play well with it is an exercise in futility and bypassing it like this is really the best approach. I\u0027m honestly not sure. It\u0027s not breaking anyone\u0027s workflow, since this only gets executed if they pass the new flag...\n\nI guess my suggestion for now would be to leave this as short, raw, and destructive as it currently is, but to comment it saying something along the lines of \"this behavior is gated behind a flag, and bypasses all of gclient\u0027s crazy logic below. Pass the flag at your own peril.\" And if it turns out that some of that logic below is actually useful, we can revisit this.",
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "02371d61_47a1bf27",
+        "filename": "my_activity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-03-19T19:19:55Z",
+      "side": 1,
+      "message": "Looks like it was fixed in https://chromium.googlesource.com/chromium/tools/depot_tools/+/3e4a581a079332cf4a4d05874f0d46e424309478\n\nSo this TODO can be removed.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 77
+      },
+      "revId": "c8cfda92ee6132e872b042b33ab88a999e7df1d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a77205c2_ed319ff2",
         "filename": "my_activity.py",
         "patchSetId": 6

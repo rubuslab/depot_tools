@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f348eee1_694b2419",
+        "filename": "my_activity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-19T18:55:31Z",
+      "side": 1,
+      "message": "come to think of it, perhaps you want to surround this with \\n to ensure it doesn\u0027t get wrapped across lines",
+      "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

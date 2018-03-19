@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c6e8b18_bc8694b2",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2823,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T20:27:24Z",
+      "side": 1,
+      "message": "nit: since metavars are just for presentation in the --help output, maybe make this VAR\u003dVALUE",
+      "range": {
+        "startLine": 2823,
+        "startChar": 42,
+        "endLine": 2823,
+        "endChar": 45
+      },
+      "revId": "2ff39c0d68969ebc747f7f0b08f1fb5108b29659",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3af97ba7_7e30b17f",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2827,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T20:27:24Z",
+      "side": 1,
+      "message": "nit: similarly, maybe DEP@REV",
+      "range": {
+        "startLine": 2827,
+        "startChar": 47,
+        "endLine": 2827,
+        "endChar": 50
+      },
+      "revId": "2ff39c0d68969ebc747f7f0b08f1fb5108b29659",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "380031f5_52dd9836",
+        "filename": "gclient_eval.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T20:27:24Z",
+      "side": 1,
+      "message": "nit: one fewer empty lines",
+      "revId": "2ff39c0d68969ebc747f7f0b08f1fb5108b29659",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c3a2b18_ca85fcb5",
+        "filename": "tests/gclient_eval_unittest.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T20:27:24Z",
+      "side": 1,
+      "message": "nit: remove trailing whitespace",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 2
+      },
+      "revId": "2ff39c0d68969ebc747f7f0b08f1fb5108b29659",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e50527d3_0b82ea3f",
+        "filename": "tests/gclient_eval_unittest.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-19T20:27:24Z",
+      "side": 1,
+      "message": "nit: one fewer empty lines",
+      "revId": "2ff39c0d68969ebc747f7f0b08f1fb5108b29659",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

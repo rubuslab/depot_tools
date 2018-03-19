@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c677b6a2_a376cbc6",
+        "filename": "my_activity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-19T13:03:34Z",
+      "side": 1,
+      "message": "given the usage, how about \n  def show_progress(self, how\u003d\u0027.\u0027):\nthen code elsewhere is easier is less repetitive.",
+      "range": {
+        "startLine": 202,
+        "startChar": 2,
+        "endLine": 202,
+        "endChar": 30
+      },
+      "revId": "52dd04ca56c35c944b8a612afa52fa07712f9794",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

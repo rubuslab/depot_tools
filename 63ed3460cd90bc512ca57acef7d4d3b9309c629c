@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b6829cc_5ab53bf5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-03-19T14:49:30Z",
+      "side": 1,
+      "message": "Nit: this makes it sound like this is an incompatibility with flattening, or with something that changed when buildspecs adopted that syntax, but it\u0027s actually actually incompatible with the way buildspecs have always worked, so maybe s/flattened buildspecs/buildspecs/.",
+      "range": {
+        "startLine": 11,
+        "startChar": 56,
+        "endLine": 11,
+        "endChar": 65
+      },
+      "revId": "63ed3460cd90bc512ca57acef7d4d3b9309c629c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

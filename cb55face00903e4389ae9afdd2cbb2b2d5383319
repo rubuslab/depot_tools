@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4337bb0e_71dd227f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-03-19T16:11:02Z",
+      "side": 1,
+      "message": "This is suggesting that we lock this to python because you\u0027re looking for that explicitly on line 1547? If so, can we make that a module-scope constant to make that association more clear?",
+      "revId": "cb55face00903e4389ae9afdd2cbb2b2d5383319",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "revId": "cb55face00903e4389ae9afdd2cbb2b2d5383319",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ad544ad_5342d239",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-03-19T17:16:53Z",
+      "side": 1,
+      "message": "Users also set \u0027python\u0027 manually in their PRESUBMIT scripts. I\u0027d rather have this in 2 places instead of 3, but as you like :)",
+      "parentUuid": "4337bb0e_71dd227f",
+      "revId": "cb55face00903e4389ae9afdd2cbb2b2d5383319",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

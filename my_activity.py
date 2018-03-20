@@ -14,10 +14,6 @@ Example:
   - my_activity.py -jd to output stats for the week to json with deltas data.
 """
 
-# TODO(vadimsh): This script knows too much about ClientLogin and cookies. It
-# will stop to work on ~20 Apr 2015.
-# TODO(sergiyb): Verify the above claim. It's 2018 and it's still working. :D
-
 # These services typically only provide a created time and a last modified time
 # for each item for general queries. This is not enough to determine if there
 # was activity in a given time period. So, we first query for all things created
@@ -26,12 +22,14 @@ Example:
 # This means that query time scales mostly with (today() - begin).
 
 import collections
+import contextlib
 from datetime import datetime
 from datetime import timedelta
 from functools import partial
 import itertools
 import json
 import logging
+from multiprocessing.pool import ThreadPool
 import optparse
 import os
 import subprocess
@@ -199,6 +197,11 @@ class MyActivity(object):
     self.check_cookies()
     self.google_code_auth_token = None
 
+  def show_progress(self, how='.'):
+    if sys.stdout.isatty():
+      sys.stdout.write(how)
+      sys.stdout.flush()
+
   # Check the codereview cookie jar to determine which Rietveld instances to
   # authenticate to.
   def check_cookies(self):
@@ -247,6 +250,7 @@ class MyActivity(object):
         reviewer=reviewer_email,
         modified_after=query_modified_after,
         with_messages=True)
+    self.show_progress()
 
     issues = filter(
         lambda i: (datetime_from_rietveld(i['created']) < self.modified_before),
@@ -296,6 +300,7 @@ class MyActivity(object):
       patchset_props = remote.get_patchset_properties(
           issue['issue'],
           issue['patchsets'][-1])
+      self.show_progress()
       ret['delta'] = '+%d,-%d' % (
           sum(f['num_added'] for f in patchset_props['files'].itervalues()),
           sum(f['num_removed'] for f in patchset_props['files'].itervalues()))
@@ -367,6 +372,7 @@ class MyActivity(object):
     filters = ['-age:%ss' % max_age, user_filter]
 
     issues = self.gerrit_changes_over_rest(instance, filters)
+    self.show_progress()
     issues = [self.process_gerrit_issue(instance, issue)
               for issue in issues]
 
@@ -424,27 +430,39 @@ class MyActivity(object):
         'bugs.chromium.org', auth_config)
     return authenticator.authorize(httplib2.Http())
 
-  def monorail_validate_issue_modified(self, issue):
+  def filter_modified_monorail_issue(self, issue):
+    """Precisely checks if an issue has been modified in the time range.
+
+    This fetches all issue comments to check if the issue has been modified in
+    the time range specified by user. This is needed because monorail only
+    allows filtering by last updated and published dates, which is not
+    sufficient to tell whether a given issue has been modified at some specific
+    time range. Any update to the issue is a reported as comment on Monorail.
+
+    Args:
+      issue: Issue dict as returned by monorail_query_issues method. In
+          particular, must have a key 'uid' formatted as 'project:issue_id'.
+
+    Returns:
+      Passed issue if modified, None otherwise.
+    """
     http = self.monorail_get_auth_http()
     project, issue_id = issue['uid'].split(':')
     url = ('https://monorail-prod.appspot.com/_ah/api/monorail/v1/projects'
            '/%s/issues/%s/comments?maxResults=10000') % (project, issue_id)
     _, body = http.request(url)
+    self.show_progress()
     content = json.loads(body)
     if not content:
       logging.error('Unable to parse %s response from monorail.', project)
-      return True
+      return issue
 
-    # Search for comments that were posted in the requested time period. All
-    # changes to the issues are also reported as comments by the monorail API.
     for item in content.get('items', []):
       comment_published = datetime_from_monorail(item['published'])
       if self.filter_modified(comment_published):
-        return True
+        return issue
 
-    # Otherwise, this issue is a false positive and has not been modified in the
-    # selected time period.
-    return False
+    return None
 
   def monorail_query_issues(self, project, query):
     http = self.monorail_get_auth_http()
@@ -453,6 +471,7 @@ class MyActivity(object):
     query_data = urllib.urlencode(query)
     url = url + '?' + query_data
     _, body = http.request(url)
+    self.show_progress()
     content = json.loads(body)
     if not content:
       logging.error('Unable to parse %s response from monorail.', project)
@@ -632,11 +651,16 @@ class MyActivity(object):
     pass
 
   def get_changes(self):
-    for instance in rietveld_instances:
-      self.changes += self.rietveld_search(instance, owner=self.user)
-
-    for instance in gerrit_instances:
-      self.changes += self.gerrit_search(instance, owner=self.user)
+    with contextlib.closing(ThreadPool()) as pool:
+      rietveld_changes = pool.map_async(
+          lambda instance: self.rietveld_search(instance, owner=self.user),
+          rietveld_instances)
+      gerrit_changes = pool.map_async(
+          lambda instance: self.gerrit_search(instance, owner=self.user),
+          gerrit_instances)
+      rietveld_changes = itertools.chain.from_iterable(rietveld_changes.get())
+      gerrit_changes = itertools.chain.from_iterable(gerrit_changes.get())
+      self.changes = list(rietveld_changes) + list(gerrit_changes)
 
   def print_changes(self):
     if self.changes:
@@ -645,13 +669,17 @@ class MyActivity(object):
           self.print_change(change)
 
   def get_reviews(self):
-    for instance in rietveld_instances:
-      self.reviews += self.rietveld_search(instance, reviewer=self.user)
-
-    for instance in gerrit_instances:
-      reviews = self.gerrit_search(instance, reviewer=self.user)
-      reviews = filter(lambda r: not username(r['owner']) == self.user, reviews)
-      self.reviews += reviews
+    with contextlib.closing(ThreadPool()) as pool:
+      rietveld_reviews = pool.map_async(
+          lambda instance: self.rietveld_search(instance, reviewer=self.user),
+          rietveld_instances)
+      gerrit_reviews = pool.map_async(
+          lambda instance: self.gerrit_search(instance, reviewer=self.user),
+          gerrit_instances)
+      rietveld_reviews = itertools.chain.from_iterable(rietveld_reviews.get())
+      gerrit_reviews = itertools.chain.from_iterable(gerrit_reviews.get())
+      gerrit_reviews = [r for r in gerrit_reviews if r['owner'] != self.user]
+      self.reviews = list(rietveld_reviews) + list(gerrit_reviews)
 
   def print_reviews(self):
     if self.reviews:
@@ -660,12 +688,14 @@ class MyActivity(object):
         self.print_review(review)
 
   def get_issues(self):
-    for project in monorail_projects:
-      self.issues += self.monorail_issue_search(project)
-    if self.options.precise_issue_filtering:
-      self.issues = [
-          issue for issue in self.issues
-          if self.monorail_validate_issue_modified(issue)]
+    self.issues = []
+    with contextlib.closing(ThreadPool()) as pool:
+      for project_issues in pool.imap(
+          self.monorail_issue_search, monorail_projects.keys()):
+        for filtered_issue in pool.imap(
+            self.filter_modified_monorail_issue, project_issues):
+          if filtered_issue:
+            self.issues.append(filtered_issue)
 
   def get_referenced_issues(self):
     if not self.issues:
@@ -823,15 +853,6 @@ def main():
       help='Skips listing own issues without changes when showing changes '
            'grouped by referenced issue(s). See --changes-by-issue for more '
            'details.')
-  parser.add_option(
-      '--precise-issue-filtering',
-      action='store_true',
-      help='Fetch issue comments to reliably verify that it was modified in '
-           'the requested time period. This sends significantly more requests, '
-           'but may be useful if you are back-filling your snippets and want '
-           'to exclude issues that were not modified in the specified week (or '
-           'any custom time range that you have specified), but were modified '
-           'later.')
 
   activity_types_group = optparse.OptionGroup(parser, 'Activity Types',
                                'By default, all activity will be looked up and '
@@ -966,6 +987,7 @@ def main():
   logging.info('Using range %s to %s', options.begin, options.end)
 
   my_activity = MyActivity(options)
+  my_activity.show_progress('Loading data')
 
   if not (options.changes or options.reviews or options.issues or
           options.changes_by_issue):
@@ -993,6 +1015,8 @@ def main():
       my_activity.get_referenced_issues()
   except auth.AuthenticationError as e:
     logging.error('auth.AuthenticationError: %s', e)
+
+  my_activity.show_progress('\n')
 
   output_file = None
   try:

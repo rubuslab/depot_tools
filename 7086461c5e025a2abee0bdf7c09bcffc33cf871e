@@ -16,6 +16,24 @@
       "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ad2a1f8_b9054c5d",
+        "filename": "my_activity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-20T13:01:48Z",
+      "side": 1,
+      "message": "Why would it be wrapped across lines? Nothing runs in parallel to this. And dots can be printed in whatever order. Surrounding with whitespace will create unneeded empty lines in the output.",
+      "parentUuid": "f348eee1_694b2419",
+      "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac51934_03ee317e",
+        "filename": "gclient_eval.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-20T21:30:30Z",
+      "side": 1,
+      "message": "In what situation might this arise?",
+      "revId": "3c146abbb83e1a1aeaf4410b4bfa40174d0c5600",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

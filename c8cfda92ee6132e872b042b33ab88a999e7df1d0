@@ -178,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "8422472f_c98c60ae",
+        "filename": "my_activity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-20T19:41:27Z",
+      "side": 1,
+      "message": "really nice!",
+      "parentUuid": "dc4a68c7_d13e8041",
+      "range": {
+        "startLine": 666,
+        "startChar": 6,
+        "endLine": 668,
+        "endChar": 57
+      },
+      "revId": "c8cfda92ee6132e872b042b33ab88a999e7df1d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cfa49c55_215163c7",
         "filename": "my_activity.py",
         "patchSetId": 6

@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74bddd16_89a00074",
+        "filename": "my_activity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-20T19:41:27Z",
+      "side": 1,
+      "message": "but this change should ideally be a diff CL || OR update description of this one.",
+      "range": {
+        "startLine": 643,
+        "startChar": 6,
+        "endLine": 643,
+        "endChar": 17
+      },
+      "revId": "7707384549c1b481238558dfb56bbb193d3f56f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60c540f1_a802c86f",
+        "filename": "my_activity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-20T19:41:27Z",
+      "side": 1,
+      "message": "i think you should hardcode size of the pool here -- these tasks aren\u0027t CPU intensive, so bound should # of concurrent requests to gerrit.",
+      "range": {
+        "startLine": 644,
+        "startChar": 38,
+        "endLine": 644,
+        "endChar": 39
+      },
+      "revId": "7707384549c1b481238558dfb56bbb193d3f56f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "245b09ce_e467771a",
+        "filename": "my_activity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-20T19:41:27Z",
+      "side": 1,
+      "message": "👍",
+      "range": {
+        "startLine": 644,
+        "startChar": 4,
+        "endLine": 644,
+        "endChar": 50
+      },
+      "revId": "7707384549c1b481238558dfb56bbb193d3f56f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d841e09_8355a5cd",
+        "filename": "my_activity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-20T19:41:27Z",
+      "side": 1,
+      "message": "itertools.chain(r....get(), g...get())\nseems shorter",
+      "range": {
+        "startLine": 653,
+        "startChar": 21,
+        "endLine": 653,
+        "endChar": 66
+      },
+      "revId": "7707384549c1b481238558dfb56bbb193d3f56f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ee59e70_5b321df5",
+        "filename": "my_activity.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-20T19:41:27Z",
+      "side": 1,
+      "message": "ditto * 3.",
+      "range": {
+        "startLine": 661,
+        "startChar": 0,
+        "endLine": 662,
+        "endChar": 0
+      },
+      "revId": "7707384549c1b481238558dfb56bbb193d3f56f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

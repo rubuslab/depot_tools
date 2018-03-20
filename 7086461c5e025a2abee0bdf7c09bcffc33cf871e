@@ -34,6 +34,24 @@
       "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0b46c63_3fc0ee75",
+        "filename": "my_activity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-20T20:57:24Z",
+      "side": 1,
+      "message": "no strong opinion here - i just thought this  \n  .......Loadi\n  ng data.....\n\nis uglier, particularly on a wide screen than\n  .....\n  loading data..",
+      "parentUuid": "0ad2a1f8_b9054c5d",
+      "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

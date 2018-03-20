@@ -1260,7 +1260,7 @@ class GClientSmokeGIT(GClientSmokeBase):
         '  },',
         '',
         '  # src -> src/cipd_dep:package0',
-        '  "src/cipd_dep:package0": {',
+        '  "src/cipd_dep": {',
         '    "packages": [',
         '      {',
         '        "package": "package0",',

@@ -1652,8 +1652,10 @@ it or fix the checkout.
       # Only delete the directory if there are no changes in it, and
       # delete_unversioned_trees is set to true.
       entries = [i.name for i in self.root.subtree(False) if i.url]
-      full_entries = [os.path.join(self.root_dir, e.replace('/', os.path.sep))
-                      for e in entries]
+      full_entries = [
+          os.path.abspath(os.path.join(self.root_dir,
+                                       e.replace('/', os.path.sep)))
+          for e in entries]
 
       for entry, prev_url in self._ReadEntries().iteritems():
         if not prev_url:
@@ -1717,7 +1719,7 @@ it or fix the checkout.
                       (entry, save_dir))
                 continue
 
-          if scm_root in full_entries:
+          if os.path.abspath(scm_root) in full_entries:
             logging.info('%s is part of a higher level checkout, not removing',
                          scm.GetCheckoutRoot())
             continue

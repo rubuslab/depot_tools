@@ -16,6 +16,24 @@
       "revId": "3c146abbb83e1a1aeaf4410b4bfa40174d0c5600",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8253d72f_8cda975a",
+        "filename": "gclient_eval.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-20T21:40:53Z",
+      "side": 1,
+      "message": "If someone tries to call this function with the local_scope that results from parsing the DEPS file with exec instead of gclient_eval.Exec.",
+      "parentUuid": "3ac51934_03ee317e",
+      "revId": "3c146abbb83e1a1aeaf4410b4bfa40174d0c5600",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

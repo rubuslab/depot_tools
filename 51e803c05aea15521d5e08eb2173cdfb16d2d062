@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f8fa58c_a11a8e1f",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1608,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T16:46:39Z",
+      "side": 1,
+      "message": "Well, it should be enforcing them with a given format.",
+      "parentUuid": "9c340ae4_5e79aa38",
+      "range": {
+        "startLine": 1608,
+        "startChar": 7,
+        "endLine": 1608,
+        "endChar": 14
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e4a7794f_8152940d",
         "filename": "gclient.py",
         "patchSetId": 10
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "8e3579f2_5068c64b",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1614,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T16:46:39Z",
+      "side": 1,
+      "message": "Fixed. Also, now it does enforce the format.",
+      "parentUuid": "e4a7794f_8152940d",
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "39fc9473_68b9a98c",
         "filename": "gclient.py",
         "patchSetId": 10
@@ -53,6 +95,30 @@
       "writtenOn": "2018-03-19T22:10:30Z",
       "side": 1,
       "message": "why?",
+      "range": {
+        "startLine": 1633,
+        "startChar": 34,
+        "endLine": 1633,
+        "endChar": 40
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d9ec183_82f89a37",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1633,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T16:46:39Z",
+      "side": 1,
+      "message": "Forgot to remove this.",
+      "parentUuid": "39fc9473_68b9a98c",
       "range": {
         "startLine": 1633,
         "startChar": 34,
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "4d7f04c0_b33b0593",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1659,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T16:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed1a0130_db230837",
+      "range": {
+        "startLine": 1658,
+        "startChar": 74,
+        "endLine": 1659,
+        "endChar": 17
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d02d82b0_c03f2ad4",
         "filename": "gclient.py",
         "patchSetId": 10
@@ -99,6 +189,30 @@
       "writtenOn": "2018-03-19T22:10:30Z",
       "side": 1,
       "message": "nit: do we want to call this \"--gerrit-patch-ref\" for sake of consistency with flags below, and to show that it really is about patching, not just checking out? Really not sure of the best answer but worth discussing.",
+      "range": {
+        "startLine": 2633,
+        "startChar": 21,
+        "endLine": 2633,
+        "endChar": 33
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30f60488_38135f7b",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2633,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T16:46:39Z",
+      "side": 1,
+      "message": "Yes. Maybe even --patch-ref, since it\u0027s not limited to gerrit refs?",
+      "parentUuid": "d02d82b0_c03f2ad4",
       "range": {
         "startLine": 2633,
         "startChar": 21,
@@ -134,6 +248,30 @@
     },
     {
       "key": {
+        "uuid": "3a16b9a5_fafed44c",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2717,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T16:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0bbf8ed1_6575b9a0",
+      "range": {
+        "startLine": 2717,
+        "startChar": 21,
+        "endLine": 2717,
+        "endChar": 38
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0dbcd06b_3b042f81",
         "filename": "gclient_scm.py",
         "patchSetId": 10
@@ -148,6 +286,24 @@
       "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5b280cc_116fb0c0",
+        "filename": "gclient_scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T16:46:39Z",
+      "side": 1,
+      "message": "Ack. Added a TODO.",
+      "parentUuid": "0dbcd06b_3b042f81",
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -168,6 +324,24 @@
     },
     {
       "key": {
+        "uuid": "6b3553b1_c06b92e6",
+        "filename": "gclient_scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T16:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ce6de94_45feb0ab",
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3260655b_ce3e58dc",
         "filename": "gclient_scm.py",
         "patchSetId": 10
@@ -179,6 +353,24 @@
       "writtenOn": "2018-03-19T22:10:30Z",
       "side": 1,
       "message": "Doing this without the recursive update above seems prone to error. In particular, it bypasses all of update()\u0027s \"how to handle various dirty working directory scenarios\" logic (see line 512 and below), and replaces it with a straight-up \"git reset --hard\". I\u0027d prefer to keep gclient\u0027s normal logic if possible, and only do the cherry-picking after everything else has been done.\n\nUgh, or maybe .update() is already so messy and gross that trying to play well with it is an exercise in futility and bypassing it like this is really the best approach. I\u0027m honestly not sure. It\u0027s not breaking anyone\u0027s workflow, since this only gets executed if they pass the new flag...\n\nI guess my suggestion for now would be to leave this as short, raw, and destructive as it currently is, but to comment it saying something along the lines of \"this behavior is gated behind a flag, and bypasses all of gclient\u0027s crazy logic below. Pass the flag at your own peril.\" And if it turns out that some of that logic below is actually useful, we can revisit this.",
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dd4fbda_2f218cfe",
+        "filename": "gclient_scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T16:46:39Z",
+      "side": 1,
+      "message": "The reason for bypassing update is that we will simply discard any modifications we make if we won\u0027t rebase the patch.\nHowever, you\u0027re right in that it does not deal with dirty working directory scenarios at all, so it is error prone.\nAlso, now that I think about it, if we end up doing cherry-picking, then we will always rebase...\n\nOk, I think I won\u0027t bypass it for now, just to maintain backwards compatibility.",
+      "parentUuid": "3260655b_ce3e58dc",
       "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

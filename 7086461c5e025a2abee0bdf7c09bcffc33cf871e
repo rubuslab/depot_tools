@@ -88,6 +88,24 @@
       "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ccf903b_571b2826",
+        "filename": "my_activity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-21T16:28:27Z",
+      "side": 1,
+      "message": "Yes, the output should look like this:\n\n  Loading data.......................\n\nfollowed up by the usual my_activity.py output",
+      "parentUuid": "923c346e_f8c3653c",
+      "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

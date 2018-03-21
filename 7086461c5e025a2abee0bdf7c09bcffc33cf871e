@@ -70,6 +70,24 @@
       "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "923c346e_f8c3653c",
+        "filename": "my_activity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-03-21T16:24:54Z",
+      "side": 1,
+      "message": "oh, you are right. I didn\u0027t realize this is the first line ever printed by the script.",
+      "parentUuid": "8f6fc5c6_e0ccb6c7",
+      "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

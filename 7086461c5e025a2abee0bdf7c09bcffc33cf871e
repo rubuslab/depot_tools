@@ -52,6 +52,24 @@
       "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f6fc5c6_e0ccb6c7",
+        "filename": "my_activity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-03-21T16:10:53Z",
+      "side": 1,
+      "message": "The script is not printing any dots in parallel to this line, so I won\u0027t see why it would have dots before the \u0027Loading data\u0027 string. It\u0027s only later that we start sending requests and printing dots.",
+      "parentUuid": "a0b46c63_3fc0ee75",
+      "revId": "7086461c5e025a2abee0bdf7c09bcffc33cf871e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

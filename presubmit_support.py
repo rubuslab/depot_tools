@@ -30,8 +30,10 @@ import os  # Somewhat exposed through the API.
 import pickle  # Exposed through the API.
 import random
 import re  # Exposed through the API.
+import signal
 import sys  # Parts exposed through API.
 import tempfile  # Exposed through the API.
+import threading
 import time
 import traceback  # Exposed through the API.
 import types
@@ -66,9 +68,103 @@ class CommandData(object):
   def __init__(self, name, cmd, kwargs, message):
     self.name = name
     self.cmd = cmd
+    self.stdin = kwargs.get('stdin', None)
     self.kwargs = kwargs
+    self.kwargs['stdout'] = subprocess.PIPE
+    self.kwargs['stderr'] = subprocess.STDOUT
+    self.kwargs['stdin'] = subprocess.PIPE
     self.message = message
     self.info = None
+
+
+# An object that catches SIGINT sent to the Python process and notices
+# if processes passed to wait() die by SIGINT (we need to look for
+# both of those cases, because pressing Ctrl+C can result in either
+# the main process or one of the subprocesses getting the signal).
+#
+# Before a SIGINT is seen, wait(p) will simply call p.wait() and
+# return the result. Once a SIGINT has been seen (in the main process
+# or a subprocess, including the one the current call is waiting for),
+# wait(p) will call p.terminate() and raise ProcessWasInterrupted.
+class SigintHandler(object):
+  class ProcessWasInterrupted(Exception):
+    pass
+
+  sigint_returncodes = {-signal.SIGINT,  # Unix
+                        -1073741510,     # Windows
+                        }
+  def __init__(self):
+    self.__lock = threading.Lock()
+    self.__processes = set()
+    self.__got_sigint = False
+    signal.signal(signal.SIGINT, lambda signal_num, frame: self.interrupt())
+  def __on_sigint(self):
+    self.__got_sigint = True
+    while self.__processes:
+      try:
+        self.__processes.pop().terminate()
+      except OSError:
+        pass
+  def interrupt(self):
+    with self.__lock:
+      self.__on_sigint()
+  def got_sigint(self):
+    with self.__lock:
+      return self.__got_sigint
+  def wait(self, p, stdin):
+    with self.__lock:
+      if self.__got_sigint:
+        p.terminate()
+      self.__processes.add(p)
+    stdout, stderr = p.communicate(stdin)
+    code = p.returncode
+    with self.__lock:
+      self.__processes.discard(p)
+      if code in self.sigint_returncodes:
+        self.__on_sigint()
+      if self.__got_sigint:
+        raise self.ProcessWasInterrupted
+    return stdout, stderr
+sigint_handler = SigintHandler()
+
+
+class LemurPool(object):
+  def __init__(self, pool_size=None):
+    self._tests = []
+    self._pool_size = pool_size or multiprocessing.cpu_count()
+    self._messages = []
+    self._messages_lock = threading.Lock()
+    self._current_index = 0
+    self._current_index_lock = threading.Lock()
+
+  def AddTests(self, tests):
+    self._tests.extend(tests)
+
+  def RunAsync(self):
+    def _WorkerFn():
+      while True:
+        test_index = None
+        with self._current_index_lock:
+          if self._current_index == len(self._tests):
+            break
+          test_index = self._current_index
+          self._current_index += 1
+        result = CallCommand(self._tests[test_index])
+        if result:
+          with self._messages_lock:
+            self._messages.append(result)
+
+    def _StartDaemon():
+      t = threading.Thread(target=_WorkerFn)
+      t.daemon = True
+      t.start()
+      return t
+
+    threads = [_StartDaemon() for _ in range(self._pool_size)]
+    for worker in threads:
+      worker.join()
+
+    return self._messages
 
 
 def normpath(path):
@@ -390,7 +486,7 @@ class InputApi(object):
   )
 
   def __init__(self, change, presubmit_path, is_committing,
-      rietveld_obj, verbose, gerrit_obj=None, dry_run=None):
+      rietveld_obj, verbose, gerrit_obj=None, dry_run=None, lemur_pool=None):
     """Builds an InputApi object.
 
     Args:
@@ -412,6 +508,8 @@ class InputApi(object):
     self.host_url = 'http://codereview.chromium.org'
     if self.rietveld:
       self.host_url = self.rietveld.url
+
+    self.lemur_pool = lemur_pool or LemurPool()
 
     # We expose various modules and functions as attributes of the input_api
     # so that presubmit scripts don't have to import them.
@@ -444,14 +542,6 @@ class InputApi(object):
 
     # InputApi.platform is the platform you're currently running on.
     self.platform = sys.platform
-
-    self.cpu_count = multiprocessing.cpu_count()
-
-    # this is done here because in RunTests, the current working directory has
-    # changed, which causes Pool() to explode fantastically when run on windows
-    # (because it tries to load the __main__ module, which imports lots of
-    # things relative to the current working directory).
-    self._run_tests_pool = multiprocessing.Pool(self.cpu_count)
 
     # The local path of the currently-being-processed presubmit script.
     self._current_presubmit_path = os.path.dirname(presubmit_path)
@@ -641,9 +731,9 @@ class InputApi(object):
         tests.append(t)
         if self.verbose:
           t.info = _PresubmitNotifyResult
+        t.kwargs['cwd'] = self.PresubmitLocalPath()
     if len(tests) > 1 and parallel:
-      # async recipe works around multiprocessing bug handling Ctrl-C
-      msgs.extend(self._run_tests_pool.map_async(CallCommand, tests).get(99999))
+      self.lemur_pool.AddTests(tests)
     else:
       msgs.extend(map(CallCommand, tests))
     return [m for m in msgs if m]
@@ -1269,7 +1359,7 @@ def DoPostUploadExecuter(change,
 
 class PresubmitExecuter(object):
   def __init__(self, change, committing, rietveld_obj, verbose,
-               gerrit_obj=None, dry_run=None):
+               gerrit_obj=None, dry_run=None, lemur_pool=None):
     """
     Args:
       change: The Change object.
@@ -1285,6 +1375,7 @@ class PresubmitExecuter(object):
     self.verbose = verbose
     self.dry_run = dry_run
     self.more_cc = []
+    self.lemur_pool = lemur_pool
 
   def ExecPresubmitScript(self, script_text, presubmit_path):
     """Executes a single presubmit script.
@@ -1305,7 +1396,8 @@ class PresubmitExecuter(object):
     # Load the presubmit script into context.
     input_api = InputApi(self.change, presubmit_path, self.committing,
                          self.rietveld, self.verbose,
-                         gerrit_obj=self.gerrit, dry_run=self.dry_run)
+                         gerrit_obj=self.gerrit, dry_run=self.dry_run,
+                         lemur_pool=self.lemur_pool)
     output_api = OutputApi(self.committing)
     context = {}
     try:
@@ -1339,8 +1431,6 @@ class PresubmitExecuter(object):
             'output_api.PresubmitResult')
     else:
       result = ()  # no error since the script doesn't care about current event.
-
-    input_api.ShutdownPool()
 
     # Return the process to the original working directory.
     os.chdir(main_path)
@@ -1403,8 +1493,9 @@ def DoPresubmitChecks(change,
     if not presubmit_files and verbose:
       output.write("Warning, no PRESUBMIT.py found.\n")
     results = []
+    lemur_pool = LemurPool()
     executer = PresubmitExecuter(change, committing, rietveld_obj, verbose,
-                                 gerrit_obj, dry_run)
+                                 gerrit_obj, dry_run, lemur_pool)
     if default_presubmit:
       if verbose:
         output.write("Running default presubmit script.\n")
@@ -1417,6 +1508,8 @@ def DoPresubmitChecks(change,
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename, 'rU')
       results += executer.ExecPresubmitScript(presubmit_script, filename)
+
+    results += lemur_pool.RunAsync()
 
     output.more_cc.extend(executer.more_cc)
     errors = []
@@ -1528,27 +1621,22 @@ def canned_check_filter(method_names):
       setattr(presubmit_canned_checks, name, method)
 
 
-def CallCommand(cmd_data):
-  """Runs an external program, potentially from a child process created by the
-  multiprocessing module.
-
-  multiprocessing needs a top level function with a single argument.
-  """
-  cmd_data.kwargs['stdout'] = subprocess.PIPE
-  cmd_data.kwargs['stderr'] = subprocess.STDOUT
+def CallCommand(test):
+  """Runs an external program."""
   try:
     start = time.time()
-    (out, _), code = subprocess.communicate(cmd_data.cmd, **cmd_data.kwargs)
+    p = subprocess.Popen(test.cmd, **test.kwargs)
+    stdout, _ = sigint_handler.wait(p, test.stdin)
     duration = time.time() - start
   except OSError as e:
     duration = time.time() - start
-    return cmd_data.message(
-        '%s exec failure (%4.2fs)\n   %s' % (cmd_data.name, duration, e))
-  if code != 0:
-    return cmd_data.message(
-        '%s (%4.2fs) failed\n%s' % (cmd_data.name, duration, out))
-  if cmd_data.info:
-    return cmd_data.info('%s (%4.2fs)' % (cmd_data.name, duration))
+    return test.message(
+        '%s exec failure (%4.2fs)\n   %s' % (test.name, duration, e))
+  if p.returncode != 0:
+    return test.message(
+        '%s (%4.2fs) failed\n%s' % (test.name, duration, stdout))
+  if test.info:
+    return test.info('%s (%4.2fs)' % (test.name, duration))
 
 
 def main(argv=None):

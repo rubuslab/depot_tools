@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "72dfd86b_a95c5e1f",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-03-21T20:14:39Z",
+      "side": 1,
+      "message": "This is kinda long.  _git_disable_gc()?",
+      "range": {
+        "startLine": 713,
+        "startChar": 4,
+        "endLine": 713,
+        "endChar": 34
+      },
+      "revId": "3728c87a6af16f98807b26037e902148e90736d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00983e79_45f78744",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T17:02:48Z",
+      "side": 1,
+      "message": "Taken from https://github.com/google/gtest-parallel/blob/master/gtest_parallel.py#L37",
+      "range": {
+        "startLine": 89,
+        "startChar": 6,
+        "endLine": 89,
+        "endChar": 19
+      },
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf6cadf5_f9e79f46",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T17:02:48Z",
+      "side": 1,
+      "message": "Thread-based pool, rather than multiprocessing pool.\nSince we\u0027re calling an external command on each thread, we don\u0027t have to care about the PIL, and the performance is the same (on depot_tools\u0027 presubmit)",
+      "range": {
+        "startLine": 131,
+        "startChar": 6,
+        "endLine": 131,
+        "endChar": 15
+      },
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db980ab0_e6775738",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2345,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-21T17:02:48Z",
+      "side": 1,
+      "message": "I think most of the work will be dealing with the tests.\nAs they are, they basically repeat the code (by asserting some calls were made in some order).\n\nI\u0027m planning to update them so that they test we end up calling what we care about (RunTests with certain arguments), no matter how did they do it.",
+      "range": {
+        "startLine": 2345,
+        "startChar": 6,
+        "endLine": 2345,
+        "endChar": 25
+      },
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

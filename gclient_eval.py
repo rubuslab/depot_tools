@@ -37,7 +37,7 @@ class _NodeDict(collections.MutableMapping):
   def GetNode(self, key):
     return self.data[key][1]
 
-  def _SetNode(self, key, value, node):
+  def SetNode(self, key, value, node):
     self.data[key] = (value, node)
 
 
@@ -183,8 +183,10 @@ _GCLIENT_SCHEMA = schema.Schema(_NodeDictSchema({
 }))
 
 
-def _gclient_eval(node_or_string, global_scope, filename='<unknown>'):
+def _gclient_eval(node_or_string, vars_dict=None, expand_vars=True,
+                  filename='<unknown>'):
   """Safely evaluates a single expression. Returns the result."""
+  vars_dict = vars_dict or {}
   _allowed_names = {'None': None, 'True': True, 'False': False}
   if isinstance(node_or_string, basestring):
     node_or_string = ast.parse(node_or_string, filename=filename, mode='eval')
@@ -192,7 +194,15 @@ def _gclient_eval(node_or_string, global_scope, filename='<unknown>'):
     node_or_string = node_or_string.body
   def _convert(node):
     if isinstance(node, ast.Str):
-      return node.s
+      if not expand_vars:
+        return node.s
+      try:
+        return node.s.format(**vars_dict)
+      except KeyError as e:
+        raise ValueError(
+            '%s was used as a variable, but was not declared in the vars dict '
+            '(file %r, line %s)' % (
+                e.message, filename, getattr(node, 'lineno', '<unknown>')))
     elif isinstance(node, ast.Num):
       return node.n
     elif isinstance(node, ast.Tuple):
@@ -209,16 +219,31 @@ def _gclient_eval(node_or_string, global_scope, filename='<unknown>'):
                 node.id, filename, getattr(node, 'lineno', '<unknown>')))
       return _allowed_names[node.id]
     elif isinstance(node, ast.Call):
-      if not isinstance(node.func, ast.Name):
+      if not isinstance(node.func, ast.Name) or node.func.id != 'Var':
         raise ValueError(
-            'invalid call: func should be a name (file %r, line %s)' % (
+            'Var is the only allowed function (file %r, line %s)' % (
                 filename, getattr(node, 'lineno', '<unknown>')))
-      if node.keywords or node.starargs or node.kwargs:
+      if node.keywords or node.starargs or node.kwargs or len(node.args) != 1:
         raise ValueError(
-            'invalid call: use only regular args (file %r, line %s)' % (
+            'Var takes exactly one argument (file %r, line %s)' % (
                 filename, getattr(node, 'lineno', '<unknown>')))
-      args = map(_convert, node.args)
-      return global_scope[node.func.id](*args)
+      arg = _convert(node.args[0])
+      if not isinstance(arg, basestring):
+        raise ValueError(
+            'Var\'s argument must be a variable name (file %r, line %s)' % (
+                filename, getattr(node, 'lineno', '<unknown>')))
+      if not expand_vars:
+        return '{%s}' % arg
+      if vars_dict is None:
+        raise ValueError(
+            'vars must be declared before Var can be used (file %r, line %s)'
+            % (filename, getattr(node, 'lineno', '<unknown>')))
+      if arg not in vars_dict:
+        raise ValueError(
+            '%s was used as a variable, but was not declared in the vars dict '
+            '(file %r, line %s)' % (
+                arg, filename, getattr(node, 'lineno', '<unknown>')))
+      return vars_dict[arg]
     elif isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
       return _convert(node.left) + _convert(node.right)
     elif isinstance(node, ast.BinOp) and isinstance(node.op, ast.Mod):
@@ -231,13 +256,18 @@ def _gclient_eval(node_or_string, global_scope, filename='<unknown>'):
   return _convert(node_or_string)
 
 
-def Exec(content, global_scope, local_scope, filename='<unknown>'):
+def Exec(content, expand_vars=True, filename='<unknown>'):
   """Safely execs a set of assignments. Mutates |local_scope|."""
   node_or_string = ast.parse(content, filename=filename, mode='exec')
   if isinstance(node_or_string, ast.Expression):
     node_or_string = node_or_string.body
 
-  defined_variables = set()
+  tokens = {
+      token[2]: list(token)
+      for token in tokenize.generate_tokens(
+          cStringIO.StringIO(content).readline)
+  }
+  local_scope = _NodeDict({}, tokens)
   def _visit_in_module(node):
     if isinstance(node, ast.Assign):
       if len(node.targets) != 1:
@@ -249,15 +279,15 @@ def Exec(content, global_scope, local_scope, filename='<unknown>'):
         raise ValueError(
             'invalid assignment: target should be a name (file %r, line %s)' % (
                 filename, getattr(node, 'lineno', '<unknown>')))
-      value = _gclient_eval(node.value, global_scope, filename=filename)
+      value = _gclient_eval(node.value, local_scope.get('vars', None),
+                            expand_vars=expand_vars, filename=filename)
 
-      if target.id in defined_variables:
+      if target.id in local_scope:
         raise ValueError(
             'invalid assignment: overrides var %r (file %r, line %s)' % (
                 target.id, filename, getattr(node, 'lineno', '<unknown>')))
 
-      defined_variables.add(target.id)
-      return target.id, (value, node.value)
+      local_scope.SetNode(target.id, value, node.value)
     else:
       raise ValueError(
           'unexpected AST node: %s %s (file %r, line %s)' % (
@@ -265,15 +295,8 @@ def Exec(content, global_scope, local_scope, filename='<unknown>'):
               getattr(node, 'lineno', '<unknown>')))
 
   if isinstance(node_or_string, ast.Module):
-    data = []
     for stmt in node_or_string.body:
-      data.append(_visit_in_module(stmt))
-    tokens = {
-        token[2]: list(token)
-        for token in tokenize.generate_tokens(
-            cStringIO.StringIO(content).readline)
-    }
-    local_scope = _NodeDict(data, tokens)
+      _visit_in_module(stmt)
   else:
     raise ValueError(
         'unexpected AST node: %s %s (file %r, line %s)' % (
@@ -283,6 +306,49 @@ def Exec(content, global_scope, local_scope, filename='<unknown>'):
             getattr(node_or_string, 'lineno', '<unknown>')))
 
   return _GCLIENT_SCHEMA.validate(local_scope)
+
+
+def Parse(content, expand_vars, validate_syntax, filename, vars_override=None):
+  # TODO(ehmaldonado): Make validate_syntax = True the only case
+  if validate_syntax:
+    return Exec(content, expand_vars, filename)
+
+  vars_dict = {}
+  def _DeepFormat(node):
+    if isinstance(node, basestring):
+      return node.format(**vars_dict)
+    elif isinstance(node, dict):
+      return {
+          k.format(**vars_dict): _DeepFormat(v)
+          for k, v in node.iteritems()
+      }
+    elif isinstance(node, list):
+      return [
+          _DeepFormat(elem)
+          for elem in node
+      ]
+    elif isinstance(node, tuple):
+      return tuple(
+          _DeepFormat(elem)
+          for elem in node
+      )
+    else:
+      return node
+
+  local_scope = {}
+  global_scope = {'Var': lambda var_name: '{%s}' % var_name}
+  exec(content, global_scope, local_scope)
+
+  if 'vars' not in local_scope or not expand_vars:
+    return local_scope
+
+  vars_dict.update(local_scope['vars'])
+  vars_override = vars_override or {}
+  for var, value in vars_override.iteritems():
+    if var in vars_dict:
+      vars_dict[var] = value
+
+  return _DeepFormat(local_scope)
 
 
 def EvaluateCondition(condition, variables, referenced_variables=None):
@@ -412,7 +478,7 @@ def SetVar(gclient_dict, var_name, value):
         "The vars entry for %s has no formatting information." % var_name)
 
   _UpdateAstString(tokens, node, value)
-  gclient_dict['vars']._SetNode(var_name, value, node)
+  gclient_dict['vars'].SetNode(var_name, value, node)
 
 
 def SetCIPD(gclient_dict, dep_name, package_name, new_version):
@@ -446,10 +512,10 @@ def SetCIPD(gclient_dict, dep_name, package_name, new_version):
 
   new_version = 'version:' + new_version
   _UpdateAstString(tokens, node, new_version)
-  packages[0]._SetNode('version', new_version, node)
+  packages[0].SetNode('version', new_version, node)
 
 
-def SetRevision(gclient_dict, global_scope, dep_name, new_revision):
+def SetRevision(gclient_dict, dep_name, new_revision):
   if not isinstance(gclient_dict, _NodeDict) or gclient_dict.tokens is None:
     raise ValueError(
         "Can't use SetRevision for the given gclient dict. It contains no "
@@ -473,8 +539,8 @@ def SetRevision(gclient_dict, global_scope, dep_name, new_revision):
       SetVar(gclient_dict, node.args[0].s, new_revision)
     else:
       _UpdateAstString(tokens, node, new_revision)
-      value = _gclient_eval(dep_node, global_scope)
-      dep_dict._SetNode(dep_key, value, dep_node)
+      value = _gclient_eval(dep_node, gclient_dict.get('vars', None))
+      dep_dict.SetNode(dep_key, value, dep_node)
 
   if isinstance(gclient_dict['deps'][dep_name], _NodeDict):
     _UpdateRevision(gclient_dict['deps'][dep_name], 'url')

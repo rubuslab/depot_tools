@@ -736,7 +736,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     deps_to_add.sort(key=lambda x: x.name)
     return deps_to_add
 
-  def ParseDepsFile(self):
+  def ParseDepsFile(self, expand_vars=True):
     """Parses the DEPS file for this dependency."""
     assert not self.deps_parsed
     assert not self.dependencies
@@ -765,17 +765,14 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
     local_scope = {}
     if deps_content:
-      global_scope = {
-        'Var': lambda var_name: '{%s}' % var_name,
-        'deps_os': {},
-      }
-      # Eval the content.
       try:
-        if self._get_option('validate_syntax', False):
-          local_scope = gclient_eval.Exec(
-              deps_content, global_scope, local_scope, filepath)
-        else:
-          exec(deps_content, global_scope, local_scope)
+        vars_override = self.get_vars()
+        if self.parent:
+          vars_override.update(self.parent.get_vars())
+        local_scope = gclient_eval.Parse(
+            deps_content, expand_vars,
+            self._get_option('validate_syntax', False),
+            filepath, vars_override)
       except SyntaxError as e:
         gclient_utils.SyntaxErrorToError(filepath, e)
 
@@ -982,7 +979,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
           file_list[i] = file_list[i][1:]
 
     # Always parse the DEPS file.
-    self.ParseDepsFile()
+    self.ParseDepsFile(expand_vars=(command != 'flatten'))
     self._run_is_done(file_list or [], parsed_url)
     if command in ('update', 'revert') and not options.noprehooks:
       self.RunPreDepsHooks()
@@ -1835,7 +1832,7 @@ it or fix the checkout.
           print('%s: %s' % (x, entries[x]))
     logging.info(str(self))
 
-  def ParseDepsFile(self):
+  def ParseDepsFile(self, expand_vars=None):
     """No DEPS to parse for a .gclient file."""
     raise gclient_utils.Error('Internal error')
 
@@ -1943,7 +1940,7 @@ class CipdDependency(Dependency):
       self._cipd_package = self._cipd_root.add_package(
           self._cipd_subdir, self._package_name, self._package_version)
 
-  def ParseDepsFile(self):
+  def ParseDepsFile(self, expand_vars=None):
     """CIPD dependencies are not currently allowed to have nested deps."""
     self.add_dependencies_and_close([], [])
 
@@ -2880,14 +2877,14 @@ def CMDsetdep(parser, args):
                          'file in the current directory.')
   (options, args) = parser.parse_args(args)
 
-  global_scope = {'Var': lambda var: '{%s}' % var}
-
   if not os.path.isfile(options.deps_file):
     raise gclient_utils.Error(
         'DEPS file %s does not exist.' % options.deps_file)
   with open(options.deps_file) as f:
     contents = f.read()
-  local_scope = gclient_eval.Exec(contents, global_scope, {})
+  local_scope = gclient_eval.Parse(
+      contents, expand_vars=True, validate_syntax=True,
+      filename=options.deps_file)
 
   for var in options.vars:
     name, _, value = var.partition('=')
@@ -2909,7 +2906,7 @@ def CMDsetdep(parser, args):
             % (name, package))
       gclient_eval.SetCIPD(local_scope, name, package, value)
     else:
-      gclient_eval.SetRevision(local_scope, global_scope, name, value)
+      gclient_eval.SetRevision(local_scope, name, value)
 
   with open(options.deps_file, 'w') as f:
     f.write(gclient_eval.RenderDEPSFile(local_scope))

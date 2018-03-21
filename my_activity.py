@@ -197,6 +197,11 @@ class MyActivity(object):
     self.check_cookies()
     self.google_code_auth_token = None
 
+  def show_progress(self, how='.'):
+    if sys.stdout.isatty():
+      sys.stdout.write(how)
+      sys.stdout.flush()
+
   # Check the codereview cookie jar to determine which Rietveld instances to
   # authenticate to.
   def check_cookies(self):
@@ -245,6 +250,7 @@ class MyActivity(object):
         reviewer=reviewer_email,
         modified_after=query_modified_after,
         with_messages=True)
+    self.show_progress()
 
     issues = filter(
         lambda i: (datetime_from_rietveld(i['created']) < self.modified_before),
@@ -294,6 +300,7 @@ class MyActivity(object):
       patchset_props = remote.get_patchset_properties(
           issue['issue'],
           issue['patchsets'][-1])
+      self.show_progress()
       ret['delta'] = '+%d,-%d' % (
           sum(f['num_added'] for f in patchset_props['files'].itervalues()),
           sum(f['num_removed'] for f in patchset_props['files'].itervalues()))
@@ -365,6 +372,7 @@ class MyActivity(object):
     filters = ['-age:%ss' % max_age, user_filter]
 
     issues = self.gerrit_changes_over_rest(instance, filters)
+    self.show_progress()
     issues = [self.process_gerrit_issue(instance, issue)
               for issue in issues]
 
@@ -443,6 +451,7 @@ class MyActivity(object):
     url = ('https://monorail-prod.appspot.com/_ah/api/monorail/v1/projects'
            '/%s/issues/%s/comments?maxResults=10000') % (project, issue_id)
     _, body = http.request(url)
+    self.show_progress()
     content = json.loads(body)
     if not content:
       logging.error('Unable to parse %s response from monorail.', project)
@@ -462,6 +471,7 @@ class MyActivity(object):
     query_data = urllib.urlencode(query)
     url = url + '?' + query_data
     _, body = http.request(url)
+    self.show_progress()
     content = json.loads(body)
     if not content:
       logging.error('Unable to parse %s response from monorail.', project)
@@ -641,7 +651,8 @@ class MyActivity(object):
     pass
 
   def get_changes(self):
-    with contextlib.closing(ThreadPool()) as pool:
+    num_instances = len(rietveld_instances) + len(gerrit_instances)
+    with contextlib.closing(ThreadPool(num_instances)) as pool:
       rietveld_changes = pool.map_async(
           lambda instance: self.rietveld_search(instance, owner=self.user),
           rietveld_instances)
@@ -659,7 +670,8 @@ class MyActivity(object):
           self.print_change(change)
 
   def get_reviews(self):
-    with contextlib.closing(ThreadPool()) as pool:
+    num_instances = len(rietveld_instances) + len(gerrit_instances)
+    with contextlib.closing(ThreadPool(num_instances)) as pool:
       rietveld_reviews = pool.map_async(
           lambda instance: self.rietveld_search(instance, reviewer=self.user),
           rietveld_instances)
@@ -678,14 +690,15 @@ class MyActivity(object):
         self.print_review(review)
 
   def get_issues(self):
-    self.issues = []
-    with contextlib.closing(ThreadPool()) as pool:
-      for project_issues in pool.imap(
-          self.monorail_issue_search, monorail_projects.keys()):
-        for filtered_issue in pool.imap(
-            self.filter_modified_monorail_issue, project_issues):
-          if filtered_issue:
-            self.issues.append(filtered_issue)
+    with contextlib.closing(ThreadPool(len(monorail_projects))) as pool:
+      monorail_issues = pool.map(
+          self.monorail_issue_search, monorail_projects.keys())
+      monorail_issues = list(itertools.chain.from_iterable(monorail_issues))
+
+    with contextlib.closing(ThreadPool(len(monorail_issues))) as pool:
+      filtered_issues = pool.map(
+          self.filter_modified_monorail_issue, monorail_issues)
+      self.issues = [issue for issue in filtered_issues if issue]
 
   def get_referenced_issues(self):
     if not self.issues:
@@ -977,6 +990,7 @@ def main():
   logging.info('Using range %s to %s', options.begin, options.end)
 
   my_activity = MyActivity(options)
+  my_activity.show_progress('Loading data')
 
   if not (options.changes or options.reviews or options.issues or
           options.changes_by_issue):
@@ -1004,6 +1018,8 @@ def main():
       my_activity.get_referenced_issues()
   except auth.AuthenticationError as e:
     logging.error('auth.AuthenticationError: %s', e)
+
+  my_activity.show_progress('\n')
 
   output_file = None
   try:

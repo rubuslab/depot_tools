@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "218a58b3_4e458128",
+        "filename": "gclient.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-21T19:22:36Z",
+      "side": 1,
+      "message": "Why bother setting these on the options object, when you could just pass them directly to apply_gerrit_ref?",
+      "range": {
+        "startLine": 972,
+        "startChar": 0,
+        "endLine": 975,
+        "endChar": 43
+      },
+      "revId": "4d9736e6c459e4e2cafed0744459b6c06ad3aba6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09b7f674_52feff31",
+        "filename": "gclient.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1623,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-21T19:22:36Z",
+      "side": 1,
+      "message": "I suggest you use the exact same error messages as for misformatted --revision flags.",
+      "range": {
+        "startLine": 1622,
+        "startChar": 0,
+        "endLine": 1623,
+        "endChar": 42
+      },
+      "revId": "4d9736e6c459e4e2cafed0744459b6c06ad3aba6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bf30a4e_e395d4d1",
+        "filename": "gclient.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1669,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-21T19:22:36Z",
+      "side": 1,
+      "message": "Make this an error immediately; having --gerrit-refs that don\u0027t get consumed by the work queue can be an error right now, since there\u0027s no backwards-compatibility to worry about.",
+      "revId": "4d9736e6c459e4e2cafed0744459b6c06ad3aba6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

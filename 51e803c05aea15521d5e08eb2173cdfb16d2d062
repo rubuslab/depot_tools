@@ -225,6 +225,30 @@
     },
     {
       "key": {
+        "uuid": "90f1b1fa_688b3dd2",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2633,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-21T19:22:36Z",
+      "side": 1,
+      "message": "Yep, that would be totally fine as well. If you do change it, change the name of _EnforceGerritRefs as well.",
+      "parentUuid": "30f60488_38135f7b",
+      "range": {
+        "startLine": 2633,
+        "startChar": 21,
+        "endLine": 2633,
+        "endChar": 33
+      },
+      "revId": "51e803c05aea15521d5e08eb2173cdfb16d2d062",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0bbf8ed1_6575b9a0",
         "filename": "gclient.py",
         "patchSetId": 10

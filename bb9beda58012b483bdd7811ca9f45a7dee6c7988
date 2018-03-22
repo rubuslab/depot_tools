@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "de8948df_da0790db",
+        "filename": "gclient_eval.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-03-22T18:36:48Z",
+      "side": 1,
+      "message": "Nit: there\u0027s no need to make these optional args, since you control the caller.",
+      "revId": "bb9beda58012b483bdd7811ca9f45a7dee6c7988",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d065ab70_601a6d72",
+        "filename": "tests/gclient_eval_unittest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-03-22T18:36:48Z",
+      "side": 1,
+      "message": "Nit: trailing whitespace?",
+      "revId": "bb9beda58012b483bdd7811ca9f45a7dee6c7988",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

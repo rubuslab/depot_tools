@@ -183,7 +183,7 @@ _GCLIENT_SCHEMA = schema.Schema(_NodeDictSchema({
 }))
 
 
-def _gclient_eval(node_or_string, filename='<unknown>'):
+def _gclient_eval(node_or_string, global_scope, filename='<unknown>'):
   """Safely evaluates a single expression. Returns the result."""
   _allowed_names = {'None': None, 'True': True, 'False': False}
   if isinstance(node_or_string, basestring):
@@ -209,20 +209,16 @@ def _gclient_eval(node_or_string, filename='<unknown>'):
                 node.id, filename, getattr(node, 'lineno', '<unknown>')))
       return _allowed_names[node.id]
     elif isinstance(node, ast.Call):
-      if not isinstance(node.func, ast.Name) or node.func.id != 'Var':
+      if not isinstance(node.func, ast.Name):
         raise ValueError(
-            'Var is the only allowed function (file %r, line %s)' % (
+            'invalid call: func should be a name (file %r, line %s)' % (
                 filename, getattr(node, 'lineno', '<unknown>')))
-      if node.keywords or node.starargs or node.kwargs or len(node.args) != 1:
+      if node.keywords or node.starargs or node.kwargs:
         raise ValueError(
-            'Var takes exactly one argument (file %r, line %s)' % (
+            'invalid call: use only regular args (file %r, line %s)' % (
                 filename, getattr(node, 'lineno', '<unknown>')))
-      arg = _convert(node.args[0])
-      if not isinstance(arg, basestring):
-        raise ValueError(
-            'Var\'s argument must be a variable name (file %r, line %s)' % (
-                filename, getattr(node, 'lineno', '<unknown>')))
-      return '{%s}' % arg
+      args = map(_convert, node.args)
+      return global_scope[node.func.id](*args)
     elif isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
       return _convert(node.left) + _convert(node.right)
     elif isinstance(node, ast.BinOp) and isinstance(node.op, ast.Mod):
@@ -235,7 +231,7 @@ def _gclient_eval(node_or_string, filename='<unknown>'):
   return _convert(node_or_string)
 
 
-def Exec(content, filename='<unknown>'):
+def Exec(content, global_scope, local_scope, filename='<unknown>'):
   """Safely execs a set of assignments. Mutates |local_scope|."""
   node_or_string = ast.parse(content, filename=filename, mode='exec')
   if isinstance(node_or_string, ast.Expression):
@@ -253,7 +249,7 @@ def Exec(content, filename='<unknown>'):
         raise ValueError(
             'invalid assignment: target should be a name (file %r, line %s)' % (
                 filename, getattr(node, 'lineno', '<unknown>')))
-      value = _gclient_eval(node.value, filename=filename)
+      value = _gclient_eval(node.value, global_scope, filename=filename)
 
       if target.id in defined_variables:
         raise ValueError(
@@ -453,7 +449,7 @@ def SetCIPD(gclient_dict, dep_name, package_name, new_version):
   packages[0]._SetNode('version', new_version, node)
 
 
-def SetRevision(gclient_dict, dep_name, new_revision):
+def SetRevision(gclient_dict, global_scope, dep_name, new_revision):
   if not isinstance(gclient_dict, _NodeDict) or gclient_dict.tokens is None:
     raise ValueError(
         "Can't use SetRevision for the given gclient dict. It contains no "
@@ -477,7 +473,7 @@ def SetRevision(gclient_dict, dep_name, new_revision):
       SetVar(gclient_dict, node.args[0].s, new_revision)
     else:
       _UpdateAstString(tokens, node, new_revision)
-      value = _gclient_eval(dep_node)
+      value = _gclient_eval(dep_node, global_scope)
       dep_dict._SetNode(dep_key, value, dep_node)
 
   if isinstance(gclient_dict['deps'][dep_name], _NodeDict):

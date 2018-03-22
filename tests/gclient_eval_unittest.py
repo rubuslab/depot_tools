@@ -20,6 +20,17 @@ import gclient_eval
 
 
 _SAMPLE_DEPS_FILE = textwrap.dedent("""\
+vars = {
+    'git_repo': 'https://example.com/repo.git',
+     # Some comment with bad indentation
+     'dep_2_rev': '1ced',
+     # Some more comments
+     # 1 
+     # 2
+     # 3
+    'dep_3_rev': '5p1e5',
+}
+
 deps = {
     'src/dep': Var('git_repo') + '/dep' + '@' + 'deadbeef',
     # Some comment
@@ -45,17 +56,7 @@ deps = {
         'dep_type': 'cipd',
     },
 }
-
-vars = {
-    'git_repo': 'https://example.com/repo.git',
-     # Some comment with bad indentation
-     'dep_2_rev': '1ced',
-     # Some more comments
-     # 1 
-     # 2
-     # 3
-    'dep_3_rev': '5p1e5',
-}""")
+""")
 
 
 class GClientEvalTest(unittest.TestCase):
@@ -79,10 +80,15 @@ class GClientEvalTest(unittest.TestCase):
       gclient_eval._gclient_eval('UnsafeName')
     self.assertIn('invalid name \'UnsafeName\'', str(cm.exception))
 
+  def test_invalid_call(self):
+    with self.assertRaises(ValueError) as cm:
+      gclient_eval._gclient_eval('Foo("bar")')
+    self.assertIn('Var is the only allowed function', str(cm.exception))
+
   def test_call(self):
     self.assertEqual(
         '{bar}',
-        gclient_eval._gclient_eval('Var("bar")'))
+        gclient_eval._gclient_eval('Var("bar")', expand_vars=False))
 
   def test_plus(self):
     self.assertEqual('foo', gclient_eval._gclient_eval('"f" + "o" + "o"'))
@@ -124,12 +130,11 @@ class ExecTest(unittest.TestCase):
 
   def test_schema_wrong_type(self):
     with self.assertRaises(schema.SchemaError):
-      gclient_eval.Exec('include_rules = {}', '<string>')
+      gclient_eval.Exec('include_rules = {}')
 
   def test_recursedeps_list(self):
     local_scope = gclient_eval.Exec(
-        'recursedeps = [["src/third_party/angle", "DEPS.chromium"]]',
-        '<string>')
+        'recursedeps = [["src/third_party/angle", "DEPS.chromium"]]')
     self.assertEqual(
         {'recursedeps': [['src/third_party/angle', 'DEPS.chromium']]},
         local_scope)
@@ -142,7 +147,35 @@ class ExecTest(unittest.TestCase):
         'deps = {',
         '  "a_dep": "a" + Var("foo") + "b",',
         '}',
-    ]), '<string>')
+    ]))
+    self.assertEqual({
+        'vars': collections.OrderedDict([('foo', 'bar')]),
+        'deps': collections.OrderedDict([('a_dep', 'abarb')]),
+    }, local_scope)
+
+  def test_braces_var(self):
+    local_scope = gclient_eval.Exec('\n'.join([
+        'vars = {',
+        '  "foo": "bar",',
+        '}',
+        'deps = {',
+        '  "a_dep": "a{foo}b",',
+        '}',
+    ]))
+    self.assertEqual({
+        'vars': collections.OrderedDict([('foo', 'bar')]),
+        'deps': collections.OrderedDict([('a_dep', 'abarb')]),
+    }, local_scope)
+
+  def test_var_unexpanded(self):
+    local_scope = gclient_eval.Exec('\n'.join([
+        'vars = {',
+        '  "foo": "bar",',
+        '}',
+        'deps = {',
+        '  "a_dep": "a" + Var("foo") + "b",',
+        '}',
+    ]), expand_vars=False)
     self.assertEqual({
         'vars': collections.OrderedDict([('foo', 'bar')]),
         'deps': collections.OrderedDict([('a_dep', 'a{foo}b')]),
@@ -150,6 +183,11 @@ class ExecTest(unittest.TestCase):
 
   def test_empty_deps(self):
     local_scope = gclient_eval.Exec('deps = {}', '<string>')
+    self.assertEqual({'deps': {}}, local_scope)
+
+
+  def test_empty_deps(self):
+    local_scope = gclient_eval.Exec('deps = {}')
     self.assertEqual({'deps': {}}, local_scope)
 
 

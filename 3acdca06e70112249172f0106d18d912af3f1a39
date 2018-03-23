@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1b60685b_07de2725",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-23T23:16:18Z",
+      "side": 1,
+      "message": "I was copy-pasting the wrong thing.",
+      "parentUuid": "198d53e7_59f33df5",
+      "revId": "3acdca06e70112249172f0106d18d912af3f1a39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "74b60b7a_cfa0e993",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2018-03-23T21:39:36Z",
       "side": 1,
       "message": "Passing these four as separate arguments precludes the ability to simultaneously patch two different repos, which is something we\u0027re going to want to do soon. Do you feel like changing that now, or leaving it for followup?",
+      "range": {
+        "startLine": 909,
+        "startChar": 0,
+        "endLine": 912,
+        "endChar": 30
+      },
+      "revId": "3acdca06e70112249172f0106d18d912af3f1a39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f8e105aa_aec94858",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-23T23:16:18Z",
+      "side": 1,
+      "message": "I\u0027d prefer to do it as follow up. \nI\u0027d like to pass --patch-ref \u003curl\u003e@\u003cref\u003e to this script instead of --gerrit-repo and --gerrit-ref.\nI\u0027m not sure how to fold gerrit_reset and gerrit_rebase_patch_ref in there, assuming we don\u0027t want them to be global options.",
+      "parentUuid": "74b60b7a_cfa0e993",
       "range": {
         "startLine": 909,
         "startChar": 0,

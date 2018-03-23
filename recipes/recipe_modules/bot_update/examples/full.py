@@ -51,6 +51,8 @@ def RunSteps(api):
       api.properties.get('gerrit_no_rebase_patch_ref'))
   manifest_name = api.properties.get('manifest_name')
 
+  enable_gclient_experiment = api.properties.get('enable_gclient_experiment')
+
   if api.properties.get('test_apply_gerrit_ref'):
     prop2arg = {
         'gerrit_custom_repo': 'gerrit_repo',
@@ -80,7 +82,8 @@ def RunSteps(api):
         gerrit_no_reset=gerrit_no_reset,
         gerrit_no_rebase_patch_ref=gerrit_no_rebase_patch_ref,
         disable_syntax_validation=True,
-        manifest_name=manifest_name)
+        manifest_name=manifest_name,
+        enable_gclient_experiment=enable_gclient_experiment)
     if patch:
       api.bot_update.deapply_patch(bot_update_step)
 
@@ -184,6 +187,14 @@ def GenTests(api):
       rietveld='https://rietveld.example.com/',
       patch_project='v8',
       revisions={'src/v8': 'abc'}
+  )
+  yield api.test('enable_gclient_experiment') + api.properties(
+      issue=12345,
+      patchset=654321,
+      rietveld='https://rietveld.example.com/',
+      patch_project='v8',
+      revisions={'src/v8': 'abc'},
+      enable_gclient_experiment=True,
   )
   yield api.test('tryjob_v8_head_by_default') + api.properties.tryserver(
       patch_project='v8',

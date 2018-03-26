@@ -105,6 +105,30 @@
       "revId": "3acdca06e70112249172f0106d18d912af3f1a39",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6bce2297_ff2a8555",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-26T19:28:05Z",
+      "side": 1,
+      "message": "Done. Added a TODO.",
+      "parentUuid": "e483d1d6_e8547a92",
+      "range": {
+        "startLine": 909,
+        "startChar": 0,
+        "endLine": 912,
+        "endChar": 30
+      },
+      "revId": "3acdca06e70112249172f0106d18d912af3f1a39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

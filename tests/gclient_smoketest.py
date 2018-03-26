@@ -802,15 +802,60 @@ class GClientSmokeGIT(GClientSmokeBase):
                   # defined in the DEPS.
                   '--custom-var', 'custom_true_var=True',
                   # This should override 'true_var=True' from the DEPS.
-                  '--custom-var', 'true_var="0"'])
+                  '--custom-var', 'true_var="False"'])
     self.gclient(['sync'])
     self.gclient(['flatten', '-v', '-v', '-v', '--output-deps', output_deps])
+
+    # Assert we can sync to the flattened DEPS we just wrote.
+    solutions = [{
+        "url": self.git_base + 'repo_6',
+        'name': 'src',
+        'deps_file': output_deps
+    }]
+    results = self.gclient([
+        'sync',
+        '--spec=solutions=%s' % solutions
+    ])
+    self.assertEqual(results[2], 0)
 
     with open(output_deps) as f:
       deps_contents = f.read()
 
     self.maxDiff = None  # pylint: disable=attribute-defined-outside-init
     self.assertEqual([
+        'vars = {',
+        '  # src',
+        '  "DummyVariable": \'repo\',',
+        '',
+        '  # src',
+        '  "cond_var": \'false_str_var and true_var\',',
+        '',
+        '  # src',
+        '  "false_str_var": \'False\',',
+        '',
+        '  # src',
+        '  "false_var": False,',
+        '',
+        '  # src',
+        '  "git_base": \'git://127.0.0.1:20000/git/\',',
+        '',
+        '  # src',
+        '  "hook1_contents": \'git_hooked1\',',
+        '',
+        '  # src',
+        '  "repo5_var": \'/repo_5\',',
+        '',
+        '  # src',
+        '  "str_var": \'abc\',',
+        '',
+        '  # src',
+        '  "true_str_var": \'True\',',
+        '',
+        '  # src [custom_var override]',
+        '  "true_var": \'False\',',
+        '',
+        '}',
+        '',
         'gclient_gn_args_file = "src/repo2/gclient.args"',
         'gclient_gn_args = [\'false_var\', \'false_str_var\', \'true_var\', '
             '\'true_str_var\', \'str_var\', \'cond_var\']',
@@ -932,6 +977,28 @@ class GClientSmokeGIT(GClientSmokeBase):
         '',
         '}',
         '',
+        '# git://127.0.0.1:20000/git/repo_2@%s, DEPS' % (
+                 self.githash('repo_2', 1)[:7]),
+        '# git://127.0.0.1:20000/git/repo_8, DEPS'
+    ], deps_contents.splitlines())
+
+  def testFlattenPinAllDeps(self):
+    if not self.enabled:
+      return
+
+    output_deps = os.path.join(self.root_dir, 'DEPS.flattened')
+    self.assertFalse(os.path.exists(output_deps))
+
+    self.gclient(['config', self.git_base + 'repo_6', '--name', 'src'])
+    self.gclient(['sync', '--process-all-deps'])
+    self.gclient(['flatten', '-v', '-v', '-v', '--output-deps', output_deps,
+                  '--pin-all-deps'])
+
+    with open(output_deps) as f:
+      deps_contents = f.read()
+
+    self.maxDiff = None  # pylint: disable=attribute-defined-outside-init
+    self.assertEqual([
         'vars = {',
         '  # src',
         '  "DummyVariable": \'repo\',',
@@ -960,33 +1027,11 @@ class GClientSmokeGIT(GClientSmokeBase):
         '  # src',
         '  "true_str_var": \'True\',',
         '',
-        '  # src [custom_var override]',
-        '  "true_var": \'0\',',
+        '  # src',
+        '  "true_var": True,',
         '',
         '}',
         '',
-        '# git://127.0.0.1:20000/git/repo_2@%s, DEPS' % (
-                 self.githash('repo_2', 1)[:7]),
-        '# git://127.0.0.1:20000/git/repo_8, DEPS'
-    ], deps_contents.splitlines())
-
-  def testFlattenPinAllDeps(self):
-    if not self.enabled:
-      return
-
-    output_deps = os.path.join(self.root_dir, 'DEPS.flattened')
-    self.assertFalse(os.path.exists(output_deps))
-
-    self.gclient(['config', self.git_base + 'repo_6', '--name', 'src'])
-    self.gclient(['sync', '--process-all-deps'])
-    self.gclient(['flatten', '-v', '-v', '-v', '--output-deps', output_deps,
-                  '--pin-all-deps'])
-
-    with open(output_deps) as f:
-      deps_contents = f.read()
-
-    self.maxDiff = None  # pylint: disable=attribute-defined-outside-init
-    self.assertEqual([
         'gclient_gn_args_file = "src/repo2/gclient.args"',
         'gclient_gn_args = [\'false_var\', \'false_str_var\', \'true_var\', '
             '\'true_str_var\', \'str_var\', \'cond_var\']',
@@ -1106,39 +1151,6 @@ class GClientSmokeGIT(GClientSmokeBase):
         '    },',
         '',
         '  ],',
-        '',
-        '}',
-        '',
-        'vars = {',
-        '  # src',
-        '  "DummyVariable": \'repo\',',
-        '',
-        '  # src',
-        '  "cond_var": \'false_str_var and true_var\',',
-        '',
-        '  # src',
-        '  "false_str_var": \'False\',',
-        '',
-        '  # src',
-        '  "false_var": False,',
-        '',
-        '  # src',
-        '  "git_base": \'git://127.0.0.1:20000/git/\',',
-        '',
-        '  # src',
-        '  "hook1_contents": \'git_hooked1\',',
-        '',
-        '  # src',
-        '  "repo5_var": \'/repo_5\',',
-        '',
-        '  # src',
-        '  "str_var": \'abc\',',
-        '',
-        '  # src',
-        '  "true_str_var": \'True\',',
-        '',
-        '  # src',
-        '  "true_var": True,',
         '',
         '}',
         '',

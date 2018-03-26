@@ -25,6 +25,47 @@
     },
     {
       "key": {
+        "uuid": "e93eb1fa_9790d54a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-26T22:30:48Z",
+      "side": 1,
+      "message": "Nice; consider putting this attribution in the block comment above so that others can see it too.",
+      "parentUuid": "00983e79_45f78744",
+      "range": {
+        "startLine": 89,
+        "startChar": 6,
+        "endLine": 89,
+        "endChar": 19
+      },
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a70dbce_346032a6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-26T22:30:48Z",
+      "side": 1,
+      "message": "Even though the code is copy-pasted from elsewhere, format it (e.g. blank lines between methods) to match the code surrounding it here.",
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bf6cadf5_f9e79f46",
         "filename": "presubmit_support.py",
         "patchSetId": 1
@@ -41,6 +82,87 @@
         "startChar": 6,
         "endLine": 131,
         "endChar": 15
+      },
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3d93cab_c009d7f2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-26T22:30:48Z",
+      "side": 1,
+      "message": "Nice. Test it on src.git\u0027s presubmit with some big change from chromium-review patched in, though, since that has dozens of PRESUBMIT files.",
+      "parentUuid": "bf6cadf5_f9e79f46",
+      "range": {
+        "startLine": 131,
+        "startChar": 6,
+        "endLine": 131,
+        "endChar": 15
+      },
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "415a8859_3b0f0218",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-26T22:30:48Z",
+      "side": 1,
+      "message": "This is a bit odd, and took me a little while to understand. On the one hand, it\u0027s elegant and I like it: if we\u0027re doing things in parallel, instead of running the tests from this file, just add them to the pool and we\u0027ll run them along with the ones from all the other files later. Great!\n\nBut on the other hand, it\u0027s really awkward here, because it breaks the \"contract\" of RunTests. This method basically says that it will return the messages produced by running the tests. Now, if we\u0027re in parallel mode, this will always return an empty list. This, in turn, results in the awkward construction at line 1512 where results are collected both from ExecPresubmitScript *and* from RunAsync.\n\nTry to find a way to refactor this such that parallel mode is sort of assumed to be the default, and results are only collected from each file immediately if parallel mode is off. I think that will make the control flow make a bit more sense.",
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2806d0da_71aabfcc",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-26T22:30:48Z",
+      "side": 1,
+      "message": "Since this is no longer as generic, any reason not to move it closer to the thread worker definition?",
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eabd9a95_4b667773",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-26T22:30:48Z",
+      "side": 1,
+      "message": "nit: presubmit tends to refer to each thing as a \"check\" rather than as a \"test\" (see: presubmit_canned_checks); but that\u0027s super duper nit-picky and you\u0027re welcome to ignore me.",
+      "range": {
+        "startLine": 1624,
+        "startChar": 16,
+        "endLine": 1624,
+        "endChar": 20
       },
       "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",

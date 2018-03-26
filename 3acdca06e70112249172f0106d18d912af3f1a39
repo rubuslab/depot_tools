@@ -81,6 +81,30 @@
       "revId": "3acdca06e70112249172f0106d18d912af3f1a39",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e483d1d6_e8547a92",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-26T18:01:21Z",
+      "side": 1,
+      "message": "It\u0027s probably fine for reset and rebase to be global options, but if not, they could take lists like \n\n  --gerrit-no-reset-patch-ref\u003dsrc,src/v8\n\nBut yeah, it\u0027s fine to do this as followup, just make sure to keep it in mind and track it as either a bug or a TODO.",
+      "parentUuid": "f8e105aa_aec94858",
+      "range": {
+        "startLine": 909,
+        "startChar": 0,
+        "endLine": 912,
+        "endChar": 30
+      },
+      "revId": "3acdca06e70112249172f0106d18d912af3f1a39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

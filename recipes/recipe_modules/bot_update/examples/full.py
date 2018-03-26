@@ -51,8 +51,6 @@ def RunSteps(api):
       api.properties.get('gerrit_no_rebase_patch_ref'))
   manifest_name = api.properties.get('manifest_name')
 
-  enable_gclient_experiment = api.properties.get('enable_gclient_experiment')
-
   if api.properties.get('test_apply_gerrit_ref'):
     prop2arg = {
         'gerrit_custom_repo': 'gerrit_repo',
@@ -82,8 +80,7 @@ def RunSteps(api):
         gerrit_no_reset=gerrit_no_reset,
         gerrit_no_rebase_patch_ref=gerrit_no_rebase_patch_ref,
         disable_syntax_validation=True,
-        manifest_name=manifest_name,
-        enable_gclient_experiment=enable_gclient_experiment)
+        manifest_name=manifest_name)
     if patch:
       api.bot_update.deapply_patch(bot_update_step)
 
@@ -200,6 +197,7 @@ def GenTests(api):
       gerrit_project='angle/angle',
       patch_issue=338811,
       patch_set=3,
+  ) + api.bot_update.properties(
       enable_gclient_experiment=True,
   )
   yield api.test('tryjob_gerrit_v8') + api.properties.tryserver(

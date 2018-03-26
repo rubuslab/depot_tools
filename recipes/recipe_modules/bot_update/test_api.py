@@ -8,6 +8,15 @@ from recipe_engine import recipe_test_api
 
 
 class BotUpdateTestApi(recipe_test_api.RecipeTestApi):
+  def properties(self, enable_gclient_experiment):
+    ret = self.test(None)
+    ret.properties = {
+        '$depot_tools/bot_update': {
+            'enable_gclient_experiment': enable_gclient_experiment,
+        }
+    }
+    return ret
+
   def output_json(self, root, first_sln, revision_mapping, fail_patch=False,
                   fixed_revisions=None):
     """Deterministically synthesize json.output test data for gclient's

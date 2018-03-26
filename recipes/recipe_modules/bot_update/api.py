@@ -10,10 +10,12 @@ from recipe_engine import recipe_api
 
 class BotUpdateApi(recipe_api.RecipeApi):
 
-  def __init__(self, patch_issue, patch_set,
+  def __init__(self, properties, patch_issue, patch_set,
                repository, patch_repository_url, gerrit_ref, patch_ref,
                patch_gerrit_url, revision, parent_got_revision,
                deps_revision_overrides, fail_patch, *args, **kwargs):
+    self._enable_gclient_experiment = properties.get(
+        'enable_gclient_experiment', False)
     self._issue = patch_issue
     self._patchset = patch_set
     self._repository = repository or patch_repository_url
@@ -74,7 +76,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       patchset=None, gerrit_no_reset=False,
                       gerrit_no_rebase_patch_ref=False,
                       disable_syntax_validation=False, manifest_name=None,
-                      enable_gclient_experiment=False, **kwargs):
+                      **kwargs):
     """
     Args:
       gclient_config: The gclient configuration to use when running bot_update.
@@ -205,7 +207,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
       cmd.append('--gerrit_no_rebase_patch_ref')
     if disable_syntax_validation or cfg.disable_syntax_validation:
       cmd.append('--disable-syntax-validation')
-    if enable_gclient_experiment:
+    if self._enable_gclient_experiment:
       cmd.append('--enable-gclient-experiment')
 
     # Inject Json output for testing.

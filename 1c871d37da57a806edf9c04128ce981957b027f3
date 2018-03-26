@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6519bd75_581b90aa",
+        "filename": "recipes/recipe_modules/bot_update/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-03-26T23:19:56Z",
+      "side": 1,
+      "message": "I would make this more descriptive, if possible. Maybe `use_gerrit_ref_scheme_v2`?",
+      "range": {
+        "startLine": 47,
+        "startChar": 10,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "1c871d37da57a806edf9c04128ce981957b027f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4caa0f3b_ad65f914",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-03-26T23:19:56Z",
+      "side": 1,
+      "message": "similarly, I would rename this something more descriptive.",
+      "range": {
+        "startLine": 211,
+        "startChar": 20,
+        "endLine": 211,
+        "endChar": 45
+      },
+      "revId": "1c871d37da57a806edf9c04128ce981957b027f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

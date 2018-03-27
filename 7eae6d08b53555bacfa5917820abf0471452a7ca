@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78d46ca7_01c73e28",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1260,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-27T17:59:06Z",
+      "side": 1,
+      "message": "Why is this not git://127.0.0.1:20000/git/repo_11?",
+      "range": {
+        "startLine": 1260,
+        "startChar": 37,
+        "endLine": 1260,
+        "endChar": 38
+      },
+      "revId": "7eae6d08b53555bacfa5917820abf0471452a7ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

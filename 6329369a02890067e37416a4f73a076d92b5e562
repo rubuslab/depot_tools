@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d55eb76a_c119f446",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-03-27T23:29:41Z",
+      "side": 1,
+      "message": "Does this need to change for some reason? I think there was a specific reason for the \"0\" value, although I don\u0027t recall off the top of my head (maybe to catch a regression where it was converting string \"numbers\" to numeric or bool values or something).",
+      "range": {
+        "startLine": 805,
+        "startChar": 45,
+        "endLine": 805,
+        "endChar": 50
+      },
+      "revId": "6329369a02890067e37416a4f73a076d92b5e562",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

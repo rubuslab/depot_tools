@@ -47,7 +47,7 @@ AUTHOR_EMAIL = 'chrome-infrastructure-team@google.com'
 PREFIX_LEN = 1
 
 # Set this to 'threads' to gather coverage data while testing.
-POOL_KIND = 'procs'
+POOL_KIND = os.environ.get('DEPOT_TOOLS_GIT_NUMBER_POOL_KIND', 'procs')
 
 
 def pathlify(hash_prefix):

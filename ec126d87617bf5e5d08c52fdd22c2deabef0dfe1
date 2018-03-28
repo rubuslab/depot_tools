@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9383c218_3c332574",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-28T17:11:37Z",
+      "side": 1,
+      "message": "Let\u0027s pick a more descriptive name :)",
+      "range": {
+        "startLine": 139,
+        "startChar": 6,
+        "endLine": 139,
+        "endChar": 15
+      },
+      "revId": "ec126d87617bf5e5d08c52fdd22c2deabef0dfe1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d944fc5_f8abe502",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-28T17:11:37Z",
+      "side": 1,
+      "message": "What if the command is already [\u0027vpython\u0027, \u0027something\u0027, \u0027foo.py\u0027]? Won\u0027t this make it \u0027vpython vpython something foo.py\u0027?\n\n(I know this is just moved from elsewhere, but probably worth fixing.)",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 27
+      },
+      "revId": "ec126d87617bf5e5d08c52fdd22c2deabef0dfe1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a0e862c_99ef9d00",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-28T17:11:37Z",
+      "side": 1,
+      "message": "consider renaming to GatherTests or something like that?",
+      "range": {
+        "startLine": 773,
+        "startChar": 0,
+        "endLine": 775,
+        "endChar": 64
+      },
+      "revId": "ec126d87617bf5e5d08c52fdd22c2deabef0dfe1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

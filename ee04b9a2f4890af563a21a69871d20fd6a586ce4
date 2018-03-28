@@ -22,6 +22,30 @@
       "revId": "ee04b9a2f4890af563a21a69871d20fd6a586ce4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c938383_1acdbd36",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-28T00:43:05Z",
+      "side": 0,
+      "message": "Sorry, I wasn\u0027t clear.\n\nSomething you need to know: gclient_eval.EvaluateCondition basically takes a string and evaluates it, but it only supports strings, True, False, None and names. No integers or anything else.\n\nWhen you try to do \n\n  gclient config \u003csomething\u003e --custom-var true_var\u003d\"0\"\n\nIt will just fail, because we\u0027re passing \u00270\u0027 to gclient_eval.EvaluateCondition (for some reason) and when it evaluates it, it gets an integer, which is not allowed.\n\nThe test is doing something like \n\n  \u0027gclient\u0027 \u0027config\u0027 \u003csomething\u003e \u0027--custom-var\u0027 \u0027true_var\u003d\"0\"\u0027\n\nSo now we pass \u0027\"0\"\u0027 to gclient_eval.EvaluateCondition, which then returns \u00270\u0027, which is what we set here.\nHowever, when we try to use true_var in a condition, we call EvaluateCondition again, \u00270\u0027 gets interpreted as an integer and we fail.",
+      "parentUuid": "1c96a3b0_a8d50c64",
+      "range": {
+        "startLine": 964,
+        "startChar": 25,
+        "endLine": 964,
+        "endChar": 26
+      },
+      "revId": "ee04b9a2f4890af563a21a69871d20fd6a586ce4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "84f1821a_599134fd",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-28T01:09:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e93eb1fa_9790d54a",
+      "range": {
+        "startLine": 89,
+        "startChar": 6,
+        "endLine": 89,
+        "endChar": 19
+      },
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8a70dbce_346032a6",
         "filename": "presubmit_support.py",
         "patchSetId": 1
@@ -63,6 +87,24 @@
       "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0de2e47_2c1ac7f6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-28T01:09:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a70dbce_346032a6",
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -130,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "d462aae3_78961fc5",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-28T01:09:26Z",
+      "side": 1,
+      "message": "I refactored (and explicit) that no tests will actually be run.\n\nWe will have to get results from both ExecPresubmitScript *and* RunAsync, because PRESUBMIT files have other kinds of checks besides executing tests, and those return the result right away.\n\nI think the best I can do is to not execute any tests at all until we tell the pool to run them, so that the control flow makes more sense.",
+      "parentUuid": "415a8859_3b0f0218",
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2806d0da_71aabfcc",
         "filename": "presubmit_support.py",
         "patchSetId": 1
@@ -158,6 +218,48 @@
       "writtenOn": "2018-03-26T22:30:48Z",
       "side": 1,
       "message": "nit: presubmit tends to refer to each thing as a \"check\" rather than as a \"test\" (see: presubmit_canned_checks); but that\u0027s super duper nit-picky and you\u0027re welcome to ignore me.",
+      "range": {
+        "startLine": 1624,
+        "startChar": 16,
+        "endLine": 1624,
+        "endChar": 20
+      },
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38a1e21d_5a381565",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-28T01:09:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2806d0da_71aabfcc",
+      "revId": "13fdc80896a62f95c36c3559ee9cb7475ec305d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d8e0814_8459d80c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-28T01:09:26Z",
+      "side": 1,
+      "message": "Well, I\u0027d say running all tests is a check, and the function is called Run*Tests* after all :P",
+      "parentUuid": "eabd9a95_4b667773",
       "range": {
         "startLine": 1624,
         "startChar": 16,

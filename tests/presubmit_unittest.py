@@ -22,6 +22,7 @@ _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _ROOT)
 
 from testing_support.super_mox import mox, SuperMoxTestBase
+from third_party import mock
 
 import owners
 import owners_finder
@@ -1732,20 +1733,20 @@ class CannedChecksUnittest(PresubmitTestsBase):
 
   def MockInputApi(self, change, committing):
     # pylint: disable=no-self-use
-    input_api = self.mox.CreateMock(presubmit.InputApi)
+    input_api = mock.MagicMock(presubmit.InputApi)
     input_api.cStringIO = presubmit.cStringIO
     input_api.json = presubmit.json
     input_api.logging = logging
-    input_api.os_listdir = self.mox.CreateMockAnything()
-    input_api.os_walk = self.mox.CreateMockAnything()
+    input_api.os_listdir = mock.Mock()
+    input_api.os_walk = mock.Mock()
     input_api.os_path = presubmit.os.path
     input_api.re = presubmit.re
-    input_api.rietveld = self.mox.CreateMock(rietveld.Rietveld)
+    input_api.rietveld = mock.Mock()
     input_api.gerrit = None
     input_api.traceback = presubmit.traceback
-    input_api.urllib2 = self.mox.CreateMock(presubmit.urllib2)
+    input_api.urllib2 = mock.MagicMock(presubmit.urllib2)
     input_api.unittest = unittest
-    input_api.subprocess = self.mox.CreateMock(subprocess)
+    input_api.subprocess = mock.MagicMock(subprocess)
     presubmit.subprocess = input_api.subprocess
     class fake_CalledProcessError(Exception):
       def __str__(self):
@@ -1765,8 +1766,6 @@ class CannedChecksUnittest(PresubmitTestsBase):
     input_api.time = time
     input_api.canned_checks = presubmit_canned_checks
     input_api.Command = presubmit.CommandData
-    input_api.RunTests = functools.partial(
-        presubmit.InputApi.RunTests, input_api)
     return input_api
 
   def testMembersChanged(self):
@@ -2345,30 +2344,33 @@ class CannedChecksUnittest(PresubmitTestsBase):
 
   def testCannedRunPylint(self):
     input_api = self.MockInputApi(None, True)
-    input_api.environ = self.mox.CreateMock(os.environ)
-    input_api.environ.copy().AndReturn({})
-    input_api.AffectedSourceFiles(mox.IgnoreArg()).AndReturn(True)
-    input_api.PresubmitLocalPath().AndReturn('/foo')
-    input_api.PresubmitLocalPath().AndReturn('/foo')
-    input_api.os_walk('/foo').AndReturn([('/foo', [], ['file1.py'])])
+    input_api.environ = {}
+    input_api.PresubmitLocalPath = lambda: '/foo'
+    input_api.os_walk = lambda _: [['/foo', [], ['file1.py']]]
+    input_api.AffectedSourceFiles = lambda _: True
+
     pylint = os.path.join(_ROOT, 'third_party', 'pylint.py')
     pylintrc = os.path.join(_ROOT, 'pylintrc')
 
-    CommHelper(input_api,
-        ['pyyyyython', pylint, '--args-on-stdin'],
-        env=mox.IgnoreArg(), stdin=
-               '--rcfile=%s\n--disable=cyclic-import\n--jobs=2\nfile1.py'
-               % pylintrc)
-    CommHelper(input_api,
-        ['pyyyyython', pylint, '--args-on-stdin'],
-        env=mox.IgnoreArg(), stdin=
-               '--rcfile=%s\n--disable=all\n--enable=cyclic-import\nfile1.py'
-               % pylintrc)
-    self.mox.ReplayAll()
-
     results = presubmit_canned_checks.RunPylint(
         input_api, presubmit.OutputApi)
-    self.assertEquals([], results)
+
+    self.assertEqual(1, input_api.RunTests.call_count)
+    commands, parallel = input_api.RunTests.call_args_list[0][0]
+
+    self.assertEqual(len(commands), 2)
+    self.assertEqual(commands[0].cmd, ['pyyyyython', pylint, '--args-on-stdin'])
+    self.assertEqual(commands[1].cmd, ['pyyyyython', pylint, '--args-on-stdin'])
+    self.assertEqual(
+        commands[0].stdin,
+        '--rcfile=%s\n--disable=cyclic-import\n--jobs=2\nfile1.py' % (
+            pylintrc))
+    self.assertEqual(
+        commands[1].stdin,
+        '--rcfile=%s\n--disable=all\n--enable=cyclic-import\nfile1.py' % (
+            pylintrc))
+
+
     self.checkstdout('')
 
   def testCheckBuildbotPendingBuildsBad(self):
@@ -2937,7 +2939,12 @@ class CannedChecksUnittest(PresubmitTestsBase):
       '-vpython-tool', 'verify'
     ])
     self.assertDictEqual(
-        commands[0].kwargs, {'stderr': input_api.subprocess.STDOUT})
+        commands[0].kwargs,
+        {
+            'stdout': input_api.subprocess.PIPE,
+            'stderr': input_api.subprocess.STDOUT,
+            'stdin': input_api.subprocess.PIPE,
+        })
     self.assertEqual(commands[0].message, presubmit.OutputApi.PresubmitError)
     self.assertIsNone(commands[0].info)
 

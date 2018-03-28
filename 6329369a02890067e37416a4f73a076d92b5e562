@@ -46,6 +46,30 @@
       "revId": "6329369a02890067e37416a4f73a076d92b5e562",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "caa3810c_4e6229f3",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-28T00:17:21Z",
+      "side": 1,
+      "message": "And good catch, thanks!",
+      "parentUuid": "f1ded626_0fc5c28a",
+      "range": {
+        "startLine": 805,
+        "startChar": 45,
+        "endLine": 805,
+        "endChar": 50
+      },
+      "revId": "6329369a02890067e37416a4f73a076d92b5e562",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

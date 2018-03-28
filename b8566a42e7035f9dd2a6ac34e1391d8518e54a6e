@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6c69c231_a5c2fbc0",
+        "filename": "recipes/OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-03-28T19:45:35Z",
+      "side": 1,
+      "message": "Hm... strange that dnj was the only person here. Could you add:\n  \n  iannucci@chromium.org\n  nodir@chromium.org\n  tandrii@chromium.org\n\nToo?",
+      "revId": "b8566a42e7035f9dd2a6ac34e1391d8518e54a6e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

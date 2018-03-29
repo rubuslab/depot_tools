@@ -1615,6 +1615,9 @@ class Changelist(object):
     print_stats(git_diff_args)
     ret = self.CMDUploadChange(options, git_diff_args, custom_cl_base, change)
     if not ret:
+      if options.use_auto_submit:
+        self.EnableAutoSubmit()
+
       if options.use_commit_queue:
         self.SetCQState(_CQState.COMMIT)
       elif options.cq_dry_run:
@@ -1642,6 +1645,29 @@ class Changelist(object):
         orig_args.remove('--dependencies')
         ret = upload_branch_deps(self, orig_args)
     return ret
+
+  def EnableAutoSubmit(self):
+    """Enables Auto-Submit for this change.
+
+    Issue must have been already uploaded and known.
+    """
+    assert self.GetIssue()
+    try:
+      self._codereview_impl.EnableAutoSubmit()
+      return 0
+    except KeyboardInterrupt:
+      raise
+    except:
+      print('WARNING: Failed to enable Auto-Submit.\n'
+            'Either:\n'
+            ' * Your project does not have the Auto-Submit label enabled,\n'
+            ' * You don\'t have permission to set Auto-Submit,\n'
+            ' * There\'s a bug in this code (see stack trace below).\n'
+            'Consider specifying which bots to trigger manually or asking your '
+            'project owners for permissions or contacting Chrome Infra at:\n'
+            'https://www.chromium.org/infra\n\n')
+      # Still raise exception so that stack trace is printed.
+      raise
 
   def SetCQState(self, new_state):
     """Updates the CQ state for the latest patchset.
@@ -1839,6 +1865,13 @@ class _ChangelistCodereviewBase(object):
 
   def CMDUploadChange(self, options, git_diff_args, custom_cl_base, change):
     """Uploads a change to codereview."""
+    raise NotImplementedError()
+
+  def EnableAutoSubmit(self):
+    """Enables Auto-Submit for the change.
+
+    Issue must have been already uploaded and known.
+    """
     raise NotImplementedError()
 
   def SetCQState(self, new_state):
@@ -2083,6 +2116,9 @@ class _RietveldChangelistImpl(_ChangelistCodereviewBase):
 
   def GetRietveldObjForPresubmit(self):
     return self.RpcServer()
+
+  def EnableAutoSubmit(self):
+    raise NotImplementedError()
 
   def SetCQState(self, new_state):
     props = self.GetIssueProperties()
@@ -3180,6 +3216,12 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       return new_log_desc
     else:
       DieWithError('ERROR: Gerrit commit-msg hook not installed.')
+
+  def EnableAutoSubmit(self):
+    """Enables Auto-Submit for Gerrit."""
+    labels = {'Auto-Submit': 1}
+    gerrit_util.SetReview(self._GetGerritHost(), self.GetIssue(),
+                          labels=labels, notify=None)
 
   def SetCQState(self, new_state):
     """Sets the Commit-Queue label assuming canonical CQ config for Gerrit."""
@@ -4966,6 +5008,10 @@ def CMDupload(parser, args):
   parser.add_option('--dependencies', action='store_true',
                     help='Uploads CLs of all the local branches that depend on '
                          'the current branch')
+  parser.add_option('-a', '--use-auto-submit', action='store_true',
+                    help='Sends your change to the CQ after an approval. Only '
+                         'works on repos that have the Auto-Submit label '
+                         'enabled')
 
   # TODO: remove Rietveld flags
   parser.add_option('--private', action='store_true',

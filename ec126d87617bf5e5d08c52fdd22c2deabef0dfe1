@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "edf216cf_f3a6e78d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-29T01:15:59Z",
+      "side": 1,
+      "message": "Sure :)",
+      "parentUuid": "9383c218_3c332574",
+      "range": {
+        "startLine": 139,
+        "startChar": 6,
+        "endLine": 139,
+        "endChar": 15
+      },
+      "revId": "ec126d87617bf5e5d08c52fdd22c2deabef0dfe1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0d944fc5_f8abe502",
         "filename": "presubmit_support.py",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "40486910_ddd216bc",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-29T01:15:59Z",
+      "side": 1,
+      "message": "No. It only looks at cmd[0].",
+      "parentUuid": "0d944fc5_f8abe502",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 27
+      },
+      "revId": "ec126d87617bf5e5d08c52fdd22c2deabef0dfe1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8a0e862c_99ef9d00",
         "filename": "presubmit_support.py",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2018-03-28T17:11:37Z",
       "side": 1,
       "message": "consider renaming to GatherTests or something like that?",
+      "range": {
+        "startLine": 773,
+        "startChar": 0,
+        "endLine": 775,
+        "endChar": 64
+      },
+      "revId": "ec126d87617bf5e5d08c52fdd22c2deabef0dfe1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fab9e50_78e2cd0c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-29T01:15:59Z",
+      "side": 1,
+      "message": "I\u0027d probably need to rename it in PRESUBMIT files everywhere too. Maybe I could add a RegisterTests (or something) function, and make RunTests just call that, and start renaming things in PRESUBMIT files.\n\nNot sure if we want to rename things in PRESUBMIT files, though.",
+      "parentUuid": "8a0e862c_99ef9d00",
       "range": {
         "startLine": 773,
         "startChar": 0,

@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eb1abe1d_65666246",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T21:10:46Z",
+      "side": 1,
+      "message": "Currently, this function is called three times. The first time, its argument is revision_overrides; the second, it\u0027s patch_refs; the third, it\u0027s options.filter. Given that none of those are the DEPS list itself, it seems like this name might be a little misleading :)\n\nDefinitely give this a docstring describing the format expected from the \u0027deps\u0027 argument, and consider changing the name and the name of that argument.",
+      "range": {
+        "startLine": 937,
+        "startChar": 6,
+        "endLine": 937,
+        "endChar": 24
+      },
+      "revId": "8afdcc0a5fad7d1bb8da8540566691809c811e27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "936c9f08_daef39eb",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T21:10:46Z",
+      "side": 1,
+      "message": "-len(\u0027.git\u0027)",
+      "range": {
+        "startLine": 942,
+        "startChar": 45,
+        "endLine": 942,
+        "endChar": 47
+      },
+      "revId": "8afdcc0a5fad7d1bb8da8540566691809c811e27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe6adc38_9c777dc1",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T21:10:46Z",
+      "side": 1,
+      "message": "here too",
+      "range": {
+        "startLine": 943,
+        "startChar": 23,
+        "endLine": 943,
+        "endChar": 25
+      },
+      "revId": "8afdcc0a5fad7d1bb8da8540566691809c811e27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01781327_f531a36a",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2904,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T21:10:46Z",
+      "side": 1,
+      "message": "I like this simplification, and it\u0027s recent enough that I\u0027m not worried about saving API compatibility for anyone.",
+      "revId": "8afdcc0a5fad7d1bb8da8540566691809c811e27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

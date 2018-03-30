@@ -950,10 +950,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         'flatten', 'runhooks', 'recurse', 'validate', None)
     parsed_url = self.LateOverride(self.url)
     file_list = [] if not options.nohooks else None
-    revision_override = revision_overrides.pop(self.name, None)
-    if parsed_url:
-      revision_override = revision_overrides.pop(
-          parsed_url.split('@')[0], revision_override)
+    parsed_origin = parsed_url.split('@')[0] if parsed_url else None
+    revision_override = (revision_overrides.pop(parsed_origin, None)
+                         or revision_overrides.pop(self.name, None))
     if run_scm and parsed_url:
       # Create a shallow copy to mutate revision.
       options = copy.copy(options)
@@ -965,11 +964,12 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       self._got_revision = self._used_scm.RunCommand(command, options, args,
                                                      file_list)
 
-      patch_repo = parsed_url.split('@')[0]
-      patch_ref = patch_refs.pop(patch_repo, patch_refs.pop(self.name, None))
+      patch_ref = (patch_refs.pop(parsed_origin, None)
+                   or patch_refs.pop(parsed_origin + '.git', None)
+                   or patch_refs.pop(self.name, None))
       if command == 'update' and patch_ref is not None:
-        self._used_scm.apply_patch_ref(patch_repo, patch_ref, options,
-                                        file_list)
+        self._used_scm.apply_patch_ref(parsed_origin, patch_ref, options,
+                                       file_list)
 
       if file_list:
         file_list = [os.path.join(self.name, f.strip()) for f in file_list]

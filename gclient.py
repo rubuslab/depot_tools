@@ -934,6 +934,17 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
           bad_deps.append(dep)
     return bad_deps
 
+  def FindInDependencies(self, parsed_url, deps):
+    if parsed_url:
+      origin, _ = gclient_utils.SplitUrlRevision(parsed_url)
+      if origin in deps:
+        return origin
+      if origin.endswith('.git') and origin[:-4] in deps:
+        return origin[:-4]
+    if self.name in deps:
+      return self.name
+    return None
+
   # Arguments number differs from overridden method
   # pylint: disable=arguments-differ
   def run(self, revision_overrides, command, args, work_queue, options,
@@ -950,10 +961,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         'flatten', 'runhooks', 'recurse', 'validate', None)
     parsed_url = self.LateOverride(self.url)
     file_list = [] if not options.nohooks else None
-    revision_override = revision_overrides.pop(self.name, None)
-    if parsed_url:
-      revision_override = revision_overrides.pop(
-          parsed_url.split('@')[0], revision_override)
+    revision_override = revision_overrides.pop(
+        self.FindInDependencies(parsed_url, revision_overrides), None)
     if run_scm and parsed_url:
       # Create a shallow copy to mutate revision.
       options = copy.copy(options)
@@ -966,10 +975,11 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                                      file_list)
 
       patch_repo = parsed_url.split('@')[0]
-      patch_ref = patch_refs.pop(patch_repo, patch_refs.pop(self.name, None))
+      patch_ref = patch_refs.pop(
+          self.FindInDependencies(parsed_url, patch_refs), None)
       if command == 'update' and patch_ref is not None:
         self._used_scm.apply_patch_ref(patch_repo, patch_ref, options,
-                                        file_list)
+                                       file_list)
 
       if file_list:
         file_list = [os.path.join(self.name, f.strip()) for f in file_list]
@@ -1795,14 +1805,9 @@ it or fix the checkout.
         work_queue.enqueue(s)
     work_queue.flush({}, None, [], options=self._options, patch_refs=None)
 
-    def ShouldPrintRevision(path, rev):
-      if not self._options.path and not self._options.url:
-        return True
-      if self._options.path and path in self._options.path:
-        return True
-      if self._options.url and rev and rev.split('@')[0] in self._options.url:
-        return True
-      return False
+    def ShouldPrintRevision(dep, rev):
+      return (not self._options.filter
+              or d.FindInDependencies(rev, self._options.filter))
 
     def GetURLAndRev(dep):
       """Returns the revision-qualified SCM url for a Dependency."""
@@ -1824,7 +1829,7 @@ it or fix the checkout.
           """Recursively grab dependencies."""
           for d in dep.dependencies:
             rev = GetURLAndRev(d)
-            if ShouldPrintRevision(d.name, rev):
+            if ShouldPrintRevision(d, rev):
               entries[d.name] = rev
             GrabDeps(d)
         GrabDeps(d)
@@ -1852,7 +1857,7 @@ it or fix the checkout.
           rev = GetURLAndRev(d)
         else:
           rev = d.parsed_url
-        if ShouldPrintRevision(d.name, rev):
+        if ShouldPrintRevision(d, rev):
           entries[d.name] = rev
       if self._options.output_json:
         json_output = {
@@ -2896,12 +2901,9 @@ def CMDrevinfo(parser, args):
                     help='creates a snapshot .gclient file of the current '
                          'version of all repositories to reproduce the tree, '
                          'implies -a')
-  parser.add_option('-u', '--url', action='append',
+  parser.add_option('--filter', action='append', dest='filter',
                      help='Display revision information only for the specified '
-                          'URLs.')
-  parser.add_option('-p', '--path', action='append',
-                     help='Display revision information only for the specified '
-                          'paths.')
+                          'dependencies (filtered by URL or path).')
   parser.add_option('--output-json',
                     help='Output a json document to this path containing '
                          'information about the revisions.')

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0fd9ab9d_0d48765c",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-30T22:18:28Z",
+      "side": 1,
+      "message": "I don\u0027t think ast would be able to parse \"{chromium_git}/v8/v8.git@{dep_revision}\". It would say that\u0027s a syntax error.",
+      "parentUuid": "fe5e5a41_c9a35b29",
+      "range": {
+        "startLine": 561,
+        "startChar": 0,
+        "endLine": 563,
+        "endChar": 36
+      },
+      "revId": "db8c1931f401fb19981efc5946a245ecb72f277a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "abf5fb57_5be4b69f",
         "filename": "gclient_eval.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-03-30T22:04:38Z",
       "side": 1,
       "message": "lol, maybe something like \"unknown dependency revision format\"?",
+      "range": {
+        "startLine": 578,
+        "startChar": 10,
+        "endLine": 578,
+        "endChar": 49
+      },
+      "revId": "db8c1931f401fb19981efc5946a245ecb72f277a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65ae0266_15863f96",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-03-30T22:18:28Z",
+      "side": 1,
+      "message": "Hehehe, forgot to change this.\nDone :)",
+      "parentUuid": "abf5fb57_5be4b69f",
       "range": {
         "startLine": 578,
         "startChar": 10,

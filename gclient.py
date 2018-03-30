@@ -1883,8 +1883,8 @@ it or fix the checkout.
       if self._options.output_json:
         json_output = {
             name: {
-                'url': rev.split('@')[0],
-                'rev': rev.split('@')[1] if '@' in rev else None,
+                'url': rev.split('@')[0] if rev else None,
+                'rev': rev.split('@')[1] if rev and '@' in rev else None,
             }
             for name, rev in entries.iteritems()
         }

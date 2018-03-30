@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e8d0c72c_7fbdca2d",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2018-03-30T18:34:41Z",
+      "side": 1,
+      "message": "Took a shot at this..\nI tried to leave SetCQState in place because of Rietveld, but eventually the new method should be used whenever Rietveld support is completely removed.\nAlso didn\u0027t update tests yet because not sure if this is the right approach.",
+      "parentUuid": "64466631_cb0b9e2a",
+      "range": {
+        "startLine": 1618,
+        "startChar": 0,
+        "endLine": 1624,
+        "endChar": 41
+      },
+      "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4726fdeb_d8190d47",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2018-03-30T16:40:15Z",
       "side": 1,
       "message": "Everyone should have permission to set AS on their own changes, so maybe rephrase this?",
+      "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eff637f5_ef203fff",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2018-03-30T18:34:41Z",
+      "side": 1,
+      "message": "That depends on what ACLs we set. Owners will definitely have this but maybe some projects will want to also restrict to only committers?",
+      "parentUuid": "4726fdeb_d8190d47",
       "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "d605161b_2cab4885",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1668,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2018-03-30T18:34:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56fcf520_2f662d77",
+      "range": {
+        "startLine": 1666,
+        "startChar": 0,
+        "endLine": 1668,
+        "endChar": 43
+      },
+      "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5929fe6_5fd906ca",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -85,6 +151,30 @@
       "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2255b3c4_b2c94bb4",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5011,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2018-03-30T18:34:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5929fe6_5fd906ca",
+      "range": {
+        "startLine": 5011,
+        "startChar": 29,
+        "endLine": 5011,
+        "endChar": 32
+      },
+      "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

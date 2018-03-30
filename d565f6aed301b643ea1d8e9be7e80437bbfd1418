@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "64466631_cb0b9e2a",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T16:40:15Z",
+      "side": 1,
+      "message": "It would be really good to combine these into a \"self.SetLabels(CQ, AS)\" call, or something like that. That way we can use a single API call to set both labels, which has two huge advantages:\n1) half as much latency\n2) half as many spammy messages",
+      "range": {
+        "startLine": 1618,
+        "startChar": 0,
+        "endLine": 1624,
+        "endChar": 41
+      },
+      "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4726fdeb_d8190d47",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T16:40:15Z",
+      "side": 1,
+      "message": "Everyone should have permission to set AS on their own changes, so maybe rephrase this?",
+      "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56fcf520_2f662d77",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1668,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T16:40:15Z",
+      "side": 1,
+      "message": "This part of the message isn\u0027t relevant for AS.",
+      "range": {
+        "startLine": 1666,
+        "startChar": 0,
+        "endLine": 1668,
+        "endChar": 43
+      },
+      "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5929fe6_5fd906ca",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5011,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T16:40:15Z",
+      "side": 1,
+      "message": "s/use/enable/ ?",
+      "range": {
+        "startLine": 5011,
+        "startChar": 29,
+        "endLine": 5011,
+        "endChar": 32
+      },
+      "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

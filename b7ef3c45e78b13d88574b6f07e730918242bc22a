@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "c79f2f93_af220eac",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1653,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T21:27:52Z",
+      "side": 1,
+      "message": "Want to include a description of each argument in this docstring too?",
+      "revId": "b7ef3c45e78b13d88574b6f07e730918242bc22a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "66b02069_f9adce93",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -13,6 +30,24 @@
       "writtenOn": "2018-03-30T18:34:41Z",
       "side": 1,
       "message": "No idea what the message should be here.",
+      "revId": "b7ef3c45e78b13d88574b6f07e730918242bc22a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c38783a4_dc36fb80",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1663,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T21:27:52Z",
+      "side": 1,
+      "message": "Similar to the SetCQState function, I\u0027d do something like\n\n  WARNING: Failed to set label(s) on your change: %s\\n\u0027\n  \u0027Either:\\n\u0027\n  \u0027 * Your project does not have the above label(s),\\n\u0027\n  \u0027 * You don\\\u0027t have permission to set the above label(s),\\n\u0027 %\n   (\u0027, \u0027.join(labels))",
+      "parentUuid": "66b02069_f9adce93",
       "revId": "b7ef3c45e78b13d88574b6f07e730918242bc22a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "db166622_133e1046",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-03-30T21:27:52Z",
+      "side": 1,
+      "message": "Makes sense, I\u0027ll take care of cleaning that up when I tear the rietveld code out.",
+      "parentUuid": "e8d0c72c_7fbdca2d",
+      "range": {
+        "startLine": 1618,
+        "startChar": 0,
+        "endLine": 1624,
+        "endChar": 41
+      },
+      "revId": "d565f6aed301b643ea1d8e9be7e80437bbfd1418",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4726fdeb_d8190d47",
         "filename": "git_cl.py",
         "patchSetId": 1

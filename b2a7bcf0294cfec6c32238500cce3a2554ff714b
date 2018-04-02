@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7d03d3fc_734b1f92",
+        "filename": "gclient_eval.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-04-02T16:35:49Z",
+      "side": 1,
+      "message": "\u003e Two top-level questions:\n\u003e 1) What\u0027s the use-case for adding a var, since vars are only useful if they\u0027re referenced somewhere?\n\nThe main case is for release DEPS. The downstream cros builders look for a special var indicating what platforms the release was for, e.g.:\nhttps://chromium.googlesource.com/chromium/src.git/+/67.0.3376.1/DEPS#12\n\nHopefully this can go away at some point, and use buildbucket or something to pass that information instead, but AFAIK, they still need it for now.",
+      "parentUuid": "c050db9b_7dafb553",
+      "range": {
+        "startLine": 528,
+        "startChar": 4,
+        "endLine": 528,
+        "endChar": 10
+      },
+      "revId": "b2a7bcf0294cfec6c32238500cce3a2554ff714b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7d03cca6_18bd3c7d",
         "filename": "gclient_eval.py",
         "patchSetId": 3

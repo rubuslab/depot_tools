@@ -16,6 +16,24 @@
       "revId": "1030b0217b95f20ff13ba28622612634f7cf30f6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9fd5627_4ae6e675",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-02T18:48:18Z",
+      "side": 1,
+      "message": "Oops. Fixed.",
+      "parentUuid": "d1c98828_080efe6d",
+      "revId": "1030b0217b95f20ff13ba28622612634f7cf30f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

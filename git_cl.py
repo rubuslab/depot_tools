@@ -442,7 +442,8 @@ def _trigger_try_jobs(auth_config, changelist, buckets, options, patchset):
   assert patchset, 'CL must be uploaded first'
 
   codereview_host = urlparse.urlparse(codereview_url).hostname
-  authenticator = auth.get_authenticator_for_host(codereview_host, auth_config)
+  authenticator = auth.get_authenticator_for_host(
+      options.buildbucket_host, auth_config)
   http = authenticator.authorize(httplib2.Http())
   http.force_exception_to_status_code = True
 
@@ -531,13 +532,13 @@ def fetch_try_jobs(auth_config, changelist, buildbucket_host,
 
   codereview_url = changelist.GetCodereviewServer()
   codereview_host = urlparse.urlparse(codereview_url).hostname
-  authenticator = auth.get_authenticator_for_host(codereview_host, auth_config)
+  authenticator = auth.get_authenticator_for_host(buildbucket_host, auth_config)
   if authenticator.has_cached_credentials():
     http = authenticator.authorize(httplib2.Http())
   else:
     print('Warning: Some results might be missing because %s' %
           # Get the message on how to login.
-          (auth.LoginRequiredError(codereview_host).message,))
+          (auth.LoginRequiredError(buildbucket_host).message,))
     http = httplib2.Http()
 
   http.force_exception_to_status_code = True

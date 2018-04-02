@@ -3038,7 +3038,7 @@ class TestGitCl(TestCase):
       ((['git', 'config', 'branch.feature.rietveldpatchset'],), '20001'),
       ((['git', 'config', 'branch.feature.rietveldserver'],),
        'codereview.example.com'),
-      ((['get_authenticator_for_host', 'codereview.example.com'],),
+      ((['get_authenticator_for_host', 'cr-buildbucket.appspot.com'],),
        AuthenticatorMock()),
     ] + [((['_buildbucket_retry'],), r) for r in request_results]
 
@@ -3072,7 +3072,7 @@ class TestGitCl(TestCase):
       # ((['git', 'config', 'branch.feature.gerritpatchset'],), '12'),
       ((['git', 'config', 'branch.feature.gerritserver'],),
        'https://x-review.googlesource.com'),
-      ((['get_authenticator_for_host', 'x-review.googlesource.com'],),
+      ((['get_authenticator_for_host', 'cr-buildbucket.appspot.com'],),
        AuthenticatorMock()),
     ] + [((['_buildbucket_retry'],), r) for r in request_results]
 

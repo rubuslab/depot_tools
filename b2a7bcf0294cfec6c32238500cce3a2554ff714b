@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "4e911b70_3ef07876",
+        "filename": "gclient_eval.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-02T16:40:33Z",
+      "side": 1,
+      "message": "2) The reason is that AddVar has been requested, while AddDep has not. It could be added in a later CL.",
+      "parentUuid": "7d03d3fc_734b1f92",
+      "range": {
+        "startLine": 528,
+        "startChar": 4,
+        "endLine": 528,
+        "endChar": 10
+      },
+      "revId": "b2a7bcf0294cfec6c32238500cce3a2554ff714b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7d03cca6_18bd3c7d",
         "filename": "gclient_eval.py",
         "patchSetId": 3
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "61cedd86_2d824e3b",
+        "filename": "gclient_eval.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-02T16:40:33Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7d03cca6_18bd3c7d",
+      "range": {
+        "startLine": 535,
+        "startChar": 10,
+        "endLine": 535,
+        "endChar": 20
+      },
+      "revId": "b2a7bcf0294cfec6c32238500cce3a2554ff714b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cddebd4e_638cdb9a",
         "filename": "gclient_eval.py",
         "patchSetId": 3
@@ -83,6 +131,30 @@
       "writtenOn": "2018-04-02T16:27:12Z",
       "side": 1,
       "message": "Could you try to alphebetize?",
+      "range": {
+        "startLine": 545,
+        "startChar": 35,
+        "endLine": 545,
+        "endChar": 61
+      },
+      "revId": "b2a7bcf0294cfec6c32238500cce3a2554ff714b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "263c3200_74c1292b",
+        "filename": "gclient_eval.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-02T16:40:33Z",
+      "side": 1,
+      "message": "I can try.",
+      "parentUuid": "cddebd4e_638cdb9a",
       "range": {
         "startLine": 545,
         "startChar": 35,

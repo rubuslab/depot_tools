@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "91bbfa21_43e1a72f",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-03T17:55:48Z",
+      "side": 1,
+      "message": "update docstring",
+      "range": {
+        "startLine": 127,
+        "startChar": 56,
+        "endLine": 127,
+        "endChar": 68
+      },
+      "revId": "824e8910032ec11939d70dfccb17ccd9e94482d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "650c6671_6faa4b9f",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-03T17:55:48Z",
+      "side": 1,
+      "message": "The old version of this code seems to care about what is already checked out on the local disk. It\u0027s worth indicating in the commit message that this is no longer the case.",
+      "range": {
+        "startLine": 130,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 47
+      },
+      "revId": "824e8910032ec11939d70dfccb17ccd9e94482d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

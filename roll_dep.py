@@ -124,21 +124,25 @@ def generate_commit_message(
   return header + log_section
 
 
-def calculate_roll(full_dir, dependency, gclient_dict, roll_to):
+def calculate_roll(full_dir, dependency, gclient_dict, roll_to, key):
   """Calculates the roll for a dependency by processing gclient_dict, and
   fetching the dependency via git.
+  If it is not found, it will attempt to modify the variable with the given key.
   """
-  if dependency not in gclient_dict['deps']:
-    raise Error('%s is not in the "deps" section of the DEPS file.')
-
   head = None
-  if isinstance(gclient_dict['deps'][dependency], basestring):
+  if dependency not in gclient_dict['deps']:
+    print('Warning: %s is not in the "deps" section of the DEPS file. '
+          'Will attempt to search for %s in "vars".' % (dependency, key))
+    if key not in gclient_dict['vars']:
+      raise Error('%s was not found in "vars".' % key)
+    head = gclient_dict['vars'][key]
+  elif isinstance(gclient_dict['deps'][dependency], basestring):
     _, _, head = gclient_dict['deps'][dependency].partition('@')
   elif (isinstance(gclient_dict['deps'][dependency], collections.Mapping)
         and 'url' in gclient_dict['deps'][dependency]):
     _, _, head = gclient_dict['deps'][dependency]['url'].partition('@')
   else:
-    raise Error('%s is not a valid git dependency.')
+    raise Error('%s is not a valid git dependency.' % dependency)
 
   if not head:
     raise Error('%s is unpinned.' % dependency)
@@ -237,7 +241,7 @@ def main():
       if not os.path.isdir(full_dir):
         raise Error('Directory not found: %s (%s)' % (dependency, full_dir))
       head, roll_to = calculate_roll(
-          full_dir, dependency, gclient_dict, args.roll_to)
+          full_dir, dependency, gclient_dict, args.roll_to, args.key)
       if roll_to == head:
         if len(dependencies) == 1:
           raise AlreadyRolledError('No revision to roll!')

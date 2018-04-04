@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6a072a1_4597294e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-04T16:45:09Z",
+      "side": 1,
+      "message": "I think this is the wrong bug number?",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "8a47c684244773d90900947667bab49cbcd01663",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa75aa56_37f0d50f",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-04T16:45:09Z",
+      "side": 1,
+      "message": "Above, you\u0027re using args.key as a key into the vars dict, but that\u0027s not what this help description says it should be used as. Which is \"correct\"?",
+      "revId": "8a47c684244773d90900947667bab49cbcd01663",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

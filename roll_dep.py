@@ -199,9 +199,6 @@ def main():
   parser.add_argument(
       '--roll-to', default='origin/master',
       help='Specify the new commit to roll to (default: %(default)s)')
-  parser.add_argument(
-      '--key', action='append', default=[],
-      help='Regex(es) for dependency in DEPS file')
   parser.add_argument('dep_path', nargs='+', help='Path(s) to dependency')
   args = parser.parse_args()
 
@@ -209,9 +206,6 @@ def main():
     if args.roll_to != 'origin/master':
       parser.error(
           'Can\'t use multiple paths to roll simultaneously and --roll-to')
-    if args.key:
-      parser.error(
-          'Can\'t use multiple paths to roll simultaneously and --key')
   reviewers = None
   if args.reviewer:
     reviewers = args.reviewer.split(',')
@@ -221,8 +215,7 @@ def main():
 
   root = os.getcwd()
   dependencies = sorted(d.rstrip('/').rstrip('\\') for d in args.dep_path)
-  cmdline = 'roll-dep ' + ' '.join(dependencies) + ''.join(
-      ' --key ' + k for k in args.key)
+  cmdline = 'roll-dep ' + ' '.join(dependencies)
   try:
     if not args.ignore_dirty_tree and not is_pristine(root):
       raise Error('Ensure %s is clean first (no non-merged commits).' % root)

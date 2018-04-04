@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b41eb2cb_47ff700d",
+        "filename": "roll_dep.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2018-04-04T13:06:17Z",
+      "side": 1,
+      "message": "There is an unsubstituted \"%s\" in that string making the error message unhelpful. Should this be instead:\n\n  raise Error(\u0027%s is not in the \"deps\" section of the DEPS file.\u0027 % dependency)",
+      "revId": "a1df57cdc6573da28eebdcac0d58941f79b176a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "655bd9c6_add6115e",
+        "filename": "roll_dep.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2018-04-04T13:06:17Z",
+      "side": 1,
+      "message": "ditto, should this be\n\n  raise Error(\u0027%s is not a valid git dependency.\u0027 % dependency)",
+      "revId": "a1df57cdc6573da28eebdcac0d58941f79b176a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

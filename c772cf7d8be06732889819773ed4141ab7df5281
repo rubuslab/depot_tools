@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b4d8745_714d1b5e",
+        "filename": "roll_dep.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1118354
+      },
+      "writtenOn": "2018-04-05T13:13:04Z",
+      "side": 1,
+      "message": "This broke autorollers with:\n\n$ roll-dep src/third_party/chromite --roll-to 8c177b33bdde9246e05f8edf4e95521ca0916b91 --bug chromium:814989,chromium:829055\n\nTraceback (most recent call last):\n  File \"/mnt/pd0/autoroll_workdir/repo_manager/depot_tools/roll_dep.py\", line 266, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"/mnt/pd0/autoroll_workdir/repo_manager/depot_tools/roll_dep.py\", line 228, in main\n    full_dir, dependency, gclient_dict, args.roll_to)\n  File \"/mnt/pd0/autoroll_workdir/repo_manager/depot_tools/roll_dep.py\", line 130, in calculate_roll\n    _, _, head \u003d gclient_dict[\u0027deps\u0027][dependency].partition(\u0027@\u0027)\nAttributeError: \u0027_NodeDict\u0027 object has no attribute \u0027partition\u0027",
+      "range": {
+        "startLine": 130,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 47
+      },
+      "revId": "c772cf7d8be06732889819773ed4141ab7df5281",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

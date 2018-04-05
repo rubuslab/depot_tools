@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51252fd6_c3d00543",
+        "filename": "tests/gclient_eval_unittest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-05T21:19:08Z",
+      "side": 1,
+      "message": "what about \u0027vars \u003d {}\u0027?",
+      "range": {
+        "startLine": 315,
+        "startChar": 0,
+        "endLine": 316,
+        "endChar": 12
+      },
+      "revId": "963dfccaf04ce002368bdd331287137760a78a58",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -663,7 +663,10 @@ def SetRevision(gclient_dict, dep_name, new_revision):
     if var_name is not None:
       SetVar(gclient_dict, var_name, new_revision)
     else:
-      if '@' in node.s:
+      # The dependency is unpinned. Pin it.
+      if '@' not in dep_dict[dep_key]:
+        new_revision = node.s + '@' + new_revision
+      elif '@' in node.s:
         new_revision = node.s.split('@')[0] + '@' + new_revision
       _UpdateAstString(tokens, node, new_revision)
       dep_dict.SetNode(dep_key, new_revision, node)

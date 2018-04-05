@@ -22,6 +22,30 @@
       "revId": "963dfccaf04ce002368bdd331287137760a78a58",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "007e4c34_e7f2de17",
+        "filename": "tests/gclient_eval_unittest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-05T21:53:39Z",
+      "side": 1,
+      "message": "We fail miserably. Will deal with that later (as in, this CL doesn\u0027t pretend to add support for empty vars dicts anymore).",
+      "parentUuid": "51252fd6_c3d00543",
+      "range": {
+        "startLine": 315,
+        "startChar": 0,
+        "endLine": 316,
+        "endChar": 12
+      },
+      "revId": "963dfccaf04ce002368bdd331287137760a78a58",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

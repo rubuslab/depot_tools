@@ -70,6 +70,30 @@
       "revId": "715a5bec310322f2d876879d454443dcd9141eaf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd588b34_6e6bf34f",
+        "filename": "gclient_eval.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-05T22:39:39Z",
+      "side": 1,
+      "message": "Yes, that\u0027s right, but the condition is the other way around. If we get to the elif, we know that there is a \u0027@\u0027, but it might not be in node.s\n\nDoes the new patch make it clearer?",
+      "parentUuid": "9ab9a8f4_94e2e144",
+      "range": {
+        "startLine": 667,
+        "startChar": 20,
+        "endLine": 667,
+        "endChar": 37
+      },
+      "revId": "715a5bec310322f2d876879d454443dcd9141eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -46,6 +46,30 @@
       "revId": "715a5bec310322f2d876879d454443dcd9141eaf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ab9a8f4_94e2e144",
+        "filename": "gclient_eval.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-05T21:57:51Z",
+      "side": 1,
+      "message": "Right, of course, that makes sense now.\n\nI think it\u0027s the \"if x not in y; elif x in z\" structure that makes this confusing. Intuitively, those two checks should both happen against the same object y or z, not different ones.\n\nCan you restructure the elif to be just an else? If I understand correctly, if there is no \u0027@\u0027 in dep_dict[dep_key], there can\u0027t be an \u0027@\u0027 in node.s either, right?",
+      "parentUuid": "2784dd95_1b0efc97",
+      "range": {
+        "startLine": 667,
+        "startChar": 20,
+        "endLine": 667,
+        "endChar": 37
+      },
+      "revId": "715a5bec310322f2d876879d454443dcd9141eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

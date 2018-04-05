@@ -62,6 +62,24 @@
       "revId": "9d3a7a9e0b4d6017947396cdde678b115c714ab7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d0f0b34_d39936ec",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-05T22:25:46Z",
+      "side": 0,
+      "message": "Not all of it. AffectedFiles()[0].Action() wasn\u0027t",
+      "parentUuid": "c0aadc0b_0a9dc659",
+      "revId": "9d3a7a9e0b4d6017947396cdde678b115c714ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

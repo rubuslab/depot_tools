@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e99730b_94118bfd",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2940,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-04-05T20:53:09Z",
+      "side": 1,
+      "message": "s/an/and/",
+      "range": {
+        "startLine": 2940,
+        "startChar": 35,
+        "endLine": 2940,
+        "endChar": 37
+      },
+      "revId": "fc27429f51a5ab53a92bc2b7910daea251aebb8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6f761ca_fa9e2cb6",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2964,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-04-05T20:53:09Z",
+      "side": 1,
+      "message": "s/should/must/? (assuming people want it to actually do something)",
+      "range": {
+        "startLine": 2964,
+        "startChar": 13,
+        "endLine": 2964,
+        "endChar": 19
+      },
+      "revId": "fc27429f51a5ab53a92bc2b7910daea251aebb8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

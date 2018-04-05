@@ -22,6 +22,30 @@
       "revId": "715a5bec310322f2d876879d454443dcd9141eaf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2784dd95_1b0efc97",
+        "filename": "gclient_eval.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-05T21:38:35Z",
+      "side": 1,
+      "message": "Consider:\n\n1: Var(\u0027example_git\u0027) + \u0027some/path.git@deadbeef\u0027\n   dep_dict[dep_key] \u003d \u0027https://example.com/some/path.git@deadbeef\u0027\n   node.s \u003d \u0027some/path.git@deadbeef\u0027\n2: Var(\u0027example_git\u0027) + \u0027some/path.git@\u0027 + \u0027deadbeef\u0027\n   dep_dict[dep_key] \u003d \u0027https://example.com/some/path.git@deadbeef\u0027\n   node.s \u003d \u0027deadbeef\u0027\n3: Var(\u0027example_git\u0027) + \u0027some/path\u0027\n   dep_dict[dep_key] \u003d \u0027https://example.com/some/path.git\u0027\n   node.s \u003d \u0027some/path.git\u0027\n\nNote that \u0027@\u0027 is not present in dep_dict[dep_key] only if the dependency is unpinned.\n\nWe compare to node.s because we only want to change what\u0027s after \u0027@\u0027, so in the first example we would set the new value to \u0027some/path.git@new-revision\u0027 and in the second only to \u0027new-revision\u0027.\n\nI hope that makes it clear. I\u0027ll think if there\u0027s a way to refactor this to make the code clear.",
+      "parentUuid": "fb4a311d_b6a5928f",
+      "range": {
+        "startLine": 667,
+        "startChar": 20,
+        "endLine": 667,
+        "endChar": 37
+      },
+      "revId": "715a5bec310322f2d876879d454443dcd9141eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -22,6 +22,29 @@
       "revId": "c772cf7d8be06732889819773ed4141ab7df5281",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a107bcd9_79638b14",
+        "filename": "roll_dep.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1144530
+      },
+      "writtenOn": "2018-04-06T13:52:58Z",
+      "side": 1,
+      "message": "This broke autoroller by removing support of keys.\nThe key argument is still in the help message, so this is a bug.",
+      "range": {
+        "startLine": 228,
+        "startChar": 32,
+        "endLine": 228,
+        "endChar": 44
+      },
+      "revId": "c772cf7d8be06732889819773ed4141ab7df5281",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

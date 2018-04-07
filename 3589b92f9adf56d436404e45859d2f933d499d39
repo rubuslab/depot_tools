@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "d863fa14_e29eb1ed",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-07T02:58:48Z",
+      "side": 1,
+      "message": "Can you replace this by self.get_vars()? I think it should be equivalent.",
+      "range": {
+        "startLine": 776,
+        "startChar": 22,
+        "endLine": 776,
+        "endChar": 35
+      },
+      "revId": "3589b92f9adf56d436404e45859d2f933d499d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc7cf8f3_ad630b58",
         "filename": "gclient.py",
         "patchSetId": 2
@@ -46,6 +69,30 @@
       "revId": "3589b92f9adf56d436404e45859d2f933d499d39",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2e8e920_9d947346",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1378,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-07T02:58:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a5e26ae6_d9721b19",
+      "range": {
+        "startLine": 1378,
+        "startChar": 0,
+        "endLine": 1378,
+        "endChar": 19
+      },
+      "revId": "3589b92f9adf56d436404e45859d2f933d499d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

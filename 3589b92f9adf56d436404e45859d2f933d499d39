@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "806aab7e_c4dc13e1",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-04-07T04:21:28Z",
+      "side": 1,
+      "message": "get_vars() would be a superset. In practice, it would probably work the same, but they\u0027re not equivalent. And I think if we wanted to enforce the \"don\u0027t use vars that aren\u0027t in the DEPS\" in Parse() (if it doesn\u0027t already), we\u0027d have to keep vars_override as is.",
+      "parentUuid": "d863fa14_e29eb1ed",
+      "range": {
+        "startLine": 776,
+        "startChar": 22,
+        "endLine": 776,
+        "endChar": 35
+      },
+      "revId": "3589b92f9adf56d436404e45859d2f933d499d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dc7cf8f3_ad630b58",
         "filename": "gclient.py",
         "patchSetId": 2

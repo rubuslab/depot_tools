@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e84aa935_ee095d18",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1374,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-04-07T01:33:50Z",
+      "side": 1,
+      "message": "Oh, but I think I do have this logic backwards from what\u0027s in https://cs.chromium.org/chromium/tools/depot_tools/gclient.py?l\u003d795. That gives preference to parent variables, which makes sense. Is that the inconsistency you were concerned with?",
+      "revId": "bd6b24581cbf60cb9a88fbc4e1e3a28634b3690c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

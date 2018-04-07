@@ -1369,7 +1369,14 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         'checkout_x64': 'x64' in self.target_cpu,
         'host_cpu': detect_host_arch.HostArch(),
     }
-    # Variables defined in DEPS file override built-in ones.
+    # Variable precedence:
+    # - built-in
+    # - parents, from first to last
+    # - DEPS vars
+    # - custom_vars overrides
+    if self.parent:
+      parent_vars = self.parent.get_vars()
+      result.update(parent_vars)
     result.update(self._vars)
     result.update(self.custom_vars or {})
     return result

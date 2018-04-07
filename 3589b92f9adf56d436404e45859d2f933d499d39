@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "bb1f7133_8518043e",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-07T16:30:10Z",
+      "side": 1,
+      "message": "Well, if you see line 772, we\u0027re already doing this. It\u0027s just that lines 769-771 are now unnecessary, since that\u0027s now being done inside self.get_vars().\nAnd Parser takes care of not adding extra variables already that already.\n\nhttps://cs.chromium.org/chromium/tools/depot_tools/gclient_eval.py?q\u003dgclient_eval.py\u0026sq\u003dpackage:chromium\u0026dr\u0026l\u003d386\nhttps://cs.chromium.org/chromium/tools/depot_tools/tests/gclient_eval_unittest.py?l\u003d175",
+      "parentUuid": "806aab7e_c4dc13e1",
+      "range": {
+        "startLine": 776,
+        "startChar": 22,
+        "endLine": 776,
+        "endChar": 35
+      },
+      "revId": "3589b92f9adf56d436404e45859d2f933d499d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dc7cf8f3_ad630b58",
         "filename": "gclient.py",
         "patchSetId": 2

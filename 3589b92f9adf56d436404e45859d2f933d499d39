@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc7cf8f3_ad630b58",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1378,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-07T01:40:52Z",
+      "side": 1,
+      "message": "Why don\u0027t we do that in https://cs.chromium.org/chromium/tools/depot_tools/gclient.py?l\u003d796 ?",
+      "range": {
+        "startLine": 1378,
+        "startChar": 0,
+        "endLine": 1378,
+        "endChar": 19
+      },
+      "revId": "3589b92f9adf56d436404e45859d2f933d499d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

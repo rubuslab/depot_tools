@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "43f18f32_db32ac09",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-04-08T16:08:26Z",
+      "side": 1,
+      "message": "Ugh, yes, I missed that update() in 772. Done.",
+      "parentUuid": "bb1f7133_8518043e",
+      "range": {
+        "startLine": 776,
+        "startChar": 22,
+        "endLine": 776,
+        "endChar": 35
+      },
+      "revId": "3589b92f9adf56d436404e45859d2f933d499d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dc7cf8f3_ad630b58",
         "filename": "gclient.py",
         "patchSetId": 2

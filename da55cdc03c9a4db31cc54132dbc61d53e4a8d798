@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3af0c45a_258044c9",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1368,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-04-09T16:27:09Z",
+      "side": 1,
+      "message": "this is lowest-to-highest, right?",
+      "revId": "da55cdc03c9a4db31cc54132dbc61d53e4a8d798",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

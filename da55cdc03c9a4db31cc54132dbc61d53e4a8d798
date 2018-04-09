@@ -34,6 +34,24 @@
       "revId": "da55cdc03c9a4db31cc54132dbc61d53e4a8d798",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c0e8bde_3d450f31",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1368,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-04-09T17:59:38Z",
+      "side": 1,
+      "message": "Actually, I\u0027m just confused. This does something like:\n\nDEPS.root: foo\u003dbar\nDEPS.recurse1: foo\u003dboo\nDEPS.recurse2: foo\u003dfar\n\nWhile processing DEPS.recurse2, this starts with foo\u003dfar. Then parent.get_vars() is called on DEPS.recurse1, which in turn calls parent.get_vars() on DEPS.root and gets foo\u003dbar, which overrides foo\u003dboo, and then overrides foo\u003dfar, so DEPS.recurse2 ultimately sees foo\u003dbar, which is what we want.  I\u0027ll just go back to vacationing and stop trying to think.",
+      "parentUuid": "88cb3b17_61354843",
+      "revId": "da55cdc03c9a4db31cc54132dbc61d53e4a8d798",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

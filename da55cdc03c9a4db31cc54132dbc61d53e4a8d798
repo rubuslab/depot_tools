@@ -16,6 +16,24 @@
       "revId": "da55cdc03c9a4db31cc54132dbc61d53e4a8d798",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88cb3b17_61354843",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1368,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-04-09T17:26:25Z",
+      "side": 1,
+      "message": "Yes, sorry if that wasn\u0027t clear. Although now that I look at it again, I think I have the parent logic wrong. Other areas that deal with parent vars give the highest precedence to the farthest parent (i.e. the root DEPS in a hierarchy of recursedeps), but this would allow nearer parents to potentially override values set at the root. Probably not a huge deal in practice, since we don\u0027t have a lot of multi-level recursedeps, or recursedeps with variable overrides, but I\u0027ll fix.",
+      "parentUuid": "3af0c45a_258044c9",
+      "revId": "da55cdc03c9a4db31cc54132dbc61d53e4a8d798",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

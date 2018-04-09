@@ -46,6 +46,30 @@
       "revId": "3f277fc747b51e6637c88f660e781a1c401a9913",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af7adff3_ab1c8319",
+        "filename": "roll_dep.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1118354
+      },
+      "writtenOn": "2018-04-09T17:35:01Z",
+      "side": 1,
+      "message": "The failure shows up in the recipe rolls.  Here\u0027s an example: https://logs.chromium.org/v/?s\u003dskia%2F20180409T165246.465611421Z_000000000058016e%2F%2B%2Fsteps%2Frun_unittests%2F0%2Fstdout  I did #1 in https://chromium-review.googlesource.com/#/c/chromium/tools/depot_tools/+/1000786",
+      "parentUuid": "ef0f9c07_0310b62b",
+      "range": {
+        "startLine": 74,
+        "startChar": 2,
+        "endLine": 74,
+        "endChar": 50
+      },
+      "revId": "3f277fc747b51e6637c88f660e781a1c401a9913",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

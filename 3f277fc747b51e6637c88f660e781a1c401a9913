@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c96a885_3f06d7b6",
+        "filename": "roll_dep.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1118354
+      },
+      "writtenOn": "2018-04-09T12:17:39Z",
+      "side": 1,
+      "message": "The recipe roll into the Skia infra repo is failing because of this.  We have autoroller integration tests which run roll-dep inside of a recipe, using depot_tools from a recipe bundle.  That bundle does not include update_depot_tools (I\u0027m not sure why, but we definitely don\u0027t want to be changing the depot_tools rev when running roll-dep).  Can we do one of the following?\n\n1. Change this to [\u0027python\u0027, \u0027gclient.py\u0027, \u0027root\u0027] which would bypass update_depot_tools.\n2. Refactor a bit so that we can just call into shared code to obtain the root dir, rather than creating a subprocess.\n\nThanks!",
+      "range": {
+        "startLine": 74,
+        "startChar": 2,
+        "endLine": 74,
+        "endChar": 50
+      },
+      "revId": "3f277fc747b51e6637c88f660e781a1c401a9913",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "revId": "2ac4e617e6ac324fd42b9bdf6b4872c280c806e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09b37570_bc70d0b1",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-04-10T16:45:03Z",
+      "side": 1,
+      "message": "I don\u0027t follow your second. How is that possible with this change? If we go into scope here, we split the string. If we don\u0027t, then url_split is None, not a string, and we don\u0027t go into 461.",
+      "parentUuid": "45e6fcc3_df927b8c",
+      "revId": "2ac4e617e6ac324fd42b9bdf6b4872c280c806e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

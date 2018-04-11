@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "b499b975_38b185be",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-04-11T19:13:06Z",
+      "side": 1,
+      "message": "I would use None (the default) to disambiguate from unset v. set-to-empty-string.",
+      "range": {
+        "startLine": 241,
+        "startChar": 68,
+        "endLine": 241,
+        "endChar": 69
+      },
+      "revId": "2469da34295d2851353b846bc2d25afd4041b678",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ed6a5e0a_5b843359",
         "filename": "win_toolchain/get_toolchain_if_necessary.py",
         "patchSetId": 1

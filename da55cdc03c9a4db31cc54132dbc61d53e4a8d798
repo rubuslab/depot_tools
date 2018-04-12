@@ -70,6 +70,24 @@
       "revId": "da55cdc03c9a4db31cc54132dbc61d53e4a8d798",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b88e712_09f12337",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1368,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-04-12T18:29:21Z",
+      "side": 1,
+      "message": "custom_vars comes from the .gclient solution, so I think there should only ever be one set of them (basically on the root DEPS), and would apply to all recursedeps.",
+      "parentUuid": "5019405e_b3facf76",
+      "revId": "da55cdc03c9a4db31cc54132dbc61d53e4a8d798",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "f636c306_134710a4",
+        "filename": "git_new_branch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-04-12T18:08:13Z",
+      "side": 1,
+      "message": "maybe \"inject-current\"?\n\n  git new-branch --inject-current something\n\n\"above\" seems somewhat indistinct (there are many places \"above\" the current branch in the hierarchy)... names tho, amirite?",
+      "range": {
+        "startLine": 31,
+        "startChar": 9,
+        "endLine": 31,
+        "endChar": 14
+      },
+      "revId": "6b61dc151804017074bb5a2bde3dad1a00779caa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2dafc507_5269d724",
         "filename": "git_new_branch.py",
         "patchSetId": 1

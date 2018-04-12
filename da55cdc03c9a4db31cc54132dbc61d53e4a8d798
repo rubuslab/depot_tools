@@ -52,6 +52,24 @@
       "revId": "da55cdc03c9a4db31cc54132dbc61d53e4a8d798",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5019405e_b3facf76",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1368,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-12T18:17:27Z",
+      "side": 1,
+      "message": "Yes, I think that\u0027s what we want.\nWhat I find confused is the behavior of custom_vars. Can DEPS.recurse2 have custom_vars, and if so, how do those interact with the custom_vars of its parents.",
+      "parentUuid": "7c0e8bde_3d450f31",
+      "revId": "da55cdc03c9a4db31cc54132dbc61d53e4a8d798",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

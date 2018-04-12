@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5560a997_5da94542",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1131,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-12T22:27:18Z",
+      "side": 1,
+      "message": "Can you print a logging.warning?",
+      "range": {
+        "startLine": 1131,
+        "startChar": 8,
+        "endLine": 1131,
+        "endChar": 75
+      },
+      "revId": "959e4fc5718209fa990df4f654a9a31a79d495a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

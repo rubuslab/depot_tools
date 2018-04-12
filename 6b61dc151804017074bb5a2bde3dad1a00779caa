@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39eaccd6_92c0ecab",
+        "filename": "git_new_branch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2018-04-12T13:08:48Z",
+      "side": 1,
+      "message": "Let\u0027s untangle the reformatting from the substantive change:\nThe presubmit and cl format in this module doesn\u0027t enforce this style,\nso we don\u0027t want to merge style changes with functional changes.",
+      "revId": "6b61dc151804017074bb5a2bde3dad1a00779caa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dafc507_5269d724",
+        "filename": "git_new_branch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2018-04-12T13:08:48Z",
+      "side": 1,
+      "message": "Let\u0027s move this to after checking the |below| branch - better to not pile up errors before describing them.",
+      "revId": "6b61dc151804017074bb5a2bde3dad1a00779caa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

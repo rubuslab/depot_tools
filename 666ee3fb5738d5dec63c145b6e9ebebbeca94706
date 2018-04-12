@@ -16,6 +16,24 @@
       "revId": "666ee3fb5738d5dec63c145b6e9ebebbeca94706",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2610838_bd549818",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1024,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-12T22:34:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5416a49f_06e772f1",
+      "revId": "666ee3fb5738d5dec63c145b6e9ebebbeca94706",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -278,15 +278,25 @@ def SummarizeEntries(entries):
 def main(argv):
     log_file = '.ninja_log'
     for pid, arg in enumerate(argv):
-        if arg == '-C':
-          log_file = os.path.join(argv[pid+1], log_file)
+        # Ignore all unknown arguments since this script is called
+        # with the same arguments as ninja.
+        if arg in ('-C', '--log-file'):
+            if pid + 1 == len(argv):
+                print 'Missing value to argument %s.' % arg
+                return errno.EINVAL
+            value = argv[pid + 1]
+            if arg == '-C':
+                log_file = os.path.join(value, log_file)
+            else:
+                assert arg == '--log-file'
+                log_file = value
 
     try:
       with open(log_file, 'r') as log:
         entries = ReadTargets(log, False)
         SummarizeEntries(entries)
     except IOError:
-      print 'No log file found, no build summary created.'
+      print 'Log file %r not found, no build summary created.' % log_file
       return errno.ENOENT
 
 

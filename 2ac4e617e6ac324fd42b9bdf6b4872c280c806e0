@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "58f90385_2ca9553f",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-04-18T16:08:39Z",
+      "side": 1,
+      "message": "This doesn\u0027t matter in the code below, and given that we want the same behavior in either case -- i.e., we don\u0027t have a URL to split into a git_checkout -- I don\u0027t see much of a reason to emit \u0027\u0027 vs None given that we can have None in the dict anyway.",
+      "parentUuid": "deb3db7a_83c750f9",
+      "range": {
+        "startLine": 455,
+        "startChar": 16,
+        "endLine": 455,
+        "endChar": 31
+      },
+      "revId": "2ac4e617e6ac324fd42b9bdf6b4872c280c806e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "45e6fcc3_df927b8c",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 1
@@ -72,6 +96,24 @@
       "side": 1,
       "message": "d\u0027oh yeah you\u0027re right. I forgot that split returns a length-1 list when it fails to split.",
       "parentUuid": "09b37570_bc70d0b1",
+      "revId": "2ac4e617e6ac324fd42b9bdf6b4872c280c806e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2fe5a437_a9fcc87e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-04-18T16:08:39Z",
+      "side": 1,
+      "message": "First part done.",
+      "parentUuid": "f59df0e6_df07122b",
       "revId": "2ac4e617e6ac324fd42b9bdf6b4872c280c806e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

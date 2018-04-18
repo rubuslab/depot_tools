@@ -46,6 +46,30 @@
       "revId": "2135be1ad15323eebcb323ed4e085b78eea3337f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2da52551_894a0dc4",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-04-18T22:36:06Z",
+      "side": 1,
+      "message": "Leaving as-is for now given the above.",
+      "parentUuid": "aebfe8ab_d00c0e53",
+      "range": {
+        "startLine": 657,
+        "startChar": 50,
+        "endLine": 657,
+        "endChar": 54
+      },
+      "revId": "2135be1ad15323eebcb323ed4e085b78eea3337f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

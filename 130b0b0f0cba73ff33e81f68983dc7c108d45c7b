@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e244ef4f_77c88201",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-04-18T00:27:00Z",
+      "side": 1,
+      "message": "Style nit: I believe the Pythonistas prefer \"if \u0027GOMA_DISABLED\u0027 not in os.environ\" these days.",
+      "revId": "130b0b0f0cba73ff33e81f68983dc7c108d45c7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11fa8981_37a24a81",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-18T18:07:35Z",
+      "side": 1,
+      "message": "I know you didn\u0027t change it, but shouldn\u0027t the default value here be False, not None? Assigning None to a bool is Bad.",
+      "range": {
+        "startLine": 657,
+        "startChar": 50,
+        "endLine": 657,
+        "endChar": 54
+      },
+      "revId": "2135be1ad15323eebcb323ed4e085b78eea3337f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27ae6de1_697e7cfd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-18T17:56:50Z",
+      "side": 1,
+      "message": "nit: depot_tools is external, and public folks can\u0027t access this go-link.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "b0790352524cf18014f153e32ba445f1708ed8fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

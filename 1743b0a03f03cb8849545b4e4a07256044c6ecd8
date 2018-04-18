@@ -22,6 +22,30 @@
       "revId": "1743b0a03f03cb8849545b4e4a07256044c6ecd8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03d7f0ac_9ddb6b67",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1166,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-04-18T17:40:59Z",
+      "side": 1,
+      "message": "Your comment led me to look at what else was using .Action(), where I found AffectedTestableFiles, which does just about what I think we want here.",
+      "parentUuid": "c827e6fb_334e41c2",
+      "range": {
+        "startLine": 1165,
+        "startChar": 0,
+        "endLine": 1166,
+        "endChar": 0
+      },
+      "revId": "1743b0a03f03cb8849545b4e4a07256044c6ecd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

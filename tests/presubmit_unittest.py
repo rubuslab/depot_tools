@@ -2853,6 +2853,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
     affected_file.AbsoluteLocalPath().AndReturn('/path1/to/.vpython')
     input_api.AffectedFiles(
         file_filter=mox.IgnoreArg()).AndReturn([affected_file])
+    input_api.os_path.exists('/path1/to/.vpython').AndReturn(True)
 
     self.mox.ReplayAll()
 
@@ -2875,7 +2876,21 @@ class CannedChecksUnittest(PresubmitTestsBase):
     self.assertEqual(commands[0].message, presubmit.OutputApi.PresubmitError)
     self.assertIsNone(commands[0].info)
 
+  def testCannedCheckVPythonSpecRemoved(self):
+    change = presubmit.Change('a', 'b', self.fake_root_dir, None, 0, 0, None)
+    input_api = self.MockInputApi(change, False)
 
+    affected_file = self.mox.CreateMock(presubmit.GitAffectedFile)
+    affected_file.AbsoluteLocalPath().AndReturn('/path1/to/.vpython')
+    input_api.AffectedFiles(
+        file_filter=mox.IgnoreArg()).AndReturn([affected_file])
+    input_api.os_path.exists('/path1/to/.vpython').AndReturn(False)
+
+    self.mox.ReplayAll()
+
+    commands = presubmit_canned_checks.CheckVPythonSpec(
+        input_api, presubmit.OutputApi)
+    self.assertEqual(len(commands), 0)
 if __name__ == '__main__':
   import unittest
   unittest.main()

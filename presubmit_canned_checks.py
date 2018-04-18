@@ -1162,11 +1162,12 @@ def CheckVPythonSpec(input_api, output_api, file_filter=None):
 
   commands = []
   for f in affected_files:
-    commands.append(input_api.Command(
-      'Verify %s' % f,
-      ['vpython', '-vpython-spec', f, '-vpython-tool', 'verify'],
-      {'stderr': input_api.subprocess.STDOUT},
-      output_api.PresubmitError))
+    if input_api.os_path.exists(f):
+      commands.append(input_api.Command(
+        'Verify %s' % f,
+        ['vpython', '-vpython-spec', f, '-vpython-tool', 'verify'],
+        {'stderr': input_api.subprocess.STDOUT},
+        output_api.PresubmitError))
 
   return commands
 

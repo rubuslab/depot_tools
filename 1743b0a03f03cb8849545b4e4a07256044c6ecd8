@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c827e6fb_334e41c2",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1166,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-18T16:34:34Z",
+      "side": 1,
+      "message": "Assuming this is because the file was deleted, what about doing instead\n\n  if f.Action() !\u003d \u0027D\u0027:",
+      "range": {
+        "startLine": 1165,
+        "startChar": 0,
+        "endLine": 1166,
+        "endChar": 0
+      },
+      "revId": "1743b0a03f03cb8849545b4e4a07256044c6ecd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

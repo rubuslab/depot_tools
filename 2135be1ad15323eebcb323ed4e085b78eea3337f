@@ -22,6 +22,30 @@
       "revId": "2135be1ad15323eebcb323ed4e085b78eea3337f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aebfe8ab_d00c0e53",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-04-18T18:31:38Z",
+      "side": 1,
+      "message": "I actually think it\u0027s reasonable here as a tribool given that this argument is deprecated -- it lets us catch and warn about explicit uses of either include_deletes\u003dFalse or include_deletes\u003dTrue.",
+      "parentUuid": "11fa8981_37a24a81",
+      "range": {
+        "startLine": 657,
+        "startChar": 50,
+        "endLine": 657,
+        "endChar": 54
+      },
+      "revId": "2135be1ad15323eebcb323ed4e085b78eea3337f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a5374dda_31363f5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-18T00:16:23Z",
+      "side": 1,
+      "message": "Would be really good to provide links here:\n* to design doc\n* to bots already running this way\n* to PSA (in google groups), between when you send it and when you land this",
+      "revId": "571023b559781dcd03a702ac1419d65f844b215e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

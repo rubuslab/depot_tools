@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9c763f9d_c09163da",
+        "filename": "auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-04-19T18:40:26Z",
+      "side": 1,
+      "message": "got it. Refactored this into.",
+      "parentUuid": "9585e2de_502ee45d",
+      "range": {
+        "startLine": 126,
+        "startChar": 2,
+        "endLine": 126,
+        "endChar": 63
+      },
+      "revId": "68d0a6db870862beda625367397064e794d50d38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "94141e4c_b0d66723",
         "filename": "auth.py",
         "patchSetId": 8

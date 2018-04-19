@@ -26,6 +26,7 @@ import urllib
 import urlparse
 from cStringIO import StringIO
 
+import auth
 import gclient_utils
 import subprocess2
 from third_party import httplib2
@@ -86,6 +87,8 @@ class Authenticator(object):
     Probes the local system and its environment and identifies the
     Authenticator instance to use.
     """
+    if auth.is_in_luci_context():
+      return LuciContextAuthenticator()
     if GceAuthenticator.is_gce():
       return GceAuthenticator()
     return CookiesAuthenticator()
@@ -301,6 +304,20 @@ class GceAuthenticator(Authenticator):
     if not token_dict:
       return None
     return '%(token_type)s %(access_token)s' % token_dict
+
+
+class LuciContextAuthenticator(Authenticator):
+  def __init__(self):
+    self._access_token = None
+    self._ensure_fresh()
+
+  def _ensure_fresh(self):
+    if not self._access_token or self._access_token.needs_refresh():
+      self._access_token = auth.get_luci_context_access_token()
+
+  def get_auth_header(self, _host):
+    self._ensure_fresh()
+    return 'Bearer %s' % self._access_token.token
 
 
 def CreateHttpConn(host, path, reqtype='GET', headers=None, body=None):

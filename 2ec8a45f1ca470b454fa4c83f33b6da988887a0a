@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa584780_83e90e61",
+        "filename": "auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-04-19T20:56:29Z",
+      "side": 1,
+      "message": "you can cache the return value of this function if you want (to avoid rereading the file all the time), it shouldn\u0027t change while the process is running",
+      "range": {
+        "startLine": 173,
+        "startChar": 4,
+        "endLine": 173,
+        "endChar": 39
+      },
+      "revId": "2ec8a45f1ca470b454fa4c83f33b6da988887a0a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

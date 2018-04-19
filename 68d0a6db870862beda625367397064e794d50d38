@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "fd141e08_8d043d6a",
+        "filename": "auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-04-19T20:56:29Z",
+      "side": 1,
+      "message": "Oh.. Looks like it can be removed now since code.google.com doesn\u0027t host any APIs.",
+      "parentUuid": "28ec4ba8_814b061a",
+      "range": {
+        "startLine": 372,
+        "startChar": 19,
+        "endLine": 372,
+        "endChar": 36
+      },
+      "revId": "68d0a6db870862beda625367397064e794d50d38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fea6cc9c_912c471e",
         "filename": "gerrit_util.py",
         "patchSetId": 8

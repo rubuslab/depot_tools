@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9585e2de_502ee45d",
+        "filename": "auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-04-19T03:47:32Z",
+      "side": 1,
+      "message": "This is not sufficient. LUCI_CONTEXT may be present, but auth is not enabled. There\u0027s no guarantee \u0027local_auth\u0027 section is in LUCI_CONTEXT (we use LUCI_CONTEXT for other stuff too). And even if it is, it must NOT be used if local_auth.default_account_id is unset.\n\nSee e.g. https://chromium.googlesource.com/infra/luci/luci-py/+/master/client/utils/oauth.py#649",
+      "range": {
+        "startLine": 126,
+        "startChar": 2,
+        "endLine": 126,
+        "endChar": 63
+      },
+      "revId": "68d0a6db870862beda625367397064e794d50d38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94141e4c_b0d66723",
+        "filename": "auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-04-19T03:47:32Z",
+      "side": 1,
+      "message": "why? :)",
+      "range": {
+        "startLine": 372,
+        "startChar": 19,
+        "endLine": 372,
+        "endChar": 36
+      },
+      "revId": "68d0a6db870862beda625367397064e794d50d38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fea6cc9c_912c471e",
+        "filename": "gerrit_util.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-04-19T03:47:32Z",
+      "side": 1,
+      "message": "nit: add doc string",
+      "revId": "68d0a6db870862beda625367397064e794d50d38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -26,6 +26,7 @@ import urllib
 import urlparse
 from cStringIO import StringIO
 
+import auth
 import gclient_utils
 import subprocess2
 from third_party import httplib2
@@ -86,6 +87,10 @@ class Authenticator(object):
     Probes the local system and its environment and identifies the
     Authenticator instance to use.
     """
+    # LUCI Context takes priority since it's normally present only on bots,
+    # which then must use it.
+    if LuciContextAuthenticator.is_luci():
+      return LuciContextAuthenticator()
     if GceAuthenticator.is_gce():
       return GceAuthenticator()
     return CookiesAuthenticator()
@@ -207,9 +212,9 @@ class CookiesAuthenticator(Authenticator):
     return self.netrc.authenticators(host)
 
   def get_auth_header(self, host):
-    auth = self._get_auth_for_host(host)
-    if auth:
-      return 'Basic %s' % (base64.b64encode('%s:%s' % (auth[0], auth[2])))
+    r = self._get_auth_for_host(host)
+    if r:
+      return 'Basic %s' % (base64.b64encode('%s:%s' % (r[0], r[2])))
     return None
 
   def get_auth_email(self, host):
@@ -301,6 +306,26 @@ class GceAuthenticator(Authenticator):
     if not token_dict:
       return None
     return '%(token_type)s %(access_token)s' % token_dict
+
+
+class LuciContextAuthenticator(Authenticator):
+
+  @staticmethod
+  def is_luci():
+    return auth.is_in_luci_context()
+
+  def __init__(self):
+    self._access_token = None
+    self._ensure_fresh()
+
+  def _ensure_fresh(self):
+    if not self._access_token or self._access_token.needs_refresh():
+      self._access_token = auth.get_luci_context_access_token(
+          scopes=' '.join([auth.OAUTH_SCOPE_EMAIL, auth.OAUTH_SCOPE_GERRIT]))
+
+  def get_auth_header(self, _host):
+    self._ensure_fresh()
+    return 'Bearer %s' % self._access_token.token
 
 
 def CreateHttpConn(host, path, reqtype='GET', headers=None, body=None):

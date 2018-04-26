@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40543b4f_e9721bca",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2018-04-26T07:47:20Z",
+      "side": 1,
+      "message": "nit: Maybe return branch on each call and assert here afterwards that they are same? Would be descriptive...",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 60
+      },
+      "revId": "05c3d17e23bc6c09933a328f9e54c708c24065c6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

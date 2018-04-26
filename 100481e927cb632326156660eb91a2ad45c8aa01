@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c055e3b2_caee8d5c",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 960,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-04-26T18:51:45Z",
+      "side": 1,
+      "message": "I understand the addition of the second case below, but why split this condition?",
+      "range": {
+        "startLine": 959,
+        "startChar": 0,
+        "endLine": 960,
+        "endChar": 47
+      },
+      "revId": "100481e927cb632326156660eb91a2ad45c8aa01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "341ea3de_247aed9a",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2465,
+      "author": {
+        "id": 1002854
+      },
+      "writtenOn": "2018-04-26T21:06:06Z",
+      "side": 1,
+      "message": "without this, the messages report that the authors are j, o, h, n, @, e, x, and so on. :)",
+      "revId": "f578c01c36601334672f88ea1e8d0feb2b71f082",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

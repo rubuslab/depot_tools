@@ -956,8 +956,11 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       origin, _ = gclient_utils.SplitUrlRevision(parsed_url)
       if origin in candidates:
         return origin
-      if origin.endswith('.git') and origin[:-len('.git')] in candidates:
-        return origin[:-len('.git')]
+      if origin.endswith('.git'):
+        if origin[:-len('.git')] in candidates:
+          return origin[:-len('.git')]
+      elif origin + '.git' in candidates:
+        return origin + '.git'
     if self.name in candidates:
       return self.name
     return None

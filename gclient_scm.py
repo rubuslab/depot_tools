@@ -355,7 +355,10 @@ class GitWrapper(SCMWrapper):
       try:
         # TODO(ehmaldonado): Look into cherry-picking to avoid an expensive
         # checkout + rebase.
-        self._Capture(['rebase', base_rev])
+        self._Capture([
+            '-c', 'user.name=chrome-bot',
+            '-c', 'user.email=chrome-bot@chromium.org',
+            'rebase', base_rev])
       except subprocess2.CalledProcessError as e:
         self.Print('Failed to apply %r @ %r to %r at %r' % (
                 patch_repo, patch_ref, base_rev, self.checkout_path))

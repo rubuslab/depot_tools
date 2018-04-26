@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68024c88_86f5c7a9",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-04-26T06:16:02Z",
+      "side": 1,
+      "message": "having this outside of chromium/src sucks :(",
+      "range": {
+        "startLine": 515,
+        "startChar": 2,
+        "endLine": 515,
+        "endChar": 20
+      },
+      "revId": "46c3a7dad98301b134b17e3ea43a9c91d1193828",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "100481e927cb632326156660eb91a2ad45c8aa01",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cac8331c_1e082d03",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 960,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-04-26T18:58:05Z",
+      "side": 1,
+      "message": "So I didn\u0027t have to write\n\n  elif not origin.endswith(\u0027.git\u0027) and origin + \u0027.git\u0027 in candidates:\n\nThough a candidate ending in \u0027.git.git\u0027 it\u0027s quite unlikely.",
+      "parentUuid": "c055e3b2_caee8d5c",
+      "range": {
+        "startLine": 959,
+        "startChar": 0,
+        "endLine": 960,
+        "endChar": 47
+      },
+      "revId": "100481e927cb632326156660eb91a2ad45c8aa01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

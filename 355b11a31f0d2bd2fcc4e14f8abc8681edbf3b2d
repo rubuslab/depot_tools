@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf45cd49_a056ee98",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/with_manifest_name.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-04-26T00:37:41Z",
+      "side": 1,
+      "message": "instead of adding this to all expectations, i propose the reverse:\n * in resource/bot_update accept \u0027--no-apply-patch-on-gclient\u0027\n * bot_update/api.py passed \u0027--no-apply-patch-on-gclient\u0027 only if some property set to False.\n\u003d\u003e no expectation changes.\n\u003d\u003e profit.",
+      "range": {
+        "startLine": 120,
+        "startChar": 6,
+        "endLine": 120,
+        "endChar": 32
+      },
+      "revId": "355b11a31f0d2bd2fcc4e14f8abc8681edbf3b2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

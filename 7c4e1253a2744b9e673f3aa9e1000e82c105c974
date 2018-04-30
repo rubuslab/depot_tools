@@ -46,6 +46,30 @@
       "revId": "7c4e1253a2744b9e673f3aa9e1000e82c105c974",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0de96fc3_53f45070",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-04-30T23:41:24Z",
+      "side": 1,
+      "message": "\u003e Return code should be 1 if config doesn\u0027t exist.\n\nNot sure about windows though, but i guess catching SubprocessFailed is good enough.",
+      "parentUuid": "70ecc457_3a40acb1",
+      "range": {
+        "startLine": 342,
+        "startChar": 0,
+        "endLine": 342,
+        "endChar": 6
+      },
+      "revId": "7c4e1253a2744b9e673f3aa9e1000e82c105c974",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

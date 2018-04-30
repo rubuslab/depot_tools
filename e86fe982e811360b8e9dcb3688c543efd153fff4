@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ef8634ff_0622b165",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-04-30T23:15:28Z",
+      "side": 1,
+      "message": "missing cwd + I guess this has to run in all repos inside checkout unless you can predict which ones will be rebased.\n\nFurthermore, on LUCI bots, we\u0027ve automatically added global ~/.gitconfig with **correct** user{name,email}. So, overwriting these in local .git/config will actually be bad.\n\nI\u0027d recommend running above commands with --global IFF not yet configured.",
+      "range": {
+        "startLine": 342,
+        "startChar": 2,
+        "endLine": 345,
+        "endChar": 56
+      },
+      "revId": "e86fe982e811360b8e9dcb3688c543efd153fff4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

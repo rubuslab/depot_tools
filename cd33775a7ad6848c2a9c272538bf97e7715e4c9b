@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf6acc77_1f575801",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-04-30T19:20:17Z",
+      "side": 1,
+      "message": "this didn\u0027t cover case of \u0027origin/master\u0027. https://crbug.com/838292 \nfix: https://chromium-review.googlesource.com/#/c/chromium/tools/depot_tools/+/1035793",
+      "range": {
+        "startLine": 530,
+        "startChar": 2,
+        "endLine": 530,
+        "endChar": 32
+      },
+      "revId": "cd33775a7ad6848c2a9c272538bf97e7715e4c9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

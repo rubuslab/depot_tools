@@ -339,6 +339,15 @@ def gclient_sync(
   fd, gclient_output_file = tempfile.mkstemp(suffix='.json')
   os.close(fd)
 
+  try:
+    git('config', '--global', 'user.name')
+    git('config', '--global', 'user.email')
+  except SubprocessFailed as e:
+    # Some bots don't have git user name/email configured, which causes problems
+    # when rebasing.
+    git('config', '--global', 'user.name', 'chrome-bot')
+    git('config', '--global', 'user.email', 'chrome-bot@chromium.org')
+
   args = ['sync', '--verbose', '--reset', '--force',
          '--ignore_locks', '--output-json', gclient_output_file,
          '--nohooks', '--noprehooks', '--delete_unversioned_trees']

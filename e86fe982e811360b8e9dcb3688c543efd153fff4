@@ -22,6 +22,30 @@
       "revId": "e86fe982e811360b8e9dcb3688c543efd153fff4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3b89de4_e3b7a1e7",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-04-30T23:16:20Z",
+      "side": 1,
+      "message": "ignore me here, i\u0027ll comment on reland.",
+      "parentUuid": "ef8634ff_0622b165",
+      "range": {
+        "startLine": 342,
+        "startChar": 2,
+        "endLine": 345,
+        "endChar": 56
+      },
+      "revId": "e86fe982e811360b8e9dcb3688c543efd153fff4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

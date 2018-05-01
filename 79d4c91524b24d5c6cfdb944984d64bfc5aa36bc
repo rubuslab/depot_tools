@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "261249f9_4f3211ea",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-05-01T03:15:56Z",
+      "side": 1,
+      "message": "this doesn\u0027t make sense. this only runs if 339 was successful, in which case this line is no-op.\n\nfinally should instead undo action of 341 if any by running \u0027git confit --global --unset key\u0027",
+      "range": {
+        "startLine": 345,
+        "startChar": 4,
+        "endLine": 346,
+        "endChar": 47
+      },
+      "revId": "79d4c91524b24d5c6cfdb944984d64bfc5aa36bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

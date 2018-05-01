@@ -700,6 +700,11 @@ def _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
         print 'Git repo %s appears to be broken, removing it' % sln_dir
         remove(sln_dir, cleanup_dir)
 
+      # Windows is unable to checkout files with names longer than 260 chars.
+      # This git setting works around this limitation.
+      if sys.platform.startswith('win'):
+        git('config', 'core.longpaths', 'true', cwd=sln_dir)
+
       # Use "tries=1", since we retry manually in this loop.
       if not path.isdir(sln_dir):
         git('clone', '--no-checkout', '--local', '--shared', mirror_dir,

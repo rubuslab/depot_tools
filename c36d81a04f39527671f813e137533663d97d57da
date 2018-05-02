@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "62ffa6e4_fb2cc98c",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-05-02T18:41:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "304568f9_2c6d0750",
+      "range": {
+        "startLine": 789,
+        "startChar": 4,
+        "endLine": 789,
+        "endChar": 64
+      },
+      "revId": "c36d81a04f39527671f813e137533663d97d57da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "382abd95_b090a83e",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "c36d81a04f39527671f813e137533663d97d57da",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ab85c81_38c44433",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1221,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-05-02T18:41:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "382abd95_b090a83e",
+      "range": {
+        "startLine": 1221,
+        "startChar": 4,
+        "endLine": 1221,
+        "endChar": 73
+      },
+      "revId": "c36d81a04f39527671f813e137533663d97d57da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

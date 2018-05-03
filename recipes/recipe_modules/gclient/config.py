@@ -359,8 +359,7 @@ def recipes_py_bare(c):
 def catapult(c):
   soln = c.solutions.add()
   soln.name = 'catapult'
-  soln.url = ('https://chromium.googlesource.com/external/github.com/'
-              'catapult-project/catapult.git')
+  soln.url = 'https://chromium.googlesource.com/catapult'
   c.got_revision_mapping['catapult'] = 'got_revision'
 
 @config_ctx(includes=['infra_internal'])

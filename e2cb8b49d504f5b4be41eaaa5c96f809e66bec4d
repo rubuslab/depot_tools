@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e3c9d2f_92b87dd9",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-05-03T22:59:59Z",
+      "side": 1,
+      "message": "Nit: move this above the comment on line 400, since that comment goes with line 402?",
+      "revId": "e2cb8b49d504f5b4be41eaaa5c96f809e66bec4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

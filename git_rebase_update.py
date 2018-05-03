@@ -10,6 +10,7 @@ Tool to update all branches to have the latest changes from their upstreams.
 import argparse
 import collections
 import logging
+import subprocess2
 import sys
 import textwrap
 import os
@@ -133,7 +134,12 @@ def remove_empty_branches(branch_tree):
 
   # Apply all deletions recorded, in order.
   for branch, _ in sorted(deletions.iteritems(), key=lambda x: x[1]):
-    print git.run('branch', '-d', branch)
+    try:
+      print git.run('branch', '-d', branch)
+    except subprocess2.CalledProcessError, e:
+      print '  ', e.stderr
+    except:
+      print '  Unable to delete branch "%s": ' % branch
 
 
 def rebase_branch(branch, parent, start_hash):

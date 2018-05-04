@@ -1,0 +1,180 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e3cbbba_3304b3f4",
+        "filename": "parser/datatypes.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "Copyright headers everywhere, please! :)",
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bc2e4c3_76b16147",
+        "filename": "parser/datatypes.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "Docstrings everywhere, please! :)",
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "127c6855_21ddec62",
+        "filename": "parser/datatypes.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "This will raise IndexError if both token and value are None",
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ea7fbf3_7cd1eab8",
+        "filename": "parser/datatypes.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "nit: watch out for extra whitespace",
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6af7b142_680921a1",
+        "filename": "parser/deps_eval.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "Maybe `from datatypes import String, Dict, etc`? I generally prefer that to abbreviated module names, but either is fine.",
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ede53c68_a0eeb367",
+        "filename": "parser/deps_eval.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "All local imports (datatypes, grammar, util, etc) should be in a block of their own, separated from the standard-library imports.",
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a4343c7_05b6224b",
+        "filename": "parser/deps_eval.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "We\u0027d much rather insert something like abspath(join(thispath, \u0027..\u0027))",
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82d0076c_965b2e52",
+        "filename": "parser/deps_eval.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "Should there be another entry in this schema.Or for deps with a url/revision pair, instead of just a url?",
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6555c591_3fb78916",
+        "filename": "parser/deps_eval.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "nit: outdent",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 17
+      },
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1895169f_aadd2926",
+        "filename": "parser/deps_eval.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-04T23:54:27Z",
+      "side": 1,
+      "message": "nit: line too long",
+      "revId": "18d68e7412726b9e0aad234474b239994410b544",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "67452d87_2550d9de",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-07T21:29:12Z",
+      "side": 1,
+      "message": "self.url is the same as self._url. self.url is a property, used for reading, and self._url is used by the class when it needs to write to that property.\n\nself._url is set when the class is constructed, and then modified by _OverrideUrl to maintain the behavior of the code.\n\n  @property\n  def url(self):\n    return self._url",
+      "parentUuid": "8eba5e8e_af779cd3",
+      "range": {
+        "startLine": 449,
+        "startChar": 50,
+        "endLine": 449,
+        "endChar": 58
+      },
+      "revId": "ad1249db2a32ba341e2d15239ed127c5e831a2ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e2283e85_ec605a45",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "ad1249db2a32ba341e2d15239ed127c5e831a2ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bbc2922_91440524",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-07T21:29:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2283e85_ec605a45",
+      "range": {
+        "startLine": 451,
+        "startChar": 35,
+        "endLine": 451,
+        "endChar": 47
+      },
+      "revId": "ad1249db2a32ba341e2d15239ed127c5e831a2ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

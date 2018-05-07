@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4bdad924_90ff9ca8",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-07T20:29:59Z",
+      "side": 1,
+      "message": "At first glance, this is worrisome. Yes, the current Dependency class has a lot of stuff in it that isn\u0027t really needed by CipdDependency. But *in theory* a gclient checkout *could* consist of just a single entry which is a cipd dependency. And in the future there may be additional dependency types that we\u0027d like to support generically. So having the \"GClient\" class descend specifically from GitDependency seems like a loss of abstraction.\n\nCan you clarify a bit what the long-term direction here is?",
+      "range": {
+        "startLine": 1379,
+        "startChar": 6,
+        "endLine": 1379,
+        "endChar": 28
+      },
+      "revId": "93a098ebd765cdbb4dd44c1936a58ee5e839af5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

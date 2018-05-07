@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8eba5e8e_af779cd3",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-07T20:25:25Z",
+      "side": 1,
+      "message": "I\u0027m confused on the difference between self.url (used here and a bunch of places in the new code, but also a *few* places in the old code) and self._url (set on line 253 and used a bunch of places).\n\nCan you clarify what the difference is, when self.url is initially set, which is expected to be used when, and maybe rename one of them?",
+      "range": {
+        "startLine": 449,
+        "startChar": 50,
+        "endLine": 449,
+        "endChar": 58
+      },
+      "revId": "ad1249db2a32ba341e2d15239ed127c5e831a2ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2283e85_ec605a45",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-07T20:25:25Z",
+      "side": 1,
+      "message": "_OverrideUrl",
+      "range": {
+        "startLine": 451,
+        "startChar": 35,
+        "endLine": 451,
+        "endChar": 47
+      },
+      "revId": "ad1249db2a32ba341e2d15239ed127c5e831a2ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

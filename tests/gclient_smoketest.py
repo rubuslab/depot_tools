@@ -205,12 +205,12 @@ class GClientSmoke(GClientSmokeBase):
           ']\n'
           'cache_dir = None\n') % self.git_base)
 
-    test(['config', 'foo', 'faa'],
+    test(['config', 'https://example.com/foo', 'faa'],
          'solutions = [\n'
          '  { "name"        : "foo",\n'
-         '    "url"         : "foo",\n'
+         '    "url"         : "https://example.com/foo",\n'
          '    "deps_file"   : "DEPS",\n'
-          '    "managed"     : True,\n'
+         '    "managed"     : True,\n'
          '    "custom_deps" : {\n'
          '    },\n'
          '    "custom_vars": {},\n'
@@ -218,10 +218,10 @@ class GClientSmoke(GClientSmokeBase):
          ']\n'
          'cache_dir = None\n')
 
-    test(['config', 'foo', '--deps', 'blah'],
+    test(['config', 'https://example.com/foo', '--deps', 'blah'],
          'solutions = [\n'
          '  { "name"        : "foo",\n'
-         '    "url"         : "foo",\n'
+         '    "url"         : "https://example.com/foo",\n'
          '    "deps_file"   : "blah",\n'
          '    "managed"     : True,\n'
          '    "custom_deps" : {\n'

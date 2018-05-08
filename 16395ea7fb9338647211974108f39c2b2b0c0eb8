@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24a510e8_3240a867",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_gerrit_branch_heads.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-08T21:24:14Z",
+      "side": 1,
+      "message": "Note.\nWe take advantage of https://cs.chromium.org/chromium/tools/depot_tools/recipes/recipe_modules/bot_update/resources/bot_update.py?l\u003d731 to ensure the ref has been fetched before it\u0027s checked out.",
+      "range": {
+        "startLine": 69,
+        "startChar": 7,
+        "endLine": 70,
+        "endChar": 27
+      },
+      "revId": "16395ea7fb9338647211974108f39c2b2b0c0eb8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

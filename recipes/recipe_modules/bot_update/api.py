@@ -154,6 +154,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
     for solution in cfg.solutions:
       if solution.revision:
         revisions[solution.name] = solution.revision
+        if solution.revision.startswith('refs'): #pragma: nocover
+          refs.append(solution.revision)
       elif solution == cfg.solutions[0]:
         # TODO(machenbach): We should explicitly pass HEAD for ALL solutions
         # that don't specify anything else.
@@ -183,6 +185,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
         if fixed_revision.upper() == 'HEAD':
           # Sync to correct destination branch if HEAD was specified.
           fixed_revision = self._destination_branch(cfg, name)
+        if fixed_revision.startswith('refs/'): #pragma: nocover
+          refs.append(fixed_revision)
         flags.append(['--revision', '%s@%s' % (name, fixed_revision)])
 
     # Add extra fetch refspecs.

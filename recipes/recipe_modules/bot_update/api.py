@@ -154,6 +154,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
     for solution in cfg.solutions:
       if solution.revision:
         revisions[solution.name] = solution.revision
+        print "LEMUR", solution.revision
+        if solution.revision.startswith('refs'): #pragma: nocover
+          refs.append(solution.revision)
+          print "LEMUR2", refs
       elif solution == cfg.solutions[0]:
         # TODO(machenbach): We should explicitly pass HEAD for ALL solutions
         # that don't specify anything else.
@@ -185,6 +189,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
           fixed_revision = self._destination_branch(cfg, name)
         flags.append(['--revision', '%s@%s' % (name, fixed_revision)])
 
+    print "LEMUR3", refs
     # Add extra fetch refspecs.
     for ref in refs:
       flags.append(['--refs', ref])

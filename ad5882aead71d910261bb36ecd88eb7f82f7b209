@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7502e6c1_e6d91df9",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-05-09T21:35:35Z",
+      "side": 1,
+      "message": "\u003e Actually, I was not able to find the way to only apply this CL by led.\n\ncan you elaborate?\n\n\u003e The led task was run by setting GIT_TRACE\u003d1 globally in bot_update step\nAh, I see what you mean now. OK, looks safe to me too. However, you\u0027d make me happier if you trigger this latest patch with LED.",
+      "parentUuid": "056c573d_039100fc",
+      "range": {
+        "startLine": 675,
+        "startChar": 0,
+        "endLine": 678,
+        "endChar": 31
+      },
+      "revId": "ad5882aead71d910261bb36ecd88eb7f82f7b209",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6f461af5_454d3d72",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 2

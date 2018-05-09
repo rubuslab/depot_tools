@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "056c573d_039100fc",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-05-09T21:17:41Z",
+      "side": 1,
+      "message": "Actually, I was not able to find the way to only apply this CL by led.\n\nBut I think this change is safe.\nThe led task was run by setting GIT_TRACE\u003d1 globally in bot_update step, and the failure is happened in L730 in this diff.\nThat is due to value containing output from GIT_TRACE in |mirror_dir| (L717) and it was passed to git in L730.\n\nSo the error happened after populate_cmd, and we don\u0027t use output of populate_cmd. I think this is safe to land.",
+      "parentUuid": "c39df4b9_3248384f",
+      "range": {
+        "startLine": 675,
+        "startChar": 0,
+        "endLine": 678,
+        "endChar": 31
+      },
+      "revId": "ad5882aead71d910261bb36ecd88eb7f82f7b209",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6f461af5_454d3d72",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 2
@@ -39,6 +63,24 @@
       "revId": "ad5882aead71d910261bb36ecd88eb7f82f7b209",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a69d066b_9057884a",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-05-09T21:17:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f461af5_454d3d72",
+      "revId": "ad5882aead71d910261bb36ecd88eb7f82f7b209",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

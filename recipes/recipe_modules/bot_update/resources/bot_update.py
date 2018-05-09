@@ -729,7 +729,12 @@ def _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
         git('remote', 'set-url', 'origin', mirror_dir, cwd=sln_dir)
         git('fetch', 'origin', cwd=sln_dir)
       for ref in refs:
-        refspec = '%s:%s' % (ref, ref.lstrip('+'))
+        # Make sure that the left part of the refspec is of the form
+        # refs/heads/* and the right part is of the form refs/remotes/origin/*
+        # since refs/heads/* is mapped by git to refs/remotes/origin/*
+        lref = ref.replace('refs/remotes/origin/', 'refs/heads/')
+        rref = ref.replace('refs/heads/', 'refs/remotes/origin/').lstrip('+')
+        refspec = lref + ':' + rref
         git('fetch', 'origin', refspec, cwd=sln_dir)
 
       # Windows sometimes has trouble deleting files.

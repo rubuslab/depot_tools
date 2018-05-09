@@ -16,6 +16,24 @@
       "revId": "60cee87aa76a0fbe9eee2a98a24abb16e9b64260",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bcce011a_7248b890",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-09T17:48:36Z",
+      "side": 1,
+      "message": "Yes, at line 470:\n\n  parent_url[:parent_url.rfind(\u0027/\u0027)]\n\nUpdated the comment to make it more clear.",
+      "parentUuid": "8898fc48_5a504752",
+      "revId": "60cee87aa76a0fbe9eee2a98a24abb16e9b64260",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "d7f95e8d_1e762abf",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-05-09T22:03:24Z",
+      "side": 1,
+      "message": "ah, it\u0027s easy -- you\u0027ve missed -O flag for that!\n\n$ cd build/scripts/slaves/recipes\n$ led get-builder \u003cid\u003e | led edit-recipe-bundle -O depot_tools\u003d/path/to/depot_tools/with/your/patch | led launch",
+      "parentUuid": "6ec9855d_f0c2fac5",
+      "range": {
+        "startLine": 675,
+        "startChar": 0,
+        "endLine": 678,
+        "endChar": 31
+      },
+      "revId": "ad5882aead71d910261bb36ecd88eb7f82f7b209",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6f461af5_454d3d72",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 2

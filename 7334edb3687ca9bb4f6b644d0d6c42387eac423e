@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2a792401_c3b35154",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-05-09T22:20:34Z",
+      "side": 1,
+      "message": "really? why?",
+      "range": {
+        "startLine": 153,
+        "startChar": 13,
+        "endLine": 153,
+        "endChar": 21
+      },
+      "revId": "7334edb3687ca9bb4f6b644d0d6c42387eac423e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

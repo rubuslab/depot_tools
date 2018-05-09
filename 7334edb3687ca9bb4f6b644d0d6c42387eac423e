@@ -22,6 +22,30 @@
       "revId": "7334edb3687ca9bb4f6b644d0d6c42387eac423e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5803c2e_27170ed9",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-05-09T22:26:26Z",
+      "side": 1,
+      "message": "Without deepcopy, os.environ is updated by new_env.\nhttps://ideone.com/HuOXEH\n\nThis caused failure like below.\nhttps://ci.chromium.org/swarming/task/3d5fc15c1c993510?server\u003dchromium-swarm.appspot.com\n\nThat is not I want to do.",
+      "parentUuid": "2a792401_c3b35154",
+      "range": {
+        "startLine": 153,
+        "startChar": 13,
+        "endLine": 153,
+        "endChar": 21
+      },
+      "revId": "7334edb3687ca9bb4f6b644d0d6c42387eac423e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

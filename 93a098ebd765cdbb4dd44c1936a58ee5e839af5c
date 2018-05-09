@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ee396d8a_65eed4fa",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1082,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-09T17:59:05Z",
+      "side": 1,
+      "message": "raise NotImplementedError()",
+      "revId": "93a098ebd765cdbb4dd44c1936a58ee5e839af5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d64b5738_e83a0cec",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1086,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-09T17:59:05Z",
+      "side": 1,
+      "message": "same",
+      "revId": "93a098ebd765cdbb4dd44c1936a58ee5e839af5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4bdad924_90ff9ca8",
         "filename": "gclient.py",
         "patchSetId": 1

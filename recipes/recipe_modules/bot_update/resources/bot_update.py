@@ -729,7 +729,13 @@ def _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
         git('remote', 'set-url', 'origin', mirror_dir, cwd=sln_dir)
         git('fetch', 'origin', cwd=sln_dir)
       for ref in refs:
-        refspec = '%s:%s' % (ref, ref.lstrip('+'))
+        assert not ref.startswith('refs/remotes/'), (
+            'The "refs/remotes/*" is not supported.\n'
+            'The "remotes" syntax is dependent on the way the local repo is '
+            'configured, and while there are defaults that can often be '
+            'assumed, there is no guarantee the mapping will always be done in '
+            'a particular way.')
+        refspec = lref + ':' + rref
         git('fetch', 'origin', refspec, cwd=sln_dir)
 
       # Windows sometimes has trouble deleting files.

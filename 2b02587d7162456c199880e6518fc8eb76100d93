@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3402ae_7b2b33a6",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1835,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-09T21:00:30Z",
+      "side": 1,
+      "message": "\"\"\"Updates dep.url\n\nBut this is confusing, I\u0027d prefer if it weren\u0027t a closure.",
+      "range": {
+        "startLine": 1835,
+        "startChar": 9,
+        "endLine": 1835,
+        "endChar": 16
+      },
+      "revId": "2b02587d7162456c199880e6518fc8eb76100d93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

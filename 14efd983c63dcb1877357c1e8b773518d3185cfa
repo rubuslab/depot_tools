@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "478987ba_b9d85d3c",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-09T17:53:42Z",
+      "side": 1,
+      "message": "s/url/parent hierarchy/ ?",
+      "range": {
+        "startLine": 451,
+        "startChar": 36,
+        "endLine": 451,
+        "endChar": 39
+      },
+      "revId": "14efd983c63dcb1877357c1e8b773518d3185cfa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

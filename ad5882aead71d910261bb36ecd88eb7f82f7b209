@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "6ec9855d_f0c2fac5",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-05-09T21:50:58Z",
+      "side": 1,
+      "message": "\u003e \u003e Actually, I was not able to find the way to only apply this CL by led.\n\u003e \n\u003e can you elaborate?\n\u003e \n\nTo apply this patch, in my understanding, I need to simulate following by LED.\n* roll this CL\n* update DEPS in chromium/src for bot_update\n* GIT_TRACE has affect in bot_update step on the bots who already run bot_update step syncing DEPS for bot_update module in previous build\n\nBut couldn\u0027t come up the way to do.\n\nOr do I miss something?\nHow do you do test by LED when modifying bot_update module?",
+      "parentUuid": "7502e6c1_e6d91df9",
+      "range": {
+        "startLine": 675,
+        "startChar": 0,
+        "endLine": 678,
+        "endChar": 31
+      },
+      "revId": "ad5882aead71d910261bb36ecd88eb7f82f7b209",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6f461af5_454d3d72",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 2

@@ -93,6 +93,30 @@
       "revId": "4d745fe24f62c842efa459b567e9c3ad8c733b33",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c5856b47_73ca9b73",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-05-09T00:40:30Z",
+      "side": 1,
+      "message": "ah, I see. Yeah, it was confusing. New comment is good.",
+      "parentUuid": "d4e1ed1f_6eae2e3c",
+      "range": {
+        "startLine": 190,
+        "startChar": 12,
+        "endLine": 190,
+        "endChar": 15
+      },
+      "revId": "4d745fe24f62c842efa459b567e9c3ad8c733b33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -22,6 +22,30 @@
       "revId": "2b02587d7162456c199880e6518fc8eb76100d93",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fdf0e6a8_a2bcd88e",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1835,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-09T22:12:43Z",
+      "side": 1,
+      "message": "I made it into a method.",
+      "parentUuid": "5a3402ae_7b2b33a6",
+      "range": {
+        "startLine": 1835,
+        "startChar": 9,
+        "endLine": 1835,
+        "endChar": 16
+      },
+      "revId": "2b02587d7162456c199880e6518fc8eb76100d93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

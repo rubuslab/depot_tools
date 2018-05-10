@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0bb05245_530e30bf",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-05-10T17:54:54Z",
+      "side": 1,
+      "message": "this assert will fire only at runtime, but not during recipe training. Can it be moved into api.py?",
+      "revId": "1efd7c2c523ea0ac2c5693bfa2dc03730348febf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50b6be1c_ca3e6173",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-05-10T17:54:54Z",
+      "side": 1,
+      "message": "strictly speaking, a remote ref can be called \"refs/remotes/let/me/cause/confusion\", and this assert will prevent bot_update from working with such refs.\nBut, overall, this assert provides value.",
+      "range": {
+        "startLine": 1085,
+        "startChar": 4,
+        "endLine": 1090,
+        "endChar": 28
+      },
+      "revId": "1efd7c2c523ea0ac2c5693bfa2dc03730348febf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

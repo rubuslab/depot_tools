@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d5ef701c_900e74e9",
+        "filename": "tests/bot_update_coverage_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-05-10T22:28:22Z",
+      "side": 1,
+      "message": "nit: I know this is test data, but this doesn\u0027t correspond to the the correct real-life url.",
+      "revId": "9d95ae97ba2c360e6919dab0d4425673945514c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

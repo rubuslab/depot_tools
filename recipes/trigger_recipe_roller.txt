@@ -5,8 +5,11 @@ Once upon a time, a budding web browser dev team needed a CI system.
 All they had was one poor machine under a desk, and its name was Batty,
 the Build and Test Yeti.
 
+<<<<<<< HEAD
 One day, an engineer named
 
 😒😒
 
+=======
+>>>>>>> 401cc6a5... Reland "gclient: Get rid of parsed_url."
 The End

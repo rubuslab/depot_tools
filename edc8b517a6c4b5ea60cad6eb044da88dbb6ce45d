@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5baa1f45_f514f63b",
+        "filename": "gclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-10T17:18:12Z",
+      "side": 1,
+      "message": "It\u0027s not an API surface so prefix with _",
+      "revId": "edc8b517a6c4b5ea60cad6eb044da88dbb6ce45d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6d61378_6833dd53",
+        "filename": "gclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-10T17:18:12Z",
+      "side": 1,
+      "message": "Updates self._url to the revision checked out on disk.",
+      "revId": "edc8b517a6c4b5ea60cad6eb044da88dbb6ce45d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

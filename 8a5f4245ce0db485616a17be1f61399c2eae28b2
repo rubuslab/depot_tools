@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da8fe304_dd939ab3",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2147,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-10T17:42:57Z",
+      "side": 1,
+      "message": "Using PinToActualRevision here.",
+      "revId": "8a5f4245ce0db485616a17be1f61399c2eae28b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

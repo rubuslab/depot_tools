@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a2a2cf6c_40924ff2",
+        "filename": "gclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-10T17:42:57Z",
+      "side": 1,
+      "message": "Was planning to do this in a follow up CL, but it also fits here:\n\nI\u0027m using it for\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1047797/9..10/gclient.py#2147",
+      "parentUuid": "5baa1f45_f514f63b",
+      "revId": "edc8b517a6c4b5ea60cad6eb044da88dbb6ce45d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c6d61378_6833dd53",
         "filename": "gclient.py",
         "patchSetId": 9
@@ -33,6 +51,24 @@
       "revId": "edc8b517a6c4b5ea60cad6eb044da88dbb6ce45d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0994b2f9_5142b1e1",
+        "filename": "gclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-10T17:42:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6d61378_6833dd53",
+      "revId": "edc8b517a6c4b5ea60cad6eb044da88dbb6ce45d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

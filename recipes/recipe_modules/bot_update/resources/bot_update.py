@@ -1081,6 +1081,13 @@ def parse_args():
 
   if not options.refs:
     options.refs = []
+  for ref in options.refs:
+    assert not ref.startswith('refs/remotes/'), (
+        'The "refs/remotes/*" is not supported.\n'
+        'The "remotes" syntax is dependent on the way the local repo is '
+        'configured, and while there are defaults that can often be '
+        'assumed, there is no guarantee the mapping will always be done in '
+        'a particular way.')
 
   if options.with_branch_heads:
     options.refs.append(BRANCH_HEADS_REFSPEC)

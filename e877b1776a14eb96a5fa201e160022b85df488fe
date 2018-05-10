@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd4a7dfb_23eab502",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-10T21:29:21Z",
+      "side": 0,
+      "message": "If gclient reports that both \u0027url\u0027 and \u0027revision\u0027 are None, then revision will be \u0027\u0027 and url_split will be None. And None has no len().",
+      "range": {
+        "startLine": 480,
+        "startChar": 28,
+        "endLine": 480,
+        "endChar": 37
+      },
+      "revId": "e877b1776a14eb96a5fa201e160022b85df488fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

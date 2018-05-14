@@ -392,8 +392,6 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # Calculates properties:
     self._dependencies = []
     self._vars = {}
-    self._os_dependencies = {}
-    self._os_deps_hooks = {}
 
     # A cache of the files affected by the current operation, necessary for
     # hooks.
@@ -598,46 +596,55 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     return True
 
   @staticmethod
-  def MergeWithOsDeps(deps, deps_os, target_os_list, process_all_deps):
+  def StandardizeDep(dep_name, dep_info, vars_dict):
+    dep_name = dep_name.format(**vars_dict)
+    if not isinstance(dep_info, collections.Mapping):
+      dep_info = {
+          'url': dep_info,
+          'dep_type': 'git',
+      }
+    return dep_name, dep_info
+
+  @staticmethod
+  def MergeCondition(dep_info, op, new_condition):
+    condition = new_condition
+    if 'condition' in dep_info:
+      condition = '(%s) %s (%s)' % (dep_info['condition'], op, new_condition)
+    dep_info['condition'] = condition
+
+  @staticmethod
+  def MergeWithOsDeps(deps, deps_os, vars_dict):
     """Returns a new "deps" structure that is the deps sent in updated
     with information from deps_os (the deps_os section of the DEPS
     file) that matches the list of target os."""
     new_deps = deps.copy()
-    for dep_os, os_deps in deps_os.iteritems():
+    for os_name, os_deps in deps_os.iteritems():
       for key, value in os_deps.iteritems():
-        if value is None:
-          # Make this condition very visible, so it's not a silent failure.
-          # It's unclear how to support None override in deps_os.
-          logging.error('Ignoring %r:%r in %r deps_os', key, value, dep_os)
-          continue
+        key, value = Dependency.StandardizeDep(key, value, vars_dict)
+        Dependency.MergeCondition(value, 'and', 'checkout_' + os_name)
 
-        # Normalize value to be a dict which contains |should_process| metadata.
-        if isinstance(value, basestring):
-          value = {'url': value}
-        assert isinstance(value, collections.Mapping), (key, value)
-        value['should_process'] = dep_os in target_os_list or process_all_deps
+        # Make this condition very visible, so it's not a silent failure.
+        # It's unclear how to support None override in deps_os.
+        if value['url'] is None:
+          logging.error('Ignoring %r:%r in %r deps_os', key, value, os_name)
+          continue
 
         # Handle collisions/overrides.
         if key in new_deps and new_deps[key] != value:
-          # Normalize the existing new_deps entry.
-          if isinstance(new_deps[key], basestring):
-            new_deps[key] = {'url': new_deps[key]}
-          assert isinstance(new_deps[key],
-                            collections.Mapping), (key, new_deps[key])
-
           # It's OK if the "override" sets the key to the same value.
           # This is mostly for legacy reasons to keep existing DEPS files
           # working. Often mac/ios and unix/android will do this.
           if value['url'] != new_deps[key]['url']:
             raise gclient_utils.Error(
                 ('Value from deps_os (%r; %r: %r) conflicts with existing deps '
-                 'entry (%r).') % (dep_os, key, value, new_deps[key]))
+                 'entry (%r).') % (os_name, key, value, new_deps[key]))
 
-          # We'd otherwise overwrite |should_process| metadata, but a dep should
-          # be processed if _any_ of its references call for that.
-          value['should_process'] = (
-              value['should_process'] or
-              new_deps[key].get('should_process', True))
+          if 'condition' in new_deps[key]:
+            Dependency.MergeCondition(value, 'or', new_deps[key]['condition'])
+          else:
+            # If 'condition' is not in new_deps[key], then the dependency will
+            # always be synced, and we shouldn't introduce a condition.
+            del value['condition']
 
         new_deps[key] = value
 
@@ -653,6 +660,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     for d in self.custom_deps:
       if d not in deps:
         deps[d] = self.custom_deps[d]
+
     # Make child deps conditional on any parent conditions. This ensures that,
     # when flattened, recursed entries have the correct restrictions, even if
     # not explicitly set in the recursed DEPS file. For instance, if
@@ -660,17 +668,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # recursively included by "src/ios_foo/DEPS" should also require
     # "checkout_ios=True".
     if self.condition:
-      for dname, dval in deps.iteritems():
-        if isinstance(dval, basestring):
-          dval = {'url': dval}
-          deps[dname] = dval
-        else:
-          assert isinstance(dval, collections.Mapping)
-        if dval.get('condition'):
-          dval['condition'] = '(%s) and (%s)' % (
-              dval['condition'], self.condition)
-        else:
-          dval['condition'] = self.condition
+      for value in deps.itervalues():
+        self.MergeCondition(value, 'and', self.condition)
 
     if rel_prefix:
       logging.warning('use_relative_paths enabled.')
@@ -697,21 +696,11 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       if dep_value is None:
         continue
 
-      condition = None
-      condition_value = True
-      if isinstance(dep_value, basestring):
-        raw_url = dep_value
-        dep_type = None
-      else:
-        # This should be guaranteed by schema checking in gclient_eval.
-        assert isinstance(dep_value, collections.Mapping)
-        raw_url = dep_value.get('url')
-        # Take into account should_process metadata set by MergeWithOsDeps.
-        should_process = (should_process and
-                          dep_value.get('should_process', True))
-        condition = dep_value.get('condition')
-        dep_type = dep_value.get('dep_type')
+      raw_url = dep_value.get('url')
+      condition = dep_value.get('condition')
+      dep_type = dep_value.get('dep_type')
 
+      condition_value = True
       if condition:
         condition_value = gclient_eval.EvaluateCondition(
             condition, self.get_vars())
@@ -824,10 +813,6 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     elif self._relative:
       rel_prefix = os.path.dirname(self.name)
 
-    deps = {}
-    for key, value in local_scope.get('deps', {}).iteritems():
-      deps[key.format(**self.get_vars())] = value
-
     if 'recursion' in local_scope:
       self.recursion_override = local_scope.get('recursion')
       logging.warning(
@@ -857,18 +842,16 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # If present, save 'target_os' in the local_target_os property.
     if 'target_os' in local_scope:
       self.local_target_os = local_scope['target_os']
-    # load os specific dependencies if defined.  these dependencies may
-    # override or extend the values defined by the 'deps' member.
-    target_os_list = self.target_os
+
+    deps = dict(
+        self.StandardizeDep(key, value, self.get_vars())
+        for key, value in local_scope.get('deps', {}).iteritems()
+    )
+
+    # load os specific dependencies if defined. These dependencies may extend
+    # the values defined by the 'deps' member.
     if 'deps_os' in local_scope:
-      for dep_os, os_deps in local_scope['deps_os'].iteritems():
-        self._os_dependencies[dep_os] = self._deps_to_objects(
-            self._postprocess_deps(os_deps, rel_prefix), use_relative_paths)
-      if target_os_list and not self._get_option(
-          'do_not_merge_os_specific_entries', False):
-        deps = self.MergeWithOsDeps(
-            deps, local_scope['deps_os'], target_os_list,
-            self._get_option('process_all_deps', False))
+      deps = self.MergeWithOsDeps(deps, local_scope['deps_os'], self.get_vars())
 
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), use_relative_paths)
@@ -879,26 +862,23 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     for hook in local_scope.get('hooks', []):
       if hook.get('name', '') not in hook_names_to_suppress:
         hooks_to_run.append(hook)
-    if 'hooks_os' in local_scope and target_os_list:
-      hooks_os = local_scope['hooks_os']
 
-      # Keep original contents of hooks_os for flatten.
-      for hook_os, os_hooks in hooks_os.iteritems():
-        self._os_deps_hooks[hook_os] = [
-            Hook.from_dict(hook, variables=self.get_vars(), verbose=True,
-                           conditions=self.condition)
-            for hook in os_hooks]
+    if 'hooks_os' in local_scope:
+      for os_name, os_hooks in local_scope['hooks_os'].iteritems():
+        for hook in os_hooks:
+          self.MergeCondition(hook, 'and', 'checkout_' + os_name)
 
-      # Specifically append these to ensure that hooks_os run after hooks.
-      if not self._get_option('do_not_merge_os_specific_entries', False):
-        for the_target_os in target_os_list:
-          the_target_os_hooks = hooks_os.get(the_target_os, [])
-          hooks_to_run.extend(the_target_os_hooks)
+        # Specifically append these to ensure that hooks_os run after hooks.
+        hooks_to_run.extend(os_hooks)
 
     # add the replacements and any additions
     for hook in self.custom_hooks:
       if 'action' in hook:
         hooks_to_run.append(hook)
+
+    if self.condition:
+      for hook in hooks_to_run:
+        Dependency.MergeCondition(hook, 'and', self.condition)
 
     if self.recursion_limit:
       self._pre_deps_hooks = [
@@ -1139,14 +1119,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       # TODO(maruel): If the user is using git, then we don't know
       # what files have changed so we always run all hooks. It'd be nice to fix
       # that.
-      if (options.force or
-          self.GetScmName(self.url) in ('git', None) or
-          os.path.isdir(os.path.join(self.root.root_dir, self.name, '.git'))):
-        result.extend(self.deps_hooks)
-      else:
-        for hook in self.deps_hooks:
-          if hook.matches(self.file_list_and_children):
-            result.append(hook)
+      result.extend(self.deps_hooks)
     for s in self.dependencies:
       result.extend(s.GetHooks(options))
     return result
@@ -1208,18 +1181,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
   @property
   @gclient_utils.lockedmethod
-  def os_dependencies(self):
-    return dict(self._os_dependencies)
-
-  @property
-  @gclient_utils.lockedmethod
   def deps_hooks(self):
     return tuple(self._deps_hooks)
-
-  @property
-  @gclient_utils.lockedmethod
-  def os_deps_hooks(self):
-    return dict(self._os_deps_hooks)
 
   @property
   @gclient_utils.lockedmethod
@@ -1328,6 +1291,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         'checkout_fuchsia': 'fuchsia' in self.target_os,
         'checkout_ios': 'ios' in self.target_os,
         'checkout_linux': 'unix' in self.target_os,
+        'checkout_unix': 'unix' in self.target_os,
         'checkout_mac': 'mac' in self.target_os,
         'checkout_win': 'win' in self.target_os,
         'host_os': _detect_host_os(),
@@ -2112,9 +2076,7 @@ class Flattener(object):
 
     self._allowed_hosts = set()
     self._deps = {}
-    self._deps_os = {}
     self._hooks = []
-    self._hooks_os = {}
     self._pre_deps_hooks = []
     self._vars = {}
 
@@ -2161,10 +2123,6 @@ class Flattener(object):
       for dep in self._deps.itervalues():
         self._pin_dep(dep)
 
-      for os_deps in self._deps_os.itervalues():
-        for dep in os_deps.itervalues():
-          self._pin_dep(dep)
-
     def add_deps_file(dep):
       # Only include DEPS files referenced by recursedeps.
       if not (dep.parent is None or
@@ -2183,9 +2141,6 @@ class Flattener(object):
       self._deps_files.add((dep.url, deps_file, dep.hierarchy_data()))
     for dep in self._deps.itervalues():
       add_deps_file(dep)
-    for os_deps in self._deps_os.itervalues():
-      for dep in os_deps.itervalues():
-        add_deps_file(dep)
 
     gn_args_dep = self._deps.get(self._client.dependencies[0]._gn_args_from,
                                  self._client.dependencies[0])
@@ -2193,10 +2148,8 @@ class Flattener(object):
         _GNSettingsToLines(gn_args_dep._gn_args_file, gn_args_dep._gn_args) +
         _AllowedHostsToLines(self._allowed_hosts) +
         _DepsToLines(self._deps) +
-        _DepsOsToLines(self._deps_os) +
         _HooksToLines('hooks', self._hooks) +
         _HooksToLines('pre_deps_hooks', self._pre_deps_hooks) +
-        _HooksOsToLines(self._hooks_os) +
         _VarsToLines(self._vars) +
         ['# %s, %s' % (url, deps_file)
          for url, deps_file, _ in sorted(self._deps_files)] +
@@ -2213,31 +2166,15 @@ class Flattener(object):
     if dep.url:
       self._deps[dep.name] = dep
 
-  def _add_os_dep(self, os_dep, dep_os):
-    """Helper to add an OS-specific dependency to flattened DEPS.
-
-    Arguments:
-      os_dep (Dependency): dependency to add
-      dep_os (str): name of the OS
-    """
-    assert (
-        os_dep.name not in self._deps_os.get(dep_os, {}) or
-        self._deps_os.get(dep_os, {}).get(os_dep.name) == os_dep), (
-            os_dep.name, self._deps_os.get(dep_os, {}).get(os_dep.name))
-    if os_dep.url:
-      self._deps_os.setdefault(dep_os, {})[os_dep.name] = os_dep
-
-  def _flatten_dep(self, dep, dep_os=None):
+  def _flatten_dep(self, dep):
     """Visits a dependency in order to flatten it (see CMDflatten).
 
     Arguments:
       dep (Dependency): dependency to process
-      dep_os (str or None): name of the OS |dep| is specific to
     """
-    logging.debug('_flatten_dep(%s, %s)', dep.name, dep_os)
+    logging.debug('_flatten_dep(%s)', dep.name)
 
-    if not dep.deps_parsed:
-      dep.ParseDepsFile()
+    assert dep.deps_parsed, dep
 
     self._allowed_hosts.update(dep.allowed_hosts)
 
@@ -2264,41 +2201,14 @@ class Flattener(object):
       self._vars[key] = (hierarchy + ' [custom_var override]', value)
 
     self._pre_deps_hooks.extend([(dep, hook) for hook in dep.pre_deps_hooks])
-
-    if dep_os:
-      if dep.deps_hooks:
-        self._hooks_os.setdefault(dep_os, []).extend(
-            [(dep, hook) for hook in dep.deps_hooks])
-    else:
-      self._hooks.extend([(dep, hook) for hook in dep.deps_hooks])
+    self._hooks.extend([(dep, hook) for hook in dep.deps_hooks])
 
     for sub_dep in dep.dependencies:
-      if dep_os:
-        self._add_os_dep(sub_dep, dep_os)
-      else:
-        self._add_dep(sub_dep)
+      self._add_dep(sub_dep)
 
-    for hook_os, os_hooks in dep.os_deps_hooks.iteritems():
-      self._hooks_os.setdefault(hook_os, []).extend(
-          [(dep, hook) for hook in os_hooks])
-
-    for sub_dep_os, os_deps in dep.os_dependencies.iteritems():
-      for os_dep in os_deps:
-        self._add_os_dep(os_dep, sub_dep_os)
-
-    # Process recursedeps. |deps_by_name| is a map where keys are dependency
-    # names, and values are maps of OS names to |Dependency| instances.
-    # |None| in place of OS name means the dependency is not OS-specific.
-    deps_by_name = dict((d.name, {None: d}) for d in dep.dependencies)
-    for sub_dep_os, os_deps in dep.os_dependencies.iteritems():
-      for os_dep in os_deps:
-        assert sub_dep_os not in deps_by_name.get(os_dep.name, {}), (
-            os_dep.name, sub_dep_os)
-        deps_by_name.setdefault(os_dep.name, {})[sub_dep_os] = os_dep
+    deps_by_name = {d.name: d for d in dep.dependencies}
     for recurse_dep_name in (dep.recursedeps or []):
-      dep_info = deps_by_name[recurse_dep_name]
-      for sub_dep_os, os_dep in dep_info.iteritems():
-        self._flatten_dep(os_dep, dep_os=(sub_dep_os or dep_os))
+      self._flatten_dep(deps_by_name[recurse_dep_name])
 
 
 def CMDflatten(parser, args):
@@ -2314,7 +2224,6 @@ def CMDflatten(parser, args):
             'for checked out deps, NOT deps_os.'))
   options, args = parser.parse_args(args)
 
-  options.do_not_merge_os_specific_entries = True
   options.nohooks = True
   options.process_all_deps = True
   client = GClient.LoadCurrentConfig(options)
@@ -2706,10 +2615,6 @@ def CMDsync(parser, args):
                     help='override deps for the specified (comma-separated) '
                          'platform(s); \'all\' will process all deps_os '
                          'references')
-  # TODO(phajdan.jr): use argparse.SUPPRESS to hide internal flags.
-  parser.add_option('--do-not-merge-os-specific-entries', action='store_true',
-                    help='INTERNAL ONLY - disables merging of deps_os and '
-                         'hooks_os to dependencies and hooks')
   parser.add_option('--process-all-deps', action='store_true',
                     help='Check out all deps, even for different OS-es, '
                          'or with conditions evaluating to false')

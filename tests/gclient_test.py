@@ -435,19 +435,10 @@ class GclientTest(trial_dir.TestCase):
         '  }]\n')
     write(
         os.path.join('foo', 'DEPS'),
-        'target_os = ["baz"]\n'
-        'deps_os = {\n'
-        '  "unix": { "foo/unix": "/unix", },\n'
-        '  "baz": { "foo/baz": "/baz", },\n'
-        '  "jaz": { "foo/jaz": "/jaz", },\n'
-        '}')
+        'target_os = ["baz"]\n')
     write(
         os.path.join('bar', 'DEPS'),
-        'deps_os = {\n'
-        '  "unix": { "bar/unix": "/unix", },\n'
-        '  "baz": { "bar/baz": "/baz", },\n'
-        '  "jaz": { "bar/jaz": "/jaz", },\n'
-        '}')
+        '')
 
     parser = gclient.OptionParser()
     options, _ = parser.parse_args(['--jobs', '1'])
@@ -456,15 +447,11 @@ class GclientTest(trial_dir.TestCase):
     obj = gclient.GClient.LoadCurrentConfig(options)
     obj.RunOnDeps('None', [])
     self.assertEqual(['unix'], sorted(obj.enforced_os))
-    self.assertEquals(
-        [
-          ('bar', 'svn://example.com/bar'),
-          ('bar/unix', 'svn://example.com/unix'),
-          ('foo', 'svn://example.com/foo'),
-          ('foo/baz', 'svn://example.com/baz'),
-          ('foo/unix', 'svn://example.com/unix'),
-          ],
-        sorted(self._get_processed()))
+    self.assertEqual([('unix', 'baz'), ('unix',)],
+                     [dep.target_os for dep in obj.dependencies])
+    self.assertEqual([('foo', 'svn://example.com/foo'),
+                      ('bar', 'svn://example.com/bar')],
+                     self._get_processed())
 
   def testTargetOsForHooksInDepsFile(self):
     """Verifies that specifying a target_os value in a DEPS file runs the right
@@ -505,28 +492,15 @@ class GclientTest(trial_dir.TestCase):
     obj = gclient.GClient.LoadCurrentConfig(options)
     obj.RunOnDeps('None', args)
     self.assertEqual(['zippy'], sorted(obj.enforced_os))
-    all_hooks = [h.action for h in obj.GetHooks(options)]
+    all_hooks = obj.GetHooks(options)
     self.assertEquals(
         [('.', 'svn://example.com/'),],
         sorted(self._get_processed()))
-    self.assertEquals(all_hooks,
-                      [('python', 'do_a')])
-
-    # Test for OS that has extra hooks in hooks_os.
-    parser = gclient.OptionParser()
-    options, args = parser.parse_args(['--jobs', '1'])
-    options.deps_os = 'blorp'
-
-    obj = gclient.GClient.LoadCurrentConfig(options)
-    obj.RunOnDeps('None', args)
-    self.assertEqual(['blorp'], sorted(obj.enforced_os))
-    all_hooks = [h.action for h in obj.GetHooks(options)]
-    self.assertEquals(
-        [('.', 'svn://example.com/'),],
-        sorted(self._get_processed()))
-    self.assertEquals(all_hooks,
+    self.assertEquals([h.action for h in all_hooks],
                       [('python', 'do_a'),
                        ('python', 'do_b')])
+    self.assertEquals([h.condition for h in all_hooks],
+                      [None, 'checkout_blorp'])
 
 
   def testUpdateWithOsDeps(self):
@@ -538,63 +512,56 @@ class GclientTest(trial_dir.TestCase):
       # Tuples of deps, deps_os, os_list and expected_deps.
       (
         # OS with no overrides at all.
-        {'foo': 'default_foo'},
-        {'os1': { 'foo': None } },
-        ['os2'],
-        {'foo': 'default_foo'}
-        ),
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}},
+        {'os1': {'foo': None}},
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}}
+      ),
       (
         # One OS wants to add a module.
-        {'foo': 'default_foo'},
-        {'os1': { 'bar': 'os1_bar' }},
-        ['os1'],
-        {'foo': 'default_foo',
-         'bar': {'should_process': True, 'url': 'os1_bar'}}
-        ),
-      (
-        # One OS wants to add a module. One doesn't care.
-        {'foo': 'default_foo'},
-        {'os1': { 'bar': 'os1_bar' }},
-        ['os1', 'os2'],
-        {'foo': 'default_foo',
-         'bar': {'should_process': True, 'url': 'os1_bar'}}
-        ),
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}},
+        {'os1': {'bar': 'os1_bar'}},
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'},
+         'bar': {
+             'condition': 'checkout_os1',
+             'url': 'os1_bar',
+             'dep_type': 'git',
+         }}
+      ),
       (
         # Two OSes want to add a module with the same definition.
-        {'foo': 'default_foo'},
-        {'os1': { 'bar': 'os12_bar' },
-         'os2': { 'bar': 'os12_bar' }},
-        ['os1', 'os2'],
-        {'foo': 'default_foo',
-         'bar': {'should_process': True, 'url': 'os12_bar'}}
-        ),
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}},
+        {'os1': {'bar': 'os12_bar'},
+         'os2': {'bar': 'os12_bar'}},
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'},
+         'bar': {
+             'condition': '(checkout_os2) or (checkout_os1)',
+             'url': 'os12_bar',
+             'dep_type': 'git',
+         }}
+      ),
       (
         # One OS doesn't need module, one OS wants the default.
-        {'foo': 'default_foo'},
-        {'os1': { 'foo': None },
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}},
+        {'os1': {'foo': None},
          'os2': {}},
-        ['os1', 'os2'],
-        {'foo': 'default_foo'}
-        ),
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}}
+      ),
       (
         # OS doesn't need module.
-        {'foo': 'default_foo'},
-        {'os1': { 'foo': None } },
-        ['os1'],
-        {'foo': 'default_foo'}
-        ),
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}},
+        {'os1': {'foo': None}},
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}}
+      ),
       (
         # No-op override. Regression test for http://crbug.com/735418 .
-        {'foo': 'default_foo'},
-        {'os1': { 'foo': 'default_foo' } },
-        [],
-        {'foo': {'should_process': True, 'url': 'default_foo'}}
-        ),
-      ]
-    for deps, deps_os, target_os_list, expected_deps in test_data:
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}},
+        {'os1': {'foo': 'default_foo'}},
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}}
+      ),
+    ]
+    for deps, deps_os, expected_deps in test_data:
       orig_deps = copy.deepcopy(deps)
-      result = gclient.Dependency.MergeWithOsDeps(
-          deps, deps_os, target_os_list, False)
+      result = gclient.Dependency.MergeWithOsDeps(deps, deps_os, {})
       self.assertEqual(result, expected_deps)
       self.assertEqual(deps, orig_deps)
 
@@ -603,21 +570,19 @@ class GclientTest(trial_dir.TestCase):
       # Tuples of deps, deps_os, os_list.
       (
         # OS wants a different version of module.
-        {'foo': 'default_foo'},
-        {'os1': { 'foo': 'os1_foo'} },
-        ['os1'],
-        ),
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}},
+        {'os1': {'foo': 'os1_foo'}},
+      ),
       (
         # One OS doesn't need module, another OS wants a special version.
-        {'foo': 'default_foo'},
-        {'os1': { 'foo': None },
-         'os2': { 'foo': 'os2_foo'}},
-        ['os1', 'os2'],
-        ),
-      ]
-    for deps, deps_os, target_os_list in test_data:
+        {'foo': {'url': 'default_foo', 'dep_type': 'git'}},
+        {'os1': {'foo': None},
+         'os2': {'foo': 'os2_foo'}},
+      ),
+    ]
+    for deps, deps_os in test_data:
       with self.assertRaises(gclient_utils.Error):
-        gclient.Dependency.MergeWithOsDeps(deps, deps_os, target_os_list, False)
+        gclient.Dependency.MergeWithOsDeps(deps, deps_os, {})
 
   def testOverride(self):
     """Verifies expected behavior of OverrideURL."""

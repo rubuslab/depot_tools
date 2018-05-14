@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d368e799_ee0c6956",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-14T22:44:04Z",
+      "side": 1,
+      "message": "I\u0027d recommend to move these to stand alone functions instead of static methods, as the class is already too large.",
+      "revId": "1cd018d5146521a6840cfdc206e81ef8d59cfe82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9474c3e8_8f58b5ba",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-14T22:44:04Z",
+      "side": 1,
+      "message": "A docstring would be helpful.",
+      "revId": "1cd018d5146521a6840cfdc206e81ef8d59cfe82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35105d6e_947c3ba3",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-14T22:44:04Z",
+      "side": 1,
+      "message": "A docstring would be helpful.",
+      "revId": "1cd018d5146521a6840cfdc206e81ef8d59cfe82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "debababa_1b849517",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 851,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-05-14T22:44:04Z",
+      "side": 1,
+      "message": "L",
+      "range": {
+        "startLine": 851,
+        "startChar": 6,
+        "endLine": 851,
+        "endChar": 7
+      },
+      "revId": "1cd018d5146521a6840cfdc206e81ef8d59cfe82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

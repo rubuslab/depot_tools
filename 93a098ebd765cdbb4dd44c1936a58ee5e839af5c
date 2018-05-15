@@ -116,6 +116,30 @@
       "revId": "93a098ebd765cdbb4dd44c1936a58ee5e839af5c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ce7828e_2db71d4a",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-15T17:29:33Z",
+      "side": 1,
+      "message": "Yeah, the fundamental problem here is that the top-level gclient thing can be *represented* by a GitDependency object, but it *isn\u0027t* a GitDependency... it\u0027s its own weird top-level thing.\n\nGlad we\u0027re both looking in the same direction. I think making the top-level wrapper object which manages the set of FooDependencies specified in the .gclient file a totally different kind of object makes total sense.",
+      "parentUuid": "e794668e_f15f51a3",
+      "range": {
+        "startLine": 1379,
+        "startChar": 6,
+        "endLine": 1379,
+        "endChar": 28
+      },
+      "revId": "93a098ebd765cdbb4dd44c1936a58ee5e839af5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

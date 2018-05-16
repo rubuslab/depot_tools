@@ -16,6 +16,24 @@
       "revId": "1986e9ef00e16a8553db2523438ffd7eeafbb864",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ceaf494_de129a01",
+        "filename": "gclient_eval.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-16T20:55:29Z",
+      "side": 1,
+      "message": "No, unix is linux, mac is mac.\nhttps://cs.chromium.org/chromium/tools/depot_tools/gclient.py?l\u003d1380",
+      "parentUuid": "1bd04f99_a59d922b",
+      "revId": "1986e9ef00e16a8553db2523438ffd7eeafbb864",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

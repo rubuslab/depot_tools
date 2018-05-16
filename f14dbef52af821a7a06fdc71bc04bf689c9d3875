@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e5cac18c_5c58ba9d",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T17:43:00Z",
+      "side": 1,
+      "message": "Did you find DEPS files that use \u0027checkout_unix\u0027?",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "095e27c3_3058e57a",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2090,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T17:43:00Z",
+      "side": 1,
+      "message": "Print a more explanatory error message",
+      "range": {
+        "startLine": 2090,
+        "startChar": 26,
+        "endLine": 2090,
+        "endChar": 31
+      },
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ba92ef6_439277b7",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T17:43:00Z",
+      "side": 1,
+      "message": "Keep a docstring for this",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a1d3779_75544327",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T17:43:00Z",
+      "side": 1,
+      "message": "Do we want to format the dep_info too, in case it is \u0027https://{chromium_git}@{chromium_revision}\u0027? Or is that handled elsewhere just fine?",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a1bc0e7_9784dc8b",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T17:43:00Z",
+      "side": 1,
+      "message": "Intuitively, this method has three cases:\n1) both conditions exist\n2) only curr_condition exists and the op is \u0027or\u0027\n3) only new_condition exists and the op is \u0027and\u0027\nSo it doesn\u0027t obviously cover\n4) only curr_condition but the op is \u0027and\u0027\n5) only new_condition exists but the op is \u0027or\u0027\nI think this whole thing can be made more general and more readable by avoiding the special cases entirely, and just counting on unnecessarily complex conditions (e.g. \"(True) or (checkout_ios)\") being evaluated correctly anyway. The tests seem to show that it works, but for some reason the structure here is confusing to me, so I\u0027d like to see it cleaned up.",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d2f86e5_a6afe117",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T17:43:00Z",
+      "side": 1,
+      "message": "nit: curr_condition",
+      "range": {
+        "startLine": 443,
+        "startChar": 2,
+        "endLine": 443,
+        "endChar": 11
+      },
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

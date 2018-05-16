@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a8106c03_28084435",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T17:43:00Z",
+      "side": 0,
+      "message": "Looks like we\u0027ve lost the ability for a dep to say {\"should_process\": False} in its own dict? It\u0027s not like I\u0027m a huge fan of \"should_process\", when everything should be using conditions instead, but make sure this doesn\u0027t break anything.",
+      "range": {
+        "startLine": 711,
+        "startChar": 0,
+        "endLine": 711,
+        "endChar": 64
+      },
+      "revId": "cbf0204555fe07fda96d20456e03f105e2922005",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

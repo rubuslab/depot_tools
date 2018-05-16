@@ -22,6 +22,30 @@
       "revId": "cbf0204555fe07fda96d20456e03f105e2922005",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db607d70_5e869b53",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-16T18:34:54Z",
+      "side": 0,
+      "message": "It never had that ability.\n\"should_process\" is an artificial field created by MergeWithOsDeps that is set to false when the os is not in the os list.",
+      "parentUuid": "a8106c03_28084435",
+      "range": {
+        "startLine": 711,
+        "startChar": 0,
+        "endLine": 711,
+        "endChar": 64
+      },
+      "revId": "cbf0204555fe07fda96d20456e03f105e2922005",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

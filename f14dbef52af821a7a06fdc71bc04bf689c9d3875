@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "47e9e619_c67426cc",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-16T18:34:54Z",
+      "side": 1,
+      "message": "No. I wanted to avoid treating linux as a special case, and just say \u0027checkout_\u0027 + os_name.\nRemoved.",
+      "parentUuid": "e5cac18c_5c58ba9d",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "095e27c3_3058e57a",
         "filename": "gclient.py",
         "patchSetId": 11
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "92f5a0c0_d9224c08",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2090,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-16T18:34:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "095e27c3_3058e57a",
+      "range": {
+        "startLine": 2090,
+        "startChar": 26,
+        "endLine": 2090,
+        "endChar": 31
+      },
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ba92ef6_439277b7",
         "filename": "gclient_eval.py",
         "patchSetId": 11
@@ -56,6 +98,24 @@
       "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be05fb79_e176515f",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-16T18:34:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ba92ef6_439277b7",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "61d45446_9926983f",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-16T18:34:54Z",
+      "side": 1,
+      "message": "No, we don\u0027t. gclient flatten wants to keep it that way.\nIt is handled elsewhere just fine.\nhttps://cs.chromium.org/chromium/tools/depot_tools/gclient.py?l\u003d735",
+      "parentUuid": "3a1d3779_75544327",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6a1bc0e7_9784dc8b",
         "filename": "gclient_eval.py",
         "patchSetId": 11
@@ -87,6 +165,24 @@
       "writtenOn": "2018-05-16T17:43:00Z",
       "side": 1,
       "message": "Intuitively, this method has three cases:\n1) both conditions exist\n2) only curr_condition exists and the op is \u0027or\u0027\n3) only new_condition exists and the op is \u0027and\u0027\nSo it doesn\u0027t obviously cover\n4) only curr_condition but the op is \u0027and\u0027\n5) only new_condition exists but the op is \u0027or\u0027\nI think this whole thing can be made more general and more readable by avoiding the special cases entirely, and just counting on unnecessarily complex conditions (e.g. \"(True) or (checkout_ios)\") being evaluated correctly anyway. The tests seem to show that it works, but for some reason the structure here is confusing to me, so I\u0027d like to see it cleaned up.",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9463d8be_182f594e",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-16T18:34:54Z",
+      "side": 1,
+      "message": "Hopefully I made the function clearer.\nI think it\u0027s worth it to keep the output readable. Flatten might use it when reading DEPS files with deps_os, and if we make an auto-formatter, it would use this as well.\n\nIt\u0027s not a big deal, because deps_os is not really currently used, so if you still think this is not clear enough, we can deal with \"((True) and (checkout_mac)) or (True)\" :)",
+      "parentUuid": "6a1bc0e7_9784dc8b",
       "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -113,6 +209,30 @@
       "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cb7f78a_dbd2a22a",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-16T18:34:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d2f86e5_a6afe117",
+      "range": {
+        "startLine": 443,
+        "startChar": 2,
+        "endLine": 443,
+        "endChar": 11
+      },
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

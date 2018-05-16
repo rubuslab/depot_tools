@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "28b3ecdb_fbedd05f",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T20:38:14Z",
+      "side": 1,
+      "message": "Yeah, I think it\u0027s a better idea to not do this, since I believe these variable names also correspond to GN variables, and having a mismatch would be weird.",
+      "parentUuid": "47e9e619_c67426cc",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "095e27c3_3058e57a",
         "filename": "gclient.py",
         "patchSetId": 11
@@ -154,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "00218f87_8117a23b",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T20:38:14Z",
+      "side": 1,
+      "message": "SGTM",
+      "parentUuid": "61d45446_9926983f",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6a1bc0e7_9784dc8b",
         "filename": "gclient_eval.py",
         "patchSetId": 11
@@ -186,6 +222,24 @@
       "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c106e34_25d13241",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T20:38:14Z",
+      "side": 1,
+      "message": "Great, I think this is much clearer!",
+      "parentUuid": "9463d8be_182f594e",
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -233,6 +287,30 @@
       "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3c8249f_993fa4df",
+        "filename": "gclient_eval.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T20:38:14Z",
+      "side": 1,
+      "message": "I still see `condition` in patchset 14",
+      "parentUuid": "4cb7f78a_dbd2a22a",
+      "range": {
+        "startLine": 443,
+        "startChar": 2,
+        "endLine": 443,
+        "endChar": 11
+      },
+      "revId": "f14dbef52af821a7a06fdc71bc04bf689c9d3875",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

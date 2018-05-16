@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1bd04f99_a59d922b",
+        "filename": "gclient_eval.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-16T20:38:14Z",
+      "side": 1,
+      "message": "It seems likely to me that \u0027unix\u0027 in os_deps was meant to mean \"linux or mac, but not windows\".",
+      "revId": "1986e9ef00e16a8553db2523438ffd7eeafbb864",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

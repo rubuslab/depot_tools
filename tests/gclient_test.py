@@ -202,7 +202,7 @@ class GclientTest(trial_dir.TestCase):
     url = 'proto://host/path/@revision'
     d = gclient.Dependency(
         None, 'name', url, url, None, None, None,
-        None, '', True, False, None, True)
+        None, '', False, None, True)
     self.assertEquals('proto://host/path@revision', d.url)
 
   def testStr(self):
@@ -213,17 +213,17 @@ class GclientTest(trial_dir.TestCase):
       [
         gclient.Dependency(
             obj, 'foo', 'svn://example.com/foo', 'svn://example.com/foo', None,
-            None, None, None, 'DEPS', True, False, None, True),
+            None, None, None, 'DEPS', False, None, True),
         gclient.Dependency(
             obj, 'bar', 'svn://example.com/bar', 'svn://example.com/bar', None,
-            None, None, None, 'DEPS', True, False, None, True),
+            None, None, None, 'DEPS', False, None, True),
       ],
       [])
     obj.dependencies[0].add_dependencies_and_close(
       [
         gclient.Dependency(
             obj.dependencies[0], 'foo/dir1', 'svn://example.com/foo/dir1',
-            'svn://example.com/foo/dir1', None, None, None, None, 'DEPS', True,
+            'svn://example.com/foo/dir1', None, None, None, None, 'DEPS',
             False, None, True),
       ],
       [])
@@ -232,7 +232,7 @@ class GclientTest(trial_dir.TestCase):
     # pylint: disable=protected-access
     obj.dependencies[0]._file_list.append('foo')
     str_obj = str(obj)
-    self.assertEquals(322, len(str_obj), '%d\n%s' % (len(str_obj), str_obj))
+    self.assertEquals(230, len(str_obj), '%d\n%s' % (len(str_obj), str_obj))
 
   def testHooks(self):
     topdir = self.root_dir
@@ -504,11 +504,49 @@ class GclientTest(trial_dir.TestCase):
                       [None, 'checkout_blorp'])
 
   def testOverride(self):
-    """Verifies expected behavior of OverrideURL."""
-    url = "git@github.com:dart-lang/spark.git"
-    d = gclient.Dependency(None, 'name', url, url,
-                           None, None, None, None, '', True, False, None, True)
-    self.assertEquals(url, d.url)
+    """Verifies expected behavior of URL overrides."""
+    write(
+        '.gclient',
+        'solutions = [\n'
+        '  { "name": "foo",\n'
+        '    "url": "svn://example.com/foo",\n'
+        '    "custom_deps": {\n'
+        '      "foo/bar": "svn://example.com/override",\n'
+        '      "foo/skip2": None,\n'
+        '    },\n'
+        '  },]\n')
+    write(
+        os.path.join('foo', 'DEPS'),
+        'vars = {\n'
+        '  "origin": "svn://example.com",\n'
+        '}\n'
+        'deps = {\n'
+        '  "foo/skip": None,\n'
+        '  "foo/bar": "{origin}/bar",\n'
+        '  "foo/baz": "{origin}/baz",\n'
+        '  "foo/skip2": "{origin}/skip2",\n'
+        '  "foo/rel": "/rel",\n'
+        '}')
+    parser = gclient.OptionParser()
+    options, _ = parser.parse_args(['--jobs', '1'])
+
+    obj = gclient.GClient.LoadCurrentConfig(options)
+    obj.RunOnDeps('None', [])
+
+    foo = obj.dependencies[0]
+    self.assertEqual([
+        ('foo', 'svn://example.com/foo'),
+        ('foo/bar', 'svn://example.com/override'),
+        ('foo/baz', 'svn://example.com/baz'),
+        ('foo/rel', 'svn://example.com/rel'),
+    ], self._get_processed())
+
+    self.assertEqual(3, len(foo.dependencies))
+    self.assertEqual([
+        ('foo/bar', 'svn://example.com/override'),
+        ('foo/baz', 'svn://example.com/baz'),
+        ('foo/rel', 'svn://example.com/rel'),
+    ], [(dep.name, dep.url) for dep in foo.dependencies])
 
   def testDepsOsOverrideDepsInDepsFile(self):
     """Verifies that a 'deps_os' path cannot override a 'deps' path. Also
@@ -1088,8 +1126,7 @@ class GclientTest(trial_dir.TestCase):
       [
         gclient.Dependency(
             obj, 'foo', 'svn://example.com/foo', 'svn://example.com/foo', None,
-            None, None, None, 'DEPS', True,
-            False, None, True),
+            None, None, None, 'DEPS', False, None, True),
       ],
       [])
     obj.dependencies[0].add_dependencies_and_close(
@@ -1097,12 +1134,12 @@ class GclientTest(trial_dir.TestCase):
         gclient.CipdDependency(obj.dependencies[0], 'foo',
                                {'package': 'foo_package',
                                 'version': 'foo_version'},
-                               cipd_root, None, True, False,
+                               cipd_root, None, False,
                                'fake_condition'),
         gclient.CipdDependency(obj.dependencies[0], 'foo',
                                {'package': 'bar_package',
                                 'version': 'bar_version'},
-                               cipd_root, None, True, False,
+                               cipd_root, None, False,
                                'fake_condition'),
       ],
       [])

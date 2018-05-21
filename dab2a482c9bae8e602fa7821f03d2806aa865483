@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43fa6989_a7740277",
+        "filename": "tests/roll_dep_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-21T22:16:38Z",
+      "side": 1,
+      "message": "copyright header and shebang line. Also, chmod +x this file.",
+      "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46ac4702_c73c381e",
+        "filename": "tests/roll_dep_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-21T22:16:38Z",
+      "side": 1,
+      "message": "What\u0027s trial_dir?",
+      "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3138eba1_9eb35abb",
+        "filename": "tests/roll_dep_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-21T22:16:38Z",
+      "side": 1,
+      "message": "Should this setUp method also set self.env[\u0027DEPOT_TOOLS_UPDATE\u0027] \u003d 0, like gclient_smoketest does?",
+      "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "925dfd2c_7869e754",
+        "filename": "tests/roll_dep_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-21T22:16:38Z",
+      "side": 1,
+      "message": "These tests are very slow, taking something like 20-30s to run 3 test cases. I assume this actual filesystem manipulation is the root cause (e.g. compare tests/gclient_smoketest.py, which runs an order of magnitude more test cases (37) in just 3 times as long (70s). Can something be done about this?",
+      "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

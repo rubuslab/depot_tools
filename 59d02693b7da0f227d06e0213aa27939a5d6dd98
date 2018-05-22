@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "228fdd3f_3d6e0ad4",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-22T16:34:52Z",
+      "side": 1,
+      "message": "Yes. gclient revinfo --snapshot is supposed to output a .gclient file that reflects the revision everything is checked out at. It\u0027s kinda like gclient flatten, but it produces a gclient file instead.\nI don\u0027t know why this exists, and would be surprised if someone uses this. I think we should have only gclient revinfo --snapshot or gclient flatten, but not both.",
+      "parentUuid": "0d455898_fc0105bc",
+      "revId": "59d02693b7da0f227d06e0213aa27939a5d6dd98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bca4c71d_ac8c98cc",
         "filename": "gclient.py",
         "patchSetId": 1

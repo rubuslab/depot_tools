@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "374b18b2_d4de9adc",
+        "filename": "tests/roll_dep_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-22T00:40:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43fa6989_a7740277",
+      "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "46ac4702_c73c381e",
         "filename": "tests/roll_dep_test.py",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "678c7e55_62c5dfc4",
+        "filename": "tests/roll_dep_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-22T00:40:26Z",
+      "side": 1,
+      "message": "Leftover from an earlier patch. Removed.",
+      "parentUuid": "46ac4702_c73c381e",
+      "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "e46f5361_7364b0ce",
+        "filename": "tests/roll_dep_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-22T00:40:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3138eba1_9eb35abb",
+      "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "925dfd2c_7869e754",
         "filename": "tests/roll_dep_test.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2018-05-21T22:16:38Z",
       "side": 1,
       "message": "These tests are very slow, taking something like 20-30s to run 3 test cases. I assume this actual filesystem manipulation is the root cause (e.g. compare tests/gclient_smoketest.py, which runs an order of magnitude more test cases (37) in just 3 times as long (70s). Can something be done about this?",
+      "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5232cca8_2b3c1f23",
+        "filename": "tests/roll_dep_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-05-22T00:40:26Z",
+      "side": 1,
+      "message": "Not sure what, besides making roll-dep faster. I believe it because roll-dep makes lots of git calls.\nI merged the last test, and it runs in about 6s locally (vs 60 of gclient).",
+      "parentUuid": "925dfd2c_7869e754",
       "revId": "dab2a482c9bae8e602fa7821f03d2806aa865483",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

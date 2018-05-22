@@ -8,6 +8,7 @@
 # pylint: disable=E1103
 
 # Import before super_mox to keep valid references.
+from contextlib import contextmanager
 from shutil import rmtree
 from subprocess import Popen, PIPE, STDOUT
 
@@ -894,8 +895,7 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.checkstdout('________ unmanaged solution; skipping .\n')
 
 
-class CipdWrapperTestCase(BaseTestCase):
-
+class CipdRootTestCase(BaseTestCase):
   def setUp(self):
     # Create this before setting up mocks.
     self._cipd_root_dir = tempfile.mkdtemp()
@@ -906,87 +906,193 @@ class CipdWrapperTestCase(BaseTestCase):
     self._cipd_root = gclient_scm.CipdRoot(
         self._cipd_root_dir,
         self._cipd_instance_url)
-    self._cipd_packages = [
-        self._cipd_root.add_package('f', 'foo_package', 'foo_version'),
-        self._cipd_root.add_package('b', 'bar_package', 'bar_version'),
-        self._cipd_root.add_package('b', 'baz_package', 'baz_version'),
-    ]
-    self.mox.StubOutWithMock(self._cipd_root, 'add_package')
-    self.mox.StubOutWithMock(self._cipd_root, 'clobber')
-    self.mox.StubOutWithMock(self._cipd_root, 'ensure')
 
   def tearDown(self):
     BaseTestCase.tearDown(self)
     rmtree(self._cipd_root_dir)
     rmtree(self._workdir)
 
-  def createScmWithPackageThatSatisfies(self, condition):
-    return gclient_scm.CipdWrapper(
-        url=self._cipd_instance_url,
-        root_dir=self._cipd_root_dir,
-        relpath='fake_relpath',
-        root=self._cipd_root,
-        package=self.getPackageThatSatisfies(condition))
+  def test_add_packages(self):
+    self._cipd_root.add_packages(
+        'src/fake/path',
+        [{'package': 'foo_package', 'version': 'foo_version'}],
+        'some_condition',
+        'src')
+    self.assertEqual(
+        {
+            'src/fake/path': [
+                {
+                    'package': 'foo_package',
+                    'version': 'foo_version',
+                },
+            ],
+        },
+        {
+            name: cipd_dir.packages
+            for name, cipd_dir in self._cipd_root.cipd_dirs.iteritems()
+        })
 
-  def getPackageThatSatisfies(self, condition):
-    for p in self._cipd_packages:
-      if condition(p):
-        return p
+  def test_add_packages_to_existing_dir(self):
+    self._cipd_root.add_packages(
+        'src/fake/path',
+        [{'package': 'foo_package', 'version': 'foo_version'}],
+        'some_condition',
+        'src')
+    self._cipd_root.add_packages(
+        'src/fake/path',
+        [{'package': 'bar_package', 'version': 'bar_version'}],
+        'some_condition',
+        'src')
+    self.assertEqual(
+        {
+            'src/fake/path': [
+                {
+                    'package': 'foo_package',
+                    'version': 'foo_version',
+                },
+                {
+                    'package': 'bar_package',
+                    'version': 'bar_version',
+                },
+            ],
+        },
+        {
+            name: cipd_dir.packages
+            for name, cipd_dir in self._cipd_root.cipd_dirs.iteritems()
+        })
 
-    self.fail('Unable to find a satisfactory package.')
+  def test_add_packages_to_existing_dir_fails_if_conditions_differ(self):
+    self._cipd_root.add_packages(
+        'src/fake/path',
+        [{'package': 'foo_package', 'version': 'foo_version'}],
+        'some_condition',
+        'src')
+    with self.assertRaises(AssertionError) as e:
+      self._cipd_root.add_packages(
+          'src/fake/path',
+          [{'package': 'bar_package', 'version': 'bar_version'}],
+          'some_other_condition',
+          'src')
+    self.assertIn(
+        "conditions must be the same: some_condition vs some_other_condition",
+        str(e.exception))
 
-  def testRevert(self):
-    """Checks that revert does nothing."""
-    scm = self.createScmWithPackageThatSatisfies(
-        lambda _: True)
+  def test_clobber(self):
+    cipd_cache_dir = os.path.join(self._cipd_root_dir, '.cipd')
+    gclient_scm.gclient_utils.rmtree(cipd_cache_dir).AndReturn(None)
+    self.mox.ReplayAll()
+    self._cipd_root.clobber()
+
+  def test_ensure(self):
+    ensure_file = self.mox.CreateMockAnything()
+    ensure_file.name = 'fake.ensure'
+
+    @contextmanager
+    def NamedTemporaryFile():
+      yield ensure_file
+
+    self.mox.StubOutWithMock(gclient_scm.tempfile, 'NamedTemporaryFile')
+    gclient_scm.tempfile.NamedTemporaryFile(
+        suffix='.ensure', delete=False).AndReturn(NamedTemporaryFile())
+
+    ensure_file.write('\n'.join([
+        '@Subdir src/another/path',
+        'bar_package bar_version',
+        'baz_package baz_version',
+        '',
+    ]))
+    ensure_file.write('\n'.join([
+        '@Subdir src/fake/path',
+        'foo_package foo_version',
+        '',
+    ]))
+
+    gclient_scm.gclient_utils.CheckCallAndFilterAndHeader(
+        ['cipd', 'ensure', '-log-level', 'error', '-root', self._cipd_root_dir,
+         '-ensure-file', 'fake.ensure'])
+
+    gclient_scm.os.path.exists('fake.ensure').AndReturn(False)
 
     self.mox.ReplayAll()
 
-    scm.revert(None, (), [])
+    self._cipd_root.add_packages(
+        'src/another/path',
+        [{'package': 'bar_package', 'version': 'bar_version'},
+         {'package': 'baz_package', 'version': 'baz_version'}],
+        'some_condition',
+        'src')
+    self._cipd_root.add_packages(
+        'src/fake/path',
+        [{'package': 'foo_package', 'version': 'foo_version'}],
+        'some_condition',
+        'src')
 
-  def testRevinfo(self):
-    """Checks that revinfo uses the JSON from cipd describe."""
-    scm = self.createScmWithPackageThatSatisfies(lambda _: True)
+    self._cipd_root.ensure()
 
-    expected_revinfo = '0123456789abcdef0123456789abcdef01234567'
-    json_contents = {
-        'result': {
-            'pin': {
-                'instance_id': expected_revinfo,
-            }
-        }
-    }
-    describe_json_path = join(self._workdir, 'describe.json')
-    with open(describe_json_path, 'w') as describe_json:
-      json.dump(json_contents, describe_json)
-
-    cmd = [
-        'cipd', 'describe', 'foo_package',
-        '-log-level', 'error',
-        '-version', 'foo_version',
-        '-json-output', describe_json_path,
-    ]
-
-    self.mox.StubOutWithMock(tempfile, 'mkdtemp')
-
-    tempfile.mkdtemp().AndReturn(self._workdir)
-    gclient_scm.gclient_utils.CheckCallAndFilter(
-        cmd, filter_fn=mox.IgnoreArg(), print_stdout=False)
-    gclient_scm.gclient_utils.rmtree(self._workdir)
+  def test_run_update(self):
+    self.mox.StubOutWithMock(self._cipd_root, 'ensure')
+    self._cipd_root.ensure()
 
     self.mox.ReplayAll()
 
-    revinfo = scm.revinfo(None, (), [])
-    self.assertEquals(revinfo, expected_revinfo)
+    self._cipd_root.run('update')
 
-  def testUpdate(self):
-    """Checks that update does nothing."""
-    scm = self.createScmWithPackageThatSatisfies(
-        lambda _: True)
+  def test_run_revert(self):
+    self.mox.StubOutWithMock(self._cipd_root, 'clobber')
+    self.mox.StubOutWithMock(self._cipd_root, 'ensure')
+    self._cipd_root.clobber()
+    self._cipd_root.ensure()
 
     self.mox.ReplayAll()
 
-    scm.update(None, (), [])
+    self._cipd_root.run('revert')
+
+  def test_get_deps_lines(self):
+    self._cipd_root.add_packages(
+        'src/fake/path',
+        [{'package': 'foo_package', 'version': 'foo_version'}],
+        'some_condition',
+        'src')
+    self._cipd_root.add_packages(
+        'src/another/path',
+        [{'package': 'bar_package', 'version': 'bar_version'},
+         {'package': 'baz_package', 'version': 'baz_version'}],
+        None,
+        'src -> src/another')
+
+    result = []
+    for _, cipd_dir in sorted(self._cipd_root.cipd_dirs.iteritems()):
+      result += cipd_dir.get_deps_lines()
+
+    self.assertEqual([
+        '  # src -> src/another',
+        '  "src/another/path": {',
+        '    "packages": [',
+        '      {',
+        '        "package": "bar_package",',
+        '        "version": "bar_version",',
+        '      },',
+        '      {',
+        '        "package": "baz_package",',
+        '        "version": "baz_version",',
+        '      },',
+        '    ],',
+        '    "dep_type": "cipd",',
+        '  },',
+        '',
+        '  # src',
+        '  "src/fake/path": {',
+        '    "packages": [',
+        '      {',
+        '        "package": "foo_package",',
+        '        "version": "foo_version",',
+        '      },',
+        '    ],',
+        '    "condition": \'some_condition\',',
+        '    "dep_type": "cipd",',
+        '  },',
+        '',
+    ], result)
 
 
 if __name__ == '__main__':

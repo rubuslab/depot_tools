@@ -1094,10 +1094,16 @@ class GclientTest(trial_dir.TestCase):
         '}\n'
         'deps = {\n'
         '  "bar": {\n'
-        '    "packages": [{\n'
-        '      "package": "lemur",\n'
-        '      "version": Var("lemur_version"),\n'
-        '    }],\n'
+        '    "packages": [\n'
+        '      {\n'
+        '        "package": "lemur",\n'
+        '        "version": Var("lemur_version"),\n'
+        '      },\n'
+        '      {\n'
+        '        "package": "fake_pkg",\n'
+        '        "version": "version:5678",\n'
+        '      },\n'
+        '    ],\n'
         '    "dep_type": "cipd",\n'
         '  }\n'
         '}')
@@ -1110,46 +1116,23 @@ class GclientTest(trial_dir.TestCase):
     sol._condition = 'some_condition'
 
     sol.ParseDepsFile()
-    self.assertEquals(1, len(sol.dependencies))
-    dep = sol.dependencies[0]
-
-    self.assertIsInstance(dep, gclient.CipdDependency)
-    self.assertEquals(
-        'https://chrome-infra-packages.appspot.com/lemur@version:1234',
-        dep.url)
-
-  def testSameDirAllowMultipleCipdDeps(self):
-    """Verifies gclient allow multiple cipd deps under same directory."""
-    parser = gclient.OptionParser()
-    options, _ = parser.parse_args([])
-    obj = gclient.GClient('foo', options)
-    cipd_root = gclient_scm.CipdRoot(
-        os.path.join(self.root_dir, 'dir1'), 'https://example.com')
-    obj.add_dependencies_and_close(
-      [
-        gclient.Dependency(
-            obj, 'foo', 'svn://example.com/foo', 'svn://example.com/foo', None,
-            None, None, None, 'DEPS', False, None, True),
-      ],
-      [])
-    obj.dependencies[0].add_dependencies_and_close(
-      [
-        gclient.CipdDependency(obj.dependencies[0], 'foo',
-                               {'package': 'foo_package',
-                                'version': 'foo_version'},
-                               cipd_root, None, False,
-                               'fake_condition'),
-        gclient.CipdDependency(obj.dependencies[0], 'foo',
-                               {'package': 'bar_package',
-                                'version': 'bar_version'},
-                               cipd_root, None, False,
-                               'fake_condition'),
-      ],
-      [])
-    dep0 = obj.dependencies[0].dependencies[0]
-    dep1 = obj.dependencies[0].dependencies[1]
-    self.assertEquals('https://example.com/foo_package@foo_version', dep0.url)
-    self.assertEquals('https://example.com/bar_package@bar_version', dep1.url)
+    self.assertEquals(0, len(sol.dependencies))
+    self.assertEquals({
+	'bar': [
+            {
+                'package': 'lemur',
+                'version': 'version:1234',
+            },
+            {
+                'package': 'fake_pkg',
+                'version': 'version:5678',
+            },
+        ],
+    },
+    {
+        cipd_dir.path: cipd_dir.packages
+        for cipd_dir in obj.cipd_root.cipd_dirs.itervalues()
+    })
 
   def testFuzzyMatchUrlByURL(self):
     write(

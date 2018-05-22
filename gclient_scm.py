@@ -1232,46 +1232,72 @@ class GitWrapper(SCMWrapper):
       gclient_utils.CheckCallAndFilter(cmd, env=env, **kwargs)
 
 
-class CipdPackage(object):
-  """A representation of a single CIPD package."""
-
-  def __init__(self, name, version, authority_for_subdir):
-    self._authority_for_subdir = authority_for_subdir
-    self._name = name
-    self._version = version
-
-  @property
-  def authority_for_subdir(self):
-    """Whether this package has authority to act on behalf of its subdir.
-
-    Some operations should only be performed once per subdirectory. A package
-    that has authority for its subdirectory is the only package that should
-    perform such operations.
-
-    Returns:
-      bool; whether this package has subdir authority.
-    """
-    return self._authority_for_subdir
+class CipdDir(object):
+  def __init__(self, path, condition, hierarchy):
+    self._path = path
+    self._condition = condition
+    self._hierarchy = hierarchy
+    self._packages = []
 
   @property
-  def name(self):
-    return self._name
+  def path(self):
+    return self._path
 
   @property
-  def version(self):
-    return self._version
+  def condition(self):
+    return self._condition
+
+  @property
+  def packages(self):
+    return self._packages
+
+  def add_packages(self, packages):
+    self._packages.extend(packages)
+
+  def get_deps_lines(self):
+    result = [
+        '  # ' + self._hierarchy,
+        '  "%s": {' % self.path,
+        '    "packages": [',
+    ]
+    for package in self.packages:
+      result += [
+          '      {',
+          '        "package": "%s",' % package['package'],
+          '        "version": "%s",' % package['version'],
+          '      },',
+      ]
+    result += ['    ],']
+    if self.condition:
+      result += ['    "condition": %r,' % self.condition]
+    result += [
+        '    "dep_type": "cipd",',
+        '  },',
+        '',
+    ]
+    return result
+
+  def get_ensure_lines(self):
+    result = ['@Subdir ' + self.path]
+    for package in self.packages:
+      result += [
+          '%s %s' % (package['package'], package['version']),
+      ]
+    result += [
+        '',
+    ]
+    return '\n'.join(result)
 
 
 class CipdRoot(object):
   """A representation of a single CIPD root."""
   def __init__(self, root_dir, service_url):
-    self._all_packages = set()
     self._mutator_lock = threading.Lock()
-    self._packages_by_subdir = collections.defaultdict(list)
+    self._cipd_dirs = {}
     self._root_dir = root_dir
     self._service_url = service_url
 
-  def add_package(self, subdir, package, version):
+  def add_packages(self, path, packages, condition, hierarchy):
     """Adds a package to this CIPD root.
 
     As far as clients are concerned, this grants both root and subdir authority
@@ -1288,16 +1314,16 @@ class CipdRoot(object):
       CipdPackage; the package that was created and added to this root.
     """
     with self._mutator_lock:
-      cipd_package = CipdPackage(
-          package, version,
-          not self._packages_by_subdir[subdir])
-      self._all_packages.add(cipd_package)
-      self._packages_by_subdir[subdir].append(cipd_package)
-      return cipd_package
+      cipd_dir = self._cipd_dirs.setdefault(
+          path, CipdDir(path, condition, hierarchy))
+      assert cipd_dir.condition == condition, (
+          "When adding packages to an exisitng CIPD path, the conditions must "
+          "be the same: %s vs %s." % (cipd_dir.condition, condition))
+      cipd_dir.add_packages(packages)
 
-  def packages(self, subdir):
-    """Get the list of configured packages for the given subdir."""
-    return list(self._packages_by_subdir[subdir])
+  @property
+  def cipd_dirs(self):
+    return self._cipd_dirs
 
   def clobber(self):
     """Remove the .cipd directory.
@@ -1308,7 +1334,7 @@ class CipdRoot(object):
     with self._mutator_lock:
       cipd_cache_dir = os.path.join(self.root_dir, '.cipd')
       try:
-        gclient_utils.rmtree(os.path.join(cipd_cache_dir))
+        gclient_utils.rmtree(cipd_cache_dir)
       except OSError:
         if os.path.exists(cipd_cache_dir):
           raise
@@ -1319,11 +1345,8 @@ class CipdRoot(object):
       ensure_file = None
       with tempfile.NamedTemporaryFile(
           suffix='.ensure', delete=False) as ensure_file:
-        for subdir, packages in sorted(self._packages_by_subdir.iteritems()):
-          ensure_file.write('@Subdir %s\n' % subdir)
-          for package in packages:
-            ensure_file.write('%s %s\n' % (package.name, package.version))
-          ensure_file.write('\n')
+        for _, cipd_dir in sorted(self._cipd_dirs.iteritems()):
+          ensure_file.write(cipd_dir.get_ensure_lines())
       yield ensure_file.name
     finally:
       if ensure_file is not None and os.path.exists(ensure_file.name):
@@ -1348,16 +1371,6 @@ class CipdRoot(object):
       self.clobber()
       self.ensure()
 
-  def created_package(self, package):
-    """Checks whether this root created the given package.
-
-    Args:
-      package: CipdPackage; the package to check.
-    Returns:
-      bool; whether this root created the given package.
-    """
-    return package in self._all_packages
-
   @property
   def root_dir(self):
     return self._root_dir
@@ -1365,80 +1378,3 @@ class CipdRoot(object):
   @property
   def service_url(self):
     return self._service_url
-
-
-class CipdWrapper(SCMWrapper):
-  """Wrapper for CIPD.
-
-  Currently only supports chrome-infra-packages.appspot.com.
-  """
-  name = 'cipd'
-
-  def __init__(self, url=None, root_dir=None, relpath=None, out_fh=None,
-               out_cb=None, root=None, package=None):
-    super(CipdWrapper, self).__init__(
-        url=url, root_dir=root_dir, relpath=relpath, out_fh=out_fh,
-        out_cb=out_cb)
-    assert root.created_package(package)
-    self._package = package
-    self._root = root
-
-  #override
-  def GetCacheMirror(self):
-    return None
-
-  #override
-  def GetActualRemoteURL(self, options):
-    return self._root.service_url
-
-  #override
-  def DoesRemoteURLMatch(self, options):
-    del options
-    return True
-
-  def revert(self, options, args, file_list):
-    """Does nothing.
-
-    CIPD packages should be reverted at the root by running
-    `CipdRoot.run('revert')`.
-    """
-    pass
-
-  def diff(self, options, args, file_list):
-    """CIPD has no notion of diffing."""
-    pass
-
-  def pack(self, options, args, file_list):
-    """CIPD has no notion of diffing."""
-    pass
-
-  def revinfo(self, options, args, file_list):
-    """Grab the instance ID."""
-    try:
-      tmpdir = tempfile.mkdtemp()
-      describe_json_path = os.path.join(tmpdir, 'describe.json')
-      cmd = [
-          'cipd', 'describe',
-          self._package.name,
-          '-log-level', 'error',
-          '-version', self._package.version,
-          '-json-output', describe_json_path
-      ]
-      gclient_utils.CheckCallAndFilter(
-          cmd, filter_fn=lambda _line: None, print_stdout=False)
-      with open(describe_json_path) as f:
-        describe_json = json.load(f)
-      return describe_json.get('result', {}).get('pin', {}).get('instance_id')
-    finally:
-      gclient_utils.rmtree(tmpdir)
-
-  def status(self, options, args, file_list):
-    pass
-
-  def update(self, options, args, file_list):
-    """Does nothing.
-
-    CIPD packages should be updated at the root by running
-    `CipdRoot.run('update')`.
-    """
-    pass

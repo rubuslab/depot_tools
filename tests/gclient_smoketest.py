@@ -1338,7 +1338,7 @@ class GClientSmokeGIT(GClientSmokeBase):
         '    "url": "' + self.git_base + 'repo_14",',
         '  },',
         '',
-        '  # src -> src/cipd_dep:package0',
+        '  # src',
         '  "src/cipd_dep": {',
         '    "packages": [',
         '      {',

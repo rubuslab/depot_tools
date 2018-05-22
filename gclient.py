@@ -512,6 +512,18 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
           'The same name "%s" appears multiple times in the deps section' %
               self.name)
 
+    if self.name in self.root.cipd_root.cipd_dirs:
+      cipd_dir = self.root.cipd_root.cipd_dirs[self.name]
+      raise gclient_utils.Error(
+          ('Dependency %s specified more than once:\n'
+           '  CipdPackage [%s]\n'
+           'vs\n'
+           '  %s [%s]\n') % (
+               self.name,
+               cipd_dir.hierarchy(),
+               self.hierarchy(),
+               self.url))
+
     # This require a full tree traversal with locks.
     siblings = [d for d in self.root.subtree() if d.name == self.name]
     for sibling in siblings:
@@ -609,13 +621,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         continue
 
       if dep_type == 'cipd':
-        cipd_root = self.GetCipdRoot()
-        for package in dep_value.get('packages', []):
-          package['version'] = package['version'].format(**self.get_vars())
-          deps_to_add.append(
-              CipdDependency(
-                  self, name, package, cipd_root, self.custom_vars,
-                  use_relative_paths, condition))
+        packages = [
+            {'package': package['package'],
+             'version': package['version'].format(**self.get_vars())}
+            for package in dep_value['packages']
+        ]
+        self.root.cipd_root.add_packages(
+            name, packages, condition, self.hierarchy())
       else:
         raw_url = dep_value.get('url')
         url = self.FormatUrl(name, raw_url)
@@ -1009,13 +1021,6 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     self._pre_deps_hooks_ran = True
     for hook in self.pre_deps_hooks:
       hook.run(self.root.root_dir)
-
-  def GetCipdRoot(self):
-    if self.root is self:
-      # Let's not infinitely recurse. If this is root and isn't an
-      # instance of GClient, do nothing.
-      return None
-    return self.root.GetCipdRoot()
 
   def subtree(self):
     """Breadth first recursion excluding root node."""
@@ -1678,6 +1683,10 @@ it or fix the checkout.
           for d in self.subtree()
           if ShouldPrint(d)
       }
+      json_output.update({
+          cipd_dir.path: cipd_dir.packages
+          for cipd_dir in self.cipd_root.cipd_dirs.itervalues()
+      })
       output = json.dumps(json_output, indent=2, separators=(',', ': '))
     else:
       output = '\n'.join(
@@ -1685,6 +1694,14 @@ it or fix the checkout.
           for d in self.subtree()
           if ShouldPrint(d)
       )
+      for path, packages in self.cipd_root.cipd_dirs:
+        for package in packages.packages:
+          name = path + ':' + package['package']
+          url = self.cipd_root.service_url + '@' + package['version']
+          output += '\n'.join(
+              '%s: %s' % (name, url)
+              for package in packages
+          )
 
     if self._options.output_json and self._options.output_json != '-':
       with open(self._options.output_json, 'w') as f:
@@ -1704,7 +1721,8 @@ it or fix the checkout.
     print('Loaded .gclient config in %s:\n%s' % (
         self.root_dir, self.config_content))
 
-  def GetCipdRoot(self):
+  @property
+  def cipd_root(self):
     if not self._cipd_root:
       self._cipd_root = gclient_scm.CipdRoot(
           self.root_dir,
@@ -1742,100 +1760,6 @@ it or fix the checkout.
   @property
   def target_cpu(self):
     return self._enforced_cpu
-
-
-class CipdDependency(Dependency):
-  """A Dependency object that represents a single CIPD package."""
-
-  def __init__(
-      self, parent, name, dep_value, cipd_root,
-      custom_vars, relative, condition):
-    package = dep_value['package']
-    version = dep_value['version']
-    url = urlparse.urljoin(
-        cipd_root.service_url, '%s@%s' % (package, version))
-    super(CipdDependency, self).__init__(
-        parent, name + ':' + package, url, url, None, None, custom_vars,
-        None, None, relative, condition)
-    if relative:
-      # TODO(jbudorick): Implement relative if necessary.
-      raise gclient_utils.Error(
-          'Relative CIPD dependencies are not currently supported.')
-    self._cipd_package = None
-    self._cipd_root = cipd_root
-    self._cipd_subdir = os.path.relpath(
-        os.path.join(self.root.root_dir, name), cipd_root.root_dir)
-    self._package_name = package
-    self._package_version = version
-
-  #override
-  def run(self, revision_overrides, command, args, work_queue, options,
-          patch_refs):
-    """Runs |command| then parse the DEPS file."""
-    logging.info('CipdDependency(%s).run()' % self.name)
-    self._CreatePackageIfNecessary()
-    super(CipdDependency, self).run(revision_overrides, command, args,
-                                    work_queue, options, patch_refs)
-
-  def _CreatePackageIfNecessary(self):
-    # We lazily create the CIPD package to make sure that only packages
-    # that we want (as opposed to all packages defined in all DEPS files
-    # we parse) get added to the root and subsequently ensured.
-    if not self._cipd_package:
-      self._cipd_package = self._cipd_root.add_package(
-          self._cipd_subdir, self._package_name, self._package_version)
-
-  def ParseDepsFile(self, expand_vars=None):
-    """CIPD dependencies are not currently allowed to have nested deps."""
-    self.add_dependencies_and_close([], [])
-
-  #override
-  def verify_validity(self):
-    """CIPD dependencies allow duplicate name for packages in same directory."""
-    logging.info('Dependency(%s).verify_validity()' % self.name)
-    return True
-
-  #override
-  def GetScmName(self):
-    """Always 'cipd'."""
-    return 'cipd'
-
-  #override
-  def CreateSCM(self, out_cb=None):
-    """Create a Wrapper instance suitable for handling this CIPD dependency."""
-    self._CreatePackageIfNecessary()
-    return gclient_scm.CipdWrapper(
-        self.url, self.root.root_dir, self.name, self.outbuf, out_cb,
-        root=self._cipd_root, package=self._cipd_package)
-
-  def ToLines(self):
-    """Return a list of lines representing this in a DEPS file."""
-    s = []
-    self._CreatePackageIfNecessary()
-    if self._cipd_package.authority_for_subdir:
-      condition_part = (['    "condition": %r,' % self.condition]
-                        if self.condition else [])
-      s.extend([
-          '  # %s' % self.hierarchy(),
-          '  "%s": {' % (self.name.split(':')[0],),
-          '    "packages": [',
-      ])
-      for p in self._cipd_root.packages(self._cipd_subdir):
-        s.extend([
-            '      {',
-            '        "package": "%s",' % p.name,
-            '        "version": "%s",' % p.version,
-            '      },',
-        ])
-
-      s.extend([
-          '    ],',
-          '    "dep_type": "cipd",',
-      ] + condition_part + [
-          '  },',
-          '',
-      ])
-    return s
 
 
 #### gclient commands.
@@ -1981,7 +1905,7 @@ class Flattener(object):
     self._deps_string = '\n'.join(
         _GNSettingsToLines(gn_args_dep._gn_args_file, gn_args_dep._gn_args) +
         _AllowedHostsToLines(self._allowed_hosts) +
-        _DepsToLines(self._deps) +
+        _DepsToLines(self._deps, self._client.cipd_root) +
         _HooksToLines('hooks', self._hooks) +
         _HooksToLines('pre_deps_hooks', self._pre_deps_hooks) +
         _VarsToLines(self._vars) +
@@ -2106,13 +2030,15 @@ def _AllowedHostsToLines(allowed_hosts):
   return s
 
 
-def _DepsToLines(deps):
+def _DepsToLines(deps, cipd_root):
   """Converts |deps| dict to list of lines for output."""
   if not deps:
     return []
   s = ['deps = {']
   for _, dep in sorted(deps.iteritems()):
     s.extend(dep.ToLines())
+  for _, cipd_dir in sorted(cipd_root.cipd_dirs.iteritems()):
+    s.extend(cipd_dir.get_deps_lines())
   s.extend(['}', ''])
   return s
 

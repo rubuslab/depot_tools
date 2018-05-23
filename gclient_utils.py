@@ -1094,12 +1094,12 @@ class ExecutionQueue(object):
           work_queue.ready_cond.release()
 
 
-def GetEditor(git_editor=None):
+def GetEditor():
   """Returns the most plausible editor to use.
 
   In order of preference:
   - GIT_EDITOR environment variable
-  - core.editor git configuration variable (if supplied by git-cl)
+  - core.editor git configuration variable
   - VISUAL environment variable
   - EDITOR environment variable
   - vi (non-Windows) or notepad (Windows)
@@ -1107,7 +1107,12 @@ def GetEditor(git_editor=None):
   In the case of git-cl, this matches git's behaviour, except that it does not
   include dumb terminal detection.
   """
-  editor = os.environ.get('GIT_EDITOR') or git_editor
+  editor = os.environ.get('GIT_EDITOR')
+  if not editor:
+    try:
+      editor = subprocess.check_output(['git', 'config', 'core.editor'])
+    except subprocess.CalledProcessError:
+      pass
   if not editor:
     editor = os.environ.get('VISUAL')
   if not editor:
@@ -1120,7 +1125,7 @@ def GetEditor(git_editor=None):
   return editor
 
 
-def RunEditor(content, git, git_editor=None):
+def RunEditor(content):
   """Opens up the default editor in the system to get the CL description."""
   file_handle, filename = tempfile.mkstemp(text=True, prefix='cl_description')
   # Make sure CRLF is handled properly by requiring none.
@@ -1137,7 +1142,7 @@ def RunEditor(content, git, git_editor=None):
   fileobj.close()
 
   try:
-    editor = GetEditor(git_editor=git_editor)
+    editor = GetEditor()
     if not editor:
       return None
     cmd = '%s %s' % (editor, filename)

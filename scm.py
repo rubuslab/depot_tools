@@ -200,28 +200,16 @@ class GIT(object):
       except subprocess2.CalledProcessError:
         pass
     else:
-      try:
-        upstream_branch = GIT.Capture(
-            ['config', '--local', 'rietveld.upstream-branch'], cwd=cwd)
-      except subprocess2.CalledProcessError:
-        upstream_branch = None
-      if upstream_branch:
-        try:
-          remote = GIT.Capture(
-              ['config', '--local', 'rietveld.upstream-remote'], cwd=cwd)
-        except subprocess2.CalledProcessError:
-          pass
+      # Else, try to guess the origin remote.
+      remote_branches = GIT.Capture(['branch', '-r'], cwd=cwd).split()
+      if 'origin/master' in remote_branches:
+        # Fall back on origin/master if it exits.
+        remote = 'origin'
+        upstream_branch = 'refs/heads/master'
       else:
-        # Else, try to guess the origin remote.
-        remote_branches = GIT.Capture(['branch', '-r'], cwd=cwd).split()
-        if 'origin/master' in remote_branches:
-          # Fall back on origin/master if it exits.
-          remote = 'origin'
-          upstream_branch = 'refs/heads/master'
-        else:
-          # Give up.
-          remote = None
-          upstream_branch = None
+        # Give up.
+        remote = None
+        upstream_branch = None
     return remote, upstream_branch
 
   @staticmethod

@@ -104,6 +104,7 @@ import gclient_eval
 import gclient_scm
 import gclient_utils
 import git_cache
+import monitoring
 from third_party.repo.progress import Progress
 import subcommand
 import subprocess2
@@ -1909,6 +1910,7 @@ def CMDrecurse(parser, args):
   Sets GCLIENT_DEP_PATH environment variable as the dep's relative location to
   root directory of the checkout.
   """
+  monitoring.report('command', 'gclient recurse')
   # Stop parsing at the first non-arg so that these go through to the command
   parser.disable_interspersed_args()
   parser.add_option('-s', '--scm', action='append', default=[],
@@ -1951,6 +1953,7 @@ def CMDfetch(parser, args):
 
   Completely git-specific. Simply runs 'git fetch [args ...]' for each module.
   """
+  monitoring.report('command', 'gclient fetch')
   (options, args) = parser.parse_args(args)
   return CMDrecurse(OptionParser(), [
       '--jobs=%d' % options.jobs, '--scm=git', 'git', 'fetch'] + args)
@@ -2112,6 +2115,7 @@ class Flattener(object):
 
 def CMDflatten(parser, args):
   """Flattens the solutions into a single DEPS file."""
+  monitoring.report('command', 'gclient flatten')
   parser.add_option('--output-deps', help='Path to the output DEPS file')
   parser.add_option(
       '--output-deps-files',
@@ -2283,6 +2287,7 @@ def CMDgrep(parser, args):
 
   Runs 'git grep [args...]' for each module.
   """
+  monitoring.report('command', 'gclient grep')
   # We can't use optparse because it will try to parse arguments sent
   # to git grep and throw an error. :-(
   if not args or re.match('(-h|--help)$', args[0]):
@@ -2309,6 +2314,7 @@ def CMDgrep(parser, args):
 
 def CMDroot(parser, args):
   """Outputs the solution root (or current dir if there isn't one)."""
+  monitoring.report('command', 'gclient root')
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
   if client:
@@ -2327,6 +2333,7 @@ def CMDconfig(parser, args):
   provided, then configuration is read from a specified Subversion server
   URL.
   """
+  monitoring.report('command', 'gclient config')
   # We do a little dance with the --gclientfile option.  'gclient config' is the
   # only command where it's acceptable to have both '--gclientfile' and '--spec'
   # arguments.  So, we temporarily stash any --gclientfile parameter into
@@ -2402,6 +2409,7 @@ def CMDpack(parser, args):
   resulting patch is printed to stdout and can be applied to a freshly
   checked out tree via 'patch -p0 < patchfile'.
   """
+  monitoring.report('command', 'gclient pack')
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
                     help='override deps for the specified (comma-separated) '
                          'platform(s); \'all\' will process all deps_os '
@@ -2420,6 +2428,7 @@ def CMDpack(parser, args):
 
 def CMDstatus(parser, args):
   """Shows modification status for every dependencies."""
+  monitoring.report('command', 'gclient status')
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
                     help='override deps for the specified (comma-separated) '
                          'platform(s); \'all\' will process all deps_os '
@@ -2460,6 +2469,7 @@ os_deps, etc.)
 """)
 def CMDsync(parser, args):
   """Checkout/update all modules."""
+  monitoring.report('command', 'gclient sync')
   parser.add_option('-f', '--force', action='store_true',
                     help='force update even for unchanged modules')
   parser.add_option('-n', '--nohooks', action='store_true',
@@ -2594,6 +2604,7 @@ CMDupdate = CMDsync
 
 def CMDvalidate(parser, args):
   """Validates the .gclient and DEPS syntax."""
+  monitoring.report('command', 'gclient validate')
   options, args = parser.parse_args(args)
   options.validate_syntax = True
   client = GClient.LoadCurrentConfig(options)
@@ -2607,6 +2618,7 @@ def CMDvalidate(parser, args):
 
 def CMDdiff(parser, args):
   """Displays local diff for every dependencies."""
+  monitoring.report('command', 'gclient diff')
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
                     help='override deps for the specified (comma-separated) '
                          'platform(s); \'all\' will process all deps_os '
@@ -2625,6 +2637,7 @@ def CMDrevert(parser, args):
 
   That's the nuclear option to get back to a 'clean' state. It removes anything
   that shows up in git status."""
+  monitoring.report('command', 'gclient revert')
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
                     help='override deps for the specified (comma-separated) '
                          'platform(s); \'all\' will process all deps_os '
@@ -2654,6 +2667,7 @@ def CMDrevert(parser, args):
 
 def CMDrunhooks(parser, args):
   """Runs hooks for files that have been modified in the local working copy."""
+  monitoring.report('command', 'gclient runhooks')
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
                     help='override deps for the specified (comma-separated) '
                          'platform(s); \'all\' will process all deps_os '
@@ -2679,6 +2693,7 @@ def CMDrevinfo(parser, args):
   'unpinned dependencies', i.e. DEPS/deps references without a git hash.
   A git branch name isn't 'pinned' since the actual commit can change.
   """
+  monitoring.report('command', 'gclient revinfo')
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
                     help='override deps for the specified (comma-separated) '
                          'platform(s); \'all\' will process all deps_os '
@@ -2706,6 +2721,7 @@ def CMDrevinfo(parser, args):
 
 def CMDgetdep(parser, args):
   """Gets revision information and variable values from a DEPS file."""
+  monitoring.report('command', 'gclient getdep')
   parser.add_option('--var', action='append',
                     dest='vars', metavar='VAR', default=[],
                     help='Gets the value of a given variable.')
@@ -2747,6 +2763,7 @@ def CMDgetdep(parser, args):
 
 def CMDsetdep(parser, args):
   """Modifies dependency revisions and variable values in a DEPS file"""
+  monitoring.report('command', 'gclient setdep')
   parser.add_option('--var', action='append',
                     dest='vars', metavar='VAR=VAL', default=[],
                     help='Sets a variable to the given value with the format '
@@ -2811,6 +2828,7 @@ def CMDsetdep(parser, args):
 
 def CMDverify(parser, args):
   """Verifies the DEPS file deps are only from allowed_hosts."""
+  monitoring.report('command', 'gclient verify')
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
   if not client:
@@ -2911,6 +2929,7 @@ def disable_buffering():
   sys.stdout = gclient_utils.MakeFileAnnotated(sys.stdout)
 
 
+@monitoring.monitoring_wrapper
 def main(argv):
   """Doesn't parse the arguments here, just find the right subcommand to
   execute."""

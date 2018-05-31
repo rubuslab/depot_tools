@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "57f2d0b6_4ac5d94c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5861,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-05-31T21:11:42Z",
+      "side": 1,
+      "message": "this is consistent with the rest of the func shrug",
+      "revId": "7be73e23db423d7ab49601a81ebabcc73e6d948e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -104,6 +104,7 @@ import gclient_eval
 import gclient_scm
 import gclient_utils
 import git_cache
+import monitoring
 from third_party.repo.progress import Progress
 import subcommand
 import subprocess2
@@ -1902,6 +1903,7 @@ class CipdDependency(Dependency):
 
 
 @subcommand.usage('[command] [args ...]')
+@monitoring.report_metrics('gclient recurse')
 def CMDrecurse(parser, args):
   """Operates [command args ...] on all the dependencies.
 
@@ -1946,6 +1948,7 @@ def CMDrecurse(parser, args):
 
 
 @subcommand.usage('[args ...]')
+@monitoring.report_metrics('gclient fetch')
 def CMDfetch(parser, args):
   """Fetches upstream commits for all modules.
 
@@ -2110,6 +2113,7 @@ class Flattener(object):
       self._flatten_dep(deps_by_name[recurse_dep_name])
 
 
+@monitoring.report_metrics('gclient flatten')
 def CMDflatten(parser, args):
   """Flattens the solutions into a single DEPS file."""
   parser.add_option('--output-deps', help='Path to the output DEPS file')
@@ -2278,6 +2282,7 @@ def _VarsToLines(variables):
   return s
 
 
+@monitoring.report_metrics('gclient grep')
 def CMDgrep(parser, args):
   """Greps through git repos managed by gclient.
 
@@ -2307,6 +2312,7 @@ def CMDgrep(parser, args):
                   'git', 'grep', '--null', '--color=Always'] + args)
 
 
+@monitoring.report_metrics('gclient root')
 def CMDroot(parser, args):
   """Outputs the solution root (or current dir if there isn't one)."""
   (options, args) = parser.parse_args(args)
@@ -2318,6 +2324,7 @@ def CMDroot(parser, args):
 
 
 @subcommand.usage('[url]')
+@monitoring.report_metrics('gclient config')
 def CMDconfig(parser, args):
   """Creates a .gclient file in the current directory.
 
@@ -2394,6 +2401,7 @@ def CMDconfig(parser, args):
   gclient pack > patch.txt
     generate simple patch for configured client and dependences
 """)
+@monitoring.report_metrics('gclient pack')
 def CMDpack(parser, args):
   """Generates a patch which can be applied at the root of the tree.
 
@@ -2418,6 +2426,7 @@ def CMDpack(parser, args):
   return client.RunOnDeps('pack', args)
 
 
+@monitoring.report_metrics('gclient status')
 def CMDstatus(parser, args):
   """Shows modification status for every dependencies."""
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
@@ -2458,6 +2467,7 @@ os_deps, etc.)
   }
 }
 """)
+@monitoring.report_metrics('gclient sync')
 def CMDsync(parser, args):
   """Checkout/update all modules."""
   parser.add_option('-f', '--force', action='store_true',
@@ -2592,6 +2602,7 @@ def CMDsync(parser, args):
 CMDupdate = CMDsync
 
 
+@monitoring.report_metrics('gclient validate')
 def CMDvalidate(parser, args):
   """Validates the .gclient and DEPS syntax."""
   options, args = parser.parse_args(args)
@@ -2605,6 +2616,7 @@ def CMDvalidate(parser, args):
   return rv
 
 
+@monitoring.report_metrics('gclient diff')
 def CMDdiff(parser, args):
   """Displays local diff for every dependencies."""
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
@@ -2620,6 +2632,7 @@ def CMDdiff(parser, args):
   return client.RunOnDeps('diff', args)
 
 
+@monitoring.report_metrics('gclient revert')
 def CMDrevert(parser, args):
   """Reverts all modifications in every dependencies.
 
@@ -2652,6 +2665,7 @@ def CMDrevert(parser, args):
   return client.RunOnDeps('revert', args)
 
 
+@monitoring.report_metrics('gclient runhooks')
 def CMDrunhooks(parser, args):
   """Runs hooks for files that have been modified in the local working copy."""
   parser.add_option('--deps', dest='deps_os', metavar='OS_LIST',
@@ -2671,6 +2685,7 @@ def CMDrunhooks(parser, args):
   return client.RunOnDeps('runhooks', args)
 
 
+@monitoring.report_metrics('gclient revinfo')
 def CMDrevinfo(parser, args):
   """Outputs revision info mapping for the client and its dependencies.
 
@@ -2704,6 +2719,7 @@ def CMDrevinfo(parser, args):
   return 0
 
 
+@monitoring.report_metrics('gclient getdep')
 def CMDgetdep(parser, args):
   """Gets revision information and variable values from a DEPS file."""
   parser.add_option('--var', action='append',
@@ -2745,6 +2761,7 @@ def CMDgetdep(parser, args):
       print(gclient_eval.GetRevision(local_scope, name))
 
 
+@monitoring.report_metrics('gclient setdep')
 def CMDsetdep(parser, args):
   """Modifies dependency revisions and variable values in a DEPS file"""
   parser.add_option('--var', action='append',
@@ -2809,6 +2826,7 @@ def CMDsetdep(parser, args):
     f.write(gclient_eval.RenderDEPSFile(local_scope))
 
 
+@monitoring.report_metrics('gclient verify')
 def CMDverify(parser, args):
   """Verifies the DEPS file deps are only from allowed_hosts."""
   (options, args) = parser.parse_args(args)
@@ -2868,9 +2886,19 @@ class OptionParser(optparse.OptionParser):
         '--no-nag-max', default=False, action='store_true',
         help='Ignored for backwards compatibility.')
 
-  def parse_args(self, args=None, values=None):
+  def parse_args(self, args):
     """Integrates standard options processing."""
-    options, args = optparse.OptionParser.parse_args(self, args, values)
+    # Create an optparse.Values object that will store only the actual passed
+    # options, without the defaults.
+    actual_options = optparse.Values()
+    _, args = optparse.OptionParser.parse_args(self, args, actual_options)
+    # Create an optparse.Values object with the default options.
+    options = optparse.Values(self.get_default_values().__dict__)
+    # Update it with the options passed by the user.
+    options._update_careful(actual_options.__dict__)
+    # Store the options passed by the user in an _actual_options attribute.
+    monitoring.report('arguments', actual_options.__dict__.keys())
+
     levels = [logging.ERROR, logging.WARNING, logging.INFO, logging.DEBUG]
     logging.basicConfig(
         level=levels[min(options.verbose, len(levels) - 1)],

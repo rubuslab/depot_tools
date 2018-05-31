@@ -5857,6 +5857,9 @@ def CMDformat(parser, args):
         stdout = RunCommand(cmd + python_diff_files, cwd=top_dir)
         if opts.diff:
           sys.stdout.write(stdout)
+        if opts.dry_run and len(stdout) > 0:
+          return_value = 2
+
     else:
       # TODO(sbc): yapf --lines mode still has some issues.
       # https://github.com/google/yapf/issues/154

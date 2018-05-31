@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7b25ea88_6ff4eeab",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1913,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-31T16:41:42Z",
+      "side": 1,
+      "message": "Any reason you chose to wrap __main__, but then have this .report() function in each subcommand, rather than just wrapping each subcommand?",
+      "revId": "ecdc879c0c593e10fa8376ac45b91c45b62cae52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ae53f91_9133f708",
+        "filename": "monitoring.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-05-31T16:41:42Z",
+      "side": 1,
+      "message": "os.fork won\u0027t work on windows :( You\u0027ll want to use the multiprocessing module instead, probably.",
+      "revId": "ecdc879c0c593e10fa8376ac45b91c45b62cae52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

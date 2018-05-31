@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0f57473d_9b426875",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5862,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-05-31T21:45:34Z",
+      "side": 1,
+      "message": "Imo, this is easier to read despite some copy-pasta:\n\nif opts.dry_run or opts.diff:\n  stdout \u003d RunCommand([yapf_tool, \u0027--diff\u0027] + python_diff_files, error_ok\u003dTrue, cwd\u003dtop_dir)\nelse:\n  stdout \u003d RunCommand([yapf_tool, \u0027-i\u0027] + python_diff_files, cwd\u003dtop_dir)",
+      "range": {
+        "startLine": 5854,
+        "startChar": 8,
+        "endLine": 5862,
+        "endChar": 68
+      },
+      "revId": "209cefe2ba8547ec235fa4edf58d2be02ea75fd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "209cefe2ba8547ec235fa4edf58d2be02ea75fd8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c8218b5_f2c798bf",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5862,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-05-31T21:54:57Z",
+      "side": 1,
+      "message": "Done. It changed further.",
+      "parentUuid": "0f57473d_9b426875",
+      "range": {
+        "startLine": 5854,
+        "startChar": 8,
+        "endLine": 5862,
+        "endChar": 68
+      },
+      "revId": "209cefe2ba8547ec235fa4edf58d2be02ea75fd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

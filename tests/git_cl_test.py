@@ -2481,6 +2481,16 @@ class TestGitCl(TestCase):
 
     self.assertEqual(0, git_cl.main(['archive', '-f', '--notags']))
 
+  def test_archive_explicit_branch(self):
+    self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
+
+    self.calls = \
+        [((['git', 'symbolic-ref', 'HEAD'],), 'master'),
+         ((['git', 'tag', 'git-cl-archived-foo', 'foo'],), ''),
+         ((['git', 'branch', '-D', 'foo'],), '')]
+
+    self.assertEqual(0, git_cl.main(['archive', '-f', 'foo']))
+
   def test_cmd_issue_erase_existing(self):
     out = StringIO.StringIO()
     self.mock(git_cl.sys, 'stdout', out)

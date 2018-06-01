@@ -4314,8 +4314,13 @@ def upload_branch_deps(cl, args):
   return 0
 
 
+@subcommand.usage('[branch...]')
 def CMDarchive(parser, args):
-  """Archives and deletes branches associated with closed changelists."""
+  """Archives and deletes branches.
+
+  When no branches are provided, this will archive all branches
+  associated with closed changelists.
+  """
   parser.add_option(
       '-j', '--maxjobs', action='store', type=int,
       help='The maximum number of jobs to use when retrieving review status.')
@@ -4332,25 +4337,30 @@ def CMDarchive(parser, args):
 
   auth.add_auth_options(parser)
   options, args = parser.parse_args(args)
-  if args:
-    parser.error('Unsupported args: %s' % ' '.join(args))
   auth_config = auth.extract_auth_config_from_options(options)
 
-  branches = RunGit(['for-each-ref', '--format=%(refname)', 'refs/heads'])
-  if not branches:
-    return 0
+  if args:
+    branches = args
+    proposal = [(branch, 'git-cl-archived-%s' % branch)
+                for branch in args]
+  else:
+    branches = RunGit(['for-each-ref', '--format=%(refname)', 'refs/heads'])
+    if not branches:
+      return 0
 
-  print('Finding all branches associated with closed issues...')
-  changes = [Changelist(branchref=b, auth_config=auth_config)
-              for b in branches.splitlines()]
-  alignment = max(5, max(len(c.GetBranch()) for c in changes))
-  statuses = get_cl_statuses(changes,
-                             fine_grained=True,
-                             max_processes=options.maxjobs)
-  proposal = [(cl.GetBranch(),
-               'git-cl-archived-%s-%s' % (cl.GetIssue(), cl.GetBranch()))
-              for cl, status in statuses
-              if status == 'closed']
+    print('Finding all branches associated with closed issues...')
+    changes = [Changelist(branchref=b, auth_config=auth_config)
+                for b in branches.splitlines()]
+    statuses = get_cl_statuses(changes,
+                               fine_grained=True,
+                               max_processes=options.maxjobs)
+    closed = [cl for cl, status in statuses if status == 'closed']
+    branches = [cl.GetBranch() for cl in closed]
+    proposal = [(cl.GetBranch(),
+                 'git-cl-archived-%s-%s' % (cl.GetIssue(), cl.GetBranch()))
+                for cl in closed]
+
+  alignment = max(5, max(len(b) for b in branches))
   proposal.sort()
 
   if not proposal:

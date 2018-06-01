@@ -77,6 +77,39 @@ class GclientTest(trial_dir.TestCase):
     os.chdir(self.previous_dir)
     super(GclientTest, self).tearDown()
 
+  def testLocalDepsFile(self):
+    parser = gclient.OptionParser()
+    options, args = parser.parse_args([])
+    write(
+        '.gclient',
+        'solutions = [\n'
+        '  {\n'
+        '    "name": None,\n'
+        '    "url": None,\n'
+        '    "deps_file": "DEPS",\n'
+        '    "custom_vars": {\n'
+        '      "checkout_dir1": True,\n'
+        '    },\n'
+        '  },\n'
+        ']')
+    write(
+        'DEPS',
+        'vars = {\n'
+        '  "checkout_dir1": False,\n'
+        '}\n'
+        'deps = {\n'
+        '  "foo/dir1": {\n'
+        '    "url": "https://example.com/dir1",\n'
+        '    "condition": "checkout_dir1",\n'
+        '  },\n'
+        '  "foo/dir2": "https://example.com/dir2",\n'
+        '}')
+    obj = gclient.GClient.LoadCurrentConfig(options)
+    self.assertEqual(
+        [('foo/dir1', 'https://example.com/dir1'),
+         ('foo/dir2', 'https://example.com/dir2')],
+        sorted((dep.name, dep.url) for dep in obj.dependencies))
+
   def testDependencies(self):
     self._dependencies('1')
 
@@ -202,7 +235,7 @@ class GclientTest(trial_dir.TestCase):
     url = 'proto://host/path/@revision'
     d = gclient.Dependency(
         None, 'name', url, url, None, None, None,
-        None, '', True, False, None, True)
+        None, '', False, None, True)
     self.assertEquals('proto://host/path@revision', d.url)
 
   def testStr(self):
@@ -213,17 +246,17 @@ class GclientTest(trial_dir.TestCase):
       [
         gclient.Dependency(
             obj, 'foo', 'svn://example.com/foo', 'svn://example.com/foo', None,
-            None, None, None, 'DEPS', True, False, None, True),
+            None, None, None, 'DEPS', False, None, True),
         gclient.Dependency(
             obj, 'bar', 'svn://example.com/bar', 'svn://example.com/bar', None,
-            None, None, None, 'DEPS', True, False, None, True),
+            None, None, None, 'DEPS', False, None, True),
       ],
       [])
     obj.dependencies[0].add_dependencies_and_close(
       [
         gclient.Dependency(
             obj.dependencies[0], 'foo/dir1', 'svn://example.com/foo/dir1',
-            'svn://example.com/foo/dir1', None, None, None, None, 'DEPS', True,
+            'svn://example.com/foo/dir1', None, None, None, None, 'DEPS',
             False, None, True),
       ],
       [])
@@ -232,7 +265,7 @@ class GclientTest(trial_dir.TestCase):
     # pylint: disable=protected-access
     obj.dependencies[0]._file_list.append('foo')
     str_obj = str(obj)
-    self.assertEquals(322, len(str_obj), '%d\n%s' % (len(str_obj), str_obj))
+    self.assertEquals(230, len(str_obj), '%d\n%s' % (len(str_obj), str_obj))
 
   def testHooks(self):
     topdir = self.root_dir
@@ -543,14 +576,12 @@ class GclientTest(trial_dir.TestCase):
         ('foo/rel', 'svn://example.com/rel'),
     ], self._get_processed())
 
-    self.assertEqual(6, len(sol.dependencies))
+    self.assertEqual(4, len(sol.dependencies))
     self.assertEqual([
         ('foo/bar', 'svn://example.com/override'),
         ('foo/baz', 'svn://example.com/baz'),
         ('foo/new', 'svn://example.com/new'),
         ('foo/rel', 'svn://example.com/rel'),
-        ('foo/skip', None),
-        ('foo/skip2', None),
     ], [(dep.name, dep.url) for dep in sol.dependencies])
 
   def testDepsOsOverrideDepsInDepsFile(self):
@@ -1131,8 +1162,7 @@ class GclientTest(trial_dir.TestCase):
       [
         gclient.Dependency(
             obj, 'foo', 'svn://example.com/foo', 'svn://example.com/foo', None,
-            None, None, None, 'DEPS', True,
-            False, None, True),
+            None, None, None, 'DEPS', False, None, True),
       ],
       [])
     obj.dependencies[0].add_dependencies_and_close(
@@ -1140,12 +1170,12 @@ class GclientTest(trial_dir.TestCase):
         gclient.CipdDependency(obj.dependencies[0], 'foo',
                                {'package': 'foo_package',
                                 'version': 'foo_version'},
-                               cipd_root, None, True, False,
+                               cipd_root, None, False,
                                'fake_condition'),
         gclient.CipdDependency(obj.dependencies[0], 'foo',
                                {'package': 'bar_package',
                                 'version': 'bar_version'},
-                               cipd_root, None, True, False,
+                               cipd_root, None, False,
                                'fake_condition'),
       ],
       [])

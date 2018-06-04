@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "af45403a_0207c04b",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2900,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-04T17:27:39Z",
+      "side": 1,
+      "message": "Only reporting the keys is a pretty cool idea. I\u0027d suggest that you document why it\u0027s only reporting the .keys().",
+      "range": {
+        "startLine": 2899,
+        "startChar": 1,
+        "endLine": 2900,
+        "endChar": 66
+      },
+      "revId": "a56a8f3ffab0e2bf6be35788d37716877ae0444d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ebbc23e1_882b70c2",
+        "filename": "monitoring.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-04T17:27:39Z",
+      "side": 1,
+      "message": "Let\u0027s brainstorm real names for this. cit-cli-metrics.appspot.com?",
+      "range": {
+        "startLine": 20,
+        "startChar": 19,
+        "endLine": 20,
+        "endChar": 34
+      },
+      "revId": "a56a8f3ffab0e2bf6be35788d37716877ae0444d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4c566cf8_9300e041",
+        "filename": "monitoring.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-04T17:27:39Z",
+      "side": 1,
+      "message": "Maybe print a warning too, so if someone manually edits their file and messes up they understand why they\u0027re suddenly getting a countdown again.",
+      "revId": "a56a8f3ffab0e2bf6be35788d37716877ae0444d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a388639c_94370c1c",
+        "filename": "monitoring.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-04T17:27:39Z",
+      "side": 1,
+      "message": "Go ahead and update this to have the format (and colors? I guess?) that thiemo was asking for",
+      "revId": "a56a8f3ffab0e2bf6be35788d37716877ae0444d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4a262f2_b7db0bea",
+        "filename": "monitoring.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-04T17:27:39Z",
+      "side": 1,
+      "message": "If a config file can\u0027t be read, it will just get replaced by this. This means that if someone manually edits their file, messes up, and then runs any monitored command, their edits (and the rest of the contents of their file) will suddenly disappear.\n\nNot only that, this filesystem-modifying side effect takes place inside a function named \"print\".\n\nPlease make this both safer and more obvious.",
+      "revId": "a56a8f3ffab0e2bf6be35788d37716877ae0444d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

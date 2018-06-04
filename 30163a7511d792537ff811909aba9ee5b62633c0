@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "120e293f_7852346d",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-04T23:10:12Z",
+      "side": 1,
+      "message": "lol, we should probably stop using svn examples at some point :P",
+      "range": {
+        "startLine": 215,
+        "startChar": 25,
+        "endLine": 215,
+        "endChar": 46
+      },
+      "revId": "30163a7511d792537ff811909aba9ee5b62633c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

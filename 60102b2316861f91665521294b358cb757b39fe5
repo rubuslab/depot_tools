@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1a5d45_df0293f0",
+        "filename": "testing_support/fake_cipd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-05T18:52:26Z",
+      "side": 1,
+      "message": "I don\u0027t know how easy would it be to have a local CIPD server, so I thought having a fake cipd that logs what it is doing would work too.\nWhat do you think?",
+      "revId": "60102b2316861f91665521294b358cb757b39fe5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

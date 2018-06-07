@@ -16,6 +16,24 @@
       "revId": "60102b2316861f91665521294b358cb757b39fe5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d14e0e2_da95209c",
+        "filename": "testing_support/fake_cipd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-07T19:22:03Z",
+      "side": 1,
+      "message": "I think this approach makes sense -- or at least as much sense as any test that actually manipulates the filesystem does, but we\u0027re already way down that path with the other smoketests so no harm done.\n\nMake sure this file has a copyright header as well.",
+      "parentUuid": "fa1a5d45_df0293f0",
+      "revId": "60102b2316861f91665521294b358cb757b39fe5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

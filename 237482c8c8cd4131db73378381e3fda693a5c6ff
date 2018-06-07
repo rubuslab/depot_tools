@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "19682a13_3115d46d",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1802,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-07T20:02:26Z",
+      "side": 1,
+      "message": "The issue was that url was still passed twice here, so it was taking *should_process\u003dNone* and not syncing CIPD packages.\nI made it so that we\u0027re naming the arguments, so it is obvious what is going where, and you don\u0027t have to count how many \u0027None\u0027s are to be sure.",
+      "range": {
+        "startLine": 1802,
+        "startChar": 38,
+        "endLine": 1802,
+        "endChar": 41
+      },
+      "revId": "237482c8c8cd4131db73378381e3fda693a5c6ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

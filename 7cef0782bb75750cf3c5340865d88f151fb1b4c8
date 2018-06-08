@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "454397a0_1fc37998",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2869,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "I\u0027d feel better if these were\n\n  if monitoring.get_config(\u0027opt-in\u0027) is not None:\n    monitoring.set_config(\u0027opt-in\u0027, options.enable_monitoring, flush\u003dTrue)\n\nor something like that. Keep all modifications to the monitoring config encapsulated in the monitoring library, and don\u0027t directly expose it as a dict.",
+      "range": {
+        "startLine": 2867,
+        "startChar": 0,
+        "endLine": 2869,
+        "endChar": 32
+      },
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7b5e5b63_5fed112f",
         "filename": "monitoring.README.md",
         "patchSetId": 5
@@ -19,6 +42,171 @@
         "endLine": 4,
         "endChar": 38
       },
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a70d3ef9_3da5e4f4",
+        "filename": "monitoring.README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "Also:\n- We won\u0027t record any command line string arguments.",
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87e6ca1f_a3dbc99f",
+        "filename": "monitoring.README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "nit: one week",
+      "range": {
+        "startLine": 22,
+        "startChar": 20,
+        "endLine": 22,
+        "endChar": 26
+      },
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f63f0ba1_8b03245b",
+        "filename": "monitoring.README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "nit: ...that project is using in their...",
+      "range": {
+        "startLine": 35,
+        "startChar": 20,
+        "endLine": 35,
+        "endChar": 37
+      },
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59f63b77_1ba2b63c",
+        "filename": "monitoring.README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "Add a short sentence about \"If, for some reason, you want to go back to seeing this message every time, simply delete monitoring.cfg\" or something like that, maybe?",
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a8f11abf_cec5888a",
+        "filename": "monitoring.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "nit: still needs a copyright header",
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1023ee8a_8fd0fa66",
+        "filename": "monitoring.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "remove the redundant url before submitting",
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67a89eac_66db9631",
+        "filename": "monitoring.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "nice. would this be easier with functools.wrap?",
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "115324b8_09c01720",
+        "filename": "monitoring.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "Rather than a dict which can be modified by anything, make a simple class with a .set() method and instantiate one instance of that class at the top of the file.",
+      "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d168e9e_921d18c4",
+        "filename": "upload_monitoring_data.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:16:28Z",
+      "side": 1,
+      "message": "Update this url as well.",
       "revId": "7cef0782bb75750cf3c5340865d88f151fb1b4c8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

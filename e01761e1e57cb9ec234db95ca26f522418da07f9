@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "d00dfe99_283bdf84",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1265,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-08T00:19:59Z",
+      "side": 1,
+      "message": "Have you considered, instead of storing self.recursedeps on the parent as a dict of which children should be recursed upon, instead directly storing a boolean \"recurse on me [y|N]\" value on each of the children?",
+      "revId": "e01761e1e57cb9ec234db95ca26f522418da07f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1da55e4f_3d1eba3e",
         "filename": "tests/gclient_smoketest.py",
         "patchSetId": 3

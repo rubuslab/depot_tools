@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c2126ad5_d011353c",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1725,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-06-08T16:03:38Z",
+      "side": 1,
+      "message": "nit: why is this being converted to a property? It\u0027s got quite a bit more going on than a caller might expect from a getter property...",
+      "revId": "ad3a34e8f2d48f3afe44e7b61067e2c0a3995bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60647a98_f2954a7b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-06-08T16:03:38Z",
+      "side": 1,
+      "message": "Please update the docstring along w/ the changes to the function signature.",
+      "revId": "ad3a34e8f2d48f3afe44e7b61067e2c0a3995bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "444e591f_fce795f7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-06-08T16:03:38Z",
+      "side": 1,
+      "message": "This should be some variety of a gclient_utils.Error, not an assertion.",
+      "revId": "ad3a34e8f2d48f3afe44e7b61067e2c0a3995bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a3bd6b4_5765751b",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-06-08T00:51:15Z",
+      "side": 1,
+      "message": "You should probably just use argparse.parse_known_args() instead.",
+      "revId": "efa7912cd67488ab4f9bafbbd5e1164b8461d5ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

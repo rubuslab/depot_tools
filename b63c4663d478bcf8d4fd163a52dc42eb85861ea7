@@ -46,6 +46,30 @@
       "revId": "b63c4663d478bcf8d4fd163a52dc42eb85861ea7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb8b1df8_2fb3230f",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1139,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-06-12T17:59:15Z",
+      "side": 0,
+      "message": "That error message was actually the original use of that formatting (https://chromium.googlesource.com/chromium/tools/depot_tools/+blame/fc03e67e9ae41efc4be498ae91f6d6eddc96f1c6/gclient.py#1095), so I think at least one person might disagree.",
+      "parentUuid": "df4826af_82dd1edd",
+      "range": {
+        "startLine": 1139,
+        "startChar": 22,
+        "endLine": 1139,
+        "endChar": 33
+      },
+      "revId": "b63c4663d478bcf8d4fd163a52dc42eb85861ea7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

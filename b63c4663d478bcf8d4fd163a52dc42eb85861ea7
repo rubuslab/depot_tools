@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8a3cbf20_4bda2154",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1139,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2018-06-12T14:54:04Z",
+      "side": 0,
+      "message": "Why get rid of this?",
+      "range": {
+        "startLine": 1139,
+        "startChar": 22,
+        "endLine": 1139,
+        "endChar": 33
+      },
+      "revId": "b63c4663d478bcf8d4fd163a52dc42eb85861ea7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

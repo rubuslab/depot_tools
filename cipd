@@ -27,6 +27,10 @@ case $UNAME in
   darwin)
     PLAT=mac
     ;;
+  aix)
+    echo "cipd not supported on $UNAME"
+    exit 1
+    ;;
   *)
     echo "UNKNOWN OS: $UNAME"
     exit 1

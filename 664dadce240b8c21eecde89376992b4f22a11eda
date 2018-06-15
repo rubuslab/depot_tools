@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "993ae456_ec3b4c0a",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2018-06-15T12:12:27Z",
+      "side": 1,
+      "message": "Should probably support https too? Maybe just `return !UsesToolchainFromFile()`?",
+      "revId": "664dadce240b8c21eecde89376992b4f22a11eda",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

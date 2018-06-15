@@ -52,6 +52,24 @@
       "revId": "1fa2fc650899a8801fa5fe704edff3824d5340da",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe6f6ce8_26b732fb",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2018-06-15T19:22:58Z",
+      "side": 1,
+      "message": "Ok, that makes sense. I think I would prefer to keep *_BASE_URL and drop the prefix from local_zip in DoTreeMirror(). Does that look ok?",
+      "parentUuid": "a8e469f8_e73450fe",
+      "revId": "1fa2fc650899a8801fa5fe704edff3824d5340da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

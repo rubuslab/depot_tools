@@ -70,6 +70,24 @@
       "revId": "1fa2fc650899a8801fa5fe704edff3824d5340da",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e94b23ee_21b6910a",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-06-15T20:00:22Z",
+      "side": 1,
+      "message": "Sorry, I\u0027m not sure if I understand. You mean switching back to BASE_URL, and also adding code to drop file:// from the argument if we\u0027re in that path? That seems fine I guess.",
+      "parentUuid": "fe6f6ce8_26b732fb",
+      "revId": "1fa2fc650899a8801fa5fe704edff3824d5340da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

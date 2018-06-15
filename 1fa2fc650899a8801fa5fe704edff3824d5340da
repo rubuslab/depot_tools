@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3dca82a1_1518d0e0",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-06-15T15:52:40Z",
+      "side": 1,
+      "message": "I know I agreed with this plan, but the name _BASE_URL makes me think I should use \u0027file://...\u0027 here, but it looks like that doesn\u0027t work with os.path.isdir() and .isfile().\n\nSo I think we should either: 1) pick a different name like (DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_LOCATION?) or 2) add a check in main() to catch file://.",
+      "revId": "1fa2fc650899a8801fa5fe704edff3824d5340da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

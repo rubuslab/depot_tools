@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2f4fc0f_4b88bd4b",
+        "filename": "cipd",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-06-18T15:43:14Z",
+      "side": 1,
+      "message": "Let\u0027s just change this error message to \"cipd not supported on $UNAME\"",
+      "range": {
+        "startLine": 35,
+        "startChar": 10,
+        "endLine": 35,
+        "endChar": 28
+      },
+      "revId": "d417c6b32aad5267eb927d8381208f467b804873",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

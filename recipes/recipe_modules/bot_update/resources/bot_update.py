@@ -74,7 +74,6 @@ GOT_REVISION_MAPPINGS = {
 
 GCLIENT_TEMPLATE = """solutions = %(solutions)s
 
-cache_dir = r%(cache_dir)s
 %(target_os)s
 %(target_os_only)s
 %(target_cpu)s
@@ -217,11 +216,9 @@ def git(*args, **kwargs):  # pragma: no cover
   return call(*cmd, **kwargs)
 
 
-def get_gclient_spec(solutions, target_os, target_os_only, target_cpu,
-                     git_cache_dir):
+def get_gclient_spec(solutions, target_os, target_os_only, target_cpu):
   return GCLIENT_TEMPLATE % {
       'solutions': pprint.pformat(solutions, indent=4),
-      'cache_dir': '"%s"' % git_cache_dir,
       'target_os': ('\ntarget_os=%s' % target_os) if target_os else '',
       'target_os_only': '\ntarget_os_only=%s' % target_os_only,
       'target_cpu': ('\ntarget_cpu=%s' % target_cpu) if target_cpu else ''
@@ -324,12 +321,11 @@ def call_gclient(*args, **kwargs):
   return call(*cmd, **kwargs)
 
 
-def gclient_configure(solutions, target_os, target_os_only, target_cpu,
-                      git_cache_dir):
+def gclient_configure(solutions, target_os, target_os_only, target_cpu):
   """Should do the same thing as gclient --spec='...'."""
   with codecs.open('.gclient', mode='w', encoding='utf-8') as f:
     f.write(get_gclient_spec(
-        solutions, target_os, target_os_only, target_cpu, git_cache_dir))
+        solutions, target_os, target_os_only, target_cpu))
 
 
 @contextmanager
@@ -341,7 +337,7 @@ def git_config_if_not_set(key, value):
   try:
     git('config', '--global', key)
     should_unset = False
-  except SubprocessFailed as e:
+  except SubprocessFailed:
     git('config', '--global', key, value)
   try:
     yield
@@ -592,12 +588,11 @@ def force_solution_revision(solution_name, git_url, revisions, cwd):
   git('checkout', '--force', treeish, '--', cwd=cwd)
 
 
-def _has_in_git_cache(revision_sha1, git_cache_dir, url):
+def _has_in_git_cache(revision_sha1, url):
   """Returns whether given revision_sha1 is contained in cache of a given repo.
   """
   try:
-    mirror_dir = git(
-        'cache', 'exists', '--quiet', '--cache-dir', git_cache_dir, url).strip()
+    mirror_dir = git('cache', 'exists', '--quiet', url).strip()
     git('cat-file', '-e', revision_sha1, cwd=mirror_dir)
     return True
   except SubprocessFailed:
@@ -637,14 +632,12 @@ def _maybe_break_locks(checkout_path, tries=3):
 
 
 
-def git_checkouts(solutions, revisions, shallow, refs, git_cache_dir,
-                  cleanup_dir):
+def git_checkouts(solutions, revisions, shallow, refs, cleanup_dir):
   build_dir = os.getcwd()
   first_solution = True
   for sln in solutions:
     sln_dir = path.join(build_dir, sln['name'])
-    _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
-                  cleanup_dir)
+    _git_checkout(sln, sln_dir, revisions, shallow, refs, cleanup_dir)
     if first_solution:
       git_ref = git('log', '--format=%H', '--max-count=1',
                     cwd=path.join(build_dir, sln['name'])
@@ -653,8 +646,7 @@ def git_checkouts(solutions, revisions, shallow, refs, git_cache_dir,
   return git_ref
 
 
-def _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
-                  cleanup_dir):
+def _git_checkout(sln, sln_dir, revisions, shallow, refs, cleanup_dir):
   name = sln['name']
   url = sln['url']
   if url == CHROMIUM_SRC_URL or url + '.git' == CHROMIUM_SRC_URL:
@@ -662,8 +654,7 @@ def _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
     # a shallow clone of src.
     shallow = False
   s = ['--shallow'] if shallow else []
-  populate_cmd = (['cache', 'populate', '--ignore_locks', '-v',
-                   '--cache-dir', git_cache_dir] + s + [url])
+  populate_cmd = (['cache', 'populate', '--ignore_locks', '-v'] + s + [url])
   for ref in refs:
     populate_cmd.extend(['--ref', ref])
 
@@ -680,7 +671,7 @@ def _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
   if not pin:
     # Refresh only once.
     git(*populate_cmd, env=env)
-  elif _has_in_git_cache(pin, git_cache_dir, url):
+  elif _has_in_git_cache(pin, url):
     # No need to fetch at all, because we already have needed revision.
     pass
   else:
@@ -694,7 +685,7 @@ def _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
       # maintainers of *.googlesource.com (workaround git server replication
       # lag).
       git(*populate_cmd, env=env)
-      if _has_in_git_cache(pin, git_cache_dir, url):
+      if _has_in_git_cache(pin, url):
         break
       overrun = time.time() - soft_deadline
       # Only kick in deadline after second attempt to ensure we retry at least
@@ -711,8 +702,7 @@ def _git_checkout(sln, sln_dir, revisions, shallow, refs, git_cache_dir,
       time.sleep(sleep_secs)
 
   # Step 2: populate a checkout from local cache. All operations are local.
-  mirror_dir = git(
-      'cache', 'exists', '--quiet', '--cache-dir', git_cache_dir, url).strip()
+  mirror_dir = git('cache', 'exists', '--quiet', url).strip()
   first_try = True
   while True:
     try:
@@ -882,15 +872,15 @@ def emit_json(out_file, did_run, gclient_output=None, **kwargs):
 
 def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
                     target_cpu, patch_root, gerrit_repo, gerrit_ref,
-                    gerrit_rebase_patch_ref, shallow, refs, git_cache_dir,
-                    cleanup_dir, gerrit_reset, disable_syntax_validation,
+                    gerrit_rebase_patch_ref, shallow, refs, cleanup_dir,
+                    gerrit_reset, disable_syntax_validation,
                     apply_patch_on_gclient):
   # Get a checkout of each solution, without DEPS or hooks.
   # Calling git directly because there is no way to run Gclient without
   # invoking DEPS.
   print 'Fetching Git checkout'
 
-  git_checkouts(solutions, revisions, shallow, refs, git_cache_dir, cleanup_dir)
+  git_checkouts(solutions, revisions, shallow, refs, cleanup_dir)
 
   applied_gerrit_patch = False
   if not apply_patch_on_gclient:
@@ -910,8 +900,7 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
           applied_gerrit_patch = True
 
   # Ensure our build/ directory is set up with the correct .gclient file.
-  gclient_configure(solutions, target_os, target_os_only, target_cpu,
-                    git_cache_dir)
+  gclient_configure(solutions, target_os, target_os_only, target_cpu)
 
   # Windows sometimes has trouble deleting files. This can make git commands
   # that rely on locks fail.
@@ -961,8 +950,7 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
   # Reset the deps_file point in the solutions so that hooks get run properly.
   for sln in solutions:
     sln['deps_file'] = sln.get('deps_file', 'DEPS').replace('.DEPS.git', 'DEPS')
-  gclient_configure(solutions, target_os, target_os_only, target_cpu,
-                    git_cache_dir)
+  gclient_configure(solutions, target_os, target_os_only, target_cpu)
 
   return gclient_output
 
@@ -1050,7 +1038,6 @@ def parse_args():
   parse.add_option('--with_tags', action='store_true',
                     help='Always pass --with_tags to gclient.  This '
                           'does the same thing as --refs +refs/tags/*')
-  parse.add_option('--git-cache-dir', help='Path to git cache directory.')
   parse.add_option('--cleanup-dir',
                    help='Path to a cleanup directory that can be used for '
                         'deferred file cleanup.')
@@ -1072,9 +1059,6 @@ def parse_args():
 
   if not options.output_json:
     parse.error('--output_json is required')
-
-  if not options.git_cache_dir:
-    parse.error('--git-cache-dir is required')
 
   if not options.refs:
     options.refs = []
@@ -1098,12 +1082,6 @@ def parse_args():
         'WARNING: Caught execption while parsing revision_mapping*: %s'
         % (str(e),)
     )
-
-  # Because we print CACHE_DIR out into a .gclient file, and then later run
-  # eval() on it, backslashes need to be escaped, otherwise "E:\b\build" gets
-  # parsed as "E:[\x08][\x08]uild".
-  if sys.platform.startswith('win'):
-    options.git_cache_dir = options.git_cache_dir.replace('\\', '\\\\')
 
   return options, args
 
@@ -1172,7 +1150,6 @@ def checkout(options, git_slns, specs, revisions, step_text, shallow):
           # Finally, extra configurations such as shallowness of the clone.
           shallow=shallow,
           refs=options.refs,
-          git_cache_dir=options.git_cache_dir,
           cleanup_dir=options.cleanup_dir,
           gerrit_reset=not options.gerrit_no_reset,
           disable_syntax_validation=options.disable_syntax_validation,

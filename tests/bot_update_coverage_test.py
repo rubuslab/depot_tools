@@ -154,7 +154,6 @@ class BotUpdateUnittests(unittest.TestCase):
       'gerrit_rebase_patch_ref': None,
       'shallow': False,
       'refs': [],
-      'git_cache_dir': '',
       'cleanup_dir': None,
       'gerrit_reset': None,
       'disable_syntax_validation': False,

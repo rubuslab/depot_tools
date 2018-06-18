@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b2525aeb_7f100e1b",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-06-18T16:10:12Z",
+      "side": 1,
+      "message": "You\u0027d need the prefix stripping here too, otherwise you\u0027ll never get to the other code with file://xyz...",
+      "revId": "02b0fe5a184ee8b63d4f5a10f522798e424d86ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

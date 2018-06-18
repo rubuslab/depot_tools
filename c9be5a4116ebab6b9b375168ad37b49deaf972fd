@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c92c6800_33de55fe",
+        "filename": "monitoring.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-18T19:08:05Z",
+      "side": 1,
+      "message": "high-level comment: Most of the functions in this module could be wrapped into a monitoring.Monitor class, which could then have a singleton .metrics data member. The consumer (e.g. gclient.py) could then instantiate a Monitor instance near the top, and use that to decorate its subcommands. This would remove the need for any module-global constants or object instances.\n\nOr is using a class method as a decorator just too weird?",
+      "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30389d2d_8f2b6278",
+        "filename": "monitoring.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-18T19:08:05Z",
+      "side": 1,
+      "message": "wrap all the places that dump the config file into a self.write_config() function. Also, have that function pretty-print the json so it is human-readable and human-editable.",
+      "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66a8e3ac_8c138e63",
+        "filename": "monitoring.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-18T19:08:05Z",
+      "side": 1,
+      "message": "Isn\u0027t self._config a dict-type, not an int-type?",
+      "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d61b4b4_224ebaec",
+        "filename": "monitoring.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-18T19:08:05Z",
+      "side": 1,
+      "message": "nit: two blank lines between top-level methods, here and elsewhere in this file",
+      "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

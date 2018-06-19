@@ -270,14 +270,9 @@ class Mirror(object):
   def GetCachePath(cls):
     with cls.cachepath_lock:
       if not hasattr(cls, 'cachepath'):
-        try:
-          cachepath = subprocess.check_output(
-              [cls.git_exe, 'config', '--global', 'cache.cachepath']).strip()
-        except subprocess.CalledProcessError:
-          cachepath = None
-        if not cachepath:
-          raise RuntimeError(
-              'No global cache.cachepath git configuration found.')
+        cachepath = os.environ.get('GIT_CACHE_PATH')
+        if cachepath is None:
+          raise RuntimeError('No global $GIT_CACHE_PATH is set.')
         setattr(cls, 'cachepath', cachepath)
       return getattr(cls, 'cachepath')
 
@@ -795,7 +790,9 @@ class OptionParser(optparse.OptionParser):
   def __init__(self, *args, **kwargs):
     optparse.OptionParser.__init__(self, *args, prog='git cache', **kwargs)
     self.add_option('-c', '--cache-dir',
-                    help='Path to the directory containing the cache')
+                    help=(
+                      'Path to the directory containing the cache. Normally '
+                      'deduced from $GIT_CACHE_PATH.'))
     self.add_option('-v', '--verbose', action='count', default=1,
                     help='Increase verbosity (can be passed multiple times)')
     self.add_option('-q', '--quiet', action='store_true',

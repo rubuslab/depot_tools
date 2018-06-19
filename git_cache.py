@@ -195,6 +195,10 @@ class Mirror(object):
     os.path.dirname(os.path.abspath(__file__)), 'gsutil.py')
   cachepath_lock = threading.Lock()
 
+  # used with GetCachePath to cache an "unconfigured" state, separate from
+  # uninitialized and None (for "disabled").
+  UNCONFIGURED_CACHE_PATH = object()
+
   @staticmethod
   def parse_fetch_spec(spec):
     """Parses and canonicalizes a fetch spec.
@@ -274,12 +278,19 @@ class Mirror(object):
           cachepath = subprocess.check_output(
               [cls.git_exe, 'config', '--global', 'cache.cachepath']).strip()
         except subprocess.CalledProcessError:
-          cachepath = None
-        if not cachepath:
-          raise RuntimeError(
-              'No global cache.cachepath git configuration found.')
+          cachepath = os.environ.get('GIT_CACHE_PATH')
+
+        if cachepath is None:
+          cachepath = cls.UNCONFIGURED_CACHE_PATH
         setattr(cls, 'cachepath', cachepath)
-      return getattr(cls, 'cachepath')
+
+      ret = getattr(cls, 'cachepath')
+      if ret is cls.UNCONFIGURED_CACHE_PATH:
+        raise RuntimeError(
+            'No global cache.cachepath git configuration found and no '
+            '$GIT_CACHE_PATH is set.')
+
+      return ret
 
   def Rename(self, src, dst):
     # This is somehow racy on Windows.
@@ -795,7 +806,10 @@ class OptionParser(optparse.OptionParser):
   def __init__(self, *args, **kwargs):
     optparse.OptionParser.__init__(self, *args, prog='git cache', **kwargs)
     self.add_option('-c', '--cache-dir',
-                    help='Path to the directory containing the cache')
+                    help=(
+                      'Path to the directory containing the cache. Normally '
+                      'deduced from the `cache.cachepath` gitconfig value '
+                      'or $GIT_CACHE_PATH.'))
     self.add_option('-v', '--verbose', action='count', default=1,
                     help='Increase verbosity (can be passed multiple times)')
     self.add_option('-q', '--quiet', action='store_true',

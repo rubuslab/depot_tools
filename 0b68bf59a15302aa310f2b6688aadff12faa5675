@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "939ba3fb_ed78d713",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-06-19T22:56:30Z",
+      "side": 1,
+      "message": "Might as well make this ToolchainDir() too. (Maybe ToolchainPath() would be a slightly better name in that case.)",
+      "revId": "0b68bf59a15302aa310f2b6688aadff12faa5675",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db07a1be_f5866e3a",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-06-19T22:56:30Z",
+      "side": 1,
+      "message": "And this.",
+      "revId": "0b68bf59a15302aa310f2b6688aadff12faa5675",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

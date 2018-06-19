@@ -46,6 +46,23 @@
       "revId": "d683d7ced42ddcf9bb1f943471dd455a4e326902",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bcb06fc8_e57ed83e",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2018-06-19T22:46:34Z",
+      "side": 0,
+      "message": "I removed this check since it is now performed in UsesToolchainFromHttp().",
+      "revId": "d683d7ced42ddcf9bb1f943471dd455a4e326902",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13d468ea_a4dac2dc",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1108,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-19T20:03:43Z",
+      "side": 1,
+      "message": "Maybe import mock from third_party and use it here?",
+      "range": {
+        "startLine": 1108,
+        "startChar": 4,
+        "endLine": 1108,
+        "endChar": 20
+      },
+      "revId": "33c6eab34de79425a7eb6be2fd0c2b19d5877706",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

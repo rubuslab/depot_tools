@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f908f45_10d68958",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-19T00:13:39Z",
+      "side": 1,
+      "message": "this is next CL",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 0
+      },
+      "revId": "7a0ddc7f29da82a46b9f4926e115b36f3584df60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ffff724_2f9de34a",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1368,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-19T00:13:39Z",
+      "side": 1,
+      "message": "nit: delete for readability",
+      "revId": "7a0ddc7f29da82a46b9f4926e115b36f3584df60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c46a6990_f39543b5",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2368,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-19T00:13:39Z",
+      "side": 1,
+      "message": "what?",
+      "range": {
+        "startLine": 2368,
+        "startChar": 26,
+        "endLine": 2368,
+        "endChar": 32
+      },
+      "revId": "7a0ddc7f29da82a46b9f4926e115b36f3584df60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0dca539_150ae461",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-19T00:13:39Z",
+      "side": 1,
+      "message": ".strip() never returns None, so stick default value into os.environ.get()\n\non a second though, strip() may return \"\". Do you mean to treat it as \"not configured\"?",
+      "range": {
+        "startLine": 281,
+        "startChar": 10,
+        "endLine": 284,
+        "endChar": 49
+      },
+      "revId": "7a0ddc7f29da82a46b9f4926e115b36f3584df60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "671efa4a_21b3b874",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-19T00:13:39Z",
+      "side": 1,
+      "message": "these don\u0027t have to be under lock",
+      "range": {
+        "startLine": 287,
+        "startChar": 6,
+        "endLine": 293,
+        "endChar": 16
+      },
+      "revId": "7a0ddc7f29da82a46b9f4926e115b36f3584df60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

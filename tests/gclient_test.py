@@ -11,6 +11,7 @@ See gclient_smoketest.py for integration tests.
 import Queue
 import copy
 import logging
+import ntpath
 import os
 import sys
 import unittest
@@ -1077,6 +1078,42 @@ class GclientTest(trial_dir.TestCase):
     dep1 = obj.dependencies[0].dependencies[1]
     self.assertEquals('https://example.com/foo_package@foo_version', dep0.url)
     self.assertEquals('https://example.com/bar_package@bar_version', dep1.url)
+
+  def _testPosixpathImpl(self):
+    parser = gclient.OptionParser()
+    options, _ = parser.parse_args([])
+    obj = gclient.GClient('src', options)
+    cipd_root = obj.GetCipdRoot()
+
+    cipd_dep = gclient.CipdDependency(
+        parent=obj,
+        name='src/foo/bar/baz',
+        dep_value={
+          'package': 'baz_package',
+          'version': 'baz_version',
+        },
+        cipd_root=cipd_root,
+        custom_vars=None,
+        should_process=True,
+        relative=False,
+        condition=None)
+    self.assertEquals(cipd_dep._cipd_subdir, 'src/foo/bar/baz')
+
+  def testPosixpathCipdSubdir(self):
+    self._testPosixpathImpl()
+
+  # CIPD wants posixpath separators for subdirs, even on windows.
+  # See crbug.com/854219.
+  def testPosixpathCipdSubdirOnWindows(self):
+    original_os_path = os.path
+    original_os_sep = os.sep
+    try:
+      os.path = ntpath
+      os.sep = ntpath.sep
+      self._testPosixpathImpl()
+    finally:
+      os.path = original_os_path
+      os.sep = original_os_sep
 
   def testFuzzyMatchUrlByURL(self):
     write(

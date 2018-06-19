@@ -34,6 +34,7 @@ PLATFORM_MAPPING = {
     'darwin': 'mac',
     'linux2': 'linux',
     'win32': 'win',
+    'aix6': 'aix',
 }
 
 

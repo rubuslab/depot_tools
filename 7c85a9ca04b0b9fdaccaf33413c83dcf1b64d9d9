@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "560b1103_2cdd9ab9",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-06-19T15:53:49Z",
+      "side": 1,
+      "message": "Could you please pull out the os.environ.get(\u0027DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL\u0027, \u0027\u0027) into a function that also does the stripping of file://? That\u0027ll reduce copies of that long env var name, and also make sure when someone adds sshfs:// or something there\u0027s fewer places to do so.",
+      "revId": "7c85a9ca04b0b9fdaccaf33413c83dcf1b64d9d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

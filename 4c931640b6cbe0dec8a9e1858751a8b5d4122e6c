@@ -22,6 +22,30 @@
       "revId": "4c931640b6cbe0dec8a9e1858751a8b5d4122e6c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98d5e9f0_ecb38a38",
+        "filename": "yapf",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-06-20T21:32:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7903b33b_ff898a03",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 69
+      },
+      "revId": "4c931640b6cbe0dec8a9e1858751a8b5d4122e6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

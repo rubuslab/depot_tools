@@ -123,6 +123,10 @@ if [ "X$DEPOT_TOOLS_UPDATE" != "X0" ]; then
   source "$base_dir/cipd_bin_setup.sh"
   cipd_bin_setup
 
-  find "$base_dir" -iname "*.pyc" -exec rm -f {} \;
+  if [ `uname -s` == "AIX" ]; then
+    find "$base_dir" | grep -i ".*\.pyc" | xargs rm -f;
+  else
+    find "$base_dir" -iname "*.pyc" -exec rm -f {} \;
+  fi
 fi
 

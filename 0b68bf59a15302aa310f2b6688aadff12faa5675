@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7091edd1_65dccfd6",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2018-06-20T06:37:01Z",
+      "side": 1,
+      "message": "Done. I went with ToolchainBaseURL().",
+      "parentUuid": "939ba3fb_ed78d713",
+      "revId": "0b68bf59a15302aa310f2b6688aadff12faa5675",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "db07a1be_f5866e3a",
         "filename": "win_toolchain/get_toolchain_if_necessary.py",
         "patchSetId": 11
@@ -33,6 +51,24 @@
       "revId": "0b68bf59a15302aa310f2b6688aadff12faa5675",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "238d2dbf_646a1620",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2018-06-20T06:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db07a1be_f5866e3a",
+      "revId": "0b68bf59a15302aa310f2b6688aadff12faa5675",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

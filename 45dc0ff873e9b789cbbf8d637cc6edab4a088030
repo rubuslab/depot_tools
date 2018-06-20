@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "924de787_a40d855a",
+        "filename": "cpplint.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1163331
+      },
+      "writtenOn": "2018-06-20T17:44:16Z",
+      "side": 1,
+      "message": "I\u0027m assuming this should be reverted since this url doesn\u0027t even exist. right?",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 72,
+        "endChar": 67
+      },
+      "revId": "45dc0ff873e9b789cbbf8d637cc6edab4a088030",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94bb1cfd_436e530e",
+        "filename": "cpplint.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3054,
+      "author": {
+        "id": 1163331
+      },
+      "writtenOn": "2018-06-20T17:44:16Z",
+      "side": 1,
+      "message": "same here?",
+      "range": {
+        "startLine": 3053,
+        "startChar": 2,
+        "endLine": 3054,
+        "endChar": 0
+      },
+      "revId": "45dc0ff873e9b789cbbf8d637cc6edab4a088030",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

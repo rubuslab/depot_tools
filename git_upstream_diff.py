@@ -21,9 +21,14 @@ def main(args):
                       help=(
                         'Print a colorized wordwise diff '
                         'instead of line-wise diff'))
-  parser.add_argument('branch', nargs='?', default=current_branch,
-                      help='Show changes from a different branch')
+  parser.add_argument('branch', default=current_branch,
+                      help='Show changes from a different branch. Passing '
+                           '"HEAD" shows changes from the current branch, '
+                           'and allows the use of other arguments to git diff.')
   opts, extra_args = parser.parse_known_args(args)
+
+  if opts.branch == 'HEAD':
+    opts.branch = current_branch
 
   if not opts.branch or opts.branch == 'HEAD':
     print 'fatal: Cannot perform git-upstream-diff while not on a branch'

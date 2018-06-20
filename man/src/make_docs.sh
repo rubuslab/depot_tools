@@ -118,6 +118,10 @@ H
 a
  -a stylesheet=$(pwd)/git/Documentation/asciidoc-override.css
 .
+/XMLTO_EXTRA
+a
+ --skip-validation
+.
 -1
 j
 /^\$(MAN_HTML):

@@ -68,6 +68,7 @@
       "src@refs/branch-heads/67",
       "--refs",
       "refs/branch-heads/67",
+      "--no_shallow",
       "--disable-syntax-validation"
     ],
     "env_prefixes": {
@@ -165,7 +166,8 @@
       "--output_json",
       "/path/to/tmp/json",
       "--revision",
-      "src@f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9"
+      "src@f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9",
+      "--no_shallow"
     ],
     "env_prefixes": {
       "PATH": [

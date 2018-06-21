@@ -67,7 +67,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
   def ensure_checkout(self, gclient_config=None, suffix=None,
                       patch=True, update_presentation=True,
-                      patch_root=None, no_shallow=False,
+                      patch_root=None, no_shallow=True,
                       with_branch_heads=False, with_tags=False, refs=None,
                       patch_oauth2=None, oauth2_json=None,
                       use_site_config_creds=None, clobber=False,

@@ -68,6 +68,7 @@
       "src@HEAD",
       "--revision",
       "src/v8@experimental/feature",
+      "--no_shallow",
       "--disable-syntax-validation"
     ],
     "env_prefixes": {
@@ -168,7 +169,8 @@
       "--revision",
       "src@f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9",
       "--revision",
-      "src/v8@801ada225ddc271c132c3a35f03975671d43e399"
+      "src/v8@801ada225ddc271c132c3a35f03975671d43e399",
+      "--no_shallow"
     ],
     "env_prefixes": {
       "PATH": [

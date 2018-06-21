@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2952a6_403aa4cd",
+        "filename": "gsutil.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-06-21T14:29:17Z",
+      "side": 1,
+      "message": "Let\u0027s make this `vpython` so that gsutil\u0027s virtualenv activates.\n\nWhile you\u0027re at it, can you also change `yapf.bat` to use vpython as well?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 6
+      },
+      "revId": "ad9a0232f5776718f2a1b5e33c582bb6ce48c640",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

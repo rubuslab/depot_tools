@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c62f1e7c_6312e677",
+        "filename": "monitoring.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-21T21:45:51Z",
+      "side": 1,
+      "message": "What I don\u0027t like is \"instantiate a Monitor instance near the top\" part.\nBut it\u0027s an aesthetic choice. I reduced it to a single module-global object instance, but if you still think a Monitor class would be better, we could do that :)",
+      "parentUuid": "c92c6800_33de55fe",
+      "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "30389d2d_8f2b6278",
         "filename": "monitoring.py",
         "patchSetId": 7
@@ -33,6 +51,24 @@
       "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ddb20bdf_380b1501",
+        "filename": "monitoring.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-21T21:45:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30389d2d_8f2b6278",
+      "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "b0c2675a_d3eec378",
+        "filename": "monitoring.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-21T21:45:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66a8e3ac_8c138e63",
+      "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7d61b4b4_224ebaec",
         "filename": "monitoring.py",
         "patchSetId": 7
@@ -67,6 +121,24 @@
       "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c899e449_eaa2ddd2",
+        "filename": "monitoring.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-21T21:45:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d61b4b4_224ebaec",
+      "revId": "c9be5a4116ebab6b9b375168ad37b49deaf972fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

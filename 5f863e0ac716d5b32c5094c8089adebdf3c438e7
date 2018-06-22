@@ -22,6 +22,30 @@
       "revId": "5f863e0ac716d5b32c5094c8089adebdf3c438e7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28430a49_05f053ef",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2018-06-22T12:37:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d72b2b0e_c71da582",
+      "range": {
+        "startLine": 244,
+        "startChar": 24,
+        "endLine": 244,
+        "endChar": 25
+      },
+      "revId": "5f863e0ac716d5b32c5094c8089adebdf3c438e7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

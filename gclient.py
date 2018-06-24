@@ -1859,6 +1859,9 @@ class CipdDependency(Dependency):
 
   def ToLines(self):
     """Return a list of lines representing this in a DEPS file."""
+    def escape_cipd_var(package):
+      return re.sub('{', '{{', re.sub('}', '}}', package))
+
     s = []
     self._CreatePackageIfNecessary()
     if self._cipd_package.authority_for_subdir:
@@ -1874,7 +1877,7 @@ class CipdDependency(Dependency):
           cmp=lambda x, y: cmp(x.name, y.name)):
         s.extend([
             '      {',
-            '        "package": "%s",' % p.name,
+            '        "package": "%s",' % escape_cipd_var(p.name),
             '        "version": "%s",' % p.version,
             '      },',
         ])

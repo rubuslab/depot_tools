@@ -67,6 +67,24 @@
       "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b91129d6_dfa854d2",
+        "filename": "upload_metrics.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-26T20:57:29Z",
+      "side": 1,
+      "message": "So we can call it as a subprocess, so that gclient can return right away without waiting for the data to be uploaded.",
+      "parentUuid": "de43141c_4bce6456",
+      "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

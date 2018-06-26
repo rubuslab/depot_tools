@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aea153ec_1e611c00",
+        "filename": "metrics_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-26T17:56:54Z",
+      "side": 1,
+      "message": "nit: copyright header",
+      "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d1eb805_71cab58a",
+        "filename": "metrics_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-26T17:56:54Z",
+      "side": 1,
+      "message": "nit: only two lines",
+      "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "323cc411_d47b786e",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-26T17:56:54Z",
+      "side": 1,
+      "message": "Have you double-checked that nothing else imports gclient?",
+      "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de43141c_4bce6456",
+        "filename": "upload_metrics.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-26T17:56:54Z",
+      "side": 1,
+      "message": "nit: copyright header\n\nwhy is this a separate file, instead of doing the urlopen from within metrics.py or metrics_utils.py itself?",
+      "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

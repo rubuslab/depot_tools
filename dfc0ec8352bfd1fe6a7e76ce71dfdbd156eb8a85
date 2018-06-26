@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12a65933_616588fe",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1880,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-26T12:14:18Z",
+      "side": 1,
+      "message": "Is this the only place where this is needed?\nAnd just out of curiosity, when/how is this expanded?",
+      "range": {
+        "startLine": 1880,
+        "startChar": 41,
+        "endLine": 1880,
+        "endChar": 56
+      },
+      "revId": "dfc0ec8352bfd1fe6a7e76ce71dfdbd156eb8a85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "583da521_4abb82a2",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-26T12:14:18Z",
+      "side": 1,
+      "message": "Why is this needed?",
+      "range": {
+        "startLine": 729,
+        "startChar": 8,
+        "endLine": 729,
+        "endChar": 17
+      },
+      "revId": "dfc0ec8352bfd1fe6a7e76ce71dfdbd156eb8a85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

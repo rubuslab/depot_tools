@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "25a91e46_070bf53e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-06-26T13:07:27Z",
+      "side": 1,
+      "message": "Do you consider this part of \"Bug: 854219\"?",
+      "revId": "dfc0ec8352bfd1fe6a7e76ce71dfdbd156eb8a85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "12a65933_616588fe",
         "filename": "gclient.py",
         "patchSetId": 1

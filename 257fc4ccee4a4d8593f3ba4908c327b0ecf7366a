@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2b22d30_3e5fe290",
+        "filename": "tests/git_cache_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-27T21:35:24Z",
+      "side": 1,
+      "message": "Test that a RuntimeError is raised when git_cache is not configured :)",
+      "range": {
+        "startLine": 55,
+        "startChar": 6,
+        "endLine": 55,
+        "endChar": 21
+      },
+      "revId": "257fc4ccee4a4d8593f3ba4908c327b0ecf7366a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46324336_ca40648b",
+        "filename": "tests/git_cache_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-27T21:35:24Z",
+      "side": 1,
+      "message": "Why not use tempfile.NamedTemporaryFile?",
+      "range": {
+        "startLine": 71,
+        "startChar": 29,
+        "endLine": 71,
+        "endChar": 36
+      },
+      "revId": "257fc4ccee4a4d8593f3ba4908c327b0ecf7366a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

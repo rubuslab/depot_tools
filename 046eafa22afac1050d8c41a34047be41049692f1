@@ -50,6 +50,30 @@
     },
     {
       "key": {
+        "uuid": "c72e927c_c402e338",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-27T20:57:49Z",
+      "side": 1,
+      "message": "for internal func, i think removing doc entirely is fine. It doesn\u0027t really add value.",
+      "parentUuid": "51a9cabe_aede5cbd",
+      "range": {
+        "startLine": 14,
+        "startChar": 45,
+        "endLine": 14,
+        "endChar": 55
+      },
+      "revId": "046eafa22afac1050d8c41a34047be41049692f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c0329427_7261d8e9",
         "filename": "recipes/recipe_modules/gitiles/api.py",
         "patchSetId": 1

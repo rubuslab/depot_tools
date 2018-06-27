@@ -1769,6 +1769,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
       'CheckOwnersFormat',
       'CheckPatchFormatted',
       'CheckGNFormatted',
+      'CheckGNGenChecked',
       'CheckSingletonInHeaders',
       'CheckVPythonSpec',
       'RunPythonUnitTests', 'RunPylint',

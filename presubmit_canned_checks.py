@@ -1120,6 +1120,39 @@ def CheckGNFormatted(input_api, output_api):
   return warnings
 
 
+def CheckGNGenChecked(input_api, output_api):
+  """Verifies that gn check success."""
+  if not input_api.AffectedFiles(
+      file_filter=lambda x: x.LocalPath().endswith('.gn') or
+                            x.LocalPath().endswith('.gni') or
+                            x.LocalPath().endswith('.typemap')):
+    return []
+
+  import gclient_utils
+  import shutil
+  import subprocess
+  import tempfile
+
+  warnings = []
+  tmpdir = None
+  try:
+    tmpdir = tempfile.mkdtemp()
+    gn_path = input_api.os_path.join(
+        gclient_utils.GetBuildtoolsPlatformBinaryPath(),
+        'gn' + gclient_utils.GetExeSuffix())
+    cmd = [gn_path, 'gen', '--root=%s' % input_api.change.RepositoryRoot(),
+           '--check', tmpdir]
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    proc.wait()
+    if proc.returncode != 0:
+      warnings.append(output_api.PresubmitPromptWarning(
+          'Failed to run "gn gen --check".'))
+  finally:
+    if tmpdir:
+      shutil.rmtree(tmpdir)
+  return warnings
+
+
 def CheckCIPDManifest(input_api, output_api, path=None, content=None):
   """Verifies that a CIPD ensure file manifest is valid against all platforms.
 

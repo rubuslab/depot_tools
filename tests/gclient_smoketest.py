@@ -37,6 +37,7 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
     # Make sure it doesn't try to auto update when testing!
     self.env = os.environ.copy()
     self.env['DEPOT_TOOLS_UPDATE'] = '0'
+    self.env['DEPOT_TOOLS_METRICS'] = '0'
 
   def gclient(self, cmd, cwd=None):
     if not cwd:
@@ -715,8 +716,8 @@ class GClientSmokeGIT(GClientSmokeBase):
     stdout, stderr, retcode = self.gclient(['sync', '--deps', 'mac', '--jobs=1',
                                             '--revision',
                                             'src@' + self.githash('repo_5', 3)])
-    self.assertEquals(stderr, expected_stderr)
     self.assertEquals(2, retcode)
+    self.assertEquals(stderr, expected_stderr)
     self.checkBlock(stdout, expectated_stdout)
 
   def testRevInfo(self):

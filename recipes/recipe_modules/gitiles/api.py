@@ -1,4 +1,4 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
+# Copyright 2018 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -11,7 +11,7 @@ class Gitiles(recipe_api.RecipeApi):
   """Module for polling a git repository using the Gitiles web interface."""
 
   def _fetch(self, url, step_name, fmt, attempts=None, add_json_log=True,
-             log_limit=None, log_start=None, **kwargs):
+             log_limit=None, log_start=None, extract_to=None, **kwargs):
     """Fetches information from Gitiles.
 
     Arguments:
@@ -20,12 +20,16 @@ class Gitiles(recipe_api.RecipeApi):
       log_start: for log URLs, the start cursor for paging.
       add_json_log: if True, will spill out json into log.
     """
-    assert fmt in ('json', 'text')
+    assert fmt in ('json', 'text', 'archive')
+
     args = [
         '--json-file', self.m.json.output(add_json_log=add_json_log),
         '--url', url,
         '--format', fmt,
     ]
+    if fmt == 'archive':
+      assert extract_to is not None, 'archive format requires extract_to'
+      args.extend(['--extract-to', extract_to])
     if attempts:
       args.extend(['--attempts', attempts])
     if log_limit is not None:
@@ -37,9 +41,8 @@ class Gitiles(recipe_api.RecipeApi):
       args.extend([
           '--accept-statuses',
           ','.join([str(s) for s in accept_statuses])])
-    a = self.m.python(
+    return self.m.python(
         step_name, self.resource('gerrit_client.py'), args, **kwargs)
-    return a
 
   def refs(self, url, step_name='refs', attempts=None):
     """Returns a list of refs in the remote repository."""
@@ -140,3 +143,21 @@ class Gitiles(recipe_api.RecipeApi):
     if step_result.json.output['value'] is None:
       return None
     return base64.b64decode(step_result.json.output['value'])
+
+  def download_archive(self, repository_url, destination,
+                       revision='refs/heads/master'):
+    fetch_url = self.m.url.join(repository_url, '+archive/%s.tgz' % (revision,))
+    step_result = self._fetch(
+      fetch_url,
+      'download %s @ %s' % (repository_url, revision),
+      fmt='archive',
+      add_json_log=False,
+      extract_to=destination,
+      step_test_data=lambda: self.m.json.test_api.output({
+        'filecount': 1337,
+        'bytes': 0xbadc0ffee,
+      })
+    )
+    j = step_result.json.output
+    step_result.presentation.step_text += (
+      '<br/>%s files - %.02f MB' % (j['filecount'], j['bytes'] / (1024.0**2)))

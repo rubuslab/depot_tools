@@ -548,6 +548,25 @@
     "name": "fetch master:NONEXISTENT"
   },
   {
+    "cmd": [
+      "python",
+      "-u",
+      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "--json-file",
+      "/path/to/tmp/json",
+      "--url",
+      "https://chromium.googlesource.com/chromium/src/+archive/refs/heads/master.tgz",
+      "--format",
+      "archive",
+      "--extract-to",
+      "[START_DIR]/archive"
+    ],
+    "name": "download https://chromium.googlesource.com/chromium/src @ refs/heads/master",
+    "~followup_annotations": [
+      "@@@STEP_TEXT@<br/>1337 files - 47836.06 MB@@@"
+    ]
+  },
+  {
     "name": "$result",
     "recipe_result": null,
     "status_code": 0

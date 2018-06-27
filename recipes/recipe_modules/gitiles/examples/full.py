@@ -5,6 +5,7 @@
 DEPS = [
     'gitiles',
     'recipe_engine/json',
+    'recipe_engine/path',
     'recipe_engine/properties',
 ]
 
@@ -21,6 +22,8 @@ def RunSteps(api):
   assert data == 'foobar'
   data = api.gitiles.download_file(url, 'NONEXISTENT', attempts=1,
                                    accept_statuses=[404])
+
+  api.gitiles.download_archive(url, api.path['start_dir'].join('archive'))
 
 
 def GenTests(api):

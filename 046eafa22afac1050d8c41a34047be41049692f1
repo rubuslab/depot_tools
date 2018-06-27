@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51a9cabe_aede5cbd",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-06-27T00:54:02Z",
+      "side": 1,
+      "message": "Please document \u0027fmt\u0027 and \u0027extract_to\u0027 in Arguments or remove Arguments completely.",
+      "range": {
+        "startLine": 14,
+        "startChar": 45,
+        "endLine": 14,
+        "endChar": 55
+      },
+      "revId": "046eafa22afac1050d8c41a34047be41049692f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0329427_7261d8e9",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-06-27T00:54:02Z",
+      "side": 1,
+      "message": "Document arguments, in particular what\u0027s expectation for \u0027destination\u0027. Is it a directory? Will it be auto-created or should it be created by the caller?",
+      "range": {
+        "startLine": 147,
+        "startChar": 6,
+        "endLine": 147,
+        "endChar": 22
+      },
+      "revId": "046eafa22afac1050d8c41a34047be41049692f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32f420bf_a71ad6f6",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-06-27T00:54:02Z",
+      "side": 1,
+      "message": "We should probably mark the destination as existing after this step in file\u0027s module mock, and perhaps containing some fake files.",
+      "range": {
+        "startLine": 156,
+        "startChar": 6,
+        "endLine": 156,
+        "endChar": 20
+      },
+      "revId": "046eafa22afac1050d8c41a34047be41049692f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c120ab37_34936710",
+        "filename": "recipes/recipe_modules/gitiles/resources/gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-06-27T00:54:02Z",
+      "side": 1,
+      "message": "This will fail if extract_to already exists. Is this intended?",
+      "range": {
+        "startLine": 110,
+        "startChar": 4,
+        "endLine": 110,
+        "endChar": 32
+      },
+      "revId": "046eafa22afac1050d8c41a34047be41049692f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8f5a13e_e5d1c48b",
+        "filename": "recipes/recipe_modules/gitiles/resources/gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-06-27T00:54:02Z",
+      "side": 1,
+      "message": "\u0027 \u003d \u0027",
+      "range": {
+        "startLine": 150,
+        "startChar": 13,
+        "endLine": 150,
+        "endChar": 14
+      },
+      "revId": "046eafa22afac1050d8c41a34047be41049692f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64187972_c22a6561",
+        "filename": "recipes/recipe_modules/gitiles/resources/gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-06-27T00:54:02Z",
+      "side": 1,
+      "message": "paranoia mode: can you please double check that tarfile doesn\u0027t allow extracting files named like \u0027../../../../sdsdsd\u0027?",
+      "range": {
+        "startLine": 165,
+        "startChar": 8,
+        "endLine": 165,
+        "endChar": 22
+      },
+      "revId": "046eafa22afac1050d8c41a34047be41049692f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05b0aeb8_9c531930",
+        "filename": "recipes/recipe_modules/gitiles/resources/gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-06-27T00:54:02Z",
+      "side": 1,
+      "message": "wat?",
+      "range": {
+        "startLine": 187,
+        "startChar": 5,
+        "endLine": 187,
+        "endChar": 28
+      },
+      "revId": "046eafa22afac1050d8c41a34047be41049692f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

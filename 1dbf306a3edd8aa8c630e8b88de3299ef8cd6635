@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "96a4a4be_a34b0371",
+        "filename": "metrics_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-27T21:23:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aea153ec_1e611c00",
+      "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d1eb805_71cab58a",
         "filename": "metrics_utils.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0b687ddb_8a239932",
+        "filename": "metrics_utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-27T21:23:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d1eb805_71cab58a",
+      "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "323cc411_d47b786e",
         "filename": "tests/gclient_test.py",
         "patchSetId": 9
@@ -50,6 +86,24 @@
       "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47a7ab36_2b1afe97",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-06-27T21:23:44Z",
+      "side": 1,
+      "message": "Done, thanks :)",
+      "parentUuid": "323cc411_d47b786e",
+      "revId": "1dbf306a3edd8aa8c630e8b88de3299ef8cd6635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

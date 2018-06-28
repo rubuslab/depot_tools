@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "660e94fc_c8407895",
+        "filename": "gclient.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1362,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-28T19:03:26Z",
+      "side": 1,
+      "message": "`if cache_dir and cache_dir is not UNSET_CACHE_DIR`",
+      "revId": "06979125ace9040fa9bf11e67ff1ce2c8fecc7c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

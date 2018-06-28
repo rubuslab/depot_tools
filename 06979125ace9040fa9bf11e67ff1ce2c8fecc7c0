@@ -16,6 +16,24 @@
       "revId": "06979125ace9040fa9bf11e67ff1ce2c8fecc7c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df5c0d60_1c5bf10d",
+        "filename": "gclient.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1362,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-06-28T19:22:50Z",
+      "side": 1,
+      "message": "I think this logic is correct as is:\n  * If its not the \"UNSET\" placeholder\n    * if it\u0027s not None\n      # do path adjustment\n    * Set the value on git_cache.Mirror (either None or a path)\n\nIf I combine them, then I\u0027d need a second if statement for the setting line below.",
+      "parentUuid": "660e94fc_c8407895",
+      "revId": "06979125ace9040fa9bf11e67ff1ce2c8fecc7c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b6ff4c54_0b0a9556",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-28T20:18:00Z",
+      "side": 1,
+      "message": "will skip them and raise StepFailure after extracting all other files.",
+      "range": {
+        "startLine": 160,
+        "startChar": 18,
+        "endLine": 160,
+        "endChar": 19
+      },
+      "revId": "577c784b21a3113742dbf3d30309a3439481874a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17668a97_73006094",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-28T20:18:00Z",
+      "side": 1,
+      "message": "ref or revision",
+      "range": {
+        "startLine": 166,
+        "startChar": 26,
+        "endLine": 166,
+        "endChar": 29
+      },
+      "revId": "577c784b21a3113742dbf3d30309a3439481874a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e312bdc_fdfa28c0",
+        "filename": "recipes/recipe_modules/gitiles/examples/full.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-28T20:18:00Z",
+      "side": 1,
+      "message": "shouldn\u0027t these be like \u0027../a\u0027 ?",
+      "range": {
+        "startLine": 89,
+        "startChar": 22,
+        "endLine": 89,
+        "endChar": 40
+      },
+      "revId": "577c784b21a3113742dbf3d30309a3439481874a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "335319b0_fb6460f7",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1863,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-06-28T19:12:00Z",
+      "side": 1,
+      "message": "Any reason you\u0027re not using\n\n  package.replace(\u0027{\u0027, \u0027{{\u0027).replace(\u0027}\u0027, \u0027}}\u0027)\n\n? It may do less-efficient string concatenation, but it\u0027s (imo) more readable, and doesn\u0027t require spinning up the re infrastructure.",
+      "revId": "dfc0ec8352bfd1fe6a7e76ce71dfdbd156eb8a85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "12a65933_616588fe",
         "filename": "gclient.py",
         "patchSetId": 1

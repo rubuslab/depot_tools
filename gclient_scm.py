@@ -221,6 +221,8 @@ class GitWrapper(SCMWrapper):
     if self.out_cb:
       filter_kwargs['predicate'] = self.out_cb
     self.filter = gclient_utils.GitFilter(**filter_kwargs)
+    # The upstream of the revision this dep will be synced to.
+    self.revision_upstream = None
 
   @staticmethod
   def BinaryExists():
@@ -384,6 +386,13 @@ class GitWrapper(SCMWrapper):
     url, deps_revision = gclient_utils.SplitUrlRevision(self.url)
     revision = deps_revision
     managed = True
+
+    self.revision_upstream = default_rev
+    if options.revision and ':' in options.revision:
+      self.revision_upstream, options.revision = options.revision.split(':')
+      if not options.revision or options.revision == 'HEAD':
+        options.revision = self.revision_upstream
+
     if options.revision:
       # Override the revision number.
       revision = str(options.revision)
@@ -417,6 +426,9 @@ class GitWrapper(SCMWrapper):
     else:
       # hash is also a tag, only make a distinction at checkout
       rev_type = "hash"
+
+    if rev_type == "branch":
+      self.revision_upstream = revision
 
     mirror = self._GetMirror(url, options)
     if mirror:

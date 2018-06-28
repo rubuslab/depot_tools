@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a5d07c15_63e3b4db",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-06-28T14:52:28Z",
+      "side": 1,
+      "message": "not really, though it\u0027s related.",
+      "parentUuid": "25a91e46_070bf53e",
+      "revId": "dfc0ec8352bfd1fe6a7e76ce71dfdbd156eb8a85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "12a65933_616588fe",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "0288e2b0_e0ec99d3",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1880,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-06-28T14:52:28Z",
+      "side": 1,
+      "message": "I believe so.\n\nNot sure I follow your question, but this ensures that flattened DEPS files also wind up with {{escaped_variables}} rather than {not_escaped_variables}",
+      "parentUuid": "12a65933_616588fe",
+      "range": {
+        "startLine": 1880,
+        "startChar": 41,
+        "endLine": 1880,
+        "endChar": 56
+      },
+      "revId": "dfc0ec8352bfd1fe6a7e76ce71dfdbd156eb8a85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "583da521_4abb82a2",
         "filename": "testing_support/fake_repos.py",
         "patchSetId": 1
@@ -62,6 +104,30 @@
       "revId": "dfc0ec8352bfd1fe6a7e76ce71dfdbd156eb8a85",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94697879_3f5a4d8b",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-06-28T14:52:28Z",
+      "side": 1,
+      "message": "because if vars isn\u0027t present, gclient doesn\u0027t attempt to do variable replacement -- https://codesearch.chromium.org/chromium/tools/depot_tools/gclient_eval.py?rcl\u003db3853afe341f2c478f07edba8ac4e60ea833c3b1\u0026l\u003d218",
+      "parentUuid": "583da521_4abb82a2",
+      "range": {
+        "startLine": 729,
+        "startChar": 8,
+        "endLine": 729,
+        "endChar": 17
+      },
+      "revId": "dfc0ec8352bfd1fe6a7e76ce71dfdbd156eb8a85",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

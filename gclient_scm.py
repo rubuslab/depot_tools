@@ -411,8 +411,9 @@ class GitWrapper(SCMWrapper):
       revision = ''.join(remote_ref)
       rev_type = "branch"
     elif revision.startswith('refs/'):
-      # Local branch? We probably don't want to support, since DEPS should
-      # always specify branches as they are in the upstream repo.
+      # Most likely a refs/branches/...
+      self._Fetch(options, refspec='{ref}:{ref}'.format(ref=revision),
+                  remote=self.url)
       rev_type = "branch"
     else:
       # hash is also a tag, only make a distinction at checkout

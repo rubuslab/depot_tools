@@ -422,6 +422,72 @@ class CipdTest(unittest.TestCase):
         '}',
     ]))
 
+  def test_preserves_version_prefix(self):
+    local_scope = gclient_eval.Exec('\n'.join([
+        'deps = {',
+        '    "src/cipd/package": {',
+        '        "packages": [',
+        '            {',
+        '                "package": "some/cipd/package",',
+        '                "version": "git_revision:abcd",',
+        '            },',
+        '        ],',
+        '        "dep_type": "cipd",',
+        '    },',
+        '}',
+    ]))
+
+    gclient_eval.SetCIPD(
+        local_scope, 'src/cipd/package', 'some/cipd/package', 'dcba')
+    result = gclient_eval.RenderDEPSFile(local_scope)
+
+    self.assertEqual(result, '\n'.join([
+        'deps = {',
+        '    "src/cipd/package": {',
+        '        "packages": [',
+        '            {',
+        '                "package": "some/cipd/package",',
+        '                "version": "git_revision:dcba",',
+        '            },',
+        '        ],',
+        '        "dep_type": "cipd",',
+        '    },',
+        '}',
+    ]))
+
+  def test_preserves_escaped_vars(self):
+    local_scope = gclient_eval.Exec('\n'.join([
+        'deps = {',
+        '    "src/cipd/package": {',
+        '        "packages": [',
+        '            {',
+        '                "package": "package/${{platform}}",',
+        '                "version": "git_revision:abcd",',
+        '            },',
+        '        ],',
+        '        "dep_type": "cipd",',
+        '    },',
+        '}',
+    ]))
+
+    gclient_eval.SetCIPD(
+        local_scope, 'src/cipd/package', 'package/${platform}', 'dcba')
+    result = gclient_eval.RenderDEPSFile(local_scope)
+
+    self.assertEqual(result, '\n'.join([
+        'deps = {',
+        '    "src/cipd/package": {',
+        '        "packages": [',
+        '            {',
+        '                "package": "package/${{platform}}",',
+        '                "version": "git_revision:dcba",',
+        '            },',
+        '        ],',
+        '        "dep_type": "cipd",',
+        '    },',
+        '}',
+    ]))
+
 
 class RevisionTest(unittest.TestCase):
   def assert_gets_and_sets_revision(self, before, after, rev_before='deadbeef'):
@@ -552,6 +618,24 @@ class RevisionTest(unittest.TestCase):
     ]
     self.assert_gets_and_sets_revision(before, after, rev_before=None)
 
+  def test_preserves_variables(self):
+    before = [
+        'vars = {',
+        '  "src_root": "src"',
+        '}',
+        'deps = {',
+        '  "{src_root}/dep": "https://example.com/dep.git@deadbeef",',
+        '}',
+    ]
+    after = [
+        'vars = {',
+        '  "src_root": "src"',
+        '}',
+        'deps = {',
+        '  "{src_root}/dep": "https://example.com/dep.git@deadfeed",',
+        '}',
+    ]
+    self.assert_gets_and_sets_revision(before, after)
 
   def test_preserves_formatting(self):
     before = [

@@ -725,7 +725,8 @@ def SetCIPD(gclient_dict, dep_name, package_name, new_version):
         "The deps entry for %s:%s has no formatting information." %
         (dep_name, package_name))
 
-  new_version = 'version:' + new_version
+  prefix = packages[0]['version'].split(':')[0]
+  new_version = prefix + ':' + new_version
   _UpdateAstString(tokens, node, new_version)
   packages[0].SetNode('version', new_version, node)
 

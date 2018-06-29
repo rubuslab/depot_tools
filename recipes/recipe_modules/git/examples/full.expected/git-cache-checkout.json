@@ -23,6 +23,7 @@
     ],
     "cwd": "[START_DIR]/src",
     "env": {
+      "GIT_CACHE_PATH": "[CACHE]/git",
       "PATH": "RECIPE_PACKAGE_REPO[depot_tools]:<PATH>"
     },
     "infra_step": true,
@@ -34,12 +35,11 @@
       "cache",
       "exists",
       "--quiet",
-      "--cache-dir",
-      "[CACHE]/git",
       "https://chromium.googlesource.com/chromium/src.git"
     ],
     "cwd": "[START_DIR]/src",
     "env": {
+      "GIT_CACHE_PATH": "[CACHE]/git",
       "PATH": "RECIPE_PACKAGE_REPO[depot_tools]:<PATH>"
     },
     "infra_step": true,
@@ -56,6 +56,7 @@
     ],
     "cwd": "[START_DIR]/src",
     "env": {
+      "GIT_CACHE_PATH": "[CACHE]/git",
       "PATH": "RECIPE_PACKAGE_REPO[depot_tools]:<PATH>"
     },
     "infra_step": true,

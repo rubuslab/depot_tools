@@ -54,8 +54,6 @@
       "src",
       "--revision_mapping_file",
       "{\"got_angle_revision\": \"src/third_party/angle\", \"got_cr_revision\": \"src\", \"got_revision\": \"src\", \"got_v8_revision\": \"src/v8\"}",
-      "--git-cache-dir",
-      "[GIT_CACHE]",
       "--cleanup-dir",
       "[CLEANUP]/bot_update",
       "--gerrit_repo",
@@ -68,6 +66,9 @@
       "src@experimental/feature",
       "--disable-syntax-validation"
     ],
+    "env": {
+      "GIT_CACHE_PATH": "[GIT_CACHE]"
+    },
     "env_prefixes": {
       "PATH": [
         "RECIPE_PACKAGE_REPO[depot_tools]"
@@ -156,8 +157,6 @@
       "src",
       "--revision_mapping_file",
       "{\"got_angle_revision\": \"src/third_party/angle\", \"got_cr_revision\": \"src\", \"got_revision\": \"src\", \"got_v8_revision\": \"src/v8\"}",
-      "--git-cache-dir",
-      "[GIT_CACHE]",
       "--cleanup-dir",
       "[CLEANUP]/bot_update",
       "--output_json",
@@ -165,6 +164,9 @@
       "--revision",
       "src@f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9"
     ],
+    "env": {
+      "GIT_CACHE_PATH": "[GIT_CACHE]"
+    },
     "env_prefixes": {
       "PATH": [
         "RECIPE_PACKAGE_REPO[depot_tools]"

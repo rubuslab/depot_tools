@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b81ea5eb_a43b2d12",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-06-29T23:33:03Z",
+      "side": 1,
+      "message": "nit: visually fits in one line.",
+      "range": {
+        "startLine": 322,
+        "startChar": 4,
+        "endLine": 323,
+        "endChar": 58
+      },
+      "revId": "3dbe764df53659f55da265296c76cab9bc08c327",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "024a3317597b06418efea2d45aa54dd2a7030c8a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca718c95_284f4d74",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 752,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-07-01T01:03:26Z",
+      "side": 1,
+      "message": "Fix in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1121816",
+      "parentUuid": "4da9a80e_7c272e1f",
+      "range": {
+        "startLine": 752,
+        "startChar": 23,
+        "endLine": 752,
+        "endChar": 42
+      },
+      "revId": "024a3317597b06418efea2d45aa54dd2a7030c8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

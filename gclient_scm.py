@@ -389,6 +389,7 @@ class GitWrapper(SCMWrapper):
     url, deps_revision = gclient_utils.SplitUrlRevision(self.url)
     revision = deps_revision
     managed = True
+
     if options.revision:
       # Override the revision number.
       revision = str(options.revision)
@@ -410,6 +411,27 @@ class GitWrapper(SCMWrapper):
       verbose = ['--verbose']
       printed_path = True
 
+    mirror = self._GetMirror(url, options)
+    if mirror:
+      url = mirror.mirror_path
+
+    # Support the 'branch:revision' syntax.
+    # If we're using a mirror, add it to the fetch config so it's added to the
+    # mirror when we call _UpdateMirrorIfNotContains.
+    # If the revision is not already present in the checkout, it will be fetched
+    # once we call _AutoFetchRef.
+    if ':' in revision:
+      ref, revision = revision.split(':')
+      if (not ref.startswith('refs/')
+          or not gclient_utils.IsFullGitSha(revision)):
+        raise gclient_utils.Error(
+            'Invalid "branch:revision" format: %s:%s. branch must start with '
+            '"refs/" and revision must be a Git hash.' % (ref, revision))
+      if mirror:
+        self._Run(['config', 'remote.%s.fetch' % self.remote,
+                   '--add', '+%(ref)s:%(ref)s' % {'ref': ref}],
+                  options)
+
     remote_ref = scm.GIT.RefToRemoteRef(revision, self.remote)
     if remote_ref:
       # Rewrite remote refs to their local equivalents.
@@ -422,10 +444,6 @@ class GitWrapper(SCMWrapper):
     else:
       # hash is also a tag, only make a distinction at checkout
       rev_type = "hash"
-
-    mirror = self._GetMirror(url, options)
-    if mirror:
-      url = mirror.mirror_path
 
     # If we are going to introduce a new project, there is a possibility that
     # we are syncing back to a state where the project was originally a
@@ -1216,9 +1234,7 @@ class GitWrapper(SCMWrapper):
     """Attempts to fetch |revision| if not available in local repo.
 
     Returns possibly updated revision."""
-    try:
-      self._Capture(['rev-parse', revision])
-    except subprocess2.CalledProcessError:
+    if not scm.GIT.IsValidRevision(self.checkout_path, revision):
       self._Fetch(options, refspec=revision)
       revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
     return revision

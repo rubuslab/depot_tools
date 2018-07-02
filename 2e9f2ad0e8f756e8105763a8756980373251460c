@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1781a323_23583782",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-07-02T17:16:22Z",
+      "side": 1,
+      "message": "I have not generated expectation changes for this file yet, since CL depends on a change in depot_tools and until that lands, the expectations would not be correct anyway.",
+      "revId": "2e9f2ad0e8f756e8105763a8756980373251460c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

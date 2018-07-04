@@ -808,6 +808,38 @@ class GclientTest(trial_dir.TestCase):
         ],
         self._get_processed())
 
+  def testRecursedepsNoExtDeps(self):
+    """Verifies proper recursion into DEPS file present in existing directory.
+
+       The directory is not pulled as an external dependency."""
+    write(
+        '.gclient',
+        'solutions = [\n'
+        '  { "name": "foo", "url": "svn://example.com/foo" },\n'
+        ']')
+    write(
+        os.path.join('foo', 'DEPS'),
+        # No external dependency at root level
+        'deps = {\n'
+        '}\n'
+        'recursedeps = ["foo/bar"]')
+    write(
+        os.path.join('foo', 'bar', 'DEPS'),
+        'deps = {\n'
+        '  "baz": "svn://example.com/openbaz",\n'
+        '}')
+
+    options, _ = gclient.OptionParser().parse_args([])
+    obj = gclient.GClient.LoadCurrentConfig(options)
+    obj.RunOnDeps('None', [])
+    self.assertEquals(
+        [
+          ('foo', 'svn://example.com/foo'),
+          ('baz', 'svn://example.com/openbaz'),
+        ],
+        self._get_processed())
+
+
   def testGitDeps(self):
     """Verifies gclient respects a .DEPS.git deps file.
 

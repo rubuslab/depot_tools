@@ -633,6 +633,31 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                 relative=use_relative_paths,
                 condition=condition))
 
+    # Handle subdirectories we must recurse into
+    # which are not external repositories.
+    for name in self.recursedeps:
+      if name not in deps:
+        # Fake dependency object that represents an in-tree directory,
+        # allowing us to use the existing recursion mecanism.
+        # I.e. we don't care whether the directory is pulled by gclient
+        #      or already checked out.
+        deps_to_add.append(
+            Dependency(
+                parent=self,
+                name=name,
+                # No associated url. That makes sense since sub-DEPS must
+                # be self-contained (not relying on its parent's url).
+                url=None,
+                managed=True,
+                custom_deps=None,
+                custom_vars=self.custom_vars,
+                custom_hooks=None,
+                deps_file=self.recursedeps.get(name, self.deps_file),
+                should_process=self.should_process,
+                should_recurse=True,             # That's the whole point
+                relative=use_relative_paths,
+                condition=None))                 # No associated condition
+
     deps_to_add.sort(key=lambda x: x.name)
     return deps_to_add
 

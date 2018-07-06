@@ -579,6 +579,14 @@ def force_solution_revision(solution_name, git_url, revisions, cwd):
     # first. See also https://crbug.com/740456 .
     treeish = branch if branch.startswith('refs/') else 'origin/%s' % branch
 
+  # If treeish is a branch, and there is a local branch with the same name,
+  # delete it so that we checkout the remote branch, not the local branch wich
+  # might not be up to date.
+  try:
+    git('branch', '-D', treeish, cwd=cwd)
+  except SubprocessCalledError:
+    pass
+
   # Note that -- argument is necessary to ensure that git treats `treeish`
   # argument as revision or ref, and not as a file/directory which happens to
   # have the exact same name.

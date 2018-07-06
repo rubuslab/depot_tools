@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71d8a7bd_070595fc",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-07-06T21:19:26Z",
+      "side": 1,
+      "message": "bot_update previously:\n (1) didn\u0027t touch local branches (thought it may have deleted the whole checkout)\n (2) left checkout in detached HEAD regardless of whether checkout was for refs/heads/master\u0027s HEAD or a revision.\n\nIt appears that you\u0027ve changed both (1) and (2). Intentionally?",
+      "range": {
+        "startLine": 582,
+        "startChar": 2,
+        "endLine": 588,
+        "endChar": 8
+      },
+      "revId": "ae8a617256f3f7e8081fb9d07a8083784d0ee5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

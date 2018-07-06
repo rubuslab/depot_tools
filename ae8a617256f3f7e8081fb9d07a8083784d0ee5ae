@@ -22,6 +22,30 @@
       "revId": "ae8a617256f3f7e8081fb9d07a8083784d0ee5ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8070baed_a6214a1f",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-07-06T22:01:31Z",
+      "side": 1,
+      "message": "(1) was changed intentionally.\nDid I change (2)?",
+      "parentUuid": "71d8a7bd_070595fc",
+      "range": {
+        "startLine": 582,
+        "startChar": 2,
+        "endLine": 588,
+        "endChar": 8
+      },
+      "revId": "ae8a617256f3f7e8081fb9d07a8083784d0ee5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

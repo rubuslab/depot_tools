@@ -93,8 +93,13 @@ def main(argv):
     properties = {}
     if args.properties:
       try:
-        with open(args.properties) as fp:
-          properties.update(json.load(fp))
+        # Allow using pipes to stream properties from another command, e.g.
+        #   echo '{"foo": "bar", "baz": 42}' | buildbucket.py -p -
+        if args.properties == '-' and not sys.stdin.isatty():
+          properties.update(json.load(sys.stdin))
+        else:
+          with open(args.properties) as fp:
+            properties.update(json.load(fp))
       except (TypeError, ValueError):
         sys.stderr.write('%s contained invalid JSON dict.\n' % args.properties)
         raise

@@ -46,6 +46,30 @@
       "revId": "ae8a617256f3f7e8081fb9d07a8083784d0ee5ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbd20b86_dc082b07",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-07-06T22:22:09Z",
+      "side": 1,
+      "message": "(1) ACK.\n(2) I assumed you did since you\u0027ve been improving bot_update (and thank you for that), but I haven\u0027t traced it to specific CL. As quoted in https://bugs.chromium.org/p/chromium/issues/detail?id\u003d859703#c2 bot_update step log contains this line:\n  \u003d\u003d\u003dRunning git checkout --force v2spa -- \u003d\u003d\u003d\n\nIf you look at previous V8 builds on a branch, you\u0027d see this:\n  \u003d\u003d\u003dRunning git checkout --force origin/vee-eight-lkgr -- \u003d\u003d\u003d\n(see https://crbug.com/859703#c5)",
+      "parentUuid": "8070baed_a6214a1f",
+      "range": {
+        "startLine": 582,
+        "startChar": 2,
+        "endLine": 588,
+        "endChar": 8
+      },
+      "revId": "ae8a617256f3f7e8081fb9d07a8083784d0ee5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

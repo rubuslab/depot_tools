@@ -22,6 +22,30 @@
       "revId": "00d4eb0800dbc49ff95e6ea8578db6be30445f38",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58e927b6_4f8e866b",
+        "filename": "buildbucket.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-07-09T21:28:56Z",
+      "side": 1,
+      "message": "Because that\u0027s how I check if input is a pipe or keyboard. OTH, I guess it does not hurt if the users is typing in the properties manually when using \"-\". Removed.",
+      "parentUuid": "d6796b43_fbe3b201",
+      "range": {
+        "startLine": 101,
+        "startChar": 42,
+        "endLine": 101,
+        "endChar": 60
+      },
+      "revId": "00d4eb0800dbc49ff95e6ea8578db6be30445f38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -24,10 +24,6 @@ class TryserverApi(recipe_api.RecipeApi):
     """Returns true iff the properties exist to match a Gerrit issue."""
     if self.m.properties.get('patch_storage') == 'gerrit':
       return True
-    # TODO(tandrii): remove this, once nobody is using buildbot Gerrit Poller.
-    return ('event.patchSet.ref' in self.m.properties and
-            'event.change.url' in self.m.properties and
-            'event.change.id' in self.m.properties)
 
   @property
   def is_patch_in_git(self):

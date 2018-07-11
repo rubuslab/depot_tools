@@ -604,6 +604,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             condition, self.get_vars())
 
       if dep_type == 'cipd':
+        if self._get_option('ignore_cipd_deps', False):
+          continue
         cipd_root = self.GetCipdRoot()
         for package in dep_value.get('packages', []):
           deps_to_add.append(
@@ -2873,6 +2875,9 @@ class OptionParser(optparse.OptionParser):
     self.add_option(
         '--no-nag-max', default=False, action='store_true',
         help='Ignored for backwards compatibility.')
+    self.add_option(
+        '--ignore-cipd-deps', action='store_true',
+        help='Skips processing of CIPD deps.')
 
   def parse_args(self, args=None, values=None):
     """Integrates standard options processing."""

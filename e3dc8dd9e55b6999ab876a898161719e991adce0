@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f82c51ca_fa8b74f3",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2878,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-11T23:06:03Z",
+      "side": 1,
+      "message": "I would prefer\n\n  self.add_option(\u0027--ignore-dep-type\u0027, choices\u003d[\u0027git\u0027, \u0027cipd\u0027], ...)\n\nfor the sake of symmetry and flexibility. And I concur with Edward, at this point it is probably better to have this flag just on CMDrevinfo, not at the top-level.",
+      "revId": "e3dc8dd9e55b6999ab876a898161719e991adce0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

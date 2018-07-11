@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "17f6a8fd_184c8359",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-11T22:58:44Z",
+      "side": 1,
+      "message": "Why is this change necessary? At the least, update the comment on the line above it.",
+      "revId": "e55324b2c1cf262700fa188643f99d81292ffc2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c025b528_24e45447",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-11T22:58:44Z",
+      "side": 1,
+      "message": "could be ref, remote_ref \u003d None, None, if you like that initialization style.",
+      "revId": "e55324b2c1cf262700fa188643f99d81292ffc2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1d64e39_480cb674",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-11T22:58:44Z",
+      "side": 1,
+      "message": "This line seems really weird. Can you comment on the possible return types of RefToRemoteRef above?",
+      "revId": "e55324b2c1cf262700fa188643f99d81292ffc2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4fe1e33_1860695a",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-11T22:58:44Z",
+      "side": 1,
+      "message": "There are a bunch of \u0027ref or revision\u0027 statements above, meaning that this code expects to encounter cases where ref is \u0027\u0027 or None. Make sure that you handle that case in these human-readable statements too.",
+      "revId": "e55324b2c1cf262700fa188643f99d81292ffc2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8ab0411_90e3d88e",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 920,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-11T22:58:44Z",
+      "side": 1,
+      "message": "Why is this change necessary? Won\u0027t IsGitSha return False for any False-y input?",
+      "revId": "e55324b2c1cf262700fa188643f99d81292ffc2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -144,6 +144,8 @@ class CookiesAuthenticator(Authenticator):
             '600.' % path)
       with open(path) as fd:
         content = fd.read()
+    else:
+      return netrc.netrc(os.devnull)
 
     # Load the '.netrc' file. We strip comments from it because processing them
     # can trigger a bug in Windows. See crbug.com/664664.

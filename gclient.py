@@ -2576,6 +2576,9 @@ def CMDsync(parser, args):
   parser.add_option('--no-reset-patch-ref', action='store_false',
                     dest='reset_patch_ref', default=True,
                     help='Bypass calling reset after patching the ref.')
+  parser.add_option('--reset-fetch-config', action='store_true', default=False,
+                    help='Reset the fetch config before syncing.')
+
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
 

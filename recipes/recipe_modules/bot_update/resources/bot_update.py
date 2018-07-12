@@ -653,7 +653,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, git_cache_dir, cleanup_dir):
   name = sln['name']
   url = sln['url']
   populate_cmd = (['cache', 'populate', '--ignore_locks', '-v',
-                   '--cache-dir', git_cache_dir, url])
+                   '--cache-dir', git_cache_dir, url, '--reset-fetch-config'])
   for ref in refs:
     populate_cmd.extend(['--ref', ref])
 

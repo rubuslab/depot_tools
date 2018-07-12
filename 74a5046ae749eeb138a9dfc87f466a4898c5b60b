@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e3c9b73c_6bcada20",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 1272456
+      },
+      "writtenOn": "2018-07-12T01:25:48Z",
+      "side": 1,
+      "message": "Switched to just None. The tests seem to pass.\n\nI originally did this because I wasn\u0027t sure if dep_type was guaranteed to have a value (other than None or \u0027\u0027). Is it? If not, this could exclude some deps accidentally when this parameter isn\u0027t set (which is most of the time).",
+      "parentUuid": "cc79aa70_c894d3cf",
+      "range": {
+        "startLine": 607,
+        "startChar": 45,
+        "endLine": 607,
+        "endChar": 51
+      },
+      "revId": "74a5046ae749eeb138a9dfc87f466a4898c5b60b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bb70dd84_0a17e8b2",
         "filename": "tests/gclient_test.py",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "74a5046ae749eeb138a9dfc87f466a4898c5b60b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0575a370_6a8b1029",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 1272456
+      },
+      "writtenOn": "2018-07-12T01:25:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bb70dd84_0a17e8b2",
+      "range": {
+        "startLine": 1036,
+        "startChar": 15,
+        "endLine": 1036,
+        "endChar": 54
+      },
+      "revId": "74a5046ae749eeb138a9dfc87f466a4898c5b60b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

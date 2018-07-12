@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cc79aa70_c894d3cf",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-07-12T01:21:21Z",
+      "side": 1,
+      "message": "nit: Why \u0027NONE\u0027 instead of None or \u0027\u0027?\nThis is OK, just somewhat surprising :)",
+      "range": {
+        "startLine": 607,
+        "startChar": 45,
+        "endLine": 607,
+        "endChar": 51
+      },
+      "revId": "74a5046ae749eeb138a9dfc87f466a4898c5b60b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb70dd84_0a17e8b2",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-07-12T01:21:21Z",
+      "side": 1,
+      "message": "Thanks!",
+      "range": {
+        "startLine": 1036,
+        "startChar": 15,
+        "endLine": 1036,
+        "endChar": 54
+      },
+      "revId": "74a5046ae749eeb138a9dfc87f466a4898c5b60b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

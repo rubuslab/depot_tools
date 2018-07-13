@@ -547,14 +547,14 @@ class GitWrapper(SCMWrapper):
       else:
         raise gclient_utils.Error('Invalid Upstream: %s' % upstream_branch)
 
+    self._UpdateBranchHeads(options, fetch=True)
+
     if not scm.GIT.IsValidRevision(self.checkout_path, revision, sha_only=True):
       # Update the remotes first so we have all the refs.
       remote_output = scm.GIT.Capture(['remote'] + verbose + ['update'],
               cwd=self.checkout_path)
       if verbose:
         self.Print(remote_output)
-
-    self._UpdateBranchHeads(options, fetch=True)
 
     revision = self._AutoFetchRef(options, revision)
 
@@ -1208,6 +1208,11 @@ class GitWrapper(SCMWrapper):
     """Adds, and optionally fetches, "branch-heads" and "tags" refspecs
     if requested."""
     need_fetch = fetch
+    if hasattr(options, 'reset_fetch_config') and options.reset_fetch_config:
+      self._Run(['config', '--unset-all', 'remote.%s.fetch' % self.remote],
+                options)
+      self._Run(['config', 'remote.%s.fetch' % self.remote,
+                 '+refs/heads/*:refs/remotes/%s/*' % self.remote], options)
     if hasattr(options, 'with_branch_heads') and options.with_branch_heads:
       config_cmd = ['config', 'remote.%s.fetch' % self.remote,
                     '+refs/branch-heads/*:refs/remotes/branch-heads/*',

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4124f069_936a9f05",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-13T23:28:59Z",
+      "side": 1,
+      "message": "Might be worth adding a comment (because this is such a core shared method) that the only command which sets this option is \u0027revinfo\u0027.",
+      "revId": "4fdd169ce7ccdd72b4e82d9bff850411311cb44e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f776199_95211a94",
+        "filename": "gclient_scm.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1207,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-07-13T22:26:49Z",
+      "side": 1,
+      "message": "Hm, this function is really doing two things; updating the fetch configs and fetching. WDYT about renaming this to _SetFetchConfigAndFetch? Or just splitting it into _SetFetchConfig and _Fetch? Then we don\u0027t need the confusing \u0027fetch\u0027 boolean either...",
+      "range": {
+        "startLine": 1207,
+        "startChar": 6,
+        "endLine": 1207,
+        "endChar": 17
+      },
+      "revId": "1bd1f3fc4ea77d1617f41c04c08793174a61fd43",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

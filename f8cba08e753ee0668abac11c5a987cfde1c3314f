@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24e47f70_9d9c5ae4",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2579,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-07-13T18:15:09Z",
+      "side": 1,
+      "message": "can we avoid adding a new option for this, but instead tie it to an existing option or combination of options like --force and/or --reset, maybe?",
+      "range": {
+        "startLine": 2579,
+        "startChar": 23,
+        "endLine": 2579,
+        "endChar": 28
+      },
+      "revId": "f8cba08e753ee0668abac11c5a987cfde1c3314f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

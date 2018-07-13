@@ -22,6 +22,30 @@
       "revId": "f8cba08e753ee0668abac11c5a987cfde1c3314f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4902773_4a28aee9",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2579,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-07-13T18:53:16Z",
+      "side": 1,
+      "message": "I think --reset would be reasonable.",
+      "parentUuid": "24e47f70_9d9c5ae4",
+      "range": {
+        "startLine": 2579,
+        "startChar": 23,
+        "endLine": 2579,
+        "endChar": 28
+      },
+      "revId": "f8cba08e753ee0668abac11c5a987cfde1c3314f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

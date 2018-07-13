@@ -1208,6 +1208,11 @@ class GitWrapper(SCMWrapper):
     """Adds, and optionally fetches, "branch-heads" and "tags" refspecs
     if requested."""
     need_fetch = fetch
+    if hasattr(options, 'reset_fetch_config') and options.reset_fetch_config:
+      self._Run(['config', '--unset-all', 'remote.%s.fetch' % self.remote],
+                options)
+      self._Run(['config', 'remote.%s.fetch' % self.remote,
+                 '+refs/heads/*:refs/remotes/%s/*' % self.remote], options)
     if hasattr(options, 'with_branch_heads') and options.with_branch_heads:
       config_cmd = ['config', 'remote.%s.fetch' % self.remote,
                     '+refs/branch-heads/*:refs/remotes/branch-heads/*',

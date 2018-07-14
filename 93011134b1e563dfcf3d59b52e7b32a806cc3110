@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24f5c493_a464bb8b",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2018-07-14T06:20:41Z",
+      "side": 1,
+      "message": "this was the only module to flag misplaced-bare-raise which seems like a useful check, so i just disabled it here rather than in pylintrc",
+      "revId": "93011134b1e563dfcf3d59b52e7b32a806cc3110",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

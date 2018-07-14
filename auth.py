@@ -494,6 +494,7 @@ class Authenticator(object):
           allow_user_interaction is False.
     """
     def get_loc_auth_tkn():
+      # pylint: disable=misplaced-bare-raise
       exi = sys.exc_info()
       if not use_local_auth:
         logging.error('Failed to create access token')

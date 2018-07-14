@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d713e205_ae93c8ae",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1003211
+      },
+      "writtenOn": "2018-07-14T00:11:12Z",
+      "side": 1,
+      "message": "There\u0027s no such flag. I see you landed https://chromium.googlesource.com/chromium/tools/depot_tools/+/455ee3a61e2bce75229ee007f73bd5a7b450284c to fix this, but I think that any bot which picked up this CL and didn\u0027t pick up your follow up is now broken.\n\nExamples:\nhttps://ci.chromium.org/p/infra/builders/luci.infra.try/Infra%20Presubmit/b8941071724217535440\nhttps://ci.chromium.org/p/infra-internal/builders/luci.infra-internal.try/build-internal-scripts-slave-presubmit/b8941071396228388256",
+      "range": {
+        "startLine": 359,
+        "startChar": 10,
+        "endLine": 359,
+        "endChar": 31
+      },
+      "revId": "579c98612b6ff77608ecb5fdebc40276b371ddd9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

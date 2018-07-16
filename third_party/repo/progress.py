@@ -49,6 +49,7 @@ class Progress(object):
 
     if text:
       text += ' ' + extra
+      text = text[:self.terminal_width()]  # Avoid wrapping
       spaces = max(self._width - len(text), 0)
       sys.stdout.write('%s%*s\r' % (text, spaces, ''))
       sys.stdout.flush()
@@ -73,3 +74,30 @@ class Progress(object):
     spaces = max(self._width - len(text), 0)
     sys.stdout.write('%s%*s\n' % (text, spaces, ''))
     sys.stdout.flush()
+
+  def terminal_width(self):
+    """Returns sys.maxsize if the width cannot be determined."""
+    try:
+      if not sys.stdout.isatty():
+        return sys.maxsize
+      if sys.platform == 'win32':
+        # From http://code.activestate.com/recipes/440694-determine-size-of-console-window-on-windows/
+        from ctypes import windll, create_string_buffer
+        handle = windll.kernel32.GetStdHandle(-12)  # -12 == stderr
+        console_screen_buffer_info = create_string_buffer(22)  # 22 == sizeof(console_screen_buffer_info)
+        if windll.kernel32.GetConsoleScreenBufferInfo(handle, console_screen_buffer_info):
+          import struct
+          _, _, _, _, _, left, _, right, _, _, _ = struct.unpack('hhhhHhhhhhh', console_screen_buffer_info.raw)
+          # Note that we return 1 less than the width since writing into the rightmost column
+          # automatically performs a line feed.
+          return right - left
+        return sys.maxsize
+      else:
+        import fcntl
+        import struct
+        import termios
+        packed = fcntl.ioctl(sys.stderr.fileno(), termios.TIOCGWINSZ, '\0' * 8)
+        _, columns, _, _ = struct.unpack('HHHH', packed)
+        return columns
+    except Exception:  # pylint: disable=broad-except
+      return sys.maxsize

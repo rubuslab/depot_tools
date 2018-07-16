@@ -22,6 +22,30 @@
       "revId": "1076f1cfc7247b8379ea4ae890f7a3f363d6adec",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "182940c4_f0f3edd6",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1327,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-07-16T23:41:13Z",
+      "side": 1,
+      "message": "Noted.\n\nRevert is already doing brutal things by nuking .cipd.",
+      "parentUuid": "53ba1a4c_7b0d887b",
+      "range": {
+        "startLine": 1327,
+        "startChar": 27,
+        "endLine": 1327,
+        "endChar": 54
+      },
+      "revId": "1076f1cfc7247b8379ea4ae890f7a3f363d6adec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

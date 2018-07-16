@@ -22,6 +22,30 @@
       "revId": "579c98612b6ff77608ecb5fdebc40276b371ddd9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fdce7d8_447bf033",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1176649
+      },
+      "writtenOn": "2018-07-16T07:42:01Z",
+      "side": 1,
+      "message": "Filed crbug.com/863805",
+      "parentUuid": "d713e205_ae93c8ae",
+      "range": {
+        "startLine": 359,
+        "startChar": 10,
+        "endLine": 359,
+        "endChar": 31
+      },
+      "revId": "579c98612b6ff77608ecb5fdebc40276b371ddd9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

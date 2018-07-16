@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c57a6d6_9b033309",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-07-16T19:54:30Z",
+      "side": 1,
+      "message": "isn\u0027t it $ParanoidMode?",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 39
+      },
+      "revId": "e022f4124d904698a73059d00c3989479a31284d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "revId": "c5c887f2579c67993f59a014d16e1b606045c750",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9acdb7fa_0778c6f7",
+        "filename": "tests/git_cache_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-07-17T22:29:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbf47e2d_4d02a9e8",
+      "revId": "c5c887f2579c67993f59a014d16e1b606045c750",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

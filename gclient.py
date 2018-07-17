@@ -1235,6 +1235,27 @@ class GClient(GitDependency):
   """Object that represent a gclient checkout. A tree of Dependency(), one per
   solution or DEPS entry."""
 
+  KNOWN_PROJECT_URLS = {
+    'https://chrome-internal.googlesource.com/chrome/ios_internal',
+    'https://chrome-internal.googlesource.com/infra/infra_internal',
+    'https://chromium.googlesource.com/breakpad/breakpad',
+    'https://chromium.googlesource.com/chromium/src',
+    'https://chromium.googlesource.com/chromium/tools/depot_tools',
+    'https://chromium.googlesource.com/crashpad/crashpad',
+    'https://chromium.googlesource.com/external/gyp',
+    'https://chromium.googlesource.com/external/naclports',
+    'https://chromium.googlesource.com/infra/goma/client',
+    'https://chromium.googlesource.com/infra/infra',
+    'https://chromium.googlesource.com/native_client/',
+    'https://chromium.googlesource.com/syzygy',
+    'https://chromium.googlesource.com/v8/v8',
+    'https://dart.googlesource.com/sdk',
+    'https://pdfium.googlesource.com/pdfium',
+    'https://skia.googlesource.com/buildbot',
+    'https://skia.googlesource.com/skia',
+    'https://webrtc.googlesource.com/src',
+  }
+
   DEPS_OS_CHOICES = {
     "aix6": "unix",
     "win32": "win",
@@ -1399,6 +1420,15 @@ it or fix the checkout.
       except KeyError:
         raise gclient_utils.Error('Invalid .gclient file. Solution is '
                                   'incomplete: %s' % s)
+    metrics.collector.add(
+        'project_urls',
+        [
+            dep.url if not dep.url.endswith('.git') else dep.url[:-len('.git')]
+            for dep in deps_to_add
+            if dep.FuzzyMatchUrl(self.KNOWN_PROJECT_URLS)
+        ]
+    )
+
     self.add_dependencies_and_close(deps_to_add, config_dict.get('hooks', []))
     logging.info('SetConfig() done')
 

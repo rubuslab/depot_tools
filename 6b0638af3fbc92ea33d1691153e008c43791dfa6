@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "94357f23_1be01b01",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1238,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-18T20:46:37Z",
+      "side": 1,
+      "message": "Any way we can compute this, rather than hardcode it?\n\nEither way, since this is intricately tied up with the monitoring, I\u0027d rather have this listed alongside metrics stuff, rather than in GClient.",
+      "revId": "6b0638af3fbc92ea33d1691153e008c43791dfa6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

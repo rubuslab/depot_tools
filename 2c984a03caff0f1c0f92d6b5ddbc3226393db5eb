@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad1209e5_f6530244",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1179305
+      },
+      "writtenOn": "2018-07-20T15:37:16Z",
+      "side": 0,
+      "message": "Investigating why the previous code failed, it seems to be the case that r[\u0027owner\u0027] contains the full email, while self.user does not. Relaxing the checked constraint here fixes the problem for me.",
+      "revId": "2c984a03caff0f1c0f92d6b5ddbc3226393db5eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

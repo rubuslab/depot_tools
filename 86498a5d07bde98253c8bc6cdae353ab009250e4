@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d7ac5ce0_3f96b5f1",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-07-23T18:33:35Z",
+      "side": 1,
+      "message": "Do you mean if git cherry-pick --abort could fail and leave the checkout in a weird state?\nThe help page doesn\u0027t seem to say anything about it.\n\nhttps://git-scm.com/docs/git-cherry-pick",
+      "parentUuid": "87768d6b_332aa629",
+      "revId": "86498a5d07bde98253c8bc6cdae353ab009250e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a3907be7_0169a459",
         "filename": "gclient_scm.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2018-07-23T16:40:17Z",
       "side": 1,
       "message": "The CalledProcessError technically could have been raised due to a failure in either \u0027checkout\u0027 call, in which case this cherry-pick --abort would itself fail.",
+      "revId": "86498a5d07bde98253c8bc6cdae353ab009250e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1857643e_c103176a",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-07-23T18:33:35Z",
+      "side": 1,
+      "message": "Yeah. But since we\u0027re going to raise a CalledProcessError anyway it wouldn\u0027t probably matter.\nI surrounded it with a try-except anyway, so it doesn\u0027t make the logs confusing.",
+      "parentUuid": "a3907be7_0169a459",
       "revId": "86498a5d07bde98253c8bc6cdae353ab009250e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

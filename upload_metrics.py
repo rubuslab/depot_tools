@@ -6,13 +6,14 @@
 import sys
 import urllib2
 
-import metrics_utils
+
+APP_URL = 'https://cit-cli-metrics.appspot.com'
 
 
 def main():
   metrics = raw_input()
   try:
-    urllib2.urlopen(metrics_utils.APP_URL + '/upload', metrics)
+    urllib2.urlopen(APP_URL + '/upload', metrics)
   except urllib2.HTTPError:
     pass
 

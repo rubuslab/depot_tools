@@ -10,8 +10,6 @@ import sys
 from third_party import colorama
 
 
-APP_URL = 'https://cit-cli-metrics.appspot.com'
-
 NOTICE_COUNTDOWN_HEADER = (
   '*****************************************************\n'
   '*  METRICS COLLECTION WILL START IN %2d EXECUTIONS   *'

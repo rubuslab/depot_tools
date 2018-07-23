@@ -20,10 +20,6 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from testing_support.auto_stub import TestCase
 
-import metrics
-# We have to disable monitoring before importing git_cl.
-metrics.DISABLE_METRICS_COLLECTION = True
-
 import git_cl
 import git_common
 import git_footers

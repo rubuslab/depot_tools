@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87768d6b_332aa629",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-23T16:40:17Z",
+      "side": 1,
+      "message": "Are there any unknown failure modes for this?",
+      "revId": "86498a5d07bde98253c8bc6cdae353ab009250e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3907be7_0169a459",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2018-07-23T16:40:17Z",
+      "side": 1,
+      "message": "The CalledProcessError technically could have been raised due to a failure in either \u0027checkout\u0027 call, in which case this cherry-pick --abort would itself fail.",
+      "revId": "86498a5d07bde98253c8bc6cdae353ab009250e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

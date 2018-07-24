@@ -1,16 +1,13 @@
-# Copyright 2014 Google Inc.
-# This program is free software; you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation; either version 2 of the License, or (at your option) any later
-# version.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License along with
-# this program; if not, write to the Free Software Foundation, Inc.,
-# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+# Copyright (c) 2014-2015 Brett Cannon <brett@python.org>
+# Copyright (c) 2014-2016 Claudiu Popa <pcmanticore@gmail.com>
+# Copyright (c) 2015 Simu Toni <simutoni@gmail.com>
+# Copyright (c) 2015 Pavel Roskin <proski@gnu.org>
+# Copyright (c) 2015 Viorel Stirbu <viorels@gmail.com>
+# Copyright (c) 2015 Cosmin Poieana <cmin@ropython.org>
+# Copyright (c) 2015 Ionel Cristian Maries <contact@ionelmc.ro>
+# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+# For details: https://github.com/PyCQA/pylint/blob/master/COPYING
+
 """Check Python 2 code for Python 2/3 source-compatible issues."""
 from __future__ import absolute_import, print_function
 

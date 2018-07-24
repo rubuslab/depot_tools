@@ -1,18 +1,23 @@
-# Copyright (c) 2006-2013 LOGILAB S.A. (Paris, FRANCE).
-# http://www.logilab.fr/ -- mailto:contact@logilab.fr
-#
-# This program is free software; you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation; either version 2 of the License, or (at your option) any later
-# version.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License along with
-# this program; if not, write to the Free Software Foundation, Inc.,
-# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+# -*- coding: utf-8 -*-
+# Copyright (c) 2006-2014 LOGILAB S.A. (Paris, FRANCE) <contact@logilab.fr>
+# Copyright (c) 2009 James Lingard <jchl@aristanetworks.com>
+# Copyright (c) 2012-2014 Google, Inc.
+# Copyright (c) 2014 David Shea <dshea@redhat.com>
+# Copyright (c) 2014 Holger Peters <email@holger-peters.de>
+# Copyright (c) 2014 Steven Myint <hg@stevenmyint.com>
+# Copyright (c) 2014-2016 Claudiu Popa <pcmanticore@gmail.com>
+# Copyright (c) 2014 Arun Persaud <arun@nubati.net>
+# Copyright (c) 2015 Rene Zhang <rz99@cornell.edu>
+# Copyright (c) 2015 Anentropic <ego@anentropic.com>
+# Copyright (c) 2015 Ionel Cristian Maries <contact@ionelmc.ro>
+# Copyright (c) 2015 Dmitry Pribysh <dmand@yandex.ru>
+# Copyright (c) 2015 Radu Ciorba <radu@devrandom.ro>
+# Copyright (c) 2016 Jürgen Hermann <jh@web.de>
+# Copyright (c) 2016 Filipe Brandenburger <filbranden@google.com>
+
+# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+# For details: https://github.com/PyCQA/pylint/blob/master/COPYING
+
 """try to find more bugs in the code using astroid inference capabilities
 """
 
@@ -41,12 +46,7 @@ from pylint.checkers.utils import (
     supports_subscript,
     safe_infer,
     has_known_bases)
-from pylint import utils
 
-
-_ZOPE_DEPRECATED = (
-    "This option is deprecated. Use generated-members instead."
-)
 BUILTINS = six.moves.builtins.__name__
 STR_FORMAT = "%s.str.format" % BUILTINS
 
@@ -281,18 +281,18 @@ class should be ignored. A mixin class is detected if its name ends with \
                          'deduced by static analysis. It supports qualified '
                          'module names, as well as Unix pattern matching.'}
                ),
+               # the defaults here are *stdlib* names that (almost) always
+               # lead to false positives, since their idiomatic use is
+               # 'too dynamic' for pylint to grok.
                ('ignored-classes',
-                {'default' : (),
+                {'default' : ('optparse.Values', 'thread._local', '_thread._local'),
                  'type' : 'csv',
                  'metavar' : '<members names>',
-                 'help' : 'List of classes names for which member attributes '
+                 'help' : 'List of class names for which member attributes '
                           'should not be checked (useful for classes with '
-                          'attributes dynamically set). This supports '
-                          'can work with qualified names.'}
+                          'dynamically set attributes). This supports '
+                          'the use of qualified names.'}
                ),
-
-               ('zope', utils.deprecated_option(opt_type='yn',
-                                                help_msg=_ZOPE_DEPRECATED)),
 
                ('generated-members',
                 {'default' : (),
@@ -301,6 +301,15 @@ class should be ignored. A mixin class is detected if its name ends with \
                  'help' : 'List of members which are set dynamically and \
 missed by pylint inference system, and so shouldn\'t trigger E1101 when \
 accessed. Python regular expressions are accepted.'}
+               ),
+               ('contextmanager-decorators',
+                {'default': ['contextlib.contextmanager'],
+                 'type': 'csv',
+                 'metavar': '<decorator names>',
+                 'help': 'List of decorators that produce context managers, '
+                         'such as contextlib.contextmanager. Add to this list '
+                         'to register other decorators that produce valid '
+                         'context managers.'}
                ),
               )
 
@@ -313,7 +322,7 @@ accessed. Python regular expressions are accepted.'}
         if isinstance(self.config.generated_members, six.string_types):
             gen = shlex.shlex(self.config.generated_members)
             gen.whitespace += ','
-            gen.wordchars += '[]-+'
+            gen.wordchars += '[]-+\.*?'
             self.config.generated_members = tuple(tok.strip('"') for tok in gen)
 
     def visit_assignattr(self, node):
@@ -335,6 +344,8 @@ accessed. Python regular expressions are accepted.'}
         for pattern in self.config.generated_members:
             # attribute is marked as generated, stop here
             if re.match(pattern, node.attrname):
+                return
+            if re.match(pattern, node.as_string()):
                 return
 
         try:
@@ -666,6 +677,8 @@ accessed. Python regular expressions are accepted.'}
         parent_type = safe_infer(node.parent.value)
         if not isinstance(parent_type, (astroid.ClassDef, astroid.Instance)):
             return
+        if not has_known_bases(parent_type):
+            return
 
         # Determine what method on the parent this index will use
         # The parent of this node will be a Subscript, and the parent of that
@@ -771,7 +784,8 @@ accessed. Python regular expressions are accepted.'}
             if isinstance(infered, bases.Generator):
                 # Check if we are dealing with a function decorated
                 # with contextlib.contextmanager.
-                if decorated_with(infered.parent, ['contextlib.contextmanager']):
+                if decorated_with(infered.parent,
+                                  self.config.contextmanager_decorators):
                     continue
                 # If the parent of the generator is not the context manager itself,
                 # that means that it could have been returned from another
@@ -787,7 +801,8 @@ accessed. Python regular expressions are accepted.'}
                     scope = path.scope()
                     if not isinstance(scope, astroid.FunctionDef):
                         continue
-                    if decorated_with(scope, ['contextlib.contextmanager']):
+                    if decorated_with(scope,
+                                      self.config.contextmanager_decorators):
                         break
                 else:
                     self.add_message('not-context-manager',

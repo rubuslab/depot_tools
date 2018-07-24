@@ -97,6 +97,7 @@ disable=
     bad-super-call,
     bad-whitespace,
     cell-var-from-loop,
+    consider-iterating-dictionary,
     consider-using-enumerate,
     deprecated-lambda,
     deprecated-method,

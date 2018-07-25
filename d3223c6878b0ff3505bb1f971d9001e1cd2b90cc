@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11c3d9ef_36b944d1",
+        "filename": "cipd.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-07-25T01:55:28Z",
+      "side": 1,
+      "message": "I have no idea why it is here...",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 16
+      },
+      "revId": "d3223c6878b0ff3505bb1f971d9001e1cd2b90cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

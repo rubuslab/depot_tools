@@ -110,10 +110,11 @@ def CheckChangeOnUpload(input_api, output_api):
   # Do not run integration tests on upload since they are way too slow.
   tests_to_black_list = [
       r'^checkout_test\.py$',
+      r'^cipd_bootstrap_test\.py$',
       r'^gclient_smoketest\.py$',
       r'^scm_unittest\.py$',
       r'^subprocess2_test\.py$',
-    ]
+  ]
   return CommonChecks(input_api, output_api, tests_to_black_list)
 
 

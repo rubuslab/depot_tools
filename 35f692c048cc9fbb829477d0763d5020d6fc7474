@@ -52,6 +52,24 @@
       "revId": "35f692c048cc9fbb829477d0763d5020d6fc7474",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3649db85_55b23ede",
+        "filename": "tests/cipd_bootstrap_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-07-25T03:25:03Z",
+      "side": 1,
+      "message": "Looks like presubmit works, but it skips all tests. And it appeared hanging because pylint is extremely slow. I modified this CL to run cipd_bootstrap_test.py on Windows and LED-launched https://ci.chromium.org/swarming/task/3ee8467b21bec410?server\u003dchromium-swarm.appspot.com\n\nThis is my final attempt to try to test this \"smart\" way...",
+      "parentUuid": "1e520450_1990b6f6",
+      "revId": "35f692c048cc9fbb829477d0763d5020d6fc7474",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

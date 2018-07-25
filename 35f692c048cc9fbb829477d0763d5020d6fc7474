@@ -34,6 +34,24 @@
       "revId": "35f692c048cc9fbb829477d0763d5020d6fc7474",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e520450_1990b6f6",
+        "filename": "tests/cipd_bootstrap_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-07-25T03:08:33Z",
+      "side": 1,
+      "message": "Used LED to modify \u0027os\u0027 dimension of the presubmit job: https://ci.chromium.org/swarming/task/3ee83404318cce10?server\u003dchromium-swarm.appspot.com\n\nhackerman.jpg\n\nBut looks like presubmit step hangs on Windows. So I\u0027ll have to do farming anyway.",
+      "parentUuid": "068d89cf_357362b5",
+      "revId": "35f692c048cc9fbb829477d0763d5020d6fc7474",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

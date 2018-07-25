@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ae6a250_2d46abdb",
+        "filename": "tests/cipd_bootstrap_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-07-25T02:53:20Z",
+      "side": 1,
+      "message": "what am I a farmer to test this manually on Windows?..",
+      "revId": "35f692c048cc9fbb829477d0763d5020d6fc7474",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

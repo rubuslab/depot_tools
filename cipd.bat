@@ -3,23 +3,30 @@
 :: Use of this source code is governed by a BSD-style license that can be
 :: found in the LICENSE file.
 
-setlocal
+setlocal EnableDelayedExpansion
 
-:: To allow this powershell script to run if it was a byproduct of downloading
-:: and unzipping the depot_tools.zip distribution, we clear the Zone.Identifier
-:: alternate data stream. This is equivalent to clicking the "Unblock" button
-:: in the file's properties dialog.
-set errorlevel=
+set CIPD_CLIENT_SRV=https://chrome-infra-packages.appspot.com
+for /f %%i in (%~dp0cipd_client_version) do set CIPD_CLIENT_VER=%%i
+
 if not exist "%~dp0.cipd_client.exe" (
-  echo.>%~dp0cipd.ps1:Zone.Identifier
-
-  powershell -NoProfile -ExecutionPolicy RemoteSigned -Command "%~dp0cipd.ps1" < nul
-  if not errorlevel 0 goto :END
+  call :CLEAN_BOOTSTRAP
+  if !ERRORLEVEL! neq 0 goto :END
 )
 
-for /f %%i in (%~dp0cipd_client_version) do set CIPD_CLIENT_VER=%%i
-"%~dp0.cipd_client.exe" selfupdate -version "%CIPD_CLIENT_VER%"
-if not errorlevel 0 goto :END
+call :SELF_UPDATE
+if %ERRORLEVEL% neq 0 (
+  echo CIPD client self-update failed, trying to bootstrap it from scratch... 1>&2
+
+  call :CLEAN_BOOTSTRAP
+  if !ERRORLEVEL! neq 0 goto :END
+
+  :: Need to call SELF_UPDATE again to setup .cipd_version file.
+  call :SELF_UPDATE
+  if !ERRORLEVEL! neq 0 (
+    echo Bootstrap from scratch failed, something is seriously broken 1>&2
+    goto :END
+  )
+)
 
 "%~dp0.cipd_client.exe" %*
 
@@ -28,3 +35,24 @@ endlocal & (
   set EXPORT_ERRORLEVEL=%ERRORLEVEL%
 )
 exit /b %EXPORT_ERRORLEVEL%
+
+
+:: Functions below.
+::
+:: See http://steve-jansen.github.io/guides/windows-batch-scripting/part-7-functions.html
+:: if you are unfamiliar with this madness.
+
+
+:CLEAN_BOOTSTRAP
+:: To allow this powershell script to run if it was a byproduct of downloading
+:: and unzipping the depot_tools.zip distribution, we clear the Zone.Identifier
+:: alternate data stream. This is equivalent to clicking the "Unblock" button
+:: in the file's properties dialog.
+echo.>%~dp0cipd.ps1:Zone.Identifier
+powershell -NoProfile -ExecutionPolicy RemoteSigned -Command "%~dp0cipd.ps1" < nul
+exit /B %ERRORLEVEL%
+
+
+:SELF_UPDATE
+"%~dp0.cipd_client.exe" selfupdate -version "%CIPD_CLIENT_VER%" -service-url "%CIPD_CLIENT_SRV%"
+exit /B %ERRORLEVEL%

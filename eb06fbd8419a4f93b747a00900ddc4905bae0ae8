@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "2507eca3_1f4e2d65",
+        "filename": "cipd",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-07-26T00:47:01Z",
+      "side": 1,
+      "message": "as in, it cleans the bootstrap? or it does a clean bootstrap?\n\n(adding a comment will suffice)",
+      "range": {
+        "startLine": 71,
+        "startChar": 9,
+        "endLine": 71,
+        "endChar": 24
+      },
+      "revId": "eb06fbd8419a4f93b747a00900ddc4905bae0ae8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2686c4a4_33984633",
+        "filename": "cipd",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-07-26T00:47:01Z",
+      "side": 1,
+      "message": "maybe -x for fun (executable file exists)?",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 111,
+        "endChar": 9
+      },
+      "revId": "eb06fbd8419a4f93b747a00900ddc4905bae0ae8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "365b1d9c_0abfd7b5",
         "filename": "cipd.bat",
         "patchSetId": 7
@@ -22,6 +68,52 @@
       "revId": "eb06fbd8419a4f93b747a00900ddc4905bae0ae8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "72303cd0_64373179",
+        "filename": "cipd.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-07-26T00:47:01Z",
+      "side": 1,
+      "message": "does this leak into the launched process? I guess it probably doesn\u0027t matter...",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "eb06fbd8419a4f93b747a00900ddc4905bae0ae8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b0009af_0f9d58af",
+        "filename": "cipd.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-07-26T00:47:01Z",
+      "side": 1,
+      "message": "Couldn\u0027t we just move all of this to line 54, and then check %ERRORLEVEL% like normal after the if statement?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 4
+      },
+      "revId": "eb06fbd8419a4f93b747a00900ddc4905bae0ae8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

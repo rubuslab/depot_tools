@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "365b1d9c_0abfd7b5",
+        "filename": "cipd.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-07-26T00:10:38Z",
+      "side": 1,
+      "message": "This is needed for \"!ERRORLEVEL!\" thingies below.\n\nAs far as I understood, \u0027if ()\u0027 statements are parsed as a single \"line\" in one go. By default (without delayed expansion), interpreter substitutes variable values right away. So if %ERRORLEVEL% was 0 _BEFORE_ if (), it is also 0 inside \u0027if\u0027, regardless of any calls there. \n\nI spend 3h trying to figure out this shit :( It is highly confusing...\n\nUsing !ERRORLEVEL! tells the interpreter not to expand anything until the statement is really executed.",
+      "range": {
+        "startLine": 6,
+        "startChar": 9,
+        "endLine": 6,
+        "endChar": 31
+      },
+      "revId": "eb06fbd8419a4f93b747a00900ddc4905bae0ae8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

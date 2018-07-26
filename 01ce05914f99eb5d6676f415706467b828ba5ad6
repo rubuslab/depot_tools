@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83dea7a5_97e91e34",
+        "filename": "cipd.ps1",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-07-26T00:10:38Z",
+      "side": 0,
+      "message": "This was wrong and always returned empty string. It managed to work because this code path is hit only if env vars are set (Test-Path call below is correct).\n\nBut batch script never set them (until my change). So this whole \"pick up env vars\" stuff was moot...",
+      "range": {
+        "startLine": 9,
+        "startChar": 29,
+        "endLine": 9,
+        "endChar": 39
+      },
+      "revId": "01ce05914f99eb5d6676f415706467b828ba5ad6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d74a888_63ce8096",
+        "filename": "cipd.ps1",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-07-26T00:10:38Z",
+      "side": 0,
+      "message": "I think this didn\u0027t work. At least I wasn\u0027t able to hit the situation when two scripts fight over lock until I changed it to explicitly pass \u0027None\u0027 as sharing mode.\n\nBut looking at OpenWrite method doc now, it seems to be totally identical to what I wrote :-/\n\nShould I change it back?",
+      "range": {
+        "startLine": 49,
+        "startChar": 6,
+        "endLine": 49,
+        "endChar": 57
+      },
+      "revId": "01ce05914f99eb5d6676f415706467b828ba5ad6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "537a78c3_beeae932",
+        "filename": "cipd.ps1",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-07-26T00:10:38Z",
+      "side": 0,
+      "message": "This check is harmful in \"rebootstrap from scratch\" scenario, were $client exists (but wrong).\n\nThere potentially can be locking problems here if $client is currently open. I considered moving it to trash, but punted for now ($client is locked here only if this is rebootstrap after failed selfupdate and cipd process is running currently, this should be rare).",
+      "range": {
+        "startLine": 51,
+        "startChar": 6,
+        "endLine": 51,
+        "endChar": 34
+      },
+      "revId": "01ce05914f99eb5d6676f415706467b828ba5ad6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd5f1935_c08652fb",
+        "filename": "cipd.ps1",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-07-26T00:10:38Z",
+      "side": 0,
+      "message": "This was too broad. It caught and needlessly retried errors from WebClient. For example, bad $cipdClientVer would result in infinite retries :)",
+      "range": {
+        "startLine": 59,
+        "startChar": 2,
+        "endLine": 59,
+        "endChar": 12
+      },
+      "revId": "01ce05914f99eb5d6676f415706467b828ba5ad6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

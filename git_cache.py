@@ -361,9 +361,6 @@ class Mirror(object):
     if (sys.platform.startswith('win') and
         not gclient_utils.FindExecutable('7z')):
       python_fallback = True
-    elif sys.platform.startswith('darwin'):
-      # The OSX version of unzip doesn't support zip64.
-      python_fallback = True
     elif not gclient_utils.FindExecutable('unzip'):
       python_fallback = True
 

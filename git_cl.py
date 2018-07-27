@@ -6051,6 +6051,7 @@ class OptionParser(optparse.OptionParser):
     return options, args
 
 
+@metrics.collector.print_notice
 def main(argv):
   if sys.hexversion < 0x02060000:
     print('\nYour python version %s is unsupported, please upgrade.\n' %

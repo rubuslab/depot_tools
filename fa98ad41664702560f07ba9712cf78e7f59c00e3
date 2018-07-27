@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e8b76b2c_17507073",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1010,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-07-27T11:38:47Z",
+      "side": 1,
+      "message": "I think \"Git\" is less confusing here, since you expect no \"-review\" in its domain name",
+      "range": {
+        "startLine": 1010,
+        "startChar": 25,
+        "endLine": 1010,
+        "endChar": 31
+      },
+      "revId": "fa98ad41664702560f07ba9712cf78e7f59c00e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

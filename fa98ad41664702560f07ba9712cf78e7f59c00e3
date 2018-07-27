@@ -46,6 +46,30 @@
       "revId": "fa98ad41664702560f07ba9712cf78e7f59c00e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6d3d674_a3c62fd0",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1010,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-07-27T15:59:19Z",
+      "side": 1,
+      "message": "i guess now I prefer all 3, but I can do it myself since I was reviewing CL that allowed these IN.",
+      "parentUuid": "5dc75a0c_d512bd73",
+      "range": {
+        "startLine": 1010,
+        "startChar": 25,
+        "endLine": 1010,
+        "endChar": 31
+      },
+      "revId": "fa98ad41664702560f07ba9712cf78e7f59c00e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

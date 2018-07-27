@@ -2994,6 +2994,7 @@ def disable_buffering():
   sys.stdout = gclient_utils.MakeFileAnnotated(sys.stdout)
 
 
+@metrics.collector.print_notice
 def main(argv):
   """Doesn't parse the arguments here, just find the right subcommand to
   execute."""

@@ -22,6 +22,30 @@
       "revId": "fa98ad41664702560f07ba9712cf78e7f59c00e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5dc75a0c_d512bd73",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1010,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-07-27T15:26:48Z",
+      "side": 1,
+      "message": "I wanted to match the help text from --gerrit_repo and --gerrit_ref given that --patch_ref is basically gerrit_repo@gerrit_ref. I don\u0027t think having this help text diverge would be beneficial, but I\u0027m happy to change all three if y\u0027all would prefer that.",
+      "parentUuid": "e8b76b2c_17507073",
+      "range": {
+        "startLine": 1010,
+        "startChar": 25,
+        "endLine": 1010,
+        "endChar": 31
+      },
+      "revId": "fa98ad41664702560f07ba9712cf78e7f59c00e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

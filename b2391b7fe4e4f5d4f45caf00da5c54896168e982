@@ -46,6 +46,30 @@
       "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51b6f6c5_25b7d63d",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-07-31T23:37:41Z",
+      "side": 1,
+      "message": "Happy to do it in a separate CL.",
+      "parentUuid": "40586da7_3c79ecb9",
+      "range": {
+        "startLine": 145,
+        "startChar": 6,
+        "endLine": 145,
+        "endChar": 10
+      },
+      "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

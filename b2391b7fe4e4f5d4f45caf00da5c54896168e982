@@ -22,6 +22,30 @@
       "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40586da7_3c79ecb9",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-07-31T23:13:00Z",
+      "side": 1,
+      "message": "I would do this in a separate CL first (i.e. convert everything to --patch_ref, remove --gerrit_repo and --gerrit_ref from bot_update.py). This is a very good idea.",
+      "parentUuid": "36bd3b3b_64dba057",
+      "range": {
+        "startLine": 145,
+        "startChar": 6,
+        "endLine": 145,
+        "endChar": 10
+      },
+      "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

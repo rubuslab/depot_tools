@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "36bd3b3b_64dba057",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-07-31T23:09:57Z",
+      "side": 1,
+      "message": "Why not convert this to a patch_ref too?\nAnd why an elif instead of just an if?",
+      "range": {
+        "startLine": 145,
+        "startChar": 6,
+        "endLine": 145,
+        "endChar": 10
+      },
+      "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

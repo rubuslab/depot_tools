@@ -70,6 +70,30 @@
       "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b1e7eaed_5d9e40b7",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-07-31T23:39:28Z",
+      "side": 1,
+      "message": "er, \"separate CL first\" -- you mean do that before landing this? I would rather not do that; I\u0027d like to try this narrowly to unblock other work and then revisit this change.",
+      "parentUuid": "51b6f6c5_25b7d63d",
+      "range": {
+        "startLine": 145,
+        "startChar": 6,
+        "endLine": 145,
+        "endChar": 10
+      },
+      "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

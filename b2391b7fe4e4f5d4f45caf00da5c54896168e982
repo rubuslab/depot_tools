@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7712cd2_c86daf9b",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-08-01T00:51:19Z",
+      "side": 0,
+      "message": "This can\u0027t actually be removed until the downstream users are updated. Doing so is why I\u0027m adding support for patch_refs to ensure_checkout.",
+      "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,47 @@
       "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74a412a6_0c949999",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-01T16:17:42Z",
+      "side": 0,
+      "message": "sg. AFAIR, only skia was such user.",
+      "parentUuid": "f7712cd2_c86daf9b",
+      "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "665556bd_aa024434",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-01T16:17:42Z",
+      "side": 0,
+      "message": "... but if you are removing this func, this file should also be removed.",
+      "range": {
+        "startLine": 56,
+        "startChar": 39,
+        "endLine": 56,
+        "endChar": 54
+      },
+      "revId": "b2391b7fe4e4f5d4f45caf00da5c54896168e982",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

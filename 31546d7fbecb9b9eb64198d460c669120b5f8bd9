@@ -45,6 +45,29 @@
       "revId": "31546d7fbecb9b9eb64198d460c669120b5f8bd9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f96f97e_452a1f11",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-08-02T01:37:54Z",
+      "side": 1,
+      "message": "This whole CL might be clearer as just:\n\n  ARCH\u003d$UNAME\n  if lscpu | grep -q \"Little Endian\"; then\n    ARCH+\u003dle\n  fi",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 64,
+        "endChar": 38
+      },
+      "revId": "31546d7fbecb9b9eb64198d460c669120b5f8bd9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

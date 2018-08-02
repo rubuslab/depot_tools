@@ -22,6 +22,30 @@
       "revId": "9942abee8201181e663f3fb1d73ca3ec5f4d65c3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64c0037e_c1f3f0d5",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-08-02T20:00:36Z",
+      "side": 1,
+      "message": "You also don\u0027t want the `backticks` here; currently this will be essentially:\n\n  if \"line with Little Endian in it\"; then ...; fi\n\nWhich will fail with:\n\n  bash: command not found: line\n\nIf you remove the backticks then if is checking the return code of the pipeline (which is; the return code of grep). If grep finds the string in the output of lscpu, it will return 0, otherwise it will return 1.",
+      "parentUuid": "baa6acc8_c7053be8",
+      "range": {
+        "startLine": 64,
+        "startChar": 25,
+        "endLine": 64,
+        "endChar": 37
+      },
+      "revId": "9942abee8201181e663f3fb1d73ca3ec5f4d65c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

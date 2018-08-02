@@ -92,6 +92,11 @@ class SCMWrapper(object):
 
   This is the abstraction layer to bind to different SCM.
   """
+  _WELL_KNOWN_BRANCHES = [
+      'refs/remotes/origin/master',
+      'refs/remotes/origin/infra/config',
+      'refs/remotes/origin/lkgr',
+  ]
 
   def __init__(self, url=None, root_dir=None, relpath=None, out_fh=None,
                out_cb=None, print_outbuf=False):
@@ -226,6 +231,7 @@ class GitWrapper(SCMWrapper):
     if self.out_cb:
       filter_kwargs['predicate'] = self.out_cb
     self.filter = gclient_utils.GitFilter(**filter_kwargs)
+    self._synced_branch = None
 
   @staticmethod
   def BinaryExists():
@@ -347,13 +353,16 @@ class GitWrapper(SCMWrapper):
 
   def _GetBranchForCommit(self, commit):
     """Get the remote branch a commit is part of."""
-    if scm.GIT.IsAncestor(self.checkout_path, commit,
-                          'refs/remotes/origin/master'):
-      return 'refs/remotes/origin/master'
+    for branch in self._WELL_KNOWN_BRANCHES:
+      if scm.GIT.IsAncestor(self.checkout_path, commit, branch):
+        return branch
     remote_refs = self._Capture(
         ['for-each-ref', 'refs/remotes/%s/*' % self.remote,
          '--format=%(refname)']).splitlines()
-    for ref in remote_refs:
+    remote_refs += self._Capture(
+        ['for-each-ref', 'refs/remotes/%s/*/*' % self.remote,
+         '--format=%(refname)']).splitlines()
+    for ref in sorted(remote_refs, reverse=True):
       if scm.GIT.IsAncestor(self.checkout_path, commit, ref):
         return ref
     self.Print('Failed to find a remote ref that contains %s. '
@@ -364,7 +373,8 @@ class GitWrapper(SCMWrapper):
     # everything in between.
     return commit
 
-  def apply_patch_ref(self, patch_repo, patch_ref, options, file_list):
+  def apply_patch_ref(self, patch_repo, patch_ref, patch_branch, options,
+                      file_list):
     # Abort any cherry-picks in progress.
     try:
       self._Capture(['cherry-pick', '--abort'])
@@ -372,7 +382,10 @@ class GitWrapper(SCMWrapper):
       pass
 
     base_rev = self._Capture(['rev-parse', 'HEAD'])
-    branch_rev = self._GetBranchForCommit(base_rev)
+    branch_rev = (
+        patch_branch
+        or self._synced_branch
+        or self._GetBranchForCommit(base_rev))
     self.Print('===Applying patch ref===')
     self.Print('Repo is %r @ %r, ref is %r (%r), root is %r' % (
         patch_repo, patch_ref, base_rev, branch_rev, self.checkout_path))
@@ -473,6 +486,9 @@ class GitWrapper(SCMWrapper):
     else:
       # hash is also a tag, only make a distinction at checkout
       rev_type = "hash"
+
+    if managed and rev_type == "branch":
+      self._synced_branch = revision
 
     mirror = self._GetMirror(url, options)
     if mirror:

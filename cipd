@@ -33,6 +33,7 @@ case $UNAME in
 esac
 
 UNAME=`uname -m | tr '[:upper:]' '[:lower:]'`
+LITTLE=`lscpu | grep "Little Endian"`
 case $UNAME in
   x86_64|amd64)
     ARCH=amd64
@@ -59,7 +60,12 @@ case $UNAME in
     ARCH=386
     ;;
   mips*)
-    ARCH=$UNAME
+    # detect mips64le vs mips64 somehow.
+    if [ ! -n "$LITTLE_ENDIAN" ]; then
+      ARCH=$UNAME
+    else
+      ARCH=$UNAME"le"
+    fi
     ;;
   *)
     echo "UNKNOWN Machine architecture: $UNAME"

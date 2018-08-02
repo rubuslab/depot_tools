@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c06fd46a_93d36e3b",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2558,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-02T19:01:40Z",
+      "side": 1,
+      "message": "I plan to make bot_update pass this if the patch branch is not master, in a follow-up CL.",
+      "range": {
+        "startLine": 2558,
+        "startChar": 23,
+        "endLine": 2558,
+        "endChar": 35
+      },
+      "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

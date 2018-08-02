@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa6acc8_c7053be8",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-08-02T19:19:23Z",
+      "side": 1,
+      "message": "\"Little Endian\"",
+      "range": {
+        "startLine": 64,
+        "startChar": 25,
+        "endLine": 64,
+        "endChar": 37
+      },
+      "revId": "9942abee8201181e663f3fb1d73ca3ec5f4d65c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

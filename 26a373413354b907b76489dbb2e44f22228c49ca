@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0af5b5f3_7392f7c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-03T12:24:17Z",
+      "side": 1,
+      "message": "do you have specific CL on which it crashed? this is highly unusual.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "26a373413354b907b76489dbb2e44f22228c49ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a7b8161_d10e75e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-03T12:57:50Z",
+      "side": 1,
+      "message": "It\u0027s still there, actually.\nWe\u0027ve switched it to read-only ~September or Oct 2017. While I personally won\u0027t be querying it for my 2017 changes any more, I can imagine reasons why some people may want to do it.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 44
+      },
+      "revId": "3e1c1c62a3cd4e2c35e79e92152e093ace34600b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

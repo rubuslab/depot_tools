@@ -400,7 +400,11 @@ class MyActivity(object):
     ret['review_url'] = '%s://%s/%s' % (protocol, url, issue['_number'])
 
     ret['header'] = issue['subject']
-    ret['owner'] = issue['owner']['email']
+    if 'email' in issue['owner']:
+      ret['owner'] = issue['owner']['email']
+    else:
+      logging.error('Owner Email Missing: %s', ret['review_url'])
+      ret['owner'] = ''
     ret['author'] = ret['owner']
     ret['created'] = datetime_from_gerrit(issue['created'])
     ret['modified'] = datetime_from_gerrit(issue['updated'])

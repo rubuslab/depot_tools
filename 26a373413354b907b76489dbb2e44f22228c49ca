@@ -22,6 +22,30 @@
       "revId": "26a373413354b907b76489dbb2e44f22228c49ca",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a34dfb2_f343877d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000325
+      },
+      "writtenOn": "2018-08-03T16:09:31Z",
+      "side": 1,
+      "message": "I didn\u0027t dump any info about the CL, but we could add debug logging.\n\nIf you look at activity for dgarrett@chromium.org last week, you should be able to see it.",
+      "parentUuid": "0af5b5f3_7392f7c4",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "26a373413354b907b76489dbb2e44f22228c49ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

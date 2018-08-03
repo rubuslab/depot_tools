@@ -22,6 +22,30 @@
       "revId": "3e1c1c62a3cd4e2c35e79e92152e093ace34600b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1bef11f_37e77091",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-08-03T13:44:49Z",
+      "side": 1,
+      "message": "+1 to that... I can imagine people may query last 3 years for promo perf :D",
+      "parentUuid": "6a7b8161_d10e75e8",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 44
+      },
+      "revId": "3e1c1c62a3cd4e2c35e79e92152e093ace34600b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a8f1befe_cd2112cb",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-08-07T22:50:02Z",
+      "side": 1,
+      "message": "Add a docstring here to have it show in readme TOC",
+      "revId": "32134235eaf13174a3912bbb92b1d7b0886afc15",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "682e40f5_c695defb",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-08-07T22:50:02Z",
+      "side": 1,
+      "message": "this isn\u0027t super great. Maybe [start_dir]/windows_sdk",
+      "range": {
+        "startLine": 24,
+        "startChar": 33,
+        "endLine": 24,
+        "endChar": 49
+      },
+      "revId": "32134235eaf13174a3912bbb92b1d7b0886afc15",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "433efcb0_8570c204",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-08-07T22:50:02Z",
+      "side": 1,
+      "message": "just \"CIPD version\"",
+      "range": {
+        "startLine": 25,
+        "startChar": 26,
+        "endLine": 25,
+        "endChar": 49
+      },
+      "revId": "32134235eaf13174a3912bbb92b1d7b0886afc15",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbbdd42a_b8dcb527",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-08-07T22:50:02Z",
+      "side": 1,
+      "message": "this seems very likely....",
+      "range": {
+        "startLine": 40,
+        "startChar": 11,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "32134235eaf13174a3912bbb92b1d7b0886afc15",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "acf5848b_7957e6cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T01:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80aa8d5d_9151d1df",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d961f68_daef2f12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T01:39:59Z",
+      "side": 1,
+      "message": "Hopefully I made it clearer.",
+      "parentUuid": "8b6d8f9c_63fc2851",
+      "range": {
+        "startLine": 10,
+        "startChar": 36,
+        "endLine": 10,
+        "endChar": 57
+      },
+      "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc04db4c_5eb1f591",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -118,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "57642e4c_f0b4379c",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2558,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T01:39:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5077e04b_0505c42e",
+      "range": {
+        "startLine": 2558,
+        "startChar": 23,
+        "endLine": 2558,
+        "endChar": 35
+      },
+      "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e5836dac_a64e2013",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -138,6 +210,30 @@
       "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "088ec02d_fb636f68",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2561,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T01:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5836dac_a64e2013",
+      "range": {
+        "startLine": 2561,
+        "startChar": 35,
+        "endLine": 2561,
+        "endChar": 36
+      },
+      "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -164,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "3ccfdd62_075cf2e8",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2564,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T01:39:59Z",
+      "side": 1,
+      "message": "Whatever we\u0027re synced at.",
+      "parentUuid": "7728f241_b5ce5606",
+      "range": {
+        "startLine": 2564,
+        "startChar": 71,
+        "endLine": 2564,
+        "endChar": 75
+      },
+      "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "056891c2_46215b1e",
         "filename": "gclient_scm.py",
         "patchSetId": 1
@@ -184,6 +304,30 @@
       "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "782244be_4369455a",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T01:39:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "056891c2_46215b1e",
+      "range": {
+        "startLine": 95,
+        "startChar": 2,
+        "endLine": 99,
+        "endChar": 3
+      },
+      "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -245,6 +389,30 @@
       "writtenOn": "2018-08-08T01:18:50Z",
       "side": 1,
       "message": "do devs use gclient to apply patches? I thought \"git cl patch \u003curl\u003e\" is the right way to go, has that changed?",
+      "parentUuid": "328e0871_8bf18aea",
+      "range": {
+        "startLine": 388,
+        "startChar": 8,
+        "endLine": 388,
+        "endChar": 45
+      },
+      "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c142d50_8ced599e",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T01:39:59Z",
+      "side": 1,
+      "message": "No, it hasn\u0027t changed.\nYeah, I think I\u0027ll remove this after I pass a target branch for the patch.",
       "parentUuid": "328e0871_8bf18aea",
       "range": {
         "startLine": 388,

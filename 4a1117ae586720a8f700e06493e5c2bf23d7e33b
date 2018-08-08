@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e3d2da38_dfbef761",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2541,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-08T02:11:09Z",
+      "side": 1,
+      "message": "btw, are these only for solutions (ie top repos containing DEPS)?\nOr do these apply to sub-deps too?\n\nie, in chromium checkout, is --revision v8@rev supported?",
+      "range": {
+        "startLine": 2541,
+        "startChar": 57,
+        "endLine": 2541,
+        "endChar": 66
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e129dee_505b7973",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2542,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-08T02:11:09Z",
+      "side": 1,
+      "message": "afair, \u0027rev\u0027 here can be either\n * actual revision like deadbeef\n * ref name like \"refs/heads/branch\"\n\nis that still the case?",
+      "range": {
+        "startLine": 2542,
+        "startChar": 37,
+        "endLine": 2542,
+        "endChar": 40
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fb5ea45_fbd5d1af",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2565,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-08T02:11:09Z",
+      "side": 1,
+      "message": "after more thinking, this doesn\u0027t make sense any more.\niiuc correctly --revision flag actual usage (but I might be wrong!),\nif --revision is given for a repo which matches patch\u0027s repo,\nthen patch-branch should just be ignored.\n\nLet\u0027s discuss on these scenarios. \"Then\" parts capture my understanding of what should be done.\nPlease, disagree with me :)\n\n\n\nScenario 1:\n Assume:\n   * we have a patch against repo REPO and branch BRANCH\n   * --revision flag is given to fetch REPO @ REVISION.\n Then:\n   patch_branch isn\u0027t relevant. We should apply patch on top of REVISION.\n   ie, branch_rev :\u003d REVISION\n\n\nScenario 2:\n Assume:\n   * we have a patch against repo REPO and branch BRANCH\n   * --revision flag is given to fetch REPO @ \u003cBRANCH\u003e.\n Then:\n   branch_rev :\u003d \u003cBRANCH\u003e\n\n\nScenario 3:\n Assume:\n   * we have a patch against repo REPO and branch BRANCH\n   * no --revision flag for REPO\n Then:\n   * we should fetch HEAD of patch_branch during fetch, right?\n   * branch_rev :\u003d patch_branch\n\n\nScenario 4:\n  Assume:\n   * we have a patch against repo REPO and branch BRANCH\n   * --revision flag is given to fetch REPO @ \u003cOTHER-BRANCH\u003e.\n Then:\n   branch_rev :\u003d OTHER_BRANCH\n\n\nScenario 5:\n  Assume:\n   * we have a patch against repo REPO and branch BRANCH\n   * --revision flag is given to fetch REPO @ \u003cREVISION, which doesn\u0027t exist on BRANCH\u003e.\n Then:\n   branch_rev :\u003d REVISION",
+      "range": {
+        "startLine": 2560,
+        "startChar": 19,
+        "endLine": 2565,
+        "endChar": 63
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

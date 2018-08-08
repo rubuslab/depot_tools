@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fde1f290_4d211a5c",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T22:01:51Z",
+      "side": 0,
+      "message": "What about target_branch?",
+      "parentUuid": "13fa0f52_b69a95d8",
+      "range": {
+        "startLine": 375,
+        "startChar": 4,
+        "endLine": 375,
+        "endChar": 14
+      },
+      "revId": "dd5051fa529e0935fe279279d39cb00cbf856c14",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4850634b_ba706ebb",
         "filename": "gclient_scm.py",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2018-08-08T02:11:09Z",
       "side": 0,
       "message": "these should be swapped",
+      "range": {
+        "startLine": 378,
+        "startChar": 20,
+        "endLine": 378,
+        "endChar": 39
+      },
+      "revId": "dd5051fa529e0935fe279279d39cb00cbf856c14",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab093d46_208bcf4b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T22:01:51Z",
+      "side": 0,
+      "message": "Reformatted.",
+      "parentUuid": "4850634b_ba706ebb",
       "range": {
         "startLine": 378,
         "startChar": 20,

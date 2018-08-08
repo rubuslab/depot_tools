@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6f2a15c2_f97e1b26",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2541,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T22:01:51Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "e3d2da38_dfbef761",
+      "range": {
+        "startLine": 2541,
+        "startChar": 57,
+        "endLine": 2541,
+        "endChar": 66
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1e129dee_505b7973",
         "filename": "gclient.py",
         "patchSetId": 5
@@ -45,6 +69,30 @@
       "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "558d6cee_68b64a19",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2542,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T22:01:51Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "1e129dee_505b7973",
+      "range": {
+        "startLine": 2542,
+        "startChar": 37,
+        "endLine": 2542,
+        "endChar": 40
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "96b44ddb_1a5183fa",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2560,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T22:01:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fbdc109_7f6ddf02",
+      "range": {
+        "startLine": 2560,
+        "startChar": 27,
+        "endLine": 2560,
+        "endChar": 65
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5b464149_419aabe9",
         "filename": "gclient.py",
         "patchSetId": 5
@@ -85,6 +157,24 @@
       "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af6df9ae_865378e5",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2563,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T22:01:51Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5b464149_419aabe9",
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -155,6 +245,30 @@
       "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d266c0c_be02172e",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-08T22:01:51Z",
+      "side": 1,
+      "message": "Turns out less is more, and refs/remotes/origin does the trick.",
+      "parentUuid": "9d5276ce_bfd98570",
+      "range": {
+        "startLine": 362,
+        "startChar": 42,
+        "endLine": 362,
+        "endChar": 45
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

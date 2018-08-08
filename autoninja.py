@@ -13,6 +13,7 @@ on non-goma builds.
 import multiprocessing
 import os
 import re
+import subprocess
 import sys
 
 # The -t tools are incompatible with -j and -l
@@ -40,6 +41,7 @@ for index, arg in enumerate(input_args[1:]):
     output_dir = input_args[index + 2]
 
 use_goma = False
+goma_dir = ""
 try:
   # If GOMA_DISABLED is set (to anything) then gomacc will use the local
   # compiler instead of doing a goma compile. This is convenient if you want
@@ -55,8 +57,20 @@ try:
         m = re.match('^\s*use_goma\s*=\s*true(\s*$|\s*#.*$)', line)
         if m:
           use_goma = True
+        m = re.match('^\s*goma_dir\s*=\s*"([^"]*)"(\s*$|\s*#.*$)', line)
+        if m:
+          goma_dir = os.path.expanduser(m.group(1))
 except IOError:
   pass
+
+if use_goma:
+  goma_ctl = os.path.join(goma_dir, 'goma_ctl.py')
+  if not os.path.exists(goma_ctl):
+    sys.stderr.write('Error: %s not found.\nCheck goma_dir in %s\n' %
+                     (goma_ctl, os.path.join(output_dir, 'args.gn')))
+    sys.exit(1)
+  subprocess.check_call([goma_ctl, 'ensure_start'],
+                        stdout=sys.stderr)
 
 if sys.platform.startswith('win'):
   # Specify ninja.exe on Windows so that ninja.bat can call autoninja and not

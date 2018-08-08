@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "86bb70a3_8d3615f9",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-08-08T21:59:44Z",
+      "side": 1,
+      "message": "And on Windows the default is C:\\src\\goma\\goma-win64 - the script needs to know about that default.",
+      "parentUuid": "c9f9607f_5eff2f39",
+      "revId": "05263e085ff9f32f4502c9e924b7da94320c10c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7db85fe6_920c1c67",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-08-08T21:59:44Z",
+      "side": 1,
+      "message": "On Windows you cant execute goma_ctl directly, you need to execute \"python goma_ctl\"",
+      "revId": "05263e085ff9f32f4502c9e924b7da94320c10c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "77b0503d_a0b74338",
         "filename": "autoninja.py",
         "patchSetId": 1
@@ -102,6 +137,30 @@
       "side": 1,
       "message": "I would be fine with only on non-zero status, but I might actually prefer it if it was non-zero status *or* when we actually started goma. Though, in the latter case, I\u0027d probably want to limit it to 1-2 lines of output (\u0027starting goma ... started\\n\u0027 or something like that) rather than the full output of goma_ctl start",
       "parentUuid": "825f6d43_1bffb27f",
+      "range": {
+        "startLine": 73,
+        "startChar": 24,
+        "endLine": 73,
+        "endChar": 42
+      },
+      "revId": "05263e085ff9f32f4502c9e924b7da94320c10c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26a03aaf_77fa6021",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-08-08T21:59:44Z",
+      "side": 1,
+      "message": "I think Dirk\u0027s suggestion is best. There should be output on error, it would be good/reassuring to have output when it actually starts goma, but otherwise it should be silent.\n\nIt also needs to be very fast - how long is the delay to start goma, especially in the case where it is already running?",
+      "parentUuid": "3bdd1b27_d2ad6ab7",
       "range": {
         "startLine": 73,
         "startChar": 24,

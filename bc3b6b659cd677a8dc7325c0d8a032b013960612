@@ -231,6 +231,30 @@
       "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de6a3f91_4a3ec109",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-08T01:18:50Z",
+      "side": 1,
+      "message": "do devs use gclient to apply patches? I thought \"git cl patch \u003curl\u003e\" is the right way to go, has that changed?",
+      "parentUuid": "328e0871_8bf18aea",
+      "range": {
+        "startLine": 388,
+        "startChar": 8,
+        "endLine": 388,
+        "endChar": 45
+      },
+      "revId": "bc3b6b659cd677a8dc7325c0d8a032b013960612",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

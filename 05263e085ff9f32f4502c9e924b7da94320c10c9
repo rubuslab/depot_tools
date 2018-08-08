@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77b0503d_a0b74338",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-08-08T05:09:01Z",
+      "side": 1,
+      "message": "This is noisy when it shows\n\"goma is always running\"?",
+      "range": {
+        "startLine": 73,
+        "startChar": 24,
+        "endLine": 73,
+        "endChar": 42
+      },
+      "revId": "05263e085ff9f32f4502c9e924b7da94320c10c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

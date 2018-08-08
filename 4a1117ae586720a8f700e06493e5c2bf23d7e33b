@@ -48,6 +48,46 @@
     },
     {
       "key": {
+        "uuid": "2fbdc109_7f6ddf02",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2560,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-08T04:18:07Z",
+      "side": 1,
+      "message": "The target branch against which a patch was created in format dep@branch.\nIt is used to determine which commits from the patch_ref actually constitute a patch.\nIf not given, ...",
+      "range": {
+        "startLine": 2560,
+        "startChar": 27,
+        "endLine": 2560,
+        "endChar": 65
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b464149_419aabe9",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2563,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-08T04:18:07Z",
+      "side": 1,
+      "message": "IMO, don\u0027t support \"otherwise\" after a transition period. If someone gives a --patch-ref, than either --patch-branch or --revision should be required required.\n\nwhat bothers me with this \"iterate all branches\" is non-determinism -- we return first branch which contains a revision, which may result in diff set of commits cherry picked.",
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6fb5ea45_fbd5d1af",
         "filename": "gclient.py",
         "patchSetId": 5
@@ -64,6 +104,53 @@
         "startChar": 19,
         "endLine": 2565,
         "endChar": 63
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "adc1ca3c_3cd46121",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2565,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-08T04:18:07Z",
+      "side": 1,
+      "message": "(discussed ofline), I misread what \"branch_rev\" was used for. I thought it was used as revision on top of which to cherry pick. But, actually it\u0027s used to determine which commits from patch ref should be cherry picked.",
+      "parentUuid": "6fb5ea45_fbd5d1af",
+      "range": {
+        "startLine": 2560,
+        "startChar": 19,
+        "endLine": 2565,
+        "endChar": 63
+      },
+      "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d5276ce_bfd98570",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-08T04:18:07Z",
+      "side": 1,
+      "message": "and then perhaps also */*/*?\ni wonder, does for-each-ref support \u0027**\u0027 as \"recursively everything\"?",
+      "range": {
+        "startLine": 362,
+        "startChar": 42,
+        "endLine": 362,
+        "endChar": 45
       },
       "revId": "4a1117ae586720a8f700e06493e5c2bf23d7e33b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",

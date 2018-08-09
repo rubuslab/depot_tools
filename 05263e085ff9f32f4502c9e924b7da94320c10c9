@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "cb0b5c07_a347e174",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-08-09T01:38:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "86bb70a3_8d3615f9",
+      "revId": "05263e085ff9f32f4502c9e924b7da94320c10c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7db85fe6_920c1c67",
         "filename": "autoninja.py",
         "patchSetId": 1
@@ -51,6 +69,24 @@
       "revId": "05263e085ff9f32f4502c9e924b7da94320c10c9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "982834b9_61b1b8e6",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-08-09T01:38:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7db85fe6_920c1c67",
+      "revId": "05263e085ff9f32f4502c9e924b7da94320c10c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -161,6 +197,30 @@
       "side": 1,
       "message": "I think Dirk\u0027s suggestion is best. There should be output on error, it would be good/reassuring to have output when it actually starts goma, but otherwise it should be silent.\n\nIt also needs to be very fast - how long is the delay to start goma, especially in the case where it is already running?",
       "parentUuid": "3bdd1b27_d2ad6ab7",
+      "range": {
+        "startLine": 73,
+        "startChar": 24,
+        "endLine": 73,
+        "endChar": 42
+      },
+      "revId": "05263e085ff9f32f4502c9e924b7da94320c10c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2d922f8_99b1288e",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-08-09T01:38:28Z",
+      "side": 1,
+      "message": "ok, but I worry that when goma takes long time to start (when upgrade to new version, uploading crash reports, etc), it looks like hang up without no progress outputs. hard to know what is happening.\n\nusually, it should not take long time. happy case would be less than a second.\n\nnote that: when goma is already running, goma_ctl.py ensure_start will print (3 lines + 2 blank lines)\n using /run/user/xxxx/goma_xxx as tmpdir\n GOMA version xxxxx\n\n goma is already running\n\nand not running,  (6 lines + 2 blank lines)\n using /run/user/xxxx/goma_xxx as tmpdir\n GOMA version xxxxx\n \u003cpid\u003e\n waiting for compiler_proxy...\n compiler proxy (pid\u003d\u003cpid\u003e) status: http://127.0.0.1:8088 ok\n\n Now goma is ready!\n\n goma is already running",
+      "parentUuid": "26a03aaf_77fa6021",
       "range": {
         "startLine": 73,
         "startChar": 24,

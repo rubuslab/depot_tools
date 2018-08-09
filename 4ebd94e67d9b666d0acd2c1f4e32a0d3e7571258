@@ -371,6 +371,30 @@
       "revId": "4ebd94e67d9b666d0acd2c1f4e32a0d3e7571258",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7fd22606_3b811aee",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1116444
+      },
+      "writtenOn": "2018-08-09T20:13:00Z",
+      "side": 1,
+      "message": "Sure, I agree that we shouldn\u0027t allow implicit sdk tool references in builds, and this enforces it. It was just a note on the current potentially broken state we\u0027re in.",
+      "parentUuid": "c15976e5_9bf808f2",
+      "range": {
+        "startLine": 76,
+        "startChar": 45,
+        "endLine": 76,
+        "endChar": 68
+      },
+      "revId": "4ebd94e67d9b666d0acd2c1f4e32a0d3e7571258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

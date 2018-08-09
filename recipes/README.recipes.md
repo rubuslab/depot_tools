@@ -13,6 +13,7 @@
   * [gitiles](#recipe_modules-gitiles)
   * [gsutil](#recipe_modules-gsutil)
   * [infra_paths](#recipe_modules-infra_paths)
+  * [osx_sdk](#recipe_modules-osx_sdk) &mdash; The `osx_sdk` module provides safe functions to access a semi-hermetic XCode installation.
   * [presubmit](#recipe_modules-presubmit)
   * [tryserver](#recipe_modules-tryserver)
   * [windows_sdk](#recipe_modules-windows_sdk) &mdash; The `windows_sdk` module provides safe functions to access a hermetic Microsoft Visual Studio installation.
@@ -32,6 +33,7 @@
   * [gitiles:examples/full](#recipes-gitiles_examples_full)
   * [gsutil:examples/full](#recipes-gsutil_examples_full)
   * [infra_paths:examples/full](#recipes-infra_paths_examples_full)
+  * [osx_sdk:examples/full](#recipes-osx_sdk_examples_full)
   * [presubmit:examples/full](#recipes-presubmit_examples_full)
   * [tryserver:examples/full](#recipes-tryserver_examples_full)
   * [windows_sdk:examples/full](#recipes-windows_sdk_examples_full)
@@ -651,6 +653,48 @@ It returns git_cache path if it is defined (Buildbot world), otherwise
 uses the more generic [CACHE]/git path (LUCI world).
 
 &mdash; **def [initialize](/recipes/recipe_modules/infra_paths/api.py#11)(self):**
+### *recipe_modules* / [osx\_sdk](/recipes/recipe_modules/osx_sdk)
+
+[DEPS](/recipes/recipe_modules/osx_sdk/__init__.py#5): [recipe\_engine/cipd][recipe_engine/recipe_modules/cipd], [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/step][recipe_engine/recipe_modules/step]
+
+The `osx_sdk` module provides safe functions to access a semi-hermetic
+XCode installation.
+
+Available only to Google-run bots.
+
+#### **class [OSXSDKApi](/recipes/recipe_modules/osx_sdk/api.py#15)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
+
+API for using OS X SDK distributed via CIPD.
+
+&emsp; **@contextmanager**<br>&mdash; **def [\_\_call\_\_](/recipes/recipe_modules/osx_sdk/api.py#36)(self, kind, enabled=True):**
+
+Setups the SDK environment when enabled.
+
+The helper tool will be deployed to [START_DIR]/cache/mac_toolchain.
+The SDK will be deployed to [START_DIR]/cache/osx_sdk.$version.app.
+
+To avoid machines rebuilding these on every run, set up named caches in your
+cr-buildbucket.cfg file like:
+
+    caches: {
+      # Cache for mac_toolchain tool
+      name: "mac_toolchain_tool"
+      path: "mac_toolchain"
+    }
+    caches: {
+      # Cache for Xcode 9.2 (build version 9C40b)
+      name: "xcode_ios_9C40b"
+      path: "osx_sdk.9C40b.app"
+    }
+
+Args:
+  kind ('mac'|'ios'): How the SDK should be configured.
+  enabled (bool): Whether the SDK should be used or not.
+
+Raises:
+    StepFailure or InfraFailure.
+
+&mdash; **def [initialize](/recipes/recipe_modules/osx_sdk/api.py#32)(self):**
 ### *recipe_modules* / [presubmit](/recipes/recipe_modules/presubmit)
 
 [DEPS](/recipes/recipe_modules/presubmit/__init__.py#1): [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/step][recipe_engine/recipe_modules/step]
@@ -845,6 +889,11 @@ Move things around in a loop!
 [DEPS](/recipes/recipe_modules/infra_paths/examples/full.py#7): [infra\_paths](#recipe_modules-infra_paths), [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
 &mdash; **def [RunSteps](/recipes/recipe_modules/infra_paths/examples/full.py#16)(api):**
+### *recipes* / [osx\_sdk:examples/full](/recipes/recipe_modules/osx_sdk/examples/full.py)
+
+[DEPS](/recipes/recipe_modules/osx_sdk/examples/full.py#5): [osx\_sdk](#recipe_modules-osx_sdk), [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
+
+&mdash; **def [RunSteps](/recipes/recipe_modules/osx_sdk/examples/full.py#13)(api):**
 ### *recipes* / [presubmit:examples/full](/recipes/recipe_modules/presubmit/examples/full.py)
 
 [DEPS](/recipes/recipe_modules/presubmit/examples/full.py#5): [presubmit](#recipe_modules-presubmit)

@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "d06d3e03_698f53fd",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1116444
+      },
+      "writtenOn": "2018-08-09T19:20:52Z",
+      "side": 1,
+      "message": "Devs for iOS keep uploading new Xcode versions fairly frequently (in summer, as often as every 2 weeks, whenever new Xcode beta comes up). It would be a major inconvenience to have them remember to update this recipe every time. Can we instead query CIPD directly to check the package availability?",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 16
+      },
+      "revId": "4ebd94e67d9b666d0acd2c1f4e32a0d3e7571258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01f4c07b_bf38fc44",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1116444
+      },
+      "writtenOn": "2018-08-09T19:20:52Z",
+      "side": 1,
+      "message": "Add .lower().\n\nApple\u0027s original version strings can be mixed case, but CIPD constrains ref names to lower-case only. In build configs, people tend to specify Xcode build versions the Apple way (mixed case), and we always lowercase them.\nIn practice, we haven\u0027t seen any name collisions yet due to lowercase conversion, so it should be safe.",
+      "range": {
+        "startLine": 28,
+        "startChar": 24,
+        "endLine": 28,
+        "endChar": 53
+      },
+      "revId": "4ebd94e67d9b666d0acd2c1f4e32a0d3e7571258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3e7c1685_19f6e54a",
         "filename": "recipes/recipe_modules/osx_sdk/api.py",
         "patchSetId": 1
@@ -36,6 +82,98 @@
       "writtenOn": "2018-08-09T08:49:35Z",
       "side": 1,
       "message": "Add example usage in docstring.\n\nwith api.osx_sdk(\u0027mac\u0027):\n  ...\n\nThe \"with\" isn\u0027t always immediately obvious from reading this.",
+      "revId": "4ebd94e67d9b666d0acd2c1f4e32a0d3e7571258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffd6ac39_d7fba124",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1116444
+      },
+      "writtenOn": "2018-08-09T19:20:52Z",
+      "side": 1,
+      "message": "nit: technically, we don\u0027t need to distinguish the version in the cache path. Any specific build should deploy a single kind+version of SDK (and Xcode doesn\u0027t like competing with itself - so it\u0027s impractical to have more than one at a time). On tester swarming bots we always install it as just \"Xcode.app\".\nThe ios recipe currently uses a qualified name only because at the time I (incorrectly) assumed that we\u0027d have to specify named caches for all Xcode versions globally for all builders. Since it\u0027s not the case, we can simplify the cache path.\n\nHowever, it\u0027s mostly a moot point since this recipe module will xcode-select -s to the installed path anyway, and nobody else needs to care.",
+      "range": {
+        "startLine": 41,
+        "startChar": 50,
+        "endLine": 41,
+        "endChar": 70
+      },
+      "revId": "4ebd94e67d9b666d0acd2c1f4e32a0d3e7571258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e245dfdd_2ad73be8",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1116444
+      },
+      "writtenOn": "2018-08-09T19:20:52Z",
+      "side": 1,
+      "message": "nit: add \u0027kind ios\u0027 to the comment, since it\u0027s in the cache name. Otherwise people will just assume the \u0027xcode_ios_\u0027 prefix is always fixed, even for the \u0027mac\u0027 kind, and will end up installing / uninstalling ios components needlessly (which are multiple GBs) if the kind changes between builds.",
+      "range": {
+        "startLine": 52,
+        "startChar": 12,
+        "endLine": 52,
+        "endChar": 53
+      },
+      "revId": "4ebd94e67d9b666d0acd2c1f4e32a0d3e7571258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54791520_6982cddf",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1116444
+      },
+      "writtenOn": "2018-08-09T19:20:52Z",
+      "side": 1,
+      "message": "nit: use lowercase version (since CIPD ref names must be lowercase - see the comment above).",
+      "range": {
+        "startLine": 53,
+        "startChar": 27,
+        "endLine": 53,
+        "endChar": 32
+      },
+      "revId": "4ebd94e67d9b666d0acd2c1f4e32a0d3e7571258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc542e23_115210c6",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1116444
+      },
+      "writtenOn": "2018-08-09T19:20:52Z",
+      "side": 1,
+      "message": "Note that currently this may break some Mac builders that will run on the same bot after this one - see e.g. https://crbug.com/813163 (a build referencing otool without installing SDK).\nHopefully, LUCI migration will ferret those out before we run into it :-)",
+      "range": {
+        "startLine": 76,
+        "startChar": 45,
+        "endLine": 76,
+        "endChar": 68
+      },
       "revId": "4ebd94e67d9b666d0acd2c1f4e32a0d3e7571258",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

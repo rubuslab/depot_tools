@@ -13,6 +13,7 @@ on non-goma builds.
 import multiprocessing
 import os
 import re
+import subprocess
 import sys
 
 # The -t tools are incompatible with -j and -l
@@ -40,6 +41,14 @@ for index, arg in enumerate(input_args[1:]):
     output_dir = input_args[index + 2]
 
 use_goma = False
+# default goma dir as chromium's build/toolschain/goma.gni
+goma_dir = ""
+if sys.platform.startswith('win'):
+  goma_dir = 'C:\\src\\goma\\goma-win64'
+else:
+  goma_dir = os.getenv('GOMA_DIR')
+  if not goma_dir:
+    goma_dir = os.path.expandvars('${HOME}/goma')
 try:
   # If GOMA_DISABLED is set (to anything) then gomacc will use the local
   # compiler instead of doing a goma compile. This is convenient if you want
@@ -55,8 +64,25 @@ try:
         m = re.match('^\s*use_goma\s*=\s*true(\s*$|\s*#.*$)', line)
         if m:
           use_goma = True
+        m = re.match('^\s*goma_dir\s*=\s*"([^"]*)"(\s*$|\s*#.*$)', line)
+        if m:
+          goma_dir = os.path.expanduser(m.group(1))
 except IOError:
   pass
+
+if use_goma:
+  goma_ctl = os.path.join(goma_dir, 'goma_ctl.py')
+  if not os.path.exists(goma_ctl):
+    sys.stderr.write('Error: %s not found.\nCheck goma_dir in %s\n' %
+                     (goma_ctl, os.path.join(output_dir, 'args.gn')))
+    sys.exit(1)
+  p = subprocess.Popen([sys.executable, goma_ctl, 'ensure_start'],
+                       stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+  outputs = p.communicate()
+  retcode = p.wait()
+  if retcode:
+    sys.stderr.write(outputs[0])
+    sys.exit(1)
 
 if sys.platform.startswith('win'):
   # Specify ninja.exe on Windows so that ninja.bat can call autoninja and not

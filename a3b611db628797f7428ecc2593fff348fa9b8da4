@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5029bb7_b43d9a49",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T23:55:16Z",
+      "side": 1,
+      "message": "this isn\u0027t a parameter to this func.",
+      "range": {
+        "startLine": 378,
+        "startChar": 4,
+        "endLine": 378,
+        "endChar": 17
+      },
+      "revId": "a3b611db628797f7428ecc2593fff348fa9b8da4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8be22f9_da74fca7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T23:55:16Z",
+      "side": 1,
+      "message": "strictly speaking, merge_base doesn\u0027t need to be descendant of base_rev.\n\nI think better picture would be:\n\n\"\"\"\n\n  Graphically, it looks like htis:\n\n    ... -\u003e merge_base -\u003e ....already landed commits on \u003ctarget_branch\u003e... -\u003e target_branch\n                      \\\n                       -\u003e [possibly net yet landed dependent CLs] -\u003e patch_rev\n\n  Next, we apply the commits merge_base..patch_rev on top of whatever is currently checked out,\n  denoted `base_rev`. Typically, it\u0027d be a revision from |target_branch|, but this is not required.\n  Graphically, we cherry pick `merge_base..patch_rev` on top of `base_rev`:\n  \n     ... -\u003e base_rev -\u003e [possibly net yet landed dependent CLs] -\u003e patch_rev\n   \n  After application, if options.reset_patch_ref is specified, we soft reset just cherry-picked changes,\n  keeping them in git index only.",
+      "range": {
+        "startLine": 383,
+        "startChar": 7,
+        "endLine": 386,
+        "endChar": 14
+      },
+      "revId": "a3b611db628797f7428ecc2593fff348fa9b8da4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47fe9e03_b8e9a490",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T23:55:16Z",
+      "side": 1,
+      "message": "i\u0027d add a comment here instead: \n  ...\n    |\n  base_rev  (\u003d\u003dcurrently checked out revision)",
+      "range": {
+        "startLine": 387,
+        "startChar": 9,
+        "endLine": 387,
+        "endChar": 17
+      },
+      "revId": "a3b611db628797f7428ecc2593fff348fa9b8da4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f837423_e1575860",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T23:55:16Z",
+      "side": 1,
+      "message": "👍",
+      "range": {
+        "startLine": 450,
+        "startChar": 18,
+        "endLine": 450,
+        "endChar": 50
+      },
+      "revId": "a3b611db628797f7428ecc2593fff348fa9b8da4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7db36704_9cfca0d3",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T23:55:16Z",
+      "side": 1,
+      "message": "this is actually not important for cherry pick to work! Strictly speaking, you may start with two orphan branches:\n \nA: orphanA0 [add: readme.md] -\u003e A1 [modify: readme.md]\nB: orphanB0 [add: py.py] -\u003e B1 [add: py_test.py]\n                          \\\npatch1:                    CL1 [add: LICENSE.txt]\n                            \\\npatch2:                      CL2 [modify: LICENSE.txt]\n\n\n\nThen, running your func on:\n   base_rev \u003d repo@orhanA0\n   patch_ref \u003d repo@B1:refs/changes/cl2\nFunc should compute:\n   merge_base \u003d orhanB0\nand after cherry picks, checkout should look like:\n   orphanA0 -\u003e CL1 -\u003e CL2\n   (which corresponds to files (readme.md AND LICENSE.txt))",
+      "range": {
+        "startLine": 1214,
+        "startChar": 70,
+        "endLine": 1215,
+        "endChar": 59
+      },
+      "revId": "a3b611db628797f7428ecc2593fff348fa9b8da4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

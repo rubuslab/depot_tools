@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "a0854acc_ecb1be0c",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-08-09T01:44:38Z",
+      "side": 1,
+      "message": "better to use \u0027gn arg . --list --json\u0027 ?",
+      "parentUuid": "cb0b5c07_a347e174",
+      "revId": "05263e085ff9f32f4502c9e924b7da94320c10c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7db85fe6_920c1c67",
         "filename": "autoninja.py",
         "patchSetId": 1

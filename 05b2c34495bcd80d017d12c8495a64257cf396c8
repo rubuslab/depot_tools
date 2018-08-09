@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "daa40e37_5512f761",
+        "filename": "gclient_scm.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T04:36:55Z",
+      "side": 1,
+      "message": "Patch\u0027s target branch",
+      "range": {
+        "startLine": 418,
+        "startChar": 52,
+        "endLine": 418,
+        "endChar": 58
+      },
+      "revId": "05b2c34495bcd80d017d12c8495a64257cf396c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "735ab4f4_a63e48bd",
+        "filename": "gclient_scm.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T04:36:55Z",
+      "side": 1,
+      "message": "maybe checkout_path or just dir?",
+      "range": {
+        "startLine": 419,
+        "startChar": 18,
+        "endLine": 419,
+        "endChar": 22
+      },
+      "revId": "05b2c34495bcd80d017d12c8495a64257cf396c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b79136b_77f917fe",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1211,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T04:36:55Z",
+      "side": 1,
+      "message": "\"Apply X on top of Y\" is usually used in git (in my experience) as change commit X to be X\u0027 s.t. its parent becomes Y.\n\nWhat you mean here is \u0027apply ref..., created for branch origin/feature, on top of just checked out revision.",
+      "range": {
+        "startLine": 1211,
+        "startChar": 45,
+        "endLine": 1211,
+        "endChar": 61
+      },
+      "revId": "05b2c34495bcd80d017d12c8495a64257cf396c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b55e5c70_d1474746",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T04:36:55Z",
+      "side": 1,
+      "message": "btw, mind adding test where this is diff from above, as if I\u0027m apply patch for branch X on top branch Y?",
+      "range": {
+        "startLine": 1212,
+        "startChar": 60,
+        "endLine": 1212,
+        "endChar": 76
+      },
+      "revId": "05b2c34495bcd80d017d12c8495a64257cf396c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

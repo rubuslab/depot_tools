@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7b99f71b_7a6dfd58",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-09T04:36:55Z",
+      "side": 0,
+      "message": "heh, all of these are easy to confuse with the revisition on top of which you\u0027ll cherry pick the patch. So, maybe leave as is but add comment?",
+      "parentUuid": "fde1f290_4d211a5c",
+      "range": {
+        "startLine": 375,
+        "startChar": 4,
+        "endLine": 375,
+        "endChar": 14
+      },
+      "revId": "dd5051fa529e0935fe279279d39cb00cbf856c14",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4850634b_ba706ebb",
         "filename": "gclient_scm.py",
         "patchSetId": 5

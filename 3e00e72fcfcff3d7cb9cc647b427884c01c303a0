@@ -22,6 +22,30 @@
       "revId": "3e00e72fcfcff3d7cb9cc647b427884c01c303a0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd15729f_0d500d03",
+        "filename": "gclient_scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-10T01:24:53Z",
+      "side": 1,
+      "message": "I mean that there might not be any commits in between",
+      "parentUuid": "df77f307_597cfbb5",
+      "range": {
+        "startLine": 385,
+        "startChar": 27,
+        "endLine": 385,
+        "endChar": 35
+      },
+      "revId": "3e00e72fcfcff3d7cb9cc647b427884c01c303a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

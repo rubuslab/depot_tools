@@ -45,6 +45,30 @@
       "revId": "9a65dd0b780db379530586ffbf51fce25304ae4e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2fb99379_2e6b96ae",
+        "filename": "cipd_client_version.digests",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-08-11T04:20:11Z",
+      "side": 1,
+      "message": "What I meant is, here\u0027s what happens now:\n\n$ rm -rf .cipd_client* \u0026\u0026 ./cipd help\nCIPD selfupdate failed. Trying to bootstrap the CIPD client from scratch...\nflag provided but not defined: -version-file\ndoes an in-place upgrade to the current cipd binary\n\nusage:  cipd selfupdate -version \u003cversion\u003e\n  -cache-dir string\n    \tDirectory for shared cache (can also be set by CIPD_CACHE_DIR env var).\n  -json-output string\n    \tPath to write operation results to.\n  -log-level value\n    \tThe logging level. Valid options are: debug, info, warning, error. (default warning)\n  -service-account-json string\n    \tPath to JSON file with service account credentials to use.\n  -service-url string\n    \tBackend URL. If provided via an \u0027ensure file\u0027, the URL in the file takes precedence.\n  -verbose\n    \tEnable more logging (deprecated, use -log-level\u003ddebug).\n  -version string\n    \tVersion of the client to update to.\nBootstrap from scratch failed, something is seriously broken. Run the following commands to diagnose if this is repeating:\n  export CIPD_HTTP_USER_AGENT_PREFIX\u003ddepot_tools/e716ffbde73ee01f63bd3ca720e45d44667443e0/manual\n  ./.cipd_client selfupdate -version-file ./cipd_client_version\n\nBecause clean bootstrap doesn\u0027t really bootstrap anything new yet.",
+      "parentUuid": "3c6ffbc6_c42eec53",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 57
+      },
+      "revId": "9a65dd0b780db379530586ffbf51fce25304ae4e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

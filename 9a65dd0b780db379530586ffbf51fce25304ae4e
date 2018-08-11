@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e986d3f0_b997613b",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-08-11T04:14:41Z",
+      "side": 1,
+      "message": "When we commit this CL, first \u0027selfupdate\u0027 after depot_tools update will necessarily fail because \u0027-version-file\u0027 is not supported yet by clients that try to selfupdate. \n\nThis line makes sure it happens without confusingly looking output. \n\nNote that if something is indeed seriously broken with selfupdate, the whole output will be dumped below on seconf self_update.",
+      "range": {
+        "startLine": 204,
+        "startChar": 17,
+        "endLine": 204,
+        "endChar": 29
+      },
+      "revId": "9a65dd0b780db379530586ffbf51fce25304ae4e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3c6ffbc6_c42eec53",
+        "filename": "cipd_client_version.digests",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-08-11T04:14:41Z",
+      "side": 1,
+      "message": "This is still old version. Right after \"update\", everything fails on \u0027selfupdate -version-file ...\u0027, since it is not supported yet.\n\nI\u0027ll update this CL once we build a new CIPD client.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 57
+      },
+      "revId": "9a65dd0b780db379530586ffbf51fce25304ae4e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

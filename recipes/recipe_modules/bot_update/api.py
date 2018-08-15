@@ -184,7 +184,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
           fixed_revision = self._destination_branch(cfg, name)
         # If we're syncing to a ref, we want to make sure it exists before
         # trying to check it out.
-        if fixed_revision.startswith('refs/'):
+        if (cfg.solutions and
+            cfg.solutions[0].name == name and
+            fixed_revision.startswith('refs/')):
           # Handle the "ref:revision" syntax, e.g.
           # refs/branch-heads/4.2:deadbeef
           refs.append(fixed_revision.split(':')[0])

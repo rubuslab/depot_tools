@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "60318f6f_8ccfa980",
+        "filename": "recipes/recipe_modules/gclient/examples/full.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-15T23:55:23Z",
+      "side": 1,
+      "message": "This doesn\u0027t cause expectation changes?",
+      "range": {
+        "startLine": 25,
+        "startChar": 3,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "4436bd67838aa5fc890acd57afb534f71c827a9a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

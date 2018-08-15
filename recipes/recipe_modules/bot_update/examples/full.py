@@ -35,6 +35,7 @@ def RunSteps(api):
   api.gclient.c.patch_projects['v8/v8'] = ('src/v8', 'HEAD')
   api.gclient.c.patch_projects['angle/angle'] = ('src/third_party/angle',
                                                  'HEAD')
+  api.gclient.c.patch_projects['webrtc'] = ('src/third_party/webrtc', 'HEAD')
   api.gclient.c.repo_path_map['https://webrtc.googlesource.com/src'] = (
       'src/third_party/webrtc', 'HEAD')
 
@@ -207,8 +208,13 @@ def GenTests(api):
       patch_issue=338811,
       patch_set=3,
   ) + api.step_data(
-      'gerrit get_patch_destination_branch',
-      api.gerrit.get_one_change_response_data(branch='experimental/feature'),
+      'gerrit info for issue 338811',
+      api.bot_update.gen_patch_test_data(
+          branch='experimental/feature',
+          project='v8/v8',
+          issue=338811,
+          patchset=3,
+      ),
   )
   yield api.test('tryjob_gerrit_feature_branch') + api.properties.tryserver(
       buildername='feature_rel',
@@ -216,16 +222,24 @@ def GenTests(api):
       patch_issue=338811,
       patch_set=3,
   ) + api.step_data(
-      'gerrit get_patch_destination_branch',
-      api.gerrit.get_one_change_response_data(branch='experimental/feature'),
+      'gerrit info for issue 338811',
+      api.bot_update.gen_patch_test_data(
+          branch='experimental/feature',
+          issue=338811,
+          patchset=3,
+      ),
   )
   yield api.test('tryjob_gerrit_branch_heads') + api.properties.tryserver(
       gerrit_project='chromium/src',
       patch_issue=338811,
       patch_set=3,
   ) + api.step_data(
-      'gerrit get_patch_destination_branch',
-      api.gerrit.get_one_change_response_data(branch='refs/branch-heads/67'),
+      'gerrit info for issue 338811',
+      api.bot_update.gen_patch_test_data(
+          branch='refs/branch-heads/67',
+          issue=338811,
+          patchset=3,
+      ),
   )
   yield api.test('tryjob_gerrit_webrtc') + api.properties.tryserver(
       gerrit_project='src',
@@ -236,7 +250,19 @@ def GenTests(api):
   yield api.test('multiple_patch_refs') + api.properties(
       patch=True,
       patch_refs=[
-          'https://chromium.googlesource.com/chromium/src@refs/changes/12/34/5',
-          'https://chromium.googlesource.com/v8/v8@refs/changes/124/45/6',
+          ('https://chromium-review.googlesource.com', 1234, 1),
+          ('https://webrtc-review.googlesource.com', 4567, 2),
       ],
+  ) + api.step_data(
+      'gerrit info for issue 1234',
+      api.bot_update.gen_patch_test_data(),
+  ) + api.step_data(
+      'gerrit info for issue 4567',
+      api.bot_update.gen_patch_test_data(
+          project='webrtc',
+          issue=4567,
+          patchset=2,
+          host='https://webrtc-review,googlesource.com',
+          gitiles_host='https://webrtc.googlesource.com/src',
+      ),
   )

@@ -22,6 +22,12 @@ EXAMPLE_CHANGE = {
       'commit': {
         'message': 'Change commit message',
       },
+      'fetch': {
+          'http': {
+              'ref': 'refs/changes/27/91827/1',
+              'url': 'https://chromium.googlesource.com/chromium/src',
+          },
+      },
     },
   },
 }

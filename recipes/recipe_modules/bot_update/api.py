@@ -24,6 +24,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
     self._parent_got_revision = parent_got_revision
     self._deps_revision_overrides = deps_revision_overrides
     self._fail_patch = fail_patch
+    self._branch_for_issue = {}
+    self._issue_for_path = {}
 
     self._last_returned_properties = {}
     super(BotUpdateApi, self).__init__(*args, **kwargs)
@@ -137,15 +139,56 @@ class BotUpdateApi(recipe_api.RecipeApi):
     ]
 
     # How to find the patch, if any
-    if patch:
-      if patch_refs:
-        flags.extend(
-            ['--patch_ref', patch_ref]
-            for patch_ref in patch_refs)
-      elif self._repository and self._gerrit_ref:
-        flags.extend([
-            ['--gerrit_repo', self._repository],
-            ['--gerrit_ref', self._gerrit_ref],
+    patch_refs = patch_refs or []
+    if self._gerrit and self._patchset:
+      patch_refs.append((self._gerrit, self._issue, self._patchset))
+
+    for gerrit_host, issue, patch_set in patch_refs:
+      if (gerrit_host, issue) in self._branch_for_issue:
+        continue
+      step_test_data = self.test_api.gen_patch_test_data(
+          host=gerrit_host,
+          issue=issue,
+          patchset=patch_set,
+          project=self.m.properties.get('patch_project')
+                  if issue == self._issue else None)
+
+      patch_info = self.m.gerrit.get_changes(
+          host=gerrit_host,
+          query_params=[('change', issue)],
+          o_params=['DOWNLOAD_COMMANDS', 'ALL_REVISIONS'],
+          limit=1,
+          name='info for issue %s' % issue,
+          step_test_data=lambda:step_test_data)[0]
+
+      # Get the path for the issue project. Default to the first solution if not
+      # found.
+      patch_path = cfg.patch_projects.get(
+          patch_info['project'], [cfg.solutions[0].name, None])[0]
+
+      # Make sure no two CLs refer to the same path.
+      assert patch_path not in self._issue_for_path, (
+          'Issues %s and %s refer to the same path: %s' % (
+              self._issue_for_path[patch_path],
+              (gerrit_host, issue),
+              patch_path))
+
+      self._branch_for_issue[(gerrit_host, issue)] = patch_info['branch']
+      self._issue_for_path[patch_path] = (gerrit_host, issue)
+
+      if patch:
+        fetch_info = None
+        for revision in patch_info['revisions'].itervalues():
+          if revision['_number'] == patch_set:
+            fetch_info = revision['fetch']['http']
+            break
+
+        assert fetch_info, 'Patchset %s not found for issue %s' % (
+            patch_set, issue) + str(patch_info)
+
+        flags.append([
+            '--patch-ref', '%s@%s:%s' % (
+                fetch_info['url'], patch_info['branch'], fetch_info['ref']),
         ])
 
     # Compute requested revisions.
@@ -179,9 +222,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
       fixed_revision = self.m.gclient.resolve_revision(revision)
       if fixed_revision:
         fixed_revisions[name] = fixed_revision
-        if fixed_revision.upper() == 'HEAD':
+        if fixed_revision.upper() == 'HEAD' and name in self._issue_for_path:
           # Sync to correct destination branch if HEAD was specified.
-          fixed_revision = self._destination_branch(cfg, name)
+          branch = self._branch_for_issue[self._issue_for_path[name]]
+          fixed_revision = branch if branch != 'master' else 'HEAD'
         # If we're syncing to a ref, we want to make sure it exists before
         # trying to check it out.
         if fixed_revision.startswith('refs/'):
@@ -303,44 +347,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
           self.m.path['checkout'] = cwd.join(*co_root.split(self.m.path.sep))
 
     return step_result
-
-  def _destination_branch(self, cfg, path):
-    """Returns the destination branch of a CL for the matching project
-    if available or HEAD otherwise.
-
-    This is a noop if there's no Gerrit CL associated with the run.
-    Otherwise this queries Gerrit for the correct destination branch, which
-    might differ from master.
-
-    Args:
-      cfg: The used gclient config.
-      path: The DEPS path of the project this prefix is for. E.g. 'src' or
-          'src/v8'. The query will only be made for the project that matches
-          the CL's project.
-    Returns:
-        A destination branch as understood by bot_update.py if available
-        and if different from master, returns 'HEAD' otherwise.
-    """
-    # Bail out if this is not a gerrit issue.
-    if (not self.m.tryserver.is_gerrit_issue or
-        not self._gerrit or not self._issue):
-      return 'HEAD'
-
-    # Ignore other project paths than the one belonging to the CL.
-    if path != cfg.patch_projects.get(
-        self.m.properties.get('patch_project'),
-        (cfg.solutions[0].name, None))[0]:
-      return 'HEAD'
-
-    # Query Gerrit to check if a CL's destination branch differs from master.
-    destination_branch = self.m.gerrit.get_change_destination_branch(
-        host=self._gerrit,
-        change=self._issue,
-        name='get_patch_destination_branch',
-    )
-
-    # Only use prefix if different from bot_update.py's default.
-    return destination_branch if destination_branch != 'master' else 'HEAD'
 
   def _resolve_fixed_revisions(self, bot_update_json):
     """Set all fixed revisions from the first sync to their respective

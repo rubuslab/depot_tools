@@ -22,6 +22,30 @@
       "revId": "4436bd67838aa5fc890acd57afb534f71c827a9a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "121ce121_4ef9178a",
+        "filename": "recipes/recipe_modules/gclient/examples/full.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-15T23:57:28Z",
+      "side": 1,
+      "message": "surprisingly not. But w/o this, coverage is insufficient.\nI think the reason is that gclient config is referenced, but not used for any kind of gclient sync.",
+      "parentUuid": "60318f6f_8ccfa980",
+      "range": {
+        "startLine": 25,
+        "startChar": 3,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "4436bd67838aa5fc890acd57afb534f71c827a9a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

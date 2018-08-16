@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "210829d8_425c2e33",
+        "filename": "cipd.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-08-16T18:55:17Z",
+      "side": 1,
+      "message": "Beware that this script is executed each time \u0027cipd\u0027 is invoked. \n\nPS is a bit slower to start (especially cold start) compared to batch files. So there are some advantages to not hitting PS on hot code path (when the client is already bootstrapped).",
+      "parentUuid": "6bd2096c_3d7e51ac",
+      "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d6f0351_04b09dbf",
         "filename": "cipd.ps1",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8da3c696_5a6f1164",
+        "filename": "cipd.ps1",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-08-16T18:55:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d6f0351_04b09dbf",
+      "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "36999ab5_9fc006c8",
+        "filename": "cipd.ps1",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-08-16T18:55:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e0143b6_2c30945a",
+      "range": {
+        "startLine": 55,
+        "startChar": 32,
+        "endLine": 55,
+        "endChar": 33
+      },
+      "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "45bfe584_13a99522",
         "filename": "cipd.ps1",
         "patchSetId": 4
@@ -73,6 +133,24 @@
       "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "705119ae_323e174c",
+        "filename": "cipd.ps1",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-08-16T18:55:17Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "45bfe584_13a99522",
+      "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

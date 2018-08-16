@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81730c92_e76ca730",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-08-16T00:07:01Z",
+      "side": 1,
+      "message": "This is the only difference.\n\nIt used to be \"cat \"$1\" | openssl dgst -sha256\"\n\nApparently format of the output of \u0027openssl dgst\u0027 depends on its version :-/",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 38
+      },
+      "revId": "5727f524c49cc9aa037821f4b291d3394c2a8701",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e22562bc_e0400382",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-08-16T08:56:01Z",
+      "side": 1,
+      "message": "nit but if we follow goma.gni code, it might be os.environ.get(\u0027HOME\u0027, \u0027\u0027) + \"/goma\"?\nI think $HOME usually exists but if not, the code brings different behavior.",
+      "range": {
+        "startLine": 51,
+        "startChar": 15,
+        "endLine": 51,
+        "endChar": 43
+      },
+      "revId": "45a3e5e792f5259c534b4c0bd64102779944fa49",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80640b54_0de572cd",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-08-16T08:56:01Z",
+      "side": 1,
+      "message": "What this mean?\ncall, check_call, or check_output may get stuck if we use PIPE and communicate but we do not use them.\nhttps://docs.python.org/2.7/library/subprocess.html#subprocess.check_output\n\nAlso, we do not use stdout\u003dPIPE or stderr\u003dPIPE.  We can use p.wait() without being afraid of getting stuck.\nhttps://docs.python.org/2.7/library/subprocess.html#subprocess.Popen.wait",
+      "range": {
+        "startLine": 79,
+        "startChar": 2,
+        "endLine": 79,
+        "endChar": 23
+      },
+      "revId": "45a3e5e792f5259c534b4c0bd64102779944fa49",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3643407c_42ec07cb",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-08-16T08:56:01Z",
+      "side": 1,
+      "message": "Don\u0027t we need to say something here?\nOr, we can always expect we would see error message on failure case?",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 15
+      },
+      "revId": "45a3e5e792f5259c534b4c0bd64102779944fa49",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

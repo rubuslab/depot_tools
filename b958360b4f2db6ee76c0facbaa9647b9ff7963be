@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6bd2096c_3d7e51ac",
+        "filename": "cipd.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-08-16T17:09:11Z",
+      "side": 1,
+      "message": "i found reading ps1 easier than .bat. Consider making this file just a wrapper around a ps1 file, later.",
+      "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3d6f0351_04b09dbf",
+        "filename": "cipd.ps1",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-08-16T17:09:11Z",
+      "side": 1,
+      "message": "maybe print something at least",
+      "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e0143b6_2c30945a",
+        "filename": "cipd.ps1",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-08-16T17:09:11Z",
+      "side": 1,
+      "message": "nit: p",
+      "range": {
+        "startLine": 55,
+        "startChar": 32,
+        "endLine": 55,
+        "endChar": 33
+      },
+      "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45bfe584_13a99522",
+        "filename": "cipd.ps1",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-08-16T17:09:11Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "b958360b4f2db6ee76c0facbaa9647b9ff7963be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -100,3 +100,8 @@ wheel: <
 ##
 # END "cryptography" dependencies.
 ##
+
+wheel: <
+  name: "infra/python/wheels/crcmod/${vpython_platform}"
+  version: "version:1.7"
+>

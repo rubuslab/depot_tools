@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff3ee12_60daed13",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-08-16T01:04:17Z",
+      "side": 1,
+      "message": "In theory it should just be a git checkout. BUT OK LET\u0027S NOT GET OURSELVES STUCK INTO LITTLE DETAILS!",
+      "revId": "2f38dbdd97193f068acdd1ee3e57b6c231e3fb89",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

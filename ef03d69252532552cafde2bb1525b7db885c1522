@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81727903_b8ae2725",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "general: can you avoid the term \u0027issue\u0027 from now on? Ideally, also change this var :)\n\nRational: \u0027issue\u0027 is legacy from Rietveld. It doesn\u0027t exist in Gerrit. It\u0027s called \"change number\". I proposed names w/o \u0027issue\u0027 for most vars you\u0027ve added in this CL to show my commitment to this :)",
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "451b7596_8b37b0e4",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "how about _target_refs_for_patches ?\nalso, please document   # maps each patch, identified by ..., to ....",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 26
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03107175_9539f32f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "how about _patch_for_path? also document.",
+      "range": {
+        "startLine": 28,
+        "startChar": 9,
+        "endLine": 28,
+        "endChar": 24
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b83ab22f_3dd5163b",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "can this block be moved into its own func?",
+      "range": {
+        "startLine": 141,
+        "startChar": 4,
+        "endLine": 141,
+        "endChar": 35
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9293d5e3_172eec08",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "eh, maybe change_number?",
+      "range": {
+        "startLine": 146,
+        "startChar": 21,
+        "endLine": 146,
+        "endChar": 26
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47bcfc77_ee38a01c",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "doesn\u0027t this return a list? Consider adding get_change_details() to gerrit recipe module in the same CL. Then, `gen_patch_test_data` can perhaps be moved into gerrit\u0027s test_api, too?",
+      "range": {
+        "startLine": 156,
+        "startChar": 19,
+        "endLine": 156,
+        "endChar": 44
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60b1878f_a8c442e7",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "how about\n\"info for patch %s/%s\"  % (issue, host)",
+      "range": {
+        "startLine": 161,
+        "startChar": 16,
+        "endLine": 161,
+        "endChar": 30
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68cc2c6e_970ba0eb",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "Why?\n\nI\u0027m fine with not supporting this at first, but i\u0027m curious why not.",
+      "range": {
+        "startLine": 169,
+        "startChar": 6,
+        "endLine": 169,
+        "endChar": 52
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cea3aba_158df158",
+        "filename": "recipes/recipe_modules/bot_update/test_api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "i really think this should be part of gerrit recipe module.",
+      "range": {
+        "startLine": 104,
+        "startChar": 6,
+        "endLine": 104,
+        "endChar": 25
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87037bf8_eb5c6ba3",
+        "filename": "recipes/recipe_modules/bot_update/test_api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-17T02:24:36Z",
+      "side": 1,
+      "message": "FYI: dict.get(key, value_if_Not_found)\n\nkwargs.get(\u0027host\u0027, \u0027https://....\u0027)\n\nit\u0027s better than `or` because `or` will discard values like \"False\" or \"None\".",
+      "range": {
+        "startLine": 105,
+        "startChar": 11,
+        "endLine": 105,
+        "endChar": 75
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

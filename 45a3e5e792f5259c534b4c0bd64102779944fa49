@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b93721e2_16d7f40e",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-08-20T06:21:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e22562bc_e0400382",
+      "range": {
+        "startLine": 51,
+        "startChar": 15,
+        "endLine": 51,
+        "endChar": 43
+      },
+      "revId": "45a3e5e792f5259c534b4c0bd64102779944fa49",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "80640b54_0de572cd",
         "filename": "autoninja.py",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "c845db2a_d8cd30f4",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-08-20T06:21:25Z",
+      "side": 1,
+      "message": "if we used communicate() here to capture stdout, stderr, it hung up on windows.\nit worked without problem on linux, though.",
+      "parentUuid": "80640b54_0de572cd",
+      "range": {
+        "startLine": 79,
+        "startChar": 2,
+        "endLine": 79,
+        "endChar": 23
+      },
+      "revId": "45a3e5e792f5259c534b4c0bd64102779944fa49",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3643407c_42ec07cb",
         "filename": "autoninja.py",
         "patchSetId": 3
@@ -59,6 +107,30 @@
       "writtenOn": "2018-08-16T08:56:01Z",
       "side": 1,
       "message": "Don\u0027t we need to say something here?\nOr, we can always expect we would see error message on failure case?",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 15
+      },
+      "revId": "45a3e5e792f5259c534b4c0bd64102779944fa49",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c02bc6ba_6c9ec724",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-08-20T06:21:25Z",
+      "side": 1,
+      "message": "goma_ctl.py should show something on stderr on failure case.",
+      "parentUuid": "3643407c_42ec07cb",
       "range": {
         "startLine": 84,
         "startChar": 4,

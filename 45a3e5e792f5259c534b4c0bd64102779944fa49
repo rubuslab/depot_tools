@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "97428240_d43abda2",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-08-20T07:00:50Z",
+      "side": 1,
+      "message": "Will you say so in the comment?  I could not catch that from the comment.",
+      "parentUuid": "c845db2a_d8cd30f4",
+      "range": {
+        "startLine": 79,
+        "startChar": 2,
+        "endLine": 79,
+        "endChar": 23
+      },
+      "revId": "45a3e5e792f5259c534b4c0bd64102779944fa49",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3643407c_42ec07cb",
         "filename": "autoninja.py",
         "patchSetId": 3

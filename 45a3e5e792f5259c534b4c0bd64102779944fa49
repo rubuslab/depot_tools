@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "827f96d9_d5057cd9",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-08-21T05:08:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97428240_d43abda2",
+      "range": {
+        "startLine": 79,
+        "startChar": 2,
+        "endLine": 79,
+        "endChar": 23
+      },
+      "revId": "45a3e5e792f5259c534b4c0bd64102779944fa49",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3643407c_42ec07cb",
         "filename": "autoninja.py",
         "patchSetId": 3

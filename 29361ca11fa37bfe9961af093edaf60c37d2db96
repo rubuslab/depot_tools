@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47cb121d_d8a8d7dd",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2673,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-22T23:06:48Z",
+      "side": 0,
+      "message": "Why not say issue \u003d self.GetIssue(), so we don\u0027t have to call it twice?",
+      "range": {
+        "startLine": 2672,
+        "startChar": 4,
+        "endLine": 2673,
+        "endChar": 0
+      },
+      "revId": "29361ca11fa37bfe9961af093edaf60c37d2db96",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

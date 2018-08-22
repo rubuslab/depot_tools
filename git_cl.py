@@ -2703,11 +2703,11 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     self._detail_cache.setdefault(issue, []).append((frozenset(options), data))
     return data
 
-  def _GetChangeCommit(self, issue=None):
-    issue = issue or self.GetIssue()
-    assert issue, 'issue is required to query Gerrit'
+  def _GetChangeCommit(self):
+    assert self.GetIssue(), 'issue is required to query Gerrit'
     try:
-      data = gerrit_util.GetChangeCommit(self._GetGerritHost(), str(issue))
+      data = gerrit_util.GetChangeCommit(
+          self._GetGerritHost(), str(self.GetIssue()))
     except gerrit_util.GerritError as e:
       if e.http_status == 404:
         raise GerritChangeNotExists(issue, self.GetCodereviewServer())

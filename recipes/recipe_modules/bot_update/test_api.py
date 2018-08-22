@@ -100,3 +100,34 @@ class BotUpdateTestApi(recipe_test_api.RecipeTestApi):
     """Hash project to bogus deterministic Cr-Commit-Position values."""
     h = hashlib.sha1(project)
     return struct.unpack('!I', h.digest()[:4])[0] % 300000
+
+  def gen_patch_test_data(self, **kwargs):
+    host = kwargs.get('host') or 'https://chromium-review.googlesource.com'
+    issue = str(kwargs.get('issue') or 1234)
+    patchset = int(kwargs.get('patchset') or 1)
+    project = kwargs.get('project') or 'chromium/src'
+    branch = kwargs.get('branch') or 'master'
+    gitiles_host = (kwargs.get('gitiles_host')
+                    or host.replace('-review', '') + '/' + project)
+
+    revisions = {}
+    for ps in range(patchset):
+      ps = str(ps + 1)
+      revisions['deadbeef' + ps] = {
+          '_number': int(ps),
+          'fetch': {
+              'http':{
+                  'ref': 'refs/changes/%s/%s/%s' % (issue[-2:], issue, ps),
+                  'url': gitiles_host,
+              },
+          },
+      }
+
+    test_data = {
+        '_number': issue,
+        'project': project,
+        'branch': branch,
+        'revisions': revisions,
+    }
+
+    return self.m.json.output([test_data])

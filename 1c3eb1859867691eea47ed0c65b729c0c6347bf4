@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12e3d6da_bc02abd6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-23T00:08:33Z",
+      "side": 1,
+      "message": "Nit: maybe \"use project~number on Gerrit for better routing when setting reviewers\"?\nThis was a bit hard to parse for me hehe",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "1c3eb1859867691eea47ed0c65b729c0c6347bf4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4c13d1f1_7efa274a",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-23T00:08:33Z",
+      "side": 1,
+      "message": "Nit: It\u0027d make more sense to me if it was (project, change_number)\nFeel free to ignore.",
+      "range": {
+        "startLine": 905,
+        "startChar": 21,
+        "endLine": 905,
+        "endChar": 43
+      },
+      "revId": "1c3eb1859867691eea47ed0c65b729c0c6347bf4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

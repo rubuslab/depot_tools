@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11197f48_bc139ba8",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-23T00:08:33Z",
+      "side": 1,
+      "message": "change",
+      "range": {
+        "startLine": 906,
+        "startChar": 62,
+        "endLine": 906,
+        "endChar": 68
+      },
+      "revId": "318f25e0056394d47dc4121411e9a13f8a4aea10",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

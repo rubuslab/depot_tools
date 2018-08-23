@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86d2f8e3_305d40a9",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-08-23T02:03:56Z",
+      "side": 1,
+      "message": "nit: I feel like just storing a value and testing for \"if self._cached_remote_url\" is more pythonic, however gross it is.",
+      "revId": "4b6f6d135ea8ac51038211ae5037ab8c9c361b1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

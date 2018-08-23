@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f3de20f4_40358381",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1367,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-23T00:16:13Z",
+      "side": 0,
+      "message": "So squash is never False here?",
+      "range": {
+        "startLine": 1367,
+        "startChar": 17,
+        "endLine": 1367,
+        "endChar": 36
+      },
+      "revId": "287b15aa7897cb26689f011bfa8b14e3c548c39b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

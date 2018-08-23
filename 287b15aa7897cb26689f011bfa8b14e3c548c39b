@@ -22,6 +22,30 @@
       "revId": "287b15aa7897cb26689f011bfa8b14e3c548c39b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e84ea14_b2822df5",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1367,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-23T00:19:18Z",
+      "side": 0,
+      "message": "yeah, no non-squash mode tests with TBR.",
+      "parentUuid": "f3de20f4_40358381",
+      "range": {
+        "startLine": 1367,
+        "startChar": 17,
+        "endLine": 1367,
+        "endChar": 36
+      },
+      "revId": "287b15aa7897cb26689f011bfa8b14e3c548c39b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -148,6 +148,31 @@ class GerritApi(recipe_api.RecipeApi):
         'Error querying for CL description: host:%r change:%r; patchset:%r' % (
             host, change, patchset))
 
+  def get_change_info(self, host, change, patchset, test_data_project=None):
+    step_test_data = self.m.gerrit.test_api.get_one_change_response_data(
+        change=change,
+        patchset=patchset,
+        project=test_data_project)
+
+    patch_info = self.get_changes(
+        host=host,
+        query_params=[('change', change)],
+        o_params=['DOWNLOAD_COMMANDS', 'ALL_REVISIONS'],
+        limit=1,
+        name='get change info for %s/c/%s/%s' % (host, change, patchset),
+        step_test_data=lambda: step_test_data)[0]
+
+    result = {
+        'project': patch_info['project'],
+        'branch': patch_info['branch'],
+    }
+    for revision in patch_info['revisions'].itervalues():
+      if int(revision['_number']) == int(patchset):
+        result['url'] = revision['fetch']['http']['url']
+        result['ref'] = revision['fetch']['http']['ref']
+
+    return result
+
   def get_changes(self, host, query_params, start=None, limit=None,
                   o_params=None, step_test_data=None, **kwargs):
     """

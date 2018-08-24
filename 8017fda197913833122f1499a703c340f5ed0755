@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b553494c_5f180da7",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2739,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-24T21:31:59Z",
+      "side": 1,
+      "message": "I wonder if we should assert GetProject too?",
+      "range": {
+        "startLine": 2739,
+        "startChar": 16,
+        "endLine": 2739,
+        "endChar": 24
+      },
+      "revId": "8017fda197913833122f1499a703c340f5ed0755",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

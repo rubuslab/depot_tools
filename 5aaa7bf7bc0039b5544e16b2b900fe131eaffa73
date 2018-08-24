@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a2bbe90_9382aabd",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-24T00:11:44Z",
+      "side": 1,
+      "message": "jbudorick:\nAre multiple patch_refs being used already?\nI\u0027d like to change them to use this format. WDYT?",
+      "range": {
+        "startLine": 385,
+        "startChar": 25,
+        "endLine": 385,
+        "endChar": 79
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

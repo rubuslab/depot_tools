@@ -22,6 +22,30 @@
       "revId": "8017fda197913833122f1499a703c340f5ed0755",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f28bc518_3fa577ab",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2739,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T23:27:39Z",
+      "side": 1,
+      "message": "actually, it doesn\u0027t need to be set --_GerritChangeIdentifier is supposed to work with it set or unset.\nHowever, I\u0027ve just realized that if it isn\u0027t set, there will be an exception. Will fix in another CL.",
+      "parentUuid": "b553494c_5f180da7",
+      "range": {
+        "startLine": 2739,
+        "startChar": 16,
+        "endLine": 2739,
+        "endChar": 24
+      },
+      "revId": "8017fda197913833122f1499a703c340f5ed0755",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

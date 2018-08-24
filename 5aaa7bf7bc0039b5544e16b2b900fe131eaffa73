@@ -46,6 +46,30 @@
       "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52848c49_3db60049",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-24T18:25:10Z",
+      "side": 1,
+      "message": "What repo does twosided.py live in?\nMaybe we need to support both strings and tuples while we change that script.",
+      "parentUuid": "f085a9ce_8503d5a6",
+      "range": {
+        "startLine": 385,
+        "startChar": 25,
+        "endLine": 385,
+        "endChar": 79
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

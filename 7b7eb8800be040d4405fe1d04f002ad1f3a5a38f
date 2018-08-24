@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee01d50f_26ddf637",
+        "filename": "owners.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1178490
+      },
+      "writtenOn": "2018-08-24T14:28:43Z",
+      "side": 0,
+      "message": "In WebRTC we are trying to use owners.py (we are copying https://cs.chromium.org/chromium/src/PRESUBMIT.py?l\u003d1475-1550\u0026rcl\u003d57cc805bba436b3f26b86168628a343be8abe2a3 into our PRESUBMIT.py to enable this useful check), but when it reads //third_party/OWNERS it fails on this line:\n\nfile://ENG_REVIEW_OWNERS\n\nBecause WebRTC doesn\u0027t have //ENG_REVIEW_OWNERS.\n\nAt first I thought that creating ENG_REVIEW_OWNERS in the WebRTC root was a good idea but even if it fixes, it doesn\u0027t sound correct (because the owners db will be different if owners.py is invoked from WebRTC instead of Chromium).\n\nSo I thought at this solution but I don\u0027t really like it because this is an error in 99% of the times and the 1% is the situation I am experiencing.\n\nAnother solution is to avoid to use \"file://\" inclusion in //third_party/OWNERS. This will create some duplication but it should solve our problem without changing the behavior of owners.py.",
+      "range": {
+        "startLine": 361,
+        "startChar": 0,
+        "endLine": 362,
+        "endChar": 71
+      },
+      "revId": "7b7eb8800be040d4405fe1d04f002ad1f3a5a38f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

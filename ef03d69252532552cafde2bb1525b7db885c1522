@@ -366,6 +366,30 @@
     },
     {
       "key": {
+        "uuid": "d759b9fa_770824ed",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "well, my question was more general, so why not support this in gclient other than \"more work\"?",
+      "parentUuid": "07405046_d91334e6",
+      "range": {
+        "startLine": 169,
+        "startChar": 6,
+        "endLine": 169,
+        "endChar": 52
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6cea3aba_158df158",
         "filename": "recipes/recipe_modules/bot_update/test_api.py",
         "patchSetId": 2
@@ -401,6 +425,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "6cea3aba_158df158",
+      "range": {
+        "startLine": 104,
+        "startChar": 6,
+        "endLine": 104,
+        "endChar": 25
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb78b11_348a3164",
+        "filename": "recipes/recipe_modules/bot_update/test_api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "Thank you very much!",
+      "parentUuid": "b1336ae3_32b38b79",
       "range": {
         "startLine": 104,
         "startChar": 6,
@@ -457,6 +505,30 @@
       "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4aa6a5a_7bcf0f56",
+        "filename": "recipes/recipe_modules/bot_update/test_api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5c38d13b_6575ddab",
+      "range": {
+        "startLine": 105,
+        "startChar": 11,
+        "endLine": 105,
+        "endChar": 75
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

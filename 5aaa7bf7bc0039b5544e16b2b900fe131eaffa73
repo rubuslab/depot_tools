@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "5c2cdf1a_bd4aaaff",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "l",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 9
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9775669_6ee6f756",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "shouldn\u0027t patch_ref_flags line be moved inside this if?",
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3a2bbe90_9382aabd",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 6
@@ -90,6 +130,149 @@
         "startChar": 25,
         "endLine": 385,
         "endChar": 79
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4648c155_90491e55",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "changes +\u003d\notherwise you are mutating incoming list.",
+      "range": {
+        "startLine": 392,
+        "startChar": 6,
+        "endLine": 392,
+        "endChar": 14
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca5f1d31_279b882a",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "add method doc.",
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9900bc58_adcf8b28",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "given what we learned from recent git cl improvements, this should be project (if known).",
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88662447_b7744c36",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "All revisions is particularly expensive, but given our use of patch numbers, it\u0027s inevitable :(",
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "922fc367_ed1396d8",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "o_params must not be hardcoded. Default should be [].",
+      "range": {
+        "startLine": 160,
+        "startChar": 8,
+        "endLine": 160,
+        "endChar": 16
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "605605b3_97d31e24",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "strictly speaking, this should only be set if ALL_REVISIONS or CURRENT_REVISION is set, but I guess it\u0027s better to leave as is.",
+      "range": {
+        "startLine": 22,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 8
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9bb29e20_4323165f",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-24T20:48:36Z",
+      "side": 1,
+      "message": "this should only be added if DOWNLOAD_URLS oparams is set.",
+      "range": {
+        "startLine": 27,
+        "startChar": 6,
+        "endLine": 32,
+        "endChar": 8
       },
       "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",

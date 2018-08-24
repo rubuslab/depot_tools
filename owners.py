@@ -55,6 +55,7 @@ Examples for all of these combinations can be found in tests/owners_unittest.py.
 
 import collections
 import fnmatch
+import logging
 import random
 import re
 
@@ -358,8 +359,7 @@ class Database(object):
     elif directive.startswith('file:'):
       include_file = self._resolve_include(directive[5:], owners_path)
       if not include_file:
-        raise SyntaxErrorInOwnersFile(owners_path, lineno,
-            ('%s does not refer to an existing file.' % directive[5:]))
+        logging.warn('%s does not refer to an existing file.' % directive[5:])
 
       included_owners = self._read_just_the_owners(include_file)
       for owner in included_owners:

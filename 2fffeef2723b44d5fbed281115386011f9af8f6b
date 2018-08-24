@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4596c3d1_65017fa0",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-24T00:09:58Z",
+      "side": 1,
+      "message": "So we have 100% coverage.",
+      "range": {
+        "startLine": 70,
+        "startChar": 12,
+        "endLine": 70,
+        "endChar": 21
+      },
+      "revId": "2fffeef2723b44d5fbed281115386011f9af8f6b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

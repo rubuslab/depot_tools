@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb1c35c8_9f535002",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-24T00:09:58Z",
+      "side": 0,
+      "message": "gerrit_project doesn\u0027t actually mean anything, as far as I can tell.",
+      "range": {
+        "startLine": 157,
+        "startChar": 6,
+        "endLine": 157,
+        "endChar": 20
+      },
+      "revId": "d06cc78ec8cc4d9b55fe3232b92d9066f5d776d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f085a9ce_8503d5a6",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-08-24T02:37:14Z",
+      "side": 1,
+      "message": "Yep; see http://shortn/_tFDV4TcnoL.\n\nI have no objection to changing the format; we might need to tweak what twosided.py passes in, though.",
+      "parentUuid": "3a2bbe90_9382aabd",
+      "range": {
+        "startLine": 385,
+        "startChar": 25,
+        "endLine": 385,
+        "endChar": 79
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

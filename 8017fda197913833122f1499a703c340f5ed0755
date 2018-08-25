@@ -46,6 +46,30 @@
       "revId": "8017fda197913833122f1499a703c340f5ed0755",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e590e65b_16322431",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2739,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-25T00:32:18Z",
+      "side": 1,
+      "message": "https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1188989",
+      "parentUuid": "f28bc518_3fa577ab",
+      "range": {
+        "startLine": 2739,
+        "startChar": 16,
+        "endLine": 2739,
+        "endChar": 24
+      },
+      "revId": "8017fda197913833122f1499a703c340f5ed0755",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

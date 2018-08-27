@@ -5132,6 +5132,10 @@ def CMDsplit(parser, args):
                     default=False,
                     help="List the files and reviewers for each CL that would "
                          "be created, but don't create branches or CLs.")
+  parser.add_option("-f", "--force",
+                    help="If set, will allow 'git cl split' to upload any "
+                         "number of CLs. By default, it will not upload more "
+                         "10 CLs, to avoid overloading the CQ")
   options, _ = parser.parse_args(args)
 
   if not options.description_file:
@@ -5141,7 +5145,8 @@ def CMDsplit(parser, args):
     return CMDupload(OptionParser(), args)
 
   return split_cl.SplitCl(options.description_file, options.comment_file,
-                          Changelist, WrappedCMDupload, options.dry_run)
+                          Changelist, WrappedCMDupload, options.dry_run,
+                          options.force)
 
 
 @subcommand.usage('DEPRECATED')

@@ -19,6 +19,12 @@ import owners_finder
 import git_common as git
 
 
+# If `git cl split` would create more than this number of CLs, require the force
+# flag. This is to help make sure our infrastructure isn't overloaded by one of
+# these commands.
+CL_SPLIT_FORCE_LIMIT = 10
+
+
 def ReadFile(file_path):
   """Returns the content of |file_path|."""
   with open(file_path) as f:
@@ -156,7 +162,8 @@ def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
   print
 
 
-def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run):
+def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
+            force):
   """"Splits a branch into smaller branches and uploads CLs.
 
   Args:
@@ -165,6 +172,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run):
     changelist: The Changelist class.
     cmd_upload: The function associated with the git cl upload command.
     dry_run: Whether this is a dry run (no branches or CLs created).
+    force: Forces an upload, even if this will upload a large number of CLs.
 
   Returns:
     0 in case of success. 1 in case of error.
@@ -196,8 +204,22 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run):
     files_split_by_owners = GetFilesSplitByOwners(owners_database, files)
 
     num_cls = len(files_split_by_owners)
+    if num_cls > CL_SPLIT_FORCE_LIMIT:
+      print (
+        'This will generate %r CLs. This many CLs can potentially generate too'
+        ' much load on the build infrastructure.') % num_cls
+      if force:
+        print 'Please be careful.'
+      else:
+        print (
+            'Please email infra-dev@chromium.org to ensure that this won\'t'
+            ' break anything. The infra team reserves the right to cancel your'
+            ' jobs if they are overloading the CQ.')
+        return 1
+
     print('Will split current branch (' + refactor_branch + ') into ' +
           str(num_cls) + ' CLs.\n')
+
 
     for cl_index, (directory, files) in \
         enumerate(files_split_by_owners.iteritems(), 1):

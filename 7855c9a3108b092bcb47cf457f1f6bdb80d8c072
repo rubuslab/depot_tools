@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d816ecb_628c22ac",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2802,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-28T17:42:22Z",
+      "side": 1,
+      "message": "rmote_url \u003d remote_url.rstrip()",
+      "range": {
+        "startLine": 2801,
+        "startChar": 4,
+        "endLine": 2802,
+        "endChar": 41
+      },
+      "revId": "7855c9a3108b092bcb47cf457f1f6bdb80d8c072",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4543653f_3267b756",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2806,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-28T17:42:22Z",
+      "side": 1,
+      "message": "fetch_info[\u0027url\u0027] \u003d ...rstrip(\u0027/\u0027)",
+      "range": {
+        "startLine": 2805,
+        "startChar": 4,
+        "endLine": 2806,
+        "endChar": 55
+      },
+      "revId": "7855c9a3108b092bcb47cf457f1f6bdb80d8c072",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

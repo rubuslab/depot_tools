@@ -2798,6 +2798,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     remote_url = self._changelist.GetRemoteUrl()
     if remote_url.endswith('.git'):
       remote_url = remote_url[:-len('.git')]
+    if remote_url.endswith('/'):
+      remote_url = remote_url[:-len('/')]
     fetch_info = revision_info['fetch']['http']
 
     if remote_url != fetch_info['url']:

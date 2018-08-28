@@ -22,6 +22,30 @@
       "revId": "03746d70de57a978fb9ff77b2c3f62d7f58ae1f5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57f30ee7_3addd451",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 1125535
+      },
+      "writtenOn": "2018-08-28T20:57:59Z",
+      "side": 1,
+      "message": "I can imagine a further extension is to allow something generic like --filter\u003d\u0027-status:abandoned\u0027. Some may find it easier to use for those who are already familiar with gerrit\u0027s search syntax. I\u0027ll leave that as a future change.",
+      "parentUuid": "4d82e490_196236c3",
+      "range": {
+        "startLine": 378,
+        "startChar": 4,
+        "endLine": 379,
+        "endChar": 33
+      },
+      "revId": "03746d70de57a978fb9ff77b2c3f62d7f58ae1f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1257166c_fb243e15",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-28T20:31:13Z",
+      "side": 1,
+      "message": "Maybe we could either check that:\n * key doesn\u0027t already exist\n * existing key maps to the same value (would still allow a scenario where two modules define a common dependency, without any \u0027defer\u0027 mechanism).",
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

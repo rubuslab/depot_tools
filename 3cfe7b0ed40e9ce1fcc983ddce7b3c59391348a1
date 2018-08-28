@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc3de96e_04c4ef54",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-28T06:12:32Z",
+      "side": 1,
+      "message": "this is the real problem. Remove it from here and you don\u0027t need any warning.\nDevelopers can manually trigger CQ on resulting CLs, but this, presumably, they\u0027ll do consciously.",
+      "range": {
+        "startLine": 116,
+        "startChar": 23,
+        "endLine": 116,
+        "endChar": 37
+      },
+      "revId": "3cfe7b0ed40e9ce1fcc983ddce7b3c59391348a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

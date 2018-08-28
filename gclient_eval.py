@@ -6,6 +6,7 @@ import ast
 import cStringIO
 import collections
 import logging
+import os
 import tokenize
 
 import gclient_utils
@@ -169,6 +170,9 @@ _GCLIENT_SCHEMA = schema.Schema(_NodeDictSchema({
 
     # Hooks executed before processing DEPS. See 'hooks' for more details.
     schema.Optional('pre_deps_hooks'): _GCLIENT_HOOKS_SCHEMA,
+
+    # List of directories containing sub-DEPS to be imported.
+    schema.Optional('imports'): [schema.Optional(basestring)],
 
     # Recursion limit for nested DEPS.
     schema.Optional('recursion'): int,
@@ -449,6 +453,61 @@ def UpdateCondition(info_dict, op, new_condition):
     del info_dict['condition']
 
 
+def _ParseDepsFile(dir_path):
+    """ Parses DEPS file given its directory.
+
+    Returns:
+      A Python dict with the parsed contents of the DEPS file.
+    """
+
+    # TODO(yvesg) Factorize with gclient.Dependency.ParseDepsFile?
+    #             One subtle difference: file not found is an error here.
+
+    filepath = os.path.join(dir_path, 'DEPS')
+    if not os.path.isfile(filepath):
+        logging.error(
+            'imports: No %s file found',
+            filepath)
+        return {}
+
+    logging.info(
+        'imports: %s file found', filepath)
+    deps_content = gclient_utils.FileRead(filepath)
+    logging.debug('Import content:\n%s', deps_content)
+    return Parse(deps_content, False, filepath)
+
+
+def _InjectDEPS(parent, sub_deps):
+    """ Inject DEPS elements into parent.
+
+    All dicts except 'vars' update parent's ones.
+    All sequences except 'recursedeps' extend parent's ones.
+    All other variables are lifted.
+
+    Arguments:
+      parent (io): Python dict representing DEPS file to be updated.
+      sub_deps : Python dict representing DEPS file to import.
+
+    Returns:
+        None. |parent| is modified inplace.
+    """
+    for name, value in sub_deps.items():
+      if name in ['vars', 'imports']:
+        # vars: We want them to remain locally scoped.
+        # imports: Already recursively processed.
+        pass
+      elif name in ['recursedeps', 'use_relative_paths']:
+        logging.error("'%s' inside imported file: Not Implemented" % name)
+      elif isinstance(value, collections.Mapping):
+        parent.setdefault(name, {}).update(value)
+      elif isinstance(value, collections.Sequence):
+        parent.setdefault(name, []).extend(value)
+      else:
+        if name in parent:
+          logging.info('Imported file overrides %s' % name)
+        parent[name] = value
+
+
 def Parse(content, validate_syntax, filename, vars_override=None):
   """Parses DEPS strings.
 
@@ -492,6 +551,15 @@ def Parse(content, validate_syntax, filename, vars_override=None):
         UpdateCondition(hook, 'and', 'checkout_' + os_name)
       hooks.extend(os_hooks)
     del result['hooks_os']
+
+  if 'imports' in result:
+    dirname = os.path.dirname(filename)
+    if os.path.isdir(dirname):
+      for item in result['imports']:
+        sub_deps = _ParseDepsFile(os.path.join(dirname, item))
+        _InjectDEPS(result, sub_deps)
+    else:
+      logging.error('Cannot import from non-file %s.' % filename)
 
   return result
 

@@ -70,6 +70,30 @@
       "revId": "3cfe7b0ed40e9ce1fcc983ddce7b3c59391348a1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e23ca2cd_1cd35621",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2018-08-28T19:48:50Z",
+      "side": 1,
+      "message": "\u003e \u003e I\u0027m worried this will change existing behavior and confuse developers. Although maybe that\u0027s an acceptable thing.\n\u003e \n\u003e Send PSA.\n\u003e \n\u003e \u003e My plan was to make this a flag as well, so that by default it doesn\u0027t cq dry run, but if you pass the flag it will?\n\u003e \n\u003e OK, though you\u0027d need to have this warning then. But i suggest to trigger CQ only on last CL and state why:\n\u003e \n\u003e \"\"\"\n\u003e triggering CQ dry run on the last CL only because this will in effect apply *all* CLs and test them at once.\n\u003e \n\u003e This conserves CQ capacity (see crbug/TODO) and provides almost as much signal.\n\u003e \"\"\"\n\nHow does triggering CQ on the last CL test them all? As I read the code it splits up CLs by owner, but the last CL isn\u0027t anything special, at least I think according to the code.",
+      "parentUuid": "3e5a1d0e_cc85fc77",
+      "range": {
+        "startLine": 116,
+        "startChar": 23,
+        "endLine": 116,
+        "endChar": 37
+      },
+      "revId": "3cfe7b0ed40e9ce1fcc983ddce7b3c59391348a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

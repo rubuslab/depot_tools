@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4d82e490_196236c3",
+        "filename": "my_activity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-28T20:43:26Z",
+      "side": 1,
+      "message": "yeah, that\u0027s a tough one. I see reasons for and against.",
+      "range": {
+        "startLine": 378,
+        "startChar": 4,
+        "endLine": 379,
+        "endChar": 33
+      },
+      "revId": "03746d70de57a978fb9ff77b2c3f62d7f58ae1f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -656,7 +656,8 @@ class MyActivity(object):
     pass
 
   def get_changes(self):
-    num_instances = len(rietveld_instances) + len(gerrit_instances)
+    num_instances = (1 if self.options.single_thread else
+                     len(rietveld_instances) + len(gerrit_instances))
     with contextlib.closing(ThreadPool(num_instances)) as pool:
       rietveld_changes = pool.map_async(
           lambda instance: self.rietveld_search(instance, owner=self.user),
@@ -681,7 +682,8 @@ class MyActivity(object):
         logging.error(error.rstrip())
 
   def get_reviews(self):
-    num_instances = len(rietveld_instances) + len(gerrit_instances)
+    num_instances = (1 if self.options.single_thread else
+                     len(rietveld_instances) + len(gerrit_instances))
     with contextlib.closing(ThreadPool(num_instances)) as pool:
       rietveld_reviews = pool.map_async(
           lambda instance: self.rietveld_search(instance, reviewer=self.user),
@@ -701,7 +703,8 @@ class MyActivity(object):
         self.print_review(review)
 
   def get_issues(self):
-    with contextlib.closing(ThreadPool(len(monorail_projects))) as pool:
+    num_instances = 1 if self.options.single_thread else len(monorail_projects)
+    with contextlib.closing(ThreadPool(num_instances)) as pool:
       monorail_issues = pool.map(
           self.monorail_issue_search, monorail_projects.keys())
       monorail_issues = list(itertools.chain.from_iterable(monorail_issues))
@@ -709,7 +712,8 @@ class MyActivity(object):
     if not monorail_issues:
       return
 
-    with contextlib.closing(ThreadPool(len(monorail_issues))) as pool:
+    num_instances = 1 if self.options.single_thread else len(monorail_issues)
+    with contextlib.closing(ThreadPool(num_instances)) as pool:
       filtered_issues = pool.map(
           self.filter_modified_monorail_issue, monorail_issues)
       self.issues = [issue for issue in filtered_issues if issue]
@@ -955,6 +959,12 @@ def main():
       const=logging.ERROR,
       help='Suppress non-error messages.'
   )
+  parser.add_option(
+      '-S', '--single-thread',
+      action='store_true',
+      dest='single_thread',
+      default=False,
+      help='Runs single-threaded (slower).')
   parser.add_option(
       '-o', '--output', metavar='<file>',
       help='Where to output the results. By default prints to stdout.')

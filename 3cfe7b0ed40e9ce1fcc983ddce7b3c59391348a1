@@ -135,6 +135,53 @@
       "revId": "3cfe7b0ed40e9ce1fcc983ddce7b3c59391348a1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "093e8a3f_cd2e2852",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2018-08-28T20:08:59Z",
+      "side": 1,
+      "message": "Linked them where they\u0027re created in the code.",
+      "parentUuid": "5f23d7aa_fcde476f",
+      "range": {
+        "startLine": 116,
+        "startChar": 23,
+        "endLine": 116,
+        "endChar": 37
+      },
+      "revId": "3cfe7b0ed40e9ce1fcc983ddce7b3c59391348a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d33c4337_ad55d4b3",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2018-08-28T20:08:59Z",
+      "side": 1,
+      "message": "This function splits the CLs. They\u0027re all separate as far as I can tell. https://chromium-review.googlesource.com/c/chromium/src/+/1194103, https://chromium-review.googlesource.com/c/chromium/src/+/1194103, and https://chromium-review.googlesource.com/c/chromium/src/+/1191803 are examples of CLs.",
+      "range": {
+        "startLine": 204,
+        "startChar": 28,
+        "endLine": 204,
+        "endChar": 49
+      },
+      "revId": "3cfe7b0ed40e9ce1fcc983ddce7b3c59391348a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

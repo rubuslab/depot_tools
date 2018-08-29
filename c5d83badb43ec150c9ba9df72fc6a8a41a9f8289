@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "dc75951a_e8cfa1b4",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T01:16:49Z",
+      "side": 1,
+      "message": "I think it might be better to pass the DEPS file path explicitly.",
+      "range": {
+        "startLine": 466,
+        "startChar": 28,
+        "endLine": 466,
+        "endChar": 44
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc59d073_a9efccf0",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T01:16:49Z",
+      "side": 1,
+      "message": "I think we shouldn\u0027t support them at all, or make sure that whatever vars are present are defined and have the same value in the parent file.",
+      "range": {
+        "startLine": 495,
+        "startChar": 19,
+        "endLine": 495,
+        "endChar": 23
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85f8c4af_f7d66688",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T01:16:49Z",
+      "side": 1,
+      "message": "Why not error out in imports? We only want to support single-level imports, right?",
+      "range": {
+        "startLine": 495,
+        "startChar": 27,
+        "endLine": 495,
+        "endChar": 34
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50e86288_25313445",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T01:16:49Z",
+      "side": 1,
+      "message": "Maybe it\u0027d be useful to tell which imported file too.",
+      "range": {
+        "startLine": 500,
+        "startChar": 69,
+        "endLine": 500,
+        "endChar": 73
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1257166c_fb243e15",
         "filename": "gclient_eval.py",
         "patchSetId": 1
@@ -13,6 +105,87 @@
       "writtenOn": "2018-08-28T20:31:13Z",
       "side": 1,
       "message": "Maybe we could either check that:\n * key doesn\u0027t already exist\n * existing key maps to the same value (would still allow a scenario where two modules define a common dependency, without any \u0027defer\u0027 mechanism).",
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6c36cd4_e49115b9",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T01:16:49Z",
+      "side": 1,
+      "message": "Good idea.\nI think gclient setdep should update all occurrences in the parent and all included DEPS files.",
+      "parentUuid": "1257166c_fb243e15",
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48dfc02d_ec107dbc",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T01:16:49Z",
+      "side": 1,
+      "message": "What about duplication of hook steps?",
+      "range": {
+        "startLine": 503,
+        "startChar": 41,
+        "endLine": 503,
+        "endChar": 49
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa6da970_03a9e589",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T01:16:49Z",
+      "side": 1,
+      "message": "Could you make a test in gclient_eval_test as well?",
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "533a4ca4_d293ccc0",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T01:16:49Z",
+      "side": 1,
+      "message": "Why do we want to support this?",
+      "range": {
+        "startLine": 844,
+        "startChar": 6,
+        "endLine": 844,
+        "endChar": 25
+      },
       "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

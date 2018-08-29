@@ -75,7 +75,8 @@ except ImportError:
   pass
 
 try:
-  import keyring
+  #import keyring
+  keyring = None
 except:
   keyring = None
 

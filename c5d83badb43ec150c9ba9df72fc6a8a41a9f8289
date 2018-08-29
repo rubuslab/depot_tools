@@ -262,6 +262,30 @@
     },
     {
       "key": {
+        "uuid": "125da421_94f6e6d7",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T19:39:44Z",
+      "side": 1,
+      "message": "Variables in conditions and I think in gclient_gn_args, are not expanded.",
+      "parentUuid": "6ea9275e_368ca9a0",
+      "range": {
+        "startLine": 495,
+        "startChar": 19,
+        "endLine": 495,
+        "endChar": 23
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50e86288_25313445",
         "filename": "gclient_eval.py",
         "patchSetId": 1

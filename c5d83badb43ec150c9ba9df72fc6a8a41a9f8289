@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "790ca898_760174f6",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T09:06:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e6a631f_e19fbc34",
+      "range": {
+        "startLine": 463,
+        "startChar": 4,
+        "endLine": 464,
+        "endChar": 73
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dc75951a_e8cfa1b4",
         "filename": "gclient_eval.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "624e5bee_4f59c2ea",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T09:06:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc75951a_e8cfa1b4",
+      "range": {
+        "startLine": 466,
+        "startChar": 28,
+        "endLine": 466,
+        "endChar": 44
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -82,6 +130,54 @@
       "writtenOn": "2018-08-29T01:16:49Z",
       "side": 1,
       "message": "Why not error out in imports? We only want to support single-level imports, right?",
+      "range": {
+        "startLine": 495,
+        "startChar": 27,
+        "endLine": 495,
+        "endChar": 34
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f907d8f_c1df3090",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T09:06:31Z",
+      "side": 1,
+      "message": "Not supporting *vars* would actually complicate the code!\nI believe the current solution is the best compromise: vars defined in a sub DEPS can just be used locally:\n  * DEPS are self-contained.\n  * Makes easy to extract from current DEPS while preserving the clean structure (e.g. android_sdk_* variables).",
+      "parentUuid": "bc59d073_a9efccf0",
+      "range": {
+        "startLine": 495,
+        "startChar": 19,
+        "endLine": 495,
+        "endChar": 23
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "429c9e81_100a6473",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T09:06:31Z",
+      "side": 1,
+      "message": "Multi-level imports was indeed a \u0027non-goal\u0027, but this feature appeared as a natural byproduct of this recursive approach.\nWhy not keeping it, then? I don\u0027t see it hinder future developments.",
+      "parentUuid": "85f8c4af_f7d66688",
       "range": {
         "startLine": 495,
         "startChar": 27,
@@ -203,6 +299,30 @@
       "writtenOn": "2018-08-29T01:16:49Z",
       "side": 1,
       "message": "Why do we want to support this?",
+      "range": {
+        "startLine": 844,
+        "startChar": 6,
+        "endLine": 844,
+        "endChar": 25
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d3ad0df_e45a344d",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T09:06:31Z",
+      "side": 1,
+      "message": "Cf comment above.",
+      "parentUuid": "533a4ca4_d293ccc0",
       "range": {
         "startLine": 844,
         "startChar": 6,

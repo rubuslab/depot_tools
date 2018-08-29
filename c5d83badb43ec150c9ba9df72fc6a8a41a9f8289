@@ -450,6 +450,24 @@
     },
     {
       "key": {
+        "uuid": "abbe01c7_e54cfbec",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T13:13:21Z",
+      "side": 1,
+      "message": "\u0027imports\u0027 requires concrete DEPS and sub-DEPS files.\ngclient_eval_unittest only deals with string DEPS. What should I test?",
+      "parentUuid": "fa6da970_03a9e589",
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "533a4ca4_d293ccc0",
         "filename": "tests/gclient_test.py",
         "patchSetId": 1

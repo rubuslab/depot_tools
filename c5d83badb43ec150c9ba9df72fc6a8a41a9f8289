@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "8e6a631f_e19fbc34",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1002301
+      },
+      "writtenOn": "2018-08-29T06:47:45Z",
+      "side": 1,
+      "message": "Remove this comment; we should just settle for one design and implement it. We don\u0027t have to mention other possible designs except at a very high level.\n\nAs for reusing ParseDepsFile, it seems tricky to get this to fit in there given that it\u0027s tied to the a dependency. It\u0027s very few lines of code in this function anyway so I\u0027d just go with what you have.",
+      "range": {
+        "startLine": 463,
+        "startChar": 4,
+        "endLine": 464,
+        "endChar": 73
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc75951a_e8cfa1b4",
         "filename": "gclient_eval.py",
         "patchSetId": 1

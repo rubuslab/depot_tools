@@ -213,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "ca745a21_deeb64ff",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T09:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50e86288_25313445",
+      "range": {
+        "startLine": 500,
+        "startChar": 69,
+        "endLine": 500,
+        "endChar": 73
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1257166c_fb243e15",
         "filename": "gclient_eval.py",
         "patchSetId": 1
@@ -248,6 +272,24 @@
     },
     {
       "key": {
+        "uuid": "7fd0c563_5d4fa9c6",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T09:31:37Z",
+      "side": 1,
+      "message": "\u003e Good idea.\nhttps://memegen.googleplex.com/template?sort\u003dinfo\u0026template\u003dwhich_one\n\n\u003e gclient setdep should update all occurrences in the parent and all included DEPS files.\nArgl!! We agreed on discarding this. Cf your comment \"I think the explicit one is better.\" :)\n\nContext: https://docs.google.com/document/d/15hVyMgVC38Aqy_ZuyjHaItun24quVLZp5dbLR1ESKrM/edit?ts\u003d5b7bbe36#heading\u003dh.50fwg0serljz\n\nIn my book, this smart \u0027gclient setdep\u0027 should remains tagged YAGNI.\nFor instance: webrtc rolldeps only have to update /DEPS. The sub-deps such as build/DEPS will simply by synced via gclient.",
+      "parentUuid": "d6c36cd4_e49115b9",
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "48dfc02d_ec107dbc",
         "filename": "gclient_eval.py",
         "patchSetId": 1
@@ -259,6 +301,30 @@
       "writtenOn": "2018-08-29T01:16:49Z",
       "side": 1,
       "message": "What about duplication of hook steps?",
+      "range": {
+        "startLine": 503,
+        "startChar": 41,
+        "endLine": 503,
+        "endChar": 49
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b95549f_c6bb22cb",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T09:31:37Z",
+      "side": 1,
+      "message": "We could warn about them.\nFiltering duplicates while preserving order is easy enough, but I\u0027m afraid it would be too smart for our own good.",
+      "parentUuid": "48dfc02d_ec107dbc",
       "range": {
         "startLine": 503,
         "startChar": 41,

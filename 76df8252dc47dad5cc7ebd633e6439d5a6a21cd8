@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e0aef3a_1d857039",
+        "filename": "gclient_eval.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T18:35:07Z",
+      "side": 1,
+      "message": "What if //DEPS includes //foo/DEPS and //bar/DEPS, and both of them have //third_party/baz in their deps dict?",
+      "range": {
+        "startLine": 499,
+        "startChar": 18,
+        "endLine": 499,
+        "endChar": 31
+      },
+      "revId": "76df8252dc47dad5cc7ebd633e6439d5a6a21cd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b0045bb_fc816f89",
+        "filename": "gclient_eval.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T18:35:07Z",
+      "side": 1,
+      "message": "What if //DEPS includes //foo/DEPS and //bar/DEPS, and both of them have to run the same hook (maybe because they have a common dependency)?\n\nDo we need hooks to support //src/build?",
+      "range": {
+        "startLine": 512,
+        "startChar": 26,
+        "endLine": 512,
+        "endChar": 31
+      },
+      "revId": "76df8252dc47dad5cc7ebd633e6439d5a6a21cd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41acaa94_b556adfb",
+        "filename": "gclient_eval.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-29T18:35:07Z",
+      "side": 1,
+      "message": "I think we should be a lot more restrictive in what we support. I don\u0027t think we need to support things like allowed_hosts, gclient_gn_args, gclient_gn_args_file, etc.\n\n  if name \u003d\u003d \u0027vars\u0027 || name \u003d\u003d \u0027deps\u0027:\n    ...\n  elif name \u003d\u003d \u0027hooks\u0027:  # If hooks are even needed\n    ...\n  else:\n    # Error out: Not supported.",
+      "range": {
+        "startLine": 516,
+        "startChar": 6,
+        "endLine": 516,
+        "endChar": 10
+      },
+      "revId": "76df8252dc47dad5cc7ebd633e6439d5a6a21cd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

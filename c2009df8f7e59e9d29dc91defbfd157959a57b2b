@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba6e8662_12f270e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-29T00:34:27Z",
+      "side": 1,
+      "message": "nah, nobody will read this doc every time. Keep old check\nif len()\u003e\u003d 10 and cq:\n  warn and ask to confirm.",
+      "range": {
+        "startLine": 12,
+        "startChar": 41,
+        "endLine": 13,
+        "endChar": 66
+      },
+      "revId": "c2009df8f7e59e9d29dc91defbfd157959a57b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "697988ce_ceb6bf60",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5145,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-29T00:34:27Z",
+      "side": 1,
+      "message": "--cq-dry-run\n\nsince you aren\u0027t actually CQ+2-ing it",
+      "range": {
+        "startLine": 5145,
+        "startChar": 23,
+        "endLine": 5145,
+        "endChar": 29
+      },
+      "revId": "c2009df8f7e59e9d29dc91defbfd157959a57b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95d19440_8546211c",
+        "filename": "split_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-29T00:34:27Z",
+      "side": 1,
+      "message": "delete",
+      "revId": "c2009df8f7e59e9d29dc91defbfd157959a57b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

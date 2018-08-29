@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "d6ae0654_8c51a5d3",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1002301
+      },
+      "writtenOn": "2018-08-29T10:34:53Z",
+      "side": 1,
+      "message": "Perhaps it makes sense to forbid it like Edward says since if a dev uses it, they\u0027re probably on thin ice. We don\u0027t want absurdly deep import hierarchies to form. I don\u0027t feel I understand how that would look, so I\u0027d forbid recursion.",
+      "parentUuid": "429c9e81_100a6473",
+      "range": {
+        "startLine": 495,
+        "startChar": 27,
+        "endLine": 495,
+        "endChar": 34
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50e86288_25313445",
         "filename": "gclient_eval.py",
         "patchSetId": 1
@@ -325,6 +349,30 @@
       "side": 1,
       "message": "We could warn about them.\nFiltering duplicates while preserving order is easy enough, but I\u0027m afraid it would be too smart for our own good.",
       "parentUuid": "48dfc02d_ec107dbc",
+      "range": {
+        "startLine": 503,
+        "startChar": 41,
+        "endLine": 503,
+        "endChar": 49
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "568117e0_440e96e8",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1002301
+      },
+      "writtenOn": "2018-08-29T10:34:53Z",
+      "side": 1,
+      "message": "When would hook steps be duplicated?\n\nIn general, if we\u0027re not really handling duplicated hooks we should throw an error saying not implemented rather than warning. People don\u0027t look at warnings in general.",
+      "parentUuid": "8b95549f_c6bb22cb",
       "range": {
         "startLine": 503,
         "startChar": 41,

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "007c8b03_87ceccc7",
+        "filename": "gclient_eval.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-29T19:05:38Z",
+      "side": 1,
+      "message": "Yeah I\u0027ve dismissed this scenario (YAGNI principle again!).\nThe idea is that we don\u0027t *need* to move all dependencies in the modules which use them.\nWe would only require the \u0027borrowed\u0027 modules (//build, //testing, ...) to have their own DEPS files.\n\nAs a consequence, this scenario is less likely. If the need arises, we can introduce the defer mechanism suggested by Patrik in the design doc, or maybe we\u0027ll have an even better option by then.",
+      "parentUuid": "2e0aef3a_1d857039",
+      "range": {
+        "startLine": 499,
+        "startChar": 18,
+        "endLine": 499,
+        "endChar": 31
+      },
+      "revId": "76df8252dc47dad5cc7ebd633e6439d5a6a21cd8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0b0045bb_fc816f89",
         "filename": "gclient_eval.py",
         "patchSetId": 2

@@ -310,6 +310,30 @@
     },
     {
       "key": {
+        "uuid": "f8077593_d51e35ef",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-30T15:21:37Z",
+      "side": 1,
+      "message": "I don\u0027t understand what you mean. Consider an included DEPS file like this, and assume checkout_foo is not defined in the root DEPS file:\n\n  vars \u003d {\n    \u0027checkout_foo\u0027: True\n  }\n  deps \u003d {\n    \u0027src/third_party/foo\u0027: {\n      \u0027url\u0027: ...,\n      \u0027condition\u0027: \u0027checkout_foo\u0027,\n    }\n  }\n\nThen we lift \u0027src/third_party/foo\u0027 to the top level deps, but if we don\u0027t lift the vars as well, we can\u0027t produce a valid DEPS file, since checkout_foo would be undefined.\n\nBesides, always lifting is easier to reason about than an intermediate solution, and less prone to fail in funny ways.",
+      "parentUuid": "6f9af1b2_bc2f3fab",
+      "range": {
+        "startLine": 495,
+        "startChar": 19,
+        "endLine": 495,
+        "endChar": 23
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50e86288_25313445",
         "filename": "gclient_eval.py",
         "patchSetId": 1

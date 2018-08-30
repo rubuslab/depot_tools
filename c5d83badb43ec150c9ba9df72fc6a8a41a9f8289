@@ -286,6 +286,30 @@
     },
     {
       "key": {
+        "uuid": "6f9af1b2_bc2f3fab",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-30T07:17:39Z",
+      "side": 1,
+      "message": "We could support this intermediary solution: lift the vars and assert there is no overlap.\n  * no overlap \u003d no conflict! It\u0027s semantically equivalent to locally scoped variables.\n  * lift \u003d play well with outer scripts (meets implicit assumptions).",
+      "parentUuid": "125da421_94f6e6d7",
+      "range": {
+        "startLine": 495,
+        "startChar": 19,
+        "endLine": 495,
+        "endChar": 23
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50e86288_25313445",
         "filename": "gclient_eval.py",
         "patchSetId": 1

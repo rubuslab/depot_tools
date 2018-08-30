@@ -334,6 +334,30 @@
     },
     {
       "key": {
+        "uuid": "d28b5ee0_8323e3f5",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1286313
+      },
+      "writtenOn": "2018-08-30T21:01:51Z",
+      "side": 1,
+      "message": "In my tests, variables such as \u0027checkout_foo\u0027 were expanded. That\u0027s why I considered \u0027vars\u0027 dict as some residue to get rid of.\n\nBut I agree we should lift the vars, and allow duplicate entries if they resolve to the same value. For instance \u0027chromium_git\u0027 prefix is likely to be defined in //build/DEPS as well.",
+      "parentUuid": "f8077593_d51e35ef",
+      "range": {
+        "startLine": 495,
+        "startChar": 19,
+        "endLine": 495,
+        "endChar": 23
+      },
+      "revId": "c5d83badb43ec150c9ba9df72fc6a8a41a9f8289",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50e86288_25313445",
         "filename": "gclient_eval.py",
         "patchSetId": 1

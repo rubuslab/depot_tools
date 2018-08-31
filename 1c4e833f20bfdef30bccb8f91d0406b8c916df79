@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "266baff6_5657fb2f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-08-31T19:47:37Z",
+      "side": 1,
+      "message": "I will delete this field soon :)",
+      "parentUuid": "3c3af7d1_5cd085d1",
+      "range": {
+        "startLine": 38,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 23
+      },
+      "revId": "1c4e833f20bfdef30bccb8f91d0406b8c916df79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "30f5ed22_db47bbe0",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 4
@@ -45,6 +69,30 @@
       "revId": "1c4e833f20bfdef30bccb8f91d0406b8c916df79",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c759a91d_33872ffd",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-08-31T19:47:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30f5ed22_db47bbe0",
+      "range": {
+        "startLine": 40,
+        "startChar": 38,
+        "endLine": 40,
+        "endChar": 39
+      },
+      "revId": "1c4e833f20bfdef30bccb8f91d0406b8c916df79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

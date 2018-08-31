@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1ffa3d2f_a3b4ab37",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-31T20:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c2cdf1a_bd4aaaff",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 9
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c9775669_6ee6f756",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 6
@@ -39,6 +63,24 @@
       "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c40773aa_3a0fa8d4",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-31T20:25:55Z",
+      "side": 1,
+      "message": "I was thinking that when we\u0027re deapplying the patch, we still would need to know the branch the patch was uploaded against.\nBut you\u0027re right, and we should\u0027ve called this already when we applied the patch.",
+      "parentUuid": "c9775669_6ee6f756",
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -137,6 +179,30 @@
     },
     {
       "key": {
+        "uuid": "2bfdc233_17785b64",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-31T20:25:55Z",
+      "side": 1,
+      "message": "Added temporary support for passing strings as well.",
+      "parentUuid": "ef395a37_0252b736",
+      "range": {
+        "startLine": 385,
+        "startChar": 25,
+        "endLine": 385,
+        "endChar": 79
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4648c155_90491e55",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 6
@@ -160,6 +226,30 @@
     },
     {
       "key": {
+        "uuid": "42a51518_413b1c98",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-31T20:25:55Z",
+      "side": 1,
+      "message": "Done\nConfusingly enough, \"changes +\u003d [foo]\" is the same as \"changes.append(foo)\", but not the same as \"changes \u003d changes + [foo]\"",
+      "parentUuid": "4648c155_90491e55",
+      "range": {
+        "startLine": 392,
+        "startChar": 6,
+        "endLine": 392,
+        "endChar": 14
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ca5f1d31_279b882a",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 6
@@ -177,6 +267,24 @@
     },
     {
       "key": {
+        "uuid": "f9ebf63f_e762382e",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-31T20:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca5f1d31_279b882a",
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9900bc58_adcf8b28",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 6
@@ -188,6 +296,24 @@
       "writtenOn": "2018-08-24T20:48:36Z",
       "side": 1,
       "message": "given what we learned from recent git cl improvements, this should be project (if known).",
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7948902_695d1e3f",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-31T20:25:55Z",
+      "side": 1,
+      "message": "You mean query_params\u003d[(\u0027change\u0027, project~change)]?",
+      "parentUuid": "9900bc58_adcf8b28",
       "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -234,6 +360,30 @@
     },
     {
       "key": {
+        "uuid": "c162967e_b0dc2067",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-31T20:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "922fc367_ed1396d8",
+      "range": {
+        "startLine": 160,
+        "startChar": 8,
+        "endLine": 160,
+        "endChar": 16
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "605605b3_97d31e24",
         "filename": "recipes/recipe_modules/gerrit/test_api.py",
         "patchSetId": 6
@@ -277,6 +427,30 @@
       "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f727a2c2_33b9bb02",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-31T20:25:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bb29e20_4323165f",
+      "range": {
+        "startLine": 27,
+        "startChar": 6,
+        "endLine": 32,
+        "endChar": 8
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

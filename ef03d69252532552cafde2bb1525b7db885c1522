@@ -390,6 +390,30 @@
     },
     {
       "key": {
+        "uuid": "4ff233f9_96b02853",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-08-31T20:25:55Z",
+      "side": 1,
+      "message": "No reason other than \"more work\" ;)",
+      "parentUuid": "d759b9fa_770824ed",
+      "range": {
+        "startLine": 169,
+        "startChar": 6,
+        "endLine": 169,
+        "endChar": 52
+      },
+      "revId": "ef03d69252532552cafde2bb1525b7db885c1522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6cea3aba_158df158",
         "filename": "recipes/recipe_modules/bot_update/test_api.py",
         "patchSetId": 2

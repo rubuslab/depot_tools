@@ -41,6 +41,10 @@ def RunSteps(api):
   second = api.gerrit.get_change_destination_branch(host, change=123)
   assert first == second
 
+  api.gerrit.get_change_info(host, change=124, patchset=3,
+                             o_params=['DOWNLOAD_COMMANDS'])
+  api.gerrit.get_change_info(host, change=124, patchset=3, project='chromium')
+
   with api.step.defer_results():
     api.gerrit.get_change_destination_branch(
         host, change=122, name='missing_cl')
@@ -63,5 +67,23 @@ def GenTests(api):
       + api.step_data(
           'gerrit missing_cl',
           api.gerrit.get_empty_changes_response_data()
+      )
+      + api.step_data(
+          'gerrit changes',
+          api.gerrit.get_one_change_response_data(
+              branch='master',
+              change='91827',
+              patchset='1',
+              project='chromium/src',
+              host='https://chromium.googlesource.com/chromium/src',
+              o_params=['DOWNLOAD_COMMANDS'],
+          )
+      )
+      + api.step_data(
+          'gerrit changes (2)',
+          api.gerrit.get_one_change_response_data(
+              project='v8/v8',
+              o_params=['DOWNLOAD_COMMANDS'],
+          )
       )
   )

@@ -2,12 +2,14 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+import copy
+
 from recipe_engine import recipe_test_api
 
 
 # Exemplary change. Note: This contains only a subset of the key/value pairs
 # present in production to limit recipe simulation output.
-EXAMPLE_CHANGE = {
+EXAMPLE_RESPONSE = {
   'status': 'NEW',
   'created': '2017-01-30 13:11:20.000000000',
   '_number': '91827',
@@ -44,10 +46,43 @@ class GerritTestApi(recipe_test_api.RecipeTestApi):
       "revision": "67ebf73496383c6777035e374d2d664009e2aa5c"
     })
 
-  def get_one_change_response_data(self, **kwargs):
-    change = EXAMPLE_CHANGE.copy()
-    change.update(kwargs)
-    return self._make_gerrit_response_json([change])
+  def get_one_change_response_data(
+      self, branch=None, change=None, project=None, patchset=None, host=None,
+      o_params=None):
+    o_params = o_params or []
+    response = copy.deepcopy(EXAMPLE_RESPONSE)
+    patchset_dict = response['revisions'].values()[0]
+
+    if 'DOWNLOAD_COMMANDS' in o_params:
+      patchset_dict['fetch'] = {
+        'http': {
+          'url': 'https://chromium.googlesource.com/chromium/src',
+          'ref': 'refs/changes/27/91827/1',
+        },
+      }
+
+      if host:
+        patchset_dict['fetch']['http']['url'] = host
+      elif project:
+        patchset_dict['fetch']['http']['url'] = (
+            'https://chromium.googlesource.com/' + project)
+
+      if change or patchset:
+        patchset_dict['fetch']['http']['ref'] = 'refs/changes/{}/{}/{}'.format(
+            int(str(response['_number'])[-2:]),
+            response['_number'],
+            patchset_dict['_number'])
+
+    if branch:
+      response['branch'] = branch
+    if change:
+      response['_number'] = int(change)
+    if project:
+      response['project'] = project
+    if patchset:
+      patchset_dict['_number'] = int(patchset)
+
+    return self._make_gerrit_response_json([response])
 
   def get_empty_changes_response_data(self):
     return self._make_gerrit_response_json([])

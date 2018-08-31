@@ -814,6 +814,156 @@ class GclientTest(trial_dir.TestCase):
         ],
         self._get_processed())
 
+  def testImportOneDEPS(self):
+    """Verifies dependencies from imported file are properly added. """
+    write(
+        '.gclient',
+        'solutions = [\n'
+        '  { "name": "foo", "url": "svn://example.com/foo" },\n'
+        ']')
+    write(
+        os.path.join('foo', 'DEPS'),
+        # No external dependency at root level
+        'deps = {\n'
+        '}\n'
+        'imports = ["bar"]')
+    write(
+        os.path.join('foo', 'bar', 'DEPS'),
+        'deps = {\n'
+        '  "baz": "svn://example.com/openbaz",\n'
+        '}')
+    options, _ = gclient.OptionParser().parse_args([])
+    options.validate_syntax = True
+    obj = gclient.GClient.LoadCurrentConfig(options)
+    obj.RunOnDeps('None', [])
+    self.assertEquals(
+        [
+          ('foo', 'svn://example.com/foo'),
+          ('baz', 'svn://example.com/openbaz'),
+        ],
+        self._get_processed())
+
+  def testImportAndConsolidateDEPS(self):
+      """Verifies we can have two modules defining the same dependency."""
+      write(
+          '.gclient',
+          'solutions = [\n'
+          '  { "name": "foo", "url": "svn://example.com/foo" },\n'
+          ']')
+      write(
+          os.path.join('foo', 'DEPS'),
+          # No external dependency at root level
+          'deps = {\n'
+          '}\n'
+          'imports = ["bar", "fizz"]')
+      write(
+          os.path.join('foo', 'bar', 'DEPS'),
+          'deps = {\n'
+          '  "baz": "svn://example.com/openbaz",\n'
+          '}')
+      # Same baz dependency
+      write(
+          os.path.join('foo', 'fizz', 'DEPS'),
+          'deps = {\n'
+          '  "baz": "svn://example.com/openbaz",\n'
+          '}')
+      options, _ = gclient.OptionParser().parse_args([])
+      options.validate_syntax = True
+      obj = gclient.GClient.LoadCurrentConfig(options)
+      obj.RunOnDeps('None', [])
+      self.assertEquals(
+          [
+              ('foo', 'svn://example.com/foo'),
+              ('baz', 'svn://example.com/openbaz'),
+          ],
+          self._get_processed())
+
+  def testImportConflictingDEPS(self):
+      """Verifies versions conflicts are detected."""
+      write(
+          '.gclient',
+          'solutions = [\n'
+          '  { "name": "foo", "url": "svn://example.com/foo" },\n'
+          ']')
+      write(
+          os.path.join('foo', 'DEPS'),
+          # No external dependency at root level
+          'deps = {\n'
+          '}\n'
+          'imports = ["bar", "fizz"]')
+      write(
+          os.path.join('foo', 'bar', 'DEPS'),
+          'deps = {\n'
+          '  "baz": "svn://example.com/openbaz@cafe",\n'
+          '}')
+      # Same baz dependency, but different versions
+      write(
+          os.path.join('foo', 'fizz', 'DEPS'),
+          'deps = {\n'
+          '  "baz": "svn://example.com/openbaz@f00d",\n'
+          '}')
+      options, _ = gclient.OptionParser().parse_args([])
+      options.validate_syntax = True
+      obj = gclient.GClient.LoadCurrentConfig(options)
+      with self.assertRaises(ValueError):
+        obj.RunOnDeps('None', [])
+      # Must clear for tearDown
+      self._get_processed()
+
+  def testImportHooks(self):
+    """Verifies hooks from imported file are properly added. """
+    write(
+        '.gclient',
+        'solutions = [\n'
+        '  { "name": "foo", "url": "svn://example.com/foo" },\n'
+        ']')
+    write(
+        os.path.join('foo', 'DEPS'),
+        'hooks = [ {"action": ["sleep", "1200"]} ]\n'
+        'imports = ["bar"]')
+    write(
+        os.path.join('foo', 'bar', 'DEPS'),
+        'hooks = [ {"action": ["fortune"]} ]')
+    options, _ = gclient.OptionParser().parse_args([])
+    options.validate_syntax = True
+    obj = gclient.GClient.LoadCurrentConfig(options)
+    obj.RunOnDeps('None', [])
+    all_hooks = obj.GetHooks(options)
+    self.assertEquals([h.action for h in all_hooks],
+                      [('sleep', '1200'),
+                       ('fortune',)])
+    self.assertEquals([h.condition for h in all_hooks],
+                      [None, None])
+    # Needed for cleanup before tearDown
+    self.assertEquals(
+        [('foo', 'svn://example.com/foo')],
+        sorted(self._get_processed()))
+
+  def testImportConflictingHooks(self):
+      """Verifies duplicate hooks are detected. """
+      write(
+          '.gclient',
+          'solutions = [\n'
+          '  { "name": "foo", "url": "svn://example.com/foo" },\n'
+          ']')
+      write(
+          os.path.join('foo', 'DEPS'),
+          'hooks = [ {"name": "nap", "action": ["sleep", "1200"]} ]\n'
+          'imports = ["bar"]')
+      write(
+          os.path.join('foo', 'bar', 'DEPS'),
+          'hooks = [ {"name": "nap", "action": ["sleep", "1200"]} ]')
+      options, _ = gclient.OptionParser().parse_args([])
+      options.validate_syntax = True
+      obj = gclient.GClient.LoadCurrentConfig(options)
+      with self.assertRaises(ValueError):
+          obj.RunOnDeps('None', [])
+      # Needed for cleanup before tearDown
+      self.assertEquals(
+          [('foo', 'svn://example.com/foo')],
+          sorted(self._get_processed()))
+
+
   def testGitDeps(self):
     """Verifies gclient respects a .DEPS.git deps file.
 

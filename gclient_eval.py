@@ -6,6 +6,7 @@ import ast
 import cStringIO
 import collections
 import logging
+import os
 import tokenize
 
 import gclient_utils
@@ -169,6 +170,9 @@ _GCLIENT_SCHEMA = schema.Schema(_NodeDictSchema({
 
     # Hooks executed before processing DEPS. See 'hooks' for more details.
     schema.Optional('pre_deps_hooks'): _GCLIENT_HOOKS_SCHEMA,
+
+    # List of directories containing sub-DEPS to be imported.
+    schema.Optional('imports'): [schema.Optional(basestring)],
 
     # Recursion limit for nested DEPS.
     schema.Optional('recursion'): int,
@@ -449,6 +453,71 @@ def UpdateCondition(info_dict, op, new_condition):
     del info_dict['condition']
 
 
+def _ParseDepsFile(deps_path):
+    """ Parses DEPS file given its path.
+
+    Returns:
+      A Python dict with the parsed contents of the DEPS file.
+    """
+
+    if not os.path.isfile(deps_path):
+        raise ValueError('imports: No %s file found' % deps_path)
+
+    logging.info('imports: %s file found', deps_path)
+    deps_content = gclient_utils.FileRead(deps_path)
+    logging.debug('Import content:\n%s', deps_content)
+    return Parse(deps_content, False, deps_path)
+
+
+def _InjectDEPS(parent, sub_deps, sub_path):
+    """ Inject DEPS elements into parent.
+
+    All dicts except 'vars' update parent's ones.
+    All sequences except 'recursedeps' extend parent's ones.
+    All other non conflicting variables are lifted.
+
+    Arguments:
+      parent (io): Python dict representing DEPS file to be updated.
+      sub_deps : Python dict representing DEPS file to import.
+      sub_path : Path of imported DEPS for logging purpose.
+
+    Returns:
+        None. |parent| is modified inplace.
+    """
+
+    for name, value in sub_deps.items():
+      if name in ['vars', 'deps', 'deps_os']:
+        dest = parent.get(name, {})
+        # We allow duplicate entries if they map to the same value.
+        for k, v in value.items():
+          if k in dest and dest[k] != v:
+            raise ValueError('%s: %s:%s conflictuous definitions.\n' \
+                             '    parent: %s\n' \
+                             '    import: %s' \
+                             % (sub_path, name, k, dest[k], v))
+          dest[k] = v
+      elif name == 'hooks':
+        # Forbid conflicting hooks:
+        # * If same name but distinct actions, name should be more specific.
+        # * If same hook is requested twice, this is a smell.
+        def _id(hook):
+          # Try to identify hook by its name.
+          # Since it's optional, backup to the actual action list.
+          return hook.get('name', tuple(hook['action']))
+        dest = parent.get(name, [])
+        known = set(map(_id, dest))
+        for hook in value:
+          if _id(hook) in known:
+            raise ValueError("%s: '%s:%s' is already defined in parent DEPS."
+                             % (sub_path, name, _id(hook)))
+          dest.append(hook)
+      else:
+        # Forbid everything else. E.g. we explicitly block multi-level imports
+        # to prevent absurdly deep import hierarchies to form.
+        raise ValueError("%s: '%s' inside imported file: Not Implemented"
+                         % (sub_path, name))
+
+
 def Parse(content, validate_syntax, filename, vars_override=None):
   """Parses DEPS strings.
 
@@ -492,6 +561,16 @@ def Parse(content, validate_syntax, filename, vars_override=None):
         UpdateCondition(hook, 'and', 'checkout_' + os_name)
       hooks.extend(os_hooks)
     del result['hooks_os']
+
+  if 'imports' in result:
+    dirname = os.path.dirname(filename)
+    if os.path.isdir(dirname):
+      for item in result['imports']:
+        sub_path = os.path.join(dirname, item, 'DEPS')
+        sub_deps = _ParseDepsFile(sub_path)
+        _InjectDEPS(result, sub_deps, sub_path)
+    else:
+      logging.error('Cannot import from non-file %s.' % filename)
 
   return result
 

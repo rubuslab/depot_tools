@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15b61e4e_0a17969b",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-31T22:18:36Z",
+      "side": 1,
+      "message": "TODO(Edward): remove this crbug/xyz\n(otherwise, these statements will accumulate here)",
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e19da5a_dff4875a",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_gerrit_branch_heads.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-31T22:18:36Z",
+      "side": 1,
+      "message": "this will backfire :)",
+      "range": {
+        "startLine": 15,
+        "startChar": 22,
+        "endLine": 15,
+        "endChar": 23
+      },
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9521ef36_a6365828",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-31T22:18:36Z",
+      "side": 1,
+      "message": "maybe lambad taking branch/project and encapsulating copy-pasta across all tests?",
+      "range": {
+        "startLine": 181,
+        "startChar": 6,
+        "endLine": 186,
+        "endChar": 0
+      },
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f43fe3ea_94655808",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-31T22:18:36Z",
+      "side": 1,
+      "message": "sorry that i didn\u0027t think of this in prior review. I think this param mixes number based patchets as understood by most of the recipes with pure Gerrit output based on _revision. Conditional modification of returned data in line 195 exemplifies this.\n\nWDYT about separating two concerns:\n1. get_change_info doesn\u0027t take patchset, but instead returns whatever Gerrit returns given o_params. \n2. new\n@staticmethod\ndef revision_info(change_info, patchset):\n  \"\"\"Returns Gerrit revision info from change_info for a given numeric patchset.\n\n  https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#revision-info \n  \"\"\"\n\nthen bot_update can call:\n\nrevision_info \u003d api.gerrit.revision_info(\n  api.gerrit.get_change_info(...), patchset)\nurl \u003d revision_info[.....]",
+      "range": {
+        "startLine": 151,
+        "startChar": 42,
+        "endLine": 151,
+        "endChar": 50
+      },
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7066cb07_116119a8",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-08-31T22:18:36Z",
+      "side": 1,
+      "message": "escape \u0027/\u0027.",
+      "range": {
+        "startLine": 181,
+        "startChar": 29,
+        "endLine": 181,
+        "endChar": 36
+      },
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

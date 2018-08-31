@@ -48,6 +48,9 @@ def RunSteps(api):
     api.gerrit.get_change_description(
         host, change=122, patchset=3)
 
+    api.gerrit.get_change_info(
+        host, change=124, patchset=3)
+
 
 def GenTests(api):
   yield (
@@ -63,5 +66,21 @@ def GenTests(api):
       + api.step_data(
           'gerrit missing_cl',
           api.gerrit.get_empty_changes_response_data()
+      )
+      + api.step_data(
+          'gerrit changes',
+          api.gerrit.get_one_change_response_data(
+              branch='master',
+              change='91827',
+              patchset='1',
+              project='chromium/src',
+              host='https://chromium.googlesource.com/chromium/src',
+          )
+      )
+      + api.step_data(
+          'gerrit changes (2)',
+          api.gerrit.get_one_change_response_data(
+              project='v8/v8',
+          )
       )
   )

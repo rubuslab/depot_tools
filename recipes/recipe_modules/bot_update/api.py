@@ -11,9 +11,8 @@ from recipe_engine import recipe_api
 
 class BotUpdateApi(recipe_api.RecipeApi):
 
-  def __init__(self, properties, patch_issue, patch_set,
-               repository, patch_repository_url, patch_ref,
-               patch_gerrit_url, revision, parent_got_revision,
+  def __init__(self, properties, patch_issue, patch_set, repository,
+               patch_repository_url, patch_ref, patch_gerrit_url,
                deps_revision_overrides, fail_patch, *args, **kwargs):
     self._apply_patch_on_gclient = properties.get(
         'apply_patch_on_gclient', True)
@@ -22,8 +21,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
     self._repository = repository or patch_repository_url
     self._gerrit_ref = patch_ref
     self._gerrit = patch_gerrit_url
-    self._revision = revision
-    self._parent_got_revision = parent_got_revision
     self._deps_revision_overrides = deps_revision_overrides
     self._fail_patch = fail_patch
 
@@ -31,12 +28,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
     super(BotUpdateApi, self).__init__(*args, **kwargs)
 
   def initialize(self):
-    build_input = self.m.buildbucket.build.input
-    if (self._revision is None and build_input.HasField('gitiles_commit')):
-      self._revision = build_input.gitiles_commit.id
-
-    if self._repository is None and len(build_input.gerrit_changes) == 1:
-      cl = build_input.gerrit_changes[0]
+    changes = self.m.buildbucket.build.input.gerrit_changes
+    if self._repository is None and len(changes) == 1:
+      cl = changes[0]
       host = re.sub(r'([^\.]+)-review(\.googlesource\.com)', r'\1\2', cl.host)
       self._repository = 'https://%s/%s' % (host, cl.project)
 
@@ -137,9 +131,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
         # TODO(machenbach): We should explicitly pass HEAD for ALL solutions
         # that don't specify anything else.
         revisions[solution.name] = (
-            self._parent_got_revision or
-            self._revision or
-            'HEAD')
+            self.m.buildbucket.build.input.gitiles_commit.id or 'HEAD')
     if cfg.revisions:
       # Only update with non-empty values. Some recipe might otherwise
       # overwrite the HEAD default with an empty string.

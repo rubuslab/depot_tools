@@ -178,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "87c3ae37_b7a5c9b1",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-01T00:36:32Z",
+      "side": 1,
+      "message": "thank you",
+      "parentUuid": "4fccbf21_e07ae6d0",
+      "range": {
+        "startLine": 151,
+        "startChar": 42,
+        "endLine": 151,
+        "endChar": 50
+      },
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7066cb07_116119a8",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 8

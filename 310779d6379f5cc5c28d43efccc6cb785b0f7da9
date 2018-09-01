@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bba0194f_3fdf033c",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-01T00:36:32Z",
+      "side": 1,
+      "message": "gerrit still returns int:\nGET https://chromium-review.googlesource.com/changes/chromium%2Ftools%2Fdepot_tools~1174988/detail?O\u003d516714",
+      "range": {
+        "startLine": 59,
+        "startChar": 28,
+        "endLine": 59,
+        "endChar": 39
+      },
+      "revId": "310779d6379f5cc5c28d43efccc6cb785b0f7da9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "222a2055_c238d3f0",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-01T00:36:32Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "310779d6379f5cc5c28d43efccc6cb785b0f7da9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

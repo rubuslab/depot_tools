@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ebc7a085_1068bb3f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-01T00:22:18Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "15b61e4e_0a17969b",
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9e19da5a_dff4875a",
         "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_gerrit_branch_heads.json",
         "patchSetId": 8
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "180503a5_072f78a1",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_gerrit_branch_heads.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-01T00:22:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e19da5a_dff4875a",
+      "range": {
+        "startLine": 15,
+        "startChar": 22,
+        "endLine": 15,
+        "endChar": 23
+      },
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9521ef36_a6365828",
         "filename": "recipes/recipe_modules/bot_update/examples/full.py",
         "patchSetId": 8
@@ -53,6 +95,30 @@
       "writtenOn": "2018-08-31T22:18:36Z",
       "side": 1,
       "message": "maybe lambad taking branch/project and encapsulating copy-pasta across all tests?",
+      "range": {
+        "startLine": 181,
+        "startChar": 6,
+        "endLine": 186,
+        "endChar": 0
+      },
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be33db09_72f32d6d",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-01T00:22:18Z",
+      "side": 1,
+      "message": "I think this is fine. The lambda wouldn\u0027t help much, really.",
+      "parentUuid": "9521ef36_a6365828",
       "range": {
         "startLine": 181,
         "startChar": 6,
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "4fccbf21_e07ae6d0",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-01T00:22:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f43fe3ea_94655808",
+      "range": {
+        "startLine": 151,
+        "startChar": 42,
+        "endLine": 151,
+        "endChar": 50
+      },
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7066cb07_116119a8",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 8
@@ -108,6 +198,30 @@
       "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b07c867b_4ffed11a",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-01T00:22:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7066cb07_116119a8",
+      "range": {
+        "startLine": 181,
+        "startChar": 29,
+        "endLine": 181,
+        "endChar": 36
+      },
+      "revId": "9e65b8ca51e137e294fe7f4b6e119b525b0c078e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -274,6 +274,30 @@
     },
     {
       "key": {
+        "uuid": "0bddfeef_5538dd67",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-01T00:22:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2083720b_653fc51d",
+      "range": {
+        "startLine": 392,
+        "startChar": 6,
+        "endLine": 392,
+        "endChar": 14
+      },
+      "revId": "5aaa7bf7bc0039b5544e16b2b900fe131eaffa73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ca5f1d31_279b882a",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 6

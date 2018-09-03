@@ -688,7 +688,8 @@ class MyActivity(object):
           gerrit_instances)
       rietveld_reviews = itertools.chain.from_iterable(rietveld_reviews.get())
       gerrit_reviews = itertools.chain.from_iterable(gerrit_reviews.get())
-      gerrit_reviews = [r for r in gerrit_reviews if r['owner'] != self.user]
+      gerrit_reviews = [r for r in gerrit_reviews
+                        if username(r['owner']) != self.user]
       self.reviews = list(rietveld_reviews) + list(gerrit_reviews)
 
   def print_reviews(self):

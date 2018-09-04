@@ -14,7 +14,6 @@ def RunSteps(api):
   host, project = api.gitiles.parse_repo_url(repo_url)
   api.step('build', ['echo', str(host), str(project)])
 
-
 def GenTests(api):
 
   def case(name, repo_url):

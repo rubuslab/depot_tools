@@ -11,9 +11,8 @@ from recipe_engine import recipe_api
 
 class BotUpdateApi(recipe_api.RecipeApi):
 
-  def __init__(self, properties, patch_issue, patch_set,
-               repository, patch_repository_url, patch_ref,
-               patch_gerrit_url, revision, parent_got_revision,
+  def __init__(self, properties, patch_issue, patch_set, repository,
+               patch_repository_url, patch_ref, patch_gerrit_url,
                deps_revision_overrides, fail_patch, *args, **kwargs):
     self._apply_patch_on_gclient = properties.get(
         'apply_patch_on_gclient', True)
@@ -22,8 +21,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
     self._repository = repository or patch_repository_url
     self._gerrit_ref = patch_ref
     self._gerrit = patch_gerrit_url
-    self._revision = revision
-    self._parent_got_revision = parent_got_revision
     self._deps_revision_overrides = deps_revision_overrides
     self._fail_patch = fail_patch
 
@@ -31,12 +28,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
     super(BotUpdateApi, self).__init__(*args, **kwargs)
 
   def initialize(self):
-    build_input = self.m.buildbucket.build.input
-    if (self._revision is None and build_input.HasField('gitiles_commit')):
-      self._revision = build_input.gitiles_commit.id
-
-    if self._repository is None and len(build_input.gerrit_changes) == 1:
-      cl = build_input.gerrit_changes[0]
+    changes = self.m.buildbucket.build.input.gerrit_changes
+    if self._repository is None and len(changes) == 1:
+      cl = changes[0]
       host = re.sub(r'([^\.]+)-review(\.googlesource\.com)', r'\1\2', cl.host)
       self._repository = 'https://%s/%s' % (host, cl.project)
 
@@ -52,6 +46,32 @@ class BotUpdateApi(recipe_api.RecipeApi):
   @property
   def last_returned_properties(self):
       return self._last_returned_properties
+
+  def _get_associated_solution(self, commit, solutions):
+    """Returns name of the solution that the commit is associated with.
+
+    If multiple gclient solutions match the commit's repo (e.g. multiple
+    solutions specified same URL), returns the first match.
+
+    Raises an AssertionError if an invalid repo is specified in the commit.
+    """
+    assert solutions, 'solutions is empty'
+
+    # if repo is not specified, choose the first solution.
+    if not (commit.host and commit.project):
+      return solutions[0]
+
+    assert commit.host and commit.project
+    # Repo was specified. Find the matching solution.
+    for s in solutions:
+      host, project = self.m.gitiles.parse_repo_url(s.url)
+      if host == commit.host and project == commit.project:
+        return s
+    raise self.m.step.InfraFailure(
+        'invalid (host, project) pair in '
+        'buildbucket.build.input.gitiles_commit: '
+        '(%r, %r) does not match any of configured gclient solutions' % (
+            commit.host, commit.project))
 
   def ensure_checkout(self, gclient_config=None, suffix=None,
                       patch=True, update_presentation=True,
@@ -133,20 +153,26 @@ class BotUpdateApi(recipe_api.RecipeApi):
     for solution in cfg.solutions:
       if solution.revision:
         revisions[solution.name] = solution.revision
-      elif solution == cfg.solutions[0]:
-        # TODO(machenbach): We should explicitly pass HEAD for ALL solutions
-        # that don't specify anything else.
-        revisions[solution.name] = (
-            self._parent_got_revision or
-            self._revision or
-            'HEAD')
+
+    # Apply input gitiles_commit, if any.
+    input_commit = self.m.buildbucket.build.input.gitiles_commit
+    if (input_commit.id or input_commit.ref) and cfg.solutions:
+      sol = self._get_associated_solution(input_commit, cfg.solutions)
+      revisions[sol.name] = input_commit.id or input_commit.ref
+
+    # Guarantee that first solution has a revision.
+    # TODO(machenbach): We should explicitly pass HEAD for ALL solutions
+    # that don't specify anything else.
+    first_sol = cfg.solutions[0].name
+    revisions[first_sol] = revisions.get(first_sol) or 'HEAD'
+
     if cfg.revisions:
       # Only update with non-empty values. Some recipe might otherwise
       # overwrite the HEAD default with an empty string.
       revisions.update(
           (k, v) for k, v in cfg.revisions.iteritems() if v)
     if cfg.solutions and root_solution_revision:
-      revisions[cfg.solutions[0].name] = root_solution_revision
+      revisions[first_sol] = root_solution_revision
     # Allow for overrides required to bisect into rolls.
     revisions.update(self._deps_revision_overrides)
 

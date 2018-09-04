@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4412a005_4318eea1",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-04T19:42:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06457cef_a7f769a6",
+      "revId": "d4846b8e360898fa4cfce3f3b26576c405513368",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9b48a9e0_7841d08e",
         "filename": "recipes/recipe_modules/gitiles/api.py",
         "patchSetId": 2
@@ -39,6 +57,30 @@
       "revId": "d4846b8e360898fa4cfce3f3b26576c405513368",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fe9486e_389c2169",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-04T19:42:14Z",
+      "side": 1,
+      "message": "this impl doesn\u0027t raise an assertion error",
+      "parentUuid": "9b48a9e0_7841d08e",
+      "range": {
+        "startLine": 227,
+        "startChar": 4,
+        "endLine": 227,
+        "endChar": 11
+      },
+      "revId": "d4846b8e360898fa4cfce3f3b26576c405513368",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

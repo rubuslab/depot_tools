@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "1b18cea9_74428462",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-05T22:23:01Z",
+      "side": 1,
+      "message": "bot_update doesn\u0027t use this. I can do that in the place where this is used, but that partially defeats that benefit that it is a map.\n\ndone and undone this hunk",
+      "parentUuid": "9bcc4fb7_3926007d",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "764a1e48d1ed7596059daa60bc2dd3ca476f6af5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1371379a_6e3eeb73",
         "filename": "recipes/recipe_modules/gitiles/tests/parse_repo_url.py",
         "patchSetId": 4
@@ -93,6 +117,30 @@
       "revId": "764a1e48d1ed7596059daa60bc2dd3ca476f6af5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6d9623b_ee0cf2e4",
+        "filename": "recipes/recipe_modules/gitiles/tests/parse_repo_url.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-05T22:23:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1371379a_6e3eeb73",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 70
+      },
+      "revId": "764a1e48d1ed7596059daa60bc2dd3ca476f6af5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

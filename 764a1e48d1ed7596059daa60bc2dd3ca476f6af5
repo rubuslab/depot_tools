@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ade97080_32c49dcf",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-05T21:54:14Z",
+      "side": 1,
+      "message": "i didn\u0027t find a way, unfortunately. I checked go/recipes user guide. +martiniss",
+      "parentUuid": "f9b3703b_bc7e566f",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "764a1e48d1ed7596059daa60bc2dd3ca476f6af5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1371379a_6e3eeb73",
         "filename": "recipes/recipe_modules/gitiles/tests/parse_repo_url.py",
         "patchSetId": 4

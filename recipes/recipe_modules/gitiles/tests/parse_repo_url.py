@@ -12,7 +12,9 @@ DEPS = [
 def RunSteps(api):
   repo_url = api.properties['repo_url']
   host, project = api.gitiles.parse_repo_url(repo_url)
-  api.step('build', ['echo', str(host), str(project)])
+  api.step('parsed', [str(host), str(project)])
+  api.step('unparsed', [api.gitiles.unparse_repo_url(host, project)])
+  api.step('canonical', [api.gitiles.canonicalize_repo_url(repo_url)])
 
 
 def GenTests(api):

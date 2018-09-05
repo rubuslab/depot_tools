@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b64419f6_e1da1897",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4613,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-05T20:42:02Z",
+      "side": 1,
+      "message": "-get-regexp \"branch\\..*issue\"",
+      "range": {
+        "startLine": 4613,
+        "startChar": 36,
+        "endLine": 4613,
+        "endChar": 40
+      },
+      "revId": "1e2a63c9a05378d2e126bb4646e1cdd1c292cc29",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

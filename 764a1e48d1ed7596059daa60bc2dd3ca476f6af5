@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "c34fec98_a084627c",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-05T22:26:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1b18cea9_74428462",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "764a1e48d1ed7596059daa60bc2dd3ca476f6af5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1371379a_6e3eeb73",
         "filename": "recipes/recipe_modules/gitiles/tests/parse_repo_url.py",
         "patchSetId": 4

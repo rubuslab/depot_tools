@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "eca9dd26_bd0363e8",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-09-05T06:59:01Z",
+      "side": 1,
+      "message": "Yes I think it\u0027s possible for the gerrit patchset to be not part of a solution, but part of a DEPS in this solution.  This is fairly often used by client projects to test a ToT client patch against ToT chromium.\n\nExample: https://ci.chromium.org/p/v8/builders/luci.v8.try/v8_linux_chromium_gn_rel/12606",
+      "parentUuid": "02e40ae9_76c4447d",
+      "range": {
+        "startLine": 73,
+        "startChar": 4,
+        "endLine": 77,
+        "endChar": 41
+      },
+      "revId": "f837c5d398b9a4cd1854d1393ed37c3feeee2262",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2f1bf36c_d1a7c663",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 10

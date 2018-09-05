@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f9b3703b_bc7e566f",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-05T21:51:16Z",
+      "side": 1,
+      "message": "can you validate it with an assert somewhere?",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "764a1e48d1ed7596059daa60bc2dd3ca476f6af5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1371379a_6e3eeb73",
+        "filename": "recipes/recipe_modules/gitiles/tests/parse_repo_url.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-05T21:51:16Z",
+      "side": 1,
+      "message": "in this case, expectations aren\u0027t useful. Much better is to just assert what you want:\nassert \n\nyou\u0027d still need one basic dummy test that will produce no steps.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 70
+      },
+      "revId": "764a1e48d1ed7596059daa60bc2dd3ca476f6af5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

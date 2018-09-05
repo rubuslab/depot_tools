@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "94d8ffb6_d311929d",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2018-09-05T23:18:31Z",
+      "side": 1,
+      "message": "value_type is all that exists for these. You could add more type checking, a predicate or something, but nothing like that exists yet I think.",
+      "parentUuid": "c34fec98_a084627c",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 10
+      },
+      "revId": "764a1e48d1ed7596059daa60bc2dd3ca476f6af5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1371379a_6e3eeb73",
         "filename": "recipes/recipe_modules/gitiles/tests/parse_repo_url.py",
         "patchSetId": 4

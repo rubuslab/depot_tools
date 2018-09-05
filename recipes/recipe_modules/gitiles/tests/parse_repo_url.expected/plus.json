@@ -1,11 +1,22 @@
 [
   {
     "cmd": [
-      "echo",
       "None",
       "None"
     ],
-    "name": "build"
+    "name": "parsed"
+  },
+  {
+    "cmd": [
+      "https://None/None"
+    ],
+    "name": "unparsed"
+  },
+  {
+    "cmd": [
+      "https://host/path/to/project/+/master"
+    ],
+    "name": "canonical"
   },
   {
     "name": "$result",

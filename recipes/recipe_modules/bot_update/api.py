@@ -12,14 +12,13 @@ from recipe_engine import recipe_api
 
 class BotUpdateApi(recipe_api.RecipeApi):
 
-  def __init__(self, properties, patch_issue, patch_set, repository,
-               patch_repository_url, patch_ref, patch_gerrit_url,
-               deps_revision_overrides, fail_patch, *args, **kwargs):
+  def __init__(self, properties, patch_issue, patch_set, patch_ref,
+               patch_gerrit_url, deps_revision_overrides, fail_patch, *args,
+               **kwargs):
     self._apply_patch_on_gclient = properties.get(
         'apply_patch_on_gclient', True)
     self._change = patch_issue
     self._patchset = patch_set
-    self._repository = repository or patch_repository_url
     self._gerrit_ref = patch_ref
     self._gerrit = patch_gerrit_url
     self._deps_revision_overrides = deps_revision_overrides
@@ -46,11 +45,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
     super(BotUpdateApi, self).__init__(*args, **kwargs)
 
   def initialize(self):
-    changes = self.m.buildbucket.build.input.gerrit_changes
-    if self._repository is None and len(changes) == 1:
-      cl = changes[0]
-      host = re.sub(r'([^\.]+)-review(\.googlesource\.com)', r'\1\2', cl.host)
-      self._repository = 'https://%s/%s' % (host, cl.project)
+    assert len(self.m.buildbucket.build.input.gerrit_changes) <= 1, (
+        'bot_update does not support more than one '
+        'buildbucket.build.input.gerrit_changes')
 
   def __call__(self, name, cmd, **kwargs):
     """Wrapper for easy calling of bot_update."""
@@ -129,13 +126,21 @@ class BotUpdateApi(recipe_api.RecipeApi):
     assert cfg is not None, (
         'missing gclient_config or forgot api.gclient.set_config(...) before?')
 
+    repository = None
+    if self.m.buildbucket.build.input.gerrit_changes:
+      cl = self.m.buildbucket.build.input.gerrit_changes[0]
+      # Strip "-review" from "foo-review.googlesource.com"
+      git_host = re.sub(
+          r'^([^.]+)-review(\.googlesource\.com)$', r'\1\2', cl.host)
+      repository = 'https://%s/%s' % (git_host, cl.project)
 
     # Construct our bot_update command.  This basically be inclusive of
     # everything required for bot_update to know:
     root = patch_root
     if root is None:
+      # TODO(nodir): use m.gclient.get_repo_path instead.
       root = self.m.gclient.calculate_patch_root(
-          self.m.properties.get('patch_project'), cfg, self._repository)
+          self.m.properties.get('patch_project'), cfg, repository)
 
     # Allow patch_project's revision if necessary.
     # This is important for projects which are checked out as DEPS of the

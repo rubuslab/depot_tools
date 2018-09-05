@@ -31,6 +31,7 @@
   * [git:examples/full](#recipes-git_examples_full)
   * [git_cl:examples/full](#recipes-git_cl_examples_full)
   * [gitiles:examples/full](#recipes-gitiles_examples_full)
+  * [gitiles:tests/parse_repo_url](#recipes-gitiles_tests_parse_repo_url)
   * [gsutil:examples/full](#recipes-gsutil_examples_full)
   * [infra_paths:examples/full](#recipes-infra_paths_examples_full)
   * [osx_sdk:examples/full](#recipes-osx_sdk_examples_full)
@@ -234,7 +235,7 @@ Returns (Path): The "depot_tools" root directory.
 &emsp; **@property**<br>&mdash; **def [upload\_to\_google\_storage\_path](/recipes/recipe_modules/depot_tools/api.py#17)(self):**
 ### *recipe_modules* / [gclient](/recipes/recipe_modules/gclient)
 
-[DEPS](/recipes/recipe_modules/gclient/__init__.py#1): [infra\_paths](#recipe_modules-infra_paths), [tryserver](#recipe_modules-tryserver), [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/step][recipe_engine/recipe_modules/step]
+[DEPS](/recipes/recipe_modules/gclient/__init__.py#1): [gitiles](#recipe_modules-gitiles), [infra\_paths](#recipe_modules-infra_paths), [tryserver](#recipe_modules-tryserver), [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
 #### **class [GclientApi](/recipes/recipe_modules/gclient/api.py#65)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
 
@@ -247,9 +248,11 @@ Wrapper for easy calling of gclient steps.
 Remove all index.lock files. If a previous run of git crashed, bot was
 reset, etc... we might end up with leftover index.lock files.
 
-&mdash; **def [calculate\_patch\_root](/recipes/recipe_modules/gclient/api.py#305)(self, patch_project, gclient_config=None, patch_repo=None):**
+&mdash; **def [calculate\_patch\_root](/recipes/recipe_modules/gclient/api.py#329)(self, patch_project, gclient_config=None, patch_repo=None):**
 
 Returns path where a patch should be applied to based patch_project.
+
+TODO(nodir): delete this function in favor of get_repo_path.
 
 Maps the patch's repo to a path of directories relative to checkout's root,
 which describe where to place the patch. If no mapping is found for the
@@ -273,6 +276,14 @@ Return a step generator function for gclient checkouts.
 &emsp; **@staticmethod**<br>&mdash; **def [config\_to\_pythonish](/recipes/recipe_modules/gclient/api.py#120)(cfg):**
 
 &mdash; **def [get\_config\_defaults](/recipes/recipe_modules/gclient/api.py#114)(self):**
+
+&mdash; **def [get\_repo\_path](/recipes/recipe_modules/gclient/api.py#309)(self, repo_url, gclient_config=None):**
+
+Returns local path to the repo checkout given its url.
+
+Consults cfg.repo_path_map and fallbacks to urls in configured solutions.
+
+Returns None if not found.
 
 &emsp; **@staticmethod**<br>&mdash; **def [got\_revision\_reverse\_mapping](/recipes/recipe_modules/gclient/api.py#125)(cfg):**
 
@@ -305,7 +316,7 @@ Chromium config. This may happen for one of two reasons:
 
 &mdash; **def [runhooks](/recipes/recipe_modules/gclient/api.py#264)(self, args=None, name='runhooks', \*\*kwargs):**
 
-&mdash; **def [set\_patch\_project\_revision](/recipes/recipe_modules/gclient/api.py#337)(self, patch_project, gclient_config=None):**
+&mdash; **def [set\_patch\_project\_revision](/recipes/recipe_modules/gclient/api.py#367)(self, patch_project, gclient_config=None):**
 
 Updates config revision corresponding to patch_project.
 
@@ -534,11 +545,16 @@ DEPRECATED. Consider using gerrit.get_change_description instead.
 
 [DEPS](/recipes/recipe_modules/gitiles/__init__.py#5): [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/step][recipe_engine/recipe_modules/step], [recipe\_engine/url][recipe_engine/recipe_modules/url]
 
-#### **class [Gitiles](/recipes/recipe_modules/gitiles/api.py#10)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
+#### **class [Gitiles](/recipes/recipe_modules/gitiles/api.py#11)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
 
 Module for polling a git repository using the Gitiles web interface.
 
-&mdash; **def [commit\_log](/recipes/recipe_modules/gitiles/api.py#113)(self, url, commit, step_name=None, attempts=None):**
+&mdash; **def [canonicalize\_repo\_url](/recipes/recipe_modules/gitiles/api.py#216)(self, repo_url):**
+
+Returns a canonical form of repo_url. If not recognized, returns as is.
+    
+
+&mdash; **def [commit\_log](/recipes/recipe_modules/gitiles/api.py#114)(self, url, commit, step_name=None, attempts=None):**
 
 Returns: (dict) the Gitiles commit log structure for a given commit.
 
@@ -548,7 +564,7 @@ Args:
   step_name (str): If not None, override the step name.
   attempts (int): Number of times to try the request before failing.
 
-&mdash; **def [download\_archive](/recipes/recipe_modules/gitiles/api.py#155)(self, repository_url, destination, revision='refs/heads/master'):**
+&mdash; **def [download\_archive](/recipes/recipe_modules/gitiles/api.py#156)(self, repository_url, destination, revision='refs/heads/master'):**
 
 Downloads an archive of the repo and extracts it to `destination`.
 
@@ -564,7 +580,7 @@ Args:
   revision (str): The ref or revision in the repo to download. Defaults to
     'refs/heads/master'.
 
-&mdash; **def [download\_file](/recipes/recipe_modules/gitiles/api.py#129)(self, repository_url, file_path, branch='master', step_name=None, attempts=None, \*\*kwargs):**
+&mdash; **def [download\_file](/recipes/recipe_modules/gitiles/api.py#130)(self, repository_url, file_path, branch='master', step_name=None, attempts=None, \*\*kwargs):**
 
 Downloads raw file content from a Gitiles repository.
 
@@ -578,7 +594,7 @@ Args:
 Returns:
   Raw file content.
 
-&mdash; **def [log](/recipes/recipe_modules/gitiles/api.py#67)(self, url, ref, limit=0, cursor=None, step_name=None, attempts=None, \*\*kwargs):**
+&mdash; **def [log](/recipes/recipe_modules/gitiles/api.py#68)(self, url, ref, limit=0, cursor=None, step_name=None, attempts=None, \*\*kwargs):**
 
 Returns the most recent commits under the given ref with properties.
 
@@ -601,9 +617,19 @@ Returns:
   Cursor can be used for subsequent calls to log for paging. If None,
   signals that there are no more commits to fetch.
 
-&mdash; **def [refs](/recipes/recipe_modules/gitiles/api.py#55)(self, url, step_name='refs', attempts=None):**
+&mdash; **def [parse\_repo\_url](/recipes/recipe_modules/gitiles/api.py#205)(self, repo_url):**
+
+Returns (host, project) pair.
+
+Returns (None, None) if repo_url is not recognized.
+
+&mdash; **def [refs](/recipes/recipe_modules/gitiles/api.py#56)(self, url, step_name='refs', attempts=None):**
 
 Returns a list of refs in the remote repository.
+
+&mdash; **def [unparse\_repo\_url](/recipes/recipe_modules/gitiles/api.py#212)(self, host, project):**
+
+Generates a Gitiles repo URL. See also parse_repo_url.
 ### *recipe_modules* / [gsutil](/recipes/recipe_modules/gsutil)
 
 [DEPS](/recipes/recipe_modules/gsutil/__init__.py#1): [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/python][recipe_engine/recipe_modules/python]
@@ -904,6 +930,11 @@ Raises:
 [DEPS](/recipes/recipe_modules/gitiles/examples/full.py#5): [gitiles](#recipe_modules-gitiles), [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
 &mdash; **def [RunSteps](/recipes/recipe_modules/gitiles/examples/full.py#14)(api):**
+### *recipes* / [gitiles:tests/parse\_repo\_url](/recipes/recipe_modules/gitiles/tests/parse_repo_url.py)
+
+[DEPS](/recipes/recipe_modules/gitiles/tests/parse_repo_url.py#5): [gitiles](#recipe_modules-gitiles), [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
+
+&mdash; **def [RunSteps](/recipes/recipe_modules/gitiles/tests/parse_repo_url.py#12)(api):**
 ### *recipes* / [gsutil:examples/full](/recipes/recipe_modules/gsutil/examples/full.py)
 
 [DEPS](/recipes/recipe_modules/gsutil/examples/full.py#5): [gsutil](#recipe_modules-gsutil), [recipe\_engine/path][recipe_engine/recipe_modules/path]

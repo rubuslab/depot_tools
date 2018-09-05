@@ -35,8 +35,12 @@ def RunSteps(api):
   api.gclient.c.patch_projects['v8/v8'] = ('src/v8', 'HEAD')
   api.gclient.c.patch_projects['angle/angle'] = ('src/third_party/angle',
                                                  'HEAD')
-  api.gclient.c.repo_path_map['https://webrtc.googlesource.com/src'] = (
-      'src/third_party/webrtc', 'HEAD')
+  api.gclient.c.repo_path_map.update({
+      'https://chromium.googlesource.com/angle/angle': (
+          'src/third_party/angle', 'HEAD'),
+      'https://chromium.googlesource.com/v8/v8': ('src/v8', 'HEAD'),
+      'https://webrtc.googlesource.com/src': ('src/third_party/webrtc', 'HEAD'),
+  })
 
   patch = api.properties.get('patch', True)
   clobber = True if api.properties.get('clobber') else False

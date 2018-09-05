@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0e440ed_9729ef7e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-05T20:50:27Z",
+      "side": 1,
+      "message": ":( good luck!",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 37
+      },
+      "revId": "80c312113f52a9d2dbfb923365e130ec4905dfe1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c05d6e97_e06ce0b6",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-05T20:41:50Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "bba0194f_3fdf033c",
+      "range": {
+        "startLine": 59,
+        "startChar": 28,
+        "endLine": 59,
+        "endChar": 39
+      },
+      "revId": "310779d6379f5cc5c28d43efccc6cb785b0f7da9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "222a2055_c238d3f0",
         "filename": "recipes/recipe_modules/gerrit/test_api.py",
         "patchSetId": 12
@@ -39,6 +63,24 @@
       "revId": "310779d6379f5cc5c28d43efccc6cb785b0f7da9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a0bcda2_d05d9779",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-05T20:41:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "222a2055_c238d3f0",
+      "revId": "310779d6379f5cc5c28d43efccc6cb785b0f7da9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

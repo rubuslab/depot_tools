@@ -25,8 +25,23 @@ def RunSteps(api, patch_project, patch_repository_url):
   soln.url = 'https://chromium.googlesource.com/chromium/src.git'
   src_cfg.patch_projects['v8'] = ('src/v8', 'HEAD')
   src_cfg.patch_projects['v8/v8'] = ('src/v8', 'HEAD')
-  src_cfg.repo_path_map['https://webrtc.googlesource.com'] = (
-      'src/third_party/webrtc', 'HEAD')
+  src_cfg.repo_path_map.update({
+      'https://chromium.googlesource.com/v8/v8': ('src/v8', 'HEAD'),
+      'https://webrtc.googlesource.com/src': ('src/third_party/webrtc', 'HEAD'),
+  })
+  assert api.gclient.get_repo_path(
+      'https://chromium.googlesource.com/chromium/src.git',
+      gclient_config=src_cfg) == 'src'
+  assert api.gclient.get_repo_path(
+      'https://chromium.googlesource.com/chromium/src',
+      gclient_config=src_cfg) == 'src'
+  assert api.gclient.get_repo_path(
+      'https://webrtc.googlesource.com/src',
+      gclient_config=src_cfg) == 'src/third_party/webrtc'
+  assert api.gclient.get_repo_path(
+      'https://example.googlesource.com/unrecognized',
+      gclient_config=src_cfg) is None
+
   api.gclient.c = src_cfg
 
   patch_root = api.gclient.calculate_patch_root(

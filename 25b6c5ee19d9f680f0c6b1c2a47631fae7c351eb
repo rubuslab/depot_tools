@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "418eaf29_d2a1077e",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-06T21:15:55Z",
+      "side": 1,
+      "message": "maybe \"not applicable\" or \"incorrect\" or \"wrong\"\nwhen I read \"invalid\", I\u0027m first thinking of \"bad:\\\\protocol/and|url\" kind of invalid.\nif you agree, then please change the same word in exception error message",
+      "range": {
+        "startLine": 56,
+        "startChar": 33,
+        "endLine": 56,
+        "endChar": 40
+      },
+      "revId": "25b6c5ee19d9f680f0c6b1c2a47631fae7c351eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdca3c1b_47842b54",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-06T21:15:55Z",
+      "side": 1,
+      "message": "oh, so sol.name is actually the path to solution\u0027s main repo.",
+      "range": {
+        "startLine": 168,
+        "startChar": 16,
+        "endLine": 168,
+        "endChar": 25
+      },
+      "revId": "25b6c5ee19d9f680f0c6b1c2a47631fae7c351eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

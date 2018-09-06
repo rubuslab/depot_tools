@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2546d1a7_8e96de5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-06T21:15:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a42e10db_70680395",
+      "range": {
+        "startLine": 14,
+        "startChar": 17,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "f837c5d398b9a4cd1854d1393ed37c3feeee2262",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "02e40ae9_76c4447d",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 10
@@ -107,6 +131,30 @@
       "writtenOn": "2018-09-05T00:35:39Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 164,
+        "startChar": 71,
+        "endLine": 164,
+        "endChar": 80
+      },
+      "revId": "f837c5d398b9a4cd1854d1393ed37c3feeee2262",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b0aed07_7f24483f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-06T21:15:55Z",
+      "side": 1,
+      "message": "still the case.",
+      "parentUuid": "2f1bf36c_d1a7c663",
       "range": {
         "startLine": 164,
         "startChar": 71,

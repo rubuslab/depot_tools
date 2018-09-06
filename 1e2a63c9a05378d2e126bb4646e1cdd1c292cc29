@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f13ef86_2e21802a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1114374
+      },
+      "writtenOn": "2018-09-06T10:08:04Z",
+      "side": 1,
+      "message": "700 branches, and this was on Linux. I guess Windows isn\u0027t faster.\n\nIt\u0027s actually O(n^2) in number of branches since for every added branch, the config file takes longer to parse, *and* you parse it more times.",
+      "parentUuid": "cab1e277_1ad63327",
+      "range": {
+        "startLine": 11,
+        "startChar": 14,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "1e2a63c9a05378d2e126bb4646e1cdd1c292cc29",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b64419f6_e1da1897",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-09-05T20:42:02Z",
       "side": 1,
       "message": "-get-regexp \"branch\\..*issue\"",
+      "range": {
+        "startLine": 4613,
+        "startChar": 36,
+        "endLine": 4613,
+        "endChar": 40
+      },
+      "revId": "1e2a63c9a05378d2e126bb4646e1cdd1c292cc29",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a761f0ec_9c0897e9",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4613,
+      "author": {
+        "id": 1114374
+      },
+      "writtenOn": "2018-09-06T10:08:04Z",
+      "side": 1,
+      "message": "Done.\n\n(-l is actually faster but with less output the end time is the same)",
+      "parentUuid": "b64419f6_e1da1897",
       "range": {
         "startLine": 4613,
         "startChar": 36,

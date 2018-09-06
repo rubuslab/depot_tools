@@ -216,9 +216,10 @@ class Gitiles(recipe_api.RecipeApi):
   def canonicalize_repo_url(self, repo_url):
     """Returns a canonical form of repo_url. If not recognized, returns as is.
     """
-    host, project = parse_repo_url(repo_url)
-    if host and project:
-      repo_url = unparse_repo_url(host, project)
+    if repo_url:
+      host, project = parse_repo_url(repo_url)
+      if host and project:
+        repo_url = unparse_repo_url(host, project)
     return repo_url
 
 

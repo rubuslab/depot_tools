@@ -4,8 +4,6 @@
 
 """Recipe module to ensure a checkout is consistent on a bot."""
 
-import re
-
 from recipe_engine import recipe_api
 
 
@@ -108,22 +106,14 @@ class BotUpdateApi(recipe_api.RecipeApi):
     assert cfg is not None, (
         'missing gclient_config or forgot api.gclient.set_config(...) before?')
 
-    repository = None
-    if self.m.buildbucket.build.input.gerrit_changes:
-      cl = self.m.buildbucket.build.input.gerrit_changes[0]
-      # Strip "-review" from "foo-review.googlesource.com"
-      git_host = re.sub(
-          r'^([^.]+)-review(\.googlesource\.com)$', r'\1\2', cl.host)
-      repository = 'https://%s/%s' % (git_host, cl.project)
-
     # Construct our bot_update command.  This basically be inclusive of
     # everything required for bot_update to know:
     root = patch_root
     if root is None:
-      # TODO(nodir): use m.gclient.get_repo_path instead.
-      root = self.m.gclient.calculate_patch_root(
-          self.m.properties.get('patch_project'), cfg, repository)
-
+       # TODO(nodir): use m.gclient.get_repo_path instead.
+       root = self.m.gclient.calculate_patch_root(
+           self.m.properties.get('patch_project'), cfg,
+           self.m.tryserver.gerrit_change_repo_url)
     # Allow patch_project's revision if necessary.
     # This is important for projects which are checked out as DEPS of the
     # gclient solution.
@@ -147,9 +137,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
     # How to find the patch, if any
     if patch:
-      if repository and self._gerrit_ref:
+      if (self.m.tryserver.gerrit_change_repo_url and
+          self.m.tryserver.gerrit_change_ref):
         flags.append(
-            ['--patch_ref', '%s@%s' % (repository, self._gerrit_ref)])
+            ['--patch_ref', '%s@%s' % (
+                self.m.tryserver.gerrit_change_repo_url,
+                self.m.tryserver.gerrit_change_ref)])
       if patch_refs:
         flags.extend(
             ['--patch_ref', patch_ref]

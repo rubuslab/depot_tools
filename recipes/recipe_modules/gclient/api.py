@@ -144,64 +144,6 @@ class GclientApi(recipe_api.RecipeApi):
       return revision.resolve(self.m.properties)
     return revision
 
-  def sync(self, cfg, extra_sync_flags=None, **kwargs):
-    revisions = []
-    self.set_patch_project_revision(self.m.properties.get('patch_project'), cfg)
-    for i, s in enumerate(cfg.solutions):
-      if i == 0 and s.revision is None:
-        s.revision = RevisionFallbackChain()
-
-      if s.revision is not None and s.revision != '':
-        fixed_revision = self.resolve_revision(s.revision)
-        if fixed_revision:
-          revisions.extend(['--revision', '%s@%s' % (s.name, fixed_revision)])
-
-    for name, revision in sorted(cfg.revisions.items()):
-      fixed_revision = self.resolve_revision(revision)
-      if fixed_revision:
-        revisions.extend(['--revision', '%s@%s' % (name, fixed_revision)])
-
-    test_data_paths = set(self.got_revision_reverse_mapping(cfg).values() +
-                          [s.name for s in cfg.solutions])
-    step_test_data = lambda: (
-      self.test_api.output_json(test_data_paths))
-    try:
-      # clean() isn't used because the gclient sync flags passed in checkout()
-      # do much the same thing, and they're more correct than doing a separate
-      # 'gclient revert' because it makes sure the other args are correct when
-      # a repo was deleted and needs to be re-cloned (notably
-      # --with_branch_heads), whereas 'revert' uses default args for clone
-      # operations.
-      #
-      # TODO(mmoss): To be like current official builders, this step could
-      # just delete the whole <slave_name>/build/ directory and start each
-      # build from scratch. That might be the least bad solution, at least
-      # until we have a reliable gclient method to produce a pristine working
-      # dir for git-based builds (e.g. maybe some combination of 'git
-      # reset/clean -fx' and removing the 'out' directory).
-      j = '-j2' if self.m.platform.is_win else '-j8'
-      args = ['sync', '--verbose', '--nohooks', j, '--reset', '--force',
-              '--upstream', '--no-nag-max', '--with_branch_heads',
-              '--with_tags']
-      args.extend(extra_sync_flags or [])
-      if cfg.delete_unversioned_trees:
-        args.append('--delete_unversioned_trees')
-      self('sync', args + revisions +
-                 ['--output-json', self.m.json.output()],
-                 step_test_data=step_test_data,
-                 **kwargs)
-    finally:
-      result = self.m.step.active_result
-      solutions = result.json.output['solutions']
-      for propname, path in sorted(
-          self.got_revision_reverse_mapping(cfg).iteritems()):
-        # gclient json paths always end with a slash
-        info = solutions.get(path + '/') or solutions.get(path)
-        if info:
-          result.presentation.properties[propname] = info['revision']
-
-    return result
-
   def inject_parent_got_revision(self, gclient_config=None, override=False):
     """Match gclient config to build revisions obtained from build_properties.
 

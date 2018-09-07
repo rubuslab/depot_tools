@@ -3,6 +3,7 @@
 # found in the LICENSE file.
 
 DEPS = [
+  'gerrit',
   'recipe_engine/buildbucket',
   'recipe_engine/json',
   'recipe_engine/raw_io',
@@ -32,6 +33,7 @@ def RunSteps(api):
   if api.tryserver.gerrit_change:
     assert (api.tryserver.gerrit_change_repo_url ==
             'https://chromium.googlesource.com/chromium/src')
+    assert api.tryserver.gerrit_change_ref == 'refs/changes/27/91827/1'
 
   if api.tryserver.is_gerrit_issue:
     api.tryserver.get_footers()
@@ -81,7 +83,8 @@ def GenTests(api):
 
   yield (api.test('with_gerrit_patch') +
          api.buildbucket.try_build(
-            'chromium', 'linux',
+            'chromium',
+            'linux',
             git_repo='https://chromium.googlesource.com/chromium/src'))
 
   yield (api.test('with_wrong_patch_new') + api.platform('win', 32) +

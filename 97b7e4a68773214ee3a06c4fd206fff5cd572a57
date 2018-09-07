@@ -140,6 +140,53 @@
     },
     {
       "key": {
+        "uuid": "f2cc1258_87be00e6",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-07T23:05:44Z",
+      "side": 1,
+      "message": "Yup: https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#revision-info",
+      "parentUuid": "7982287a_239d7292",
+      "range": {
+        "startLine": 26,
+        "startChar": 6,
+        "endLine": 26,
+        "endChar": 39
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2563bc6c_2f9501ca",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-07T23:05:44Z",
+      "side": 1,
+      "message": "Just wondering, is it always true that we can simply remove \u0027-review\u0027?",
+      "range": {
+        "startLine": 28,
+        "startChar": 20,
+        "endLine": 28,
+        "endChar": 40
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "54130c1a_22b34f22",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 8

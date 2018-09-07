@@ -9,14 +9,13 @@ from recipe_engine import recipe_api
 
 class BotUpdateApi(recipe_api.RecipeApi):
 
-  def __init__(self, properties, patch_issue, patch_set, patch_ref,
+  def __init__(self, properties, patch_issue, patch_set,
                patch_gerrit_url, deps_revision_overrides, fail_patch, *args,
                **kwargs):
     self._apply_patch_on_gclient = properties.get(
         'apply_patch_on_gclient', True)
     self._issue = patch_issue
     self._patchset = patch_set
-    self._gerrit_ref = patch_ref
     self._gerrit = patch_gerrit_url
     self._deps_revision_overrides = deps_revision_overrides
     self._fail_patch = fail_patch
@@ -138,10 +137,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
     # How to find the patch, if any
     if patch:
-      if self.m.tryserver.gerrit_change_repo_url and self._gerrit_ref:
+      if (self.m.tryserver.gerrit_change_repo_url and
+          self.m.tryserver.gerrit_change_ref):
         flags.append(
             ['--patch_ref', '%s@%s' % (
-                self.m.tryserver.gerrit_change_repo_url, self._gerrit_ref)])
+                self.m.tryserver.gerrit_change_repo_url,
+                self.m.tryserver.gerrit_change_ref)])
       if patch_refs:
         flags.extend(
             ['--patch_ref', patch_ref]
@@ -348,13 +349,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
         (cfg.solutions[0].name, None))[0]:
       return 'HEAD'
 
-    # Query Gerrit to check if a CL's destination branch differs from master.
-    destination_branch = self.m.gerrit.get_change_destination_branch(
-        host=self._gerrit,
-        change=self._issue,
-        name='get_patch_destination_branch',
-    )
-
+    destination_branch = (self.m.tryserver.gerrit_change_info or {}).get(
+        'branch')
     # Only use prefix if different from bot_update.py's default.
     return destination_branch if destination_branch != 'master' else 'HEAD'
 

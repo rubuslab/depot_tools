@@ -15,6 +15,7 @@ class TryserverApi(recipe_api.RecipeApi):
 
     self._gerrit_change = None  # self.m.buildbucket.common_pb2.GerritChange
     self._gerrit_change_repo_url = None
+    self._gerrit_change_info = None
 
   def initialize(self):
     changes = self.m.buildbucket.build.input.gerrit_changes
@@ -42,6 +43,84 @@ class TryserverApi(recipe_api.RecipeApi):
     Populated iff gerrit_change is populated.
     """
     return self._gerrit_change_repo_url
+
+  @property
+  def gerrit_change_info(self):
+    """Returns extra info about gerrit_changed, fetched from Gerrit server.
+
+    Populated iff gerrit_change is populated.
+    May emit a step when read for the first time.
+
+    Returns:
+      A dict representing
+      https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#change-info
+    """
+    cl = self.gerrit_change
+    if cl and self._gerrit_change_info is None:
+      o_params = ['ALL_REVISIONS', 'DOWNLOAD_COMMANDS']
+      step_test_data = self.m.gerrit.test_api.get_one_change_response_data(
+          project=cl.project,
+          change=cl.change,
+          patchset=cl.patchset,
+          # This list must remain static (not dynamically customized by a param)
+          # If you need extra info, either change it here (hardcoded) or
+          # fetch separetly.
+          # If changed, update the docstring above.
+          o_params=o_params)
+      self._gerrit_change_info = self.m.gerrit.get_changes(
+          host=cl.host,
+          query_params=[('change', cl.change)],
+          o_params=o_params,
+          limit=1,
+          name='fetch current CL info',
+          step_test_data=lambda: step_test_data)[0]
+    return self._gerrit_change_info
+
+  @property
+  def gerrit_change_ref(self):
+    """Returns gerrit change ref, e.g. "refs/heads/45/12345/6, or None.
+
+    Populated iff gerrit_change is populated.
+    """
+    info = self.gerrit_change_info
+    if not info:  # pragma: no cover
+      return None
+    # Example of info:
+    # {
+    #    ... other properties ...
+    #   "current_revision": "1c9303c2acf8627286ee998a4437616a1916a6a2",
+    #   "revisions": {
+    #     "1c9303c2acf8627286ee998a4437616a1916a6a2": {
+    #       "kind": "REWORK",
+    #       "_number": 6,
+    #       "created": "2018-09-07 01:13:45.000000000",
+    #       "uploader": {
+    #         "_account_id": 1114299
+    #       },
+    #       "ref": "refs/changes/68/1208368/6",
+    #       "fetch": {
+    #         "repo": {
+    #           "url": "chromium/tools/depot_tools",
+    #           "ref": "refs/changes/68/1208368/6",
+    #           "commands": {
+    #             "repo": "repo download chromium/tools/depot_tools 1208368/6"
+    #           }
+    #         },
+    #         "http": {
+    #           "url": "https://chromium.googlesource.com/chromium/tools/depot_tools",
+    #           "ref": "refs/changes/68/1208368/6",
+    #           "commands": {
+    #             "Checkout": "git fetch https://chromium.googlesource.com/chromium/tools/depot_tools refs/changes/68/1208368/6 \u0026\u0026 git checkout FETCH_HEAD",
+    #             "Cherry Pick": "git fetch https://chromium.googlesource.com/chromium/tools/depot_tools refs/changes/68/1208368/6 \u0026\u0026 git cherry-pick FETCH_HEAD",
+    #             "Pull": "git pull https://chromium.googlesource.com/chromium/tools/depot_tools refs/changes/68/1208368/6"
+    #           }
+    #         }
+    #       },
+    #       "description": "rebase"
+    #     }
+    #   }
+    # }
+    return info['revisions'][info['current_revision']]['ref']
 
   @property
   def is_tryserver(self):

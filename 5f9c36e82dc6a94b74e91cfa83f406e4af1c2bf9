@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "599f1236_10e44cf3",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002080
+      },
+      "writtenOn": "2018-09-07T18:34:34Z",
+      "side": 1,
+      "message": "unused?",
+      "range": {
+        "startLine": 7,
+        "startChar": 7,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "5f9c36e82dc6a94b74e91cfa83f406e4af1c2bf9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -187,6 +187,30 @@
     },
     {
       "key": {
+        "uuid": "73bc90c4_d9ec4fc3",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T23:14:10Z",
+      "side": 1,
+      "message": "for .googlesource.com deployment of Gerrit, yes. In general, no.",
+      "parentUuid": "2563bc6c_2f9501ca",
+      "range": {
+        "startLine": 28,
+        "startChar": 20,
+        "endLine": 28,
+        "endChar": 40
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "54130c1a_22b34f22",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 8

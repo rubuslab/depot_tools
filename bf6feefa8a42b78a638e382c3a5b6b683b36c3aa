@@ -22,6 +22,30 @@
       "revId": "bf6feefa8a42b78a638e382c3a5b6b683b36c3aa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "298c4507_f4290307",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_v8_head_by_default.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-07T19:51:23Z",
+      "side": 0,
+      "message": "yes. existing test was wrong, see patchset 9. It is not going to matter because those tests will be switched to buildbucket.try_build later",
+      "parentUuid": "6e0788ca_1eb38da5",
+      "range": {
+        "startLine": 64,
+        "startChar": 43,
+        "endLine": 64,
+        "endChar": 46
+      },
+      "revId": "bf6feefa8a42b78a638e382c3a5b6b683b36c3aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

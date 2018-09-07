@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a8dba00f_54f1a162",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-07T22:35:51Z",
+      "side": 1,
+      "message": "Could you make this into self.m.tryserver.gerrit_change_branch?\nI\u0027d also use this when specifying patch_refs.",
+      "range": {
+        "startLine": 352,
+        "startChar": 25,
+        "endLine": 353,
+        "endChar": 17
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c10db78c_0daa336d",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-07T22:35:51Z",
+      "side": 1,
+      "message": "This is patch_project.\nThough doesn\u0027t matter if you will replace this with something else soon.",
+      "range": {
+        "startLine": 186,
+        "startChar": 6,
+        "endLine": 186,
+        "endChar": 20
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f054121_7f7e802b",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-07T22:35:51Z",
+      "side": 1,
+      "message": "These fields are being ignored, and we\u0027re always using the change 91827 with patchset 1",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 18
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad8fe5b1_980a3a72",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-07T22:35:51Z",
+      "side": 1,
+      "message": "Gerrit API responses have no \u0027change\u0027, \u0027patchset\u0027 or \u0027o_params\u0027 fields.\nYou\u0027d need to modify get_one_change_response_data to transform those into the appropriate fields  or set those fields yourself (\u0027_number\u0027, \u0027revisions.\u003csome_revision\u003e._number\u0027, \u0027revisions.\u003csome_revision\u003e.ref\u0027).\n\nAs it is, they\u0027re being ignored.",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 27
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52107dd4_421e9f4f",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-07T22:35:51Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this look for the revision that corresponds to cl.patchset?",
+      "range": {
+        "startLine": 88,
+        "startChar": 29,
+        "endLine": 88,
+        "endChar": 53
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

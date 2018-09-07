@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85d956e1_7c14c065",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T01:02:13Z",
+      "side": 1,
+      "message": "can we please avoid hardcoding this?\n\nI think this is Gerrit implementation detail. Even Gerrit UI doesn\u0027t hardcode this but queries Gerrit backend.\nSee also just reverted https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1174988.\n\nI think having this module query gerrit for additional details about (cl/ps) and caching it locally is better approach for anything not specified in GerritChanges of buildbucket.",
+      "range": {
+        "startLine": 31,
+        "startChar": 6,
+        "endLine": 32,
+        "endChar": 50
+      },
+      "revId": "9ccd91b041a58ad53afebe385f0f590ed8b6cb01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

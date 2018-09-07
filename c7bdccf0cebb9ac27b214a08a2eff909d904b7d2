@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95ed7b51_dccdd0c3",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T01:58:13Z",
+      "side": 1,
+      "message": "unused now.",
+      "range": {
+        "startLine": 20,
+        "startChar": 9,
+        "endLine": 20,
+        "endChar": 27
+      },
+      "revId": "c7bdccf0cebb9ac27b214a08a2eff909d904b7d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cff86ce9_b5dde572",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.expected/with_gerrit_patch.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T01:58:13Z",
+      "side": 1,
+      "message": "a bit ugly, but does the job.",
+      "range": {
+        "startLine": 52,
+        "startChar": 124,
+        "endLine": 52,
+        "endChar": 126
+      },
+      "revId": "c7bdccf0cebb9ac27b214a08a2eff909d904b7d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

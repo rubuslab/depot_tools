@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a13f52e_d0799e91",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T22:48:49Z",
+      "side": 1,
+      "message": "overstatement :) (e.g., current labels)",
+      "range": {
+        "startLine": 13,
+        "startChar": 31,
+        "endLine": 13,
+        "endChar": 34
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a8dba00f_54f1a162",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 8
@@ -71,6 +94,75 @@
     },
     {
       "key": {
+        "uuid": "9874bb45_6a9bc5fc",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T22:48:49Z",
+      "side": 1,
+      "message": "are you implying here that it should be https://x.googlesource.com ?",
+      "range": {
+        "startLine": 80,
+        "startChar": 12,
+        "endLine": 80,
+        "endChar": 18
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7982287a_239d7292",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T22:48:49Z",
+      "side": 1,
+      "message": "this looks wrong. Are you sure Gerrit outputs it like this?",
+      "range": {
+        "startLine": 26,
+        "startChar": 6,
+        "endLine": 26,
+        "endChar": 39
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54130c1a_22b34f22",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T22:48:49Z",
+      "side": 1,
+      "message": "I don\u0027t think the whole dict should be exposed.\nFirst, it\u0027s not clear from this doc what o_params are passed.\nSecond, this info is cached, but some parts of it may change with time on Gerrit server.\nThird, accessing download ref from change_info is actually quite a PITA, and so you had to expose it as separate property.\n\nHence, I propose to only expose the properties typically required by consumers of api.tryserver, which for now is gerrit_change_ref, gerrit_change_target_ref (correct name for gerrit itself still calls \u0027branch\u0027). Eventually, may also include owner (though it turns out that owner may not necessarily have an email)",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 92
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ad8fe5b1_980a3a72",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 8
@@ -87,6 +179,52 @@
         "startChar": 0,
         "endLine": 67,
         "endChar": 27
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d888cf64_3c3db065",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T22:48:49Z",
+      "side": 1,
+      "message": "👍",
+      "range": {
+        "startLine": 65,
+        "startChar": 6,
+        "endLine": 69,
+        "endChar": 28
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb1a190b_47c99b80",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T22:48:49Z",
+      "side": 1,
+      "message": "how about fetch_ref or download_ref?\n\nref itself can be confused with target ref.",
+      "range": {
+        "startLine": 80,
+        "startChar": 20,
+        "endLine": 80,
+        "endChar": 23
       },
       "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
@@ -111,6 +249,69 @@
         "endLine": 88,
         "endChar": 53
       },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e29d8e5_7d44b7ae",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T22:48:49Z",
+      "side": 1,
+      "message": "this is wrong. You need to loop over all revisions and select the one matching a patch. See reverted Edward CL where he added that func to gerrit_api -- i think it\u0027s reasonable to re-use it.",
+      "range": {
+        "startLine": 88,
+        "startChar": 35,
+        "endLine": 88,
+        "endChar": 51
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa3939ff_d70fc1a6",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T22:48:49Z",
+      "side": 1,
+      "message": "...and so I propose to have this as a named property\ngerrit_change_target_ref\nwhich would always start with \u0027refs/\u0027 s.t. bot_update and others don\u0027t have to massage it every time.",
+      "range": {
+        "startLine": 37,
+        "startChar": 25,
+        "endLine": 37,
+        "endChar": 53
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9fe7604d_6b09a109",
+        "filename": "recipes/recipe_modules/tryserver/test_api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T22:48:49Z",
+      "side": 1,
+      "message": "wdyt about having target_ref here, which would require \u0027refs/\u0027 prefix, which then gets converted to \u0027branch\u0027 when passed to get_one_change_response_data?\n\nor am I too pedantic about refs?",
       "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

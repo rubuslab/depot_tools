@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d51df1d0_9204513d",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T19:45:34Z",
+      "side": 1,
+      "message": "() not necessary.",
+      "range": {
+        "startLine": 141,
+        "startChar": 9,
+        "endLine": 141,
+        "endChar": 10
+      },
+      "revId": "d8f9462c7b53c8c76324c99803fcce4adacdcbef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6abc7e92_860f2660",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_gerrit_webrtc.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-07T19:45:34Z",
+      "side": 1,
+      "message": "perfect.",
+      "range": {
+        "startLine": 54,
+        "startChar": 5,
+        "endLine": 54,
+        "endChar": 31
+      },
+      "revId": "d8f9462c7b53c8c76324c99803fcce4adacdcbef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

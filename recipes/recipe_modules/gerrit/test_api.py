@@ -16,12 +16,14 @@ EXAMPLE_CHANGE = {
   'has_review_started': False,
   'branch': 'master',
   'subject': 'Change title',
+  'current_revision': '184ebe53805e102605d11f6b143486d15c23a09c',
   'revisions': {
     '184ebe53805e102605d11f6b143486d15c23a09c': {
       '_number': '1',
       'commit': {
         'message': 'Change commit message',
       },
+      'ref': 'refs/changes/27/91827/1',
     },
   },
 }

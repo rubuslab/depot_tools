@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6248fe8_9ce09c17",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-09T21:12:07Z",
+      "side": 1,
+      "message": "you aren\u0027t seriously intending to wait for 2.7 hours, are you?\nAlso, monorail being GAE app, it\u0027s timeout is likely ~1 minute anyway and at most 10m.\nSo, how about 600 here?",
+      "range": {
+        "startLine": 442,
+        "startChar": 57,
+        "endLine": 442,
+        "endChar": 62
+      },
+      "revId": "4a2a62e4044e65f1b92bdc5a3c39a67921991ac9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

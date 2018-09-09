@@ -22,6 +22,30 @@
       "revId": "4a2a62e4044e65f1b92bdc5a3c39a67921991ac9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31b89ef2_a2284b8d",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1105344
+      },
+      "writtenOn": "2018-09-09T21:28:42Z",
+      "side": 1,
+      "message": "Good point. :) Changed.",
+      "parentUuid": "e6248fe8_9ce09c17",
+      "range": {
+        "startLine": 442,
+        "startChar": 57,
+        "endLine": 442,
+        "endChar": 62
+      },
+      "revId": "4a2a62e4044e65f1b92bdc5a3c39a67921991ac9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

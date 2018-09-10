@@ -16,6 +16,10 @@ class TryserverApi(recipe_api.RecipeApi):
     self._gerrit_change = None  # self.m.buildbucket.common_pb2.GerritChange
     self._gerrit_change_repo_url = None
 
+    self._gerrit_info_initialized = False
+    self._gerrit_change_dest_ref = None
+    self._gerrit_change_patch_ref = None
+
   def initialize(self):
     changes = self.m.buildbucket.build.input.gerrit_changes
     if len(changes) == 1:
@@ -42,6 +46,76 @@ class TryserverApi(recipe_api.RecipeApi):
     Populated iff gerrit_change is populated.
     """
     return self._gerrit_change_repo_url
+
+  def _ensure_gerrit_change_info(self):
+    """Returns extra info about gerrit_change, fetched from Gerrit server.
+
+    May emit a step when read for the first time.
+
+    Returns:
+      Empty dict if it is not a gerrit change, otherwise a dict with keys
+      "branch" and "ref".
+      "ref" is the fetch ref of the
+      buildbucket.build.input.gerrit_changes[0].patchset.
+      For meaning of other keys, see
+      https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#change-info
+    """
+    if self._gerrit_info_initialized:
+      return
+    self._gerrit_info_initialized = True
+
+    cl = self.gerrit_change
+    if not cl:  # pragma: no cover
+      return
+
+    td = self._test_data if self._test_data.enabled else {}
+    mock_res = [{
+      'branch': td.get('gerrit_change_dest_ref', 'master'),
+      'revisions': {
+        '184ebe53805e102605d11f6b143486d15c23a09c': {
+          '_number': str(cl.patchset),
+          'ref': 'refs/changes/%02d/%d/%d' % (
+              cl.change % 100, cl.change, cl.patchset),
+        }
+      }
+    }]
+    res = self.m.gerrit.get_changes(
+        host='https://' + cl.host,
+        query_params=[('change', cl.change)],
+        # This list must remain static/hardcoded.
+        # If you need extra info, either change it here (hardcoded) or
+        # fetch separetly.
+        o_params=['ALL_REVISIONS', 'DOWNLOAD_COMMANDS'],
+        limit=1,
+        name='fetch current CL info',
+        step_test_data=lambda: self.m.json.test_api.output(mock_res))[0]
+
+    self._gerrit_change_dest_ref = res.get('branch', 'master')
+    if not self._gerrit_change_dest_ref.startswith('refs/'):
+      self._gerrit_change_dest_ref = (
+          'refs/heads/' + self._gerrit_change_dest_ref)
+
+    for rev in res['revisions'].itervalues():
+      if int(rev['_number']) == self.gerrit_change.patchset:
+        self._gerrit_change_patch_ref = rev['ref']
+
+  @property
+  def gerrit_change_patch_ref(self):
+    """Returns gerrit patch ref, e.g. "refs/heads/45/12345/6, or None.
+
+    Populated iff gerrit_change is populated.
+    """
+    self._ensure_gerrit_change_info()
+    return self._gerrit_change_patch_ref
+
+  @property
+  def gerrit_change_dest_ref(self):
+    """Returns gerrit change destination ref, e.g. "refs/heads/master".
+
+    Populated iff gerrit_change is populated.
+    """
+    self._ensure_gerrit_change_info()
+    return self._gerrit_change_dest_ref
 
   @property
   def is_tryserver(self):

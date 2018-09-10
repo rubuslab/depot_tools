@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "bc7a860a_9e60eaf2",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "made it gerrit_change_dest_ref.\nref because it is more general\ndest because this is not the only ref",
+      "parentUuid": "a8dba00f_54f1a162",
+      "range": {
+        "startLine": 352,
+        "startChar": 25,
+        "endLine": 353,
+        "endChar": 17
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c10db78c_0daa336d",
         "filename": "recipes/recipe_modules/bot_update/examples/full.py",
         "patchSetId": 8
@@ -68,6 +92,30 @@
       "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20f37f8e_7054384d",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "yes, i will cleanup all tests after I switch to the new APIs. That would be a lot of cleanup, so it is better to do in a separate CL.",
+      "parentUuid": "c10db78c_0daa336d",
+      "range": {
+        "startLine": 186,
+        "startChar": 6,
+        "endLine": 186,
+        "endChar": 20
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "64b350d5_f38bd375",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "2f054121_7f7e802b",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 18
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9874bb45_6a9bc5fc",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 8
@@ -114,6 +186,30 @@
       "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d739af6c_fa56c7d5",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "yep. it was unexpected",
+      "parentUuid": "9874bb45_6a9bc5fc",
+      "range": {
+        "startLine": 80,
+        "startChar": 12,
+        "endLine": 80,
+        "endChar": 18
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -164,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "05d10e69_fb24a5f3",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "Edward\u0027s link proves that this is right",
+      "parentUuid": "7982287a_239d7292",
+      "range": {
+        "startLine": 26,
+        "startChar": 6,
+        "endLine": 26,
+        "endChar": 39
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2563bc6c_2f9501ca",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 8
@@ -211,6 +331,30 @@
     },
     {
       "key": {
+        "uuid": "89d42cf0_7ea72480",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "73bc90c4_d9ec4fc3",
+      "range": {
+        "startLine": 28,
+        "startChar": 20,
+        "endLine": 28,
+        "endChar": 40
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "54130c1a_22b34f22",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 8
@@ -231,6 +375,30 @@
       "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01706f56_32264012",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54130c1a_22b34f22",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 92
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -257,6 +425,30 @@
     },
     {
       "key": {
+        "uuid": "c1e87293_759b5ece",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "thanks. I\u0027ve blindly copied\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1211462/2/recipes/recipe_modules/bot_update/api.py#b434\ndone",
+      "parentUuid": "ad8fe5b1_980a3a72",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 27
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d888cf64_3c3db065",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 8
@@ -280,6 +472,30 @@
     },
     {
       "key": {
+        "uuid": "3bdede39_78b39714",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d888cf64_3c3db065",
+      "range": {
+        "startLine": 65,
+        "startChar": 6,
+        "endLine": 69,
+        "endChar": 28
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eb1a190b_47c99b80",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 8
@@ -300,6 +516,30 @@
       "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb56dff8_6d353e5f",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb1a190b_47c99b80",
+      "range": {
+        "startLine": 80,
+        "startChar": 20,
+        "endLine": 80,
+        "endChar": 23
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -349,6 +589,54 @@
     },
     {
       "key": {
+        "uuid": "2d0f92fa_b4d6e845",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e29d8e5_7d44b7ae",
+      "range": {
+        "startLine": 88,
+        "startChar": 35,
+        "endLine": 88,
+        "endChar": 51
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ac69e92_a97e92cc",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52107dd4_421e9f4f",
+      "range": {
+        "startLine": 88,
+        "startChar": 29,
+        "endLine": 88,
+        "endChar": 53
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa3939ff_d70fc1a6",
         "filename": "recipes/recipe_modules/tryserver/examples/full.py",
         "patchSetId": 8
@@ -372,6 +660,30 @@
     },
     {
       "key": {
+        "uuid": "8f040851_50fde871",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa3939ff_d70fc1a6",
+      "range": {
+        "startLine": 37,
+        "startChar": 25,
+        "endLine": 37,
+        "endChar": 53
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fe7604d_6b09a109",
         "filename": "recipes/recipe_modules/tryserver/test_api.py",
         "patchSetId": 8
@@ -386,6 +698,24 @@
       "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2599c5dc_0799da64",
+        "filename": "recipes/recipe_modules/tryserver/test_api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-10T21:58:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fe7604d_6b09a109",
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -284,6 +284,30 @@
     },
     {
       "key": {
+        "uuid": "18770622_6e0e2b74",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-11T02:58:04Z",
+      "side": 1,
+      "message": "Oh, this is new to me. Good to know. previously, I had to fetch it from something else.",
+      "parentUuid": "05d10e69_fb24a5f3",
+      "range": {
+        "startLine": 26,
+        "startChar": 6,
+        "endLine": 26,
+        "endChar": 39
+      },
+      "revId": "97b7e4a68773214ee3a06c4fd206fff5cd572a57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2563bc6c_2f9501ca",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 8

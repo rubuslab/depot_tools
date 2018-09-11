@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5bb76c45_906766c7",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-11T02:58:04Z",
+      "side": 1,
+      "message": "While it\u0027ll mostly work, this isn\u0027t strictly correct if step below raises exception. In such a case, one may chose to retry it, but this flag will be already True.\n\nGiven that condition on next line is very cheap, I\u0027d just move line 59 to the end of the method AND chec 61..63 to the top.",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 40
+      },
+      "revId": "08287fbfbf7f659dee1b48923e071b1b435ee8d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c188f28b_fb8f3e74",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-11T02:58:04Z",
+      "side": 1,
+      "message": "consider just getting \u0027branch\u0027 directly. It should be there, and if not, we shouldn\u0027t be guessing.",
+      "range": {
+        "startLine": 87,
+        "startChar": 37,
+        "endLine": 87,
+        "endChar": 64
+      },
+      "revId": "08287fbfbf7f659dee1b48923e071b1b435ee8d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

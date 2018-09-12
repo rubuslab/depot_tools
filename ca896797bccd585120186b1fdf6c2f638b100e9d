@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ac0e4ffb_d284b9c1",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1118354
+      },
+      "writtenOn": "2018-09-12T15:18:37Z",
+      "side": 1,
+      "message": "I\u0027m not sure whether this is reliable.",
+      "range": {
+        "startLine": 202,
+        "startChar": 12,
+        "endLine": 202,
+        "endChar": 40
+      },
+      "revId": "ca896797bccd585120186b1fdf6c2f638b100e9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -202,16 +202,16 @@ class GclientApi(recipe_api.RecipeApi):
 
     return result
 
-  def inject_parent_got_revision(self, gclient_config=None, override=False):
+  def inject_parent_got_revision(self, cfg=None, override=False):
     """Match gclient config to build revisions obtained from build_properties.
 
     Args:
-      gclient_config (gclient config object) - The config to manipulate. A value
+      cfg (gclient config object) - The config to manipulate. A value
         of None manipulates the module's built-in config (self.c).
       override (bool) - If True, will forcibly set revision and custom_vars
         even if the config already contains values for them.
     """
-    cfg = gclient_config or self.c
+    cfg = cfg or self.c
 
     for prop, custom_var in cfg.parent_got_revision_mapping.iteritems():
       val = str(self.m.properties.get(prop, ''))
@@ -227,11 +227,11 @@ class GclientApi(recipe_api.RecipeApi):
           if custom_var not in cfg.solutions[0].custom_vars or override:
             cfg.solutions[0].custom_vars[custom_var] = val
 
-  def checkout(self, gclient_config=None, revert=RevertOnTryserver,
+  def checkout(self, cfg=None, revert=RevertOnTryserver,
                inject_parent_got_revision=True, extra_sync_flags=None,
                **kwargs):
     """Return a step generator function for gclient checkouts."""
-    cfg = gclient_config or self.c
+    cfg = cfg or self.c
     assert cfg.complete()
 
     if revert is self.RevertOnTryserver:
@@ -306,21 +306,21 @@ class GclientApi(recipe_api.RecipeApi):
     """Attempts to make repo_url canonical. Supports Gitiles URL."""
     return self.m.gitiles.canonicalize_repo_url(repo_url)
 
-  def get_repo_path(self, repo_url, gclient_config=None):
+  def get_repo_path(self, repo_url, cfg=None):
     """Returns local path to the repo checkout given its url.
 
     Consults cfg.repo_path_map and fallbacks to urls in configured solutions.
 
     Returns None if not found.
     """
-    rel_path = self._get_repo_path(repo_url, gclient_config=gclient_config)
+    rel_path = self._get_repo_path(repo_url, cfg=cfg)
     if rel_path:
       return self.m.path.join(*rel_path.split('/'))
     return None
 
-  def _get_repo_path(self, repo_url, gclient_config=None):
+  def _get_repo_path(self, repo_url, cfg=None):
     repo_url = self._canonicalize_repo_url(repo_url)
-    cfg = gclient_config or self.c
+    cfg = cfg or self.c
     rel_path, _ = cfg.repo_path_map.get(repo_url, ('', ''))
     if rel_path:
       return rel_path
@@ -336,8 +336,7 @@ class GclientApi(recipe_api.RecipeApi):
 
     return None
 
-  def calculate_patch_root(self, patch_project, gclient_config=None,
-                           patch_repo=None):
+  def calculate_patch_root(self, patch_project, cfg=None, patch_repo=None):
     """Returns path where a patch should be applied to based patch_project.
 
     TODO(nodir): delete this function in favor of get_repo_path.
@@ -358,11 +357,11 @@ class GclientApi(recipe_api.RecipeApi):
       solution root.
     """
     if patch_repo:
-      path = self.get_repo_path(patch_repo, gclient_config=gclient_config)
+      path = self.get_repo_path(patch_repo, cfg=cfg)
       if path is not None:
         return path
 
-    cfg = gclient_config or self.c
+    cfg = cfg or self.c
     root, _ = cfg.patch_projects.get(patch_project, ('', ''))
     if not root:
       # Failure case - assume patch is for first solution, as this is what most
@@ -373,14 +372,14 @@ class GclientApi(recipe_api.RecipeApi):
     # and include actual solution name in them.
     return self.m.path.join(*root.split('/'))
 
-  def set_patch_project_revision(self, patch_project, gclient_config=None):
+  def set_patch_project_revision(self, patch_project, cfg=None):
     """Updates config revision corresponding to patch_project.
 
     Useful for bot_update only, as this is the only consumer of gclient's config
     revision map. This doesn't overwrite the revision if it was already set.
     """
     assert patch_project is None or isinstance(patch_project, basestring)
-    cfg = gclient_config or self.c
+    cfg = cfg or self.c
     path, revision = cfg.patch_projects.get(patch_project, (None, None))
     if path and revision and path not in cfg.revisions:
       cfg.revisions[path] = revision

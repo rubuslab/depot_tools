@@ -53,8 +53,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
     assert commit.host and commit.project
 
     repo_url = self.m.gitiles.unparse_repo_url(commit.host, commit.project)
-    repo_path = self.m.gclient.get_repo_path(
-        repo_url, gclient_config=gclient_config)
+    repo_path = self.m.gclient.get_repo_path(repo_url, cfg=gclient_config)
     if not repo_path:
       raise self.m.step.InfraFailure(
           'invalid (host, project) pair in '

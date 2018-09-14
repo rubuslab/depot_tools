@@ -117,6 +117,30 @@
       "revId": "ca896797bccd585120186b1fdf6c2f638b100e9d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bb21359_77b44814",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-09-14T19:01:49Z",
+      "side": 1,
+      "message": "Well, as you prefer. Considering it saves only one line of code you are probably right, it\u0027s not worth it. (I hoped it could save more than one, but then I noticed get_auth_email that parses git-* thing, so we still need to parse and store it).",
+      "parentUuid": "96f0dad7_5160fc91",
+      "range": {
+        "startLine": 223,
+        "startChar": 8,
+        "endLine": 223,
+        "endChar": 33
+      },
+      "revId": "ca896797bccd585120186b1fdf6c2f638b100e9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

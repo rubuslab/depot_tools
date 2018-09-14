@@ -46,6 +46,29 @@
       "revId": "ca896797bccd585120186b1fdf6c2f638b100e9d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb4a4a6d_afaf3521",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-09-14T18:12:13Z",
+      "side": 1,
+      "message": "I\u0027m 90% certain we can drop \"Basic ...\" form completely and always use \"Bearer ...\" form (ignoring \u0027login\u0027 part completely). Gerrit doesn\u0027t look at the \u0027login\u0027 part, only at the token.\n\nPlease verify. If it indeed works, the code can be slightly simplified.",
+      "range": {
+        "startLine": 223,
+        "startChar": 8,
+        "endLine": 223,
+        "endChar": 33
+      },
+      "revId": "ca896797bccd585120186b1fdf6c2f638b100e9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

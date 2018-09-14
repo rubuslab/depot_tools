@@ -336,13 +336,13 @@ class BotUpdateApi(recipe_api.RecipeApi):
         and if different from master, returns 'HEAD' otherwise.
     """
     # Bail out if this is not a gerrit change.
-    if not self.m.tryserver.gerrit_change:
+    if not self.m.tryserver.gerrit_change_repo_url:
       return 'HEAD'
 
     # Ignore other project paths than the one belonging to the CL.
-    if path != cfg.patch_projects.get(
-        self.m.properties.get('patch_project'),
-        (cfg.solutions[0].name, None))[0]:
+    patch_path = self.m.gclient.get_repo_path(
+        self.m.tryserver.gerrit_change_repo_url, gclient_config=cfg)
+    if path != patch_path:
       return 'HEAD'
 
     target_ref = self.m.tryserver.gerrit_change_target_ref

@@ -33,19 +33,19 @@ def RunSteps(api, patch_project, patch_repository_url):
   })
   assert api.gclient.get_repo_path(
       'https://chromium.googlesource.com/chromium/src.git',
-      gclient_config=src_cfg) == 'src'
+      cfg=src_cfg) == 'src'
   assert api.gclient.get_repo_path(
       'https://chromium.googlesource.com/chromium/src',
-      gclient_config=src_cfg) == 'src'
+      cfg=src_cfg) == 'src'
   assert api.gclient.get_repo_path(
       'https://chromium.googlesource.com/v8/v8',
-      gclient_config=src_cfg) == 'src/v8'
+      cfg=src_cfg) == 'src/v8'
   assert api.gclient.get_repo_path(
       'https://webrtc.googlesource.com/src',
-      gclient_config=src_cfg) == 'src/third_party/webrtc'
+      cfg=src_cfg) == 'src/third_party/webrtc'
   assert api.gclient.get_repo_path(
       'https://example.googlesource.com/unrecognized',
-      gclient_config=src_cfg) is None
+      cfg=src_cfg) is None
 
   api.gclient.c = src_cfg
 

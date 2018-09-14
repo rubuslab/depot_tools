@@ -131,6 +131,10 @@ def main(argv):
     headers={'Content-Type': 'application/json'},
   )
 
+  build_url = content.get('build', {}).get('url')
+  if build_url:
+    print 'Build triggered on: %s' % build_url
+
   if args.verbose:
     print content
 

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee4ed1b2_ad70436f",
+        "filename": "buildbucket.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-14T16:48:54Z",
+      "side": 1,
+      "message": "maybe do it after L139 so that it is closer to the terminal view when used in verbose mode",
+      "revId": "c69b5512e41a9b31790a0ba6180d568adc2f03d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -302,6 +302,13 @@ class GclientApi(recipe_api.RecipeApi):
       infra_step=True,
     )
 
+  def get_gerrit_patch_root(self, gclient_config=None):
+    """Returns local path to the repo where gerrit patch will be applied."""
+    repo_url = self.m.tryserver.gerrit_change_repo_url
+    if not repo_url:
+      return None
+    return self.get_repo_path(repo_url, gclient_config=gclient_config)
+
   def _canonicalize_repo_url(self, repo_url):
     """Attempts to make repo_url canonical. Supports Gitiles URL."""
     return self.m.gitiles.canonicalize_repo_url(repo_url)
@@ -337,7 +344,7 @@ class GclientApi(recipe_api.RecipeApi):
     return None
 
   def calculate_patch_root(self, patch_project, gclient_config=None,
-                           patch_repo=None):
+                           patch_repo=None):  # pragma: no cover
     """Returns path where a patch should be applied to based patch_project.
 
     TODO(nodir): delete this function in favor of get_repo_path.

@@ -1293,6 +1293,9 @@ class TestGitCl(TestCase):
     if title:
       ref_suffix += ',m=' + title
 
+    if custom_cl_base:
+      ref_suffix += ',base=' + custom_cl_base
+
     calls.append((
       (['git', 'push',
         'https://chromium.googlesource.com/my/repo',

@@ -3103,6 +3103,9 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     if options.private:
       refspec_opts.append('private')
 
+    if custom_cl_base:
+      refspec_opts.append('base=%s' % custom_cl_base)
+
     if options.topic:
       # Documentation on Gerrit topics is here:
       # https://gerrit-review.googlesource.com/Documentation/user-upload.html#topic

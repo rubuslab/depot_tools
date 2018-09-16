@@ -444,21 +444,20 @@ class MyActivity(object):
     # is is reached.
     return authenticator.authorize(httplib2.Http(timeout=600))
 
-  def filter_modified_monorail_issue(self, issue):
+  def was_modified_monorail_issue(self, issue):
     """Precisely checks if an issue has been modified in the time range.
 
     This fetches all issue comments to check if the issue has been modified in
     the time range specified by user. This is needed because monorail only
     allows filtering by last updated and published dates, which is not
     sufficient to tell whether a given issue has been modified at some specific
-    time range. Any update to the issue is a reported as comment on Monorail.
+    time range. Any update to the issue is reported as comment on Monorail.
 
     Args:
       issue: Issue dict as returned by monorail_query_issues method. In
           particular, must have a key 'uid' formatted as 'project:issue_id'.
 
-    Returns:
-      Passed issue if modified, None otherwise.
+    Returns: True if modified in the wanted time range, False otherwise.
     """
     http = self.monorail_get_auth_http()
     project, issue_id = issue['uid'].split(':')
@@ -469,14 +468,14 @@ class MyActivity(object):
     content = json.loads(body)
     if not content:
       logging.error('Unable to parse %s response from monorail.', project)
-      return issue
+      # Err on the probably modified side.
+      return True
 
     for item in content.get('items', []):
       comment_published = datetime_from_monorail(item['published'])
-      if self.filter_modified(comment_published):
-        return issue
-
-    return None
+      if self.was_modified(comment_published):
+        return True
+    return False
 
   def monorail_query_issues(self, project, query):
     http = self.monorail_get_auth_http()
@@ -635,14 +634,14 @@ class MyActivity(object):
     def maybe_filter_username(email):
       return not should_filter_by_user or username(email) == self.user
     if (maybe_filter_username(issue['author']) and
-        self.filter_modified(issue['created'])):
+        self.was_modified(issue['created'])):
       return True
     if (maybe_filter_username(issue['owner']) and
-        (self.filter_modified(issue['created']) or
-         self.filter_modified(issue['modified']))):
+        (self.was_modified(issue['created']) or
+         self.was_modified(issue['modified']))):
       return True
     for reply in issue['replies']:
-      if self.filter_modified(reply['created']):
+      if self.was_modified(reply['created']):
         if not should_filter_by_user:
           break
         if (username(reply['author']) == self.user
@@ -652,8 +651,9 @@ class MyActivity(object):
       return False
     return True
 
-  def filter_modified(self, modified):
-    return self.modified_after < modified and modified < self.modified_before
+  def was_modified(self, when):
+    """Returns whether given datetime is within time range of interest."""
+    return self.modified_after < when and when < self.modified_before
 
   def auth_for_changes(self):
     #TODO(cjhopman): Move authentication check for getting changes here.
@@ -712,14 +712,15 @@ class MyActivity(object):
     with contextlib.closing(ThreadPool(len(monorail_projects))) as pool:
       monorail_issues = pool.map(
           self.monorail_issue_search, monorail_projects.keys())
-      monorail_issues = list(itertools.chain.from_iterable(monorail_issues))
+    monorail_issues = list(itertools.chain.from_iterable(monorail_issues))
 
     if not monorail_issues:
       return
 
     with contextlib.closing(ThreadPool(len(monorail_issues))) as pool:
       filtered_issues = pool.map(
-          self.filter_modified_monorail_issue, monorail_issues)
+          lambda i: i if self.was_modified_monorail_issue(i) else None,
+          monorail_issues)
       self.issues = [issue for issue in filtered_issues if issue]
 
   def get_referenced_issues(self):

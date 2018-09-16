@@ -3145,7 +3145,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         DieWithError(
           ('Created|Updated %d issues on Gerrit, but only 1 expected.\n'
            'Change-Id: %s') % (len(change_numbers), change_id), change_desc)
-      self.SetIssue(change_numbers[0])
+      # self.SetIssue(change_numbers[0])
+      self.SetIssue(2000000)
       self._GitSetBranchConfigValue('gerritsquashhash', ref_to_push)
 
     reviewers = sorted(change_desc.get_reviewers())

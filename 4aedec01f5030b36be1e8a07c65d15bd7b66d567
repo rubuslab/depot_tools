@@ -46,6 +46,30 @@
       "revId": "4aedec01f5030b36be1e8a07c65d15bd7b66d567",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38bf273a_e440ad48",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1618,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T21:47:45Z",
+      "side": 0,
+      "message": "ok, this sounds cool, kudos for test.",
+      "parentUuid": "e493eeba_8493d93b",
+      "range": {
+        "startLine": 1617,
+        "startChar": 3,
+        "endLine": 1618,
+        "endChar": 34
+      },
+      "revId": "4aedec01f5030b36be1e8a07c65d15bd7b66d567",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

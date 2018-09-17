@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b6ded8a8_0a9ab8c9",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1729,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T21:47:45Z",
+      "side": 1,
+      "message": "shouldn\u0027t it be just \nself.GetCipdRoot().run(command)",
+      "range": {
+        "startLine": 1728,
+        "startChar": 4,
+        "endLine": 1729,
+        "endChar": 32
+      },
+      "revId": "5fa957754b36be062537cf6465b4b1b0c7bff38e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

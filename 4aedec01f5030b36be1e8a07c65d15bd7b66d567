@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23442694_7cd2997d",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1618,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T18:49:13Z",
+      "side": 0,
+      "message": "doesn\u0027t this also perform deletion of packages no needed?\nIf so, then your CL makes it possible to move from git to CIPD, but breaks ability to go back. Is this a calculated trade off?",
+      "range": {
+        "startLine": 1617,
+        "startChar": 3,
+        "endLine": 1618,
+        "endChar": 34
+      },
+      "revId": "4aedec01f5030b36be1e8a07c65d15bd7b66d567",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

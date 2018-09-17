@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "eea8da3a_63ecff36",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-17T17:18:12Z",
+      "side": 1,
+      "message": "Bots haven\u0027t been affected by this bug?",
+      "parentUuid": "da0062ba_044e7aca",
+      "range": {
+        "startLine": 939,
+        "startChar": 0,
+        "endLine": 939,
+        "endChar": 23
+      },
+      "revId": "c570346c45c791443a7f867f575f4bc24557f949",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bacc4caf_4fbb3011",
         "filename": "gerrit_util.py",
         "patchSetId": 1
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "i want to choose a random mirror which hasn\u0027t just been used. Do you have better ideas?",
       "parentUuid": "bacc4caf_4fbb3011",
+      "range": {
+        "startLine": 963,
+        "startChar": 34,
+        "endLine": 963,
+        "endChar": 47
+      },
+      "revId": "c570346c45c791443a7f867f575f4bc24557f949",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf124ee9_6fcab922",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-17T17:18:12Z",
+      "side": 1,
+      "message": "Why do it randomly, instead of just pop()-ing elements from the list?",
+      "parentUuid": "4f447f85_a102a625",
       "range": {
         "startLine": 963,
         "startChar": 34,

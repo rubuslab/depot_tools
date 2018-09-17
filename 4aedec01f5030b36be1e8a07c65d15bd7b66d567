@@ -22,6 +22,30 @@
       "revId": "4aedec01f5030b36be1e8a07c65d15bd7b66d567",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e493eeba_8493d93b",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1618,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-17T21:37:15Z",
+      "side": 0,
+      "message": "Nope, this should work just fine.\n\nPreviously, we ran \u0027cipd ensure\u0027 before removing unused git deps, and this patch runs \u0027cipd ensure\u0027 after removing unused git deps. I don\u0027t see how that makes any difference.\n\nI tested changing some cipd deps to arbitrary git repos, and things seem to work. Sometimes the git repo is dirty with the cipd files, but conflicting files like LICENSE or OWNERS are handled fine (the git files are used).",
+      "parentUuid": "23442694_7cd2997d",
+      "range": {
+        "startLine": 1617,
+        "startChar": 3,
+        "endLine": 1618,
+        "endChar": 34
+      },
+      "revId": "4aedec01f5030b36be1e8a07c65d15bd7b66d567",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

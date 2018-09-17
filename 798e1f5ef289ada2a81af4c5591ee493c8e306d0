@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81039f27_b70fd49a",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-17T05:05:48Z",
+      "side": 1,
+      "message": "Why this empty line?",
+      "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bf79ed7_4a2feda7",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-17T05:05:48Z",
+      "side": 1,
+      "message": "Sounds like this is easy to do in this CL. Just modify the query above. Or did I miss something?",
+      "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c24f87bd_cb8e2c06",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-17T05:05:48Z",
+      "side": 1,
+      "message": "nit: Please remove this line. Usually we only specify it when different from the default. Thanks",
+      "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

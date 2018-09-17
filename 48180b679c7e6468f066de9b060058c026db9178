@@ -45,6 +45,30 @@
       "revId": "48180b679c7e6468f066de9b060058c026db9178",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87ee6734_f99bea5d",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-17T23:06:34Z",
+      "side": 1,
+      "message": "only recipe tests. Most of them run wit incorrect patch project today.\nprod jobs do not get to choose their patch_project. It is dictated by upstream systems, such as CQ",
+      "parentUuid": "4fcf3c74_2fc47c49",
+      "range": {
+        "startLine": 321,
+        "startChar": 46,
+        "endLine": 321,
+        "endChar": 58
+      },
+      "revId": "48180b679c7e6468f066de9b060058c026db9178",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

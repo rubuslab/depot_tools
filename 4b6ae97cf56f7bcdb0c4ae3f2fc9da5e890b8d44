@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9913144a_64b16b85",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T16:26:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6396e4f_d160f90c",
+      "revId": "4b6ae97cf56f7bcdb0c4ae3f2fc9da5e890b8d44",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7acbc55_a334da96",
         "filename": "my_activity.py",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "4b6ae97cf56f7bcdb0c4ae3f2fc9da5e890b8d44",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc6664e7_1d80cb80",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T16:26:55Z",
+      "side": 1,
+      "message": "that\u0027s true, but name \"filter\" is also wrong in such a case :(\nSo, I had another refactoring split into another CL and then I realized that most of the code here misuses the filter concept. So, I am abandoning this. Sorry for noise.",
+      "parentUuid": "b7acbc55_a334da96",
+      "revId": "4b6ae97cf56f7bcdb0c4ae3f2fc9da5e890b8d44",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

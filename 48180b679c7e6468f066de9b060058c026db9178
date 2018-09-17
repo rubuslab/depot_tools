@@ -22,6 +22,29 @@
       "revId": "48180b679c7e6468f066de9b060058c026db9178",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fcf3c74_2fc47c49",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-17T22:54:11Z",
+      "side": 1,
+      "message": "Is it only recipe tests? Or do the recipes run on the bots expect this as well?",
+      "range": {
+        "startLine": 321,
+        "startChar": 46,
+        "endLine": 321,
+        "endChar": 58
+      },
+      "revId": "48180b679c7e6468f066de9b060058c026db9178",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

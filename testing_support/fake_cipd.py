@@ -5,9 +5,12 @@
 
 import argparse
 import os
+import re
 import shutil
 import sys
 
+
+CIPD_SUBDIR_RE = '@Subdir (.*)'
 
 def main():
   assert sys.argv[1] == 'ensure'
@@ -16,12 +19,23 @@ def main():
   parser.add_argument('-root')
   args, _ = parser.parse_known_args()
 
-  cipd_root = os.path.join(args.root, '.cipd')
-  if not os.path.isdir(cipd_root):
-    os.makedirs(cipd_root)
-
   if args.ensure_file:
-    shutil.copy(args.ensure_file, os.path.join(cipd_root, 'ensure'))
+    shutil.copy(args.ensure_file, os.path.join(args.root, '_cipd'))
+
+  with open(args.ensure_file) as f:
+    ensure_content = f.readlines()
+
+  current_file = None
+  for line in ensure_content:
+    match = re.match(CIPD_SUBDIR_RE, line)
+    if match:
+      subdir = os.path.join(args.root, *match.group(1).split('/'))
+      if not os.path.isdir(subdir):
+        os.makedirs(subdir)
+      current_file = os.path.join(subdir, '_cipd')
+    elif current_file:
+      with open(current_file, 'a') as f:
+        f.write(line)
 
   return 0
 

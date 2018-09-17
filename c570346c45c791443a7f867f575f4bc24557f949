@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da0062ba_044e7aca",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T16:59:24Z",
+      "side": 1,
+      "message": "this is an implementation detail, thus we shouldn\u0027t rely on them. I wonder if this hack should only be enabled on devs workstations by checking for CHROME_HEADLESS env var (bots have it set).",
+      "parentUuid": "be0e8c5d_7a2bd3e2",
+      "range": {
+        "startLine": 939,
+        "startChar": 0,
+        "endLine": 939,
+        "endChar": 23
+      },
+      "revId": "c570346c45c791443a7f867f575f4bc24557f949",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bacc4caf_4fbb3011",
         "filename": "gerrit_util.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-09-17T16:56:17Z",
       "side": 1,
       "message": "Why?",
+      "range": {
+        "startLine": 963,
+        "startChar": 34,
+        "endLine": 963,
+        "endChar": 47
+      },
+      "revId": "c570346c45c791443a7f867f575f4bc24557f949",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f447f85_a102a625",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T16:59:24Z",
+      "side": 1,
+      "message": "i want to choose a random mirror which hasn\u0027t just been used. Do you have better ideas?",
+      "parentUuid": "bacc4caf_4fbb3011",
       "range": {
         "startLine": 963,
         "startChar": 34,

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5505f3ac_5151bcb8",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T21:50:40Z",
+      "side": 1,
+      "message": "perhaps add TODO to actually clean this up?",
+      "range": {
+        "startLine": 310,
+        "startChar": 58,
+        "endLine": 313,
+        "endChar": 75
+      },
+      "revId": "48180b679c7e6468f066de9b060058c026db9178",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

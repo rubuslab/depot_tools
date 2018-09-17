@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b6396e4f_d160f90c",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-17T05:11:05Z",
+      "side": 1,
+      "message": "nit: Please keep description of the returned value on the next line and indented. This is consistent with the rest of the code base. You can also drop \"False otherwise\". It usually trivial and not recommended by Google Python Style Guide.",
+      "revId": "4b6ae97cf56f7bcdb0c4ae3f2fc9da5e890b8d44",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7acbc55_a334da96",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-17T05:11:05Z",
+      "side": 1,
+      "message": "IMHO this is harder to read, but it\u0027s just my opinion and it\u0027s not strong, therefore up to you :-).",
+      "revId": "4b6ae97cf56f7bcdb0c4ae3f2fc9da5e890b8d44",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

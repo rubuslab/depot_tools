@@ -16,6 +16,41 @@
       "revId": "7a2b102a592ec81c22e1d3b69c17dc4fae885a20",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a90846b_d25b97f9",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T18:26:01Z",
+      "side": 1,
+      "message": "no, this hack is already used below",
+      "parentUuid": "10b526d3_20b56429",
+      "revId": "7a2b102a592ec81c22e1d3b69c17dc4fae885a20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc7c8b3_68f85e9d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-17T18:26:01Z",
+      "side": 1,
+      "message": "...here",
+      "revId": "7a2b102a592ec81c22e1d3b69c17dc4fae885a20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

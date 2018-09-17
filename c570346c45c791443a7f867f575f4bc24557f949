@@ -97,6 +97,46 @@
     },
     {
       "key": {
+        "uuid": "fcbe49a7_c240390d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-09-17T18:19:12Z",
+      "side": 1,
+      "message": "In the email thread on all this Scoot Mueller said: \"For getting quickly unblocked without being too reliant on a single cell, could the wrapper do retries against explicit mirror addresses, e.g. on failure try us[123]-mirror-chromium-review.googlesource.com for the gerrit call?  By design of the system, an initial push into the system that went to either Asia or Europe would still have to include two US cells for quorum.  I don\u0027t see it being likely that a quorum would include Asia, Europe and only one US cell, but trying all three would catch that case.\"\n\nGiven that... should we simplify this list to only contain US mirrors? That should be sufficient? If there was a simple way to guarantee calling all 3 rather than random, as discussed below, that might have the best results if one is guaranteed to be up to date?\n\nGiven that this case is a really hacky fallback should we also allow some retries against not a mirror just in case? That way if this list is ever stale or something some requests will get somewhere.",
+      "range": {
+        "startLine": 939,
+        "startChar": 48,
+        "endLine": 939,
+        "endChar": 67
+      },
+      "revId": "c570346c45c791443a7f867f575f4bc24557f949",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "efb26870_ab5d9d52",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-09-17T18:19:12Z",
+      "side": 1,
+      "message": "I\u0027m rusty on my python. Does this really belong here or just in a test?",
+      "revId": "c570346c45c791443a7f867f575f4bc24557f949",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bacc4caf_4fbb3011",
         "filename": "gerrit_util.py",
         "patchSetId": 1

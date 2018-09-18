@@ -103,12 +103,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
     # Construct our bot_update command.  This basically be inclusive of
     # everything required for bot_update to know:
-    root = patch_root
-    if root is None:
-      # TODO(nodir): use m.gclient.get_repo_path instead.
-      root = self.m.gclient.calculate_patch_root(
-          self.m.properties.get('patch_project'), cfg,
-          self.m.tryserver.gerrit_change_repo_url)
+    root = patch_root or self.m.gclient.get_gerrit_patch_root(
+        gclient_config=cfg)
 
     # Allow patch_project's revision if necessary.
     # This is important for projects which are checked out as DEPS of the

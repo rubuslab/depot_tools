@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "8b41ec40_e19c3f07",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2267,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-18T15:43:25Z",
+      "side": 1,
+      "message": "And this comment too.",
+      "range": {
+        "startLine": 2266,
+        "startChar": 72,
+        "endLine": 2267,
+        "endChar": 35
+      },
+      "revId": "fbab7aeef2952b29dc52a9a6cf5cd0566feb4ad4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "063013d9_6501cc10",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -31,6 +54,24 @@
       "side": 1,
       "message": "This is not actionable. Just a hint to the reviewer. Marking as resolved.",
       "parentUuid": "063013d9_6501cc10",
+      "revId": "fbab7aeef2952b29dc52a9a6cf5cd0566feb4ad4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "85ce5342_6e6fbe72",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5103,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-18T15:43:25Z",
+      "side": 1,
+      "message": "Ack.\nCan you update the help text for the --private flag too?",
+      "parentUuid": "82bdf0cd_1ffe9944",
       "revId": "fbab7aeef2952b29dc52a9a6cf5cd0566feb4ad4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

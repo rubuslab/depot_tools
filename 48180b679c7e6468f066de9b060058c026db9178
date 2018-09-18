@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9d780d13_c1c29ccb",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-18T16:54:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "949f253f_d70c8568",
+      "range": {
+        "startLine": 310,
+        "startChar": 58,
+        "endLine": 313,
+        "endChar": 75
+      },
+      "revId": "48180b679c7e6468f066de9b060058c026db9178",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4fcf3c74_2fc47c49",
         "filename": "recipes/recipe_modules/gclient/api.py",
         "patchSetId": 14

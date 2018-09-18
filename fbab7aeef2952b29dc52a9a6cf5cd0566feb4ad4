@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "063013d9_6501cc10",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5103,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-18T09:32:18Z",
+      "side": 1,
+      "message": "Moved this, since --private flag is not Rietveld-specific and supported on Gerrit.",
+      "revId": "fbab7aeef2952b29dc52a9a6cf5cd0566feb4ad4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

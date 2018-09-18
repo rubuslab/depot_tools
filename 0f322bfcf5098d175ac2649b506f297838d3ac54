@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b374e979_db654c82",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/no_apply_patch_on_gclient.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-18T18:10:47Z",
+      "side": 0,
+      "message": "Why these changes?",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 19
+      },
+      "revId": "0f322bfcf5098d175ac2649b506f297838d3ac54",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

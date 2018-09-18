@@ -60,7 +60,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
           'invalid (host, project) pair in '
           'buildbucket.build.input.gitiles_commit: '
           '(%r, %r) does not match any of configured gclient solutions '
-          'and not present in gclient.c.repo_path_map' % (
+          'and not present in gclient_config.repo_path_map' % (
               commit.host, commit.project))
 
     return repo_path
@@ -110,11 +110,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
           self.m.properties.get('patch_project'), cfg,
           self.m.tryserver.gerrit_change_repo_url)
 
-    # Allow patch_project's revision if necessary.
+    # Allow patch repo revision if necessary.
     # This is important for projects which are checked out as DEPS of the
     # gclient solution.
-    self.m.gclient.set_patch_project_revision(
-        self.m.properties.get('patch_project'), cfg)
+    self.m.gclient.set_patch_repo_revision(cfg)
 
     reverse_rev_map = self.m.gclient.got_revision_reverse_mapping(cfg)
 
@@ -335,14 +334,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
         A destination branch as understood by bot_update.py if available
         and if different from master, returns 'HEAD' otherwise.
     """
-    # Bail out if this is not a gerrit change.
-    if not self.m.tryserver.gerrit_change:
-      return 'HEAD'
-
-    # Ignore other project paths than the one belonging to the CL.
-    if path != cfg.patch_projects.get(
-        self.m.properties.get('patch_project'),
-        (cfg.solutions[0].name, None))[0]:
+    # Ignore project paths other than the one belonging to the current CL.
+    patch_path = self.m.gclient.get_gerrit_patch_root(gclient_config=cfg)
+    if not patch_path or path != patch_path:
       return 'HEAD'
 
     target_ref = self.m.tryserver.gerrit_change_target_ref

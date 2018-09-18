@@ -146,7 +146,7 @@ class GclientApi(recipe_api.RecipeApi):
 
   def sync(self, cfg, extra_sync_flags=None, **kwargs):
     revisions = []
-    self.set_patch_project_revision(self.m.properties.get('patch_project'), cfg)
+    self.set_patch_repo_revision(gclient_config=cfg)
     for i, s in enumerate(cfg.solutions):
       if i == 0 and s.revision is None:
         s.revision = RevisionFallbackChain()
@@ -302,6 +302,29 @@ class GclientApi(recipe_api.RecipeApi):
       infra_step=True,
     )
 
+  def get_gerrit_patch_root(self, gclient_config=None):
+    """Returns local path to the repo where gerrit patch will be applied.
+
+    If there is no patch, returns None.
+    If patch is specified, but such repo is not found among configured solutions
+    or repo_path_map, returns name of the first solution. This is done solely
+    for backward compatibility with existing tests.
+    Please do not rely on this logic in new code.
+    Instead, properly map a repository to a local path using repo_path_map.
+    TODO(nodir): remove this. Update all recipe tests to specify a git_repo
+    matching the recipe.
+    """
+    cfg = gclient_config or self.c
+    repo_url = self.m.tryserver.gerrit_change_repo_url
+    if not repo_url:
+      return None
+    root =  self.get_repo_path(repo_url, gclient_config=cfg)
+
+    # This is wrong, but that's what a ton of recipe tests expect today
+    root = root or cfg.solutions[0]
+
+    return root
+
   def _canonicalize_repo_url(self, repo_url):
     """Attempts to make repo_url canonical. Supports Gitiles URL."""
     return self.m.gitiles.canonicalize_repo_url(repo_url)
@@ -337,7 +360,7 @@ class GclientApi(recipe_api.RecipeApi):
     return None
 
   def calculate_patch_root(self, patch_project, gclient_config=None,
-                           patch_repo=None):
+                           patch_repo=None):  # pragma: no cover
     """Returns path where a patch should be applied to based patch_project.
 
     TODO(nodir): delete this function in favor of get_repo_path.
@@ -373,14 +396,14 @@ class GclientApi(recipe_api.RecipeApi):
     # and include actual solution name in them.
     return self.m.path.join(*root.split('/'))
 
-  def set_patch_project_revision(self, patch_project, gclient_config=None):
+  def set_patch_repo_revision(self, gclient_config=None):
     """Updates config revision corresponding to patch_project.
 
     Useful for bot_update only, as this is the only consumer of gclient's config
     revision map. This doesn't overwrite the revision if it was already set.
     """
-    assert patch_project is None or isinstance(patch_project, basestring)
     cfg = gclient_config or self.c
-    path, revision = cfg.patch_projects.get(patch_project, (None, None))
+    repo_url = self.m.tryserver.gerrit_change_repo_url
+    path, revision = cfg.repo_path_map.get(repo_url, (None, None))
     if path and revision and path not in cfg.revisions:
       cfg.revisions[path] = revision

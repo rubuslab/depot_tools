@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8fd7004_b7fc2790",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-09-18T17:22:50Z",
+      "side": 1,
+      "message": "forgot .name\nfix: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1231278",
+      "range": {
+        "startLine": 324,
+        "startChar": 34,
+        "endLine": 324,
+        "endChar": 35
+      },
+      "revId": "0f322bfcf5098d175ac2649b506f297838d3ac54",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

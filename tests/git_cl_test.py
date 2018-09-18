@@ -765,9 +765,9 @@ class TestGitCl(TestCase):
             ((['git', 'config', 'gerrit.host'],), 'True' if gerrit else '')]
 
   @classmethod
-  def _upload_calls(cls, private):
+  def _upload_calls(cls, private, no_autocc):
     return (cls._rietveld_git_base_calls() +
-            cls._git_upload_calls(private))
+            cls._git_upload_calls(private, no_autocc))
 
   @classmethod
   def _rietveld_upload_no_rev_calls(cls):
@@ -809,12 +809,15 @@ class TestGitCl(TestCase):
     ]
 
   @classmethod
-  def _git_upload_calls(cls, private):
-    if private:
+  def _git_upload_calls(cls, private, no_autocc):
+    if private or no_autocc:
       cc_call = []
-      private_call = []
     else:
       cc_call = [((['git', 'config', 'rietveld.cc'],), '')]
+
+    if private:
+      private_call = []
+    else:
       private_call = [
           ((['git', 'config', 'rietveld.private'],), '')]
 
@@ -887,7 +890,7 @@ class TestGitCl(TestCase):
       returned_description,
       final_description,
       reviewers,
-      private=False,
+      no_autocc=False,
       cc=None):
     """Generic reviewer test framework."""
     self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
@@ -895,7 +898,7 @@ class TestGitCl(TestCase):
     private = '--private' in upload_args
     cc = cc or []
 
-    self.calls = self._upload_calls(private)
+    self.calls = self._upload_calls(private, no_autocc)
 
     def RunEditor(desc, _, **kwargs):
       self.assertEquals(
@@ -932,6 +935,15 @@ class TestGitCl(TestCase):
         '# Blah blah comment.\ndesc\n\nBUG=\n',
         'desc\n\nBUG=',
         [])
+
+  def test_no_autocc(self):
+    self._run_reviewer_test(
+        ['--no-autocc'],
+        'desc\n\nBUG=',
+        '# Blah blah comment.\ndesc\n\nBUG=\n',
+        'desc\n\nBUG=',
+        [],
+        no_autocc=True)
 
   def test_reviewers_cmd_line(self):
     # Reviewer is passed as-is

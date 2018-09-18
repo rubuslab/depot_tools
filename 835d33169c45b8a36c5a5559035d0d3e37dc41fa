@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7dc84a70_29aa216d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-18T18:08:24Z",
+      "side": 1,
+      "message": "nit: this isn\u0027t actually an example. It\u0027s a pile of test cases and a unrealistic RunSteps for coverage purpose only.\n\nOTH, the buildbucket.py was actually an example, but i don\u0027t mind losing it.",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 33
+      },
+      "revId": "835d33169c45b8a36c5a5559035d0d3e37dc41fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

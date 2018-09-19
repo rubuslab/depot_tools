@@ -74,6 +74,24 @@
     },
     {
       "key": {
+        "uuid": "5a714736_bdd8f74c",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-19T07:29:25Z",
+      "side": 1,
+      "message": "If the current approach better, then please remove the TODO comment.",
+      "parentUuid": "328e821f_ec703e21",
+      "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c24f87bd_cb8e2c06",
         "filename": "my_activity.py",
         "patchSetId": 1
@@ -85,6 +103,24 @@
       "writtenOn": "2018-09-17T05:05:48Z",
       "side": 1,
       "message": "nit: Please remove this line. Usually we only specify it when different from the default. Thanks",
+      "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f76c3834_e7044a2e",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-19T07:29:25Z",
+      "side": 1,
+      "message": "Still not addressed.",
+      "parentUuid": "c24f87bd_cb8e2c06",
       "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

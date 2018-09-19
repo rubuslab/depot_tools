@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30186d88_1672d1e6",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-19T00:35:26Z",
+      "side": 1,
+      "message": "if",
+      "range": {
+        "startLine": 82,
+        "startChar": 18,
+        "endLine": 82,
+        "endChar": 19
+      },
+      "revId": "82fe2dc0f9e3300b8b325b2502ad9bdd60c9304b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

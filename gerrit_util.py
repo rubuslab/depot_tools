@@ -200,27 +200,35 @@ class CookiesAuthenticator(Authenticator):
             continue
           domain, xpath, key, value = fields[0], fields[2], fields[5], fields[6]
           if xpath == '/' and key == 'o':
+            print 'Found user/pass format'
             login, secret_token = value.split('=', 1)
             gitcookies[domain] = (login, secret_token)
         except (IndexError, ValueError, TypeError) as exc:
           LOGGER.warning(exc)
-
+    print 'gitcookies: %s' % gitcookies
     return gitcookies
 
   def _get_auth_for_host(self, host):
+    print '_get_auth_for_host(%s)' % host
     for domain, creds in self.gitcookies.iteritems():
+      print '  %s ?' % domain
       if cookielib.domain_match(host, domain):
+        print '   ... matched'
         return (creds[0], None, creds[1])
+    print '  no match, fall back to netrc'
     return self.netrc.authenticators(host)
 
   def get_auth_header(self, host):
     a = self._get_auth_for_host(host)
+    print 'Got auth for %s: %s' % (host, a)
     if a:
+      print 'Using basic auth'
       return 'Basic %s' % (base64.b64encode('%s:%s' % (a[0], a[2])))
     return None
 
   def get_auth_email(self, host):
     """Best effort parsing of email to be used for auth for the given host."""
+    print '_get_auth_email(%s)' % host
     a = self._get_auth_for_host(host)
     if not a:
       return None

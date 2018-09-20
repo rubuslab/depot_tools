@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "de506874_5a9a7851",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2267,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-20T16:26:18Z",
+      "side": 1,
+      "message": "Done. Also slightly rewrote it to make it more clear.",
+      "parentUuid": "8b41ec40_e19c3f07",
+      "range": {
+        "startLine": 2266,
+        "startChar": 72,
+        "endLine": 2267,
+        "endChar": 35
+      },
+      "revId": "fbab7aeef2952b29dc52a9a6cf5cd0566feb4ad4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "063013d9_6501cc10",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -72,6 +96,24 @@
       "side": 1,
       "message": "Ack.\nCan you update the help text for the --private flag too?",
       "parentUuid": "82bdf0cd_1ffe9944",
+      "revId": "fbab7aeef2952b29dc52a9a6cf5cd0566feb4ad4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e6678ae6_58067a87",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5103,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-20T16:26:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85ce5342_6e6fbe72",
       "revId": "fbab7aeef2952b29dc52a9a6cf5cd0566feb4ad4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

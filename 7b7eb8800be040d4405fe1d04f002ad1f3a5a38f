@@ -70,6 +70,30 @@
       "revId": "7b7eb8800be040d4405fe1d04f002ad1f3a5a38f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50fdd3bf_8735ab15",
+        "filename": "owners.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-09-21T21:42:22Z",
+      "side": 0,
+      "message": "After having finally thought about this a bit, it seems like the best way to preserve intent in this specific case would be to create an //ENG_REVIEW_OWNERS in WebRTC and only list people in that file that would be coordinate with chromium\u0027s eng review owners to ensure that the added dependency was okay.\n\nI\u0027m not sure that there is a correct generic solution.",
+      "parentUuid": "73e11ed1_ccfd0b90",
+      "range": {
+        "startLine": 361,
+        "startChar": 0,
+        "endLine": 362,
+        "endChar": 71
+      },
+      "revId": "7b7eb8800be040d4405fe1d04f002ad1f3a5a38f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

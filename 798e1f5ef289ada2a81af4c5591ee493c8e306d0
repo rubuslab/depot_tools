@@ -124,6 +124,24 @@
       "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d47eac4_3f524b6a",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-22T03:54:53Z",
+      "side": 1,
+      "message": "sorry. I think for \u0027--dashed-words\u0027 options, there is a benefit of spelling out default, namely codesearch, since you\u0027d not find it when searching for dashed_words otherwise.",
+      "parentUuid": "f76c3834_e7044a2e",
+      "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

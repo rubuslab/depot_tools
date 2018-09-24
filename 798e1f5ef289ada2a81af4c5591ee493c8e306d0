@@ -160,6 +160,24 @@
       "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92b7c81e_ec1e7c54",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-09-24T11:25:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4d47eac4_3f524b6a",
+      "revId": "798e1f5ef289ada2a81af4c5591ee493c8e306d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

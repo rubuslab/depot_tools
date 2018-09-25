@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81e35031_d950c339",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2455,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-09-25T17:08:15Z",
+      "side": 1,
+      "message": "Just to check my code reading... this can help during during both land and upload change by ensuring the labels are already cached before we starting sending actual commits (in the case where the issue has already been created)?",
+      "range": {
+        "startLine": 2455,
+        "startChar": 69,
+        "endLine": 2455,
+        "endChar": 75
+      },
+      "revId": "b0f99c1fe6db11875c2f4a417313f155d025dbad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa5d4af_2304a4d1",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3082,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-25T09:04:51Z",
+      "side": 1,
+      "message": "Until we get optional cc, arbitrary mailing lists CC will still result in one RPC after git push, because git push is picky, while AddReviewers RPC isn\u0027t.",
+      "range": {
+        "startLine": 3081,
+        "startChar": 5,
+        "endLine": 3082,
+        "endChar": 76
+      },
+      "revId": "7e24f234e8a7ea0ecb64cd3bb3078ffaca16e23f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

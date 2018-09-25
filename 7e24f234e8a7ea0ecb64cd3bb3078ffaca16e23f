@@ -22,6 +22,30 @@
       "revId": "7e24f234e8a7ea0ecb64cd3bb3078ffaca16e23f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bbc638bf_61f8574e",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3082,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-25T18:11:41Z",
+      "side": 1,
+      "message": "Does this comment apply to reviewers as well?\nSuch a reviewer would still be added (or at least processed) by gerrit_util.AddReviewers() below. Is that intentional?",
+      "parentUuid": "baa5d4af_2304a4d1",
+      "range": {
+        "startLine": 3081,
+        "startChar": 5,
+        "endLine": 3082,
+        "endChar": 76
+      },
+      "revId": "7e24f234e8a7ea0ecb64cd3bb3078ffaca16e23f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

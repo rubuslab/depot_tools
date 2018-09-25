@@ -76,6 +76,9 @@ REFS_THAT_ALIAS_TO_OTHER_REFS = {
     'refs/remotes/origin/lkgr': 'refs/remotes/origin/master',
     'refs/remotes/origin/lkcr': 'refs/remotes/origin/master',
 }
+_GERRIT_HOSTS_WITH_ARBITRARY_CCS = [
+  'chromium-review.googlesource.com',
+]
 
 # Valid extensions for files we want to lint.
 DEFAULT_LINT_REGEX = r"(.*\.cpp|.*\.cc|.*\.h)"
@@ -3043,7 +3046,6 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         self._GetGerritHost(), reviewers + cc)
     logging.debug('accounts %s are valid, %s invalid', sorted(valid_accounts),
                    set(reviewers + cc).difference(set(valid_accounts)))
-    # TODO(tandrii): add valid reviwers and ccs to push option.
 
     # Extra options that can be specified at push time. Doc:
     # https://gerrit-review.googlesource.com/Documentation/user-upload.html
@@ -3069,6 +3071,30 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
 
     if options.private:
       refspec_opts.append('private')
+
+    for r in sorted(reviewers):
+      if r in valid_accounts:
+        refspec_opts.append('r=%s' % r)
+        reviewers.remove(r)
+      else:
+        # TODO(tandrii): this should probably be a hard failure.
+        print('WARNING: reviewer %s doesn\'t have a Gerrit account, skipping'
+              % r)
+    for c in sorted(cc):
+      if c not in valid_accounts:
+        # Some cc aren't registered as accounts, yet some Gerrit hosts allow
+        # them to be added anyway so long as they are OK emails.
+        if not scm.ValidateEmail(c):
+          print('WARNING: cc %s not found in Gerrit and doesn\'t correspond to '
+                'valid email, skipping' % c)
+          continue
+        if self._GetGerritHost() not in _GERRIT_HOSTS_WITH_ARBITRARY_CCS:
+          print('WARNING: cc %s not found in Gerrit; host %s isn\'t known to '
+                'accept arbitrary CCs, skipping' % (c, self._GetGerritHost()))
+          continue
+      refspec_opts.append('cc=%s' % c)
+      cc.remove(c)
+
 
     if options.topic:
       # Documentation on Gerrit topics is here:
@@ -3115,7 +3141,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       self.SetIssue(change_numbers[0])
       self._GitSetBranchConfigValue('gerritsquashhash', ref_to_push)
 
-    if self.GetIssue():
+    if self.GetIssue() and (reviewers or cc):
       # GetIssue() is not set in case of non-squash uploads according to tests.
       # TODO(agable): non-squash uploads in git cl should be removed.
       gerrit_util.AddReviewers(

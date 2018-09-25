@@ -1297,15 +1297,27 @@ class TestGitCl(TestCase):
     if title:
       ref_suffix += ',m=' + title
 
+    all_cc = ['joe@example.com', 'chromium-reviews+test-more-cc@chromium.org']
+    all_cc += cc
     calls += [
       ((['git', 'config', 'rietveld.cc'],), ''),
       (('ValidAccounts', 'chromium-review.googlesource.com',
-        sorted(reviewers) + ['joe@example.com',
-        'chromium-reviews+test-more-cc@chromium.org'] + cc),
+        sorted(reviewers) + all_cc),
        {
-         # TODO(tandrii): add here some valid accounts and make use of them.
+         e: {'email': e}
+         for e in (reviewers + cc)
+         if e != 'bad-account-or-email'
        }),
     ]
+    for r in sorted(reviewers):
+      if r != 'bad-account-or-email':
+        ref_suffix  += ',r=%s' % r
+        reviewers.remove(r)
+    for c in sorted(all_cc):
+      if c != 'bad-account-or-email':
+        # TODO(tandrii): add test for non-chromium host.
+        ref_suffix += ',cc=%s' % c
+        all_cc.remove(c)
 
     calls.append((
       (['git', 'push',
@@ -1336,13 +1348,12 @@ class TestGitCl(TestCase):
              'abcdef0123456789'],), ''),
       ]
     if squash:
-      calls += [
-          (('AddReviewers',
-            'chromium-review.googlesource.com', 'my%2Frepo~123456',
-            sorted(reviewers),
-            ['joe@example.com', 'chromium-reviews+test-more-cc@chromium.org'] +
-            cc, notify), ''),
-      ]
+      if reviewers or all_cc:
+        calls += [
+            (('AddReviewers',
+              'chromium-review.googlesource.com', 'my%2Frepo~123456',
+              sorted(reviewers), all_cc, notify), ''),
+        ]
     if tbr:
       calls += [
         (('GetChangeDetail', 'chromium-review.googlesource.com',

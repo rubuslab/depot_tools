@@ -70,6 +70,30 @@
       "revId": "7e24f234e8a7ea0ecb64cd3bb3078ffaca16e23f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "999b79e4_d1a09c5e",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3082,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-25T18:35:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "36251132_c46d6736",
+      "range": {
+        "startLine": 3081,
+        "startChar": 5,
+        "endLine": 3082,
+        "endChar": 76
+      },
+      "revId": "7e24f234e8a7ea0ecb64cd3bb3078ffaca16e23f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

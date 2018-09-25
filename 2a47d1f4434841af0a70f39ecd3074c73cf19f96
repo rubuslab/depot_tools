@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6f70dc0_406871ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1103379
+      },
+      "writtenOn": "2018-09-25T02:18:41Z",
+      "side": 1,
+      "message": "Was this meant to go in the patch set description (i.e. \"git push -o m\u003d\u0027review + rebase\u0027\") instead of the commit message?",
+      "revId": "2a47d1f4434841af0a70f39ecd3074c73cf19f96",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

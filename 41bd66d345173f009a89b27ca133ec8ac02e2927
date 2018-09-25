@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "af7820d5_faa5089c",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-25T04:08:21Z",
+      "side": 1,
+      "message": "Just",
+      "range": {
+        "startLine": 428,
+        "startChar": 74,
+        "endLine": 428,
+        "endChar": 78
+      },
+      "revId": "41bd66d345173f009a89b27ca133ec8ac02e2927",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f875c118_fb372331",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 4

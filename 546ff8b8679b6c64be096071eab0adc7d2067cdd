@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "28f1d0d5_db97f57f",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1577,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-09-25T17:56:33Z",
+      "side": 1,
+      "message": "What about\n\n  # Gerrit labels already set inside CMDUploadChange\n  if not self.IsGerrit():",
+      "range": {
+        "startLine": 1577,
+        "startChar": 6,
+        "endLine": 1577,
+        "endChar": 25
+      },
+      "revId": "546ff8b8679b6c64be096071eab0adc7d2067cdd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9d979b28_3b4a34be",
         "filename": "git_cl.py",
         "patchSetId": 1

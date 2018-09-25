@@ -16,6 +16,24 @@
       "revId": "2a47d1f4434841af0a70f39ecd3074c73cf19f96",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1898f157_50c3f754",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-25T02:22:09Z",
+      "side": 1,
+      "message": "yeah! that\u0027s a git cl bug, actually :( it was passed as --title, but git cl inserted into description :(",
+      "parentUuid": "d6f70dc0_406871ce",
+      "revId": "2a47d1f4434841af0a70f39ecd3074c73cf19f96",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

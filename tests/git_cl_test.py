@@ -1257,6 +1257,10 @@ class TestGitCl(TestCase):
     if title:
       ref_suffix += ',m=' + title
 
+    calls += [
+        ((['git', 'config', 'rietveld.cc'],), ''),
+    ]
+
     calls.append((
       (['git', 'push',
         'https://chromium.googlesource.com/my/repo',
@@ -1285,9 +1289,6 @@ class TestGitCl(TestCase):
           ((['git', 'config', 'branch.master.gerritsquashhash',
              'abcdef0123456789'],), ''),
       ]
-    calls += [
-        ((['git', 'config', 'rietveld.cc'],), ''),
-    ]
     if squash:
       calls += [
           (('AddReviewers',

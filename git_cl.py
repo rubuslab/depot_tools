@@ -3043,11 +3043,22 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         self._GetGerritHost(), reviewers + cc)
     logging.debug('accounts %s are valid, %s invalid', sorted(valid_accounts),
                    set(reviewers + cc).difference(set(valid_accounts)))
-    # TODO(tandrii): add valid reviwers and ccs to push option.
 
     # Extra options that can be specified at push time. Doc:
     # https://gerrit-review.googlesource.com/Documentation/user-upload.html
     refspec_opts = []
+
+    for r in reviewers:
+      if r in valid_accounts:
+        refspec_opts.append('r=%s' % r)
+      else:
+        # TODO(tandrii): this should probably be a hard failure.
+        print('WARNING: reviewer %s not found in Gerrit, skipping' % r)
+    for c in cc:
+      if c in valid_accounts:
+        refspec_opts.append('cc=%s' % c)
+      else:
+        print('WARNING: cc %s not found in Gerrit, skipping' % c)
 
     # By default, new changes are started in WIP mode, and subsequent patchsets
     # don't send email. At any time, passing --send-mail will mark the change

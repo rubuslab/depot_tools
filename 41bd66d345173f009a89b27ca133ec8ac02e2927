@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f875c118_fb372331",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-09-25T02:58:38Z",
+      "side": 1,
+      "message": "maybe origMirrors so no one confuses it with the original URL?",
+      "range": {
+        "startLine": 445,
+        "startChar": 4,
+        "endLine": 445,
+        "endChar": 8
+      },
+      "revId": "41bd66d345173f009a89b27ca133ec8ac02e2927",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

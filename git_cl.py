@@ -1575,8 +1575,8 @@ class Changelist(object):
     ret = self.CMDUploadChange(options, git_diff_args, custom_cl_base, change)
     if not ret:
       if self.IsGerrit():
-        self.SetLabels(options.enable_auto_submit, options.use_commit_queue,
-                       options.cq_dry_run);
+        # Do nothing, labels already set inside CMDUploadChange.
+        pass
       else:
         if options.use_commit_queue:
           self.SetCQState(_CQState.COMMIT)
@@ -3132,6 +3132,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           msg='Self-approving for TBR',
           labels={'Code-Review': score})
 
+    self.SetLabels(options.enable_auto_submit, options.use_commit_queue,
+                   options.cq_dry_run)
     return 0
 
   def _ComputeParent(self, remote, upstream_branch, custom_cl_base, force,

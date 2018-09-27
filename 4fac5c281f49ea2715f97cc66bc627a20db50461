@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1dfc5081_9dc31c31",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-27T01:36:27Z",
+      "side": 1,
+      "message": "tbh, i don\u0027t understand what tbh, i don\u0027t understand how it works, but if you are certain that it does work, sgtm.\n\nMaybe you can help educate me by answering what\u0027s the parent of a commit that becomes a CL in Gerrit? \nIs it custom_cl_base\u003d`a6c4039a00621757d3fbf399eb905adf56b91329` or does Gerrit magically cherry-picks your local branch HEAD on top of top of HEAD of target ref on Gerrit server?\n\nAlso, if it is custom_cl_base\u003d\u0027a6c4039a00621757d3fbf399eb905adf56b91329\u0027,then how would Gerrit know its contents?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 34
+      },
+      "revId": "4fac5c281f49ea2715f97cc66bc627a20db50461",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62830a52_fb2aee8b",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3107,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-09-27T01:36:27Z",
+      "side": 1,
+      "message": "plz add comment linking to\nhttps://gerrit-review.googlesource.com/Documentation/user-upload.html#base",
+      "range": {
+        "startLine": 3107,
+        "startChar": 27,
+        "endLine": 3107,
+        "endChar": 31
+      },
+      "revId": "4fac5c281f49ea2715f97cc66bc627a20db50461",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

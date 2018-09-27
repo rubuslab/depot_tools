@@ -11,6 +11,7 @@ from __future__ import print_function
 
 from distutils.version import LooseVersion
 from multiprocessing.pool import ThreadPool
+from yapf import yapf_api
 import base64
 import collections
 import contextlib
@@ -5899,25 +5900,124 @@ def CMDformat(parser, args):
   # Similar code to above, but using yapf on .py files rather than clang-format
   # on C/C++ files
   if opts.python:
-    yapf_tool = gclient_utils.FindExecutable('yapf')
-    if yapf_tool is None:
-      DieWithError('yapf not found in PATH')
+    # Check if yapf style is specified in any of the parent directories
+    yapf_style_name = '.style.yapf'
+
+    # If we couldn't find a yapf file we'll default to the chromium style
+    # specified in depot_tools.
+    depot_tools_path = os.path.dirname(os.path.abspath(__file__))
+    chromium_default_yapf_style = os.path.join(depot_tools_path,
+                                               yapf_style_name)
+
+    # Checks if a yapf file is in any parent directory of fpath till top_dir.
+    style_args = {}
+
+    def found_yapf_style_arg(fpath, top_dir=None):
+      # Return result if we've already precomputed it.
+      if fpath in style_args:
+        return style_args[fpath]
+
+      # Check if there is a style file in the current directory
+      yapf_file = os.path.join(fpath, yapf_style_name)
+      dirname = os.path.dirname(fpath)
+
+      if os.path.isfile(yapf_file):
+        style_args[fpath] = yapf_file
+        return style_args[fpath]
+
+      # If we're at the top level directory, or if we're at root 
+      # use the chromium default yapf style.
+      elif fpath == top_dir or dirname == fpath:
+        style_args[fpath] = chromium_default_yapf_style
+        return style_args[fpath]
+
+      # Otherwise recurse on the current directory.
+      style_args[fpath] = found_yapf_style_arg(dirname, top_dir)
+      return style_args[fpath]
+
+    for f in python_diff_files:
+      # Find the style file for each file
+      found_yapf_style_arg(os.path.abspath(f), top_dir)
 
     if opts.full:
-      if python_diff_files:
-        if opts.dry_run or opts.diff:
-          cmd = [yapf_tool, '--diff'] + python_diff_files
-          stdout = RunCommand(cmd, error_ok=True, cwd=top_dir)
+      if opts.dry_run or opts.diff:
+        for f in python_diff_files:
+          # Get and print diff.
+          result = yapf_api.FormatFile(
+              f, print_diff=True, style_config=style_args[os.path.abspath(f)])
+          stdout = result[0]
           if opts.diff:
             sys.stdout.write(stdout)
           elif len(stdout) > 0:
             return_value = 2
-        else:
-          RunCommand([yapf_tool, '-i'] + python_diff_files, cwd=top_dir)
+      else:
+        for f in python_diff_files:
+          # Run over entire file.
+          result = yapf_api.FormatFile(
+              f, in_place=True, style_config=style_args[os.path.abspath(f)])
     else:
-      # TODO(sbc): yapf --lines mode still has some issues.
-      # https://github.com/google/yapf/issues/154
-      DieWithError('--python currently only works with --full')
+      # Note: yapf still seems to fix indentation that doesn't conform to style
+      # of the entire file even if line ranges are specified.
+
+      # Take diff and find the line ranges where there are changes.
+      diff_cmd = BuildGitDiffCmd('-U0', upstream_commit, python_diff_files)
+      diff_output = RunGit(diff_cmd)
+
+      # Parse git diff output to get line ranges with this regex.
+      # 3 capture groups
+      # 0 == fname of diff file
+      # 1 == diff_start
+      # 2 == diff_count
+      # will match
+      # diff --git a.py b.py
+      # and also
+      # @@ -12,2 +14,3 @@
+      # will also match single line changes
+      # @@ -12,2 +14 @@
+      pat = "(?:^diff --git (?:.*.py) (.*.py))|(?:^@@.*\+(.*) @@)"
+
+      curr_file = ""
+      py_line_diffs = {}
+      for match in re.findall(pat, diff_output, flags=re.MULTILINE):
+        if match[0] != "":
+          # Will match the second fillname in diff --git a.py b.py.
+          curr_file = match[0]
+          py_line_diffs[curr_file] = []
+        else:
+          # Matches +14,3
+          if "," in match[1]:
+            diff_start, diff_count = match[1].split(',')
+          else:
+            # Single line changes are of the form +12 instead of +12,1.
+            diff_start = match[1]
+            diff_count = 1
+
+          diff_start = int(diff_start)
+          diff_count = int(diff_count)
+
+          # Yapf takes inclusive START-END ranges.
+          py_line_diffs[curr_file].append((diff_start,
+                                           diff_start + diff_count - 1))
+
+      for f, diffs in py_line_diffs.iteritems():
+        if opts.diff or opts.dry_run:
+          result = yapf_api.FormatFile(
+              f,
+              lines=diffs,
+              print_diff=True,
+              style_config=style_args[os.path.abspath(f)])
+          stdout = result[0]
+          if opts.diff:
+            sys.stdout.write(stdout)
+          if len(stdout) > 0:
+            return_value = 2
+        else:
+          yapf_api.FormatFile(
+              f,
+              lines=diffs,
+              in_place=True,
+              style_config=style_args[os.path.abspath(f)])
+
 
   # Dart's formatter does not have the nice property of only operating on
   # modified chunks, so hard code full.

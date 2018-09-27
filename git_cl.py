@@ -3014,6 +3014,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       change_id = git_footers.get_footer_change_id(change_desc.description)[0]
 
     assert change_desc
+    SaveDescriptionBackup(change_desc)
     commits = RunGitSilent(['rev-list', '%s..%s' % (parent,
                                                     ref_to_push)]).splitlines()
     if len(commits) > 1:

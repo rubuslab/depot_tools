@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d4c0a506_8fe60aaf",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 694,
+      "author": {
+        "id": 1302229
+      },
+      "writtenOn": "2018-09-27T20:16:58Z",
+      "side": 1,
+      "message": "I ran git cl format on my diff and this is an example of something that yapf fixes even if given explicit line ranges.",
+      "revId": "04f759a1abec1f1e661776ab38b8b4c037704400",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

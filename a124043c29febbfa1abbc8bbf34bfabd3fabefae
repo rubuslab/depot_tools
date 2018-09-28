@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1fbbc99_29405765",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5917,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-09-28T14:54:12Z",
+      "side": 1,
+      "message": "nit: move to a top-level function (makes it easier to follow inputs \u0026 outputs, and reduces the length of the message).\nnit: Please add comments / docstring\n\nnit: naming: found-\u003efind?",
+      "revId": "a124043c29febbfa1abbc8bbf34bfabd3fabefae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ebebec5f_a2bf8500",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5963,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-09-28T14:54:12Z",
+      "side": 1,
+      "message": "nit: add back github bug link",
+      "revId": "a124043c29febbfa1abbc8bbf34bfabd3fabefae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4bb8097d_523c3110",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5966,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-09-28T14:54:12Z",
+      "side": 1,
+      "message": "This line-extraction logic would go well in a helper function.",
+      "revId": "a124043c29febbfa1abbc8bbf34bfabd3fabefae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2593d134_96455417",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5980,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-09-28T14:54:12Z",
+      "side": 1,
+      "message": "nit: use single quotes everywhere, and prefix this one with r\u0027...\u0027\nnit: pat-\u003epattern",
+      "revId": "a124043c29febbfa1abbc8bbf34bfabd3fabefae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c72572b0_c9639de2",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 6002,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-09-28T14:54:12Z",
+      "side": 1,
+      "message": "nit: diff_count !\u003d 0",
+      "revId": "a124043c29febbfa1abbc8bbf34bfabd3fabefae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66bf51d9_641d602d",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 6010,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-09-28T14:54:12Z",
+      "side": 1,
+      "message": "nit: use format string instead: \u0027{}-{}\u0027.format(*line_range)",
+      "revId": "a124043c29febbfa1abbc8bbf34bfabd3fabefae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a19788ca_a01488da",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 6013,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-09-28T14:54:12Z",
+      "side": 1,
+      "message": "Looks like this part is the same as in --full, so might factor out better to:\n\nfor cmd in _GenerateYapfCommands(opts):\n  if diff or dry_run:\n    ...\n  else:\n    ...\n\n^^^ where _GenerateYapfCommands yields lists",
+      "revId": "a124043c29febbfa1abbc8bbf34bfabd3fabefae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93310d4c_ff6e849a",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 6023,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-09-28T14:54:12Z",
+      "side": 1,
+      "message": "nit: stdout unused. Also - why set error_ok on these?",
+      "revId": "a124043c29febbfa1abbc8bbf34bfabd3fabefae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

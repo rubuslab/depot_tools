@@ -16,6 +16,23 @@
       "revId": "cf257cec18f051e361065e89473b651fb32f1855",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97df4b1d_dc05d5b5",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5807,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-09-28T14:54:12Z",
+      "side": 0,
+      "message": "I think it\u0027d be better to leave this flag in for this change, and then remove it in a follow-up. That way if this breaks things, a revert won\u0027t undo your main improvements.",
+      "revId": "cf257cec18f051e361065e89473b651fb32f1855",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

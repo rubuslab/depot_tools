@@ -94,6 +94,30 @@
       "revId": "7b7eb8800be040d4405fe1d04f002ad1f3a5a38f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a409cf67_675a290c",
+        "filename": "owners.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1178490
+      },
+      "writtenOn": "2018-09-28T09:00:30Z",
+      "side": 0,
+      "message": "SGTM, this is the best approach. I will add a //ENG_REVIEW_OWNERS in WebRTC with a comment and the clear mandate of ensuring that third_party dependencies are OK to add after talking with chromium\u0027s eng review owners.\n\nThanks!",
+      "parentUuid": "50fdd3bf_8735ab15",
+      "range": {
+        "startLine": 361,
+        "startChar": 0,
+        "endLine": 362,
+        "endChar": 71
+      },
+      "revId": "7b7eb8800be040d4405fe1d04f002ad1f3a5a38f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

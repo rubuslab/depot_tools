@@ -5893,8 +5893,6 @@ def CMDformat(parser, args):
                     help='Reformat the full content of all touched files')
   parser.add_option('--dry-run', action='store_true',
                     help='Don\'t modify any file on disk.')
-  parser.add_option('--python', action='store_true',
-                    help='Format python code with yapf (experimental).')
   parser.add_option('--js', action='store_true',
                     help='Format javascript code with clang-format.')
   parser.add_option('--diff', action='store_true',
@@ -5987,7 +5985,7 @@ def CMDformat(parser, args):
 
   # Similar code to above, but using yapf on .py files rather than clang-format
   # on C/C++ files
-  if opts.python and python_diff_files:
+  if python_diff_files:
     yapf_tool = gclient_utils.FindExecutable('yapf')
     if yapf_tool is None:
       DieWithError('yapf not found in PATH')

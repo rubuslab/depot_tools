@@ -666,6 +666,92 @@ def print_try_jobs(options, builds):
   print('Total: %d try jobs' % total)
 
 
+def _GetDiffLineRanges(files, upstream_commit):
+  """ Get the changed line ranges for each file between upstream_commit
+
+  Parses a git diff on provided files and returns a dict that maps a file name
+  to an ordered list of range tuples in the form (start_line, count).
+  Ranges are in the same format as a git diff
+  """
+
+  # If files is empty then diff_output will be a full diff.
+  if len(files) == 0:
+    return {}
+
+  # Take diff and find the line ranges where there are changes.
+  diff_cmd = BuildGitDiffCmd('-U0', upstream_commit, files, allow_prefix=True)
+  diff_output = RunGit(diff_cmd)
+
+  pattern = r'(?:^diff --git a/(?:.*) b/(.*))|(?:^@@.*\+(.*) @@)'
+  # 3 capture groups
+  # 0 == fname of diff file
+  # 1 == diff_start
+  # 2 == diff_count
+  # will match
+  # diff --git a.py b.py
+  # and also
+  # @@ -12,2 +14,3 @@
+  # will also match single line changes
+  # @@ -12,2 +14 @@
+
+  curr_file = None
+  line_diffs = {}
+  for match in re.findall(pattern, diff_output, flags=re.MULTILINE):
+    if match[0] != '':
+      # Will match the second fillname in diff --git a.py b.py.
+      curr_file = match[0]
+      line_diffs[curr_file] = []
+    else:
+      # Matches +14,3
+      if "," in match[1]:
+        diff_start, diff_count = match[1].split(',')
+      else:
+        # Single line changes are of the form +12 instead of +12,1.
+        diff_start = match[1]
+        diff_count = 1
+
+      diff_start = int(diff_start)
+      diff_count = int(diff_count)
+
+      # If diff_count == 0 this is a removal we can ignore.
+      line_diffs[curr_file].append((diff_start, diff_count))
+
+  return line_diffs
+
+
+def _FindYapfStyleArg(fpath, style_args, top_dir=None, default_style=None):
+  """ Checks if a yapf file is in any parent directory of fpath till top_dir.
+
+  Recursively checks parent directories to find yapf file
+  and if no yapf file is found returns default_style.
+  Uses style_args as a memo table for previously found args.
+  """
+  yapf_style_name = '.style.yapf'
+
+  # Return result if we've already precomputed it.
+  if fpath in style_args:
+    return style_args[fpath]
+
+  # Check if there is a style file in the current directory.
+  yapf_file = os.path.join(fpath, yapf_style_name)
+  dirname = os.path.dirname(fpath)
+
+  if os.path.isfile(yapf_file):
+    style_args[fpath] = yapf_file
+    return style_args[fpath]
+
+  # If we're at the top level directory, or if we're at root
+  # use the chromium default yapf style.
+  elif fpath == top_dir or dirname == fpath:
+    style_args[fpath] = default_style
+    return style_args[fpath]
+
+  # Otherwise recurse on the current directory.
+  style_args[fpath] = _FindYapfStyleArg(dirname, style_args, top_dir,
+                                        default_style)
+  return style_args[fpath]
+
+
 def write_try_results_json(output_file, builds):
   """Writes a subset of the data from fetch_try_jobs to a file as JSON.
 
@@ -691,7 +777,7 @@ def write_try_results_json(output_file, builds):
 
   converted = []
   for _, build in sorted(builds.items()):
-      converted.append(convert_build_dict(build))
+    converted.append(convert_build_dict(build))
   write_json(output_file, converted)
 
 
@@ -5772,12 +5858,15 @@ def CMDowners(parser, args):
       override_files=change.OriginalOwnersFiles()).run()
 
 
-def BuildGitDiffCmd(diff_type, upstream_commit, args):
+def BuildGitDiffCmd(diff_type, upstream_commit, args, allow_prefix=False):
   """Generates a diff command."""
   # Generate diff for the current branch's changes.
-  diff_cmd = ['-c', 'core.quotePath=false', 'diff',
-              '--no-ext-diff', '--no-prefix', diff_type,
-              upstream_commit, '--']
+  diff_cmd = ['-c', 'core.quotePath=false', 'diff', '--no-ext-diff']
+
+  if not allow_prefix:
+    diff_cmd += ['--no-prefix']
+
+  diff_cmd += [diff_type, upstream_commit, '--']
 
   if args:
     for arg in args:
@@ -5898,26 +5987,54 @@ def CMDformat(parser, args):
 
   # Similar code to above, but using yapf on .py files rather than clang-format
   # on C/C++ files
-  if opts.python:
+  if opts.python and python_diff_files:
     yapf_tool = gclient_utils.FindExecutable('yapf')
     if yapf_tool is None:
       DieWithError('yapf not found in PATH')
 
-    if opts.full:
-      if python_diff_files:
-        if opts.dry_run or opts.diff:
-          cmd = [yapf_tool, '--diff'] + python_diff_files
-          stdout = RunCommand(cmd, error_ok=True, cwd=top_dir)
-          if opts.diff:
-            sys.stdout.write(stdout)
-          elif len(stdout) > 0:
-            return_value = 2
-        else:
-          RunCommand([yapf_tool, '-i'] + python_diff_files, cwd=top_dir)
-    else:
-      # TODO(sbc): yapf --lines mode still has some issues.
-      # https://github.com/google/yapf/issues/154
-      DieWithError('--python currently only works with --full')
+    # If we couldn't find a yapf file we'll default to the chromium style
+    # specified in depot_tools.
+    yapf_style_name = '.style.yapf'
+    depot_tools_path = os.path.dirname(os.path.abspath(__file__))
+    chromium_default_yapf_style = os.path.join(depot_tools_path,
+                                               yapf_style_name)
+
+    # Note: yapf still seems to fix indentation of the entire file
+    # even if line ranges are specified.
+    # See https://github.com/google/yapf/issues/499
+    py_line_diffs = _GetDiffLineRanges(python_diff_files, upstream_commit)
+
+    # Used for memoization.
+    style_args = {}
+    for f in python_diff_files:
+      # Find the style arg of the current file, defaults to depot tools default.
+      style_arg = _FindYapfStyleArg(
+          os.path.abspath(f), style_args, top_dir, chromium_default_yapf_style)
+
+      cmd = [yapf_tool, '--style', style_arg, f]
+
+      if not opts.full:
+        # Only run yapf over changed line ranges.
+        for line_range in py_line_diffs[f]:
+          diff_start = str(line_range[0])
+          diff_end = str(line_range[0] + line_range[1] - 1)
+          # Yapf errors out if diff_end < diff_start but this
+          # is a valid line range diff for a removal.
+          if diff_end >= diff_start:
+            cmd += ['-l', '{}-{}'.format(diff_start, diff_end)]
+
+      if opts.diff or opts.dry_run:
+        cmd += ['--diff']
+        # Will return non-zero exit code if non-empty diff.
+        stdout = RunCommand(cmd, error_ok=True, cwd=top_dir)
+        if opts.diff:
+          sys.stdout.write(stdout)
+        elif len(stdout) > 0:
+          return_value = 2
+      else:
+        cmd += ['-i']
+        RunCommand(cmd, cwd=top_dir)
+
 
   # Dart's formatter does not have the nice property of only operating on
   # modified chunks, so hard code full.

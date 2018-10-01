@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "94a861ae_fc674f3a",
+        "filename": "git_cl.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T17:35:32Z",
+      "side": 1,
+      "message": "nit: don\u0027t start methods with a blank line.",
+      "revId": "7171fda50d5bd849eb6f2feccc4f0bfb968b7a37",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e153dc1b_6f608bb3",
+        "filename": "git_cl.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T17:35:32Z",
+      "side": 1,
+      "message": "nit: indent is off",
+      "revId": "7171fda50d5bd849eb6f2feccc4f0bfb968b7a37",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

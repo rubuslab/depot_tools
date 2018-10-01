@@ -1,0 +1,215 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9b8d7d3_0f387dca",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "nit: YAPF_CONFIG_NAME might be better than \"STYLE\" (or even YAPF_CONFIG_FILENAME)",
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70fc7994_bbbb9f13",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "nit: Get-\u003eCompute (\"get\" generally implies O(1), which this is not)",
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22ebafd8_57510395",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "nit: no space before Gets",
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02b45a96_5c70cdbe",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "nit: \"until\"",
+      "range": {
+        "startLine": 725,
+        "startChar": 64,
+        "endLine": 725,
+        "endChar": 68
+      },
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11034267_d405ec10",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "memo table -\u003e cache",
+      "range": {
+        "startLine": 729,
+        "startChar": 23,
+        "endLine": 729,
+        "endChar": 33
+      },
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af230a79_3872c574",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "nit: \"already precomputed\" -\u003e \"already computed\"",
+      "range": {
+        "startLine": 731,
+        "startChar": 27,
+        "endLine": 731,
+        "endChar": 46
+      },
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae49a12c_c5f6f552",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "nit: a bit of redundancy here. maybe do:\n\nif os.path.isfile(yapf_file):\n  ret \u003d yapf_file\nelif fpath \u003d\u003d top_dir or dirname \u003d\u003d fpath:\n  ret \u003d default_style\nelse:\n  ret \u003d recurse...\n\nstyle_args[fpath] \u003d ret\nreturn ret",
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49d95840_e85698bf",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 6001,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "nit: guard this behind \"if not opts.full\"",
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7e6df94_ab0cef41",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 6006,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "nit: \"style arg\" would be \"--style foo\", this just finds the style arg value, or maybe \"yapf_config\" would be better?",
+      "range": {
+        "startLine": 6006,
+        "startChar": 17,
+        "endLine": 6006,
+        "endChar": 26
+      },
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97cb0ac2_dbbcbc79",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 6015,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "Probably don\u0027t want to convert these to strings since you\u0027re comparing them. {} will auto-convert them anyways.",
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03ac47dd_01426d8e",
+        "filename": "git_cl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 6020,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-10-01T15:52:45Z",
+      "side": 1,
+      "message": "If a diff is all removes, then I think this will end up formatting the entire file. Need to add a check for this?\n\nMaybe just add:\n  if \u0027-l\u0027 not in cmd:\n    continue  # All diffs were lines removed.",
+      "revId": "32416dc4d8a83abf9864c3a0cad508af2b915bb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

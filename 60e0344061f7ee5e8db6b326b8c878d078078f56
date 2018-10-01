@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "97777791_f91104d4",
+        "filename": "git_cl.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2018-10-01T15:01:48Z",
+      "side": 1,
+      "message": "nit: s/Get/Gets, period at end.",
+      "range": {
+        "startLine": 670,
+        "startChar": 6,
+        "endLine": 670,
+        "endChar": 9
+      },
+      "revId": "60e0344061f7ee5e8db6b326b8c878d078078f56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49ff71a5_03651a3f",
+        "filename": "git_cl.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2018-10-01T15:01:48Z",
+      "side": 1,
+      "message": "ditto for period.",
+      "range": {
+        "startLine": 674,
+        "startChar": 41,
+        "endLine": 674,
+        "endChar": 45
+      },
+      "revId": "60e0344061f7ee5e8db6b326b8c878d078078f56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd80a899_6fcea3fc",
+        "filename": "git_cl.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2018-10-01T15:01:48Z",
+      "side": 1,
+      "message": "Hmm... I only see two capture groups, unless you mean the 0 group as in the full match? https://docs.python.org/3/library/re.html#re.Match.group",
+      "range": {
+        "startLine": 686,
+        "startChar": 14,
+        "endLine": 686,
+        "endChar": 20
+      },
+      "revId": "60e0344061f7ee5e8db6b326b8c878d078078f56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14073215_76b222cc",
+        "filename": "git_cl.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2018-10-01T15:01:48Z",
+      "side": 1,
+      "message": "It would be helpful to include the output of re.findall for each of these examples.",
+      "range": {
+        "startLine": 691,
+        "startChar": 11,
+        "endLine": 691,
+        "endChar": 14
+      },
+      "revId": "60e0344061f7ee5e8db6b326b8c878d078078f56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1174b20_f3e1eb95",
+        "filename": "git_cl.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2018-10-01T15:01:48Z",
+      "side": 1,
+      "message": "s/fillname/filename",
+      "range": {
+        "startLine": 701,
+        "startChar": 30,
+        "endLine": 701,
+        "endChar": 38
+      },
+      "revId": "60e0344061f7ee5e8db6b326b8c878d078078f56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "844ddfeb_d16df25c",
+        "filename": "git_cl.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2018-10-01T15:01:48Z",
+      "side": 1,
+      "message": "Pull this out as a top level string constant.",
+      "range": {
+        "startLine": 729,
+        "startChar": 2,
+        "endLine": 729,
+        "endChar": 17
+      },
+      "revId": "60e0344061f7ee5e8db6b326b8c878d078078f56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b358ac32_bcc54146",
+        "filename": "git_cl.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2018-10-01T15:01:48Z",
+      "side": 1,
+      "message": "No space between if conditions.",
+      "revId": "60e0344061f7ee5e8db6b326b8c878d078078f56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84fb54a0_1da6f9d4",
+        "filename": "git_cl.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2018-10-01T15:01:48Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "60e0344061f7ee5e8db6b326b8c878d078078f56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "786adcc1_ca67e55b",
+        "filename": "git_cl.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 5997,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2018-10-01T15:01:48Z",
+      "side": 1,
+      "message": "ditto, replace with constant",
+      "range": {
+        "startLine": 5997,
+        "startChar": 4,
+        "endLine": 5997,
+        "endChar": 19
+      },
+      "revId": "60e0344061f7ee5e8db6b326b8c878d078078f56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

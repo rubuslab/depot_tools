@@ -5105,6 +5105,12 @@ def CMDsplit(parser, args):
                     default=False,
                     help="List the files and reviewers for each CL that would "
                          "be created, but don't create branches or CLs.")
+  parser.add_option("-f", "--min-files", type="int", dest="min_files",
+                    default=1,
+                    help="If set, merges groups of files until each group has "
+                         "a size of at least MIN_FILES. This is useful to "
+                         "control the total number of CLs if the initial CL "
+                         "touches many files. Defaults to 1.")
   parser.add_option("--cq-dry-run", action='store_true',
                     help="If set, will do a cq dry run for each uploaded CL. "
                          "Please be careful when doing this; more than ~10 CLs "
@@ -5121,8 +5127,8 @@ def CMDsplit(parser, args):
     return CMDupload(OptionParser(), args)
 
   return split_cl.SplitCl(options.description_file, options.comment_file,
-                          Changelist, WrappedCMDupload, options.dry_run,
-                          options.cq_dry_run)
+                          options.min_files, Changelist, WrappedCMDupload,
+                          options.dry_run, options.cq_dry_run)
 
 
 @subcommand.usage('DEPRECATED')

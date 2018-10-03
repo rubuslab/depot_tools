@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a3d6c488_e55fb65a",
+        "filename": "git_cl.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-10-03T16:03:32Z",
+      "side": 1,
+      "message": "nit: \"since\", maybe",
+      "range": {
+        "startLine": 673,
+        "startChar": 48,
+        "endLine": 673,
+        "endChar": 55
+      },
+      "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55e4facf_a8a69401",
+        "filename": "git_cl.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 6020,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-10-03T16:03:32Z",
+      "side": 1,
+      "message": "nit: \n\n  for diff_start, diff_len in py_line_diffs[f]:",
+      "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2b8e7d2_9200e33b",
+        "filename": "git_cl.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 6042,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-10-03T16:03:32Z",
+      "side": 1,
+      "message": "now that we run a process per file, we can parallelize this. Doesn\u0027t have to be in this CL.\n\nFWIW I\u0027ve verified that running O(py files) processes is not much worse than a single yapf subprocess for all modified files",
+      "range": {
+        "startLine": 6042,
+        "startChar": 8,
+        "endLine": 6042,
+        "endChar": 36
+      },
+      "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0dfd9ef_966bc7cc",
+        "filename": "git_cl.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 6043,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-10-03T16:03:32Z",
+      "side": 1,
+      "message": "nit: excessive blank line. Does yapf approve this?",
+      "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

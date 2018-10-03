@@ -22,6 +22,30 @@
       "revId": "a88ca672e6b23f8f04571c59b862392c01e39ed7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6129607e_f748d76b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2558,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-03T23:55:32Z",
+      "side": 1,
+      "message": "yep, laziness, most likely mine.",
+      "parentUuid": "96fe3e93_0160f0db",
+      "range": {
+        "startLine": 2558,
+        "startChar": 32,
+        "endLine": 2558,
+        "endChar": 46
+      },
+      "revId": "a88ca672e6b23f8f04571c59b862392c01e39ed7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

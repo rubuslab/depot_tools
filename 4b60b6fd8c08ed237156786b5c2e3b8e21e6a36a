@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d27323d5_7178b4c6",
+        "filename": "git_cl.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1302229
+      },
+      "writtenOn": "2018-10-03T17:44:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3d6c488_e55fb65a",
+      "range": {
+        "startLine": 673,
+        "startChar": 48,
+        "endLine": 673,
+        "endChar": 55
+      },
+      "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "55e4facf_a8a69401",
         "filename": "git_cl.py",
         "patchSetId": 21
@@ -39,6 +63,24 @@
       "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2e3da5b_ec477df5",
+        "filename": "git_cl.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 6020,
+      "author": {
+        "id": 1302229
+      },
+      "writtenOn": "2018-10-03T17:44:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55e4facf_a8a69401",
+      "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "4608a864_7ff41dfa",
+        "filename": "git_cl.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 6042,
+      "author": {
+        "id": 1302229
+      },
+      "writtenOn": "2018-10-03T17:44:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e2b8e7d2_9200e33b",
+      "range": {
+        "startLine": 6042,
+        "startChar": 8,
+        "endLine": 6042,
+        "endChar": 36
+      },
+      "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c0dfd9ef_966bc7cc",
         "filename": "git_cl.py",
         "patchSetId": 21
@@ -79,6 +145,24 @@
       "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7debb53_80412071",
+        "filename": "git_cl.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 6043,
+      "author": {
+        "id": 1302229
+      },
+      "writtenOn": "2018-10-03T17:44:47Z",
+      "side": 1,
+      "message": "Running git cl format without --full doesn\u0027t remove this line, but with --full it does.  \nDoing further testing yapf seems to ignore excessive new lines at the end of any diff chunk.\n\nE.g. if the diff chunk is \n\"\"\"\nprint(\u0027foo\u0027)\n\\n\n\\n\n\\n\nif True:\n   print(\u0027bar\u0027)\n\\n\n\\n\n\\n\n\"\"\"\nIt will become \n\"\"\"\nprint(\u0027foo\u0027)\nif True:\n   print(\u0027bar\u0027)\n\\n\n\\n\n\\n\n\"\"\"\n\nWhich isn\u0027t great. I think this is a yapf bug. \nI will see if it persists after we bump yapf versions because I recall\nseeing some issues related to whitespace and --lines on the yapf github.",
+      "parentUuid": "c0dfd9ef_966bc7cc",
+      "revId": "4b60b6fd8c08ed237156786b5c2e3b8e21e6a36a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

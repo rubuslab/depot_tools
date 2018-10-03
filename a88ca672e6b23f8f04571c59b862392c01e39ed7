@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "96fe3e93_0160f0db",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2558,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2018-10-03T23:46:59Z",
+      "side": 1,
+      "message": "This can totally be implemented for both GCE (using metadata lookup) and LUCI (just reading another field from LUCI_CONTEXT[local_auth] JSON).\n\nThere was probably a reason it wasn\u0027t used on bots before? (other than laziness of whoever made \u0027git cl\u0027 use gce creds?)",
+      "range": {
+        "startLine": 2558,
+        "startChar": 32,
+        "endLine": 2558,
+        "endChar": 46
+      },
+      "revId": "a88ca672e6b23f8f04571c59b862392c01e39ed7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

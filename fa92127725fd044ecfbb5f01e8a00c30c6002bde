@@ -22,6 +22,30 @@
       "revId": "fa92127725fd044ecfbb5f01e8a00c30c6002bde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71b7c315_5fcc0ef2",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-05T16:59:30Z",
+      "side": 1,
+      "message": "I want to do that in another CL, in case someone else is using it, and I missed it.",
+      "parentUuid": "4e725553_d54244f4",
+      "range": {
+        "startLine": 12,
+        "startChar": 21,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "fa92127725fd044ecfbb5f01e8a00c30c6002bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

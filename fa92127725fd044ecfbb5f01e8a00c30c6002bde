@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e725553_d54244f4",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-05T02:30:55Z",
+      "side": 1,
+      "message": "and this https://cs.chromium.org/chromium/tools/depot_tools/recipes/recipe_modules/bot_update/__init__.py?sq\u003dpackage:chromium\u0026dr\u003dC\u0026g\u003d0\u0026l\u003d31 ?",
+      "range": {
+        "startLine": 12,
+        "startChar": 21,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "fa92127725fd044ecfbb5f01e8a00c30c6002bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

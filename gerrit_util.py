@@ -44,6 +44,14 @@ TRY_LIMIT = 7
 GERRIT_PROTOCOL = 'https'
 
 
+INTERESTING_HEADERS = [
+  'x-google-backends',
+  'x-google-errorfiltertrace',
+  'x-google-filter-grace',
+  'x-errorid',
+]
+
+
 class GerritError(Exception):
   """Exception class for errors commuicating with the gerrit-on-borg service."""
   def __init__(self, http_status, *args, **kwargs):
@@ -397,16 +405,21 @@ def CreateHttpConn(host, path, reqtype='GET', headers=None, body=None):
   return conn
 
 
-def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
+def ReadHttpResponse(conn, accept_statuses=frozenset([200]),
+                     initial_push_headers=None):
   """Reads an http response from a connection into a string buffer.
 
   Args:
     conn: An Http object created by CreateHttpConn above.
     accept_statuses: Treat any of these statuses as success. Default: [200]
                      Common additions include 204, 400, and 404.
+    TODO(crbug.com/881860): Remove.
+    initial_push_headers: Initial response headers from git-push when uploading
+                          the CL.
   Returns: A string buffer containing the connection's reply.
   """
   sleep_time = 1.5
+  is_first_failure = True
   for idx in range(TRY_LIMIT):
     response, contents = conn.request(**conn.req_params)
 
@@ -433,14 +446,6 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
       if response.status == 404:
         contents = ''
       break
-    # A status >=500 is assumed to be a possible transient error; retry.
-    http_version = 'HTTP/%s' % ('1.1' if response.version == 11 else '1.0')
-    LOGGER.warn('A transient error occurred while querying %s:\n'
-                '%s %s %s\n'
-                '%s %d %s',
-                conn.req_host, conn.req_params['method'],
-                conn.req_params['uri'],
-                http_version, http_version, response.status, response.reason)
     if response.status == 404:
       # TODO(crbug/881860): remove this hack.
       # HACK: try different Gerrit mirror as a workaround for potentially
@@ -451,6 +456,31 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
         # And don't increase sleep_time in this case, since we suspect we've
         # just asked wrong git mirror before.
         sleep_time /= 2.0
+        if is_first_failure:
+          is_first_failure = False
+          LOGGER.warn(
+              'If you see this when running \'git cl upload\', consider '
+              'reporting this to https://crbug.com/881860, and please include '
+              'the headers below:\n')
+          if initial_push_headers:
+            LOGGER.warn('Initial git push headers:\n%s\n', initial_push_headers)
+
+        rpc_headers = '\n'.join(
+            '  ' + header + ': ' + value
+            for header, value in response.iteritems()
+            if header.lower() in INTERESTING_HEADERS
+        )
+        if rpc_headers:
+          LOGGER.warn('Gerrit RPC headers:\n%s\n', rpc_headers)
+    else:
+      # A status >=500 is assumed to be a possible transient error; retry.
+      http_version = 'HTTP/%s' % ('1.1' if response.version == 11 else '1.0')
+      LOGGER.warn('A transient error occurred while querying %s:\n'
+                  '%s %s %s\n'
+                  '%s %d %s',
+                  conn.req_host, conn.req_params['method'],
+                  conn.req_params['uri'],
+                  http_version, http_version, response.status, response.reason)
 
     if TRY_LIMIT - idx > 1:
       LOGGER.info('Will retry in %d seconds (%d more times)...',
@@ -466,9 +496,10 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
   return StringIO(contents)
 
 
-def ReadHttpJsonResponse(conn, accept_statuses=frozenset([200])):
+def ReadHttpJsonResponse(conn, accept_statuses=frozenset([200]),
+                         initial_push_headers=None):
   """Parses an https response as json."""
-  fh = ReadHttpResponse(conn, accept_statuses)
+  fh = ReadHttpResponse(conn, accept_statuses, initial_push_headers)
   # The first line of the response should always be: )]}'
   s = fh.readline()
   if s and s.rstrip() != ")]}'":
@@ -731,7 +762,8 @@ def GetReview(host, change, revision):
 
 
 def AddReviewers(host, change, reviewers=None, ccs=None, notify=True,
-                 accept_statuses=frozenset([200, 400, 422])):
+                 accept_statuses=frozenset([200, 400, 422]),
+                 initial_push_headers=None):
   """Add reviewers to a change."""
   if not reviewers and not ccs:
     return None
@@ -758,7 +790,9 @@ def AddReviewers(host, change, reviewers=None, ccs=None, notify=True,
   # Gerrit will return 400 if one or more of the requested reviewers are
   # unprocessable. We read the response object to see which were rejected,
   # warn about them, and retry with the remainder.
-  resp = ReadHttpJsonResponse(conn, accept_statuses=accept_statuses)
+  resp = ReadHttpJsonResponse(
+      conn, accept_statuses=accept_statuses,
+      initial_push_headers=initial_push_headers)
 
   errored = set()
   for result in resp.get('reviewers', {}).itervalues():
@@ -791,7 +825,8 @@ def RemoveReviewers(host, change, remove=None):
           'from change %s' % (r, change))
 
 
-def SetReview(host, change, msg=None, labels=None, notify=None, ready=None):
+def SetReview(host, change, msg=None, labels=None, notify=None, ready=None,
+              initial_push_headers=None):
   """Set labels and/or add a message to a code review."""
   if not msg and not labels:
     return
@@ -806,7 +841,8 @@ def SetReview(host, change, msg=None, labels=None, notify=None, ready=None):
   if ready:
     body['ready'] = True
   conn = CreateHttpConn(host, path, reqtype='POST', body=body)
-  response = ReadHttpJsonResponse(conn)
+  response = ReadHttpJsonResponse(
+      conn, initial_push_headers=initial_push_headers)
   if labels:
     for key, val in labels.iteritems():
       if ('labels' not in response or key not in response['labels'] or

@@ -3165,12 +3165,53 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     refspec = '%s:refs/for/%s%s' % (ref_to_push, branch, refspec_suffix)
 
     try:
+      # TODO(crbug.com/881860): Remove.
+      # Get interesting headers from git push, to be displayed to the user if
+      # subsequent Gerrit RPC calls fail.
+      env = os.environ.copy()
+      env['GIT_CURL_VERBOSE'] = '1'
+      class FilterHeaders(object):
+        def __init__(self):
+          self.headers = ''
+          # Wether the last line was empty.
+          self.last_line_empty = False
+          # Wether the current line is a request header.
+          self.on_header = False
+
+        def _get_header(self, line):
+          if line[0] == '<':
+            line = line[2:]
+          header, _, value = line.partition(':')
+          return header, value
+
+        def __call__(self, line):
+          if not line:
+            # Request headers are done when two empty lines are displayed.
+            if self.last_line_empty:
+              self.on_header = False
+            self.last_line_empty = True
+            return
+
+          self.last_line_empty = False
+          if line[0] == '<':
+            header, _, value = line[1:].strip().partition(':')
+            if header.lower() in gerrit_util.INTERESTING_HEADERS:
+              self.headers += '  ' + header + ': ' + value + '\n'
+          elif line[0] == '>':
+            # Record the request, and ignore the subsequent headers.
+            self.on_header = True
+            self.headers += '  ' + line + '\n'
+          elif line[0] != '*' and not self.on_header:
+            print(line)
+
+      filter_fn = FilterHeaders()
       push_stdout = gclient_utils.CheckCallAndFilter(
           ['git', 'push', self.GetRemoteUrl(), refspec],
-          print_stdout=True,
+          print_stdout=False,
           # Flush after every line: useful for seeing progress when running as
           # recipe.
-          filter_fn=lambda _: sys.stdout.flush())
+          filter_fn=filter_fn,
+          env=env)
     except subprocess2.CalledProcessError:
       DieWithError('Failed to create a change. Please examine output above '
                    'for the reason of the failure.\n'
@@ -3205,13 +3246,15 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       cc.extend(change_desc.get_cced())
 
     if self.GetIssue():
-      # GetIssue() is not set in case of non-squash uploads according to tests.
+      # GetIssue() is not set in case of non-squash uploads according to
+      # tests.
       # TODO(agable): non-squash uploads in git cl should be removed.
       gerrit_util.AddReviewers(
           self._GetGerritHost(),
           self._GerritChangeIdentifier(),
           reviewers, cc,
-          notify=bool(options.send_mail))
+          notify=bool(options.send_mail),
+          initial_push_headers=filter_fn.headers)
 
     if change_desc.get_reviewers(tbr_only=True):
       labels = self._GetChangeDetail(['LABELS']).get('labels', {})
@@ -3223,7 +3266,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           self._GetGerritHost(),
           self._GerritChangeIdentifier(),
           msg='Self-approving for TBR',
-          labels={'Code-Review': score})
+          labels={'Code-Review': score},
+          initial_push_headers=filter_fn.headers)
 
     return 0
 

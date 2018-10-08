@@ -33,6 +33,7 @@ import subprocess2
 from third_party import httplib2
 
 LOGGER = logging.getLogger()
+GERRIT_ERR_LOG = os.path.join(tempfile.gettempdir(), 'GerritRpcHeaders.txt')
 # With a starting sleep time of 1.5 seconds, 2^n exponential backoff, and seven
 # total tries, the sleep time between the first and last tries will be 94.5 sec.
 # TODO(crbug.com/881860): Lower this when crbug.com/877717 is fixed.
@@ -42,6 +43,15 @@ TRY_LIMIT = 7
 # Controls the transport protocol used to communicate with gerrit.
 # This is parameterized primarily to enable GerritTestCase.
 GERRIT_PROTOCOL = 'https'
+
+
+INTERESTING_HEADERS = frozenset([
+    'x-google-backends',
+    'x-google-errorfiltertrace',
+    'x-google-filter-grace',
+    'x-errorid',
+])
+
 
 
 class GerritError(Exception):
@@ -407,6 +417,7 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
   Returns: A string buffer containing the connection's reply.
   """
   sleep_time = 1.5
+  failed = False
   for idx in range(TRY_LIMIT):
     response, contents = conn.request(**conn.req_params)
 
@@ -432,16 +443,8 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
       # "content" that was actually requested.
       if response.status == 404:
         contents = ''
-      break
-    # A status >=500 is assumed to be a possible transient error; retry.
-    http_version = 'HTTP/%s' % ('1.1' if response.version == 11 else '1.0')
-    LOGGER.warn('A transient error occurred while querying %s:\n'
-                '%s %s %s\n'
-                '%s %d %s',
-                conn.req_host, conn.req_params['method'],
-                conn.req_params['uri'],
-                http_version, http_version, response.status, response.reason)
-    if response.status == 404:
+      if response.status == 200: break
+    if response.status == 404 or response.status == 400:
       # TODO(crbug/881860): remove this hack.
       # HACK: try different Gerrit mirror as a workaround for potentially
       # out-of-date mirror hit through default routing.
@@ -451,12 +454,34 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
         # And don't increase sleep_time in this case, since we suspect we've
         # just asked wrong git mirror before.
         sleep_time /= 2.0
+        failed = True
+        rpc_headers = '\n'.join(
+            '  ' + header + ': ' + value
+            for header, value in response.iteritems()
+            if header.lower() in INTERESTING_HEADERS
+        )
+        with open(GERRIT_ERR_LOG, 'a') as f:
+          f.write('Gerrit RPC failures:\n%s\n' % rpc_headers)
+    else:
+      # A status >=500 is assumed to be a possible transient error; retry.
+      http_version = 'HTTP/%s' % ('1.1' if response.version == 11 else '1.0')
+      LOGGER.warn('A transient error occurred while querying %s:\n'
+                  '%s %s %s\n'
+                  '%s %d %s',
+                  conn.req_host, conn.req_params['method'],
+                  conn.req_params['uri'],
+                  http_version, http_version, response.status, response.reason)
 
     if TRY_LIMIT - idx > 1:
       LOGGER.info('Will retry in %d seconds (%d more times)...',
                   sleep_time, TRY_LIMIT - idx - 1)
       time.sleep(sleep_time)
       sleep_time = sleep_time * 2
+  if failed:
+    LOGGER.warn(
+        'If you see this when running \'git cl upload\', consider '
+        'reporting this to https://crbug.com/881860, and please attach the '
+        'failures in %s.\n', GERRIT_ERR_LOG)
   if response.status not in accept_statuses:
     if response.status in (401, 403):
       print('Your Gerrit credentials might be misconfigured. Try: \n'
@@ -731,7 +756,7 @@ def GetReview(host, change, revision):
 
 
 def AddReviewers(host, change, reviewers=None, ccs=None, notify=True,
-                 accept_statuses=frozenset([200, 400, 422])):
+                 accept_statuses=frozenset([200, 422])):
   """Add reviewers to a change."""
   if not reviewers and not ccs:
     return None

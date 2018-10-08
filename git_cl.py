@@ -68,6 +68,8 @@ import watchlists
 
 __version__ = '2.0'
 
+ERR_LOGGER = logging.getLogger('GerritErrors')
+
 COMMIT_BOT_EMAIL = 'commit-bot@chromium.org'
 DEFAULT_SERVER = 'https://codereview.chromium.org'
 POSTUPSTREAM_HOOK = '.git/hooks/post-cl-land'
@@ -3165,12 +3167,49 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     refspec = '%s:refs/for/%s%s' % (ref_to_push, branch, refspec_suffix)
 
     try:
+      # TODO(crbug.com/881860): Remove.
+      # Get interesting headers from git push, to be displayed to the user if
+      # subsequent Gerrit RPC calls fail.
+      env = os.environ.copy()
+      env['GIT_CURL_VERBOSE'] = '1'
+      class FilterHeaders(object):
+        """Filter git push headers and store them in a file."""
+        def __init__(self):
+          self._output = ''
+          self._last_line_empty = False
+          self._on_header = False
+
+        def __call__(self, line):
+          print('* "%s" %s %s' % (line, self._on_header, self._last_line_empty))
+          if not line:
+            if self._last_line_empty:
+              self._on_header = False
+            self._last_line_empty = True
+            return
+
+          self._last_line_empty = False
+          if line[0] == '>':
+            self._on_header = True
+            self._output += line
+          elif line[0] not in '*<' and not self._on_header:
+            print(line)
+          elif ('cookie: ' not in line.lower()
+                and 'authorization: ' not in line.lower()):
+            self._output += line
+
+        def WriteToFile(self):
+          with open(gerrit_util.GERRIT_ERR_LOG, 'w') as f:
+            f.write(self._output)
+
+      filter_fn = FilterHeaders()
       push_stdout = gclient_utils.CheckCallAndFilter(
           ['git', 'push', self.GetRemoteUrl(), refspec],
-          print_stdout=True,
+          print_stdout=False,
           # Flush after every line: useful for seeing progress when running as
           # recipe.
-          filter_fn=lambda _: sys.stdout.flush())
+          filter_fn=filter_fn,
+          env=env)
+      filter_fn.WriteToFile()
     except subprocess2.CalledProcessError:
       DieWithError('Failed to create a change. Please examine output above '
                    'for the reason of the failure.\n'
@@ -3205,7 +3244,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       cc.extend(change_desc.get_cced())
 
     if self.GetIssue():
-      # GetIssue() is not set in case of non-squash uploads according to tests.
+      # GetIssue() is not set in case of non-squash uploads according to
+      # tests.
       # TODO(agable): non-squash uploads in git cl should be removed.
       gerrit_util.AddReviewers(
           self._GetGerritHost(),

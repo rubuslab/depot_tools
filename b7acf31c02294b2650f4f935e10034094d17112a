@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1f9fa969_b3ae5d4b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-09T23:28:32Z",
+      "side": 1,
+      "message": "mind adding comment above this line \n# end of retries loop\n?",
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "98528c55_2bc47255",
         "filename": "gerrit_util.py",
         "patchSetId": 24
@@ -52,6 +69,75 @@
       "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "603b00d4_7a75215f",
+        "filename": "git_cl.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3209,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-09T23:28:32Z",
+      "side": 1,
+      "message": "move flush comment from below to here and actually flush.",
+      "range": {
+        "startLine": 3209,
+        "startChar": 12,
+        "endLine": 3209,
+        "endChar": 23
+      },
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f78423c_82927299",
+        "filename": "git_cl.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3210,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-09T23:28:32Z",
+      "side": 1,
+      "message": "nit: remove trailing whitespace",
+      "range": {
+        "startLine": 3210,
+        "startChar": 60,
+        "endLine": 3210,
+        "endChar": 62
+      },
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bbb06ed7_824d618e",
+        "filename": "git_cl.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3220,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-09T23:28:32Z",
+      "side": 1,
+      "message": "this comment is outdated.",
+      "range": {
+        "startLine": 3219,
+        "startChar": 10,
+        "endLine": 3220,
+        "endChar": 19
+      },
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     },
     {
       "key": {

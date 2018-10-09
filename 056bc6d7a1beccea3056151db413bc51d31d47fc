@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4322003_8c7f4e4f",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-09T20:06:15Z",
+      "side": 1,
+      "message": "maybe prefix with DEBUG_ ?  also, do you think you\u0027d want to keep this code after we complete our work?",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 33
+      },
+      "revId": "056bc6d7a1beccea3056151db413bc51d31d47fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9aa9a2a7_affdfbac",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-09T20:06:15Z",
+      "side": 1,
+      "message": "have you considered initializing special logger which writes to file in append mode?\nthen you\u0027d get timestamps, formatting, and thread safety for free. However, you have to set up the right logging class.",
+      "range": {
+        "startLine": 462,
+        "startChar": 8,
+        "endLine": 462,
+        "endChar": 44
+      },
+      "revId": "056bc6d7a1beccea3056151db413bc51d31d47fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54a7c81b_6ad48a05",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-09T20:06:15Z",
+      "side": 1,
+      "message": "add timestamp, please.",
+      "range": {
+        "startLine": 463,
+        "startChar": 10,
+        "endLine": 463,
+        "endChar": 17
+      },
+      "revId": "056bc6d7a1beccea3056151db413bc51d31d47fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

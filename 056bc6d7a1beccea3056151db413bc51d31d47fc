@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "07c7af9c_cec20b3b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-09T20:54:15Z",
+      "side": 1,
+      "message": "I\u0027d rather not at DEBUG_, but can do if you insist.\nI don\u0027t think we want to keep it. I added a TODO to remove it.",
+      "parentUuid": "a4322003_8c7f4e4f",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 33
+      },
+      "revId": "056bc6d7a1beccea3056151db413bc51d31d47fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9aa9a2a7_affdfbac",
         "filename": "gerrit_util.py",
         "patchSetId": 23
@@ -36,6 +60,30 @@
       "writtenOn": "2018-10-09T20:06:15Z",
       "side": 1,
       "message": "have you considered initializing special logger which writes to file in append mode?\nthen you\u0027d get timestamps, formatting, and thread safety for free. However, you have to set up the right logging class.",
+      "range": {
+        "startLine": 462,
+        "startChar": 8,
+        "endLine": 462,
+        "endChar": 44
+      },
+      "revId": "056bc6d7a1beccea3056151db413bc51d31d47fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "932166cc_72b4ad03",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-09T20:54:15Z",
+      "side": 1,
+      "message": "Done.\n\nI did, though I was a bit thrown off because it logged things both to file and stdout.\nI played a bit more, and figured you could set propagate to 0 to avoid it.\nAlso, I decided to open in \u0027write\u0027 mode, since we\u0027re interested only in the failure for the current execution.",
+      "parentUuid": "9aa9a2a7_affdfbac",
       "range": {
         "startLine": 462,
         "startChar": 8,
@@ -68,6 +116,30 @@
       "revId": "056bc6d7a1beccea3056151db413bc51d31d47fc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea33aa86_6a8230b9",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-09T20:54:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54a7c81b_6ad48a05",
+      "range": {
+        "startLine": 463,
+        "startChar": 10,
+        "endLine": 463,
+        "endChar": 17
+      },
+      "revId": "056bc6d7a1beccea3056151db413bc51d31d47fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

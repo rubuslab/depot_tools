@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "98528c55_2bc47255",
+        "filename": "gerrit_util.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-09T21:10:28Z",
+      "side": 1,
+      "message": "Do we think enough people will do the upload with this passive language? I\u0027m not familiar with how Chrome developers take these suggestions.",
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e1b48c4_cbf6dd4d",
+        "filename": "git_cl.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3221,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-09T21:10:28Z",
+      "side": 1,
+      "message": "Is this going to log all request headers or just for requests that fail? Or does each run overwrite the log file so we only ask them to upload the ones that contain both request and error response?",
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

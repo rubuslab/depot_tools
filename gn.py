@@ -45,7 +45,12 @@ def main(args):
 
   # Try in primary solution location first, with the gn binary having been
   # downloaded by cipd in the projects DEPS.
-  gn_path = os.path.join(gclient_utils.GetPrimarySolutionPath(), 'third_party',
+  primary_solution_path = gclient_utils.GetPrimarySolutionPath()
+  if primary_solution_path is None:
+    print >> sys.stderr, ('gn.py: You appear to be in a git repository that '
+                          'is not part of chromium. This command only works '
+                          'inside a chromium checkout.')
+  gn_path = os.path.join(primary_solution_path, 'third_party',
                          'gn', 'gn' + gclient_utils.GetExeSuffix())
   if os.path.exists(gn_path):
     return subprocess.call([gn_path] + args[1:])

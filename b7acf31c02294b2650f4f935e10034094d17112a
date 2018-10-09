@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a9727e5_29bb0e7b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-09T21:21:11Z",
+      "side": 1,
+      "message": "It seemed to work fine last time :)\nI\u0027m open to suggestions on how else to word this.",
+      "parentUuid": "98528c55_2bc47255",
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7e1b48c4_cbf6dd4d",
         "filename": "git_cl.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2018-10-09T21:10:28Z",
       "side": 1,
       "message": "Is this going to log all request headers or just for requests that fail? Or does each run overwrite the log file so we only ask them to upload the ones that contain both request and error response?",
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a76e66ff_1965dd9a",
+        "filename": "git_cl.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3221,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-09T21:21:11Z",
+      "side": 1,
+      "message": "It logs all requests headers. Each run overwrites the log file, so we only ask them to upload the ones that contain both request and error response.",
+      "parentUuid": "7e1b48c4_cbf6dd4d",
       "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

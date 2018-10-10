@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "91d15a98_af0606ac",
+        "filename": "gerrit_util.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-10T00:07:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f9fa969_b3ae5d4b",
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "98528c55_2bc47255",
         "filename": "gerrit_util.py",
         "patchSetId": 24
@@ -95,6 +113,30 @@
     },
     {
       "key": {
+        "uuid": "7214efe1_7f45c6b2",
+        "filename": "git_cl.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3209,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-10T00:07:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "603b00d4_7a75215f",
+      "range": {
+        "startLine": 3209,
+        "startChar": 12,
+        "endLine": 3209,
+        "endChar": 23
+      },
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f78423c_82927299",
         "filename": "git_cl.py",
         "patchSetId": 24
@@ -118,6 +160,30 @@
     },
     {
       "key": {
+        "uuid": "e542e0d0_cb0b671b",
+        "filename": "git_cl.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3210,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-10T00:07:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f78423c_82927299",
+      "range": {
+        "startLine": 3210,
+        "startChar": 60,
+        "endLine": 3210,
+        "endChar": 62
+      },
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bbb06ed7_824d618e",
         "filename": "git_cl.py",
         "patchSetId": 24
@@ -138,6 +204,30 @@
       "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a626ec70_ae67e09f",
+        "filename": "git_cl.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3220,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-10T00:07:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbb06ed7_824d618e",
+      "range": {
+        "startLine": 3219,
+        "startChar": 10,
+        "endLine": 3220,
+        "endChar": 19
+      },
+      "revId": "b7acf31c02294b2650f4f935e10034094d17112a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1dd10504_1121b3d0",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5961,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-10-11T15:19:48Z",
+      "side": 0,
+      "message": "this will break some presubmits\nplease update\nhttps://chromium.googlesource.com/chromium/tools/depot_tools/+/b1f48a3a1fa4b152934f8e3613f0b50e1371ff7a/presubmit_canned_checks.py#1074",
+      "revId": "83bd7f4cd5fa45c7b2b8a9187d3c3d3c13525621",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

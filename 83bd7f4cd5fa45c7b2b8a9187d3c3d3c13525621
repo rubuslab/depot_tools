@@ -34,6 +34,24 @@
       "revId": "83bd7f4cd5fa45c7b2b8a9187d3c3d3c13525621",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "793cc67c_cb345cbd",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5961,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-10-11T20:47:01Z",
+      "side": 0,
+      "message": "\u003e Do you think it would be better to have a flag to disable python checking?\n\ni am worried that enabling python checking everywhere will be a breaking change for many python projects.\nnot all projects care about yapf.\ncan you try running any presubmit in \nhttps://cs.chromium.org/search/?q\u003dCheckPatchFormatted\u0026sq\u003dpackage:chromium\u0026type\u003dcs\nwith this CL in $PATH/depot_tools and see if anything fails?",
+      "parentUuid": "eee84d8d_8a53a1a9",
+      "revId": "83bd7f4cd5fa45c7b2b8a9187d3c3d3c13525621",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

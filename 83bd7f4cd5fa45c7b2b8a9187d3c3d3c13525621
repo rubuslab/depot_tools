@@ -16,6 +16,24 @@
       "revId": "83bd7f4cd5fa45c7b2b8a9187d3c3d3c13525621",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eee84d8d_8a53a1a9",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5961,
+      "author": {
+        "id": 1302229
+      },
+      "writtenOn": "2018-10-11T19:12:23Z",
+      "side": 0,
+      "message": "I removed the check_python parameter.\n\nHere was the only use of it I found. I added you as a reviewer. \nhttps://chromium-review.googlesource.com/c/infra/infra/+/1277326\n\nDo you think it would be better to have a flag to disable python checking?",
+      "parentUuid": "1dd10504_1121b3d0",
+      "revId": "83bd7f4cd5fa45c7b2b8a9187d3c3d3c13525621",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

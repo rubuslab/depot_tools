@@ -47,10 +47,6 @@ GERRIT_PROTOCOL = 'https'
 # TODO(crbug.com/881860): Remove.
 GERRIT_ERR_LOGGER = logging.getLogger('GerritErrorLogs')
 GERRIT_ERR_LOG_FILE = os.path.join(tempfile.gettempdir(), 'GerritHeaders.txt')
-GERRIT_ERR_MESSAGE = (
-    'If you see this when running \'git cl upload\', please report this to '
-    'https://crbug.com/881860, and attach the failures in %s.\n' %
-    GERRIT_ERR_LOG_FILE)
 INTERESTING_HEADERS = frozenset([
     'x-google-backends',
     'x-google-errorfiltertrace',
@@ -465,7 +461,14 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
             for header, value in response.iteritems()
             if header.lower() in INTERESTING_HEADERS
         )
-        GERRIT_ERR_LOGGER.info('Gerrit RPC failures:\n%s\n', rpc_headers)
+        GERRIT_ERR_LOGGER.info(
+            'Gerrit RPC failure headers:\n'
+            '  Host: %s\n'
+            '  Ip: %s\n'
+            '%s\n',
+            conn.connections.values()[0].host,
+            conn.connections.values()[0].sock.getpeername(),
+            rpc_headers)
     else:
       # A status >=500 is assumed to be a possible transient error; retry.
       http_version = 'HTTP/%s' % ('1.1' if response.version == 11 else '1.0')
@@ -484,14 +487,15 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
   # end of retries loop
 
   if failed:
-    LOGGER.warn(GERRIT_ERR_MESSAGE)
+    LOGGER.warn(
+        'If you see this when running \'git cl upload\', consider '
+        'reporting this to https://crbug.com/881860, and please attach the '
+        'failures in %s.\n', GERRIT_ERR_LOG_FILE)
   if response.status not in accept_statuses:
     if response.status in (401, 403):
       print('Your Gerrit credentials might be misconfigured. Try: \n'
             '  git cl creds-check')
     reason = '%s: %s' % (response.reason, contents)
-    if failed:
-      reason += '\n' + GERRIT_ERR_MESSAGE
     raise GerritError(response.status, reason)
   return StringIO(contents)
 
@@ -982,7 +986,7 @@ def ChangeIdentifier(project, change_number):
 
 
 # TODO(crbug/881860): remove this hack.
-_GERRIT_MIRROR_PREFIXES = ['us1', 'us2', 'us3', 'eu1']
+_GERRIT_MIRROR_PREFIXES = ['us1', 'us2', 'us3']
 assert all(3 == len(p) for p in _GERRIT_MIRROR_PREFIXES)
 
 

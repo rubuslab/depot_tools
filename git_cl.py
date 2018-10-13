@@ -4629,31 +4629,27 @@ def CMDdescription(parser, args):
                     help='Delete any unpublished Gerrit edits for this issue '
                          'without prompting')
 
-  _add_codereview_select_options(parser)
   auth.add_auth_options(parser)
   options, args = parser.parse_args(args)
-  _process_codereview_select_options(parser, options)
 
   target_issue_arg = None
   if len(args) > 0:
-    target_issue_arg = ParseIssueNumberArgument(args[0],
-                                                options.forced_codereview)
+    target_issue_arg = ParseIssueNumberArgument(args[0])
     if not target_issue_arg.valid:
       parser.error('invalid codereview url or CL id')
 
-  auth_config = auth.extract_auth_config_from_options(options)
-
   kwargs = {
-      'auth_config': auth_config,
-      'codereview': options.forced_codereview,
+    'auth_config': auth.extract_auth_config_from_options(options),
+    'codereview': 'gerrit',
   }
   detected_codereview_from_url = False
   if target_issue_arg:
     kwargs['issue'] = target_issue_arg.issue
     kwargs['codereview_host'] = target_issue_arg.hostname
-    if target_issue_arg.codereview and not options.forced_codereview:
+    if target_issue_arg.codereview:
       detected_codereview_from_url = True
-      kwargs['codereview'] = target_issue_arg.codereview
+      if target_issue_arg.codereview == 'rietveld':
+        parser.error('rietveld is not supported')
 
   cl = Changelist(**kwargs)
   if not cl.GetIssue():

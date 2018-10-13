@@ -1890,7 +1890,7 @@ class TestGitCl(TestCase):
     self.mock(git_cl.sys, 'stderr', out)
 
     try:
-      self.assertEqual(git_cl.main(['status', '--issue', '1', '--rietveld']), 0)
+      self.assertEqual(git_cl.main(['status', '--issue', '1', '--gerrit']), 0)
     except SystemExit as ex:
       self.assertEqual(ex.code, 2)
       self.assertRegexpMatches(out.getvalue(), r'--field must be specified')
@@ -1904,13 +1904,8 @@ class TestGitCl(TestCase):
       return 'foobar'
 
     self.mock(git_cl.Changelist, 'GetDescription', assertIssue)
-    self.calls = [
-      ((['git', 'config', 'rietveld.autoupdate'],), ''),
-      ((['git', 'config', 'rietveld.server'],), ''),
-      ((['git', 'config', 'rietveld.server'],), ''),
-    ]
     self.assertEqual(
-      git_cl.main(['status', '--issue', '1', '--rietveld', '--field', 'desc']),
+      git_cl.main(['status', '--issue', '1', '--gerrit', '--field', 'desc']),
       0)
     self.assertEqual(out.getvalue(), 'foobar\n')
 
@@ -1921,13 +1916,8 @@ class TestGitCl(TestCase):
 
     self.mock(git_cl.Changelist, 'GetDescription', assertIssue)
     self.mock(git_cl.Changelist, 'CloseIssue', lambda *_: None)
-    self.calls = [
-      ((['git', 'config', 'rietveld.autoupdate'],), ''),
-      ((['git', 'config', 'rietveld.server'],), ''),
-      ((['git', 'config', 'rietveld.server'],), ''),
-    ]
     self.assertEqual(
-      git_cl.main(['set-close', '--issue', '1', '--rietveld']), 0)
+      git_cl.main(['set-close', '--issue', '1', '--gerrit']), 0)
 
   def test_description(self):
     out = StringIO.StringIO()

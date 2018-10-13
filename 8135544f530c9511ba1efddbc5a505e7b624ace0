@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "eb636afe_ee4a933b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 890,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-13T01:15:13Z",
+      "side": 1,
+      "message": "1. This isn\u0027t CPU intensive work. The number here has nothing to do with # of CPUs.\n2. 10 is to avoid exhausting Gerrit quota. Also, I\u0027ve found that most CLs have \u003c20 cc+reviewers, so I think up to 2 RPCs per upload seems reasonable.",
+      "parentUuid": "d9f79848_b7269995",
+      "range": {
+        "startLine": 890,
+        "startChar": 46,
+        "endLine": 890,
+        "endChar": 48
+      },
+      "revId": "8135544f530c9511ba1efddbc5a505e7b624ace0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d3958986_c76bc0a4",
         "filename": "gerrit_util.py",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "1dfb2bd3_e3437f71",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-13T01:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3958986_c76bc0a4",
+      "range": {
+        "startLine": 893,
+        "startChar": 10,
+        "endLine": 893,
+        "endChar": 18
+      },
+      "revId": "8135544f530c9511ba1efddbc5a505e7b624ace0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "99172f92_7676ef86",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2018-09-25T18:06:04Z",
       "side": 1,
       "message": "Why not use the mock library?",
+      "range": {
+        "startLine": 473,
+        "startChar": 6,
+        "endLine": 473,
+        "endChar": 46
+      },
+      "revId": "8135544f530c9511ba1efddbc5a505e7b624ace0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a9baf81_291c2605",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-13T01:15:13Z",
+      "side": 1,
+      "message": "it\u0027s not available in depot_tools :(",
+      "parentUuid": "99172f92_7676ef86",
       "range": {
         "startLine": 473,
         "startChar": 6,

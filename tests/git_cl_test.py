@@ -65,6 +65,8 @@ class ChangelistMock(object):
   desc = ""
   def __init__(self, **kwargs):
     pass
+  def IsGerrit(self):
+    return True
   def GetIssue(self):
     return 1
   def GetDescription(self, force=False):
@@ -1927,7 +1929,7 @@ class TestGitCl(TestCase):
     self.assertEqual(
       git_cl.main(['set-close', '--issue', '1', '--rietveld']), 0)
 
-  def test_description_gerrit(self):
+  def test_description(self):
     out = StringIO.StringIO()
     self.mock(git_cl.sys, 'stdout', out)
     self.calls = [
@@ -1936,7 +1938,7 @@ class TestGitCl(TestCase):
         ((['git', 'config', 'branch.feature.remote'],), 'origin'),
         ((['git', 'config', 'remote.origin.url'],),
          'https://chromium.googlesource.com/my/repo'),
-        (('GetChangeDetail', 'code.review.org',
+        (('GetChangeDetail', 'chromium-review.googlesource.com',
           'my%2Frepo~123123', ['CURRENT_REVISION', 'CURRENT_COMMIT']),
          {
            'current_revision': 'sha1',
@@ -1946,7 +1948,9 @@ class TestGitCl(TestCase):
          }),
     ]
     self.assertEqual(0, git_cl.main([
-        'description', 'https://code.review.org/123123', '-d', '--gerrit']))
+        'description',
+        'https://chromium-review.googlesource.com/c/my/repo/+/123123',
+        '-d']))
     self.assertEqual('foobar\n', out.getvalue())
 
   def test_description_set_raw(self):
@@ -1991,7 +1995,7 @@ class TestGitCl(TestCase):
         ((['git', 'config', 'rietveld.bug-prefix'],), CERR1),
         ((['git', 'config', 'core.editor'],), 'vi'),
     ]
-    self.assertEqual(0, git_cl.main(['description', '--gerrit']))
+    self.assertEqual(0, git_cl.main(['description']))
 
   def test_description_set_stdin(self):
     out = StringIO.StringIO()

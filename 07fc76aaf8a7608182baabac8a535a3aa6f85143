@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb81ed0a_4dc49838",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-13T00:00:00Z",
+      "side": 1,
+      "message": "i think Dave also wants git push\u0027s IP, but anyhow this is a good CL.",
+      "range": {
+        "startLine": 7,
+        "startChar": 37,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "07fc76aaf8a7608182baabac8a535a3aa6f85143",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

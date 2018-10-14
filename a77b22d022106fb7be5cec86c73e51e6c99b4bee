@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec1db698_d6e01f05",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-14T15:57:54Z",
+      "side": 1,
+      "message": "Change/remove this comment, and maybe add a test where no hint is given, but Gerrit is chosen anyway.",
+      "range": {
+        "startLine": 520,
+        "startChar": 6,
+        "endLine": 520,
+        "endChar": 64
+      },
+      "revId": "a77b22d022106fb7be5cec86c73e51e6c99b4bee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

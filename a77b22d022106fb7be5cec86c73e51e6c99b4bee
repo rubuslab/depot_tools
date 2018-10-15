@@ -22,6 +22,30 @@
       "revId": "a77b22d022106fb7be5cec86c73e51e6c99b4bee",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b256204_b9569918",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2507,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-15T03:11:52Z",
+      "side": 0,
+      "message": "before this test used -m \u003cmaster\u003e.\ntest below used -B \u003cbucket\u003e.\n\nSince, I\u0027m deleting below test, and master is deprecated, I\u0027ve moved -B here.",
+      "parentUuid": "ce79e4f7_e449a387",
+      "range": {
+        "startLine": 2507,
+        "startChar": 33,
+        "endLine": 2507,
+        "endChar": 58
+      },
+      "revId": "a77b22d022106fb7be5cec86c73e51e6c99b4bee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

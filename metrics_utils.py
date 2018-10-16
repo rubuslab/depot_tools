@@ -51,6 +51,15 @@ KNOWN_PROJECT_URLS = {
   'https://webrtc.googlesource.com/src',
 }
 
+KNOWN_GERRIT_HOSTS = {
+  'chrome-internal-review.googlesource.com',
+  'chromium-review.googlesource.com',
+  'dart-review.googlesource.com',
+  'pdfium-review.googlesource.com',
+  'skia-review.googlesource.com',
+  'webrtc-review.googlesource.com',
+}
+
 
 def get_python_version():
   """Return the python version in the major.minor.micro format."""

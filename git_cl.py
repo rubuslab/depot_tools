@@ -29,6 +29,7 @@ import stat
 import sys
 import tempfile
 import textwrap
+import time
 import urllib
 import urllib2
 import urlparse
@@ -3046,11 +3047,13 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
             GERRIT_ERR_LOGGER.info(line)
 
       filter_fn = FilterHeaders()
+      before_push = time.time()
       push_stdout = gclient_utils.CheckCallAndFilter(
           ['git', 'push', self.GetRemoteUrl(), refspec],
           print_stdout=False,
           filter_fn=filter_fn,
           env=env)
+      metrics.collector.add('git_push_time_s', time.time() - before_push)
     except subprocess2.CalledProcessError:
       DieWithError('Failed to create a change. Please examine output above '
                    'for the reason of the failure.\n'

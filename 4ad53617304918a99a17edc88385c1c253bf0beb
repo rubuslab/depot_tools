@@ -22,6 +22,30 @@
       "revId": "4ad53617304918a99a17edc88385c1c253bf0beb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a978cade_4b083f46",
+        "filename": "upload_metrics.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-17T01:27:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0086edfe_2a1daf94",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 11
+      },
+      "revId": "4ad53617304918a99a17edc88385c1c253bf0beb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

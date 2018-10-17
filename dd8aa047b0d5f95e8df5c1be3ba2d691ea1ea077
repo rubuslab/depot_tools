@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40eb5db5_86fc9232",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-17T00:14:35Z",
+      "side": 1,
+      "message": "^^^",
+      "revId": "dd8aa047b0d5f95e8df5c1be3ba2d691ea1ea077",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25636eb8_e419c192",
+        "filename": "metrics_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-17T00:14:35Z",
+      "side": 1,
+      "message": "you also need 4 other ones:\n\u0027us1-mirror-...\u0027\nus2\nus3\neu1",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 37
+      },
+      "revId": "dd8aa047b0d5f95e8df5c1be3ba2d691ea1ea077",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

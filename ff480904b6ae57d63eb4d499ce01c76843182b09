@@ -22,6 +22,70 @@
       "revId": "ff480904b6ae57d63eb4d499ce01c76843182b09",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be190d22_e9126d62",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-17T01:50:45Z",
+      "side": 1,
+      "message": "Let\u0027s keep as stated and see if we get any complaints. I prefer current mode to what you propose in a comment,\nbecause I don\u0027t always see output of my commands when I ran many of them in a script, \nso I can easily run smth 10 times and yet miss the notice.\n\nMy guess is that re-running opt-in command, which stops the notice (right?) will be easier than writing a bug report,\nso this will stay as is :)",
+      "parentUuid": "3660d1a3_e7a08c2f",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 23
+      },
+      "revId": "ff480904b6ae57d63eb4d499ce01c76843182b09",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "709b9ad1_5ec6f32e",
+        "filename": "metrics_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-17T01:50:45Z",
+      "side": 1,
+      "message": "better make it a dict version number -\u003e changelist.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 13
+      },
+      "revId": "ff480904b6ae57d63eb4d499ce01c76843182b09",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f38b176e_5bb51f52",
+        "filename": "tests/metrics_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-17T01:50:45Z",
+      "side": 1,
+      "message": "derp. mock is already here!",
+      "revId": "ff480904b6ae57d63eb4d499ce01c76843182b09",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

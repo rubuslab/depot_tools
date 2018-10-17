@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3660d1a3_e7a08c2f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-17T01:17:07Z",
+      "side": 1,
+      "message": "Maybe if the user had already opted in, we can go back to not displaying anything?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 23
+      },
+      "revId": "ff480904b6ae57d63eb4d499ce01c76843182b09",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

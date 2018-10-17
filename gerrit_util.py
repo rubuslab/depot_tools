@@ -30,6 +30,8 @@ from multiprocessing.pool import ThreadPool
 
 import auth
 import gclient_utils
+import metrics
+import metrics_utils
 import subprocess2
 from third_party import httplib2
 
@@ -425,7 +427,12 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
   sleep_time = 1.5
   failed = False
   for idx in range(TRY_LIMIT):
+    before_request = time.time()
     response, contents = conn.request(**conn.req_params)
+    request_time = time.time() - before_request
+    if conn.req_host in metrics_utils.KNOWN_GERRIT_HOSTS:
+      metrics.collector.add_list('gerrit_rpc_times', request_time)
+      metrics.collector.add_list('gerrit_rpc_statuses', response.status)
 
     # Check if this is an authentication issue.
     www_authenticate = response.get('www-authenticate')

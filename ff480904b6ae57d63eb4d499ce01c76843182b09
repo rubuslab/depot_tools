@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "d1f6e427_ae22c2d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-17T17:38:40Z",
+      "side": 1,
+      "message": "Ack.\nAnd yeah, re-running the opt in command stops the notice :)",
+      "parentUuid": "be190d22_e9126d62",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 23
+      },
+      "revId": "ff480904b6ae57d63eb4d499ce01c76843182b09",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "709b9ad1_5ec6f32e",
         "filename": "metrics_utils.py",
         "patchSetId": 5
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "3db9cfbe_48e1ce48",
+        "filename": "metrics_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-17T17:38:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "709b9ad1_5ec6f32e",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 13
+      },
+      "revId": "ff480904b6ae57d63eb4d499ce01c76843182b09",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f38b176e_5bb51f52",
         "filename": "tests/metrics_test.py",
         "patchSetId": 5
@@ -83,6 +131,24 @@
       "writtenOn": "2018-10-17T01:50:45Z",
       "side": 1,
       "message": "derp. mock is already here!",
+      "revId": "ff480904b6ae57d63eb4d499ce01c76843182b09",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6fbe69f0_8b388b25",
+        "filename": "tests/metrics_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-17T17:38:40Z",
+      "side": 1,
+      "message": "Yeah, I knew I had used it somewhere in depot_tools.",
+      "parentUuid": "f38b176e_5bb51f52",
       "revId": "ff480904b6ae57d63eb4d499ce01c76843182b09",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

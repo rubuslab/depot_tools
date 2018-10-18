@@ -16,6 +16,24 @@
       "revId": "01b3857e99b09eba564cccd599d9860492e5a400",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59aa1bbf_277dd228",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-10-18T17:42:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60294cf4_4caa8ed4",
+      "revId": "01b3857e99b09eba564cccd599d9860492e5a400",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

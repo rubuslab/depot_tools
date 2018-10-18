@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd119c58_f87db19f",
+        "filename": "gerrit_util.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-18T22:02:36Z",
+      "side": 1,
+      "message": "I think we need more information to make these metrics useful. If we don\u0027t know the path we don\u0027t know exactly which API we\u0027re hitting and performance will be different per command I\u0027m sure. It might, similar to the higher level metrics be good to know what flags/options/keys were passing even if we don\u0027t know their values?\n\nIf we go to that level of information then yes, lets reprompt, or at least ask more widely if that is necessary.",
+      "revId": "dfe30573cf66c4e269d1a1b9468a8fe9d2a5eb75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b339ea4b_693663d4",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3056,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-18T22:02:36Z",
+      "side": 1,
+      "message": "We should think more about the naming for these metrics to help us identify them later. How do we distinguish this from any other git push done by depot tools? Or in BigQuery will this timing be associated with the git cl command by the metrics collector?",
+      "revId": "dfe30573cf66c4e269d1a1b9468a8fe9d2a5eb75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

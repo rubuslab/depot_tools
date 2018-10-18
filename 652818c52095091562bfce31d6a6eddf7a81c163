@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15c13f51_ba3d4be6",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1954,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-18T00:36:59Z",
+      "side": 1,
+      "message": "Copy comment from below:\n\n  # No checks for Rietveld because we are deprecating Rietveld.",
+      "range": {
+        "startLine": 1954,
+        "startChar": 4,
+        "endLine": 1954,
+        "endChar": 8
+      },
+      "revId": "652818c52095091562bfce31d6a6eddf7a81c163",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "001067d8_4bcdf429",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1989,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-18T00:36:59Z",
+      "side": 1,
+      "message": "nit: spaces",
+      "range": {
+        "startLine": 1989,
+        "startChar": 0,
+        "endLine": 1989,
+        "endChar": 1
+      },
+      "revId": "652818c52095091562bfce31d6a6eddf7a81c163",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

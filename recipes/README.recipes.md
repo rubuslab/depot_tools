@@ -52,12 +52,12 @@ Recipe module to ensure a checkout is consistent on a bot.
 
 Wrapper for easy calling of bot_update.
 
-&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#424)(self, bot_update_step):**
+&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#427)(self, bot_update_step):**
 
 Deapplies a patch, taking care of DEPS and solution revisions properly.
     
 
-&mdash; **def [ensure\_checkout](/recipes/recipe_modules/bot_update/api.py#73)(self, gclient_config=None, suffix=None, patch=True, update_presentation=True, patch_root=None, with_branch_heads=False, with_tags=False, refs=None, patch_oauth2=None, oauth2_json=None, use_site_config_creds=None, clobber=False, root_solution_revision=None, rietveld=None, issue=None, patchset=None, gerrit_no_reset=False, gerrit_no_rebase_patch_ref=False, disable_syntax_validation=False, manifest_name=None, patch_refs=None, \*\*kwargs):**
+&mdash; **def [ensure\_checkout](/recipes/recipe_modules/bot_update/api.py#73)(self, gclient_config=None, suffix=None, patch=True, update_presentation=True, patch_root=None, with_branch_heads=False, with_tags=False, refs=None, patch_oauth2=None, oauth2_json=None, use_site_config_creds=None, clobber=False, root_solution_revision=None, rietveld=None, issue=None, patchset=None, gerrit_no_reset=False, gerrit_no_rebase_patch_ref=False, disable_syntax_validation=False, manifest_name=None, patch_refs=None, ignore_input_commit=False, \*\*kwargs):**
 
 Args:
   gclient_config: The gclient configuration to use when running bot_update.
@@ -68,7 +68,7 @@ Args:
   manifest_name: The name of the manifest to upload to LogDog.  This must
     be unique for the whole build.
 
-&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#401)(self, project_name, gclient_config=None):**
+&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#404)(self, project_name, gclient_config=None):**
 
 Returns all property names used for storing the checked-out revision of
 a given project.
@@ -869,7 +869,7 @@ Available only to Google-run bots.
 
 API for using Windows SDK distributed via CIPD.
 
-&emsp; **@contextmanager**<br>&mdash; **def [\_\_call\_\_](/recipes/recipe_modules/windows_sdk/api.py#23)(self, path=None, version=None, enabled=True):**
+&emsp; **@contextmanager**<br>&mdash; **def [\_\_call\_\_](/recipes/recipe_modules/windows_sdk/api.py#23)(self, path=None, version=None, enabled=True, target_arch='x64'):**
 
 Setups the SDK environment when enabled.
 
@@ -879,6 +879,7 @@ Args:
   version (str): CIPD version of the SDK
     (default is set via $infra/windows_sdk.version property)
   enabled (bool): Whether the SDK should be used or not.
+  target_arch (str): 'x86' or 'x64'.
 
 Raises:
     StepFailure or InfraFailure.

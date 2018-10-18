@@ -652,7 +652,7 @@ class GitWrapper(SCMWrapper):
         raise gclient_utils.Error('Invalid Upstream: %s' % upstream_branch)
 
     self._SetFetchConfig(options)
-    self._Fetch(options, prune=options.force)
+    self._Fetch(options, prune=options.force, refspec=revision)
 
     if not scm.GIT.IsValidRevision(self.checkout_path, revision, sha_only=True):
       # Update the remotes first so we have all the refs.
@@ -1280,6 +1280,16 @@ class GitWrapper(SCMWrapper):
 
   def _Fetch(self, options, remote=None, prune=False, quiet=False,
              refspec=None):
+    if refspec:
+      # Check whether revision specified by refspec exists or not.
+      # This is to prune unnecessary network communication.
+      try:
+        if 'commit' == self._Capture(['cat-file', '-t', refspec]):
+          self.Print('Commit exists, do not fetch', refspec)
+          return
+      except subprocess2.CalledProcessError:
+        pass
+
     cfg = gclient_utils.DefaultIndexPackConfig(self.url)
     # When a mirror is configured, it fetches only the refs/heads, and possibly
     # the refs/branch-heads and refs/tags, but not the refs/changes. So, if

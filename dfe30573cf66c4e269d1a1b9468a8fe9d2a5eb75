@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0695b502_6ee09002",
+        "filename": "gerrit_util.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-19T00:08:41Z",
+      "side": 1,
+      "message": "Let\u0027s start by just collecting the times and status, we can add to this later.\n\nLet\u0027s also reprompt the users for permission, and update the README to include those things, and others we feel is reasonable to ask.",
+      "parentUuid": "bd119c58_f87db19f",
+      "revId": "dfe30573cf66c4e269d1a1b9468a8fe9d2a5eb75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b339ea4b_693663d4",
         "filename": "git_cl.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2018-10-18T22:02:36Z",
       "side": 1,
       "message": "We should think more about the naming for these metrics to help us identify them later. How do we distinguish this from any other git push done by depot tools? Or in BigQuery will this timing be associated with the git cl command by the metrics collector?",
+      "revId": "dfe30573cf66c4e269d1a1b9468a8fe9d2a5eb75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82e8e0e8_02caa200",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3056,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-19T00:08:41Z",
+      "side": 1,
+      "message": "Yeah, all the data collected while running a single command is uploaded together.",
+      "parentUuid": "b339ea4b_693663d4",
       "revId": "dfe30573cf66c4e269d1a1b9468a8fe9d2a5eb75",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

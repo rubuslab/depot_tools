@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "687338c4_1d108fe6",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1064,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-10-19T16:25:11Z",
+      "side": 0,
+      "message": "based on the feedback, i think this should stay",
+      "range": {
+        "startLine": 1064,
+        "startChar": 43,
+        "endLine": 1064,
+        "endChar": 61
+      },
+      "revId": "2fddb95698211db1373ebe2b16091a54eac51c9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

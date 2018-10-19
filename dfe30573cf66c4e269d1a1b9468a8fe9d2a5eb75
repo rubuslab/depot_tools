@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "a953b697_581e716f",
+        "filename": "gerrit_util.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-19T19:10:50Z",
+      "side": 1,
+      "message": "When there are multiple requests as part of a single git cl upload, how can we correlate the time, status, etc. for a single request? Is there a way to correlate a time, status, and later path/host together beyond just name, or do we need some way to uniquely name these?",
+      "revId": "dfe30573cf66c4e269d1a1b9468a8fe9d2a5eb75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b339ea4b_693663d4",
         "filename": "git_cl.py",
         "patchSetId": 5

@@ -47,6 +47,20 @@ The metrics we're collecting are:
 - What features are you using in your DEPS and .gclient files. For example:
   - Are you setting `use\_relative\_paths=True`?
   - Are you using `recursedeps`?
+- Information about the Gerrit and git http requests that we make:
+  - What host are we making the request to?
+    Only collected for well known repos like chromium-review.googlesource.com.
+  - What path did we access on the server?
+    We map the path to an enum to make sure we're not collecting PII.
+    i.e. we report 'changes/' instead of 'changes/12345'
+  - What arguments were used on the request?
+    We collect only known argument names, but not their values.
+  - How long did the execution take?
+  - What was the response code?
+  - What HTTP method was used? (i.e. GET, PUT, POST, etc.)
+
+The list of known strings we collect can be found at
+https://chromium.googlesource.com/infra/infra/+/master/go/src/infra/appengine/depot_tools_metrics/metrics/metrics_schema.json#45
 
 ## Why am I seeing this message *again*?
 

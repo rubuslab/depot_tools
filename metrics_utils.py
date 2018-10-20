@@ -15,7 +15,7 @@ from third_party import colorama
 # Current version of metrics recording.
 # When we add new metrics, the version number will be increased, we display the
 # user what has changed, and ask the user to agree again.
-CURRENT_VERSION = 0
+CURRENT_VERSION = 1
 
 APP_URL = 'https://cit-cli-metrics.appspot.com'
 
@@ -44,6 +44,21 @@ NOTICE_FOOTER = (
 CHANGE_NOTICE = {
   # No changes for version 0
   0: '',
+  1: ('* We collect information about the http requests    *\n'
+      '* the tools make:                                   *\n'
+      '*   - Request time                                  *\n'
+      '*   - HTTP method used (i.e. POST, GET, etc.)       *\n'
+      '*   - What host (e.g. chromium-review, etc.)        *\n'
+      '*   - What resorce (e.g. changes), change numbers,  *\n'
+      '*     revisions, branches and project names are     *\n'
+      '*     stripped.                                     *\n'
+      '*   - What arguments (only names) were used?        *\n'
+      '*     e.g. "ALL_REVISIONS" for Gerrit requests.     *\n'
+      '*                                                   *\n'
+      '* We only collect known strings to make sure we     *\n'
+      '* don\'t record PII.                                *\n'
+      '*                                                   *\n'
+      '* See https://bit.ly/2ufRS4p for more information.  *'
 }
 
 

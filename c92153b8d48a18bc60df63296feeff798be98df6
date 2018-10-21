@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a198dc4_35f09829",
+        "filename": "metrics.README.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:37:00Z",
+      "side": 1,
+      "message": "nit: atm, only gerrit :)",
+      "range": {
+        "startLine": 50,
+        "startChar": 35,
+        "endLine": 50,
+        "endChar": 38
+      },
+      "revId": "c92153b8d48a18bc60df63296feeff798be98df6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f92edc4a_788e6962",
+        "filename": "metrics_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:37:00Z",
+      "side": 1,
+      "message": ".\n(for consistency)",
+      "range": {
+        "startLine": 57,
+        "startChar": 50,
+        "endLine": 57,
+        "endChar": 52
+      },
+      "revId": "c92153b8d48a18bc60df63296feeff798be98df6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

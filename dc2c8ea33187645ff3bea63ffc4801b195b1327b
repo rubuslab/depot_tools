@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1407cb30_1a8267c6",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:40:56Z",
+      "side": 1,
+      "message": "tabs here and below",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 5
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc98fd0b_18ef4e3e",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:40:56Z",
+      "side": 1,
+      "message": "since we\u0027ve changed to project~number, this needs more complexity. I think easiest is \u0027no slash or \u0027?\u0027 or \u0027#\u0027",
+      "range": {
+        "startLine": 81,
+        "startChar": 33,
+        "endLine": 81,
+        "endChar": 40
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f3f8d0f_d594e8f7",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:40:56Z",
+      "side": 1,
+      "message": "from",
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a722c7ee_35d32c03",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:40:56Z",
+      "side": 1,
+      "message": "there is no connection passed to this method. s/connection/request?",
+      "range": {
+        "startLine": 141,
+        "startChar": 50,
+        "endLine": 141,
+        "endChar": 60
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b098c60_54b43f38",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:40:56Z",
+      "side": 1,
+      "message": "del",
+      "range": {
+        "startLine": 144,
+        "startChar": 24,
+        "endLine": 144,
+        "endChar": 25
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8cac637d_6bec9812",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:40:56Z",
+      "side": 1,
+      "message": "👍",
+      "range": {
+        "startLine": 147,
+        "startChar": 51,
+        "endLine": 150,
+        "endChar": 25
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d72b7dd5_2863e7fc",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:40:56Z",
+      "side": 1,
+      "message": "and then break, perhaps?",
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f564616_71326ee1",
+        "filename": "tests/metrics_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-21T06:40:56Z",
+      "side": 1,
+      "message": "no test checks that status and duration are reported. Consider adding one.",
+      "range": {
+        "startLine": 437,
+        "startChar": 70,
+        "endLine": 437,
+        "endChar": 74
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "787b5a21_193549a0",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-22T19:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1407cb30_1a8267c6",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 5
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fc98fd0b_18ef4e3e",
         "filename": "metrics_utils.py",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16aa095f_786927af",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-22T19:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc98fd0b_18ef4e3e",
+      "range": {
+        "startLine": 81,
+        "startChar": 33,
+        "endLine": 81,
+        "endChar": 40
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -88,6 +136,48 @@
     },
     {
       "key": {
+        "uuid": "9adf9ce0_9f8c4524",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-22T19:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f3f8d0f_d594e8f7",
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51d83cc0_37512467",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-22T19:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a722c7ee_35d32c03",
+      "range": {
+        "startLine": 141,
+        "startChar": 50,
+        "endLine": 141,
+        "endChar": 60
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b098c60_54b43f38",
         "filename": "metrics_utils.py",
         "patchSetId": 3
@@ -108,6 +198,30 @@
       "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50f02684_61c0885e",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-22T19:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b098c60_54b43f38",
+      "range": {
+        "startLine": 144,
+        "startChar": 24,
+        "endLine": 144,
+        "endChar": 25
+      },
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -148,6 +262,24 @@
       "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9585d68a_3080252f",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-22T19:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d72b7dd5_2863e7fc",
+      "revId": "dc2c8ea33187645ff3bea63ffc4801b195b1327b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

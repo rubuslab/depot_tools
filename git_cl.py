@@ -88,6 +88,8 @@ YAPF_CONFIG_FILENAME = '.style.yapf'
 # Buildbucket master name prefix.
 MASTER_PREFIX = 'master.'
 
+LOGGER = logging.getLogger('git_cl')
+
 # TODO(crbug.com/881860): Remove
 # Log gerrit failures to a gerrit_util.GERRIT_ERR_LOG_FILE.
 GERRIT_ERR_LOGGER = logging.getLogger('GerritErrorLogs')
@@ -132,7 +134,7 @@ def RunCommand(args, error_ok=False, error_message=None, shell=False, **kwargs):
   try:
     return subprocess2.check_output(args, shell=shell, **kwargs)
   except subprocess2.CalledProcessError as e:
-    logging.debug('Failed running %s', args)
+    LOGGER.debug('Failed running %s', args)
     if not error_ok:
       DieWithError(
           'Command "%s" failed.\n%s' % (
@@ -158,7 +160,7 @@ def RunGitWithCode(args, suppress_stderr=False):
                                              stderr=stderr)
     return code, out
   except subprocess2.CalledProcessError as e:
-    logging.debug('Failed running %s', ['git'] + args)
+    LOGGER.debug('Failed running %s', ['git'] + args)
     return e.returncode, e.stdout
 
 
@@ -370,7 +372,7 @@ def _buildbucket_retry(operation_name, http, *args, **kwargs):
       raise httplib2.HttpLib2Error(content)
 
     # status >= 500 means transient failures.
-    logging.debug('Transient errors when %s. Will retry.', operation_name)
+    LOGGER.debug('Transient errors when %s. Will retry.', operation_name)
     time_sleep(0.5 + 1.5*try_count)
     try_count += 1
   assert False, 'unreachable'
@@ -1322,11 +1324,11 @@ class Changelist(object):
           remote, = remotes
         elif 'origin' in remotes:
           remote = 'origin'
-          logging.warn('Could not determine which remote this change is '
-                       'associated with, so defaulting to "%s".' % self._remote)
+          LOGGER.warn('Could not determine which remote this change is '
+                      'associated with, so defaulting to "%s".' % self._remote)
         else:
-          logging.warn('Could not determine which remote this change is '
-                       'associated with.')
+          LOGGER.warn('Could not determine which remote this change is '
+                      'associated with.')
         branch = 'HEAD'
       if branch.startswith('refs/remotes'):
         self._remote = (remote, branch)
@@ -2183,7 +2185,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     """Returns Gerrit project name based on remote git URL."""
     remote_url = self.GetRemoteUrl()
     if remote_url is None:
-      logging.warn('can\'t detect Gerrit project.')
+      LOGGER.warn('can\'t detect Gerrit project.')
       return None
     project = urlparse.urlparse(remote_url).path.strip('/')
     if project.endswith('.git'):
@@ -2298,8 +2300,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     cookies_user = cookies_auth.get_auth_email(self._GetGerritHost())
     if self.GetIssueOwner() == cookies_user:
       return
-    logging.debug('change %s owner is %s, cookies user is %s',
-                  self.GetIssue(), self.GetIssueOwner(), cookies_user)
+    LOGGER.debug('change %s owner is %s, cookies user is %s',
+                 self.GetIssue(), self.GetIssueOwner(), cookies_user)
     # Maybe user has linked accounts or something like that,
     # so ask what Gerrit thinks of this user.
     details = gerrit_util.GetAccountDetails(self._GetGerritHost(), 'self')
@@ -2874,8 +2876,9 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       cc.extend(change_desc.get_cced())
     valid_accounts = gerrit_util.ValidAccounts(
         self._GetGerritHost(), reviewers + cc)
-    logging.debug('accounts %s are valid, %s invalid', sorted(valid_accounts),
-                   set(reviewers + cc).difference(set(valid_accounts)))
+    LOGGER.debug('accounts %s are known, %s invalid or unknown',
+                 sorted(valid_accounts),
+                 set(reviewers + cc).difference(set(valid_accounts)))
 
     # Extra options that can be specified at push time. Doc:
     # https://gerrit-review.googlesource.com/Documentation/user-upload.html
@@ -4100,7 +4103,7 @@ def get_cl_statuses(changes, fine_grained, max_processes=None):
     return
 
   # First, sort out authentication issues.
-  logging.debug('ensuring credentials exist')
+  LOGGER.debug('ensuring credentials exist')
   for cl in changes:
     cl.EnsureAuthenticated(force=False, refresh=True)
 
@@ -4115,7 +4118,7 @@ def get_cl_statuses(changes, fine_grained, max_processes=None):
   threads_count = len(changes)
   if max_processes:
     threads_count = max(1, min(threads_count, max_processes))
-  logging.debug('querying %d CLs using %d threads', len(changes), threads_count)
+  LOGGER.debug('querying %d CLs using %d threads', len(changes), threads_count)
 
   pool = ThreadPool(threads_count)
   fetched_cls = set()
@@ -4620,8 +4623,8 @@ def CMDdescription(parser, args):
     DieWithError('This branch has no associated changelist.')
 
   if detected_codereview_from_url:
-    logging.info('canonical issue/change URL: %s (type: %s)\n',
-                 cl.GetIssueURL(), target_issue_arg.codereview)
+    LOGGER.info('canonical issue/change URL: %s (type: %s)\n',
+                cl.GetIssueURL(), target_issue_arg.codereview)
 
   description = ChangeDescription(cl.GetDescription())
 
@@ -5885,7 +5888,10 @@ class OptionParser(optparse.OptionParser):
         level=levels[min(options.verbose, len(levels) - 1)],
         format='[%(levelname).1s%(asctime)s %(process)d %(thread)d '
                '%(filename)s] %(message)s')
-
+    LOGGER.debug('this is debug')
+    LOGGER.info('info')
+    LOGGER.warn('warn')
+    LOGGER.error('error %d', levels[min(options.verbose, len(levels) - 1)])
     return options, args
 
 

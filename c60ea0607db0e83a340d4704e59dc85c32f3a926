@@ -22,6 +22,30 @@
       "revId": "c60ea0607db0e83a340d4704e59dc85c32f3a926",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47e941f5_25b5af49",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5880,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-10-23T20:43:57Z",
+      "side": 1,
+      "message": "i can\u0027t, because logging.basicConfig is called after number of \"-v\" flags is known.",
+      "parentUuid": "174b8668_dcf454a7",
+      "range": {
+        "startLine": 5880,
+        "startChar": 22,
+        "endLine": 5880,
+        "endChar": 47
+      },
+      "revId": "c60ea0607db0e83a340d4704e59dc85c32f3a926",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

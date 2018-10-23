@@ -34,6 +34,7 @@ The metrics we're collecting are:
 - A timestamp, with a week resolution.
 - The age of your depot\_tools checkout, with a week resolution.
 - Your version of Python (in the format major.minor.micro).
+- Your version of Git (in the format major.minor.micro).
 - The OS of your machine (i.e. win, linux or mac).
 - The arch of your machine (e.g. x64, arm, etc).
 - The command that you ran (e.g. `gclient sync`).
@@ -47,6 +48,26 @@ The metrics we're collecting are:
 - What features are you using in your DEPS and .gclient files. For example:
   - Are you setting `use\_relative\_paths=True`?
   - Are you using `recursedeps`?
+- Information about the http requests that depot_tools makes:
+  - What host are we making the request to?
+    Only collected for well known repos like chromium-review.googlesource.com.
+  - What path did we access on the server?
+    We map the path to an enum to make sure we're not collecting PII.
+    i.e. we report 'changes/' instead of 'changes/12345'
+  - What arguments were used on the request?
+    We collect only known argument names, but not their values.
+  - How long did the execution take?
+  - What was the response code?
+  - What HTTP method was used? (i.e. GET, PUT, POST, etc.)
+- Information about the commands that depot_tools runs:
+  - What command was executed? (i.e. git or cipd)
+  - How long did the command execute for?
+  - What argument names (but not values) were passed to the program.
+    (e.g. --checkout but not the branch name).
+  - What was the exit code?
+
+The list of known strings we collect can be found at
+https://chromium.googlesource.com/infra/infra/+/master/go/src/infra/appengine/depot_tools_metrics/metrics/metrics_schema.json#45
 
 ## Why am I seeing this message *again*?
 

@@ -17,7 +17,7 @@ from third_party import colorama
 # Current version of metrics recording.
 # When we add new metrics, the version number will be increased, we display the
 # user what has changed, and ask the user to agree again.
-CURRENT_VERSION = 0
+CURRENT_VERSION = 1
 
 APP_URL = 'https://cit-cli-metrics.appspot.com'
 
@@ -34,7 +34,9 @@ NOTICE_COLLECTION_HEADER = (
 )
 NOTICE_VERSION_CHANGE_HEADER = (
   '*****************************************************\n'
-  '*       WE ARE COLLECTING ADDITIONAL METRICS        *'
+  '*       WE ARE COLLECTING ADDITIONAL METRICS        *\n'
+  '*                                                   *\n'
+  '* Please review the changes and opt-in again.       *'
 )
 NOTICE_FOOTER = (
   '* For more information, and for how to disable this *\n'
@@ -46,6 +48,22 @@ NOTICE_FOOTER = (
 CHANGE_NOTICE = {
   # No changes for version 0
   0: '',
+  1: ('* We want to collect the Git version.               *\n'
+      '* We want to collect information about the HTTP     *\n'
+      '* requests that depot_tools makes:                  *\n'
+      '*   - Request time                                  *\n'
+      '*   - HTTP method used (i.e. POST, GET, etc.)       *\n'
+      '*   - What host (e.g. chromium-review, etc.)        *\n'
+      '*   - What resorce (e.g. changes), change numbers,  *\n'
+      '*     revisions, branches and project names are     *\n'
+      '*     stripped.                                     *\n'
+      '*   - What arguments (only names) were used?        *\n'
+      '*     e.g. "ALL_REVISIONS" for Gerrit requests.     *\n'
+      '*                                                   *\n'
+      '* We only collect known strings to make sure we     *\n'
+      '* don\'t record PII.                                 *\n'
+      '*                                                   *\n'
+      '* See https://bit.ly/2ufRS4p for more information.  *')
 }
 
 
@@ -128,10 +146,26 @@ KNOWN_HTTP_ARGS = {
   'LABELS',
 }
 
+GIT_VERSION_RE = re.compile(
+  r'git version (\d)\.(\d{0,2})\.(\d{0,2})'
+)
+
 
 def get_python_version():
   """Return the python version in the major.minor.micro format."""
   return '{v.major}.{v.minor}.{v.micro}'.format(v=sys.version_info)
+
+
+def get_git_version():
+  """Return the Git version in the major.minor.micro format."""
+  p = subprocess2.Popen(
+      ['git', '--version'],
+      stdout=subprocess2.PIPE, stderr=subprocess2.PIPE)
+  stdout, _ = p.communicate()
+  match = GIT_VERSION_RE.match(stdout)
+  if not match:
+    return None
+  return '%s.%s.%s' % match.groups()
 
 
 def return_code_from_exception(exception):

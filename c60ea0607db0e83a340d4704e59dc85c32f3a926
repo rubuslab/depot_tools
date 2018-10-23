@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "174b8668_dcf454a7",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5880,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-23T20:39:39Z",
+      "side": 1,
+      "message": "Maybe move logging initialization before arts parsing?",
+      "range": {
+        "startLine": 5880,
+        "startChar": 22,
+        "endLine": 5880,
+        "endChar": 47
+      },
+      "revId": "c60ea0607db0e83a340d4704e59dc85c32f3a926",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

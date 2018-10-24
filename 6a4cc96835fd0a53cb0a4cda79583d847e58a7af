@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8126a91f_40f95bea",
+        "filename": "metrics.README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-24T18:27:09Z",
+      "side": 1,
+      "message": "Done. I added a section for git and CIPD commands that depot tools runs.",
+      "parentUuid": "bca52849_4c2bad52",
+      "revId": "6a4cc96835fd0a53cb0a4cda79583d847e58a7af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0216e874_f7959e6e",
         "filename": "metrics.README.md",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2018-10-24T15:40:54Z",
       "side": 1,
       "message": "I wonder if we should qualify this list with something like \"For example\" and be really explicit with what we don\u0027t collect. I\u0027d like to avoid updating the README every time we find another good piece of innocuous, anonymous data to collect. For example, to debug slow git push times I suspect we\u0027ll want to collect data on how far behind master the uploaded commit is, because that seems to anecdotally at least correlate with slowness.",
+      "revId": "6a4cc96835fd0a53cb0a4cda79583d847e58a7af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9a89bd3_f7cdd2cb",
+        "filename": "metrics.README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-24T18:27:09Z",
+      "side": 1,
+      "message": "I make an example with chromium-review in the line below.\nAlso, we already can collect the age of the checkout the developers are working on.",
+      "parentUuid": "0216e874_f7959e6e",
       "revId": "6a4cc96835fd0a53cb0a4cda79583d847e58a7af",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

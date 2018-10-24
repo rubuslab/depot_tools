@@ -22,6 +22,30 @@
       "revId": "ff268574167b89fe51c60e804cd338d469f4aa25",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58a21323_79cb64c0",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5413,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-10-24T17:36:35Z",
+      "side": 1,
+      "message": "I just used same name as in stackoverflow snippet, but will rename for better clarity.",
+      "parentUuid": "1e3d31f4_2b992014",
+      "range": {
+        "startLine": 5413,
+        "startChar": 2,
+        "endLine": 5413,
+        "endChar": 8
+      },
+      "revId": "ff268574167b89fe51c60e804cd338d469f4aa25",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

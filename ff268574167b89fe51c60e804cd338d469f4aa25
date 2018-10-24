@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e3d31f4_2b992014",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5413,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-10-24T17:16:37Z",
+      "side": 1,
+      "message": "typo?",
+      "range": {
+        "startLine": 5413,
+        "startChar": 2,
+        "endLine": 5413,
+        "endChar": 8
+      },
+      "revId": "ff268574167b89fe51c60e804cd338d469f4aa25",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

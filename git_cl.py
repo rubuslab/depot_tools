@@ -2383,7 +2383,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     data = self._GetChangeDetail(['CURRENT_REVISION', 'CURRENT_COMMIT'],
                                  no_cache=force)
     current_rev = data['current_revision']
-    return data['revisions'][current_rev]['commit']['message']
+    return data['revisions'][current_rev]['commit']['message'].encode('utf-8')
 
   def UpdateDescriptionRemote(self, description, force=False):
     if gerrit_util.HasPendingChangeEdit(

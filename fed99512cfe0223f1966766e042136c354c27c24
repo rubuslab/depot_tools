@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "73cfd930_08a98a75",
+        "filename": "metrics.README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-30T17:40:54Z",
+      "side": 1,
+      "message": "Dah, you\u0027re right on the fetch. :(\n\nI hear your point on open ended. But most if not all official privacy policies are open ended. See Google\u0027s as an example: https://policies.google.com/privacy?hl\u003den\u0026gl\u003dZZ#infocollect. The idea of open ended isn\u0027t to give us a loop hole to collect inappropriate data. It\u0027s too properly define broadly what is and isn\u0027t okay for us to collect. At Google scale I\u0027m sure an exhaustive list would result in many, many privacy updates which is a horrible user experience when the data being collected falls into neat categories that can be broadly okayed. I\u0027m theorizing, but I expect it also leads to information overload where the user stops paying attention to the minutiae of the list and could miss something bad. \n\nYou\u0027ll see the Google policy full of phrases like \"This information includes things like\", \"The activity information we collect may include:\",  \"we may collect telephony log information like your phone number, ...\" \n\nNow we\u0027re a much smaller group than Google and what we want to collect will change less frequently than the company as a whole. So we could possibly get away with being exhaustive. But I actually think it helps usability to have a clear description of the classes of information we collect. That\u0027s probably what the user wants to understand more than making a decision on each individual item.",
+      "parentUuid": "b01dc668_1d539ffb",
+      "revId": "fed99512cfe0223f1966766e042136c354c27c24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8df15ee1_ba2cd2fa",
         "filename": "metrics_utils.py",
         "patchSetId": 7
@@ -51,6 +69,24 @@
       "revId": "fed99512cfe0223f1966766e042136c354c27c24",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b086b4ce_263cbbea",
+        "filename": "metrics_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-30T17:40:54Z",
+      "side": 1,
+      "message": "Works for me, though it would have been fine to keep the link",
+      "parentUuid": "8df15ee1_ba2cd2fa",
+      "revId": "fed99512cfe0223f1966766e042136c354c27c24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -86,6 +122,24 @@
       "revId": "fed99512cfe0223f1966766e042136c354c27c24",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09e0936c_b2bf285a",
+        "filename": "tests/metrics_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-30T17:40:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4bd78246_365616fa",
+      "revId": "fed99512cfe0223f1966766e042136c354c27c24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

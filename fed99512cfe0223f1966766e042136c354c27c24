@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74cf5a1f_b5408374",
+        "filename": "metrics.README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-30T01:45:57Z",
+      "side": 1,
+      "message": "I\u0027ve been struggling with how to make this list not exhaustive all week.\n\nI think we should for both this and the commands list below either:\n\n(1) End the list description with  \". For Example\", e.g., \"...requests that depot_tools makes. For Example\"\n\nor \n\n(2) End the list with a bullet that implies more things, e.g., \"Other useful, generic data about the request.\"\n\nAs a test... how do we think how many commits behind master the current client is, is covered by the README after this change. Or how would we collect one more piece of general metadata about a push or request?",
+      "revId": "fed99512cfe0223f1966766e042136c354c27c24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8df15ee1_ba2cd2fa",
+        "filename": "metrics_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-30T01:45:57Z",
+      "side": 1,
+      "message": "I might just leave this as \"We want to collect information about the requests that depot_tools makes\" and \"We only collect know strings to make sure don\u0027t record PII\". People can go to the README for the details. I\u0027d hate someone to get upset because this list wasn\u0027t as exhaustive as the README.",
+      "revId": "fed99512cfe0223f1966766e042136c354c27c24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "807596ba_d47113ce",
+        "filename": "tests/metrics_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2018-10-30T01:45:57Z",
+      "side": 1,
+      "message": "Should we update the tests when we change the version?",
+      "revId": "fed99512cfe0223f1966766e042136c354c27c24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

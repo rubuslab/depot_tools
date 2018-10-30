@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b01dc668_1d539ffb",
+        "filename": "metrics.README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-30T02:14:55Z",
+      "side": 1,
+      "message": "We already can colect the age of the project the user is working on, and of depot_tools. I don\u0027t think we can collect how many commits the user is behind unless we fetch HEAD every time we run.\nWe ask permission to ask for the request method, path, and arguments. I also added headers.\n\nI think this is good enough. I don\u0027t want to be open ended, otherwise the user doesn\u0027t really know what he\u0027s giving us access to.",
+      "parentUuid": "74cf5a1f_b5408374",
+      "revId": "fed99512cfe0223f1966766e042136c354c27c24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8df15ee1_ba2cd2fa",
         "filename": "metrics_utils.py",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2018-10-30T01:45:57Z",
       "side": 1,
       "message": "Should we update the tests when we change the version?",
+      "revId": "fed99512cfe0223f1966766e042136c354c27c24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4bd78246_365616fa",
+        "filename": "tests/metrics_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-10-30T02:14:55Z",
+      "side": 1,
+      "message": "No. Unless we change the mechanism, I don\u0027t see a reason to.",
+      "parentUuid": "807596ba_d47113ce",
       "revId": "fed99512cfe0223f1966766e042136c354c27c24",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

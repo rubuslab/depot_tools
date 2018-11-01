@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a6ee2dc9_dc24f2ef",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2945,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-11-01T22:43:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a781f4c6_7c06785a",
+      "range": {
+        "startLine": 2945,
+        "startChar": 22,
+        "endLine": 2945,
+        "endChar": 33
+      },
+      "revId": "a9d74bed91e9da8e2568e08421c1d647581e3f76",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "313599df_fe6d2a21",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-11-01T21:57:26Z",
       "side": 1,
       "message": "cc, hashtag and r will never match.\nThey have extra values attached to them in refspec e.g., \u0027cc\u003dt@example.com\u0027",
+      "range": {
+        "startLine": 3033,
+        "startChar": 12,
+        "endLine": 3033,
+        "endChar": 29
+      },
+      "revId": "a9d74bed91e9da8e2568e08421c1d647581e3f76",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d45092db_963fbdbf",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3033,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-11-01T22:43:49Z",
+      "side": 1,
+      "message": "Yeah, but\n\n  \"hashtag\" in \"something:refs/for/something%hasthag\u003dStealATaco\" \n\nis True.\n\nThough in that case \"r\" will always match (because of \"*r*efs/for/...\", and other args could also occur in unrelated places... Implemented it in another way.",
+      "parentUuid": "313599df_fe6d2a21",
       "range": {
         "startLine": 3033,
         "startChar": 12,

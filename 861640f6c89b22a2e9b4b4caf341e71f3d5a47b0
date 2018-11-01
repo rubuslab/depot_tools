@@ -22,6 +22,30 @@
       "revId": "861640f6c89b22a2e9b4b4caf341e71f3d5a47b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24221661_8ebe35ec",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-01T21:57:26Z",
+      "side": 0,
+      "message": "Ack",
+      "parentUuid": "71b5196b_ae5cdd21",
+      "range": {
+        "startLine": 187,
+        "startChar": 17,
+        "endLine": 187,
+        "endChar": 79
+      },
+      "revId": "861640f6c89b22a2e9b4b4caf341e71f3d5a47b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0637a6a5_66175109",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2386,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-11-01T22:27:07Z",
+      "side": 1,
+      "message": "You probably want this to be .encode(\u0027utf8\u0027, \u0027ignore\u0027)",
+      "revId": "57714dd4a4e03217bf54ee6361aae9d88d5adc0c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

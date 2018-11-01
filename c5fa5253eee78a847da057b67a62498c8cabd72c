@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a90fedb_5b821803",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-11-01T01:01:24Z",
+      "side": 1,
+      "message": "This was misleading, since DEPS vars didn\u0027t override built-in vars.",
+      "range": {
+        "startLine": 1220,
+        "startChar": 0,
+        "endLine": 1220,
+        "endChar": 45
+      },
+      "revId": "c5fa5253eee78a847da057b67a62498c8cabd72c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -142,6 +142,22 @@ GIT_VERSION_RE = re.compile(
   r'git version (\d)\.(\d{0,2})\.(\d{0,2})'
 )
 
+KNOWN_SUBCOMMAND_ARGS = {
+  "cc",
+  "hashtag",
+  "l=Auto-Submit+1",
+  "l=Commit-Queue+1",
+  "l=Commit-Queue+2",
+  "label",
+  "notify=ALL",
+  "notify=NONE",
+  "private",
+  "r",
+  "ready",
+  "topic",
+  "wip"
+}
+
 
 def get_python_version():
   """Return the python version in the major.minor.micro format."""

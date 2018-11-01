@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71b5196b_ae5cdd21",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-11-01T21:07:02Z",
+      "side": 0,
+      "message": "I don\u0027t want to introduce another local import...",
+      "range": {
+        "startLine": 187,
+        "startChar": 17,
+        "endLine": 187,
+        "endChar": 79
+      },
+      "revId": "861640f6c89b22a2e9b4b4caf341e71f3d5a47b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

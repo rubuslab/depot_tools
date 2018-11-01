@@ -93,6 +93,30 @@
       "revId": "a9d74bed91e9da8e2568e08421c1d647581e3f76",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84e81d2e_79588947",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3033,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-01T22:54:38Z",
+      "side": 1,
+      "message": "oh, sorry. I was thinking \u0027refspec\u0027 here is what refspec_opts actually is.",
+      "parentUuid": "d45092db_963fbdbf",
+      "range": {
+        "startLine": 3033,
+        "startChar": 12,
+        "endLine": 3033,
+        "endChar": 29
+      },
+      "revId": "a9d74bed91e9da8e2568e08421c1d647581e3f76",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

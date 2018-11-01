@@ -77,6 +77,7 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
     """Parse gclient's output to make it easier to test.
     If untangle is True, tries to sort out the output from parallel checkout."""
     (stdout, stderr, returncode) = self.gclient(cmd)
+    self.maxDiff = None
     if untangle:
       stdout = self.untangle(stdout)
     self.checkString(expected_stderr, stderr)

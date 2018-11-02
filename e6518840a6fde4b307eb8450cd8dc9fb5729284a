@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39f100e4_bbe60d0b",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-02T23:55:48Z",
+      "side": 1,
+      "message": "can you make it \u0027add_repeated\u0027 as first element? bcz right now it\u0027s highly unclear what \"sub_commands\" is for -- searching inside this file, you won\u0027t which mock corresponds to it :)",
+      "revId": "e6518840a6fde4b307eb8450cd8dc9fb5729284a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -5715,7 +5715,8 @@ def CMDformat(parser, args):
 
   # Similar code to above, but using yapf on .py files rather than clang-format
   # on C/C++ files
-  if opts.python and python_diff_files:
+  if python_diff_files:
+
     yapf_tool = gclient_utils.FindExecutable('yapf')
     if yapf_tool is None:
       DieWithError('yapf not found in PATH')
@@ -5725,21 +5726,33 @@ def CMDformat(parser, args):
     depot_tools_path = os.path.dirname(os.path.abspath(__file__))
     chromium_default_yapf_style = os.path.join(depot_tools_path,
                                                YAPF_CONFIG_FILENAME)
-
-    # Note: yapf still seems to fix indentation of the entire file
-    # even if line ranges are specified.
-    # See https://github.com/google/yapf/issues/499
-    if not opts.full:
-      py_line_diffs = _ComputeDiffLineRanges(python_diff_files, upstream_commit)
-
     # Used for caching.
     yapf_configs = {}
     for f in python_diff_files:
       # Find the yapf style config for the current file, defaults to depot
       # tools default.
-      yapf_config = _FindYapfConfigFile(
+      _FindYapfConfigFile(
           os.path.abspath(f), yapf_configs, top_dir,
           chromium_default_yapf_style)
+
+    # Turn on by default if a yapf config is specified.
+    # This breaks in the case of this repo though.
+    if not opts.python:
+      filtered_py_files = [
+          f for f in python_diff_files
+          if yapf_configs[os.path.abspath(f)] != chromium_default_yapf_style
+      ]
+    else:
+      filtered_py_files = python_diff_files
+
+    # Note: yapf still seems to fix indentation of the entire file
+    # even if line ranges are specified.
+    # See https://github.com/google/yapf/issues/499
+    if not opts.full:
+      py_line_diffs = _ComputeDiffLineRanges(filtered_py_files, upstream_commit)
+
+    for f in filtered_py_files:
+      yapf_config = yapf_configs[os.path.abspath(f)]
 
       cmd = [yapf_tool, '--style', yapf_config, f]
 

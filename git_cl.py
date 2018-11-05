@@ -4494,6 +4494,9 @@ def CMDissue(parser, args):
   options, args = parser.parse_args(args)
   _process_codereview_select_options(parser, options)
 
+  # If we're printing json to stdout, print the human stuff to stderr.
+  print_fd = sys.stderr if options.json == '-' else sys.stdout
+
   if options.reverse:
     branches = RunGit(['for-each-ref', 'refs/heads',
                        '--format=%(refname)']).splitlines()
@@ -4521,7 +4524,8 @@ def CMDissue(parser, args):
         continue
       result[int(issue)] = issue_branch_map.get(int(issue))
       print('Branch for issue number %s: %s' % (
-          issue, ', '.join(issue_branch_map.get(int(issue)) or ('None',))))
+          issue, ', '.join(issue_branch_map.get(int(issue)) or ('None',))),
+          file=print_fd)
     if options.json:
       write_json(options.json, result)
     return 0
@@ -4536,7 +4540,9 @@ def CMDissue(parser, args):
     cl.SetIssue(issue.issue)
   else:
     cl = Changelist(codereview=options.forced_codereview)
-  print('Issue number: %s (%s)' % (cl.GetIssue(), cl.GetIssueURL()))
+  print(
+    'Issue number: %s (%s)' % (cl.GetIssue(), cl.GetIssueURL()),
+    file=print_fd)
   if options.json:
     write_json(options.json, {
       'issue': cl.GetIssue(),

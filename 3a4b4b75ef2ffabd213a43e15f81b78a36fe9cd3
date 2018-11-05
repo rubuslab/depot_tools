@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47846554_11bc2c1b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4498,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-05T21:48:18Z",
+      "side": 1,
+      "message": "hm, this isn\u0027t the only command that supports \u0027-\u0027 for output, so I believe this CL doesn\u0027t fix them all.\nIt\u0027s also non-trivial to fix them all, since printing happens from many places.\n\nHence, maybe it\u0027s better to remove \u0027-\u0027 support for json output?",
+      "range": {
+        "startLine": 4497,
+        "startChar": 0,
+        "endLine": 4498,
+        "endChar": 62
+      },
+      "revId": "3a4b4b75ef2ffabd213a43e15f81b78a36fe9cd3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76fe38cd_584c779e",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 5737,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-11-05T21:12:25Z",
+      "side": 1,
+      "message": "nit: too many spaces",
+      "range": {
+        "startLine": 5737,
+        "startChar": 31,
+        "endLine": 5737,
+        "endChar": 33
+      },
+      "revId": "915113aed5a913e9c927704f399ef8ee3e4ca1e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef4c258e_34ee2c27",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 5741,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-11-05T21:12:25Z",
+      "side": 1,
+      "message": "nit: probably less error-prone to re-assign python_diff_files here rather than create a new variable so that there\u0027s no chance of using the wrong variable below.",
+      "revId": "915113aed5a913e9c927704f399ef8ee3e4ca1e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2432fcc1_24d2f85f",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 5743,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2018-11-05T21:12:25Z",
+      "side": 1,
+      "message": "having to call abspath many times now for this key. How about making the key f rather than abspath(f)?",
+      "revId": "915113aed5a913e9c927704f399ef8ee3e4ca1e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "revId": "3bc48dce7292897b5b8fa6321dbab027a4fa29d8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f66df2d2_138e31dc",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2018-11-06T06:29:07Z",
+      "side": 1,
+      "message": "Ah, there seems not be a command named ninja.bat?\nIs it ok for the OS to find ninja.exe, or should we explicitly specify ninja.exe?",
+      "parentUuid": "7191d45f_d8ba4029",
+      "revId": "3bc48dce7292897b5b8fa6321dbab027a4fa29d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

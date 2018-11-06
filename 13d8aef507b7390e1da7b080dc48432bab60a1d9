@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "93203dd8_d98be696",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-06T20:58:01Z",
+      "side": 1,
+      "message": "abs_path?\n\nthere are some other usages of fpath below. Do we ever want to deal with non-abs paths below? should we just \n\n  fpath \u003d os.path.abspath(fpath)\n\n?\n\nperhaps before cache check in L737",
+      "range": {
+        "startLine": 743,
+        "startChar": 28,
+        "endLine": 743,
+        "endChar": 33
+      },
+      "revId": "13d8aef507b7390e1da7b080dc48432bab60a1d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a147af7_2ad8b2e6",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 5637,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-06T20:58:01Z",
+      "side": 1,
+      "message": "an ancestor",
+      "range": {
+        "startLine": 5637,
+        "startChar": 45,
+        "endLine": 5637,
+        "endChar": 53
+      },
+      "revId": "13d8aef507b7390e1da7b080dc48432bab60a1d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8cd6be30_457ea3d0",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 5751,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-06T20:58:01Z",
+      "side": 1,
+      "message": "FWIU essentially we no longer need \"default style\" feature of _FindYapfConfigFile?\nif it returns None, then we skip the file, right? \nthen depot_tools\u0027 style is not special and formatting for this repo is not broken",
+      "range": {
+        "startLine": 5750,
+        "startChar": 4,
+        "endLine": 5751,
+        "endChar": 44
+      },
+      "revId": "13d8aef507b7390e1da7b080dc48432bab60a1d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "206183f3_1f742dbf",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 5753,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-06T20:58:01Z",
+      "side": 1,
+      "message": "let\u0027s introduce a new variable rather than mutating this one. Someone else may try to use it for other purposes",
+      "range": {
+        "startLine": 5753,
+        "startChar": 6,
+        "endLine": 5753,
+        "endChar": 23
+      },
+      "revId": "13d8aef507b7390e1da7b080dc48432bab60a1d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eeced7e3_1f07d951",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 5765,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-06T20:58:01Z",
+      "side": 1,
+      "message": "and here is the place where we can define the default (that is currently defined above)",
+      "range": {
+        "startLine": 5765,
+        "startChar": 20,
+        "endLine": 5765,
+        "endChar": 35
+      },
+      "revId": "13d8aef507b7390e1da7b080dc48432bab60a1d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ceaddce3_9277ec37",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1082,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-06T20:58:01Z",
+      "side": 1,
+      "message": "nit: append\n\nwe use append for js above",
+      "range": {
+        "startLine": 1080,
+        "startChar": 19,
+        "endLine": 1082,
+        "endChar": 25
+      },
+      "revId": "13d8aef507b7390e1da7b080dc48432bab60a1d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -738,11 +738,12 @@ def _FindYapfConfigFile(fpath,
     return yapf_config_cache[fpath]
 
   # Check if there is a style file in the current directory.
-  yapf_file = os.path.join(fpath, YAPF_CONFIG_FILENAME)
+  abs_path = os.path.abspath(fpath)
+  yapf_file = os.path.join(abs_path, YAPF_CONFIG_FILENAME)
   dirname = os.path.dirname(fpath)
   if os.path.isfile(yapf_file):
     ret = yapf_file
-  elif fpath == top_dir or dirname == fpath:
+  elif abs_path == top_dir or dirname == abs_path:
     # If we're at the top level directory, or if we're at root
     # use the chromium default yapf style.
     ret = default_style
@@ -5621,8 +5622,20 @@ def CMDformat(parser, args):
                     help='Reformat the full content of all touched files')
   parser.add_option('--dry-run', action='store_true',
                     help='Don\'t modify any file on disk.')
-  parser.add_option('--python', action='store_true',
-                    help='Format python code with yapf (experimental).')
+  parser.add_option(
+      '--python',
+      action='store_true',
+      default=None,
+      help='Enables python formatting on all python files.')
+  parser.add_option(
+      '--no-python',
+      action='store_true',
+      dest='python',
+      help='Disables python formatting on all python files. '
+      'Takes precedence over --python. '
+      'If neither --python or --no-python are set python '
+      'files that have a .style.yapf file in a parent '
+      'directory will be formatted.')
   parser.add_option('--js', action='store_true',
                     help='Format javascript code with clang-format.')
   parser.add_option('--diff', action='store_true',
@@ -5715,7 +5728,8 @@ def CMDformat(parser, args):
 
   # Similar code to above, but using yapf on .py files rather than clang-format
   # on C/C++ files
-  if opts.python and python_diff_files:
+  py_explicitly_disabled = opts.python is not None and not opts.python
+  if python_diff_files and not py_explicitly_disabled:
     yapf_tool = gclient_utils.FindExecutable('yapf')
     if yapf_tool is None:
       DieWithError('yapf not found in PATH')
@@ -5725,6 +5739,21 @@ def CMDformat(parser, args):
     depot_tools_path = os.path.dirname(os.path.abspath(__file__))
     chromium_default_yapf_style = os.path.join(depot_tools_path,
                                                YAPF_CONFIG_FILENAME)
+    # Used for caching.
+    yapf_configs = {}
+    for f in python_diff_files:
+      # Find the yapf style config for the current file, defaults to depot
+      # tools default.
+      _FindYapfConfigFile(f, yapf_configs, top_dir, chromium_default_yapf_style)
+
+    # Turn on python formatting by default if a yapf config is specified.
+    # This breaks in the case of this repo though since the specified
+    # style file is also the global default.
+    if opts.python is None:
+      python_diff_files = [
+          f for f in python_diff_files
+          if yapf_configs[f] != chromium_default_yapf_style
+      ]
 
     # Note: yapf still seems to fix indentation of the entire file
     # even if line ranges are specified.
@@ -5732,15 +5761,8 @@ def CMDformat(parser, args):
     if not opts.full:
       py_line_diffs = _ComputeDiffLineRanges(python_diff_files, upstream_commit)
 
-    # Used for caching.
-    yapf_configs = {}
     for f in python_diff_files:
-      # Find the yapf style config for the current file, defaults to depot
-      # tools default.
-      yapf_config = _FindYapfConfigFile(
-          os.path.abspath(f), yapf_configs, top_dir,
-          chromium_default_yapf_style)
-
+      yapf_config = yapf_configs[f]
       cmd = [yapf_tool, '--style', yapf_config, f]
 
       has_formattable_lines = False

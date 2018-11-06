@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7191d45f_d8ba4029",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-11-06T06:11:02Z",
+      "side": 1,
+      "message": "is this command still needed?",
+      "revId": "3bc48dce7292897b5b8fa6321dbab027a4fa29d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

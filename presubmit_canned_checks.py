@@ -1060,18 +1060,22 @@ def PanProjectChecks(input_api, output_api,
   return results
 
 
-def CheckPatchFormatted(
-    input_api, output_api, check_js=False, check_python=False,
-    result_factory=None):
+def CheckPatchFormatted(input_api,
+                        output_api,
+                        check_js=False,
+                        check_python=None,
+                        result_factory=None):
   result_factory = result_factory or output_api.PresubmitPromptWarning
   import git_cl
 
   display_args = []
   if check_js:
     display_args.append('--js')
-  if check_python:
-    # --python requires --full
-    display_args.extend(['--python', '--full'])
+  if check_python is not None:
+    if check_python:
+      display_args.extend(['--python'])
+    else:
+      display_args.extend(['--nopython'])
 
   cmd = ['-C', input_api.change.RepositoryRoot(),
          'cl', 'format', '--dry-run', '--presubmit'] + display_args

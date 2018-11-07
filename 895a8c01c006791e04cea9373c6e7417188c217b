@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfe45020_10821875",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-11-07T22:09:31Z",
+      "side": 1,
+      "message": "There is some risk that this breaks autoninja.py on other platforms. Can you test on Linux? Otherwise we should probably make this conditional.",
+      "revId": "895a8c01c006791e04cea9373c6e7417188c217b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

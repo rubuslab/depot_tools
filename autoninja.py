@@ -69,7 +69,7 @@ ninja_exe = 'ninja.exe' if sys.platform.startswith('win') else 'ninja'
 
 # Use absolute path for ninja path,
 # or fail to execute ninja if depot_tools is not in PATH.
-args = [os.path.join(SCRIPT_DIR, ninja_exe)] + input_args[1:]
+args = ['"' + os.path.join(SCRIPT_DIR, ninja_exe) + '"'] + input_args[1:]
 
 num_cores = multiprocessing.cpu_count()
 if not j_specified and not t_specified:

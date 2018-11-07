@@ -16,6 +16,24 @@
       "revId": "895a8c01c006791e04cea9373c6e7417188c217b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76dd7f15_04196a09",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1161819
+      },
+      "writtenOn": "2018-11-07T22:12:04Z",
+      "side": 1,
+      "message": "Good point. I think making it conditional is probably best at this point. I don\u0027t know if it\u0027s broken on other platforms.",
+      "parentUuid": "dfe45020_10821875",
+      "revId": "895a8c01c006791e04cea9373c6e7417188c217b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

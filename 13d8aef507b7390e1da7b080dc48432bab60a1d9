@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "1fa8d857_8f9db079",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-08T23:24:07Z",
+      "side": 1,
+      "message": "i didn\u0027t understand \"breaks the current git regex\". Where are we regexing?\n\nI think without this doing all lookups with os abs paths we might be doing same work multiple times: same file can be passed with a relative and absolute path it would have different cache keys.\n\ncan we simply assert in the beginning of this func that fpath is absolute?",
+      "parentUuid": "7837ffe6_5a2735d2",
+      "range": {
+        "startLine": 743,
+        "startChar": 28,
+        "endLine": 743,
+        "endChar": 33
+      },
+      "revId": "13d8aef507b7390e1da7b080dc48432bab60a1d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7a147af7_2ad8b2e6",
         "filename": "git_cl.py",
         "patchSetId": 16

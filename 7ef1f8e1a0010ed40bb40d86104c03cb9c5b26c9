@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b4e22d77_80efc6d5",
+        "filename": "git_cl.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-08T23:24:07Z",
+      "side": 1,
+      "message": "outdated",
+      "range": {
+        "startLine": 730,
+        "startChar": 30,
+        "endLine": 730,
+        "endChar": 52
+      },
+      "revId": "7ef1f8e1a0010ed40bb40d86104c03cb9c5b26c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15907a16_8b4754a7",
+        "filename": "git_cl.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-08T23:24:07Z",
+      "side": 1,
+      "message": "looks like there was a bug before this CL. This is a path to the file, not directory,\nso yapf_file might be /foo/bar.py/.style.yapf\nit happened to work because recursive calls always pass a dir",
+      "range": {
+        "startLine": 741,
+        "startChar": 27,
+        "endLine": 741,
+        "endChar": 35
+      },
+      "revId": "7ef1f8e1a0010ed40bb40d86104c03cb9c5b26c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "034c996c_670a8984",
+        "filename": "git_cl.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-08T23:24:07Z",
+      "side": 1,
+      "message": "dirname is derived from a not-necessarily-absolutely fpath. It cannot be reliably compared to an absolute path",
+      "range": {
+        "startLine": 744,
+        "startChar": 30,
+        "endLine": 744,
+        "endChar": 37
+      },
+      "revId": "7ef1f8e1a0010ed40bb40d86104c03cb9c5b26c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6355dc6_3c64e105",
+        "filename": "git_cl.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-08T23:24:07Z",
+      "side": 1,
+      "message": "this wouldn\u0027t work if top_dir is not absolute. We should assert its absoluteness too",
+      "range": {
+        "startLine": 744,
+        "startChar": 19,
+        "endLine": 744,
+        "endChar": 26
+      },
+      "revId": "7ef1f8e1a0010ed40bb40d86104c03cb9c5b26c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -66,13 +66,7 @@ except IOError:
 # Specify ninja.exe on Windows so that ninja.bat can call autoninja and not
 # be called back.
 ninja_exe = 'ninja.exe' if sys.platform.startswith('win') else 'ninja'
-
 ninja_exe_path = os.path.join(SCRIPT_DIR, ninja_exe)
-
-# On Windows, fully quote the path so that the command processor doesn't think
-# the whole output is the command.
-if sys.platform.startswith('win'):
-  ninja_exe_path = '"' + ninja_exe_path + '"'
 
 # Use absolute path for ninja path,
 # or fail to execute ninja if depot_tools is not in PATH.
@@ -90,5 +84,12 @@ if not j_specified and not t_specified:
       core_addition = int(core_addition)
       args.append('-j')
       args.append('%d' % (num_cores + core_addition))
+
+# Quote the arguments.
+# On Windows, the command processor doesn't think the whole output is the
+# command without quote.
+# On Linux and Mac, if people put depot_tools in directories with ' ',
+# shell would misunderstand ' ' as a path separation.
+args = ['"%s"' % s.replace('"', '\\"') for s in args]
 
 print ' '.join(args)

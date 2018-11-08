@@ -16,6 +16,24 @@
       "revId": "57714dd4a4e03217bf54ee6361aae9d88d5adc0c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c48da531_23d0d1b3",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2386,
+      "author": {
+        "id": 1002115
+      },
+      "writtenOn": "2018-11-08T01:42:17Z",
+      "side": 1,
+      "message": "Done (but kept the \"-\" in \"utf-8\" as that seems right)",
+      "parentUuid": "0637a6a5_66175109",
+      "revId": "57714dd4a4e03217bf54ee6361aae9d88d5adc0c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

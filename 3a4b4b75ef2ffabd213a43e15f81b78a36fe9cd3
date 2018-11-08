@@ -46,6 +46,30 @@
       "revId": "3a4b4b75ef2ffabd213a43e15f81b78a36fe9cd3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d2d27be_d422c711",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4498,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-08T21:11:12Z",
+      "side": 1,
+      "message": "\u003e Why not just fix it here and then we update the others as we need them?\n\nIt won\u0027t actually happen, not without substantial investment, because there are more places where stdout is printed, hidden in helper methods.\nI\u0027m fine landing this, but I also think creating temp file in your script is more robust.",
+      "parentUuid": "0ced3fb7_604a89d7",
+      "range": {
+        "startLine": 4497,
+        "startChar": 0,
+        "endLine": 4498,
+        "endChar": 62
+      },
+      "revId": "3a4b4b75ef2ffabd213a43e15f81b78a36fe9cd3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

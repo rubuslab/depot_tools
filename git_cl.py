@@ -2385,7 +2385,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     data = self._GetChangeDetail(['CURRENT_REVISION', 'CURRENT_COMMIT'],
                                  no_cache=force)
     current_rev = data['current_revision']
-    return data['revisions'][current_rev]['commit']['message']
+    return data['revisions'][current_rev]['commit']['message'].encode(
+        'utf-8', 'ignore')
 
   def UpdateDescriptionRemote(self, description, force=False):
     if gerrit_util.HasPendingChangeEdit(
@@ -2957,7 +2958,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       before_push = time_time()
       push_stdout = gclient_utils.CheckCallAndFilter(
           ['git', 'push', self.GetRemoteUrl(), refspec],
-          print_stdout=False,
+          print_stdout=True,
           # Flush after every line: useful for seeing progress when running as
           # recipe.
           filter_fn=lambda _: sys.stdout.flush())

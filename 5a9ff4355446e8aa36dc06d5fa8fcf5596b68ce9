@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebe31808_54c6b4ea",
+        "filename": "metrics.README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1246212
+      },
+      "writtenOn": "2018-11-08T23:31:04Z",
+      "side": 1,
+      "message": "I think you should spell out \"personally identifiable information\" (and maybe introduce the \"PII\" initialism only if you need to mention it again repeatedly).",
+      "range": {
+        "startLine": 58,
+        "startChar": 65,
+        "endLine": 58,
+        "endChar": 68
+      },
+      "revId": "5a9ff4355446e8aa36dc06d5fa8fcf5596b68ce9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

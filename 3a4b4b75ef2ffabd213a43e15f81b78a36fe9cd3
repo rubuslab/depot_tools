@@ -22,6 +22,30 @@
       "revId": "3a4b4b75ef2ffabd213a43e15f81b78a36fe9cd3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ced3fb7_604a89d7",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4498,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-11-08T21:06:37Z",
+      "side": 1,
+      "message": "I actually need to use this output though :(\n\nThe alternative would be to parse the human readable stdout of this command, or make an extra temporary file (blech).\n\nWhy not just fix it here and then we update the others as we need them?",
+      "parentUuid": "47846554_11bc2c1b",
+      "range": {
+        "startLine": 4497,
+        "startChar": 0,
+        "endLine": 4498,
+        "endChar": 62
+      },
+      "revId": "3a4b4b75ef2ffabd213a43e15f81b78a36fe9cd3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

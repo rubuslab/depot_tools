@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "e3fdd881_50f2e759",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1302229
+      },
+      "writtenOn": "2018-11-09T20:54:30Z",
+      "side": 1,
+      "message": "Yeah that works. To parse the diff line numbers I regex the git diff output which prints relative paths. Andrew suggested that doing cache lookups with using os.path.abspath(f) was more verbose than just using the relative path, I thought to just use absolute paths everywhere but the git diff output prints relative path files. Now I just reassign fpath to the abspath in the _FindYapfConfig call and use that for lookups instead of accessing the cache itself.",
+      "parentUuid": "1fa8d857_8f9db079",
+      "range": {
+        "startLine": 743,
+        "startChar": 28,
+        "endLine": 743,
+        "endChar": 33
+      },
+      "revId": "13d8aef507b7390e1da7b080dc48432bab60a1d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a147af7_2ad8b2e6",
         "filename": "git_cl.py",
         "patchSetId": 16

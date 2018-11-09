@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bba937d4_161a4e44",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-11-09T17:51:06Z",
+      "side": 1,
+      "message": "Sorry - this doesn\u0027t work on Windows because all of the arguments are passed in as one argument in order to avoid problems with ^^ (see the comment on line 26). This means that if I invoked autoninja like this:\n\n\u003e autoninja asdf \"asdf 1234\" 1234\n\nit gets passed to autoninja.py like this:\n\n\u003e python autoninja.py \"asdf \"asdf 1234\" 1234\"\n\nand somehow that gets erroneously translated into this:\n\n\u003e \"c:\\src\\depot_tools\\ninja.exe\" \"asdf asdf\" \"1234 1234\" -j 46",
+      "revId": "96bc1f6a76c39cb4df98c60cadae38268145fd00",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dbe775ea_d1221271",
         "filename": "autoninja.py",
         "patchSetId": 5

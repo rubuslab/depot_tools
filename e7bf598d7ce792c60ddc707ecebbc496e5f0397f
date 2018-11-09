@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7f4c6d8_b7743008",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3164,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-11-09T20:25:00Z",
+      "side": 1,
+      "message": "I think this can be changed to \n\n    return [r[\u0027email\u0027] for r in details[\u0027reviewers\u0027].get(\u0027REVIEWER\u0027, [])]",
+      "revId": "e7bf598d7ce792c60ddc707ecebbc496e5f0397f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

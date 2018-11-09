@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbe775ea_d1221271",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1115859
+      },
+      "writtenOn": "2018-11-09T05:54:26Z",
+      "side": 1,
+      "message": "Driveby comment: This is a lot of logic just to invoke ninja, what\u0027s stopping us from making autoninja\u0027s behaviour ninja\u0027s default when no -j is specified?",
+      "revId": "96bc1f6a76c39cb4df98c60cadae38268145fd00",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

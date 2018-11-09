@@ -16,6 +16,24 @@
       "revId": "96bc1f6a76c39cb4df98c60cadae38268145fd00",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d42c044_4d507a9a",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-11-09T06:29:34Z",
+      "side": 1,
+      "message": "Even if ninja is started by people in Chromium, now ninja is a third party tool, which is used by various projects.  I do not think it feasible to add the feature specific to certain projects.\nAlso, we want to add more things to autoninja, and I do not think them meaningful to ninja itself.\n\nDirk also mentioned why autoninja etc in the other CL, and you may be also interested in that:\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1325267\n\n\nIf you think my code is too complicated, please see patchset 1 and discuss with other reviewers.  I think there is a trade-off between ease of generated command line and ease of generating command line.  I do not have strong opinions on which is better.",
+      "parentUuid": "dbe775ea_d1221271",
+      "revId": "96bc1f6a76c39cb4df98c60cadae38268145fd00",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

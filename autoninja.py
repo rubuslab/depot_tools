@@ -15,7 +15,7 @@ import os
 import re
 import sys
 
-SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
+SCRIPT_DIR = os.path.dirname(__file__)
 
 # The -t tools are incompatible with -j
 t_specified = False
@@ -26,12 +26,19 @@ input_args = sys.argv
 # double quotes. This prevents multiple levels of parsing of the special '^'
 # characters needed when compiling a single file but means that this script gets
 # called with a single argument containing all of the actual arguments,
-# separated by spaces. When this case is detected we need to do argument
-# splitting ourselves. This means that arguments containing actual spaces are
-# not supported by autoninja, but that is not a real limitation.
+# separated by spaces. We use Windows CommandLineToArgvW API to split the
+# arguments.
 if (sys.platform.startswith('win') and len(sys.argv) == 2 and
     input_args[1].count(' ') > 0):
-  input_args = sys.argv[:1] + sys.argv[1].split()
+  import ctypes
+  num_args = ctypes.c_int()
+  ctypes.windll.shell32.CommandLineToArgvW.restype = (
+      ctypes.POINTER(ctypes.c_wchar_p))
+  ret = ctypes.windll.shell32.CommandLineToArgvW(
+      unicode(input_args[1]), ctypes.byref(num_args))
+  assert ret
+  input_args = input_args[:1] + [ret[i] for i in range(num_args.value)]
+  ctypes.windll.kernel32.LocalFree(ret)
 for index, arg in enumerate(input_args[1:]):
   if arg == '-j':
     j_specified = True
@@ -66,13 +73,7 @@ except IOError:
 # Specify ninja.exe on Windows so that ninja.bat can call autoninja and not
 # be called back.
 ninja_exe = 'ninja.exe' if sys.platform.startswith('win') else 'ninja'
-
 ninja_exe_path = os.path.join(SCRIPT_DIR, ninja_exe)
-
-# On Windows, fully quote the path so that the command processor doesn't think
-# the whole output is the command.
-if sys.platform.startswith('win'):
-  ninja_exe_path = '"' + ninja_exe_path + '"'
 
 # Use absolute path for ninja path,
 # or fail to execute ninja if depot_tools is not in PATH.
@@ -90,5 +91,13 @@ if not j_specified and not t_specified:
       core_addition = int(core_addition)
       args.append('-j')
       args.append('%d' % (num_cores + core_addition))
+
+# On Windows, fully quote the path so that the command processor doesn't think
+# the whole output is the command.
+# On Linux and Mac, if people put depot_tools in directories with ' ',
+# shell would misunderstand ' ' as a path separation.
+for i in range(len(args)):
+  if (i == 0 and sys.platform.startswith('win')) or ' ' in args[i]:
+    args[i] = '"%s"' % args[i].replace('"', '\\"')
 
 print ' '.join(args)

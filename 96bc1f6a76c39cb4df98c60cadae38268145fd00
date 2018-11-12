@@ -69,6 +69,24 @@
       "revId": "96bc1f6a76c39cb4df98c60cadae38268145fd00",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b04752d3_6284ae25",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1115859
+      },
+      "writtenOn": "2018-11-12T04:30:54Z",
+      "side": 1,
+      "message": "If there\u0027s good reasons for not touching core ninja that\u0027s fine. I\u0027m mostly lamenting how much work is needed to reliably invoke another application across different platforms, no direct qualms with your implementation in particular. Thanks for shedding light on the approach.",
+      "parentUuid": "4d42c044_4d507a9a",
+      "revId": "96bc1f6a76c39cb4df98c60cadae38268145fd00",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

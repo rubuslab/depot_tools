@@ -46,6 +46,30 @@
       "revId": "e2c61cf7ce1825dc7e7186667c2b31d80d07aa2d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33db2136_2f6fe66f",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-11-12T04:23:57Z",
+      "side": 1,
+      "message": "I decided to include the fix for this in this CL.\nPlease take a look.",
+      "parentUuid": "778ffb9a_42c679a8",
+      "range": {
+        "startLine": 30,
+        "startChar": 23,
+        "endLine": 31,
+        "endChar": 63
+      },
+      "revId": "e2c61cf7ce1825dc7e7186667c2b31d80d07aa2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

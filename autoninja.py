@@ -22,16 +22,6 @@ t_specified = False
 j_specified = False
 output_dir = '.'
 input_args = sys.argv
-# On Windows the autoninja.bat script passes along the arguments enclosed in
-# double quotes. This prevents multiple levels of parsing of the special '^'
-# characters needed when compiling a single file but means that this script gets
-# called with a single argument containing all of the actual arguments,
-# separated by spaces. When this case is detected we need to do argument
-# splitting ourselves. This means that arguments containing actual spaces are
-# not supported by autoninja, but that is not a real limitation.
-if (sys.platform.startswith('win') and len(sys.argv) == 2 and
-    input_args[1].count(' ') > 0):
-  input_args = sys.argv[:1] + sys.argv[1].split()
 
 # Ninja uses getopt_long, which allow to intermix non-option arguments.
 # To leave non supported parameters untouched, we do not use getopt.

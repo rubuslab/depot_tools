@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9804e095_566aa353",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-11-15T01:43:20Z",
+      "side": 1,
+      "message": "As far as I have investigated, make autoninja.py arguments surrounded by \u0027\"\u0027 seems to be the root cause of this issue.  For the case, python\u0027s sys.argv will be:\n[\u0027python\u0027, \u0027asdf asdf\u0027, \u00271234 1234\u0027].  It won\u0027t be [\u0027python\u0027, \u0027asdf \"asdf 1234\" 1234\u0027].\nConsidering https://msdn.microsoft.com/library/17w5ykft(v\u003dVS.85).aspx, it is understandable.\n\nThen, I believe having \u0027\"\u0027 confused the command line parser, and I decided to remove that in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1337049.\n\nWhat do you think?",
+      "parentUuid": "27a48590_ebf4b788",
+      "revId": "96bc1f6a76c39cb4df98c60cadae38268145fd00",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dbe775ea_d1221271",
         "filename": "autoninja.py",
         "patchSetId": 5

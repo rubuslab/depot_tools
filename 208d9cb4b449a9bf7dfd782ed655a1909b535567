@@ -16,6 +16,24 @@
       "revId": "208d9cb4b449a9bf7dfd782ed655a1909b535567",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a83c1f95_2ab7fe82",
+        "filename": "autoninja",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-11-15T02:46:27Z",
+      "side": 1,
+      "message": "According to shell check, we should not do that.\nWhen \"$(cmd)\" fails, we expect the script fails.  However, return value of \"export\" is always success and \"export\" hides $(cmd) failure.\nhttps://github.com/koalaman/shellcheck/wiki/SC2155",
+      "parentUuid": "4f60e701_cde0e5c4",
+      "revId": "208d9cb4b449a9bf7dfd782ed655a1909b535567",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

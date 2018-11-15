@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8501bdf1_9ed4f29d",
+        "filename": "autoninja",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-11-15T02:35:35Z",
+      "side": 1,
+      "message": "I got answer before in https://goto.google.com/chweib.\n\nI agreed to the answer because I do not have good experience with Python\u0027s subprocess module.\nIt brought non-fixable problem, which took my and my colleague\u0027s time (crbug.com/390764).\nIts face is something like Unix one but its behavior is completely different and that confused\nus a lot.  I recently saw it still works strange in:\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1166745\n\nThese are good reasons for me to leave the way to invoke ninja as-is.",
+      "parentUuid": "13035fc7_0f9aff59",
+      "revId": "c9b2b8e42cb3bf0358d0d92a92e0d65018173e6b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d7afade9_ae216614",
         "filename": "autoninja.py",
         "patchSetId": 9
@@ -33,6 +51,24 @@
       "revId": "c9b2b8e42cb3bf0358d0d92a92e0d65018173e6b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02c6c7fd_c8526da0",
+        "filename": "autoninja.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-11-15T02:35:35Z",
+      "side": 1,
+      "message": "Thanks for the info.  Let me leave that TODO.",
+      "parentUuid": "d7afade9_ae216614",
+      "revId": "c9b2b8e42cb3bf0358d0d92a92e0d65018173e6b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

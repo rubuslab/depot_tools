@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13035fc7_0f9aff59",
+        "filename": "autoninja",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-11-15T01:57:04Z",
+      "side": 1,
+      "message": "I wonder if it\u0027d just be easier to have autoninja.py invoke goma directly? Then you wouldn\u0027t have to worry about the quoting at all.",
+      "revId": "c9b2b8e42cb3bf0358d0d92a92e0d65018173e6b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7afade9_ae216614",
+        "filename": "autoninja.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-11-15T01:57:04Z",
+      "side": 1,
+      "message": "Actual proper quoting for windows is actually quite a bit trickier, see: https://cs.chromium.org/chromium/src/tools/mb/mb.py?l\u003d1509.\n\nThis probably covers the common case, but maybe add a TODO: or a comment to link to the mb.py code if you decide you need to be fancier.",
+      "revId": "c9b2b8e42cb3bf0358d0d92a92e0d65018173e6b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

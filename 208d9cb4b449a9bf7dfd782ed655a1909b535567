@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f60e701_cde0e5c4",
+        "filename": "autoninja",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-11-15T02:36:34Z",
+      "side": 1,
+      "message": "this can be done on one line, e.g.:\n\nexport AUTONINJA_BUILD_ID\u003d\"$(python -c import uuid; print uuid.uuid4())\"",
+      "revId": "208d9cb4b449a9bf7dfd782ed655a1909b535567",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

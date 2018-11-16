@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9702e3a4_cb01864e",
+        "filename": "fetch_configs/inspector_protocol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-11-16T22:21:11Z",
+      "side": 1,
+      "message": "Nit: I think it might be *slightly* more conventional to use inspector_protocol.git instead of inspector_protocol/, but I could be wrong.\n\nNot a big deal either way.",
+      "revId": "1d571a67fcc892b5e11dfd47888533de3c5aba7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8a0b228_381cbd40",
+        "filename": "fetch_configs/inspector_protocol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-11-16T22:21:11Z",
+      "side": 1,
+      "message": "This will check the repo out into a directory called \"src\". If that\u0027s your intent, that\u0027s fine. Just checking.",
+      "revId": "1d571a67fcc892b5e11dfd47888533de3c5aba7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

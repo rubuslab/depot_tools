@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4488dd5b_c73d928f",
+        "filename": "fetch_configs/inspector_protocol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1280850
+      },
+      "writtenOn": "2018-11-16T22:34:23Z",
+      "side": 1,
+      "message": "Good point, done. I had not tried this earlier but now I did and it works just fine with .git.",
+      "parentUuid": "9702e3a4_cb01864e",
+      "revId": "1d571a67fcc892b5e11dfd47888533de3c5aba7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a8a0b228_381cbd40",
         "filename": "fetch_configs/inspector_protocol.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2018-11-16T22:21:11Z",
       "side": 1,
       "message": "This will check the repo out into a directory called \"src\". If that\u0027s your intent, that\u0027s fine. Just checking.",
+      "revId": "1d571a67fcc892b5e11dfd47888533de3c5aba7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "288b2e32_d6520f19",
+        "filename": "fetch_configs/inspector_protocol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1280850
+      },
+      "writtenOn": "2018-11-16T22:34:23Z",
+      "side": 1,
+      "message": "Yes I think for now that\u0027s nice, since inspector_protocol is such a long name. :-)",
+      "parentUuid": "a8a0b228_381cbd40",
       "revId": "1d571a67fcc892b5e11dfd47888533de3c5aba7a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

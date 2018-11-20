@@ -22,6 +22,30 @@
       "revId": "50e927a361cd456031381da7aebcc4249db4347c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74421f96_884637bb",
+        "filename": "fetch_configs/chromium.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-11-20T19:25:15Z",
+      "side": 1,
+      "message": "To be consistent with line 34, which needs to do this to parse --flash\u003d0 as False (rather than bool(\u00270\u0027), which is True)",
+      "parentUuid": "b69e5008_e56d3345",
+      "range": {
+        "startLine": 27,
+        "startChar": 7,
+        "endLine": 27,
+        "endChar": 23
+      },
+      "revId": "50e927a361cd456031381da7aebcc4249db4347c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

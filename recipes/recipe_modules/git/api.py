@@ -217,7 +217,7 @@ class GitApi(recipe_api.RecipeApi):
                can_fail_build=can_fail_build)
 
       # There are five kinds of refs we can be handed:
-      # 0) None. In this case, we default to properties['branch'].
+      # 0) None. In this case, we default to api.buildbucket.gitiles_commit.ref.
       # 1) A 40-character SHA1 hash.
       # 2) A fully-qualifed arbitrary ref, e.g. 'refs/foo/bar/baz'.
       # 3) A fully qualified branch name, e.g. 'refs/heads/master'.
@@ -229,7 +229,7 @@ class GitApi(recipe_api.RecipeApi):
       fetch_args = []
       if not ref:                                  # Case 0
         fetch_remote = remote_name
-        fetch_ref = self.m.properties.get('branch') or 'master'
+        fetch_ref = self.m.buildbucket.gitiles_commit.ref or 'master'
         checkout_ref = 'FETCH_HEAD'
       elif self._GIT_HASH_RE.match(ref):        # Case 1.
         fetch_remote = remote_name

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4f4a9b2_467fd371",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-21T14:51:06Z",
+      "side": 1,
+      "message": "this is a ref, not a branch, i.e. it starts with \"refs/heads/\"\nL240 explicitly strips this prefix for some reason. Not sure stripping is really needed, but if it is, this code should do it too",
+      "range": {
+        "startLine": 232,
+        "startChar": 54,
+        "endLine": 232,
+        "endChar": 57
+      },
+      "revId": "ff7bcd8db3e421c2457456fb54b1d790f7550089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

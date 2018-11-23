@@ -683,8 +683,14 @@ def _ComputeDiffLineRanges(files, upstream_commit):
   if len(files) == 0:
     return {}
 
-  # Take diff and find the line ranges where there are changes.
-  diff_cmd = BuildGitDiffCmd('-U0', upstream_commit, files, allow_prefix=True)
+  # Take the diff and find the line ranges where there are changes.
+  # --src-prefix and --dst-prefix are necessary in the case that diff.noprefix
+  # is set in the users git config.
+  diff_cmd = BuildGitDiffCmd(
+      '-U0',
+      upstream_commit,
+      files, ['--src-prefix=a/', '--dst-prefix=b/'],
+      allow_prefix=True)
   diff_output = RunGit(diff_cmd)
 
   pattern = r'(?:^diff --git a/(?:.*) b/(.*))|(?:^@@.*\+(.*) @@)'
@@ -5317,14 +5323,22 @@ def CMDowners(parser, args):
       override_files=change.OriginalOwnersFiles()).run()
 
 
-def BuildGitDiffCmd(diff_type, upstream_commit, args, allow_prefix=False):
+def BuildGitDiffCmd(diff_type,
+                    upstream_commit,
+                    args,
+                    flags=None,
+                    allow_prefix=False):
   """Generates a diff command."""
   # Generate diff for the current branch's changes.
   diff_cmd = ['-c', 'core.quotePath=false', 'diff', '--no-ext-diff']
 
+  if flags is None:
+    flags = []
+
   if not allow_prefix:
     diff_cmd += ['--no-prefix']
 
+  diff_cmd += flags
   diff_cmd += [diff_type, upstream_commit, '--']
 
   if args:

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "189b40af_d45c529e",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-11-23T20:01:35Z",
+      "side": 1,
+      "message": "Please move this comment at the right place, line 5328.",
+      "revId": "842e860af100f4869fcdcbdbf2faf76222363034",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

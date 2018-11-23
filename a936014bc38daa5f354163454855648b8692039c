@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "570a1298_34cdfe5f",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5330,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2018-11-23T18:41:50Z",
+      "side": 1,
+      "message": "That creates an odd situation:\n- To remove the prefix, the has to set allow_prefix\u003dFalse\n- To set the prefix, the caller has to set allow_prefix\u003dFalse *and* pass flags.\n\nInstead, pass the two args when allow_prefix is True.",
+      "revId": "a936014bc38daa5f354163454855648b8692039c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

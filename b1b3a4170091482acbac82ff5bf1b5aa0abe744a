@@ -16,6 +16,24 @@
       "revId": "b1b3a4170091482acbac82ff5bf1b5aa0abe744a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0c9c788_0cf330c4",
+        "filename": "autoninja",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-11-26T10:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a857711a_8c729fd5",
+      "revId": "b1b3a4170091482acbac82ff5bf1b5aa0abe744a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

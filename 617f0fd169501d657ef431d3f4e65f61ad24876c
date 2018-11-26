@@ -16,6 +16,24 @@
       "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5240108e_1fc91b87",
+        "filename": "autoninja",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-11-26T22:43:14Z",
+      "side": 1,
+      "message": "ninja_log from bots is uploaded already from recipe. And I don\u0027t want to collect ninja log from bots in this path.\n\nAlso autoninja is not used in bots currently. If we use autoninja on bots, I\u0027d like to introduce a flag disabling this behavior on bots.",
+      "parentUuid": "f4a760f9_02a7066b",
+      "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

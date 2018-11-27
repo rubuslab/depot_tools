@@ -16,6 +16,23 @@
       "revId": "dbd7506c8c2a41dabb9ed230f99db706acf6d8bd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5089eb1f_23ca19d3",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-11-27T07:22:53Z",
+      "side": 1,
+      "message": "better to use sys.executable (for windows?)",
+      "revId": "dbd7506c8c2a41dabb9ed230f99db706acf6d8bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

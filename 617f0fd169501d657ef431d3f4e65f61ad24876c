@@ -34,6 +34,24 @@
       "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "096d33a0_830a8996",
+        "filename": "autoninja",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-11-27T00:34:31Z",
+      "side": 1,
+      "message": "\u003e Also autoninja is not used in bots currently. If we use autoninja on bots, I\u0027d like to introduce a flag disabling this behavior on bots.\n\nMy idea is different.  We already have Chromium build bots using autoninja, and I plan to migrate all ninja usage to autoninja in near future.",
+      "parentUuid": "5240108e_1fc91b87",
+      "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

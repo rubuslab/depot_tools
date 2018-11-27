@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dc70fdd6_8fd9de15",
+        "filename": "autoninja",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1116017
+      },
+      "writtenOn": "2018-11-27T00:43:24Z",
+      "side": 1,
+      "message": "In case you miss my previous comments:\n\n- Don\u0027t we warn before really uploading ninjalog?\n- Don\u0027t we have the way to opt out?",
+      "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f4a760f9_02a7066b",
         "filename": "autoninja",
         "patchSetId": 7

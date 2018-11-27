@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2e444602_37d8480a",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-11-27T06:34:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72a5f157_167d111f",
+      "revId": "4d96f793674ec3c5850ae3bd89ad343ec6562304",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "39610f0e_f7fb3f93",
         "filename": "ninjalog_uploader_wrapper.py",
         "patchSetId": 10
@@ -39,6 +57,30 @@
       "revId": "4d96f793674ec3c5850ae3bd89ad343ec6562304",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a63e01e_11ec20f0",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-11-27T06:34:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39610f0e_f7fb3f93",
+      "range": {
+        "startLine": 28,
+        "startChar": 13,
+        "endLine": 28,
+        "endChar": 25
+      },
+      "revId": "4d96f793674ec3c5850ae3bd89ad343ec6562304",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

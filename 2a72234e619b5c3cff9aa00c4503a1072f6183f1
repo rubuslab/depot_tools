@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "266e6d24_0e2eb4f4",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-11-27T19:10:12Z",
+      "side": 1,
+      "message": "it is up to you, but in my opinion we took one case (fully qualified ref) and turned it into 2 (branch and ref). Wouldn\u0027t it be simpler to do\n\n  ref \u003d ref or self.m.buildbucket.gitiles_commit.ref or \u0027refs/heads/master\u0027\n  if not ref.startswith(\u0027ref/\u0027):\n    ref \u003d \u0027refs/heads/%s % ref\n\n?",
+      "range": {
+        "startLine": 224,
+        "startChar": 6,
+        "endLine": 225,
+        "endChar": 40
+      },
+      "revId": "2a72234e619b5c3cff9aa00c4503a1072f6183f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

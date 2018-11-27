@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "caccb377_5ff9b48e",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-11-27T07:21:06Z",
+      "side": 1,
+      "message": "LoadConfig?",
+      "revId": "dbd7506c8c2a41dabb9ed230f99db706acf6d8bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9d804305_a055f1db",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-11-27T08:28:34Z",
+      "side": 1,
+      "message": "config\u0027s countdown is updated here. I want to store updated config here.",
+      "parentUuid": "caccb377_5ff9b48e",
+      "revId": "dbd7506c8c2a41dabb9ed230f99db706acf6d8bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5089eb1f_23ca19d3",
         "filename": "ninjalog_uploader_wrapper.py",
         "patchSetId": 13
@@ -33,6 +51,24 @@
       "revId": "dbd7506c8c2a41dabb9ed230f99db706acf6d8bd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "494cb3ff_0079badc",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-11-27T08:28:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5089eb1f_23ca19d3",
+      "revId": "dbd7506c8c2a41dabb9ed230f99db706acf6d8bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -34,6 +34,24 @@
       "revId": "208d9cb4b449a9bf7dfd782ed655a1909b535567",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dff24e21_5f779455",
+        "filename": "autoninja",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-11-27T20:40:37Z",
+      "side": 1,
+      "message": "Ah! Interesting, that angle didn\u0027t occur to me but makes sense. Never mind then :).",
+      "parentUuid": "a83c1f95_2ab7fe82",
+      "revId": "208d9cb4b449a9bf7dfd782ed655a1909b535567",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

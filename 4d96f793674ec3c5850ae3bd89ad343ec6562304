@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "72a5f157_167d111f",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1116017
+      },
+      "writtenOn": "2018-11-27T06:29:28Z",
+      "side": 1,
+      "message": "Question: What happens if a user builds without network access (also without using goma)?\nMaybe an exception is raised here, so maybe it\u0027s better to wrap try-except.",
+      "revId": "4d96f793674ec3c5850ae3bd89ad343ec6562304",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39610f0e_f7fb3f93",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1116017
+      },
+      "writtenOn": "2018-11-27T06:29:28Z",
+      "side": 1,
+      "message": "Since you write json file with binary mode (in L42), it\u0027s better to open CONFIG with binary mode, too.\n\nopen(CONFIG, \u0027rb\u0027)",
+      "range": {
+        "startLine": 28,
+        "startChar": 13,
+        "endLine": 28,
+        "endChar": 25
+      },
+      "revId": "4d96f793674ec3c5850ae3bd89ad343ec6562304",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

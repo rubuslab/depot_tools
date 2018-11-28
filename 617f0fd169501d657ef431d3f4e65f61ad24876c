@@ -159,6 +159,24 @@
       "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87f30a7b_ac62aa79",
+        "filename": "autoninja",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-11-28T23:21:18Z",
+      "side": 1,
+      "message": "Currently, 32MB is sufficient for gzipped ninjalog. If chromium grows further, I\u0027ll consider the other way e.g. logdog. Thanks.",
+      "parentUuid": "c98ab4b4_20c2c2fe",
+      "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

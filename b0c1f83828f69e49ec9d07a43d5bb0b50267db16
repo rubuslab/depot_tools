@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b7127aac_5392f625",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3718,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2018-11-28T23:56:06Z",
+      "side": 1,
+      "message": "And replace it with what?",
+      "range": {
+        "startLine": 3718,
+        "startChar": 50,
+        "endLine": 3718,
+        "endChar": 69
+      },
+      "revId": "b0c1f83828f69e49ec9d07a43d5bb0b50267db16",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

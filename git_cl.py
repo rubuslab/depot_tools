@@ -69,7 +69,6 @@ import watchlists
 __version__ = '2.0'
 
 COMMIT_BOT_EMAIL = 'commit-bot@chromium.org'
-DEFAULT_SERVER = 'https://codereview.chromium.org'
 POSTUPSTREAM_HOOK = '.git/hooks/post-cl-land'
 DESCRIPTION_BACKUP_FILE = '~/.git_cl_description_backup'
 REFS_THAT_ALIAS_TO_OTHER_REFS = {
@@ -807,7 +806,6 @@ class BuildbucketResponseException(Exception):
 
 class Settings(object):
   def __init__(self):
-    self.default_server = None
     self.cc = None
     self.root = None
     self.tree_status_url = None
@@ -818,7 +816,6 @@ class Settings(object):
     self.gerrit_skip_ensure_authenticated = None
     self.git_editor = None
     self.project = None
-    self.force_https_commit_url = None
 
   def LazyUpdateIfNeeded(self):
     """Updates the settings from a codereview.settings file, if available."""
@@ -834,20 +831,6 @@ class Settings(object):
         LoadCodereviewSettingsFromFile(cr_settings_file)
       self.updated = True
 
-  def GetDefaultServerUrl(self, error_ok=False):
-    if not self.default_server:
-      self.LazyUpdateIfNeeded()
-      self.default_server = gclient_utils.UpgradeToHttps(
-          self._GetRietveldConfig('server', error_ok=True))
-      if error_ok:
-        return self.default_server
-      if not self.default_server:
-        error_message = ('Could not find settings file. You must configure '
-                         'your review setup by running "git cl config".')
-        self.default_server = gclient_utils.UpgradeToHttps(
-            self._GetRietveldConfig('server', error_message=error_message))
-    return self.default_server
-
   @staticmethod
   def GetRelativeRoot():
     return RunGit(['rev-parse', '--show-cdup']).strip()
@@ -857,50 +840,30 @@ class Settings(object):
       self.root = os.path.abspath(self.GetRelativeRoot())
     return self.root
 
-  def GetGitMirror(self, remote='origin'):
-    """If this checkout is from a local git mirror, return a Mirror object."""
-    local_url = RunGit(['config', '--get', 'remote.%s.url' % remote]).strip()
-    if not os.path.isdir(local_url):
-      return None
-    git_cache.Mirror.SetCachePath(os.path.dirname(local_url))
-    remote_url = git_cache.Mirror.CacheDirToUrl(local_url)
-    # Use the /dev/null print_func to avoid terminal spew.
-    mirror = git_cache.Mirror(remote_url, print_func=lambda *args: None)
-    if mirror.exists():
-      return mirror
-    return None
-
   def GetTreeStatusUrl(self, error_ok=False):
     if not self.tree_status_url:
       error_message = ('You must configure your tree status URL by running '
                        '"git cl config".')
-      self.tree_status_url = self._GetRietveldConfig(
-          'tree-status-url', error_ok=error_ok, error_message=error_message)
+      self.tree_status_url = self._GetConfig(
+          'rietveld.tree-status-url', error_ok=error_ok,
+          error_message=error_message)
     return self.tree_status_url
 
   def GetViewVCUrl(self):
     if not self.viewvc_url:
-      self.viewvc_url = self._GetRietveldConfig('viewvc-url', error_ok=True)
+      self.viewvc_url = self._GetConfig('rietveld.viewvc-url', error_ok=True)
     return self.viewvc_url
 
   def GetBugPrefix(self):
-    return self._GetRietveldConfig('bug-prefix', error_ok=True)
-
-  def GetIsSkipDependencyUpload(self, branch_name):
-    """Returns true if specified branch should skip dep uploads."""
-    return self._GetBranchConfig(branch_name, 'skip-deps-uploads',
-                                 error_ok=True)
+    return self._GetConfig('rietveld.bug-prefix', error_ok=True)
 
   def GetRunPostUploadHook(self):
-    run_post_upload_hook = self._GetRietveldConfig(
-        'run-post-upload-hook', error_ok=True)
+    run_post_upload_hook = self._GetConfig(
+        'rietveld.run-post-upload-hook', error_ok=True)
     return run_post_upload_hook == "True"
 
   def GetDefaultCCList(self):
-    return self._GetRietveldConfig('cc', error_ok=True)
-
-  def GetDefaultPrivateFlag(self):
-    return self._GetRietveldConfig('private', error_ok=True)
+    return self._GetConfig('rietveld.cc', error_ok=True)
 
   def GetIsGerrit(self):
     """Return true if this repo is associated with gerrit code review system."""
@@ -950,23 +913,17 @@ class Settings(object):
     return self.git_editor or None
 
   def GetLintRegex(self):
-    return (self._GetRietveldConfig('cpplint-regex', error_ok=True) or
+    return (self._GetConfig('rietveld.cpplint-regex', error_ok=True) or
             DEFAULT_LINT_REGEX)
 
   def GetLintIgnoreRegex(self):
-    return (self._GetRietveldConfig('cpplint-ignore-regex', error_ok=True) or
+    return (self._GetConfig('rietveld.cpplint-ignore-regex', error_ok=True) or
             DEFAULT_LINT_IGNORE_REGEX)
 
   def GetProject(self):
     if not self.project:
-      self.project = self._GetRietveldConfig('project', error_ok=True)
+      self.project = self._GetConfig('rietveld.project', error_ok=True)
     return self.project
-
-  def _GetRietveldConfig(self, param, **kwargs):
-    return self._GetConfig('rietveld.' + param, **kwargs)
-
-  def _GetBranchConfig(self, branch_name, param, **kwargs):
-    return self._GetConfig('branch.' + branch_name + '.' + param, **kwargs)
 
   def _GetConfig(self, param, **kwargs):
     self.LazyUpdateIfNeeded()
@@ -3422,19 +3379,8 @@ def DownloadGerritHook(force):
                    'chmod +x .git/hooks/commit-msg' % src)
 
 
-def GetRietveldCodereviewSettingsInteractively():
+def GetCodereviewSettingsInteractively():
   """Prompt the user for settings."""
-  server = settings.GetDefaultServerUrl(error_ok=True)
-  prompt = 'Rietveld server (host[:port])'
-  prompt += ' [%s]' % (server or DEFAULT_SERVER)
-  newserver = ask_for_data(prompt + ':')
-  if not server and not newserver:
-    newserver = DEFAULT_SERVER
-  if newserver:
-    newserver = gclient_utils.UpgradeToHttps(newserver)
-    if newserver != server:
-      RunGit(['config', 'rietveld.server', newserver])
-
   def SetProperty(initial, caption, name, is_url):
     prompt = caption
     if initial:
@@ -3449,8 +3395,6 @@ def GetRietveldCodereviewSettingsInteractively():
         RunGit(['config', 'rietveld.' + name, new_val])
 
   SetProperty(settings.GetDefaultCCList(), 'CC list', 'cc', False)
-  SetProperty(settings.GetDefaultPrivateFlag(),
-              'Private flag (rietveld only)', 'private', False)
   SetProperty(settings.GetTreeStatusUrl(error_ok=True), 'Tree status URL',
               'tree-status-url', False)
   SetProperty(settings.GetViewVCUrl(), 'ViewVC URL', 'viewvc-url', True)
@@ -3771,9 +3715,8 @@ def CMDcreds_check(parser, args):
 def CMDconfig(parser, args):
   """Edits configuration for this tree."""
 
-  print('WARNING: git cl config works for Rietveld only.')
-  # TODO(tandrii): remove this once we switch to Gerrit.
-  # See bugs http://crbug.com/637561 and http://crbug.com/600469.
+  # TODO(tandrii): remove this once we get rid of codereview.settings.
+  # See bugs http://crbug.com/637561.
   parser.add_option('--activate-update', action='store_true',
                     help='activate auto-updating [rietveld] section in '
                          '.git/config')
@@ -3791,7 +3734,7 @@ def CMDconfig(parser, args):
     return
 
   if len(args) == 0:
-    GetRietveldCodereviewSettingsInteractively()
+    GetCodereviewSettingsInteractively()
     return 0
 
   url = args[0]

@@ -123,6 +123,24 @@
       "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bfba29c_e9970ef0",
+        "filename": "autoninja",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-11-28T03:16:39Z",
+      "side": 1,
+      "message": "It took 10 seconds, due to BQ insertion is processed synchronously in server. I expect it took several seconds if I optimize server implementation. But ninjalog can be several ten MB and sending such a large data to AppEngine won\u0027t be so fast.\nSo I choose not to block autoninja user. Similar behavior is taken for gclient metrics sending.\nhttps://cs.chromium.org/chromium/tools/depot_tools/metrics.py?l\u003d180\u0026rcl\u003d44d4b29082f0d8bacacd623f91c4d29637b4b901",
+      "parentUuid": "b71ad7ab_b524b08f",
+      "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

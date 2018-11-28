@@ -105,6 +105,24 @@
       "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b71ad7ab_b524b08f",
+        "filename": "autoninja",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-11-28T03:02:20Z",
+      "side": 1,
+      "message": "Okay. \n\nI still think this is kind of weird behavior; I wouldn\u0027t expect something to still be running in the background after \u0027autoninja\u0027 had \"completed\". How long does an upload typically take?",
+      "parentUuid": "5240108e_1fc91b87",
+      "revId": "617f0fd169501d657ef431d3f4e65f61ad24876c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

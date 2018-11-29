@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "13ae96b3_ebb6f2b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2018-11-29T23:30:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d0e3a3b_8e47d103",
+      "range": {
+        "startLine": 7,
+        "startChar": 26,
+        "endLine": 8,
+        "endChar": 0
+      },
+      "revId": "7bbf7ec179fc02fc14c258e522c739f5da921250",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fb5efecd_f685e19e",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 3
@@ -93,6 +117,30 @@
       "revId": "7bbf7ec179fc02fc14c258e522c739f5da921250",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41adc36a_e2e444c2",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2018-11-29T23:30:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e463fd0f_a871c918",
+      "range": {
+        "startLine": 188,
+        "startChar": 41,
+        "endLine": 188,
+        "endChar": 58
+      },
+      "revId": "7bbf7ec179fc02fc14c258e522c739f5da921250",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -69,6 +69,30 @@
       "revId": "7bbf7ec179fc02fc14c258e522c739f5da921250",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e463fd0f_a871c918",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-29T23:06:01Z",
+      "side": 1,
+      "message": "Given the above, I\u0027m dropping proposal 1 and 2. Please, just change property to \"do_not_retry\".",
+      "parentUuid": "59cb4e1b_9900d796",
+      "range": {
+        "startLine": 188,
+        "startChar": 41,
+        "endLine": 188,
+        "endChar": 58
+      },
+      "revId": "7bbf7ec179fc02fc14c258e522c739f5da921250",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

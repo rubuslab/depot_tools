@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0d0e3a3b_8e47d103",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-29T23:00:24Z",
+      "side": 1,
+      "message": "let\u0027s not tie this to properties, the use of properties isn\u0027t essential.\n\n\"Add mechanism for telling CQ to avoid retrying builds\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 26,
+        "endLine": 8,
+        "endChar": 0
+      },
+      "revId": "7bbf7ec179fc02fc14c258e522c739f5da921250",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb5efecd_f685e19e",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-29T23:00:24Z",
+      "side": 1,
+      "message": "I realize you\u0027ve copied how this module works today, but it\u0027s legacy, so let\u0027s do better:\n1. as suggested in your design doc, please scope this property to discourage other recipes from setting property directly:\n\nproperties.setdefault(\u0027$depot_tools/tryserver\u0027, {})[field] \u003d value\n\nwhy? Make it hard to set this property directly, s.t. this API is always used. Allows to innovate later.\n\n2. Come to think of it, I\u0027d actually vote (but don\u0027t insist) for a new module entirely, named \"cq\", and eventually move failure hash to it, too.\n\n3. I think I prefer \"do_not_retry\" field here, too, (just like method name) as it clearly states intent.",
+      "range": {
+        "startLine": 188,
+        "startChar": 41,
+        "endLine": 188,
+        "endChar": 58
+      },
+      "revId": "7bbf7ec179fc02fc14c258e522c739f5da921250",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

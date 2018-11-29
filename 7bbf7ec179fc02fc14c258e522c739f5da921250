@@ -45,6 +45,30 @@
       "revId": "7bbf7ec179fc02fc14c258e522c739f5da921250",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59cb4e1b_9900d796",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-11-29T23:04:54Z",
+      "side": 1,
+      "message": "Actually re: 1, I think as you have it is fine (for now), because of quirks and historical dumbness of how exporting properties works in buildbot/recipes. I\u0027ll be opening up the possibility of a saner mechanism later, but currently what you have is fine.\n\nno opinion on 2/3 :)",
+      "parentUuid": "fb5efecd_f685e19e",
+      "range": {
+        "startLine": 188,
+        "startChar": 41,
+        "endLine": 188,
+        "endChar": 58
+      },
+      "revId": "7bbf7ec179fc02fc14c258e522c739f5da921250",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

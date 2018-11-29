@@ -118,6 +118,7 @@
       "@@@STEP_LOG_LINE@files@None/foo.cc@@@",
       "@@@STEP_LOG_END@files@@@",
       "@@@SET_BUILD_PROPERTY@failure_type@\"INVALID_TEST_RESULTS\"@@@",
+      "@@@SET_BUILD_PROPERTY@should_be_retried@false@@@",
       "@@@SET_BUILD_PROPERTY@subproject_tag@\"v8\"@@@"
     ]
   },

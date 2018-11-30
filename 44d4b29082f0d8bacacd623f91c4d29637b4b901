@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9a0a6a9_c1073b42",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-30T03:51:22Z",
+      "side": 0,
+      "message": "i\u0027m surprised it\u0027s not used. I\u0027d have expected it to be used for detecting remote_url correctly.",
+      "range": {
+        "startLine": 860,
+        "startChar": 6,
+        "endLine": 860,
+        "endChar": 18
+      },
+      "revId": "44d4b29082f0d8bacacd623f91c4d29637b4b901",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "b0c1f83828f69e49ec9d07a43d5bb0b50267db16",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b9e89ef_5558032e",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3718,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-11-30T03:51:22Z",
+      "side": 1,
+      "message": "hm, i\u0027m not sure we can completely get rid of this file, at least not w/o finding new place for CC config. But I do stand behind what was written in previous TODO -- this whole command isn\u0027t necessary any more.",
+      "parentUuid": "b7127aac_5392f625",
+      "range": {
+        "startLine": 3718,
+        "startChar": 50,
+        "endLine": 3718,
+        "endChar": 69
+      },
+      "revId": "b0c1f83828f69e49ec9d07a43d5bb0b50267db16",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

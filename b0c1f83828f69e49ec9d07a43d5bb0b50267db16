@@ -70,6 +70,30 @@
       "revId": "b0c1f83828f69e49ec9d07a43d5bb0b50267db16",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9aa3bd44_7f0b5152",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3718,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-12-01T00:28:38Z",
+      "side": 1,
+      "message": "yes. They already do that, mostly copy-pasting from other repos.",
+      "parentUuid": "3d6b54a6_9c290b26",
+      "range": {
+        "startLine": 3718,
+        "startChar": 50,
+        "endLine": 3718,
+        "endChar": 69
+      },
+      "revId": "b0c1f83828f69e49ec9d07a43d5bb0b50267db16",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

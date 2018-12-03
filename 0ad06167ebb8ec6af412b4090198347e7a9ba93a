@@ -22,6 +22,30 @@
       "revId": "0ad06167ebb8ec6af412b4090198347e7a9ba93a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e65eeb8_a11afebb",
+        "filename": "autoninja.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-12-03T01:51:47Z",
+      "side": 1,
+      "message": "Hmm, ah. python.bat might be used when python is written here.\nThen, why not explicitly use python.bat instead of python?\n\nI do not think people would edit PATHEXT environment variable, but explicitly showing an extension might be more easy to see what this is.",
+      "parentUuid": "19ff1852_9909bd27",
+      "range": {
+        "startLine": 14,
+        "startChar": 42,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "0ad06167ebb8ec6af412b4090198347e7a9ba93a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,9 @@
+URL: https://chromium.googlesource.com/chromium/src/+/master/build/gn_helpers.py
+Revision: 5e01981efa87e038267cbad6e4a6a7f3ce2e6e68
+License: BSD
+
+Description:
+gn_helpers.py is helper function to manipulate GN build configs.
+This is used from ninjalog\_uploader.py
+
+Local Modifications: Added \_\_init\_\_.py

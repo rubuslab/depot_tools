@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18bea004_83105907",
+        "filename": "ninja",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-12-03T07:03:16Z",
+      "side": 1,
+      "message": "unrelated: github.com/ninja-build/ninja\n?",
+      "revId": "692836a71b5da140e2858722fd32ac914667e75a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ff4f5cb_deffcabf",
+        "filename": "ninja",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2018-12-03T07:03:16Z",
+      "side": 1,
+      "message": "check $AUTONINJA_BUILD_ID first?\n\ncan\u0027t we use ninjalog_wrapper.IsGoogler (or curl to access should-upload) instead of hostname?",
+      "revId": "692836a71b5da140e2858722fd32ac914667e75a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

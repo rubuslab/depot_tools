@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "19ff1852_9909bd27",
+        "filename": "autoninja.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2018-12-03T01:46:56Z",
+      "side": 1,
+      "message": "nit but I could not understand what you mean by this.\nI guess you mean:\n\"because we want to restart the batch script execution after python run.\"  Or so?\n\nMaybe from a shell script stand point, .bat might have implicit \"exec\" except we explicitly set \"call\"?",
+      "range": {
+        "startLine": 14,
+        "startChar": 42,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "0ad06167ebb8ec6af412b4090198347e7a9ba93a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

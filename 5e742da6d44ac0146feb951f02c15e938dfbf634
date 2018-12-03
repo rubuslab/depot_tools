@@ -16,6 +16,24 @@
       "revId": "5e742da6d44ac0146feb951f02c15e938dfbf634",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "346eb29e_b5e479d5",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-12-03T08:58:57Z",
+      "side": 1,
+      "message": "it seems better than importing helper module",
+      "parentUuid": "1019abc5_c3963339",
+      "revId": "5e742da6d44ac0146feb951f02c15e938dfbf634",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

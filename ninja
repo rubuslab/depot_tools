@@ -18,6 +18,19 @@ Then add ~/ninja/ to your PATH.
 EOF
 }
 
+if [[ "$(hostname)" =~ \.corp\.google\.com$ && -z "$AUTONINJA_BUILD_ID" ]]; then
+    echo -e "
+\e[31m
+You seem to be googler but use ninja directly.
+Currently goma team wants googler to use autoninja for build statistics.
+So please use autoninja instead of ninja.
+
+If you have some reason that you cannot use autoninja, please file a bug with
+your usage in component Infra>Goma.
+\e[m
+"
+fi
+
 case "$OS" in
   Linux)
     MACHINE=$(uname -m)

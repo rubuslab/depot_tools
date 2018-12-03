@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "860a4f32_410e3362",
+        "filename": "ninja",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-12-03T07:12:41Z",
+      "side": 1,
+      "message": "Made CL.\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1358031",
+      "parentUuid": "18bea004_83105907",
+      "revId": "692836a71b5da140e2858722fd32ac914667e75a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8ff4f5cb_deffcabf",
         "filename": "ninja",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2018-12-03T07:03:16Z",
       "side": 1,
       "message": "check $AUTONINJA_BUILD_ID first?\n\ncan\u0027t we use ninjalog_wrapper.IsGoogler (or curl to access should-upload) instead of hostname?",
+      "revId": "692836a71b5da140e2858722fd32ac914667e75a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9944c1d8_135b5dd7",
+        "filename": "ninja",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-12-03T07:12:41Z",
+      "side": 1,
+      "message": "I think doing network access here harms developer experience.\ncurl to AppEngine seems to add around 150ms in this script invocation.",
+      "parentUuid": "8ff4f5cb_deffcabf",
       "revId": "692836a71b5da140e2858722fd32ac914667e75a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

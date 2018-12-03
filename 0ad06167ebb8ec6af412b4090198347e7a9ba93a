@@ -46,6 +46,30 @@
       "revId": "0ad06167ebb8ec6af412b4090198347e7a9ba93a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6ae78f6_69b17408",
+        "filename": "autoninja.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2018-12-03T03:07:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e65eeb8_a11afebb",
+      "range": {
+        "startLine": 14,
+        "startChar": 42,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "0ad06167ebb8ec6af412b4090198347e7a9ba93a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

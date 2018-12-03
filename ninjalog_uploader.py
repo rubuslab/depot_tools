@@ -26,6 +26,7 @@ import platform
 import socket
 import sys
 
+from third_party.gn_helpers import gn_helpers
 from third_party import httplib2
 
 def IsGoogler(server):
@@ -40,15 +41,26 @@ def IsGoogler(server):
 def GetMetadata(cmdline, ninjalog):
     """Get metadata for uploaded ninjalog."""
 
-    # TODO(tikuta): Support build_configs from args.gn.
-
     build_dir = os.path.dirname(ninjalog)
+
+    args_gn = os.path.join(build_dir, 'args.gn')
+    build_configs = {}
+
+    if os.path.isfile(args_gn):
+        with open(args_gn, 'rb') as f:
+            build_configs = gn_helpers.FromGNArgs(f.read())
+
+    # Stringify config.
+    for k in build_configs:
+        build_configs[k] = str(build_configs[k])
+
     metadata = {
         'platform': platform.system(),
         'cwd': build_dir,
         'hostname': socket.gethostname(),
         'cpu_core': multiprocessing.cpu_count(),
         'cmdline': cmdline,
+        'build_configs': build_configs,
     }
 
     return metadata

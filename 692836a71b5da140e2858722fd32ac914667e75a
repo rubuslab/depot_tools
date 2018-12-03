@@ -69,6 +69,23 @@
       "revId": "692836a71b5da140e2858722fd32ac914667e75a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e271af23_c81be9ab",
+        "filename": "ninja",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1116017
+      },
+      "writtenOn": "2018-12-03T09:18:25Z",
+      "side": 1,
+      "message": "How about adding an example command line?\nSome people won\u0027t know how to use autoninja instead of ninja.",
+      "revId": "692836a71b5da140e2858722fd32ac914667e75a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

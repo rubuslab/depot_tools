@@ -36,15 +36,7 @@ def RunSteps(api):
   api.gerrit.get_change_description(
       host, change=123, patchset=1)
 
-  first = api.gerrit.get_change_destination_branch(host, change=123)
-  # Second call returns cached data.
-  second = api.gerrit.get_change_destination_branch(host, change=123)
-  assert first == second
-
   with api.step.defer_results():
-    api.gerrit.get_change_destination_branch(
-        host, change=122, name='missing_cl')
-
     api.gerrit.get_change_description(
         host, change=122, patchset=3)
 
@@ -59,9 +51,5 @@ def GenTests(api):
       + api.step_data(
           'gerrit get_gerrit_branch (v8/v8 master)',
           api.gerrit.make_gerrit_get_branch_response_data()
-      )
-      + api.step_data(
-          'gerrit missing_cl',
-          api.gerrit.get_empty_changes_response_data()
       )
   )

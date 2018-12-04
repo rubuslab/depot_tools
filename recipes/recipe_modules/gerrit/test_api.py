@@ -48,6 +48,3 @@ class GerritTestApi(recipe_test_api.RecipeTestApi):
     change = EXAMPLE_CHANGE.copy()
     change.update(kwargs)
     return self._make_gerrit_response_json([change])
-
-  def get_empty_changes_response_data(self):
-    return self._make_gerrit_response_json([])

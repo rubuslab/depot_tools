@@ -28,6 +28,10 @@ the default upstream (i.e. `git new-branch <branch_name>`). If you have features
 which depend on each other, you should create stacked branches using `git
 new-branch --upstream_current <branch_name>`.
 
+After creating a new branch 'without' the `--upstream_current` option, you
+usually want to rebase to the upstream branch using `git rebase [-i]
+@{upstream}` or `git rebase-update -n`.
+
 OPTIONS
 -------
 

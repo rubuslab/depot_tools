@@ -534,6 +534,21 @@ def get_total_disk_space():
     return (total, free)
 
 
+def _ref_to_remote_ref(ref):
+  """Convert a checkout ref to the equivalent remote ref."""
+  # TODO(mmoss): This is just a brute-force mapping based of the expected git
+  # config. It's a bit better than the even more brute-force replace('heads',
+  # ...), but could still be smarter (like maybe actually using values gleaned
+  # from the git config).
+  m = re.match('^(refs/(remotes/)?)?branch-heads/', ref or '')
+  if m:
+    return 'refs/remotes/branch-heads/' + ref.replace(m.group(0), '')
+  m = re.match('^((refs/)?remotes/)?origin/|(refs/)?heads/', ref or '')
+  if m:
+    return 'refs/remotes/origin/' + ref.replace(m.group(0), '')
+  return None
+
+
 def _get_target_branch_and_revision(solution_name, git_url, revisions):
   normalized_name = solution_name.strip('/')
   if normalized_name in revisions:
@@ -584,13 +599,15 @@ def force_solution_revision(solution_name, git_url, revisions, cwd):
   git('checkout', '--force', treeish, '--', cwd=cwd)
 
 
-def _has_in_git_cache(revision_sha1, git_cache_dir, url):
+def _has_in_git_cache(revision_sha1, refs, git_cache_dir, url):
   """Returns whether given revision_sha1 is contained in cache of a given repo.
   """
   try:
     mirror_dir = git(
         'cache', 'exists', '--quiet', '--cache-dir', git_cache_dir, url).strip()
     git('cat-file', '-e', revision_sha1, cwd=mirror_dir)
+    for ref in refs:
+      git('cat-file', '-e', _ref_to_remote_ref(ref), cwd=mirror_dir)
     return True
   except SubprocessFailed:
     return False
@@ -664,7 +681,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, git_cache_dir, cleanup_dir):
   if not pin:
     # Refresh only once.
     git(*populate_cmd, env=env)
-  elif _has_in_git_cache(pin, git_cache_dir, url):
+  elif _has_in_git_cache(pin, refs, git_cache_dir, url):
     # No need to fetch at all, because we already have needed revision.
     pass
   else:
@@ -678,7 +695,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, git_cache_dir, cleanup_dir):
       # maintainers of *.googlesource.com (workaround git server replication
       # lag).
       git(*populate_cmd, env=env)
-      if _has_in_git_cache(pin, git_cache_dir, url):
+      if _has_in_git_cache(pin, refs, git_cache_dir, url):
         break
       overrun = time.time() - soft_deadline
       # Only kick in deadline after second attempt to ensure we retry at least

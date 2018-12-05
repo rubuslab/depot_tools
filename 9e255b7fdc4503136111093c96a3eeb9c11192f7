@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3bead9fd_270992a4",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-12-05T02:04:25Z",
+      "side": 1,
+      "message": "brilliant!",
+      "range": {
+        "startLine": 616,
+        "startChar": 0,
+        "endLine": 625,
+        "endChar": 74
+      },
+      "revId": "9e255b7fdc4503136111093c96a3eeb9c11192f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

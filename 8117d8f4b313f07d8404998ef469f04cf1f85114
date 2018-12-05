@@ -16,6 +16,24 @@
       "revId": "8117d8f4b313f07d8404998ef469f04cf1f85114",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17d71ece_3af966d3",
+        "filename": "subprocess2.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-12-05T21:25:52Z",
+      "side": 1,
+      "message": "This seems uncharitable; it\u0027s based on https://github.com/python/cpython/blob/2.7/Python/codecs.c#L117 (which I can add to the comment)",
+      "parentUuid": "6c60d37a_3d07fafd",
+      "revId": "8117d8f4b313f07d8404998ef469f04cf1f85114",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

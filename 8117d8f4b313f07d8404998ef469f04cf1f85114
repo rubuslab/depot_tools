@@ -88,6 +88,24 @@
       "revId": "8117d8f4b313f07d8404998ef469f04cf1f85114",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6551b842_df549b73",
+        "filename": "subprocess2.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-12-05T22:08:48Z",
+      "side": 1,
+      "message": "\u003e You\u0027re correct that it\u0027s a guess, hence the description of this being a \"spec fix\" :)\n\nYou say \"spec fix\", I say \"wild guess\" :)\n\n\u003e \n\u003e I don\u0027t think the cache is getting corrupted; I think the mechanism by which codecs are looked up (and thus the cache populated) is being interfered with later in the process. I am indeed assuming that that\u0027s happening rather than the alternative; that the string-escape codec actually flakily disappears in some scenarios. I\u0027m also assuming that the codec saved in the cache is not being reset after initial load, as I see no path by which that could happen in codecs.c.\n\u003e \n\u003e Happy to add some of this explanation to the comment here, the CL description, and/or the bug.\n\n\nI\u0027d prefer all three, because this is how we get things like: https://chromium.googlesource.com/chromium/tools/build/+/master/scripts/slave/runtest.py#30",
+      "parentUuid": "1f607b42_5a1d7705",
+      "revId": "8117d8f4b313f07d8404998ef469f04cf1f85114",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

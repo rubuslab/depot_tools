@@ -70,6 +70,24 @@
       "revId": "8117d8f4b313f07d8404998ef469f04cf1f85114",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f607b42_5a1d7705",
+        "filename": "subprocess2.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-12-05T21:35:56Z",
+      "side": 1,
+      "message": "You\u0027re correct that it\u0027s a guess, hence the description of this being a \"spec fix\" :)\n\nI don\u0027t think the cache is getting corrupted; I think the mechanism by which codecs are looked up (and thus the cache populated) is being interfered with later in the process. I am indeed assuming that that\u0027s happening rather than the alternative; that the string-escape codec actually flakily disappears in some scenarios. I\u0027m also assuming that the codec saved in the cache is not being reset after initial load, as I see no path by which that could happen in codecs.c.\n\nHappy to add some of this explanation to the comment here, the CL description, and/or the bug.",
+      "parentUuid": "a33f50c9_91ab853d",
+      "revId": "8117d8f4b313f07d8404998ef469f04cf1f85114",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

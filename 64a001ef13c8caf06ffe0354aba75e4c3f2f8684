@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "16a94fc6_b9536fd9",
+        "filename": "buildbucket.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-12-06T00:43:13Z",
+      "side": 1,
+      "message": "Is there context behind these output changes? They broke tools that depended on the script dumping the JSON to stdout...",
+      "revId": "64a001ef13c8caf06ffe0354aba75e4c3f2f8684",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

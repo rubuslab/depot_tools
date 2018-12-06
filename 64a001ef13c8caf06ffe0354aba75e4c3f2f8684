@@ -34,6 +34,24 @@
       "revId": "64a001ef13c8caf06ffe0354aba75e4c3f2f8684",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8c13b78_2e78db1f",
+        "filename": "buildbucket.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-12-06T01:33:20Z",
+      "side": 1,
+      "message": "relevant bug here is https://bugs.chromium.org/p/chromium/issues/detail?id\u003d912391, fwiw",
+      "parentUuid": "31092cf3_327dcab7",
+      "revId": "64a001ef13c8caf06ffe0354aba75e4c3f2f8684",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

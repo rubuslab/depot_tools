@@ -16,6 +16,24 @@
       "revId": "64a001ef13c8caf06ffe0354aba75e4c3f2f8684",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31092cf3_327dcab7",
+        "filename": "buildbucket.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2018-12-06T00:50:53Z",
+      "side": 1,
+      "message": "if the tool has structured output on stdout, \u0027verbose\u0027 stuff should go to stderr instead of stdout, probably?",
+      "parentUuid": "16a94fc6_b9536fd9",
+      "revId": "64a001ef13c8caf06ffe0354aba75e4c3f2f8684",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

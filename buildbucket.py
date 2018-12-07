@@ -34,6 +34,15 @@ BUILDBUCKET_API_URL = urlparse.urljoin(
 )
 
 
+def add_common_arguments(parser):
+  parser.add_argument(
+    '--response-json',
+    help=(
+      'A path to which the response JSON will be written.'
+    )
+  )
+
+
 def main(argv):
   parser = argparse.ArgumentParser()
   parser.add_argument(
@@ -42,13 +51,17 @@ def main(argv):
     action='store_true',
   )
   subparsers = parser.add_subparsers(dest='command')
+
   get_parser = subparsers.add_parser('get')
+  add_common_arguments(get_parser)
   get_parser.add_argument(
     '--id',
     help='The ID of the build to get the status of.',
     required=True,
   )
+
   put_parser = subparsers.add_parser('put')
+  add_common_arguments(put_parser)
   put_parser.add_argument(
     '-b',
     '--bucket',
@@ -77,7 +90,9 @@ def main(argv):
       'from another command.'
     ),
   )
+
   retry_parser = subparsers.add_parser('retry')
+  add_common_arguments(retry_parser)
   retry_parser.add_argument(
     '--id',
     help='The ID of the build to retry.',
@@ -148,6 +163,10 @@ def main(argv):
     headers={'Content-Type': 'application/json'},
   )
 
+  if args.response_json:
+    with open(args.response_json, 'w') as response_json_file:
+      response_json_file.write(content)
+
   if args.verbose:
     print 'Response:', response
     print 'Content:', content
@@ -157,7 +176,7 @@ def main(argv):
   except (ValueError, TypeError, KeyError):
     pass
   else:
-    print 'Build triggered on: %s' % build_url
+    print 'Build: %s' % build_url
 
   return response.status != 200
 

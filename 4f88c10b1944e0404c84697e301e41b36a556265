@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ea58b4c_da43cab9",
+        "filename": "buildbucket.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-12-08T00:20:43Z",
+      "side": 1,
+      "message": "Why not add them to the parser above like --verbose?",
+      "revId": "4f88c10b1944e0404c84697e301e41b36a556265",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7977143c_2a47ff9a",
+        "filename": "buildbucket.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2018-12-08T00:20:43Z",
+      "side": 1,
+      "message": "IMHO this block should be inside \u0027else\u0027 statement on line 179 below as otherwise it is not guaranteed to be a valid JSON, e.g. on error this will contain an error message.",
+      "revId": "4f88c10b1944e0404c84697e301e41b36a556265",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "95a2e943_c3a21555",
         "filename": "buildbucket.py",
         "patchSetId": 1

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "72f132fb_15111fb3",
+        "filename": "buildbucket.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-12-08T00:26:46Z",
+      "side": 1,
+      "message": "Because of how they show up in --help text -- if they\u0027re on the main parser, they show up w/\n\n  buildbucket.py --help\n\nbut not\n\n  buildbucket.py get --help\n\netc, and I think the latter is more useful.",
+      "parentUuid": "5ea58b4c_da43cab9",
+      "revId": "4f88c10b1944e0404c84697e301e41b36a556265",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7977143c_2a47ff9a",
         "filename": "buildbucket.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2018-12-08T00:20:43Z",
       "side": 1,
       "message": "IMHO this block should be inside \u0027else\u0027 statement on line 179 below as otherwise it is not guaranteed to be a valid JSON, e.g. on error this will contain an error message.",
+      "revId": "4f88c10b1944e0404c84697e301e41b36a556265",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c52b253_b0c0bb61",
+        "filename": "buildbucket.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2018-12-08T00:26:46Z",
+      "side": 1,
+      "message": "Disagree -- this definitely should not only be limited to cases in which we\u0027ve got a build URL. I could do something like\n\n  try:\n    content_json \u003d json.loads(content)\n    if args.response_json:\n      ...\n    build_url \u003d content_json[\u0027build\u0027][\u0027url\u0027]\n  except ...\n\nthough.",
+      "parentUuid": "7977143c_2a47ff9a",
       "revId": "4f88c10b1944e0404c84697e301e41b36a556265",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

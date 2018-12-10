@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2a6ec90_daa4d41c",
+        "filename": "gsutil.py.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1183500
+      },
+      "writtenOn": "2018-12-10T13:27:49Z",
+      "side": 1,
+      "message": "Should this file be mode 100755 or mode 100655? The existing .bat files are inconsistent. I guess it doesn\u0027t matter for windows.\n\nUnfortunately typing \u0027gsutil.py\u0027 doesn\u0027t run \u0027gsutil.py.bat\u0027 because the command line locates \u0027gsutil.py\u0027 and tries to look for a .py association (which may be missing, or an editor, or the python interpreter). I\u0027d call it \u0027gsutil.bat\u0027 but that would correspond to the tool in the google cloud sdk. So I guess our Windows users would want to run gsutil.py.bat directly.",
+      "revId": "19dc052e99192a1e9eb8c4aa7f29c2c5b0cac8fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -223,6 +223,7 @@ def main(args=None):
   parser.add_argument('--no_fetch', '--no-fetch', '-n',
                       action='store_true',
                       help='Skip fetching remotes.')
+  parser.add_argument('branch', nargs='*')
   opts = parser.parse_args(args)
 
   if opts.verbose:  # pragma: no cover
@@ -273,6 +274,8 @@ def main(args=None):
   # Rebase each branch starting with the root-most branches and working
   # towards the leaves.
   for branch, parent in git.topo_iter(branch_tree):
+    if opts.branch and branch not in opts.branch:
+      continue
     if git.is_dormant(branch):
       print 'Skipping dormant branch', branch
     else:

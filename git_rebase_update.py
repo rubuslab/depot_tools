@@ -223,6 +223,7 @@ def main(args=None):
   parser.add_argument('--no_fetch', '--no-fetch', '-n',
                       action='store_true',
                       help='Skip fetching remotes.')
+  parser.add_argument('branch', nargs='*')
   opts = parser.parse_args(args)
 
   if opts.verbose:  # pragma: no cover

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "950c88a0_d255f941",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1103379
+      },
+      "writtenOn": "2018-12-12T21:57:11Z",
+      "side": 1,
+      "message": "consider adding\n\n Change-Id: I400f2c0727e279523f82297b7d007e79615ae924",
+      "revId": "bfaea5befec125327c8f707d7cd59d00b9437fb7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -46,6 +46,30 @@
       "revId": "2a72234e619b5c3cff9aa00c4503a1072f6183f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f1bb9115_83075ed3",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2018-12-12T06:32:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2b577e24_d37ded5c",
+      "range": {
+        "startLine": 224,
+        "startChar": 6,
+        "endLine": 225,
+        "endChar": 40
+      },
+      "revId": "2a72234e619b5c3cff9aa00c4503a1072f6183f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

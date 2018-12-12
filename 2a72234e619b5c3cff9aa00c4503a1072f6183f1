@@ -22,6 +22,30 @@
       "revId": "2a72234e619b5c3cff9aa00c4503a1072f6183f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b577e24_d37ded5c",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1272456
+      },
+      "writtenOn": "2018-12-12T03:22:31Z",
+      "side": 1,
+      "message": "That changes the behaviour of this recipe though (since it adds \u0027refs/heads/\u0027 to the checkout calls), and I\u0027m not confident enough in what I\u0027m doing here to know if that\u0027s safe. I\u0027d prefer this change to be a no-op to the tests.",
+      "parentUuid": "266e6d24_0e2eb4f4",
+      "range": {
+        "startLine": 224,
+        "startChar": 6,
+        "endLine": 225,
+        "endChar": 40
+      },
+      "revId": "2a72234e619b5c3cff9aa00c4503a1072f6183f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

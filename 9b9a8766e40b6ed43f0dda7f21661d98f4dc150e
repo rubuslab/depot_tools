@@ -22,6 +22,47 @@
       "revId": "9b9a8766e40b6ed43f0dda7f21661d98f4dc150e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7609b15_67a27681",
+        "filename": "tests/ninjalog_uploader_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-12-17T20:58:25Z",
+      "side": 1,
+      "message": "We should use single quotes where possible ...",
+      "parentUuid": "3bc2b609_948c4afb",
+      "range": {
+        "startLine": 24,
+        "startChar": 16,
+        "endLine": 24,
+        "endChar": 17
+      },
+      "revId": "9b9a8766e40b6ed43f0dda7f21661d98f4dc150e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "defb2e8a_18eb3c96",
+        "filename": "tests/ninjalog_uploader_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2018-12-17T20:58:25Z",
+      "side": 1,
+      "message": "I\u0027m not positive, but I think you don\u0027t need the \"u\" to indicate that it\u0027s a unicode string, a unicode string should be equal to a non unicode string when comparing structs (I think; if I\u0027m wrong, I\u0027d like to know/double-check).",
+      "revId": "9b9a8766e40b6ed43f0dda7f21661d98f4dc150e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

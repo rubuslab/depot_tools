@@ -29,6 +29,12 @@ import sys
 
 from third_party import httplib2
 
+# These build configs affect build performance a lot.
+WHITELISTED_CONFIGS = [
+    'symbol_level', 'use_goma', 'is_debug', 'is_component_build', 'enable_nacl',
+    'host_os', 'host_cpu', 'target_os', 'target_cpu'
+]
+
 def IsGoogler(server):
     """Check whether this script run inside corp network."""
     try:
@@ -39,22 +45,59 @@ def IsGoogler(server):
         return False
 
 def ParseGNArgs(gn_args):
-    """Parse gn_args as json and return config dictionary.
+    """Parse gn_args as json and return config dictionary containining
+    whitelisted configs.
 
     >>> ParseGNArgs("[]")
     {}
     >>> ParseGNArgs('[{\
     "current": {"value": "true"}, \
     "default": {"value": "false"}, \
-    "name": "is_component_build"}]')
+    "name": "is_component_build"}, \
+    {\
+    "current": {"value": "true"}, \
+    "default": {"value": "false"}, \
+    "name": "something_secret"}]')
     {u'is_component_build': u'true'}
     """
     configs = json.loads(gn_args)
     build_configs = {}
+
     for config in configs:
-        build_configs[config["name"]] = config["current"]["value"]
+        key = config["name"]
+        if key not in WHITELISTED_CONFIGS:
+            continue
+        build_configs[key] = config["current"]["value"]
+
     return build_configs
 
+def RemoveBuildDir(cmdline):
+    """Remove build directory (-C) from cmdline that may contain PII.
+
+    >>> RemoveBuildDir(['ninja','-C', 'out/Release'])
+    ['ninja']
+    >>> RemoveBuildDir(['ninja'])
+    ['ninja']
+    >>> RemoveBuildDir(['ninja', '-C'])
+    ['ninja']
+    >>> RemoveBuildDir(['ninja', '-Cout/Relese'])
+    ['ninja']
+    """
+
+    new_cmdline = []
+
+    idx = 0
+    while idx < len(cmdline):
+        if cmdline[idx] == '-C':
+            idx += 2
+            continue
+        if cmdline[idx].startswith('-C'):
+            idx += 1
+            continue
+        new_cmdline.append(cmdline[idx])
+        idx += 1
+
+    return new_cmdline
 
 def GetMetadata(cmdline, ninjalog):
     """Get metadata for uploaded ninjalog."""
@@ -64,8 +107,7 @@ def GetMetadata(cmdline, ninjalog):
     build_configs = {}
 
     try:
-        args = ['gn', 'args', build_dir, '--list', '--overrides-only',
-                '--short', '--json']
+        args = ['gn', 'args', build_dir, '--list', '--short', '--json']
         if sys.platform == 'win32':
             # gn in PATH is bat file in windows environment (except cygwin).
             args = ['cmd', '/c'] + args
@@ -82,12 +124,14 @@ def GetMetadata(cmdline, ninjalog):
 
     metadata = {
         'platform': platform.system(),
-        'cwd': build_dir,
-        'hostname': socket.gethostname(),
         'cpu_core': multiprocessing.cpu_count(),
-        'cmdline': cmdline,
         'build_configs': build_configs,
+        'cmdline': RemoveBuildDir(cmdline),
     }
+
+    jflag = GetJflag(cmdline)
+    if jflag is not None:
+        metadata['jflag'] = jflag
 
     return metadata
 

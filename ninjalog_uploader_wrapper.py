@@ -7,6 +7,7 @@ import os
 import subprocess
 import json
 import sys
+import uuid
 
 from third_party import httplib2
 
@@ -15,7 +16,7 @@ import ninjalog_uploader
 THIS_DIR = os.path.dirname(__file__)
 UPLOADER = os.path.join(THIS_DIR, 'ninjalog_uploader.py')
 CONFIG = os.path.join(THIS_DIR, 'ninjalog.cfg')
-VERSION = 1
+VERSION = 2
 
 
 def LoadConfig():
@@ -31,6 +32,7 @@ def LoadConfig():
             'chromium-build-stats.appspot.com'),
         'countdown': 10,
         'version': VERSION,
+        'user_id': str(uuid.uuid4())
     }
 
 
@@ -40,17 +42,19 @@ def SaveConfig(config):
 
 
 def ShowMessage(countdown):
+    whitelisted = '\n'.join(['  * %s' % config for config in
+                             ninjalog_uploader.WHITELISTED_CONFIGS])
     print """
 Your ninjalog will be uploaded to build stats server. Uploaded log will be used
 to analyze user side build performance.
 
 The following information will be uploaded with ninjalog.
 * OS (e.g. Win, Mac or Linux)
-* build directory (e.g. /home/foo/chromium/src/out/Release)
-* hostname
 * number of cpu cores of building machine
-* cmdline passed to ninja (e.g. ninja -C out/Default -j1024 chrome)
-* build config (e.g. use_goma=true, is_component_build=true, etc)
+* cmdline passed to ninja (e.g. ninja -C out/Default -j1024 chrome), but build
+  directory specified by -C flag is omitted.
+* following build configs
+%s
 
 Uploading ninjalog will be started after you run autoninja another %d time.
 
@@ -63,7 +67,7 @@ $ %s opt-in
 
 If you have question about this, please send mail to infra-dev@chromium.org
 
-""" % (countdown, __file__, __file__)
+""" % (whitelisted, countdown, __file__, __file__)
 
 
 def main():
@@ -72,12 +76,14 @@ def main():
     if len(sys.argv) == 2 and sys.argv[1] == 'opt-in':
         config['opt-in'] = True
         config['countdown'] = 0
+        config['user_id'] = str(uuid.uuid4())
         SaveConfig(config)
         print('ninjalog upload is opted in.')
         return 0
 
     if len(sys.argv) == 2 and sys.argv[1] == 'opt-out':
         config['opt-in'] = False
+        del config['user_id']
         SaveConfig(config)
         print('ninjalog upload is opted out.')
         return 0

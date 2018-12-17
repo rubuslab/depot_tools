@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0105278_6dbc50d8",
+        "filename": "gclient_eval.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-12-17T19:01:56Z",
+      "side": 1,
+      "message": "this code name isn\u0027t very well known. s/monorail/crbug.com/g",
+      "range": {
+        "startLine": 783,
+        "startChar": 34,
+        "endLine": 783,
+        "endChar": 42
+      },
+      "revId": "2ac64b5e22f8510eb658687f7f39c3b2fa82c979",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

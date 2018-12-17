@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f5ae4c9_68a141e7",
+        "filename": "tests/ninjalog_uploader_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000329
+      },
+      "writtenOn": "2018-12-17T08:06:38Z",
+      "side": 1,
+      "message": "Can you expand this test case (or add a new one) that has more than one arg?",
+      "revId": "81e08ce0cd0eb14cd2d6c3e268db0591fc6e6375",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82adfc2c_10ca5f10",
+        "filename": "tests/ninjalog_uploader_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000329
+      },
+      "writtenOn": "2018-12-17T08:06:38Z",
+      "side": 1,
+      "message": "Add a brief comment to each case explaining what is being tested, e.g. \"No args \u003d\u003e default to cwd\", \"Multiple target directories \u003d\u003e use the last directory\"",
+      "range": {
+        "startLine": 24,
+        "startChar": 32,
+        "endLine": 34,
+        "endChar": 35
+      },
+      "revId": "81e08ce0cd0eb14cd2d6c3e268db0591fc6e6375",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

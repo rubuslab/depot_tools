@@ -29,6 +29,12 @@ import sys
 
 from third_party import httplib2
 
+# These build configs affect build performance a lot.
+WHITELISTED_CONFIGS = (
+    'symbol_level', 'use_goma', 'is_debug', 'is_component_build', 'enable_nacl',
+    'host_os', 'host_cpu', 'target_os', 'target_cpu'
+)
+
 def IsGoogler(server):
     """Check whether this script run inside corp network."""
     try:
@@ -42,9 +48,40 @@ def ParseGNArgs(gn_args):
     """Parse gn_args as json and return config dictionary."""
     configs = json.loads(gn_args)
     build_configs = {}
+
     for config in configs:
-        build_configs[config["name"]] = config["current"]["value"]
+        key = config["name"]
+        if key not in WHITELISTED_CONFIGS:
+            continue
+        build_configs[key] = config["current"]["value"]
+
     return build_configs
+
+def GetBuildTargets(cmdline):
+    """Get build tagets from commandline."""
+
+    # Skip argv0.
+    idx = 1
+
+    onearg_flags = ('-C', '-f', '-j', '-k', '-l', '-d', '-t', '-w')
+    zeroarg_flags = ('--version', '-n', '-v')
+
+    targets = []
+
+    while idx < len(cmdline):
+        if cmdline[idx] in onearg_flags:
+            idx += 2
+            continue
+
+        if (cmdline[idx][:2] in onearg_flags or
+            cmdline[idx] in zeroarg_flags):
+            idx += 1
+            continue
+
+        targets.append(cmdline[idx])
+        1 += idx
+
+    return targets
 
 
 def GetMetadata(cmdline, ninjalog):
@@ -55,8 +92,7 @@ def GetMetadata(cmdline, ninjalog):
     build_configs = {}
 
     try:
-        args = ['gn', 'args', build_dir, '--list', '--overrides-only',
-                '--short', '--json']
+        args = ['gn', 'args', build_dir, '--list', '--short', '--json']
         if sys.platform == 'win32':
             # gn in PATH is bat file in windows environment (except cygwin).
             args = ['cmd', '/c'] + args
@@ -73,12 +109,14 @@ def GetMetadata(cmdline, ninjalog):
 
     metadata = {
         'platform': platform.system(),
-        'cwd': build_dir,
-        'hostname': socket.gethostname(),
         'cpu_core': multiprocessing.cpu_count(),
-        'cmdline': cmdline,
         'build_configs': build_configs,
+        'targets': GetBuildTargets(cmdline),
     }
+
+    jflag = GetJflag(cmdline)
+    if jflag is not None:
+        metadata['jflag'] = jflag
 
     return metadata
 

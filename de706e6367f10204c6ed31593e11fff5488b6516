@@ -1,0 +1,372 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a87a316d_9cbfb09c",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "for Google employees but",
+      "range": {
+        "startLine": 14,
+        "startChar": 35,
+        "endLine": 14,
+        "endChar": 40
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f0f50d3_4baeb7b2",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "logs",
+      "range": {
+        "startLine": 14,
+        "startChar": 58,
+        "endLine": 14,
+        "endChar": 61
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cece94eb_c84e3ada",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "contributors",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 11
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "894b2b61_06ed565e",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "with access to Google\u0027s",
+      "range": {
+        "startLine": 18,
+        "startChar": 66,
+        "endLine": 19,
+        "endChar": 6
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7657dc44_d747c894",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "logs",
+      "range": {
+        "startLine": 21,
+        "startChar": 17,
+        "endLine": 21,
+        "endChar": 20
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad9497bb_13f9224a",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "to warn",
+      "range": {
+        "startLine": 21,
+        "startChar": 57,
+        "endLine": 21,
+        "endChar": 60
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d66ed84_ee05e36a",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "logs",
+      "range": {
+        "startLine": 22,
+        "startChar": 14,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cee2bb5d_fb40fc83",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "users",
+      "range": {
+        "startLine": 24,
+        "startChar": 10,
+        "endLine": 24,
+        "endChar": 14
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "607f6a69_19c86f5f",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "by using the",
+      "range": {
+        "startLine": 24,
+        "startChar": 38,
+        "endLine": 24,
+        "endChar": 40
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67f22763_c707218f",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "The collected",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 9
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3123fdb_f2247fb0",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "data for",
+      "range": {
+        "startLine": 40,
+        "startChar": 52,
+        "endLine": 40,
+        "endChar": 20
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c57f9469_00abb5fe",
+        "filename": "ninjalog.README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": ":",
+      "range": {
+        "startLine": 41,
+        "startChar": 16,
+        "endLine": 41,
+        "endChar": 17
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d88ec3d_7b6c7209",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "The uploaded log",
+      "range": {
+        "startLine": 44,
+        "startChar": 54,
+        "endLine": 44,
+        "endChar": 66
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de64716a_7abae943",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "want to allow uploading",
+      "range": {
+        "startLine": 60,
+        "startChar": 7,
+        "endLine": 60,
+        "endChar": 19
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e21a9ff4_c0389f07",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "questions",
+      "range": {
+        "startLine": 64,
+        "startChar": 12,
+        "endLine": 64,
+        "endChar": 20
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d7d123d_534f555e",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1183839
+      },
+      "writtenOn": "2018-12-18T10:47:21Z",
+      "side": 1,
+      "message": "find a more",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 17
+      },
+      "revId": "de706e6367f10204c6ed31593e11fff5488b6516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

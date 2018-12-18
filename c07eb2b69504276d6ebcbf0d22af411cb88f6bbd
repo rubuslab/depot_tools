@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a28f907c_1de82478",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000329
+      },
+      "writtenOn": "2018-12-18T04:25:38Z",
+      "side": 1,
+      "message": "Nit: GetBuildTargetFromCommandLine",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 49,
+        "endChar": 30
+      },
+      "revId": "c07eb2b69504276d6ebcbf0d22af411cb88f6bbd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05a49441_f2d1237b",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000329
+      },
+      "writtenOn": "2018-12-18T04:25:38Z",
+      "side": 1,
+      "message": "Add a comment explaining that you\u0027re just skipping all args that involve these flags, and taking all remaining args as targets.",
+      "revId": "c07eb2b69504276d6ebcbf0d22af411cb88f6bbd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5dec1bce_59c898d8",
+        "filename": "tests/ninjalog_uploader_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000329
+      },
+      "writtenOn": "2018-12-18T04:25:38Z",
+      "side": 1,
+      "message": "How about a test case where there is no explicit target?",
+      "range": {
+        "startLine": 66,
+        "startChar": 37,
+        "endLine": 68,
+        "endChar": 45
+      },
+      "revId": "c07eb2b69504276d6ebcbf0d22af411cb88f6bbd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

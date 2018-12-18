@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ac10de22_ef9753fb",
+        "filename": "OWNERS",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-12-18T21:35:58Z",
+      "side": 1,
+      "message": "This line is invalid and is causing presubmit errors on subsequent CLs, specifically:\n\nowners.SyntaxErrorInOwnersFile: /b/s/w/ir/cache/builder/Depot_Tools_Presubmit/depot_tools/OWNERS:28 syntax error: per-file globs cannot span directories or use escapes: \"per-file support/chromite_wrapper\u003dfile://CROS_OWNERS\"\n\nSee crrev.com/c/1382942 for an example.",
+      "revId": "da32affb47ce32ba301eba82e53530349d8e6db5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

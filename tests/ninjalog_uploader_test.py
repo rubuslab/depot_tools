@@ -63,6 +63,22 @@ class NinjalogUploaderTest(unittest.TestCase):
             ['ninja', '-C', 'out/Release', '-C', 'out/Debug']),
             'out/Debug/.ninja_log')
 
+    def test_get_build_targets(self):
+        self.assertEqual(ninjalog_uploader.GetBuildTargets(['ninja', 'chrome']),
+                         ['chrome'])
+
+        self.assertEqual(ninjalog_uploader.GetBuildTargets(['ninja', '-j', '1000', 'chrome']),
+                         ['chrome'])
+
+        self.assertEqual(ninjalog_uploader.GetBuildTargets(['ninja', 'chrome', '-j', '1000']),
+                         ['chrome'])
+
+        self.assertEqual(ninjalog_uploader.GetBuildTargets(['ninja', '-C', 'chrome']),
+                         [])
+
+        self.assertEqual(ninjalog_uploader.GetBuildTargets(['ninja', '-Cout/Relese', 'chrome']),
+                         ['chrome'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -63,7 +63,11 @@ $ %s opt-in
 
 If you have question about this, please send mail to infra-dev@chromium.org
 
-""" % (countdown, __file__, __file__)
+You can find more detailed explanation in
+%s
+
+""" % (countdown, __file__, __file__,
+       os.path.abspath(os.path.join(THIS_DIR, "ninjalog.README.md")))
 
 
 def main():

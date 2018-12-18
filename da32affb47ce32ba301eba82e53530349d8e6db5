@@ -16,6 +16,24 @@
       "revId": "da32affb47ce32ba301eba82e53530349d8e6db5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb750dd6_733988f1",
+        "filename": "OWNERS",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2018-12-18T21:43:50Z",
+      "side": 1,
+      "message": "i wondered if this was valid, but the presubmit bots didn\u0027t mind, so it\u0027s odd that it does now\n\nsent CL:1382975 to drop this line in the meantime",
+      "parentUuid": "ac10de22_ef9753fb",
+      "revId": "da32affb47ce32ba301eba82e53530349d8e6db5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

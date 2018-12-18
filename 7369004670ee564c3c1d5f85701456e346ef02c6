@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "568aa547_3ac4129c",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1116017
+      },
+      "writtenOn": "2018-12-18T02:59:59Z",
+      "side": 1,
+      "message": "??\n\nmaybe `idx +\u003d 1`",
+      "range": {
+        "startLine": 82,
+        "startChar": 8,
+        "endLine": 83,
+        "endChar": 0
+      },
+      "revId": "7369004670ee564c3c1d5f85701456e346ef02c6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1339,11 +1339,29 @@ class Changelist(object):
     remote, _ = self.GetRemoteBranch()
     url = RunGit(['config', 'remote.%s.url' % remote], error_ok=True).strip()
 
-    # If URL is pointing to a local directory, it is probably a git cache.
-    if os.path.isdir(url):
-      url = RunGit(['config', 'remote.%s.url' % remote],
-                   error_ok=True,
-                   cwd=url).strip()
+    host = urlparse.urlparse(url).netloc
+    if not host:
+      logging.error('%s doesn\'t appear to point to a git host. '
+                    'Interpreting it as a local directory.', url)
+      # If URL is pointing to a local directory, it is probably a git cache.
+      if os.path.isdir(url):
+        old_url = url
+        url = RunGit(['config', 'remote.%s.url' % remote],
+                     error_ok=True,
+                     cwd=url).strip()
+        host = urlparse.urlparse(url).netloc
+        if not host:
+          raise Exception(
+              'Remote "{remote}" for branch "{branch}" points to "{url}", but '
+              'it is misconfigured.\n'
+              '"{url}" must be a git repo and must have a remote named '
+              '"{remote}" pointing to the git host.'.format(
+                  remote=remote, url=old_url, branch=self.GetBranch()))
+      else:
+        raise Exception(
+            'Remote "{remote}" for branch "{branch}" points to "{url}", but it '
+            'doesn\'t exist.'.format(
+                remote=remote, url=url, branch=self.GetBranch()))
     self._cached_remote_url = (True, url)
     return url
 

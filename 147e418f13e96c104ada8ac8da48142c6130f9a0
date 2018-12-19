@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa0ed4df_5d534b79",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2928,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2018-12-19T21:32:00Z",
+      "side": 1,
+      "message": "fmt, *a: self._mocked_call(\u0027logging.error\u0027, fmt % a)\n\nand expectation below will be easier to read.",
+      "range": {
+        "startLine": 2928,
+        "startChar": 21,
+        "endLine": 2928,
+        "endChar": 23
+      },
+      "revId": "147e418f13e96c104ada8ac8da48142c6130f9a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3db7836d_3ab6c910",
+        "filename": "repo",
+        "patchSetId": 1
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 1128435
+      },
+      "writtenOn": "2018-12-20T21:23:44Z",
+      "side": 1,
+      "message": "nits: \u0027Please use Python {}.{} instead.\u0027.format(MIN_PYTHON_VERSION[0], MIN_PYTHON_VERSION[1])\n\nfor consistency with above :D",
+      "range": {
+        "startLine": 1034,
+        "startChar": 11,
+        "endLine": 1034,
+        "endChar": 43
+      },
+      "revId": "d28c4ee6eb9fd4bdfae63b454f1eac21c2a4d395",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

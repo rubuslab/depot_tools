@@ -22,6 +22,30 @@
       "revId": "d28c4ee6eb9fd4bdfae63b454f1eac21c2a4d395",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a729ebf_657faf97",
+        "filename": "repo",
+        "patchSetId": 1
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2018-12-20T21:28:34Z",
+      "side": 1,
+      "message": "this file is a copy of the upstream project [1], so we don\u0027t generally do reviews in here (beyond things that might break us)\n\nas for upstream, i\u0027d recommend not looking at the source too closely ... it\u0027s wholly inconsistent ;).\n\n[1] https://gerrit.googlesource.com/git-repo",
+      "parentUuid": "3db7836d_3ab6c910",
+      "range": {
+        "startLine": 1034,
+        "startChar": 11,
+        "endLine": 1034,
+        "endChar": 43
+      },
+      "revId": "d28c4ee6eb9fd4bdfae63b454f1eac21c2a4d395",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

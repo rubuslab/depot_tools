@@ -1935,6 +1935,59 @@ class CannedChecksUnittest(PresubmitTestsBase):
                      'importSomething ' + 'A ' * 50, 'foo.java',
                      presubmit.OutputApi.PresubmitPromptWarning)
 
+  def testCannedCheckPythonLongLines(self):
+    check = lambda x, y: presubmit_canned_checks.CheckLongLines(x, y, 20)
+    # NOTE: Cannot use ContentTest() here because of the different code path
+    #       used for Python checks in CheckLongLines().
+    FAILING_TEXT = r'''
+01234568901234589
+A short line
+This line is too long but should pass # pylint: disable=line-too-long
+# pylint: disable=line-too-long
+This line is too long too but should pass
+# pylint: enable=line-too-long
+This line is too long too but misplaced and should not pass
+'''
+    change2 = presubmit.Change('foo2', 'foo2\n', self.fake_root_dir, None, 0, 0,
+                               None)
+    input_api2 = self.MockInputApi(change2, False)
+    affected_file = self.mox.CreateMock(presubmit.GitAffectedFile)
+    input_api2.AffectedFiles(
+        include_deletes=False,
+        file_filter=mox.IgnoreArg()).AndReturn([affected_file])
+    affected_file.LocalPath().AndReturn('foo.py')
+    affected_file.LocalPath().AndReturn('foo.py')
+    affected_file.NewContents().AndReturn(FAILING_TEXT.splitlines())
+
+    self.mox.ReplayAll()
+    results2 = check(input_api2, presubmit.OutputApi)
+    self.assertEquals(len(results2), 1)
+    self.assertEquals(results2[0].__class__,
+                      presubmit.OutputApi.PresubmitPromptWarning)
+
+    PASSING_TEXT = r'''
+01234568901234589
+A short line
+This line is too long but should pass # pylint: disable=line-too-long
+# pylint: disable=line-too-long
+This line is too long too but should pass
+# pylint: enable=line-too-long
+'''
+    change1 = presubmit.Change('foo1', 'foo1\n', self.fake_root_dir, None, 0, 0,
+                               None)
+    input_api1 = self.MockInputApi(change1, False)
+    affected_file = self.mox.CreateMock(presubmit.GitAffectedFile)
+    input_api1.AffectedFiles(
+        include_deletes=False,
+        file_filter=mox.IgnoreArg()).AndReturn([affected_file])
+    affected_file.LocalPath().AndReturn('foo.py')
+    affected_file.LocalPath().AndReturn('foo.py')
+    affected_file.NewContents().AndReturn(PASSING_TEXT.splitlines())
+
+    self.mox.ReplayAll()
+    results1 = check(input_api1, presubmit.OutputApi)
+    self.assertEquals(results1, [])
+
   def testCannedCheckJSLongLines(self):
     check = lambda x, y, _: presubmit_canned_checks.CheckLongLines(x, y, 10)
     self.ContentTest(check, 'GEN(\'#include "c/b/ui/webui/fixture.h"\');',

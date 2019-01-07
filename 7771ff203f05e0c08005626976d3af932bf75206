@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "68f14c68_dd53e882",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-01-07T10:19:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d5ff141_0826a6c8",
+      "revId": "7771ff203f05e0c08005626976d3af932bf75206",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7bfc7cd6_f55176a6",
         "filename": "ninjalog_uploader.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2019-01-07T07:35:31Z",
       "side": 1,
       "message": "no need to stringify cpu_core, jflag below?",
+      "revId": "7771ff203f05e0c08005626976d3af932bf75206",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ffda0db_a4cd16ed",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-01-07T10:19:57Z",
+      "side": 1,
+      "message": "Yes, int value is intentional.",
+      "parentUuid": "7bfc7cd6_f55176a6",
       "revId": "7771ff203f05e0c08005626976d3af932bf75206",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

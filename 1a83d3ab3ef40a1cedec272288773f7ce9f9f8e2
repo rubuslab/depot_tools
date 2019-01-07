@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "17ca252e_5eae55c8",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2019-01-07T04:06:42Z",
+      "side": 1,
+      "message": "blink_symbol_level ?\nhttps://cs.chromium.org/chromium/src/third_party/blink/renderer/config.gni?type\u003dcs\u0026q\u003dblink_symbol_level\u0026sq\u003dpackage:chromium\u0026g\u003d0\u0026l\u003d32\n\nclosure_compile?\nhttps://cs.chromium.org/chromium/src/ui/webui/webui_features.gni?sq\u003dpackage:chromium\u0026dr\u0026g\u003d0\u0026l\u003d14\n\njumbo configs?\nhttps://cs.chromium.org/chromium/src/build/config/jumbo.gni?sq\u003dpackage:chromium\u0026dr\u0026g\u003d0",
+      "revId": "1a83d3ab3ef40a1cedec272288773f7ce9f9f8e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bbc80e97_5dacfe65",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2019-01-07T04:06:42Z",
+      "side": 1,
+      "message": "where is this defined?",
+      "revId": "1a83d3ab3ef40a1cedec272288773f7ce9f9f8e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

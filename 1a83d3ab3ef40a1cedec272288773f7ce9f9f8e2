@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "990b90d5_7ca455a0",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-01-07T05:03:49Z",
+      "side": 1,
+      "message": "Let me leave TODO. I will update PDD, if we actually want to know this.",
+      "parentUuid": "17ca252e_5eae55c8",
+      "revId": "1a83d3ab3ef40a1cedec272288773f7ce9f9f8e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bbc80e97_5dacfe65",
         "filename": "ninjalog_uploader.py",
         "patchSetId": 12
@@ -33,6 +51,24 @@
       "revId": "1a83d3ab3ef40a1cedec272288773f7ce9f9f8e2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b174ab9e_3609963a",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-01-07T05:03:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbc80e97_5dacfe65",
+      "revId": "1a83d3ab3ef40a1cedec272288773f7ce9f9f8e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

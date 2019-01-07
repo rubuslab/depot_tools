@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a47966c3_85a9a064",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1154589
+      },
+      "writtenOn": "2019-01-07T12:20:26Z",
+      "side": 1,
+      "message": "Probably should pass \u0027py\u0027 for the extension here, in case there is some python-specific long line check in the future?",
+      "revId": "bfb9ee8a7db06ede9a65c5cfd2de474d5d64bf3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ab53c9e_d438ca84",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1154589
+      },
+      "writtenOn": "2019-01-07T12:20:26Z",
+      "side": 1,
+      "message": "Remove this code that was presumably for debugging?",
+      "range": {
+        "startLine": 482,
+        "startChar": 31,
+        "endLine": 482,
+        "endChar": 32
+      },
+      "revId": "bfb9ee8a7db06ede9a65c5cfd2de474d5d64bf3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cef80b4a_f453f139",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1942,
+      "author": {
+        "id": 1154589
+      },
+      "writtenOn": "2019-01-07T12:20:26Z",
+      "side": 1,
+      "message": "I think the convention is to use double quotes only for triple-quoted blocks (see 3.10 in https://github.com/google/styleguide/blob/gh-pages/pyguide.md) as well as the use of triple quotes elsewhere in this directory.",
+      "revId": "bfb9ee8a7db06ede9a65c5cfd2de474d5d64bf3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

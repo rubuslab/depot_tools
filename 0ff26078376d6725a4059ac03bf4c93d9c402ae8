@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a24b34f_a82a816a",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-01-08T23:52:11Z",
+      "side": 1,
+      "message": "So this can return a string containing quotes? That sounds super weird... How is this return value used?",
+      "range": {
+        "startLine": 908,
+        "startChar": 6,
+        "endLine": 908,
+        "endChar": 18
+      },
+      "revId": "0ff26078376d6725a4059ac03bf4c93d9c402ae8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

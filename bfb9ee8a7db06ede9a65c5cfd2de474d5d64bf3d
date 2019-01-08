@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bc7f6bcb_c5ede2ee",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1001352
+      },
+      "writtenOn": "2019-01-08T15:34:10Z",
+      "side": 1,
+      "message": "That actually doesn\u0027t work, because it would mask global disable directives from the rest of the code! It\u0027s actually cleaner to remove the \u0027py\u0027check in no_longLines() now.",
+      "parentUuid": "a47966c3_85a9a064",
+      "revId": "bfb9ee8a7db06ede9a65c5cfd2de474d5d64bf3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8ab53c9e_d438ca84",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2019-01-07T12:20:26Z",
       "side": 1,
       "message": "Remove this code that was presumably for debugging?",
+      "range": {
+        "startLine": 482,
+        "startChar": 31,
+        "endLine": 482,
+        "endChar": 32
+      },
+      "revId": "bfb9ee8a7db06ede9a65c5cfd2de474d5d64bf3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88310b23_a99616ed",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1001352
+      },
+      "writtenOn": "2019-01-08T15:34:10Z",
+      "side": 1,
+      "message": "Done, thanks.",
+      "parentUuid": "8ab53c9e_d438ca84",
       "range": {
         "startLine": 482,
         "startChar": 31,

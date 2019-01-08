@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2a87d2c_961f297f",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2019-01-08T04:39:29Z",
+      "side": 1,
+      "message": "need to add targets?",
+      "revId": "b53598a49c8f8daeb516eafa5469fa6ab756c308",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06c36263_78450c5a",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2019-01-08T04:39:29Z",
+      "side": 1,
+      "message": "can\u0027t we set build_id (from autoninja?)\n\nno env needed? (at least GOMA_*)",
+      "revId": "b53598a49c8f8daeb516eafa5469fa6ab756c308",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a565a0d_8fc8997b",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2019-01-08T04:39:29Z",
+      "side": 1,
+      "message": "\u0027Jobs\u0027? or fix Metadata struct\u0027s json tag?",
+      "revId": "b53598a49c8f8daeb516eafa5469fa6ab756c308",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

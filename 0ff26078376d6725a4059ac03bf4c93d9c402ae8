@@ -22,6 +22,30 @@
       "revId": "0ff26078376d6725a4059ac03bf4c93d9c402ae8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72c8250f_4032366e",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-01-09T18:53:49Z",
+      "side": 1,
+      "message": "It\u0027s used at https://cs.chromium.org/chromium/tools/depot_tools/git_cl.py?q\u003dGetGitEditor\u0026sq\u003dpackage:chromium\u0026g\u003d0\u0026l\u003d3027 to get the Git default editor for editing the CL description in. It\u0027s passed further into GetEditor (https://cs.chromium.org/chromium/tools/depot_tools/gclient_utils.py?q\u003dRunEditor\u0026sq\u003dpackage:chromium\u0026g\u003d0\u0026l\u003d1097), which selects between that and some others. Eventually the editor command line is executed verbatim with subprocess2.check_call (https://cs.chromium.org/chromium/tools/depot_tools/gclient_utils.py?q\u003dRunEditor\u0026sq\u003dpackage:chromium\u0026g\u003d0\u0026l\u003d1150).",
+      "parentUuid": "5a24b34f_a82a816a",
+      "range": {
+        "startLine": 908,
+        "startChar": 6,
+        "endLine": 908,
+        "endChar": 18
+      },
+      "revId": "0ff26078376d6725a4059ac03bf4c93d9c402ae8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

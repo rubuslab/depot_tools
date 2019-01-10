@@ -125,7 +125,9 @@ class Database(object):
     # Mapping of owners to the paths or globs they own.
     self._owners_to_paths = {EVERYONE: set()}
 
-    # Mapping of paths to authorized owners.
+    # Mappings of paths to authorized owners, via the deepest affected
+    # directory.
+    # For instance "chrome/browser" -> "chrome/browser/*.h" -> ("john", "maria")
     self._paths_to_owners = {}
 
     # Mapping reviewers to the preceding comment per file in the OWNERS files.
@@ -134,9 +136,11 @@ class Database(object):
     # Cache of compiled regexes for _fnmatch()
     self._fnmatch_cache = {}
 
-    # Set of paths that stop us from looking above them for owners.
-    # (This is implicitly true for the root directory).
-    self._stop_looking = set([''])
+    # Sets of paths that stop us from looking above them for owners.
+    # (This is implicitly true for the root directory). They are organized
+    # by glob free path so that a 'ui/events/devices/mojo/*_struct_traits*.*'
+    # rule would be found in 'ui/events/devices/mojo'.
+    self._stop_looking = {'': set([''])}
 
     # Set of files which have already been read.
     self.read_files = set()
@@ -228,14 +232,43 @@ class Database(object):
         dirpath = self.os_path.dirname(dirpath)
 
   def _should_stop_looking(self, objname):
-    return any(self._fnmatch(objname, stop_looking)
-               for stop_looking in self._stop_looking)
+    dirname = objname
+    while True:
+      if dirname in self._stop_looking:
+        if any(self._fnmatch(objname, stop_looking)
+               for stop_looking in self._stop_looking[dirname]):
+          return True
+      up_dirname = self.os_path.dirname(dirname)
+      if up_dirname == dirname:
+        break
+      dirname = up_dirname
+    return False
+
+  def _get_root_affected_dir(self, obj_name):
+    """Returns the deepest directory/path that is affected by a file pattern
+    |obj_name|."""
+    root_affected_dir = obj_name
+    while '*' in root_affected_dir:
+      root_affected_dir = self.os_path.dirname(root_affected_dir)
+    return root_affected_dir
 
   def _owners_for(self, objname):
     obj_owners = set()
-    for owned_path, path_owners in self._paths_to_owners.iteritems():
-      if self._fnmatch(objname, owned_path):
-        obj_owners |= path_owners
+
+    # Possibly relevant rules can be found stored at every directory
+    # level so iterate upwards, looking for them.
+    dirname = objname
+    while True:
+      dir_owner_rules = self._paths_to_owners.get(dirname)
+      if dir_owner_rules:
+        for owned_path, path_owners in dir_owner_rules.iteritems():
+          if self._fnmatch(objname, owned_path):
+            obj_owners |= path_owners
+      up_dirname = self.os_path.dirname(dirname)
+      if up_dirname == dirname:
+        break
+      dirname = up_dirname
+
     return obj_owners
 
   def _read_owners(self, path):
@@ -293,7 +326,8 @@ class Database(object):
 
       previous_line_was_blank = False
       if line == 'set noparent':
-        self._stop_looking.add(dirpath)
+        self._stop_looking.setdefault(
+          self._get_root_affected_dir(dirpath), set()).add(dirpath)
         continue
 
       m = re.match('per-file (.+)=(.+)', line)
@@ -364,7 +398,8 @@ class Database(object):
 
   def _add_entry(self, owned_paths, directive, owners_path, lineno, comment):
     if directive == 'set noparent':
-      self._stop_looking.add(owned_paths)
+      self._stop_looking.setdefault(
+        self._get_root_affected_dir(owned_paths), set()).add(owned_paths)
     elif directive.startswith('file:'):
       include_file = self._resolve_include(directive[5:], owners_path, lineno)
       if not include_file:
@@ -374,13 +409,17 @@ class Database(object):
       included_owners = self._read_just_the_owners(include_file)
       for owner in included_owners:
         self._owners_to_paths.setdefault(owner, set()).add(owned_paths)
-        self._paths_to_owners.setdefault(owned_paths, set()).add(owner)
+        self._paths_to_owners.setdefault(
+          self._get_root_affected_dir(owned_paths), {}).setdefault(
+            owned_paths, set()).add(owner)
     elif self.email_regexp.match(directive) or directive == EVERYONE:
       if comment:
         self.comments.setdefault(directive, {})
         self.comments[directive][owned_paths] = comment
       self._owners_to_paths.setdefault(directive, set()).add(owned_paths)
-      self._paths_to_owners.setdefault(owned_paths, set()).add(directive)
+      self._paths_to_owners.setdefault(
+        self._get_root_affected_dir(owned_paths), {}).setdefault(
+          owned_paths, set()).add(directive)
     else:
       raise SyntaxErrorInOwnersFile(owners_path, lineno,
           ('"%s" is not a "set noparent", file include, "*", '

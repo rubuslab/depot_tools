@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "d8c743d1_b033586d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-01-10T18:56:15Z",
+      "side": 1,
+      "message": "Please remove it from no_long_lines then.",
+      "parentUuid": "5095a378_6762caa1",
+      "revId": "bfb9ee8a7db06ede9a65c5cfd2de474d5d64bf3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8ab53c9e_d438ca84",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 1

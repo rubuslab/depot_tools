@@ -16,6 +16,24 @@
       "revId": "90fe5a81014d27b2070a1d1798a1b1bf7901a0c8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7ed6084_ec3500f6",
+        "filename": "owners.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 1114374
+      },
+      "writtenOn": "2019-01-10T18:32:21Z",
+      "side": 1,
+      "message": "Fixed, no reason to have a list for something that should be one item long.",
+      "parentUuid": "0502c506_b9006351",
+      "revId": "90fe5a81014d27b2070a1d1798a1b1bf7901a0c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5548ab73_f1b806c2",
+        "filename": "metrics.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2019-01-11T19:11:16Z",
+      "side": 1,
+      "message": "In our BigQuery project saved query of Longest git CL uploads we\u0027re treating it as milliseconds. https://pantheon.corp.google.com/bigquery?utm_source\u003dbqui\u0026utm_medium\u003dlink\u0026utm_campaign\u003dclassic\u0026project\u003dcit-cli-metrics\u0026page\u003dsavedqueries\n\nBut we\u0027re also treating timestamp as seconds and they are both based on time.time()\n\nIs our query just wrong? time.time() does seem to be seconds according to python: https://docs.python.org/2/library/time.html",
+      "revId": "9799bd53d1935afadf53e015dd52477187c4bbff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

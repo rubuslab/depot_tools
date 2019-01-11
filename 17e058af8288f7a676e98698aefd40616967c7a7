@@ -85,6 +85,30 @@
       "revId": "17e058af8288f7a676e98698aefd40616967c7a7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ff92525_3a4195b5",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1994,
+      "author": {
+        "id": 1001352
+      },
+      "writtenOn": "2019-01-11T09:37:31Z",
+      "side": 1,
+      "message": "Ok, this requires that global enable directives also apply to the current line then, for consistency with global enables. I\u0027ve changed the code to do just that.",
+      "parentUuid": "fe1baaa3_4e60939a",
+      "range": {
+        "startLine": 1993,
+        "startChar": 0,
+        "endLine": 1994,
+        "endChar": 57
+      },
+      "revId": "17e058af8288f7a676e98698aefd40616967c7a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

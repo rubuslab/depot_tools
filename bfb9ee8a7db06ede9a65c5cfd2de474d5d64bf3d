@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "01e3efc7_c34fd449",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1001352
+      },
+      "writtenOn": "2019-01-11T08:37:08Z",
+      "side": 1,
+      "message": "Removed in Patchset 2 :)",
+      "parentUuid": "d8c743d1_b033586d",
+      "revId": "bfb9ee8a7db06ede9a65c5cfd2de474d5d64bf3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ab53c9e_d438ca84",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 1
@@ -117,6 +135,30 @@
       "revId": "bfb9ee8a7db06ede9a65c5cfd2de474d5d64bf3d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e49c286_eea25f91",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1001352
+      },
+      "writtenOn": "2019-01-11T08:37:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88310b23_a99616ed",
+      "range": {
+        "startLine": 482,
+        "startChar": 31,
+        "endLine": 482,
+        "endChar": 32
+      },
+      "revId": "bfb9ee8a7db06ede9a65c5cfd2de474d5d64bf3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

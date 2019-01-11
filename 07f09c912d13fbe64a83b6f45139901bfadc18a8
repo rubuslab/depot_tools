@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bab926a8_eac2d8f6",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1001352
+      },
+      "writtenOn": "2019-01-11T08:37:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35c8b6a9_43b54d0d",
+      "range": {
+        "startLine": 445,
+        "startChar": 56,
+        "endLine": 445,
+        "endChar": 58
+      },
+      "revId": "07f09c912d13fbe64a83b6f45139901bfadc18a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4fad08ba_9f85136e",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-10T18:56:15Z",
       "side": 1,
       "message": "This should be moved after we decide whether we should do the check.\nOtherwise, if \u0027# pylint: disable\u003dline-too-long\u0027 is not to long, no_long_lines will return true, and we won\u0027t disable the check at all.\n(I think the test is not capturing this case, because the line length is too short.)",
+      "range": {
+        "startLine": 457,
+        "startChar": 11,
+        "endLine": 457,
+        "endChar": 24
+      },
+      "revId": "07f09c912d13fbe64a83b6f45139901bfadc18a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1247d47_e95336a3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1001352
+      },
+      "writtenOn": "2019-01-11T08:37:08Z",
+      "side": 1,
+      "message": "Very good point. Thanks. I\u0027ve fixed it (including a bug in is_global_pylint_directive above) and I\u0027ve added multiple other tests to deal with all test cases I could think of.",
+      "parentUuid": "4fad08ba_9f85136e",
       "range": {
         "startLine": 457,
         "startChar": 11,

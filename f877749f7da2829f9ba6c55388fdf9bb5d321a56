@@ -16,6 +16,24 @@
       "revId": "f877749f7da2829f9ba6c55388fdf9bb5d321a56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc682251_47acff1f",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-01-11T02:53:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37cdc176_7fc6f274",
+      "revId": "f877749f7da2829f9ba6c55388fdf9bb5d321a56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

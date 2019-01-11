@@ -71,11 +71,11 @@ class MetricsCollectorTest(unittest.TestCase):
     self.default_metrics = {
         "python_version": "2.7.13",
         "git_version": "2.18.1",
-        "execution_time": 1000,
-        "timestamp": 0,
+        "execution_time_s": 1000,
+        "timestamp_s": 0,
         "exit_code": 0,
         "command": "fun",
-        "depot_tools_age": 1234,
+        "depot_tools_age_s": 1234,
         "host_arch": "x86",
         "host_os": "linux",
     }

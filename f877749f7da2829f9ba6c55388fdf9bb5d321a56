@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "37cdc176_7fc6f274",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1116017
+      },
+      "writtenOn": "2019-01-11T02:47:46Z",
+      "side": 1,
+      "message": "could you also write WHY we don\u0027t want to upload the log if this condition is satisfied?\notherwise we won\u0027t be able to understand the intention of this code in future.",
+      "revId": "f877749f7da2829f9ba6c55388fdf9bb5d321a56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

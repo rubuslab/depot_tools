@@ -190,13 +190,13 @@ def return_code_from_exception(exception):
   return 1
 
 
-def seconds_to_weeks(duration):
-  """Transform a |duration| from seconds to weeks approximately.
+def anonymize_seconds(duration):
+  """Transform a |duration| granularity from seconds to weeks (approximately).
 
-  Drops the lowest 19 bits of the integer representation, which ammounts to
+  Erases the lowest 19 bits of the integer representation, which ammounts to
   about 6 days.
   """
-  return int(duration) >> 19
+  return (int(duration) >> 19) << 19
 
 
 def extract_known_subcommand_args(args):
@@ -284,7 +284,7 @@ def get_repo_timestamp(path_to_repo):
     return None
 
   # Get the age of the checkout in weeks.
-  return seconds_to_weeks(stdout.strip())
+  return anonymize_seconds(stdout.strip())
 
 
 def print_notice(countdown):

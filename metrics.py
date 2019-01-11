@@ -203,20 +203,20 @@ class MetricsCollector(object):
     except:
       exception = sys.exc_info()
     finally:
-      self.add('execution_time', time.time() - start)
+      self.add('execution_time_s', time.time() - start)
 
     exit_code = metrics_utils.return_code_from_exception(exception)
     self.add('exit_code', exit_code)
 
     # Add metrics regarding environment information.
-    self.add('timestamp', metrics_utils.seconds_to_weeks(time.time()))
+    self.add('timestamp_s', metrics_utils.anonymize_seconds(time.time()))
     self.add('python_version', metrics_utils.get_python_version())
     self.add('host_os', gclient_utils.GetMacWinOrLinux())
     self.add('host_arch', detect_host_arch.HostArch())
 
     depot_tools_age = metrics_utils.get_repo_timestamp(DEPOT_TOOLS)
     if depot_tools_age is not None:
-      self.add('depot_tools_age', depot_tools_age)
+      self.add('depot_tools_age_s', depot_tools_age)
 
     git_version = metrics_utils.get_git_version()
     if git_version:

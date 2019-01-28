@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "875a34a6_3ad28873",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2019-01-28T18:47:15Z",
+      "side": 1,
+      "message": "nit; maybe --no-download to be more like \"--output-json\" and \"--toolchain-dir\"?",
+      "range": {
+        "startLine": 445,
+        "startChar": 23,
+        "endLine": 445,
+        "endChar": 33
+      },
+      "revId": "77bfbe7f0965b838d9c2a809762bf1335322597e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99e2d915_d6c97124",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2019-01-28T18:47:15Z",
+      "side": 1,
+      "message": "SystemExit(...) so that it doesn\u0027t backtrace?",
+      "range": {
+        "startLine": 498,
+        "startChar": 12,
+        "endLine": 498,
+        "endChar": 21
+      },
+      "revId": "77bfbe7f0965b838d9c2a809762bf1335322597e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

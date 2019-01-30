@@ -18,6 +18,21 @@ Then add ~/ninja/ to your PATH.
 EOF
 }
 
+function check_autoninja() {
+    # Ask Googler to use autoninja.
+    if [[ $(hostname) =~ .+\.corp\.google\.com$ && -z $AUTONINJA_BUILD_ID ]]; then
+        echo -en "\e[31m"
+        cat <<-EOF
+You seems to invoke ninja directly.
+Can I ask you to use autoninja to collect build log instead?
+
+EOF
+        echo -en "\e[0m"
+    fi
+}
+
+check_autoninja
+
 case "$OS" in
   Linux)
     MACHINE=$(uname -m)

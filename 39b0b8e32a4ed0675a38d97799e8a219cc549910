@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bc76acba_9f1cca03",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-01T00:02:12Z",
+      "side": 1,
+      "message": "bleh :(",
+      "revId": "39b0b8e32a4ed0675a38d97799e8a219cc549910",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

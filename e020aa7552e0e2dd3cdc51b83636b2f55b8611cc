@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1f5f2c_12aa90fd",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-02-01T19:29:17Z",
+      "side": 1,
+      "message": "I would document that this sort function assumes a constant `gs:/bucket/basedir` prefix for all entries, which is the reason why it can work; otherwise it would sort `gs:/bucket/a/100` next to `gs:/bucket/b/100`, which wouldn\u0027t be right.",
+      "revId": "e020aa7552e0e2dd3cdc51b83636b2f55b8611cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90bd3513_c634e7ff",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-02-01T19:29:17Z",
+      "side": 1,
+      "message": "I would terminate this regex with \u0027$\u0027 to ensure it\u0027s matching the end of the line.",
+      "range": {
+        "startLine": 375,
+        "startChar": 32,
+        "endLine": 375,
+        "endChar": 35
+      },
+      "revId": "e020aa7552e0e2dd3cdc51b83636b2f55b8611cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

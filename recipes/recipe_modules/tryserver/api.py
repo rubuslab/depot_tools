@@ -115,7 +115,7 @@ class TryserverApi(recipe_api.RecipeApi):
   @property
   def is_tryserver(self):
     """Returns true iff we have a change to check out."""
-    return (self.is_patch_in_git or self.is_gerrit_issue)
+    return self.is_gerrit_issue
 
   @property
   def is_gerrit_issue(self):
@@ -126,12 +126,6 @@ class TryserverApi(recipe_api.RecipeApi):
     return ('event.patchSet.ref' in self.m.properties and
             'event.change.url' in self.m.properties and
             'event.change.id' in self.m.properties)
-
-  @property
-  def is_patch_in_git(self):
-    return (self.m.properties.get('patch_storage') == 'git' and
-            self.m.properties.get('patch_repo_url') and
-            self.m.properties.get('patch_ref'))
 
   def get_files_affected_by_patch(self, patch_root, **kwargs):
     """Returns list of paths to files affected by the patch.

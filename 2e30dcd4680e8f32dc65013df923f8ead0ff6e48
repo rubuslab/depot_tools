@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6e785ba_9bf5b6ba",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-04T16:07:05Z",
+      "side": 1,
+      "message": "it\u0027s not clear what was parsed. I\u0027d remove this (and below) print statements, but if you want them, can you print results dict instead on L914?",
+      "range": {
+        "startLine": 893,
+        "startChar": 13,
+        "endLine": 893,
+        "endChar": 19
+      },
+      "revId": "2e30dcd4680e8f32dc65013df923f8ead0ff6e48",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -160,7 +160,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
     # TODO(machenbach): We should explicitly pass HEAD for ALL solutions
     # that don't specify anything else.
     first_sol = cfg.solutions[0].name
-    revisions[first_sol] = revisions.get(first_sol) or 'HEAD'
+    revisions[first_sol] = revisions.get(first_sol) or 'deadbeef'
 
     if cfg.revisions:
       # Only update with non-empty values. Some recipe might otherwise

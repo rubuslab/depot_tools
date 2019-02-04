@@ -1707,6 +1707,18 @@ class TestGitCl(TestCase):
         ref_suffix='%l=Code-Review+1',
         cc=['more@example.com', 'people@example.com'])
 
+  def test_gerrit_tbr_multiple(self):
+    self._run_gerrit_upload_test(
+        [],
+        'desc\nTBR=a@example.com,b@example.com\nBUG=\nR=reviewer@example.com\n'
+        'CC=more@example.com,people@example.com\n\n'
+        'Change-Id: 123456789',
+        ['a@example.com', 'b@example.com', 'reviewer@example.com'],
+        squash=False,
+        squash_mode='override_nosquash',
+        ref_suffix='%l=Code-Review+1',
+        cc=['more@example.com', 'people@example.com'])
+
   def test_gerrit_upload_squash_first_is_default(self):
     self._run_gerrit_upload_test(
         [],

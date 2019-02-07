@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "16cdc92d_f77ebda3",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2124,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-02-07T15:09:24Z",
+      "side": 1,
+      "message": "Two things:\n- The most recent patchset may be a description-only change, done via the web UI. Does it work in this case?\n- Tricium may not have put comments yet on the most recent patchset, do we want to present the ones on the previous one while the last one is still running?\n\nI\u0027m not sure on the second point, but maybe worth leaving a comment here.",
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aba251bc_54e54c67",
         "filename": "git_cl.py",
         "patchSetId": 1

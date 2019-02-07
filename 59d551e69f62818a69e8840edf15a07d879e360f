@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33ee5083_7a692c52",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2123,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-07T00:53:20Z",
+      "side": 1,
+      "message": "i guess you\u0027ve figured out that change detail is actually cached, thus this line doesn\u0027t cause an RPC thanks to \u0027CURRENT_REVISIO\u0027 above. Right?",
+      "range": {
+        "startLine": 2123,
+        "startChar": 25,
+        "endLine": 2123,
+        "endChar": 51
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aba251bc_54e54c67",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2128,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-07T00:53:20Z",
+      "side": 1,
+      "message": "not necessary if you do .setdefault(path, []) on L2125.",
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a3e5800_22103e2e",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2129,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-07T00:53:20Z",
+      "side": 1,
+      "message": "nit: del 1 line.\n\n2 empty lines is too 1 too many.",
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42832674_62e4b7e7",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2159,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-07T00:53:20Z",
+      "side": 1,
+      "message": "self not used. make it @staticmethod",
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4b1b998_55315306",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2772,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-07T00:53:20Z",
+      "side": 1,
+      "message": "why did these change? it\u0027s unexpected.",
+      "range": {
+        "startLine": 2771,
+        "startChar": 5,
+        "endLine": 2772,
+        "endChar": 53
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f17dd751_9d4d664f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2853,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-07T00:53:20Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be here for a read-only op.",
+      "range": {
+        "startLine": 2853,
+        "startChar": 6,
+        "endLine": 2853,
+        "endChar": 67
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "039b0054_5fb9f726",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2916,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-07T00:53:20Z",
+      "side": 1,
+      "message": "given how much copy-pasta this involves, i\u0027d lean towards having just 1 test fun which tests for all of this\nOR \nhaving helper mock setter shared by all test_git_cl_comments* methods.",
+      "range": {
+        "startLine": 2916,
+        "startChar": 6,
+        "endLine": 2916,
+        "endChar": 41
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

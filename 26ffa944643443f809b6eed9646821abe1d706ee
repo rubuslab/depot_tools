@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5dece567_6acf88ae",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1517,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-07T00:53:20Z",
+      "side": 0,
+      "message": "accidentally removed?",
+      "range": {
+        "startLine": 1516,
+        "startChar": 0,
+        "endLine": 1517,
+        "endChar": 48
+      },
+      "revId": "26ffa944643443f809b6eed9646821abe1d706ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

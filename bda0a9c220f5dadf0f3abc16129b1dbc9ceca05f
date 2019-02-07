@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e9d5661_4b428345",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2019-02-07T19:02:39Z",
+      "side": 1,
+      "message": "Put the space down here to avoid going over 80col on previous line?",
+      "range": {
+        "startLine": 500,
+        "startChar": 24,
+        "endLine": 500,
+        "endChar": 25
+      },
+      "revId": "bda0a9c220f5dadf0f3abc16129b1dbc9ceca05f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

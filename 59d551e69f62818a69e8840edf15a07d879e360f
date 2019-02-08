@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9ec38ab1_f372c030",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2123,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-02-08T22:36:27Z",
+      "side": 1,
+      "message": "Yep.",
+      "parentUuid": "33ee5083_7a692c52",
+      "range": {
+        "startLine": 2123,
+        "startChar": 25,
+        "endLine": 2123,
+        "endChar": 51
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "16cdc92d_f77ebda3",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2019-02-07T15:09:24Z",
       "side": 1,
       "message": "Two things:\n- The most recent patchset may be a description-only change, done via the web UI. Does it work in this case?\n- Tricium may not have put comments yet on the most recent patchset, do we want to present the ones on the previous one while the last one is still running?\n\nI\u0027m not sure on the second point, but maybe worth leaving a comment here.",
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "696ce9ba_88e5815b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2124,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-02-08T22:36:27Z",
+      "side": 1,
+      "message": "1. If the last patchset is a description-only change, the current version here would get comments for the description-only change (which, as of right now, would still have a tricium run). Although later, when https://crbug.com/807036 is done, this would no longer show the most recent comments.\n\n2. Maybe, but that would be a bit more complicated. I\u0027m not sure.",
+      "parentUuid": "16cdc92d_f77ebda3",
       "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "931f721b_231edcf4",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2128,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-02-08T22:36:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aba251bc_54e54c67",
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a3e5800_22103e2e",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -73,6 +133,24 @@
       "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bbd8be4_df583388",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2129,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-02-08T22:36:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a3e5800_22103e2e",
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "faab253b_5eaef1f4",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2159,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-02-08T22:36:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42832674_62e4b7e7",
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e4b1b998_55315306",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1
@@ -104,6 +200,30 @@
       "writtenOn": "2019-02-07T00:53:20Z",
       "side": 1,
       "message": "why did these change? it\u0027s unexpected.",
+      "range": {
+        "startLine": 2771,
+        "startChar": 5,
+        "endLine": 2772,
+        "endChar": 53
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "208ee352_3e03c55a",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2772,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-02-08T22:36:27Z",
+      "side": 1,
+      "message": "These changed because now there\u0027s a branch -- calling GetLatestRevisionPatchset calls GetBranch, so it wouldn\u0027t work the way the test was before, where we were using CERR1 for the output of `git symbolic-ref HEAD`, meaning no branch.",
+      "parentUuid": "e4b1b998_55315306",
       "range": {
         "startLine": 2771,
         "startChar": 5,
@@ -139,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "203b386a_5c1d6ec2",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2853,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-02-08T22:36:27Z",
+      "side": 1,
+      "message": "This is also presumably a consequence of getting the latest patchset for the current branch. Agreed that it probably shouldn\u0027t be there.",
+      "parentUuid": "f17dd751_9d4d664f",
+      "range": {
+        "startLine": 2853,
+        "startChar": 6,
+        "endLine": 2853,
+        "endChar": 67
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "039b0054_5fb9f726",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1
@@ -150,6 +294,30 @@
       "writtenOn": "2019-02-07T00:53:20Z",
       "side": 1,
       "message": "given how much copy-pasta this involves, i\u0027d lean towards having just 1 test fun which tests for all of this\nOR \nhaving helper mock setter shared by all test_git_cl_comments* methods.",
+      "range": {
+        "startLine": 2916,
+        "startChar": 6,
+        "endLine": 2916,
+        "endChar": 41
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0140b638_963089bb",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2916,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-02-08T22:36:27Z",
+      "side": 1,
+      "message": "In general, I would lean towards having separate test methods for separate behaviors even if there is some repeated code between the two tests. A helper could be used to add some of the mocked calls that are repeated between the two tests -- but most of the tests, the example messages and comments, is not actually copied and pasted.",
+      "parentUuid": "039b0054_5fb9f726",
       "range": {
         "startLine": 2916,
         "startChar": 6,

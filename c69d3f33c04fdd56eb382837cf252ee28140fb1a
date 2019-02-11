@@ -22,6 +22,30 @@
       "revId": "c69d3f33c04fdd56eb382837cf252ee28140fb1a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dcd56622_70581d9c",
+        "filename": "metrics_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1001928
+      },
+      "writtenOn": "2019-02-11T01:26:49Z",
+      "side": 1,
+      "message": "This is more flexible than manually adding right paddings to texts to match box widths.",
+      "parentUuid": "0b6fd74f_3bc41389",
+      "range": {
+        "startLine": 281,
+        "startChar": 30,
+        "endLine": 281,
+        "endChar": 39
+      },
+      "revId": "c69d3f33c04fdd56eb382837cf252ee28140fb1a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

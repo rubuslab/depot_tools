@@ -3893,6 +3893,10 @@ def CMDstatus(parser, args):
 
   Also see 'git cl comments'.
   """
+  parser.add_option(
+      '--no-branch-color',
+      action='store_true',
+      help='Disable colorized branch names')
   parser.add_option('--field',
                     help='print only specific field (desc|id|patch|status|url)')
   parser.add_option('-f', '--fast', action='store_true',
@@ -3985,9 +3989,10 @@ def CMDstatus(parser, args):
       color = ''
       reset = ''
     status_str = '(%s)' % status if status else ''
-    print('  %*s : %s%s %s%s' % (
-          alignment, FormatBranchName(branch, colorize=True), color, url,
-          status_str, reset))
+    print('  %*s : %s%s %s%s' %
+          (alignment,
+           FormatBranchName(branch, colorize=not options.no_branch_color),
+           color, url, status_str, reset))
 
 
   print()

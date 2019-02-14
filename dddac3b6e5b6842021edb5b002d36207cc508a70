@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f245246_d2a129ac",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3965,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2019-02-14T17:10:50Z",
+      "side": 1,
+      "message": "BTW, no need for else after return.",
+      "revId": "dddac3b6e5b6842021edb5b002d36207cc508a70",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

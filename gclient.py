@@ -595,6 +595,11 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       logging.warning('Updating deps by prepending %s.', rel_prefix)
       deps = rel_deps
 
+    for dep_name in self.recursedeps:
+      if dep_name not in deps:
+        logging.info('In repository recusedeps %s.', dep_name)
+        deps[dep_name] = {'dep_type': 'recurse'}
+
     return deps
 
   def _deps_to_objects(self, deps, use_relative_paths):
@@ -629,6 +634,21 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                   should_process=should_process,
                   relative=use_relative_paths,
                   condition=condition))
+      elif dep_type == 'recurse':
+        deps_to_add.append(
+            GitDependency(
+                parent=self,
+                name=name,
+                url=None,
+                managed=True,
+                custom_deps=None,
+                custom_vars=self.custom_vars,
+                custom_hooks=None,
+                deps_file=self.recursedeps.get(name, self.deps_file),
+                should_process=should_process,
+                should_recurse=name in self.recursedeps,
+                relative=use_relative_paths,
+                condition=condition))
       else:
         url = dep_value.get('url')
         deps_to_add.append(

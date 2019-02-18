@@ -595,6 +595,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       logging.warning('Updating deps by prepending %s.', rel_prefix)
       deps = rel_deps
 
+    for dep_name in self.recursedeps:
+      if dep_name not in deps:
+        logging.info('In repository recusedeps %s.', dep_name)
+        # Don't specify url, but reuse most of function of GitDependency class
+        # for in repository recursedeps.
+        deps[dep_name] = {'url': None,  'dep_type': 'git'}
+
     return deps
 
   def _deps_to_objects(self, deps, use_relative_paths):

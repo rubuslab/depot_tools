@@ -236,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "2970183d_747defb7",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2772,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-20T00:29:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "208ee352_3e03c55a",
+      "range": {
+        "startLine": 2771,
+        "startChar": 5,
+        "endLine": 2772,
+        "endChar": 53
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f17dd751_9d4d664f",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1
@@ -283,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "f005060b_d082c352",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2853,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-20T00:29:54Z",
+      "side": 1,
+      "message": "oh my, i didn\u0027t realize that\u0027s what happens when one checks latest patchset. Bleh :(",
+      "parentUuid": "203b386a_5c1d6ec2",
+      "range": {
+        "startLine": 2853,
+        "startChar": 6,
+        "endLine": 2853,
+        "endChar": 67
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "039b0054_5fb9f726",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1
@@ -327,6 +375,30 @@
       "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a93fd47_4269d67f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2916,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-20T00:29:54Z",
+      "side": 1,
+      "message": "all right.",
+      "parentUuid": "0140b638_963089bb",
+      "range": {
+        "startLine": 2916,
+        "startChar": 6,
+        "endLine": 2916,
+        "endChar": 41
+      },
+      "revId": "59d551e69f62818a69e8840edf15a07d879e360f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

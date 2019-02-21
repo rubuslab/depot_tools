@@ -31,6 +31,7 @@ TEST_CONFIGS = [
   'infradata_master_manager',
   'infradata_config',
   'internal_deps',
+  'ios',
   'luci_gae',
   'luci_go',
   'luci_py',

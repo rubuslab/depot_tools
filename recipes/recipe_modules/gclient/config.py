@@ -125,6 +125,10 @@ def android(c):
   c.target_os.add('android')
 
 @config_ctx()
+def ios(c):
+  c.target_os.add('ios')
+
+@config_ctx()
 def nacl(c):
   s = c.solutions.add()
   s.name = 'native_client'

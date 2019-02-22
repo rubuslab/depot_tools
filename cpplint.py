@@ -2955,7 +2955,7 @@ def CheckForFunctionLengths(filename, clean_lines, linenum,
     # ignore it, unless it's TEST or TEST_F.
     function_name = match_result.group(1).split()[-1]
     if function_name == 'TEST' or function_name == 'TEST_F' or (
-        not Match(r'[A-Z_]+$', function_name)):
+        not Match(r'[A-Z_0-9]+$', function_name)):
       starting_func = True
 
   if starting_func:
@@ -2978,6 +2978,7 @@ def CheckForFunctionLengths(filename, clean_lines, linenum,
         function_state.Begin(function)
         break
     if not body_found:
+      # check
       # No body for the function (or evidence of a non-function) was found.
       error(filename, linenum, 'readability/fn_size', 5,
             'Lint failed to find start of function body.')

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f2c30372_978bfd2d",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-02-22T16:39:55Z",
+      "side": 1,
+      "message": "nit; can we align these all the same way?",
+      "range": {
+        "startLine": 227,
+        "startChar": 16,
+        "endLine": 227,
+        "endChar": 17
+      },
+      "revId": "ab08f758a02bb2c169215d5c53df2a2559eb644f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "acedd1ee_3befcd4d",
+        "filename": "cpplint.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2958,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-02-22T19:14:25Z",
+      "side": 1,
+      "message": "Technically it\u0027s  \u0027^[A-Z_][A-Z_0-9]*$\u0027 :D",
+      "revId": "95b055aa06ca1c4ce0c05c98fbb6c4038e9aa0a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

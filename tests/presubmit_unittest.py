@@ -1555,10 +1555,10 @@ class ChangeUnittest(PresubmitTestsBase):
 
   def testBugsFromDescription(self):
     change = presubmit.Change(
-        '', 'foo\nBUG=2,1\n\nChange-Id: asdf\nBug: 3',
+        '', 'foo\nBUG=2,1\n\nChange-Id: asdf\nBug: 3, 6',
         self.fake_root_dir, [], 0, 0, '')
-    self.assertEquals(['1', '2', '3'], change.BugsFromDescription())
-    self.assertEquals('1,2,3', change.BUG)
+    self.assertEquals(['1', '2', '3', '6'], change.BugsFromDescription())
+    self.assertEquals('1,2,3,6', change.BUG)
 
   def testReviewersFromDescription(self):
     change = presubmit.Change(

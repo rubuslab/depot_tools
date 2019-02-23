@@ -125,11 +125,22 @@ gerrit_instances = [
   {
     'url': 'skia-review.googlesource.com',
   },
+  {
+    'url': 'dawn-review.googlesource.com',
+  },
 ]
 
 monorail_projects = {
   'chromium': {
     'shorturl': 'crbug.com',
+    'short_url_protocol': 'https',
+  },
+  'angleproject': {
+    'shorturl': 'anglebug.com',
+    'short_url_protocol': 'http',
+  },
+  'dawn': {
+    'shorturl': 'crbug.com/dawn',
     'short_url_protocol': 'https',
   },
   'google-breakpad': {},

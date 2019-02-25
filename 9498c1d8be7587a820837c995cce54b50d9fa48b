@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f47769ac_05b15f0a",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1047,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-02-25T21:38:54Z",
+      "side": 1,
+      "message": "This should possibly be `return 1` instead?",
+      "revId": "9498c1d8be7587a820837c995cce54b50d9fa48b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

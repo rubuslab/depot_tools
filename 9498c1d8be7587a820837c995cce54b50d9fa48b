@@ -16,6 +16,24 @@
       "revId": "9498c1d8be7587a820837c995cce54b50d9fa48b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5796204_ef299d42",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1047,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-02-25T21:41:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f47769ac_05b15f0a",
+      "revId": "9498c1d8be7587a820837c995cce54b50d9fa48b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

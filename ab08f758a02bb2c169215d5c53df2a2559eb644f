@@ -22,6 +22,30 @@
       "revId": "ab08f758a02bb2c169215d5c53df2a2559eb644f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e80642c8_4a4a53b5",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2019-02-25T13:01:22Z",
+      "side": 1,
+      "message": "This was formatted by running `git cl format`, shouldn\u0027t we use it in depot_tools?",
+      "parentUuid": "f2c30372_978bfd2d",
+      "range": {
+        "startLine": 227,
+        "startChar": 16,
+        "endLine": 227,
+        "endChar": 17
+      },
+      "revId": "ab08f758a02bb2c169215d5c53df2a2559eb644f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -16,6 +16,24 @@
       "revId": "d7f8b2f3904b5870995b08e91838579ed0d47ce8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bd44634_073a5fb4",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1000039
+      },
+      "writtenOn": "2019-02-26T23:15:58Z",
+      "side": 1,
+      "message": "Frankly, I think allowing the user to avoid accessing servers where they don\u0027t have an account is better, as it also speeds up things a little by preventing the attempts in the first place.\n\nReducing visibility of these messages would mean that the user would not even know that there is no account (say in case the access is checked for an alternative email address).\n\nRunning this utility from a script helps with maintaining long parameter lines, and it makes sense to run it from a script due to lengthy output format specifications anyways.",
+      "parentUuid": "8892d353_da7306d8",
+      "revId": "d7f8b2f3904b5870995b08e91838579ed0d47ce8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

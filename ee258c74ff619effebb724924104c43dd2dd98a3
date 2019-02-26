@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1d0cf4ac_dfb5b729",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2019-02-26T15:35:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7947da6f_03af171a",
+      "range": {
+        "startLine": 159,
+        "startChar": 27,
+        "endLine": 159,
+        "endChar": 31
+      },
+      "revId": "ee258c74ff619effebb724924104c43dd2dd98a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b098371f_827fe556",
         "filename": "recipes/recipe_modules/gerrit/examples/full.expected/basic.json",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "ee258c74ff619effebb724924104c43dd2dd98a3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f608e443_849b5264",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.expected/basic.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2019-02-26T15:35:44Z",
+      "side": 1,
+      "message": "Based on https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#abandon-change, yes, but I haven\u0027t actually tested this in practice. Fixed expectations to make more sense.",
+      "parentUuid": "b098371f_827fe556",
+      "range": {
+        "startLine": 221,
+        "startChar": 4,
+        "endLine": 221,
+        "endChar": 66
+      },
+      "revId": "ee258c74ff619effebb724924104c43dd2dd98a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

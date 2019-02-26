@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8892d353_da7306d8",
+        "filename": "my_activity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-02-26T20:16:10Z",
+      "side": 1,
+      "message": "Are you sure you wouldn\u0027t rather just put these logging messages behind a verbosity flag? Whitelists and blacklists (especially of strings as long as those URLs) are hard for users to maintain.",
+      "revId": "d7f8b2f3904b5870995b08e91838579ed0d47ce8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

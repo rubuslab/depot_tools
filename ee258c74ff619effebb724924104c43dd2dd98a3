@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7947da6f_03af171a",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-26T00:40:39Z",
+      "side": 1,
+      "message": "forgot to use?",
+      "range": {
+        "startLine": 159,
+        "startChar": 27,
+        "endLine": 159,
+        "endChar": 31
+      },
+      "revId": "ee258c74ff619effebb724924104c43dd2dd98a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b098371f_827fe556",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.expected/basic.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-26T00:40:39Z",
+      "side": 1,
+      "message": "seems wrong :)\n\nbtw, are you sure gerrit actually returns new ChangeInfo?",
+      "range": {
+        "startLine": 221,
+        "startChar": 4,
+        "endLine": 221,
+        "endChar": 66
+      },
+      "revId": "ee258c74ff619effebb724924104c43dd2dd98a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

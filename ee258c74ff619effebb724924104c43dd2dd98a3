@@ -117,6 +117,30 @@
       "revId": "ee258c74ff619effebb724924104c43dd2dd98a3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "98d9f89f_cdcffcb7",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.expected/basic.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-02-26T18:24:32Z",
+      "side": 1,
+      "message": "👍",
+      "parentUuid": "33dc793a_821f82a5",
+      "range": {
+        "startLine": 221,
+        "startChar": 4,
+        "endLine": 221,
+        "endChar": 66
+      },
+      "revId": "ee258c74ff619effebb724924104c43dd2dd98a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

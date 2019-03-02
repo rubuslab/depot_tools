@@ -27,9 +27,8 @@ class GitApi(recipe_api.RecipeApi):
       git_cmd.extend(['-c', '%s=%s' % (k, v)])
     can_fail_build = kwargs.pop('can_fail_build', True)
     try:
-      with self.m.context(cwd=(self.m.context.cwd or self.m.path['checkout'])):
-        return self.m.step(name, git_cmd + list(args), infra_step=infra_step,
-                           **kwargs)
+      return self.m.step(name, git_cmd + list(args), infra_step=infra_step,
+                         **kwargs)
     except self.m.step.StepFailure as f:
       if can_fail_build:
         raise

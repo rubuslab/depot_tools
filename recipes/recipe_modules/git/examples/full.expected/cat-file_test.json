@@ -95,7 +95,6 @@
       "count-objects",
       "-v"
     ],
-    "cwd": "[START_DIR]/src",
     "infra_step": true,
     "name": "count-objects",
     "stdout": "/path/to/tmp/"
@@ -107,7 +106,6 @@
       "--get",
       "remote.origin.url"
     ],
-    "cwd": "[START_DIR]/src",
     "infra_step": true,
     "name": "git config remote.origin.url",
     "stdout": "/path/to/tmp/",
@@ -123,7 +121,6 @@
       "--format=%at",
       "-s"
     ],
-    "cwd": "[START_DIR]/src",
     "infra_step": true,
     "name": "git show",
     "stdout": "/path/to/tmp/"
@@ -135,7 +132,6 @@
       "origin",
       "--tags"
     ],
-    "cwd": "[START_DIR]/src",
     "infra_step": true,
     "name": "git fetch tags"
   },
@@ -153,7 +149,6 @@
       "git",
       "status"
     ],
-    "cwd": "[START_DIR]/src",
     "infra_step": true,
     "name": "git status can_fail_build"
   },
@@ -162,7 +157,6 @@
       "git",
       "status"
     ],
-    "cwd": "[START_DIR]/src",
     "infra_step": true,
     "name": "git status cannot_fail_build"
   },
@@ -172,7 +166,6 @@
       "new-branch",
       "refactor"
     ],
-    "cwd": "[START_DIR]/src",
     "env": {
       "PATH": "RECIPE_REPO[depot_tools]:<PATH>"
     },
@@ -187,7 +180,6 @@
       "--upstream",
       "refactor"
     ],
-    "cwd": "[START_DIR]/src",
     "env": {
       "PATH": "RECIPE_REPO[depot_tools]:<PATH>"
     },
@@ -211,7 +203,6 @@
       "origin",
       "--tags"
     ],
-    "cwd": "[START_DIR]/src",
     "infra_step": true,
     "name": "git fetch tags (2)",
     "stdout": "/path/to/tmp/"
@@ -223,7 +214,6 @@
       "blob",
       "abcdef12345:TestFile"
     ],
-    "cwd": "[START_DIR]/src",
     "infra_step": true,
     "name": "git cat-file abcdef12345:TestFile",
     "stdout": "/path/to/tmp/"
@@ -236,7 +226,6 @@
       "[START_DIR]/all.bundle",
       "--all"
     ],
-    "cwd": "[START_DIR]/src",
     "infra_step": true,
     "name": "git bundle"
   },

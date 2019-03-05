@@ -128,8 +128,11 @@ class BotUpdateApi(recipe_api.RecipeApi):
     if patch:
       repo_url = self.m.tryserver.gerrit_change_repo_url
       fetch_ref = self.m.tryserver.gerrit_change_fetch_ref
+      print("REPO URL: ", repo_url)
+      print("FETCH REF: ", fetch_ref)
       if repo_url and fetch_ref:
         flags.append(['--patch_ref', '%s@%s' % (repo_url, fetch_ref)])
+      flags.append('--with_branch_heads')
       if patch_refs:
         flags.extend(
             ['--patch_ref', patch_ref]

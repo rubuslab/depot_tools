@@ -22,6 +22,30 @@
       "revId": "aca9c026ce26740227c4f4e6b43506b551b055fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43dbbdf2_a39c8391",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1001794
+      },
+      "writtenOn": "2019-03-05T23:38:23Z",
+      "side": 1,
+      "message": "Added a comment and also moved the next part into this block to avoid calling rev-parse twice.\n\nPruning is a housekeeping thing for the object store. If we\u0027re not fetching, then we\u0027re not adding any objects to the store, so I think we shouldn\u0027t need to prune. \"Sync\" in that case is a working-tree only operation because it\u0027s just a matter of running \"git checkout\". Passing --force will still work as expected; we\u0027ll git checkout --force the revision we already have.",
+      "parentUuid": "f43356ed_5d7d46e6",
+      "range": {
+        "startLine": 657,
+        "startChar": 27,
+        "endLine": 657,
+        "endChar": 46
+      },
+      "revId": "aca9c026ce26740227c4f4e6b43506b551b055fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

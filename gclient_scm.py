@@ -652,7 +652,9 @@ class GitWrapper(SCMWrapper):
         raise gclient_utils.Error('Invalid Upstream: %s' % upstream_branch)
 
     self._SetFetchConfig(options)
-    self._Fetch(options, prune=options.force)
+
+    if not scm.GIT.IsValidRevision(self.checkout_path, revision, sha_only=True):
+      self._Fetch(options, prune=options.force)
 
     if not scm.GIT.IsValidRevision(self.checkout_path, revision, sha_only=True):
       # Update the remotes first so we have all the refs.

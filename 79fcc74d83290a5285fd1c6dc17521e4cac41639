@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca595315_b9ebb48b",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-03-05T23:54:05Z",
+      "side": 1,
+      "message": "^ is an escape character in Windows. We might need to escape it (^^).",
+      "range": {
+        "startLine": 359,
+        "startChar": 53,
+        "endLine": 359,
+        "endChar": 54
+      },
+      "revId": "79fcc74d83290a5285fd1c6dc17521e4cac41639",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

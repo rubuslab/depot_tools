@@ -94,9 +94,10 @@ def CMDabandon(parser, args):
   parser.add_option('-m', '--message', default='', help='reason for abandoning')
 
   (opt, args) = parser.parse_args(args)
+  print(opt.host)
+  print(urlparse.urlparse(opt.host).netloc)
   result = gerrit_util.AbandonChange(
-      urlparse.urlparse(opt.host).netloc,
-      opt.change, opt.message)
+      urlparse.urlparse(opt.host).netloc, opt.change, opt.message)
   logging.info(result)
   write_result(result, opt)
 

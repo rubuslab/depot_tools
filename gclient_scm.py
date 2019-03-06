@@ -520,7 +520,7 @@ class GitWrapper(SCMWrapper):
       # hash is also a tag, only make a distinction at checkout
       rev_type = "hash"
 
-    mirror = self._GetMirror(url, options)
+    mirror = self._GetMirror(url, options, revision)
     if mirror:
       url = mirror.mirror_path
 
@@ -940,7 +940,7 @@ class GitWrapper(SCMWrapper):
     return os.path.join(self._root_dir,
                         'old_' + self.relpath.replace(os.sep, '_')) + '.git'
 
-  def _GetMirror(self, url, options):
+  def _GetMirror(self, url, options, revision):
     """Get a git_cache.Mirror object for the argument url."""
     if not self.cache_dir:
       return None
@@ -948,6 +948,8 @@ class GitWrapper(SCMWrapper):
         'print_func': self.filter,
         'refs': []
     }
+    if revision.startswith(('refs/changes', 'refs/branch-heads')):
+      mirror_kwargs['refs'].append(revision)
     if hasattr(options, 'with_branch_heads') and options.with_branch_heads:
       mirror_kwargs['refs'].append('refs/branch-heads/*')
     if hasattr(options, 'with_tags') and options.with_tags:
@@ -1281,17 +1283,6 @@ class GitWrapper(SCMWrapper):
   def _Fetch(self, options, remote=None, prune=False, quiet=False,
              refspec=None):
     cfg = gclient_utils.DefaultIndexPackConfig(self.url)
-    # When a mirror is configured, it fetches only the refs/heads, and possibly
-    # the refs/branch-heads and refs/tags, but not the refs/changes. So, if
-    # we're asked to fetch a refs/changes ref from the mirror, it won't have it.
-    # This makes sure that we always fetch refs/changes directly from the
-    # repository and not from the mirror.
-    if refspec and refspec.startswith('refs/changes'):
-      remote, _ = gclient_utils.SplitUrlRevision(self.url)
-      # Make sure that we fetch the (remote) refs/changes/xx ref to the (local)
-      # refs/changes/xx ref.
-      if ':' not in refspec:
-        refspec += ':' + refspec
     fetch_cmd =  cfg + [
         'fetch',
         remote or self.remote,

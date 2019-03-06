@@ -591,7 +591,7 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
 
     options = self.Options()
     scm = gclient_scm.GitWrapper(self.url, self.root_dir, self.relpath)
-    self.assertIsNotNone(scm._GetMirror(self.url, options))
+    self.assertIsNotNone(scm._GetMirror(self.url, options, 'revision'))
     scm.update(options, (), [])
 
     fetch_url = scm._Capture(['remote', 'get-url', 'origin'])

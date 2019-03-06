@@ -46,6 +46,30 @@
       "revId": "aca9c026ce26740227c4f4e6b43506b551b055fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "91fcb498_ccb9f083",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-03-06T00:44:27Z",
+      "side": 1,
+      "message": "Ack\nAFAIK, pruning does remove objects that are no longer found in the remote.\nI don\u0027t think this is common in Chrome, though, and it might make sense to remove it.\nDo you know about this, Aaron?",
+      "parentUuid": "43dbbdf2_a39c8391",
+      "range": {
+        "startLine": 657,
+        "startChar": 27,
+        "endLine": 657,
+        "endChar": 46
+      },
+      "revId": "aca9c026ce26740227c4f4e6b43506b551b055fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

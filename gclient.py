@@ -3,6 +3,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+
 """Meta checkout dependency manager for Git."""
 # Files
 #   .gclient      : Current client configuration, written by 'config' command.

@@ -106,6 +106,7 @@ def GetBuildtoolsPlatformBinaryPath():
   if not buildtools_path:
     return None
 
+  import sys
   if sys.platform.startswith(('cygwin', 'win')):
     subdir = 'win'
   elif sys.platform == 'darwin':

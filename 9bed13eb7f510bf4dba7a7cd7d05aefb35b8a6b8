@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ba89360_6088fb72",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2303,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T23:41:50Z",
+      "side": 1,
+      "message": "sorry, I\u0027ve only now realized style here uses CamelCase, so _IsCqConfigured",
+      "revId": "9bed13eb7f510bf4dba7a7cd7d05aefb35b8a6b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "724980ce_ca3e13d8",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2308,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T23:41:50Z",
+      "side": 1,
+      "message": "for the future, crbug/753213 is also considered acceptable, particularly handy if you want to fit it within 80 chars :P",
+      "range": {
+        "startLine": 2308,
+        "startChar": 11,
+        "endLine": 2308,
+        "endChar": 34
+      },
+      "revId": "9bed13eb7f510bf4dba7a7cd7d05aefb35b8a6b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "111ad4be_6a58e09a",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2309,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T23:41:50Z",
+      "side": 1,
+      "message": "why \"in\" and not \"\u003d\u003d\"?",
+      "range": {
+        "startLine": 2309,
+        "startChar": 56,
+        "endLine": 2309,
+        "endChar": 59
+      },
+      "revId": "9bed13eb7f510bf4dba7a7cd7d05aefb35b8a6b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fc86168_a45511a5",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2311,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T23:41:50Z",
+      "side": 1,
+      "message": "nit: add trailing slash here, just in case someone creates \"refs/branch-heads-hahahah/gotcha\" ref :P",
+      "range": {
+        "startLine": 2311,
+        "startChar": 54,
+        "endLine": 2311,
+        "endChar": 55
+      },
+      "revId": "9bed13eb7f510bf4dba7a7cd7d05aefb35b8a6b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

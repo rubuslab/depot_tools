@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68655f23_5007f4b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T19:19:10Z",
+      "side": 1,
+      "message": "refs/branch-heads/* of",
+      "range": {
+        "startLine": 7,
+        "startChar": 39,
+        "endLine": 7,
+        "endChar": 40
+      },
+      "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca46d099_c7dc1e89",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T19:19:10Z",
+      "side": 1,
+      "message": "nit: wrap description to 72 chars per line (git default style)",
+      "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "146aa7b2_fdde176b",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2309,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T19:19:10Z",
+      "side": 1,
+      "message": "# TODO(crbug/xxx): remove this temporary hack.",
+      "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "368299dc_8491711b",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2310,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T19:19:10Z",
+      "side": 1,
+      "message": "I think \nhttps://chromium.googlesource.com/chromium/src\nis better. It\u0027s better to mistakenly warn sometimes than skip warning on an unrelated repo.",
+      "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

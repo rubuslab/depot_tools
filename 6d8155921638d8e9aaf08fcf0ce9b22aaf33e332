@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "32765b11_b9153edf",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-03-12T19:26:00Z",
+      "side": 1,
+      "message": "hm, this is dangerous; \u0027path\u0027 here is provided by the user, and so shouldn\u0027t be saved to self (I didn\u0027t realize that this module allowed the user to specify path, that seems like a bug).\n\nCan you change this to:\n  * Update the docstring to say that this yields a Path to the win_sdk directory of the SDK,\n    for use in passing to scripts which need auxilliary binaries (e.g. \"Debuggers\\\\x64\")\n  * Have the yield statement below `yield sdk_dir.join(\u0027win_sdk\u0027)`\n  * Remove `sdk_root`",
+      "range": {
+        "startLine": 40,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 38
+      },
+      "revId": "6d8155921638d8e9aaf08fcf0ce9b22aaf33e332",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

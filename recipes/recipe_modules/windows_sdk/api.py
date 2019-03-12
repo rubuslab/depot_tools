@@ -19,6 +19,7 @@ class WindowsSDKApi(recipe_api.RecipeApi):
     super(WindowsSDKApi, self).__init__(*args, **kwargs)
 
     self._sdk_properties = sdk_properties
+    self._sdk_dir = None
 
   @contextmanager
   def __call__(self, path=None, version=None, enabled=True, target_arch='x64'):
@@ -36,11 +37,11 @@ class WindowsSDKApi(recipe_api.RecipeApi):
         StepFailure or InfraFailure.
     """
     if enabled:
-      sdk_dir = self._ensure_sdk(
+      self._sdk_dir = self._ensure_sdk(
           path or self.m.path['cache'].join('windows_sdk'),
           version or self._sdk_properties['version'])
       try:
-        with self.m.context(**self._sdk_env(sdk_dir, target_arch)):
+        with self.m.context(**self._sdk_env(self._sdk_dir, target_arch)):
           yield
       finally:
         # cl.exe automatically starts background mspdbsrv.exe daemon which
@@ -53,6 +54,10 @@ class WindowsSDKApi(recipe_api.RecipeApi):
                     ok_ret='any')
     else:
       yield
+
+  @property
+  def sdk_root(self):
+    return self._sdk_dir.join('win_sdk')
 
   def _ensure_sdk(self, sdk_dir, sdk_version):
     """Ensures the Windows SDK CIPD package is installed.
@@ -94,7 +99,7 @@ class WindowsSDKApi(recipe_api.RecipeApi):
     assert target_arch in ('x86', 'x64')
     filename = 'SetEnv.%s.json' % target_arch
     step_result = self.m.json.read(
-        'read %s' % filename, sdk_dir.join('win_sdk', 'bin', filename),
+        'read %s' % filename, self.sdk_root.join('bin', filename),
         step_test_data=lambda: self.m.json.test_api.output({
             'env': {
                 'PATH': [['..', '..', 'win_sdk', 'bin', 'x64']],

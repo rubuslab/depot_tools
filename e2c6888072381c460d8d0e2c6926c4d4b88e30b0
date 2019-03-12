@@ -73,6 +73,23 @@
       "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "352dc26f_c3306de9",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2311,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T19:20:06Z",
+      "side": 1,
+      "message": "oh, also, you need to check target_ref here. We still want warning for chromium\u0027s refs/heads/master, which has a functional CQ which should NOT be skipped.",
+      "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

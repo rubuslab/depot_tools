@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "56bd7435_348fee48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-03-12T21:00:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68655f23_5007f4b6",
+      "range": {
+        "startLine": 7,
+        "startChar": 39,
+        "endLine": 7,
+        "endChar": 40
+      },
+      "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ca46d099_c7dc1e89",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -39,6 +63,24 @@
       "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8aa95ab4_2bb3cebd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-03-12T21:00:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca46d099_c7dc1e89",
+      "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -76,6 +118,24 @@
     },
     {
       "key": {
+        "uuid": "30e7a444_87a51445",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2310,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-03-12T21:00:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "368299dc_8491711b",
+      "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "352dc26f_c3306de9",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -90,6 +150,24 @@
       "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2188fe00_6e99b84f",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2311,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-03-12T21:00:09Z",
+      "side": 1,
+      "message": "I checked target_branch instead. When I try to use TargetRef, it causes an error in the tests.",
+      "parentUuid": "352dc26f_c3306de9",
+      "revId": "e2c6888072381c460d8d0e2c6926c4d4b88e30b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

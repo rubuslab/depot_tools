@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78f0717f_ab453718",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2307,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T23:00:24Z",
+      "side": 1,
+      "message": "nit: delete 4 empty spaces. I recommend you configure your $EDITOR s.t. it automatically deletes trailing whitespace on each line.\n\nYou can also remove this empty line entirely -- whichever you find more readable.",
+      "revId": "dc3c543f3f017e1aa68833a316985ac7d65fb16f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea964820_2b444736",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2311,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T23:00:24Z",
+      "side": 1,
+      "message": "suggestion: move this warning into its own helper function and use early exists for readability.\n\ndef _is_cq_confgigured(self):\n detail \u003d self._GetChangeDetail([\u0027LABELS\u0027])\n if u\u0027Commit-Queue\u0027 not in details.get(\u0027labels\u0027, {}):\n   return False\n # TODO....\n if \u003cchromium/src AND refs/branch-heads/\u003e:\n   return False\n return True",
+      "range": {
+        "startLine": 2310,
+        "startChar": 8,
+        "endLine": 2311,
+        "endChar": 79
+      },
+      "revId": "dc3c543f3f017e1aa68833a316985ac7d65fb16f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63504a2e_4f6d0acb",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2311,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T23:00:24Z",
+      "side": 1,
+      "message": "isn\u0027t this undefined variable? ditto for target_branch.\nUse the one provided by Gerrit response:\n  detail[\u0027branch\u0027].startswith(\u0027refs/branch-heads/\u0027)",
+      "range": {
+        "startLine": 2311,
+        "startChar": 37,
+        "endLine": 2311,
+        "endChar": 43
+      },
+      "revId": "dc3c543f3f017e1aa68833a316985ac7d65fb16f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1821fe8e_f94a96ba",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2481,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-12T23:00:24Z",
+      "side": 1,
+      "message": "delete.",
+      "revId": "dc3c543f3f017e1aa68833a316985ac7d65fb16f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

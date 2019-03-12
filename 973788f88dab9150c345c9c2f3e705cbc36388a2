@@ -16,6 +16,24 @@
       "revId": "973788f88dab9150c345c9c2f3e705cbc36388a2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8f09426_df20d154",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2308,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-03-12T23:50:03Z",
+      "side": 0,
+      "message": "Moved to method. Good catch!",
+      "parentUuid": "438ae79a_73bc6b8f",
+      "revId": "973788f88dab9150c345c9c2f3e705cbc36388a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

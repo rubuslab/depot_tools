@@ -2304,13 +2304,14 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     if git_common.is_dirty_git_tree('land'):
       return 1
     detail = self._GetChangeDetail(['CURRENT_REVISION', 'LABELS'])
+
     if u'Commit-Queue' in detail.get('labels', {}):
       if not force:
-        confirm_or_exit('\nIt seems this repository has a Commit Queue, '
-                        'which can test and land changes for you. '
-                        'Are you sure you wish to bypass it?\n',
-                        action='bypass CQ')
-
+        if not 'chromium/src' in self._changelist.GetRemoteUrl():
+          confirm_or_exit('\nIt seems this repository has a Commit Queue, '
+                          'which can test and land changes for you. '
+                          'Are you sure you wish to bypass it?\n',
+                          action='bypass CQ')
     differs = True
     last_upload = self._GitGetBranchConfigValue('gerritsquashhash')
     # Note: git diff outputs nothing if there is no diff.

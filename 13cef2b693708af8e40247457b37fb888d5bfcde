@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "421d0d4e_08ebfa5c",
+        "filename": "logs",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2019-03-13T00:01:38Z",
+      "side": 1,
+      "message": "Remove this.",
+      "revId": "13cef2b693708af8e40247457b37fb888d5bfcde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

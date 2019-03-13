@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d1016a1_389a9575",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2303,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-13T20:38:15Z",
+      "side": 1,
+      "message": "\"force\" doesn\u0027t make sense here, it\u0027d keep as before on L2320:\n\nif not force and not self.IsCqConfigured():\n  ...\n\n\nas for details, the _GetChangeDetails does smart caching, so you don\u0027t really have to pass details along.",
+      "revId": "ed36a2c74ea0e0f3ef98a9aa0f7e786daa22a491",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

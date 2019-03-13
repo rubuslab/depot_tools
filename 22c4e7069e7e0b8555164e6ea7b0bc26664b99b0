@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b484eac5_ce7966e1",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2304,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-13T21:16:43Z",
+      "side": 1,
+      "message": "nit: current revision not necessary here, we only care about labels.",
+      "range": {
+        "startLine": 2304,
+        "startChar": 37,
+        "endLine": 2304,
+        "endChar": 53
+      },
+      "revId": "22c4e7069e7e0b8555164e6ea7b0bc26664b99b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

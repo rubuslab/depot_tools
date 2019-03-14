@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b6849b98_e9442e06",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2019-03-14T01:40:37Z",
+      "side": 1,
+      "message": "it never countdown?",
+      "revId": "6d02cf64a5aa64ddbc14eb6fdbf4e2956f082bb1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

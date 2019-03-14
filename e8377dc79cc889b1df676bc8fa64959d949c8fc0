@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "af4f08d9_b3df3c1d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2019-03-14T14:04:45Z",
+      "side": 1,
+      "message": "The less we expose, the better. If you don\u0027t know if others use this, remove it and see if they complain. https://cs.corp.google.com/chromium_goma_client/PRESUBMIT.py?sq\u003dpackage:piper+file://depot/google3+-file:google3/experimental\u0026type\u003dcs\u0026q\u003dinput_api.gclient_utils\u0026g\u003d0\u0026l\u003d68 only finds your use.",
+      "revId": "e8377dc79cc889b1df676bc8fa64959d949c8fc0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

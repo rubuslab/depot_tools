@@ -44,7 +44,8 @@ from warnings import warn
 
 # Local imports.
 import fix_encoding
-import gclient_utils  # Exposed through the API
+import gclient_paths  # Exposed through the API
+import gclient_utils
 import git_footers
 import gerrit_util
 import owners
@@ -516,6 +517,7 @@ class InputApi(object):
     self.cpplint = cpplint
     self.cStringIO = cStringIO
     self.fnmatch = fnmatch
+    self.gclient_paths = gclient_paths
     self.gclient_utils = gclient_utils
     self.glob = glob.glob
     self.json = json

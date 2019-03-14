@@ -16,6 +16,24 @@
       "revId": "6d02cf64a5aa64ddbc14eb6fdbf4e2956f082bb1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "214c1f99_35f66efe",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-03-14T04:37:38Z",
+      "side": 1,
+      "message": "countdown is happened in LoadConfig.",
+      "parentUuid": "b6849b98_e9442e06",
+      "revId": "6d02cf64a5aa64ddbc14eb6fdbf4e2956f082bb1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

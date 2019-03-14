@@ -16,6 +16,24 @@
       "revId": "b1a0f9641f50b900d520a4572666f7c279fa6c59",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d255ba1e_a7496566",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2019-03-14T04:21:19Z",
+      "side": 1,
+      "message": "To tell the truth, I do not know.\nI made gclient_utils exposed but I am not sure others are using it or not.  It might be safer to keep on exposing?\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1117958",
+      "parentUuid": "109bdcce_4dd01774",
+      "revId": "b1a0f9641f50b900d520a4572666f7c279fa6c59",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

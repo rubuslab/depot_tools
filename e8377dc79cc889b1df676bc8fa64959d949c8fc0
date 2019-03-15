@@ -16,6 +16,24 @@
       "revId": "e8377dc79cc889b1df676bc8fa64959d949c8fc0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7dbef5d2_f1496d9b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2019-03-15T00:51:00Z",
+      "side": 1,
+      "message": "Done\nThanks for checking that.  I was not confident I can remove that.",
+      "parentUuid": "af4f08d9_b3df3c1d",
+      "revId": "e8377dc79cc889b1df676bc8fa64959d949c8fc0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

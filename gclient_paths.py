@@ -39,7 +39,7 @@ def FindGclientRoot(from_dir, filename='.gclient'):
       import io
       with io.open(entries_filename, encoding='utf-8') as f:
         exec(f.read(), scope)
-    except SyntaxError, e:
+    except SyntaxError as e:
       SyntaxErrorToError(filename, e)
     all_directories = scope['entries'].keys()
     path_to_check = real_from_dir[len(path)+1:]
@@ -113,7 +113,7 @@ def GetBuildtoolsPlatformBinaryPath():
   elif sys.platform == 'darwin':
     subdir = 'mac'
   elif sys.platform.startswith('linux'):
-      subdir = 'linux64'
+    subdir = 'linux64'
   else:
     raise Error('Unknown platform: ' + sys.platform)
   return os.path.join(buildtools_path, subdir)
@@ -130,7 +130,8 @@ def GetGClientPrimarySolutionName(gclient_root_dir_path):
   """Returns the name of the primary solution in the .gclient file specified."""
   gclient_config_file = os.path.join(gclient_root_dir_path, '.gclient')
   env = {}
-  execfile(gclient_config_file, env)
+  exec (compile(open(gclient_config_file).read(), gclient_config_file, 'exec'),
+        env)
   solutions = env.get('solutions', [])
   if solutions:
     return solutions[0].get('name')

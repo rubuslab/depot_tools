@@ -4,7 +4,11 @@
 
 """SCM-specific utility classes."""
 
-import cStringIO
+try:
+  import cStringIO
+except ImportError:  # For Py3 compatibility
+  import io as cStringIO
+
 import glob
 import logging
 import os
@@ -369,9 +373,9 @@ class GIT(object):
     """Asserts git's version is at least min_version."""
     if cls.current_version is None:
       current_version = cls.Capture(['--version'], '.')
-      matched = re.search(r'version ([0-9\.]+)', current_version)
+      matched = re.search(r'version ([0-9\.]+)', current_version.decode())
       cls.current_version = matched.group(1)
-    current_version_list = map(only_int, cls.current_version.split('.'))
+    current_version_list = list(map(only_int, cls.current_version.split('.')))
     for min_ver in map(int, min_version.split('.')):
       ver = current_version_list.pop(0)
       if ver < min_ver:

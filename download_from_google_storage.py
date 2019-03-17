@@ -256,10 +256,10 @@ def _downloader_worker_thread(thread_num, q, force, base_url,
             file_url, output_filename)))
       else:
         # Other error, probably auth related (bad ~/.boto, etc).
-        out_q.put('%d> Failed to fetch file %s for %s, skipping. [Err: %s]' % (
-            thread_num, file_url, output_filename, err))
-        ret_codes.put((1, 'Failed to fetch file %s for %s. [Err: %s]' % (
-            file_url, output_filename, err)))
+        out_q.put('%d> Failed to fetch file %s for %s, skipping. [Err: %s]' %
+                  (thread_num, file_url, output_filename, err.decode()))
+        ret_codes.put((1, 'Failed to fetch file %s for %s. [Err: %s]' %
+                       (file_url, output_filename, err.decode())))
       continue
     # Fetch the file.
     out_q.put('%d> Downloading %s...' % (thread_num, output_filename))

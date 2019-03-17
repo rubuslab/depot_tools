@@ -18,7 +18,11 @@ import sys
 import tempfile
 import threading
 import traceback
-import urlparse
+
+try:
+  import urlparse
+except ImportError:  # For Py3 compatibility
+  import urllib.parse as urlparse
 
 import download_from_google_storage
 import gclient_utils
@@ -311,7 +315,8 @@ class GitWrapper(SCMWrapper):
     if file_list is not None:
       files = self._Capture(
           ['-c', 'core.quotePath=false', 'ls-files']).splitlines()
-      file_list.extend([os.path.join(self.checkout_path, f) for f in files])
+      file_list.extend(
+          [os.path.join(self.checkout_path, f.decode()) for f in files])
 
   def _DisableHooks(self):
     hook_dir = os.path.join(self.checkout_path, '.git', 'hooks')
@@ -556,7 +561,7 @@ class GitWrapper(SCMWrapper):
       if file_list is not None:
         files = self._Capture(
             ['-c', 'core.quotePath=false', 'ls-files']).splitlines()
-        file_list.extend([os.path.join(self.checkout_path, f) for f in files])
+        file_list.extend([os.path.join(self.checkout_path, f.decode()) for f in files])
       if mirror:
         self._Capture(
             ['remote', 'set-url', '--push', 'origin', mirror.url])
@@ -589,10 +594,10 @@ class GitWrapper(SCMWrapper):
     # Skip url auto-correction if remote.origin.gclient-auto-fix-url is set.
     # This allows devs to use experimental repos which have a different url
     # but whose branch(s) are the same as official repos.
-    if (current_url.rstrip('/') != url.rstrip('/') and
-        url != 'git://foo' and
+    if (current_url.rstrip(b'/') != url.rstrip('/') and url != 'git://foo' and
         subprocess2.capture(
-            ['git', 'config', 'remote.%s.gclient-auto-fix-url' % self.remote],
+            ['git', 'config',
+             'remote.%s.gclient-auto-fix-url' % self.remote],
             cwd=self.checkout_path).strip() != 'False'):
       self.Print('_____ switching %s to a new upstream' % self.relpath)
       if not (options.force or options.reset):
@@ -1047,6 +1052,7 @@ class GitWrapper(SCMWrapper):
       gclient_utils.safe_rename(os.path.join(tmp_dir, '.git'),
                                 os.path.join(self.checkout_path, '.git'))
     except:
+      print("Traceback!")
       traceback.print_exc(file=self.out_fh)
       raise
     finally:
@@ -1116,7 +1122,7 @@ class GitWrapper(SCMWrapper):
 
     try:
       rebase_output = scm.GIT.Capture(rebase_cmd, cwd=self.checkout_path)
-    except subprocess2.CalledProcessError, e:
+    except subprocess2.CalledProcessError as e:
       if (re.match(r'cannot rebase: you have unstaged changes', e.stderr) or
           re.match(r'cannot rebase: your index contains uncommitted changes',
                    e.stderr)):
@@ -1456,12 +1462,13 @@ class CipdRoot(object):
       ensure_file = None
       with tempfile.NamedTemporaryFile(
           suffix='.ensure', delete=False) as ensure_file:
-        ensure_file.write('$ParanoidMode CheckPresence\n\n')
-        for subdir, packages in sorted(self._packages_by_subdir.iteritems()):
-          ensure_file.write('@Subdir %s\n' % subdir)
+        ensure_file.write(b'$ParanoidMode CheckPresence\n\n')
+        for subdir, packages in sorted(self._packages_by_subdir.items()):
+          ensure_file.write(b'@Subdir %s\n' % subdir.encode())
           for package in sorted(packages, key=lambda p: p.name):
-            ensure_file.write('%s %s\n' % (package.name, package.version))
-          ensure_file.write('\n')
+            ensure_file.write(
+                b'%s %s\n' % (package.name.encode(), package.version.encode()))
+          ensure_file.write(b'\n')
       yield ensure_file.name
     finally:
       if ensure_file is not None and os.path.exists(ensure_file.name):

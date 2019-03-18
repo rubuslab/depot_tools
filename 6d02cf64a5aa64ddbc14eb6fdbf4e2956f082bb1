@@ -34,6 +34,24 @@
       "revId": "6d02cf64a5aa64ddbc14eb6fdbf4e2956f082bb1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16a300df_5afbd31f",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2019-03-18T05:17:19Z",
+      "side": 1,
+      "message": "without saving, it won\u0027t count down? (always 10 (initial) or 9 (loaded) ?)",
+      "parentUuid": "214c1f99_35f66efe",
+      "revId": "6d02cf64a5aa64ddbc14eb6fdbf4e2956f082bb1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

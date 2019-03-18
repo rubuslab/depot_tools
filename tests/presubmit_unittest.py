@@ -955,6 +955,7 @@ class InputApiUnittest(PresubmitTestsBase):
         'environ',
         'fnmatch',
         'gclient_paths',
+        'gclient_utils',
         'gerrit',
         'glob',
         'is_committing',

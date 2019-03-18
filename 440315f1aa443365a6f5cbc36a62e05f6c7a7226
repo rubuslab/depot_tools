@@ -22,6 +22,30 @@
       "revId": "440315f1aa443365a6f5cbc36a62e05f6c7a7226",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eff1762a_097e17cf",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2019-03-18T17:53:12Z",
+      "side": 1,
+      "message": "fine with me. I didn\u0027t know how much to wait every time, so I\u0027ve used the same timeout from the block above that got removed.",
+      "parentUuid": "b572aaf5_220dc733",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 12
+      },
+      "revId": "440315f1aa443365a6f5cbc36a62e05f6c7a7226",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

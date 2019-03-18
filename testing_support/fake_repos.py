@@ -88,19 +88,11 @@ def find_free_port(host, base_port):
 
 
 def wait_for_port_to_bind(host, port, process):
-  sock = socket.socket()
-
-  if sys.platform == 'darwin':
-    # On Mac SnowLeopard, if we attempt to connect to the socket
-    # immediately, it fails with EINVAL and never gets a chance to
-    # connect (putting us into a hard spin and then failing).
-    # Linux doesn't need this.
-    time.sleep(0.2)
-
   try:
     start = datetime.datetime.utcnow()
     maxdelay = datetime.timedelta(seconds=30)
     while (datetime.datetime.utcnow() - start) < maxdelay:
+      sock = socket.socket()
       try:
         sock.connect((host, port))
         logging.debug('%d is now bound' % port)

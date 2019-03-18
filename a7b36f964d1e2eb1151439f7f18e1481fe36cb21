@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "57ab49ac_b89eaf12",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1138489
+      },
+      "writtenOn": "2019-03-18T19:42:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56e3518d_fcd2730e",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 8
+      },
+      "revId": "a7b36f964d1e2eb1151439f7f18e1481fe36cb21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fccaf9d_a1909553",
         "filename": "recipes/recipe_modules/windows_sdk/api.py",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "a7b36f964d1e2eb1151439f7f18e1481fe36cb21",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a49739a9_43812f6a",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1138489
+      },
+      "writtenOn": "2019-03-18T19:42:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fccaf9d_a1909553",
+      "range": {
+        "startLine": 40,
+        "startChar": 25,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "a7b36f964d1e2eb1151439f7f18e1481fe36cb21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

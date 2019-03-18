@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b572aaf5_220dc733",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-03-18T17:43:09Z",
+      "side": 1,
+      "message": "we probably should be sleeping for a bit here, otherwise this will burn cpu?",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 12
+      },
+      "revId": "440315f1aa443365a6f5cbc36a62e05f6c7a7226",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

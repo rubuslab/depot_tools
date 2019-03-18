@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e831a56d_a2666f9b",
+        "filename": "fix_encoding.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-03-18T22:09:49Z",
+      "side": 1,
+      "message": "are you sure this shouldn\u0027t be `... or arg \u003d\u003d b\u0027-\u0027`?",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26211495_914b0b5b",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-03-18T22:09:49Z",
+      "side": 1,
+      "message": "Is it possible for self.url to be of type unicode?",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5658f669_63af1d81",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-03-18T22:09:49Z",
+      "side": 1,
+      "message": "Is it possible for this to be of type unicode?",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e800d3d9_37be4b44",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1011,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-03-18T22:09:49Z",
+      "side": 1,
+      "message": "same question ...",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e57c3acf_303f99e1",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-03-18T22:09:49Z",
+      "side": 1,
+      "message": "this indentation is strange?",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11113b77_af58a589",
+        "filename": "gclient_eval.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-03-18T22:09:49Z",
+      "side": 1,
+      "message": "can you just change this to import io unconditionally?",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dfdce6ae_5835acd4",
+        "filename": "gclient_scm.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1463,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-03-18T22:09:49Z",
+      "side": 1,
+      "message": "Does it make sense to use mode\u003d\u0027w\u0027 instead?",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad501b74_c042b8a7",
+        "filename": "gclient_utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-03-18T22:09:49Z",
+      "side": 1,
+      "message": "same comment about using io unconditionally?",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

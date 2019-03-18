@@ -34,6 +34,24 @@
       "revId": "6fc3723a73385e7266f03565c349fc0f8ea8ea0d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6c1a1ee_50d0b5f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2019-03-18T06:50:57Z",
+      "side": 1,
+      "message": "rmtree seems to be needed for Windows X(",
+      "parentUuid": "27accac9_c220f4f7",
+      "revId": "6fc3723a73385e7266f03565c349fc0f8ea8ea0d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

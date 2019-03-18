@@ -52,6 +52,24 @@
       "revId": "6fc3723a73385e7266f03565c349fc0f8ea8ea0d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88ada52f_31180c4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2019-03-18T06:54:03Z",
+      "side": 1,
+      "message": "Anyway, I have updated the description to explain why we need temporary_directory.",
+      "parentUuid": "e6c1a1ee_50d0b5f1",
+      "revId": "6fc3723a73385e7266f03565c349fc0f8ea8ea0d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

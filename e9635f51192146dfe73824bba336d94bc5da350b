@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf8dd5c7_c0e6529b",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1043,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-19T06:59:32Z",
+      "side": 1,
+      "message": "not useful, it\u0027ll be SubprocessError(returncode\u003d1) or smth like that.",
+      "range": {
+        "startLine": 1043,
+        "startChar": 50,
+        "endLine": 1043,
+        "endChar": 62
+      },
+      "revId": "e9635f51192146dfe73824bba336d94bc5da350b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

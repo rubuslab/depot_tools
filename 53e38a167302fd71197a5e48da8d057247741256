@@ -16,6 +16,24 @@
       "revId": "53e38a167302fd71197a5e48da8d057247741256",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1bdf954d_2b7070af",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-03-19T06:52:27Z",
+      "side": 1,
+      "message": "Ah, `git config` return exit code 1 if config does not exist.\nChanged to use try catch here.",
+      "parentUuid": "1ecef414_11512cdb",
+      "revId": "53e38a167302fd71197a5e48da8d057247741256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

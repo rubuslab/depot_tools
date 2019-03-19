@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "843dc4fc_6f282c9f",
+        "filename": "fix_encoding.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-19T16:10:58Z",
+      "side": 1,
+      "message": "It should. Done.",
+      "parentUuid": "e831a56d_a2666f9b",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "26211495_914b0b5b",
         "filename": "gclient.py",
         "patchSetId": 14
@@ -33,6 +51,24 @@
       "revId": "288dacf2755f930758870a772a3322f331a27275",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6143697_424adff2",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-19T16:10:58Z",
+      "side": 1,
+      "message": "It\u0027s not, because the DEPS file from which the value eventually comes from is never read as Unicode.",
+      "parentUuid": "26211495_914b0b5b",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "cbabe3a1_bc9f0f7a",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-19T16:10:58Z",
+      "side": 1,
+      "message": "It is not.",
+      "parentUuid": "5658f669_63af1d81",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e800d3d9_37be4b44",
         "filename": "gclient.py",
         "patchSetId": 14
@@ -67,6 +121,24 @@
       "revId": "288dacf2755f930758870a772a3322f331a27275",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8de4049a_d565d936",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1011,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-19T16:10:58Z",
+      "side": 1,
+      "message": "It\u0027s not.",
+      "parentUuid": "e800d3d9_37be4b44",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "0b0ee6d6_1a8d25d8",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-19T16:10:58Z",
+      "side": 1,
+      "message": "I simply ran \"git cl format --python\". I\u0027ve changed this back.",
+      "parentUuid": "e57c3acf_303f99e1",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "11113b77_af58a589",
         "filename": "gclient_eval.py",
         "patchSetId": 14
@@ -101,6 +191,24 @@
       "revId": "288dacf2755f930758870a772a3322f331a27275",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b37ae81_b46709b9",
+        "filename": "gclient_eval.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-19T16:10:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11113b77_af58a589",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "7d8532ee_7ef93087",
+        "filename": "gclient_scm.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1463,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-19T16:10:58Z",
+      "side": 1,
+      "message": "It does. Done.",
+      "parentUuid": "dfdce6ae_5835acd4",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ad501b74_c042b8a7",
         "filename": "gclient_utils.py",
         "patchSetId": 14
@@ -135,6 +261,24 @@
       "revId": "288dacf2755f930758870a772a3322f331a27275",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec66d9a3_570af952",
+        "filename": "gclient_utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-19T16:10:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad501b74_c042b8a7",
+      "revId": "288dacf2755f930758870a772a3322f331a27275",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -52,6 +52,24 @@
       "revId": "6d02cf64a5aa64ddbc14eb6fdbf4e2956f082bb1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "841df7f3_5b01f51a",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-03-19T23:32:04Z",
+      "side": 1,
+      "message": "Right, LoadConfig does the countdown. Arguably that should be moved, since it is an unexpected side effect. My assumption is that the countdown value is only relevant as long as it is greater than 0. Once it hits zero, or the user opts out, there is no need to save the config file anymore. This is also true if the user has opted in or, I think, if the user is not a Googler.\n\nI may have the logic wrong, but the config file should only be saved if something interesting has changed, and decrementing countdown is not interesting once it hits zero.",
+      "parentUuid": "214c1f99_35f66efe",
+      "revId": "6d02cf64a5aa64ddbc14eb6fdbf4e2956f082bb1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

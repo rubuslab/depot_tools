@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a8ff5cd3_81415f95",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-03-20T20:17:15Z",
+      "side": 1,
+      "message": "I don\u0027t manager depot_tools anymore but one of the challenge here is that once it\u0027s exported it\u0027s really hard to remove, since you can\u0027t find all usage.",
+      "revId": "41f59a30e4bb3fd3fba36b3e54fa75f6129fad4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

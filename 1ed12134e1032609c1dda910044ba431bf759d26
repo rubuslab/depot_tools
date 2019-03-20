@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c489468c_c8bc6e01",
+        "filename": "gclient_utils.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-03-20T00:11:15Z",
+      "side": 1,
+      "message": "Nit: can you use \u0027typ\u0027 here rather than \u0027tp\u0027? It\u0027s a little closer to \u0027type\u0027 and a little clearer, I think, as a result.\n\nAlso, maybe add a comment explaining that you have to use exec() here to avoid this being a syntax error in python 3.",
+      "revId": "1ed12134e1032609c1dda910044ba431bf759d26",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

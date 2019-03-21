@@ -15,10 +15,10 @@ import re
 import tempfile
 import threading
 import time
+import shutil
 import subprocess
 import sys
 import urlparse
-import zipfile
 
 from download_from_google_storage import Gsutil
 import gclient_utils
@@ -357,24 +357,18 @@ class Mirror(object):
     """
     if not self.bootstrap_bucket:
       return False
-    python_fallback = (
-        (sys.platform.startswith('win') and
-          not gclient_utils.FindExecutable('7z')) or
-        (not gclient_utils.FindExecutable('unzip')) or
-        ('ZIP64_SUPPORT' not in subprocess.check_output(["unzip", "-v"]))
-    )
 
     gs_folder = 'gs://%s/%s' % (self.bootstrap_bucket, self.basedir)
     gsutil = Gsutil(self.gsutil_exe, boto_path=None)
-    # Get the most recent version of the zipfile.
+    # Get the most recent version of the pack file.
     _, ls_out, ls_err = gsutil.check_call('ls', gs_folder)
 
     def compare_filenames(a, b):
-      # |a| and |b| look like gs://.../.../9999.zip. They both have the same
+      # |a| and |b| look like gs://.../.../9999.pack. They both have the same
       # gs://bootstrap_bucket/basedir/ prefix because they come from the same
       # `gsutil ls`.
-      # This function only compares the numeral parts before .zip.
-      regex_pattern = r'/(\d+)\.zip$'
+      # This function only compares the numeral parts before .pack.
+      regex_pattern = r'/(\d+)\.pack$'
       match_a = re.search(regex_pattern, a)
       match_b = re.search(regex_pattern, b)
       if (match_a is not None) and (match_b is not None):
@@ -393,7 +387,7 @@ class Mirror(object):
       return False
     latest_checkout = ls_out_sorted[-1]
 
-    # Download zip file to a temporary directory.
+    # Download pack file to a temporary directory.
     try:
       tempdir = tempfile.mkdtemp(prefix='_cache_tmp', dir=self.GetCachePath())
       self.print('Downloading %s' % latest_checkout)
@@ -402,27 +396,16 @@ class Mirror(object):
       if code:
         return False
       filename = os.path.join(tempdir, latest_checkout.split('/')[-1])
-
-      # Unpack the file with 7z on Windows, unzip on linux, or fallback.
-      with self.print_duration_of('unzip'):
-        if not python_fallback:
-          if sys.platform.startswith('win'):
-            cmd = ['7z', 'x', '-o%s' % directory, '-tzip', filename]
-          else:
-            cmd = ['unzip', filename, '-d', directory]
-          retcode = subprocess.call(cmd)
-        else:
-          try:
-            with zipfile.ZipFile(filename, 'r') as f:
-              f.printdir()
-              f.extractall(directory)
-          except Exception as e:
-            self.print('Encountered error: %s' % str(e), file=sys.stderr)
-            retcode = 1
-          else:
-            retcode = 0
+      try:
+        shutil.move(filename, directory)
+      except Exception as e:
+        self.print('Encountered error: %s' % str(e), file=sys.stderr)
+        retcode = 1
+      else:
+        retcode = 0
+  
     finally:
-      # Clean up the downloaded zipfile.
+      # Clean up the downloaded pack file.
       #
       # This is somehow racy on Windows.
       # Catching OSError because WindowsError isn't portable and
@@ -435,7 +418,7 @@ class Mirror(object):
 
     if retcode:
       self.print(
-          'Extracting bootstrap zipfile %s failed.\n'
+          'Extracting bootstrap pack %s failed.\n'
           'Resuming normal operations.' % filename)
       return False
     return True
@@ -462,7 +445,7 @@ class Mirror(object):
     return os.path.isfile(os.path.join(self.mirror_path, 'config'))
 
   def supported_project(self):
-    """Returns true if this repo is known to have a bootstrap zip file."""
+    """Returns true if this repo is known to have a bootstrap pack file."""
     u = urlparse.urlparse(self.url)
     return u.netloc in [
         'chromium.googlesource.com',
@@ -513,7 +496,7 @@ class Mirror(object):
       elif not self.exists() or not self.supported_project():
         # Bootstrap failed due to either
         # 1. No previous cache
-        # 2. Project doesn't have a bootstrap zip file
+        # 2. Project doesn't have a bootstrap pack file
         # Start with a bare git dir.
         self.RunGit(['init', '--bare'], cwd=tempdir)
       else:
@@ -585,20 +568,18 @@ class Mirror(object):
         lockfile.unlock()
 
   def update_bootstrap(self, prune=False):
-    # The files are named <git number>.zip
     gen_number = subprocess.check_output(
         [self.git_exe, 'number', 'master'], cwd=self.mirror_path).strip()
     # Run Garbage Collect to compress packfile.
     self.RunGit(['gc', '--prune=all'])
     # Creating a temp file and then deleting it ensures we can use this name.
-    _, tmp_zipfile = tempfile.mkstemp(suffix='.zip')
-    os.remove(tmp_zipfile)
-    subprocess.call(['zip', '-r', tmp_zipfile, '.'], cwd=self.mirror_path)
+    _, tmp_packfile = tempfile.mkstemp(suffix='.pack')
+    os.remove(tmp_packfile)
     gsutil = Gsutil(path=self.gsutil_exe, boto_path=None)
     gs_folder = 'gs://%s/%s' % (self.bootstrap_bucket, self.basedir)
-    dest_name = '%s/%s.zip' % (gs_folder, gen_number)
-    gsutil.call('cp', tmp_zipfile, dest_name)
-    os.remove(tmp_zipfile)
+    dest_name = '%s/%s.pack' % (gs_folder, gen_number)
+    gsutil.call('cp', tmp_packfile, dest_name)
+    os.remove(tmp_packfile)
 
     # Remove all other files in the same directory.
     if prune:
@@ -677,7 +658,7 @@ def CMDexists(parser, args):
   return 1
 
 
-@subcommand.usage('[url of repo to create a bootstrap zip file]')
+@subcommand.usage('[url of repo to create a bootstrap pack file]')
 def CMDupdate_bootstrap(parser, args):
   """Create and uploads a bootstrap tarball."""
   # Lets just assert we can't do this on Windows.
@@ -686,7 +667,7 @@ def CMDupdate_bootstrap(parser, args):
     return 1
 
   parser.add_option('--prune', action='store_true',
-                    help='Prune all other cached zipballs of the same repo.')
+                    help='Prune all other cached packballs of the same repo.')
 
   # First, we need to ensure the cache is populated.
   populate_args = args[:]

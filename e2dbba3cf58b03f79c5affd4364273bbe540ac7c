@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c2177187_fd108e51",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-21T19:20:11Z",
+      "side": 1,
+      "message": "WDYT about having .../9999/{whatever.pack, whatever.idx, ..whatever..} instead?\nWe can then instruct git cache to download the whole contents of the dir, allowing us to change what and how we upload later.",
+      "range": {
+        "startLine": 363,
+        "startChar": 4,
+        "endLine": 367,
+        "endChar": 77
+      },
+      "revId": "e2dbba3cf58b03f79c5affd4364273bbe540ac7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf19dbe4_bd7c9025",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-21T19:20:11Z",
+      "side": 1,
+      "message": "pretty sure you don\u0027t need to download them to temp dir -- straight into .git/ dir is fine,\nso long as you clean them in case of exception.",
+      "range": {
+        "startLine": 390,
+        "startChar": 4,
+        "endLine": 390,
+        "endChar": 58
+      },
+      "revId": "e2dbba3cf58b03f79c5affd4364273bbe540ac7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fcb03554_8507b599",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-21T19:20:11Z",
+      "side": 1,
+      "message": "This code makes no sense to me. Tracing what happens to temp .pack file:\n * create\n * remove\n * gs copy (it has been removed!)\n * remove (still removed...)",
+      "range": {
+        "startLine": 578,
+        "startChar": 0,
+        "endLine": 589,
+        "endChar": 26
+      },
+      "revId": "e2dbba3cf58b03f79c5affd4364273bbe540ac7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3eb5f953_a165ea88",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-21T19:20:11Z",
+      "side": 1,
+      "message": "just delete, no longer really true.",
+      "range": {
+        "startLine": 668,
+        "startChar": 54,
+        "endLine": 668,
+        "endChar": 63
+      },
+      "revId": "e2dbba3cf58b03f79c5affd4364273bbe540ac7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2721ca57_922c2eb8",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-21T19:20:11Z",
+      "side": 1,
+      "message": ":) i think \"versions\" might be easier to understand",
+      "range": {
+        "startLine": 677,
+        "startChar": 49,
+        "endLine": 677,
+        "endChar": 58
+      },
+      "revId": "e2dbba3cf58b03f79c5affd4364273bbe540ac7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

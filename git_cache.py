@@ -18,7 +18,6 @@ import time
 import subprocess
 import sys
 import urlparse
-import zipfile
 
 from download_from_google_storage import Gsutil
 import gclient_utils
@@ -357,24 +356,18 @@ class Mirror(object):
     """
     if not self.bootstrap_bucket:
       return False
-    python_fallback = (
-        (sys.platform.startswith('win') and
-          not gclient_utils.FindExecutable('7z')) or
-        (not gclient_utils.FindExecutable('unzip')) or
-        ('ZIP64_SUPPORT' not in subprocess.check_output(["unzip", "-v"]))
-    )
 
     gs_folder = 'gs://%s/%s' % (self.bootstrap_bucket, self.basedir)
     gsutil = Gsutil(self.gsutil_exe, boto_path=None)
-    # Get the most recent version of the zipfile.
+    # Get the most recent version of the pack file.
     _, ls_out, ls_err = gsutil.check_call('ls', gs_folder)
 
     def compare_filenames(a, b):
-      # |a| and |b| look like gs://.../.../9999.zip. They both have the same
+      # |a| and |b| look like gs://.../.../9999.pack. They both have the same
       # gs://bootstrap_bucket/basedir/ prefix because they come from the same
       # `gsutil ls`.
-      # This function only compares the numeral parts before .zip.
-      regex_pattern = r'/(\d+)\.zip$'
+      # This function only compares the numeral parts before .pack.
+      regex_pattern = r'/(\d+)\.pack$'
       match_a = re.search(regex_pattern, a)
       match_b = re.search(regex_pattern, b)
       if (match_a is not None) and (match_b is not None):
@@ -391,52 +384,28 @@ class Mirror(object):
                  (self.mirror_path, self.bootstrap_bucket,
                   '  '.join((ls_err or '').splitlines(True))))
       return False
-    latest_checkout = ls_out_sorted[-1]
-
-    # Download zip file to a temporary directory.
+    latest_checkout_pack = ls_out_sorted[-1]
+    latest_checkout_idx = latest_checkout_pack[:-5]
+    # Download pack and idx file to the directory.
     try:
-      tempdir = tempfile.mkdtemp(prefix='_cache_tmp', dir=self.GetCachePath())
-      self.print('Downloading %s' % latest_checkout)
+      self.print('Downloading %s and %s' % 
+                (latest_checkout_pack, latest_checkout_idx))
       with self.print_duration_of('download'):
-        code = gsutil.call('cp', latest_checkout, tempdir)
-      if code:
+        code_pack = gsutil.call('cp', latest_checkout_pack, directory)
+        code_idx = gsutil.call('cp', latest_checkout_idx, directory)
+      if code_pack or code_idx:
         return False
-      filename = os.path.join(tempdir, latest_checkout.split('/')[-1])
-
-      # Unpack the file with 7z on Windows, unzip on linux, or fallback.
-      with self.print_duration_of('unzip'):
-        if not python_fallback:
-          if sys.platform.startswith('win'):
-            cmd = ['7z', 'x', '-o%s' % directory, '-tzip', filename]
-          else:
-            cmd = ['unzip', filename, '-d', directory]
-          retcode = subprocess.call(cmd)
-        else:
-          try:
-            with zipfile.ZipFile(filename, 'r') as f:
-              f.printdir()
-              f.extractall(directory)
-          except Exception as e:
-            self.print('Encountered error: %s' % str(e), file=sys.stderr)
-            retcode = 1
-          else:
-            retcode = 0
-    finally:
-      # Clean up the downloaded zipfile.
-      #
-      # This is somehow racy on Windows.
-      # Catching OSError because WindowsError isn't portable and
-      # pylint complains.
-      exponential_backoff_retry(
-          lambda: gclient_utils.rm_file_or_tree(tempdir),
-          excs=(OSError,),
-          name='rmtree [%s]' % (tempdir,),
-          printerr=self.print)
+      retcode = 1
+    except Exception as e:
+      self.print('Encountered error: %s' % str(e), file=sys.stderr)
+      retcode = 0
+    filename_pack = os.path.join(directory, latest_checkout_pack.split('/')[-1])
+    filename_idx = filename_pack[:-5]
 
     if retcode:
       self.print(
-          'Extracting bootstrap zipfile %s failed.\n'
-          'Resuming normal operations.' % filename)
+          'Extracting bootstrap pack %s and idx %s failed.\n'
+          'Resuming normal operations.' % (filename_pack, filename_idx))
       return False
     return True
 
@@ -462,7 +431,7 @@ class Mirror(object):
     return os.path.isfile(os.path.join(self.mirror_path, 'config'))
 
   def supported_project(self):
-    """Returns true if this repo is known to have a bootstrap zip file."""
+    """Returns true if this repo is known to have a bootstrap pack file."""
     u = urlparse.urlparse(self.url)
     return u.netloc in [
         'chromium.googlesource.com',
@@ -513,7 +482,7 @@ class Mirror(object):
       elif not self.exists() or not self.supported_project():
         # Bootstrap failed due to either
         # 1. No previous cache
-        # 2. Project doesn't have a bootstrap zip file
+        # 2. Project doesn't have a bootstrap pack file
         # Start with a bare git dir.
         self.RunGit(['init', '--bare'], cwd=tempdir)
       else:
@@ -585,26 +554,26 @@ class Mirror(object):
         lockfile.unlock()
 
   def update_bootstrap(self, prune=False):
-    # The files are named <git number>.zip
     gen_number = subprocess.check_output(
         [self.git_exe, 'number', 'master'], cwd=self.mirror_path).strip()
     # Run Garbage Collect to compress packfile.
     self.RunGit(['gc', '--prune=all'])
     # Creating a temp file and then deleting it ensures we can use this name.
-    _, tmp_zipfile = tempfile.mkstemp(suffix='.zip')
-    os.remove(tmp_zipfile)
-    subprocess.call(['zip', '-r', tmp_zipfile, '.'], cwd=self.mirror_path)
     gsutil = Gsutil(path=self.gsutil_exe, boto_path=None)
+    src_folder = self.mirror_path
+    src_name_pack = '%s/%s.pack' % (src_folder, gen_number)
+    src_name_idx = '%s/%s.idk' % (idx_folder, gen_number)
     gs_folder = 'gs://%s/%s' % (self.bootstrap_bucket, self.basedir)
-    dest_name = '%s/%s.zip' % (gs_folder, gen_number)
-    gsutil.call('cp', tmp_zipfile, dest_name)
-    os.remove(tmp_zipfile)
+    dest_name_pack = '%s/%s.pack' % (gs_folder, gen_number)
+    dest_name_idx = '%s/%s.idx' % (gs_folder, gen_number)
+    gsutil.call('cp', src_name_pack, dest_name_pack)
+    gsutil.call('cp', src_name_idx, dest_name_idx)
 
     # Remove all other files in the same directory.
     if prune:
       _, ls_out, _ = gsutil.check_call('ls', gs_folder)
       for filename in ls_out.splitlines():
-        if filename == dest_name:
+        if filename == dest_name_pack or filename == dest_name_idx:
           continue
         gsutil.call('rm', filename)
 
@@ -676,17 +645,15 @@ def CMDexists(parser, args):
     return 0
   return 1
 
-
-@subcommand.usage('[url of repo to create a bootstrap zip file]')
 def CMDupdate_bootstrap(parser, args):
-  """Create and uploads a bootstrap tarball."""
+  """Create and uploads a bootstrap version."""
   # Lets just assert we can't do this on Windows.
   if sys.platform.startswith('win'):
     print('Sorry, update bootstrap will not work on Windows.', file=sys.stderr)
     return 1
 
   parser.add_option('--prune', action='store_true',
-                    help='Prune all other cached zipballs of the same repo.')
+                    help='Prune all other cached versions of the same repo.')
 
   # First, we need to ensure the cache is populated.
   populate_args = args[:]

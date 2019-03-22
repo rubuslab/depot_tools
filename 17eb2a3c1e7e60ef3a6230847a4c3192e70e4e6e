@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42af444d_31ad0b77",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-03-22T01:01:27Z",
+      "side": 1,
+      "message": "I think we must copy the idx file first; otherwise instances attempting to bootstrap will see the pack, and then try to download the pack + idx (which may not be uploaded yet). If we upload the idx first, then boostrappers will ignore it until the pack is copied.",
+      "range": {
+        "startLine": 569,
+        "startChar": 22,
+        "endLine": 569,
+        "endChar": 35
+      },
+      "revId": "17eb2a3c1e7e60ef3a6230847a4c3192e70e4e6e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

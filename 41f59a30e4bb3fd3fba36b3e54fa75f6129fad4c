@@ -34,6 +34,24 @@
       "revId": "41f59a30e4bb3fd3fba36b3e54fa75f6129fad4c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91fb3376_954dd515",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2019-03-22T09:04:49Z",
+      "side": 1,
+      "message": "Only one usage is us ;p and we have deprecated self.gclient_utils a week ago.\n\nWhen we deprecate the API, python3 should be available for everywhere, and it might be easy for us to ask tempfile\u0027s implementation instead of this one?",
+      "parentUuid": "b03a6487_939e2968",
+      "revId": "41f59a30e4bb3fd3fba36b3e54fa75f6129fad4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

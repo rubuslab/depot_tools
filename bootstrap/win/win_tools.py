@@ -273,6 +273,7 @@ def git_postprocess(template, git_directory):
     _check_call([git_bat_path, 'config', '--system', 'core.preloadindex',
                  'true'])
     _check_call([git_bat_path, 'config', '--system', 'core.fscache', 'true'])
+    _check_call([git_bat_path, 'config', '--system', 'protocol.version', '2'])
 
   call_if_outdated(
       os.path.join(git_directory, '.git_postprocess'),

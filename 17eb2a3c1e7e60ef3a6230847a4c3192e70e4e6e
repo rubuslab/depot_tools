@@ -22,6 +22,30 @@
       "revId": "17eb2a3c1e7e60ef3a6230847a4c3192e70e4e6e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22446649_629f17f9",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-03-22T14:18:29Z",
+      "side": 1,
+      "message": "Makes sense! Fixed.",
+      "parentUuid": "42af444d_31ad0b77",
+      "range": {
+        "startLine": 569,
+        "startChar": 22,
+        "endLine": 569,
+        "endChar": 35
+      },
+      "revId": "17eb2a3c1e7e60ef3a6230847a4c3192e70e4e6e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

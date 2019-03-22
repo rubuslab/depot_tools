@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "37c01c1c_8d26f50b",
+        "filename": "gclient_eval.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-22T20:01:52Z",
+      "side": 1,
+      "message": "Turns out io.StringIO has significant differences between Python 2 and 3, so on Python 2 it\u0027s necessary to import StringIO from cStringIO to get the same behaviour.\n\nFor io.BytesIO this isn\u0027t a problem.",
+      "revId": "2296814661bc08946318317b1a7ba74573483f3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a546722_9a14fd4d",
+        "filename": "gclient_eval.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-22T20:01:52Z",
+      "side": 1,
+      "message": "There was a similar issue in NumPy: https://github.com/numpy/numpy/pull/10524",
+      "revId": "2296814661bc08946318317b1a7ba74573483f3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -290,7 +290,8 @@ class DependencySettings(object):
     self._custom_hooks = custom_hooks or []
 
     # Post process the url to remove trailing slashes.
-    if isinstance(self.url, str):
+    if isinstance(self.url, str) or (sys.version_info.major == 2 and
+                                     isinstance(self.url, unicode)):
       # urls are sometime incorrectly written as proto://host/path/@rev. Replace
       # it to proto://host/path@rev.
       self.set_url(self.url.replace('/@', '@'))

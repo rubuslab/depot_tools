@@ -16,6 +16,24 @@
       "revId": "bde9a385e174b34b3e947801370ba7eceda8cece",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a1f5424_52509fb6",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1401,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-27T19:42:31Z",
+      "side": 1,
+      "message": "Handling the Unicode string would require doing\n\n if isinstance(self.url, str) or (sys.version_info.major \u003d\u003d 2 and isinstance(self.url, unicode)):\n\ninstead of\n\n if isinstance(self.url, str):\n\nfor string type checks. Alternatively I could look into adding a custom basestr that works for both Py2/3.\n\nKeep in mind that the problem this error is for is probably very rare. Unicode URLs aren\u0027t used anywhere official that I\u0027m aware of and I have no idea how the user on chromium:942522 ended up with such a config (removing the Unicode literals fixed the problem for them).\n\nThat said, my personal preference would be to not bother with this where not necessary because the plan seems to be to migrate to Py3 where Unicode just works.",
+      "parentUuid": "adf766bf_01ad139e",
+      "revId": "bde9a385e174b34b3e947801370ba7eceda8cece",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

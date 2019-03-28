@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "6f605447_4c09276b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-28T21:47:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "be2943d8_b1f0235b",
+      "revId": "64b9b5e727c09343ded854d36e5f1e02dcb32970",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "83eaab56_4cb6b807",
         "filename": "gclient_scm.py",
         "patchSetId": 6
@@ -72,6 +90,30 @@
       "side": 1,
       "message": "So the duplicates are so that, when I ask gclient to fetch refs/branch-heads/foo, it will fetch it both to refs/remotes/branch-heads/foo and refs/remotes/dt-origin/branch-heads/foo?\nAnd then the code will just use refs/remotes/dt-origin/branch-heads/foo?",
       "parentUuid": "83eaab56_4cb6b807",
+      "range": {
+        "startLine": 1309,
+        "startChar": 5,
+        "endLine": 1310,
+        "endChar": 28
+      },
+      "revId": "64b9b5e727c09343ded854d36e5f1e02dcb32970",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0e14b9b_607bd8d2",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-28T21:47:16Z",
+      "side": 1,
+      "message": "yeah, exactly right.",
+      "parentUuid": "f1521273_0752221c",
       "range": {
         "startLine": 1309,
         "startChar": 5,

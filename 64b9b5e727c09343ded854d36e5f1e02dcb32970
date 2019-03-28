@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "be2943d8_b1f0235b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-03-28T20:27:48Z",
+      "side": 1,
+      "message": "Yeah, this change is not meant to support the general case.\nThere might be cases where it might work (when scm.GIT.RefToRemoteRef doesn\u0027t modify the ref), though it is not guaranteed to.",
+      "parentUuid": "4050f0ef_4d265a15",
+      "revId": "64b9b5e727c09343ded854d36e5f1e02dcb32970",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "83eaab56_4cb6b807",
         "filename": "gclient_scm.py",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2019-03-28T18:58:01Z",
       "side": 1,
       "message": "I realize that Git\u0027s default of stick \"refs/heads/*\" into \"refs/remotes/\u003cNAME\u003e/*\" is unfortunate, \nsince we can\u0027t easily stick refs/branch-heads/ there w/o potential conflicts.\n\nI also think refs/remotes/branch-heads is very unfortunate choice, because now we are ending up with scheme\n$REMOTE refs/\u003cSMTH\u003e/*    \u003d\u003e LOCAL refs/remotes/\u003cSMTH\u003e/*\n\nSo, I wonder, can we cleanup this special casing by adopt something like\n$REMOTE refs/*                 \u003d\u003e  LOCAL refs/remotes/dt-$REMOTE/*        # why \"dt-\"? See [1]\n  with special backwards compat duplicates for:\n  $REMOTE refs/heads/*         \u003d\u003e  LOCAL refs/remotes/$REMOTE/*\n  $REMOTE refs/branch-heads/*  \u003d\u003e  LOCAL refs/remotes/branch-heads/*\n\n\nThen if I ask gclient to fetch refs/foo/bar:$REV from $REMOTE, then the local ref can always be assumed to be refs/remotes/dt-$REMOTE/foo/bar\n\nWDYT?\n\n\n[1] \"dt-\" prefix makes to make it less likely to clash with user-named custom remotes (dt \u003d depot_tools)",
+      "range": {
+        "startLine": 1309,
+        "startChar": 5,
+        "endLine": 1310,
+        "endChar": 28
+      },
+      "revId": "64b9b5e727c09343ded854d36e5f1e02dcb32970",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1521273_0752221c",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-03-28T20:27:48Z",
+      "side": 1,
+      "message": "So the duplicates are so that, when I ask gclient to fetch refs/branch-heads/foo, it will fetch it both to refs/remotes/branch-heads/foo and refs/remotes/dt-origin/branch-heads/foo?\nAnd then the code will just use refs/remotes/dt-origin/branch-heads/foo?",
+      "parentUuid": "83eaab56_4cb6b807",
       "range": {
         "startLine": 1309,
         "startChar": 5,

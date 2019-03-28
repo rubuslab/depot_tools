@@ -229,6 +229,7 @@ class GitWrapper(SCMWrapper):
     if self.out_cb:
       filter_kwargs['predicate'] = self.out_cb
     self.filter = gclient_utils.GitFilter(**filter_kwargs)
+    self.remote_ref_prefix = scm.GIT.RemoteRefPrefix(self.remote)
 
   @staticmethod
   def BinaryExists():
@@ -512,27 +513,21 @@ class GitWrapper(SCMWrapper):
       verbose = ['--verbose']
       printed_path = True
 
-    if revision.startswith('refs/branch-heads'):
-      options.with_branch_heads = True
-    if revision.startswith('refs/tags'):
-      options.with_tags = True
+    revision_ref = revision
+    if ':' in revision:
+      revision_ref, _, revision = revision.partition(':')
+
+    mirror = self._GetMirror(url, options, revision_ref)
+    if mirror:
+      url = mirror.mirror_path
 
     remote_ref = scm.GIT.RefToRemoteRef(revision, self.remote)
     if remote_ref:
       # Rewrite remote refs to their local equivalents.
-      revision = ''.join(remote_ref)
-      rev_type = "branch"
-    elif revision.startswith('refs/'):
-      # Local branch? We probably don't want to support, since DEPS should
-      # always specify branches as they are in the upstream repo.
+      revision = remote_ref
       rev_type = "branch"
     else:
-      # hash is also a tag, only make a distinction at checkout
       rev_type = "hash"
-
-    mirror = self._GetMirror(url, options)
-    if mirror:
-      url = mirror.mirror_path
 
     # If we are going to introduce a new project, there is a possibility that
     # we are syncing back to a state where the project was originally a
@@ -725,9 +720,9 @@ class GitWrapper(SCMWrapper):
                           newbase=revision, printed_path=printed_path,
                           merge=options.merge)
       printed_path = True
-    elif remote_ref and ''.join(remote_ref) != upstream_branch:
+    elif remote_ref and remote_ref != upstream_branch:
       # case 4
-      new_base = ''.join(remote_ref)
+      new_base = remote_ref
       if not printed_path:
         self.Print('_____ %s at %s' % (self.relpath, revision), timestamp=False)
       switch_error = ("Could not switch upstream branch from %s to %s\n"
@@ -750,7 +745,7 @@ class GitWrapper(SCMWrapper):
       if force_switch:
         self.Print("Switching upstream branch from %s to %s" %
                    (upstream_branch, new_base))
-        switch_branch = 'gclient_' + remote_ref[1]
+        switch_branch = 'gclient_' + remote_ref.replace('/', '-')
         self._Capture(['branch', '-f', switch_branch, new_base])
         self._Checkout(options, switch_branch, force=True, quiet=True)
       else:
@@ -955,7 +950,7 @@ class GitWrapper(SCMWrapper):
     return os.path.join(self._root_dir,
                         'old_' + self.relpath.replace(os.sep, '_')) + '.git'
 
-  def _GetMirror(self, url, options):
+  def _GetMirror(self, url, options, revision_ref=None):
     """Get a git_cache.Mirror object for the argument url."""
     if not self.cache_dir:
       return None
@@ -965,8 +960,12 @@ class GitWrapper(SCMWrapper):
     }
     if hasattr(options, 'with_branch_heads') and options.with_branch_heads:
       mirror_kwargs['refs'].append('refs/branch-heads/*')
+    elif revision_ref and revision_ref.startswith('refs/branch-heads/'):
+      mirror_kwargs['refs'].append(revision_ref)
     if hasattr(options, 'with_tags') and options.with_tags:
       mirror_kwargs['refs'].append('refs/tags/*')
+    elif revision_ref and revision_ref.startswith('refs/tags/'):
+      mirror_kwargs['refs'].append(revision_ref)
     return git_cache.Mirror(url, **mirror_kwargs)
 
   def _UpdateMirrorIfNotContains(self, mirror, options, rev_type, revision):
@@ -1065,7 +1064,7 @@ class GitWrapper(SCMWrapper):
     self._Fetch(options, prune=options.force)
     revision = self._AutoFetchRef(options, revision)
     remote_ref = scm.GIT.RefToRemoteRef(revision, self.remote)
-    self._Checkout(options, ''.join(remote_ref or revision), quiet=True)
+    self._Checkout(options, remote_ref, quiet=True)
     if self._GetCurrentBranch() is None:
       # Squelch git's very verbose detached HEAD warning and use our own
       self.Print(
@@ -1296,17 +1295,16 @@ class GitWrapper(SCMWrapper):
   def _Fetch(self, options, remote=None, prune=False, quiet=False,
              refspec=None):
     cfg = gclient_utils.DefaultIndexPackConfig(self.url)
-    # When a mirror is configured, it fetches only the refs/heads, and possibly
-    # the refs/branch-heads and refs/tags, but not the refs/changes. So, if
-    # we're asked to fetch a refs/changes ref from the mirror, it won't have it.
-    # This makes sure that we always fetch refs/changes directly from the
-    # repository and not from the mirror.
-    if refspec and refspec.startswith('refs/changes'):
+    # When a mirror is configured, it only fetches
+    # refs/{heads,branch-heads,tags}/*.
+    # If asked to fetch other refs, we must fetch those directly from the
+    # repository, and not from the mirror.
+    original_ref = scm.GIT.RemoteRefToRef(refspec, self.remote)
+    if original_ref and not original_ref.startswith(
+        ('refs/heads/', 'refs/branch-heads/', 'refs/tags/')):
       remote, _ = gclient_utils.SplitUrlRevision(self.url)
-      # Make sure that we fetch the (remote) refs/changes/xx ref to the (local)
-      # refs/changes/xx ref.
-      if ':' not in refspec:
-        refspec += ':' + refspec
+      refspec = original_ref + ':' + refspec
+
     fetch_cmd =  cfg + [
         'fetch',
         remote or self.remote,
@@ -1333,6 +1331,10 @@ class GitWrapper(SCMWrapper):
         self._Run(['config', '--unset-all', 'remote.%s.fetch' % self.remote],
                   options)
         self._Run(['config', 'remote.%s.fetch' % self.remote,
+                   '+refs/heads/*:%s/heads/*' % self.remote_ref_prefix],
+                  options)
+        # Keep refs/remotes/<remote>/* for backwards compatibility.
+        self._Run(['config', 'remote.%s.fetch' % self.remote,
                    '+refs/heads/*:refs/remotes/%s/*' % self.remote], options)
       except subprocess2.CalledProcessError as e:
         # If exit code was 5, it means we attempted to unset a config that
@@ -1340,9 +1342,14 @@ class GitWrapper(SCMWrapper):
         if e.returncode != 5:
           raise
     if hasattr(options, 'with_branch_heads') and options.with_branch_heads:
+      config_cmd = [
+          'config', 'remote.%s.fetch' % self.remote,
+          '+refs/branch-heads/*:%s/branch-heads/*' % self.remote_ref_prefix,
+          '^\\+refs/branch-heads/\\*:.*$']
+      self._Run(config_cmd, options)
+      # Keep refs/remotes/branch-heads/* for backwards compatibility.
       config_cmd = ['config', 'remote.%s.fetch' % self.remote,
-                    '+refs/branch-heads/*:refs/remotes/branch-heads/*',
-                    '^\\+refs/branch-heads/\\*:.*$']
+                    '+refs/branch-heads/*:refs/remotes/branch-heads/*']
       self._Run(config_cmd, options)
     if hasattr(options, 'with_tags') and options.with_tags:
       config_cmd = ['config', 'remote.%s.fetch' % self.remote,

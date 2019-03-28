@@ -52,6 +52,24 @@
       "revId": "bde9a385e174b34b3e947801370ba7eceda8cece",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cd92f235_d95d30c1",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1401,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-03-28T16:16:37Z",
+      "side": 1,
+      "message": "Good idea. Will work as long as the URL doesn\u0027t actually contain any Unicode characters.",
+      "parentUuid": "41ebd506_8bcb9dac",
+      "revId": "bde9a385e174b34b3e947801370ba7eceda8cece",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

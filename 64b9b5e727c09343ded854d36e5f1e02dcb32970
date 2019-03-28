@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4050f0ef_4d265a15",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-28T18:58:01Z",
+      "side": 1,
+      "message": "do IIUC that refs/arbitrary/stuff:revision isn\u0027t actually supported?",
+      "revId": "64b9b5e727c09343ded854d36e5f1e02dcb32970",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83eaab56_4cb6b807",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-03-28T18:58:01Z",
+      "side": 1,
+      "message": "I realize that Git\u0027s default of stick \"refs/heads/*\" into \"refs/remotes/\u003cNAME\u003e/*\" is unfortunate, \nsince we can\u0027t easily stick refs/branch-heads/ there w/o potential conflicts.\n\nI also think refs/remotes/branch-heads is very unfortunate choice, because now we are ending up with scheme\n$REMOTE refs/\u003cSMTH\u003e/*    \u003d\u003e LOCAL refs/remotes/\u003cSMTH\u003e/*\n\nSo, I wonder, can we cleanup this special casing by adopt something like\n$REMOTE refs/*                 \u003d\u003e  LOCAL refs/remotes/dt-$REMOTE/*        # why \"dt-\"? See [1]\n  with special backwards compat duplicates for:\n  $REMOTE refs/heads/*         \u003d\u003e  LOCAL refs/remotes/$REMOTE/*\n  $REMOTE refs/branch-heads/*  \u003d\u003e  LOCAL refs/remotes/branch-heads/*\n\n\nThen if I ask gclient to fetch refs/foo/bar:$REV from $REMOTE, then the local ref can always be assumed to be refs/remotes/dt-$REMOTE/foo/bar\n\nWDYT?\n\n\n[1] \"dt-\" prefix makes to make it less likely to clash with user-named custom remotes (dt \u003d depot_tools)",
+      "range": {
+        "startLine": 1309,
+        "startChar": 5,
+        "endLine": 1310,
+        "endChar": 28
+      },
+      "revId": "64b9b5e727c09343ded854d36e5f1e02dcb32970",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

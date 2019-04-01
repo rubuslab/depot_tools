@@ -63,6 +63,30 @@
       "revId": "082dc7fdfd03b25def058edbb91f6562e063d302",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6630af91_b8dfde21",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-01T23:09:01Z",
+      "side": 1,
+      "message": "First, I misread the code. Sorry.\n\nHowever, I\u0027m still against guessing, will start new comment.",
+      "parentUuid": "a875e809_dd80346e",
+      "range": {
+        "startLine": 301,
+        "startChar": 9,
+        "endLine": 301,
+        "endChar": 52
+      },
+      "revId": "082dc7fdfd03b25def058edbb91f6562e063d302",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

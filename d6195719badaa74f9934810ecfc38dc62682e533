@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b411d407_4e7b90a6",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-01T23:09:01Z",
+      "side": 1,
+      "message": "So, I\u0027m against guessing because it\u0027ll make tech debt cleanup in bot_update more difficult.\n\nThere are 2 guesses here:\n\n1) \u0027refs/heads/master\u0027 if all fails. I propose to drop this.\nAs you say, LUCI-scheduler triggered builds will be fine, so this shouldn\u0027t block deployment of correct code, but will raise red flag up when enabling `set_output_output` w/o knowing which ref it was on.\n\n2) defaulting to input_commit.ref if revision map doesn\u0027t have a ref. Bot_update should know whether input_commit was actually used for checkout OR whether input_commit was somehow overridden.\nCan code can be refactored in reasonable time to pass this knowledge explicitly? Maybe setting new flag ~L168 if input commit was used would suffice to avoid guessing?",
+      "range": {
+        "startLine": 301,
+        "startChar": 9,
+        "endLine": 302,
+        "endChar": 71
+      },
+      "revId": "d6195719badaa74f9934810ecfc38dc62682e533",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

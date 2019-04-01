@@ -6,6 +6,8 @@
 
 from recipe_engine import recipe_api
 
+from PB.go.chromium.org.luci.buildbucket.proto import common as common_pb2
+
 
 class BotUpdateApi(recipe_api.RecipeApi):
 
@@ -74,6 +76,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       gerrit_no_rebase_patch_ref=False,
                       disable_syntax_validation=False, manifest_name=None,
                       patch_refs=None, ignore_input_commit=False,
+                      set_output_commit=False,
                       **kwargs):
     """
     Args:
@@ -84,6 +87,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
         such as bisect.
       manifest_name: The name of the manifest to upload to LogDog.  This must
         be unique for the whole build.
+      set_output_commit: if True, mark the checked out commit as the
+        primary output commit of this build, i.e. call
+        api.buildbucket.set_output_gitiles_commit.
+        In case of multiple repos, the commit is the one specified in
+        api.buildbucket.gitiles_commit or first configured solution.
+        When sorting builds by commit position, this commit will be used.
     """
     assert use_site_config_creds is None, "use_site_config_creds is deprecated"
     assert rietveld is None, "rietveld is deprecated"
@@ -141,20 +150,19 @@ class BotUpdateApi(recipe_api.RecipeApi):
       if solution.revision:
         revisions[solution.name] = solution.revision
 
+    input_commit = self.m.buildbucket.build.input.gitiles_commit
+    main_repo_path = self._get_commit_repo_path(input_commit, cfg)
+
     # HACK: ensure_checkout API must be redesigned so that we don't pass such
     # parameters. Existing semantics is too opiniated.
-    if not ignore_input_commit:
-      # Apply input gitiles_commit, if any.
-      input_commit = self.m.buildbucket.build.input.gitiles_commit
-      if input_commit.id or input_commit.ref:
-        repo_path = self._get_commit_repo_path(input_commit, cfg)
-        # Note: this is not entirely correct. build.input.gitiles_commit
-        # definition says "The Gitiles commit to run against.".
-        # However, here we ignore it if the config specified a revision.
-        # This is necessary because existing builders rely on this behavior,
-        # e.g. they want to force refs/heads/master at the config level.
-        revisions[repo_path] = (
-            revisions.get(repo_path) or input_commit.id or input_commit.ref)
+    if not ignore_input_commit and (input_commit.id or input_commit.ref):
+      # Note: this is not entirely correct. build.input.gitiles_commit
+      # definition says "The Gitiles commit to run against.".
+      # However, here we ignore it if the config specified a revision.
+      # This is necessary because existing builders rely on this behavior,
+      # e.g. they want to force refs/heads/master at the config level.
+      revisions[main_repo_path] = (
+          revisions.get(main_repo_path) or input_commit.id or input_commit.ref)
 
     # Guarantee that first solution has a revision.
     # TODO(machenbach): We should explicitly pass HEAD for ALL solutions
@@ -253,27 +261,45 @@ class BotUpdateApi(recipe_api.RecipeApi):
     finally:
       if step_result and step_result.json.output:
         result = step_result.json.output
-        self._last_returned_properties = step_result.json.output.get(
-            'properties', {})
+        self._last_returned_properties = result.get('properties', {})
 
         if update_presentation:
           # Set properties such as got_revision.
           for prop_name, prop_value in (
               self.last_returned_properties.iteritems()):
             step_result.presentation.properties[prop_name] = prop_value
+
         # Add helpful step description in the step UI.
         if 'step_text' in result:
           step_text = result['step_text']
           step_result.presentation.step_text = step_text
 
         # Export the step results as a Source Manifest to LogDog.
+        source_manifest = result.get('source_manifest', {})
         if manifest_name:
           if not patch:
             # The param "patched" is purely cosmetic to mean "if false, this
             # bot_update run exists purely to unpatch an existing patch".
             manifest_name += '_unpatched'
           self.m.source_manifest.set_json_manifest(
-              manifest_name, result.get('source_manifest', {}))
+              manifest_name, source_manifest)
+
+        # Set output commit of the build.
+        git_checkout = (
+            source_manifest
+            .get('directories', {})
+            .get(main_repo_path, {})
+            .get('git_checkout', {}))
+        if set_output_commit and git_checkout:
+          out_commit = common_pb2.GitilesCommit(
+              ref=revisions[main_repo_path] or '',
+              id=git_checkout['revision'],
+          )
+          if not out_commit.ref.startswith('refs/'):
+            out_commit.ref = 'refs/heads/master'
+          out_commit.host, out_commit.project = self.m.gitiles.parse_repo_url(
+            git_checkout['repo_url'])
+          self.m.buildbucket.set_output_gitiles_commit(out_commit)
 
         # Set the "checkout" path for the main solution.
         # This is used by the Chromium module to figure out where to look for

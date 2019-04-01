@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1fbc13f_0f18ae7c",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-01T19:58:17Z",
+      "side": 1,
+      "message": "omg, this func is a just little too long \u003c/sarcasm\u003e",
+      "revId": "082dc7fdfd03b25def058edbb91f6562e063d302",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c0eedb6c_74f70519",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-01T19:58:17Z",
+      "side": 1,
+      "message": "that\u0027s weird, i\u0027d expect or \u0027refs/heads/master\u0027 2 lines above instead.\n\nsince this feature is OPT IN, i see no reason to allow guessing of the ref.",
+      "range": {
+        "startLine": 301,
+        "startChar": 9,
+        "endLine": 301,
+        "endChar": 52
+      },
+      "revId": "082dc7fdfd03b25def058edbb91f6562e063d302",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

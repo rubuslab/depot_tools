@@ -68,7 +68,9 @@ def RunSteps(api):
       gerrit_no_rebase_patch_ref=gerrit_no_rebase_patch_ref,
       disable_syntax_validation=True,
       manifest_name=manifest_name,
-      patch_refs=patch_refs)
+      patch_refs=patch_refs,
+      set_output_commit=True,
+    )
   if patch:
     api.bot_update.deapply_patch(bot_update_step)
 
@@ -115,7 +117,20 @@ def GenTests(api):
   yield (
       api.test('with_manifest_name') +
       ci_build() +
-      api.properties(manifest_name='checkout')
+      api.properties(manifest_name='checkout') +
+      api.step_data('bot_update (without patch)', api.json.output({
+        'source_manifest': {
+          'directories': {
+            'src': {
+              'git_checkout': {
+                'repo_url': (
+                    'https://chromium.googlesource.com/chromium/src.git'),
+                'revision': 'ea17a292ecfb3dcdaa8dd226e67d6504fc13c15a'
+              },
+            },
+          },
+        },
+      }))
   )
   yield (
       api.test('basic_with_branch_heads') +

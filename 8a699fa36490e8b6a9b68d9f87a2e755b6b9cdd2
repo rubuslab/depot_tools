@@ -22,6 +22,30 @@
       "revId": "8a699fa36490e8b6a9b68d9f87a2e755b6b9cdd2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8774c53_79b0014c",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-04-01T20:18:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "536a4cde_e2d65e3c",
+      "range": {
+        "startLine": 94,
+        "startChar": 41,
+        "endLine": 94,
+        "endChar": 42
+      },
+      "revId": "8a699fa36490e8b6a9b68d9f87a2e755b6b9cdd2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

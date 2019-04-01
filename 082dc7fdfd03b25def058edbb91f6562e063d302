@@ -39,6 +39,30 @@
       "revId": "082dc7fdfd03b25def058edbb91f6562e063d302",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a875e809_dd80346e",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-04-01T20:18:56Z",
+      "side": 1,
+      "message": "\u003e that\u0027s weird, i\u0027d expect or \u0027refs/heads/master\u0027 2 lines above instead.\n\nrevisions[main_repo_path] can be a commit hash or \u0027HEAD\u0027, so `or refs/heads/master\u0027 wouldn\u0027t work\n\n\u003e since this feature is OPT IN, i see no reason to allow guessing of the ref.\n\nwhat value should it have if `revisions` variable in this func specifies a concrete id?\n\ni\u0027ve made it `or input_commit.ref or \u0027refs/heads/master\u0027` so that by default it takes the value of input ref. This means this work correctly on builds scheduled by luci scheduler",
+      "parentUuid": "c0eedb6c_74f70519",
+      "range": {
+        "startLine": 301,
+        "startChar": 9,
+        "endLine": 301,
+        "endChar": 52
+      },
+      "revId": "082dc7fdfd03b25def058edbb91f6562e063d302",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

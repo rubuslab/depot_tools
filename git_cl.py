@@ -2081,12 +2081,12 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       return 'closed'
 
     cq_label = data['labels'].get('Commit-Queue', {})
-    if cq_label.get('value') == 1:
-      return 'dry-run'
-    if cq_label.get('value') == 2:
+    max_cq_vote = 0
+    for vote in cq_label.get('all', []):
+      max_cq_vote = max(max_cq_vote, vote.get('value', 0))
+    if max_cq_vote == 2:
       return 'commit'
-
-    if data['labels'].get('Code-Review', {}).get('approved'):
+    if max_cq_vote == 1:
       return 'lgtm'
 
     if not data.get('reviewers', {}).get('REVIEWER', []):

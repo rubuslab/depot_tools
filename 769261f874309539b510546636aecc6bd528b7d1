@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff249d64_58fc3288",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-02T01:16:45Z",
+      "side": 1,
+      "message": "These aren\u0027t covered by tests; why not replace with asserts?",
+      "range": {
+        "startLine": 252,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 17
+      },
+      "revId": "769261f874309539b510546636aecc6bd528b7d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b87d8f80_456cbfaa",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-02T01:16:45Z",
+      "side": 1,
+      "message": "I think more readable:\n  \u0027refs/heads\u0027 + ref[len(\u0027refs/remotes/%s\u0027 % remote):]\n\nand for L259\n  \u0027refs\u0027 + refs[len(\u0027refs/remotes\u0027):]",
+      "revId": "769261f874309539b510546636aecc6bd528b7d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

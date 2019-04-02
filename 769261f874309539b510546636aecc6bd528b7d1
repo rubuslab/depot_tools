@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "79153380_5f960ad8",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-02T23:31:52Z",
+      "side": 1,
+      "message": "Added an assert for remote.\nref can be None or something else than a ref, when this is called by _Fetch in gclient_scm.\nAdded tests for that.",
+      "parentUuid": "ff249d64_58fc3288",
+      "range": {
+        "startLine": 252,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 17
+      },
+      "revId": "769261f874309539b510546636aecc6bd528b7d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b87d8f80_456cbfaa",
         "filename": "scm.py",
         "patchSetId": 4
@@ -39,6 +63,24 @@
       "revId": "769261f874309539b510546636aecc6bd528b7d1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b68a2a2_2ab10f58",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-02T23:31:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b87d8f80_456cbfaa",
+      "revId": "769261f874309539b510546636aecc6bd528b7d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

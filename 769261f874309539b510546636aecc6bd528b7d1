@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "f3729bb2_a88d3fe5",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-03T00:41:20Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "79153380_5f960ad8",
+      "range": {
+        "startLine": 252,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 17
+      },
+      "revId": "769261f874309539b510546636aecc6bd528b7d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b87d8f80_456cbfaa",
         "filename": "scm.py",
         "patchSetId": 4

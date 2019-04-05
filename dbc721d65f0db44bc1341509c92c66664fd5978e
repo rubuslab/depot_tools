@@ -16,6 +16,24 @@
       "revId": "dbc721d65f0db44bc1341509c92c66664fd5978e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b7b66a6_f8767297",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1153089
+      },
+      "writtenOn": "2019-04-05T14:32:48Z",
+      "side": 1,
+      "message": "P.S. I\u0027ve just looked at https://crrev.com/c/1553986 and realized that you just create a recipe as opposed to a new recipe module. In this case, it\u0027s probably better to keep this config here instead of creating a new recipe module just to contain one gclient config.",
+      "parentUuid": "2f7a4a67_c79a8304",
+      "revId": "dbc721d65f0db44bc1341509c92c66664fd5978e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

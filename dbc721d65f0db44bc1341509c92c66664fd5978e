@@ -34,6 +34,24 @@
       "revId": "dbc721d65f0db44bc1341509c92c66664fd5978e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6fced5fe_2af860f1",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1001135
+      },
+      "writtenOn": "2019-04-05T17:27:08Z",
+      "side": 1,
+      "message": "Thanks for the feedback, that makes sense. Since this is landed, I\u0027ll leave it for now, but if it ever needs to be changed, or if we end up building a new recipe module on the build side, we can consider moving this over at that time.",
+      "parentUuid": "1b7b66a6_f8767297",
+      "revId": "dbc721d65f0db44bc1341509c92c66664fd5978e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

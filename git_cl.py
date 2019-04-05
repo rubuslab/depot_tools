@@ -2727,11 +2727,20 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           'spaces not allowed in refspec: "%s"' % refspec_suffix)
     refspec = '%s:refs/for/%s%s' % (ref_to_push, branch, refspec_suffix)
 
+    # Record git traces and save them to a temporary file.
+    git_trace_path = tempfile.mkstemp(prefix='git-trace-')[1]
+
+    env = os.environ.copy()
+    env['GIT_TRACE_CURL_NO_DATA'] = '1'
+    env['GIT_REDACT_COOKIES'] = 'o,SSO,GSSO_Uberproxy'
+    env['GIT_TRACE_PACKET'] = git_trace_path
+
     try:
       push_returncode = 0
       before_push = time_time()
       push_stdout = gclient_utils.CheckCallAndFilter(
           ['git', 'push', self.GetRemoteUrl(), refspec],
+          env=env,
           print_stdout=True,
           # Flush after every line: useful for seeing progress when running as
           # recipe.
@@ -2740,9 +2749,12 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       push_returncode = e.returncode
       DieWithError('Failed to create a change. Please examine output above '
                    'for the reason of the failure.\n'
+                   'When filing a bug please be sure to upload the traces '
+                   'found at\n'
+                   '  %s\n'
                    'Hint: run command below to diagnose common Git/Gerrit '
                    'credential problems:\n'
-                   '  git cl creds-check\n',
+                   '  git cl creds-check\n' % git_trace_path,
                    change_desc)
     finally:
       metrics.collector.add_repeated('sub_commands', {

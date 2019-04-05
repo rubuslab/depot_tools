@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40a8b326_4e1c4d3f",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2731,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-05T23:37:01Z",
+      "side": 1,
+      "message": "how big are these? Ie is dump \u0026 forget approach good enough or will we quickly accumulate gigabytes?",
+      "revId": "1fafbaba6700048e0d5a54aa59bc4b93c2d0f922",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4894c026_5f494059",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2747,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-05T23:37:01Z",
+      "side": 1,
+      "message": "can we delete temp file on success here since its path isn\u0027t printed anyway?",
+      "revId": "1fafbaba6700048e0d5a54aa59bc4b93c2d0f922",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

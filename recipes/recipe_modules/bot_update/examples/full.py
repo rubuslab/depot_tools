@@ -96,6 +96,13 @@ def GenTests(api):
       api.test('basic') +
       ci_build()
   )
+
+  yield (
+      api.test('set_output_commit') +
+      ci_build() +
+      api.properties(set_output_commit=True)
+  )
+
   yield (
       api.test('input_commit_with_id_without_repo') +
       api.buildbucket.build(Build(

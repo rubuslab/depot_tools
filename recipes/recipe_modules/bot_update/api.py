@@ -301,6 +301,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
               ref=revisions.get(main_repo_path) or '',
               id=git_checkout['revision'],
           )
+          if output_commit.ref == 'HEAD':
+            output_commit.ref = 'refs/heads/master'
           if not output_commit.ref.startswith('refs/'):
             # Require that what was checked out is what was requested on
             # input commit.

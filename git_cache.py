@@ -574,14 +574,13 @@ class Mirror(object):
     try:
       tempdir = self._ensure_bootstrapped(depth, bootstrap)
       rundir = tempdir or self.mirror_path
-      self._fetch(rundir, verbose, depth, reset_fetch_config)
     except ClobberNeeded:
       # This is a major failure, we need to clean and force a bootstrap.
       gclient_utils.rmtree(rundir)
       self.print(GIT_CACHE_CORRUPT_MESSAGE)
-      tempdir = self._ensure_bootstrapped(depth, bootstrap, force=True)
-      assert tempdir
-      self._fetch(tempdir, verbose, depth, reset_fetch_config)
+      # tempdir = self._ensure_bootstrapped(depth, bootstrap, force=True)
+      # assert tempdir
+      # self._fetch(tempdir, verbose, depth, reset_fetch_config)
     finally:
       if tempdir:
         if os.path.exists(self.mirror_path):

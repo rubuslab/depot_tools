@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84680926_0cec9148",
+        "filename": "owners.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-10T16:54:57Z",
+      "side": 1,
+      "message": "This comment threw me, because I didn\u0027t understand that the \"via\" part was saying that there was an intermediate data structure.\n\nI\u0027d instead say something like:\n\n    # Mapping of directories -\u003e globs in the directory -\u003e owners.",
+      "revId": "55e3941fbecdbd5cb585c96e92a7faf2788d1d7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62ffe3ec_1fe49203",
+        "filename": "owners.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-10T16:54:57Z",
+      "side": 1,
+      "message": "I\u0027d rewrite this in a similar manner.",
+      "revId": "55e3941fbecdbd5cb585c96e92a7faf2788d1d7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -46,6 +46,30 @@
       "revId": "c9cb3b1a709c76772286558b68e1517946dbacfb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3358937d_1d1221cb",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1657,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-10T16:09:07Z",
+      "side": 1,
+      "message": "I\u0027m a little conflicted about implementing this this way, in that .gclient_entries now won\u0027t necessarily reflect what you most recently fetched, it\u0027ll reflect what you have on disk. \n\nI *think* I\u0027m okay with that distinction, but I wonder if this is going to bite us somehow.",
+      "parentUuid": "e074b29d_fc61cc11",
+      "range": {
+        "startLine": 1657,
+        "startChar": 10,
+        "endLine": 1657,
+        "endChar": 29
+      },
+      "revId": "c9cb3b1a709c76772286558b68e1517946dbacfb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

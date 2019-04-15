@@ -22,6 +22,30 @@
       "revId": "757445b58afa85112698d9a960f48e4452f4134f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5200bfc6_448f83fb",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-04-15T17:29:26Z",
+      "side": 1,
+      "message": "Good point, I\u0027ll try to come up with regexes instead.",
+      "parentUuid": "974f867c_c8861d55",
+      "range": {
+        "startLine": 96,
+        "startChar": 10,
+        "endLine": 96,
+        "endChar": 58
+      },
+      "revId": "757445b58afa85112698d9a960f48e4452f4134f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

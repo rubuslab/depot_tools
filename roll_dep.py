@@ -92,7 +92,8 @@ def generate_commit_message(
   lines = logs.splitlines()
   cleaned_lines = [
       l for l in lines
-      if not l.endswith('Roll recipe dependencies (trivial).')
+      if (not l.endswith('Roll recipe dependencies (trivial).') and
+          not l[10:].startswith(' chromium-autoroll Roll '))
   ]
   logs = '\n'.join(cleaned_lines) + '\n'
 

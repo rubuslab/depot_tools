@@ -3,4 +3,11 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-. $(type -P python_runner.sh)
+fun() {
+  sleep 10s;
+  echo "LEMUR";
+}
+
+# . $(type -P python_runner.sh)
+echo "git-cl"
+fun &

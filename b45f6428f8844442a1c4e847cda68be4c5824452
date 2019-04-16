@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0d725a81_b8b81228",
+        "filename": "gclient.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-04-16T15:29:43Z",
+      "side": 0,
+      "message": "This caused a regression, when .gclient has unicode is causes the error:\n  Error: dependency url must be either string or None, instead of unicode\n\nApparently the right way to test this is with:\n  import six\n  isinstance(s, six.string_types)\n\nPlease fix.",
+      "revId": "b45f6428f8844442a1c4e847cda68be4c5824452",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

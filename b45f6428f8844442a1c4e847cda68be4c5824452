@@ -16,6 +16,24 @@
       "revId": "b45f6428f8844442a1c4e847cda68be4c5824452",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c237f636_3ffb939a",
+        "filename": "gclient.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-04-16T15:31:35Z",
+      "side": 0,
+      "message": "To be clear, I mean at every place where you replaced basestring, this is a regression as this breaks unicode support on python 2.",
+      "parentUuid": "0d725a81_b8b81228",
+      "revId": "b45f6428f8844442a1c4e847cda68be4c5824452",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

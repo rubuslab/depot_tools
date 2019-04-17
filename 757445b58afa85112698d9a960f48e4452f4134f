@@ -46,6 +46,30 @@
       "revId": "757445b58afa85112698d9a960f48e4452f4134f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49c01f81_729ca647",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-17T14:32:17Z",
+      "side": 1,
+      "message": "this is already a whack-a-mole approach. IMO, land to make life easier those who roll to infra_internal and add TODO to add regex later.",
+      "parentUuid": "5200bfc6_448f83fb",
+      "range": {
+        "startLine": 96,
+        "startChar": 10,
+        "endLine": 96,
+        "endChar": 58
+      },
+      "revId": "757445b58afa85112698d9a960f48e4452f4134f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

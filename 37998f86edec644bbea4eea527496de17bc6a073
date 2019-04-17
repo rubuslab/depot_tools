@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b1c59ab5_add29414",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-04-17T20:03:05Z",
+      "side": 1,
+      "message": "I\u0027d say: file a bug for \"post-python3 migration\" and put a # https://crbug.com/123 link on these kinds of snippets for easy removal later on.\n\nThat\u0027s the lowest friction IMO",
+      "parentUuid": "6f3d48c0_061baab1",
+      "revId": "37998f86edec644bbea4eea527496de17bc6a073",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "af96a809_a66e4e8f",
         "filename": "gclient.py",
         "patchSetId": 1

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "64556425_099f19c6",
+        "filename": "gclient_eval.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-04-17T19:33:43Z",
+      "side": 1,
+      "message": "Why these random indentation changes? I\u0027d understand if every single key/value pair were split onto separate lines with an indentation, but it\u0027s not uniform (see lines 102/103, 117, 145, etc.). This seems to have nothing to do with python3 compatibility.",
+      "revId": "b946b2389c434b513b92f9de110141f62763d2fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

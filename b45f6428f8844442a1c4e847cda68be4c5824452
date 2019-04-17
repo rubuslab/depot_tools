@@ -52,6 +52,24 @@
       "revId": "b45f6428f8844442a1c4e847cda68be4c5824452",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8cb3584_cc11b753",
+        "filename": "gclient.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-04-17T19:33:43Z",
+      "side": 0,
+      "message": "I\u0027ve filed a CL to fix this here: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1572441\n\nYes, this is a real breakage, causing errors on developer machines right now. Unicode strings in .gclient files *used* to be the default (when all python-dict-to-json conversion created unicode strings) so anyone with a sufficiently old checkout is running into this.",
+      "parentUuid": "2b5d1ef2_299d49de",
+      "revId": "b45f6428f8844442a1c4e847cda68be4c5824452",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

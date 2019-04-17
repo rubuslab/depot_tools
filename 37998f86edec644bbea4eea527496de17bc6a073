@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "c3a75dc5_799b4647",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-04-17T21:22:00Z",
+      "side": 1,
+      "message": "To the best of my knowledge, there aren\u0027t any other infra files that are handling this at all. But yeah, if we already have a different idiom in place elsewhere, happy to adopt it. This is, in my estimation, the simplest, fastest, and most versatile way to accomplish the goal of making basestring meaninful. Other ideas here: https://stackoverflow.com/questions/11301138/how-to-check-if-variable-is-string-with-python-2-and-3-compatibility\n\nEither way, I\u0027ve updated the comment here to specifically reference a turndown bug.",
+      "parentUuid": "6f3d48c0_061baab1",
+      "revId": "37998f86edec644bbea4eea527496de17bc6a073",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "af96a809_a66e4e8f",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "writtenOn": "2019-04-17T19:49:09Z",
       "side": 1,
       "message": "It seems like lines 147-148 are wrong and should be removed, given this discussion?",
+      "revId": "37998f86edec644bbea4eea527496de17bc6a073",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbb0783c_e315c4d5",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-04-17T21:22:00Z",
+      "side": 1,
+      "message": "I\u0027m honestly not sure. All I personally know is that gclient needs to be able to consume unicode-encoded strings from .gclient files; I have no idea if it needs to also output unicode strings to GN.",
+      "parentUuid": "af96a809_a66e4e8f",
       "revId": "37998f86edec644bbea4eea527496de17bc6a073",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

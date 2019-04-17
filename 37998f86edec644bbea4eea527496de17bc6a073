@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f3d48c0_061baab1",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-17T19:49:09Z",
+      "side": 1,
+      "message": "I think this looks fine but I\u0027m a bit concerned that we don\u0027t have a common idiom for handling this problem. We should see if other files are handling this differently.",
+      "revId": "37998f86edec644bbea4eea527496de17bc6a073",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af96a809_a66e4e8f",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-17T19:49:09Z",
+      "side": 1,
+      "message": "It seems like lines 147-148 are wrong and should be removed, given this discussion?",
+      "revId": "37998f86edec644bbea4eea527496de17bc6a073",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

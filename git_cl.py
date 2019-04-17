@@ -68,6 +68,17 @@ import watchlists
 
 __version__ = '2.0'
 
+# Traces for git push will be stored in a traces directory inside the
+# depot_tools checkout.
+DEPOT_TOOLS = os.path.dirname(os.path.abspath(__file__))
+TRACES_DIR = os.path.join(DEPOT_TOOLS, 'traces')
+
+# Pushes that take more time than this will prompt the user to file a bug and
+# attach the collected git traces.
+SLOW_GIT_PUSH_THRESHOLD_S = 10
+
+GIT_HASH_RE = re.compile(r'\b[a-f0-9]{40}\b', flags=re.I)
+
 COMMIT_BOT_EMAIL = 'commit-bot@chromium.org'
 POSTUPSTREAM_HOOK = '.git/hooks/post-cl-land'
 DESCRIPTION_BACKUP_FILE = '~/.git_cl_description_backup'
@@ -2478,6 +2489,73 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       else:
         print('OK, will keep Gerrit commit-msg hook in place.')
 
+  def _RunGitPushWithTraces(self, change_desc, refspec, refspec_opts):
+    # Create a temporary directory to store traces in.
+    traces_dir = tempfile.mkdtemp()
+    # Traces will be compressed and stored in a 'traces' dir inside depot_tools.
+    gclient_utils.safe_makedirs(TRACES_DIR)
+    traces_zip = os.path.join(TRACES_DIR, os.path.basename(traces_dir))
+
+    env = os.environ.copy()
+    env['GIT_TRACE_CURL_NO_DATA'] = '1'
+    env['GIT_TR2'] = os.path.join(traces_dir, 'tr2')
+    env['GIT_TR2_EVENT'] = os.path.join(traces_dir, 'tr2-event')
+    env['GIT_TRACE_CURL'] = os.path.join(traces_dir, 'trace-curl')
+    env['GIT_REDACT_COOKIES'] = 'o,SSO,GSSO_Uberproxy'
+    env['GIT_TRACE_PACKET'] = os.path.join(traces_dir, 'trace-packet')
+
+    try:
+      push_returncode = 0
+      before_push = time_time()
+      push_stdout = gclient_utils.CheckCallAndFilter(
+          ['git', 'push', self.GetRemoteUrl(), refspec],
+          env=env,
+          print_stdout=True,
+          # Flush after every line: useful for seeing progress when running as
+          # recipe.
+          filter_fn=lambda _: sys.stdout.flush())
+    except subprocess2.CalledProcessError as e:
+      push_returncode = e.returncode
+      DieWithError('Failed to create a change. Please examine output above '
+                   'for the reason of the failure.\n'
+                   'When filing a bug please be sure to upload the traces '
+                   'found at\n'
+                   '  %s.zip\n'
+                   'Hint: run command below to diagnose common Git/Gerrit '
+                   'credential problems:\n'
+                   '  git cl creds-check\n' % traces_zip,
+                   change_desc)
+    finally:
+      execution_time = time_time() - before_push
+      metrics.collector.add_repeated('sub_commands', {
+        'command': 'git push',
+        'execution_time': execution_time,
+        'exit_code': push_returncode,
+        'arguments': metrics_utils.extract_known_subcommand_args(refspec_opts),
+      })
+
+      if push_returncode != 0 or execution_time > SLOW_GIT_PUSH_THRESHOLD_S:
+        # Rewrite git hashes with a generic '<git-hash>' string. This greatly
+        # decreases the size after compression.
+        packet_traces = os.path.join(traces_dir, 'trace-packet')
+        with open(packet_traces) as f:
+          contents = f.read()
+        with open(packet_traces, 'w') as f:
+          f.write(GIT_HASH_RE.sub('<git-hash>', contents))
+
+        shutil.make_archive(traces_zip, 'zip', traces_dir)
+
+      gclient_utils.rmtree(traces_dir)
+
+    if execution_time > SLOW_GIT_PUSH_THRESHOLD_S:
+      print('\n'
+            'Was this upload too slow?\n'
+            'When filing a bug please be sure to upload the trace '
+            'found at\n'
+            '  %s.zip\n' % traces_zip)
+
+    return push_stdout
+
   def CMDUploadChange(self, options, git_diff_args, custom_cl_base, change):
     """Upload the current branch to Gerrit."""
     if options.squash and options.no_squash:
@@ -2727,30 +2805,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           'spaces not allowed in refspec: "%s"' % refspec_suffix)
     refspec = '%s:refs/for/%s%s' % (ref_to_push, branch, refspec_suffix)
 
-    try:
-      push_returncode = 0
-      before_push = time_time()
-      push_stdout = gclient_utils.CheckCallAndFilter(
-          ['git', 'push', self.GetRemoteUrl(), refspec],
-          print_stdout=True,
-          # Flush after every line: useful for seeing progress when running as
-          # recipe.
-          filter_fn=lambda _: sys.stdout.flush())
-    except subprocess2.CalledProcessError as e:
-      push_returncode = e.returncode
-      DieWithError('Failed to create a change. Please examine output above '
-                   'for the reason of the failure.\n'
-                   'Hint: run command below to diagnose common Git/Gerrit '
-                   'credential problems:\n'
-                   '  git cl creds-check\n',
-                   change_desc)
-    finally:
-      metrics.collector.add_repeated('sub_commands', {
-        'command': 'git push',
-        'execution_time': time_time() - before_push,
-        'exit_code': push_returncode,
-        'arguments': metrics_utils.extract_known_subcommand_args(refspec_opts),
-      })
+    push_stdout = self._RunGitPushWithTraces(change_desc, refspec, refspec_opts)
 
     if options.squash:
       regex = re.compile(r'remote:\s+https?://[\w\-\.\+\/#]*/(\d+)\s.*')

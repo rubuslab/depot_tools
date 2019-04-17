@@ -34,6 +34,24 @@
       "revId": "b45f6428f8844442a1c4e847cda68be4c5824452",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b5d1ef2_299d49de",
+        "filename": "gclient.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-04-17T19:24:47Z",
+      "side": 0,
+      "message": "depot_tools currently doesn\u0027t depend on six.\n\nAlso note that this specific function does support Unicode and the Unicode check below was dead code prior to this CL.\n\nTemporarily reducing Unicode support on Python 2 was a concious decision to reduce the maintenance burden during the transition. The places where it\u0027s required still support it.\n\nDo you actually have need for Unicode URL support? If your strings in .gclient are Unicode literals but aren\u0027t actually Unicode, then removing the Unicode specifiers should suffice. It\u0027s unclear to me how some users\u0027 .gclient files have ended up with those specifiers (it\u0027s not the default).",
+      "parentUuid": "c237f636_3ffb939a",
+      "revId": "b45f6428f8844442a1c4e847cda68be4c5824452",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

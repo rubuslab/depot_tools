@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ae81a721_b4659a77",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-17T20:21:57Z",
+      "side": 1,
+      "message": "The point is that we should probably have this same 3 lines in a lot of files, and not some other way to attempt to work around the lack of basestring or the use of unicode.\n\nFor example, another way you can solve this is to check if python version \u003d\u003d 3 and define unicode \u003d str, and then test against both str and unicode, instead of testing against basestring.\n\nIdeally we\u0027d only do one of these two approaches, and not both.",
+      "parentUuid": "b1c59ab5_add29414",
+      "revId": "37998f86edec644bbea4eea527496de17bc6a073",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "af96a809_a66e4e8f",
         "filename": "gclient.py",
         "patchSetId": 1

@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ec9e0f87_accf36cd",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2539,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-18T03:29:45Z",
+      "side": 1,
+      "message": "Will ask.",
+      "parentUuid": "96eebe9e_aa02e375",
+      "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f29caa73_8c81788d",
         "filename": "git_cl.py",
         "patchSetId": 8
@@ -47,6 +65,24 @@
       "writtenOn": "2019-04-18T01:10:21Z",
       "side": 1,
       "message": "In the script I wrote to do the initial tracing for dummy changes -- https://crrev.com/c/1545516 -- I captured some other stuff in addition to the packet trace, like the output of `git version --build-options` and `git config -l`, and the contents of ~/.gitcookies, that the GoB has requested in their bug-filling instructions.\n\nI feel like we should include that in our data as well, though I worry a bit that the git config data might include stuff a user might not want to upload or would be considered privacy-sensitive.\n\nThoughts?",
+      "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "123eb2fa_0b5a803b",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2546,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-18T03:29:45Z",
+      "side": 1,
+      "message": "We could put that in another zip file, so the user could decide to upload only the traces:\n\n  When filing a bug please be sure to upload the traces found at:\n    \u003ctrace-zip\u003e\n\n  Consider including your git version, git config and (sanitized) gitcookies,\n  which we\u0027ve packaged for you at:\n    \u003cgit-info-zip\u003e",
+      "parentUuid": "f29caa73_8c81788d",
       "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

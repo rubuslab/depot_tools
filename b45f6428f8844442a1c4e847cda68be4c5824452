@@ -88,6 +88,24 @@
       "revId": "b45f6428f8844442a1c4e847cda68be4c5824452",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c586803_0e849c21",
+        "filename": "gclient.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-04-18T04:47:52Z",
+      "side": 0,
+      "message": "In that case a fix is indeed necessary.",
+      "parentUuid": "2e4ee0d3_92a4a68d",
+      "revId": "b45f6428f8844442a1c4e847cda68be4c5824452",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -16,6 +16,24 @@
       "revId": "b946b2389c434b513b92f9de110141f62763d2fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c08e546_8204f0cf",
+        "filename": "gclient_eval.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-04-18T04:47:52Z",
+      "side": 1,
+      "message": "These were a result of running git cl format --python.",
+      "parentUuid": "64556425_099f19c6",
+      "revId": "b946b2389c434b513b92f9de110141f62763d2fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

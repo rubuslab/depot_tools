@@ -22,6 +22,30 @@
       "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "685f7478_0879487e",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-18T23:22:01Z",
+      "side": 1,
+      "message": "Good questions. In chromium, every upload takes longer than 10 seconds.\n\nIt\u0027s also unclear whether uploading traces will be valuable to them right now.\n\nWe should ask the GoB team what they\u0027d like at this point.\n\nSo, maybe that means that we keep this CL in reserve (i.e., don\u0027t land it), until we have consensus.",
+      "parentUuid": "6333e46d_5f09c80f",
+      "range": {
+        "startLine": 78,
+        "startChar": 28,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

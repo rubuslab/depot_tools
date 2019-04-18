@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6333e46d_5f09c80f",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-18T20:32:16Z",
+      "side": 1,
+      "message": "I chose this at random, is this a good threshold?\nAlso, should we point the developers to a generic \"upload is slow\" bug, so we don\u0027t end up with lots of duplicate bugs?",
+      "range": {
+        "startLine": 78,
+        "startChar": 28,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

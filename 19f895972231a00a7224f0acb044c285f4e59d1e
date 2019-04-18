@@ -70,6 +70,30 @@
       "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89e76748_7f4a1945",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-18T23:28:52Z",
+      "side": 1,
+      "message": "Good idea, that makes sense, though I still think we want to run this by the GoB team to make sure this is something they\u0027d want, too.",
+      "parentUuid": "e51b155e_afe9bb5b",
+      "range": {
+        "startLine": 78,
+        "startChar": 28,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

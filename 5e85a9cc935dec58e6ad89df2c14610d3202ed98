@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56924dd3_41c70f2a",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3130,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-04-18T18:22:18Z",
+      "side": 1,
+      "message": "nit: I think in most places where we have multi-line strings, we put the adjoining spaces at the end of the previous line. (Because what if the thing on the next line is a variable instead of a string literal.)",
+      "range": {
+        "startLine": 3130,
+        "startChar": 9,
+        "endLine": 3130,
+        "endChar": 10
+      },
+      "revId": "5e85a9cc935dec58e6ad89df2c14610d3202ed98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32dae863_750a36a7",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3130,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-04-18T18:22:18Z",
+      "side": 1,
+      "message": "super-nit: s/gclient/python/, since it\u0027s a feature of subprocess.Popen, not gclient in particular :)",
+      "range": {
+        "startLine": 3130,
+        "startChar": 30,
+        "endLine": 3130,
+        "endChar": 37
+      },
+      "revId": "5e85a9cc935dec58e6ad89df2c14610d3202ed98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a1c4d7a6_e9e78ac7",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2505,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-18T01:10:21Z",
+      "side": 1,
+      "message": "Nit: I\u0027d probably sort these.",
+      "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96eebe9e_aa02e375",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2539,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-18T01:10:21Z",
+      "side": 1,
+      "message": "Are you sure this\u0027ll still be useful to the GoB team if we redact all of the hashes this way?",
+      "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f29caa73_8c81788d",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2546,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-18T01:10:21Z",
+      "side": 1,
+      "message": "In the script I wrote to do the initial tracing for dummy changes -- https://crrev.com/c/1545516 -- I captured some other stuff in addition to the packet trace, like the output of `git version --build-options` and `git config -l`, and the contents of ~/.gitcookies, that the GoB has requested in their bug-filling instructions.\n\nI feel like we should include that in our data as well, though I worry a bit that the git config data might include stuff a user might not want to upload or would be considered privacy-sensitive.\n\nThoughts?",
+      "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

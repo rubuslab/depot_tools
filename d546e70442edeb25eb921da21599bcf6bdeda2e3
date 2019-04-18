@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2eba9cba_11c706cb",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2505,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-18T17:44:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1c4d7a6_e9e78ac7",
+      "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "96eebe9e_aa02e375",
         "filename": "git_cl.py",
         "patchSetId": 8
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9056951b_c9a30f6f",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2539,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-18T17:44:16Z",
+      "side": 1,
+      "message": "Modified it to keep the first 6 characters of the hash.\nThis increases the size to ~400k.",
+      "parentUuid": "ec9e0f87_accf36cd",
+      "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f29caa73_8c81788d",
         "filename": "git_cl.py",
         "patchSetId": 8
@@ -83,6 +119,24 @@
       "side": 1,
       "message": "We could put that in another zip file, so the user could decide to upload only the traces:\n\n  When filing a bug please be sure to upload the traces found at:\n    \u003ctrace-zip\u003e\n\n  Consider including your git version, git config and (sanitized) gitcookies,\n  which we\u0027ve packaged for you at:\n    \u003cgit-info-zip\u003e",
       "parentUuid": "f29caa73_8c81788d",
+      "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58e1f0bc_d3c12113",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2546,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-18T17:44:16Z",
+      "side": 1,
+      "message": "FYI:\nI asked the GoB team, the said the git version is included on the traces, and we could stop reporting the git config as they put more info in the traces.\nThe gitcookies is useful to know what the user was authenticated as, but that information is easy to get after (unlike traces).",
+      "parentUuid": "123eb2fa_0b5a803b",
       "revId": "d546e70442edeb25eb921da21599bcf6bdeda2e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

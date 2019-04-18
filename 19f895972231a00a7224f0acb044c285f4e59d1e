@@ -46,6 +46,30 @@
       "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e51b155e_afe9bb5b",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-18T23:24:29Z",
+      "side": 1,
+      "message": "Ok, will ask.\nI think having traces for failures is useful, so maybe we can split this CL, land the part that shows traces on failures and keep traces for slow uploads on hold.\nWDYT?",
+      "parentUuid": "685f7478_0879487e",
+      "range": {
+        "startLine": 78,
+        "startChar": 28,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

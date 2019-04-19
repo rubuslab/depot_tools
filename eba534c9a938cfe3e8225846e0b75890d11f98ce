@@ -1,0 +1,284 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "347dbd60_ee426bd1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "nit: too long line, git style is 72 chars/line limit",
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2112e461_e6896746",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "move back, please. The closer var is to its first usage, the better.",
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d5294e8_e8b841ca",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "nit: del empty line.",
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7840846e_e812b57c",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "add explanation about necessary existence of .ready files.",
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d89c4fc8_0ee92a57",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "what does this $ mean here?",
+      "range": {
+        "startLine": 388,
+        "startChar": 31,
+        "endLine": 388,
+        "endChar": 32
+      },
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61ef772b_7f7cc52f",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "as I\u0027ve commented on another CL of yours before, this code is crap, since you are modifying it, let\u0027s improve it.\n\n1. create constant with compiled regexp, say _ready_file_pattern \u003d re.compile(...)\n2. don\u0027t do sorting, instead:\n\nobjects \u003d set(ls_out.strip().splitlines())\nready_dirs \u003d []\nfor name in objects:\n  m \u003d _ready_file_pattern.match(name)\n  # Given \u003cpath\u003e/\u003cnumber\u003e.ready, we are interested in \u003cpath\u003e/\u003cnumber\u003e directory.\n  if m and name[:-len(\u0027.ready\u0027)] in objects:  \n    ready_dirs.append( (int(m.group(1)), name[:-len(\u0027.ready\u0027)]) )\nif not ready_dirs:\n  # print no bootstrap file ..\n  return False\nlatest_dir \u003d max(ready_dirs)[1]",
+      "range": {
+        "startLine": 382,
+        "startChar": 0,
+        "endLine": 406,
+        "endChar": 39
+      },
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65300493_244cf165",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "tbh, i don\u0027t understand intent here.\nalso, why is prior code of creating temp (~randomly named) dir inside GetCachePath not good enough?",
+      "range": {
+        "startLine": 408,
+        "startChar": 36,
+        "endLine": 408,
+        "endChar": 67
+      },
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6620a0fa_517b635d",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "outdated comment.",
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1320e2a_834ed8ea",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "how can you be sure that some prior aborted runs didn\u0027t result in this directory already existing?",
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64966110_a92257b4",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "is this actually necessary given that we are downloading \u0026 overwriting files anyway?\n\nie can you make sure that uploaded to GS files are already sufficient?",
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d488e3ff_c46d4c58",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "does this actually work? \ndoes latest_checkout end with \u0027/\u0027?",
+      "range": {
+        "startLine": 419,
+        "startChar": 45,
+        "endLine": 419,
+        "endChar": 60
+      },
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c32a6586_3eb96645",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "why are these vars necessary? I think code depending on \"retcode\" value can be inlined here.",
+      "range": {
+        "startLine": 425,
+        "startChar": 4,
+        "endLine": 427,
+        "endChar": 17
+      },
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12984c9c_5d9f0544",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "this should be done only on success.\n\non failure, you should delete latest_checkout_local_dir instead.",
+      "range": {
+        "startLine": 429,
+        "startChar": 6,
+        "endLine": 433,
+        "endChar": 55
+      },
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64cd6ece_4ad1b1bb",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-19T02:52:36Z",
+      "side": 1,
+      "message": "Downloading\n(we aren\u0027t really extracting it any more)",
+      "range": {
+        "startLine": 436,
+        "startChar": 11,
+        "endLine": 436,
+        "endChar": 21
+      },
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

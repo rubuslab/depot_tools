@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "af175263_4aad3eeb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "ping",
+      "parentUuid": "347dbd60_ee426bd1",
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2112e461_e6896746",
         "filename": "git_cache.py",
         "patchSetId": 3
@@ -511,6 +529,30 @@
     },
     {
       "key": {
+        "uuid": "d9d1d926_92318491",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "\u003e Done\n\nwhat exactly did you do?\nSee also https://stackoverflow.com/questions/49262379/does-finally-always-execute-in-python",
+      "parentUuid": "7c42ecbc_6e8d4763",
+      "range": {
+        "startLine": 429,
+        "startChar": 6,
+        "endLine": 433,
+        "endChar": 55
+      },
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "64cd6ece_4ad1b1bb",
         "filename": "git_cache.py",
         "patchSetId": 3
@@ -522,6 +564,30 @@
       "writtenOn": "2019-04-19T02:52:36Z",
       "side": 1,
       "message": "Downloading\n(we aren\u0027t really extracting it any more)",
+      "range": {
+        "startLine": 436,
+        "startChar": 11,
+        "endLine": 436,
+        "endChar": 21
+      },
+      "revId": "eba534c9a938cfe3e8225846e0b75890d11f98ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47bc82d1_60d36533",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "ping",
+      "parentUuid": "64cd6ece_4ad1b1bb",
       "range": {
         "startLine": 436,
         "startChar": 11,

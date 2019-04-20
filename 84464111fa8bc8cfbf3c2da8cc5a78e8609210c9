@@ -1,0 +1,216 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aba827e8_fa16d4cc",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "👍",
+      "range": {
+        "startLine": 380,
+        "startChar": 4,
+        "endLine": 382,
+        "endChar": 21
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a6cab2f4_f8ee1e35",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "_ prefix isn\u0027t necessary for local variables. I added because I meant for this to be constant outside of this method, however having this as local var is also fine.",
+      "range": {
+        "startLine": 385,
+        "startChar": 4,
+        "endLine": 385,
+        "endChar": 23
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17e3c671_6a2cc0a9",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "nit: delete trailing whitespace (i recommend configuring whatever editor you use to do it automatically on save)",
+      "range": {
+        "startLine": 386,
+        "startChar": 0,
+        "endLine": 386,
+        "endChar": 4
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9f9dca2_276dcc46",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "interested\n(likely my prior typo, sorry)",
+      "range": {
+        "startLine": 393,
+        "startChar": 17,
+        "endLine": 393,
+        "endChar": 26
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7ee3618_5145f687",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "nit: trailing whitespace.",
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4c415f7_5ab99003",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "Are you sure this method still needs to return something? \nIf so, please, document return value semantics.",
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e943ecca_012f9609",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "nit: undo dedenting.\n\nNote: consider self-reviewing your CL after uploading to ensure there are no changes that weren\u0027t meant to be part of a CL.",
+      "range": {
+        "startLine": 482,
+        "startChar": 16,
+        "endLine": 482,
+        "endChar": 17
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00506dfd_30789f0e",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "not necessary, at least bootstrap_repo removes \"old\" directory (ie this one)  on L420-L423:\n\n      # delete the old directory\n      if os.path.exists(directory):\n        gclient_utils.rmtree(directory)",
+      "range": {
+        "startLine": 491,
+        "startChar": 6,
+        "endLine": 493,
+        "endChar": 0
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "738a8dc6_72829cdf",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "I know it\u0027s not your code, but code would be easier to follow by swaping order of if/else, ie:\n\n  if not should_bootstrap:\n    if depth and ...\n      ...\n    return None\n  # should bootstrap section, now de-indented.",
+      "range": {
+        "startLine": 513,
+        "startChar": 0,
+        "endLine": 515,
+        "endChar": 70
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60479982_8902942a",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-20T00:08:15Z",
+      "side": 1,
+      "message": "(i\u0027m still thinking about this code)",
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

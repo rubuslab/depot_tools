@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b7b0208_e2c56f55",
+        "filename": "git_cache.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T22:41:38Z",
+      "side": 1,
+      "message": "still trailing whitespace 😞",
+      "range": {
+        "startLine": 407,
+        "startChar": 55,
+        "endLine": 407,
+        "endChar": 56
+      },
+      "revId": "4156bdf5c88f0781383f5469a20b18b15419501a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "073a9ddb_c29c9c6d",
+        "filename": "git_cache.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T22:41:38Z",
+      "side": 1,
+      "message": "oh, I forgot to mention this in prior review:\n1. must happen after .ready file is successfully uploaded\n2. must avoid interfering with potentially concurrently running download of a prior \u003cnumber-1\u003e dir.\nTo avoid delaying this CL further, please remove this code and add a TODO to prune old caches instead and address it in a follow up CL.\n\nWe can discuss how do it properly in chat/doc.",
+      "range": {
+        "startLine": 572,
+        "startChar": 4,
+        "endLine": 578,
+        "endChar": 35
+      },
+      "revId": "4156bdf5c88f0781383f5469a20b18b15419501a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

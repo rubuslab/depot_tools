@@ -207,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "58cdd564_49786d1c",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T22:41:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00f2ef1a_4a7843cb",
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "14998d3a_4e0e00c4",
         "filename": "git_cache.py",
         "patchSetId": 8
@@ -286,6 +304,30 @@
       "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "50ebfea2_2287a82d",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T22:41:38Z",
+      "side": 1,
+      "message": "\"No previous cache\" corresponds to \"not self.exists()\" -- ie local cache dir oesn\u0027t exist.\nOTH, self.supported_project() is about what used to be .zip and now is a cached dir. So, please keep items, but update the .zip part and perhaps improve overall comment so it makes sense to you.",
+      "parentUuid": "d50c54f4_622917d4",
+      "range": {
+        "startLine": 508,
+        "startChar": 46,
+        "endLine": 508,
+        "endChar": 49
+      },
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     },
     {
       "key": {
@@ -429,6 +471,24 @@
       "writtenOn": "2019-04-22T20:39:14Z",
       "side": 1,
       "message": "where is this running? IIUC, $CWD at the time of git_cache process start, which means it can be some read-only dir, which means this code will fail. Also, you aren\u0027t cleaning the file up.\n\nI propose something like this:\n\n_, ready_file_name \u003d  tempfile.mkstemp(suffix\u003d\u0027.ready\u0027)\ntry:\n  // gsutil cp\nfinally:\n  os.remove(ready_file_name)",
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "913804cb_cf2476bc",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T22:41:38Z",
+      "side": 1,
+      "message": "ping.",
+      "parentUuid": "0106b484_757e87f4",
       "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

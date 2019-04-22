@@ -1,0 +1,233 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "022c4c8a_3711abd7",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "nit: still trailing whitespace.",
+      "range": {
+        "startLine": 391,
+        "startChar": 36,
+        "endLine": 391,
+        "endChar": 37
+      },
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f599fa7_b2e80e62",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "nit: intent by 1 space.\n\nReason: this tuple `(latest_dir, tempdir)` is an argument to self.print() call. Two styles are acceptable in our Python codebase:\n\n    def style1(arg1,\n               aligned_right_under_arg1):\n    def style2(\n        arg1, arg2, ...,\n        still_aligned_here_if_need_more_lines):\n\nCode in this file seems to follow style1. Some day we\u0027ll enable auto formatting of Python on all our code, but nobody has taken initiative on this yet :(",
+      "range": {
+        "startLine": 409,
+        "startChar": 16,
+        "endLine": 409,
+        "endChar": 17
+      },
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c73a37b_c163a14a",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "do the cleanup right here instead of having extra variable.",
+      "range": {
+        "startLine": 417,
+        "startChar": 6,
+        "endLine": 417,
+        "endChar": 17
+      },
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af6ccb3b_578a65d4",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "this doesn\u0027t need to be inside `finally:` block. In fact, `finally:` block is no longer necessary.",
+      "range": {
+        "startLine": 423,
+        "startChar": 6,
+        "endLine": 428,
+        "endChar": 37
+      },
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00f2ef1a_4a7843cb",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "nit: trailing whitespace",
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14998d3a_4e0e00c4",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "please, inline as `self.mirror_path` instead of creating a new variable.",
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5acd57a7_58503eec",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "stale doc.",
+      "range": {
+        "startLine": 508,
+        "startChar": 46,
+        "endLine": 508,
+        "endChar": 49
+      },
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "207e7bd5_17090819",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "inline,\nit\u0027s no longer necessary.",
+      "range": {
+        "startLine": 549,
+        "startChar": 4,
+        "endLine": 549,
+        "endChar": 33
+      },
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ccb21d49_5448537b",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "now useless.",
+      "range": {
+        "startLine": 562,
+        "startChar": 6,
+        "endLine": 562,
+        "endChar": 23
+      },
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "638fe9fc_a0b98641",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "inline",
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0106b484_757e87f4",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-22T20:39:14Z",
+      "side": 1,
+      "message": "where is this running? IIUC, $CWD at the time of git_cache process start, which means it can be some read-only dir, which means this code will fail. Also, you aren\u0027t cleaning the file up.\n\nI propose something like this:\n\n_, ready_file_name \u003d  tempfile.mkstemp(suffix\u003d\u0027.ready\u0027)\ntry:\n  // gsutil cp\nfinally:\n  os.remove(ready_file_name)",
+      "revId": "e5bddb26f9a2879431422516cf8ac8a3b6b32c1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

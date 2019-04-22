@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dd422136_5e2212ca",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-04-22T20:04:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aba827e8_fa16d4cc",
+      "range": {
+        "startLine": 380,
+        "startChar": 4,
+        "endLine": 382,
+        "endChar": 21
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a6cab2f4_f8ee1e35",
         "filename": "git_cache.py",
         "patchSetId": 4
@@ -45,6 +69,30 @@
       "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "509e1918_6f866ad1",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-04-22T20:04:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6cab2f4_f8ee1e35",
+      "range": {
+        "startLine": 385,
+        "startChar": 4,
+        "endLine": 385,
+        "endChar": 23
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "523441b3_c839ee93",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-04-22T20:04:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17e3c671_6a2cc0a9",
+      "range": {
+        "startLine": 386,
+        "startChar": 0,
+        "endLine": 386,
+        "endChar": 4
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a9f9dca2_276dcc46",
         "filename": "git_cache.py",
         "patchSetId": 4
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "c1085e6a_e59fd7a0",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-04-22T20:04:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9f9dca2_276dcc46",
+      "range": {
+        "startLine": 393,
+        "startChar": 17,
+        "endLine": 393,
+        "endChar": 26
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c7ee3618_5145f687",
         "filename": "git_cache.py",
         "patchSetId": 4
@@ -111,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "c83dbd89_685f5a2b",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-04-22T20:04:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7ee3618_5145f687",
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a4c415f7_5ab99003",
         "filename": "git_cache.py",
         "patchSetId": 4
@@ -125,6 +239,24 @@
       "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a4e4cef_ba4b7622",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-04-22T20:04:41Z",
+      "side": 1,
+      "message": "we don\u0027t need to, since we just use the mirror directory",
+      "parentUuid": "a4c415f7_5ab99003",
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -151,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "9dd72c8c_0362c52d",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-04-22T20:04:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e943ecca_012f9609",
+      "range": {
+        "startLine": 482,
+        "startChar": 16,
+        "endLine": 482,
+        "endChar": 17
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "00506dfd_30789f0e",
         "filename": "git_cache.py",
         "patchSetId": 4
@@ -162,6 +318,30 @@
       "writtenOn": "2019-04-20T00:08:15Z",
       "side": 1,
       "message": "not necessary, at least bootstrap_repo removes \"old\" directory (ie this one)  on L420-L423:\n\n      # delete the old directory\n      if os.path.exists(directory):\n        gclient_utils.rmtree(directory)",
+      "range": {
+        "startLine": 491,
+        "startChar": 6,
+        "endLine": 493,
+        "endChar": 0
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ad202ae_5256386f",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-04-22T20:04:41Z",
+      "side": 1,
+      "message": "it doesn\u0027t work if i don\u0027t make the directory",
+      "parentUuid": "00506dfd_30789f0e",
       "range": {
         "startLine": 491,
         "startChar": 6,
@@ -194,6 +374,30 @@
       "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48e13ea6_3ab5f768",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-04-22T20:04:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "738a8dc6_72829cdf",
+      "range": {
+        "startLine": 513,
+        "startChar": 0,
+        "endLine": 515,
+        "endChar": 70
+      },
+      "revId": "84464111fa8bc8cfbf3c2da8cc5a78e8609210c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

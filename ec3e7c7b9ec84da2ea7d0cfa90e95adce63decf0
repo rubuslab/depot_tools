@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "54750832_6e1e7129",
+        "filename": "git_cache.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-23T23:48:15Z",
+      "side": 1,
+      "message": "read_file_name is now \u003crandom\u003e.ready, so you need to specify destination filename:\n\u0027%s/%d.ready\u0027 % (gs_folder, gen_number)",
+      "range": {
+        "startLine": 578,
+        "startChar": 41,
+        "endLine": 578,
+        "endChar": 50
+      },
+      "revId": "ec3e7c7b9ec84da2ea7d0cfa90e95adce63decf0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

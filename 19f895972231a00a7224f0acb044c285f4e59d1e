@@ -118,6 +118,30 @@
       "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e563217b_600cd7f1",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-04-23T23:41:00Z",
+      "side": 1,
+      "message": "Great. I think something like keeping the last N (10?) traces would work well.",
+      "parentUuid": "9e9d0b2d_767f5702",
+      "range": {
+        "startLine": 78,
+        "startChar": 28,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

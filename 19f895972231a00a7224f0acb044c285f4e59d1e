@@ -94,6 +94,30 @@
       "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e9d0b2d_767f5702",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-23T22:43:49Z",
+      "side": 1,
+      "message": "Talked with jrn@ and he said this looks good.\nHe suggested we could have an option to keep the traces, which would help in cases where the upload is consistently slow as an easy way to provide more information.",
+      "parentUuid": "89e76748_7f4a1945",
+      "range": {
+        "startLine": 78,
+        "startChar": 28,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "19f895972231a00a7224f0acb044c285f4e59d1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

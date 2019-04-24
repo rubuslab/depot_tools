@@ -25,6 +25,47 @@
     },
     {
       "key": {
+        "uuid": "391a1fed_9f6fd11e",
+        "filename": "git_cache.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-24T17:10:07Z",
+      "side": 1,
+      "message": "The answer is that L393 is missing a check for dirname existence in objects.",
+      "parentUuid": "e03f62bb_3fc51db5",
+      "range": {
+        "startLine": 386,
+        "startChar": 14,
+        "endLine": 386,
+        "endChar": 17
+      },
+      "revId": "ec3e7c7b9ec84da2ea7d0cfa90e95adce63decf0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b70e7543_c749a047",
+        "filename": "git_cache.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-24T17:10:07Z",
+      "side": 1,
+      "message": "and name[:-len(\u0027.ready\u0027)] in objects:",
+      "revId": "ec3e7c7b9ec84da2ea7d0cfa90e95adce63decf0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "80d42233_a3474568",
         "filename": "git_cache.py",
         "patchSetId": 12
@@ -48,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "ea9a9381_b991d2a9",
+        "filename": "git_cache.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-24T17:10:07Z",
+      "side": 1,
+      "message": "+1 for bail out",
+      "parentUuid": "80d42233_a3474568",
+      "range": {
+        "startLine": 560,
+        "startChar": 21,
+        "endLine": 560,
+        "endChar": 30
+      },
+      "revId": "ec3e7c7b9ec84da2ea7d0cfa90e95adce63decf0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "985a0c6a_14dc1bfd",
         "filename": "git_cache.py",
         "patchSetId": 12
@@ -59,6 +124,30 @@
       "writtenOn": "2019-04-24T00:51:29Z",
       "side": 1,
       "message": "can we make this a constant or a function or something? I assume that this URL isn\u0027t used anywhere else either?",
+      "range": {
+        "startLine": 568,
+        "startChar": 15,
+        "endLine": 568,
+        "endChar": 31
+      },
+      "revId": "ec3e7c7b9ec84da2ea7d0cfa90e95adce63decf0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "712ce544_347eae07",
+        "filename": "git_cache.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-24T17:10:07Z",
+      "side": 1,
+      "message": "the same thing is used above, once, for downloads. So +1 for function.",
+      "parentUuid": "985a0c6a_14dc1bfd",
       "range": {
         "startLine": 568,
         "startChar": 15,

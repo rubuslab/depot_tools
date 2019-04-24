@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68721c1f_dccc4d4b",
+        "filename": "autoninja.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2019-04-24T18:33:07Z",
+      "side": 1,
+      "message": "nit: remove space at EOL",
+      "range": {
+        "startLine": 15,
+        "startChar": 92,
+        "endLine": 15,
+        "endChar": 94
+      },
+      "revId": "bcd454d02f4858276a89f819f03ae5d4e7f6f148",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

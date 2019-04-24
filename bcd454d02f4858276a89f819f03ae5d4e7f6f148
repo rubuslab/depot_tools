@@ -46,6 +46,30 @@
       "revId": "bcd454d02f4858276a89f819f03ae5d4e7f6f148",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b11e5eeb_940cec32",
+        "filename": "autoninja.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2019-04-24T18:36:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d0c31928_aaaef5e8",
+      "range": {
+        "startLine": 15,
+        "startChar": 92,
+        "endLine": 15,
+        "endChar": 94
+      },
+      "revId": "bcd454d02f4858276a89f819f03ae5d4e7f6f148",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

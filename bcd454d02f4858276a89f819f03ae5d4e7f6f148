@@ -22,6 +22,30 @@
       "revId": "bcd454d02f4858276a89f819f03ae5d4e7f6f148",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0c31928_aaaef5e8",
+        "filename": "autoninja.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-04-24T18:34:59Z",
+      "side": 1,
+      "message": "The trailing space is intentional (see comment above). Otherwise the output looks like this:\n[1 processes, 403/403 @ 64.0/s : 6.296s ]LIB obj/base/base.lib\nand I think this looks much better:\n[1 processes, 403/403 @ 64.0/s : 6.296s ] LIB obj/base/base.lib",
+      "parentUuid": "68721c1f_dccc4d4b",
+      "range": {
+        "startLine": 15,
+        "startChar": 92,
+        "endLine": 15,
+        "endChar": 94
+      },
+      "revId": "bcd454d02f4858276a89f819f03ae5d4e7f6f148",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

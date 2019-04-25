@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "791aef85_592fe2a3",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-25T23:48:07Z",
+      "side": 1,
+      "message": "too radical :) Just return.",
+      "range": {
+        "startLine": 623,
+        "startChar": 15,
+        "endLine": 623,
+        "endChar": 16
+      },
+      "revId": "b521676b614bc923e4196e547f336daae706b728",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

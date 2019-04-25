@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e838e4a_16199bd9",
+        "filename": "git_cache.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-25T21:30:54Z",
+      "side": 1,
+      "message": "^^",
+      "revId": "0a1cf1fa43d6fe82cf116fc539448d16d5e5b7e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf377baa_f8f7afc8",
+        "filename": "git_cache.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-25T21:30:54Z",
+      "side": 1,
+      "message": "minor: _gs_path\n\nno need to advertise it to others like gclient python code which uses this python code as a library.",
+      "revId": "0a1cf1fa43d6fe82cf116fc539448d16d5e5b7e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30ff84a7_743bc914",
+        "filename": "git_cache.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-25T21:30:54Z",
+      "side": 1,
+      "message": "please, split this uploading code into another CL -- we\u0027ll land it first.\n\nAnd this CL will deal with only download and we\u0027ll land it next.",
+      "revId": "0a1cf1fa43d6fe82cf116fc539448d16d5e5b7e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a48f3a5e_054bc6a8",
+        "filename": "git_cache.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-25T21:30:54Z",
+      "side": 1,
+      "message": "remove debug stuff.",
+      "revId": "0a1cf1fa43d6fe82cf116fc539448d16d5e5b7e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

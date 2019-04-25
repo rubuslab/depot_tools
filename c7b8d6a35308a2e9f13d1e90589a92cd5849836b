@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cc06bce1_5d6bc4bf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-25T23:52:26Z",
+      "side": 1,
+      "message": "please, make this CL about v2 downloads.\n90% of this CL review so far dealt with downloads, so please save reviewers\u0027 time.",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 85
+      },
+      "revId": "c7b8d6a35308a2e9f13d1e90589a92cd5849836b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

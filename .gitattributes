@@ -25,6 +25,7 @@
 /pylint*                      recipes
 /repo                         recipes
 /roll-dep*                    recipes
+/update_depot_tools*          recipes
 /yapf*                        recipes
 
 # Symlinks

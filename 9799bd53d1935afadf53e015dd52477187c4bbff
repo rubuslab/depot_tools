@@ -16,6 +16,24 @@
       "revId": "9799bd53d1935afadf53e015dd52477187c4bbff",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b304fff0_6a8e1bb2",
+        "filename": "metrics.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-04-25T22:02:13Z",
+      "side": 1,
+      "message": "Yeah, time.time() is given in seconds, so probably the query is wrong.",
+      "parentUuid": "5548ab73_f1b806c2",
+      "revId": "9799bd53d1935afadf53e015dd52477187c4bbff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

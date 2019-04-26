@@ -93,6 +93,30 @@
       "revId": "db3e563ce5bcfb7ebba08a157cdc249e6fcadb34",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6828d48_8b0712c7",
+        "filename": "git_cache.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-26T21:18:26Z",
+      "side": 1,
+      "message": "a) do you agree with logic behind adding this additional check? if not, why not?\nb) and if you do agree, please help figure out how exactly does it not work.\nOne way: If you add debug printing of objects set on L391 and name[:-len(\u0027.ready\u0027) on L396, what\u0027s the debug output?",
+      "parentUuid": "494d078c_7d73814e",
+      "range": {
+        "startLine": 397,
+        "startChar": 6,
+        "endLine": 397,
+        "endChar": 11
+      },
+      "revId": "db3e563ce5bcfb7ebba08a157cdc249e6fcadb34",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd007104_7c7ba13d",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-26T00:12:57Z",
+      "side": 1,
+      "message": "oh, pylint has a point: ls_err and ls_err_ready should be checked. If any is set, print + return.",
+      "revId": "427dfa0259eabe6026b9bdb7e8b4af9b45e0b09a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

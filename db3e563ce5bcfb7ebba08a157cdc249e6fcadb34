@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ea8924b4_658989fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-26T17:49:06Z",
+      "side": 1,
+      "message": "download from GS git directory directly.",
+      "range": {
+        "startLine": 9,
+        "startChar": 17,
+        "endLine": 9,
+        "endChar": 85
+      },
+      "revId": "db3e563ce5bcfb7ebba08a157cdc249e6fcadb34",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "531e0a3c_71a353f4",
         "filename": "git_cache.py",
         "patchSetId": 20

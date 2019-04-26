@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3e60045e_f74fe2cc",
+        "filename": "git_cache.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-26T22:08:02Z",
+      "side": 1,
+      "message": "undo debugging.",
+      "revId": "6a2cc1e85392c2046eaec0665b74e719add27010",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "913b16d9_30a8abbb",
+        "filename": "git_cache.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-26T22:08:02Z",
+      "side": 1,
+      "message": "delete empty line.",
+      "revId": "6a2cc1e85392c2046eaec0665b74e719add27010",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

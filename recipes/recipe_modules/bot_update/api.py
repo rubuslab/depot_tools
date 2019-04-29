@@ -141,8 +141,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
     if patch:
       repo_url = self.m.tryserver.gerrit_change_repo_url
       fetch_ref = self.m.tryserver.gerrit_change_fetch_ref
+      target_ref = self.m.tryserver.gerrit_change_target_ref
       if repo_url and fetch_ref:
-        flags.append(['--patch_ref', '%s@%s' % (repo_url, fetch_ref)])
+        flags.append([
+            '--patch_ref',
+            '%s@%s:%s' % (repo_url, target_ref, fetch_ref),
+        ])
       if patch_refs:
         flags.extend(
             ['--patch_ref', patch_ref]
@@ -186,6 +190,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
     # Allow for overrides required to bisect into rolls.
     revisions.update(self._deps_revision_overrides)
 
+    print('LEMUR', revisions)
+
     # Compute command-line parameters for requested revisions.
     # Also collect all fixed revisions to simulate them in the json output.
     # Fixed revision are the explicit input revisions of bot_update.py, i.e.
@@ -198,6 +204,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
         if fixed_revision.upper() == 'HEAD':
           # Sync to correct destination branch if HEAD was specified.
           fixed_revision = self._destination_branch(cfg, name)
+        print('LEMUR2', name, fixed_revision)
         # If we're syncing to a ref, we want to make sure it exists before
         # trying to check it out.
         if (fixed_revision.startswith('refs/') and

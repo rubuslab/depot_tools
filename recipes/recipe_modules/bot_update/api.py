@@ -4,6 +4,8 @@
 
 """Recipe module to ensure a checkout is consistent on a bot."""
 
+import os
+
 from recipe_engine import recipe_api
 
 from PB.go.chromium.org.luci.buildbucket.proto import common as common_pb2
@@ -141,8 +143,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
     if patch:
       repo_url = self.m.tryserver.gerrit_change_repo_url
       fetch_ref = self.m.tryserver.gerrit_change_fetch_ref
+      target_ref = self.m.tryserver.gerrit_change_target_ref
       if repo_url and fetch_ref:
-        flags.append(['--patch_ref', '%s@%s' % (repo_url, fetch_ref)])
+        flags.append([
+            '--patch_ref',
+            '%s@%s:%s' % (repo_url, target_ref, fetch_ref),
+        ])
       if patch_refs:
         flags.extend(
             ['--patch_ref', patch_ref]
@@ -371,6 +377,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
     """
     # Ignore project paths other than the one belonging to the current CL.
     patch_path = self.m.gclient.get_gerrit_patch_root(gclient_config=cfg)
+    if patch_path:
+      patch_path = patch_path.replace(os.path.sep, '/')
     if not patch_path or path != patch_path:
       return 'HEAD'
 
@@ -378,13 +386,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
     if target_ref == 'refs/heads/master':
       return 'HEAD'
 
-    # TODO: Remove. Return ref, not branch.
-    ret = target_ref
-    prefix = 'refs/heads/'
-    if ret.startswith(prefix):
-      ret = ret[len(prefix):]
-
-    return ret
+    return target_ref
 
   def _resolve_fixed_revisions(self, bot_update_json):
     """Set all fixed revisions from the first sync to their respective

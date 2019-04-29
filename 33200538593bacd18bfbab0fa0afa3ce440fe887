@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc95dda5_788a6cde",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-04-29T20:29:26Z",
+      "side": 1,
+      "message": "api.path, otherwise simulation tests will fail on windows.",
+      "range": {
+        "startLine": 381,
+        "startChar": 38,
+        "endLine": 381,
+        "endChar": 40
+      },
+      "revId": "33200538593bacd18bfbab0fa0afa3ce440fe887",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

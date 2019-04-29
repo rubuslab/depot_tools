@@ -141,8 +141,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
     if patch:
       repo_url = self.m.tryserver.gerrit_change_repo_url
       fetch_ref = self.m.tryserver.gerrit_change_fetch_ref
+      target_ref = self.m.tryserver.gerrit_change_target_ref
       if repo_url and fetch_ref:
-        flags.append(['--patch_ref', '%s@%s' % (repo_url, fetch_ref)])
+        flags.append([
+            '--patch_ref',
+            '%s@%s:%s' % (repo_url, target_ref, fetch_ref),
+        ])
       if patch_refs:
         flags.extend(
             ['--patch_ref', patch_ref]
@@ -186,6 +190,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
     # Allow for overrides required to bisect into rolls.
     revisions.update(self._deps_revision_overrides)
 
+    debug = '\nLEMUR %s\n' % revisions
+
     # Compute command-line parameters for requested revisions.
     # Also collect all fixed revisions to simulate them in the json output.
     # Fixed revision are the explicit input revisions of bot_update.py, i.e.
@@ -197,7 +203,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
         fixed_revisions[name] = fixed_revision
         if fixed_revision.upper() == 'HEAD':
           # Sync to correct destination branch if HEAD was specified.
-          fixed_revision = self._destination_branch(cfg, name)
+          fixed_revision, debug_plus = self._destination_branch(cfg, name)
+          debug += debug_plus + '\n'
+        debug += 'LEMUR %s %s\n' % (name, fixed_revision)
         # If we're syncing to a ref, we want to make sure it exists before
         # trying to check it out.
         if (fixed_revision.startswith('refs/') and
@@ -279,6 +287,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
         if 'step_text' in result:
           step_text = result['step_text']
           step_result.presentation.step_text = step_text
+        step_result.presentation.step_text += debug
 
         # Export the step results as a Source Manifest to LogDog.
         source_manifest = result.get('source_manifest', {})
@@ -371,12 +380,15 @@ class BotUpdateApi(recipe_api.RecipeApi):
     """
     # Ignore project paths other than the one belonging to the current CL.
     patch_path = self.m.gclient.get_gerrit_patch_root(gclient_config=cfg)
+    debug = 'path: %s\n' % path
+    debug += 'patch_path: %s\n' % patch_path
     if not patch_path or path != patch_path:
-      return 'HEAD'
+      return 'HEAD', debug
 
     target_ref = self.m.tryserver.gerrit_change_target_ref
+    debug += 'target_ref: %s\n' % self.m.tryserver.gerrit_change_target_ref
     if target_ref == 'refs/heads/master':
-      return 'HEAD'
+      return 'HEAD', debug
 
     # TODO: Remove. Return ref, not branch.
     ret = target_ref
@@ -384,7 +396,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
     if ret.startswith(prefix):
       ret = ret[len(prefix):]
 
-    return ret
+    debug += 'ret: %s\n' % ret
+
+    return ret, debug
 
   def _resolve_fixed_revisions(self, bot_update_json):
     """Set all fixed revisions from the first sync to their respective

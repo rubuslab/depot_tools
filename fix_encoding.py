@@ -349,6 +349,7 @@ def fix_win_console(encoding):
     # "It doesn't appear to be possible to read Unicode characters in UTF-8
     # mode" and this appears to be a limitation of cmd.exe.
   except Exception as e:
+    print("exception")
     complain('exception %r while fixing up sys.stdout and sys.stderr' % e)
   return True
 

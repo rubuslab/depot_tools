@@ -16,6 +16,24 @@
       "revId": "244c34339df257be72b01ca62fa2596bae64f3cf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a4c7405_1495cf48",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1323143
+      },
+      "writtenOn": "2019-05-01T22:45:38Z",
+      "side": 0,
+      "message": "sorry, i think this was a weird merge thing that happened",
+      "parentUuid": "ed6d0916_48537d8d",
+      "revId": "244c34339df257be72b01ca62fa2596bae64f3cf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

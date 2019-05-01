@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2beb362c_c12d215b",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-05-01T03:05:13Z",
+      "side": 1,
+      "message": "Might not be needed here, but consider using gclient_utils.rmtree\nhttps://cs.chromium.org/chromium/tools/depot_tools/gclient_utils.py?l\u003d224",
+      "range": {
+        "startLine": 503,
+        "startChar": 8,
+        "endLine": 503,
+        "endChar": 21
+      },
+      "revId": "0ff8b3509fa852a21bfac2ed4f993f718ca483b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

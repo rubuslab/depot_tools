@@ -61,6 +61,7 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
     tasks = {}
     remaining = []
     for line in stdout.splitlines(False):
+      logging.error(line)
       m = re.match(r'^(\d)+>(.*)$', line)
       if not m:
         remaining.append(line)
@@ -452,6 +453,7 @@ class GClientSmokeGIT(GClientSmokeBase):
         ['sync', '--deps', 'mac', '--jobs', '8'],
         ['running', 'running', 'running'],
         untangle=True)
+    self.assertEquals([], [1])
     # TODO(maruel): http://crosbug.com/3582 hooks run even if not matching, must
     # add sync parsing to get the list of updated files.
     tree = self.mangle_git_tree(('repo_1@2', 'src'),

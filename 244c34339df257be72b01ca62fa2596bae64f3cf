@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed6d0916_48537d8d",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-01T22:26:43Z",
+      "side": 0,
+      "message": "Doesn\u0027t seem related to pruning GS files. Also, not clear why this code can go. Consider splitting this part into another CL.",
+      "revId": "244c34339df257be72b01ca62fa2596bae64f3cf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

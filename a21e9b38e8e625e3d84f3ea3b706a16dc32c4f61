@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2b3d0e8a_3693899e",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-01T22:26:43Z",
+      "side": 1,
+      "message": "i like prev. version more. Also, consider renaming it dest_prefix.",
+      "revId": "a21e9b38e8e625e3d84f3ea3b706a16dc32c4f61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c5b94f8_36e5e4a4",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-01T22:26:43Z",
+      "side": 1,
+      "message": "idea: always call this on L573. Then checking for existence can on L574+L575 won\u0027t need GSutil call. Hence, we\u0027ll save 1 RPC overall.",
+      "revId": "a21e9b38e8e625e3d84f3ea3b706a16dc32c4f61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbc0f01b_6cf92019",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-01T22:26:43Z",
+      "side": 1,
+      "message": "1. see https://crbug.com/943696#c22. You must keep not only newest uploaded, but also previously existing one (if any).\n2. Add comment explaining why so. Namely, concurrent recursive downloads of previously existing one may be corrupted otherwise + we assume time between uploads is much longer than time it takes to download.\n\nA more robust implementation would also check created timestamps of .ready file. Then, **in addition to above** abstain from pruning \u003cnumber\u003e* if \u003cnumber\u003e.ready is more recent than say 1 day.",
+      "revId": "a21e9b38e8e625e3d84f3ea3b706a16dc32c4f61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

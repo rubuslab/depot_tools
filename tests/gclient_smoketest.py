@@ -61,6 +61,7 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
     tasks = {}
     remaining = []
     for line in stdout.splitlines(False):
+      logging.error(line)
       m = re.match(r'^(\d)+>(.*)$', line)
       if not m:
         remaining.append(line)

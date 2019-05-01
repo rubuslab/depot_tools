@@ -58,19 +58,22 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
             process.returncode)
 
   def untangle(self, stdout):
+    """Separates output based on thread IDs."""
     tasks = {}
     remaining = []
     for line in stdout.splitlines(False):
       m = re.match(r'^(\d)+>(.*)$', line)
       if not m:
-        remaining.append(line)
+        # Lines broken with carriage breaks don't have a thread ID, but belong
+        # to the last seen thread ID.
+        tasks.setdefault(task_id, []).append(line)
       else:
         self.assertEquals([], remaining)
-        tasks.setdefault(int(m.group(1)), []).append(m.group(2))
+        task_id = int(m.group(1))
+        tasks.setdefault(task_id, []).append(m.group(2))
     out = []
     for key in sorted(tasks.iterkeys()):
       out.extend(tasks[key])
-    out.extend(remaining)
     return '\n'.join(out)
 
   def parseGclient(self, cmd, items, expected_stderr='', untangle=False):

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "acc3dfc5_c598276a",
+        "filename": "man/src/filter_demo_output.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-05-01T22:53:20Z",
+      "side": 1,
+      "message": "Could do, but I can\u0027t trivially guarantee that it doesn\u0027t change the results. Dirk?",
+      "parentUuid": "efff8e97_25878e46",
+      "revId": "a04548de02553a563432cc48e2bf48769b8ab831",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ae103cb6_a4c2e152",
         "filename": "scm.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-05-01T17:32:06Z",
       "side": 1,
       "message": "Same for \\t.",
+      "revId": "a04548de02553a563432cc48e2bf48769b8ab831",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a197a67_07c7e4cf",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-05-01T22:53:20Z",
+      "side": 1,
+      "message": "Same answer. It should be safe, but...?",
+      "parentUuid": "ae103cb6_a4c2e152",
       "revId": "a04548de02553a563432cc48e2bf48769b8ab831",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

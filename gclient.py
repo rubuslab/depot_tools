@@ -3097,7 +3097,7 @@ def disable_buffering():
   # operations. Python as a strong tendency to buffer sys.stdout.
   sys.stdout = gclient_utils.MakeFileAutoFlush(sys.stdout)
   # Make stdout annotated with the thread ids.
-  sys.stdout = gclient_utils.MakeFileAnnotated(sys.stdout)
+  #sys.stdout = gclient_utils.MakeFileAnnotated(sys.stdout)
 
 
 def path_contains_tilde():

@@ -495,11 +495,6 @@ class Mirror(object):
       # Re-bootstrapping an existing mirror; preserve existing fetch spec.
       self._preserve_fetchspec()
     else:
-      if os.path.exists(self.mirror_path):
-        # If the mirror path exists but self.exists() returns false, we're
-        # in an unexpected state. Nuke the previous mirror directory and
-        # start fresh.
-        gclient_utils.rmtree(self.mirror_path)
       os.mkdir(self.mirror_path)
 
     bootstrapped = (not depth and bootstrap and
@@ -573,19 +568,12 @@ class Mirror(object):
     gsutil = Gsutil(path=self.gsutil_exe, boto_path=None)
 
     src_name = self.mirror_path
-    dest_name = '%s/%s' % (self._gs_path, gen_number)
+    dest_name = '%s/%s/' % (self._gs_path, gen_number)
 
     # check to see if folder already exists in gs
-    _, ls_out, ls_err = gsutil.check_call('ls', dest_name)
-    _, ls_out_ready, ls_err_ready = (
-      gsutil.check_call('ls', dest_name + '.ready'))
-
-    # only printing out errors because the folder/ready file
-    # might not exist yet, so it will error no matter what
-    if ls_err:
-      print('Failed to check GS:\n%s' % (ls_err))
-    if ls_err_ready:
-      print('Failed to check GS:\n%s' % (ls_err_ready))
+    _, ls_out, _ = gsutil.check_call('ls', dest_name)
+    _, ls_out_ready, _ = (
+      gsutil.check_call('ls', dest_name[:-1] + '.ready'))
 
     if not (ls_out == '' and ls_out_ready == ''):
       print('Cache %s already exists' % dest_name)
@@ -596,14 +584,24 @@ class Mirror(object):
 
     gsutil.call('-m', 'cp', '-r', src_name, dest_name)
 
-    #TODO(karenqian): prune old caches
-
     # create .ready file and upload
     _, ready_file_name =  tempfile.mkstemp(suffix='.ready')
     try:
-      gsutil.call('cp', ready_file_name, '%s.ready' % (dest_name))
+      gsutil.call('cp', ready_file_name, '%s.ready' % (dest_name[:-1]))
     finally:
       os.remove(ready_file_name)
+
+    #remove all other directory/.ready files in the same gs_path
+    if prune:
+      _, ls_out, _ = gsutil.check_call('ls', self._gs_path)
+      for path in ls_out.splitlines():
+        if path == dest_name or path == dest_name[:-1] + '.ready':
+          continue
+        if path.endswith('.ready'):
+          gsutil.call('rm', path)
+          continue
+        gsutil.call('-m', 'rm', '-r', path)
+
 
   @staticmethod
   def DeleteTmpPackFiles(path):

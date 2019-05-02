@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "6faab6cd_418a4054",
+        "filename": "man/src/filter_demo_output.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-02T00:11:36Z",
+      "side": 1,
+      "message": "I have no strong opinion here, and I\u0027m not so steeped in the arcana of string escape sequences in python and how the re module will deal with it that I can say with 100% confidence that a given change it\u0027d be right. That said, I agree that a raw literal might be better and should be easy to switch in this case.",
+      "parentUuid": "acc3dfc5_c598276a",
+      "revId": "a04548de02553a563432cc48e2bf48769b8ab831",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ae103cb6_a4c2e152",
         "filename": "scm.py",
         "patchSetId": 1

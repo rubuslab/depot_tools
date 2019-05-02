@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "046de877_5b0bc769",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-05-02T17:59:54Z",
+      "side": 1,
+      "message": "this seems to assume the callsite logic? why not \n\n  target_branch \u003d self._GetTargetBranchForCommit(base_rev) or base_rev\n\nin L424",
+      "revId": "43cb3c58b306b9ff3b86854db079a81f5e0acef2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4550c7c_cc6e91ec",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-05-02T17:59:54Z",
+      "side": 1,
+      "message": "i don\u0027t understand how can we assign a commit hash to a target branch. A commit hash is not a branch?",
+      "revId": "43cb3c58b306b9ff3b86854db079a81f5e0acef2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

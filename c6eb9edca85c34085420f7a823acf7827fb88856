@@ -16,6 +16,24 @@
       "revId": "c6eb9edca85c34085420f7a823acf7827fb88856",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b82b10cc_e74db5f6",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-05-02T12:42:05Z",
+      "side": 1,
+      "message": "No. Was for debugging test behavior as a result of the upgrade on CQ.\n\nThe tests don\u0027t work for me locally (can\u0027t bind/connect to port). Should probably file a bug.",
+      "parentUuid": "8218104a_63a4a36c",
+      "revId": "c6eb9edca85c34085420f7a823acf7827fb88856",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

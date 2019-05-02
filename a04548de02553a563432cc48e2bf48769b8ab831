@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "604a43b7_761675f6",
+        "filename": "man/src/filter_demo_output.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-05-02T18:50:51Z",
+      "side": 1,
+      "message": "My main concern here was the \\x1b, but the re docs indicate that it is supported, so a raw string will work, even though it is slightly changing the value of the string sent to re.",
+      "parentUuid": "6faab6cd_418a4054",
+      "revId": "a04548de02553a563432cc48e2bf48769b8ab831",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae103cb6_a4c2e152",
         "filename": "scm.py",
         "patchSetId": 1
@@ -123,6 +141,24 @@
       "revId": "a04548de02553a563432cc48e2bf48769b8ab831",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5118af21_6b16607e",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-05-02T18:50:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a197a67_07c7e4cf",
+      "revId": "a04548de02553a563432cc48e2bf48769b8ab831",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

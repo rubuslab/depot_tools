@@ -2496,14 +2496,17 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       else:
         print('OK, will keep Gerrit commit-msg hook in place.')
 
-  def _RunGitPushWithTraces(self, change_desc, refspec, refspec_opts):
+  def _RunGitPushWithTraces(
+      self, change_desc, refspec, refspec_opts, title, description, change_id):
+    """"""
     gclient_utils.safe_makedirs(TRACES_DIR)
 
     # Create a temporary directory to store traces in. Traces will be compressed
     # and stored in a 'traces' dir inside depot_tools.
     traces_dir = tempfile.mkdtemp()
-    trace_name = os.path.basename(traces_dir)
+    trace_name = str(time.time())
     traces_zip = os.path.join(TRACES_DIR, trace_name + '-traces')
+    traces_metadata = os.path.join(TRACES_DIR, trace_name + '-metadata')
     # Create a temporary dir to store git config and gitcookies in. It will be
     # compressed and stored next to the traces.
     git_info_dir = tempfile.mkdtemp()
@@ -2518,9 +2521,10 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
 
     try:
       push_returncode = 0
+      remote_url = self.GetRemoteUrl()
       before_push = time_time()
       push_stdout = gclient_utils.CheckCallAndFilter(
-          ['git', 'push', self.GetRemoteUrl(), refspec],
+          ['git', 'push', remote_url, refspec],
           env=env,
           print_stdout=True,
           # Flush after every line: useful for seeing progress when running as
@@ -2544,7 +2548,29 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         'arguments': metrics_utils.extract_known_subcommand_args(refspec_opts),
       })
 
-      if push_returncode != 0:
+      try:
+        TRACES_METADATA_FORMAT = '\n'.join([
+            'Date: %(date)s',
+            '',
+            'Change: %(remote_url)s/q/%(change_id)s',
+            'Title: %(title)s',
+            '',
+            '%(description)s',
+            '',
+            'Execution time: %(execution_time)s',
+            'Exit code: %(exit_code)s'])
+
+        with open(traces_metadata, 'w') as f:
+          f.write(TRACES_METADATA_FORMAT % ({
+                'date': datetime.datetime.now().strftime('%c'),
+                'remote_url': remote_url,
+                'title': title or '<untitled>',
+                'change_id': change_id,
+                'description': description,
+                'execution_time': execution_time,
+                'exit_code': push_returncode,
+          }))
+
         # Keep only the first 6 characters of the git hashes on the packet
         # trace. This greatly decreases size after compression.
         packet_traces = os.path.join(traces_dir, 'trace-packet')
@@ -2568,8 +2594,10 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
               GITCOOKIES_REDACT_RE.sub('REDACTED', gitcookies))
         shutil.make_archive(git_info_zip, 'zip', git_info_dir)
 
-      gclient_utils.rmtree(git_info_dir)
-      gclient_utils.rmtree(traces_dir)
+      finally:
+
+        gclient_utils.rmtree(git_info_dir)
+        gclient_utils.rmtree(traces_dir)
 
     return push_stdout
 
@@ -2822,7 +2850,9 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           'spaces not allowed in refspec: "%s"' % refspec_suffix)
     refspec = '%s:refs/for/%s%s' % (ref_to_push, branch, refspec_suffix)
 
-    push_stdout = self._RunGitPushWithTraces(change_desc, refspec, refspec_opts)
+    push_stdout = self._RunGitPushWithTraces(
+        change_desc, refspec, refspec_opts, title, change_desc.description,
+        change_id)
 
     if options.squash:
       regex = re.compile(r'remote:\s+https?://[\w\-\.\+\/#]*/(\d+)\s.*')

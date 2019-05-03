@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6d2ecca_a33a9a24",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T01:24:29Z",
+      "side": 1,
+      "message": "please give me bigger picture. I no longer remember what the problem is.",
+      "revId": "b82214d58be1e92bc7b507ba31ac3366ef350e74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f1280f8_15c5b1a7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T01:24:29Z",
+      "side": 1,
+      "message": "curious: shouldn\u0027t this always be set?",
+      "revId": "b82214d58be1e92bc7b507ba31ac3366ef350e74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01b9ffa7_c57ae5bf",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T01:24:29Z",
+      "side": 1,
+      "message": "seems unused.",
+      "revId": "b82214d58be1e92bc7b507ba31ac3366ef350e74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0927676c_43a04100",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T01:24:29Z",
+      "side": 1,
+      "message": "will this result two fetches for the same repo? i thought this code is ran after initial fetch has been made already.",
+      "revId": "b82214d58be1e92bc7b507ba31ac3366ef350e74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "521ee973_9a33050a",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T01:24:29Z",
+      "side": 1,
+      "message": "this will overwrite the target_branch if it was set, but not starting with \u0027refs/\u0027. \n* Is this possible?\n* if so, in what cases and why is overwriting desirable?",
+      "revId": "b82214d58be1e92bc7b507ba31ac3366ef350e74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

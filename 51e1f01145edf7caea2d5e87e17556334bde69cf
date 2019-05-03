@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "32513af8_51408b40",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T00:03:29Z",
+      "side": 1,
+      "message": "remove, seems pointless.",
+      "revId": "51e1f01145edf7caea2d5e87e17556334bde69cf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34598155_0ee97bcf",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T00:03:29Z",
+      "side": 1,
+      "message": "add todo to rename to target_ref",
+      "range": {
+        "startLine": 376,
+        "startChar": 51,
+        "endLine": 376,
+        "endChar": 64
+      },
+      "revId": "51e1f01145edf7caea2d5e87e17556334bde69cf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b78e3019_8521a00a",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T00:03:29Z",
+      "side": 1,
+      "message": "really? i must have missed this.",
+      "range": {
+        "startLine": 429,
+        "startChar": 34,
+        "endLine": 429,
+        "endChar": 48
+      },
+      "revId": "51e1f01145edf7caea2d5e87e17556334bde69cf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

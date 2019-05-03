@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7fb31048_b985e9be",
+        "filename": "git_cache.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T21:54:23Z",
+      "side": 1,
+      "message": "nit: del empty line, comment is for the following line.",
+      "revId": "b43cd84e5ce361a6c3897c8cbf382fbc6cf81808",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6314795_79f4b6a4",
+        "filename": "git_cache.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T21:54:23Z",
+      "side": 1,
+      "message": "this is only relevant to pruning. So, move after \"if not prune\" check.",
+      "range": {
+        "startLine": 606,
+        "startChar": 4,
+        "endLine": 608,
+        "endChar": 12
+      },
+      "revId": "b43cd84e5ce361a6c3897c8cbf382fbc6cf81808",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

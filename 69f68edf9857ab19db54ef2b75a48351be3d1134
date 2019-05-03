@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a798712_fb413edd",
+        "filename": "git_cache.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T20:02:31Z",
+      "side": 1,
+      "message": "make private _GetMost...",
+      "revId": "69f68edf9857ab19db54ef2b75a48351be3d1134",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02cbe7c3_a4e89dbb",
+        "filename": "git_cache.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T20:02:31Z",
+      "side": 1,
+      "message": "delete. this comment is useless -- it just dups the description.\n\nor better document ls_out input param, but I suspect it\u0027s better to accept change input as an iterable of gs paths.",
+      "range": {
+        "startLine": 314,
+        "startChar": 4,
+        "endLine": 314,
+        "endChar": 50
+      },
+      "revId": "69f68edf9857ab19db54ef2b75a48351be3d1134",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1af4e41_23b12756",
+        "filename": "git_cache.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T20:02:31Z",
+      "side": 1,
+      "message": "make this a var before L589 and use it here and on L589. This is also why I recommend passing list of existing gs paths to new helper func you created.",
+      "range": {
+        "startLine": 616,
+        "startChar": 16,
+        "endLine": 616,
+        "endChar": 35
+      },
+      "revId": "69f68edf9857ab19db54ef2b75a48351be3d1134",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -416,11 +416,15 @@ class GitWrapper(SCMWrapper):
 
     base_rev = self._Capture(['rev-parse', 'HEAD'])
 
-    if target_branch:
+    if target_branch and target_branch.startswith('refs/'):
       # Convert the target branch to a remote ref if possible.
       remote_ref = scm.GIT.RefToRemoteRef(target_branch, self.remote)
       if remote_ref:
         target_branch = ''.join(remote_ref)
+      # Ensure we have the target branch.
+      url, _ = gclient_utils.SplitUrlRevision(self.url)
+      mirror = self._GetMirror(url, options, target_branch)
+      self._Fetch(options, refspec=target_branch)
     else:
       target_branch = self._GetTargetBranchForCommit(base_rev)
 

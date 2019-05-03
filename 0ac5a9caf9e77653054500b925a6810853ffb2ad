@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cff3a728_af5b8e6b",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T17:25:45Z",
+      "side": 1,
+      "message": "del",
+      "revId": "0ac5a9caf9e77653054500b925a6810853ffb2ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25c562ec_b70c41b3",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T17:25:45Z",
+      "side": 1,
+      "message": "can you check what ls_out actually contains?\nie is it \u0027123.ready\u0027 or \u0027gs://bla/bla/123.ready\u0027 path?\ni suspect the former (but no sure). At the same time, your code definitely assumes the latter.",
+      "range": {
+        "startLine": 579,
+        "startChar": 7,
+        "endLine": 579,
+        "endChar": 13
+      },
+      "revId": "0ac5a9caf9e77653054500b925a6810853ffb2ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d9261ae_6aa69b4b",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T17:25:45Z",
+      "side": 1,
+      "message": "in this case, it makes sense to print error (but proceed anyway). It should not happen normally.",
+      "range": {
+        "startLine": 579,
+        "startChar": 15,
+        "endLine": 579,
+        "endChar": 16
+      },
+      "revId": "0ac5a9caf9e77653054500b925a6810853ffb2ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f6ce70f_9107ccb6",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T17:25:45Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "0ac5a9caf9e77653054500b925a6810853ffb2ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "469529d7_aa8c2b8f",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T17:25:45Z",
+      "side": 1,
+      "message": "gen_number -1 might not even exist. The number corresponds to git commits, so if between two consecutive cache uploads there were 10 commits, the gen_number diff will be 10.\n\nso, you need to compute the maximum just like in the downloading CL you\u0027ve landed before. I guess you can move that logic to common helper function.",
+      "range": {
+        "startLine": 600,
+        "startChar": 49,
+        "endLine": 600,
+        "endChar": 61
+      },
+      "revId": "0ac5a9caf9e77653054500b925a6810853ffb2ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "289c192d_4861573b",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-03T17:25:45Z",
+      "side": 1,
+      "message": "prefer to exit early and de-intent:\n\nif not prune:\n  return\n# remove all other director.....",
+      "range": {
+        "startLine": 605,
+        "startChar": 3,
+        "endLine": 605,
+        "endChar": 13
+      },
+      "revId": "0ac5a9caf9e77653054500b925a6810853ffb2ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

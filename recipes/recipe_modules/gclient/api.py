@@ -274,6 +274,8 @@ class GclientApi(recipe_api.RecipeApi):
     self.m.python.inline(
       'cleanup index.lock',
       """
+        from __future__ import print_function
+
         import os, sys
 
         build_path = sys.argv[1]
@@ -282,7 +284,7 @@ class GclientApi(recipe_api.RecipeApi):
             for cur_file in files:
               if cur_file.endswith('index.lock'):
                 path_to_file = os.path.join(path, cur_file)
-                print 'deleting %s' % path_to_file
+                print('deleting %s' % path_to_file)
                 os.remove(path_to_file)
       """,
       args=[self.m.path['start_dir']],

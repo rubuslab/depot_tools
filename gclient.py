@@ -1650,11 +1650,11 @@ it or fix the checkout.
               # clean checkout.
               gclient_scm.scm.GIT.CleanupDir(par_scm_root, rel_e_dir)
               assert not os.path.exists(os.path.join(e_dir, '.git'))
-              print(('\nWARNING: \'%s\' has been moved from DEPS to a higher '
+              print('\nWARNING: \'%s\' has been moved from DEPS to a higher '
                      'level checkout. The git folder containing all the local'
                      ' branches has been saved to %s.\n'
                      'If you don\'t care about its state you can safely '
-                     'remove that folder to free up space.') %
+                     'remove that folder to free up space.' %
                     (entry, save_dir))
               continue
 
@@ -1684,9 +1684,9 @@ it or fix the checkout.
                   should_recurse=False,
                   relative=None,
                   condition=None))
-          print(('\nWARNING: \'%s\' is no longer part of this client.\n'
+          print('\nWARNING: \'%s\' is no longer part of this client.\n'
                  'It is recommended that you manually remove it or use '
-                 '\'gclient sync -D\' next time.') % entry_fixed)
+                 '\'gclient sync -D\' next time.' % entry_fixed)
         else:
           # Delete the entry
           print('\n________ deleting \'%s\' in \'%s\'' % (

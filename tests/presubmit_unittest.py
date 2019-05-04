@@ -184,9 +184,10 @@ class PresubmitUnittest(PresubmitTestsBase):
         'gerrit_util', 'git_footers', 'glob', 'inspect', 'itertools', 'json',
         'load_files', 'logging', 'main', 'marshal', 'multiprocessing',
         'normpath', 'optparse', 'os', 'owners', 'owners_finder', 'pickle',
-        'presubmit_canned_checks', 'random', 're', 'scm', 'sigint_handler',
-        'signal', 'subprocess', 'sys', 'tempfile', 'threading', 'time',
-        'traceback', 'types', 'unittest', 'urllib2', 'urlparse', 'warn'
+        'presubmit_canned_checks', 'print_function', 'random', 're', 'scm',
+        'sigint_handler', 'signal', 'subprocess', 'sys', 'tempfile',
+        'threading', 'time', 'traceback', 'types', 'unittest', 'urllib2',
+        'urlparse', 'warn'
     ]
     # If this test fails, you should add the relevant test.
     self.compareMembers(presubmit, members)

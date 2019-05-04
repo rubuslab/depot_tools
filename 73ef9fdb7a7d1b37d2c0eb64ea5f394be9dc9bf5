@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6df4d0dd_8884847b",
+        "filename": "git_cl.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-05-04T00:51:12Z",
+      "side": 1,
+      "message": "Or 50? 100?\nEach trace is about 500K",
+      "range": {
+        "startLine": 84,
+        "startChar": 17,
+        "endLine": 84,
+        "endChar": 19
+      },
+      "revId": "73ef9fdb7a7d1b37d2c0eb64ea5f394be9dc9bf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

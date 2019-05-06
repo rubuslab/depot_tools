@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b809b291_6097966b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-06T22:40:23Z",
+      "side": 1,
+      "message": "Nit: why do you need the list() here?",
+      "revId": "bb5f585342bccc4288bae473c5775f3f89a3e877",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

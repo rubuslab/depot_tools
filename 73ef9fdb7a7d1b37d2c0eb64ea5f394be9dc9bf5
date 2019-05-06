@@ -22,6 +22,64 @@
       "revId": "73ef9fdb7a7d1b37d2c0eb64ea5f394be9dc9bf5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7454a546_6d1c1c52",
+        "filename": "git_cl.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-06T21:38:32Z",
+      "side": 1,
+      "message": "I think 10 is probably a good starting point. I\u0027d expect users to lose context on traces more than 10 commands ago.",
+      "parentUuid": "6df4d0dd_8884847b",
+      "range": {
+        "startLine": 84,
+        "startChar": 17,
+        "endLine": 84,
+        "endChar": 19
+      },
+      "revId": "73ef9fdb7a7d1b37d2c0eb64ea5f394be9dc9bf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c0f1e9e_f3078cc1",
+        "filename": "git_cl.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 2529,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-06T21:38:32Z",
+      "side": 1,
+      "message": "I suggest we at least print a warning message rather than swallowing this silently.",
+      "revId": "73ef9fdb7a7d1b37d2c0eb64ea5f394be9dc9bf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8375ac0_728120a7",
+        "filename": "git_cl.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 2573,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-06T21:38:32Z",
+      "side": 1,
+      "message": "Nit: I\u0027d move _CleanUpOldTraces() outside of this function, since in a sense it\u0027s not related to actually writing the traces.",
+      "revId": "73ef9fdb7a7d1b37d2c0eb64ea5f394be9dc9bf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

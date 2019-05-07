@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "09f1ccb3_2ff624ac",
+        "filename": "git_cl.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 2538,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-07T00:26:11Z",
+      "side": 1,
+      "message": "Nit: you need an arg for the format string to work.",
+      "revId": "6138ece6afc9c0c8f96fdcb9de90da55703306b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

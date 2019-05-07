@@ -112,6 +112,30 @@
     },
     {
       "key": {
+        "uuid": "8a20f76b_81503594",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-07T18:22:30Z",
+      "side": 1,
+      "message": "ah, right. Please, copy-paste your reply to my question into code as a comment.",
+      "parentUuid": "7337f67b_76de9388",
+      "range": {
+        "startLine": 426,
+        "startChar": 0,
+        "endLine": 427,
+        "endChar": 24
+      },
+      "revId": "1bafc36a41e8ee6a7f7a37c61c827f8b50c9ef32",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "19cab3d0_21f2a6d9",
         "filename": "gclient_scm.py",
         "patchSetId": 9

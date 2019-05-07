@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "211c0eec_0e69687c",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-07T05:43:18Z",
+      "side": 1,
+      "message": "thanks.",
+      "range": {
+        "startLine": 375,
+        "startChar": 51,
+        "endLine": 375,
+        "endChar": 61
+      },
+      "revId": "1bafc36a41e8ee6a7f7a37c61c827f8b50c9ef32",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ccbfd47_b8fb1863",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-07T05:43:18Z",
+      "side": 1,
+      "message": "supporting these two correctly is better than supporting all refs in a broken way.\nSo, fine, but please add a TODO here to extend it some day...",
+      "revId": "1bafc36a41e8ee6a7f7a37c61c827f8b50c9ef32",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41a3db4f_1935b224",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-07T05:43:18Z",
+      "side": 1,
+      "message": "in refs/heads/** or refs/branch-heads/**",
+      "range": {
+        "startLine": 423,
+        "startChar": 30,
+        "endLine": 423,
+        "endChar": 43
+      },
+      "revId": "1bafc36a41e8ee6a7f7a37c61c827f8b50c9ef32",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f5b6380_6f8ddf77",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-07T05:43:18Z",
+      "side": 1,
+      "message": "this would justify having a unit/regression test, but not the special case per se.\nIs this actually necessary? Or is this an optimization to avoid extra fetch? please state in a comment if so.",
+      "range": {
+        "startLine": 426,
+        "startChar": 0,
+        "endLine": 427,
+        "endChar": 24
+      },
+      "revId": "1bafc36a41e8ee6a7f7a37c61c827f8b50c9ef32",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19cab3d0_21f2a6d9",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-07T05:43:18Z",
+      "side": 1,
+      "message": "es",
+      "range": {
+        "startLine": 430,
+        "startChar": 53,
+        "endLine": 430,
+        "endChar": 55
+      },
+      "revId": "1bafc36a41e8ee6a7f7a37c61c827f8b50c9ef32",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc759b17_85715125",
+        "filename": "scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-07T05:43:18Z",
+      "side": 1,
+      "message": "oh, yeah, right.",
+      "range": {
+        "startLine": 373,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 37
+      },
+      "revId": "1bafc36a41e8ee6a7f7a37c61c827f8b50c9ef32",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

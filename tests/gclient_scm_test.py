@@ -1202,7 +1202,7 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
     file_list = []
 
     # Sync to origin/feature
-    self.options.revision = 'origin/feature'
+    self.options.revision = 'refs/heads/feature'
     scm.update(self.options, None, file_list)
     self.assertEqual(self.githash('repo_1', 9), self.gitrevparse(self.root_dir))
 
@@ -1245,7 +1245,7 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
 
     # Apply refs/changes/34/1234/1, created for branch 'origin/master' on top of
     # 'origin/feature'.
-    scm.apply_patch_ref(self.url, 'refs/changes/35/1235/1', 'origin/master',
+    scm.apply_patch_ref(self.url, 'refs/changes/35/1235/1', 'refs/heads/master',
                         self.options, file_list)
 
     # Commits 5 and 6 are part of the patch, and commits 1, 2, 7, 8 and 9 are

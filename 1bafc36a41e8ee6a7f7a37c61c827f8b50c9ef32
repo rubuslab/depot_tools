@@ -88,6 +88,30 @@
     },
     {
       "key": {
+        "uuid": "7337f67b_76de9388",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-05-07T18:13:39Z",
+      "side": 1,
+      "message": "This is because bot_update treats refs/heads/master differently than other refs: it will fetch refs/heads/foo to refs/heads/foo, but refs/heads/master to refs/remotes/origin/master.\nIt\u0027s not strictly necessary, but it simplifies the rest of the code.",
+      "parentUuid": "7f5b6380_6f8ddf77",
+      "range": {
+        "startLine": 426,
+        "startChar": 0,
+        "endLine": 427,
+        "endChar": 24
+      },
+      "revId": "1bafc36a41e8ee6a7f7a37c61c827f8b50c9ef32",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "19cab3d0_21f2a6d9",
         "filename": "gclient_scm.py",
         "patchSetId": 9

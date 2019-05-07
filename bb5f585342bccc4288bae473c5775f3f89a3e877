@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "8a9ca775_a1a3301a",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-07T20:58:27Z",
+      "side": 1,
+      "message": "Ah, the filter object doesn\u0027t have a .split() method.\n\nFair enough.",
+      "parentUuid": "6f8736a5_162b3b05",
+      "revId": "bb5f585342bccc4288bae473c5775f3f89a3e877",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e5058b7_f689b87b",
         "filename": "gclient_scm.py",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "writtenOn": "2019-05-07T19:14:28Z",
       "side": 1,
       "message": "In the light of CL:1598808, I should probably change the decode() to UTF-8 and add tests.",
+      "revId": "bb5f585342bccc4288bae473c5775f3f89a3e877",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3f08d6d_995b8ff8",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-07T20:58:27Z",
+      "side": 1,
+      "message": "Yeah, I was actually wondering about that when you added it. Doesn\u0027t it default to utf8, though? Maybe more importantly you need to ignore or replace errors?",
+      "parentUuid": "0e5058b7_f689b87b",
       "revId": "bb5f585342bccc4288bae473c5775f3f89a3e877",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

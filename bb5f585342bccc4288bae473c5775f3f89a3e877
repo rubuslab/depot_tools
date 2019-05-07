@@ -16,6 +16,41 @@
       "revId": "bb5f585342bccc4288bae473c5775f3f89a3e877",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f8736a5_162b3b05",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-05-07T19:14:28Z",
+      "side": 1,
+      "message": "Python 2.7:\n\n    \u003e\u003e\u003e filter(lambda x: x \u003c 4, [-2, 2, 3, 4, 7, 9])\n    [-2, 2, 3]\n\nPython 3.8:\n\n    \u003e\u003e\u003e filter(lambda x: x \u003c 4, [-2, 2, 3, 4, 7, 9])\n    \u003cfilter object at 0x000001A3B30ACC40\u003e\n\nWrapping the filter in a list results in the same output for both.",
+      "parentUuid": "b809b291_6097966b",
+      "revId": "bb5f585342bccc4288bae473c5775f3f89a3e877",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e5058b7_f689b87b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-05-07T19:14:28Z",
+      "side": 1,
+      "message": "In the light of CL:1598808, I should probably change the decode() to UTF-8 and add tests.",
+      "revId": "bb5f585342bccc4288bae473c5775f3f89a3e877",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

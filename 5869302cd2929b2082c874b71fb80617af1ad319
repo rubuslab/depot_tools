@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86492b6b_33bf9423",
+        "filename": "gclient_scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-08T05:24:57Z",
+      "side": 1,
+      "message": "this is a tad confusing. IIUC, it may be better to structure code as:\n\n...\nelif target_ref \u003d\u003d \u0027refs/heads/msater\u0027:\n  ...\nelif scm.GIT.IsValidRevision(self.checkout_path, target_ref):\n  # The second most common case...\n  # ...\n  pass\nelse:\n  # Check for a remote version of the ....",
+      "range": {
+        "startLine": 433,
+        "startChar": 6,
+        "endLine": 437,
+        "endChar": 29
+      },
+      "revId": "5869302cd2929b2082c874b71fb80617af1ad319",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1999a234_23e785f5",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-08T05:24:57Z",
+      "side": 1,
+      "message": "# Sync to origin\u0027s refs/heads/feature",
+      "revId": "5869302cd2929b2082c874b71fb80617af1ad319",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca3bd904_7cce3cb6",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1246,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-08T05:24:57Z",
+      "side": 1,
+      "message": "origin\u0027s master to avoid giving wrong picture about local refs (even though it\u0027s correct in case of master), and ditto for origin/feature.",
+      "range": {
+        "startLine": 1246,
+        "startChar": 55,
+        "endLine": 1246,
+        "endChar": 70
+      },
+      "revId": "5869302cd2929b2082c874b71fb80617af1ad319",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

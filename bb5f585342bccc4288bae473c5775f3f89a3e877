@@ -87,6 +87,24 @@
       "revId": "bb5f585342bccc4288bae473c5775f3f89a3e877",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df9549aa_11a872be",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-05-10T18:26:23Z",
+      "side": 1,
+      "message": "It defaults to UTF-8 on Python 3, but ASCII on Python 2.",
+      "parentUuid": "e3f08d6d_995b8ff8",
+      "revId": "bb5f585342bccc4288bae473c5775f3f89a3e877",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

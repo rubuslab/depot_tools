@@ -86,11 +86,15 @@ MAX_TRACES = 3 * 10
 # traces we just collected.
 TRACES_MESSAGE = (
 '\n'
-'When filing a bug for this push, be sure to include the traces found at:\n'
+'If git-cl is not working correctly, please file a bug under the Infra>SDK\n'
+'component and include the traces found at:\n'
 '  %(trace_name)s-traces.zip\n'
-'Consider including the git config and gitcookies, which we have packed for \n'
+'Consider including the git config and gitcookies, which we have packed for\n'
 'you at:\n'
-'  %(trace_name)s-git-info.zip\n')
+'  %(trace_name)s-git-info.zip\n'
+'Note that these files contain information about your CL, such as reviewer \n'
+'emails and patchset title, and about your local environment, such as the \n'
+'path to you checkout.\n')
 # Format of the message to be stored as part of the traces to give developers a
 # better context when they go through traces.
 TRACES_README_FORMAT = (

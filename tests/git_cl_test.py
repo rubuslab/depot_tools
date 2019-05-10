@@ -1121,16 +1121,20 @@ class TestGitCl(TestCase):
            '%(description)s\n\n'
            'Execution time: 1000\n'
            'Exit code: 0\n\n'
-           'When filing a bug for this push, be sure to include the traces '
-           'found at:\n'
-           '  TRACES_DIR/20170316T200041.000000-traces.zip\n'
+           'If git-cl is not working correctly, please file a bug under the '
+           'Infra>SDK\ncomponent and include the traces found at:\n'
+           '  %(trace_name)s-traces.zip\n'
            'Consider including the git config and gitcookies, which we have '
-           'packed for \nyou at:\n'
-           '  TRACES_DIR/20170316T200041.000000-git-info.zip\n' % {
+           'packed for\nyou at:\n'
+           '  %(trace_name)s-git-info.zip\n'
+           'Note that these files contain information about your CL, such as '
+           'reviewer \nemails and patchset title, and about your local '
+           'environment, such as the \npath to you checkout.\n' % {
              'short_hostname': short_hostname,
              'change_id': change_id,
              'description': final_description,
              'title': original_title,
+             'trace_name': 'TRACES_DIR/20170316T200041.000000',
            }],),
          None,
         ),

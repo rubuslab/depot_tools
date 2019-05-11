@@ -16,6 +16,24 @@
       "revId": "d6eb0239b8cd676594e9cdf67878527b5da86ca3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef35a16b_cd0c0760",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-05-11T00:38:12Z",
+      "side": 1,
+      "message": "Gitcookies are redacted, I should make that clear as well.\nThe git-core team says it helps them know what identity was used to perform the operations.",
+      "parentUuid": "79d31683_99e08850",
+      "revId": "d6eb0239b8cd676594e9cdf67878527b5da86ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

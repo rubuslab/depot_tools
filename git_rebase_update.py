@@ -232,7 +232,13 @@ def main(args=None):
   opts = parser.parse_args(args)
 
   if opts.verbose:  # pragma: no cover
+    formatter = logging.Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s')
+    formatter.default_msec_format = '%s.%03d'
     logging.getLogger().setLevel(logging.DEBUG)
+    console = logging.StreamHandler()
+    console.setFormatter(formatter)
+    logging.getLogger().addHandler(console)
+
 
   # TODO(iannucci): snapshot all branches somehow, so we can implement
   #                 `git rebase-update --undo`.

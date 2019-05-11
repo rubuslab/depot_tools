@@ -84,7 +84,7 @@ class Error(Exception):
 def Elapsed(until=None):
   if until is None:
     until = datetime.datetime.now()
-  return str(until - START).partition('.')[0]
+  return str(until - START)
 
 
 def PrintWarnings():
@@ -341,7 +341,12 @@ def CheckCallAndFilterAndHeader(args, always=False, header=None, **kwargs):
     kwargs['call_filter_on_first_line'] = True
   # Obviously.
   kwargs.setdefault('print_stdout', True)
-  return CheckCallAndFilter(args, **kwargs)
+
+
+  start = time.time()
+  ret = CheckCallAndFilter(args, **kwargs)
+  print(time.time() - start, args)
+  return ret
 
 
 class Wrapper(object):

@@ -152,6 +152,7 @@ def check_platform(target):
 
 def get_sha1(filename):
   sha1 = hashlib.sha1()
+  size = 0
   with open(filename, 'rb') as f:
     while True:
       # Read in 1mb chunks, so it doesn't all have to be loaded into memory.
@@ -159,6 +160,9 @@ def get_sha1(filename):
       if not chunk:
         break
       sha1.update(chunk)
+      size += len(chunk)
+  print(filename, size)
+
   return sha1.hexdigest()
 
 
@@ -389,7 +393,6 @@ def _data_exists(input_sha1_sum, output_filename, extract):
 def download_from_google_storage(
     input_filename, base_url, gsutil, num_threads, directory, recursive,
     force, output, ignore_errors, sha1_file, verbose, auto_platform, extract):
-
   # Tuples of sha1s and paths.
   input_data = list(enumerate_input(
       input_filename, directory, recursive, ignore_errors, output, sha1_file,
@@ -400,6 +403,8 @@ def download_from_google_storage(
   if not force and all(
       _data_exists(sha1, path, extract) for sha1, path in input_data):
     return 0
+
+  print('download_from_google_storage', input_filename)
 
   # Call this once to ensure gsutil's update routine is called only once. Only
   # needs to be done if we'll process input data in parallel, which can lead to

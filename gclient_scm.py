@@ -545,7 +545,7 @@ class GitWrapper(SCMWrapper):
     printed_path = False
     verbose = []
     if options.verbose:
-      self.Print('_____ %s at %s' % (self.relpath, revision), timestamp=False)
+      self.Print('_____ %s at %s' % (self.relpath, revision), timestamp=True)
       verbose = ['--verbose']
       printed_path = True
 
@@ -711,6 +711,9 @@ class GitWrapper(SCMWrapper):
         if verbose:
           self.Print(remote_output)
 
+    if current_type != 'detached':
+      self._UpdateBranchHeads(options, fetch=True)
+
     revision = self._AutoFetchRef(options, revision)
 
     # This is a big hammer, debatable if it should even be here...
@@ -728,7 +731,9 @@ class GitWrapper(SCMWrapper):
       # to actually "Clean" the checkout; that commit is uncheckoutable on this
       # system. The best we can do is carry forward to the checkout step.
       if not (options.force or options.reset):
-        self._CheckClean(revision)
+        self.Print('check clean')
+        # self._CheckClean(revision)
+      self.Print('detached')
       self._CheckDetachedHead(revision, options)
       if self._Capture(['rev-list', '-n', '1', 'HEAD']) == revision:
         self.Print('Up-to-date; skipping checkout.')
@@ -877,7 +882,7 @@ class GitWrapper(SCMWrapper):
 
     if verbose:
       self.Print('Checked out revision %s' % self.revinfo(options, (), None),
-                 timestamp=False)
+                 timestamp=True)
 
     # If --reset and --delete_unversioned_trees are specified, remove any
     # untracked directories.

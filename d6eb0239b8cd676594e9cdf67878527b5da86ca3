@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79d31683_99e08850",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2019-05-11T00:33:31Z",
+      "side": 1,
+      "message": "gitcookies are pretty sensitive. Why do we want to collect them?",
+      "revId": "d6eb0239b8cd676594e9cdf67878527b5da86ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

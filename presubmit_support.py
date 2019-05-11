@@ -1219,7 +1219,7 @@ class GetTryMastersExecuter(object):
     context = {}
     try:
       exec script_text in context
-    except Exception, e:
+    except Exception as e:
       raise PresubmitFailure('"%s" had an exception.\n%s'
                              % (presubmit_path, e))
 
@@ -1250,7 +1250,7 @@ class GetPostUploadExecuter(object):
     context = {}
     try:
       exec script_text in context
-    except Exception, e:
+    except Exception as e:
       raise PresubmitFailure('"%s" had an exception.\n%s'
                              % (presubmit_path, e))
 
@@ -1415,7 +1415,7 @@ class PresubmitExecuter(object):
     context = {}
     try:
       exec script_text in context
-    except Exception, e:
+    except Exception as e:
       raise PresubmitFailure('"%s" had an exception.\n%s' % (presubmit_path, e))
 
     # These function names must change if we make substantial changes to
@@ -1716,7 +1716,7 @@ def main(argv=None):
           options.dry_run,
           options.parallel)
     return not results.should_continue()
-  except PresubmitFailure, e:
+  except PresubmitFailure as e:
     print(e, file=sys.stderr)
     print('Maybe your depot_tools is out of date?', file=sys.stderr)
     return 2

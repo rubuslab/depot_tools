@@ -78,7 +78,7 @@ def kill_pid(pid):
     # Unable to import 'module'
     # pylint: disable=no-member,F0401
     import signal
-    return os.kill(pid, signal.SIGKILL)
+    return os.kill(pid, signal.SIGTERM)
   except ImportError:
     pass
 

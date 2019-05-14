@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "90ab5d23_0336c0e7",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-14T23:14:54Z",
+      "side": 1,
+      "message": "Nit: I might reword this as \"A trace of this git-cl execution has been recorded\"",
+      "revId": "692206989f3bdfa61b7acea543e852fb68ac3ab1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

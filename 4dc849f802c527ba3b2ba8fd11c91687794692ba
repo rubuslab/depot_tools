@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f29b100_2e78a79a",
+        "filename": "owners.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1115859
+      },
+      "writtenOn": "2019-05-15T07:28:00Z",
+      "side": 1,
+      "message": "I\u0027m interested in changing this behaviour so that per-file lines are copied over an include boundary. Are there strong reasons for the current behaviour?",
+      "revId": "4dc849f802c527ba3b2ba8fd11c91687794692ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

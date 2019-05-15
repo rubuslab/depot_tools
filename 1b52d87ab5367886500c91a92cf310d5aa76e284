@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49bdb8be_866eb6a2",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2582,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-05-15T12:22:42Z",
+      "side": 1,
+      "message": "This message is shown everytime I run `git cl upload`.\nI think this is noisy.\n\nCould you change here to show this message when we detect failure of `git cl upload`?",
+      "revId": "1b52d87ab5367886500c91a92cf310d5aa76e284",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

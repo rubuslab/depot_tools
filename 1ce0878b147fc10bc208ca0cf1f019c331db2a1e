@@ -52,6 +52,24 @@
       "revId": "1ce0878b147fc10bc208ca0cf1f019c331db2a1e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c95398c6_c7a20377",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2019,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-16T18:45:34Z",
+      "side": 1,
+      "message": "\u003e Hmm... this theoretically could be pretty spammy. \n\nYeah. Well, it\u0027s easy to implement print_once:\n\n_printed_messages \u003d {}\n_printed_messages_lock \u003d {}\n\ndef print_once(msg, *args):\n  if args:\n    msg \u003d msg % args\n  with threading.Lock():\n    if msg in _printed_messages:\n      return\n    _printed_messages.add(msg)\n  print(msg)",
+      "parentUuid": "b08d5698_4fc30802",
+      "revId": "1ce0878b147fc10bc208ca0cf1f019c331db2a1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

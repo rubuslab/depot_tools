@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6dcf22e5_976d5497",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2019,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-16T18:31:21Z",
+      "side": 1,
+      "message": "+1 for gracefully, but let\u0027s not do it silently. Can this perhaps print warning that \nnon \"https://\" Gerrit URLs not fully supported, things may break.",
+      "revId": "1ce0878b147fc10bc208ca0cf1f019c331db2a1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

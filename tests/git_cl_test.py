@@ -806,16 +806,16 @@ class TestGitCl(TestCase):
       return [((cmd, ), 'true')]
 
     calls = [((cmd, ), CERR1)]
-    if issue:
-      calls.extend([
-          ((['git', 'config', 'branch.master.gerritserver'],), CERR1),
-      ])
     calls.extend([
         ((['git', 'config', 'branch.master.merge'],), 'refs/heads/master'),
         ((['git', 'config', 'branch.master.remote'],), 'origin'),
         ((['git', 'config', 'remote.origin.url'],),
          'https://%s.googlesource.com/my/repo' % short_hostname),
     ])
+    if issue:
+      calls.extend([
+          ((['git', 'config', 'branch.master.gerritserver'],), CERR1),
+      ])
     return calls
 
   @classmethod

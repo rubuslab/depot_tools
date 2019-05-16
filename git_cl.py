@@ -2016,6 +2016,9 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     if not isinstance(cookie_auth, gerrit_util.CookiesAuthenticator):
       return
 
+    if (urlparse.urlparse(self.GetRemoteUrl()).scheme != 'https'):
+      return
+
     # Lazy-loader to identify Gerrit and Git hosts.
     self.GetCodereviewServer()
     git_host = self._GetGitHost()

@@ -34,6 +34,24 @@
       "revId": "1ce0878b147fc10bc208ca0cf1f019c331db2a1e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b08d5698_4fc30802",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2019,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2019-05-16T18:36:27Z",
+      "side": 1,
+      "message": "Oh hmm, maybe I can have it just warn for git cl archive? Let me try that...",
+      "parentUuid": "c08236c3_cd12b3ab",
+      "revId": "1ce0878b147fc10bc208ca0cf1f019c331db2a1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

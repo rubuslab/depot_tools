@@ -82,20 +82,22 @@ GITCOOKIES_REDACT_RE = re.compile(r'1/.*')
 # The maximum number of traces we will keep. Multiplied by 3 since we store
 # 3 files per trace.
 MAX_TRACES = 3 * 10
-# Message to display to the user after git-cl has run, to inform them of the
-# traces we just collected.
+# Message to be displayed to the user after git-cl upload has run, to inform
+# them of the traces we just collected.
 TRACES_MESSAGE = (
 '\n'
 'A trace of this git-cl execution has been recorded at:\n'
 '  %(trace_name)s-traces.zip\n'
 'A redacted copy of your gitcookies file and git config has been recorded at:\n'
-'  %(trace_name)s-git-info.zip\n'
+'  %(trace_name)s-git-info.zip\n')
+# Message to be displayed to the user if git-cl upload fails.
+TRACES_ERROR_MESSAGE = (
+'\n'
 'If git-cl is not working correctly, please file a bug under the Infra>SDK\n'
-'component, include the files above, and set the Restrict-View-Google label\n'
+'component, include the files below, and set the Restrict-View-Google label\n'
 'so that they\'re not publicly accessible.\n'
 'Review the files before upload. They might contain sensitive information\n'
-'like reviewer emails, patchset titles, and the local path to your checkout.\n'
-)
+'like reviewer emails, patchset titles, and the local path to your checkout.')
 # Format of the message to be stored as part of the traces to give developers a
 # better context when they go through traces.
 TRACES_README_FORMAT = (
@@ -2619,7 +2621,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
                    'for the reason of the failure.\n'
                    'Hint: run command below to diagnose common Git/Gerrit '
                    'credential problems:\n'
-                   '  git cl creds-check',
+                   '  git cl creds-check\n' + TRACES_ERROR_MESSAGE,
                    change_desc)
     finally:
       execution_time = time_time() - before_push

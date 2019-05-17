@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b0c9a52a_e8e09ccc",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2019,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-17T23:02:59Z",
+      "side": 1,
+      "message": "not needed in Python",
+      "range": {
+        "startLine": 2019,
+        "startChar": 7,
+        "endLine": 2019,
+        "endChar": 8
+      },
+      "revId": "76d9f8f247be16b2fcf1ec6725a401eeecf33996",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

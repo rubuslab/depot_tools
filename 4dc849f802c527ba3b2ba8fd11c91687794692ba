@@ -16,6 +16,24 @@
       "revId": "4dc849f802c527ba3b2ba8fd11c91687794692ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a901e9a_2c6e18a2",
+        "filename": "owners.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-17T23:03:40Z",
+      "side": 1,
+      "message": "The current implementation matches Google\u0027s internal implementation (see go/owners). Keep things consistent with that has been a strong goal.\n\nI can see cases where including a per-file rule would be useful, but I can also see cases where it might be unexpected.\n\nE.g., You might have:\n\n//components/foo/OWNERS:\nfile://mojo/GOOD_MOJOM_REVIEWERS\n\n//mojo/GOOD_MOJOM_REVIEWERS:\nper-file *.mojom\u003drockot@chromium.org\n\nAnd that seems sensible.\n\nHowever, we\u0027ve usually structured that as:\n\n//components/foo/OWNERS:\nper-file *.mojom\u003dfile://mojo/GOOD_MOJOM_REVIEWERS\n\n/mojo/GOOD_MOJOM_REVIEWERS:\nrockot@chromium.org\n\nIt\u0027s possible that the former might be somewhat more flexible than the latter. However, I think supporting both would potentially be harder to use and isn\u0027t probably worth it as the result.\n\nI don\u0027t know why Google doesn\u0027t support this feature, but I wouldn\u0027t be surprised if their reasoning was similar.",
+      "parentUuid": "4f29b100_2e78a79a",
+      "revId": "4dc849f802c527ba3b2ba8fd11c91687794692ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

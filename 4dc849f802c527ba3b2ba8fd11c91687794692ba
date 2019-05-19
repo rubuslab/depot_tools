@@ -34,6 +34,24 @@
       "revId": "4dc849f802c527ba3b2ba8fd11c91687794692ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e62f7b8_93d6bdb0",
+        "filename": "owners.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1115859
+      },
+      "writtenOn": "2019-05-19T23:58:15Z",
+      "side": 1,
+      "message": "Consistency with internal Google sounds good to me. Ty for the context!",
+      "parentUuid": "7a901e9a_2c6e18a2",
+      "revId": "4dc849f802c527ba3b2ba8fd11c91687794692ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

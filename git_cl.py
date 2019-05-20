@@ -2603,6 +2603,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       push_returncode = 0
       remote_url = self.GetRemoteUrl()
       before_push = time_time()
+      print('push-started')
       push_stdout = gclient_utils.CheckCallAndFilter(
           ['git', 'push', remote_url, refspec],
           env=env,

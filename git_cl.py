@@ -2551,8 +2551,9 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
     git_info_dir = tempfile.mkdtemp()
     git_info_zip = trace_name + '-git-info'
 
-    git_push_metadata['now'] = datetime_now().strftime('%c')
+    git_push_metadata['now'] = unicode(datetime_now().strftime('%c'))
     git_push_metadata['trace_name'] = trace_name
+    print(git_push_metadata)
     gclient_utils.FileWrite(
         traces_readme, TRACES_README_FORMAT % git_push_metadata)
 

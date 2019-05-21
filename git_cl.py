@@ -2553,6 +2553,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
 
     git_push_metadata['now'] = datetime_now().strftime('%c')
     git_push_metadata['trace_name'] = trace_name
+    print(git_push_metadata)
     gclient_utils.FileWrite(
         traces_readme, TRACES_README_FORMAT % git_push_metadata)
 

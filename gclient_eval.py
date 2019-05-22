@@ -541,6 +541,8 @@ def EvaluateCondition(condition, variables, referenced_variables=None):
   def _convert(node):
     if isinstance(node, ast.Str):
       return node.s
+    elif isinstance(node, ast.Tuple):
+      return tuple(map(_convert, node.elts))
     elif isinstance(node, ast.Name):
       if node.id in referenced_variables:
         raise ValueError(
@@ -618,6 +620,8 @@ def EvaluateCondition(condition, variables, referenced_variables=None):
         return left == right
       if isinstance(node.ops[0], ast.NotEq):
         return left != right
+      if isinstance(node.ops[0], ast.In):
+        return left in right
 
       raise ValueError(
           'unexpected operator: %s %s (inside %r)' % (

@@ -70,6 +70,24 @@
       "revId": "5ea468c69f981a55eb3be0ed9eaf1e8037a98fd4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6673d3af_1a78847b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1118354
+      },
+      "writtenOn": "2019-05-22T16:30:35Z",
+      "side": 1,
+      "message": "I\u0027m getting the \u0027target_ref must be in refs/heads/** or refs/branch-heads/**. \u0027 error from below on my CL: https://skia-review.googlesource.com/c/skia/+/215421\n\nLooks like the condition from the error needs to be changed, or we do in fact need to pass a ref name.",
+      "parentUuid": "026f6570_12312dab",
+      "revId": "5ea468c69f981a55eb3be0ed9eaf1e8037a98fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

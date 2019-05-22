@@ -16,6 +16,24 @@
       "revId": "5ea468c69f981a55eb3be0ed9eaf1e8037a98fd4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80692cb7_a35d3f60",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1118354
+      },
+      "writtenOn": "2019-05-22T15:14:42Z",
+      "side": 1,
+      "message": "I think we do things differently, and I think that\u0027s why I\u0027m confused.  For us, base_commit is the resolved commit hash of target_ref at the time when we receive the try request.  We definitely do not want to rebase patch_rev on top of target_ref, which would not be reproducible due to the possibility of additional commits after base_commit.  We DO want to include the non-landed dependent CLs, as the patch may make no sense without them.  As I understand it, the correct behavior in our case is to simply check out the patch ref and rebase it on top of base_commit.  For example:\n\nState of repo:\n\n... -\u003e [commit patch is based on] -\u003e [0+ changes] -\u003e base_commit -\u003e [0+ changes]\n                                   \\\n                                    -\u003e [non landed dependent CLs] -\u003e patch_rev\n\nDesired checkout state:\n\n... -\u003e [commit patch is based on] -\u003e [0+ changes] -\u003e base_commit -\u003e [0+ changes]\n                                                                  \\\n                                                                   -\u003e [non landed CLs] -\u003e patch_rev (HEAD)\n\nMy understanding of the difference in approaches is that in our case the base_commit IS the merge_base, and no other work needs to be done.",
+      "parentUuid": "aa03d073_09a0e19e",
+      "revId": "5ea468c69f981a55eb3be0ed9eaf1e8037a98fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

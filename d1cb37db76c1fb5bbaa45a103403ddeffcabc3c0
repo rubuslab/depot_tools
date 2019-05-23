@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d22f7d6_5f42cf17",
+        "filename": "subprocess2.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-05-23T23:33:29Z",
+      "side": 1,
+      "message": "All this code was in good old python 2.5 days, it should all be removed.",
+      "revId": "d1cb37db76c1fb5bbaa45a103403ddeffcabc3c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

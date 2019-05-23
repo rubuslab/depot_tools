@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a73d818_54046937",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-23T00:03:25Z",
+      "side": 1,
+      "message": "I\u0027m worried that this basically allows tuples anywhere in the tree and that might open up more things than just `A in B`. I think you need to modify _convert to add a `tuples_are_allowed` flag here that defaults to False and then make the change I\u0027m commenting on on line 617, below.",
+      "revId": "a5398c96cedab2e507b98c6e93369fa434991d1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9ee3b7b_ff718063",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-23T00:03:25Z",
+      "side": 1,
+      "message": "I think you\u0027ll need to change this to \n\n  is_in_operator \u003d isinstance(node.ops[0], ast.In)\n  right \u003d _convert(node.comparators[0], tuples_are_allowed\u003dis_in_operator)\n\nand then change 623 to `if is_in_operator`\n\nor something like that.",
+      "revId": "a5398c96cedab2e507b98c6e93369fa434991d1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

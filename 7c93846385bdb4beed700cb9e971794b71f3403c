@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6c62c734_03334738",
+        "filename": "subprocess2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-05-24T17:24:10Z",
+      "side": 0,
+      "message": "In addition to the compatibility hacks below, I also removed this since it isn\u0027t used anywhere. If something like this is required in the future, it seems it\u0027d make sense to bring it over from subprocess42.\n\nThe above kill_pid should suffice for processes that aren\u0027t stubborn.",
+      "revId": "7c93846385bdb4beed700cb9e971794b71f3403c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

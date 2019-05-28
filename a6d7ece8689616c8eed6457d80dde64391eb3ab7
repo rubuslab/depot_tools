@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "1ac09c9e_4d2ea96f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-28T23:58:24Z",
+      "side": 1,
+      "message": "i can dig it up, but let\u0027s see if it persists after this CL lands and if so, i\u0027ll file a bug with required details.",
+      "parentUuid": "ec91c994_cfee7654",
+      "range": {
+        "startLine": 471,
+        "startChar": 0,
+        "endLine": 475,
+        "endChar": 71
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "14d290ea_48a55b3a",
         "filename": "gclient_scm.py",
         "patchSetId": 1
@@ -234,6 +258,30 @@
       "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7dd4ee9_ec1fd4ed",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-28T23:58:24Z",
+      "side": 1,
+      "message": "yay, i\u0027m glad you like it.",
+      "parentUuid": "e6c59342_2531e519",
+      "range": {
+        "startLine": 476,
+        "startChar": 40,
+        "endLine": 476,
+        "endChar": 50
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

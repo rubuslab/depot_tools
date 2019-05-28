@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "60391cea_11168c36",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-28T07:02:49Z",
+      "side": 1,
+      "message": "remove, stale.",
+      "range": {
+        "startLine": 380,
+        "startChar": 56,
+        "endLine": 381,
+        "endChar": 18
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7906d754_4369af92",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-28T07:02:49Z",
+      "side": 1,
+      "message": "technically correct, but IMO doesn\u0027t help an outsider grok this. WDYT about this:\n\n\"\"\"\nThen, the patch consists of all commits not yet in |target_rev|, or more precisely all commits reachable from |patch_rev| excluding those reachable from |target_rev|.\n\"\"\"\n\nNow that I\u0027ve written this, it made me wonder why do we even compute merge base. For one, there can be \u003e1 such base, so we aren\u0027t always correct if patch isn\u0027t a trivial chain of commits (search for \"more than one\" in https://git-scm.com/docs/git-merge-base#_description, 2nd occurrence illustrates it nicely:\n\n   ---1---o---A\n       \\ /\n        X\n       / \\\n   ---2---o---o---B\n\n). I\u0027ve left suggestion below, however, we don\u0027t have to block *this* CL on it.",
+      "range": {
+        "startLine": 383,
+        "startChar": 4,
+        "endLine": 384,
+        "endChar": 59
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "390aa207_e821ae17",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-28T07:02:49Z",
+      "side": 1,
+      "message": "move this bit above to L381.",
+      "range": {
+        "startLine": 386,
+        "startChar": 4,
+        "endLine": 387,
+        "endChar": 57
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "675e455f_d275205e",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-28T07:02:49Z",
+      "side": 1,
+      "message": "this is cool (i don\u0027t remember any more reviewing this) -- but I\u0027m seeing this not being sufficient:\n\nI\u0027ve noticed that with \u003e4 CLs in a stack (say,  base -\u003e A -\u003e B -\u003e C -\u003e D -\u003e E) and if I land A, then tryjobs on E start failing because cherry pick fails, but on B and C it still works (not sure about D). It also, it seems, only happens if I modify the same file in each CL (but patches still apply cleanly, not conflicts -- ie \"rebase\" in Gerrit or in local checkout is trivial)",
+      "range": {
+        "startLine": 471,
+        "startChar": 0,
+        "endLine": 475,
+        "endChar": 71
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14d290ea_48a55b3a",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-05-28T07:02:49Z",
+      "side": 1,
+      "message": "follow up on earlier thinking: why can\u0027t this be |target_rev|?\nTechnically, this is more correct since there could be \u003e1 merge base. And L466 check can be done by checking if patch_rev is an ancestor of target_rev.",
+      "range": {
+        "startLine": 476,
+        "startChar": 40,
+        "endLine": 476,
+        "endChar": 50
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

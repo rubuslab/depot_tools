@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a4b86114_aed0cfa7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-05-28T22:12:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60391cea_11168c36",
+      "range": {
+        "startLine": 380,
+        "startChar": 56,
+        "endLine": 381,
+        "endChar": 18
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7906d754_4369af92",
         "filename": "gclient_scm.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "846b7899_74025d2b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-05-28T22:12:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7906d754_4369af92",
+      "range": {
+        "startLine": 383,
+        "startChar": 4,
+        "endLine": 384,
+        "endChar": 59
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "b2d8bfbc_f3bee1bd",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-05-28T22:12:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "390aa207_e821ae17",
+      "range": {
+        "startLine": 386,
+        "startChar": 4,
+        "endLine": 387,
+        "endChar": 57
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "675e455f_d275205e",
         "filename": "gclient_scm.py",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "ec91c994_cfee7654",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-05-28T22:12:44Z",
+      "side": 1,
+      "message": "Do you have an example of it?",
+      "parentUuid": "675e455f_d275205e",
+      "range": {
+        "startLine": 471,
+        "startChar": 0,
+        "endLine": 475,
+        "endChar": 71
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "14d290ea_48a55b3a",
         "filename": "gclient_scm.py",
         "patchSetId": 1
@@ -105,6 +201,30 @@
       "writtenOn": "2019-05-28T07:02:49Z",
       "side": 1,
       "message": "follow up on earlier thinking: why can\u0027t this be |target_rev|?\nTechnically, this is more correct since there could be \u003e1 merge base. And L466 check can be done by checking if patch_rev is an ancestor of target_rev.",
+      "range": {
+        "startLine": 476,
+        "startChar": 40,
+        "endLine": 476,
+        "endChar": 50
+      },
+      "revId": "a6d7ece8689616c8eed6457d80dde64391eb3ab7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6c59342_2531e519",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-05-28T22:12:44Z",
+      "side": 1,
+      "message": "That is a better idea, thanks!\nI didn\u0027t know A..B means all commits reachable from B but not from A. I thought A had to be an ancestor of B for it to work.",
+      "parentUuid": "14d290ea_48a55b3a",
       "range": {
         "startLine": 476,
         "startChar": 40,

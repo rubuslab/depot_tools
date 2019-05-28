@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2b006c7a_48fbb87b",
+        "filename": "autoninja",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-05-28T17:38:37Z",
+      "side": 1,
+      "message": "Does this leave NINJA_STATUS set after the script ends?\n\nIsn\u0027t the Linux paradigm to do it as part of the command line so that command becomes:\n  NINJA_STATUS\u003d\"[%r processes, %f/%t @ %o/s : %es ] \" ninja -C out/Default -j 1000...",
+      "revId": "24f436934f791b32e9d8b004d7fd537920b427bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

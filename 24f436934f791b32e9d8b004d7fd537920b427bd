@@ -16,6 +16,24 @@
       "revId": "24f436934f791b32e9d8b004d7fd537920b427bd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "628a16c3_5d92da0e",
+        "filename": "autoninja",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-05-28T19:33:19Z",
+      "side": 1,
+      "message": "Either works, it kinda depends on whether you care about it being exported to all subprocesses or just the one, as you say.\n\nI don\u0027t think you can (easily?) make the `FOO\u003dbar` part of `FOO\u003dbar baz` conditional, so you can\u0027t say something like `$NINJA_STATUS ninja ...`, which means that doing the \u0027part of the command line\u0027 part would require you to duplicate the command line, I think, which might be awkward given the rest of the script.",
+      "parentUuid": "2b006c7a_48fbb87b",
+      "revId": "24f436934f791b32e9d8b004d7fd537920b427bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -34,6 +34,24 @@
       "revId": "24f436934f791b32e9d8b004d7fd537920b427bd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "024338cb_fe7cb911",
+        "filename": "autoninja",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-05-29T05:04:54Z",
+      "side": 1,
+      "message": "This autoninja script is invoked as child process in shell.\nSo export here is not propagated to parent process.",
+      "parentUuid": "628a16c3_5d92da0e",
+      "revId": "24f436934f791b32e9d8b004d7fd537920b427bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

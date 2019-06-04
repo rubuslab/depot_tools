@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f92d9fb_8de1da9f",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1606,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2019-06-04T17:58:10Z",
+      "side": 1,
+      "message": "Should we report time and failure in the case of the exception as well?",
+      "revId": "2c48f24c7f88f2f09821db492e8cc9a4361ded58",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

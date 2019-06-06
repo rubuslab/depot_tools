@@ -912,6 +912,19 @@ class AffectedFile(object):
         line_num += 1
     return self._cached_changed_contents[:]
 
+  def DiffStat(self):
+    """Returns a tuple (additions, deletions) representing the counts of
+    changed lines.
+    """
+    additions = 0
+    deletions = 0
+    for line in self.GenerateScmDiff().splitlines():
+      if line.startswith('+') and not line.startswith('++'):
+        additions += 1
+      if line.startswith('-') and not line.startswith('--'):
+        deletions += 1
+    return (additions, deletions)
+
   def __str__(self):
     return self.LocalPath()
 

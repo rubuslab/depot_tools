@@ -16,6 +16,41 @@
       "revId": "fec2d1ae64717724e5dd1b7f6a5fc0f60b023b0b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc399889_95ff014e",
+        "filename": "fetch_configs/chromium.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-06-06T17:02:54Z",
+      "side": 1,
+      "message": "This is needed because you\u0027d otherwise download the mac flash binaries even with --flash\u003dFalse.",
+      "parentUuid": "2bfefc85_54b3a61e",
+      "revId": "fec2d1ae64717724e5dd1b7f6a5fc0f60b023b0b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8b15f39_3c4672c7",
+        "filename": "fetch_configs/ios_internal.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-06-06T17:02:54Z",
+      "side": 1,
+      "message": "We are using --flash\u003dFalse.",
+      "revId": "fec2d1ae64717724e5dd1b7f6a5fc0f60b023b0b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

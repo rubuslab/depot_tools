@@ -2624,20 +2624,23 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           filter_fn=lambda _: sys.stdout.flush())
     except subprocess2.CalledProcessError as e:
       push_returncode = e.returncode
-      DieWithError('Failed to create a change. Please examine output above '
-                   'for the reason of the failure.\n'
-                   'Hint: run command below to diagnose common Git/Gerrit '
-                   'credential problems:\n'
-                   '  git cl creds-check\n'
-                   '\n'
-                   'If git-cl is not working correctly, file a bug under the '
-                   'Infra>SDK component including the files below.\n'
-                   'Review the files before upload, since they might contain '
-                   'sensitive information.\n'
-                   'Set the Restrict-View-Google label so that they are not '
-                   'publicly accessible.\n'
-                   + TRACES_MESSAGE % {'trace_name': trace_name},
-                   change_desc)
+      if e.returncode == -2:
+        DieWithError('Change upload interrupted. Failed to create a change.')
+      else:
+        DieWithError('Failed to create a change. Please examine output above '
+                     'for the reason of the failure.\n'
+                     'Hint: run command below to diagnose common Git/Gerrit '
+                     'credential problems:\n'
+                     '  git cl creds-check\n'
+                     '\n'
+                     'If git-cl is not working correctly, file a bug under the '
+                     'Infra>SDK component including the files below.\n'
+                     'Review the files before upload, since they might contain '
+                     'sensitive information.\n'
+                     'Set the Restrict-View-Google label so that they are not '
+                     'publicly accessible.\n'
+                     + TRACES_MESSAGE % {'trace_name': trace_name},
+                     change_desc)
     finally:
       execution_time = time_time() - before_push
       metrics.collector.add_repeated('sub_commands', {

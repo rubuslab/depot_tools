@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e8f1b94b_7742e346",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1349675
+      },
+      "writtenOn": "2019-06-18T23:12:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72f8301f_9ab71177",
+      "revId": "fd04f5609a5a8585570ec05c26bca40d5c0f0021",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "59f4fa06_cdd08e58",
         "filename": "tests/presubmit_unittest.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-06-18T22:53:51Z",
       "side": 1,
       "message": "You should add tests for dump_json.",
+      "revId": "fd04f5609a5a8585570ec05c26bca40d5c0f0021",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5ce9d85_760e10a2",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1349675
+      },
+      "writtenOn": "2019-06-18T23:12:00Z",
+      "side": 1,
+      "message": "I am not sure how these tests work at the moment, but I\u0027ll start working on it.",
+      "parentUuid": "59f4fa06_cdd08e58",
       "revId": "fd04f5609a5a8585570ec05c26bca40d5c0f0021",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

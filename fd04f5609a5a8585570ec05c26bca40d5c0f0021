@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "72f8301f_9ab71177",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2019-06-18T22:56:08Z",
+      "side": 1,
+      "message": "I\u0027d reword this to something like\n\"Augment presubmit_support to output a json summary\".\n\nDon\u0027t need to name the argument in the description. This description is a bit long as well.",
+      "revId": "fd04f5609a5a8585570ec05c26bca40d5c0f0021",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "59f4fa06_cdd08e58",
         "filename": "tests/presubmit_unittest.py",
         "patchSetId": 1

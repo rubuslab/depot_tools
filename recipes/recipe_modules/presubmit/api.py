@@ -1,7 +1,6 @@
 # Copyright 2016 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-
 from recipe_engine import recipe_api
 
 class PresubmitApi(recipe_api.RecipeApi):
@@ -13,7 +12,7 @@ class PresubmitApi(recipe_api.RecipeApi):
     """Return a presubmit step."""
 
     name = kwargs.pop('name', 'presubmit')
-
     with self.m.depot_tools.on_path():
-      return self.m.python(
-          name, self.presubmit_support_path, list(args), **kwargs)
+      step_data = self.m.python(
+          name, self.presubmit_support_path, list(args) + ['--dump_json', self.m.json.output()], **kwargs)
+      return step_data.json.output

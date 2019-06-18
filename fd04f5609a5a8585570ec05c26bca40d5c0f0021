@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59f4fa06_cdd08e58",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2019-06-18T22:53:51Z",
+      "side": 1,
+      "message": "You should add tests for dump_json.",
+      "revId": "fd04f5609a5a8585570ec05c26bca40d5c0f0021",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

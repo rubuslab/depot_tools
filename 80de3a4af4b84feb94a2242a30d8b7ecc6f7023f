@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7574ab23_a056ff3a",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2019-06-18T22:53:51Z",
+      "side": 0,
+      "message": "Don\u0027t remove this line",
+      "revId": "80de3a4af4b84feb94a2242a30d8b7ecc6f7023f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

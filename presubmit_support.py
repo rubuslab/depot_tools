@@ -56,7 +56,6 @@ import presubmit_canned_checks
 import scm
 import subprocess2 as subprocess  # Exposed through the API.
 
-
 # Ask for feedback only once in program lifetime.
 _ASKED_FOR_FEEDBACK = False
 
@@ -302,6 +301,9 @@ class _PresubmitResult(object):
       output.write('\n***************\n')
     if self.fatal:
       output.fail()
+
+  def getSummary(self):
+    return ' '.join((self._message, self._long_text))
 
 
 # Top level object so multiprocessing can pickle
@@ -1462,7 +1464,8 @@ def DoPresubmitChecks(change,
                       may_prompt,
                       gerrit_obj,
                       dry_run=None,
-                      parallel=False):
+                      parallel=False,
+                      dump_json=None):
   """Runs all presubmit checks that apply to the files in the change.
 
   This finds all PRESUBMIT.py files in directories enclosing the files in the
@@ -1501,6 +1504,7 @@ def DoPresubmitChecks(change,
     os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
 
     output = PresubmitOutput(input_stream, output_stream)
+
     if committing:
       output.write("Running presubmit commit checks ...\n")
     else:
@@ -1541,6 +1545,15 @@ def DoPresubmitChecks(change,
       else:
         notifications.append(result)
 
+    if dump_json:
+      # Write necessary data to json.output
+      with open(dump_json, 'w') as json_file:
+        json_output = {'summary': ''}
+        # Save errors to json.output
+        for error in errors:
+          json_output['summary'] += error.getSummary() + '\n'
+        json.dump(json_output, json_file)
+
     output.write('\n')
     for name, items in (('Messages', notifications),
                         ('Warnings', warnings),
@@ -1550,7 +1563,6 @@ def DoPresubmitChecks(change,
         for item in items:
           item.handle(output)
           output.write('\n')
-
     total_time = time.time() - start_time
     if total_time > 1.0:
       output.write("Presubmit checks took %.1fs to calculate.\n\n" % total_time)
@@ -1674,6 +1686,7 @@ def main(argv=None):
   parser.add_option('--parallel', action='store_true',
                     help='Run all tests specified by input_api.RunTests in all '
                          'PRESUBMIT files in parallel.')
+  parser.add_option('--dump_json')
 
   options, args = parser.parse_args(argv)
 
@@ -1718,13 +1731,13 @@ def main(argv=None):
           options.may_prompt,
           gerrit_obj,
           options.dry_run,
-          options.parallel)
+          options.parallel,
+          options.dump_json)
     return not results.should_continue()
   except PresubmitFailure as e:
     print(e, file=sys.stderr)
     print('Maybe your depot_tools is out of date?', file=sys.stderr)
     return 2
-
 
 if __name__ == '__main__':
   fix_encoding.fix_encoding()

@@ -614,7 +614,8 @@ class PresubmitUnittest(PresubmitTestsBase):
     output = presubmit.DoPresubmitChecks(
         change=change, committing=False, verbose=True,
         output_stream=None, input_stream=None,
-        default_presubmit=None, may_prompt=False, gerrit_obj=None)
+        default_presubmit=None, may_prompt=False,
+        gerrit_obj=None, dump_json=None)
     self.failUnless(output.should_continue())
     self.assertEqual(output.getvalue().count('!!'), 0)
     self.assertEqual(output.getvalue().count('??'), 0)
@@ -649,7 +650,8 @@ class PresubmitUnittest(PresubmitTestsBase):
     output = presubmit.DoPresubmitChecks(
         change=change, committing=False, verbose=True,
         output_stream=None, input_stream=input_buf,
-        default_presubmit=None, may_prompt=True, gerrit_obj=None)
+        default_presubmit=None, may_prompt=True,
+        gerrit_obj=None, dump_json=None)
     self.failIf(output.should_continue())
     self.assertEqual(output.getvalue().count('??'), 2)
 
@@ -657,7 +659,8 @@ class PresubmitUnittest(PresubmitTestsBase):
     output = presubmit.DoPresubmitChecks(
         change=change, committing=False, verbose=True,
         output_stream=None, input_stream=input_buf,
-        default_presubmit=None, may_prompt=True, gerrit_obj=None)
+        default_presubmit=None, may_prompt=True,
+        gerrit_obj=None, dump_json=None)
     self.failUnless(output.should_continue())
     self.assertEquals(output.getvalue().count('??'), 2)
     self.assertEqual(output.getvalue().count(
@@ -688,7 +691,8 @@ class PresubmitUnittest(PresubmitTestsBase):
     output = presubmit.DoPresubmitChecks(
         change=change, committing=False, verbose=True,
         output_stream=None, input_stream=None,
-        default_presubmit=None, may_prompt=False, gerrit_obj=None)
+        default_presubmit=None, may_prompt=False,
+        gerrit_obj=None, dump_json=None)
     # A warning is printed, and should_continue is True.
     self.failUnless(output.should_continue())
     self.assertEquals(output.getvalue().count('??'), 2)
@@ -719,7 +723,8 @@ class PresubmitUnittest(PresubmitTestsBase):
     output = presubmit.DoPresubmitChecks(
         change=change, committing=False, verbose=True,
         output_stream=None, input_stream=None,
-        default_presubmit=None, may_prompt=True, gerrit_obj=None)
+        default_presubmit=None, may_prompt=True,
+        gerrit_obj=None, dump_json=None)
     self.failIf(output.should_continue())
     self.assertEqual(output.getvalue().count('??'), 0)
     self.assertEqual(output.getvalue().count('!!'), 2)
@@ -753,7 +758,7 @@ def CheckChangeOnCommit(input_api, output_api):
         change=change, committing=False, verbose=True,
         output_stream=None, input_stream=input_buf,
         default_presubmit=always_fail_presubmit_script,
-        may_prompt=False, gerrit_obj=None)
+        may_prompt=False, gerrit_obj=None, dump_json=None)
     self.failIf(output.should_continue())
     text = (
         'Running presubmit upload checks ...\n'
@@ -895,7 +900,8 @@ def CheckChangeOnCommit(input_api, output_api):
     presubmit.DoPresubmitChecks(mox.IgnoreArg(), False, False,
                                 mox.IgnoreArg(),
                                 mox.IgnoreArg(),
-                                None, False, None, None, None).AndReturn(output)
+                                None, False, None, None, None,
+                                None).AndReturn(output)
     self.mox.ReplayAll()
 
     self.assertEquals(

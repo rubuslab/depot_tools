@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b89a9c14_9e8ebcfa",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-06-18T23:10:45Z",
+      "side": 1,
+      "message": "If you put the +2 there then you change the semantics for a different set of users, which I don\u0027t think is the goal. Right now I have NINJA_CORE_ADDITION set to -2 so that I\u0027ll use 46/48 processes. This will make it so that I use 48+2-2\u003d48 instead of 46. I think you want:\n\nj_value \u003d num_cores\nj_value +\u003d os.environ.get(\u0027NINJA_CORE_ADDITION\u0027, \u00272\u0027)\nif use_jumbo_build:\n\nThat way NINJA_CORE_ADDITION is an offset that replaces ninja\u0027s offset, and this offset is use for jumbo and non-jumbo builds, except that in jumbo builds there is an additional cap based on amount of memory (which will not affect most P920 machines since they have 192 GB).",
+      "revId": "e88a9cf8674722dc7d0aabd8dc2d257b954173ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

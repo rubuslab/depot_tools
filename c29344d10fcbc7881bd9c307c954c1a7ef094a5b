@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "878bdb64_3260b8cf",
+        "filename": "autoninja.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2019-06-18T21:30:05Z",
+      "side": 1,
+      "message": "Oops, done (my editor is intentionally configured to auto remove trailing spaces...)",
+      "parentUuid": "8ab1e803_884dc840",
+      "revId": "c29344d10fcbc7881bd9c307c954c1a7ef094a5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2c2f66e3_6cbbbbb3",
         "filename": "autoninja.py",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "c29344d10fcbc7881bd9c307c954c1a7ef094a5b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "602a4808_0983438a",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2019-06-18T21:30:05Z",
+      "side": 1,
+      "message": "I decided to ignore use_jumbo_build if NINJA_CORE_ADDITION is set. I preserved that in the latest PS but default to num_cores + 2 for j_value.\n\nDouble-quotes cleaned up.",
+      "parentUuid": "2c2f66e3_6cbbbbb3",
+      "revId": "c29344d10fcbc7881bd9c307c954c1a7ef094a5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

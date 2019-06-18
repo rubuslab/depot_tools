@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ab1e803_884dc840",
+        "filename": "autoninja.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-06-18T18:06:39Z",
+      "side": 1,
+      "message": "Keep the trailing space please. Otherwise the ninja status gets crammed up against the current build step. i.e., this:\n[1 processes, 245/245 @ 3.3/s : 74.035s ] LINK content_shell.exe content_shell.exe.pdb\nis better than this:\n[1 processes, 245/245 @ 3.3/s : 74.035s ]LINK content_shell.exe content_shell.exe.pdb\n(see the comment on the line before)",
+      "revId": "c29344d10fcbc7881bd9c307c954c1a7ef094a5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c2f66e3_6cbbbbb3",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-06-18T18:06:39Z",
+      "side": 1,
+      "message": "Note that ninja defaults to num_cores+2 so to avoid changing the behavior I think you want:\n\ncore_addition \u003d os.environ.get(\"NINJA_CORE_ADDITION\", \u00271\u0027)\n\nAside: I\u0027m not sure why this script has so many double quotes in it (around the environment variables). Your call on whether you want to fix that while you\u0027re here.",
+      "revId": "c29344d10fcbc7881bd9c307c954c1a7ef094a5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

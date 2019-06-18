@@ -12,11 +12,11 @@ REM If a build performance summary has been requested then also set NINJA_STATUS
 REM to trigger more verbose status updates. In particular this makes it possible
 REM to see how quickly process creation is happening - often a critical clue on
 REM Windows. The trailing space is intentional.
-if "%NINJA_SUMMARIZE_BUILD%" == "1" set NINJA_STATUS=[%%r processes, %%f/%%t @ %%o/s : %%es ] 
+if "%NINJA_SUMMARIZE_BUILD%" == "1" set NINJA_STATUS=[%%r processes, %%f/%%t @ %%o/s : %%es ]
 
 REM Execute whatever is printed by autoninja.py.
 REM Also print it to reassure that the right settings are being used.
-FOR /f "usebackq tokens=*" %%a in (`python %~dp0autoninja.py "%*"`) do echo %%a & %%a
+FOR /f "usebackq tokens=*" %%a in (`vpython %~dp0autoninja.py "%*"`) do echo %%a & %%a
 @if errorlevel 1 goto buildfailure
 
 REM Use call to invoke python script here, because we use python via python.bat.

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7535cbc3_fa456bc6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1559,
+      "author": {
+        "id": 1349675
+      },
+      "writtenOn": "2019-06-19T18:38:18Z",
+      "side": 1,
+      "message": "This json will be used in run_presubmit.py in another cl. The summary field is going to be used to set the overview message when a failure happens in the build. Currently, this is the only use I have in mind for it, so I thought it would be more convenient return a string with all the errors. The string currently gets limited in size, and I added a message to let the user know that if they need more information they could find it in the stdout file.",
+      "parentUuid": "9d732ecf_b9251712",
+      "range": {
+        "startLine": 1559,
+        "startChar": 10,
+        "endLine": 1559,
+        "endChar": 61
+      },
+      "revId": "b7b801583c443c9074ce7d79af5c0b731fa36aae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "330331b9_0a682ec4",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 3

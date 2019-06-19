@@ -147,8 +147,26 @@ def GetFilesSplitByOwners(owners_database, files):
   return files_split_by_owners
 
 
-def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
-                reviewers):
+def MergeSmallCls(files_split_by_owners, max_cl_size=100000):
+  needs_merge = True
+  while needs_merge:
+    needs_merge = False
+    new_split = collections.defaultdict(list)
+    for folder, files in files_split_by_owners.iteritems():
+      cl_size = sum(sum(f.DiffStat()) for f in files)
+      if cl_size < max_cl_size:
+        parent_folder = os.path.dirname(folder)
+        # Don't go all the way up to ENG_REVIEW_OWNERS
+        if parent_folder != '':
+          folder = parent_folder
+          needs_merge = True
+      new_split[folder].extend(files)
+    files_split_by_owners = new_split
+
+  return files_split_by_owners
+
+
+def PrintClInfo(cl_index, num_cls, directory, files, description, reviewers):
   """Prints info about a CL.
 
   Args:
@@ -156,7 +174,7 @@ def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
     num_cls: The total number of CLs that will be uploaded.
     directory: Path to the directory that contains the OWNERS file for which
         to upload a CL.
-    file_paths: A list of files in this CL.
+    files: A list of files in this CL.
     description: The CL description.
     reviewers: A set of reviewers for this CL.
   """
@@ -164,11 +182,15 @@ def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
                                                  directory).splitlines()
   indented_description = '\n'.join(['    ' + l for l in description_lines])
 
+  additions = sum(f.DiffStat()[0] for f in files)
+  deletions = sum(f.DiffStat()[1] for f in files)
   print('CL {}/{}'.format(cl_index, num_cls))
   print('Path: {}'.format(directory))
   print('Reviewers: {}'.format(', '.join(reviewers)))
+  print('Size: {} (+{}, -{})'.format(additions + deletions, additions,
+                                     deletions))
   print('\n' + indented_description + '\n')
-  print('\n'.join(file_paths))
+  print('\n'.join(f.LocalPath() for f in files))
   print()
 
 
@@ -213,6 +235,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
     owners_database.load_data_needed_for([f.LocalPath() for f in files])
 
     files_split_by_owners = GetFilesSplitByOwners(owners_database, files)
+    files_split_by_owners = MergeSmallCls(files_split_by_owners, 200)
 
     num_cls = len(files_split_by_owners)
     print('Will split current branch (' + refactor_branch + ') into ' +
@@ -229,7 +252,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
         return 0
 
     for cl_index, (directory, files) in \
-        enumerate(files_split_by_owners.iteritems(), 1):
+        enumerate(sorted(files_split_by_owners.iteritems()), 1):
       # Use '/' as a path separator in the branch name and the CL description
       # and comment.
       directory = directory.replace(os.path.sep, '/')
@@ -237,8 +260,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
       reviewers = owners_database.reviewers_for(file_paths, author)
 
       if dry_run:
-        PrintClInfo(cl_index, num_cls, directory, file_paths, description,
-                    reviewers)
+        PrintClInfo(cl_index, num_cls, directory, files, description, reviewers)
       else:
         UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
                  description, comment, reviewers, changelist, cmd_upload,

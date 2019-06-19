@@ -16,6 +16,24 @@
       "revId": "e88a9cf8674722dc7d0aabd8dc2d257b954173ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "066a5f73_73d5a466",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2019-06-19T13:47:24Z",
+      "side": 1,
+      "message": "Oh, hadn\u0027t thought of negative NINJA_CORE_ADDITION. Thought this was merely for folks who wanted to manually add more parallelism for a reason beyond what autoninja comprehends.\n\nDone.",
+      "parentUuid": "b89a9c14_9e8ebcfa",
+      "revId": "e88a9cf8674722dc7d0aabd8dc2d257b954173ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

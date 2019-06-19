@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d732ecf_b9251712",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1559,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-19T18:17:12Z",
+      "side": 1,
+      "message": "How is this JSON object going to be used?\nWould it be useful to have an entry for each error (possibly limited in size) instead of an entry for all of them?",
+      "range": {
+        "startLine": 1559,
+        "startChar": 10,
+        "endLine": 1559,
+        "endChar": 61
+      },
+      "revId": "b7b801583c443c9074ce7d79af5c0b731fa36aae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "330331b9_0a682ec4",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-19T18:17:12Z",
+      "side": 1,
+      "message": "This line seems to be too long (\u003e80 characters)",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 106
+      },
+      "revId": "b7b801583c443c9074ce7d79af5c0b731fa36aae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

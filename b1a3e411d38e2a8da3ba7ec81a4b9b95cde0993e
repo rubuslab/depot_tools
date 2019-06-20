@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea936ff2_70c2e2e1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2019-06-20T22:55:51Z",
+      "side": 0,
+      "message": "Don\u0027t delete this.\n\nTwo lines between top level statements is standard python formatting",
+      "revId": "b1a3e411d38e2a8da3ba7ec81a4b9b95cde0993e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

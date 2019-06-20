@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "0b31169e_9d8ad9f7",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1553,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2019-06-20T22:55:51Z",
+      "side": 1,
+      "message": "debrian@ and I discussed offline. I think this should expose a more structured data view, so a list of errors, rather than just a summary.",
+      "revId": "c0cbf0ae0a11d61ca3cd1a9ee94ecd6dc5ef4e40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "49130390_52f99071",
         "filename": "presubmit_support.py",
         "patchSetId": 7

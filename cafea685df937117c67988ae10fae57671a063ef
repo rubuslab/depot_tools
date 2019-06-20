@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a58ba15e_f4f798d1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1460,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T19:40:45Z",
+      "side": 1,
+      "message": "Nit: indent so it starts at the same column as the line above.",
+      "range": {
+        "startLine": 1460,
+        "startChar": 2,
+        "endLine": 1460,
+        "endChar": 4
+      },
+      "revId": "cafea685df937117c67988ae10fae57671a063ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f8d1de4e_25c38b8b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1554,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T19:40:45Z",
+      "side": 1,
+      "message": "I\u0027d say something like \n# Write a summary of presubmit errors to dump_json.\nand get rid of the other comments.",
+      "range": {
+        "startLine": 1554,
+        "startChar": 6,
+        "endLine": 1554,
+        "endChar": 37
+      },
+      "revId": "cafea685df937117c67988ae10fae57671a063ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e718836_d9f25f9f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1555,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T19:40:45Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 1555,
+        "startChar": 0,
+        "endLine": 1555,
+        "endChar": 47
+      },
+      "revId": "cafea685df937117c67988ae10fae57671a063ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81e355b8_c7a6a95c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1556,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T19:40:45Z",
+      "side": 1,
+      "message": "\u0027\\n\u0027.join(error.getSummary() for error in errors)",
+      "range": {
+        "startLine": 1556,
+        "startChar": 32,
+        "endLine": 1556,
+        "endChar": 34
+      },
+      "revId": "cafea685df937117c67988ae10fae57671a063ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54221afd_ecf8f867",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1696,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T19:40:45Z",
+      "side": 1,
+      "message": "Add help for this option. Consider renaming it to json_output.",
+      "range": {
+        "startLine": 1696,
+        "startChar": 23,
+        "endLine": 1696,
+        "endChar": 32
+      },
+      "revId": "cafea685df937117c67988ae10fae57671a063ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f99920d_676de346",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T19:40:45Z",
+      "side": 1,
+      "message": "Add another test where the error message is not too long, and check it doesn\u0027t get shortened.",
+      "range": {
+        "startLine": 627,
+        "startChar": 6,
+        "endLine": 627,
+        "endChar": 35
+      },
+      "revId": "cafea685df937117c67988ae10fae57671a063ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34ef24b0_5a6f0316",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T19:40:45Z",
+      "side": 1,
+      "message": "Indent this.\nAlso, consider doing something like \u0027user/home/fake_path/bound_to_fail.py\u0027 * N",
+      "range": {
+        "startLine": 630,
+        "startChar": 4,
+        "endLine": 643,
+        "endChar": 40
+      },
+      "revId": "cafea685df937117c67988ae10fae57671a063ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "603c0957_84ccdd9e",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T19:40:45Z",
+      "side": 1,
+      "message": "nit: indent so it starts at the same column as the string above.",
+      "range": {
+        "startLine": 669,
+        "startChar": 4,
+        "endLine": 669,
+        "endChar": 5
+      },
+      "revId": "cafea685df937117c67988ae10fae57671a063ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

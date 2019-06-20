@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49130390_52f99071",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1555,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T20:58:18Z",
+      "side": 1,
+      "message": "Nit: break the line here instead.\n\n  json_summary \u003d {\n      \u0027summary\u0027: ...\n  }",
+      "range": {
+        "startLine": 1555,
+        "startChar": 22,
+        "endLine": 1555,
+        "endChar": 23
+      },
+      "revId": "c0cbf0ae0a11d61ca3cd1a9ee94ecd6dc5ef4e40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4948359f_e7a5e1f0",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T20:58:18Z",
+      "side": 1,
+      "message": "Indent.",
+      "range": {
+        "startLine": 1694,
+        "startChar": 2,
+        "endLine": 1694,
+        "endChar": 6
+      },
+      "revId": "c0cbf0ae0a11d61ca3cd1a9ee94ecd6dc5ef4e40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e29cf36_5cc6b4a2",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-20T20:58:18Z",
+      "side": 1,
+      "message": "Nit: space before and after.",
+      "range": {
+        "startLine": 633,
+        "startChar": 63,
+        "endLine": 633,
+        "endChar": 64
+      },
+      "revId": "c0cbf0ae0a11d61ca3cd1a9ee94ecd6dc5ef4e40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

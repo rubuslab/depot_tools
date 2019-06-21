@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49cb5810_bd5668a8",
+        "filename": "presubmit_support.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-21T23:07:12Z",
+      "side": 1,
+      "message": "Nit: two spaces more.",
+      "range": {
+        "startLine": 308,
+        "startChar": 7,
+        "endLine": 308,
+        "endChar": 14
+      },
+      "revId": "ba7721bbc7d3b2d7578d2e4594d37cbfcf485540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5724f4d1_4f6b5238",
+        "filename": "presubmit_support.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1556,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-21T23:07:12Z",
+      "side": 1,
+      "message": "What about doing this?\n\n  presubmit_results \u003d {\n      \u0027errors\u0027: [\n          error.json_format() for error in errors\n      ],\n      \u0027notifications\u0027: [\n          notification.json_format() for notification in notifications\n      ],\n      \u0027warnings\u0027: [\n          warning.json_format() for warning in warnings\n      ],\n  }",
+      "range": {
+        "startLine": 1556,
+        "startChar": 6,
+        "endLine": 1556,
+        "endChar": 23
+      },
+      "revId": "ba7721bbc7d3b2d7578d2e4594d37cbfcf485540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "086c9073_c900650b",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-21T23:07:12Z",
+      "side": 1,
+      "message": "Consider making a variable and passing it here.\n\n  presubmit_args \u003d list(args) + [\n      \u0027--json_output\u0027, self.m.json.output(),\n  ]\n  step_data \u003d self.m.python(\n      ..., presubmit_args, **kwargs)",
+      "range": {
+        "startLine": 18,
+        "startChar": 45,
+        "endLine": 18,
+        "endChar": 55
+      },
+      "revId": "ba7721bbc7d3b2d7578d2e4594d37cbfcf485540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ce6eae0_83cb6442",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-21T23:07:12Z",
+      "side": 1,
+      "message": "Arrays are usually formatted like\n\n  foo \u003d [\n      ...,\n      ...,\n  ]",
+      "range": {
+        "startLine": 640,
+        "startChar": 2,
+        "endLine": 640,
+        "endChar": 8
+      },
+      "revId": "ba7721bbc7d3b2d7578d2e4594d37cbfcf485540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1efdf618_195a08ab",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-21T23:07:12Z",
+      "side": 1,
+      "message": "Could you format it like \n\n  presubmit.os.path.join(\n      self.fake_root_dor, \u0027haspresubmit\u0027, \u0027PRESUBMIT.py\u0027)).AndReturn(False)\n\nIn general, if you put the first parameter on the same line, you indent the rest to start at the same column\n\n  functionName(bar,\n               baz)\n\nOtherwise you indent four spaces more.\n\n  functionName(\n      bar,\n      baz)",
+      "range": {
+        "startLine": 658,
+        "startChar": 29,
+        "endLine": 658,
+        "endChar": 52
+      },
+      "revId": "ba7721bbc7d3b2d7578d2e4594d37cbfcf485540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca869f72_0b3c152a",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-21T23:07:12Z",
+      "side": 1,
+      "message": "Nit: increase indentation four spaces instead of two.\n\n  fake_result \u003d {\n      \u0027notifications\u0027: [\n          {\n              \u0027message\u0027: fake_notify,\n  ...",
+      "range": {
+        "startLine": 667,
+        "startChar": 4,
+        "endLine": 667,
+        "endChar": 15
+      },
+      "revId": "ba7721bbc7d3b2d7578d2e4594d37cbfcf485540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee3c9731_32fbab82",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 709,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-06-21T23:07:12Z",
+      "side": 1,
+      "message": "Nit: indent two spaces more",
+      "range": {
+        "startLine": 706,
+        "startChar": 1,
+        "endLine": 709,
+        "endChar": 53
+      },
+      "revId": "ba7721bbc7d3b2d7578d2e4594d37cbfcf485540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

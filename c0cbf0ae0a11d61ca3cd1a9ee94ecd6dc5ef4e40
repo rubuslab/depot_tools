@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d7ad9352_5f7e5804",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1553,
+      "author": {
+        "id": 1349675
+      },
+      "writtenOn": "2019-06-21T17:28:31Z",
+      "side": 1,
+      "message": "I have updated it now to return the errors, notifications and warnings. It is structured the same way as PresubmitResult, but as a json. I also updated the test for json output.",
+      "parentUuid": "0b31169e_9d8ad9f7",
+      "revId": "c0cbf0ae0a11d61ca3cd1a9ee94ecd6dc5ef4e40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49130390_52f99071",
         "filename": "presubmit_support.py",
         "patchSetId": 7

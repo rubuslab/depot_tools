@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ce703da_c56e132d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2019-06-21T18:13:28Z",
+      "side": 1,
+      "message": "I\u0027d make this be one line per item, so\n  return {\n    \u0027message\u0027: ..,\n    \u0027items\u0027: ..,\n  }",
+      "revId": "1492dbbb56e7dc4948ddf84d8c9c5fa4df55cb1b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

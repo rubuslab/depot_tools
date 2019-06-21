@@ -13,7 +13,8 @@ class PresubmitApi(recipe_api.RecipeApi):
     """Return a presubmit step."""
 
     name = kwargs.pop('name', 'presubmit')
-
     with self.m.depot_tools.on_path():
-      return self.m.python(
-          name, self.presubmit_support_path, list(args), **kwargs)
+      step_data = self.m.python(
+          name, self.presubmit_support_path, list(args) + [
+            '--json_output', self.m.json.output()], **kwargs)
+      return step_data.json.output

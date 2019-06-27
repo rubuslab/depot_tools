@@ -22,6 +22,30 @@
       "revId": "32cbe723809c83afa446b98b32e5ac01f250d194",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18293389_e72c54f0",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1349675
+      },
+      "writtenOn": "2019-06-27T22:45:05Z",
+      "side": 1,
+      "message": "Stephen recommended that I do it this way, what would be the difference between the two? Speed vs Memory?",
+      "parentUuid": "ba25b8e5_64500b09",
+      "range": {
+        "startLine": 309,
+        "startChar": 16,
+        "endLine": 309,
+        "endChar": 17
+      },
+      "revId": "32cbe723809c83afa446b98b32e5ac01f250d194",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

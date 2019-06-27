@@ -46,6 +46,30 @@
       "revId": "32cbe723809c83afa446b98b32e5ac01f250d194",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b8b6a9b_ef43c987",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-06-27T22:55:14Z",
+      "side": 1,
+      "message": "Nope, just syntax (really). Feel free to ignore me :)",
+      "parentUuid": "18293389_e72c54f0",
+      "range": {
+        "startLine": 309,
+        "startChar": 16,
+        "endLine": 309,
+        "endChar": 17
+      },
+      "revId": "32cbe723809c83afa446b98b32e5ac01f250d194",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cde0ac12_e67ca962",
+        "filename": "recipes/recipe_modules/presubmit/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T19:07:16Z",
+      "side": 1,
+      "message": "I think properties is not actually used? (I need to make a test check to automatically figure this out)",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 27
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2261e50_c5411cb2",
+        "filename": "recipes/recipe_modules/presubmit/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T19:07:16Z",
+      "side": 1,
+      "message": "TODO(iannucci): Use protobuf for this",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 10
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5bd7a1c_6c2834d8",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T19:07:16Z",
+      "side": 1,
+      "message": "why does runhooks need to be optional? Shouldn\u0027t it just be a noop if there are no hooks?",
+      "range": {
+        "startLine": 17,
+        "startChar": 37,
+        "endLine": 17,
+        "endChar": 45
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9535b1f2_c0d72a3f",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T19:07:16Z",
+      "side": 1,
+      "message": "it would be nice to get a bit more elaboration here; what does it set up, what does it assume, and what are the side effects?",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 33
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "794eba5c_960d0f54",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T19:07:16Z",
+      "side": 1,
+      "message": "I\u0027m not certain that this actually makes any difference? This is just the names that git uses to commit locally, they could be random garbage (probably they actually should be).\n\nConsider changing these to:\n\n  * email\u003dlocal.commit@presubmit.example.com\n  * name\u003dPresubmit Builder",
+      "range": {
+        "startLine": 49,
+        "startChar": 13,
+        "endLine": 49,
+        "endChar": 20
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df395201_1b62c746",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T19:07:16Z",
+      "side": 1,
+      "message": "could we just return `upstream` as derived in `execute` below? Then this function can have a well-defined (and simple) return value.",
+      "range": {
+        "startLine": 60,
+        "startChar": 11,
+        "endLine": 60,
+        "endChar": 26
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1c9c510_0564d526",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T19:07:16Z",
+      "side": 1,
+      "message": "same re: doc",
+      "range": {
+        "startLine": 62,
+        "startChar": 6,
+        "endLine": 62,
+        "endChar": 13
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7202e879_ddf2a777",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T19:07:16Z",
+      "side": 1,
+      "message": "this is a buildbot relic; there is no PYTHONPATH on LUCI.",
+      "range": {
+        "startLine": 91,
+        "startChar": 12,
+        "endLine": 91,
+        "endChar": 29
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cba607a9_f54ff532",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T19:07:16Z",
+      "side": 1,
+      "message": "can you add a `TODO(iannucci): verify that presubmit_support.py correctly finds and uses .vpython files then remove this configuration`?",
+      "range": {
+        "startLine": 98,
+        "startChar": 12,
+        "endLine": 98,
+        "endChar": 30
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

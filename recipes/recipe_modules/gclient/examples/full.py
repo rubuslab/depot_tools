@@ -13,6 +13,7 @@ DEPS = [
 
 TEST_CONFIGS = [
   'android',
+  'androidx_browser',
   'angle',
   'boringssl',
   'build_internal',
@@ -20,7 +21,6 @@ TEST_CONFIGS = [
   'catapult',
   'celab',
   'crashpad',
-  'custom_tabs_client',
   'dart',
   'dawn',
   'disable_syntax_validation',

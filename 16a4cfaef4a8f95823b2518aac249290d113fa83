@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "577b2f8c_080d527d",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1349675
+      },
+      "writtenOn": "2019-07-02T17:26:36Z",
+      "side": 1,
+      "message": "I\u0027m just curious:\nIs the result from prepare() meant to be passed into this parameter?\nIf so, why is there a need to separate these?",
+      "range": {
+        "startLine": 61,
+        "startChar": 20,
+        "endLine": 61,
+        "endChar": 35
+      },
+      "revId": "16a4cfaef4a8f95823b2518aac249290d113fa83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ce169c1d_8aa78608",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 1

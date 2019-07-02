@@ -93,6 +93,8 @@ args = [ninja_exe_path] + input_args[1:]
 
 num_cores = psutil.cpu_count()
 if not j_specified and not t_specified:
+  # Append a -j flag when using goma or when performing a jumbo builds.
+  # Otherwise allow ninja to choose a sensible default.
   if use_goma:
     args.append('-j')
     core_multiplier = int(os.environ.get('NINJA_CORE_MULTIPLIER', '40'))
@@ -107,17 +109,15 @@ if not j_specified and not t_specified:
       j_value = min(j_value, 500)
 
     args.append('%d' % j_value)
-  else:
-    j_value = num_cores
+  elif use_jumbo_build:
     # Ninja defaults to |num_cores + 2|
-    j_value += int(os.environ.get('NINJA_CORE_ADDITION', '2'))
-    if use_jumbo_build:
-      # Compiling a jumbo .o can easily use 1-2GB of memory. Leaving 2GB per
-      # process avoids memory swap/compression storms when also considering
-      # already in-use memory.
-      physical_ram = psutil.virtual_memory().total
-      GB = 1024 * 1024 * 1024
-      j_value = min(j_value, physical_ram / (2 * GB))
+    j_value = num_cores + int(os.environ.get('NINJA_CORE_ADDITION', '2'))
+    # Compiling a jumbo .o can easily use 1-2GB of memory. Leaving 2GB per
+    # process avoids memory swap/compression storms when also considering
+    # already in-use memory.
+    physical_ram = psutil.virtual_memory().total
+    GB = 1024 * 1024 * 1024
+    j_value = min(j_value, physical_ram / (2 * GB))
     args.append('-j')
     args.append('%d' % j_value)
 

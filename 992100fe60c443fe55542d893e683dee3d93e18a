@@ -308,6 +308,30 @@
     },
     {
       "key": {
+        "uuid": "3757009c_9a4f19dd",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:52:39Z",
+      "side": 1,
+      "message": "That\u0027s fair, and I understand that we wouldn\u0027t necessarily do this given no other similar code. There is similar code, though, so I\u0027d rather be consistent with it; it makes it easier to reason about when working across recipes.",
+      "parentUuid": "4b4e882c_b45ad8bf",
+      "range": {
+        "startLine": 60,
+        "startChar": 11,
+        "endLine": 60,
+        "endChar": 26
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1c9c510_0564d526",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 3

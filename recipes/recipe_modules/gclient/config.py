@@ -395,12 +395,13 @@ def with_tags(c):
   c.with_tags = True
 
 @config_ctx()
-def custom_tabs_client(c):
+def androidx_browser(c):
   soln = c.solutions.add()
-  soln.name = 'custom_tabs_client'
-  # TODO(pasko): test custom-tabs-client within a full chromium checkout.
-  soln.url = 'https://chromium.googlesource.com/custom-tabs-client'
-  c.got_revision_mapping['custom_tabs_client'] = 'got_revision'
+  soln.name = 'androidx_browser'
+  # TODO(pasko): test androidx_browser within a full chromium checkout.
+  soln.url = (
+       'https://chromium.googlesource.com/external/gob/android/platform/frameworks/support/browser')
+  c.got_revision_mapping['androidx_browser'] = 'got_revision'
 
 @config_ctx()
 def gerrit_test_cq_normal(c):

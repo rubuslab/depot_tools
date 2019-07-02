@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f17e143_25ae50aa",
+        "filename": "recipes/recipe_modules/presubmit/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:23:49Z",
+      "side": 1,
+      "message": "Wasn\u0027t used in PS3, is now used in test_api.py w/ the proto switch.",
+      "parentUuid": "cde0ac12_e67ca962",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 27
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b2261e50_c5411cb2",
         "filename": "recipes/recipe_modules/presubmit/__init__.py",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c28539d6_8001ec00",
+        "filename": "recipes/recipe_modules/presubmit/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:23:49Z",
+      "side": 1,
+      "message": "Switched to protobuf instead.",
+      "parentUuid": "b2261e50_c5411cb2",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 10
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "36cbffa1_33491177",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:23:49Z",
+      "side": 1,
+      "message": "I would suspect this may be applicable in places where we have hooks but don\u0027t want to run them, though I haven\u0027t looked at all uses of this flag in existing presubmit builders and I don\u0027t intend to in the scope of this CL.",
+      "parentUuid": "e5bd7a1c_6c2834d8",
+      "range": {
+        "startLine": 17,
+        "startChar": 37,
+        "endLine": 17,
+        "endChar": 45
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9535b1f2_c0d72a3f",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 3
@@ -91,6 +163,30 @@
       "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc59692d_d59e3d7a",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:23:49Z",
+      "side": 1,
+      "message": "elaborated",
+      "parentUuid": "9535b1f2_c0d72a3f",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 33
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "50a4fe17_705e44a3",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:23:49Z",
+      "side": 1,
+      "message": "Rephrased the TODO. Would prefer to not experiment with that in this CL.",
+      "parentUuid": "794eba5c_960d0f54",
+      "range": {
+        "startLine": 49,
+        "startChar": 13,
+        "endLine": 49,
+        "endChar": 20
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df395201_1b62c746",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 3
@@ -137,6 +257,30 @@
       "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4a15258_6e2950e4",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:23:49Z",
+      "side": 1,
+      "message": "Returning the result of the bot_update step like this is pretty common across our other recipes in steps that set up a checkout; I\u0027d rather be consistent w/ that.",
+      "parentUuid": "df395201_1b62c746",
+      "range": {
+        "startLine": 60,
+        "startChar": 11,
+        "endLine": 60,
+        "endChar": 26
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "17694387_83656fa6",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:23:49Z",
+      "side": 1,
+      "message": "docstring added.",
+      "parentUuid": "d1c9c510_0564d526",
+      "range": {
+        "startLine": 62,
+        "startChar": 6,
+        "endLine": 62,
+        "endChar": 13
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7202e879_ddf2a777",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 3
@@ -186,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "fb99d3ae_03093b7b",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:23:49Z",
+      "side": 1,
+      "message": "neato, removed",
+      "parentUuid": "7202e879_ddf2a777",
+      "range": {
+        "startLine": 91,
+        "startChar": 12,
+        "endLine": 91,
+        "endChar": 29
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cba607a9_f54ff532",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 3
@@ -206,6 +398,30 @@
       "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "255b1d94_0c863fa3",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T20:23:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cba607a9_f54ff532",
+      "range": {
+        "startLine": 98,
+        "startChar": 12,
+        "endLine": 98,
+        "endChar": 30
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -284,6 +284,30 @@
     },
     {
       "key": {
+        "uuid": "4b4e882c_b45ad8bf",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-02T20:43:25Z",
+      "side": 1,
+      "message": "Yeah it\u0027s a pretty big anti-pattern though that stems from the time when recipes used yield statements for steps; I was hoping to not introduce another instance of it.",
+      "parentUuid": "e4a15258_6e2950e4",
+      "range": {
+        "startLine": 60,
+        "startChar": 11,
+        "endLine": 60,
+        "endChar": 26
+      },
+      "revId": "992100fe60c443fe55542d893e683dee3d93e18a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1c9c510_0564d526",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 3

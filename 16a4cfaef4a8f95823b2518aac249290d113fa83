@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9d2f0e94_ee4690e3",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2019-07-02T17:32:45Z",
+      "side": 1,
+      "message": "It is. There isn\u0027t a strict need to separate them, but I chose to do so because I\u0027ve come to prefer having more focused functionality in recipe modules rather than monolithic functions that essentially implement an entire recipe after working w/ chromium_tests. Doing so makes it easier to test them, easier to reason about, and easier to use in different ways in other scenarios (not that I have specific ones in mind here).\n\nThe only downside to this at the moment is that the relative_root/abs_root logic gets repeated in this case, but I think that could be cleaned up in future refactoring.",
+      "parentUuid": "577b2f8c_080d527d",
+      "range": {
+        "startLine": 61,
+        "startChar": 20,
+        "endLine": 61,
+        "endChar": 35
+      },
+      "revId": "16a4cfaef4a8f95823b2518aac249290d113fa83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ce169c1d_8aa78608",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 1

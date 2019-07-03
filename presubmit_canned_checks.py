@@ -1159,48 +1159,76 @@ def CheckPatchFormatted(input_api,
                         bypass_warnings=True,
                         check_js=False,
                         check_python=None,
-                        result_factory=None):
+                        result_factory=None,
+                        print_diff=False):
+
   result_factory = result_factory or output_api.PresubmitPromptWarning
-  import git_cl
 
-  display_args = []
-  if check_js:
-    display_args.append('--js')
-
-  # Explicitly setting check_python to will enable/disable python formatting
-  # on all files. Leaving it as None will enable checking patch formatting
-  # on files that have a .style.yapf file in a parent directory.
-  if check_python is not None:
-    if check_python:
-      display_args.append('--python')
-    else:
-      display_args.append('--no-python')
-
-  cmd = ['-C', input_api.change.RepositoryRoot(),
-         'cl', 'format', '--dry-run', '--presubmit'] + display_args
+  # If the PRESUBMIT.py is in a parent repository, then format the entire
+  # subrepository. Otherwise, format only the code in the directory that
+  # contains the PRESUBMIT.py.
   presubmit_subdir = input_api.os_path.relpath(
       input_api.PresubmitLocalPath(), input_api.change.RepositoryRoot())
   if presubmit_subdir.startswith('..') or presubmit_subdir == '.':
     presubmit_subdir = ''
-  # If the PRESUBMIT.py is in a parent repository, then format the entire
-  # subrepository. Otherwise, format only the code in the directory that
-  # contains the PRESUBMIT.py.
+  targets = None
   if presubmit_subdir:
-    cmd.append(input_api.PresubmitLocalPath())
-  code, _ = git_cl.RunGitWithCode(cmd, suppress_stderr=bypass_warnings)
+    targets = [presubmit_subdir]
+
+  # Explicitly setting check_python to will enable/disable python formatting
+  # on all files. Leaving it as None will enable checking patch formatting
+  # on files that have a .style.yapf file in a parent directory.
+  format_output_stream = input_api.cStringIO.StringIO()
+  code = input_api.format_support.RunFormatters(
+                                      input_api.change,
+                                      targets=targets,
+                                      output_stream=format_output_stream,
+                                      javascript=check_js,
+                                      python=check_python,
+                                      presubmit=True,
+                                      dry_run=True,
+                                      print_diff=print_diff,
+                                      )
+  format_output = format_output_stream.getvalue()
+  format_output_stream.close()
+
   # bypass_warnings? Only fail with code 2.
   # As this is just a warning, ignore all other errors if the user
   # happens to have a broken clang-format, doesn't use git, etc etc.
   if code == 2 or (code and not bypass_warnings):
+    # We construct an argument list here for the error message; it's not used
+    # directly to actually run the command.
+    display_args = []
+
     if presubmit_subdir:
       short_path = presubmit_subdir
     else:
       short_path = input_api.basename(input_api.change.RepositoryRoot())
+
+    if check_js:
+      display_args.append('--js')
+
+    if check_python is not None:
+      if check_python:
+        display_args.append('--python')
+      else:
+        display_args.append('--no-python')
+
     display_args.append(presubmit_subdir)
-    return [result_factory(
-      'The %s directory requires source formatting. '
-      'Please run: git cl format %s' %
-      (short_path, ' '.join(display_args)))]
+
+    if len(format_output) > 0:
+      return [result_factory(
+        'The %s directory requires source formatting.\n'
+        'Please run: git cl format %s\n'
+        'Details:\n'
+        '%s' %
+        (short_path, ' '.join(display_args), format_output))]
+    else:
+      return [result_factory(
+        'The %s directory requires source formatting.\n'
+        'Please run: git cl format %s\n' %
+        (short_path, ' '.join(display_args)))]
+
   return []
 
 

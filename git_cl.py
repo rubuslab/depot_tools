@@ -50,6 +50,7 @@ import clang_format
 import dart_format
 import setup_color
 import fix_encoding
+import format_support
 import gclient_utils
 import gerrit_util
 import git_cache
@@ -1558,7 +1559,8 @@ class Changelist(object):
         issue,
         patchset,
         author,
-        upstream=upstream_branch)
+        upstream=upstream_branch,
+        base=self.GetCommonAncestorWithUpstream())
 
   def UpdateDescription(self, description, force=False):
     self._codereview_impl.UpdateDescriptionRemote(description, force=force)
@@ -5452,8 +5454,7 @@ def MatchingFileType(file_name, extensions):
 @metrics.collector.collect_metrics('git cl format')
 def CMDformat(parser, args):
   """Runs auto-formatting tools (clang-format etc.) on the diff."""
-  CLANG_EXTS = ['.cc', '.cpp', '.h', '.m', '.mm', '.proto', '.java']
-  GN_EXTS = ['.gn', '.gni', '.typemap']
+
   parser.add_option('--full', action='store_true',
                     help='Reformat the full content of all touched files')
   parser.add_option('--dry-run', action='store_true',
@@ -5480,213 +5481,18 @@ def CMDformat(parser, args):
                     help='Used when running the script from a presubmit.')
   opts, args = parser.parse_args(args)
 
-  # Normalize any remaining args against the current path, so paths relative to
-  # the current directory are still resolved as expected.
-  args = [os.path.join(os.getcwd(), arg) for arg in args]
-
-  # git diff generates paths against the root of the repository.  Change
-  # to that directory so clang-format can find files even within subdirs.
-  rel_base_path = settings.GetRelativeRoot()
-  if rel_base_path:
-    os.chdir(rel_base_path)
-
-  # Grab the merge-base commit, i.e. the upstream commit of the current
-  # branch when it was created or the last time it was rebased. This is
-  # to cover the case where the user may have called "git fetch origin",
-  # moving the origin branch to a newer commit, but hasn't rebased yet.
-  upstream_commit = None
   cl = Changelist()
-  upstream_branch = cl.GetUpstreamBranch()
-  if upstream_branch:
-    upstream_commit = RunGit(['merge-base', 'HEAD', upstream_branch])
-    upstream_commit = upstream_commit.strip()
 
-  if not upstream_commit:
-    DieWithError('Could not find base commit for this branch. '
-                 'Are you in detached state?')
+  return format_support.RunFormatters(
+      cl.GetChange(cl.GetCommonAncestorWithUpstream(), None),
+      args,
+      full=opts.full,
+      dry_run=opts.dry_run,
+      python=opts.python,
+      javascript=opts.js,
+      print_diff=opts.diff,
+      presubmit=opts.presubmit)
 
-  changed_files_cmd = BuildGitDiffCmd('--name-only', upstream_commit, args)
-  diff_output = RunGit(changed_files_cmd)
-  diff_files = diff_output.splitlines()
-  # Filter out files deleted by this CL
-  diff_files = [x for x in diff_files if os.path.isfile(x)]
-
-  if opts.js:
-    CLANG_EXTS.extend(['.js', '.ts'])
-
-  clang_diff_files = [x for x in diff_files if MatchingFileType(x, CLANG_EXTS)]
-  python_diff_files = [x for x in diff_files if MatchingFileType(x, ['.py'])]
-  dart_diff_files = [x for x in diff_files if MatchingFileType(x, ['.dart'])]
-  gn_diff_files = [x for x in diff_files if MatchingFileType(x, GN_EXTS)]
-
-  top_dir = os.path.normpath(
-      RunGit(["rev-parse", "--show-toplevel"]).rstrip('\n'))
-
-  # Set to 2 to signal to CheckPatchFormatted() that this patch isn't
-  # formatted. This is used to block during the presubmit.
-  return_value = 0
-
-  if clang_diff_files:
-    # Locate the clang-format binary in the checkout
-    try:
-      clang_format_tool = clang_format.FindClangFormatToolInChromiumTree()
-    except clang_format.NotFoundError as e:
-      DieWithError(e)
-
-    if opts.full:
-      cmd = [clang_format_tool]
-      if not opts.dry_run and not opts.diff:
-        cmd.append('-i')
-      stdout = RunCommand(cmd + clang_diff_files, cwd=top_dir)
-      if opts.diff:
-        sys.stdout.write(stdout)
-    else:
-      env = os.environ.copy()
-      env['PATH'] = str(os.path.dirname(clang_format_tool))
-      try:
-        script = clang_format.FindClangFormatScriptInChromiumTree(
-            'clang-format-diff.py')
-      except clang_format.NotFoundError as e:
-        DieWithError(e)
-
-      cmd = [sys.executable, script, '-p0']
-      if not opts.dry_run and not opts.diff:
-        cmd.append('-i')
-
-      diff_cmd = BuildGitDiffCmd('-U0', upstream_commit, clang_diff_files)
-      diff_output = RunGit(diff_cmd)
-
-      stdout = RunCommand(cmd, stdin=diff_output, cwd=top_dir, env=env)
-      if opts.diff:
-        sys.stdout.write(stdout)
-      if opts.dry_run and len(stdout) > 0:
-        return_value = 2
-
-  # Similar code to above, but using yapf on .py files rather than clang-format
-  # on C/C++ files
-  py_explicitly_disabled = opts.python is not None and not opts.python
-  if python_diff_files and not py_explicitly_disabled:
-    depot_tools_path = os.path.dirname(os.path.abspath(__file__))
-    yapf_tool = os.path.join(depot_tools_path, 'yapf')
-    if sys.platform.startswith('win'):
-      yapf_tool += '.bat'
-
-    # If we couldn't find a yapf file we'll default to the chromium style
-    # specified in depot_tools.
-    chromium_default_yapf_style = os.path.join(depot_tools_path,
-                                               YAPF_CONFIG_FILENAME)
-    # Used for caching.
-    yapf_configs = {}
-    for f in python_diff_files:
-      # Find the yapf style config for the current file, defaults to depot
-      # tools default.
-      _FindYapfConfigFile(f, yapf_configs, top_dir)
-
-    # Turn on python formatting by default if a yapf config is specified.
-    # This breaks in the case of this repo though since the specified
-    # style file is also the global default.
-    if opts.python is None:
-      filtered_py_files = []
-      for f in python_diff_files:
-        if _FindYapfConfigFile(f, yapf_configs, top_dir) is not None:
-          filtered_py_files.append(f)
-    else:
-      filtered_py_files = python_diff_files
-
-    # Note: yapf still seems to fix indentation of the entire file
-    # even if line ranges are specified.
-    # See https://github.com/google/yapf/issues/499
-    if not opts.full and filtered_py_files:
-      py_line_diffs = _ComputeDiffLineRanges(filtered_py_files, upstream_commit)
-
-    for f in filtered_py_files:
-      yapf_config = _FindYapfConfigFile(f, yapf_configs, top_dir)
-      if yapf_config is None:
-        yapf_config = chromium_default_yapf_style
-
-      cmd = [yapf_tool, '--style', yapf_config, f]
-
-      has_formattable_lines = False
-      if not opts.full:
-        # Only run yapf over changed line ranges.
-        for diff_start, diff_len in py_line_diffs[f]:
-          diff_end = diff_start + diff_len - 1
-          # Yapf errors out if diff_end < diff_start but this
-          # is a valid line range diff for a removal.
-          if diff_end >= diff_start:
-            has_formattable_lines = True
-            cmd += ['-l', '{}-{}'.format(diff_start, diff_end)]
-        # If all line diffs were removals we have nothing to format.
-        if not has_formattable_lines:
-          continue
-
-      if opts.diff or opts.dry_run:
-        cmd += ['--diff']
-        # Will return non-zero exit code if non-empty diff.
-        stdout = RunCommand(cmd, error_ok=True, cwd=top_dir)
-        if opts.diff:
-          sys.stdout.write(stdout)
-        elif len(stdout) > 0:
-          return_value = 2
-      else:
-        cmd += ['-i']
-        RunCommand(cmd, cwd=top_dir)
-
-  # Dart's formatter does not have the nice property of only operating on
-  # modified chunks, so hard code full.
-  if dart_diff_files:
-    try:
-      command = [dart_format.FindDartFmtToolInChromiumTree()]
-      if not opts.dry_run and not opts.diff:
-        command.append('-w')
-      command.extend(dart_diff_files)
-
-      stdout = RunCommand(command, cwd=top_dir)
-      if opts.dry_run and stdout:
-        return_value = 2
-    except dart_format.NotFoundError as e:
-      print('Warning: Unable to check Dart code formatting. Dart SDK not '
-            'found in this checkout. Files in other languages are still '
-            'formatted.')
-
-  # Format GN build files. Always run on full build files for canonical form.
-  if gn_diff_files:
-    cmd = ['gn', 'format']
-    if opts.dry_run or opts.diff:
-      cmd.append('--dry-run')
-    for gn_diff_file in gn_diff_files:
-      gn_ret = subprocess2.call(cmd + [gn_diff_file],
-                                shell=sys.platform == 'win32',
-                                cwd=top_dir)
-      if opts.dry_run and gn_ret == 2:
-        return_value = 2  # Not formatted.
-      elif opts.diff and gn_ret == 2:
-        # TODO this should compute and print the actual diff.
-        print("This change has GN build file diff for " + gn_diff_file)
-      elif gn_ret != 0:
-        # For non-dry run cases (and non-2 return values for dry-run), a
-        # nonzero error code indicates a failure, probably because the file
-        # doesn't parse.
-        DieWithError("gn format failed on " + gn_diff_file +
-                     "\nTry running 'gn format' on this file manually.")
-
-  # Skip the metrics formatting from the global presubmit hook. These files have
-  # a separate presubmit hook that issues an error if the files need formatting,
-  # whereas the top-level presubmit script merely issues a warning. Formatting
-  # these files is somewhat slow, so it's important not to duplicate the work.
-  if not opts.presubmit:
-    for xml_dir in GetDirtyMetricsDirs(diff_files):
-      tool_dir = os.path.join(top_dir, xml_dir)
-      cmd = [os.path.join(tool_dir, 'pretty_print.py'), '--non-interactive']
-      if opts.dry_run or opts.diff:
-        cmd.append('--diff')
-      stdout = RunCommand(cmd, cwd=top_dir)
-      if opts.diff:
-        sys.stdout.write(stdout)
-      if opts.dry_run and stdout:
-        return_value = 2  # Not formatted.
-
-  return return_value
 
 def GetDirtyMetricsDirs(diff_files):
   xml_diff_files = [x for x in diff_files if MatchingFileType(x, ['.xml'])]

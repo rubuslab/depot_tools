@@ -46,6 +46,7 @@ from warnings import warn
 
 # Local imports.
 import fix_encoding
+import format_support
 import gclient_paths  # Exposed through the API
 import gclient_utils
 import git_footers
@@ -571,6 +572,9 @@ class InputApi(object):
     # Temporary files we must manually remove at the end of a run.
     self._named_temporary_files = []
 
+    # Our formatting code - handles calling the right formatter
+    self.format_support = format_support
+
     # TODO(dpranke): figure out a list of all approved owners for a repo
     # in order to be able to handle wildcard OWNERS files?
     self.owners_db = owners.Database(change.RepositoryRoot(),
@@ -969,13 +973,14 @@ class Change(object):
 
   def __init__(
       self, name, description, local_root, files, issue, patchset, author,
-      upstream=None):
+      upstream=None, base=None):
     if files is None:
       files = []
     self._name = name
     # Convert root into an absolute path.
     self._local_root = os.path.abspath(local_root)
     self._upstream = upstream
+    self._base = base
     self.issue = issue
     self.patchset = patchset
     self.author_email = author
@@ -1145,6 +1150,9 @@ class Change(object):
       return 'OWNERS' in os.path.split(f.LocalPath())[1]
     files = self.AffectedFiles(file_filter=owners_file_filter)
     return dict([(f.LocalPath(), f.OldContents()) for f in files])
+
+  def GetChangeBase(self):
+    return self._base
 
 
 class GitChange(Change):

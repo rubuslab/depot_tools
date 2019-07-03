@@ -180,14 +180,14 @@ class PresubmitUnittest(PresubmitTestsBase):
         'ParseFiles', 'PresubmitExecuter', 'PresubmitFailure',
         'PresubmitOutput', 'ScanSubDirs', 'SigintHandler', 'ThreadPool', 'ast',
         'cPickle', 'cStringIO', 'canned_check_filter', 'contextlib', 'cpplint',
-        'fix_encoding', 'fnmatch', 'gclient_paths', 'gclient_utils',
-        'gerrit_util', 'git_footers', 'glob', 'inspect', 'itertools', 'json',
-        'load_files', 'logging', 'main', 'marshal', 'multiprocessing',
-        'normpath', 'optparse', 'os', 'owners', 'owners_finder', 'pickle',
-        'presubmit_canned_checks', 'print_function', 'random', 're', 'scm',
-        'sigint_handler', 'signal', 'subprocess', 'sys', 'tempfile',
-        'threading', 'time', 'traceback', 'types', 'unittest', 'urllib2',
-        'urlparse', 'warn'
+        'fix_encoding', 'fnmatch', 'format_support', 'gclient_paths',
+        'gclient_utils', 'gerrit_util', 'git_footers', 'glob', 'inspect',
+        'itertools', 'json', 'load_files', 'logging', 'main', 'marshal',
+        'multiprocessing', 'normpath', 'optparse', 'os', 'owners',
+        'owners_finder', 'pickle', 'presubmit_canned_checks', 'print_function',
+        'random', 're', 'scm', 'sigint_handler', 'signal', 'subprocess', 'sys',
+        'tempfile', 'threading', 'time', 'traceback', 'types', 'unittest',
+        'urllib2', 'urlparse', 'warn'
     ]
     # If this test fails, you should add the relevant test.
     self.compareMembers(presubmit, members)
@@ -1050,6 +1050,7 @@ class InputApiUnittest(PresubmitTestsBase):
         'dry_run',
         'environ',
         'fnmatch',
+        'format_support',
         'gclient_paths',
         'gerrit',
         'glob',
@@ -1615,7 +1616,7 @@ class ChangeUnittest(PresubmitTestsBase):
     members = [
         'AbsoluteLocalPaths', 'AffectedFiles', 'AffectedTestableFiles',
         'AffectedTextFiles',
-        'AllFiles', 'DescriptionText', 'FullDescriptionText',
+        'AllFiles', 'DescriptionText', 'FullDescriptionText', 'GetChangeBase',
         'LocalPaths', 'Name', 'OriginalOwnersFiles', 'RepositoryRoot',
         'RightHandSideLines', 'SetDescriptionText', 'TAG_LINE_RE',
         'BUG', 'R', 'TBR', 'BugsFromDescription',

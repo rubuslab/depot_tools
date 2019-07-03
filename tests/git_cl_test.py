@@ -894,6 +894,21 @@ class TestGitCl(TestCase):
 
     calls += [
       ((['git', 'config', 'user.email'],), 'me@example.com'),
+      ]
+    if not custom_cl_base:
+      calls += [
+        ((['get_or_create_merge_base', 'master',
+               'refs/remotes/origin/master'],),
+             'origin/master'),
+        ]
+    else:
+      calls += [
+        ((['git', 'config', 'branch.master.merge'],), 'refs/heads/master'),
+        ((['git', 'config', 'branch.master.remote'],), 'origin'),
+        ((['get_or_create_merge_base', 'master',
+           'refs/remotes/origin/master'],), custom_cl_base),
+      ]
+    calls += [
       (('time.time',), 1000,),
       (('time.time',), 3000,),
       (('add_repeated', 'sub_commands', {

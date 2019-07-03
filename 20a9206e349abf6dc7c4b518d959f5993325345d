@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "61830c95_d858a0ca",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1397,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-03T19:15:40Z",
+      "side": 1,
+      "message": "I think this means that the whole PRESUBMIT will be blocked on this?",
+      "range": {
+        "startLine": 1397,
+        "startChar": 23,
+        "endLine": 1397,
+        "endChar": 45
+      },
+      "revId": "20a9206e349abf6dc7c4b518d959f5993325345d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

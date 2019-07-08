@@ -16,6 +16,24 @@
       "revId": "55dad64f46e8552be3c3c684b37196a73b3578e5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "422e1bb5_60805317",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1349675
+      },
+      "writtenOn": "2019-07-08T19:08:47Z",
+      "side": 0,
+      "message": "I want to see if the code tags keep the original format(new lines, tabs, spaces, etc) of the error message.",
+      "parentUuid": "6f796ace_5d726fdc",
+      "revId": "55dad64f46e8552be3c3c684b37196a73b3578e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

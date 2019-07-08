@@ -230,6 +230,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
     cmd = [item for flag_set in flags
            for item in flag_set if flag_set[1] is not None]
 
+    if self.m.tryserver.gerrit_change_target_ref:
+      with_branch_heads = (with_branch_heads or
+        self.m.tryserver.gerrit_change_target_ref.startswith('refs/branch-heads'))
+
     if clobber:
       cmd.append('--clobber')
     if with_branch_heads or cfg.with_branch_heads:

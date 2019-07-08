@@ -34,6 +34,24 @@
       "revId": "55dad64f46e8552be3c3c684b37196a73b3578e5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2efc4a38_4c6e580a",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2019-07-08T23:11:05Z",
+      "side": 0,
+      "message": "I see. I don\u0027t love testing something like this in production, but I don\u0027t know of a better way to figure this stuff out. \n\nIf you can run a copy of milo locally, that could let you figure that out. Or maybe play with the staging server. Those might be hard to do.",
+      "parentUuid": "422e1bb5_60805317",
+      "revId": "55dad64f46e8552be3c3c684b37196a73b3578e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

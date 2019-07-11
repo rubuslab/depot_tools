@@ -46,6 +46,30 @@
       "revId": "c0f03f3fcba41a8970800fcdfb1f1128bf00c6a4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59703226_9dc642fc",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-11T23:07:11Z",
+      "side": 1,
+      "message": "It sounds like we have 10 things all lumped into 1 bucket; I would be inclined to peel out one of those things into its own bucket (or two things into individual buckets), rather than peeling 2 of them out into a new combined bucket which will require another migration-style thingy to further peel apart.\n\nBut I\u0027m also not very close to this, so ultimately it\u0027s up to you + Stephen :)",
+      "parentUuid": "ce3212c8_7f533a10",
+      "range": {
+        "startLine": 224,
+        "startChar": 21,
+        "endLine": 225,
+        "endChar": 60
+      },
+      "revId": "c0f03f3fcba41a8970800fcdfb1f1128bf00c6a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

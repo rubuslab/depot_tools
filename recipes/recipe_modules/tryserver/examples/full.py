@@ -50,6 +50,7 @@ def RunSteps(api):
   api.tryserver.set_compile_failure_tryjob_result()
   api.tryserver.set_test_failure_tryjob_result()
   api.tryserver.set_invalid_test_results_tryjob_result()
+  api.tryserver.set_test_timeout_tryjob_result()
 
   api.tryserver.normalize_footer_name('Cr-Commit-Position')
 

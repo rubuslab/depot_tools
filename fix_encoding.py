@@ -212,7 +212,7 @@ class WinUnicodeConsoleOutput(WinUnicodeOutputBase):
 
   def write(self, text):
     try:
-      if not isinstance(text, unicode):
+      if sys.version_info.major == 2 and not isinstance(text, unicode):
         # Convert to unicode.
         text = str(text).decode(self.encoding, 'replace')
       remaining = len(text)

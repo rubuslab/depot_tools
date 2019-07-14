@@ -575,7 +575,7 @@ def CheckCallAndFilter(args, stdout=None, filter_fn=None,
     # input, no end-of-line character is output after the prompt and it would
     # not show up.
     try:
-      in_byte = kid.stdout.read(1)
+      in_bytes = in_byte = kid.stdout.read(1)
       if in_byte:
         if call_filter_on_first_line:
           filter_fn(None)
@@ -583,13 +583,23 @@ def CheckCallAndFilter(args, stdout=None, filter_fn=None,
         while in_byte:
           output.write(in_byte)
           if print_stdout:
-            stdout.write(in_byte)
+            # Python 3 requires the output to be a string, so we need to decode
+            # it.
+            # However, Unicode characters are multiple bytes and we are
+            # processing byte by byte, so we buffer, detect failed decodes and
+            # keep trying.
+            try:
+              stdout.write(in_bytes.decode())
+              in_bytes = b''
+            except UnicodeDecodeError:
+              pass
           if in_byte not in ['\r', '\n']:
             in_line += in_byte
           else:
             filter_fn(in_line)
             in_line = b''
           in_byte = kid.stdout.read(1)
+          in_bytes += in_byte
         # Flush the rest of buffered output. This is only an issue with
         # stdout/stderr not ending with a \n.
         if len(in_line):

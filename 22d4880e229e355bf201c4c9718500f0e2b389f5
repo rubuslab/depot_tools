@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a82a3cc_f6595f43",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-07-15T22:03:11Z",
+      "side": 1,
+      "message": "How do these values work?\nWhat would happen if someone set\n\n  Cq-Do-Not-Cancel-Tryjobs: false\n\nand then passed this flag?",
+      "range": {
+        "startLine": 228,
+        "startChar": 33,
+        "endLine": 228,
+        "endChar": 69
+      },
+      "revId": "22d4880e229e355bf201c4c9718500f0e2b389f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0fa799e9_39a16929",
+        "filename": "gclient_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-07-15T21:39:45Z",
+      "side": 1,
+      "message": "I feel like there\u0027s a better way to do this, and I worry that this may cause invalid data to be silently discarded.\n\nAccording to https://stackoverflow.com/questions/908331/how-to-write-binary-data-to-stdout-in-python-3, maybe you can do `stdout.buffer.write(in_byte)` instead?",
+      "revId": "2f1247e482395e566b6d55619bd5e356168e8a41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

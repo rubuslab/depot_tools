@@ -22,6 +22,30 @@
       "revId": "22d4880e229e355bf201c4c9718500f0e2b389f5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6affd74_cb58f36b",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-15T22:23:15Z",
+      "side": 1,
+      "message": "\u003e How do these values work?\n\nanything not !\u003d \"true\" (lowercase) is ignored. I can add a linter to CQ (eventually Tricium) to flag such ignored yet confusing lines.\n\n\u003e What would happen if someone set\n\u003e \n\u003e   Cq-Do-Not-Cancel-Tryjobs: false\n\u003e \n\u003e and then passed this flag?\n\nSame as L235..L237",
+      "parentUuid": "1a82a3cc_f6595f43",
+      "range": {
+        "startLine": 228,
+        "startChar": 33,
+        "endLine": 228,
+        "endChar": 69
+      },
+      "revId": "22d4880e229e355bf201c4c9718500f0e2b389f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

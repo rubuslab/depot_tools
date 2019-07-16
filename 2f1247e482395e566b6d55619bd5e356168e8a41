@@ -16,6 +16,24 @@
       "revId": "2f1247e482395e566b6d55619bd5e356168e8a41",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de7171a6_c75c9a4f",
+        "filename": "gclient_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-07-16T17:52:18Z",
+      "side": 1,
+      "message": "If an external program were to start spewing invalid Unicode text, then it would indeed stop outputting pretty soon.\n\nWriting directly to the buffer would work if `stdout` were always `sys.stdout` (or something with `buffer` as an attribute). Unfortunately it is often not and many pieces of code pass a StringIO as the `stdout`.",
+      "parentUuid": "0fa799e9_39a16929",
+      "revId": "2f1247e482395e566b6d55619bd5e356168e8a41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

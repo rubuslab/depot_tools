@@ -34,6 +34,24 @@
       "revId": "2f1247e482395e566b6d55619bd5e356168e8a41",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d586e37f_465d7a05",
+        "filename": "gclient_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-07-16T19:54:08Z",
+      "side": 1,
+      "message": "I wonder if we need to fix the callers, instead. I suspect that trying to do anything in this loop where we\u0027re encoding/decoding is a recipe for sadness.",
+      "parentUuid": "de7171a6_c75c9a4f",
+      "revId": "2f1247e482395e566b6d55619bd5e356168e8a41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

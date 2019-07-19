@@ -116,11 +116,11 @@ import subcommand
 import subprocess2
 import setup_color
 
+from third_party import six
+
 
 # TODO(crbug.com/953884): Remove this when python3 migration is done.
-try:
-  basestring
-except NameError:
+if six.PY3:
   # pylint: disable=redefined-builtin
   basestring = str
 
@@ -241,10 +241,10 @@ class Hook(object):
 
     cmd = [arg for arg in self._action]
 
-    if cmd[0] == 'python':
+    if cmd[0] == 'python' and six.PY2:
       # If the hook specified "python" as the first item, the action is a
-      # Python script.  Run it by starting a new copy of the same
-      # interpreter.
+      # Python script.  Run it by starting a new copy of the same interpreter if
+      # we're running on Python 2.
       cmd[0] = sys.executable
     elif cmd[0] == 'vpython' and _detect_host_os() == 'win':
       cmd[0] += '.bat'
@@ -597,7 +597,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # recursively included by "src/ios_foo/DEPS" should also require
     # "checkout_ios=True".
     if self.condition:
-      for value in deps.itervalues():
+      for value in deps.values():
         gclient_eval.UpdateCondition(value, 'and', self.condition)
 
     if rel_prefix:
@@ -1252,6 +1252,7 @@ _PLATFORM_MAPPING = {
   'cygwin': 'win',
   'darwin': 'mac',
   'linux2': 'linux',
+  'linux': 'linux',
   'win32': 'win',
   'aix6': 'aix',
 }
@@ -1346,7 +1347,7 @@ solutions = %(solution_list)s
     else:
       enforced_os = [self.DEPS_OS_CHOICES.get(sys.platform, 'unix')]
     if 'all' in enforced_os:
-      enforced_os = self.DEPS_OS_CHOICES.itervalues()
+      enforced_os = list(self.DEPS_OS_CHOICES.values())
     self._enforced_os = tuple(set(enforced_os))
     self._enforced_cpu = detect_host_arch.HostArch(),
     self._root_dir = root_dir
@@ -1742,7 +1743,7 @@ it or fix the checkout.
           'The following --patch-ref flags were not used. Please fix it:\n%s' %
           ('\n'.join(
               patch_repo + '@' + patch_ref
-              for patch_repo, patch_ref in patch_refs.iteritems())))
+              for patch_repo, patch_ref in patch_refs.items())))
 
     # Once all the dependencies have been processed, it's now safe to write
     # out the gn_args_file and run the hooks.
@@ -1829,7 +1830,7 @@ it or fix the checkout.
                 'url': rev.split('@')[0] if rev else None,
                 'rev': rev.split('@')[1] if rev and '@' in rev else None,
             }
-            for name, rev in entries.iteritems()
+            for name, rev in entries.items()
         }
         if self._options.output_json == '-':
           print(json.dumps(json_output, indent=2, separators=(',', ': ')))
@@ -2117,7 +2118,7 @@ class Flattener(object):
       self._flatten_dep(solution)
 
     if pin_all_deps:
-      for dep in self._deps.itervalues():
+      for dep in self._deps.values():
         self._pin_dep(dep)
 
     def add_deps_file(dep):
@@ -2135,7 +2136,7 @@ class Flattener(object):
           return
       assert dep.url
       self._deps_files.add((dep.url, deps_file, dep.hierarchy_data()))
-    for dep in self._deps.itervalues():
+    for dep in self._deps.values():
       add_deps_file(dep)
 
     gn_args_dep = self._deps.get(self._client.dependencies[0]._gn_args_from,
@@ -2178,7 +2179,7 @@ class Flattener(object):
     # Only include vars explicitly listed in the DEPS files or gclient solution,
     # not automatic, local overrides (i.e. not all of dep.get_vars()).
     hierarchy = dep.hierarchy(include_url=False)
-    for key, value in dep._vars.iteritems():
+    for key, value in dep._vars.items():
       # Make sure there are no conflicting variables. It is fine however
       # to use same variable name, as long as the value is consistent.
       assert key not in self._vars or self._vars[key][1] == value, (
@@ -2186,7 +2187,7 @@ class Flattener(object):
           dep.name, key, value, self._vars[key][1]))
       self._vars[key] = (hierarchy, value)
     # Override explicit custom variables.
-    for key, value in dep.custom_vars.iteritems():
+    for key, value in dep.custom_vars.items():
       # Do custom_vars that don't correspond to DEPS vars ever make sense? DEPS
       # conditionals shouldn't be using vars that aren't also defined in the
       # DEPS (presubmit actually disallows this), so any new custom_var must be
@@ -2277,7 +2278,7 @@ def _DepsToLines(deps):
   if not deps:
     return []
   s = ['deps = {']
-  for _, dep in sorted(deps.iteritems()):
+  for _, dep in sorted(deps.items()):
     s.extend(dep.ToLines())
   s.extend(['}', ''])
   return s
@@ -2288,9 +2289,9 @@ def _DepsOsToLines(deps_os):
   if not deps_os:
     return []
   s = ['deps_os = {']
-  for dep_os, os_deps in sorted(deps_os.iteritems()):
+  for dep_os, os_deps in sorted(deps_os.items()):
     s.append('  "%s": {' % dep_os)
-    for name, dep in sorted(os_deps.iteritems()):
+    for name, dep in sorted(os_deps.items()):
       condition_part = (['      "condition": %r,' % dep.condition]
                         if dep.condition else [])
       s.extend([
@@ -2339,7 +2340,7 @@ def _HooksOsToLines(hooks_os):
   if not hooks_os:
     return []
   s = ['hooks_os = {']
-  for hook_os, os_hooks in hooks_os.iteritems():
+  for hook_os, os_hooks in hooks_os.items():
     s.append('  "%s": [' % hook_os)
     for dep, hook in os_hooks:
       s.extend([
@@ -2370,7 +2371,7 @@ def _VarsToLines(variables):
   if not variables:
     return []
   s = ['vars = {']
-  for key, tup in sorted(variables.iteritems()):
+  for key, tup in sorted(variables.items()):
     hierarchy, value = tup
     s.extend([
         '  # %s' % hierarchy,
@@ -3053,7 +3054,7 @@ class OptionParser(optparse.OptionParser):
     # Store the options passed by the user in an _actual_options attribute.
     # We store only the keys, and not the values, since the values can contain
     # arbitrary information, which might be PII.
-    metrics.collector.add('arguments', actual_options.__dict__.keys())
+    metrics.collector.add('arguments', list(actual_options.__dict__.keys()))
 
     levels = [logging.ERROR, logging.WARNING, logging.INFO, logging.DEBUG]
     logging.basicConfig(

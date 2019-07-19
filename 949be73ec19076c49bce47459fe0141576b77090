@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a2997a4_857761ab",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-07-19T22:46:32Z",
+      "side": 1,
+      "message": "Moving this check outside means that use_jumbo_build doesn\u0027t get set if GOMA_DISABLED is not set. This isn\u0027t a common combination, but we should support it if possible.",
+      "revId": "949be73ec19076c49bce47459fe0141576b77090",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb201c09_ef43ecb0",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-07-19T22:46:32Z",
+      "side": 1,
+      "message": "If we\u0027re going to use os.path.exists then maybe we shouldn\u0027t also be using exception handling. Although, I\u0027m not sure why we went with exception handling in the first place. It\u0027s been there since the beginning. I don\u0027t have strong feelings about whether we keep it or not, but it is certainly less necessary if we are doing explicit existence checks.",
+      "revId": "949be73ec19076c49bce47459fe0141576b77090",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

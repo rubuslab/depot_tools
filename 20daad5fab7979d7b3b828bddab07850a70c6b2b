@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "de7b6b7e_82dccd84",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-07-20T00:59:24Z",
+      "side": 1,
+      "message": "See comment.\nI don\u0027t know if we can do better than assuming \u0027python\u0027 is the Python 2 interpreter.\nI guess we could have an environment variable or a flag telling us what \u0027python\u0027 to use, but it doesn\u0027t seem necessary for now.",
+      "parentUuid": "53397e5c_060522a1",
+      "range": {
+        "startLine": 246,
+        "startChar": 66,
+        "endLine": 247,
+        "endChar": 34
+      },
+      "revId": "20daad5fab7979d7b3b828bddab07850a70c6b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "980c04c6_33e0c28d",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "c182361e_1113e25b",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1350,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-07-20T00:59:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "980c04c6_33e0c28d",
+      "range": {
+        "startLine": 1350,
+        "startChar": 20,
+        "endLine": 1350,
+        "endChar": 55
+      },
+      "revId": "20daad5fab7979d7b3b828bddab07850a70c6b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "489347f1_754be2c2",
         "filename": "gclient.py",
         "patchSetId": 1
@@ -68,6 +116,30 @@
       "revId": "20daad5fab7979d7b3b828bddab07850a70c6b2b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2040a0c1_2babf606",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3057,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-07-20T00:59:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "489347f1_754be2c2",
+      "range": {
+        "startLine": 3057,
+        "startChar": 67,
+        "endLine": 3057,
+        "endChar": 74
+      },
+      "revId": "20daad5fab7979d7b3b828bddab07850a70c6b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

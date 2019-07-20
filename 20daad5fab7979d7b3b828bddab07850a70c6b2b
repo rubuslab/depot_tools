@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53397e5c_060522a1",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-20T00:22:55Z",
+      "side": 1,
+      "message": "and what happens on py3?",
+      "range": {
+        "startLine": 246,
+        "startChar": 66,
+        "endLine": 247,
+        "endChar": 34
+      },
+      "revId": "20daad5fab7979d7b3b828bddab07850a70c6b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "980c04c6_33e0c28d",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1350,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-20T00:22:55Z",
+      "side": 1,
+      "message": "doesn\u0027t make sense. It was iterator, now you are forcing it to be a list. just .values() is fine.",
+      "range": {
+        "startLine": 1350,
+        "startChar": 20,
+        "endLine": 1350,
+        "endChar": 55
+      },
+      "revId": "20daad5fab7979d7b3b828bddab07850a70c6b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "489347f1_754be2c2",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3057,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-20T00:22:55Z",
+      "side": 1,
+      "message": "not necessary.",
+      "range": {
+        "startLine": 3057,
+        "startChar": 67,
+        "endLine": 3057,
+        "endChar": 74
+      },
+      "revId": "20daad5fab7979d7b3b828bddab07850a70c6b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

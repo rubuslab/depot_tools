@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8bd46b31_836d938a",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-20T01:12:51Z",
+      "side": 1,
+      "message": "fine. If it doesn\u0027t work, we\u0027ll notice pretty quicjly.",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 248,
+        "endChar": 47
+      },
+      "revId": "22b46f9cf95f091c78e050f1b28b8a24f9e56f64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

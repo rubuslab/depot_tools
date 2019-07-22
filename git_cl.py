@@ -5,7 +5,7 @@
 
 # Copyright (C) 2008 Evan Martin <martine@danga.com>
 
-"""A git-command for integrating reviews on Gerrit."""
+"""A git-command for integrating reviews on Gerrit"""
 
 from __future__ import print_function
 

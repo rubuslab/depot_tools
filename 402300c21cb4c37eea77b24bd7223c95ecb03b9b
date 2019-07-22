@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "41a83474_8bfa4476",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-07-22T17:22:41Z",
+      "side": 1,
+      "message": "Ah, thanks for clarification. Done.",
+      "parentUuid": "2175a5c4_104a5c77",
+      "range": {
+        "startLine": 302,
+        "startChar": 23,
+        "endLine": 302,
+        "endChar": 29
+      },
+      "revId": "402300c21cb4c37eea77b24bd7223c95ecb03b9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2754c220_cb86d5cb",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "402300c21cb4c37eea77b24bd7223c95ecb03b9b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30f76c3a_d072a5ba",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-07-22T17:22:41Z",
+      "side": 1,
+      "message": "I agree, much clearer.",
+      "parentUuid": "2754c220_cb86d5cb",
+      "range": {
+        "startLine": 305,
+        "startChar": 2,
+        "endLine": 306,
+        "endChar": 52
+      },
+      "revId": "402300c21cb4c37eea77b24bd7223c95ecb03b9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "b6890f9e_ed3da8f5",
+        "filename": "third_party/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-24T22:04:05Z",
+      "side": 1,
+      "message": "yes, i see, but is this needed for mox?\n\nI prefer to land such nasty path manipulations only when immediately necessary.",
+      "parentUuid": "9c84a076_fdd45867",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "becdcf2cfac26d91e25a4e976c4d4d062de00431",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7009f1b3_39ce4ba5",
         "filename": "third_party/pymox/mox.py",
         "patchSetId": 1
@@ -78,6 +102,24 @@
       "side": 1,
       "message": "Not for this one.\nI could create one.",
       "parentUuid": "7009f1b3_39ce4ba5",
+      "revId": "becdcf2cfac26d91e25a4e976c4d4d062de00431",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2edf5811_1ab7366f",
+        "filename": "third_party/pymox/mox.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-24T22:04:05Z",
+      "side": 1,
+      "message": "yes, please. prior art https://cs.chromium.org/search/?q\u003dthird_party+README.chromium\u0026sq\u003dpackage:chromium\u0026type\u003dcs",
+      "parentUuid": "2ad3aa64_da097cf8",
       "revId": "becdcf2cfac26d91e25a4e976c4d4d062de00431",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

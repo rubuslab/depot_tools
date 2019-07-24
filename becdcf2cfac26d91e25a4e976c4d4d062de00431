@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9c84a076_fdd45867",
+        "filename": "third_party/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-07-24T22:00:18Z",
+      "side": 1,
+      "message": "This makes it easier to vendor libraries in third_party.\n\nLibraries expect them and their dependencies to be installed. So library X which depends on library Y expects to be able to do\n\n  from X.foo import bar\n  import Y.baz",
+      "parentUuid": "79a6cc72_214f2160",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "becdcf2cfac26d91e25a4e976c4d4d062de00431",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7009f1b3_39ce4ba5",
         "filename": "third_party/pymox/mox.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2019-07-24T21:48:29Z",
       "side": 1,
       "message": "isn\u0027t there a file nearby which says which version of mox was imported?",
+      "revId": "becdcf2cfac26d91e25a4e976c4d4d062de00431",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ad3aa64_da097cf8",
+        "filename": "third_party/pymox/mox.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-07-24T22:00:18Z",
+      "side": 1,
+      "message": "Not for this one.\nI could create one.",
+      "parentUuid": "7009f1b3_39ce4ba5",
       "revId": "becdcf2cfac26d91e25a4e976c4d4d062de00431",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

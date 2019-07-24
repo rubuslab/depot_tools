@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79a6cc72_214f2160",
+        "filename": "third_party/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-24T21:48:29Z",
+      "side": 1,
+      "message": "why?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "becdcf2cfac26d91e25a4e976c4d4d062de00431",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7009f1b3_39ce4ba5",
+        "filename": "third_party/pymox/mox.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-24T21:48:29Z",
+      "side": 1,
+      "message": "isn\u0027t there a file nearby which says which version of mox was imported?",
+      "revId": "becdcf2cfac26d91e25a4e976c4d4d062de00431",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

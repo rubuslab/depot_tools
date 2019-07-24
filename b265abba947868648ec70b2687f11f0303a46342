@@ -16,6 +16,41 @@
       "revId": "b265abba947868648ec70b2687f11f0303a46342",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04045bf5_b28966b8",
+        "filename": ".vpython",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-24T23:12:42Z",
+      "side": 1,
+      "message": "yep, then you can ditch the \u0027sys.path\u0027 nonsense in testing_support/super_mox.py",
+      "parentUuid": "e428dd2e_a9b38412",
+      "revId": "b265abba947868648ec70b2687f11f0303a46342",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42a94c09_1d54be83",
+        "filename": "testing_support/super_mox.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-24T23:12:42Z",
+      "side": 1,
+      "message": "can we be guaranteed that \u0027testing_support\u0027 is only used by things within depot_tools? If something elsewhere tries to `sys.path` add this and `import super_mox` it will fail (where before it used to be successful).\n\nDon\u0027t get me wrong, doing so would be pretty horrific, but I\u0027ve seen worse abuses of depot_tools. It\u0027s probably worthwhile to do this change but just be aware of the potential breakage and be ready to find+fix those other bad locations with their own .vpython (and, ideally, not to put unpinned depot_tools subdirs on sys.path).",
+      "revId": "b265abba947868648ec70b2687f11f0303a46342",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

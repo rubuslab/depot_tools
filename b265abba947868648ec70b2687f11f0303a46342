@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e428dd2e_a9b38412",
+        "filename": ".vpython",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-24T22:30:49Z",
+      "side": 1,
+      "message": "if this doesn\u0027t affect other stuff by accident, definitely the way forward. In fact, six should probably be added here, too.",
+      "revId": "b265abba947868648ec70b2687f11f0303a46342",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

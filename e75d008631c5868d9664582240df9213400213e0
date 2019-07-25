@@ -124,6 +124,24 @@
       "revId": "e75d008631c5868d9664582240df9213400213e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "491cf617_e96ac0e5",
+        "filename": "gclient",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-07-25T19:00:54Z",
+      "side": 1,
+      "message": "Added #!/usr/bin/env vpython and vpython to the places that call gclient.",
+      "parentUuid": "9a63077e_5262802b",
+      "revId": "e75d008631c5868d9664582240df9213400213e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

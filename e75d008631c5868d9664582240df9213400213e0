@@ -34,6 +34,24 @@
       "revId": "e75d008631c5868d9664582240df9213400213e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba692e7b_7e7a605f",
+        "filename": "gclient",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2019-07-25T16:09:55Z",
+      "side": 1,
+      "message": "\u003e It is necessary, otherwise we\u0027d just have to assume users have the right libraries installed on their workstations.\n\nUnderstood, although we do kind of already assume that, which is why install-build-deps.sh exists. But that predates vpython, and I agree solving python dependencies with vpython is better.\n\n\u003e Good point about a possibily inconsistent behavior.\n\u003e It made me think that, as things are now, there is possibly inconsistent behavior on different workstations with different environments, so there\u0027s also an advantage to running gclient on a known environment.\n\nYeah, this, and a lot of other tools, probably should always be running with vpython, but in that case, I think it needs to be plumbed through more thoroughly.",
+      "parentUuid": "7606d3c9_4ffb9625",
+      "revId": "e75d008631c5868d9664582240df9213400213e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

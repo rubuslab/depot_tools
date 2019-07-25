@@ -88,6 +88,24 @@
       "revId": "e75d008631c5868d9664582240df9213400213e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54daf1ee_7105b4b3",
+        "filename": "gclient",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-25T16:50:09Z",
+      "side": 1,
+      "message": "just to chime in; it\u0027s always preferable to explicitly invoke vpython for tools that need it; this means it\u0027ll be consistent for everything.\n\nThe \u0027get it automatically on the bots\u0027 was more about insulating the tasks from accidentally picking up dependencies on the system python installation (which may have extra modules installed like psutil).",
+      "parentUuid": "f3f299cf_69f30b79",
+      "revId": "e75d008631c5868d9664582240df9213400213e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

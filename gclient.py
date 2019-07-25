@@ -94,6 +94,7 @@ import platform
 import posixpath
 import pprint
 import re
+import six
 import sys
 import time
 
@@ -116,7 +117,6 @@ import subcommand
 import subprocess2
 import setup_color
 
-from third_party import six
 
 
 # TODO(crbug.com/953884): Remove this when python3 migration is done.

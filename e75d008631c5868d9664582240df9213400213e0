@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b49d176f_7edefb61",
+        "filename": "gclient",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2019-07-25T15:13:08Z",
+      "side": 1,
+      "message": "I\u0027m not sure calling vpython explicitly in these wrappers is desirable, or necessary (it isn\u0027t like that in the \u0027gn\u0027 wrapper). Isn\u0027t its use meant to be largely invisible, and you either get it (e.g. on the bots) or not (e.g. on workstations) depending on how the environment is setup? This could give inconsistent behavior, running different versions of python, depending on whether someone calls \u0027gclient\u0027 or \u0027gclient.py\u0027. Probably not a huge problem, but also probably not ideal.",
+      "revId": "e75d008631c5868d9664582240df9213400213e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

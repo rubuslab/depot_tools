@@ -5,8 +5,8 @@
 
 import sys
 
-from third_party.six.moves import urllib
-from third_party.six.moves import input # pylint: disable=redefined-builtin
+from six.moves import urllib
+from six.moves import input # pylint: disable=redefined-builtin
 
 import metrics_utils
 

@@ -70,6 +70,24 @@
       "revId": "e75d008631c5868d9664582240df9213400213e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3f299cf_69f30b79",
+        "filename": "gclient",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2019-07-25T16:20:48Z",
+      "side": 1,
+      "message": "Yeah, like maybe gclient.py should use:\n\n#!/usr/bin/env vpython\n\nand maybe things that run gclient.py, like \u0027fetch\u0027, should also be updated to explicitly use vpython, although I defer to iannucci on whether or not all that is appropriate here.",
+      "parentUuid": "32bc845e_d8d34a84",
+      "revId": "e75d008631c5868d9664582240df9213400213e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

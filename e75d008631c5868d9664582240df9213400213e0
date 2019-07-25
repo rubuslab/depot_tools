@@ -106,6 +106,24 @@
       "revId": "e75d008631c5868d9664582240df9213400213e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a63077e_5262802b",
+        "filename": "gclient",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2019-07-25T16:56:39Z",
+      "side": 1,
+      "message": "sgtm, thanks",
+      "parentUuid": "54daf1ee_7105b4b3",
+      "revId": "e75d008631c5868d9664582240df9213400213e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

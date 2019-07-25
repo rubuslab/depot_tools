@@ -311,7 +311,9 @@ def call_gclient(*args, **kwargs):
     args: command-line arguments to pass to gclient.
     kwargs: keyword arguments to pass to call.
   """
-  cmd = [sys.executable, '-u', GCLIENT_PATH]
+  call(['git', '-C', DEPOT_TOOLS_DIR, 'show', 'HEAD'])
+  cmd = ['vpython', '-vpython-spec', os.path.join(DEPOT_TOOLS_DIR, '.vpython'),
+         '-u', GCLIENT_PATH]
   cmd.extend(args)
   # Disable metrics collection on bots, since it's not supported anyway.
   kwargs.setdefault('env', {})['DEPOT_TOOLS_METRICS'] = '0'

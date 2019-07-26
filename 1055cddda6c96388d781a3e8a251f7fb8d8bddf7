@@ -22,6 +22,29 @@
       "revId": "1055cddda6c96388d781a3e8a251f7fb8d8bddf7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55eb9ba4_30906bb2",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2019-07-26T13:51:24Z",
+      "side": 1,
+      "message": "This is currently only updating some revisions. If you bail out you don\u0027t remove the entries.",
+      "range": {
+        "startLine": 445,
+        "startChar": 8,
+        "endLine": 446,
+        "endChar": 61
+      },
+      "revId": "1055cddda6c96388d781a3e8a251f7fb8d8bddf7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

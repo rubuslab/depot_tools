@@ -402,6 +402,15 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
     return target_ref
 
+  def _resolve_chromium_fixed_revision(self, bot_update_json):
+    """Set Chromium fixed revision from the first sync to their respective
+    got_X_revision values.
+    """
+
+    self.m.gclient.c.revisions = {
+      'src': bot_update_json['properties']['got_cr_revision'],
+    }
+
   def _resolve_fixed_revisions(self, bot_update_json):
     """Set all fixed revisions from the first sync to their respective
     got_X_revision values.

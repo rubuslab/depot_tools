@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "28d8572b_26b197d6",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2019-07-26T18:01:29Z",
+      "side": 1,
+      "message": "nit: remove _ since the idea is that we call it outside of this api. Below method is probably a holdover from a refactoring when bot_update moved to depot tools.",
+      "range": {
+        "startLine": 405,
+        "startChar": 6,
+        "endLine": 405,
+        "endChar": 7
+      },
+      "revId": "9c99a345cccd14cb681d9e07b2979ceedaa5ba08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "832057d6_3c077244",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2019-07-26T18:01:29Z",
+      "side": 1,
+      "message": "It\u0027s fine to use Chromium as an example in the docu, but the code should be free of chromium specific stuff. E.g. call hte method resolve_fixed_revision and add a parameter \"name\" and then:\nrev_properties \u003d self.get_project_revision_properties(name)\nself.m.gclient.c.revisions[name] \u003d str(\n            bot_update_json[\u0027properties\u0027][rev_properties[0]])\n\nOr use the manifest instead. These got_X_revision properties are also some legacy.",
+      "range": {
+        "startLine": 406,
+        "startChar": 11,
+        "endLine": 406,
+        "endChar": 19
+      },
+      "revId": "9c99a345cccd14cb681d9e07b2979ceedaa5ba08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

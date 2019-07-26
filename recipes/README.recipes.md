@@ -55,7 +55,7 @@ Recipe module to ensure a checkout is consistent on a bot.
 
 Wrapper for easy calling of bot_update.
 
-&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#468)(self, bot_update_step):**
+&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#477)(self, bot_update_step):**
 
 Deapplies a patch, taking care of DEPS and solution revisions properly.
     
@@ -82,7 +82,7 @@ Args:
   step_test_data: a null function that returns test bot_update.py output.
     Use test_api.output_json to generate test data.
 
-&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#445)(self, project_name, gclient_config=None):**
+&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#454)(self, project_name, gclient_config=None):**
 
 Returns all property names used for storing the checked-out revision of
 a given project.

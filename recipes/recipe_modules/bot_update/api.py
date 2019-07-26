@@ -402,7 +402,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
     return target_ref
 
-  def _resolve_fixed_revisions(self, bot_update_json):
+  def _resolve_fixed_revisions(self, bot_update_json, targets=set()):
     """Set all fixed revisions from the first sync to their respective
     got_X_revision values.
 
@@ -434,9 +434,14 @@ class BotUpdateApi(recipe_api.RecipeApi):
     When deapplying the patch, v8 will be synced to v8_before.
     """
     for name in bot_update_json.get('fixed_revisions', {}):
+      if name not in targets:
+        continue
+
       rev_properties = self.get_project_revision_properties(name)
-      if (rev_properties and
-          bot_update_json['properties'].get(rev_properties[0])):
+      if not rev_properties:
+        continue
+
+      if bot_update_json['properties'].get(rev_properties[0]):
         self.m.gclient.c.revisions[name] = str(
             bot_update_json['properties'][rev_properties[0]])
 

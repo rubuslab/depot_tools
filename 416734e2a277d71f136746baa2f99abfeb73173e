@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "61416181_b49395b8",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1141499
+      },
+      "writtenOn": "2019-07-27T00:36:21Z",
+      "side": 1,
+      "message": "TIL. I guess I have to learn Python3...",
+      "range": {
+        "startLine": 243,
+        "startChar": 16,
+        "endLine": 243,
+        "endChar": 25
+      },
+      "revId": "416734e2a277d71f136746baa2f99abfeb73173e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

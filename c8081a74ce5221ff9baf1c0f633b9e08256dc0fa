@@ -117,6 +117,30 @@
       "revId": "c8081a74ce5221ff9baf1c0f633b9e08256dc0fa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be1d6d38_5986c587",
+        "filename": "gclient_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-07-31T17:42:08Z",
+      "side": 1,
+      "message": "But stdout won\u0027t always be sys.stdout, it can be a StringIO, which AFAIK doesn\u0027t have such a method.",
+      "parentUuid": "379af7a5_00bca197",
+      "range": {
+        "startLine": 588,
+        "startChar": 21,
+        "endLine": 588,
+        "endChar": 26
+      },
+      "revId": "c8081a74ce5221ff9baf1c0f633b9e08256dc0fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

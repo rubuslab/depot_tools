@@ -45,6 +45,30 @@
       "revId": "c8081a74ce5221ff9baf1c0f633b9e08256dc0fa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1069f5ed_63e60e63",
+        "filename": "gclient_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-07-31T17:36:42Z",
+      "side": 1,
+      "message": "You cannot write bytes to sys.stdout in Python 3, so we have to decode the bytes before writing to stdout.\n\nI will use a BytesIO instead of +\u003d",
+      "parentUuid": "4fd4a7c3_eb351347",
+      "range": {
+        "startLine": 588,
+        "startChar": 21,
+        "endLine": 588,
+        "endChar": 26
+      },
+      "revId": "c8081a74ce5221ff9baf1c0f633b9e08256dc0fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

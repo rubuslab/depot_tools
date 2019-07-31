@@ -576,6 +576,7 @@ def CheckCallAndFilter(args, stdout=None, filter_fn=None,
     # not show up.
     try:
       in_byte = kid.stdout.read(1)
+      bytes_buffer = in_byte
       if in_byte:
         if call_filter_on_first_line:
           filter_fn(None)
@@ -583,17 +584,22 @@ def CheckCallAndFilter(args, stdout=None, filter_fn=None,
         while in_byte:
           output.write(in_byte)
           if print_stdout:
-            stdout.write(in_byte)
-          if in_byte not in ['\r', '\n']:
+            try:
+              stdout.write(bytes_buffer.decode('utf-8'))
+              bytes_buffer = b''
+            except UnicodeDecodeError:
+              pass
+          if in_byte not in [b'\r', b'\n']:
             in_line += in_byte
           else:
-            filter_fn(in_line)
+            filter_fn(in_line.decode('utf-8'))
             in_line = b''
           in_byte = kid.stdout.read(1)
+          bytes_buffer += in_byte
         # Flush the rest of buffered output. This is only an issue with
         # stdout/stderr not ending with a \n.
         if len(in_line):
-          filter_fn(in_line)
+          filter_fn(in_line.decode('utf-8'))
       rv = kid.wait()
       kid.stdout.close()
 

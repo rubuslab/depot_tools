@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79077ef5_502da573",
+        "filename": "vpython3",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003211
+      },
+      "writtenOn": "2019-07-31T01:26:09Z",
+      "side": 1,
+      "message": "diff vpython vpython3:\nhttps://paste.googleplex.com/6343122235686912",
+      "revId": "8bbadadc6ca971665907edd06340b137801146af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4482a6d1_c67277a8",
+        "filename": "vpython3.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003211
+      },
+      "writtenOn": "2019-07-31T01:26:09Z",
+      "side": 1,
+      "message": "diff vpython.bat vpython3.bat:\nhttps://paste.googleplex.com/5833646101495808",
+      "revId": "8bbadadc6ca971665907edd06340b137801146af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

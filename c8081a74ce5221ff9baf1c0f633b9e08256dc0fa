@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "57af45c8_40568a23",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-31T04:10:06Z",
+      "side": 1,
+      "message": "nit: caught",
+      "range": {
+        "startLine": 15,
+        "startChar": 12,
+        "endLine": 15,
+        "endChar": 19
+      },
+      "revId": "c8081a74ce5221ff9baf1c0f633b9e08256dc0fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fd4a7c3_eb351347",
+        "filename": "gclient_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-07-31T04:10:06Z",
+      "side": 1,
+      "message": "I don\u0027t think I understand the necessity of this; I think you only need to decode the bytes as utf-8 when calling filter_fn. So:\n\n  * read a byte\n    * write the byte to output\n    * write the byte to stdout\n    * if the byte is in (b\u0027\\r\u0027, b\u0027\\n\u0027)\n      * decode the whole line and call filter_fn\n    * else\n      * buffer that byte\n\nGeneral notes: strongly prefer a BytesIO to doing `str +\u003d str`; BytesIO can efficiently buffer bytes one at a time, but `str +\u003d str` may do quadratic allocation, which you probably don\u0027t want (there\u0027s a very specific optimization that CPython makes for +\u003d, but you can\u0027t rely on it).\n\n\nSomething like (untested)\n\n  buf \u003d io.BytesIO()\n  while:\n    cur_byte \u003d kid.stdout.read(1)\n    if not cur_byte:\n      if buf.tell():\n        filter_fn(buf.getvalue().decode(\u0027utf-8\u0027))\n      break\n\n    output.write(cur_byte)\n    stdout.write(cur_byte)\n\n    if cur_byte in (b\u0027\\r\u0027, b\u0027\\n\u0027):\n      filter_fn(buf.getvalue().decode(\u0027utf-8\u0027))\n      buf.truncate(0)\n    else:\n      buf.write(cur_byte)",
+      "range": {
+        "startLine": 588,
+        "startChar": 21,
+        "endLine": 588,
+        "endChar": 26
+      },
+      "revId": "c8081a74ce5221ff9baf1c0f633b9e08256dc0fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

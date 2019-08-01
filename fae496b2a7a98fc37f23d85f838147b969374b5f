@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e0c039fd_3f81ed4d",
+        "filename": "gclient_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-01T20:51:09Z",
+      "side": 1,
+      "message": "... as a binary string.\n\n(so callers know that they may need to decode it if they expect text)",
+      "range": {
+        "startLine": 508,
+        "startChar": 28,
+        "endLine": 508,
+        "endChar": 35
+      },
+      "revId": "fae496b2a7a98fc37f23d85f838147b969374b5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "770b6657_da0ece6a",
+        "filename": "gclient_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-01T20:51:09Z",
+      "side": 1,
+      "message": "you can put this on line 548 and close over command_output",
+      "range": {
+        "startLine": 531,
+        "startChar": 18,
+        "endLine": 531,
+        "endChar": 32
+      },
+      "revId": "fae496b2a7a98fc37f23d85f838147b969374b5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6717c84e_1fba63ff",
+        "filename": "gclient_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-01T20:51:09Z",
+      "side": 1,
+      "message": "probably need to `command_output.truncate(0)` here (for retries)",
+      "revId": "fae496b2a7a98fc37f23d85f838147b969374b5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc148b74_297a9a8b",
+        "filename": "gclient_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-01T20:51:09Z",
+      "side": 1,
+      "message": "should the retry # be included in the header too? This is a bit surprising that we\u0027d print an identical header up to RETRY_MAX times",
+      "range": {
+        "startLine": 560,
+        "startChar": 6,
+        "endLine": 560,
+        "endChar": 30
+      },
+      "revId": "fae496b2a7a98fc37f23d85f838147b969374b5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

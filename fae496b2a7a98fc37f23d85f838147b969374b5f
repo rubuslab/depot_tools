@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3529e076_c7c66e10",
+        "filename": "gclient_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-01T21:23:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0c039fd_3f81ed4d",
+      "range": {
+        "startLine": 508,
+        "startChar": 28,
+        "endLine": 508,
+        "endChar": 35
+      },
+      "revId": "fae496b2a7a98fc37f23d85f838147b969374b5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "770b6657_da0ece6a",
         "filename": "gclient_utils.py",
         "patchSetId": 10
@@ -36,6 +60,30 @@
       "writtenOn": "2019-08-01T20:51:09Z",
       "side": 1,
       "message": "you can put this on line 548 and close over command_output",
+      "range": {
+        "startLine": 531,
+        "startChar": 18,
+        "endLine": 531,
+        "endChar": 32
+      },
+      "revId": "fae496b2a7a98fc37f23d85f838147b969374b5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2bceecc_a8f83506",
+        "filename": "gclient_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-01T21:23:58Z",
+      "side": 1,
+      "message": "I\u0027d rather pass it as an argument. I find it a bit easier to understand.",
+      "parentUuid": "770b6657_da0ece6a",
       "range": {
         "startLine": 531,
         "startChar": 18,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "610d9c55_7f0ce5ae",
+        "filename": "gclient_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-01T21:23:58Z",
+      "side": 1,
+      "message": "I moved the declaration of command_output here.",
+      "parentUuid": "6717c84e_1fba63ff",
+      "revId": "fae496b2a7a98fc37f23d85f838147b969374b5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bc148b74_297a9a8b",
         "filename": "gclient_utils.py",
         "patchSetId": 10
@@ -85,6 +151,30 @@
       "revId": "fae496b2a7a98fc37f23d85f838147b969374b5f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9300e72a_2ecb9502",
+        "filename": "gclient_utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-01T21:23:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc148b74_297a9a8b",
+      "range": {
+        "startLine": 560,
+        "startChar": 6,
+        "endLine": 560,
+        "endChar": 30
+      },
+      "revId": "fae496b2a7a98fc37f23d85f838147b969374b5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

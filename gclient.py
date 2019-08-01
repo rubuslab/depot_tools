@@ -252,8 +252,9 @@ class Hook(object):
 
     try:
       start_time = time.time()
-      gclient_utils.CheckCallAndFilterAndHeader(
-          cmd, cwd=self.effective_cwd, always=self._verbose)
+      gclient_utils.CheckCallAndFilter(
+          cmd, cwd=self.effective_cwd, print_stdout=True, show_header=True,
+          always_show_header=True)
     except (gclient_utils.Error, subprocess2.CalledProcessError) as e:
       # Use a discrete exit status code of 2 to indicate that a hook action
       # failed.  Users of this script may wish to treat hook action failures
@@ -997,8 +998,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
           try:
             gclient_utils.CheckCallAndFilter(
                 args, cwd=cwd, env=env, print_stdout=print_stdout,
-                filter_fn=filter_fn,
-                )
+                filter_fn=filter_fn)
           except subprocess2.CalledProcessError:
             if not options.ignore:
               raise

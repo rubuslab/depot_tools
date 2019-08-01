@@ -339,13 +339,12 @@ class Mirror(object):
   def RunGit(self, cmd, **kwargs):
     """Run git in a subprocess."""
     cwd = kwargs.setdefault('cwd', self.mirror_path)
-    kwargs.setdefault('print_stdout', False)
-    kwargs.setdefault('filter_fn', self.print)
     env = kwargs.get('env') or kwargs.setdefault('env', os.environ.copy())
     env.setdefault('GIT_ASKPASS', 'true')
     env.setdefault('SSH_ASKPASS', 'true')
     self.print('running "git %s" in "%s"' % (' '.join(cmd), cwd))
-    gclient_utils.CheckCallAndFilter([self.git_exe] + cmd, **kwargs)
+    gclient_utils.CheckCallAndFilter(
+        [self.git_exe] + cmd, filter_fn=self.print, **kwargs)
 
   def config(self, cwd=None, reset_fetch_config=False):
     if cwd is None:

@@ -2612,10 +2612,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
       push_stdout = gclient_utils.CheckCallAndFilter(
           ['git', 'push', remote_url, refspec],
           env=env,
-          print_stdout=True,
-          # Flush after every line: useful for seeing progress when running as
-          # recipe.
-          filter_fn=lambda _: sys.stdout.flush())
+          print_stdout=True)
     except subprocess2.CalledProcessError as e:
       push_returncode = e.returncode
       DieWithError('Failed to create a change. Please examine output above '

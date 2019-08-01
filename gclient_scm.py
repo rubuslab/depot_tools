@@ -912,7 +912,7 @@ class GitWrapper(SCMWrapper):
         merge_base = []
       self._Run(
           ['-c', 'core.quotePath=false', 'diff', '--name-status'] + merge_base,
-          options, stdout=self.out_fh, always=options.verbose)
+          options, show_header=True, always_show_header=options.verbose)
       if file_list is not None:
         files = self._GetDiffFilenames(merge_base[0] if merge_base else None)
         file_list.extend([os.path.join(self.checkout_path, f) for f in files])
@@ -1035,14 +1035,8 @@ class GitWrapper(SCMWrapper):
         dir=parent_dir)
     try:
       clone_cmd.append(tmp_dir)
-      if self.print_outbuf:
-        print_stdout = True
-        stdout = gclient_utils.WriteToStdout(self.out_fh)
-      else:
-        print_stdout = False
-        stdout = self.out_fh
       self._Run(clone_cmd, options, cwd=self._root_dir, retry=True,
-                print_stdout=print_stdout, stdout=stdout)
+                print_stdout=self.print_outbuf)
       gclient_utils.safe_makedirs(self.checkout_path)
       gclient_utils.safe_rename(os.path.join(tmp_dir, '.git'),
                                 os.path.join(self.checkout_path, '.git'))
@@ -1358,18 +1352,13 @@ class GitWrapper(SCMWrapper):
       revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
     return revision
 
-  def _Run(self, args, options, show_header=True, **kwargs):
+  def _Run(self, args, options, **kwargs):
     # Disable 'unused options' warning | pylint: disable=unused-argument
     kwargs.setdefault('cwd', self.checkout_path)
-    kwargs.setdefault('stdout', self.out_fh)
-    kwargs['filter_fn'] = self.filter
-    kwargs.setdefault('print_stdout', False)
+    kwargs.setdefault('filter_fn', self.filter)
     env = scm.GIT.ApplyEnvVars(kwargs)
     cmd = ['git'] + args
-    if show_header:
-      gclient_utils.CheckCallAndFilterAndHeader(cmd, env=env, **kwargs)
-    else:
-      gclient_utils.CheckCallAndFilter(cmd, env=env, **kwargs)
+    gclient_utils.CheckCallAndFilter(cmd, env=env, **kwargs)
 
 
 class CipdPackage(object):
@@ -1480,7 +1469,7 @@ class CipdRoot(object):
             '-root', self.root_dir,
             '-ensure-file', ensure_file,
         ]
-        gclient_utils.CheckCallAndFilterAndHeader(cmd)
+        gclient_utils.CheckCallAndFilterAndHeader(cmd, print_stdout=True)
 
   def run(self, command):
     if command == 'update':
@@ -1565,8 +1554,7 @@ class CipdWrapper(SCMWrapper):
           '-version', self._package.version,
           '-json-output', describe_json_path
       ]
-      gclient_utils.CheckCallAndFilter(
-          cmd, filter_fn=lambda _line: None, print_stdout=False)
+      subprocess2.check_call(cmd)
       with open(describe_json_path) as f:
         describe_json = json.load(f)
       return describe_json.get('result', {}).get('pin', {}).get('instance_id')

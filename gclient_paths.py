@@ -72,7 +72,7 @@ def GetPrimarySolutionPath():
         top_dir[0] = repo_root_path
     try:
       CheckCallAndFilter(["git", "rev-parse", "--show-toplevel"],
-                         print_stdout=False, filter_fn=filter_fn)
+                         filter_fn=filter_fn)
     except Exception:
       pass
     top_dir = top_dir[0]

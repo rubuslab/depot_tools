@@ -47,6 +47,7 @@ else:
 RETRY_MAX = 3
 RETRY_INITIAL_SLEEP = 0.5
 START = datetime.datetime.now()
+DEFAULT_HEADER = object()
 
 
 _WARNINGS = []
@@ -312,38 +313,6 @@ def CommandToStr(args):
   return ' '.join(pipes.quote(arg) for arg in args)
 
 
-def CheckCallAndFilterAndHeader(args, always=False, header=None, **kwargs):
-  """Adds 'header' support to CheckCallAndFilter.
-
-  If |always| is True, a message indicating what is being done
-  is printed to stdout all the time even if not output is generated. Otherwise
-  the message header is printed only if the call generated any ouput.
-  """
-  stdout = kwargs.setdefault('stdout', sys.stdout)
-  if header is None:
-    # The automatically generated header only prepends newline if always is
-    # false: always is usually set to false if there's an external progress
-    # display, and it's better not to clobber it in that case.
-    header = "%s________ running '%s' in '%s'\n" % (
-                 '' if always else '\n',
-                 ' '.join(args), kwargs.get('cwd', '.'))
-
-  if always:
-    stdout.write(header)
-  else:
-    filter_fn = kwargs.get('filter_fn')
-    def filter_msg(line):
-      if line is None:
-        stdout.write(header)
-      elif filter_fn:
-        filter_fn(line)
-    kwargs['filter_fn'] = filter_msg
-    kwargs['call_filter_on_first_line'] = True
-  # Obviously.
-  kwargs.setdefault('print_stdout', True)
-  return CheckCallAndFilter(args, **kwargs)
-
-
 class Wrapper(object):
   """Wraps an object, acting as a transparent proxy for all properties by
   default.
@@ -353,22 +322,6 @@ class Wrapper(object):
 
   def __getattr__(self, name):
     return getattr(self._wrapped, name)
-
-
-class WriteToStdout(Wrapper):
-  """Creates a file object clone to also print to sys.stdout."""
-  def __init__(self, wrapped):
-    super(WriteToStdout, self).__init__(wrapped)
-    if not hasattr(self, 'lock'):
-      self.lock = threading.Lock()
-
-  def write(self, out, *args, **kwargs):
-    self._wrapped.write(out, *args, **kwargs)
-    self.lock.acquire()
-    try:
-      sys.stdout.write(out, *args, **kwargs)
-    finally:
-      self.lock.release()
 
 
 class AutoFlush(Wrapper):
@@ -536,26 +489,37 @@ class GClientChildren(object):
           print('  ', zombie.pid, file=sys.stderr)
 
 
-def CheckCallAndFilter(args, stdout=None, filter_fn=None,
-                       print_stdout=None, call_filter_on_first_line=False,
-                       retry=False, **kwargs):
+def CheckCallAndFilter(args, print_stdout=False, filter_fn=None,
+                       show_header=False, always_show_header=False, retry=False,
+                       **kwargs):
   """Runs a command and calls back a filter function if needed.
 
   Accepts all subprocess2.Popen() parameters plus:
     print_stdout: If True, the command's stdout is forwarded to stdout.
+                  Overrides filter_fn.
     filter_fn: A function taking a single string argument called with each line
                of the subprocess2's output. Each line has the trailing newline
                character trimmed.
-    stdout: Can be any bufferable output.
+    show_header: Whether to display a header before the command output.
+    always_show_header: Show header even when the command produced no output.
     retry: If the process exits non-zero, sleep for a brief interval and try
            again, up to RETRY_MAX times.
 
   stderr is always redirected to stdout.
+
+  Returns the output of the command.
   """
-  assert print_stdout or filter_fn
-  stdout = stdout or sys.stdout
-  output = io.BytesIO()
-  filter_fn = filter_fn or (lambda x: None)
+  # All the command output will be stored and returned regardless of the value
+  # of print_stdout or filter_fn.
+  command_output = io.BytesIO()
+
+  # Automatically generate a header. We only prepend a newline if
+  # always_show_header is false, since it usually indicates there's an external
+  # progress display, and it's better not to clobber it in that case.
+  if show_header:
+    header = "%s________ running '%s' in '%s'\n" % (
+                 '' if always_show_header else '\n',
+                 ' '.join(args), kwargs.get('cwd', '.'))
 
   sleep_interval = RETRY_INITIAL_SLEEP
   run_cwd = kwargs.get('cwd', os.getcwd())
@@ -566,8 +530,18 @@ def CheckCallAndFilter(args, stdout=None, filter_fn=None,
 
     GClientChildren.add(kid)
 
-    # Do a flush of stdout before we begin reading from the subprocess2's stdout
-    stdout.flush()
+    if print_stdout:
+      sys.stdout.flush()
+      stdout_buffer = getattr(sys.stdout, 'buffer', sys.stdout)
+    if filter_fn:
+      line_buffer = io.BytesIO()
+
+    if always_show_header:
+      if print_stdout:
+        sys.stdout.write(header)
+      if filter_fn:
+        filter_fn(header)
+      show_header = False
 
     # Also, we need to forward stdout to prevent weird re-ordering of output.
     # This has to be done on a per byte basis to make sure it is not buffered:
@@ -575,25 +549,37 @@ def CheckCallAndFilter(args, stdout=None, filter_fn=None,
     # input, no end-of-line character is output after the prompt and it would
     # not show up.
     try:
-      in_byte = kid.stdout.read(1)
-      if in_byte:
-        if call_filter_on_first_line:
-          filter_fn(None)
-        in_line = b''
-        while in_byte:
-          output.write(in_byte)
+      first_byte = True
+      while True:
+        in_byte = kid.stdout.read(1)
+        is_newline = in_byte in (b'\n', b'\r')
+        if not in_byte:
+          break
+
+        if first_byte and show_header:
+          first_byte = False
           if print_stdout:
-            stdout.write(in_byte)
-          if in_byte not in ['\r', '\n']:
-            in_line += in_byte
+            sys.stdout.write(header)
+          if filter_fn:
+            filter_fn(header)
+
+        command_output.write(in_byte)
+        if print_stdout:
+          stdout_buffer.write(in_byte)
+        if filter_fn:
+          if not is_newline:
+            line_buffer.write(in_byte)
           else:
-            filter_fn(in_line)
-            in_line = b''
-          in_byte = kid.stdout.read(1)
-        # Flush the rest of buffered output. This is only an issue with
-        # stdout/stderr not ending with a \n.
-        if len(in_line):
-          filter_fn(in_line)
+            filter_fn(line_buffer.getvalue().decode('utf-8'))
+            line_buffer.seek(0)
+            line_buffer.truncate()
+
+      # Flush the rest of buffered output.
+      if print_stdout:
+        sys.stdout.flush()
+      if filter_fn and line_buffer.tell():
+        filter_fn(line_buffer.getvalue().decode('utf-8'))
+
       rv = kid.wait()
       kid.stdout.close()
 
@@ -606,13 +592,16 @@ def CheckCallAndFilter(args, stdout=None, filter_fn=None,
       raise
 
     if rv == 0:
-      return output.getvalue()
+      return command_output.getvalue()
+
     if not retry:
       break
+
     print("WARNING: subprocess '%s' in %s failed; will retry after a short "
           'nap...' % (' '.join('"%s"' % x for x in args), run_cwd))
     time.sleep(sleep_interval)
     sleep_interval *= 2
+
   raise subprocess2.CalledProcessError(
       rv, args, kwargs.get('cwd', None), None, None)
 
@@ -635,6 +624,7 @@ class GitFilter(object):
         The line will be skipped if predicate(line) returns False.
       out_fh: File handle to write output to.
     """
+    self.first_line = True
     self.last_time = 0
     self.time_throttle = time_throttle
     self.predicate = predicate
@@ -656,7 +646,9 @@ class GitFilter(object):
       elif now - self.last_time < self.time_throttle:
         return
     self.last_time = now
-    self.out_fh.write('[%s] ' % Elapsed())
+    if not self.first_line:
+      self.out_fh.write('[%s] ' % Elapsed())
+    self.first_line = True
     print(line, file=self.out_fh)
 
 

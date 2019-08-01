@@ -4,8 +4,10 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+from __future__ import unicode_literals
+
+import io
 import os
-import StringIO
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -28,18 +30,17 @@ class GclientUtilBase(SuperMoxTestBase):
 class CheckCallAndFilterTestCase(GclientUtilBase):
   class ProcessIdMock(object):
     def __init__(self, test_string):
-      self.stdout = StringIO.StringIO(test_string)
+      self.stdout = io.BytesIO(test_string.encode('utf-8'))
       self.pid = 9284
     # pylint: disable=no-self-use
     def wait(self):
       return 0
 
-  def _inner(self, args, test_string):
+  def testCheckCallAndFilter(self):
     cwd = 'bleh'
-    gclient_utils.sys.stdout.write(
-        '________ running \'boo foo bar\' in \'bleh\'\n')
-    for i in test_string:
-      gclient_utils.sys.stdout.write(i)
+    args = ['boo', 'foo', 'bar']
+    test_string = 'ahah\naccb\nallo\naddb\n✔\n'
+
     # pylint: disable=no-member
     subprocess2.Popen(
         args,
@@ -50,30 +51,17 @@ class CheckCallAndFilterTestCase(GclientUtilBase):
 
     os.getcwd()
     self.mox.ReplayAll()
-    compiled_pattern = gclient_utils.re.compile(r'a(.*)b')
     line_list = []
-    capture_list = []
-    def FilterLines(line):
-      line_list.append(line)
-      assert isinstance(line, str), type(line)
-      match = compiled_pattern.search(line)
-      if match:
-        capture_list.append(match.group(1))
-    gclient_utils.CheckCallAndFilterAndHeader(
-        args, cwd=cwd, always=True, filter_fn=FilterLines)
-    self.assertEquals(line_list, ['ahah', 'accb', 'allo', 'addb', '✔'])
-    self.assertEquals(capture_list, ['cc', 'dd'])
-
-  def testCheckCallAndFilter(self):
-    args = ['boo', 'foo', 'bar']
-    test_string = 'ahah\naccb\nallo\naddb\n✔\n'
-    self._inner(args, test_string)
-    self.checkstdout(
-        '________ running \'boo foo bar\' in \'bleh\'\n'
-        'ahah\naccb\nallo\naddb\n✔\n'
-        '________ running \'boo foo bar\' in \'bleh\'\n'
-        'ahah\naccb\nallo\naddb\n✔'
-        '\n')
+    gclient_utils.CheckCallAndFilter(
+        args, cwd=cwd, show_header=True, always_show_header=True,
+        filter_fn=line_list.append)
+    self.assertEquals(line_list, [
+        '________ running \'boo foo bar\' in \'bleh\'\n',
+        'ahah',
+        'accb',
+        'allo',
+        'addb',
+        '✔'])
 
 
 class SplitUrlRevisionTestCase(GclientUtilBase):

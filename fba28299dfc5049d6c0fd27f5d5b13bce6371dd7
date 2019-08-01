@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f54ab7c_95c22f1e",
+        "filename": "gclient_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-01T17:52:30Z",
+      "side": 1,
+      "message": "could this be (True, False, \u0027force\u0027)? And then drop `always_show_header`?",
+      "range": {
+        "startLine": 493,
+        "startChar": 23,
+        "endLine": 493,
+        "endChar": 34
+      },
+      "revId": "fba28299dfc5049d6c0fd27f5d5b13bce6371dd7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "097bf65a_f9a3db07",
+        "filename": "gclient_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-01T17:52:30Z",
+      "side": 1,
+      "message": "I don\u0027t think you need first_byte, since you\u0027re already manipulating the value of `show_header`.",
+      "range": {
+        "startLine": 552,
+        "startChar": 6,
+        "endLine": 552,
+        "endChar": 16
+      },
+      "revId": "fba28299dfc5049d6c0fd27f5d5b13bce6371dd7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b2da82b_79105fc6",
+        "filename": "gclient_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-01T17:52:30Z",
+      "side": 1,
+      "message": "I think this could just be:\n\n   if show_header:\n     show_header \u003d False \n     ....\n\n\nIn fact, a couple ideas come to mind:\n\n   # pre-process all conditionals around callbacks filter_fn \u0026\u0026 writing stdout\n   if filter_fn:\n     filter_fn_str \u003d lambda line: filter_fn(line)\n     def filter_fn_buf(idx, buf):\n     filter_fn_buf \u003d lambda idx, buf: (\n        buf.seek(idx),\n        filter_fn(buf.read().decode(\u0027utf-8\u0027)),\n     )\n   else:\n     filter_fn_str \u003d lambda _: None\n     filter_fn_buf \u003d lambda _, _: None\n\n   write_stdout \u003d sys.stdout.write\n   if not print_stdout:\n     write_stdout \u003d lambda _: None\n\n   # encapsulate the state of if we\u0027ve written the header already or not.\n   need_header_print \u003d [True]  # list for \"by ref\" semantics\n   def _maybe_print_header():\n      if not need_header_print:\n        return\n      need_header_print.pop()\n      write_stdout(header)\n      filter_fn_str(header)\n\n   if always_show_header:\n     _maybe_print_header()\n\n   # Use an index in command_output (which we always have to buffer) instead of \n   # having a duplicate per-line buffer.\n   line_start_idx \u003d None\n\n   # Now the main loop is super short!\n   while True:\n     in_byte \u003d kid.stdout.read(1)\n     is_newline \u003d in_byte in (b\u0027\\n\u0027, b\u0027\\r\u0027)\n     if not in_byte:\n       break\n\n     _maybe_print_header()\n\n     if is_newline:\n       filter_fn_buf(line_start_idx, command_output)\n       line_start_idx \u003d None\n     command_output.write(in_byte)\n     write_stdout(in_byte)\n     if not is_newline and line_start_idx is None:\n       line_start_idx \u003d command_output.tell()\n\n   sys.stdout.flush()  # unconditional doesn\u0027t hurt\n   if line_start_idx is not None:\n     filter_fn(line_start_idx, command_output)\n       \nwdyt?",
+      "range": {
+        "startLine": 559,
+        "startChar": 11,
+        "endLine": 559,
+        "endChar": 21
+      },
+      "revId": "fba28299dfc5049d6c0fd27f5d5b13bce6371dd7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "626ef4a9_2fc45bd5",
+        "filename": "gclient_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-01T17:52:30Z",
+      "side": 1,
+      "message": "hm... can this have a more descriptive name? \"show_first_line\"?",
+      "range": {
+        "startLine": 627,
+        "startChar": 9,
+        "endLine": 627,
+        "endChar": 19
+      },
+      "revId": "fba28299dfc5049d6c0fd27f5d5b13bce6371dd7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5c6678e_c761db46",
+        "filename": "gclient_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-01T17:52:30Z",
+      "side": 1,
+      "message": "is first_line always True? It seems like `if not first_line` will never be true?",
+      "range": {
+        "startLine": 651,
+        "startChar": 22,
+        "endLine": 651,
+        "endChar": 26
+      },
+      "revId": "fba28299dfc5049d6c0fd27f5d5b13bce6371dd7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -47,9 +47,5 @@ SCRIPT="${SCRIPT-${BASENAME//-/_}.py}"
 if [[ $PYTHON_DIRECT = 1 ]]; then
   python.exe "$DEPOT_TOOLS\\$SCRIPT" "$@"
 else
-  if [[ -e "$DEPOT_TOOLS/python.bat" && $OSTYPE = msys ]]; then
-    cmd.exe //c "$DEPOT_TOOLS\\python.bat" "$DEPOT_TOOLS\\$SCRIPT" "$@"
-  else
-    exec "$DEPOT_TOOLS/$SCRIPT" "$@"
-  fi
+  vpython "$DEPOT_TOOLS\\$SCRIPT" "$@"
 fi

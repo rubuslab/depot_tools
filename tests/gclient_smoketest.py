@@ -178,7 +178,7 @@ class GClientSmoke(GClientSmokeBase):
   def testConfig(self):
     # Get any bootstrapping out of the way.
     results = self.gclient(['version'])
-    self.assertEquals(results[2], 0)
+    self.assertEquals(results[2], 0, results)
 
     p = join(self.root_dir, '.gclient')
     def test(cmd, expected):

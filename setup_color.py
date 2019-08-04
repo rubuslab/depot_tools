@@ -84,6 +84,25 @@ def init():
     else:
       # A normal file, or an unknown file type.
       pass
+
+    import platform
+
+    # Enable native ANSI color codes on Windows 10.
+    if IS_TTY and platform.release() == '10':
+      # Don't need Colorama wrapping.
+      should_wrap = False
+
+      from subprocess import STD_OUTPUT_HANDLE
+      kernel32 = ctypes.windll.kernel32
+      ENABLE_VIRTUAL_TERMINAL_PROCESSING = 0x04
+
+      out_handle = kernel32.GetStdHandle(STD_OUTPUT_HANDLE)
+      mode = ctypes.wintypes.DWORD()
+      kernel32.GetConsoleMode(out_handle, ctypes.byref(mode))
+
+      if not (mode.value & ENABLE_VIRTUAL_TERMINAL_PROCESSING):
+        kernel32.SetConsoleMode(out_handle,
+                                mode.value | ENABLE_VIRTUAL_TERMINAL_PROCESSING)
   else:
     # This is non-windows, so we trust isatty.
     OUT_TYPE = 'pipe or file'

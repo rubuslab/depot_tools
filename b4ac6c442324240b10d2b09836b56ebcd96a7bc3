@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e246eca_5c260b64",
+        "filename": "pylint",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-05T23:36:37Z",
+      "side": 1,
+      "message": "can the contents of this file be replaced with a call to python_runner.sh?",
+      "range": {
+        "startLine": 8,
+        "startChar": 11,
+        "endLine": 8,
+        "endChar": 18
+      },
+      "revId": "b4ac6c442324240b10d2b09836b56ebcd96a7bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

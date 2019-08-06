@@ -22,6 +22,30 @@
       "revId": "b4ac6c442324240b10d2b09836b56ebcd96a7bc3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fceb0624_c8510fae",
+        "filename": "pylint",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-06T17:50:04Z",
+      "side": 1,
+      "message": "Will try that in a follow-up CL.",
+      "parentUuid": "5e246eca_5c260b64",
+      "range": {
+        "startLine": 8,
+        "startChar": 11,
+        "endLine": 8,
+        "endChar": 18
+      },
+      "revId": "b4ac6c442324240b10d2b09836b56ebcd96a7bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

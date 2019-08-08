@@ -100,20 +100,22 @@ class Gsutil(object):
 
     return env
 
-  def call(self, *args):
+  def call(self, *args, **kwargs):
     cmd = [self.VPYTHON, self.path, '--force-version', self.version]
     cmd.extend(args)
-    return subprocess2.call(cmd, env=self.get_sub_env(), timeout=self.timeout)
+    proc = subprocess2.Popen(cmd, env=self.get_sub_env(), **kwargs)
+    if not self.timeout:
+      return proc.communicate(), proc.returncode
+    timer = threading.Timer(self.timeout, proc.kill)
+    try:
+      timer.start()
+      return proc.communicate(), proc.returncode
+    finally:
+      timer.cancel()
 
   def check_call(self, *args):
-    cmd = [self.VPYTHON, self.path, '--force-version', self.version]
-    cmd.extend(args)
-    ((out, err), code) = subprocess2.communicate(
-        cmd,
-        stdout=subprocess2.PIPE,
-        stderr=subprocess2.PIPE,
-        env=self.get_sub_env(),
-        timeout=self.timeout)
+    ((out, err), code) = self.call(
+        *args, stdout=subprocess2.PIPE, stderr=subprocess2.PIPE)
 
     # Parse output.
     status_code_match = re.search(b'status=([0-9]+)', err)

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c973b24_a2ec86f3",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-08T20:48:26Z",
+      "side": 1,
+      "message": "you can also just do `${platform\u003dlinux-amd64}`",
+      "range": {
+        "startLine": 49,
+        "startChar": 26,
+        "endLine": 49,
+        "endChar": 51
+      },
+      "revId": "c0a434cbaabb6197ec6177ecd9c3ded6aa4d771c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

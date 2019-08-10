@@ -8,4 +8,4 @@ setlocal
 :: standalone, but allow other PATH manipulations to take priority.
 set PATH=%PATH%;%~dp0
 
-python "%~dp0cpplint.py" %*
+%~dp0\vpython "%~dp0cpplint.py" %*

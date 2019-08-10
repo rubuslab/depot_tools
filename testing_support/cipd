@@ -5,4 +5,4 @@
 
 base_dir=$(dirname "$0")
 
-exec python "$base_dir/fake_cipd.py" "$@"
+exec $base_dir/../vpython "$base_dir/fake_cipd.py" "$@"

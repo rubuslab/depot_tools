@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2432bb4_6dd78273",
+        "filename": "pylint-1.8.vpython",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-08-13T22:28:43Z",
+      "side": 1,
+      "message": "i couldn\u0027t find prior art here to copy, but this seems to be what gsutil somewhat does, and no one else is using a subdir",
+      "revId": "2afbe457140662755cd4fcf2e789032bf45fa0dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "392f6297_4fab3674",
+        "filename": "pylint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-08-13T22:28:43Z",
+      "side": 1,
+      "message": "this file needed to be renamed otherwise \"import pylint\" would look at this module rather than the package installed via vpython",
+      "revId": "2afbe457140662755cd4fcf2e789032bf45fa0dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b1128fa8_ac519a22",
+        "filename": "pylint_bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-08-13T22:28:43Z",
+      "side": 1,
+      "message": "happy to bikeshed the names \"pylint_bootstrap.py\" \u0026 \"pylint_main.py\".  i couldn\u0027t really come up with ones that wouldn\u0027t be confusing, but two sep files are necessary: one to run outside of vpython \u0026 do the version selection and one to run inside of vpython to process the --args-on-stdin hack.",
+      "revId": "2afbe457140662755cd4fcf2e789032bf45fa0dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97179feb_88d5deef",
+        "filename": "pylint_bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-08-13T22:28:43Z",
+      "side": 1,
+      "message": "gsutil.py uses --force-version.  i could rename this to be consistent.",
+      "revId": "2afbe457140662755cd4fcf2e789032bf45fa0dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

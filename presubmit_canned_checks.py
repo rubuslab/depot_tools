@@ -835,7 +835,7 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
     # the interpreter to use. It also has limitations on the size of
     # the command-line, so we pass arguments via a pipe.
     cmd = [input_api.python_executable,
-           input_api.os_path.join(_HERE, 'third_party', 'pylint.py'),
+           input_api.os_path.join(_HERE, 'third_party', 'pylint_bootstrap.py'),
            '--args-on-stdin']
     if len(flist) == 1:
       description = flist[0]

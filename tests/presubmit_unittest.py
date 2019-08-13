@@ -2435,7 +2435,7 @@ the current line as well!
     input_api.PresubmitLocalPath().AndReturn('/foo')
     input_api.PresubmitLocalPath().AndReturn('/foo')
     input_api.os_walk('/foo').AndReturn([('/foo', [], ['file1.py'])])
-    pylint = os.path.join(_ROOT, 'third_party', 'pylint.py')
+    pylint = os.path.join(_ROOT, 'third_party', 'pylint_bootstrap.py')
     pylintrc = os.path.join(_ROOT, 'pylintrc')
 
     self.CommHelper(input_api,

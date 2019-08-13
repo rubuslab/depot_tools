@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd420478_0c00ed08",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1121,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-13T22:41:07Z",
+      "side": 1,
+      "message": "r seems unnecessary (and the other similar strings don\u0027t have it)",
+      "range": {
+        "startLine": 1121,
+        "startChar": 19,
+        "endLine": 1121,
+        "endChar": 28
+      },
+      "revId": "6e80c5303df438b65a365323de389ef7d46ac759",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0177fc85_c8407708",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-13T22:41:07Z",
+      "side": 1,
+      "message": "since you end up doing this, wdyt about decoding it once at the top and then doing regex on the decoded version?",
+      "range": {
+        "startLine": 1150,
+        "startChar": 19,
+        "endLine": 1150,
+        "endChar": 43
+      },
+      "revId": "6e80c5303df438b65a365323de389ef7d46ac759",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

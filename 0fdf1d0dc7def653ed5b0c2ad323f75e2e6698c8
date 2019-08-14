@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2f06342_4c7c02f5",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-14T20:09:45Z",
+      "side": 1,
+      "message": "ugh, gross; I don\u0027t like how these all return the step. I really need to go through all these modules and make them sane :(.",
+      "range": {
+        "startLine": 115,
+        "startChar": 6,
+        "endLine": 115,
+        "endChar": 10
+      },
+      "revId": "0fdf1d0dc7def653ed5b0c2ad323f75e2e6698c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

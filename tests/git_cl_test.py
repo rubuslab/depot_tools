@@ -941,13 +941,7 @@ class TestGitCl(TestCase):
 
     if squash_mode == 'default':
       calls.extend([
-        ((['git', 'config', '--bool', 'gerrit.override-squash-uploads'],), ''),
         ((['git', 'config', '--bool', 'gerrit.squash-uploads'],), ''),
-      ])
-    elif squash_mode in ('override_squash', 'override_nosquash'):
-      calls.extend([
-        ((['git', 'config', '--bool', 'gerrit.override-squash-uploads'],),
-         'true' if squash_mode == 'override_squash' else 'false'),
       ])
     else:
       assert squash_mode in ('squash', 'nosquash')
@@ -1333,54 +1327,40 @@ class TestGitCl(TestCase):
         post_amend_description='desc\n\nBUG=\n\nChange-Id: Ixxx',
         change_id='Ixxx')
 
-  def test_gerrit_upload_without_change_id_override_nosquash(self):
-    self._run_gerrit_upload_test(
-        [],
-        'desc\n\nBUG=\n',
-        [],
-        squash=False,
-        squash_mode='override_nosquash',
-        post_amend_description='desc\n\nBUG=\n\nChange-Id: Ixxx',
-        change_id='Ixxx')
-
   def test_gerrit_no_reviewer(self):
     self._run_gerrit_upload_test(
-        [],
+        ['--no-squash'],
         'desc\n\nBUG=\n\nChange-Id: I123456789\n',
         [],
         squash=False,
-        squash_mode='override_nosquash',
         change_id='I123456789')
 
   def test_gerrit_no_reviewer_non_chromium_host(self):
     # TODO(crbug/877717): remove this test case.
     self._run_gerrit_upload_test(
-        [],
+        ['--no-squash'],
         'desc\n\nBUG=\n\nChange-Id: I123456789\n',
         [],
         squash=False,
-        squash_mode='override_nosquash',
         short_hostname='other',
         change_id='I123456789')
 
   def test_gerrit_patchset_title_special_chars(self):
     self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
     self._run_gerrit_upload_test(
-        ['-f', '-t', 'We\'ll escape ^_ ^ special chars...@{u}'],
+        ['--no-squash', '-f', '-t', 'We\'ll escape ^_ ^ special chars...@{u}'],
         'desc\n\nBUG=\n\nChange-Id: I123456789',
         squash=False,
-        squash_mode='override_nosquash',
         title='We%27ll_escape_%5E%5F_%5E_special_chars%2E%2E%2E%40%7Bu%7D',
         change_id='I123456789',
         original_title='We\'ll escape ^_ ^ special chars...@{u}')
 
   def test_gerrit_reviewers_cmd_line(self):
     self._run_gerrit_upload_test(
-        ['-r', 'foo@example.com', '--send-mail'],
+        ['--no-squash', '-r', 'foo@example.com', '--send-mail'],
         'desc\n\nBUG=\n\nChange-Id: I123456789',
         ['foo@example.com'],
         squash=False,
-        squash_mode='override_nosquash',
         notify=True,
         change_id='I123456789',
         final_description=

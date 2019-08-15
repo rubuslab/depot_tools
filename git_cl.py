@@ -3474,8 +3474,8 @@ def LoadCodereviewSettingsFromFile(fileobj):
     RunGit(['config', 'gerrit.host', keyvals['GERRIT_HOST']])
 
   if 'GERRIT_SQUASH_UPLOADS' in keyvals:
-    RunGit(['config', 'gerrit.squash-uploads',
-            keyvals['GERRIT_SQUASH_UPLOADS']])
+    print('WARNING: GERRIT_SQUASH_UPLOADS in codereview.settings is no longer '
+          'supported.  Please delete it and update your ~/.gitconfig instead.')
 
   if 'GERRIT_SKIP_ENSURE_AUTHENTICATED' in keyvals:
     RunGit(['config', 'gerrit.skip-ensure-authenticated',

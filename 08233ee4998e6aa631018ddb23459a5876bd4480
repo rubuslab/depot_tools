@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31fa7c54_6973f17f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1348,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-16T17:20:36Z",
+      "side": 0,
+      "message": "You\u0027re right, you shouldn\u0027t remove this, or the tests below.\n\nWhat happens if you remove squash_mode\u003d\u0027override_nosquash\u0027?\nYou could instead pass \u0027--no-squash\u0027 here.",
+      "range": {
+        "startLine": 1348,
+        "startChar": 8,
+        "endLine": 1348,
+        "endChar": 9
+      },
+      "revId": "08233ee4998e6aa631018ddb23459a5876bd4480",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

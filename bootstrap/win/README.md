@@ -12,7 +12,7 @@ ommodate this, and Python cleanup, we handle Python in two stages:
    fix-ups.
 
 ## Software bootstrapped
-  * Python (https://www.python.org/)
+  * Python 2 and 3 (https://www.python.org/)
   * Git for Windows (https://git-for-windows.github.io/)
 
 ## Mechanism
@@ -60,10 +60,10 @@ than the rest of this README.
 After any modification to this script set, a test sequence should be run on a
 Windows bot.
 
-The post-processing will regenerate "python.bat" to point to the current
-Python instance. Any previous Python installations will stick around, but
-new invocations will use the new instance. Old installations will die
-off either due to processes terminating or systems restarting. When this
+The post-processing will regenerate "python.bat" and "python3.bat" to point to
+the current Python instance. Any previous Python installations will stick
+around, but new invocations will use the new instance. Old installations will
+die off either due to processes terminating or systems restarting. When this
 happens, they will be cleaned up by the post-processing script.
 
 Testing
@@ -78,6 +78,8 @@ gclient version
 
 # Assert that Python fundamentally works.
 python -c "import psutil; print dir(psutil)"
+
+# Assert that Python3 fundamentally works.
 
 # Assert that Python scripts work from `cmd.exe`.
 git map-branches

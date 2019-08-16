@@ -22,6 +22,30 @@
       "revId": "ff15207d602daa88b8e893dba1fd5fe8f2971fe7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79e5f837_9ded02d6",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-08-16T02:25:31Z",
+      "side": 1,
+      "message": "i\u0027ve deleted all this logic from the tools.  ptal.",
+      "parentUuid": "ab05f592_3354d342",
+      "range": {
+        "startLine": 926,
+        "startChar": 0,
+        "endLine": 928,
+        "endChar": 0
+      },
+      "revId": "ff15207d602daa88b8e893dba1fd5fe8f2971fe7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

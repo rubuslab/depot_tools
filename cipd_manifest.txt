@@ -47,3 +47,6 @@ infra/tools/bb/${platform} git_revision:d0bb723b707deed5f523ad688c63fd48429bb3ee
 
 # CHROMEOS Buildjobs CLI
 chromiumos/infra/crosjobs/${platform=linux-amd64} git_revision:ed616d595eb7241d39d34907050d2949121d6ae8
+
+# python3.
+infra/python/cpython3/${platform=linux-amd64,mac-amd64} version:3.8.0b1.chromium.1

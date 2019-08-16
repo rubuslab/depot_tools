@@ -5,6 +5,14 @@ chromiumos/infra/crosjobs/linux-amd64
 	git_revision:ed616d595eb7241d39d34907050d2949121d6ae8
 	_vAeU0Q9lAxn933K8vDhwGK40zKVvV-yXGpIy43ATXAC
 
+infra/python/cpython3/linux-amd64
+	version:3.8.0b1.chromium.1
+	AeeBYkh7rr_sc3IQS1y5D5qzcdtq4yTTqJO6_SiYnvEC
+
+infra/python/cpython3/mac-amd64
+	version:3.8.0b1.chromium.1
+	_HcVvC8YBmiLxrI0Q8Gc8AuuhJGci_BCf7kKeuuVEigC
+
 infra/tools/bb/linux-386
 	git_revision:d0bb723b707deed5f523ad688c63fd48429bb3ee
 	FZtRS-P3M1rPkavd15dSn0Y6fEiPw7rXI9N1h59fNJQC

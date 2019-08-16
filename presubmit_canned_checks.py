@@ -576,7 +576,8 @@ def CheckTreeIsOpen(input_api, output_api,
   return []
 
 def GetUnitTestsInDirectory(
-    input_api, output_api, directory, whitelist=None, blacklist=None, env=None):
+    input_api, output_api, directory, whitelist=None, blacklist=None, env=None,
+    python3=False):
   """Lists all files in a directory and runs them. Doesn't recurse.
 
   It's mainly a wrapper for RunUnitTests. Use whitelist and blacklist to filter
@@ -609,10 +610,10 @@ def GetUnitTestsInDirectory(
           'Out of %d files, found none that matched w=%r, b=%r in directory %s'
           % (found, whitelist, blacklist, directory))
     ]
-  return GetUnitTests(input_api, output_api, unit_tests, env)
+  return GetUnitTests(input_api, output_api, unit_tests, env, python3)
 
 
-def GetUnitTests(input_api, output_api, unit_tests, env=None):
+def GetUnitTests(input_api, output_api, unit_tests, env=None, python3=False):
   """Runs all unit tests in a directory.
 
   On Windows, sys.executable is used for unit tests ending with ".py".
@@ -635,7 +636,8 @@ def GetUnitTests(input_api, output_api, unit_tests, env=None):
         name=unit_test,
         cmd=cmd,
         kwargs=kwargs,
-        message=message_type))
+        message=message_type,
+        python3=python3))
   return results
 
 

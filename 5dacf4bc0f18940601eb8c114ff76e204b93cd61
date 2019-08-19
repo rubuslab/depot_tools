@@ -93,6 +93,30 @@
       "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aae70f4c_f8cc4b4d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-19T20:23:37Z",
+      "side": 1,
+      "message": "Yeah, I was thinking about using blacklist/whitelist.\nAlso, this function doesn\u0027t get a directory, but a list of files. The function above does get a directory, but that\u0027s besides the point.\n\nWe should ensure Python 2 is not broken until we\u0027re ready to deprecate it.",
+      "parentUuid": "29a80800_f2fe31bc",
+      "range": {
+        "startLine": 616,
+        "startChar": 62,
+        "endLine": 616,
+        "endChar": 69
+      },
+      "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

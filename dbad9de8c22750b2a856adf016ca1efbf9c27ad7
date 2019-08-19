@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0b19a586_9cb82779",
+        "filename": "bootstrap/win/README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-19T18:33:36Z",
+      "side": 1,
+      "message": "horror! psutil isn\u0027t a stdlib library! :O",
+      "range": {
+        "startLine": 80,
+        "startChar": 18,
+        "endLine": 80,
+        "endChar": 24
+      },
+      "revId": "dbad9de8c22750b2a856adf016ca1efbf9c27ad7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e69eeba_5bb05fe7",
+        "filename": "bootstrap/win/manifest.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-19T18:33:36Z",
+      "side": 1,
+      "message": "this should probably be\n\n  ${os}-${arch\u003damd64}\n\nWe should not support 32bit python3.",
+      "range": {
+        "startLine": 20,
+        "startChar": 24,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "dbad9de8c22750b2a856adf016ca1efbf9c27ad7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

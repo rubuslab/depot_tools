@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f74632f7_c87d194e",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2019-08-19T22:37:05Z",
+      "side": 1,
+      "message": "Good catch. I didn\u0027t notice we were parsing the file for two different reasons.",
+      "parentUuid": "4a2997a4_857761ab",
+      "revId": "949be73ec19076c49bce47459fe0141576b77090",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bb201c09_ef43ecb0",
         "filename": "autoninja.py",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "949be73ec19076c49bce47459fe0141576b77090",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04568e0e_c960b1cc",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2019-08-19T22:37:05Z",
+      "side": 1,
+      "message": "I switched to checking.",
+      "parentUuid": "bb201c09_ef43ecb0",
+      "revId": "949be73ec19076c49bce47459fe0141576b77090",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

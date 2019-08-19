@@ -45,6 +45,30 @@
       "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13e2f76f_4d892725",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-19T20:17:00Z",
+      "side": 1,
+      "message": "What do you mean that presubmit is coupled to the scripts that it\u0027s nominally testing?\n\nAlso, I don\u0027t see why you can\u0027t add single files at a time.\nIt also allows to run python tests on both python2 and python3, which I think should be possible.",
+      "parentUuid": "679eb9e1_4d91129a",
+      "range": {
+        "startLine": 616,
+        "startChar": 62,
+        "endLine": 616,
+        "endChar": 69
+      },
+      "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -93,6 +93,30 @@
       "revId": "dbad9de8c22750b2a856adf016ca1efbf9c27ad7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27e94b46_269435b6",
+        "filename": "bootstrap/win/manifest.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-19T20:17:08Z",
+      "side": 1,
+      "message": "32bit windows needs to die; I don\u0027t believe we\u0027ve supported building on it for a while now. The fact that we still build and maintain python2 for 32bit windows is an historical relic, not a feature.\n\nWhen cipd expands variables, it must be able to expand the current platform/os/arch into the package declaration. If it can\u0027t do so, it skips the package entirely. So, `${os}-${arch\u003damd64}` means \"any os will fit, but only an arch which is amd64 will fit\". You used this syntax in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1758849 ? The ensure file syntax is documented at https://go.chromium.org/luci/cipd/client/cipd/ensure .",
+      "parentUuid": "de4db219_b75831cd",
+      "range": {
+        "startLine": 20,
+        "startChar": 24,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "dbad9de8c22750b2a856adf016ca1efbf9c27ad7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

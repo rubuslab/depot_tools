@@ -141,6 +141,30 @@
       "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "983e189e_42ec3dbb",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-19T20:55:11Z",
+      "side": 1,
+      "message": "That sounds good.",
+      "parentUuid": "635c284a_9c3196b6",
+      "range": {
+        "startLine": 616,
+        "startChar": 62,
+        "endLine": 616,
+        "endChar": 69
+      },
+      "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

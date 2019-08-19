@@ -69,6 +69,30 @@
       "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29a80800_f2fe31bc",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-19T20:20:17Z",
+      "side": 1,
+      "message": "\u003e What do you mean that presubmit is coupled to the scripts that it\u0027s nominally testing?\n\nIt means that PRESUBMIT would have to know (in code) about the scripts it\u0027s supposed to run, and their python3 status. That\u0027s not normally how PRESUBMITs are written.\n\n\u003e \n\u003e Also, I don\u0027t see why you can\u0027t add single files at a time.\n\nBecause this function only takes a directory to discover tests in. You wouldn\u0027t be able to use this in python3 mode on a directory until all the tests in that directory were python3. Or you\u0027d have to add lots of blacklisting stuff into PRESUBMIT and have duplicate calls to this function.\n\n\u003e It also allows to run python tests on both python2 and python3, which I think should be possible.\n\nWhat\u0027s the use case for this? Isn\u0027t the goal to get off of python2 entirely next year?",
+      "parentUuid": "13e2f76f_4d892725",
+      "range": {
+        "startLine": 616,
+        "startChar": 62,
+        "endLine": 616,
+        "endChar": 69
+      },
+      "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

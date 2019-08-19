@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3761274_5fe5949d",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-19T18:46:42Z",
+      "side": 1,
+      "message": "oof, this is tricky. I would definitely sync with ajp@ and dpranke@ about this. Note that for this to be useful you\u0027ll have to add shims like there are for `vpython.bat` and `vpython`.\n\nThis would have the effect of putting python3 on path for all depot_tools users, which might be disruptive. OTOH, it might be a great opportunity to homogenize our windows/linux/mac depot_tools usage.\n\nIf my opinion were the only one that mattered, I would make depot_tools bring it\u0027s own software for all of the software that it depends on (i.e. python and git), for all platforms, and document that if devs wish to override this (at their own peril), they should put depot_tools after other locations on their PATH.",
+      "range": {
+        "startLine": 51,
+        "startChar": 2,
+        "endLine": 51,
+        "endChar": 9
+      },
+      "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "679eb9e1_4d91129a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-19T18:46:42Z",
+      "side": 1,
+      "message": "I\u0027m not a huge fan of this; it means that presubmit is coupled to the scripts that it\u0027s nominally testing. It also means that you won\u0027t be able to update unit tests in finer increments than \"all of the tests in one CL\".\n\nI think it would be better for PRESUBMIT to try to automatically detect the python to run by e.g. scraping the shebang in the file for a python3.",
+      "range": {
+        "startLine": 616,
+        "startChar": 62,
+        "endLine": 616,
+        "endChar": 69
+      },
+      "revId": "5dacf4bc0f18940601eb8c114ff76e204b93cd61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

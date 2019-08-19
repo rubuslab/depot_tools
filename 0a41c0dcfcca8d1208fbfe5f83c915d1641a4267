@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab634444_89cc82c3",
+        "filename": "setup_color.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-08-19T17:43:48Z",
+      "side": 1,
+      "message": "I\u0027d be more comfortable if it was moved to be top level. The msvcrt above is different because it\u0027s only available on windows. But ctypes should probably be moved too IMHO.",
+      "revId": "0a41c0dcfcca8d1208fbfe5f83c915d1641a4267",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86ef1422_49d4bd99",
+        "filename": "setup_color.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-08-19T17:43:48Z",
+      "side": 1,
+      "message": "Colorama has a PR to fix it as https://github.com/tartley/colorama/pull/139/files but sadly the maintainer doesn\u0027t seem interested to have this fixed, there\u0027s another older PR from 2016. Shrug.",
+      "revId": "0a41c0dcfcca8d1208fbfe5f83c915d1641a4267",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f225cbb7_abfe0661",
+        "filename": "setup_color.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-08-19T17:43:48Z",
+      "side": 1,
+      "message": "just \"import subprocess\"",
+      "revId": "0a41c0dcfcca8d1208fbfe5f83c915d1641a4267",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

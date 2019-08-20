@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d88bd2c_ca81fac8",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-20T18:07:37Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be a guarantee of e.g. gclient? I thought we were supposed to be moving logic from bot_update to gclient, not the other way around?\n\nPlus, this will only check the \u0027main\u0027 project, not any DEPS\u0027d project or any other project in the .gclient file.",
+      "range": {
+        "startLine": 1172,
+        "startChar": 4,
+        "endLine": 1172,
+        "endChar": 10
+      },
+      "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

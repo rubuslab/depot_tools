@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a2bde8fb_1a6ac160",
+        "filename": "setup_color.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-08-20T16:44:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3971b76_f99682c4",
+      "revId": "6023e361ba7a33baec60fb29c2dba6f187bbda71",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4cd76441_1686aaef",
         "filename": "setup_color.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5f676d51_bc96b083",
+        "filename": "setup_color.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-08-20T16:44:45Z",
+      "side": 1,
+      "message": "Simply now ran `git cl --format`.",
+      "parentUuid": "4cd76441_1686aaef",
+      "revId": "6023e361ba7a33baec60fb29c2dba6f187bbda71",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5bb2f9f7_49e9857a",
         "filename": "setup_color.py",
         "patchSetId": 5
@@ -50,6 +86,24 @@
       "revId": "6023e361ba7a33baec60fb29c2dba6f187bbda71",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65be024f_a77ffe3e",
+        "filename": "setup_color.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-08-20T16:44:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5bb2f9f7_49e9857a",
+      "revId": "6023e361ba7a33baec60fb29c2dba6f187bbda71",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

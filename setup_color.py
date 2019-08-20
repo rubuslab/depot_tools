@@ -5,12 +5,34 @@
 
 from __future__ import print_function
 
+import ctypes
 import os
+import platform
+import subprocess
 import sys
 from third_party import colorama
 
 IS_TTY = None
 OUT_TYPE = 'unknown'
+
+# Windows 10 supports native ANSI sequences. This enables them.
+# Returns whether it was successful.
+def enable_native_ansi():
+  kernel32 = ctypes.windll.kernel32
+  ENABLE_VIRTUAL_TERMINAL_PROCESSING = 0x04
+
+  out_handle = kernel32.GetStdHandle(subprocess.STD_OUTPUT_HANDLE)
+  mode = ctypes.wintypes.DWORD()
+  if kernel32.GetConsoleMode(out_handle, ctypes.byref(mode)) == 0:
+    print('kernel32.GetConsoleMode failed')
+    return False
+
+  if not (mode.value & ENABLE_VIRTUAL_TERMINAL_PROCESSING):
+    if kernel32.SetConsoleMode(out_handle, mode.value | ENABLE_VIRTUAL_TERMINAL_PROCESSING) == 0:
+      print('kernel32.SetConsoleMode to enable ANSI sequences failed')
+      return False
+
+  return True
 
 def init():
   # should_wrap instructs colorama to wrap stdout/stderr with an ASNI colorcode
@@ -30,7 +52,6 @@ def init():
     OUT_TYPE = 'file (win)'
 
     import msvcrt
-    import ctypes
     h = msvcrt.get_osfhandle(sys.stdout.fileno())
     # h is the win32 HANDLE for stdout.
     ftype = ctypes.windll.kernel32.GetFileType(h)
@@ -84,6 +105,10 @@ def init():
     else:
       # A normal file, or an unknown file type.
       pass
+
+    # Enable native ANSI color codes on Windows 10.
+    if IS_TTY and platform.release() == '10':
+      should_wrap = not enable_native_ansi()
   else:
     # This is non-windows, so we trust isatty.
     OUT_TYPE = 'pipe or file'

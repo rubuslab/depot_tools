@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3971b76_f99682c4",
+        "filename": "setup_color.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-08-20T13:38:59Z",
+      "side": 1,
+      "message": "I would have preferred a formal docstring.",
+      "revId": "6023e361ba7a33baec60fb29c2dba6f187bbda71",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cd76441_1686aaef",
+        "filename": "setup_color.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-08-20T13:38:59Z",
+      "side": 1,
+      "message": "this will make it fit 80 cols:\n\n  if not kernel32.SetConsoleMode(out_handle, mode.value|ENABLE_VIRTUAL_TERMINAL_PROCESSING):",
+      "revId": "6023e361ba7a33baec60fb29c2dba6f187bbda71",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bb2f9f7_49e9857a",
+        "filename": "setup_color.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-08-20T13:38:59Z",
+      "side": 1,
+      "message": "I\u0027m ambivalent about spamming to stdout. Let\u0027s keep it to quickly find bugs if there\u0027s any, but be ready to have to remove this on a short notice.",
+      "revId": "6023e361ba7a33baec60fb29c2dba6f187bbda71",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -117,6 +117,30 @@
       "revId": "dbad9de8c22750b2a856adf016ca1efbf9c27ad7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7a2d742_95cf4626",
+        "filename": "bootstrap/win/manifest.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-20T00:49:04Z",
+      "side": 1,
+      "message": "Ack.\nI thought it was used to tell cipd what platforms to generate in the .versions file.",
+      "parentUuid": "27e94b46_269435b6",
+      "range": {
+        "startLine": 20,
+        "startChar": 24,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "dbad9de8c22750b2a856adf016ca1efbf9c27ad7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

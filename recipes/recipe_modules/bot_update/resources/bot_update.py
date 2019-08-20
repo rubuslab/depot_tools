@@ -1169,7 +1169,12 @@ def main():
     # Dun dun dun, the main part of bot_update.
     revisions, step_text = prepare(options, git_slns, active)
     checkout(options, git_slns, specs, revisions, step_text)
-
+    status = git('status', '--porcelain')
+    if status.strip() != '':
+      # Left untracked files.
+      print("Error: left untracked files")
+      print(status)
+      return 88
   except PatchFailed as e:
     # Return a specific non-zero exit code for patch failure (because it is
     # a failure), but make it different than other failures to distinguish

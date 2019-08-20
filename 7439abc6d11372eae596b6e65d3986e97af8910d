@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2db253f6_7bb008ee",
+        "filename": "setup_color.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-08-20T12:43:55Z",
+      "side": 1,
+      "message": "you can move it up too, for completeness.",
+      "revId": "7439abc6d11372eae596b6e65d3986e97af8910d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9684dc2f_05121b4a",
+        "filename": "setup_color.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-08-20T12:43:55Z",
+      "side": 1,
+      "message": "I would prefer looking at the function result. If it fails, it would leave mode null. If SetConsoleMode fails below, this will result in garbage in the output.",
+      "revId": "7439abc6d11372eae596b6e65d3986e97af8910d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

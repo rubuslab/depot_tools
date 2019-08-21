@@ -118,6 +118,30 @@
       "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f65ac4a_c3d5b382",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-21T02:21:45Z",
+      "side": 1,
+      "message": "What is not clear to me is if we always want to make this check after syncing.\nIf we do, it does makes sense to put this in gclient.\nIf we don\u0027t, I think it\u0027s ok to leave it here, since it\u0027s something that gclient recurse can do and it\u0027s specific to bot_update.\n\nThe reason it\u0027s not clear to me is that this check fails on my infra checkout, and probably lots of developer checkouts, and might break people\u0027s workflows.",
+      "parentUuid": "4246062c_ce9a00bc",
+      "range": {
+        "startLine": 1172,
+        "startChar": 4,
+        "endLine": 1172,
+        "endChar": 10
+      },
+      "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

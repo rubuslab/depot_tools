@@ -142,6 +142,30 @@
       "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a0004ff_4aba11c4",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-21T04:27:53Z",
+      "side": 1,
+      "message": "Maybe I was misinformed then; I thought the long term goal was to have bot_update not exist, and for gclient to actually just be a standalone, robust tool. Is that not a goal?\n\nIMO `gclient recurse`, in general, is a hack. It means \"hey, gclient, you can\u0027t really answer a specific question about the repos you manage, let me reach into your implementation details and answer it myself\". In particular, the `gclient recurse` solution you propose would only work for git repos it manages, not for other DEPS types (like cipd), where nominally we\u0027d want to make sure they didn\u0027t have files they shouldn\u0027t, either.\n\nHowever, ultimately the chops source team is the one observing and guiding the growth of both gclient and bot_update, so if you think this should be bot_update specific logic, then so be it :).\n\nThere\u0027s already a plethora of flags to gclient which essentially mean \"hey, gclient, please do your job correctly instead of what you would otherwise do\". Flags like \"--force\", \"--delete_unversioned_trees\", and \"--reset\". Could we attach this behavior to one of those flags?",
+      "parentUuid": "8f65ac4a_c3d5b382",
+      "range": {
+        "startLine": 1172,
+        "startChar": 4,
+        "endLine": 1172,
+        "endChar": 10
+      },
+      "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

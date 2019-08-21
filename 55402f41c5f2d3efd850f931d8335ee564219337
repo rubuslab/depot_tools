@@ -94,6 +94,30 @@
       "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4246062c_ce9a00bc",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-21T01:43:27Z",
+      "side": 1,
+      "message": "My point is more that gclient should be able to assert the state of the repos that it ostensibly manages. We could continue to grow stuff in bot_update to do this, or (opinion) we could make gclient actually do its job correctly :)\n\nEach thing we add to bot_update to \"do gclient correctly\" is another pitfall that new gclient users have to encounter and work around.",
+      "parentUuid": "61a2af5c_98edb741",
+      "range": {
+        "startLine": 1172,
+        "startChar": 4,
+        "endLine": 1172,
+        "endChar": 10
+      },
+      "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -99,14 +99,12 @@ function update_git_repo {
     fi
   fi
 
-  git fetch -q origin &> /dev/null
   local REBASE_TXT STATUS
-  REBASE_TXT=$(git rebase -q origin/master 2>&1)
+  REBASE_TXT=$(git pull --ff-only 2>&1)
   STATUS=$?
   if [[ $STATUS -ne 0 ]]; then
     echo "depot_tools update failed. Conflict in $base_dir" >&2
     echo "$REBASE_TXT" >&2
-    git rebase --abort 2> /dev/null
   fi
   return $STATUS
 }

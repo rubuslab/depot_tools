@@ -50,8 +50,7 @@ for /F %%x in ('git config --get remote.origin.url') DO (
     )
   )
 )
-call git fetch -q origin > NUL
-call git rebase -q origin/master > NUL
+call git pull --ff-only > NUL
 if errorlevel 1 (
   echo Failed to update depot_tools.
   goto :EOF

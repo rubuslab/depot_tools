@@ -166,6 +166,30 @@
       "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c44f7b5a_80a9ef21",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-08-21T06:48:23Z",
+      "side": 1,
+      "message": "I only want to have this check in bot_update or some other step in CQ.\nI don\u0027t take care whether the check is in gclient, bot_update or some other places.\n\nAnd I just added here because this seems easiest place to have the check.\n\nAlso I don\u0027t take care sub repositories because I rarely run `git status` there.",
+      "parentUuid": "2a0004ff_4aba11c4",
+      "range": {
+        "startLine": 1172,
+        "startChar": 4,
+        "endLine": 1172,
+        "endChar": 10
+      },
+      "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

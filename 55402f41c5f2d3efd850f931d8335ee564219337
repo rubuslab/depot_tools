@@ -238,6 +238,30 @@
       "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84526b62_2b22d7e4",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-08-22T06:32:48Z",
+      "side": 1,
+      "message": "Hmm, I failed to find which places are appropriate to have this check in gclient.\n\nAlso using soft reset is sad for me. It makes totally hard just running git status from root repository to detect cipd dependency which are not in gitignore for me.",
+      "parentUuid": "4d1218e5_46c880a6",
+      "range": {
+        "startLine": 1172,
+        "startChar": 4,
+        "endLine": 1172,
+        "endChar": 10
+      },
+      "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

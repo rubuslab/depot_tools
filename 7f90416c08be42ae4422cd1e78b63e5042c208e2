@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eafcc6cc_de93ac0c",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1177474
+      },
+      "writtenOn": "2019-08-22T20:31:52Z",
+      "side": 1,
+      "message": "Would it be possible to change this to \u0027git checkout -q\u0027? Git announcements like \"HEAD is now at x\" are emitted on standard error, which Powershell interprets (in its strictest mode) as a sub-command error (this means that none of my CI scripts have not been working recently). I would fix it myself, but unfortunately I don\u0027t have legal approval to contribute to depot_tools ):",
+      "range": {
+        "startLine": 54,
+        "startChar": 32,
+        "endLine": 54,
+        "endChar": 37
+      },
+      "revId": "7f90416c08be42ae4422cd1e78b63e5042c208e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

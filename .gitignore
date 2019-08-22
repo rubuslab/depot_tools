@@ -13,6 +13,7 @@
 /git-bash
 /git.bat
 /gitk.bat
+/pylint.bat
 /.pylint.d/
 /python
 /python.bat

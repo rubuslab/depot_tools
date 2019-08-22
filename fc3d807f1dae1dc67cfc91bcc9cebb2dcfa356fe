@@ -22,6 +22,30 @@
       "revId": "fc3d807f1dae1dc67cfc91bcc9cebb2dcfa356fe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9ab034a_7302d73a",
+        "filename": "update_depot_tools",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-08-22T00:50:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb4c202b_feacf4fa",
+      "range": {
+        "startLine": 103,
+        "startChar": 2,
+        "endLine": 103,
+        "endChar": 12
+      },
+      "revId": "fc3d807f1dae1dc67cfc91bcc9cebb2dcfa356fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

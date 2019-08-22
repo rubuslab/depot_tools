@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "57287855_ebcff947",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2019-08-22T17:58:56Z",
+      "side": 1,
+      "message": "we must assert that `not (python3_only and python2_only)`\n\nWDYT about `default_python_version\u003d2`, then assert that it\u0027s in (2, 3), then:\n\n   if has_py3_shebang(unit_test) or default_python_version \u003d\u003d 3:\n     ...\n   else:\n     ...\n\n?",
+      "range": {
+        "startLine": 650,
+        "startChar": 6,
+        "endLine": 657,
+        "endChar": 26
+      },
+      "revId": "aceb404b3e2416e7c967d680d07ecb152018b238",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

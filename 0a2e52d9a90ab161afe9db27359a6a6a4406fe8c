@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c059248_bfeaf8e0",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-08-28T21:24:59Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be done before L320?",
+      "range": {
+        "startLine": 347,
+        "startChar": 1,
+        "endLine": 348,
+        "endChar": 43
+      },
+      "revId": "0a2e52d9a90ab161afe9db27359a6a6a4406fe8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a4ddf44_0a90135c",
+        "filename": "update_depot_tools",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-08-28T21:24:59Z",
+      "side": 1,
+      "message": "👍 but I wonder why this wasn\u0027t done before.",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 26
+      },
+      "revId": "0a2e52d9a90ab161afe9db27359a6a6a4406fe8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a25f52b6_5844c1e7",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-08-28T21:21:26Z",
+      "side": 1,
+      "message": "it might as well be merged into ChangeList directly (as a follow up CL)",
+      "range": {
+        "startLine": 1125,
+        "startChar": 28,
+        "endLine": 1125,
+        "endChar": 49
+      },
+      "revId": "3f39c3e8d12f160f39dbbf537ea46ee386a9d1ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d38712d_e18ba113",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3022,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-08-28T21:21:26Z",
+      "side": 1,
+      "message": "\"Deprecated. Noop. Do not use.\"",
+      "range": {
+        "startLine": 3022,
+        "startChar": 12,
+        "endLine": 3022,
+        "endChar": 50
+      },
+      "revId": "3f39c3e8d12f160f39dbbf537ea46ee386a9d1ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5f0354f_e7375c4c",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3030,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-08-28T21:21:26Z",
+      "side": 1,
+      "message": "given this has been here for ~6 months now, you may just get rid of the flag entirely.",
+      "range": {
+        "startLine": 3029,
+        "startChar": 0,
+        "endLine": 3030,
+        "endChar": 54
+      },
+      "revId": "3f39c3e8d12f160f39dbbf537ea46ee386a9d1ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81d48919_94e346ce",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4914,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-08-28T21:21:26Z",
+      "side": 1,
+      "message": "get rid of them for the same reason as --rietveld.",
+      "range": {
+        "startLine": 4911,
+        "startChar": 0,
+        "endLine": 4914,
+        "endChar": 72
+      },
+      "revId": "3f39c3e8d12f160f39dbbf537ea46ee386a9d1ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

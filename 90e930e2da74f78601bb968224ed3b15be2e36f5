@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "750ac2f5_35439b0f",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2019-08-30T09:05:25Z",
+      "side": 1,
+      "message": "Should this not rather be here?\nhttps://cs.chromium.org/chromium/build/scripts/slave/recipe_modules/chromium/gclient_config.py?q\u003dshow_v8_revision\u0026sq\u003dpackage:chromium\u0026g\u003d0\u0026l\u003d43",
+      "range": {
+        "startLine": 452,
+        "startChar": 4,
+        "endLine": 452,
+        "endChar": 17
+      },
+      "revId": "90e930e2da74f78601bb968224ed3b15be2e36f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

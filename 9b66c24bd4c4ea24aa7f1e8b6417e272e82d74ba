@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69bc23e9_27c4568a",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-08-30T22:44:09Z",
+      "side": 1,
+      "message": "Edward FYI.",
+      "revId": "9b66c24bd4c4ea24aa7f1e8b6417e272e82d74ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

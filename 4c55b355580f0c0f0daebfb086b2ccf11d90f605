@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ffe85b0_a6fb641e",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2019-08-30T09:03:29Z",
+      "side": 1,
+      "message": "This looks like a config for checking out a stand-alone devtools. But I think what you need for the integration builder is a config that enhances the existing chromium config, similar to:\nhttps://cs.chromium.org/chromium/build/scripts/slave/recipe_modules/chromium/gclient_config.py?q\u003dshow_v8_revision\u0026sq\u003dpackage:chromium\u0026g\u003d0\u0026l\u003d104\n\nI also prefer not to add project specific stuff to the general depot_tools. This should be in chromium recipe module.",
+      "revId": "4c55b355580f0c0f0daebfb086b2ccf11d90f605",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

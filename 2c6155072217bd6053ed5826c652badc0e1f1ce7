@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "09b5f05e_8a472a7b",
+        "filename": "OWNERS",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-08-30T23:48:32Z",
+      "side": 1,
+      "message": "You could remove him while at it.",
+      "revId": "2c6155072217bd6053ed5826c652badc0e1f1ce7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

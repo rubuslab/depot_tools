@@ -20,6 +20,8 @@ import owners_finder
 
 import git_common as git
 
+import third_party.pygtrie as trie
+
 
 # If a call to `git cl split` will generate more than this number of CLs, the
 # command will prompt the user to make sure they know what they're doing. Large
@@ -133,17 +135,89 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
                             publish=True)
 
 
-def GetFilesSplitByOwners(owners_database, files):
+class ClCandidate(object):
+
+  def __init__(self, path, owners_db, author, files, owners=None):
+    self._path = path
+    self._files = files
+    self._owners_db = owners_db
+    self._author = author
+    self._owners = owners
+
+  def GetPath(self):
+    return self._path
+
+  def GetFiles(self):
+    return self._files
+
+  def AddFiles(self, files):
+    self._owners = None
+    self._files |= files
+
+  def GetChangeSize(self):
+    return sum([c[0] + c[1] for f in self._files for c in f.Changes()])
+
+  def _EnsureOwners(self):
+    if not self._owners:
+      self._owners = set(
+          self._owners_db.all_possible_owners(
+              [f.LocalPath() for f in self._files], self._author).keys())
+
+  def HaveCommonOwners(self, other):
+    self._EnsureOwners()
+    other._EnsureOwners()
+    return len(self._owners & other._owners) > 0
+
+
+def GetFilesSplitByOwners(owners_database, author, files, cl_size=500):
   """Returns a map of files split by OWNERS file.
 
   Returns:
     A map where keys are paths to directories containing an OWNERS file and
     values are lists of files sharing an OWNERS file.
   """
-  files_split_by_owners = collections.defaultdict(list)
+  candidates = trie.Trie()
   for f in files:
-    files_split_by_owners[owners_database.enclosing_dir_with_owners(
-        f.LocalPath())].append(f)
+    path = f.LocalPath()
+    candidates[path] = ClCandidate(path, owners_database, author, set([f]))
+
+  change_lists = []
+
+  edited = True
+  while edited:
+    edited = False
+    for item in candidates.items():
+      path = ''.join(item[0])
+      candidate = item[1]
+
+      sub_cls = len([''.join(k) for k in candidates.keys(path)]) - 1
+      if not sub_cls:
+        parent_path = os.path.dirname(path)
+        if len(parent_path) > 0:
+          if parent_path not in candidates:
+            candidates[parent_path] = ClCandidate(
+                parent_path, owners_database, author, set(),
+                set(
+                    owners_database.all_possible_owners([parent_path],
+                                                        author).keys()))
+          parent_cl = candidates[parent_path]
+
+          if parent_cl.HaveCommonOwners(candidate):
+            edited = True
+            del candidates[path]
+            parent_cl.AddFiles(candidate.GetFiles())
+
+            if (parent_cl.GetChangeSize() +
+                candidate.GetChangeSize()) >= cl_size:
+              del candidates[parent_path]
+              change_lists.append(parent_cl)
+
+  for item in candidates.items():
+    change_lists.append(item[1])
+
+  files_split_by_owners = collections.defaultdict(list)
+  for cl in change_lists:
+    files_split_by_owners[cl.GetPath()] = cl.GetFiles()
   return files_split_by_owners
 
 
@@ -212,11 +286,10 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
     owners_database = owners.Database(change.RepositoryRoot(), file, os.path)
     owners_database.load_data_needed_for([f.LocalPath() for f in files])
 
-    files_split_by_owners = GetFilesSplitByOwners(owners_database, files)
+    files_split_by_owners = GetFilesSplitByOwners(owners_database, author,
+                                                  set(files))
 
     num_cls = len(files_split_by_owners)
-    print('Will split current branch (' + refactor_branch + ') into ' +
-          str(num_cls) + ' CLs.\n')
     if cq_dry_run and num_cls > CL_SPLIT_FORCE_LIMIT:
       print(
         'This will generate "%r" CLs. This many CLs can potentially generate'

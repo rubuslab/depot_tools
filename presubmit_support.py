@@ -839,6 +839,7 @@ class AffectedFile(object):
     self._local_root = repository_root
     self._is_directory = None
     self._cached_changed_contents = None
+    self._cached_changes = None
     self._cached_new_contents = None
     self._diff_cache = diff_cache
     logging.debug('%s(%s)', self.__class__.__name__, self._path)
@@ -924,6 +925,25 @@ class AffectedFile(object):
       if not line.startswith('-'):
         line_num += 1
     return self._cached_changed_contents[:]
+
+  def Changes(self):
+    """Returns a list of tuples (deleted, added) of all changes.
+
+     This relies on the scm diff output describing each changed code section
+     with a line of the form
+
+     ^@@ <old line num>,<old size> <new line num>,<new size> @@$
+    """
+    if self._cached_changes is not None:
+      return self._cached_changes[:]
+    self._cached_changes = []
+    line_num = 0
+
+    for line in self.GenerateScmDiff().splitlines():
+      m = re.match(r'^@@ \-[0-9]+\,([0-9]+) \+[0-9]+\,([0-9]+) @@', line)
+      if m:
+        self._cached_changes.append((int(m.group(1)), int(m.group(2))))
+    return self._cached_changes[:]
 
   def __str__(self):
     return self.LocalPath()

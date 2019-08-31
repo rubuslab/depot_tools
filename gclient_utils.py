@@ -386,6 +386,10 @@ class Annotated(Wrapper):
     finally:
       self.lock.release()
 
+    # Bytestrings need to be decoded to a string before outputting.
+    if isinstance(out, bytes):
+      out = out.decode()
+
     # Continue lockless.
     obj[0] += out
     while True:

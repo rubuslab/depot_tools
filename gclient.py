@@ -84,7 +84,6 @@ from __future__ import print_function
 
 __version__ = '0.7'
 
-import collections
 import copy
 import json
 import logging

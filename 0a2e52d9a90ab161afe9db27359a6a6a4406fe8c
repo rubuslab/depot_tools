@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "850df4a4_a6b6660d",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-03T21:34:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c059248_bfeaf8e0",
+      "range": {
+        "startLine": 347,
+        "startChar": 1,
+        "endLine": 348,
+        "endChar": 43
+      },
+      "revId": "0a2e52d9a90ab161afe9db27359a6a6a4406fe8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4ddf44_0a90135c",
         "filename": "update_depot_tools",
         "patchSetId": 4

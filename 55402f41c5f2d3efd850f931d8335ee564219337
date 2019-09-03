@@ -262,6 +262,30 @@
       "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09e132d7_2dd299a6",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-03T21:38:03Z",
+      "side": 1,
+      "message": "I\u0027d put it after gclient has finished updating:\nhttps://chromium.googlesource.com/chromium/tools/depot_tools.git/+/HEAD/gclient.py#1752\n\nMaybe in _RemoveUnversionedGitDirs",
+      "parentUuid": "84526b62_2b22d7e4",
+      "range": {
+        "startLine": 1172,
+        "startChar": 4,
+        "endLine": 1172,
+        "endChar": 10
+      },
+      "revId": "55402f41c5f2d3efd850f931d8335ee564219337",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

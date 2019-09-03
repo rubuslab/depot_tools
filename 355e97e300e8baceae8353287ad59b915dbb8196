@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "26f1c91a_ffb37d35",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-03T16:33:21Z",
+      "side": 0,
+      "message": "hooray!",
+      "revId": "355e97e300e8baceae8353287ad59b915dbb8196",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "04b8b486_4111434f",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 5
@@ -13,6 +30,24 @@
       "writtenOn": "2019-09-02T17:59:50Z",
       "side": 0,
       "message": "This was dead code since there\u0027s another `test` defined below.",
+      "revId": "355e97e300e8baceae8353287ad59b915dbb8196",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9db10c02_74816be0",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-03T16:33:21Z",
+      "side": 0,
+      "message": "lol, thanks :)",
+      "parentUuid": "04b8b486_4111434f",
       "revId": "355e97e300e8baceae8353287ad59b915dbb8196",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

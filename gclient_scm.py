@@ -1264,6 +1264,12 @@ class GitWrapper(SCMWrapper):
     kwargs.setdefault('stderr', subprocess2.PIPE)
     strip = kwargs.pop('strip', True)
     env = scm.GIT.ApplyEnvVars(kwargs)
+    # If an explicit cwd isn't set, then default to the .git/ subdir so we get
+    # stricter behavior.  This can be useful in cases of slight corruption --
+    # we don't accidentally go corrupting parent git checks too.  See
+    # https://crbug.com/1000825 for an example.
+    if 'cwd' not in kwargs:
+      env.setdefault('GIT_DIR', os.path.join(self.checkout_path, '.git'))
     ret = subprocess2.check_output(
         ['git'] + args, env=env, **kwargs).decode('utf-8')
     if strip:

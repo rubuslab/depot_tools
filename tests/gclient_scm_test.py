@@ -661,10 +661,12 @@ class ManagedGitWrapperTestCaseMock(unittest.TestCase):
         mockCheckOutput.mock_calls,
         [
             mock.call(
-                ['git', '-c', 'core.quotePath=false', 'ls-files'],
+                ['git', '--git-dir=/tmp/fake/.git', '-c',
+                 'core.quotePath=false', 'ls-files'],
                 cwd=self.base_path, env=env, stderr=-1),
             mock.call(
-                ['git', 'rev-parse', '--verify', 'HEAD'],
+                ['git', '--git-dir=/tmp/fake/.git', 'rev-parse', '--verify',
+                 'HEAD'],
                 cwd=self.base_path, env=env, stderr=-1),
         ])
     mockClone.assert_called_with(
@@ -696,10 +698,12 @@ class ManagedGitWrapperTestCaseMock(unittest.TestCase):
         mockCheckOutput.mock_calls,
         [
             mock.call(
-                ['git', '-c', 'core.quotePath=false', 'ls-files'],
+                ['git', '--git-dir=/tmp/fake/.git', '-c',
+                 'core.quotePath=false', 'ls-files'],
                 cwd=self.base_path, env=env, stderr=-1),
             mock.call(
-                ['git', 'rev-parse', '--verify', 'HEAD'],
+                ['git', '--git-dir=/tmp/fake/.git', 'rev-parse', '--verify',
+                 'HEAD'],
                 cwd=self.base_path, env=env, stderr=-1),
         ])
     mockClone.assert_called_with(
@@ -1277,7 +1281,9 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
       scm.apply_patch_ref(
           self.url, 'refs/changes/36/1236/1', 'refs/heads/master', self.options,
           file_list)
-    self.assertEqual(cm.exception.cmd[:2], ['git', 'cherry-pick'])
+    self.assertEqual(cm.exception.cmd[0], 'git')
+    self.assertTrue(cm.exception.cmd[1].startswith('--git-dir='))
+    self.assertEqual(cm.exception.cmd[2], 'cherry-pick')
     self.assertIn(b'error: could not apply', cm.exception.stderr)
 
     # Try to apply 'refs/changes/35/1235/1', which doesn't have a merge

@@ -26,14 +26,17 @@ def enable_native_ansi():
 
   out_handle = kernel32.GetStdHandle(subprocess.STD_OUTPUT_HANDLE)
   mode = ctypes.wintypes.DWORD()
+
+  # This fails if the user's terminal isn't native.
   if kernel32.GetConsoleMode(out_handle, ctypes.byref(mode)) == 0:
-    print('kernel32.GetConsoleMode failed')
     return False
 
   if not (mode.value & ENABLE_VIRTUAL_TERMINAL_PROCESSING):
     if kernel32.SetConsoleMode(
         out_handle, mode.value | ENABLE_VIRTUAL_TERMINAL_PROCESSING) == 0:
-      print('kernel32.SetConsoleMode to enable ANSI sequences failed')
+      print(
+          'kernel32.SetConsoleMode to enable ANSI sequences failed',
+          file=sys.stderr)
       return False
 
   return True
@@ -110,13 +113,14 @@ def init():
     else:
       # A normal file, or an unknown file type.
       pass
-
-    # Enable native ANSI color codes on Windows 10.
-    if IS_TTY and platform.release() == '10':
-      should_wrap = not enable_native_ansi()
   else:
     # This is non-windows, so we trust isatty.
     OUT_TYPE = 'pipe or file'
+
+  # Enable native ANSI color codes on Windows 10.
+  if IS_TTY and platform.release() == '10':
+    if enable_native_ansi():
+      should_wrap = False
 
   colorama.init(wrap=should_wrap)
 

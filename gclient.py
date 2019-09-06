@@ -241,13 +241,9 @@ class Hook(object):
 
     cmd = [arg for arg in self._action]
 
-    if cmd[0] == 'python' and six.PY2:
-      # If the hook specified "python" as the first item, the action is a
-      # Python script. Run it by starting a new copy of the same interpreter if
-      # we're running on Python 2.
-      # On Python 3 we simply execute 'python'.
-      cmd[0] = sys.executable
-    elif cmd[0] == 'vpython' and _detect_host_os() == 'win':
+    if cmd[0] == 'python':
+      cmd[0] = sys.executable if six.PY2 else 'vpython'
+    if cmd[0] == 'vpython' and _detect_host_os() == 'win':
       cmd[0] += '.bat'
 
     try:
@@ -2707,7 +2703,7 @@ def CMDsync(parser, args):
           'url': str(d.url) if d.url else None,
           'was_processed': d.should_process,
       }
-    with open(options.output_json, 'wb') as f:
+    with open(options.output_json, 'w') as f:
       json.dump({'solutions': slns}, f)
   return ret
 

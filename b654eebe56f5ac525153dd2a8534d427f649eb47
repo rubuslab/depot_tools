@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "44d6c67f_f8c83114",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-06T18:18:16Z",
+      "side": 1,
+      "message": "No. python27*_bin and git-*_bin are here presumably for historical reasons.\nOn windows, both git and python were downloaded to win_tools-*_bin. Now both git and python are downloaded to bootstrap-*_bin since it\u0027s no longer windows-specific.",
+      "parentUuid": "2e24ab58_86686969",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5fe61ed0_9e93e560",
         "filename": "bootstrap/manifest.txt",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2608975b_1e92290d",
+        "filename": "bootstrap/manifest.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-06T18:18:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fe61ed0_9e93e560",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba5692d9_ae66eca1",
+        "filename": "bootstrap/manifest_bleeding_edge.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-06T18:18:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bcaf9d5b_0e24b662",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d3216b43_3f1f9079",
         "filename": "bootstrap/win_tools.bat",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2019-09-06T02:03:20Z",
       "side": 1,
       "message": "Don\u0027t we still need to do things to keep python2 bootstrapped and working on Windows as well as python3?",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0278512e_0b172cf1",
+        "filename": "bootstrap/win_tools.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-06T18:18:16Z",
+      "side": 1,
+      "message": "We\u0027re still doing that. CIPD is still downloading python2, python3 and git on Windows, and we\u0027re still bootstrapping them.\nThis only changes things to execute the bootstrap script using python3 instead of python2.",
+      "parentUuid": "d3216b43_3f1f9079",
       "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

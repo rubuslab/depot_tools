@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1b11606b_364022dc",
+        "filename": "setup_color.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-09-06T07:32:40Z",
+      "side": 1,
+      "message": "Optional style nit: I would have kept mode line 28 after the comment since it\u0027s logically part of the call.",
+      "revId": "47e6d369ed1977ad0501950ef4fb3cda72db1fdf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "44ee347f_57d298b2",
         "filename": "setup_color.py",
         "patchSetId": 2

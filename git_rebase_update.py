@@ -84,7 +84,7 @@ def fetch_remotes(branch_tree):
                         stderr=sys.stderr)
 
 
-def remove_empty_branches(branch_tree):
+def remove_empty_branches(branch_tree, keep_branches):
   tag_set = git.tags()
   ensure_root_checkout = git.once(lambda: git.run('checkout', git.root()))
 
@@ -94,31 +94,35 @@ def remove_empty_branches(branch_tree):
   for branch, parent in git.topo_iter(branch_tree, top_down=False):
     downstreams[parent].append(branch)
 
+    if branch in keep_branches:
+      continue
     # If branch and parent have the same tree, then branch has to be marked
     # for deletion and its children and grand-children reparented to parent.
-    if git.hash_one(branch+":") == git.hash_one(parent+":"):
-      ensure_root_checkout()
+    if not git.hash_one(branch + ":") == git.hash_one(parent + ":"):
+      continue
 
-      logging.debug('branch %s merged to %s', branch, parent)
+    ensure_root_checkout()
 
-      # Mark branch for deletion while remembering the ordering, then add all
-      # its children as grand-children of its parent and record reparenting
-      # information if necessary.
-      deletions[branch] = len(deletions)
+    logging.debug('branch %s merged to %s', branch, parent)
 
-      for down in downstreams[branch]:
-        if down in deletions:
-          continue
+    # Mark branch for deletion while remembering the ordering, then add all
+    # its children as grand-children of its parent and record reparenting
+    # information if necessary.
+    deletions[branch] = len(deletions)
 
-        # Record the new and old parent for down, or update such a record
-        # if it already exists. Keep track of the ordering so that reparenting
-        # happen in topological order.
-        downstreams[parent].append(down)
-        if down not in reparents:
-          reparents[down] = (len(reparents), parent, branch)
-        else:
-          order, _, old_parent = reparents[down]
-          reparents[down] = (order, parent, old_parent)
+    for down in downstreams[branch]:
+      if down in deletions:
+        continue
+
+      # Record the new and old parent for down, or update such a record
+      # if it already exists. Keep track of the ordering so that reparenting
+      # happen in topological order.
+      downstreams[parent].append(down)
+      if down not in reparents:
+        reparents[down] = (len(reparents), parent, branch)
+      else:
+        order, _, old_parent = reparents[down]
+        reparents[down] = (order, parent, old_parent)
 
   # Apply all reparenting recorded, in order.
   for branch, value in sorted(reparents.iteritems(), key=lambda x:x[1][0]):
@@ -225,6 +229,20 @@ def main(args=None):
                       action='store_true',
                       help='Skip fetching remotes.')
   parser.add_argument(
+      '--keep_branch',
+      '--keep-branch',
+      action='append',
+      default=[],
+      help='Do not delete this branch, even if empty. '
+      'Can be specified multiple times.')
+  parser.add_argument(
+      '--ignore_branch',
+      '--ignore-branch',
+      action='append',
+      default=[],
+      help='Do not modify this branch. Implies --keep-branch. '
+      'Can be specified multiple times.')
+  parser.add_argument(
       '--current', action='store_true', help='Only rebase the current branch.')
   parser.add_argument('branches', nargs='*',
                       help='Branches to be rebased. All branches are assumed '
@@ -261,6 +279,10 @@ def main(args=None):
   branches_to_rebase = set(opts.branches)
   if opts.current:
     branches_to_rebase.add(git.current_branch())
+  branches_to_rebase -= set(opts.ignore_branch)
+  if (opts.branches or opts.current) and not branches_to_rebase:
+    print('All included branches were ignored by --ignore-branch.')
+    return 0
 
   skipped, branch_tree = git.get_branch_tree()
   if branches_to_rebase:
@@ -283,6 +305,8 @@ def main(args=None):
   # Rebase each branch starting with the root-most branches and working
   # towards the leaves.
   for branch, parent in git.topo_iter(branch_tree):
+    if branch in opts.ignore_branch:
+      continue
     # Only rebase specified branches, unless none specified.
     if branches_to_rebase and branch not in branches_to_rebase:
       continue
@@ -311,7 +335,8 @@ def main(args=None):
       print('  %s' % branch)
 
   if not retcode:
-    remove_empty_branches(branch_tree)
+    keep_branches = set(opts.keep_branch + opts.ignore_branch)
+    remove_empty_branches(branch_tree, keep_branches)
 
     # return_branch may not be there any more.
     if return_branch in git.branches():

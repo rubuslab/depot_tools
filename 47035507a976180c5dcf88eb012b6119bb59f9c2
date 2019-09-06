@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1383f960_4816c3c9",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-06T23:58:07Z",
+      "side": 1,
+      "message": "Would it be a good idea to run DEPS hooks using vpython?",
+      "range": {
+        "startLine": 245,
+        "startChar": 15,
+        "endLine": 245,
+        "endChar": 55
+      },
+      "revId": "47035507a976180c5dcf88eb012b6119bb59f9c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

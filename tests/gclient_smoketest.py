@@ -9,6 +9,7 @@ Shell out 'gclient' and run basic conformance tests.
 
 This test assumes GClientSmokeBase.URL_BASE is valid.
 """
+from __future__ import print_function
 
 import json
 import logging
@@ -26,6 +27,7 @@ import scm as gclient_scm
 import subprocess2
 from testing_support import fake_repos
 from testing_support.fake_repos import join, write
+from third_party import six
 
 GCLIENT_PATH = os.path.join(ROOT_DIR, 'gclient')
 COVERAGE = False
@@ -734,13 +736,7 @@ class GClientSmokeGIT(GClientSmokeBase):
         ('running', self.root_dir),                 # pre-deps hook
         ('running', self.root_dir),                 # pre-deps hook (fails)
     ]
-    executable = sys.executable
-    # On Python 3 we always execute hooks with 'python', so we cannot use
-    # sys.executable.
-    if sys.version_info.major == 3:
-      executable = subprocess.check_output(
-          ['python', '-c', 'import sys; print(sys.executable)'])
-      executable = executable.decode('utf-8').strip()
+    executable = sys.executable if six.PY2 else 'vpython'
     expected_stderr = ("Error: Command '%s -c import sys; "
                        "sys.exit(1)' returned non-zero exit status 1 in %s\n"
                        % (executable, self.root_dir))

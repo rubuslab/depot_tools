@@ -46,6 +46,30 @@
       "revId": "27de1392f921eebf4a67fdda04a84ec3697a0f9c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16a0984b_b291d173",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-09-06T08:49:19Z",
+      "side": 1,
+      "message": "hoisted the check to the top since i can\u0027t relocate the whole block (env depends on fully constructed kwargs)\n\nthere is no guarantee that cwd is set to the top of the git checkout, or even in the git checkout at all.  i don\u0027t know if any code uses it that way, but it\u0027s a new API assumption that i didn\u0027t really want to chase down or deal with long term regressions.",
+      "parentUuid": "f73b5d06_528192bc",
+      "range": {
+        "startLine": 1271,
+        "startChar": 0,
+        "endLine": 1271,
+        "endChar": 27
+      },
+      "revId": "27de1392f921eebf4a67fdda04a84ec3697a0f9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

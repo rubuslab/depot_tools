@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ee91ae4e_bfe19147",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-06T18:58:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "44d6c67f_f8c83114",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fe61ed0_9e93e560",
         "filename": "bootstrap/manifest.txt",
         "patchSetId": 5
@@ -139,6 +157,24 @@
       "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f58542e_126d494a",
+        "filename": "bootstrap/win_tools.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-06T18:58:17Z",
+      "side": 1,
+      "message": "Ah, I see. Thanks.",
+      "parentUuid": "0278512e_0b172cf1",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

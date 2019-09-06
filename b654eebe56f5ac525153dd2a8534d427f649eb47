@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e24ab58_86686969",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-06T02:03:20Z",
+      "side": 1,
+      "message": "Do you need to add python3 to this list?",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fe61ed0_9e93e560",
+        "filename": "bootstrap/manifest.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-06T02:03:20Z",
+      "side": 1,
+      "message": "Do we need to update the comments as well?",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bcaf9d5b_0e24b662",
+        "filename": "bootstrap/manifest_bleeding_edge.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-06T02:03:20Z",
+      "side": 1,
+      "message": "Do you need to update the comments as well?",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3216b43_3f1f9079",
+        "filename": "bootstrap/win_tools.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-06T02:03:20Z",
+      "side": 1,
+      "message": "Don\u0027t we still need to do things to keep python2 bootstrapped and working on Windows as well as python3?",
+      "revId": "b654eebe56f5ac525153dd2a8534d427f649eb47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

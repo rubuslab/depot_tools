@@ -22,6 +22,30 @@
       "revId": "47035507a976180c5dcf88eb012b6119bb59f9c2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9faea8b3_7f8193d1",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-07T00:50:05Z",
+      "side": 1,
+      "message": "Yes, but I\u0027m pretty sure things break now if you try to do that. We should fix those breakages, though.\n\nI wonder if we should leave this alone and make people explicitly ask for vpython in the hook command line, instead.",
+      "parentUuid": "1383f960_4816c3c9",
+      "range": {
+        "startLine": 245,
+        "startChar": 15,
+        "endLine": 245,
+        "endChar": 55
+      },
+      "revId": "47035507a976180c5dcf88eb012b6119bb59f9c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

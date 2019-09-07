@@ -46,6 +46,30 @@
       "revId": "47035507a976180c5dcf88eb012b6119bb59f9c2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "653f0fe5_d57db84d",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-07T01:00:44Z",
+      "side": 1,
+      "message": "THis doesn\u0027t change anything for Python 2.\n\nWhen using vpython3 \"python\" refers to the Python 3 executable, so leaving it alone is the same as using vpython3. I\u0027m using vpython because that\u0027s less likely to break, not that anyone is using Python 3, though.\n\nI\u0027ll look into what breaks if we use vpython on Python 2 too.",
+      "parentUuid": "9faea8b3_7f8193d1",
+      "range": {
+        "startLine": 245,
+        "startChar": 15,
+        "endLine": 245,
+        "endChar": 55
+      },
+      "revId": "47035507a976180c5dcf88eb012b6119bb59f9c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

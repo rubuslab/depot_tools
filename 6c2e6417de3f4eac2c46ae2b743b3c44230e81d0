@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8248b88d_e98baab6",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-08T08:03:25Z",
+      "side": 1,
+      "message": "out of date.",
+      "range": {
+        "startLine": 771,
+        "startChar": 1,
+        "endLine": 772,
+        "endChar": 34
+      },
+      "revId": "6c2e6417de3f4eac2c46ae2b743b3c44230e81d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88af0f35_222e451f",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-08T08:03:25Z",
+      "side": 1,
+      "message": "prev code dealt with failures. Here you are outsourcing this to luci-auth, which is probably not bad, but have you tested how this works in 3 cases:\n\nuser already logged in with required scopes\nuser already logged in but not sufficient scopes\nuser not logged in",
+      "range": {
+        "startLine": 774,
+        "startChar": 2,
+        "endLine": 776,
+        "endChar": 70
+      },
+      "revId": "6c2e6417de3f4eac2c46ae2b743b3c44230e81d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

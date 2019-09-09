@@ -250,6 +250,26 @@ class EvaluateConditionTest(unittest.TestCase):
     self.assertFalse(gclient_eval.EvaluateCondition(
         'foo != "baz"', {'foo': '"baz"'}))
 
+  def test_triple_or(self):
+    self.assertTrue(gclient_eval.EvaluateCondition(
+        'a or b or c', {'a': 'False', 'b': 'False', 'c': 'True'}))
+    self.assertFalse(gclient_eval.EvaluateCondition(
+        'a or b or c', {'a': 'False', 'b': 'False', 'c': 'False'}))
+
+  def test_triple_and(self):
+    self.assertTrue(gclient_eval.EvaluateCondition(
+        'a and b and c', {'a': 'True', 'b': 'True', 'c': 'True'}))
+    self.assertFalse(gclient_eval.EvaluateCondition(
+        'a and b and c', {'a': 'True', 'b': 'True', 'c': 'False'}))
+
+  def test_triple_and_and_or(self):
+    self.assertTrue(gclient_eval.EvaluateCondition(
+        'a and b and c or d or e',
+        {'a': 'False', 'b': 'False', 'c': 'False', 'd': 'False', 'e': 'True'}))
+    self.assertFalse(gclient_eval.EvaluateCondition(
+        'a and b and c or d or e',
+        {'a': 'True', 'b': 'True', 'c': 'False', 'd': 'False', 'e': 'False'}))
+
   def test_string_bool(self):
     self.assertFalse(gclient_eval.EvaluateCondition(
         'false_str_var and true_var',

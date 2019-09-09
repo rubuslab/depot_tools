@@ -568,33 +568,29 @@ def EvaluateCondition(condition, variables, referenced_variables=None):
         node, ast.NameConstant):  # Since Python 3.4
       return node.value
     elif isinstance(node, ast.BoolOp) and isinstance(node.op, ast.Or):
-      if len(node.values) != 2:
-        raise ValueError(
-            'invalid "or": exactly 2 operands required (inside %r)' % (
-                condition))
-      left = _convert(node.values[0])
-      right = _convert(node.values[1])
-      if not isinstance(left, bool):
-        raise ValueError(
-            'invalid "or" operand %r (inside %r)' % (left, condition))
-      if not isinstance(right, bool):
-        raise ValueError(
-            'invalid "or" operand %r (inside %r)' % (right, condition))
-      return left or right
+      bool_values = []
+      for value in node.values:
+        bool_values.append(_convert(value))
+        if not isinstance(bool_values[-1], bool):
+          raise ValueError(
+              'invalid "or" operand %r (inside %r)' % (
+                  bool_values[-1], condition))
+      for bool_value in bool_values:
+        if bool_value:
+          return True
+      return False
     elif isinstance(node, ast.BoolOp) and isinstance(node.op, ast.And):
-      if len(node.values) != 2:
-        raise ValueError(
-            'invalid "and": exactly 2 operands required (inside %r)' % (
-                condition))
-      left = _convert(node.values[0])
-      right = _convert(node.values[1])
-      if not isinstance(left, bool):
-        raise ValueError(
-            'invalid "and" operand %r (inside %r)' % (left, condition))
-      if not isinstance(right, bool):
-        raise ValueError(
-            'invalid "and" operand %r (inside %r)' % (right, condition))
-      return left and right
+      bool_values = []
+      for value in node.values:
+        bool_values.append(_convert(value))
+        if not isinstance(bool_values[-1], bool):
+          raise ValueError(
+              'invalid "and" operand %r (inside %r)' % (
+                  bool_values[-1], condition))
+      for bool_value in bool_values:
+        if not bool_value:
+          return False
+      return True
     elif isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.Not):
       value = _convert(node.operand)
       if not isinstance(value, bool):

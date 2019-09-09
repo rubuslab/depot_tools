@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad1abad2_a5838425",
+        "filename": "update_depot_tools",
+        "patchSetId": 9
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-09T20:05:03Z",
+      "side": 1,
+      "message": "Moved inside if \"X$DEPOT_TOOLS_UPDATE\" !\u003d \"X0\" so that the tests don\u0027t timeout.",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 38
+      },
+      "revId": "bc70b3b548ac2ff6ff661b7f39ee864c451d225d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

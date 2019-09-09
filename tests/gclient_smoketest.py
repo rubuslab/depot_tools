@@ -734,16 +734,9 @@ class GClientSmokeGIT(GClientSmokeBase):
         ('running', self.root_dir),                 # pre-deps hook
         ('running', self.root_dir),                 # pre-deps hook (fails)
     ]
-    executable = sys.executable
-    # On Python 3 we always execute hooks with 'python', so we cannot use
-    # sys.executable.
-    if sys.version_info.major == 3:
-      executable = subprocess.check_output(
-          ['python', '-c', 'import sys; print(sys.executable)'])
-      executable = executable.decode('utf-8').strip()
-    expected_stderr = ("Error: Command '%s -c import sys; "
+    expected_stderr = ("Error: Command 'vpython -c import sys; "
                        "sys.exit(1)' returned non-zero exit status 1 in %s\n"
-                       % (executable, self.root_dir))
+                       % self.root_dir)
     stdout, stderr, retcode = self.gclient(['sync', '--deps', 'mac', '--jobs=1',
                                             '--revision',
                                             'src@' + self.githash('repo_5', 3)])

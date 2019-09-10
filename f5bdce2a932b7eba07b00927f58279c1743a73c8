@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbf7a0d5_014cd97a",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-10T17:45:12Z",
+      "side": 1,
+      "message": "Consider using\n\n  return any(bool_values)",
+      "range": {
+        "startLine": 578,
+        "startChar": 6,
+        "endLine": 580,
+        "endChar": 21
+      },
+      "revId": "f5bdce2a932b7eba07b00927f58279c1743a73c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "125fe8da_0c2cee98",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-10T17:45:12Z",
+      "side": 1,
+      "message": "Please add tests for invalid \"and\" and \"or\" operands",
+      "range": {
+        "startLine": 587,
+        "startChar": 10,
+        "endLine": 589,
+        "endChar": 46
+      },
+      "revId": "f5bdce2a932b7eba07b00927f58279c1743a73c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab0d7dd5_c3fb4663",
+        "filename": "gclient_eval.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-10T17:45:12Z",
+      "side": 1,
+      "message": "Consider using\n\n  return all(bool_values)",
+      "range": {
+        "startLine": 590,
+        "startChar": 6,
+        "endLine": 593,
+        "endChar": 17
+      },
+      "revId": "f5bdce2a932b7eba07b00927f58279c1743a73c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

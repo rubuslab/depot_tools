@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e629baa_a0c9615a",
+        "filename": "split_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2019-09-11T02:05:28Z",
+      "side": 1,
+      "message": "Perhaps directory + str(cl_index) ? To make it more human-readable.",
+      "range": {
+        "startLine": 102,
+        "startChar": 51,
+        "endLine": 102,
+        "endChar": 64
+      },
+      "revId": "2a0fc6eecee79899664524a133bfdc27659e3063",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9dcc23b7_1d69ac38",
+        "filename": "split_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2019-09-11T02:05:28Z",
+      "side": 1,
+      "message": "reviewers",
+      "range": {
+        "startLine": 292,
+        "startChar": 33,
+        "endLine": 292,
+        "endChar": 41
+      },
+      "revId": "2a0fc6eecee79899664524a133bfdc27659e3063",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0580e031_a0075adc",
+        "filename": "split_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2019-09-11T02:05:28Z",
+      "side": 1,
+      "message": "It\u0027s debatable whether we want to avoid reusing reviewers. It could be easier to ask the smallest possible amount of reviewers to become familiar with the change being split. Since you could also make an argument that we might prefer not to ask too much work from a single reviewer, I\u0027ll let you make the judgment call of which is best.\n\nBut please document your choice in a comment, and the reason why you made that choice.",
+      "range": {
+        "startLine": 298,
+        "startChar": 2,
+        "endLine": 300,
+        "endChar": 29
+      },
+      "revId": "2a0fc6eecee79899664524a133bfdc27659e3063",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

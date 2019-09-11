@@ -2496,13 +2496,18 @@ the current line as well!
 
   def testCannedCheckOwners_TBROWNERSFile(self):
     self.AssertOwnersWorks(
-        tbr=True, uncovered_files=set(['foo']),
+        tbr=True, uncovered_files=set(['foo/OWNERS']),
         modified_file='foo/OWNERS',
-        expected_output=re.compile(
+        expected_output=
             'Missing LGTM from an OWNER for these files:\n'
-            '    foo\n'
-            '.*The CL affects an OWNERS file, so TBR will be ignored.',
-            re.MULTILINE))
+            '    foo/OWNERS\nTBR for OWNERS files are ignored.\n')
+
+  def testCannedCheckOwners_TBRNonOWNERSFile(self):
+    self.AssertOwnersWorks(
+        tbr=True, uncovered_files=set(['foo/xyz.cc']),
+        modified_file='foo/OWNERS',
+        expected_output=
+            '--tbr was specified, skipping OWNERS check\n')
 
   def testCannedCheckOwners_WithoutOwnerLGTM(self):
     self.AssertOwnersWorks(uncovered_files=set(['foo']),

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f935781e_df9aa51b",
+        "filename": "bootstrap/manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-11T22:05:51Z",
+      "side": 1,
+      "message": "Why is this \"cpython1\"?",
+      "revId": "5facdca8c1e7a020acb017acceb81bf9b61554f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

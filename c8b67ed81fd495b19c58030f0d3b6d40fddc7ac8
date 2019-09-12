@@ -22,6 +22,30 @@
       "revId": "c8b67ed81fd495b19c58030f0d3b6d40fddc7ac8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c5ceec1_3f0cf61c",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-12T21:58:21Z",
+      "side": 0,
+      "message": "i don\u0027t think so: https://cs.chromium.org/search/?q\u003dretry+file:%5Einfra/go/src/go%5C.chromium%5C.org/luci/buildbucket/+package:%5Echromium$\u0026type\u003dcs",
+      "parentUuid": "99333f22_6fe52955",
+      "range": {
+        "startLine": 483,
+        "startChar": 2,
+        "endLine": 483,
+        "endChar": 20
+      },
+      "revId": "c8b67ed81fd495b19c58030f0d3b6d40fddc7ac8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7b9d4cb5_97c6ab31",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-12T21:58:21Z",
+      "side": 1,
+      "message": "beware, this will, very likely, break some ~badly automated git cl try execution. See also https://crbug.com/1001522 for an example of what may happen.",
+      "revId": "c868c789876823006a9975db9823b46718c99a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16649f7c_3bca1843",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2875,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-12T21:58:21Z",
+      "side": 1,
+      "message": "update doc",
+      "revId": "c868c789876823006a9975db9823b46718c99a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

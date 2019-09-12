@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40586f52_e4c3b011",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1645,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-12T23:54:57Z",
+      "side": 0,
+      "message": "oh, i\u0027m so happy to see this removed!",
+      "range": {
+        "startLine": 1624,
+        "startChar": 0,
+        "endLine": 1645,
+        "endChar": 42
+      },
+      "revId": "c8b67ed81fd495b19c58030f0d3b6d40fddc7ac8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

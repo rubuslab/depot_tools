@@ -1048,8 +1048,6 @@ class Changelist(object):
     self._remote = None
     self._cached_remote_url = (False, None)  # (is_cached, value)
 
-    self._codereview_impl = _GerritChangelistImpl(self, **kwargs)
-
   def GetCCList(self):
     """Returns the users cc'd on this CL.
 
@@ -1288,7 +1286,7 @@ class Changelist(object):
     """Returns the issue number as a int or None if not set."""
     if self.issue is None and not self.lookedup_issue:
       self.issue = self._GitGetBranchConfigValue(
-          self._codereview_impl.IssueConfigKey(), value_type=int)
+          self.IssueConfigKey(), value_type=int)
       self.lookedup_issue = True
     return self.issue
 
@@ -1297,12 +1295,12 @@ class Changelist(object):
     issue = self.GetIssue()
     if not issue:
       return None
-    return '%s/%s' % (self._codereview_impl.GetCodereviewServer(), issue)
+    return '%s/%s' % (self.GetCodereviewServer(), issue)
 
   def GetDescription(self, pretty=False, force=False):
     if not self.has_description or force:
       if self.GetIssue():
-        self.description = self._codereview_impl.FetchDescription(force=force)
+        self.description = self.FetchDescription(force=force)
       self.has_description = True
     if pretty:
       # Set width to 72 columns + 2 space indent.
@@ -1332,7 +1330,7 @@ class Changelist(object):
     """Returns the patchset number as a int or None if not set."""
     if self.patchset is None and not self.lookedup_patchset:
       self.patchset = self._GitGetBranchConfigValue(
-          self._codereview_impl.PatchsetConfigKey(), value_type=int)
+          self.PatchsetConfigKey(), value_type=int)
       self.lookedup_patchset = True
     return self.patchset
 
@@ -1344,7 +1342,7 @@ class Changelist(object):
     else:
       self.patchset = int(patchset)
     self._GitSetBranchConfigValue(
-        self._codereview_impl.PatchsetConfigKey(), self.patchset)
+        self.PatchsetConfigKey(), self.patchset)
 
   def SetIssue(self, issue=None):
     """Set this branch's issue. If issue isn't given, clears the issue."""
@@ -1352,20 +1350,20 @@ class Changelist(object):
     if issue:
       issue = int(issue)
       self._GitSetBranchConfigValue(
-          self._codereview_impl.IssueConfigKey(), issue)
+          self.IssueConfigKey(), issue)
       self.issue = issue
-      codereview_server = self._codereview_impl.GetCodereviewServer()
+      codereview_server = self.GetCodereviewServer()
       if codereview_server:
         self._GitSetBranchConfigValue(
-            self._codereview_impl.CodereviewServerConfigKey(),
+            self.CodereviewServerConfigKey(),
             codereview_server)
     else:
       # Reset all of these just to be clean.
       reset_suffixes = [
           'last-upload-hash',
-          self._codereview_impl.IssueConfigKey(),
-          self._codereview_impl.PatchsetConfigKey(),
-          self._codereview_impl.CodereviewServerConfigKey(),
+          self.IssueConfigKey(),
+          self.PatchsetConfigKey(),
+          self.CodereviewServerConfigKey(),
       ] + self._PostUnsetIssueProperties()
       for prop in reset_suffixes:
         self._GitSetBranchConfigValue(prop, None, error_ok=True)
@@ -1426,7 +1424,7 @@ class Changelist(object):
         upstream=upstream_branch)
 
   def UpdateDescription(self, description, force=False):
-    self._codereview_impl.UpdateDescriptionRemote(description, force=force)
+    self.UpdateDescriptionRemote(description, force=force)
     self.description = description
     self.has_description = True
 
@@ -1460,7 +1458,7 @@ class Changelist(object):
       result = presubmit_support.DoPresubmitChecks(change, committing,
           verbose=verbose, output_stream=sys.stdout, input_stream=sys.stdin,
           default_presubmit=None, may_prompt=may_prompt,
-          gerrit_obj=self._codereview_impl.GetGerritObjForPresubmit(),
+          gerrit_obj=self.GetGerritObjForPresubmit(),
           parallel=parallel)
       metrics.collector.add_repeated('sub_commands', {
         'command': 'presubmit',
@@ -1477,12 +1475,12 @@ class Changelist(object):
       parsed_issue_arg = _ParsedIssueNumberArgument(int(issue_arg))
     else:
       # Assume url.
-      parsed_issue_arg = self._codereview_impl.ParseIssueURL(
+      parsed_issue_arg = self.ParseIssueURL(
           urlparse.urlparse(issue_arg))
     if not parsed_issue_arg or not parsed_issue_arg.valid:
       DieWithError('Failed to parse issue argument "%s". '
                    'Must be an issue number or a valid URL.' % issue_arg)
-    return self._codereview_impl.CMDPatchWithParsedIssue(
+    return self.CMDPatchWithParsedIssue(
         parsed_issue_arg, nocommit, False)
 
   def CMDUpload(self, options, git_diff_args, orig_args):
@@ -1501,8 +1499,8 @@ class Changelist(object):
     # Fast best-effort checks to abort before running potentially expensive
     # hooks if uploading is likely to fail anyway. Passing these checks does
     # not guarantee that uploading will not fail.
-    self._codereview_impl.EnsureAuthenticated(force=options.force)
-    self._codereview_impl.EnsureCanUploadPatchset(force=options.force)
+    self.EnsureAuthenticated(force=options.force)
+    self.EnsureCanUploadPatchset(force=options.force)
 
     # Apply watchlists on upload.
     change = self.GetChange(base_branch, None)
@@ -1564,7 +1562,7 @@ class Changelist(object):
     assert new_state in _CQState.ALL_STATES
     assert self.GetIssue()
     try:
-      self._codereview_impl.SetCQState(new_state)
+      self.SetCQState(new_state)
       return 0
     except KeyboardInterrupt:
       raise
@@ -1584,7 +1582,7 @@ class Changelist(object):
   # Forward methods to codereview specific implementation.
 
   def AddComment(self, message, publish=None):
-    return self._codereview_impl.AddComment(message, publish=publish)
+    return self.AddComment(message, publish=publish)
 
   def GetCommentsSummary(self, readable=True):
     """Returns list of _CommentSummary for each comment.
@@ -1592,34 +1590,34 @@ class Changelist(object):
     args:
     readable: determines whether the output is designed for a human or a machine
     """
-    return self._codereview_impl.GetCommentsSummary(readable)
+    return self.GetCommentsSummary(readable)
 
   def CloseIssue(self):
-    return self._codereview_impl.CloseIssue()
+    return self.CloseIssue()
 
   def GetStatus(self):
-    return self._codereview_impl.GetStatus()
+    return self.GetStatus()
 
   def GetCodereviewServer(self):
-    return self._codereview_impl.GetCodereviewServer()
+    return self.GetCodereviewServer()
 
   def GetIssueOwner(self):
     """Get owner from codereview, which may differ from this checkout."""
-    return self._codereview_impl.GetIssueOwner()
+    return self.GetIssueOwner()
 
   def GetReviewers(self):
-    return self._codereview_impl.GetReviewers()
+    return self.GetReviewers()
 
   def GetMostRecentPatchset(self):
-    return self._codereview_impl.GetMostRecentPatchset()
+    return self.GetMostRecentPatchset()
 
   def CannotTriggerTryJobReason(self):
     """Returns reason (str) if unable trigger tryjobs on this CL or None."""
-    return self._codereview_impl.CannotTriggerTryJobReason()
+    return self.CannotTriggerTryJobReason()
 
   def GetTryJobProperties(self, patchset=None):
     """Returns dictionary of properties to launch tryjob."""
-    return self._codereview_impl.GetTryJobProperties(patchset=patchset)
+    return self.GetTryJobProperties(patchset=patchset)
 
   def __getattr__(self, attr):
     # This is because lots of untested code accesses Rietveld-specific stuff
@@ -1630,7 +1628,7 @@ class Changelist(object):
     # deprecation of Rietveld, it should probably be just removed.
     # Until that time, avoid infinite recursion by bypassing __getattr__
     # of implementation class.
-    return self._codereview_impl.__getattribute__(attr)
+    return self.__getattribute__(attr)
 
 
 class _ChangelistCodereviewBase(object):
@@ -4714,7 +4712,7 @@ def CMDland(parser, args):
     DieWithError('You must upload the change first to Gerrit.\n'
                  '  If you would rather have `git cl land` upload '
                  'automatically for you, see http://crbug.com/642759')
-  return cl._codereview_impl.CMDLand(options.force, options.bypass_hooks,
+  return cl.CMDLand(options.force, options.bypass_hooks,
                                      options.verbose, options.parallel)
 
 
@@ -4904,7 +4902,7 @@ def CMDtry(parser, args):
     parser.error('Need to upload first.')
 
   # HACK: warm up Gerrit change detail cache to save on RPCs.
-  cl._codereview_impl._GetChangeDetail(['DETAILED_ACCOUNTS', 'ALL_REVISIONS'])
+  cl._GetChangeDetail(['DETAILED_ACCOUNTS', 'ALL_REVISIONS'])
 
   error_message = cl.CannotTriggerTryJobReason()
   if error_message:

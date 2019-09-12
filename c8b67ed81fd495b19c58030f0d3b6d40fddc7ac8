@@ -46,6 +46,30 @@
       "revId": "c8b67ed81fd495b19c58030f0d3b6d40fddc7ac8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad5ab755_e353f792",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-12T22:06:16Z",
+      "side": 0,
+      "message": "prpc client does https://cs.chromium.org/search/?q\u003dretry+f:prpc/client.go\u0026type\u003dcs",
+      "parentUuid": "7c5ceec1_3f0cf61c",
+      "range": {
+        "startLine": 483,
+        "startChar": 2,
+        "endLine": 483,
+        "endChar": 20
+      },
+      "revId": "c8b67ed81fd495b19c58030f0d3b6d40fddc7ac8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

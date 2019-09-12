@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "99333f22_6fe52955",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-12T21:41:50Z",
+      "side": 0,
+      "message": "Does bb retry on failures?",
+      "range": {
+        "startLine": 483,
+        "startChar": 2,
+        "endLine": 483,
+        "endChar": 20
+      },
+      "revId": "c8b67ed81fd495b19c58030f0d3b6d40fddc7ac8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

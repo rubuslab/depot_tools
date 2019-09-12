@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a73f751_599092e7",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-12T22:25:04Z",
+      "side": 1,
+      "message": "i don\u0027t have any good ideas.\n\nYou could start running \"bb auth-info\" first and warn loudly if it returns nothing. But, if this is automatic script, nobody\u0027s checking its logs, so it\u0027ll be pointless.",
+      "parentUuid": "c3911506_559b13b4",
+      "revId": "c868c789876823006a9975db9823b46718c99a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "16649f7c_3bca1843",
         "filename": "git_cl.py",
         "patchSetId": 3

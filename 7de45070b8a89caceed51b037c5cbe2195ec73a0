@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5d497967_d5f53efe",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-12T22:25:04Z",
+      "side": 1,
+      "message": "not necessarily true. And so you may still want to offer \"git cl try-results\" message below.",
+      "range": {
+        "startLine": 480,
+        "startChar": 45,
+        "endLine": 480,
+        "endChar": 48
+      },
+      "revId": "7de45070b8a89caceed51b037c5cbe2195ec73a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

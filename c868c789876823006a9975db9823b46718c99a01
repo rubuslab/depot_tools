@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c3911506_559b13b4",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-12T22:13:51Z",
+      "side": 1,
+      "message": "Ack. Is there something we could do to mitigate this?",
+      "parentUuid": "7b9d4cb5_97c6ab31",
+      "revId": "c868c789876823006a9975db9823b46718c99a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "16649f7c_3bca1843",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -33,6 +51,24 @@
       "revId": "c868c789876823006a9975db9823b46718c99a01",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c160e83_527df16b",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2875,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-12T22:13:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16649f7c_3bca1843",
+      "revId": "c868c789876823006a9975db9823b46718c99a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

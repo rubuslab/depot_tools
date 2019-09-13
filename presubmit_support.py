@@ -825,6 +825,17 @@ class _GitDiffCache(_DiffCache):
   def GetOldContents(self, path, local_root):
     return scm.GIT.GetOldContents(local_root, path, branch=self._upstream)
 
+class _FakeGitDiffCache(_GitDiffCache):
+  """"Implementation for unmodified files that are affected
+  by DEPS file changes"""
+  def __init__(self, to_fake):
+    super(_FakeGitDiffCache, self).__init__(upstream=to_fake._upstream)
+
+  def GetDiff(self, path, local_root):
+    """We will pretend the whole file was modified"""
+    old_lines = self.GetOldContents(path, local_root).splitlines()
+    as_modified = ["+{0}".format(line) for line in old_lines]
+    return "\n".join(as_modified)
 
 class AffectedFile(object):
   """Representation of a file in a change."""
@@ -998,6 +1009,27 @@ class Change(object):
         self._AFFECTED_FILES(path, action.strip(), self._local_root, diff_cache)
         for action, path in files
     ]
+    self._AugmentAffectedFilesOnDEPSChange(files, diff_cache)
+
+  def _AugmentAffectedFilesOnDEPSChange(self, files, diff_cache):
+    deps_dirs = [path for _, path in files
+                  if os.path.isfile(path) and path.endswith('DEPS')]
+    impacted_files = sum([self._CollectImpactedFiles(path)
+                          for path in deps_dirs], [])
+    faked_cache = _FakeGitDiffCache(diff_cache)
+    self._affected_files.extend([
+      self._AFFECTED_FILES(path, 'M', self._local_root, faked_cache)
+      for path in impacted_files
+    ])
+
+  def _CollectImpactedFiles(self, deps_file):
+    result = []
+    parent_dir = os.path.dirname(deps_file)
+    for root, _, files in os.walk(parent_dir):
+      for file in files:
+        result.append(os.path.join(root, file))
+    result.remove(deps_file)
+    return result
 
   def Name(self):
     """Returns the change name."""

@@ -2571,12 +2571,12 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
               % (self.GetIssue(), '\n  '.join(footer_change_ids), change_id,
                  change_id))
           confirm_or_exit(action='edit')
-          if not options.force:
-            change_desc = ChangeDescription(message)
-            change_desc.prompt(bug=bug)
-            message = change_desc.description
-            if not message:
-              DieWithError("Description is empty. Aborting...")
+          change_desc = ChangeDescription(message)
+          change_desc.add_bug_to_description(bug=bug, prompt=not options.force)
+          message = change_desc.description
+          if not message:
+            DieWithError("Description is empty. Aborting...")
+
           # Continue the while loop.
         # Sanity check of this code - we should end up with proper message
         # footer.
@@ -2590,9 +2590,8 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           if options.title:
             message = options.title + '\n\n' + message
         change_desc = ChangeDescription(message)
+        change_desc.add_bug_to_description(bug=bug, prompt=not options.force)
 
-        if not options.force:
-          change_desc.prompt(bug=bug)
         # On first upload, patchset title is always this string, while
         # --title flag gets converted to first line of message.
         title = 'Initial upload'
@@ -2626,7 +2625,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         ref_to_push = RunGit(['commit-tree', tree, '-p', parent,
                               '-F', desc_tempfile.name]).strip()
         os.remove(desc_tempfile.name)
-    else:
+    else:  # if not options.squash
       change_desc = ChangeDescription(
           options.message or _create_description_from_log(git_diff_args))
       if not change_desc.description:
@@ -3087,6 +3086,10 @@ class ChangeDescription(object):
 
   def prompt(self, bug=None, git_footer=True):
     """Asks the user to update the description."""
+    self.add_bug_to_description(bug, git_footer, True)
+
+  def add_bug_to_description(self, bug, git_footer=True, prompt=True):
+    """Adds bug number to the description, possibly with user input"""
     self.set_description([
       '# Enter a description of the change.',
       '# This will be displayed on the codereview site.',
@@ -3104,11 +3107,13 @@ class ChangeDescription(object):
       else:
         for value in values:
           self.append_footer('BUG=%s' % value)
-
-    content = gclient_utils.RunEditor(self.description, True,
-                                      git_editor=settings.GetGitEditor())
-    if not content:
-      DieWithError('Running editor failed')
+    if prompt:
+      content = gclient_utils.RunEditor(self.description, True,
+                                        git_editor=settings.GetGitEditor())
+      if not content:
+        DieWithError('Running editor failed')
+    else:
+      content = self.description
     lines = content.splitlines()
 
     # Strip off comments and default inserted "Bug:" line.

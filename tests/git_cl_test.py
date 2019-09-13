@@ -927,7 +927,8 @@ class TestGitCl(TestCase):
                            custom_cl_base=None, tbr=None,
                            short_hostname='chromium',
                            labels=None, change_id=None, original_title=None,
-                           final_description=None, gitcookies_exists=True):
+                           final_description=None, gitcookies_exists=True,
+                           force=False ):
     if post_amend_description is None:
       post_amend_description = description
     cc = cc or []
@@ -983,9 +984,12 @@ class TestGitCl(TestCase):
         # Prompting to edit description on first upload.
         calls += [
           ((['git', 'config', 'rietveld.bug-prefix'],), ''),
-          ((['git', 'config', 'core.editor'],), ''),
-          ((['RunEditor'],), description),
         ]
+        if not force:
+          calls += [
+            ((['git', 'config', 'core.editor'],), ''),
+            ((['RunEditor'],), description),
+          ]
       ref_to_push = 'abcdef0123456789'
       calls += [
         ((['git', 'config', 'branch.master.merge'],), 'refs/heads/master'),
@@ -1237,7 +1241,9 @@ class TestGitCl(TestCase):
       change_id=None,
       original_title=None,
       final_description=None,
-      gitcookies_exists=True):
+      gitcookies_exists=True,
+      force=False,
+      fetched_description=None):
     """Generic gerrit upload test framework."""
     if squash_mode is None:
       if '--no-squash' in upload_args:
@@ -1284,7 +1290,7 @@ class TestGitCl(TestCase):
 
     self.calls = self._gerrit_base_calls(
         issue=issue,
-        fetched_description=description,
+        fetched_description=fetched_description or description,
         fetched_status=fetched_status,
         other_cl_owner=other_cl_owner,
         custom_cl_base=custom_cl_base,
@@ -1306,7 +1312,8 @@ class TestGitCl(TestCase):
           change_id=change_id,
           original_title=original_title,
           final_description=final_description,
-          gitcookies_exists=gitcookies_exists)
+          gitcookies_exists=gitcookies_exists,
+          force=force)
     # Uncomment when debugging.
     # print('\n'.join(map(lambda x: '%2i: %s' % x, enumerate(self.calls))))
     git_cl.main(['upload'] + upload_args)
@@ -1382,6 +1389,17 @@ class TestGitCl(TestCase):
         change_id='I123456789',
         final_description=(
             'desc\n\nBUG=\nR=foo@example.com\n\nChange-Id: I123456789'))
+
+  def test_gerrit_upload_force_sets_bug(self):
+    self._run_gerrit_upload_test(
+        ['-b', '10000', '-f'],
+        u'desc=\n\nBug: 10000\nChange-Id: Ixxx',
+        [],
+        force=True,
+        expected_upstream_ref='origin/master',
+        fetched_description='desc=\n\nChange-Id: Ixxx',
+        original_title='Initial upload',
+        change_id='Ixxx')
 
   def test_gerrit_reviewer_multiple(self):
     self.mock(git_cl.gerrit_util, 'GetCodeReviewTbrScore',

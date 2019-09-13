@@ -78,23 +78,16 @@ class DefaultFormatter(Formatter):
 
 gerrit_instances = [
   {
-    'url': 'android-review.googlesource.com',
-  },
-  {
     'url': 'chrome-internal-review.googlesource.com',
     'shorturl': 'crrev.com/i',
     'short_url_protocol': 'https',
+    'emails': ['tandrii@google.com', 'tandrii@chromium.org'],
   },
   {
     'url': 'chromium-review.googlesource.com',
     'shorturl': 'crrev.com/c',
     'short_url_protocol': 'https',
-  },
-  {
-    'url': 'pdfium-review.googlesource.com',
-  },
-  {
-    'url': 'skia-review.googlesource.com',
+    'emails': ['1141499', '1114919', 'tandrii@google.com', 'tandrii@chromium.org'],
   },
 ]
 
@@ -119,6 +112,7 @@ monorail_projects = {
     'short_url_protocol': 'https',
   },
 }
+
 
 def username(email):
   """Keeps the username of an email address."""
@@ -229,25 +223,61 @@ class MyActivity(object):
     if owner:
       assert not reviewer
       filters.append('owner:%s' % owner)
-    else:
-      filters.extend(('-owner:%s' % reviewer, 'reviewer:%s' % reviewer))
-    # TODO(cjhopman): Should abandoned changes be filtered out when
-    # merged_only is not enabled?
-    if self.options.merged_only:
       filters.append('status:merged')
+    else:
+      assert not owner
+      filters.extend(('-owner:%s' % reviewer, 'reviewer:%s' % reviewer))
 
-    issues = self.gerrit_changes_over_rest(instance, filters)
+    its = self.gerrit_changes_over_rest(instance, filters)
     self.show_progress()
-    issues = [self.process_gerrit_issue(instance, issue)
-              for issue in issues]
+    def yy():
+      for i in its:
+        i = self.process_gerrit_issue(instance, i)
+        if self.keep_issue(i, instance, owner, reviewer):
+          yield i
+    return sorted(yy(), key=lambda i: i['modified'], reverse=True)
 
-    issues = filter(self.filter_issue, issues)
-    issues = sorted(issues, key=lambda i: i['modified'], reverse=True)
+  def keep_issue(self, i, instance, owner, reviewer):
+    if owner:
+      assert not reviewer
+      if i['owner'] not in instance['emails']:
+        # logging.warn('O: %s %s != %s', i['review_url'], i['owner'], owner)
+        return False
+      if not (self.modified_after <= i['created'] <= self.modified_before):
+        # logging.warn('O: %s %s', i['review_url'], i['created'])
+        return False
+      if i['header'].lower().startswith('revert "'):
+        # logging.warn('O: %s %s', i['review_url'], i['header'])
+        return False
 
-    return issues
+      if 'playground' in i['project']:
+        # logging.warn('O: %s %s', i['review_url'], i['project'])
+        return False
+      if 'experimental' in i['project']:
+        # logging.warn('O: %s %s', i['review_url'], i['project'])
+        return False
+      return True
+
+    if reviewer:
+      if i['owner'] in instance['emails']:
+        # logging.warn('%s is self-review', i['review_url'])
+        return False
+      seen = []
+      for r in i['replies']:
+        seen.append(r['author'])
+        if r['author'] not in instance['emails']:
+          continue
+        if (self.modified_after <= r['created'] <= self.modified_before):
+          return True
+        # logging.warn('R: %s out-of-scope date %s from %s', i['review_url'], r['created'], r['author'])
+      # logging.warn('R: %s %s', i['review_url'], sorted(set(seen)))
+      return False
+
+    assert False
 
   def process_gerrit_issue(self, instance, issue):
-    ret = {}
+    ret = {'_number': issue['_number']}
+    ret['project'] = issue['project']
     if self.options.deltas:
       ret['delta'] = DefaultFormatter().format(
           '+{insertions},-{deletions}',
@@ -263,13 +293,11 @@ class MyActivity(object):
 
     ret['header'] = issue['subject']
     ret['owner'] = issue['owner'].get('email', '')
+    assert ret['owner']
     ret['author'] = ret['owner']
     ret['created'] = datetime_from_gerrit(issue['created'])
     ret['modified'] = datetime_from_gerrit(issue['updated'])
-    if 'messages' in issue:
-      ret['replies'] = self.process_gerrit_issue_replies(issue['messages'])
-    else:
-      ret['replies'] = []
+    ret['replies'] = self.process_gerrit_issue_replies(issue.get('messages', []))
     ret['reviewers'] = set(r['author'] for r in ret['replies'])
     ret['reviewers'].discard(ret['author'])
     ret['bugs'] = self.extract_bug_numbers_from_description(issue)
@@ -277,16 +305,15 @@ class MyActivity(object):
 
   @staticmethod
   def process_gerrit_issue_replies(replies):
-    ret = []
-    replies = filter(lambda r: 'author' in r and 'email' in r['author'],
-        replies)
-    for reply in replies:
-      ret.append({
-        'author': reply['author']['email'],
-        'created': datetime_from_gerrit(reply['date']),
-        'content': reply['message'],
-      })
-    return ret
+    first = [{
+      'author': r['author'].get('email', r['author'].get('account_id')),
+      'created': datetime_from_gerrit(r['date']),
+      'content': r['message'],
+    } for r in replies if (
+        r.get('author', {}).get('email') or
+        r.get('author', {}).get('account_id'))]
+    return [f for f in first if f['author'] not in (
+      'commit-bot@chromium.org', 'tricium-prod@appspot.gserviceaccount.com')]
 
   def monorail_get_auth_http(self):
     auth_config = auth.extract_auth_config_from_options(self.options)
@@ -500,28 +527,6 @@ class MyActivity(object):
     print(DefaultFormatter().format(output_format,
                                     **values).encode(sys.getdefaultencoding()))
 
-
-  def filter_issue(self, issue, should_filter_by_user=True):
-    def maybe_filter_username(email):
-      return not should_filter_by_user or username(email) == self.user
-    if (maybe_filter_username(issue['author']) and
-        self.filter_modified(issue['created'])):
-      return True
-    if (maybe_filter_username(issue['owner']) and
-        (self.filter_modified(issue['created']) or
-         self.filter_modified(issue['modified']))):
-      return True
-    for reply in issue['replies']:
-      if self.filter_modified(reply['created']):
-        if not should_filter_by_user:
-          break
-        if (username(reply['author']) == self.user
-            or (self.user + '@') in reply['content']):
-          break
-    else:
-      return False
-    return True
-
   def filter_modified(self, modified):
     return self.modified_after < modified and modified < self.modified_before
 
@@ -535,13 +540,24 @@ class MyActivity(object):
     pass
 
   def get_changes(self):
-    num_instances = len(gerrit_instances)
-    with contextlib.closing(ThreadPool(num_instances)) as pool:
+    def combs():
+      for gi in gerrit_instances:
+        ems = gi.get('emails') or [option.user]
+        for em in ems:
+          yield gi, em
+    def dedup(its):
+      by = set()
+      for i in its:
+        n = int(i['_number'])
+        if n not in by:
+          by.add(n)
+          yield i
+    with contextlib.closing(ThreadPool(20)) as pool:
       gerrit_changes = pool.map_async(
-          lambda instance: self.gerrit_search(instance, owner=self.user),
-          gerrit_instances)
+          lambda i_o: self.gerrit_search(i_o[0], owner=i_o[1]),
+          combs())
       gerrit_changes = itertools.chain.from_iterable(gerrit_changes.get())
-      self.changes = list(gerrit_changes)
+      self.changes = list(dedup(gerrit_changes))
 
   def print_changes(self):
     if self.changes:
@@ -556,13 +572,24 @@ class MyActivity(object):
         logging.error(error.rstrip())
 
   def get_reviews(self):
-    num_instances = len(gerrit_instances)
-    with contextlib.closing(ThreadPool(num_instances)) as pool:
-      gerrit_reviews = pool.map_async(
-          lambda instance: self.gerrit_search(instance, reviewer=self.user),
-          gerrit_instances)
-      gerrit_reviews = itertools.chain.from_iterable(gerrit_reviews.get())
-      self.reviews = list(gerrit_reviews)
+    def combs():
+      for gi in gerrit_instances:
+        ems = gi.get('emails') or [option.user]
+        for em in ems:
+          yield gi, em
+    def dedup(its):
+      by = set()
+      for i in its:
+        n = i['review_url']
+        if n not in by:
+          by.add(n)
+          yield i
+    with contextlib.closing(ThreadPool(20)) as pool:
+      gerrit_changes = pool.map_async(
+          lambda i_o: self.gerrit_search(i_o[0], reviewer=i_o[1]),
+          combs())
+      gerrit_changes = itertools.chain.from_iterable(gerrit_changes.get())
+      self.reviews = list(dedup(gerrit_changes))
 
   def print_reviews(self):
     if self.reviews:
@@ -663,7 +690,7 @@ class MyActivity(object):
     self.print_reviews()
     self.print_issues()
 
-  def dump_json(self, ignore_keys=None):
+  def dump_json(self, fname=None, ignore_keys=None):
     if ignore_keys is None:
       ignore_keys = ['replies']
 
@@ -686,11 +713,17 @@ class MyActivity(object):
         return json.JSONEncoder.default(self, obj)
 
     output = {
-      'reviews': format_for_json_dump(self.reviews),
-      'changes': format_for_json_dump(self.changes),
+      'stats': str({'c': len(self.changes), 'r': len(self.reviews), 'i': len(self.issues)}),
+      'reviews': self.reviews,
+      'changes': self.changes,
       'issues': format_for_json_dump(self.issues)
     }
-    print(json.dumps(output, indent=2, cls=PythonObjectEncoder))
+    out = json.dumps(output, indent=2, cls=PythonObjectEncoder)
+    if fname:
+      with open(fname, 'w') as f:
+        f.write(out)
+    else:
+      print(out)
 
 
 def main():
@@ -806,6 +839,8 @@ def main():
   output_format_group.add_option(
       '-j', '--json', action='store_true',
       help='Output json data (overrides other format options)')
+  output_format_group.add_option(
+      '--json-file', dest='json_file')
   parser.add_option_group(output_format_group)
   auth.add_auth_options(parser)
 
@@ -939,6 +974,9 @@ def main():
   except (IOError, OSError) as e:
     logging.error('Unable to write output: %s', e)
   else:
+    if options.json_file:
+      my_activity.dump_json(options.json_file)
+
     if options.json:
       my_activity.dump_json()
     else:

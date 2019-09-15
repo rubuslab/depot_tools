@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0ea52ef6_11e8e7bc",
+        "filename": "split_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1234245
+      },
+      "writtenOn": "2019-09-15T15:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e629baa_a0c9615a",
+      "range": {
+        "startLine": 102,
+        "startChar": 51,
+        "endLine": 102,
+        "endChar": 64
+      },
+      "revId": "2a0fc6eecee79899664524a133bfdc27659e3063",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9dcc23b7_1d69ac38",
         "filename": "split_cl.py",
         "patchSetId": 5
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "d0d665db_54008873",
+        "filename": "split_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1234245
+      },
+      "writtenOn": "2019-09-15T15:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9dcc23b7_1d69ac38",
+      "range": {
+        "startLine": 292,
+        "startChar": 33,
+        "endLine": 292,
+        "endChar": 41
+      },
+      "revId": "2a0fc6eecee79899664524a133bfdc27659e3063",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0580e031_a0075adc",
         "filename": "split_cl.py",
         "patchSetId": 5
@@ -68,6 +116,30 @@
       "revId": "2a0fc6eecee79899664524a133bfdc27659e3063",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8dc792d_22110ea5",
+        "filename": "split_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1234245
+      },
+      "writtenOn": "2019-09-15T15:47:23Z",
+      "side": 1,
+      "message": "It\u0027s hard to find a strategy that fits every use-case. I think sending many similar CLs to a single reviewer might ask too much from top-level owners because they\u0027re selected every time, and could also have the effect that they stop reviewing carefully after the first 1-2 CLs. I\u0027ll go with different reviewers for every CL for now.",
+      "parentUuid": "0580e031_a0075adc",
+      "range": {
+        "startLine": 298,
+        "startChar": 2,
+        "endLine": 300,
+        "endChar": 29
+      },
+      "revId": "2a0fc6eecee79899664524a133bfdc27659e3063",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

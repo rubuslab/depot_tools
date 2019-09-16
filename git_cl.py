@@ -472,6 +472,7 @@ def _trigger_try_jobs(auth_config, changelist, buckets, options, patchset):
           }
       )
 
+  print(json.dump(batch_request))
   (stdout, _), ret_code = subprocess2.communicate(
       ['bb', 'batch', '-host', options.buildbucket_host],
       stdin=json.dumps(batch_request, sort_keys=True),

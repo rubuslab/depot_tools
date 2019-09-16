@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5462f786_35938672",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-16T18:35:19Z",
+      "side": 1,
+      "message": "Nit: I like to write something like \"[git-cl] Allow setting ...\" so that it\u0027s clear what the CL is about when looking in the dashboard.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 5
+      },
+      "revId": "118283fcbdcfffb3cd66e29b9b85734bc7eddffd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ddd6aaa6_5602a086",
         "filename": "git_cl.py",
         "patchSetId": 1

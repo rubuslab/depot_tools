@@ -2571,17 +2571,17 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
               % (self.GetIssue(), '\n  '.join(footer_change_ids), change_id,
                  change_id))
           confirm_or_exit(action='edit')
-          if not options.force:
-            change_desc = ChangeDescription(message)
-            change_desc.prompt(bug=bug)
-            message = change_desc.description
-            if not message:
-              DieWithError("Description is empty. Aborting...")
+          change_desc = ChangeDescription(message, bug=bug)
+          change_desc.add_bug_to_description(bug=bug, prompt=not options.force)
+          message = change_desc.description
+          if not message:
+            DieWithError("Description is empty. Aborting...")
+
           # Continue the while loop.
         # Sanity check of this code - we should end up with proper message
         # footer.
         assert [change_id] == git_footers.get_footer_change_id(message)
-        change_desc = ChangeDescription(message)
+        change_desc = ChangeDescription(message, bug=bug)
       else:  # if not self.GetIssue()
         if options.message:
           message = options.message
@@ -2589,10 +2589,10 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
           message = _create_description_from_log(git_diff_args)
           if options.title:
             message = options.title + '\n\n' + message
-        change_desc = ChangeDescription(message)
+        change_desc = ChangeDescription(message, bug=bug)
+        if (not options.force):
+          change_desc.prompt()
 
-        if not options.force:
-          change_desc.prompt(bug=bug)
         # On first upload, patchset title is always this string, while
         # --title flag gets converted to first line of message.
         title = 'Initial upload'
@@ -2626,7 +2626,7 @@ class _GerritChangelistImpl(_ChangelistCodereviewBase):
         ref_to_push = RunGit(['commit-tree', tree, '-p', parent,
                               '-F', desc_tempfile.name]).strip()
         os.remove(desc_tempfile.name)
-    else:
+    else:  # if not options.squash
       change_desc = ChangeDescription(
           options.message or _create_description_from_log(git_diff_args))
       if not change_desc.description:
@@ -2989,8 +2989,14 @@ class ChangeDescription(object):
   COLON_SEPARATED_HASH_TAG = r'^([a-zA-Z0-9_\- ]+):'
   BAD_HASH_TAG_CHUNK = r'[^a-zA-Z0-9]+'
 
-  def __init__(self, description):
+  def __init__(self, description, bug=None):
     self._description_lines = (description or '').strip().splitlines()
+    if bug:
+      regexp = re.compile(self.BUG_LINE)
+      prefix = settings.GetBugPrefix()
+      if not any((regexp.match(line) for line in self._description_lines)):
+        values = list(_get_bug_line_values(prefix, bug))
+        self.append_footer('Bug: %s' % ', '.join(values))
 
   @property               # www.logilab.org/ticket/89786
   def description(self):  # pylint: disable=method-hidden
@@ -3085,7 +3091,7 @@ class ChangeDescription(object):
         return
     self.append_footer('Cq-Do-Not-Cancel-Tryjobs: true')
 
-  def prompt(self, bug=None, git_footer=True):
+  def prompt(self):
     """Asks the user to update the description."""
     self.set_description([
       '# Enter a description of the change.',
@@ -3094,19 +3100,14 @@ class ChangeDescription(object):
       '#--------------------This line is 72 characters long'
       '--------------------',
     ] + self._description_lines)
-
     regexp = re.compile(self.BUG_LINE)
     prefix = settings.GetBugPrefix()
     if not any((regexp.match(line) for line in self._description_lines)):
-      values = list(_get_bug_line_values(prefix, bug or '')) or [prefix]
-      if git_footer:
-        self.append_footer('Bug: %s' % ', '.join(values))
-      else:
-        for value in values:
-          self.append_footer('BUG=%s' % value)
+      values = list(_get_bug_line_values(prefix, '')) or [prefix]
+      self.append_footer('Bug: %s' % ', '.join(values))
 
     content = gclient_utils.RunEditor(self.description, True,
-                                      git_editor=settings.GetGitEditor())
+                                        git_editor=settings.GetGitEditor())
     if not content:
       DieWithError('Running editor failed')
     lines = content.splitlines()

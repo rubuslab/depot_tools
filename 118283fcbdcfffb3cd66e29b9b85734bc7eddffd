@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9ef1c227_60edd93b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3087,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-09-16T18:38:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddd6aaa6_5602a086",
+      "range": {
+        "startLine": 3087,
+        "startChar": 27,
+        "endLine": 3087,
+        "endChar": 44
+      },
+      "revId": "118283fcbdcfffb3cd66e29b9b85734bc7eddffd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "383b5a1c_49423809",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "5dcff4e4_22f21f4b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3106,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-09-16T18:38:22Z",
+      "side": 1,
+      "message": "I was a bit concerned about side effects I didn\u0027t expect.\n\nI changed it to add the bug at __init__ but only if set, so I need to re-add here.  I\u0027m semi-trusting the tests not failing to have caught side effects:  I may be being overly optimistic there.",
+      "parentUuid": "383b5a1c_49423809",
+      "range": {
+        "startLine": 3101,
+        "startChar": 0,
+        "endLine": 3106,
+        "endChar": 57
+      },
+      "revId": "118283fcbdcfffb3cd66e29b9b85734bc7eddffd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "730882cb_8b2a1753",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -91,6 +139,30 @@
       "revId": "118283fcbdcfffb3cd66e29b9b85734bc7eddffd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eaa6812f_5ada655f",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3109,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-09-16T18:38:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "730882cb_8b2a1753",
+      "range": {
+        "startLine": 3107,
+        "startChar": 6,
+        "endLine": 3109,
+        "endChar": 46
+      },
+      "revId": "118283fcbdcfffb3cd66e29b9b85734bc7eddffd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

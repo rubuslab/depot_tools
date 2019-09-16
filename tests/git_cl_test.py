@@ -157,7 +157,7 @@ class TestGitClBasic(unittest.TestCase):
     cl = git_cl.Changelist(issue=1, codereview_host='host')
     cl.description = 'x'
     cl.has_description = True
-    cl.FetchDescription = lambda *a, **kw: 'y'
+    cl._codereview_impl.FetchDescription = lambda *a, **kw: 'y'
     self.assertEquals(cl.GetDescription(), 'x')
     self.assertEquals(cl.GetDescription(force=True), 'y')
     self.assertEquals(cl.GetDescription(), 'y')
@@ -174,7 +174,7 @@ class TestGitClBasic(unittest.TestCase):
       'Awesome: Footers',
     ])
     cl.has_description = True
-    cl.UpdateDescriptionRemote = lambda *a, **kw: 'y'
+    cl._codereview_impl.UpdateDescriptionRemote = lambda *a, **kw: 'y'
     msg, footers = cl.GetDescriptionFooters()
     self.assertEquals(
       msg, ['This is some message', '', 'It has some lines', 'and, also'])
@@ -489,7 +489,7 @@ class TestParseIssueURL(unittest.TestCase):
 
   def test_gerrit(self):
     def test(url, *args, **kwargs):
-      self._run_and_validate(git_cl.Changelist.ParseIssueURL, url,
+      self._run_and_validate(git_cl._GerritChangelistImpl.ParseIssueURL, url,
                              *args, **kwargs)
 
     test('http://chrome-review.source.com/c/123',
@@ -1253,7 +1253,7 @@ class TestGitCl(TestCase):
     self.mock(git_cl.gerrit_util, 'CookiesAuthenticator',
               CookiesAuthenticatorMockFactory(
                 same_auth=('git-owner.example.com', '', 'pass')))
-    self.mock(git_cl.Changelist, '_GerritCommitMsgHookCheck',
+    self.mock(git_cl._GerritChangelistImpl, '_GerritCommitMsgHookCheck',
               lambda _, offer_removal: None)
     self.mock(git_cl.gclient_utils, 'RunEditor',
               lambda *_, **__: self._mocked_call(['RunEditor']))
@@ -1724,7 +1724,7 @@ class TestGitCl(TestCase):
                                           git_short_host='host',
                                           detect_branch=True,
                                           detect_server=True):
-    """Returns calls executed by Changelist.GetCodereviewServer.
+    """Returns calls executed by _GerritChangelistImpl.GetCodereviewServer.
 
     If value is given, branch.<BRANCH>.gerritcodereview is already set.
     """
@@ -2177,7 +2177,7 @@ class TestGitCl(TestCase):
     self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
     self.mock(git_cl.Changelist, 'GetDescription',
               lambda *args: current_desc)
-    self.mock(git_cl.Changelist, 'UpdateDescriptionRemote',
+    self.mock(git_cl._GerritChangelistImpl, 'UpdateDescriptionRemote',
               UpdateDescriptionRemote)
     self.mock(git_cl.gclient_utils, 'RunEditor', RunEditor)
 
@@ -2328,7 +2328,7 @@ class TestGitCl(TestCase):
     self.mock(git_cl.presubmit_support, 'DoGetTryMasters',
               lambda *_, **__: (
                 self._mocked_call(['DoGetTryMasters'])))
-    self.mock(git_cl.Changelist, 'SetCQState',
+    self.mock(git_cl._GerritChangelistImpl, 'SetCQState',
               lambda _, s: self._mocked_call(['SetCQState', s]))
 
     self.calls = [
@@ -2368,7 +2368,7 @@ class TestGitCl(TestCase):
            '', '', '', '', '', '', '', '')),
         ((['git', 'rev-parse', '--show-cdup'],), '../'),
         ((['DoGetTryMasters'], ), None),
-        ((['SetCQState', git_cl._CQState.DRY_RUN], ), 0),
+        ((['SetCQState', git_cl._CQState.DRY_RUN], ), None),
     ]
     out = StringIO.StringIO()
     self.mock(git_cl.sys, 'stdout', out)
@@ -2381,42 +2381,6 @@ class TestGitCl(TestCase):
   def test_git_cl_try_buildbucket_with_properties_gerrit(self):
     self.mock(git_cl.Changelist, 'GetMostRecentPatchset', lambda _: 7)
     self.mock(git_cl.uuid, 'uuid4', lambda: 'uuid4')
-    def mocked_call_with_stdin(*a, **kw):
-      args = list(a)
-      if kw.get('stdin'):
-        args.append(kw['stdin'])
-      return ([self._mocked_call(*args), ''], 0)
-
-    self.mock(subprocess2, 'communicate', mocked_call_with_stdin)
-
-    bb_request = json.dumps({
-        "requests": [{
-            "scheduleBuild": {
-                "requestId": "uuid4",
-                "builder": {
-                    "project": "luci",
-                    "builder": "win",
-                    "bucket": "chromium.try",
-                },
-                "gerritChanges": [{
-                    "project": "depot_tools",
-                    "host": "chromium-review.googlesource.com",
-                    "patchset": 7,
-                    "change": 123456,
-                }],
-                "properties": {
-                    "category": "git_cl_try",
-                    "json": [{"a": 1}, None],
-                    "key": "val",
-                },
-                "tags": [
-                    {"value": "win", "key": "builder"},
-                    {"value": "git_cl_try", "key": "user_agent"},
-                ],
-            },
-        }],
-    }, sort_keys=True)
-
 
     self.calls = [
         ((['git', 'symbolic-ref', 'HEAD'],), 'feature'),
@@ -2446,11 +2410,45 @@ class TestGitCl(TestCase):
             },
           },
         }),
-        ((['bb', 'auth-info'],), ''),
-        ((['git', 'config', 'branch.feature.gerritpatchset'],), '7'),
-        ((['bb', 'batch', '-host', 'cr-buildbucket.appspot.com'],
-          bb_request,), ''),
     ]
+
+    def _buildbucket_retry(*_, **kw):
+      # self.maxDiff = 10000
+      body = json.loads(kw['body'])
+      self.assertEqual(len(body['builds']), 1)
+      build = body['builds'][0]
+      params = json.loads(build.pop('parameters_json'))
+      self.assertEqual(params, {
+        u'builder_name': u'win',
+        u'changes': [{u'author': {u'email': u'owner@e.mail'},
+                      u'revision': None}],
+        u'properties': {
+          u'category': u'git_cl_try',
+           u'key': u'val',
+           u'json': [{u'a': 1}, None],
+
+           u'patch_gerrit_url':
+             u'https://chromium-review.googlesource.com',
+           u'patch_issue': 123456,
+           u'patch_project': u'depot_tools',
+           u'patch_ref': u'refs/changes/56/123456/7',
+           u'patch_repository_url':
+             u'https://chromium.googlesource.com/depot_tools',
+           u'patch_set': 7,
+           u'patch_storage': u'gerrit',
+        }
+      })
+      self.assertEqual(build, {
+        u'bucket': u'luci.chromium.try',
+        u'client_operation_id': u'uuid4',
+        u'tags': [
+          u'builder:win',
+          u'buildset:patch/gerrit/chromium-review.googlesource.com/123456/7',
+          u'user_agent:git_cl_try',
+        ],
+      })
+
+    self.mock(git_cl, '_buildbucket_retry', _buildbucket_retry)
 
     self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
     self.assertEqual(0, git_cl.main([
@@ -2483,14 +2481,14 @@ class TestGitCl(TestCase):
         ((['FileRead', '/abs/git_repo_root/.git/hooks/commit-msg'],),
          '#!/bin/sh\necho "custom hook"')
     ]
-    cl._GerritCommitMsgHookCheck(offer_removal=True)
+    cl._codereview_impl._GerritCommitMsgHookCheck(offer_removal=True)
 
   def test_GerritCommitMsgHookCheck_not_exists(self):
     cl = self._common_GerritCommitMsgHookCheck()
     self.calls += [
         ((['exists', '/abs/git_repo_root/.git/hooks/commit-msg'],), False),
     ]
-    cl._GerritCommitMsgHookCheck(offer_removal=True)
+    cl._codereview_impl._GerritCommitMsgHookCheck(offer_removal=True)
 
   def test_GerritCommitMsgHookCheck(self):
     cl = self._common_GerritCommitMsgHookCheck()
@@ -2502,7 +2500,7 @@ class TestGitCl(TestCase):
         ((['rm_file_or_tree', '/abs/git_repo_root/.git/hooks/commit-msg'],),
          ''),
     ]
-    cl._GerritCommitMsgHookCheck(offer_removal=True)
+    cl._codereview_impl._GerritCommitMsgHookCheck(offer_removal=True)
 
   def test_GerritCmdLand(self):
     self.calls += [
@@ -2514,16 +2512,16 @@ class TestGitCl(TestCase):
        'chromium-review.googlesource.com'),
     ]
     cl = git_cl.Changelist(issue=123)
-    cl._GetChangeDetail = lambda *args, **kwargs: {
+    cl._codereview_impl._GetChangeDetail = lambda _: {
       'labels': {},
       'current_revision': 'deadbeaf',
     }
-    cl._GetChangeCommit = lambda: {
+    cl._codereview_impl._GetChangeCommit = lambda: {
       'commit': 'deadbeef',
       'web_links': [{'name': 'gitiles',
                      'url': 'https://git.googlesource.com/test/+/deadbeef'}],
     }
-    cl.SubmitIssue = lambda wait_for_merge: None
+    cl._codereview_impl.SubmitIssue = lambda wait_for_merge: None
     out = StringIO.StringIO()
     self.mock(sys, 'stdout', out)
     self.assertEqual(0, cl.CMDLand(force=True,
@@ -2671,7 +2669,7 @@ class TestGitCl(TestCase):
     self.assertRegexpMatches(sys.stdout.getvalue(), '2 tryjobs')
 
   def _mock_gerrit_changes_for_detail_cache(self):
-    self.mock(git_cl.Changelist, '_GetGerritHost', lambda _: 'host')
+    self.mock(git_cl._GerritChangelistImpl, '_GetGerritHost', lambda _: 'host')
 
   def test_gerrit_change_detail_cache_simple(self):
     self._mock_gerrit_changes_for_detail_cache()

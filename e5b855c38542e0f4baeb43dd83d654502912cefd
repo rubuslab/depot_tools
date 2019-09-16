@@ -25,6 +25,47 @@
     },
     {
       "key": {
+        "uuid": "7b953eb0_b2f760cb",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1012,
+      "author": {
+        "id": 1316073
+      },
+      "writtenOn": "2019-09-16T07:35:11Z",
+      "side": 1,
+      "message": "+1 about opt-in, will cause lots of headaches otherwise",
+      "parentUuid": "b0620897_a6f1ba4c",
+      "range": {
+        "startLine": 1012,
+        "startChar": 4,
+        "endLine": 1012,
+        "endChar": 61
+      },
+      "revId": "e5b855c38542e0f4baeb43dd83d654502912cefd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "709ff453_a27e7f96",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1015,
+      "author": {
+        "id": 1316073
+      },
+      "writtenOn": "2019-09-16T07:35:11Z",
+      "side": 1,
+      "message": "Same comment about multi-line list-comprehension, for loop would be more readable",
+      "revId": "e5b855c38542e0f4baeb43dd83d654502912cefd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4c75bcae_9fb4f33d",
         "filename": "presubmit_support.py",
         "patchSetId": 1
@@ -42,6 +83,23 @@
         "endLine": 1016,
         "endChar": 67
       },
+      "revId": "e5b855c38542e0f4baeb43dd83d654502912cefd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd5c14d1_e7e1e34c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 1316073
+      },
+      "writtenOn": "2019-09-16T07:35:11Z",
+      "side": 1,
+      "message": "It\u0027s multi-line anyways, better to use a for-loop than list comprehension",
       "revId": "e5b855c38542e0f4baeb43dd83d654502912cefd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

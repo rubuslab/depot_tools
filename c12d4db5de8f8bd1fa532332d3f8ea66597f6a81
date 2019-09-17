@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ca26622c_3537c99e",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2575,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-09-17T21:36:21Z",
+      "side": 1,
+      "message": "this is embarassing...\n\nthey did not, and there does not seem to currently be a test for this flow (wrong change-id footer, change in gerrit).",
+      "parentUuid": "e8dd0e33_766bd1b4",
+      "range": {
+        "startLine": 2575,
+        "startChar": 22,
+        "endLine": 2575,
+        "endChar": 44
+      },
+      "revId": "c12d4db5de8f8bd1fa532332d3f8ea66597f6a81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a418b821_1e12ee66",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "af5dbb98_2812ff71",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2593,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-09-17T21:36:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a418b821_1e12ee66",
+      "range": {
+        "startLine": 2593,
+        "startChar": 11,
+        "endLine": 2593,
+        "endChar": 12
+      },
+      "revId": "c12d4db5de8f8bd1fa532332d3f8ea66597f6a81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0a38ddbe_01cd74e4",
         "filename": "git_cl.py",
         "patchSetId": 4
@@ -68,6 +116,30 @@
       "revId": "c12d4db5de8f8bd1fa532332d3f8ea66597f6a81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "171c6624_2e0968e4",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3107,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-09-17T21:36:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a38ddbe_01cd74e4",
+      "range": {
+        "startLine": 3107,
+        "startChar": 6,
+        "endLine": 3107,
+        "endChar": 31
+      },
+      "revId": "c12d4db5de8f8bd1fa532332d3f8ea66597f6a81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

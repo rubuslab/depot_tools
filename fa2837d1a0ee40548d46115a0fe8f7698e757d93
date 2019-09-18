@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e2f7c08_6a3091a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-18T00:05:28Z",
+      "side": 1,
+      "message": "say with what additional changes.",
+      "revId": "fa2837d1a0ee40548d46115a0fe8f7698e757d93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0791fcb_1f0e5378",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-18T00:05:28Z",
+      "side": 1,
+      "message": "add comment please:\n\n# legacy buckets. Assume prefix is also the project name.",
+      "revId": "fa2837d1a0ee40548d46115a0fe8f7698e757d93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3002c3f1_4d2814b5",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-18T00:05:28Z",
+      "side": 1,
+      "message": "this `bucket` is from L450, not L449.",
+      "range": {
+        "startLine": 452,
+        "startChar": 54,
+        "endLine": 452,
+        "endChar": 60
+      },
+      "revId": "fa2837d1a0ee40548d46115a0fe8f7698e757d93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "917da178_1c42e3a2",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2387,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-18T00:05:28Z",
+      "side": 1,
+      "message": "rmistry: FYI this won\u0027t work for skia.internal bucket. You\u0027ll need to trigger it via -B skia-internal/skia.internal",
+      "revId": "fa2837d1a0ee40548d46115a0fe8f7698e757d93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

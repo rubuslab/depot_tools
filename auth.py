@@ -23,6 +23,8 @@ import urllib
 import urlparse
 import webbrowser
 
+import subprocess2
+
 from third_party import httplib2
 from third_party.oauth2client import client
 from third_party.oauth2client import multistore_file
@@ -109,7 +111,7 @@ class LoginRequiredError(AuthenticationError):
     # HACK(vadimsh): It is assumed here that the token cache key is a hostname.
     msg = (
         'You are not logged in. Please login first by running:\n'
-        '  depot-tools-auth login %s' % token_cache_key)
+        '  luci-auth login %s' % token_cache_key)
     super(LoginRequiredError, self).__init__(msg)
 
 
@@ -699,7 +701,7 @@ class Authenticator(object):
         logging.debug('Requesting user to login')
         raise LoginRequiredError(self._token_cache_key)
       logging.debug('Launching OAuth browser flow')
-      credentials = _run_oauth_dance(self._config, self._scopes)
+      credentials = _run_oauth_dance(self._scopes)
       _log_credentials_info('new token', credentials)
 
     logging.info(
@@ -762,82 +764,30 @@ def _log_credentials_info(title, credentials):
     })
 
 
-def _run_oauth_dance(config, scopes):
+def _run_oauth_dance(scopes):
   """Perform full 3-legged OAuth2 flow with the browser.
 
   Returns:
     oauth2client.Credentials.
-
-  Raises:
-    AuthenticationError on errors.
   """
-  flow = client.OAuth2WebServerFlow(
-      OAUTH_CLIENT_ID,
-      OAUTH_CLIENT_SECRET,
-      scopes,
-      approval_prompt='force')
-
-  use_local_webserver = config.use_local_webserver
-  port = config.webserver_port
-  if config.use_local_webserver:
-    success = False
-    try:
-      httpd = _ClientRedirectServer(('localhost', port), _ClientRedirectHandler)
-    except socket.error:
-      pass
-    else:
-      success = True
-    use_local_webserver = success
-    if not success:
-      print(
-        'Failed to start a local webserver listening on port %d.\n'
-        'Please check your firewall settings and locally running programs that '
-        'may be blocking or using those ports.\n\n'
-        'Falling back to --auth-no-local-webserver and continuing with '
-        'authentication.\n' % port)
-
-  if use_local_webserver:
-    oauth_callback = 'http://localhost:%s/' % port
-  else:
-    oauth_callback = client.OOB_CALLBACK_URN
-  flow.redirect_uri = oauth_callback
-  authorize_url = flow.step1_get_authorize_url()
-
-  if use_local_webserver:
-    webbrowser.open(authorize_url, new=1, autoraise=True)
-    print(
-      'Your browser has been opened to visit:\n\n'
-      '    %s\n\n'
-      'If your browser is on a different machine then exit and re-run this '
-      'application with the command-line parameter\n\n'
-      '  --auth-no-local-webserver\n' % authorize_url)
-  else:
-    print(
-      'Go to the following link in your browser:\n\n'
-      '    %s\n' % authorize_url)
-
   try:
-    code = None
-    if use_local_webserver:
-      httpd.handle_request()
-      if 'error' in httpd.query_params:
-        raise AuthenticationError(
-            'Authentication request was rejected: %s' %
-            httpd.query_params['error'])
-      if 'code' not in httpd.query_params:
-        raise AuthenticationError(
-            'Failed to find "code" in the query parameters of the redirect.\n'
-            'Try running with --auth-no-local-webserver.')
-      code = httpd.query_params['code']
-    else:
-      code = raw_input('Enter verification code: ').strip()
-  except KeyboardInterrupt:
-    raise AuthenticationError('Authentication was canceled.')
+    token_info = json.loads(subprocess2.check_output(
+        ['luci-auth', 'token', '-scopes', scopes, '-json-output', '-']))
+  except subprocess2.CalledProcessError:
+    subprocess2.check_call(['luci-auth', 'login', '-scopes', scopes])
+    token_info = json.loads(subprocess2.check_output(
+        ['luci-auth', 'token', '-scopes', scopes, '-json-output', '-']))
 
-  try:
-    return flow.step2_exchange(code)
-  except client.FlowExchangeError as e:
-    raise AuthenticationError('Authentication has failed: %s' % e)
+  credentials = client.OAuth2Credentials(
+      access_token=token_info['token'],
+      client_id=OAUTH_CLIENT_ID,
+      client_secret=OAUTH_CLIENT_SECRET,
+      refresh_token=None,
+      token_expiry=datetime.datetime.utcfromtimestamp(token_info['expiry']),
+      token_uri=None,
+      user_agent=None,
+      revoke_uri=None)
+  return credentials
 
 
 class _ClientRedirectServer(BaseHTTPServer.HTTPServer):

@@ -16,6 +16,24 @@
       "revId": "be1e424d7b3f7aace8c2b52194045152019b239c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b044ff7a_a46be739",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-18T01:06:32Z",
+      "side": 1,
+      "message": "No, and we don\u0027t do it right now.\nAll the updates that need to be done (checkout, cipd, python, git) are done by the update_depot_tools[.bat] script.\ngsutil and pylint will bootstrap when called, if needed.\n\nThe logic to run cipd and python it\u0027s also present in ensure_bootstrap, and I called it from update_depot_tools to deduplicate some code, but that adds too much overhead (from gsutil and pylint) and isn\u0027t needed.",
+      "parentUuid": "0ac4ed34_95308a82",
+      "revId": "be1e424d7b3f7aace8c2b52194045152019b239c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

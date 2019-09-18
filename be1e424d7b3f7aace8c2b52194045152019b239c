@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ac4ed34_95308a82",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-18T00:58:32Z",
+      "side": 1,
+      "message": "We still call it unless you\u0027re in MinGW, right?\n\nThis change makes me a bit nervous ... I wonder if we should still call it in MinGW and just make people opt out; otherwise, they might silently get out of date, right?",
+      "revId": "be1e424d7b3f7aace8c2b52194045152019b239c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -34,6 +34,24 @@
       "revId": "be1e424d7b3f7aace8c2b52194045152019b239c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e16d6f9_2c21abae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-09-18T18:15:30Z",
+      "side": 1,
+      "message": "Okay, I\u0027ve stared at the code and I think I understand what\u0027s going on now, thanks.",
+      "parentUuid": "b044ff7a_a46be739",
+      "revId": "be1e424d7b3f7aace8c2b52194045152019b239c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

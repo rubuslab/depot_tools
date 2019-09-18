@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d1844fef_d3223c57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-18T01:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e2f7c08_6a3091a5",
+      "revId": "fa2837d1a0ee40548d46115a0fe8f7698e757d93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b0791fcb_1f0e5378",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -33,6 +51,24 @@
       "revId": "fa2837d1a0ee40548d46115a0fe8f7698e757d93",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a04752db_719fdd88",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-18T01:19:18Z",
+      "side": 1,
+      "message": "Done\nAlso, what about printing a warning?",
+      "parentUuid": "b0791fcb_1f0e5378",
+      "revId": "fa2837d1a0ee40548d46115a0fe8f7698e757d93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -56,6 +92,30 @@
       "revId": "fa2837d1a0ee40548d46115a0fe8f7698e757d93",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e8fbcb3_381f14de",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-18T01:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3002c3f1_4d2814b5",
+      "range": {
+        "startLine": 452,
+        "startChar": 54,
+        "endLine": 452,
+        "endChar": 60
+      },
+      "revId": "fa2837d1a0ee40548d46115a0fe8f7698e757d93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

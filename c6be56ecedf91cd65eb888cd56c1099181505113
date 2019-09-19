@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3029db43_a6d9dfe9",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-19T21:12:29Z",
+      "side": 0,
+      "message": "See mail to luci-eng@",
+      "range": {
+        "startLine": 639,
+        "startChar": 6,
+        "endLine": 640,
+        "endChar": 30
+      },
+      "revId": "c6be56ecedf91cd65eb888cd56c1099181505113",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

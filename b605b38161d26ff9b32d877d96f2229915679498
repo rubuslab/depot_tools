@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d59cdab4_c657a95f",
+        "filename": "git_cl.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-20T21:42:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f0ef6af_f6958f48",
+      "revId": "b605b38161d26ff9b32d877d96f2229915679498",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5aa0d69_0eefbd24",
         "filename": "git_cl.py",
         "patchSetId": 14
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "f33f2ac8_854fb2df",
+        "filename": "git_cl.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-20T21:42:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5aa0d69_0eefbd24",
+      "range": {
+        "startLine": 390,
+        "startChar": 2,
+        "endLine": 390,
+        "endChar": 24
+      },
+      "revId": "b605b38161d26ff9b32d877d96f2229915679498",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce7face4_403ebd11",
         "filename": "git_cl.py",
         "patchSetId": 14
@@ -56,6 +98,24 @@
       "revId": "b605b38161d26ff9b32d877d96f2229915679498",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6fff5ad_6e22a930",
+        "filename": "git_cl.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-20T21:42:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce7face4_403ebd11",
+      "revId": "b605b38161d26ff9b32d877d96f2229915679498",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4b28d459_d0e1b111",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T01:46:47Z",
+      "side": 1,
+      "message": "this abstraction is broken. The name and params are generic, but\n- it assumes JSON.\n- it raises buildbucket-specific exception",
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8489a777_b8a153c3",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T01:46:47Z",
+      "side": 1,
+      "message": "with value of 3, it will make 6 requests",
+      "range": {
+        "startLine": 359,
+        "startChar": 16,
+        "endLine": 359,
+        "endChar": 30
+      },
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf4813b4_92405c7d",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T01:46:47Z",
+      "side": 1,
+      "message": "let\u0027s do this before incrementing attempts, otherwise we start with 2sec",
+      "range": {
+        "startLine": 366,
+        "startChar": 20,
+        "endLine": 366,
+        "endChar": 33
+      },
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "626c3cef_f3fc88f7",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T01:46:47Z",
+      "side": 1,
+      "message": "warning?",
+      "range": {
+        "startLine": 367,
+        "startChar": 12,
+        "endLine": 367,
+        "endChar": 16
+      },
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

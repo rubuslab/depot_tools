@@ -126,6 +126,30 @@
     },
     {
       "key": {
+        "uuid": "a4732d7e_356f3b65",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-20T18:20:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8c5e1e6_7de6e5c4",
+      "range": {
+        "startLine": 359,
+        "startChar": 16,
+        "endLine": 359,
+        "endChar": 30
+      },
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf4813b4_92405c7d",
         "filename": "git_cl.py",
         "patchSetId": 7
@@ -217,6 +241,30 @@
       "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f851f446_10b5fdc9",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-20T18:20:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11c4050a_dd6c711f",
+      "range": {
+        "startLine": 367,
+        "startChar": 12,
+        "endLine": 367,
+        "endChar": 16
+      },
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

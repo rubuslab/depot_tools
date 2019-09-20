@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d1c51c51_6d107a34",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-20T04:39:33Z",
+      "side": 1,
+      "message": "Renamed.\nAlso, when I update git cl try-results to bb v2 I won\u0027t need method and will pass \u0027Batch\u0027 or \u0027SearchBuilds\u0027 instead of url.",
+      "parentUuid": "4b28d459_d0e1b111",
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8489a777_b8a153c3",
         "filename": "git_cl.py",
         "patchSetId": 7
@@ -30,6 +48,30 @@
       "writtenOn": "2019-09-20T01:46:47Z",
       "side": 1,
       "message": "with value of 3, it will make 6 requests",
+      "range": {
+        "startLine": 359,
+        "startChar": 16,
+        "endLine": 359,
+        "endChar": 30
+      },
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35ecb749_0541dd8f",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-20T04:39:33Z",
+      "side": 1,
+      "message": "How?",
+      "parentUuid": "8489a777_b8a153c3",
       "range": {
         "startLine": 359,
         "startChar": 16,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "c02db0a5_46da4348",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-20T04:39:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf4813b4_92405c7d",
+      "range": {
+        "startLine": 366,
+        "startChar": 20,
+        "endLine": 366,
+        "endChar": 33
+      },
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "626c3cef_f3fc88f7",
         "filename": "git_cl.py",
         "patchSetId": 7
@@ -76,6 +142,30 @@
       "writtenOn": "2019-09-20T01:46:47Z",
       "side": 1,
       "message": "warning?",
+      "range": {
+        "startLine": 367,
+        "startChar": 12,
+        "endLine": 367,
+        "endChar": 16
+      },
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11c4050a_dd6c711f",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-20T04:39:33Z",
+      "side": 1,
+      "message": "I don\u0027t want this to show on the default error level, only when debugging. Maybe debug is more appropriate?",
+      "parentUuid": "626c3cef_f3fc88f7",
       "range": {
         "startLine": 367,
         "startChar": 12,

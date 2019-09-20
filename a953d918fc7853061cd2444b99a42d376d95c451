@@ -117,6 +117,30 @@
     },
     {
       "key": {
+        "uuid": "8e7e2718_25467549",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T05:07:19Z",
+      "side": 1,
+      "message": "i see you talk about this in your previous message\n\nin my experience, it is easier to fork the method to a new one, make it right, update the usages that can be updated, and then entirely remove the old code (instead of updating it again and updating usages again)",
+      "parentUuid": "129d3092_5822d324",
+      "range": {
+        "startLine": 493,
+        "startChar": 2,
+        "endLine": 494,
+        "endChar": 45
+      },
+      "revId": "a953d918fc7853061cd2444b99a42d376d95c451",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "32dff364_9b354f09",
         "filename": "git_cl.py",
         "patchSetId": 11

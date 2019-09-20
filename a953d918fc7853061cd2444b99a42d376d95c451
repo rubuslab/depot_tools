@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6920a00a_a448ca78",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T05:05:35Z",
+      "side": 1,
+      "message": "this is inconsistent with headers we send. The headers assume that data is JSON. Why don\u0027t we accept a dict and return a dict? we do json.dumps and json.loads at the callsite anyway\n\nbesides we aren\u0027t stripping the prefix (see go/prpc) in L548",
+      "range": {
+        "startLine": 347,
+        "startChar": 47,
+        "endLine": 347,
+        "endChar": 55
+      },
+      "revId": "a953d918fc7853061cd2444b99a42d376d95c451",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5986e381_a35fd9b3",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T05:05:35Z",
+      "side": 1,
+      "message": ", 1",
+      "range": {
+        "startLine": 404,
+        "startChar": 33,
+        "endLine": 404,
+        "endChar": 34
+      },
+      "revId": "a953d918fc7853061cd2444b99a42d376d95c451",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1014383_1c6c7909",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T05:05:35Z",
+      "side": 1,
+      "message": "let\u0027s not recommend this. This is legacy.",
+      "range": {
+        "startLine": 410,
+        "startChar": 63,
+        "endLine": 411,
+        "endChar": 35
+      },
+      "revId": "a953d918fc7853061cd2444b99a42d376d95c451",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ede9464b_949d235c",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T05:05:35Z",
+      "side": 1,
+      "message": "simpler:\n\n  shared_properties.update(_get_properties_from_options(options) or {})",
+      "range": {
+        "startLine": 441,
+        "startChar": 2,
+        "endLine": 443,
+        "endChar": 46
+      },
+      "revId": "a953d918fc7853061cd2444b99a42d376d95c451",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "129d3092_5822d324",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T05:05:35Z",
+      "side": 1,
+      "message": "i\u0027d expect this part to be in _call_buildbucket because it is same for all buildbucket prpc calls",
+      "range": {
+        "startLine": 493,
+        "startChar": 2,
+        "endLine": 494,
+        "endChar": 45
+      },
+      "revId": "a953d918fc7853061cd2444b99a42d376d95c451",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32dff364_9b354f09",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T05:05:35Z",
+      "side": 1,
+      "message": "all v2 requests are POST, so it should also be in _call_buildbucket",
+      "range": {
+        "startLine": 498,
+        "startChar": 12,
+        "endLine": 498,
+        "endChar": 20
+      },
+      "revId": "a953d918fc7853061cd2444b99a42d376d95c451",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

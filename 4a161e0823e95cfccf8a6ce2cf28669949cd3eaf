@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bb0be7fb_4eb93f6e",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T05:05:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1c51c51_6d107a34",
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8489a777_b8a153c3",
         "filename": "git_cl.py",
         "patchSetId": 7
@@ -72,6 +90,30 @@
       "side": 1,
       "message": "How?",
       "parentUuid": "8489a777_b8a153c3",
+      "range": {
+        "startLine": 359,
+        "startChar": 16,
+        "endLine": 359,
+        "endChar": 30
+      },
+      "revId": "4a161e0823e95cfccf8a6ce2cf28669949cd3eaf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8c5e1e6_7de6e5c4",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2019-09-20T05:05:35Z",
+      "side": 1,
+      "message": "reasons for extra\n1) check after request\n2) \u003e instead of \u003e\u003d\n3) increment after check",
+      "parentUuid": "35ecb749_0541dd8f",
       "range": {
         "startLine": 359,
         "startChar": 16,

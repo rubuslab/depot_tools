@@ -35,7 +35,8 @@ class CheckCallAndFilterTestCase(unittest.TestCase):
   def setUp(self):
     super(CheckCallAndFilterTestCase, self).setUp()
     self.printfn = io.StringIO()
-    self.stdout = io.BytesIO()
+    self.stdout = gclient_utils.MakeFileAnnotated(
+        io.BytesIO(), include_zero=True)
     if sys.version_info.major == 2:
       mock.patch('sys.stdout', self.stdout).start()
       mock.patch('__builtin__.print', self.printfn.write).start()
@@ -127,7 +128,7 @@ class CheckCallAndFilterTestCase(unittest.TestCase):
         'after a short nap...')
 
   @mock.patch('subprocess2.Popen')
-  def testCHeckCallAndFilter_PrintStdout(self, mockPopen):
+  def testCheckCallAndFilter_PrintStdout(self, mockPopen):
     cwd = 'bleh'
     args = ['boo', 'foo', 'bar']
     test_string = 'ahah\naccb\nallo\naddb\n✔'
@@ -137,18 +138,17 @@ class CheckCallAndFilterTestCase(unittest.TestCase):
     result = gclient_utils.CheckCallAndFilter(
         args, cwd=cwd, show_header=True, always_show_header=True,
         print_stdout=True)
+    self.stdout.flush()
 
     self.assertEqual(result, test_string.encode('utf-8'))
-    self.assertEqual(
-        self.stdout.getvalue().splitlines(),
-        [
-            b'________ running \'boo foo bar\' in \'bleh\'',
-            b'ahah',
-            b'accb',
-            b'allo',
-            b'addb',
-            b'\xe2\x9c\x94',
-        ])
+    self.assertEqual(self.stdout.getvalue().splitlines(), [
+        b"0>________ running 'boo foo bar' in 'bleh'",
+        b'0>ahah',
+        b'0>accb',
+        b'0>allo',
+        b'0>addb',
+        b'0>\xe2\x9c\x94',
+    ])
 
 
 class SplitUrlRevisionTestCase(unittest.TestCase):

@@ -585,6 +585,31 @@ def fetch_try_jobs(auth_config, changelist, buildbucket_host,
   return builds
 
 
+def _fetch_latest_builds(auth_config, changelist, buildbucket_host):
+  """Fetches builds from the latest patchset that has builds.
+
+  Returns:
+    A pair (builds, patchset) where builds is a list of builds, and
+    patchset is the patchset number where those builds came from.
+  """
+  # XXX this would be used by git cl try --retry-failed try calling
+  # fetch_try_jobs with different patchsets until some there are results.
+  # return a tuple with those results and the patchset in question.
+  assert buildbucket_host
+  assert changelist.GetIssue(), 'CL must be uploaded first'
+  assert changelist.GetCodereviewServer(), 'CL must be uploaded first'
+  # for patchsets going backwards:
+  # fetch_tryjobs(auth_config, changelist, buildbucket_host, patchset=ps)
+  return []
+
+
+def _filter_failed(builds):
+  """Returns a list of buckets/builders that had failed builds."""
+  # XXX this would be used by git cl try --retry-failed, which would search for
+  # past failed builds and then get failed builders from those?
+  return []
+
+
 def print_try_jobs(options, builds):
   """Prints nicely result of fetch_try_jobs."""
   if not builds:
@@ -4740,6 +4765,9 @@ def CMDtry(parser, args):
       '--buildbucket-host', default='cr-buildbucket.appspot.com',
       help='Host of buildbucket. The default host is %default.')
   parser.add_option_group(group)
+  parser.add_option(
+      '--retry-failed', default=False,
+      help='Instead')
   auth.add_auth_options(parser)
   _add_codereview_issue_select_options(parser)
   options, args = parser.parse_args(args)
@@ -4777,6 +4805,17 @@ def CMDtry(parser, args):
       print('git cl try with no bots now defaults to CQ dry run.')
     print('Scheduling CQ dry run on: %s' % cl.GetIssueURL())
     return cl.SetCQState(_CQState.DRY_RUN)
+
+  if options.retry_failed:
+    print('Searching for failed try jobs')
+    builds = _fetch_latest_builds(auth_config, cl, buildbucket_host)
+    buckets = _filter_failed(builds)
+    try:
+      _trigger_try_jobs(auth_config, cl, buckets, options, patchset)
+    except BuildbucketResponseException as ex:
+      print('ERROR: %s' % ex)
+      return 1
+    return 0
 
   for builders in buckets.itervalues():
     if any('triggered' in b for b in builders):

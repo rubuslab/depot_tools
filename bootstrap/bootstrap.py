@@ -21,8 +21,6 @@ import tempfile
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 ROOT_DIR = os.path.abspath(os.path.join(THIS_DIR, '..'))
 
-DEVNULL = open(os.devnull, 'w')
-
 IS_WIN = sys.platform.startswith('win')
 BAT_EXT = '.bat' if IS_WIN else ''
 
@@ -60,7 +58,7 @@ class Template(collections.namedtuple('Template', (
     Returns (bool): True if |dst_path| was updated, False otherwise.
     """
     template_path = os.path.join(THIS_DIR, name)
-    with open(template_path, 'r') as fd:
+    with open(template_path, 'rb') as fd:
       t = string.Template(fd.read())
     return maybe_update(t.safe_substitute(self._asdict()), dst_path)
 
@@ -82,12 +80,12 @@ def maybe_update(content, dst_path):
   # If the path already exists and matches the new content, refrain from writing
   # a new one.
   if os.path.exists(dst_path):
-    with open(dst_path, 'r') as fd:
+    with open(dst_path, 'rb') as fd:
       if fd.read() == content:
         return False
 
   logging.debug('Updating %r', dst_path)
-  with open(dst_path, 'w') as fd:
+  with open(dst_path, 'wb') as fd:
     fd.write(content)
   os.chmod(dst_path, 0o755)
   return True
@@ -104,7 +102,7 @@ def maybe_copy(src_path, dst_path):
 
   Returns (bool): True if |dst_path| was updated, False otherwise.
   """
-  with open(src_path, 'r') as fd:
+  with open(src_path, 'rb') as fd:
     content = fd.read()
   return maybe_update(content, dst_path)
 

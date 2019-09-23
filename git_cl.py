@@ -522,7 +522,7 @@ def fetch_try_jobs(auth_config, changelist, buildbucket_host,
                    patchset=None):
   """Fetches tryjobs from buildbucket.
 
-  Returns a map from build id to build info as a dictionary.
+  Returns a map from build ID to build info as a dictionary.
   """
   assert buildbucket_host
   assert changelist.GetIssue(), 'CL must be uploaded first'
@@ -562,6 +562,53 @@ def fetch_try_jobs(auth_config, changelist, buildbucket_host,
     else:
       break
   return builds
+
+
+def _fetch_latest_builds(auth_config, changelist, buildbucket_host):
+  """Fetches builds from the latest patchset that has builds (within
+  the last few patchsets).
+
+  Args:
+    auth_config (auth.AuthConfig): Auth info for Buildbucket
+    changelist (Changelist): The CL to fetch builds for
+    buildbucket_host (str): Buildbucket host, e.g. "cr-buildbucket.appspot.com"
+
+  Returns:
+    A pair (builds, patchset) where builds is a dict mapping from build ID to
+    build info from Buildbucket, and patchset is the patchset number where
+    those builds came from.
+  """
+  # XXX this would be used by git cl try --retry-failed try calling
+  # fetch_try_jobs with different patchsets until some there are results.
+  # return a tuple with those results and the patchset in question.
+  assert buildbucket_host
+  assert changelist.GetIssue(), 'CL must be uploaded first'
+  assert changelist.GetCodereviewServer(), 'CL must be uploaded first'
+  assert changelist.GetPatchset(), 'CL must have a patchset'
+  ps = changelist.GetPatchset()  # Assuming this is the latest patchset
+  min_ps = max(1, ps - 5)
+  while ps > min_ps:
+    builds = fetch_try_jobs(
+        auth_config, changelist, buildbucket_host, patchset=ps)
+    if len(builds):
+      return builds, ps
+    ps -= 1
+  return [], 0
+
+
+def _filter_failed(builds):
+  """Returns a list of buckets/builders that had failed builds.
+
+  Args:
+    builds: Dict of build ID to build info
+
+  Returns:
+    Dict of bucket to builder to empty list.
+  """
+  # XXX this would be used by git cl try --retry-failed, which would search for
+  # past failed builds and then get failed builders from those?
+  print('builds %s', builds)
+  return {}
 
 
 def print_try_jobs(options, builds):
@@ -4675,6 +4722,10 @@ def CMDtry(parser, args):
       '--buildbucket-host', default='cr-buildbucket.appspot.com',
       help='Host of buildbucket. The default host is %default.')
   parser.add_option_group(group)
+  parser.add_option(
+      '--retry-failed', action='store_true', default=False,
+      help='Retry failed jobs from the latest set of tryjobs. '
+           'This will override any --bucket and --bot options.')
   auth.add_auth_options(parser)
   _add_codereview_issue_select_options(parser)
   options, args = parser.parse_args(args)
@@ -4700,10 +4751,24 @@ def CMDtry(parser, args):
   if error_message:
     parser.error('Can\'t trigger tryjobs: %s' % error_message)
 
-  buckets = _get_bucket_map(cl, options, parser)
-  if buckets and any(b.startswith('master.') for b in buckets):
-    print('ERROR: Buildbot masters are not supported.')
-    return 1
+  if options.retry_failed:
+    print('Searching for failed tryjobs')
+    builds, patchset = _fetch_latest_builds(
+        auth_config, cl, options.buildbucket_host)
+    print('Got builds %s, patchset %d', builds, patchset)
+    buckets = _filter_failed(builds)
+    print('Got buckets %s', buckets)
+    if not buckets:
+      print('There are no failed jobs in the latest set of jobs '
+            '(#%d), doing nothing.' % patchset)
+      return 0
+    print('aborting early for test')
+    return 0
+  else:
+    buckets = _get_bucket_map(cl, options, parser)
+    if buckets and any(b.startswith('master.') for b in buckets):
+      print('ERROR: Buildbot masters are not supported.')
+      return 1
 
   # If no bots are listed and we couldn't get a list based on PRESUBMIT files,
   # then we default to triggering a CQ dry run (see http://crbug.com/625697).

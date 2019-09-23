@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae8b7b64_d8c070c1",
+        "filename": "recipes/recipe_modules/gclient/examples/full.expected/revision.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-23T18:20:01Z",
+      "side": 0,
+      "message": "Is this expected?",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 18
+      },
+      "revId": "7cb60e812f165c2d6eaa1646b2a672a5ecb4ef9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

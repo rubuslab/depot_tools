@@ -22,6 +22,30 @@
       "revId": "e14895a558234c0b388e649922e0ae7fa2b883ad",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "565e47ac_dea95f93",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-23T17:48:44Z",
+      "side": 1,
+      "message": "Indeed, actually there\u0027s probably a whole bunch more dead code in git_cl, but it\u0027s hard to tell what\u0027s safe to remove right away since a lot of it is marked public (even though git_cl probably shouldn\u0027t be imported and used as a library, I think). So, thanks :-)",
+      "parentUuid": "43932bd0_e046262c",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 18
+      },
+      "revId": "e14895a558234c0b388e649922e0ae7fa2b883ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

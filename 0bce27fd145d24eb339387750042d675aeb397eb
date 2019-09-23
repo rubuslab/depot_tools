@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa857ad_edf99af1",
+        "filename": "auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-23T05:34:21Z",
+      "side": 1,
+      "message": "no longer needed then?",
+      "range": {
+        "startLine": 30,
+        "startChar": 37,
+        "endLine": 30,
+        "endChar": 52
+      },
+      "revId": "0bce27fd145d24eb339387750042d675aeb397eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

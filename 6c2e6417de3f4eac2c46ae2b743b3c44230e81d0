@@ -93,6 +93,30 @@
       "revId": "6c2e6417de3f4eac2c46ae2b743b3c44230e81d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e6a3542_3667d6dc",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-23T05:34:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5b73f9fc_4584706f",
+      "range": {
+        "startLine": 774,
+        "startChar": 2,
+        "endLine": 776,
+        "endChar": 70
+      },
+      "revId": "6c2e6417de3f4eac2c46ae2b743b3c44230e81d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

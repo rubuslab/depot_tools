@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63287b1f_8f2f1119",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2019-09-24T21:15:54Z",
+      "side": 1,
+      "message": "This warning shows up everytime we trigger skia.primary builds and is confusing",
+      "revId": "d4d1ba4971aa0bb0cf2cf059251a12d31b275587",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "06fe29c7b34df965f471b8b890b1b425efc166db",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35d505f2_6015471e",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2019-09-24T18:44:31Z",
+      "side": 1,
+      "message": "It\u0027s a bit weird in that using just \u0027r\u0027 will do \\r\\n -\u003e \\r conversion on reading on windows, while the writing path in maybe_update doesn\u0027t do that. So if there\u0027s a \\r in the inputs for some reason, the \"write if different\" will always deem the input and the output different silently.\n\nBut done.",
+      "parentUuid": "6b1c8cff_8c7e85af",
+      "range": {
+        "startLine": 61,
+        "startChar": 31,
+        "endLine": 61,
+        "endChar": 32
+      },
+      "revId": "06fe29c7b34df965f471b8b890b1b425efc166db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

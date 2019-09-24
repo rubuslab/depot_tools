@@ -2369,6 +2369,60 @@ class TestGitCl(TestCase):
         'Scheduling CQ dry run on: '
         'https://chromium-review.googlesource.com/123456\n')
 
+  def test_git_cl_try_retry_failed(self):
+    self.mock(git_cl.Changelist, 'GetChange',
+              lambda _, *a: (
+                self._mocked_call(['GetChange'] + list(a))))
+    self.mock(git_cl.presubmit_support, 'DoGetTryMasters',
+              lambda *_, **__: (
+                self._mocked_call(['DoGetTryMasters'])))
+    self.mock(git_cl.Changelist, 'SetCQState',
+              lambda _, s: self._mocked_call(['SetCQState', s]))
+
+    self.calls = [
+        ((['git', 'symbolic-ref', 'HEAD'],), 'feature'),
+        ((['git', 'config', 'branch.feature.gerritissue'],), '123456'),
+        ((['git', 'config', 'branch.feature.gerritserver'],),
+         'https://chromium-review.googlesource.com'),
+        ((['git', 'config', 'branch.feature.merge'],), 'feature'),
+        ((['git', 'config', 'branch.feature.remote'],), 'origin'),
+        ((['git', 'config', 'remote.origin.url'],),
+         'https://chromium.googlesource.com/depot_tools'),
+        (('GetChangeDetail', 'chromium-review.googlesource.com',
+          'depot_tools~123456',
+         ['DETAILED_ACCOUNTS', 'ALL_REVISIONS', 'CURRENT_COMMIT']), {
+          'project': 'depot_tools',
+          'status': 'OPEN',
+          'owner': {'email': 'owner@e.mail'},
+          'revisions': {
+            'deadbeaf': {
+              '_number': 6,
+            },
+            'beeeeeef': {
+              '_number': 7,
+              'fetch': {'http': {
+                'url': 'https://chromium.googlesource.com/depot_tools',
+                'ref': 'refs/changes/56/123456/7'
+              }},
+            },
+          },
+        }),
+        ((['git', 'config', 'branch.feature.merge'],), 'feature'),
+        ((['git', 'config', 'branch.feature.remote'],), 'origin'),
+        ((['get_or_create_merge_base', 'feature', 'feature'],),
+         'fake_ancestor_sha'),
+        ((['GetChange', 'fake_ancestor_sha', None], ),
+         git_cl.presubmit_support.GitChange(
+           '', '', '', '', '', '', '', '')),
+        ((['git', 'rev-parse', '--show-cdup'],), '../'),
+        ((['DoGetTryMasters'], ), None),
+        ((['SetCQState', git_cl._CQState.DRY_RUN], ), 0),
+    ]
+    out = StringIO.StringIO()
+    self.mock(git_cl.sys, 'stdout', out)
+    self.assertEqual(0, git_cl.main(['try', '--retry-failed']))
+    self.assertEqual(out.getvalue(), '')
+
   def test_parse_bucket(self):
     self.assertEqual(git_cl._parse_bucket('chromium/try'), ('chromium', 'try'))
     self.assertEqual(
@@ -2711,6 +2765,18 @@ class TestGitCl(TestCase):
     self.assertRegexpMatches(sys.stdout.getvalue(), '^Failures:')
     self.assertRegexpMatches(sys.stdout.getvalue(), 'Started:')
     self.assertRegexpMatches(sys.stdout.getvalue(), '2 tryjobs')
+
+  def test_filter_failed_none(self):
+    pass
+
+  def test_filter_failed_some(self):
+    pass
+
+  def test_fetch_latest_builds(self):
+    pass
+
+  def test_cmd_try_retry_failed(self):
+    pass
 
   def _mock_gerrit_changes_for_detail_cache(self):
     self.mock(git_cl.Changelist, '_GetGerritHost', lambda _: 'host')

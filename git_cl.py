@@ -522,7 +522,7 @@ def fetch_try_jobs(auth_config, changelist, buildbucket_host,
                    patchset=None):
   """Fetches tryjobs from buildbucket.
 
-  Returns a map from build id to build info as a dictionary.
+  Returns a map from build ID to build info as a dictionary.
   """
   assert buildbucket_host
   assert changelist.GetIssue(), 'CL must be uploaded first'
@@ -564,6 +564,58 @@ def fetch_try_jobs(auth_config, changelist, buildbucket_host,
   return builds
 
 
+def _fetch_latest_builds(auth_config, changelist, buildbucket_host):
+  """Fetches builds from the latest patchset that has builds (within
+  the last few patchsets).
+
+  Args:
+    auth_config (auth.AuthConfig): Auth info for Buildbucket
+    changelist (Changelist): The CL to fetch builds for
+    buildbucket_host (str): Buildbucket host, e.g. "cr-buildbucket.appspot.com"
+
+  Returns:
+    A pair (builds, patchset) where builds is a dict mapping from build ID to
+    build info from Buildbucket, and patchset is the patchset number where
+    those builds came from.
+  """
+  assert buildbucket_host
+  assert changelist.GetIssue(), 'CL must be uploaded first'
+  assert changelist.GetCodereviewServer(), 'CL must be uploaded first'
+  assert changelist.GetMostRecentPatchset()
+  ps = changelist.GetMostRecentPatchset()
+  print('latest patchset %d' % ps)
+  min_ps = max(1, ps - 5)
+  while ps >= min_ps:
+    print('fetching try jobs', auth_config, changelist, buildbucket_host, ps)
+    builds = fetch_try_jobs(
+        auth_config, changelist, buildbucket_host, patchset=ps)
+    if len(builds):
+      return builds, ps
+    ps -= 1
+  return [], 0
+
+
+def _filter_failed(builds):
+  """Returns a list of buckets/builders that had failed builds.
+
+  Args:
+    builds (dict): Builds, in the format returned by fetch_try_jobs,
+      i.e. a dict mapping build ID to build info dict, which includes
+      the keys status, result, bucket, and builder_name.
+
+  Returns:
+    A dict of bucket to builder to tests (empty list). This is the same format
+    accepted by _trigger_try_jobs and returned by _get_bucket_map.
+  """
+  buckets = collections.defaultdict(dict)
+  for build in builds.values():
+    if build['status'] == 'COMPLETED' and build['result'] == 'FAILURE':
+      bucket = build['bucket']
+      builder = _get_builder_from_build(build)
+      buckets[bucket][builder] = []
+  return buckets
+
+
 def print_try_jobs(options, builds):
   """Prints nicely result of fetch_try_jobs."""
   if not builds:
@@ -578,13 +630,7 @@ def print_try_jobs(options, builds):
     try:
       return builder_names_cache[b['id']]
     except KeyError:
-      try:
-        parameters = json.loads(b['parameters_json'])
-        name = parameters['builder_name']
-      except (ValueError, KeyError) as error:
-        print('WARNING: Failed to get builder name for build %s: %s' % (
-              b['id'], error))
-        name = None
+      name = _get_builder_from_build(b)
       builder_names_cache[b['id']] = name
       return name
 
@@ -655,6 +701,18 @@ def print_try_jobs(options, builds):
       f=lambda b: (get_name(b), 'id=%s' % b['id']))
   assert len(builds) == 0
   print('Total: %d tryjobs' % total)
+
+
+def _get_builder_from_build(build):
+  """Returns a builder name from a build info dict."""
+  try:
+    parameters = json.loads(build['parameters_json'])
+    name = parameters['builder_name']
+  except (ValueError, KeyError) as error:
+    print('WARNING: Failed to get builder name for build %s: %s' % (
+          build['id'], error))
+    name = None
+  return name
 
 
 def _ComputeDiffLineRanges(files, upstream_commit):
@@ -4675,6 +4733,10 @@ def CMDtry(parser, args):
       '--buildbucket-host', default='cr-buildbucket.appspot.com',
       help='Host of buildbucket. The default host is %default.')
   parser.add_option_group(group)
+  parser.add_option(
+      '--retry-failed', action='store_true', default=False,
+      help='Retry failed jobs from the latest set of tryjobs. '
+           'This will override any --bucket and --bot options.')
   auth.add_auth_options(parser)
   _add_codereview_issue_select_options(parser)
   options, args = parser.parse_args(args)
@@ -4700,10 +4762,24 @@ def CMDtry(parser, args):
   if error_message:
     parser.error('Can\'t trigger tryjobs: %s' % error_message)
 
-  buckets = _get_bucket_map(cl, options, parser)
-  if buckets and any(b.startswith('master.') for b in buckets):
-    print('ERROR: Buildbot masters are not supported.')
-    return 1
+  if options.retry_failed:
+    print('Searching for failed tryjobs')
+    builds, patchset = _fetch_latest_builds(
+        auth_config, cl, options.buildbucket_host)
+    print('Got builds %s, patchset %d' % (builds, patchset))
+    buckets = _filter_failed(builds)
+    print('Got buckets %s' % buckets)
+    if not buckets:
+      print('There are no failed jobs in the latest set of jobs '
+            '(#%d), doing nothing.' % patchset)
+      return 0
+    print('aborting early for test')
+    return 0
+  else:
+    buckets = _get_bucket_map(cl, options, parser)
+    if buckets and any(b.startswith('master.') for b in buckets):
+      print('ERROR: Buildbot masters are not supported.')
+      return 1
 
   # If no bots are listed and we couldn't get a list based on PRESUBMIT files,
   # then we default to triggering a CQ dry run (see http://crbug.com/625697).

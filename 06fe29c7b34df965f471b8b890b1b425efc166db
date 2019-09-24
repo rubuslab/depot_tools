@@ -46,6 +46,30 @@
       "revId": "06fe29c7b34df965f471b8b890b1b425efc166db",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f4d9f6a_c42b907e",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-24T19:34:04Z",
+      "side": 1,
+      "message": "That\u0027s a good point. The newline conversion can be turned off by passing newline\u003d\u0027\u0027 to open.",
+      "parentUuid": "35d505f2_6015471e",
+      "range": {
+        "startLine": 61,
+        "startChar": 31,
+        "endLine": 61,
+        "endChar": 32
+      },
+      "revId": "06fe29c7b34df965f471b8b890b1b425efc166db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

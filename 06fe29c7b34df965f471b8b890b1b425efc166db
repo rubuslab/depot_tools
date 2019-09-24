@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b1c8cff_8c7e85af",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-24T18:39:27Z",
+      "side": 1,
+      "message": "This has to be \u0027r\u0027.\nIt shouldn\u0027t matter, since the files we\u0027re reading using this are templates in bootstrap/ that don\u0027t have any funny characters.",
+      "range": {
+        "startLine": 61,
+        "startChar": 31,
+        "endLine": 61,
+        "endChar": 32
+      },
+      "revId": "06fe29c7b34df965f471b8b890b1b425efc166db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

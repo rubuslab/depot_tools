@@ -2365,6 +2365,195 @@ class TestGitCl(TestCase):
     ]
     self.assertEqual(0, git_cl.main(['issue', '--json', 'output.json']))
 
+  def test_git_cl_try_retry_failed(self):
+    """
+    self.mock(git_cl.Changelist, 'GetChange',
+              lambda _, *a: (
+                self._mocked_call(['GetChange'] + list(a))))
+    self.mock(git_cl.presubmit_support, 'DoGetTryMasters',
+              lambda *_, **__: (
+                self._mocked_call(['DoGetTryMasters'])))
+    self.mock(git_cl.Changelist, 'SetCQState',
+              lambda _, s: self._mocked_call(['SetCQState', s]))
+
+    self.calls = [
+        ((['git', 'symbolic-ref', 'HEAD'],), 'feature'),
+        ((['git', 'config', 'branch.feature.gerritissue'],), '123456'),
+        ((['git', 'config', 'branch.feature.gerritserver'],),
+         'https://chromium-review.googlesource.com'),
+        ((['git', 'config', 'branch.feature.merge'],), 'feature'),
+        ((['git', 'config', 'branch.feature.remote'],), 'origin'),
+        ((['git', 'config', 'remote.origin.url'],),
+         'https://chromium.googlesource.com/depot_tools'),
+        (('GetChangeDetail', 'chromium-review.googlesource.com',
+          'depot_tools~123456',
+         ['DETAILED_ACCOUNTS', 'ALL_REVISIONS', 'CURRENT_COMMIT']), {
+          'project': 'depot_tools',
+          'status': 'OPEN',
+          'owner': {'email': 'owner@e.mail'},
+          'revisions': {
+            'deadbeaf': {
+              '_number': 6,
+            },
+            'beeeeeef': {
+              '_number': 7,
+              'fetch': {'http': {
+                'url': 'https://chromium.googlesource.com/depot_tools',
+                'ref': 'refs/changes/56/123456/7'
+              }},
+            },
+          },
+        }),
+        ((['git', 'config', 'branch.feature.merge'],), 'feature'),
+        ((['git', 'config', 'branch.feature.remote'],), 'origin'),
+        ((['get_or_create_merge_base', 'feature', 'feature'],),
+         'fake_ancestor_sha'),
+        ((['GetChange', 'fake_ancestor_sha', None], ),
+         git_cl.presubmit_support.GitChange(
+           '', '', '', '', '', '', '', '')),
+        ((['git', 'rev-parse', '--show-cdup'],), '../'),
+        ((['DoGetTryMasters'], ), None),
+        ((['SetCQState', git_cl._CQState.DRY_RUN], ), 0),
+    ]
+    out = StringIO.StringIO()
+    self.mock(git_cl.sys, 'stdout', out)
+    self.assertEqual(0, git_cl.main(['try', '--retry-failed']))
+    self.assertEqual(out.getvalue(), '')
+    """
+
+  def test_parse_bucket(self):
+    self.assertEqual(git_cl._parse_bucket('chromium/try'), ('chromium', 'try'))
+    self.assertEqual(
+        git_cl._parse_bucket('luci.chromium.try'), ('chromium', 'try'))
+    self.assertEqual(git_cl._parse_bucket('not-a-bucket'), (None, None))
+    self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
+    self.assertEqual(
+        git_cl._parse_bucket('skia.primary'),
+        ('skia', 'skia.primary'))
+    self.assertIn(
+        'WARNING Please specify buckets',
+        git_cl.sys.stdout.getvalue())
+
+  def test_git_cl_try_buildbucket_with_wrong_bucket(self):
+    self.mock(git_cl.Changelist, 'GetMostRecentPatchset', lambda _: 7)
+    self.mock(git_cl.uuid, 'uuid4', lambda: 'uuid4')
+
+    self.calls = [
+        ((['git', 'symbolic-ref', 'HEAD'],), 'feature'),
+        ((['git', 'config', 'branch.feature.gerritissue'],), '123456'),
+        ((['git', 'config', 'branch.feature.gerritserver'],),
+         'https://chromium-review.googlesource.com'),
+        ((['git', 'config', 'branch.feature.merge'],), 'feature'),
+        ((['git', 'config', 'branch.feature.remote'],), 'origin'),
+        ((['git', 'config', 'remote.origin.url'],),
+         'https://chromium.googlesource.com/depot_tools'),
+        (('GetChangeDetail', 'chromium-review.googlesource.com',
+          'depot_tools~123456',
+         ['DETAILED_ACCOUNTS', 'ALL_REVISIONS', 'CURRENT_COMMIT']), {
+          'project': 'depot_tools',
+          'status': 'OPEN',
+          'owner': {'email': 'owner@e.mail'},
+          'revisions': {
+            'deadbeaf': {
+              '_number': 6,
+            },
+            'beeeeeef': {
+              '_number': 7,
+              'fetch': {'http': {
+                'url': 'https://chromium.googlesource.com/depot_tools',
+                'ref': 'refs/changes/56/123456/7'
+              }},
+            },
+          },
+        }),
+        ((['git', 'config', 'branch.feature.gerritpatchset'],), '7'),
+    ]
+
+    self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
+    self.assertEqual(0, git_cl.main([
+        'try', '-B', 'not-a-bucket', '-b', 'win',
+        '-p', 'key=val', '-p', 'json=[{"a":1}, null]']))
+    self.assertIn(
+        'Could not parse bucket "not-a-bucket"',
+        git_cl.sys.stdout.getvalue())
+
+  def test_git_cl_try_buildbucket_with_properties_gerrit(self):
+    def _mock_call_buildbucket(_http, buildbucket_host, method, request=None):
+      bb_request = {
+          "requests": [{
+              "scheduleBuild": {
+                  "requestId": "uuid4",
+                  "builder": {
+                      "project": "chromium",
+                      "builder": "win",
+                      "bucket": "try",
+                  },
+                  "gerritChanges": [{
+                      "project": "depot_tools",
+                      "host": "chromium-review.googlesource.com",
+                      "patchset": 7,
+                      "change": 123456,
+                  }],
+                  "properties": {
+                      "category": "git_cl_try",
+                      "json": [{"a": 1}, None],
+                      "key": "val",
+                  },
+                  "tags": [
+                      {"value": "win", "key": "builder"},
+                      {"value": "git_cl_try", "key": "user_agent"},
+                  ],
+              },
+          }],
+      }
+      self.assertEqual(method, 'Batch')
+      self.assertEqual(buildbucket_host, 'cr-buildbucket.appspot.com')
+      self.assertEqual(request, bb_request)
+      return {}
+
+    self.mock(git_cl, '_call_buildbucket', _mock_call_buildbucket)
+    self.mock(git_cl.Changelist, 'GetMostRecentPatchset', lambda _: 7)
+    self.mock(git_cl.uuid, 'uuid4', lambda: 'uuid4')
+
+    self.calls = [
+        ((['git', 'symbolic-ref', 'HEAD'],), 'feature'),
+        ((['git', 'config', 'branch.feature.gerritissue'],), '123456'),
+        ((['git', 'config', 'branch.feature.gerritserver'],),
+         'https://chromium-review.googlesource.com'),
+        ((['git', 'config', 'branch.feature.merge'],), 'feature'),
+        ((['git', 'config', 'branch.feature.remote'],), 'origin'),
+        ((['git', 'config', 'remote.origin.url'],),
+         'https://chromium.googlesource.com/depot_tools'),
+        (('GetChangeDetail', 'chromium-review.googlesource.com',
+          'depot_tools~123456',
+         ['DETAILED_ACCOUNTS', 'ALL_REVISIONS', 'CURRENT_COMMIT']), {
+          'project': 'depot_tools',
+          'status': 'OPEN',
+          'owner': {'email': 'owner@e.mail'},
+          'revisions': {
+            'deadbeaf': {
+              '_number': 6,
+            },
+            'beeeeeef': {
+              '_number': 7,
+              'fetch': {'http': {
+                'url': 'https://chromium.googlesource.com/depot_tools',
+                'ref': 'refs/changes/56/123456/7'
+              }},
+            },
+          },
+        }),
+        ((['git', 'config', 'branch.feature.gerritpatchset'],), '7'),
+    ]
+
+    self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
+    self.assertEqual(0, git_cl.main([
+        'try', '-B', 'luci.chromium.try', '-b', 'win',
+        '-p', 'key=val', '-p', 'json=[{"a":1}, null]']))
+    self.assertIn(
+        'Scheduling jobs on:\nBucket: luci.chromium.try',
+        git_cl.sys.stdout.getvalue())
+
   def _common_GerritCommitMsgHookCheck(self):
     self.mock(git_cl.sys, 'stdout', StringIO.StringIO())
     self.mock(git_cl.os.path, 'abspath',
@@ -2574,6 +2763,18 @@ class TestGitCl(TestCase):
     self.assertRegexpMatches(sys.stdout.getvalue(), '^Failures:')
     self.assertRegexpMatches(sys.stdout.getvalue(), 'Started:')
     self.assertRegexpMatches(sys.stdout.getvalue(), '2 tryjobs')
+
+  def test_filter_failed_none(self):
+    pass
+
+  def test_filter_failed_some(self):
+    pass
+
+  def test_fetch_latest_builds(self):
+    pass
+
+  def test_cmd_try_retry_failed(self):
+    pass
 
   def _mock_gerrit_changes_for_detail_cache(self):
     self.mock(git_cl.Changelist, '_GetGerritHost', lambda _: 'host')

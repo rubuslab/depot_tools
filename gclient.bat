@@ -12,4 +12,8 @@ call "%~dp0update_depot_tools.bat" %*
 set PATH=%PATH%;%~dp0
 
 :: Defer control.
-python "%~dp0gclient.py" %*
+IF "%GCLIENT_PY3%" == "1" (
+  python "%~dp0gclient.py" %*
+) ELSE (
+  python3 "%~dp0gclient.py" %*
+)

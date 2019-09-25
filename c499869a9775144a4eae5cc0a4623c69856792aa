@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7855dc0d_04e4d41c",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-25T00:09:31Z",
+      "side": 1,
+      "message": "tuple",
+      "range": {
+        "startLine": 577,
+        "startChar": 6,
+        "endLine": 577,
+        "endChar": 10
+      },
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8059b2ac_6ea6aab9",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-25T00:09:31Z",
+      "side": 1,
+      "message": "bb v1 build info dict",
+      "range": {
+        "startLine": 705,
+        "startChar": 33,
+        "endLine": 705,
+        "endChar": 51
+      },
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19e81713_98b77554",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4765,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-25T00:09:31Z",
+      "side": 1,
+      "message": "fail fast if there some other options given like -B or -b.",
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "540e23b3_0bc99eae",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4775,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-25T00:09:31Z",
+      "side": 1,
+      "message": "i guess actually trigger will be here, right?\n\nbtw, i\u0027d add a warning here that if \u003e10 Builders are to be triggered, user has to confirm retriggering.",
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

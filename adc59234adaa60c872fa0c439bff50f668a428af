@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "07fa99ea_0abc8686",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-09-25T21:17:28Z",
+      "side": 1,
+      "message": "For future sanity maybe pull this out into a global variable?\n    supported_versions \u003d [\u00272017\u0027, \u00272019\u0027]\nThat would avoid the weirdness where we use [] and () for the same check in different places.",
+      "revId": "adc59234adaa60c872fa0c439bff50f668a428af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a0fda7f_2b8110dc",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-09-25T21:17:28Z",
+      "side": 1,
+      "message": "Delete 2017.\nI wonder if we should remove the -prerelease flag. I guess it doesn\u0027t really matter.",
+      "revId": "adc59234adaa60c872fa0c439bff50f668a428af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6cd63403_d94826be",
         "filename": "win_toolchain/package_from_installed.py",
         "patchSetId": 1
@@ -19,6 +53,47 @@
         "endLine": 301,
         "endChar": 50
       },
+      "revId": "adc59234adaa60c872fa0c439bff50f668a428af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19bac8d2_40818962",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-09-25T21:17:28Z",
+      "side": 1,
+      "message": "I don\u0027t know why we have all of the checks. It seems like we just need to validate in main (line 442) and delete all the rest (including the bogus check at line 459 with the presumably incorrect else case)",
+      "parentUuid": "6cd63403_d94826be",
+      "range": {
+        "startLine": 301,
+        "startChar": 4,
+        "endLine": 301,
+        "endChar": 50
+      },
+      "revId": "adc59234adaa60c872fa0c439bff50f668a428af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df79db36_246a5ca2",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-09-25T21:17:28Z",
+      "side": 1,
+      "message": "This looks vestigial - dangerously so since it implies that options other than 2017/2019 are supported. Get rid of the if and the else for sure.",
       "revId": "adc59234adaa60c872fa0c439bff50f668a428af",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

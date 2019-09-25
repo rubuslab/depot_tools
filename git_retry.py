@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 # Copyright 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 
-"""Generic retry wrapper for Git operations. 
+"""Generic retry wrapper for Git operations.
 
 This is largely DEPRECATED in favor of the Infra Git wrapper:
 https://chromium.googlesource.com/infra/infra/+/master/go/src/infra/tools/git

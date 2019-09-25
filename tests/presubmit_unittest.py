@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 # Copyright (c) 2012 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -2572,7 +2572,7 @@ the current line as well!
 
   @mock.patch('__builtin__.open', mock.mock_open())
   def testCannedRunUnitTestsPython3(self):
-    open().readline.return_value = '#!/usr/bin/env python3'
+    open().readline.return_value = '#!/usr/bin/env python2.7'
     change = presubmit.Change(
         'foo1', 'description1', self.fake_root_dir, None, 0, 0, None)
     input_api = self.MockInputApi(change, False)
@@ -2628,7 +2628,7 @@ the current line as well!
 
   @mock.patch('__builtin__.open', mock.mock_open())
   def testCannedRunUnitTestsDontRunOnPython2(self):
-    open().readline.return_value = '#!/usr/bin/env python3'
+    open().readline.return_value = '#!/usr/bin/env python2.7'
     change = presubmit.Change(
         'foo1', 'description1', self.fake_root_dir, None, 0, 0, None)
     input_api = self.MockInputApi(change, False)
@@ -2672,7 +2672,7 @@ the current line as well!
 
   @mock.patch('__builtin__.open', mock.mock_open())
   def testCannedRunUnitTestsDontRunOnPython3(self):
-    open().readline.return_value = '#!/usr/bin/env python3'
+    open().readline.return_value = '#!/usr/bin/env python2.7'
     change = presubmit.Change(
         'foo1', 'description1', self.fake_root_dir, None, 0, 0, None)
     input_api = self.MockInputApi(change, False)

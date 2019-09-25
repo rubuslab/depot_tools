@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "98fb16ef_4261e868",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-09-25T21:49:02Z",
+      "side": 1,
+      "message": "space around ,",
+      "revId": "25d1a67efbff45bd44088e1bf6ea4084b555ce41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ac6d9710_3869e21e",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-09-25T21:49:02Z",
+      "side": 1,
+      "message": "not sure if the style guide has an opinion, but CrOS prefers single quotes unless one is forced to escape in which case it prefers double quotes",
+      "revId": "25d1a67efbff45bd44088e1bf6ea4084b555ce41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19a5ba34_c21a13f1",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-09-25T21:49:02Z",
+      "side": 1,
+      "message": "this should be de-indented by one space\n\nyou should also pass file\u003dsys.stderr",
+      "revId": "25d1a67efbff45bd44088e1bf6ea4084b555ce41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e869966a_80425a56",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-09-25T21:49:02Z",
+      "side": 1,
+      "message": "this is unlcear.  set where ?  set how ?  probably want to frame it more like:\n\n Set python3_migration\n\u003d1 in your environment to skip this check.\n\nof course there\u0027s bikeshedding with the env var name, both style and naming.  i would have leaned towards uppercase \u0026 scoping like GCLIENT_PYTHON3_TESTING or something.",
+      "revId": "25d1a67efbff45bd44088e1bf6ea4084b555ce41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

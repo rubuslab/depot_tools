@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "119a4287_5fd86c62",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-25T23:39:30Z",
+      "side": 1,
+      "message": ":D English-wise, i\u0027m fine with pair/triple/quadruple, etc. But type-wise, I find tuple clearer.",
+      "parentUuid": "bf3feab7_210e80bc",
+      "range": {
+        "startLine": 577,
+        "startChar": 6,
+        "endLine": 577,
+        "endChar": 10
+      },
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8059b2ac_6ea6aab9",
         "filename": "git_cl.py",
         "patchSetId": 6
@@ -163,6 +187,24 @@
       "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79c34649_67aca259",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4775,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-25T23:39:30Z",
+      "side": 1,
+      "message": "oh, I right, i see now. That makes sense.",
+      "parentUuid": "1f105a2c_25e86f87",
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

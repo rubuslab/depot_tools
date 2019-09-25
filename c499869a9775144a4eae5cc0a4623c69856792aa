@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf3feab7_210e80bc",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-25T23:35:50Z",
+      "side": 1,
+      "message": "Done\n\nIn the past I\u0027ve used \"pair\" to mean \"2-tuple\", (and similarly triple, quadruple, quintuple, etc. for 3-tuple, 4-tuple, 5-tuple...)\n\nThe more I look at the word tuple the weirder it looks, it looks like it should be pronounced \"too pleh\"...",
+      "parentUuid": "7855dc0d_04e4d41c",
+      "range": {
+        "startLine": 577,
+        "startChar": 6,
+        "endLine": 577,
+        "endChar": 10
+      },
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8059b2ac_6ea6aab9",
         "filename": "git_cl.py",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "62975eee_242309e7",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-25T23:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8059b2ac_6ea6aab9",
+      "range": {
+        "startLine": 705,
+        "startChar": 33,
+        "endLine": 705,
+        "endChar": 51
+      },
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "19e81713_98b77554",
         "filename": "git_cl.py",
         "patchSetId": 6
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "b2bdabca_89e7fbf8",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4765,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-25T23:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19e81713_98b77554",
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "540e23b3_0bc99eae",
         "filename": "git_cl.py",
         "patchSetId": 6
@@ -76,6 +142,24 @@
       "writtenOn": "2019-09-25T00:09:31Z",
       "side": 1,
       "message": "i guess actually trigger will be here, right?\n\nbtw, i\u0027d add a warning here that if \u003e10 Builders are to be triggered, user has to confirm retriggering.",
+      "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f105a2c_25e86f87",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4775,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-25T23:35:50Z",
+      "side": 1,
+      "message": "What I was intending here was that this sets the `buckets` variable which is used in triggering down on line 4800.",
+      "parentUuid": "540e23b3_0bc99eae",
       "revId": "c499869a9775144a4eae5cc0a4623c69856792aa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

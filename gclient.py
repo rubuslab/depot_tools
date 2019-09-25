@@ -97,6 +97,14 @@ import re
 import sys
 import time
 
+# Check for people accidentally running this script with Python3 - an
+# increasingly common error on Windows 10 due to the store version of Python.
+if sys.version_info >= (3,0) and not 'python3_migration' in os.environ:
+  print('gclient doesn\'t yet support Python 3. Version %s detected.' %
+         sys.version)
+  print('Set python3_migration to skip this check.')
+  sys.exit(1)
+
 try:
   import urlparse
 except ImportError:  # For Py3 compatibility

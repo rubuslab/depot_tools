@@ -69,7 +69,7 @@ def exponential_backoff_retry(fn, excs=(Exception,), name=None, count=10,
   Returns: The return value of the successful fn.
   """
   printerr = printerr or logging.warning
-  for i in xrange(count):
+  for i in range(count):
     try:
       return fn()
     except excs as e:
@@ -274,8 +274,10 @@ class Mirror(object):
 
     # Use the same dir for authenticated URLs and unauthenticated URLs.
     norm_url = norm_url.replace('googlesource.com/a/', 'googlesource.com/')
-
-    return norm_url.replace('-', '--').replace('/', '-').lower()
+    norm_url = norm_url.replace('-', '--').replace('/', '-').lower()
+    # Windows doesn't like having ':' in the path.
+    norm_url = norm_url.replace(':', '')
+    return norm_url
 
   @staticmethod
   def CacheDirToUrl(path):

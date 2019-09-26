@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e0856d85_63abae4c",
+        "filename": "gclient",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-09-26T18:42:36Z",
+      "side": 1,
+      "message": "2 different comments:\nI\u0027m assuming you are trying to defend against the empty/undefined $CLIENT_PY3 here\n\n[[ $UNDEFINED !\u003d VALUE ]] works fine in bash\n\n--\n\n$ if [[ $THIS_IS_NOT_SET !\u003d foo ]]; then echo not foo; fi\nnot foo\n\n$ if [[ !\u003d foo ]]; then echo not foo; fi\nbash: conditional binary operator expected\nbash: syntax error near `foo\u0027\n\n--\n\nBut if you are in a situation where it\u0027s not handled well by bash, I strongly prefer the default value syntax of ${VAR:-default}\n\nso\n\nif [[ ${GCLIENT_PY3:-0} !\u003d 1 ]]; then",
+      "range": {
+        "startLine": 26,
+        "startChar": 7,
+        "endLine": 26,
+        "endChar": 30
+      },
+      "revId": "f8f892155bd3886f392c686c30246e54a2fc5a81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -4458,10 +4458,11 @@ def CMDupload(parser, args):
   parser.add_option('--r-owners', dest='add_owners_to', action='store_const',
                     const='R', help='add a set of OWNERS to R')
   parser.add_option('-c', '--use-commit-queue', action='store_true',
+                    default=False,
                     help='tell the CQ to commit this patchset; '
-                          'implies --send-mail')
-  parser.add_option('-d', '--cq-dry-run', dest='cq_dry_run',
-                    action='store_true',
+                         'implies --send-mail')
+  parser.add_option('-d', '--cq-dry-run',
+                    action='store_true', default=False,
                     help='Send the patchset to do a CQ dry run right after '
                          'upload.')
   parser.add_option('--preserve-tryjobs', action='store_true',
@@ -4478,11 +4479,39 @@ def CMDupload(parser, args):
   parser.add_option('--parallel', action='store_true',
                     help='Run all tests specified by input_api.RunTests in all '
                          'PRESUBMIT files in parallel.')
-
   parser.add_option('--no-autocc', action='store_true',
                     help='Disables automatic addition of CC emails')
   parser.add_option('--private', action='store_true',
                     help='Set the review private. This implies --no-autocc.')
+
+  group = optparse.OptionGroup(parser, 'Tryjob options',
+                               'Options that pertain to triggering tryjobs '
+                               'with --retry-failed')
+  group.add_option('-R', '--retry-failed', action='store_true',
+                   help='Retry failed tryjobs from old patchset immediately '
+                        'after uploading new patchset. Cannot be used with '
+                        '--use-commit-queue or --cq-dry-run.')
+  group.add_option('--clobber', action='store_true', default=False,
+                   help='Force a clobber before building; that is don\'t do an '
+                        'incremental build')
+  group.add_option('--category', default='git_cl_try',
+                   help='Specify custom build category.')
+  group.add_option('--project',
+                   help='Override which project to use. Projects are defined '
+                        'in recipe to determine to which repository or '
+                        'directory to apply the patch')
+  group.add_option('-p', '--property', dest='properties', action='append',
+                   default=[],
+                   help='Specify generic properties in the form '
+                        '-p key1=value1 -p key2=value2 etc. The value will '
+                        'be treated as JSON if decodable, or as string '
+                        'otherwise. NOTE: using this may make your tryjob '
+                        'not usable for CQ, which will then schedule another '
+                        'tryjob with default properties')
+  group.add_option('--buildbucket-host', default='cr-buildbucket.appspot.com',
+                   help='Host of buildbucket. The default host is %default.')
+
+  auth.add_auth_options(parser)
 
   orig_args = args
   _add_codereview_select_options(parser)
@@ -4502,6 +4531,12 @@ def CMDupload(parser, args):
     options.message = gclient_utils.FileRead(options.message_file)
     options.message_file = None
 
+  conflicting_trigger_options = [options.cq_dry_run, options.use_commit_queue,
+                                 options.retry_failed]
+  if len(filter(None, conflicting_trigger_options)) > 1:
+    parser.error('Only one of --use-commit-queue, --cq-dry-run, or '
+                 '--retry-failed is allowed.')
+
   if options.cq_dry_run and options.use_commit_queue:
     parser.error('Only one of --use-commit-queue and --cq-dry-run allowed.')
 
@@ -4513,7 +4548,26 @@ def CMDupload(parser, args):
 
   cl = Changelist()
 
-  return cl.CMDUpload(options, args, orig_args)
+  if options.retry_failed:
+    if not cl.GetIssue():
+      print('--retry-failed can only be used with CLs that are already '
+            'uploaded.', file=sys.stderr)
+      return 1
+    auth_config = auth.extract_auth_config_from_options(options)
+    # Before uploading, fetch the failed jobs to retry.
+    builds = fetch_try_jobs(auth_config, cl, options.buildbucket_host)
+    buckets = _filter_failed(builds)
+    num_builders = sum(len(builders) for builders in buckets.values())
+    if num_builders == 0:
+      print('No failed tryjobs, so --retry-failed has no effect.')
+      options.retry_failed = False
+
+  ret = cl.CMDUpload(options, args, orig_args)
+  if ret == 0 and options.retry_failed:
+    builds = []
+    patchset = cl.GetMostRecentPatchset()
+    _trigger_try_jobs(auth_config, cl, buckets, options, patchset)
+  return ret
 
 
 @subcommand.usage('--description=<description file>')

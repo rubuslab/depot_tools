@@ -452,11 +452,12 @@ class GitWrapper(SCMWrapper):
         # the patch failure, since git cherry-pick doesn't show that
         # information.
         self.Print(self._Capture(['status']))
+        exception = sys.exc_info()
         try:
           self._Capture(['cherry-pick', '--abort'])
         except subprocess2.CalledProcessError:
           pass
-        raise
+        gclient_utils.reraise(exception[0], exception[1], exception[2])
 
     if file_list is not None:
       file_list.extend(self._GetDiffFilenames(base_rev))

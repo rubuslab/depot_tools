@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9300bb25_58a68df7",
+        "filename": "gclient",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-09-26T18:44:02Z",
+      "side": 1,
+      "message": "I don\u0027t think you need the \"X$VAR\" format here, see comments in  crrev/1825996",
+      "revId": "a3adb909977bbdfe4b4ff198e609eb74deb756d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -30,6 +30,7 @@ from testing_support import fake_repos
 from testing_support import test_case_utils
 
 import gclient_scm
+import gclient_utils
 import git_cache
 import subprocess2
 
@@ -1059,11 +1060,15 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
     self.options = BaseGitWrapperTestCase.OptionsObject()
     self.url = self.git_base + 'repo_1'
     self.mirror = None
+    # Don't pollute the console.
+    mock.patch('sys.stdout').start()
+    mock.patch('sys.stderr').start()
+    self.addCleanup(mock.patch.stopall)
 
   def setUpMirror(self):
     self.mirror = tempfile.mkdtemp()
     git_cache.Mirror.SetCachePath(self.mirror)
-    self.addCleanup(rmtree, self.mirror)
+    self.addCleanup(gclient_utils.rmtree, self.mirror)
     self.addCleanup(git_cache.Mirror.SetCachePath, None)
 
   def assertCommits(self, commits):

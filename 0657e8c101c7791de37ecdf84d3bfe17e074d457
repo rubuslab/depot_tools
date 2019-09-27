@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d3d92ec_73b0d103",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4510,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-27T00:43:32Z",
+      "side": 1,
+      "message": "don\u0027t add these. one can still do: $ git cl upload \u0026\u0026 git cl try [...usual flags...]\n\nyou probably don\u0027t need a group either.",
+      "range": {
+        "startLine": 4494,
+        "startChar": 0,
+        "endLine": 4510,
+        "endChar": 57
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c87b9c42_c3e87e14",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4536,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-27T00:43:32Z",
+      "side": 1,
+      "message": "consider:\n  if [...].count(True) \u003e 1: (since each is boolean)",
+      "range": {
+        "startLine": 4534,
+        "startChar": 0,
+        "endLine": 4536,
+        "endChar": 56
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3cf6cd0c_53fd4ec7",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4555,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-27T00:43:32Z",
+      "side": 1,
+      "message": "DieWithError",
+      "range": {
+        "startLine": 4553,
+        "startChar": 6,
+        "endLine": 4555,
+        "endChar": 14
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3696fd5_1741236c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4560,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-27T00:43:32Z",
+      "side": 1,
+      "message": "can you make _filter_failed return empty {} if there are no builds? I think it\u0027s already the case.\n\n(also, sum(map(len, bucket.itervalues())) is just as good)",
+      "range": {
+        "startLine": 4560,
+        "startChar": 19,
+        "endLine": 4560,
+        "endChar": 70
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "247cef96_88866496",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4567,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-09-27T00:43:32Z",
+      "side": 1,
+      "message": "unused",
+      "range": {
+        "startLine": 4567,
+        "startChar": 4,
+        "endLine": 4567,
+        "endChar": 15
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

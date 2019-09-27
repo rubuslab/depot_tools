@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c691170_bcea3345",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4537,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-27T18:12:28Z",
+      "side": 1,
+      "message": "Can we move it after upload? We shouldn\u0027t block upload if there\u0027s a problem fetching try jobs.\nYou can fetch try_jobs for a patchset earlier than the last one.",
+      "range": {
+        "startLine": 4527,
+        "startChar": 2,
+        "endLine": 4537,
+        "endChar": 34
+      },
+      "revId": "c92a4a75522ecf9769bcb647bbe02633cc73693b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

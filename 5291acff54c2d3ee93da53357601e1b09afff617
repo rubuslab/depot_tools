@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bc19880a_5b6be97a",
+        "filename": "git_cache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-09-27T20:47:09Z",
+      "side": 1,
+      "message": "this is going to cause collisions, unlike the - to -- and / to - above.\n\n(and there\u0027s a bunch of other characters that windows is not allowed to have in a path, including \"\u003e\u003c/\\|?*\")\n\nmaybe we could make - and escape character\n\nso replace \u0027-\u0027, \u0027--\u0027\n\n\u0027/\u0027, \u0027-s\u0027\n\u0027:\u0027, \u0027-c\u0027\n\nand so on?",
+      "revId": "5291acff54c2d3ee93da53357601e1b09afff617",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

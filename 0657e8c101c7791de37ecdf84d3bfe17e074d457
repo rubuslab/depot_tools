@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b7d1ff3e_096e424a",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4510,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-27T18:06:51Z",
+      "side": 1,
+      "message": "As-is, _trigger_try_jobs just assumes that some option attributes are there, in particular clobber, category, project and properties.\n\nI now removed these options from here and modified _trigger_try_jobs so that it can handle it if options doesn\u0027t have those properties (by using getattr instead of direct attribute access).",
+      "parentUuid": "9d3d92ec_73b0d103",
+      "range": {
+        "startLine": 4494,
+        "startChar": 0,
+        "endLine": 4510,
+        "endChar": 57
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c87b9c42_c3e87e14",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "627df666_f3034678",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4536,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-27T18:06:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c87b9c42_c3e87e14",
+      "range": {
+        "startLine": 4534,
+        "startChar": 0,
+        "endLine": 4536,
+        "endChar": 56
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "f3589c98_1e016f32",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4555,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-27T18:06:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3cf6cd0c_53fd4ec7",
+      "range": {
+        "startLine": 4553,
+        "startChar": 6,
+        "endLine": 4555,
+        "endChar": 14
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d3696fd5_1741236c",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "91977954_2b3f2adf",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4560,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-27T18:06:51Z",
+      "side": 1,
+      "message": "Ah, right - Done",
+      "parentUuid": "d3696fd5_1741236c",
+      "range": {
+        "startLine": 4560,
+        "startChar": 19,
+        "endLine": 4560,
+        "endChar": 70
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "247cef96_88866496",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -114,6 +210,30 @@
       "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "545a0e2d_df8881de",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4567,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-09-27T18:06:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "247cef96_88866496",
+      "range": {
+        "startLine": 4567,
+        "startChar": 4,
+        "endLine": 4567,
+        "endChar": 15
+      },
+      "revId": "0657e8c101c7791de37ecdf84d3bfe17e074d457",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

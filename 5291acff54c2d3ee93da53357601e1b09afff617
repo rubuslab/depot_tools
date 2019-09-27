@@ -16,6 +16,24 @@
       "revId": "5291acff54c2d3ee93da53357601e1b09afff617",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17bc32a6_aa10a3fe",
+        "filename": "git_cache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-27T22:13:29Z",
+      "side": 1,
+      "message": "Thinking a bit more about it.\nThat would invalidate the cache on the bots and maybe cause other problems. We only need it because tests serve from \u0027localhost:port\u0027.",
+      "parentUuid": "bc19880a_5b6be97a",
+      "revId": "5291acff54c2d3ee93da53357601e1b09afff617",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

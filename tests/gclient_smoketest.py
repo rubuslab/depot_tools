@@ -30,6 +30,11 @@ from testing_support.fake_repos import join, write
 GCLIENT_PATH = os.path.join(ROOT_DIR, 'gclient')
 COVERAGE = False
 
+# Avoid accidental use of Python 3 before we have formally transitioned to it.
+# Once we transition this warning can be repurposed to detect unsupported use
+# of Python 2.
+PYTHON3_WARNING = ("Warning: gclient doesn't yet support Python 3 and may not "
+                   "work correctly.\n")
 
 class GClientSmokeBase(fake_repos.FakeReposTestBase):
   def setUp(self):
@@ -88,6 +93,7 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
     (stdout, stderr, returncode) = self.gclient(cmd)
     if untangle:
       stdout = self.untangle(stdout)
+    expected_stderr = PYTHON3_WARNING + expected_stderr
     self.checkString(expected_stderr, stderr)
     self.assertEqual(0, returncode)
     return self.checkBlock(stdout, items)
@@ -166,7 +172,8 @@ class GClientSmoke(GClientSmokeBase):
     return 'git://random.server/git/'
 
   def testNotConfigured(self):
-    res = ('', 'Error: client not configured; see \'gclient config\'\n', 1)
+    res = ('', PYTHON3_WARNING +
+           'Error: client not configured; see \'gclient config\'\n', 1)
     self.check(res, self.gclient(['diff']))
     self.check(res, self.gclient(['pack']))
     self.check(res, self.gclient(['revert']))
@@ -186,7 +193,7 @@ class GClientSmoke(GClientSmokeBase):
       if os.path.exists(p):
         os.remove(p)
       results = self.gclient(cmd)
-      self.check(('', '', 0), results)
+      self.check(('', PYTHON3_WARNING, 0), results)
       mode = 'r' if sys.version_info.major == 3 else 'rU'
       with open(p, mode) as f:
         self.checkString(expected, f.read())
@@ -264,26 +271,26 @@ class GClientSmoke(GClientSmokeBase):
     err = ('Usage: gclient.py config [options] [url]\n\n'
            'gclient.py: error: Inconsistent arguments. Use either --spec or one'
            ' or 2 args\n')
-    self.check(('', err, 2), results)
+    self.check(('', PYTHON3_WARNING + err, 2), results)
     self.assertFalse(os.path.exists(join(self.root_dir, '.gclient')))
 
   def testSolutionNone(self):
     results = self.gclient(['config', '--spec',
                             'solutions=[{"name": "./", "url": None}]'])
-    self.check(('', '', 0), results)
+    self.check(('', PYTHON3_WARNING, 0), results)
     results = self.gclient(['sync'])
-    self.check(('', '', 0), results)
+    self.check(('', PYTHON3_WARNING, 0), results)
     self.assertTree({})
     results = self.gclient(['revinfo'])
-    self.check(('./: None\n', '', 0), results)
-    self.check(('', '', 0), self.gclient(['diff']))
+    self.check(('./: None\n', PYTHON3_WARNING, 0), results)
+    self.check(('', PYTHON3_WARNING, 0), self.gclient(['diff']))
     self.assertTree({})
-    self.check(('', '', 0), self.gclient(['pack']))
-    self.check(('', '', 0), self.gclient(['revert']))
+    self.check(('', PYTHON3_WARNING, 0), self.gclient(['pack']))
+    self.check(('', PYTHON3_WARNING, 0), self.gclient(['revert']))
     self.assertTree({})
-    self.check(('', '', 0), self.gclient(['runhooks']))
+    self.check(('', PYTHON3_WARNING, 0), self.gclient(['runhooks']))
     self.assertTree({})
-    self.check(('', '', 0), self.gclient(['status']))
+    self.check(('', PYTHON3_WARNING, 0), self.gclient(['status']))
 
   def testDifferentTopLevelDirectory(self):
     # Check that even if the .gclient file does not mention the directory src
@@ -740,7 +747,7 @@ class GClientSmokeGIT(GClientSmokeBase):
     stdout, stderr, retcode = self.gclient(['sync', '--deps', 'mac', '--jobs=1',
                                             '--revision',
                                             'src@' + self.githash('repo_5', 3)])
-    self.assertEqual(stderr, expected_stderr)
+    self.assertEqual(stderr, PYTHON3_WARNING + expected_stderr)
     self.assertEqual(2, retcode)
     self.checkBlock(stdout, expectated_stdout)
 
@@ -757,7 +764,7 @@ class GClientSmokeGIT(GClientSmokeBase):
             'base': self.git_base,
             'hash2': self.githash('repo_2', 1)[:7],
           })
-    self.check((out, '', 0), results)
+    self.check((out, PYTHON3_WARNING, 0), results)
 
   def testRevInfoActual(self):
     if not self.enabled:
@@ -774,7 +781,7 @@ class GClientSmokeGIT(GClientSmokeBase):
             'hash2': self.githash('repo_2', 1),
             'hash3': self.githash('repo_3', 2),
           })
-    self.check((out, '', 0), results)
+    self.check((out, PYTHON3_WARNING, 0), results)
 
   def testRevInfoFilterPath(self):
     if not self.enabled:
@@ -786,7 +793,7 @@ class GClientSmokeGIT(GClientSmokeBase):
           {
             'base': self.git_base,
           })
-    self.check((out, '', 0), results)
+    self.check((out, PYTHON3_WARNING, 0), results)
 
   def testRevInfoFilterURL(self):
     if not self.enabled:
@@ -800,7 +807,7 @@ class GClientSmokeGIT(GClientSmokeBase):
             'base': self.git_base,
             'hash2': self.githash('repo_2', 1)[:7],
           })
-    self.check((out, '', 0), results)
+    self.check((out, PYTHON3_WARNING, 0), results)
 
   def testRevInfoFilterURLOrPath(self):
     if not self.enabled:
@@ -815,7 +822,7 @@ class GClientSmokeGIT(GClientSmokeBase):
             'base': self.git_base,
             'hash2': self.githash('repo_2', 1)[:7],
           })
-    self.check((out, '', 0), results)
+    self.check((out, PYTHON3_WARNING, 0), results)
 
   def testRevInfoJsonOutput(self):
     if not self.enabled:
@@ -892,7 +899,7 @@ class GClientSmokeGIT(GClientSmokeBase):
     with open(fake_deps) as f:
       contents = f.read().splitlines()
 
-    self.assertEqual('', results[1], results[1])
+    self.assertEqual(PYTHON3_WARNING, results[1], results[1])
     self.assertEqual(0, results[2])
     self.assertEqual([
           'vars = { ',
@@ -937,7 +944,7 @@ class GClientSmokeGIT(GClientSmokeBase):
     with open(fake_deps) as f:
       contents = f.read().splitlines()
 
-    self.assertEqual('', results[1], results[1])
+    self.assertEqual(PYTHON3_WARNING, results[1], results[1])
     self.assertEqual(0, results[2])
     self.assertEqual([
           'vars = { ',
@@ -978,7 +985,7 @@ class GClientSmokeGIT(GClientSmokeBase):
         'getdep', '-r', 'foo', '-r', 'bar','--var', 'foo_var',
         '--deps-file', fake_deps])
 
-    self.assertEqual('', results[1])
+    self.assertEqual(PYTHON3_WARNING, results[1])
     self.assertEqual([
         'foo_val',
         'foo_rev',
@@ -1013,7 +1020,7 @@ class GClientSmokeGIT(GClientSmokeBase):
         'getdep', '-r', 'foo', '-r', 'bar','--var', 'foo_var',
         '--deps-file', fake_deps])
 
-    self.assertEqual('', results[1])
+    self.assertEqual(PYTHON3_WARNING, results[1])
     self.assertEqual([
         'foo_val',
         'foo_rev',

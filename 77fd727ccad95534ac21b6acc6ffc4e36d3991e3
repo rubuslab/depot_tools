@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "089acbf3_0c184d45",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-09-30T16:21:50Z",
+      "side": 1,
+      "message": "I think we need the check here so that it gets caught on the initial packaging.\nos.path.join(sdk_path, \u0027Debuggers\u0027)",
+      "revId": "77fd727ccad95534ac21b6acc6ffc4e36d3991e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

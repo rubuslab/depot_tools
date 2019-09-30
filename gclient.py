@@ -97,6 +97,12 @@ import re
 import sys
 import time
 
+# Check for people accidentally running this script with Python3 - an
+# increasingly common error on Windows 10 due to the store version of Python.
+if sys.version_info.major >= 3:
+  print("Warning: gclient doesn't yet support Python 3 and may not work "
+        "correctly.", file=sys.stderr)
+
 try:
   import urlparse
 except ImportError:  # For Py3 compatibility

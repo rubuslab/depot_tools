@@ -121,6 +121,12 @@
   },
   {
     "cmd": [],
+    "cost": {
+      "cpu": 0,
+      "disk": 0,
+      "memory": 0,
+      "net": 0
+    },
     "name": "TRYJOB SET SUBPROJECT_TAG",
     "~followup_annotations": [
       "@@@STEP_TEXT@v8@@@",
@@ -129,6 +135,12 @@
   },
   {
     "cmd": [],
+    "cost": {
+      "cpu": 0,
+      "disk": 0,
+      "memory": 0,
+      "net": 0
+    },
     "name": "TRYJOB FAILURE",
     "~followup_annotations": [
       "@@@STEP_TEXT@PATCH_FAILURE@@@",
@@ -138,6 +150,12 @@
   },
   {
     "cmd": [],
+    "cost": {
+      "cpu": 0,
+      "disk": 0,
+      "memory": 0,
+      "net": 0
+    },
     "name": "TRYJOB DO NOT RETRY",
     "~followup_annotations": [
       "@@@SET_BUILD_PROPERTY@do_not_retry@true@@@"
@@ -145,6 +163,12 @@
   },
   {
     "cmd": [],
+    "cost": {
+      "cpu": 0,
+      "disk": 0,
+      "memory": 0,
+      "net": 0
+    },
     "name": "TRYJOB FAILURE (2)",
     "~followup_annotations": [
       "@@@STEP_TEXT@COMPILE_FAILURE@@@",
@@ -154,6 +178,12 @@
   },
   {
     "cmd": [],
+    "cost": {
+      "cpu": 0,
+      "disk": 0,
+      "memory": 0,
+      "net": 0
+    },
     "name": "TRYJOB FAILURE (3)",
     "~followup_annotations": [
       "@@@STEP_TEXT@TEST_FAILURE@@@",
@@ -163,6 +193,12 @@
   },
   {
     "cmd": [],
+    "cost": {
+      "cpu": 0,
+      "disk": 0,
+      "memory": 0,
+      "net": 0
+    },
     "name": "TRYJOB FAILURE (4)",
     "~followup_annotations": [
       "@@@STEP_TEXT@INVALID_TEST_RESULTS@@@",
@@ -172,6 +208,12 @@
   },
   {
     "cmd": [],
+    "cost": {
+      "cpu": 0,
+      "disk": 0,
+      "memory": 0,
+      "net": 0
+    },
     "name": "TRYJOB FAILURE (5)",
     "~followup_annotations": [
       "@@@STEP_TEXT@TEST_TIMEOUT@@@",
@@ -181,6 +223,12 @@
   },
   {
     "cmd": [],
+    "cost": {
+      "cpu": 0,
+      "disk": 0,
+      "memory": 0,
+      "net": 0
+    },
     "name": "TRYJOB FAILURE (6)",
     "~followup_annotations": [
       "@@@STEP_TEXT@TEST_EXPIRED@@@",

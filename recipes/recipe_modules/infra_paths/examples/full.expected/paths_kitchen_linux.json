@@ -1,6 +1,12 @@
 [
   {
     "cmd": [],
+    "cost": {
+      "cpu": 0,
+      "disk": 0,
+      "memory": 0,
+      "net": 0
+    },
     "name": "show paths",
     "~followup_annotations": [
       "@@@STEP_LOG_LINE@result@base_paths: {'builder_cache': ('/', 'b', 'c', 'b'), 'cache': ('/', 'b', 'c'), 'goma_cache': ('/', 'b', 'c', 'goma_cache'), 'start_dir': ('/', 'b', 'FakeTestingCWD'), 'cleanup': ('/', 'b', 'cleanup'), 'git_cache': ('/', 'b', 'c', 'git_cache'), 'root': ('/', 'b', 'FakeTestingCWD'), 'tmp_base': ('/',)}@@@",

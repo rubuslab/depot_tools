@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc758e23_8faa3d72",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-09-30T23:36:02Z",
+      "side": 1,
+      "message": "Make this a constant in gclient.py and use that instead.",
+      "range": {
+        "startLine": 36,
+        "startChar": 19,
+        "endLine": 37,
+        "endChar": 37
+      },
+      "revId": "abc508ea949f5655a03e8ec1a0dae87d8bfdef5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

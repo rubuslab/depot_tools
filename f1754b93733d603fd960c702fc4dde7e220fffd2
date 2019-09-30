@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "44b6ef69_09cf9760",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-09-30T18:33:08Z",
+      "side": 1,
+      "message": "I wonder if it should say \"Packaging\" rather than \"Package\" (and similar for Repacking versus Repackage). Repackage is fairly clear but \"Package\" could be a verb or noun.",
+      "revId": "f1754b93733d603fd960c702fc4dde7e220fffd2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

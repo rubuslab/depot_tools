@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8a9b6ea5_c905dd0b",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-01T18:25:01Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to exist anymore.",
+      "range": {
+        "startLine": 124,
+        "startChar": 8,
+        "endLine": 124,
+        "endChar": 37
+      },
+      "revId": "f759d68fee87185fa79284e52528b8451a91ea43",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

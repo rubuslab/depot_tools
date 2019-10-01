@@ -7,6 +7,7 @@
 """
 
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import argparse
 import collections
@@ -96,7 +97,7 @@ def parse_blame(blameoutput):
 
 def num_codepoints(s):
   """Gets the length of a UTF-8 byte string, in Unicode codepoints."""
-  return len(s.decode('utf-8', errors='replace'))
+  return len(s)
 
 
 def print_table(table, colsep=' ', rowsep='\n', align=None, out=sys.stdout):
@@ -111,6 +112,7 @@ def print_table(table, colsep=' ', rowsep='\n', align=None, out=sys.stdout):
 
   colwidths = None
   for row in table:
+    assert all(isinstance(x, unicode) for x in row), row
     if colwidths is None:
       colwidths = [num_codepoints(x) for x in row]
     else:
@@ -145,7 +147,7 @@ def pretty_print(parsedblame, show_filenames=False, out=sys.stdout):
         line.commit.author_time, line.commit.author_tz)
     row = [line.commit.commithash[:8],
            '(' + line.commit.author,
-           git_dates.datetime_string(author_time),
+           git_dates.datetime_string(author_time).decode(),
            str(line.lineno_now) + ('*' if line.modified else '') + ')',
            line.context]
     if show_filenames:

@@ -6,12 +6,13 @@
 # Derived from https://gist.github.com/aljungberg/626518
 
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import multiprocessing.pool
 from multiprocessing.pool import IMapIterator
 def wrapper(func):
   def wrap(self, timeout=None):
-    return func(self, timeout=timeout or 1e100)
+    return func(self, timeout=timeout or 1 << 31)
   return wrap
 IMapIterator.next = wrapper(IMapIterator.next)
 IMapIterator.__next__ = IMapIterator.next
@@ -303,11 +304,17 @@ class ProgressPrinter(object):
 def once(function):
   """@Decorates |function| so that it only performs its action once, no matter
   how many times the decorated |function| is called."""
-  def _inner_gen():
-    yield function()
-    while True:
-      yield
-  return _inner_gen().next
+  has_run = [False]
+  def _wrapper(*args, **kwargs):
+    if not has_run[0]:
+      has_run[0] = True
+      function(*args, **kwargs)
+  return _wrapper
+
+
+def unicode_repr(s):
+  result = repr(s)
+  return result[1:] if result.startswith('u') else result
 
 
 ## Git functions
@@ -577,10 +584,11 @@ def is_dormant(branch):
 
 
 def is_unmerged(stat_value):
-  return (
-      'U' in (stat_value.lstat, stat_value.rstat) or
-      ((stat_value.lstat == stat_value.rstat) and stat_value.lstat in 'AD')
-  )
+  if 'U' in (stat_value.lstat, stat_value.rstat):
+    return True
+  if stat_value.lstat != stat_value.rstat:
+    return False
+  return stat_value.lstat in 'AD'
 
 
 def manual_merge_base(branch, base, parent):
@@ -597,8 +605,8 @@ def mktree(treedict):
     treedict - { name: (mode, type, ref) }
   """
   with tempfile.TemporaryFile() as f:
-    for name, (mode, typ, ref) in treedict.iteritems():
-      f.write('%s %s %s\t%s\0' % (mode, typ, ref, name))
+    for name, (mode, typ, ref) in treedict.items():
+      f.write(('%s %s %s\t%s\0' % (mode, typ, ref, name)).encode())
     f.seek(0)
     return run('mktree', '-z', stdin=f)
 
@@ -612,7 +620,7 @@ def parse_commitrefs(*commitrefs):
     * 'cool_branch~2'
   """
   try:
-    return map(binascii.unhexlify, hash_multi(*commitrefs))
+    return [binascii.unhexlify(h) for h in hash_multi(*commitrefs)]
   except subprocess2.CalledProcessError:
     raise BadCommitRefException(commitrefs)
 
@@ -688,7 +696,11 @@ def less():  # pragma: no cover
 
 def run(*cmd, **kwargs):
   """The same as run_with_stderr, except it only returns stdout."""
-  return run_with_stderr(*cmd, **kwargs)[0]
+  decode = kwargs.pop('decode', True)
+  result = run_with_stderr(*cmd, **kwargs)[0]
+  if decode:
+    result = result.decode('utf-8', 'replace')
+  return result
 
 
 def run_with_retcode(*cmd, **kwargs):
@@ -751,6 +763,8 @@ def run_with_stderr(*cmd, **kwargs):
   kwargs.setdefault('shell', False)
   autostrip = kwargs.pop('autostrip', True)
   indata = kwargs.pop('indata', None)
+  if indata is not None:
+    indata = indata.encode()
 
   cmd = (GIT_EXE, '-c', 'color.ui=never') + cmd
   proc = subprocess2.Popen(cmd, **kwargs)
@@ -760,8 +774,8 @@ def run_with_stderr(*cmd, **kwargs):
     raise subprocess2.CalledProcessError(retcode, cmd, os.getcwd(), ret, err)
 
   if autostrip:
-    ret = (ret or '').strip()
-    err = (err or '').strip()
+    ret = (ret or b'').strip()
+    err = (err or b'').strip()
 
   return ret, err
 
@@ -810,9 +824,9 @@ def status():
   def tokenizer(stream):
     acc = BytesIO()
     c = None
-    while c != '':
+    while c != b'':
       c = stream.read(1)
-      if c in (None, '', '\0'):
+      if c in (None, b'', b'\0'):
         if len(acc.getvalue()):
           yield acc.getvalue()
           acc = BytesIO()
@@ -821,12 +835,14 @@ def status():
 
   def parser(tokens):
     while True:
-      # Raises StopIteration if it runs out of tokens.
-      status_dest = next(tokens)
+      try:
+        status_dest = next(tokens).decode('utf-8')
+      except StopIteration:
+        return
       stat, dest = status_dest[:2], status_dest[3:]
       lstat, rstat = stat
       if lstat == 'R':
-        src = next(tokens)
+        src = next(tokens).decode('utf-8')
       else:
         src = dest
       yield (dest, stat_entry(lstat, rstat, src))
@@ -858,7 +874,8 @@ def tags(*args):
 
 def thaw():
   took_action = False
-  for sha in (s.strip() for s in run_stream('rev-list', 'HEAD').xreadlines()):
+  for sha in run_stream('rev-list', 'HEAD').readlines():
+    sha = sha.strip().decode('utf-8')
     msg = run('show', '--format=%f%b', '-s', 'HEAD')
     match = FREEZE_MATCHER.match(msg)
     if not match:
@@ -899,7 +916,7 @@ def topo_iter(branch_tree, top_down=True):
   # TODO(iannucci): There is probably a more efficient way to do these.
   if top_down:
     while branch_tree:
-      this_pass = [(b, p) for b, p in branch_tree.iteritems()
+      this_pass = [(b, p) for b, p in branch_tree.items()
                    if p not in branch_tree]
       assert this_pass, "Branch tree has cycles: %r" % branch_tree
       for branch, parent in sorted(this_pass):
@@ -907,11 +924,11 @@ def topo_iter(branch_tree, top_down=True):
         del branch_tree[branch]
   else:
     parent_to_branches = collections.defaultdict(set)
-    for branch, parent in branch_tree.iteritems():
+    for branch, parent in branch_tree.items():
       parent_to_branches[parent].add(branch)
 
     while branch_tree:
-      this_pass = [(b, p) for b, p in branch_tree.iteritems()
+      this_pass = [(b, p) for b, p in branch_tree.items()
                    if not parent_to_branches[b]]
       assert this_pass, "Branch tree has cycles: %r" % branch_tree
       for branch, parent in sorted(this_pass):
@@ -1014,7 +1031,9 @@ def get_branches_info(include_tracking_status):
     if info.upstream not in info_map and info.upstream not in missing_upstreams:
       missing_upstreams[info.upstream] = None
 
-  return dict(info_map.items() + missing_upstreams.items())
+  result = info_map.copy()
+  result.update(missing_upstreams)
+  return result
 
 
 def make_workdir_common(repository, new_workdir, files_to_symlink,

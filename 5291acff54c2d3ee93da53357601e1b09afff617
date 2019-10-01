@@ -34,6 +34,24 @@
       "revId": "5291acff54c2d3ee93da53357601e1b09afff617",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51eb4a6e_9746cb42",
+        "filename": "git_cache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-01T21:56:08Z",
+      "side": 1,
+      "message": "lgtm",
+      "parentUuid": "17bc32a6_aa10a3fe",
+      "revId": "5291acff54c2d3ee93da53357601e1b09afff617",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

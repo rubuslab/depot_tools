@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ecc65d71_ea9268f4",
+        "filename": "tests/gclient_smoketest.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-01T17:19:24Z",
+      "side": 1,
+      "message": "You can set it here",
+      "range": {
+        "startLine": 36,
+        "startChar": 6,
+        "endLine": 36,
+        "endChar": 11
+      },
+      "revId": "1861e6932021a787a61e96a1de7295cfce5b39cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

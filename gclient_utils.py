@@ -47,6 +47,8 @@ else:
 RETRY_MAX = 3
 RETRY_INITIAL_SLEEP = 0.5
 START = datetime.datetime.now()
+PYTHON3_WARNING = ("Warning: gclient doesn't yet support Python 3 and may not "
+                   "work correctly.\n") if sys.version_info.major >= 3 else ''
 
 
 _WARNINGS = []

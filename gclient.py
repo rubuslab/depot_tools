@@ -97,6 +97,7 @@ import re
 import sys
 import time
 
+
 try:
   import urlparse
 except ImportError:  # For Py3 compatibility
@@ -117,6 +118,11 @@ import subprocess2
 import setup_color
 
 from third_party import six
+
+# Check for people accidentally running this script with Python3 - an
+# increasingly common error on Windows 10 due to the store version of Python.
+if sys.version_info.major >= 3:
+  print(gclient_utils.PYTHON3_WARNING, end='', file=sys.stderr)
 
 
 # TODO(crbug.com/953884): Remove this when python3 migration is done.

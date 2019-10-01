@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "487d8349_ecfd9478",
+        "filename": "gclient_utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-01T16:53:28Z",
+      "side": 1,
+      "message": "Not on Linux. On Python3 it only accepts strings, in Python2 it accepts both.",
+      "parentUuid": "84d711be_e6c160fc",
+      "range": {
+        "startLine": 406,
+        "startChar": 30,
+        "endLine": 406,
+        "endChar": 31
+      },
+      "revId": "4febfca1bf5edcf39b7901a218334efa7e733968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c62991f_1655348d",
         "filename": "gclient_utils.py",
         "patchSetId": 15
@@ -178,6 +202,30 @@
       "side": 1,
       "message": "sys.stdout.write accepts both. Changing this to StringIO would mean having to remove testBytes, testMultiline and testUnicode tests, because they depend on being able to output bytestrings.",
       "parentUuid": "2af0d3d2_645b8a2d",
+      "range": {
+        "startLine": 154,
+        "startChar": 50,
+        "endLine": 154,
+        "endChar": 57
+      },
+      "revId": "4febfca1bf5edcf39b7901a218334efa7e733968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "52bfaf1c_ccc0292f",
+        "filename": "tests/gclient_utils_test.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-01T16:53:28Z",
+      "side": 1,
+      "message": "It doesn\u0027t accept both on Linux on Python3.\nIt should be StringIO.StringIO on Python2 and io.StringIO on Python3.\nYou don\u0027t need to remove the tests, only make the expected output Unicode.",
+      "parentUuid": "50dee917_2eeee8fa",
       "range": {
         "startLine": 154,
         "startChar": 50,

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e55e4928_5730bf49",
+        "filename": "git_footers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-02T20:30:21Z",
+      "side": 1,
+      "message": "nit: can you just replace this with \n\nlist(filter(None, map(parse_footer, footer_lines)))\n\nor you prefer the more explicit version this can you replace this last line with\n\nfooters \u003d [x for x in footers if x]\n\nfooters/footer is slightly confusing and this makes it much clearer that you are just filtering here.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 52
+      },
+      "revId": "534d5c9ffb1bda69eda575a91e192d17c3da7c11",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

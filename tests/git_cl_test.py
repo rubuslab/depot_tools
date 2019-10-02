@@ -3318,8 +3318,9 @@ class CMDTryTestCase(unittest.TestCase):
       self.assertEqual(
           test_case['result'], git_cl._parse_bucket(test_case['bucket']))
       if test_case.get('has_warning'):
-        self.assertIn(
-            'WARNING Please specify buckets', git_cl.sys.stdout.getvalue())
+        expected_warning = 'WARNING Please use %s/%s to specify the bucket' % (
+            test_case['result'])
+        self.assertIn(expected_warning, git_cl.sys.stdout.getvalue())
 
 
 if __name__ == '__main__':

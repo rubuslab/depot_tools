@@ -22,6 +22,30 @@
       "revId": "7cb60e812f165c2d6eaa1646b2a672a5ecb4ef9f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bf02190_c9d224e3",
+        "filename": "recipes/recipe_modules/gclient/examples/full.expected/revision.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-02T07:07:02Z",
+      "side": 0,
+      "message": "not really :D\nHowever, prior test case wasn\u0027t realistic AND I didn\u0027t touch core logic,\nSo, I merely made this golden-file test show what will really happen in practice.",
+      "parentUuid": "ae8b7b64_d8c070c1",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 18
+      },
+      "revId": "7cb60e812f165c2d6eaa1646b2a672a5ecb4ef9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

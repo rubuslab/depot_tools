@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01a0e504_28720fda",
+        "filename": "testing_support/git_test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-02T21:17:11Z",
+      "side": 1,
+      "message": "is this intentional?",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 17
+      },
+      "revId": "4551bf47edc4fdb2e512cf7883e2594915ee833b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -4,6 +4,8 @@
 # found in the LICENSE file.
 """Tests for git_dates."""
 
+from __future__ import unicode_literals
+
 import datetime
 import os
 import re
@@ -589,14 +591,14 @@ class GitHyperBlameUnicodeTest(GitHyperBlameTestBase):
 
   # Add a line.
   COMMIT_B = {
-    GitRepo.AUTHOR_NAME: u'\u4e2d\u56fd\u4f5c\u8005'.encode('utf-8'),
+    GitRepo.AUTHOR_NAME: '\u4e2d\u56fd\u4f5c\u8005'.encode('utf-8'),
     'file': {'data': 'red\ngreen\nblue\n'},
   }
 
   # Modify a line with non-UTF-8 author and file text.
   COMMIT_C = {
-    GitRepo.AUTHOR_NAME: u'Lat\u00edn-1 Author'.encode('latin-1'),
-    'file': {'data': u'red\ngre\u00e9n\nblue\n'.encode('latin-1')},
+    GitRepo.AUTHOR_NAME: 'Lat\u00edn-1 Author'.encode('latin-1'),
+    'file': {'data': 'red\ngre\u00e9n\nblue\n'.encode('latin-1')},
   }
 
   def testNonASCIIAuthorName(self):
@@ -610,8 +612,8 @@ class GitHyperBlameUnicodeTest(GitHyperBlameTestBase):
     expected_output = [
         self.blame_line('A', '1) red', author='ASCII Author'),
         # Expect 8 spaces, to line up with the other name.
-        self.blame_line('B', '2) green',
-            author=u'\u4e2d\u56fd\u4f5c\u8005        '.encode('utf-8')),
+        self.blame_line(
+            'B', '2) green', author='\u4e2d\u56fd\u4f5c\u8005        '),
         self.blame_line('A', '3) blue', author='ASCII Author'),
     ]
     retval, output = self.run_hyperblame([], 'file', 'tag_B')
@@ -626,9 +628,9 @@ class GitHyperBlameUnicodeTest(GitHyperBlameTestBase):
     """
     expected_output = [
         self.blame_line('A', '1) red', author='ASCII Author  '),
-        # The Author has been re-encoded as UTF-8. The file data is preserved as
-        # raw byte data.
-        self.blame_line('C', '2) gre\xe9n', author='Lat\xc3\xadn-1 Author'),
+        # The Author has been re-encoded as UTF-8. The file data is converted to
+        # UTF8 and unknown characters replaced.
+        self.blame_line('C', '2) gre\ufffdn', author='Lat\xedn-1 Author'),
         self.blame_line('A', '3) blue', author='ASCII Author  '),
     ]
     retval, output = self.run_hyperblame([], 'file', 'tag_C')

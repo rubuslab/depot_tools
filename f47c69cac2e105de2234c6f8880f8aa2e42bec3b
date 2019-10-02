@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3961d61e_6cca510a",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2543,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-02T20:36:06Z",
+      "side": 1,
+      "message": "nit: I find 3 not ands clearer as \n\nnot (foo or bar or baz)\n\nbut I\u0027m sort of reaching to find a comment here so feel free to ignore",
+      "range": {
+        "startLine": 2543,
+        "startChar": 0,
+        "endLine": 2543,
+        "endChar": 77
+      },
+      "revId": "f47c69cac2e105de2234c6f8880f8aa2e42bec3b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

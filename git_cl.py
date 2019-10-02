@@ -2540,7 +2540,7 @@ class Changelist(object):
 
     reviewers = sorted(change_desc.get_reviewers())
     # Add cc's from the CC_LIST and --cc flag (if any).
-    if not options.private and not options.no_autocc:
+    if not options.private and not options.no_autocc and not self.GetIssue():
       cc = self.GetCCList().split(',')
     else:
       cc = []

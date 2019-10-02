@@ -34,6 +34,24 @@
       "revId": "d4d1ba4971aa0bb0cf2cf059251a12d31b275587",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4175a5e6_5f249249",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-02T18:30:50Z",
+      "side": 1,
+      "message": "I would have used chromium/try in your code, but at the time \"git cl try\" didn\u0027t understand it.",
+      "parentUuid": "ec66bb52_9324601d",
+      "revId": "d4d1ba4971aa0bb0cf2cf059251a12d31b275587",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

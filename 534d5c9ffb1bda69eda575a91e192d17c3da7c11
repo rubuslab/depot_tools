@@ -22,6 +22,30 @@
       "revId": "534d5c9ffb1bda69eda575a91e192d17c3da7c11",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77ef2350_6ec3ad84",
+        "filename": "git_footers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-02T21:08:45Z",
+      "side": 1,
+      "message": "Did\n\n  footers \u003d [footer for footer in map(parse_footer, footer_lines) if footer]",
+      "parentUuid": "e55e4928_5730bf49",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 52
+      },
+      "revId": "534d5c9ffb1bda69eda575a91e192d17c3da7c11",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

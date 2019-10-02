@@ -7,7 +7,6 @@
 from __future__ import print_function
 
 import argparse
-import cPickle
 import functools
 import logging
 import os
@@ -19,6 +18,11 @@ import tempfile
 
 import git_common
 
+if sys.version_info.major == 2:
+  import cPickle
+else:
+  import pickle as cPickle
+  raw_input = input
 
 class Error(Exception):
   pass
@@ -66,6 +70,9 @@ if os.name == 'nt':
 else:
   mk_symlink = os.symlink
 
+
+def _raw_input(message):
+  return raw_input(message)
 
 class _Drover(object):
 
@@ -183,7 +190,7 @@ class _Drover(object):
     result = ''
     while result not in ('y', 'n'):
       try:
-        result = raw_input('%s Continue (y/n)? ' % message)
+        result = _raw_input('%s Continue (y/n)? ' % message)
       except EOFError:
         result = 'n'
     return result == 'y'
@@ -268,9 +275,10 @@ class _Drover(object):
         ['-c', 'core.quotePath=false', 'status', '--porcelain']).splitlines()
     extra_files = [f[3:] for f in repo_status if f[:2] == ' D']
     if extra_files:
+      stdin = '\n'.join(extra_files) + '\n'
+      stdin = stdin.encode()
       self._run_git_command_with_stdin(
-          ['update-index', '--skip-worktree', '--stdin'],
-          stdin='\n'.join(extra_files) + '\n')
+          ['update-index', '--skip-worktree', '--stdin'], stdin=stdin)
 
   def _upload_and_land(self):
     if self._dry_run:
@@ -344,11 +352,15 @@ class _Drover(object):
     stderr = None if self._verbose else _DEV_NULL_FILE
 
     try:
+      stderr = subprocess.PIPE
       popen = subprocess.Popen(['git'] + args, shell=False, cwd=cwd,
+                               stdout=subprocess.PIPE,
                                stderr=stderr, stdin=subprocess.PIPE)
-      popen.communicate(stdin)
+      stdout, stderr = popen.communicate(stdin)
       if popen.returncode != 0:
-        raise Error('Command %r failed' % ' '.join(args))
+        raise Error('Command %r failed (cwd %r).\n%s\n%s' % (' '.join(args),
+        cwd, stdout,
+        stderr))
     except OSError as e:
       raise Error('Command %r failed: %s' % (' '.join(args), e))
 

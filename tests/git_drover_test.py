@@ -13,11 +13,11 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from testing_support import auto_stub
+from third_party import mock
 import git_drover
 
 
-class GitDroverTest(auto_stub.TestCase):
+class GitDroverTest(unittest.TestCase):
 
   def setUp(self):
     super(GitDroverTest, self).setUp()
@@ -33,12 +33,14 @@ class GitDroverTest(auto_stub.TestCase):
     with open(
         os.path.join(self._parent_repo, '.git', 'info', 'refs'), 'w') as f:
       f.write('refs')
-    self.mock(tempfile, 'mkdtemp', self._mkdtemp)
-    self.mock(__builtins__, 'raw_input', self._get_input)
-    self.mock(subprocess, 'check_call', self._check_call)
-    self.mock(subprocess, 'check_output', self._check_call)
+    mock.patch('tempfile.mkdtemp', self._mkdtemp).start()
+    mock.patch('git_drover._raw_input', self._get_input).start()
+    mock.patch('subprocess.check_call', self._check_call).start()
+    mock.patch('subprocess.check_output', self._check_call).start()
     self.real_popen = subprocess.Popen
-    self.mock(subprocess, 'Popen', self._Popen)
+    mock.patch('subprocess.Popen', self._Popen)
+    self.addCleanup(mock.patch.stopall)
+
     self._commands = []
     self._input = []
     self._fail_on_command = None

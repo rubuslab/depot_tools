@@ -86,7 +86,8 @@ def split_footers(message):
     footer_lines = []
 
   footer_lines.reverse()
-  footers = filter(None, map(parse_footer, footer_lines))
+  footers = [parse_footer(line) for line in footer_lines]
+  footers = [footer for footer in footers if footer]
   if not footers:
     return message_lines, [], []
   if maybe_footer_lines:

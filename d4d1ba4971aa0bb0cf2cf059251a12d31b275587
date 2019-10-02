@@ -16,6 +16,24 @@
       "revId": "d4d1ba4971aa0bb0cf2cf059251a12d31b275587",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec66bb52_9324601d",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2019-10-02T18:14:50Z",
+      "side": 1,
+      "message": "I\u0027m getting this warning for the try command in https://chromium.googlesource.com/chromium/src.git/+/master/docs/updating_clang.md but I\u0027m not sure what I should update it to. What\u0027s \u003cproject\u003e?\n\ntandrii edited https://cs.chromium.org/chromium/src/tools/clang/scripts/upload_revision.py to add \"-B luci.chromium.try\" 3 weeks ago; is that obsolete already?",
+      "parentUuid": "63287b1f_8f2f1119",
+      "revId": "d4d1ba4971aa0bb0cf2cf059251a12d31b275587",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

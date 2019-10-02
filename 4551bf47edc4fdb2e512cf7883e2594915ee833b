@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ffe2e294_b97cb941",
+        "filename": "git_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-02T21:29:14Z",
+      "side": 1,
+      "message": "I have zero preference, but I wanted to understand why this was needed.\n\ngenerator.next() no longer works in python3, there is only the next(generator) function\n\ndef once(f):\n  def _inner():\n    yield f()\n    while True:\n      yield\n  _once \u003d _inner()\n  return lambda: next(_once)\n\nwould be the pattern you could use if you wanted to keep the generator version of the code",
+      "revId": "4551bf47edc4fdb2e512cf7883e2594915ee833b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "01a0e504_28720fda",
         "filename": "testing_support/git_test_utils.py",
         "patchSetId": 7

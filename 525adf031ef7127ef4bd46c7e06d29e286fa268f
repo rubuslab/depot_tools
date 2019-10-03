@@ -22,6 +22,30 @@
       "revId": "525adf031ef7127ef4bd46c7e06d29e286fa268f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39d53510_eb764489",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002115
+      },
+      "writtenOn": "2019-10-03T21:11:42Z",
+      "side": 1,
+      "message": "\"the chromeos thing has been borked for weeks; just add the line :(\" - thakis@",
+      "parentUuid": "25115835_defa61d8",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 34
+      },
+      "revId": "525adf031ef7127ef4bd46c7e06d29e286fa268f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

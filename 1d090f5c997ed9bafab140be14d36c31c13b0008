@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a666d1d9_e0eaa102",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1385,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-10-03T00:14:38Z",
+      "side": 1,
+      "message": "I\u0027d add a test case where the Bug: and Fixed: footers contain the same number, to ensure it is deduped.",
+      "revId": "1d090f5c997ed9bafab140be14d36c31c13b0008",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

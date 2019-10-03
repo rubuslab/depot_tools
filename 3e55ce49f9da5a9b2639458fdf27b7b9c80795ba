@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7e5100ca_e1d2a30e",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-03T21:22:26Z",
+      "side": 1,
+      "message": "No. It should either come from cl.GetIssue(), which should return an int, or be a string.\nIf that\u0027s not true, I\u0027d rather fix it.",
+      "parentUuid": "816a79fb_ef34fbe7",
+      "range": {
+        "startLine": 1022,
+        "startChar": 21,
+        "endLine": 1022,
+        "endChar": 24
+      },
+      "revId": "3e55ce49f9da5a9b2639458fdf27b7b9c80795ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0f2de7f7_5b014eb1",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "3e55ce49f9da5a9b2639458fdf27b7b9c80795ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2edaeb1a_9003dfce",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1047,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-03T21:22:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f2de7f7_5b014eb1",
+      "range": {
+        "startLine": 1047,
+        "startChar": 0,
+        "endLine": 1047,
+        "endChar": 62
+      },
+      "revId": "3e55ce49f9da5a9b2639458fdf27b7b9c80795ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -22,6 +22,30 @@
       "revId": "f47c69cac2e105de2234c6f8880f8aa2e42bec3b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2072c82_08656065",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2543,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-03T18:11:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3961d61e_6cca510a",
+      "range": {
+        "startLine": 2543,
+        "startChar": 0,
+        "endLine": 2543,
+        "endChar": 77
+      },
+      "revId": "f47c69cac2e105de2234c6f8880f8aa2e42bec3b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "25115835_defa61d8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002115
+      },
+      "writtenOn": "2019-10-03T04:16:13Z",
+      "side": 1,
+      "message": "agable@: I don\u0027t really understand what this does, but it makes the presubmit happy.  OK to add?",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 34
+      },
+      "revId": "525adf031ef7127ef4bd46c7e06d29e286fa268f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

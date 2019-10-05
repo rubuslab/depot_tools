@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "43a22fa1_ef52dbc3",
+        "filename": "gclient_utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-10-05T07:03:55Z",
+      "side": 1,
+      "message": "I tested on the few Linux machines I have and bytestrings seem to work fine in the REPL, albeit being printed as b\u0027hello world\u0027, as expected. But I think I see what you mean. See PS17.",
+      "parentUuid": "487d8349_ecfd9478",
+      "range": {
+        "startLine": 406,
+        "startChar": 30,
+        "endLine": 406,
+        "endChar": 31
+      },
+      "revId": "4febfca1bf5edcf39b7901a218334efa7e733968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c62991f_1655348d",
         "filename": "gclient_utils.py",
         "patchSetId": 15
@@ -226,6 +250,30 @@
       "side": 1,
       "message": "It doesn\u0027t accept both on Linux on Python3.\nIt should be StringIO.StringIO on Python2 and io.StringIO on Python3.\nYou don\u0027t need to remove the tests, only make the expected output Unicode.",
       "parentUuid": "50dee917_2eeee8fa",
+      "range": {
+        "startLine": 154,
+        "startChar": 50,
+        "endLine": 154,
+        "endChar": 57
+      },
+      "revId": "4febfca1bf5edcf39b7901a218334efa7e733968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c84c897c_c545dbb8",
+        "filename": "tests/gclient_utils_test.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-10-05T07:03:55Z",
+      "side": 1,
+      "message": "Ack. See PS17.",
+      "parentUuid": "52bfaf1c_ccc0292f",
       "range": {
         "startLine": 154,
         "startChar": 50,

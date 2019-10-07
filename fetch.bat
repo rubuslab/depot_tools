@@ -12,4 +12,9 @@ call "%~dp0\update_depot_tools.bat"
 set PATH=%PATH%;%~dp0
 
 :: Defer control.
-python "%~dp0\fetch.py" %*
+IF "%GCLIENT_PY3%" == "1" (
+  :: TODO(1003139): Use vpython3 once vpython3 works on Windows.
+  python3 "%~dp0\fetch.py" %*y
+) ELSE (
+  python "%~dp0\fetch.py" %*
+)

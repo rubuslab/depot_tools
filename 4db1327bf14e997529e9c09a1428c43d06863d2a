@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b4c5ba5_eac58e2c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1362,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2019-10-07T17:39:11Z",
+      "side": 1,
+      "message": "nit: trailing \u0027a\u0027",
+      "range": {
+        "startLine": 1362,
+        "startChar": 66,
+        "endLine": 1362,
+        "endChar": 67
+      },
+      "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "69cdd51a_ddc9269f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1389,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2019-10-07T17:39:11Z",
+      "side": 1,
+      "message": "nit: With no arg, split() defaults to splitting on any whitespace. So I think these 2 lines could be combined into `parts \u003d ent.split()` ?",
+      "range": {
+        "startLine": 1388,
+        "startChar": 4,
+        "endLine": 1389,
+        "endChar": 39
+      },
+      "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38e3d82e_448e8bf3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2019-10-07T17:39:11Z",
+      "side": 1,
+      "message": "These checks are run on every change to chromium. So theoretically we don\u0027t have to recurse through every file in the whole tree, but instead check only the files that we just changed.\n\nie: Can we instead run `git ls-tree HEAD -- $file` for every file in input_api.AffectedSourceFiles() ? I imagine that would speed things up a bit.",
+      "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

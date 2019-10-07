@@ -22,6 +22,30 @@
       "revId": "3b2ba66c13f9ae0e50e3b787e77d08e7872b18ab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d8fb2d2_42fad2ff",
+        "filename": "python_runner.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-07T23:14:05Z",
+      "side": 1,
+      "message": "No.",
+      "parentUuid": "0cc033f7_4f80e411",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 39
+      },
+      "revId": "3b2ba66c13f9ae0e50e3b787e77d08e7872b18ab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

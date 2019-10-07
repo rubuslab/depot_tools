@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0cc033f7_4f80e411",
+        "filename": "python_runner.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-07T21:54:20Z",
+      "side": 1,
+      "message": "qq:  you are no longer running exec, can this change the return value of this script?",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 39
+      },
+      "revId": "3b2ba66c13f9ae0e50e3b787e77d08e7872b18ab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

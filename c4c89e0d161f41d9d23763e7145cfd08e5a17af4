@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d665065_01f3928e",
+        "filename": "git_drover.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-07T22:15:17Z",
+      "side": 1,
+      "message": "rather than override the builtin, can you put this logic in _raw_input since you already had to create this?",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 19
+      },
+      "revId": "c4c89e0d161f41d9d23763e7145cfd08e5a17af4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

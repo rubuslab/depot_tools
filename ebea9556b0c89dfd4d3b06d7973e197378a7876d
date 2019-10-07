@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6cc7c342_d3d5788c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-07T22:39:25Z",
+      "side": 1,
+      "message": "is this still true?  I think it returns a list now?",
+      "range": {
+        "startLine": 525,
+        "startChar": 0,
+        "endLine": 525,
+        "endChar": 60
+      },
+      "revId": "ebea9556b0c89dfd4d3b06d7973e197378a7876d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2485f84d_cf4be73c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-07T22:39:25Z",
+      "side": 1,
+      "message": "is this still true?",
+      "range": {
+        "startLine": 561,
+        "startChar": 0,
+        "endLine": 561,
+        "endChar": 78
+      },
+      "revId": "ebea9556b0c89dfd4d3b06d7973e197378a7876d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "854b138e_ba4c6a19",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-07T22:39:25Z",
+      "side": 1,
+      "message": "I think this is a list of builds now?",
+      "range": {
+        "startLine": 584,
+        "startChar": 0,
+        "endLine": 584,
+        "endChar": 68
+      },
+      "revId": "ebea9556b0c89dfd4d3b06d7973e197378a7876d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

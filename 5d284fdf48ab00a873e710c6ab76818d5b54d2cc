@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e061496_eafd3b0b",
+        "filename": "gclient_utils.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1222289
+      },
+      "writtenOn": "2019-10-07T21:22:14Z",
+      "side": 1,
+      "message": "Did you mean to write encode instead of decode here?\n\nEven then, I\u0027m not sure this change actually does the right thing. It will take a byte, treat it as a Unicode code point, encode that using UTF-8, even if, in the original, the byte was followed by another byte for a complete but different Unicode code point.\n\nFor example, á (code point U+00E1) would be encoded in UTF-8 as two bytes \"\\xc3\\xe1\". Treating these as two separate Unicode code points and encoding as UTF-8 would result in the four-byte string \"\\xc3\\x83\\xc2\\xa1\". That may or may not be what you intended.",
+      "revId": "5d284fdf48ab00a873e710c6ab76818d5b54d2cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

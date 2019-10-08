@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3ca21dbd_2c65916f",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-08T22:30:46Z",
+      "side": 1,
+      "message": "Yeah, I tested it.",
+      "parentUuid": "2e19d25d_757c4fa4",
+      "range": {
+        "startLine": 535,
+        "startChar": 33,
+        "endLine": 535,
+        "endChar": 36
+      },
+      "revId": "bb4f964724410178fcf70a59fa541aa5a12b06b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3f8323ad_6525e6b9",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -59,6 +83,30 @@
       "writtenOn": "2019-10-08T22:16:30Z",
       "side": 1,
       "message": "is this some kind of magic?",
+      "range": {
+        "startLine": 618,
+        "startChar": 23,
+        "endLine": 618,
+        "endChar": 24
+      },
+      "revId": "bb4f964724410178fcf70a59fa541aa5a12b06b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "674c9197_e2d6865b",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-08T22:30:46Z",
+      "side": 1,
+      "message": "This is how you align when using .format() :)\nhttps://docs.python.org/3/library/string.html#format-specification-mini-language",
+      "parentUuid": "66cdf41b_7fe6113c",
       "range": {
         "startLine": 618,
         "startChar": 23,

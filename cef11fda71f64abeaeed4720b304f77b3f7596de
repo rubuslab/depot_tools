@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba212ff3_bb83d413",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-08T22:16:30Z",
+      "side": 0,
+      "message": "i don\u0027t think you are fetching these fields any more. Ideally, we\u0027d remove this --json mode from git cl try-results,\nbut you\u0027ll likely need to migrate existing usage in recipe_modules/git_cl to shell out to api.buildbucket.something instead.",
+      "range": {
+        "startLine": 822,
+        "startChar": 2,
+        "endLine": 833,
+        "endChar": 5
+      },
+      "revId": "cef11fda71f64abeaeed4720b304f77b3f7596de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

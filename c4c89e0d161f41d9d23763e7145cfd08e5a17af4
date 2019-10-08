@@ -22,6 +22,30 @@
       "revId": "c4c89e0d161f41d9d23763e7145cfd08e5a17af4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c629bbcf_1f1d0a29",
+        "filename": "git_drover.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-08T00:02:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d665065_01f3928e",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 19
+      },
+      "revId": "c4c89e0d161f41d9d23763e7145cfd08e5a17af4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

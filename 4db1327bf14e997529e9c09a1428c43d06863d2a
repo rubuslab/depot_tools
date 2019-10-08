@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "01fe6d24_2307d822",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1362,
+      "author": {
+        "id": 1355758
+      },
+      "writtenOn": "2019-10-08T20:59:26Z",
+      "side": 1,
+      "message": "Woops, fixed.",
+      "parentUuid": "9b4c5ba5_eac58e2c",
+      "range": {
+        "startLine": 1362,
+        "startChar": 66,
+        "endLine": 1362,
+        "endChar": 67
+      },
+      "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "69cdd51a_ddc9269f",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "0966a865_d91b1596",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1389,
+      "author": {
+        "id": 1355758
+      },
+      "writtenOn": "2019-10-08T20:59:26Z",
+      "side": 1,
+      "message": "While that\u0027s possible, the intent was to correctly break down the `ls-tree` output; representing that as two parts split by a tab (metadata and path) and then the metadata as space-separated felt more germane to the original format, and easier to pull out to use generally later. I did go back and add max-split limits on these, so that it more closely matches the input format (and better handles paths that contain tab characters).",
+      "parentUuid": "69cdd51a_ddc9269f",
+      "range": {
+        "startLine": 1388,
+        "startChar": 4,
+        "endLine": 1389,
+        "endChar": 39
+      },
+      "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "38e3d82e_448e8bf3",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 1
@@ -62,6 +110,24 @@
       "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f8ff2e2_599475cc",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 1355758
+      },
+      "writtenOn": "2019-10-08T20:59:26Z",
+      "side": 1,
+      "message": "We can\u0027t - commit objects in the tree don\u0027t get detected by the diff commands used to compute the presubmit delta. There are other commands that _would_ get this (git diff-tree, for example), but that\u0027d require better wiring of change base information through presubmit, or changing the initial delta computation in presubmit, or carrying along both sets of data - all of which increase the scope of this PR by a bit. The check is 1.8 seconds on my dev box (incl. the rest of presubmit) and runs only in commit-level - we\u0027re shaving this yak pretty close.",
+      "parentUuid": "38e3d82e_448e8bf3",
+      "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

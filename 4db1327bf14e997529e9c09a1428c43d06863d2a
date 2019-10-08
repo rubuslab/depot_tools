@@ -146,6 +146,24 @@
       "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fae75457_b5c9da58",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 1355758
+      },
+      "writtenOn": "2019-10-08T22:38:09Z",
+      "side": 1,
+      "message": "Nope, not even input_api.AffectedFiles(). I modified the script to print out what ended up in input_api.AffectedFiles(), and got:\n\n    demorri ? ? user/demorri/weird ? ~/anaheim/src ? time git ms presubmit d1c56f567b15020d52582684ba635069ddc0a5eb --commit\n    common ancestor chosen as base is d1c56f567b15020d52582684ba635069ddc0a5eb\n    Running presubmit commit checks ...\n    \n    \n    \u003d\u003d\u003d\u003dGIT AFFECTED FILES\u003d\u003d\u003d\u003d\n    [\u0027MSPUBLISH\u0027]\n    \u003d\u003d\u003d\u003dEND OF INTERESTING PART\u003d\u003d\u003d\u003d\n    \n    \n    \n      checking for commit objects in tree took a long time: 522ms\n    \n    ** Presubmit Messages **\n    Missing LGTM from an MSOWNER for these files:\n        MSPUBLISH\n    \n    Suggested MSOWNERS: (Use \"git-cl owners\" to interactively select owners.)\n        edgeesbdw@microsoft.com\n    \n    ** Presubmit ERRORS **\n    Commit objects present within tree.\n    This may be due to submodule-related interactions; the presence of a\n    commit object in the tree may lead to odd situations where files are\n    inconsistently checked-out. Remove these commit entries and validate\n    your changeset again:\n    \n      third_party/avif/libavif\n    \n    Presubmit checks took 3.5s to calculate.\n    \n    Was the presubmit check useful? If not, run \"git ms presubmit -v\"\n    to figure out which PRESUBMIT.py was run, then run git blame\n    on the file to figure out who to ask for help.\n    \n    real    0m5.319s\n    user    0m1.756s\n    sys     0m3.552s\n\n\nwhile git diff-tree shows\n    demorri   user/demorri/weird  ~/anaheim/src  git diff-tree -t d1c56f567b15020d52582684ba635069ddc0a5eb HEAD\n    :100644 100644 4e6550b3575671793dcb1fa4fa72846a360c5891 c562138ff1d8107b2827b341eb50e3fb9fdd94ba \nM      MSPUBLISH\n    :040000 040000 37fa7f343288217e45a10430d39bae0a7a2f2361 512b7285ad44fe44964d47968cccd6e45e6316f3 M      third_party\n    :000000 040000 0000000000000000000000000000000000000000 ec6f551ae7bef43a6cf2f50448997d5a65782f75 A      third_party/avif\n    :000000 160000 0000000000000000000000000000000000000000 22c1ad9f706ee00c3cdd0bb71ec4b7818de2f6c3 A      third_party/avif/libavif",
+      "parentUuid": "11ef1998_b8f51442",
+      "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "463e00ab_f74cae66",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2019-10-08T01:31:50Z",
+      "side": 1,
+      "message": "fetching",
+      "range": {
+        "startLine": 580,
+        "startChar": 58,
+        "endLine": 580,
+        "endChar": 63
+      },
+      "revId": "c935568387ab871169f67074506c606672ed4e9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "021ab7c5_7ba86d27",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2019-10-08T01:31:50Z",
+      "side": 1,
+      "message": "the latest",
+      "range": {
+        "startLine": 581,
+        "startChar": 37,
+        "endLine": 581,
+        "endChar": 43
+      },
+      "revId": "c935568387ab871169f67074506c606672ed4e9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

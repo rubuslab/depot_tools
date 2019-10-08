@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7b0dcc38_555179fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-10-08T06:05:31Z",
+      "side": 1,
+      "message": "so every chromium developer will use goma client in depot_tools after submitting this?",
+      "revId": "b4044ac39b7f5555f4436e766c21eb685e8a1b0a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -450,6 +450,7 @@ def _trigger_try_jobs(auth_config, changelist, buckets, options, patchset):
     changelist: Changelist that the tryjobs are associated with.
     buckets: A nested dict mapping bucket names to builders to tests.
     options: Command-line options.
+    tag: Optional tag to add to the build.
   """
   print('Scheduling jobs on:')
   for bucket, builders_and_tests in sorted(buckets.iteritems()):
@@ -466,6 +467,12 @@ def _trigger_try_jobs(auth_config, changelist, buckets, options, patchset):
   if getattr(options, 'clobber', False):
     shared_properties['clobber'] = True
   shared_properties.update(_get_properties_from_options(options) or {})
+
+
+  shared_tags = [{'key': 'user_agent', 'value': 'git_cl_try'}]
+  if options.retry_failed:
+    shared_tags.append({'key': 'user_flavor',
+                        'value': 'retry_failed'})
 
   requests = []
   for raw_bucket, builders_and_tests in sorted(buckets.iteritems()):
@@ -493,8 +500,7 @@ def _trigger_try_jobs(auth_config, changelist, buckets, options, patchset):
               'properties': properties,
               'tags': [
                   {'key': 'builder', 'value': builder},
-                  {'key': 'user_agent', 'value': 'git_cl_try'},
-              ],
+              ] + shared_tags,
           }
       })
 

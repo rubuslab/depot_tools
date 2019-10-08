@@ -128,6 +128,24 @@
       "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "11ef1998_b8f51442",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1393,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2019-10-08T22:11:32Z",
+      "side": 1,
+      "message": "Not even input_api.AffectedFiles()? Reading through it, it seems like it\u0027d do the trick.",
+      "parentUuid": "6f8ff2e2_599475cc",
+      "revId": "4db1327bf14e997529e9c09a1428c43d06863d2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

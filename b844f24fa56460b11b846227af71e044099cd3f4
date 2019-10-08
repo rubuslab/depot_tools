@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18ab2b0b_ea6810f6",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2395,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-08T23:27:49Z",
+      "side": 1,
+      "message": "if not bug and not fixed and match:",
+      "range": {
+        "startLine": 2395,
+        "startChar": 19,
+        "endLine": 2395,
+        "endChar": 24
+      },
+      "revId": "b844f24fa56460b11b846227af71e044099cd3f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f14ee542_d9163ba2",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2397,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-08T23:27:49Z",
+      "side": 1,
+      "message": "Could we give this group a name too?",
+      "range": {
+        "startLine": 2397,
+        "startChar": 26,
+        "endLine": 2397,
+        "endChar": 27
+      },
+      "revId": "b844f24fa56460b11b846227af71e044099cd3f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

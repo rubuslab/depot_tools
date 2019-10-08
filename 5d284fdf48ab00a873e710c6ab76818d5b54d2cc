@@ -16,6 +16,24 @@
       "revId": "5d284fdf48ab00a873e710c6ab76818d5b54d2cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3dec8f21_af1a12a2",
+        "filename": "gclient_utils.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2019-10-08T15:00:26Z",
+      "side": 1,
+      "message": "You\u0027re correct that this is incorrect.\n\nehmaldonado@ has a reland with a proper fix in CL:1845504.",
+      "parentUuid": "4e061496_eafd3b0b",
+      "revId": "5d284fdf48ab00a873e710c6ab76818d5b54d2cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

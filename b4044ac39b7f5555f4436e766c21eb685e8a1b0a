@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "2683a4d9_f0148a17",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2019-10-09T03:40:09Z",
+      "side": 1,
+      "message": "hmm, good question.\n\na.  if user doesn\u0027t put goma in path and specify explicit path to invoke goma_ctl.py etc, it is ok too (it is documented usage right now?)\nb. if user put goma before depot_tools in path. it is ok.\nc. if user put goma after depot_tools in path, they use goma in depot_tools unexpectedly. \n\nso, a) and b) are no problem, and c) might have an issue.\nif it works well, that\u0027s fine. otherwise, remove goma dir from PATH.",
+      "parentUuid": "b1992e7e_53106588",
+      "revId": "b4044ac39b7f5555f4436e766c21eb685e8a1b0a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "38aa580c_0440af7d",
         "filename": "cipd_bin_setup.bat",
         "patchSetId": 1

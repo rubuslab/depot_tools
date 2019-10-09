@@ -46,6 +46,30 @@
       "revId": "cef11fda71f64abeaeed4720b304f77b3f7596de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3daecd04_b0ef6c3c",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-09T00:50:08Z",
+      "side": 0,
+      "message": "sgtm. glhf!",
+      "parentUuid": "3495742f_edeaf947",
+      "range": {
+        "startLine": 822,
+        "startChar": 2,
+        "endLine": 833,
+        "endChar": 5
+      },
+      "revId": "cef11fda71f64abeaeed4720b304f77b3f7596de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

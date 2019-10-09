@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b572231c_ff656c52",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-09T21:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02a76f46_5ddc47ed",
+      "range": {
+        "startLine": 453,
+        "startChar": 0,
+        "endLine": 453,
+        "endChar": 42
+      },
+      "revId": "52ce78c8352ab1f4cc5e8599c7687dd8f5119d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "28d14440_e7f616ec",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 2
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "And you wouldn\u0027t need to split make_try_job_schedule_requests.",
       "parentUuid": "28d14440_e7f616ec",
+      "range": {
+        "startLine": 3207,
+        "startChar": 0,
+        "endLine": 3207,
+        "endChar": 0
+      },
+      "revId": "52ce78c8352ab1f4cc5e8599c7687dd8f5119d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58870b05_73d9315d",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3207,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-09T21:49:46Z",
+      "side": 1,
+      "message": "\u003e I\u0027d rather put the new test in this class.\n\nOh, thanks! I was blind when I searched for it. Thanks!\n\n\u003e And you wouldn\u0027t need to split make_try_job_schedule_requests.\n\nI personally like the split anyways, but I\u0027m ready to undo it if you think it\u0027s better to have 1 func.",
+      "parentUuid": "4e6205f3_8d6a957f",
       "range": {
         "startLine": 3207,
         "startChar": 0,

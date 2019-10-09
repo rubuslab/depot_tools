@@ -45,6 +45,30 @@
       "revId": "52ce78c8352ab1f4cc5e8599c7687dd8f5119d39",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e6205f3_8d6a957f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3207,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-09T20:54:15Z",
+      "side": 1,
+      "message": "And you wouldn\u0027t need to split make_try_job_schedule_requests.",
+      "parentUuid": "28d14440_e7f616ec",
+      "range": {
+        "startLine": 3207,
+        "startChar": 0,
+        "endLine": 3207,
+        "endChar": 0
+      },
+      "revId": "52ce78c8352ab1f4cc5e8599c7687dd8f5119d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

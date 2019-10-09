@@ -117,6 +117,30 @@
       "revId": "52ce78c8352ab1f4cc5e8599c7687dd8f5119d39",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e7ea97a_8a22da27",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3207,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-09T21:51:27Z",
+      "side": 1,
+      "message": "The split is ok :)",
+      "parentUuid": "58870b05_73d9315d",
+      "range": {
+        "startLine": 3207,
+        "startChar": 0,
+        "endLine": 3207,
+        "endChar": 0
+      },
+      "revId": "52ce78c8352ab1f4cc5e8599c7687dd8f5119d39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -474,6 +474,43 @@ class TestGitClBasic(unittest.TestCase):
       },
     })
 
+  def test_make_tryjob_requests(self):
+    class _OptsMock(object):
+      retry_failed = True
+    cl = git_cl.Changelist(issue=123)
+    cl._GetChangeDetail = lambda *_, **__: {
+      'labels': {},
+      'current_revision': 'deadbeaf',
+      'project': 'infra/infra',
+      'revisions': {
+        'deadbeef': {
+          '_number': 1,  # patchset.
+        },
+      },
+    }
+    with mock.patch('uuid.uuid4', return_value='random-uuid4'):
+      reqs = git_cl._make_try_job_schedule_requests(
+          cl, {'proj/buck': {'bldr': []}}, _OptsMock(), patchset=1)
+    self.maxDiff = 100000
+    self.assertEqual(reqs, [{
+      'scheduleBuild': {
+        'builder': {'project': 'proj', 'bucket': 'buck', 'builder': 'bldr'},
+        'tags': [
+          {'key': 'builder', 'value': 'bldr'},
+          {'key': 'user_agent', 'value': 'git_cl_try'},
+          {'key': 'user_flavor', 'value': 'retry_failed'},
+        ],
+        'properties': {'category': 'git_cl_try'},
+        'requestId': 'random-uuid4',
+        'gerritChanges': [{
+          'host': 'chromium-review.googlesource.com',
+          'project': 'infra/infra',
+          'change': 123,
+          'patchset': 1,
+        }],
+      }
+    }])
+
 
 class TestParseIssueURL(unittest.TestCase):
   def _validate(self, parsed, issue=None, patchset=None, hostname=None,

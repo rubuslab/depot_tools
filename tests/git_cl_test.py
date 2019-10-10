@@ -3006,6 +3006,7 @@ class CMDTestCaseBase(unittest.TestCase):
                   'bucket': 'try',
                   'builder': 'bot_' + status.lower(),
               },
+              'createTime': '2019-10-09T08:00:0%d.854286Z' % (idx%10),
               'status': status,
           }
           for idx, status in enumerate(_STATUSES)
@@ -3041,7 +3042,8 @@ class CMDTryResultsTestCase(CMDTestCaseBase):
                 "change": 123456,
             }],
       },
-      'fields': 'builds.*.id,builds.*.builder,builds.*.status',
+      'fields':
+          'builds.*.id,builds.*.builder,builds.*.status,builds.*.createTime',
   }
 
   def testNoJobs(self):
@@ -3108,11 +3110,42 @@ class CMDTryResultsTestCase(CMDTestCaseBase):
     mockJsonDump.assert_called_once_with(
         'file.json', self._DEFAULT_RESPONSE['builds'])
 
-  def test_filter_failed(self):
-    self.assertEqual({}, git_cl._filter_failed([]))
+  def test_filter_failed_for_one_simple(self):
+    self.assertEqual({}, git_cl._filter_failed_for_retry([]))
     self.assertEqual({
         'chromium/try': {'bot_failure': [], 'bot_infra_failure': []},
-    }, git_cl._filter_failed(self._DEFAULT_RESPONSE['builds']))
+    }, git_cl._filter_failed_for_retry(self._DEFAULT_RESPONSE['builds']))
+
+  def test_filter_failed_for_retry_many_builds(self):
+    def _build(name, created_sec, status):
+      assert 0 <= created_sec < 100, created_sec
+      return {
+          'id': 112112,
+          'builder': {
+              'project': 'chromium',
+              'bucket': 'try',
+              'builder': name,
+          },
+          'createTime': '2019-10-09T08:00:%02d.854286Z' % created_sec,
+          'status': status,
+      }
+    builds = [
+        _build('flaky-last-green', 1, 'FAILURE'),
+        _build('flaky-last-green', 2, 'SUCCESS'),
+
+        _build('flaky', 1, 'SUCCESS'),
+        _build('flaky', 2, 'FAILURE'),
+
+        _build('running', 1, 'FAILED'),
+        _build('running', 2, 'SCHEDULED'),
+
+        _build('yep-still-running', 1, 'STARTED'),
+        _build('yep-still-running', 2, 'FAILURE'),
+    ]
+    builds.sort(key=lambda b: b['status'])  # ~deterministic shuffle.
+    self.assertEqual({
+        'chromium/try': {'flaky': []},
+    }, git_cl._filter_failed_for_retry(builds))
 
 
 class CMDTryTestCase(CMDTestCaseBase):
@@ -3191,6 +3224,7 @@ class CMDTryTestCase(CMDTestCaseBase):
                 'bucket': 'try',
                 'builder': 'linux',
             },
+            'createTime': '2019-10-09T08:00:01.854286Z',
             'status': 'FAILURE',
         }],
     }[kw['patchset']]
@@ -3287,6 +3321,7 @@ class CMDUploadTestCase(CMDTestCaseBase):
                     'bucket': 'try',
                     'builder': 'bot_' + status.lower(),
                 },
+                'createTime': '2019-10-09T08:00:0%d.854286Z' % (idx%10),
                 'status': status,
             }
             for idx, status in enumerate(self._STATUSES)

@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce20ea22_71635de3",
+        "filename": "auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-10T23:33:35Z",
+      "side": 0,
+      "message": "get_access_token checks that the AccessToken it returns doesn\u0027t need to be refreshed.",
+      "revId": "b2b51418596ec5465a49405a36b6dee55c42488d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ced035c_0535a85b",
+        "filename": "auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-10T23:33:35Z",
+      "side": 0,
+      "message": "We don\u0027t cache credentials from external token, so we must always create new ones and refresh them.",
+      "range": {
+        "startLine": 532,
+        "startChar": 8,
+        "endLine": 532,
+        "endChar": 73
+      },
+      "revId": "b2b51418596ec5465a49405a36b6dee55c42488d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

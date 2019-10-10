@@ -9,6 +9,7 @@ from __future__ import print_function
 import collections
 import datetime
 import functools
+import httplib2
 import json
 import logging
 import optparse
@@ -20,7 +21,9 @@ import urlparse
 
 import subprocess2
 
-from third_party import httplib2
+import google.auth.exceptions
+import google.auth.transport.requests
+import google.oauth2.credentials
 from third_party.oauth2client import client
 
 
@@ -419,15 +422,17 @@ class Authenticator(object):
     revoked and there's no way to figure this out without actually trying to use
     it.
     """
+    if self._external_token:
+      return True
     with self._lock:
-      return bool(self._get_cached_credentials())
+      return bool(_get_luci_auth_token(self._scopes))
 
   def get_access_token(self, force_refresh=False, allow_user_interaction=False,
                        use_local_auth=True):
     """Returns AccessToken, refreshing it if necessary.
 
     Args:
-      force_refresh: forcefully refresh access token even if it is not expired.
+      force_refresh: Ignored.
       allow_user_interaction: True to enable blocking for user input if needed.
       use_local_auth: default to local auth if needed.
 
@@ -436,47 +441,35 @@ class Authenticator(object):
       LoginRequiredError if user interaction is required, but
           allow_user_interaction is False.
     """
-    def get_loc_auth_tkn():
-      exi = sys.exc_info()
-      if not use_local_auth:
-        logging.error('Failed to create access token')
-        raise
-      try:
-        self._access_token = get_luci_context_access_token()
-        if not self._access_token:
-          logging.error('Failed to create access token')
-          raise
-        return self._access_token
-      except LuciContextAuthError:
-        logging.exception('Failed to use local auth')
-        raise exi[0], exi[1], exi[2]
-
     with self._lock:
-      if force_refresh:
-        logging.debug('Forcing access token refresh')
+      if self._access_token and not self._access_token.needs_refresh():
+        return self._access_token
+
+      # Token expired or missing. Maybe some other process already updated it,
+      # reload from the cache.
+      self._access_token = self._load_access_token()
+      if self._access_token and not self._access_token.needs_refresh():
+        return self._access_token
+
+      # Nope, still expired, need to run the refresh flow.
+      if not self._external_token and allow_user_interaction:
+        logging.debug('Launching luci-auth login')
+        self._access_token = self._run_oauth_dance()
+      if self._access_token and not self._access_token.needs_refresh():
+        return self._access_token
+
+      # Refresh flow failed. Try local auth.
+      if use_local_auth:
         try:
-          self._access_token = self._create_access_token(allow_user_interaction)
-          return self._access_token
-        except LoginRequiredError:
-          return get_loc_auth_tkn()
+          self._access_token = get_luci_context_access_token()
+        except LuciContextAuthError:
+          logging.exception('Failed to use local auth')
+      if self._access_token and not self._access_token.needs_refresh():
+        return self._access_token
 
-      # Load from on-disk cache on a first access.
-      if not self._access_token:
-        self._access_token = self._load_access_token()
-
-      # Refresh if expired or missing.
-      if not self._access_token or self._access_token.needs_refresh():
-        # Maybe some other process already updated it, reload from the cache.
-        self._access_token = self._load_access_token()
-        # Nope, still expired, need to run the refresh flow.
-        if not self._access_token or self._access_token.needs_refresh():
-          try:
-            self._access_token = self._create_access_token(
-                allow_user_interaction)
-          except LoginRequiredError:
-            get_loc_auth_tkn()
-
-      return self._access_token
+      # Give up.
+      logging.error('Failed to create access token')
+      raise LoginRequiredError(self._scopes)
 
   def authorize(self, http):
     """Monkey patches authentication logic of httplib2.Http instance.
@@ -492,7 +485,6 @@ class Authenticator(object):
        A modified instance of http that was passed in.
     """
     # Adapted from oauth2client.OAuth2Credentials.authorize.
-
     request_orig = http.request
 
     @functools.wraps(request_orig)
@@ -502,125 +494,57 @@ class Authenticator(object):
         connection_type=None):
       headers = (headers or {}).copy()
       headers['Authorization'] = 'Bearer %s' % self.get_access_token().token
-      resp, content = request_orig(
+      return request_orig(
           uri, method, body, headers, redirections, connection_type)
-      if resp.status in client.REFRESH_STATUS_CODES:
-        logging.info('Refreshing due to a %s', resp.status)
-        access_token = self.get_access_token(force_refresh=True)
-        headers['Authorization'] = 'Bearer %s' % access_token.token
-        return request_orig(
-            uri, method, body, headers, redirections, connection_type)
-      else:
-        return (resp, content)
 
     http.request = new_request
     return http
 
   ## Private methods.
 
-  def _get_cached_credentials(self):
-    """Returns oauth2client.Credentials loaded from luci-auth."""
-    credentials = _get_luci_auth_credentials(self._scopes)
-
-    if not credentials:
-      logging.debug('No cached token')
-    else:
-      _log_credentials_info('cached token', credentials)
-
-    # Is using --auth-refresh-token-json?
-    if self._external_token:
-      # Cached credentials are valid and match external token -> use them. It is
-      # important to reuse credentials from the storage because they contain
-      # cached access token.
-      valid = (
-          credentials and not credentials.invalid and
-          credentials.refresh_token == self._external_token.refresh_token and
-          credentials.client_id == self._external_token.client_id and
-          credentials.client_secret == self._external_token.client_secret)
-      if valid:
-        logging.debug('Cached credentials match external refresh token')
-        return credentials
-      # Construct new credentials from externally provided refresh token,
-      # associate them with cache storage (so that access_token will be placed
-      # in the cache later too).
-      logging.debug('Putting external refresh token into the cache')
-      credentials = client.OAuth2Credentials(
-          access_token=None,
-          client_id=self._external_token.client_id,
-          client_secret=self._external_token.client_secret,
-          refresh_token=self._external_token.refresh_token,
-          token_expiry=None,
-          token_uri='https://accounts.google.com/o/oauth2/token',
-          user_agent=None,
-          revoke_uri=None)
-      return credentials
-
-    # Not using external refresh token -> return whatever is cached.
-    return credentials if (credentials and not credentials.invalid) else None
-
   def _load_access_token(self):
-    """Returns cached AccessToken if it is not expired yet."""
-    logging.debug('Reloading access token from cache')
-    creds = self._get_cached_credentials()
-    if not creds or not creds.access_token or creds.access_token_expired:
-      logging.debug('Access token is missing or expired')
-      return None
-    return AccessToken(str(creds.access_token), creds.token_expiry)
+    """Returns google.oauth2.credentials.Credentials loaded from luci-auth."""
+    if not self._external_token:
+      return self._get_luci_auth_token()
 
-  def _create_access_token(self, allow_user_interaction=False):
-    """Mints and caches a new access token, launching OAuth2 dance if necessary.
+    # Construct new credentials from externally provided refresh token.
+    logging.debug('Using external refresh token')
+    credentials = google.oauth2.credentials.Credentials(
+        token=None,
+        refresh_token=self._external_token.refresh_token,
+        token_uri='https://accounts.google.com/o/oauth2/token',
+        client_id=self._external_token.client_id,
+        client_secret=self._external_token.client_secret,
+        scopes=self._scopes.split(','))
+    try:
+      credentials.refresh(google.auth.transport.requests.Request())
+    except google.auth.exceptions.TransportError:
+      raise AuthenticationError(
+          'Token provided via --auth-refresh-token-json is no longer valid.')
 
-    Uses cached refresh token, if present. In that case user interaction is not
-    required and function will finish quietly. Otherwise it will launch 3-legged
-    OAuth2 flow, that needs user interaction.
+    return AccessToken(str(credentials.token), credentials.expiry)
 
-    Args:
-      allow_user_interaction: if True, allow interaction with the user (e.g.
-          reading standard input, or launching a browser).
+  def _run_luci_auth_login(self):
+    """Perform full 3-legged OAuth2 flow with the browser.
 
     Returns:
-      AccessToken.
-
-    Raises:
-      AuthenticationError on error or if authentication flow was interrupted.
-      LoginRequiredError if user interaction is required, but
-          allow_user_interaction is False.
+      google.oauth2.credentials.Credentials.
     """
-    logging.debug(
-        'Making new access token (allow_user_interaction=%r)',
-        allow_user_interaction)
-    credentials = self._get_cached_credentials()
+    logging.debug('Running luci-auth login')
+    subprocess2.check_call(['luci-auth', 'login', '-scopes', self._scopes])
+    return self._get_luci_auth_token()
 
-    # 3-legged flow with (perhaps cached) refresh token.
-    refreshed = False
-    if credentials and not credentials.invalid:
-      try:
-        logging.debug('Attempting to refresh access_token')
-        credentials.refresh(httplib2.Http())
-        _log_credentials_info('refreshed token', credentials)
-        refreshed = True
-      except client.Error as err:
-        logging.warning(
-            'OAuth error during access token refresh (%s). '
-            'Attempting a full authentication flow.', err)
-
-    # Refresh token is missing or invalid, go through the full flow.
-    if not refreshed:
-      # Can't refresh externally provided token.
-      if self._external_token:
-        raise AuthenticationError(
-            'Token provided via --auth-refresh-token-json is no longer valid.')
-      if not allow_user_interaction:
-        logging.debug('Requesting user to login')
-        raise LoginRequiredError(self._scopes)
-      logging.debug('Launching OAuth browser flow')
-      credentials = _run_oauth_dance(self._scopes)
-      _log_credentials_info('new token', credentials)
-
-    logging.info(
-        'OAuth access_token refreshed. Expires in %s.',
-        credentials.token_expiry - datetime.datetime.utcnow())
-    return AccessToken(str(credentials.access_token), credentials.token_expiry)
+  def _get_luci_auth_token(self):
+    logging.debug('Running luci-auth token')
+    try:
+      token_info = json.loads(subprocess2.check_output(
+          ['luci-auth', 'token', '-scopes', self._scopes, '-json-output', '-'],
+          stderr=subprocess2.VOID))
+      return AccessToken(
+          token_info['token'],
+          datetime.datetime.utcfromtimestamp(token_info['expiry']))
+    except subprocess2.CalledProcessError:
+      return None
 
 
 ## Private functions.
@@ -658,32 +582,3 @@ def _log_credentials_info(title, credentials):
         'utcnow': datetime.datetime.utcnow(),
         'token_expiry': credentials.token_expiry,
     })
-
-
-def _get_luci_auth_credentials(scopes):
-  try:
-    token_info = json.loads(subprocess2.check_output(
-        ['luci-auth', 'token', '-scopes', scopes, '-json-output', '-'],
-        stderr=subprocess2.VOID))
-  except subprocess2.CalledProcessError:
-    return None
-
-  return client.OAuth2Credentials(
-      access_token=token_info['token'],
-      client_id=OAUTH_CLIENT_ID,
-      client_secret=OAUTH_CLIENT_SECRET,
-      refresh_token=None,
-      token_expiry=datetime.datetime.utcfromtimestamp(token_info['expiry']),
-      token_uri=None,
-      user_agent=None,
-      revoke_uri=None)
-
-
-def _run_oauth_dance(scopes):
-  """Perform full 3-legged OAuth2 flow with the browser.
-
-  Returns:
-    oauth2client.Credentials.
-  """
-  subprocess2.check_call(['luci-auth', 'login', '-scopes', scopes])
-  return _get_luci_auth_credentials(scopes)

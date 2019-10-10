@@ -1223,7 +1223,7 @@ class FrozenDict(collections.Mapping):
       return True
     if len(self) != len(other):
       return False
-    for k, v in self.iteritems():
+    for k, v in self.items():
       if k not in other or other[k] != v:
         return False
     return True

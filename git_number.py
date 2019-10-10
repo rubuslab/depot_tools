@@ -112,7 +112,7 @@ def intern_number_tree(tree):
   'c552317aa95ca8c3f6aae3357a4be299fbcb25ce'
   """
   with tempfile.TemporaryFile() as f:
-    for k, v in sorted(tree.iteritems()):
+    for k, v in sorted(tree.items()):
       f.write(struct.pack(CHUNK_FMT, k, v))
     f.seek(0)
     return git.intern_f(f)
@@ -134,7 +134,7 @@ def finalize(targets):
   if not DIRTY_TREES:
     return
 
-  msg = 'git-number Added %s numbers' % sum(DIRTY_TREES.itervalues())
+  msg = 'git-number Added %s numbers' % sum(DIRTY_TREES.values())
 
   idx = os.path.join(git.run('rev-parse', '--git-dir'), 'number.idx')
   env = os.environ.copy()

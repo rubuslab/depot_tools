@@ -46,6 +46,30 @@
       "revId": "e7e632574bfbebb88b0ef278393a683ce99e6fda",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b3db8deb_9ca144bc",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-10-11T09:10:10Z",
+      "side": 1,
+      "message": "I think it is better to use venv\u003dTrue for fixed parameter. And remove kwargs.pop(\u0027venv\u0027) after fixing all callers.",
+      "parentUuid": "2e0a9ffa_f1ad0298",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 29
+      },
+      "revId": "e7e632574bfbebb88b0ef278393a683ce99e6fda",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

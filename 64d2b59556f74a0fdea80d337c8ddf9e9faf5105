@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "c60fd77f_be9aed91",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-11T20:03:38Z",
+      "side": 1,
+      "message": "Agreed, was just curious.",
+      "parentUuid": "65f4262e_f459f45c",
+      "range": {
+        "startLine": 535,
+        "startChar": 40,
+        "endLine": 535,
+        "endChar": 50
+      },
+      "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "98e9864b_f73705b4",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -187,6 +211,30 @@
       "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "093d0cd1_70573b1f",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-11T20:03:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b899f23a_6ad5d1c5",
+      "range": {
+        "startLine": 623,
+        "startChar": 0,
+        "endLine": 623,
+        "endChar": 68
+      },
+      "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

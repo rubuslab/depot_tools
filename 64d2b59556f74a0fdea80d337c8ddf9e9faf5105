@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "65f4262e_f459f45c",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-11T14:22:46Z",
+      "side": 1,
+      "message": "yes, but I thought doing so by createTime is clearer. WDYT?",
+      "parentUuid": "c203b3f1_92728d6e",
+      "range": {
+        "startLine": 535,
+        "startChar": 40,
+        "endLine": 535,
+        "endChar": 50
+      },
+      "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "98e9864b_f73705b4",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b04a7958_b8675ddc",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-11T14:22:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98e9864b_f73705b4",
+      "range": {
+        "startLine": 609,
+        "startChar": 34,
+        "endLine": 609,
+        "endChar": 40
+      },
+      "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "53fa5bf9_35097232",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-11T14:22:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57b46f36_80058d7b",
+      "range": {
+        "startLine": 609,
+        "startChar": 45,
+        "endLine": 611,
+        "endChar": 22
+      },
+      "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0d3dd25a_94782b6f",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2019-10-11T00:46:52Z",
       "side": 1,
       "message": "Question: Why not look only at the last build here too?",
+      "range": {
+        "startLine": 623,
+        "startChar": 0,
+        "endLine": 623,
+        "endChar": 68
+      },
+      "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b899f23a_6ad5d1c5",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-11T14:22:46Z",
+      "side": 1,
+      "message": "This should be rare under normal circumstances, so choice doesn\u0027t matter.\nAnd under abnormal, I\u0027d rather avoid excessive triggers.\n\n(imagine if createTime format changed s.t. sorting order is not correct; then newly triggered builds will not be lsat in this list)",
+      "parentUuid": "0d3dd25a_94782b6f",
       "range": {
         "startLine": 623,
         "startChar": 0,
@@ -114,6 +210,30 @@
       "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9d1ca70_ac60f24b",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3152,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-11T14:22:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea9021e3_dc87aa30",
+      "range": {
+        "startLine": 3152,
+        "startChar": 62,
+        "endLine": 3152,
+        "endChar": 63
+      },
+      "revId": "64d2b59556f74a0fdea80d337c8ddf9e9faf5105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

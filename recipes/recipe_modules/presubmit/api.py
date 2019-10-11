@@ -32,6 +32,8 @@ class PresubmitApi(recipe_api.RecipeApi):
       presubmit_args = list(args) + [
           '--json_output', self.m.json.output(),
       ]
+      # always use vpython and depot_tools/.vpython
+      kwargs['venv'] = True
       step_data = self.m.python(
           name, self.presubmit_support_path, presubmit_args, **kwargs)
       return step_data.json.output

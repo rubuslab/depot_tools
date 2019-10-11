@@ -94,6 +94,30 @@
       "revId": "e7e632574bfbebb88b0ef278393a683ce99e6fda",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b035bdab_d6575bc5",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-10-11T09:58:44Z",
+      "side": 1,
+      "message": "I meant to say passing venv\u003dTrue to self.m.python(...) explicitly.\nUsing kwargs for always passed parameter seems not good.",
+      "parentUuid": "27a7edb3_e2c1c051",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 29
+      },
+      "revId": "e7e632574bfbebb88b0ef278393a683ce99e6fda",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

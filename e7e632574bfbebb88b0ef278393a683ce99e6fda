@@ -118,6 +118,30 @@
       "revId": "e7e632574bfbebb88b0ef278393a683ce99e6fda",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17921eb7_56a32f72",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2019-10-11T11:07:36Z",
+      "side": 1,
+      "message": "I realized that venv is used intentionally. I don\u0027t know if we can change it.\nWill ask iannucci about it.\n\nhttps://cs.chromium.org/chromium/build/scripts/slave/recipes/run_presubmit.py?q\u003drun_presubmit.py\u0026sq\u003dpackage:chromium\u0026dr\u0026l\u003d198\n\nhttps://cs.chromium.org/search/?q\u003dvpython_spec_path\u0026sq\u003dpackage:chromium\u0026type\u003dcs",
+      "parentUuid": "b035bdab_d6575bc5",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 29
+      },
+      "revId": "e7e632574bfbebb88b0ef278393a683ce99e6fda",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d92d595d_58de7851",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-10-11T00:52:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5049fbb_73353190",
+      "range": {
+        "startLine": 254,
+        "startChar": 0,
+        "endLine": 254,
+        "endChar": 11
+      },
+      "revId": "735371a66a0d73d5c12859ce86ec25f1fb9f63b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "05e3775b_f0a0d3ab",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "735371a66a0d73d5c12859ce86ec25f1fb9f63b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97cd0789_d2880627",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 995,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2019-10-11T00:52:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05e3775b_f0a0d3ab",
+      "range": {
+        "startLine": 995,
+        "startChar": 9,
+        "endLine": 995,
+        "endChar": 10
+      },
+      "revId": "735371a66a0d73d5c12859ce86ec25f1fb9f63b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -70,6 +70,30 @@
       "revId": "e7e632574bfbebb88b0ef278393a683ce99e6fda",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27a7edb3_e2c1c051",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2019-10-11T09:50:34Z",
+      "side": 1,
+      "message": "Sorry to forget to mention.\nThere is no other places to use venv option.\nhttps://cs.chromium.org/search/?q\u003d%22.presubmit(%22\u0026sq\u003dpackage:chromium\u0026type\u003dcs",
+      "parentUuid": "b3db8deb_9ca144bc",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 29
+      },
+      "revId": "e7e632574bfbebb88b0ef278393a683ce99e6fda",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

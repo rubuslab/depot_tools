@@ -21,17 +21,6 @@ Example:
 # check those details to determine if there was activity in the given period.
 # This means that query time scales mostly with (today() - begin).
 
-# [VPYTHON:BEGIN]
-# wheel: <
-#   name: "infra/python/wheels/python-dateutil-py2_py3"
-#   version: "version:2.7.3"
-# >
-# wheel: <
-#   name: "infra/python/wheels/six-py2_py3"
-#   version: "version:1.10.0"
-# >
-# [VPYTHON:END]
-
 from __future__ import print_function
 
 import collections

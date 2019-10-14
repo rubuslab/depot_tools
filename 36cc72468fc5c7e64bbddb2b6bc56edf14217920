@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "0262c1c1_4f83e117",
+        "filename": "auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2019-10-14T23:57:57Z",
+      "side": 1,
+      "message": "We should stop doing that. JSON file with token must define client_id and client_secret, since the refresh token is associated with them (so using some other client ID/secret when refreshing will not work).\n\nI checked, all refresh token JSON files we deploy via puppet have client_id/client_secret set, so I think we can remove defaults. But lgtm if you want do it in a separate CL.",
+      "parentUuid": "e28fe25e_7abc0e20",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 48
+      },
+      "revId": "36cc72468fc5c7e64bbddb2b6bc56edf14217920",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "581ff96b_8a27dd01",
         "filename": "auth.py",
         "patchSetId": 7

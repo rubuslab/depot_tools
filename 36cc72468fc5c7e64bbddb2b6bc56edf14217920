@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e70ba80_6612cba4",
+        "filename": "auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2019-10-14T22:11:01Z",
+      "side": 1,
+      "message": "This can probably be deleted now too (please verify nothing else is using these constants).",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 48
+      },
+      "revId": "36cc72468fc5c7e64bbddb2b6bc56edf14217920",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "581ff96b_8a27dd01",
+        "filename": "auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2019-10-14T22:11:01Z",
+      "side": 1,
+      "message": "30 sec",
+      "range": {
+        "startLine": 77,
+        "startChar": 14,
+        "endLine": 77,
+        "endChar": 19
+      },
+      "revId": "36cc72468fc5c7e64bbddb2b6bc56edf14217920",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb06861b_eee48b85",
+        "filename": "auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2019-10-14T22:11:01Z",
+      "side": 1,
+      "message": "Better not to log stdout, since it contains the secret token.",
+      "range": {
+        "startLine": 547,
+        "startChar": 6,
+        "endLine": 547,
+        "endChar": 57
+      },
+      "revId": "36cc72468fc5c7e64bbddb2b6bc56edf14217920",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

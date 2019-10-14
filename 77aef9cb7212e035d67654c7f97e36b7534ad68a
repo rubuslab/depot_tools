@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c152d2e8_6b064495",
+        "filename": ".vpython",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-14T20:34:52Z",
+      "side": 1,
+      "message": "Verified that the bootstrapping scripts don\u0027t use vpython.",
+      "parentUuid": "289b34c1_eb951b36",
+      "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "62f6d08f_5f7a19be",
         "filename": "auth.py",
         "patchSetId": 5
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "8f67443e_7e87f2e3",
+        "filename": "auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-14T20:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "62f6d08f_5f7a19be",
+      "range": {
+        "startLine": 78,
+        "startChar": 40,
+        "endLine": 78,
+        "endChar": 43
+      },
+      "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7813e79_ee69cda5",
         "filename": "auth.py",
         "patchSetId": 5
@@ -53,6 +95,30 @@
       "writtenOn": "2019-10-11T21:07:15Z",
       "side": 1,
       "message": "This stuff can be deleted once we use `luci-auth token` consistently, since luci-auth implements this internally. Can be removed later.",
+      "range": {
+        "startLine": 214,
+        "startChar": 4,
+        "endLine": 214,
+        "endChar": 34
+      },
+      "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bbd6dad6_8638fa41",
+        "filename": "auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-14T20:34:52Z",
+      "side": 1,
+      "message": "Ack. Added TODO.",
+      "parentUuid": "a7813e79_ee69cda5",
       "range": {
         "startLine": 214,
         "startChar": 4,
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "dbc4f174_c464396a",
+        "filename": "auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-14T20:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa13491_53498849",
+      "range": {
+        "startLine": 323,
+        "startChar": 0,
+        "endLine": 334,
+        "endChar": 70
+      },
+      "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6edc9826_11328480",
         "filename": "auth.py",
         "patchSetId": 5
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "8edaeba7_ab809fd4",
+        "filename": "auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-14T20:34:52Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "6edc9826_11328480",
+      "range": {
+        "startLine": 414,
+        "startChar": 4,
+        "endLine": 414,
+        "endChar": 31
+      },
+      "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a5968c9c_a07bcc8e",
         "filename": "auth.py",
         "patchSetId": 5
@@ -122,6 +236,24 @@
       "writtenOn": "2019-10-11T21:07:15Z",
       "side": 1,
       "message": "As I said above, this stuff can be removed, since luci-auth will use local auth automatically if it is exist. To verify this, use `luci-auth context -- ./script.py`. It will run ./script.py in an environment where local auth exist.",
+      "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5adbbac_866b0492",
+        "filename": "auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-14T20:34:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a5968c9c_a07bcc8e",
       "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
@@ -151,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "ec85bdc1_1b342fa4",
+        "filename": "auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-14T20:34:52Z",
+      "side": 1,
+      "message": "Space separated. Fixed _load_access_token.",
+      "parentUuid": "b0ae491b_14f0e8a7",
+      "range": {
+        "startLine": 536,
+        "startChar": 61,
+        "endLine": 536,
+        "endChar": 73
+      },
+      "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b3ef410d_6a22fbbc",
         "filename": "auth.py",
         "patchSetId": 5
@@ -171,6 +327,30 @@
       "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab551030_4bb3b35e",
+        "filename": "auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-14T20:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3ef410d_6a22fbbc",
+      "range": {
+        "startLine": 544,
+        "startChar": 10,
+        "endLine": 544,
+        "endChar": 33
+      },
+      "revId": "77aef9cb7212e035d67654c7f97e36b7534ad68a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,126 @@
+#!/bin/bash
+# Copyright (c) 2019 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+# Script with a number of tools used to manage git worktrees.
+
+# Backs up patchsets of existing worktrees using git format-patch
+function backup {
+  if [ -z "${CHROMIUM_REPO_DIR}" ]; then
+    echo "Please set CHROMIUM_REPO_DIR"
+    exit 1
+  fi
+  
+  if [ -z "${CHROMIUM_WORKTREES_BACKUP_DIR}" ]; then
+    echo "Please set CHROMIUM_WORKTREES_BACKUP_DIR"
+    exit 1
+  fi
+  
+  
+  cd "${CHROMIUM_REPO_DIR}/src"
+  git merge --no-edit
+  
+  worktree_dirs=$(ls_chromium_worktrees.sh | awk '{print $1}')
+  
+  for worktree in $worktree_dirs; do
+     cd $worktree
+     branch_name=$(git branch --show-current)
+     if [ "$branch_name" = "master" ]; then
+       continue
+     fi
+     git format-patch -o $CHROMIUM_WORKTREES_BACKUP_DIR/$branch_name origin/master;  
+  done
+
+}
+
+# Creates a new worktree
+function create {
+  if [ -z "${CHROMIUM_WORKTREES_DIR}" ]; then
+    echo "Please set GIT_WORKTREES_DIR"
+    exit 1
+  fi
+  
+  if [ -z "${CHROMIUM_REPO_DIR}" ]; then
+    echo "Please set CHROMIUM_REPO_DIR"
+    exit 1
+  fi
+  
+  if [ -z "${1}" ]; then
+    echo "Please specify a worktree name"
+    exit 1
+  fi
+  
+  WORKTREE_DIR=${CHROMIUM_WORKTREES_DIR}/${1}
+  WORKTREE_SRC_DIR=${WORKTREE_DIR}/src
+  
+  cd "${CHROMIUM_REPO_DIR}/src"
+  mkdir -p ${CHROMIUM_WORKTREES_DIR}  && \
+  git worktree add -b ${1}  $WORKTREE_SRC_DIR && \
+  ln -sf ${CHROMIUM_REPO_DIR}/.gclient ${WORKTREE_DIR}/.gclient  && \
+  cd ${WORKTREE_SRC_DIR} && git merge origin/master && gclient sync && git branch --set-upstream-to=origin/master && \
+  echo "Created new worktree for branch ${1} at ${WORKTREE_SRC_DIR}"
+}
+
+# Deletes a worktree
+function delete {
+  if [ -z "${CHROMIUM_WORKTREES_DIR}" ]; then
+    echo "Please set CHROMIUM_WORKTREES_DIR"
+    exit 1
+  fi
+  
+  if [ -z "${CHROMIUM_REPO_DIR}" ]; then
+    echo "Please set CHROMIUM_REPO_DIR"
+    exit 1
+  fi
+  
+  if [ -z "${1}" ]; then
+    echo "Please specify a worktree name"
+    exit 1
+  fi
+  
+  WORKTREE_DIR=${CHROMIUM_WORKTREES_DIR}/${1}
+  SRC_DIR=${WORKTREE_DIR}/src
+  
+  cd "${CHROMIUM_REPO_DIR}/src" && \
+  git worktree remove --force ${SRC_DIR} && \
+  git branch -D ${1} && \
+  rm -rf ${WORKTREE_DIR}/src* && \
+  rm -rf ${WORKTREE_DIR}/.cipd* && \
+  rm -r ${WORKTREE_DIR} && \
+  echo "Deleted worktree for branch ${1} at ${WORKTREE_DIR}"
+}
+
+# Lists existing worktrees
+function list {
+  if [ -z "${CHROMIUM_WORKTREES_DIR}" ]; then
+    echo "Please set CHROMIUM_WORKTREES_DIR"
+    exit 1
+  fi
+  
+  if [ -z "${CHROMIUM_REPO_DIR}" ]; then
+    echo "Please set CHROMIUM_REPO_DIR"
+    exit 1
+  fi
+  
+  cd "${CHROMIUM_REPO_DIR}/src"
+  
+  git worktree list
+}
+
+case "${1}" in
+  create)
+     create ${2}
+     ;;
+  delete)
+     delete ${2}
+     ;;
+  list)
+    list
+    ;;
+  backup)
+    backup
+    ;;
+  *)
+    echo $"Usage: $0 {create <name> | delete <name> | list | backup}"
+    exit 1
+esac

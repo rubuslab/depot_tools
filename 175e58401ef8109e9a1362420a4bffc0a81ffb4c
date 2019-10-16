@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d4e387b2_eaf5ab48",
+        "filename": "chromium-worktree",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-16T16:14:21Z",
+      "side": 1,
+      "message": "depot_tools tools are supposed to be cross-platform. If it can\u0027t work on Win, then at least a windows shim entry point saying \"sorry, not supported\" is nice.\n\nHowever, please wait for Edward/Anthony to chime in.",
+      "revId": "175e58401ef8109e9a1362420a4bffc0a81ffb4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

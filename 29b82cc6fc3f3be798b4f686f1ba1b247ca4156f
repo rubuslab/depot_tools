@@ -16,6 +16,24 @@
       "revId": "29b82cc6fc3f3be798b4f686f1ba1b247ca4156f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e506b911_9766ed3c",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2019-10-17T18:01:09Z",
+      "side": 1,
+      "message": "It\u0027s only None when gclient sync fails, so a StepFailure is being thrown. This just prevents it from causing an AttributeError to be raised resulting in an infra failure.",
+      "parentUuid": "7afa7c96_214351c9",
+      "revId": "29b82cc6fc3f3be798b4f686f1ba1b247ca4156f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

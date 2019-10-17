@@ -72,6 +72,8 @@ class GitCacheTest(unittest.TestCase):
     self.git(['add', 'foo'])
     self.git(['commit', '-m', 'foo'])
 
+
+
     mirror = git_cache.Mirror(self.origin_dir)
     mirror.populate()
 

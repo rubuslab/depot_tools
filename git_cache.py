@@ -24,6 +24,8 @@ try:
 except ImportError:  # For Py3 compatibility
   import urllib.parse as urlparse
 
+NO_OP=1234
+
 from download_from_google_storage import Gsutil
 import gclient_utils
 import subcommand

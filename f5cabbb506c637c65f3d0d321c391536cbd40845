@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf007395_134cf507",
+        "filename": "auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2019-10-17T21:42:44Z",
+      "side": 1,
+      "message": "is",
+      "range": {
+        "startLine": 384,
+        "startChar": 59,
+        "endLine": 384,
+        "endChar": 61
+      },
+      "revId": "f5cabbb506c637c65f3d0d321c391536cbd40845",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

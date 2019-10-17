@@ -22,6 +22,30 @@
       "revId": "f5cabbb506c637c65f3d0d321c391536cbd40845",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87d88d94_28b423a3",
+        "filename": "auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-17T22:08:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf007395_134cf507",
+      "range": {
+        "startLine": 384,
+        "startChar": 59,
+        "endLine": 384,
+        "endChar": 61
+      },
+      "revId": "f5cabbb506c637c65f3d0d321c391536cbd40845",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

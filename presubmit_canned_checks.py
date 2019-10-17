@@ -1419,7 +1419,7 @@ def CheckChangedLUCIConfigs(input_api, output_api):
   try:
     authenticator = auth.get_authenticator(auth.make_auth_config())
     acc_tkn = authenticator.get_access_token()
-  except auth.AuthenticationError as e:
+  except auth.LoginRequiredError as e:
     return [output_api.PresubmitError(
         'Error in authenticating user.', long_text=str(e))]
 

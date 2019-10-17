@@ -194,7 +194,10 @@ class Lockfile(object):
 
 class Mirror(object):
 
-  git_exe = 'git.bat' if sys.platform.startswith('win') else 'git'
+  DEPOT_TOOLS_ROOT = os.path.dirname(os.path.abspath(__file__))
+  git_exe = (
+      os.path.join(DEPOT_TOOLS_ROOT, 'git.bat')
+      if sys.platform == 'win32' else 'git')
   gsutil_exe = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), 'gsutil.py')
   cachepath_lock = threading.Lock()

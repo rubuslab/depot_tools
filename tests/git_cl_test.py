@@ -3382,14 +3382,14 @@ class CMDUploadTestCase(CMDTestCaseBase):
 
     self.assertEqual(0, git_cl.main(['upload', '--retry-failed']))
     self.assertEqual([
-        mock.call(mock.ANY, mock.ANY, 'cr-buildbucket.appspot.com', patchset=7),
-        mock.call(mock.ANY, mock.ANY, 'cr-buildbucket.appspot.com', patchset=6),
+        mock.call(mock.ANY, 'cr-buildbucket.appspot.com', patchset=7),
+        mock.call(mock.ANY, 'cr-buildbucket.appspot.com', patchset=6),
     ], git_cl.fetch_try_jobs.mock_calls)
     expected_buckets = {
         'chromium/try': {'bot_failure': [], 'bot_infra_failure': []},
     }
     git_cl._trigger_try_jobs.assert_called_once_with(
-        mock.ANY, mock.ANY, expected_buckets, mock.ANY, 8)
+        mock.ANY, expected_buckets, mock.ANY, 8)
 
 
 class CMDFormatTestCase(TestCase):

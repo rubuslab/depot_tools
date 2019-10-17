@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b39f826d_f46a4875",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-17T20:07:58Z",
+      "side": 1,
+      "message": ",))\n\n(ie make it a tuple; else remove () around self.git_exe",
+      "range": {
+        "startLine": 360,
+        "startChar": 46,
+        "endLine": 360,
+        "endChar": 48
+      },
+      "revId": "5f85045fe633380fb58e1e8d14a0e3d08c730d7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ec8f726_e5eff9e0",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-17T20:07:58Z",
+      "side": 1,
+      "message": "I see you are an experienced Python2 hacker :)",
+      "range": {
+        "startLine": 560,
+        "startChar": 8,
+        "endLine": 560,
+        "endChar": 26
+      },
+      "revId": "5f85045fe633380fb58e1e8d14a0e3d08c730d7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

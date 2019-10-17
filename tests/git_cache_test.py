@@ -5,6 +5,7 @@
 
 """Unit tests for git_cache.py"""
 
+import logging
 import os
 import shutil
 import subprocess
@@ -28,8 +29,14 @@ class GitCacheTest(unittest.TestCase):
 
   def git(self, cmd, cwd=None):
     cwd = cwd or self.origin_dir
-    git = 'git.bat' if sys.platform == 'win32' else 'git'
-    subprocess.check_call([git] + cmd, cwd=cwd)
+    git = (
+        os.path.join(DEPOT_TOOLS_ROOT, 'git.bat')
+        if sys.platform == 'win32' else 'git')
+    try:
+      subprocess.check_output([git] + cmd, cwd=cwd)
+    except subprocess.CalledProcessError as e:
+      logging.warn(e)
+
 
   def testParseFetchSpec(self):
     testData = [

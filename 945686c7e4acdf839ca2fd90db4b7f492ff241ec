@@ -34,6 +34,24 @@
       "revId": "945686c7e4acdf839ca2fd90db4b7f492ff241ec",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "162e659d_25b0c50e",
+        "filename": "cipd_bin_setup.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-10-18T21:46:39Z",
+      "side": 1,
+      "message": "Got it, thanks!",
+      "parentUuid": "42257c71_bff70131",
+      "revId": "945686c7e4acdf839ca2fd90db4b7f492ff241ec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

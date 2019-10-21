@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "95639bd6_924046d0",
+        "filename": "owners.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 1376756
+      },
+      "writtenOn": "2019-10-21T15:39:58Z",
+      "side": 1,
+      "message": "+1.",
+      "parentUuid": "f49b5397_dfa5b773",
+      "range": {
+        "startLine": 444,
+        "startChar": 0,
+        "endLine": 444,
+        "endChar": 74
+      },
+      "revId": "01783ed4f2ab6840794188a73726f8fd9fb27f7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a9b5592a_23617663",
         "filename": "owners.py",
         "patchSetId": 4

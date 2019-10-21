@@ -93,6 +93,30 @@
       "revId": "01783ed4f2ab6840794188a73726f8fd9fb27f7a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "950e8709_125555e9",
+        "filename": "owners.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-21T16:30:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a9b5592a_23617663",
+      "range": {
+        "startLine": 457,
+        "startChar": 11,
+        "endLine": 457,
+        "endChar": 43
+      },
+      "revId": "01783ed4f2ab6840794188a73726f8fd9fb27f7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

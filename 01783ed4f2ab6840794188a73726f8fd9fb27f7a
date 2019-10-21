@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "0fce73e8_52615fb9",
+        "filename": "owners.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 1368998
+      },
+      "writtenOn": "2019-10-21T12:03:03Z",
+      "side": 1,
+      "message": "Why not work only with normpaths in os_path? Join and exists could normalize the return path and the input path, respectively. Unless you think there are situations where clients rely on non-normal paths.",
+      "range": {
+        "startLine": 444,
+        "startChar": 0,
+        "endLine": 444,
+        "endChar": 74
+      },
+      "revId": "01783ed4f2ab6840794188a73726f8fd9fb27f7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a9b5592a_23617663",
         "filename": "owners.py",
         "patchSetId": 4

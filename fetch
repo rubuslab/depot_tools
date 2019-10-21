@@ -5,4 +5,8 @@
 
 base_dir=$(dirname "$0")
 
-PYTHONDONTWRITEBYTECODE=1 exec python "$base_dir/fetch.py" "$@"
+if [[ $GCLIENT_PY3 == 1 ]]; then
+  PYTHONDONTWRITEBYTECODE=1 exec vpython3 "$base_dir/fetch.py" "$@"
+else
+  PYTHONDONTWRITEBYTECODE=1 exec vpython "$base_dir/fetch.py" "$@"
+fi

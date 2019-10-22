@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd17a331_8e82d4b0",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-22T22:03:54Z",
+      "side": 1,
+      "message": "sort of wondering if it\u0027s worth making python3 the \"normal\" version and 2 be the version that has special names for libraries",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 5
+      },
+      "revId": "efc886544c070237069b1aa3909531333e5fb9c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1269,8 +1269,10 @@ class GitWrapper(SCMWrapper):
     # we don't accidentally go corrupting parent git checks too.  See
     # https://crbug.com/1000825 for an example.
     if set_git_dir:
-      env.setdefault('GIT_DIR', os.path.abspath(os.path.join(
-          self.checkout_path, '.git')))
+      checkout_path = os.path.abspath(os.path.join(self.checkout_path, '.git'))
+      if sys.version_info.major == 2 and not isinstance(checkout_path, str):
+        checkout_path = checkout_path.encode('utf-8')
+      env.setdefault('GIT_DIR', checkout_path)
     ret = subprocess2.check_output(
         ['git'] + args, env=env, **kwargs).decode('utf-8')
     if strip:

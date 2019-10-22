@@ -146,12 +146,7 @@ class CookiesAuthenticator(Authenticator):
       return ('Git host for Gerrit upload is unknown. Check your remote '
               'and the branch your branch is tracking. This tool assumes '
               'that you are using a git server at *.googlesource.com.')
-    assert not host.startswith('http')
-    # Assume *.googlesource.com pattern.
-    parts = host.split('.')
-    if not parts[0].endswith('-review'):
-      parts[0] += '-review'
-    url = 'https://%s/new-password' % ('.'.join(parts))
+    url = cls.get_new_password_url(host)
     return 'You can (re)generate your credentials by visiting %s' % url
 
   @classmethod
@@ -216,25 +211,24 @@ class CookiesAuthenticator(Authenticator):
       return gitcookies
 
     try:
-      f = open(path, 'rb')
+      f = gclient_utils.FileRead(path, 'rb').splitlines()
     except IOError:
       return gitcookies
 
-    with f:
-      for line in f:
-        try:
-          fields = line.strip().split('\t')
-          if line.strip().startswith('#') or len(fields) != 7:
-            continue
-          domain, xpath, key, value = fields[0], fields[2], fields[5], fields[6]
-          if xpath == '/' and key == 'o':
-            if value.startswith('git-'):
-              login, secret_token = value.split('=', 1)
-              gitcookies[domain] = (login, secret_token)
-            else:
-              gitcookies[domain] = ('', value)
-        except (IndexError, ValueError, TypeError) as exc:
-          LOGGER.warning(exc)
+    for line in f:
+      try:
+        fields = line.strip().split('\t')
+        if line.strip().startswith('#') or len(fields) != 7:
+          continue
+        domain, xpath, key, value = fields[0], fields[2], fields[5], fields[6]
+        if xpath == '/' and key == 'o':
+          if value.startswith('git-'):
+            login, secret_token = value.split('=', 1)
+            gitcookies[domain] = (login, secret_token)
+          else:
+            gitcookies[domain] = ('', value)
+      except (IndexError, ValueError, TypeError) as exc:
+        LOGGER.warning(exc)
     return gitcookies
 
   def _get_auth_for_host(self, host):

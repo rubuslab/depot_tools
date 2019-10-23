@@ -16,6 +16,24 @@
       "revId": "a834f39e213247945fad24605839e2d3c65b0070",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d1ef77e_40d584bd",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1515,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-10-23T03:14:53Z",
+      "side": 0,
+      "message": "Whoops, ignore this. I can see you\u0027re doing this because you think the literals are unicode values.",
+      "parentUuid": "7a72d5c5_cf382f9f",
+      "revId": "a834f39e213247945fad24605839e2d3c65b0070",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

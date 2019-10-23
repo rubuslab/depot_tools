@@ -12,7 +12,6 @@ from __future__ import print_function
 
 import base64
 import contextlib
-import httplib2
 import json
 import logging
 import netrc
@@ -32,6 +31,7 @@ import gclient_utils
 import metrics
 import metrics_utils
 import subprocess2
+from third_party import httplib2
 
 if sys.version_info.major == 2:
   import cookielib

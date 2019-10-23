@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a72d5c5_cf382f9f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1515,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-10-23T03:14:22Z",
+      "side": 0,
+      "message": "I\u0027m not sure how this would\u0027ve ended up with either the key or the value being a unicode value.\n\nIs there maybe someplace else where something would\u0027ve gotten cast to unicode?",
+      "revId": "a834f39e213247945fad24605839e2d3c65b0070",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

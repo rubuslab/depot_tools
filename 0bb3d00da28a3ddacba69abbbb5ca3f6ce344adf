@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2cb54535_53a0bdfa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-10-23T03:14:22Z",
+      "side": 1,
+      "message": "Why do you say that literals are unicode? That\u0027s not true AFAIK.",
+      "revId": "0bb3d00da28a3ddacba69abbbb5ca3f6ce344adf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -33,7 +33,8 @@ class PresubmitApi(recipe_api.RecipeApi):
           '--json_output', self.m.json.output(),
       ]
       step_data = self.m.python(
-          name, self.presubmit_support_path, presubmit_args, **kwargs)
+          name, self.presubmit_support_path, presubmit_args, venv=True,
+          **kwargs)
       return step_data.json.output
 
   def prepare(self):
@@ -106,16 +107,10 @@ class PresubmitApi(recipe_api.RecipeApi):
       '--upstream', upstream,  # '' if not in bot_update mode.
     ])
 
-    venv = True
-    # TODO(iannucci): verify that presubmit_support.py correctly finds and
-    # uses .vpython files, then remove this configuration.
-    if self._vpython_spec_path:
-      venv = abs_root.join(self._vpython_spec_path)
-
     raw_result = result_pb2.RawResult()
     step_json = self(
         *presubmit_args,
-        venv=venv, timeout=self._timeout_s,
+        timeout=self._timeout_s,
         # ok_ret='any' causes all exceptions to be ignored in this step
         ok_ret='any')
     # Set recipe result values

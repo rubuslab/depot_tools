@@ -929,7 +929,7 @@ class InputApiUnittest(PresubmitTestsBase):
     known_files = []
     for _, f, exists in files:
       full_file = os.path.join(self.fake_root_dir, f)
-      if exists and f.startswith('foo/'):
+      if exists and f.startswith('foo'):
         known_files.append(full_file)
       diffs.append(self.presubmit_diffs % {'filename': f})
 
@@ -2102,7 +2102,9 @@ the current line as well!
 
     pylint = os.path.join(_ROOT, 'pylint')
     pylintrc = os.path.join(_ROOT, 'pylintrc')
-    env = {'PYTHONPATH': ''}
+    env = {str('PYTHONPATH'): str('')}
+    if sys.platform == 'win32':
+      pylint += '.bat'
 
     results = presubmit_canned_checks.RunPylint(
         input_api, presubmit.OutputApi)

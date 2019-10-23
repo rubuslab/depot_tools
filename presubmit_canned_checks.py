@@ -140,7 +140,7 @@ def CheckDoNotSubmitInFiles(input_api, output_api):
   """Checks that the user didn't add 'DO NOT ''SUBMIT' to any files."""
   # We want to check every text file, not just source files.
   file_filter = lambda x : x
-  keyword = 'DO NOT ''SUBMIT'
+  keyword = 'DO NOT ''SUBMIT'.encode('utf-8')
   errors = _FindNewViolationsOfRule(lambda _, line : keyword not in line,
                                     input_api, file_filter)
   text = '\n'.join('Found %s in %s' % (keyword, loc) for loc in errors)

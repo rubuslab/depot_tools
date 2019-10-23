@@ -1511,8 +1511,10 @@ def DoPresubmitChecks(change,
   old_environ = os.environ
   try:
     # Make sure python subprocesses won't generate .pyc files.
+    # We convert to str, since on Windows on Python 2, literals are unicode but
+    # only strings are allowed on environment variables.
     os.environ = os.environ.copy()
-    os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
+    os.environ[str('PYTHONDONTWRITEBYTECODE')] = str('1')
 
     output = PresubmitOutput(input_stream, output_stream)
 

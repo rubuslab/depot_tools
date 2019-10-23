@@ -15,7 +15,6 @@ import base64
 import collections
 import datetime
 import glob
-import httplib2
 import itertools
 import json
 import logging
@@ -34,6 +33,7 @@ import webbrowser
 import zlib
 
 from third_party import colorama
+from third_party import httplib2
 import auth
 import clang_format
 import dart_format

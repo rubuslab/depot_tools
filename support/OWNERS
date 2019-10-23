@@ -1,0 +1,3 @@
+per-file chromite_wrapper=file://../CROS_OWNERS
+
+# COMPONENT: Infra>ChromeOS>Build

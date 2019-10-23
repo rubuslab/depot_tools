@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d31749d6_991c5c51",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2096,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-23T22:20:51Z",
+      "side": 1,
+      "message": "is it ok that these two lines are /foo in win32?\n\nIn presubmit.py they use os.path.dirname, so this should be something like c:\\foo for win32 right?",
+      "range": {
+        "startLine": 2096,
+        "startChar": 0,
+        "endLine": 2096,
+        "endChar": 65
+      },
+      "revId": "7ece855d870b4ac48c34a2bba6a180af0dbd7b6b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

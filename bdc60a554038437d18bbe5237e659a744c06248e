@@ -34,6 +34,24 @@
       "revId": "bdc60a554038437d18bbe5237e659a744c06248e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "947f9225_d686270a",
+        "filename": "support/OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-10-23T21:35:49Z",
+      "side": 1,
+      "message": "i def agree with your point here.  the support/ dir has only ever existed since 2012 when CrOS added a single file in here.  nothing else has ever been added.\n\nit prob makes more sense to pull it out of support/ and replace like \"cros\", and then we don\u0027t need a support/ dir at all.\n\ni don\u0027t believe components can be per-file, but i\u0027m by no means an expert.",
+      "parentUuid": "9cb221f9_cf08115e",
+      "revId": "bdc60a554038437d18bbe5237e659a744c06248e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

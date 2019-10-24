@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d4b1c07_82c076c7",
+        "filename": "recipes/recipe_modules/presubmit/properties.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-24T07:32:10Z",
+      "side": 1,
+      "message": "i don\u0027t think this is necessary, unless you really want to allow people to continue setting these in their cr-buildbucket.cfg.\n\nOne idea is to land this CL as is, but then land additional CL to remove this field entirely. Worst case, only the last CL will be reverted short term while customers fix their config.",
+      "revId": "6f536f91610c098cca41ffb1cba4631583963376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "revId": "6f536f91610c098cca41ffb1cba4631583963376",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28ad20b1_fe8c6e9a",
+        "filename": "recipes/recipe_modules/presubmit/properties.proto",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2019-10-24T07:54:16Z",
+      "side": 1,
+      "message": "Sounds good. Let me do that.",
+      "parentUuid": "3d4b1c07_82c076c7",
+      "revId": "6f536f91610c098cca41ffb1cba4631583963376",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -22,6 +22,30 @@
       "revId": "acc4a6cb78b02aee289e1135ecbb1282dce2b6de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c69a430_c7ec965f",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1256355
+      },
+      "writtenOn": "2019-10-25T19:14:40Z",
+      "side": 1,
+      "message": "I\u0027ve tried, but actually first invocation of update_depot_tools rollbacks my changes to current master which is without fix and second time update_depot_tools produces initial error \"UnicodeDecodeError: \u0027charmap\u0027 codec can\u0027t decode byte 0x98 in position 18734: character maps to \u003cundefined\u003e\" which I wanted to fix :(",
+      "parentUuid": "8c4cabd1_736a6080",
+      "range": {
+        "startLine": 86,
+        "startChar": 6,
+        "endLine": 86,
+        "endChar": 29
+      },
+      "revId": "acc4a6cb78b02aee289e1135ecbb1282dce2b6de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

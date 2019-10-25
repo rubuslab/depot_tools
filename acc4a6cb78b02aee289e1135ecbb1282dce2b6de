@@ -46,6 +46,30 @@
       "revId": "acc4a6cb78b02aee289e1135ecbb1282dce2b6de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4d32481_381d4913",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-25T19:28:51Z",
+      "side": 1,
+      "message": "Right. Can you run bootstrap\\win_tools.bat instead?\nAlso, it\u0027s better to write the file twice than not at all.",
+      "parentUuid": "9c69a430_c7ec965f",
+      "range": {
+        "startLine": 86,
+        "startChar": 6,
+        "endLine": 86,
+        "endChar": 29
+      },
+      "revId": "acc4a6cb78b02aee289e1135ecbb1282dce2b6de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

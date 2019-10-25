@@ -239,7 +239,7 @@ class FakeReposBase(object):
     self.set_up()
     if self.gitdaemon:
       return True
-    assert self.git_pid_file_name == None
+    assert self.git_pid_file_name == None, self.git_pid_file_name
     try:
       subprocess2.check_output(['git', '--version'])
     except (OSError, subprocess2.CalledProcessError):
@@ -247,12 +247,13 @@ class FakeReposBase(object):
     for repo in ['repo_%d' % r for r in range(1, self.NB_GIT_REPOS + 1)]:
       subprocess2.check_call(['git', 'init', '-q', join(self.git_root, repo)])
       self.git_hashes[repo] = [(None, None)]
-    self.git_port = find_free_port(self.host, 20000)
-    self.git_base = 'git://%s:%d/git/' % (self.host, self.git_port)
-    # Start the daemon.
-    git_pid_file = tempfile.NamedTemporaryFile(delete=False)
-    self.git_pid_file_name = git_pid_file.name
-    git_pid_file.close()
+    for _ in range(3):
+      self.git_port = find_free_port(self.host, 20000)
+      self.git_base = 'git://%s:%d/git/' % (self.host, self.git_port)
+      if self.check_port_is_free(self.git_port):
+        break
+    assert self.check_port_is_free(self.git_port), (
+        'Port %d should be free' % self.git_port)
     cmd = ['git', 'daemon',
         '--export-all',
         '--reuseaddr',
@@ -261,7 +262,11 @@ class FakeReposBase(object):
         '--port=%d' % self.git_port]
     if self.host == '127.0.0.1':
       cmd.append('--listen=' + self.host)
-    self.check_port_is_free(self.git_port)
+    # Start the daemon.
+    git_pid_file = tempfile.NamedTemporaryFile(delete=False)
+    self.git_pid_file_name = git_pid_file.name
+    print(os.getpid(), 'setting pid-file', self.git_pid_file_name)
+    git_pid_file.close()
     self.gitdaemon = subprocess2.Popen(
         cmd,
         cwd=self.root_dir,
@@ -309,9 +314,9 @@ class FakeReposBase(object):
     try:
       sock.connect((self.host, port))
       # It worked, throw.
-      assert False, '%d shouldn\'t be bound' % port
+      return True
     except (socket.error, EnvironmentError):
-      pass
+      return False
     finally:
       sock.close()
 

@@ -7,7 +7,9 @@
 
 # pylint: disable=E1103
 
-from shutil import rmtree
+from __future__ import unicode_literals
+
+
 from subprocess import Popen, PIPE, STDOUT
 
 import json
@@ -30,6 +32,7 @@ from testing_support import fake_repos
 from testing_support import test_case_utils
 
 import gclient_scm
+import gclient_utils
 import git_cache
 import subprocess2
 
@@ -212,7 +215,7 @@ from :3
                staticmethod(lambda : True)).start()
     mock.patch('sys.stdout', StringIO()).start()
     self.addCleanup(mock.patch.stopall)
-    self.addCleanup(lambda: rmtree(self.root_dir))
+    self.addCleanup(gclient_utils.rmtree, self.root_dir)
 
 
 class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
@@ -363,9 +366,12 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
     # parents instead.
     self.assertEqual(scm._Capture(['rev-parse', 'HEAD:']),
                      'd2e35c10ac24d6c621e14a1fcadceb533155627d')
-    self.assertEqual(scm._Capture(['rev-parse', 'HEAD^1']), rev)
-    self.assertEqual(scm._Capture(['rev-parse', 'HEAD^2']),
-                     scm._Capture(['rev-parse', 'origin/master']))
+    self.assertEqual(scm._Capture(
+        ['rev-parse', 'HEAD^1' if sys.platform != 'win32' else 'HEAD^^1']), rev,
+        scm._Capture(['show', 'HEAD^1']) + '\n' + scm._Capture(['show', rev]))
+    self.assertEqual(
+        ['rev-parse', 'HEAD^2' if sys.platform != 'win32' else 'HEAD^^2']),
+        scm._Capture(['rev-parse', 'origin/master']))
     sys.stdout.close()
 
   def testUpdateRebase(self):
@@ -387,8 +393,9 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
     # parent instead.
     self.assertEqual(scm._Capture(['rev-parse', 'HEAD:']),
                      'd2e35c10ac24d6c621e14a1fcadceb533155627d')
-    self.assertEqual(scm._Capture(['rev-parse', 'HEAD^']),
-                     scm._Capture(['rev-parse', 'origin/master']))
+    self.assertEqual(scm._Capture(
+        ['rev-parse', 'HEAD^1' if sys.platform != 'win32' else 'HEAD^^1']), rev,
+        scm._Capture(['rev-parse', 'origin/master']))
     sys.stdout.close()
 
   def testUpdateReset(self):
@@ -547,41 +554,6 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
     rev_info = scm.revinfo(options, (), None)
     self.assertEqual(rev_info, '069c602044c5388d2d15c3f875b057c852003458')
 
-  def testMirrorPushUrl(self):
-    if not self.enabled:
-      return
-    fakes = fake_repos.FakeRepos()
-    fakes.set_up_git()
-    self.url = fakes.git_base + 'repo_1'
-    self.root_dir = fakes.root_dir
-    self.addCleanup(fake_repos.FakeRepos.tear_down_git, fakes)
-
-    mirror = tempfile.mkdtemp()
-    self.addCleanup(rmtree, mirror)
-
-    # This should never happen, but if it does, it'd render the other assertions
-    # in this test meaningless.
-    self.assertFalse(self.url.startswith(mirror))
-
-    git_cache.Mirror.SetCachePath(mirror)
-    self.addCleanup(git_cache.Mirror.SetCachePath, None)
-
-    options = self.Options()
-    scm = gclient_scm.GitWrapper(self.url, self.root_dir, self.relpath)
-    self.assertIsNotNone(scm._GetMirror(self.url, options))
-    scm.update(options, (), [])
-
-    fetch_url = scm._Capture(['remote', 'get-url', 'origin'])
-    self.assertTrue(
-        fetch_url.startswith(mirror),
-        msg='\n'.join([
-            'Repository fetch url should be in the git cache mirror directory.',
-            '  fetch_url: %s' % fetch_url,
-            '  mirror:    %s' % mirror]))
-    push_url = scm._Capture(['remote', 'get-url', '--push', 'origin'])
-    self.assertEqual(push_url, self.url)
-    sys.stdout.close()
-
 
 class ManagedGitWrapperTestCaseMock(unittest.TestCase):
   class OptionsObject(object):
@@ -736,6 +708,8 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -758,7 +732,6 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.checkInStdout(
       'Checked out refs/remotes/origin/master to a detached HEAD')
 
-    rmtree(origin_root_dir)
 
   def testUpdateCloneOnCommit(self):
     if not self.enabled:
@@ -766,6 +739,8 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -790,14 +765,14 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.checkInStdout(
       'Checked out a7142dc9f0009350b96a11f372b6ea658592aa95 to a detached HEAD')
 
-    rmtree(origin_root_dir)
-
   def testUpdateCloneOnBranch(self):
     if not self.enabled:
       return
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -823,14 +798,14 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
         'Checked out 9a51244740b25fa2ded5252ca00a3178d3f665a9 '
         'to a detached HEAD')
 
-    rmtree(origin_root_dir)
-
   def testUpdateCloneOnFetchedRemoteBranch(self):
     if not self.enabled:
       return
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -855,14 +830,14 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.checkInStdout(
       'Checked out refs/remotes/origin/feature to a detached HEAD')
 
-    rmtree(origin_root_dir)
-
   def testUpdateCloneOnTrueRemoteBranch(self):
     if not self.enabled:
       return
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -893,8 +868,6 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.assertEqual(self.getCurrentBranch(), None)
     self.checkInStdout(
       'Checked out refs/remotes/origin/feature to a detached HEAD')
-
-    rmtree(origin_root_dir)
 
   def testUpdateUpdate(self):
     if not self.enabled:
@@ -933,10 +906,8 @@ class CipdWrapperTestCase(unittest.TestCase):
     mock.patch('gclient_scm.CipdRoot.clobber').start()
     mock.patch('gclient_scm.CipdRoot.ensure').start()
     self.addCleanup(mock.patch.stopall)
-
-  def tearDown(self):
-    rmtree(self._cipd_root_dir)
-    rmtree(self._workdir)
+    self.addCleanup(gclient_utils.rmtree, self._cipd_root_dir)
+    self.addCleanup(gclient_utils.rmtree, self._workdir)
 
   def createScmWithPackageThatSatisfies(self, condition):
     return gclient_scm.CipdWrapper(
@@ -1061,11 +1032,13 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
     self.options = BaseGitWrapperTestCase.OptionsObject()
     self.url = self.git_base + 'repo_1'
     self.mirror = None
+    mock.patch('sys.stdout').start()
+    self.addCleanup(mock.patch.stopall)
 
   def setUpMirror(self):
     self.mirror = tempfile.mkdtemp()
     git_cache.Mirror.SetCachePath(self.mirror)
-    self.addCleanup(rmtree, self.mirror)
+    self.addCleanup(gclient_utils.rmtree, self.mirror)
     self.addCleanup(git_cache.Mirror.SetCachePath, None)
 
   def assertCommits(self, commits):
@@ -1107,6 +1080,25 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
   def testCanSyncToGerritChangeMirror(self):
     self.setUpMirror()
     self.testCanSyncToGerritChange()
+
+  def testMirrorPushUrl(self):
+    self.setUpMirror()
+
+    scm = gclient_scm.GitWrapper(self.url, self.root_dir, '.')
+    file_list = []
+    self.assertIsNotNone(scm._GetMirror(self.url, self.options))
+
+    scm.update(self.options, None, file_list)
+
+    fetch_url = scm._Capture(['remote', 'get-url', 'origin'])
+    self.assertTrue(
+        fetch_url.startswith(self.mirror),
+        msg='\n'.join([
+            'Repository fetch url should be in the git cache mirror directory.',
+            '  fetch_url: %s' % fetch_url,
+            '  mirror:    %s' % self.mirror]))
+    push_url = scm._Capture(['remote', 'get-url', '--push', 'origin'])
+    self.assertEqual(push_url, self.url)
 
   def testAppliesPatchOnTopOfMasterByDefault(self):
     """Test the default case, where we apply a patch on top of master."""

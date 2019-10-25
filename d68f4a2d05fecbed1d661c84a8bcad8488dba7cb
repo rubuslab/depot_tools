@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "338ed47b_da5cb57a",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-25T22:13:40Z",
+      "side": 1,
+      "message": "why do you do this before the for repo call?  You are just expanding the possible race conditions caused by the port being taken by a different proccess",
+      "range": {
+        "startLine": 259,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 18
+      },
+      "revId": "d68f4a2d05fecbed1d661c84a8bcad8488dba7cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e28953a_30ab8119",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-10-25T22:13:40Z",
+      "side": 1,
+      "message": "can you move this to right before you open the subprocess?  Smaller race condtions are better",
+      "range": {
+        "startLine": 265,
+        "startChar": 0,
+        "endLine": 265,
+        "endChar": 18
+      },
+      "revId": "d68f4a2d05fecbed1d661c84a8bcad8488dba7cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

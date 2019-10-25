@@ -7,7 +7,9 @@
 
 # pylint: disable=E1103
 
-from shutil import rmtree
+from __future__ import unicode_literals
+
+
 from subprocess import Popen, PIPE, STDOUT
 
 import json
@@ -30,6 +32,7 @@ from testing_support import fake_repos
 from testing_support import test_case_utils
 
 import gclient_scm
+import gclient_utils
 import git_cache
 import subprocess2
 
@@ -212,7 +215,7 @@ from :3
                staticmethod(lambda : True)).start()
     mock.patch('sys.stdout', StringIO()).start()
     self.addCleanup(mock.patch.stopall)
-    self.addCleanup(lambda: rmtree(self.root_dir))
+    self.addCleanup(gclient_utils.rmtree, self.root_dir)
 
 
 class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
@@ -557,7 +560,7 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.addCleanup(fake_repos.FakeRepos.tear_down_git, fakes)
 
     mirror = tempfile.mkdtemp()
-    self.addCleanup(rmtree, mirror)
+    self.addCleanup(gclient_utils.rmtree, mirror)
 
     # This should never happen, but if it does, it'd render the other assertions
     # in this test meaningless.
@@ -736,6 +739,8 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -758,7 +763,6 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.checkInStdout(
       'Checked out refs/remotes/origin/master to a detached HEAD')
 
-    rmtree(origin_root_dir)
 
   def testUpdateCloneOnCommit(self):
     if not self.enabled:
@@ -766,6 +770,8 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -790,14 +796,14 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.checkInStdout(
       'Checked out a7142dc9f0009350b96a11f372b6ea658592aa95 to a detached HEAD')
 
-    rmtree(origin_root_dir)
-
   def testUpdateCloneOnBranch(self):
     if not self.enabled:
       return
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -823,14 +829,14 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
         'Checked out 9a51244740b25fa2ded5252ca00a3178d3f665a9 '
         'to a detached HEAD')
 
-    rmtree(origin_root_dir)
-
   def testUpdateCloneOnFetchedRemoteBranch(self):
     if not self.enabled:
       return
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -855,14 +861,14 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.checkInStdout(
       'Checked out refs/remotes/origin/feature to a detached HEAD')
 
-    rmtree(origin_root_dir)
-
   def testUpdateCloneOnTrueRemoteBranch(self):
     if not self.enabled:
       return
     options = self.Options()
 
     origin_root_dir = self.root_dir
+    self.addCleanup(gclient_utils.rmtree, origin_root_dir)
+
     self.root_dir = tempfile.mkdtemp()
     self.relpath = '.'
     self.base_path = join(self.root_dir, self.relpath)
@@ -893,8 +899,6 @@ class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
     self.assertEqual(self.getCurrentBranch(), None)
     self.checkInStdout(
       'Checked out refs/remotes/origin/feature to a detached HEAD')
-
-    rmtree(origin_root_dir)
 
   def testUpdateUpdate(self):
     if not self.enabled:
@@ -933,10 +937,8 @@ class CipdWrapperTestCase(unittest.TestCase):
     mock.patch('gclient_scm.CipdRoot.clobber').start()
     mock.patch('gclient_scm.CipdRoot.ensure').start()
     self.addCleanup(mock.patch.stopall)
-
-  def tearDown(self):
-    rmtree(self._cipd_root_dir)
-    rmtree(self._workdir)
+    self.addCleanup(gclient_utils.rmtree, self._cipd_root_dir)
+    self.addCleanup(gclient_utils.rmtree, self._workdir)
 
   def createScmWithPackageThatSatisfies(self, condition):
     return gclient_scm.CipdWrapper(
@@ -1065,7 +1067,7 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
   def setUpMirror(self):
     self.mirror = tempfile.mkdtemp()
     git_cache.Mirror.SetCachePath(self.mirror)
-    self.addCleanup(rmtree, self.mirror)
+    self.addCleanup(gclient_utils.rmtree, self.mirror)
     self.addCleanup(git_cache.Mirror.SetCachePath, None)
 
   def assertCommits(self, commits):

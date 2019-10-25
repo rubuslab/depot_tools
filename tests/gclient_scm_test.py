@@ -7,6 +7,9 @@
 
 # pylint: disable=E1103
 
+from __future__ import unicode_literals
+
+
 from shutil import rmtree
 from subprocess import Popen, PIPE, STDOUT
 
@@ -30,6 +33,7 @@ from testing_support import fake_repos
 from testing_support import test_case_utils
 
 import gclient_scm
+import gclient_utils
 import git_cache
 import subprocess2
 
@@ -212,7 +216,7 @@ from :3
                staticmethod(lambda : True)).start()
     mock.patch('sys.stdout', StringIO()).start()
     self.addCleanup(mock.patch.stopall)
-    self.addCleanup(lambda: rmtree(self.root_dir))
+    self.addCleanup(gclient_utils.rmtree, self.root_dir)
 
 
 class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
@@ -1065,7 +1069,7 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
   def setUpMirror(self):
     self.mirror = tempfile.mkdtemp()
     git_cache.Mirror.SetCachePath(self.mirror)
-    self.addCleanup(rmtree, self.mirror)
+    self.addCleanup(gclient_utils.rmtree, self.mirror)
     self.addCleanup(git_cache.Mirror.SetCachePath, None)
 
   def assertCommits(self, commits):

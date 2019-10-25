@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8c4cabd1_736a6080",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-25T18:41:35Z",
+      "side": 1,
+      "message": "Can you execute update_depot_tools.bat and check that this condition is true after the second time?",
+      "range": {
+        "startLine": 86,
+        "startChar": 6,
+        "endLine": 86,
+        "endChar": 29
+      },
+      "revId": "acc4a6cb78b02aee289e1135ecbb1282dce2b6de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

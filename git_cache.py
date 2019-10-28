@@ -9,6 +9,7 @@ from __future__ import print_function
 
 import contextlib
 import errno
+import fileinput
 import logging
 import optparse
 import os
@@ -398,7 +399,7 @@ class Mirror(object):
           ['config', '--replace-all', 'remote.origin.fetch', spec, value_regex],
           cwd=cwd)
 
-  def bootstrap_repo(self, directory):
+  def bootstrap_repo(self, directory, include_tags):
     """Bootstrap the repo from Google Storage if possible.
 
     More apt-ly named bootstrap_repo_from_cloud_if_possible_else_do_nothing().
@@ -433,6 +434,23 @@ class Mirror(object):
                            tempdir)
       if code:
         return False
+
+      # gsutil pulls down all refs in the 'packed-refs' file. In chromium, there
+      # are thousands of refs under refs/branch-heads/ and tens of thousands
+      # under refs/tags/ that we usually don't care about. Even though they
+      # won't be fetched, git-fetch would walk through them which in clones of
+      # this cache. That walk-through is a huge amount of disk io since the
+      # clone puts each ref into its own file (and re-packing into packed-refs
+      # also requires walking the files). Instead, we drop all refs from
+      # packed-refs that don't match what we will be fetching, which is in
+      # self.fetch_specs, along with the hardcoded refs/heads/*.
+      if not include_tags:
+        f = fileinput.input(tempdir + '/packed-refs', inplace=True)
+        # Emit lines from packed-refs if not a tag.
+        for line in f:
+          if not re.search(r'^[0-9a-z]+ refs/tags/', line):
+            sys.stdout.write(line)
+        f.close()
     except Exception as e:
       self.print('Encountered error: %s' % str(e), file=sys.stderr)
       gclient_utils.rmtree(tempdir)
@@ -490,7 +508,7 @@ class Mirror(object):
                    '%s and "git cache fetch" again.'
                    % os.path.join(self.mirror_path, 'config'))
 
-  def _ensure_bootstrapped(self, depth, bootstrap, force=False):
+  def _ensure_bootstrapped(self, depth, bootstrap, include_tags, force=False):
     pack_dir = os.path.join(self.mirror_path, 'objects', 'pack')
     pack_files = []
     if os.path.isdir(pack_dir):
@@ -520,7 +538,7 @@ class Mirror(object):
       os.mkdir(self.mirror_path)
 
     bootstrapped = (not depth and bootstrap and
-                    self.bootstrap_repo(self.mirror_path))
+                    self.bootstrap_repo(self.mirror_path, include_tags))
 
     if not bootstrapped:
       if not self.exists() or not self.supported_project():
@@ -536,18 +554,22 @@ class Mirror(object):
             'but failed. Continuing with non-optimized repository.'
             % len(pack_files))
 
-  def _fetch(self, rundir, verbose, depth, reset_fetch_config):
+  def _fetch(self, rundir, verbose, depth, include_tags, reset_fetch_config):
     self.config(rundir, reset_fetch_config)
     v = []
     d = []
+    t = []
     if verbose:
       v = ['-v', '--progress']
     if depth:
       d = ['--depth', str(depth)]
-    fetch_cmd = ['fetch'] + v + d + ['origin']
+    if not include_tags:
+      t = ['--no-tags']
+    fetch_cmd = ['fetch'] + v + d + t + ['origin']
     fetch_specs = subprocess.check_output(
         [self.git_exe, 'config', '--get-all', 'remote.origin.fetch'],
         cwd=rundir).strip().splitlines()
+    print('SPECS' + str(fetch_specs))
     for spec in fetch_specs:
       spec = spec.decode()
       try:
@@ -585,8 +607,14 @@ class Mirror(object):
           raise ClobberNeeded()  # Corrupted cache.
         logging.warn('Fetch of %s failed' % spec)
 
-  def populate(self, depth=None, shallow=False, bootstrap=False,
-               verbose=False, ignore_lock=False, lock_timeout=0,
+  def populate(self,
+               depth=None,
+               tags=True,
+               shallow=False,
+               bootstrap=False,
+               verbose=False,
+               ignore_lock=False,
+               lock_timeout=0,
                reset_fetch_config=False):
     assert self.GetCachePath()
     if shallow and not depth:
@@ -598,14 +626,14 @@ class Mirror(object):
       lockfile.lock()
 
     try:
-      self._ensure_bootstrapped(depth, bootstrap)
-      self._fetch(self.mirror_path, verbose, depth, reset_fetch_config)
+      self._ensure_bootstrapped(depth, bootstrap, tags)
+      self._fetch(self.mirror_path, verbose, depth, tags, reset_fetch_config)
     except ClobberNeeded:
       # This is a major failure, we need to clean and force a bootstrap.
       gclient_utils.rmtree(self.mirror_path)
       self.print(GIT_CACHE_CORRUPT_MESSAGE)
-      self._ensure_bootstrapped(depth, bootstrap, force=True)
-      self._fetch(self.mirror_path, verbose, depth, reset_fetch_config)
+      self._ensure_bootstrapped(depth, bootstrap, tags, force=True)
+      self._fetch(self.mirror_path, verbose, depth, tags, reset_fetch_config)
     finally:
       if not ignore_lock:
         lockfile.unlock()
@@ -782,6 +810,10 @@ def CMDpopulate(parser, args):
   parser.add_option('--break-locks',
                     action='store_true',
                     help='Break any existing lock instead of just ignoring it')
+  parser.add_option(
+      '--no-tags',
+      action='store_true',
+      help='Does not fetch tags into the cache')
   parser.add_option('--reset-fetch-config', action='store_true', default=False,
                     help='Reset the fetch config before populating the cache.')
 
@@ -799,6 +831,7 @@ def CMDpopulate(parser, args):
       'bootstrap': not options.no_bootstrap,
       'ignore_lock': options.ignore_locks,
       'lock_timeout': options.timeout,
+      'tags': not options.no_tags,
       'reset_fetch_config': options.reset_fetch_config,
   }
   if options.depth:

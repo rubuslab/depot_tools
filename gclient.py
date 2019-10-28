@@ -471,6 +471,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       if (not parsed_url[0] and
           not re.match(r'^\w+\@[\w\.-]+\:[\w\/]+', parsed_url[2])):
         path = parsed_url[2]
+        if os.path.isdir(path.split('@')[0]):
+          self.set_url(path)
+          return
+
         if not path.startswith('/'):
           raise gclient_utils.Error(
               'relative DEPS entry \'%s\' must begin with a slash' % self.url)

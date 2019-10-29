@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2f6e1397_952d1bd6",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2019-10-29T20:30:28Z",
+      "side": 1,
+      "message": "I just removed htis.",
+      "parentUuid": "becd2903_a568600d",
+      "revId": "36319af8a15a76255f1e90095467874fb765d0c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ec7bd917_21390ff6",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2019-10-29T20:23:51Z",
       "side": 1,
       "message": "Note this only gets passed to get(*populate_cmd) aka git(\u0027cache\u0027, \u0027populate\u0027)",
+      "revId": "36319af8a15a76255f1e90095467874fb765d0c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8dbc30e6_932154ab",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2019-10-29T20:30:28Z",
+      "side": 1,
+      "message": "I updated the cod eto also pass this to both subsequent calls to `fetch`",
+      "parentUuid": "ec7bd917_21390ff6",
       "revId": "36319af8a15a76255f1e90095467874fb765d0c1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

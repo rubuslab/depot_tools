@@ -467,20 +467,37 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       self.set_url(parsed_url)
 
     elif isinstance(self.url, basestring):
+      # self.url is a local path
+      path, at, rev = self.url.partition('@')
+      if os.path.isdir(path):
+        self.set_url(path + at + rev)
+        return
+
+      # self.url is a URL
       parsed_url = urlparse.urlparse(self.url)
-      if (not parsed_url[0] and
-          not re.match(r'^\w+\@[\w\.-]+\:[\w\/]+', parsed_url[2])):
-        path = parsed_url[2]
-        if not path.startswith('/'):
-          raise gclient_utils.Error(
-              'relative DEPS entry \'%s\' must begin with a slash' % self.url)
-        # A relative url. Get the parent url, strip from the last '/'
-        # (equivalent to unix basename), and append the relative url.
-        parent_url = self.parent.url
+      if parsed_url[0] or re.match(r'^\w+\@[\w\.-]+\:[\w\/]+', parsed_url[2]):
+        return
+
+      # self.url is relative to the parent's URL.
+      if not path.startswith('/'):
+        raise gclient_utils.Error(
+            'relative DEPS entry \'%s\' must begin with a slash' % self.url)
+
+      parent_url = self.parent.url
+      parent_path = self.parent.url.split('@')[0]
+      if os.path.isdir(parent_path):
+        # Parent's URL is a local path. Get parent's URL dirname and append
+        # self.url.
+        parent_path = os.path.dirname(parent_path)
+        parsed_url = parent_path + path.replace('/', os.sep) + at + rev
+      else:
+        # Parent's URL is a URL. Get parent's URL, strip from the last '/'
+        # (equivalent to unix dirname) and append self.url.
         parsed_url = parent_url[:parent_url.rfind('/')] + self.url
-        logging.info('Dependency(%s)._OverrideUrl(%s) -> %s', self.name,
-                     self.url, parsed_url)
-        self.set_url(parsed_url)
+
+      logging.info('Dependency(%s)._OverrideUrl(%s) -> %s', self.name,
+                   self.url, parsed_url)
+      self.set_url(parsed_url)
 
     elif self.url is None:
       logging.info('Dependency(%s)._OverrideUrl(None) -> None', self._name)
@@ -506,7 +523,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     s.extend([
         '  # %s' % self.hierarchy(include_url=False),
         '  "%s": {' % (self.name,),
-        '    "url": "%s",' % (self.url,),
+        '    "url": %r,' % (self.url,),
     ] + condition_part + [
         '  },',
         '',
@@ -1025,6 +1042,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       if isinstance(value, basestring):
         value = gclient_eval.EvaluateCondition(value, variables)
       lines.append('%s = %s' % (arg, ToGNString(value)))
+    path = os.path.join(self.root.root_dir, self._gn_args_file)
     with open(os.path.join(self.root.root_dir, self._gn_args_file), 'w') as f:
       f.write('\n'.join(lines))
 
@@ -1305,9 +1323,9 @@ class GClient(GitDependency):
 
   DEFAULT_CLIENT_FILE_TEXT = ("""\
 solutions = [
-  { "name"        : "%(solution_name)s",
-    "url"         : "%(solution_url)s",
-    "deps_file"   : "%(deps_file)s",
+  { "name"        : %(solution_name)r,
+    "url"         : %(solution_url)r,
+    "deps_file"   : %(deps_file)r,
     "managed"     : %(managed)s,
     "custom_deps" : {
     },
@@ -2272,7 +2290,7 @@ def _AllowedHostsToLines(allowed_hosts):
     return []
   s = ['allowed_hosts = [']
   for h in sorted(allowed_hosts):
-    s.append('  "%s",' % h)
+    s.append('  %r,' % h)
   s.extend([']', ''])
   return s
 
@@ -2330,7 +2348,7 @@ def _HooksToLines(name, hooks):
     # Flattened hooks need to be written relative to the root gclient dir
     cwd = os.path.relpath(os.path.normpath(hook.effective_cwd))
     s.extend(
-        ['    "cwd": "%s",' % cwd] +
+        ['    "cwd": %r,' % cwd] +
         ['    "action": ['] +
         ['        "%s",' % arg for arg in hook.action] +
         ['    ]', '  },', '']

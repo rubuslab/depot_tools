@@ -1,0 +1,144 @@
+gclient_paths(58) FindGclientRoot:Found gclient root at c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl
+gclient(494) _OverrideUrl:Dependency(None)._OverrideUrl(None) -> None
+gclient(564) verify_validity:Dependency(src).verify_validity()
+gclient(1473) SetConfig:SetConfig() done
+gclient_utils(799) enqueue:enqueued(src)
+gclient(551) requirements:Dependency(src).requirements = ()
+gclient(551) requirements:Dependency(src).requirements = ()
+gclient_utils(977) __init__:_Worker(src) reqs:()
+gclient_utils(986) run:_Worker.run(src)
+gclient(903) run:Dependency(src).run()
+subprocess2(139) __init__:git --version;  cwd=.
+Looking for .gclient starting from c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl
+
+Loaded .gclient config in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl:
+solutions = [
+  { "name"        : "src",
+    "url"         : "c:\src\temp\2\trialgkx3cq\repos\git\repo_1",
+    "deps_file"   : "DEPS",
+    "managed"     : True,
+    "custom_deps" : {
+    },
+    "custom_vars": {},
+  },
+]
+
+subprocess2(139) __init__:git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\src	emp	rialgkx3cqepos\gitepo_1 c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy;  cwd=c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl
+1>________ running 'git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\src	emp	rialgkx3cq1>epos\git1>epo_1 c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy' in 'c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl'
+1>Cloning into 'c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy'...
+1>fatal: 'c:\src	emp?	rialgkx3cqepos\gitepo_1' does not appear to be a git repository
+1>fatal: Could not read from remote repository.
+1>Please make sure you have the correct access rights
+1>and the repository exists.
+subprocess2(139) __init__:git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\src	emp	rialgkx3cqepos\gitepo_1 c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy;  cwd=c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl
+1>WARNING: subprocess '"git" "-c" "core.deltaBaseCacheLimit=2g" "clone" "--no-checkout" "--progress" "--verbose" "c:\src	emp	rialgkx3cq1>epos\git1>epo_1" "c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy"' in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl failed; will retry after a short nap...
+1>________ running 'git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\src	emp	rialgkx3cq1>epos\git1>epo_1 c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy' in 'c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl' attempt 2 / 4
+1>Cloning into 'c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy'...
+1>fatal: 'c:\src	emp?	rialgkx3cqepos\gitepo_1' does not appear to be a git repository
+1>fatal: Could not read from remote repository.
+1>Please make sure you have the correct access rights
+1>and the repository exists.
+subprocess2(139) __init__:git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\src	emp	rialgkx3cqepos\gitepo_1 c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy;  cwd=c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl
+1>WARNING: subprocess '"git" "-c" "core.deltaBaseCacheLimit=2g" "clone" "--no-checkout" "--progress" "--verbose" "c:\src	emp	rialgkx3cq1>epos\git1>epo_1" "c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy"' in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl failed; will retry after a short nap...
+1>________ running 'git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\src	emp	rialgkx3cq1>epos\git1>epo_1 c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy' in 'c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl' attempt 3 / 4
+1>Cloning into 'c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy'...
+1>fatal: 'c:\src	emp?	rialgkx3cqepos\gitepo_1' does not appear to be a git repository
+1>fatal: Could not read from remote repository.
+1>Please make sure you have the correct access rights
+1>and the repository exists.
+subprocess2(139) __init__:git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\src	emp	rialgkx3cqepos\gitepo_1 c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy;  cwd=c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl
+1>WARNING: subprocess '"git" "-c" "core.deltaBaseCacheLimit=2g" "clone" "--no-checkout" "--progress" "--verbose" "c:\src	emp	rialgkx3cq1>epos\git1>epo_1" "c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy"' in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl failed; will retry after a short nap...
+1>________ running 'git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\src	emp	rialgkx3cq1>epos\git1>epo_1 c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy' in 'c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl' attempt 4 / 4
+1>Cloning into 'c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy'...
+1>fatal: 'c:\src	emp?	rialgkx3cqepos\gitepo_1' does not appear to be a git repository
+1>fatal: Could not read from remote repository.
+1>Please make sure you have the correct access rights
+1>and the repository exists.
+gclient_utils(1002) run:Caught exception in thread src
+gclient_utils(1003) run:(<type 'exceptions.IOError'>, IOError(2, 'No such file or directory'), <traceback object at 0x0000000003BEC808>)
+gclient_utils(1006) run:_Worker.run(src) done
+1>WARNING: subprocess '"git" "-c" "core.deltaBaseCacheLimit=2g" "clone" "--no-checkout" "--progress" "--verbose" "c:\src	emp	rialgkx3cq1>epos\git1>epo_1" "c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_gclient_src_5tvhoy"' in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl failed; will retry after a short nap...
+gclient_utils(851) flush:No more worker threads or can't queue anything.
+
+src
+----------------------------------------
+[0:00:00] Started.
+_____ src at refs/remotes/origin/master
+Traceback (most recent call last):
+  File "C:\src\depot_tools\gclient_scm.py", line 1045, in _Clone
+    print_stdout=print_stdout, filter_fn=filter_fn)
+  File "C:\src\depot_tools\gclient_scm.py", line 1382, in _Run
+    gclient_utils.CheckCallAndFilter(cmd, env=env, **kwargs)
+  File "C:\src\depot_tools\gclient_utils.py", line 622, in CheckCallAndFilter
+    rv, args, kwargs.get('cwd', None), None, None)
+CalledProcessError: Command 'git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\\src\temp\x02\trialgkx3cq\repos\\git\repo_1 c:\\src\\temp\\2\\trialgkx3cq\\__main__.GClientSmokeGIT.testSyncUrl\\_gclient_src_5tvhoy' returned non-zero exit status 128 in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl
+[0:00:08] _____ Conflicting directory found in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\src. Moving to c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_bad_scm\srcsdfryu.
+----------------------------------------
+
+src (ERROR)
+----------------------------------------
+[0:00:00] Started.
+_____ src at refs/remotes/origin/master
+Traceback (most recent call last):
+  File "C:\src\depot_tools\gclient_scm.py", line 1045, in _Clone
+    print_stdout=print_stdout, filter_fn=filter_fn)
+  File "C:\src\depot_tools\gclient_scm.py", line 1382, in _Run
+    gclient_utils.CheckCallAndFilter(cmd, env=env, **kwargs)
+  File "C:\src\depot_tools\gclient_utils.py", line 622, in CheckCallAndFilter
+    rv, args, kwargs.get('cwd', None), None, None)
+CalledProcessError: Command 'git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress --verbose c:\\src\temp\x02\trialgkx3cq\repos\\git\repo_1 c:\\src\\temp\\2\\trialgkx3cq\\__main__.GClientSmokeGIT.testSyncUrl\\_gclient_src_5tvhoy' returned non-zero exit status 128 in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl
+[0:00:08] _____ Conflicting directory found in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\src. Moving to c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_bad_scm\srcsdfryu.
+----------------------------------------
+
+
+Warnings:
+Conflicting directory c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\src moved to c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl\_bad_scm\srcsdfryu.
+Traceback (most recent call last):
+  File "C:\src\depot_tools\metrics.py", line 267, in print_notice_and_exit
+    yield
+  File "C:\src\depot_tools\gclient.py", line 3166, in <module>
+    sys.exit(main(sys.argv[1:]))
+  File "C:\src\depot_tools\gclient.py", line 3152, in main
+    return dispatcher.execute(OptionParser(), argv)
+  File "C:\src\depot_tools\subcommand.py", line 252, in execute
+    return command(parser, args[1:])
+  File "C:\src\depot_tools\gclient.py", line 2709, in CMDsync
+    ret = client.RunOnDeps('update', args)
+  File "C:\src\depot_tools\gclient.py", line 1747, in RunOnDeps
+    patch_refs=patch_refs, target_branches=target_branches)
+  File "C:\src\depot_tools\gclient_utils.py", line 914, in flush
+    reraise(e[0], e[1], e[2])
+  File "C:\src\depot_tools\gclient_utils.py", line 991, in run
+    self.item.run(*self.args, **self.kwargs)
+  File "C:\src\depot_tools\gclient.py", line 924, in run
+    file_list)
+  File "C:\src\depot_tools\gclient_scm.py", line 132, in RunCommand
+    return getattr(self, command)(options, args, file_list)
+  File "C:\src\depot_tools\gclient_scm.py", line 549, in update
+    self._DeleteOrMove(options.force)
+  File "C:\src\depot_tools\gclient_scm.py", line 207, in _DeleteOrMove
+    shutil.move(self.checkout_path, dest_path)
+  File "C:\src\depot_tools\bootstrap-3_8_0b1_chromium_1_bin\python\bin\Lib\shutil.py", line 302, in move
+    copy2(src, real_dst)
+  File "C:\src\depot_tools\bootstrap-3_8_0b1_chromium_1_bin\python\bin\Lib\shutil.py", line 130, in copy2
+    copyfile(src, dst)
+  File "C:\src\depot_tools\bootstrap-3_8_0b1_chromium_1_bin\python\bin\Lib\shutil.py", line 82, in copyfile
+    with open(src, 'rb') as fsrc:
+IOError: [Errno 2] No such file or directory: 'c:\\src\\temp\\2\\trialgkx3cq\\__main__.GClientSmokeGIT.testSyncUrl\\src'
+E
+======================================================================
+ERROR: testSyncUrl (__main__.GClientSmokeGIT)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests\gclient_smoketest.py", line 586, in testSyncUrl
+    ], cwd=self.root_dir, shell=True, env=self.env)
+  File "C:\src\depot_tools\subprocess2.py", line 210, in check_call
+    check_call_out(args, **kwargs)
+  File "C:\src\depot_tools\subprocess2.py", line 204, in check_call_out
+    returncode, args, kwargs.get('cwd'), out[0], out[1])
+CalledProcessError: Command u'C:\\src\\depot_tools\\gclient sync -v -v -v --revision src/repo2@07a882ac1c6c1f22283dc66a57ebd6e58e0d2339 --revision c:\\src\\temp\\2\\trialgkx3cq\\repos\\git\\repo_2@244d00471518360441318e99df73c47ef9622076' returned non-zero exit status 1 in c:\src\temp\2\trialgkx3cq\__main__.GClientSmokeGIT.testSyncUrl
+
+----------------------------------------------------------------------
+Ran 1 test in 14.734s
+
+FAILED (errors=1)

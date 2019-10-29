@@ -269,6 +269,8 @@ class WinUnicodeOutput(WinUnicodeOutputBase):
       if sys.version_info.major == 2 and isinstance(text, unicode):
         # Replace characters that cannot be printed instead of failing.
         text = text.encode(self.encoding, 'replace')
+      if sys.version_info.major == 3 and isinstance(text, bytes):
+        text = text.decode(self.encoding, 'replace')
       self._stream.write(text)
     except Exception as e:
       complain('%s.write: %r' % (self.name, e))

@@ -128,6 +128,8 @@ class Popen(subprocess.Popen):
       # the list.
       kwargs['shell'] = bool(sys.platform=='win32')
 
+    assert all('\r' not in cmd for cmd in args), repr(args)
+
     if isinstance(args, basestring):
       tmp_str = args
     elif isinstance(args, (list, tuple)):
@@ -135,8 +137,9 @@ class Popen(subprocess.Popen):
     else:
       raise CalledProcessError(None, args, kwargs.get('cwd'), None, None)
     if kwargs.get('cwd', None):
+      assert '\r' not in kwargs['cwd'], (repr(args), repr(kwargs['cwd']))
       tmp_str += ';  cwd=%s' % kwargs['cwd']
-    logging.debug(tmp_str)
+    logging.debug(repr(tmp_str))
 
     try:
       with self.popen_lock:

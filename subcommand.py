@@ -68,8 +68,8 @@ def CMDhelp(parser, args):
   """Prints list of commands or help for a specific command."""
   # This is the default help implementation. It can be disabled or overriden if
   # wanted.
-  if not any(i in ('-h', '--help') for i in args):
-    args = args + ['--help']
+  if not any(i in (b'-h', b'--help') for i in args):
+    args = args + [b'--help']
   _, args = parser.parse_args(args)
   # Never gets there.
   assert False
@@ -234,7 +234,7 @@ class CommandDispatcher(object):
     parser.format_epilog = lambda _: parser.epilog or ''
 
     if args:
-      if args[0] in ('-h', '--help') and len(args) > 1:
+      if args[0] in (b'-h', b'--help') and len(args) > 1:
         # Inverse the argument order so 'tool --help cmd' is rewritten to
         # 'tool cmd --help'.
         args = [args[1], args[0]] + args[2:]
@@ -244,7 +244,7 @@ class CommandDispatcher(object):
           # Inverse the arguments order so 'tool help cmd' is rewritten to
           # 'tool cmd --help'. Do it here since we want 'tool hel cmd' to work
           # too.
-          args = [args[1], '--help'] + args[2:]
+          args = [args[1], b'--help'] + args[2:]
           command = self.find_nearest_command(args[0]) or command
 
         # "fix" the usage and the description now that we know the subcommand.

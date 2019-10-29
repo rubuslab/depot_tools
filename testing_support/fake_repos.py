@@ -54,7 +54,7 @@ def read_tree(tree_root):
     for f in [join(root, f) for f in files if not f.startswith('.')]:
       filepath = f[len(tree_root) + 1:].replace(os.sep, '/')
       assert len(filepath), f
-      tree[filepath] = gclient_utils.FileRead(join(root, f))
+      tree[filepath] = gclient_utils.FileRead(join(root, f), 'rU')
   return tree
 
 
@@ -166,10 +166,8 @@ class FakeReposBase(object):
     self.git_hashes = {}
     self.gitdaemon = None
     self.git_pid_file_name = None
-    self.git_root = None
-    self.git_dirty = False
-    self.git_port = None
     self.git_base = None
+    self.initialized = False
 
   @property
   def root_dir(self):
@@ -177,21 +175,14 @@ class FakeReposBase(object):
 
   def set_up(self):
     """All late initialization comes here."""
-    self.cleanup_dirt()
     if not self.root_dir:
       try:
         # self.root_dir is not set before this call.
         self.trial.set_up()
-        self.git_root = join(self.root_dir, 'git')
+        self.git_base = join(self.root_dir, 'git') + os.sep
       finally:
         # Registers cleanup.
         atexit.register(self.tear_down)
-
-  def cleanup_dirt(self):
-    """For each dirty repository, destroy it."""
-    if self.git_dirty:
-      if not self.tear_down_git():
-        logging.error('Using both leaking checkout and git dirty checkout')
 
   def tear_down(self):
     """Kills the servers and delete the directories."""
@@ -201,28 +192,10 @@ class FakeReposBase(object):
     self.trial = None
 
   def tear_down_git(self):
-    if self.gitdaemon:
-      logging.debug('Killing git-daemon pid %s' % self.gitdaemon.pid)
-      self.gitdaemon.kill()
-      self.gitdaemon = None
-      if self.git_pid_file_name:
-        pid = int(open(self.git_pid_file_name).read())
-        logging.debug('Killing git daemon pid %s' % pid)
-        try:
-          subprocess2.kill_pid(pid)
-        except OSError as e:
-          if e.errno != errno.ESRCH:  # no such process
-            raise
-        os.remove(self.git_pid_file_name)
-        self.git_pid_file_name = None
-      wait_for_port_to_free(self.host, self.git_port)
-      self.git_port = None
-      self.git_base = None
-      if not self.trial.SHOULD_LEAK:
-        logging.debug('Removing %s' % self.git_root)
-        gclient_utils.rmtree(self.git_root)
-      else:
-        return False
+    if self.trial.SHOULD_LEAK:
+      return False
+    logging.debug('Removing %s' % self.git_base)
+    gclient_utils.rmtree(self.git_base)
     return True
 
   @staticmethod
@@ -245,41 +218,17 @@ class FakeReposBase(object):
   def set_up_git(self):
     """Creates git repositories and start the servers."""
     self.set_up()
-    if self.gitdaemon:
+    if self.initialized:
       return True
-    assert self.git_pid_file_name == None, self.git_pid_file_name
     try:
       subprocess2.check_output(['git', '--version'])
     except (OSError, subprocess2.CalledProcessError):
       return False
     for repo in ['repo_%d' % r for r in range(1, self.NB_GIT_REPOS + 1)]:
-      subprocess2.check_call(['git', 'init', '-q', join(self.git_root, repo)])
+      subprocess2.check_call(['git', 'init', '-q', join(self.git_base, repo)])
       self.git_hashes[repo] = [(None, None)]
-    git_pid_file = tempfile.NamedTemporaryFile(delete=False)
-    self.git_pid_file_name = git_pid_file.name
-    git_pid_file.close()
-    self.git_port = find_free_port(self.host)
-    self.git_base = 'git://%s:%d/git/' % (self.host, self.git_port)
-    cmd = ['git', 'daemon',
-        '--export-all',
-        '--reuseaddr',
-        '--base-path=' + self.root_dir,
-        '--pid-file=' + self.git_pid_file_name,
-        '--port=%d' % self.git_port]
-    if self.host == '127.0.0.1':
-      cmd.append('--listen=' + self.host)
-    # Verify that the port is free.
-    if not port_is_free(self.host, self.git_port):
-      return False
-    # Start the daemon.
-    self.gitdaemon = subprocess2.Popen(
-        cmd,
-        cwd=self.root_dir,
-        stdout=subprocess2.PIPE,
-        stderr=subprocess2.PIPE)
-    wait_for_port_to_bind(self.host, self.git_port, self.gitdaemon)
     self.populateGit()
-    self.git_dirty = False
+    self.initialized = True
     return True
 
   def _git_rev_parse(self, path):
@@ -287,7 +236,7 @@ class FakeReposBase(object):
         ['git', 'rev-parse', 'HEAD'], cwd=path).strip()
 
   def _commit_git(self, repo, tree, base=None):
-    repo_root = join(self.git_root, repo)
+    repo_root = join(self.git_base, repo)
     if base:
       base_commit = self.git_hashes[repo][base][0]
       subprocess2.check_call(
@@ -303,13 +252,13 @@ class FakeReposBase(object):
     self.git_hashes[repo].append((commit_hash, new_tree))
 
   def _create_ref(self, repo, ref, revision):
-    repo_root = join(self.git_root, repo)
+    repo_root = join(self.git_base, repo)
     subprocess2.check_call(
         ['git', 'update-ref', ref, self.git_hashes[repo][revision][0]],
         cwd=repo_root)
 
   def _fast_import_git(self, repo, data):
-    repo_root = join(self.git_root, repo)
+    repo_root = join(self.git_base, repo)
     logging.debug('%s: fast-import %s', repo, data)
     subprocess2.check_call(
         ['git', 'fast-import', '--quiet'], cwd=repo_root, stdin=data.encode())
@@ -365,7 +314,7 @@ gclient_gn_args = [
 ]
 deps = {
   'src/repo2': {
-    'url': '%(git_base)srepo_2',
+    'url': %(git_base)r + 'repo_2',
     'condition': 'True',
   },
   'src/repo2/repo3': '/' + Var('DummyVariable') + '_3@%(hash3)s',
@@ -421,7 +370,7 @@ deps = {
     self._commit_git('repo_1', {
       'DEPS': """
 deps = {
-  'src/repo2': '%(git_base)srepo_2@%(hash)s',
+  'src/repo2': %(git_base)r + 'repo_2@%(hash)s',
   'src/repo2/repo_renamed': '/repo_3',
   'src/should_not_process': {
     'url': '/repo_4',
@@ -457,8 +406,8 @@ hooks = [
     self._commit_git('repo_5', {
       'DEPS': """
 deps = {
-  'src/repo1': '%(git_base)srepo_1@%(hash1)s',
-  'src/repo2': '%(git_base)srepo_2@%(hash2)s',
+  'src/repo1': %(git_base)r + 'repo_1@%(hash1)s',
+  'src/repo2': %(git_base)r + 'repo_2@%(hash2)s',
 }
 
 # Hooks to run after a project is processed but before its dependencies are
@@ -479,8 +428,8 @@ pre_deps_hooks = [
     self._commit_git('repo_5', {
       'DEPS': """
 deps = {
-  'src/repo1': '%(git_base)srepo_1@%(hash1)s',
-  'src/repo2': '%(git_base)srepo_2@%(hash2)s',
+  'src/repo1': %(git_base)r + 'repo_1@%(hash1)s',
+  'src/repo2': %(git_base)r + 'repo_2@%(hash2)s',
 }
 
 # Hooks to run after a project is processed but before its dependencies are
@@ -506,7 +455,7 @@ pre_deps_hooks = [
       'DEPS': """
 vars = {
   'DummyVariable': 'repo',
-  'git_base': '%(git_base)s',
+  'git_base': %(git_base)r,
   'hook1_contents': 'git_hooked1',
   'repo5_var': '/repo_5',
 
@@ -529,7 +478,7 @@ gclient_gn_args = [
 ]
 
 allowed_hosts = [
-  '%(git_base)s',
+  %(git_base)r,
 ]
 deps = {
   'src/repo2': {
@@ -834,13 +783,13 @@ class FakeRepoSkiaDEPS(FakeReposBase):
   NB_GIT_REPOS = 5
 
   DEPS_git_pre = """deps = {
-  'src/third_party/skia/gyp': '%(git_base)srepo_3',
-  'src/third_party/skia/include': '%(git_base)srepo_4',
-  'src/third_party/skia/src': '%(git_base)srepo_5',
+  'src/third_party/skia/gyp': %(git_base)r + 'repo_3',
+  'src/third_party/skia/include': %(git_base)r + 'repo_4',
+  'src/third_party/skia/src': %(git_base)r + 'repo_5',
 }"""
 
   DEPS_post = """deps = {
-  'src/third_party/skia': '%(git_base)srepo_1',
+  'src/third_party/skia': %(git_base)r + 'repo_1',
 }"""
 
   def populateGit(self):
@@ -889,12 +838,12 @@ class FakeRepoBlinkDEPS(FakeReposBase):
 
     # Chrome repo.
     self._commit_git('repo_1', {
-        'DEPS': self.DEPS_pre % {'git_base': self.git_base},
+        'DEPS': self.DEPS_pre % {'git_base': self.git_base[1:-1]},
         'myfile': 'myfile@1',
         '.gitignore': '/third_party/WebKit',
     })
     self._commit_git('repo_1', {
-        'DEPS': self.DEPS_post % {'git_base': self.git_base},
+        'DEPS': self.DEPS_post % {'git_base': self.git_base[1:-1]},
         'myfile': 'myfile@2',
         '.gitignore': '',
         'third_party/WebKit/OWNERS': 'OWNERS-post',
@@ -952,12 +901,8 @@ class FakeReposTestBase(trial_dir.TestCase):
     if not tree_root:
       tree_root = self.root_dir
     actual = read_tree(tree_root)
-    diff = dict_diff(tree, actual)
-    if diff:
-      logging.error('Actual %s\n%s' % (tree_root, pprint.pformat(actual)))
-      logging.error('Expected\n%s' % pprint.pformat(tree))
-      logging.error('Diff\n%s' % pprint.pformat(diff))
-    self.assertEqual(diff, {})
+    self.assertEqual(sorted(tree.keys()), sorted(actual.keys()))
+    self.assertEqual(tree, actual)
 
   def mangle_git_tree(self, *args):
     """Creates a 'virtual directory snapshot' to compare with the actual result
@@ -967,7 +912,8 @@ class FakeReposTestBase(trial_dir.TestCase):
       repo, rev = item.split('@', 1)
       tree = self.gittree(repo, rev)
       for k, v in tree.items():
-        result[join(new_root, k)] = v
+        path = join(new_root, k).replace(os.sep, '/')
+        result[path] = v
     return result
 
   def githash(self, repo, rev):

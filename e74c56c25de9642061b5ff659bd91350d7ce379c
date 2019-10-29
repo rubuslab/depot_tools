@@ -46,6 +46,30 @@
       "revId": "e74c56c25de9642061b5ff659bd91350d7ce379c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cac069c3_c0101b1d",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-10-29T18:43:14Z",
+      "side": 1,
+      "message": "I see. I still think we should make our code simpler with fewer special conditions, since we\u0027ll be paying for maintenance.\n\nSo, how about landing as is, but also creating a follow up CL that removes this unnecessary condition, clearly stating the CL is a noop and just simplifies bot_update and letting it roll? we still have time to make it roll everywhere.",
+      "parentUuid": "af248513_488b2e9f",
+      "range": {
+        "startLine": 176,
+        "startChar": 10,
+        "endLine": 176,
+        "endChar": 46
+      },
+      "revId": "e74c56c25de9642061b5ff659bd91350d7ce379c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

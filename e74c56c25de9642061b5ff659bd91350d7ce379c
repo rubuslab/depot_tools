@@ -70,6 +70,30 @@
       "revId": "e74c56c25de9642061b5ff659bd91350d7ce379c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3486a90c_db49f427",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2019-10-29T19:21:21Z",
+      "side": 1,
+      "message": "It\u0027s a simple enough change, I just removed the special case.",
+      "parentUuid": "cac069c3_c0101b1d",
+      "range": {
+        "startLine": 176,
+        "startChar": 10,
+        "endLine": 176,
+        "endChar": 46
+      },
+      "revId": "e74c56c25de9642061b5ff659bd91350d7ce379c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -22,6 +22,30 @@
       "revId": "e74c56c25de9642061b5ff659bd91350d7ce379c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af248513_488b2e9f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2019-10-29T18:32:27Z",
+      "side": 1,
+      "message": "Strictly speaking it\u0027s not necessary, I could remove it.\n\nIt causes a handful of expectation file changes that end up adding [\u0027--refs\u0027, \u0027refs/heads/master\u0027] and I didn\u0027t want to unnecessarily change use cases that already work and that would propagate additional expectation changes.",
+      "parentUuid": "b37386fd_f5d42200",
+      "range": {
+        "startLine": 176,
+        "startChar": 10,
+        "endLine": 176,
+        "endChar": 46
+      },
+      "revId": "e74c56c25de9642061b5ff659bd91350d7ce379c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "becd2903_a568600d",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-10-29T20:23:51Z",
+      "side": 1,
+      "message": "These are already in the environment thanks to bot_update.py passing them to git(\u0027cache\u0027, env\u003denv). You could assert that here instead if you want? :)",
+      "revId": "36319af8a15a76255f1e90095467874fb765d0c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec7bd917_21390ff6",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-10-29T20:23:51Z",
+      "side": 1,
+      "message": "Note this only gets passed to get(*populate_cmd) aka git(\u0027cache\u0027, \u0027populate\u0027)",
+      "revId": "36319af8a15a76255f1e90095467874fb765d0c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

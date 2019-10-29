@@ -666,6 +666,10 @@ def _git_checkout(sln, sln_dir, revisions, refs, git_cache_dir, cleanup_dir):
     env = {
         'GIT_TRACE': 'true',
         'GIT_TRACE_PERFORMANCE': 'true',
+        'GIT_TRACE_PACKET': '1',
+        'GIT_TRACE2_EVENT': '1',
+        'GIT_TRACE_CURL': '1',
+        'GIT_TRACE_CURL_NO_DATA': '1'
     }
 
   # Step 1: populate/refresh cache, if necessary.

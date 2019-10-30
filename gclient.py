@@ -1387,11 +1387,11 @@ The local checkout in %(checkout_path)s reports:
 You should ensure that the URL listed in .gclient is correct and either change
 it or fix the checkout.
 '''  % {'checkout_path': os.path.join(self.root_dir, dep.name),
-        'expected_url': dep.url,
-        'expected_scm': dep.GetScmName(),
-        'mirror_string': mirror_string,
-        'actual_url': actual_url,
-        'actual_scm': dep.GetScmName()})
+          'expected_url': dep.url,
+          'expected_scm': dep.GetScmName(),
+          'mirror_string': mirror_string,
+          'actual_url': actual_url,
+          'actual_scm': dep.GetScmName()})
 
   def SetConfig(self, content):
     assert not self.dependencies
@@ -1687,9 +1687,17 @@ it or fix the checkout.
                   should_recurse=False,
                   relative=None,
                   condition=None))
-          print('\nWARNING: \'%s\' is no longer part of this client.\n'
-                'It is recommended that you manually remove it or use '
-                '\'gclient sync -D\' next time.' % entry_fixed)
+          if modified_files and self._options.delete_unversioned_trees:
+            print('\nWARNING: \'%s\' is no longer part of this client.\n'
+                  'Despite running \'gclient sync -D\' no action was taken '
+                  'due to the following modified files:\n\t%s\nIt is '
+                  'recommended you revert all changes or run \'gclient sync '
+                  '-D --force\' next time.' % (entry_fixed,
+                                               '\t\n'.join(modified_files)))
+          else:
+            print('\nWARNING: \'%s\' is no longer part of this client.\n'
+                  'It is recommended that you manually remove it or use '
+                  '\'gclient sync -D\' next time.' % entry_fixed)
         else:
           # Delete the entry
           print('\n________ deleting \'%s\' in \'%s\'' % (

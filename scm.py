@@ -132,7 +132,7 @@ class GIT(object):
                '--name-status', '--no-renames', '-r', '%s...' % upstream_branch]
     if not files:
       pass
-    elif isinstance(files, basestring):
+    elif isinstance(files, str):
       command.append(files)
     else:
       command.extend(files)

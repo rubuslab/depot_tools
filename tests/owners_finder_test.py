@@ -152,11 +152,9 @@ class OwnersFinderTests(_BaseTestCase):
 
   def test_reset(self):
     finder = self.defaultFinder()
-    i = 0
-    while i < 2:
-      i += 1
+    for _ in range(2):
       self.assertEqual(finder.owners_queue,
-                       [brett, john, darin, peter, ken, ben, tom])
+                       [brett, darin, john, peter, ken, ben, tom])
       self.assertEqual(finder.unreviewed_files, {
           'base/vlog.h',
           'chrome/browser/defaults.h',
@@ -204,7 +202,7 @@ class OwnersFinderTests(_BaseTestCase):
 
     finder = self.defaultFinder()
     finder.select_owner(brett)
-    self.assertEqual(finder.owners_queue, [john, darin, peter, ken, tom])
+    self.assertEqual(finder.owners_queue, [darin, john, peter, ken, tom])
     self.assertEqual(finder.selected_owners, {brett})
     self.assertEqual(finder.deselected_owners, {ben})
     self.assertEqual(finder.reviewed_by,

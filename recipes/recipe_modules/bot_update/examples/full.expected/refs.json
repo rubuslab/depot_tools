@@ -18,6 +18,7 @@
       "src@HEAD",
       "--refs",
       "+refs/change/1/2/333",
+      "--fetch_checkout_tags",
       "--disable-syntax-validation"
     ],
     "env_suffixes": {
@@ -120,7 +121,8 @@
       "--output_json",
       "/path/to/tmp/json",
       "--revision",
-      "src@f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9"
+      "src@f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9",
+      "--fetch_checkout_tags"
     ],
     "env_suffixes": {
       "PATH": [

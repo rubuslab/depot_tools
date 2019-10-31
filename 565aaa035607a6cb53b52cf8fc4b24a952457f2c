@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "8b79ddbe_5ceee864",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2019-10-31T21:33:39Z",
+      "side": 1,
+      "message": "Nit:\nCan we make this a required argument? This has a default, which is different from the default for CmdPopulate, which confused me for a while. \n\nCan we just make all calls to populate() explicit?",
+      "range": {
+        "startLine": 593,
+        "startChar": 26,
+        "endLine": 593,
+        "endChar": 30
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "94cfb5aa_c88937bf",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 4
@@ -13,6 +36,75 @@
       "writtenOn": "2019-10-31T21:18:18Z",
       "side": 1,
       "message": "Document this in the docstring below.",
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "585a3cc9_e72039d0",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2019-10-31T21:33:39Z",
+      "side": 1,
+      "message": "nit: I\u0027d recommend adding all the plumbing [no behavior change].\n\nAnd then sending up a second small CL to change some of these default behaviors.",
+      "range": {
+        "startLine": 510,
+        "startChar": 21,
+        "endLine": 510,
+        "endChar": 40
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6e448d1_1d877040",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2019-10-31T21:33:39Z",
+      "side": 1,
+      "message": "this is a behavior change, I think?\n\nI\u0027d recommend landing the behavior change in a separate CL.",
+      "range": {
+        "startLine": 952,
+        "startChar": 14,
+        "endLine": 952,
+        "endChar": 24
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30a0f97e_32d6c3fb",
+        "filename": "tests/git_cache_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2019-10-31T21:33:39Z",
+      "side": 1,
+      "message": "would recommend pulling out the common setup into a helper function so that we guarantee that this test and the next one are setting up the same repo.",
+      "range": {
+        "startLine": 89,
+        "startChar": 17,
+        "endLine": 89,
+        "endChar": 21
+      },
       "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

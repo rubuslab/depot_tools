@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "33e7cd83_ab8a0e08",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-10-31T23:00:10Z",
+      "side": 1,
+      "message": "This prevents a behaviour change for callers who call populate() directly. Every other arg is a kwarg, why would this one be different?",
+      "parentUuid": "8b79ddbe_5ceee864",
+      "range": {
+        "startLine": 593,
+        "startChar": 26,
+        "endLine": 593,
+        "endChar": 30
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "94cfb5aa_c88937bf",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 4
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "e81db9f9_36585644",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-10-31T23:00:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94cfb5aa_c88937bf",
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "585a3cc9_e72039d0",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 4
@@ -53,6 +95,30 @@
       "writtenOn": "2019-10-31T21:33:39Z",
       "side": 1,
       "message": "nit: I\u0027d recommend adding all the plumbing [no behavior change].\n\nAnd then sending up a second small CL to change some of these default behaviors.",
+      "range": {
+        "startLine": 510,
+        "startChar": 21,
+        "endLine": 510,
+        "endChar": 40
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c70d2c59_56cb927f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-10-31T23:00:10Z",
+      "side": 1,
+      "message": "Sure. I can revert this line in here.",
+      "parentUuid": "585a3cc9_e72039d0",
       "range": {
         "startLine": 510,
         "startChar": 21,
@@ -123,6 +189,30 @@
       "writtenOn": "2019-10-31T21:33:39Z",
       "side": 1,
       "message": "would recommend pulling out the common setup into a helper function so that we guarantee that this test and the next one are setting up the same repo.",
+      "range": {
+        "startLine": 89,
+        "startChar": 17,
+        "endLine": 89,
+        "endChar": 21
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "efbd5033_cbe505ba",
+        "filename": "tests/git_cache_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-10-31T23:00:10Z",
+      "side": 1,
+      "message": "Sure, done.",
+      "parentUuid": "30a0f97e_32d6c3fb",
       "range": {
         "startLine": 89,
         "startChar": 17,

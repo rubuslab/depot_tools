@@ -170,8 +170,7 @@
       "--revision",
       "src@f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9",
       "--revision",
-      "src/third_party/webrtc@HEAD",
-      "--fetch_checkout_tags"
+      "src/third_party/webrtc@HEAD"
     ],
     "env_suffixes": {
       "PATH": [

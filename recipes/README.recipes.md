@@ -56,7 +56,7 @@ Recipe module to ensure a checkout is consistent on a bot.
 
 Wrapper for easy calling of bot_update.
 
-&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#494)(self, bot_update_step):**
+&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#498)(self, bot_update_step):**
 
 Deapplies a patch, taking care of DEPS and solution revisions properly.
     
@@ -66,6 +66,10 @@ Deapplies a patch, taking care of DEPS and solution revisions properly.
 Args:
   gclient_config: The gclient configuration to use when running bot_update.
     If omitted, the current gclient configuration is used.
+  fetch_checkout_tags: When true, the root git repo being checked out will
+    also fetch any tags referenced from the references being fetched. When
+    a repo has many references, it can become a performance bottleneck, so
+    avoid tags if the checkout will not need them present.
   disable_syntax_validation: (legacy) Disables syntax validation for DEPS.
     Needed as migration paths for recipes dealing with older revisions,
     such as bisect.
@@ -83,7 +87,7 @@ Args:
   step_test_data: a null function that returns test bot_update.py output.
     Use test_api.output_json to generate test data.
 
-&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#471)(self, project_name, gclient_config=None):**
+&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#475)(self, project_name, gclient_config=None):**
 
 Returns all property names used for storing the checked-out revision of
 a given project.
@@ -101,7 +105,7 @@ Returns (list of str): All properties that'll hold the checked-out revision
 
 &emsp; **@property**<br>&mdash; **def [last\_returned\_properties](/recipes/recipe_modules/bot_update/api.py#36)(self):**
 
-&mdash; **def [resolve\_fixed\_revision](/recipes/recipe_modules/bot_update/api.py#421)(self, bot_update_json, name):**
+&mdash; **def [resolve\_fixed\_revision](/recipes/recipe_modules/bot_update/api.py#425)(self, bot_update_json, name):**
 
 Set a fixed revision for a single dependency using project revision
 properties.

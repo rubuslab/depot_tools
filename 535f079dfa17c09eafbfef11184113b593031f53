@@ -22,6 +22,30 @@
       "revId": "535f079dfa17c09eafbfef11184113b593031f53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0407c64f_8f66432c",
+        "filename": "update_depot_tools",
+        "patchSetId": 7
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-10-31T21:44:24Z",
+      "side": 1,
+      "message": "this seems like a bad idea.  you\u0027re going to delete random files that devs have put in there.\n\nif you want to nuke just python3, then nuke just that.\n\n-X would be safe, but you removed python3 from gitignore :).",
+      "parentUuid": "53390487_3a47f17c",
+      "range": {
+        "startLine": 110,
+        "startChar": 14,
+        "endLine": 110,
+        "endChar": 35
+      },
+      "revId": "535f079dfa17c09eafbfef11184113b593031f53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

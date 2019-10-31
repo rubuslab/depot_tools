@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "182d6b4e_f044f6f8",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2019-10-31T23:26:42Z",
+      "side": 1,
+      "message": "I see your point on consistency. But I think that default arguments [especially when they different between here and CmdPopulate] make it harder to understand the code.",
+      "parentUuid": "33e7cd83_ab8a0e08",
+      "range": {
+        "startLine": 593,
+        "startChar": 26,
+        "endLine": 593,
+        "endChar": 30
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "94cfb5aa_c88937bf",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 4
@@ -175,6 +199,30 @@
       "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "477ffb40_a3add25e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2019-10-31T23:26:42Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "176824ec_49fdf371",
+      "range": {
+        "startLine": 952,
+        "startChar": 14,
+        "endLine": 952,
+        "endChar": 24
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

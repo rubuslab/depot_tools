@@ -158,8 +158,8 @@ class GstoolsUnitTests(unittest.TestCase):
     gsutil = download_from_google_storage.Gsutil(GSUTIL_DEFAULT_PATH, None)
     self.assertEqual(gsutil.path, GSUTIL_DEFAULT_PATH)
     code, _, err = gsutil.check_call()
-    self.assertEqual(code, 0)
-    self.assertEqual(err, b'')
+    self.assertEqual(code, 0, err)
+    self.assertEqual(err, '')
 
   def test_get_sha1(self):
     lorem_ipsum = os.path.join(self.base_path, 'lorem_ipsum.txt')

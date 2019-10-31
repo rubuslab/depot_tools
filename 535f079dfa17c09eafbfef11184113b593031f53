@@ -70,6 +70,47 @@
       "revId": "535f079dfa17c09eafbfef11184113b593031f53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c644983f_1e3826d7",
+        "filename": "update_depot_tools",
+        "patchSetId": 7
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-10-31T22:49:59Z",
+      "side": 1,
+      "message": "I agree w/ vapier@, we definitely don\u0027t want to nuke everything.\n\nWe should probably move python3 to python3.incorrectly_installed or something, to take it out of the path, but otherwise leave it alone. We shouldn\u0027t delete other files. The user can deal with that as needed.",
+      "parentUuid": "f263ea70_8aaba689",
+      "range": {
+        "startLine": 110,
+        "startChar": 14,
+        "endLine": 110,
+        "endChar": 35
+      },
+      "revId": "535f079dfa17c09eafbfef11184113b593031f53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3afe690_3d9f07a4",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-10-31T22:49:59Z",
+      "side": 1,
+      "message": "cf. comment in the other file.",
+      "revId": "535f079dfa17c09eafbfef11184113b593031f53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

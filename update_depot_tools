@@ -100,7 +100,7 @@ function update_git_repo {
   fi
 
   git fetch -q origin &> /dev/null
-  local REBASE_TXT STATUS
+  local CHECKOUT_TXT STATUS
   CHECKOUT_TXT=$(git checkout -q origin/master 2>&1)
   STATUS=$?
   if [[ $STATUS -ne 0 ]]; then

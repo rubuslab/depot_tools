@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d1b701d_7ebb5fdc",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-31T17:11:26Z",
+      "side": 1,
+      "message": "ls_err is not decoded.\nI\u0027d prefer to modify gsutil to call .decode() after any subprocess calls.",
+      "range": {
+        "startLine": 415,
+        "startChar": 15,
+        "endLine": 415,
+        "endChar": 21
+      },
+      "revId": "9f92dff6b6732a7961f2ecf696f006b33064acfb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

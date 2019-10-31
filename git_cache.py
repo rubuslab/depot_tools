@@ -536,15 +536,18 @@ class Mirror(object):
             'but failed. Continuing with non-optimized repository.'
             % len(pack_files))
 
-  def _fetch(self, rundir, verbose, depth, reset_fetch_config):
+  def _fetch(self, rundir, verbose, depth, fetch_tags, reset_fetch_config):
     self.config(rundir, reset_fetch_config)
     v = []
     d = []
+    t = []
     if verbose:
       v = ['-v', '--progress']
     if depth:
       d = ['--depth', str(depth)]
-    fetch_cmd = ['fetch'] + v + d + ['origin']
+    if not fetch_tags:
+      t = ['--no-tags']
+    fetch_cmd = ['fetch'] + v + d + t + ['origin']
     fetch_specs = subprocess.check_output(
         [self.git_exe, 'config', '--get-all', 'remote.origin.fetch'],
         cwd=rundir).strip().splitlines()
@@ -585,8 +588,14 @@ class Mirror(object):
           raise ClobberNeeded()  # Corrupted cache.
         logging.warn('Fetch of %s failed' % spec)
 
-  def populate(self, depth=None, shallow=False, bootstrap=False,
-               verbose=False, ignore_lock=False, lock_timeout=0,
+  def populate(self,
+               depth=None,
+               fetch_tags=True,
+               shallow=False,
+               bootstrap=False,
+               verbose=False,
+               ignore_lock=False,
+               lock_timeout=0,
                reset_fetch_config=False):
     assert self.GetCachePath()
     if shallow and not depth:
@@ -599,13 +608,15 @@ class Mirror(object):
 
     try:
       self._ensure_bootstrapped(depth, bootstrap)
-      self._fetch(self.mirror_path, verbose, depth, reset_fetch_config)
+      self._fetch(self.mirror_path, verbose, depth, fetch_tags,
+                  reset_fetch_config)
     except ClobberNeeded:
       # This is a major failure, we need to clean and force a bootstrap.
       gclient_utils.rmtree(self.mirror_path)
       self.print(GIT_CACHE_CORRUPT_MESSAGE)
       self._ensure_bootstrapped(depth, bootstrap, force=True)
-      self._fetch(self.mirror_path, verbose, depth, reset_fetch_config)
+      self._fetch(self.mirror_path, verbose, depth, fetch_tags,
+                  reset_fetch_config)
     finally:
       if not ignore_lock:
         lockfile.unlock()
@@ -769,6 +780,11 @@ def CMDpopulate(parser, args):
   """Ensure that the cache has all up-to-date objects for the given repo."""
   parser.add_option('--depth', type='int',
                     help='Only cache DEPTH commits of history')
+  parser.add_option(
+      '--fetch-tags',
+      action='store_true',
+      help=('Fetch tags from the server. This can slow down '
+            'fetch considerably when there are many tags.'))
   parser.add_option('--shallow', '-s', action='store_true',
                     help='Only cache 10000 commits of history')
   parser.add_option('--ref', action='append',
@@ -794,6 +810,7 @@ def CMDpopulate(parser, args):
   if options.break_locks:
     mirror.unlock()
   kwargs = {
+      'fetch_tags': options.fetch_tags,
       'verbose': options.verbose,
       'shallow': options.shallow,
       'bootstrap': not options.no_bootstrap,

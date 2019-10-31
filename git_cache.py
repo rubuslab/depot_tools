@@ -413,7 +413,7 @@ class Mirror(object):
     # The .ready file is only uploaded when an entire directory has been
     # uploaded to GS.
     _, ls_out, ls_err = gsutil.check_call('ls', self._gs_path)
-    ls_out_set = set(ls_out.strip().splitlines())
+    ls_out_set = set(ls_out.decode().strip().splitlines())
     latest_dir = self._GetMostRecentCacheDirectory(ls_out_set)
 
     if not latest_dir:

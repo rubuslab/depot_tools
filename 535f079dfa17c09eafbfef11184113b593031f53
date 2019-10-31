@@ -46,6 +46,30 @@
       "revId": "535f079dfa17c09eafbfef11184113b593031f53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f263ea70_8aaba689",
+        "filename": "update_depot_tools",
+        "patchSetId": 7
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-10-31T22:06:36Z",
+      "side": 1,
+      "message": "Humm, that\u0027s true, though I don\u0027t think we should support devs putting their stuff on depot_tools.\n-X would also a bad idea, we\u0027d be deleting the python binaries that we\u0027ve downloaded, win-toolchains, and a bunch of settings files we don\u0027t want to remove.",
+      "parentUuid": "0407c64f_8f66432c",
+      "range": {
+        "startLine": 110,
+        "startChar": 14,
+        "endLine": 110,
+        "endChar": 35
+      },
+      "revId": "535f079dfa17c09eafbfef11184113b593031f53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

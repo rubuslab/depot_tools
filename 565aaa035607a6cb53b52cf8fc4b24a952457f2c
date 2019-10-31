@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "94cfb5aa_c88937bf",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2019-10-31T21:18:18Z",
+      "side": 1,
+      "message": "Document this in the docstring below.",
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -56,6 +56,10 @@ if errorlevel 1 (
   echo Failed to update depot_tools.
   goto :EOF
 )
+call git clean -fd -q > NUL
+if errorlevel 1 (
+  echo Warning: Failed to clean untracked files in depot_tools.
+)
 
 :: Sync CIPD and CIPD client tools.
 call "%~dp0\cipd_bin_setup.bat"

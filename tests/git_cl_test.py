@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env vpython3
 # Copyright (c) 2012 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -35,7 +35,7 @@ else:
   from io import StringIO
 
 
-def callError(code=1, cmd='', cwd='', stdout='', stderr=''):
+def callError(code=1, cmd='', cwd='', stdout=b'', stderr=b''):
   return subprocess2.CalledProcessError(code, cmd, cwd, stdout, stderr)
 
 
@@ -706,6 +706,10 @@ class TestGitCl(TestCase):
     self._calls_done.append(top)
     if isinstance(result, Exception):
       raise result
+    # stdout from git commands is supposed to be a bytestream. Convert it here
+    # instead of converting all test output in this file to bytes.
+    if args[0][0] == 'git' and not isinstance(result, bytes):
+      result = result.encode('utf-8')
     return result
 
   def test_ask_for_explicit_yes_true(self):
@@ -3393,7 +3397,7 @@ class CMDFormatTestCase(TestCase):
       yapfignore.write('\n'.join(contents))
 
   def _make_files(self, file_dict):
-    for directory, files in file_dict.iteritems():
+    for directory, files in file_dict.items():
       subdir = os.path.join(self._top_dir, directory)
       if not os.path.exists(subdir):
         os.makedirs(subdir)

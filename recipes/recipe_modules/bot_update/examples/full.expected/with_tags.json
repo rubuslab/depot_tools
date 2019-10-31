@@ -17,6 +17,7 @@
       "--revision",
       "src@HEAD",
       "--with_tags",
+      "--fetch_checkout_tags",
       "--disable-syntax-validation"
     ],
     "env_suffixes": {

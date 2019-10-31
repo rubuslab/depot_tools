@@ -62,6 +62,7 @@
       "src@refs/branch-heads/67",
       "--refs",
       "refs/branch-heads/67",
+      "--fetch_checkout_tags",
       "--disable-syntax-validation"
     ],
     "env_suffixes": {

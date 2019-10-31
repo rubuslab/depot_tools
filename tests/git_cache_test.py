@@ -84,6 +84,39 @@ class GitCacheTest(unittest.TestCase):
 
     mirror.populate(reset_fetch_config=True)
 
+  def testPopulateFetchTagsByDefault(self):
+    self.git(['init', '-q'])
+    with open(os.path.join(self.origin_dir, 'foo'), 'w') as f:
+      f.write('touched\n')
+    self.git(['add', 'foo'])
+    self.git(['commit', '-m', 'foo'])
+    self.git(['tag', 'TAG'])
+    self.git(['pack-refs'])
+
+    # Default behaviour includes tags.
+    mirror = git_cache.Mirror(self.origin_dir)
+    mirror.populate()
+
+    cache_dir = os.path.join(self.cache_dir,
+                             mirror.UrlToCacheDir(self.origin_dir))
+    self.assertTrue(os.path.exists(cache_dir + '/refs/tags/TAG'))
+
+  def testPopulateFetchWithoutTags(self):
+    self.git(['init', '-q'])
+    with open(os.path.join(self.origin_dir, 'foo'), 'w') as f:
+      f.write('touched\n')
+    self.git(['add', 'foo'])
+    self.git(['commit', '-m', 'foo'])
+    self.git(['tag', 'TAG'])
+    self.git(['pack-refs'])
+
+    # Default behaviour includes tags.
+    mirror = git_cache.Mirror(self.origin_dir)
+    mirror.populate(fetch_tags=False)
+
+    cache_dir = os.path.join(self.cache_dir,
+                             mirror.UrlToCacheDir(self.origin_dir))
+    self.assertFalse(os.path.exists(cache_dir + '/refs/tags/TAG'))
 
   def testPopulateResetFetchConfigEmptyFetchConfig(self):
     self.git(['init', '-q'])

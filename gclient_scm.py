@@ -1329,6 +1329,8 @@ class GitWrapper(SCMWrapper):
       fetch_cmd.append('--prune')
     if options.verbose:
       fetch_cmd.append('--verbose')
+    if not hasattr(options, 'with_tags') or not options.with_tags:
+      fetch_cmd.append('--no-tags')
     elif quiet:
       fetch_cmd.append('--quiet')
     self._Run(fetch_cmd, options, show_header=options.verbose, retry=True)

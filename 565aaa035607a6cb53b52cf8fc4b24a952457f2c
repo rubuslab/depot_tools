@@ -88,6 +88,30 @@
     },
     {
       "key": {
+        "uuid": "176824ec_49fdf371",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-10-31T22:51:39Z",
+      "side": 1,
+      "message": "There should be no behaviour change. This script is run from bot_update/api.py, which defaults to fetch_checkout_tags\u003dTrue, so it will pass --fetch_checkout_tags.",
+      "parentUuid": "c6e448d1_1d877040",
+      "range": {
+        "startLine": 952,
+        "startChar": 14,
+        "endLine": 952,
+        "endChar": 24
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "30a0f97e_32d6c3fb",
         "filename": "tests/git_cache_test.py",
         "patchSetId": 4

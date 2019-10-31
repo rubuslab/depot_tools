@@ -22,6 +22,30 @@
       "revId": "9f92dff6b6732a7961f2ecf696f006b33064acfb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3d3c042_ea044ea8",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1111977
+      },
+      "writtenOn": "2019-10-31T17:48:21Z",
+      "side": 1,
+      "message": "Changing gsutil is a much larger change, as we\u0027d also need to clean up existing calls to .decode(). Wouldn\u0027t it be better to file a bug to track this? Is it OK to just fix |ls_err| here?",
+      "parentUuid": "3d1b701d_7ebb5fdc",
+      "range": {
+        "startLine": 415,
+        "startChar": 15,
+        "endLine": 415,
+        "endChar": 21
+      },
+      "revId": "9f92dff6b6732a7961f2ecf696f006b33064acfb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -20,6 +20,7 @@
       "https://chromium.googlesource.com/v8/v8@refs/changes/124/45/6",
       "--revision",
       "src@HEAD",
+      "--fetch_checkout_tags",
       "--disable-syntax-validation"
     ],
     "env_suffixes": {

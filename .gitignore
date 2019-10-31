@@ -15,8 +15,8 @@
 /gitk.bat
 /.pylint.d/
 /python
+/python-bin
 /python.bat
-/python3
 /python3.bat
 /ssh.bat
 /ssh-keygen.bat

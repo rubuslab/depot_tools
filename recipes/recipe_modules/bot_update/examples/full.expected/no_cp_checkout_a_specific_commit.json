@@ -20,6 +20,7 @@
       "src@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "--refs",
       "refs/heads/master",
+      "--fetch_checkout_tags",
       "--disable-syntax-validation"
     ],
     "env_suffixes": {

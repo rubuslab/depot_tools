@@ -17,6 +17,7 @@
       "--revision",
       "src@HEAD",
       "--gerrit_no_reset",
+      "--fetch_checkout_tags",
       "--disable-syntax-validation"
     ],
     "env_suffixes": {

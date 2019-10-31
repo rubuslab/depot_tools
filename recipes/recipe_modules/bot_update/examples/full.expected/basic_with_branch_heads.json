@@ -19,6 +19,7 @@
       "--refs",
       "refs/heads/master",
       "--with_branch_heads",
+      "--fetch_checkout_tags",
       "--disable-syntax-validation"
     ],
     "env_suffixes": {

@@ -62,6 +62,7 @@
       "src@HEAD",
       "--revision",
       "src/v8@HEAD",
+      "--fetch_checkout_tags",
       "--disable-syntax-validation"
     ],
     "env_suffixes": {

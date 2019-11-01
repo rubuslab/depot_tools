@@ -52,6 +52,24 @@
       "revId": "4c185222ee1b515f56637d54d1ad29cf8a9cf86f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f03851ee_ae51e519",
+        "filename": "tests/owners_finder_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-11-01T17:51:41Z",
+      "side": 1,
+      "message": "😄👊😄",
+      "parentUuid": "d27103f3_28adb95f",
+      "revId": "4c185222ee1b515f56637d54d1ad29cf8a9cf86f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

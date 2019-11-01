@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "53f6b078_f1c32911",
+        "filename": "git_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-11-01T21:01:12Z",
+      "side": 1,
+      "message": "It will still work, the tags will be fetched as they are explicitly requested. --no-tags prevents implicitly downloading tags that reference commits on the client.\n\nNow, performance wise are we sure? Yeah I am pretty confident. The repo is set up with just refs/heads/* unless --ref is passed in and we don\u0027t do that, which we can see in the bot_update logs.",
+      "parentUuid": "e3f5af6e_6e01ae72",
+      "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2800c374_092d1eb2",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 11

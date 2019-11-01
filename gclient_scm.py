@@ -421,7 +421,13 @@ class GitWrapper(SCMWrapper):
         target_rev, patch_rev, base_rev))
     self.Print('Current dir is %r' % self.checkout_path)
     self._Capture(['reset', '--hard'])
-    self._Capture(['fetch', patch_repo, patch_rev])
+
+    fetch_cmd = ['fetch']
+    if not hasattr(options, 'with_tags') or not options.with_tags:
+      fetch_cmd += ['--no-tags']
+    fetch_cmd += [patch_repo, patch_rev]
+    self._Capture(fetch_cmd)
+
     patch_rev = self._Capture(['rev-parse', 'FETCH_HEAD'])
 
     if not options.rebase_patch_ref:

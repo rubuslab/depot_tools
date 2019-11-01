@@ -46,6 +46,30 @@
       "revId": "15eacc72abbd0f8c1468b31075ad2650497b0d5b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0cd17273_126bf761",
+        "filename": "tests/owners_finder_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-11-01T17:33:21Z",
+      "side": 1,
+      "message": "self.assertEqual(sorted(a), sorted(b))\n\nThis does work tho, changed to that which should give better error data.\n\nPTAL",
+      "parentUuid": "568c03e3_8c1bc63e",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 35
+      },
+      "revId": "15eacc72abbd0f8c1468b31075ad2650497b0d5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

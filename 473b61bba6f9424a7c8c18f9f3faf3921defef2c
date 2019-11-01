@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e3f5af6e_6e01ae72",
+        "filename": "git_cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-11-01T20:46:32Z",
+      "side": 1,
+      "message": "If this call here returns \"refs/tags/*:refs/tags/*\" as one of the fetch specs, this will all fall apart. Are we sure that isn\u0027t happening?",
+      "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

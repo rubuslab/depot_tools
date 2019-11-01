@@ -5,6 +5,7 @@
 
 """Unit tests for owners_finder.py."""
 
+from collections import Counter
 import os
 import sys
 import unittest
@@ -132,7 +133,11 @@ class _BaseTestCase(unittest.TestCase):
 
 class OwnersFinderTests(_BaseTestCase):
   def test_constructor(self):
-    self.assertNotEquals(self.defaultFinder(), None)
+    self.assertNotEqual(self.defaultFinder(), None)
+
+  def assertEqualSets(self, a, b):
+    self.assertEqual(len(a), len(b))
+    return Counter(a) == Counter(b)
 
   def test_skip_files_owned_by_reviewers(self):
     files = [
@@ -155,8 +160,8 @@ class OwnersFinderTests(_BaseTestCase):
     i = 0
     while i < 2:
       i += 1
-      self.assertEqual(finder.owners_queue,
-                       [brett, john, darin, peter, ken, ben, tom])
+      self.assertEqualSets(finder.owners_queue,
+                           [brett, john, darin, peter, ken, ben, tom])
       self.assertEqual(finder.unreviewed_files, {
           'base/vlog.h',
           'chrome/browser/defaults.h',
@@ -192,7 +197,7 @@ class OwnersFinderTests(_BaseTestCase):
 
     finder = self.defaultFinder()
     finder.select_owner(darin)
-    self.assertEqual(finder.owners_queue, [brett, peter, ken, ben, tom])
+    self.assertEqualSets(finder.owners_queue, [brett, peter, ken, ben, tom])
     self.assertEqual(finder.selected_owners, {darin})
     self.assertEqual(finder.deselected_owners, {john})
     self.assertEqual(finder.reviewed_by, {'content/bar/foo.cc': darin,
@@ -204,7 +209,7 @@ class OwnersFinderTests(_BaseTestCase):
 
     finder = self.defaultFinder()
     finder.select_owner(brett)
-    self.assertEqual(finder.owners_queue, [john, darin, peter, ken, tom])
+    self.assertEqualSets(finder.owners_queue, [john, darin, peter, ken, tom])
     self.assertEqual(finder.selected_owners, {brett})
     self.assertEqual(finder.deselected_owners, {ben})
     self.assertEqual(finder.reviewed_by,
@@ -220,7 +225,7 @@ class OwnersFinderTests(_BaseTestCase):
   def test_deselect(self):
     finder = self.defaultFinder()
     finder.deselect_owner(john)
-    self.assertEqual(finder.owners_queue, [brett, peter, ken, ben, tom])
+    self.assertEqualSets(finder.owners_queue, [brett, peter, ken, ben, tom])
     self.assertEqual(finder.selected_owners, {darin})
     self.assertEqual(finder.deselected_owners, {john})
     self.assertEqual(finder.reviewed_by, {'content/bar/foo.cc': darin,

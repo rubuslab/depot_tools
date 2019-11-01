@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f19436fd_6452bdc9",
+        "filename": "tests/owners_finder_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-11-01T17:50:27Z",
+      "side": 1,
+      "message": "This isn\u0027t used",
+      "revId": "4c185222ee1b515f56637d54d1ad29cf8a9cf86f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

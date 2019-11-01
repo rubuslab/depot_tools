@@ -69,6 +69,24 @@
       "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0084b6e5_3e03fdcf",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-11-01T22:36:00Z",
+      "side": 1,
+      "message": "Yeah, I wouldn\u0027t use the word \"checkout\" to refer to the root, I\u0027d either use \"root\" or \"solution\", the words that gclient uses for this.\n\nBut beyond that -- it\u0027s not obvious to me from this and the companion CLs that this only affects the git cache for the root repo? I\u0027d expect (and want) this to affect the git cache for all repos.",
+      "parentUuid": "ca8365e0_7d5bad7d",
+      "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

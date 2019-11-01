@@ -51,6 +51,24 @@
       "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca8365e0_7d5bad7d",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-11-01T21:06:51Z",
+      "side": 1,
+      "message": "I\u0027m trying to say that im talking about the \"root\" git repo being checked out for the bot_update to apply a patch to. There\u0027s many git repos involved in a \"checkout\" due to gclient/DEPS but this is for the root repo. I will use no_fetch_tags then unless you have a better name for this. :)",
+      "parentUuid": "2800c374_092d1eb2",
+      "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

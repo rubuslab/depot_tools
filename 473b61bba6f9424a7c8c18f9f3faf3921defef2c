@@ -16,6 +16,23 @@
       "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2800c374_092d1eb2",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-11-01T20:48:04Z",
+      "side": 1,
+      "message": "nit: 81 chars\n\nbikeshed: what\u0027s the purpose of the word \"checkout\" in this argument name? To me, it reads like \"don\u0027t fetch or check out tags\", but we don\u0027t check out the tags anyway, so that doesn\u0027t make sense. So then I guess its \"don\u0027t fetch the checkout\u0027s tags\", but what other tags could we possibly be talking about? I\u0027d probably just call this \"no_fetch_tags\", the same as in git_cache.py.",
+      "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

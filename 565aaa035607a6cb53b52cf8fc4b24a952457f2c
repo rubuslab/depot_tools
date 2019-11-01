@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "7202616a_fe448805",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2019-11-01T17:51:04Z",
+      "side": 1,
+      "message": "thanks, lgtm",
+      "parentUuid": "79410a66_dc296db6",
+      "range": {
+        "startLine": 593,
+        "startChar": 26,
+        "endLine": 593,
+        "endChar": 30
+      },
+      "revId": "565aaa035607a6cb53b52cf8fc4b24a952457f2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "94cfb5aa_c88937bf",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 4

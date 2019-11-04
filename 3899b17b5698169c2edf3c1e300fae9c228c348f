@@ -22,6 +22,30 @@
       "revId": "3899b17b5698169c2edf3c1e300fae9c228c348f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "479947fa_4d48451a",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-11-04T20:49:32Z",
+      "side": 1,
+      "message": "Yeah, otherwise it will use the err from a different command.",
+      "parentUuid": "063a92b3_cab1a9bf",
+      "range": {
+        "startLine": 342,
+        "startChar": 0,
+        "endLine": 342,
+        "endChar": 58
+      },
+      "revId": "3899b17b5698169c2edf3c1e300fae9c228c348f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

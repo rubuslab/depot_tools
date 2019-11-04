@@ -2475,7 +2475,7 @@ class Changelist(object):
       parent = self._ComputeParent(remote, upstream_branch, custom_cl_base,
                                    options.force, change_desc)
       tree = RunGit(['rev-parse', 'HEAD:']).strip()
-      with tempfile.NamedTemporaryFile('w', delete=False) as desc_tempfile:
+      with tempfile.NamedTemporaryFile('w+b', delete=False) as desc_tempfile:
         desc_tempfile.write(change_desc.description)
         desc_tempfile.close()
         ref_to_push = RunGit(['commit-tree', tree, '-p', parent,

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e69589d8_8f503655",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2478,
+      "author": {
+        "id": 1185214
+      },
+      "writtenOn": "2019-11-04T20:28:11Z",
+      "side": 1,
+      "message": "I think this CL (and this change in particular) has caused a regression. I work on Windows (using Git Bash as my primary shell, if that matters). Co-workers just noticed that my recent commits have Windows line endings in the commit messages themselves (not the file contents). I always keep autocrlf set to false, and my local files and commit messages are in Unix line ending format (to preserve the sanity of the Git repo).\n\nHowever, after using git bisect on depot_tools to track down the regression, I can confirm that this CL changed the behavior of \u0027git cl upload\u0027 so that the temporary file created has native line endings (rather than Unix line endings). So doing an upload and then \u0027git cl patch --reapply\u0027 will alter the commit message.\n\nThe incorrect endings can be seen with \u0027git branch -vv\u0027, which prints them as ^M:\n\n  test5                 e9c292c856 [origin/master: ahead 1] Test^M ^M test^M ^M Change-Id: Ib9fbda32d2e4494664f6f51b4b93e2c0b1867a5d",
+      "revId": "c87ed60623e4f057620552a9dc754c9c9f1e02e7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

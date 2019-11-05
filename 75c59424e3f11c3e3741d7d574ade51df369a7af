@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7831fc38_3655711b",
+        "filename": "fetch.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1327557
+      },
+      "writtenOn": "2019-11-05T19:20:16Z",
+      "side": 1,
+      "message": "Is this final \u0027y\u0027 supposed to be here?",
+      "revId": "75c59424e3f11c3e3741d7d574ade51df369a7af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

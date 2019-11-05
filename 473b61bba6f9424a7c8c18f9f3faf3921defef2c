@@ -87,6 +87,24 @@
       "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b15855c_5a27c61d",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-11-05T15:26:43Z",
+      "side": 1,
+      "message": "I am unaware there is a git cache for all repos. The bot_update script calls git cache explicitly to check out chromium. I don\u0027t think gclient uses git cache for other repos. I will try confirm...",
+      "parentUuid": "0084b6e5_3e03fdcf",
+      "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

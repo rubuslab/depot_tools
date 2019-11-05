@@ -22,6 +22,30 @@
       "revId": "3508ddf6d1ed3941b1edac8c959ac14780ae3d7d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06f31a85_270631ec",
+        "filename": "update_depot_tools",
+        "patchSetId": 10
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-11-05T00:15:58Z",
+      "side": 1,
+      "message": "i think it\u0027s fine to just blow it away",
+      "parentUuid": "19002c0e_5930fe7b",
+      "range": {
+        "startLine": 111,
+        "startChar": 4,
+        "endLine": 111,
+        "endChar": 10
+      },
+      "revId": "3508ddf6d1ed3941b1edac8c959ac14780ae3d7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

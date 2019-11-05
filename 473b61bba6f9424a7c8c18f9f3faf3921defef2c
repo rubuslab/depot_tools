@@ -105,6 +105,24 @@
       "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad292ab8_412d4f0f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2019-11-05T17:06:55Z",
+      "side": 1,
+      "message": "It looks like gclient uses git_cache through python import rather than through the command line.\n\nhttps://cs.chromium.org/chromium/tools/depot_tools/gclient_scm.py?rcl\u003df6a2232b48c29b022f7042054bbbb6551d0dd477\u0026l\u003d990\n\nIt makes calls to populate() explicitly as a result. Since the default behaviour of populate() is not changed, they will not be affected.\n\nI think this is WAI to roll this out carefully. But thank you for the observation that we could speed these up too.\n\nTo be fair though, I will only expect a perf change here if those repos contain 1000s or maybe 10000s of tags like Chromium does.",
+      "parentUuid": "0b15855c_5a27c61d",
+      "revId": "473b61bba6f9424a7c8c18f9f3faf3921defef2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

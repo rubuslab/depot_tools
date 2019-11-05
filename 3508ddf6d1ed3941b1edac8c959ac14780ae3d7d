@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "19002c0e_5930fe7b",
+        "filename": "update_depot_tools",
+        "patchSetId": 10
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-11-05T00:06:35Z",
+      "side": 1,
+      "message": "Should we maybe print a warning?",
+      "range": {
+        "startLine": 111,
+        "startChar": 4,
+        "endLine": 111,
+        "endChar": 10
+      },
+      "revId": "3508ddf6d1ed3941b1edac8c959ac14780ae3d7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

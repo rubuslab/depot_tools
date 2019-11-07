@@ -46,6 +46,30 @@
       "revId": "3508ddf6d1ed3941b1edac8c959ac14780ae3d7d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70cf3bd4_3f4ba885",
+        "filename": "update_depot_tools",
+        "patchSetId": 10
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2019-11-07T00:32:58Z",
+      "side": 1,
+      "message": "I agree that you can just blow it away.\n\nHowever, I\u0027d add a comment and a link to this bug for the explanation of why this is there.",
+      "parentUuid": "06f31a85_270631ec",
+      "range": {
+        "startLine": 111,
+        "startChar": 4,
+        "endLine": 111,
+        "endChar": 10
+      },
+      "revId": "3508ddf6d1ed3941b1edac8c959ac14780ae3d7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

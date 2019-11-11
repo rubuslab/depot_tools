@@ -162,6 +162,7 @@ class GstoolsUnitTests(unittest.TestCase):
     self.assertEqual(gsutil.path, GSUTIL_DEFAULT_PATH)
     code, _, err = gsutil.check_call()
     self.assertEqual(code, 0, err)
+    self.assertEqual(os.getenv('PATH').split(os.path.sep), [])
     self.assertEqual(err, '')
 
   def test_get_sha1(self):

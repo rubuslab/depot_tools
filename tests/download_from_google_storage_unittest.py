@@ -29,11 +29,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import upload_to_google_storage
 import download_from_google_storage
 
-# ../third_party/gsutil/gsutil
-GSUTIL_DEFAULT_PATH = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    'gsutil.py')
 TEST_DIR = os.path.dirname(os.path.abspath(__file__))
+DEPOT_TOOLS = os.path.dirname(TEST_DIR)
+# ../third_party/gsutil/gsutil
+GSUTIL_DEFAULT_PATH = os.path.join(DEPOT_TOOLS, 'gsutil.py')
 
 
 class GsutilMock(object):
@@ -157,12 +156,24 @@ class GstoolsUnitTests(unittest.TestCase):
                                                             tar_dir))
 
   def test_gsutil(self):
-    # This will download a real gsutil package from Google Storage.
-    gsutil = download_from_google_storage.Gsutil(GSUTIL_DEFAULT_PATH, None)
-    self.assertEqual(gsutil.path, GSUTIL_DEFAULT_PATH)
-    code, _, err = gsutil.check_call()
-    self.assertEqual(code, 0, err)
-    self.assertEqual(err, '')
+    if sys.platform == 'win32':
+      # On Windows, scripts on the current directory take precedence over PATH,
+      # so that when gsutil.py is run using vpython.bat on the bots, it will be
+      # executed using the vpython.bat of the depot_tools under test, which is
+      # not set up.
+      # So make sure we're not on the depot_tools directory, to get the
+      # appropriate vpython.bat from PATH.
+      os.chdir(TEST_DIR)
+    try:
+      # This will download a real gsutil package from Google Storage.
+      gsutil = download_from_google_storage.Gsutil(GSUTIL_DEFAULT_PATH, None)
+      self.assertEqual(gsutil.path, GSUTIL_DEFAULT_PATH)
+      code, _, err = gsutil.check_call()
+      self.assertEqual(code, 0, err)
+      self.assertEqual(err, '')
+    finally:
+      if sys.platform == 'win32':
+        os.chdir(DEPOT_TOOLS)
 
   def test_get_sha1(self):
     lorem_ipsum = os.path.join(self.base_path, 'lorem_ipsum.txt')

@@ -63,6 +63,8 @@ else:
 # Ask for feedback only once in program lifetime.
 _ASKED_FOR_FEEDBACK = False
 
+DEPOT_TOOLS = os.path.dirname(os.path.abspath(__file__))
+
 
 class PresubmitFailure(Exception):
   pass
@@ -165,26 +167,29 @@ class ThreadPool(object):
     elif cmd[0].endswith('.py'):
       cmd = [vpython] + cmd
 
+    if (cmd[0] == vpython and
+        'cwd' in test.kwargs and
+        os.path.basename(test.kwargs['cwd']) == 'depot_tools'):
+      test.kwargs['cwd'] = os.path.dirname(test.kwargs['cwd'])
+      cmd[1] = os.path.join('depot_tools', cmd[1])
+
     try:
       start = time.time()
       p = subprocess.Popen(cmd, **test.kwargs)
       stdout, _ = sigint_handler.wait(p, test.stdin)
       duration = time.time() - start
-    except OSError as e:
+    except Exception:
       duration = time.time() - start
       return test.message(
-          '%s exec failure (%4.2fs)\n   %s' % (test.name, duration, e))
-    except Exception as e:
-      duration = time.time() - start
-      return test.message(
-          '%s exec failure (%4.2fs)\n%s' % (
-              test.name, duration, traceback.format_exc()))
+          '%s\n%s exec failure (%4.2fs)\n%s' % (
+              test.name, ' '.join(cmd), duration, traceback.format_exc()))
 
     if p.returncode != 0:
       return test.message(
-          '%s (%4.2fs) failed\n%s' % (test.name, duration, stdout))
+          '%s\n%s (%4.2fs) failed\n%s' % (
+              test.name, ' '.join(cmd), duration, stdout))
     if test.info:
-      return test.info('%s (%4.2fs)' % (test.name, duration))
+      return test.info('%s\n%s (%4.2fs)' % (test.name, ' '.join(cmd), duration))
 
   def AddTests(self, tests, parallel=True):
     if parallel:

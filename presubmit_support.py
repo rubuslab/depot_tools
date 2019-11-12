@@ -63,6 +63,8 @@ else:
 # Ask for feedback only once in program lifetime.
 _ASKED_FOR_FEEDBACK = False
 
+DEPOT_TOOLS = os.path.dirname(os.path.abspath(__file__))
+
 
 class PresubmitFailure(Exception):
   pass
@@ -157,6 +159,9 @@ class ThreadPool(object):
       vpython += '3'
     if sys.platform == 'win32':
       vpython += '.bat'
+      if ('cwd' in test.kwargs and
+          os.path.basename(test.kwargs['cwd']) == 'depot_tools'):
+        test.kwargs['cwd'] += os.sep + 'tests'
 
     cmd = test.cmd
     if cmd[0] == 'python':

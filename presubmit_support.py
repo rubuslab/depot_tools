@@ -63,6 +63,8 @@ else:
 # Ask for feedback only once in program lifetime.
 _ASKED_FOR_FEEDBACK = False
 
+DEPOT_TOOLS = os.path.dirname(os.path.abspath(__file__))
+
 
 class PresubmitFailure(Exception):
   pass

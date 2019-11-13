@@ -665,19 +665,11 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
   for ref in refs:
     populate_cmd.extend(['--ref', ref])
 
-  env = {}
-  if url == CHROMIUM_SRC_URL or url + '.git' == CHROMIUM_SRC_URL:
-    # This is for performance investigation of `git fetch` in chromium/src.
-    env = {
-        'GIT_TRACE': 'true',
-        'GIT_TRACE_PERFORMANCE': 'true',
-    }
-
   # Step 1: populate/refresh cache, if necessary.
   pin = get_target_pin(name, url, revisions)
   if not pin:
     # Refresh only once.
-    git(*populate_cmd, env=env)
+    git(*populate_cmd)
   elif _has_in_git_cache(pin, refs, git_cache_dir, url):
     # No need to fetch at all, because we already have needed revision.
     pass
@@ -691,7 +683,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
       # TODO(tandrii): propagate the pin to git server per recommendation of
       # maintainers of *.googlesource.com (workaround git server replication
       # lag).
-      git(*populate_cmd, env=env)
+      git(*populate_cmd)
       if _has_in_git_cache(pin, refs, git_cache_dir, url):
         break
       overrun = time.time() - soft_deadline

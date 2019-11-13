@@ -556,13 +556,15 @@ class Mirror(object):
       try:
         self.print('Fetching %s' % spec)
         env = os.environ.copy()
-        env.update({
-            'GIT_TRACE_PACKET': '1',
-            'GIT_TR2_EVENT': '1',
-            'GIT_TRACE2_EVENT': '1',
-            'GIT_TRACE_CURL': '1',
-            'GIT_TRACE_CURL_NO_DATA': '1'
-        })
+        git_trace_output = False
+        if git_trace_output:
+          env.update({
+              'GIT_TRACE_PACKET': '1',
+              'GIT_TR2_EVENT': '1',
+              'GIT_TRACE2_EVENT': '1',
+              'GIT_TRACE_CURL': '1',
+              'GIT_TRACE_CURL_NO_DATA': '1'
+          })
         # Only print first 30000 packets. We can use nonlocal keyword once we
         # switch to python 3.
         packet_count = [0]

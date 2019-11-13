@@ -16,6 +16,24 @@
       "revId": "0127df355f0386b4dd37b9290f3a806d2670506e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35d252f9_f3980c36",
+        "filename": "owners_finder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-11-13T17:55:21Z",
+      "side": 1,
+      "message": "I agree that fixing the tests to ignore randomness would be better. That would mean that the test results for the tie cases would allow for multiple correct results, but it would ensure that we are testing the normal behavior.\n\nI\u0027m not sure if a random shuffle is better than a random bias. The random bias means that the sort order and the costs both distinguish between ties, whereas the random shuffle means we have to depend on the sort order. I\u0027m not sure if that is better or worse.",
+      "parentUuid": "d985e7c9_12c0f7b2",
+      "revId": "0127df355f0386b4dd37b9290f3a806d2670506e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -581,12 +581,15 @@ class Database(object):
     return matcher(filename)
 
   @staticmethod
-  def total_costs_by_owner(all_possible_owners, dirs):
+  def total_costs_by_owner(all_possible_owners, dirs, no_random=True):
     # We want to minimize both the number of reviewers and the distance
     # from the files/dirs needing reviews. The "pow(X, 1.75)" below is
     # an arbitrarily-selected scaling factor that seems to work well - it
     # will select one reviewer in the parent directory over three reviewers
     # in subdirs, but not one reviewer over just two.
+    # The random factor is added so that if many reviewers have identical scores
+    # they will be randomly ordered, to avoid bias. The random range is chosen
+    # to be small enough that it will only affect ties.
     result = {}
     for owner in all_possible_owners:
       total_distance = 0
@@ -597,7 +600,8 @@ class Database(object):
           num_directories_owned += 1
       if num_directories_owned:
         result[owner] = (total_distance /
-                         pow(num_directories_owned, 1.75))
+                         pow(num_directories_owned, 1.75) +
+                         0.0 if no_random else random.random() / 1e6)
     return result
 
   @staticmethod

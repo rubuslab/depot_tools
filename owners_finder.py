@@ -29,7 +29,8 @@ class OwnersFinder(object):
                email_postfix='@chromium.org',
                disable_color=False,
                override_files=None,
-               ignore_author=False):
+               ignore_author=False,
+               no_random=False):
     self.email_postfix = email_postfix
 
     if os.name == 'nt' or disable_color:
@@ -75,7 +76,7 @@ class OwnersFinder(object):
     self._map_files_to_owners()
 
     self.owners_score = self.db.total_costs_by_owner(
-        self.all_possible_owners, files)
+        self.all_possible_owners, files, no_random)
 
     self.original_files_to_owners = copy.deepcopy(self.files_to_owners)
     self.comments = self.db.comments

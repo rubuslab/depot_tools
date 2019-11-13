@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "99777f73_acfaae82",
+        "filename": "owners_finder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-11-13T22:21:01Z",
+      "side": 1,
+      "message": "I much prefer this solution to your original one.  Thanks for taking a look at this!",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 168,
+        "endChar": 26
+      },
+      "revId": "44e4a069c0139499562c0c601f6e72215d10c7b4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

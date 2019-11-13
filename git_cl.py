@@ -5022,6 +5022,10 @@ def CMDowners(parser, args):
       '--show-all',
       action='store_true',
       help='Show all owners for a particular file')
+  parser.add_option(
+      '--no-random',
+      action='store_true',
+      help='Disable random breaking of ties')
   options, args = parser.parse_args(args)
 
   author = RunGit(['config', 'user.email']).strip() or None
@@ -5063,7 +5067,8 @@ def CMDowners(parser, args):
       fopen=file, os_path=os.path,
       disable_color=options.no_color,
       override_files=change.OriginalOwnersFiles(),
-      ignore_author=options.ignore_self).run()
+      ignore_author=options.ignore_self,
+      no_random=options.no_random).run()
 
 
 def BuildGitDiffCmd(diff_type, upstream_commit, args, allow_prefix=False):

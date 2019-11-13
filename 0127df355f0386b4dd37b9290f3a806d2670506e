@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d985e7c9_12c0f7b2",
+        "filename": "owners_finder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-11-13T01:39:55Z",
+      "side": 1,
+      "message": "We could remove sorting by name and do something like:\n\n  # Randomize owners\u0027 names so that if many reviewers have identical scores\n  # they will be randomly ordered to avoid bias.\n  owners \u003d random.shuffle(self.owners_to_files.keys())\n  self.owners_queue \u003d sorted(owners, key\u003dlambda owner: self.owners_score[owner])\n\nI\u0027d also rather fix the tests to ignore randomness, rather than adding a no-random option.\n\nWDYT?",
+      "revId": "0127df355f0386b4dd37b9290f3a806d2670506e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

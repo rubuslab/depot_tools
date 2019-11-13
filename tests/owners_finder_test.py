@@ -75,7 +75,7 @@ class OutputInterceptedOwnersFinder(owners_finder.OwnersFinder):
                fopen, os_path, disable_color=False):
     super(OutputInterceptedOwnersFinder, self).__init__(
       files, local_root, author, reviewers, fopen, os_path,
-      disable_color=disable_color)
+      disable_color=disable_color, no_random=True)
     self.output = []
     self.indentation_stack = []
 

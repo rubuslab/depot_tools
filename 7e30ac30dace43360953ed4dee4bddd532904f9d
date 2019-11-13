@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f62bc12_ed57b73c",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-11-13T22:07:55Z",
+      "side": 1,
+      "message": "This is equivalent to commenting out, but even less obvious about what\u0027s going on.\n\nI\u0027d suggest simply reverting the original change. It can always be relanded if we want this again.",
+      "range": {
+        "startLine": 559,
+        "startChar": 0,
+        "endLine": 560,
+        "endChar": 28
+      },
+      "revId": "7e30ac30dace43360953ed4dee4bddd532904f9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

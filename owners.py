@@ -59,6 +59,7 @@ Examples for all of these combinations can be found in tests/owners_unittest.py.
 
 import collections
 import fnmatch
+import os
 import random
 import re
 
@@ -273,7 +274,9 @@ class Database(object):
 
     # Possibly relevant rules can be found stored at every directory
     # level so iterate upwards, looking for them.
-    dirname = objname
+    # Use normpath to get system-native path separators for reliable
+    # dictionary lookup.
+    dirname = os.path.normpath(objname)
     while True:
       dir_owner_rules = self._paths_to_owners.get(dirname)
       if dir_owner_rules:
@@ -580,6 +583,10 @@ class Database(object):
 
   def _fnmatch(self, filename, pattern):
     """Same as fnmatch.fnmatch(), but interally caches the compiled regexes."""
+    # Use normpath to get system-native path separators for robust matching.
+    # This is necessary because fnmatch.translate doesn't ensure that.
+    filename = os.path.normpath(filename)
+    pattern = os.path.normpath(pattern)
     matcher = self._fnmatch_cache.get(pattern)
     if matcher is None:
       matcher = re.compile(fnmatch.translate(pattern)).match

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e3ab6ad7_90fb6a13",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-11-14T22:15:18Z",
+      "side": 1,
+      "message": "do you need this?  If so does it need to have path.replace(\u0027/\u0027, os.sep)?",
+      "range": {
+        "startLine": 473,
+        "startChar": 0,
+        "endLine": 473,
+        "endChar": 37
+      },
+      "revId": "feb7f56a185052978f9c61619b905cd1d976ddd9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c17bd44_2873e951",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-11-14T22:15:18Z",
+      "side": 1,
+      "message": "if self.url !\u003d None would this have raised an Error before.  Is this change intentional?",
+      "range": {
+        "startLine": 478,
+        "startChar": 0,
+        "endLine": 478,
+        "endChar": 78
+      },
+      "revId": "feb7f56a185052978f9c61619b905cd1d976ddd9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -267,14 +267,13 @@ class Mirror(object):
   @staticmethod
   def UrlToCacheDir(url):
     """Convert a git url to a normalized form for the cache dir path."""
+    if os.path.isdir(url):
+      if ':' in url:
+        url = url.split(':', 1)[1]
+      return url.replace('-', '--').replace(os.sep, '-')
+
     parsed = urlparse.urlparse(url)
-    # Get rid of the port. This is only needed for Windows tests, since tests
-    # serve git from git://localhost:port/git, but Windows doesn't like ':' in
-    # paths.
-    netloc = parsed.netloc
-    if ':' in netloc:
-      netloc = netloc.split(':', 1)[0]
-    norm_url = netloc + parsed.path
+    norm_url = parsed.netloc + parsed.path
     if norm_url.endswith('.git'):
       norm_url = norm_url[:-len('.git')]
 

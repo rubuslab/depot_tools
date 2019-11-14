@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01b59d70_cecc1bc1",
+        "filename": "owners.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-11-14T18:42:20Z",
+      "side": 1,
+      "message": "Nit: rest of the code uses sys.platform \u003d\u003d \u0027win32\u0027",
+      "range": {
+        "startLine": 240,
+        "startChar": 6,
+        "endLine": 240,
+        "endChar": 23
+      },
+      "revId": "8f1786d089852349bbf5739aa5d31abe84a888f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3377577_af03aee7",
+        "filename": "owners.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-11-14T18:42:20Z",
+      "side": 1,
+      "message": "What about f \u003d f.replace(os.sep, \u0027/\u0027) unconditionally?",
+      "range": {
+        "startLine": 241,
+        "startChar": 8,
+        "endLine": 241,
+        "endChar": 32
+      },
+      "revId": "8f1786d089852349bbf5739aa5d31abe84a888f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

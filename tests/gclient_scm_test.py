@@ -338,6 +338,22 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
          '069c602044c5388d2d15c3f875b057c852003458\' in \'%s\'\n\nM\ta\nM\tb\n')
             % join(self.root_dir, '.'))
 
+  def testDiffedFiles(self):
+    if not self.enabled:
+      return
+    options = self.Options()
+    expected_file_list = []
+    for f in ['a', 'b']:
+      file_path = join(self.base_path, f)
+      with open(file_path, 'a') as f:
+        f.writelines('touched\n')
+    scm = gclient_scm.GitWrapper(self.url, self.root_dir,
+                                 self.relpath)
+
+    file_list = scm.DiffedFiles(options, 'HEAD')
+    expected_file_list = [join(self.base_path, x) for x in ['a', 'b']]
+    self.assertEqual(sorted(file_list), expected_file_list)
+
   def testUpdateUpdate(self):
     if not self.enabled:
       return

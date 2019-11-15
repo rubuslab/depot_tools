@@ -221,6 +221,10 @@ class GitWrapper(SCMWrapper):
 
   def __init__(self, url=None, *args, **kwargs):
     """Removes 'git+' fake prefix from git URL."""
+    if url:
+      _, self.base_rev = gclient_utils.SplitUrlRevision(url)
+    else:
+      self.base_rev = None
     if url and (url.startswith('git+http://') or
                 url.startswith('git+https://')):
       url = url[4:]
@@ -912,10 +916,9 @@ class GitWrapper(SCMWrapper):
       self.Print('________ couldn\'t run status in %s:\n'
                  'The directory does not exist.' % self.checkout_path)
     else:
-      try:
-        merge_base = [self._Capture(['merge-base', 'HEAD', self.remote])]
-      except subprocess2.CalledProcessError:
-        merge_base = []
+      merge_base = []
+      if self.base_rev:
+        merge_base = [self.base_rev]
       self._Run(
           ['-c', 'core.quotePath=false', 'diff', '--name-status'] + merge_base,
           options, always_show_header=options.verbose)

@@ -917,6 +917,15 @@ class GitWrapper(SCMWrapper):
         files = self._GetDiffFilenames(merge_base[0] if merge_base else None)
         file_list.extend([os.path.join(self.checkout_path, f) for f in files])
 
+  def DiffedFiles(self, options, rev):
+    """Get list of files that chage changed since rev."""
+    if not os.path.isdir(self.checkout_path):
+      self.Print('________ couldn\'t run DiffedFiles in %s:\n'
+                 'The directory does not exist.' % self.checkout_path)
+      return []
+    files = self._GetDiffFilenames(rev)
+    return([os.path.join(self.checkout_path, f) for f in files])
+
   def GetUsableRev(self, rev, options):
     """Finds a useful revision for this repository."""
     sha1 = None

@@ -1322,10 +1322,10 @@ class GClient(GitDependency):
 
   DEFAULT_CLIENT_FILE_TEXT = ("""\
 solutions = [
-  { "name"        : "%(solution_name)s",
-    "url"         : "%(solution_url)s",
-    "deps_file"   : "%(deps_file)s",
-    "managed"     : %(managed)s,
+  { "name"        : %(solution_name)r,
+    "url"         : %(solution_url)r,
+    "deps_file"   : %(deps_file)r,
+    "managed"     : %(managed)r,
     "custom_deps" : {
     },
     "custom_vars": %(custom_vars)r,

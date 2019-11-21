@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e02064ae_dbc4b4ae",
+        "filename": "cpplint.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-11-21T23:53:26Z",
+      "side": 0,
+      "message": "why did you delete all the blank lines?",
+      "revId": "e9024d00d217d00d3c6b80f53e7f780fd6cb3fdb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

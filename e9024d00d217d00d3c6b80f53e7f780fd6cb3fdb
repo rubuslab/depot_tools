@@ -16,6 +16,24 @@
       "revId": "e9024d00d217d00d3c6b80f53e7f780fd6cb3fdb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "219af9b0_efe7a33c",
+        "filename": "cpplint.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-11-22T00:04:13Z",
+      "side": 0,
+      "message": "An artifact of how I copied it. Fixed.",
+      "parentUuid": "e02064ae_dbc4b4ae",
+      "revId": "e9024d00d217d00d3c6b80f53e7f780fd6cb3fdb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

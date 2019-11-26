@@ -16,6 +16,24 @@
       "revId": "2b04837ebd2c89256c287ac57f6b25434a4071a7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b78b866c_c47a624f",
+        "filename": "git_hyper_blame.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-11-26T21:11:45Z",
+      "side": 1,
+      "message": "No, there wasn\u0027t so I just removed them.",
+      "parentUuid": "b5ea2135_87283865",
+      "revId": "2b04837ebd2c89256c287ac57f6b25434a4071a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

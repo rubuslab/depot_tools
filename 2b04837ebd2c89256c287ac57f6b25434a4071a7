@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b5ea2135_87283865",
+        "filename": "git_hyper_blame.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2019-11-26T21:10:04Z",
+      "side": 1,
+      "message": "was there any usage of colsep and rowsep? Seems like they could be incorporated here if necessary.",
+      "revId": "2b04837ebd2c89256c287ac57f6b25434a4071a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

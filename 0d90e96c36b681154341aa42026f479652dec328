@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "b13eff2d_d770fe7e",
+        "filename": "cpplint.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1368998
+      },
+      "writtenOn": "2019-11-26T10:24:28Z",
+      "side": 1,
+      "message": "Nice. But you should probably add a TODO to inline after migration to Python3 is over.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "0d90e96c36b681154341aa42026f479652dec328",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1a1b1477_16f0f9f9",
         "filename": "cpplint.py",
         "patchSetId": 5

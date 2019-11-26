@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79f31d3e_5bf25631",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-11-26T23:29:39Z",
+      "side": 1,
+      "message": "no longer unique: \n\n  Errors:\n  when resolving linux-amd64 - failed to resolve infra/goma/client/linux-amd64@git_revision:f6867ba895ff67bd3604cbf3dd66bc657eaa3cc0 (line 57): ambiguity when resolving the tag, more than one instance has it",
+      "revId": "50696684f7a84ed5e64e1b35d07b627d30db4c51",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

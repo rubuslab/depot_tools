@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "52454bf5_9fbef311",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-11-27T00:29:47Z",
+      "side": 1,
+      "message": "Consider\n\n  filtered_filepaths \u003d [\n      f for f in filepaths\n      if not any(fnmatch.fnpatch(f, p) for p in patterns)]\n\nThen you could inline it below.",
+      "range": {
+        "startLine": 809,
+        "startChar": 2,
+        "endLine": 809,
+        "endChar": 20
+      },
+      "revId": "da194b5f3c8334812fe086a523cb8fe68a13fb86",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

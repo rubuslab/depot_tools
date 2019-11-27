@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "822d3b62_aad951ea",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2019-11-27T01:08:28Z",
+      "side": 1,
+      "message": "shouldn\u0027t you bail if current platform !\u003d mac?\n\nI expect `cur_os` to be None on L52, but in tests it\u0027s mocked to always non-None value.",
+      "revId": "248775f01f37497cbfdf87f4052902a6ebcf0337",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -34,6 +34,24 @@
       "revId": "50696684f7a84ed5e64e1b35d07b627d30db4c51",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0cff45c2_dec657a4",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2019-11-27T07:32:42Z",
+      "side": 1,
+      "message": "+yyanagisawa.\nwhy it is not unique?",
+      "parentUuid": "cd0f1bfa_15186ec1",
+      "revId": "50696684f7a84ed5e64e1b35d07b627d30db4c51",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

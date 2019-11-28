@@ -16,6 +16,24 @@
       "revId": "796daa088455528b44fc2ddc4c0af028c805aaf8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ad899a6_2d129714",
+        "filename": "ninja",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1173866
+      },
+      "writtenOn": "2019-11-28T23:08:38Z",
+      "side": 1,
+      "message": "This definitely isn\u0027t running through cygwin. The patch worked on my exact set up so I assume we don\u0027t need anything extra like the cygwin one. Didn\u0027t dive too much into it, just found the thing that worked.",
+      "parentUuid": "66f984a4_47840101",
+      "revId": "796daa088455528b44fc2ddc4c0af028c805aaf8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

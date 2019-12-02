@@ -22,6 +22,30 @@
       "revId": "9407c65c5c6a4c9f49d2f1a237ea965d9a45c72b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e791036c_4a2d506e",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3726,
+      "author": {
+        "id": 1113499
+      },
+      "writtenOn": "2019-12-02T23:35:21Z",
+      "side": 1,
+      "message": "Good suggestion, thanks.",
+      "parentUuid": "1094069d_7d39c66d",
+      "range": {
+        "startLine": 3726,
+        "startChar": 18,
+        "endLine": 3726,
+        "endChar": 39
+      },
+      "revId": "9407c65c5c6a4c9f49d2f1a237ea965d9a45c72b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

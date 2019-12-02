@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7853c9ba_c4e227ea",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2019-12-02T18:32:28Z",
+      "side": 1,
+      "message": "Keeping the named function with comment (not inlining) but using the simpler/shorter expression SGTM :-)",
+      "parentUuid": "e42387ee_47eb40a0",
+      "range": {
+        "startLine": 809,
+        "startChar": 2,
+        "endLine": 809,
+        "endChar": 20
+      },
+      "revId": "da194b5f3c8334812fe086a523cb8fe68a13fb86",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2f052c6f_91f91c7d",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 1

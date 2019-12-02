@@ -1057,7 +1057,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     RunOnDeps() must have been called before to load the DEPS.
     """
     result = []
-    if not self.should_process or not self.should_recurse:
+    if not self.should_recurse:
       # Don't run the hook when it is above recursion_limit.
       return result
     # If "--force" was specified, run all hooks regardless of what files have

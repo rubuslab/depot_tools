@@ -5,6 +5,7 @@
 
 """Unit tests for subprocess2.py."""
 
+import mock
 import os
 import sys
 import unittest
@@ -14,8 +15,6 @@ sys.path.insert(0, DEPOT_TOOLS)
 
 import subprocess
 import subprocess2
-
-from third_party import mock
 
 
 TEST_COMMAND = [

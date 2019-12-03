@@ -11,6 +11,7 @@ from __future__ import unicode_literals
 import datetime
 import json
 import logging
+import mock
 import os
 import shutil
 import sys
@@ -20,7 +21,6 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from testing_support.auto_stub import TestCase
-from third_party import mock
 
 import metrics
 # We have to disable monitoring before importing git_cl.

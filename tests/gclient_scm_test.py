@@ -14,6 +14,7 @@ from subprocess import Popen, PIPE, STDOUT
 
 import json
 import logging
+import mock
 import os
 import re
 import sys
@@ -27,7 +28,6 @@ else:
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from third_party import mock
 from testing_support import fake_repos
 from testing_support import test_case_utils
 

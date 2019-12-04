@@ -9,6 +9,7 @@ from __future__ import unicode_literals
 
 import io
 import os
+import mock
 import sys
 import tempfile
 import time
@@ -22,7 +23,6 @@ else:
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from testing_support import trial_dir
-from third_party import mock
 
 import gclient_utils
 import subprocess2

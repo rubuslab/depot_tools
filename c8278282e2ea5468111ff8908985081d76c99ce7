@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6bb6b662_5eca4dc6",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2019-12-04T23:07:44Z",
+      "side": 1,
+      "message": "In Python3\n\n  str(b\u0027123\u0027) \u003d\u003d \"b\u0027123\u0027\"\n\nmaybe something like\n\n  if sys.version_info.major \u003d\u003d 3:\n    fetchspec \u003d fetchspec.decode(\u0027utf-8\u0027, \u0027replace\u0027)\n\nand only for python 3 because on python 2 it would covert `fetchspec` to unicode, which might cause issues down the line...",
+      "range": {
+        "startLine": 477,
+        "startChar": 51,
+        "endLine": 477,
+        "endChar": 66
+      },
+      "revId": "c8278282e2ea5468111ff8908985081d76c99ce7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

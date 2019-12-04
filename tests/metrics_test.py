@@ -4,6 +4,7 @@
 # found in the LICENSE file.
 
 import json
+import mock
 import os
 import sys
 import unittest
@@ -13,8 +14,6 @@ sys.path.insert(0, ROOT_DIR)
 
 import metrics
 import metrics_utils
-
-from third_party import mock
 
 
 class TimeMock(object):

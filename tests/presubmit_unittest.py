@@ -12,6 +12,7 @@ from __future__ import unicode_literals
 import functools
 import itertools
 import logging
+import mock
 import multiprocessing
 import os
 import random
@@ -25,7 +26,6 @@ _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _ROOT)
 
 from testing_support.test_case_utils import TestCaseUtils
-from third_party import mock
 
 import auth
 import gclient_utils

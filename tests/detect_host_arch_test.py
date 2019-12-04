@@ -3,6 +3,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+import mock
 import os
 import platform
 import sys
@@ -11,7 +12,6 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import detect_host_arch
-from third_party import mock
 
 
 class DetectHostArchTest(unittest.TestCase):

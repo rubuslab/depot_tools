@@ -4,6 +4,7 @@
 # found in the LICENSE file.
 """Tests for git_drover."""
 
+import mock
 import os
 import shutil
 import subprocess
@@ -13,7 +14,6 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from third_party import mock
 import git_drover
 
 

@@ -11,6 +11,7 @@ See gclient_smoketest.py for integration tests.
 import copy
 import logging
 import ntpath
+import mock
 import os
 import sys
 import unittest
@@ -30,7 +31,6 @@ import gclient
 import gclient_utils
 import gclient_scm
 from testing_support import trial_dir
-from third_party import mock
 
 
 def write(filename, content):

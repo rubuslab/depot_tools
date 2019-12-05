@@ -24,6 +24,7 @@ class GitCacheTest(unittest.TestCase):
     self.addCleanup(shutil.rmtree, self.cache_dir, ignore_errors=True)
     self.origin_dir = tempfile.mkdtemp(suffix='origin.git')
     self.addCleanup(shutil.rmtree, self.origin_dir, ignore_errors=True)
+    git_cache.Mirror.gsutil_exe = 'fake-gsutil-exe'
     git_cache.Mirror.SetCachePath(self.cache_dir)
 
   def git(self, cmd, cwd=None):

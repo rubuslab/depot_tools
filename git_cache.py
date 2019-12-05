@@ -474,6 +474,8 @@ class Mirror(object):
           [self.git_exe, 'config', '--get-all', 'remote.origin.fetch'],
           cwd=self.mirror_path)
       for fetchspec in config_fetchspecs.splitlines():
+        if sys.version_info.major > 2:
+          fetchspec = fetchspec.decode('utf-8', 'replace')
         self.fetch_specs.add(self.parse_fetch_spec(fetchspec))
     except subprocess.CalledProcessError:
       logging.warn('Tried and failed to preserve remote.origin.fetch from the '
@@ -491,6 +493,7 @@ class Mirror(object):
 
     should_bootstrap = (force or
                         not self.exists() or
+                        len(pack_files) == 0 or
                         len(pack_files) > GC_AUTOPACKLIMIT)
 
     if not should_bootstrap:

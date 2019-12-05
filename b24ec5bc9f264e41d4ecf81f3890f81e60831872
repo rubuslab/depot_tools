@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0a7f710_713f0ff2",
+        "filename": "gclient_paths.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2019-12-05T00:13:01Z",
+      "side": 1,
+      "message": "1. (Nit) use top_dir.strip()?\n\n2. Why did you lose the normpath?",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 34
+      },
+      "revId": "b24ec5bc9f264e41d4ecf81f3890f81e60831872",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

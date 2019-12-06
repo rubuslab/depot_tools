@@ -473,7 +473,10 @@ class Mirror(object):
       config_fetchspecs = subprocess.check_output(
           [self.git_exe, 'config', '--get-all', 'remote.origin.fetch'],
           cwd=self.mirror_path)
+
       for fetchspec in config_fetchspecs.splitlines():
+        if sys.version_info.major > 2:
+          fetchspec = fetchspec.decode('utf-8', 'replace')
         self.fetch_specs.add(self.parse_fetch_spec(fetchspec))
     except subprocess.CalledProcessError:
       logging.warn('Tried and failed to preserve remote.origin.fetch from the '
@@ -481,17 +484,17 @@ class Mirror(object):
                    '%s and "git cache fetch" again.'
                    % os.path.join(self.mirror_path, 'config'))
 
-  def _ensure_bootstrapped(self, depth, bootstrap, force=False):
+  def _ensure_bootstrapped(
+      self, depth, bootstrap, reset_fetch_config=False, force=False):
     pack_dir = os.path.join(self.mirror_path, 'objects', 'pack')
     pack_files = []
     if os.path.isdir(pack_dir):
       pack_files = [f for f in os.listdir(pack_dir) if f.endswith('.pack')]
-      self.print('%s has %d .pack files, re-bootstrapping if >%d' %
+      self.print('%s has %d .pack files, re-bootstrapping >%d' %
                 (self.mirror_path, len(pack_files), GC_AUTOPACKLIMIT))
 
-    should_bootstrap = (force or
-                        not self.exists() or
-                        len(pack_files) > GC_AUTOPACKLIMIT)
+    should_bootstrap = (
+        force or not self.exists() or len(pack_files) > GC_AUTOPACKLIMIT)
 
     if not should_bootstrap:
       if depth and os.path.exists(os.path.join(self.mirror_path, 'shallow')):
@@ -500,8 +503,9 @@ class Mirror(object):
       return
 
     if self.exists():
-      # Re-bootstrapping an existing mirror; preserve existing fetch spec.
-      self._preserve_fetchspec()
+      #if not reset_fetch_config:
+        # Re-bootstrapping an existing mirror; preserve existing fetch spec.
+        self._preserve_fetchspec()
     else:
       if os.path.exists(self.mirror_path):
         # If the mirror path exists but self.exists() returns false, we're
@@ -572,16 +576,17 @@ class Mirror(object):
       lockfile.lock()
 
     try:
-      self._ensure_bootstrapped(depth, bootstrap)
-      self._fetch(self.mirror_path, verbose, depth, no_fetch_tags,
-                  reset_fetch_config)
+      self._ensure_bootstrapped(depth, bootstrap, reset_fetch_config)
+      self._fetch(
+          self.mirror_path, verbose, depth, no_fetch_tags, reset_fetch_config)
     except ClobberNeeded:
       # This is a major failure, we need to clean and force a bootstrap.
       gclient_utils.rmtree(self.mirror_path)
       self.print(GIT_CACHE_CORRUPT_MESSAGE)
-      self._ensure_bootstrapped(depth, bootstrap, force=True)
-      self._fetch(self.mirror_path, verbose, depth, no_fetch_tags,
-                  reset_fetch_config)
+      self._ensure_bootstrapped(
+          depth, bootstrap, reset_fetch_config, force=True)
+      self._fetch(
+          self.mirror_path, verbose, depth, no_fetch_tags, reset_fetch_config)
     finally:
       if not ignore_lock:
         lockfile.unlock()

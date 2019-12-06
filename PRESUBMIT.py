@@ -124,6 +124,7 @@ def CommonChecks(input_api, output_api, tests_to_black_list, run_on_python3):
       tests.append(input_api.canned_checks.CheckCIPDClientDigests(
           input_api, output_api, client_version_file=path))
 
+  input_api.SetTimeout(300)
   results.extend(input_api.RunTests(tests))
   return results
 

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec5c7412_645131f2",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2019-12-10T00:43:08Z",
+      "side": 1,
+      "message": "nits: 80 char lines",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 104
+      },
+      "revId": "826c6e50663a876ef6838e3fa01581d99377744f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

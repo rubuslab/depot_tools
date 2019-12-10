@@ -1532,7 +1532,6 @@ class CannedChecksUnittest(PresubmitTestsBase):
         (42, content2),
         (43, 'hfoo'),
         (23, 'ifoo')]
-    affected_file2.LocalPath.return_value = 'foo.cc'
 
 
     results1 = check(input_api1, presubmit.OutputApi, None)
@@ -1842,6 +1841,12 @@ the current line as well!
     self.ContentTest(check, 'GEN(\'#include "c/b/ui/webui/fixture.h"\');',
                      'foo.js', "// GEN('something');", 'foo.js',
                      presubmit.OutputApi.PresubmitPromptWarning)
+
+  def testCannedCheckJSLongImports(self):
+    check = lambda x, y, _: presubmit_canned_checks.CheckLongLines(x, y, 10)
+    self.ContentTest(check, "import {Name, otherName} from './dir/file.js';",
+                    'foo.js', "// We should import something long, eh?",
+                    'foo.js', presubmit.OutputApi.PresubmitPromptWarning)
 
   def testCannedCheckObjCExceptionLongLines(self):
     check = lambda x, y, _: presubmit_canned_checks.CheckLongLines(x, y, 80)

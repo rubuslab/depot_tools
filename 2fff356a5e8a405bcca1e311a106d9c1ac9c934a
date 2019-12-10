@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df09a3ae_3db568b7",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1849,
+      "author": {
+        "id": 1002115
+      },
+      "writtenOn": "2019-12-10T03:08:25Z",
+      "side": 1,
+      "message": "note: when I reverted my \u0027import \u0027 addition, these tests still passed.\n\nwhat gives?",
+      "range": {
+        "startLine": 1845,
+        "startChar": 2,
+        "endLine": 1849,
+        "endChar": 73
+      },
+      "revId": "2fff356a5e8a405bcca1e311a106d9c1ac9c934a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

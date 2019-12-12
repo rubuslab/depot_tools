@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebfd1e73_8ca4faf3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2019-12-12T02:06:57Z",
+      "side": 1,
+      "message": "is it? Source code still says 1.11.13: https://chromium.googlesource.com/infra/luci/luci-go/+/refs/heads/master/lucicfg/version.go#27",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 25
+      },
+      "revId": "cf832ef80e35b8f4f964b3e1b71481a14490bbda",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3947881_a21cfea5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2019-12-12T02:06:57Z",
+      "side": 1,
+      "message": "there was another notable change: https://chromium.googlesource.com/infra/luci/luci-go/+/ed66f49c687f6541b671a7d8fdb93fee3de0eb1a",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 15
+      },
+      "revId": "cf832ef80e35b8f4f964b3e1b71481a14490bbda",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

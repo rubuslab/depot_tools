@@ -5076,6 +5076,8 @@ def CMDowners(parser, args):
 
   change = cl.GetChange(base_branch, None)
   affected_files = [f.LocalPath() for f in change.AffectedFiles()]
+  # Always use slashes as separators to ensure predictable dictionary lookups.
+  affected_files = [f.replace(os.sep, '/') for f in affected_files]
 
   if options.batch:
     db = owners.Database(change.RepositoryRoot(), file, os.path)

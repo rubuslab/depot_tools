@@ -18,6 +18,7 @@ line       := directive
 
 directive  := "set noparent"
            |  "file:" owner_file
+           |  "include " owner_file
            |  email_address
            |  "*"
 
@@ -48,11 +49,11 @@ If "per-file glob=set noparent" is used, then global directives are ignored
 for the glob, and only the "per-file" owners are used for files matching that
 glob.
 
-If the "file:" directive is used, the referred to OWNERS file will be parsed and
-considered when determining the valid set of OWNERS. If the filename starts with
-"//" it is relative to the root of the repository, otherwise it is relative to
-the current file. The referred to file *must* be named OWNERS or end in a suffix
-of _OWNERS.
+If the "file:" or "include " directive is used, the referred to OWNERS file will
+be parsed and considered when determining the valid set of OWNERS. If the
+filename starts with "//" it is relative to the root of the repository,
+otherwise it is relative to the current file. The referred to file *must* be
+named OWNERS or end in a suffix of _OWNERS.
 
 Examples for all of these combinations can be found in tests/owners_unittest.py.
 """
@@ -172,8 +173,8 @@ class Database(object):
     """Returns a suggested set of reviewers that will cover the files.
 
     files is a sequence of paths relative to (and under) self.root.
-    If author is nonempty, we ensure it is not included in the set returned
-    in order avoid suggesting the author as a reviewer for their own changes."""
+    If author is nonempty, we ensure it is not included in the set returned in
+    order to avoid suggesting the author as a reviewer for their own changes."""
     self._check_paths(files)
     self.load_data_needed_for(files)
 
@@ -203,7 +204,7 @@ class Database(object):
       return self.os_path.abspath(self.os_path.join(pfx, f)).startswith(pfx)
     _assert_is_collection(files)
     assert all(not self.os_path.isabs(f) and
-                _is_under(f, self.os_path.abspath(self.root)) for f in files)
+               _is_under(f, self.os_path.abspath(self.root)) for f in files)
 
   def _check_reviewers(self, reviewers):
     _assert_is_collection(reviewers)
@@ -343,7 +344,7 @@ class Database(object):
       previous_line_was_blank = False
       if line == 'set noparent':
         self._stop_looking.setdefault(
-          self._get_root_affected_dir(dirpath), set()).add(dirpath)
+            self._get_root_affected_dir(dirpath), set()).add(dirpath)
         continue
 
       m = re.match('per-file (.+)=(.+)', line)
@@ -364,7 +365,7 @@ class Database(object):
 
       if line.startswith('set '):
         raise SyntaxErrorInOwnersFile(owners_path, lineno,
-            'unknown option: "%s"' % line[4:].strip())
+                                      'unknown option: "%s"' % line[4:].strip())
 
       self._add_entry(dirpath, line, owners_path, lineno,
                       ' '.join(comment + line_comment))
@@ -403,7 +404,7 @@ class Database(object):
         comment = m.group(2).strip()
         if not self.email_regexp.match(owner):
           raise SyntaxErrorInOwnersFile(owners_status_path, lineno,
-              'invalid email address: "%s"' % owner)
+                                        'invalid email address: "%s"' % owner)
 
         self.comments.setdefault(owner, {})
         self.comments[owner][GLOBAL_STATUS] = comment
@@ -415,27 +416,33 @@ class Database(object):
   def _add_entry(self, owned_paths, directive, owners_path, lineno, comment):
     if directive == 'set noparent':
       self._stop_looking.setdefault(
-        self._get_root_affected_dir(owned_paths), set()).add(owned_paths)
-    elif directive.startswith('file:'):
-      include_file = self._resolve_include(directive[5:], owners_path, lineno)
+          self._get_root_affected_dir(owned_paths), set()).add(owned_paths)
+    elif directive.startswith('file:') or directive.startswith('include '):
+      is_file_directive = directive.startswith('file:')
+      include_file = self._resolve_include(
+          (directive[5:] if is_file_directive else directive[8:]), owners_path,
+          lineno)
+
       if not include_file:
-        raise SyntaxErrorInOwnersFile(owners_path, lineno,
-            ('%s does not refer to an existing file.' % directive[5:]))
+        raise SyntaxErrorInOwnersFile(
+            owners_path, lineno,
+            ('%s does not refer to an existing file.' %
+             (directive[5:] if is_file_directive else directive[8:])))
 
       included_owners = self._read_just_the_owners(include_file)
       for owner in included_owners:
         self._owners_to_paths.setdefault(owner, set()).add(owned_paths)
         self._paths_to_owners.setdefault(
-          self._get_root_affected_dir(owned_paths), {}).setdefault(
-            owned_paths, set()).add(owner)
+            self._get_root_affected_dir(owned_paths),
+            {}).setdefault(owned_paths, set()).add(owner)
     elif self.email_regexp.match(directive) or directive == EVERYONE:
       if comment:
         self.comments.setdefault(directive, {})
         self.comments[directive][owned_paths] = comment
       self._owners_to_paths.setdefault(directive, set()).add(owned_paths)
       self._paths_to_owners.setdefault(
-        self._get_root_affected_dir(owned_paths), {}).setdefault(
-          owned_paths, set()).add(directive)
+          self._get_root_affected_dir(owned_paths),
+          {}).setdefault(owned_paths, set()).add(directive)
     else:
       raise SyntaxErrorInOwnersFile(owners_path, lineno,
           ('"%s" is not a "set noparent", file include, "*", '
@@ -453,12 +460,14 @@ class Database(object):
       return include_path
 
     owners_path = self.os_path.join(self.root, include_path)
-    # Paths included via "file:" must end in OWNERS or _OWNERS. Files that can
-    # affect ownership have a different set of ownership rules, so that users
-    # cannot self-approve changes adding themselves to an OWNERS file.
+    # Paths included via "file:" or "include " must end in OWNERS or _OWNERS.
+    # Files that can affect ownership have a different set of ownership rules,
+    # so that users cannot self-approve changes adding themselves to an OWNERS
+    # file.
     if not self._file_affects_ownership(owners_path):
-      raise SyntaxErrorInOwnersFile(start, lineno, 'file: include must specify '
-                                    'a file named OWNERS or ending in _OWNERS')
+      raise SyntaxErrorInOwnersFile(
+          start, lineno, '"file:" or "include " directive must specify '
+          'a file named OWNERS or ending in _OWNERS')
 
     if not self.os_path.exists(owners_path):
       return None
@@ -480,8 +489,7 @@ class Database(object):
       lineno += 1
       line = line.strip()
       if (line.startswith('#') or line == '' or
-              line.startswith('set noparent') or
-              line.startswith('per-file')):
+          line.startswith('set noparent') or line.startswith('per-file')):
         continue
 
       # If the line ends with a comment, strip the comment.
@@ -491,8 +499,10 @@ class Database(object):
       if self.email_regexp.match(line) or line == EVERYONE:
         owners.add(line)
         continue
-      if line.startswith('file:'):
-        sub_include_file = self._resolve_include(line[5:], include_file, lineno)
+      if line.startswith('file:') or line.startswith('include '):
+        sub_include_file = self._resolve_include(
+            line[5:] if line.startswith('file:') else line[8:], include_file,
+            lineno)
         sub_owners = self._read_just_the_owners(sub_include_file)
         owners.update(sub_owners)
         continue
@@ -522,11 +532,9 @@ class Database(object):
           all_possible_owners[o] = new_dirs
     return suggested_owners
 
-  def _all_possible_owners_for_dir_or_file(self, dir_or_file, author,
-                                           cache):
-    """Returns a dict of {potential owner: (dir_or_file, distance)} mappings.
-    """
-    assert not dir_or_file.startswith("/")
+  def _all_possible_owners_for_dir_or_file(self, dir_or_file, author, cache):
+    """Returns a dict of {potential owner: (dir_or_file, distance)} mappings."""
+    assert not dir_or_file.startswith('/')
     res = cache.get(dir_or_file)
     if res is None:
       res = {}
@@ -539,8 +547,8 @@ class Database(object):
       if not self._should_stop_looking(dirname):
         dirname = self.os_path.dirname(dirname)
 
-        parent_res = self._all_possible_owners_for_dir_or_file(dirname,
-                                                               author, cache)
+        parent_res = self._all_possible_owners_for_dir_or_file(
+            dirname, author, cache)
 
         # Merge the parent information with our information, adjusting
         # distances as necessary, and replacing the parent directory
@@ -568,13 +576,12 @@ class Database(object):
     all_possible_owners = {}
     for current_dir in dirs_and_files:
       dir_owners = self._all_possible_owners_for_dir_or_file(
-        current_dir, author,
-        all_possible_owners_for_dir_or_file_cache)
+          current_dir, author, all_possible_owners_for_dir_or_file_cache)
       for owner, dir_and_distance in dir_owners.items():
-          if owner in all_possible_owners:
-            all_possible_owners[owner].append(dir_and_distance)
-          else:
-            all_possible_owners[owner] = [dir_and_distance]
+        if owner in all_possible_owners:
+          all_possible_owners[owner].append(dir_and_distance)
+        else:
+          all_possible_owners[owner] = [dir_and_distance]
 
     return all_possible_owners
 
@@ -602,19 +609,19 @@ class Database(object):
           total_distance += distance
           num_directories_owned += 1
       if num_directories_owned:
-        result[owner] = (total_distance /
-                         pow(num_directories_owned, 1.75))
+        result[owner] = (total_distance / pow(num_directories_owned, 1.75))
     return result
 
   @staticmethod
   def lowest_cost_owner(all_possible_owners, dirs):
-    total_costs_by_owner = Database.total_costs_by_owner(all_possible_owners,
-                                                         dirs)
+    total_costs_by_owner = Database.total_costs_by_owner(
+        all_possible_owners, dirs)
     # Return the lowest cost owner. In the case of a tie, pick one randomly.
     lowest_cost = min(total_costs_by_owner.values())
     lowest_cost_owners = [
         owner for owner, cost in total_costs_by_owner.items()
-        if cost == lowest_cost]
+        if cost == lowest_cost
+    ]
     return random.Random().choice(lowest_cost_owners)
 
   def owners_rooted_at_file(self, filename):

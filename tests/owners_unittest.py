@@ -33,6 +33,8 @@ def owners_file(*email_addresses, **kwargs):
     s += 'set noparent\n'
   if kwargs.get('file'):
     s += 'file:%s\n' % kwargs.get('file')
+  if kwargs.get('include'):
+    s += 'include %s\n' % kwargs.get('include')
   if kwargs.get('lines'):
     s += '\n'.join(kwargs.get('lines', [])) + '\n'
   return s + '\n'.join(email_addresses) + '\n'
@@ -279,6 +281,14 @@ class OwnersDatabaseTest(_BaseTestCase):
     self.assert_files_not_covered_by(['content/qux/baz.cc'],
                                      [brett], ['content/qux/baz.cc'])
 
+    self.files['/content/qux/OWNERS'] = owners_file(peter,
+        lines=['per-file foo.*=include //content/baz/OWNERS'])
+
+    self.assert_files_not_covered_by(['content/qux/foo.cc'], [brett], [])
+    self.assert_files_not_covered_by(['content/qux/baz.cc'],
+                                     [brett], ['content/qux/baz.cc'])
+
+
   def test_file_include_per_file_relative_path(self):
     self.files['/content/garply/OWNERS'] = owners_file(brett,
         lines=['per-file foo.*=file:test/OWNERS'])
@@ -287,9 +297,21 @@ class OwnersDatabaseTest(_BaseTestCase):
     self.assert_files_not_covered_by(['content/garply/baz.cc'],
                                      [peter], ['content/garply/baz.cc'])
 
+    self.files['/content/garply/OWNERS'] = owners_file(brett,
+        lines=['per-file foo.*=include test/OWNERS'])
+
+    self.assert_files_not_covered_by(['content/garply/foo.cc'], [peter], [])
+    self.assert_files_not_covered_by(['content/garply/baz.cc'],
+                                     [peter], ['content/garply/baz.cc'])
+
+
   def test_file_include_recursive(self):
     self.files['/content/baz/OWNERS'] = owners_file(file='//chrome/gpu/OWNERS')
     self.assert_files_not_covered_by(['content/qux/foo.cc'], [ken], [])
+
+    self.files['/content/baz/OWNERS'] = owners_file(include='//chrome/gpu/OWNERS')
+    self.assert_files_not_covered_by(['content/qux/foo.cc'], [ken], [])
+
 
   def test_file_include_different_filename(self):
     # This tests that a file named something other than OWNERS is not treated
@@ -309,12 +331,23 @@ class OwnersDatabaseTest(_BaseTestCase):
         file='//content/qux/OWNERS')
     self.test_file_include_absolute_path()
 
+    self.files['/content/baz/OWNERS'] = owners_file(brett,
+        include='//content/qux/OWNERS')
+    self.test_file_include_absolute_path()
+
+
   def test_file_include_different_filename(self):
     self.files['/owners/GARPLY_OWNERS'] = owners_file(peter)
     self.files['/content/garply/OWNERS'] = owners_file(john,
         lines=['per-file foo.*=file://owners/GARPLY_OWNERS'])
 
     self.assert_files_not_covered_by(['content/garply/foo.cc'], [peter], [])
+
+    self.files['/content/garply/OWNERS'] = owners_file(john,
+        lines=['per-file foo.*=include //owners/GARPLY_OWNERS'])
+
+    self.assert_files_not_covered_by(['content/garply/foo.cc'], [peter], [])
+
 
   def test_file_include_invalid_filename(self):
     self.files['/base/SECURITY_REVIEWERS'] = owners_file(peter)
@@ -353,6 +386,12 @@ class OwnersDatabaseTest(_BaseTestCase):
 
   def test_syntax_error__invalid_relative_file(self):
     self.assert_syntax_error('file:foo/bar/OWNERS\n')
+
+  def test_syntax_error__invalid_absolute_include(self):
+    self.assert_syntax_error('include //foo/bar/OWNERS\n')
+
+  def test_syntax_error__invalid_relative_include(self):
+    self.assert_syntax_error('include foo/bar/OWNERS\n')
 
   def test_non_existant_status_file(self):
     db = self.db()
@@ -520,15 +559,32 @@ class ReviewersForTest(_BaseTestCase):
     self.assert_reviewers_for(['content/garply/bar.cc'],
                               [[brett]])
 
+    self.files['/content/garply/OWNERS'] = owners_file(brett,
+        lines=['per-file foo.*=include test/OWNERS'])
+
+    self.assert_reviewers_for(['content/garply/foo.cc'],
+                              [[brett], [peter]])
+    self.assert_reviewers_for(['content/garply/bar.cc'],
+                              [[brett]])
+
+
   def test_reviewers_file_includes__per_file_noparent(self):
     self.files['/content/garply/OWNERS'] = owners_file(brett,
-        lines=['per-file foo.*=set noparent',
-               'per-file foo.*=file:test/OWNERS'])
+        lines=['per-file foo.*=set noparent', 'per-file foo.*=file:test/OWNERS'])
 
     self.assert_reviewers_for(['content/garply/foo.cc'],
                               [[peter]])
     self.assert_reviewers_for(['content/garply/bar.cc'],
                               [[brett]])
+
+    self.files['/content/garply/OWNERS'] = owners_file(brett,
+        lines=['per-file foo.*=set noparent', 'per-file foo.*=include test/OWNERS'])
+
+    self.assert_reviewers_for(['content/garply/foo.cc'],
+                              [[peter]])
+    self.assert_reviewers_for(['content/garply/bar.cc'],
+                              [[brett]])
+
 
   def test_override_files(self):
       self.assert_reviewers_for(['content/baz/froboz.h'], [[jochen]],
@@ -537,7 +593,7 @@ class ReviewersForTest(_BaseTestCase):
                                 override_files={'content/baz/OWNERS': []})
       self.assert_reviewers_for(
           ['content/baz/froboz.h'], [[jochen]],
-          override_files={'content/baz/OWNERS': ['file://JOCHEN_OWNERS'],
+          override_files={'content/baz/OWNERS': ['file://JOCHEN_OWNERS', 'include //JOCHEN_OWNERS'],
                           'JOCHEN_OWNERS': [jochen]})
 
 

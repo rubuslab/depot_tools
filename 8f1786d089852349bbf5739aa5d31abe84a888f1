@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "15a709b8_6452697f",
+        "filename": "owners.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-12-16T19:38:44Z",
+      "side": 1,
+      "message": "Removed as suggested in the next comment.",
+      "parentUuid": "01b59d70_cecc1bc1",
+      "range": {
+        "startLine": 240,
+        "startChar": 6,
+        "endLine": 240,
+        "endChar": 23
+      },
+      "revId": "8f1786d089852349bbf5739aa5d31abe84a888f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d3377577_af03aee7",
         "filename": "owners.py",
         "patchSetId": 3
@@ -69,6 +93,30 @@
       "revId": "8f1786d089852349bbf5739aa5d31abe84a888f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7939507_9045cbc2",
+        "filename": "owners.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2019-12-16T19:38:44Z",
+      "side": 1,
+      "message": "That makes sense. Fewer branches equals fewer bugs, and f.replace(os.sep, \u0027/\u0027) will be a NOP on non-Windows platforms.",
+      "parentUuid": "b4f6d43f_c712b4fd",
+      "range": {
+        "startLine": 241,
+        "startChar": 8,
+        "endLine": 241,
+        "endChar": 32
+      },
+      "revId": "8f1786d089852349bbf5739aa5d31abe84a888f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

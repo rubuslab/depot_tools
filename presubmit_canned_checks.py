@@ -975,8 +975,9 @@ def CheckBuildbotPendingBuilds(input_api, output_api, url, max_pendings,
 
 
 def CheckOwnersFormat(input_api, output_api):
+  # Always use slashes as separators.
   affected_files = set([
-      f.LocalPath()
+      f.LocalPath().replace(_os.sep, '/')
       for f in input_api.change.AffectedFiles()
       if 'OWNERS' in f.LocalPath() and f.Action() != 'D'
   ])
@@ -993,7 +994,8 @@ def CheckOwnersFormat(input_api, output_api):
 
 
 def CheckOwners(input_api, output_api, source_file_filter=None):
-  affected_files = set([f.LocalPath() for f in
+  # Always use slashes as separators.
+  affected_files = set([f.LocalPath().replace(_os.sep, '/') for f in
       input_api.change.AffectedFiles(file_filter=source_file_filter)])
   owners_db = input_api.owners_db
   owners_db.override_files = input_api.change.OriginalOwnersFiles()
@@ -1474,7 +1476,7 @@ def CheckChangedLUCIConfigs(input_api, output_api):
         long_text='\n'.join(warning_long_text_lines))]
   cs_to_files = collections.defaultdict(list)
   for f in input_api.AffectedFiles(include_deletes=False):
-    # windows
+    # Always use slashes as separators.
     file_path = f.LocalPath().replace(_os.sep, '/')
     logging.debug('Affected file path: %s', file_path)
     for dr, cs in dir_to_config_set.items():

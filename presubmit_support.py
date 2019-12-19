@@ -64,6 +64,10 @@ else:
 _ASKED_FOR_FEEDBACK = False
 
 
+class TimeoutException(Exception):
+  pass
+
+
 class PresubmitFailure(Exception):
   pass
 
@@ -137,8 +141,29 @@ class SigintHandler(object):
 sigint_handler = SigintHandler()
 
 
+class Timer(object):
+  def __init__(self, timeout, fn):
+    self.completed = False
+    self._fn = fn
+    self._timer = threading.Timer(timeout, self._onTimer) if timeout else None
+
+  def __enter__(self):
+    if self._timer:
+      self._timer.start()
+    return self
+
+  def __exit__(self, _type, _value, _traceback):
+    if self._timer:
+      self._timer.cancel()
+
+  def _onTimer(self):
+    self._fn()
+    self.completed = True
+
+
 class ThreadPool(object):
-  def __init__(self, pool_size=None):
+  def __init__(self, pool_size=None, timeout=None):
+    self.timeout = timeout
     self._pool_size = pool_size or multiprocessing.cpu_count()
     self._messages = []
     self._messages_lock = threading.Lock()
@@ -146,12 +171,7 @@ class ThreadPool(object):
     self._tests_lock = threading.Lock()
     self._nonparallel_tests = []
 
-  def CallCommand(self, test):
-    """Runs an external program.
-
-    This function converts invocation of .py files and invocations of "python"
-    to vpython invocations.
-    """
+  def _GetCommand(self, test):
     vpython = 'vpython'
     if test.python3:
       vpython += '3'
@@ -176,10 +196,26 @@ class ThreadPool(object):
       test.kwargs['cwd'] = os.path.dirname(test.kwargs['cwd'])
       cmd[1] = os.path.join('depot_tools', cmd[1])
 
+    return cmd
+
+  def _RunWithTimeout(self, cmd, stdin, kwargs):
+    p = subprocess.Popen(cmd, **kwargs)
+    with Timer(self.timeout, p.terminate) as timer:
+      stdout, _ = sigint_handler.wait(p, stdin)
+      if timer.completed:
+        stdout = 'Process timed out after %ss\n%s' % (self.timeout, stdout)
+      return p.returncode, stdout
+
+  def CallCommand(self, test):
+    """Runs an external program.
+
+    This function converts invocation of .py files and invocations of "python"
+    to vpython invocations.
+    """
+    cmd = self._GetCommand(test)
     try:
       start = time.time()
-      p = subprocess.Popen(cmd, **test.kwargs)
-      stdout, _ = sigint_handler.wait(p, test.stdin)
+      returncode, stdout = self._RunWithTimeout(cmd, test.stdin, test.kwargs)
       duration = time.time() - start
     except Exception:
       duration = time.time() - start
@@ -187,10 +223,11 @@ class ThreadPool(object):
           '%s\n%s exec failure (%4.2fs)\n%s' % (
               test.name, ' '.join(cmd), duration, traceback.format_exc()))
 
-    if p.returncode != 0:
+    if returncode != 0:
       return test.message(
           '%s\n%s (%4.2fs) failed\n%s' % (
               test.name, ' '.join(cmd), duration, stdout))
+
     if test.info:
       return test.info('%s\n%s (%4.2fs)' % (test.name, ' '.join(cmd), duration))
 
@@ -604,6 +641,9 @@ class InputApi(object):
         if header in ('<hash_map>', '<hash_set>') else (a, b, header)
       for (a, b, header) in cpplint._re_pattern_templates
     ]
+
+  def SetTimeout(self, timeout):
+    self.thread_pool.timeout = timeout
 
   def PresubmitLocalPath(self):
     """Returns the local path of the presubmit script currently being run.

@@ -21,11 +21,21 @@ import tempfile
 import time
 import unittest
 
+if sys.version_info.major == 2:
+  from cStringIO import StringIO
+  import mock
+  import urllib2 as urllib_request
+  BUILTIN_OPEN = '__builtin__.open'
+else:
+  from io import StringIO
+  from unittest import mock
+  import urllib.request as urllib_request
+  BUILTIN_OPEN = 'builtins.open'
+
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _ROOT)
 
 from testing_support.test_case_utils import TestCaseUtils
-from third_party import mock
 
 import auth
 import gclient_utils
@@ -38,14 +48,6 @@ import presubmit_support as presubmit
 import scm
 import subprocess2 as subprocess
 
-if sys.version_info.major == 2:
-  from cStringIO import StringIO
-  import urllib2 as urllib_request
-  BUILTIN_OPEN = '__builtin__.open'
-else:
-  from io import StringIO
-  import urllib.request as urllib_request
-  BUILTIN_OPEN = 'builtins.open'
 
 # Shortcut.
 presubmit_canned_checks = presubmit.presubmit_canned_checks

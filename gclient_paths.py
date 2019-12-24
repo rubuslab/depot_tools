@@ -47,7 +47,7 @@ def FindGclientRoot(from_dir, filename='.gclient'):
     except SyntaxError as e:
       SyntaxErrorToError(filename, e)
     all_directories = scope['entries'].keys()
-    path_to_check = real_from_dir[len(path)+1:]
+    path_to_check = os.path.relpath(real_from_dir, path)
     while path_to_check:
       if path_to_check in all_directories:
         return path

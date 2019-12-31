@@ -2947,8 +2947,8 @@ class ChangeDescription(object):
       '# Enter a description of the change.',
       '# This will be displayed on the codereview site.',
       '# The first line will also be used as the subject of the review.',
-      '#--------------------This line is 72 characters long'
-      '--------------------',
+      '#------------------------This line is 80 characters long'
+      '------------------------',
     ] + self._description_lines)
     bug_regexp = re.compile(self.BUG_LINE)
     fixed_regexp = re.compile(self.FIXED_LINE)

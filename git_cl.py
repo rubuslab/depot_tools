@@ -5133,6 +5133,19 @@ def CMDformat(parser, args):
   parser.add_option('--dry-run', action='store_true',
                     help='Don\'t modify any file on disk.')
   parser.add_option(
+      '--clang-format',
+      action='store_true',
+      default=True,
+      help='Enables formatting of various file types using clang-format. '
+      '(default)')
+  parser.add_option(
+      '--no-clang-format',
+      action='store_false',
+      dest='clang_format',
+      help='Disables formatting of various file types using clang-format. '
+      'If both --clang and --no-clang are set, '
+      'whichever is set last takes precedence.')
+  parser.add_option(
       '--python',
       action='store_true',
       default=None,
@@ -5146,7 +5159,8 @@ def CMDformat(parser, args):
       '.style.yapf file in an ancestor directory will be formatted. '
       'If both are set, whichever is set last takes precedence.')
   parser.add_option('--js', action='store_true',
-                    help='Format javascript code with clang-format.')
+                    help='Format javascript code with clang-format. '
+                    'Has no effect unless clang-format is set.')
   parser.add_option('--diff', action='store_true',
                     help='Print diff to stdout rather than modifying files.')
   parser.add_option('--presubmit', action='store_true',
@@ -5187,7 +5201,9 @@ def CMDformat(parser, args):
   if opts.js:
     CLANG_EXTS.extend(['.js', '.ts'])
 
-  clang_diff_files = [x for x in diff_files if MatchingFileType(x, CLANG_EXTS)]
+  clang_diff_files = ([
+      x for x in diff_files if MatchingFileType(x, CLANG_EXTS)
+  ] if opts.clang_format else [])
   python_diff_files = [x for x in diff_files if MatchingFileType(x, ['.py'])]
   dart_diff_files = [x for x in diff_files if MatchingFileType(x, ['.dart'])]
   gn_diff_files = [x for x in diff_files if MatchingFileType(x, GN_EXTS)]

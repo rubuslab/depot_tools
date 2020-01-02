@@ -5139,13 +5139,12 @@ def CMDformat(parser, args):
       help='Enables python formatting on all python files.')
   parser.add_option(
       '--no-python',
-      action='store_true',
+      action='store_false',
       dest='python',
       help='Disables python formatting on all python files. '
-      'Takes precedence over --python. '
-      'If neither --python or --no-python are set, python '
-      'files that have a .style.yapf file in an ancestor '
-      'directory will be formatted.')
+      'If neither --python or --no-python are set, python files that have a '
+      '.style.yapf file in an ancestor directory will be formatted. '
+      'If both are set, whichever is set last takes precedence.')
   parser.add_option('--js', action='store_true',
                     help='Format javascript code with clang-format.')
   parser.add_option('--diff', action='store_true',

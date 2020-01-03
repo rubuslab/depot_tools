@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3602e868_94f08d5b",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 5204,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-01-03T23:01:47Z",
+      "side": 1,
+      "message": "Please rewrite, I find it easy to gloss over.\n\n  clang_diff_files \u003d []\n  if opts.clang_format:\n    clang_diff_files \u003d [x for ...]",
+      "range": {
+        "startLine": 5204,
+        "startChar": 3,
+        "endLine": 5204,
+        "endChar": 33
+      },
+      "revId": "c9e2df0123f37e3ce133d08335afffcfdc29d098",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

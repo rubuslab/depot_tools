@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be01c0d7_75d1aa2a",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-01-06T20:46:46Z",
+      "side": 1,
+      "message": "Why don\u0027t we simply avoid processing master?\n\n  if branch !\u003d \u0027master\u0027 and ...",
+      "range": {
+        "startLine": 99,
+        "startChar": 6,
+        "endLine": 99,
+        "endChar": 7
+      },
+      "revId": "0dbf12ee773dae6a8c51bec3b3e8bf1c25764096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e6aa115_ce77ad2c",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-01-06T20:46:46Z",
+      "side": 1,
+      "message": "If you think we should re-parent downstream branches to origin/master instead of master, we can make this conditional instead:\n\n  if branch !\u003d \u0027master\u0027:\n    deletions[branch] \u003d len(deletions)",
+      "range": {
+        "startLine": 107,
+        "startChar": 6,
+        "endLine": 107,
+        "endChar": 40
+      },
+      "revId": "0dbf12ee773dae6a8c51bec3b3e8bf1c25764096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bdcda28_71e37271",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-01-06T20:46:46Z",
+      "side": 1,
+      "message": "deletions[branch] is a number, while reparents[branch] is a (int, branch, branch) tuple, so I don\u0027t think this would work.",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 126,
+        "endChar": 45
+      },
+      "revId": "0dbf12ee773dae6a8c51bec3b3e8bf1c25764096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

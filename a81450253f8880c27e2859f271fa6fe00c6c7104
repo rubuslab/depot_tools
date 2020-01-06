@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74b935d5_9071ace4",
+        "filename": "git_hyper_blame.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-01-06T22:17:14Z",
+      "side": 0,
+      "message": "This is always passed.",
+      "range": {
+        "startLine": 98,
+        "startChar": 28,
+        "endLine": 98,
+        "endChar": 33
+      },
+      "revId": "a81450253f8880c27e2859f271fa6fe00c6c7104",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c77e2179_c3a33521",
+        "filename": "git_hyper_blame.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-01-06T22:17:14Z",
+      "side": 0,
+      "message": "This is always passed.",
+      "range": {
+        "startLine": 262,
+        "startChar": 43,
+        "endLine": 262,
+        "endChar": 50
+      },
+      "revId": "a81450253f8880c27e2859f271fa6fe00c6c7104",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e93eef49_a0df4dfb",
+        "filename": "git_hyper_blame.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-01-06T22:17:14Z",
+      "side": 0,
+      "message": "argparse.FileType opens a file which is never closed.",
+      "range": {
+        "startLine": 347,
+        "startChar": 22,
+        "endLine": 347,
+        "endChar": 49
+      },
+      "revId": "a81450253f8880c27e2859f271fa6fe00c6c7104",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

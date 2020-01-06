@@ -120,6 +120,12 @@ def remove_empty_branches(branch_tree):
           order, _, old_parent = reparents[down]
           reparents[down] = (order, parent, old_parent)
 
+  # Reparent master instead of deleting, to make sure downstream clone maintains
+  # a master branch
+  if 'master' in deletions:
+    reparents['master'] = deletions['master']
+    del deletions['master']
+
   # Apply all reparenting recorded, in order.
   for branch, value in sorted(reparents.items(), key=lambda x:x[1][0]):
     _, parent, old_parent = value

@@ -39,6 +39,10 @@ import subprocess2
 from io import BytesIO
 
 
+if sys.version_info.major == 2:
+  BrokenPipeError = IOError
+
+
 ROOT = os.path.abspath(os.path.dirname(__file__))
 IS_WIN = sys.platform == 'win32'
 TEST_MODE = False
@@ -683,6 +687,8 @@ def less():  # pragma: no cover
 
   Automatically checks if sys.stdout is a non-TTY stream. If so, it avoids
   running less and just yields sys.stdout.
+
+  The returned PIPE is opened on binary mode.
   """
   if not setup_color.IS_TTY:
     # On Python 3, sys.stdout doesn't accept bytes, and sys.stdout.buffer must
@@ -699,7 +705,10 @@ def less():  # pragma: no cover
     proc = subprocess2.Popen(cmd, stdin=subprocess2.PIPE)
     yield proc.stdin
   finally:
-    proc.stdin.close()
+    try:
+      proc.stdin.close()
+    except BrokenPipeError:
+      pass
     proc.wait()
 
 

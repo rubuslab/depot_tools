@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1596b38f_ddffedef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1330864
+      },
+      "writtenOn": "2020-01-07T00:29:00Z",
+      "side": 1,
+      "message": "FYI this isn\u0027t completely true; the autoninja shell script calls directly out to some python files at https://cs.chromium.org/chromium/tools/depot_tools/autoninja?q\u003dautoninja\u0026sq\u003dpackage:chromium\u0026g\u003d0\u0026l\u003d27, and that ends up trying to use third_party/httplib2 explicitly at https://cs.chromium.org/chromium/tools/depot_tools/ninjalog_uploader.py?sq\u003dpackage:chromium\u0026g\u003d0\u0026l\u003d32\n\nWe saw this where some stale .pyc files were picked up and it almost worked except it failed to find the cacerts.txt file that this CR removes.",
+      "revId": "7fd6347be3a19304f38b663de63dc81b5708e282",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

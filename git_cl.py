@@ -5231,6 +5231,8 @@ def CMDformat(parser, args):
       stdout = RunCommand(cmd + clang_diff_files, cwd=top_dir)
       if opts.diff:
         sys.stdout.write(stdout)
+      if opts.dry_run and len(stdout) > 0:
+        return_value = 2
     else:
       env = os.environ.copy()
       env['PATH'] = str(os.path.dirname(clang_format_tool))

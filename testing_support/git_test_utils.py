@@ -1,6 +1,7 @@
 # Copyright 2013 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
+from __future__ import unicode_literals
 
 import atexit
 import collections
@@ -485,7 +486,10 @@ class GitRepoSchemaTestBase(unittest.TestCase):
 
   @classmethod
   def getRepoContent(cls, commit):
-    return getattr(cls, 'COMMIT_%s' % commit, None)
+    commit = 'COMMIT_%s' % commit
+    if sys.version_info.major == 2:
+      commit = commit.encode('utf-8')
+    return getattr(cls, commit, None)
 
   @classmethod
   def setUpClass(cls):

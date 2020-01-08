@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "384cce7a_6fc87fce",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5352,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2020-01-08T21:10:41Z",
+      "side": 1,
+      "message": "unrelated - was necessary to pass the presubmit linter.",
+      "range": {
+        "startLine": 5352,
+        "startChar": 12,
+        "endLine": 5352,
+        "endChar": 37
+      },
+      "revId": "9c4f150a5128c4ff25e9456cd7a42c4d3aea39c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

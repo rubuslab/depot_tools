@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ecda9cf_ba0edd13",
+        "filename": "autoninja.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2020-01-08T23:19:29Z",
+      "side": 0,
+      "message": "why do you stop using call?",
+      "revId": "a81450253f8880c27e2859f271fa6fe00c6c7104",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

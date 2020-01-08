@@ -32,6 +32,7 @@ import metrics
 # We have to disable monitoring before importing git_cl.
 metrics.DISABLE_METRICS_COLLECTION = True
 
+import clang_format
 import gerrit_util
 import git_cl
 import git_common
@@ -3447,13 +3448,56 @@ class CMDFormatTestCase(TestCase):
     shutil.rmtree(self._top_dir)
     super(CMDFormatTestCase, self).tearDown()
 
+  def _make_temp_file(self, fname, contents):
+    with open(os.path.join(self._top_dir, fname), 'w') as tf:
+      tf.write('\n'.join(contents))
+
   def _make_yapfignore(self, contents):
-    with open(os.path.join(self._top_dir, '.yapfignore'), 'w') as yapfignore:
-      yapfignore.write('\n'.join(contents))
+    self._make_temp_file('.yapfignore', contents)
 
   def _check_yapf_filtering(self, files, expected):
     self.assertEqual(expected, git_cl._FilterYapfIgnoredFiles(
         files, git_cl._GetYapfIgnorePatterns(self._top_dir)))
+
+  def testClangFormatDiffReturnValue(self):
+    def mock_run_git(*args, **_kwargs):
+      return "mock git output"
+
+    def mock_run_command(*args, **_kwargs):
+      return "mock command output"
+
+    def MakeOptionsMock(full, dry_run):
+      class MockOptions(object):
+        def __init__(self, *args, **kwargs):
+          self.full = full
+          self.dry_run = dry_run
+          self.diff = False
+
+      return MockOptions()
+
+    def MakeSettingsMock():
+      class MockSettings(object):
+        def __init__(self, *args, **kwargs):
+          pass
+
+        def GetFormatFullByDefault(self):
+          return False
+
+      return MockSettings()
+
+    self.mock(git_cl, 'RunGit', mock_run_git)
+    self.mock(git_cl, 'RunCommand', mock_run_command)
+    self.mock(clang_format, 'FindClangFormatToolInChromiumTree',
+              lambda: 'mock-clang-format')
+    self.mock(clang_format, 'FindClangFormatScriptInChromiumTree',
+              lambda _: 'mock-clang-format.py')
+    git_cl.settings = MakeSettingsMock()
+    return_value = git_cl._RunClangFormatDiff(
+        MakeOptionsMock(True, True), ['.'], self._top_dir, 'HEAD')
+    self.assertEqual(2, return_value)
+    return_value = git_cl._RunClangFormatDiff(
+        MakeOptionsMock(False, True), ['.'], self._top_dir, 'HEAD')
+    self.assertEqual(2, return_value)
 
   def testYapfignoreExplicit(self):
     self._make_yapfignore(['foo/bar.py', 'foo/bar/baz.py'])

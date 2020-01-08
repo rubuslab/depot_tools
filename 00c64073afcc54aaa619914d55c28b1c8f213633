@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23e80dbe_2069500e",
+        "filename": "tests/gclient_paths_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-01-08T19:04:15Z",
+      "side": 1,
+      "message": "Nit for scanability that is way not worth the amount of writing I\u0027m about to do here:\n\nYou never call this without self.root as the first argument, and the converstion from dict(string-tuple: content) -\u003e dict(string-\u003estring) is a bit awkward.\n\nwhy not \n\nmake_file_tree(self, file_tree):  # or whatever name\n  return {os.path.join(self.root, path): content for path, content in file_tree.items()}\n\nthen:\n\nself.file_tree \u003d self.make_file_tree({\u0027.gclient\u0027: \u0027\u0027, \u0027.gclient_entries\u0027: \u0027...\u0027}) etc?\n\nand for cases that have multiple paths in the file_tree something like\n\nself.file_tree \u003d self.make_file_tree({os.path.join(\u0027src\u0027, \u0027buildtools\u0027): \u0027...\u0027, ...})\n\nmakes the tests clearer",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 34
+      },
+      "revId": "00c64073afcc54aaa619914d55c28b1c8f213633",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 # Copyright 2013 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
+from __future__ import unicode_literals
 
 import atexit
 import collections
@@ -9,10 +10,15 @@ import datetime
 import hashlib
 import os
 import shutil
-import subprocess
 import sys
 import tempfile
 import unittest
+
+
+DEPOT_TOOLS_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, DEPOT_TOOLS_ROOT)
+
+import subprocess2
 
 
 if sys.version_info.major == 3:
@@ -382,11 +388,11 @@ class GitRepo(object):
     assert self.repo_path is not None
     try:
       with open(os.devnull, 'wb') as devnull:
-        output = subprocess.check_output(
+        output = subprocess2.check_output(
           ('git',) + args, cwd=self.repo_path, stderr=devnull, **kwargs)
         output = output.decode('utf-8')
       return self.COMMAND_OUTPUT(0, output)
-    except subprocess.CalledProcessError as e:
+    except subprocess2.CalledProcessError as e:
       return self.COMMAND_OUTPUT(e.returncode, e.output)
 
   def show_commit(self, commit_name, format_string):
@@ -485,7 +491,10 @@ class GitRepoSchemaTestBase(unittest.TestCase):
 
   @classmethod
   def getRepoContent(cls, commit):
-    return getattr(cls, 'COMMIT_%s' % commit, None)
+    commit = 'COMMIT_%s' % commit
+    if sys.version_info.major == 2:
+      commit = commit.encode('utf-8')
+    return getattr(cls, commit, None)
 
   @classmethod
   def setUpClass(cls):

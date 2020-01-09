@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f66de5c8_a0646a00",
+        "filename": "git_map.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-01-09T00:25:33Z",
+      "side": 1,
+      "message": "why do you do this twice?",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 39
+      },
+      "revId": "97e007ab77980ccb17b3197632b60c07ec6e8316",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5843a31f_4c15762c",
+        "filename": "git_map.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-01-09T00:25:33Z",
+      "side": 1,
+      "message": "nit: why not just \n\nfor merge_base, branches in merge_base_map.items():\n  merge_base_map[merge_base] \u003d \u0027, \u0027.join(branches)",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 3
+      },
+      "revId": "97e007ab77980ccb17b3197632b60c07ec6e8316",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

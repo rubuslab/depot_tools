@@ -851,6 +851,10 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
                 input_api.change.RepositoryRoot()):
       return regex
 
+    presubmit_local_path = input_api.PresubmitLocalPath()
+    if input_api.platform == 'win32':
+      presubmit_local_path = input_api.os_path.dirname(presubmit_local_path)
+
     prefix = input_api.os_path.join(input_api.os_path.relpath(
         input_api.PresubmitLocalPath(), input_api.change.RepositoryRoot()), '')
     return input_api.re.escape(prefix) + regex
@@ -885,7 +889,9 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
     # the interpreter to use. It also has limitations on the size of
     # the command-line, so we pass arguments via a pipe.
     tool = input_api.os_path.join(_HERE, 'pylint')
+    cwd = _HERE
     if input_api.platform == 'win32':
+      cwd = input_api.os_path.dirname(_HERE)
       tool += '.bat'
     cmd = [tool, '--args-on-stdin']
     if len(flist) == 1:
@@ -904,7 +910,7 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
     return input_api.Command(
         name='Pylint (%s)' % description,
         cmd=cmd,
-        kwargs={'env': env, 'stdin': '\n'.join(args + flist)},
+        kwargs={'env': env, 'stdin': '\n'.join(args + flist), 'cwd': cwd},
         message=error_type)
 
   # Always run pylint and pass it all the py files at once.

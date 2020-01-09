@@ -884,7 +884,8 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
     # Windows needs help running python files so we explicitly specify
     # the interpreter to use. It also has limitations on the size of
     # the command-line, so we pass arguments via a pipe.
-    tool = input_api.os_path.join(_HERE, 'pylint')
+    cwd = input_api.os_path.dirname(_HERE)
+    tool = input_api.os_path.join(cwd, 'depot_tools', 'pylint')
     if input_api.platform == 'win32':
       tool += '.bat'
     cmd = [tool, '--args-on-stdin']
@@ -904,7 +905,7 @@ def GetPylint(input_api, output_api, white_list=None, black_list=None,
     return input_api.Command(
         name='Pylint (%s)' % description,
         cmd=cmd,
-        kwargs={'env': env, 'stdin': '\n'.join(args + flist)},
+        kwargs={'env': env, 'stdin': '\n'.join(args + flist), cwd=cwd},
         message=error_type)
 
   # Always run pylint and pass it all the py files at once.

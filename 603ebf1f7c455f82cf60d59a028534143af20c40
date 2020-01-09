@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "048edd53_c7f1a3b2",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3448,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-01-09T22:36:18Z",
+      "side": 1,
+      "message": "Nit: Doesn\u0027t mock.patch(\u0027git_cl.settings\u0027).start() work?",
+      "range": {
+        "startLine": 3448,
+        "startChar": 4,
+        "endLine": 3448,
+        "endChar": 33
+      },
+      "revId": "603ebf1f7c455f82cf60d59a028534143af20c40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

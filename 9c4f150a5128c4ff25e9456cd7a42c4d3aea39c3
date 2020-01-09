@@ -22,6 +22,29 @@
       "revId": "9c4f150a5128c4ff25e9456cd7a42c4d3aea39c3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96653000_470358cb",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3488,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-01-09T19:25:56Z",
+      "side": 1,
+      "message": "Please use mock.patch instead:\n\n  def setUp(self):\n    mock.patch(\u0027git_cl.RunCommand\u0027).start()\n    mock.patch(\u0027clang_format.FindClangFormatToolInChromiumTree\u0027).start()\n    ...\n    self.addCleanup(mock.patch.stopall)\n\n  def testClangFormatDiff(self):\n    git_cl.RunCommand.return_value \u003d \u0027error\u0027\n    git_cl.settings.GetFormatFullByDefault.return_value \u003d False\n    return_value \u003d git_cl._RunClangFormatDiff(\n         mock.Mock(full\u003dTrue, dry_run\u003dTrue, diff\u003dFalse), [\u0027.\u0027], self._top_dir, \u0027HEAD\u0027)\n    self.assertEqual(2, return_value)\n\nAnd please add tests for when it succeeds too",
+      "range": {
+        "startLine": 3488,
+        "startChar": 4,
+        "endLine": 3488,
+        "endChar": 13
+      },
+      "revId": "9c4f150a5128c4ff25e9456cd7a42c4d3aea39c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

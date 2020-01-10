@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb9414da_43cc2370",
+        "filename": "split_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1275693
+      },
+      "writtenOn": "2020-01-10T18:02:52Z",
+      "side": 1,
+      "message": "To fix presubmit: description_lines \u003d FormatDescriptionOrComment(description, directory, cl_index, num_cls).splitlines()",
+      "revId": "bf7cb081939263f93d444f3a5a97b7e9319f9e48",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

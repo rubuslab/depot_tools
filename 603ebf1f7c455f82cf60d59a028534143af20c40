@@ -22,6 +22,30 @@
       "revId": "603ebf1f7c455f82cf60d59a028534143af20c40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "605c900d_ccb7d175",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3448,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2020-01-10T16:23:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "048edd53_c7f1a3b2",
+      "range": {
+        "startLine": 3448,
+        "startChar": 4,
+        "endLine": 3448,
+        "endChar": 33
+      },
+      "revId": "603ebf1f7c455f82cf60d59a028534143af20c40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

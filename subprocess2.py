@@ -96,6 +96,18 @@ def get_english_env(env):
   return env
 
 
+def ensure_bytes(value):
+  if isinstance(value, unicode):
+    return value.encode('utf-8')
+  return value
+
+
+def ensure_str(value):
+  if isinstance(value, bytes):
+    return value.decode()
+  return value
+
+
 class Popen(subprocess.Popen):
   """Wraps subprocess.Popen() with various workarounds.
 
@@ -121,6 +133,11 @@ class Popen(subprocess.Popen):
     env = get_english_env(kwargs.get('env'))
     if env:
       kwargs['env'] = env
+    if kwargs.get('env') is not None:
+      # Ensure all keys and values are bytestrings in Py2 and strings in Py3.
+      # This for compatibility between the two.
+      ensure = ensure_bytes if sys.version_info.major < 3 else ensure_str
+      kwargs['env'] = {ensure(k): ensure(v) for k, v in kwargs['env'].items()}
     if kwargs.get('shell') is None:
       # *Sigh*:  Windows needs shell=True, or else it won't search %PATH% for
       # the executable, but shell=True makes subprocess on Linux fail when it's

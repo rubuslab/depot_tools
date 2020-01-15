@@ -22,6 +22,30 @@
       "revId": "b74a20a03b81ca907f01da8fabdbb32b61559c50",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e4c0067_ebb6f947",
+        "filename": "tests/subprocess2_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2020-01-15T19:16:51Z",
+      "side": 1,
+      "message": "Replaced with mock.ANY.",
+      "parentUuid": "ce5728c4_92e1f552",
+      "range": {
+        "startLine": 88,
+        "startChar": 72,
+        "endLine": 88,
+        "endChar": 76
+      },
+      "revId": "b74a20a03b81ca907f01da8fabdbb32b61559c50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

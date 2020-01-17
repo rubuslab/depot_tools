@@ -1091,6 +1091,20 @@ class Change(object):
     self._description_without_tags = (
         '\n'.join(description_without_tags).rstrip())
 
+  def AddDescriptionFooters(self, footers):
+    """Adds the given footers to the change description.
+
+    Args:
+      footers: A list of (key, value) footers to be added. Key must conform to
+        the git footers format (i.e. 'List-Of-Tokens') and will be case
+        normalized so that each token is title-cased.
+    """
+    description = self.FullDescriptionText()
+    for key, value in footers:
+      description = git_footers.add_footer(
+          description, git_footers.normalize_name(key), value)
+    self.SetDescriptionText(description)
+
   def RepositoryRoot(self):
     """Returns the repository (checkout) root directory for this change,
     as an absolute path.
@@ -1103,11 +1117,20 @@ class Change(object):
       raise AttributeError(self, attr)
     return self.tags.get(attr)
 
+  def GitFootersFromDescription(self):
+    """Return the git footers present in the description.
+
+    Returns:
+      footers: A dict of {footer: [values]} containing a multimap of the footers
+        in the change description.
+    """
+    return git_footers.parse_footers(self.FullDescriptionText())
+
   def BugsFromDescription(self):
     """Returns all bugs referenced in the commit description."""
     tags = [b.strip() for b in self.tags.get('BUG', '').split(',') if b.strip()]
     footers = []
-    parsed = git_footers.parse_footers(self._full_description)
+    parsed = self.GitFootersFromDescription()
     unsplit_footers = parsed.get('Bug', []) + parsed.get('Fixed', [])
     for unsplit_footer in unsplit_footers:
       footers += [b.strip() for b in unsplit_footer.split(',')]
@@ -1124,7 +1147,7 @@ class Change(object):
     tags = [r.strip() for r in self.tags.get('TBR', '').split(',') if r.strip()]
     # TODO(agable): Remove support for 'Tbr:' when TBRs are programmatically
     # determined by self-CR+1s.
-    footers = git_footers.parse_footers(self._full_description).get('Tbr', [])
+    footers = self.GitFootersFromDescription().get('Tbr', [])
     return sorted(set(tags + footers))
 
   # TODO(agable): Delete these once we're sure they're unused.

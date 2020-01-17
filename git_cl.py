@@ -1601,10 +1601,10 @@ class Changelist(object):
       if settings.GetRunPostUploadHook():
         presubmit_support.DoPostUploadExecuter(
             change,
-            self,
             settings.GetRoot(),
             options.verbose,
-            sys.stdout)
+            sys.stdout,
+            self.GetGerritObjForPresubmit())
 
       # Upload all dependencies if specified.
       if options.dependencies:

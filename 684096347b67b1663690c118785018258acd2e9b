@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e79978d_683f6488",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2020-01-23T18:43:44Z",
+      "side": 1,
+      "message": "A diff of 1000 bytes is going to be something like a diff of 25 lines? (assuming 40ish characters per line on average.) I guess that might be reasonable when the change is just changing one method name for another, but if the refactoring is any larger (e.g. changes indentation) this seems like it will guarantee CLs with one file each.",
+      "revId": "684096347b67b1663690c118785018258acd2e9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

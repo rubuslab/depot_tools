@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6552de95_5dca4dec",
+        "filename": "infra/config/recipes.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-01-23T21:50:03Z",
+      "side": 1,
+      "message": "ah, missing comma!",
+      "revId": "1f47a052b9736b9ac11aba6050fe44bb8c8f348c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

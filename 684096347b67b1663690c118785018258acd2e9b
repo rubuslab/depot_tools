@@ -16,6 +16,24 @@
       "revId": "684096347b67b1663690c118785018258acd2e9b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb5b354f_b18373bc",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1234245
+      },
+      "writtenOn": "2020-01-23T19:24:55Z",
+      "side": 1,
+      "message": "Thanks for mentioning this, yeah, finding the best way to split a change into multiple CLs highly depends on the nature of the change. Having multiple modes how git cl split can splits CLs could be a good idea (# changed lines, # files per CL, ?).\n\nHowever, I had another look at the diff format, and it seems like I misinterpreted the change size to be in bytes rather than ~affected lines.\n\n(from https://en.wikipedia.org/wiki/Diff#Unified_format)\n@@ -l,s +l,s @@ optional section heading\n\n... Each hunk range is of the format l,s where l is the starting line number and s is the number of lines the change hunk applies to for each respective file. ...\n\n\nI\u0027ll submit a followup to change the comment / method names when I verified with a real CL.",
+      "parentUuid": "0e79978d_683f6488",
+      "revId": "684096347b67b1663690c118785018258acd2e9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

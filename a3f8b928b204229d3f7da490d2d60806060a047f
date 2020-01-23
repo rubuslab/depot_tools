@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebeea09f_711168ae",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-01-23T21:59:44Z",
+      "side": 1,
+      "message": "must be done *for each* build request, ie move inside L509 loop.",
+      "range": {
+        "startLine": 533,
+        "startChar": 12,
+        "endLine": 533,
+        "endChar": 15
+      },
+      "revId": "a3f8b928b204229d3f7da490d2d60806060a047f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

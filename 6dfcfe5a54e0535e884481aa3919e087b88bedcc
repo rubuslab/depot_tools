@@ -70,6 +70,30 @@
       "revId": "6dfcfe5a54e0535e884481aa3919e087b88bedcc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03c27dcd_d3c17e74",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-01-24T21:26:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ea1ae180_e3d4c0ec",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 73
+      },
+      "revId": "6dfcfe5a54e0535e884481aa3919e087b88bedcc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

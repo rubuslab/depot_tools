@@ -46,6 +46,30 @@
       "revId": "6dfcfe5a54e0535e884481aa3919e087b88bedcc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea1ae180_e3d4c0ec",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2020-01-24T18:01:02Z",
+      "side": 1,
+      "message": "I wasn\u0027t making deps_file a Static here (unlike the way the other arguments get handled below), so I thought it\u0027d be better to be different.\n\nRobbie, CCed you on internal CLs for context.",
+      "parentUuid": "aaca2d2b_964ce8bf",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 73
+      },
+      "revId": "6dfcfe5a54e0535e884481aa3919e087b88bedcc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

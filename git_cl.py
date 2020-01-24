@@ -1592,6 +1592,7 @@ class Changelist(object):
         options.reviewers = hook_results.reviewers.split(',')
       self.ExtendCC(hook_results.more_cc)
 
+
     print_stats(git_diff_args)
     ret = self.CMDUploadChange(options, git_diff_args, custom_cl_base, change)
     if not ret:
@@ -2500,6 +2501,11 @@ class Changelist(object):
       change_id = git_footers.get_footer_change_id(change_desc.description)[0]
 
     assert change_desc
+
+    # User wants to edit final description
+    if options.edit_description:
+      change_desc.prompt()
+
     SaveDescriptionBackup(change_desc)
     commits = RunGitSilent(['rev-list', '%s..%s' % (parent,
                                                     ref_to_push)]).splitlines()
@@ -4465,6 +4471,8 @@ def CMDupload(parser, args):
                          'fixed (pre-populates "Fixed:" tag). Same format as '
                          '-b option / "Bug:" tag. If fixing several issues, '
                          'separate with commas.')
+  parser.add_option('--edit-description', action='store_true',
+                    help="Modify description before upload")
 
   orig_args = args
   _add_codereview_select_options(parser)

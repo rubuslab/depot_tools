@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f9dae207_fbc9e16f",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-01-24T16:43:57Z",
+      "side": 1,
+      "message": "I feel like this should be DEPS_FILE to be consistent with arguments for configs.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 73
+      },
+      "revId": "6dfcfe5a54e0535e884481aa3919e087b88bedcc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

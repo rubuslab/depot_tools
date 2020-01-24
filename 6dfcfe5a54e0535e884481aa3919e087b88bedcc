@@ -22,6 +22,30 @@
       "revId": "6dfcfe5a54e0535e884481aa3919e087b88bedcc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aaca2d2b_964ce8bf",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-01-24T17:20:21Z",
+      "side": 1,
+      "message": "yes, though the reasons for this are pretty esoteric at this point.\n\nThat said, the reasons for these \u0027kwarg level\u0027 options are in order to make global changes to configs. I\u0027m not sure what\u0027s planned with deps_file here, but is something like that the plan?\n\n(BUILDSPEC_VERSION looks wrong to me too, but that\u0027s new since the last time I looked at this)",
+      "parentUuid": "f9dae207_fbc9e16f",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 73
+      },
+      "revId": "6dfcfe5a54e0535e884481aa3919e087b88bedcc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

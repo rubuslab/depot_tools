@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cdfe900f_05d227d4",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2481,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-01-27T21:42:11Z",
+      "side": 1,
+      "message": "this function is a bit... awkward... but I think there\u0027s three possible ways change_desc.prompt() is/should be called here...  (and have been since at least 2016 when I stopped looking into history since the bug was filed in 2017...)\n\nif options.squash and self.GetIssue()  - called on line 2435 if not options.force: \nif options.squash and not self.GetIssue() - called on line 2455 if not options.force:\nif not options.squash - never called?\n\nI suspect the person who filed the bug regularly uses force (or no-squash but I think that\u0027s rarer)\n\nI feel like the checks on force should also check edit_description, (and a similar path should be in the !squash flow).",
+      "range": {
+        "startLine": 2481,
+        "startChar": 0,
+        "endLine": 2481,
+        "endChar": 34
+      },
+      "revId": "6c6b03c1b1c2b2b3e276cf5fee2e564dacb07a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b9dffb0_d35db3d9",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4481,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-01-27T21:42:11Z",
+      "side": 1,
+      "message": "If the suggestion above is taken: \u0027Modify description before upload, even if force is set.\u0027\n\nstyle guide issues:\n\nuse the same types of string quotes throughout the codebase, (most of the time, like in this code the google syntax is single quotes.\n\nAdd a period after the flag description.  (which I see this code isn\u0027t great about following).",
+      "range": {
+        "startLine": 4481,
+        "startChar": 0,
+        "endLine": 4481,
+        "endChar": 60
+      },
+      "revId": "6c6b03c1b1c2b2b3e276cf5fee2e564dacb07a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e717855_92ccda5b",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-01-27T21:42:11Z",
+      "side": 1,
+      "message": "see right above where this is checked in the squash case.",
+      "range": {
+        "startLine": 992,
+        "startChar": 0,
+        "endLine": 992,
+        "endChar": 9
+      },
+      "revId": "6c6b03c1b1c2b2b3e276cf5fee2e564dacb07a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

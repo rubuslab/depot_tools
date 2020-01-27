@@ -2477,6 +2477,10 @@ class Changelist(object):
       if options.preserve_tryjobs:
         change_desc.set_preserve_tryjobs()
 
+      # User requested to change description
+      if options.edit_description:
+        change_desc.prompt()
+
       remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
       parent = self._ComputeParent(remote, upstream_branch, custom_cl_base,
                                    options.force, change_desc)
@@ -4473,6 +4477,8 @@ def CMDupload(parser, args):
                          'fixed (pre-populates "Fixed:" tag). Same format as '
                          '-b option / "Bug:" tag. If fixing several issues, '
                          'separate with commas.')
+  parser.add_option('--edit-description', action='store_true',
+                    help="Modify description before upload")
 
   orig_args = args
   _add_codereview_select_options(parser)

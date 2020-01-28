@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "41c62f0d_23daa0c7",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2481,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-01-28T01:29:51Z",
+      "side": 1,
+      "message": "My assumption was that user wants to be able to edit a message on a new patch set on existing CL. In this case, variables are set as follows: squash \u003d true, force\u003dfalse.\nLine 2435 shouldn\u0027t be triggered under normal conditions (ie it\u0027s executed if there\u0027s Change-Id mismatch). Even if force\u003dtrue, it should still trigger prompt (added test for that).\n\nWhen it comes to no squash - that becomes problematic as `git cl upload` uses git commit message (doesn\u0027t create a new ref, always uses HEAD). Furthermore, it may update multiple CLs. If we want to edit message, one solution would be to run `git rebase` against remote branch \u0026 current ref.\n\nOne improvement I could make is to unset options.edit_description if L2435 gets executed. Let me know if you think it\u0027s worth it or if I misunderstood something in the codebase",
+      "parentUuid": "cdfe900f_05d227d4",
+      "range": {
+        "startLine": 2481,
+        "startChar": 0,
+        "endLine": 2481,
+        "endChar": 34
+      },
+      "revId": "6c6b03c1b1c2b2b3e276cf5fee2e564dacb07a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b9dffb0_d35db3d9",
         "filename": "git_cl.py",
         "patchSetId": 8
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "0a3622c7_b9658ff4",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4481,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-01-28T01:29:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b9dffb0_d35db3d9",
+      "range": {
+        "startLine": 4481,
+        "startChar": 0,
+        "endLine": 4481,
+        "endChar": 60
+      },
+      "revId": "6c6b03c1b1c2b2b3e276cf5fee2e564dacb07a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e717855_92ccda5b",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 8
@@ -68,6 +116,30 @@
       "revId": "6c6b03c1b1c2b2b3e276cf5fee2e564dacb07a7e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21d40cae_de758961",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-01-28T01:29:51Z",
+      "side": 1,
+      "message": "ack",
+      "parentUuid": "8e717855_92ccda5b",
+      "range": {
+        "startLine": 992,
+        "startChar": 0,
+        "endLine": 992,
+        "endChar": 9
+      },
+      "revId": "6c6b03c1b1c2b2b3e276cf5fee2e564dacb07a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -2386,6 +2386,7 @@ class Changelist(object):
 
     if options.squash:
       self._GerritCommitMsgHookCheck(offer_removal=not options.force)
+      description_edited = False
       if self.GetIssue():
         # Try to get the message from a previous upload.
         message = self.GetDescription()
@@ -2433,6 +2434,7 @@ class Changelist(object):
                    change_id))
             confirm_or_exit(action='edit')
             change_desc.prompt()
+            description_edited = True
 
           message = change_desc.description
           if not message:
@@ -2453,6 +2455,7 @@ class Changelist(object):
         change_desc = ChangeDescription(message, bug=bug, fixed=fixed)
         if not options.force:
           change_desc.prompt()
+          description_edited = True
 
         # On first upload, patchset title is always this string, while
         # --title flag gets converted to first line of message.
@@ -2476,6 +2479,13 @@ class Changelist(object):
                                      options.add_owners_to, change)
       if options.preserve_tryjobs:
         change_desc.set_preserve_tryjobs()
+
+      # User requested to change description
+      if options.edit_description and not description_edited:
+        change_desc.prompt()
+        if [change_id] != git_footers.get_footer_change_id(
+            change_desc.description):
+          DieWithError('Change-Id cannot be modified.')
 
       remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
       parent = self._ComputeParent(remote, upstream_branch, custom_cl_base,
@@ -4473,6 +4483,9 @@ def CMDupload(parser, args):
                          'fixed (pre-populates "Fixed:" tag). Same format as '
                          '-b option / "Bug:" tag. If fixing several issues, '
                          'separate with commas.')
+  parser.add_option('--edit-description', action='store_true', default=False,
+                    help='Modify description before upload, even if force is '
+                         'set. It is a noop when --no-squash is set.')
 
   orig_args = args
   _add_codereview_select_options(parser)

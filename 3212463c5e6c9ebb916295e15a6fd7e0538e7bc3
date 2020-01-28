@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "987bd999_343f4079",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2409,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-01-28T23:46:22Z",
+      "side": 1,
+      "message": "I think code to ask for description *just* here is much better than adding yet another local variable.\nAnd you also don\u0027t need to add new checks for change_id.",
+      "revId": "3212463c5e6c9ebb916295e15a6fd7e0538e7bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b1d2dc1_608644a8",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2454,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-01-28T23:46:22Z",
+      "side": 1,
+      "message": "I\u0027d do nothing on first upload, but if you want to prevent accidental misuse, you can do this:\n\nif options.edit_description:\n  DieWithError(\u0027--edit-description not allowed on first upload\u0027)",
+      "revId": "3212463c5e6c9ebb916295e15a6fd7e0538e7bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "297c6f50_3914997e",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2488,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-01-28T23:46:22Z",
+      "side": 1,
+      "message": "I think having this extra block here is worse than not supporting edit_description on first upload.",
+      "range": {
+        "startLine": 2486,
+        "startChar": 0,
+        "endLine": 2488,
+        "endChar": 55
+      },
+      "revId": "3212463c5e6c9ebb916295e15a6fd7e0538e7bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

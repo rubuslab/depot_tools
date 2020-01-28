@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ed9740c2_2e1817e8",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2482,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-01-28T23:46:22Z",
+      "side": 1,
+      "message": "i\u0027ll reply on new patchset.",
+      "parentUuid": "a9cbb15b_01b7c35b",
+      "range": {
+        "startLine": 2479,
+        "startChar": 0,
+        "endLine": 2482,
+        "endChar": 28
+      },
+      "revId": "69c7ca81029f23eec53f9249688e0e44ffa0e7ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "34480c20_87d95473",
         "filename": "git_cl.py",
         "patchSetId": 9

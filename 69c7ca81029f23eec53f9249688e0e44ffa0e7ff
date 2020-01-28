@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9749ac0_73448ba0",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2482,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-01-28T19:47:49Z",
+      "side": 1,
+      "message": "This will ask user 2nd time on initial upload (see `# if not self.GetIssue()` block above). Perhaps, just move this code above L2446?\n\nAlso, make sure that resulting message contains exactly one Change-Id footer (see L2462..L2472 above for elucidation)",
+      "range": {
+        "startLine": 2479,
+        "startChar": 0,
+        "endLine": 2482,
+        "endChar": 28
+      },
+      "revId": "69c7ca81029f23eec53f9249688e0e44ffa0e7ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34480c20_87d95473",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4480,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-01-28T19:47:49Z",
+      "side": 1,
+      "message": "future thought: consider also supporting special value to source description from local git commit message. This isn\u0027t trivial because we\u0027d need to include Change-Id inside.",
+      "range": {
+        "startLine": 4480,
+        "startChar": 42,
+        "endLine": 4480,
+        "endChar": 61
+      },
+      "revId": "69c7ca81029f23eec53f9249688e0e44ffa0e7ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

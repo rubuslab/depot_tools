@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a9cbb15b_01b7c35b",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2482,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-01-28T22:25:00Z",
+      "side": 1,
+      "message": "\u003e This will ask user 2nd time on initial upload (see `# if not self.GetIssue()` block above). Perhaps, just move this code above L2446?\nThere is a good amount of logic in both blocks; ended up using a variable to store the edit state.\n\n\u003e Also, make sure that resulting message contains exactly one Change-Id footer (see L2462..L2472 above for elucidation)\nDone.",
+      "parentUuid": "b9749ac0_73448ba0",
+      "range": {
+        "startLine": 2479,
+        "startChar": 0,
+        "endLine": 2482,
+        "endChar": 28
+      },
+      "revId": "69c7ca81029f23eec53f9249688e0e44ffa0e7ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "34480c20_87d95473",
         "filename": "git_cl.py",
         "patchSetId": 9
@@ -45,6 +69,30 @@
       "revId": "69c7ca81029f23eec53f9249688e0e44ffa0e7ff",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa122ca5_6da24cfd",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4480,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-01-28T22:25:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "34480c20_87d95473",
+      "range": {
+        "startLine": 4480,
+        "startChar": 42,
+        "endLine": 4480,
+        "endChar": 61
+      },
+      "revId": "69c7ca81029f23eec53f9249688e0e44ffa0e7ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

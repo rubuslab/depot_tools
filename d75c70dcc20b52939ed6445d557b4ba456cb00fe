@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2381c047_fb359acf",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4500,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-01-29T21:21:04Z",
+      "side": 1,
+      "message": "👍",
+      "range": {
+        "startLine": 4499,
+        "startChar": 0,
+        "endLine": 4500,
+        "endChar": 70
+      },
+      "revId": "d75c70dcc20b52939ed6445d557b4ba456cb00fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

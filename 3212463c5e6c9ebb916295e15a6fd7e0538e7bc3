@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "30b6ff45_f34983de",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2409,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-01-29T19:10:53Z",
+      "side": 1,
+      "message": "Sounds good. I ended up creating a ChangeDescription object. Alternative was to extract the body of ChangeDescription.prompt into a function and call it here.\n\nNote that I didn\u0027t want to use ask_for_data, as it wouldn\u0027t match what `git cl description` does.",
+      "parentUuid": "987bd999_343f4079",
+      "revId": "3212463c5e6c9ebb916295e15a6fd7e0538e7bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6b1d2dc1_608644a8",
         "filename": "git_cl.py",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "95c1e9eb_027ce32c",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2454,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-01-29T19:10:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6b1d2dc1_608644a8",
+      "revId": "3212463c5e6c9ebb916295e15a6fd7e0538e7bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "297c6f50_3914997e",
         "filename": "git_cl.py",
         "patchSetId": 10
@@ -47,6 +83,30 @@
       "writtenOn": "2020-01-28T23:46:22Z",
       "side": 1,
       "message": "I think having this extra block here is worse than not supporting edit_description on first upload.",
+      "range": {
+        "startLine": 2486,
+        "startChar": 0,
+        "endLine": 2488,
+        "endChar": 55
+      },
+      "revId": "3212463c5e6c9ebb916295e15a6fd7e0538e7bc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82ae3756_d27e6026",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2488,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-01-29T19:10:53Z",
+      "side": 1,
+      "message": "agreed - removed this block.",
+      "parentUuid": "297c6f50_3914997e",
       "range": {
         "startLine": 2486,
         "startChar": 0,

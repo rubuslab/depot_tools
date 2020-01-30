@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebca1219_0e13faa6",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1762,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-01-30T18:15:47Z",
+      "side": 1,
+      "message": "can you add a quick test to tests/git_cl_test.py for this?\n\nyou can use \n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:tests/git_cl_test.py;l\u003d2090\n\nas a template, just with the line\n\n         (([\u0027git\u0027, \u0027config\u0027, \u0027remote.origin.url\u0027],), \u0027custom-scheme://repo\u0027),\n\nusing an ssh style remote url",
+      "range": {
+        "startLine": 1762,
+        "startChar": 0,
+        "endLine": 1762,
+        "endChar": 20
+      },
+      "revId": "54b69229b795f5c9d688be08d4751193992e374c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

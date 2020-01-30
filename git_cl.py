@@ -5229,7 +5229,8 @@ def CMDformat(parser, args):
       'It is an error to set both.')
   parser.add_option(
       '--js',
-      action='store_true',
+      action='store_false',
+      default=True,
       help='Format javascript code with clang-format. '
       'Has no effect if --no-clang-format is set.')
   parser.add_option('--diff', action='store_true',

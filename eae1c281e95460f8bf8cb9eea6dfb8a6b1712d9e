@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c15717f_21b6103d",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5230,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-01-30T18:36:10Z",
+      "side": 1,
+      "message": "2 requests:\n\n1. can you keep the --js option around so people using the old syntax works\n2. can you call the option js, default to true, and make --no-js set it to false? (vars that are only checked as a double negative never makes me not sad)",
+      "range": {
+        "startLine": 5230,
+        "startChar": 0,
+        "endLine": 5230,
+        "endChar": 20
+      },
+      "revId": "eae1c281e95460f8bf8cb9eea6dfb8a6b1712d9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -5228,9 +5228,10 @@ def CMDformat(parser, args):
       '.style.yapf file in an ancestor directory will be formatted. '
       'It is an error to set both.')
   parser.add_option(
-      '--js',
+      '--no-js',
       action='store_true',
-      help='Format javascript code with clang-format. '
+      default=False,
+      help='Disable JavaScript/TypeScript formatting code with clang-format. '
       'Has no effect if --no-clang-format is set.')
   parser.add_option('--diff', action='store_true',
                     help='Print diff to stdout rather than modifying files.')
@@ -5274,7 +5275,7 @@ def CMDformat(parser, args):
   # Filter out files deleted by this CL
   diff_files = [x for x in diff_files if os.path.isfile(x)]
 
-  if opts.js:
+  if not opts.no_js:
     CLANG_EXTS.extend(['.js', '.ts'])
 
   clang_diff_files = []

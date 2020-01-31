@@ -22,6 +22,30 @@
       "revId": "eae1c281e95460f8bf8cb9eea6dfb8a6b1712d9e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb9d4750_3b1f4009",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5230,
+      "author": {
+        "id": 1238768
+      },
+      "writtenOn": "2020-01-31T11:52:06Z",
+      "side": 1,
+      "message": "Done. I followed the same pattern was done with `--python` and `--no-python`.",
+      "parentUuid": "7c15717f_21b6103d",
+      "range": {
+        "startLine": 5230,
+        "startChar": 0,
+        "endLine": 5230,
+        "endChar": 20
+      },
+      "revId": "eae1c281e95460f8bf8cb9eea6dfb8a6b1712d9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

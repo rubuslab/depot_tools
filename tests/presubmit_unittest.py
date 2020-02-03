@@ -163,24 +163,25 @@ index fe3de7b..54ae6e1 100755
     mock.patch('gclient_utils.FileRead').start()
     mock.patch('gclient_utils.FileWrite').start()
     mock.patch('json.load').start()
-    mock.patch('os.path.abspath', lambda f: f).start()
-    mock.patch('os.getcwd', self.RootDir)
+    mock.patch('multiprocessing.cpu_count', lambda: 2)
     mock.patch('os.chdir').start()
+    mock.patch('os.getcwd', self.RootDir)
     mock.patch('os.listdir').start()
+    mock.patch('os.path.abspath', lambda f: f).start()
     mock.patch('os.path.isfile').start()
     mock.patch('os.remove').start()
-    mock.patch('random.randint').start()
-    mock.patch('presubmit_support.warn').start()
+    mock.patch('presubmit_support._parse_files').start()
     mock.patch('presubmit_support.sigint_handler').start()
     mock.patch('presubmit_support.time_time', return_value=0).start()
-    mock.patch('scm.determine_scm').start()
+    mock.patch('presubmit_support.warn').start()
+    mock.patch('random.randint').start()
     mock.patch('scm.GIT.GenerateDiff').start()
+    mock.patch('scm.determine_scm').start()
     mock.patch('subprocess2.Popen').start()
     mock.patch('sys.stderr', StringIO()).start()
     mock.patch('sys.stdout', StringIO()).start()
     mock.patch('tempfile.NamedTemporaryFile').start()
     mock.patch('threading.Timer').start()
-    mock.patch('multiprocessing.cpu_count', lambda: 2)
     if sys.version_info.major == 2:
       mock.patch('urllib2.urlopen').start()
     else:
@@ -878,10 +879,9 @@ def CheckChangeOnCommit(input_api, output_api):
                                                False, output))
 
   @mock.patch('presubmit_support.DoPresubmitChecks')
-  @mock.patch('presubmit_support.ParseFiles')
-  def testMainUnversioned(self, mockParseFiles, mockDoPresubmitChecks):
+  def testMainUnversioned(self, mockDoPresubmitChecks):
     scm.determine_scm.return_value = None
-    mockParseFiles.return_value = [('M', 'random_file.txt')]
+    presubmit._parse_files.return_value = [('M', 'random_file.txt')]
     mockDoPresubmitChecks().should_continue.return_value = False
 
     self.assertEqual(
@@ -898,8 +898,112 @@ def CheckChangeOnCommit(input_api, output_api):
     self.assertEqual(
         sys.stderr.getvalue(),
         'usage: presubmit_unittest.py [options] <files...>\n'
-        'presubmit_unittest.py: error: For unversioned directory, <files> is '
-        'not optional.\n')
+        'presubmit_unittest.py: error: <files> is not optional for unversioned '
+        'directories.\n')
+
+  @mock.patch('presubmit_support.Change', mock.Mock())
+  def testGetChange_FilesAndNoScm(self):
+    presubmit._parse_files.return_value=[('M', 'random_file.txt')]
+    scm.determine_scm.return_value = None
+    options = mock.Mock(all_files=False)
+
+    change = presubmit._get_change(None, options)
+    self.assertEqual(presubmit.Change.return_value, change)
+    presubmit.Change.assert_called_once_with(
+        options.name,
+        options.description,
+        options.root,
+        [('M', 'random_file.txt')],
+        options.issue,
+        options.patchset,
+        options.author,
+        upstream=options.upstream)
+    presubmit._parse_files.assert_called_once_with(
+        options.files, options.recursive)
+
+  def testGetChange_NoFilesAndNoScm(self):
+    presubmit._parse_files.return_value = []
+    scm.determine_scm.return_value = None
+    parser = mock.Mock()
+    parser.error.side_effect = [SystemExit]
+    options = mock.Mock(all_files=False)
+
+    with self.assertRaises(SystemExit):
+      presubmit._get_change(parser, options)
+    parser.error.assert_called_once_with(
+        '<files> is not optional for unversioned directories.')
+
+  def testGetChange_AllFilesAndNoScm(self):
+    scm.determine_scm.return_value = None
+    parser = mock.Mock()
+    parser.error.side_effect = [SystemExit]
+    options = mock.Mock(all_files=True)
+
+    with self.assertRaises(SystemExit):
+      presubmit._get_change(parser, options)
+    parser.error.assert_called_once_with(
+        '--all-files is only supported for versioned directories.')
+
+  @mock.patch('presubmit_support.GitChange', mock.Mock())
+  def testGetChange_FilesAndGit(self):
+    scm.determine_scm.return_value = 'git'
+    presubmit._parse_files.return_value = [('M', 'random_file.txt')]
+    options = mock.Mock(all_files=False)
+
+    change = presubmit._get_change(None, options)
+    self.assertEqual(presubmit.GitChange.return_value, change)
+    presubmit.GitChange.assert_called_once_with(
+        options.name,
+        options.description,
+        options.root,
+        [('M', 'random_file.txt')],
+        options.issue,
+        options.patchset,
+        options.author,
+        upstream=options.upstream)
+    presubmit._parse_files.assert_called_once_with(
+        options.files, options.recursive)
+
+  @mock.patch('presubmit_support.GitChange', mock.Mock())
+  @mock.patch('scm.GIT.CaptureStatus', mock.Mock())
+  def testGetChange_NoFilesAndGit(self):
+    scm.determine_scm.return_value = 'git'
+    scm.GIT.CaptureStatus.return_value = [('A', 'added.txt')]
+    options = mock.Mock(all_files=False, files=[])
+
+    change = presubmit._get_change(None, options)
+    self.assertEqual(presubmit.GitChange.return_value, change)
+    presubmit.GitChange.assert_called_once_with(
+        options.name,
+        options.description,
+        options.root,
+        [('A', 'added.txt')],
+        options.issue,
+        options.patchset,
+        options.author,
+        upstream=options.upstream)
+    scm.GIT.CaptureStatus.assert_called_once_with(
+        [], options.root, options.upstream)
+
+  @mock.patch('presubmit_support.GitChange', mock.Mock())
+  @mock.patch('scm.GIT.GetAllFiles', mock.Mock())
+  def testGetChange_AllFilesAndGit(self):
+    scm.determine_scm.return_value = 'git'
+    scm.GIT.GetAllFiles.return_value = ['foo.txt', 'bar.txt']
+    options = mock.Mock(all_files=True, files=[])
+
+    change = presubmit._get_change(None, options)
+    self.assertEqual(presubmit.GitChange.return_value, change)
+    presubmit.GitChange.assert_called_once_with(
+        options.name,
+        options.description,
+        options.root,
+        [('M', 'foo.txt'), ('M', 'bar.txt')],
+        options.issue,
+        options.patchset,
+        options.author,
+        upstream=options.upstream)
+    scm.GIT.GetAllFiles.assert_called_once_with(options.root)
 
 
 class InputApiUnittest(PresubmitTestsBase):

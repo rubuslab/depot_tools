@@ -1725,7 +1725,7 @@ def DoPresubmitChecks(change,
     os.environ = old_environ
 
 
-def ScanSubDirs(mask, recursive):
+def _scan_sub_dirs(mask, recursive):
   if not recursive:
     return [x for x in glob.glob(mask) if x not in ('.svn', '.git')]
 
@@ -1741,32 +1741,45 @@ def ScanSubDirs(mask, recursive):
   return results
 
 
-def ParseFiles(args, recursive):
+def _parse_files(args, recursive):
   logging.debug('Searching for %s', args)
   files = []
   for arg in args:
-    files.extend([('M', f) for f in ScanSubDirs(arg, recursive)])
+    files.extend([('M', f) for f in _scan_sub_dirs(arg, recursive)])
   return files
 
 
-def load_files(options):
+def _get_change(parser, options):
   """Tries to determine the SCM."""
   files = []
   if options.files:
-    files = ParseFiles(options.files, options.recursive)
+    files = _parse_files(options.files, options.recursive)
+
   change_scm = scm.determine_scm(options.root)
   if change_scm == 'git':
     change_class = GitChange
-    upstream = options.upstream or None
+    if options.all_files:
+      files = [('M', f) for f in scm.GIT.GetAllFiles(options.root)]
     if not files:
-      files = scm.GIT.CaptureStatus([], options.root, upstream)
+      files = scm.GIT.CaptureStatus([], options.root, options.upstream or None)
   else:
-    logging.info(
-        'Doesn\'t seem under source control. Got %d files', len(options.files))
-    if not files:
-      return None, None
     change_class = Change
-  return change_class, files
+    if options.all_files:
+      parser.error('--all-files is only supported for versioned directories.')
+    if not files:
+      parser.error('<files> is not optional for unversioned directories.')
+
+  logging.info('Found %d file(s).', len(files))
+
+  return change_class(
+      options.name,
+      options.description,
+      options.root,
+      files,
+      options.issue,
+      options.patchset,
+      options.author,
+      upstream=options.upstream)
 
 
 @contextlib.contextmanager
@@ -1824,6 +1837,8 @@ def main(argv=None):
                            'all PRESUBMIT files in parallel.')
   parser.add_argument('--json_output',
                       help='Write presubmit errors to json output.')
+  parser.add_argument('--all-files', action='store_true',
+                      help='Mark all files under source control as modified.')
   parser.add_argument('files', nargs='*',
                       help='List of files to be marked as modified when '
                       'executing presubmit or post-upload hooks. fnmatch '
@@ -1853,22 +1868,12 @@ def main(argv=None):
   else:
     logging.basicConfig(level=logging.ERROR)
 
-  change_class, files = load_files(options)
-  if not change_class:
-    parser.error('For unversioned directory, <files> is not optional.')
-  logging.info('Found %d file(s).', len(files))
+  change = _get_change(parser, options)
 
   try:
     with canned_check_filter(options.skip_canned):
       results = DoPresubmitChecks(
-          change_class(options.name,
-                       options.description,
-                       options.root,
-                       files,
-                       options.issue,
-                       options.patchset,
-                       options.author,
-                       upstream=options.upstream),
+          change,
           options.commit,
           options.verbose,
           sys.stdout,

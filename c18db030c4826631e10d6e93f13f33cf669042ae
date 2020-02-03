@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "902f378e_9eeaaa93",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1752,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-02-03T23:22:49Z",
+      "side": 1,
+      "message": "I\u0027ll admit I\u0027m not particularly fond of this function or the \"two modes\" way it runs (all-files vs files) but I realized I\u0027m totally bikeshedding as I was writing comments about how to refactor it.\n\nThat said, I feel like the passing in options/parser is a sign this code is worthy of simplifying",
+      "range": {
+        "startLine": 1752,
+        "startChar": 0,
+        "endLine": 1752,
+        "endChar": 33
+      },
+      "revId": "c18db030c4826631e10d6e93f13f33cf669042ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "195ff04c_4b332e26",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-02-03T23:22:49Z",
+      "side": 1,
+      "message": "documentation line seems out of date",
+      "range": {
+        "startLine": 1753,
+        "startChar": 0,
+        "endLine": 1753,
+        "endChar": 35
+      },
+      "revId": "c18db030c4826631e10d6e93f13f33cf669042ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29f1691b_58a07d5a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1841,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-02-03T23:22:49Z",
+      "side": 1,
+      "message": "worth throwing an error if files and all-files are both set?",
+      "range": {
+        "startLine": 1841,
+        "startChar": 0,
+        "endLine": 1841,
+        "endChar": 78
+      },
+      "revId": "c18db030c4826631e10d6e93f13f33cf669042ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a2c328f2_6201eef8",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1752,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-04T19:44:09Z",
+      "side": 1,
+      "message": "Refactored this a bit, hopefully the code is simpler now.\nI feel like keeping this on its own function makes the code easier to understand and test.",
+      "parentUuid": "902f378e_9eeaaa93",
+      "range": {
+        "startLine": 1752,
+        "startChar": 0,
+        "endLine": 1752,
+        "endChar": 33
+      },
+      "revId": "c18db030c4826631e10d6e93f13f33cf669042ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "195ff04c_4b332e26",
         "filename": "presubmit_support.py",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "19bdc55a_533ada7f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-04T19:44:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "195ff04c_4b332e26",
+      "range": {
+        "startLine": 1753,
+        "startChar": 0,
+        "endLine": 1753,
+        "endChar": 35
+      },
+      "revId": "c18db030c4826631e10d6e93f13f33cf669042ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29f1691b_58a07d5a",
         "filename": "presubmit_support.py",
         "patchSetId": 3
@@ -68,6 +116,30 @@
       "revId": "c18db030c4826631e10d6e93f13f33cf669042ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a029a451_3c47ccff",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1841,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-04T19:44:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29f1691b_58a07d5a",
+      "range": {
+        "startLine": 1841,
+        "startChar": 0,
+        "endLine": 1841,
+        "endChar": 78
+      },
+      "revId": "c18db030c4826631e10d6e93f13f33cf669042ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

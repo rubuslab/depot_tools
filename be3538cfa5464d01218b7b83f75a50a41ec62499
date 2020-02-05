@@ -22,6 +22,30 @@
       "revId": "be3538cfa5464d01218b7b83f75a50a41ec62499",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4dde070_bb3bb6d4",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1388,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-05T23:30:34Z",
+      "side": 1,
+      "message": "I went over the places where GetDescription is called, and in all of them, there\u0027s already a gerrit issue.\nYeah, UpdateDescription should have a similar assert.",
+      "parentUuid": "26f280af_321ddd70",
+      "range": {
+        "startLine": 1388,
+        "startChar": 0,
+        "endLine": 1388,
+        "endChar": 63
+      },
+      "revId": "be3538cfa5464d01218b7b83f75a50a41ec62499",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

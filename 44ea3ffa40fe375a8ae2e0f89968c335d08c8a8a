@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9bdcf70a_03f8dc08",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-05T23:03:15Z",
+      "side": 0,
+      "message": "FYI: I plan to remove this as part of https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2039969 so removing instead of fixing the test.",
+      "range": {
+        "startLine": 181,
+        "startChar": 6,
+        "endLine": 181,
+        "endChar": 30
+      },
+      "revId": "44ea3ffa40fe375a8ae2e0f89968c335d08c8a8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

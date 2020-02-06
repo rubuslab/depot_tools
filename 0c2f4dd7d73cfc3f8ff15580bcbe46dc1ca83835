@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad393c9_14ce01d3",
+        "filename": "OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-02-06T01:40:42Z",
+      "side": 1,
+      "message": "consider doing smth like this with GOMA_OWNERS",
+      "revId": "0c2f4dd7d73cfc3f8ff15580bcbe46dc1ca83835",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

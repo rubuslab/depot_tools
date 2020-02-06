@@ -178,7 +178,7 @@ def finalize(commit_msg, current_dir, rolls):
     check_call(['git', 'checkout', '--quiet', roll_to], cwd=full_dir)
 
 
-def main():
+def main(argsv=None):
   parser = argparse.ArgumentParser(description=__doc__)
   parser.add_argument(
       '--ignore-dirty-tree', action='store_true',
@@ -203,7 +203,7 @@ def main():
       '--key', action='append', default=[],
       help='Regex(es) for dependency in DEPS file')
   parser.add_argument('dep_path', nargs='+', help='Path(s) to dependency')
-  args = parser.parse_args()
+  args = parser.parse_args(argsv)
 
   if len(args.dep_path) > 1:
     if args.roll_to != 'origin/master':

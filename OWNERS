@@ -28,6 +28,9 @@ per-file cros_sdk=file://CROS_OWNERS
 per-file repo=file://CROS_OWNERS
 
 # for goma client update
+per-file cipd_manifest.*=sque@google.com
 per-file cipd_manifest.*=ukai@google.com
+per-file cipd_manifest.*=yekuang@google.com
+per-file cipd_manifest.*=yyanagisawa@google.com
 
 # COMPONENT: Infra>SDK

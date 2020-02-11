@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85716add_42100187",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/tryjob_fail_patch.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1115906
+      },
+      "writtenOn": "2020-02-11T17:03:14Z",
+      "side": 1,
+      "message": "I\u0027d prefer a test using post_process to check expections and drop .json file, but won\u0027t require it.",
+      "range": {
+        "startLine": 162,
+        "startChar": 20,
+        "endLine": 162,
+        "endChar": 22
+      },
+      "revId": "41dfb9d9dcae933d7a69216f20e091314a2b6e8f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

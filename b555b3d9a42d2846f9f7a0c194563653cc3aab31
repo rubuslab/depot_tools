@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01060e83_1dcf4891",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-02-13T00:33:21Z",
+      "side": 1,
+      "message": "can we delete the rietveld support here?\n\nif not in this cl like right after this one?",
+      "range": {
+        "startLine": 215,
+        "startChar": 0,
+        "endLine": 215,
+        "endChar": 0
+      },
+      "revId": "b555b3d9a42d2846f9f7a0c194563653cc3aab31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

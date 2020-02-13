@@ -22,6 +22,30 @@
       "revId": "b555b3d9a42d2846f9f7a0c194563653cc3aab31",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eed4a25b_baf6c3f7",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-13T00:45:51Z",
+      "side": 1,
+      "message": "These properties were used to configure git-cl, not Rietveld (e.g. emails in rietveld.cc are automatically added to cc list on issue upload) and they might still be in use.",
+      "parentUuid": "01060e83_1dcf4891",
+      "range": {
+        "startLine": 215,
+        "startChar": 0,
+        "endLine": 215,
+        "endChar": 0
+      },
+      "revId": "b555b3d9a42d2846f9f7a0c194563653cc3aab31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

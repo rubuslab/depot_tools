@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "54c8412e_862bc8bd",
+        "filename": "GOMA_OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-13T02:14:10Z",
+      "side": 1,
+      "message": "what about yekuang?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 7
+      },
+      "revId": "f46d1679f26cf45ec9c624477aeac6eef62efec9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

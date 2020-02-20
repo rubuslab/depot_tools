@@ -1034,6 +1034,8 @@ class Changelist(object):
     self.issue = issue or None
     self.has_description = False
     self.description = None
+    self.has_local_description = False
+    self.local_description = None
     self.lookedup_patchset = False
     self.patchset = None
     self.cc = None
@@ -1285,8 +1287,11 @@ class Changelist(object):
 
   def GetLocalDescription(self, upstream_branch):
     """Return the log messages of all commits up to the branch point."""
-    args = ['log', '--pretty=format:%s%n%n%b', '%s...' % (upstream_branch)]
-    return RunGitWithCode(args)[1].strip()
+    if not self.has_local_description:
+      args = ['log', '--pretty=format:%s%n%n%b', '%s...' % (upstream_branch)]
+      self.local_description = RunGitWithCode(args)[1].strip()
+      self.has_local_description = True
+    return self.local_description
 
   def FetchDescription(self, pretty=False):
     assert self.GetIssue(), 'issue is required to query Gerrit'
@@ -1314,6 +1319,9 @@ class Changelist(object):
         self.patchset = int(self.patchset)
       self.lookedup_patchset = True
     return self.patchset
+
+  def GetAuthor(self):
+    return scm.GIT.GetConfig(settings.GetRoot(), 'user.email')
 
   def SetPatchset(self, patchset):
     """Set this branch's patchset. If patchset=0, clears the patchset."""
@@ -1388,8 +1396,8 @@ class Changelist(object):
       # up to the branch point, as git cl upload will prefill the description
       # with these log messages.
       description = self.GetLocalDescription(upstream_branch)
+    author = self.GetAuthor()
 
-    author = RunGit(['config', 'user.email']).strip() or None
     return presubmit_support.GitChange(
         name,
         description,

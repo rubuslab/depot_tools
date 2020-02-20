@@ -2981,7 +2981,7 @@ def CMDsetdep(parser, args):
     else:
       gclient_eval.SetRevision(local_scope, name, value)
 
-  with open(options.deps_file, 'w') as f:
+  with open(options.deps_file, 'wb') as f:
     f.write(gclient_eval.RenderDEPSFile(local_scope))
 
 

@@ -110,7 +110,7 @@ class GitMocks(object):
     return self.branchref
 
   def NewBranch(self, branchref):
-    self.branchref = branchref
+    self.branchref = branchref[0]
 
   def GetConfig(self, root, key, default=None):
     if root != '':

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1dcf0c6a_c1f7e912",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-02-21T21:15:11Z",
+      "side": 1,
+      "message": "do you expect a lot of empty descriptions?  Is this bool worth the speedup in that case?",
+      "range": {
+        "startLine": 1290,
+        "startChar": 0,
+        "endLine": 1290,
+        "endChar": 38
+      },
+      "revId": "fd90faf8dd57a95226e1c7f12acf178b7881bbf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

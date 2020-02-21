@@ -22,6 +22,30 @@
       "revId": "fd90faf8dd57a95226e1c7f12acf178b7881bbf5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0922aa8_f7097ce2",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-21T21:30:05Z",
+      "side": 1,
+      "message": "This is to avoid executing git log every time GetLocalDescription is called.\nI expect calling GetLocalDescription() to be called a couple of times while I finish refactoring.",
+      "parentUuid": "1dcf0c6a_c1f7e912",
+      "range": {
+        "startLine": 1290,
+        "startChar": 0,
+        "endLine": 1290,
+        "endChar": 38
+      },
+      "revId": "fd90faf8dd57a95226e1c7f12acf178b7881bbf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

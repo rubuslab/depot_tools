@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "830fc76d_ea7d408c",
+        "filename": "split_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2020-02-21T19:09:38Z",
+      "side": 1,
+      "message": "This made `git cl split` die on me with this:\n\n```\nraceback (most recent call last):\n  File \"/Users/thakis/src/depot_tools/metrics.py\", line 267, in print_notice_and_exit\n    yield\n  File \"/Users/thakis/src/depot_tools/git_cl.py\", line 5410, in \u003cmodule\u003e\n    sys.exit(main(sys.argv[1:]))\n  File \"/Users/thakis/src/depot_tools/git_cl.py\", line 5392, in main\n    return dispatcher.execute(OptionParser(), argv)\n  File \"/Users/thakis/src/depot_tools/subcommand.py\", line 252, in execute\n    return command(parser, args[1:])\n  File \"/Users/thakis/src/depot_tools/git_cl.py\", line 4425, in CMDsplit\n    options.cq_dry_run, options.enable_auto_submit)\n  File \"/Users/thakis/src/depot_tools/split_cl.py\", line 389, in SplitCl\n    cmd_upload, cq_dry_run, enable_auto_submit)\n  File \"/Users/thakis/src/depot_tools/split_cl.py\", line 107, in UploadCl\n    refactor_branch_upstream):\n  File \"/Users/thakis/src/depot_tools/split_cl.py\", line 54, in CreateBranchForDirectory\n    branch_name \u003d \u0027_\u0027.join([prefix, cl_index, directory])\nTypeError: sequence item 1: expected string or Unicode, int found\n```\n\nThis should probably be `str(cl_index)`?",
+      "revId": "684096347b67b1663690c118785018258acd2e9b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0e79978d_683f6488",
         "filename": "split_cl.py",
         "patchSetId": 9

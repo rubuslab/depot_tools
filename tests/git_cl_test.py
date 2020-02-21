@@ -110,7 +110,7 @@ class GitMocks(object):
     return self.branchref
 
   def NewBranch(self, branchref):
-    self.branchref = branchref
+    self.branchref = branchref[0]
 
   def GetConfig(self, root, key, default=None):
     if root != '':
@@ -1718,6 +1718,7 @@ class TestGitCl(unittest.TestCase):
     ]
     self.assertEqual(git_cl.main(['patch', '-b', 'feature', '123456']), 0)
     self.assertIssueAndPatchset(branch='feature')
+    git_new_branch.assert_called_once_with(['feature'])
 
   def test_patch_gerrit_force(self):
     self._patch_common('host')

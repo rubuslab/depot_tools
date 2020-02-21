@@ -4526,7 +4526,7 @@ def CMDpatch(parser, args):
     if options.force:
       RunGit(['branch', '-D', options.newbranch],
              stderr=subprocess2.PIPE, error_ok=True)
-    git_new_branch.main(options.newbranch)
+    git_new_branch.main([options.newbranch])
 
   cl = Changelist(
       codereview_host=target_issue_arg.hostname, issue=target_issue_arg.issue)

@@ -1844,6 +1844,8 @@ def main(argv=None):
                      help='Use commit instead of upload checks.')
   hooks.add_argument('-u', '--upload', action='store_false', dest='commit',
                      help='Use upload instead of commit checks.')
+  hooks.add_argument('--post_upload', action='store_true',
+                     help='Run post-upload commit hooks.')
   parser.add_argument('-r', '--recursive', action='store_true',
                       help='Act recursively.')
   parser.add_argument('-v', '--verbose', action='count', default=0,
@@ -1896,19 +1898,27 @@ def main(argv=None):
   change = _parse_change(parser, options)
 
   try:
-    with canned_check_filter(options.skip_canned):
-      results = DoPresubmitChecks(
+    if options.post_upload:
+      results = DoPostUploadExecuter(
           change,
-          options.commit,
-          options.verbose,
-          sys.stdout,
-          sys.stdin,
-          options.default_presubmit,
-          options.may_prompt,
           gerrit_obj,
-          options.dry_run,
-          options.parallel,
-          options.json_output)
+          options.root,
+          options.verbose,
+          sys.stdout)
+    else:
+      with canned_check_filter(options.skip_canned):
+        results = DoPresubmitChecks(
+            change,
+            options.commit,
+            options.verbose,
+            sys.stdout,
+            sys.stdin,
+            options.default_presubmit,
+            options.may_prompt,
+            gerrit_obj,
+            options.dry_run,
+            options.parallel,
+            options.json_output)
     return not results.should_continue()
   except PresubmitFailure as e:
     print(e, file=sys.stderr)

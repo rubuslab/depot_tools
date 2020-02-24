@@ -70,6 +70,30 @@
       "revId": "fd90faf8dd57a95226e1c7f12acf178b7881bbf5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ed8e783_74c60732",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-24T23:50:31Z",
+      "side": 1,
+      "message": "Using `if self.local_description is None` instead.",
+      "parentUuid": "771ac6ee_bd1e8d06",
+      "range": {
+        "startLine": 1290,
+        "startChar": 0,
+        "endLine": 1290,
+        "endChar": 38
+      },
+      "revId": "fd90faf8dd57a95226e1c7f12acf178b7881bbf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

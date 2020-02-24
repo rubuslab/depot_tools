@@ -46,6 +46,30 @@
       "revId": "fd90faf8dd57a95226e1c7f12acf178b7881bbf5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "771ac6ee_bd1e8d06",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-02-24T23:20:43Z",
+      "side": 1,
+      "message": "I expect `git log ...` to return data. So, has_local_description can be removed and `local_description` can be used\n\nif not self.local_description:\n  # existing code block ...",
+      "parentUuid": "e0922aa8_f7097ce2",
+      "range": {
+        "startLine": 1290,
+        "startChar": 0,
+        "endLine": 1290,
+        "endChar": 38
+      },
+      "revId": "fd90faf8dd57a95226e1c7f12acf178b7881bbf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

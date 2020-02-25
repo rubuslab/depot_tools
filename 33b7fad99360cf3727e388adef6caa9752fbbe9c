@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f587e5ff_06ae6cf5",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1457,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-02-25T23:32:24Z",
+      "side": 1,
+      "message": "from the style guide: https://g3doc.corp.google.com/eng/doc/devguide/py/style/index.md?cl\u003dhead#line-length\n\nIt is permissible to use backslash continuation when defining a with statement whose expressions span three or more lines. For two lines of expressions, use a nested with statement:",
+      "parentUuid": "f0067789_ffd453b3",
+      "range": {
+        "startLine": 1456,
+        "startChar": 0,
+        "endLine": 1457,
+        "endChar": 57
+      },
+      "revId": "33b7fad99360cf3727e388adef6caa9752fbbe9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b012b25f_4dc2fab6",
         "filename": "git_cl.py",
         "patchSetId": 8

@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f0067789_ffd453b3",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1457,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-02-25T21:41:46Z",
+      "side": 1,
+      "message": "nit: can be simplified with\n\nwith gclient_utils.temporary_file() as description_file, \\\n     gclient_utils.temporary_file() as json_output:",
+      "range": {
+        "startLine": 1456,
+        "startChar": 0,
+        "endLine": 1457,
+        "endChar": 57
+      },
+      "revId": "33b7fad99360cf3727e388adef6caa9752fbbe9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b012b25f_4dc2fab6",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1472,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-02-25T21:41:46Z",
+      "side": 1,
+      "message": "I think it\u0027s fine, but want to call out that in the current implementation, exit_code can be 1 and sys.exit won\u0027t be called.",
+      "revId": "33b7fad99360cf3727e388adef6caa9752fbbe9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

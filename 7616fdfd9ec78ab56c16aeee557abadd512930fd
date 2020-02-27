@@ -16,6 +16,24 @@
       "revId": "7616fdfd9ec78ab56c16aeee557abadd512930fd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec1730cf_b30bc405",
+        "filename": "OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-02-27T09:50:25Z",
+      "side": 1,
+      "message": "I think cipd.* should cover it?",
+      "parentUuid": "5442b1bf_a8a78a32",
+      "revId": "7616fdfd9ec78ab56c16aeee557abadd512930fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

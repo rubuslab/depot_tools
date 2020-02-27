@@ -568,12 +568,14 @@ class PresubmitUnittest(PresubmitTestsBase):
     # Make a change which will have no warnings.
     change = self.ExampleChange(extra_lines=['STORY=http://tracker/123'])
 
-    output = presubmit.DoPresubmitChecks(
-        change=change, committing=False, verbose=True,
-        output_stream=None, input_stream=None,
-        default_presubmit=None, may_prompt=False,
-        gerrit_obj=None, json_output=None)
-    self.assertIsNotNone(output.should_continue())
+    output = StringIO()
+    self.assertEqual(
+        0,
+        presubmit.DoPresubmitChecks(
+            change=change, committing=False, verbose=True,
+            output_stream=output, input_stream=None,
+            default_presubmit=None, may_prompt=False,
+            gerrit_obj=None, json_output=None))
     self.assertEqual(output.getvalue().count('!!'), 0)
     self.assertEqual(output.getvalue().count('??'), 0)
     self.assertEqual(output.getvalue().count(
@@ -653,13 +655,14 @@ def CheckChangeOnCommit(input_api, output_api):
 
     fake_result_json = json.dumps(fake_result, sort_keys=True)
 
-    output = presubmit.DoPresubmitChecks(
-        change=change, committing=False, verbose=True,
-        output_stream=None, input_stream=None,
-        default_presubmit=always_fail_presubmit_script,
-        may_prompt=False, gerrit_obj=None, json_output=temp_path)
+    self.assertEqual(
+        1,
+        presubmit.DoPresubmitChecks(
+            change=change, committing=False, verbose=True,
+            output_stream=None, input_stream=None,
+            default_presubmit=always_fail_presubmit_script,
+            may_prompt=False, gerrit_obj=None, json_output=temp_path))
 
-    self.assertFalse(output.should_continue())
     gclient_utils.FileWrite.assert_called_with(temp_path, fake_result_json)
 
   def testDoPresubmitChecksPromptsAfterWarnings(self):
@@ -678,21 +681,25 @@ def CheckChangeOnCommit(input_api, output_api):
     change = self.ExampleChange(extra_lines=['PROMPT_WARNING=yes'])
 
     input_buf = StringIO('n\n')  # say no to the warning
-    output = presubmit.DoPresubmitChecks(
-        change=change, committing=False, verbose=True,
-        output_stream=None, input_stream=input_buf,
-        default_presubmit=None, may_prompt=True,
-        gerrit_obj=None, json_output=None)
-    self.assertFalse(output.should_continue())
+    output = StringIO()
+    self.assertEqual(
+        1,
+        presubmit.DoPresubmitChecks(
+            change=change, committing=False, verbose=True,
+            output_stream=output, input_stream=input_buf,
+            default_presubmit=None, may_prompt=True,
+            gerrit_obj=None, json_output=None))
     self.assertEqual(output.getvalue().count('??'), 2)
 
     input_buf = StringIO('y\n')  # say yes to the warning
-    output = presubmit.DoPresubmitChecks(
-        change=change, committing=False, verbose=True,
-        output_stream=None, input_stream=input_buf,
-        default_presubmit=None, may_prompt=True,
-        gerrit_obj=None, json_output=None)
-    self.assertIsNotNone(output.should_continue())
+    output = StringIO()
+    self.assertEqual(
+        0,
+        presubmit.DoPresubmitChecks(
+            change=change, committing=False, verbose=True,
+            output_stream=output, input_stream=input_buf,
+            default_presubmit=None, may_prompt=True,
+            gerrit_obj=None, json_output=None))
     self.assertEqual(output.getvalue().count('??'), 2)
     self.assertEqual(output.getvalue().count(
         'Running presubmit upload checks ...\n'), 1)
@@ -711,13 +718,15 @@ def CheckChangeOnCommit(input_api, output_api):
     change = self.ExampleChange(extra_lines=['PROMPT_WARNING=yes'])
 
     # There is no input buffer and may_prompt is set to False.
-    output = presubmit.DoPresubmitChecks(
-        change=change, committing=False, verbose=True,
-        output_stream=None, input_stream=None,
-        default_presubmit=None, may_prompt=False,
-        gerrit_obj=None, json_output=None)
+    output = StringIO()
+    self.assertEqual(
+        0,
+        presubmit.DoPresubmitChecks(
+            change=change, committing=False, verbose=True,
+            output_stream=output, input_stream=None,
+            default_presubmit=None, may_prompt=False,
+            gerrit_obj=None, json_output=None))
     # A warning is printed, and should_continue is True.
-    self.assertIsNotNone(output.should_continue())
     self.assertEqual(output.getvalue().count('??'), 2)
     self.assertEqual(output.getvalue().count('(y/N)'), 0)
     self.assertEqual(output.getvalue().count(
@@ -735,12 +744,14 @@ def CheckChangeOnCommit(input_api, output_api):
     random.randint.return_value = 1
 
     change = self.ExampleChange(extra_lines=['ERROR=yes'])
-    output = presubmit.DoPresubmitChecks(
-        change=change, committing=False, verbose=True,
-        output_stream=None, input_stream=None,
-        default_presubmit=None, may_prompt=True,
-        gerrit_obj=None, json_output=None)
-    self.assertFalse(output.should_continue())
+    output = StringIO()
+    self.assertEqual(
+        1,
+        presubmit.DoPresubmitChecks(
+            change=change, committing=False, verbose=True,
+            output_stream=output, input_stream=None,
+            default_presubmit=None, may_prompt=True,
+            gerrit_obj=None, json_output=None))
     self.assertEqual(output.getvalue().count('??'), 0)
     self.assertEqual(output.getvalue().count('!!'), 2)
     self.assertEqual(output.getvalue().count('(y/N)'), 0)
@@ -763,12 +774,14 @@ def CheckChangeOnCommit(input_api, output_api):
     input_buf = StringIO('y\n')
 
     change = self.ExampleChange(extra_lines=['STORY=http://tracker/123'])
-    output = presubmit.DoPresubmitChecks(
-        change=change, committing=False, verbose=True,
-        output_stream=None, input_stream=input_buf,
-        default_presubmit=always_fail_presubmit_script,
-        may_prompt=False, gerrit_obj=None, json_output=None)
-    self.assertFalse(output.should_continue())
+    output = StringIO()
+    self.assertEqual(
+        1,
+        presubmit.DoPresubmitChecks(
+            change=change, committing=False, verbose=True,
+            output_stream=output, input_stream=input_buf,
+            default_presubmit=always_fail_presubmit_script,
+            may_prompt=False, gerrit_obj=None, json_output=None))
     text = (
         'Running presubmit upload checks ...\n'
         'Warning, no PRESUBMIT.py found.\n'
@@ -880,14 +893,24 @@ def CheckChangeOnCommit(input_api, output_api):
                                                self.fake_root_dir, None, None,
                                                False, output))
 
+  @mock.patch('presubmit_support.DoPostUploadExecuter')
+  def testMainPostUpload(self, mockDoPostUploadExecuter):
+    mockDoPostUploadExecuter.return_value = 0
+    scm.determine_scm.return_value = None
+    presubmit._parse_files.return_value = [('M', 'random_file.txt')]
+    self.assertEqual(
+        0,
+        presubmit.main(
+            ['--root', self.fake_root_dir, 'random_file.txt', '--post_upload']))
+
   @mock.patch('presubmit_support.DoPresubmitChecks')
   def testMainUnversioned(self, mockDoPresubmitChecks):
     scm.determine_scm.return_value = None
     presubmit._parse_files.return_value = [('M', 'random_file.txt')]
-    mockDoPresubmitChecks().should_continue.return_value = False
+    mockDoPresubmitChecks.return_value = 0
 
     self.assertEqual(
-        True,
+        0,
         presubmit.main(['--root', self.fake_root_dir, 'random_file.txt']))
 
   def testMainUnversionedFail(self):
@@ -1490,47 +1513,35 @@ class OutputApiUnittest(PresubmitTestsBase):
 
 
   def testOutputApiHandling(self):
-
-    output = presubmit.PresubmitOutput()
-    presubmit.OutputApi.PresubmitError('!!!').handle(output)
-    self.assertFalse(output.should_continue())
+    output = StringIO()
+    self.assertEqual(
+        True, presubmit.OutputApi.PresubmitError('!!!').handle(output))
     self.assertIsNotNone(output.getvalue().count('!!!'))
 
-    output = presubmit.PresubmitOutput()
-    presubmit.OutputApi.PresubmitNotifyResult('?see?').handle(output)
-    self.assertIsNotNone(output.should_continue())
+    output = StringIO()
+    self.assertEqual(
+        False,
+        presubmit.OutputApi.PresubmitNotifyResult('?see?').handle(output))
     self.assertIsNotNone(output.getvalue().count('?see?'))
 
-    output = presubmit.PresubmitOutput(input_stream=StringIO('y'))
-    presubmit.OutputApi.PresubmitPromptWarning('???').handle(output)
-    output.prompt_yes_no('prompt: ')
-    self.assertIsNotNone(output.should_continue())
+    output = StringIO()
+    self.assertEqual(
+        False,
+        presubmit.OutputApi.PresubmitPromptWarning('???').handle(output))
     self.assertIsNotNone(output.getvalue().count('???'))
 
-    output = presubmit.PresubmitOutput(input_stream=StringIO('\n'))
-    presubmit.OutputApi.PresubmitPromptWarning('???').handle(output)
-    output.prompt_yes_no('prompt: ')
-    self.assertFalse(output.should_continue())
-    self.assertIsNotNone(output.getvalue().count('???'))
-
+    output = StringIO()
     output_api = presubmit.OutputApi(True)
-    output = presubmit.PresubmitOutput(input_stream=StringIO('y'))
-    output_api.PresubmitPromptOrNotify('???').handle(output)
-    output.prompt_yes_no('prompt: ')
-    self.assertIsNotNone(output.should_continue())
+    self.assertEqual(
+        False,
+        output_api.PresubmitPromptOrNotify('???').handle(output))
     self.assertIsNotNone(output.getvalue().count('???'))
 
+    output = StringIO()
     output_api = presubmit.OutputApi(False)
-    output = presubmit.PresubmitOutput(input_stream=StringIO('y'))
-    output_api.PresubmitPromptOrNotify('???').handle(output)
-    self.assertIsNotNone(output.should_continue())
-    self.assertIsNotNone(output.getvalue().count('???'))
-
-    output_api = presubmit.OutputApi(True)
-    output = presubmit.PresubmitOutput(input_stream=StringIO('\n'))
-    output_api.PresubmitPromptOrNotify('???').handle(output)
-    output.prompt_yes_no('prompt: ')
-    self.assertFalse(output.should_continue())
+    self.assertEqual(
+        False,
+        output_api.PresubmitPromptOrNotify('???').handle(output))
     self.assertIsNotNone(output.getvalue().count('???'))
 
 
@@ -2526,7 +2537,7 @@ the current line as well!
       if not is_committing and uncovered_files:
         fake_db.reviewers_for.return_value = change.author_email
 
-    output = presubmit.PresubmitOutput()
+    output = StringIO()
     results = presubmit_canned_checks.CheckOwners(input_api,
         presubmit.OutputApi)
     for result in results:

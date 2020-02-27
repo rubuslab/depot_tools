@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "28e2ba11_a8f89714",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1689,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-02-27T21:56:37Z",
+      "side": 0,
+      "message": "Without this, user can submit even if errors happen. I think it\u0027s fine, but calling it out.",
+      "revId": "005269a51304917aed6d5f371bfe7f131f8cd248",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

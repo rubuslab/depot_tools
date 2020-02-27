@@ -34,6 +34,24 @@
       "revId": "7616fdfd9ec78ab56c16aeee557abadd512930fd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07be9487_9390a994",
+        "filename": "OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-02-27T11:32:44Z",
+      "side": 1,
+      "message": "oh, that\u0027s technically true, but L30 giving nearby lines really suggests the intent was \"cipd[.exe|.bat]\", not cipd_manifest. Up to you.",
+      "parentUuid": "ec1730cf_b30bc405",
+      "revId": "7616fdfd9ec78ab56c16aeee557abadd512930fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

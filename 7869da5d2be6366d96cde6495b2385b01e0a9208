@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "80327ad0_6d1346a0",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-27T22:02:58Z",
+      "side": 1,
+      "message": "Yes, it\u0027s only done for unit tests.",
+      "parentUuid": "74097b3b_0bda07a3",
+      "revId": "7869da5d2be6366d96cde6495b2385b01e0a9208",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fffeee4b_69bd0fe0",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "7869da5d2be6366d96cde6495b2385b01e0a9208",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50977a0b_e1e253ac",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4670,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-27T22:02:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fffeee4b_69bd0fe0",
+      "revId": "7869da5d2be6366d96cde6495b2385b01e0a9208",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

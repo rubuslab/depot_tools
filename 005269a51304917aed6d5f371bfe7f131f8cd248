@@ -16,6 +16,24 @@
       "revId": "005269a51304917aed6d5f371bfe7f131f8cd248",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20021d51_aa929b8d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1689,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-02-27T22:00:52Z",
+      "side": 0,
+      "message": "output.fail() is replaced by presubmits_failed, which is set when result.fatal is True while iterating through results.",
+      "parentUuid": "28e2ba11_a8f89714",
+      "revId": "005269a51304917aed6d5f371bfe7f131f8cd248",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -25,7 +25,6 @@ def GenTests(api):
         git_repo='https://chromium.googlesource.com/chromium/src',
         change_number=91827,
         patch_set=1) +
-      api.properties(target_ref='refs/heads/master') +
       api.tryserver.gerrit_change_target_ref('refs/heads/master') +
       api.override_step_data('gerrit fetch current CL info',
                              times_out_after=1200) +

@@ -22,6 +22,30 @@
       "revId": "6d111d3e31440f9cd4f1dc8be8579837d357f3f0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24c3f231_30fbeee1",
+        "filename": "git_footers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1396774
+      },
+      "writtenOn": "2020-02-28T19:03:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d24bf65f_e89d341f",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 194,
+        "endChar": 18
+      },
+      "revId": "6d111d3e31440f9cd4f1dc8be8579837d357f3f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

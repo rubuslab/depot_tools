@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d24bf65f_e89d341f",
+        "filename": "git_footers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1318707
+      },
+      "writtenOn": "2020-02-28T18:34:29Z",
+      "side": 1,
+      "message": "it\u0027s kind of traditional in Google Python style to put the type first. This could be clarified a bit more too. What about:\n\nA tuple containing (ref,pos) of the commit, or (None,1) if it\u0027s the first commit.",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 194,
+        "endChar": 18
+      },
+      "revId": "6d111d3e31440f9cd4f1dc8be8579837d357f3f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

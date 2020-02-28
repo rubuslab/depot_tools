@@ -187,14 +187,18 @@ def get_unique(footers, key):
 
 
 def get_position(footers):
-  """Get the commit position from the footers multimap using a heuristic.
+  """Parse the commit position from the Cr-Commit-Position tag.
 
   Returns:
-    A tuple of the branch and the position on that branch. For example,
+    If the Cr-Commit-Position tag is found, returns a tuple containing (ref,pos)
+    of the commit.
 
-    Cr-Commit-Position: refs/heads/master@{#292272}
-
+    For example:
+       Cr-Commit-Position: refs/heads/master@{#292272}
     would give the return value ('refs/heads/master', 292272).
+
+    If the tag is not found, then (None,1) is returned indicating the first
+    commit of a new chain.
   """
 
   position = get_unique(footers, 'Cr-Commit-Position')
@@ -202,8 +206,7 @@ def get_position(footers):
     match = CHROME_COMMIT_POSITION_PATTERN.match(position)
     assert match, 'Invalid Cr-Commit-Position value: %s' % position
     return (match.group(1), match.group(2))
-
-  raise ValueError('Unable to infer commit position from footers')
+  return (None,1)
 
 
 def main(args):
@@ -235,14 +238,18 @@ def main(args):
     for v in footers.get(normalize_name(opts.key), []):
       print(v)
   elif opts.position:
-    pos = get_position(footers)
-    print('%s@{#%s}' % (pos[0], pos[1] or '?'))
+    ref,pos = get_position(footers)
+    if (not ref):
+      raise ValueError("Cr-Commit-Position not found")
+    print('%s@{#%s}' % (ref, pos or '?'))
   elif opts.position_ref:
-    print(get_position(footers)[0])
+    ref,_ = get_position(footers)
+    if not ref:
+      raise ValueError("Cr-Commit-Position not found")
+    print(ref)
   elif opts.position_num:
-    pos = get_position(footers)
-    assert pos[1], 'No valid position for commit'
-    print(pos[1])
+    _,pos = get_position(footers)
+    print(pos)
   elif opts.json:
     with open(opts.json, 'w') as f:
       json.dump(footers, f)

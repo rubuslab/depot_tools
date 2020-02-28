@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d760f6e6_e14de251",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1396774
+      },
+      "writtenOn": "2020-02-28T22:32:36Z",
+      "side": 1,
+      "message": "I can open one if you like.",
+      "parentUuid": "90cbb07c_49ec9dae",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 0
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "561d521e_cfd4a5c7",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "39fc5926_37b9f282",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2960,
+      "author": {
+        "id": 1396774
+      },
+      "writtenOn": "2020-02-28T22:32:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "561d521e_cfd4a5c7",
+      "range": {
+        "startLine": 2960,
+        "startChar": 4,
+        "endLine": 2960,
+        "endChar": 11
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "66304fe5_8ab06407",
         "filename": "git_footers.py",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2020-02-28T21:44:02Z",
       "side": 1,
       "message": "footer",
+      "range": {
+        "startLine": 200,
+        "startChar": 11,
+        "endLine": 200,
+        "endChar": 14
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c37e1670_d4ce9a64",
+        "filename": "git_footers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1396774
+      },
+      "writtenOn": "2020-02-28T22:32:36Z",
+      "side": 1,
+      "message": "Sorry, can you elaborate?",
+      "parentUuid": "66304fe5_8ab06407",
       "range": {
         "startLine": 200,
         "startChar": 11,
@@ -91,6 +163,30 @@
       "revId": "640105711cd141d95dd589d62556b5ceec200615",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a89ea3e6_c00b65f5",
+        "filename": "git_footers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1396774
+      },
+      "writtenOn": "2020-02-28T22:32:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92dba448_e677fbcc",
+      "range": {
+        "startLine": 241,
+        "startChar": 4,
+        "endLine": 241,
+        "endChar": 11
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

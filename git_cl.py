@@ -2957,7 +2957,9 @@ class ChangeDescription(object):
     # This will also happily parse svn-position, which GnumbD is no longer
     # supporting. While we'd generate correct footers, the verifier plugin
     # installed in Gerrit will block such commit (ie git push below will fail).
-    parent_position = git_footers.get_position(parent_footer_map)
+    parent_ref, parent_pos = git_footers.get_position(parent_footer_map)
+    if not parent_ref:
+      raise ValueError("Cr-Commit-Position not found")
 
     # Cherry-picks may have last line obscuring their prior footers,
     # from git_footers perspective. This is also what Gnumbd did.
@@ -2977,13 +2979,12 @@ class ChangeDescription(object):
 
     # Add Position and Lineage footers based on the parent.
     lineage = list(reversed(parent_footer_map.get('Cr-Branched-From', [])))
-    if parent_position[0] == dest_ref:
+    if parent_ref == dest_ref:
       # Same branch as parent.
-      number = int(parent_position[1]) + 1
+      number = int(pos) + 1
     else:
       number = 1  # New branch, and extra lineage.
-      lineage.insert(0, '%s-%s@{#%d}' % (parent_hash, parent_position[0],
-                                         int(parent_position[1])))
+      lineage.insert(0, '%s-%s@{#%d}' % (parent_hash, parent_ref, int(parent_pos)))
 
     footer_lines.append('Cr-Commit-Position: %s@{#%d}' % (dest_ref, number))
     footer_lines.extend('Cr-Branched-From: %s' % v for v in lineage)

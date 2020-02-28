@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "90cbb07c_49ec9dae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2020-02-28T21:44:02Z",
+      "side": 1,
+      "message": "No bug to associate this with?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 0
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "561d521e_cfd4a5c7",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2960,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2020-02-28T21:44:02Z",
+      "side": 1,
+      "message": "Give these more descriptive names, and a space after the comma:\n\n  parent_ref, parent_num \u003d",
+      "range": {
+        "startLine": 2960,
+        "startChar": 4,
+        "endLine": 2960,
+        "endChar": 11
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66304fe5_8ab06407",
+        "filename": "git_footers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2020-02-28T21:44:02Z",
+      "side": 1,
+      "message": "footer",
+      "range": {
+        "startLine": 200,
+        "startChar": 11,
+        "endLine": 200,
+        "endChar": 14
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92dba448_e677fbcc",
+        "filename": "git_footers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2020-02-28T21:44:02Z",
+      "side": 1,
+      "message": "Similar comment here and below. These are a ref and a number, not a ref and a position, and there should always be a space after the comma.",
+      "range": {
+        "startLine": 241,
+        "startChar": 4,
+        "endLine": 241,
+        "endChar": 11
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "1e171bd3_2b3794b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1396774
+      },
+      "writtenOn": "2020-02-28T22:50:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d760f6e6_e14de251",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 0
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "561d521e_cfd4a5c7",
         "filename": "git_cl.py",
         "patchSetId": 2

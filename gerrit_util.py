@@ -296,7 +296,7 @@ class GceAuthenticator(Authenticator):
   @staticmethod
   def _get(url, **kwargs):
     next_delay_sec = 1
-    for i in xrange(TRY_LIMIT):
+    for i in range(TRY_LIMIT):
       p = urllib.parse.urlparse(url)
       if p.scheme not in ('http', 'https'):
         raise RuntimeError(
@@ -313,6 +313,7 @@ class GceAuthenticator(Authenticator):
                     next_delay_sec, TRY_LIMIT - i - 1)
         time_sleep(next_delay_sec)
         next_delay_sec *= 2
+    return {}, None
 
   @classmethod
   def _get_token_dict(cls):

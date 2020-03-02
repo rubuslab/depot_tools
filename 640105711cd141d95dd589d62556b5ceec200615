@@ -167,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "622ea6fa_aa1cdd0d",
+        "filename": "git_footers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2020-03-02T17:14:43Z",
+      "side": 1,
+      "message": "The term-of-art for a key-value pair at the end of a git commit message is (officially) \"trailer\" or (in chromium\u0027s use, for historical reasons) \"footer\". The word \"tag\" isn\u0027t used anywhere else in this file, so I wouldn\u0027t introduce it here or on line 190 above.",
+      "parentUuid": "c37e1670_d4ce9a64",
+      "range": {
+        "startLine": 200,
+        "startChar": 11,
+        "endLine": 200,
+        "endChar": 14
+      },
+      "revId": "640105711cd141d95dd589d62556b5ceec200615",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "92dba448_e677fbcc",
         "filename": "git_footers.py",
         "patchSetId": 2

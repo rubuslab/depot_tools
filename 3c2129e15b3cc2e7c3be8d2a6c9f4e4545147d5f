@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "19183afa_b8b7dcb9",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3448,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-04T00:57:58Z",
+      "side": 1,
+      "message": "Can you add tests for when revision, category and retry_failed are set/not set on options?",
+      "range": {
+        "startLine": 3448,
+        "startChar": 6,
+        "endLine": 3448,
+        "endChar": 28
+      },
+      "revId": "3c2129e15b3cc2e7c3be8d2a6c9f4e4545147d5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57e4f5c6_bd6a9d32",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3460,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-04T00:57:58Z",
+      "side": 1,
+      "message": "Can you add \n\n  (\u0027chromium\u0027, \u0027try\u0027, \u0027presubmit\u0027)\n\nto test that \u0027dry_run\u0027 property is set?",
+      "range": {
+        "startLine": 3460,
+        "startChar": 8,
+        "endLine": 3460,
+        "endChar": 42
+      },
+      "revId": "3c2129e15b3cc2e7c3be8d2a6c9f4e4545147d5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

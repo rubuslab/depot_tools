@@ -663,9 +663,6 @@ class TestGitCl(unittest.TestCase):
         'git_cl.SaveDescriptionBackup',
         lambda _: self._mocked_call('SaveDescriptionBackup')).start()
     mock.patch(
-        'git_cl.ask_for_data',
-        lambda prompt: self._mocked_call('ask_for_data', prompt)).start()
-    mock.patch(
         'git_cl.write_json',
         lambda *a: self._mocked_call('write_json', *a)).start()
     mock.patch(
@@ -769,12 +766,13 @@ class TestGitCl(unittest.TestCase):
       result = result.encode('utf-8')
     return result
 
+  @mock.patch('sys.stdin', StringIO('blah\nye\n'))
+  @mock.patch('sys.stdout', StringIO())
   def test_ask_for_explicit_yes_true(self):
-    self.calls = [
-        (('ask_for_data', 'prompt [Yes/No]: '), 'blah'),
-        (('ask_for_data', 'Please, type yes or no: '), 'ye'),
-    ]
     self.assertTrue(git_cl.ask_for_explicit_yes('prompt'))
+    self.assertEqual(
+        'prompt [Yes/No]: Please, type yes or no: ',
+        sys.stdout.getvalue())
 
   def test_LoadCodereviewSettingsFromFile_gerrit(self):
     codereview_file = StringIO('GERRIT_HOST: true')
@@ -1193,6 +1191,9 @@ class TestGitCl(unittest.TestCase):
     mock.patch('git_cl.Changelist.GitSanityChecks', return_value=True).start()
     mock.patch(
         'git_cl.Changelist.GetLocalDescription', return_value='foo').start()
+    mock.patch(
+        'git_cl.ask_for_data',
+        lambda prompt: self._mocked_call('ask_for_data', prompt)).start()
 
     self.mockGit.config['gerrit.host'] = 'true'
     self.mockGit.config['branch.master.gerritissue'] = (
@@ -1473,7 +1474,8 @@ class TestGitCl(unittest.TestCase):
 
   @mock.patch('git_cl.RunGit')
   @mock.patch('git_cl.CMDupload')
-  @mock.patch('git_cl.ask_for_data')
+  @mock.patch('sys.stdin', StringIO('\n'))
+  @mock.patch('sys.stdout', StringIO())
   def test_upload_branch_deps(self, *_mocks):
     def mock_run_git(*args, **_kwargs):
       if args[0] == ['for-each-ref',
@@ -1511,10 +1513,11 @@ class TestGitCl(unittest.TestCase):
     ret = git_cl.upload_branch_deps(MockChangelist(), [])
     # CMDupload should have been called 5 times because of 5 dependent branches.
     self.assertEqual(5, len(git_cl.CMDupload.mock_calls))
-    git_cl.ask_for_data.assert_called_once_with(
+    self.assertIn(
         'This command will checkout all dependent branches '
         'and run "git cl upload". Press Enter to continue, '
-        'or Ctrl+C to abort')
+        'or Ctrl+C to abort',
+        sys.stdout.getvalue())
     self.assertEqual(0, ret)
 
   def test_gerrit_change_id(self):
@@ -1843,6 +1846,9 @@ class TestGitCl(unittest.TestCase):
     self.assertEqual(1, git_cl.main(['checkout', '99999']))
 
   def _test_gerrit_ensure_authenticated_common(self, auth):
+    mock.patch(
+        'git_cl.ask_for_data',
+        lambda prompt: self._mocked_call('ask_for_data', prompt)).start()
     mock.patch('git_cl.gerrit_util.CookiesAuthenticator',
               CookiesAuthenticatorMockFactory(hosts_with_creds=auth)).start()
     self.mockGit.config['remote.origin.url'] = (
@@ -2236,6 +2242,9 @@ class TestGitCl(unittest.TestCase):
     mock.patch(
         'git_cl.gclient_utils.rm_file_or_tree',
         lambda path: self._mocked_call(['rm_file_or_tree', path])).start()
+    mock.patch(
+        'git_cl.ask_for_data',
+        lambda prompt: self._mocked_call('ask_for_data', prompt)).start()
     return git_cl.Changelist(issue=123)
 
   def test_GerritCommitMsgHookCheck_custom_hook(self):
@@ -2385,6 +2394,9 @@ class TestGitCl(unittest.TestCase):
         return self._mocked_call('os.path.exists', '%s/%s' % (dirname, base))
       # git cl also checks for existence other files not relevant to this test.
       return None
+    mock.patch(
+        'git_cl.ask_for_data',
+        lambda prompt: self._mocked_call('ask_for_data', prompt)).start()
     mock.patch('os.path.exists', exists_mock).start()
 
   def test_creds_check_gitcookies_not_configured(self):
@@ -2852,7 +2864,7 @@ class ChangelistTest(unittest.TestCase):
         '--description_file', '/tmp/fake-temp1',
     ])
     gclient_utils.FileWrite.assert_called_once_with(
-        '/tmp/fake-temp1', b'description', mode='wb')
+        '/tmp/fake-temp1', 'description')
     metrics.collector.add_repeated('sub_commands', {
       'command': 'presubmit',
       'execution_time': 100,
@@ -2896,7 +2908,7 @@ class ChangelistTest(unittest.TestCase):
         '--description_file', '/tmp/fake-temp1',
     ])
     gclient_utils.FileWrite.assert_called_once_with(
-        '/tmp/fake-temp1', b'description', mode='wb')
+        '/tmp/fake-temp1', 'description')
 
 
 class CMDTestCaseBase(unittest.TestCase):

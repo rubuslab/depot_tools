@@ -72,14 +72,22 @@ class ChangelistMock(object):
   # A class variable so we can access it when we don't have access to the
   # instance that's being set.
   desc = ''
-  def __init__(self, **kwargs):
-    pass
+
+  def __init__(self, gerrit_change=None, **kwargs):
+    self._gerrit_change = gerrit_change
+
   def GetIssue(self):
     return 1
+
   def FetchDescription(self):
     return ChangelistMock.desc
+
   def UpdateDescription(self, desc, force=False):
     ChangelistMock.desc = desc
+
+  def GetGerritChange(self, patchset=None, **kwargs):
+    del patchset
+    return self._gerrit_change
 
 
 class GitMocks(object):
@@ -3386,6 +3394,7 @@ class CMDTryTestCase(CMDTestCaseBase):
 
 
 class CMDUploadTestCase(CMDTestCaseBase):
+
   def setUp(self):
     super(CMDUploadTestCase, self).setUp()
     mock.patch('git_cl.fetch_try_jobs').start()
@@ -3435,6 +3444,53 @@ class CMDUploadTestCase(CMDTestCaseBase):
     ]
     git_cl._trigger_try_jobs.assert_called_once_with(
         mock.ANY, expected_buckets, mock.ANY, 8)
+
+  def testMakeRequestsHelper(self):
+    # Basic test for the helper function _make_try_job_schedule_requests;
+    # it shouldn't throw AttributeError even when options doesn't have all
+    # of the expected values. This is
+    changelist = ChangelistMock(
+        gerrit_change={
+            'project': 'depot_tools',
+            'host': 'chromium-review.googlesource.com',
+            'patchset': 2,
+            'change': 1,
+        })
+    jobs = [
+        ('chromium', 'try', 'my-builder'),
+    ]
+    options, _ = git_cl.OptionParser().parse_args(args=[])
+    out = git_cl._make_try_job_schedule_requests(
+        changelist, jobs, options, patchset=None)
+    self.assertEqual(out, [
+        {
+            'scheduleBuild': {
+                'builder': {
+                    'bucket': 'try',
+                    'builder': 'my-builder',
+                    'project': 'chromium'
+                },
+                'gerritChanges': [{
+                    'change': 1,
+                    'host': 'chromium-review.googlesource.com',
+                    'patchset': 2,
+                    'project': 'depot_tools'
+                }],
+                'properties': {
+                    'category': 'git_cl_try'
+                },
+                'requestId':
+                'uuid4',
+                'tags': [{
+                    'key': 'builder',
+                    'value': 'my-builder'
+                }, {
+                    'key': 'user_agent',
+                    'value': 'git_cl_try'
+                }]
+            }
+        },
+    ])
 
 
 class CMDFormatTestCase(unittest.TestCase):

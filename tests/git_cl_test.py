@@ -2852,7 +2852,7 @@ class ChangelistTest(unittest.TestCase):
         '--description_file', '/tmp/fake-temp1',
     ])
     gclient_utils.FileWrite.assert_called_once_with(
-        '/tmp/fake-temp1', b'description', mode='wb')
+        '/tmp/fake-temp1', 'description')
     metrics.collector.add_repeated('sub_commands', {
       'command': 'presubmit',
       'execution_time': 100,
@@ -2896,7 +2896,7 @@ class ChangelistTest(unittest.TestCase):
         '--description_file', '/tmp/fake-temp1',
     ])
     gclient_utils.FileWrite.assert_called_once_with(
-        '/tmp/fake-temp1', b'description', mode='wb')
+        '/tmp/fake-temp1', 'description')
 
 
 class CMDTestCaseBase(unittest.TestCase):

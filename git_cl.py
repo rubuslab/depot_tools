@@ -1433,8 +1433,8 @@ class Changelist(object):
 
     with gclient_utils.temporary_file() as description_file:
       with gclient_utils.temporary_file() as json_output:
-        gclient_utils.FileWrite(
-            description_file, description.encode('utf-8'), mode='wb')
+
+        gclient_utils.FileWrite(description_file, description)
         args.extend(['--json_output', json_output])
         args.extend(['--description_file', description_file])
 
@@ -1458,8 +1458,7 @@ class Changelist(object):
     args.append('--post_upload')
 
     with gclient_utils.temporary_file() as description_file:
-      gclient_utils.FileWrite(
-          description_file, description.encode('utf-8'), mode='wb')
+      gclient_utils.FileWrite(description_file, description)
       args.extend(['--description_file', description_file])
       p = subprocess2.Popen(['vpython', PRESUBMIT_SUPPORT] + args)
       p.wait()
@@ -1490,7 +1489,10 @@ class Changelist(object):
     if not options.bypass_watchlists:
       self.ExtendCC(watchlist.GetWatchersForPaths(files))
 
-    description = change.FullDescriptionText()
+    if self.GetIssue():
+      description = self.FetchDescription()
+    else:
+      description = self.GetLocalDescription(base_branch)
     if options.reviewers or options.tbrs or options.add_owners_to:
       # Set the reviewer list now so that presubmit checks can access it.
       change_description = ChangeDescription(description)

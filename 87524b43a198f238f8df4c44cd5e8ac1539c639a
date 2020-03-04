@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbce8da2_ca749e98",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-04T00:53:45Z",
+      "side": 1,
+      "message": "What about making this private too?\n\n  def _fetch_tryjobs(...",
+      "range": {
+        "startLine": 451,
+        "startChar": 4,
+        "endLine": 451,
+        "endChar": 17
+      },
+      "revId": "87524b43a198f238f8df4c44cd5e8ac1539c639a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09bd90aa_543f3214",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-04T00:53:45Z",
+      "side": 1,
+      "message": "And this\n\n  def _print_tryjobs(options, builds):",
+      "range": {
+        "startLine": 555,
+        "startChar": 4,
+        "endLine": 555,
+        "endChar": 17
+      },
+      "revId": "87524b43a198f238f8df4c44cd5e8ac1539c639a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

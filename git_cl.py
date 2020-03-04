@@ -405,6 +405,7 @@ def _trigger_try_jobs(changelist, jobs, options, patchset):
 
 
 def _make_try_job_schedule_requests(changelist, jobs, options, patchset):
+  """Constructs requests for Buildbucket to trigger tryjobs."""
   gerrit_changes = [changelist.GetGerritChange(patchset)]
   shared_properties = {'category': getattr(options, 'category', 'git_cl_try')}
   if getattr(options, 'clobber', False):
@@ -412,7 +413,7 @@ def _make_try_job_schedule_requests(changelist, jobs, options, patchset):
   shared_properties.update(_get_properties_from_options(options) or {})
 
   shared_tags = [{'key': 'user_agent', 'value': 'git_cl_try'}]
-  if options.retry_failed:
+  if getattr(options, 'retry_failed', False):
     shared_tags.append({'key': 'retry_failed',
                         'value': '1'})
 
@@ -438,7 +439,7 @@ def _make_try_job_schedule_requests(changelist, jobs, options, patchset):
         }
     })
 
-    if options.revision:
+    if getattr(options, 'revision', None):
       requests[-1]['scheduleBuild']['gitilesCommit'] = {
           'host': gerrit_changes[0]['host'],
           'project': gerrit_changes[0]['project'],

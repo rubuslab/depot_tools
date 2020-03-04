@@ -353,7 +353,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
     assert refactor_branch_upstream, \
         "Branch %s must have an upstream." % refactor_branch
 
-    owners_database = owners.Database(change.RepositoryRoot(), file, os.path)
+    owners_database = owners.Database(change.RepositoryRoot(), open, os.path)
     owners_database.load_data_needed_for([f.LocalPath() for f in files])
 
     change_lists = SplitCLs(owners_database, author, set(files))

@@ -117,6 +117,15 @@ DEFAULT_LINT_IGNORE_REGEX = r"$^"
 # File name for yapf style config files.
 YAPF_CONFIG_FILENAME = '.style.yapf'
 
+# If a git push failed, and the length of the refspec exceeds
+# MAX_REFSPEC_LENGTH on Windows, the cause it's probably the command line being
+# too long.
+MAX_REFSPEC_LENGTH = 7000
+
+# If git push takes longer than MAX_UPLOAD_TIME, ask the user to file a bug and
+# upload traces.
+MAX_UPLOAD_TIME = 30 * 60  # 30 min.
+
 # Shortcut since it quickly becomes repetitive.
 Fore = colorama.Fore
 
@@ -2223,22 +2232,30 @@ class Changelist(object):
       push_stdout = push_stdout.decode('utf-8', 'replace')
     except subprocess2.CalledProcessError as e:
       push_returncode = e.returncode
-      DieWithError('Failed to create a change. Please examine output above '
-                   'for the reason of the failure.\n'
-                   'Hint: run command below to diagnose common Git/Gerrit '
-                   'credential problems:\n'
-                   '  git cl creds-check\n'
-                   '\n'
-                   'If git-cl is not working correctly, file a bug under the '
-                   'Infra>SDK component including the files below.\n'
-                   'Review the files before upload, since they might contain '
-                   'sensitive information.\n'
-                   'Set the Restrict-View-Google label so that they are not '
-                   'publicly accessible.\n'
-                   + TRACES_MESSAGE % {'trace_name': trace_name},
-                   change_desc)
+      message = (
+          'Failed to create a change. Please examine the output above for the '
+          'reason of the failure.\n'
+          'If git-cl is not working correctly, file a bug under the Infra>SDK '
+          'component.\n'
+          'Hint: run the command below to diagnose common Git/Gerrit '
+          'credential problems:\n'
+          '  git cl creds-check\n'
+          '\n')
+      if sys.platform.startswith('win') and len(refspec) > MAX_REFSPEC_LENGTH:
+        message += (
+            'Hint: try splitting the cl, or using the --no-autocc flag.')
+      DieWithError(message, change_desc)
     finally:
       execution_time = time_time() - before_push
+      if execution_time > MAX_UPLOAD_TIME:
+        print('Uploading the change seems to have taken a long time.')
+        print('If this behavior is consistent, please file a bug under the '
+              'Infra>SDK compontent and include the files below.')
+        print('Review them before upload since they might contain sensitive '
+              'information, and set the Restrict-View-Google label so that they '
+              'are not publicly accessible.')
+        print(TRACES_MESSAGE % {'trace_name': trace_name})
+
       metrics.collector.add_repeated('sub_commands', {
         'command': 'git push',
         'execution_time': execution_time,

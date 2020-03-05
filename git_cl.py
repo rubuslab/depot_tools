@@ -2213,6 +2213,7 @@ class Changelist(object):
       push_returncode = 0
       remote_url = self.GetRemoteUrl()
       before_push = time_time()
+      refspec += ',cc=foo@example.com' * 100
       push_stdout = gclient_utils.CheckCallAndFilter(
           ['git', 'push', remote_url, refspec],
           env=env,

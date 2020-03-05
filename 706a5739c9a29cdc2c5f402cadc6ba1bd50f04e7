@@ -22,6 +22,30 @@
       "revId": "706a5739c9a29cdc2c5f402cadc6ba1bd50f04e7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43945eab_6d7740f3",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3497,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2020-03-05T21:39:53Z",
+      "side": 1,
+      "message": "Done, SGTM\n\n(Also removed the maxDiff setting below which was meant for debugging)",
+      "parentUuid": "8c67b69c_0077caa9",
+      "range": {
+        "startLine": 3497,
+        "startChar": 6,
+        "endLine": 3497,
+        "endChar": 28
+      },
+      "revId": "706a5739c9a29cdc2c5f402cadc6ba1bd50f04e7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

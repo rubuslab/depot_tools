@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0cba38_29b52920",
+        "filename": "gerrit_util.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-03-06T19:38:53Z",
+      "side": 1,
+      "message": "can you add a todo/bug to auto detect this case?",
+      "revId": "3f396efdaab8a302530ba2f88c3061b8baf29305",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -465,6 +465,9 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
       host = auth_match.group(1) if auth_match else conn.req_host
       print('Authentication failed. Please make sure your .gitcookies '
             'file has credentials for %s.' % host)
+    if isinstance(Authenticator.get(), GceAuthenticator):
+      print('If you\'re on a cloudtop instance, export '
+            'SKIP_GCE_AUTH_FOR_GIT=1 in your env.')
     print('Try:\n  git cl creds-check')
 
   reason = '%s: %s' % (response.reason, contents)

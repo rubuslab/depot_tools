@@ -966,7 +966,7 @@ def _create_description_from_log(args):
     log_args = [args[0] + '..' + args[1]]
   else:
     log_args = args[:]  # Hope for the best!
-  return RunGit(['log', '--pretty=format:%s\n\n%b'] + log_args)
+  return RunGit(['log', '--pretty=format:%s%n%n%b'] + log_args)
 
 
 class GerritChangeNotExists(Exception):
@@ -1266,11 +1266,10 @@ class Changelist(object):
       return None
     return '%s/%s' % (self.GetCodereviewServer(), issue)
 
-  def GetLocalDescription(self, upstream_branch):
+  def GetLocalDescription(self, diff_args, use_cache=True):
     """Return the log messages of all commits up to the branch point."""
-    if self.local_description is None:
-      args = ['log', '--pretty=format:%s%n%n%b', '%s...' % (upstream_branch)]
-      self.local_description = RunGitWithCode(args)[1].strip()
+    if self.local_description is None or not use_cache:
+      self.local_description = _create_description_from_log(diff_args)
     return self.local_description
 
   def FetchDescription(self, pretty=False):
@@ -1374,7 +1373,7 @@ class Changelist(object):
       # If the change was never uploaded, use the log messages of all commits
       # up to the branch point, as git cl upload will prefill the description
       # with these log messages.
-      description = self.GetLocalDescription(upstream_branch)
+      description = self.GetLocalDescription([upstream_branch])
 
     author = self.GetAuthor()
     return presubmit_support.GitChange(
@@ -1503,7 +1502,7 @@ class Changelist(object):
     if self.GetIssue():
       description = self.FetchDescription()
     else:
-      description = self.GetLocalDescription(base_branch)
+      description = self.GetLocalDescription(git_diff_args)
     if options.reviewers or options.tbrs or options.add_owners_to:
       # Set the reviewer list now so that presubmit checks can access it.
       change_description = ChangeDescription(description)
@@ -2021,7 +2020,7 @@ class Changelist(object):
       if self.GetIssue():
         description = self.FetchDescription()
       else:
-        description = self.GetLocalDescription(upstream)
+        description = self.GetLocalDescription([upstream])
       self.RunHook(
           committing=True,
           may_prompt=not force,
@@ -2350,7 +2349,7 @@ class Changelist(object):
         if options.message:
           message = options.message
         else:
-          message = _create_description_from_log(git_diff_args)
+          message = self.GetLocalDescription(git_diff_args)
           if options.title:
             message = options.title + '\n\n' + message
         change_desc = ChangeDescription(message, bug=bug, fixed=fixed)
@@ -2390,7 +2389,7 @@ class Changelist(object):
             ['commit-tree', tree, '-p', parent, '-F', desc_tempfile]).strip()
     else:  # if not options.squash
       change_desc = ChangeDescription(
-          options.message or _create_description_from_log(git_diff_args))
+          options.message or self.GetLocalDescription(git_diff_args))
       if not change_desc.description:
         DieWithError("Description is empty. Aborting...")
 
@@ -2613,10 +2612,9 @@ class Changelist(object):
     """Re-commits using the current message, assumes the commit hook is in
     place.
     """
-    log_desc = options.message or _create_description_from_log(args)
-    git_command = ['commit', '--amend', '-m', log_desc]
-    RunGit(git_command)
-    new_log_desc = _create_description_from_log(args)
+    log_desc = options.message or self.GetLocalDescription(args)
+    RunGit(['commit', '--amend', '-m', log_desc])
+    new_log_desc = self.GetLocalDescription(args, use_cache=False)
     if git_footers.get_footer_change_id(new_log_desc):
       print('git-cl: Added Change-Id to commit message.')
       return new_log_desc

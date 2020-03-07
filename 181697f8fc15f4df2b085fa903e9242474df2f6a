@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fe4d16a_a58b126d",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1272,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-03-07T00:04:17Z",
+      "side": 1,
+      "message": "2 Concerns\n\n1. cache is a bit of a misnomer here.  If this function is called with different arguments it will still return the same value if use_cache\u003dTrue. This function seems a bit overloaded now that it\u0027s used in different contexts.\n\n2. It\u0027s a bit confusing to take a list of strings as arguments, compared to the simple \"what branch is this beign called for\" epecially if you always need to have an upstream_branch.  Maybe it should have arguments (self, upstream_branch, extra_diff_args\u003d[], use_cache\u003dTrue)?",
+      "revId": "181697f8fc15f4df2b085fa903e9242474df2f6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -24,6 +24,9 @@ $VerifiedPlatform linux-mips64 linux-mips64le linux-mipsle
 %s %s
 '''
 
+# Timeout for a test to be executed.
+TEST_TIMEOUT_S = 30  # 5 min
+
 
 def DepotToolsPylint(input_api, output_api):
   """Gather all the pylint logic into one place to make it self-contained."""
@@ -57,6 +60,8 @@ def DepotToolsPylint(input_api, output_api):
 
 
 def CommonChecks(input_api, output_api, tests_to_black_list, run_on_python3):
+  input_api.SetTimeout(TEST_TIMEOUT_S)
+
   results = []
   results.extend(input_api.canned_checks.CheckOwners(input_api, output_api))
   results.extend(input_api.canned_checks.CheckOwnersFormat(

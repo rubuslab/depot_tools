@@ -1340,7 +1340,7 @@ class GitWrapper(SCMWrapper):
       fetch_cmd.append('--no-tags')
     elif quiet:
       fetch_cmd.append('--quiet')
-    self._Run(fetch_cmd, options, show_header=options.verbose, retry=True)
+    self._Run(fetch_cmd, options, show_header=options.verbose, retry=False)
 
     # Return the revision that was fetched; this will be stored in 'FETCH_HEAD'
     return self._Capture(['rev-parse', '--verify', 'FETCH_HEAD'])
@@ -1374,9 +1374,7 @@ class GitWrapper(SCMWrapper):
     """Attempts to fetch |revision| if not available in local repo.
 
     Returns possibly updated revision."""
-    try:
-      self._Capture(['rev-parse', revision])
-    except subprocess2.CalledProcessError:
+    if not scm.GIT.IsValidRevision(self.checkout_path, revision):
       self._Fetch(options, refspec=revision)
       revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
     return revision

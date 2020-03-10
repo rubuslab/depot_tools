@@ -389,6 +389,8 @@ class GIT(object):
       needle = '%s^{commit}' % rev
     try:
       sha = GIT.Capture(['rev-parse', '--verify', needle], cwd=cwd)
+      print('Running', ['rev-parse', '--verify', needle])
+      print('in', cwd)
       if sha_only:
         return sha == rev.lower()
       return True

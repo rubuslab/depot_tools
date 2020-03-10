@@ -1374,10 +1374,9 @@ class GitWrapper(SCMWrapper):
     """Attempts to fetch |revision| if not available in local repo.
 
     Returns possibly updated revision."""
-    try:
-      self._Capture(['rev-parse', revision])
-    except subprocess2.CalledProcessError:
+    if not scm.GIT.IsValidRevision(self.checkout_path, revision):
       self._Fetch(options, refspec=revision)
+      assert False, (revision, self._Capture(['rev-parse', 'FETCH_HEAD']))
       revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
     return revision
 

@@ -1379,6 +1379,10 @@ class GitWrapper(SCMWrapper):
     except subprocess2.CalledProcessError:
       self._Fetch(options, refspec=revision)
       revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
+    if not scm.GIT.IsValidRevision(self.checkout_path, revision):
+      assert False, revision
+      self._Fetch(options, refspec=revision)
+      revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
     return revision
 
   def _Run(self, args, options, **kwargs):

@@ -1052,7 +1052,7 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
     self.options = BaseGitWrapperTestCase.OptionsObject()
     self.url = self.git_base + 'repo_1'
     self.mirror = None
-    mock.patch('sys.stdout').start()
+    mock.patch('sys.stdout', StringIO()).start()
     self.addCleanup(mock.patch.stopall)
 
   def setUpMirror(self):
@@ -1092,6 +1092,7 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
     self.options.revision = 'refs/changes/35/1235/1'
     scm.update(self.options, None, file_list)
     self.assertEqual(self.githash('repo_1', 6), self.gitrevparse(self.root_dir))
+    sys.stderr.write(sys.stdout.getvalue())
 
   def testCanCloneGerritChangeMirror(self):
     self.setUpMirror()

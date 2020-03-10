@@ -1287,6 +1287,7 @@ class GitWrapper(SCMWrapper):
     if strip:
       ret = ret.strip()
     self.Print('Finished running: %s %s' % ('git', ' '.join(args)))
+    self.Print('> ' + str(ret))
     return ret
 
   def _Checkout(self, options, ref, force=False, quiet=None):
@@ -1340,6 +1341,7 @@ class GitWrapper(SCMWrapper):
       fetch_cmd.append('--no-tags')
     elif quiet:
       fetch_cmd.append('--quiet')
+    print("Running", fetch_cmd)
     self._Run(fetch_cmd, options, show_header=options.verbose, retry=True)
 
     # Return the revision that was fetched; this will be stored in 'FETCH_HEAD'
@@ -1377,6 +1379,10 @@ class GitWrapper(SCMWrapper):
     try:
       self._Capture(['rev-parse', revision])
     except subprocess2.CalledProcessError:
+      self._Fetch(options, refspec=revision)
+      revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
+    if not scm.GIT.IsValidRevision(self.checkout_path, revision):
+      assert False, revision
       self._Fetch(options, refspec=revision)
       revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
     return revision

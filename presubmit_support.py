@@ -110,7 +110,7 @@ class SigintHandler(object):
     self.__got_sigint = False
     self.__previous_signal = signal.signal(signal.SIGINT, self.interrupt)
 
-  def __on_sigint(self):
+  def on_sigint(self):
     self.__got_sigint = True
     while self.__processes:
       try:
@@ -120,7 +120,7 @@ class SigintHandler(object):
 
   def interrupt(self, signal_num, frame):
     with self.__lock:
-      self.__on_sigint()
+      self.on_sigint()
     self.__previous_signal(signal_num, frame)
 
   def got_sigint(self):
@@ -137,7 +137,7 @@ class SigintHandler(object):
     with self.__lock:
       self.__processes.discard(p)
       if code in self.sigint_returncodes:
-        self.__on_sigint()
+        self.on_sigint()
     return stdout, stderr
 
 sigint_handler = SigintHandler()
@@ -202,7 +202,7 @@ class ThreadPool(object):
 
   def _RunWithTimeout(self, cmd, stdin, kwargs):
     p = subprocess.Popen(cmd, **kwargs)
-    with Timer(self.timeout, p.terminate) as timer:
+    with Timer(self.timeout, sigint_handler.on_sigint) as timer:
       stdout, _ = sigint_handler.wait(p, stdin)
       if timer.completed:
         stdout = 'Process timed out after %ss\n%s' % (self.timeout, stdout)

@@ -384,11 +384,13 @@ class GIT(object):
     if sys.platform.startswith('win'):
       # Windows .bat scripts use ^ as escape sequence, which means we have to
       # escape it with itself for every .bat invocation.
-      needle = '%s^^^^{commit}' % rev
+      needle = '%s^^{commit}' % rev
     else:
       needle = '%s^{commit}' % rev
     try:
       sha = GIT.Capture(['rev-parse', '--verify', needle], cwd=cwd)
+      print('Running', ['rev-parse', '--verify', needle])
+      print('in', cwd)
       if sha_only:
         return sha == rev.lower()
       return True

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47c071e9_05edca7d",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-11T20:26:20Z",
+      "side": 1,
+      "message": "If more tests are added and this timeout is reached, will it be obvious that this value needs to be increased?\n\nIt may be better to catch a signal (sent by bot, hopefully it\u0027s not sigkil right away) and fail tests that way but I\u0027m not sure is that doable.",
+      "revId": "2d8b688e6e2f3684536b78bcfe34c81d3d0734ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -34,6 +34,24 @@
       "revId": "2d8b688e6e2f3684536b78bcfe34c81d3d0734ce",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f19970c8_e5415251",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-11T20:42:17Z",
+      "side": 1,
+      "message": "\u003e If more tests are added and this timeout is reached, will it be obvious that this value needs to be increased?\n\nIt will show a message like \n\ntests\\gclient_smoketest.py\nvpython3.bat depot_tools\\tests\\gclient_smoketest.py --verbose (278.76s) failed\nProcess timed out after 240s\n\nSee example failure below.\nNotice also that the time out is per file. It might make sense to split some test files (like gclient_tests.py and gclient_smoketest.py).\n\n\u003e Do you have an example of a timeout failure right now?\n\nExample failure:\nhttps://ci.chromium.org/p/infra/builders/try/Depot%20Tools%20Presubmit%20(win)/b8886096598813714800?\n\n\u003e Are we timing out after 30 min?  How did you come up with 3 min?\n\nRight now, the presubmit step times out after 8 minutes.\ne.g. https://ci.chromium.org/p/infra/builders/try/Depot%20Tools%20Presubmit%20(win)/b8886267166188418336?\nNotice that it doesn\u0027t say what test timed out, or what failed, so it is not useful at all.\n\n\u003e How did you come up with 3 min?\n\nI went over the execution times of each test, and picked a nice number that was above it.",
+      "parentUuid": "5f3c6cf2_1f4fe522",
+      "revId": "2d8b688e6e2f3684536b78bcfe34c81d3d0734ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

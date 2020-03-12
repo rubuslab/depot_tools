@@ -16,6 +16,24 @@
       "revId": "5f639267e2091af35463efc69a24858b86be0a1a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15fa4e5b_a2e83497",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2310,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-12T21:36:01Z",
+      "side": 1,
+      "message": "1. The old code also forces the user to keep the right Change-Id. It\u0027ll keep asking the user to change the description until it has only one correct Change-Id.\nIf --force is passed, the correct Change-Id will be appended at the end as the only footer.\n2. The right way is to `git cl issue 0` to clear whatever gerrit issue is associated with the current branch.",
+      "parentUuid": "5d60a3f5_1f986953",
+      "revId": "5f639267e2091af35463efc69a24858b86be0a1a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

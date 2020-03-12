@@ -34,6 +34,24 @@
       "revId": "5f639267e2091af35463efc69a24858b86be0a1a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef7cd0dd_8b9eb1fe",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2310,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-03-12T21:41:13Z",
+      "side": 1,
+      "message": "Do you want to add a like about using git cl issue 0 to clear the issue?",
+      "parentUuid": "15fa4e5b_a2e83497",
+      "revId": "5f639267e2091af35463efc69a24858b86be0a1a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

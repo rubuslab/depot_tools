@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5d60a3f5_1f986953",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2310,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-03-12T21:23:38Z",
+      "side": 1,
+      "message": "Since you\u0027ve removed the option to edit this how change a user change the change id do a different gerrit id?",
+      "revId": "5f639267e2091af35463efc69a24858b86be0a1a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

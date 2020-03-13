@@ -474,7 +474,7 @@ class Mirror(object):
           [self.git_exe, 'config', '--get-all', 'remote.origin.fetch'],
           cwd=self.mirror_path)
       for fetchspec in config_fetchspecs.splitlines():
-        self.fetch_specs.add(self.parse_fetch_spec(fetchspec))
+        self.fetch_specs.add(self.parse_fetch_spec(fetchspec.decode()))
     except subprocess.CalledProcessError:
       logging.warn('Tried and failed to preserve remote.origin.fetch from the '
                    'existing cache directory.  You may need to manually edit '
@@ -486,11 +486,11 @@ class Mirror(object):
     pack_files = []
     if os.path.isdir(pack_dir):
       pack_files = [f for f in os.listdir(pack_dir) if f.endswith('.pack')]
-      self.print('%s has %d .pack files, re-bootstrapping if >%d' %
+      self.print('%s has %d .pack files, re-bootstrapping if >%d or ==0' %
                 (self.mirror_path, len(pack_files), GC_AUTOPACKLIMIT))
 
     should_bootstrap = (force or
-                        not self.exists() or
+                        not self.exists() or len(pack_files) == 0 or
                         len(pack_files) > GC_AUTOPACKLIMIT)
 
     if not should_bootstrap:

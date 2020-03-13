@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f22a528b_f0c581a7",
+        "filename": "tests/fetch_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-13T17:33:49Z",
+      "side": 1,
+      "message": "Maybe use temporary_file? File should be deleted after use.\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:gclient_utils.py;l\u003d189\nDoes it work if you use f \u003d StringIO()?",
+      "range": {
+        "startLine": 193,
+        "startChar": 14,
+        "endLine": 193,
+        "endChar": 31
+      },
+      "revId": "56939d682a361084dab820a6c94b949238c37120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa041476_cbad007f",
+        "filename": "tests/fetch_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-13T17:33:49Z",
+      "side": 1,
+      "message": "test_run_print_to_stdout?",
+      "range": {
+        "startLine": 221,
+        "startChar": 6,
+        "endLine": 221,
+        "endChar": 31
+      },
+      "revId": "56939d682a361084dab820a6c94b949238c37120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f96ed42_42252741",
+        "filename": "tests/fetch_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-13T17:33:49Z",
+      "side": 1,
+      "message": "Make explicit what calls are these.",
+      "range": {
+        "startLine": 292,
+        "startChar": 0,
+        "endLine": 294,
+        "endChar": 0
+      },
+      "revId": "56939d682a361084dab820a6c94b949238c37120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

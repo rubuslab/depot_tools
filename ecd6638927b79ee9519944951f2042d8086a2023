@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7bd0f62_c31ba423",
+        "filename": "git_cache.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-13T17:19:32Z",
+      "side": 1,
+      "message": "_ensure_bootstrapped should get a reset_fetch_config argument, and not call _preserve_fetchspec if it\u0027s false.",
+      "range": {
+        "startLine": 502,
+        "startChar": 7,
+        "endLine": 502,
+        "endChar": 21
+      },
+      "revId": "ecd6638927b79ee9519944951f2042d8086a2023",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

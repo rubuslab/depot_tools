@@ -474,24 +474,27 @@ class Mirror(object):
           [self.git_exe, 'config', '--get-all', 'remote.origin.fetch'],
           cwd=self.mirror_path)
       for fetchspec in config_fetchspecs.splitlines():
-        self.fetch_specs.add(self.parse_fetch_spec(fetchspec))
+        self.fetch_specs.add(self.parse_fetch_spec(fetchspec.decode()))
     except subprocess.CalledProcessError:
       logging.warn('Tried and failed to preserve remote.origin.fetch from the '
                    'existing cache directory.  You may need to manually edit '
                    '%s and "git cache fetch" again.'
                    % os.path.join(self.mirror_path, 'config'))
 
-  def _ensure_bootstrapped(self, depth, bootstrap, force=False):
+  def _ensure_bootstrapped(self,
+                           depth,
+                           bootstrap,
+                           reset_fetch_config,
+                           force=False):
     pack_dir = os.path.join(self.mirror_path, 'objects', 'pack')
     pack_files = []
     if os.path.isdir(pack_dir):
       pack_files = [f for f in os.listdir(pack_dir) if f.endswith('.pack')]
-      self.print('%s has %d .pack files, re-bootstrapping if >%d' %
-                (self.mirror_path, len(pack_files), GC_AUTOPACKLIMIT))
+      self.print('%s has %d .pack files, re-bootstrapping if >%d or ==0' %
+                 (self.mirror_path, len(pack_files), GC_AUTOPACKLIMIT))
 
-    should_bootstrap = (force or
-                        not self.exists() or
-                        len(pack_files) > GC_AUTOPACKLIMIT)
+    should_bootstrap = (force or not self.exists() or len(pack_files) == 0
+                        or len(pack_files) > GC_AUTOPACKLIMIT)
 
     if not should_bootstrap:
       if depth and os.path.exists(os.path.join(self.mirror_path, 'shallow')):
@@ -499,7 +502,7 @@ class Mirror(object):
             'Shallow fetch requested, but repo cache already exists.')
       return
 
-    if self.exists():
+    if self.exists() and reset_fetch_config:
       # Re-bootstrapping an existing mirror; preserve existing fetch spec.
       self._preserve_fetchspec()
     else:
@@ -572,14 +575,15 @@ class Mirror(object):
       lockfile.lock()
 
     try:
-      self._ensure_bootstrapped(depth, bootstrap)
+      self._ensure_bootstrapped(depth, bootstrap, reset_fetch_config)
       self._fetch(self.mirror_path, verbose, depth, no_fetch_tags,
                   reset_fetch_config)
     except ClobberNeeded:
       # This is a major failure, we need to clean and force a bootstrap.
       gclient_utils.rmtree(self.mirror_path)
       self.print(GIT_CACHE_CORRUPT_MESSAGE)
-      self._ensure_bootstrapped(depth, bootstrap, force=True)
+      self._ensure_bootstrapped(
+          depth, bootstrap, reset_fetch_config, force=True)
       self._fetch(self.mirror_path, verbose, depth, no_fetch_tags,
                   reset_fetch_config)
     finally:

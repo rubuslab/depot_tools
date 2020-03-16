@@ -88,7 +88,7 @@ def _function_to_name(name):
   return name[3:].replace('_', '-')
 
 
-class CommandDispatcher(object):
+class CommandDispatcher:
   def __init__(self, module):
     """module is the name of the main python module where to look for commands.
 

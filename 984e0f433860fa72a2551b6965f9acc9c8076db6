@@ -16,6 +16,24 @@
       "revId": "984e0f433860fa72a2551b6965f9acc9c8076db6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "379b95b1_0a0b7a83",
+        "filename": "subcommand.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-16T22:58:33Z",
+      "side": 1,
+      "message": "I\u0027m not sure exactly why it is recommended to use class Foo(object): on Python 2, and what might break if you don\u0027t.\nI\u0027m willing to give this a try though.",
+      "parentUuid": "1eab8aab_20c73b72",
+      "revId": "984e0f433860fa72a2551b6965f9acc9c8076db6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

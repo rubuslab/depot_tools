@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1eab8aab_20c73b72",
+        "filename": "subcommand.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-16T21:37:11Z",
+      "side": 1,
+      "message": "If you are referring to this change, it\u0027s python2 compatible.",
+      "revId": "984e0f433860fa72a2551b6965f9acc9c8076db6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

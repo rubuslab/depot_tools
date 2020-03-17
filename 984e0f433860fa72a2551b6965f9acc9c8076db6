@@ -34,6 +34,24 @@
       "revId": "984e0f433860fa72a2551b6965f9acc9c8076db6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be2b4002_c7fe480b",
+        "filename": "subcommand.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-17T00:39:35Z",
+      "side": 1,
+      "message": "Since there\u0027s no difference for py3, I reverted this change to original one. We can remove object once py3 is only support version. It\u0027s better to be on the safe side.",
+      "parentUuid": "379b95b1_0a0b7a83",
+      "revId": "984e0f433860fa72a2551b6965f9acc9c8076db6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

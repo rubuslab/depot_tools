@@ -81,7 +81,6 @@ def CommonChecks(input_api, output_api, tests_to_black_list, run_on_python3):
     tests_to_black_list = [
         r'.*auth_test\.py$',
         r'.*git_common_test\.py$',
-        r'.*git_hyper_blame_test\.py$',
         r'.*git_map_test\.py$',
         r'.*git_number_test\.py$',
         r'.*git_rebase_update_test\.py$',

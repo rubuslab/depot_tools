@@ -233,16 +233,9 @@ def datetime_now():
   return datetime.datetime.now()
 
 
-def _raw_input(message):
-  # Use this so that it can be mocked in tests on Python 2 and 3.
-  if sys.version_info.major == 2:
-    return raw_input(message)
-  return input(message)
-
-
 def ask_for_data(prompt):
   try:
-    return _raw_input(prompt)
+    return gclient_utils.AskForData(prompt)
   except KeyboardInterrupt:
     # Hide the exception.
     sys.exit(1)

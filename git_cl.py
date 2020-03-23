@@ -5274,6 +5274,18 @@ def CMDlol(parser, args):
   return 0
 
 
+@metrics.collector.collect_metrics('git cl rebase')
+def CMDrebase(parser, args):
+  "Rebases current change onto upstream."
+  branch = git_common.current_branch()
+  base = git_common.get_or_create_merge_base(branch)
+  if not base:
+    print('No upstream configured.')
+    return 1
+  cl = Changelist()
+  return RunGit(['rebase', '--onto', cl.GetUpstreamBranch(), base])
+
+
 class OptionParser(optparse.OptionParser):
   """Creates the option parse and add --verbose support."""
   def __init__(self, *args, **kwargs):

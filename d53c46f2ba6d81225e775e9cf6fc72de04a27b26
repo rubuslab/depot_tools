@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd9990e2_caff8f7b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1087,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-03-23T20:17:49Z",
+      "side": 1,
+      "message": "I suspect all the uses of raw_input that don\u0027t handle this exception are just oversights, as ^Cing out of a prompt you don\u0027t understand isn\u0027t that unusual. \u003caybe put this behavior in AskForData and remove it from the few places that do handle the exception cleanly?",
+      "range": {
+        "startLine": 1087,
+        "startChar": 0,
+        "endLine": 1087,
+        "endChar": 27
+      },
+      "revId": "d53c46f2ba6d81225e775e9cf6fc72de04a27b26",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

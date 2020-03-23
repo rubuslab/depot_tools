@@ -1082,7 +1082,7 @@ class GitWrapper(SCMWrapper):
                                 "gclient with --jobs=1 so that\n"
                                 "interaction is possible.")
     try:
-      return raw_input(prompt)
+      return gclient_utils.AskForData(prompt)
     except KeyboardInterrupt:
       # Hide the exception.
       sys.exit(1)

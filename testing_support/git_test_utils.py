@@ -9,15 +9,28 @@ import datetime
 import hashlib
 import os
 import shutil
+import stat
+# Do not use subprocess2 as we won't be able to test encoding failures
 import subprocess
 import sys
 import tempfile
 import unittest
 
+from distutils import spawn
+
 
 if sys.version_info.major == 3:
   # pylint: disable=redefined-builtin
   basestring = (str,)
+
+
+def _rmtree_onerror(function, path, excinfo):
+  """_rmtree_onerror fixes permission errors for Windows platform"""
+  if os.access(path, os.W_OK):
+    raise
+  os.chmod(path, stat.S_IWUSR)
+  function(path)
+
 
 
 def git_hash_data(data, typ='blob'):
@@ -260,7 +273,7 @@ class GitRepo(object):
   For file content, if 'data' is None, then this commit will `git rm` that file.
   """
   BASE_TEMP_DIR = tempfile.mkdtemp(suffix='base', prefix='git_repo')
-  atexit.register(shutil.rmtree, BASE_TEMP_DIR)
+  atexit.register(shutil.rmtree, BASE_TEMP_DIR, False, _rmtree_onerror)
 
   # Singleton objects to specify specific data in a commit dictionary.
   AUTHOR_NAME = object()
@@ -382,8 +395,13 @@ class GitRepo(object):
     assert self.repo_path is not None
     try:
       with open(os.devnull, 'wb') as devnull:
+        shell = sys.platform == 'win32'
         output = subprocess.check_output(
-          ('git',) + args, cwd=self.repo_path, stderr=devnull, **kwargs)
+            ('git', ) + args,
+            shell=shell,
+            cwd=self.repo_path,
+            stderr=devnull,
+            **kwargs)
         output = output.decode('utf-8')
       return self.COMMAND_OUTPUT(0, output)
     except subprocess.CalledProcessError as e:
@@ -402,7 +420,7 @@ class GitRepo(object):
 
     Causes this GitRepo to be unusable.
     """
-    shutil.rmtree(self.repo_path)
+    shutil.rmtree(self.repo_path, False, _rmtree_onerror)
     self.repo_path = None
 
   def run(self, fn, *args, **kwargs):

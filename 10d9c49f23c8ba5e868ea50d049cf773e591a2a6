@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "6d498a44_a85d0d69",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-03-24T22:18:49Z",
+      "side": 0,
+      "message": "what about making these constants?\n\nmagic strings are good way for someone to add a typo by accident",
+      "range": {
+        "startLine": 1664,
+        "startChar": 0,
+        "endLine": 1664,
+        "endChar": 14
+      },
+      "revId": "10d9c49f23c8ba5e868ea50d049cf773e591a2a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "91e1acba_ba3f5245",
         "filename": "git_cl.py",
         "patchSetId": 4

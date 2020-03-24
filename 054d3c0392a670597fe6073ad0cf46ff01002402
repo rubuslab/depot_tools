@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5cab5cd_3bbab317",
+        "filename": "fetch",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2020-03-24T21:35:11Z",
+      "side": 1,
+      "message": "Could be worth a comment explaining what this is testing.",
+      "revId": "054d3c0392a670597fe6073ad0cf46ff01002402",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

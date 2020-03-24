@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "91e1acba_ba3f5245",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3009,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-24T00:23:38Z",
+      "side": 0,
+      "message": "Not sure if this is still an issue. Still worth a shot.",
+      "range": {
+        "startLine": 3009,
+        "startChar": 0,
+        "endLine": 3009,
+        "endChar": 79
+      },
+      "revId": "10d9c49f23c8ba5e868ea50d049cf773e591a2a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

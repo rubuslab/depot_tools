@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "b32fcd06_3b90e2de",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-24T18:24:41Z",
+      "side": 1,
+      "message": "Without this change, if you run git bash, and then git hyper-blame inside it, you get pagination as in linux.\nWith this change, you don\u0027t.",
+      "parentUuid": "aead71c3_aca5818c",
+      "range": {
+        "startLine": 692,
+        "startChar": 0,
+        "endLine": 692,
+        "endChar": 72
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b9eaf47_664c0078",
         "filename": "testing_support/git_test_utils.py",
         "patchSetId": 2
@@ -143,6 +167,29 @@
     },
     {
       "key": {
+        "uuid": "5ab1f9dc_9512c033",
+        "filename": "tests/git_hyper_blame_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-24T18:24:41Z",
+      "side": 1,
+      "message": "Doesn\u0027t this have type bytes in Python 2 and str (i.e. unicode) in Python 3?\nI find this confusing.",
+      "range": {
+        "startLine": 594,
+        "startChar": 6,
+        "endLine": 595,
+        "endChar": 70
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "74b235bf_defd6142",
         "filename": "tests/git_hyper_blame_test.py",
         "patchSetId": 2
@@ -178,6 +225,30 @@
       "side": 1,
       "message": "As we are deprecating py2, I didn\u0027t bother creating one. Let me know if you think it would be useful to track it for some reason.",
       "parentUuid": "74b235bf_defd6142",
+      "range": {
+        "startLine": 613,
+        "startChar": 7,
+        "endLine": 613,
+        "endChar": 18
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7ebcac0_14bf6298",
+        "filename": "tests/git_hyper_blame_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-24T18:24:41Z",
+      "side": 1,
+      "message": "Maybe not track it, but I think you should say what issue is it.",
+      "parentUuid": "ad23d520_5af0a30f",
       "range": {
         "startLine": 613,
         "startChar": 7,

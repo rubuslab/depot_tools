@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "aead71c3_aca5818c",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-24T18:07:31Z",
+      "side": 1,
+      "message": "Yeah, tested on Win VM and works fine.",
+      "parentUuid": "97bddded_41d98b57",
+      "range": {
+        "startLine": 692,
+        "startChar": 0,
+        "endLine": 692,
+        "endChar": 72
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b9eaf47_664c0078",
         "filename": "testing_support/git_test_utils.py",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f99bb560_c7a2caf4",
+        "filename": "testing_support/git_test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-24T18:07:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b9eaf47_664c0078",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "0c7cf22f_278fdaad",
+        "filename": "testing_support/git_test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-24T18:07:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e05ef42d_b5b685c4",
+      "range": {
+        "startLine": 423,
+        "startChar": 4,
+        "endLine": 423,
+        "endChar": 56
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "74b235bf_defd6142",
         "filename": "tests/git_hyper_blame_test.py",
         "patchSetId": 2
@@ -91,6 +163,30 @@
       "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad23d520_5af0a30f",
+        "filename": "tests/git_hyper_blame_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-24T18:07:31Z",
+      "side": 1,
+      "message": "As we are deprecating py2, I didn\u0027t bother creating one. Let me know if you think it would be useful to track it for some reason.",
+      "parentUuid": "74b235bf_defd6142",
+      "range": {
+        "startLine": 613,
+        "startChar": 7,
+        "endLine": 613,
+        "endChar": 18
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

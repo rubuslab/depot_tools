@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "97bddded_41d98b57",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-24T00:22:58Z",
+      "side": 1,
+      "message": "Have you tried this on Windows?",
+      "range": {
+        "startLine": 692,
+        "startChar": 0,
+        "endLine": 692,
+        "endChar": 72
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b9eaf47_664c0078",
+        "filename": "testing_support/git_test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-24T00:22:58Z",
+      "side": 1,
+      "message": "Remove?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e05ef42d_b5b685c4",
+        "filename": "testing_support/git_test_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-24T00:22:58Z",
+      "side": 1,
+      "message": "What about using gclient_utils.rmtree?\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:gclient_utils.py;l\u003d247",
+      "range": {
+        "startLine": 423,
+        "startChar": 4,
+        "endLine": 423,
+        "endChar": 56
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74b235bf_defd6142",
+        "filename": "tests/git_hyper_blame_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-24T00:22:58Z",
+      "side": 1,
+      "message": "Is there a crbug link for this?",
+      "range": {
+        "startLine": 613,
+        "startChar": 7,
+        "endLine": 613,
+        "endChar": 18
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

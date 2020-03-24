@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "52a1e432_a3bc22c4",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-24T20:32:32Z",
+      "side": 1,
+      "message": "You are right, I used python git_hyper_blame instead of git hyper-blame. This file doesn\u0027t need to change.",
+      "parentUuid": "b32fcd06_3b90e2de",
+      "range": {
+        "startLine": 692,
+        "startChar": 0,
+        "endLine": 692,
+        "endChar": 72
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b9eaf47_664c0078",
         "filename": "testing_support/git_test_utils.py",
         "patchSetId": 2
@@ -190,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "8dd710af_ad2165e0",
+        "filename": "tests/git_hyper_blame_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-24T20:32:32Z",
+      "side": 1,
+      "message": "Required type is str, which is the case for both platforms. \n\nNote that technically, \u0027\\u4e2d\\u56fd\\u4f5c\\u8005\u0027 \u003d\u003d \u0027\\u4e2d\\u56fd\\u4f5c\\u8005\u0027.encode(\u0027utf-8\u0027). I suppose .encode flips some flags as without one this unit test will fail for win \u0026 py2. I timeboxed investigation so I don\u0027t have all the details.",
+      "parentUuid": "5ab1f9dc_9512c033",
+      "range": {
+        "startLine": 594,
+        "startChar": 6,
+        "endLine": 595,
+        "endChar": 70
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "74b235bf_defd6142",
         "filename": "tests/git_hyper_blame_test.py",
         "patchSetId": 2
@@ -249,6 +297,30 @@
       "side": 1,
       "message": "Maybe not track it, but I think you should say what issue is it.",
       "parentUuid": "ad23d520_5af0a30f",
+      "range": {
+        "startLine": 613,
+        "startChar": 7,
+        "endLine": 613,
+        "endChar": 18
+      },
+      "revId": "91e232c196cec82113e952463b71ad2efe65e01c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5acd3bb_cac09e3d",
+        "filename": "tests/git_hyper_blame_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-24T20:32:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7ebcac0_14bf6298",
       "range": {
         "startLine": 613,
         "startChar": 7,

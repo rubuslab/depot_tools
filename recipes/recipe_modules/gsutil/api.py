@@ -87,8 +87,10 @@ class GSUtilApi(recipe_api.RecipeApi):
     result = self(cmd, name, **kwargs)
 
     if link_name:
+      console_url = '-r' in args or '--recursive' in args
       result.presentation.links[link_name] = self._http_url(
-          bucket, dest, unauthenticated_url=unauthenticated_url)
+          bucket, dest, unauthenticated_url=unauthenticated_url,
+          console_url=console_url)
     return result
 
   def download(self, bucket, source, dest, args=None, **kwargs):
@@ -132,8 +134,10 @@ class GSUtilApi(recipe_api.RecipeApi):
     result = self(cmd, name, **kwargs)
 
     if link_name:
+      console_url = '-r' in args or '--recursive' in args
       result.presentation.links[link_name] = self._http_url(
-          dest_bucket, dest, unauthenticated_url=unauthenticated_url)
+          dest_bucket, dest, unauthenticated_url=unauthenticated_url,
+          console_url=console_url)
     return result
 
   def list(self, url, args=None, **kwargs):
@@ -179,8 +183,10 @@ class GSUtilApi(recipe_api.RecipeApi):
     raise AssertionError("%s cannot be normalized" % url)
 
   @classmethod
-  def _http_url(cls, bucket, dest, unauthenticated_url=False):
-    if unauthenticated_url:
+  def _http_url(cls, bucket, dest, unauthenticated_url=False, console_url=False):
+    if console_url:
+      base = 'https://console.cloud.google.com/%s/%s'
+    elif unauthenticated_url:
       base = 'https://storage.googleapis.com/%s/%s'
     else:
       base = 'https://storage.cloud.google.com/%s/%s'

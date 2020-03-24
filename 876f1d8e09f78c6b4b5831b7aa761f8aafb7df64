@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a8e62a53_88b4951c",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-03-24T19:34:24Z",
+      "side": 1,
+      "message": "this last url should be unilaterally replaced with the new one.",
+      "range": {
+        "startLine": 192,
+        "startChar": 22,
+        "endLine": 192,
+        "endChar": 29
+      },
+      "revId": "876f1d8e09f78c6b4b5831b7aa761f8aafb7df64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18af621b_de475488",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 1175129
+      },
+      "writtenOn": "2020-03-25T00:24:30Z",
+      "side": 1,
+      "message": "I\u0027m afraid this has broken git cl for me. I\u0027m getting:\n\n..\nFile \"/usr/local/google/home/pmarko/depot_tools/git_cl.py\", line 738, in GetRoot\n  self.root \u003d os.path.abspath(self.GetRelativeRoot())\nFile \"/usr/local/google/home/pmarko/depot_tools/git_cl.py\", line 734, in GetRelativeRoot\n  return scm.GIT.GetCheckoutRoot(None)\nFile \"/usr/local/google/home/pmarko/depot_tools/scm.py\", line 356, in GetCheckoutRoot\n  return os.path.abspath(os.path.join(cwd, root))\nFile \"/usr/local/google/home/pmarko/.vpython-root/a82dd7/lib/python3.8/posixpath.py\", line 76, in join\n  a \u003d os.fspath(a)\nTypeError: expected str, bytes or os.PathLike object, not NoneType\n\nnot sure if it\u0027s just my setup?",
+      "range": {
+        "startLine": 734,
+        "startChar": 0,
+        "endLine": 734,
+        "endChar": 40
+      },
+      "revId": "e3a49aa40576da2427447f7fedb670d5d59216e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53e71174_8b0cf59a",
+        "filename": "fetch",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1377969
+      },
+      "writtenOn": "2020-03-25T01:22:46Z",
+      "side": 1,
+      "message": "if [[ $(uname -s) \u003d MINGW ]]",
+      "revId": "e9013eeb3d1d026d72549dea78dbba2a95ad8d5d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

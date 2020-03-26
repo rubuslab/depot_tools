@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c677ec24_7c76403c",
+        "filename": "python_runner.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1377969
+      },
+      "writtenOn": "2020-03-26T01:06:41Z",
+      "side": 1,
+      "message": "if [[ $(uname -s) \u003d MINGW ]]",
+      "revId": "f15e5e5c61fe7c4b091e4fff37bbc016579b5785",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

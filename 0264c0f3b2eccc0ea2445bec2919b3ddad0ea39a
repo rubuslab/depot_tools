@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00223fd6_20e9ad7a",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-26T00:29:43Z",
+      "side": 1,
+      "message": "Although it was not necessary, moved it above wrapper function to make it more accurate.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 16
+      },
+      "revId": "0264c0f3b2eccc0ea2445bec2919b3ddad0ea39a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

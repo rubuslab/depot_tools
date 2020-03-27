@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8018459b_55d3bf18",
+        "filename": "tests/gclient_eval_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-27T16:06:20Z",
+      "side": 1,
+      "message": "1. Did this work before?\n2. Why do we need this test?",
+      "range": {
+        "startLine": 669,
+        "startChar": 23,
+        "endLine": 669,
+        "endChar": 54
+      },
+      "revId": "c30150de2953fcee9df72244a21d876a16413052",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "c30150de2953fcee9df72244a21d876a16413052",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60890974_cc4138da",
+        "filename": "tests/gclient_eval_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-27T16:17:09Z",
+      "side": 1,
+      "message": "1) This test fails with without patch in gclient_eval.py\n2) roll-dep tests use local Git as remote. Without this patch, Windows tests are failing as backslash is not properly escaped. AFAIK, only unit tests use local Git for clone.\n\nLet\u0027s assume path is \"file:///C:\\\\tmp.git\" (escaped file:///C:\\tmp.git). When set revision is called, without this patch, it becomes \"file:///C:\\tmp.git\" (escaped: file:///C:\u003cTAB\u003emp.git).",
+      "parentUuid": "8018459b_55d3bf18",
+      "range": {
+        "startLine": 669,
+        "startChar": 23,
+        "endLine": 669,
+        "endChar": 54
+      },
+      "revId": "c30150de2953fcee9df72244a21d876a16413052",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

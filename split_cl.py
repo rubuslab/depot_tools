@@ -18,6 +18,7 @@ import gclient_utils
 import git_footers
 import owners
 import owners_finder
+import scm
 
 import git_common as git
 
@@ -242,11 +243,10 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
       # Use '/' as a path separator in the branch name and the CL description
       # and comment.
       directory = directory.replace(os.path.sep, '/')
-      file_paths = [f for _, f in files]
-      reviewers = owners_database.reviewers_for(file_paths, author)
+      reviewers = owners_database.reviewers_for(files, author)
 
       if dry_run:
-        PrintClInfo(cl_index, num_cls, directory, file_paths, description,
+        PrintClInfo(cl_index, num_cls, directory, files, description,
                     reviewers)
       else:
         UploadCl(refactor_branch, refactor_branch_upstream, directory, files,

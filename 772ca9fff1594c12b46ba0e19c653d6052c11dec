@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9d85a06f_20cd3b36",
+        "filename": "git-retry",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-30T18:57:54Z",
+      "side": 1,
+      "message": "Fixed, thanks.",
+      "parentUuid": "fbfbdf91_6ae999eb",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "772ca9fff1594c12b46ba0e19c653d6052c11dec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2c03710b_0d896210",
         "filename": "git-thaw",
         "patchSetId": 1
@@ -39,6 +63,24 @@
       "revId": "772ca9fff1594c12b46ba0e19c653d6052c11dec",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a672552d_a12136bd",
+        "filename": "git-thaw",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-30T18:57:54Z",
+      "side": 1,
+      "message": "Fixed, thanks.",
+      "parentUuid": "2c03710b_0d896210",
+      "revId": "772ca9fff1594c12b46ba0e19c653d6052c11dec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

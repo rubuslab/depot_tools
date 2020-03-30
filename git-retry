@@ -4,5 +4,5 @@
 # found in the LICENSE file.
 
 SCRIPT=git_retry.py
-set -- retry "$@"
-. $(type -P python_runner.sh)
+set -- retry ""$@""
+. "$(type -P python_runner.sh)"

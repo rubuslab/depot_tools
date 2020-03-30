@@ -9,5 +9,5 @@
 # command.
 
 SCRIPT=git_freezer.py
-set -- thaw "$@"
-. $(type -P python_runner.sh)
+set -- thaw ""$@""
+. "$(type -P python_runner.sh)"

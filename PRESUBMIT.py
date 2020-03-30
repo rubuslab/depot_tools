@@ -72,7 +72,7 @@ def CommonChecks(input_api, output_api, tests_to_black_list, run_on_python3):
       input_api, output_api))
 
   # Run only selected tests on Windows.
-  tests_to_white_list = [r'.*test\.py$']
+  tests_to_white_list = [r'.*gclient_scm_test\.py$']
   if input_api.platform.startswith(('cygwin', 'win32')):
     print('Warning: skipping most unit tests on Windows')
     tests_to_black_list = [
@@ -89,7 +89,7 @@ def CommonChecks(input_api, output_api, tests_to_black_list, run_on_python3):
 
   # TODO(maruel): Make sure at least one file is modified first.
   # TODO(maruel): If only tests are modified, only run them.
-  tests = DepotToolsPylint(input_api, output_api)
+  tests = [] # DepotToolsPylint(input_api, output_api)
   tests.extend(input_api.canned_checks.GetUnitTestsInDirectory(
       input_api,
       output_api,
@@ -128,6 +128,7 @@ def CommonChecks(input_api, output_api, tests_to_black_list, run_on_python3):
       tests.append(input_api.canned_checks.CheckCIPDClientDigests(
           input_api, output_api, client_version_file=path))
 
+  print(tests)
   results.extend(input_api.RunTests(tests))
   return results
 

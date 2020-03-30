@@ -380,7 +380,7 @@ class GIT(object):
     if sys.platform.startswith('win'):
       # Windows .bat scripts use ^ as escape sequence, which means we have to
       # escape it with itself for every .bat invocation.
-      needle = '%s^^{commit}' % rev
+      needle = '%s^^^^{commit}' % rev
     else:
       needle = '%s^{commit}' % rev
     try:

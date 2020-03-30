@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "379017ea_f59baa68",
+        "filename": "fetch",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-30T17:59:44Z",
+      "side": 1,
+      "message": "CYGWIN returns `CYGWIN*`- should we cover that case too?",
+      "revId": "f885859d9b2ba08ee6d3d8bc827a06568a71871c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

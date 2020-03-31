@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0be464cd_c48c08a1",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-31T19:32:53Z",
+      "side": 1,
+      "message": "Why removing last character? Do we even need to call IsFullGitSha?",
+      "revId": "678b883b03562f1286dcd1613fc7aac926871b0b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

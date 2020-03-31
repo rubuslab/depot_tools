@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e3a396a6_293e9458",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-31T23:50:13Z",
+      "side": 1,
+      "message": "Yes, it doesn\u0027t seem possible with batch. But, maybe it\u0027s possible with powershell script or if we can figure out executable. This means getting rid of this batch file.",
+      "parentUuid": "d7588923_febf6848",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 63
+      },
+      "revId": "9db5a63dfcdcc901336c56e20761a978c048418a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "07c47b3a_e802f4ed",
         "filename": "bootstrap/git.template.bat",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2020-03-31T23:30:56Z",
       "side": 1,
       "message": "Is this needed? It causes git to exit the command line when an error happens.\nIf I remove it, things seem to work fine:\n\n  C:\\src\\client\\webrtc\\src\u003egit rev-parse --verify deadbeeef\n  fatal: Needed a single revision\n\n  C:\\src\\client\\webrtc\\src\u003eecho %ERRORLEVEL%\n  128",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 1
+      },
+      "revId": "9db5a63dfcdcc901336c56e20761a978c048418a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35d2052b_968f991d",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-03-31T23:50:13Z",
+      "side": 1,
+      "message": ".\\vpython3 .\\tests\\scm_unittest.py -v RealGitTest.testIsValidRevision\n\nfails if I don\u0027t do exit. Which reminds me one downside of this CL is that if this command is running in cmd.exe (not sure how many developers use that), then such prompt will be closed.  This doesn\u0027t affect powershell nor cygwin.",
+      "parentUuid": "07c47b3a_e802f4ed",
       "range": {
         "startLine": 14,
         "startChar": 0,

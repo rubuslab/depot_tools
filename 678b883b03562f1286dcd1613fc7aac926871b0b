@@ -34,6 +34,24 @@
       "revId": "678b883b03562f1286dcd1613fc7aac926871b0b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f26bb91_ee2f4c54",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-31T19:37:38Z",
+      "side": 1,
+      "message": "e.g.:\n\n  C:\\src\\client\\webrtc\\src\u003egit rev-parse --verify 0920d5d344ee2024c6e8083f01f9d6334b189a38\n  0920d5d344ee2024c6e8083f01f9d6334b189a38\n\n  C:\\src\\client\\webrtc\\src\u003egit rev-parse --verify 0920d5d344ee2024c6e8083f01f9d6334b189a3\n  fatal: Needed a single revision",
+      "parentUuid": "5b514a3c_4f19f095",
+      "revId": "678b883b03562f1286dcd1613fc7aac926871b0b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

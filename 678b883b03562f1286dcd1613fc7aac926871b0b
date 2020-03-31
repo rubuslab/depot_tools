@@ -16,6 +16,24 @@
       "revId": "678b883b03562f1286dcd1613fc7aac926871b0b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b514a3c_4f19f095",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-31T19:34:55Z",
+      "side": 1,
+      "message": "git rev-parse --verify FULL_GIT_SHA always succeeds, even if FULL_GIT_SHA is not an object in the database.\nRemoving the last character forces git to check that it refers to an object in the database.",
+      "parentUuid": "0be464cd_c48c08a1",
+      "revId": "678b883b03562f1286dcd1613fc7aac926871b0b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

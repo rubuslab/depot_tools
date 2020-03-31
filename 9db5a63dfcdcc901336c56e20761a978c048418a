@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7588923_febf6848",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-31T23:30:56Z",
+      "side": 1,
+      "message": "I don\u0027t think this is possible.\n\"^\" is a special character in batch files that is used to escape other characters, so \"^^\" will always need to be used.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 63
+      },
+      "revId": "9db5a63dfcdcc901336c56e20761a978c048418a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07c47b3a_e802f4ed",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-03-31T23:30:56Z",
+      "side": 1,
+      "message": "Is this needed? It causes git to exit the command line when an error happens.\nIf I remove it, things seem to work fine:\n\n  C:\\src\\client\\webrtc\\src\u003egit rev-parse --verify deadbeeef\n  fatal: Needed a single revision\n\n  C:\\src\\client\\webrtc\\src\u003eecho %ERRORLEVEL%\n  128",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 1
+      },
+      "revId": "9db5a63dfcdcc901336c56e20761a978c048418a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

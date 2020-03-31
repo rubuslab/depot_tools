@@ -377,14 +377,13 @@ class GIT(object):
 
   @staticmethod
   def ResolveCommit(cwd, rev):
-    if sys.platform.startswith('win'):
-      # Windows .bat scripts use ^ as escape sequence, which means we have to
-      # escape it with itself for every .bat invocation.
-      needle = '%s^^{commit}' % rev
-    else:
-      needle = '%s^{commit}' % rev
+    # We do this instead of rev-parse --verify rev^{commit}, since on Windows
+    # git can be either an executable or batch script, each of which requires
+    # escaping the caret (^) a different way.
+    if gclient_utils.IsFullGitSha(rev):
+      rev = rev[:-1]
     try:
-      return GIT.Capture(['rev-parse', '--quiet', '--verify', needle], cwd=cwd)
+      return GIT.Capture(['rev-parse', '--quiet', '--verify', rev], cwd=cwd)
     except subprocess2.CalledProcessError:
       return None
 

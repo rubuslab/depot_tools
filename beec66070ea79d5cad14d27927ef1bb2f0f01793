@@ -22,6 +22,30 @@
       "revId": "beec66070ea79d5cad14d27927ef1bb2f0f01793",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed0b2222_a76c8539",
+        "filename": "vpython3.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-04-01T04:39:17Z",
+      "side": 0,
+      "message": "Yes, that works too. ptal",
+      "parentUuid": "1036ab96_2c4d4441",
+      "range": {
+        "startLine": 12,
+        "startChar": 54,
+        "endLine": 12,
+        "endChar": 72
+      },
+      "revId": "beec66070ea79d5cad14d27927ef1bb2f0f01793",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

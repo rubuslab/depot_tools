@@ -140,17 +140,33 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
                             publish=True)
 
 
-def GetFilesSplitByOwners(owners_database, files):
+def GetFilesSplitByOwners(owners_database, files, min_files):
   """Returns a map of files split by OWNERS file.
 
   Returns:
     A map where keys are paths to directories containing an OWNERS file and
-    values are lists of files sharing an OWNERS file.
+    values are lists of files sharing an OWNERS file. Makes sure each list has
+    size at least |min_files|.
   """
   files_split_by_owners = collections.defaultdict(list)
   for action, path in files:
     enclosing_dir = owners_database.enclosing_dir_with_owners(path)
     files_split_by_owners[enclosing_dir].append((action, path))
+
+  needs_merge = any(
+      [len(f) < min_files for f in files_split_by_owners.itervalues()])
+  while needs_merge:
+    needs_merge = False
+
+    new_dict = collections.defaultdict(list)
+    for folder, files in files_split_by_owners.iteritems():
+      if len(files) < min_files:
+        needs_merge = True
+        folder = os.path.dirname(folder)
+      new_dict[folder].extend(files)
+
+    files_split_by_owners = new_dict
+
   return files_split_by_owners
 
 
@@ -179,13 +195,14 @@ def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
   print()
 
 
-def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
-            cq_dry_run, enable_auto_submit, repository_root):
+def SplitCl(description_file, comment_file, min_files, changelist, cmd_upload,
+            dry_run, cq_dry_run, enable_auto_submit, repository_root):
   """"Splits a branch into smaller branches and uploads CLs.
 
   Args:
     description_file: File containing the description of uploaded CLs.
     comment_file: File containing the comment of uploaded CLs.
+    min_files: Minimum number of files per uploaded CL.
     changelist: The Changelist class.
     cmd_upload: The function associated with the git cl upload command.
     dry_run: Whether this is a dry run (no branches or CLs created).
@@ -222,7 +239,8 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
     owners_database = owners.Database(repository_root, open, os.path)
     owners_database.load_data_needed_for([f for _, f in files])
 
-    files_split_by_owners = GetFilesSplitByOwners(owners_database, files)
+    files_split_by_owners = GetFilesSplitByOwners(owners_database, files,
+                                                  min_files)
 
     num_cls = len(files_split_by_owners)
     print('Will split current branch (' + refactor_branch + ') into ' +
@@ -243,7 +261,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
       # Use '/' as a path separator in the branch name and the CL description
       # and comment.
       directory = directory.replace(os.path.sep, '/')
-      file_paths = [f for _, f in files]
+      file_paths = sorted([f.LocalPath() for _, f in files])
       reviewers = owners_database.reviewers_for(file_paths, author)
 
       if dry_run:

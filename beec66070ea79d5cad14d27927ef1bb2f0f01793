@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1036ab96_2c4d4441",
+        "filename": "vpython3.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-01T02:26:29Z",
+      "side": 0,
+      "message": "Could we do \"%dp0%PYTHON3...\" instead?",
+      "range": {
+        "startLine": 12,
+        "startChar": 54,
+        "endLine": 12,
+        "endChar": 72
+      },
+      "revId": "beec66070ea79d5cad14d27927ef1bb2f0f01793",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

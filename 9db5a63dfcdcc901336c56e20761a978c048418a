@@ -141,6 +141,30 @@
       "revId": "9db5a63dfcdcc901336c56e20761a978c048418a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "490bfe72_3d264022",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-01T18:43:57Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s acceptable to close a cmd prompt when git fails. It is very surprising and potentially very disrupting.",
+      "parentUuid": "86b33d48_78a3efa8",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 1
+      },
+      "revId": "9db5a63dfcdcc901336c56e20761a978c048418a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

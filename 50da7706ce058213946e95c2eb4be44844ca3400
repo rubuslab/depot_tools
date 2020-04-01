@@ -22,6 +22,30 @@
       "revId": "50da7706ce058213946e95c2eb4be44844ca3400",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e40b5b5d_857102e6",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2353,
+      "author": {
+        "id": 1150969
+      },
+      "writtenOn": "2020-04-01T11:51:41Z",
+      "side": 1,
+      "message": "Ah, it seems that it\u0027s been fixed on the latest master :) \n\nSorry for the noise!",
+      "parentUuid": "df7ac918_4d65bda9",
+      "range": {
+        "startLine": 2352,
+        "startChar": 4,
+        "endLine": 2353,
+        "endChar": 4
+      },
+      "revId": "50da7706ce058213946e95c2eb4be44844ca3400",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

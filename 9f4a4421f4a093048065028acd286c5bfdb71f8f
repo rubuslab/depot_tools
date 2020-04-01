@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d5273f78_4c6dd70a",
+        "filename": "man/html/depot_tools_tutorial.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 1141154
+      },
+      "writtenOn": "2020-04-01T06:17:09Z",
+      "side": 1,
+      "message": "the other files say \"front\"",
+      "range": {
+        "startLine": 878,
+        "startChar": 62,
+        "endLine": 878,
+        "endChar": 67
+      },
+      "revId": "9f4a4421f4a093048065028acd286c5bfdb71f8f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

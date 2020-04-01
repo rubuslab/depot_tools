@@ -353,7 +353,7 @@ class GIT(object):
     """Returns the top level directory of a git checkout as an absolute path.
     """
     root = GIT.Capture(['rev-parse', '--show-cdup'], cwd=cwd)
-    return os.path.abspath(os.path.join(cwd, root))
+    return os.path.abspath(os.path.join(cwd or '', root))
 
   @staticmethod
   def GetGitDir(cwd):

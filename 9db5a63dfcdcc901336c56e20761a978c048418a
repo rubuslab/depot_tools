@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "8d5d50cf_2ceb7785",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-01T19:03:13Z",
+      "side": 1,
+      "message": "Ok, I think this would work\n\n  @echo off\n  setlocal\n  if not defined EDITOR set EDITOR\u003dnotepad\n  set PATH\u003d%~dp0${GIT_BIN_RELDIR}\\cmd;%~dp0;%PATH%\n\n  REM This hack tries to restore as many original arguments as possible\n  REM \"HEAD^^1\" is parsed correctly, but \"HEAD^1\" is still not.\n  REM TODO(crbug.com/1066663): Fix passing \"HEAD^1\" as argument.\n  call :RunGit \"%*\"\n  if %ERRORLEVEL% NEQ 0 (\n    exit /b %ERRORLEVEL%\n  )\n  goto :eof\n\n  :RunGit\n  call \"%~dp0${GIT_BIN_RELDIR}\\${GIT_PROGRAM}\" %~1\n  if %ERRORLEVEL% NEQ 0 (\n    exit /b %ERRORLEVEL%\n  )\n\nWe use /b to exit only the batch script context, and not the prompt, but we have to do it twice, since :RunGit is called as a script.",
+      "revId": "9db5a63dfcdcc901336c56e20761a978c048418a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d7588923_febf6848",
         "filename": "bootstrap/git.template.bat",
         "patchSetId": 2

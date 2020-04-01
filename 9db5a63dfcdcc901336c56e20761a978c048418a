@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa2800af_5678b8ff",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-04-01T19:25:08Z",
+      "side": 1,
+      "message": "Thanks, that will do it! I wasn\u0027t aware that exit from call won\u0027t be used.",
+      "parentUuid": "8d5d50cf_2ceb7785",
+      "revId": "9db5a63dfcdcc901336c56e20761a978c048418a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d7588923_febf6848",
         "filename": "bootstrap/git.template.bat",
         "patchSetId": 2

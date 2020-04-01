@@ -22,6 +22,53 @@
       "revId": "9f4a4421f4a093048065028acd286c5bfdb71f8f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2711e66_7d12e5ce",
+        "filename": "man/html/depot_tools_tutorial.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-04-01T06:28:56Z",
+      "side": 1,
+      "message": "woops!",
+      "parentUuid": "d5273f78_4c6dd70a",
+      "range": {
+        "startLine": 878,
+        "startChar": 62,
+        "endLine": 878,
+        "endChar": 67
+      },
+      "revId": "9f4a4421f4a093048065028acd286c5bfdb71f8f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ad6dc43_e9454572",
+        "filename": "man/html/depot_tools_tutorial.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-04-01T06:28:56Z",
+      "side": 1,
+      "message": "this one says \u0027start\u0027. I\u0027ll change them all to \u0027front\u0027",
+      "range": {
+        "startLine": 901,
+        "startChar": 62,
+        "endLine": 901,
+        "endChar": 67
+      },
+      "revId": "9f4a4421f4a093048065028acd286c5bfdb71f8f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

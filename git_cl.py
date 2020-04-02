@@ -4138,6 +4138,20 @@ def CMDsplit(parser, args):
                          'infrastructure. Try to upload these not during high '
                          'load times (usually 11-3 Mountain View time). Email '
                          'infra-dev@chromium.org with any questions.')
+  parser.add_option(
+      '-r',
+      '--allow-root',
+      dest='allow_root',
+      default=False,
+      help=
+      'If set will also consider sending a CL to ENG_OWNERS. Defaults to False.'
+  )
+  parser.add_option(
+      '-s',
+      '--cl-size',
+      dest='cl_size',
+      default='M',
+      help='If set, tries to create CLs of the given CL_SIZE. Defaults to M.')
   parser.add_option('-a', '--enable-auto-submit', action='store_true',
                     default=True,
                     help='Sends your change to the CQ after an approval. Only '
@@ -4151,10 +4165,10 @@ def CMDsplit(parser, args):
   def WrappedCMDupload(args):
     return CMDupload(OptionParser(), args)
 
-  return split_cl.SplitCl(
-      options.description_file, options.comment_file, Changelist,
-      WrappedCMDupload, options.dry_run, options.cq_dry_run,
-      options.enable_auto_submit, settings.GetRoot())
+  return split_cl.SplitCl(options.description_file, options.comment_file,
+                          options.cl_size, options.allow_root, Changelist,
+                          WrappedCMDupload, options.dry_run, options.cq_dry_run,
+                          options.enable_auto_submit, settings.GetRoot())
 
 
 @subcommand.usage('DEPRECATED')

@@ -14,6 +14,7 @@ import subprocess2
 import sys
 import tempfile
 
+import math
 import gclient_utils
 import git_footers
 import owners
@@ -22,6 +23,7 @@ import scm
 
 import git_common as git
 
+ChangedFile = collections.namedtuple('ChangedFile', ['path', 'action', 'size'])
 
 # If a call to `git cl split` will generate more than this number of CLs, the
 # command will prompt the user to make sure they know what they're doing. Large
@@ -35,6 +37,41 @@ def ReadFile(file_path):
   with open(file_path) as f:
     content = f.read()
   return content
+
+
+def GetCLBounds(size):
+  """Returns the bounds for a given CL size """
+  bounds = {
+      'XS': (1, 10),
+      'S': (10, 50),
+      'M': (50, 250),
+      'L': (250, 1000),
+      'XL': (1000, math.inf),
+  }
+
+  return bounds[size]
+
+
+def GetCLSize(size):
+  """Returns the size of a CL"""
+  if size >= 1000:
+    return 'XL'
+  if size >= 250:
+    return 'L'
+  if size >= 50:
+    return 'M'
+  if size >= 10:
+    return 'S'
+  return 'XS'
+
+
+def GetCLSizes(files_split_by_owners):
+  """Returns the sizes of CLs"""
+  cl_sizes = collections.Counter()
+  for files in files_split_by_owners.values():
+    size = sum(f.size for f in files)
+    cl_sizes[GetCLSize(size)] += 1
+  return cl_sizes
 
 
 def EnsureInGitRepository():
@@ -105,9 +142,9 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
   # Checkout all changes to files in |files|.
   deleted_files = []
   modified_files = []
-  for action, f in files:
-    abspath = os.path.abspath(os.path.join(repository_root, f))
-    if action == 'D':
+  for f in files:
+    abspath = os.path.abspath(os.path.join(repository_root, f.path))
+    if f.action == 'D':
       deleted_files.append(abspath)
     else:
       modified_files.append(abspath)
@@ -140,22 +177,49 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
                             publish=True)
 
 
-def GetFilesSplitByOwners(owners_database, files):
+def GetFilesSplitByOwners(owners_database, files, cl_size, allow_root):
   """Returns a map of files split by OWNERS file.
 
   Returns:
     A map where keys are paths to directories containing an OWNERS file and
-    values are lists of files sharing an OWNERS file.
+    values are lists of files sharing an OWNERS file. Tries to make sure each
+    list has size at most |max_size|.
   """
+  min_size, max_size = GetCLBounds(cl_size)
+
   files_split_by_owners = collections.defaultdict(list)
-  for action, path in files:
-    enclosing_dir = owners_database.enclosing_dir_with_owners(path)
-    files_split_by_owners[enclosing_dir].append((action, path))
+
+  for f in files:
+    enclosing_dir = owners_database.enclosing_dir_with_owners(f.path)
+    files_split_by_owners[enclosing_dir].append(f)
+
+  sum_sizes = lambda files: sum(f.size for f in files)
+
+  changed = True
+  while changed:
+    new_split = collections.defaultdict(list)
+
+    changed = False
+    for folder, files in reversed(sorted(files_split_by_owners.items())):
+      parent = os.path.dirname(folder)
+      size = sum_sizes(files)
+      parent_size = sum_sizes(new_split.get(parent, [])) + sum_sizes(
+          files_split_by_owners.get(parent, []))
+
+      should_merge = folder != '' and (allow_root or parent != '') and (
+          size < min_size or parent_size + size < max_size)
+      if should_merge:
+        new_split[parent].extend(files)
+        changed = True
+      else:
+        new_split[folder].extend(files)
+
+    files_split_by_owners = new_split
+
   return files_split_by_owners
 
 
-def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
-                reviewers):
+def PrintClInfo(cl_index, num_cls, directory, files, description, reviewers):
   """Prints info about a CL.
 
   Args:
@@ -163,7 +227,7 @@ def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
     num_cls: The total number of CLs that will be uploaded.
     directory: Path to the directory that contains the OWNERS file for which
         to upload a CL.
-    file_paths: A list of files in this CL.
+    files: A list of files in this CL.
     description: The CL description.
     reviewers: A set of reviewers for this CL.
   """
@@ -173,19 +237,24 @@ def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
 
   print('CL {}/{}'.format(cl_index, num_cls))
   print('Path: {}'.format(directory))
+  lines = sum(f.size for f in files)
+  print('Size: {} (Lines: {})'.format(GetCLSize(lines), lines))
   print('Reviewers: {}'.format(', '.join(reviewers)))
   print('\n' + indented_description + '\n')
-  print('\n'.join(file_paths))
+  print('\n'.join(sorted(f.path for f in files)))
   print()
 
 
-def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
-            cq_dry_run, enable_auto_submit, repository_root):
+def SplitCl(description_file, comment_file, cl_size, allow_root, changelist,
+            cmd_upload, dry_run, cq_dry_run, enable_auto_submit,
+            repository_root):
   """"Splits a branch into smaller branches and uploads CLs.
 
   Args:
     description_file: File containing the description of uploaded CLs.
     comment_file: File containing the comment of uploaded CLs.
+    cl_size: Desired size of each CL.
+    allow_root: Consider sending a CL to ENG_OWNERS.
     changelist: The Changelist class.
     cmd_upload: The function associated with the git cl upload command.
     dry_run: Whether this is a dry run (no branches or CLs created).
@@ -203,9 +272,15 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
 
     cl = changelist()
     upstream = cl.GetCommonAncestorWithUpstream()
+
+    file_stats = {
+        f: add + rem
+        for (add, rem, f) in scm.GIT.CaptureNumStat(repository_root, upstream)
+    }
+
     files = [
-        (action.strip(), f)
-        for action, f in scm.GIT.CaptureStatus(repository_root, upstream)
+        ChangedFile(size=file_stats[f], action=action, path=f)
+        for (action, f) in scm.GIT.CaptureStatus(repository_root, upstream)
     ]
 
     if not files:
@@ -220,9 +295,10 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
         "Branch %s must have an upstream." % refactor_branch
 
     owners_database = owners.Database(repository_root, open, os.path)
-    owners_database.load_data_needed_for([f for _, f in files])
+    owners_database.load_data_needed_for([f.path for f in files])
 
-    files_split_by_owners = GetFilesSplitByOwners(owners_database, files)
+    files_split_by_owners = GetFilesSplitByOwners(owners_database, files,
+                                                  cl_size, allow_root)
 
     num_cls = len(files_split_by_owners)
     print('Will split current branch (' + refactor_branch + ') into ' +
@@ -238,17 +314,22 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
       if answer.lower() != 'y':
         return 0
 
+    cl_sizes = GetCLSizes(files_split_by_owners)
+    print("CL Sizes:")
+    for size in ('XL', 'L', 'M', 'S', 'XS'):
+      print("  {}: {}".format(size, cl_sizes[size]))
+    print()
+
     for cl_index, (directory, files) in \
         enumerate(files_split_by_owners.items(), 1):
       # Use '/' as a path separator in the branch name and the CL description
       # and comment.
       directory = directory.replace(os.path.sep, '/')
-      file_paths = [f for _, f in files]
+      file_paths = sorted([f.path for f in files])
       reviewers = owners_database.reviewers_for(file_paths, author)
 
       if dry_run:
-        PrintClInfo(cl_index, num_cls, directory, file_paths, description,
-                    reviewers)
+        PrintClInfo(cl_index, num_cls, directory, files, description, reviewers)
       else:
         UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
                  description, comment, reviewers, changelist, cmd_upload,

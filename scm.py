@@ -145,6 +145,27 @@ class GIT(object):
     return results
 
   @staticmethod
+  def CaptureNumStat(cwd, upstream_branch):
+    """Returns git status.
+
+    Returns an array of (status, file) tuples."""
+    if upstream_branch is None:
+      upstream_branch = GIT.GetUpstreamBranch(cwd)
+      if upstream_branch is None:
+        raise gclient_utils.Error('Cannot determine upstream branch')
+    command = [
+        '-c', 'core.quotePath=false', 'diff', '--numstat', '--no-renames', '-r',
+        '%s...' % upstream_branch
+    ]
+    status = GIT.Capture(command, cwd)
+    results = []
+    if status:
+      for statusline in status.splitlines():
+        add, rem, name = statusline.split('\t')
+        results.append((int(add), int(rem), name))
+    return results
+
+  @staticmethod
   def GetConfig(cwd, key, default=None):
     try:
       return GIT.Capture(['config', key], cwd=cwd)

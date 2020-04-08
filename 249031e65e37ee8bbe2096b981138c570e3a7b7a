@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "14d36a51_175be586",
+        "filename": "owners.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-08T17:22:47Z",
+      "side": 1,
+      "message": "pattern?",
+      "range": {
+        "startLine": 596,
+        "startChar": 65,
+        "endLine": 596,
+        "endChar": 73
+      },
+      "revId": "249031e65e37ee8bbe2096b981138c570e3a7b7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

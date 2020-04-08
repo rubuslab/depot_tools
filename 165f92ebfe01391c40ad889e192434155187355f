@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "cb0e2693_4cf2c30e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2020-04-08T19:58:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26d6e05a_a249b019",
+      "revId": "165f92ebfe01391c40ad889e192434155187355f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "30f581d9_6ed04f62",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -33,6 +51,24 @@
       "revId": "165f92ebfe01391c40ad889e192434155187355f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58b9e364_5992d109",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2020-04-08T19:58:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30f581d9_6ed04f62",
+      "revId": "165f92ebfe01391c40ad889e192434155187355f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "efbb36dc_8c0112e6",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2020-04-08T19:58:38Z",
+      "side": 1,
+      "message": "Yep, it is the former. Updated comment. Thank you!",
+      "parentUuid": "5879a0d7_0c2c622a",
+      "revId": "165f92ebfe01391c40ad889e192434155187355f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a047a5a_a408505b",
         "filename": "post_build_ninja_summary.py",
         "patchSetId": 3
@@ -67,6 +121,24 @@
       "revId": "165f92ebfe01391c40ad889e192434155187355f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb1c2429_94c52620",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2020-04-08T19:58:38Z",
+      "side": 1,
+      "message": "Done, great idea!",
+      "parentUuid": "1a047a5a_a408505b",
+      "revId": "165f92ebfe01391c40ad889e192434155187355f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

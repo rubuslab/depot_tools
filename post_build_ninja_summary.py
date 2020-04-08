@@ -63,7 +63,7 @@ import sys
 # The number of long build times to report:
 long_count = 10
 # The number of long times by extension to report
-long_ext_count = 5
+long_ext_count = 10
 
 
 class Target:
@@ -177,28 +177,38 @@ def GetExtension(target, extra_patterns):
           return fn_pattern
     # Not a true extension, but a good grouping.
     if output.endswith('type_mappings'):
-      extension = 'type_mappings'
+      full_extension = 'type_mappings'
       break
-    extension = os.path.splitext(output)[1]
-    if len(extension) == 0:
-      extension = '(no extension found)'
+
+    # Capture two extensions if present, so that file.javac.jar is distinct from
+    # file.interface.jar.
+    root, extension = os.path.splitext(output)
+    _, additional_extension = os.path.splitext(root)
+    full_extension = additional_extension + extension
+
+    if len(full_extension) == 0:
+      full_extension = '(no extension found)'
+
     if extension in ['.pdb', '.dll', '.exe']:
-      extension = 'PEFile (linking)'
+      full_extension = 'PEFile (linking)'
       # Make sure that .dll and .exe are grouped together and that the
       # .dll.lib files don't cause these to be listed as libraries
       break
     if extension in ['.so', '.TOC']:
-      extension = '.so (linking)'
+      full_extension = '.so (linking)'
       # Attempt to identify linking, avoid identifying as '.TOC'
       break
     # Make sure .obj files don't get categorized as mojo files
     if extension in ['.obj', '.o']:
       break
+    # Jars are the canonical output of java targets.
+    if extension == '.jar':
+      break
     # Normalize all mojo related outputs to 'mojo'.
     if output.count('.mojom') > 0:
-      extension = 'mojo'
+      full_extension = 'mojo'
       break
-  return extension
+  return full_extension
 
 
 def SummarizeEntries(entries, extra_step_types):

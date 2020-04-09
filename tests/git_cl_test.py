@@ -3437,7 +3437,7 @@ class MakeRequestsHelperTestCase(unittest.TestCase):
         ])
 
   def testMakeRequestsHelperCategorySet(self):
-    # The category property can be overriden with options.
+    # The category property can be overridden with options.
     changelist = ChangelistMock(gerrit_change=self.exampleGerritChange())
     jobs = [('chromium', 'try', 'my-builder')]
     options = optparse.Values({'category': 'my-special-category'})

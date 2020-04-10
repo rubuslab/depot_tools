@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03e29b2f_7c3360a0",
+        "filename": "git_drover.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-10T17:35:11Z",
+      "side": 1,
+      "message": ".decode(\u0027utf-8\u0027, \u0027ignore\u0027)",
+      "range": {
+        "startLine": 325,
+        "startChar": 18,
+        "endLine": 325,
+        "endChar": 26
+      },
+      "revId": "61dc22639ce11778fa259c135a373aa17bcede1f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "abaf275f_41ec29cc",
+        "filename": "tests/git_drover_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-10T17:35:11Z",
+      "side": 1,
+      "message": "Does it break if we always return bytes?",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 0
+      },
+      "revId": "61dc22639ce11778fa259c135a373aa17bcede1f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

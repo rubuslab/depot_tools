@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dba151ab_88152af0",
+        "filename": "git_drover.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1001663
+      },
+      "writtenOn": "2020-04-11T03:11:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "03e29b2f_7c3360a0",
+      "range": {
+        "startLine": 325,
+        "startChar": 18,
+        "endLine": 325,
+        "endChar": 26
+      },
+      "revId": "61dc22639ce11778fa259c135a373aa17bcede1f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "abaf275f_41ec29cc",
         "filename": "tests/git_drover_test.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "61dc22639ce11778fa259c135a373aa17bcede1f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1896991b_f71706d0",
+        "filename": "tests/git_drover_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1001663
+      },
+      "writtenOn": "2020-04-11T03:11:02Z",
+      "side": 1,
+      "message": "Yes, it breaks python2 with same error if returning bytes here.",
+      "parentUuid": "abaf275f_41ec29cc",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 0
+      },
+      "revId": "61dc22639ce11778fa259c135a373aa17bcede1f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

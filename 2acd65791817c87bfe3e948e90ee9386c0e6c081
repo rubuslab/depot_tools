@@ -22,6 +22,30 @@
       "revId": "2acd65791817c87bfe3e948e90ee9386c0e6c081",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6972c493_3960738a",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2700,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2020-04-13T17:23:24Z",
+      "side": 1,
+      "message": "Done, thanks for verifying :-)",
+      "parentUuid": "cea40f89_3420a8a2",
+      "range": {
+        "startLine": 2700,
+        "startChar": 47,
+        "endLine": 2700,
+        "endChar": 52
+      },
+      "revId": "2acd65791817c87bfe3e948e90ee9386c0e6c081",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "b30969bc_534b8836",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-04-13T22:10:33Z",
+      "side": 1,
+      "message": "For some reason frontend didn\u0027t load your last comment. Looks like we are good with this as is.",
+      "parentUuid": "86857fe2_4a36de5d",
+      "revId": "8c1c8fcb3cc70913f062d7f0f5a4408a665a6478",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2f4cac5c_019f68a8",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 3

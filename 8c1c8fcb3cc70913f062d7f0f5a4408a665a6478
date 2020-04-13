@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "86857fe2_4a36de5d",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-04-13T22:09:23Z",
+      "side": 1,
+      "message": "Isn\u0027t this (in general, recipes) almost exclusively executed on servers with stable connections? As I said in the doc, those are somewhat arbitrary numbers I picked. Server logs show 20Mbps+.\n\nIf we see such bug reports, I think we could:\n* suggest to remove those lines while testing on their machine\n* introduce a feature that won\u0027t override those variables if set by user.",
+      "parentUuid": "2c00c4c1_18f2146a",
+      "revId": "8c1c8fcb3cc70913f062d7f0f5a4408a665a6478",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2f4cac5c_019f68a8",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 3

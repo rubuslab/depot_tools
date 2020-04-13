@@ -22,6 +22,30 @@
       "revId": "8c1c8fcb3cc70913f062d7f0f5a4408a665a6478",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dff3bd30_fc6be63a",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-04-13T20:44:58Z",
+      "side": 1,
+      "message": "It won\u0027t clear.\n\nhttps://chromium.googlesource.com/infra/luci/recipes-py/+/refs/heads/master/recipe_modules/context/tests/env.py#26\n\nhttps://chromium.googlesource.com/infra/luci/recipes-py/+/refs/heads/master/recipe_modules/context/tests/env.expected/basic.json#19",
+      "parentUuid": "2f4cac5c_019f68a8",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 40,
+        "endChar": 31
+      },
+      "revId": "8c1c8fcb3cc70913f062d7f0f5a4408a665a6478",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

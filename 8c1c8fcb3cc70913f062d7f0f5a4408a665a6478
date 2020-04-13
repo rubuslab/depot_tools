@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f4cac5c_019f68a8",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-13T19:15:22Z",
+      "side": 1,
+      "message": "Does this clear any other environment variables that might be set at this point?",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 40,
+        "endChar": 31
+      },
+      "revId": "8c1c8fcb3cc70913f062d7f0f5a4408a665a6478",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "2c00c4c1_18f2146a",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-04-13T21:40:17Z",
+      "side": 1,
+      "message": "I just want to say I know someone out there is going to file a bug about trying to run this on some super slow 3g connection and it failing I also want to say too bad for them, but maybe it\u0027s worth making it a bit smaller.  How did you come up with ~1MBit connection as a number here.",
+      "revId": "8c1c8fcb3cc70913f062d7f0f5a4408a665a6478",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2f4cac5c_019f68a8",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 3

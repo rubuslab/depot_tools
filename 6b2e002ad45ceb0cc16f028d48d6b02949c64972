@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cfbb7a48_5e3a248c",
+        "filename": "recipes/recipe_modules/gclient/tests/sync_failure.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-04-14T00:19:52Z",
+      "side": 1,
+      "message": "I don\u0027t think the parens are necessary\n   \n   r\u0027^Uncaught Exception\u0027\n\nShould work fine, right?",
+      "revId": "6b2e002ad45ceb0cc16f028d48d6b02949c64972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

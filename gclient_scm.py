@@ -1358,7 +1358,7 @@ class GitWrapper(SCMWrapper):
     """Attempts to fetch |revision| if not available in local repo.
 
     Returns possibly updated revision."""
-    if not scm.GIT.IsValidRevision(self.checkout_path, revision):
+    if not scm.GIT.IsValidRevision(self.checkout_path, revision, sha_only=True):
       self._Fetch(options, refspec=revision)
       revision = self._Capture(['rev-parse', 'FETCH_HEAD'])
     return revision

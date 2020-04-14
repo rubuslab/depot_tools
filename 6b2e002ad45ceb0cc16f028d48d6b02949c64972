@@ -16,6 +16,24 @@
       "revId": "6b2e002ad45ceb0cc16f028d48d6b02949c64972",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22fc9536_7c90c8d2",
+        "filename": "recipes/recipe_modules/gclient/tests/sync_failure.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2020-04-14T03:35:10Z",
+      "side": 1,
+      "message": "Do you mean r\u0027^?!Uncaught Exception\u0027? I don\u0027t think the syntax is valid for this expression if we drop the parenthesis.\n\n\nIf you mean r\u0027^Uncaught Exception\u0027, the test is actually expecting the failure reason should *NOT* start with \"Uncaught Exception\". So it will match the exact opposite pattern.",
+      "parentUuid": "cfbb7a48_5e3a248c",
+      "revId": "6b2e002ad45ceb0cc16f028d48d6b02949c64972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

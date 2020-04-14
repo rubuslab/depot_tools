@@ -34,6 +34,24 @@
       "revId": "6b2e002ad45ceb0cc16f028d48d6b02949c64972",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db32c70c_1fffd961",
+        "filename": "recipes/recipe_modules/gclient/tests/sync_failure.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-04-14T03:50:34Z",
+      "side": 1,
+      "message": "Oh, whoops! I thought this was `(?:Uncaught Exception)` (i.e. a non-capturing group). lgtm as is.",
+      "parentUuid": "22fc9536_7c90c8d2",
+      "revId": "6b2e002ad45ceb0cc16f028d48d6b02949c64972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -473,12 +473,15 @@ def create_manifest(gclient_output, patch_root):
     # 2. At the end of the URL, after @
     revision = info.get('revision') or url_revision
     if repo and revision:
-      dirs[directory] = {
-        'git_checkout': {
-          'repo_url': repo,
-          'revision': revision,
-        }
+      checkout = {
+        'repo_url': repo,
+        'revision': revision,
       }
+      if url_revision in ('HEAD', 'master'):  # special cases.
+        checkout['fetch_ref'] = 'refs/heads/master'
+      elif url_revision.startswith('refs/'):
+        checkout['fetch_ref'] = url_revision
+      dirs[directory] = {'git_checkout': checkout}
 
   manifest['directories'] = dirs
   return manifest

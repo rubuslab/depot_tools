@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "88a27263_5a7e0889",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2020-04-15T18:26:50Z",
+      "side": 1,
+      "message": "This is where the \"unmanaged\" will still take effect.\n\nE.g. instead of created a repo entry at the start for None and Unmanaged, it leaves the entry creation until here, but uses the overridden revision value of \"unmanaged\".",
+      "revId": "fffd746f2a862743cd104792f6779ae6bd5f10a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

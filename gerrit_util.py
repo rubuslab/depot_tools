@@ -44,10 +44,10 @@ else:
   from io import StringIO
 
 LOGGER = logging.getLogger()
-# With a starting sleep time of 1.5 seconds, 2^n exponential backoff, and seven
-# total tries, the sleep time between the first and last tries will be 94.5 sec.
-TRY_LIMIT = 3
-
+# With a starting sleep time of 15.0 seconds, x <= 2x backoff, and five total
+# tries, the sleep time between the first and last tries will be ~4 min.
+TRY_LIMIT = 5 # Used as input to
+SLEEP_TIME = 15.0
 
 # Controls the transport protocol used to communicate with Gerrit.
 # This is parameterized primarily to enable GerritTestCase.
@@ -418,7 +418,7 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
                      Common additions include 204, 400, and 404.
   Returns: A string buffer containing the connection's reply.
   """
-  sleep_time = 1.5
+  sleep_time = SLEEP_TIME
   for idx in range(TRY_LIMIT):
     before_response = time.time()
     response, contents = conn.request(**conn.req_params)
@@ -436,7 +436,7 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
     # If the response is 404/409 it might be because of replication lag,
     # so keep trying anyway.
     if (response.status in accept_statuses
-        or response.status < 500 and response.status not in [404, 409]):
+        or response.status < 500 and response.status not in [404, 409, 429]):
       LOGGER.debug('got response %d for %s %s', response.status,
                    conn.req_params['method'], conn.req_params['uri'])
       # If 404 was in accept_statuses, then it's expected that the file might

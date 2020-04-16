@@ -203,7 +203,8 @@ class GceAuthenticatorTest(unittest.TestCase):
     httplib2.Http().request.return_value = (mock.Mock(status=500), None)
     self.assertFalse(self.GceAuthenticator.is_gce())
     self.assertEqual(
-        [mock.call(1), mock.call(2)], gerrit_util.time_sleep.mock_calls)
+        [mock.call(1), mock.call(2), mock.call(4), mock.call(8)],
+         gerrit_util.time_sleep.mock_calls)
 
   def testIsGce_FailsThenSucceeds(self):
     response = mock.Mock(status=200)
@@ -373,7 +374,8 @@ class GerritUtilTest(unittest.TestCase):
     self.assertEqual(500, cm.exception.http_status)
     self.assertEqual(gerrit_util.TRY_LIMIT, len(conn.request.mock_calls))
     self.assertEqual(
-        [mock.call(1.5), mock.call(3)], gerrit_util.time_sleep.mock_calls)
+        [mock.call(15.0), mock.call(30.0), mock.call(60.0), mock.call(120.0)],
+         gerrit_util.time_sleep.mock_calls)
 
   def testReadHttpResponse_ServerErrorAndSuccess(self):
     conn = mock.Mock(req_params={'uri': 'uri', 'method': 'method'})
@@ -384,7 +386,7 @@ class GerritUtilTest(unittest.TestCase):
 
     self.assertEqual('content✔', gerrit_util.ReadHttpResponse(conn).getvalue())
     self.assertEqual(2, len(conn.request.mock_calls))
-    gerrit_util.time_sleep.assert_called_once_with(1.5)
+    gerrit_util.time_sleep.assert_called_once_with(15.0)
 
   def testReadHttpResponse_Expected404(self):
     conn = mock.Mock()

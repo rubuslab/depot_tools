@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78f42778_dcbc5776",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-16T23:54:39Z",
+      "side": 1,
+      "message": "Used as input to what?",
+      "range": {
+        "startLine": 49,
+        "startChar": 14,
+        "endLine": 49,
+        "endChar": 32
+      },
+      "revId": "eaaacbb9184fecfa9cd1cda199a158780fdde8dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

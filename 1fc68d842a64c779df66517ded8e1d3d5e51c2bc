@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd689a3d_fd077e41",
+        "filename": "cpplint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3169,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-16T17:27:30Z",
+      "side": 1,
+      "message": "Please reindent:\n\n  if (Search(r\u0027\\w\\s+\\[\u0027, line)\n      and not Search(r\u0027(?:delete|return)\\s+\\[\u0027, line)\n      and not Search(r\u0027\\s+\\[\\[\u0027, line)):",
+      "range": {
+        "startLine": 3166,
+        "startChar": 2,
+        "endLine": 3169,
+        "endChar": 12
+      },
+      "revId": "1fc68d842a64c779df66517ded8e1d3d5e51c2bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

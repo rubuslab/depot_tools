@@ -22,6 +22,30 @@
       "revId": "9fcd9a2df15cf22621dc730787aab8d90359bc69",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9421bd91_5566279b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1355298
+      },
+      "writtenOn": "2020-04-17T03:51:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8bc6eb39_cebf1d18",
+      "range": {
+        "startLine": 439,
+        "startChar": 21,
+        "endLine": 439,
+        "endChar": 27
+      },
+      "revId": "9fcd9a2df15cf22621dc730787aab8d90359bc69",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

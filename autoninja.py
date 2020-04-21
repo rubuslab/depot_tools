@@ -11,17 +11,10 @@ and safer, and avoids errors that can cause slow goma builds or swap-storms
 on non-goma builds.
 """
 
-# [VPYTHON:BEGIN]
-# wheel: <
-#   name: "infra/python/wheels/psutil/${vpython_platform}"
-#   version: "version:5.6.2"
-# >
-# [VPYTHON:END]
-
 from __future__ import print_function
 
+import multiprocessing
 import os
-import psutil
 import re
 import sys
 
@@ -102,7 +95,7 @@ ninja_exe_path = os.path.join(SCRIPT_DIR, ninja_exe)
 # or fail to execute ninja if depot_tools is not in PATH.
 args = [ninja_exe_path] + input_args[1:]
 
-num_cores = psutil.cpu_count()
+num_cores = multiprocessing.cpu_count()
 if not j_specified and not t_specified:
   if use_goma:
     args.append('-j')
@@ -122,13 +115,6 @@ if not j_specified and not t_specified:
     j_value = num_cores
     # Ninja defaults to |num_cores + 2|
     j_value += int(os.environ.get('NINJA_CORE_ADDITION', '2'))
-    if use_jumbo_build:
-      # Compiling a jumbo .o can easily use 1-2GB of memory. Leaving 2GB per
-      # process avoids memory swap/compression storms when also considering
-      # already in-use memory.
-      physical_ram = psutil.virtual_memory().total
-      GB = 1024 * 1024 * 1024
-      j_value = min(j_value, physical_ram / (2 * GB))
     args.append('-j')
     args.append('%d' % j_value)
 

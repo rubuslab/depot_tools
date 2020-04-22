@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "467df6cf_ffa811f5",
+        "filename": "fetch.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-04-22T17:10:46Z",
+      "side": 1,
+      "message": "Nit: update comments.",
+      "range": {
+        "startLine": 22,
+        "startChar": 19,
+        "endLine": 22,
+        "endChar": 20
+      },
+      "revId": "b306e991f158e05c373b36a57883710a27703dfc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

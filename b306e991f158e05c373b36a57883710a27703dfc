@@ -22,6 +22,30 @@
       "revId": "b306e991f158e05c373b36a57883710a27703dfc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88af8027_d07b151f",
+        "filename": "fetch.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-04-22T17:15:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "467df6cf_ffa811f5",
+      "range": {
+        "startLine": 22,
+        "startChar": 19,
+        "endLine": 22,
+        "endChar": 20
+      },
+      "revId": "b306e991f158e05c373b36a57883710a27703dfc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

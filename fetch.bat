@@ -20,5 +20,5 @@ IF "%GCLIENT_PY3%" == "1" (
   call vpython "%~dp0\fetch.py" %*
 ) ELSE (
   :: Run on Python 2, allows default to be flipped.
-  call vpython "%~dp0\fetch.py" %*
+  call vpython3 "%~dp0\fetch.py" %*
 )

@@ -135,8 +135,10 @@ class OwnersFinderTests(_BaseTestCase):
     self.assertNotEqual(self.defaultFinder(), None)
 
   def test_skip_files_owned_by_reviewers(self):
+    # Create a path with backslashes on Windows to make sure these are handled.
+    native_slashes_path = 'chrome/browser/defaults.h'.replace('/', os.sep)
     files = [
-        'chrome/browser/defaults.h',  # owned by brett
+        native_slashes_path,          # owned by brett
         'content/bar/foo.cc',         # not owned by brett
     ]
     finder = self.ownersFinder(files, reviewers=[brett])

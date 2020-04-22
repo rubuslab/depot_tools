@@ -22,6 +22,30 @@
       "revId": "249031e65e37ee8bbe2096b981138c570e3a7b7a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "352b9c3a_8176ca42",
+        "filename": "owners.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-04-22T23:45:57Z",
+      "side": 1,
+      "message": "D\u0027oh! Good catch.",
+      "parentUuid": "14d36a51_175be586",
+      "range": {
+        "startLine": 596,
+        "startChar": 65,
+        "endLine": 596,
+        "endChar": 73
+      },
+      "revId": "249031e65e37ee8bbe2096b981138c570e3a7b7a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

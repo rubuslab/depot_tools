@@ -74,7 +74,7 @@ def _CheckPythonVersion():
 def main():
   _CheckPythonVersion()
 
-  chromite_dir = _FindChromite(os.getcwd())
+  chromite_dir = _FindChromite(os.environ.get('CROS_ROOT') or os.getcwd())
   target = os.path.basename(sys.argv[0])
   if chromite_dir is None:
     return _MissingErrorOut(target)

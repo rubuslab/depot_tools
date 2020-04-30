@@ -34,7 +34,6 @@ import zlib
 from third_party import colorama
 import auth
 import clang_format
-import dart_format
 import fix_encoding
 import gclient_utils
 import gerrit_util
@@ -138,6 +137,8 @@ _KNOWN_GERRIT_TO_SHORT_URLS = {
     'https://chrome-internal-review.googlesource.com': 'https://crrev.com/i',
     'https://chromium-review.googlesource.com': 'https://crrev.com/c',
 }
+assert len(_KNOWN_GERRIT_TO_SHORT_URLS) == len(
+    set(_KNOWN_GERRIT_TO_SHORT_URLS.values())), 'must have unique values'
 
 
 def DieWithError(message, change_desc=None):
@@ -858,6 +859,11 @@ def ParseIssueNumberArgument(arg):
     return fail_result
 
   url = gclient_utils.UpgradeToHttps(arg)
+  for gerrit_url, short_url in _KNOWN_GERRIT_TO_SHORT_URLS.items():
+    if url.startswith(short_url):
+      url = gerrit_url + url[len(short_url):]
+      break
+
   try:
     parsed_url = urllib.parse.urlparse(url)
   except ValueError:
@@ -2022,10 +2028,7 @@ class Changelist(object):
     git_info_dir = tempfile.mkdtemp()
     git_info_zip = trace_name + '-git-info'
 
-    git_push_metadata['now'] = datetime_now().strftime('%c')
-    if sys.stdin.encoding and sys.stdin.encoding != 'utf-8':
-      git_push_metadata['now'] = git_push_metadata['now'].decode(
-          sys.stdin.encoding)
+    git_push_metadata['now'] = datetime_now().strftime('%Y-%m-%dT%H:%M:%S.%f')
 
     git_push_metadata['trace_name'] = trace_name
     gclient_utils.FileWrite(
@@ -4868,7 +4871,6 @@ def CMDformat(parser, args):
         x for x in diff_files if MatchingFileType(x, CLANG_EXTS)
     ]
   python_diff_files = [x for x in diff_files if MatchingFileType(x, ['.py'])]
-  dart_diff_files = [x for x in diff_files if MatchingFileType(x, ['.dart'])]
   gn_diff_files = [x for x in diff_files if MatchingFileType(x, GN_EXTS)]
 
   top_dir = settings.GetRoot()
@@ -4946,23 +4948,6 @@ def CMDformat(parser, args):
       else:
         cmd += ['-i']
         RunCommand(cmd, cwd=top_dir)
-
-  # Dart's formatter does not have the nice property of only operating on
-  # modified chunks, so hard code full.
-  if dart_diff_files:
-    try:
-      command = [dart_format.FindDartFmtToolInChromiumTree()]
-      if not opts.dry_run and not opts.diff:
-        command.append('-w')
-      command.extend(dart_diff_files)
-
-      stdout = RunCommand(command, cwd=top_dir)
-      if opts.dry_run and stdout:
-        return_value = 2
-    except dart_format.NotFoundError:
-      print('Warning: Unable to check Dart code formatting. Dart SDK not '
-            'found in this checkout. Files in other languages are still '
-            'formatted.')
 
   # Format GN build files. Always run on full build files for canonical form.
   if gn_diff_files:

@@ -4995,6 +4995,7 @@ def GetDirtyMetricsDirs(diff_files):
     os.path.join('tools', 'metrics', 'actions'),
     os.path.join('tools', 'metrics', 'histograms'),
     os.path.join('tools', 'metrics', 'rappor'),
+    os.path.join('tools', 'metrics', 'structured'),
     os.path.join('tools', 'metrics', 'ukm'),
   ]
   for xml_dir in metrics_xml_dirs:

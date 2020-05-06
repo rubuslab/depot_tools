@@ -1105,6 +1105,14 @@ def checkout(options, git_slns, specs, revisions, step_text):
     # Outer try is for catching patch failures and exiting gracefully.
     # Inner try is for catching gclient failures and retrying gracefully.
     try:
+      dirty_path = '.dirty_bot_update'
+      if os.path.exists(dirty_path):
+        ensure_no_checkout(dir_names, options.cleanup_dir)
+
+      with open(dirty_path, 'w') as f:
+        # create a file, no content
+        pass
+
       checkout_parameters = dict(
           # First, pass in the base of what we want to check out.
           solutions=git_slns,
@@ -1133,6 +1141,10 @@ def checkout(options, git_slns, specs, revisions, step_text):
           gerrit_reset=not options.gerrit_no_reset,
           disable_syntax_validation=options.disable_syntax_validation)
       gclient_output = ensure_checkout(**checkout_parameters)
+      try:
+        os.remove(dirty_path)
+      except OSError:
+        print('Dirty file has been removed by a different process.')
     except GclientSyncFailed:
       print('We failed gclient sync, lets delete the checkout and retry.')
       ensure_no_checkout(dir_names, options.cleanup_dir)

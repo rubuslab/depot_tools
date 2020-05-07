@@ -7,6 +7,7 @@
 
 from __future__ import print_function
 
+from contextlib import contextmanager
 import contextlib
 import errno
 import logging
@@ -27,6 +28,14 @@ except ImportError:  # For Py3 compatibility
 from download_from_google_storage import Gsutil
 import gclient_utils
 import subcommand
+
+if sys.platform.startswith('win'):
+  import pywintypes
+  import win32con
+  import win32file
+  import win32security
+else:
+  import fcntl
 
 # Analogous to gc.autopacklimit git config.
 GC_AUTOPACKLIMIT = 50
@@ -89,63 +98,79 @@ class Lockfile(object):
     self.path = os.path.abspath(path)
     self.timeout = timeout
     self.lockfile = self.path + ".lock"
-    self.pid = os.getpid()
+    self._is_win = sys.platform.startswith('win')
+    self._handler = None
+    self._is_locked = False
 
-  def _read_pid(self):
-    """Read the pid stored in the lockfile.
+  def _open_handler(self):
+    # If file is already open, do nothing
+    if self._handler:
+      return
 
-    Note: This method is potentially racy. By the time it returns the lockfile
-    may have been unlocked, removed, or stolen by some other process.
-    """
-    try:
-      with open(self.lockfile, 'r') as f:
-        pid = int(f.readline().strip())
-    except (IOError, ValueError):
-      pid = None
-    return pid
-
-  def _make_lockfile(self):
-    """Safely creates a lockfile containing the current pid."""
-    open_flags = (os.O_CREAT | os.O_EXCL | os.O_WRONLY)
-    fd = os.open(self.lockfile, open_flags, 0o644)
-    f = os.fdopen(fd, 'w')
-    print(self.pid, file=f)
-    f.close()
-
-  def _remove_lockfile(self):
-    """Delete the lockfile. Complains (implicitly) if it doesn't exist.
-
-    See gclient_utils.py:rmtree docstring for more explanation on the
-    windows case.
-    """
-    if sys.platform == 'win32':
-      lockfile = os.path.normcase(self.lockfile)
-
-      def delete():
-        exitcode = subprocess.call(['cmd.exe', '/c',
-                                    'del', '/f', '/q', lockfile])
-        if exitcode != 0:
-          raise LockError('Failed to remove lock: %s' % (lockfile,))
-      exponential_backoff_retry(
-          delete,
-          excs=(LockError,),
-          name='del [%s]' % (lockfile,))
+    if self._is_win:
+      security_attributes = win32security.SECURITY_ATTRIBUTES()
+      security_attributes.Initialize()
+      self._handler = win32file.CreateFile(self.lockfile,
+                                           win32con.GENERIC_WRITE, 0,
+                                           security_attributes,
+                                           win32con.OPEN_ALWAYS,
+                                           win32.FILE_ATTRIBUTE_NORMAL, 0)
     else:
-      os.remove(self.lockfile)
+      open_flags = (os.O_CREAT | os.O_WRONLY)
+      self._handler = os.open(self.lockfile, open_flags, 0o644)
 
+  def _close_handler(self):
+    if self._handler is None:
+      return
+    self._unlock()
+
+    if self._is_win:
+      self._handler.Close()
+    else:
+      os.close(self._handler)
+    self._handler = None
+
+  def _lock(self):
+    if self._is_locked:
+      return
+
+    self._open_handler()
+    if self._is_win:
+      win32file.LockFileEx(self._handler, win32con.LOCKFILE_EXCLUSIVE_LOCK, 0,
+                           0xffff0000, pywintypes.OVERLAPPED())
+    else:
+      fcntl.flock(self._handler, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    self._is_locked = True
+
+  def _unlock(self):
+    if self._is_locked is False:
+      return
+
+    if self._is_win:
+      win32file.UnlockFileEx(self._handler, 0, 0xffff0000,
+                             pywintypes.OVERLAPPED())
+    else:
+      fcntl.flock(self._handler, fcntl.LOCK_UN)
+    # The file was owned and therefore should be removed on unlock.
+    os.remove(self.lockfile)
+    self._is_locked = False
+
+  @contextmanager
   def lock(self):
     """Acquire the lock.
 
     This will block with a deadline of self.timeout seconds.
     """
+    assert self._is_locked == False
     elapsed = 0
     while True:
       try:
-        self._make_lockfile()
-        return
-      except OSError as e:
+        self._lock()
+        break
+      except (OSError, IOError) as e:
+        self._close_handler()
         if elapsed < self.timeout:
-          sleep_time = max(10, min(3, self.timeout - elapsed))
+          sleep_time = min(10, self.timeout - elapsed)
           logging.info('Could not create git cache lockfile; '
                        'will retry after sleep(%d).', sleep_time);
           elapsed += sleep_time
@@ -156,40 +181,12 @@ class Lockfile(object):
         else:
           raise LockError("Failed to create %s (err %s)" % (self.path, e.errno))
 
-  def unlock(self):
-    """Release the lock."""
+    # Lock is successfully acquired.
     try:
-      if not self.is_locked():
-        raise LockError("%s is not locked" % self.path)
-      if not self.i_am_locking():
-        raise LockError("%s is locked, but not by me" % self.path)
-      self._remove_lockfile()
-    except WinErr:
-      # Windows is unreliable when it comes to file locking.  YMMV.
-      pass
-
-  def break_lock(self):
-    """Remove the lock, even if it was created by someone else."""
-    try:
-      self._remove_lockfile()
-      return True
-    except OSError as exc:
-      if exc.errno == errno.ENOENT:
-        return False
-      else:
-        raise
-
-  def is_locked(self):
-    """Test if the file is locked by anyone.
-
-    Note: This method is potentially racy. By the time it returns the lockfile
-    may have been unlocked, removed, or stolen by some other process.
-    """
-    return os.path.exists(self.lockfile)
-
-  def i_am_locking(self):
-    """Test if the file is locked by this process."""
-    return self.is_locked() and self.pid == self._read_pid()
+      yield
+    finally:
+      self._unlock()
+      self._close_handler()
 
 
 class Mirror(object):
@@ -560,7 +557,6 @@ class Mirror(object):
                shallow=False,
                bootstrap=False,
                verbose=False,
-               ignore_lock=False,
                lock_timeout=0,
                reset_fetch_config=False):
     assert self.GetCachePath()
@@ -569,24 +565,22 @@ class Mirror(object):
     gclient_utils.safe_makedirs(self.GetCachePath())
 
     lockfile = Lockfile(self.mirror_path, lock_timeout)
-    if not ignore_lock:
-      lockfile.lock()
 
-    try:
-      self._ensure_bootstrapped(depth, bootstrap, reset_fetch_config)
-      self._fetch(
-          self.mirror_path, verbose, depth, no_fetch_tags, reset_fetch_config)
-    except ClobberNeeded:
-      # This is a major failure, we need to clean and force a bootstrap.
-      gclient_utils.rmtree(self.mirror_path)
-      self.print(GIT_CACHE_CORRUPT_MESSAGE)
-      self._ensure_bootstrapped(
-          depth, bootstrap, reset_fetch_config, force=True)
-      self._fetch(
-          self.mirror_path, verbose, depth, no_fetch_tags, reset_fetch_config)
-    finally:
-      if not ignore_lock:
-        lockfile.unlock()
+    with lockfile.lock():
+      try:
+        self._ensure_bootstrapped(depth, bootstrap, reset_fetch_config)
+        self._fetch(self.mirror_path, verbose, depth, no_fetch_tags,
+                    reset_fetch_config)
+      except ClobberNeeded:
+        # This is a major failure, we need to clean and force a bootstrap.
+        gclient_utils.rmtree(self.mirror_path)
+        self.print(GIT_CACHE_CORRUPT_MESSAGE)
+        self._ensure_bootstrapped(depth,
+                                  bootstrap,
+                                  reset_fetch_config,
+                                  force=True)
+        self._fetch(self.mirror_path, verbose, depth, no_fetch_tags,
+                    reset_fetch_config)
 
   def update_bootstrap(self, prune=False, gc_aggressive=False):
     # The folder is <git number>
@@ -657,45 +651,6 @@ class Mirror(object):
       except OSError:
         logging.warn('Unable to delete temporary pack file %s' % f)
 
-  @classmethod
-  def BreakLocks(cls, path):
-    did_unlock = False
-    lf = Lockfile(path)
-    if lf.break_lock():
-      did_unlock = True
-    # Look for lock files that might have been left behind by an interrupted
-    # git process.
-    lf = os.path.join(path, 'config.lock')
-    if os.path.exists(lf):
-      os.remove(lf)
-      did_unlock = True
-    cls.DeleteTmpPackFiles(path)
-    return did_unlock
-
-  def unlock(self):
-    return self.BreakLocks(self.mirror_path)
-
-  @classmethod
-  def UnlockAll(cls):
-    cachepath = cls.GetCachePath()
-    if not cachepath:
-      return
-    dirlist = os.listdir(cachepath)
-    repo_dirs = set([os.path.join(cachepath, path) for path in dirlist
-                     if os.path.isdir(os.path.join(cachepath, path))])
-    for dirent in dirlist:
-      if dirent.startswith('_cache_tmp') or dirent.startswith('tmp'):
-        gclient_utils.rm_file_or_tree(os.path.join(cachepath, dirent))
-      elif (dirent.endswith('.lock') and
-          os.path.isfile(os.path.join(cachepath, dirent))):
-        repo_dirs.add(os.path.join(cachepath, dirent[:-5]))
-
-    unlocked_repos = []
-    for repo_dir in repo_dirs:
-      if cls.BreakLocks(repo_dir):
-        unlocked_repos.append(repo_dir)
-
-    return unlocked_repos
 
 @subcommand.usage('[url of repo to check for caching]')
 def CMDexists(parser, args):
@@ -760,9 +715,10 @@ def CMDpopulate(parser, args):
   parser.add_option('--no_bootstrap', '--no-bootstrap',
                     action='store_true',
                     help='Don\'t bootstrap from Google Storage')
-  parser.add_option('--ignore_locks', '--ignore-locks',
+  parser.add_option('--ignore_locks',
+                    '--ignore-locks',
                     action='store_true',
-                    help='Don\'t try to lock repository')
+                    help='NOOP. This flag will be removed in the future.')
   parser.add_option('--break-locks',
                     action='store_true',
                     help='Break any existing lock instead of just ignoring it')
@@ -772,17 +728,16 @@ def CMDpopulate(parser, args):
   options, args = parser.parse_args(args)
   if not len(args) == 1:
     parser.error('git cache populate only takes exactly one repo url.')
+  if options.ignore_lock:
+    print('ignore_lock is no longer used. Please remove its usage.')
   url = args[0]
 
   mirror = Mirror(url, refs=options.ref)
-  if options.break_locks:
-    mirror.unlock()
   kwargs = {
       'no_fetch_tags': options.no_fetch_tags,
       'verbose': options.verbose,
       'shallow': options.shallow,
       'bootstrap': not options.no_bootstrap,
-      'ignore_lock': options.ignore_locks,
       'lock_timeout': options.timeout,
       'reset_fetch_config': options.reset_fetch_config,
   }
@@ -856,37 +811,10 @@ def CMDfetch(parser, args):
   return 0
 
 
-@subcommand.usage('[url of repo to unlock, or -a|--all]')
+@subcommand.usage('do not use - it is a noop.')
 def CMDunlock(parser, args):
-  """Unlock one or all repos if their lock files are still around."""
-  parser.add_option('--force', '-f', action='store_true',
-                    help='Actually perform the action')
-  parser.add_option('--all', '-a', action='store_true',
-                    help='Unlock all repository caches')
-  options, args = parser.parse_args(args)
-  if len(args) > 1 or (len(args) == 0 and not options.all):
-    parser.error('git cache unlock takes exactly one repo url, or --all')
-
-  if not options.force:
-    cachepath = Mirror.GetCachePath()
-    lockfiles = [os.path.join(cachepath, path)
-                 for path in os.listdir(cachepath)
-                 if path.endswith('.lock') and os.path.isfile(path)]
-    parser.error('git cache unlock requires -f|--force to do anything. '
-                 'Refusing to unlock the following repo caches: '
-                 ', '.join(lockfiles))
-
-  unlocked_repos = []
-  if options.all:
-    unlocked_repos.extend(Mirror.UnlockAll())
-  else:
-    m = Mirror(args[0])
-    if m.unlock():
-      unlocked_repos.append(m.mirror_path)
-
-  if unlocked_repos:
-    logging.info('Broke locks on these caches:\n  %s' % '\n  '.join(
-        unlocked_repos))
+  """This command does nothing."""
+  print('This command does nothing and will be removed in the future.')
 
 
 class OptionParser(optparse.OptionParser):

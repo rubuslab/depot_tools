@@ -1101,6 +1101,14 @@ def checkout(options, git_slns, specs, revisions, step_text):
 
   first_sln = git_slns[0]['name']
   dir_names = [sln.get('name') for sln in git_slns if 'name' in sln]
+  dirty_path = '.dirty_bot_checkout'
+  if os.path.exists(dirty_path):
+    ensure_no_checkout(dir_names, options.cleanup_dir)
+
+  with open(dirty_path, 'w') as f:
+    # create a file, no content
+    pass
+
   try:
     # Outer try is for catching patch failures and exiting gracefully.
     # Inner try is for catching gclient failures and retrying gracefully.
@@ -1149,6 +1157,11 @@ def checkout(options, git_slns, specs, revisions, step_text):
               step_text='%s PATCH FAILED' % step_text,
               fixed_revisions=revisions)
     raise
+
+  try:
+    os.remove(dirty_path)
+  except OSError:
+    print('Dirty file has been removed by a different process.')
 
   # Take care of got_revisions outputs.
   revision_mapping = GOT_REVISION_MAPPINGS.get(git_slns[0]['url'], {})

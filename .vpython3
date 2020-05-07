@@ -12,6 +12,16 @@ wheel: <
 >
 
 # Used by:
+#   git_cache.py
+wheel: <
+  name: "infra/python/wheels/pywin32/${vpython_platform}"
+  version: "version:227"
+  match_tag: <
+    platform: "win32"
+  >
+>
+
+# Used by:
 #   my_activity.py
 wheel: <
   name: "infra/python/wheels/python-dateutil-py2_py3"

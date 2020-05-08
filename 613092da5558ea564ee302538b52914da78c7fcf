@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00b6d0d3_2fe01550",
+        "filename": "git_cache.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-08T18:19:42Z",
+      "side": 1,
+      "message": "I recommend doing this all with ctypes; that won\u0027t have any wheel dependencies.",
+      "range": {
+        "startLine": 113,
+        "startChar": 28,
+        "endLine": 113,
+        "endChar": 41
+      },
+      "revId": "613092da5558ea564ee302538b52914da78c7fcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

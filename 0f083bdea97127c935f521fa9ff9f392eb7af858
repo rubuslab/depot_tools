@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "108f7d93_e02268e0",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-05-08T17:20:46Z",
+      "side": 1,
+      "message": "nit: _fetch it\u0027s only used twice, and in both cases prune is set to True. What about not setting a default value, or make it True by default?",
+      "range": {
+        "startLine": 538,
+        "startChar": 19,
+        "endLine": 538,
+        "endChar": 24
+      },
+      "revId": "0f083bdea97127c935f521fa9ff9f392eb7af858",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

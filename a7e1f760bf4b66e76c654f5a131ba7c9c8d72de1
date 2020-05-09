@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ad92af7_61d737d5",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1108,
+      "author": {
+        "id": 1002100
+      },
+      "writtenOn": "2020-05-09T02:41:46Z",
+      "side": 1,
+      "message": "You\u0027re confident this creates the file and leaves it empty (i.e. that open isn\u0027t lazy, and only creates it upon first flush)?",
+      "revId": "a7e1f760bf4b66e76c654f5a131ba7c9c8d72de1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "16f0213e2e76e47b7efb4b064e8c4c59b7af0f6f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc230ad4_fdbc02b8",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1166,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-11T23:35:48Z",
+      "side": 1,
+      "message": "This is false if there\u0027s GclientSyncFailed exception in line 1150 or any other exception other than PatchFailed. We still need the dirty file marker since bot_update doesn\u0027t handle signals. It could also receive SIGKIL.\n\nAs for clean up, it should be possible if should_delete_dirty_file is False. However, given that we need to have the check above, I\u0027d suggest we just keep this block as is.",
+      "parentUuid": "888e3ac8_d45ed523",
+      "range": {
+        "startLine": 1166,
+        "startChar": 7,
+        "endLine": 1166,
+        "endChar": 31
+      },
+      "revId": "16f0213e2e76e47b7efb4b064e8c4c59b7af0f6f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

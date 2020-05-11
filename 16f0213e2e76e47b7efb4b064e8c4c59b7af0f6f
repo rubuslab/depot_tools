@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "888e3ac8_d45ed523",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1166,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-05-11T22:32:00Z",
+      "side": 1,
+      "message": "When is this false?\nDoes it make sense to call ensure_no_checkout and remove dirty_path if this is false, instead of leaving it to the next execution?\nIf so, we could rename should_delete-dirty_file to exited_cleanly and do something like:\n\n  finally:\n    if not exited_cleanly:\n      ensure_no_checkout()\n    # remove dirty_path",
+      "range": {
+        "startLine": 1166,
+        "startChar": 7,
+        "endLine": 1166,
+        "endChar": 31
+      },
+      "revId": "16f0213e2e76e47b7efb4b064e8c4c59b7af0f6f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       "revId": "613092da5558ea564ee302538b52914da78c7fcf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "699e7af4_289e6aa7",
+        "filename": "git_cache.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-12T23:41:13Z",
+      "side": 1,
+      "message": "Is the concern that we currently don\u0027t have pywin32 or adding another wheel dependency? If former, I think we could wait for a few weeks/a month. If latter, Ctypes is definitely doable but it will make this code even harder to understand. In that case, I will move this class into its own py file.",
+      "parentUuid": "00b6d0d3_2fe01550",
+      "range": {
+        "startLine": 113,
+        "startChar": 28,
+        "endLine": 113,
+        "endChar": 41
+      },
+      "revId": "613092da5558ea564ee302538b52914da78c7fcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

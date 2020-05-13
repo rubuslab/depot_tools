@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "334331e1_d607351c",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-13T23:42:18Z",
+      "side": 1,
+      "message": "OS doesn\u0027t support lock timeout as far as I can tell (just wait indefinitely or fail now). One option would be to wait indefinitely and have another thread that will kill the operation. But it complicates the code even more, and I don\u0027t think it adds any value.",
+      "parentUuid": "e1f78c7b_fe7f1e5b",
+      "range": {
+        "startLine": 468,
+        "startChar": 4,
+        "endLine": 468,
+        "endChar": 21
+      },
+      "revId": "5f3fed73ca3af737dd0c1f05fe7515f1f6e876bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bedcb9e4_b0ea4547",
         "filename": "git_cache.py",
         "patchSetId": 8
@@ -117,6 +141,30 @@
     },
     {
       "key": {
+        "uuid": "202d3360_f8d1d05f",
+        "filename": "lockfile.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-13T23:42:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c674ce37_bf3d9654",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "5f3fed73ca3af737dd0c1f05fe7515f1f6e876bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b6c8a1f8_f732cf43",
         "filename": "lockfile.py",
         "patchSetId": 8
@@ -137,6 +185,30 @@
       "revId": "5f3fed73ca3af737dd0c1f05fe7515f1f6e876bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50b94141_b40b11eb",
+        "filename": "lockfile.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-13T23:42:18Z",
+      "side": 1,
+      "message": "It was introduced in previous patch set, it\u0027s gone with this one.",
+      "parentUuid": "b6c8a1f8_f732cf43",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 15
+      },
+      "revId": "5f3fed73ca3af737dd0c1f05fe7515f1f6e876bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +235,30 @@
     },
     {
       "key": {
+        "uuid": "5c057541_67906deb",
+        "filename": "lockfile.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-13T23:42:18Z",
+      "side": 1,
+      "message": "Totally, it makes it much cleaner.",
+      "parentUuid": "92c91187_da320101",
+      "range": {
+        "startLine": 50,
+        "startChar": 12,
+        "endLine": 50,
+        "endChar": 19
+      },
+      "revId": "5f3fed73ca3af737dd0c1f05fe7515f1f6e876bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9e3bfdb8_b39dbdef",
         "filename": "lockfile.py",
         "patchSetId": 8
@@ -183,6 +279,30 @@
       "revId": "5f3fed73ca3af737dd0c1f05fe7515f1f6e876bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "018f520c_a86fcab0",
+        "filename": "lockfile.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-13T23:42:18Z",
+      "side": 1,
+      "message": "Should be addressed in the new patch set.",
+      "parentUuid": "9e3bfdb8_b39dbdef",
+      "range": {
+        "startLine": 149,
+        "startChar": 6,
+        "endLine": 149,
+        "endChar": 10
+      },
+      "revId": "5f3fed73ca3af737dd0c1f05fe7515f1f6e876bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

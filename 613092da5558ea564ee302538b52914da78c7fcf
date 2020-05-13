@@ -46,6 +46,30 @@
       "revId": "613092da5558ea564ee302538b52914da78c7fcf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2858dfd_2f6acf16",
+        "filename": "git_cache.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-13T00:30:31Z",
+      "side": 1,
+      "message": "IMO ctypes is a good investment anyway; It means that your code is \"just\" pure python and doesn\u0027t require a C compiler to work (even if the C compiler is being used to build an external module). It also means that as the python ABI evolves you don\u0027t potentially need new versions of the external module, either (since ctypes will always* be built in). There\u0027s no performance reason to use pywin32 here either, since it\u0027s really just a thin wrapper around the system calls (so the context will be bouncing between python and system anyway).\n\n\n*technically it\u0027s optional, but we\u0027d be insane to distribute a python without it.",
+      "parentUuid": "699e7af4_289e6aa7",
+      "range": {
+        "startLine": 113,
+        "startChar": 28,
+        "endLine": 113,
+        "endChar": 41
+      },
+      "revId": "613092da5558ea564ee302538b52914da78c7fcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

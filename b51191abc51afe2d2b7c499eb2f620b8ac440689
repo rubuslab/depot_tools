@@ -22,6 +22,30 @@
       "revId": "b51191abc51afe2d2b7c499eb2f620b8ac440689",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55907ad1_99db97a3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1405311
+      },
+      "writtenOn": "2020-05-13T23:03:37Z",
+      "side": 1,
+      "message": "I put that in to satisfy a preupload failure I was getting.\n\n[FAILED] chromium/tools/depot_tools: _check_cros_license             \n    License must match:\n    .*Copyright(?: \\(c\\))? (20[0-9]{2})(?:-20[0-9]{2})? The Chromium OS Authors\\. All rights reserved\\.\\n.*Use of this source code is governed by a BSD-style license that can be\\n.*found in the LICENSE file\\.\\n\n    Found a bad header in these files:\n    presubmit_canned_checks.py\n\nIs there a diff way to satisfy this?",
+      "parentUuid": "7330b355_909351b3",
+      "range": {
+        "startLine": 1,
+        "startChar": 34,
+        "endLine": 1,
+        "endChar": 37
+      },
+      "revId": "b51191abc51afe2d2b7c499eb2f620b8ac440689",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

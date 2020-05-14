@@ -70,6 +70,30 @@
       "revId": "b51191abc51afe2d2b7c499eb2f620b8ac440689",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afcbd14b_1abf2a5d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1405311
+      },
+      "writtenOn": "2020-05-14T18:38:43Z",
+      "side": 1,
+      "message": "I used \"git cl upload\" per README.md, which was a departure from the normal repo upload flow I now of. I thought because this is depot_tools it makes sense it couldn\u0027t use repo, a tool it supplies. I\u0027m fine w/ that change being removed, thank you.",
+      "parentUuid": "a46c8368_2f411b6f",
+      "range": {
+        "startLine": 1,
+        "startChar": 34,
+        "endLine": 1,
+        "endChar": 37
+      },
+      "revId": "b51191abc51afe2d2b7c499eb2f620b8ac440689",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

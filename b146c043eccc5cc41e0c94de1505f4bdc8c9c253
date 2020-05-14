@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "957b4179_29dd6283",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "nit: since this function refers to Lockfile, I would put it at the bottom of the file (so when reading the file you\u0027ll see Lockfile before lock).",
+      "range": {
+        "startLine": 45,
+        "startChar": 6,
+        "endLine": 45,
+        "endChar": 14
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dbe9acf4_2c3d0def",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "imo, this should start with \"_\" so folks aren\u0027t tempted to use this symbol directly.",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 53,
+        "endChar": 18
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4fbdecf_a2eb5bd0",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "_fd or _handle would make more sense to me (though HANDLE is a windows specific term)",
+      "range": {
+        "startLine": 62,
+        "startChar": 9,
+        "endLine": 62,
+        "endChar": 17
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a022797_0f18cb61",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "why not have _lock close the handle on error?",
+      "range": {
+        "startLine": 105,
+        "startChar": 13,
+        "endLine": 105,
+        "endChar": 18
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9958c98e_a0254c18",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "I believe this is a race; If multiple clients are trying to create and delete this file at the same time, it could be possible for this to remove the lockfile after another client acquires the lock. For example:\n\n   A: open(file)   # file is created\n   A: flock(file)  # lock is acquired\n   B: loops doing open \u0026\u0026 flock\n   A: unlock(file)\n   B: open \u0026\u0026 flock\n   A: remove(file)\n   C: open(file)  # new file is created\n   C: flock(file) # B and C both believe they have the lock now.\n\nI would recommend just leaving the lockfiles there. All clients will create or open the file, and will use flock on the file. When the lock is released, just leave it.",
+      "range": {
+        "startLine": 125,
+        "startChar": 6,
+        "endLine": 125,
+        "endChar": 30
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fcc5c75_099bc97b",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "nit: _handle",
+      "range": {
+        "startLine": 159,
+        "startChar": 9,
+        "endLine": 159,
+        "endChar": 17
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52bd847c_1a50c88c",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "I would define file-level constants for these.",
+      "range": {
+        "startLine": 162,
+        "startChar": 43,
+        "endLine": 162,
+        "endChar": 56
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fd15a37_c7ba1997",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "imo, I would move all of these definitions up to the file-level import section. Or, alternately, just drop the type declarations altogether since you\u0027re literally using them in exactly one place which immediately follows the place where you declare the types :). Since these are C function calls, each slot is a dword anyway, so the argtypes are really just some fun documentation flavor anyway.",
+      "range": {
+        "startLine": 188,
+        "startChar": 7,
+        "endLine": 188,
+        "endChar": 15
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6333290a_6a7acb83",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "I believe this can just be None (i.e. `NULL`) since you\u0027re not doing any overlapped IO here.",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 18
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "931e0e7b_5d232885",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "`ctypes.GetLastError()` is the same",
+      "range": {
+        "startLine": 207,
+        "startChar": 19,
+        "endLine": 207,
+        "endChar": 56
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52a07c89_a85c9227",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-14T01:49:52Z",
+      "side": 1,
+      "message": "It would be great if lock/unlock could be shared between windows and posix (i.e. the Lockfile class would implement \u0027try_lock\u0027 which returns something (file descriptor or HANDLE) or None and \u0027unlock($something)\u0027 and then have the top level lock function contain the stuff within these lock/unlock functions.",
+      "range": {
+        "startLine": 234,
+        "startChar": 6,
+        "endLine": 234,
+        "endChar": 10
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

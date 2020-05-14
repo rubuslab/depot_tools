@@ -4980,7 +4980,8 @@ def CMDformat(parser, args):
   if not opts.presubmit:
     for xml_dir in GetDirtyMetricsDirs(diff_files):
       tool_dir = os.path.join(top_dir, xml_dir)
-      cmd = [os.path.join(tool_dir, 'pretty_print.py'), '--non-interactive']
+      pretty_print_tool = os.path.join(tool_dir, 'pretty_print.py')
+      cmd = ['vpython', pretty_print_tool, '--non-interactive']
       if opts.dry_run or opts.diff:
         cmd.append('--diff')
       stdout = RunCommand(cmd, cwd=top_dir)
@@ -5001,7 +5002,8 @@ def GetDirtyMetricsDirs(diff_files):
     os.path.join('tools', 'metrics', 'ukm'),
   ]
   for xml_dir in metrics_xml_dirs:
-    if any(file.startswith(xml_dir) for file in xml_diff_files):
+    if any(
+        os.path.normpath(file).startswith(xml_dir) for file in xml_diff_files):
       yield xml_dir
 
 

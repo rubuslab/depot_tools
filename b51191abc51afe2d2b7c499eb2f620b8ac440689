@@ -46,6 +46,30 @@
       "revId": "b51191abc51afe2d2b7c499eb2f620b8ac440689",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a46c8368_2f411b6f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-05-14T18:34:32Z",
+      "side": 1,
+      "message": "I don\u0027t get that error. How are you uploading this CL?\nI took the liberty to remove this change from your CL.",
+      "parentUuid": "55907ad1_99db97a3",
+      "range": {
+        "startLine": 1,
+        "startChar": 34,
+        "endLine": 1,
+        "endChar": 37
+      },
+      "revId": "b51191abc51afe2d2b7c499eb2f620b8ac440689",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

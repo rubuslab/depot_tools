@@ -333,6 +333,30 @@
     },
     {
       "key": {
+        "uuid": "032e6e20_2587dfe5",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1003168
+      },
+      "writtenOn": "2020-05-15T22:39:15Z",
+      "side": 1,
+      "message": "If I understand the race cause correctly, the issue is that one process can remove file locked by another process. This can be fixed by locking the file first.\n\nIf the process has just created file, but could not lock it, it means that the file was removed in between. It can probably be detected by running stat() and comparing inode number.",
+      "parentUuid": "111c6781_30fd8e0a",
+      "range": {
+        "startLine": 125,
+        "startChar": 6,
+        "endLine": 125,
+        "endChar": 30
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fcc5c75_099bc97b",
         "filename": "lockfile.py",
         "patchSetId": 11

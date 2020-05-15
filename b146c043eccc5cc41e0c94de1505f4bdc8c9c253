@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "876d77a9_03782608",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "957b4179_29dd6283",
+      "range": {
+        "startLine": 45,
+        "startChar": 6,
+        "endLine": 45,
+        "endChar": 14
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dbe9acf4_2c3d0def",
         "filename": "lockfile.py",
         "patchSetId": 11
@@ -45,6 +69,30 @@
       "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e10e91a5_db714da0",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dbe9acf4_2c3d0def",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 53,
+        "endChar": 18
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "2d0b6a2f_4a495aee",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4fbdecf_a2eb5bd0",
+      "range": {
+        "startLine": 62,
+        "startChar": 9,
+        "endLine": 62,
+        "endChar": 17
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8a022797_0f18cb61",
         "filename": "lockfile.py",
         "patchSetId": 11
@@ -82,6 +154,30 @@
       "writtenOn": "2020-05-14T01:49:52Z",
       "side": 1,
       "message": "why not have _lock close the handle on error?",
+      "range": {
+        "startLine": 105,
+        "startChar": 13,
+        "endLine": 105,
+        "endChar": 18
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32857e18_63b26e85",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "It probably shouldn\u0027t close the handle if it didn\u0027t open in the first place. Maybe _lock shouldn\u0027t open handle in the first place, but assert the file is open. What do you think?",
+      "parentUuid": "8a022797_0f18cb61",
       "range": {
         "startLine": 105,
         "startChar": 13,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "65115449_d96b45eb",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "Good catch, I didn\u0027t considered the case with more than two clients.",
+      "parentUuid": "9958c98e_a0254c18",
+      "range": {
+        "startLine": 125,
+        "startChar": 6,
+        "endLine": 125,
+        "endChar": 30
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fcc5c75_099bc97b",
         "filename": "lockfile.py",
         "patchSetId": 11
@@ -137,6 +257,30 @@
       "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da134492_0f3737d2",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fcc5c75_099bc97b",
+      "range": {
+        "startLine": 159,
+        "startChar": 9,
+        "endLine": 159,
+        "endChar": 17
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "9cef02f9_859dd318",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52bd847c_1a50c88c",
+      "range": {
+        "startLine": 162,
+        "startChar": 43,
+        "endLine": 162,
+        "endChar": 56
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6fd15a37_c7ba1997",
         "filename": "lockfile.py",
         "patchSetId": 11
@@ -183,6 +351,30 @@
       "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bafcdb49_1b1412c6",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6fd15a37_c7ba1997",
+      "range": {
+        "startLine": 188,
+        "startChar": 7,
+        "endLine": 188,
+        "endChar": 15
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "e8aaeefd_869a207e",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "It has to be defined, can\u0027t be null pointer.\n\nhttps://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-lockfileex",
+      "parentUuid": "6333290a_6a7acb83",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 18
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "931e0e7b_5d232885",
         "filename": "lockfile.py",
         "patchSetId": 11
@@ -232,6 +448,30 @@
     },
     {
       "key": {
+        "uuid": "3cce80a0_04c57369",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "931e0e7b_5d232885",
+      "range": {
+        "startLine": 207,
+        "startChar": 19,
+        "endLine": 207,
+        "endChar": 56
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "52a07c89_a85c9227",
         "filename": "lockfile.py",
         "patchSetId": 11
@@ -252,6 +492,30 @@
       "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef11210b_4966160a",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T02:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52a07c89_a85c9227",
+      "range": {
+        "startLine": 234,
+        "startChar": 6,
+        "endLine": 234,
+        "endChar": 10
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

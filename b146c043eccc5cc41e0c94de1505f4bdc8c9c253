@@ -214,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "09961008_b65acf57",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-15T21:18:56Z",
+      "side": 1,
+      "message": "Take a look into new patch set - I removed _open_file and _close_file and moved logic into _lock and _release (old _unlock). If we could move fd/handle out of class completely (just use it as return in lock and input in unlock), but it seems a bit off to me (e.g. handle/fd that doesn\u0027t belong to lock can be put into unlock).",
+      "parentUuid": "6dd32034_459c5e47",
+      "range": {
+        "startLine": 105,
+        "startChar": 13,
+        "endLine": 105,
+        "endChar": 18
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9958c98e_a0254c18",
         "filename": "lockfile.py",
         "patchSetId": 11

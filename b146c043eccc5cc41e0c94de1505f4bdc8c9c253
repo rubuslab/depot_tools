@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "6dd32034_459c5e47",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-15T16:09:56Z",
+      "side": 1,
+      "message": "what if lock would:\n \n  open the file\n  lock the file\n  if the lock succeeds:\n    return the HANDLE/filedescriptor to the file\n  else:\n    close the HANDLE/filedescriptor and return None\n\n? Then this would handle/fd would be passed to unlock which would close it.\n\nThen there\u0027s symmetry as well; lock opens the file, unlock closes the file, nothing else touches it.",
+      "parentUuid": "32857e18_63b26e85",
+      "range": {
+        "startLine": 105,
+        "startChar": 13,
+        "endLine": 105,
+        "endChar": 18
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9958c98e_a0254c18",
         "filename": "lockfile.py",
         "patchSetId": 11
@@ -413,6 +437,30 @@
       "side": 1,
       "message": "It has to be defined, can\u0027t be null pointer.\n\nhttps://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-lockfileex",
       "parentUuid": "6333290a_6a7acb83",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 18
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5495129e_338853ae",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-15T16:09:56Z",
+      "side": 1,
+      "message": "Ah, you\u0027re right; Most functions taking overlapped have it as optional, didn\u0027t realize it was required here.",
+      "parentUuid": "e8aaeefd_869a207e",
       "range": {
         "startLine": 202,
         "startChar": 8,

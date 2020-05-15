@@ -381,6 +381,30 @@
     },
     {
       "key": {
+        "uuid": "29273386_ec61aa54",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1003168
+      },
+      "writtenOn": "2020-05-15T23:01:05Z",
+      "side": 1,
+      "message": "\u003e There\u0027s some level of coordination between processes required _anyway_.\n\nThat\u0027s true. And I don\u0027t really suggest comparing inodes.\n\nI was thinking that we can probably implement file removal to keep filesystem clean (and thus checks for lost/dangling files will be simpler) relying exactly on this \"some level of coordination\". I think that we can probably remove files after locking them under the assumption that context switch between \"create\" and \"lock\" is quite unlikely.\n\nWe can probably add comment about this in the source code.\n\nBut I don\u0027t insist on that. These are just some ideas.",
+      "parentUuid": "b0600762_d87a06f4",
+      "range": {
+        "startLine": 125,
+        "startChar": 6,
+        "endLine": 125,
+        "endChar": 30
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fcc5c75_099bc97b",
         "filename": "lockfile.py",
         "patchSetId": 11

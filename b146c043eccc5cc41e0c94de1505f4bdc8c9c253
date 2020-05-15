@@ -357,6 +357,30 @@
     },
     {
       "key": {
+        "uuid": "b0600762_d87a06f4",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-15T22:49:18Z",
+      "side": 1,
+      "message": "\u003e It can probably be detected by running stat() and comparing inode number.\n\nRight, which is an extra step; having clients not delete the file means that they\u0027ll all see the same inode number. There\u0027s some level of coordination between processes required _anyway_. Having them all do \u0027create-if-missing \u0026\u0026 lock\u0027 (and then not removing the empty file) means that there won\u0027t be a race (unless there\u0027s an external process mucking with the files, but then you could mess up the whole process anyway by just ignoring the lock altogether and blowing holes in the files it\u0027s meant to protect)",
+      "parentUuid": "032e6e20_2587dfe5",
+      "range": {
+        "startLine": 125,
+        "startChar": 6,
+        "endLine": 125,
+        "endChar": 30
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fcc5c75_099bc97b",
         "filename": "lockfile.py",
         "patchSetId": 11

@@ -405,6 +405,30 @@
     },
     {
       "key": {
+        "uuid": "1ccc9744_2899a051",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-15T23:09:15Z",
+      "side": 1,
+      "message": "\u003e under the assumption that context switch between \"create\" and \"lock\" is quite unlikely.\n\n\"quite unlikely\" feels like \"will definitely happen in an annoyingly high number of instances scattered across the fleet\" :p\n\nIMO simpler is better, the cache is going to be an ugly pile of files anyway, and I\u0027m not sure how checking for dangling files would work; To properly observe the existence of the lock file, you\u0027d need to either:\n  1) know that no git cache processes are running OR\n  2) engage in the same locking dance that git_cache is using\n\nThat said, if you prefer removing the file under the lock here, the open call will also need to be updated to include O_EXCL and become a loop.",
+      "parentUuid": "29273386_ec61aa54",
+      "range": {
+        "startLine": 125,
+        "startChar": 6,
+        "endLine": 125,
+        "endChar": 30
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fcc5c75_099bc97b",
         "filename": "lockfile.py",
         "patchSetId": 11

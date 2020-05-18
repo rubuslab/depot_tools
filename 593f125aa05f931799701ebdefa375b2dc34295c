@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63905801_58db595c",
+        "filename": "lockfile.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-18T20:51:25Z",
+      "side": 1,
+      "message": "nit: could move these into `if sys.platform...` clause",
+      "revId": "593f125aa05f931799701ebdefa375b2dc34295c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c3ff4cd_7d5a9df5",
+        "filename": "lockfile.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-18T20:51:25Z",
+      "side": 1,
+      "message": "this is starting to look a lot clearer to me!!\n\nI think you could simplify this further by:\n \n  1) moving the contents of _BaseLockFile.lock into the module-level lock function\n  2) Removing _BaseLockFile\n  3) defining just _lock as a platform-specific module-level function\n  4) modify _lock\u0027s signature to look like:\n\n       _lock(path : str) -\u003e Union[None, Callable[]]\n\n     Where the returned Callable would be the platform-specific unlock function. If it\n     returns None, then the lock wasn\u0027t acquired.\n  5) _is_locked can go away entirely\n  6) Maybe rename _lock to _try_lock for further clarification.\n\nThis would let you remove _is_locked, and all assertions around it, as well as the class definition/inheritance/extension pattern.",
+      "range": {
+        "startLine": 40,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 19
+      },
+      "revId": "593f125aa05f931799701ebdefa375b2dc34295c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c1140d2_7a99dbab",
+        "filename": "lockfile.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-18T20:51:25Z",
+      "side": 1,
+      "message": "imo instead of this, I would just not define these symbols on the respective platforms, e.g.\n\n\n  if sys.platform.startswith(\u0027win\u0027):\n    def _try_lock(path):\n      # windows impl\n  else:\n    def _try_lock(path):\n      # posix impl\n\n  @contextmanager\n  def lock(path, timeout):\n    # logic which invokes _try_lock",
+      "range": {
+        "startLine": 92,
+        "startChar": 4,
+        "endLine": 92,
+        "endChar": 10
+      },
+      "revId": "593f125aa05f931799701ebdefa375b2dc34295c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -429,6 +429,30 @@
     },
     {
       "key": {
+        "uuid": "2fa6f93a_a0fb07f9",
+        "filename": "lockfile.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-18T20:06:44Z",
+      "side": 1,
+      "message": "I suggest we don\u0027t overcomplicate with lock file cleanup. I agree with iannucci@, we shouldn\u0027t have code that may fail under unlikely scenarios (those are usually a real PITA to debug). We can have a dedicated directory for all locks if there are concerns about dirty cache directories.\n\nNote that the latest patchset already contains comment that lockfile is never deleted so we should be all set if that\u0027s acceptable.",
+      "parentUuid": "1ccc9744_2899a051",
+      "range": {
+        "startLine": 125,
+        "startChar": 6,
+        "endLine": 125,
+        "endChar": 30
+      },
+      "revId": "b146c043eccc5cc41e0c94de1505f4bdc8c9c253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fcc5c75_099bc97b",
         "filename": "lockfile.py",
         "patchSetId": 11

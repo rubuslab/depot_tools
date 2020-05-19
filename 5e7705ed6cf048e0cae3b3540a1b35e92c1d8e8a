@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7c88d5c_66b92a5f",
+        "filename": "lockfile.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T15:41:52Z",
+      "side": 1,
+      "message": "you can now move all this down into the `if sys.platform` bit on line 39",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "5e7705ed6cf048e0cae3b3540a1b35e92c1d8e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b8a7038_cedf85cc",
+        "filename": "lockfile.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T15:41:52Z",
+      "side": 1,
+      "message": "Note: I think this is not available on win7 (which I think we still have, though maybe not on anything using git); your link also points to CreateFileW?\n\n\nIt may also be cleaner to have a separate file win32imports which has all of these, e.g.\n\n  WIN_GENERIC_WRITE \u003d ...\n\n  class Overlapped(ctypes.Structure):\n    ...\n\n  CreateFile2 \u003d ctypes.windll...\n  CreateFile2.argtypes \u003d ...\n  CreateFile2.restype \u003d ...\n\n  CloseHandle \u003d ...\n\n  LockFileEx \u003d ...\n\n  UnlockFileEx \u003d ...\n\nThen you could just import them as symbols (e.g. `from win32imports import CreateFile2, ...`) and the body of this function would be a lot easier to read.",
+      "range": {
+        "startLine": 43,
+        "startChar": 32,
+        "endLine": 43,
+        "endChar": 43
+      },
+      "revId": "5e7705ed6cf048e0cae3b3540a1b35e92c1d8e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08b59f6d_e9da5803",
+        "filename": "lockfile.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T15:41:52Z",
+      "side": 1,
+      "message": "I think you already declared the result type, so this should already be a HANDLE",
+      "range": {
+        "startLine": 53,
+        "startChar": 13,
+        "endLine": 53,
+        "endChar": 35
+      },
+      "revId": "5e7705ed6cf048e0cae3b3540a1b35e92c1d8e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ba476ae_3b6373cb",
+        "filename": "lockfile.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T15:41:52Z",
+      "side": 1,
+      "message": "lowercase",
+      "range": {
+        "startLine": 164,
+        "startChar": 18,
+        "endLine": 164,
+        "endChar": 22
+      },
+      "revId": "5e7705ed6cf048e0cae3b3540a1b35e92c1d8e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

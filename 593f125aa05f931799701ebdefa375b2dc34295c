@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "09b75ed7_df4d0b21",
+        "filename": "lockfile.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T03:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63905801_58db595c",
+      "revId": "593f125aa05f931799701ebdefa375b2dc34295c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c3ff4cd_7d5a9df5",
         "filename": "lockfile.py",
         "patchSetId": 13
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "e2db0303_bffdac59",
+        "filename": "lockfile.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T03:41:20Z",
+      "side": 1,
+      "message": "Thanks, it\u0027s much cleaner without classes. Only downside is nested functions, but those shouldn\u0027t be hard to comprehend. Happy to add comments if needed.",
+      "parentUuid": "6c3ff4cd_7d5a9df5",
+      "range": {
+        "startLine": 40,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 19
+      },
+      "revId": "593f125aa05f931799701ebdefa375b2dc34295c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c1140d2_7a99dbab",
         "filename": "lockfile.py",
         "patchSetId": 13
@@ -62,6 +104,30 @@
       "revId": "593f125aa05f931799701ebdefa375b2dc34295c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22b0e5b6_cecfb91d",
+        "filename": "lockfile.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T03:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c1140d2_7a99dbab",
+      "range": {
+        "startLine": 92,
+        "startChar": 4,
+        "endLine": 92,
+        "endChar": 10
+      },
+      "revId": "593f125aa05f931799701ebdefa375b2dc34295c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

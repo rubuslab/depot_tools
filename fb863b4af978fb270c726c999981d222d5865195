@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "0503544e_6a37cbaf",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T19:10:14Z",
+      "side": 1,
+      "message": "oh this got line-wrapped weirdly; maybe move the comment above, or use `from win32imports import ...` to drop the win32imports prefix everywhere.",
+      "range": {
+        "startLine": 33,
+        "startChar": 30,
+        "endLine": 33,
+        "endChar": 51
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e33fd144_c8335c20",
         "filename": "lockfile.py",
         "patchSetId": 15

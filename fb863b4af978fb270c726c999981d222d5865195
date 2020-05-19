@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2cb973_6b54497f",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T19:09:20Z",
+      "side": 1,
+      "message": "this is borderline beautiful now 😊",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e33fd144_c8335c20",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T19:09:20Z",
+      "side": 1,
+      "message": "Probably move to the other file?\n\nAlso you probably don\u0027t need the close_handle helper now.",
+      "range": {
+        "startLine": 39,
+        "startChar": 82,
+        "endLine": 39,
+        "endChar": 93
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4f2f3ed_6aceee26",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T19:09:20Z",
+      "side": 1,
+      "message": "can you verify that closing the handle isn\u0027t sufficient to drop the lock? Because if it\u0027s sufficient, you can save the bother of calling UnlockFileEx.",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 68,
+        "endChar": 20
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

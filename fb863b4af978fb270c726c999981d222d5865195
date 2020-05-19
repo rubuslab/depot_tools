@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "e9d68548_885f5900",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T23:52:58Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "472a6f5e_15d4754a",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0503544e_6a37cbaf",
         "filename": "lockfile.py",
         "patchSetId": 15
@@ -117,6 +141,30 @@
       "revId": "fb863b4af978fb270c726c999981d222d5865195",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aaf945e1_675aad9a",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T23:52:58Z",
+      "side": 1,
+      "message": "Done, removed unnecessary part of comment (constant is self explanatory).",
+      "parentUuid": "0503544e_6a37cbaf",
+      "range": {
+        "startLine": 33,
+        "startChar": 30,
+        "endLine": 33,
+        "endChar": 51
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -143,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "4459ca21_65f5e981",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T23:52:58Z",
+      "side": 1,
+      "message": "Moved to file. close_handle can be use as release function, so I kept this nested function.",
+      "parentUuid": "e33fd144_c8335c20",
+      "range": {
+        "startLine": 39,
+        "startChar": 82,
+        "endLine": 39,
+        "endChar": 93
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4f2f3ed_6aceee26",
         "filename": "lockfile.py",
         "patchSetId": 15
@@ -163,6 +235,30 @@
       "revId": "fb863b4af978fb270c726c999981d222d5865195",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d3df57a_9c6e0246",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T23:52:58Z",
+      "side": 1,
+      "message": "Indeed, it\u0027s not necessary for both unix and Windows.",
+      "parentUuid": "d4f2f3ed_6aceee26",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 68,
+        "endChar": 20
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

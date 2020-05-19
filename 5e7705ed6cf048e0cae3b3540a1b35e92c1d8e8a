@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4ef76163_e18d9440",
+        "filename": "lockfile.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T19:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7c88d5c_66b92a5f",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "5e7705ed6cf048e0cae3b3540a1b35e92c1d8e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0b8a7038_cedf85cc",
         "filename": "lockfile.py",
         "patchSetId": 14
@@ -45,6 +69,30 @@
       "revId": "5e7705ed6cf048e0cae3b3540a1b35e92c1d8e8a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "114820eb_9000b3e2",
+        "filename": "lockfile.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T19:01:13Z",
+      "side": 1,
+      "message": "I decided to use CreateFileW to be on the safe side. Also, moved all ctypes usages into win32imports; so this file won\u0027t import ctypes directly anymore.",
+      "parentUuid": "0b8a7038_cedf85cc",
+      "range": {
+        "startLine": 43,
+        "startChar": 32,
+        "endLine": 43,
+        "endChar": 43
+      },
+      "revId": "5e7705ed6cf048e0cae3b3540a1b35e92c1d8e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -91,6 +139,30 @@
       "revId": "5e7705ed6cf048e0cae3b3540a1b35e92c1d8e8a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52dbdde3_fd3c20e3",
+        "filename": "lockfile.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-19T19:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ba476ae_3b6373cb",
+      "range": {
+        "startLine": 164,
+        "startChar": 18,
+        "endLine": 164,
+        "endChar": 22
+      },
+      "revId": "5e7705ed6cf048e0cae3b3540a1b35e92c1d8e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

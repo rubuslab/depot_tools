@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "472a6f5e_15d4754a",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T20:27:23Z",
+      "side": 1,
+      "message": "That sounds viable to me as well",
+      "parentUuid": "839dc13c_5e49a162",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0503544e_6a37cbaf",
         "filename": "lockfile.py",
         "patchSetId": 15

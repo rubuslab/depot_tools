@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "86b079df_8c212f96",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-05-19T20:27:20Z",
+      "side": 1,
+      "message": "(send it a bit too early)\n\n  ...\n  return release\n\nI find that makes it clearer what _try_lock is doing, while leaving implementation details to each platform.",
+      "parentUuid": "839dc13c_5e49a162",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0503544e_6a37cbaf",
         "filename": "lockfile.py",
         "patchSetId": 15

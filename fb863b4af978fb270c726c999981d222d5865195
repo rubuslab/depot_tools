@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "839dc13c_5e49a162",
+        "filename": "lockfile.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-05-19T20:25:44Z",
+      "side": 1,
+      "message": "What about defining `_create_handle(lockfile)`, `_lock_handle(handle)`, `_unlock_handle(handle)` and `_close_handle(handle)` for both win and linux.\n\nThen we could define _try_lock both on win and linux like:\n\n  def _try_lock(lockfile):\n    handle \u003d _create_handle(lockfile)\n\n    try:\n      _lock_handle(handle)\n    except:\n      _close_hadle(handle)\n      raise\n\n    def release():\n      try:\n        _unlock_handle(handle)\n      finally:\n        _close_handle(handle)",
+      "parentUuid": "ba2cb973_6b54497f",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "fb863b4af978fb270c726c999981d222d5865195",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0503544e_6a37cbaf",
         "filename": "lockfile.py",
         "patchSetId": 15

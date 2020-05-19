@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "93b547ff_5ada2fe2",
+        "filename": "lockfile.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-05-19T23:57:09Z",
+      "side": 1,
+      "message": "I would \n\n   return lambda: _close_file(f)\n\nAnd drop `def close_file`, but this is 100% a nit :)",
+      "range": {
+        "startLine": 84,
+        "startChar": 9,
+        "endLine": 84,
+        "endChar": 19
+      },
+      "revId": "0ce526900e2a2d84610336d1cbe8c111176decf7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

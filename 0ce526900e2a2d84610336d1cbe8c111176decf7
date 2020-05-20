@@ -22,6 +22,30 @@
       "revId": "0ce526900e2a2d84610336d1cbe8c111176decf7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "69f5f853_56a7f5d9",
+        "filename": "lockfile.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-05-20T04:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93b547ff_5ada2fe2",
+      "range": {
+        "startLine": 84,
+        "startChar": 9,
+        "endLine": 84,
+        "endChar": 19
+      },
+      "revId": "0ce526900e2a2d84610336d1cbe8c111176decf7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

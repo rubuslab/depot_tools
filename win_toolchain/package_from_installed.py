@@ -60,7 +60,8 @@ def GetVSPath():
   command = (r'C:\Program Files (x86)\Microsoft Visual Studio\Installer'
              r'\vswhere.exe -prerelease')
   marker = 'installationPath: '
-  for line in subprocess.check_output(command).splitlines():
+  output = subprocess.check_output(command, universal_newlines=True)
+  for line in output.splitlines():
     if line.startswith(marker):
       return line[len(marker):]
   raise Exception('VS %s path not found in vswhere output' % (VS_VERSION))
@@ -369,15 +370,15 @@ def GenerateSetEnvCmd(target_dir):
     f.write('goto :EOF\n')
   with open(set_env_prefix + '.x86.json', 'wb') as f:
     assert not set(env.keys()) & set(env_x86.keys()), 'dupe keys'
-    json.dump({'env': collections.OrderedDict(env.items() + env_x86.items())},
+    json.dump({'env': collections.OrderedDict(list(env.items()) + list(env_x86.items()))},
               f)
   with open(set_env_prefix + '.x64.json', 'wb') as f:
     assert not set(env.keys()) & set(env_x64.keys()), 'dupe keys'
-    json.dump({'env': collections.OrderedDict(env.items() + env_x64.items())},
+    json.dump({'env': collections.OrderedDict(list(env.items()) + list(env_x64.items()))},
               f)
   with open(set_env_prefix + '.arm64.json', 'wb') as f:
     assert not set(env.keys()) & set(env_arm64.keys()), 'dupe keys'
-    json.dump({'env': collections.OrderedDict(env.items() + env_arm64.items())},
+    json.dump({'env': collections.OrderedDict(list(env.items()) + list(env_arm64.items()))},
               f)
 
 
@@ -426,8 +427,8 @@ def main():
   usage = 'usage: %prog [options] 2017|2019'
   parser = optparse.OptionParser(usage)
   parser.add_option('-w', '--winver', action='store', type='string',
-                    dest='winver', default='10.0.14393.0',
-                    help='Windows SDK version, such as 10.0.14393.0')
+                    dest='winver', default='10.0.18362.0',
+                    help='Windows SDK version, such as 10.0.18362.0')
   parser.add_option('-d', '--dryrun', action='store_true', dest='dryrun',
                     default=False,
                     help='scan for file existence and prints statistics')

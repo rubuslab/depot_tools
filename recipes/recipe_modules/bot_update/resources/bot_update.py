@@ -1009,6 +1009,8 @@ def parse_args():
                     help='Always pass --with_tags to gclient.  This '
                           'does the same thing as --refs +refs/tags/*')
   parse.add_option('--git-cache-dir', help='Path to git cache directory.')
+  parse.add_option('--builder-cache-dir',
+                   help='Path to builder cache directory.')
   parse.add_option('--cleanup-dir',
                    help='Path to a cleanup directory that can be used for '
                         'deferred file cleanup.')
@@ -1223,6 +1225,12 @@ def main():
 
   # Print a helpful message to tell developers what's going on with this step.
   print_debug_info()
+
+  if options.builder_cache_dir:
+    os.makedirs(options.builder_cache_dir)
+    with open(os.path.join(options.builder_cache_dir, 'bot_update_stamp'),
+              'w') as f:
+      f.write('This is for builder cache affinity')
 
   # Parse, manipulate, and print the gclient solutions.
   specs = {}

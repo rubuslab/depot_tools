@@ -14,6 +14,8 @@
       "[CLEANUP]/bot_update",
       "--output_json",
       "/path/to/tmp/json",
+      "--builder-cache-stamp",
+      "[CACHE]/builder/bot_update",
       "--revision",
       "depot_tools@HEAD"
     ],

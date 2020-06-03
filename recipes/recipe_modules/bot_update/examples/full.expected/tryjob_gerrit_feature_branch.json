@@ -56,6 +56,8 @@
       "[CLEANUP]/bot_update",
       "--output_json",
       "/path/to/tmp/json",
+      "--builder-cache-stamp",
+      "[CACHE]/builder/bot_update",
       "--patch_ref",
       "https://chromium.googlesource.com/chromium/src@refs/heads/experimental/feature:refs/changes/56/123456/7",
       "--revision",
@@ -169,6 +171,8 @@
       "[CLEANUP]/bot_update",
       "--output_json",
       "/path/to/tmp/json",
+      "--builder-cache-stamp",
+      "[CACHE]/builder/bot_update",
       "--revision",
       "src@f27fede2220bcd326aee3e86ddfd4ebd0fe58cb9",
       "--no_fetch_tags"

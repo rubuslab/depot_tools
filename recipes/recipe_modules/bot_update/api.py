@@ -154,15 +154,22 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
     flags = [
         # What do we want to check out (spec/root/rev/reverse_rev_map).
-        ['--spec-path', self.m.raw_io.input(
-            self.m.gclient.config_to_pythonish(cfg))],
+        [
+            '--spec-path',
+            self.m.raw_io.input(self.m.gclient.config_to_pythonish(cfg))
+        ],
         ['--patch_root', patch_root],
-        ['--revision_mapping_file', self.m.json.input(reverse_rev_map)],
+        ['--revision_mapping_file',
+         self.m.json.input(reverse_rev_map)],
         ['--git-cache-dir', cfg.cache_dir],
         ['--cleanup-dir', self.m.path['cleanup'].join('bot_update')],
 
         # Hookups to JSON output back into recipes.
         ['--output_json', self.m.json.output()],
+        [
+            '--builder-cache-stamp',
+            self.m.buildbucket.builder_cache_path.join('bot_update')
+        ],
     ]
 
     # How to find the patch, if any

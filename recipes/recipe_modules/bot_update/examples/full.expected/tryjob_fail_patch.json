@@ -56,6 +56,8 @@
       "[CLEANUP]/bot_update",
       "--output_json",
       "/path/to/tmp/json",
+      "--builder-cache-stamp",
+      "[CACHE]/builder/bot_update",
       "--patch_ref",
       "https://chromium.googlesource.com/chromium/src@refs/heads/master:refs/changes/56/123456/7",
       "--revision",

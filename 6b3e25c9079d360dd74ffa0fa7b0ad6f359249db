@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df0bfecd_134d682d",
+        "filename": "TESTING",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-06-04T03:20:50Z",
+      "side": 1,
+      "message": "unresolved comment",
+      "revId": "6b3e25c9079d360dd74ffa0fa7b0ad6f359249db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -986,6 +986,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         if self.url:
           env['GCLIENT_URL'] = str(self.url)
         env['GCLIENT_DEP_PATH'] = str(self.name)
+        env['GCLIENT_DEP_REF'] = self.url.split('@')[-1]
         if options.prepend_dir and scm == 'git':
           print_stdout = False
           def filter_fn(line):
@@ -2766,7 +2767,6 @@ def CMDdiff(parser, args):
   if options.verbose:
     client.PrintLocationAndContents()
   return client.RunOnDeps('diff', args)
-
 
 @metrics.collector.collect_metrics('gclient revert')
 def CMDrevert(parser, args):

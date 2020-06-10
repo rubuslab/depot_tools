@@ -144,6 +144,40 @@ class GclientApi(recipe_api.RecipeApi):
       return revision.resolve(self.m.properties)
     return revision
 
+  def diff_deps(self):
+    cfg = self.c
+    test_data_paths = set(self.got_revision_reverse_mapping(cfg).values() +
+                          [s.name for s in cfg.solutions])
+    step_test_data = lambda: (
+      self.test_api.output_json(test_data_paths))
+
+    self('gclient recurse diff', ['recurse', '-v', 'git', 'diff', '--name-only', '--cached', '$GCLIENT_DEP_REF'],
+        step_test_data=step_test_data,
+        stdout=self.m.raw_io.output(),
+    )
+
+    result = self.m.step.active_result
+    result.presentation.logs['raw output'] = result.stdout
+
+    if result.stdout is None:
+      self.m.step.fail('no output from gclient diff')
+      return
+
+    current_dep = None
+    changed_files = []
+    for line in result.stdout.split('\n'):
+      if 'Elapsed: ' in line:
+        current_dep = line.split(' (Elapsed:')[0].strip()
+        current_dep = current_dep[4:]
+      elif line.startswith('[0:'):
+        parsed_line = line.split('] ')[1]
+        if parsed_line != 'Started.' and parsed_line != 'Finished.':
+          changed_files.append(self.m.path.join('src', current_dep, parsed_line))
+
+    result.presentation.logs['files'] = changed_files
+
+    return changed_files
+
   def sync(self, cfg, extra_sync_flags=None, **kwargs):
     revisions = []
     self.set_patch_repo_revision(gclient_config=cfg)

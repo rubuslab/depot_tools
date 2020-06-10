@@ -986,6 +986,11 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         if self.url:
           env['GCLIENT_URL'] = str(self.url)
         env['GCLIENT_DEP_PATH'] = str(self.name)
+        parts = self.url.split('@')
+        if len(parts) > 1:
+          env['GCLIENT_DEP_REF'] = parts[-1]
+        else:
+          env['GCLIENT_DEP_REF'] = 'master'
         if options.prepend_dir and scm == 'git':
           print_stdout = False
           def filter_fn(line):
@@ -1019,9 +1024,11 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
           print('Skipped omitted dependency %s' % cwd, file=sys.stderr)
         elif os.path.isdir(cwd):
           try:
+            print('Running Args: {}, Ref: {}'.format(
+                args, env['GCLIENT_DEP_REF']))
             gclient_utils.CheckCallAndFilter(
                 args, cwd=cwd, env=env, print_stdout=print_stdout,
-                filter_fn=filter_fn,
+                filter_fn=filter_fn, shell=True,
                 )
           except subprocess2.CalledProcessError:
             if not options.ignore:
@@ -2766,7 +2773,6 @@ def CMDdiff(parser, args):
   if options.verbose:
     client.PrintLocationAndContents()
   return client.RunOnDeps('diff', args)
-
 
 @metrics.collector.collect_metrics('gclient revert')
 def CMDrevert(parser, args):

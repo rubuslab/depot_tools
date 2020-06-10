@@ -132,7 +132,7 @@ class TryserverApi(recipe_api.RecipeApi):
             self.m.properties.get('patch_repo_url') and
             self.m.properties.get('patch_ref'))
 
-  def get_files_affected_by_patch(self, patch_root, **kwargs):
+  def get_files_affected_by_patch(self, patch_root, gclient_api=None, **kwargs):
     """Returns list of paths to files affected by the patch.
 
     Argument:
@@ -143,21 +143,32 @@ class TryserverApi(recipe_api.RecipeApi):
     """
     cwd = self.m.context.cwd or self.m.path['start_dir'].join(patch_root)
     with self.m.context(cwd=cwd):
+      #step_result = self.m.gclient.diff_deps(
+      #    name='git diff to analyze patch',
+      #    stdout=self.m.raw_io.output(),
+      #    step_test_data=lambda:
+      #      self.m.raw_io.test_api.stream_output('foo.cc'),
+      #  **kwargs)
       step_result = self.m.git(
-          '-c', 'core.quotePath=false', 'diff', '--cached', '--name-only',
-          name='git diff to analyze patch',
-          stdout=self.m.raw_io.output(),
-          step_test_data=lambda:
-            self.m.raw_io.test_api.stream_output('foo.cc'),
-          **kwargs)
-    paths = [self.m.path.join(patch_root, p) for p in
-             step_result.stdout.split()]
-    if self.m.platform.is_win:
-      # Looks like "analyze" wants POSIX slashes even on Windows (since git
-      # uses that format even on Windows).
-      paths = [path.replace('\\', '/') for path in paths]
-    step_result.presentation.logs['files'] = paths
-    return paths
+          '-c', 'core.quotePath=false', 'checkout', 'HEAD~', '--',
+          name='git checkout src:HEAD~ -- DEPS')
+
+      paths = gclient_api.diff_deps()
+
+      step_result = self.m.git(
+          '-c', 'core.quotePath=false', 'checkout', 'HEAD', '--',
+          name='git checkout src:HEAD~ -- DEPS')
+
+      self.m.step('print files', ['echo'] + paths)
+
+      #paths = [self.m.path.join(patch_root, p) for p in
+      #         step_result.stdout.split()]
+
+      if self.m.platform.is_win:
+        # Looks like "analyze" wants POSIX slashes even on Windows (since git
+        # uses that format even on Windows).
+        paths = [path.replace('\\', '/') for path in paths]
+      return paths
 
   def set_subproject_tag(self, subproject_tag):
     """Adds a subproject tag to the build.

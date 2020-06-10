@@ -16,6 +16,24 @@
       "revId": "d57ab7f35fde616dda631c0e705ea7653112f5cf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5c27590_4cc93851",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1423953
+      },
+      "writtenOn": "2020-06-10T17:05:54Z",
+      "side": 1,
+      "message": "Will do. I thought this was not angle-related so I didn\u0027t include a bug.",
+      "parentUuid": "b587553d_8f78a5fe",
+      "revId": "d57ab7f35fde616dda631c0e705ea7653112f5cf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

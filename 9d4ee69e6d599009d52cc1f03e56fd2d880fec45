@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aeacbfc5_1017ec51",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4936,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-11T16:08:42Z",
+      "side": 1,
+      "message": "yapf2 is the same as yapf3.\nWe can read the first line of the file and invoke\n[\u0027vpython\u0027 if py2 else \u0027vpython3\u0027, yapf_tool, ...]",
+      "range": {
+        "startLine": 4936,
+        "startChar": 13,
+        "endLine": 4936,
+        "endChar": 22
+      },
+      "revId": "9d4ee69e6d599009d52cc1f03e56fd2d880fec45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

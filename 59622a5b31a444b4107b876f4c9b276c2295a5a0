@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06cfac91_a5301aa4",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2020-06-11T16:57:47Z",
+      "side": 0,
+      "message": "just to confirm, %b supersedes %s? Does the subject get included with %B automatically?",
+      "range": {
+        "startLine": 905,
+        "startChar": 40,
+        "endLine": 905,
+        "endChar": 47
+      },
+      "revId": "59622a5b31a444b4107b876f4c9b276c2295a5a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

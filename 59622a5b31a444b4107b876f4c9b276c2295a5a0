@@ -22,6 +22,30 @@
       "revId": "59622a5b31a444b4107b876f4c9b276c2295a5a0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd4a4131_3179e30e",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 1423953
+      },
+      "writtenOn": "2020-06-11T17:01:10Z",
+      "side": 0,
+      "message": "Yes, %B is raw body (unwrapped subject and body)",
+      "parentUuid": "06cfac91_a5301aa4",
+      "range": {
+        "startLine": 905,
+        "startChar": 40,
+        "endLine": 905,
+        "endChar": 47
+      },
+      "revId": "59622a5b31a444b4107b876f4c9b276c2295a5a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

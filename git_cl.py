@@ -4931,7 +4931,9 @@ def CMDformat(parser, args):
       if not yapf_style:
         yapf_style = 'pep8'
 
-      cmd = [yapf_tool, '--style', yapf_style, f]
+      # It is important to pass the file first since yapf_tool uses the file's
+      # shebang line to redirect to python 2/3 for the actual yapf tool.
+      cmd = [yapf_tool, f, '--style', yapf_style]
 
       has_formattable_lines = False
       if not opts.full:

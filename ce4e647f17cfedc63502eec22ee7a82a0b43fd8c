@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80fa83d4_623ca9e7",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1297,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-12T04:43:03Z",
+      "side": 1,
+      "message": "What sort of parsing needs to happen?",
+      "revId": "ce4e647f17cfedc63502eec22ee7a82a0b43fd8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bfcdd63_24ebbe02",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-12T04:43:03Z",
+      "side": 1,
+      "message": "I think this is pretty close. First, we would add a resultdb arg to RunHook().\n\nThen here we should check if resultdb is True and if so,\np \u003d subprocess2.Popen([\u0027rdb\u0027,\u0027stream\u0027, \u0027-new\u0027, \u0027vpython\u0027, PRESUBMIT_SUPPORT, \u0027--resultdb\u0027] + args)",
+      "revId": "ce4e647f17cfedc63502eec22ee7a82a0b43fd8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "788960e1_108755c1",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1386,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-12T04:43:03Z",
+      "side": 1,
+      "message": "We might need options here also (also for --resultdb).",
+      "revId": "ce4e647f17cfedc63502eec22ee7a82a0b43fd8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f609049_23d3b5d7",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1870,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-12T04:43:03Z",
+      "side": 1,
+      "message": "Hmm, this one also seems to trigger the presubmit. We should just worry about git cl presubmit for now I think.",
+      "revId": "ce4e647f17cfedc63502eec22ee7a82a0b43fd8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f93a573e_f1452138",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3829,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-12T04:43:03Z",
+      "side": 1,
+      "message": "I think you want to add an option here --resultdb so people can use \"git cl presubmit --resultdb\" to enable the new code path.",
+      "revId": "ce4e647f17cfedc63502eec22ee7a82a0b43fd8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e9e5e2f_2600b1e9",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1489,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-12T04:43:03Z",
+      "side": 1,
+      "message": "Oh, this gets messy, I see.",
+      "revId": "ce4e647f17cfedc63502eec22ee7a82a0b43fd8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d04c49f1_a77951ce",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1511,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-12T04:43:03Z",
+      "side": 1,
+      "message": "I think what this will end up doing is giving us a single test result for either CheckChangeOnCommit or CheckChangeOnUpload.\n\nOther options are to pass rdb.stream into the CheckChangeOn functions or just not stream and send the results in a batch at the end (around line 1524). The batch option will be easier so maybe we should start with that. We can talk about it tomorrow.",
+      "revId": "ce4e647f17cfedc63502eec22ee7a82a0b43fd8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c608b372_e4da652c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1886,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-12T04:43:03Z",
+      "side": 1,
+      "message": "If these lines succeed then you know the resultsink server is up and running and can assume that below.",
+      "revId": "ce4e647f17cfedc63502eec22ee7a82a0b43fd8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

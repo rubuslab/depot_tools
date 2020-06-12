@@ -1293,8 +1293,17 @@ class Changelist(object):
         args.extend(['--description_file', description_file])
 
         start = time_time()
+        '''
+        # IF WE ARE REPORTING TO RESULTDB....some parsing needs to happen here.
+        # Parse twice? idk idk not sure how to use it
+            p = subprocess2.Popen(['rdb', ,'stream', '-new', PRESUBMIT_SUPPORT]
+                    + args)
+        # ELSE
+        '''
         p = subprocess2.Popen(['vpython', PRESUBMIT_SUPPORT] + args)
+
         exit_code = p.wait()
+
         metrics.collector.add_repeated('sub_commands', {
           'command': 'presubmit',
           'execution_time': time_time() - start,

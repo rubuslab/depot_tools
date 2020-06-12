@@ -1461,13 +1461,14 @@ class PresubmitExecuter(object):
     self.thread_pool = thread_pool
     self.parallel = parallel
 
-  def ExecPresubmitScript(self, script_text, presubmit_path):
+  def ExecPresubmitScript(self, script_text, presubmit_path, resultdb=False):
     """Executes a single presubmit script.
 
     Args:
       script_text: The text of the presubmit script.
       presubmit_path: The path to the presubmit file (this will be reported via
         input_api.PresubmitLocalPath()).
+    resultdb: If true, we send the result of the function call to ResultDB
 
     Return:
       A list of result objects, empty if no problems.
@@ -1496,11 +1497,22 @@ class PresubmitExecuter(object):
       function_name = 'CheckChangeOnCommit'
     else:
       function_name = 'CheckChangeOnUpload'
-    if function_name in context:
+    if function_name in context: # THIS SECTION WILL NEED SoME REORGANIZATION
       try:
         context['__args'] = (input_api, output_api)
         logging.debug('Running %s in %s', function_name, presubmit_path)
-        result = eval(function_name + '(*__args)', context)
+        # THIS IS WHERE THE FUNCTION IS BEING CALLED!! BUT WHAT ?
+        # and how are we supposed to modify it?? idk not sure. This se the place
+        # Where the magic needs to happen (i.e. we call the function
+        # I have a feeling that we need to somehow dive deeper into each of the
+        # helper functions to make sure that they are
+        if resultdb:
+            rdbhost = Rdb();
+            trs, result = rdbhost.stream(function_name, context)
+            rdbhost.post_requests(trs)
+        else:
+            result = eval(function_name + '(*__args)', context)
+
         logging.debug('Running %s done.', function_name)
         self.more_cc.extend(output_api.more_cc)
       finally:
@@ -1529,7 +1541,8 @@ def DoPresubmitChecks(change,
                       gerrit_obj,
                       dry_run=None,
                       parallel=False,
-                      json_output=None):
+                      json_output=None,
+                      resultdb=False):
   """Runs all presubmit checks that apply to the files in the change.
 
   This finds all PRESUBMIT.py files in directories enclosing the files in the
@@ -1550,6 +1563,8 @@ def DoPresubmitChecks(change,
     dry_run: if true, some Checks will be skipped.
     parallel: if true, all tests specified by input_api.RunTests in all
               PRESUBMIT files will be run in parallel.
+    resultdb: if true, run tests within the ResultSink environment
+              and send results to ResultDB.
 
   Return:
     1 if presubmit checks failed or 0 otherwise.
@@ -1584,7 +1599,8 @@ def DoPresubmitChecks(change,
         sys.stdout.write('Running %s\n' % filename)
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename, 'rU')
-      results += executer.ExecPresubmitScript(presubmit_script, filename)
+      results += executer.ExecPresubmitScript(presubmit_script, filename,
+                                                                      resultdb)
 
     results += thread_pool.RunAsync()
 
@@ -1818,6 +1834,9 @@ def main(argv=None):
                       'executing presubmit or post-upload hooks. fnmatch '
                       'wildcards can also be used.')
 
+# Timing the individual tests and sending results to RDB
+  parser.add_argument('--report', action='store_true',
+                      help='Report presubmit check runtime stats to ResultDB')
   options = parser.parse_args(argv)
 
   log_level = logging.ERROR
@@ -1850,12 +1869,70 @@ def main(argv=None):
           gerrit_obj,
           options.dry_run,
           options.parallel,
-          options.json_output)
+          options.json_output,
+          options.report)
   except PresubmitFailure as e:
     print(e, file=sys.stderr)
     print('Maybe your depot_tools is out of date?', file=sys.stderr)
     return 2
 
+class Rdb:
+    '''
+    Wrapper class for calling presubmit checks so that they
+    send output and stopwatch timing results to ResultDB.
+    '''
+
+    def __init__(self):
+        with open(os.environ['LUCI_CONTEXT']) as f:
+            self.sink = json.load(f)['result_sink']
+
+    # Need to ensure -- how do we know that this is indeed streaming correct and
+    # Need to run "rdb stream -new ./filename.py" from the command line.
+    # it's not enough to just call.
+    # Need to START an INVOCATION (not just run)
+    def stream(self, function_name, context):
+        '''Rdb.stream(str, dict) --> dict, result object
+        Runs the test function f(input_api, output_api), doint stopwatch timing.
+            input_api, output_api are present as *__args in the context.
+
+        Returns a json-formatted dict of the timing test (to post to ResultDB)
+        And a result object created by running the test'''
+
+        t1 = time_time()
+        result = eval(function_name + '(*__args)', context)
+        t2 = time_time()
+        elapsed = t2 - t1
+        status = 'PASS' # CHANGE - how do we know if a test passed or failed?
+            # Need to figure it out somehow. But how? idk idk. Let's see...
+            # Will need to change later -- when the stuff passed,
+            # the result shouldn't have any issue. If it failed there is error.
+        tr = {
+                'testId': '{0}({1})-Test'
+                        .format(function_name, context['__args']),
+                'resultId': '{0}({1})-Result'
+                        .format(function_name, context['__args']),
+                'status': status,
+                'expected': (status == 'PASS'),
+                'duration': '{:.9f}s'.format(elapsed)
+             }
+        return tr, result;
+
+    def post_results(self, trs):
+        '''Rdb.post_results(list)
+        Input: a list of json-formatted dict's that contain test results.
+        Posts the test results to ResultDB.
+        '''
+        requests.post(
+            url = 'http://{0}/prpc/luci.resultdb.sink.v1.Sink/ReportTestResults'
+                    .format(self.sink['address']),
+            headers = {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'ResultSink {0}'
+                    .format(self.sink['auth_token'])
+            },
+            data = json.dumps( {'testResults': trs} )
+        )
 
 if __name__ == '__main__':
   fix_encoding.fix_encoding()

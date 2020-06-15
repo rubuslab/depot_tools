@@ -5,6 +5,7 @@
 
 from __future__ import print_function
 
+import datetime
 import json
 import os
 import platform
@@ -113,12 +114,17 @@ def main():
   # Run upload script without wait.
   devnull = open(os.devnull, "w")
   creationnflags = 0
+  startupinfo = subprocess.STARTUPINFO()
   if platform.system() == 'Windows':
-    creationnflags = subprocess.CREATE_NEW_PROCESS_GROUP
+    DETACHED_PROCESS = 0x00000008
+    creationnflags = DETACHED_PROCESS
+    startupinfo.dwFlags = subprocess.STARTF_USESHOWWINDOW
+    startupinfo.wShowWindow = subprocess.SW_HIDE
   subprocess2.Popen(['vpython', UPLOADER] + sys.argv[1:],
                     stdout=devnull,
                     stderr=devnull,
-                    creationflags=creationnflags)
+                    creationflags=creationnflags,
+                    startupinfo=startupinfo)
 
 
 if __name__ == '__main__':

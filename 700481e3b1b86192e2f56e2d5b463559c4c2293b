@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bb939de1_cfb644ee",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4898,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-17T17:05:48Z",
+      "side": 1,
+      "message": "Alternatively, keep using vpython here and remove these lines.\nSorry for not catching this the first time...",
+      "range": {
+        "startLine": 4897,
+        "startChar": 4,
+        "endLine": 4898,
+        "endChar": 25
+      },
+      "revId": "700481e3b1b86192e2f56e2d5b463559c4c2293b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

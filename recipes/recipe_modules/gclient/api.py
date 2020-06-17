@@ -3,6 +3,7 @@
 # found in the LICENSE file.
 
 from recipe_engine import recipe_api
+import re
 
 
 class RevisionResolver(object):

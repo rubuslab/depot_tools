@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7255ae51_b1769661",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4068,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-17T15:57:38Z",
+      "side": 1,
+      "message": "This happens already on 4071.",
+      "revId": "63283aec0b5a82a5178629d93449aaa8ee387640",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

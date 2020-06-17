@@ -22,6 +22,30 @@
       "revId": "700481e3b1b86192e2f56e2d5b463559c4c2293b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "69dde687_fbbb4617",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4898,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2020-06-17T17:14:35Z",
+      "side": 1,
+      "message": "Sounds great, done.",
+      "parentUuid": "bb939de1_cfb644ee",
+      "range": {
+        "startLine": 4897,
+        "startChar": 4,
+        "endLine": 4898,
+        "endChar": 25
+      },
+      "revId": "700481e3b1b86192e2f56e2d5b463559c4c2293b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

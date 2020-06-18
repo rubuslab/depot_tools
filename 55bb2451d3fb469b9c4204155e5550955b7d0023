@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d13f8a00_83f2a1b6",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2020-06-18T19:46:25Z",
+      "side": 1,
+      "message": "This would need to be actually added to the list. If it\u0027s in DEFAULT and not BLACKLIST (sic) then is there a way to make it easier for callers to specify not disabling filters because their code is clean without disabling the styleguide rules too?",
+      "revId": "55bb2451d3fb469b9c4204155e5550955b7d0023",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

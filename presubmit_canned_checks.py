@@ -11,20 +11,17 @@ _HERE = _os.path.dirname(_os.path.abspath(__file__))
 
 # Justifications for each filter:
 #
-# - build/include       : Too many; fix in the future.
-# - build/include_order : Not happening; #ifdefed includes.
-# - build/namespace     : I'm surprised by how often we violate this rule.
-# - readability/casting : Mistakes a whole bunch of function pointer.
+# - build/include       : Too many; fix in the future
+# - build/include_order : Not happening; #ifdefed includes
+# - readability/casting : Mistakes a whole bunch of function pointer
 # - runtime/int         : Can be fixed long term; volume of errors too high
-# - runtime/virtual     : Broken now, but can be fixed in the future?
-# - whitespace/braces   : We have a lot of explicit scoping in chrome code.
+# - runtime/references  : No longer banned by Google style guide
+# - whitespace/braces   : We have a lot of explicit scoping in chrome code
 DEFAULT_LINT_FILTERS = [
   '-build/include',
   '-build/include_order',
-  '-build/namespace',
   '-readability/casting',
   '-runtime/int',
-  '-runtime/virtual',
   '-whitespace/braces',
 ]
 

@@ -1,0 +1,169 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c5c2ebe_1f93f27f",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-18T05:01:03Z",
+      "side": 1,
+      "message": "indentation",
+      "revId": "ffcc238c5d3e2dbabef223c9fd85762d06b48bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28b5e5c0_d95bbe97",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1472,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-18T05:01:03Z",
+      "side": 1,
+      "message": "we\u0027re actually sending \"test result information about the presubmit checks\" rather than just result of the function call.\n\nOr we will when we\u0027re done, at least.",
+      "range": {
+        "startLine": 1472,
+        "startChar": 37,
+        "endLine": 1472,
+        "endChar": 64
+      },
+      "revId": "ffcc238c5d3e2dbabef223c9fd85762d06b48bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a6c71975_1069e5dd",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1891,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-18T05:01:03Z",
+      "side": 1,
+      "message": "inherit from object if not inheriting from anything else",
+      "range": {
+        "startLine": 1891,
+        "startChar": 6,
+        "endLine": 1891,
+        "endChar": 9
+      },
+      "revId": "ffcc238c5d3e2dbabef223c9fd85762d06b48bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4274740_08dc5121",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1892,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-18T05:01:03Z",
+      "side": 1,
+      "message": "descriptions in docstrings should fit on one line",
+      "revId": "ffcc238c5d3e2dbabef223c9fd85762d06b48bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "837734db_725c068e",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1897,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-18T05:01:03Z",
+      "side": 1,
+      "message": "one line docstring",
+      "revId": "ffcc238c5d3e2dbabef223c9fd85762d06b48bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ea1f604_1b92d827",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1908,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-18T05:01:03Z",
+      "side": 1,
+      "message": "With this longer docstring start with a one line description then an empty line, then a detailed description. (like what you have but add an empty line between)\n\nAlso docstrings use \"\"\" and not \u0027\u0027\u0027",
+      "revId": "ffcc238c5d3e2dbabef223c9fd85762d06b48bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28cfa16d_f213aee1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1933,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-18T05:01:03Z",
+      "side": 1,
+      "message": "Format should be one line description, blank line, \"Args:\" then \"trs: \u003cblah\u003e\" on the next line",
+      "revId": "ffcc238c5d3e2dbabef223c9fd85762d06b48bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6f540ab_6c2d0172",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1939,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-18T05:01:03Z",
+      "side": 1,
+      "message": "I don\u0027t like that this silently fails if it\u0027s not set up correctly since this shouldn\u0027t happen. I would prefer this is an assert instead so we can track down any bugs.",
+      "revId": "ffcc238c5d3e2dbabef223c9fd85762d06b48bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "679ff978_841c571d",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-06-18T05:01:03Z",
+      "side": 1,
+      "message": "Please fix these tests instead of commenting them out.",
+      "revId": "ffcc238c5d3e2dbabef223c9fd85762d06b48bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

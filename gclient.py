@@ -986,6 +986,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         if self.url:
           env['GCLIENT_URL'] = str(self.url)
         env['GCLIENT_DEP_PATH'] = str(self.name)
+        parts = self.url.split('@')
+        if len(parts) > 1:
+          env['GCLIENT_DEP_REF'] = parts[-1]
         if options.prepend_dir and scm == 'git':
           print_stdout = False
           def filter_fn(line):
@@ -1020,9 +1023,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         elif os.path.isdir(cwd):
           try:
             gclient_utils.CheckCallAndFilter(
-                args, cwd=cwd, env=env, print_stdout=print_stdout,
+                args,
+                cwd=cwd,
+                env=env,
+                print_stdout=print_stdout,
                 filter_fn=filter_fn,
-                )
+                shell=True,
+                show_header=False)
           except subprocess2.CalledProcessError:
             if not options.ignore:
               raise
@@ -1407,12 +1414,14 @@ The local checkout in %(checkout_path)s reports:
 
 You should ensure that the URL listed in .gclient is correct and either change
 it or fix the checkout.
-'''  % {'checkout_path': os.path.join(self.root_dir, dep.name),
-        'expected_url': dep.url,
-        'expected_scm': dep.GetScmName(),
-        'mirror_string': mirror_string,
-        'actual_url': actual_url,
-        'actual_scm': dep.GetScmName()})
+''' % {
+                  'checkout_path': os.path.join(self.root_dir, dep.name),
+                  'expected_url': dep.url,
+                  'expected_scm': dep.GetScmName(),
+                  'mirror_string': mirror_string,
+                  'actual_url': actual_url,
+                  'actual_scm': dep.GetScmName()
+              })
 
   def SetConfig(self, content):
     assert not self.dependencies
@@ -2766,7 +2775,6 @@ def CMDdiff(parser, args):
   if options.verbose:
     client.PrintLocationAndContents()
   return client.RunOnDeps('diff', args)
-
 
 @metrics.collector.collect_metrics('gclient revert')
 def CMDrevert(parser, args):

@@ -4,9 +4,12 @@
 
 import contextlib
 import hashlib
+import re
 
 from recipe_engine import recipe_api
 
+class DepsDiffException(Exception):
+  pass
 
 class TryserverApi(recipe_api.RecipeApi):
   def __init__(self, *args, **kwargs):
@@ -17,6 +20,7 @@ class TryserverApi(recipe_api.RecipeApi):
     self._gerrit_info_initialized = False
     self._gerrit_change_target_ref = None
     self._gerrit_change_fetch_ref = None
+    self.is_autoroll = None
 
   def initialize(self):
     changes = self.m.buildbucket.build.input.gerrit_changes
@@ -69,6 +73,9 @@ class TryserverApi(recipe_api.RecipeApi):
               cl.change % 100, cl.change, cl.patchset),
         },
       },
+      'owner': {
+          'name': 'John Doe',
+      },
     }]
     res = self.m.gerrit.get_changes(
         host='https://' + cl.host,
@@ -91,7 +98,28 @@ class TryserverApi(recipe_api.RecipeApi):
       if int(rev['_number']) == self.gerrit_change.patchset:
         self._gerrit_change_fetch_ref = rev['ref']
         break
+
+    self.is_autoroll = self.check_if_autoroll(res)
+
     self._gerrit_info_initialized = True
+
+  def check_if_autoroll(self, gerrit_response):
+    """Check if CL if from an autoroller
+
+    Args:
+      gerrit_response: reponse from Gerrit /changes/
+    Returns:
+      True if CL is from an autoroller, else False
+     """
+
+    if len(gerrit_response) == 0:
+       return False
+
+    for change in gerrit_response:
+      if 'autoroll' not in change['owner']['name']:
+        return False
+
+    return True
 
   @property
   def gerrit_change_fetch_ref(self):
@@ -132,7 +160,76 @@ class TryserverApi(recipe_api.RecipeApi):
             self.m.properties.get('patch_repo_url') and
             self.m.properties.get('patch_ref'))
 
-  def get_files_affected_by_patch(self, patch_root, **kwargs):
+
+
+  def diff_deps(self, gclient_api):
+    step_result = self.m.git('-c',
+                             'core.quotePath=false',
+                             'checkout',
+                             'HEAD~',
+                             '--',
+                             'DEPS',
+                             name='checkout the previous DEPS')
+
+    try:
+      cfg = gclient_api.c
+      test_data_paths = set(
+          gclient_api.got_revision_reverse_mapping(cfg).values() +
+          [s.name for s in cfg.solutions])
+      step_test_data = lambda: (gclient_api.test_api.output_json(test_data_paths))
+
+      gclient_api(
+          'recursively git diff all DEPS',
+          [
+              'recurse',
+              ('git diff --cached --name-only $GCLIENT_DEP_REF | python -c "'
+               '''
+import os
+import sys
+for line in sys.stdin:
+  print('%s/%s' % (os.environ.get('GCLIENT_DEP_PATH'),  line))
+             "''')
+          ],
+          step_test_data=step_test_data,
+          stdout=self.m.raw_io.output(),
+      )
+
+      step_result = self.m.step.active_result
+      step_result.presentation.logs['raw output'] = step_result.stdout
+
+      paths = []
+      # gclient prepends a number and a > to each line
+      for line in step_result.stdout.strip().split('\n'):
+        if 'fatal: bad object' in line:
+          msg = "Couldn't checkout previous ref: %s" % line
+
+          # XXX what's the right way to present this?
+          step_result.presentation.logs['DepsDiffException'] = msg
+          raise DepsDiffException(msg)
+        elif re.match('\d+>', line):
+          paths.append(line[line.index('>') + 1:])
+        else:
+          paths.append(line)
+
+      if len(paths) > 0:
+        return paths
+      else:
+        msg = 'Unexpected result: autoroll diff found 0 files changed'
+        step_result.presentation.logs['DepsDiffException'] = msg 
+        raise DepsDiffException(msg)
+
+    finally:
+      self.m.git('-c',
+                 'core.quotePath=false',
+                 'checkout',
+                 'HEAD',
+                 '--',
+                 'DEPS',
+                 name="checkout the original DEPS")
+
+
+
+  def get_files_affected_by_patch(self, patch_root, gclient_api=None, **kwargs):
     """Returns list of paths to files affected by the patch.
 
     Argument:
@@ -150,14 +247,24 @@ class TryserverApi(recipe_api.RecipeApi):
           step_test_data=lambda:
             self.m.raw_io.test_api.stream_output('foo.cc'),
           **kwargs)
-    paths = [self.m.path.join(patch_root, p) for p in
-             step_result.stdout.split()]
-    if self.m.platform.is_win:
-      # Looks like "analyze" wants POSIX slashes even on Windows (since git
-      # uses that format even on Windows).
-      paths = [path.replace('\\', '/') for path in paths]
-    step_result.presentation.logs['files'] = paths
-    return paths
+      paths = [self.m.path.join(patch_root, p) for p in
+               step_result.stdout.split()]
+      step_result.presentation.logs['files'] = paths
+
+      # is_autoroll means only a revision was changed in DEPS
+      # So we can diff DEPS to find out which files changed
+      if 'src/DEPS' in paths and self.is_autoroll:
+        try:
+          paths = self.diff_deps(gclient_api)
+        except DepsDiffException:
+          pass # the caller will make this exception visible before raising it
+
+      if self.m.platform.is_win:
+        # Looks like "analyze" wants POSIX slashes even on Windows (since git
+        # uses that format even on Windows).
+        paths = [path.replace('\\', '/') for path in paths]
+
+      return paths
 
   def set_subproject_tag(self, subproject_tag):
     """Adds a subproject tag to the build.

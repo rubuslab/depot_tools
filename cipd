@@ -26,6 +26,10 @@ case "${UNAME}" in
     ;;
   *)
     >&2 echo "CIPD not supported on ${UNAME}"
+    if [[ "$UNAME" == "aix" ]]; then
+      # `gclient sync` will exit halfway if any CIPD calls are made.
+      exit 0
+    fi
     exit 1
 esac
 

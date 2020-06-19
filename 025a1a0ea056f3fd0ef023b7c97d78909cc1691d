@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c6c5efad_6b8c667f",
+        "filename": "gclient.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-06-19T23:52:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6745e2db_3fabc4e6",
+      "revId": "025a1a0ea056f3fd0ef023b7c97d78909cc1691d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9f3170f_b339de95",
         "filename": "recipes/recipe_modules/tryserver/api.py",
         "patchSetId": 12
@@ -39,6 +57,30 @@
       "revId": "025a1a0ea056f3fd0ef023b7c97d78909cc1691d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4143d509_35720b5d",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-06-19T23:52:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9f3170f_b339de95",
+      "range": {
+        "startLine": 146,
+        "startChar": 6,
+        "endLine": 146,
+        "endChar": 15
+      },
+      "revId": "025a1a0ea056f3fd0ef023b7c97d78909cc1691d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

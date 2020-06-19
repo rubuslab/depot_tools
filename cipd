@@ -26,6 +26,9 @@ case "${UNAME}" in
     ;;
   *)
     >&2 echo "CIPD not supported on ${UNAME}"
+    if [[ "$UNAME" == "aix" ]]; then
+      exit 0
+    fi
     exit 1
 esac
 

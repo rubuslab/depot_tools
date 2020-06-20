@@ -7,7 +7,6 @@ import hashlib
 
 from recipe_engine import recipe_api
 
-
 class TryserverApi(recipe_api.RecipeApi):
   def __init__(self, *args, **kwargs):
     super(TryserverApi, self).__init__(*args, **kwargs)
@@ -17,6 +16,7 @@ class TryserverApi(recipe_api.RecipeApi):
     self._gerrit_info_initialized = False
     self._gerrit_change_target_ref = None
     self._gerrit_change_fetch_ref = None
+    self.gerrit_change_owner = None
 
   def initialize(self):
     changes = self.m.buildbucket.build.input.gerrit_changes
@@ -69,6 +69,9 @@ class TryserverApi(recipe_api.RecipeApi):
               cl.change % 100, cl.change, cl.patchset),
         },
       },
+      'owner': {
+          'name': 'John Doe',
+      },
     }]
     res = self.m.gerrit.get_changes(
         host='https://' + cl.host,
@@ -91,6 +94,8 @@ class TryserverApi(recipe_api.RecipeApi):
       if int(rev['_number']) == self.gerrit_change.patchset:
         self._gerrit_change_fetch_ref = rev['ref']
         break
+
+    self.gerrit_change_owner = res['owner']
     self._gerrit_info_initialized = True
 
   @property

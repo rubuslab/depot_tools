@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0fee29c8_513c74bf",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-20T01:40:18Z",
+      "side": 1,
+      "message": "Can you name it _gerrit_change_owner and add\n\n  @property\n  def gerrit_change_owner(self):\n    \"\"\"...\"\"\"\n    return self._gerrit_change_owner\n\nas is done for the other properties?",
+      "range": {
+        "startLine": 20,
+        "startChar": 9,
+        "endLine": 20,
+        "endChar": 28
+      },
+      "revId": "f8913beeef0f3fe1e4da2099e895ac3552f86572",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

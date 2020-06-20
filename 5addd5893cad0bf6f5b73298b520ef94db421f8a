@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0cfdf697_90f3e8de",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-20T00:01:10Z",
+      "side": 1,
+      "message": "Why not rather make res[\u0027owner\u0027][\u0027name\u0027] available as a gerrit_change_owner property?",
+      "range": {
+        "startLine": 99,
+        "startChar": 9,
+        "endLine": 99,
+        "endChar": 20
+      },
+      "revId": "5addd5893cad0bf6f5b73298b520ef94db421f8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

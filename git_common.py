@@ -1073,19 +1073,19 @@ def make_workdir_common(repository, new_workdir, files_to_symlink,
 
 
 def make_workdir(repository, new_workdir):
-  GIT_DIRECTORY_WHITELIST = [
-    'config',
-    'info',
-    'hooks',
-    'logs/refs',
-    'objects',
-    'packed-refs',
-    'refs',
-    'remotes',
-    'rr-cache',
-    'shallow',
+  GIT_DIRECTORY_ALLOWLIST = [
+      'config',
+      'info',
+      'hooks',
+      'logs/refs',
+      'objects',
+      'packed-refs',
+      'refs',
+      'remotes',
+      'rr-cache',
+      'shallow',
   ]
-  make_workdir_common(repository, new_workdir, GIT_DIRECTORY_WHITELIST,
+  make_workdir_common(repository, new_workdir, GIT_DIRECTORY_ALLOWLIST,
                       ['HEAD'])
 
 

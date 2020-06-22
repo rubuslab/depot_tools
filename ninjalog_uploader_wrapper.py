@@ -42,8 +42,8 @@ def SaveConfig(config):
 
 
 def ShowMessage(countdown):
-  whitelisted = '\n'.join(
-      ['  * %s' % config for config in ninjalog_uploader.WHITELISTED_CONFIGS])
+  allowlisted = '\n'.join(
+      ['  * %s' % config for config in ninjalog_uploader.ALLOWLISTED_CONFIGS])
   print("""
 Your ninjalog will be uploaded to build stats server. The uploaded log will be
 used to analyze user side build performance.
@@ -70,7 +70,7 @@ If you have questions about this, please send mail to infra-dev@chromium.org
 You can find a more detailed explanation in
 %s
 
-""" % (whitelisted, countdown, __file__, __file__,
+""" % (allowlisted, countdown, __file__, __file__,
        os.path.abspath(os.path.join(THIS_DIR, "ninjalog.README.md"))))
 
 

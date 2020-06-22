@@ -135,7 +135,7 @@ _GCLIENT_HOOKS_SCHEMA = [
 
 _GCLIENT_SCHEMA = schema.Schema(
     _NodeDictSchema({
-        # List of host names from which dependencies are allowed (whitelist).
+        # List of host names from which dependencies are allowed (allowlist).
         # NOTE: when not present, all hosts are allowed.
         # NOTE: scoped to current DEPS file, not recursive.
         schema.Optional('allowed_hosts'): [schema.Optional(basestring)],
@@ -148,21 +148,25 @@ _GCLIENT_SCHEMA = schema.Schema(
         #
         #   Var(): allows variable substitution (either from 'vars' dict below,
         #          or command-line override)
-        schema.Optional('deps'): _GCLIENT_DEPS_SCHEMA,
+        schema.Optional('deps'):
+        _GCLIENT_DEPS_SCHEMA,
 
         # Similar to 'deps' (see above) - also keyed by OS (e.g. 'linux').
         # Also see 'target_os'.
-        schema.Optional('deps_os'): _NodeDictSchema({
+        schema.Optional('deps_os'):
+        _NodeDictSchema({
             schema.Optional(basestring): _GCLIENT_DEPS_SCHEMA,
         }),
 
         # Dependency to get gclient_gn_args* settings from. This allows these
         # values to be set in a recursedeps file, rather than requiring that
         # they exist in the top-level solution.
-        schema.Optional('gclient_gn_args_from'): basestring,
+        schema.Optional('gclient_gn_args_from'):
+        basestring,
 
         # Path to GN args file to write selected variables.
-        schema.Optional('gclient_gn_args_file'): basestring,
+        schema.Optional('gclient_gn_args_file'):
+        basestring,
 
         # Subset of variables to write to the GN args file (see above).
         schema.Optional('gclient_gn_args'): [schema.Optional(basestring)],
@@ -170,40 +174,39 @@ _GCLIENT_SCHEMA = schema.Schema(
         # Hooks executed after gclient sync (unless suppressed), or explicitly
         # on gclient hooks. See _GCLIENT_HOOKS_SCHEMA for details.
         # Also see 'pre_deps_hooks'.
-        schema.Optional('hooks'): _GCLIENT_HOOKS_SCHEMA,
+        schema.Optional('hooks'):
+        _GCLIENT_HOOKS_SCHEMA,
 
         # Similar to 'hooks', also keyed by OS.
-        schema.Optional('hooks_os'): _NodeDictSchema({
-            schema.Optional(basestring): _GCLIENT_HOOKS_SCHEMA
-        }),
+        schema.Optional('hooks_os'):
+        _NodeDictSchema({schema.Optional(basestring): _GCLIENT_HOOKS_SCHEMA}),
 
         # Rules which #includes are allowed in the directory.
         # Also see 'skip_child_includes' and 'specific_include_rules'.
         schema.Optional('include_rules'): [schema.Optional(basestring)],
 
         # Hooks executed before processing DEPS. See 'hooks' for more details.
-        schema.Optional('pre_deps_hooks'): _GCLIENT_HOOKS_SCHEMA,
+        schema.Optional('pre_deps_hooks'):
+        _GCLIENT_HOOKS_SCHEMA,
 
         # Recursion limit for nested DEPS.
-        schema.Optional('recursion'): int,
+        schema.Optional('recursion'):
+        int,
 
-        # Whitelists deps for which recursion should be enabled.
+        # Allowlists deps for which recursion should be enabled.
         schema.Optional('recursedeps'): [
-            schema.Optional(schema.Or(
-                basestring,
-                (basestring, basestring),
-                [basestring, basestring]
-            )),
+            schema.Optional(
+                schema.Or(basestring, (basestring, basestring),
+                          [basestring, basestring])),
         ],
 
-        # Blacklists directories for checking 'include_rules'.
+        # Blocklists directories for checking 'include_rules'.
         schema.Optional('skip_child_includes'): [schema.Optional(basestring)],
 
         # Mapping from paths to include rules specific for that path.
         # See 'include_rules' for more details.
-        schema.Optional('specific_include_rules'): _NodeDictSchema({
-            schema.Optional(basestring): [basestring]
-        }),
+        schema.Optional('specific_include_rules'):
+        _NodeDictSchema({schema.Optional(basestring): [basestring]}),
 
         # List of additional OS names to consider when selecting dependencies
         # from deps_os.
@@ -212,15 +215,19 @@ _GCLIENT_SCHEMA = schema.Schema(
         # For recursed-upon sub-dependencies, check out their own dependencies
         # relative to the parent's path, rather than relative to the .gclient
         # file.
-        schema.Optional('use_relative_paths'): bool,
+        schema.Optional('use_relative_paths'):
+        bool,
 
         # For recursed-upon sub-dependencies, run their hooks relative to the
         # parent's path instead of relative to the .gclient file.
-        schema.Optional('use_relative_hooks'): bool,
+        schema.Optional('use_relative_hooks'):
+        bool,
 
         # Variables that can be referenced using Var() - see 'deps'.
-        schema.Optional('vars'): _NodeDictSchema({
-            schema.Optional(basestring): schema.Or(basestring, bool),
+        schema.Optional('vars'):
+        _NodeDictSchema({
+            schema.Optional(basestring):
+            schema.Or(basestring, bool),
         }),
     }))
 

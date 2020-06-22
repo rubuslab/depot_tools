@@ -31,7 +31,7 @@ import httplib2
 # These build configs affect build performance a lot.
 # TODO(tikuta): Add 'blink_symbol_level', 'closure_compile' and
 #               'use_jumbo_build'.
-WHITELISTED_CONFIGS = ('symbol_level', 'use_goma', 'is_debug',
+ALLOWLISTED_CONFIGS = ('symbol_level', 'use_goma', 'is_debug',
                        'is_component_build', 'enable_nacl', 'host_os',
                        'host_cpu', 'target_os', 'target_cpu')
 
@@ -53,7 +53,7 @@ def ParseGNArgs(gn_args):
 
   for config in configs:
     key = config["name"]
-    if key not in WHITELISTED_CONFIGS:
+    if key not in ALLOWLISTED_CONFIGS:
       continue
     if 'current' in config:
       build_configs[key] = config['current']['value']

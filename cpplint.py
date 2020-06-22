@@ -3748,8 +3748,8 @@ def CheckTrailingSemicolon(filename, clean_lines, linenum, error):
 
   # Block bodies should not be followed by a semicolon.  Due to C++11
   # brace initialization, there are more places where semicolons are
-  # required than not, so we use a whitelist approach to check these
-  # rather than a blacklist.  These are the places where "};" should
+  # required than not, so we use a allowlist approach to check these
+  # rather than a blocklist.  These are the places where "};" should
   # be replaced by just "}":
   # 1. Some flavor of block following closing parenthesis:
   #    for (;;) {};
@@ -3806,11 +3806,11 @@ def CheckTrailingSemicolon(filename, clean_lines, linenum, error):
     #  - INTERFACE_DEF
     #  - EXCLUSIVE_LOCKS_REQUIRED, SHARED_LOCKS_REQUIRED, LOCKS_EXCLUDED:
     #
-    # We implement a whitelist of safe macros instead of a blacklist of
+    # We implement a allowlist of safe macros instead of a blocklist of
     # unsafe macros, even though the latter appears less frequently in
     # google code and would have been easier to implement.  This is because
-    # the downside for getting the whitelist wrong means some extra
-    # semicolons, while the downside for getting the blacklist wrong
+    # the downside for getting the allowlist wrong means some extra
+    # semicolons, while the downside for getting the blocklist wrong
     # would result in compile errors.
     #
     # In addition to macros, we also don't want to warn on
@@ -4991,19 +4991,19 @@ def CheckForNonConstReference(filename, clean_lines, linenum,
   #
   # We also accept & in static_assert, which looks like a function but
   # it's actually a declaration expression.
-  whitelisted_functions = (r'(?:[sS]wap(?:<\w:+>)?|'
+  allowlisted_functions = (r'(?:[sS]wap(?:<\w:+>)?|'
                            r'operator\s*[<>][<>]|'
                            r'static_assert|COMPILE_ASSERT'
                            r')\s*\(')
-  if Search(whitelisted_functions, line):
+  if Search(allowlisted_functions, line):
     return
   elif not Search(r'\S+\([^)]*$', line):
-    # Don't see a whitelisted function on this line.  Actually we
+    # Don't see a allowlisted function on this line.  Actually we
     # didn't see any function name on this line, so this is likely a
     # multi-line parameter list.  Try a bit harder to catch this case.
     for i in range(2):
-      if (linenum > i and
-          Search(whitelisted_functions, clean_lines.elided[linenum - i - 1])):
+      if (linenum > i and Search(allowlisted_functions,
+                                 clean_lines.elided[linenum - i - 1])):
         return
 
   decls = ReplaceAll(r'{[^}]*}', ' ', line)  # exclude function body
@@ -5381,7 +5381,7 @@ def CheckForIncludeWhatYouUse(filename, clean_lines, include_state, error,
         injection.
   """
   required = {}  # A map of header name to linenumber and the template entity.
-                 # Example of required: { '<functional>': (1219, 'less<>') }
+  # Example of required: { '<functional>': (1219, 'less<>') }
 
   for linenum in range(clean_lines.NumLines()):
     line = clean_lines.elided[linenum]
@@ -5865,9 +5865,9 @@ def ProcessConfigOverrides(filename):
           elif name == 'linelength':
             global _line_length
             try:
-                _line_length = int(val)
+              _line_length = int(val)
             except ValueError:
-                sys.stderr.write('Line length must be numeric.')
+              sys.stderr.write('Line length must be numeric.')
           else:
             sys.stderr.write(
                 'Invalid configuration option (%s) in file %s\n' %
@@ -5881,7 +5881,7 @@ def ProcessConfigOverrides(filename):
   # Apply all the accumulated filters in reverse order (top-level directory
   # config options having the least priority).
   for filter in reversed(cfg_filters):
-     _AddFilters(filter)
+    _AddFilters(filter)
 
   return True
 
@@ -6053,15 +6053,15 @@ def ParseArguments(args):
     elif opt == '--linelength':
       global _line_length
       try:
-          _line_length = int(val)
+        _line_length = int(val)
       except ValueError:
-          PrintUsage('Line length must be digits.')
+        PrintUsage('Line length must be digits.')
     elif opt == '--extensions':
       global _valid_extensions
       try:
-          _valid_extensions = set(val.split(','))
+        _valid_extensions = set(val.split(','))
       except ValueError:
-          PrintUsage('Extensions must be comma separated list.')
+        PrintUsage('Extensions must be comma separated list.')
 
   if not filenames:
     PrintUsage('No files were specified.')

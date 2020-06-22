@@ -49,8 +49,8 @@ _WARNINGS = []
 # These repos are known to cause OOM errors on 32-bit platforms, due the the
 # very large objects they contain.  It is not safe to use threaded index-pack
 # when cloning/fetching them.
-THREADED_INDEX_PACK_BLACKLIST = [
-  'https://chromium.googlesource.com/chromium/reference_builds/chrome_win.git'
+THREADED_INDEX_PACK_BLOCKLIST = [
+    'https://chromium.googlesource.com/chromium/reference_builds/chrome_win.git'
 ]
 
 """To support rethrowing exceptions with tracebacks on both Py2 and 3."""
@@ -1193,7 +1193,7 @@ def DefaultIndexPackConfig(url=''):
   performance."""
   cache_limit = DefaultDeltaBaseCacheLimit()
   result = ['-c', 'core.deltaBaseCacheLimit=%s' % cache_limit]
-  if url in THREADED_INDEX_PACK_BLACKLIST:
+  if url in THREADED_INDEX_PACK_BLOCKLIST:
     result.extend(['-c', 'pack.threads=1'])
   return result
 

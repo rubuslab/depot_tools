@@ -76,7 +76,7 @@ class GClientEvalTest(unittest.TestCase):
       gclient_eval._gclient_eval('def foo():\n  pass')
     self.assertIn('invalid syntax', str(cm.exception))
 
-  def test_not_whitelisted(self):
+  def test_not_allowlisted(self):
     with self.assertRaises(ValueError) as cm:
       gclient_eval._gclient_eval('[x for x in [1, 2, 3]]')
     self.assertIn(

@@ -1073,7 +1073,7 @@ def make_workdir_common(repository, new_workdir, files_to_symlink,
 
 
 def make_workdir(repository, new_workdir):
-  GIT_DIRECTORY_WHITELIST = [
+  GIT_DIRECTORY_ALLOWLIST = [
     'config',
     'info',
     'hooks',
@@ -1085,7 +1085,7 @@ def make_workdir(repository, new_workdir):
     'rr-cache',
     'shallow',
   ]
-  make_workdir_common(repository, new_workdir, GIT_DIRECTORY_WHITELIST,
+  make_workdir_common(repository, new_workdir, GIT_DIRECTORY_ALLOWLIST,
                       ['HEAD'])
 
 

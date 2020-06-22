@@ -1241,7 +1241,7 @@ class InputApiUnittest(PresubmitTestsBase):
     self.assertEqual(got_files[4].LocalPath(), presubmit.normpath(files[4][1]))
     self.assertEqual(got_files[5].LocalPath(), presubmit.normpath(files[5][1]))
     self.assertEqual(got_files[6].LocalPath(), presubmit.normpath(files[6][1]))
-    # Ignores weird because of whitelist, third_party because of blacklist,
+    # Ignores weird because of allowlist, third_party because of blocklist,
     # binary isn't a text file and beingdeleted doesn't exist. The rest is
     # outside foo/.
     rhs_lines = [x for x in input_api.RightHandSideLines(None)]
@@ -1376,8 +1376,8 @@ class InputApiUnittest(PresubmitTestsBase):
     input_api = presubmit.InputApi(
         self.fake_change, './PRESUBMIT.py', False, None, False)
 
-    self.assertEqual(len(input_api.DEFAULT_WHITE_LIST), 24)
-    self.assertEqual(len(input_api.DEFAULT_BLACK_LIST), 12)
+    self.assertEqual(len(input_api.DEFAULT_ALLOW_LIST), 24)
+    self.assertEqual(len(input_api.DEFAULT_BLOCK_LIST), 12)
     for item in files:
       results = list(filter(input_api.FilterSourceFile, item[0]))
       for i in range(len(results)):
@@ -1409,8 +1409,8 @@ class InputApiUnittest(PresubmitTestsBase):
     self.assertEqual(got_files[1].LocalPath(), 'eeabee')
 
   def testLambdaFilter(self):
-    white_list = presubmit.InputApi.DEFAULT_BLACK_LIST + (r".*?a.*?",)
-    black_list = [r".*?b.*?"]
+    allow_list = presubmit.InputApi.DEFAULT_BLOCK_LIST + (r".*?a.*?",)
+    block_list = [r".*?b.*?"]
     files = [('A', 'eeaee'), ('M', 'eeabee'), ('M', 'eebcee'), ('M', 'eecaee')]
     known_files = [
       os.path.join(self.fake_root_dir, item)
@@ -1423,7 +1423,7 @@ class InputApiUnittest(PresubmitTestsBase):
         change, './PRESUBMIT.py', False, None, False)
     # Sample usage of overriding the default white and black lists.
     got_files = input_api.AffectedSourceFiles(
-        lambda x: input_api.FilterSourceFile(x, white_list, black_list))
+        lambda x: input_api.FilterSourceFile(x, allow_list, block_list))
     self.assertEqual(len(got_files), 2)
     self.assertEqual(got_files[0].LocalPath(), 'eeaee')
     self.assertEqual(got_files[1].LocalPath(), 'eecaee')
@@ -3146,8 +3146,8 @@ the current line as well!
         input_api,
         presubmit.OutputApi,
         'random_directory',
-        whitelist=['^a$', '^b$'],
-        blacklist=['a'])
+        allowlist=['^a$', '^b$'],
+        blocklist=['a'])
     self.assertEqual(1, len(results))
     self.assertEqual(
         presubmit.OutputApi.PresubmitNotifyResult, results[0].__class__)

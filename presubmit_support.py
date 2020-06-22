@@ -492,8 +492,8 @@ class InputApi(object):
   #
   # Files without an extension aren't included in the list. If you want to
   # filter them as source files, add r'(^|.*?[\\\/])[^.]+$' to the white list.
-  # Note that ALL CAPS files are black listed in DEFAULT_BLACK_LIST below.
-  DEFAULT_WHITE_LIST = (
+  # Note that ALL CAPS files are black listed in DEFAULT_BLOCK_LIST below.
+  DEFAULT_ALLOW_LIST = (
       # C++ and friends
       r'.+\.c$', r'.+\.cc$', r'.+\.cpp$', r'.+\.h$', r'.+\.m$', r'.+\.mm$',
       r'.+\.inl$', r'.+\.asm$', r'.+\.hxx$', r'.+\.hpp$', r'.+\.s$', r'.+\.S$',
@@ -506,7 +506,7 @@ class InputApi(object):
 
   # Path regexp that should be excluded from being considered containing source
   # files. Don't modify this list from a presubmit script!
-  DEFAULT_BLACK_LIST = (
+  DEFAULT_BLOCK_LIST = (
       r'testing_support[\\\/]google_appengine[\\\/].*',
       r'.*\bexperimental[\\\/].*',
       # Exclude third_party/.* but NOT third_party/{WebKit,blink}
@@ -673,11 +673,11 @@ class InputApi(object):
     """An alias to AffectedTestableFiles for backwards compatibility."""
     return self.AffectedTestableFiles(include_deletes=include_deletes)
 
-  def FilterSourceFile(self, affected_file, white_list=None, black_list=None):
+  def FilterSourceFile(self, affected_file, allow_list=None, block_list=None):
     """Filters out files that aren't considered 'source file'.
 
-    If white_list or black_list is None, InputApi.DEFAULT_WHITE_LIST
-    and InputApi.DEFAULT_BLACK_LIST is used respectively.
+    If allow_list or block_list is None, InputApi.DEFAULT_ALLOW_LIST
+    and InputApi.DEFAULT_BLOCK_LIST is used respectively.
 
     The lists will be compiled as regular expression and
     AffectedFile.LocalPath() needs to pass both list.
@@ -690,8 +690,8 @@ class InputApi(object):
         if self.re.match(item, local_path):
           return True
       return False
-    return (Find(affected_file, white_list or self.DEFAULT_WHITE_LIST) and
-            not Find(affected_file, black_list or self.DEFAULT_BLACK_LIST))
+    return (Find(affected_file, allow_list or self.DEFAULT_ALLOW_LIST) and
+            not Find(affected_file, block_list or self.DEFAULT_BLOCK_LIST))
 
   def AffectedSourceFiles(self, source_file):
     """Filter the list of AffectedTestableFiles by the function source_file.

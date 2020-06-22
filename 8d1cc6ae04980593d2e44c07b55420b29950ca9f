@@ -45,6 +45,30 @@
       "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12a7c1f9_8cbb4637",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-06-22T18:05:43Z",
+      "side": 1,
+      "message": "Thanks for looking into this,\n\nYes AIX does support Go, I have actually created this issue to figure out how we can build it from source:\nhttps://bugs.chromium.org/p/chromium/issues/detail?id\u003d1097770\n\nI know that CIPD is similar to a package manager but is it actually used during building V8?\nAs we have been building it just fine without it.",
+      "parentUuid": "74bc52fc_26655420",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

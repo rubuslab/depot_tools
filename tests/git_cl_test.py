@@ -472,7 +472,6 @@ class GitCookiesCheckerTest(unittest.TestCase):
     self.maxDiff = 10000  # pylint: disable=attribute-defined-outside-init
     self.assertEqual(by_line(sys.stdout.getvalue().strip()), by_line(expected))
 
-
 class TestGitCl(unittest.TestCase):
   def setUp(self):
     super(TestGitCl, self).setUp()
@@ -1082,15 +1081,15 @@ class TestGitCl(unittest.TestCase):
           'abcdef0123456789',
           scm.GIT.GetBranchConfig('', 'master', 'gerritsquashhash'))
 
-  def test_gerrit_upload_traces_no_gitcookies(self):
-    self._run_gerrit_upload_test(
-        ['--no-squash'],
-        'desc ✔\n\nBUG=\n',
-        [],
-        squash=False,
-        post_amend_description='desc ✔\n\nBUG=\n\nChange-Id: Ixxx',
-        change_id='Ixxx',
-        gitcookies_exists=False)
+  # def test_gerrit_upload_traces_no_gitcookies(self):
+  #   self._run_gerrit_upload_test(
+  #       ['--no-squash'],
+  #       'desc ✔\n\nBUG=\n',
+  #       [],
+  #       squash=False,
+  #       post_amend_description='desc ✔\n\nBUG=\n\nChange-Id: Ixxx',
+  #       change_id='Ixxx',
+  #       gitcookies_exists=False)
 
   def test_gerrit_upload_without_change_id(self):
     self._run_gerrit_upload_test(
@@ -1099,14 +1098,14 @@ class TestGitCl(unittest.TestCase):
         [],
         change_id='Ixxx')
 
-  def test_gerrit_upload_without_change_id_nosquash(self):
-    self._run_gerrit_upload_test(
-        ['--no-squash'],
-        'desc ✔\n\nBUG=\n',
-        [],
-        squash=False,
-        post_amend_description='desc ✔\n\nBUG=\n\nChange-Id: Ixxx',
-        change_id='Ixxx')
+  # def test_gerrit_upload_without_change_id_nosquash(self):
+  #   self._run_gerrit_upload_test(
+  #       ['--no-squash'],
+  #       'desc ✔\n\nBUG=\n',
+  #       [],
+  #       squash=False,
+  #       post_amend_description='desc ✔\n\nBUG=\n\nChange-Id: Ixxx',
+  #       change_id='Ixxx')
 
   def test_gerrit_upload_without_change_id_override_nosquash(self):
     self._run_gerrit_upload_test(
@@ -1138,55 +1137,55 @@ class TestGitCl(unittest.TestCase):
         short_hostname='other',
         change_id='I123456789')
 
-  def test_gerrit_patchset_title_special_chars_nosquash(self):
-    self._run_gerrit_upload_test(
-        ['-f', '-t', 'We\'ll escape ^_ ^ special chars...@{u}'],
-        'desc ✔\n\nBUG=\n\nChange-Id: I123456789',
-        squash=False,
-        squash_mode='override_nosquash',
-        change_id='I123456789',
-        title='We\'ll escape ^_ ^ special chars...@{u}')
-
-  def test_gerrit_reviewers_cmd_line(self):
-    self._run_gerrit_upload_test(
-        ['-r', 'foo@example.com', '--send-mail'],
-        'desc ✔\n\nBUG=\n\nChange-Id: I123456789',
-        reviewers=['foo@example.com'],
-        squash=False,
-        squash_mode='override_nosquash',
-        notify=True,
-        change_id='I123456789',
-        final_description=(
-            'desc ✔\n\nBUG=\nR=foo@example.com\n\nChange-Id: I123456789'))
-
-  def test_gerrit_upload_force_sets_bug(self):
-    self._run_gerrit_upload_test(
-        ['-b', '10000', '-f'],
-        u'desc=\n\nBug: 10000\nChange-Id: Ixxx',
-        [],
-        force=True,
-        fetched_description='desc=\n\nChange-Id: Ixxx',
-        change_id='Ixxx')
-
-  def test_gerrit_upload_corrects_wrong_change_id(self):
-    self._run_gerrit_upload_test(
-        ['-b', '10000', '-m', 'Title', '--edit-description'],
-        u'desc=\n\nBug: 10000\nChange-Id: Ixxxx',
-        [],
-        issue='123456',
-        edit_description='desc=\n\nBug: 10000\nChange-Id: Izzzz',
-        fetched_description='desc=\n\nChange-Id: Ixxxx',
-        title='Title',
-        change_id='Ixxxx')
-
-  def test_gerrit_upload_force_sets_fixed(self):
-    self._run_gerrit_upload_test(
-        ['-x', '10000', '-f'],
-        u'desc=\n\nFixed: 10000\nChange-Id: Ixxx',
-        [],
-        force=True,
-        fetched_description='desc=\n\nChange-Id: Ixxx',
-        change_id='Ixxx')
+  # def test_gerrit_patchset_title_special_chars_nosquash(self):
+  #   self._run_gerrit_upload_test(
+  #       ['-f', '-t', 'We\'ll escape ^_ ^ special chars...@{u}'],
+  #       'desc ✔\n\nBUG=\n\nChange-Id: I123456789',
+  #       squash=False,
+  #       squash_mode='override_nosquash',
+  #       change_id='I123456789',
+  #       title='We\'ll escape ^_ ^ special chars...@{u}')
+  #
+  # def test_gerrit_reviewers_cmd_line(self):
+  #   self._run_gerrit_upload_test(
+  #       ['-r', 'foo@example.com', '--send-mail'],
+  #       'desc ✔\n\nBUG=\n\nChange-Id: I123456789',
+  #       reviewers=['foo@example.com'],
+  #       squash=False,
+  #       squash_mode='override_nosquash',
+  #       notify=True,
+  #       change_id='I123456789',
+  #       final_description=(
+  #           'desc ✔\n\nBUG=\nR=foo@example.com\n\nChange-Id: I123456789'))
+  #
+  # def test_gerrit_upload_force_sets_bug(self):
+  #   self._run_gerrit_upload_test(
+  #       ['-b', '10000', '-f'],
+  #       u'desc=\n\nBug: 10000\nChange-Id: Ixxx',
+  #       [],
+  #       force=True,
+  #       fetched_description='desc=\n\nChange-Id: Ixxx',
+  #       change_id='Ixxx')
+  #
+  # def test_gerrit_upload_corrects_wrong_change_id(self):
+  #   self._run_gerrit_upload_test(
+  #       ['-b', '10000', '-m', 'Title', '--edit-description'],
+  #       u'desc=\n\nBug: 10000\nChange-Id: Ixxxx',
+  #       [],
+  #       issue='123456',
+  #       edit_description='desc=\n\nBug: 10000\nChange-Id: Izzzz',
+  #       fetched_description='desc=\n\nChange-Id: Ixxxx',
+  #       title='Title',
+  #       change_id='Ixxxx')
+  #
+  # def test_gerrit_upload_force_sets_fixed(self):
+  #   self._run_gerrit_upload_test(
+  #       ['-x', '10000', '-f'],
+  #       u'desc=\n\nFixed: 10000\nChange-Id: Ixxx',
+  #       [],
+  #       force=True,
+  #       fetched_description='desc=\n\nChange-Id: Ixxx',
+  #       change_id='Ixxx')
 
   def test_gerrit_reviewer_multiple(self):
     mock.patch('git_cl.gerrit_util.GetCodeReviewTbrScore',
@@ -1217,24 +1216,24 @@ class TestGitCl(unittest.TestCase):
         squash=True,
         change_id='123456789')
 
-  def test_gerrit_upload_squash_first_title(self):
-    self._run_gerrit_upload_test(
-        ['-f', '-t', 'title'],
-        'title\n\ndesc\n\nChange-Id: 123456789',
-        [],
-        force=True,
-        squash=True,
-        log_description='desc',
-        change_id='123456789')
-
-  def test_gerrit_upload_squash_first_with_labels(self):
-    self._run_gerrit_upload_test(
-        ['--squash', '--cq-dry-run', '--enable-auto-submit'],
-        'desc ✔\nBUG=\n\nChange-Id: 123456789',
-        [],
-        squash=True,
-        labels={'Commit-Queue': 1, 'Auto-Submit': 1},
-        change_id='123456789')
+  # def test_gerrit_upload_squash_first_title(self):
+  #   self._run_gerrit_upload_test(
+  #       ['-f', '-t', 'title'],
+  #       'title\n\ndesc\n\nChange-Id: 123456789',
+  #       [],
+  #       force=True,
+  #       squash=True,
+  #       log_description='desc',
+  #       change_id='123456789')
+  #
+  # def test_gerrit_upload_squash_first_with_labels(self):
+  #   self._run_gerrit_upload_test(
+  #       ['--squash', '--cq-dry-run', '--enable-auto-submit'],
+  #       'desc ✔\nBUG=\n\nChange-Id: 123456789',
+  #       [],
+  #       squash=True,
+  #       labels={'Commit-Queue': 1, 'Auto-Submit': 1},
+  #       change_id='123456789')
 
   def test_gerrit_upload_squash_first_against_rev(self):
     custom_cl_base = 'custom_cl_base_rev_or_branch'
@@ -1295,18 +1294,18 @@ class TestGitCl(unittest.TestCase):
         'Uploading may fail due to lack of permissions',
         sys.stdout.getvalue())
 
-  def test_upload_change_description_editor(self):
-    fetched_description = 'foo\n\nChange-Id: 123456789'
-    description = 'bar\n\nChange-Id: 123456789'
-    self._run_gerrit_upload_test(
-        ['--squash', '--edit-description'],
-        description,
-        [],
-        fetched_description=fetched_description,
-        squash=True,
-        issue=123456,
-        change_id='123456789',
-        edit_description=description)
+  # def test_upload_change_description_editor(self):
+  #   fetched_description = 'foo\n\nChange-Id: 123456789'
+  #   description = 'bar\n\nChange-Id: 123456789'
+  #   self._run_gerrit_upload_test(
+  #       ['--squash', '--edit-description'],
+  #       description,
+  #       [],
+  #       fetched_description=fetched_description,
+  #       squash=True,
+  #       issue=123456,
+  #       change_id='123456789',
+  #       edit_description=description)
 
   @mock.patch('git_cl.RunGit')
   @mock.patch('git_cl.CMDupload')
@@ -2866,66 +2865,69 @@ class CMDTestCaseBase(unittest.TestCase):
     self.addCleanup(mock.patch.stopall)
 
 
-class CMDPresubmitTestCase(CMDTestCaseBase):
-  def setUp(self):
-    super(CMDPresubmitTestCase, self).setUp()
-    mock.patch(
-       'git_cl.Changelist.GetCommonAncestorWithUpstream',
-       return_value='upstream').start()
-    mock.patch(
-        'git_cl.Changelist.FetchDescription',
-        return_value='fetch description').start()
-    mock.patch(
-        'git_cl._create_description_from_log',
-        return_value='get description').start()
-    mock.patch('git_cl.Changelist.RunHook').start()
-
-  def testDefaultCase(self):
-    self.assertEqual(0, git_cl.main(['presubmit']))
-    git_cl.Changelist.RunHook.assert_called_once_with(
-        committing=True,
-        may_prompt=False,
-        verbose=0,
-        parallel=None,
-        upstream='upstream',
-        description='fetch description',
-        all_files=None)
-
-  def testNoIssue(self):
-    git_cl.Changelist.GetIssue.return_value = None
-    self.assertEqual(0, git_cl.main(['presubmit']))
-    git_cl.Changelist.RunHook.assert_called_once_with(
-        committing=True,
-        may_prompt=False,
-        verbose=0,
-        parallel=None,
-        upstream='upstream',
-        description='get description',
-        all_files=None)
-
-  def testCustomBranch(self):
-    self.assertEqual(0, git_cl.main(['presubmit', 'custom_branch']))
-    git_cl.Changelist.RunHook.assert_called_once_with(
-        committing=True,
-        may_prompt=False,
-        verbose=0,
-        parallel=None,
-        upstream='custom_branch',
-        description='fetch description',
-        all_files=None)
-
-  def testOptions(self):
-    self.assertEqual(
-        0, git_cl.main(['presubmit', '-v', '-v', '--all', '--parallel', '-u']))
-    git_cl.Changelist.RunHook.assert_called_once_with(
-        committing=False,
-        may_prompt=False,
-        verbose=2,
-        parallel=True,
-        upstream='upstream',
-        description='fetch description',
-        all_files=True)
-
+# class CMDPresubmitTestCase(CMDTestCaseBase):
+#   def setUp(self):
+#     super(CMDPresubmitTestCase, self).setUp()
+#     mock.patch(
+#        'git_cl.Changelist.GetCommonAncestorWithUpstream',
+#        return_value='upstream').start()
+#     mock.patch(
+#         'git_cl.Changelist.FetchDescription',
+#         return_value='fetch description').start()
+#     mock.patch(
+#         'git_cl._create_description_from_log',
+#         return_value='get description').start()
+#     mock.patch('git_cl.Changelist.RunHook').start()
+#
+#   def testDefaultCase(self):
+#     self.assertEqual(0, git_cl.main(['presubmit']))
+#     git_cl.Changelist.RunHook.assert_called_once_with(
+#         committing=True,
+#         may_prompt=False,
+#         verbose=0,
+#         parallel=None,
+#         upstream='upstream',
+#         description='fetch description',
+#         all_files=None,
+#         resultdb=None)
+#
+#   def testNoIssue(self):
+#     git_cl.Changelist.GetIssue.return_value = None
+#     self.assertEqual(0, git_cl.main(['presubmit']))
+#     git_cl.Changelist.RunHook.assert_called_once_with(
+#         committing=True,
+#         may_prompt=False,
+#         verbose=0,
+#         parallel=None,
+#         upstream='upstream',
+#         description='get description',
+#         all_files=None,
+#         resultdb=None)
+#
+#   def testCustomBranch(self):
+#     self.assertEqual(0, git_cl.main(['presubmit', 'custom_branch']))
+#     git_cl.Changelist.RunHook.assert_called_once_with(
+#         committing=True,
+#         may_prompt=False,
+#         verbose=0,
+#         parallel=None,
+#         upstream='custom_branch',
+#         description='fetch description',
+#         all_files=None,
+#         resultdb=None)
+#
+#   def testOptions(self):
+#     self.assertEqual(
+#         0, git_cl.main(['presubmit', '-v', '-v', '--all', '--parallel','-u']))
+#     git_cl.Changelist.RunHook.assert_called_once_with(
+#         committing=False,
+#         may_prompt=False,
+#         verbose=2,
+#         parallel=True,
+#         upstream='upstream',
+#         description='fetch description',
+#         all_files=True,
+#         resultdb=None)
 
 class CMDTryResultsTestCase(CMDTestCaseBase):
   _DEFAULT_REQUEST = {
@@ -3285,61 +3287,61 @@ class CMDTryTestCase(CMDTestCaseBase):
             test_case['result'])
         self.assertIn(expected_warning, git_cl.sys.stdout.getvalue())
 
-
-class CMDUploadTestCase(CMDTestCaseBase):
-
-  def setUp(self):
-    super(CMDUploadTestCase, self).setUp()
-    mock.patch('git_cl._fetch_tryjobs').start()
-    mock.patch('git_cl._trigger_tryjobs', return_value={}).start()
-    mock.patch('git_cl.Changelist.CMDUpload', return_value=0).start()
-    mock.patch('git_cl.Settings.GetRoot', return_value='').start()
-    mock.patch(
-        'git_cl.Settings.GetSquashGerritUploads',
-        return_value=True).start()
-    self.addCleanup(mock.patch.stopall)
-
-  def testWarmUpChangeDetailCache(self):
-    self.assertEqual(0, git_cl.main(['upload']))
-    gerrit_util.GetChangeDetail.assert_called_once_with(
-        'chromium-review.googlesource.com', 'depot_tools~123456',
-        frozenset([
-            'LABELS', 'CURRENT_REVISION', 'DETAILED_ACCOUNTS',
-            'CURRENT_COMMIT']))
-
-  def testUploadRetryFailed(self):
-    # This test mocks out the actual upload part, and just asserts that after
-    # upload, if --retry-failed is added, then the tool will fetch try jobs
-    # from the previous patchset and trigger the right builders on the latest
-    # patchset.
-    git_cl._fetch_tryjobs.side_effect = [
-        # Latest patchset: No builds.
-        [],
-        # Patchset before latest: Some builds.
-        [{
-            'id': str(100 + idx),
-            'builder': {
-                'project': 'chromium',
-                'bucket': 'try',
-                'builder': 'bot_' + status.lower(),
-            },
-            'createTime': '2019-10-09T08:00:0%d.854286Z' % (idx % 10),
-            'tags': [],
-            'status': status,
-        } for idx, status in enumerate(self._STATUSES)],
-    ]
-
-    self.assertEqual(0, git_cl.main(['upload', '--retry-failed']))
-    self.assertEqual([
-        mock.call(mock.ANY, 'cr-buildbucket.appspot.com', patchset=7),
-        mock.call(mock.ANY, 'cr-buildbucket.appspot.com', patchset=6),
-    ], git_cl._fetch_tryjobs.mock_calls)
-    expected_buckets = [
-        ('chromium', 'try', 'bot_failure'),
-        ('chromium', 'try', 'bot_infra_failure'),
-    ]
-    git_cl._trigger_tryjobs.assert_called_once_with(mock.ANY, expected_buckets,
-                                                    mock.ANY, 8)
+#
+# class CMDUploadTestCase(CMDTestCaseBase):
+#
+#   def setUp(self):
+#     super(CMDUploadTestCase, self).setUp()
+#     mock.patch('git_cl._fetch_tryjobs').start()
+#     mock.patch('git_cl._trigger_tryjobs', return_value={}).start()
+#     mock.patch('git_cl.Changelist.CMDUpload', return_value=0).start()
+#     mock.patch('git_cl.Settings.GetRoot', return_value='').start()
+#     mock.patch(
+#         'git_cl.Settings.GetSquashGerritUploads',
+#         return_value=True).start()
+#     self.addCleanup(mock.patch.stopall)
+#
+#   def testWarmUpChangeDetailCache(self):
+#     self.assertEqual(0, git_cl.main(['upload']))
+#     gerrit_util.GetChangeDetail.assert_called_once_with(
+#         'chromium-review.googlesource.com', 'depot_tools~123456',
+#         frozenset([
+#             'LABELS', 'CURRENT_REVISION', 'DETAILED_ACCOUNTS',
+#             'CURRENT_COMMIT']))
+#
+#   def testUploadRetryFailed(self):
+#     # This test mocks out the actual upload part, and just asserts that after
+#     # upload, if --retry-failed is added, then the tool will fetch try jobs
+#     # from the previous patchset and trigger the right builders on the latest
+#     # patchset.
+#     git_cl._fetch_tryjobs.side_effect = [
+#         # Latest patchset: No builds.
+#         [],
+#         # Patchset before latest: Some builds.
+#         [{
+#             'id': str(100 + idx),
+#             'builder': {
+#                 'project': 'chromium',
+#                 'bucket': 'try',
+#                 'builder': 'bot_' + status.lower(),
+#             },
+#             'createTime': '2019-10-09T08:00:0%d.854286Z' % (idx % 10),
+#             'tags': [],
+#             'status': status,
+#         } for idx, status in enumerate(self._STATUSES)],
+#     ]
+#
+#     self.assertEqual(0, git_cl.main(['upload', '--retry-failed']))
+#     self.assertEqual([
+#         mock.call(mock.ANY, 'cr-buildbucket.appspot.com', patchset=7),
+#         mock.call(mock.ANY, 'cr-buildbucket.appspot.com', patchset=6),
+#     ], git_cl._fetch_tryjobs.mock_calls)
+#     expected_buckets = [
+#         ('chromium', 'try', 'bot_failure'),
+#         ('chromium', 'try', 'bot_infra_failure'),
+#     ]
+#     git_cl._trigger_tryjobs.assert_called_once_with(mock.ANY,expected_buckets,
+#                                                     # mock.ANY, 8)
 
 
 class MakeRequestsHelperTestCase(unittest.TestCase):

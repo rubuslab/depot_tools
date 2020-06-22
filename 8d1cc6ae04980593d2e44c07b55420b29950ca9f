@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e798c8b9_8af13394",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-06-22T17:49:43Z",
+      "side": 1,
+      "message": "CIPD?",
+      "range": {
+        "startLine": 7,
+        "startChar": 48,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74bc52fc_26655420",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-06-22T17:49:43Z",
+      "side": 1,
+      "message": "IMO it would be better solved at the gclient layer, or the DEPS layer (i.e. only pull those CIPD packages on specific supported architectures).\n\nThat said, Go 1.12 supports aix/ppc64, so maybe we can just add this to the (untested) target architecture list (though gclient is likely going to be downloading a bunch of binaries which don\u0027t actually apply to your platform).\n\nAs a workaround, I would recommend adding a small cipd script which does \u0027exit 0\u0027 to your $PATH ahead of depot_tools.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

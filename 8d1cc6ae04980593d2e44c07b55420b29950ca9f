@@ -93,6 +93,30 @@
       "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa4a926f_ddfc87bd",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-06-22T18:25:16Z",
+      "side": 1,
+      "message": "Thanks for the information.\n\nIs cross compiling possible? I have tried \"GOOS\u003daix GOARCH\u003dppc64 go build test.go\" on an x64 machine but it fails with \"unsupported GOOS/GOARCH pair aix/ppc64\".\n\nSame command runs fine on an AIX machine.",
+      "parentUuid": "4599d31e_de93791e",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

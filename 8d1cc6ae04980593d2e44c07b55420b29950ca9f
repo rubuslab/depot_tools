@@ -117,6 +117,30 @@
       "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c02e66be_4fa4a1f9",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-06-22T19:23:46Z",
+      "side": 1,
+      "message": "Yes, but you\u0027ll probably need to build the SDK from source to ensure that all cross compile targets are available. It also depends on which golang version (AIX support was only added in 1.12 I think). I\u0027d start with https://golang.org/doc/install/source",
+      "parentUuid": "fa4a926f_ddfc87bd",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

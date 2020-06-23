@@ -741,11 +741,11 @@ Raises:
 
 #### **class [PresubmitApi](/recipes/recipe_modules/presubmit/api.py#16)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
 
-&mdash; **def [\_\_call\_\_](/recipes/recipe_modules/presubmit/api.py#28)(self, \*args, \*\*kwargs):**
+&mdash; **def [\_\_call\_\_](/recipes/recipe_modules/presubmit/api.py#31)(self, \*args, \*\*kwargs):**
 
 Return a presubmit step.
 
-&mdash; **def [execute](/recipes/recipe_modules/presubmit/api.py#77)(self, bot_update_step, skip_owners=False):**
+&mdash; **def [execute](/recipes/recipe_modules/presubmit/api.py#81)(self, bot_update_step, skip_owners=False):**
 
 Runs presubmit and sets summary markdown if applicable.
 
@@ -755,7 +755,7 @@ Args:
 Returns:
   a RawResult object, suitable for being returned from RunSteps.
 
-&mdash; **def [prepare](/recipes/recipe_modules/presubmit/api.py#41)(self):**
+&mdash; **def [prepare](/recipes/recipe_modules/presubmit/api.py#45)(self):**
 
 Set up a presubmit run.
 

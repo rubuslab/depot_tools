@@ -165,6 +165,30 @@
       "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "088464ea_21c909d9",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-06-23T01:19:07Z",
+      "side": 1,
+      "message": "Sorry I went silent; I added this to our builders and discovered a build issue which should be resolved shortly. If that produces a CIPD binary, I\u0027ll roll the new version into depot_tools tomorrow!",
+      "parentUuid": "27396332_ee10af92",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

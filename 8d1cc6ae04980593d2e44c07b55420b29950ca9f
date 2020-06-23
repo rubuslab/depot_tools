@@ -213,6 +213,30 @@
       "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9d4abe5_60c3456f",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-06-23T02:10:57Z",
+      "side": 1,
+      "message": "Filed https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1098127.\n\nTurns out I goofed the fix (https://github.com/danjacques/gofslock/commit/e51aef0867a3a5c55ef7ac69ae814616982c12a6, fix for goof: https://github.com/danjacques/gofslock/pull/6), so that will probably get pulled tomorrow; then I can roll it into our deps lock (e.g. https://chromium-review.googlesource.com/c/infra/infra/+/2258876), at which point cipd will be built (internal), and I can roll it into depot_tools.",
+      "parentUuid": "53bc66cb_0c564b5e",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -189,6 +189,30 @@
       "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53bc66cb_0c564b5e",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-06-23T01:50:40Z",
+      "side": 1,
+      "message": "Thanks a lot for your help. Is there a thread I can monitor this? or should I bug you here if I wanted follow up with how the process went?",
+      "parentUuid": "088464ea_21c909d9",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

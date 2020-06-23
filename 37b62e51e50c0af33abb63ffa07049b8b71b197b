@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e28de696_c393b465",
+        "filename": "cipd",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-06-23T22:53:03Z",
+      "side": 0,
+      "message": "agree about dropping the reference.",
+      "range": {
+        "startLine": 43,
+        "startChar": 57,
+        "endLine": 43,
+        "endChar": 73
+      },
+      "revId": "37b62e51e50c0af33abb63ffa07049b8b71b197b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

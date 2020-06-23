@@ -237,6 +237,30 @@
       "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86c07c88_bc62c971",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-06-23T02:46:06Z",
+      "side": 1,
+      "message": "That is great, I will test the built binary and if it runs we can modify the cipd script to include AIX.",
+      "parentUuid": "c9d4abe5_60c3456f",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

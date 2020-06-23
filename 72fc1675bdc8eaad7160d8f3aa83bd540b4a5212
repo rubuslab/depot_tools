@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e45f1fec_02a3427f",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-06-23T20:39:53Z",
+      "side": 1,
+      "message": "yes this returns \"aix\".",
+      "parentUuid": "cdafadea_6183a61a",
+      "range": {
+        "startLine": 14,
+        "startChar": 8,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b349dcce_90f5480f",
         "filename": "cipd",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2020-06-23T20:31:09Z",
       "side": 1,
       "message": "as much as I like having 10 lines for this, I thought it would be better as one.",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e21edabd_6385f127",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-06-23T20:39:53Z",
+      "side": 1,
+      "message": "This usually is not \"ppc64\" on AIX, it may be a string such as \"00f9445f4c00\".\nIs it possible to set it to \"ppc64\" if \"OS\u003d\u003daix\"?",
+      "parentUuid": "b349dcce_90f5480f",
       "range": {
         "startLine": 37,
         "startChar": 8,

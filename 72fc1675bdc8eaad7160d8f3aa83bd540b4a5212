@@ -93,6 +93,30 @@
       "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa49f68d_55b7cb17",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-06-23T20:48:55Z",
+      "side": 1,
+      "message": "\"00f9445f4c00\" huh? That\u0027s interesting 😊.\n\nI\u0027ll make aix cause the arch to be set directly to ppc64.",
+      "parentUuid": "e21edabd_6385f127",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

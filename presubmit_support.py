@@ -28,6 +28,7 @@ import multiprocessing
 import os  # Somewhat exposed through the API.
 import random
 import re  # Exposed through the API.
+import requests
 import signal
 import sys  # Parts exposed through API.
 import tempfile  # Exposed through the API.
@@ -1461,13 +1462,15 @@ class PresubmitExecuter(object):
     self.thread_pool = thread_pool
     self.parallel = parallel
 
-  def ExecPresubmitScript(self, script_text, presubmit_path):
+  def ExecPresubmitScript(self, script_text, presubmit_path, resultdb=False):
     """Executes a single presubmit script.
 
     Args:
       script_text: The text of the presubmit script.
       presubmit_path: The path to the presubmit file (this will be reported via
         input_api.PresubmitLocalPath()).
+      resultdb: If True, we send the test result information about the presubmit
+        checks to ResultDB
 
     Return:
       A list of result objects, empty if no problems.
@@ -1496,11 +1499,29 @@ class PresubmitExecuter(object):
       function_name = 'CheckChangeOnCommit'
     else:
       function_name = 'CheckChangeOnUpload'
-    if function_name in context:
+    if function_name in context: # THIS SECTION WILL NEED SoME REORGANIZATION
       try:
         context['__args'] = (input_api, output_api)
         logging.debug('Running %s in %s', function_name, presubmit_path)
-        result = eval(function_name + '(*__args)', context)
+
+        # TODO: Dive into each of the individual checks so that each individual
+        # test result can be reported to ResultDB
+        # Currently, the rdb streaming will be performed only on the outer func,
+        # i.e. CheckChangeOnCommit() or CheckChangeOnUpload()
+        if resultdb:
+          try:
+            rdbhost = Rdb();
+          except RDBFailure: # if fails to open ResultSink, just run normally
+            result = eval(function_name + '(*__args)', context)
+          else:
+            trs = []
+            tr, result = rdbhost.stream(function_name, context)
+            trs.append(tr)
+            rdbhost.post_results(trs)
+        else:
+          result = eval(function_name + '(*__args)', context)
+
+
         logging.debug('Running %s done.', function_name)
         self.more_cc.extend(output_api.more_cc)
       finally:
@@ -1529,7 +1550,8 @@ def DoPresubmitChecks(change,
                       gerrit_obj,
                       dry_run=None,
                       parallel=False,
-                      json_output=None):
+                      json_output=None,
+                      resultdb=False):
   """Runs all presubmit checks that apply to the files in the change.
 
   This finds all PRESUBMIT.py files in directories enclosing the files in the
@@ -1550,6 +1572,8 @@ def DoPresubmitChecks(change,
     dry_run: if true, some Checks will be skipped.
     parallel: if true, all tests specified by input_api.RunTests in all
               PRESUBMIT files will be run in parallel.
+    resultdb: if true, run tests within the ResultSink environment
+              and send results to ResultDB.
 
   Return:
     1 if presubmit checks failed or 0 otherwise.
@@ -1584,8 +1608,8 @@ def DoPresubmitChecks(change,
         sys.stdout.write('Running %s\n' % filename)
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename, 'rU')
-      results += executer.ExecPresubmitScript(presubmit_script, filename)
-
+      results += executer.ExecPresubmitScript(presubmit_script, filename,
+                                              resultdb)
     results += thread_pool.RunAsync()
 
     messages = {}
@@ -1841,6 +1865,12 @@ def main(argv=None):
           gerrit_obj,
           options.verbose)
     with canned_check_filter(options.skip_canned):
+      resultdb = False
+      if 'LUCI_CONTEXT' in os.environ:
+        with open(os.environ['LUCI_CONTEXT']) as f:
+          if 'result_sink' in json.load(f):
+            resultdb = True
+
       return DoPresubmitChecks(
           change,
           options.commit,
@@ -1850,12 +1880,79 @@ def main(argv=None):
           gerrit_obj,
           options.dry_run,
           options.parallel,
-          options.json_output)
+          options.json_output,
+          resultdb)
   except PresubmitFailure as e:
     print(e, file=sys.stderr)
     print('Maybe your depot_tools is out of date?', file=sys.stderr)
     return 2
 
+class RDBFailure(Exception):
+    """Exception raised when trying to create a ResultSink environment fails."""
+    pass
+
+class Rdb(object):
+  """Presubmit check wrapper for sending timing test results to ResultDB."""
+
+  def __init__(self):
+    """Initialize ResultSink environment. Raises RDBFailure error on failure."""
+    self.sink = None
+    try:
+      with open(os.environ['LUCI_CONTEXT']) as f:
+                self.sink = json.load(f)['result_sink']
+    except Exception:
+      raise RDBFailure("Failed to open a ResultSink. Either os.environ does not"
+                       " contain LUCI_CONTEXT or open() failed.")
+
+  def stream(self, function_name, context):
+    """Runs the test function f(input_api, output_api), doing stopwatch timing.
+
+    Args:
+      function_name: A string that evaluates to the name of the function we
+                     want to run. This function must be available in context.
+      context: a dict that provides mappings for local variable names used.
+               (input_api, output_api) are present as '*__args' in the context.
+
+    Returns:
+      tr: a json-formatted dict of the timing test to post to ResultDB
+      result: a result object created by running the test.
+    """
+
+    t1 = time_time()
+    result = eval(function_name + '(*__args)', context)
+    t2 = time_time()
+    elapsed = t2 - t1
+    status = 'PASS' # CHANGE - how do we know if a test passed or failed?
+            # Need to figure it out somehow.
+            # Will need to change later -- when the stuff passed,
+            # the result shouldn't have any issue. If it failed there is error.
+    tr = {
+          'testId': 'Timed-{0}'.format(function_name),
+          'resultId': 'Timed-{0}'.format(function_name),
+          'status': status,
+          'expected': (status == 'PASS'),
+          'duration': '{:.9f}s'.format(elapsed)
+         }
+    return tr, result;
+
+  def post_results(self, trs):
+    """Post the test results to ResultDB.
+
+    Args:
+        trs: a list of json-formatted dicts that contain test results.
+    """
+    assert self.sink != None , "ResultSink was never initialized"
+    requests.post(
+      url = 'http://{0}/prpc/luci.resultsink.v1.Sink/ReportTestResults'
+              .format(self.sink['address']),
+      headers = {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+                  'Authorization': 'ResultSink {0}'
+                    .format(self.sink['auth_token'])
+                },
+      data = json.dumps({'testResults': trs})
+    )
 
 if __name__ == '__main__':
   fix_encoding.fix_encoding()

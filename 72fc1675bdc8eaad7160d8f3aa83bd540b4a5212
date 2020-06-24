@@ -237,6 +237,30 @@
       "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a92e9631_6907234f",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-06-24T17:47:33Z",
+      "side": 1,
+      "message": "That particular dependency is the isolate client, used for pushing binaries up to the isolate cache server. Doing this requires Google developer credentials, so it should be safe to exclude.\n\nAlternately we could build it for s390x and aix, too, even though it wouldn\u0027t really be used.",
+      "parentUuid": "08c64c72_47a978d2",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

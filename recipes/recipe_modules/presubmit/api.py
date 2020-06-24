@@ -25,7 +25,10 @@ class PresubmitApi(recipe_api.RecipeApi):
   def presubmit_support_path(self):
     return self.repo_resource('presubmit_support.py')
 
-  def __call__(self, *args, **kwargs):
+  #SHOULD ADD AN OPTIONAL PARAMETER HERE FOR RESULTDB.
+  # IF they call it with rdb, then we should wrap() it
+  # instead of calling self.m.python.
+  def __call__(self, resultdb=False, *args, **kwargs):
     """Return a presubmit step."""
 
     kwargs['venv'] = True
@@ -34,7 +37,13 @@ class PresubmitApi(recipe_api.RecipeApi):
       presubmit_args = list(args) + [
           '--json_output', self.m.json.output(),
       ]
-      step_data = self.m.python(
+
+      if resultdb: # need to call wrap() from
+        step_data = self.m.step(name,
+                                [self.presubmit_support_path] + presubmit_args,
+                                wrapper=self.m.resultdb.wrap)
+      else:
+        step_data = self.m.python(
           name, self.presubmit_support_path, presubmit_args, **kwargs)
       return step_data.json.output
 
@@ -74,7 +83,7 @@ class PresubmitApi(recipe_api.RecipeApi):
 
     return bot_update_step
 
-  def execute(self, bot_update_step, skip_owners=False):
+  def execute(self, bot_update_step, skip_owners=False, resultdb=False):
     """Runs presubmit and sets summary markdown if applicable.
 
     Args:
@@ -117,6 +126,7 @@ class PresubmitApi(recipe_api.RecipeApi):
 
     raw_result = result_pb2.RawResult()
     step_json = self(
+        resultdb,
         *presubmit_args,
         timeout=self._timeout_s,
         # ok_ret='any' causes all exceptions to be ignored in this step

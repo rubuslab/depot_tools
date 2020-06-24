@@ -213,6 +213,30 @@
       "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08c64c72_47a978d2",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-06-24T14:49:22Z",
+      "side": 1,
+      "message": "Need to ask one more question,\nNow CIPD works but it fails on downloading a \"V8\" dependency `luci-go` (it doesn\u0027t\u0027 exit for aix).\nIt was excluded form our s390 platforms in this CL:https://chromium-review.googlesource.com/c/v8/v8/+/1320449\n\nWe could do the same for AIX but before I wanted to double check on what it actually does?",
+      "parentUuid": "bd30634b_fb0a2f20",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

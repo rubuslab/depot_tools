@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba866bdb_5d311e4f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-24T22:15:18Z",
+      "side": 1,
+      "message": "What about we also return a PresubmitPromptWarning if whitelist/blacklist parameters are used instead of allowlist/blocklist?",
+      "range": {
+        "startLine": 640,
+        "startChar": 2,
+        "endLine": 640,
+        "endChar": 8
+      },
+      "revId": "a15fe1b00644ca27c761e9d3d0fe2d0bfa397c0d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "069fed12_5a89f7f8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-24T22:15:18Z",
+      "side": 1,
+      "message": "We should add whitelist and blacklist parameters until all callers are migrated.",
+      "range": {
+        "startLine": 696,
+        "startChar": 28,
+        "endLine": 696,
+        "endChar": 37
+      },
+      "revId": "a15fe1b00644ca27c761e9d3d0fe2d0bfa397c0d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

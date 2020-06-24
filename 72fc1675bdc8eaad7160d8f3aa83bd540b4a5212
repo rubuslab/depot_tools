@@ -117,6 +117,30 @@
       "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db5803f8_e09d6191",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-06-24T00:04:05Z",
+      "side": 1,
+      "message": "That\u0027s right, I think it\u0027s related to LPAR environments:\nhttps://www.ibm.com/support/knowledgecenter/ssw_aix_72/u_commands/uname.html\n\n\"The -m flag cannot be used to generate a unique machine identifier for partitions in an LPAR environment.\"",
+      "parentUuid": "fa49f68d_55b7cb17",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 13
+      },
+      "revId": "72fc1675bdc8eaad7160d8f3aa83bd540b4a5212",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

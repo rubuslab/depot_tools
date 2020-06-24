@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "606dc3d8_d517cc86",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-06-24T22:31:39Z",
+      "side": 1,
+      "message": "That sounds good! I would do that as a follow-up CL once we broadcast the changes.",
+      "parentUuid": "ba866bdb_5d311e4f",
+      "range": {
+        "startLine": 640,
+        "startChar": 2,
+        "endLine": 640,
+        "endChar": 8
+      },
+      "revId": "a15fe1b00644ca27c761e9d3d0fe2d0bfa397c0d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "069fed12_5a89f7f8",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "a15fe1b00644ca27c761e9d3d0fe2d0bfa397c0d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b75b7b4_c5660036",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-06-24T22:31:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "069fed12_5a89f7f8",
+      "range": {
+        "startLine": 696,
+        "startChar": 28,
+        "endLine": 696,
+        "endChar": 37
+      },
+      "revId": "a15fe1b00644ca27c761e9d3d0fe2d0bfa397c0d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

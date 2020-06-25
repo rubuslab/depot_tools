@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a2a01cb1_6f37c2fa",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2020-06-25T20:33:55Z",
+      "side": 1,
+      "message": "Yeah that would work. But it requires folks to know that they need to double-quote their gclient vars, which IMO is not intuitive. The ideal solution is one where either \"foo\" or \"cond1 and cond2\" works (with equal amounts of quotes).",
+      "parentUuid": "9f3fdbe5_6409fea9",
+      "range": {
+        "startLine": 159,
+        "startChar": 11,
+        "endLine": 159,
+        "endChar": 18
+      },
+      "revId": "0502c68a572b478b8820007b68f1b8c392338e9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ce7308d_bdfa7a81",
         "filename": "gclient.py",
         "patchSetId": 4

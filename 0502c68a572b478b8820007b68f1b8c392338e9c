@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "843dd5df_379ea3da",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-25T20:55:06Z",
+      "side": 1,
+      "message": "I\u0027d disagree, otherwise it\u0027s impossible to differentiate between a variable foo and the string \"foo\".\nWhat this amounts to is that the content of variables is evaluated when used in conditions or GN args, and as string anywhere else.",
+      "parentUuid": "a2a01cb1_6f37c2fa",
+      "range": {
+        "startLine": 159,
+        "startChar": 11,
+        "endLine": 159,
+        "endChar": 18
+      },
+      "revId": "0502c68a572b478b8820007b68f1b8c392338e9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ce7308d_bdfa7a81",
         "filename": "gclient.py",
         "patchSetId": 4

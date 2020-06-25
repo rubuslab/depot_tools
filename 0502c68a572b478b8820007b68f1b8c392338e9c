@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9f3fdbe5_6409fea9",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-25T20:08:32Z",
+      "side": 1,
+      "message": "Possibly we can remove this instead?\nSo if you want to pass strings to gn you would use \u0027\"foo\"\u0027 but if you want to evaluate, you would use \u0027cond1 and cond2\u0027?",
+      "range": {
+        "startLine": 159,
+        "startChar": 11,
+        "endLine": 159,
+        "endChar": 18
+      },
+      "revId": "0502c68a572b478b8820007b68f1b8c392338e9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ce7308d_bdfa7a81",
         "filename": "gclient.py",
         "patchSetId": 4

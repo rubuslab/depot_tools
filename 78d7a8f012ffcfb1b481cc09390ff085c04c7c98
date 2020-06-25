@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1f28dec_4007ff30",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1296,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-06-25T22:23:53Z",
+      "side": 1,
+      "message": "Can you call this cmd or command? This is not a command-line interface",
+      "range": {
+        "startLine": 1296,
+        "startChar": 8,
+        "endLine": 1296,
+        "endChar": 11
+      },
+      "revId": "78d7a8f012ffcfb1b481cc09390ff085c04c7c98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d40e85e2_322a74bd",
+        "filename": "presubmit_support.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1531,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-06-25T22:23:53Z",
+      "side": 1,
+      "message": "I thought that presubmit_support included something that spawns off individual tests in parallel. If that\u0027s the case, wouldn\u0027t you need to make modifications to create a result sink there and not loop over it here?",
+      "range": {
+        "startLine": 1531,
+        "startChar": 8,
+        "endLine": 1531,
+        "endChar": 58
+      },
+      "revId": "78d7a8f012ffcfb1b481cc09390ff085c04c7c98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "830206f6_f55657d3",
+        "filename": "presubmit_support.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1900,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-06-25T22:23:53Z",
+      "side": 1,
+      "message": "I think rather than calling a staticmethod to get the result_sink value and then after everything is done having to create an Rdb if it wasn\u0027t None, it would make sense to create a contextmanager that creates the ResultSink if necessary and does the timing and does the post afterwards.\n\nThen the code above would look something like this:\nwith result_sink_from_luci_context() as sink:\n  result \u003d eval(function_name + \u0027(*__args)\u0027, context)\n  # if some condition requires us to change the status\n  sink.status \u003d \u0027FAIL\u0027\n\nThat way it would be easily reusable and less setup and conditions at the call sight.",
+      "range": {
+        "startLine": 1900,
+        "startChar": 0,
+        "endLine": 1900,
+        "endChar": 5
+      },
+      "revId": "78d7a8f012ffcfb1b481cc09390ff085c04c7c98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

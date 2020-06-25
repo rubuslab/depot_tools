@@ -1044,7 +1044,14 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     for arg in self._gn_args:
       value = variables[arg]
       if isinstance(value, basestring):
-        value = gclient_eval.EvaluateCondition(value, variables)
+        try:
+          value = gclient_eval.EvaluateCondition(value, variables)
+        except (SyntaxError, ValueError):
+          # It's difficult to determine if the value is a construct of other
+          # conditions (and should be evaluated) or simply a string literal
+          # that should be passed directly to GN. So assume any error thrown
+          # when evaluating it means it should be passed directly to GN.
+          pass
       lines.append('%s = %s' % (arg, ToGNString(value)))
     with open(os.path.join(self.root.root_dir, self._gn_args_file), 'wb') as f:
       f.write('\n'.join(lines).encode('utf-8', 'replace'))

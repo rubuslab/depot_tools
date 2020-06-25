@@ -285,6 +285,30 @@
       "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5ab5f9a_84a20a44",
+        "filename": "cipd",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-06-25T14:28:59Z",
+      "side": 1,
+      "message": "That\u0027s correct, appreciate your help on this again.",
+      "parentUuid": "c24b3e3d_65a945be",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "8d1cc6ae04980593d2e44c07b55420b29950ca9f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

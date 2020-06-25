@@ -145,6 +145,30 @@
     },
     {
       "key": {
+        "uuid": "5b9384d2_aa39b2ac",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2020-06-25T21:08:23Z",
+      "side": 1,
+      "message": "What if we split \"gclient_gn_args\" into \"gclient_gn_args_conditions\" and \"gclient_gn_args_literals\" and only ran \"Evaluate()\" on the former? How much would we hate that?",
+      "parentUuid": "6ab561c1_2a036363",
+      "range": {
+        "startLine": 159,
+        "startChar": 11,
+        "endLine": 159,
+        "endChar": 18
+      },
+      "revId": "0502c68a572b478b8820007b68f1b8c392338e9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ce7308d_bdfa7a81",
         "filename": "gclient.py",
         "patchSetId": 4

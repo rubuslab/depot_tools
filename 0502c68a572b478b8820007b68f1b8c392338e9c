@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "36d7f893_f1a5ab8e",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-06-25T20:59:52Z",
+      "side": 1,
+      "message": "I\u0027m confused by how we\u0027re even getting to this point.\n\ngclient_gn_args is supposed to write the value of a gclient arg out to the corresponding GN arg. \n\nWe shouldn\u0027t be doing any parsing of expressions here.\n\nSeparately, I\u0027m confused about why we\u0027re getting the errors we\u0027re getting: it looks like we\u0027re interpolating values and *then* parsing them as python expressions, and the interpolation should be happening either during or after the parse.",
+      "parentUuid": "843dd5df_379ea3da",
+      "range": {
+        "startLine": 159,
+        "startChar": 11,
+        "endLine": 159,
+        "endChar": 18
+      },
+      "revId": "0502c68a572b478b8820007b68f1b8c392338e9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ce7308d_bdfa7a81",
         "filename": "gclient.py",
         "patchSetId": 4

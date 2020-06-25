@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ce7308d_bdfa7a81",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1049,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2020-06-25T19:22:49Z",
+      "side": 1,
+      "message": "It\u0027s quite ugly, so I\u0027m interested in any alternatives y\u0027all may have.",
+      "revId": "0502c68a572b478b8820007b68f1b8c392338e9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

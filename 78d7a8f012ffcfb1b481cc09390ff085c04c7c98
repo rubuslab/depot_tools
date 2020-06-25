@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "ffb75d7c_37a283ab",
+        "filename": "presubmit_support.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1526,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-25T23:12:31Z",
+      "side": 1,
+      "message": "Notes:\n - If \u0027--parallel\u0027 is used, results for input_api.RunTests() won\u0027t appear here, as they are evaluated in [1].\n - If you only want to report the status, you can do that below in [1] once all results have been computed.\n - If you want to report time for each individual check, it will require a completely different approach where you will need to modify PRESUBMIT.py files, also:\n   * Each _CheckXYZ() function can return several results (info, warnings and errors), not a single pass/fail result (see e.g. [2]). How will you deal with that?\n   * Tests are run using input_api.RunTests() (see [3]), so you\u0027d probably want to handle that in [4]. \n\n[1] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:presubmit_support.py;l\u003d1609\n[2] https://source.chromium.org/chromium/chromium/src/+/master:PRESUBMIT.py;l\u003d4097\n[3] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:PRESUBMIT.py;l\u003d128\n[4] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:presubmit_support.py;l\u003d211",
+      "range": {
+        "startLine": 1525,
+        "startChar": 8,
+        "endLine": 1526,
+        "endChar": 49
+      },
+      "revId": "78d7a8f012ffcfb1b481cc09390ff085c04c7c98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d40e85e2_322a74bd",
         "filename": "presubmit_support.py",
         "patchSetId": 16
@@ -36,6 +59,30 @@
       "writtenOn": "2020-06-25T22:23:53Z",
       "side": 1,
       "message": "I thought that presubmit_support included something that spawns off individual tests in parallel. If that\u0027s the case, wouldn\u0027t you need to make modifications to create a result sink there and not loop over it here?",
+      "range": {
+        "startLine": 1531,
+        "startChar": 8,
+        "endLine": 1531,
+        "endChar": 58
+      },
+      "revId": "78d7a8f012ffcfb1b481cc09390ff085c04c7c98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b77cf7f_aa6708b6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1531,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-25T23:12:31Z",
+      "side": 1,
+      "message": "It does, but only for tests that are run using input_api.RunTests().",
+      "parentUuid": "d40e85e2_322a74bd",
       "range": {
         "startLine": 1531,
         "startChar": 8,

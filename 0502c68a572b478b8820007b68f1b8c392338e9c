@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "6ab561c1_2a036363",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-06-25T21:06:06Z",
+      "side": 1,
+      "message": "Oh, I see, it\u0027s parsing it as if you\u0027re setting the value of mac_xcode_version to the value of the xcode var - 12.\n\nYeah, we knew we had this ambiguity ... hmm, I need to think about this a bit more.",
+      "parentUuid": "36d7f893_f1a5ab8e",
+      "range": {
+        "startLine": 159,
+        "startChar": 11,
+        "endLine": 159,
+        "endChar": 18
+      },
+      "revId": "0502c68a572b478b8820007b68f1b8c392338e9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ce7308d_bdfa7a81",
         "filename": "gclient.py",
         "patchSetId": 4

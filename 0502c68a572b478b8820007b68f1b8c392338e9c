@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "dc3654c0_e1167289",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-06-25T21:05:46Z",
+      "side": 1,
+      "message": "We have to do parsing of expressions.\nTake \u0027checkout_android_native_support\u0027, it\u0027s value is \"checkout_android or checkout_chromeos\"",
+      "parentUuid": "36d7f893_f1a5ab8e",
+      "range": {
+        "startLine": 159,
+        "startChar": 11,
+        "endLine": 159,
+        "endChar": 18
+      },
+      "revId": "0502c68a572b478b8820007b68f1b8c392338e9c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ce7308d_bdfa7a81",
         "filename": "gclient.py",
         "patchSetId": 4

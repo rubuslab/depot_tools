@@ -46,6 +46,30 @@
       "revId": "bc4bf657e28f39dd4578bef2dd36bd84393ec136",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e4dba0f_d7f6788f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-06-26T21:21:58Z",
+      "side": 1,
+      "message": "Ok, this should work as of patchset 2.",
+      "parentUuid": "1baf7950_35375f2f",
+      "range": {
+        "startLine": 33,
+        "startChar": 2,
+        "endLine": 33,
+        "endChar": 34
+      },
+      "revId": "bc4bf657e28f39dd4578bef2dd36bd84393ec136",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1043,7 +1043,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     variables = self.get_vars()
     for arg in self._gn_args:
       value = variables[arg]
-      if isinstance(value, basestring):
+      if isinstance(value, gclient_eval.ConstantString):
+        value = value.value
+      elif isinstance(value, basestring):
         value = gclient_eval.EvaluateCondition(value, variables)
       lines.append('%s = %s' % (arg, ToGNString(value)))
     with open(os.path.join(self.root.root_dir, self._gn_args_file), 'wb') as f:

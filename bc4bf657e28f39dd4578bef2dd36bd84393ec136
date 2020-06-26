@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb7d8e63_c5f822d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2020-06-26T16:43:03Z",
+      "side": 1,
+      "message": "Does this also work if you then overwrite the var via \"custom_vars\" in your .gclient file?\n\neg: If it defaults to \"xcode-12\" in the DEPS file, how does one overwrite it to \"xcode-99\" in custom_vars?",
+      "range": {
+        "startLine": 33,
+        "startChar": 2,
+        "endLine": 33,
+        "endChar": 34
+      },
+      "revId": "bc4bf657e28f39dd4578bef2dd36bd84393ec136",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

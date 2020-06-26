@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51cb3922_f734a2f6",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2020-06-26T22:08:50Z",
+      "side": 1,
+      "message": "not sure that\u0027ll work; pass in customs_vars as an arg instead?",
+      "range": {
+        "startLine": 1292,
+        "startChar": 24,
+        "endLine": 1292,
+        "endChar": 29
+      },
+      "revId": "f7ef6c33b485e4f5fb3dddaed1e52dec52225808",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

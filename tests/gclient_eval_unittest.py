@@ -47,7 +47,8 @@ class GClientEvalTest(unittest.TestCase):
   def test_invalid_call(self):
     with self.assertRaises(ValueError) as cm:
       gclient_eval._gclient_eval('Foo("bar")')
-    self.assertIn('Var is the only allowed function', str(cm.exception))
+    self.assertIn('Str and Var are the only allowed functions',
+                  str(cm.exception))
 
   def test_expands_vars(self):
     self.assertEqual(

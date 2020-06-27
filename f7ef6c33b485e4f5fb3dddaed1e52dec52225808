@@ -22,6 +22,30 @@
       "revId": "f7ef6c33b485e4f5fb3dddaed1e52dec52225808",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b62ebc3_74087fd1",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-06-27T01:27:43Z",
+      "side": 1,
+      "message": "Ah, whoops, that should be just be `v`, not `self.custom_vars[k]`.\n\nClearly, more testing coverage is needed :).",
+      "parentUuid": "51cb3922_f734a2f6",
+      "range": {
+        "startLine": 1292,
+        "startChar": 24,
+        "endLine": 1292,
+        "endChar": 29
+      },
+      "revId": "f7ef6c33b485e4f5fb3dddaed1e52dec52225808",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

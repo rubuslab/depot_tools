@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ac2c6b63_d9979463",
+        "filename": "git_cl.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1296,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-06-30T05:49:28Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "f1f28dec_4007ff30",
+      "range": {
+        "startLine": 1296,
+        "startChar": 8,
+        "endLine": 1296,
+        "endChar": 11
+      },
+      "revId": "78d7a8f012ffcfb1b481cc09390ff085c04c7c98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffb75d7c_37a283ab",
         "filename": "presubmit_support.py",
         "patchSetId": 16
@@ -36,6 +60,30 @@
       "writtenOn": "2020-06-25T23:12:31Z",
       "side": 1,
       "message": "Notes:\n - If \u0027--parallel\u0027 is used, results for input_api.RunTests() won\u0027t appear here, as they are evaluated in [1].\n - If you only want to report the status, you can do that below in [1] once all results have been computed.\n - If you want to report time for each individual check, it will require a completely different approach where you will need to modify PRESUBMIT.py files, also:\n   * Each _CheckXYZ() function can return several results (info, warnings and errors), not a single pass/fail result (see e.g. [2]). How will you deal with that?\n   * Tests are run using input_api.RunTests() (see [3]), so you\u0027d probably want to handle that in [4]. \n\n[1] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:presubmit_support.py;l\u003d1609\n[2] https://source.chromium.org/chromium/chromium/src/+/master:PRESUBMIT.py;l\u003d4097\n[3] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:PRESUBMIT.py;l\u003d128\n[4] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:presubmit_support.py;l\u003d211",
+      "range": {
+        "startLine": 1525,
+        "startChar": 8,
+        "endLine": 1526,
+        "endChar": 49
+      },
+      "revId": "78d7a8f012ffcfb1b481cc09390ff085c04c7c98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "513bcee6_4f31652b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1526,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-06-30T05:49:28Z",
+      "side": 1,
+      "message": "Responses (in order): \n    - I am not sure I follow what you mean, don\u0027t we still end up calling ExecPresubmitScript() so it eventually does get to this code?\n    - I could report the status below in [1], but I think doing it here is clearer to read and easier to follow since it fits the wrapper nicely around the eval(function_name + \u0027(*__args)\u0027, context)\n    - Yes, agreed. I will talk with Erik to identify how exactly I should go about reorganizing the code so that we can dive into each of the individual tests.\n        * It appears that the _CheckXYZ() functions return [] on pass and a list of info/warning/errors on fail. Is it safe to say that I can simply check if the function returns [] for pass, otherwise it failed (and thus I can read the objects it returned and pass them up to the user to interpret)?\n        * Ok, will do. \n\nI\u0027ll let you know if I have any other questions. Thank you for the suggestions!",
+      "parentUuid": "ffb75d7c_37a283ab",
       "range": {
         "startLine": 1525,
         "startChar": 8,

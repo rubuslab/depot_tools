@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9bb1725_7a8d6e35",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-01T20:33:50Z",
+      "side": 1,
+      "message": "This is probably better called \u0027skip_list\u0027.",
+      "revId": "29389a60f4aea03182bd41c614f14dfee3f02fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "598b22be_9438d86d",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-01T20:33:50Z",
+      "side": 1,
+      "message": "Can we change input_api.DEFAULT_BLOCK_LIST to input_api.DEFAULT_SKIP_LIST ?",
+      "revId": "29389a60f4aea03182bd41c614f14dfee3f02fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a76baf4d_7f5863a9",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-01T20:33:50Z",
+      "side": 1,
+      "message": "I might call this one tests_to_run_list / tests_to_skip_list.",
+      "revId": "29389a60f4aea03182bd41c614f14dfee3f02fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be5153ad_2c59ea80",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-01T20:33:50Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "29389a60f4aea03182bd41c614f14dfee3f02fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

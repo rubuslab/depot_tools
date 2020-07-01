@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8810da07_374840c7",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-07-01T20:39:55Z",
+      "side": 1,
+      "message": "I was trying to find what terms the industry is converging on and I\u0027m seeing a lot of allowlist/denylist. I\u0027m not sure if we feel strongly about sticking to one term everywhere, though.\n\nI\u0027m slightly concerned about \"skip list\" since that\u0027s also the name of a data structure.",
+      "parentUuid": "d9bb1725_7a8d6e35",
+      "revId": "29389a60f4aea03182bd41c614f14dfee3f02fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "598b22be_9438d86d",
         "filename": "PRESUBMIT.py",
         "patchSetId": 2

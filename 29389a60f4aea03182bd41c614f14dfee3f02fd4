@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7489e64c_5b00443f",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-01T20:58:25Z",
+      "side": 1,
+      "message": "Yeah, allowlist / denylist do seem to be the common names when you have nothing context-appropriate that\u0027s obviously better. But, I think you\u0027re generally encouraged to use something context-appropriate if you can.\n\nI\u0027m not sure if \"skip list\" will be that confusing, but files_to_check/files_to_skip would probalby be better still.",
+      "parentUuid": "8810da07_374840c7",
+      "revId": "29389a60f4aea03182bd41c614f14dfee3f02fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "598b22be_9438d86d",
         "filename": "PRESUBMIT.py",
         "patchSetId": 2

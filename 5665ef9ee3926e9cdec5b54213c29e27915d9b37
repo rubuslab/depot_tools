@@ -16,6 +16,24 @@
       "revId": "5665ef9ee3926e9cdec5b54213c29e27915d9b37",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1b67648_726c9350",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3608,
+      "author": {
+        "id": 1312130
+      },
+      "writtenOn": "2020-07-02T16:48:15Z",
+      "side": 1,
+      "message": "I think keys() might be Python 3 only (I am no python expert). This should work on both. I used this as reference\n\nhttps://www.python.org/dev/peps/pep-0469/#iterator-objects",
+      "parentUuid": "615f0c70_167c7d3b",
+      "revId": "5665ef9ee3926e9cdec5b54213c29e27915d9b37",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

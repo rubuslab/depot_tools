@@ -34,6 +34,24 @@
       "revId": "5665ef9ee3926e9cdec5b54213c29e27915d9b37",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e38e6cd7_6de63c82",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3608,
+      "author": {
+        "id": 1176519
+      },
+      "writtenOn": "2020-07-03T07:31:18Z",
+      "side": 1,
+      "message": "https://www.python.org/dev/peps/pep-0469/#migrating-directly-to-python-3 says d.iterkeys() is the semantic equivalent of iter(d.keys()) but also notes that keys() can often be dropped.\n\nhttps://docs.python.org/2.7/library/stdtypes.html#dict.keys says that d.keys() also exists in Python 2.\n\nI\u0027m also no python expert, so I\u0027d play it safe and go with the semantic replacement.\n\nBut maybe we should just find a python expert.",
+      "parentUuid": "b1b67648_726c9350",
+      "revId": "5665ef9ee3926e9cdec5b54213c29e27915d9b37",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

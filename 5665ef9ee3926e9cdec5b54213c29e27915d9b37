@@ -52,6 +52,24 @@
       "revId": "5665ef9ee3926e9cdec5b54213c29e27915d9b37",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62e06b0c_7a3785f8",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3608,
+      "author": {
+        "id": 1312130
+      },
+      "writtenOn": "2020-07-03T08:29:34Z",
+      "side": 1,
+      "message": "sorry my first link was the wrong one. I looked at this: https://www.python.org/dev/peps/pep-0469/#migrating-from-python-3-to-the-common-subset-with-python-2-7\n\nI don\u0027t really care which one to use. And I don\u0027t think performance is an issue here (some of these conversions create a temp list). I am happy for somebody with more python background to look at this. Do you know who in owners would be best? Thanks!",
+      "parentUuid": "e38e6cd7_6de63c82",
+      "revId": "5665ef9ee3926e9cdec5b54213c29e27915d9b37",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

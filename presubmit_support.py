@@ -28,6 +28,7 @@ import multiprocessing
 import os  # Somewhat exposed through the API.
 import random
 import re  # Exposed through the API.
+import requests
 import signal
 import sys  # Parts exposed through API.
 import tempfile  # Exposed through the API.
@@ -1520,7 +1521,25 @@ class PresubmitExecuter(object):
       try:
         context['__args'] = (input_api, output_api)
         logging.debug('Running %s in %s', function_name, presubmit_path)
-        result = eval(function_name + '(*__args)', context)
+
+        # TODO: Dive into each of the individual checks so that each individual
+        # test result can be reported to ResultDB
+        # Currently, the rdb streaming will be performed only on the outer func,
+        # i.e. CheckChangeOnCommit() or CheckChangeOnUpload()
+
+        # will need to iterate over tests with a loop here
+        with setup_rdb(function_name) as tr:
+          result = eval(function_name + '(*__args)', context)
+          # The following is repeated logic. How should we go about
+          if not isinstance(result, (tuple, list)):
+            tr['status'] = 'FAIL'
+          else:
+            for res in result:
+              if not isinstance(res, OutputApi.PresubmitResult) or res.fatal:
+                tr['status'] = 'FAIL'
+
+        # end for loop
+
         logging.debug('Running %s done.', function_name)
         self.more_cc.extend(output_api.more_cc)
       finally:
@@ -1605,7 +1624,6 @@ def DoPresubmitChecks(change,
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename, 'rU')
       results += executer.ExecPresubmitScript(presubmit_script, filename)
-
     results += thread_pool.RunAsync()
 
     messages = {}
@@ -1875,6 +1893,39 @@ def main(argv=None):
     print(e, file=sys.stderr)
     print('Maybe your depot_tools is out of date?', file=sys.stderr)
     return 2
+
+@contextlib.contextmanager
+def setup_rdb(function_name):
+  sink = None
+  if 'LUCI_CONTEXT' in os.environ:
+    with open(os.environ['LUCI_CONTEXT']) as f:
+      j = json.load(f)
+      if 'result_sink' in j:
+        sink = j['result_sink']
+  tr  = {
+          'testId': '{0}:{1}'.format(os.getcwd(), function_name),
+          'status': 'PASS',
+        }
+  start_time = time.time()
+
+  yield tr
+
+  end_time = time.time()
+  elapsed_time = end_time - start_time
+  if sink != None:
+    tr['expected'] = (tr['status'] == 'PASS')
+    tr['duration'] = '{:.9f}s'.format(elapsed_time)
+    requests.post(
+      url = 'http://{0}/prpc/luci.resultsink.v1.Sink/ReportTestResults'
+              .format(sink['address']),
+      headers = {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+                  'Authorization': 'ResultSink {0}'
+                    .format(sink['auth_token'])
+                },
+      data = json.dumps({'testResults': [tr] })
+    )
 
 
 if __name__ == '__main__':

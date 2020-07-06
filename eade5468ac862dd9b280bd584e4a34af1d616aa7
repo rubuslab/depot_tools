@@ -16,6 +16,23 @@
       "revId": "eade5468ac862dd9b280bd584e4a34af1d616aa7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b96e159f_6a12f099",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1119849
+      },
+      "writtenOn": "2020-07-06T18:02:50Z",
+      "side": 1,
+      "message": "Sure, however I\u0027m not sure how to add tests for this. gn_args_file seems to be tested only as part of the flatten tests here https://source.chromium.org/chromium/chromium/src/+/master:third_party/depot_tools/tests/gclient_git_smoketest.py?q\u003dgn_args_file\u0026ss\u003dchromium%2Fchromium%2Fsrc where are tests for WriteGNArgsFile?",
+      "revId": "eade5468ac862dd9b280bd584e4a34af1d616aa7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

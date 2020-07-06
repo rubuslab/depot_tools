@@ -2,8 +2,11 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+import re
 from recipe_engine import recipe_api
 
+class DepsDiffException(Exception):
+  pass
 
 class RevisionResolver(object):
   """Resolves the revision based on build properties."""
@@ -358,3 +361,83 @@ class GclientApi(recipe_api.RecipeApi):
     path, revision = cfg.repo_path_map.get(repo_url, (None, None))
     if path and revision and path not in cfg.revisions:
       cfg.revisions[path] = revision
+
+  def diff_deps(self, cwd):
+    cwd = cwd.join(self.get_gerrit_patch_root())
+    self.m.step('print cwd', ['echo', cwd]) 
+    with self.m.context(cwd=cwd):
+      step_result = self.m.git(
+          '-c',
+        'core.quotePath=false',
+        'checkout',
+        'HEAD~',
+        '--',
+        'DEPS',
+        name='checkout the previous DEPS',
+        stdout=self.m.raw_io.output()
+      )
+
+      self.m.step('print checkout output', ['echo', step_result.stdout]) 
+
+      try:
+        cfg = self.c
+        test_data_paths = set(
+            self.got_revision_reverse_mapping(cfg).values() +
+            [s.name for s in cfg.solutions])
+        step_test_data = lambda: (
+            self.test_api.output_json(test_data_paths))
+
+        self(
+            'recursively git diff all DEPS',
+            [
+                'recurse',
+                'python',
+                self.resource('diff_deps.py'),
+            ],
+            step_test_data=step_test_data,
+            stdout=self.m.raw_io.output(),
+        )
+
+        step_result = self.m.step.active_result
+        step_result.presentation.logs['raw output'] = step_result.stdout
+
+        paths = []
+        # prepends a number and a > to each line
+        for line in step_result.stdout.strip().split('\n'):
+          if 'fatal: bad object' in line:
+            msg = "Couldn't checkout previous ref: %s" % line
+
+            # XXX what's the right way to present this?
+            step_result.presentation.logs['DepsDiffException'] = msg
+            raise DepsDiffException(msg)
+          elif re.match('\d+>', line):
+            paths.append(line[line.index('>') + 1:])
+          else:
+            paths.append(line)
+
+        # Normalize paths
+        if self.m.platform.is_win:
+          # Looks like "analyze" wants POSIX slashes even on Windows (since git
+          # uses that format even on Windows).
+          paths = [path.replace('\\', '/') for path in paths]
+
+        if len(paths) > 0:
+          return paths
+        else:
+          msg = 'Unexpected result: autoroll diff found 0 files changed'
+          step_result.presentation.logs['DepsDiffException'] = msg
+          raise DepsDiffException(msg)
+
+      finally:
+        self.m.git(
+            '-c',
+            'core.quotePath=false',
+            'checkout',
+            'HEAD',
+            '--',
+            'DEPS',
+            name="checkout the original DEPS")
+
+  @property
+  def DepsDiffException(self):
+    return DepsDiffException

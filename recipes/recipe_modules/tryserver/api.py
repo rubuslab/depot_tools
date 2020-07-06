@@ -17,6 +17,7 @@ class TryserverApi(recipe_api.RecipeApi):
     self._gerrit_info_initialized = False
     self._gerrit_change_target_ref = None
     self._gerrit_change_fetch_ref = None
+    self._gerrit_change_owner = None
 
   def initialize(self):
     changes = self.m.buildbucket.build.input.gerrit_changes
@@ -44,6 +45,15 @@ class TryserverApi(recipe_api.RecipeApi):
     Populated iff gerrit_change is populated.
     """
     return self._gerrit_change_repo_url
+
+  @property
+  def gerrit_change_owner(self):
+    """Returns owner of the current Gerrit CL.
+
+    Populated iff gerrit_change is populated.
+    Is a dictionary with keys like "name".
+    """
+    return self._gerrit_change_owner
 
   def _ensure_gerrit_change_info(self):
     """Initializes extra info about gerrit_change, fetched from Gerrit server.
@@ -91,6 +101,7 @@ class TryserverApi(recipe_api.RecipeApi):
       if int(rev['_number']) == self.gerrit_change.patchset:
         self._gerrit_change_fetch_ref = rev['ref']
         break
+    self._gerrit_change_owner = res['owner']
     self._gerrit_info_initialized = True
 
   @property

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d4729005_04ac981d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1937,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-06T15:34:06Z",
+      "side": 1,
+      "message": "You can write a context manager as a single function using contextlib.contextmanager, it also lets you encapsulate stuff better because then you just have local variables rather than instance attributes.",
+      "range": {
+        "startLine": 1899,
+        "startChar": 0,
+        "endLine": 1937,
+        "endChar": 11
+      },
+      "revId": "ca20001671e34a5693654d40628d6c06d7a1cf3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

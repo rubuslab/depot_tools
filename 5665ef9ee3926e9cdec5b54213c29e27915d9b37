@@ -70,6 +70,24 @@
       "revId": "5665ef9ee3926e9cdec5b54213c29e27915d9b37",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b74ab6fb_7b5d0b0b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3608,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-06T16:53:33Z",
+      "side": 1,
+      "message": "I agree that performance isn\u0027t an issue here. I\u0027d go with sorted(issue_branch_map.keys()) to make clearer what the intent of the code is.",
+      "parentUuid": "62e06b0c_7a3785f8",
+      "revId": "5665ef9ee3926e9cdec5b54213c29e27915d9b37",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

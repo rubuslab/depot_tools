@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69fdf361_008c901a",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-07-06T21:03:12Z",
+      "side": 1,
+      "message": "this should be a 6",
+      "range": {
+        "startLine": 39,
+        "startChar": 60,
+        "endLine": 39,
+        "endChar": 61
+      },
+      "revId": "f2617ccaa51fba335a6eecb7fa197aa221e214d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

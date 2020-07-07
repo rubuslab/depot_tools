@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "6e78207b_451580de",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1316409
+      },
+      "writtenOn": "2020-07-07T17:48:55Z",
+      "side": 1,
+      "message": "sokcevic@ Friendly ping on question about terminology...",
+      "parentUuid": "27543f9b_a4fda992",
+      "revId": "29389a60f4aea03182bd41c614f14dfee3f02fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a76baf4d_7f5863a9",
         "filename": "PRESUBMIT.py",
         "patchSetId": 2

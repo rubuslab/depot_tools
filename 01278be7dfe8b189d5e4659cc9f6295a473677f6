@@ -16,6 +16,24 @@
       "revId": "01278be7dfe8b189d5e4659cc9f6295a473677f6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f51189a9_c7c4f9ec",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-07T23:22:51Z",
+      "side": 1,
+      "message": "I would like to match it to their defaults. So, that would mean DEFAULT_FILES_TO_CHECK and DEFAULT_FILES_TO_SKIP. It seems a bit verbose to me, but I\u0027m okay with such change. Thoughts?",
+      "parentUuid": "94551a29_86c1c0f8",
+      "revId": "01278be7dfe8b189d5e4659cc9f6295a473677f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

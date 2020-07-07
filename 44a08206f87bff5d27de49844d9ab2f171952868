@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b835bb8f_d4461511",
+        "filename": "presubmit_support.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-07T21:16:14Z",
+      "side": 1,
+      "message": "Replace \u0027Global variables\u0027 with \u0027Constants\u0027",
+      "range": {
+        "startLine": 67,
+        "startChar": 2,
+        "endLine": 67,
+        "endChar": 18
+      },
+      "revId": "44a08206f87bff5d27de49844d9ab2f171952868",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "face62f6_d4d69463",
+        "filename": "presubmit_support.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1537,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-07T21:16:14Z",
+      "side": 1,
+      "message": "We don\u0027t use camel case for variable names, this should be my_status",
+      "range": {
+        "startLine": 1537,
+        "startChar": 41,
+        "endLine": 1537,
+        "endChar": 49
+      },
+      "revId": "44a08206f87bff5d27de49844d9ab2f171952868",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8f9891d_a2380831",
+        "filename": "presubmit_support.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1926,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-07T21:16:14Z",
+      "side": 1,
+      "message": "my_status instead of myStatus",
+      "range": {
+        "startLine": 1926,
+        "startChar": 2,
+        "endLine": 1926,
+        "endChar": 10
+      },
+      "revId": "44a08206f87bff5d27de49844d9ab2f171952868",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ebd0d729_3b36a090",
+        "filename": "presubmit_support.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1926,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-07T21:16:14Z",
+      "side": 1,
+      "message": "Sorry, I didn\u0027t think about this before, I don\u0027t think think using the current working directory is going to be appropriate for using in the test ID because it will vary depending on where on the local filesystem the source is checked out, so the ID will vary from person to person.\n\nI think you need to either take the directory portion of the ID as another argument or just take the test ID directly and then ResultSinkStatus doesn\u0027t even need the test ID.\n\nWhere you\u0027re calling this function, I think os.path.relpath(os.getcwd(), main_path) will give you the relative path from the source root.",
+      "range": {
+        "startLine": 1926,
+        "startChar": 47,
+        "endLine": 1926,
+        "endChar": 58
+      },
+      "revId": "44a08206f87bff5d27de49844d9ab2f171952868",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

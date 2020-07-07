@@ -162,6 +162,24 @@
     },
     {
       "key": {
+        "uuid": "9a988c8f_4476e42d",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1316409
+      },
+      "writtenOn": "2020-07-07T19:41:28Z",
+      "side": 1,
+      "message": "Thanks for the response sokcevic@! \nSounds good, I\u0027ll keep this as is for this CL.\nIf you don\u0027t mind that would be awesome if you can take on the follow-up commit, especially since you are much more familiar with the code area than myself.\nThanks sokcevic@!",
+      "parentUuid": "fc630295_c9ea7962",
+      "revId": "29389a60f4aea03182bd41c614f14dfee3f02fd4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a76baf4d_7f5863a9",
         "filename": "PRESUBMIT.py",
         "patchSetId": 2

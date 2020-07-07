@@ -1004,7 +1004,7 @@ class TestGitCl(unittest.TestCase):
     mock.patch('git_cl.gclient_utils.RunEditor',
               lambda *_, **__: self._mocked_call(['RunEditor'])).start()
     mock.patch('git_cl.DownloadGerritHook', lambda force: self._mocked_call(
-      'DownloadGerritHook', force)).start()
+               'DownloadGerritHook', force)).start()
     mock.patch('git_cl.gclient_utils.FileRead',
               lambda path: self._mocked_call(['FileRead', path])).start()
     mock.patch('git_cl.gclient_utils.FileWrite',
@@ -2889,7 +2889,8 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
         parallel=None,
         upstream='upstream',
         description='fetch description',
-        all_files=None)
+        all_files=None,
+        resultdb=None)
 
   def testNoIssue(self):
     git_cl.Changelist.GetIssue.return_value = None
@@ -2901,7 +2902,8 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
         parallel=None,
         upstream='upstream',
         description='get description',
-        all_files=None)
+        all_files=None,
+        resultdb=None)
 
   def testCustomBranch(self):
     self.assertEqual(0, git_cl.main(['presubmit', 'custom_branch']))
@@ -2912,7 +2914,8 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
         parallel=None,
         upstream='custom_branch',
         description='fetch description',
-        all_files=None)
+        all_files=None,
+        resultdb=None)
 
   def testOptions(self):
     self.assertEqual(
@@ -2924,8 +2927,8 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
         parallel=True,
         upstream='upstream',
         description='fetch description',
-        all_files=True)
-
+        all_files=True,
+        resultdb=None)
 
 class CMDTryResultsTestCase(CMDTestCaseBase):
   _DEFAULT_REQUEST = {

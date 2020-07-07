@@ -28,6 +28,7 @@ import multiprocessing
 import os  # Somewhat exposed through the API.
 import random
 import re  # Exposed through the API.
+import requests
 import signal
 import sys  # Parts exposed through API.
 import tempfile  # Exposed through the API.
@@ -63,6 +64,12 @@ else:
 # Ask for feedback only once in program lifetime.
 _ASKED_FOR_FEEDBACK = False
 
+# Constants describing TestStatus for ResultDB
+STATUS_PASS = 'PASS'
+STATUS_FAIL = 'FAIL'
+STATUS_CRASH = 'CRASH'
+STATUS_ABORT = 'ABORT'
+STATUS_SKIP = 'SKIP'
 
 def time_time():
   # Use this so that it can be mocked in tests without interfering with python
@@ -1530,7 +1537,25 @@ class PresubmitExecuter(object):
       try:
         context['__args'] = (input_api, output_api)
         logging.debug('Running %s in %s', function_name, presubmit_path)
-        result = eval(function_name + '(*__args)', context)
+
+        # TODO: Dive into each of the individual checks so that each individual
+        # test result can be reported to ResultDB
+        # Currently, the rdb streaming will be performed only on the outer func,
+        # i.e. CheckChangeOnCommit() or CheckChangeOnUpload()
+
+        # will need to iterate over tests with a loop here
+        with setup_rdb(function_name, main_path) as my_status:
+          result = eval(function_name + '(*__args)', context)
+          # The following is repeated logic. How should we go about
+          if not isinstance(result, (tuple, list)):
+            my_status.status = STATUS_FAIL
+          else:
+            for res in result:
+              if not isinstance(res, OutputApi.PresubmitResult) or res.fatal:
+                my_status.status = STATUS_FAIL
+
+        # end for loop
+
         logging.debug('Running %s done.', function_name)
         self.more_cc.extend(output_api.more_cc)
       finally:
@@ -1615,7 +1640,6 @@ def DoPresubmitChecks(change,
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename, 'rU')
       results += executer.ExecPresubmitScript(presubmit_script, filename)
-
     results += thread_pool.RunAsync()
 
     messages = {}
@@ -1885,6 +1909,51 @@ def main(argv=None):
     print(e, file=sys.stderr)
     print('Maybe your depot_tools is out of date?', file=sys.stderr)
     return 2
+
+class ResultSinkStatus(object):
+  def __init__(self):
+    self.status = STATUS_PASS
+
+@contextlib.contextmanager
+def setup_rdb(function_name, main_path):
+  """Context Manager function for ResultDB reporting.
+
+  Args:
+    * function_name (str): The name of the function we are about to run
+    * main_path (str): The absolute path of root from where checks are being run
+  """
+  sink = None
+  if 'LUCI_CONTEXT' in os.environ:
+    with open(os.environ['LUCI_CONTEXT']) as f:
+      j = json.load(f)
+      if 'result_sink' in j:
+        sink = j['result_sink']
+
+  my_status = ResultSinkStatus()
+  start_time = time.time()
+
+  yield my_status
+
+  end_time = time.time()
+  elapsed_time = end_time - start_time
+  if sink != None:
+    rel_path = os.path.relpath(os.getcwd(), main_path)
+    tr = {
+        'testId'   : '{0}/:{1}'.format(rel_path, function_name),
+        'status'   : my_status.status,
+        'expected' : (my_status.status == STATUS_PASS),
+        'duration' : '{:.9f}s'.format(elapsed_time)
+    }
+    requests.post(
+      url = 'http://{0}/prpc/luci.resultsink.v1.Sink/ReportTestResults'
+              .format(sink['address']),
+      headers = {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': 'ResultSink {0}'.format(sink['auth_token'])
+      },
+      data = json.dumps({'testResults': [tr] })
+    )
 
 
 if __name__ == '__main__':

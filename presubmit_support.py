@@ -492,8 +492,8 @@ class InputApi(object):
   #
   # Files without an extension aren't included in the list. If you want to
   # filter them as source files, add r'(^|.*?[\\\/])[^.]+$' to the allow list.
-  # Note that ALL CAPS files are blocked in DEFAULT_BLOCK_LIST below.
-  DEFAULT_ALLOW_LIST = (
+  # Note that ALL CAPS files are skipped in DEFAULT_SKIP_LIST below.
+  DEFAULT_CHECK_LIST = (
       # C++ and friends
       r'.+\.c$', r'.+\.cc$', r'.+\.cpp$', r'.+\.h$', r'.+\.m$', r'.+\.mm$',
       r'.+\.inl$', r'.+\.asm$', r'.+\.hxx$', r'.+\.hpp$', r'.+\.s$', r'.+\.S$',
@@ -506,7 +506,7 @@ class InputApi(object):
 
   # Path regexp that should be excluded from being considered containing source
   # files. Don't modify this list from a presubmit script!
-  DEFAULT_BLOCK_LIST = (
+  DEFAULT_SKIP_LIST = (
       r'testing_support[\\\/]google_appengine[\\\/].*',
       r'.*\bexperimental[\\\/].*',
       # Exclude third_party/.* but NOT third_party/{WebKit,blink}
@@ -530,22 +530,42 @@ class InputApi(object):
   # TODO(https://crbug.com/1098562): Remove once no longer used
   @property
   def DEFAULT_WHITE_LIST(self):
-    return self.DEFAULT_ALLOW_LIST
+    return self.DEFAULT_CHECK_LIST
 
   # TODO(https://crbug.com/1098562): Remove once no longer used
   @DEFAULT_WHITE_LIST.setter
   def DEFAULT_WHITE_LIST(self, value):
-    self.DEFAULT_ALLOW_LIST = value
+    self.DEFAULT_CHECK_LIST = value
+
+  # TODO(https://crbug.com/1098562): Remove once no longer used
+  @property
+  def DEFAULT_ALLOW_LIST(self):
+    return self.DEFAULT_CHECK_LIST
+
+  # TODO(https://crbug.com/1098562): Remove once no longer used
+  @DEFAULT_ALLOW_LIST.setter
+  def DEFAULT_ALLOW_LIST(self, value):
+    self.DEFAULT_CHECK_LIST = value
 
   # TODO(https://crbug.com/1098562): Remove once no longer used
   @property
   def DEFAULT_BLACK_LIST(self):
-    return self.DEFAULT_BLOCK_LIST
+    return self.DEFAULT_SKIP_LIST
 
   # TODO(https://crbug.com/1098562): Remove once no longer used
   @DEFAULT_BLACK_LIST.setter
   def DEFAULT_BLACK_LIST(self, value):
-    self.DEFAULT_BLOCK_LIST = value
+    self.DEFAULT_SKIP_LIST = value
+
+  # TODO(https://crbug.com/1098562): Remove once no longer used
+  @property
+  def DEFAULT_BLOCK_LIST(self):
+    return self.DEFAULT_SKIP_LIST
+
+  # TODO(https://crbug.com/1098562): Remove once no longer used
+  @DEFAULT_BLOCK_LIST.setter
+  def DEFAULT_BLOCK_LIST(self, value):
+    self.DEFAULT_SKIP_LIST = value
 
   def __init__(self, change, presubmit_path, is_committing,
       verbose, gerrit_obj, dry_run=None, thread_pool=None, parallel=False):
@@ -693,26 +713,28 @@ class InputApi(object):
     """An alias to AffectedTestableFiles for backwards compatibility."""
     return self.AffectedTestableFiles(include_deletes=include_deletes)
 
-  def FilterSourceFile(self, affected_file, allow_list=None, block_list=None,
-                       white_list=None, black_list=None):
+  def FilterSourceFile(self, affected_file, check_list=None, skip_list=None,
+                       allow_list=None, block_list=None, white_list=None,
+                       black_list=None):
     """Filters out files that aren't considered 'source file'.
 
-    If allow_list or block_list is None, InputApi.DEFAULT_ALLOW_LIST
-    and InputApi.DEFAULT_BLOCK_LIST is used respectively.
+    If allow_list or block_list is None, InputApi.DEFAULT_CHECK_LIST
+    and InputApi.DEFAULT_SKIP_LIST is used respectively.
 
     The lists will be compiled as regular expression and
     AffectedFile.LocalPath() needs to pass both list.
 
-    Note: if allow_list or block_list is not set, and white_list or black_list
-    is, then those values are used. This is used for backward compatibility
-    reasons.
+    Note: if check_list or skip_list is not set, and white_list/allow_list or
+    black_list/block_list is, then those values are used. This is used for
+    backward compatibility reasons.
 
     Note: Copy-paste this function to suit your needs or use a lambda function.
     """
-    if allow_list is None:
-      allow_list = white_list
-    if block_list is None:
-      block_list = black_list
+    # TODO(https://crbug.com/1098560): Add warnings before removing bc.
+    if check_list is None:
+      allow_list = allow_list or white_list
+    if skip_list is None:
+      skip_list = block_list or black_list
 
     def Find(affected_file, items):
       local_path = affected_file.LocalPath()
@@ -720,8 +742,8 @@ class InputApi(object):
         if self.re.match(item, local_path):
           return True
       return False
-    return (Find(affected_file, allow_list or self.DEFAULT_ALLOW_LIST) and
-            not Find(affected_file, block_list or self.DEFAULT_BLOCK_LIST))
+    return (Find(affected_file, check_list or self.DEFAULT_CHECK_LIST) and
+            not Find(affected_file, skip_list or self.DEFAULT_SKIP_LIST))
 
   def AffectedSourceFiles(self, source_file):
     """Filter the list of AffectedTestableFiles by the function source_file.

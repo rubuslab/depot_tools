@@ -16,6 +16,24 @@
       "revId": "67ffcf477f38eb39d62161518dc2816dd4932ad3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f3ce885_190f2e57",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2020-07-07T22:06:03Z",
+      "side": 1,
+      "message": "Yeah, we\u0027ll need to add a hack of some sort (probably right here in `cipd` script) that will replace amd64 version with arm64 version.\n\nNote that bots will need some other solution either way. This is only for developer machines.",
+      "parentUuid": "987d3d20_3279dc78",
+      "revId": "67ffcf477f38eb39d62161518dc2816dd4932ad3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

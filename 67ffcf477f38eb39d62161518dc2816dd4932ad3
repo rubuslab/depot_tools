@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "987d3d20_3279dc78",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-07-07T21:42:29Z",
+      "side": 1,
+      "message": "lgtm, though I suspect this will need to evolve later once arm64 becomes a real golang platform. Are we going to get in trouble with machines having bootstrapped the amd64 version instead?",
+      "revId": "67ffcf477f38eb39d62161518dc2816dd4932ad3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

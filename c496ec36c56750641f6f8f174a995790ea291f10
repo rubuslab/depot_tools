@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cda5a229_e98705ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-07T21:28:31Z",
+      "side": 1,
+      "message": "I\u0027m not sure if there\u0027s some place where we need a more specific warning, but it seems like things should Just Work in Python 3 these days?",
+      "revId": "c496ec36c56750641f6f8f174a995790ea291f10",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

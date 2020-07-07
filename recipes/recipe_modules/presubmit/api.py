@@ -25,6 +25,9 @@ class PresubmitApi(recipe_api.RecipeApi):
   def presubmit_support_path(self):
     return self.repo_resource('presubmit_support.py')
 
+  #SHOULD CHECK HERE FOR resultdb
+  # IF they call it with rdb, then we should wrap() it
+  # instead of calling self.m.python.
   def __call__(self, *args, **kwargs):
     """Return a presubmit step."""
 
@@ -34,6 +37,13 @@ class PresubmitApi(recipe_api.RecipeApi):
       presubmit_args = list(args) + [
           '--json_output', self.m.json.output(),
       ]
+      # if self.m.resultdb.enabled: # need to call wrap() from here
+      #   step_data = self.m.python(name, self.presubmit_support.py
+      #                           self.m.resultdb.wrap([self.presubmit_support_path] + presubmit_args,
+      #                           wrapper=('rdb', 'stream'))
+      # else:
+      if self.m.resultdb.enabled:
+        kwargs['wrapper'] = ('rdb', 'stream')
       step_data = self.m.python(
           name, self.presubmit_support_path, presubmit_args, **kwargs)
       return step_data.json.output

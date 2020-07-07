@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b154a92_39826317",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-07T19:44:03Z",
+      "side": 1,
+      "message": "@sokcevic - did you mean for me to do something with this CL, given that it has already landed?",
+      "revId": "30f774ef87bcfb3ac5435c65c8689f4c24f48d06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

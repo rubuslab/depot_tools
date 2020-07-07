@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "94551a29_86c1c0f8",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-07T23:07:37Z",
+      "side": 1,
+      "message": "I thought you were going to change the parameter names to `files_to_check` and `files_to_skip` as well?",
+      "revId": "01278be7dfe8b189d5e4659cc9f6295a473677f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

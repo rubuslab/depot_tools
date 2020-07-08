@@ -34,6 +34,24 @@
       "revId": "01278be7dfe8b189d5e4659cc9f6295a473677f6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00e73440_776b3db9",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-08T00:04:38Z",
+      "side": 1,
+      "message": "I\u0027m not sure I understand; are you saying you would change the parameter name to `default_files_to_check`? That doesn\u0027t make sense to me, though `DEFAULT_FILES_TO_CHECK` makes sense as a constant, i.e.,\n\n   GetPylint(..., files_to_check\u003dinput_api.DEFAULT_FILES_TO_CHECK, ...)\n\nseems fine.",
+      "parentUuid": "f51189a9_c7c4f9ec",
+      "revId": "01278be7dfe8b189d5e4659cc9f6295a473677f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

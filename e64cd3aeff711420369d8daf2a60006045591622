@@ -52,6 +52,24 @@
       "revId": "e64cd3aeff711420369d8daf2a60006045591622",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1cfcfb1_46c5305c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-07-08T20:20:27Z",
+      "side": 1,
+      "message": "The header that defines the format, \u003cmach-o/fat.h\u003e, does use the “slice” terminology in comments that describe the format. But it also uses the not-too-PC “fat” terminology, even in its very name. That joke has been expunged from public-facing official documentation in favor of “universal”, but the header and type names have stuck. The “lipo” tool plays on the same joke, along with concepts like “thin”.\n\nThe original “fat binary” terminology, which was used officially i documentation as I recall, came from the 68k→ppc transition in the mid-1990s, which was a very different time and a very different Apple. By the time we did ppc→x86 in the mid-2000s, “universal” was preferred.",
+      "parentUuid": "632f73c7_9ae2540c",
+      "revId": "e64cd3aeff711420369d8daf2a60006045591622",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

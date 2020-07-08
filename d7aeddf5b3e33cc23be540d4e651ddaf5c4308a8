@@ -63,6 +63,30 @@
       "revId": "d7aeddf5b3e33cc23be540d4e651ddaf5c4308a8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ce06381_f920c0e5",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2020-07-08T17:00:21Z",
+      "side": 1,
+      "message": "I\u0027m happy to move it around later if needed, but doing a full checkout takes \u003e 1h and I\u0027ve tested this particular arrangement so I\u0027d like to check it in to savepoint it before touching it again :)\n\n(I also noticed while testing that the `git checkout` run on line 1271 of this script still runs intel git, but that works fine and is fairly fast anyway, so I didn\u0027t touch that for the same reason.)",
+      "parentUuid": "cbad45f5_2736c585",
+      "range": {
+        "startLine": 1365,
+        "startChar": 6,
+        "endLine": 1365,
+        "endChar": 28
+      },
+      "revId": "d7aeddf5b3e33cc23be540d4e651ddaf5c4308a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

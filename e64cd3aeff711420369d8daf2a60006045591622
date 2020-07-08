@@ -16,6 +16,24 @@
       "revId": "e64cd3aeff711420369d8daf2a60006045591622",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfd3c2f2_3578c294",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2020-07-08T19:07:46Z",
+      "side": 1,
+      "message": "Looks like it\u0027s not the official apple nomenclature, but it\u0027s not something I\u0027ve invented. https://developer.apple.com/videos/play/wwdc2015/404/ mentions \"Slicing\" (with a slightly different meaning). The lipo manpage uses \"file containing one architecture\".\n\n\"Slice\" is imho short and understandable -- do you know a better term?",
+      "parentUuid": "24f4a1cc_16041b48",
+      "revId": "e64cd3aeff711420369d8daf2a60006045591622",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

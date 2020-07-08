@@ -70,6 +70,24 @@
       "revId": "e64cd3aeff711420369d8daf2a60006045591622",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fc9d8e1_06e54133",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-08T23:14:05Z",
+      "side": 1,
+      "message": "Yeah, me and my SE/30 at home remember that transition :). I don\u0027t ever remember hearing of a term for the part for just a single architecture, but I also have forgotten a lot of things from 25 years ago ...",
+      "parentUuid": "a1cfcfb1_46c5305c",
+      "revId": "e64cd3aeff711420369d8daf2a60006045591622",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

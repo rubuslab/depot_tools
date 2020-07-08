@@ -210,6 +210,30 @@
       "revId": "d7aeddf5b3e33cc23be540d4e651ddaf5c4308a8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af8bb77f_841dad3f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 1374536
+      },
+      "writtenOn": "2020-07-08T20:37:40Z",
+      "side": 1,
+      "message": "In case there\u0027s an opportunity to fix the underlying Git or Rosetta issue: is there e.g. a crbug where I can read more about the symptoms?",
+      "parentUuid": "6d91879c_f0b9699c",
+      "range": {
+        "startLine": 1365,
+        "startChar": 6,
+        "endLine": 1365,
+        "endChar": 28
+      },
+      "revId": "d7aeddf5b3e33cc23be540d4e651ddaf5c4308a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

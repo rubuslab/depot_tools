@@ -186,6 +186,30 @@
       "revId": "d7aeddf5b3e33cc23be540d4e651ddaf5c4308a8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d91879c_f0b9699c",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-07-08T17:43:18Z",
+      "side": 1,
+      "message": "Because \"git clone\" under Rosetta can fail nondeterministically (or probably deterministically, but I don\u0027t think we care to work out the conditions), I don\u0027t know if we can be certain that other git operations, like \"git checkout\", won\u0027t be similarly affected. Certainly, there\u0027s some overlap between clone and checkout. I\u0027d feel more comfortable if all git operations from gclient were forced to run natively.",
+      "parentUuid": "609c3f32_1869af53",
+      "range": {
+        "startLine": 1365,
+        "startChar": 6,
+        "endLine": 1365,
+        "endChar": 28
+      },
+      "revId": "d7aeddf5b3e33cc23be540d4e651ddaf5c4308a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

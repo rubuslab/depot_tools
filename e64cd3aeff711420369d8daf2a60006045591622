@@ -34,6 +34,24 @@
       "revId": "e64cd3aeff711420369d8daf2a60006045591622",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "632f73c7_9ae2540c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-08T19:21:31Z",
+      "side": 1,
+      "message": "\u003e \"Slice\" is imho short and understandable -- do you know a better term?\n\nNo, I don\u0027t know of a term for this concept, that\u0027s partially why I was asking :).",
+      "parentUuid": "bfd3c2f2_3578c294",
+      "revId": "e64cd3aeff711420369d8daf2a60006045591622",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

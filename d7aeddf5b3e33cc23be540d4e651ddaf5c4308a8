@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df5a76c0_a18975a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2020-07-08T16:10:42Z",
+      "side": 1,
+      "message": "dprank: can I get an owners stamp please?",
+      "revId": "d7aeddf5b3e33cc23be540d4e651ddaf5c4308a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

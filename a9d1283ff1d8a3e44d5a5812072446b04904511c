@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f160d51_9a30fe96",
+        "filename": "presubmit_support.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1940,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-08T16:53:43Z",
+      "side": 1,
+      "message": "I would require that the relative path be passed in so that there\u0027s less code that has to know/deal with what the current directory is.",
+      "range": {
+        "startLine": 1940,
+        "startChar": 4,
+        "endLine": 1940,
+        "endChar": 54
+      },
+      "revId": "a9d1283ff1d8a3e44d5a5812072446b04904511c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

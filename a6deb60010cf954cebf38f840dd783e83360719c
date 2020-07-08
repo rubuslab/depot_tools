@@ -39,6 +39,30 @@
       "revId": "a6deb60010cf954cebf38f840dd783e83360719c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ac1c1ee5_b7c2aad5",
+        "filename": "presubmit_support.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1928,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-08T22:25:22Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "673760c4_52d0dbd3",
+      "range": {
+        "startLine": 1928,
+        "startChar": 22,
+        "endLine": 1928,
+        "endChar": 71
+      },
+      "revId": "a6deb60010cf954cebf38f840dd783e83360719c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

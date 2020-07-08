@@ -104,6 +104,30 @@
       "revId": "d7aeddf5b3e33cc23be540d4e651ddaf5c4308a8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b70406e3_2d63119d",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-08T17:22:36Z",
+      "side": 1,
+      "message": "Alright.\nRunning \u0027fetch breakpad\u0027 should be a good replacement and take way less time (~30s).\nHow did you test this, btw? Do you have an arm mac?",
+      "parentUuid": "9ce06381_f920c0e5",
+      "range": {
+        "startLine": 1365,
+        "startChar": 6,
+        "endLine": 1365,
+        "endChar": 28
+      },
+      "revId": "d7aeddf5b3e33cc23be540d4e651ddaf5c4308a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

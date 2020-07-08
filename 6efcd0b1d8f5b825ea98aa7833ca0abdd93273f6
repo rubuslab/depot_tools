@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e43c080b_87aca9c1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1572,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-08T18:10:30Z",
+      "side": 1,
+      "message": "This isn\u0027t something that other classes should be calling, so this should be a \"private\" method: _check_result",
+      "range": {
+        "startLine": 1572,
+        "startChar": 6,
+        "endLine": 1572,
+        "endChar": 18
+      },
+      "revId": "6efcd0b1d8f5b825ea98aa7833ca0abdd93273f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e30a155_d2bf431b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1928,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-08T18:10:30Z",
+      "side": 1,
+      "message": "The description of the argument needs to be updated",
+      "range": {
+        "startLine": 1928,
+        "startChar": 26,
+        "endLine": 1928,
+        "endChar": 34
+      },
+      "revId": "6efcd0b1d8f5b825ea98aa7833ca0abdd93273f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

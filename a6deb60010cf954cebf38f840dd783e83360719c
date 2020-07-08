@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5b00d9_ea72f917",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-08T21:50:09Z",
+      "side": 1,
+      "message": "One last refinement for the argument description, sorry",
+      "revId": "a6deb60010cf954cebf38f840dd783e83360719c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "673760c4_52d0dbd3",
+        "filename": "presubmit_support.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1928,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-08T21:50:09Z",
+      "side": 1,
+      "message": "The description should indicate what the path is relative to:\nThe relative path from the root of the repository to the directory defining the check being executed.",
+      "range": {
+        "startLine": 1928,
+        "startChar": 22,
+        "endLine": 1928,
+        "endChar": 71
+      },
+      "revId": "a6deb60010cf954cebf38f840dd783e83360719c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

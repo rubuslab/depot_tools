@@ -52,6 +52,24 @@
       "revId": "01278be7dfe8b189d5e4659cc9f6295a473677f6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04cc0976_df8bb8cd",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-08T16:44:09Z",
+      "side": 1,
+      "message": "Those names were for constants indeed, not parameter names. ptal.",
+      "parentUuid": "00e73440_776b3db9",
+      "revId": "01278be7dfe8b189d5e4659cc9f6295a473677f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

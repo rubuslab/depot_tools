@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "761c3443_cfc73e8c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-08T18:17:56Z",
+      "side": 1,
+      "message": "This might break pdfium and skia, since they use both use_relative_paths and gclient_gn_args, so please make sure to coordinate with them.",
+      "revId": "81918bf3cf3d9b2c76db647361a1cf09abbb1c97",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

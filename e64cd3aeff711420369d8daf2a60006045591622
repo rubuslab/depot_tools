@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24f4a1cc_16041b48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-08T18:56:56Z",
+      "side": 1,
+      "message": "Is \"slice\" the preferred term for one of the architectures in a fat binary?",
+      "revId": "e64cd3aeff711420369d8daf2a60006045591622",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

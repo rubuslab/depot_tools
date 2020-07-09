@@ -1278,3 +1278,22 @@ class FrozenDict(collections_abc.Mapping):
 
   def __repr__(self):
     return 'FrozenDict(%r)' % (self._d.items(),)
+
+
+_running_under_rosetta = None
+def IsRunningUnderRosetta():
+  if sys.platform != 'darwin':
+    return False
+
+  global _running_under_rosetta
+  if _running_under_rosetta is None:
+    # If we are running under Rosetta, platform.machine() is 'x86_64';
+    # we need to use a sysctl to see if we're being translated.
+    import ctypes
+    libSystem = ctypes.CDLL("libSystem.dylib")
+    ret = ctypes.c_int(0)
+    size = ctypes.c_size_t(4)
+    e = libSystem.sysctlbyname(ctypes.c_char_p(b'sysctl.proc_translated'),
+                               ctypes.byref(ret), ctypes.byref(size), None, 0)
+    _running_under_rosetta = e == 0 and ret.value == 1
+  return _running_under_rosetta

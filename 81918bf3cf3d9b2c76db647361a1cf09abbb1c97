@@ -16,6 +16,24 @@
       "revId": "81918bf3cf3d9b2c76db647361a1cf09abbb1c97",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99c7ade1_fa3dfc9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1119849
+      },
+      "writtenOn": "2020-07-09T10:01:46Z",
+      "side": 1,
+      "message": "It shouldn\u0027t break Skia because they use gclient_gn_args_from which replaces the gn_args_dep with the one for \u0027src\u0027 that doesn\u0027t have use_relative_paths. I\u0027ll still coordinate with them and pdfium.",
+      "parentUuid": "761c3443_cfc73e8c",
+      "revId": "81918bf3cf3d9b2c76db647361a1cf09abbb1c97",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

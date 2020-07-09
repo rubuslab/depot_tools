@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "4d739f5a_4674474a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1546,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-09T17:27:18Z",
+      "side": 1,
+      "message": "I think Edward is suggesting that you do\nrel_path \u003d os.path.relpath(os.getcwd(), main_path).replace(os.path.sep, \u0027/\u0027)\n\nWithout that, on unix you\u0027ll end with foo/bar but windows will be foo\\bar, so the same check won\u0027t appear with the same test ID.",
+      "parentUuid": "2332deb9_c4ba906b",
+      "range": {
+        "startLine": 1546,
+        "startChar": 8,
+        "endLine": 1546,
+        "endChar": 16
+      },
+      "revId": "c737b4f7eadc89762788525a3afe2492bf8d747e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6b6aa150_4331dec4",
         "filename": "presubmit_support.py",
         "patchSetId": 25

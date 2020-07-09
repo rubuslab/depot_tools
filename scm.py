@@ -64,6 +64,21 @@ def GenFakeDiff(filename):
   return result
 
 
+def Git(args):
+  cmd = ['git'] + args
+  if gclient_utils.IsRunningUnderRosetta():
+    # We currently only ship an Intel Python binary in depot_tools.
+    # Intel binaries run under Rosetta on ARM Macs, and by default
+    # prefer to run their subprocesses as Intel under Rosetta too.
+    # Intel git running under Rosetta has a bug where it fails to
+    # clone src.git (rdar://7868319), so until we ship a native
+    # ARM python3 binary, explicitly use `arch` to let git run
+    # the native ARM slice instead of the Intel slice.
+    # TODO(https://crbug.com/1103326): Remove once we ship an arm64 python3.
+    cmd = ['arch', '-arch', 'arm64'] + cmd
+  return cmd
+
+
 def determine_scm(root):
   """Similar to upload.py's version but much simpler.
 
@@ -74,7 +89,7 @@ def determine_scm(root):
   else:
     try:
       subprocess2.check_call(
-          ['git', 'rev-parse', '--show-cdup'],
+          Git(['rev-parse', '--show-cdup']),
           stdout=subprocess2.VOID,
           stderr=subprocess2.VOID,
           cwd=root)
@@ -114,7 +129,7 @@ class GIT(object):
   def Capture(args, cwd, strip_out=True, **kwargs):
     env = GIT.ApplyEnvVars(kwargs)
     output = subprocess2.check_output(
-        ['git'] + args, cwd=cwd, stderr=subprocess2.PIPE, env=env, **kwargs)
+        Git(args), cwd=cwd, stderr=subprocess2.PIPE, env=env, **kwargs)
     output = output.decode('utf-8', 'replace')
     return output.strip() if strip_out else output
 

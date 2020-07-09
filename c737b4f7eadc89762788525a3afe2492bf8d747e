@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b1cceb2f_10a24685",
+        "filename": ".vpython",
+        "patchSetId": 25
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-09T16:59:33Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "143ec9b1_036a80b3",
+      "range": {
+        "startLine": 15,
+        "startChar": 5,
+        "endLine": 15,
+        "endChar": 14
+      },
+      "revId": "c737b4f7eadc89762788525a3afe2492bf8d747e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "00a6eda6_da6c07fa",
         "filename": "presubmit_support.py",
         "patchSetId": 25
@@ -36,6 +60,30 @@
       "writtenOn": "2020-07-08T22:39:45Z",
       "side": 1,
       "message": "Maybe we also want to replace os.path with \u0027/\u0027 so that it is the same on windows and unix.",
+      "range": {
+        "startLine": 1546,
+        "startChar": 8,
+        "endLine": 1546,
+        "endChar": 16
+      },
+      "revId": "c737b4f7eadc89762788525a3afe2492bf8d747e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2332deb9_c4ba906b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1546,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-09T16:59:33Z",
+      "side": 1,
+      "message": "I am not sure what you mean? Should I add a \u0027/\u0027 to the beginning of each name, or is there something else you are suggesting",
+      "parentUuid": "00a6eda6_da6c07fa",
       "range": {
         "startLine": 1546,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "8c089fc8_68a28a59",
+        "filename": "presubmit_support.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1547,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-09T16:59:33Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "6b6aa150_4331dec4",
+      "range": {
+        "startLine": 1547,
+        "startChar": 8,
+        "endLine": 1547,
+        "endChar": 58
+      },
+      "revId": "c737b4f7eadc89762788525a3afe2492bf8d747e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af818c9e_a1b3d12c",
         "filename": "presubmit_support.py",
         "patchSetId": 25
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "7c3bf8fa_4913d7bf",
+        "filename": "presubmit_support.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1558,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-09T16:59:33Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "af818c9e_a1b3d12c",
+      "range": {
+        "startLine": 1558,
+        "startChar": 8,
+        "endLine": 1558,
+        "endChar": 22
+      },
+      "revId": "c737b4f7eadc89762788525a3afe2492bf8d747e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "47715e4c_89fe17dc",
         "filename": "presubmit_support.py",
         "patchSetId": 25
@@ -114,6 +210,30 @@
       "revId": "c737b4f7eadc89762788525a3afe2492bf8d747e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "36536f85_28d8afc1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1952,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-09T16:59:33Z",
+      "side": 1,
+      "message": "As per suggestions from both Nodir and Erik, requests is the more straightforward approach here and easier to code up and maintain.",
+      "parentUuid": "47715e4c_89fe17dc",
+      "range": {
+        "startLine": 1952,
+        "startChar": 4,
+        "endLine": 1952,
+        "endChar": 12
+      },
+      "revId": "c737b4f7eadc89762788525a3afe2492bf8d747e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

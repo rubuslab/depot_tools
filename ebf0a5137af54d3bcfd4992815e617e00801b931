@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "93a8b625_0d894135",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1527,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-07-10T19:35:54Z",
+      "side": 1,
+      "message": "So this isn\u0027t the same as what I was suggesting in the design draft. I was suggesting CheckOn() adds the function to a list (the upload list or commit list) based on whether \u0027commit\u0027 or \u0027upload\u0027 is passed in.\n\nThen instead of running CheckChangeOnCommit it executes what\u0027s in the list, and when it does so, wraps it with setup_rdb(), etc.\n\nSo a combination of option 2 (the lists) and option 3 (the decorator).",
+      "revId": "ebf0a5137af54d3bcfd4992815e617e00801b931",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

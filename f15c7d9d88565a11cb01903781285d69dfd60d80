@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78dff440_f96d63ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1316409
+      },
+      "writtenOn": "2020-07-10T20:17:02Z",
+      "side": 1,
+      "message": "Hi sokcevic@\nCan you please take a look at this change?\nJust changing a few words that were left over. \nThank you! ",
+      "revId": "f15c7d9d88565a11cb01903781285d69dfd60d80",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

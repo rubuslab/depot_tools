@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8378c41b_ff24a018",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-10T22:31:35Z",
+      "side": 1,
+      "message": "Why are you ignoring errors here?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 13
+      },
+      "revId": "75d5ff56d07030d45ea896b64189142ad0db4fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ffef75f_73110d94",
+        "filename": "recipes/recipe_modules/gclient/tests/diff_deps.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-10T22:31:35Z",
+      "side": 1,
+      "message": "I recommend using the assertions recipe module, it will provide more helpful output if someone makes changes that cause the test to fail.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 4
+      },
+      "revId": "75d5ff56d07030d45ea896b64189142ad0db4fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa475efe_5de57177",
+        "filename": "recipes/recipe_modules/gclient/tests/diff_deps.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-10T22:31:35Z",
+      "side": 1,
+      "message": "For the test cases where you expect it to reach the assertion, I would recommend adding api.post_process(post_process.StatusSuccess). That way breaking changes will cause a test failure rather than just an expectation update.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 2
+      },
+      "revId": "75d5ff56d07030d45ea896b64189142ad0db4fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b4c7cce_623d8666",
+        "filename": "recipes/recipe_modules/gclient/tests/diff_deps.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-10T22:31:35Z",
+      "side": 1,
+      "message": "It would be good to provide a diff_deps method on the test API that just takes a list of files and returns the test data object.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 8
+      },
+      "revId": "75d5ff56d07030d45ea896b64189142ad0db4fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

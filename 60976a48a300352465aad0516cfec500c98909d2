@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87f9f4d0_a92d2ac4",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T21:48:38Z",
+      "side": 1,
+      "message": "Inconsistent indentation.",
+      "range": {
+        "startLine": 370,
+        "startChar": 8,
+        "endLine": 370,
+        "endChar": 9
+      },
+      "revId": "60976a48a300352465aad0516cfec500c98909d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e51a647_f1105039",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T21:48:38Z",
+      "side": 1,
+      "message": "splitlines",
+      "range": {
+        "startLine": 397,
+        "startChar": 47,
+        "endLine": 397,
+        "endChar": 58
+      },
+      "revId": "60976a48a300352465aad0516cfec500c98909d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "145c925c_74307b21",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T21:48:38Z",
+      "side": 1,
+      "message": "splitlines",
+      "range": {
+        "startLine": 16,
+        "startChar": 17,
+        "endLine": 16,
+        "endChar": 28
+      },
+      "revId": "60976a48a300352465aad0516cfec500c98909d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "215d0b5d_3041844d",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T21:48:38Z",
+      "side": 1,
+      "message": "Do this once before the loop.",
+      "range": {
+        "startLine": 18,
+        "startChar": 21,
+        "endLine": 18,
+        "endChar": 59
+      },
+      "revId": "60976a48a300352465aad0516cfec500c98909d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b67ef6e6_3f69b6f8",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T21:48:38Z",
+      "side": 1,
+      "message": "I\u0027m not sure how line would look in windows, but the test step data in gclient.py above has all backspaces.\n\nSo either use os.path.join() or make sure that you replace os.path with \u0027/\u0027 in line.",
+      "range": {
+        "startLine": 18,
+        "startChar": 13,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "60976a48a300352465aad0516cfec500c98909d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64a177c2_b4e03728",
+        "filename": "recipes/recipe_modules/gclient/tests/diff_deps.expected/basic.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T21:48:38Z",
+      "side": 1,
+      "message": "Why is this None?",
+      "range": {
+        "startLine": 24,
+        "startChar": 12,
+        "endLine": 24,
+        "endChar": 16
+      },
+      "revId": "60976a48a300352465aad0516cfec500c98909d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05b49e4e_f95e4604",
+        "filename": "recipes/recipe_modules/gclient/tests/diff_deps.expected/basic.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T21:48:38Z",
+      "side": 1,
+      "message": "If this is not windows, this should be \u0027/\u0027, rigth?",
+      "range": {
+        "startLine": 33,
+        "startChar": 57,
+        "endLine": 33,
+        "endChar": 59
+      },
+      "revId": "60976a48a300352465aad0516cfec500c98909d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2dfac01_7edded9d",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T21:48:38Z",
+      "side": 1,
+      "message": "Please move the _gerrit_change_owner changes to another CL.",
+      "revId": "60976a48a300352465aad0516cfec500c98909d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

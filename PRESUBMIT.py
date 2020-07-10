@@ -60,7 +60,7 @@ def DepotToolsPylint(input_api, output_api):
       block_list=files_to_skip,
       disabled_warnings=disabled_warnings)
 
-
+@CheckOn("Commit", "Upload")
 def CommonChecks(input_api, output_api, tests_to_skip_list, run_on_python3):
   input_api.SetTimeout(TEST_TIMEOUT_S)
 

@@ -1521,6 +1521,7 @@ class PresubmitExecuter(object):
                          parallel=self.parallel)
     output_api = OutputApi(self.committing)
     context = {}
+    context['CheckOn'] = CheckOn
     try:
       exec(compile(script_text, 'PRESUBMIT.py', 'exec', dont_inherit=True),
            context)
@@ -1548,7 +1549,9 @@ class PresubmitExecuter(object):
         with setup_rdb(function_name, rel_path) as my_status:
           result = eval(function_name + '(*__args)', context)
           try:
-            self._check_result(result)
+            #print("outer RESULT =", result)
+            check_result(result)
+
             if any(res.fatal for res in result):
               my_status.status = STATUS_FAIL
           except PresubmitFailure:
@@ -1567,7 +1570,7 @@ class PresubmitExecuter(object):
     os.chdir(main_path)
     return result
 
-  def _check_result(self, result):
+def check_result(result):
     """Helper function which ensures that all checks passed in result"""
     if not isinstance(result, (tuple, list)):
       raise PresubmitFailure(
@@ -1958,6 +1961,28 @@ def setup_rdb(function_name, rel_path):
       data = json.dumps({'testResults': [tr] })
     )
 
+def CheckOn(*commit_or_upload):
+    # decorator for _CheckXYZ functions in PRESUBMIT.py files.
+    commit = 'Commit' in commit_or_upload
+    upload = 'Upload' in commit_or_upload
+    def wrap(func):
+        function_name = func.__name__
+        # ADD HANDLING HERE TO ONLY DO CHECKING FOR CHECKCHANGEONCOMMIT OR UPLAD
+        def wrapped_func(*args):
+            rel_path = os.getcwd()
+            with setup_rdb(function_name, rel_path) as my_status:
+                result = func(*args)
+                #print("inner RESULT = ", result)
+                try:
+                    check_result(result)
+                    if any(res.fatal for res in result):
+                        my_status.status = STATUS_FAIL
+                except PresubmitFailure:
+                    my_status.status = STATUS_FAIL
+                    raise
+            return result
+        return wrapped_func
+    return wrap
 
 if __name__ == '__main__':
   fix_encoding.fix_encoding()

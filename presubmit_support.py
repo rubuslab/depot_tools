@@ -1513,6 +1513,8 @@ class PresubmitExecuter(object):
     # Change to the presubmit file's directory to support local imports.
     main_path = os.getcwd()
     os.chdir(os.path.dirname(presubmit_path))
+    rel_path = os.path.relpath(os.getcwd(), main_path).replace(
+                 os.path.sep, '/')
 
     # Load the presubmit script into context.
     input_api = InputApi(self.change, presubmit_path, self.committing,
@@ -1521,6 +1523,31 @@ class PresubmitExecuter(object):
                          parallel=self.parallel)
     output_api = OutputApi(self.committing)
     context = {}
+
+    def CheckOn(*commit_or_upload):
+      # decorator for _CheckXYZ functions in PRESUBMIT.py files.
+      commit = 'Commit' in commit_or_upload
+      upload = 'Upload' in commit_or_upload
+      def wrap(func):
+        function_name = func.__name__
+        if ((self.committing and not commit) or
+            (not self.committing and not upload)):
+          return func
+        def wrapped_func(*args):
+          with setup_rdb(function_name, rel_path) as my_status:
+            result = func(*args)
+            try:
+              self._check_result(result)
+              if any(res.fatal for res in result):
+                my_status.status = STATUS_FAIL
+            except PresubmitFailure:
+              my_status.status = STATUS_FAIL
+              raise
+          return result
+        return wrapped_func
+      return wrap
+
+    context['CheckOn'] = CheckOn
     try:
       exec(compile(script_text, 'PRESUBMIT.py', 'exec', dont_inherit=True),
            context)
@@ -1538,13 +1565,6 @@ class PresubmitExecuter(object):
         context['__args'] = (input_api, output_api)
         logging.debug('Running %s in %s', function_name, presubmit_path)
 
-        # TODO: Dive into each of the individual checks so that each individual
-        # test result can be reported to ResultDB
-        # Currently, the rdb streaming will be performed only on the outer func,
-        # i.e. CheckChangeOnCommit() or CheckChangeOnUpload()
-
-        rel_path = os.path.relpath(os.getcwd(), main_path).replace(
-                     os.path.sep, '/')
         with setup_rdb(function_name, rel_path) as my_status:
           result = eval(function_name + '(*__args)', context)
           try:
@@ -1570,8 +1590,7 @@ class PresubmitExecuter(object):
   def _check_result(self, result):
     """Helper function which ensures that all checks passed in result"""
     if not isinstance(result, (tuple, list)):
-      raise PresubmitFailure(
-        'Presubmit functions must return a tuple or list')
+      raise PresubmitFailure('Presubmit functions must return a tuple or list')
     for item in result:
       if not isinstance(item, OutputApi.PresubmitResult):
         raise PresubmitFailure(
@@ -1957,7 +1976,6 @@ def setup_rdb(function_name, rel_path):
       },
       data = json.dumps({'testResults': [tr] })
     )
-
 
 if __name__ == '__main__':
   fix_encoding.fix_encoding()

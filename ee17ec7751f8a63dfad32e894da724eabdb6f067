@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45cb7d15_037d000b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T20:18:03Z",
+      "side": 1,
+      "message": "Can you add tests for this as well in tests/presubmit_unittest.py?\nIt should also be mocked in there.",
+      "range": {
+        "startLine": 1548,
+        "startChar": 13,
+        "endLine": 1548,
+        "endChar": 22
+      },
+      "revId": "ee17ec7751f8a63dfad32e894da724eabdb6f067",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4abf17e6_9a6d2f11",
+        "filename": "presubmit_support.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1916,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-10T20:18:03Z",
+      "side": 1,
+      "message": "Lets move these to a new file and add tests for them.",
+      "range": {
+        "startLine": 1916,
+        "startChar": 0,
+        "endLine": 1916,
+        "endChar": 31
+      },
+      "revId": "ee17ec7751f8a63dfad32e894da724eabdb6f067",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

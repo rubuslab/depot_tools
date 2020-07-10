@@ -13,7 +13,8 @@ DEPS = [
 
 
 def RunSteps(api):
-  api.tryserver.gerrit_change_fetch_ref
+  assert(api.tryserver.gerrit_change_fetch_ref)
+  assert(api.tryserver.gerrit_change_owner)
 
 
 def GenTests(api):

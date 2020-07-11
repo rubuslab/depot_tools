@@ -16,6 +16,23 @@
       "revId": "8b6bcca93dc05e4eb4ebf59757e71799505f8a27",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e61075f7_1df84409",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-07-11T00:03:44Z",
+      "side": 1,
+      "message": "Delegating bot_update changes review to Source team.",
+      "revId": "8b6bcca93dc05e4eb4ebf59757e71799505f8a27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

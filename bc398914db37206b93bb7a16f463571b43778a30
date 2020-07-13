@@ -52,6 +52,24 @@
       "revId": "bc398914db37206b93bb7a16f463571b43778a30",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c1c4b4d_e6e5cc7c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-13T21:30:17Z",
+      "side": 1,
+      "message": "So long as the step\u0027s output log shows the actual problem that caused the exception to be raised, I\u0027m fine with it, but I\u0027ll defer to Edward since he\u0027s an owner of the code.",
+      "parentUuid": "5069473d_4be298ce",
+      "revId": "bc398914db37206b93bb7a16f463571b43778a30",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -16,6 +16,24 @@
       "revId": "271a78ac35d784bf93b48831ad91c8d566e67bde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "174e514a_9d15b1b6",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 1119849
+      },
+      "writtenOn": "2020-07-13T19:17:44Z",
+      "side": 1,
+      "message": "The idea is that you\u0027d remove the first pdfium/ in this line: https://source.chromium.org/chromium/chromium/src/+/master:third_party/pdfium/DEPS;l\u003d4?q\u003dpdfium%2FDEPS\n\nBut that it tries to generate from CWD is not expected. Feel free to revert.",
+      "parentUuid": "06b74148_dbd62812",
+      "revId": "271a78ac35d784bf93b48831ad91c8d566e67bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

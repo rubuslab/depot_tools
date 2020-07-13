@@ -22,6 +22,30 @@
       "revId": "e0faf611b0fd989d8a4f46eafae7e905b43422fe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30f495ed_d811d8c2",
+        "filename": "recipes/recipe_modules/gclient/tests/diff_deps.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-07-13T19:43:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a00869d6_44d9bcba",
+      "range": {
+        "startLine": 35,
+        "startChar": 6,
+        "endLine": 35,
+        "endChar": 48
+      },
+      "revId": "e0faf611b0fd989d8a4f46eafae7e905b43422fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

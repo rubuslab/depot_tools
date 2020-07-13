@@ -34,6 +34,24 @@
       "revId": "bc398914db37206b93bb7a16f463571b43778a30",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5069473d_4be298ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-07-13T19:43:13Z",
+      "side": 1,
+      "message": "The subprocess CalledProcessException I was catching before.",
+      "parentUuid": "1d1a7262_c7a7946e",
+      "revId": "bc398914db37206b93bb7a16f463571b43778a30",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

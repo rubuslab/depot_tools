@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06b74148_dbd62812",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2020-07-13T18:04:50Z",
+      "side": 1,
+      "message": "This isn\u0027t working 100% correctly.\n\nIf I have ~/pdfium_repo/.gclient and ~/pdfium_repo/pdfium, then\n1) Running \"gclient sync\" in ~/pdfium_repo works correctly and generates ~/pdfium_repo/pdfium/build/config/gclient_args.gni\n2) \"gclient sync\" in ~/pdfium_repo/pdfium works incorrectly and tries to generate ~/pdfium_repo/pdfium/pdfium/build/config/gclient_args.gni",
+      "revId": "271a78ac35d784bf93b48831ad91c8d566e67bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

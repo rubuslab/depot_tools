@@ -34,6 +34,24 @@
       "revId": "271a78ac35d784bf93b48831ad91c8d566e67bde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a9a8e39_b007728b",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2020-07-13T19:23:56Z",
+      "side": 1,
+      "message": "My comment above includes removing \"pdfium/\" prefix from gclient_gn_args_file. As is, with the \"pdfium/\" prefix, from ~/pdfium_repo/pdfium, gclient sync current tries to write to ~/pdfium_repo/pdfium/pdfium/pdfium/build/config/gclient_args.gni.\n\nLet me see if I can just patch this up to get the desired behavior. Hopefully we can just move forward and not revert.",
+      "parentUuid": "174e514a_9d15b1b6",
+      "revId": "271a78ac35d784bf93b48831ad91c8d566e67bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

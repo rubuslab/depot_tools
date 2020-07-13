@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a00869d6_44d9bcba",
+        "filename": "recipes/recipe_modules/gclient/tests/diff_deps.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-13T16:17:19Z",
+      "side": 1,
+      "message": "Rather than test for some default value, I think it would be better to have the tests set a property with the expected value and override the result for each test.\n\nThen that removes the need to declare diff_deps_test_files on the test API, which makes it unnecessarily stateful.",
+      "range": {
+        "startLine": 35,
+        "startChar": 6,
+        "endLine": 35,
+        "endChar": 48
+      },
+      "revId": "e0faf611b0fd989d8a4f46eafae7e905b43422fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

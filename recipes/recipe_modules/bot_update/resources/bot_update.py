@@ -588,36 +588,38 @@ def get_total_disk_space():
     return (total, free)
 
 
-def _get_target_branch_and_revision(solution_name, git_url, revisions):
+def _get_target_branch_and_revision(
+    solution_name, git_url, revisions, default_branch):
   normalized_name = solution_name.strip('/')
   if normalized_name in revisions:
     configured = revisions[normalized_name]
   elif git_url in revisions:
     configured = revisions[git_url]
   else:
-    return 'master', 'HEAD'
+    return default_branch, 'HEAD'
 
   parts = configured.split(':', 1)
   if len(parts) == 2:
     # Support for "branch:revision" syntax.
     return parts
   if COMMIT_HASH_RE.match(configured):
-    return 'master', configured
+    return default_branch, configured
   return configured, 'HEAD'
 
 
-def get_target_pin(solution_name, git_url, revisions):
+def get_target_pin(solution_name, git_url, revisions, default_branch):
   """Returns revision to be checked out if it is pinned, else None."""
   _, revision = _get_target_branch_and_revision(
-      solution_name, git_url, revisions)
+      solution_name, git_url, revisions, default_branch)
   if COMMIT_HASH_RE.match(revision):
     return revision
   return None
 
 
-def force_solution_revision(solution_name, git_url, revisions, cwd):
+def force_solution_revision(
+    solution_name, git_url, revisions, cwd, default_branch):
   branch, revision = _get_target_branch_and_revision(
-      solution_name, git_url, revisions)
+      solution_name, git_url, revisions, default_branch)
   if revision and revision.upper() != 'HEAD':
     treeish = revision
   else:
@@ -625,7 +627,7 @@ def force_solution_revision(solution_name, git_url, revisions, cwd):
     # destination branch would be e.g. refs/branch-heads/123. But here
     # we need to pass refs/remotes/branch-heads/123 to check out.
     # This will also not work if somebody passes a local refspec like
-    # refs/heads/master. It needs to translate to refs/remotes/origin/master
+    # refs/heads/main. It needs to translate to refs/remotes/origin/main
     # first. See also https://crbug.com/740456 .
     if branch.startswith(('refs/', 'origin/')):
       treeish = branch
@@ -705,6 +707,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
                   cleanup_dir):
   name = sln['name']
   url = sln['url']
+  default_branch = git('ls-remote', '--symref', url, 'HEAD')
   populate_cmd = (['cache', 'populate', '--ignore_locks', '-v',
                    '--cache-dir', git_cache_dir, url, '--reset-fetch-config'])
   if no_fetch_tags:
@@ -721,7 +724,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
     }
 
   # Step 1: populate/refresh cache, if necessary.
-  pin = get_target_pin(name, url, revisions)
+  pin = get_target_pin(name, url, revisions, default_branch)
   if not pin:
     # Refresh only once.
     git(*populate_cmd, env=env)
@@ -772,7 +775,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
         git('clone', '--no-checkout', '--local', '--shared', mirror_dir,
             sln_dir)
         # Detach HEAD to be consistent with the non-clone case
-        git('checkout', 'master', '--detach', cwd=sln_dir)
+        git('checkout', default_branch, '--detach', cwd=sln_dir)
         _git_disable_gc(sln_dir)
       else:
         _git_disable_gc(sln_dir)
@@ -789,7 +792,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
       if sys.platform.startswith('win'):
         _maybe_break_locks(sln_dir, tries=3)
 
-      force_solution_revision(name, url, revisions, sln_dir)
+      force_solution_revision(name, url, revisions, sln_dir, default_branch)
       git('clean', '-dff', cwd=sln_dir)
       return
     except SubprocessFailed as e:

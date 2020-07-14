@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f849ca8_d1d69108",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1318516
+      },
+      "writtenOn": "2020-07-14T20:33:17Z",
+      "side": 1,
+      "message": "A small change to add an argument to git cl upload that I\u0027ve been wanting. PTAL, thanks!",
+      "revId": "12a84158c4c05021eab987cd30a0600c01996e1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

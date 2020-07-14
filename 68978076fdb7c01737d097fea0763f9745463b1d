@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3095f902_bd086a3d",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-14T22:28:04Z",
+      "side": 0,
+      "message": "Not needed as force_solution_revision below will always do git checkout.",
+      "range": {
+        "startLine": 774,
+        "startChar": 0,
+        "endLine": 776,
+        "endChar": 0
+      },
+      "revId": "68978076fdb7c01737d097fea0763f9745463b1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

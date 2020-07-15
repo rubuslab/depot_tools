@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78be2175_96fc7737",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2020-07-15T00:17:44Z",
+      "side": 1,
+      "message": "Who wrote this for-loop that\u0027s a bit hard to follow, with not great variable names? Let\u0027s check git blame... oh, it was... me.",
+      "revId": "0cb296b94e97101dd59266b25d3c624a11ebb2db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

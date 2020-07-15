@@ -772,7 +772,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
         git('clone', '--no-checkout', '--local', '--shared', mirror_dir,
             sln_dir)
         # Detach HEAD to be consistent with the non-clone case
-        git('checkout', 'master', '--detach', cwd=sln_dir)
+        git('checkout', 'HEAD', '--detach', cwd=sln_dir)
         _git_disable_gc(sln_dir)
       else:
         _git_disable_gc(sln_dir)

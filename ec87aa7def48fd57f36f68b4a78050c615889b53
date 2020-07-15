@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "992799c6_a45b2a7c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-15T19:29:03Z",
+      "side": 1,
+      "message": "We can modify upload_metrics.py [1] to report metrics from bots, but that\u0027ll take some time.\nOther than that, I\u0027m not sure how.\n\n[1] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:upload_metrics.py",
+      "parentUuid": "8d4fdb60_a5715b2a",
+      "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c5cbc260_a96e7f1b",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 14
@@ -30,6 +48,30 @@
       "writtenOn": "2020-07-15T18:51:10Z",
       "side": 1,
       "message": "This wouldn\u0027t be the case anymore.",
+      "range": {
+        "startLine": 764,
+        "startChar": 50,
+        "endLine": 764,
+        "endChar": 75
+      },
+      "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "197655b0_8acafaa0",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-15T19:29:03Z",
+      "side": 1,
+      "message": "Ack. We can get default branch above.",
+      "parentUuid": "c5cbc260_a96e7f1b",
       "range": {
         "startLine": 764,
         "startChar": 50,

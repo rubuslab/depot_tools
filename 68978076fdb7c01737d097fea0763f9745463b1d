@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "7264b177_8f84d418",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-15T19:29:03Z",
+      "side": 0,
+      "message": "This function? At least once per build.\nThis branch, and the branch below? Not sure, but much less often.\nBuilds often sync to something like \u0027src@HEAD\u0027 or \u0027tint@refs/heads/main\u0027. This means that `normalized_name` is usually in revisions, and `COMMIT_HASH_RE` doesn\u0027t usually match `configured`.\n\nSo doing this here only in those cases instead of doing it always below will probably save several calls.\n\nIn fact, I don\u0027t think we need to do it to fix this particular bug. I\u0027ll upload another CL.",
+      "parentUuid": "dc8bbe3d_a7a5b510",
+      "range": {
+        "startLine": 598,
+        "startChar": 12,
+        "endLine": 598,
+        "endChar": 18
+      },
+      "revId": "68978076fdb7c01737d097fea0763f9745463b1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "75bd1c81_8924552c",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 14
@@ -59,6 +83,24 @@
       "writtenOn": "2020-07-15T18:51:10Z",
       "side": 0,
       "message": "Since this is a fresh clone, we should be able to use:\n\ngit(\u0027checkout\u0027, git(\u0027symbolic-ref\u0027, \u0027HEAD\u0027), \u0027--detach\u0027, cwd\u003dsln_dir)",
+      "revId": "68978076fdb7c01737d097fea0763f9745463b1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "424436e1_a32f4a96",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-15T19:29:03Z",
+      "side": 0,
+      "message": "Yeah, but we don\u0027t need to checkout at all.",
+      "parentUuid": "75bd1c81_8924552c",
       "revId": "68978076fdb7c01737d097fea0763f9745463b1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cfb7bbfa_80dc6c40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2020-07-15T01:00:37Z",
+      "side": 1,
+      "message": "I\u0027ve always tried to encourage developers to run git cl lint, but I recently noticed its advice is out of date.",
+      "revId": "e610fbd002100185947a34c0e58b787fdc6a4886",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

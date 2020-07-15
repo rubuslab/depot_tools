@@ -22,6 +22,46 @@
       "revId": "68978076fdb7c01737d097fea0763f9745463b1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc8bbe3d_a7a5b510",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-15T18:51:10Z",
+      "side": 0,
+      "message": "remote_head \u003d git(\u0027ls-remote\u0027, \u0027--symref\u0027, url, \u0027HEAD\u0027)\n\nand below\n\nDo we have some easy way to send metrics? I wonder how many times we would call this function.",
+      "range": {
+        "startLine": 598,
+        "startChar": 12,
+        "endLine": 598,
+        "endChar": 18
+      },
+      "revId": "68978076fdb7c01737d097fea0763f9745463b1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75bd1c81_8924552c",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-15T18:51:10Z",
+      "side": 0,
+      "message": "Since this is a fresh clone, we should be able to use:\n\ngit(\u0027checkout\u0027, git(\u0027symbolic-ref\u0027, \u0027HEAD\u0027), \u0027--detach\u0027, cwd\u003dsln_dir)",
+      "revId": "68978076fdb7c01737d097fea0763f9745463b1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

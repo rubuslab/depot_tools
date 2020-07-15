@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "8d4fdb60_a5715b2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-15T18:51:10Z",
+      "side": 1,
+      "message": "I suggest we collect metrics first before moving forward with addressing comments. Do we have an easy way to collect metrics?",
+      "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c5cbc260_a96e7f1b",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-15T18:51:10Z",
+      "side": 1,
+      "message": "This wouldn\u0027t be the case anymore.",
+      "range": {
+        "startLine": 764,
+        "startChar": 50,
+        "endLine": 764,
+        "endChar": 75
+      },
+      "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bd731587_564ad588",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 14

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd731587_564ad588",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-15T01:15:59Z",
+      "side": 1,
+      "message": "This command takes about 8s total, and 4s are spent waiting on server. jrn, is there any alternative? `git remote show origin` is equally bad.",
+      "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

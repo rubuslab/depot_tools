@@ -33,6 +33,24 @@
       "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "408e97cb_34c0252b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1318516
+      },
+      "writtenOn": "2020-07-15T23:36:16Z",
+      "side": 1,
+      "message": "If it fails a presubmit check, --force will still upload the change as far as I remember. I would rather be able to review the presubmit failure to see if I\u0027m okay with it before uploading, but would prefer to not have to remember to hit the \u0027enter\u0027 key to continue if there are no errors.",
+      "parentUuid": "c2812500_1fdfbc4e",
+      "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

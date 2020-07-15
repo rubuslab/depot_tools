@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5ffa02ca_299cd73f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-07-15T18:24:40Z",
+      "side": 1,
+      "message": "you are right. Thanks for implementing this generically!",
+      "parentUuid": "25da37c8_e6d4c9e4",
+      "range": {
+        "startLine": 1031,
+        "startChar": 4,
+        "endLine": 1032,
+        "endChar": 26
+      },
+      "revId": "3e4929cc0e9999a6ee952131d3ebbaee3f142e93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "db920b88_5bdc141c",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 3

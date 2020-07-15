@@ -33,6 +33,24 @@
       "revId": "98b4eb44590ed159bbdeb924afd8064f3ad83f77",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "071ea682_4446ef88",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-15T20:34:10Z",
+      "side": 1,
+      "message": "Good catch, thanks, I believe checking out \u0027HEAD\u0027 instead will work.",
+      "parentUuid": "80ec2110_e3338281",
+      "revId": "98b4eb44590ed159bbdeb924afd8064f3ad83f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "52d076cb_4f31f9c3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-15T18:21:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24a3c2e7_262709dd",
+      "range": {
+        "startLine": 1022,
+        "startChar": 10,
+        "endLine": 1022,
+        "endChar": 31
+      },
+      "revId": "3e4929cc0e9999a6ee952131d3ebbaee3f142e93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a581795d_6ad70bf2",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2020-07-15T01:04:07Z",
       "side": 1,
       "message": "why not \n\n input_api.os_path.join(input_api.PresubmitLocalPath(), \u0027third_party\u0027, \u0027depot_tools\u0027, \u0027dirmd\u0027)\n\nconsistently with https://source.chromium.org/chromium/chromium/src/+/master:PRESUBMIT.py;l\u003d2160?q\u003dcheckteamtags%20f:PRESUBMIT",
+      "range": {
+        "startLine": 1031,
+        "startChar": 4,
+        "endLine": 1032,
+        "endChar": 26
+      },
+      "revId": "3e4929cc0e9999a6ee952131d3ebbaee3f142e93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25da37c8_e6d4c9e4",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-15T18:21:26Z",
+      "side": 1,
+      "message": "Because it might be used on repos that don\u0027t have third_party/depot_tools.",
+      "parentUuid": "a581795d_6ad70bf2",
       "range": {
         "startLine": 1031,
         "startChar": 4,
@@ -68,6 +116,30 @@
       "revId": "3e4929cc0e9999a6ee952131d3ebbaee3f142e93",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3928cf11_18350a14",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-15T18:21:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db920b88_5bdc141c",
+      "range": {
+        "startLine": 1044,
+        "startChar": 13,
+        "endLine": 1044,
+        "endChar": 19
+      },
+      "revId": "3e4929cc0e9999a6ee952131d3ebbaee3f142e93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

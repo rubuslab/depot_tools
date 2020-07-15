@@ -16,6 +16,23 @@
       "revId": "e610fbd002100185947a34c0e58b787fdc6a4886",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d9ac5fc_deebd6a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2020-07-15T01:50:16Z",
+      "side": 1,
+      "message": "LGTM, but I\u0027m not a reviewer here.\n\n(Note: Might want to describe the \"why\" of this in the CL description, as it took me a minute to understand the ramifications of this change, and thus why it was a good change.)",
+      "revId": "e610fbd002100185947a34c0e58b787fdc6a4886",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

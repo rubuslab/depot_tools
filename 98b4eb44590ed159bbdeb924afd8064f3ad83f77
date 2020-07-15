@@ -16,6 +16,23 @@
       "revId": "98b4eb44590ed159bbdeb924afd8064f3ad83f77",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "80ec2110_e3338281",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-15T20:09:29Z",
+      "side": 1,
+      "message": "From https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1910260\n\n\u003e When bot_update clones a git repository, it results in HEAD referring to\n\u003e master in contrast to the non-clone case which results in a detached\n\u003e HEAD. This prevents fetching refs/heads/master, so detach the HEAD after\n\u003e cloning.\n\nBased on that, it seems this change is not safe, Have you confirmed that is no longer the case?",
+      "revId": "98b4eb44590ed159bbdeb924afd8064f3ad83f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -16,6 +16,24 @@
       "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0997b63f_c3563d5c",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-15T02:16:03Z",
+      "side": 1,
+      "message": "```\n$ GIT_CURL_VERBOSE\u003d1 git remote set-head origin -a\n\n18:45:47.978741 http.c:756              \u003d\u003d Info: Couldn\u0027t find host chromium.googlesource.com in the .netrc file; using defaults\n...\n18:45:58.071143 http.c:756              \u003d\u003d Info: Connection #0 to host chromium.googlesource.com left intact\n```\nis not better unfortunately.\n\nIt takes about 5s to get response from server, and another ~5s of cpu",
+      "parentUuid": "bd731587_564ad588",
+      "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

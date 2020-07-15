@@ -46,6 +46,7 @@ import gerrit_util
 import owners
 import owners_finder
 import presubmit_canned_checks
+import rdb_wrapper
 import scm
 import subprocess2 as subprocess  # Exposed through the API.
 
@@ -62,7 +63,6 @@ else:
 
 # Ask for feedback only once in program lifetime.
 _ASKED_FOR_FEEDBACK = False
-
 
 def time_time():
   # Use this so that it can be mocked in tests without interfering with python
@@ -1530,26 +1530,47 @@ class PresubmitExecuter(object):
       try:
         context['__args'] = (input_api, output_api)
         logging.debug('Running %s in %s', function_name, presubmit_path)
-        result = eval(function_name + '(*__args)', context)
+
+        # TODO: Dive into each of the individual checks so that each individual
+        # test result can be reported to ResultDB
+        # Currently, the rdb streaming will be performed only on the outer func,
+        # i.e. CheckChangeOnCommit() or CheckChangeOnUpload()
+
+        rel_path = os.path.relpath(os.getcwd(), main_path).replace(
+                     os.path.sep, '/')
+        with rdb_wrapper.setup_rdb(function_name, rel_path) as my_status:
+          result = eval(function_name + '(*__args)', context)
+          try:
+            self._check_result(result)
+            if any(res.fatal for res in result):
+              my_status.status = rdb_wrapper.STATUS_FAIL
+          except PresubmitFailure:
+            my_status.status = rdb_wrapper.STATUS_FAIL
+            raise
+
         logging.debug('Running %s done.', function_name)
         self.more_cc.extend(output_api.more_cc)
       finally:
         for f in input_api._named_temporary_files:
           os.remove(f)
-      if not isinstance(result, (tuple, list)):
-        raise PresubmitFailure(
-          'Presubmit functions must return a tuple or list')
-      for item in result:
-        if not isinstance(item, OutputApi.PresubmitResult):
-          raise PresubmitFailure(
-            'All presubmit results must be of types derived from '
-            'output_api.PresubmitResult')
     else:
       result = ()  # no error since the script doesn't care about current event.
 
     # Return the process to the original working directory.
     os.chdir(main_path)
     return result
+
+  def _check_result(self, result):
+    """Helper function which ensures that all checks passed in result"""
+    if not isinstance(result, (tuple, list)):
+      raise PresubmitFailure(
+        'Presubmit functions must return a tuple or list')
+    for item in result:
+      if not isinstance(item, OutputApi.PresubmitResult):
+        raise PresubmitFailure(
+          'All presubmit results must be of types derived from '
+          'output_api.PresubmitResult')
+
 
 def DoPresubmitChecks(change,
                       committing,
@@ -1615,7 +1636,6 @@ def DoPresubmitChecks(change,
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename, 'rU')
       results += executer.ExecPresubmitScript(presubmit_script, filename)
-
     results += thread_pool.RunAsync()
 
     messages = {}

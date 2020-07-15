@@ -521,6 +521,22 @@ class PresubmitUnittest(PresubmitTestsBase):
     self.assertRaises(presubmit.PresubmitFailure,
       executer.ExecPresubmitScript,
       'def CheckChangeOnCommit(input_api, output_api):\n'
+      '  results = []'
+      '  results.extend('
+      '    input_api.canned_checks.CheckPatchFormatted(input_api, output_api))'
+      '  results.extend(input_api.canned_checks.CheckChangeHasBugField('
+      '    input_api, output_api))'
+      '  results.extend(input_api.canned_checks.CheckChangeHasNoUnwantedTags('
+      '    input_api, output_api))'
+      '  results.extend(input_api.canned_checks.CheckChangeHasDescription('
+      '    input_api, output_api))'
+      '  return results',
+      fake_presubmit)
+
+
+    self.assertRaises(presubmit.PresubmitFailure,
+      executer.ExecPresubmitScript,
+      'def CheckChangeOnCommit(input_api, output_api):\n'
       '  return "foo"',
       fake_presubmit)
 

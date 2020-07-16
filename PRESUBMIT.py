@@ -28,8 +28,6 @@ $VerifiedPlatform linux-mips64 linux-mips64le linux-mipsle
 # Timeout for a test to be executed.
 TEST_TIMEOUT_S = 330  # 5m 30s
 
-
-
 def DepotToolsPylint(input_api, output_api):
   """Gather all the pylint logic into one place to make it self-contained."""
   files_to_check = [

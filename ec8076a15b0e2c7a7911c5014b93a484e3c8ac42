@@ -51,6 +51,41 @@
       "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "63da620c_9d3044f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1318516
+      },
+      "writtenOn": "2020-07-16T23:59:30Z",
+      "side": 1,
+      "message": "Friendly ping.",
+      "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4de1ace0_2501edf5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1318516
+      },
+      "writtenOn": "2020-07-16T23:59:30Z",
+      "side": 1,
+      "message": "Looking through it a bit more, using --force may still stop if it fails a presubmit check, but it seems like there are other potential things that I wouldn\u0027t necessarily want to skip if I just want to automatically take the most recent commit message. Generally, --force is a little heavier handed that I\u0027d want, as I\u0027d still like all the other normal stops and checks, just skip that one required user interaction.",
+      "parentUuid": "408e97cb_34c0252b",
+      "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

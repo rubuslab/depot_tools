@@ -1506,6 +1506,7 @@ class PresubmitExecuter(object):
     # Change to the presubmit file's directory to support local imports.
     main_path = os.getcwd()
     os.chdir(os.path.dirname(presubmit_path))
+    rel_path = os.path.relpath(os.getcwd(), main_path).replace(os.path.sep, '/')
 
     # Load the presubmit script into context.
     input_api = InputApi(self.change, presubmit_path, self.committing,
@@ -1522,43 +1523,36 @@ class PresubmitExecuter(object):
 
     # These function names must change if we make substantial changes to
     # the presubmit API that are not backwards compatible.
-    if self.committing:
-      function_name = 'CheckChangeOnCommit'
-    else:
-      function_name = 'CheckChangeOnUpload'
-    if function_name in context:
-      try:
-        context['__args'] = (input_api, output_api)
-        logging.debug('Running %s in %s', function_name, presubmit_path)
+    check_funcs = []
+    if self.committing and 'COMMIT_CHECKS' in context:
+      check_funcs = context['COMMIT_CHECKS']
+    elif 'UPLOAD_CHECKS' in context:
+      check_funcs = context['UPLOAD_CHECKS']
 
-        # TODO: Dive into each of the individual checks so that each individual
-        # test result can be reported to ResultDB
-        # Currently, the rdb streaming will be performed only on the outer func,
-        # i.e. CheckChangeOnCommit() or CheckChangeOnUpload()
-
-        rel_path = os.path.relpath(os.getcwd(), main_path).replace(
-                     os.path.sep, '/')
-        with rdb_wrapper.setup_rdb(function_name, rel_path) as my_status:
-          result = eval(function_name + '(*__args)', context)
-          try:
-            self._check_result(result)
-            if any(res.fatal for res in result):
-              my_status.status = rdb_wrapper.STATUS_FAIL
-          except PresubmitFailure:
+    context['__args'] = (input_api, output_api)
+    all_results = []
+    for func in check_funcs:
+      #try:
+      logging.debug('Running %s in %s', func.__name__, presubmit_path)
+      with rdb_wrapper.setup_rdb(func.__name__, rel_path) as my_status:
+        # func(input_api, output_api)
+        result = eval(func.__name__ + '(*__args)', context)
+        all_results.extend(result)
+        try:
+          self._check_result(result)
+          if any(res.fatal for res in result):
             my_status.status = rdb_wrapper.STATUS_FAIL
-            raise
-
-        logging.debug('Running %s done.', function_name)
-        self.more_cc.extend(output_api.more_cc)
-      finally:
-        for f in input_api._named_temporary_files:
-          os.remove(f)
-    else:
-      result = ()  # no error since the script doesn't care about current event.
-
+        except PresubmitFailure:
+          my_status.status = rdb_wrapper.STATUS_FAIL
+          raise
+      logging.debug('Running %s done.', func.__name__)
+    self.more_cc.extend(output_api.more_cc)
+      #finally:
+        #for f in input_api._named_temporary_files:
+         # os.remove(f)
     # Return the process to the original working directory.
     os.chdir(main_path)
-    return result
+    return all_results
 
   def _check_result(self, result):
     """Helper function which ensures that all checks passed in result"""

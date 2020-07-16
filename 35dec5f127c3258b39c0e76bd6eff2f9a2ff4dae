@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d1fc101_b23909ca",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/basic.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-16T23:29:05Z",
+      "side": 0,
+      "message": "Why did these revisions changed?",
+      "range": {
+        "startLine": 99,
+        "startChar": 47,
+        "endLine": 99,
+        "endChar": 87
+      },
+      "revId": "35dec5f127c3258b39c0e76bd6eff2f9a2ff4dae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

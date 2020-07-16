@@ -775,7 +775,10 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
         # to master in contrast with the non-clone case, which results in a
         # detached HEAD. This prevents fetching the default branch so detach the
         # HEAD after cloning.
-        git('checkout', 'HEAD', '--detach', cwd=sln_dir)
+        # Note that -- argument is necessary to ensure that git treats `HEAD'
+        # argument as revision or ref, and not as a file/directory which happens
+        # to have the exact same name.
+        git('checkout', 'HEAD', '--detach', '--', cwd=sln_dir)
         _git_disable_gc(sln_dir)
       else:
         _git_disable_gc(sln_dir)

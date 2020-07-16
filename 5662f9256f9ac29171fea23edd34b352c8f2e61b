@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3f0fb47e_4c71619e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-07-16T18:40:13Z",
+      "side": 1,
+      "message": "oof, this is problematic. Why would this be, though? When we\u0027re rolling \u0027chromeos\u0027, build is nowhere to be seen in the dependency graph...",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 45
+      },
+      "revId": "5662f9256f9ac29171fea23edd34b352c8f2e61b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "66edc6f5_fb084898",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -16,6 +39,46 @@
       "revId": "5662f9256f9ac29171fea23edd34b352c8f2e61b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2c63928_ee8c345e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-07-16T18:40:13Z",
+      "side": 1,
+      "message": "reading this it doesn\u0027t look like it really will work as-is; let\u0027s chat about it",
+      "revId": "5662f9256f9ac29171fea23edd34b352c8f2e61b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "48fc88c8_4f6e5ce7",
+        "filename": "autoroller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-07-16T18:40:13Z",
+      "side": 1,
+      "message": "please use proper python2 syntax (Repo(object)). We\u0027re not on python3 yet.",
+      "range": {
+        "startLine": 17,
+        "startChar": 6,
+        "endLine": 17,
+        "endChar": 10
+      },
+      "revId": "5662f9256f9ac29171fea23edd34b352c8f2e61b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

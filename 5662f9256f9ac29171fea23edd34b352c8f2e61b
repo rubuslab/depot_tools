@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66edc6f5_fb084898",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-16T17:31:23Z",
+      "side": 1,
+      "message": "POC for autoroller algorithm.\nPTAL and let me know if I\u0027m missing something.",
+      "revId": "5662f9256f9ac29171fea23edd34b352c8f2e61b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

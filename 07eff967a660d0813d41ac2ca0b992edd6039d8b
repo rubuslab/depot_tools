@@ -39,6 +39,30 @@
       "revId": "07eff967a660d0813d41ac2ca0b992edd6039d8b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "36efb50b_85598bed",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-17T15:44:28Z",
+      "side": 1,
+      "message": "I know some builders run bot_update multiple times, so I wasn\u0027t comfortable doing it unconditionally. It also doesn\u0027t make sense to do for try builders.",
+      "parentUuid": "2d6a6392_9371fa0f",
+      "range": {
+        "startLine": 320,
+        "startChar": 11,
+        "endLine": 320,
+        "endChar": 25
+      },
+      "revId": "07eff967a660d0813d41ac2ca0b992edd6039d8b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

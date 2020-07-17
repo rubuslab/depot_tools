@@ -22,6 +22,30 @@
       "revId": "35dec5f127c3258b39c0e76bd6eff2f9a2ff4dae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ab08095_84541f19",
+        "filename": "recipes/recipe_modules/bot_update/examples/full.expected/basic.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-17T15:44:28Z",
+      "side": 0,
+      "message": "The change I made to the test API makes it so that the revisions returned by bot_update are consistent with whatever fixed revisions are passed to the resource script, so these are now getting the gitiles input revision set up by the buildbucket.ci_build test data.",
+      "parentUuid": "3d1fc101_b23909ca",
+      "range": {
+        "startLine": 99,
+        "startChar": 47,
+        "endLine": 99,
+        "endChar": 87
+      },
+      "revId": "35dec5f127c3258b39c0e76bd6eff2f9a2ff4dae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

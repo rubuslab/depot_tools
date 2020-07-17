@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "7e14ea16_e1304c28",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1534,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "6bdf5bfa_8de3aea2",
+      "range": {
+        "startLine": 1534,
+        "startChar": 10,
+        "endLine": 1534,
+        "endChar": 14
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6339fda9_6ba3eb7f",
         "filename": "presubmit_support.py",
         "patchSetId": 29
@@ -62,6 +86,30 @@
       "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0993159_c339df91",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1540,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "6339fda9_6ba3eb7f",
+      "range": {
+        "startLine": 1539,
+        "startChar": 8,
+        "endLine": 1540,
+        "endChar": 38
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -88,6 +136,30 @@
     },
     {
       "key": {
+        "uuid": "6274271d_2b42184a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1558,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "631a691e_29253f9f",
+      "range": {
+        "startLine": 1558,
+        "startChar": 6,
+        "endLine": 1558,
+        "endChar": 19
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "763cd8ac_f761f586",
         "filename": "presubmit_support.py",
         "patchSetId": 29
@@ -108,6 +180,30 @@
       "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "880cc4fc_5e140d83",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1559,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "763cd8ac_f761f586",
+      "range": {
+        "startLine": 1559,
+        "startChar": 37,
+        "endLine": 1559,
+        "endChar": 69
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -134,6 +230,30 @@
     },
     {
       "key": {
+        "uuid": "13a8d5b7_d69e1b96",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1563,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "8b8c1053_7f0b6ca7",
+      "range": {
+        "startLine": 1563,
+        "startChar": 4,
+        "endLine": 1563,
+        "endChar": 7
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "39a8808f_02b57e04",
         "filename": "rdb_wrapper.py",
         "patchSetId": 29
@@ -157,6 +277,30 @@
     },
     {
       "key": {
+        "uuid": "bff921c9_7a94b6bd",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "39a8808f_02b57e04",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 0
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "90bab740_c09d3861",
         "filename": "rdb_wrapper.py",
         "patchSetId": 29
@@ -177,6 +321,30 @@
       "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96fa5398_53a37dca",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "I think I should keep what I have. I tried that and it gives warning saying \"return statement in finally block may swallow exception\"",
+      "parentUuid": "90bab740_c09d3861",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 20
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -226,6 +394,54 @@
     },
     {
       "key": {
+        "uuid": "14e8231d_1732d754",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "Yes I have tested it. rdb uses json protobuf so for duration it is expecting string containing number accurate to exactly 9 decimal places followed by \u0027s\u0027",
+      "parentUuid": "71130641_5deaf18f",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 53
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "11861c78_25732f16",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "26c9533a_174788cc",
+      "range": {
+        "startLine": 56,
+        "startChar": 20,
+        "endLine": 56,
+        "endChar": 21
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1e895c4_ac3bc2b9",
         "filename": "rdb_wrapper.py",
         "patchSetId": 29
@@ -246,6 +462,30 @@
       "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "69278ce6_6b73b4cc",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "d1e895c4_ac3bc2b9",
+      "range": {
+        "startLine": 59,
+        "startChar": 13,
+        "endLine": 59,
+        "endChar": 14
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -272,6 +512,30 @@
     },
     {
       "key": {
+        "uuid": "6fec8168_4c2ad10f",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "a95fef65_6f339fc0",
+      "range": {
+        "startLine": 66,
+        "startChar": 48,
+        "endLine": 66,
+        "endChar": 49
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07765b84_8f35489f",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 29
@@ -292,6 +556,30 @@
       "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fd5c2478_dc4d121e",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2687,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "07765b84_8f35489f",
+      "range": {
+        "startLine": 2687,
+        "startChar": 17,
+        "endLine": 2687,
+        "endChar": 24
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -318,6 +606,30 @@
     },
     {
       "key": {
+        "uuid": "75f63a1d_79ccf862",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2721,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "4d8b2c7c_2e4fda51",
+      "range": {
+        "startLine": 2721,
+        "startChar": 0,
+        "endLine": 2721,
+        "endChar": 37
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a1cfa98f_76334c11",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 29
@@ -338,6 +650,30 @@
       "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62cdc01e_2ffbfb2f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2922,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "a1cfa98f_76334c11",
+      "range": {
+        "startLine": 2922,
+        "startChar": 76,
+        "endLine": 2922,
+        "endChar": 77
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -364,6 +700,30 @@
     },
     {
       "key": {
+        "uuid": "8888d275_6decdb10",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "6fd21cdd_097261a6",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "26c6b63d_c6bcebc2",
         "filename": "tests/rdb_wrapper_test.py",
         "patchSetId": 29
@@ -384,6 +744,30 @@
       "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b4733bd_78bb2e94",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "26c6b63d_c6bcebc2",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 17
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -410,6 +794,30 @@
     },
     {
       "key": {
+        "uuid": "de8ac8c8_d4c25aed",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "f5758d9b_aa9d080b",
+      "range": {
+        "startLine": 28,
+        "startChar": 18,
+        "endLine": 28,
+        "endChar": 49
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "44ad7a85_81837f64",
         "filename": "tests/rdb_wrapper_test.py",
         "patchSetId": 29
@@ -430,6 +838,30 @@
       "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e83470c3_654bf844",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "44ad7a85_81837f64",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 63
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -456,6 +888,30 @@
     },
     {
       "key": {
+        "uuid": "bdcec5ff_cb00bd86",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "b9af08db_06fe2068",
+      "range": {
+        "startLine": 55,
+        "startChar": 11,
+        "endLine": 55,
+        "endChar": 12
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d3609209_17b9b4a9",
         "filename": "tests/rdb_wrapper_test.py",
         "patchSetId": 29
@@ -476,6 +932,30 @@
       "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ddf56c61_67daef07",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-17T23:13:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "d3609209_17b9b4a9",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 71
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

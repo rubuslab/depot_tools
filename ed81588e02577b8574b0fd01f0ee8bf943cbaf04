@@ -1,0 +1,481 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8035b4ed_38d2b4c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Looking good, just some style nits, and a couple more tests.",
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6bdf5bfa_8de3aea2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1534,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "You should add a bug number.\n\n  TODO(crbug.com/XXXXX):",
+      "range": {
+        "startLine": 1534,
+        "startChar": 10,
+        "endLine": 1534,
+        "endChar": 14
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6339fda9_6ba3eb7f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1540,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "optional nit: maybe split this into two lines?\n\n  rel_path \u003d os.path.relpath(...)\n  # Always use forward slashes, so that path is same in *nix and windows.\n  rel_path \u003d rel_path.replace(os.path.sep, \u0027/\u0027)",
+      "range": {
+        "startLine": 1539,
+        "startChar": 8,
+        "endLine": 1540,
+        "endChar": 38
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "631a691e_29253f9f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1558,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "_check_result_type",
+      "range": {
+        "startLine": 1558,
+        "startChar": 6,
+        "endLine": 1558,
+        "endChar": 19
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "763cd8ac_f761f586",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1559,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "This function doesn\u0027t ensure that all checks passed in result. It ensures that all result is a list, and all elements are instances of OutputApi.PresubmitResult.",
+      "range": {
+        "startLine": 1559,
+        "startChar": 37,
+        "endLine": 1559,
+        "endChar": 69
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b8c1053_7f0b6ca7",
+        "filename": "presubmit_support.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1563,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "optional nit: Replace with\n\n  if not all(isinstance(res, OutputApi.PresubmitResult) for res in result):",
+      "range": {
+        "startLine": 1563,
+        "startChar": 4,
+        "endLine": 1563,
+        "endChar": 7
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39a8808f_02b57e04",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "nit: Remove emtpy lines.",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 0
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90bab740_c09d3861",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Consider instead:\n\n  if not sink:\n    return\n\n  tr \u003d {\n    ...",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 20
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26c9533a_174788cc",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Nit: no spaces before \u0027:\u0027 on dicts.",
+      "range": {
+        "startLine": 56,
+        "startChar": 20,
+        "endLine": 56,
+        "endChar": 21
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71130641_5deaf18f",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Have you tested this? Is rdb expecting strings or floats for duration?",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 53
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1e895c4_ac3bc2b9",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Remove spaces around \u0027\u003d\u0027 on function keyword arguments.",
+      "range": {
+        "startLine": 59,
+        "startChar": 13,
+        "endLine": 59,
+        "endChar": 14
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a95fef65_6f339fc0",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "nit: Remove.",
+      "range": {
+        "startLine": 66,
+        "startChar": 48,
+        "endLine": 66,
+        "endChar": 49
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07765b84_8f35489f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2687,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Update existing tests to pass resultdb\u003dFalse explicitly.",
+      "range": {
+        "startLine": 2687,
+        "startChar": 17,
+        "endLine": 2687,
+        "endChar": 24
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d8b2c7c_2e4fda51",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2721,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Add a test like this below, and pass resultdb\u003dTrue and check that the command is called as expected.",
+      "range": {
+        "startLine": 2721,
+        "startChar": 0,
+        "endLine": 2721,
+        "endChar": 37
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1cfa98f_76334c11",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2922,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Add\n  \n  , \u0027--resultdb\u0027\n\nand check that resultdb is passed below.",
+      "range": {
+        "startLine": 2922,
+        "startChar": 76,
+        "endLine": 2922,
+        "endChar": 77
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fd21cdd_097261a6",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "nit: Indent only two spaces.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26c6b63d_c6bcebc2",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 17
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5758d9b_aa9d080b",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 28,
+        "startChar": 18,
+        "endLine": 28,
+        "endChar": 49
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44ad7a85_81837f64",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 63
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9af08db_06fe2068",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "Remove spaces around \u0027\u003d\u0027 on function keyword args.",
+      "range": {
+        "startLine": 55,
+        "startChar": 11,
+        "endLine": 55,
+        "endChar": 12
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3609209_17b9b4a9",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-17T21:33:59Z",
+      "side": 1,
+      "message": "nit: Not needed, you already checked this on the other test.",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 71
+      },
+      "revId": "ed81588e02577b8574b0fd01f0ee8bf943cbaf04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

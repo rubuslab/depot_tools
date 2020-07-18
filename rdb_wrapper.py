@@ -39,7 +39,9 @@ def setup_rdb(function_name, rel_path):
   my_status = ResultSinkStatus()
   start_time = time.time()
   try:
+
     yield my_status
+
   except Exception:
     my_status.status = STATUS_FAIL
     raise
@@ -48,18 +50,18 @@ def setup_rdb(function_name, rel_path):
     elapsed_time = end_time - start_time
     if sink != None:
       tr = {
-          'testId'  : '{0}/:{1}'.format(rel_path, function_name),
-          'status'  : my_status.status,
-          'expected': (my_status.status == STATUS_PASS),
-          'duration': '{:.9f}s'.format(elapsed_time)
+          'testId'   : '{0}/:{1}'.format(rel_path, function_name),
+          'status'   : my_status.status,
+          'expected' : (my_status.status == STATUS_PASS),
+          'duration' : '{:.9f}s'.format(elapsed_time)
       }
       requests.post(
-          url='http://{0}/prpc/luci.resultsink.v1.Sink/ReportTestResults'
+          url = 'http://{0}/prpc/luci.resultsink.v1.Sink/ReportTestResults'
                   .format(sink['address']),
-          headers={
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization': 'ResultSink {0}'.format(sink['auth_token'])
+          headers = {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': 'ResultSink {0}'.format(sink['auth_token'])
           },
-          data=json.dumps({'testResults': [tr]})
-    )
+          data = json.dumps({'testResults': [tr] })
+        )

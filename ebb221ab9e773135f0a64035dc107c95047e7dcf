@@ -65,6 +65,30 @@
     },
     {
       "key": {
+        "uuid": "e047a906_e673e429",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-20T20:31:19Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "8a4cd6a4_cca382e5",
+      "range": {
+        "startLine": 51,
+        "startChar": 18,
+        "endLine": 51,
+        "endChar": 20
+      },
+      "revId": "ebb221ab9e773135f0a64035dc107c95047e7dcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa936ae_3b699e54",
         "filename": "tests/rdb_wrapper_test.py",
         "patchSetId": 30
@@ -85,6 +109,30 @@
       "revId": "ebb221ab9e773135f0a64035dc107c95047e7dcf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5213ee08_54edc18a",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-20T20:31:19Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "3aa936ae_3b699e54",
+      "range": {
+        "startLine": 46,
+        "startChar": 16,
+        "endLine": 46,
+        "endChar": 18
+      },
+      "revId": "ebb221ab9e773135f0a64035dc107c95047e7dcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a16c0c52_2e18d52b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 30
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-20T20:04:26Z",
+      "side": 1,
+      "message": "Can you elaborate more in the description?\nSomething like \"add an rdb wrapper and use it to time CheckChangeOn{Upload,Commit} on every PRESUBMIT.py file and upload the results to ResultSink.\"\n\nAlso, please add a bug.\n\n  Bug: ....",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 0
+      },
+      "revId": "ebb221ab9e773135f0a64035dc107c95047e7dcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c72f09d0_212dcf4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 30
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-20T20:04:26Z",
+      "side": 1,
+      "message": "lgtm w. a couple more nits.",
+      "revId": "ebb221ab9e773135f0a64035dc107c95047e7dcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8a4cd6a4_cca382e5",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-20T20:04:26Z",
+      "side": 1,
+      "message": "nit: remove.",
+      "range": {
+        "startLine": 51,
+        "startChar": 18,
+        "endLine": 51,
+        "endChar": 20
+      },
+      "revId": "ebb221ab9e773135f0a64035dc107c95047e7dcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3aa936ae_3b699e54",
+        "filename": "tests/rdb_wrapper_test.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-20T20:04:26Z",
+      "side": 1,
+      "message": "nit: Remove spaces before \u0027:\u0027",
+      "range": {
+        "startLine": 46,
+        "startChar": 16,
+        "endLine": 46,
+        "endChar": 18
+      },
+      "revId": "ebb221ab9e773135f0a64035dc107c95047e7dcf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

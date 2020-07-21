@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3e5b5e7b_812cf9a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-07-21T22:56:20Z",
+      "side": 1,
+      "message": "Hey, the analyze deps had a hitch where the paths had a leading src/. This CL aims to address that.",
+      "revId": "280e0d5a6803057b506fa975297f87408abb465c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

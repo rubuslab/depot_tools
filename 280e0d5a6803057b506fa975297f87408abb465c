@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "285e342a_31ddff23",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-21T23:20:19Z",
+      "side": 1,
+      "message": "I think this file is correct. I think this should be modified in the chromium recipe (since removing the first dir wouldn\u0027t be correct for all repos).",
+      "revId": "280e0d5a6803057b506fa975297f87408abb465c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "503cd06c_9c24c0cd",
         "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
         "patchSetId": 4
@@ -52,6 +69,29 @@
         "startChar": 45,
         "endLine": 18,
         "endChar": 46
+      },
+      "revId": "280e0d5a6803057b506fa975297f87408abb465c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3960940_f8c624dc",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-21T23:20:19Z",
+      "side": 1,
+      "message": "This is not always true. For projects that set use_relative_paths to True in DEPS (e.g. [1]), the equivalent of src wouldn\u0027t be included.\n\nAlso, there might be deps outside \u0027src/\u0027 (e.g. src-internal).\n\n[1] https://source.chromium.org/chromium/chromium/src/+/master:third_party/skia/DEPS",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 53
       },
       "revId": "280e0d5a6803057b506fa975297f87408abb465c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",

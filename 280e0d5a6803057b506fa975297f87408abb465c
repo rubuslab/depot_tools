@@ -16,6 +16,46 @@
       "revId": "280e0d5a6803057b506fa975297f87408abb465c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "503cd06c_9c24c0cd",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-21T23:09:04Z",
+      "side": 1,
+      "message": "Is GCLIENT_DEP_PATH always defined? If not, dep_path.split will throw AttributeError. If yes, let\u0027s just add assert below:\n\n  assert dep_path is not None",
+      "revId": "280e0d5a6803057b506fa975297f87408abb465c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51529d70_60d21c7d",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-07-21T23:09:04Z",
+      "side": 1,
+      "message": "Does this need to work on Windows? Does it have slash or backslash. If backslash, you should use:\n\n  os.path.sep",
+      "range": {
+        "startLine": 18,
+        "startChar": 45,
+        "endLine": 18,
+        "endChar": 46
+      },
+      "revId": "280e0d5a6803057b506fa975297f87408abb465c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

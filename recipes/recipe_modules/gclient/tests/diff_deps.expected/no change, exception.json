@@ -5,11 +5,11 @@
       "-c",
       "core.quotePath=false",
       "checkout",
-      "HEAD~",
+      "HEAD^",
       "--",
       "DEPS"
     ],
-    "cwd": "[CACHE]/src",
+    "cwd": "[CACHE]",
     "infra_step": true,
     "name": "checkout the previous DEPS"
   },
@@ -21,7 +21,7 @@
       "recurse",
       "RECIPE_MODULE[depot_tools::gclient]/resources/diff_deps.py"
     ],
-    "cwd": "[CACHE]/src",
+    "cwd": "[CACHE]",
     "env_suffixes": {
       "PATH": [
         "RECIPE_REPO[depot_tools]"
@@ -45,7 +45,7 @@
       "--",
       "DEPS"
     ],
-    "cwd": "[CACHE]/src",
+    "cwd": "[CACHE]",
     "infra_step": true,
     "name": "checkout the original DEPS"
   },
@@ -69,7 +69,7 @@
       "    affected_files = api.gclient.diff_deps(api.path['cache'])",
       "  File \"RECIPE_REPO[recipe_engine]/recipe_engine/recipe_api.py\", in _inner",
       "    return func(*a, **kw)",
-      "  File \"RECIPE_REPO[depot_tools]/recipes/recipe_modules/gclient/api.py\", line 414, in diff_deps",
+      "  File \"RECIPE_REPO[depot_tools]/recipes/recipe_modules/gclient/api.py\", line 413, in diff_deps",
       "    raise self.DepsDiffException(msg)",
       "DepsDiffException: Unexpected result: autoroll diff found 0 files changed"
     ]

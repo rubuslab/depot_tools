@@ -363,13 +363,12 @@ class GclientApi(recipe_api.RecipeApi):
       cfg.revisions[path] = revision
 
   def diff_deps(self, cwd):
-    cwd = cwd.join(self.get_gerrit_patch_root())
     with self.m.context(cwd=cwd):
       step_result = self.m.git(
           '-c',
           'core.quotePath=false',
           'checkout',
-          'HEAD~',
+          'HEAD^',
           '--',
           'DEPS',
           name='checkout the previous DEPS',

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "16249e1d_ccb0cd05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-07-21T23:04:17Z",
+      "side": 1,
+      "message": "This is another issue with the analyze deps rollout: Windows didn\u0027t understand the shebang, so it didn\u0027t run the python script. I was able to add python to the recurse command (which strangely didn\u0027t work before), so that was an easy fix. Also think it\u0027s best to let the caller handle the full cwd path. In this instance I\u0027m moving it over to all be done by build.git.",
+      "revId": "b3f4693c30830024836154effe2dbde02d9673e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

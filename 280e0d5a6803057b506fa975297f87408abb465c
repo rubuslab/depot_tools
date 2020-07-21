@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "396fcf1d_96e68033",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-07-21T23:38:02Z",
+      "side": 1,
+      "message": "We could just save a line with os.environ[\u0027GCLIENT_DEP_PATH\u0027]",
+      "parentUuid": "503cd06c_9c24c0cd",
+      "revId": "280e0d5a6803057b506fa975297f87408abb465c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "51529d70_60d21c7d",
         "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
         "patchSetId": 4
@@ -87,6 +105,54 @@
       "writtenOn": "2020-07-21T23:20:19Z",
       "side": 1,
       "message": "This is not always true. For projects that set use_relative_paths to True in DEPS (e.g. [1]), the equivalent of src wouldn\u0027t be included.\n\nAlso, there might be deps outside \u0027src/\u0027 (e.g. src-internal).\n\n[1] https://source.chromium.org/chromium/chromium/src/+/master:third_party/skia/DEPS",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 53
+      },
+      "revId": "280e0d5a6803057b506fa975297f87408abb465c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a73c2089_f36544fa",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-07-21T23:38:02Z",
+      "side": 1,
+      "message": "(probably going to abandon this CL due to the redirection by Edward, but for posterity and because I appreciate the review) This does need to work on Windows and the dep_path always has slashes, even on Windows.",
+      "parentUuid": "51529d70_60d21c7d",
+      "range": {
+        "startLine": 18,
+        "startChar": 45,
+        "endLine": 18,
+        "endChar": 46
+      },
+      "revId": "280e0d5a6803057b506fa975297f87408abb465c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b74d529_4ca68ddb",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-07-21T23:38:02Z",
+      "side": 1,
+      "message": "Thanks! Nice catch.",
+      "parentUuid": "e3960940_f8c624dc",
       "range": {
         "startLine": 18,
         "startChar": 0,

@@ -363,13 +363,12 @@ class GclientApi(recipe_api.RecipeApi):
       cfg.revisions[path] = revision
 
   def diff_deps(self, cwd):
-    cwd = cwd.join(self.get_gerrit_patch_root())
     with self.m.context(cwd=cwd):
       step_result = self.m.git(
           '-c',
           'core.quotePath=false',
           'checkout',
-          'HEAD~',
+          'HEAD^',
           '--',
           'DEPS',
           name='checkout the previous DEPS',
@@ -383,6 +382,7 @@ class GclientApi(recipe_api.RecipeApi):
             'recursively git diff all DEPS',
             [
                 'recurse',
+                'python',
                 self.resource('diff_deps.py'),
             ],
             stdout=self.m.raw_io.output_text(add_output_log=True),
@@ -398,7 +398,6 @@ class GclientApi(recipe_api.RecipeApi):
             raise self.DepsDiffException(msg)
           elif re.match('\d+>', line):
             paths.append(line[line.index('>') + 1:])
-
 
         # Normalize paths
         if self.m.platform.is_win:

@@ -140,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "8e2be97b_888c20ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1318516
+      },
+      "writtenOn": "2020-07-22T22:39:14Z",
+      "side": 1,
+      "message": "Out of curiosity, why are you hesitant to add more options?",
+      "parentUuid": "082acedb_00e64575",
+      "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b27c8b8c_43653213",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -163,6 +181,30 @@
     },
     {
       "key": {
+        "uuid": "d6673646_3502d07e",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1372,
+      "author": {
+        "id": 1318516
+      },
+      "writtenOn": "2020-07-22T22:39:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b27c8b8c_43653213",
+      "range": {
+        "startLine": 1372,
+        "startChar": 6,
+        "endLine": 1372,
+        "endChar": 45
+      },
+      "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f556744e_3d792205",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -183,6 +225,30 @@
       "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "36c7bb7e_5d7e2d59",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3985,
+      "author": {
+        "id": 1318516
+      },
+      "writtenOn": "2020-07-22T22:39:14Z",
+      "side": 1,
+      "message": "Done. It looks like --target-branch does use +, guessing that\u0027s a relic from an earlier time though, since it was last changed in 2015.",
+      "parentUuid": "f556744e_3d792205",
+      "range": {
+        "startLine": 3985,
+        "startChar": 26,
+        "endLine": 3985,
+        "endChar": 41
+      },
+      "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

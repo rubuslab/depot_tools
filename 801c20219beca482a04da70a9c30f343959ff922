@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f1dff53_e84a0677",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2020-07-22T12:54:58Z",
+      "side": 1,
+      "message": "It\u0027s disruptive to let gclient print warnings on stdout. Some infrastructure directly parses output from e.g. revinfo and similar. See https://crbug.com/1108301",
+      "revId": "801c20219beca482a04da70a9c30f343959ff922",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

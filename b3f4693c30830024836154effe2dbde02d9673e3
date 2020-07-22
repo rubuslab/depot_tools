@@ -16,6 +16,23 @@
       "revId": "b3f4693c30830024836154effe2dbde02d9673e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "390e47e8_1d96a31c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2020-07-22T20:21:39Z",
+      "side": 1,
+      "message": "Friendly ping. https://crrev.com/c/2311257 is waiting on this.",
+      "revId": "b3f4693c30830024836154effe2dbde02d9673e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

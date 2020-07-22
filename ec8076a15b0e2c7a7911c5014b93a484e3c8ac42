@@ -158,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "81b0956b_541fbe0e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-22T22:58:02Z",
+      "side": 1,
+      "message": "In principle, the more options you have, the more ways they can interact between each other, so it becomes harder to use, expand and test the code.\ne.g. Is it clear what should happen if they combine --foo and --bar? Will users be confused by that behavior? Do we need to care about the value of --baz when we\u0027re processing --foo?\n\nI think the number of options that affect the title (--no-squash, --force, --message, --title, --skip-title, whether it\u0027s initial upload) is still clear and manageable enough, but it\u0027s something to keep in mind.",
+      "parentUuid": "8e2be97b_888c20ba",
+      "revId": "ec8076a15b0e2c7a7911c5014b93a484e3c8ac42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b27c8b8c_43653213",
         "filename": "git_cl.py",
         "patchSetId": 3

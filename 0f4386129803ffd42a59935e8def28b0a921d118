@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e782e204_2ade3933",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-23T19:29:03Z",
+      "side": 1,
+      "message": "PTAL\n\nWas causing problems like https://ci.chromium.org/p/chromium/builders/try-m85/chromium_presubmit/1214?\nShould be resolved with this change: https://luci-milo.appspot.com/raw/build/logs.chromium.org/chromium/led/ehmaldonado_google.com/8c826fa7873613a7067c88a7e8dedec24bbfe75a5a9ff344db831478a0b3e4f6/+/annotations",
+      "revId": "0f4386129803ffd42a59935e8def28b0a921d118",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

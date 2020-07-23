@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e7a07e1_4b662665",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 717,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2020-07-23T19:43:28Z",
+      "side": 1,
+      "message": "It\u0027s impossible to pass an empty list now. files_to_skip \u003d [] evaluates to False, which lets the assignment above evaluate to None.",
+      "range": {
+        "startLine": 717,
+        "startChar": 9,
+        "endLine": 717,
+        "endChar": 22
+      },
+      "revId": "6402141d1f56c8b6e909a17b50474ae744bd5180",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

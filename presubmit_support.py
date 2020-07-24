@@ -1533,6 +1533,9 @@ class PresubmitExecuter(object):
     # Change to the presubmit file's directory to support local imports.
     main_path = os.getcwd()
     os.chdir(os.path.dirname(presubmit_path))
+    rel_path = os.path.relpath(os.getcwd(), main_path)
+    # Always use forward slashes, so that path is same in *nix and Windows
+    rel_path = rel_path.replace(os.path.sep, '/')
 
     # Load the presubmit script into context.
     input_api = InputApi(self.change, presubmit_path, self.committing,
@@ -1547,23 +1550,18 @@ class PresubmitExecuter(object):
     except Exception as e:
       raise PresubmitFailure('"%s" had an exception.\n%s' % (presubmit_path, e))
 
-    # These function names must change if we make substantial changes to
-    # the presubmit API that are not backwards compatible.
-    if self.committing:
-      function_name = 'CheckChangeOnCommit'
-    else:
-      function_name = 'CheckChangeOnUpload'
-    if function_name in context:
-      try:
-        context['__args'] = (input_api, output_api)
+    context['__args'] = (input_api, output_api)
+
+    result = ()
+    try:
+      for function_name in context:
+        if len(function_name) < 5 or function_name[:5] != "Check":
+          continue
+        elif len(function_name) > 6 and \
+                ((function_name[-6:] == "Commit" and not self.committing) or \
+                (function_name[-6:] == "Upload" and self.committing)):
+          continue
         logging.debug('Running %s in %s', function_name, presubmit_path)
-
-        # TODO (crbug.com/1106943): Dive into each of the individual checks
-
-        rel_path = os.path.relpath(os.getcwd(), main_path)
-        # Always use forward slashes, so that path is same in *nix and Windows
-        rel_path = rel_path.replace(os.path.sep, '/')
-
         with rdb_wrapper.setup_rdb(function_name, rel_path) as my_status:
           result = eval(function_name + '(*__args)', context)
           self._check_result_type(result)
@@ -1571,11 +1569,10 @@ class PresubmitExecuter(object):
             my_status.status = rdb_wrapper.STATUS_FAIL
         logging.debug('Running %s done.', function_name)
         self.more_cc.extend(output_api.more_cc)
-      finally:
-        for f in input_api._named_temporary_files:
-          os.remove(f)
-    else:
-      result = ()  # no error since the script doesn't care about current event.
+
+    finally:
+      for f in input_api._named_temporary_files:
+        os.remove(f)
 
     # Return the process to the original working directory.
     os.chdir(main_path)

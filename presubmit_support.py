@@ -1520,23 +1520,20 @@ class PresubmitExecuter(object):
     except Exception as e:
       raise PresubmitFailure('"%s" had an exception.\n%s' % (presubmit_path, e))
 
-    # These function names must change if we make substantial changes to
-    # the presubmit API that are not backwards compatible.
-    if self.committing:
-      function_name = 'CheckChangeOnCommit'
-    else:
-      function_name = 'CheckChangeOnUpload'
-    if function_name in context:
-      try:
-        context['__args'] = (input_api, output_api)
+    context['__args'] = (input_api, output_api)
+
+    result = ()
+    try:
+      for function_name in context:
+        if len(function_name) < 5 or function_name[:5] != "Check":
+          continue
+        elif len(function_name) > 6 and \
+                ((function_name[-6:] == "Commit" and not self.committing) or \
+                (function_name[-6:] == "Upload" and self.committing)):
+          continue
         logging.debug('Running %s in %s', function_name, presubmit_path)
-
-        # TODO (crbug.com/1106943): Dive into each of the individual checks
-
-        rel_path = os.path.relpath(os.getcwd(), main_path)
-        # Always use forward slashes, so that path is same in *nix and Windows
-        rel_path = rel_path.replace(os.path.sep, '/')
-
+        rel_path = os.path.relpath(os.getcwd(), main_path).replace(
+                       os.path.sep, '/')
         with rdb_wrapper.setup_rdb(function_name, rel_path) as my_status:
           result = eval(function_name + '(*__args)', context)
           self._check_result_type(result)
@@ -1544,25 +1541,25 @@ class PresubmitExecuter(object):
             my_status.status = rdb_wrapper.STATUS_FAIL
         logging.debug('Running %s done.', function_name)
         self.more_cc.extend(output_api.more_cc)
-      finally:
-        for f in input_api._named_temporary_files:
-          os.remove(f)
-    else:
-      result = ()  # no error since the script doesn't care about current event.
+
+    finally:
+      for f in input_api._named_temporary_files:
+        os.remove(f)
 
     # Return the process to the original working directory.
     os.chdir(main_path)
     return result
 
   def _check_result_type(self, result):
-    """Helper function which ensures result is a list, and all elements are
-    instances of OutputApi.PresubmitResult"""
+    """Helper function which ensures that all checks passed in result"""
     if not isinstance(result, (tuple, list)):
-      raise PresubmitFailure('Presubmit functions must return a tuple or list')
-    if not all(isinstance(res, OutputApi.PresubmitResult) for res in result):
       raise PresubmitFailure(
-        'All presubmit results must be of types derived from '
-        'output_api.PresubmitResult')
+        'Presubmit functions must return a tuple or list')
+    for item in result:
+      if not isinstance(item, OutputApi.PresubmitResult):
+        raise PresubmitFailure(
+          'All presubmit results must be of types derived from '
+          'output_api.PresubmitResult')
 
 
 def DoPresubmitChecks(change,

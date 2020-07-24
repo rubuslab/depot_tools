@@ -16,6 +16,19 @@ STATUS_CRASH = 'CRASH'
 STATUS_ABORT = 'ABORT'
 STATUS_SKIP = 'SKIP'
 
+import contextlib
+import json
+import os
+import requests
+import time
+
+# Constants describing TestStatus for ResultDB
+STATUS_PASS = 'PASS'
+STATUS_FAIL = 'FAIL'
+STATUS_CRASH = 'CRASH'
+STATUS_ABORT = 'ABORT'
+STATUS_SKIP = 'SKIP'
+
 class ResultSinkStatus(object):
   def __init__(self):
     self.status = STATUS_PASS
@@ -62,4 +75,4 @@ def setup_rdb(function_name, rel_path):
             'Authorization': 'ResultSink {0}'.format(sink['auth_token'])
           },
           data=json.dumps({'testResults': [tr]})
-    )
+      )

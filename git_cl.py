@@ -1284,6 +1284,18 @@ class Changelist(object):
     if all_files:
       args.append('--all_files')
 
+    # If they are a googler and haven't opted out, resultdb should be True.
+    email = str(subprocess2.Popen('git config user.email', shell=True,
+      stdout=subprocess2.PIPE).stdout.read())
+    opt_out = str(subprocess2.Popen('git config resultdb.optout', shell=True,
+      stdout=subprocess2.PIPE).stdout.read())
+    if (('@google.com' in email) or ('@chromium.org' in email)) and \
+        ('true' not in opt_out):
+      print("Performing Default ResultDB reporting for Googlers.")
+      print("Don't want ResultDB reporting? Opt-out by "
+              "running 'git config resultdb.optout true'. ")
+      resultdb = True
+
     with gclient_utils.temporary_file() as description_file:
       with gclient_utils.temporary_file() as json_output:
 

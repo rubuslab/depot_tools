@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "92e16df1_60adc8ef",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1538,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-28T21:41:42Z",
+      "side": 1,
+      "message": "yes, to avoid repeated computation",
+      "parentUuid": "57f07430_b53a6727",
+      "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b3c76221_4844633a",
         "filename": "presubmit_support.py",
         "patchSetId": 6
@@ -33,6 +51,24 @@
       "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fe82eaa_4f1554fc",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1563,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-28T21:41:42Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "b3c76221_4844633a",
+      "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "cc9dfc9e_de5a22c2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1565,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-28T21:41:42Z",
+      "side": 1,
+      "message": "it\u0027s opt-in if they use the \u0027--resultdb\u0027 flag. The setup is done in git_cl.py, and rdb_wrapper.py checks for LUCI context and does the reporting accordingly.",
+      "parentUuid": "4aab5b4f_67f06224",
+      "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b1e5240_d89e2279",
         "filename": "presubmit_support.py",
         "patchSetId": 6
@@ -67,6 +121,24 @@
       "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb905e84_023244b9",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-28T21:41:42Z",
+      "side": 1,
+      "message": "fixed. I made a list of results and keep extending it instead now.",
+      "parentUuid": "7b1e5240_d89e2279",
+      "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "aa5a6372_5869b7ac",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1536,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-28T23:55:05Z",
+      "side": 1,
+      "message": "No, a developer could run `git-cl presubmit` from anywhere within the repo.\n\n  # Change to the presubmit file\u0027s directory to support local imports.\n  main_path \u003d os.getcwd()\n  presubmit_dir \u003d os.path.dirname(presubmit_path)\n  os.chdir(presubmit_dir)\n  # Get path of presubmit directory relative to repository root.\n  # Always use forward slashes, so that path is same in *nix and Windows.\n  rel_path \u003d os.path.relpath(presubmit_dir, input_api.change.RepositoryRoot())\n  rel_path \u003d rel_path.replace(os.path.sep, \u0027/\u0027)\n\nAlso, do this in a separate CL, as this is a bug with the current code.",
+      "parentUuid": "b9867da8_788ea18f",
+      "range": {
+        "startLine": 1536,
+        "startChar": 4,
+        "endLine": 1536,
+        "endChar": 12
+      },
+      "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f99248c1_a6e0c182",
         "filename": "presubmit_support.py",
         "patchSetId": 8

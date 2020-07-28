@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b9867da8_788ea18f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1536,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-28T23:40:44Z",
+      "side": 1,
+      "message": "Isn\u0027t presubmit_support always going to be run from repository root? if not, how would I get path relative to repository root? We do os.chdir(main_path) to change back to main path at the end of this method.",
+      "parentUuid": "85f6f296_d70467e7",
+      "range": {
+        "startLine": 1536,
+        "startChar": 4,
+        "endLine": 1536,
+        "endChar": 12
+      },
+      "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f99248c1_a6e0c182",
         "filename": "presubmit_support.py",
         "patchSetId": 8
@@ -45,6 +69,30 @@
       "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa662554_9b9b9e77",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1560,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-28T23:40:44Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "f99248c1_a6e0c182",
+      "range": {
+        "startLine": 1560,
+        "startChar": 74,
+        "endLine": 1560,
+        "endChar": 76
+      },
+      "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "6a409cb9_3275a98e",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1569,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-28T23:40:44Z",
+      "side": 1,
+      "message": "if tuple is immutable how would we change it? That\u0027s why my approach was to have a list and keep extending it.",
+      "parentUuid": "28615086_5b99b9dc",
+      "range": {
+        "startLine": 1569,
+        "startChar": 25,
+        "endLine": 1569,
+        "endChar": 29
+      },
+      "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "72be0b85_837820e5",
         "filename": "presubmit_support.py",
         "patchSetId": 8
@@ -82,6 +154,30 @@
       "writtenOn": "2020-07-28T21:58:47Z",
       "side": 1,
       "message": "Why is tuple needed?",
+      "range": {
+        "startLine": 1580,
+        "startChar": 0,
+        "endLine": 1580,
+        "endChar": 0
+      },
+      "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60148ac7_dcac69ee",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1580,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-28T23:40:44Z",
+      "side": 1,
+      "message": "presubmit_unittest expect a tuple output, so I cast it into tuple at the end",
+      "parentUuid": "72be0b85_837820e5",
       "range": {
         "startLine": 1580,
         "startChar": 0,

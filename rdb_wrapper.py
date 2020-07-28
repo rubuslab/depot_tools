@@ -61,5 +61,5 @@ def setup_rdb(function_name, rel_path):
             'Accept': 'application/json',
             'Authorization': 'ResultSink {0}'.format(sink['auth_token'])
           },
-          data=json.dumps({'testResults': [tr]})
-    )
+          data=json.dumps({'testResults': [tr] })
+        )

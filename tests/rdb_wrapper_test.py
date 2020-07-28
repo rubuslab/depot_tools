@@ -43,8 +43,8 @@ class TestSetupRDB(unittest.TestCase):
       my_status_obj.status = rdb_wrapper.STATUS_FAIL
 
     expectedTr = {
-        'testId'  : './my/folder/:_foobar',
-        'status'  : rdb_wrapper.STATUS_FAIL,
+        'testId': './my/folder/:_foobar',
+        'status': rdb_wrapper.STATUS_FAIL,
         'expected': False,
         'duration': '1.000000000s'
     }

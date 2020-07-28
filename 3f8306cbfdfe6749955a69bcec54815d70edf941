@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85f6f296_d70467e7",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1536,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-28T21:58:47Z",
+      "side": 1,
+      "message": "I just noticed, the value of rel_path is relative to the current directory (i.e. main_path), where it should be relative to the repository root.",
+      "range": {
+        "startLine": 1536,
+        "startChar": 4,
+        "endLine": 1536,
+        "endChar": 12
+      },
+      "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f99248c1_a6e0c182",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1560,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-28T21:58:47Z",
+      "side": 1,
+      "message": "Use single quotes.\nAlso, consider splitting\n\n  if not function_name.startswith(\u0027Check\u0027):\n    continue\n  if function_name.endswith(\u0027Commit\u0027) and not self.committing:\n    continue\n  if function_name.endswith(\u0027Upload\u0027) and self.committing:\n    continue",
+      "range": {
+        "startLine": 1560,
+        "startChar": 74,
+        "endLine": 1560,
+        "endChar": 76
+      },
+      "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28615086_5b99b9dc",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1569,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-28T21:58:47Z",
+      "side": 1,
+      "message": "list is not needed.",
+      "range": {
+        "startLine": 1569,
+        "startChar": 25,
+        "endLine": 1569,
+        "endChar": 29
+      },
+      "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72be0b85_837820e5",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1580,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-28T21:58:47Z",
+      "side": 1,
+      "message": "Why is tuple needed?",
+      "range": {
+        "startLine": 1580,
+        "startChar": 0,
+        "endLine": 1580,
+        "endChar": 0
+      },
+      "revId": "3f8306cbfdfe6749955a69bcec54815d70edf941",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

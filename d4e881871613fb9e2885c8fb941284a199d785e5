@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "57f07430_b53a6727",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1538,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-28T01:59:15Z",
+      "side": 1,
+      "message": "Nit: Did you move this block here to avoid repeated computation, or some other reason?",
+      "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3c76221_4844633a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1563,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-28T01:59:15Z",
+      "side": 1,
+      "message": "Can you use function_name.startswith() and function_name.endswith() instead of the explicit offset calculations?",
+      "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4aab5b4f_67f06224",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1565,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-28T01:59:15Z",
+      "side": 1,
+      "message": "Do we need some way for clients to be able to opt-out of this integration?",
+      "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b1e5240_d89e2279",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-07-28T01:59:15Z",
+      "side": 1,
+      "message": "I think now that this is a loop, `result` will get overwritten on every iteration and you\u0027ll be left with the result of the final iteration in the end, right? Do we need to do something smarter to preserve failures?",
+      "revId": "d4e881871613fb9e2885c8fb941284a199d785e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

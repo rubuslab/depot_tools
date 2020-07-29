@@ -16,6 +16,24 @@
       "revId": "d92c1ab09a6c3e96056b6dac50cfe4075be223dc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "831c1f41_3f904258",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-07-29T20:50:37Z",
+      "side": 1,
+      "message": "Since this only impacts test data during recipe tests, it\u0027s not impacted by the CQ freeze.",
+      "parentUuid": "f3c48345_7d7bed73",
+      "revId": "d92c1ab09a6c3e96056b6dac50cfe4075be223dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

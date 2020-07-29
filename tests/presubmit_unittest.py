@@ -970,6 +970,7 @@ def CheckChangeOnCommit(input_api, output_api):
   def testMainUnversioned(self, *_mocks):
     gclient_utils.FileRead.return_value = ''
     scm.determine_scm.return_value = None
+    os.path.join(self.fake_root_dir, 'PRESUBMIT.py')
 
     self.assertEqual(
         0,
@@ -983,6 +984,7 @@ def CheckChangeOnCommit(input_api, output_api):
         'def CheckChangeOnUpload(input_api, output_api):\n'
         '  return [output_api.PresubmitError("!!")]\n')
     scm.determine_scm.return_value = None
+    os.path.join(self.fake_root_dir, 'PRESUBMIT.py')
 
     self.assertEqual(
         1,

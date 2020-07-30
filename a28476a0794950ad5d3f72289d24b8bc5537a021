@@ -22,6 +22,30 @@
       "revId": "a28476a0794950ad5d3f72289d24b8bc5537a021",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26b7d14d_5e4a8150",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-30T19:06:27Z",
+      "side": 1,
+      "message": "Oh okay, that was really silly, thanks for catching that.",
+      "parentUuid": "409f18e6_f8853f49",
+      "range": {
+        "startLine": 971,
+        "startChar": 56,
+        "endLine": 973,
+        "endChar": 5
+      },
+      "revId": "a28476a0794950ad5d3f72289d24b8bc5537a021",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

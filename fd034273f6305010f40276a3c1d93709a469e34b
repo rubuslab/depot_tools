@@ -22,6 +22,30 @@
       "revId": "fd034273f6305010f40276a3c1d93709a469e34b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f897071e_1cc1888e",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-30T18:14:53Z",
+      "side": 1,
+      "message": "tried that, I am getting \n\nroot is: /usr/local/google/home/saagarsanghavi/workspace/depot_tools\npresubmit_dir is: /usr/local/google/home/saagarsanghavi/workspace/depot_tools",
+      "parentUuid": "0b2c4c88_277664e5",
+      "range": {
+        "startLine": 1566,
+        "startChar": 8,
+        "endLine": 1566,
+        "endChar": 55
+      },
+      "revId": "fd034273f6305010f40276a3c1d93709a469e34b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

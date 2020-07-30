@@ -28,6 +28,7 @@ import multiprocessing
 import os  # Somewhat exposed through the API.
 import random
 import re  # Exposed through the API.
+import requests
 import signal
 import sys  # Parts exposed through API.
 import tempfile  # Exposed through the API.

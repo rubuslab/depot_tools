@@ -28,6 +28,7 @@ import multiprocessing
 import os  # Somewhat exposed through the API.
 import random
 import re  # Exposed through the API.
+import requests
 import signal
 import sys  # Parts exposed through API.
 import tempfile  # Exposed through the API.
@@ -1553,7 +1554,7 @@ class PresubmitExecuter(object):
       function_name = 'CheckChangeOnCommit'
     else:
       function_name = 'CheckChangeOnUpload'
-    if function_name in context:
+    if function_name in context: 
       try:
         context['__args'] = (input_api, output_api)
         logging.debug('Running %s in %s', function_name, presubmit_path)
@@ -1925,6 +1926,62 @@ def main(argv=None):
     print(e, file=sys.stderr)
     print('Maybe your depot_tools is out of date?', file=sys.stderr)
     return 2
+
+
+def open_sink():
+    """Opens and returns a ResultSink, or None if failed to create"""
+    pass
+
+class Rdb(object):
+  """Presubmit check wrapper for sending timing test results to ResultDB."""
+
+  @staticmethod
+  def create_ResultSink():
+      """Creates and returns a ResultSink, or None if unable to open."""
+      sink = None
+      if 'LUCI_CONTEXT' in os.environ:
+        with open(os.environ['LUCI_CONTEXT']) as f:
+          j = json.load(f)
+          if 'result_sink' in j:
+            sink = j['result_sink']
+      return sink
+
+  def __init__(self, sink):
+    """Initialize Rdb object with specified sink"""
+    self.sink = sink
+
+  def stream(self, function_name, status, elapsed_time):
+    """
+    Creates and a test result json-formatted dict and posts the result
+
+    Args:
+      function_name: A string that evaluates to the name of the function we
+                     want to run. This function must be available in context.
+      status: A string, "PASS" or "FAIL".
+      elapsedTime: A float representing the total time elapsed in seconds.
+
+    Returns:
+      tr: a json-formatted dict of the timing test to post to ResultDB
+    """
+    assert self.sink != None , "ResultSink was never initialized"
+    tr = {
+            'testId': 'Timed-{0}'.format(function_name),
+            'status': status,
+            'expected': (status == 'PASS'),
+            'duration': '{:.9f}s'.format(elapsed_time)
+         }
+
+    requests.post(
+      url = 'http://{0}/prpc/luci.resultsink.v1.Sink/ReportTestResults'
+              .format(self.sink['address']),
+      headers = {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+                  'Authorization': 'ResultSink {0}'
+                    .format(self.sink['auth_token'])
+                },
+      data = json.dumps({'testResults': [tr] })
+    )
 
 
 if __name__ == '__main__':

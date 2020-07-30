@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0b2c4c88_277664e5",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-30T17:38:49Z",
+      "side": 1,
+      "message": "Can you print presubmit_dir and root before this line?",
+      "range": {
+        "startLine": 1566,
+        "startChar": 8,
+        "endLine": 1566,
+        "endChar": 55
+      },
+      "revId": "fd034273f6305010f40276a3c1d93709a469e34b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

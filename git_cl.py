@@ -754,7 +754,10 @@ class Settings(object):
     return self.viewvc_url
 
   def GetBugPrefix(self):
-    return self._GetConfig('rietveld.bug-prefix')
+    bug_prefix = self._GetConfig('rietveld.bug-prefix')
+    if bug_prefix:
+      assert bug_prefix.endswith(':')
+    return bug_prefix
 
   def GetRunPostUploadHook(self):
     run_post_upload_hook = self._GetConfig(
@@ -2427,18 +2430,17 @@ class Changelist(object):
     return [r['email'] for r in details['reviewers'].get('REVIEWER', [])]
 
 
-def _get_bug_line_values(default_project, bugs):
-  """Given default_project and comma separated list of bugs, yields bug line
-  values.
+def _get_bug_line_values(bug_prefix, bugs):
+  """Given bug_prefix and comma separated list of bugs, yields bug line values.
 
   Each bug can be either:
-    * a number, which is combined with default_project
+    * a number, which is combined with bug_prefix
     * string, which is left as is.
 
   This function may produce more than one line, because bugdroid expects one
   project per line.
 
-  >>> list(_get_bug_line_values('v8', '123,chromium:789'))
+  >>> list(_get_bug_line_values('v8:', '123,chromium:789'))
       ['v8:123', 'chromium:789']
   """
   default_bugs = []
@@ -2453,8 +2455,9 @@ def _get_bug_line_values(default_project, bugs):
 
   if default_bugs:
     default_bugs = ','.join(map(str, default_bugs))
-    if default_project:
-      yield '%s:%s' % (default_project, default_bugs)
+    if bug_prefix:
+      assert bug_prefix.endswith(':')
+      yield '%s%s' % (bug_prefix, default_bugs)
     else:
       yield default_bugs
   for other in sorted(others):

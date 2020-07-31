@@ -22,6 +22,30 @@
       "revId": "2a64dd4d185171be7399735d1d102568e78e3f10",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e03a974e_2e9b074c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-07-31T17:09:14Z",
+      "side": 1,
+      "message": "Sounds good will do that from now onwards",
+      "parentUuid": "b341dea1_a942d1a5",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 12
+      },
+      "revId": "2a64dd4d185171be7399735d1d102568e78e3f10",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

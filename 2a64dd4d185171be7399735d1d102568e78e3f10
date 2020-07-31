@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b341dea1_a942d1a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-31T17:03:34Z",
+      "side": 1,
+      "message": "You usually write bugs in this format. Note also that it is right above Change-Id: without any empty lines in between.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 12
+      },
+      "revId": "2a64dd4d185171be7399735d1d102568e78e3f10",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

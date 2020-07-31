@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e3dd05a_7b58a4dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-07-31T17:33:31Z",
+      "side": 1,
+      "message": "Something I just thought about is that presubmit is used by several projects.\nRight now we can\u0027t differentiate between v8/v8/PRESUBMIT.py and chromium/src/PRESUBMIT.py, since both have the same path relative to repo root.",
+      "revId": "e1407d3ec8f99f15be768b47d8493e83b4cbdf53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

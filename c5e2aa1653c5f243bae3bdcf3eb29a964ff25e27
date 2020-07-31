@@ -46,6 +46,53 @@
       "revId": "c5e2aa1653c5f243bae3bdcf3eb29a964ff25e27",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc7d5c86_87eee551",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-07-31T23:46:10Z",
+      "side": 1,
+      "message": "Not everyone using `git cl` has their code in public codesearch. So +1 to Edward. If you want to hard fail, then at least provide a good message of how to fix things for project owners.",
+      "parentUuid": "a3e11026_452a6661",
+      "range": {
+        "startLine": 759,
+        "startChar": 0,
+        "endLine": 759,
+        "endChar": 37
+      },
+      "revId": "c5e2aa1653c5f243bae3bdcf3eb29a964ff25e27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2960cfd_c3dbad99",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2433,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-07-31T23:46:10Z",
+      "side": 1,
+      "message": "arg name confuses me. IMO, `default_project_prefix` is better.",
+      "range": {
+        "startLine": 2433,
+        "startChar": 25,
+        "endLine": 2433,
+        "endChar": 35
+      },
+      "revId": "c5e2aa1653c5f243bae3bdcf3eb29a964ff25e27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

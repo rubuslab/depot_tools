@@ -101,6 +101,23 @@
     },
     {
       "key": {
+        "uuid": "ceefcbea_203ae44e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 1374536
+      },
+      "writtenOn": "2020-08-01T01:39:16Z",
+      "side": 1,
+      "message": "Not about this change: can these be combined into a single fetch (i.e. passing each ref to be fetched as another parameter)?",
+      "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bd731587_564ad588",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 14
@@ -130,6 +147,24 @@
       "side": 1,
       "message": "```\n$ GIT_CURL_VERBOSE\u003d1 git remote set-head origin -a\n\n18:45:47.978741 http.c:756              \u003d\u003d Info: Couldn\u0027t find host chromium.googlesource.com in the .netrc file; using defaults\n...\n18:45:58.071143 http.c:756              \u003d\u003d Info: Connection #0 to host chromium.googlesource.com left intact\n```\nis not better unfortunately.\n\nIt takes about 5s to get response from server, and another ~5s of cpu",
       "parentUuid": "bd731587_564ad588",
+      "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5d37bc4_8052abf9",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 1374536
+      },
+      "writtenOn": "2020-08-01T01:39:16Z",
+      "side": 1,
+      "message": "Interesting. Ideally we\u0027d want 0s because we just performed a fetch.\n\nCan you file a bug e.g. at crbug.com/git/new for teaching \"git fetch\" an option to update the refs/remotes/origin/HEAD symref?\n\nAs a workaround, one possibility would be to use the Gerrit REST API: https://gerrit-review.googlesource.com/Documentation/rest-api-projects.html#get-head",
+      "parentUuid": "0997b63f_c3563d5c",
       "revId": "ec87aa7def48fd57f36f68b4a78050c615889b53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true

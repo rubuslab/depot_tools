@@ -21,13 +21,16 @@ class ResultSinkStatus(object):
     self.status = STATUS_PASS
 
 @contextlib.contextmanager
-def setup_rdb(function_name, rel_path):
+def setup_rdb(function_name, prefix):
   """Context Manager function for ResultDB reporting.
 
   Args:
     function_name (str): The name of the function we are about to run.
-    rel_path (str): The relative path from the root of the repository to the
-      directory defining the check being executed.
+    prefix (str): The prefix for the name of the test. The format for this is
+        projectName::folder/of/git/repo/::path/to/file/
+      for example,
+        chromium::chromium/src/::services/viz/
+      is a correctly formatted prefix.
   """
   sink = None
   if 'LUCI_CONTEXT' in os.environ:
@@ -48,7 +51,7 @@ def setup_rdb(function_name, rel_path):
     elapsed_time = end_time - start_time
     if sink != None:
       tr = {
-          'testId': '{0}/:{1}'.format(rel_path, function_name),
+          'testId': '{0}:{1}'.format(prefix, function_name),
           'status': my_status.status,
           'expected': (my_status.status == STATUS_PASS),
           'duration': '{:.9f}s'.format(elapsed_time)

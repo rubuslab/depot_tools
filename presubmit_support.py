@@ -1547,6 +1547,24 @@ class PresubmitExecuter(object):
     except Exception as e:
       raise PresubmitFailure('"%s" had an exception.\n%s' % (presubmit_path, e))
 
+    # Get path of presubmit directory relative to repository root.
+    # Always use forward slashes, so that path is same in *nix and Windows
+    root = input_api.change.RepositoryRoot()
+    rel_path = os.path.relpath(presubmit_dir, root)
+    rel_path = rel_path.replace(os.path.sep, '/') + '/'
+
+    # Get the URL of git remote origin and use it to identify host and project
+    host = ""
+    if self.gerrit:
+      host = self.gerrit.host
+
+    if input_api.change and input_api.change.issue != 0:
+      project = self.gerrit.GetChangeInfo(input_api.change.issue)['project']+'/'
+    else:
+      project = 'chromium/tools/depot_tools/'
+
+    # Prefix for test names
+    prefix = 'presubmit:' + host + '/' + project + ':' + rel_path
     # These function names must change if we make substantial changes to
     # the presubmit API that are not backwards compatible.
     if self.committing:
@@ -1560,13 +1578,7 @@ class PresubmitExecuter(object):
 
         # TODO (crbug.com/1106943): Dive into each of the individual checks
 
-        # Get path of presubmit directory relative to repository root.
-        # Always use forward slashes, so that path is same in *nix and Windows
-        root = input_api.change.RepositoryRoot()
-        rel_path = os.path.relpath(presubmit_dir, root)
-        rel_path = rel_path.replace(os.path.sep, '/')
-
-        with rdb_wrapper.setup_rdb(function_name, rel_path) as my_status:
+        with rdb_wrapper.setup_rdb(function_name, prefix) as my_status:
           result = eval(function_name + '(*__args)', context)
           self._check_result_type(result)
           if any(res.fatal for res in result):

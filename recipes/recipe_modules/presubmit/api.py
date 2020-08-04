@@ -34,6 +34,10 @@ class PresubmitApi(recipe_api.RecipeApi):
       presubmit_args = list(args) + [
           '--json_output', self.m.json.output(),
       ]
+
+      realm =  self.m.tryserver.gerrit_change_repo_url or 'chromium:public'
+      # For bot-triggered builds, always send results to ResultSink
+      kwargs['wrapper'] = ('rdb', 'stream', '-new', '-realm', realm)
       step_data = self.m.python(
           name, self.presubmit_support_path, presubmit_args, **kwargs)
       return step_data.json.output

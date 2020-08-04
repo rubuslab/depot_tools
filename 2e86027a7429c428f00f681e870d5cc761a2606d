@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "733b11d3_a1f95370",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-04T17:11:47Z",
+      "side": 1,
+      "message": "Rebased and fixed merge conflicts from the original CL. I really want to get this landed ASAP (preferably today) so that I can go ahead and inform others of the changes and run the script to rewrite the PRESUBMIT.py files in chromium/src.",
+      "revId": "2e86027a7429c428f00f681e870d5cc761a2606d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

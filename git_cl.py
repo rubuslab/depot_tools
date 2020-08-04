@@ -1290,12 +1290,13 @@ class Changelist(object):
         gclient_utils.FileWrite(description_file, description)
         args.extend(['--json_output', json_output])
         args.extend(['--description_file', description_file])
+        args.extend(['--gerrit_project', self._GetGerritProject()])
 
         start = time_time()
 
         cmd = ['vpython', PRESUBMIT_SUPPORT] + args
         if resultdb:
-          cmd = ['rdb', 'stream', '-new'] + cmd
+          cmd = ['rdb', 'stream', '-new', '-realm', 'chromium:public'] + cmd
 
         p = subprocess2.Popen(cmd)
         exit_code = p.wait()

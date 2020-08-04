@@ -29,7 +29,7 @@ import time
 import httplib2
 
 # These build configs affect build performance a lot.
-# TODO(tikuta): Add 'blink_symbol_level'and 'closure_compile'.
+# TODO(tikuta): Add 'blink_symbol_level' and 'enable_js_type_check'.
 WHITELISTED_CONFIGS = ('symbol_level', 'use_goma', 'is_debug',
                        'is_component_build', 'enable_nacl', 'host_os',
                        'host_cpu', 'target_os', 'target_cpu')

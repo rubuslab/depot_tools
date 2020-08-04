@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c6f49b91_39ebdfee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-04T18:22:46Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "8da08a18_e8e99994",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "2e86027a7429c428f00f681e870d5cc761a2606d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "733b11d3_a1f95370",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -116,6 +140,30 @@
     },
     {
       "key": {
+        "uuid": "90c06456_bcf36fd5",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1575,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-04T18:22:46Z",
+      "side": 1,
+      "message": "fixed.",
+      "parentUuid": "09a8ac47_adebdee4",
+      "range": {
+        "startLine": 1575,
+        "startChar": 25,
+        "endLine": 1575,
+        "endChar": 29
+      },
+      "revId": "2e86027a7429c428f00f681e870d5cc761a2606d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba218ea1_b0b07ccf",
         "filename": "presubmit_support.py",
         "patchSetId": 3
@@ -136,6 +184,30 @@
       "revId": "2e86027a7429c428f00f681e870d5cc761a2606d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cc710fa_5153e8a7",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1585,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-04T18:22:46Z",
+      "side": 1,
+      "message": "fixed. and changed the relevant test to look for empty list rather than empty tuple",
+      "parentUuid": "ba218ea1_b0b07ccf",
+      "range": {
+        "startLine": 1585,
+        "startChar": 11,
+        "endLine": 1585,
+        "endChar": 16
+      },
+      "revId": "2e86027a7429c428f00f681e870d5cc761a2606d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

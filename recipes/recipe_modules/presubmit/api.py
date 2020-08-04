@@ -33,7 +33,9 @@ class PresubmitApi(recipe_api.RecipeApi):
     with self.m.depot_tools.on_path():
       presubmit_args = list(args) + [
           '--json_output', self.m.json.output(),
+          #'--gerrit_project', self.m.tryserver.gerrit_change_repo_url(),
       ]
+      #kwargs['wrapper'] = ('rdb', 'stream')
       step_data = self.m.python(
           name, self.presubmit_support_path, presubmit_args, **kwargs)
       return step_data.json.output

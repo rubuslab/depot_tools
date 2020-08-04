@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cc2f8f5c_41ef6b36",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-08-04T16:16:01Z",
+      "side": 1,
+      "message": "This (and crrev.com/c/2335557) cleans up a couple of references to a renamed gn arg. PTAL.",
+      "revId": "3af0cdaf173f4d61d490b9f26715d498ea743a62",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f3085e71_a27893c2",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-08-04T16:21:42Z",
+      "side": 0,
+      "message": "Could you replace this by a bug number too?",
+      "range": {
+        "startLine": 32,
+        "startChar": 7,
+        "endLine": 32,
+        "endChar": 13
+      },
+      "revId": "6c7b829e54738b0f532871b9f6dde15cf2c05373",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

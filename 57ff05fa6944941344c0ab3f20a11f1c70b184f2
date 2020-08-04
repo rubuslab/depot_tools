@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4b43da71_3e2e9f4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-08-04T16:53:19Z",
+      "side": 1,
+      "message": "I\u0027ll defer this change to nodir@ and ehmaldonado@.",
+      "revId": "57ff05fa6944941344c0ab3f20a11f1c70b184f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

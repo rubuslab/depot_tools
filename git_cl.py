@@ -1295,7 +1295,7 @@ class Changelist(object):
 
         cmd = ['vpython', PRESUBMIT_SUPPORT] + args
         if resultdb:
-          cmd = ['rdb', 'stream', '-new'] + cmd
+          cmd = ['rdb', 'stream', '-new', '-realm', 'chromium:public'] + cmd
 
         p = subprocess2.Popen(cmd)
         exit_code = p.wait()

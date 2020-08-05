@@ -5020,11 +5020,24 @@ def CMDformat(parser, args):
       cmd = ['vpython', pretty_print_tool, '--non-interactive']
       if opts.dry_run or opts.diff:
         cmd.append('--diff')
-      # TODO(isherman): Once this file runs only on Python 3.3+, drop the
-      # `shell` param and instead replace `'vpython'` with
-      # `shutil.which('frob')` above: https://stackoverflow.com/a/32799942
-      stdout = RunCommand(cmd, cwd=top_dir,
+
+      # If in the histograms directory, get the list of paths to individual XML
+      # files that have been changed, run pretty_print command for each file as
+      # pretty_print.py in histograms needs a relative path argument.
+      if xml_dir == os.path.join('tools', 'metrics', 'histograms'):
+        list_of_xml_rel_dir = [os.path.normpath(filename) for filename in
+            diff_files if filename.endswith('histograms.xml') or
+            filename.endswith('enums.xml')]
+        for rel_dir in list_of_xml_rel_dir:
+          pretty_print_cmd = cmd + [rel_dir]
+          stdout = RunCommand(pretty_print_cmd, cwd=top_dir,
                           shell=sys.platform.startswith('win32'))
+      else:
+        # TODO(isherman): Once this file runs only on Python 3.3+, drop the
+        # `shell` param and instead replace `'vpython'` with
+        # `shutil.which('frob')` above: https://stackoverflow.com/a/32799942
+        stdout = RunCommand(cmd, cwd=top_dir,
+                            shell=sys.platform.startswith('win32'))
       if opts.diff:
         sys.stdout.write(stdout)
       if opts.dry_run and stdout:

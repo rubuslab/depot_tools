@@ -76,6 +76,30 @@
     },
     {
       "key": {
+        "uuid": "cd64447f_3327ec3d",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-05T23:32:58Z",
+      "side": 1,
+      "message": "I don\u0027t want to move to where realm is defined because then I have to put this in multiple places. I added the TODO. I don\u0027t want to fail because once we have the realm identification code in place that would be correct. So for now I\u0027ll just go ahead without resultdb reporting if no realm is specified.",
+      "parentUuid": "39e804e9_985b4410",
+      "range": {
+        "startLine": 1299,
+        "startChar": 10,
+        "endLine": 1301,
+        "endChar": 78
+      },
+      "revId": "a6949757835bdbc5fd898dce38c22d6334edb420",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "db7b7960_c568ce2d",
         "filename": "git_cl.py",
         "patchSetId": 7

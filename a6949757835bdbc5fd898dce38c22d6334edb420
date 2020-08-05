@@ -36,6 +36,46 @@
     },
     {
       "key": {
+        "uuid": "ea58967d_25314fb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-08-05T19:22:53Z",
+      "side": 1,
+      "message": "LGTM w/ nits",
+      "revId": "a6949757835bdbc5fd898dce38c22d6334edb420",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39e804e9_985b4410",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-08-05T19:22:53Z",
+      "side": 1,
+      "message": "Move this where --realm is defined, so the user knows as early as possible.\n\nAdd a TODO(crbug.com/XXX) saying we plan to remove this and get this information from the CL in the future.\n\nAlso, consider failing if resultdb is given but not --realm.",
+      "range": {
+        "startLine": 1299,
+        "startChar": 10,
+        "endLine": 1301,
+        "endChar": 78
+      },
+      "revId": "a6949757835bdbc5fd898dce38c22d6334edb420",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "db7b7960_c568ce2d",
         "filename": "git_cl.py",
         "patchSetId": 7

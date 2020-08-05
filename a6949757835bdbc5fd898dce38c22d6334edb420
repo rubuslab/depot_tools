@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "483f1a1f_0b7c2bc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-08-05T19:02:14Z",
+      "side": 1,
+      "message": "still lgtm.",
+      "revId": "a6949757835bdbc5fd898dce38c22d6334edb420",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "db7b7960_c568ce2d",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4079,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-08-05T19:02:14Z",
+      "side": 1,
+      "message": "Ideally this\u0027d be something we could pick up from the CL itself (and per-project configuration somewhere), rather than asking a user to pass the flag in.\n\nHowever, I\u0027m fine w/ adding a flag now to make progress.",
+      "revId": "a6949757835bdbc5fd898dce38c22d6334edb420",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

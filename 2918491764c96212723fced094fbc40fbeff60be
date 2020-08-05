@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "05a4776a_034c72a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T04:48:40Z",
+      "side": 1,
+      "message": "left some comments about impl, but also see my response in the mailing list.",
+      "revId": "2918491764c96212723fced094fbc40fbeff60be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e66324d_8498e64f",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T04:48:40Z",
+      "side": 1,
+      "message": "rdb has -test-id-prefix flag which specifies a prefix to prepend to all test IDs received via ReportTestResults RPC. This means that you can generate a prefix here and pass it via -test-id-prefix flag,\nand you do NOT have to propagate it all the way to presubmit_support.py and rdb_wrapper.py - I don\u0027t think those files should be modified in this CL.",
+      "range": {
+        "startLine": 1299,
+        "startChar": 69,
+        "endLine": 1299,
+        "endChar": 70
+      },
+      "revId": "2918491764c96212723fced094fbc40fbeff60be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cac968b_98fa831d",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T04:48:40Z",
+      "side": 1,
+      "message": "please undo",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "2918491764c96212723fced094fbc40fbeff60be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5946563_3584a073",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2686,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T04:48:40Z",
+      "side": 1,
+      "message": "did you intend this to be part of this CL? same below and other files",
+      "revId": "2918491764c96212723fced094fbc40fbeff60be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

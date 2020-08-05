@@ -16,6 +16,23 @@
       "revId": "567c6f50a9e4b8e3bc1ce86e2aad1d43cf872baf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e26bcdb_8873653b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T04:50:51Z",
+      "side": 1,
+      "message": "LGTM, but this should have been two separate CLs: one modifying git_cl, and another modifying recipes. These two changes have little to do with each other.\nSee go/small-cls",
+      "revId": "567c6f50a9e4b8e3bc1ce86e2aad1d43cf872baf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

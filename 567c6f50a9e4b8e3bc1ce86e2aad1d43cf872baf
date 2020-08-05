@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9237d7cc_571d83c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-05T00:32:32Z",
+      "side": 1,
+      "message": "Can we please get this build merged asap. The main goal of this is to enable the bot-triggered builds run from CQ/CI to report to ResultDB. This requires the few simple lines of code that add (\u0027rdb\u0027, \u0027stream\u0027) to the command line for presubmit recipe. (NOTE - as Nodir informed me, CQ/CI builds already have the ResultDB invocation created with the appropriate realm. So here, we do NOT need \u0027-new\u0027 or \u0027-realm\u0027 flags). \n\nFor now I have put the \u0027chromium:public\u0027 as the dummy realm for CLI (triggered from git_cl.py: not CQ) runs with the \u0027--resultdb\u0027 flag. THIS WILL CHANGE LATER once we decide on an effective way to know what the realm should be. Once we have that, we will make the changes so that it takes into account this realm. ",
+      "revId": "567c6f50a9e4b8e3bc1ce86e2aad1d43cf872baf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

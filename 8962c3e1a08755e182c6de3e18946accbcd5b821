@@ -16,6 +16,24 @@
       "revId": "8962c3e1a08755e182c6de3e18946accbcd5b821",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aa0f7272_b9a8eb71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-05T18:54:45Z",
+      "side": 1,
+      "message": "https://ci.chromium.org/ui/inv/u-saagarsanghavi-2020-08-05-07-14-00-7b82801d216f24b0/test-results\n\nHere is an example of test results.",
+      "parentUuid": "cc1d96df_54a049e5",
+      "revId": "8962c3e1a08755e182c6de3e18946accbcd5b821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

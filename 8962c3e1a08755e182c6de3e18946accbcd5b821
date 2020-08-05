@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cc1d96df_54a049e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T05:10:50Z",
+      "side": 1,
+      "message": "I don\u0027t feel qualified to review this code base, but do you have a link to test results you have uploaded locally? I could look at that and tell if something is wrong there.",
+      "revId": "8962c3e1a08755e182c6de3e18946accbcd5b821",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

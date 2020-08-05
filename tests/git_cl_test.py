@@ -2792,7 +2792,7 @@ class ChangelistTest(unittest.TestCase):
 
     self.assertEqual(expected_results, results)
     subprocess2.Popen.assert_called_once_with([
-        'rdb', 'stream', '-new',
+        'rdb', 'stream', '-new', '-realm', 'chromium:public',
         'vpython', 'PRESUBMIT_SUPPORT',
         '--root', 'root',
         '--upstream', 'upstream',

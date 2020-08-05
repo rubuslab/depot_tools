@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "4e3b3cbd_7a8de935",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-05T19:08:11Z",
+      "side": 1,
+      "message": "So should I find the full prefix and pass it as a CLI argument here? my concern is that different folders in the filesystem traversal have different rel_path\u0027s, so I thought it was best I put all the logic for finding the prefix together in presubmit_support.py",
+      "parentUuid": "1e66324d_8498e64f",
+      "range": {
+        "startLine": 1299,
+        "startChar": 69,
+        "endLine": 1299,
+        "endChar": 70
+      },
+      "revId": "2918491764c96212723fced094fbc40fbeff60be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6cac968b_98fa831d",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 5
@@ -65,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "63765f7b_dd47a0ad",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-05T19:08:11Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "6cac968b_98fa831d",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "2918491764c96212723fced094fbc40fbeff60be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5946563_3584a073",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 5
@@ -79,6 +127,24 @@
       "revId": "2918491764c96212723fced094fbc40fbeff60be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4f44454_7e1db5a7",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2686,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-05T19:08:11Z",
+      "side": 1,
+      "message": "Yeah I need that because _GetGerritProject() in git_cl.py calls a subprocess.check_output to get the gerrit repo. So if I don\u0027t mock subprocess2.check_output here, it ends up using the mocked subprocess2.Popen when trying to find _GetGerritProject() which leads to tests failing",
+      "parentUuid": "b5946563_3584a073",
+      "revId": "2918491764c96212723fced094fbc40fbeff60be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

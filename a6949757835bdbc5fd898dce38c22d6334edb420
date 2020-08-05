@@ -50,6 +50,24 @@
       "revId": "a6949757835bdbc5fd898dce38c22d6334edb420",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1861088_ef760c79",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4079,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-05T19:16:57Z",
+      "side": 1,
+      "message": "Yes, once we decide on a way to know the realm we will make the appropriate changes. For now we will use this flag approach so that we can continue forward.",
+      "parentUuid": "db7b7960_c568ce2d",
+      "revId": "a6949757835bdbc5fd898dce38c22d6334edb420",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -33,6 +33,41 @@
       "revId": "567c6f50a9e4b8e3bc1ce86e2aad1d43cf872baf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "224ac912_4ea89939",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T04:52:55Z",
+      "side": 1,
+      "message": "found a critical bug, removing LGTM",
+      "parentUuid": "0e26bcdb_8873653b",
+      "revId": "567c6f50a9e4b8e3bc1ce86e2aad1d43cf872baf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bcd61d5a_e6445238",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T04:52:55Z",
+      "side": 1,
+      "message": "hmm, this must be done conditionally, only if resultdb is enabled:\nhttps://source.chromium.org/chromium/infra/infra/+/master:recipes-py/recipe_modules/resultdb/api.py;l\u003d35\n\notherwise it will break all LUCI projects that did not enable the integration",
+      "revId": "567c6f50a9e4b8e3bc1ce86e2aad1d43cf872baf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

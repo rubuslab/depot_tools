@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "2f7f2693_9ecc67c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T20:59:50Z",
+      "side": 1,
+      "message": "please upload the new patchset",
+      "revId": "2918491764c96212723fced094fbc40fbeff60be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1e66324d_8498e64f",
         "filename": "git_cl.py",
         "patchSetId": 5
@@ -63,6 +80,30 @@
       "revId": "2918491764c96212723fced094fbc40fbeff60be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b19122c_4e4e2909",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-05T20:59:50Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "4e3b3cbd_7a8de935",
+      "range": {
+        "startLine": 1299,
+        "startChar": 69,
+        "endLine": 1299,
+        "endChar": 70
+      },
+      "revId": "2918491764c96212723fced094fbc40fbeff60be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

@@ -81,6 +81,30 @@
       "revId": "32c65f26c88aa4d0d04b2e0574b86398f58f5226",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afb92b4f_9cdc7b18",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-05T17:14:17Z",
+      "side": 1,
+      "message": "should work as expected, since this is only for cq/ci builds, and those are already in a LUCI invocation with the appropriate realm.",
+      "parentUuid": "5cf197c5_c39e785a",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 38,
+        "endChar": 45
+      },
+      "revId": "32c65f26c88aa4d0d04b2e0574b86398f58f5226",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "89b2190a_1213184f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2020-08-05T19:27:51Z",
+      "side": 1,
+      "message": "Both it is.",
+      "parentUuid": "1ae5bd5b_0b573f15",
+      "revId": "c5e2aa1653c5f243bae3bdcf3eb29a964ff25e27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "142a2f63_b81c4421",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -187,6 +205,30 @@
       "revId": "c5e2aa1653c5f243bae3bdcf3eb29a964ff25e27",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "797494b8_7c03b69e",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2433,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2020-08-05T19:27:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2960cfd_c3dbad99",
+      "range": {
+        "startLine": 2433,
+        "startChar": 25,
+        "endLine": 2433,
+        "endChar": 35
+      },
+      "revId": "c5e2aa1653c5f243bae3bdcf3eb29a964ff25e27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

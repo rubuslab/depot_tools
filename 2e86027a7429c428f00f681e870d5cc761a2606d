@@ -117,6 +117,24 @@
     },
     {
       "key": {
+        "uuid": "9c90b537_d3b94db1",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-05T18:55:39Z",
+      "side": 1,
+      "message": "You are right. I changed it so now we pass realm as a cli argument and I uploaded a new patchset.",
+      "parentUuid": "17badb97_02d2c3d5",
+      "revId": "2e86027a7429c428f00f681e870d5cc761a2606d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "09a8ac47_adebdee4",
         "filename": "presubmit_support.py",
         "patchSetId": 3

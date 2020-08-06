@@ -2677,6 +2677,7 @@ class ChangelistTest(unittest.TestCase):
     mock.patch('git_cl.time_time').start()
     mock.patch('metrics.collector').start()
     mock.patch('subprocess2.Popen').start()
+    mock.patch('subprocess2.check_output').start()
     self.addCleanup(mock.patch.stopall)
     self.temp_count = 0
 
@@ -2690,6 +2691,7 @@ class ChangelistTest(unittest.TestCase):
     mockProcess = mock.Mock()
     mockProcess.wait.return_value = 0
     subprocess2.Popen.return_value = mockProcess
+    subprocess2.check_output.return_value = b'dummy'
 
     cl = git_cl.Changelist()
     results = cl.RunHook(
@@ -2718,6 +2720,7 @@ class ChangelistTest(unittest.TestCase):
         '--all_files',
         '--json_output', '/tmp/fake-temp2',
         '--description_file', '/tmp/fake-temp1',
+        '--gerrit_project', None,
     ])
     gclient_utils.FileWrite.assert_called_once_with(
         '/tmp/fake-temp1', 'description')
@@ -2737,6 +2740,7 @@ class ChangelistTest(unittest.TestCase):
     mockProcess = mock.Mock()
     mockProcess.wait.return_value = 0
     subprocess2.Popen.return_value = mockProcess
+    subprocess2.check_output.return_value = b'dummy'
 
     git_cl.Changelist.GetAuthor.return_value = None
     git_cl.Changelist.GetIssue.return_value = None
@@ -2762,6 +2766,7 @@ class ChangelistTest(unittest.TestCase):
         '--upload',
         '--json_output', '/tmp/fake-temp2',
         '--description_file', '/tmp/fake-temp1',
+        '--gerrit_project', None,
     ])
     gclient_utils.FileWrite.assert_called_once_with(
         '/tmp/fake-temp1', 'description')
@@ -2781,6 +2786,7 @@ class ChangelistTest(unittest.TestCase):
     mockProcess = mock.Mock()
     mockProcess.wait.return_value = 0
     subprocess2.Popen.return_value = mockProcess
+    subprocess2.check_output.return_value = b'dummy'
 
     git_cl.Changelist.GetAuthor.return_value = None
     git_cl.Changelist.GetIssue.return_value = None
@@ -2808,6 +2814,7 @@ class ChangelistTest(unittest.TestCase):
         '--upload',
         '--json_output', '/tmp/fake-temp2',
         '--description_file', '/tmp/fake-temp1',
+        '--gerrit_project', None,
     ])
 
   @mock.patch('sys.exit', side_effect=SystemExitMock)
@@ -2816,6 +2823,7 @@ class ChangelistTest(unittest.TestCase):
     mockProcess = mock.Mock()
     mockProcess.wait.return_value = 2
     subprocess2.Popen.return_value = mockProcess
+    subprocess2.check_output.return_value = b'dummy'
 
     cl = git_cl.Changelist()
     with self.assertRaises(SystemExitMock):

@@ -46,6 +46,30 @@
       "revId": "a0363065bf271dedc4747eaa52a587c87e16cca7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df20ab22_1ed18807",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1549,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-07T22:45:14Z",
+      "side": 1,
+      "message": "Yeah the PRESUBMIT.py file would call the function which would set the value. This way it will fail loudly if we are using an old version of depot_tools. See here:\nhttps://crrev.com/c/2341362",
+      "parentUuid": "5e337a76_5c27628a",
+      "range": {
+        "startLine": 1545,
+        "startChar": 4,
+        "endLine": 1549,
+        "endChar": 72
+      },
+      "revId": "a0363065bf271dedc4747eaa52a587c87e16cca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

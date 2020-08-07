@@ -22,6 +22,30 @@
       "revId": "a0363065bf271dedc4747eaa52a587c87e16cca7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e337a76_5c27628a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1549,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2020-08-07T22:40:24Z",
+      "side": 1,
+      "message": "The problem I have with this (and what we were originally planning) is that if someone has an old depot_tools then it will silently keep the old behavior and only run a small subset of checks or none, depending on the particular file.\n\nI think it would be preferable to fail loudly if we require the new behavior but depot_tools isn\u0027t aware of it.",
+      "parentUuid": "166cb035_cdd29e86",
+      "range": {
+        "startLine": 1545,
+        "startChar": 4,
+        "endLine": 1549,
+        "endChar": 72
+      },
+      "revId": "a0363065bf271dedc4747eaa52a587c87e16cca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

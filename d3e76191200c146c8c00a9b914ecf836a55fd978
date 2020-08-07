@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7cd0925b_9219892e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-07T03:42:54Z",
+      "side": 1,
+      "message": "So sorry that the last review ended up breaking and not being backward compatible. I have created a new CL that requires the person to have the NEW_PRESUBMIT_CHECKS_ENABLED \u003d True if they want to follow the new format that I have proposed.",
+      "revId": "d3e76191200c146c8c00a9b914ecf836a55fd978",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

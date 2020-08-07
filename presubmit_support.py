@@ -1498,8 +1498,8 @@ def DoPostUploadExecuter(change,
 
 
 class PresubmitExecuter(object):
-  def __init__(self, change, committing, verbose,
-               gerrit_obj, dry_run=None, thread_pool=None, parallel=False):
+  def __init__(self, change, committing, verbose, gerrit_obj, dry_run=None,
+               thread_pool=None, parallel=False, gerrit_project=None):
     """
     Args:
       change: The Change object.
@@ -1517,6 +1517,7 @@ class PresubmitExecuter(object):
     self.more_cc = []
     self.thread_pool = thread_pool
     self.parallel = parallel
+    self.gerrit_project = gerrit_project
 
   def ExecPresubmitScript(self, script_text, presubmit_path):
     """Executes a single presubmit script.
@@ -1529,6 +1530,7 @@ class PresubmitExecuter(object):
     Return:
       A list of result objects, empty if no problems.
     """
+
     # Change to the presubmit file's directory to support local imports.
     main_path = os.getcwd()
     presubmit_dir = os.path.dirname(presubmit_path)
@@ -1547,6 +1549,22 @@ class PresubmitExecuter(object):
     except Exception as e:
       raise PresubmitFailure('"%s" had an exception.\n%s' % (presubmit_path, e))
 
+    # Get path of presubmit directory relative to repository root.
+    # Always use forward slashes, so that path is same in *nix and Windows
+    root = input_api.change.RepositoryRoot()
+    rel_path = os.path.relpath(presubmit_dir, root)
+    rel_path = rel_path.replace(os.path.sep, '/') + '/'
+
+    # Get the URL of git remote origin and use it to identify host and project
+    host = ''
+    if self.gerrit and self.gerrit.host:
+      host = self.gerrit.host
+    project = self.gerrit_project or ''
+
+    # Prefix for test names
+    prefix = 'presubmit:' + host + '/' + project + ':' + rel_path
+
+    results = []
     # These function names must change if we make substantial changes to
     # the presubmit API that are not backwards compatible.
     if self.committing:
@@ -1560,28 +1578,22 @@ class PresubmitExecuter(object):
 
         # TODO (crbug.com/1106943): Dive into each of the individual checks
 
-        # Get path of presubmit directory relative to repository root.
-        # Always use forward slashes, so that path is same in *nix and Windows
-        root = input_api.change.RepositoryRoot()
-        rel_path = os.path.relpath(presubmit_dir, root)
-        rel_path = rel_path.replace(os.path.sep, '/')
-
-        with rdb_wrapper.setup_rdb(function_name, rel_path) as my_status:
+        with rdb_wrapper.setup_rdb(function_name, prefix) as my_status:
           result = eval(function_name + '(*__args)', context)
           self._check_result_type(result)
           if any(res.fatal for res in result):
             my_status.status = rdb_wrapper.STATUS_FAIL
+          results.extend(result)
         logging.debug('Running %s done.', function_name)
         self.more_cc.extend(output_api.more_cc)
+
       finally:
         for f in input_api._named_temporary_files:
           os.remove(f)
-    else:
-      result = ()  # no error since the script doesn't care about current event.
 
     # Return the process to the original working directory.
     os.chdir(main_path)
-    return result
+    return results
 
   def _check_result_type(self, result):
     """Helper function which ensures result is a list, and all elements are
@@ -1602,7 +1614,8 @@ def DoPresubmitChecks(change,
                       gerrit_obj,
                       dry_run=None,
                       parallel=False,
-                      json_output=None):
+                      json_output=None,
+                      gerrit_project=None):
   """Runs all presubmit checks that apply to the files in the change.
 
   This finds all PRESUBMIT.py files in directories enclosing the files in the
@@ -1645,7 +1658,7 @@ def DoPresubmitChecks(change,
     results = []
     thread_pool = ThreadPool()
     executer = PresubmitExecuter(change, committing, verbose, gerrit_obj,
-                                 dry_run, thread_pool, parallel)
+                                 dry_run, thread_pool, parallel, gerrit_project)
     if default_presubmit:
       if verbose:
         sys.stdout.write('Running default presubmit script.\n')
@@ -1889,7 +1902,7 @@ def main(argv=None):
                       help='List of files to be marked as modified when '
                       'executing presubmit or post-upload hooks. fnmatch '
                       'wildcards can also be used.')
-
+  parser.add_argument('--gerrit_project', help=argparse.SUPPRESS)
   options = parser.parse_args(argv)
 
   log_level = logging.ERROR
@@ -1922,7 +1935,8 @@ def main(argv=None):
           gerrit_obj,
           options.dry_run,
           options.parallel,
-          options.json_output)
+          options.json_output,
+          options.gerrit_project)
   except PresubmitFailure as e:
     print(e, file=sys.stderr)
     print('Maybe your depot_tools is out of date?', file=sys.stderr)

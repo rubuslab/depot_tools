@@ -902,7 +902,7 @@ def _create_description_from_log(args):
     log_args = [args[0] + '..' + args[1]]
   else:
     log_args = args[:]  # Hope for the best!
-  return RunGit(['log', '--pretty=format:%B'] + log_args)
+  return RunGit(['log', '--pretty=format:%B%n'] + log_args)
 
 
 class GerritChangeNotExists(Exception):
@@ -1273,7 +1273,7 @@ class Changelist(object):
     return args
 
   def RunHook(self, committing, may_prompt, verbose, parallel, upstream,
-              description, all_files, resultdb=False):
+              description, all_files, resultdb=False, realm=None):
     """Calls sys.exit() if the hook fails; returns a HookResults otherwise."""
     args = self._GetCommonPresubmitArgs(verbose, upstream)
     args.append('--commit' if committing else '--upload')
@@ -1290,12 +1290,18 @@ class Changelist(object):
         gclient_utils.FileWrite(description_file, description)
         args.extend(['--json_output', json_output])
         args.extend(['--description_file', description_file])
+        args.extend(['--gerrit_project', self._GetGerritProject()])
 
         start = time_time()
-
         cmd = ['vpython', PRESUBMIT_SUPPORT] + args
-        if resultdb:
-          cmd = ['rdb', 'stream', '-new'] + cmd
+        if resultdb and realm:
+          cmd = ['rdb', 'stream', '-new', '-realm', realm] + cmd
+        elif resultdb:
+          # TODO (crbug.com/1113463): store realm somewhere and look it up so
+          # it is not required to pass the realm flag
+          print('Note: ResultDB reporting will NOT be performed because --realm'
+                ' was not specified. To enable ResultDB, please run the command'
+                ' again with the --realm argument to specify the LUCI realm.')
 
         p = subprocess2.Popen(cmd)
         exit_code = p.wait()
@@ -1413,7 +1419,8 @@ class Changelist(object):
           upstream=base_branch,
           description=change_desc.description,
           all_files=False,
-          resultdb=options.resultdb)
+          resultdb=options.resultdb,
+          realm=options.realm)
       self.ExtendCC(hook_results['more_cc'])
 
     print_stats(git_diff_args)
@@ -1864,7 +1871,7 @@ class Changelist(object):
     detail = self._GetChangeDetail(['LABELS'])
     return u'Commit-Queue' in detail.get('labels', {})
 
-  def CMDLand(self, force, bypass_hooks, verbose, parallel):
+  def CMDLand(self, force, bypass_hooks, verbose, parallel, resultdb, realm):
     if git_common.is_dirty_git_tree('land'):
       return 1
 
@@ -1905,7 +1912,8 @@ class Changelist(object):
           upstream=upstream,
           description=description,
           all_files=False,
-          resultdb=False)
+          resultdb=resultdb,
+          realm=realm)
 
     self.SubmitIssue(wait_for_merge=True)
     print('Issue %s has been submitted.' % self.GetIssueURL())
@@ -2427,18 +2435,18 @@ class Changelist(object):
     return [r['email'] for r in details['reviewers'].get('REVIEWER', [])]
 
 
-def _get_bug_line_values(default_project, bugs):
-  """Given default_project and comma separated list of bugs, yields bug line
-  values.
+def _get_bug_line_values(default_project_prefix, bugs):
+  """Given default_project_prefix and comma separated list of bugs, yields bug
+  line values.
 
   Each bug can be either:
-    * a number, which is combined with default_project
+    * a number, which is combined with default_project_prefix
     * string, which is left as is.
 
   This function may produce more than one line, because bugdroid expects one
   project per line.
 
-  >>> list(_get_bug_line_values('v8', '123,chromium:789'))
+  >>> list(_get_bug_line_values('v8:', '123,chromium:789'))
       ['v8:123', 'chromium:789']
   """
   default_bugs = []
@@ -2453,8 +2461,10 @@ def _get_bug_line_values(default_project, bugs):
 
   if default_bugs:
     default_bugs = ','.join(map(str, default_bugs))
-    if default_project:
-      yield '%s:%s' % (default_project, default_bugs)
+    if default_project_prefix:
+      if not default_project_prefix.endswith(':'):
+        default_project_prefix += ':'
+      yield '%s%s' % (default_project_prefix, default_bugs)
     else:
       yield default_bugs
   for other in sorted(others):
@@ -3829,6 +3839,7 @@ def CMDpresubmit(parser, args):
   parser.add_option('--resultdb', action='store_true',
                     help='Run presubmit checks in the ResultSink environment '
                          'and send results to the ResultDB database.')
+  parser.add_option('--realm', help='LUCI realm if reporting to ResultDB')
   options, args = parser.parse_args(args)
 
   if not options.force and git_common.is_dirty_git_tree('presubmit'):
@@ -3855,7 +3866,8 @@ def CMDpresubmit(parser, args):
       upstream=base_branch,
       description=description,
       all_files=options.all,
-      resultdb=options.resultdb)
+      resultdb=options.resultdb,
+      realm=options.realm)
   return 0
 
 
@@ -4069,6 +4081,7 @@ def CMDupload(parser, args):
   parser.add_option('--resultdb', action='store_true',
                     help='Run presubmit checks in the ResultSink environment '
                          'and send results to the ResultDB database.')
+  parser.add_option('--realm', help='LUCI realm if reporting to ResultDB')
 
   orig_args = args
   (options, args) = parser.parse_args(args)
@@ -4215,6 +4228,10 @@ def CMDland(parser, args):
   parser.add_option('--parallel', action='store_true',
                     help='Run all tests specified by input_api.RunTests in all '
                          'PRESUBMIT files in parallel.')
+  parser.add_option('--resultdb', action='store_true',
+                     help='Run presubmit checks in the ResultSink environment '
+                          'and send results to the ResultDB database.')
+  parser.add_option('--realm', help='LUCI realm if reporting to ResultDB')
   (options, args) = parser.parse_args(args)
 
   cl = Changelist()
@@ -4223,8 +4240,8 @@ def CMDland(parser, args):
     DieWithError('You must upload the change first to Gerrit.\n'
                  '  If you would rather have `git cl land` upload '
                  'automatically for you, see http://crbug.com/642759')
-  return cl.CMDLand(options.force, options.bypass_hooks,
-                                     options.verbose, options.parallel)
+  return cl.CMDLand(options.force, options.bypass_hooks, options.verbose,
+                    options.parallel, options.resultdb, options.realm)
 
 
 @subcommand.usage('<patch url or issue id or issue url>')

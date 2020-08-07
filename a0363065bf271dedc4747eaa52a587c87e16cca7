@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "166cb035_cdd29e86",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1549,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-08-07T22:34:20Z",
+      "side": 1,
+      "message": "Can you explain how this is intended to work?\n\nWhat about setting a global variable in PRESUBMIT.py files\nPRESUBMIT_VERSION \u003d 1\n\nAnd check here if that variable is defined and have the expected value to decide how to execute it?",
+      "range": {
+        "startLine": 1545,
+        "startChar": 4,
+        "endLine": 1549,
+        "endChar": 72
+      },
+      "revId": "a0363065bf271dedc4747eaa52a587c87e16cca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

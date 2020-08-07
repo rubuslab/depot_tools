@@ -34,6 +34,24 @@
       "revId": "ec9df2e47022c8c1f3b536385d9d5e1e42823486",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d25e7b65_0a4aa1cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-07T23:02:43Z",
+      "side": 1,
+      "message": "This CL allows the user to pass the realm as a flag so that we can identify it for now. Later we will change it to keep the realm somewhere convenient.",
+      "parentUuid": "8974f746_df8abfff",
+      "revId": "ec9df2e47022c8c1f3b536385d9d5e1e42823486",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

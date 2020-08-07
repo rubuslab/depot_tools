@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3e5288a1_73ee1d28",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1545,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-08-07T23:51:39Z",
+      "side": 1,
+      "message": "I think it\u0027s more usual to use a list\n\n  PRESUBMIT_VERSION \u003d [0]\n  def ENABLE_NEW_PRESUBMIT_CHECKS():\n    PRESUBMIT_VERSION[0] \u003d 1\n\nlgtm either way.",
+      "range": {
+        "startLine": 1545,
+        "startChar": 24,
+        "endLine": 1545,
+        "endChar": 32
+      },
+      "revId": "a0363065bf271dedc4747eaa52a587c87e16cca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "166cb035_cdd29e86",
         "filename": "presubmit_support.py",
         "patchSetId": 5
@@ -70,6 +93,53 @@
       "revId": "a0363065bf271dedc4747eaa52a587c87e16cca7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f06026ee_a94a166f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1549,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-08-07T23:51:39Z",
+      "side": 1,
+      "message": "Makes sense.\nWhat about REQUIRE_PRESUBMIT_VERSION(1) or something similar?\nMy concern is that we might end up with a bunch of ENABLE_FEATURE_FOO().",
+      "parentUuid": "df20ab22_1ed18807",
+      "range": {
+        "startLine": 1545,
+        "startChar": 4,
+        "endLine": 1549,
+        "endChar": 72
+      },
+      "revId": "a0363065bf271dedc4747eaa52a587c87e16cca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "101748f6_364b3257",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1618,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-08-07T23:51:39Z",
+      "side": 1,
+      "message": "I\u0027d return result and let the caller extend it instead.",
+      "range": {
+        "startLine": 1618,
+        "startChar": 6,
+        "endLine": 1618,
+        "endChar": 32
+      },
+      "revId": "a0363065bf271dedc4747eaa52a587c87e16cca7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

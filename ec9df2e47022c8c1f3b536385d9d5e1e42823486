@@ -75,6 +75,30 @@
       "revId": "ec9df2e47022c8c1f3b536385d9d5e1e42823486",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ac5b375_bba3ba04",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2789,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-08T01:36:41Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "03ca5b2e_9ca813c5",
+      "range": {
+        "startLine": 2789,
+        "startChar": 4,
+        "endLine": 2789,
+        "endChar": 52
+      },
+      "revId": "ec9df2e47022c8c1f3b536385d9d5e1e42823486",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

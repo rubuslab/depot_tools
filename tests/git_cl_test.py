@@ -296,9 +296,15 @@ class TestGitClBasic(unittest.TestCase):
     f = lambda p, bugs: list(git_cl._get_bug_line_values(p, bugs))
     self.assertEqual(f('', ''), [])
     self.assertEqual(f('', '123,v8:456'), ['123', 'v8:456'])
+    # Prefix that ends with colon.
+    self.assertEqual(f('v8:', '456'), ['v8:456'])
+    self.assertEqual(f('v8:', 'chromium:123,456'), ['v8:456', 'chromium:123'])
+    # Prefix that ends without colon.
     self.assertEqual(f('v8', '456'), ['v8:456'])
     self.assertEqual(f('v8', 'chromium:123,456'), ['v8:456', 'chromium:123'])
     # Not nice, but not worth carying.
+    self.assertEqual(f('v8:', 'chromium:123,456,v8:123'),
+                     ['v8:456', 'chromium:123', 'v8:123'])
     self.assertEqual(f('v8', 'chromium:123,456,v8:123'),
                      ['v8:456', 'chromium:123', 'v8:123'])
 
@@ -2146,7 +2152,9 @@ class TestGitCl(unittest.TestCase):
     self.assertEqual(0, cl.CMDLand(force=True,
                                    bypass_hooks=True,
                                    verbose=True,
-                                   parallel=False))
+                                   parallel=False,
+                                   resultdb=False,
+                                   realm=None))
     self.assertIn(
         'Issue chromium-review.googlesource.com/123 has been submitted',
         sys.stdout.getvalue())
@@ -2669,6 +2677,8 @@ class ChangelistTest(unittest.TestCase):
     mock.patch('git_cl.time_time').start()
     mock.patch('metrics.collector').start()
     mock.patch('subprocess2.Popen').start()
+    mock.patch('git_cl.Changelist._GetGerritProject',
+        return_value='https://chromium-review.googlesource.com').start()
     self.addCleanup(mock.patch.stopall)
     self.temp_count = 0
 
@@ -2710,6 +2720,7 @@ class ChangelistTest(unittest.TestCase):
         '--all_files',
         '--json_output', '/tmp/fake-temp2',
         '--description_file', '/tmp/fake-temp1',
+        '--gerrit_project', 'https://chromium-review.googlesource.com',
     ])
     gclient_utils.FileWrite.assert_called_once_with(
         '/tmp/fake-temp1', 'description')
@@ -2754,6 +2765,7 @@ class ChangelistTest(unittest.TestCase):
         '--upload',
         '--json_output', '/tmp/fake-temp2',
         '--description_file', '/tmp/fake-temp1',
+        '--gerrit_project', 'https://chromium-review.googlesource.com',
     ])
     gclient_utils.FileWrite.assert_called_once_with(
         '/tmp/fake-temp1', 'description')
@@ -2788,17 +2800,19 @@ class ChangelistTest(unittest.TestCase):
         upstream='upstream',
         description='description',
         all_files=False,
-        resultdb=True)
+        resultdb=True,
+        realm='chromium:public')
 
     self.assertEqual(expected_results, results)
     subprocess2.Popen.assert_called_once_with([
-        'rdb', 'stream', '-new',
+        'rdb', 'stream', '-new', '-realm', 'chromium:public',
         'vpython', 'PRESUBMIT_SUPPORT',
         '--root', 'root',
         '--upstream', 'upstream',
         '--upload',
         '--json_output', '/tmp/fake-temp2',
         '--description_file', '/tmp/fake-temp1',
+        '--gerrit_project', 'https://chromium-review.googlesource.com',
     ])
 
   @mock.patch('sys.exit', side_effect=SystemExitMock)
@@ -2931,7 +2945,8 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
         upstream='upstream',
         description='fetch description',
         all_files=None,
-        resultdb=None)
+        resultdb=None,
+        realm=None)
 
   def testNoIssue(self):
     git_cl.Changelist.GetIssue.return_value = None
@@ -2944,7 +2959,8 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
         upstream='upstream',
         description='get description',
         all_files=None,
-        resultdb=None)
+        resultdb=None,
+        realm=None)
 
   def testCustomBranch(self):
     self.assertEqual(0, git_cl.main(['presubmit', 'custom_branch']))
@@ -2956,12 +2972,13 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
         upstream='custom_branch',
         description='fetch description',
         all_files=None,
-        resultdb=None)
+        resultdb=None,
+        realm=None)
 
   def testOptions(self):
     self.assertEqual(
         0, git_cl.main(['presubmit', '-v', '-v', '--all', '--parallel', '-u',
-                          '--resultdb']))
+                          '--resultdb', '--realm', 'chromium:public']))
     git_cl.Changelist.RunHook.assert_called_once_with(
         committing=False,
         may_prompt=False,
@@ -2970,7 +2987,8 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
         upstream='upstream',
         description='fetch description',
         all_files=True,
-        resultdb=True)
+        resultdb=True,
+        realm='chromium:public')
 
 class CMDTryResultsTestCase(CMDTestCaseBase):
   _DEFAULT_REQUEST = {

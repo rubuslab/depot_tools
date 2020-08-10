@@ -155,6 +155,30 @@
     },
     {
       "key": {
+        "uuid": "36fcbb9d_880ebe31",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1565,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-10T18:47:27Z",
+      "side": 1,
+      "message": "fixed.",
+      "parentUuid": "5fc812b7_acecef77",
+      "range": {
+        "startLine": 1565,
+        "startChar": 13,
+        "endLine": 1565,
+        "endChar": 65
+      },
+      "revId": "32098060c9896a533fd4095773437275062ca475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1e4e9de9_81ccbcbd",
         "filename": "presubmit_support.py",
         "patchSetId": 10
@@ -175,6 +199,30 @@
       "revId": "32098060c9896a533fd4095773437275062ca475",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dd9feb2_6cd70140",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1582,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-10T18:47:27Z",
+      "side": 1,
+      "message": "in new patchset, there may be many results so we keeping appending them to the list.",
+      "parentUuid": "1e4e9de9_81ccbcbd",
+      "range": {
+        "startLine": 1582,
+        "startChar": 10,
+        "endLine": 1582,
+        "endChar": 16
+      },
+      "revId": "32098060c9896a533fd4095773437275062ca475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {

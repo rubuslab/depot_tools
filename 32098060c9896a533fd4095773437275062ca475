@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c13565cd_42dda749",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-10T17:29:29Z",
+      "side": 1,
+      "message": "why is this a part of the CL called \"Changed naming convention\"? it should be a separate CL.\nalso i wonder if this was accidental",
+      "revId": "32098060c9896a533fd4095773437275062ca475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9833e7c2_cda4ab85",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2466,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-10T17:29:29Z",
+      "side": 1,
+      "message": "why this change was needed?\n\nin particular, why isn\u0027t it the caller\u0027s job to strip \":\" before calling _get_bug_line_values() ?",
+      "range": {
+        "startLine": 2438,
+        "startChar": 0,
+        "endLine": 2466,
+        "endChar": 7
+      },
+      "revId": "32098060c9896a533fd4095773437275062ca475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fc812b7_acecef77",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1565,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-10T17:29:29Z",
+      "side": 1,
+      "message": "\u0027presubmit:%s/%s:%s\u0027 % (host, project, rel_path)\n\nalso would be simpler to have traliing slash here, instead of adding it in L1556",
+      "range": {
+        "startLine": 1565,
+        "startChar": 13,
+        "endLine": 1565,
+        "endChar": 65
+      },
+      "revId": "32098060c9896a533fd4095773437275062ca475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e4e9de9_81ccbcbd",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1582,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-10T17:29:29Z",
+      "side": 1,
+      "message": "why isn\u0027t this just `results \u003d ...`?\nthen no need for L1586",
+      "range": {
+        "startLine": 1582,
+        "startChar": 10,
+        "endLine": 1582,
+        "endChar": 16
+      },
+      "revId": "32098060c9896a533fd4095773437275062ca475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40fdc3ca_771473e3",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1905,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-08-10T17:29:29Z",
+      "side": 1,
+      "message": "is this temporary? why this script isn\u0027t determining gerrit project automatically from the git state?",
+      "revId": "32098060c9896a533fd4095773437275062ca475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

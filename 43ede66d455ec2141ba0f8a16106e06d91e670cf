@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e8071326_8758e3ec",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5061,
+      "author": {
+        "id": 1294186
+      },
+      "writtenOn": "2020-08-10T01:08:59Z",
+      "side": 1,
+      "message": "“”“\nif not opts.presubmit:\n    for diff_xml in [os.path.normpath(x) for x in diff_files if MatchingFileType(x, [\u0027.xml\u0027])]:\n      xml_dir \u003d GetDirtyMetricsDir(diff_xml)\n      if xml_dir:\n        tool_dir \u003d os.path.join(top_dir, xml_dir)\n        pretty_print_tool \u003d os.path.join(tool_dir, \u0027pretty_print.py\u0027)\n        cmd \u003d [\u0027vpython\u0027, pretty_print_tool, \u0027--non-interactive\u0027]\n        # If in the histograms directory, get the list of paths to individual XML\n        # files that have been changed, run pretty_print command for each file as\n        # pretty_print.py in histograms needs a relative path argument.\n        if diff_xml.endswith(\u0027histograms.xml\u0027) or diff_xml.endswith(\u0027enums.xml\u0027):\n          cmd.append(diff_xml)\n        if opts.dry_run or opts.diff:\n          cmd.append(\u0027--diff\u0027)\n        # TODO(isherman): Once this file runs only on Python 3.3+, drop the\n        # `shell` param and instead replace `\u0027vpython\u0027` with\n        # `shutil.which(\u0027frob\u0027)` above: https://stackoverflow.com/a/32799942\n        stdout \u003d RunCommand(cmd, cwd\u003dtop_dir,\n                            shell\u003dsys.platform.startswith(\u0027win32\u0027))\n        if opts.diff:\n          sys.stdout.write(stdout)\n        if opts.dry_run and stdout:\n          return_value \u003d 2  # Not formatted.\n\n  return return_value\n\n\ndef GetDirtyMetricsDir(diff_xml):\n  metrics_xml_dirs \u003d [\n    os.path.join(\u0027tools\u0027, \u0027metrics\u0027, \u0027actions\u0027),\n    os.path.join(\u0027tools\u0027, \u0027metrics\u0027, \u0027histograms\u0027),\n    os.path.join(\u0027tools\u0027, \u0027metrics\u0027, \u0027rappor\u0027),\n    os.path.join(\u0027tools\u0027, \u0027metrics\u0027, \u0027structured\u0027),\n    os.path.join(\u0027tools\u0027, \u0027metrics\u0027, \u0027ukm\u0027),\n  ]\n  for xml_dir in metrics_xml_dirs:\n    if diff_xml.startswith(xml_dir):\n      return xml_dir\n  return \u0027\u0027\n”“”\n\nThat\u0027s what I wanted to suggest in our meeting. I think my solution can avoid iterating diff_files twice. But I think this is pretty minor, I\u0027ll leave you and Steve to decide which one to use. If you use my solution, maybe put the third line into a small helper function e.g. GetDiffXMLs().",
+      "range": {
+        "startLine": 5016,
+        "startChar": 2,
+        "endLine": 5061,
+        "endChar": 19
+      },
+      "revId": "43ede66d455ec2141ba0f8a16106e06d91e670cf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

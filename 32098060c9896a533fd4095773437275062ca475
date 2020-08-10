@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "12f9826f_be14517f",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-10T17:38:17Z",
+      "side": 1,
+      "message": "yeah this is not mine. need to rebase/solve merge conflicts",
+      "parentUuid": "c13565cd_42dda749",
+      "revId": "32098060c9896a533fd4095773437275062ca475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9833e7c2_cda4ab85",
         "filename": "git_cl.py",
         "patchSetId": 10
@@ -126,6 +144,24 @@
       "revId": "32098060c9896a533fd4095773437275062ca475",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7c4ef0f_4f032f52",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1905,
+      "author": {
+        "id": 1425388
+      },
+      "writtenOn": "2020-08-10T17:38:17Z",
+      "side": 1,
+      "message": "the git_cl.py script determines it, and we need a way pass it from git_cl.py to presubmit_support.py. So that\u0027s what this is for.",
+      "parentUuid": "40fdc3ca_771473e3",
+      "revId": "32098060c9896a533fd4095773437275062ca475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

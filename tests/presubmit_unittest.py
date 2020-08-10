@@ -161,6 +161,7 @@ index fe3de7b..54ae6e1 100755
     class FakeChange(object):
       def __init__(self, obj):
         self._root = obj.fake_root_dir
+        self.issue = 0
       def RepositoryRoot(self):
         return self._root
 
@@ -552,6 +553,7 @@ class PresubmitUnittest(PresubmitTestsBase):
     ]
 
     fake_presubmit = os.path.join(self.fake_root_dir, 'PRESUBMIT.py')
+
     executer = presubmit.PresubmitExecuter(
         self.fake_change, False, None, False)
 

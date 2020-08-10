@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b95ba2e0_c133346c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1124674
+      },
+      "writtenOn": "2020-08-10T20:51:55Z",
+      "side": 1,
+      "message": "LGTM % nits but you will need to add an OWNER from:\n\nhttps://chromium.googlesource.com/chromium/tools/depot_tools/+/03b15131d393affdbe7af9987c72de79a224f5b0/OWNERS",
+      "revId": "7c567daf9ebcf757b9f74f77dc5740d6f6cc1e8f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "669ac86b_f1c09ce3",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5035,
+      "author": {
+        "id": 1124674
+      },
+      "writtenOn": "2020-08-10T20:51:55Z",
+      "side": 1,
+      "message": "if not xml_dir: continue",
+      "range": {
+        "startLine": 5035,
+        "startChar": 6,
+        "endLine": 5035,
+        "endChar": 17
+      },
+      "revId": "7c567daf9ebcf757b9f74f77dc5740d6f6cc1e8f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44116a12_735311eb",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5070,
+      "author": {
+        "id": 1124674
+      },
+      "writtenOn": "2020-08-10T20:51:55Z",
+      "side": 1,
+      "message": "GetMetricsDir",
+      "range": {
+        "startLine": 5070,
+        "startChar": 4,
+        "endLine": 5070,
+        "endChar": 23
+      },
+      "revId": "7c567daf9ebcf757b9f74f77dc5740d6f6cc1e8f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

@@ -99,6 +99,16 @@ def GetBuildtoolsPath():
   if override is not None:
     return override
 
+  # buildtools may be specified in the .gclient file's primary solution.
+  gclient_root = FindGclientRoot(os.getcwd())
+  if gclient_root:
+    value = GetGClientPrimarySolutionValue(gclient_root, 'buildtools')
+    if value:
+      buildtools_path = os.path.join(gclient_root, value)
+      if os.path.exists(buildtools_path):
+        return buildtools_path
+
+  # buildtools may be in the primary solution path.
   primary_solution = GetPrimarySolutionPath()
   if not primary_solution:
     return None
@@ -108,7 +118,6 @@ def GetBuildtoolsPath():
     return buildtools_path
 
   # buildtools may be in the gclient root.
-  gclient_root = FindGclientRoot(os.getcwd())
   buildtools_path = os.path.join(gclient_root, 'buildtools')
   if os.path.exists(buildtools_path):
     return buildtools_path
@@ -140,13 +149,18 @@ def GetExeSuffix():
   return ''
 
 
-def GetGClientPrimarySolutionName(gclient_root_dir_path):
-  """Returns the name of the primary solution in the .gclient file specified."""
+def GetGClientPrimarySolutionValue(gclient_root_dir_path, key):
+  """Returns the value for key of the primary solution in the .gclient file."""
   gclient_config_file = os.path.join(gclient_root_dir_path, '.gclient')
   gclient_config_contents = gclient_utils.FileRead(gclient_config_file)
   env = {}
   exec(gclient_config_contents, env)
   solutions = env.get('solutions', [])
   if solutions:
-    return solutions[0].get('name')
+    return solutions[0].get(key)
   return None
+
+
+def GetGClientPrimarySolutionName(gclient_root_dir_path):
+  """Returns the name of the primary solution in the .gclient file."""
+  return GetGClientPrimarySolutionValue(gclient_root_dir_path, 'name')

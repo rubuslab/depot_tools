@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0008c6b_91fc7e4c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1177599
+      },
+      "writtenOn": "2020-08-10T16:12:14Z",
+      "side": 1,
+      "message": "Edward is OOO. Dirk, can you take a look please?",
+      "revId": "3e7ab6466b8f9cd957d29056475652c521d1ab7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

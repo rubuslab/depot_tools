@@ -527,6 +527,8 @@ class InputApi(object):
       r'.+\.patch$',
   )
 
+  version = 2
+
   # TODO(https://crbug.com/1098562): Remove once no longer used
   @property
   def DEFAULT_WHITE_LIST(self):

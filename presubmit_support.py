@@ -8,7 +8,7 @@
 
 from __future__ import print_function
 
-__version__ = '1.8.0'
+__version__ = '2.0.0'
 
 # TODO(joi) Add caching where appropriate/needed. The API is designed to allow
 # caching (between all different invocations of presubmit scripts for a given
@@ -1543,11 +1543,6 @@ class PresubmitExecuter(object):
     output_api = OutputApi(self.committing)
     context = {}
 
-    PRESUBMIT_VERSION = [0]
-    def REQUIRE_PRESUBMIT_VERSION(num):
-      PRESUBMIT_VERSION[0] = num
-
-    context['REQUIRE_PRESUBMIT_VERSION'] = REQUIRE_PRESUBMIT_VERSION
     try:
       exec(compile(script_text, 'PRESUBMIT.py', 'exec', dont_inherit=True),
            context)
@@ -1575,7 +1570,7 @@ class PresubmitExecuter(object):
     results = []
 
     try:
-      if PRESUBMIT_VERSION[0] > 0:
+      if 'PRESUBMIT_VERSION' in context and context['PRESUBMIT_VERSION'] >= 1:
         for function_name in context:
           if not function_name.startswith('Check'):
             continue
@@ -1609,7 +1604,7 @@ class PresubmitExecuter(object):
     os.chdir(main_path)
     return results
 
-  def _run_check_function(self, function_name, context, prefix):
+  def _run_check_function(self, function_name, context, prefix, ):
     """Evaluates a presubmit check function, function_name, in the context
     provided. If LUCI_CONTEXT is enabled, it will send the result to ResultSink.
     Passes function_name and prefix to rdb_wrapper.setup_rdb. Returns results.

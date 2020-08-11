@@ -16,6 +16,23 @@
       "revId": "e9b8f7afb70283ce666a4c559d237a7ccf46da68",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "165a71db_10764f40",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1573,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-08-11T21:11:44Z",
+      "side": 1,
+      "message": "I would use \u003e\u003d \u00272.0.0\u0027 to be more consistent with the version in this file.",
+      "revId": "e9b8f7afb70283ce666a4c559d237a7ccf46da68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e94d1478_63d92425",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 5043,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-08-12T17:26:28Z",
+      "side": 1,
+      "message": "I think the comment should elaborate it a bit more what we are trying to achieve here.\niiuc:\nIf there is histogram.xml or enums.xml, only format those files since xml_dir contains other xml files that don\u0027t to be prettified.",
+      "revId": "0040334cd97889740dadd7c3c3bb553ad95b3a11",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4488edd2_eba4cecf",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 5083,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-08-12T17:26:28Z",
+      "side": 1,
+      "message": "nit: return None",
+      "revId": "0040334cd97889740dadd7c3c3bb553ad95b3a11",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

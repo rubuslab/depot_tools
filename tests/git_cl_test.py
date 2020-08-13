@@ -2705,7 +2705,7 @@ class ChangelistTest(unittest.TestCase):
         resultdb=False)
 
     self.assertEqual(expected_results, results)
-    subprocess2.Popen.assert_called_once_with([
+    subprocess2.Popen.assert_called_with([
         'vpython', 'PRESUBMIT_SUPPORT',
         '--root', 'root',
         '--upstream', 'upstream',
@@ -2758,7 +2758,7 @@ class ChangelistTest(unittest.TestCase):
         resultdb=False)
 
     self.assertEqual(expected_results, results)
-    subprocess2.Popen.assert_called_once_with([
+    subprocess2.Popen.assert_called_with([
         'vpython', 'PRESUBMIT_SUPPORT',
         '--root', 'root',
         '--upstream', 'upstream',
@@ -2804,7 +2804,7 @@ class ChangelistTest(unittest.TestCase):
         realm='chromium:public')
 
     self.assertEqual(expected_results, results)
-    subprocess2.Popen.assert_called_once_with([
+    subprocess2.Popen.assert_called_with([
         'rdb', 'stream', '-new', '-realm', 'chromium:public', '--',
         'vpython', 'PRESUBMIT_SUPPORT',
         '--root', 'root',
@@ -2840,7 +2840,7 @@ class ChangelistTest(unittest.TestCase):
     cl = git_cl.Changelist()
     cl.RunPostUploadHook(2, 'upstream', 'description')
 
-    subprocess2.Popen.assert_called_once_with([
+    subprocess2.Popen.assert_called_with([
         'vpython', 'PRESUBMIT_SUPPORT',
         '--root', 'root',
         '--upstream', 'upstream',

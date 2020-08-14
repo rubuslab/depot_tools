@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76da8fba_9b363cdd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1124674
+      },
+      "writtenOn": "2020-08-14T22:39:16Z",
+      "side": 1,
+      "message": "Can you point out how you are avoiding the issue this was originally reverted for?",
+      "revId": "d3d27086acfba2143f9fad77f83292f43fd1588d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

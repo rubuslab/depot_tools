@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca63fc0a_f9c5b627",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1427093
+      },
+      "writtenOn": "2020-08-14T00:00:03Z",
+      "side": 1,
+      "message": "Hi all,\n\nUploaded a reland of the previous CL to modify `git cl format` to prepare for split-up histograms in multiple files. Please take a look, thank you!\n\n\nWenhan",
+      "revId": "a45ebfb95c4130b6d482baec6890678adaba5ab8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

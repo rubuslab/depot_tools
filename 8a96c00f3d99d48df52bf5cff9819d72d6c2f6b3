@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3a2c364_d99626e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-08-17T17:24:54Z",
+      "side": 1,
+      "message": "Scott, can you also `OWNERS` file to make `LUCI_OWNERS` owned by `LUCI_OWNERS` itself?\n\nAnd I think we need approval from someone who\u0027s still a Depot_tools owner.",
+      "revId": "8a96c00f3d99d48df52bf5cff9819d72d6c2f6b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

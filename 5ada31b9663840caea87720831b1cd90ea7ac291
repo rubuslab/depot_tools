@@ -50,6 +50,24 @@
       "revId": "5ada31b9663840caea87720831b1cd90ea7ac291",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfd780ec_e9e9c09c",
+        "filename": "LUCI_OWNERS",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2020-08-17T21:24:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7572546c_5763b1c1",
+      "revId": "5ada31b9663840caea87720831b1cd90ea7ac291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

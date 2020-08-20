@@ -247,6 +247,7 @@ class Hook(object):
 
     try:
       start_time = time.time()
+      print('running hook: %s' % str(cmd))
       gclient_utils.CheckCallAndFilter(
           cmd, cwd=self.effective_cwd, print_stdout=True, show_header=True,
           always_show_header=self._verbose)

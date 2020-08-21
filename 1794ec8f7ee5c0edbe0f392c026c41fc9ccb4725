@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "c01a3a0e_bc8a7ad4",
+        "filename": "gclient_utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-08-21T21:52:55Z",
+      "side": 1,
+      "message": "I don\u0027t think this\u0027ll work on windows (hence your tryjob failure).",
+      "revId": "1794ec8f7ee5c0edbe0f392c026c41fc9ccb4725",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1bd370e6_d663127f",
         "filename": "gclient_utils.py",
         "patchSetId": 11

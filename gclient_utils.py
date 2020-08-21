@@ -10,6 +10,8 @@ import codecs
 import collections
 import contextlib
 import datetime
+import errno
+import fcntl
 import functools
 import io
 import logging
@@ -17,6 +19,7 @@ import operator
 import os
 import pipes
 import platform
+import pty
 import re
 import stat
 import subprocess
@@ -585,9 +588,19 @@ def CheckCallAndFilter(args, print_stdout=False, filter_fn=None,
   sleep_interval = RETRY_INITIAL_SLEEP
   run_cwd = kwargs.get('cwd', os.getcwd())
   for attempt in range(RETRY_MAX + 1):
+    # If our stdout is a terminal, then pass in a psuedo-tty pipe to our
+    # subprocesses when filtering their output. This helps preserve ANSI color
+    # codes.
+    if sys.stdout.isatty():
+      pipe_reader, pipe_writer = pty.openpty()
+    else:
+      pipe_reader, pipe_writer = os.pipe()
+
     kid = subprocess2.Popen(
-        args, bufsize=0, stdout=subprocess2.PIPE, stderr=subprocess2.STDOUT,
+        args, bufsize=0, stdout=pipe_writer, stderr=subprocess2.STDOUT,
         **kwargs)
+    # Close the write end of the pipe once we hand it off to the child proc.
+    os.close(pipe_writer)
 
     GClientChildren.add(kid)
 
@@ -608,7 +621,14 @@ def CheckCallAndFilter(args, print_stdout=False, filter_fn=None,
     try:
       line_start = None
       while True:
-        in_byte = kid.stdout.read(1)
+        try:
+          in_byte = os.read(pipe_reader, 1)
+        except IOError as e:
+          if e.errno == errno.EIO:
+            # An errno.EIO means EOF?
+            in_byte = None
+          else:
+            raise e
         is_newline = in_byte in (b'\n', b'\r')
         if not in_byte:
           break
@@ -629,8 +649,8 @@ def CheckCallAndFilter(args, print_stdout=False, filter_fn=None,
       if line_start is not None:
         filter_line(command_output, line_start)
 
+      os.close(pipe_reader)
       rv = kid.wait()
-      kid.stdout.close()
 
       # Don't put this in a 'finally,' since the child may still run if we get
       # an exception.

@@ -5041,22 +5041,9 @@ def CMDformat(parser, args):
       cmd = ['vpython', pretty_print_tool, '--non-interactive']
 
       # If the XML file is histograms.xml or enums.xml, add the xml path to the
-      # command as histograms/pretty_print.py now needs a relative path argument
-      # after splitting the histograms into multiple directories.
-      # For example, in tools/metrics/ukm, pretty-print could be run using:
-      #   $ python pretty_print.py
-      # But in tools/metrics/histogrmas, pretty-print should be run with an
-      # additional relative path argument, like:
-      #   $ python pretty_print.py histograms_xml/UMA/histograms.xml
-      #   $ python pretty_print.py enums.xml
-
-      # TODO (crbug/1116488): Remove this check after ensuring that the updated
-      # version of histograms/pretty_print.py is released.
-      filepath_required = os.path.exists(
-          os.path.join(tool_dir, 'validate_prefix.py'))
-
+      # command to only pretty print changed files.
       if (diff_xml.endswith('histograms.xml')
-          or diff_xml.endswith('enums.xml')) and filepath_required:
+          or diff_xml.endswith('enums.xml')):
         cmd.append(diff_xml)
 
       if opts.dry_run or opts.diff:

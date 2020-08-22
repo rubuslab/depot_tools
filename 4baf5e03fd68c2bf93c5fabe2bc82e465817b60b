@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "522ad627_440c0296",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1294186
+      },
+      "writtenOn": "2020-08-22T01:14:18Z",
+      "side": 1,
+      "message": "Hi Josip, this cl removes a one-line check in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2353076. PTAL 😊",
+      "revId": "4baf5e03fd68c2bf93c5fabe2bc82e465817b60b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

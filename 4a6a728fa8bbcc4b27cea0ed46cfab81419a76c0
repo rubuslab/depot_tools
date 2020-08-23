@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "283a3dbf_eb135b1f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-08-23T17:42:35Z",
+      "side": 1,
+      "message": "I hit this while working on the max_path issue. It\u0027s not strictly related, but it makes the packaging script more robust in the face of odd setups. PTAL.",
+      "revId": "4a6a728fa8bbcc4b27cea0ed46cfab81419a76c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

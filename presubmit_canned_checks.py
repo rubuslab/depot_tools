@@ -110,9 +110,11 @@ def CheckAuthorizedAuthor(input_api, output_api, bot_allowlist=None,
   in AUTHORS.
   """
   # TODO(https://crbug.com/1098560): Remove non inclusive parameter names.
-  if bot_allowlist is None:
+  if bot_whitelist is not None:
     warn('Use bot_allowlist in CheckAuthorizedAuthor')
+  if bot_allowlist is None:
     bot_allowlist = bot_whitelist
+
   if input_api.is_committing:
     error_type = output_api.PresubmitError
   else:

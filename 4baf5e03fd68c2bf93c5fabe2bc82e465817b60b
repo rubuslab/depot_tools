@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "858f2643_6b18dfcf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-08-24T20:35:52Z",
+      "side": 1,
+      "message": "I think we will see the same issue on stable/beta branches as we did when chromium/src ToT didn\u0027t have all required changes merged.\n\nFor example, current stable 84 doesn\u0027t have validate_prefix.py\nhttps://source.chromium.org/chromium/chromium/src/+/refs/tags/84.0.4147.99:tools/metrics/histograms/validate_prefix.py\n\nand it would be triggered, for example, for this file:\nhttps://source.chromium.org/chromium/chromium/src/+/master:tools/metrics/histograms/enums.xml\n\nSo, it seems to me that either we have to cherry pick this to all active branches or wait until they get archived.",
+      "parentUuid": "5a6de8c6_69a9b04e",
+      "revId": "4baf5e03fd68c2bf93c5fabe2bc82e465817b60b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "522ad627_440c0296",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1

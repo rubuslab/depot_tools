@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a6de8c6_69a9b04e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1294186
+      },
+      "writtenOn": "2020-08-24T18:30:38Z",
+      "side": 1,
+      "message": "IIUC, that piece of code is not going to be on release or something. It\u0027s just a tool that we used to validate our metrics metadata. Does that sound reasonable to you?",
+      "parentUuid": "c3404cca_28654d52",
+      "revId": "4baf5e03fd68c2bf93c5fabe2bc82e465817b60b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "522ad627_440c0296",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1

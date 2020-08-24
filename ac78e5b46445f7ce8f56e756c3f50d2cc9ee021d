@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ddfbd935_fd9fa701",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-08-24T19:38:21Z",
+      "side": 1,
+      "message": "It\u0027s a bit of a messy change, but it ultimately simplifies the script and produces cleaner results, that still work.",
+      "revId": "ac78e5b46445f7ce8f56e756c3f50d2cc9ee021d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

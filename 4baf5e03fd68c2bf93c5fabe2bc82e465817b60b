@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "c3404cca_28654d52",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-08-24T16:38:12Z",
+      "side": 1,
+      "message": "Does this apply to release branches too?",
+      "revId": "4baf5e03fd68c2bf93c5fabe2bc82e465817b60b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "522ad627_440c0296",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -13,6 +30,23 @@
       "writtenOn": "2020-08-22T01:14:18Z",
       "side": 1,
       "message": "Hi Josip, this cl removes a one-line check in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2353076. PTAL 😊",
+      "revId": "4baf5e03fd68c2bf93c5fabe2bc82e465817b60b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "304555e4_89880bee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-08-24T16:38:12Z",
+      "side": 1,
+      "message": "+1 assuming it won\u0027t break release branches.",
       "revId": "4baf5e03fd68c2bf93c5fabe2bc82e465817b60b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

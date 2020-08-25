@@ -110,9 +110,11 @@ def CheckAuthorizedAuthor(input_api, output_api, bot_allowlist=None,
   in AUTHORS.
   """
   # TODO(https://crbug.com/1098560): Remove non inclusive parameter names.
-  if bot_allowlist is None:
+  if bot_whitelist is not None:
     warn('Use bot_allowlist in CheckAuthorizedAuthor')
+  if bot_allowlist is None:
     bot_allowlist = bot_whitelist
+
   if input_api.is_committing:
     error_type = output_api.PresubmitError
   else:
@@ -627,11 +629,13 @@ def GetUnitTestsInDirectory(
   tests accordingly.
   """
   # TODO(https://crbug.com/1098560): Remove non inclusive parameter names.
-  if files_to_check is None:
+  if allowlist is not None or whitelist is not None:
     warn('Use files_to_check in GetUnitTestsInDirectory')
+  if blocklist is not None or blacklist is not None:
+    warn('Use files_to_skip in GetUnitTestsInDirectory')
+  if files_to_check is None:
     files_to_check = allowlist or whitelist
   if files_to_skip is None:
-    warn('Use files_to_skip in GetUnitTestsInDirectory')
     files_to_skip = blocklist or blacklist
 
   unit_tests = []

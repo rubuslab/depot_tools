@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "81569310_ced31479",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1162220
+      },
+      "writtenOn": "2020-08-25T19:22:41Z",
+      "side": 1,
+      "message": "I think this CL is producing a new presubmit warning for me. I think it\u0027s safe to ignore but if this is the case for everyone else too then you may want to revert?",
+      "revId": "149a3b7581257a60a3541e91875893088d68fb7f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e78bf3c_561ef4ca",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 2

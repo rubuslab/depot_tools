@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "454dc31f_cc92f4fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1294186
+      },
+      "writtenOn": "2020-08-26T02:44:47Z",
+      "side": 1,
+      "message": "PTAL! 😊 This doesn\u0027t have release problem so we can submit it immediately. Thanks 😊",
+      "revId": "558a18bc4948bf964a10bd471738f9d11f22077f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

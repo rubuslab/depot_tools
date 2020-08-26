@@ -16,6 +16,29 @@
       "revId": "fb68c04e359a3940122f7b2e4cc81825311712d5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "94253fa9_96d5aa31",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-08-26T22:37:44Z",
+      "side": 1,
+      "message": "Nit: set it as a constant in owners.py and update usages in owners.py too:\nhttps://chromium.googlesource.com/chromium/tools/depot_tools/+/9e633036da7dc15616f173dbc7bd500594ac94d0/owners.py#187",
+      "range": {
+        "startLine": 250,
+        "startChar": 25,
+        "endLine": 250,
+        "endChar": 33
+      },
+      "revId": "fb68c04e359a3940122f7b2e4cc81825311712d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc12ff32_c1e67489",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-08-26T23:36:27Z",
+      "side": 1,
+      "message": "this looks basically fine, but @sokcevic gets to make the call :).",
+      "revId": "6704cd07c88d4086e2d7f362e328eb093f65daca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

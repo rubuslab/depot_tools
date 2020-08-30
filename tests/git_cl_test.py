@@ -2047,6 +2047,17 @@ class TestGitCl(unittest.TestCase):
     self.assertEqual(
         0, git_cl.main(['archive', '-f', '-p', 'archived/{issue}-{branch}']))
 
+  def test_archive_explicit_branch(self):
+    self.calls = \
+        [
+         ((['git', 'for-each-ref', '--format=%(refname)', 'refs/heads'],),
+          'refs/heads/foo'),
+         ((['git', 'for-each-ref', '--format=%(refname)', 'refs/tags'],), ''),
+         ((['git', 'tag', 'git-cl-archived-None-foo', 'foo'],), ''),
+         ((['git', 'branch', '-D', 'foo'],), '')]
+
+    self.assertEqual(0, git_cl.main(['archive', '-f', 'foo']))
+
   def test_cmd_issue_erase_existing(self):
     self.mockGit.config['branch.master.gerritissue'] = '123'
     self.mockGit.config['branch.master.gerritserver'] = (

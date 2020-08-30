@@ -3341,7 +3341,11 @@ def GetArchiveTagForBranch(issue_num, branch_name, existing_tags, pattern):
 
 @metrics.collector.collect_metrics('git cl archive')
 def CMDarchive(parser, args):
-  """Archives and deletes branches associated with closed changelists."""
+  """Archives and deletes branches.
+
+  When no branches are provided, this will archive all branches
+  associated with closed changelists.
+  """
   parser.add_option(
       '-j', '--maxjobs', action='store', type=int,
       help='The maximum number of jobs to use when retrieving review status.')
@@ -3363,29 +3367,41 @@ def CMDarchive(parser, args):
       'E.g. \'archived-{issue}-{branch}\'.')
 
   options, args = parser.parse_args(args)
-  if args:
-    parser.error('Unsupported args: %s' % ' '.join(args))
 
   branches = RunGit(['for-each-ref', '--format=%(refname)', 'refs/heads'])
   if not branches:
     return 0
 
-  tags = RunGit(['for-each-ref', '--format=%(refname)',
-                 'refs/tags']).splitlines() or []
-  tags = [t.split('/')[-1] for t in tags]
-
-  print('Finding all branches associated with closed issues...')
   changes = [Changelist(branchref=b)
              for b in branches.splitlines()]
+
+  if args:
+    existing_branches = set(c.GetBranch() for c in changes)
+    requested_branches = set(args)
+    missing_branches = requested_branches.difference(existing_branches)
+    for missing_branch in missing_branches:
+      print('Missing requested branch: ' % missing_branch)
+    changes = [
+        c for c in changes
+        if c.GetBranch() in requested_branches.intersection(existing_branches)
+    ]
+  else:
+    print('Finding all branches associated with closed issues...')
+    statuses = get_cl_statuses(changes,
+                               fine_grained=True,
+                               max_processes=options.maxjobs)
+    changes = [
+        cl for cl, status in statuses
+        if status in ('closed', 'rietveld-not-supported')
+    ]
+
   alignment = max(5, max(len(c.GetBranch()) for c in changes))
-  statuses = get_cl_statuses(changes,
-                             fine_grained=True,
-                             max_processes=options.maxjobs)
+  tags = RunGit(['for-each-ref', '--format=%(refname)', 'refs/tags'
+                 ]).splitlines() or []
+  tags = [t.split('/')[-1] for t in tags]
   proposal = [(cl.GetBranch(),
                GetArchiveTagForBranch(cl.GetIssue(), cl.GetBranch(), tags,
-                                      options.pattern))
-              for cl, status in statuses
-              if status in ('closed', 'rietveld-not-supported')]
+                                      options.pattern)) for cl in changes]
   proposal.sort()
 
   if not proposal:

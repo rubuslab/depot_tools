@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bc2420e6_35420b54",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-09-03T00:14:01Z",
+      "side": 1,
+      "message": "No period needed on commit message subject lines, and try to be less than 50 characters.\n\nThe remainder of the message should wrap at 72 columns.",
+      "revId": "901a51d43d0bd5b47ea000dbcf2debd3369fe07f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "73c05551_92c841b3",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -13,6 +30,23 @@
       "writtenOn": "2020-09-03T00:12:57Z",
       "side": 1,
       "message": "Curious. It looks reasonable, I guess, but the commit message needs to explain what RBE is, and should probably acknowledge that Chromium does not use the use_rbe flag at all.\n\nWhat downstream projects are setting use_rbe? That seems like an important detail so that future readers understand the context. Maybe a link to a project file that uses rbe?\n\nYou say \"goma is deprecated\" but I have not heard that. Citation needed.",
+      "revId": "901a51d43d0bd5b47ea000dbcf2debd3369fe07f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "90d039f3_57377f1d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-09-03T00:14:01Z",
+      "side": 1,
+      "message": "https://chris.beams.io/posts/git-commit/",
       "revId": "901a51d43d0bd5b47ea000dbcf2debd3369fe07f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

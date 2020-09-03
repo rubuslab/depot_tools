@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38dff52c_4e150d56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-09-03T19:41:56Z",
+      "side": 1,
+      "message": "Having asked for more detail, now I feel like this needs less :-)\n\nWe try to avoid using go links in public documents so probably delete the go link and trust that Googlers can track it down if they want.",
+      "revId": "24cd24de2e53e5be5ebe804bf538a50175928df8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "903472d0_477a058d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-09-03T19:41:56Z",
+      "side": 1,
+      "message": "Thanks for the clarification. One more tweak to the commit message and this is good.",
+      "revId": "24cd24de2e53e5be5ebe804bf538a50175928df8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

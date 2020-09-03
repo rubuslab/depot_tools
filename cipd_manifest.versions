@@ -436,3 +436,55 @@ infra/tools/rdb/windows-386
 infra/tools/rdb/windows-amd64
 	git_revision:b10f35b8395abc836a34c60fff99a52ff8bc58db
 	CG0eYukCzYQszyouBaqxvNZSZnWfpzuNS0swJjlfZ9AC
+
+infra/tools/result_adapter/linux-386
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	yl-FNbT34Y4U5nAyPSmKmNE2JIhgVZ00OIp4c_XRAE4C
+
+infra/tools/result_adapter/linux-amd64
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	PO4TEy9YB8-VY59qq3lO-fNxY_Z5vqsiT5KPkPS3OYcC
+
+infra/tools/result_adapter/linux-arm64
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	-AD9mrkCTYPmpxEx5HaTyUhKAQsYkLz555zps9F864AC
+
+infra/tools/result_adapter/linux-armv6l
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	bWuK_2oqDhEY-dtVR1NFAe2RpqYVBWINF4U0-WAcugIC
+
+infra/tools/result_adapter/linux-mips64
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	_gHKvzGxaUZIz8mCizx6sC-LHujnRcRSm5Yi4pv5ozwC
+
+infra/tools/result_adapter/linux-mips64le
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	wuurt4KRxYTmyEtj_oax9cFDVAcMOKQljqCY71PTmN4C
+
+infra/tools/result_adapter/linux-mipsle
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	o8GR-64EumResB9Wbe0KAYaUe7x5WipSnLRwZh90F1wC
+
+infra/tools/result_adapter/linux-ppc64
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	5WwCIJaUqMbM_LZ4p8lXqSAC2Ihj2fz-M8QS9NaTlSEC
+
+infra/tools/result_adapter/linux-ppc64le
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	0bfuv6Fojj7GB2nyXa011cMVy90K9HWVl-sCJ8zYhggC
+
+infra/tools/result_adapter/linux-s390x
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	7LrhfbsqFRKv_fEWBTnewWiO6aldKzESTjety7WNaRwC
+
+infra/tools/result_adapter/mac-amd64
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	zmcRCWKt5pn3CZYnZyaa8m1jr8xZRbv_OOVWkP12Qt8C
+
+infra/tools/result_adapter/windows-386
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	RlIGPhjyitqgFTPreERQSVWjahzIJX7QFMSKWxBDPUAC
+
+infra/tools/result_adapter/windows-amd64
+	git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+	8q3kZQe2jS2_TQKgm1X0UxpxAXZFOiBiNHdUlFPumc0C

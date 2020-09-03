@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2b3ba04a_9f95feef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1160944
+      },
+      "writtenOn": "2020-09-03T04:01:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc2420e6_35420b54",
+      "revId": "901a51d43d0bd5b47ea000dbcf2debd3369fe07f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "73c05551_92c841b3",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2020-09-03T00:14:01Z",
       "side": 1,
       "message": "https://chris.beams.io/posts/git-commit/",
+      "revId": "901a51d43d0bd5b47ea000dbcf2debd3369fe07f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "609d4308_b75a6a18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1160944
+      },
+      "writtenOn": "2020-09-03T04:01:41Z",
+      "side": 1,
+      "message": "Tried to clarify with the new commit message. It\u0027s specifically the goma *backend* that\u0027s deprecated; chromium can continue using the goma client frontend, but all projects now need to use an RBE backend. I recall asking the people working on the migration for Nest why we couldn\u0027t use the same strategy chromium is using and keep the same frontend, but I don\u0027t remember the answer clearly. I\u0027m just trying to get the minimum change we need upstream to keep the rest of our tooling working well 😊",
+      "parentUuid": "73c05551_92c841b3",
       "revId": "901a51d43d0bd5b47ea000dbcf2debd3369fe07f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false

@@ -16,6 +16,23 @@
       "revId": "0c5d2012cacf58702a37007aa47ad9ebc7a2891f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a580097_955403bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-09-04T00:14:12Z",
+      "side": 1,
+      "message": "Lgtm; IIUC this will only used for developers, right?\n\nAlso please update OWNERS so that the right folks have ownership on the new wrapper scripts",
+      "revId": "0c5d2012cacf58702a37007aa47ad9ebc7a2891f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

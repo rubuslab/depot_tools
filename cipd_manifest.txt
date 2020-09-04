@@ -53,6 +53,9 @@ infra/tools/bb/${platform} git_revision:165c851a5838dd48e66240a0de3da872b4b31d01
 # LUCI ResultDB CLI
 infra/tools/rdb/${platform} git_revision:b10f35b8395abc836a34c60fff99a52ff8bc58db
 
+# result_adapter, a tool to convert test results to ResultSink native format then upload them to ResultDB via ResultSink.
+infra/tools/result_adapter/${platform} git_revision:adc0ee293ff0afc1df99c6bafeb979811b3457ff
+
 # CHROMEOS Buildjobs CLI
 chromiumos/infra/crosjobs/${platform=linux-amd64} git_revision:ed616d595eb7241d39d34907050d2949121d6ae8
 

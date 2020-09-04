@@ -33,6 +33,7 @@ per-file cipd*=file://LUCI_OWNERS
 per-file cit*=file://LUCI_OWNERS
 per-file led*=file://LUCI_OWNERS
 per-file luci*=file://LUCI_OWNERS
+per-file result_adapter*=file://LUCI_OWNERS
 per-file vpython*=file://LUCI_OWNERS
 per-file LUCI_OWNERS=file://LUCI_OWNERS
 

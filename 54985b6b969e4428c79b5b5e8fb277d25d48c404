@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f479863_c0320098",
+        "filename": "clang_format.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000039
+      },
+      "writtenOn": "2020-09-07T18:00:40Z",
+      "side": 1,
+      "message": "set  CHROMIUM_BUILTDTOOLS_PATH to what?\n\nSorry, a bit late to the game, but the first time I am trying to use repo upload outside of chrome os tree 😊",
+      "range": {
+        "startLine": 32,
+        "startChar": 9,
+        "endLine": 32,
+        "endChar": 75
+      },
+      "revId": "54985b6b969e4428c79b5b5e8fb277d25d48c404",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

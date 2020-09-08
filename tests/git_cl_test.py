@@ -292,6 +292,52 @@ class TestGitClBasic(unittest.TestCase):
       'Cq-Do-Not-Cancel-Tryjobs: true',
     ])
 
+  # TODO(crbug.com/monorail/8302): Bug line should not be added
+  def test_do_not_add_bug_when_fixed(self):
+    d = git_cl.ChangeDescription('\n'.join([
+      'One is enough',
+      '',
+      'Fixed: 10000',
+      'Change-Id: Ideadbeef',
+    ]), bug='10000')
+    self.assertEqual(d.description.splitlines(), [
+      'One is enough',
+      '',
+      'Fixed: 10000',
+      'Change-Id: Ideadbeef',
+      'Bug: 10000',
+    ])
+
+  def test_add_fixed_when_bug(self):
+    d = git_cl.ChangeDescription('\n'.join([
+      'One is enough',
+      '',
+      'Bug: 10000',
+      'Change-Id: Ideadbeef',
+    ]), fixed='10000')
+    self.assertEqual(d.description.splitlines(), [
+      'One is enough',
+      '',
+      'Bug: 10000',
+      'Change-Id: Ideadbeef',
+      'Fixed: 10000',
+    ])
+
+  # TODO(crbug.com/monorail/8302): Bug line should not be added
+  def test_add_only_fixed(self):
+    d = git_cl.ChangeDescription('\n'.join([
+      'One is enough',
+      '',
+      'Change-Id: Ideadbeef',
+    ]), bug='10000', fixed='10000')
+    self.assertEqual(d.description.splitlines(), [
+      'One is enough',
+      '',
+      'Change-Id: Ideadbeef',
+      'Bug: 10000',
+      'Fixed: 10000',
+    ])
+
   def test_get_bug_line_values(self):
     f = lambda p, bugs: list(git_cl._get_bug_line_values(p, bugs))
     self.assertEqual(f('', ''), [])

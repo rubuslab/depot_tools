@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd6046e2_7381f610",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1157909
+      },
+      "writtenOn": "2020-09-08T19:24:29Z",
+      "side": 1,
+      "message": "As discussed in chat https://chat.google.com/room/AAAAglaZbXU/79eVn8Wyn5c , we should add cipd pin to chromium/src instead of depot_tools.",
+      "revId": "4a2098a1fda53158a7e44a39bc4661c0fe5058b5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

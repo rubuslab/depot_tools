@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "54f1fc34_41f23cb5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1373732
+      },
+      "writtenOn": "2020-09-11T00:57:45Z",
+      "side": 1,
+      "message": "Description and implementation changed. The implementation now suggests both arm64e and arm64 as candidate architectures to arch, which will use the first one that works.\n\nI\u0027m using \"abbreviated\" arch syntax here, using -arm64e -arm64 rather than -arch arm64e -arch arm64 because I\u0027m not honestly sure what the right multi-arch syntax for the -arch version is but I know how to make it work for the short version.",
+      "parentUuid": "7608bfd9_6cadb5e6",
+      "revId": "e0e7c14962594894cce256217838fb90202eed42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fbef6b62_080e2b68",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1

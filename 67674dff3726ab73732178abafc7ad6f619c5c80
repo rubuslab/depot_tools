@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a66f558_568caba0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-09-11T17:48:00Z",
+      "side": 1,
+      "message": "See https://crbug.com/1127279 for example.",
+      "revId": "67674dff3726ab73732178abafc7ad6f619c5c80",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

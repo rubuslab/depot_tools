@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7608bfd9_6cadb5e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-11T00:41:37Z",
+      "side": 1,
+      "message": "Negative. Xcode 12b3.\n\nThe system has two native ABIs, arm64 and arm64e. arm64e is arm64 with pointer authentication. The change wasn’t really part of the OS beta, it’s that pointer authentication was turned on for arm64 in the bits that shipped in Xcode 12b3.\n\narch recognizes arm64 just fine, provided that you’re giving it an executable that has an arm64 slice. Xcode git, since Xcode 12b3, does not.\n\nGiven this, you should rewrite the comment, including the first line. The architecture name for ARM Mac devices isn’t arm64e. This is limited to the proper architecture to invoke arm64 Xcode git being arm64e.",
+      "revId": "e0e7c14962594894cce256217838fb90202eed42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fbef6b62_080e2b68",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1

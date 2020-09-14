@@ -745,6 +745,8 @@ def GetMacWinOrLinux():
     return 'linux'
   elif sys.platform == 'darwin':
     return 'mac'
+  elif sys.platform.startswith('aix'):
+    return 'aix'
   raise Error('Unknown platform: ' + sys.platform)
 
 

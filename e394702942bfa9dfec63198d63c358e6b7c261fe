@@ -34,6 +34,24 @@
       "revId": "e394702942bfa9dfec63198d63c358e6b7c261fe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a847eb2a_311cfae3",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-09-15T01:02:22Z",
+      "side": 1,
+      "message": "Yes, it\u0027s fine if you change the name and update any callers to make sure they work.",
+      "parentUuid": "846c05e1_f4e9d3c4",
+      "revId": "e394702942bfa9dfec63198d63c358e6b7c261fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9cfd1c84_d1f15a0c",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-09-15T00:54:18Z",
+      "side": 1,
+      "message": "Do we have anything that actually would use a value of \"aix\"?\n\nIf we do, we should rename this function. If we don\u0027t, you might be better off combining this with the check on line 744 and claiming to be \"linux\" instead.",
+      "revId": "e394702942bfa9dfec63198d63c358e6b7c261fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

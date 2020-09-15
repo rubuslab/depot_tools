@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "567fef9c_6e979662",
+        "filename": "man/html/depot_tools_tutorial.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 1126,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-09-15T19:03:38Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 1124,
+        "startChar": 0,
+        "endLine": 1126,
+        "endChar": 6
+      },
+      "revId": "14aa8079bc02b64705e7cc56bc668d870fb31c13",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

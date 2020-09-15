@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c006028b_a5f9174c",
+        "filename": "man/man7/depot_tools_tutorial.7",
+        "patchSetId": 3
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-09-15T20:03:52Z",
+      "side": 1,
+      "message": "you should update the source file for these; these are both generated from https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/master/man/src/depot_tools_tutorial.txt#282\n\nI would also maybe tweak this a bit:\n\n  Use caution when running `git reset` on branches managed by depot_tools. These tools track the set of \"commits contained in the branch\" from a branch\u0027s \"merge point\" to the current branch value. See `git help mark-merge-base` for more discussion of the merge base.",
+      "range": {
+        "startLine": 423,
+        "startChar": 233,
+        "endLine": 423,
+        "endChar": 236
+      },
+      "revId": "dd48130b2905bfd74a3c0b47c9c2a4687d2fe188",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

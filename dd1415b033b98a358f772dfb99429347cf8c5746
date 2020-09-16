@@ -16,6 +16,24 @@
       "revId": "dd1415b033b98a358f772dfb99429347cf8c5746",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3739d1ab_1ad66cfc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-09-16T09:14:07Z",
+      "side": 1,
+      "message": "well, not really. Let\u0027s change that owners file: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2411985",
+      "parentUuid": "2d9132de_7bf03cd3",
+      "revId": "dd1415b033b98a358f772dfb99429347cf8c5746",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

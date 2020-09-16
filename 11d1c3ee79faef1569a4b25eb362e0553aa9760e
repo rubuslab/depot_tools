@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "f8e25b1d_ccd18e2d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-09-16T21:33:30Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "b5c6413e_d3b68790",
+      "revId": "11d1c3ee79faef1569a4b25eb362e0553aa9760e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1adf550c_4b5cfdfe",
         "filename": "git_map_branches.py",
         "patchSetId": 1
@@ -59,6 +77,30 @@
     },
     {
       "key": {
+        "uuid": "c41b52a1_abbd019e",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-09-16T21:33:30Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1adf550c_4b5cfdfe",
+      "range": {
+        "startLine": 37,
+        "startChar": 28,
+        "endLine": 37,
+        "endChar": 52
+      },
+      "revId": "11d1c3ee79faef1569a4b25eb362e0553aa9760e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8f409c43_00a4bb0c",
         "filename": "man/man1/git-map-branches.1",
         "patchSetId": 1
@@ -70,6 +112,30 @@
       "writtenOn": "2020-09-16T06:06:42Z",
       "side": 1,
       "message": "sidenote: are you editing these by hand, or regenerating them? If you\u0027re tweaking them by hand it would probably be worth spending some time to rehabilitate the doc generation stuff. It\u0027s piggybacked off an old version of git\u0027s own documentation generation pipeline, it can probably be brought up to pairity.",
+      "range": {
+        "startLine": 177,
+        "startChar": 27,
+        "endLine": 177,
+        "endChar": 34
+      },
+      "revId": "11d1c3ee79faef1569a4b25eb362e0553aa9760e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ce02cb2_27d4757f",
+        "filename": "man/man1/git-map-branches.1",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-09-16T21:33:30Z",
+      "side": 1,
+      "message": "I\u0027ve been doing it by hand so far, but I couldn\u0027t find anything on it. Do you know any docs/resources I could check out to do the doc generation?",
+      "parentUuid": "8f409c43_00a4bb0c",
       "range": {
         "startLine": 177,
         "startChar": 27,

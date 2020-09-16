@@ -31,7 +31,7 @@ def RunSteps(api):
 def GenTests(api):
   yield (
       api.test('success') +
-      api.runtime(is_experimental=False, is_luci=True) +
+      api.runtime(is_experimental=False) +
       api.buildbucket.try_build(project='infra') +
       api.step_data(
           'presubmit',
@@ -43,7 +43,7 @@ def GenTests(api):
 
   yield (
       api.test('cq_dry_run') +
-      api.runtime(is_experimental=False, is_luci=True) +
+      api.runtime(is_experimental=False) +
       api.buildbucket.try_build(project='infra') +
       api.cq(dry_run=True) +
       api.post_process(post_process.StatusSuccess) +
@@ -53,7 +53,7 @@ def GenTests(api):
 
   yield (
       api.test('skip_owners') +
-      api.runtime(is_experimental=False, is_luci=True) +
+      api.runtime(is_experimental=False) +
       api.buildbucket.try_build(project='infra') +
       api.properties(skip_owners=True) +
       api.post_process(post_process.StatusSuccess) +
@@ -64,7 +64,7 @@ def GenTests(api):
 
   yield (
       api.test('timeout') +
-      api.runtime(is_experimental=False, is_luci=True) +
+      api.runtime(is_experimental=False) +
       api.buildbucket.try_build(project='infra') +
       api.presubmit(timeout_s=600) +
       api.step_data(
@@ -83,7 +83,7 @@ def GenTests(api):
 
   yield (
       api.test('failure') +
-      api.runtime(is_experimental=False, is_luci=True) +
+      api.runtime(is_experimental=False) +
       api.buildbucket.try_build(project='infra') +
       api.step_data('presubmit', api.json.output(
           {
@@ -145,7 +145,7 @@ def GenTests(api):
     u'\nreallyLongFakeAccountNameEmail@chromium.org' * 10)
   yield (
       api.test('failure-long-message') +
-      api.runtime(is_experimental=False, is_luci=True) +
+      api.runtime(is_experimental=False) +
       api.buildbucket.try_build(project='infra') +
       api.step_data('presubmit', api.json.output(
           {
@@ -189,7 +189,7 @@ def GenTests(api):
 
   yield (
       api.test('infra-failure') +
-      api.runtime(is_experimental=False, is_luci=True) +
+      api.runtime(is_experimental=False) +
       api.buildbucket.try_build(project='infra') +
       api.step_data('presubmit', api.json.output(
           {
@@ -228,7 +228,7 @@ def GenTests(api):
   )
   yield (
       api.test('failure-no-json') +
-      api.runtime(is_experimental=False, is_luci=True) +
+      api.runtime(is_experimental=False) +
       api.buildbucket.try_build(project='infra') +
       api.step_data('presubmit', api.json.output(None, retcode=1)) +
       api.post_process(post_process.StatusException) +
@@ -238,7 +238,7 @@ def GenTests(api):
 
   yield (
       api.test('infra-failure-no-json') +
-      api.runtime(is_experimental=False, is_luci=True) +
+      api.runtime(is_experimental=False) +
       api.buildbucket.try_build(project='infra') +
       api.step_data('presubmit', api.json.output(None, retcode=2)) +
       api.post_process(post_process.StatusException) +

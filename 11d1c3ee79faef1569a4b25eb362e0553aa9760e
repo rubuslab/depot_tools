@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b5c6413e_d3b68790",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-09-16T03:12:50Z",
+      "side": 1,
+      "message": "Let\u0027s update unit tests to also cover this case [0]. If we can\u0027t use new-branch there, then we could create unit tests for git_map_branches.py \n\n[0] https://chromium.googlesource.com/chromium/tools/depot_tools/+/52fdd1ffcefb16435eee27023af95e5e844cfc16/tests/git_common_test.py#482",
+      "revId": "11d1c3ee79faef1569a4b25eb362e0553aa9760e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

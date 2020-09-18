@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e03b4a16_c79e0ee7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2020-09-18T00:05:14Z",
+      "side": 1,
+      "message": "Hi Dirk, would you please also submit it for me as I don\u0027t have permission here.",
+      "revId": "f61c3024df4fec28dc4fc303d3e7ae093a138448",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

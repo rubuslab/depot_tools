@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4542fb48_7608191b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2020-09-19T02:53:24Z",
+      "side": 1,
+      "message": "Came up in: https://chrome-internal-review.googlesource.com/c/clank/internal/apps/+/3277869",
+      "revId": "02281a529817d736ce61e15bfa2eb364a8aedc39",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

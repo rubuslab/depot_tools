@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "52007b80_60410892",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1300114
+      },
+      "writtenOn": "2020-09-21T19:18:13Z",
+      "side": 1,
+      "message": "Not sure who\u0027s the appropriate owner. This bug is currently blocking all changes from landing in ANGLE, so I\u0027d appreciate it if you could take a look.",
+      "revId": "53b4a6a1cb62528dfe0fcf4d5ef29d68207d8820",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

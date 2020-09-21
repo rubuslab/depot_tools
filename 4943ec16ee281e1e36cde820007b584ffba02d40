@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9cf44824_a53c4406",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1368332
+      },
+      "writtenOn": "2020-09-21T22:04:12Z",
+      "side": 1,
+      "message": "+iannucci@ - ptal for 10.15.4 support in osx_sdk",
+      "revId": "4943ec16ee281e1e36cde820007b584ffba02d40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

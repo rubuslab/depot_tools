@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c5ed2ba_9a26c4a4",
+        "filename": "git_footers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-09-21T19:43:38Z",
+      "side": 1,
+      "message": "Can you just change line 68 to\n\n  message_lines \u003d list(message.strip().splitlines()) ?",
+      "revId": "4237109df90671974502b988275fc096ffe930dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

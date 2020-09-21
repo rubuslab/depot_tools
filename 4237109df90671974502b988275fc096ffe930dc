@@ -16,6 +16,24 @@
       "revId": "4237109df90671974502b988275fc096ffe930dc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "863f3b7e_6fcf7f03",
+        "filename": "git_footers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1300114
+      },
+      "writtenOn": "2020-09-21T19:45:56Z",
+      "side": 1,
+      "message": "Tried that originally (with rstrip()), but that fails some unit tests. Example tests were like:\n\n    Something\n\n    Bug: \u003chere was whitespace\u003e\n\nAnd it was verifying that \"Bug:        \" is seen. I kept the behavior as is.",
+      "parentUuid": "4c5ed2ba_9a26c4a4",
+      "revId": "4237109df90671974502b988275fc096ffe930dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

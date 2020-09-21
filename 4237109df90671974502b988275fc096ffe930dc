@@ -52,6 +52,24 @@
       "revId": "4237109df90671974502b988275fc096ffe930dc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a9c7793_e4685f6e",
+        "filename": "git_footers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1300114
+      },
+      "writtenOn": "2020-09-21T20:14:11Z",
+      "side": 1,
+      "message": "Doesn\u0027t work if last line is not `\\n`, but `  \\n`.\n\nI actually think `rstrip()` is the right answer here, because why would anyone care if it\u0027s `Bug: 1234   ` or `Bug: 1234`.\n\nHowever, do you mind getting this fix landed first, and I\u0027ll follow up with a solution based on `rstrip()`, along with fixing the unit tests and adding new ones? Currently all of ANGLE submissions are blocked due to this.",
+      "parentUuid": "53ed2ac8_cd92d3c5",
+      "revId": "4237109df90671974502b988275fc096ffe930dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

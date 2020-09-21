@@ -34,6 +34,24 @@
       "revId": "4237109df90671974502b988275fc096ffe930dc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53ed2ac8_cd92d3c5",
+        "filename": "git_footers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1172235
+      },
+      "writtenOn": "2020-09-21T20:00:40Z",
+      "side": 1,
+      "message": "message.rstrip(\u0027\\n\u0027).splitlines()?",
+      "parentUuid": "863f3b7e_6fcf7f03",
+      "revId": "4237109df90671974502b988275fc096ffe930dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

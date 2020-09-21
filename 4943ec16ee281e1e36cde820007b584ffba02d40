@@ -16,6 +16,23 @@
       "revId": "4943ec16ee281e1e36cde820007b584ffba02d40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3001fe_6f32505e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1368332
+      },
+      "writtenOn": "2020-09-21T22:07:02Z",
+      "side": 1,
+      "message": "+jophba@ and +jmpittman@ as this will be required to upgrade the remaining 10.12 and 10.14 bots to 10.15 in luci.flex.ci and luci.flex.try",
+      "revId": "4943ec16ee281e1e36cde820007b584ffba02d40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

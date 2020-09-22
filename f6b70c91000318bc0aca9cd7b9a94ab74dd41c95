@@ -121,6 +121,24 @@
       "revId": "f6b70c91000318bc0aca9cd7b9a94ab74dd41c95",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c8e3d80c_ccc74b1e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1368332
+      },
+      "writtenOn": "2020-09-22T22:48:15Z",
+      "side": 1,
+      "message": "SG. I\u0027ll create another CL for an OWNERS file with those members for the osx_sdk recipe module.",
+      "parentUuid": "e8e3de38_b3390f91",
+      "revId": "f6b70c91000318bc0aca9cd7b9a94ab74dd41c95",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

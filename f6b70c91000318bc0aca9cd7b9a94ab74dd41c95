@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "260f3ea2_cb7be0c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2020-09-22T18:39:40Z",
+      "side": 1,
+      "message": "This module needs better OWNERS; I\u0027m only an unwilling participant here :)\n\nWho is updating the xcode SDK packages? They should probably own this module.",
+      "revId": "f6b70c91000318bc0aca9cd7b9a94ab74dd41c95",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b86f416_aabea8b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1368332
+      },
+      "writtenOn": "2020-09-22T23:56:14Z",
+      "side": 1,
+      "message": "+lindsayw@ +gatong@ +martiniss@ +estaab@ +gbeaty@ for owners of depot_tools osx_sdk recipe module per recommended list from https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2422449",
+      "revId": "dbf5d7cbe451c70084c82279fcdda1ec1f988432",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9af19fd4_0dc49f03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-23T22:46:03Z",
+      "side": 1,
+      "message": "→\n\nld -s is equivalent to ld + strip.\n\n(but actually the result is even slightly smaller.)",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 9
+      },
+      "revId": "373f241ddc45fe664590629b340361287191a3f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cded415a_063d36c5",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1

@@ -124,6 +124,11 @@ def disable_syntax_validation(c):
 def android(c):
   c.target_os.add('android')
 
+@config_ctx(includes=['android'])
+def android_no_telemetry_dependencies(c):
+  c.solutions.add()
+  c.solutions[0].custom_vars['checkout_telemetry_dependencies'] = 'False'
+
 @config_ctx()
 def nacl(c):
   s = c.solutions.add()

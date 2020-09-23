@@ -14,6 +14,7 @@ DEPS = [
 
 TEST_CONFIGS = [
   'android',
+  'android_no_telemetry_dependencies',
   'angle',
   'boringssl',
   'build_internal',

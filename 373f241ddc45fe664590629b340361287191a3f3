@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cded415a_063d36c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2020-09-23T22:29:37Z",
+      "side": 1,
+      "message": "Wait, I think I always run `strip ninja` after buildling. Could you do that",
+      "revId": "373f241ddc45fe664590629b340361287191a3f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

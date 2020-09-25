@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b83a4951_c1f35325",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-09-25T21:54:44Z",
+      "side": 1,
+      "message": "I found a couple of Python 3 bugs (one which was data dependent, so that\u0027s fun) in this script, and took the opportunity to do a couple of polish fixes as well. PTAL.",
+      "revId": "ca430755b257d2eaa13c02023c79fbe430457f7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}

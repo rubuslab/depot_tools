@@ -16,6 +16,23 @@
       "revId": "ca430755b257d2eaa13c02023c79fbe430457f7c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9433418b_a82ed9f7",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-09-26T19:03:07Z",
+      "side": 1,
+      "message": "The switches to returning generators in more places in the standard library is IMO one of the more annoying changes in Python3.",
+      "revId": "ca430755b257d2eaa13c02023c79fbe430457f7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

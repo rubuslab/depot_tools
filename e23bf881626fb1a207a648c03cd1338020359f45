@@ -16,6 +16,23 @@
       "revId": "e23bf881626fb1a207a648c03cd1338020359f45",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ea0e38f2_eed99053",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-09-29T23:15:53Z",
+      "side": 1,
+      "message": "1. the bug is very log and may get even longer. Please, summarize it in the description.\n2. I\u0027m not really a good owner for bot_update any more.\nI recommend someone from SDK team. +josip@ who\u0027d be a good person while Edward is OOO?",
+      "revId": "e23bf881626fb1a207a648c03cd1338020359f45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

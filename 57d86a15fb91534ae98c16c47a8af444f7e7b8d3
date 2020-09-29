@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebaa6d79_bd9193f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-09-29T23:51:42Z",
+      "side": 1,
+      "message": "nits",
+      "revId": "57d86a15fb91534ae98c16c47a8af444f7e7b8d3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f776c2d4_119fab31",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-09-29T23:51:42Z",
+      "side": 1,
+      "message": "I suggest we just add if block before line 718, it makes it less convoluted. \n\n  if enforce_fetch:\n    git(*populate_cmd, env\u003denv)",
+      "revId": "57d86a15fb91534ae98c16c47a8af444f7e7b8d3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}

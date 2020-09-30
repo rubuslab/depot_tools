@@ -69,6 +69,24 @@
       "revId": "57d86a15fb91534ae98c16c47a8af444f7e7b8d3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2211997d_ea622b01",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2020-09-30T18:36:48Z",
+      "side": 1,
+      "message": "Ah okay, gotcha. Thanks!\n\nAdded in latest patch",
+      "parentUuid": "907147a0_f2c739f9",
+      "revId": "57d86a15fb91534ae98c16c47a8af444f7e7b8d3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }

@@ -51,6 +51,24 @@
       "revId": "57d86a15fb91534ae98c16c47a8af444f7e7b8d3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "907147a0_f2c739f9",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-09-30T18:08:09Z",
+      "side": 1,
+      "message": "I don\u0027t think so.\n\nLet\u0027s assume _has_in_git_cache(...) returns true.\n\nWith this change, this block will not be executed if enforce_fetch is true\n\nelse block will run git(...) only once:\n\n      git(*populate_cmd, env\u003denv)\n      if _has_in_git_cache(pin, refs, git_cache_dir, url): # This is true, so break\n        break\n\nThis is exactly what will happen if we do as I suggested.\n\nNow, let\u0027s assume _has_in_git_cache is false.\n\nelif _has_in_git_cache(...) returns false, and else is executed. This means git(...) will be executed until _has_in_git_cache(...) yields true.\n\nThis results in similar behavior. You have potentially an extra git(...) call which I\u0027m not too concerned about.",
+      "parentUuid": "d695b412_6b13ae06",
+      "revId": "57d86a15fb91534ae98c16c47a8af444f7e7b8d3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

@@ -33,6 +33,24 @@
       "revId": "57d86a15fb91534ae98c16c47a8af444f7e7b8d3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d695b412_6b13ae06",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2020-09-30T17:27:02Z",
+      "side": 1,
+      "message": "It would miss out on the retries in the else block below",
+      "parentUuid": "f776c2d4_119fab31",
+      "revId": "57d86a15fb91534ae98c16c47a8af444f7e7b8d3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

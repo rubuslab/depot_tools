@@ -16,6 +16,29 @@
       "revId": "a9d3bbfb94d7c8f671d402cb03ef5d91a04b0e54",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d31b4756_e93358a2",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3404,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-10-01T20:50:16Z",
+      "side": 1,
+      "message": "nit: I think it\u0027s clearer if this is in another line.",
+      "range": {
+        "startLine": 3404,
+        "startChar": 55,
+        "endLine": 3404,
+        "endChar": 56
+      },
+      "revId": "a9d3bbfb94d7c8f671d402cb03ef5d91a04b0e54",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }

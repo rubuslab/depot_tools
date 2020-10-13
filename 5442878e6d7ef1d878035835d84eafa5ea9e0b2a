@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d5254cc_04ee24c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2020-10-13T06:45:18Z",
+      "side": 1,
+      "message": "lgtm, but make sure to also update https://chrome-internal.googlesource.com/infradata/config/+/refs/heads/master/configs/cr-buildbucket/settings.cfg#81 (vpython and vpython-native) so this change is deployed on bots as well.",
+      "revId": "5442878e6d7ef1d878035835d84eafa5ea9e0b2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

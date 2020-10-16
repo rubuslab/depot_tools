@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "26c3710f_1f3e8e0b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-10-16T23:54:35Z",
+      "side": 1,
+      "message": "I think that the presubmit checks do not work on Windows, so when uploading depot_tools changes from Windows I specify --bypass-hooks. This is safe because those presubmit checks will be run by the bots.\n\nI\u0027ll take a look.",
+      "parentUuid": "5c4f1dfd_2852ee9e",
+      "revId": "01d7a7b14dc8fc5af4383e8f1f63c5ae707536d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c7b5a7d7_7f596dd2",
         "filename": "autoninja.py",
         "patchSetId": 7

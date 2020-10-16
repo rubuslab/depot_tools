@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "020a672d_194738e9",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1447542
+      },
+      "writtenOn": "2020-10-16T17:11:15Z",
+      "side": 1,
+      "message": "I have updated this regex to support my requirements and not break the old mechanism.\nThere are many places where people list gn arguments in the same line. \n\n\n\n\n% mkdir -p out/Lacros\n% echo \u0027import(\"//build/args/chromeos/amd64-generic.gni\") use_ozone\u003dtrue ozone_platform_wayland\u003dtrue ozone_platform_x11\u003dfalse target_os\u003d\"linux\" is_chromeos_device\u003dtrue use_evdev_gestures\u003dfalse use_vaapi\u003dfalse use_gtk\u003dfalse use_glib\u003dfalse enable_linux_installer\u003dfalse rtc_use_pipewire\u003dfalse use_gio\u003dfalse use_v8_context_snapshot\u003dfalse use_custom_libcxx\u003dfalse use_pulseaudio\u003dfalse use_pangocairo\u003dfalse chromeos_is_browser_only\u003dtrue use_system_libsync\u003dfalse cros_host_sysroot\u003d\"//build/linux/debian_sid_amd64-sysroot\" cros_v8_snapshot_sysroot\u003d\"//build/linux/debian_sid_amd64-sysroot\" use_custom_libcxx_for_host\u003dtrue use_goma\u003dtrue \nis_official_build\u003dfalse is_chrome_branded\u003dtrue is_debug\u003dfalse dcheck_always_on\u003dtrue\u0027 \u003e out/Lacros/args.gn\n% gn gen out/Lacros\n# NOTE: autoninja doesn\u0027t start the right number of jobs.\n% ninja -j 1000 -C out/Lacros chrome\n\n\n\nhttps://docs.google.com/document/d/1RqTYgNmxqtaTeGQy5FAZv6SkdFo4e8lZCyW-jP44dIo/edit#",
+      "parentUuid": "dd39029d_25cdab3b",
+      "revId": "9b8e855cd8a77495bcb34a3ad1096fcb82eff8f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b8b464d_caa2522e",
         "filename": "autoninja.py",
         "patchSetId": 3
@@ -55,6 +73,30 @@
       "side": 1,
       "message": "I\u0027m sure there is no such thing as the perfect \"nice\" settings. Ideally you want something that is lower priority than all foreground/user-initiated tasks, but higher than all other background tasks. Or something like that. Pragmatically, on a system that is otherwise mostly idle, as long as you lower the priorities \"a bit\" it should be fine (as long as you don\u0027t hit priority inversions) so I\u0027m not sure it\u0027s worth stressing over too much.",
       "parentUuid": "5b8b464d_caa2522e",
+      "range": {
+        "startLine": 102,
+        "startChar": 37,
+        "endLine": 102,
+        "endChar": 64
+      },
+      "revId": "9b8e855cd8a77495bcb34a3ad1096fcb82eff8f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "939b55dc_9a264f9b",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1447542
+      },
+      "writtenOn": "2020-10-16T17:11:15Z",
+      "side": 1,
+      "message": "I removed the ionice just to be safe.",
+      "parentUuid": "e66deb0d_8a1b1935",
       "range": {
         "startLine": 102,
         "startChar": 37,

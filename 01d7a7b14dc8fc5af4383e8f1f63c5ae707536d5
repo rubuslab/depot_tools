@@ -33,6 +33,24 @@
       "message": "I can\u0027t tell whether this handles all placements of # characters correctly. I can\u0027t find any errors, but it\u0027s hard to reason about. I wonder if it would be safer/simpler to pass line.split(\u0027#\u0027)[0] to regex in order to trivially guarantee that we remove any commented-out portions.",
       "revId": "01d7a7b14dc8fc5af4383e8f1f63c5ae707536d5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ff65f4b_2dd1f72f",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1447542
+      },
+      "writtenOn": "2020-10-16T19:05:09Z",
+      "side": 1,
+      "message": "I have simplified it further but yes I absolutely agree that one should avoid complex regex in favor of a few lines of code.\n\nHere is what I have right now\n(^[^#]*\\s|^)(use_goma|use_rbe)\\s*\u003d\\s*true($|#|\\s)",
+      "parentUuid": "c7b5a7d7_7f596dd2",
+      "revId": "01d7a7b14dc8fc5af4383e8f1f63c5ae707536d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

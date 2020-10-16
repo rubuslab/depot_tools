@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f858d9f9_7e21a04d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-10-16T18:58:20Z",
+      "side": 1,
+      "message": "One more question on the regex.\n\nAlso, be sure to mark the comments as resolved when you\u0027re done with them. Right now reviewing all of the patch sets shows three unresolved comments.",
+      "revId": "01d7a7b14dc8fc5af4383e8f1f63c5ae707536d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7b5a7d7_7f596dd2",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-10-16T18:58:20Z",
+      "side": 1,
+      "message": "I can\u0027t tell whether this handles all placements of # characters correctly. I can\u0027t find any errors, but it\u0027s hard to reason about. I wonder if it would be safer/simpler to pass line.split(\u0027#\u0027)[0] to regex in order to trivially guarantee that we remove any commented-out portions.",
+      "revId": "01d7a7b14dc8fc5af4383e8f1f63c5ae707536d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

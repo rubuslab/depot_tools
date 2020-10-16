@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bad27b3_fc6b4cc9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-10-16T19:58:36Z",
+      "side": 1,
+      "message": "Unfortunately, it looks it\u0027s going to be extremely complicated (huge refactoring) or very hard to maintain / require a lot of copy/pasted code. Given that, I\u0027m leaning towards just relying on manual testing. Let me know if you have strong stance it should be covered by unit tests and maybe we can figure out way forward together, without significant refactoring.",
+      "parentUuid": "80c97bbc_2fb9c226",
+      "revId": "8b11297cde6e042693344567d3c21c7a9dc3f59b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88ae4e24_616eda88",
@@ -41,6 +59,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac741f33_907a1fd9",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2314,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-10-16T19:58:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88ae4e24_616eda88",
+      "range": {
+        "startLine": 2314,
+        "startChar": 9,
+        "endLine": 2314,
+        "endChar": 26
+      },
+      "revId": "8b11297cde6e042693344567d3c21c7a9dc3f59b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f4a94bb7_fd297e78",
@@ -54,6 +96,30 @@
       "writtenOn": "2020-10-15T21:01:07Z",
       "side": 1,
       "message": "This is a bit long for an if-condition IMO.\nMind storing this in a temp variable?",
+      "range": {
+        "startLine": 2314,
+        "startChar": 27,
+        "endLine": 2316,
+        "endChar": 80
+      },
+      "revId": "8b11297cde6e042693344567d3c21c7a9dc3f59b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "134db3f2_22310ad9",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2316,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-10-16T19:58:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4a94bb7_fd297e78",
       "range": {
         "startLine": 2314,
         "startChar": 27,

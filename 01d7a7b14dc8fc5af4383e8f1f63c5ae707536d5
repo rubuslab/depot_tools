@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5c4f1dfd_2852ee9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1447542
+      },
+      "writtenOn": "2020-10-16T19:54:27Z",
+      "side": 1,
+      "message": "Can you give this one more pass as I have switched to using re.search.\n\nAlso the presubmit check for this repo gives many errors.\n\n** Presubmit Warnings **\ntests/scm_unittest.py\nvpython depot_tools/tests/scm_unittest.py (5.41s) failed\n...........FF.....\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nFAIL: testGetBranch (__main__.RealGitTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"depot_tools/tests/scm_unittest.py\", line 234, in testGetBranch\n    self.assertEqual(\u0027master\u0027, scm.GIT.GetBranch(self.cwd))\nAssertionError: \u0027master\u0027 !\u003d u\u0027main\u0027\n \n...",
+      "parentUuid": "d56de4e1_99d5a594",
+      "revId": "01d7a7b14dc8fc5af4383e8f1f63c5ae707536d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c7b5a7d7_7f596dd2",
         "filename": "autoninja.py",
         "patchSetId": 7
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "I have simplified it further but yes I absolutely agree that one should avoid complex regex in favor of a few lines of code.\n\nHere is what I have right now\n(^[^#]*\\s|^)(use_goma|use_rbe)\\s*\u003d\\s*true($|#|\\s)",
       "parentUuid": "c7b5a7d7_7f596dd2",
+      "revId": "01d7a7b14dc8fc5af4383e8f1f63c5ae707536d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a978d06_8b531e8f",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1447542
+      },
+      "writtenOn": "2020-10-16T19:54:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ff65f4b_2dd1f72f",
       "revId": "01d7a7b14dc8fc5af4383e8f1f63c5ae707536d5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

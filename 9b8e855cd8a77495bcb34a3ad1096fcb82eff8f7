@@ -72,6 +72,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4b96593_6e599519",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1447542
+      },
+      "writtenOn": "2020-10-16T19:54:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffba4bdf_ca649196",
+      "revId": "9b8e855cd8a77495bcb34a3ad1096fcb82eff8f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5b8b464d_caa2522e",
@@ -133,6 +151,30 @@
       "side": 1,
       "message": "I removed the ionice just to be safe.",
       "parentUuid": "e66deb0d_8a1b1935",
+      "range": {
+        "startLine": 102,
+        "startChar": 37,
+        "endLine": 102,
+        "endChar": 64
+      },
+      "revId": "9b8e855cd8a77495bcb34a3ad1096fcb82eff8f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da1e66b4_54b0e8cb",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1447542
+      },
+      "writtenOn": "2020-10-16T19:54:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "939b55dc_9a264f9b",
       "range": {
         "startLine": 102,
         "startChar": 37,

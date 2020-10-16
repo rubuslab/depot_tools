@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b8b464d_caa2522e",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1447542
+      },
+      "writtenOn": "2020-10-16T14:57:10Z",
+      "side": 1,
+      "message": "The ionice of IDLE might be too heavy handed. Apparently \u0027nice\u0027 itself will set internal best effort priority as well https://linux.die.net/man/1/ionice",
+      "range": {
+        "startLine": 102,
+        "startChar": 37,
+        "endLine": 102,
+        "endChar": 64
+      },
+      "revId": "9b8e855cd8a77495bcb34a3ad1096fcb82eff8f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

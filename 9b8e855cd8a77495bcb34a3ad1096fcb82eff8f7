@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dd39029d_25cdab3b",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-10-16T16:35:02Z",
+      "side": 1,
+      "message": "I don\u0027t understand the need for this change. The existing regex already allows arbitrary whitespace before use_goma (\\s*) - can you give an example of a line that this handles which the old regex didn\u0027t?",
+      "revId": "9b8e855cd8a77495bcb34a3ad1096fcb82eff8f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b8b464d_caa2522e",
         "filename": "autoninja.py",
         "patchSetId": 3
@@ -14,6 +31,30 @@
       "writtenOn": "2020-10-16T14:57:10Z",
       "side": 1,
       "message": "The ionice of IDLE might be too heavy handed. Apparently \u0027nice\u0027 itself will set internal best effort priority as well https://linux.die.net/man/1/ionice",
+      "range": {
+        "startLine": 102,
+        "startChar": 37,
+        "endLine": 102,
+        "endChar": 64
+      },
+      "revId": "9b8e855cd8a77495bcb34a3ad1096fcb82eff8f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e66deb0d_8a1b1935",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-10-16T16:35:02Z",
+      "side": 1,
+      "message": "I\u0027m sure there is no such thing as the perfect \"nice\" settings. Ideally you want something that is lower priority than all foreground/user-initiated tasks, but higher than all other background tasks. Or something like that. Pragmatically, on a system that is otherwise mostly idle, as long as you lower the priorities \"a bit\" it should be fine (as long as you don\u0027t hit priority inversions) so I\u0027m not sure it\u0027s worth stressing over too much.",
+      "parentUuid": "5b8b464d_caa2522e",
       "range": {
         "startLine": 102,
         "startChar": 37,

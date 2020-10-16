@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ffba4bdf_ca649196",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1447542
+      },
+      "writtenOn": "2020-10-16T17:56:48Z",
+      "side": 1,
+      "message": "I agree. I will add comments. \n\nIt might be questionable to support this weird edge case (given how complex that regex is) but I have seen this multi-arg one line pattern in multiple places.",
+      "parentUuid": "1c80c037_c5ac88cb",
+      "revId": "9b8e855cd8a77495bcb34a3ad1096fcb82eff8f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b8b464d_caa2522e",
         "filename": "autoninja.py",
         "patchSetId": 3

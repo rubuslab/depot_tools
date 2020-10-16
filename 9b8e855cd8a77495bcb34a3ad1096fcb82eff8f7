@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1c80c037_c5ac88cb",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-10-16T17:43:35Z",
+      "side": 1,
+      "message": "I didn\u0027t know that args.gn files could have multiple arguments on one line. I am surprised. But, okay.\n\nThis is slightly orthogonal but those instructions can be greatly simplified. Instead of a three-part dance (mkdir/echo/gn gen) it can be done in one step using the --args switch:\n\ngn gen --args\u003d\"is_component_build\u003dtrue use_goma\u003dtrue is_debug\u003dtrue\" out\\debug\n\nI would recommend that. As a side effect this gives an args.gn file with each option on a different line.\n\nMy reading of the new regex is that the two options in the first set of parentheses are redundant - .*\\s+ matches everything that ^\\s* could.\n\nIn order to help future generations it would be good to include a simplified example of one of the cases that you are trying to handle, both as a comment here and in the commit message. The example above demonstrates what you are trying to handle.",
+      "parentUuid": "020a672d_194738e9",
+      "revId": "9b8e855cd8a77495bcb34a3ad1096fcb82eff8f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b8b464d_caa2522e",
         "filename": "autoninja.py",
         "patchSetId": 3

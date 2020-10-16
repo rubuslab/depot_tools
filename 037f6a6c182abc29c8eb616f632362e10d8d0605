@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a67c6608_3c88a131",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-10-16T17:43:35Z",
+      "side": 1,
+      "message": "Give an example of the new options that you handle. I suspect that most Chromium developers don\u0027t know that args.gn can have multiple directives on one line.",
+      "revId": "037f6a6c182abc29c8eb616f632362e10d8d0605",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

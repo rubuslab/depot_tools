@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cb7d466_1a4d46f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-10-16T21:07:25Z",
+      "side": 1,
+      "message": "Let\u0027s try to see if there is a way that we can add tests without significant refactoring. If we can\u0027t find one in a couple of days, let\u0027s land this.\n\nI think we could have a function to prepare change that could be reused, and a function to do the push:\n\n  def CMDUploadChange():\n    try:\n      prepare_change()\n      upload_change()\n    except:\n      if not should_retry:\n        Die\n      prepare_change(remote_branch\u003d\u0027main\u0027)\n      upload_change()\n\nBut not sure if that\u0027d help.",
+      "parentUuid": "1bad27b3_fc6b4cc9",
+      "revId": "8b11297cde6e042693344567d3c21c7a9dc3f59b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88ae4e24_616eda88",
@@ -120,6 +138,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "f4a94bb7_fd297e78",
+      "range": {
+        "startLine": 2314,
+        "startChar": 27,
+        "endLine": 2316,
+        "endChar": 80
+      },
+      "revId": "8b11297cde6e042693344567d3c21c7a9dc3f59b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81a0b0a7_5e3f36a0",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2316,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-10-16T21:07:25Z",
+      "side": 1,
+      "message": "Did you forget to upload a patch set?",
+      "parentUuid": "134db3f2_22310ad9",
       "range": {
         "startLine": 2314,
         "startChar": 27,

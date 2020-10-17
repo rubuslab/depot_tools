@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "460b4b91_be6f965a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-10-17T00:35:44Z",
+      "side": 1,
+      "message": "I like it. It is more obviously correct.\n\nI tested by running autoninja.py directly and noting what -j value it printed. It handled all my test cases correctly.",
+      "revId": "8064c0509c234bb8208dc311dc8cfa994f520ae8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -145,6 +145,10 @@ assert len(_KNOWN_GERRIT_TO_SHORT_URLS) == len(
     set(_KNOWN_GERRIT_TO_SHORT_URLS.values())), 'must have unique values'
 
 
+class GitPushError(Exception):
+  pass
+
+
 def DieWithError(message, change_desc=None):
   if change_desc:
     SaveDescriptionBackup(change_desc)
@@ -2079,8 +2083,7 @@ class Changelist(object):
 
     gclient_utils.rmtree(git_info_dir)
 
-  def _RunGitPushWithTraces(
-      self, change_desc, refspec, refspec_opts, git_push_metadata):
+  def _RunGitPushWithTraces(self, refspec, refspec_opts, git_push_metadata):
     """Run git push and collect the traces resulting from the execution."""
     # Create a temporary directory to store traces in. Traces will be compressed
     # and stored in a 'traces' dir inside depot_tools.
@@ -2110,20 +2113,19 @@ class Changelist(object):
       push_stdout = push_stdout.decode('utf-8', 'replace')
     except subprocess2.CalledProcessError as e:
       push_returncode = e.returncode
-      DieWithError('Failed to create a change. Please examine output above '
-                   'for the reason of the failure.\n'
-                   'Hint: run command below to diagnose common Git/Gerrit '
-                   'credential problems:\n'
-                   '  git cl creds-check\n'
-                   '\n'
-                   'If git-cl is not working correctly, file a bug under the '
-                   'Infra>SDK component including the files below.\n'
-                   'Review the files before upload, since they might contain '
-                   'sensitive information.\n'
-                   'Set the Restrict-View-Google label so that they are not '
-                   'publicly accessible.\n'
-                   + TRACES_MESSAGE % {'trace_name': trace_name},
-                   change_desc)
+      raise GitPushError(
+          'Failed to create a change. Please examine output above for the '
+          'reason of the failure.\n'
+          'Hint: run command below to diagnose common Git/Gerrit '
+          'credential problems:\n'
+          '  git cl creds-check\n'
+          '\n'
+          'If git-cl is not working correctly, file a bug under the Infra>SDK '
+          'component including the files below.\n'
+          'Review the files before upload, since they might contain sensitive '
+          'information.\n'
+          'Set the Restrict-View-Google label so that they are not publicly '
+          'accessible.\n' + TRACES_MESSAGE % {'trace_name': trace_name})
     finally:
       execution_time = time_time() - before_push
       metrics.collector.add_repeated('sub_commands', {
@@ -2142,8 +2144,32 @@ class Changelist(object):
 
     return push_stdout
 
-  def CMDUploadChange(
-      self, options, git_diff_args, custom_cl_base, change_desc):
+  def CMDUploadChange(self, options, git_diff_args, custom_cl_base,
+                      change_desc):
+    """Upload the current branch to Gerrit, retry if new remote HEAD is
+    found. options and change_desc may be mutated."""
+    try:
+      return self._CMDUploadChange(options, git_diff_args, custom_cl_base,
+                                   change_desc)
+    except GitPushError as e:
+      remote, remote_branch = self.GetRemoteBranch()
+      should_retry = remote_branch == DEFAULT_OLD_BRANCH and \
+          gerrit_util.GetProjectHead(
+              self._gerrit_host, self._GetGerritProject()) == 'refs/heads/main'
+      if not should_retry:
+        DieWithError(str(e), change_desc)
+
+    print("WARNING: Detected HEAD change in upstream, fetching remote state")
+    RunGit(['fetch', remote])
+    options.edit_description = False
+    options.force = True
+    try:
+      self._CMDUploadChange(options, git_diff_args, custom_cl_base, change_desc)
+    except GitPushError as e:
+      DieWithError(str(e), change_desc)
+
+  def _CMDUploadChange(self, options, git_diff_args, custom_cl_base,
+                       change_desc):
     """Upload the current branch to Gerrit."""
     remote, remote_branch = self.GetRemoteBranch()
     branch = GetTargetRef(remote, remote_branch, options.target_branch)
@@ -2242,6 +2268,9 @@ class Changelist(object):
     # if --send-mail is set on non-initial upload as Rietveld used to do it.
 
     title = self._GetTitleForUpload(options)
+    # Set options.title in case user was prompted in _GetTitleForUpload and
+    # _CMDUploadChange needs to be called again.
+    options.title = title
     if title:
       # Punctuation and whitespace in |title| must be percent-encoded.
       refspec_opts.append('m=' + gerrit_util.PercentEncodeForGitRef(title))
@@ -2301,8 +2330,8 @@ class Changelist(object):
         'change_id': change_id,
         'description': change_desc.description,
     }
-    push_stdout = self._RunGitPushWithTraces(
-        change_desc, refspec, refspec_opts, git_push_metadata)
+    push_stdout = self._RunGitPushWithTraces(refspec, refspec_opts,
+                                             git_push_metadata)
 
     if options.squash:
       regex = re.compile(r'remote:\s+https?://[\w\-\.\+\/#]*/(\d+)\s.*')

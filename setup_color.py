@@ -50,12 +50,20 @@ def init():
   should_wrap = False
   global IS_TTY, OUT_TYPE
   IS_TTY = sys.stdout.isatty()
+  IS_WIN = sys.platform.startswith('win')
   if IS_TTY:
-    # Yay! We detected a console in the normal way. It doesn't really matter
-    # if it's windows or not, we win.
+    # Yay! We detected a console in the normal way.
     OUT_TYPE = 'console'
     should_wrap = True
-  elif sys.platform.startswith('win'):
+    if IS_WIN:
+      # Enable native ANSI color codes on Windows 10.
+      if platform.release() == '10':
+        if enable_native_ansi():
+          should_wrap = False
+      # Disable wrapping on Windows versions below 10 (crbug.com/1114548).
+      else:
+        should_wrap = False
+  elif IS_WIN:
     # assume this is some sort of file
     OUT_TYPE = 'file (win)'
 
@@ -116,11 +124,6 @@ def init():
   else:
     # This is non-windows, so we trust isatty.
     OUT_TYPE = 'pipe or file'
-
-  # Enable native ANSI color codes on Windows 10.
-  if IS_TTY and platform.release() == '10':
-    if enable_native_ansi():
-      should_wrap = False
 
   colorama.init(wrap=should_wrap)
 

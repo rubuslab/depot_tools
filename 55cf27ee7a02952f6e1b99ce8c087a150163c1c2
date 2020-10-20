@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eaddd3bb_316c9a2d",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-10-20T23:00:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49968b83_3d13076d",
+      "range": {
+        "startLine": 229,
+        "startChar": 6,
+        "endLine": 229,
+        "endChar": 48
+      },
+      "revId": "55cf27ee7a02952f6e1b99ce8c087a150163c1c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d3ff12c5_17e41506",
@@ -54,6 +78,30 @@
       "writtenOn": "2020-10-20T21:01:49Z",
       "side": 1,
       "message": "Would be good to check that options.title is set on second call.",
+      "range": {
+        "startLine": 281,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 35
+      },
+      "revId": "55cf27ee7a02952f6e1b99ce8c087a150163c1c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f2b457c_f70cb69f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-10-20T23:00:32Z",
+      "side": 1,
+      "message": "Since _CMDUploadChange is mocked, that is not possible here. I looked into where else we could plug the check, but we don\u0027t have anything that tests CMDUpload directly",
+      "parentUuid": "d3ff12c5_17e41506",
       "range": {
         "startLine": 281,
         "startChar": 0,

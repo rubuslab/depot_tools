@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "80088cec_029db6c6",
+        "filename": "setup_color.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-10-20T20:30:41Z",
+      "side": 1,
+      "message": "colorama is still enabled, isn\u0027t it? Line 133 still gets executed regardless of the Win version.",
+      "revId": "105b823a2dd032927c1141879235a7f1a6346fb6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f2b4c7fb_966ae564",
         "filename": "setup_color.py",
         "patchSetId": 4

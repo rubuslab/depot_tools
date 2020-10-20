@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2b4c7fb_966ae564",
+        "filename": "setup_color.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2020-10-20T17:46:52Z",
+      "side": 1,
+      "message": "I think this now covers basically all Windows versions we support. Might as well always set should_wrap\u003dFalse on Windows?",
+      "revId": "105b823a2dd032927c1141879235a7f1a6346fb6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

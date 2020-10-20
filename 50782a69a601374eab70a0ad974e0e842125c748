@@ -39,6 +39,30 @@
       },
       "revId": "50782a69a601374eab70a0ad974e0e842125c748",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9ee3117_1a56e762",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2273,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-10-20T20:48:14Z",
+      "side": 1,
+      "message": "We have several return statements and it would be a bit more complex to implement it there. I edited comments to make it a bit more clear why we need it.",
+      "parentUuid": "d71df394_4f7f6367",
+      "range": {
+        "startLine": 2271,
+        "startChar": 0,
+        "endLine": 2273,
+        "endChar": 0
+      },
+      "revId": "50782a69a601374eab70a0ad974e0e842125c748",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

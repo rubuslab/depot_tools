@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c930b13_d52dfcdb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-10-20T00:21:34Z",
+      "side": 1,
+      "message": "Thanks for adding tests!",
+      "revId": "50782a69a601374eab70a0ad974e0e842125c748",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d71df394_4f7f6367",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2273,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-10-20T00:21:34Z",
+      "side": 1,
+      "message": "Could we move this into _GetTitleForUpload?",
+      "range": {
+        "startLine": 2271,
+        "startChar": 0,
+        "endLine": 2273,
+        "endChar": 0
+      },
+      "revId": "50782a69a601374eab70a0ad974e0e842125c748",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

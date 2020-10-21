@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6217b21_e308db1d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2020-10-21T04:19:00Z",
+      "side": 1,
+      "message": "On a second thought, you\u0027ve disabled Colorama\u0027s wrapping so things get simply passed through. This is fine for things like \"gclient sync\" and \"gclient fetch\", which don\u0027t use colours and colorama.\nBut have you tested ones that do, like \"git map -h\"?\nNothing\u0027s stripping the ANSI escape sequences so there\u0027ll probably be garbage printed.",
+      "revId": "105b823a2dd032927c1141879235a7f1a6346fb6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80088cec_029db6c6",

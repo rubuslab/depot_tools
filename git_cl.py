@@ -963,7 +963,7 @@ class Changelist(object):
     self.lookedup_patchset = False
     self.patchset = None
     self.cc = None
-    self.more_cc = []
+    self.more_cc = set()
     self._remote = None
     self._cached_remote_url = (False, None)  # (is_cached, value)
 
@@ -986,13 +986,13 @@ class Changelist(object):
     """
     if self.cc is None:
       base_cc = settings.GetDefaultCCList()
-      more_cc = ','.join(self.more_cc)
+      more_cc = ','.join(sorted(self.more_cc))
       self.cc = ','.join(filter(None, (base_cc, more_cc))) or ''
     return self.cc
 
   def ExtendCC(self, more_cc):
     """Extends the list of users to cc on this CL based on the changed files."""
-    self.more_cc.extend(more_cc)
+    self.more_cc.update(more_cc)
 
   def GetBranch(self):
     """Returns the short branch name, e.g. 'main'."""

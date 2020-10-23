@@ -467,11 +467,11 @@ class OutputApi(object):
 
   def __init__(self, is_committing):
     self.is_committing = is_committing
-    self.more_cc = []
+    self.more_cc = set()
 
   def AppendCC(self, cc):
     """Appends a user to cc for this change."""
-    self.more_cc.append(cc)
+    self.more_cc.add(cc)
 
   def PresubmitPromptOrNotify(self, *args, **kwargs):
     """Warn the user when uploading, but only notify if committing."""
@@ -1515,7 +1515,7 @@ class PresubmitExecuter(object):
     self.gerrit = gerrit_obj
     self.verbose = verbose
     self.dry_run = dry_run
-    self.more_cc = []
+    self.more_cc = set()
     self.thread_pool = thread_pool
     self.parallel = parallel
     self.gerrit_project = gerrit_project
@@ -1597,7 +1597,7 @@ class PresubmitExecuter(object):
             results.extend(
                 self._run_check_function(function_name, context, prefix))
             logging.debug('Running %s done.', function_name)
-            self.more_cc.extend(output_api.more_cc)
+            self.more_cc.update(output_api.more_cc)
 
     finally:
       for f in input_api._named_temporary_files:
@@ -1753,7 +1753,7 @@ def DoPresubmitChecks(change,
             warning.json_format()
             for warning in messages.get('Warnings', [])
         ],
-        'more_cc': executer.more_cc,
+        'more_cc': list(executer.more_cc),
       }
 
       gclient_utils.FileWrite(

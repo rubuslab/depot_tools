@@ -1627,7 +1627,13 @@ class OutputApiUnittest(PresubmitTestsBase):
   def testAppendCC(self):
     output_api = presubmit.OutputApi(False)
     output_api.AppendCC('chromium-reviews@chromium.org')
-    self.assertEqual(['chromium-reviews@chromium.org'], output_api.more_cc)
+    self.assertEqual(set(('chromium-reviews@chromium.org',)), output_api.more_cc)
+    output_api.AppendCC('chromium-reviews@chromium.org')
+    self.assertEqual(set(('chromium-reviews@chromium.org',)), output_api.more_cc)
+    output_api.AppendCC('ipc-security-reviewers@chromium.org')
+    self.assertEqual(
+        set(('chromium-reviews@chromium.org',
+             'ipc-security-reviewers@chromium.org')), output_api.more_cc)
 
 
   def testOutputApiHandling(self):

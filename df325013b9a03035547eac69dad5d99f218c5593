@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3fae791_1e8fec23",
+        "filename": "setup_color.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-10-23T16:56:20Z",
+      "side": 1,
+      "message": "This comment still doesn\u0027t reflect what we have below. I\u0027m okay if we remove condition from comments and just state:\n\n  Wrapping may cause errors on some Windows version (crbug.com/1114548).",
+      "revId": "df325013b9a03035547eac69dad5d99f218c5593",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

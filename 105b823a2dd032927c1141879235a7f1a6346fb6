@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33af27c5_d59d77c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2020-10-23T16:40:17Z",
+      "side": 1,
+      "message": "I went ahead and tested `git map -h` on Win 7 and 10 in both cmd.exe and PowerShell. I tried with and without my change. In every case, the color displays properly. The \u0027cannot use a string pattern\u0027 error doesn\u0027t repro without my change, and there\u0027s no garbage printed with my change - seemingly `git map -h` is taking a different code path than the problematic one.\n\nI\u0027m happy to test more commands if any come to mind that may run into issues.",
+      "parentUuid": "f6217b21_e308db1d",
+      "revId": "105b823a2dd032927c1141879235a7f1a6346fb6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80088cec_029db6c6",
@@ -35,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "66f8afb0_29be13b5",
+        "filename": "setup_color.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2020-10-23T16:40:17Z",
+      "side": 1,
+      "message": "Good point, IIUC this is a wording mistake - the latest clarifies that this disables wrapping.",
+      "parentUuid": "80088cec_029db6c6",
+      "revId": "105b823a2dd032927c1141879235a7f1a6346fb6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2b4c7fb_966ae564",
@@ -48,6 +84,24 @@
       "writtenOn": "2020-10-20T17:46:52Z",
       "side": 1,
       "message": "I think this now covers basically all Windows versions we support. Might as well always set should_wrap\u003dFalse on Windows?",
+      "revId": "105b823a2dd032927c1141879235a7f1a6346fb6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c221122_a93c7008",
+        "filename": "setup_color.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2020-10-23T16:40:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2b4c7fb_966ae564",
       "revId": "105b823a2dd032927c1141879235a7f1a6346fb6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

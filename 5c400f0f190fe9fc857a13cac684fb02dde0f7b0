@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "5c400f0f190fe9fc857a13cac684fb02dde0f7b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36d464f2_e1bac792",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1157909
+      },
+      "writtenOn": "2020-10-24T05:32:02Z",
+      "side": 1,
+      "message": "Scott, after this change lands, 1141272 should be fixed.",
+      "revId": "5c400f0f190fe9fc857a13cac684fb02dde0f7b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

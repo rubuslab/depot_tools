@@ -39,6 +39,30 @@
       },
       "revId": "192f7149ed0803072dcdf5e3413c32942b6b30fd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25dc8263_79f3a6c7",
+        "filename": "git_migrate_default_branch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-10-27T21:06:31Z",
+      "side": 1,
+      "message": "Agreed, I struggled to figure it out too. gerrit_utils would be a good fit by name, but the file content explicitly states it\u0027s about communicating with gerrit. We could modify that if we all agree.",
+      "parentUuid": "28b5e35f_55b612b1",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 20
+      },
+      "revId": "192f7149ed0803072dcdf5e3413c32942b6b30fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

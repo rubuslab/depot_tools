@@ -16,6 +16,24 @@
       "message": "Thanks for improving such bottlenecks! I\u0027ll not use auto-submit as I can\u0027t watch the roll-out.\n\nIs this led-testable? I guess not, since it\u0027s not inside recipes...",
       "revId": "2077df2c4ca298fa36c3e4000c28db5aa9452bad",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb7a301e_26225a20",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-10-27T16:49:11Z",
+      "side": 1,
+      "message": "This code gets executed only one special builder that prepares bundles. So, it won\u0027t affect prod for a while.",
+      "parentUuid": "f99cddd4_db7c01ea",
+      "revId": "2077df2c4ca298fa36c3e4000c28db5aa9452bad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

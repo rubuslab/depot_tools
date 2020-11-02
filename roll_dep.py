@@ -61,12 +61,33 @@ def check_call(*args, **kwargs):
   subprocess.check_call(*args, **kwargs)
 
 
-def is_pristine(root, merge_base='origin/master'):
-  """Returns True if a git checkout is pristine."""
-  cmd = ['git', 'diff', '--ignore-submodules', merge_base]
-  return not (check_output(cmd, cwd=root).strip() or
-              check_output(cmd + ['--cached'], cwd=root).strip())
+def return_code(*args, **kwargs):
+  """subprocess.call() passing shell=True on Windows for git and
+  subprocess.PIPE for stdout and stderr."""
+  kwargs.setdefault('shell', NEED_SHELL)
+  kwargs.setdefault('stdout', subprocess.PIPE)
+  kwargs.setdefault('stderr', subprocess.PIPE)
+  return subprocess.call(*args, **kwargs)
 
+
+def is_pristine(root):
+  """Returns True if a git checkout is pristine."""
+  # Check both origin/master and origin/main since many projects are
+  # transitioning to origin/main.
+  for branch in ('origin/main', 'origin/master'):
+    # `git rev-parse --verify` has a non-zero return code if the revision
+    # doesn't exist.
+    rev_cmd = ['git', 'rev-parse', '--verify', '--quiet',
+               'refs/remotes/' + branch]
+    if return_code(rev_cmd, cwd=root) != 0:
+      continue;
+
+    diff_cmd = ['git', 'diff', '--ignore-submodules', branch]
+    return not check_output(diff_cmd, cwd=root).strip() and \
+           not check_output(diff_cmd + ['--cached'], cwd=root).strip()
+
+
+  raise Error('Couldn\'t find any of origin/main or origin/master')
 
 def get_log_url(upstream_url, head, master):
   """Returns an URL to read logs via a Web UI if applicable."""

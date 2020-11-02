@@ -16,6 +16,24 @@
       "message": "In case it is note intended, let me warn.\nI guess --offline does not work for Linux/macOS. I believe you need to set GOMA_DISABLED\u003dtrue in autoninja shell script to make Goma not send requests remote.",
       "revId": "28e19558b8ce662b12b52e717d85dfff2a5bf736",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76c65b01_16f458c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-11-02T05:17:28Z",
+      "side": 1,
+      "message": "Yep, I\u0027ll do that before landing. I alluded to that in the second-to-last sentence and will finish that tomorrow.",
+      "parentUuid": "5797e240_8a3ac1dd",
+      "revId": "28e19558b8ce662b12b52e717d85dfff2a5bf736",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -61,9 +61,16 @@ def check_call(*args, **kwargs):
   subprocess.check_call(*args, **kwargs)
 
 
-def is_pristine(root, merge_base='origin/master'):
+def is_pristine(root):
   """Returns True if a git checkout is pristine."""
-  cmd = ['git', 'diff', '--ignore-submodules', merge_base]
+  # Check both origin/master and origin/main since many projects are
+  # transitioning to origin/main.
+  cmd = ['git', 'diff', '--ignore-submodules', 'origin/master']
+  if not (check_output(cmd, cwd=root).strip() or
+          check_output(cmd + ['--cached'], cwd=root).strip()):
+      return True
+
+  cmd[-1] = 'origin/main'
   return not (check_output(cmd, cwd=root).strip() or
               check_output(cmd + ['--cached'], cwd=root).strip())
 

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98e352b2_8348b801",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-03T17:21:08Z",
+      "side": 1,
+      "message": "Can you add tests too?\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:tests/scm_unittest.py",
+      "revId": "137fc340a2092935aebd9d551eaff444aad5251b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "PTAL.\n\nI was thinking of doing a follow-up CL changing all *.py file shebangs to use \"/usr/bin/env python\". WDYT?",
       "revId": "a9be6d04e142f4e0074fd56742084d227add45f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42b02ee8_9d2ba128",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-11-03T20:43:28Z",
+      "side": 1,
+      "message": "I think we need to think through this more before landing something.\n\nI\u0027ve just posted [a long comment](crbug.com/1109180#c9) to the bug about this. We might want to see how the discussion on python@ goes and see if we can draw a conclusion, and then come back to this.",
+      "revId": "a9be6d04e142f4e0074fd56742084d227add45f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,23 @@
       "message": "PTAL, I\u0027m also updating the DD at go/rietveld-turndown-dd\n\nNeed to add tests.",
       "revId": "32f5a09adebefb3211fc1921f0555e9adb16ad3e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd3e1076_50a9a405",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-03T22:36:55Z",
+      "side": 1,
+      "message": "Wouldn\u0027t infra/infra be better repository to store this? The code looks good.  I would suggest to rename static-rietveld directory to rietveld-staticgen or something similar.",
+      "revId": "32f5a09adebefb3211fc1921f0555e9adb16ad3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

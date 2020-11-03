@@ -1,0 +1,3 @@
+google-cloud-storage
+bs4
+requests

@@ -16,6 +16,23 @@
       "message": "PTAL!",
       "revId": "7b1cc99f589ddf5fed6e86d7afa8c051f623476a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63455689_508a1ea3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-03T19:27:10Z",
+      "side": 1,
+      "message": "What about checking if \u0027main\u0027 is in the output of \u0027git branch -r\u0027?",
+      "revId": "7b1cc99f589ddf5fed6e86d7afa8c051f623476a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

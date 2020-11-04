@@ -16,6 +16,24 @@
       "message": "Can you add tests too?\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:tests/scm_unittest.py",
       "revId": "137fc340a2092935aebd9d551eaff444aad5251b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "771049a9_4eab21ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-04T18:51:34Z",
+      "side": 1,
+      "message": "Sorry, should have done it in this cl. https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2519254",
+      "parentUuid": "98e352b2_8348b801",
+      "revId": "137fc340a2092935aebd9d551eaff444aad5251b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

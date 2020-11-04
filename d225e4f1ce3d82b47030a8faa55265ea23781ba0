@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d22eb3f8_5d676bde",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1355772
+      },
+      "writtenOn": "2020-11-04T23:14:35Z",
+      "side": 1,
+      "message": "Hi there! Would you mind taking a look at this depot_tools change and give feedback, or suggest more appropriate reviewers?\n\nI also don\u0027t have commit access, so any help landing the change (assuming it\u0027s good) is greatly appreciated. Thanks!",
+      "revId": "d225e4f1ce3d82b47030a8faa55265ea23781ba0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

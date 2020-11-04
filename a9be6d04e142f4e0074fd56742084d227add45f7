@@ -51,6 +51,24 @@
       "parentUuid": "42b02ee8_9d2ba128",
       "revId": "a9be6d04e142f4e0074fd56742084d227add45f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23034ffc_5d45bb70",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-11-04T18:26:16Z",
+      "side": 1,
+      "message": "Yes, it\u0027s a public list: https://groups.google.com/a/chromium.org/g/python",
+      "parentUuid": "44bc43cd_7ef300c7",
+      "revId": "a9be6d04e142f4e0074fd56742084d227add45f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

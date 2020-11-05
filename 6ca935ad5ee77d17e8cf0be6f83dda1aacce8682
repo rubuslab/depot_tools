@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce1714b6_b00e235a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-11-05T05:25:26Z",
+      "side": 1,
+      "message": "Vadim owns CIPD.",
+      "revId": "6ca935ad5ee77d17e8cf0be6f83dda1aacce8682",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

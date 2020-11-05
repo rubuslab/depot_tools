@@ -22,6 +22,30 @@
       },
       "revId": "68882eb876da2d5acf91541e65bfae13f82b9256",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad64401e_a0362005",
+        "filename": "owners_client.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-05T22:33:47Z",
+      "side": 1,
+      "message": "Project is only repo.\nWe could but we don\u0027t need a repo to check IsChangeApproved and IsOwnerConfigurationValid.",
+      "parentUuid": "c69fbcd8_d77abe2f",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 53
+      },
+      "revId": "68882eb876da2d5acf91541e65bfae13f82b9256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

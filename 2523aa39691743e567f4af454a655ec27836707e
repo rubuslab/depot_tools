@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98255523_3dc0b57a",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-06T23:13:43Z",
+      "side": 1,
+      "message": "nit: indentation",
+      "range": {
+        "startLine": 181,
+        "startChar": 18,
+        "endLine": 181,
+        "endChar": 38
+      },
+      "revId": "2523aa39691743e567f4af454a655ec27836707e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edfb640c_17551464",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-06T23:13:43Z",
+      "side": 1,
+      "message": "nit: remove empty line.",
+      "revId": "2523aa39691743e567f4af454a655ec27836707e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

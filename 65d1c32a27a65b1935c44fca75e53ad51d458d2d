@@ -16,6 +16,29 @@
       "message": "This solves almost all problems on my local machine, except FAIL: testRebase (__main__.GitMutableStructuredTest)",
       "revId": "65d1c32a27a65b1935c44fca75e53ad51d458d2d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fd15d32_9c88a267",
+        "filename": "testing_support/git_test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-06T18:38:23Z",
+      "side": 1,
+      "message": "Can we assume git 2.28?\n\n  git(\u0027init\u0027, \u0027-b\u0027, DEFAULT_BRANCH)",
+      "range": {
+        "startLine": 302,
+        "startChar": 0,
+        "endLine": 302,
+        "endChar": 20
+      },
+      "revId": "65d1c32a27a65b1935c44fca75e53ad51d458d2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

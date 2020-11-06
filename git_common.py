@@ -531,6 +531,8 @@ def get_or_create_merge_base(branch, parent=None):
   if parent is None or branch is None:
     return None
   actual_merge_base = run('merge-base', parent, branch)
+  if run_with_retcode('merge-base', '--fork-point', parent, branch) == 0:
+    actual_merge_base = run('merge-base', '--fork-point', parent, branch)
 
   if base_upstream != parent:
     base = None

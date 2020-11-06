@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9803e819_6c183779",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2020-11-06T19:28:13Z",
+      "side": 1,
+      "message": "Not important, just looking at and cleaning up unnecessary things",
+      "revId": "5c0651748b57f0c71baf8088cfb47cf7f6525a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

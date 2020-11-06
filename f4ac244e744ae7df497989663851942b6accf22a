@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea9c7b53_67e716dc",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-06T16:25:39Z",
+      "side": 1,
+      "message": "I\u0027m not sure how expensive is to run merge-base. I think we should optimize it a bit. At least it should be like following:\n  \n  if run_with_retcode(\u0027merge-base\u0027, \u0027--fork-point\u0027, parent, branch) \u003d\u003d 0:\n    actual_merge_base \u003d run(\u0027merge-base\u0027, \u0027--fork-point\u0027, parent, branch)\n  else:\n    actual_merge_base \u003d run(\u0027merge-base\u0027, parent, branch)\n\nAnother possibility is to do:\n\ntry:\n  actual_merge_base \u003d run(\u0027merge-base\u0027, \u0027--fork-point\u0027, parent, branch)\nexcept SomeException:\n  actual_merge_base \u003d run(\u0027merge-base\u0027, parent, branch)",
+      "range": {
+        "startLine": 533,
+        "startChar": 0,
+        "endLine": 536,
+        "endChar": 0
+      },
+      "revId": "f4ac244e744ae7df497989663851942b6accf22a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70822d33_0ce8903f",
+        "filename": "tests/git_common_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-06T16:25:39Z",
+      "side": 1,
+      "message": "whitespace at the end",
+      "revId": "f4ac244e744ae7df497989663851942b6accf22a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53480c3f_19115223",
+        "filename": "tests/git_common_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-06T16:25:39Z",
+      "side": 1,
+      "message": "same",
+      "revId": "f4ac244e744ae7df497989663851942b6accf22a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

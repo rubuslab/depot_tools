@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cabb0899_632904fc",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-06T18:30:48Z",
+      "side": 1,
+      "message": "Yes, let\u0027s do try/except.",
+      "parentUuid": "ea9c7b53_67e716dc",
+      "range": {
+        "startLine": 533,
+        "startChar": 0,
+        "endLine": 536,
+        "endChar": 0
+      },
+      "revId": "f4ac244e744ae7df497989663851942b6accf22a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "70822d33_0ce8903f",
         "filename": "tests/git_common_test.py",
         "patchSetId": 4

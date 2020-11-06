@@ -18,6 +18,8 @@ import unittest
 import gclient_utils
 
 
+DEFAULT_BRANCH = 'master'
+
 if sys.version_info.major == 3:
   # pylint: disable=redefined-builtin
   basestring = (str,)
@@ -300,6 +302,7 @@ class GitRepo(object):
     self.git('init')
     self.git('config', 'user.name', 'testcase')
     self.git('config', 'user.email', 'testcase@example.com')
+    self.git('checkout', '-b', DEFAULT_BRANCH)
     for commit in schema.walk():
       self._add_schema_commit(commit, schema.data_for(commit.name))
       self.last_commit = self[commit.name]

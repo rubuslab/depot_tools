@@ -28,6 +28,8 @@ import gclient_utils
 import scm
 import subprocess2
 
+DEFAULT_BRANCH = 'master'
+
 
 def write(path, content):
   f = open(path, 'wb')
@@ -161,6 +163,8 @@ class FakeReposBase(object):
       return False
     for repo in ['repo_%d' % r for r in range(1, self.NB_GIT_REPOS + 1)]:
       subprocess2.check_call(['git', 'init', '-q', join(self.git_base, repo)])
+      subprocess2.check_call(['git', 'checkout', '-q', '-b', DEFAULT_BRANCH],
+                             cwd=join(self.git_base, repo))
       self.git_hashes[repo] = [(None, None)]
     self.populateGit()
     self.initialized = True

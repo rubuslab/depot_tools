@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "178b8047_3784b3a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-06T18:30:53Z",
+      "side": 1,
+      "message": "This solves almost all problems on my local machine, except FAIL: testRebase (__main__.GitMutableStructuredTest)",
+      "revId": "65d1c32a27a65b1935c44fca75e53ad51d458d2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

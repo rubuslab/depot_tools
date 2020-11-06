@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6aa1f3cc_62873717",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-06T21:51:46Z",
+      "side": 1,
+      "message": "lgtm, but let\u0027s merge this on Monday.",
+      "revId": "94dff8e60095bf08c5692da3b43050c9cbcf9645",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

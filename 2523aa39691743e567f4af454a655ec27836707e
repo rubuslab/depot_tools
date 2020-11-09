@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ee53eff_19fd65b4",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-09T18:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98255523_3dc0b57a",
+      "range": {
+        "startLine": 181,
+        "startChar": 18,
+        "endLine": 181,
+        "endChar": 38
+      },
+      "revId": "2523aa39691743e567f4af454a655ec27836707e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "edfb640c_17551464",
@@ -37,6 +61,24 @@
       "writtenOn": "2020-11-06T23:13:43Z",
       "side": 1,
       "message": "nit: remove empty line.",
+      "revId": "2523aa39691743e567f4af454a655ec27836707e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dff45891_54f74363",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-09T18:01:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "edfb640c_17551464",
       "revId": "2523aa39691743e567f4af454a655ec27836707e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

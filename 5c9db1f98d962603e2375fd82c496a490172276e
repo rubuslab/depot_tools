@@ -16,6 +16,24 @@
       "message": "Nit: update the comments here and on line 437 as well.",
       "revId": "5c9db1f98d962603e2375fd82c496a490172276e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50fe70a9_f69f8e0c",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-10T02:05:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0e82e13_0f7ddd68",
+      "revId": "5c9db1f98d962603e2375fd82c496a490172276e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

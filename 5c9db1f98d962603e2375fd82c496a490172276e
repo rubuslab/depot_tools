@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0e82e13_0f7ddd68",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-11-10T02:03:19Z",
+      "side": 1,
+      "message": "Nit: update the comments here and on line 437 as well.",
+      "revId": "5c9db1f98d962603e2375fd82c496a490172276e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

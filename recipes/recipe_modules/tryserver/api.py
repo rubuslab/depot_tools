@@ -21,7 +21,7 @@ class TryserverApi(recipe_api.RecipeApi):
 
   def initialize(self):
     changes = self.m.buildbucket.build.input.gerrit_changes
-    if len(changes) == 1:
+    if len(changes) >= 1:
       cl = changes[0]
       self._gerrit_change = cl
       git_host = cl.host

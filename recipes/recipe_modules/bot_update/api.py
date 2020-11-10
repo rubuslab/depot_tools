@@ -20,7 +20,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
     super(BotUpdateApi, self).__init__(*args, **kwargs)
 
   def initialize(self):
-    assert len(self.m.buildbucket.build.input.gerrit_changes) <= 1, (
+    # let me see
+    assert len(self.m.buildbucket.build.input.gerrit_changes) <= 2, (
         'bot_update does not support more than one '
         'buildbucket.build.input.gerrit_changes')
 

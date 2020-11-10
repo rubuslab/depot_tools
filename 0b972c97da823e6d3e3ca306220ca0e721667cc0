@@ -16,6 +16,23 @@
       "message": "Yulan, is there a bug I should use?",
       "revId": "0b972c97da823e6d3e3ca306220ca0e721667cc0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6cdb9a4_ebe4e7ef",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1414197
+      },
+      "writtenOn": "2020-11-10T21:36:25Z",
+      "side": 1,
+      "message": "The plan was to use \"Bot-Commit\"; since ChromeOS is already using that label, and then we won\u0027t break their workflows. I\u0027m open to changing it if you have strong feelings otherwise, though.",
+      "revId": "0b972c97da823e6d3e3ca306220ca0e721667cc0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

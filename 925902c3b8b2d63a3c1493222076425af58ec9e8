@@ -33,6 +33,24 @@
       "message": "Were we going to add a `python` link here as well? \n\nI\u0027m not sure how many things will explicitly look for \u0027python2\u0027, though you can at least use this when running GN and Ninja ...",
       "revId": "925902c3b8b2d63a3c1493222076425af58ec9e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d72ff2b_c141e417",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-11T17:29:20Z",
+      "side": 1,
+      "message": "I think based on discussion in https://crbug.com/1109180, it may be better just to have instructions how to setup `python` instead of providing it. That way we can avoid confusion and potentially overriding system default version. Furthermore, this solves original bug which is providing python2 binary.",
+      "parentUuid": "08242801_b67b377d",
+      "revId": "925902c3b8b2d63a3c1493222076425af58ec9e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -86,6 +86,24 @@
       "message": "based on the discussion in https://crbug.com/1109180#c9, I suggest we remove move python2 to a separate directory, and remove `python`. If users want `python` option, we can provide some guidance in the documentation.",
       "revId": "a9be6d04e142f4e0074fd56742084d227add45f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dee6744_b416e7c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2020-11-11T09:50:59Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "ca112d04_d1dfde1f",
+      "revId": "a9be6d04e142f4e0074fd56742084d227add45f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

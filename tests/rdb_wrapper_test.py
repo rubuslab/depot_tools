@@ -7,79 +7,85 @@
 
 from __future__ import print_function
 
+import contextlib
 import json
 import logging
 import os
 import requests
 import sys
+import tempfile
 import time
 import unittest
 
 if sys.version_info.major == 2:
   import mock
-  BUILTIN_OPEN = '__builtin__.open'
 else:
   from unittest import mock
-  BUILTIN_OPEN = 'builtins.open'
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import rdb_wrapper
 
-class TestSetupRDB(unittest.TestCase):
 
-  def setUp(self):
-    super(TestSetupRDB, self).setUp()
-    mock.patch(BUILTIN_OPEN, mock.mock_open(read_data =
-      '''{"result_sink":{"address": "fakeAddr","auth_token" : "p@$$w0rD"}}''')
-      ).start()
-    mock.patch('os.environ', {'LUCI_CONTEXT': 'dummy_file.txt'}).start()
-    mock.patch('requests.post').start()
-    mock.patch('time.time', side_effect=[1.0, 2.0, 3.0, 4.0, 5.0]).start()
+@contextlib.contextmanager
+def lucictx(ctx):
+  try:
+    orig = os.environ.get('LUCI_CONTEXT')
+    with tempfile.NamedTemporaryFile() as f:
+      f.write(json.dumps(ctx).encode('utf-8'))
+      f.flush()
+      os.environ['LUCI_CONTEXT'] = f.name
+      yield f
+  finally:
+    if orig is None:
+      os.environ.pop('LUCI_CONTEXT', '')
+    else:
+      os.environ['LUCI_CONTEXT'] = orig
 
-  def test_setup_rdb(self):
-    with rdb_wrapper.setup_rdb("_foobar", './my/folder/') as my_status_obj:
-      self.assertEqual(my_status_obj.status, rdb_wrapper.STATUS_PASS)
-      my_status_obj.status = rdb_wrapper.STATUS_FAIL
 
-    expectedTr = {
-        'testId'  : './my/folder/:_foobar',
-        'status'  : rdb_wrapper.STATUS_FAIL,
-        'expected': False,
-        'duration': '1.000000000s'
+@mock.patch.dict(os.environ, {})
+class TestClient(unittest.TestCase):
+  def test_without_lucictx(self):
+    with rdb_wrapper.client("prefix") as s:
+      self.assertIsNone(s)
+
+    with lucictx({'something else': {'key': 'value'}}):
+      with rdb_wrapper.client("prefix") as s:
+        self.assertIsNone(s)
+
+  def test_with_lucictx(self):
+    with lucictx({'result_sink': {'address': '127', 'auth_token': 'secret'}}):
+      with rdb_wrapper.client("prefix") as s:
+        self.assertIsNotNone(s)
+        self.assertEqual(
+            s._url,
+            'http://127/prpc/luci.resultsink.v1.Sink/ReportTestResults',
+        )
+        self.assertDictEqual(
+            s._session.headers,
+            {
+                'Accept': 'application/json',
+                'Authorization': 'ResultSink secret',
+                'Content-Type': 'application/json',
+            }
+        )
+
+
+class TestResultSink(unittest.TestCase):
+  def test_report(self):
+    session = mock.MagicMock()
+    sink = rdb_wrapper.ResultSink(session, 'http://host', 'test_id_prefix/')
+    sink.report("function_foo", rdb_wrapper.STATUS_PASS, 123)
+    expected = {
+        'testId': 'test_id_prefix/function_foo',
+        'status': rdb_wrapper.STATUS_PASS,
+        'expected': True,
+        'duration': '123.000000000s',
     }
-
-    requests.post.assert_called_once_with(
-        url='http://fakeAddr/prpc/luci.resultsink.v1.Sink/ReportTestResults',
-        headers={
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization': 'ResultSink p@$$w0rD'
-        },
-        data=json.dumps({'testResults': [expectedTr]})
+    session.post.assert_called_once_with(
+        'http://host', json={'testResults': [expected]},
     )
 
-  def test_setup_rdb_exception(self):
-    with self.assertRaises(Exception):
-      with rdb_wrapper.setup_rdb("_foobar", './my/folder/'):
-        raise Exception("Generic Error")
-
-    expectedTr = {
-        'testId': './my/folder/:_foobar',
-        'status': rdb_wrapper.STATUS_FAIL,
-        'expected': False,
-        'duration': '1.000000000s'
-    }
-
-    requests.post.assert_called_once_with(
-        url='http://fakeAddr/prpc/luci.resultsink.v1.Sink/ReportTestResults',
-        headers={
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization': 'ResultSink p@$$w0rD'
-        },
-        data=json.dumps({'testResults': [expectedTr]})
-    )
 
 if __name__ == '__main__':
   logging.basicConfig(

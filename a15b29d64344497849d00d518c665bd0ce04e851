@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c65ec44_5e88317a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1355772
+      },
+      "writtenOn": "2020-11-11T18:00:57Z",
+      "side": 1,
+      "message": "Hi there! Would you mind taking a look at this depot_tools change and give feedback, or suggest more appropriate reviewers?\n\nThis change brings Linux / macOS up to parity with Windows for retrying the CIPD client bootstrap download.",
+      "revId": "a15b29d64344497849d00d518c665bd0ce04e851",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

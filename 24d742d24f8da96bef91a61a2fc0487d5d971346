@@ -16,6 +16,41 @@
       "message": "Sorry for the oversight. Is there a way to add a test?",
       "revId": "24d742d24f8da96bef91a61a2fc0487d5d971346",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0e1bf5a_10112875",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-11T17:11:59Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "24d742d24f8da96bef91a61a2fc0487d5d971346",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8b787e3_d0cfde5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-11T17:11:59Z",
+      "side": 1,
+      "message": "Yes, it would be in https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:tests/git_cl_test.py\n\nWe don\u0027t have any coverage for CMDStatus so it will require a bit of effort to get it covered, but it would be appreciated.",
+      "parentUuid": "511f2081_f2703932",
+      "revId": "24d742d24f8da96bef91a61a2fc0487d5d971346",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

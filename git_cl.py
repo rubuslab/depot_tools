@@ -4557,6 +4557,7 @@ def CMDtry_results(parser, args):
   if not cl.GetIssue():
     parser.error('Need to upload first.')
 
+  #test
   patchset = options.patchset
   if not patchset:
     patchset = cl.GetMostRecentPatchset()

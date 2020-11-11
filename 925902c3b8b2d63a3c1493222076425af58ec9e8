@@ -69,6 +69,24 @@
       "parentUuid": "3d72ff2b_c141e417",
       "revId": "925902c3b8b2d63a3c1493222076425af58ec9e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba5e6852_be0e8bfc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1221339
+      },
+      "writtenOn": "2020-11-11T21:24:24Z",
+      "side": 1,
+      "message": "I was going to ask if it would be a good idea to change all python script shebangs to /usr/bin/env python2 and /usr/bin/env python3 depending on their porting status. WDYT?",
+      "parentUuid": "08ce7fe3_bb9b122b",
+      "revId": "925902c3b8b2d63a3c1493222076425af58ec9e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

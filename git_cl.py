@@ -1722,6 +1722,23 @@ class Changelist(object):
     self.SetPatchset(patchset)
     return patchset
 
+  def GetMostRecentNontrivialPatchset(self):
+    if not self.GetIssue():
+      return None
+
+    data = self._GetChangeDetail(['ALL_REVISIONS'])
+    patchset = 1 #data['revisions'][data['current_revision']]['_number']
+    # sort by rev date?
+
+    # iterate thru revisions until find one not in set
+    for revision_info in data['revisions'].values():
+      if revision_info['kind'] not in ['NO_CHANGE', 'NO_CODE_CHANGE', 'TRIVIAL_REBASE']:
+        patchset = revision_info['_number']
+        break
+
+    self.SetPatchset(patchset)
+    return patchset
+
   def AddComment(self, message, publish=None):
     gerrit_util.SetReview(
         self._GetGerritHost(), self._GerritChangeIdentifier(),
@@ -4557,9 +4574,11 @@ def CMDtry_results(parser, args):
   if not cl.GetIssue():
     parser.error('Need to upload first.')
 
+  #test
   patchset = options.patchset
   if not patchset:
-    patchset = cl.GetMostRecentPatchset()
+    #patchset = cl.GetMostRecentPatchset()
+    patchset = cl.GetMostRecentNontrivialPatchset()
     if not patchset:
       parser.error('Code review host doesn\'t know about issue %s. '
                    'No access to issue or wrong issue number?\n'

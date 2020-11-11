@@ -3577,7 +3577,7 @@ def CMDstatus(parser, args):
   branch_statuses = {}
 
   alignment = max(5, max(len(FormatBranchName(c.GetBranch())) for c in changes))
-  if options.committerdate:
+  if options.dateorder:
     sorted_changes = sorted(changes,
                             key=lambda c: c.GetCommitDate(),
                             reverse=True)

@@ -1722,6 +1722,37 @@ class Changelist(object):
     self.SetPatchset(patchset)
     return patchset
 
+  def GetMostRecentNontrivialPatchset(self):
+    if not self.GetIssue():
+      return None
+
+    data = self._GetChangeDetail(['ALL_REVISIONS'])
+    patchset = data['revisions'][data['current_revision']]['_number']
+
+    # get most recent PS and all equiv. PSs. of this set,
+    # get most recent ps that has run thru CQ tryjob
+    # if none tried, then return most recent
+
+    dry_run = set([
+      m['_revision_number'] for m in data['messages'] if 'dry-run' in m['tag']
+    ])
+
+    print("dry runs on ", dry_run)
+
+    equiv = []
+    for revision, revision_info in sorted(data['revisions'].items(), key=lambda c: c[1]['_number'], reverse=True):
+      print("checking patchset", revision_info['_number'])
+      #equiv.append([revision, revision_info['_number']])
+      if revision_info['_number'] in dry_run:
+        patchset = revision_info['_number']
+        break
+      if revision_info['kind'] not in ['NO_CHANGE', 'NO_CODE_CHANGE', 'TRIVIAL_REBASE']:
+        break
+
+    print("patchset", patchset)
+    self.SetPatchset(patchset)
+    return patchset
+
   def AddComment(self, message, publish=None):
     gerrit_util.SetReview(
         self._GetGerritHost(), self._GerritChangeIdentifier(),
@@ -4557,9 +4588,11 @@ def CMDtry_results(parser, args):
   if not cl.GetIssue():
     parser.error('Need to upload first.')
 
+  #test
   patchset = options.patchset
   if not patchset:
-    patchset = cl.GetMostRecentPatchset()
+    #patchset = cl.GetMostRecentPatchset()
+    patchset = cl.GetMostRecentNontrivialPatchset()
     if not patchset:
       parser.error('Code review host doesn\'t know about issue %s. '
                    'No access to issue or wrong issue number?\n'

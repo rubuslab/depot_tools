@@ -87,6 +87,24 @@
       "parentUuid": "08ce7fe3_bb9b122b",
       "revId": "925902c3b8b2d63a3c1493222076425af58ec9e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89cffa7b_db78b3d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-11-11T23:42:30Z",
+      "side": 1,
+      "message": "I would not do that right at the moment; I think it would probably produce a fair amount of churn we don\u0027t really need.\n\nI think that\u0027s a reasonable thing to consider if we get a little further along in the migration and it turns out that assuming `python` \u003d\u003d `python2` is causing more pain and will for an extended period.",
+      "parentUuid": "ba5e6852_be0e8bfc",
+      "revId": "925902c3b8b2d63a3c1493222076425af58ec9e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -93,6 +93,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f10bed7_0afcfb91",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1119849
+      },
+      "writtenOn": "2020-11-12T15:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cebdf572_68cf2624",
+      "range": {
+        "startLine": 69,
+        "startChar": 5,
+        "endLine": 70,
+        "endChar": 61
+      },
+      "revId": "7b1cc99f589ddf5fed6e86d7afa8c051f623476a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65c49ce9_a1188490",
@@ -116,6 +140,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3872c397_f44e7c60",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1119849
+      },
+      "writtenOn": "2020-11-12T15:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65c49ce9_a1188490",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 6
+      },
+      "revId": "7b1cc99f589ddf5fed6e86d7afa8c051f623476a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a83b7be_7ab2d4a1",
@@ -129,6 +177,30 @@
       "writtenOn": "2020-11-11T00:53:55Z",
       "side": 1,
       "message": "Let\u0027s check origin/main first.\nAlso, what happens when origin/main doesn\u0027t exist?",
+      "range": {
+        "startLine": 73,
+        "startChar": 13,
+        "endLine": 73,
+        "endChar": 24
+      },
+      "revId": "7b1cc99f589ddf5fed6e86d7afa8c051f623476a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e846792_093ae4b8",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1119849
+      },
+      "writtenOn": "2020-11-12T15:11:06Z",
+      "side": 1,
+      "message": "It failed. I reworked the logic to check that refs/remotes/\u003cbranch\u003e exists before doing the diff.",
+      "parentUuid": "9a83b7be_7ab2d4a1",
       "range": {
         "startLine": 73,
         "startChar": 13,

@@ -1722,6 +1722,30 @@ class Changelist(object):
     self.SetPatchset(patchset)
     return patchset
 
+  def GetMostRecentDryRunPatchset(self):
+    """Get patchsets equivalent to the most recent patchset and return
+    the patchset with the latest dry run. If none have been dry run, return
+    the latest patchset."""
+    if not self.GetIssue():
+      return None
+
+    data = self._GetChangeDetail(['ALL_REVISIONS'])
+    patchset = data['revisions'][data['current_revision']]['_number']
+    dry_run = set([int(m['_revision_number'])
+        for m in data.get('messages', []) if m.get('tag', '').endswith('dry-run')])
+
+    for revision_info in sorted(data.get('revisions', {}).values(),
+        key=lambda c: c['_number'], reverse=True):
+      if revision_info['_number'] in dry_run:
+        patchset = revision_info['_number']
+        break
+      if revision_info.get('kind', '') not in \
+          ('NO_CHANGE', 'NO_CODE_CHANGE', 'TRIVIAL_REBASE'):
+        break
+
+    self.SetPatchset(patchset)
+    return patchset
+
   def AddComment(self, message, publish=None):
     gerrit_util.SetReview(
         self._GetGerritHost(), self._GerritChangeIdentifier(),
@@ -4559,7 +4583,10 @@ def CMDtry_results(parser, args):
 
   patchset = options.patchset
   if not patchset:
-    patchset = cl.GetMostRecentPatchset()
+    try: 
+      patchset = cl.GetMostRecentDryRunPatchset()
+    except subprocess2.CalledProcessError:
+      patchset = cl.GetMostRecentPatchset()
     if not patchset:
       parser.error('Code review host doesn\'t know about issue %s. '
                    'No access to issue or wrong issue number?\n'

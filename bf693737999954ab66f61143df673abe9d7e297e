@@ -16,6 +16,98 @@
       "message": "PTAL again!",
       "revId": "bf693737999954ab66f61143df673abe9d7e297e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b483ef16_93a0a559",
+        "filename": "roll_dep.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-12T18:25:04Z",
+      "side": 1,
+      "message": "subprocess2",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 17
+      },
+      "revId": "bf693737999954ab66f61143df673abe9d7e297e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b00694e0_9b1c9d01",
+        "filename": "roll_dep.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-12T18:25:04Z",
+      "side": 1,
+      "message": "Use subprocess2.VOID, as subprocess.PIPE can block.\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:subprocess2.py;l\u003d34\nhttps://docs.python.org/3/library/subprocess.html#subprocess.call",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 46
+      },
+      "revId": "bf693737999954ab66f61143df673abe9d7e297e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b881904_c1fee975",
+        "filename": "roll_dep.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-12T18:25:04Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 83,
+        "startChar": 14,
+        "endLine": 83,
+        "endChar": 15
+      },
+      "revId": "bf693737999954ab66f61143df673abe9d7e297e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d40af82a_c669181f",
+        "filename": "roll_dep.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-12T18:25:04Z",
+      "side": 1,
+      "message": "nit: Use parentheses instead of \\.",
+      "range": {
+        "startLine": 86,
+        "startChar": 59,
+        "endLine": 86,
+        "endChar": 61
+      },
+      "revId": "bf693737999954ab66f61143df673abe9d7e297e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

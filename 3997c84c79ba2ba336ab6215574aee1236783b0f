@@ -16,6 +16,24 @@
       "message": "If we ignore exception, it may be hard to understand what\u0027s gone wrong. Either we don\u0027t have fallback (ie always use GetMostRecentDryRunPatchset) or we add some warning.\n\nI would probably favor just using GetMostRecentDryRunPatchset.",
       "revId": "3997c84c79ba2ba336ab6215574aee1236783b0f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ec6047e_8b6c786a",
+        "filename": "git_cl.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 4589,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-11-12T23:57:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c1ec23a_053636c3",
+      "revId": "3997c84c79ba2ba336ab6215574aee1236783b0f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

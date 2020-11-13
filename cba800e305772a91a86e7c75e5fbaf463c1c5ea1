@@ -16,6 +16,24 @@
       "message": "Will this code ever execute? Line 1640 returns and I don\u0027t think the else will be executed (https://stackoverflow.com/questions/7442133/try-else-with-return-in-try-block).\n\nI would suggest moving the return statement to after the \"if sink\" block that starts on 1747. Also remove the else on this line since it\u0027s redundant with the raise in the except block.",
       "revId": "cba800e305772a91a86e7c75e5fbaf463c1c5ea1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0c06850_5706fb6d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1646,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2020-11-13T22:57:51Z",
+      "side": 1,
+      "message": "Ah, thanks for catching this. The code block had a bug, but I didn\u0027t find it because there was no test for it. 😞\n\nI added unit tests for the possible cases, as well. PTAL.",
+      "parentUuid": "bb17c926_739ba36f",
+      "revId": "cba800e305772a91a86e7c75e5fbaf463c1c5ea1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

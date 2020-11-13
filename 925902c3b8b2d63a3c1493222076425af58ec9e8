@@ -123,6 +123,24 @@
       "parentUuid": "89cffa7b_db78b3d2",
       "revId": "925902c3b8b2d63a3c1493222076425af58ec9e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59eb78bd_f2fb2902",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-11-13T02:06:46Z",
+      "side": 1,
+      "message": "That sounds like a great idea.",
+      "parentUuid": "64a77946_6b2307f2",
+      "revId": "925902c3b8b2d63a3c1493222076425af58ec9e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

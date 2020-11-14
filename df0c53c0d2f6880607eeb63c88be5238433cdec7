@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bac9d110_764f1b6a",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-14T00:26:36Z",
+      "side": 1,
+      "message": "What if we use --branch instead?",
+      "range": {
+        "startLine": 604,
+        "startChar": 23,
+        "endLine": 604,
+        "endChar": 31
+      },
+      "revId": "df0c53c0d2f6880607eeb63c88be5238433cdec7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -19,11 +19,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
     self._last_returned_properties = {}
     super(BotUpdateApi, self).__init__(*args, **kwargs)
 
-  def initialize(self):
-    assert len(self.m.buildbucket.build.input.gerrit_changes) <= 1, (
-        'bot_update does not support more than one '
-        'buildbucket.build.input.gerrit_changes')
-
   def __call__(self, name, cmd, **kwargs):
     """Wrapper for easy calling of bot_update."""
     assert isinstance(cmd, (list, tuple))
@@ -93,6 +88,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       patchset=None,
                       gerrit_no_reset=False,
                       gerrit_no_rebase_patch_ref=False,
+                      gerrit_change=None,
                       disable_syntax_validation=False,
                       patch_refs=None,
                       ignore_input_commit=False,
@@ -135,6 +131,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
     assert patch_oauth2 is None, "patch_oauth2 is deprecated"
     assert oauth2_json is None, "oauth2_json is deprecated"
     assert not (ignore_input_commit and set_output_commit)
+    if gerrit_change is None:
+      assert len(self.m.buildbucket.build.input.gerrit_changes) <= 1, (
+          'bot_update does not support more than one '
+          'buildbucket.build.input.gerrit_changes')
 
     refs = refs or []
     # We can re-use the gclient spec from the gclient module, since all the

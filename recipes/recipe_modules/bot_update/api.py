@@ -19,11 +19,6 @@ class BotUpdateApi(recipe_api.RecipeApi):
     self._last_returned_properties = {}
     super(BotUpdateApi, self).__init__(*args, **kwargs)
 
-  def initialize(self):
-    assert len(self.m.buildbucket.build.input.gerrit_changes) <= 1, (
-        'bot_update does not support more than one '
-        'buildbucket.build.input.gerrit_changes')
-
   def __call__(self, name, cmd, **kwargs):
     """Wrapper for easy calling of bot_update."""
     assert isinstance(cmd, (list, tuple))
@@ -93,6 +88,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       patchset=None,
                       gerrit_no_reset=False,
                       gerrit_no_rebase_patch_ref=False,
+                      should_skip_check_input_changes=False,
                       disable_syntax_validation=False,
                       patch_refs=None,
                       ignore_input_commit=False,
@@ -127,6 +123,11 @@ class BotUpdateApi(recipe_api.RecipeApi):
         Use test_api.output_json to generate test data.
       * enforce_fetch: Enforce a new fetch to refresh the git cache, even if the
         solution revision passed in already exists in the current git cache.
+      * should_skip_check_input_changes: Skip checking the size of input changes.
+        bot_update module ONLY supports one CL in
+        buildbucket.build.input.gerrit_changes. User may specify the change
+        via tryserver.reinitialize() and explicitly set this flag True, if there
+        are multiple CLs in the input.
     """
     assert use_site_config_creds is None, "use_site_config_creds is deprecated"
     assert rietveld is None, "rietveld is deprecated"
@@ -135,6 +136,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
     assert patch_oauth2 is None, "patch_oauth2 is deprecated"
     assert oauth2_json is None, "oauth2_json is deprecated"
     assert not (ignore_input_commit and set_output_commit)
+    if not should_skip_check_input_changes:
+      assert len(self.m.buildbucket.build.input.gerrit_changes) <= 1, (
+          'bot_update does not support more than one '
+          'buildbucket.build.input.gerrit_changes')
 
     refs = refs or []
     # We can re-use the gclient spec from the gclient module, since all the

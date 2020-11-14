@@ -15,6 +15,7 @@ DEPS = [
   'tryserver',
 ]
 
+from PB.go.chromium.org.luci.buildbucket.proto.common import GerritChange
 
 def RunSteps(api):
   api.path['checkout'] = api.path['start_dir']
@@ -50,7 +51,12 @@ def RunSteps(api):
   api.tryserver.set_test_expired_tryjob_result()
 
   api.tryserver.normalize_footer_name('Cr-Commit-Position')
-
+  
+  api.tryserver.reinitialize(GerritChange(
+      host='chromium-review.googlesource.com',
+      project='chromium/src',
+      change=1234567,
+      patchset=1))
 
 def GenTests(api):
   # The 'test_patch_root' property used below is just so that these

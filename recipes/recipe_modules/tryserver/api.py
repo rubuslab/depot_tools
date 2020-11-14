@@ -262,3 +262,14 @@ class TryserverApi(recipe_api.RecipeApi):
 
   def normalize_footer_name(self, footer):
     return '-'.join([ word.title() for word in footer.strip().split('-') ])
+
+  def reinitialize(self, cl):
+    #     changes = self.m.buildbucket.build.input.gerrit_changes
+    # if len(changes) >= 1:
+    #   cl = changes[0]
+    self._gerrit_change = cl
+    git_host = cl.host
+    gs_suffix = '-review.googlesource.com'
+    if git_host.endswith(gs_suffix):
+      git_host = '%s.googlesource.com' % git_host[:-len(gs_suffix)]
+    self._gerrit_change_repo_url = 'https://%s/%s' % (git_host, cl.project)

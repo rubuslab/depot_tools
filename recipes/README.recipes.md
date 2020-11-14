@@ -54,7 +54,7 @@ Recipe module to ensure a checkout is consistent on a bot.
 
 #### **class [BotUpdateApi](/recipes/recipe_modules/bot_update/api.py#12)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
 
-&mdash; **def [\_\_call\_\_](/recipes/recipe_modules/bot_update/api.py#27)(self, name, cmd, \*\*kwargs):**
+&mdash; **def [\_\_call\_\_](/recipes/recipe_modules/bot_update/api.py#22)(self, name, cmd, \*\*kwargs):**
 
 Wrapper for easy calling of bot_update.
 
@@ -63,7 +63,7 @@ Wrapper for easy calling of bot_update.
 Deapplies a patch, taking care of DEPS and solution revisions properly.
     
 
-&mdash; **def [ensure\_checkout](/recipes/recipe_modules/bot_update/api.py#76)(self, gclient_config=None, suffix=None, patch=True, update_presentation=True, patch_root=None, with_branch_heads=False, with_tags=False, no_fetch_tags=False, refs=None, patch_oauth2=None, oauth2_json=None, use_site_config_creds=None, clobber=False, root_solution_revision=None, rietveld=None, issue=None, patchset=None, gerrit_no_reset=False, gerrit_no_rebase_patch_ref=False, disable_syntax_validation=False, patch_refs=None, ignore_input_commit=False, add_blamelists=False, set_output_commit=False, step_test_data=None, enforce_fetch=False, \*\*kwargs):**
+&mdash; **def [ensure\_checkout](/recipes/recipe_modules/bot_update/api.py#71)(self, gclient_config=None, suffix=None, patch=True, update_presentation=True, patch_root=None, with_branch_heads=False, with_tags=False, no_fetch_tags=False, refs=None, patch_oauth2=None, oauth2_json=None, use_site_config_creds=None, clobber=False, root_solution_revision=None, rietveld=None, issue=None, patchset=None, gerrit_no_reset=False, gerrit_no_rebase_patch_ref=False, gerrit_change=None, disable_syntax_validation=False, patch_refs=None, ignore_input_commit=False, add_blamelists=False, set_output_commit=False, step_test_data=None, enforce_fetch=False, \*\*kwargs):**
 
 Args:
   * gclient_config: The gclient configuration to use when running bot_update.
@@ -105,9 +105,7 @@ Args:
 Returns (list of str): All properties that'll hold the checked-out revision
     of the given project. An empty list if no such properties exist.
 
-&mdash; **def [initialize](/recipes/recipe_modules/bot_update/api.py#22)(self):**
-
-&emsp; **@property**<br>&mdash; **def [last\_returned\_properties](/recipes/recipe_modules/bot_update/api.py#44)(self):**
+&emsp; **@property**<br>&mdash; **def [last\_returned\_properties](/recipes/recipe_modules/bot_update/api.py#39)(self):**
 
 &mdash; **def [resolve\_fixed\_revision](/recipes/recipe_modules/bot_update/api.py#452)(self, bot_update_json, name):**
 
@@ -861,6 +859,8 @@ Returns true iff we have a change to check out.
 
 &mdash; **def [normalize\_footer\_name](/recipes/recipe_modules/tryserver/api.py#263)(self, footer):**
 
+&mdash; **def [reinitialize](/recipes/recipe_modules/tryserver/api.py#266)(self, cl):**
+
 &mdash; **def [set\_compile\_failure\_tryjob\_result](/recipes/recipe_modules/tryserver/api.py#202)(self):**
 
 Mark the tryjob result as a compile failure.
@@ -1051,7 +1051,7 @@ Move things around in a loop!
 
 [DEPS](/recipes/recipe_modules/tryserver/examples/full.py#5): [gerrit](#recipe_modules-gerrit), [tryserver](#recipe_modules-tryserver), [recipe\_engine/buildbucket][recipe_engine/recipe_modules/buildbucket], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/tryserver/examples/full.py#19)(api):**
+&mdash; **def [RunSteps](/recipes/recipe_modules/tryserver/examples/full.py#20)(api):**
 ### *recipes* / [tryserver:tests/gerrit\_change\_fetch\_ref\_timeout](/recipes/recipe_modules/tryserver/tests/gerrit_change_fetch_ref_timeout.py)
 
 [DEPS](/recipes/recipe_modules/tryserver/tests/gerrit_change_fetch_ref_timeout.py#7): [gerrit](#recipe_modules-gerrit), [tryserver](#recipe_modules-tryserver), [recipe\_engine/buildbucket][recipe_engine/recipe_modules/buildbucket], [recipe\_engine/properties][recipe_engine/recipe_modules/properties]

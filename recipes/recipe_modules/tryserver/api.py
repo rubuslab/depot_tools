@@ -19,8 +19,9 @@ class TryserverApi(recipe_api.RecipeApi):
     self._gerrit_change_fetch_ref = None
     self._gerrit_change_owner = None
 
-  def initialize(self):
-    changes = self.m.buildbucket.build.input.gerrit_changes
+  def initialize(self, changes=None):
+    if changes is None:
+      changes = self.m.buildbucket.build.input.gerrit_changes
     if len(changes) == 1:
       cl = changes[0]
       self._gerrit_change = cl
@@ -262,3 +263,14 @@ class TryserverApi(recipe_api.RecipeApi):
 
   def normalize_footer_name(self, footer):
     return '-'.join([ word.title() for word in footer.strip().split('-') ])
+
+  def reinitialize(self, cl):
+    """Re-initialize the module with a specified gerrit change.
+
+    Allow the consumers of this module to pick up the CL they want to verify,
+    if there are multiple changes in the input.
+
+    Args:
+      * cl: a GerritChange object.
+    """
+    self.initialize(changes=[cl])

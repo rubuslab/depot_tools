@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d6c2c0d_6be44610",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-11-15T19:35:41Z",
+      "side": 1,
+      "message": "double negative\nconsider should_check_input_changes\u003dTrue\n\nalso, I find \"check input changes\" a bit abstract - unclear check how.\nHow about \"allow_multiple_patchsets\"",
+      "range": {
+        "startLine": 91,
+        "startChar": 22,
+        "endLine": 91,
+        "endChar": 60
+      },
+      "revId": "fc630326b595aa1c171590d6485a895b4de7e102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc8b0275_ea5676e4",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-11-15T19:35:41Z",
+      "side": 1,
+      "message": "initialize is a special method in recipe engine, and it might do more than initializing changes.\nI recommend more concrete methods, e.g.\n\n  def set_changes(changes):\n    ...\n\n  def initialize():\n    set_changes(...)",
+      "range": {
+        "startLine": 276,
+        "startChar": 9,
+        "endLine": 276,
+        "endChar": 19
+      },
+      "revId": "fc630326b595aa1c171590d6485a895b4de7e102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

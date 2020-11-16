@@ -83,6 +83,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6825b98e_952c62f3",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1157909
+      },
+      "writtenOn": "2020-11-16T20:25:17Z",
+      "side": 1,
+      "message": "SG",
+      "parentUuid": "207c7561_92d93c79",
+      "revId": "5a99c4a93cde05abd5ea3ce86c976a353138c182",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "905a9fa3_e34bd6a8",
@@ -120,6 +138,30 @@
       "side": 1,
       "message": "--test_id_prefix is a flag of `rdb stream` command. The flag is not visible to ResultSink API clients, and not part of the protocol. I don\u0027t think this param name will make any confusion?",
       "parentUuid": "905a9fa3_e34bd6a8",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 18
+      },
+      "revId": "5a99c4a93cde05abd5ea3ce86c976a353138c182",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd8ef32e_ebc224eb",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1157909
+      },
+      "writtenOn": "2020-11-16T20:25:17Z",
+      "side": 1,
+      "message": "So when run `rdb stream` for presubmit test, we\u0027ll not pass in --test_id_prefix flag, right?",
+      "parentUuid": "26fc12a4_c38e0f38",
       "range": {
         "startLine": 52,
         "startChar": 4,

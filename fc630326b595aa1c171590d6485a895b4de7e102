@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "89e9ad2f_79deadc7",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-16T04:33:58Z",
+      "side": 1,
+      "message": "Ummm... allow_multiple_patchesets seems telling the reader that we can update multiple CLs on the bot, which I am trying to avoid.\n\n\u003e unclear check how\nExactly. This flag instructs bot_update whether rely on buildbucket.build.input.gerrit_changes for the input size, nothing to do with checking the input or allowing multiple patchsets.\nWhat about \"accept_buildbucket_input\"?",
+      "parentUuid": "3d6c2c0d_6be44610",
+      "range": {
+        "startLine": 91,
+        "startChar": 22,
+        "endLine": 91,
+        "endChar": 60
+      },
+      "revId": "fc630326b595aa1c171590d6485a895b4de7e102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc8b0275_ea5676e4",
@@ -37,6 +61,30 @@
       "writtenOn": "2020-11-15T19:35:41Z",
       "side": 1,
       "message": "initialize is a special method in recipe engine, and it might do more than initializing changes.\nI recommend more concrete methods, e.g.\n\n  def set_changes(changes):\n    ...\n\n  def initialize():\n    set_changes(...)",
+      "range": {
+        "startLine": 276,
+        "startChar": 9,
+        "endLine": 276,
+        "endChar": 19
+      },
+      "revId": "fc630326b595aa1c171590d6485a895b4de7e102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d1134f1_062e58f4",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-16T04:33:58Z",
+      "side": 1,
+      "message": "Great. Got it.",
+      "parentUuid": "bc8b0275_ea5676e4",
       "range": {
         "startLine": 276,
         "startChar": 9,

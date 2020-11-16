@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5c56c5b0_68ace322",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-16T18:25:33Z",
+      "side": 1,
+      "message": "That won\u0027t work as bot_update can have no patch (hence \u003c\u003d 1). While I agree with you that having a boolean for assertion only feels off, I\u0027m not sure what else can we do.",
+      "parentUuid": "e3d1ae7c_4121874b",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 51
+      },
+      "revId": "d885281881ae3ad4697090e1f1421c95892db7ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d601e9a7_98ef6962",
         "filename": "recipes/recipe_modules/tryserver/examples/full.py",
         "patchSetId": 12

@@ -115,6 +115,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "03ec42dd_e339c224",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-16T21:05:46Z",
+      "side": 1,
+      "message": "Since path\u003dTrue is default, I wouldn\u0027t be surprised if there is cases where we\u0027d expect it to be false, but it\u0027s not set.",
+      "parentUuid": "824a6e1e_5a2b6168",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 51
+      },
+      "revId": "d885281881ae3ad4697090e1f1421c95892db7ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d601e9a7_98ef6962",
         "filename": "recipes/recipe_modules/tryserver/examples/full.py",
         "patchSetId": 12

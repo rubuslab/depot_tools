@@ -65,6 +65,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "700935d4_864dbcd8",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-16T18:37:09Z",
+      "side": 1,
+      "message": "I am not prone to change it, though I feel the weirdness too ^^;\nBecause I do not have a good context of all users of bot_update. I am trying to guarantee this CL does not change the behavior of bot_update for existing users. That being said, if users do not update their code, this change should be invisible.\nBetter to leave SDK team to perfect it in the future.",
+      "parentUuid": "5c56c5b0_68ace322",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 51
+      },
+      "revId": "d885281881ae3ad4697090e1f1421c95892db7ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d601e9a7_98ef6962",
@@ -78,6 +102,30 @@
       "writtenOn": "2020-11-16T16:44:23Z",
       "side": 1,
       "message": "It would be good to have some assertions to ensure that the getters that depend on the value of the change return different values.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 18
+      },
+      "revId": "d885281881ae3ad4697090e1f1421c95892db7ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c571795c_9ea3d487",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-16T18:37:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d601e9a7_98ef6962",
       "range": {
         "startLine": 55,
         "startChar": 0,

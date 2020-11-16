@@ -9,9 +9,22 @@ import os
 import sys
 import unittest
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if sys.version_info.major == 2:
+  import mock
+  from StringIO import StringIO
+  BUILTIN_OPEN = '__builtin__.open'
+else:
+  from io import StringIO
+  from unittest import mock
+  BUILTIN_OPEN = 'builtins.open'
 
-from testing_support import filesystem_mock
+try:
+  # This fallback applies for all versions of Python before 3.3
+  import collections.abc as collections_abc
+except ImportError:
+  import collections as collections_abc
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import owners
 
@@ -39,7 +52,7 @@ def owners_file(*email_addresses, **kwargs):
 
 
 def test_repo():
-  return filesystem_mock.MockFileSystem(files={
+  return {
     '/DEPS' : '',
     '/OWNERS': owners_file(owners.EVERYONE),
     '/base/vlog.h': '',
@@ -70,34 +83,35 @@ def test_repo():
     '/content/views/OWNERS': owners_file(ben, john, owners.EVERYONE,
                                          noparent=True),
     '/content/views/pie.h': '',
-  })
+  }
+
+
 
 
 class _BaseTestCase(unittest.TestCase):
   def setUp(self):
-    self.repo = test_repo()
-    self.files = self.repo.files
+    self.files = test_repo()
     self.root = '/'
-    self.fopen = self.repo.open_for_reading
+    mock.patch('owners._readlines', lambda f: StringIO(self.files[f])).start()
+    mock.patch('os.path.exists', lambda f: f in self.files).start()
+    self.addCleanup(mock.patch.stopall)
 
   def db(self, root=None, fopen=None, os_path=None):
     root = root or self.root
-    fopen = fopen or self.fopen
-    os_path = os_path or self.repo
     # pylint: disable=no-value-for-parameter
-    return owners.Database(root, fopen, os_path)
+    return owners.Database(root)
 
 
 class OwnersDatabaseTest(_BaseTestCase):
   def test_constructor(self):
-    self.assertNotEquals(self.db(), None)
+    self.assertNotEqual(self.db(), None)
 
   def test_files_not_covered_by__valid_inputs(self):
     db = self.db()
 
     # Check that we're passed in a sequence that isn't a string.
     self.assertRaises(AssertionError, db.files_not_covered_by, 'foo', [])
-    if hasattr(owners.collections, 'Iterable'):
+    if hasattr(owners.collections_abc, 'Iterable'):
       self.assertRaises(AssertionError, db.files_not_covered_by,
                         (f for f in ['x', 'y']), [])
 
@@ -238,12 +252,6 @@ class OwnersDatabaseTest(_BaseTestCase):
   def test_per_file_wildcard(self):
     self.files['/OWNERS'] = 'per-file DEPS=*\n'
     self.assert_files_not_covered_by(['DEPS'], [brett], [])
-
-  def test_mock_relpath(self):
-    # This test ensures the mock relpath has the arguments in the right
-    # order; this should probably live someplace else.
-    self.assertEqual(self.repo.relpath('foo/bar.c', 'foo/'), 'bar.c')
-    self.assertEqual(self.repo.relpath('/bar.c', '/'), 'bar.c')
 
   def test_per_file_glob_across_dirs_not_allowed(self):
     self.files['/OWNERS'] = 'per-file content/*=john@example.org\n'
@@ -425,7 +433,7 @@ class ReviewersForTest(_BaseTestCase):
 
     # Check that we're passed in a sequence that isn't a string.
     self.assertRaises(AssertionError, db.reviewers_for, 'foo', None)
-    if hasattr(owners.collections, 'Iterable'):
+    if hasattr(owners.collections_abc, 'Iterable'):
       self.assertRaises(AssertionError, db.reviewers_for,
                         (f for f in ['x', 'y']), None)
 

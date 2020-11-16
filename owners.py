@@ -86,6 +86,11 @@ GLOBAL_STATUS = '*'
 ANYONE='<anyone>'
 
 
+def _readlines(path):
+  with open(path) as f:
+    return f.read().splitlines()
+
+
 def _assert_is_collection(obj):
   assert not isinstance(obj, str)
   # Module 'collections' has no 'Iterable' member
@@ -113,16 +118,11 @@ class Database(object):
   of changed files, and see if a list of changed files is covered by a
   list of reviewers."""
 
-  def __init__(self, root, fopen, os_path):
+  def __init__(self, root):
     """Args:
       root: the path to the root of the Repository
-      open: function callback to open a text file for reading
-      os_path: module/object callback with fields for 'abspath', 'dirname',
-          'exists', 'join', and 'relpath'
     """
     self.root = root
-    self.fopen = fopen
-    self.os_path = os_path
 
     # Pick a default email regexp to use; callers can override as desired.
     self.email_regexp = re.compile(BASIC_EMAIL_REGEXP)
@@ -169,7 +169,7 @@ class Database(object):
 
   def _file_affects_ownership(self, path):
     """Returns true if the path refers to a file that could affect ownership."""
-    filename = self.os_path.split(path)[-1]
+    filename = os.path.split(path)[-1]
     return filename == 'OWNERS' or filename.endswith('_OWNERS')
 
 
@@ -201,20 +201,20 @@ class Database(object):
     self._check_reviewers(reviewers)
     self.load_data_needed_for(files)
 
-    return set(f for f in files if not self._is_obj_covered_by(f, reviewers))
+    return set(f for f in files if not self.is_covered_by(f, reviewers))
 
   def _check_paths(self, files):
     def _is_under(f, pfx):
-      return self.os_path.abspath(self.os_path.join(pfx, f)).startswith(pfx)
+      return os.path.abspath(os.path.join(pfx, f)).startswith(pfx)
     _assert_is_collection(files)
-    assert all(not self.os_path.isabs(f) and
-                _is_under(f, self.os_path.abspath(self.root)) for f in files)
+    assert all(not os.path.isabs(f) and
+                _is_under(f, os.path.abspath(self.root)) for f in files)
 
   def _check_reviewers(self, reviewers):
     _assert_is_collection(reviewers)
     assert all(self.email_regexp.match(r) for r in reviewers), reviewers
 
-  def _is_obj_covered_by(self, objname, reviewers):
+  def is_covered_by(self, objname, reviewers):
     reviewers = list(reviewers) + [EVERYONE]
     while True:
       for reviewer in reviewers:
@@ -223,7 +223,7 @@ class Database(object):
             return True
       if self._should_stop_looking(objname):
         break
-      objname = self.os_path.dirname(objname)
+      objname = os.path.dirname(objname)
     return False
 
   def enclosing_dir_with_owners(self, objname):
@@ -232,7 +232,7 @@ class Database(object):
     while not self._owners_for(dirpath):
       if self._should_stop_looking(dirpath):
         break
-      dirpath = self.os_path.dirname(dirpath)
+      dirpath = os.path.dirname(dirpath)
     return dirpath
 
   def load_data_needed_for(self, files):
@@ -241,18 +241,18 @@ class Database(object):
     for f in files:
       # Always use slashes as separators.
       f = f.replace(os.sep, '/')
-      dirpath = self.os_path.dirname(f)
+      dirpath = os.path.dirname(f)
       while dirpath not in visited_dirs:
         visited_dirs.add(dirpath)
 
         obj_owners = self._owners_for(dirpath)
         if obj_owners:
           break
-        self._read_owners(self.os_path.join(dirpath, 'OWNERS'))
+        self._read_owners(os.path.join(dirpath, 'OWNERS'))
         if self._should_stop_looking(dirpath):
           break
 
-        dirpath = self.os_path.dirname(dirpath)
+        dirpath = os.path.dirname(dirpath)
 
   def _should_stop_looking(self, objname):
     dirname = objname
@@ -261,7 +261,7 @@ class Database(object):
         if any(self._fnmatch(objname, stop_looking)
                for stop_looking in self._stop_looking[dirname]):
           return True
-      up_dirname = self.os_path.dirname(dirname)
+      up_dirname = os.path.dirname(dirname)
       if up_dirname == dirname:
         break
       dirname = up_dirname
@@ -272,7 +272,7 @@ class Database(object):
     |obj_name|."""
     root_affected_dir = obj_name
     while '*' in root_affected_dir:
-      root_affected_dir = self.os_path.dirname(root_affected_dir)
+      root_affected_dir = os.path.dirname(root_affected_dir)
     return root_affected_dir
 
   def _owners_for(self, objname):
@@ -287,7 +287,7 @@ class Database(object):
         for owned_path, path_owners in dir_owner_rules.items():
           if self._fnmatch(objname, owned_path):
             obj_owners |= path_owners
-      up_dirname = self.os_path.dirname(dirname)
+      up_dirname = os.path.dirname(dirname)
       if up_dirname == dirname:
         break
       dirname = up_dirname
@@ -295,8 +295,8 @@ class Database(object):
     return obj_owners
 
   def _read_owners(self, path):
-    owners_path = self.os_path.join(self.root, path)
-    if not (self.os_path.exists(owners_path) or (path in self.override_files)):
+    owners_path = os.path.join(self.root, path)
+    if not (os.path.exists(owners_path) or (path in self.override_files)):
       return
 
     if owners_path in self.read_files:
@@ -307,7 +307,7 @@ class Database(object):
     is_toplevel = path == 'OWNERS'
 
     comment = []
-    dirpath = self.os_path.dirname(path)
+    dirpath = os.path.dirname(path)
     in_comment = False
     # We treat the beginning of the file as an blank line.
     previous_line_was_blank = True
@@ -317,7 +317,7 @@ class Database(object):
     if path in self.override_files:
       file_iter = self.override_files[path]
     else:
-      file_iter = self.fopen(owners_path)
+      file_iter = _readlines(owners_path)
 
     for line in file_iter:
       lineno += 1
@@ -357,12 +357,12 @@ class Database(object):
       if m:
         glob_string = m.group(1).strip()
         directive = m.group(2).strip()
-        full_glob_string = self.os_path.join(self.root, dirpath, glob_string)
+        full_glob_string = os.path.join(self.root, dirpath, glob_string)
         if '/' in glob_string or '\\' in glob_string:
           raise SyntaxErrorInOwnersFile(owners_path, lineno,
               'per-file globs cannot span directories or use escapes: "%s"' %
               line)
-        relative_glob_string = self.os_path.relpath(full_glob_string, self.root)
+        relative_glob_string = os.path.relpath(full_glob_string, self.root)
         self._add_entry(relative_glob_string, directive, owners_path,
                         lineno, '\n'.join(comment + line_comment))
         if reset_comment_after_use:
@@ -385,8 +385,8 @@ class Database(object):
       if not self._status_file:
         return
 
-    owners_status_path = self.os_path.join(self.root, self._status_file)
-    if not self.os_path.exists(owners_status_path):
+    owners_status_path = os.path.join(self.root, self._status_file)
+    if not os.path.exists(owners_status_path):
       raise IOError('Could not find global status file "%s"' %
                     owners_status_path)
 
@@ -396,7 +396,7 @@ class Database(object):
     self.read_files.add(owners_status_path)
 
     lineno = 0
-    for line in self.fopen(owners_status_path):
+    for line in _readlines(owners_status_path):
       lineno += 1
       line = line.strip()
       if line.startswith('#'):
@@ -456,13 +456,13 @@ class Database(object):
       include_path = path[2:]
     else:
       assert start.startswith(self.root)
-      start = self.os_path.dirname(self.os_path.relpath(start, self.root))
-      include_path = self.os_path.normpath(self.os_path.join(start, path))
+      start = os.path.dirname(os.path.relpath(start, self.root))
+      include_path = os.path.normpath(os.path.join(start, path))
 
     if include_path in self.override_files:
       return include_path
 
-    owners_path = self.os_path.join(self.root, include_path)
+    owners_path = os.path.join(self.root, include_path)
     # Paths included via "file:" must end in OWNERS or _OWNERS. Files that can
     # affect ownership have a different set of ownership rules, so that users
     # cannot self-approve changes adding themselves to an OWNERS file.
@@ -470,7 +470,7 @@ class Database(object):
       raise SyntaxErrorInOwnersFile(start, lineno, 'file: include must specify '
                                     'a file named OWNERS or ending in _OWNERS')
 
-    if not self.os_path.exists(owners_path):
+    if not os.path.exists(owners_path):
       return None
 
     return include_path
@@ -485,7 +485,7 @@ class Database(object):
     if include_file in self.override_files:
       file_iter = self.override_files[include_file]
     else:
-      file_iter = self.fopen(self.os_path.join(self.root, include_file))
+      file_iter = _readlines(os.path.join(self.root, include_file))
     for line in file_iter:
       lineno += 1
       line = line.strip()
@@ -547,7 +547,7 @@ class Database(object):
         res.setdefault(owner, [])
         res[owner] = (dir_or_file, 1)
       if not self._should_stop_looking(dirname):
-        dirname = self.os_path.dirname(dirname)
+        dirname = os.path.dirname(dirname)
 
         parent_res = self._all_possible_owners_for_dir_or_file(dirname,
                                                                author, cache)

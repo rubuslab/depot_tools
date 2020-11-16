@@ -2608,7 +2608,7 @@ the current line as well!
     owners_file = StringIO(owners_content)
     fopen = lambda *args: owners_file
 
-    input_api.owners_db = owners.Database('', fopen, os.path)
+    input_api.owners_db = owners.Database('')
 
     return input_api
 

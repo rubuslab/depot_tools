@@ -29,7 +29,6 @@ class OwnersFinder(object):
   indentation = 0
 
   def __init__(self, files, local_root, author, reviewers,
-               fopen, os_path,
                email_postfix='@chromium.org',
                disable_color=False,
                override_files=None,
@@ -42,11 +41,9 @@ class OwnersFinder(object):
       self.COLOR_GREY = ''
       self.COLOR_RESET = ''
 
-    self.db = owners_module.Database(local_root, fopen, os_path)
+    self.db = owners_module.Database(local_root)
     self.db.override_files = override_files or {}
     self.db.load_data_needed_for(files)
-
-    self.os_path = os_path
 
     self.author = author
 
@@ -64,7 +61,7 @@ class OwnersFinder(object):
     if len(filtered_files) != len(files):
       files = filtered_files
       # Reload the database.
-      self.db = owners_module.Database(local_root, fopen, os_path)
+      self.db = owners_module.Database(local_root)
       self.db.override_files = override_files or {}
       self.db.load_data_needed_for(files)
 

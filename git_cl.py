@@ -2633,8 +2633,7 @@ class ChangeDescription(object):
 
     # Next, maybe fill in OWNERS coverage gaps to either tbrs/reviewers.
     if add_owners_to:
-      owners_db = owners.Database(settings.GetRoot(),
-                                  fopen=open, os_path=os.path)
+      owners_db = owners.Database(settings.GetRoot())
       missing_files = owners_db.files_not_covered_by(affected_files,
                                                      (tbrs | reviewers))
       LOOKUP[add_owners_to].update(
@@ -4748,7 +4747,7 @@ def CMDowners(parser, args):
       return 0
     for arg in args:
       base_branch = cl.GetCommonAncestorWithUpstream()
-      database = owners.Database(settings.GetRoot(), open, os.path)
+      database = owners.Database(settings.GetRoot())
       database.load_data_needed_for([arg])
       print('Owners for %s:' % arg)
       for owner in sorted(database.all_possible_owners([arg], None)):
@@ -4767,7 +4766,7 @@ def CMDowners(parser, args):
   affected_files = cl.GetAffectedFiles(base_branch)
 
   if options.batch:
-    db = owners.Database(root, open, os.path)
+    db = owners.Database(root)
     print('\n'.join(db.reviewers_for(affected_files, author)))
     return 0
 

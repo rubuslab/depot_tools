@@ -651,8 +651,7 @@ class InputApi(object):
 
     # TODO(dpranke): figure out a list of all approved owners for a repo
     # in order to be able to handle wildcard OWNERS files?
-    self.owners_db = owners.Database(change.RepositoryRoot(),
-                                     fopen=open, os_path=self.os_path)
+    self.owners_db = owners.Database(change.RepositoryRoot())
     self.owners_finder = owners_finder.OwnersFinder
     self.verbose = verbose
     self.Command = CommandData

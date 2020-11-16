@@ -9,10 +9,16 @@ import os
 import sys
 import unittest
 
+if sys.version_info.major == 2:
+  import mock
+  from StringIO import StringIO
+  BUILTIN_OPEN = '__builtin__.open'
+else:
+  from io import StringIO
+  from unittest import mock
+  BUILTIN_OPEN = 'builtins.open'
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from testing_support import filesystem_mock
 
 import owners_finder
 import owners
@@ -39,7 +45,7 @@ def owners_file(*email_addresses, **kwargs):
 
 
 def test_repo():
-  return filesystem_mock.MockFileSystem(files={
+  return {
     '/DEPS': '',
     '/OWNERS': owners_file(ken, peter, tom,
                            comment='OWNERS_STATUS = build/OWNERS.status'),
@@ -67,15 +73,14 @@ def test_repo():
     '/content/views/OWNERS': owners_file(ben, john, owners.EVERYONE,
                                          noparent=True),
     '/content/views/pie.h': '',
-  })
+  }
 
 
 class OutputInterceptedOwnersFinder(owners_finder.OwnersFinder):
   def __init__(self, files, local_root, author, reviewers,
-               fopen, os_path, disable_color=False):
+               disable_color=False):
     super(OutputInterceptedOwnersFinder, self).__init__(
-      files, local_root, author, reviewers, fopen, os_path,
-      disable_color=disable_color)
+      files, local_root, author, reviewers, disable_color=disable_color)
     self.output = []
     self.indentation_stack = []
 
@@ -112,19 +117,15 @@ class _BaseTestCase(unittest.TestCase):
 
   def setUp(self):
     self.repo = test_repo()
+    mock.patch('owners._readlines', lambda f: StringIO(self.repo[f])).start()
+    mock.patch('os.path.exists', lambda f: f in self.repo).start()
+    self.addCleanup(mock.patch.stopall)
     self.root = '/'
-    self.fopen = self.repo.open_for_reading
 
   def ownersFinder(self, files, author=nonowner, reviewers=None):
     reviewers = reviewers or []
-    finder = OutputInterceptedOwnersFinder(files,
-                                           self.root,
-                                           author,
-                                           reviewers,
-                                           fopen=self.fopen,
-                                           os_path=self.repo,
-                                           disable_color=True)
-    return finder
+    return OutputInterceptedOwnersFinder(
+        files, self.root, author, reviewers, disable_color=True)
 
   def defaultFinder(self):
     return self.ownersFinder(self.default_files)

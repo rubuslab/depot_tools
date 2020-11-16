@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e3d1ae7c_4121874b",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-11-16T17:53:37Z",
+      "side": 1,
+      "message": "Actually, this is a little weird to have a boolean that doesn\u0027t impact behavior and just causes an assertion, how about instead, in the if patch case, it just asserts that self.m.tryserver.gerrit_change is not None?",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 51
+      },
+      "revId": "d885281881ae3ad4697090e1f1421c95892db7ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d601e9a7_98ef6962",
         "filename": "recipes/recipe_modules/tryserver/examples/full.py",
         "patchSetId": 12

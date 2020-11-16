@@ -8,7 +8,7 @@ This script (intended to be invoked by autoninja or autoninja.bat) detects
 whether a build is accelerated using a service like goma. If so, it runs with a
 large -j value, and otherwise it chooses a small one. This auto-adjustment
 makes using remote build acceleration simpler and safer, and avoids errors that
-can cause slow goma builds or swap-storms on unaccelerated builds.
+can cause slow goma builds or x swap-storms on unaccelerated builds.
 """
 
 # [VPYTHON:BEGIN]

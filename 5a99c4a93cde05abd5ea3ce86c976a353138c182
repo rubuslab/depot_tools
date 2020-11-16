@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce017c6f_4287e25e",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2020-11-16T19:25:57Z",
+      "side": 1,
+      "message": "Similar. The value is made of host, project, and rel_path, and can be different, depending on where the presubmit runs. Also, depot_tools self launches rdb-stream with \"-new\". Use of the flag doesn\u0027t seem the best choice in this context.",
+      "parentUuid": "46ca4842_39954357",
+      "range": {
+        "startLine": 35,
+        "startChar": 23,
+        "endLine": 35,
+        "endChar": 38
+      },
+      "revId": "5a99c4a93cde05abd5ea3ce86c976a353138c182",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7b24898_15ac059e",
@@ -43,6 +67,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "207c7561_92d93c79",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2020-11-16T19:25:57Z",
+      "side": 1,
+      "message": "We could put the result of the presubmit test in summary_html, but would need to truncate it if it\u0027s too long, and uploads the full-text as an artifact. I can write a separate CL, if it SGTY.",
+      "parentUuid": "d7b24898_15ac059e",
+      "revId": "5a99c4a93cde05abd5ea3ce86c976a353138c182",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "905a9fa3_e34bd6a8",
         "filename": "rdb_wrapper.py",
         "patchSetId": 12
@@ -54,6 +96,30 @@
       "writtenOn": "2020-11-14T04:42:51Z",
       "side": 1,
       "message": "same question here. If it\u0027s a different prefix, probably explain it in the docstring?",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 18
+      },
+      "revId": "5a99c4a93cde05abd5ea3ce86c976a353138c182",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26fc12a4_c38e0f38",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2020-11-16T19:25:57Z",
+      "side": 1,
+      "message": "--test_id_prefix is a flag of `rdb stream` command. The flag is not visible to ResultSink API clients, and not part of the protocol. I don\u0027t think this param name will make any confusion?",
+      "parentUuid": "905a9fa3_e34bd6a8",
       "range": {
         "startLine": 52,
         "startChar": 4,

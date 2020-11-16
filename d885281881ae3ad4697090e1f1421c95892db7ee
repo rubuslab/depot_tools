@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d601e9a7_98ef6962",
+        "filename": "recipes/recipe_modules/tryserver/examples/full.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2020-11-16T16:44:23Z",
+      "side": 1,
+      "message": "It would be good to have some assertions to ensure that the getters that depend on the value of the change return different values.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 18
+      },
+      "revId": "d885281881ae3ad4697090e1f1421c95892db7ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

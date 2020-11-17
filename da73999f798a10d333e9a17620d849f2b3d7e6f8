@@ -1,6 +1,75 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "502d5d2c_66179b19",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-11-17T05:14:57Z",
+      "side": 1,
+      "message": "this is not a good name because it does not correspond to the logic. \nthis name and \"If True, the input size is asserted to be one\" talk about different things.\n\nproblems:\n- builducket input has other things, e.g. biuld.input.gitiles_commit. It is being used regardless of this parameter.\n- buildbucket.gerrit_changes[0] is used regardless of this parameter.",
+      "range": {
+        "startLine": 126,
+        "startChar": 8,
+        "endLine": 126,
+        "endChar": 32
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7779f904_44be79d3",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-11-17T05:14:57Z",
+      "side": 1,
+      "message": "what is \"input size\"? this is abstract / unclear.\nproperties are also input.\n\nplease make this specific/concrete",
+      "range": {
+        "startLine": 127,
+        "startChar": 60,
+        "endLine": 127,
+        "endChar": 72
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8269409e_cf8aec67",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-11-17T05:14:57Z",
+      "side": 1,
+      "message": "sounds convoluted. Why not pass the change as parameter in this func?",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 24
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "58f7838f_e2b0d6f0",

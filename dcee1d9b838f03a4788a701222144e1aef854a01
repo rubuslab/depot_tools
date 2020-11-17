@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "719cbbd0_e2ec6f5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-17T13:58:54Z",
+      "side": 1,
+      "message": "tbh, i have similar concerns to Nodir about new flag to bot_update, as well as that set_change mutates tryserver state, which some modules have assumed to be immutable, but:\n1. I think .tryserver, .bot_update and probably .gclient modules are long overdue for a rethink. Probably one has to just create brand new and **fast** gclientv2 + beefier functionality in `gerrit` recipe module, and then let prior modules slowly bitrot.\n2. I\u0027m not owning this code any more, so I don\u0027t want to block any development here.\n\nSo, LGTM.",
+      "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "98b8de76_5f9f0d75",
@@ -43,6 +60,47 @@
         "endLine": 267,
         "endChar": 50
       },
+      "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf55c8ba_ba42a0ff",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-17T13:58:54Z",
+      "side": 1,
+      "message": "Consider \n  assert change.host.endswith(gs_suffix) is True, change.host\ns.t. assertion failure quickly shows actual host.",
+      "parentUuid": "80ecbc3c_6d314333",
+      "range": {
+        "startLine": 267,
+        "startChar": 4,
+        "endLine": 267,
+        "endChar": 50
+      },
+      "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1409fb3_a8ae1645",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-17T13:58:54Z",
+      "side": 1,
+      "message": "In this case, it\u0027s actually `git_host` since you\u0027ve already removed `-review`",
       "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5565e83_c7636972",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T23:50:31Z",
+      "side": 1,
+      "message": "Hi folks, \n\nSorry if this CL spams you. I finally figure out that this CL probably slightly change the behavior of tryserver. Although in a desired way*, it may modify some tests in the downstream repo.\n\nI updated the CL description and added Recipe-Manual-Change footer. I will submit it in 24 hour. Stop me if this is risky.\n\nMany thanks.\n\n*: if the given gerrit host is not valid, no need to initilize tryserver\u0027s property, e.g. gerrit_change.",
+      "revId": "3d66c721797303a1a5ae00b90f7525636c64c3c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

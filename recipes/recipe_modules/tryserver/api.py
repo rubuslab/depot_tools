@@ -261,7 +261,7 @@ class TryserverApi(recipe_api.RecipeApi):
     """Set the gerrit change for this module.
 
     Args:
-      * cl: a GerritChange object.
+      * change: a self.m.buildbucket.common_pb2.GerritChange.
     """
     self._gerrit_info_initialized = False
     self._gerrit_change = change

@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58f7838f_e2b0d6f0",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-17T04:05:46Z",
+      "side": 1,
+      "message": "^",
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b181c9ab_6016697b",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-17T04:05:46Z",
+      "side": 1,
+      "message": "change",
+      "range": {
+        "startLine": 264,
+        "startChar": 8,
+        "endLine": 264,
+        "endChar": 10
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a27b0a6_24982239",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-17T04:05:46Z",
+      "side": 1,
+      "message": "is this bb\u0027s GerritChange? If so, please use the same doc as above in this file.",
+      "range": {
+        "startLine": 264,
+        "startChar": 14,
+        "endLine": 264,
+        "endChar": 26
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8284a25f_7b5138de",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-17T04:05:46Z",
+      "side": 1,
+      "message": "bb\u0027s GerritChange.host is actually Gerrit host, not Git host.",
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

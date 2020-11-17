@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4179099c_8d7753cc",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T22:56:58Z",
+      "side": 1,
+      "message": "I think we have to remove it.\n\nAlthough I want it to fail loudly, it breaks some downstream repos, e.g. http://shortn/_ug4FGdn6OC.\n\nI _guess_ in some recipe tests, users are fine with a tryserver not setup, rather than a crash.",
+      "range": {
+        "startLine": 267,
+        "startChar": 4,
+        "endLine": 267,
+        "endChar": 63
+      },
+      "revId": "de45270b7e3af453184c998b7c6eedad48b50873",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

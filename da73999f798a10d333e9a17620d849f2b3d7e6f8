@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9ad15ba_8a782ee3",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T07:21:55Z",
+      "side": 1,
+      "message": "Thanks for this. I was not aware of gitiles_commit. I thought it was not used anymore.\n\nI will reword it in go/crrv/c/2544000.\n\n\u003e buildbucket.gerrit_changes[0] is used regardless of this parameter.\nThis seems not true. bot_update reads change from tryserver, which may or may not come from buildbucket.",
+      "parentUuid": "502d5d2c_66179b19",
+      "range": {
+        "startLine": 126,
+        "startChar": 8,
+        "endLine": 126,
+        "endChar": 32
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7779f904_44be79d3",
@@ -47,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a94c9a4_baa67f32",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T07:21:55Z",
+      "side": 1,
+      "message": "Ack. I will reword it in next CL.",
+      "parentUuid": "7779f904_44be79d3",
+      "range": {
+        "startLine": 127,
+        "startChar": 60,
+        "endLine": 127,
+        "endChar": 72
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8269409e_cf8aec67",
@@ -60,6 +108,30 @@
       "writtenOn": "2020-11-17T05:14:57Z",
       "side": 1,
       "message": "sounds convoluted. Why not pass the change as parameter in this func?",
+      "range": {
+        "startLine": 129,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 24
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "707cca9a_648c9abf",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T07:21:55Z",
+      "side": 1,
+      "message": "Because the original code does not read the change from the input. The purpose of this CL is to move the crash out of initialization.",
+      "parentUuid": "8269409e_cf8aec67",
       "range": {
         "startLine": 129,
         "startChar": 8,
@@ -133,6 +205,54 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55f12694_1f659507",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T07:21:55Z",
+      "side": 1,
+      "message": "Ack. go/crrv/c/2544000.",
+      "parentUuid": "9a27b0a6_24982239",
+      "range": {
+        "startLine": 264,
+        "startChar": 14,
+        "endLine": 264,
+        "endChar": 26
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69c9999f_6ec4b71c",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T07:21:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b181c9ab_6016697b",
+      "range": {
+        "startLine": 264,
+        "startChar": 8,
+        "endLine": 264,
+        "endChar": 10
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8284a25f_7b5138de",
@@ -150,6 +270,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "84254bc3_088ddb99",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T07:21:55Z",
+      "side": 1,
+      "message": "Errr. I just ctrl-c and ctrl-v...\n\nI try to fix them in go/crrv/c/2544000.",
+      "parentUuid": "8284a25f_7b5138de",
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cbd44d0_01ab5c69",
@@ -163,6 +301,30 @@
       "writtenOn": "2020-11-17T04:08:55Z",
       "side": 1,
       "message": "and if not? better fail loudly.",
+      "range": {
+        "startLine": 270,
+        "startChar": 4,
+        "endLine": 270,
+        "endChar": 36
+      },
+      "revId": "da73999f798a10d333e9a17620d849f2b3d7e6f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "865f674d_f21edc25",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T07:21:55Z",
+      "side": 1,
+      "message": "Same.",
+      "parentUuid": "6cbd44d0_01ab5c69",
       "range": {
         "startLine": 270,
         "startChar": 4,

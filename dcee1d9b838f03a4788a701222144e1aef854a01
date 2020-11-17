@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98b8de76_5f9f0d75",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T07:43:23Z",
+      "side": 1,
+      "message": "@Nodir\n\n\u003e \"input size\"? ... please make this specific/concrete\nClarified the input size is of buildbucket.build.input.gerrit_changes.\n\nAs we used \"ignore_input_commit\" to ignore buildbucket.input.gitiles_commit above, I think it is nature to use input_gerrit_changes to represent buildbucket.build.input.gerrit_changes.",
+      "range": {
+        "startLine": 126,
+        "startChar": 8,
+        "endLine": 126,
+        "endChar": 35
+      },
+      "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80ecbc3c_6d314333",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T07:43:23Z",
+      "side": 1,
+      "message": "@Andrii\n\n1. added assert to fail loudly.\n2. rename to gerrit_host",
+      "range": {
+        "startLine": 267,
+        "startChar": 4,
+        "endLine": 267,
+        "endChar": 50
+      },
+      "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

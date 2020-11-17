@@ -65,6 +65,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8371099d_ea3a8c9b",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T17:42:47Z",
+      "side": 1,
+      "message": "\u003e it input gerrit changes are still used indirectly in L178\nI don\u0027t think so. It is self.m.tryserver.gerrit_change_repo_url, which now can be set by consumer via tryserver.set_change(). set_change() accept a Gerrit change, which may not come from self.m.buildbucket.build.input.gerrit_changes. \n\n\u003e WDYT about my proposal to pass the change as a parameter here?\nIf I do so, I think I should replace all tryserver.gerrit_change_* and make the change passed here the source of truth. Or we pass [changes], and assert its size should be one. \nThe former will bring more work and almost refactor this module. While the later is confusing, because we passed the changes, but only check its size. The real patch is still relying on tryserver.\n\nMy goal here is to move the assert out of initiliazation, thus roll testers could run for CrOS changes, thus we could import CrOS proto to chromium, thus LaCrOS builder could call cros_test_platform to run skylab test. \nI am happy to volunteer to perfect these depot_tool modules, but probably need longer time to learn more context before a marvellous CL.",
+      "parentUuid": "05c823e2_dbc2e750",
+      "range": {
+        "startLine": 126,
+        "startChar": 8,
+        "endLine": 126,
+        "endChar": 35
+      },
+      "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80ecbc3c_6d314333",
@@ -112,6 +136,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d81805e_c99af4cc",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T17:42:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "bf55c8ba_ba42a0ff",
+      "range": {
+        "startLine": 267,
+        "startChar": 4,
+        "endLine": 267,
+        "endChar": 50
+      },
+      "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1409fb3_a8ae1645",
@@ -125,6 +173,24 @@
       "writtenOn": "2020-11-17T13:58:54Z",
       "side": 1,
       "message": "In this case, it\u0027s actually `git_host` since you\u0027ve already removed `-review`",
+      "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aae7e648_7aa8294c",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-17T17:42:47Z",
+      "side": 1,
+      "message": "A good lesson of git host and gerrit host. Thanks.",
+      "parentUuid": "d1409fb3_a8ae1645",
       "revId": "dcee1d9b838f03a4788a701222144e1aef854a01",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -39,6 +39,47 @@
       },
       "revId": "722d9819f9b803f1f59b9f1ceb115e6ec4b2c6df",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23736f61_5c2ab816",
+        "filename": "owners.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-18T18:12:56Z",
+      "side": 1,
+      "message": "It\u0027s used in owners_client.py. I had forgotten to rename it in owners.py before adding the tests.",
+      "parentUuid": "97b29cfd_18eec554",
+      "range": {
+        "startLine": 217,
+        "startChar": 6,
+        "endLine": 217,
+        "endChar": 19
+      },
+      "revId": "722d9819f9b803f1f59b9f1ceb115e6ec4b2c6df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f625a660_9aae13b9",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-18T18:12:56Z",
+      "side": 1,
+      "message": "It\u0027s used here.",
+      "revId": "722d9819f9b803f1f59b9f1ceb115e6ec4b2c6df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

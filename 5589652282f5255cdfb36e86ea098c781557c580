@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d12ed4a6_26fbdc71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-19T01:36:13Z",
+      "side": 1,
+      "message": "lgtm % it hasn\u0027t broken the infra repo, at least not yet. Those are are just expectations",
+      "revId": "5589652282f5255cdfb36e86ea098c781557c580",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "518cfd11_b1834b23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-19T21:55:44Z",
+      "side": 1,
+      "message": "lgtm as is, but might be better to move it to base class.",
+      "revId": "97bbcfa7f9a31e19c06f5c4707cbdb588ad8e476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8bcfcd9_9b4a2b59",
+        "filename": "tests/git_common_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-19T21:55:44Z",
+      "side": 1,
+      "message": "set it here?",
+      "revId": "97bbcfa7f9a31e19c06f5c4707cbdb588ad8e476",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

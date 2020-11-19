@@ -80,7 +80,7 @@ class DepotToolsClientTest(unittest.TestCase):
 
   def testListOwners(self):
     client = owners_client.DepotToolsClient(
-        'host', '/', self.fopen, self.repo, 'branch')
+        'host', '/', 'branch', self.fopen, self.repo)
     self.assertEquals(
         ['*', 'missing@example.com'],
         client.ListOwnersForFile('project', 'branch', 'bar/everyone/foo.txt'))
@@ -88,7 +88,7 @@ class DepotToolsClientTest(unittest.TestCase):
   @mock.patch('gerrit_util.GetChange', return_value=_TEST_CHANGE)
   def testGetChangeApprovalStatus(self, _mock):
     client = owners_client.DepotToolsClient(
-        'host', '/', self.fopen, self.repo, 'branch')
+        'host', '/', 'branch', self.fopen, self.repo)
     self.assertEquals(
         {
             'approved.cc': owners_client.APPROVED,

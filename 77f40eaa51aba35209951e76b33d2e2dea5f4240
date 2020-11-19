@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aff759b9_21ab6a8c",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2020-11-19T22:58:25Z",
+      "side": 1,
+      "message": "i have a minor preference for the using intersection instead of ^ but I think the style guide doesn\u0027t care.",
+      "revId": "77f40eaa51aba35209951e76b33d2e2dea5f4240",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

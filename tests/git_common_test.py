@@ -840,6 +840,8 @@ class GitMutableStructuredTest(git_test_utils.GitRepoReadWriteTestBase,
     self.assertEqual(self.repo.git('status', '--porcelain').stdout, 'UU file\n')
     self.repo.git('checkout', '--theirs', 'file')
     self.repo.git('add', 'file')
+
+    os.environ["GIT_EDITOR"] = ":" # Supress git editor during rebase.
     self.repo.git('rebase', '--continue')
 
     self.assertSchema("""

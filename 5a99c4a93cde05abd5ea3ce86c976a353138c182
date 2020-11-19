@@ -170,6 +170,30 @@
       },
       "revId": "5a99c4a93cde05abd5ea3ce86c976a353138c182",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69b17b34_dbdd917e",
+        "filename": "rdb_wrapper.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2020-11-19T19:09:14Z",
+      "side": 1,
+      "message": "It doesn\u0027t yet, and I guess it won\u0027t.\nhttps://source.chromium.org/chromium/chromium/src/+/master:third_party/depot_tools/git_cl.py;l\u003d1314-1315;drc\u003d9abde8c3f3a2c0cfb2b78f772655352e094e612e\n\nPerhaps, it\u0027s better to remove \"test_id\" from the name. I will rename it to \"prefix\". PTAL",
+      "parentUuid": "cd8ef32e_ebc224eb",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 18
+      },
+      "revId": "5a99c4a93cde05abd5ea3ce86c976a353138c182",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

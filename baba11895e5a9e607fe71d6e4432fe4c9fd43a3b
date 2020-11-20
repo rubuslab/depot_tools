@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7cbb9ab_2abb14d5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-11-20T01:07:50Z",
+      "side": 1,
+      "message": "I\u0027m not sure if these warning messages are obsolete, or if they work properly in another context, but on my Linux cloudtop machine I find that \"git cl upload\" works perfectly as long as I ignore these warnings. Is it okay to delete them?\n\nThe gerrit_util.py message is the one that I am actually hitting, but deleting both seemed appropriate.\n\nI\u0027m not sure about line 106 of gerrit_util.py.",
+      "revId": "baba11895e5a9e607fe71d6e4432fe4c9fd43a3b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

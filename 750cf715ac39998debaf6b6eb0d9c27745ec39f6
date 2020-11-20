@@ -16,6 +16,24 @@
       "message": "Might be worth filing a bug to Gerrit, since not all bugs are auto-linked.",
       "revId": "750cf715ac39998debaf6b6eb0d9c27745ec39f6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a6da478_085f2bd6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-20T17:06:59Z",
+      "side": 1,
+      "message": "It\u0027s probably a known limit. I ended up removing Bug information since there\u0027s another failure regarding footer",
+      "parentUuid": "8259aa30_6fd6ed4a",
+      "revId": "750cf715ac39998debaf6b6eb0d9c27745ec39f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

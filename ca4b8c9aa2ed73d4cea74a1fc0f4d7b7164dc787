@@ -33,6 +33,29 @@
       "message": "Reland the readability part of go/crrev/c/2544000. \nAs the goal has revised(no change on the set_change()\u0027s logic), I updated the commit message.\n\nKindly please give a review.",
       "revId": "ca4b8c9aa2ed73d4cea74a1fc0f4d7b7164dc787",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "315b922b_3fe5a680",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-20T01:08:21Z",
+      "side": 1,
+      "message": "slightly incorrect. WDYT about simpler:\n\nthat there is at most one change.",
+      "range": {
+        "startLine": 127,
+        "startChar": 73,
+        "endLine": 128,
+        "endChar": 73
+      },
+      "revId": "ca4b8c9aa2ed73d4cea74a1fc0f4d7b7164dc787",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

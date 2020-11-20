@@ -56,6 +56,30 @@
       },
       "revId": "ca4b8c9aa2ed73d4cea74a1fc0f4d7b7164dc787",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abaf9148_880f6785",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2020-11-20T01:53:50Z",
+      "side": 1,
+      "message": "since you are renaming the param, consider aligning it with the meaning as well: assert_one_gerrit_change\nsince it has nothing to do with acceptance",
+      "parentUuid": "315b922b_3fe5a680",
+      "range": {
+        "startLine": 127,
+        "startChar": 73,
+        "endLine": 128,
+        "endChar": 73
+      },
+      "revId": "ca4b8c9aa2ed73d4cea74a1fc0f4d7b7164dc787",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

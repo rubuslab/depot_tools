@@ -16,6 +16,23 @@
       "message": "Reland the readability part of ",
       "revId": "ca4b8c9aa2ed73d4cea74a1fc0f4d7b7164dc787",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c417c59_446698a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-20T01:00:13Z",
+      "side": 1,
+      "message": "Reland the readability part of go/crrev/c/2544000. \nAs the goal has revised(no change on the set_change()\u0027s logic), I updated the commit message.\n\nKindly please give a review.",
+      "revId": "ca4b8c9aa2ed73d4cea74a1fc0f4d7b7164dc787",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

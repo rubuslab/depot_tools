@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddc4a670_bd7bb085",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2020-11-20T00:57:26Z",
+      "side": 1,
+      "message": "In some downstream repo tests, tryserver uses given change\u0027s host, no matter it is a gerrit host. I don\u0027t think this is correct in production, but if we modify this logic, we may bring some surprises to users, e.g. crrev.com/c/2548285.\n\nSo I would like to make this CL just improve the readability.",
+      "range": {
+        "startLine": 269,
+        "startChar": 4,
+        "endLine": 269,
+        "endChar": 22
+      },
+      "revId": "07fe31cd629afef988ff2049c138071afb25a317",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

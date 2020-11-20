@@ -370,10 +370,6 @@ def CreateHttpConn(host, path, reqtype='GET', headers=None, body=None):
   bare_host = host.partition(':')[0]
 
   a = Authenticator.get()
-  # TODO(crbug.com/1059384): Automatically detect when running on cloudtop.
-  if isinstance(a, GceAuthenticator):
-    print('If you\'re on a cloudtop instance, export '
-          'SKIP_GCE_AUTH_FOR_GIT=1 in your env.')
 
   a = a.get_auth_header(bare_host)
   if a:

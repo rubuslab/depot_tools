@@ -3156,12 +3156,6 @@ def CMDcreds_check(parser, args):
     message = (
         'This command is not designed for bot environment. It checks '
         '~/.gitcookies file not generally used on bots.')
-    # TODO(crbug.com/1059384): Automatically detect when running on cloudtop.
-    if isinstance(authn, gerrit_util.GceAuthenticator):
-      message += (
-          '\n'
-          'If you need to run this on GCE or a cloudtop instance, '
-          'export SKIP_GCE_AUTH_FOR_GIT=1 in your env.')
     DieWithError(message)
 
   checker = _GitCookiesChecker()

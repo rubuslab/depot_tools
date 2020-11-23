@@ -16,6 +16,24 @@
       "message": "PTAL.\n\nThe led job produced NOT what I expected: https://ci.chromium.org/raw/build/logs.chromium.org/chromium/led/nodir_google.com/7443880a02b5ede35aa1f49356f2da4a3eec2a4f7783fdb7ccb1bb4d5eea9f10/+/annotations?server\u003dchromium-swarm.appspot.com\nbut I suspect this is because it is a led ojb. True buildbucket builds report just \"DEPS\" in the \"file\" log \nhttps://logs.chromium.org/logs/chromium/buildbucket/cr-buildbucket.appspot.com/8863300462550787552/+/steps/git_diff_to_analyze_patch/0/logs/files/0",
       "revId": "ed55f91f15288741461b12e240afe82a250d17db",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "459545a0_65c69f3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2020-11-23T13:59:18Z",
+      "side": 1,
+      "message": "This is not good, bot not this CL\u0027s fault 😞 probably a bug that bot_update/gclient end up with different file list",
+      "parentUuid": "6a540b0a_fb0147fc",
+      "revId": "ed55f91f15288741461b12e240afe82a250d17db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

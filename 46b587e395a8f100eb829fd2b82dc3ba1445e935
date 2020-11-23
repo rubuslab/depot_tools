@@ -16,6 +16,23 @@
       "message": "Hey Francois,\n\nPTAL. Dirk for OWNERS approval, pretty please.\n\nSiggi",
       "revId": "46b587e395a8f100eb829fd2b82dc3ba1445e935",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "796b055d_789326e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002897
+      },
+      "writtenOn": "2020-11-23T20:31:17Z",
+      "side": 1,
+      "message": "LGTM (I don\u0027t have +1 permission on this project)",
+      "revId": "46b587e395a8f100eb829fd2b82dc3ba1445e935",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

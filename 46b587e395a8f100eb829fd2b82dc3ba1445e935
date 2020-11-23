@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "952e64f1_c76ec3e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1177549
+      },
+      "writtenOn": "2020-11-23T20:19:11Z",
+      "side": 1,
+      "message": "Hey Francois,\n\nPTAL. Dirk for OWNERS approval, pretty please.\n\nSiggi",
+      "revId": "46b587e395a8f100eb829fd2b82dc3ba1445e935",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

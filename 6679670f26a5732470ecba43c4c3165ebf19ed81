@@ -16,6 +16,23 @@
       "message": "PTAL\n",
       "revId": "6679670f26a5732470ecba43c4c3165ebf19ed81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "074a911a_16433c32",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-24T21:03:24Z",
+      "side": 1,
+      "message": "Is this going to be an external API call? My worry is that it may be very slow for changes that involve 50+ files. Is there an API that allows sending list of paths perhaps?",
+      "revId": "6679670f26a5732470ecba43c4c3165ebf19ed81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

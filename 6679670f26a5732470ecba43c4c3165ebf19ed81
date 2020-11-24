@@ -69,6 +69,24 @@
       "parentUuid": "b7201099_88bc596e",
       "revId": "6679670f26a5732470ecba43c4c3165ebf19ed81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e79ef21_eaeb9224",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-24T22:58:30Z",
+      "side": 1,
+      "message": "This code only runs when developers ask git-cl to suggest owners via git-cl owners or by passing --r-owners or --tbr-owners.\nThough we do something similar when uploading CLs to check for owners coverage.\n\nWe only use Depot Tools as a backend for OWNERS for now, so no requests are made, but will print some notices when we start using the Gerrit API.\n\nI\u0027ll reach out to Gerrit team.",
+      "parentUuid": "84c7cc09_7daf81c2",
+      "revId": "6679670f26a5732470ecba43c4c3165ebf19ed81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

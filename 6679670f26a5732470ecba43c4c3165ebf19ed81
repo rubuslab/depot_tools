@@ -33,6 +33,24 @@
       "message": "Is this going to be an external API call? My worry is that it may be very slow for changes that involve 50+ files. Is there an API that allows sending list of paths perhaps?",
       "revId": "6679670f26a5732470ecba43c4c3165ebf19ed81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7201099_88bc596e",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-11-24T21:10:23Z",
+      "side": 1,
+      "message": "Yes, it\u0027ll be an API call for Gerrit backend.\nThere is no API for batch calls, but they might add one on the future.",
+      "parentUuid": "074a911a_16433c32",
+      "revId": "6679670f26a5732470ecba43c4c3165ebf19ed81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

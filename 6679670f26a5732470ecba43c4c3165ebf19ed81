@@ -51,6 +51,24 @@
       "parentUuid": "074a911a_16433c32",
       "revId": "6679670f26a5732470ecba43c4c3165ebf19ed81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84c7cc09_7daf81c2",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-11-24T22:15:30Z",
+      "side": 1,
+      "message": "Do we expect this to run on each git cl upload? We may want to add inform users that we are fetching owners data via stdout message.\nIn any case, we should start a conversation about adding batch api with Gerrit folks.",
+      "parentUuid": "b7201099_88bc596e",
+      "revId": "6679670f26a5732470ecba43c4c3165ebf19ed81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

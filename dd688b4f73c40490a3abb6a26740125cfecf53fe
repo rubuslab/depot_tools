@@ -16,6 +16,23 @@
       "message": "there didn\u0027t seem to be a better place to put the real repo than \"repo_launcher\".  i thought about third_party/repo, but that already exists it seems, and i didn\u0027t want to mix things.",
       "revId": "dd688b4f73c40490a3abb6a26740125cfecf53fe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83600ec4_93e49c9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2020-11-25T06:55:41Z",
+      "side": 1,
+      "message": "ping ...",
+      "revId": "dd688b4f73c40490a3abb6a26740125cfecf53fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

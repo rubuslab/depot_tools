@@ -51,6 +51,24 @@
       "parentUuid": "bfc03ac8_32d5bccd",
       "revId": "dd688b4f73c40490a3abb6a26740125cfecf53fe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0116ed0b_6cd5dbd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2020-11-25T20:03:47Z",
+      "side": 1,
+      "message": "when people run `repo` in their CrOS checkout, they run the one in depot_tools.  that script is responsible for updating the .repo/repo/ copy in the checkout itself, and then executing that.  that\u0027s how new repo releases roll out without having to update depot_tools.\n\nafter this CL, when people run `repo`, it\u0027ll be this script that first updates depot_tools before running the repo launcher (which takes care of running the .repo/repo/ code).\n\nalthough i\u0027m going to tweak this logic after thinking more.  update_depot_tools isn\u0027t exactly cheap ... it seems to take almost 1 second in the nop case.  we also don\u0027t want to update on all operations, just `repo sync`.",
+      "parentUuid": "66e9c2cc_accbdcd3",
+      "revId": "dd688b4f73c40490a3abb6a26740125cfecf53fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

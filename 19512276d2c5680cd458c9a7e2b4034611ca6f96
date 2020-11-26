@@ -16,6 +16,24 @@
       "message": "ptal https://crbug.com/1153114#c5\n\nI think this needs to add repo_launcher to https://chromium.googlesource.com/chromium/tools/depot_tools/+/19512276d2c5680cd458c9a7e2b4034611ca6f96/.gitattributes\n\nThis has broken consumers of depot_tools\u0027 repo.",
       "revId": "19512276d2c5680cd458c9a7e2b4034611ca6f96",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1bd736f_6120699f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2020-11-26T18:19:27Z",
+      "side": 1,
+      "message": "i don\u0027t know what .gitattributes is for, but if you say so, i can add it",
+      "parentUuid": "98606566_2d3d01b5",
+      "revId": "19512276d2c5680cd458c9a7e2b4034611ca6f96",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

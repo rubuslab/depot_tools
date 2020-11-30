@@ -119,6 +119,24 @@
       "message": "I don\u0027t know enough about the cl split tool to just stamp, so defering to other owners",
       "revId": "46b587e395a8f100eb829fd2b82dc3ba1445e935",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5efdb62f_7deaee9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1177549
+      },
+      "writtenOn": "2020-11-30T19:20:20Z",
+      "side": 1,
+      "message": "We already have the LGTM from the original author of the tool, and I\u0027ve discussed the particulars of the fix with him.\nNote also that this is a relatively infrequently used tool, not as if this is inline with our day to day workflows. IMHO zero testing is about appropriate for a tool like this, but regardless I don\u0027t have the time to figure out how to write a test for this.",
+      "parentUuid": "2bc0811e_01d07fcc",
+      "revId": "46b587e395a8f100eb829fd2b82dc3ba1445e935",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

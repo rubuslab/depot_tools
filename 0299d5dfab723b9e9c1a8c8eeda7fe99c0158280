@@ -34,6 +34,24 @@
       "parentUuid": "49496927_6ecadf6e",
       "revId": "0299d5dfab723b9e9c1a8c8eeda7fe99c0158280",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54dab335_39b9e702",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2020-12-01T16:15:43Z",
+      "side": 1,
+      "message": "Ye is correct and this is another way to set flags.  If you feel strongly about it, I can change the env-var flag handling to also accept ALL_CAPS env vars.\n\nHowever, that won\u0027t be available until a future release, so I would prefer to have this go in as-is for the moment, if possible.",
+      "parentUuid": "68ad6af3_08ec41f4",
+      "revId": "0299d5dfab723b9e9c1a8c8eeda7fe99c0158280",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

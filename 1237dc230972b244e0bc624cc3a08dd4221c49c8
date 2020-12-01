@@ -16,6 +16,24 @@
       "message": "can\u0027t trust Sean!",
       "revId": "1237dc230972b244e0bc624cc3a08dd4221c49c8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be17fea8_476ce50d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1355298
+      },
+      "writtenOn": "2020-12-01T20:46:01Z",
+      "side": 1,
+      "message": "never.",
+      "parentUuid": "aa8451d3_3be00904",
+      "revId": "1237dc230972b244e0bc624cc3a08dd4221c49c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

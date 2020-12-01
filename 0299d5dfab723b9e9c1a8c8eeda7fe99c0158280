@@ -52,6 +52,24 @@
       "parentUuid": "68ad6af3_08ec41f4",
       "revId": "0299d5dfab723b9e9c1a8c8eeda7fe99c0158280",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce6352ec_af348f82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2020-12-01T17:18:40Z",
+      "side": 1,
+      "message": "I wouldn\u0027t say I feel *strongly* about it, but it does seem like it\u0027d be a usability improvement.\n\nI wouldn\u0027t block the CL on this (which is why I already +1\u0027ed it), so you\u0027re free to go ahead.",
+      "parentUuid": "54dab335_39b9e702",
+      "revId": "0299d5dfab723b9e9c1a8c8eeda7fe99c0158280",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5d50050_e6ef7fdf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2020-12-02T19:47:29Z",
+      "side": 1,
+      "message": "Thanks for this change. I\u0027ll update our systems ASAP to 3.6.",
+      "revId": "4679daf4fdad68462ed698951334754cfc19ed2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

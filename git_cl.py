@@ -1372,9 +1372,15 @@ class Changelist(object):
 
     # Set the reviewer list now so that presubmit checks can access it.
     if options.reviewers or options.tbrs or options.add_owners_to:
+      project = self.GetGerritProject()
+      branch = self.GetCommonAncestorWithUpstream()
+      client = owners_client.DepotToolsClient(
+          host=self.GetGerritHost(),
+          root=settings.GetRoot(),
+          branch=branch)
       change_description.update_reviewers(
           options.reviewers, options.tbrs, options.add_owners_to, files,
-          self.GetAuthor())
+          self.GetAuthor(), client, project, branch)
 
     return change_description
 
@@ -2608,7 +2614,8 @@ class ChangeDescription(object):
       self.set_description(description)
 
   def update_reviewers(
-      self, reviewers, tbrs, add_owners_to, affected_files, author_email):
+      self, reviewers, tbrs, add_owners_to, affected_files, author_email,
+      client, project, branch):
     """Rewrites the R=/TBR= line(s) as a single line each.
 
     Args:
@@ -2652,12 +2659,14 @@ class ChangeDescription(object):
 
     # Next, maybe fill in OWNERS coverage gaps to either tbrs/reviewers.
     if add_owners_to:
-      owners_db = owners.Database(settings.GetRoot(),
-                                  fopen=open, os_path=os.path)
-      missing_files = owners_db.files_not_covered_by(affected_files,
-                                                     (tbrs | reviewers))
+      status = client.GetFilesApprovalStatus(
+          project, branch, affected_files, [], tbrs.union(reviewers))
+      missing_files = [
+          f for f in affected_files
+          if status[f] == owners_client.INSUFFICIENT_REVIEWERS
+      ]
       LOOKUP[add_owners_to].update(
-        owners_db.reviewers_for(missing_files, author_email))
+        client.SuggestOwners(project, branch, missing_files))
 
     # If any folks ended up in both groups, remove them from tbrs.
     tbrs -= reviewers

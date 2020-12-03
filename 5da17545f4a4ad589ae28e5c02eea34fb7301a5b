@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4e2e99d_4776d44e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-03T18:07:37Z",
+      "side": 1,
+      "message": "IMO, we should try to be consistent with Git.\nThat\u0027d mean supporting things like `git cl format upstream -- file1 file2`",
+      "revId": "5da17545f4a4ad589ae28e5c02eea34fb7301a5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

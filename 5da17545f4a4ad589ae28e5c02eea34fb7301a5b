@@ -16,6 +16,29 @@
       "message": "IMO, we should try to be consistent with Git.\nThat\u0027d mean supporting things like `git cl format upstream -- file1 file2`",
       "revId": "5da17545f4a4ad589ae28e5c02eea34fb7301a5b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2f3e3c6_75c663dc",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-03T18:09:49Z",
+      "side": 1,
+      "message": "It should be clear if diff-style arguments are supported for the command the user is running. We shouldn\u0027t show this message if they\u0027re not supported (e.g. git cl format).",
+      "range": {
+        "startLine": 1046,
+        "startChar": 54,
+        "endLine": 1046,
+        "endChar": 66
+      },
+      "revId": "5da17545f4a4ad589ae28e5c02eea34fb7301a5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

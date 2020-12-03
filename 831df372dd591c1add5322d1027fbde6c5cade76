@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2bae1b8_f539e2fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-12-03T22:30:16Z",
+      "side": 1,
+      "message": "A couple of suggestions. WDYT?",
+      "revId": "831df372dd591c1add5322d1027fbde6c5cade76",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "615c13d3_ef666f8c",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2020-12-03T22:30:16Z",
+      "side": 1,
+      "message": "\u0027file\u0027 feels like the wrong name here. relative_path maybe?\n\n./CMakeFiles/rules.ninja feels like the wrong input to os.path.join. How about [\u0027CMakeFiles\u0027, \u0027rules.ninja\u0027]\n\nSo that would give us:\n\nfor relative_path in [ \u0027rules.ninja\u0027, [\u0027CMakeFiles\u0027, \u0027rules.ninja\u0027 ]:\n\nI like that you removed the repeated os.path.join calls.",
+      "revId": "831df372dd591c1add5322d1027fbde6c5cade76",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

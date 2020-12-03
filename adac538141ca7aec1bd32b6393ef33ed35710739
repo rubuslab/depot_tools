@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4d24d33_c7e39f5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-03T23:52:40Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "adac538141ca7aec1bd32b6393ef33ed35710739",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9a0ac52_48012b40",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2627,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-03T23:52:40Z",
+      "side": 1,
+      "message": "Description not matching actual args",
+      "revId": "adac538141ca7aec1bd32b6393ef33ed35710739",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

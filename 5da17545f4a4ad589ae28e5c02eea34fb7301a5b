@@ -39,6 +39,30 @@
       },
       "revId": "5da17545f4a4ad589ae28e5c02eea34fb7301a5b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e053009d_e70d1879",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-03T18:26:59Z",
+      "side": 1,
+      "message": "The truth is that we actually don\u0027t support diff style argument most of the time. Should we just drop that line? Another problem is that the error is printed in Changelog class, and it\u0027s hard to know what command was executed without inspecting stack trace, which we shouldn\u0027t do.",
+      "parentUuid": "e2f3e3c6_75c663dc",
+      "range": {
+        "startLine": 1046,
+        "startChar": 54,
+        "endLine": 1046,
+        "endChar": 66
+      },
+      "revId": "5da17545f4a4ad589ae28e5c02eea34fb7301a5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

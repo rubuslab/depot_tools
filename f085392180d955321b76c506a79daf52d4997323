@@ -16,6 +16,23 @@
       "message": "PTAL.\nRefactored it.",
       "revId": "f085392180d955321b76c506a79daf52d4997323",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "faa5e0a3_0302308a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-04T00:36:12Z",
+      "side": 1,
+      "message": "still lgtm",
+      "revId": "f085392180d955321b76c506a79daf52d4997323",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df14cf5d_a1391feb",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-05T01:09:06Z",
+      "side": 1,
+      "message": "return",
+      "range": {
+        "startLine": 79,
+        "startChar": 4,
+        "endLine": 79,
+        "endChar": 9
+      },
+      "revId": "6f24f389ee6bb79581a288bdc7da68b3f5ddb65a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

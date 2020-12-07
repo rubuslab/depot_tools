@@ -70,6 +70,30 @@
       },
       "revId": "eb386eb3d290e1f552314c2911b681e0e74396ff",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f67f3e4c_4ed4f277",
+        "filename": "repo",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2020-12-07T22:51:32Z",
+      "side": 1,
+      "message": "https://crrev.com/c/2575635 landed now for you",
+      "parentUuid": "2d6ae9d9_19f32253",
+      "range": {
+        "startLine": 47,
+        "startChar": 11,
+        "endLine": 47,
+        "endChar": 15
+      },
+      "revId": "eb386eb3d290e1f552314c2911b681e0e74396ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

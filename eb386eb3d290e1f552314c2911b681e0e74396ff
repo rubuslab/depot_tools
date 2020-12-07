@@ -46,6 +46,30 @@
       },
       "revId": "eb386eb3d290e1f552314c2911b681e0e74396ff",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d6ae9d9_19f32253",
+        "filename": "repo",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1374632
+      },
+      "writtenOn": "2020-12-07T19:20:02Z",
+      "side": 1,
+      "message": "I am aware.  The intent is to keep the ART benchmarks running on golem in the meantime.\nMy understanding is that the migration requires golem to change/update ditro which is likely non-trivial, so I hope this would be sufficient short term fix.",
+      "parentUuid": "7a01c45e_5a242e4a",
+      "range": {
+        "startLine": 47,
+        "startChar": 11,
+        "endLine": 47,
+        "endChar": 15
+      },
+      "revId": "eb386eb3d290e1f552314c2911b681e0e74396ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

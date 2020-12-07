@@ -22,6 +22,30 @@
       },
       "revId": "eb386eb3d290e1f552314c2911b681e0e74396ff",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a01c45e_5a242e4a",
+        "filename": "repo",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2020-12-07T19:13:51Z",
+      "side": 1,
+      "message": "i can, but it\u0027s only going to work for another month.  you must migrate to Python 3.6+.",
+      "parentUuid": "575f36a9_99c852bb",
+      "range": {
+        "startLine": 47,
+        "startChar": 11,
+        "endLine": 47,
+        "endChar": 15
+      },
+      "revId": "eb386eb3d290e1f552314c2911b681e0e74396ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

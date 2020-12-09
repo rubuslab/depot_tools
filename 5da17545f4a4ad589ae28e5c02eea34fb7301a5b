@@ -87,6 +87,30 @@
       },
       "revId": "5da17545f4a4ad589ae28e5c02eea34fb7301a5b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62a7a9ea_afd0a4ed",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-09T00:19:00Z",
+      "side": 1,
+      "message": "git cl upload accepts branch name, but that\u0027s the only portion of diff arguments that it supports. There\u0027s probably more where this may show up, but I haven\u0027t looked into callgraph for this function",
+      "parentUuid": "08320922_b161c1e2",
+      "range": {
+        "startLine": 1046,
+        "startChar": 54,
+        "endLine": 1046,
+        "endChar": 66
+      },
+      "revId": "5da17545f4a4ad589ae28e5c02eea34fb7301a5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

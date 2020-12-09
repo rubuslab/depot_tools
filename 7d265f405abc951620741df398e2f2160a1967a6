@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d21200f0_c0d2b065",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-09T22:45:16Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "7d265f405abc951620741df398e2f2160a1967a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4dea8874_92642bfb",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1076,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-09T22:45:16Z",
+      "side": 1,
+      "message": "maybe also IGNORECASE?",
+      "range": {
+        "startLine": 1076,
+        "startChar": 19,
+        "endLine": 1076,
+        "endChar": 28
+      },
+      "revId": "7d265f405abc951620741df398e2f2160a1967a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

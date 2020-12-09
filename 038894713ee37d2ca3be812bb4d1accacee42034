@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8c4078f_8ca97806",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1126309
+      },
+      "writtenOn": "2020-12-09T12:38:19Z",
+      "side": 1,
+      "message": "Thanks. I created a crbug for this yesterday: crbug.com/1156908.",
+      "revId": "038894713ee37d2ca3be812bb4d1accacee42034",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "c53640ea_95a91ca7",

@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a5d32aa7_89c3cc36",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-10T19:04:29Z",
+      "side": 1,
+      "message": "...unless they\u0027re not used in the function.\nThose parameters were not used by depot tools, which is why they started with underscore, but they are used here.",
+      "parentUuid": "47a8727b_a408fd05",
+      "range": {
+        "startLine": 214,
+        "startChar": 30,
+        "endLine": 214,
+        "endChar": 53
+      },
+      "revId": "cfb9d60c8aee363c6a86e994ed9b10899cec5162",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1ff6cb2e_15a4e664",
         "filename": "owners_client.py",
         "patchSetId": 5

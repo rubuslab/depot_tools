@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2fc29078_855d4628",
+        "filename": "gerrit_util.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-10T19:04:29Z",
+      "side": 1,
+      "message": "I don\u0027t see such option in the documentation, but there is DETAILED_ACCOUNTS.\n\nhttps://gerrit-review.googlesource.com/Documentation/rest-api-changes.html",
+      "range": {
+        "startLine": 774,
+        "startChar": 32,
+        "endLine": 774,
+        "endChar": 39
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3c5e5c5_a6e78ed8",
+        "filename": "owners_client.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-10T19:04:29Z",
+      "side": 1,
+      "message": "Gerrit client doesn\u0027t need this, it\u0027s only reeded by DepotToolsClient to read OWNERS files from local checkout.",
+      "range": {
+        "startLine": 201,
+        "startChar": 25,
+        "endLine": 201,
+        "endChar": 68
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c9fa1191_40328d7c",
         "filename": "owners_client.py",
         "patchSetId": 9
@@ -19,6 +65,52 @@
         "startChar": 39,
         "endLine": 208,
         "endChar": 45
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e393061_82bdc48a",
+        "filename": "tests/owners_client_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-10T19:04:29Z",
+      "side": 1,
+      "message": "Not needed.",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 39
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e77b624_1fef76e9",
+        "filename": "tests/owners_client_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-10T19:04:29Z",
+      "side": 1,
+      "message": "Don\u0027t use set, as the order of owners is important.",
+      "range": {
+        "startLine": 162,
+        "startChar": 8,
+        "endLine": 162,
+        "endChar": 12
       },
       "revId": "0a92e59236a771683239cff96563c639018fb105",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

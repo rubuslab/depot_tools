@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9fa1191_40328d7c",
+        "filename": "owners_client.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-10T19:00:29Z",
+      "side": 1,
+      "message": "branch is part of constructor. Do we need it here too? If is to make it compatbile with depot_tools owner client, can we drop it from constructor then?",
+      "range": {
+        "startLine": 208,
+        "startChar": 39,
+        "endLine": 208,
+        "endChar": 45
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

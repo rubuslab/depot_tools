@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bd5e60f_4241911c",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-10T18:54:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47a8727b_a408fd05",
+      "range": {
+        "startLine": 214,
+        "startChar": 30,
+        "endLine": 214,
+        "endChar": 53
+      },
+      "revId": "cfb9d60c8aee363c6a86e994ed9b10899cec5162",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ff6cb2e_15a4e664",
@@ -47,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c618022_0185f9d6",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-10T18:54:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ff6cb2e_15a4e664",
+      "range": {
+        "startLine": 215,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 0
+      },
+      "revId": "cfb9d60c8aee363c6a86e994ed9b10899cec5162",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "133f9738_828d0fb9",
@@ -60,6 +108,30 @@
       "writtenOn": "2020-12-10T17:26:12Z",
       "side": 1,
       "message": "If this is expected to be set in at least one more file in the future, I\u0027d suggest to set those as default in gerrit_util.GetOwnersForFile",
+      "range": {
+        "startLine": 223,
+        "startChar": 43,
+        "endLine": 223,
+        "endChar": 74
+      },
+      "revId": "cfb9d60c8aee363c6a86e994ed9b10899cec5162",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90c1f091_04264b53",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-10T18:54:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "133f9738_828d0fb9",
       "range": {
         "startLine": 223,
         "startChar": 43,

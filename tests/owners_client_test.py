@@ -63,6 +63,30 @@ def _get_change():
 
 
 
+def _get_owners():
+  return [
+    {
+      "account": {
+        "_account_id": 1000001,
+        "email": 'approver@example.com'
+      }
+    },
+    {
+      "account": {
+        "_account_id": 1000002,
+        "email": 'reviewer@example.com'
+      },
+    },
+    {
+      "account": {
+        "_account_id": 1000003,
+        "email": 'missing@example.com'
+      },
+    }
+  ]
+
+
+
 class DepotToolsClientTest(unittest.TestCase):
   def setUp(self):
     self.repo = filesystem_mock.MockFileSystem(files={
@@ -116,6 +140,35 @@ class DepotToolsClientTest(unittest.TestCase):
     ])
     with self.assertRaises(owners_client.InvalidOwnersConfig):
       self.client.ValidateOwnersConfig('changeid')
+
+
+class GerritClientTest(unittest.TestCase):
+  def setUp(self):
+    self.repo = filesystem_mock.MockFileSystem(files={
+        '/OWNERS': '\n'.join([
+            'per-file approved.cc=approver@example.com',
+            'per-file reviewed.h=reviewer@example.com',
+            'missing@example.com',
+        ]),
+        '/bar/everyone/OWNERS': '*',
+        '/bar/everyone/foo.txt': '',
+    })
+    self.root = '/'
+    self.fopen = self.repo.open_for_reading
+    self.addCleanup(mock.patch.stopall)
+    self.client = owners_client.GerritClient(
+        'host', '/', 'branch', self.fopen, self.repo)
+
+  @mock.patch('gerrit_util.GetOwnersForFile', return_value=_get_owners())
+  def testListOwners(self, get_owners_mock ):
+    self.assertEquals(
+        set([
+          'approver@example.com', 
+          'reviewer@example.com', 
+          'missing@example.com'
+        ]),
+        set(self.client.ListOwnersForFile(
+            'project', 'branch', 'bar/everyone/foo.txt')))
 
 
 class TestClient(owners_client.OwnersClient):

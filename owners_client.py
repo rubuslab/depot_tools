@@ -4,7 +4,13 @@
 
 import itertools
 import os
+import sys
 import random
+
+if sys.version_info.major == 2:
+  from urllib import quote
+else:
+  from urllib.parse import quote
 
 import gerrit_util
 import owners as owners_db
@@ -194,3 +200,25 @@ class DepotToolsClient(OwnersClient):
           [f for f in files if os.path.basename(f) == 'OWNERS'])
     except Exception as e:
       raise InvalidOwnersConfig('Error parsing OWNERS files:\n%s' % e)
+
+
+class GerritClient(OwnersClient):
+  """Implement OwnersClient using OWNERS REST API."""
+  def __init__(self, host, root, branch, fopen=open, os_path=os.path):
+    super(GerritClient, self).__init__(host)
+    self._root = root
+    self._fopen = fopen
+    self._os_path = os_path
+    self._branch = branch
+
+  def ListOwnersForFile(self, _project, _branch, path):
+    _project = quote(_project, '')
+    _branch = quote(_branch, '')
+    path = quote(path, '')
+
+    # GetOwnersForFile returns a list of account details sorted by order of
+    # best reviewer for path. If code owners have the same score, the order is
+    # random.
+    data = gerrit_util.GetOwnersForFile(
+      self._host, _project, _branch, path, limit=100, o_params=('DETAIL',))
+    return [d['account']['email'] for d in data]

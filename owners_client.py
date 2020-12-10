@@ -7,6 +7,7 @@ import os
 import random
 
 import gerrit_util
+import git_common
 import owners as owners_db
 import scm
 
@@ -206,4 +207,12 @@ class GerritClient(OwnersClient):
     # best reviewer for path. If code owners have the same score, the order is
     # random.
     data = gerrit_util.GetOwnersForFile(self._host, project, branch, path)
-    return [d['account']['email'] for d in data]
+    return [str(d['account']['email']) for d in data]
+
+  def ListOwnersForFiles(self, project, branch, paths):
+    owners = set()
+    with git_common.ScopedPool(kind='threads') as pool:
+      for owner_list in pool.imap_unordered(
+          lambda path: self.ListOwnersForFile(project, branch, path), paths):
+        owners.update(owner_list)
+    return list(owners)

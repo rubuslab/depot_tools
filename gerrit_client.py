@@ -41,6 +41,9 @@ def write_result(result, opt):
 def CMDmovechanges(parser, args):
   parser.add_option('-p', '--param', dest='params', action='append',
                     help='repeatable query parameter, format: -p key=value')
+  parser.add_option('--no-keep-labels', dest='keep_labels', default=True,
+                    action='store_false',
+                    help='retain all review labels, not just blocking ones')
   parser.add_option('--destination_branch', dest='destination_branch',
                     help='where to move changes to')
 
@@ -58,7 +61,8 @@ def CMDmovechanges(parser, args):
         limit=limit,
     )
     for change in result:
-      gerrit_util.MoveChange(host, change['id'], opt.destination_branch)
+      gerrit_util.MoveChange(host, change['id'], opt.destination_branch,
+                             keep_labels=opt.keep_labels)
 
     if len(result) < limit:
       break

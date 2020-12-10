@@ -48,6 +48,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d00207e9_ee112232",
+        "filename": "gerrit_util.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-10T20:07:56Z",
+      "side": 1,
+      "message": "You\u0027re right, I was looking at changes endpoints.\n\nhttps://gerrit-review.googlesource.com/Documentation/rest-api-changes.html",
+      "parentUuid": "7c358906_46d9a3d5",
+      "range": {
+        "startLine": 774,
+        "startChar": 32,
+        "endLine": 774,
+        "endChar": 39
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c3c5e5c5_a6e78ed8",

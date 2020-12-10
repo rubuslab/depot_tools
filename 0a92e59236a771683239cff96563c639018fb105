@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c358906_46d9a3d5",
+        "filename": "gerrit_util.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-10T19:54:38Z",
+      "side": 1,
+      "message": "This endpoint takes in account options[1] which include DETAILS like in the /accounts/ endpoints[2].\n\n[1]: https://gerrit.googlesource.com/plugins/code-owners/+/HEAD/resources/Documentation/rest-api.md#list-code-owners-for-path-in-branch\n[2]: https://gerrit-review.googlesource.com/Documentation/rest-api-accounts.html",
+      "parentUuid": "2fc29078_855d4628",
+      "range": {
+        "startLine": 774,
+        "startChar": 32,
+        "endLine": 774,
+        "endChar": 39
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c3c5e5c5_a6e78ed8",
@@ -37,6 +61,30 @@
       "writtenOn": "2020-12-10T19:04:29Z",
       "side": 1,
       "message": "Gerrit client doesn\u0027t need this, it\u0027s only reeded by DepotToolsClient to read OWNERS files from local checkout.",
+      "range": {
+        "startLine": 201,
+        "startChar": 25,
+        "endLine": 201,
+        "endChar": 68
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4681a54_eab8cb5a",
+        "filename": "owners_client.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-10T19:54:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c3c5e5c5_a6e78ed8",
       "range": {
         "startLine": 201,
         "startChar": 25,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6d10f11_f601c603",
+        "filename": "owners_client.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-10T19:54:38Z",
+      "side": 1,
+      "message": "Updated constructor so branch is needed here.",
+      "parentUuid": "c9fa1191_40328d7c",
+      "range": {
+        "startLine": 208,
+        "startChar": 39,
+        "endLine": 208,
+        "endChar": 45
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e393061_82bdc48a",
@@ -93,6 +165,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3613119_63010b1c",
+        "filename": "tests/owners_client_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-10T19:54:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e393061_82bdc48a",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 39
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e77b624_1fef76e9",
@@ -106,6 +202,30 @@
       "writtenOn": "2020-12-10T19:04:29Z",
       "side": 1,
       "message": "Don\u0027t use set, as the order of owners is important.",
+      "range": {
+        "startLine": 162,
+        "startChar": 8,
+        "endLine": 162,
+        "endChar": 12
+      },
+      "revId": "0a92e59236a771683239cff96563c639018fb105",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc289c89_828160a4",
+        "filename": "tests/owners_client_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-10T19:54:38Z",
+      "side": 1,
+      "message": "I agree; I want to note that if the internal score of \"good reviewer\" is equal, order is random.",
+      "parentUuid": "7e77b624_1fef76e9",
       "range": {
         "startLine": 162,
         "startChar": 8,

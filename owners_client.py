@@ -194,3 +194,20 @@ class DepotToolsClient(OwnersClient):
           [f for f in files if os.path.basename(f) == 'OWNERS'])
     except Exception as e:
       raise InvalidOwnersConfig('Error parsing OWNERS files:\n%s' % e)
+
+
+class GerritClient(OwnersClient):
+  """Implement OwnersClient using OWNERS REST API."""
+  def __init__(self, host, root, branch, fopen=open, os_path=os.path):
+    super(GerritClient, self).__init__(host)
+    self._root = root
+    self._fopen = fopen
+    self._os_path = os_path
+    self._branch = branch
+
+  def ListOwnersForFile(self, project, branch, path):
+    # GetOwnersForFile returns a list of account details sorted by order of
+    # best reviewer for path. If code owners have the same score, the order is
+    # random.
+    data = gerrit_util.GetOwnersForFile(self._host, project, branch, path)
+    return [d['account']['email'] for d in data]

@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "503f6c15_47381f8c",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-11T18:48:03Z",
+      "side": 1,
+      "message": "I thought it needed converting from unicode, removed",
+      "parentUuid": "16e34bfe_44583d57",
+      "range": {
+        "startLine": 210,
+        "startChar": 12,
+        "endLine": 210,
+        "endChar": 16
+      },
+      "revId": "cee45506a17beddf3e6788ebc0f21e6d19dba20d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d34ab9e_a730fc49",
@@ -58,6 +82,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "909c341b_23218b79",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-11T18:48:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d34ab9e_a730fc49",
+      "revId": "cee45506a17beddf3e6788ebc0f21e6d19dba20d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a96e02a_2e9f499f",
@@ -71,6 +113,30 @@
       "writtenOn": "2020-12-11T18:18:15Z",
       "side": 1,
       "message": "Let\u0027s test listing owners for a couple of files at the same time.",
+      "range": {
+        "startLine": 154,
+        "startChar": 6,
+        "endLine": 154,
+        "endChar": 28
+      },
+      "revId": "cee45506a17beddf3e6788ebc0f21e6d19dba20d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95344816_50423437",
+        "filename": "tests/owners_client_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2020-12-11T18:48:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a96e02a_2e9f499f",
       "range": {
         "startLine": 154,
         "startChar": 6,

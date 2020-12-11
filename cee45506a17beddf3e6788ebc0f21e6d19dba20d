@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0203eb3b_3fa721d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-11T18:18:15Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "cee45506a17beddf3e6788ebc0f21e6d19dba20d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16e34bfe_44583d57",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-11T18:18:15Z",
+      "side": 1,
+      "message": "Why is this needed?",
+      "range": {
+        "startLine": 210,
+        "startChar": 12,
+        "endLine": 210,
+        "endChar": 16
+      },
+      "revId": "cee45506a17beddf3e6788ebc0f21e6d19dba20d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d34ab9e_a730fc49",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-11T18:18:15Z",
+      "side": 1,
+      "message": "What about\n\n  with git_common.ScopedPool(kind\u003d\u0027threads\u0027) as pool:\n    return dict(pool.imap_unordered(\n        lambda p: (p, self.ListOwnersForFile(project, branch, p)),\n        paths))\n\nI\u0027m thinking we can rename to BatchListOwners() and move it to\nOwnersClient.",
+      "revId": "cee45506a17beddf3e6788ebc0f21e6d19dba20d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a96e02a_2e9f499f",
+        "filename": "tests/owners_client_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-11T18:18:15Z",
+      "side": 1,
+      "message": "Let\u0027s test listing owners for a couple of files at the same time.",
+      "range": {
+        "startLine": 154,
+        "startChar": 6,
+        "endLine": 154,
+        "endChar": 28
+      },
+      "revId": "cee45506a17beddf3e6788ebc0f21e6d19dba20d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

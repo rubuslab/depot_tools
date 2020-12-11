@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc57185b_b1c8b372",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002219
+      },
+      "writtenOn": "2020-12-11T00:58:02Z",
+      "side": 1,
+      "message": "\u003e Good find, thanks for updating it. Minor nits\n\nThanks for having a look, it should be all set for another pass now. I wasn\u0027t sure if the urls in the test were still needed, but it seemed harmless to leave them.",
+      "parentUuid": "32e1491c_038ea3f0",
+      "revId": "a51d59888ab5841d2e44397fea83864ed453ca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f158db70_2262f423",
@@ -48,6 +66,30 @@
       "writtenOn": "2020-12-11T00:20:48Z",
       "side": 1,
       "message": "use HEAD",
+      "range": {
+        "startLine": 14,
+        "startChar": 49,
+        "endLine": 14,
+        "endChar": 55
+      },
+      "revId": "a51d59888ab5841d2e44397fea83864ed453ca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffcd204c_b4c21370",
+        "filename": "watchlists.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002219
+      },
+      "writtenOn": "2020-12-11T00:58:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f158db70_2262f423",
       "range": {
         "startLine": 14,
         "startChar": 49,

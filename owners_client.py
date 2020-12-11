@@ -60,10 +60,11 @@ class OwnersClient(object):
   def __init__(self, host):
     self._host = host
 
-  def ListOwnersForFile(self, project, branch, path):
-    """List all owners for a file.
+  def ListOwnersForFiles(self, project, branch, paths):
+    """List all owners for the given files.
 
-    The returned list is sorted so that better owners appear first.
+    Returns a map of path to list of owners. Owners for a file are sorted so
+    that better owners appear first.
     """
     raise Exception('Not implemented')
 
@@ -100,11 +101,12 @@ class OwnersClient(object):
     approvers = set(approvers)
     reviewers = set(reviewers)
     status = {}
-    for path in paths:
-      path_owners = set(self.ListOwnersForFile(project, branch, path))
-      if path_owners.intersection(approvers):
+    owners_by_path = self.ListOwnersForFiles(project, branch, paths)
+    for path, owners in owners_by_path.items():
+      owners = set(owners)
+      if owners.intersection(approvers):
         status[path] = APPROVED
-      elif path_owners.intersection(reviewers):
+      elif owners.intersection(reviewers):
         status[path] = PENDING
       else:
         status[path] = INSUFFICIENT_REVIEWERS
@@ -114,8 +116,8 @@ class OwnersClient(object):
     """Suggest a set of owners for the given paths."""
     paths_by_owner = {}
     score_by_owner = {}
-    for path in paths:
-      owners = self.ListOwnersForFile(project, branch, path)
+    owners_by_path = self.ListOwnersForFiles(project, branch, paths)
+    for path, owners in owners_by_path.items():
       for i, owner in enumerate(owners):
         paths_by_owner.setdefault(owner, set()).add(path)
         # Gerrit API lists owners of a path sorted by an internal score, so
@@ -124,8 +126,10 @@ class OwnersClient(object):
         # paths.
         score_by_owner[owner] = min(i, score_by_owner.get(owner, i))
 
-    # Sort owners by their score.
-    owners = sorted(score_by_owner, key=lambda o: score_by_owner[o])
+    # Sort owners by their score. Randomize order of owners with same score.
+    owners = sorted(
+        score_by_owner,
+        key=lambda o: (score_by_owner[o], random.random()))
 
     # Select the minimum number of owners that can approve all paths.
     # We start at 2 to avoid sending all changes that require multiple reviewers
@@ -139,7 +143,7 @@ class OwnersClient(object):
       for selected in _owner_combinations(owners, num_owners):
         covered = set.union(*(paths_by_owner[o] for o in selected))
         if len(covered) == len(paths):
-          return selected
+          return list(selected)
 
 
 class DepotToolsClient(OwnersClient):
@@ -160,7 +164,7 @@ class DepotToolsClient(OwnersClient):
       if os.path.basename(f) == 'OWNERS'
     }
 
-  def ListOwnersForFile(self, _project, _branch, path):
+  def _ListOwnersForFile(self, path):
     # all_possible_owners returns a dict {owner: [(path, distance)]}. We want to
     # return a list of owners sorted by increasing distance.
     distance_by_owner = self._db.all_possible_owners([path], None)
@@ -170,6 +174,12 @@ class DepotToolsClient(OwnersClient):
     return sorted(
         distance_by_owner,
         key=lambda o: distance_by_owner[o][0][1] + random.random())
+
+  def ListOwnersForFiles(self, _project, _branch, paths):
+    return {
+        path: self._ListOwnersForFile(path)
+        for path in paths
+    }
 
   def GetChangeApprovalStatus(self, change_id):
     data = gerrit_util.GetChange(

@@ -42,7 +42,6 @@ import git_footers
 import git_new_branch
 import metrics
 import metrics_utils
-import owners
 import owners_client
 import owners_finder
 import presubmit_canned_checks
@@ -4795,10 +4794,10 @@ def CMDowners(parser, args):
         host=cl.GetGerritHost(),
         root=settings.GetRoot(),
         branch=branch)
-    for arg in args:
-      print('Owners for %s:' % arg)
-      for owner in client.ListOwnersForFile(project, branch, arg):
-        print(' - %s' % owner)
+    owners_by_file = client.ListOwnersForFiles(project, branch, args)
+    for f, owners in owners_by_file.items():
+      print('Owners for %s:' % f)
+      print('\n'.join(' - %s' % owner for owner in owners))
     return 0
 
   if args:

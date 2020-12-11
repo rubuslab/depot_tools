@@ -108,10 +108,13 @@ class DepotToolsClientTest(unittest.TestCase):
         'host', '/', 'branch', self.fopen, self.repo)
 
   def testListOwners(self):
-    self.assertEquals(
-        ['*', 'missing@example.com'],
-        self.client.ListOwnersForFile(
-            'project', 'branch', 'bar/everyone/foo.txt'))
+    self.assertEqual(
+        {
+            'bar/everyone/foo.txt': ['*', 'missing@example.com'],
+            'approved.cc': ['approver@example.com', 'missing@example.com'],
+        },
+        self.client.ListOwnersForFiles(
+            'project', 'branch', ['bar/everyone/foo.txt', 'approved.cc']))
 
   @mock.patch('gerrit_util.GetChange', return_value=_get_change())
   def testGetChangeApprovalStatus(self, _mock):
@@ -156,8 +159,8 @@ class TestClient(owners_client.OwnersClient):
     super(TestClient, self).__init__(host)
     self.owners_by_path = owners_by_path
 
-  def ListOwnersForFile(self, _project, _branch, path):
-    return self.owners_by_path[path]
+  def ListOwnersForFiles(self, _project, _branch, paths):
+    return self.owners_by_path
 
 
 class OwnersClientTest(unittest.TestCase):
@@ -206,8 +209,8 @@ class OwnersClientTest(unittest.TestCase):
 
     self.client.owners_by_path = {'abcd': [alice, bob, chris, dave]}
     self.assertEqual(
-        self.client.SuggestOwners('project', 'branch', ['abcd']),
-        (bob, alice))
+        sorted(self.client.SuggestOwners('project', 'branch', ['abcd'])),
+        [alice, bob])
 
     self.client.owners_by_path = {
         'ae': [alice, emily],
@@ -215,10 +218,11 @@ class OwnersClientTest(unittest.TestCase):
         'ce': [chris, emily],
         'de': [dave, emily],
     }
-    self.assertEqual(
-        self.client.SuggestOwners(
-            'project', 'branch', ['ae', 'be', 'ce', 'de']),
-        (emily, bob))
+    suggested = self.client.SuggestOwners(
+        'project', 'branch', ['ae', 'be', 'ce', 'de'])
+    # emily should be selected along with anyone else.
+    self.assertIn(emily, suggested)
+    self.assertEqual(2, len(suggested))
 
     self.client.owners_by_path = {
         'ad': [alice, dave],
@@ -227,9 +231,9 @@ class OwnersClientTest(unittest.TestCase):
         'bd': [bob, dave],
     }
     self.assertEqual(
-        self.client.SuggestOwners(
-            'project', 'branch', ['ad', 'cad', 'ead', 'bd']),
-        (bob, alice))
+        sorted(self.client.SuggestOwners(
+            'project', 'branch', ['ad', 'cad', 'ead', 'bd'])),
+        [alice, bob])
 
     self.client.owners_by_path = {
         'a': [alice],
@@ -238,9 +242,9 @@ class OwnersClientTest(unittest.TestCase):
         'ad': [alice, dave],
     }
     self.assertEqual(
-        self.client.SuggestOwners(
-            'project', 'branch', ['a', 'b', 'c', 'ad']),
-        (alice, chris, bob))
+        sorted(self.client.SuggestOwners(
+            'project', 'branch', ['a', 'b', 'c', 'ad'])),
+        [alice, bob, chris])
 
     self.client.owners_by_path = {
         'abc': [alice, bob, chris],
@@ -250,11 +254,11 @@ class OwnersClientTest(unittest.TestCase):
         'cab': [chris, alice, bob],
         'cba': [chris, bob, alice]
     }
-    self.assertEqual(
-        self.client.SuggestOwners(
-            'project', 'branch',
-            ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']),
-        (chris, bob))
+    suggested = self.client.SuggestOwners(
+        'project', 'branch',
+        ['abc', 'acb', 'bac', 'bca', 'cab', 'cba'])
+    # Any two owners.
+    self.assertEqual(2, len(suggested))
 
   def testBatchListOwners(self):
     self.client.owners_by_path = {

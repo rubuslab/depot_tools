@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "528d9c93_d6517933",
+        "filename": "owners_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-11T00:08:21Z",
+      "side": 1,
+      "message": "Let\u0027s return map {file: [owners]}",
+      "range": {
+        "startLine": 212,
+        "startChar": 6,
+        "endLine": 212,
+        "endChar": 24
+      },
+      "revId": "226379db533472b04120d5e96541efa603427406",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

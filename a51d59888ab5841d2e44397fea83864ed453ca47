@@ -16,6 +16,46 @@
       "message": "I happened to notice this when pointing someone to\nhttps://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html\nand then went after the rest of the references.",
       "revId": "a51d59888ab5841d2e44397fea83864ed453ca47",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32e1491c_038ea3f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-11T00:20:48Z",
+      "side": 1,
+      "message": "Good find, thanks for updating it. Minor nits",
+      "revId": "a51d59888ab5841d2e44397fea83864ed453ca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f158db70_2262f423",
+        "filename": "watchlists.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-11T00:20:48Z",
+      "side": 1,
+      "message": "use HEAD",
+      "range": {
+        "startLine": 14,
+        "startChar": 49,
+        "endLine": 14,
+        "endChar": 55
+      },
+      "revId": "a51d59888ab5841d2e44397fea83864ed453ca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

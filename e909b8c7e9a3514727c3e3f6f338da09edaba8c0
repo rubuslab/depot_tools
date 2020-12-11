@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa2bdb6f_bf843792",
+        "filename": "tests/owners_client_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-11T18:51:33Z",
+      "side": 1,
+      "message": "Move this to OwnersClientTest. Also, would be good for different files to return different owners.",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 0
+      },
+      "revId": "e909b8c7e9a3514727c3e3f6f338da09edaba8c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

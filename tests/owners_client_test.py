@@ -150,6 +150,18 @@ class GerritClientTest(unittest.TestCase):
         self.client.ListOwnersForFile('project', 'branch',
                                       'bar/everyone/foo.txt'))
 
+  @mock.patch('gerrit_util.GetOwnersForFile', return_value=_get_owners())
+  def testListOwnersParallel(self, get_owners_mock):
+    self.assertEquals(
+        {
+            'bar/everyone/foo.txt': [
+                'approver@example.com',
+                'reviewer@example.com',
+                'missing@example.com'
+            ]
+        },
+        self.client.ListOwnersForFiles('project', 'branch',
+                                       ['bar/everyone/foo.txt']))
 
 class TestClient(owners_client.OwnersClient):
   def __init__(self, host, owners_by_path):

@@ -4786,16 +4786,13 @@ def CMDowners(parser, args):
     if len(args) == 0:
       print('No files specified for --show-all. Nothing to do.')
       return 0
-    project = cl.GetGerritProject()
-    branch = cl.GetCommonAncestorWithUpstream()
     client = owners_client.DepotToolsClient(
-        host=cl.GetGerritHost(),
         root=settings.GetRoot(),
-        branch=branch)
-    for arg in args:
-      print('Owners for %s:' % arg)
-      for owner in client.ListOwnersForFile(project, branch, arg):
-        print(' - %s' % owner)
+        branch=cl.GetCommonAncestorWithUpstream())
+    owners_by_file = client.BatchListOwners(args)
+    for path, path_owners in owners_by_file.items():
+      print('Owners for %s:' % path)
+      print('\n'.join(' - %s' % owner for owner in path_owners))
     return 0
 
   if args:
@@ -4810,13 +4807,10 @@ def CMDowners(parser, args):
   affected_files = cl.GetAffectedFiles(base_branch)
 
   if options.batch:
-    project = cl.GetGerritProject()
-    branch = cl.GetCommonAncestorWithUpstream()
     client = owners_client.DepotToolsClient(
-        host=cl.GetGerritHost(),
         root=settings.GetRoot(),
-        branch=branch)
-    print('\n'.join(client.SuggestOwners(project, branch, affected_files)))
+        branch=cl.GetCommonAncestorWithUpstream())
+    print('\n'.join(client.SuggestOwners(affected_files)))
     return 0
 
   owner_files = [f for f in affected_files if 'OWNERS' in os.path.basename(f)]

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ac3a7fb_a072b16c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-14T17:32:51Z",
+      "side": 1,
+      "message": "We need to drop py2/vpython support first: https://chromium.googlesource.com/chromium/tools/depot_tools/+/HEAD/python_runner.sh#56\n\n",
+      "revId": "bb0d3d943e94e77df90129984056b1c398d1273c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

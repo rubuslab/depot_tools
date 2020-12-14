@@ -16,6 +16,24 @@
       "message": "We need to drop py2/vpython support first: https://chromium.googlesource.com/chromium/tools/depot_tools/+/HEAD/python_runner.sh#56\n\n",
       "revId": "bb0d3d943e94e77df90129984056b1c398d1273c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93e355f1_6c51b5d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-14T21:41:51Z",
+      "side": 1,
+      "message": "No, I was opening devnull as w instead of r+, so it couldn\u0027t be opened for reading.",
+      "parentUuid": "3ac3a7fb_a072b16c",
+      "revId": "bb0d3d943e94e77df90129984056b1c398d1273c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

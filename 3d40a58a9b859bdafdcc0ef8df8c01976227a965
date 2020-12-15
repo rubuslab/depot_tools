@@ -39,6 +39,30 @@
       },
       "revId": "3d40a58a9b859bdafdcc0ef8df8c01976227a965",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae285b64_fb4fa166",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-15T20:07:37Z",
+      "side": 1,
+      "message": "Given that I plan to remove this after testing, I\u0027ll keep it as is.",
+      "parentUuid": "376a4e87_584312f9",
+      "range": {
+        "startLine": 686,
+        "startChar": 13,
+        "endLine": 686,
+        "endChar": 34
+      },
+      "revId": "3d40a58a9b859bdafdcc0ef8df8c01976227a965",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

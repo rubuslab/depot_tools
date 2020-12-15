@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86e128f4_6c42c088",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-15T01:13:51Z",
+      "side": 1,
+      "message": "LGTM, but please test with a led run.",
+      "revId": "3d40a58a9b859bdafdcc0ef8df8c01976227a965",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "376a4e87_584312f9",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-15T01:13:51Z",
+      "side": 1,
+      "message": "optional: Might be less nesting if we check !\u003d instead",
+      "range": {
+        "startLine": 686,
+        "startChar": 13,
+        "endLine": 686,
+        "endChar": 34
+      },
+      "revId": "3d40a58a9b859bdafdcc0ef8df8c01976227a965",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

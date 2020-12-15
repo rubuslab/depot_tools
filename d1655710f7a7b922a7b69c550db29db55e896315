@@ -16,6 +16,24 @@
       "message": "We have now updated our performance lab builders to Python 3.6, and this change can be reverted.\n\nDart still has its Luci builders running without 3.6, and those will not be updated before January, but they don\u0027t seem to use the repo tool.  Other changes in depot_tools that will cause breakage if Python 3.6 is not available may break them, though.",
       "revId": "d1655710f7a7b922a7b69c550db29db55e896315",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d282dc5_8921be41",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2020-12-15T17:43:37Z",
+      "side": 1,
+      "message": "great to hear.  this change isn\u0027t critical, so i\u0027m fine leaving it until Jan considering the holiday break.",
+      "parentUuid": "47114b94_7620ea32",
+      "revId": "d1655710f7a7b922a7b69c550db29db55e896315",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

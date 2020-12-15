@@ -51,6 +51,24 @@
       "message": "Josip: upstream has fixed their docs.  the Rest API is using \"keep_all_votes\" instead of \"keep_all_labels\".\n\nwhat do you want the UI of gerrit_client \u0026 gerrit_util to be ?  should the CLI \u0026 internal APIs all use \"vote\" terms ?  or should they keep \"labels\", and only use \"votes\" when constructing the request body ?  i don\u0027t have an opinion either way.",
       "revId": "3d3c09430050230e884a2e5b422b35ba163c4a3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d164119a_9ae1efe1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-15T19:37:00Z",
+      "side": 1,
+      "message": "I don\u0027t think we need a flag to keep votes as that\u0027s always desired. I suggest to always pass keep_all_votes: True.",
+      "parentUuid": "cf0b3d55_ccef07e4",
+      "revId": "3d3c09430050230e884a2e5b422b35ba163c4a3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

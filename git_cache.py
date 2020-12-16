@@ -290,6 +290,7 @@ class Mirror(object):
     _, ls_out, ls_err = gsutil.check_call('ls', self._gs_path)
     ls_out_set = set(ls_out.strip().splitlines())
     latest_dir = self._GetMostRecentCacheDirectory(ls_out_set)
+    print(latest_dir)
 
     if not latest_dir:
       self.print('No bootstrap file for %s found in %s, stderr:\n  %s' %
@@ -308,6 +309,8 @@ class Mirror(object):
                            tempdir)
       if code:
         return False
+      # A quick validation that all references are valid.
+      self.RunGit(['show-ref'], cwd=tempdir)
     except Exception as e:
       self.print('Encountered error: %s' % str(e), file=sys.stderr)
       gclient_utils.rmtree(tempdir)

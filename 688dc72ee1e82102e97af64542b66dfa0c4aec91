@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "147d2308_98c6eb35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-17T22:13:45Z",
+      "side": 1,
+      "message": "Looks like there is a fix forward for cros, but  I still think it might be best to revert this as there might be other subtle things that are currently broken. We may want to do ask gerrit for current HEAD location and use that information to fetch, as opposed to HEAD.",
+      "revId": "688dc72ee1e82102e97af64542b66dfa0c4aec91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

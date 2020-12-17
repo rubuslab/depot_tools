@@ -16,6 +16,24 @@
       "message": "Folks, this broke image autoroller in a subtle way.\n\nin https://ci.chromium.org/ui/p/infra-internal/builders/prod/ccompute-crostest-bionic64/b8860633244861894384/steps?succeeded\u003dtrue\u0026debug\u003dtrue\nthe step #13  \"git checkout (2)\" does `git checkout origin/master` and gets something stale despite earlier fetch. I don\u0027t yet know what\u0027s the best way forward.",
       "revId": "6651fd8847a4c4192df0e1ced0c1cb89435236d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5298dcc_a5298c28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-17T21:58:28Z",
+      "side": 1,
+      "message": "I feel the best thing to do is to revert this CL during the freeze. The recipe assumes that bot_update will fetch origin/master and have the latest copy, which is incorrect. However, there might be other recipes that assume the same thing too; although I haven\u0027t seen any reports.",
+      "parentUuid": "2b83a40b_a52f24a8",
+      "revId": "6651fd8847a4c4192df0e1ced0c1cb89435236d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

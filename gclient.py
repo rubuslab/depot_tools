@@ -3183,7 +3183,7 @@ def main(argv):
     gclient_utils.GClientChildren.KillAllRemainingChildren()
     raise
   except (gclient_utils.Error, subprocess2.CalledProcessError) as e:
-    print('Error: %s' % str(e), file=sys.stderr)
+    logging.exception('gclient failed: %s', e)
     return 1
   finally:
     gclient_utils.PrintWarnings()

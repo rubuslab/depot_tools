@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ce8dff4_31ab50e5",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2211,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-29T23:03:14Z",
+      "side": 1,
+      "message": "Wouldn\u0027t this (almost) always retry?\nremote_branch is probably one of [DEFAULT_OLD_BRANCH, DEFAULT_NEW_BRANCH]\nand project head is probably in [\u0027refs/heads/main\u0027, \u0027refs/heads/master\u0027].\n\nWhat about\n\n  remote, remote_branch \u003d self.GetRemoteBranch()\n  project_head \u003d gerrit_util.GetProjectHead(self._gerrit_host, self.GetGerritProject())\n  # RemoteRefToRef(refs/remotes/origin/master) -\u003e refs/heads/master\n  if (remote_branch not in [DEFAULT_OLD_BRANCH, DEFAULT_NEW_BRANCH]\n      or project_head !\u003d scm.GIT.RemoteRefToRef(remote_branch, remote)):\n    DieWithError(str(e), change_desc)",
+      "range": {
+        "startLine": 2211,
+        "startChar": 8,
+        "endLine": 2211,
+        "endChar": 18
+      },
+      "revId": "ef6a7b30a45883ced1ddb1c9ed9e80eba88412c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

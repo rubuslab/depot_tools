@@ -2208,15 +2208,20 @@ class Changelist(object):
       return self._CMDUploadChange(options, git_diff_args, custom_cl_base,
                                    change_desc)
     except GitPushError as e:
+      # Repository might be in the middle of transition to main branch as
+      # default, and uploads to old default might be blocked.
       remote, remote_branch = self.GetRemoteBranch()
-      should_retry = remote_branch == DEFAULT_OLD_BRANCH and \
-          gerrit_util.GetProjectHead(
-              self._gerrit_host, self.GetGerritProject()) == 'refs/heads/main'
+      refs_to_evaluate = ['refs/heads/main', 'refs/heads/master']
+      should_retry = remote_branch in [DEFAULT_OLD_BRANCH, DEFAULT_NEW_BRANCH]
+      if should_retry:
+        should_retry = gerrit_util.GetProjectHead(
+            self._gerrit_host, self.GetGerritProject()) in refs_to_evaluate
+
       if not should_retry:
         DieWithError(str(e), change_desc)
 
-    print("WARNING: Detected HEAD change in upstream, fetching remote state")
-    RunGit(['fetch', remote])
+    print("WARNING: Fetching remote state and retrying upload...")
+    RunGit(['fetch', '--prune', remote])
     options.edit_description = False
     options.force = True
     try:

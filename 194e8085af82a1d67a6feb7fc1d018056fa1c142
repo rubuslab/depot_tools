@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69742984_b38e48f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2020-12-30T22:43:47Z",
+      "side": 1,
+      "message": "PTAL.\nTo be submitted after prod freeze.",
+      "revId": "194e8085af82a1d67a6feb7fc1d018056fa1c142",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

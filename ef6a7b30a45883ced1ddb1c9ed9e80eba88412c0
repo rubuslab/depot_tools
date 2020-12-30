@@ -22,6 +22,30 @@
       },
       "revId": "ef6a7b30a45883ced1ddb1c9ed9e80eba88412c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63df189c_95fd834a",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2211,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2020-12-30T00:15:23Z",
+      "side": 1,
+      "message": "Good point, I refactored it to retry only if needed.",
+      "parentUuid": "4ce8dff4_31ab50e5",
+      "range": {
+        "startLine": 2211,
+        "startChar": 8,
+        "endLine": 2211,
+        "endChar": 18
+      },
+      "revId": "ef6a7b30a45883ced1ddb1c9ed9e80eba88412c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

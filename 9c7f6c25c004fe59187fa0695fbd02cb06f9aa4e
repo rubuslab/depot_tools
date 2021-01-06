@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "893433f4_022e6f48",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1387,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2021-01-06T23:05:11Z",
+      "side": 1,
+      "message": "You didn\u0027t fix this reference.\n\nThis broke the recipe-autoroller in this build: https://ci.chromium.org/ui/p/infra-internal/builders/cron/recipe-autoroller/b8858814181531318256/overview.",
+      "range": {
+        "startLine": 1387,
+        "startChar": 42,
+        "endLine": 1387,
+        "endChar": 49
+      },
+      "revId": "9c7f6c25c004fe59187fa0695fbd02cb06f9aa4e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

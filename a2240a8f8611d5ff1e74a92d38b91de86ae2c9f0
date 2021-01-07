@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d19f3b07_72b9a3d9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-07T23:51:12Z",
+      "side": 1,
+      "message": "Original submission failed because it included that CL, and made some changes to --[tb]r-owners.\nThis CL reverts those changes, so it should pass now.",
+      "parentUuid": "efc5d29a_31a1ae56",
+      "revId": "a2240a8f8611d5ff1e74a92d38b91de86ae2c9f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b6b7dde0_1ed0fd1c",
         "filename": "git_cl.py",
         "patchSetId": 3
@@ -31,6 +49,24 @@
       "writtenOn": "2021-01-07T21:52:14Z",
       "side": 1,
       "message": "Is this covered by existing unit tests?",
+      "revId": "a2240a8f8611d5ff1e74a92d38b91de86ae2c9f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8da13b10_acd2fe98",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4789,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-07T23:51:12Z",
+      "side": 1,
+      "message": "Added some unittests.",
+      "parentUuid": "b6b7dde0_1ed0fd1c",
       "revId": "a2240a8f8611d5ff1e74a92d38b91de86ae2c9f0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

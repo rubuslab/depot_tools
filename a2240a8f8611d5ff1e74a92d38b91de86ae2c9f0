@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efc5d29a_31a1ae56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-07T21:52:14Z",
+      "side": 1,
+      "message": "I don\u0027t see anything related to this cl.",
+      "revId": "a2240a8f8611d5ff1e74a92d38b91de86ae2c9f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6b7dde0_1ed0fd1c",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4789,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-07T21:52:14Z",
+      "side": 1,
+      "message": "Is this covered by existing unit tests?",
+      "revId": "a2240a8f8611d5ff1e74a92d38b91de86ae2c9f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

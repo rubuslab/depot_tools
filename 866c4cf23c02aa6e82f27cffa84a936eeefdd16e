@@ -16,6 +16,40 @@
       "message": "PTAL",
       "revId": "866c4cf23c02aa6e82f27cffa84a936eeefdd16e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba07f54e_161ed7a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-07T21:53:56Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "866c4cf23c02aa6e82f27cffa84a936eeefdd16e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bc4ef6b_2f09ba2d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1180,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-07T21:53:56Z",
+      "side": 1,
+      "message": "Could you add unit test for this?",
+      "revId": "866c4cf23c02aa6e82f27cffa84a936eeefdd16e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

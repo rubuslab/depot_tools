@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "860e111b_d28ccd7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-08T00:09:33Z",
+      "side": 1,
+      "message": "lgtm with nits",
+      "revId": "8d238df200c5db7bb6a320681efb297d9e535800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0fdf5ee_845e3f8a",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4793,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-08T00:09:33Z",
+      "side": 1,
+      "message": "is there any difference between this block and PS3? It seems the same for me, and PS3 is a bit more clear what\u0027s going on (and doesn\u0027t make assumption that all paths will be there, whereas this does)",
+      "revId": "8d238df200c5db7bb6a320681efb297d9e535800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5083508d_a0b5f7a5",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3922,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-08T00:09:33Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 3922,
+        "startChar": 42,
+        "endLine": 3922,
+        "endChar": 62
+      },
+      "revId": "8d238df200c5db7bb6a320681efb297d9e535800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6087074_3366d4b3",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3946,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-08T00:09:33Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 3946,
+        "startChar": 54,
+        "endLine": 3946,
+        "endChar": 55
+      },
+      "revId": "8d238df200c5db7bb6a320681efb297d9e535800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

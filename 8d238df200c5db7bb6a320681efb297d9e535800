@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f77b3003_191c1ee3",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4793,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-08T00:33:30Z",
+      "side": 1,
+      "message": "This keeps the order in which paths were passed in.\nGood point about assuming paths will be present. Fixed and added test",
+      "parentUuid": "e0fdf5ee_845e3f8a",
+      "revId": "8d238df200c5db7bb6a320681efb297d9e535800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5083508d_a0b5f7a5",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 7
@@ -48,6 +66,30 @@
       "writtenOn": "2021-01-08T00:09:33Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 3922,
+        "startChar": 42,
+        "endLine": 3922,
+        "endChar": 62
+      },
+      "revId": "8d238df200c5db7bb6a320681efb297d9e535800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e75adc6_1416ac89",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3922,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-08T00:33:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5083508d_a0b5f7a5",
       "range": {
         "startLine": 3922,
         "startChar": 42,
@@ -71,6 +113,30 @@
       "writtenOn": "2021-01-08T00:09:33Z",
       "side": 1,
       "message": "whitespace",
+      "range": {
+        "startLine": 3946,
+        "startChar": 54,
+        "endLine": 3946,
+        "endChar": 55
+      },
+      "revId": "8d238df200c5db7bb6a320681efb297d9e535800",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed9a58ae_0a88c52d",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3946,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-08T00:33:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6087074_3366d4b3",
       "range": {
         "startLine": 3946,
         "startChar": 54,

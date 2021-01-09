@@ -50,6 +50,24 @@
       "message": "Could you add unit test for this?",
       "revId": "866c4cf23c02aa6e82f27cffa84a936eeefdd16e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "834d530f_045e09de",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1180,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-09T01:34:11Z",
+      "side": 1,
+      "message": "Added some assertions. It should be easier to write better tests after we start using new API.",
+      "parentUuid": "1bc4ef6b_2f09ba2d",
+      "revId": "866c4cf23c02aa6e82f27cffa84a936eeefdd16e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,24 @@
       "message": "The viceroy and related Led builders all look good. I think we can release it to depot_tools now.",
       "revId": "c231803afcefb1f6f12d62b232978b70a8b44959",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6d92cb0_129a8b3c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-01-11T22:36:19Z",
+      "side": 1,
+      "message": "Nice smooth sailing so far, amazing! :fingerscrossed: and 👍",
+      "parentUuid": "bfcb59ef_acc8ae76",
+      "revId": "c231803afcefb1f6f12d62b232978b70a8b44959",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

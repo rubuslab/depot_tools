@@ -44,6 +44,7 @@ import git_cl
 import git_common as git
 import json
 import owners
+import owners_client
 import owners_finder
 import presubmit_support as presubmit
 import rdb_wrapper
@@ -165,6 +166,8 @@ index fe3de7b..54ae6e1 100755
         self.issue = 0
       def RepositoryRoot(self):
         return self._root
+      def UpstreamBranch(self):
+        return 'main'
 
     presubmit._ASKED_FOR_FEEDBACK = False
     self.fake_root_dir = self.RootDir()
@@ -210,6 +213,10 @@ class PresubmitUnittest(PresubmitTestsBase):
 
   _INHERIT_SETTINGS = 'inherit-review-settings-ok'
   fake_root_dir = '/foo/bar'
+  def setUp(self):
+    super(PresubmitUnittest, self).setUp()
+    mock.patch('owners_client.DepotToolsClient').start()
+    self.addCleanup(mock.patch.stopall)
 
   def testCannedCheckFilter(self):
     canned = presubmit.presubmit_canned_checks
@@ -1235,6 +1242,11 @@ def CheckChangeOnCommit(input_api, output_api):
 
 class InputApiUnittest(PresubmitTestsBase):
   """Tests presubmit.InputApi."""
+  def setUp(self):
+    super(InputApiUnittest, self).setUp()
+    mock.patch('owners_client.DepotToolsClient').start()
+    self.addCleanup(mock.patch.stopall)
+
   def testInputApiConstruction(self):
     api = presubmit.InputApi(
         self.fake_change,
@@ -2695,72 +2707,58 @@ the current line as well!
       reviewers=None, is_committing=True,
       response=None, uncovered_files=None, expected_output='',
       manually_specified_reviewers=None, dry_run=None,
-      modified_file='foo/xyz.cc', allow_tbr=True):
-    if approvers is None:
-      # The set of people who lgtm'ed a change.
-      approvers = set()
-    if reviewers is None:
-      # The set of people needed to lgtm a change. We default to
-      # the same list as the people who approved it. We use 'reviewers'
-      # to avoid a name collision w/ owners.py.
-      reviewers = approvers
-    if uncovered_files is None:
-      uncovered_files = set()
-    if manually_specified_reviewers is None:
-      manually_specified_reviewers = []
+      modified_files=None, allow_tbr=True):
+    modified_files = modified_files or ['foo/xyz.cc']
+    uncovered_files = uncovered_files or set()
+    # The set of people who lgtm'ed a change.
+    approvers = approvers or set()
+    manually_specified_reviewers = manually_specified_reviewers or []
+    response = response or {
+      "owner": {"email": 'john@example.com'},
+      "labels": {"Code-Review": {
+        u'all': [
+          {
+            u'email': a,
+            u'value': +1
+          } for a in approvers
+        ],
+        u'default_value': 0,
+        u'values': {u' 0': u'No score',
+                    u'+1': u'Looks good to me',
+                    u'-1': u"I would prefer that you didn't submit this"}
+      }},
+      "reviewers": {"REVIEWER": [{u'email': a}] for a in approvers},
+    }
 
     change = mock.MagicMock(presubmit.Change)
-    change.issue = issue
+    change.OriginalOwnersFiles.return_value = {}
+    change.RepositoryRoot.return_value = None
+    change.ReviewersFromDescription.return_value = manually_specified_reviewers
+    change.TBRsFromDescription.return_value = []
     change.author_email = 'john@example.com'
-    change.ReviewersFromDescription = lambda: manually_specified_reviewers
-    change.TBRsFromDescription = lambda: []
-    change.RepositoryRoot = lambda: None
-    affected_file = mock.MagicMock(presubmit.GitAffectedFile)
+    change.issue = issue
+
+    affected_files = []
+    for f in modified_files:
+      affected_file = mock.MagicMock(presubmit.GitAffectedFile)
+      affected_file.LocalPath.return_value = f
+      affected_files.append(affected_file)
+    change.AffectedFiles.return_value = affected_files
+
     input_api = self.MockInputApi(change, False)
     input_api.gerrit = presubmit.GerritAccessor('host')
-
-    fake_db = mock.MagicMock(owners.Database)
-    fake_db.email_regexp = input_api.re.compile(owners.BASIC_EMAIL_REGEXP)
-    fake_db.files_not_covered_by.return_value = uncovered_files
-
-    input_api.owners_db = fake_db
     input_api.is_committing = is_committing
     input_api.tbr = tbr
     input_api.dry_run = dry_run
+    input_api.gerrit._FetchChangeDetail = lambda _: response
 
-    affected_file.LocalPath.return_value = modified_file
-    change.AffectedFiles.return_value = [affected_file]
-    if not is_committing or issue or ('OWNERS' in modified_file):
-      change.OriginalOwnersFiles.return_value = {}
-      if issue and not response:
-        response = {
-          "owner": {"email": change.author_email},
-          "labels": {"Code-Review": {
-            u'all': [
-              {
-                u'email': a,
-                u'value': +1
-              } for a in approvers
-            ],
-            u'default_value': 0,
-            u'values': {u' 0': u'No score',
-                        u'+1': u'Looks good to me',
-                        u'-1': u"I would prefer that you didn't submit this"}
-          }},
-          "reviewers": {"REVIEWER": [{u'email': a}] for a in approvers},
-        }
-
-      if is_committing:
-        people = approvers
-      else:
-        people = reviewers
-
-      if issue:
-        input_api.gerrit._FetchChangeDetail = lambda _: response
-
-      people.add(change.author_email)
-      if not is_committing and uncovered_files:
-        fake_db.reviewers_for.return_value = change.author_email
+    fake_client = mock.MagicMock(owners_client.DepotToolsClient)
+    fake_client.GetFilesApprovalStatus.return_value = {
+      f: fake_client.PENDING if f in uncovered_files else fake_client.APPROVED
+      for f in modified_files
+    }
+    fake_client.SuggestOwners.return_value = ['john@example.com']
+    input_api.owners_client = fake_client
 
     results = presubmit_canned_checks.CheckOwners(
         input_api, presubmit.OutputApi, allow_tbr=allow_tbr)
@@ -3018,11 +3016,13 @@ the current line as well!
 
   def testCannedCheckOwners_NoIssue(self):
     self.AssertOwnersWorks(issue=None,
+        modified_files=['foo'],
         uncovered_files=set(['foo']),
         expected_output="OWNERS check failed: this CL has no Gerrit "
                         "change number, so we can't check it for approvals.\n")
     self.AssertOwnersWorks(issue=None,
         is_committing=False,
+        modified_files=['foo'],
         uncovered_files=set(['foo']),
         expected_output=re.compile(
             'Missing OWNER reviewers for these files:\n'
@@ -3048,6 +3048,7 @@ the current line as well!
                         "change number, so we can't check it for approvals.\n")
     self.AssertOwnersWorks(issue=None,
         uncovered_files=set(['foo']),
+        modified_files=['foo'],
         manually_specified_reviewers=['jane'],
         is_committing=False,
         expected_output=re.compile(
@@ -3088,7 +3089,7 @@ the current line as well!
     self.AssertOwnersWorks(
         tbr=True,
         uncovered_files=set(['foo/OWNERS']),
-        modified_file='foo/OWNERS',
+        modified_files=['foo/OWNERS'],
         expected_output='Missing LGTM from an OWNER for these files:\n'
         '    foo/OWNERS\n'
         'TBR for OWNERS files are ignored.\n')
@@ -3097,14 +3098,18 @@ the current line as well!
     self.AssertOwnersWorks(
         tbr=True,
         uncovered_files=set(['foo/xyz.cc']),
-        modified_file='foo/OWNERS',
+        modified_files=['foo/OWNERS', 'foo/xyz.cc'],
         expected_output='--tbr was specified, skipping OWNERS check\n')
 
   def testCannedCheckOwners_WithoutOwnerLGTM(self):
-    self.AssertOwnersWorks(uncovered_files=set(['foo']),
+    self.AssertOwnersWorks(
+        modified_files=['foo'],
+        uncovered_files=set(['foo']),
         expected_output='Missing LGTM from an OWNER for these files:\n'
                         '    foo\n')
-    self.AssertOwnersWorks(uncovered_files=set(['foo']),
+    self.AssertOwnersWorks(
+        modified_files=['foo'],
+        uncovered_files=set(['foo']),
         is_committing=False,
         expected_output=re.compile(
             'Missing OWNER reviewers for these files:\n'

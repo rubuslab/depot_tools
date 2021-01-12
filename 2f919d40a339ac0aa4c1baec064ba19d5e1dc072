@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "baa62c45_471b7b6e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1334845
+      },
+      "writtenOn": "2021-01-12T23:56:44Z",
+      "side": 1,
+      "message": "Hi Dirk, this CL fixes an owners check bug on Windows. PTAL, thanks!",
+      "revId": "2f919d40a339ac0aa4c1baec064ba19d5e1dc072",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

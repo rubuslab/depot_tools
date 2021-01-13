@@ -23,6 +23,7 @@ from __future__ import print_function
 import os
 import psutil
 import re
+import subprocess
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -110,6 +111,16 @@ else:
 goma_disabled_env = os.environ.get('GOMA_DISABLED', '0').lower()
 if offline or goma_disabled_env in ['true', 't', 'yes', 'y', '1']:
   use_remote_build = False
+
+if use_remote_build and sys.platform.startswith('win'):
+  goma_running = False
+  cmd = 'tasklist /FI "IMAGENAME eq compiler_proxy.exe"'
+  for line in subprocess.check_output(cmd).splitlines():
+    if line.startswith('compiler_proxy.exe'):
+      goma_running = True
+  if not goma_running:
+    print('echo Goma is not running. Use "goma_ctl start" to start it.')
+    sys.exit(0)
 
 # Specify ninja.exe on Windows so that ninja.bat can call autoninja and not
 # be called back.

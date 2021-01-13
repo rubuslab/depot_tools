@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efed56f9_70ad0f9d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-13T23:44:53Z",
+      "side": 1,
+      "message": "lgtm, with a nit comment",
+      "revId": "55e90b954409e3200351d8284bf18834562b6319",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "438f3fb4_f18001d3",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-13T23:44:53Z",
+      "side": 1,
+      "message": "make it lowercase, or move outside function",
+      "revId": "55e90b954409e3200351d8284bf18834562b6319",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

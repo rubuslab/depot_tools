@@ -11,17 +11,10 @@ makes using remote build acceleration simpler and safer, and avoids errors that
 can cause slow goma builds or swap-storms on unaccelerated builds.
 """
 
-# [VPYTHON:BEGIN]
-# wheel: <
-#   name: "infra/python/wheels/psutil/${vpython_platform}"
-#   version: "version:5.6.2"
-# >
-# [VPYTHON:END]
-
 from __future__ import print_function
 
+import multiprocessing
 import os
-import psutil
 import re
 import sys
 
@@ -130,7 +123,7 @@ if (sys.platform.startswith('linux')
 # or fail to execute ninja if depot_tools is not in PATH.
 args = prefix_args + [ninja_exe_path] + input_args[1:]
 
-num_cores = psutil.cpu_count()
+num_cores = multiprocessing.cpu_count()
 if not j_specified and not t_specified:
   if use_remote_build:
     args.append('-j')

@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "33b010334463f2d2aa121174ba3ffdff3c1f2f83",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13cc035f_f1378221",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-13T23:00:08Z",
+      "side": 1,
+      "message": "PTAL. Let me know if this works correctly on your machine (especially for non-goma builds where getting the number of CPUs correctly is important) and whether you see the noticeable speedup before the ninja command is printed.\n\ntools\\win\\timeit can be used for timing the entire thing.",
+      "revId": "33b010334463f2d2aa121174ba3ffdff3c1f2f83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

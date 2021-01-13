@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff8ef1bf_fe375e98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-13T21:52:31Z",
+      "side": 1,
+      "message": "This change stops users from starting a goma build when goma isn\u0027t running, a mistake that I (and others) make fairly frequently. It costs 150 ms (when goma is enabled).\n\nI don\u0027t know if I need to check anything else for rbe builds - do you know? I could make this check goma specific, leave it as-is, or have a different check for rbe builds but I don\u0027t know how they work or who uses them. Any ideas?\n\nNote: I have a separate change which should shave 600-700 ms off of auto_ninja.py by not using vpython.",
+      "revId": "8439aca2a9e949cddf1265435649c79facc97034",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

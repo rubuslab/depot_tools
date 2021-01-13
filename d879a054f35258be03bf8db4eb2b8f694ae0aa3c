@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7c39572_dc2589c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-13T08:32:32Z",
+      "side": 1,
+      "message": "I wrote autoninja to protect me from mistakes. One mistake was not specifying a large -j value when using goma. Fixed.\nThe other mistake is failing to start goma before doing a goma build (which causes O(1,000) failed compiles). This change checks for that case. Yay!\n\nBut, I don\u0027t know what to check for if rbe builds are configured. Is it still compiler_proxy.exe? Something else? Should I skip the checks in that case? Let me know.\n\nThis only handles Windows but I\u0027m okay with that.",
+      "revId": "d879a054f35258be03bf8db4eb2b8f694ae0aa3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

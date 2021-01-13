@@ -99,6 +99,24 @@ class GitWrapperTestCase(unittest.TestCase):
       r = scm.GIT.RemoteRefToRef(k, remote)
       self.assertEqual(r, v, msg='%s -> %s, expected %s' % (k, r, v))
 
+  @mock.patch('scm.GIT.Capture')
+  def testGetRemoteHeadRefLocal(self, mockCapture):
+    mockCapture.side_effect = ['refs/remotes/origin/main']
+    self.assertEqual('refs/remotes/origin/main',
+                     scm.GIT.GetRemoteHeadRef('foo', 'proto://url', 'origin'))
+    self.assertEqual(mockCapture.call_count, 1)
+
+  @mock.patch('scm.GIT.Capture')
+  def testGetRemoteHeadRefRemote(self, mockCapture):
+    mockCapture.side_effect = [
+        subprocess2.CalledProcessError(1, '', '', '', ''),
+        'ref: refs/heads/main\tHEAD\n' +
+        '0000000000000000000000000000000000000000\tHEAD',
+    ]
+    self.assertEqual('refs/remotes/origin/main',
+                     scm.GIT.GetRemoteHeadRef('foo', 'proto://url', 'origin'))
+    self.assertEqual(mockCapture.call_count, 2)
+
 
 class RealGitTest(fake_repos.FakeReposTestBase):
   def setUp(self):
@@ -180,10 +198,10 @@ class RealGitTest(fake_repos.FakeReposTestBase):
     self.assertEqual(
         (None, None), scm.GIT.FetchUpstreamTuple(self.cwd))
 
-  @mock.patch('scm.GIT.GetRemoteBranches', return_value=['origin/master'])
+  @mock.patch('scm.GIT.GetRemoteBranches', return_value=['origin/main'])
   def testFetchUpstreamTuple_GuessOriginMaster(self, _mockGetRemoteBranches):
-    self.assertEqual(
-        ('origin', 'refs/heads/master'), scm.GIT.FetchUpstreamTuple(self.cwd))
+    self.assertEqual(('origin', 'refs/heads/main'),
+                     scm.GIT.FetchUpstreamTuple(self.cwd))
 
   @mock.patch('scm.GIT.GetRemoteBranches',
               return_value=['origin/master', 'origin/main'])

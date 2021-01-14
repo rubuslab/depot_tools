@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "485ce493_ff1815d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-14T00:02:34Z",
+      "side": 1,
+      "message": "Adding dpranke@ for thoughts on any hidden dangers of not using vpython, and thoughts on whether we should also use python3. All of the scripts support python3 except for ninjalog_uploader",
+      "revId": "4d36d197a6250ed930909d70db514a8d3841307a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

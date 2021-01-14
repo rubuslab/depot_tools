@@ -20,6 +20,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "1dfa4ff3_3deeb69b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116294
+      },
+      "writtenOn": "2021-01-14T21:15:25Z",
+      "side": 1,
+      "message": "LGTM, but perhaps we should warn if the wrong min python is used?  ",
+      "revId": "88c9cad59214625d636edc37e3098296a7109fe4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "5ca3b956_5027b2df",
         "filename": "autoninja.py",
         "patchSetId": 1

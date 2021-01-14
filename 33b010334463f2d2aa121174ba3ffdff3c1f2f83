@@ -33,6 +33,24 @@
       "message": "PTAL. Let me know if this works correctly on your machine (especially for non-goma builds where getting the number of CPUs correctly is important) and whether you see the noticeable speedup before the ninja command is printed.\n\ntools\\win\\timeit can be used for timing the entire thing.",
       "revId": "33b010334463f2d2aa121174ba3ffdff3c1f2f83",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfc015b9_6583d29f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2021-01-14T01:05:49Z",
+      "side": 1,
+      "message": "It works correctly on my 72-core machine.\n\nI ran `tools/win/timeit autoninja` (because this exits immediately after printing the ninja command) five times, and measured the following improvements from this change:\n* average: 1.656 -\u003e 1.022 seconds\n* median: 1.62 -\u003e 1.05 seconds\n* max: 1.85 -\u003e 1.07 seconds\n\nFeel free to let me know if you\u0027d like me to test anything else.",
+      "parentUuid": "13cc035f_f1378221",
+      "revId": "33b010334463f2d2aa121174ba3ffdff3c1f2f83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

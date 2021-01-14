@@ -12,7 +12,7 @@ REM If a build performance summary has been requested then also set NINJA_STATUS
 REM to trigger more verbose status updates. In particular this makes it possible
 REM to see how quickly process creation is happening - often a critical clue on
 REM Windows. The trailing space is intentional.
-if "%NINJA_SUMMARIZE_BUILD%" == "1" set NINJA_STATUS=[%%r processes, %%f/%%t @ %%o/s : %%es ] 
+if "%NINJA_SUMMARIZE_BUILD%" == "1" set NINJA_STATUS=[%%r processes, %%f/%%t @ %%o/s : %%es ]
 
 set scriptdir=%~dp0
 
@@ -38,12 +38,12 @@ FOR /f "usebackq tokens=*" %%a in (`vpython %scriptdir%autoninja.py "%*"`) do ec
 
 REM Use call to invoke vpython script here, because we use vpython via vpython.bat.
 @if "%NINJA_SUMMARIZE_BUILD%" == "1" call vpython.bat %scriptdir%post_build_ninja_summary.py %*
-@call vpython.bat %scriptdir%ninjalog_uploader_wrapper.py --cmdline %*
+@call python.bat %scriptdir%ninjalog_uploader_wrapper.py --cmdline %*
 
 exit /b
 :buildfailure
 
-@call vpython.bat %scriptdir%ninjalog_uploader_wrapper.py --cmdline %*
+@call python.bat %scriptdir%ninjalog_uploader_wrapper.py --cmdline %*
 
 REM Return an error code of 1 so that if a developer types:
 REM "autoninja chrome && chrome" then chrome won't run if the build fails.

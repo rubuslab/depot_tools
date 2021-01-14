@@ -16,6 +16,58 @@
       "message": "You may know that we\u0027re planning to replace the goma client (eventually) with something called \"reclient\".\n\nThe current design for reclient requires you to start reclient before the build and stop reclient after the build, and I plan to do that here in autoninja.\n\nSo, we could change this to start/stop goma the same way. I don\u0027t know if there\u0027s any real advantage to doing so, although it would mean the user would never have to remember to call `goma_ctl ensure_start`.",
       "revId": "b7ddc5a0091bcd4d070fcd91027d7099338e84b9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdaee03f_56ac7a87",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-01-14T23:02:45Z",
+      "side": 1,
+      "message": "Doesn\u0027t goma benefit from running continuously by having context from previous builds? Having autoninja handle running goma_ctl ensure_start seems like a good idea though.",
+      "parentUuid": "bc913ebb_9587ee85",
+      "revId": "b7ddc5a0091bcd4d070fcd91027d7099338e84b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84976ab7_055437f2",
+        "filename": "autoninja.bat",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-01-14T23:02:45Z",
+      "side": 1,
+      "message": "Performance aside, wouldn\u0027t changing from vpython to vpython3 work here?",
+      "revId": "b7ddc5a0091bcd4d070fcd91027d7099338e84b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab8882ac_0fd779c9",
+        "filename": "autoninja.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-01-14T23:02:45Z",
+      "side": 1,
+      "message": "Out of curiosity, why change from psutil multiprocessing for core count, which removes one import while adding another?",
+      "revId": "b7ddc5a0091bcd4d070fcd91027d7099338e84b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

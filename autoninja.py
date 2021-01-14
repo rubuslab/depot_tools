@@ -23,6 +23,7 @@ from __future__ import print_function
 import os
 import psutil
 import re
+import subprocess
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -68,6 +69,7 @@ for index, arg in enumerate(input_args[1:]):
 input_args = [ arg for arg in input_args if arg != '-o' and arg != '--offline']
 
 use_remote_build = False
+remote_build_is_goma = False
 
 # Attempt to auto-detect remote build acceleration. We support gn-based
 # builds, where we look for args.gn in the build tree, and cmake-based builds
@@ -86,6 +88,9 @@ if os.path.exists(os.path.join(output_dir, 'args.gn')):
       if re.search(r'(^|\s)(use_goma|use_rbe)\s*=\s*true($|\s)',
                    line_without_comment):
         use_remote_build = True
+        # Distinguish between rbe and goma
+        if line_without_comment.count('use_goma') > 0:
+          remote_build_is_goma = True
         continue
 else:
   for relative_path in [
@@ -110,6 +115,17 @@ else:
 goma_disabled_env = os.environ.get('GOMA_DISABLED', '0').lower()
 if offline or goma_disabled_env in ['true', 't', 'yes', 'y', '1']:
   use_remote_build = False
+
+if use_remote_build and remote_build_is_goma and sys.platform.startswith('win'):
+  # Check to make sure that goma is running. If not, don't start the build.
+  goma_running = False
+  cmd = 'tasklist /FI "IMAGENAME eq compiler_proxy.exe"'
+  for line in subprocess.check_output(cmd).splitlines():
+    if line.startswith('compiler_proxy.exe'):
+      goma_running = True
+  if not goma_running:
+    print('echo Goma is not running. Use "goma_ctl start" to start it.')
+    sys.exit(0)
 
 # Specify ninja.exe on Windows so that ninja.bat can call autoninja and not
 # be called back.

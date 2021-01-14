@@ -68,6 +68,24 @@
       "message": "Out of curiosity, why change from psutil multiprocessing for core count, which removes one import while adding another?",
       "revId": "b7ddc5a0091bcd4d070fcd91027d7099338e84b9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfb6687b_fec439ce",
+        "filename": "autoninja.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-14T23:31:10Z",
+      "side": 1,
+      "message": "psutil is a non-standard binary library, which hence required vpython. If all you need is the core count, multiprocessing is a better choice.",
+      "parentUuid": "ab8882ac_0fd779c9",
+      "revId": "b7ddc5a0091bcd4d070fcd91027d7099338e84b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "886e5723_adcb32de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-14T08:47:52Z",
+      "side": 1,
+      "message": "Great! autoninja is about to be better and faster. Thanks for the quick work. I tested it on Windows and it lgtm.",
+      "revId": "acf1499247b7964e95616179ff2b624ebbf1b2b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba2bd3b7_2d7b5027",
@@ -36,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dabf88c5_766890f2",
+        "filename": "autoninja",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-14T08:47:52Z",
+      "side": 1,
+      "message": "Yep, I\u0027ve got that, in crrev.com/c/2627014",
+      "parentUuid": "f8352d4c_db0f0f90",
+      "revId": "acf1499247b7964e95616179ff2b624ebbf1b2b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7be502bc_9eaa3a0f",
@@ -49,6 +84,24 @@
       "writtenOn": "2021-01-14T05:51:32Z",
       "side": 1,
       "message": "need to use vpython?",
+      "revId": "acf1499247b7964e95616179ff2b624ebbf1b2b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "429504a2_383366ec",
+        "filename": "autoninja.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-14T08:47:52Z",
+      "side": 1,
+      "message": "Covered in crrev.com/c/2627014",
+      "parentUuid": "7be502bc_9eaa3a0f",
       "revId": "acf1499247b7964e95616179ff2b624ebbf1b2b8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

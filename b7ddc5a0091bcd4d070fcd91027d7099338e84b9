@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc913ebb_9587ee85",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-14T22:50:12Z",
+      "side": 1,
+      "message": "You may know that we\u0027re planning to replace the goma client (eventually) with something called \"reclient\".\n\nThe current design for reclient requires you to start reclient before the build and stop reclient after the build, and I plan to do that here in autoninja.\n\nSo, we could change this to start/stop goma the same way. I don\u0027t know if there\u0027s any real advantage to doing so, although it would mean the user would never have to remember to call `goma_ctl ensure_start`.",
+      "revId": "b7ddc5a0091bcd4d070fcd91027d7099338e84b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

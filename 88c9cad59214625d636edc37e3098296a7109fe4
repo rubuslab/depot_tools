@@ -37,6 +37,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "c4eca107_f4e0624f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-14T22:59:58Z",
+      "side": 1,
+      "message": "That may be a good idea, but should probably be done elsewhere. I\u0027ve previously put pre-build checks in build/write_buildflag_header.py - that ensures that they can\u0027t be skipped",
+      "parentUuid": "1dfa4ff3_3deeb69b",
+      "revId": "88c9cad59214625d636edc37e3098296a7109fe4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "5ca3b956_5027b2df",
         "filename": "autoninja.py",
         "patchSetId": 1

@@ -69,6 +69,24 @@
       "parentUuid": "bf37adc5_f564d893",
       "revId": "eda799bc061c8bd112e3918a2238b2f37c9b3670",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbd6978d_13cd1da9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2021-01-15T21:38:11Z",
+      "side": 1,
+      "message": "Removed the need for the env vars, determines directories based from output_dir now.",
+      "parentUuid": "37f3911b_cabb793a",
+      "revId": "eda799bc061c8bd112e3918a2238b2f37c9b3670",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,23 @@
       "message": "Liviu - PTAL. This fixes crbug.com/1167064",
       "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6277da06_443026c8",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-01-15T23:55:09Z",
+      "side": 1,
+      "message": "This sys.path[0] usage still assumes depot_tools is the first entry in the PATH. Wouldn\u0027t it be better to use something based on dirname(__file__) since that\u0027s the path we really want? `os.path.join(os.path.dirname(os.path.abspath(__file__)), \u0027python3.bat\u0027)`",
+      "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

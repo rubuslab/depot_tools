@@ -16,6 +16,24 @@
       "message": "sys.executable ?",
       "revId": "31e71c8bf3ab27801e5a37b0ed99b3eb0571eff4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc4facef_2671a2dc",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-01-15T05:48:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf6309d8_b56ede3b",
+      "revId": "31e71c8bf3ab27801e5a37b0ed99b3eb0571eff4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

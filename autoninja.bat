@@ -39,12 +39,12 @@ FOR /f "usebackq tokens=*" %%a in (`python3.bat %scriptdir%autoninja.py "%*"`) d
 
 REM Use call to invoke python script here, because we use python via python.bat.
 @if "%NINJA_SUMMARIZE_BUILD%" == "1" call python.bat %scriptdir%post_build_ninja_summary.py %*
-@call python.bat %scriptdir%ninjalog_uploader_wrapper.py --cmdline %*
+@call python3.bat %scriptdir%ninjalog_uploader_wrapper.py --cmdline %*
 
 exit /b
 :buildfailure
 
-@call python.bat %scriptdir%ninjalog_uploader_wrapper.py --cmdline %*
+@call python3.bat %scriptdir%ninjalog_uploader_wrapper.py --cmdline %*
 
 REM Return an error code of 1 so that if a developer types:
 REM "autoninja chrome && chrome" then chrome won't run if the build fails.

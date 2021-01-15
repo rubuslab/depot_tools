@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4a410d4_a4ddf78f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-15T18:15:28Z",
+      "side": 1,
+      "message": "Would this work better if we invoked python3 instead of python3.bat?\n",
+      "revId": "428143ee24c5f084c8dfb38cd17f07b4f7ba9bf7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

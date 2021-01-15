@@ -107,6 +107,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "84ecf8b6_bc468296",
+        "filename": "autoninja.bat",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-15T03:14:21Z",
+      "side": 1,
+      "message": "autoninja should fail, but the build step passed...",
+      "parentUuid": "33d60249_4fe9d006",
+      "revId": "b7ddc5a0091bcd4d070fcd91027d7099338e84b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab8882ac_0fd779c9",

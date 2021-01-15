@@ -16,6 +16,24 @@
       "message": "Would this work better if we invoked python3 instead of python3.bat?\n",
       "revId": "428143ee24c5f084c8dfb38cd17f07b4f7ba9bf7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34578ef9_606493b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-01-15T18:51:46Z",
+      "side": 1,
+      "message": "For consistency in implementation, I think the thing to do is most likely to continue using python3.bat but use the path of the autoninja.py script to explicitly refer to it, instead of relying on the contents of %PATH%/$PATH/path[0].\nos.path.join(os.path.dirname(os.path.abspath(__file__)), \u0027python3.bat\u0027)",
+      "parentUuid": "b4a410d4_a4ddf78f",
+      "revId": "428143ee24c5f084c8dfb38cd17f07b4f7ba9bf7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

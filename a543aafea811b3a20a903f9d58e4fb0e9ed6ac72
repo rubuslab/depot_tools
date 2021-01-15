@@ -16,6 +16,97 @@
       "message": "passed unittest, brucedawson ptal?",
       "revId": "a543aafea811b3a20a903f9d58e4fb0e9ed6ac72",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1049769a_9ee9b637",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-15T18:08:26Z",
+      "side": 1,
+      "message": "You\u0027ll have to rebase - we\u0027ve been making quite a few changes to autoninja these last few days and there appear to be conflicts.\n\nMaybe change all of the python references to python3 (python3.bat in autoninja.bat) for consistency? And remove the one remaining vpython reference.",
+      "revId": "a543aafea811b3a20a903f9d58e4fb0e9ed6ac72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7ac055c_ad83f394",
+        "filename": "autoninja",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-15T18:08:26Z",
+      "side": 1,
+      "message": "Woah - vpython. This will be expensive on OSX/Linux builds and should be python or python3",
+      "revId": "a543aafea811b3a20a903f9d58e4fb0e9ed6ac72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da0bcaee_ddbb0600",
+        "filename": "autoninja",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-15T18:08:26Z",
+      "side": 1,
+      "message": "python3 as well? It supports it.",
+      "revId": "a543aafea811b3a20a903f9d58e4fb0e9ed6ac72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed2d4e68_2684c701",
+        "filename": "autoninja.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-15T18:08:26Z",
+      "side": 1,
+      "message": "python3.bat as well? Not important, but just for consistency?",
+      "range": {
+        "startLine": 9,
+        "startChar": 39,
+        "endLine": 9,
+        "endChar": 40
+      },
+      "revId": "a543aafea811b3a20a903f9d58e4fb0e9ed6ac72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0302c8fd_e62a6fd4",
+        "filename": "autoninja.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-15T18:08:26Z",
+      "side": 1,
+      "message": "python3.bat as well? It supports it.",
+      "revId": "a543aafea811b3a20a903f9d58e4fb0e9ed6ac72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

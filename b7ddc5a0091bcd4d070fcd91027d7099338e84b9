@@ -89,6 +89,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33d60249_4fe9d006",
+        "filename": "autoninja.bat",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-15T03:13:11Z",
+      "side": 1,
+      "message": "cause build error\n\nhttps://ci.chromium.org/ui/p/infra-internal/builders/prod/goma-client-internal-win/1220/overview\nhttps://logs.chromium.org/logs/infra-internal/buildbucket/cr-buildbucket.appspot.com/8858077852309878080/+/u/build/execution_details\nhttps://logs.chromium.org/logs/infra-internal/buildbucket/cr-buildbucket.appspot.com/8858077852309878080/+/u/build/stdout",
+      "parentUuid": "5d58180e_6db92a3e",
+      "revId": "b7ddc5a0091bcd4d070fcd91027d7099338e84b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab8882ac_0fd779c9",

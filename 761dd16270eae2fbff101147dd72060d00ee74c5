@@ -104,6 +104,24 @@
       "parentUuid": "e3725329_d471a79e",
       "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c7f9a88_1e436ae0",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-16T01:53:22Z",
+      "side": 1,
+      "message": "I believe your understanding of sys.path is correct, but doing things this way is less idiomatic than dirname(__file__), at least as far as Chromium code is concerned.\n\nSo, I\u0027d still recommend you follow Doug\u0027s suggestion even if yours works.",
+      "parentUuid": "5cf13d24_1f0266a1",
+      "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

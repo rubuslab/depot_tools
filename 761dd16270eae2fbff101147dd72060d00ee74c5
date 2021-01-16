@@ -18,6 +18,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "32e9731a_a55f7689",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-16T00:10:29Z",
+      "side": 1,
+      "message": "Yoshisato - can you check whether this version works properly on goma-client-internal-win now, or whatever local testing is equivalent? Specifically whether python.bat/python3.bat are found.\n\nhttps://ci.chromium.org/p/infra-internal/builders/prod/goma-client-internal-win",
+      "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6277da06_443026c8",
@@ -67,6 +84,24 @@
       "side": 1,
       "message": "Ah, quite right. I forgot that sys.path is not the system PATH env var. Thanks!",
       "parentUuid": "ca11b13c_13b6d821",
+      "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cf13d24_1f0266a1",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-16T00:10:29Z",
+      "side": 1,
+      "message": "It made me check, and refresh my memory, so it\u0027s all good.",
+      "parentUuid": "e3725329_d471a79e",
       "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

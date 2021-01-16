@@ -140,6 +140,24 @@
       "parentUuid": "1c7f9a88_1e436ae0",
       "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9682461b_b0ee2031",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-16T02:31:03Z",
+      "side": 1,
+      "message": "Not using abspath is probably fine.",
+      "parentUuid": "d284d8ad_236e77e8",
+      "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

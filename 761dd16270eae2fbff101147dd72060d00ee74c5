@@ -33,6 +33,24 @@
       "message": "This sys.path[0] usage still assumes depot_tools is the first entry in the PATH. Wouldn\u0027t it be better to use something based on dirname(__file__) since that\u0027s the path we really want? `os.path.join(os.path.dirname(os.path.abspath(__file__)), \u0027python3.bat\u0027)`",
       "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca11b13c_13b6d821",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-16T00:02:10Z",
+      "side": 1,
+      "message": "My understanding of sys.path is that it is the python path and that the scripts current directory is always the first entry in the sys.path list. I just tested this by running this script with python.bat, python.exe, and python3.bat and it consistently printed the directory of the script:\n\nimport sys\nprint (sys.path[0])\n\nIt did this despite the script being in c:\\src\\temp, which is definitely not anywhere in my PATH environment variable.\n\nI think that the failures to find gomacc.exe were because it wasn\u0027t installed in depot_tools for some reason, not because gomacc_path was wrong. But please let me know if I am missing something.",
+      "parentUuid": "6277da06_443026c8",
+      "revId": "761dd16270eae2fbff101147dd72060d00ee74c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -52,6 +52,24 @@
       "parentUuid": "03aa3ea2_ff05e82e",
       "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ffdc493_4e19a1ea",
+        "filename": "autoninja.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-01-18T06:57:15Z",
+      "side": 1,
+      "message": "I think the task has python3 CIP package in %PATH%\nhttps://chrome-infra-packages.appspot.com//p/infra/3pp/tools/cpython3/windows-amd64/+/kjcgUg3-pOen5mmuPoi4sOAZP7sZAM8BLh1Yy_JfTJ8C\nbut the package only has python3.exe.",
+      "parentUuid": "533bfd7c_e751e0f1",
+      "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -88,6 +88,24 @@
       "parentUuid": "7ffdc493_4e19a1ea",
       "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d582acf_a24e6ebf",
+        "filename": "autoninja.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-01-18T07:46:47Z",
+      "side": 1,
+      "message": "I think so, and it may be better to avoid using extension if we expect the intepreter is found from %PATH%.",
+      "parentUuid": "76ff04cb_2ddcaf93",
+      "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

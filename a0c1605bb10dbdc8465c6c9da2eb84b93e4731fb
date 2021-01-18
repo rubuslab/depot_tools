@@ -182,6 +182,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "89d837d1_50dde9c9",
+        "filename": "autoninja.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-01-18T08:21:08Z",
+      "side": 1,
+      "message": "It seems that this line returns from python3.bat invocation even if it is invoked without using call.",
+      "parentUuid": "eabb7db3_a61a962f",
+      "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cf2e28e6_ebff305b",
         "filename": "autoninja.bat",
         "patchSetId": 4
@@ -193,6 +211,24 @@
       "writtenOn": "2021-01-18T08:12:04Z",
       "side": 1,
       "message": "python3.exe may in %PATH%, but python3.bat may not in %PATH%?",
+      "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c314f8cb_3de1bc71",
+        "filename": "autoninja.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-01-18T08:21:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf2e28e6_ebff305b",
       "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

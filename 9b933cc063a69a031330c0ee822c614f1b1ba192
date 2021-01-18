@@ -35,6 +35,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6992cb7_429cf04d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2021-01-18T10:46:30Z",
+      "side": 1,
+      "message": "Please address Fumitoshi\u0027s review comments.",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f5b80923_52684ddd",
@@ -48,6 +65,29 @@
       "writtenOn": "2021-01-18T06:01:51Z",
       "side": 1,
       "message": "no need to have this directory in PATH?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f121f130_a53267d8",
+        "filename": "autoninja.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2021-01-18T10:46:30Z",
+      "side": 1,
+      "message": "As Fumitoshi says below, this looks used before defined.",
+      "range": {
+        "startLine": 9,
+        "startChar": 36,
+        "endLine": 9,
+        "endChar": 47
+      },
       "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

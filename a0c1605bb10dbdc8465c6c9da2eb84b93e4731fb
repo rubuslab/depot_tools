@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c46c2cca_2a76df82",
+        "filename": "autoninja.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T04:34:28Z",
+      "side": 1,
+      "message": "should use python3.bat in this directory?\n%~dp0python3.bat\nor move L17 above and %scriptdir%python3.bat ?",
+      "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

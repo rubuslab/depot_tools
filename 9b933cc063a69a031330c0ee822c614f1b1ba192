@@ -33,6 +33,108 @@
       "message": "still lgtm.",
       "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5b80923_52684ddd",
+        "filename": "autoninja",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T06:01:51Z",
+      "side": 1,
+      "message": "no need to have this directory in PATH?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba0892e6_25e94a33",
+        "filename": "autoninja.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T06:01:51Z",
+      "side": 1,
+      "message": "move this before L9?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "586d72e1_b3510ffe",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T06:01:51Z",
+      "side": 1,
+      "message": "use SCRIPT_DIR ?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18c141f5_8c660d2c",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T06:01:51Z",
+      "side": 1,
+      "message": "so, it assumes user might use goma client other than depot_tools\u0027s one?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab43ce5c_ef058bec",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T06:01:51Z",
+      "side": 1,
+      "message": "stderr?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc7f199e_6ce90811",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T06:01:51Z",
+      "side": 1,
+      "message": "exit(1)\n?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

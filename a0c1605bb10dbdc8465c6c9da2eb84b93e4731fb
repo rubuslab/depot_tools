@@ -106,6 +106,24 @@
       "parentUuid": "76ff04cb_2ddcaf93",
       "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d7ea282_bc095e02",
+        "filename": "autoninja.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T07:50:59Z",
+      "side": 1,
+      "message": "no need to use `call *.bat` in *.bat file?",
+      "parentUuid": "6d582acf_a24e6ebf",
+      "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

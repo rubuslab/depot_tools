@@ -160,6 +160,41 @@
       "parentUuid": "517760b1_4940dde4",
       "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eabb7db3_a61a962f",
+        "filename": "autoninja.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T08:12:04Z",
+      "side": 1,
+      "message": "ah, i didn\u0027t know that \u003e call can invoke *.exe.",
+      "parentUuid": "ec0e012c_8fb74364",
+      "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf2e28e6_ebff305b",
+        "filename": "autoninja.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-18T08:12:04Z",
+      "side": 1,
+      "message": "python3.exe may in %PATH%, but python3.bat may not in %PATH%?",
+      "revId": "a0c1605bb10dbdc8465c6c9da2eb84b93e4731fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

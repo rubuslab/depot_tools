@@ -51,6 +51,24 @@
       "parentUuid": "250c3545_97a551d5",
       "revId": "4f86ae668517c9739651b90a62d14ac597f11f46",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7af41ef6_1d01eaa4",
+        "filename": "autoninja.bat",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-19T01:18:17Z",
+      "side": 1,
+      "message": "if we can assume python3 is installed out of depot_tools (which may be python3.exe, not python3.bat), I think we can use `python3 ..` and `@call python3 ...`.\n\nif depot_tools is in %PATH%, it will invoke python3.bat in depot_tools (we need `call` in this case).\notherwise, it will invoke python3 (probably python3.exe).",
+      "parentUuid": "9d27d0d0_8dae1991",
+      "revId": "4f86ae668517c9739651b90a62d14ac597f11f46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

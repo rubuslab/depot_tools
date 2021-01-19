@@ -310,6 +310,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "70209454_d7ef5c0d",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-19T01:18:17Z",
+      "side": 1,
+      "message": "without `exit 1`, autoninja.bat would finish successfully without build anything.\nso recipe shows build succeeded, but it cause error in future steps, which is really confusing.",
+      "parentUuid": "a6684a91_32222465",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc7f199e_6ce90811",

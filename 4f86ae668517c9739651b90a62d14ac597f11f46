@@ -16,6 +16,23 @@
       "message": "Thanks for the CR comments. I\u0027ve made some changes and tested on Windows and Linux.\n\nI plan to not land this until the other pending changes have landed, in case this needs reverting again for some reason.",
       "revId": "4f86ae668517c9739651b90a62d14ac597f11f46",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "250c3545_97a551d5",
+        "filename": "autoninja.bat",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-19T00:58:39Z",
+      "side": 1,
+      "message": "no need to use %scriptdir%python3.bat ?",
+      "revId": "4f86ae668517c9739651b90a62d14ac597f11f46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

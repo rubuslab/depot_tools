@@ -221,6 +221,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48273082_68bebe52",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-19T00:58:39Z",
+      "side": 1,
+      "message": "ah, buildbot uses self installed goma client, not goma client in depot_tools.",
+      "parentUuid": "cf162240_43ca3e2b",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab43ce5c_ef058bec",
@@ -252,6 +270,24 @@
       "side": 1,
       "message": "The goal is to print a message that is then executed, which is why I used stdout. stderr might also work but would mean we would execute a NULL command and I\u0027m not sure that is better.",
       "parentUuid": "ab43ce5c_ef058bec",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "593f3c2f_3070ee8c",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-19T00:58:39Z",
+      "side": 1,
+      "message": "ah, it will be executed in autoninja (sh script/bat).\n\nhow about \"\u003e\u00262\"\n?\nand \"; exit 1\" ?",
+      "parentUuid": "e97fbb4d_a9dadc0a",
       "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

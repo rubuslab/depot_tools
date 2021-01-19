@@ -16,6 +16,23 @@
       "message": "This issue might be related https://crbug.com/1167660",
       "revId": "e50ef5753af84f80dae9a458bb819ccdc030d8b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbeb688e_f73c9a03",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2021-01-19T15:32:16Z",
+      "side": 1,
+      "message": "I\u0027m also getting \"/c/src/depot_tools/autoninja: line 8: python3: command not found\" today. ",
+      "revId": "e50ef5753af84f80dae9a458bb819ccdc030d8b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

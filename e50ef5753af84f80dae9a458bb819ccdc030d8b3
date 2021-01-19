@@ -72,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "878d66bf_f6ce4fe1",
+        "filename": "autoninja.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T23:36:19Z",
+      "side": 1,
+      "message": "That is unclear. I am waiting to see how the issues with using \"python3\" pan out before making any changes.",
+      "parentUuid": "ffa7c695_68a873dc",
+      "revId": "e50ef5753af84f80dae9a458bb819ccdc030d8b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "666fab71_2d610e9a",
         "filename": "autoninja.bat",
         "patchSetId": 11

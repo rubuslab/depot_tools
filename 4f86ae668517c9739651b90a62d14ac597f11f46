@@ -69,6 +69,24 @@
       "parentUuid": "9d27d0d0_8dae1991",
       "revId": "4f86ae668517c9739651b90a62d14ac597f11f46",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4208571f_52c69ea7",
+        "filename": "autoninja.bat",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-01-19T19:48:02Z",
+      "side": 1,
+      "message": "IIRC `call` would do the right thing (i.e. return to here) whether it\u0027s .exe or .bat - so it\u0027s safe to add it unless you want the non-call behavior of a .bat script invocation.",
+      "parentUuid": "7af41ef6_1d01eaa4",
+      "revId": "4f86ae668517c9739651b90a62d14ac597f11f46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -328,6 +328,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9912f4f3_8f1b6f1d",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-01-19T19:48:02Z",
+      "side": 1,
+      "message": "If this change is made, I think the syntax should be `\u0026 exit /b 1` (NB not ; or \u0026\u0026), in case autoninja.bat was itself invoked from another script",
+      "parentUuid": "70209454_d7ef5c0d",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc7f199e_6ce90811",

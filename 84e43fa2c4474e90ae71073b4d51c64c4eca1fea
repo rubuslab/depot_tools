@@ -34,6 +34,24 @@
       "parentUuid": "e7117ed4_337626fe",
       "revId": "84e43fa2c4474e90ae71073b4d51c64c4eca1fea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "556d06a2_fa7e6e08",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T19:17:28Z",
+      "side": 1,
+      "message": "I don\u0027t understand. Here\u0027s what I know: I guess git bash won\u0027t parse python.bat. It has the python.exe and python3.exe directories in depot_tools in its PATH environment variable, but \"which python\" and \"which python3\" both fail to find those installs. However invoking python finds the depot_tools python (confirmed with sys.executable) somehow.\n\nSo, somebody who understands this better needs to figure out why git bash can launch depot_tools python but not depot_tools python3. I don\u0027t see an alias, the path doesn\u0027t seem to be used, so, ???\n\nBTW, I slightly misattributed this. It was actually crrev.com/c/2631396 that changed line 8. But, same author/same issues so discussing here works I think.",
+      "parentUuid": "9c0e4a49_84e7d181",
+      "revId": "84e43fa2c4474e90ae71073b4d51c64c4eca1fea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

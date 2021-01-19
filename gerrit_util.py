@@ -930,15 +930,12 @@ def CreateGerritBranch(host, project, branch, commit):
   raise GerritError(200, 'Unable to create gerrit branch')
 
 
-def GetHead(host, project):
-  """Retrieves current HEAD of Gerrit project
+def GetProjects(host):
+  """Retrieves list of Gerrit projects
 
-  https://gerrit-review.googlesource.com/Documentation/rest-api-projects.html#get-head
-
-  Returns:
-    A JSON object with 'ref' key.
+  https://gerrit-review.googlesource.com/Documentation/rest-api-projects.html#list-projects
   """
-  path = 'projects/%s/HEAD' % (project)
+  path = 'projects/'
   conn = CreateHttpConn(host, path, reqtype='GET')
   response = ReadHttpJsonResponse(conn, accept_statuses=[200])
   if response:
@@ -981,6 +978,13 @@ def GetGerritBranch(host, project, branch):
 
 
 def GetProjectHead(host, project):
+  """Retrieves current HEAD of Gerrit project
+
+  https://gerrit-review.googlesource.com/Documentation/rest-api-projects.html#get-head
+
+  Returns:
+    A JSON object with 'ref' key.
+  """
   conn = CreateHttpConn(host,
                         '/projects/%s/HEAD' % urllib.parse.quote(project, ''))
   return ReadHttpJsonResponse(conn, accept_statuses=[200])

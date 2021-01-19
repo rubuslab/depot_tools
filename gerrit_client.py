@@ -112,6 +112,21 @@ def CMDhead(parser, args):
   logging.info(result)
   write_result(result, opt)
 
+@subcommand.usage('[args ...]')
+def CMDdumpheads(parser, args):
+  (opt, args) = parser.parse_args(args)
+
+  host = urlparse.urlparse(opt.host).netloc
+  projects = gerrit_util.GetProjects(host)
+  out = ""
+  for project in projects:
+    try:
+      result = gerrit_util.GetProjectHead(host, project)
+    except Exception as e:
+      result = 'ERR:%s' % ', '.join(str(e).split('\n'))
+    out += "%s\t%s\t%s\n" % (project, projects[project]['state'], result)
+  print(out)
+
 
 @subcommand.usage('[args ...]')
 def CMDheadinfo(parser, args):
@@ -121,7 +136,7 @@ def CMDheadinfo(parser, args):
 
   project = quote_plus(opt.project)
   host = urlparse.urlparse(opt.host).netloc
-  result = gerrit_util.GetHead(host, project)
+  result = gerrit_util.GetProjectHead(host, project)
   logging.info(result)
   write_result(result, opt)
 

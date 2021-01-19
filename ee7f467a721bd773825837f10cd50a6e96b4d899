@@ -16,6 +16,40 @@
       "message": "Friendly ping on the last patchset.  Thanks!",
       "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29cd5360_5423edd0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-19T23:47:50Z",
+      "side": 1,
+      "message": "lgtm.\n\nOn a related but non-blocking note, can you remind me how fast startup and shutdown are?\n\nI.e., how much slower does this make a no-op build?",
+      "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9432bfb3_26b3e585",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-19T23:47:50Z",
+      "side": 1,
+      "message": "Nit: we\u0027re no longer using env vars, right?",
+      "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

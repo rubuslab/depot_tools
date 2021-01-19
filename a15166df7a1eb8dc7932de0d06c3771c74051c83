@@ -33,6 +33,24 @@
       "message": "python3.bat caused problems on one of the builders. It needs to be python3 or %scriptdir%python3.bat to avoid that situation (depot_tools not in the path).",
       "revId": "a15166df7a1eb8dc7932de0d06c3771c74051c83",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a520308_9d99fa90",
+        "filename": "autoninja.bat",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-01-19T01:46:44Z",
+      "side": 1,
+      "message": "Thanks, I missed here.",
+      "parentUuid": "2de56d89_ec4ef362",
+      "revId": "a15166df7a1eb8dc7932de0d06c3771c74051c83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

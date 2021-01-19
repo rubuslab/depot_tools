@@ -52,6 +52,24 @@
       "parentUuid": "9c0e4a49_84e7d181",
       "revId": "84e43fa2c4474e90ae71073b4d51c64c4eca1fea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d6444a2_3ec437d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T19:25:00Z",
+      "side": 1,
+      "message": "Update: it probably doesn\u0027t help that python_27_amd64 is in the path before the depot_tools python installs, and multiple instances of /c/Users/Administrator/AppData/Local/Microsoft/WindowsApps are also in the path before the depot_tools python installs. However that doesn\u0027t explain why python works but python3 doesn\u0027t. The chromium setup instructions say that depot_tools (and, implicitly, python.bat/python.exe) are supposed to be near the front of the path, not at the end.\n\nMaybe it\u0027s related to this environment variable? But probably not:\n\nPYTHON_BIN_RELDIR\u003dc:\\src\\depot_tools\\bootstrap-3_8_0_chromium_8_bin\\python\\bin",
+      "parentUuid": "556d06a2_fa7e6e08",
+      "revId": "84e43fa2c4474e90ae71073b4d51c64c4eca1fea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

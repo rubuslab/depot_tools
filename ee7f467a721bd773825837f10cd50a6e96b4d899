@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b230b600_09427547",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2021-01-19T15:53:43Z",
+      "side": 1,
+      "message": "Friendly ping on the last patchset.  Thanks!",
+      "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

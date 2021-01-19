@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9185a1d1_d4c440fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T01:13:27Z",
+      "side": 1,
+      "message": "Apologies for the possibly contradictory suggestions on python3/python3.bat/%scriptdir%python3.bat",
+      "revId": "a15166df7a1eb8dc7932de0d06c3771c74051c83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2de56d89_ec4ef362",
+        "filename": "autoninja.bat",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T01:13:27Z",
+      "side": 1,
+      "message": "python3.bat caused problems on one of the builders. It needs to be python3 or %scriptdir%python3.bat to avoid that situation (depot_tools not in the path).",
+      "revId": "a15166df7a1eb8dc7932de0d06c3771c74051c83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

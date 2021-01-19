@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9389c92b_35bd3b1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T00:27:25Z",
+      "side": 1,
+      "message": "Still a merge conflict?\n\nI\u0027ll let you land this one and the other autoninja change before I land mine.",
+      "revId": "c9b103d9a9746c2524eb14bff435db170486cef1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f97223d_0e298f9b",
+        "filename": "autoninja.bat",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T00:27:25Z",
+      "side": 1,
+      "message": "Apparently invoking python3.bat may fail on some machines - I don\u0027t understand why. Sigh... I guess it either needs to be python3 or %scriptdir%python3.bat",
+      "revId": "c9b103d9a9746c2524eb14bff435db170486cef1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

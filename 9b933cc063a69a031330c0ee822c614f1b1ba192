@@ -292,6 +292,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6684a91_32222465",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T01:11:11Z",
+      "side": 1,
+      "message": "The autoninja.bat file is so fragile that I\u0027m hesitant to make further changes without a compelling reason.",
+      "parentUuid": "593f3c2f_3070ee8c",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc7f199e_6ce90811",

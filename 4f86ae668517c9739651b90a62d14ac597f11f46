@@ -33,6 +33,24 @@
       "message": "no need to use %scriptdir%python3.bat ?",
       "revId": "4f86ae668517c9739651b90a62d14ac597f11f46",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d27d0d0_8dae1991",
+        "filename": "autoninja.bat",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T01:11:11Z",
+      "side": 1,
+      "message": "While resolving conflicts I removed all unnecessary changes, particularly to code \"owned\" by others. I think we should try to standardize on either %scriptdir%python3.bat or python3, either in this change or in the future. Thoughts on which?",
+      "parentUuid": "250c3545_97a551d5",
+      "revId": "4f86ae668517c9739651b90a62d14ac597f11f46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

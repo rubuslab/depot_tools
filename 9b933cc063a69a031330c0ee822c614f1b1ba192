@@ -92,6 +92,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d816090e_3e1b2690",
+        "filename": "autoninja.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T00:46:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f121f130_a53267d8",
+      "range": {
+        "startLine": 9,
+        "startChar": 36,
+        "endLine": 9,
+        "endChar": 47
+      },
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba0892e6_25e94a33",
@@ -105,6 +129,24 @@
       "writtenOn": "2021-01-18T06:01:51Z",
       "side": 1,
       "message": "move this before L9?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68fbcac2_c83c6cd9",
+        "filename": "autoninja.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T00:46:48Z",
+      "side": 1,
+      "message": "Yikes! Good catch.",
+      "parentUuid": "ba0892e6_25e94a33",
       "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -126,6 +168,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba4496ba_c825f619",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T00:46:48Z",
+      "side": 1,
+      "message": "Ah - good suggestion. Thanks.",
+      "parentUuid": "586d72e1_b3510ffe",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "18c141f5_8c660d2c",
@@ -139,6 +199,24 @@
       "writtenOn": "2021-01-18T06:01:51Z",
       "side": 1,
       "message": "so, it assumes user might use goma client other than depot_tools\u0027s one?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf162240_43ca3e2b",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T00:46:48Z",
+      "side": 1,
+      "message": "There was a report of failure due to .cipd_bin\\gomacc.exe not being found. I don\u0027t understand, but I wanted to avoid that.",
+      "parentUuid": "18c141f5_8c660d2c",
       "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -160,6 +238,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e97fbb4d_a9dadc0a",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T00:46:48Z",
+      "side": 1,
+      "message": "The goal is to print a message that is then executed, which is why I used stdout. stderr might also work but would mean we would execute a NULL command and I\u0027m not sure that is better.",
+      "parentUuid": "ab43ce5c_ef058bec",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc7f199e_6ce90811",
@@ -173,6 +269,24 @@
       "writtenOn": "2021-01-18T06:01:51Z",
       "side": 1,
       "message": "exit(1)\n?",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7338e906_99d28789",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-19T00:46:48Z",
+      "side": 1,
+      "message": "The return code is ignored anyway so I think it\u0027s just personal taste as to whether goma-not-running is a failure mode or not.",
+      "parentUuid": "cc7f199e_6ce90811",
       "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

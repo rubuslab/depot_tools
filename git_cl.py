@@ -1993,7 +1993,8 @@ class Changelist(object):
         break
     return 0
 
-  def CMDPatchWithParsedIssue(self, parsed_issue_arg, nocommit, force):
+  def CMDPatchWithParsedIssue(self, parsed_issue_arg, nocommit, force,
+                              newbranch):
     assert parsed_issue_arg.valid
 
     self.issue = parsed_issue_arg.issue
@@ -2033,6 +2034,11 @@ class Changelist(object):
                    'to be %s.' % (fetch_info['url'], remote_url))
 
     RunGit(['fetch', fetch_info['url'], fetch_info['ref']])
+
+    # If we have created a new branch then do the "set issue" immediately in
+    # the cherry-pick fails, which happens when resolving conflicts.
+    if newbranch:
+      self.SetIssue(parsed_issue_arg.issue)
 
     if force:
       RunGit(['reset', '--hard', 'FETCH_HEAD'])
@@ -4372,7 +4378,8 @@ def CMDpatch(parser, args):
       RunGit(['pull'])
 
     target_issue_arg = ParseIssueNumberArgument(cl.GetIssue())
-    return cl.CMDPatchWithParsedIssue(target_issue_arg, options.nocommit, False)
+    return cl.CMDPatchWithParsedIssue(target_issue_arg, options.nocommit, False,
+                                      False)
 
   if len(args) != 1 or not args[0]:
     parser.error('Must specify issue number or URL.')
@@ -4397,8 +4404,8 @@ def CMDpatch(parser, args):
   if not args[0].isdigit():
     print('canonical issue/change URL: %s\n' % cl.GetIssueURL())
 
-  return cl.CMDPatchWithParsedIssue(
-      target_issue_arg, options.nocommit, options.force)
+  return cl.CMDPatchWithParsedIssue(target_issue_arg, options.nocommit,
+                                    options.force, options.newbranch)
 
 
 def GetTreeStatus(url=None):

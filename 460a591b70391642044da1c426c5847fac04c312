@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40d39bf2_c8ce0c16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-20T02:00:11Z",
+      "side": 1,
+      "message": "Tested on Windows with cmd.exe and git bash. It works.",
+      "revId": "460a591b70391642044da1c426c5847fac04c312",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

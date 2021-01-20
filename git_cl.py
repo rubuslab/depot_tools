@@ -2186,6 +2186,8 @@ class Changelist(object):
           'component including the files below.\n'
           'Review the files before upload, since they might contain sensitive '
           'information.\n'
+          'For emergencies, Googlers can escalate to '
+          'go/gob-support or go/notify#gob\n'
           'Set the Restrict-View-Google label so that they are not publicly '
           'accessible.\n' + TRACES_MESSAGE % {'trace_name': trace_name})
     finally:

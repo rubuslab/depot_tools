@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d23941f_4b1f828c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2021-01-20T01:06:56Z",
+      "side": 1,
+      "message": "Startup is under a second.  Shutdown can vary (shutdown generates the rbe_metrics file from the reproxy rpl log files, so the speed of shutdown depends on how large that file is).  For a no-op build, it\u0027ll be around a second or less as well, since the rpl file will be pretty much empty since nothing actually was built.",
+      "parentUuid": "29cd5360_5423edd0",
+      "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9432bfb3_26b3e585",
@@ -48,6 +66,24 @@
       "writtenOn": "2021-01-19T23:47:50Z",
       "side": 1,
       "message": "Nit: we\u0027re no longer using env vars, right?",
+      "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f3ad8f4_851674b3",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2021-01-20T01:06:56Z",
+      "side": 1,
+      "message": "It sets the config file via an env var, but there\u0027s an update to reclient that will remove that and replace it with a command-line argument.  It\u0027s checked in but not in a released binary yet.  This is done within the autoninja script itself, and the user doesn\u0027t have to set any environment variables themselves to make it work.\n\nI\u0027ll update autoninja to use that when the updated reclient is available.",
+      "parentUuid": "9432bfb3_26b3e585",
       "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d47ed608_2fc7380f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-20T20:00:49Z",
+      "side": 1,
+      "message": "I keep accidentally creating new CLs whenever I try to resolve merge conflicts in existing CLs. This will avoid that. Thoughts?",
+      "revId": "a69a77945a147af49f60372dec9345877b033b3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

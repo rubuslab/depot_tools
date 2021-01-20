@@ -70,6 +70,24 @@
       "parentUuid": "556d06a2_fa7e6e08",
       "revId": "84e43fa2c4474e90ae71073b4d51c64c4eca1fea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "355b1aa1_60676a35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-20T01:09:34Z",
+      "side": 1,
+      "message": "I don\u0027t know how msysgit bash users typically get python currently. per conversation w/ pkasting and others on one of the internal chat channels, it would be good if we provided a consistent solution for msysgit users to get both python2 and python3, since it is supposed to be a supported configuration. I\u0027m chewing on that now ...",
+      "parentUuid": "2d6444a2_3ec437d8",
+      "revId": "84e43fa2c4474e90ae71073b4d51c64c4eca1fea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

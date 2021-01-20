@@ -11,18 +11,12 @@ makes using remote build acceleration simpler and safer, and avoids errors that
 can cause slow goma builds or swap-storms on unaccelerated builds.
 """
 
-# [VPYTHON:BEGIN]
-# wheel: <
-#   name: "infra/python/wheels/psutil/${vpython_platform}"
-#   version: "version:5.6.2"
-# >
-# [VPYTHON:END]
-
 from __future__ import print_function
 
+import multiprocessing
 import os
-import psutil
 import re
+import subprocess
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -124,6 +118,24 @@ goma_disabled_env = os.environ.get('GOMA_DISABLED', '0').lower()
 if offline or goma_disabled_env in ['true', 't', 'yes', 'y', '1']:
   use_goma = False
 
+if use_goma:
+  gomacc_file = 'gomacc.exe' if sys.platform.startswith('win') else 'gomacc'
+  gomacc_path = os.path.join(SCRIPT_DIR, '.cipd_bin', gomacc_file)
+  # Don't invoke gomacc if it doesn't exist.
+  if os.path.exists(gomacc_path):
+    # Check to make sure that goma is running. If not, don't start the build.
+    status = subprocess.run([gomacc_path, 'port'],
+                            stdout=subprocess.DEVNULL,
+                            stderr=subprocess.DEVNULL).returncode
+    if status == 1:
+      print('echo Goma is not running. Use "goma_ctl start" to start it.',
+            file=sys.stderr)
+      if sys.platform.startswith('win'):
+        print('exit /b 1')
+      else:
+        print('exit 1')
+      sys.exit(1)
+
 # Specify ninja.exe on Windows so that ninja.bat can call autoninja and not
 # be called back.
 ninja_exe = 'ninja.exe' if sys.platform.startswith('win') else 'ninja'
@@ -143,7 +155,7 @@ if (sys.platform.startswith('linux')
 # or fail to execute ninja if depot_tools is not in PATH.
 args = prefix_args + [ninja_exe_path] + input_args[1:]
 
-num_cores = psutil.cpu_count()
+num_cores = multiprocessing.cpu_count()
 if not j_specified and not t_specified:
   if use_goma or use_rbe:
     args.append('-j')
@@ -181,7 +193,7 @@ if os.environ.get('NINJA_SUMMARIZE_BUILD', '0') == '1':
 
 # If using rbe and the necessary environment variables are set, also start
 # reproxy (via bootstrap) before running ninja.
-if (not offline and use_rbe and os.path.exists(reclient_bin_dir) 
+if (not offline and use_rbe and os.path.exists(reclient_bin_dir)
     and os.path.exists(reclient_cfg)):
   setup_args = [
     'RBE_cfg=' + reclient_cfg,
@@ -198,4 +210,3 @@ if offline and not sys.platform.startswith('win'):
   print('RBE_remote_disabled=1 GOMA_DISABLED=1 ' + ' '.join(args))
 else:
   print(' '.join(args))
-

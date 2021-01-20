@@ -86,6 +86,41 @@
       "parentUuid": "9432bfb3_26b3e585",
       "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5d09bb0_6b76c631",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-20T01:10:41Z",
+      "side": 1,
+      "message": "I meant more that the comment was a bit confusing since we\u0027re not setting env vars here any more ...",
+      "parentUuid": "2f3ad8f4_851674b3",
+      "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6fe31c2_79d685d7",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-20T01:10:41Z",
+      "side": 1,
+      "message": "Also nit: remove trailing space.",
+      "revId": "ee7f467a721bd773825837f10cd50a6e96b4d899",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

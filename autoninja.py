@@ -163,8 +163,8 @@ for i in range(len(args)):
   if (i == 0 and sys.platform.startswith('win')) or ' ' in args[i]:
     args[i] = '"%s"' % args[i].replace('"', '\\"')
 
-if os.environ.get('NINJA_SUMMARIZE_BUILD', '0') == '1':
-  args += ['-d', 'stats']
+#if os.environ.get('NINJA_SUMMARIZE_BUILD', '0') == '1':
+#  args += ['-d', 'stats']
 
 if offline and not sys.platform.startswith('win'):
   # Tell goma or reclient to do local compiles. On Windows these environment

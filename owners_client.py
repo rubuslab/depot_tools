@@ -177,6 +177,13 @@ class DepotToolsClient(OwnersClient):
           distance_by_owner,
           key=lambda o: distance_by_owner[o][0][1] + random.random())
 
+  def ScoreOwners(self, paths, author=None):
+    self._ensure_db()
+    distance_by_owner = self._db.all_possible_owners(paths, None)
+    if author and author in distance_by_owner:
+      del distance_by_owner[author]
+    return self._db.total_costs_by_owner(distance_by_owner, paths)
+
 
 class GerritClient(OwnersClient):
   """Implement OwnersClient using OWNERS REST API."""

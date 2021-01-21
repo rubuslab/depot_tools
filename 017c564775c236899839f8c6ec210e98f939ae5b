@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e432bca_1f2ae9d5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2021-01-21T17:15:01Z",
+      "side": 1,
+      "message": "LGTM, but I don\u0027t appear to have the permissions to set the code-review label.",
+      "revId": "017c564775c236899839f8c6ec210e98f939ae5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

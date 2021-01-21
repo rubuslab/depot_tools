@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a66ec24f_7a3066a5",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-21T23:13:14Z",
+      "side": 1,
+      "message": "Doing more than one iteration is expensive, specially when we start using Gerrit, since each one is a network request.\nWe should try for this to work with random inputs, instead of trying to find a way to try to de-randomize the results returned by ListOwners.",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 110,
+        "endChar": 31
+      },
+      "revId": "e9fc02923498ee4afda66599dbf8999314692d5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10a9418e_d6158809",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-21T23:13:14Z",
+      "side": 1,
+      "message": "I was running this locally, and I think average position in all files is probably better than minimum position, i.e. something like:\n\n  for owners in owners_by_path.values():\n    for i, owner in enumerate(owners):\n      positions_by_owner.setdefault(owner, []).append(i)\n\n  score_by_owner \u003d {\n    o: sum(positions_by_owner) / len(positions_by_owner) + random.random()\n  }\n\nBoth are very ad-hoc ways to do it, but average seems to make more sense with the test cases below...\nLet me know if you think of a better way to combine the owners for all files.",
+      "range": {
+        "startLine": 119,
+        "startChar": 10,
+        "endLine": 119,
+        "endChar": 24
+      },
+      "revId": "e9fc02923498ee4afda66599dbf8999314692d5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1d7acec5_0ff55296",
         "filename": "owners_finder.py",
         "patchSetId": 3
@@ -14,6 +60,30 @@
       "writtenOn": "2021-01-21T21:45:03Z",
       "side": 1,
       "message": "Related to my reply on the comment on owners_queue, setting iterations \u003d 10 seems too high but is the only way to pass tests as they are formatted now. What\u0027s a better option here?",
+      "range": {
+        "startLine": 155,
+        "startChar": 66,
+        "endLine": 155,
+        "endChar": 68
+      },
+      "revId": "e9fc02923498ee4afda66599dbf8999314692d5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c7fa8bd_a89854f1",
+        "filename": "owners_finder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-21T23:13:14Z",
+      "side": 1,
+      "message": "I think the best option is to mock it...\nLet\u0027s also add tests for ScoreOwners.",
+      "parentUuid": "1d7acec5_0ff55296",
       "range": {
         "startLine": 155,
         "startChar": 66,

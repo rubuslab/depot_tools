@@ -34,6 +34,24 @@
       "parentUuid": "3b68e312_6a22358f",
       "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "237db61f_ce95887f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-21T04:59:05Z",
+      "side": 1,
+      "message": "No. The problem with git bash is in the autoninja bash script. It has problems finding python3 and as written this change requires python3.\n\nI could rewrite this to not require python3, but it doesn\u0027t seem worth it - we need to fix things so that git bash can handle python3. dpranke@ is on the job.",
+      "parentUuid": "66fac52a_0ef4e297",
+      "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

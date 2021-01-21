@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df52a0e7_117794f8",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2189,
+      "author": {
+        "id": 1374536
+      },
+      "writtenOn": "2021-01-21T00:10:26Z",
+      "side": 1,
+      "message": "Hm, what is an example of the full output after this change?\n\nIt feels a bit odd to put this line here, since it\u0027s in the middle of other instructions about the traces. Would it make sense for this to go before the Hint instead?",
+      "revId": "e19703feef1c97721d66821d246384b6d49271d6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

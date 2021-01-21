@@ -9,13 +9,17 @@ import os
 import sys
 import unittest
 
+if sys.version_info.major == 2:
+  import mock
+else:
+  from unittest import mock
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from testing_support import filesystem_mock
 
 import owners_finder
-import owners
+import owners_client
 
 
 ben = 'ben@example.com'
@@ -64,7 +68,8 @@ def test_repo():
     '/content/common/common.cc': '',
     '/content/foo/OWNERS': owners_file(jochen, comment='foo'),
     '/content/foo/foo.cc': '',
-    '/content/views/OWNERS': owners_file(ben, john, owners.EVERYONE,
+    '/content/views/OWNERS': owners_file(ben, john,
+                                         owners_client.OwnersClient.EVERYONE,
                                          noparent=True),
     '/content/views/pie.h': '',
   })
@@ -114,6 +119,9 @@ class _BaseTestCase(unittest.TestCase):
     self.repo = test_repo()
     self.root = '/'
     self.fopen = self.repo.open_for_reading
+    mock.patch('owners_client.DepotToolsClient._GetOriginalOwnersFiles',
+      return_value={}).start()
+    self.addCleanup(mock.patch.stopall)
 
   def ownersFinder(self, files, author=nonowner, reviewers=None):
     reviewers = reviewers or []
@@ -164,12 +172,13 @@ class OwnersFinderTests(_BaseTestCase):
   def test_reset(self):
     finder = self.defaultFinder()
     for _ in range(2):
-      expected = [brett, darin, john, peter, ken, ben, tom]
-      # darin and john have equal cost, the others have distinct costs.
-      # If the owners_queue has those two swapped then swap them in expected.
-      if finder.owners_queue[1] != expected[1]:
-        expected[1], expected[2] = expected[2], expected[1]
-      self.assertEqual(finder.owners_queue, expected)
+      # Check approximate owners_queue order. owners_queue is ordered,
+      # but not deterministic.
+      self.assertEqual(len(finder.owners_queue), 7)
+      self.assertTrue(
+        {brett, darin, john, peter, ken}.issubset(
+          set(finder.owners_queue[:6])))
+      self.assertTrue({ben}.issubset(set(finder.owners_queue[3:])))
       self.assertEqual(finder.unreviewed_files, {
           'base/vlog.h',
           'chrome/browser/defaults.h',
@@ -193,7 +202,12 @@ class OwnersFinderTests(_BaseTestCase):
   def test_select(self):
     finder = self.defaultFinder()
     finder.select_owner(john)
-    self.assertEqual(finder.owners_queue, [brett, peter, ken, ben, tom])
+
+    # Check approximate owners_queue order. owners_queue is ordered,
+    # but not deterministic.
+    self.assertEqual(len(finder.owners_queue), 5)
+    self.assertTrue({brett, peter, ken}.issubset(set(finder.owners_queue[:4])))
+    self.assertTrue({ben}.issubset(set(finder.owners_queue[3:])))
     self.assertEqual(finder.selected_owners, {john})
     self.assertEqual(finder.deselected_owners, {darin})
     self.assertEqual(finder.reviewed_by, {'content/bar/foo.cc': john,
@@ -205,7 +219,9 @@ class OwnersFinderTests(_BaseTestCase):
 
     finder = self.defaultFinder()
     finder.select_owner(darin)
-    self.assertEqual(finder.owners_queue, [brett, peter, ken, ben, tom])
+    self.assertEqual(len(finder.owners_queue), 5)
+    self.assertTrue({brett, peter, ken}.issubset(set(finder.owners_queue[:4])))
+    self.assertTrue({ben}.issubset(set(finder.owners_queue[3:])))
     self.assertEqual(finder.selected_owners, {darin})
     self.assertEqual(finder.deselected_owners, {john})
     self.assertEqual(finder.reviewed_by, {'content/bar/foo.cc': darin,
@@ -217,13 +233,9 @@ class OwnersFinderTests(_BaseTestCase):
 
     finder = self.defaultFinder()
     finder.select_owner(brett)
-    expected = [darin, john, peter, ken, tom]
-    # darin and john have equal cost, the others have distinct costs.
-    # If the owners_queue has those two swapped then swap them in expected.
-    if finder.owners_queue[0] == john:
-      expected[0], expected[1] = expected[1], expected[0]
-
-    self.assertEqual(finder.owners_queue, expected)
+    self.assertEqual(len(finder.owners_queue), 5)
+    self.assertTrue({john, peter, ken}.issubset(set(finder.owners_queue[:4])))
+    self.assertTrue({tom}.issubset(set(finder.owners_queue[3:])))
     self.assertEqual(finder.selected_owners, {brett})
     self.assertEqual(finder.deselected_owners, {ben})
     self.assertEqual(finder.reviewed_by,
@@ -239,7 +251,13 @@ class OwnersFinderTests(_BaseTestCase):
   def test_deselect(self):
     finder = self.defaultFinder()
     finder.deselect_owner(john)
-    self.assertEqual(finder.owners_queue, [brett, peter, ken, ben, tom])
+
+    # Check approximate owners_queue order. owners_queue is ordered,
+    # but not deterministic.
+    self.assertEqual(len(finder.owners_queue), 5)
+    self.assertTrue({brett, peter, ken}.issubset(set(finder.owners_queue[:4])))
+    self.assertTrue({ben}.issubset(set(finder.owners_queue[3:])))
+
     self.assertEqual(finder.selected_owners, {darin})
     self.assertEqual(finder.deselected_owners, {john})
     self.assertEqual(finder.reviewed_by, {'content/bar/foo.cc': darin,

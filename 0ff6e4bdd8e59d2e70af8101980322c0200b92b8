@@ -16,6 +16,40 @@
       "message": "This is almost ready to go. It is waiting for a resolution of the \"python3 in git-bash on Windows\" issue, and then we need a consensus on how we should invoke python from autoninja.bat (%scriptdir%python3.bat is probably best).",
       "revId": "0ff6e4bdd8e59d2e70af8101980322c0200b92b8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0352206_242bd499",
+        "filename": "autoninja.bat",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-21T01:05:35Z",
+      "side": 1,
+      "message": "no need to use %scriptdir%python3.bat here?\n\n(or ok to use python3 at L37?)",
+      "revId": "0ff6e4bdd8e59d2e70af8101980322c0200b92b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a42c75d_8b4d688b",
+        "filename": "autoninja.bat",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-21T01:05:35Z",
+      "side": 1,
+      "message": "python3",
+      "revId": "0ff6e4bdd8e59d2e70af8101980322c0200b92b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

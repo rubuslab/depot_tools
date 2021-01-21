@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "905b913d_98a9a93b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-21T01:51:11Z",
+      "side": 1,
+      "message": "ptal",
+      "revId": "e19703feef1c97721d66821d246384b6d49271d6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "df52a0e7_117794f8",
@@ -14,6 +31,24 @@
       "writtenOn": "2021-01-21T00:10:26Z",
       "side": 1,
       "message": "Hm, what is an example of the full output after this change?\n\nIt feels a bit odd to put this line here, since it\u0027s in the middle of other instructions about the traces. Would it make sense for this to go before the Hint instead?",
+      "revId": "e19703feef1c97721d66821d246384b6d49271d6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e9c69b2_6736befa",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2189,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-21T01:51:11Z",
+      "side": 1,
+      "message": "Failed to create a change. Please examine output above for the reason of the failure.\n Hint: run command below to diagnose common Git/Gerrit credential problems:\n   git cl creds-check\n\n If git-cl is not working correctly, file a bug under the Infra\u003eSDK component including the files below.\n Review the files before upload, since they might contain sensitive information.\n For emergencies, Googlers can escalate to go/gob-support or go/notify#gob\n Set the Restrict-View-Google label so that they are not publicly accessible.\n\nI agree with you, it\u0027s in the middle of instructions for crbug (I had different impression when I uploaded this CL). I moved it up as you recommended. There is a small possibility that more bug are filed there. If we see that, we can move it down.",
+      "parentUuid": "df52a0e7_117794f8",
       "revId": "e19703feef1c97721d66821d246384b6d49271d6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

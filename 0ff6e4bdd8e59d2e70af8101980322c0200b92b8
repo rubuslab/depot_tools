@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e6eef265_a481c1ee",
+        "filename": "autoninja.bat",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-21T01:17:51Z",
+      "side": 1,
+      "message": "That is the question. It should be the same everywhere.\n\n%scriptdir%python3.bat - more verbose but guarantees which python3 we get.\npython3 - simple, terse, and if they don\u0027t have a valid python3 in their path then there\u0027s nothing we can do about it.\n\nIt does seem that the more verbose option is futile because if they don\u0027t have a valid python3 in their path (before WindowsApps\\python3.exe) then the build is doomed anyway.\n\nSo, python3? Yes/no?\n\nIt\u0027s still on hold until python3 works from git bash, but we can at least be ready.",
+      "parentUuid": "c0352206_242bd499",
+      "revId": "0ff6e4bdd8e59d2e70af8101980322c0200b92b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2a42c75d_8b4d688b",
         "filename": "autoninja.bat",
         "patchSetId": 14

@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "c78b1168_84e2417e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2021-01-21T04:25:21Z",
+      "side": 1,
+      "message": "Given these options, I\u0027m a bit skeptical many will discover \u0026 use this script... I\u0027m not sure what the utility bar is for this repo though.",
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "0a0b24a4_afbe826a",
@@ -14,6 +31,86 @@
       "writtenOn": "2021-01-21T02:23:31Z",
       "side": 1,
       "message": "This is an occasionally-handy tool for identifying why the build is serialized. I kinda wanna have it available all the time, so depot_tools would be nice. But if nobody else is going to use it then it is just clutter.\n\nIt could also go in chromium\\tools\\win, where clutter is less of a concern, and I\u0027m actually leaning towards that. Thoughts?\n\nSimilar calculations go for ninjatracing. I\u0027d like to make it more accessible by copying it to depot_tools or chromium and having a batch file to invoke it. In both cases depot_tools is arguably more logical (nothing Chromium specific) but... clutter.\n",
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49cb85bf_49fc9355",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2021-01-21T04:25:21Z",
+      "side": 1,
+      "message": "I\u0027m a bit wary of the utila",
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "722a21c3_8495869e",
+        "filename": "buildstate.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2021-01-21T04:25:21Z",
+      "side": 1,
+      "message": "I think the x-platform way to do this would be to use psutil:\nhttps://pypi.org/project/psutil/#process-management\n\nYou could use vpython to make it available (e.g., like how it is in autoninja before you removed it :P)\n\nhttps://source.chromium.org/chromium/chromium/tools/build/+/master:parent/depot_tools/autoninja.py;drc\u003d20eda953269e14f055afd58be97ad5915c6c33dd;l\u003d14\n\nUp to you if you want to spend the time to rewrite it using this. If not, would be good to at least mention it here in case someone else wants to be able to do this on non-windows at some point.",
+      "range": {
+        "startLine": 2,
+        "startChar": 13,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d1e6ccb_3f9b5db6",
+        "filename": "buildstate.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2021-01-21T04:25:21Z",
+      "side": 1,
+      "message": "nit: CAPTION_OFF",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4dfbc28d_6742e0ea",
+        "filename": "buildstate.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2021-01-21T04:25:21Z",
+      "side": 1,
+      "message": "nit: python style should be 4 space indent. Does running \"git cl format --python\" work here?",
       "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

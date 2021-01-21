@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fd7cf4c_58e89669",
+        "filename": "owners_client.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-21T02:49:53Z",
+      "side": 1,
+      "message": "There is no equivalent we can get from Gerrit, so we cannot depend on this.",
+      "range": {
+        "startLine": 180,
+        "startChar": 6,
+        "endLine": 180,
+        "endChar": 17
+      },
+      "revId": "b688ad170eced8042ffe763f6b1f6a9b224746f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

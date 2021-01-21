@@ -71,6 +71,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b587660_d4aaeab5",
+        "filename": "autoninja.bat",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-21T03:28:48Z",
+      "side": 1,
+      "message": "\u003e My recommendation is to not change to be explicit in this CL \n\nI agree. I had some vague feeling that being explicit might avoid problems during the switch from python (2) to python3, but I can\u0027t substantiate that. So, as-is it is.",
+      "parentUuid": "1190d560_ed260dcb",
+      "revId": "0ff6e4bdd8e59d2e70af8101980322c0200b92b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a42c75d_8b4d688b",

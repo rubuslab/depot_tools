@@ -113,6 +113,24 @@
       "message": "nit: python style should be 4 space indent. Does running \"git cl format --python\" work here?",
       "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ee83da5_21ee8587",
+        "filename": "buildstate.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-21T05:02:01Z",
+      "side": 1,
+      "message": "I did not know that! \"git cl format\" (with or without --python) does nothing. I guess I\u0027ve been doing this wrong for a while.",
+      "parentUuid": "4dfbc28d_6742e0ea",
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

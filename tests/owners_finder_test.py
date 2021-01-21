@@ -9,13 +9,17 @@ import os
 import sys
 import unittest
 
+if sys.version_info.major == 2:
+  import mock
+else:
+  from unittest import mock
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from testing_support import filesystem_mock
 
 import owners_finder
-import owners
+import owners_client
 
 
 ben = 'ben@example.com'
@@ -64,7 +68,8 @@ def test_repo():
     '/content/common/common.cc': '',
     '/content/foo/OWNERS': owners_file(jochen, comment='foo'),
     '/content/foo/foo.cc': '',
-    '/content/views/OWNERS': owners_file(ben, john, owners.EVERYONE,
+    '/content/views/OWNERS': owners_file(ben, john,
+                                         owners_client.OwnersClient.EVERYONE,
                                          noparent=True),
     '/content/views/pie.h': '',
   })
@@ -114,6 +119,9 @@ class _BaseTestCase(unittest.TestCase):
     self.repo = test_repo()
     self.root = '/'
     self.fopen = self.repo.open_for_reading
+    mock.patch('owners_client.DepotToolsClient._GetOriginalOwnersFiles',
+      return_value={}).start()
+    self.addCleanup(mock.patch.stopall)
 
   def ownersFinder(self, files, author=nonowner, reviewers=None):
     reviewers = reviewers or []

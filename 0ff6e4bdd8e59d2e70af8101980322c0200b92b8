@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea63cfa4_0e9707be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-21T00:44:19Z",
+      "side": 1,
+      "message": "This is almost ready to go. It is waiting for a resolution of the \"python3 in git-bash on Windows\" issue, and then we need a consensus on how we should invoke python from autoninja.bat (%scriptdir%python3.bat is probably best).",
+      "revId": "0ff6e4bdd8e59d2e70af8101980322c0200b92b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

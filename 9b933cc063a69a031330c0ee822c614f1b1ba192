@@ -379,6 +379,24 @@
       "parentUuid": "cc7f199e_6ce90811",
       "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17470928_51efa8b3",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-21T00:44:19Z",
+      "side": 1,
+      "message": "After thinking about it more I decided that you are right. I now exit the Python script with an error code of 1, and I also print a command that when executed by the bat/bash script will give an error code of 1. This means that the bat/bash script follows its existing error handling path which includes returning an error code to whoever called it. I\u0027ve tested this on Linux and Windows.",
+      "parentUuid": "7338e906_99d28789",
+      "revId": "9b933cc063a69a031330c0ee822c614f1b1ba192",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

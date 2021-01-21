@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1190d560_ed260dcb",
+        "filename": "autoninja.bat",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-01-21T03:12:12Z",
+      "side": 1,
+      "message": "My recommendation is to not change to be explicit in this CL (which has other benefits) and address this particular issue in a follow up if needed.\n\n(I\u0027m not worried about terse; it\u0027s in a script.) There\u0027s a behavior difference - what\u0027s the motivation behind the change?\n\nArguments I can see...\n\nFor staying the same: It works today. Also, for consistency, note that autoninja (sh) calls python3 (sh), which on *nix is also resolved to the depot_tools/python3 via the PATH lookup.\n\nFor changing to explicit: You only *need* the bare `python3` if there\u0027s a scenario where you might inject a PATH entry to override python3, and that scenario may very well exist now or in the future.",
+      "parentUuid": "e6eef265_a481c1ee",
+      "revId": "0ff6e4bdd8e59d2e70af8101980322c0200b92b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2a42c75d_8b4d688b",
         "filename": "autoninja.bat",
         "patchSetId": 14

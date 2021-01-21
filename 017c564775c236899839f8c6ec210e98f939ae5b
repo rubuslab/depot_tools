@@ -50,6 +50,24 @@
       "message": "brucedawson@ fyi ...",
       "revId": "017c564775c236899839f8c6ec210e98f939ae5b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ae8e3fc_af0b7bcb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-21T20:42:32Z",
+      "side": 1,
+      "message": "Thanks. However, given this comment in the commit message:\n\n\u003e This can only be submitted after switching to reclient 0.19.1 or later!\n\nit seems like this shouldn\u0027t be submitted yet. Or, at least, the commit message should be updated before submitting if we have switched to reclient 0.19.1 already.",
+      "parentUuid": "590ffaf7_d3420af2",
+      "revId": "017c564775c236899839f8c6ec210e98f939ae5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

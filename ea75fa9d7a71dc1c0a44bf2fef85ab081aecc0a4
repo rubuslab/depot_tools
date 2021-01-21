@@ -131,6 +131,24 @@
       "parentUuid": "4dfbc28d_6742e0ea",
       "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1f4486a_09370f40",
+        "filename": "buildstate.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2021-01-21T14:24:52Z",
+      "side": 1,
+      "message": "Ah, my bad. I looks like depot_tools has a .style.yapf that sets indent to 2.",
+      "parentUuid": "4ee83da5_21ee8587",
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

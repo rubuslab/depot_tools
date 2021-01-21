@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c4ff3e3_7ed0b2dc",
+        "filename": "owners_client.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-01-21T21:45:03Z",
+      "side": 1,
+      "message": "Replaced with SuggestOwners logic",
+      "parentUuid": "3fd7cf4c_58e89669",
+      "range": {
+        "startLine": 180,
+        "startChar": 6,
+        "endLine": 180,
+        "endChar": 17
+      },
+      "revId": "b688ad170eced8042ffe763f6b1f6a9b224746f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3055a945_ec960e06",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-01-21T03:06:55Z",
       "side": 1,
       "message": "This seems to be the only use of owners_score.\nSuggest owners already has some logic to score all owners from best to worst, so we could split that into its own function that returns a sorted list of owners and use it.",
+      "range": {
+        "startLine": 159,
+        "startChar": 9,
+        "endLine": 159,
+        "endChar": 21
+      },
+      "revId": "b688ad170eced8042ffe763f6b1f6a9b224746f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a25a8059_d2b7cd0a",
+        "filename": "owners_finder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-01-21T21:45:03Z",
+      "side": 1,
+      "message": "The scoring from SuggestOwners in owners_client is random (but is generally ordered) since ListOwners isn\u0027t set. In the newest patchset, tests were changed but I\u0027m not 100% sure about this approach. WDYT?",
+      "parentUuid": "3055a945_ec960e06",
       "range": {
         "startLine": 159,
         "startChar": 9,

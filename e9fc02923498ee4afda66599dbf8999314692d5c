@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d7acec5_0ff55296",
+        "filename": "owners_finder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-01-21T21:45:03Z",
+      "side": 1,
+      "message": "Related to my reply on the comment on owners_queue, setting iterations \u003d 10 seems too high but is the only way to pass tests as they are formatted now. What\u0027s a better option here?",
+      "range": {
+        "startLine": 155,
+        "startChar": 66,
+        "endLine": 155,
+        "endChar": 68
+      },
+      "revId": "e9fc02923498ee4afda66599dbf8999314692d5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

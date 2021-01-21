@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a0b24a4_afbe826a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-21T02:23:31Z",
+      "side": 1,
+      "message": "This is an occasionally-handy tool for identifying why the build is serialized. I kinda wanna have it available all the time, so depot_tools would be nice. But if nobody else is going to use it then it is just clutter.\n\nIt could also go in chromium\\tools\\win, where clutter is less of a concern, and I\u0027m actually leaning towards that. Thoughts?\n\nSimilar calculations go for ninjatracing. I\u0027d like to make it more accessible by copying it to depot_tools or chromium and having a batch file to invoke it. In both cases depot_tools is arguably more logical (nothing Chromium specific) but... clutter.\n",
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

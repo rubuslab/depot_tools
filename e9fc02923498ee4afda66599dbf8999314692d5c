@@ -73,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fc7177ae_09bb7d96",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-22T00:53:36Z",
+      "side": 1,
+      "message": "Maybe?\n\nThe hard part is that we only get the final order, but we don\u0027t get distance or any indication on how the score is calculated.\ne.g.\n\ncindy might be a better reviewer if the tree looks like\n\n  /a/OWNERS \n    alice\n    cindy\n  /b/OWNERS\n    bob\n    cindy\n\nbut alice, bob might be better if the tree looks like\n\n  /OWNERS\n    cindy\n  /a/OWNERS\n    alice\n  /b/OWNERS\n    bob\n\n[1] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:owners.py;l\u003d613?q\u003downers.py",
+      "parentUuid": "cb9ce490_40ee069d",
+      "range": {
+        "startLine": 119,
+        "startChar": 10,
+        "endLine": 119,
+        "endChar": 24
+      },
+      "revId": "e9fc02923498ee4afda66599dbf8999314692d5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1d7acec5_0ff55296",
         "filename": "owners_finder.py",
         "patchSetId": 3

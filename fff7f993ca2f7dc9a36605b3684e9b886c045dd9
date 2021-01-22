@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4f4a9f6_92ff1aff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-22T01:05:42Z",
+      "side": 1,
+      "message": "Tested on: https://chromium-review.googlesource.com/c/infra/infra/+/2643243\n\nWithout patching:\nhttps://ci.chromium.org/raw/build/logs.chromium.org/infra-internal/led/sokcevic_google.com/41edfa76b96182c7bac59fccae0a5d2592b9dd5079a1566e577fae8ad764ebf6/+/annotations?server\u003dchrome-swarming.appspot.com\n\nWith patching:\nhttps://ci.chromium.org/raw/build/logs.chromium.org/infra-internal/led/sokcevic_google.com/0a6f58ef1d093e8224ba2a9ea9d609275f58aa56fca2cb4e51dd22d7d1374d89/+/annotations?server\u003dchrome-swarming.appspot.com",
+      "revId": "fff7f993ca2f7dc9a36605b3684e9b886c045dd9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a7a1e26_52fbbc4d",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-22T18:17:48Z",
+      "side": 1,
+      "message": "IIRC, bot_update is called on trybots, and if tests fail, it\u0027s called again with patch\u003dFalse to check if failures are because of existing issues or because of the CL.\nIf we\u0027re trying a patch on branches other than the default (e.g. refs/branch-heads), it might happen that the second time it\u0027s called with patch\u003dFalse it will sync to the wrong ref (the default instead of refs/branch-heads).\nNot sure if this would happen, but would like to make sure.\n\nWhy is this change needed?",
+      "range": {
+        "startLine": 243,
+        "startChar": 43,
+        "endLine": 243,
+        "endChar": 53
+      },
+      "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

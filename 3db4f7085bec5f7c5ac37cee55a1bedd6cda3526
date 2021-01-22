@@ -52,6 +52,23 @@
       "parentUuid": "66fac52a_0ef4e297",
       "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c19622bd_09790665",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1222289
+      },
+      "writtenOn": "2021-01-22T00:48:50Z",
+      "side": 1,
+      "message": "I imagine we invoke gomacc instead of goma_ctl because it is faster?\n\nOut of curiosity, how feasible is it to have a gomacc here that is expected to work? Put differently, given that the build already contains depot_tools and depot_tools already contains goma_ctl, why not also gomacc?",
+      "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

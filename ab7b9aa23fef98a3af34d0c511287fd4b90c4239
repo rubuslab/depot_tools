@@ -115,6 +115,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8e54bbc6_1920f49f",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-22T22:43:16Z",
+      "side": 1,
+      "message": "Perhaps we can do that without using patch. But:\n\nget_gerrit_patch_root (called below) uses gclient cfg.solutions[0].name [0] since get_repo_path returns None. There\u0027s a comment stating that\u0027s wrong, but required due to a lot of recipes making some assumptions. Removing solutions from recipe roll tryjob [2] is not possible (it has to be defined), and its name will always be returned, regardless of its value.\n, regardless how we name it.\nWe could in theory duplicate gclient logic here (to detect if gerrit patch applies here), but that may break some other recipes, per comment in [0].\n\nI don\u0027t have historical context to know what do we expect. Adding nodir@ as he originally wrote that.\n\n[0] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:recipes/recipe_modules/gclient/api.py;l\u003d317\n[1] https://source.chromium.org/chromium/infra/infra/+/master:recipes/recipes/recipe_roll_tryjob.py;l\u003d198;bpv\u003d0;bpt\u003d0",
+      "parentUuid": "09854b58_db6e17bb",
+      "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a4944d2a_ec4583ed",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 2
@@ -126,6 +144,24 @@
       "writtenOn": "2021-01-22T22:27:49Z",
       "side": 1,
       "message": "this line looks wrong",
+      "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fbcac8b_63316103",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-22T22:43:16Z",
+      "side": 1,
+      "message": "That has been reverted already (need to rebase to tot).",
+      "parentUuid": "a4944d2a_ec4583ed",
       "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

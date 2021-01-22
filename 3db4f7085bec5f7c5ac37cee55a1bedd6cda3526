@@ -69,6 +69,24 @@
       "message": "I imagine we invoke gomacc instead of goma_ctl because it is faster?\n\nOut of curiosity, how feasible is it to have a gomacc here that is expected to work? Put differently, given that the build already contains depot_tools and depot_tools already contains goma_ctl, why not also gomacc?",
       "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a78364b6_ebbba7ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-22T01:53:18Z",
+      "side": 1,
+      "message": "Exactly. goma_ctl uses vpython which on Windows gives it a minimum cost of about 600 ms. gomacc.exe takes about 50 ms.",
+      "parentUuid": "c19622bd_09790665",
+      "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

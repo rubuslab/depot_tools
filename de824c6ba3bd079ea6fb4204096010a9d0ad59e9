@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "406b1f25_8cb7ddaf",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-22T23:31:40Z",
+      "side": 1,
+      "message": "Maybe also add random.random()",
+      "range": {
+        "startLine": 124,
+        "startChar": 50,
+        "endLine": 124,
+        "endChar": 51
+      },
+      "revId": "de824c6ba3bd079ea6fb4204096010a9d0ad59e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d55b30c4_bb54be6e",
+        "filename": "tests/owners_finder_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-22T23:31:40Z",
+      "side": 1,
+      "message": "let\u0027s remove this, and make the mock always return the same.",
+      "range": {
+        "startLine": 191,
+        "startChar": 6,
+        "endLine": 194,
+        "endChar": 59
+      },
+      "revId": "de824c6ba3bd079ea6fb4204096010a9d0ad59e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

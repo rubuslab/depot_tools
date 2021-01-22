@@ -121,6 +121,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eafd4ce6_70e4fe47",
+        "filename": "owners_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-01-22T01:21:35Z",
+      "side": 1,
+      "message": "I like the approach above, but isn\u0027t it sufficient just to sort owners by number of files owned? Not sure if I understand the step K part or \"approve the rest\" part.",
+      "parentUuid": "5785d5e1_44ba0f85",
+      "range": {
+        "startLine": 119,
+        "startChar": 10,
+        "endLine": 119,
+        "endChar": 24
+      },
+      "revId": "e9fc02923498ee4afda66599dbf8999314692d5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1d7acec5_0ff55296",
         "filename": "owners_finder.py",
         "patchSetId": 3

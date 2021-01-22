@@ -46,6 +46,30 @@
       },
       "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa448fb0_29870dd6",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-22T18:50:40Z",
+      "side": 1,
+      "message": "Not a merge conflict, but a patch that applies cleanly but causes tests to fail.\n\nWe shouldn\u0027t be changing the ref if the project associated with the change is different than the project we\u0027re trying to update.\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:recipes/recipe_modules/bot_update/api.py;l\u003d445\n\nSo I think there\u0027s a bug in the way we\u0027re checking that, or in the way recipe_roller configures gclient.\n\nhttps://source.chromium.org/chromium/infra/infra/+/master:recipes/recipes/recipe_roll_tryjob.py;l\u003d196;bpv\u003d0;bpt\u003d0\n\nAnd I believe patch\u003dis_triggering_repo shouldn\u0027t be necessary...",
+      "parentUuid": "14f99af4_c3e34790",
+      "range": {
+        "startLine": 243,
+        "startChar": 43,
+        "endLine": 243,
+        "endChar": 53
+      },
+      "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

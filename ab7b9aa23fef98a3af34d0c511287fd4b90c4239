@@ -94,6 +94,40 @@
       },
       "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09854b58_db6e17bb",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-01-22T22:27:49Z",
+      "side": 1,
+      "message": "why not just detect here that there\u0027s no associated patch and return HEAD? That\u0027s the documented behavior in the docstring above?",
+      "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4944d2a_ec4583ed",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-01-22T22:27:49Z",
+      "side": 1,
+      "message": "this line looks wrong",
+      "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

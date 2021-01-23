@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "655a8f40_f5f413d0",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-23T02:08:40Z",
+      "side": 1,
+      "message": "I did some tests locally reverting a couple chromium changes and running git-cl owners, and it still makes a difference.\nMaybe you can try it locally too.",
+      "parentUuid": "280b4a23_26bea127",
+      "range": {
+        "startLine": 124,
+        "startChar": 50,
+        "endLine": 124,
+        "endChar": 51
+      },
+      "revId": "de824c6ba3bd079ea6fb4204096010a9d0ad59e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d55b30c4_bb54be6e",
         "filename": "tests/owners_finder_test.py",
         "patchSetId": 5

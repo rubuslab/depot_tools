@@ -96,6 +96,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       set_output_commit=False,
                       step_test_data=None,
                       enforce_fetch=False,
+                      output_prev_checkout_info=False,
                       **kwargs):
     """
     Args:

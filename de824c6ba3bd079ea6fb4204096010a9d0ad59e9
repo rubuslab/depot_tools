@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "280b4a23_26bea127",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-01-23T01:58:44Z",
+      "side": 1,
+      "message": "I didn\u0027t include it since the order of owners with equal score from BatchListOwners/ListOwners should be random already, WDYT?",
+      "parentUuid": "406b1f25_8cb7ddaf",
+      "range": {
+        "startLine": 124,
+        "startChar": 50,
+        "endLine": 124,
+        "endChar": 51
+      },
+      "revId": "de824c6ba3bd079ea6fb4204096010a9d0ad59e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d55b30c4_bb54be6e",
         "filename": "tests/owners_finder_test.py",
         "patchSetId": 5
@@ -37,6 +61,30 @@
       "writtenOn": "2021-01-22T23:31:40Z",
       "side": 1,
       "message": "let\u0027s remove this, and make the mock always return the same.",
+      "range": {
+        "startLine": 191,
+        "startChar": 6,
+        "endLine": 194,
+        "endChar": 59
+      },
+      "revId": "de824c6ba3bd079ea6fb4204096010a9d0ad59e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c57f8a2_04870276",
+        "filename": "tests/owners_finder_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-01-23T01:58:44Z",
+      "side": 1,
+      "message": "Done with side_effect for now. setting return_value wasn\u0027t working",
+      "parentUuid": "d55b30c4_bb54be6e",
       "range": {
         "startLine": 191,
         "startChar": 6,

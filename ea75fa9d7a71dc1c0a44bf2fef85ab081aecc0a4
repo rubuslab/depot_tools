@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "1bf6622e_ee36736d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-23T01:48:55Z",
+      "side": 1,
+      "message": "I think the utility bar is fairly high, so this should go in chromium\\src\\tools",
+      "parentUuid": "c78b1168_84e2417e",
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0a0b24a4_afbe826a",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -52,6 +70,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6ade401_1ad16000",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-23T01:48:55Z",
+      "side": 1,
+      "message": "Thanks for the feedback. I\u0027m going to use psutil on Linux and wmic on Windows and put this in Chromium tools - lower bar.\n\nThe new CL is in crrev.com/c/2645638 and I\u0027m going to abandon this one.",
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "722a21c3_8495869e",
@@ -75,6 +110,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5264a36_0d42209f",
+        "filename": "buildstate.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-23T01:48:55Z",
+      "side": 1,
+      "message": "Interesting. I gave it a try and got it working to show all of the children of the Chrome browser process but it misses most children of ninja. I think it\u0027s some weird race condition where the collecting of processes takes a while and during that time the child processes have disappeared and new ones aren\u0027t enumerated. That\u0027s my best theory anyway.\n\nIf I run it with goma disabled (-j 46) then it usually finds nothing. With goma it finds 105-400 processes when there are actually 1,000. wmic seems to find them all (typically 46 processes with -j 46)\n\nI might use psutil on Linux, but definitely not on Windows.",
+      "parentUuid": "722a21c3_8495869e",
+      "range": {
+        "startLine": 2,
+        "startChar": 13,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d1e6ccb_3f9b5db6",
@@ -88,6 +147,30 @@
       "writtenOn": "2021-01-21T04:25:21Z",
       "side": 1,
       "message": "nit: CAPTION_OFF",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "ea75fa9d7a71dc1c0a44bf2fef85ab081aecc0a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9475a607_65a25846",
+        "filename": "buildstate.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-23T01:48:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d1e6ccb_3f9b5db6",
       "range": {
         "startLine": 17,
         "startChar": 0,

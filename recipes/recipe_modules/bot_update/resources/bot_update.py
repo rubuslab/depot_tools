@@ -693,14 +693,14 @@ def git_checkouts(solutions, revisions, refs, no_fetch_tags, git_cache_dir,
   first_solution = True
   for sln in solutions:
     sln_dir = path.join(build_dir, sln['name'])
-    _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
+    prev_checkout_info = _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
                   cleanup_dir, enforce_fetch)
     if first_solution:
       git_ref = git('log', '--format=%H', '--max-count=1',
                     cwd=path.join(build_dir, sln['name'])
                 ).strip()
     first_solution = False
-  return git_ref
+  return git_ref, prev_checkout_info
 
 
 def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
@@ -765,6 +765,8 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
   # Step 2: populate a checkout from local cache. All operations are local.
   mirror_dir = git(
       'cache', 'exists', '--quiet', '--cache-dir', git_cache_dir, url).strip()
+  prev_checkout_info = {'prev_got_revision': None,
+                        'prev_got_revision_cp': None}
   first_try = True
   while True:
     try:
@@ -781,6 +783,9 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
         _git_disable_gc(sln_dir)
       else:
         _git_disable_gc(sln_dir)
+        prev_checkout_info['prev_got_revision'] = git('rev-parse', 'HEAD',
+                                                      cwd=sln_dir).strip()
+        prev_checkout_info['prev_got_revision_cp'] = get_commit_position(sln_dir)
         git('remote', 'set-url', 'origin', mirror_dir, cwd=sln_dir)
         git('fetch', 'origin', cwd=sln_dir)
       git('remote', 'set-url', '--push', 'origin', url, cwd=sln_dir)
@@ -799,7 +804,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
       # happens to have the exact same name.
       git('checkout', '--force', pin or branch, '--', cwd=sln_dir)
       git('clean', '-dff', cwd=sln_dir)
-      return
+      return prev_checkout_info
     except SubprocessFailed as e:
       # Exited abnormally, there's probably something wrong.
       print('Something failed: %s.' % str(e))
@@ -884,7 +889,7 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
   # invoking DEPS.
   print('Fetching Git checkout')
 
-  git_checkouts(solutions, revisions, refs, no_fetch_tags, git_cache_dir,
+  _, prev_checkout_info = git_checkouts(solutions, revisions, refs, no_fetch_tags, git_cache_dir,
                 cleanup_dir, enforce_fetch)
 
   # Ensure our build/ directory is set up with the correct .gclient file.
@@ -929,7 +934,7 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
   gclient_configure(solutions, target_os, target_os_only, target_cpu,
                     git_cache_dir)
 
-  return gclient_output
+  return gclient_output, prev_checkout_info
 
 
 def parse_revisions(revisions, root):
@@ -1026,6 +1031,9 @@ def parse_args():
   parse.add_option('--cleanup-dir',
                    help='Path to a cleanup directory that can be used for '
                         'deferred file cleanup.')
+  parse.add_option('--output_prev_checkout_info',
+                   help='Include prev_got_revision and prev_cp in output properties',
+                   action='store_true')
   parse.add_option(
       '--disable-syntax-validation', action='store_true',
       help='Disable validation of .gclient and DEPS syntax.')
@@ -1157,12 +1165,12 @@ def checkout(options, git_slns, specs, revisions, step_text):
           cleanup_dir=options.cleanup_dir,
           gerrit_reset=not options.gerrit_no_reset,
           disable_syntax_validation=options.disable_syntax_validation)
-      gclient_output = ensure_checkout(**checkout_parameters)
+      gclient_output, prev_checkout_info = ensure_checkout(**checkout_parameters)
       should_delete_dirty_file = True
     except GclientSyncFailed:
       print('We failed gclient sync, lets delete the checkout and retry.')
       ensure_no_checkout(dir_names, options.cleanup_dir)
-      gclient_output = ensure_checkout(**checkout_parameters)
+      gclient_output, prev_checkout_info = ensure_checkout(**checkout_parameters)
       should_delete_dirty_file = True
   except PatchFailed as e:
     # Tell recipes information such as root, got_revision, etc.
@@ -1197,6 +1205,8 @@ def checkout(options, git_slns, specs, revisions, step_text):
     revision_mapping['got_revision'] = first_sln
 
   got_revisions = parse_got_revision(gclient_output, revision_mapping)
+  if options.output_prev_checkout_info:
+    got_revisions.update(prev_checkout_info)
 
   if not got_revisions:
     # TODO(hinoka): We should probably bail out here, but in the interest

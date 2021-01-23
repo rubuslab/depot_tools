@@ -556,13 +556,23 @@ def CheckLicense(input_api, output_api, license_re, source_file_filter=None,
   """Verifies the license header.
   """
   license_re = input_api.re.compile(license_re, input_api.re.MULTILINE)
+  # The license file check fails if there are carriage returns so check for
+  # those and preferentially report them (once they are fixed the license
+  # check can complete).
+  cr_files = []
   bad_files = []
   for f in input_api.AffectedSourceFiles(source_file_filter):
     contents = input_api.ReadFile(f, 'rb')
     if accept_empty_files and not contents:
       continue
+    if contents.count('\r'):
+      cr_files.append(f.LocalPath())
     if not license_re.search(contents):
       bad_files.append(f.LocalPath())
+  if cr_files:
+    return [output_api.PresubmitPromptWarning(
+        'Line endings must be line-feed only.\n' +
+        'Carriage return line endings found in these files:', items=bad_files)]
   if bad_files:
     return [output_api.PresubmitPromptWarning(
         'License must match:\n%s\n' % license_re.pattern +

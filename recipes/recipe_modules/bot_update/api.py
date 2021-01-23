@@ -96,6 +96,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       set_output_commit=False,
                       step_test_data=None,
                       enforce_fetch=False,
+                      output_prev_checkout_info=False,
                       **kwargs):
     """
     Args:
@@ -288,6 +289,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
       cmd.append('--gerrit_no_rebase_patch_ref')
     if disable_syntax_validation or cfg.disable_syntax_validation:
       cmd.append('--disable-syntax-validation')
+    if output_prev_checkout_info:
+      cmd.append('--output_prev_checkout_info')
 
     # Inject Json output for testing.
     first_sln = cfg.solutions[0].name

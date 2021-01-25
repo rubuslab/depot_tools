@@ -34,6 +34,24 @@
       "parentUuid": "65b0e2a2_d26064fa",
       "revId": "f08e425f2d22be925f3aa2952c5a6a958a26f97a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c6d610d_b2555825",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-01-25T07:30:42Z",
+      "side": 1,
+      "message": "ah, developer only?\n\n```\nGOMA version f0ba7e139e282e702e74bd507b9440051e97072c@1611543113\nserver: None (via http_proxy)\nTraceback (most recent call last):\n  File \"./goma_ctl.py\", line 2464, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"./goma_ctl.py\", line 2459, in main\n    goma.Dispatch(sys.argv[1:])\n  File \"./goma_ctl.py\", line 1278, in Dispatch\n    self._action_mappings.get(args[0], self._DefaultAction)()\n  File \"./goma_ctl.py\", line 761, in _StartCompilerProxy\n    self._GenericStartCompilerProxy(ensure\u003dFalse)\n  File \"./goma_ctl.py\", line 736, in _GenericStartCompilerProxy\n    self._http_proxy_driver.Start()\n  File \"./goma_ctl.py\", line 588, in Start\n    p \u003d self._env.ExecHttpProxy(self._host, proxy_port, logfile)\n  File \"./goma_ctl.py\", line 1893, in ExecHttpProxy\n    return self._ExecHttpProxy(host, proxy_port, logfile)\n  File \"./goma_ctl.py\", line 2260, in _ExecHttpProxy\n    stderr\u003dsubprocess.STDOUT)\n  File \"/usr/lib/python2.7/subprocess.py\", line 394, in __init__\n    errread, errwrite)\n  File \"/usr/lib/python2.7/subprocess.py\", line 1047, in _execute_child\n    raise child_exception\nTypeError: execv() arg 2 must contain only strings\n```",
+      "parentUuid": "ace5200c_9460c112",
+      "revId": "f08e425f2d22be925f3aa2952c5a6a958a26f97a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

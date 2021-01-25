@@ -96,6 +96,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f239c08_54127ed7",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-01-25T18:39:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d216716_aba273ec",
+      "range": {
+        "startLine": 124,
+        "startChar": 50,
+        "endLine": 124,
+        "endChar": 51
+      },
+      "revId": "de824c6ba3bd079ea6fb4204096010a9d0ad59e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d55b30c4_bb54be6e",

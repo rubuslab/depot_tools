@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0be27829_0f4d79f4",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-01-25T12:31:10Z",
+      "side": 1,
+      "message": "This might not be the best long term way to use `dirmd`, since it couples your recipes (ran on bots) to depot_tools (a kitchensink of tools thrown into developer\u0027s $PATH). This may be OK though -- hard to say w/o knowing your intended usage.\n\nDo you have a CL with expected usage? have you tested that CL with `led` tooL?\n\nAlso, I suspect you also need to modify .gitattributes to ensure dirmd entry shim is included:\nhttps://chromium.googlesource.com/chromium/tools/depot_tools/+/05ee22c63669f86e673b1f396e7d91c29ef2af7e/.gitattributes",
+      "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

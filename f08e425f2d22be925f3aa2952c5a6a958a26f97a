@@ -52,6 +52,24 @@
       "parentUuid": "ace5200c_9460c112",
       "revId": "f08e425f2d22be925f3aa2952c5a6a958a26f97a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9b48984_f41f8292",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2021-01-25T07:31:07Z",
+      "side": 1,
+      "message": "As far as I checked, it only happens for Googlers.  External users and bots should not be affected.  I will send the fix soon.",
+      "parentUuid": "ace5200c_9460c112",
+      "revId": "f08e425f2d22be925f3aa2952c5a6a958a26f97a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

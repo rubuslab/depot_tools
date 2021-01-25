@@ -16,6 +16,24 @@
       "message": "This might not be the best long term way to use `dirmd`, since it couples your recipes (ran on bots) to depot_tools (a kitchensink of tools thrown into developer\u0027s $PATH). This may be OK though -- hard to say w/o knowing your intended usage.\n\nDo you have a CL with expected usage? have you tested that CL with `led` tooL?\n\nAlso, I suspect you also need to modify .gitattributes to ensure dirmd entry shim is included:\nhttps://chromium.googlesource.com/chromium/tools/depot_tools/+/05ee22c63669f86e673b1f396e7d91c29ef2af7e/.gitattributes",
       "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4e9e58a_7ddd6812",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1241393
+      },
+      "writtenOn": "2021-01-25T21:29:39Z",
+      "side": 1,
+      "message": "Yes, this is for CLs https://chrome-internal-review.googlesource.com/c/chrome/tools/build_limited/scripts/slave/+/3552844 and https://chromium-review.googlesource.com/c/chromium/src/+/2645158\n\nCould you look at them and see if that\u0027s appropriate or if there\u0027s another way to invoke dirmd from the builders?\n\nI can\u0027t use led at the moment due to crbug.com/1168315, but I\u0027ll run it before landing.\n\nIf I need to include the .gitattributes change, a led run would fail, right?",
+      "parentUuid": "0be27829_0f4d79f4",
+      "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

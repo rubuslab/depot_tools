@@ -34,6 +34,24 @@
       "parentUuid": "0be27829_0f4d79f4",
       "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e4b263c_ed4624be",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-01-25T21:56:25Z",
+      "side": 1,
+      "message": "\u003e Yes, this is for CLs https://chrome-internal-review.googlesource.com/c/chrome/tools/build_limited/scripts/slave/+/3552844 and https://chromium-review.googlesource.com/c/chromium/src/+/2645158\n\u003e \n\u003e Could you look at them and see if that\u0027s appropriate or if there\u0027s another way to invoke dirmd from the builders?\n\nIn general, one should bring the binaries you depend on. Depot_tools is a kitchensink, originally meant for manually-ran commands, not something with stability. I\u0027ve asked the question from martiniss@ on chromium/src CL.\n\n\u003e I can\u0027t use led at the moment due to crbug.com/1168315, but I\u0027ll run it before landing.\n\nhttps://crbug.com/1168315 was filed in generic \"Infra\" component. I\u0027ve triaged it to my team to see what\u0027s up.\n\n\u003e If I need to include the .gitattributes change, a led run would fail, right?\nYes, resulting build should fail with smth like dirmd not found.",
+      "parentUuid": "d4e9e58a_7ddd6812",
+      "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

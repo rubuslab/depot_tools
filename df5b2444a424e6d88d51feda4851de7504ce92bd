@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d319d15_ea0f3c79",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-26T00:30:52Z",
+      "side": 1,
+      "message": "this would be incorrect if there are multiple solutions",
+      "revId": "df5b2444a424e6d88d51feda4851de7504ce92bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3fb11cc_b35af691",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-26T00:30:52Z",
+      "side": 1,
+      "message": "Any reason to add this flag? I suggest to drop it.",
+      "revId": "df5b2444a424e6d88d51feda4851de7504ce92bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c0e9525_bb32e7d8",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1168,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-26T00:30:52Z",
+      "side": 1,
+      "message": "Instead of returning prev_checkout_info in ensure_checkout, it might be cleaner to create function that will return current checkout info, which can be called before ensure_checkout is called and stored in prev_checkout_info variable. That way we can avoid returning weird tuple here, and address bug if there are more solutions (which we don\u0027t expect in this chromium/src, but might be expected somewhere else).\n\nThe function can be as simple as:\n\n  def current_checkout_info(solutions):\n    r \u003d {}\n    build_dir \u003d os.getcwd()\n\n    for sln in solutions:\n      sln_dir \u003d path.join(build_dir, sln[\u0027name\u0027])\n      if path.isdir(sln_dir) and not is_broken_repo_dir(sln_dir):\n          r[sln[\u0027name\u0027] \u003d (git(\u0027rev-parse\u0027, \u0027HEAD\u0027, cwd\u003dsln_dir).strip(), \n                  get_commit_position(sln_dir))\n    return r",
+      "revId": "df5b2444a424e6d88d51feda4851de7504ce92bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

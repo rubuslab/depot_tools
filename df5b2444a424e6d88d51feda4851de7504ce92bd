@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d96b932c_0d19d0fc",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2021-01-26T00:50:59Z",
+      "side": 1,
+      "message": "I wasn\u0027t sure if other teams would care or not that their project\u0027s builds suddenly start outputting this info. If that\u0027s not a concern, I can take this out.",
+      "parentUuid": "a3fb11cc_b35af691",
+      "revId": "df5b2444a424e6d88d51feda4851de7504ce92bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9c0e9525_bb32e7d8",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 9

@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d19b5f56_0e75d585",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-26T17:56:20Z",
+      "side": 1,
+      "message": "I created a CL on a release-heads branch, executed a tryjob recipe and tested new bot_update with led and found no issues (on no-patch, bot_update used correct branch). So I think that should address Edward\u0027s concern about using HEAD instead of correct branch. \n\nCL: https://crrev.com/c/2648830\noriginal - https://ci.chromium.org/p/chromium-m89/builders/try/linux_chromium_asan_rel_ng/252\nled - https://ci.chromium.org/raw/build/logs.chromium.org/chromium-m89/led/sokcevic_google.com/238acd2320992c4b59dbfbfc493be90544a61a48de728a172d94a57a306a3912/+/annotations?server\u003dchromium-swarm.appspot.com",
+      "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a7a1e26_52fbbc4d",

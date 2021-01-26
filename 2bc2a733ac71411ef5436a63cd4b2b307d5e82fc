@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8ef7f0f_453644ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2021-01-26T00:09:52Z",
+      "side": 1,
+      "message": "Updated commit message with reason why. Basically it would just be convenient for us to be able to glance out output properties to immediately see how many new commits were checked out.",
+      "parentUuid": "e0c9de26_7d32c57f",
+      "revId": "2bc2a733ac71411ef5436a63cd4b2b307d5e82fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "de4deb69_29eff321",

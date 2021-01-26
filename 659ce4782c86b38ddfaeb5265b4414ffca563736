@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9fb5f15_0eae6190",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-26T18:54:26Z",
+      "side": 1,
+      "message": "What do you think of this? I think we definitely need to check for CR if the license check fails because CR characters will make it fail and that is very confusing. Right now the CR check applies to all files that are required to have a license, regardless of whether the license check fails. That may be too aggressive - thoughts?",
+      "revId": "659ce4782c86b38ddfaeb5265b4414ffca563736",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

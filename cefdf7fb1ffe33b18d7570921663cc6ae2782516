@@ -16,6 +16,29 @@
       "message": "New documentation for --inject_current at: http://screen/BwYkaM3jA93B4tt.png",
       "revId": "cefdf7fb1ffe33b18d7570921663cc6ae2782516",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d892ba04_6e47e318",
+        "filename": "man/html/git-new-branch.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-26T01:39:56Z",
+      "side": 1,
+      "message": "I think this is a bit confusing. What about adding something like \n\n  before: current \u003e upstream\n  after:  current \u003e new \u003e upstream",
+      "range": {
+        "startLine": 815,
+        "startChar": 0,
+        "endLine": 818,
+        "endChar": 23
+      },
+      "revId": "cefdf7fb1ffe33b18d7570921663cc6ae2782516",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "008f334a_6fcfbf91",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 1268749
+      },
+      "writtenOn": "2021-01-26T21:03:30Z",
+      "side": 1,
+      "message": "go/encrypted-debug-headers says:\n\n\"You should also not recommend that outside parties add this header to all requests, only while you are actively debugging, as it adds additional network overhead for Google and the outside party.\"\n\nI do not believe this cost is large (I\u0027ve asked for clarification on the g3doc page), but perhaps it would be best to set this config option from the first retry onwards (i.e.: after a failure). That way, only infrequent failures will trigger this.\n\nOn that note, are there any failures that aren\u0027t retried but where the contacted GoB frontend would be interesting?",
+      "range": {
+        "startLine": 751,
+        "startChar": 2,
+        "endLine": 753,
+        "endChar": 35
+      },
+      "revId": "6677ed52d47e12fce999524f14414760d168c9ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

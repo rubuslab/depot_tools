@@ -834,7 +834,7 @@ def get_commit_position(git_path, revision='HEAD'):
   return None
 
 
-def parse_got_revision(gclient_output, got_revision_mapping):
+def parse_got_revision(gclient_output, got_revision_mapping, prev_checkout_info):
   """Translate git gclient revision mapping to build properties."""
   properties = {}
   solutions_output = {
@@ -857,9 +857,13 @@ def parse_got_revision(gclient_output, got_revision_mapping):
       revision = git('rev-parse', 'HEAD', cwd=dir_name).strip()
       commit_position = get_commit_position(dir_name)
 
+    prev_revision, prev_cp = prev_checkout_info.get(dir_name.rstrip('/'), (None, None))
+
     properties[property_name] = revision
+    properties['prev_%s' % property_name] = prev_revision
     if commit_position:
       properties['%s_cp' % property_name] = commit_position
+      properties['prev_%s_cp' % property_name] = prev_cp
 
   return properties
 
@@ -1100,6 +1104,16 @@ def prepare(options, git_slns, active):
   print('Fetching Git checkout at %s@%s' % (first_sln, revisions[first_sln]))
   return revisions, step_text
 
+def current_checkout_info(solutions):
+  r = {}
+  build_dir = os.getcwd()
+
+  for sln in solutions:
+    sln_dir = path.join(build_dir, sln['name'])
+    if path.isdir(sln_dir) and not is_broken_repo_dir(sln_dir):
+      r[sln['name']] = (git('rev-parse', 'HEAD', cwd=sln_dir).strip(),
+                        get_commit_position(sln_dir))
+  return r
 
 def checkout(options, git_slns, specs, revisions, step_text):
   print('Using Python version: %s' % (sys.version,))
@@ -1122,6 +1136,8 @@ def checkout(options, git_slns, specs, revisions, step_text):
   with open(dirty_path, 'w') as f:
     # create file, no content
     pass
+
+  prev_checkout_info = current_checkout_info(git_slns)
 
   should_delete_dirty_file = False
 
@@ -1196,7 +1212,8 @@ def checkout(options, git_slns, specs, revisions, step_text):
   if not revision_mapping:
     revision_mapping['got_revision'] = first_sln
 
-  got_revisions = parse_got_revision(gclient_output, revision_mapping)
+  got_revisions = parse_got_revision(gclient_output, revision_mapping,
+                                     prev_checkout_info)
 
   if not got_revisions:
     # TODO(hinoka): We should probably bail out here, but in the interest

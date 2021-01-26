@@ -133,6 +133,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7972fa08_ba6230b5",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2021-01-26T01:09:07Z",
+      "side": 1,
+      "message": "Robbie, isn\u0027t that what the code does? get_gerrit_patch_root docstring says `If there is no patch, returns None`. Then L449-450 in this file check for falsiness and returns HEAD",
+      "parentUuid": "8e54bbc6_1920f49f",
+      "revId": "ab7b9aa23fef98a3af34d0c511287fd4b90c4239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a4944d2a_ec4583ed",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 2

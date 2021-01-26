@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0c9de26_7d32c57f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-26T00:07:31Z",
+      "side": 1,
+      "message": "git rev-parse HEAD is not expensive operations so I\u0027m not that concerned. However, I wonder what\u0027s the reason behind this change. It would be nice if is included.",
+      "revId": "2bc2a733ac71411ef5436a63cd4b2b307d5e82fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de4deb69_29eff321",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-26T00:07:31Z",
+      "side": 1,
+      "message": "If we need this, it might be better to add it gclient_sync output.",
+      "revId": "2bc2a733ac71411ef5436a63cd4b2b307d5e82fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

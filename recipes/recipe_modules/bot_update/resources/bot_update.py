@@ -1100,6 +1100,16 @@ def prepare(options, git_slns, active):
   print('Fetching Git checkout at %s@%s' % (first_sln, revisions[first_sln]))
   return revisions, step_text
 
+def current_checkout_info(solutions):
+  r = {}
+  build_dir = os.getcwd()
+
+  for sln in solutions:
+    sln_dir = path.join(build_dir, sln['name'])
+    if path.isdir(sln_dir) and not is_broken_repo_dir(sln_dir):
+      r[sln['name']] = (git('rev-parse', 'HEAD', cwd=sln_dir).strip(),
+                        get_commit_position(sln_dir))
+  return r
 
 def checkout(options, git_slns, specs, revisions, step_text):
   print('Using Python version: %s' % (sys.version,))
@@ -1122,6 +1132,8 @@ def checkout(options, git_slns, specs, revisions, step_text):
   with open(dirty_path, 'w') as f:
     # create file, no content
     pass
+
+  prev_checkout_info = current_checkout_info(git_slns)
 
   should_delete_dirty_file = False
 
@@ -1204,6 +1216,11 @@ def checkout(options, git_slns, specs, revisions, step_text):
     # revision here.
     got_revisions = { 'got_revision': 'BOT_UPDATE_NO_REV_FOUND' }
     #raise Exception('No got_revision(s) found in gclient output')
+  else:
+    for property_name, sln_name in revision_mapping.items():
+      prev_revision, prev_cp = prev_checkout_info.get(sln_name, (None, None))
+      got_revisions['prev-{}'.format(property_name)] = prev_revision
+      got_revisions['prev-{}-cp'.format(property_name)] = prev_cp
 
   # Tell recipes information such as root, got_revision, etc.
   emit_json(options.output_json,

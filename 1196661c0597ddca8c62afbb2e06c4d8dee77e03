@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "1196661c0597ddca8c62afbb2e06c4d8dee77e03",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5670a717_1883ec78",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2021-01-27T21:00:17Z",
+      "side": 1,
+      "message": "LGTM but let\u0027s make sure we coordinate merging with PSA sending",
+      "revId": "1196661c0597ddca8c62afbb2e06c4d8dee77e03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

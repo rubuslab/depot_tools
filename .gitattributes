@@ -17,6 +17,7 @@
 /autoninja*                   recipes
 /clang*                       recipes
 /depot-tools-auth             recipes
+/dirmd                        recipes
 /download_from_google_storage recipes
 /fetch                        recipes
 /gclient                      recipes

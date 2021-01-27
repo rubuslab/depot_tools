@@ -199,7 +199,7 @@ class TestGitClBasic(unittest.TestCase):
     self.assertTrue('saving CL description' in sys.stdout.getvalue())
     self.assertTrue('Content of CL description' in sys.stdout.getvalue())
     self.assertTrue('lorem ipsum' in sys.stdout.getvalue())
-    sys.exit.assert_called_once_with(1)
+    sys.exit.assert_called_once_with(0)
 
   def test_die_with_error_no_desc(self):
     with self.assertRaises(SystemExitMock):

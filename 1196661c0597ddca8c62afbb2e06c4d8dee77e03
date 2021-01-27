@@ -33,6 +33,57 @@
       "message": "LGTM but let\u0027s make sure we coordinate merging with PSA sending",
       "revId": "1196661c0597ddca8c62afbb2e06c4d8dee77e03",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fea2b1ee_dc06a4f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-27T21:00:52Z",
+      "side": 1,
+      "message": "lgtm, but I have a couple of (optional) suggestions you might consider, too ...",
+      "revId": "1196661c0597ddca8c62afbb2e06c4d8dee77e03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2717cca0_f4e3411e",
+        "filename": "git_drover.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-27T21:00:52Z",
+      "side": 1,
+      "message": "Suggestion: s/from Gerrit the UI/using Gerrit/.",
+      "revId": "1196661c0597ddca8c62afbb2e06c4d8dee77e03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd39901e_764b8b79",
+        "filename": "git_drover.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-01-27T21:00:52Z",
+      "side": 1,
+      "message": "I might reword this as \"If you have to do a lot of merges, consider using multiple working directories in your checkout:\"",
+      "revId": "1196661c0597ddca8c62afbb2e06c4d8dee77e03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -69,6 +69,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "739299e0_79236113",
+        "filename": "git_drover.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-27T21:09:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2717cca0_f4e3411e",
+      "revId": "1196661c0597ddca8c62afbb2e06c4d8dee77e03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd39901e_764b8b79",
@@ -82,6 +100,24 @@
       "writtenOn": "2021-01-27T21:00:52Z",
       "side": 1,
       "message": "I might reword this as \"If you have to do a lot of merges, consider using multiple working directories in your checkout:\"",
+      "revId": "1196661c0597ddca8c62afbb2e06c4d8dee77e03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7270d618_c5aac2d0",
+        "filename": "git_drover.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-27T21:09:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd39901e_764b8b79",
       "revId": "1196661c0597ddca8c62afbb2e06c4d8dee77e03",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

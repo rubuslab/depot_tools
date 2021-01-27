@@ -16,6 +16,23 @@
       "message": "Updating upload_to_google_storage.py to avoid misleading \u0027Success\u0027 message when one or more input files are missing. PTAL. Thanks.",
       "revId": "594fd09979aac2e8a7338a5f2f54e33d7f5086fa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff7b53a7_5870708b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1181219
+      },
+      "writtenOn": "2021-01-27T19:44:42Z",
+      "side": 1,
+      "message": "Friendly ping...",
+      "revId": "594fd09979aac2e8a7338a5f2f54e33d7f5086fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

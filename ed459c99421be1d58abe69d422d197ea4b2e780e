@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39265559_9e06c167",
+        "filename": "man/src/git-new-branch.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-27T22:37:52Z",
+      "side": 1,
+      "message": "I think this is not currently checked out branch, but value of --inject_current parameter.",
+      "range": {
+        "startLine": 47,
+        "startChar": 36,
+        "endLine": 47,
+        "endChar": 57
+      },
+      "revId": "ed459c99421be1d58abe69d422d197ea4b2e780e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

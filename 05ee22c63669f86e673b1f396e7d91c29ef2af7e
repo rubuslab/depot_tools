@@ -52,6 +52,24 @@
       "parentUuid": "d4e9e58a_7ddd6812",
       "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "924cfb88_eebb65c5",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1241393
+      },
+      "writtenOn": "2021-01-28T22:12:42Z",
+      "side": 1,
+      "message": "How do I patch this CL into a led run? I ran:\n\n@ /usr/local/google/code/clankium/src (touchresources)$ led get-builder luci.chrome.ci:lorenz-graph-dbg | led edit-recipe-bundle | led edit-cr-cl https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2644827 | led edit -d pool\u003dluci.chrome.try | sed s/chrome-ci-builder/chrome-try-builder/g | led edit -experiment luci.use_realms\u003dfalse | led launch\n\nBut it doesn\u0027t seem like it was patched (tried even with .gitattributes though it didn\u0027t look like the problem):\n\n The recipe has crashed at point \u0027Uncaught exception\u0027!\n Traceback (most recent call last):\n   File \"/b/s/w/ir/kitchen-checkout/recipe_engine/recipe_engine/internal/engine.py\", line 571, in run_steps\n     raw_result \u003d recipe_obj.run_steps(api, engine)\n   File \"/b/s/w/ir/kitchen-checkout/recipe_engine/recipe_engine/internal/recipe_deps.py\", line 832, in run_steps\n     properties_def, api\u003dapi)\n   File \"/b/s/w/ir/kitchen-checkout/recipe_engine/recipe_engine/internal/property_invoker.py\", line 89, in invoke_with_properties\n     arg_names, **additional_args)\n   File \"/b/s/w/ir/kitchen-checkout/recipe_engine/recipe_engine/internal/property_invoker.py\", line 52, in _invoke_with_properties\n     return callable_obj(*props, **additional_args)\n   File \"/b/s/w/ir/kitchen-checkout/build_limited_scripts_slave/recipes/lorenz/graph_data.py\", line 133, in RunSteps\n     api.depot_tools.dirmd_path,\n AttributeError: \u0027DepotToolsApi\u0027 object has no attribute \u0027dirmd_path\u0027",
+      "parentUuid": "9e4b263c_ed4624be",
+      "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

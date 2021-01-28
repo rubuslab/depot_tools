@@ -70,6 +70,24 @@
       "parentUuid": "9e4b263c_ed4624be",
       "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f85a909e_5e2124b5",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-01-28T22:59:28Z",
+      "side": 1,
+      "message": "This part is wrong:\n   led edit-recipe-bundle | led edit-cr-cl https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2644827 \n\nled edit-cr-cl \u003cX\u003e is about simulating a build which CQ would have triggered on \u003cX\u003e. So, remove this part.\n\nUse -O flag for edit-recipe-bundle \n(led 2\u003e\u00261 | grep -A3 -B3 \u0027O recipe_engine\u0027)\nsmth like:\n   led edit-recipe-bundle -O depot_tools\u003d/path/to/your/depot_tools/checkout/with/this/patch",
+      "parentUuid": "924cfb88_eebb65c5",
+      "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

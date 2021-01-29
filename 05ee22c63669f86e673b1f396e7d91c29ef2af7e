@@ -88,6 +88,24 @@
       "parentUuid": "924cfb88_eebb65c5",
       "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aabf108d_0b3ee770",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1241393
+      },
+      "writtenOn": "2021-01-29T23:00:50Z",
+      "side": 1,
+      "message": "Thanks so much!\n\nSeems like it works even without the .gitattributes:\nhttps://ci.chromium.org/raw/build/logs.chromium.org/chrome/led/hnakashima_google.com/d76d7e232ca4065fa75b72b2ee19d6874855942bd28185a2ca6ac655e5745325/+/annotations?server\u003dchrome-swarming.appspot.com",
+      "parentUuid": "f85a909e_5e2124b5",
+      "revId": "05ee22c63669f86e673b1f396e7d91c29ef2af7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

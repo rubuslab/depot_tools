@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ead2d6e_7844c579",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-29T22:57:40Z",
+      "side": 1,
+      "message": "Why?",
+      "range": {
+        "startLine": 23,
+        "startChar": 22,
+        "endLine": 23,
+        "endChar": 36
+      },
+      "revId": "a82c33f8308a60ffad7a9b66c9c8af08d65da3e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54ccaebf_40406424",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-29T22:57:40Z",
+      "side": 1,
+      "message": "Why?",
+      "range": {
+        "startLine": 241,
+        "startChar": 24,
+        "endLine": 241,
+        "endChar": 28
+      },
+      "revId": "a82c33f8308a60ffad7a9b66c9c8af08d65da3e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -93,6 +93,30 @@
       },
       "revId": "a82c33f8308a60ffad7a9b66c9c8af08d65da3e9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4b4e6d6_40f72163",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-01-29T23:21:55Z",
+      "side": 1,
+      "message": "Ack. Was confused on why did you replace origin/master with HEAD, but I guess is to allow origin/main as well.",
+      "parentUuid": "39b54e3f_4f3cc309",
+      "range": {
+        "startLine": 241,
+        "startChar": 24,
+        "endLine": 241,
+        "endChar": 28
+      },
+      "revId": "a82c33f8308a60ffad7a9b66c9c8af08d65da3e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

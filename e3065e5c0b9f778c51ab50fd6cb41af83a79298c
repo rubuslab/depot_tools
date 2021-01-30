@@ -33,6 +33,23 @@
       "message": "I want to do some testing to make sure I understand this so I\u0027ll reply later today",
       "revId": "e3065e5c0b9f778c51ab50fd6cb41af83a79298c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "579e98f9_4e8c1bf8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-30T02:29:23Z",
+      "side": 1,
+      "message": "One disadvantage of this is that increases the lengths of paths, which are always a concern due to Windows path limits. However this only increases them by eight characters, and a change from last August (crrev.com/c/2376030) means that our next toolchain will have paths thirty characters shorter so this should be fine. crrev.com/c/2372727 also bought some breathing room.\n\nI did end-to-end testing of generating a package with this, uploading it, running gclient runhooks, and then doing a build. All was fine until the last step:\n\nTraceback (most recent call last):\n  File \"c:/src/chromium3/src/build/toolchain/win/setup_toolchain.py\", line 304, in \u003cmodule\u003e\n    main()\n  File \"c:/src/chromium3/src/build/toolchain/win/setup_toolchain.py\", line 250, in main\n    env \u003d _LoadToolchainEnv(cpu, win_sdk_path, target_store)\n  File \"c:/src/chromium3/src/build/toolchain/win/setup_toolchain.py\", line 104, in _LoadToolchainEnv\n    env \u003d json.load(open(env))[\u0027env\u0027]\nIOError: [Errno 2] No such file or directory: \u0027C:\\\\src\\\\chromium3\\\\src\\\\third_party\\\\depot_tools\\\\win_toolchain\\\\vs_files\\\\2b33dbcb95\\\\win_sdk\\\\bin\\\\SetEnv.x64.json\u0027\n\nI guess windows_sdk_path needs updating.\n\nThis may be one of those cases where we have to support both for a while because of this lack of a connection between depot_tools and Chromium. That is, new versions of depot_tools need to build old and new versions of Chromium. I didn\u0027t dig in super deep.\n\nThis is the change to test with my modified toolchain:\n\ndiff --git a/build/vs_toolchain.py b/build/vs_toolchain.py\nindex bd6c657265f4..36a8bbb42932 100755\n--- a/build/vs_toolchain.py\n+++ b/build/vs_toolchain.py\n@@ -443,7 +443,7 @@ def _GetDesiredVsToolchainHashes():\n   # d3dcompiler_47.dll, with ARM64 libraries and UWP support.\n   # See go/chromium-msvc-toolchain for instructions about how to update the\n   # toolchain.\n-  toolchain_hash \u003d \u0027a687d8e2e4114d9015eb550e1b156af21381faac\u0027\n+  toolchain_hash \u003d \u00272b33dbcb95\u0027\n   # Third parties that do not have access to the canonical toolchain can map\n   # canonical toolchain version to their own toolchain versions.\n   toolchain_hash_mapping_key \u003d \u0027GYP_MSVS_HASH_%s\u0027 % toolchain_hash\n",
+      "revId": "e3065e5c0b9f778c51ab50fd6cb41af83a79298c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

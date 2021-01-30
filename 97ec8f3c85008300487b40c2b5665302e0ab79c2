@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3c0ca89_6f2db58d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-01-30T00:17:38Z",
+      "side": 1,
+      "message": "That is old.\n\nAs the comments suggest, the danger of having these scripts in depot_tools is that theoretically we need to maintain compatibility going arbitrarily far back. That said, we don\u0027t reliably do that, and there is already no chance of building Chromium circa 2013 with a current depot_tools. So, lgtm.",
+      "revId": "97ec8f3c85008300487b40c2b5665302e0ab79c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

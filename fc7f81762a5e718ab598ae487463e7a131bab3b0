@@ -22,6 +22,30 @@
       },
       "revId": "fc7f81762a5e718ab598ae487463e7a131bab3b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb8123a9_7c61d340",
+        "filename": "roll_dep.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-01-30T00:12:33Z",
+      "side": 1,
+      "message": "We can actually just use origin/HEAD, with caveat that set-head needs to be called first. ptal",
+      "parentUuid": "1930f046_6f204e03",
+      "range": {
+        "startLine": 174,
+        "startChar": 2,
+        "endLine": 174,
+        "endChar": 23
+      },
+      "revId": "fc7f81762a5e718ab598ae487463e7a131bab3b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

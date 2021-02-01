@@ -70,6 +70,24 @@
       "parentUuid": "a03a6c1d_4f665b46",
       "revId": "be9134475b6eaef5138cff75f4d14c6a1e3872f6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0de9f727_2eb24bd7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-02-01T21:50:05Z",
+      "side": 1,
+      "message": "Oh, you wrote the same analysis while I wrote mine. Sounds like we agree 😊\n\nI\u0027ll pull the change I suggested into a preparatory CL.",
+      "parentUuid": "e32064aa_ae884eb2",
+      "revId": "be9134475b6eaef5138cff75f4d14c6a1e3872f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

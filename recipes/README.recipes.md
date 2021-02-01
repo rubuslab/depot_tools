@@ -799,6 +799,10 @@ Returns:
 
 #### **class [TryserverApi](/recipes/recipe_modules/tryserver/api.py#11)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
 
+&mdash; **def [count\_footers](/recipes/recipe_modules/tryserver/api.py#253)(self, patch_text=None):**
+
+Count of distinct footers defined.
+
 &emsp; **@property**<br>&mdash; **def [gerrit\_change](/recipes/recipe_modules/tryserver/api.py#27)(self):**
 
 Returns current gerrit change, if there is exactly one.
@@ -842,7 +846,7 @@ Args:
 
 Returned paths will be relative to to patch_root.
 
-&mdash; **def [get\_footer](/recipes/recipe_modules/tryserver/api.py#265)(self, tag, patch_text=None):**
+&mdash; **def [get\_footer](/recipes/recipe_modules/tryserver/api.py#276)(self, tag, patch_text=None):**
 
 Gets a specific tag from a CL description
 
@@ -865,9 +869,13 @@ Returns true iff the properties exist to match a Gerrit issue.
 
 Returns true iff we have a change to check out.
 
-&mdash; **def [normalize\_footer\_name](/recipes/recipe_modules/tryserver/api.py#269)(self, footer):**
+&mdash; **def [normalize\_footer\_name](/recipes/recipe_modules/tryserver/api.py#280)(self, footer):**
 
-&mdash; **def [set\_change](/recipes/recipe_modules/tryserver/api.py#272)(self, change):**
+&mdash; **def [printable\_footers](/recipes/recipe_modules/tryserver/api.py#257)(self, patch_text=None):**
+
+All footers as a single human-readable string.
+
+&mdash; **def [set\_change](/recipes/recipe_modules/tryserver/api.py#283)(self, change):**
 
 Set the gerrit change for this module.
 

@@ -248,6 +248,17 @@ class TryserverApi(recipe_api.RecipeApi):
     footers are machine readable tags embedded in commit messages. See
     git-footers documentation for more information.
     """
+    return self._get_footers(patch_text)
+
+  def count_footers(self, patch_text=None):  #pragma: nocover
+    """Count of distinct footers defined."""
+    return len(self._get_footers(patch_text))
+
+  def printable_footers(self, patch_text=None):  #pragma: nocover
+    """All footers as a single human-readable string."""
+    return '\n'.join(*self._get_footers(patch_text).values())
+
+  def _get_footers(self, patch_text=None):
     if patch_text is None:
       if self.gerrit_change:
         # TODO: reuse _ensure_gerrit_change_info.

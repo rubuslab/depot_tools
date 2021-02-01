@@ -52,6 +52,24 @@
       "parentUuid": "a03a6c1d_4f665b46",
       "revId": "be9134475b6eaef5138cff75f4d14c6a1e3872f6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e32064aa_ae884eb2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-02-01T21:49:02Z",
+      "side": 1,
+      "message": "What I think happens:\n\n- When patching in the new toolchain hash, third_party/depot_tools is still old depot_tools (which has the old path.join you linked to)\n\n- build/vs_toolchain in the chrome repo calls get_toolchain_if_necessary --output-json, so that writes the old win_sdk to third_party/depot_tools/win_toolchain/data.json\n\n- and then that data.json file is kind of sticky\n\nSo the two repros have a kind of circular dependency around the name of the win sdk dir. Ideally we can cut that cycle somehow. Just changing it in this cl here doesn\u0027t work. We could have a flag that tells get_toolchain_if_necessary which win sdk dir to use and manually add it when rolling in a new package, but that\u0027s brittle.\n\nMaybe we can edit get_toolchain_if_necessary to check which of win_sdk and \u0027Windows Kits/10\u0027 exists on disk, and use the one that exists, and use that path on that line. Then land that in a prerequisite change, wait until it\u0027s propagated everywhere, and only then land the new package.\n\nIn any case, that line can\u0027t change as part of this cl.",
+      "parentUuid": "a03a6c1d_4f665b46",
+      "revId": "be9134475b6eaef5138cff75f4d14c6a1e3872f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

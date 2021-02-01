@@ -102,6 +102,24 @@
       "message": "To rephrase this a bit: I had locally tested this CL on top of the old pinned toolchain, and I had to insert a bunch of \u0027..\u0027s in SetEnv.x64.json. I didn\u0027t see the two \u0027..\u0027, \u0027..\u0027 in package_from_installed.py when I opened it, so I figured that gets inserted later by some path relativization and that that should Just Work with the new path then -- but now I realize that the \u0027..\u0027, \u0027..\u0027 are missing due to https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2372727\n\nSo I think I need to read https://chromium-review.googlesource.com/c/chromium/src/+/2370604 and I\u0027ll probably need to tweak this CL a bit to accommodate the committed-but-not-deployed changes.",
       "revId": "e3065e5c0b9f778c51ab50fd6cb41af83a79298c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff01f999_fde8fd3c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-01T19:52:54Z",
+      "side": 1,
+      "message": "That makes sense.\n\nThe change that removes the .. characters can\u0027t easily be reverted because it is basically 100% merge conflicts. I\u0027m going to do a packaging test with it just to triple-check that it works and I\u0027ll share the hash so that you can do easier before/after comparisons.",
+      "parentUuid": "685e9572_97df10fd",
+      "revId": "e3065e5c0b9f778c51ab50fd6cb41af83a79298c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

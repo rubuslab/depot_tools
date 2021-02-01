@@ -34,6 +34,24 @@
       "parentUuid": "e344c352_e32ab0be",
       "revId": "be9134475b6eaef5138cff75f4d14c6a1e3872f6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f06c2838_81ccbcd6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-01T21:39:41Z",
+      "side": 1,
+      "message": "Ah.\n\nThe problem is that that script is run from chromium\\src\\third_party\\depot_tools\\win_toolchain\\get_toolchain_if_necessary.py, which means that that fix doesn\u0027t become active until your change has landed and rolled. For now I have simulated that by copying that script.\n\nI\u0027m also realizing that each time I run \"gclient runhooks\" it checks out origin/master in depot_tools, although I don\u0027t think that matters. With all that sorted/hacked (script copied to simulate a depot_tools roll) I did three tests:\n1) With a package created with your change. Pass\n2) With a package created today (short hash, removal of \"..\\..\"). Fail\n3) With the currently active package. Fail\n\nThe problem is that this change only works with a new package, which is asynchronous. I reverted the change on line 550 and then the old ones work, so that line just needs to check for the presence of win_sdk and choose appropriately, I believe.\n\nToolchain changes like this are tricky, and nobody really understands them.",
+      "parentUuid": "a03a6c1d_4f665b46",
+      "revId": "be9134475b6eaef5138cff75f4d14c6a1e3872f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

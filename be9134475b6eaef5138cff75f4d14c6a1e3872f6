@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e344c352_e32ab0be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-01T20:54:22Z",
+      "side": 1,
+      "message": "Test package from before this CL has this hash: 30b79411ad\n\u003egclient runhooks \u0026\u0026 ninja -C out\\release base\nWorks.\n\nTest package from patchset 5 from this CL has this hash: 782813b4eb\n\nIt looks like there are still places that explicitly encode \u0027win_sdk\u0027, places that encode the directory depth of the win_sdk\\bin directory (and possibly places that assume no spaces - we\u0027ll see).\n\nI tested with 782813b4eb and it made it a bit further but still failed. The first failure was \"assert len(ucrt_files) \u003e 0\" in _CopyUCRTRuntime. The redist_dir variable at that point is C:\\src\\chromium3\\src\\third_party\\depot_tools\\win_toolchain\\vs_files\\782813b4eb\\win_sdk\\Redist which is clearly wrong - somehow win_sdk is still being used. Perhaps this line in get_toolchain_if_necessary.py: \"win_sdk \u003d os.path.join(abs_toolchain_target_dir, \u0027win_sdk\u0027)\"\n\nI hacked some Python to get further and the .json files seem to be wrong because \"assert _LowercaseDict(json_env) \u003d\u003d _LowercaseDict(cmd_env)\" in _LoadToolchainEnv then fails. I added some instrumentation in order to compare:\n\ncmd_env:\nu\u0027LIB\u0027: u\u0027C:\\\\src\\\\chromium3\\\\src\\\\third_party\\\\depot_tools\\\\win_toolchain\\\\vs_files\\\\782813b4eb\\\\VC\\\\Tools\\\\MSVC\\\\14.28.29333\\\\lib\\\\x64;...\n\njson_env:\n\u0027LIB\u0027: \u0027C:\\\\src\\\\chromium3\\\\src\\\\third_party\\\\depot_tools\\\\win_toolchain\\\\vs_files\\\\782813b4eb\\\\Windows Kits\\\\VC\\\\Tools\\\\MSVC\\\\14.28.29333\\\\lib\\\\x64;...\n\nI\u0027m assuming that the \u0027u\u0027 prefix is harmless, but somehow \"Windows Kits\" is ending up in the path. Probably the \"..\\..\" path-walk code needs to be \"..\\..\\..\" - that may be tricky to do in a forwards/backwards compatible manner.\n",
+      "revId": "be9134475b6eaef5138cff75f4d14c6a1e3872f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

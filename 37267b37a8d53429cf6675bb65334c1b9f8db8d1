@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": false,
       "key": {
         "uuid": "4b37f7c2_c208cf0c",
         "filename": "/PATCHSET_LEVEL",
@@ -14,8 +15,24 @@
       "side": 1,
       "message": "Hi apolito@, \n\nThese tests I added work fine when I run `./tests/git_cl_test.py`, but they fail in the PRESUBMIT script. Am I doing something wrong?\n\nThanks,\nDaniel",
       "revId": "37267b37a8d53429cf6675bb65334c1b9f8db8d1",
-      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
-      "unresolved": false
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6e72750_28dbfbb9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1349337
+      },
+      "writtenOn": "2021-02-02T05:59:01Z",
+      "side": 1,
+      "message": "Friendly ping on my earlier question:\n\n\"These tests I added work fine when I run `./tests/git_cl_test.py`, but they fail in the PRESUBMIT script. Am I doing something wrong?\"",
+      "revId": "37267b37a8d53429cf6675bb65334c1b9f8db8d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

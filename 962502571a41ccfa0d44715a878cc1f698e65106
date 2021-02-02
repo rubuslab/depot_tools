@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d006c5bc_a1e8cc9d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-02T01:17:01Z",
+      "side": 1,
+      "message": "Using crrev.com/c/2655836 is handy because it uses less space and is less likely to be confused with the URL for _this_ commit when browsing history.",
+      "revId": "962502571a41ccfa0d44715a878cc1f698e65106",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "002fc5d5_b9555532",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-02T01:17:01Z",
+      "side": 1,
+      "message": "I thought you were talking about _this_ script. Maybe just say that this change makes it so that depot_tools can handle the sdk being in \u0027win_sdk\u0027 or \u0027Windows Kits\\10\u0027.",
+      "revId": "962502571a41ccfa0d44715a878cc1f698e65106",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5277523a_d1baa467",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-02T01:17:01Z",
+      "side": 1,
+      "message": "Years, I think. A few months would greatly complicate building versions of Chrome from just a few milestones ago with a modern depot_tools. I don\u0027t know how much backwards compatibility we guarantee, but I have gone back 6-8 months a few times and the fewer obstacles the better.",
+      "revId": "962502571a41ccfa0d44715a878cc1f698e65106",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e745c60d_a48fad19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-02T01:17:01Z",
+      "side": 1,
+      "message": "lgtm with a couple of comment/description nits.",
+      "revId": "962502571a41ccfa0d44715a878cc1f698e65106",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bba69a1_b32e3756",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-02T01:17:01Z",
+      "side": 1,
+      "message": "Leading \\ should be removed for consistency with the other path.",
+      "revId": "962502571a41ccfa0d44715a878cc1f698e65106",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

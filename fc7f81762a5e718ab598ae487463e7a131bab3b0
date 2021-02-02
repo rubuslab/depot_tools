@@ -46,6 +46,30 @@
       },
       "revId": "fc7f81762a5e718ab598ae487463e7a131bab3b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bbd0d34_d721ed3e",
+        "filename": "roll_dep.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-02T21:35:15Z",
+      "side": 1,
+      "message": "Using origin/HEAD sgtm",
+      "parentUuid": "eb8123a9_7c61d340",
+      "range": {
+        "startLine": 174,
+        "startChar": 2,
+        "endLine": 174,
+        "endChar": 23
+      },
+      "revId": "fc7f81762a5e718ab598ae487463e7a131bab3b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

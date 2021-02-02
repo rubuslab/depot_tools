@@ -72,9 +72,9 @@ def GetFileList(root, win_sdk_in_windows_kits):
   file_list = []
   # Ignore WER ReportQueue entries that vctip/cl leave in the bin dir if/when
   # they crash. Also ignores the content of the
-  # win_sdk/debuggers/x(86|64)/(sym|src)/ directories as this is just the
-  # temporarily location that Windbg might use to store the symbol files and
-  # downloaded sources.
+  # Windows Kits/10//debuggers/x(86|64)/(sym|src)/ directories as this is just
+  # the temporarily location that Windbg might use to store the symbol files
+  # and downloaded sources.
   #
   # Note: These files are only created on a Windows host, so the
   # ignored_directories list isn't relevant on non-Windows hosts.

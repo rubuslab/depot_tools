@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28280ad2_73de6ebf",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-02-02T04:37:52Z",
+      "side": 1,
+      "message": "need to update here too?\nhttps://ci.chromium.org/p/goma-client/builders/try/win_rel/b8856438191401358304?",
+      "revId": "e72789f5b4e6e96a6c114133eb7d147da6be656b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

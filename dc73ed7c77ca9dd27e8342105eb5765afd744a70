@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "033c4410_695bf2e2",
+        "filename": "tests/gclient_git_mutates_smoketest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-02-02T19:01:39Z",
+      "side": 1,
+      "message": "Could you provide some context? I\u0027m not clear on what the purpose of this change is.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "dc73ed7c77ca9dd27e8342105eb5765afd744a70",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

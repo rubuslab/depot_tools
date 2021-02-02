@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc57ec0e_f2aa32bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-02-02T12:50:43Z",
+      "side": 1,
+      "message": "add https://crbug.com/1173393 too?",
+      "revId": "05b65a80b0e704ebd0b24fce580150c85e85f521",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

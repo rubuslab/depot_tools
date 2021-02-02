@@ -16,6 +16,24 @@
       "message": "That\u0027s a fairly unactionable revert message. Link to bot?",
       "revId": "98cc028bbe1a9eb57c76a9aeff0ff4bfb6f131ac",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48818f92_57ea4c8c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-02-02T12:47:16Z",
+      "side": 1,
+      "message": "sorry.\nsee my comment to reverted CL\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2666429/6/win_toolchain/get_toolchain_if_necessary.py#182\nand\nhttps://crbug.com/1173393",
+      "parentUuid": "4513b612_9dc34468",
+      "revId": "98cc028bbe1a9eb57c76a9aeff0ff4bfb6f131ac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

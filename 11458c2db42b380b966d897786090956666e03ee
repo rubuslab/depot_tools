@@ -51,6 +51,24 @@
       "parentUuid": "768394aa_55cd8be3",
       "revId": "11458c2db42b380b966d897786090956666e03ee",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca4baaf8_45a56338",
+        "filename": "code-owners.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-03T23:11:31Z",
+      "side": 1,
+      "message": "Thanks!\n\n1. Done. Do we need to do something like this for Bot-Commit label too? Or is that taken care of by the definition in rules.pl: https://chromium.googlesource.com/All-Projects/+/refs/meta/config/rules.pl\n2. Noted.\n3. This doesn\u0027t apply to this project.",
+      "parentUuid": "63282ad4_35ee01ed",
+      "revId": "11458c2db42b380b966d897786090956666e03ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

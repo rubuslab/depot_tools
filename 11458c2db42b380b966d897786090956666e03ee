@@ -16,6 +16,23 @@
       "message": "This should work if I\u0027m reading https://gerrit.googlesource.com/plugins/code-owners/+/refs/heads/master/resources/Documentation/config.md correctly",
       "revId": "11458c2db42b380b966d897786090956666e03ee",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "768394aa_55cd8be3",
+        "filename": "code-owners.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-02-03T02:48:14Z",
+      "side": 1,
+      "message": "I think it should be part of gerrit.config:\n\n  [plugin \"code-owners\"]\n  \tenabled \u003d true",
+      "revId": "11458c2db42b380b966d897786090956666e03ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

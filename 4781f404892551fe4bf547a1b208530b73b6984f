@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4661d8f7_d7a610ff",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-03T00:24:08Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "98e89b27_666956cf",
+      "revId": "4781f404892551fe4bf547a1b208530b73b6984f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "daa51c8b_f077701d",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-02-02T21:17:20Z",
       "side": 1,
       "message": "or should we exclude author from `reviewers`?",
+      "revId": "4781f404892551fe4bf547a1b208530b73b6984f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eabcc293_39d42079",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-03T00:24:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "daa51c8b_f077701d",
       "revId": "4781f404892551fe4bf547a1b208530b73b6984f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

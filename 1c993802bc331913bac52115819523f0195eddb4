@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3786a758_de317662",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-02-03T12:24:59Z",
+      "side": 1,
+      "message": "That means your depot_tools is out of date  . You need to sync past https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2668127",
+      "parentUuid": "8dd1504a_dc508424",
+      "revId": "1c993802bc331913bac52115819523f0195eddb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19d60ef0_a00a56c0",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-02-03T06:59:52Z",
       "side": 1,
       "message": "Double slash after 10 should be a single slash. But better yet, move this change to crrev.com/c/2669048 so that this change purely changes the packaging script.",
+      "revId": "1c993802bc331913bac52115819523f0195eddb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0991eed4_e114f98e",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-02-03T12:24:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19d60ef0_a00a56c0",
       "revId": "1c993802bc331913bac52115819523f0195eddb4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

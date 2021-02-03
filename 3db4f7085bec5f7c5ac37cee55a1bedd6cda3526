@@ -104,6 +104,24 @@
       "message": "Is there anything I can do to help test this before it lands?",
       "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93942679_78559526",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-03T02:23:01Z",
+      "side": 1,
+      "message": "The problems with python3 in \"git bash\" are well understood and I will be sure to test that before relanding, but you\u0027ll get messages before I try landing this.",
+      "parentUuid": "898704e2_c4b0465d",
+      "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

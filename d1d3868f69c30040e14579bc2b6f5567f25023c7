@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff0f612f_a69aed58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-02-03T00:36:50Z",
+      "side": 1,
+      "message": "lgtm with a nit comment",
+      "revId": "d1d3868f69c30040e14579bc2b6f5567f25023c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "483f795a_e22d704b",
+        "filename": "owners_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-02-03T00:36:50Z",
+      "side": 1,
+      "message": "Could you document where len(owners) + 1 comes from?",
+      "range": {
+        "startLine": 147,
+        "startChar": 0,
+        "endLine": 147,
+        "endChar": 48
+      },
+      "revId": "d1d3868f69c30040e14579bc2b6f5567f25023c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

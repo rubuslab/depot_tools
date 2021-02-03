@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dd1504a_dc508424",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-03T06:59:52Z",
+      "side": 1,
+      "message": "I tested this  by patching it into depot_tools and running this command:\n\n\u003e python3 package_from_installed.py 2019 -w 10.0.19041.0\n\nThis worked until the hashing stage when I got this error:\n\nBuilding file list for VS 2019 Windows 10.0.19041.0...\n4.702 GB of data in 12272 files, 7503 files for 10.0.19041.0.\nWrote to out.zip.\nExtracting to determine hash...\nHashing...\nTraceback (most recent call last):\n  File \"package_from_installed.py\", line 543, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"package_from_installed.py\", line 537, in main\n    RenameToSha1(output)\n  File \"package_from_installed.py\", line 434, in RenameToSha1\n    sha1 \u003d get_toolchain_if_necessary.CalculateHash(rel_dir, None)\nTypeError: CalculateHash() missing 1 required positional argument: \u0027win_sdk_in_windows_kits\u0027\n",
+      "revId": "1c993802bc331913bac52115819523f0195eddb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19d60ef0_a00a56c0",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-03T06:59:52Z",
+      "side": 1,
+      "message": "Double slash after 10 should be a single slash. But better yet, move this change to crrev.com/c/2669048 so that this change purely changes the packaging script.",
+      "revId": "1c993802bc331913bac52115819523f0195eddb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

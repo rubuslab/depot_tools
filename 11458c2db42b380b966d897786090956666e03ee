@@ -33,6 +33,24 @@
       "message": "I think it should be part of gerrit.config:\n\n  [plugin \"code-owners\"]\n  \tenabled \u003d true",
       "revId": "11458c2db42b380b966d897786090956666e03ee",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63282ad4_35ee01ed",
+        "filename": "code-owners.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1162574
+      },
+      "writtenOn": "2021-02-03T08:57:40Z",
+      "side": 1,
+      "message": "Right, the code-owners plugin must be enabled for a host in gerrit.config, before any code-owners configuration takes effect.\n\nFor the chromium host this has already been done:\nhttps://source.corp.google.com/piper///depot/google3/devtools/gerritcodereview/hosted_sites/chromium/etc/gerrit.config;rcl\u003d354871151;l\u003d58\n\nSince this global config disables the code owners functionality for all projects by default, this config here on project-level (disabled\u003dfalse) is required to enable it for this project (chromium/tools/depot_tools repo and its child projects, if it has any). disabled\u003dfalse here overrides the disabled\u003dtrue that is inherited from gerrit.config.\n\nSubmitting this means, that all changes in the chromium/tools/depot_tools repo will require code owner approvals in order to be submitted. If a file doesn\u0027t have any code owner (because there is no OWNERS file defining code owners for it), it can only be submitted with an owners override, but overrides are not configured yet.\n\nBefore submitting this change I would recommend to:\n1. Configure a label that can be used to override the code owners submit check [1]\n\n2. [optional] Consider enabling the code owners functionality only for one branch before enabling it for the whole repo, e.g. you could use a regular expression with negative lookahead for the disabledBranch parameter to disable it for all, but one branch. E.g. to enable it only for the master branch use: disabledBranch \u003d ^refs/(?!heads/master$).* (see description of disabledBranch in [2]).\n\n3. [optional] Consider defining default code owners in refs/meta/config and/or setting fallbackCodeOwners \u003d ALL_USERS temporarily [3] if you do not have OWNERS files covering all files in all branches yet (that\u0027s what Android is doing to make the rollout smoother).\n\n[1]\nhttps://gerrit.googlesource.com/plugins/code-owners/+/refs/heads/master/resources/Documentation/setup-guide.md#6_configure-code-owner-overrides \n[2] https://gerrit.googlesource.com/plugins/code-owners/+/refs/heads/master/resources/Documentation/config.md\n[3] https://gerrit.googlesource.com/plugins/code-owners/+/refs/heads/master/resources/Documentation/config-guide.md#recommendations-for-defining-code-owners",
+      "parentUuid": "768394aa_55cd8be3",
+      "revId": "11458c2db42b380b966d897786090956666e03ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

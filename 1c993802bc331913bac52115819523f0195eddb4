@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0060f4df_83f9368d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-02-03T12:32:07Z",
+      "side": 1,
+      "message": "Ah no, that\u0027s not true. Well, https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2669048 happens to fix this problem, and it shouldn\u0027t affect the output of package_installed (other than unbreaking it), so maybe let\u0027s land that first?",
+      "parentUuid": "3786a758_de317662",
+      "revId": "1c993802bc331913bac52115819523f0195eddb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19d60ef0_a00a56c0",

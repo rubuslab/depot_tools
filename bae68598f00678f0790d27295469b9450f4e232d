@@ -33,6 +33,24 @@
       "message": "I want to test this after crrev.com/c/2655836 is working to make sure I\u0027ve got everything figured out.",
       "revId": "bae68598f00678f0790d27295469b9450f4e232d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9b06933_dad39cdf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-03T20:08:34Z",
+      "side": 1,
+      "message": "Or, you know, vice-versa as it turns out.",
+      "parentUuid": "e050ad47_9adba720",
+      "revId": "bae68598f00678f0790d27295469b9450f4e232d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

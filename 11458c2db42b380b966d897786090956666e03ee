@@ -69,6 +69,24 @@
       "parentUuid": "63282ad4_35ee01ed",
       "revId": "11458c2db42b380b966d897786090956666e03ee",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da1a668a_3e0edf17",
+        "filename": "code-owners.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1162574
+      },
+      "writtenOn": "2021-02-04T08:05:40Z",
+      "side": 1,
+      "message": "\u003e Do we need to do something like this for Bot-Commit label too?\nYes. This bypass in Prolog is not affecting the code-owners submit rule, which means that it would still block submission if a Bot-Commit approval is present, but code owner approvals are missing.",
+      "parentUuid": "ca4baaf8_45a56338",
+      "revId": "11458c2db42b380b966d897786090956666e03ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

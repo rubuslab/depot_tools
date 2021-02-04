@@ -199,14 +199,26 @@ class DepotToolsClient(OwnersClient):
 
 class GerritClient(OwnersClient):
   """Implement OwnersClient using OWNERS REST API."""
-  def __init__(self, host, project, branch):
+  def __init__(self, root, host, project, branch):
     super(GerritClient, self).__init__()
 
     self._host = host
     self._project = project
     self._branch = branch
 
+    self._dt_client = DepotToolsClient(root, branch)
+    self._code_owners_enabled = None
+
+  def _IsCodeOwnersEnabled(self):
+    if self._code_owners_enabled is not None:
+      return self._code_owners_enabled
+    self._code_owners_enabled = gerrit_util.IsCodeOwnersEnabled(self._host)
+
   def ListOwners(self, path):
+    # If code-owners plugin is not enabled, fall back to Depot Tools owners.
+    if not self._IsCodeOwnersEnabled():
+      return self._dt_client.ListOwners(path)
+
     # GetOwnersForFile returns a list of account details sorted by order of
     # best reviewer for path. If owners have the same score, the order is
     # random.

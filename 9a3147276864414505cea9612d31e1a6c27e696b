@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "26858f79_ade60b18",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-05T18:21:04Z",
+      "side": 1,
+      "message": "Yes to both.\nI know of webrtc, pdfium, skia. We can require them to enable, but want to start using code-owners plugin while we do it.",
+      "parentUuid": "58190d3f_8ff4e582",
+      "revId": "9a3147276864414505cea9612d31e1a6c27e696b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b98999f0_4d4f2006",
         "filename": "owners_client.py",
         "patchSetId": 2
@@ -31,6 +49,24 @@
       "writtenOn": "2021-02-05T01:06:19Z",
       "side": 1,
       "message": "I don\u0027t think this belongs here. I feel we should use DepotToolsClient or GerritClient somewhere higher up based on gerrit_util.IsCodeOwnersEnabled. Do we have to do that in more than one place? If so, it may be good to create factory function for that.",
+      "revId": "9a3147276864414505cea9612d31e1a6c27e696b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3be9a9e8_a59e0f59",
+        "filename": "owners_client.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-05T18:21:04Z",
+      "side": 1,
+      "message": "Yeah, we have to do it in a couple of places (presubmit, git-cl, owners-finder).\nCreated a factory function.",
+      "parentUuid": "b98999f0_4d4f2006",
       "revId": "9a3147276864414505cea9612d31e1a6c27e696b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

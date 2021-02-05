@@ -50,6 +50,24 @@
       "message": "memoize this?",
       "revId": "2b40f18b42c792df82b540d5b5bacd5461de4da7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e25438fb_e49bd911",
+        "filename": "owners_client.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-05T21:31:55Z",
+      "side": 1,
+      "message": "Called only once during lifecycle.",
+      "parentUuid": "1299f0ab_a47a589f",
+      "revId": "2b40f18b42c792df82b540d5b5bacd5461de4da7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

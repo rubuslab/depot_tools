@@ -33,6 +33,24 @@
       "message": "Edwin, could you give final +1 if things look good?",
       "revId": "507e87b8bbfa662b277eb097fd18cfe79c617ad1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a85b0bd4_350e0d73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1162574
+      },
+      "writtenOn": "2021-02-05T06:38:39Z",
+      "side": 1,
+      "message": "I have no permissions to vote on this change, but it looks good to me now!",
+      "parentUuid": "5960e2e2_ef40bd6c",
+      "revId": "507e87b8bbfa662b277eb097fd18cfe79c617ad1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

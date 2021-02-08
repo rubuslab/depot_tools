@@ -16,6 +16,23 @@
       "message": "Friendly ping.",
       "revId": "8247d3f4b24fdd63da694051ecd917d3acbc9d34",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e74e1801_9f45adc9",
+        "filename": "project.config",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-02-08T20:52:52Z",
+      "side": 1,
+      "message": "This will override all Code-Review settings [0], which are in infra [1]. This file should have all properties of infra, or we should move this to infra.\n\n[0] https://gerrit-review.googlesource.com/Documentation/config-labels.html#label_inheritance\n[1] https://chromium.googlesource.com/infra/+/refs/meta/config/project.config#7)",
+      "revId": "8247d3f4b24fdd63da694051ecd917d3acbc9d34",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

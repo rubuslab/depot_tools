@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7be38d4e_2fe0a1c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-09T23:28:54Z",
+      "side": 1,
+      "message": "I think the try bots are not useful for testing changes to these scripts because they don\u0027t get run until depot_tools has been rolled, which is rather late.",
+      "revId": "9e3d9392fe93ff12336e0157f92692446065b233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc4c5ec6_8018e767",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-09T23:28:54Z",
+      "side": 1,
+      "message": "\"AttributeError: \u0027Namespace\u0027 object has no attribute \u0027desired_hash\u0027\"\n\nDumping the args object I see this:\n\nNamespace(desired-hash\u003d\u002720d5f2553f\u0027, force\u003dTrue, no_download\u003dFalse, output_json\u003d\u0027C:\\\\src\\\\chromium3\\\\src\\\\build\\\\win_toolchain.json\u0027, toolchain_dir\u003d\u0027C:\\\\src\\\\chromium3\\\\src\\\\third_party\\\\depot_tools\\\\win_toolchain\u0027\n\nThe args argument needs to be renamed from desired-hash to desired_hash. Then it works.",
+      "revId": "9e3d9392fe93ff12336e0157f92692446065b233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "972e49d3_3e8dedd8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2021-02-11T18:44:44Z",
+      "side": 1,
+      "message": "Why are we dropping the public method? I don\u0027t see any justification for this in the CL description. I could understand wanting to do this, but I don\u0027t have context for the reasoning.",
+      "revId": "6a6484a61066ec8417ae492db41af3bef58a1ad8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

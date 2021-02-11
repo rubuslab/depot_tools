@@ -18,6 +18,8 @@ class TryserverApi(recipe_api.RecipeApi):
     self._gerrit_change_target_ref = None
     self._gerrit_change_fetch_ref = None
     self._gerrit_change_owner = None
+    self._change_footers = None
+    self._gerrit_commit_message = None
 
   def initialize(self):
     changes = self.m.buildbucket.build.input.gerrit_changes
@@ -118,6 +120,26 @@ class TryserverApi(recipe_api.RecipeApi):
     """
     self._ensure_gerrit_change_info()
     return self._gerrit_change_target_ref
+
+  @property
+  def gerrit_change_number(self):
+    """Returns gerrit change patchset, e.g. 12345 for a patch ref of
+    "refs/heads/45/12345/6".
+
+    Populated iff gerrit_change is populated.
+    """
+    self._ensure_gerrit_change_info()
+    return int(self._gerrit_change.change)
+
+  @property
+  def gerrit_patchset_number(self):
+    """Returns gerrit change patchset, e.g. 6 for a patch ref of
+    "refs/heads/45/12345/6".
+
+    Populated iff gerrit_change is populated.
+    """
+    self._ensure_gerrit_change_info()
+    return int(self._gerrit_change.patchset)
 
   @property
   def is_tryserver(self):
@@ -250,15 +272,28 @@ class TryserverApi(recipe_api.RecipeApi):
     """
     return self._get_footers(patch_text)
 
-  def _get_footers(self, patch_text=None):
-    if patch_text is None:
-      if self.gerrit_change:
-        # TODO: reuse _ensure_gerrit_change_info.
-        patch_text = self.m.gerrit.get_change_description(
-            'https://%s' % self.gerrit_change.host,
-            int(self.gerrit_change.change),
-            int(self.gerrit_change.patchset))
+  def count_footers(self, patch_text=None):  #pragma: nocover
+    return len(self._get_footers(patch_text))
 
+  def _ensure_gerrit_commit_message(self):
+    """Fetch full commit message for Gerrit change."""
+    self._ensure_gerrit_change_info()
+    self._gerrit_commit_message = self.m.gerrit.get_change_description(
+        'https://%s' % self.gerrit_change.host, self.gerrit_change_number,
+        self.gerrit_patchset_number)
+
+  def _get_footers(self, patch_text=None):
+    if patch_text is not None:
+      return self._get_footer_step(patch_text)
+    if self._change_footers:  #pragma: nocover
+      return self._change_footers
+    if self.gerrit_change:
+      self._ensure_gerrit_commit_message()
+      self._change_footers = self._get_footer_step(self._gerrit_commit_message)
+      return self._change_footers
+    raise "No patch text or associated changelist, cannot get footers"  #pragma: nocover
+
+  def _get_footer_step(self, patch_text):
     result = self.m.python(
         'parse description', self.repo_resource('git_footers.py'),
         args=['--json', self.m.json.output()],

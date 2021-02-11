@@ -16,6 +16,24 @@
       "message": "Why are we dropping the public method? I don\u0027t see any justification for this in the CL description. I could understand wanting to do this, but I don\u0027t have context for the reasoning.",
       "revId": "6a6484a61066ec8417ae492db41af3bef58a1ad8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcb63415_86665092",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1238766
+      },
+      "writtenOn": "2021-02-11T18:53:08Z",
+      "side": 1,
+      "message": "It\u0027s discussed in the bug, specifically crbug.com/1079219#c8. This is one of two places that uses the broad API, and locking it down makes it simpler to streamline in the future.",
+      "parentUuid": "972e49d3_3e8dedd8",
+      "revId": "6a6484a61066ec8417ae492db41af3bef58a1ad8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

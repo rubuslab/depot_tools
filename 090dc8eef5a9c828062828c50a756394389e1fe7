@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "563af848_fb7339e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2021-02-11T20:03:15Z",
+      "side": 1,
+      "message": "Can you describe the goals or intentions behind this refactor in the CL description? At a glance it looks like you\u0027re just fixing the TODO in _get_footers, is that all this CL is trying to do?",
+      "revId": "090dc8eef5a9c828062828c50a756394389e1fe7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a3fc39a_f70d4251",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2021-02-11T20:03:15Z",
+      "side": 1,
+      "message": "This seems to imply that it\u0027ll return a reasonable value if gerrit_change is not populated. This will error if it\u0027s none or something. I understand the meaning you\u0027re going for here I think, but it might be misinterpreted?",
+      "revId": "090dc8eef5a9c828062828c50a756394389e1fe7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f02b8051_2fe90a71",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2021-02-11T20:03:15Z",
+      "side": 1,
+      "message": "Why is this being added?",
+      "revId": "090dc8eef5a9c828062828c50a756394389e1fe7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

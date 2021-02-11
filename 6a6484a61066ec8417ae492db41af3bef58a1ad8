@@ -52,6 +52,24 @@
       "parentUuid": "bcb63415_86665092",
       "revId": "6a6484a61066ec8417ae492db41af3bef58a1ad8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ccdd9f4_db273145",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2021-02-11T19:46:37Z",
+      "side": 1,
+      "message": "Ah ok, that makes sense. Can you add something like this explanation to the CL description?",
+      "parentUuid": "a1ea4e9f_861b5752",
+      "revId": "6a6484a61066ec8417ae492db41af3bef58a1ad8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

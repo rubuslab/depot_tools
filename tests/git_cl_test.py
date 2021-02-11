@@ -86,6 +86,9 @@ class ChangelistMock(object):
     del patchset
     return self._gerrit_change
 
+  def GetRemoteBranch(self):
+    return ('origin', 'refs/remotes/origin/main')
+
 
 class GitMocks(object):
   def __init__(self, config=None, branchref=None):
@@ -3548,6 +3551,7 @@ class CMDTryTestCase(CMDTestCaseBase):
                     "host": "chromium-review.googlesource.com",
                     "project": "depot_tools",
                     "id": "beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef",
+                    "ref": "refs/heads/master",
                 }
             },
         },
@@ -3578,6 +3582,7 @@ class CMDTryTestCase(CMDTestCaseBase):
                     "host": "chromium-review.googlesource.com",
                     "project": "depot_tools",
                     "id": "beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef",
+                    "ref": "refs/heads/master",
                 }
             },
         }],
@@ -3801,7 +3806,8 @@ class MakeRequestsHelperTestCase(unittest.TestCase):
         requests[0]['scheduleBuild']['gitilesCommit'], {
             'host': 'chromium-review.googlesource.com',
             'id': 'ba5eba11',
-            'project': 'depot_tools'
+            'project': 'depot_tools',
+            'ref': 'refs/heads/main',
         })
 
   def testMakeRequestsHelperRetryFailedSet(self):

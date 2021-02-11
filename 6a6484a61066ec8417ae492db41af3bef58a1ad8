@@ -34,6 +34,24 @@
       "parentUuid": "972e49d3_3e8dedd8",
       "revId": "6a6484a61066ec8417ae492db41af3bef58a1ad8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1ea4e9f_861b5752",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1238766
+      },
+      "writtenOn": "2021-02-11T18:55:03Z",
+      "side": 1,
+      "message": "Sorry, mixed this up with a different CL: this isn\u0027t a call site, it\u0027s the definition. There are only two call sites: crrev.com/c/2689449 fixes one and the other is in recipes/recipes/recipe_roll_tryjob.py, which is an easy fix to the logic but less easy to fix the test case\u0027s mocks.",
+      "parentUuid": "bcb63415_86665092",
+      "revId": "6a6484a61066ec8417ae492db41af3bef58a1ad8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

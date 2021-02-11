@@ -840,7 +840,7 @@ Args:
 
 Returned paths will be relative to to patch_root.
 
-&mdash; **def [get\_footer](/recipes/recipe_modules/tryserver/api.py#265)(self, tag, patch_text=None):**
+&mdash; **def [get\_footer](/recipes/recipe_modules/tryserver/api.py#268)(self, tag, patch_text=None):**
 
 Gets a specific tag from a CL description
 
@@ -863,9 +863,9 @@ Returns true iff the properties exist to match a Gerrit issue.
 
 Returns true iff we have a change to check out.
 
-&mdash; **def [normalize\_footer\_name](/recipes/recipe_modules/tryserver/api.py#269)(self, footer):**
+&mdash; **def [normalize\_footer\_name](/recipes/recipe_modules/tryserver/api.py#272)(self, footer):**
 
-&mdash; **def [set\_change](/recipes/recipe_modules/tryserver/api.py#272)(self, change):**
+&mdash; **def [set\_change](/recipes/recipe_modules/tryserver/api.py#275)(self, change):**
 
 Set the gerrit change for this module.
 

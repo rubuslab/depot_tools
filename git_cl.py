@@ -395,7 +395,8 @@ def _make_tryjob_schedule_requests(changelist, jobs, options, patchset):
       requests[-1]['scheduleBuild']['gitilesCommit'] = {
           'host': gerrit_changes[0]['host'],
           'project': gerrit_changes[0]['project'],
-          'id': options.revision
+          'id': options.revision,
+          'ref': changelist.GetUpstreamBranch(),
        }
 
   return requests

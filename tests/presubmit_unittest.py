@@ -1820,6 +1820,14 @@ class ChangeUnittest(PresubmitTestsBase):
     self.assertEqual(['bar', 'baz', 'foo'], change.TBRsFromDescription())
     self.assertEqual('bar,baz,foo', change.TBR)
 
+  def testGAsPathsFromDescription(self):
+    change = presubmit.Change('', 'foo\nGA=\n\nChange-Id: asdf',
+                              self.fake_root_dir, [], 0, 0, '')
+    self.assertEqual([''], change.GAsPathsFromDescription())
+    change = presubmit.Change('', 'foo\nGA=a/b/\nGA=c\n\nChange-Id: asdf',
+                              self.fake_root_dir, [], 0, 0, '')
+    self.assertEqual(['a/b/', 'c'], change.GAsPathsFromDescription())
+
 
 class CannedChecksUnittest(PresubmitTestsBase):
   """Tests presubmit_canned_checks.py."""
@@ -2694,16 +2702,27 @@ the current line as well!
     self.assertEqual(1, len(results))
     self.assertIsInstance(results[0], presubmit.OutputApi.PresubmitError)
 
-  def AssertOwnersWorks(
-      self, tbr=False, issue='1', approvers=None, modified_files=None,
-      owners_by_path=None, is_committing=True, response=None,
-      expected_output='', manually_specified_reviewers=None, dry_run=None,
-      allow_tbr=True):
+  def AssertOwnersWorks(self,
+                        tbr=False,
+                        issue='1',
+                        approvers=None,
+                        modified_files=None,
+                        owners_by_path=None,
+                        global_approvers=None,
+                        ga_paths=None,
+                        is_committing=True,
+                        response=None,
+                        expected_output='',
+                        manually_specified_reviewers=None,
+                        dry_run=None,
+                        allow_tbr=True):
     # The set of people who lgtm'ed a change.
     approvers = approvers or set()
     manually_specified_reviewers = manually_specified_reviewers or []
     modified_files = modified_files or ['foo/xyz.cc']
     owners_by_path = owners_by_path or {'foo/xyz.cc': ['john@example.com']}
+    global_approvers = global_approvers or ['jane@example.com']
+    ga_paths = ga_paths or ['bar/ghj.cc']
     response = response or {
       "owner": {"email": 'john@example.com'},
       "labels": {"Code-Review": {
@@ -2726,6 +2745,7 @@ the current line as well!
     change.RepositoryRoot.return_value = None
     change.ReviewersFromDescription.return_value = manually_specified_reviewers
     change.TBRsFromDescription.return_value = []
+    change.GAsPathsFromDescription.return_value = ga_paths
     change.author_email = 'john@example.com'
     change.issue = issue
 
@@ -2745,8 +2765,16 @@ the current line as well!
 
     input_api.owners_client = owners_client.DepotToolsClient('root', 'branch')
 
+    def _CollectOwners(path, global_approval_paths):
+      owners = owners_by_path.get(path, [])
+      for ga_path in global_approval_paths:
+        if path.startswith(ga_path):
+          owners += global_approvers
+          break
+      return sorted(set(owners))
+
     with mock.patch('owners_client.DepotToolsClient.ListOwners',
-                    side_effect=lambda f: owners_by_path.get(f, [])):
+                    side_effect=_CollectOwners):
       results = presubmit_canned_checks.CheckOwners(
           input_api, presubmit.OutputApi, allow_tbr=allow_tbr)
     for result in results:
@@ -3039,6 +3067,122 @@ the current line as well!
         expected_output=re.compile(
             'Missing OWNER reviewers for these files:\n'
             '    foo\n', re.MULTILINE))
+
+  def testCannedCheckOwners_GlobalApprovers(self):
+    # GLOBAL_APPROVERS exist but aren't specified by the author.
+    self.AssertOwnersWorks(
+        modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+        owners_by_path={
+            'foo/xyz.cc': ['john@example.com'],
+            'bar/abc.cc': ['philippa@georgiou.com']
+        },
+        global_approvers=['jane@example.com'],
+        ga_paths=[],
+        expected_output='Missing LGTM from an OWNER for these files:\n'
+        '    bar/abc.cc\n')
+    # The actual owner is suggested, not from the GLOBAL_APPROVERS.
+    self.AssertOwnersWorks(
+        modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+        owners_by_path={
+            'foo/xyz.cc': ['john@example.com'],
+            'bar/abc.cc': ['philippa@georgiou.com']
+        },
+        global_approvers=['jane@example.com'],
+        ga_paths=[],
+        is_committing=False,
+        expected_output='Suggested OWNERS.*\n\s*philippa@georgiou.com')
+    # GLOBAL_APPROVERS are specified as directory by the author, but not
+    #  approved.
+    self.AssertOwnersWorks(
+        modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+        owners_by_path={
+            'foo/xyz.cc': ['john@example.com'],
+            'bar/abc.cc': ['philippa@georgiou.com']
+        },
+        global_approvers=['jane@example.com'],
+        ga_paths=['bar'],
+        expected_output='Missing LGTM from an OWNER for these files:\n'
+        '    bar/abc.cc\n')
+    # The GLOBAL_APPROVERS are suggested for the paths specified.
+    self.AssertOwnersWorks(
+        modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+        owners_by_path={
+            'foo/xyz.cc': ['john@example.com'],
+            'bar/abc.cc': ['philippa@georgiou.com']
+        },
+        global_approvers=['jane@example.com'],
+        ga_paths=['bar'],
+        is_committing=False,
+        expected_output=
+        'Suggested OWNERS.*\n\s*philippa@georgiou.com\n\s*jane@example.com')
+    # GLOBAL_APPROVERS are specified as directory by the author, and
+    #  approved.
+    self.AssertOwnersWorks(modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+                           owners_by_path={
+                               'foo/xyz.cc': ['john@example.com'],
+                               'bar/abc.cc': ['philippa@georgiou.com']
+                           },
+                           global_approvers=['jane@example.com'],
+                           approvers=['jane@example.com'],
+                           ga_paths=['bar'],
+                           expected_output='')
+    # The GLOBAL_APPROVERS are suggested for the paths specified.
+    self.AssertOwnersWorks(modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+                           owners_by_path={
+                               'foo/xyz.cc': ['john@example.com'],
+                               'bar/abc.cc': ['philippa@georgiou.com']
+                           },
+                           global_approvers=['jane@example.com'],
+                           approvers=['jane@example.com'],
+                           ga_paths=['bar'],
+                           is_committing=False,
+                           expected_output='')
+    # GLOBAL_APPROVERS are specified as file by the author, but not
+    #  approved.
+    self.AssertOwnersWorks(
+        modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+        owners_by_path={
+            'foo/xyz.cc': ['john@example.com'],
+            'bar/abc.cc': ['philippa@georgiou.com']
+        },
+        global_approvers=['jane@example.com'],
+        ga_paths=['bar/abc.cc'],
+        expected_output='Missing LGTM from an OWNER for these files:\n'
+        '    bar/abc.cc\n')
+    # The GLOBAL_APPROVERS are suggested for the paths specified.
+    self.AssertOwnersWorks(
+        modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+        owners_by_path={
+            'foo/xyz.cc': ['john@example.com'],
+            'bar/abc.cc': ['philippa@georgiou.com']
+        },
+        global_approvers=['jane@example.com'],
+        ga_paths=['bar/abc.cc'],
+        is_committing=False,
+        expected_output=
+        'Suggested OWNERS.*\n\s*philippa@georgiou.com\n\s*jane@example.com')
+    # GLOBAL_APPROVERS are specified as file by the author, and
+    #  approved.
+    self.AssertOwnersWorks(modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+                           owners_by_path={
+                               'foo/xyz.cc': ['john@example.com'],
+                               'bar/abc.cc': ['philippa@georgiou.com']
+                           },
+                           global_approvers=['jane@example.com'],
+                           approvers=['jane@example.com'],
+                           ga_paths=['bar/abc.cc'],
+                           expected_output='')
+    # The GLOBAL_APPROVERS are suggested for the paths specified.
+    self.AssertOwnersWorks(modified_files=['foo/xyz.cc', 'bar/abc.cc'],
+                           owners_by_path={
+                               'foo/xyz.cc': ['john@example.com'],
+                               'bar/abc.cc': ['philippa@georgiou.com']
+                           },
+                           global_approvers=['jane@example.com'],
+                           approvers=['jane@example.com'],
+                           ga_paths=['bar/abc.cc'],
+                           is_committing=False,
+                           expected_output='')
 
   def testCannedCheckOwners_NoLGTM(self):
     self.AssertOwnersWorks(expected_output='Missing LGTM from someone '

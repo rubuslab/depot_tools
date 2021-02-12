@@ -62,23 +62,27 @@ class OwnersClient(object):
   PENDING = 'PENDING'
   INSUFFICIENT_REVIEWERS = 'INSUFFICIENT_REVIEWERS'
 
-  def ListOwners(self, path):
+  def ListOwners(self, path, global_approval_paths):
     """List all owners for a file.
 
     The returned list is sorted so that better owners appear first.
     """
     raise Exception('Not implemented')
 
-  def BatchListOwners(self, paths):
+  def BatchListOwners(self, paths, global_approval_paths):
     """List all owners for a group of files.
 
     Returns a dictionary {path: [owners]}.
     """
+    # TODO: This needs a `manager` or something to share the
+    # global_approval_paths.
     with git_common.ScopedPool(kind='threads') as pool:
-      return dict(pool.imap_unordered(
-          lambda p: (p, self.ListOwners(p)), paths))
+      return dict(
+          pool.imap_unordered(
+              lambda p: (p, self.ListOwners(p, global_approval_paths)), paths))
 
-  def GetFilesApprovalStatus(self, paths, approvers, reviewers):
+  def GetFilesApprovalStatus(self, paths, global_approval_paths, approvers,
+                             reviewers):
     """Check the approval status for the given paths.
 
     Utility method to check for approval status when a change has not yet been
@@ -93,7 +97,7 @@ class OwnersClient(object):
     if reviewers:
       reviewers.add(self.EVERYONE)
     status = {}
-    owners_by_path = self.BatchListOwners(paths)
+    owners_by_path = self.BatchListOwners(paths, global_approval_paths)
     for path, owners in owners_by_path.items():
       owners = set(owners)
       if owners.intersection(approvers):
@@ -108,7 +112,8 @@ class OwnersClient(object):
     """Get sorted list of owners for the given paths."""
     exclude = exclude or []
     positions_by_owner = {}
-    owners_by_path = self.BatchListOwners(paths)
+    global_approval_paths = []
+    owners_by_path = self.BatchListOwners(paths, global_approval_paths)
     for owners in owners_by_path.values():
       for i, owner in enumerate(owners):
         if owner in exclude:
@@ -131,7 +136,8 @@ class OwnersClient(object):
     """Suggest a set of owners for the given paths."""
     exclude = exclude or []
     paths_by_owner = {}
-    owners_by_path = self.BatchListOwners(paths)
+    global_approval_paths = []
+    owners_by_path = self.BatchListOwners(paths, global_approval_paths)
     for path, owners in owners_by_path.items():
       for owner in owners:
         if owner not in exclude:
@@ -182,13 +188,15 @@ class DepotToolsClient(OwnersClient):
       if os.path.basename(f) == 'OWNERS'
     }
 
-  def ListOwners(self, path):
+  def ListOwners(self, path, global_approval_paths):
     # all_possible_owners is not thread safe.
     with self._db_lock:
       self._ensure_db()
       # all_possible_owners returns a dict {owner: [(path, distance)]}. We want
       # to return a list of owners sorted by increasing distance.
-      distance_by_owner = self._db.all_possible_owners([path], None)
+      distance_by_owner = self._db.all_possible_owners([path],
+                                                       global_approval_paths,
+                                                       None)
       # We add a small random number to the distance, so that owners at the
       # same distance are returned in random order to avoid overloading those
       # who would appear first.
@@ -206,7 +214,7 @@ class GerritClient(OwnersClient):
     self._project = project
     self._branch = branch
 
-  def ListOwners(self, path):
+  def ListOwners(self, path, global_approval_paths):
     # GetOwnersForFile returns a list of account details sorted by order of
     # best reviewer for path. If owners have the same score, the order is
     # random.

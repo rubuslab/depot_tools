@@ -51,6 +51,8 @@ class OwnersFinder(object):
     reviewers = list(reviewers)
     if author and not ignore_author:
       reviewers.append(author)
+    # These are specified in the CL description.
+    global_approval_paths = []
 
     # Eliminate files that existing reviewers can review.
     self.client = owners_client.DepotToolsClient(
@@ -60,7 +62,7 @@ class OwnersFinder(object):
       os_path=os_path)
 
     approval_status = self.client.GetFilesApprovalStatus(
-      filtered_files, reviewers, [])
+        filtered_files, global_approval_paths, reviewers, [])
     filtered_files = [
       f for f in filtered_files
       if approval_status[f] != owners_client.OwnersClient.APPROVED]
@@ -69,7 +71,8 @@ class OwnersFinder(object):
     if len(filtered_files) != len(files):
       files = filtered_files
 
-    self.files_to_owners = self.client.BatchListOwners(files)
+    self.files_to_owners = self.client.BatchListOwners(files,
+                                                       global_approval_paths)
 
     self.owners_to_files = {}
     self._map_owners_to_files()

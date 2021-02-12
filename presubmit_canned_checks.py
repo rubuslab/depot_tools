@@ -1118,7 +1118,8 @@ def CheckOwnersFormat(input_api, output_api):
   try:
     owners_db = input_api.owners_db
     owners_db.override_files = {}
-    owners_db.load_data_needed_for(affected_files)
+    owners_db.load_data_needed_for(affected_files,
+                                   input_api.change.GAsPathsFromDescription())
     return []
   except Exception as e:
     return [output_api.PresubmitError(
@@ -1144,13 +1145,14 @@ def CheckOwners(
 
   affected_files = set([f.LocalPath() for f in
       input_api.change.AffectedFiles(file_filter=source_file_filter)])
+  global_approval_paths = input_api.change.GAsPathsFromDescription()
   owner_email, reviewers = GetCodereviewOwnerAndReviewers(
       input_api, approval_needed=input_api.is_committing)
 
   owner_email = owner_email or input_api.change.author_email
 
   approval_status = input_api.owners_client.GetFilesApprovalStatus(
-      affected_files, reviewers.union([owner_email]), [])
+      affected_files, global_approval_paths, reviewers.union([owner_email]), [])
   missing_files = [
       f for f in affected_files
       if approval_status[f] != input_api.owners_client.APPROVED]

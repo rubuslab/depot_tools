@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "697089f5_a36d1339",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-02-12T00:25:25Z",
+      "side": 1,
+      "message": "Since I changed original git_cl (it was using upstream branch instead of remote branch), please take another look",
+      "revId": "2f90d7396b31a8c2b481dab0becc5d3b8391acf4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

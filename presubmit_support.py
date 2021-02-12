@@ -1124,7 +1124,9 @@ class Change(object):
     for line in self._full_description.splitlines():
       m = self.TAG_LINE_RE.match(line)
       if m:
-        self.tags[m.group('key')] = m.group('value')
+        self.tags[m.group('key')] = \
+          self.tags[m.group('key')] + "," + m.group('value') \
+            if m.group('key') in self.tags else m.group('value')
       else:
         description_without_tags.append(line)
 
@@ -1189,6 +1191,11 @@ class Change(object):
     # programmatically determined by self-CR+1s.
     footers = self.GitFootersFromDescription().get('Tbr', [])
     return sorted(set(tags + footers))
+
+  def GAsPathsFromDescription(self):
+    """Returns all path prefixes to have GLOBAL_APPROVERS as owners."""
+    tags = [r.strip() for r in self.tags.get('GA', '').split(',') if r != None]
+    return sorted(set(tags))
 
   # TODO(crbug.com/753425): Delete these once we're sure they're unused.
   @property

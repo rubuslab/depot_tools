@@ -1376,8 +1376,9 @@ class Changelist(object):
       client = owners_client.DepotToolsClient(
           root=settings.GetRoot(),
           branch=self.GetCommonAncestorWithUpstream())
-      status = client.GetFilesApprovalStatus(
-          files, [], options.tbrs + options.reviewers)
+      global_approval_paths = []
+      status = client.GetFilesApprovalStatus(files, global_approval_paths, [],
+                                             options.tbrs + options.reviewers)
       missing_files = [
         f for f in files
         if status[f] == owners_client.OwnersClient.INSUFFICIENT_REVIEWERS

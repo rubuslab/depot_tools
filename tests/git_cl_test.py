@@ -1522,15 +1522,24 @@ class TestGitCl(unittest.TestCase):
       'b': ['b@example.com'],
       'c': ['c@example.com'],
     }
+    global_approvers = ['ga@example.com']
+
+    def _CollectBatchListOwner(paths, global_approval_paths):
+      owners = {}
+      for p in paths:
+        owners[p] = owners_by_path.get(p)
+        for ga_path in global_approval_paths:
+          if path.startswith(ga_path):
+            owners[p] += global_approvers
+            break
+      return owners
+
     mockGetRoot.return_value = 'root'
     mockGetBranch.return_value = branch
     mockGetBugPrefix.return_value = 'prefix'
     mockGetCommonAncestorWithUpstream.return_value = 'upstream'
     mockFetchDescription.return_value = 'desc'
-    mockBatchListOwners.side_effect = lambda ps: {
-        p: owners_by_path.get(p)
-        for p in ps
-    }
+    mockBatchListOwners.side_effect = _CollectBatchListOwner
 
     cl = git_cl.Changelist(issue=1234)
     actual = cl._GetDescriptionForUpload(

@@ -50,18 +50,31 @@ def _get_owners():
 
 class DepotToolsClientTest(unittest.TestCase):
   def setUp(self):
-    self.repo = filesystem_mock.MockFileSystem(files={
-        '/OWNERS': '\n'.join([
-            'per-file approved.cc=approver@example.com',
-            'per-file reviewed.h=reviewer@example.com',
-            'missing@example.com',
-        ]),
-        '/approved.cc': '',
-        '/reviewed.h': '',
-        '/bar/insufficient_reviewers.py': '',
-        '/bar/everyone/OWNERS': '*',
-        '/bar/everyone/foo.txt': '',
-    })
+    self.repo = filesystem_mock.MockFileSystem(
+        files={
+            '/OWNERS':
+            '\n'.join([
+                'per-file approved.cc=approver@example.com',
+                'per-file reviewed.h=reviewer@example.com',
+                'missing@example.com',
+            ]),
+            '/GLOBAL_APPROVERS':
+            '\n'.join([
+                'global@example.com',
+            ]),
+            '/approved.cc':
+            '',
+            '/reviewed.h':
+            '',
+            '/bar/insufficient_reviewers.py':
+            '',
+            '/bar/everyone/OWNERS':
+            '*',
+            '/bar/everyone/foo.txt':
+            '',
+            '/deeply/nested/file.txt':
+            '',
+        })
     self.root = '/'
     self.fopen = self.repo.open_for_reading
     mock.patch(
@@ -71,10 +84,43 @@ class DepotToolsClientTest(unittest.TestCase):
     self.client = owners_client.DepotToolsClient(
         '/', 'branch', self.fopen, self.repo)
 
+  def testListOwnersEveryone(self):
+    self.assertEqual(['*', 'missing@example.com'],
+                     self.client.ListOwners('bar/everyone/foo.txt', []))
+
   def testListOwners(self):
+    self.assertEqual(['reviewer@example.com', 'missing@example.com'],
+                     self.client.ListOwners('reviewed.h', []))
+
+  def testListOwnersWithGlobalApproval(self):
+    # global approvers and top level owners will appear in random order.
     self.assertEqual(
-        ['*', 'missing@example.com'],
-        self.client.ListOwners('bar/everyone/foo.txt'))
+        set([
+            'global@example.com', 'reviewer@example.com', 'missing@example.com'
+        ]), set(self.client.ListOwners('reviewed.h', ['reviewed.h'])))
+    self.assertEqual(
+        set(['global@example.com', 'missing@example.com']),
+        set(self.client.ListOwners('deeply/nested/file.txt', ['deeply'])))
+    # TODO: Should this include global approvals?
+    self.assertEqual(
+        set(['global@example.com', 'missing@example.com']),
+        set(self.client.ListOwners('deeply/nested/file.txt', ['/'])))
+    # TODO: Should this include global approvals?
+    self.assertEqual(
+        set(['global@example.com', 'missing@example.com']),
+        set(self.client.ListOwners('deeply/nested/file.txt', ['*'])))
+    # TODO: Is this equivalent to "GA="?
+    self.assertEqual(
+        set(['global@example.com', 'missing@example.com']),
+        set(self.client.ListOwners('deeply/nested/file.txt', [''])))
+    # TODO: This fails, the global approvals shouldn't apply.
+    self.assertEqual(
+        set(['missing@example.com']),
+        set(self.client.ListOwners('deeply/nested/file.txt', ['deeply/n'])))
+    # TODO: This fails, the global approvals shouldn't apply.
+    self.assertEqual(
+        set(['missing@example.com']),
+        set(self.client.ListOwners('deeply/nested/file.txt', ['otherpath'])))
 
 
 class GerritClientTest(unittest.TestCase):
@@ -85,50 +131,71 @@ class GerritClientTest(unittest.TestCase):
   def testListOwners(self, _get_owners_mock):
     self.assertEquals(
         ['approver@example.com', 'reviewer@example.com', 'missing@example.com'],
-        self.client.ListOwners('bar/everyone/foo.txt'))
+        self.client.ListOwners('bar/everyone/foo.txt', []))
 
 
 class TestClient(owners_client.OwnersClient):
-  def __init__(self, owners_by_path):
+  def __init__(self, owners_by_path, global_approvers):
     super(TestClient, self).__init__()
     self.owners_by_path = owners_by_path
+    self.global_approvers = global_approvers
 
-  def ListOwners(self, path):
-    return self.owners_by_path[path]
+  def ListOwners(self, path, global_approval_paths):
+    owners = self.owners_by_path[path]
+    for ga_path in global_approval_paths:
+      if path.startswith(ga_path):
+        owners += global_approvers
+        break
+    return sorted(set(owners))
 
 
 class OwnersClientTest(unittest.TestCase):
   def setUp(self):
     self.owners = {}
-    self.client = TestClient(self.owners)
+    self.global_approvers = ['global@example.com']
+    self.client = TestClient(self.owners, self.global_approvers)
 
   def testGetFilesApprovalStatus(self):
     self.client.owners_by_path = {
-      'approved': ['approver@example.com'],
-      'pending': ['reviewer@example.com'],
-      'insufficient': ['insufficient@example.com'],
-      'everyone': [owners_client.OwnersClient.EVERYONE],
+        'approved': ['approver@example.com'],
+        'pending': ['reviewer@example.com'],
+        'insufficient': ['insufficient@example.com'],
+        'global': [],
+        'everyone': [owners_client.OwnersClient.EVERYONE],
     }
     self.assertEqual(
         self.client.GetFilesApprovalStatus(
-            ['approved', 'pending', 'insufficient'],
+            ['approved', 'pending', 'insufficient', 'global'], [],
             ['approver@example.com'], ['reviewer@example.com']),
         {
-          'approved': owners_client.OwnersClient.APPROVED,
-          'pending': owners_client.OwnersClient.PENDING,
-          'insufficient': owners_client.OwnersClient.INSUFFICIENT_REVIEWERS,
+            'approved': owners_client.OwnersClient.APPROVED,
+            'pending': owners_client.OwnersClient.PENDING,
+            'insufficient': owners_client.OwnersClient.INSUFFICIENT_REVIEWERS,
+            'global': owners_client.OwnersClient.INSUFFICIENT_REVIEWERS,
         })
     self.assertEqual(
-        self.client.GetFilesApprovalStatus(
-            ['everyone'], ['anyone@example.com'], []),
+        self.client.GetFilesApprovalStatus(['everyone'], [],
+                                           ['anyone@example.com'], []),
         {'everyone': owners_client.OwnersClient.APPROVED})
     self.assertEqual(
-        self.client.GetFilesApprovalStatus(
-            ['everyone'], [], ['anyone@example.com']),
+        self.client.GetFilesApprovalStatus(['everyone'], [], [],
+                                           ['anyone@example.com']),
         {'everyone': owners_client.OwnersClient.PENDING})
     self.assertEqual(
-        self.client.GetFilesApprovalStatus(['everyone'], [], []),
+        self.client.GetFilesApprovalStatus(['everyone'], [], [], []),
         {'everyone': owners_client.OwnersClient.INSUFFICIENT_REVIEWERS})
+    self.assertEqual(
+        self.client.GetFilesApprovalStatus(['global'], ['global'],
+                                           ['anyone@example.com'], []),
+        {'everyone': owners_client.OwnersClient.INSUFFICIENT_REVIEWERS})
+    self.assertEqual(
+        self.client.GetFilesApprovalStatus(['global'], [''],
+                                           ['global@example.com'], []),
+        {'everyone': owners_client.OwnersClient.INSUFFICIENT_REVIEWERS})
+    self.assertEqual(
+        self.client.GetFilesApprovalStatus(['global'], ['global'],
+                                           ['global@example.com'], []),
+        {'everyone': owners_client.OwnersClient.APPROVED})
 
   def test_owner_combinations(self):
     owners = [alice, bob, chris, dave, emily]
@@ -260,7 +327,7 @@ class OwnersClientTest(unittest.TestCase):
             'bar/foo/': [bob, chris]
         },
         self.client.BatchListOwners(
-            ['bar/everyone/foo.txt', 'bar/everyone/bar.txt', 'bar/foo/']))
+            ['bar/everyone/foo.txt', 'bar/everyone/bar.txt', 'bar/foo/'], []))
 
 
 class GetCodeOwnersClientTest(unittest.TestCase):

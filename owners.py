@@ -180,9 +180,10 @@ class Database(object):
     If author is nonempty, we ensure it is not included in the set returned
     in order avoid suggesting the author as a reviewer for their own changes."""
     self._check_paths(files)
-    self.load_data_needed_for(files)
+    ga_paths = []  # Don't use global approvers for suggestions.
+    self.load_data_needed_for(files, ga_paths)
 
-    suggested_owners = self._covering_set_of_owners_for(files, author)
+    suggested_owners = self._covering_set_of_owners_for(files, ga_paths, author)
     if EVERYONE in suggested_owners:
       if len(suggested_owners) > 1:
         suggested_owners.remove(EVERYONE)
@@ -190,7 +191,7 @@ class Database(object):
         suggested_owners = set([ANYONE])
     return suggested_owners
 
-  def files_not_covered_by(self, files, reviewers):
+  def files_not_covered_by(self, files, global_approval_paths, reviewers):
     """Returns the files not owned by one of the reviewers.
 
     Args:
@@ -199,7 +200,7 @@ class Database(object):
     """
     self._check_paths(files)
     self._check_reviewers(reviewers)
-    self.load_data_needed_for(files)
+    self.load_data_needed_for(files, global_approval_paths)
 
     return set(f for f in files if not self.is_covered_by(f, reviewers))
 
@@ -235,8 +236,10 @@ class Database(object):
       dirpath = self.os_path.dirname(dirpath)
     return dirpath
 
-  def load_data_needed_for(self, files):
+  def load_data_needed_for(self, files, global_approval_paths):
     self._read_global_comments()
+    for ga_path in global_approval_paths:
+      self._read_global_approvers(ga_path)
     visited_dirs = set()
     for f in files:
       # Always use slashes as separators.
@@ -378,6 +381,17 @@ class Database(object):
       if reset_comment_after_use:
         comment = []
 
+  def _read_global_approvers(self, ga_paths):
+    if not self.os_path.exists(self.os_path.join(self.root,
+                                                 'GLOBAL_APPROVERS')):
+      return
+    included_owners = self._read_just_the_owners('GLOBAL_APPROVERS')
+    for owner in included_owners:
+      self._owners_to_paths.setdefault(owner, set()).add(ga_paths)
+      self._paths_to_owners.setdefault(self._get_root_affected_dir(ga_paths),
+                                       {}).setdefault(ga_paths,
+                                                      set()).add(owner)
+
   def _read_global_comments(self):
     if not self._status_file:
       if not 'OWNERS' in self.read_files:
@@ -512,14 +526,16 @@ class Database(object):
            'or an email address.' % (line,)))
     return owners
 
-  def _covering_set_of_owners_for(self, files, author):
+  def _covering_set_of_owners_for(self, files, global_approval_paths, author):
     dirs_remaining = set()
     for f in files:
       dir_path = self.enclosing_dir_with_owners(f)
       # Always use slashes as separators.
       dirs_remaining.add(dir_path.replace(os.sep, '/'))
 
-    all_possible_owners = self.all_possible_owners(dirs_remaining, author)
+    all_possible_owners = self.all_possible_owners(dirs_remaining,
+                                                   global_approval_paths,
+                                                   author)
     suggested_owners = set()
     while dirs_remaining and all_possible_owners:
       owner = self.lowest_cost_owner(all_possible_owners, dirs_remaining)
@@ -572,14 +588,14 @@ class Database(object):
 
     return res
 
-  def all_possible_owners(self, dirs_and_files, author):
+  def all_possible_owners(self, dirs_and_files, global_approval_paths, author):
     """Returns a dict of {potential owner: (dir, distance)} mappings.
 
     A distance of 1 is the lowest/closest possible distance (which makes the
     subsequent math easier).
     """
 
-    self.load_data_needed_for(dirs_and_files)
+    self.load_data_needed_for(dirs_and_files, global_approval_paths)
     all_possible_owners_for_dir_or_file_cache = {}
     all_possible_owners = {}
     for current_dir in dirs_and_files:
@@ -589,10 +605,10 @@ class Database(object):
         current_dir, author,
         all_possible_owners_for_dir_or_file_cache)
       for owner, dir_and_distance in dir_owners.items():
-          if owner in all_possible_owners:
-            all_possible_owners[owner].append(dir_and_distance)
-          else:
-            all_possible_owners[owner] = [dir_and_distance]
+        if owner in all_possible_owners:
+          all_possible_owners[owner].append(dir_and_distance)
+        else:
+          all_possible_owners[owner] = [dir_and_distance]
 
     return all_possible_owners
 

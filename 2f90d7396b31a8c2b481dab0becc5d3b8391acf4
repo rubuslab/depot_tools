@@ -16,6 +16,23 @@
       "message": "Since I changed original git_cl (it was using upstream branch instead of remote branch), please take another look",
       "revId": "2f90d7396b31a8c2b481dab0becc5d3b8391acf4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdd65c54_34586cf8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-12T18:47:04Z",
+      "side": 1,
+      "message": "Still lgtm",
+      "revId": "2f90d7396b31a8c2b481dab0becc5d3b8391acf4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

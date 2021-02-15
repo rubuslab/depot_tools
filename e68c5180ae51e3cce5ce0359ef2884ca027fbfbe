@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c83e1a4d_8a259cca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1415097
+      },
+      "writtenOn": "2021-02-15T12:47:11Z",
+      "side": 1,
+      "message": "Hi! Could you review this patch? This change increases performance of `git map-branches` for me by a factor 10 (from ~10s to ~1s on chromium on my [slow] cloudtop machine with ~20 branches). Thanks!",
+      "revId": "e68c5180ae51e3cce5ce0359ef2884ca027fbfbe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

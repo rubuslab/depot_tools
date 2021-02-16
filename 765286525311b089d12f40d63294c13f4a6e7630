@@ -51,6 +51,24 @@
       "parentUuid": "895df47f_c9447d75",
       "revId": "765286525311b089d12f40d63294c13f4a6e7630",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e51342bd_66b92f0d",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-02-16T20:50:03Z",
+      "side": 1,
+      "message": "Can you look into it as part of this work (though not necessarily this set of CLs)? Removing it might make the API cleaner ...",
+      "parentUuid": "a0f5b5eb_da4c5f83",
+      "revId": "765286525311b089d12f40d63294c13f4a6e7630",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

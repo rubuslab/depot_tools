@@ -33,6 +33,24 @@
       "message": "Why is patch_text an argument here at all? For testing purposes?",
       "revId": "765286525311b089d12f40d63294c13f4a6e7630",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0f5b5eb_da4c5f83",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1238766
+      },
+      "writtenOn": "2021-02-16T20:45:32Z",
+      "side": 1,
+      "message": "No idea. But if it ain\u0027t broke...",
+      "parentUuid": "895df47f_c9447d75",
+      "revId": "765286525311b089d12f40d63294c13f4a6e7630",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

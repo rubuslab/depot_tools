@@ -16,6 +16,23 @@
       "message": "Need an OWNERS stamp.",
       "revId": "a3b552903baf6430da6e9367442a9d6d4de288f5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b671a254_1f406c48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-02-16T20:38:29Z",
+      "side": 1,
+      "message": "I don\u0027t really mean to obstruct things here, but I guess I\u0027m not seeing how\nthis is a partial step towards anything (or what this CL accomplishes at all)?\n\nI assume we\u0027re going to move towards something like .get_footer(\"name\") ?",
+      "revId": "a3b552903baf6430da6e9367442a9d6d4de288f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -71,6 +71,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "91a43ba6_4eed7f7c",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1238766
+      },
+      "writtenOn": "2021-02-16T20:32:09Z",
+      "side": 1,
+      "message": "Actually have them return None, 0 isn\u0027t a valid value for either so it\u0027s simpler this way.",
+      "parentUuid": "58d619b2_975aa3d1",
+      "revId": "090dc8eef5a9c828062828c50a756394389e1fe7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f02b8051_2fe90a71",

@@ -86,6 +86,24 @@
       "message": "Why is this being added?",
       "revId": "090dc8eef5a9c828062828c50a756394389e1fe7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41181032_3842009b",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1238766
+      },
+      "writtenOn": "2021-02-16T19:48:17Z",
+      "side": 1,
+      "message": "I thought it was needed to replace one of the current calls to get_footers, but actually further looks said it wasn\u0027t. Removed.",
+      "parentUuid": "f02b8051_2fe90a71",
+      "revId": "090dc8eef5a9c828062828c50a756394389e1fe7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

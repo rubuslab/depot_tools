@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14be112c_790c7b98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2021-02-17T05:27:42Z",
+      "side": 1,
+      "message": "PTAL\n\nThis should allow us to verify the arm64 development environment works before unrolling it everyone. Need to find someone with arm64 OSX though...\n\nI\u0027m mostly worried about vpython. I have a feeling we may need to either keep using the amd64 interpreter (and verify arm64 vpython can interact with it correctly), or build a ton of arm64 wheels :(",
+      "revId": "c905a74206249490196495bf22f20c705e650cff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc8b9370_f56389fd",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2021-02-17T05:27:42Z",
+      "side": 1,
+      "message": "unrelated: I could not figure out why this is here...",
+      "range": {
+        "startLine": 266,
+        "startChar": 2,
+        "endLine": 266,
+        "endChar": 6
+      },
+      "revId": "c905a74206249490196495bf22f20c705e650cff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

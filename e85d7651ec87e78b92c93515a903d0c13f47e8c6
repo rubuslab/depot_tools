@@ -22,6 +22,30 @@
       },
       "revId": "e85d7651ec87e78b92c93515a903d0c13f47e8c6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bac5e69c_a5a84c65",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-17T23:36:51Z",
+      "side": 1,
+      "message": "If you pass it as a command line argument, you\u0027ll also need to update the presubmit recipe.\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:recipes/recipe_modules/presubmit/api.py;l\u003d26\n\nYou could also move that logic to a separate module and call it both from git_cl.py and here.",
+      "parentUuid": "47e21d99_1973205a",
+      "range": {
+        "startLine": 662,
+        "startChar": 0,
+        "endLine": 668,
+        "endChar": 0
+      },
+      "revId": "e85d7651ec87e78b92c93515a903d0c13f47e8c6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

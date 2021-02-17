@@ -72,6 +72,41 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "1cda1719_3e78d0a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-02-17T17:32:22Z",
+      "side": 1,
+      "message": "On https://chromium.googlesource.com/infra/infra/+/master/infra/tools/dockerbuild/wheels.md anything which has \"${vpython_platform}\" in the spec contains compiled bits.",
+      "parentUuid": "f92f61c1_19cc5739",
+      "revId": "c905a74206249490196495bf22f20c705e650cff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "364af94e_ab5cc0fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-02-17T17:32:22Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "c905a74206249490196495bf22f20c705e650cff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "bc8b9370_f56389fd",
         "filename": "cipd",
         "patchSetId": 1
@@ -83,6 +118,30 @@
       "writtenOn": "2021-02-17T05:27:42Z",
       "side": 1,
       "message": "unrelated: I could not figure out why this is here...",
+      "range": {
+        "startLine": 266,
+        "startChar": 2,
+        "endLine": 266,
+        "endChar": 6
+      },
+      "revId": "c905a74206249490196495bf22f20c705e650cff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a0efb8e_f1265376",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-02-17T17:32:22Z",
+      "side": 1,
+      "message": "Hm... yeah this seems unnecessary.",
+      "parentUuid": "bc8b9370_f56389fd",
       "range": {
         "startLine": 266,
         "startChar": 2,

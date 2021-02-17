@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47e21d99_1973205a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-17T23:31:48Z",
+      "side": 1,
+      "message": "Consider passing branch as a command line argument to presubmit_support.py.\n\nAs it is, branch might be something like `remotes/origin/master` whereas branch is expecting something like `refs/heads/master`.\nIf the user is on a branch whose upstream is another local branch (e.g. master -\u003e branch1 -\u003e branch2), this won\u0027t work, as this would return branch1.\n\nSee https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:git_cl.py;l\u003d1084;drc\u003de157691eb4d9e853ac53a7f32fc72eac0cc3ed38 and https://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:git_cl.py;l\u003d3992;drc\u003de157691eb4d9e853ac53a7f32fc72eac0cc3ed38.",
+      "range": {
+        "startLine": 662,
+        "startChar": 0,
+        "endLine": 668,
+        "endChar": 0
+      },
+      "revId": "e85d7651ec87e78b92c93515a903d0c13f47e8c6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

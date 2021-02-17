@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcb7ee74_1167f651",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2021-02-17T04:36:45Z",
+      "side": 1,
+      "message": "PTAL. This is mostly just a regular uprev of all packages. The arm64 code path will be enabled in a separate CL.",
+      "revId": "3d50f8a8223c2e9c7c011713199c91429739ded0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

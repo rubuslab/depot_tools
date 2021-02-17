@@ -37,6 +37,41 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "f92f61c1_19cc5739",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-02-17T11:30:00Z",
+      "side": 1,
+      "message": "arm macs don\u0027t install rosetta by default. The goal is to not force a rosetta installation for the chrome build, so we\u0027ll have to build wheels.\n\n(Why \"a ton\", though? Do we use that many python libraries that have compiled parts? Is there a list of the ones we use somewhere?)",
+      "parentUuid": "14be112c_790c7b98",
+      "revId": "c905a74206249490196495bf22f20c705e650cff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7fb5fa7_12a96527",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-02-17T11:30:00Z",
+      "side": 1,
+      "message": "Great, thanks! Do you want me to run anything to test? What? Just normal chrome stuff? (`fetch` etc)",
+      "revId": "c905a74206249490196495bf22f20c705e650cff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "bc8b9370_f56389fd",
         "filename": "cipd",
         "patchSetId": 1

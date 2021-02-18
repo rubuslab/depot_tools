@@ -46,6 +46,30 @@
       },
       "revId": "e85d7651ec87e78b92c93515a903d0c13f47e8c6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88c77f5c_f9357f3a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-02-18T00:59:42Z",
+      "side": 1,
+      "message": "Is modifying the recipe necessary if the flag is used like the gerrit_project, where the arg is added in RunHook?\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:git_cl.py;l\u003d1326;drc\u003de157691eb4d9e853ac53a7f32fc72eac0cc3ed38",
+      "parentUuid": "bac5e69c_a5a84c65",
+      "range": {
+        "startLine": 662,
+        "startChar": 0,
+        "endLine": 668,
+        "endChar": 0
+      },
+      "revId": "e85d7651ec87e78b92c93515a903d0c13f47e8c6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

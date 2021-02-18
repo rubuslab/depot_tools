@@ -16,6 +16,23 @@
       "message": "Documentation on how to use the client should be forthcoming, though I\u0027m not sure whether/how to create `man` pages for these tools.",
       "revId": "2328a9af39aa641ef935e2b639e044362245d404",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04640bbb_ac269242",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2021-02-18T17:30:58Z",
+      "side": 1,
+      "message": "you also want to add the entry points, like\n1) https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/master/dirmd\n2) https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/master/dirmd.bat\nshould be mostly copy-pasta.",
+      "revId": "2328a9af39aa641ef935e2b639e044362245d404",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

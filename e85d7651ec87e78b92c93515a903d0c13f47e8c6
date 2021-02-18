@@ -70,6 +70,30 @@
       },
       "revId": "e85d7651ec87e78b92c93515a903d0c13f47e8c6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78bb2656_bcf4bf6f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-18T01:12:13Z",
+      "side": 1,
+      "message": "Yes, the recipe doesn\u0027t call git-cl, it calls presubmit_support.py directly.",
+      "parentUuid": "88c77f5c_f9357f3a",
+      "range": {
+        "startLine": 662,
+        "startChar": 0,
+        "endLine": 668,
+        "endChar": 0
+      },
+      "revId": "e85d7651ec87e78b92c93515a903d0c13f47e8c6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

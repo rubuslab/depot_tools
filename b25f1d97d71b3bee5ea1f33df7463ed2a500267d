@@ -16,6 +16,24 @@
       "message": "If these constants are only referenced in api.py, why not list them in api.py?",
       "revId": "b25f1d97d71b3bee5ea1f33df7463ed2a500267d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8dc4681_a1a12ddd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1238766
+      },
+      "writtenOn": "2021-02-19T22:37:27Z",
+      "side": 1,
+      "message": "That\u0027s definitely a judgment call. I\u0027m inclined to set it up so that other things can reference it without referencing the api itself, but I\u0027m still not totally clear on whether recipes really allow that.\n\nAssuming that\u0027s worth doing, it makes more sense to move the list of valid footers to constants.py, now that I think it over. That would make it\n\n```\nall_valid_footers \u003d set([\n  NONTRIVIAL_ROLL_FOOTER,\n  MANUAL_CHANGE_FOOTER,\n  BYPASS_FOOTER,\n  SKIP_RETRY_FOOTER\n])\n```\nand\n```\n  @property\n  def valid_footers(self):  #pragma: nocover\n    return constants.all_valid_footers\n```",
+      "parentUuid": "9b17bc9f_e670a92d",
+      "revId": "b25f1d97d71b3bee5ea1f33df7463ed2a500267d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

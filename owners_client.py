@@ -216,10 +216,11 @@ class GerritClient(OwnersClient):
       # random.
       data = gerrit_util.GetOwnersForFile(
           self._host, self._project, self._branch, path)
-      self._owners_cache[path] = [
-        d['account']['email']
+      code_owners = [
+        d.get('account', {}).get('email', '')
         for d in data['code_owners']
       ]
+      self._owners_cache[path] = [o for o in code_owners if o != '']
     return self._owners_cache[path]
 
 

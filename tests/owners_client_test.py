@@ -76,6 +76,9 @@ class GerritClientTest(unittest.TestCase):
               "account": {
                 "email": 'missing@example.com'
               },
+            },
+            {
+              "account": {},
             }
           ]
         }).start()

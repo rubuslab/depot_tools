@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb17e327_e9327ab0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-19T21:07:12Z",
+      "side": 1,
+      "message": "Updated the bug\n\nI believe we should set resolve-all-users\u003dFalse when we make the request to list all owners. We should also handle the case where owned_by_all_users is True and return \u0027*\u0027.\n\nThough Gerrit seems to be still returning random users even though resolve-all-users\u003dFalse. Could you confirm and file a bug if that\u0027s the case?\n\nhttps://gerrit.googlesource.com/plugins/code-owners/+/refs/heads/master/resources/Documentation/rest-api.md#list-code-owners-for-path-in-branch",
+      "revId": "fd2aad472f4e83ab58a0a8342a58305ffbde19af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

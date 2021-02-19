@@ -52,6 +52,24 @@
       "parentUuid": "a8dc4681_a1a12ddd",
       "revId": "b25f1d97d71b3bee5ea1f33df7463ed2a500267d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "792e8276_504dd953",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1238766
+      },
+      "writtenOn": "2021-02-19T23:04:29Z",
+      "side": 1,
+      "message": "\u003e change the recipes to call this in a follow-on CL, and can you just make this change as part of that one?\n\nNone of the callers are within depot_tools, so that\u0027s not possible. I agree that it would otherwise be preferable.",
+      "parentUuid": "44e008ba_f1c0a719",
+      "revId": "b25f1d97d71b3bee5ea1f33df7463ed2a500267d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

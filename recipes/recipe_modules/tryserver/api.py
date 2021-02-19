@@ -6,6 +6,7 @@ import contextlib
 import hashlib
 
 from recipe_engine import recipe_api
+from . import constants
 
 
 class TryserverApi(recipe_api.RecipeApi):
@@ -25,6 +26,18 @@ class TryserverApi(recipe_api.RecipeApi):
     changes = self.m.buildbucket.build.input.gerrit_changes
     if len(changes) == 1:
       self.set_change(changes[0])
+
+  @property
+  def valid_footers(self):  #pragma: nocover
+    return set([
+        constants.NONTRIVIAL_ROLL_FOOTER,
+        constants.MANUAL_CHANGE_FOOTER,
+        constants.BYPASS_FOOTER,
+        constants.SKIP_RETRY_FOOTER])
+
+  @property
+  def constants(self):  #pragma: nocover
+    return constants
 
   @property
   def gerrit_change(self):

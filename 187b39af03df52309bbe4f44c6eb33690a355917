@@ -16,6 +16,52 @@
       "message": "This is ready for another look now.",
       "revId": "187b39af03df52309bbe4f44c6eb33690a355917",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e47cdf7_61803ec5",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2021-02-19T02:57:52Z",
+      "side": 1,
+      "message": "is there a reason this isn\u0027t ${platform}\nwhy do we exclude arm?",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 37
+      },
+      "revId": "187b39af03df52309bbe4f44c6eb33690a355917",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "646e4a48_21188471",
+        "filename": "pinpoint.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2021-02-19T02:57:52Z",
+      "side": 1,
+      "message": "2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 13,
+        "endLine": 2,
+        "endChar": 17
+      },
+      "revId": "187b39af03df52309bbe4f44c6eb33690a355917",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

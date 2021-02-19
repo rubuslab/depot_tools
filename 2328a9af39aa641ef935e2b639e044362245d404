@@ -33,6 +33,24 @@
       "message": "you also want to add the entry points, like\n1) https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/master/dirmd\n2) https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/master/dirmd.bat\nshould be mostly copy-pasta.",
       "revId": "2328a9af39aa641ef935e2b639e044362245d404",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a94cf34d_9a4a22e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1327821
+      },
+      "writtenOn": "2021-02-19T01:34:29Z",
+      "side": 1,
+      "message": "Cool stuff! Thanks!",
+      "parentUuid": "04640bbb_ac269242",
+      "revId": "2328a9af39aa641ef935e2b639e044362245d404",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

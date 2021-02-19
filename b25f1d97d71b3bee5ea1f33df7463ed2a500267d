@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b17bc9f_e670a92d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-02-19T22:25:26Z",
+      "side": 1,
+      "message": "If these constants are only referenced in api.py, why not list them in api.py?",
+      "revId": "b25f1d97d71b3bee5ea1f33df7463ed2a500267d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

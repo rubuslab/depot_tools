@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3b9a8f09_0d47a0b6",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2021-02-19T04:49:21Z",
+      "side": 1,
+      "message": "probably was too restrictive. See other configs, e.g. bb or dirmd.\n\nwhat\u0027s for certain is that https://chromium-review.googlesource.com/c/infra/infra/+/2703035 builds a binary for arm, but it is ignored here.",
+      "parentUuid": "b5cd048d_8084bfdf",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 37
+      },
+      "revId": "187b39af03df52309bbe4f44c6eb33690a355917",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "646e4a48_21188471",
         "filename": "pinpoint.bat",
         "patchSetId": 4

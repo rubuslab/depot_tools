@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b5cd048d_8084bfdf",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1327821
+      },
+      "writtenOn": "2021-02-19T03:33:07Z",
+      "side": 1,
+      "message": "Yes, it seems ${platform} is too wide when I tried that... we don\u0027t have builders yet for all those supported platforms. Or, I think the builder config I copied was wrong and too restrictive?\n\nhttps://chromium-review.googlesource.com/c/infra/infra/+/2703035",
+      "parentUuid": "2e47cdf7_61803ec5",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 37
+      },
+      "revId": "187b39af03df52309bbe4f44c6eb33690a355917",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "646e4a48_21188471",
         "filename": "pinpoint.bat",
         "patchSetId": 4

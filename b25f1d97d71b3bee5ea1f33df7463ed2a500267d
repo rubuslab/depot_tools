@@ -34,6 +34,24 @@
       "parentUuid": "9b17bc9f_e670a92d",
       "revId": "b25f1d97d71b3bee5ea1f33df7463ed2a500267d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44e008ba_f1c0a719",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-02-19T23:02:47Z",
+      "side": 1,
+      "message": "\u003e That\u0027s definitely a judgment call. I\u0027m inclined to set it up so that other things can reference it without referencing the api itself, but I\u0027m still not totally clear on whether recipes really allow that.\n\nThey do, although the syntax is a bit add as I recall.\n\n\u003e \n\u003e Assuming that\u0027s worth doing, it makes more sense to move the list of valid footers to constants.py, now that I think it over. That would make it\n\u003e \n\u003e ```\n\u003e all_valid_footers \u003d set([\n\u003e   NONTRIVIAL_ROLL_FOOTER,\n\u003e   MANUAL_CHANGE_FOOTER,\n\u003e   BYPASS_FOOTER,\n\u003e   SKIP_RETRY_FOOTER\n\u003e ])\n\u003e ```\n\u003e and\n\u003e ```\n\u003e   @property\n\u003e   def valid_footers(self):  #pragma: nocover\n\u003e     return constants.all_valid_footers\n\u003e ```\n\nIf there\u0027s only one file referencing a value, I\u0027d define the value in the file. I\u0027d wait until more than one file was referencing a value before splitting it out into a separate file.\n\nBut, it\u0027s up to you, so either way as you\u0027d prefer.\n\nAre you planning to change the recipes to call this in a follow-on CL, and can you just make this change as part of that one? In general, I\u0027d say it\u0027s better to add a routine and update the caller to use it in a single CL if that\u0027s possible.",
+      "parentUuid": "a8dc4681_a1a12ddd",
+      "revId": "b25f1d97d71b3bee5ea1f33df7463ed2a500267d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

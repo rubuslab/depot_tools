@@ -215,11 +215,16 @@ class GerritClient(OwnersClient):
       # best reviewer for path. If owners have the same score, the order is
       # random.
       data = gerrit_util.GetOwnersForFile(
-          self._host, self._project, self._branch, path)
-      self._owners_cache[path] = [
-        d['account']['email']
-        for d in data['code_owners']
-      ]
+          self._host, self._project, self._branch, path,
+          resolve_all_users=False)
+      if data.get('owned_by_all_users', False):
+        self._owners_cache[path] = [self.EVERYONE]
+      else:
+        code_owners = [
+          d.get('account', {}).get('email', '')
+          for d in data['code_owners']
+        ]
+        self._owners_cache[path] = [o for o in code_owners if o != '']
     return self._owners_cache[path]
 
 

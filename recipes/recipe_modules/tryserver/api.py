@@ -36,7 +36,7 @@ class TryserverApi(recipe_api.RecipeApi):
         constants.SKIP_RETRY_FOOTER])
 
   @property
-  def constants(self):  #pragma: nocover
+  def constants(self):
     return constants
 
   @property

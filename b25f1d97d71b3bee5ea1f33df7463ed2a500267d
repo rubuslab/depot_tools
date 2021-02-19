@@ -88,6 +88,24 @@
       "parentUuid": "792e8276_504dd953",
       "revId": "b25f1d97d71b3bee5ea1f33df7463ed2a500267d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72a172d6_05a76e52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-02-19T23:11:14Z",
+      "side": 1,
+      "message": "[ argh ] ... but that we expect callers in other repos to be using it, hence the need for the no-cover.",
+      "parentUuid": "b770aa75_ea267e1c",
+      "revId": "b25f1d97d71b3bee5ea1f33df7463ed2a500267d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

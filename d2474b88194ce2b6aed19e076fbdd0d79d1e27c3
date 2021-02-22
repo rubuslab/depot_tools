@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0563c55f_ff77d76e",
+        "filename": "gerrit_util.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-02-22T20:45:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21b942a5_68bd9423",
+      "range": {
+        "startLine": 791,
+        "startChar": 5,
+        "endLine": 791,
+        "endChar": 26
+      },
+      "revId": "d2474b88194ce2b6aed19e076fbdd0d79d1e27c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f3f526b_6f047bf4",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-02-20T00:56:08Z",
       "side": 1,
       "message": "We still want to do this even if owned_by_all_users is True, similar to how Depot Tools lists owners even if \u0027*\u0027 is listed as owner.\n\nAlso, consider\n\n  self._owners_cache[path] \u003d [\n    d[\u0027account\u0027][\u0027email\u0027]\n    for d in data[\u0027code_owners\u0027]\n    if \u0027account\u0027 in d and \u0027email\u0027 in d[\u0027account\u0027]\n  ]",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 228,
+        "endChar": 0
+      },
+      "revId": "d2474b88194ce2b6aed19e076fbdd0d79d1e27c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b7b1016_07e41ffe",
+        "filename": "owners_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-02-22T20:45:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f3f526b_6f047bf4",
       "range": {
         "startLine": 223,
         "startChar": 0,

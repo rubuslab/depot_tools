@@ -21,11 +21,8 @@ from PB.go.chromium.org.luci.buildbucket.proto.common import GerritChange
 def RunSteps(api):
   api.path['checkout'] = api.path['start_dir']
   if api.properties.get('patch_text'):
-    api.step('patch_text test', [
-        'echo', str(api.tryserver.get_footers(api.properties['patch_text']))])
-    api.step('patch_text test', [
-        'echo', str(api.tryserver.get_footer(
-            'Foo', api.properties['patch_text']))])
+    api.step('patch_text test', ['echo', str(api.tryserver.get_footers())])
+    api.step('patch_text test', ['echo', str(api.tryserver.get_footer('Foo'))])
     return
 
   if api.tryserver.gerrit_change:
@@ -101,8 +98,5 @@ def GenTests(api):
          ) +
          api.step_data(
              'parse description',
-             api.json.output({'Foo': ['bar']})) +
-         api.step_data(
-             'parse description (2)',
              api.json.output({'Foo': ['bar']}))
-  )
+         )

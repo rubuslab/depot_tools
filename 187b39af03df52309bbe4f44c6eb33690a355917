@@ -115,6 +115,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5841c834_5edbf2a6",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1327821
+      },
+      "writtenOn": "2021-02-22T09:13:34Z",
+      "side": 1,
+      "message": "CL to expand the platform list is at: https://chromium-review.googlesource.com/c/infra/infra/+/2712122",
+      "parentUuid": "102dee7b_18a48314",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 37
+      },
+      "revId": "187b39af03df52309bbe4f44c6eb33690a355917",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "646e4a48_21188471",
         "filename": "pinpoint.bat",
         "patchSetId": 4

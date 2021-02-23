@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "80f4f606_362ed557",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2021-02-23T02:02:19Z",
+      "side": 1,
+      "message": "this seems to just add support for the PYLINTRC env var.  it doesn\u0027t support searching cwd for pylintrc files which is how i think most people configure it.\n\ni\u0027m not saying you need it here, it\u0027s just that the commit message makes it sound like you\u0027re addressing that when you\u0027re only making it handle env vars.",
+      "revId": "2eaeb16dde0ab892424abf1299cff1535559ab4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "a90e460e_3119211e",
@@ -14,6 +31,23 @@
       "writtenOn": "2021-02-23T01:29:27Z",
       "side": 1,
       "message": "I think this is probably lgtm, but +vapier to see if this looks good for OS folks as well.",
+      "revId": "2eaeb16dde0ab892424abf1299cff1535559ab4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14299ee8_c200bbd7",
+        "filename": "pylint_main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2021-02-23T02:02:19Z",
+      "side": 1,
+      "message": "no need for .keys()",
       "revId": "2eaeb16dde0ab892424abf1299cff1535559ab4f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

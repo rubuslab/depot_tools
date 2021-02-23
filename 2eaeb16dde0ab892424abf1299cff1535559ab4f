@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "addc0277_a71828af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2021-02-23T05:59:10Z",
+      "side": 1,
+      "message": "i thought $PYLINTRC had a higher precedence in the search order than cwd searching.  should clarify that in the commit message below.",
+      "parentUuid": "f65e1066_dd495442",
+      "revId": "2eaeb16dde0ab892424abf1299cff1535559ab4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "a90e460e_3119211e",

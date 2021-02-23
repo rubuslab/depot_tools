@@ -1178,7 +1178,10 @@ class TestGitCl(unittest.TestCase):
         'https://%s.googlesource.com/my/repo' % short_hostname)
     self.mockGit.config['user.email'] = 'me@example.com'
 
-    self.calls = self._gerrit_base_calls(
+    if squash_mode == 'override_nosquash':
+      self.calls = [(('add_repeated', 'arguments', 'no_squash'), '')]
+
+    self.calls += self._gerrit_base_calls(
         issue=issue,
         fetched_description=fetched_description or description,
         fetched_status=fetched_status,

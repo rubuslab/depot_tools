@@ -4227,6 +4227,9 @@ def CMDupload(parser, args):
   if options.squash is None:
     # Load default for user, repo, squash=true, in this order.
     options.squash = settings.GetSquashGerritUploads()
+    if not options.squash:
+      # if no squash is desired, record it s an argument.
+      metrics.collector.add_repeated('arguments', 'no_squash')
 
   cl = Changelist()
   # Warm change details cache now to avoid RPCs later, reducing latency for

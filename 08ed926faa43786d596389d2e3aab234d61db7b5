@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c165afe8_f9755d81",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4230,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-23T21:37:27Z",
+      "side": 1,
+      "message": "What about adding another field to the schema of metrics we collect (codereview settings)?",
+      "range": {
+        "startLine": 4230,
+        "startChar": 4,
+        "endLine": 4230,
+        "endChar": 26
+      },
+      "revId": "08ed926faa43786d596389d2e3aab234d61db7b5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

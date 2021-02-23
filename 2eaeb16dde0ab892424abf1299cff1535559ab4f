@@ -86,6 +86,24 @@
       "message": "no need for .keys()",
       "revId": "2eaeb16dde0ab892424abf1299cff1535559ab4f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "381e4dbe_a9d48dba",
+        "filename": "pylint_main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-02-23T04:40:34Z",
+      "side": 1,
+      "message": "Yup, I should have tested that. I wasn\u0027t sure if that worked, since os.environ isn\u0027t  actually a dict. Done.",
+      "parentUuid": "14299ee8_c200bbd7",
+      "revId": "2eaeb16dde0ab892424abf1299cff1535559ab4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -158,6 +158,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f308864_1defde28",
+        "filename": "autoninja.bat",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-23T21:54:29Z",
+      "side": 1,
+      "message": "True, but it seems like a good change to set that variable as early as possible.",
+      "parentUuid": "dfe9d552_085542ea",
+      "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "149a6dc0_c9cf8100",
@@ -171,6 +189,24 @@
       "writtenOn": "2021-02-23T20:38:43Z",
       "side": 1,
       "message": "This comment change from python3-\u003epython seems unnecessary?",
+      "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "024bff2f_462f70f6",
+        "filename": "autoninja.bat",
+        "patchSetId": 16
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-23T21:54:29Z",
+      "side": 1,
+      "message": "Good catch, but irrelevant now because I\u0027m switching everything to python(.bat)",
+      "parentUuid": "149a6dc0_c9cf8100",
       "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -16,6 +16,23 @@
       "message": "I\u0027ll try to land this to unbreak CQ.",
       "revId": "f27f58e174451182fb1114a3e19a8146fcd80e0e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d8a0732_ed0ec619",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001921
+      },
+      "writtenOn": "2021-02-23T21:51:48Z",
+      "side": 1,
+      "message": "Nevermind, the other CL is being reverted.",
+      "revId": "f27f58e174451182fb1114a3e19a8146fcd80e0e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

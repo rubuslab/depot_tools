@@ -16,6 +16,24 @@
       "message": "Is pinpoint used by anything other than Chromium? I\u0027m wondering whether it should be there instead of in depot_tools.",
       "revId": "a61e42840323cdde1efe1e0ebf6097a3e8288a41",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0283bcd_c0528657",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1327821
+      },
+      "writtenOn": "2021-02-23T23:52:17Z",
+      "side": 1,
+      "message": "Yes, WebRTC does.",
+      "parentUuid": "cceca776_bae048ec",
+      "revId": "a61e42840323cdde1efe1e0ebf6097a3e8288a41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

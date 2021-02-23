@@ -36,18 +36,15 @@
     "name": "parse description (2)",
     "stdin": "hihihi\nfoo:bar\nbam:baz",
     "~followup_annotations": [
-      "@@@STEP_LOG_LINE@json.output@{@@@",
-      "@@@STEP_LOG_LINE@json.output@  \"Foo\": [@@@",
-      "@@@STEP_LOG_LINE@json.output@    \"bar\"@@@",
-      "@@@STEP_LOG_LINE@json.output@  ]@@@",
-      "@@@STEP_LOG_LINE@json.output@}@@@",
-      "@@@STEP_LOG_END@json.output@@@"
+      "@@@STEP_LOG_END@json.output (invalid)@@@",
+      "@@@STEP_LOG_LINE@json.output (exception)@No JSON object could be decoded@@@",
+      "@@@STEP_LOG_END@json.output (exception)@@@"
     ]
   },
   {
     "cmd": [
       "echo",
-      "['bar']"
+      "[]"
     ],
     "name": "patch_text test (2)"
   },

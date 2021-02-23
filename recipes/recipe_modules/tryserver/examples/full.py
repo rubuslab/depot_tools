@@ -101,8 +101,5 @@ def GenTests(api):
          ) +
          api.step_data(
              'parse description',
-             api.json.output({'Foo': ['bar']})) +
-         api.step_data(
-             'parse description (2)',
              api.json.output({'Foo': ['bar']}))
-  )
+         )

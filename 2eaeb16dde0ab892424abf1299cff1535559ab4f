@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab1d0d5f_d45827ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2021-02-23T02:02:59Z",
+      "side": 1,
+      "message": "fwiw, on the OS side, we moved away from depot_tools to provide pylint, so we don\u0027t care about it anymore",
+      "parentUuid": "a90e460e_3119211e",
+      "revId": "2eaeb16dde0ab892424abf1299cff1535559ab4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "14299ee8_c200bbd7",

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13b16f3f_d9aa4cbf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-02-24T19:03:25Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "2815d0ba63cc60d32a421a9fb7a4cf95f7eea087",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f803cf49_7cba1611",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-02-24T19:03:25Z",
+      "side": 1,
+      "message": "obsolete comment?",
+      "revId": "2815d0ba63cc60d32a421a9fb7a4cf95f7eea087",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

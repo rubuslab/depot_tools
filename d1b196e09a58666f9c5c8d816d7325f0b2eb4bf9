@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43e2e6b7_d84a8611",
+        "filename": "owners_client.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-24T22:45:51Z",
+      "side": 1,
+      "message": "Add tests for this. Maybe split into separate change.",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 52
+      },
+      "revId": "d1b196e09a58666f9c5c8d816d7325f0b2eb4bf9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

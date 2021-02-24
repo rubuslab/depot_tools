@@ -22,6 +22,30 @@
       },
       "revId": "5e37f6ded4ef5805c9db346a834d82e4e86b3e50",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "998b4421_7414ea30",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1573,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-02-24T20:19:18Z",
+      "side": 0,
+      "message": "Changed condition in _parse_gerrit_options to allow for this case",
+      "parentUuid": "3c1e7484_c1820590",
+      "range": {
+        "startLine": 1573,
+        "startChar": 0,
+        "endLine": 1573,
+        "endChar": 39
+      },
+      "revId": "5e37f6ded4ef5805c9db346a834d82e4e86b3e50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

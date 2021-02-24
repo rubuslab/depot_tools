@@ -33,6 +33,29 @@
       "message": "obsolete comment?",
       "revId": "2815d0ba63cc60d32a421a9fb7a4cf95f7eea087",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b459d96_3305f860",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-24T19:11:28Z",
+      "side": 1,
+      "message": "We should make this robust if host, project and branch are empty (i.e. check that host is not empty before calling gerrit_util.IsCodeOwnersEnabled.\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:owners_client.py;l\u003d231;drc\u003d5e37f6ded4ef5805c9db346a834d82e4e86b3e50",
+      "range": {
+        "startLine": 665,
+        "startChar": 39,
+        "endLine": 665,
+        "endChar": 58
+      },
+      "revId": "2815d0ba63cc60d32a421a9fb7a4cf95f7eea087",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

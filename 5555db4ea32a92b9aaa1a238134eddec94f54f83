@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca81d41d_7019d2b9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-24T08:28:24Z",
+      "side": 1,
+      "message": "I don\u0027t think this fix is correct. The \u0027b\u0027 mode was used to stop Python from translating \\n characters to \\r\\n on Windows. In Python 3 we can\u0027t use \u0027b\u0027 mode for that anymore, but we still want to stop the translation.\n\nhttps://docs.python.org/release/3.2/library/functions.html#open\n\nI think you need newline\u003d\u0027\\n\u0027 in the open call, but double-check that.\n",
+      "revId": "5555db4ea32a92b9aaa1a238134eddec94f54f83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

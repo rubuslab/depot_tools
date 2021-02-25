@@ -69,6 +69,24 @@
       "message": "ping?",
       "revId": "5555db4ea32a92b9aaa1a238134eddec94f54f83",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba65ecad_9b1de5ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-25T23:43:55Z",
+      "side": 1,
+      "message": "Conversion is undesirable, not for performance or correctness issues per-se, but because the Chromium standard is to use \\n line endings.\n\nThe no-change-to-behavior way to make this code work in Python 3 is to switch from binary to newline\u003d\u0027\\n\u0027 and I think that is what we should do. I think it is the preferred default, although dpranke@ could say for sure if there is some doubt.",
+      "parentUuid": "62d81a64_8acafe72",
+      "revId": "5555db4ea32a92b9aaa1a238134eddec94f54f83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

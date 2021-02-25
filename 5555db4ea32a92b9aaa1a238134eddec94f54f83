@@ -34,6 +34,24 @@
       "parentUuid": "ca81d41d_7019d2b9",
       "revId": "5555db4ea32a92b9aaa1a238134eddec94f54f83",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62d81a64_8acafe72",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-02-25T02:47:59Z",
+      "side": 1,
+      "message": "I don\u0027t think it is necessary to have newline there?\nBecause wrapper doesn\u0027t use prettyprint, and ninjalog.cfg doesn\u0027t have newline.",
+      "parentUuid": "1a389721_cfa8ab59",
+      "revId": "5555db4ea32a92b9aaa1a238134eddec94f54f83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

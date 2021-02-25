@@ -176,6 +176,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9695c3af_3ef4264e",
+        "filename": "autoninja.bat",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-02-25T22:04:00Z",
+      "side": 1,
+      "message": "True, SGTM.",
+      "parentUuid": "2f308864_1defde28",
+      "revId": "3db4f7085bec5f7c5ac37cee55a1bedd6cda3526",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "149a6dc0_c9cf8100",

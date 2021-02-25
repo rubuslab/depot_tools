@@ -16,6 +16,24 @@
       "message": "This has been blocked due to a lack of support for invoking python3 from git bash so I decided that the simplest thing to do is to not use python3.\n\nThe other issue on the initial land was running gomacc.exe when it isn\u0027t in the expected location. That is handled. So, this should work now.\n\nA final review would be great.",
       "revId": "5a98296f6f9a453e7982c5a014b3b7e5f8cbd609",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "712185bf_d5d720a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-02-25T22:04:00Z",
+      "side": 1,
+      "message": "LGTM!",
+      "parentUuid": "2bb5369d_9d2fa499",
+      "revId": "5a98296f6f9a453e7982c5a014b3b7e5f8cbd609",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

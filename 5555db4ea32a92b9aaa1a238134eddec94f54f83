@@ -105,6 +105,23 @@
       "parentUuid": "ba65ecad_9b1de5ed",
       "revId": "5555db4ea32a92b9aaa1a238134eddec94f54f83",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a076f57c_fab0b38c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-26T03:09:42Z",
+      "side": 1,
+      "message": "After some discussions with dpranke@ I agree that using newline\u003d\u0027\\n\u0027 is more trouble than it\u0027s worth (it doesn\u0027t work on Python 2) so this lgtm",
+      "revId": "5555db4ea32a92b9aaa1a238134eddec94f54f83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

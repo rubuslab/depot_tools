@@ -3,7 +3,7 @@
 :: Use of this source code is governed by a BSD-style license that can be
 :: found in the LICENSE file.
 
-:: This script will determine if python or git binaries need updates. It
+:: This script will determine if python2 or git binaries need updates. It
 :: returns !0 as failure
 
 :: Note: we set EnableDelayedExpansion so we can perform string manipulations
@@ -69,7 +69,6 @@ if errorlevel 1 goto :END
 :: This executes "win_tools.py" using the bundle's Python interpreter.
 set BOOTSTRAP_PYTHON_BIN=%BOOTSTRAP_PATH%\python3\bin\python3.exe
 call "%BOOTSTRAP_PYTHON_BIN%" "%~dp0bootstrap.py" %BOOTSTRAP_EXTRA_ARGS%
-
 
 :END
 set EXPORT_ERRORLEVEL=%ERRORLEVEL%

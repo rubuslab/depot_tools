@@ -11,7 +11,7 @@
 # This little shell hack is a triple-quoted noop in python, but in sh it
 # evaluates to re-exec'ing this script in unbuffered mode.
 # pylint: disable=pointless-string-statement
-''''exec python -u -- "$0" ${1+"$@"} # '''
+''''exec python2 -u -- "$0" ${1+"$@"} # '''
 # vi: syntax=python
 """Bootstrap script to clone and forward to the recipe engine tool.
 

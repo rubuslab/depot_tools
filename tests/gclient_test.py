@@ -579,7 +579,7 @@ class GclientTest(trial_dir.TestCase):
         '  {\n'
         '    "name": "a",\n'
         '    "pattern": ".",\n'
-        '    "action": [ "python", "do_a" ],\n'
+        '    "action": [ "python2", "do_a" ],\n'
         '  },\n'
         ']\n'
         '\n'
@@ -588,7 +588,7 @@ class GclientTest(trial_dir.TestCase):
         '    {\n'
         '      "name": "b",\n'
         '      "pattern": ".",\n'
-        '      "action": [ "python", "do_b" ],\n'
+        '      "action": [ "python2", "do_b" ],\n'
         '    },\n'
         '  ],\n'
         '}\n')
@@ -612,8 +612,8 @@ class GclientTest(trial_dir.TestCase):
         [('.', 'svn://example.com/'),],
         sorted(self._get_processed()))
     self.assertEqual([h.action for h in all_hooks],
-                      [('python', 'do_a'),
-                       ('python', 'do_b')])
+                      [('python2', 'do_a'),
+                       ('python2', 'do_b')])
     self.assertEqual([h.condition for h in all_hooks],
                       [None, 'checkout_blorp'])
 

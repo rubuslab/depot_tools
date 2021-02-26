@@ -60,7 +60,7 @@ than the rest of this README.
 After any modification to this script set, a test sequence should be run on a
 Windows bot.
 
-The post-processing will regenerate "python.bat" and "python3.bat" to point to
+The post-processing will regenerate "python2.bat" and "python3.bat" to point to
 the current Python instance. Any previous Python installations will stick
 around, but new invocations will use the new instance. Old installations will
 die off either due to processes terminating or systems restarting. When this
@@ -77,7 +77,7 @@ they are working:
 gclient version
 
 :: Assert that Python fundamentally works.
-python -c "import Queue; print dir(Queue)"
+python2 -c "import psutil; print dir(psutil)"
 
 :: Assert that Python 3 fundamentally works.
 python3 -c "import queue; print(dir(queue))"
@@ -89,7 +89,7 @@ git map-branches
 git bash
 
 ## (Within `git bash`) assert that Python fundamentally works.
-python -c "import Queue; print dir(Queue)"
+python2 -c "import Queue; print dir(Queue)"
 ## (Within `git bash`) assert that Python 3 fundamentally works.
 python3 -c "import queue; print(dir(queue))"
 ## (Within `git bash`) assert that Python scripts work.
@@ -102,11 +102,11 @@ Run this sequence through the following upgrade/downgrade procedures:
   - Clean `depot_tools` via: `git clean -x -f -d .`
   - Run through test steps.
   - Test upgrade to bleeding edge (if it differs).
-    - Run `python.bat` in another shell, keep it open
+    - Run `python2.bat` in another shell, keep it open
     - Run `python3.bat` in another shell, keep it open
     - Add `.bleeding_edge` to `depot_tools` root.
     - Run through test steps.
-    - In the old `python.bat` shell, run `import Queue`, confirm that it
+    - In the old `python2.bat` shell, run `import Queue`, confirm that it
       works.
     - In the old `python3.bat` shell, run `import queue`, confirm that it
       works.
@@ -117,11 +117,11 @@ Run this sequence through the following upgrade/downgrade procedures:
   - Add `.bleeding_edge` to `depot_tools` root.
   - Run through test steps.
   - Test downgrade to default (if it differs).
-    - Run `python.bat` in another shell, keep it open
+    - Run `python2.bat` in another shell, keep it open
     - Run `python3.bat` in another shell, keep it open
     - Delete `.bleeding_edge` from `depot_tools` root.
     - Run through test steps.
-    - In the old `python.bat` shell, run `import Queue`, confirm that it
+    - In the old `python2.bat` shell, run `import Queue`, confirm that it
       works.
     - In the old `python3.bat` shell, run `import queue`, confirm that it
       works.
@@ -130,11 +130,11 @@ Run this sequence through the following upgrade/downgrade procedures:
 * Warm bleeding edge upgrade.
   - Clean `depot_tools` via: `git clean -x -f -d .`
   - Run `gclient version` to load defaults.
-  - Run `python.bat` in another shell, keep it open
+  - Run `python2.bat` in another shell, keep it open
   - Run `python3.bat` in another shell, keep it open
   - Add `.bleeding_edge` to `depot_tools` root.
   - Run through test steps.
-  - In the old `python.bat` shell, run `import Queue`, confirm that it
+  - In the old `python2.bat` shell, run `import Queue`, confirm that it
     works.
   - In the old `python3.bat` shell, run `import queue`, confirm that it
     works.

@@ -168,7 +168,7 @@ def _toolchain_in_use(toolchain_path):
       toolchain_path, # Legacy ZIP distributions.
       ):
     for component in (
-        os.path.join(python_dir, 'python.exe'),
+        os.path.join(python_dir, 'python2.exe'),
         os.path.join(python_dir, 'DLLs', 'unicodedata.pyd'),
         ):
       if os.path.isfile(component) and _in_use(component):
@@ -222,7 +222,7 @@ def _safe_rmtree(path):
 def clean_up_old_installations(skip_dir):
   """Removes Python installations other than |skip_dir|.
 
-  This includes an "in-use" check against the "python.exe" in a given directory
+  This includes an "in-use" check against the "python2.exe" in a given directory
   to avoid removing Python executables that are currently ruinning. We need
   this because our Python bootstrap may be run after (and by) other software
   that is using the bootstrapped Python!
@@ -329,12 +329,12 @@ def main(argv):
       template.maybe_install(src_name, os.path.join(dst_dir, dst_name))
 
   # Emit our Python bin depot-tools-relative directory. This is read by
-  # python.bat, python3.bat, vpython[.bat] and vpython3[.bat] to identify the
+  # python2.bat, python3.bat, vpython[.bat] and vpython3[.bat] to identify the
   # path of the current Python installation.
   #
   # We use this indirection so that upgrades can change this pointer to
-  # redirect "python.bat" to a new Python installation. We can't just update
-  # "python.bat" because batch file executions reload the batch file and seek
+  # redirect "python2.bat" to a new Python installation. We can't just update
+  # "python2.bat" because batch file executions reload the batch file and seek
   # to the previous cursor in between every command, so changing the batch
   # file contents could invalidate any existing executions.
   #

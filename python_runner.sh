@@ -9,7 +9,7 @@
 
 ## Example:
 ## echo ". python_runner.sh" > git-foo-command
-## ./git-foo-command  #=> runs `python git_foo_command.py`
+## ./git-foo-command  #=> runs `python2 git_foo_command.py`
 
 ## Constants
 PYTHONDONTWRITEBYTECODE=1; export PYTHONDONTWRITEBYTECODE

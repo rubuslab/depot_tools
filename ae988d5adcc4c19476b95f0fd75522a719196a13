@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f0edfc8_ea05c8fd",
+        "filename": "python-bin/python3",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-02-26T04:26:31Z",
+      "side": 1,
+      "message": "The change on line 9 isn\u0027t really needed, so I can take it out or move it to a different CL if so desired, but I have to ask: why are we using the \n`cat | xargs echo` pattern? \n\nFrom what I know about shell programming, this is equivalent to just `cat`.",
+      "revId": "ae988d5adcc4c19476b95f0fd75522a719196a13",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

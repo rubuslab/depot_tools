@@ -1127,6 +1127,11 @@ def CheckOwnersFormat(input_api, output_api):
 
 def CheckOwners(
     input_api, output_api, source_file_filter=None, allow_tbr=True):
+  # input_api.owners_client is always present in Chromium, but might not be
+  # available on projects that don't use Gerrit.
+  if not input_api.owners_client:
+    return [output_api.PresubmitError(
+        'Cannot check OWNERS, as no owners_client is defined.')]
   if input_api.change.issue:
     # Skip OWNERS check when Bot-Commit label is approved. This label is
     # intended for commits made by trusted bots that don't require review nor

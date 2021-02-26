@@ -483,7 +483,8 @@ class PresubmitUnittest(PresubmitTestsBase):
           0,
           None)
 
-  def testExecPresubmitScript(self):
+  @mock.patch('owners_client.GetCodeOwnersClient')
+  def testExecPresubmitScript(self, _mock):
     description_lines = ('Hello there',
                          'this is a change',
                          'BUG=123')
@@ -501,7 +502,8 @@ class PresubmitUnittest(PresubmitTestsBase):
         0,
         None)
     executer = presubmit.PresubmitExecuter(
-        change, False, None, presubmit.GerritAccessor())
+        change, False, None,
+        presubmit.GerritAccessor('host', 'project', 'branch'))
     self.assertFalse(executer.ExecPresubmitScript('', fake_presubmit))
     # No error if no on-upload entry point
     self.assertFalse(executer.ExecPresubmitScript(
@@ -511,7 +513,8 @@ class PresubmitUnittest(PresubmitTestsBase):
     ))
 
     executer = presubmit.PresubmitExecuter(
-        change, True, None, presubmit.GerritAccessor())
+        change, True, None,
+        presubmit.GerritAccessor('host', 'project', 'branch'))
     # No error if no on-commit entry point
     self.assertFalse(executer.ExecPresubmitScript(
       ('def CheckChangeOnUpload(input_api, output_api):\n'
@@ -552,14 +555,16 @@ class PresubmitUnittest(PresubmitTestsBase):
       '  return ["foo"]',
       fake_presubmit)
 
-  def testExecPresubmitScriptWithResultDB(self):
+  @mock.patch('owners_client.GetCodeOwnersClient')
+  def testExecPresubmitScriptWithResultDB(self, _mock):
     description_lines = ('Hello there', 'this is a change', 'BUG=123')
     files = [['A', 'foo\\blat.cc']]
     fake_presubmit = os.path.join(self.fake_root_dir, 'PRESUBMIT.py')
     change = presubmit.Change('mychange', '\n'.join(description_lines),
                               self.fake_root_dir, files, 0, 0, None)
     executer = presubmit.PresubmitExecuter(
-        change, True, None, presubmit.GerritAccessor())
+        change, True, None,
+        presubmit.GerritAccessor('host', 'project', 'branch'))
     sink = self.rdb_client.__enter__.return_value = mock.MagicMock()
 
     # STATUS_PASS on success
@@ -586,7 +591,8 @@ class PresubmitUnittest(PresubmitTestsBase):
     sink.report.assert_called_with('CheckChangeOnCommit',
                                    rdb_wrapper.STATUS_FAIL, 0)
 
-  def testExecPresubmitScriptTemporaryFilesRemoval(self):
+  @mock.patch('owners_client.GetCodeOwnersClient')
+  def testExecPresubmitScriptTemporaryFilesRemoval(self, _mock):
     tempfile.NamedTemporaryFile.side_effect = [
         MockTemporaryFile('baz'),
         MockTemporaryFile('quux'),
@@ -594,8 +600,8 @@ class PresubmitUnittest(PresubmitTestsBase):
 
     fake_presubmit = os.path.join(self.fake_root_dir, 'PRESUBMIT.py')
     executer = presubmit.PresubmitExecuter(
-        self.fake_change, False, None, presubmit.GerritAccessor())
-
+        self.fake_change, False, None,
+        presubmit.GerritAccessor('host', 'project', 'branch'))
     self.assertEqual([], executer.ExecPresubmitScript(
       ('def CheckChangeOnUpload(input_api, output_api):\n'
        '  if len(input_api._named_temporary_files):\n'

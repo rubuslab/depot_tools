@@ -16,6 +16,24 @@
       "message": "Let\u0027s try python3 instead for all the git_*.py, gclient.py, roll_dep.py and upload_metrics.py scripts.\nProbably for most scripts too...",
       "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8f37ada_9174f4b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-02-26T21:44:54Z",
+      "side": 1,
+      "message": "Since we are effectively using python2 right now, I wouldn\u0027t want to combine those two changes as it may introduce more bugs. For example, script wtf doesn\u0027t work with py3 at all. While we may be confident git_* would work with py3, we can do that as a follow up commits.",
+      "parentUuid": "c5a59917_fbff127f",
+      "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -652,10 +652,13 @@ class InputApi(object):
     # Temporary files we must manually remove at the end of a run.
     self._named_temporary_files = []
 
-    # TODO(dpranke): figure out a list of all approved owners for a repo
-    # in order to be able to handle wildcard OWNERS files?
-    self.owners_client = owners_client.DepotToolsClient(
-        change.RepositoryRoot(), change.UpstreamBranch(), os_path=self.os_path)
+    self.owners_client = None
+    if self.gerrit:
+      self.owners_client = owners_client.GetCodeOwnersClient(
+          change.RepositoryRoot(),
+          self.gerrit.host,
+          self.gerrit.project,
+          self.gerrit.branch)
     self.owners_db = owners_db.Database(
         change.RepositoryRoot(), fopen=open, os_path=self.os_path)
     self.owners_finder = owners_finder.OwnersFinder

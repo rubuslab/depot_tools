@@ -22,6 +22,30 @@
       },
       "revId": "9a38ea528d526452d28ccd8fd3eea8cd2502b291",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2419f4c0_9d71aa8b",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-02-26T22:01:00Z",
+      "side": 1,
+      "message": "No.\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/master:git_cl.py;l\u003d1553",
+      "parentUuid": "6bf18c52_20a88eeb",
+      "range": {
+        "startLine": 1295,
+        "startChar": 33,
+        "endLine": 1295,
+        "endChar": 59
+      },
+      "revId": "9a38ea528d526452d28ccd8fd3eea8cd2502b291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

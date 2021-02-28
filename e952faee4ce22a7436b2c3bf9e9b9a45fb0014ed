@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7add35a_9c782fe3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-02-28T01:15:45Z",
+      "side": 1,
+      "message": "Immediately after landing this I found one small glitch.\nIf you run this under git bash on Windows, and _if_ it detects that goma needs to be running and is not, then it will trigger the running of a cmd prompt from within git bash. This then needs to be exited (with exit) to return to git bash.\n\nThis is an edge case, and only happens when autoninja has saved you from a mistake, but it\u0027s still ugly.\n\nThe problem is that on Windows the error condition is reported by printing \"cmd /c exit 1\" which is then executed, and on git bash that opens a command prompt. I don\u0027t know why the \"exit 1\" part is seemingly ignored.\n\nTo fix this I either need a way to set the error level that works on git bash as well as cmd.exe, or I need a way to detect that autoninja is running from git bash so that the \"print(\u0027false\u0027)\" path will be executed. I could get autoninja (the shell script) to pass an extra parameter to indicate that it is running, and that would work, but a cleaner fix would be nice.\n",
+      "revId": "e952faee4ce22a7436b2c3bf9e9b9a45fb0014ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

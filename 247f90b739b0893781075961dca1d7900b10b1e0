@@ -51,6 +51,24 @@
       "message": "We should double-check this very carefully ...\n\n1) It\u0027s possible that some versions of MacOS that we need to support don\u0027t have a `/usr/bin/python2` or even any `python2` at all.\n\n2) The windows binaries we distribute in depot_tools are not historically called `python2.exe`, so this may not exist either.",
       "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35d290f3_bd45f1ec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-01T18:30:54Z",
+      "side": 1,
+      "message": "1) High Sierra (released 2017) is the first macos that shipped with python2. Do we need to support older OS?\n\n2) You are correct. If python2-bin is not in path, which is not part of official documentation, it won\u0027t work even with the latest version of depot_tools. This complicates this cl and we may need to have better approach. Depending on urgency of the bug, we may want to consider using python3. There are still scripts that run only on python2, but we can work on making them python3 compatbile.",
+      "parentUuid": "a71ecfd9_91bfba57",
+      "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

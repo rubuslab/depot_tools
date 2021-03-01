@@ -69,6 +69,24 @@
       "parentUuid": "a71ecfd9_91bfba57",
       "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c001f5b1_6667be64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-01T19:10:41Z",
+      "side": 1,
+      "message": "Re: 1) Do you have a reference for the Mac version claim? I am trying to figure out Mac versions. My Mojave machine at home does not have /usr/bin/python2, though my Catalina and Big Sur machines do, but I haven\u0027t checked older versions.\n\nWe definitely have Mac machines we have to support going back to at least 10.11, but I\u0027m not sure if we need *depot_tools* to work on them.\n\nThe doc I wrote up suggests that the right thing to do for *users* of depot_tools is to have them manually ensure that they have a `python` present in some directory in their path, but it doesn\u0027t actually say what the right thing to do for depot_tools scripts themselves is. `#!/usr/bin/env  python` might be the most portable thing to do if we have to support OS\u0027s that don\u0027t have a python3 or a python2 (which I think is true of older Mac OS\u0027s).",
+      "parentUuid": "35d290f3_bd45f1ec",
+      "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

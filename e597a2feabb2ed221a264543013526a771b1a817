@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58e9339b_713fb604",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1181690
+      },
+      "writtenOn": "2021-03-01T03:46:03Z",
+      "side": 1,
+      "message": "Hitting this in devil when trying to use six.ensure_binary, which appears to be from a newer version of six than 1.10.0.",
+      "revId": "e597a2feabb2ed221a264543013526a771b1a817",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

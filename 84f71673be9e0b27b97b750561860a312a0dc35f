@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a12baf3_7967dfb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-03-01T22:20:26Z",
+      "side": 1,
+      "message": "This trivial change makes autoninja.py work better with git bash on Windows when goma is enabled in the output directory but is not running.\n\nIt\u0027s an edge case, but one that we might as well get right. PTAL",
+      "revId": "84f71673be9e0b27b97b750561860a312a0dc35f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

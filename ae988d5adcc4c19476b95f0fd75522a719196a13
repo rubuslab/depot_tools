@@ -34,6 +34,24 @@
       "parentUuid": "0f0edfc8_ea05c8fd",
       "revId": "ae988d5adcc4c19476b95f0fd75522a719196a13",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f92cceb0_67399575",
+        "filename": "python-bin/python3",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-03-01T07:08:15Z",
+      "side": 1,
+      "message": "Should a similar change be applied to python2-bin/python2?",
+      "parentUuid": "fa643dc6_fcfb0e49",
+      "revId": "ae988d5adcc4c19476b95f0fd75522a719196a13",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

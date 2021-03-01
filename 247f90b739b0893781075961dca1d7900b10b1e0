@@ -34,6 +34,23 @@
       "parentUuid": "c5a59917_fbff127f",
       "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a71ecfd9_91bfba57",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-01T17:50:19Z",
+      "side": 1,
+      "message": "We should double-check this very carefully ...\n\n1) It\u0027s possible that some versions of MacOS that we need to support don\u0027t have a `/usr/bin/python2` or even any `python2` at all.\n\n2) The windows binaries we distribute in depot_tools are not historically called `python2.exe`, so this may not exist either.",
+      "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

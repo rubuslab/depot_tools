@@ -315,7 +315,7 @@ class OwnersClientTest(unittest.TestCase):
 
 class GetCodeOwnersClientTest(unittest.TestCase):
   def setUp(self):
-    mock.patch('gerrit_util.IsCodeOwnersEnabled').start()
+    mock.patch('gerrit_util.IsCodeOwnersEnabledOnHost').start()
     self.addCleanup(mock.patch.stopall)
 
   def testGetCodeOwnersClient_GerritClient(self):
@@ -324,7 +324,7 @@ class GetCodeOwnersClientTest(unittest.TestCase):
     pass
 
   def testGetCodeOwnersClient_DepotToolsClient(self):
-    gerrit_util.IsCodeOwnersEnabled.return_value = False
+    gerrit_util.IsCodeOwnersEnabledOnHost.return_value = False
     self.assertIsInstance(
         owners_client.GetCodeOwnersClient('root', 'branch', '', '', ''),
         owners_client.DepotToolsClient)

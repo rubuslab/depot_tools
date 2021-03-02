@@ -93,7 +93,7 @@ class CommandDispatcher(object):
     """module is the name of the main python module where to look for commands.
 
     The python builtin variable __name__ MUST be used for |module|. If the
-    script is executed in the form 'python script.py', __name__ == '__main__'
+    script is executed in the form 'python2 script.py', __name__ == '__main__'
     and sys.modules['script'] doesn't exist. On the other hand if it is unit
     tested, __main__ will be the unit test's module so it has to reference to
     itself with 'script'. __name__ always match the right value.

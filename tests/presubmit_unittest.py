@@ -2339,7 +2339,7 @@ the current line as well!
 
   def testCheckLicenseSuccess(self):
     text = (
-        "#!/bin/python\n"
+        "#!/bin/python2\n"
         "# Copyright (c) 2037 Nobody.\n"
         "# All Rights Reserved.\n"
         "print('foo')\n"
@@ -2352,7 +2352,7 @@ the current line as well!
 
   def testCheckLicenseFailCommit(self):
     text = (
-        "#!/bin/python\n"
+        "#!/bin/python2\n"
         "# Copyright (c) 2037 Nobody.\n"
         "# All Rights Reserved.\n"
         "print('foo')\n"
@@ -2366,7 +2366,7 @@ the current line as well!
 
   def testCheckLicenseFailUpload(self):
     text = (
-        "#!/bin/python\n"
+        "#!/bin/python2\n"
         "# Copyright (c) 2037 Nobody.\n"
         "# All Rights Reserved.\n"
         "print('foo')\n"

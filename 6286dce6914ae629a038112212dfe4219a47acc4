@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ed0fca3_c10263f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-02T22:38:45Z",
+      "side": 1,
+      "message": "This replicates the change in https://crrev.com/c/2721367 over to the python2 wrapper.\n\nIt looks like we\u0027ll want a similar but slightly different change for at least the vpython3 wrapper, so I\u0027ll look at that and the vpython wrapper in a different CL.",
+      "revId": "6286dce6914ae629a038112212dfe4219a47acc4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

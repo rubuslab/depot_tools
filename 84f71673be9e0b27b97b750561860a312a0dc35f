@@ -33,6 +33,23 @@
       "message": "Tested with and without this patch and confirmed the behaviour described.",
       "revId": "84f71673be9e0b27b97b750561860a312a0dc35f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0946e4e_4c2483c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-03-02T22:58:38Z",
+      "side": 1,
+      "message": "PTAL - this fixes a git bash glitch with autoninja.",
+      "revId": "84f71673be9e0b27b97b750561860a312a0dc35f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

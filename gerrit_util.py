@@ -780,6 +780,7 @@ def IsCodeOwnersEnabledOnHost(host):
 
 def IsCodeOwnersEnabledOnRepo(host, repo):
   """Check if the code-owners plugin is enabled for the repo."""
+  repo = PercentEncodeForGitRef(repo)
   path = '/projects/%s/code_owners.project_config' % repo
   config = ReadHttpJsonResponse(CreateHttpConn(host, path))
   return config['status'].get('disabled', False)

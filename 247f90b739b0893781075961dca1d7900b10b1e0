@@ -87,6 +87,24 @@
       "parentUuid": "35d290f3_bd45f1ec",
       "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09d2927b_836b43d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-02T02:27:34Z",
+      "side": 1,
+      "message": "1) I take that back, it may not be \"python2\" that\u0027s available since High Sierra - I must have confused it with python2.7. I was not able to find definite answer on what\u0027s available on what version.\n\nSo, I think you are right - using /usr/bin/env python is probably the safest thing to do.",
+      "parentUuid": "c001f5b1_6667be64",
+      "revId": "247f90b739b0893781075961dca1d7900b10b1e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

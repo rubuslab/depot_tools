@@ -33,6 +33,24 @@
       "message": "probably good to include comment from commit message here.",
       "revId": "6286dce6914ae629a038112212dfe4219a47acc4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "658c6d87_0aae81b4",
+        "filename": "python2-bin/python2",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-03T01:24:36Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "b4337523_49ae22b0",
+      "revId": "6286dce6914ae629a038112212dfe4219a47acc4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

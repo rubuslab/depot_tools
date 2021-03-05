@@ -16,6 +16,24 @@
       "message": "add \u0027Bug: 1182016\u0027?",
       "revId": "d5c433d58df5562896628cbe0f633c960d6dd316",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35b35289_1f30ac3e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1493587
+      },
+      "writtenOn": "2021-03-05T02:25:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "346a10d0_246427da",
+      "revId": "d5c433d58df5562896628cbe0f633c960d6dd316",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

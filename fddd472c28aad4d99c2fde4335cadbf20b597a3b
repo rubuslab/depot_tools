@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2d25cdc_5ea0df71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-08T17:04:22Z",
+      "side": 1,
+      "message": "This is a bit tricky to test, since update_depot_tools script will fetch the state from remote and override any changes. I plan to test it in the afternoon, but let me know if I\u0027m on a wrong track.",
+      "revId": "fddd472c28aad4d99c2fde4335cadbf20b597a3b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

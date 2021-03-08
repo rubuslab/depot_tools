@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2877b14_0f6f2734",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-08T23:37:42Z",
+      "side": 1,
+      "message": "Yup, did that, made some changes. PTAL.",
+      "parentUuid": "221ebf04_822e2b45",
+      "revId": "fddd472c28aad4d99c2fde4335cadbf20b597a3b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8340c5d8_af564d98",
@@ -66,6 +84,30 @@
       "writtenOn": "2021-03-08T17:50:05Z",
       "side": 1,
       "message": "\\\\",
+      "range": {
+        "startLine": 18,
+        "startChar": 29,
+        "endLine": 18,
+        "endChar": 30
+      },
+      "revId": "fddd472c28aad4d99c2fde4335cadbf20b597a3b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04ad925d_139c9934",
+        "filename": "git-runhooks",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-08T23:37:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1809460d_31860b59",
       "range": {
         "startLine": 18,
         "startChar": 29,

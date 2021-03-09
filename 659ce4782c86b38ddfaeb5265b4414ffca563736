@@ -16,6 +16,23 @@
       "message": "What do you think of this? I think we definitely need to check for CR if the license check fails because CR characters will make it fail and that is very confusing. Right now the CR check applies to all files that are required to have a license, regardless of whether the license check fails. That may be too aggressive - thoughts?",
       "revId": "659ce4782c86b38ddfaeb5265b4414ffca563736",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07f67ebe_9d73c636",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1355758
+      },
+      "writtenOn": "2021-03-09T01:11:04Z",
+      "side": 1,
+      "message": "We have a similar check on our end, due to the number of people we have using tools that may inject Windows-style line endings, but it\u0027s a little more scoped. I\u0027ve included the relevant source below, in case any of it looks like it could be useful in how you\u0027d like to do this upstream:\n\n```\ndef CheckForWindowsLineEndings(input_api, output_api):\n  \"\"\"Check source code and known ascii text files for Windows style line\n  endings.\n  \"\"\"\n  known_text_files \u003d r\u0027.*\\.(txt|html|htm|mhtml|py|gyp|gypi|gn|isolate)$\u0027\n\n  file_inclusion_pattern \u003d (\n    known_text_files,\n    r\u0027.+%s\u0027 % _IMPLEMENTATION_EXTENSIONS\n  )\n\n  problems \u003d []\n  source_file_filter \u003d lambda f: input_api.FilterSourceFile(\n      f, files_to_check\u003dfile_inclusion_pattern, files_to_skip\u003dNone)\n  for f in input_api.AffectedSourceFiles(source_file_filter):\n    include_file \u003d False\n    for _, line in f.ChangedContents():\n      if line.endswith(\u0027\\r\\n\u0027):\n        include_file \u003d True\n    if include_file:\n      problems.append(f.LocalPath())\n\n  if problems:\n    return [output_api.PresubmitPromptWarning(\u0027Are you sure that you want \u0027\n        \u0027these files to contain Windows style line endings?\\n\u0027 +\n        \u0027\\n\u0027.join(problems))]\n\n  return []\n```",
+      "revId": "659ce4782c86b38ddfaeb5265b4414ffca563736",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

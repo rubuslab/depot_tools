@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5eac6007_22f9113d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-09T17:23:58Z",
+      "side": 1,
+      "message": "Could you Bot-Commit+1 (but not CR nor CQ) this change?\nWould like to check that it still works after https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2745777",
+      "revId": "1670e42fdefa3900f11fc5d2e8850e9d4a8eec09",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

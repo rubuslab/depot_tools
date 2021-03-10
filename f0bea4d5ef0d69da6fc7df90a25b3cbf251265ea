@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc268beb_7a6ebc36",
+        "filename": "python2-bin/python.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-10T23:33:21Z",
+      "side": 1,
+      "message": "I think this needs to be `python2.bat`, in order to match the Unix name.\n\nWe might also need a `python.bat` -- I\u0027m still mulling that one over -- but I would make that a separate change.",
+      "range": {
+        "startLine": 1,
+        "startChar": 1,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "f0bea4d5ef0d69da6fc7df90a25b3cbf251265ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

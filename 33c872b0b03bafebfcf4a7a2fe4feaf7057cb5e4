@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4129dea_ae426c82",
+        "filename": "update_depot_tools",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-10T19:28:22Z",
+      "side": 1,
+      "message": "What does this do?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 6
+      },
+      "revId": "33c872b0b03bafebfcf4a7a2fe4feaf7057cb5e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6de6dceb_00d4188f",
+        "filename": "tests/owners_client_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-03-11T19:12:10Z",
+      "side": 1,
+      "message": "nit: typo",
+      "range": {
+        "startLine": 272,
+        "startChar": 39,
+        "endLine": 272,
+        "endChar": 46
+      },
+      "revId": "6095d7315af3fac4abbc12d5da139e84095edf2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

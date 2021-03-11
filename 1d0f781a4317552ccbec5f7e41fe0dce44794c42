@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b31e5cc_ff99f903",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-11T20:43:02Z",
+      "side": 1,
+      "message": "PTAL, is it ok to land this?\nThis is used to developers to interact with OWNERS files before uploading a change to Gerrit.\n",
+      "revId": "1d0f781a4317552ccbec5f7e41fe0dce44794c42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2794d16_a0fbdcd9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-03-11T23:33:09Z",
+      "side": 1,
+      "message": "I assume that we want to move in this direction?\n\nI\u0027m more nervous about changing the autoninja shell script because of git bash on Windows but this change seems simple and safe.\n",
+      "revId": "13ae9cd645d96f54c22e1ad429ca172b18a796cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

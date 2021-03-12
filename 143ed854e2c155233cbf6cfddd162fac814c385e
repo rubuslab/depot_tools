@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39aa6aaa_ce3e7f2f",
+        "filename": "autoninja",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-12T18:26:22Z",
+      "side": 1,
+      "message": "other scripts use `base_dir` instead of `depot_tools`, which admittedly is a pretty common convention, but I think using `depot_tools` here makes the rest of the file clearer, and maybe we should switch the others as well. \n\nThoughts?",
+      "revId": "143ed854e2c155233cbf6cfddd162fac814c385e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

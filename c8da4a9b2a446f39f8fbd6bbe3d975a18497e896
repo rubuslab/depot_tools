@@ -69,6 +69,24 @@
       "parentUuid": "059e3baa_3f10eb8f",
       "revId": "c8da4a9b2a446f39f8fbd6bbe3d975a18497e896",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "428cd3eb_19e93c50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-12T23:02:35Z",
+      "side": 1,
+      "message": "It is a bit confusing, but perhaps this helps:\n\nSo what you did was create a run based on 8853011633898031024, but using your local version of \u0027build\u0027 instead of https://chromium.googlesource.com/chromium/tools/build, and attempting to patch the depot_tools CL in the resulting dawn checkout (which fails because dawn doesn\u0027t have depot_tools as a dependency).\nThink of it like running a dawn try bot on a depot_tools CL.\n\nInstead, you can do something like\n\n  led get-build 8853011633898031024 | led edit-recipe-bundle -O depot_tools\u003dpath/to/depot_tools | led launch\n\nThat will tell led to use your local version of build and your local version of depot_tools to run the recipe.\nIt will patch your depot_tools (and build) changes to the recipe before running the dawn bot.",
+      "parentUuid": "3b4d81ed_8805e27d",
+      "revId": "c8da4a9b2a446f39f8fbd6bbe3d975a18497e896",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

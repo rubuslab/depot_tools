@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "734550ca_69f4db39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-03-12T20:52:18Z",
+      "side": 1,
+      "message": "BTW, I tested it on git bash and Linux and it works.",
+      "revId": "143ed854e2c155233cbf6cfddd162fac814c385e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "39aa6aaa_ce3e7f2f",

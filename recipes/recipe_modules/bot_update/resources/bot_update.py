@@ -789,6 +789,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
         git('remote', 'set-url', 'origin', mirror_dir, cwd=sln_dir)
         git('fetch', 'origin', cwd=sln_dir)
       git('remote', 'set-url', '--push', 'origin', url, cwd=sln_dir)
+      git('remote', 'set-head', 'origin', '--auto', cwd=sln_dir)
       for ref in refs:
         refspec = '%s:%s' % (ref, ref_to_remote_ref(ref.lstrip('+')))
         git('fetch', 'origin', refspec, cwd=sln_dir)

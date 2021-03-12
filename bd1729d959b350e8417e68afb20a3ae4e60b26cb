@@ -16,6 +16,24 @@
       "message": "Looks like your comment raced our attempts to get this landed. The root cause of the submit failure was tracked in https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1187362 . If reverting again, if it fails, it\u0027s related to the master-\u003emain migration.",
       "revId": "bd1729d959b350e8417e68afb20a3ae4e60b26cb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe38ff02_430c915d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-03-12T04:37:02Z",
+      "side": 1,
+      "message": "No worries, but I believe that should be the eventual goal to make the build as hermetic as possible.",
+      "parentUuid": "ad197007_eb617c9d",
+      "revId": "bd1729d959b350e8417e68afb20a3ae4e60b26cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

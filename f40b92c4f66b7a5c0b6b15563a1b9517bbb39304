@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1df961c6_7f6d89d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-03-12T04:28:56Z",
+      "side": 1,
+      "message": "Does it make sense to follow the pattern in crrev.com/c/2753458 and do a full path to Python 3? Maybe it\u0027s less important for the autoninja shell script than for the autoninja batch file.\n\nThat said, have you tested this in git bash on Windows?\n",
+      "revId": "f40b92c4f66b7a5c0b6b15563a1b9517bbb39304",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

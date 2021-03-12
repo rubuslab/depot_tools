@@ -16,6 +16,24 @@
       "message": "Can you do a led test run?",
       "revId": "c8da4a9b2a446f39f8fbd6bbe3d975a18497e896",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9d54883_035d570d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-03-12T22:17:57Z",
+      "side": 1,
+      "message": "https://luci-milo.appspot.com/raw/build/logs.chromium.org/dawn/led/gavinmak_google.com/da8d9f4c7e675f8bd472c7905efbc7101a289621d88c6ceec9259da5fa6b59cb/+/annotations\n\nThis run got past the invalid reference error, but fails with this error gclient sync:\n\nError: The following --patch-ref flags were not used. Please fix it:\n https://chromium.googlesource.com/chromium/tools/depot_tools@refs/changes/29/2757129/1\n\nIs this an error from LED, i.e. if this change is submitted, would this run still fail if not triggered with a change?",
+      "parentUuid": "c8e9a228_9681ae98",
+      "revId": "c8da4a9b2a446f39f8fbd6bbe3d975a18497e896",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

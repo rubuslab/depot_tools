@@ -2749,9 +2749,9 @@ the current line as well!
     input_api.dry_run = dry_run
     input_api.gerrit._FetchChangeDetail = lambda _: response
 
-    input_api.owners_client = owners_client.DepotToolsClient('root', 'branch')
+    input_api.owners_client = owners_client.OwnersClient()
 
-    with mock.patch('owners_client.DepotToolsClient.ListOwners',
+    with mock.patch('owners_client.OwnersClient.ListOwners',
                     side_effect=lambda f: owners_by_path.get(f, [])):
       results = presubmit_canned_checks.CheckOwners(
           input_api, presubmit.OutputApi, allow_tbr=allow_tbr)

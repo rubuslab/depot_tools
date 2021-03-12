@@ -16,6 +16,41 @@
       "message": "other scripts use `base_dir` instead of `depot_tools`, which admittedly is a pretty common convention, but I think using `depot_tools` here makes the rest of the file clearer, and maybe we should switch the others as well. \n\nThoughts?",
       "revId": "143ed854e2c155233cbf6cfddd162fac814c385e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "506de732_062b54f1",
+        "filename": "autoninja",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-03-12T20:52:03Z",
+      "side": 1,
+      "message": "I agree that depot_tools makes sense here.",
+      "parentUuid": "39aa6aaa_ce3e7f2f",
+      "revId": "143ed854e2c155233cbf6cfddd162fac814c385e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "badc4312_16440a1a",
+        "filename": "autoninja",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-03-12T20:52:03Z",
+      "side": 1,
+      "message": "Nice. Very clean and simple.",
+      "revId": "143ed854e2c155233cbf6cfddd162fac814c385e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4eaa48ba_bfd67285",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-13T01:44:38Z",
+      "side": 1,
+      "message": "I think we also want that logic somewhere around here, because the local cache might not have HEAD updated?",
+      "revId": "1a3b58a468245b89e9a4abc0691a06e4505152d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

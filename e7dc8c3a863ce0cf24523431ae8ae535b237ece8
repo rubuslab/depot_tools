@@ -52,6 +52,24 @@
       "parentUuid": "bda5f8df_189afbe8",
       "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ac1780f_da82eb15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-15T17:04:23Z",
+      "side": 1,
+      "message": "Yes, changing autoninja to call bootstrap_python3 might be the right idea.",
+      "parentUuid": "2e7b99b9_caf4e5aa",
+      "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

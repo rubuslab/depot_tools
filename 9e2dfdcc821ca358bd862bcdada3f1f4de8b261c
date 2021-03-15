@@ -16,6 +16,23 @@
       "message": "failing?\n\nhttps://ci.chromium.org/ui/p/goma-client-internal/builders/try/Goma%20Trusty64%20Presubmit/b8852743108440061872/overview\nhttps://logs.chromium.org/logs/goma-client-internal/buildbucket/cr-buildbucket.appspot.com/8852743108440061872/+/steps/build/0/stdout\n\n /b/s/w/ir/kitchen-checkout/depot_tools/autoninja: line 11: /b/s/w/ir/kitchen-checkout/depot_tools/python-bin/python3: No such file or directory\n /b/s/w/ir/kitchen-checkout/depot_tools/autoninja: line 20: /b/s/w/ir/kitchen-checkout/depot_tools/python-bin/python3: No such file or directory\n /b/s/w/ir/kitchen-checkout/depot_tools/autoninja: line 30: /b/s/w/ir/kitchen-checkout/depot_tools/python-bin/python3: No such file or directory",
       "revId": "9e2dfdcc821ca358bd862bcdada3f1f4de8b261c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "323b3194_629b64f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1309946
+      },
+      "writtenOn": "2021-03-15T03:33:45Z",
+      "side": 1,
+      "message": "This also broke the chrome-\u003echrome OS uprev, see issue 1187968",
+      "revId": "9e2dfdcc821ca358bd862bcdada3f1f4de8b261c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

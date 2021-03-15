@@ -16,6 +16,24 @@
       "message": "I\u0027m not sure that reverting this was the right thing to do.\n\nYou\u0027re using scripts from depot_tools but apparently not bootstrapping depot_tools. This probably shouldn\u0027t be allowed.\n\nI\u0027m okay with the revert for now but we need to discuss what to do about this.",
       "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bda5f8df_189afbe8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2021-03-15T04:28:25Z",
+      "side": 1,
+      "message": "Can I ask you what you mean by bootstrap depot_tools?\nI thought the issue is that bots we use does not have python3 but autoninja started to depend on python3.",
+      "parentUuid": "e6bc96ce_5ed3d368",
+      "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

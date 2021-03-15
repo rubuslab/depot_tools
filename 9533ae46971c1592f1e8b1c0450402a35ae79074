@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f52f579_4b4f8d38",
+        "filename": "owners_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1162574
+      },
+      "writtenOn": "2021-03-15T07:52:38Z",
+      "side": 1,
+      "message": "Yes, this bug (crbug.com/1183447) should be fixed now.",
+      "parentUuid": "f5900ab1_66f60421",
+      "revId": "9533ae46971c1592f1e8b1c0450402a35ae79074",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff6a7d74_1bf2b529",

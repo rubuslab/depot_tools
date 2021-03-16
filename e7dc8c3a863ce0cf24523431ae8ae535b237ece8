@@ -88,6 +88,24 @@
       "parentUuid": "8ac1780f_da82eb15",
       "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d70a9e23_a88dc246",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2021-03-16T02:15:55Z",
+      "side": 1,
+      "message": "windows needs to do bootstrap\n\nhttps://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up\n\nFrom a cmd.exe shell, run the command gclient (without arguments). On first run, gclient will install all the Windows-specific bits needed to work with the code, including msysgit and python.\n\n\n?",
+      "parentUuid": "949bc4e3_447dded3",
+      "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

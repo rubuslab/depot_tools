@@ -124,6 +124,24 @@
       "parentUuid": "d70a9e23_a88dc246",
       "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1b30c2b_d6c3e1fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-03-16T07:04:18Z",
+      "side": 1,
+      "message": "Calling that batch file seems to add a minimum of 0.3 to 0.5 s to autoninja.bat. If that\u0027s what it takes then I guess that\u0027s okay (it\u0027s still an improvement over vpython) but it seems a real shame to add any extra time to every single build. One of ninja\u0027s design goals was to start building as quickly as possible so we are stepping back from that.\n\nSome way of guaranteeing that depot_tools is configured without having to check on every build would be ideal. Perhaps only running the script if one of the required files is missing?",
+      "parentUuid": "ca3835c3_34915d32",
+      "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

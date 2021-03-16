@@ -70,6 +70,24 @@
       "parentUuid": "2e7b99b9_caf4e5aa",
       "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "949bc4e3_447dded3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002224
+      },
+      "writtenOn": "2021-03-16T02:08:41Z",
+      "side": 1,
+      "message": "bootstrap_python3 looks like a bash function, which need to be called by somewhere.\nWe can inject that in autoninja.  Do we need to implement something equivalent for windows?",
+      "parentUuid": "8ac1780f_da82eb15",
+      "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -106,6 +106,24 @@
       "parentUuid": "949bc4e3_447dded3",
       "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca3835c3_34915d32",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-16T02:31:12Z",
+      "side": 1,
+      "message": "I think we can just call $depot_tools\\bootstrap\\win_tools.bat to fetch everything without trying to update the depot_tools revision (which is what we want).\n\nI\u0027ll post a separate patch to try that tomorrow.",
+      "parentUuid": "d70a9e23_a88dc246",
+      "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

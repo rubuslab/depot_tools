@@ -142,6 +142,24 @@
       "parentUuid": "ca3835c3_34915d32",
       "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2287416d_69f351c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-16T16:59:18Z",
+      "side": 1,
+      "message": "\u003e Some way of guaranteeing that depot_tools is configured without \n\u003e having to check on every build would be ideal. Perhaps only running\n\u003e the script if one of the required files is missing?\n\nYeah, that was my thought as well; I\u0027d only call the batch file if the \npython executable wasn\u0027t there.",
+      "parentUuid": "b1b30c2b_d6c3e1fb",
+      "revId": "e7dc8c3a863ce0cf24523431ae8ae535b237ece8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

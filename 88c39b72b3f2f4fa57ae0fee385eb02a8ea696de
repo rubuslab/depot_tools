@@ -51,6 +51,23 @@
       "message": "lgtm",
       "revId": "88c39b72b3f2f4fa57ae0fee385eb02a8ea696de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eeaf0c4c_e2002ab7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-17T18:14:05Z",
+      "side": 1,
+      "message": "You\u0027ll also need to add same couple of lines to https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:tests/git_cl_test.py;l\u003d2349",
+      "revId": "88c39b72b3f2f4fa57ae0fee385eb02a8ea696de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

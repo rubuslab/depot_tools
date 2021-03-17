@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c3ddc3a_d82a70a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1327821
+      },
+      "writtenOn": "2021-03-17T05:44:34Z",
+      "side": 1,
+      "message": "LGTM\n\nThat was easier than I thought. 😊",
+      "revId": "88c39b72b3f2f4fa57ae0fee385eb02a8ea696de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

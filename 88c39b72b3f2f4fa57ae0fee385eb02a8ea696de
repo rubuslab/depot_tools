@@ -16,6 +16,24 @@
       "message": "LGTM\n\nThat was easier than I thought. 😊",
       "revId": "88c39b72b3f2f4fa57ae0fee385eb02a8ea696de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e2650c4_bf40a9e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1151324
+      },
+      "writtenOn": "2021-03-17T16:03:25Z",
+      "side": 1,
+      "message": "+1, thanks Nodir!",
+      "parentUuid": "4c3ddc3a_d82a70a5",
+      "revId": "88c39b72b3f2f4fa57ae0fee385eb02a8ea696de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

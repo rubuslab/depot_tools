@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fff22d7_1aef6794",
+        "filename": "tests/download_from_google_storage_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-18T21:54:30Z",
+      "side": 1,
+      "message": "Move to its own test function?",
+      "range": {
+        "startLine": 327,
+        "startChar": 0,
+        "endLine": 327,
+        "endChar": 24
+      },
+      "revId": "3b615d3bbb1a6b6d8ca1753374b235fee9c9cec0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98feef15_dd22120e",
+        "filename": "tests/download_from_google_storage_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-18T21:54:30Z",
+      "side": 1,
+      "message": "Same.",
+      "range": {
+        "startLine": 348,
+        "startChar": 0,
+        "endLine": 348,
+        "endChar": 63
+      },
+      "revId": "3b615d3bbb1a6b6d8ca1753374b235fee9c9cec0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

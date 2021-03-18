@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "061eacd4_3a5d8d65",
+        "filename": "tests/download_from_google_storage_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-18T23:12:28Z",
+      "side": 1,
+      "message": "Technically, I need previous execution or I need to mock it. I originally planned to have own function, but I realized I would either have to call this function, or create separate class for testing Download, and startup would have most of the content of this function.\n\nHappy to do it if you still think it\u0027s worth it.",
+      "parentUuid": "7fff22d7_1aef6794",
+      "range": {
+        "startLine": 327,
+        "startChar": 0,
+        "endLine": 327,
+        "endChar": 24
+      },
+      "revId": "3b615d3bbb1a6b6d8ca1753374b235fee9c9cec0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "98feef15_dd22120e",
         "filename": "tests/download_from_google_storage_unittest.py",
         "patchSetId": 1

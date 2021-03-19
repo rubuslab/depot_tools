@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c1f94e1_c5376953",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2021-03-19T18:43:12Z",
+      "side": 1,
+      "message": "It may be good to send out a note about this to chromium-dev. My git tree is synced to yesterday morning, where PRESUBMIT.py still references IsBotCommitApproved(). Everything\u0027s working fine, until a CL upload reaches IsBotCommitApproved() in the presubmit phase.",
+      "revId": "e4bab45474062a0108955b1020c81f1273fa1d16",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

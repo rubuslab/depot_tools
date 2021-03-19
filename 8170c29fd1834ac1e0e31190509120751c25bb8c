@@ -16,6 +16,24 @@
       "message": "did this cause https://logs.chromium.org/logs/infra/buildbucket/cr-buildbucket.appspot.com/8852291449332182720/+/u/presubmit/stdout ?",
       "revId": "8170c29fd1834ac1e0e31190509120751c25bb8c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19646479_a7515ea9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-19T22:56:35Z",
+      "side": 1,
+      "message": "Yes. Fix rolled out to infra crrev.com/c/2774686 and has to roll to build next.",
+      "parentUuid": "3f96ecfd_2aa137b6",
+      "revId": "8170c29fd1834ac1e0e31190509120751c25bb8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

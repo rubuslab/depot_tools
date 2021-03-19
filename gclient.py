@@ -2014,8 +2014,6 @@ class CipdDependency(Dependency):
     s = []
     self._CreatePackageIfNecessary()
     if self._cipd_package.authority_for_subdir:
-      condition_part = (['    "condition": %r,' % self.condition]
-                        if self.condition else [])
       s.extend([
           '  # %s' % self.hierarchy(include_url=False),
           '  "%s": {' % (self.name.split(':')[0],),
@@ -2031,6 +2029,8 @@ class CipdDependency(Dependency):
             '      },',
         ])
 
+      condition_part = (['    "condition": %r,' % self.condition]
+                        if self.condition else [])
       s.extend([
           '    ],',
           '    "dep_type": "cipd",',

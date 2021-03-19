@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "803b0330_5d72c62b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-19T17:46:35Z",
+      "side": 1,
+      "message": "If looks good, I would like to merge this today (ideally soon) so we can submit manifest.txt change on Monday.",
+      "revId": "7125df7bb256e5780ac8ec0379b5701d84ff6a8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

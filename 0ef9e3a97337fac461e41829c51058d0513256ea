@@ -16,6 +16,24 @@
       "message": "Xcode version is 12.4, SDK version is 11.1. The SDK tracks the OS version, so there is no SDK 12.4 yet, which makes this commit message smell fishy. You’re interested in the Xcode version here, so say that.",
       "revId": "0ef9e3a97337fac461e41829c51058d0513256ea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eca06a8b_d74dc55c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-03-22T03:59:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "592acaaf_178ff1bf",
+      "revId": "0ef9e3a97337fac461e41829c51058d0513256ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

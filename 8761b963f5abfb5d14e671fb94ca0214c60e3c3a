@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "903f6636_9c7a97c7",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2173,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-24T21:55:29Z",
+      "side": 1,
+      "message": "Instead:\n\n  def ...(git_push_args\u003dNone):\n    git_push_args \u003d git_push_args or []\n\nOtherwise, git_push_args default value might change between calls.",
+      "range": {
+        "startLine": 2173,
+        "startChar": 42,
+        "endLine": 2173,
+        "endChar": 44
+      },
+      "revId": "8761b963f5abfb5d14e671fb94ca0214c60e3c3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71712343_990cfd49",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2193,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-24T21:55:29Z",
+      "side": 1,
+      "message": "What about something like\n\n  cmd \u003d [\u0027git\u0027, \u0027push\u0027, remote_url, refspec]\n  for opt in refspec_opts:\n    cmd +\u003d [\u0027-o\u0027, opt]\n  push_stdout \u003d gclient_utils.CheckCallAndFilter(\n    cmd,\n    ...)\n\ninstead of passing git_push_args.",
+      "range": {
+        "startLine": 2193,
+        "startChar": 6,
+        "endLine": 2193,
+        "endChar": 17
+      },
+      "revId": "8761b963f5abfb5d14e671fb94ca0214c60e3c3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a324d09_7c20aee5",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2419,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-03-24T21:55:29Z",
+      "side": 1,
+      "message": "And then we can remove this refspec_suffix.",
+      "range": {
+        "startLine": 2419,
+        "startChar": 38,
+        "endLine": 2419,
+        "endChar": 50
+      },
+      "revId": "8761b963f5abfb5d14e671fb94ca0214c60e3c3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd7a7792_7a75817c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2173,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-24T22:30:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "903f6636_9c7a97c7",
+      "range": {
+        "startLine": 2173,
+        "startChar": 42,
+        "endLine": 2173,
+        "endChar": 44
+      },
+      "revId": "8761b963f5abfb5d14e671fb94ca0214c60e3c3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71712343_990cfd49",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "081ff040_55f175dd",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2193,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-24T22:30:36Z",
+      "side": 1,
+      "message": "Are existing refspecs (%...) and -o interchangeable?",
+      "parentUuid": "71712343_990cfd49",
+      "range": {
+        "startLine": 2193,
+        "startChar": 6,
+        "endLine": 2193,
+        "endChar": 17
+      },
+      "revId": "8761b963f5abfb5d14e671fb94ca0214c60e3c3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7a324d09_7c20aee5",
         "filename": "git_cl.py",
         "patchSetId": 1
@@ -60,6 +108,30 @@
       "writtenOn": "2021-03-24T21:55:29Z",
       "side": 1,
       "message": "And then we can remove this refspec_suffix.",
+      "range": {
+        "startLine": 2419,
+        "startChar": 38,
+        "endLine": 2419,
+        "endChar": 50
+      },
+      "revId": "8761b963f5abfb5d14e671fb94ca0214c60e3c3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78c2fcd3_bd6cb8ce",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2419,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-03-24T22:30:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7a324d09_7c20aee5",
       "range": {
         "startLine": 2419,
         "startChar": 38,

@@ -2166,7 +2166,11 @@ class Changelist(object):
 
     gclient_utils.rmtree(git_info_dir)
 
-  def _RunGitPushWithTraces(self, refspec, refspec_opts, git_push_metadata):
+  def _RunGitPushWithTraces(self,
+                            refspec,
+                            refspec_opts,
+                            git_push_metadata,
+                            git_push_args=[]):
     """Run git push and collect the traces resulting from the execution."""
     # Create a temporary directory to store traces in. Traces will be compressed
     # and stored in a 'traces' dir inside depot_tools.
@@ -2187,7 +2191,7 @@ class Changelist(object):
       remote_url = self.GetRemoteUrl()
       before_push = time_time()
       push_stdout = gclient_utils.CheckCallAndFilter(
-          ['git', 'push', remote_url, refspec],
+          ['git', 'push', remote_url, refspec] + git_push_args,
           env=env,
           print_stdout=True,
           # Flush after every line: useful for seeing progress when running as
@@ -2423,8 +2427,12 @@ class Changelist(object):
         'change_id': change_id,
         'description': change_desc.description,
     }
+    git_push_args = []
+    for opt in options.push_options:
+      git_push_args.extend(['-o', opt])
+
     push_stdout = self._RunGitPushWithTraces(refspec, refspec_opts,
-                                             git_push_metadata)
+                                             git_push_metadata, git_push_args)
 
     if options.squash:
       regex = re.compile(r'remote:\s+https?://[\w\-\.\+\/#]*/(\d+)\s.*')
@@ -4192,6 +4200,10 @@ def CMDupload(parser, args):
                     help='Run presubmit checks in the ResultSink environment '
                          'and send results to the ResultDB database.')
   parser.add_option('--realm', help='LUCI realm if reporting to ResultDB')
+  parser.add_option('-o', '--push-options', action='append', default=[],
+                    help='Transmit the given string to the server when '
+                    'performing git push (pass-through). See git-push '
+                    'documentation for more details.')
 
   orig_args = args
   (options, args) = parser.parse_args(args)

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "786c0aaf_c213c908",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-03-25T19:34:01Z",
+      "side": 1,
+      "message": "So if we\u0027re removing windows-386 entirely here, I think that .cipd_impl.ps1 should just ALWAYS pull the windows-amd64 version of cipd; Otherwise if the user is in a 32bit shell, it\u0027ll bootstrap a 32bit copy of cipd which will then try to pull windows-386 versions of packages anyway.",
+      "revId": "68ce51179dcc02c89c4d3e593fa48ceb5254cdf9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

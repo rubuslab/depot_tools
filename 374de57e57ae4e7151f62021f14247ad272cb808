@@ -16,6 +16,24 @@
       "message": "Can you expand on why we don\u0027t want this? I was wondering why we have this windows-386 entry and this CL suggests it\u0027s there intentionally, but it doesn\u0027t say why 😊",
       "revId": "374de57e57ae4e7151f62021f14247ad272cb808",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb6b40c0_638ec028",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-03-25T18:15:15Z",
+      "side": 1,
+      "message": "That\u0027s a fantastic question :D\n\nI honestly don\u0027t remember... It seems very uncharacteristic of me to re-add windows-386 support... Let me poke around in bugs (which I clearly wasn\u0027t clever enough to tag here)",
+      "parentUuid": "1db4719f_e5930010",
+      "revId": "374de57e57ae4e7151f62021f14247ad272cb808",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

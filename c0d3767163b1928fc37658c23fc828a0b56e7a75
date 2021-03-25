@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9de4844_a2d3fa41",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-25T23:43:59Z",
+      "side": 1,
+      "message": "is this intentionally adding a new \u0027DEPOT_TOOLS_BOOTSTRAP_PYTHON\u0027 env var?\n\nThe existing one is \u0027DEPOT_TOOLS_BOOTSTRAP_PTYHON3\u0027 (note the \u00273\u0027 on the end).",
+      "revId": "c0d3767163b1928fc37658c23fc828a0b56e7a75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

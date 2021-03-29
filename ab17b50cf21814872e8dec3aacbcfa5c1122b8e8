@@ -16,6 +16,23 @@
       "message": "lgtm, thanks!",
       "revId": "ab17b50cf21814872e8dec3aacbcfa5c1122b8e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0edfa65f_491c7d52",
+        "filename": "vpython",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-03-29T23:10:11Z",
+      "side": 1,
+      "message": "What happens when changes are made to bootstrap_python3 and we want to trigger it to run again?",
+      "revId": "ab17b50cf21814872e8dec3aacbcfa5c1122b8e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

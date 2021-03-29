@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c80b735_e6f1fad4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000592
+      },
+      "writtenOn": "2021-03-29T18:22:19Z",
+      "side": 1,
+      "message": "For context, Tint is the WGSL implementation being used by Dawn for implementing WebGPU in Chromium.",
+      "revId": "546c2aeb51a1e2035441dce6d468c5acbb01e5b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

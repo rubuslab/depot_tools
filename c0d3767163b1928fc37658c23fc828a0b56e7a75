@@ -52,6 +52,24 @@
       "parentUuid": "249bb6ca_c4a5b55f",
       "revId": "c0d3767163b1928fc37658c23fc828a0b56e7a75",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd2069f1_c3db33e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2021-03-29T18:37:48Z",
+      "side": 1,
+      "message": "changed it to DEPOT_TOOLS_BOOTSTRAP_PYTHON3",
+      "parentUuid": "69729701_85365ffa",
+      "revId": "c0d3767163b1928fc37658c23fc828a0b56e7a75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

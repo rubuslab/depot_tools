@@ -33,6 +33,24 @@
       "message": "What happens when changes are made to bootstrap_python3 and we want to trigger it to run again?",
       "revId": "ab17b50cf21814872e8dec3aacbcfa5c1122b8e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0850626c_93002948",
+        "filename": "vpython",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-29T23:57:55Z",
+      "side": 1,
+      "message": "It\u0027s a good question, but I\u0027m not sure how often that\u0027ll come up.\n\nPresumably if it did, you could also change this logic as part of such a change, right?",
+      "parentUuid": "0edfa65f_491c7d52",
+      "revId": "ab17b50cf21814872e8dec3aacbcfa5c1122b8e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

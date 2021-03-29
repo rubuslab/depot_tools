@@ -34,6 +34,24 @@
       "parentUuid": "f9de4844_a2d3fa41",
       "revId": "c0d3767163b1928fc37658c23fc828a0b56e7a75",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69729701_85365ffa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-03-29T18:00:15Z",
+      "side": 1,
+      "message": "I guess the question is whether someone would want to use a depot_tools python3 and a system python2, and that seems kinda unlikely to me.\n\nPlus, I think (though am not positive) that the bootstrap script will fetch both binaries.\n\nSo, I\u0027d probably vote for a single env var to be used by both scripts.",
+      "parentUuid": "249bb6ca_c4a5b55f",
+      "revId": "c0d3767163b1928fc37658c23fc828a0b56e7a75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

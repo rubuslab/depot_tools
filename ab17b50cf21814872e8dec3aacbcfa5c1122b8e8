@@ -69,6 +69,24 @@
       "parentUuid": "0850626c_93002948",
       "revId": "ab17b50cf21814872e8dec3aacbcfa5c1122b8e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "093e850d_b4c49695",
+        "filename": "vpython",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-03-30T01:46:24Z",
+      "side": 1,
+      "message": "That\u0027s fair. We can certainly cross this bridge later.",
+      "parentUuid": "e0c64b00_d8fe1a43",
+      "revId": "ab17b50cf21814872e8dec3aacbcfa5c1122b8e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

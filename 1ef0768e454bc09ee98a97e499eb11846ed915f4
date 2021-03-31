@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc29749f_b8bbc306",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1200158
+      },
+      "writtenOn": "2021-03-31T23:12:27Z",
+      "side": 1,
+      "message": "This seems very similar in concept to https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2723713 which was abandoned - does this solve the problems that CL did not?",
+      "revId": "1ef0768e454bc09ee98a97e499eb11846ed915f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -80,6 +80,30 @@
       },
       "revId": "0007df2496c00f1abb0b6a411a2413098544c4eb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8779798d_211e04a0",
+        "filename": "project.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1196209
+      },
+      "writtenOn": "2021-03-31T16:36:20Z",
+      "side": 1,
+      "message": "I\u0027ll make the change",
+      "parentUuid": "4ce2bf3d_0746b491",
+      "range": {
+        "startLine": 8,
+        "startChar": 16,
+        "endLine": 8,
+        "endChar": 40
+      },
+      "revId": "0007df2496c00f1abb0b6a411a2413098544c4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

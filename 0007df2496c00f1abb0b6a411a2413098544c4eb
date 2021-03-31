@@ -39,6 +39,30 @@
       },
       "revId": "0007df2496c00f1abb0b6a411a2413098544c4eb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ce2bf3d_0746b491",
+        "filename": "project.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-03-31T06:17:47Z",
+      "side": 1,
+      "message": "Ugh, yeah, chrome-pmo has gotten kind of out of control over the years. Can you replace that in chromium-branch-committers with chrome-release-managers (just 4 people)? (And the same would probably be good for chrome-branch-committers in chrome-internal.)\n\nAlthough I\u0027m not sure I follow how \"creating the branch allows one person to unilaterally insert code into a release\". Code committed to a branch would still need to be rolled into DEPS, which would have to be approved, no?",
+      "parentUuid": "241b51cc_314a63ab",
+      "range": {
+        "startLine": 8,
+        "startChar": 16,
+        "endLine": 8,
+        "endChar": 40
+      },
+      "revId": "0007df2496c00f1abb0b6a411a2413098544c4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

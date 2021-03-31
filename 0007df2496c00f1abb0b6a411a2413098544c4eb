@@ -16,6 +16,29 @@
       "message": "Friendly ping. This is needed to unstick an old chromeos build.",
       "revId": "0007df2496c00f1abb0b6a411a2413098544c4eb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "241b51cc_314a63ab",
+        "filename": "project.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1196209
+      },
+      "writtenOn": "2021-03-31T05:50:49Z",
+      "side": 1,
+      "message": "This group contains ~40 people which is way too many. chrome-pmo is now 37 folks. This is a problem because creating the branch allows one person to unilaterally insert code into a release. We can fix this by submitting this CL but removing chrome-pmo. Or we can use another group.",
+      "range": {
+        "startLine": 8,
+        "startChar": 16,
+        "endLine": 8,
+        "endChar": 40
+      },
+      "revId": "0007df2496c00f1abb0b6a411a2413098544c4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

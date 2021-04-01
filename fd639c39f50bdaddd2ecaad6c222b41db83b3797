@@ -16,6 +16,24 @@
       "message": "led run in progress: https://chrome-swarming.appspot.com/task?id\u003d52a23d5311ff7710",
       "revId": "fd639c39f50bdaddd2ecaad6c222b41db83b3797",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62ad1464_1f7c09ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-04-01T02:20:24Z",
+      "side": 1,
+      "message": "bot_update step succeeded:\n\nhttps://logs.chromium.org/v/?s\u003dchrome%2Fled%2Fgavinmak_google.com%2Fdd7bc0985eb543f407d41062288cf71169fe450b2d331d568179b4e253772d7e%2F%2B%2Fsteps%2Fbot_update%2F0%2Fstdout",
+      "parentUuid": "735b3828_6fc3b8b6",
+      "revId": "fd639c39f50bdaddd2ecaad6c222b41db83b3797",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

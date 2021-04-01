@@ -16,6 +16,23 @@
       "message": "This will let us remove a `git clone` that takes ~10 minutes (due to the size of the git history).",
       "revId": "a5e588c76bb03b53b13cc2eb14c2f3e5c82af5f3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70b61ae4_c58a5f28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2021-04-01T23:39:35Z",
+      "side": 1,
+      "message": "Anthony is on leave so giving you a different Source reviewer.",
+      "revId": "a5e588c76bb03b53b13cc2eb14c2f3e5c82af5f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,23 @@
       "message": "ping",
       "revId": "8f76395a8041be962c0f2b7b609d190bb3755701",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccdb8c3c_990cdcd4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-04-02T18:08:40Z",
+      "side": 1,
+      "message": "Edward is OOO",
+      "revId": "8f76395a8041be962c0f2b7b609d190bb3755701",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

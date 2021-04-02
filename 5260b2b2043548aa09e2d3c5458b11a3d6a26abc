@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f44130d_1d78a4c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1105344
+      },
+      "writtenOn": "2021-04-02T21:51:51Z",
+      "side": 1,
+      "message": "Please note that it looks like this caused http://crbug.com/1195465 .\n",
+      "revId": "5260b2b2043548aa09e2d3c5458b11a3d6a26abc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

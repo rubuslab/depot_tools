@@ -16,6 +16,24 @@
       "message": "dpranke: I\u0027m unfamiliar with the python way to do this (array value in a parameter default value), and I\u0027m getting a linter warning: \"Dangerous default value [] as argument (dangerous-default-value)\" - is the linter confused, do I have a syntax error here, some other issue...?",
       "revId": "78608ca9c3f444ed8a386d84a90f4c82351c9667",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16570e2d_9ed7d845",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1784,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-06T21:31:19Z",
+      "side": 1,
+      "message": "Using `[]` as a default value is dangerous because that\u0027s actually referring to an object, not a value. So, if you were to then modify it in the function, e.g.:\n\n  if excluded_directories_relative_path \u003d\u003d []:\n    excluded_directories_relative_path.append(\"foo\")\n\nthen the next time the function is called, the value will be [\"foo\"], not [].\n\nWhich is almost certainly not you want. This is a real defect in Python.\n\nSo, never use `[]` as a default value. Set it to `None` in the declaration, and\nthen inside the function, use:\n\n  if excluded_directories_relative_path is None:\n    excluded_directories_relative_path \u003d []\n\nto give it the value you really want it to have by default (assuming `None` isn\u0027t a legal value).",
+      "parentUuid": "4cfff420_27b3f856",
+      "revId": "78608ca9c3f444ed8a386d84a90f4c82351c9667",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

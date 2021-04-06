@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eaeb495f_90fa562f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-06T02:36:56Z",
+      "side": 1,
+      "message": "lgtm assuming this is basically a copy/paste of the chromium change (I didn\u0027t verify that).\n\nApologies for not catching the comments below in the original CL/review.",
+      "revId": "b76099eea24245889280a9f7beb56f46c3900501",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25f3677a_a003de41",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1819,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-06T02:36:56Z",
+      "side": 1,
+      "message": "Are we going to assume this file is in the same location in every repo?\n\nOr should this maybe be a parameter that is (optionally) passed in?\n\nI\u0027m fine with assuming it\u0027s the same for now and changing to a parameter\nlater if needed.",
+      "revId": "b76099eea24245889280a9f7beb56f46c3900501",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ff2604a_2a3ff832",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1822,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-06T02:36:56Z",
+      "side": 1,
+      "message": "Can you just use \n\n    for in in f.splitlines():\n\n?",
+      "revId": "b76099eea24245889280a9f7beb56f46c3900501",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44524c09_027d9522",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1823,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-06T02:36:56Z",
+      "side": 1,
+      "message": "This I think can probably be `path \u003d line.split()[0]` unless you explicitly\ncare that a line with multiple consecutive spaces gets turned into an array\nwith some empty fields.",
+      "revId": "b76099eea24245889280a9f7beb56f46c3900501",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

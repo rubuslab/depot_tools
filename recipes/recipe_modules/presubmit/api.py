@@ -28,6 +28,8 @@ class PresubmitApi(recipe_api.RecipeApi):
   def __call__(self, *args, **kwargs):
     """Returns a presubmit step."""
 
+    x = 1 / 0
+    'a'.soathue
     kwargs['venv'] = True
     name = kwargs.pop('name', 'presubmit')
     with self.m.depot_tools.on_path():

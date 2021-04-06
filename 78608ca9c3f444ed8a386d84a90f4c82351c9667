@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cfff420_27b3f856",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1784,
+      "author": {
+        "id": 1121710
+      },
+      "writtenOn": "2021-04-06T21:17:23Z",
+      "side": 1,
+      "message": "dpranke: I\u0027m unfamiliar with the python way to do this (array value in a parameter default value), and I\u0027m getting a linter warning: \"Dangerous default value [] as argument (dangerous-default-value)\" - is the linter confused, do I have a syntax error here, some other issue...?",
+      "revId": "78608ca9c3f444ed8a386d84a90f4c82351c9667",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

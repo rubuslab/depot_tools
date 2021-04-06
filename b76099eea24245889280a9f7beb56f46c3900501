@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "23b905b6_8e8ca6ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1121710
+      },
+      "writtenOn": "2021-04-06T21:17:23Z",
+      "side": 1,
+      "message": "I did copy and paste, but had to tweak a couple of lines to satisfy depot_tools\u0027 PRESUBMIT.",
+      "parentUuid": "eaeb495f_90fa562f",
+      "revId": "b76099eea24245889280a9f7beb56f46c3900501",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25f3677a_a003de41",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-04-06T02:36:56Z",
       "side": 1,
       "message": "Are we going to assume this file is in the same location in every repo?\n\nOr should this maybe be a parameter that is (optionally) passed in?\n\nI\u0027m fine with assuming it\u0027s the same for now and changing to a parameter\nlater if needed.",
+      "revId": "b76099eea24245889280a9f7beb56f46c3900501",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d38ee38_0afd6575",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1819,
+      "author": {
+        "id": 1121710
+      },
+      "writtenOn": "2021-04-06T21:17:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25f3677a_a003de41",
       "revId": "b76099eea24245889280a9f7beb56f46c3900501",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -52,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "895249dd_2b73bf2b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1822,
+      "author": {
+        "id": 1121710
+      },
+      "writtenOn": "2021-04-06T21:17:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ff2604a_2a3ff832",
+      "revId": "b76099eea24245889280a9f7beb56f46c3900501",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "44524c09_027d9522",
@@ -65,6 +119,24 @@
       "writtenOn": "2021-04-06T02:36:56Z",
       "side": 1,
       "message": "This I think can probably be `path \u003d line.split()[0]` unless you explicitly\ncare that a line with multiple consecutive spaces gets turned into an array\nwith some empty fields.",
+      "revId": "b76099eea24245889280a9f7beb56f46c3900501",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53df728b_cb045271",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1823,
+      "author": {
+        "id": 1121710
+      },
+      "writtenOn": "2021-04-06T21:17:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44524c09_027d9522",
       "revId": "b76099eea24245889280a9f7beb56f46c3900501",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

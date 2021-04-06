@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a8e68b5_fda907f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-04-06T17:17:39Z",
+      "side": 1,
+      "message": "This isn\u0027t ideal, but it only affects an opt-in config (`echo mac-arm64 \u003e .cipd_client_platform`), it\u0027s temporary, and it allows us to do some work in parallel to building arm packages for these.",
+      "revId": "d8902fdfde21c670383e2e0b182b2e35bfff54a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

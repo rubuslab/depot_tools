@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c5d0c5f_15280164",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-04-07T18:29:59Z",
+      "side": 1,
+      "message": "Thanks!\n\nBased on your hints I also found https://gist.github.com/Rud5G/5604323 (note the `alias` at the top). Is that something that should work with our gerrit instance too? Maybe pointing folks at that + shell is lower overhead? But having something that works on Win too has appeal.\n\nI tried to use gerrit_client.py:\n\n```\n$ gerrit_client.py help\nUsage: gerrit_client.py \u003ccommand\u003e [options]\n\nSimple client for the Gerrit REST API.\n\nExample usage:\n  ./gerrit_client.py [command] [args]\"\"\n\nCommands are:\n  help              prints list of commands or help for a specific command\n\nOptions:\n  --version             show program\u0027s version number and exit\n  -h, --help            show this help message and exit\n  --verbose             Use 2 times for more debugging info\n  --host\u003dHOST           Url of host.\n  --project\u003dPROJECT     project name\n  --json_file\u003dJSON_FILE\n                        output json filepath\n```\n\nIt doesn\u0027t print any commands. Maybe using argparse and its subparsers is a better approach than the metraprogramming approach here? Then you get good subcommand help for free. (Or maybe I\u0027m holding it wrong.)",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd08dfa6_87aeebf0",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-04-07T18:29:59Z",
+      "side": 1,
+      "message": "Is there some way to see which changes would be affected? Like a `-n` mode, or a `query` command? (If so, maybe mention that here)",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2f82206_428cde74",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-04-07T18:29:59Z",
+      "side": 1,
+      "message": "nit: no parens",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc24263b_9f2bce37",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-04-07T18:29:59Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "220ce176_d1360a7d",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-04-07T18:29:59Z",
+      "side": 1,
+      "message": "Oh I see, it prompts first. Maybe mention that uptop in the help",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

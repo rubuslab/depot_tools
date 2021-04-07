@@ -68,7 +68,12 @@ class GerritApi(recipe_api.RecipeApi):
     revision = step_result.json.output.get('revision')
     return revision
 
-  def get_change_description(self, host, change, patchset, step_test_data=None):
+  def get_change_description(self,
+                             host,
+                             change,
+                             patchset,
+                             step_test_data=None,
+                             **kwargs):
     """Gets the description for a given CL and patchset.
 
     Args:
@@ -79,10 +84,16 @@ class GerritApi(recipe_api.RecipeApi):
     Returns:
       The description corresponding to given CL and patchset.
     """
-    ri = self.get_revision_info(host, change, patchset, step_test_data)
+    ri = self.get_revision_info(host, change, patchset, step_test_data,
+                                **kwargs)
     return ri['commit']['message']
 
-  def get_revision_info(self, host, change, patchset, step_test_data=None):
+  def get_revision_info(self,
+                        host,
+                        change,
+                        patchset,
+                        step_test_data=None,
+                        **kwargs):
     """
     Returns the info for a given patchset of a given change.
 
@@ -106,7 +117,8 @@ class GerritApi(recipe_api.RecipeApi):
                            query_params=[('change', str(change))],
                            o_params=['ALL_REVISIONS', 'ALL_COMMITS'],
                            limit=1,
-                           step_test_data=step_test_data)
+                           step_test_data=step_test_data,
+                           **kwargs)
     cl = cls[0] if len(cls) == 1 else {'revisions': {}}
     for ri in cl['revisions'].values():
       # TODO(tandrii): add support for patchset=='current'.

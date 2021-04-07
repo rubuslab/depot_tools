@@ -306,8 +306,10 @@ class TryserverApi(recipe_api.RecipeApi):
     """Fetch full commit message for Gerrit change."""
     self._ensure_gerrit_change_info()
     self._gerrit_commit_message = self.m.gerrit.get_change_description(
-        'https://%s' % self.gerrit_change.host, self.gerrit_change_number,
-        self.gerrit_patchset_number)
+        'https://%s' % self.gerrit_change.host,
+        self.gerrit_change_number,
+        self.gerrit_patchset_number,
+        timeout=600)
 
   def _get_footers(self, patch_text=None):
     if patch_text is not None:

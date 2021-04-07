@@ -16,6 +16,24 @@
       "message": "shall we update `bb` version on the bot as well?",
       "revId": "51eac66a56d972de2b4f723a4c479e0f8cbb0524",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9fd55b7_0a99ee99",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-04-07T00:15:05Z",
+      "side": 1,
+      "message": "Indeed (was stuck in meeting):\n\nhttps://chrome-internal-review.googlesource.com/c/infradata/config/+/3738652",
+      "parentUuid": "05ca1656_ea269755",
+      "revId": "51eac66a56d972de2b4f723a4c479e0f8cbb0524",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

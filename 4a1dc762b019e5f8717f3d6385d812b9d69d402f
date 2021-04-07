@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b599888d_0ac8355b",
+        "filename": "CROS_OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1005283
+      },
+      "writtenOn": "2021-04-07T23:08:01Z",
+      "side": 1,
+      "message": "Maybe drop mmortensen@ while you\u0027re at it?",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 10
+      },
+      "revId": "4a1dc762b019e5f8717f3d6385d812b9d69d402f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

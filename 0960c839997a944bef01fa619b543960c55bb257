@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f417be56_878ce011",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-04-07T19:14:22Z",
+      "side": 1,
+      "message": "I don\u0027t think it will work since our hosts don\u0027t support ssh.\n\nAck for gerrit_client.py documentation - https://bugs.chromium.org/p/chromium/issues/entry",
+      "parentUuid": "2c5d0c5f_15280164",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dd08dfa6_87aeebf0",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-04-07T18:29:59Z",
       "side": 1,
       "message": "Is there some way to see which changes would be affected? Like a `-n` mode, or a `query` command? (If so, maybe mention that here)",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34433622_cfc21ed4",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-04-07T19:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd08dfa6_87aeebf0",
       "revId": "0960c839997a944bef01fa619b543960c55bb257",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -52,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cabd629f_913f2a20",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-04-07T19:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2f82206_428cde74",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc24263b_9f2bce37",
@@ -69,6 +123,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d70d211_ee3f837f",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-04-07T19:14:22Z",
+      "side": 1,
+      "message": "Added explanation in comment. We can technically go around that by looping until this returns no CLs. However, that complicates prompts.\n\nUser can run script multiple times with the same arguments so I don\u0027t think it\u0027s worth doing much here.",
+      "parentUuid": "dc24263b_9f2bce37",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "220ce176_d1360a7d",
@@ -82,6 +154,24 @@
       "writtenOn": "2021-04-07T18:29:59Z",
       "side": 1,
       "message": "Oh I see, it prompts first. Maybe mention that uptop in the help",
+      "revId": "0960c839997a944bef01fa619b543960c55bb257",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f53ef1a2_f0c1e348",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-04-07T19:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "220ce176_d1360a7d",
       "revId": "0960c839997a944bef01fa619b543960c55bb257",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

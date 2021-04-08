@@ -56,6 +56,30 @@
       },
       "revId": "a9f41bc3f460bfddf12bc839981ea68c1b558bab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbf79d7b_7898f10c",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1338159
+      },
+      "writtenOn": "2021-04-08T20:07:59Z",
+      "side": 1,
+      "message": "gerrit does not seem to have retries.\n\n600 is mostly copied from the code in https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:recipes/recipe_modules/tryserver/api.py;drc\u003de8b56fbf3ce5ea4a32b592a6b1f9132b4ea3c250;l\u003d115\n\nI can update it to 60. You call 😊",
+      "parentUuid": "cf431f9c_ad57afe5",
+      "range": {
+        "startLine": 312,
+        "startChar": 16,
+        "endLine": 312,
+        "endChar": 19
+      },
+      "revId": "a9f41bc3f460bfddf12bc839981ea68c1b558bab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

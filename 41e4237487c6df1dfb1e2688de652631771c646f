@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "242fea19_0efdcb77",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-04-08T16:30:06Z",
+      "side": 1,
+      "message": "intent LGTM. Impl - LGTM % just add timeout\u003d",
+      "revId": "41e4237487c6df1dfb1e2688de652631771c646f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71d07b33_24ca081d",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-04-08T16:30:06Z",
+      "side": 1,
+      "message": "I understand the appeal of **kwargs, but dedicated field `timeout` is much better:\na) timeout here is clear to see via codesearch, instead of navigating 3-level call stack\nb) pylint and other tooling is more likely to catch a typo (e.g. timouet)",
+      "range": {
+        "startLine": 96,
+        "startChar": 24,
+        "endLine": 96,
+        "endChar": 32
+      },
+      "revId": "41e4237487c6df1dfb1e2688de652631771c646f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

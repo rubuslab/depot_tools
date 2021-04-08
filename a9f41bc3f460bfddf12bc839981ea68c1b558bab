@@ -16,6 +16,46 @@
       "message": "Hi Andrii,\n\nCan you take a quick look again?\n\nThanks!",
       "revId": "a9f41bc3f460bfddf12bc839981ea68c1b558bab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b3a9a9a_304f61fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-04-08T19:56:17Z",
+      "side": 1,
+      "message": "lgtm, thank you",
+      "revId": "a9f41bc3f460bfddf12bc839981ea68c1b558bab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf431f9c_ad57afe5",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-04-08T19:56:17Z",
+      "side": 1,
+      "message": "Wow, that\u0027s HUGE. Do you know if the gerrit\u0027s module underlying script performs retries? if yes, then 10minute is probably fine. If not, then IMO, this should be just 1minute.",
+      "range": {
+        "startLine": 312,
+        "startChar": 16,
+        "endLine": 312,
+        "endChar": 19
+      },
+      "revId": "a9f41bc3f460bfddf12bc839981ea68c1b558bab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

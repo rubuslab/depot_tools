@@ -80,6 +80,30 @@
       },
       "revId": "a9f41bc3f460bfddf12bc839981ea68c1b558bab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a9a2923_cdda9ff9",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-04-09T20:26:20Z",
+      "side": 1,
+      "message": "I don\u0027t have skin in the game, you do. So your call 😊\n\nMy take is that 60s is better, for both places, but having ~5 **retries** in whatever script + short ~60s timeout for each try is much much better.",
+      "parentUuid": "fbf79d7b_7898f10c",
+      "range": {
+        "startLine": 312,
+        "startChar": 16,
+        "endLine": 312,
+        "endChar": 19
+      },
+      "revId": "a9f41bc3f460bfddf12bc839981ea68c1b558bab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

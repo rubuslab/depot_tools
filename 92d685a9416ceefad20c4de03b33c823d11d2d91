@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "300ff397_0773250c",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-04-12T09:25:03Z",
+      "side": 1,
+      "message": "python_adb?",
+      "range": {
+        "startLine": 466,
+        "startChar": 26,
+        "endLine": 466,
+        "endChar": 30
+      },
+      "revId": "92d685a9416ceefad20c4de03b33c823d11d2d91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

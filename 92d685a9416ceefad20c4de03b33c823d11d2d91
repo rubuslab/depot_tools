@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "885012a4_ae49f4fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-04-12T09:32:09Z",
+      "side": 1,
+      "message": "this CL is OK % Takuto\u0027s comment, hence LGTM.\n\nHowever, the approach to fixing broken presubmit doesn\u0027t look right to me.\nPresubmit entry recipe used to support input the need to preconfigure gclient, which ought to work for python_adb which afaik doesn\u0027t have any DEPS of its own:\nSee https://source.chromium.org/chromium/chromium/tools/build/+/master:recipes/recipes/run_presubmit.py;l\u003d159;drc\u003dae30468b659d96d1965bff1e9a2b47e9b7d219f7\n\n",
+      "revId": "92d685a9416ceefad20c4de03b33c823d11d2d91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "300ff397_0773250c",

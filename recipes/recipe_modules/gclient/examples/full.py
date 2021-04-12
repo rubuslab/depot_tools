@@ -41,6 +41,7 @@ TEST_CONFIGS = [
   'devtools',
   'openscreen',
   'pdfium',
+  'python_adb',
   'recipes_py',
   'recipes_py_bare',
   'slave_deps',

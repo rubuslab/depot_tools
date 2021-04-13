@@ -457,3 +457,10 @@ def tint(c):
   soln.name = 'tint'
   soln.url = 'https://dawn.googlesource.com/tint.git'
   c.got_revision_mapping['tint'] = 'got_revision'
+
+@config_ctx()
+def python_adb(c):
+  soln = c.solutions.add()
+  soln.name = 'python-adb'
+  soln.url = 'https://chromium.googlesource.com/infra/luci/python-adb.git'
+  c.got_revision_mapping['python_adb'] = 'got_revision'

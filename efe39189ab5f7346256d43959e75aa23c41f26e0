@@ -16,6 +16,24 @@
       "message": "lgtm\nHave you given it a try?",
       "revId": "efe39189ab5f7346256d43959e75aa23c41f26e0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18b846b6_a1ecbe92",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-04-13T00:22:03Z",
+      "side": 1,
+      "message": "Yeah, it worked fine for depot_tools (git_cl.py). I\u0027ll submit it tomorrow morning.",
+      "parentUuid": "6093b201_a63135fd",
+      "revId": "efe39189ab5f7346256d43959e75aa23c41f26e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

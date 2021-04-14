@@ -53,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a96384b6_c349a00e",
+        "filename": "gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1178490
+      },
+      "writtenOn": "2021-04-14T20:54:24Z",
+      "side": 1,
+      "message": "Done in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2825446.",
+      "parentUuid": "8ed108dc_4c24aa8a",
+      "revId": "ea4e399c4d1508151f5e8d86229351d186dca424",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b4cc7cd2_a51594d1",
@@ -66,6 +84,24 @@
       "writtenOn": "2021-04-14T20:20:42Z",
       "side": 1,
       "message": "and here it should\u0027ve been %~dp0\\python-bin\\python3.bat",
+      "revId": "ea4e399c4d1508151f5e8d86229351d186dca424",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "544050a7_898dc762",
+        "filename": "gn.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1178490
+      },
+      "writtenOn": "2021-04-14T20:54:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b4cc7cd2_a51594d1",
       "revId": "ea4e399c4d1508151f5e8d86229351d186dca424",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

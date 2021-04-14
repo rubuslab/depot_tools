@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27d8b1cf_88799c60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2021-04-14T18:15:05Z",
+      "side": 1,
+      "message": "`/home/jmadill/depot_tools/autoninja: line 18: python: command not found`\n\nseems unintended?",
+      "revId": "ea4e399c4d1508151f5e8d86229351d186dca424",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

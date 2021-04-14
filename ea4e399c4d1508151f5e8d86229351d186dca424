@@ -34,6 +34,40 @@
       "parentUuid": "27d8b1cf_88799c60",
       "revId": "ea4e399c4d1508151f5e8d86229351d186dca424",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ed108dc_4c24aa8a",
+        "filename": "gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-14T20:20:42Z",
+      "side": 1,
+      "message": "Whoops. In retrospect, I should\u0027ve had you change this to $base_dir/python-bin/python3 instead.",
+      "revId": "ea4e399c4d1508151f5e8d86229351d186dca424",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4cc7cd2_a51594d1",
+        "filename": "gn.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-14T20:20:42Z",
+      "side": 1,
+      "message": "and here it should\u0027ve been %~dp0\\python-bin\\python3.bat",
+      "revId": "ea4e399c4d1508151f5e8d86229351d186dca424",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

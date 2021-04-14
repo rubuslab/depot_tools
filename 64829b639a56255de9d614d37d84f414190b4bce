@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bfa10ca0_4f844ff7",
+        "filename": "download_from_google_storage",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-14T20:18:57Z",
+      "side": 1,
+      "message": "We should move to referencing the pinned/bundled versions of python in depot_tools\nnow, rather than relying on it being in PATH.\n\nIn this case, this is $base_dir/python-bin/python3.",
+      "revId": "64829b639a56255de9d614d37d84f414190b4bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "79028339_96ec553c",
         "filename": "download_from_google_storage.bat",
         "patchSetId": 2
@@ -14,6 +31,30 @@
       "writtenOn": "2021-04-14T18:37:44Z",
       "side": 1,
       "message": "is python3 going to be in the path on Windows? I\u0027d guess not.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 7
+      },
+      "revId": "64829b639a56255de9d614d37d84f414190b4bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5040dedd_1cbe5c83",
+        "filename": "download_from_google_storage.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-14T20:18:57Z",
+      "side": 1,
+      "message": "and in this case, %dp0\\python-bin\\python.bat",
+      "parentUuid": "79028339_96ec553c",
       "range": {
         "startLine": 12,
         "startChar": 0,

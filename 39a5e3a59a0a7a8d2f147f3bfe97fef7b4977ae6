@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6b342c0_fcf06688",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-04-14T15:30:39Z",
+      "side": 1,
+      "message": "Please note that you\u0027ll also have to update these two https://chrome-internal.googlesource.com/infradata/config/+/master/configs/cr-buildbucket/settings.cfg#64",
+      "revId": "39a5e3a59a0a7a8d2f147f3bfe97fef7b4977ae6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

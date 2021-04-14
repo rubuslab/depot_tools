@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "141f93e6_c2e0e1c0",
+        "filename": "download_from_google_storage",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1178490
+      },
+      "writtenOn": "2021-04-14T20:48:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfa10ca0_4f844ff7",
+      "revId": "64829b639a56255de9d614d37d84f414190b4bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79028339_96ec553c",
@@ -55,6 +73,30 @@
       "side": 1,
       "message": "and in this case, %dp0\\python-bin\\python.bat",
       "parentUuid": "79028339_96ec553c",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 7
+      },
+      "revId": "64829b639a56255de9d614d37d84f414190b4bce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "509d6b3c_f98642ca",
+        "filename": "download_from_google_storage.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1178490
+      },
+      "writtenOn": "2021-04-14T20:48:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5040dedd_1cbe5c83",
       "range": {
         "startLine": 12,
         "startChar": 0,

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd6a4e05_f900e460",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-14T15:54:09Z",
+      "side": 1,
+      "message": "This, while also fine, likely doesn\u0027t do what you really want (change what GN is using).\n\nYou need to add a `script_executable \u003d \"python3\"` line to //.gn, as I did in\n\nhttps://crrev.com/c/2824170\n\nBut, it\u0027s still a good change to make, so I\u0027m approving it :).",
+      "revId": "0fa8e6deab8a1903ba817739a07da2d0f63848ac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

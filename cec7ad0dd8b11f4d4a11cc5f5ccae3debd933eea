@@ -33,6 +33,23 @@
       "message": "Confirmed this works for me on Windows.",
       "revId": "cec7ad0dd8b11f4d4a11cc5f5ccae3debd933eea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a907c36_8922f490",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2021-04-14T18:42:15Z",
+      "side": 1,
+      "message": "Alternately, it could invoke python3.bat on Windows.",
+      "revId": "cec7ad0dd8b11f4d4a11cc5f5ccae3debd933eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

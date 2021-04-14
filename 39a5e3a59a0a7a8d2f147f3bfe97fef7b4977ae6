@@ -16,6 +16,24 @@
       "message": "Please note that you\u0027ll also have to update these two https://chrome-internal.googlesource.com/infradata/config/+/master/configs/cr-buildbucket/settings.cfg#64",
       "revId": "39a5e3a59a0a7a8d2f147f3bfe97fef7b4977ae6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "259cb2d2_17731338",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1275796
+      },
+      "writtenOn": "2021-04-14T23:53:46Z",
+      "side": 1,
+      "message": "Thanks, I never remember where to find that file.",
+      "parentUuid": "e6b342c0_fcf06688",
+      "revId": "39a5e3a59a0a7a8d2f147f3bfe97fef7b4977ae6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

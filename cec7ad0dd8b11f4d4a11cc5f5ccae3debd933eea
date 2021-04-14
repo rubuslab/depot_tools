@@ -16,6 +16,23 @@
       "message": "An experiment for right now, haven\u0027t tested on Win yet.",
       "revId": "cec7ad0dd8b11f4d4a11cc5f5ccae3debd933eea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "567e9384_4088b320",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2021-04-14T18:40:53Z",
+      "side": 1,
+      "message": "Confirmed this works for me on Windows.",
+      "revId": "cec7ad0dd8b11f4d4a11cc5f5ccae3debd933eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

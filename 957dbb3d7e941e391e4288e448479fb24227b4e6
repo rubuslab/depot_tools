@@ -33,6 +33,23 @@
       "message": "+dpranke for OWNERS approval",
       "revId": "957dbb3d7e941e391e4288e448479fb24227b4e6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "843592f4_51c95324",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2021-04-15T14:55:17Z",
+      "side": 1,
+      "message": "Thanks for fixing. Sorry for the inconvenience.",
+      "revId": "957dbb3d7e941e391e4288e448479fb24227b4e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

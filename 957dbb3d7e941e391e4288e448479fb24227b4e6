@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "741c4e67_d06ecf88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2021-04-15T10:26:26Z",
+      "side": 1,
+      "message": "Please take a look.\n\nAlso note that I\u0027ve only tested this on macOS and Linux. I expect it to work on Windows, but I would prefer if someone with access to a Windows machine could test.",
+      "revId": "957dbb3d7e941e391e4288e448479fb24227b4e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

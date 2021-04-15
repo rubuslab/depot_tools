@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "266bf569_174b9238",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-15T01:53:47Z",
+      "side": 1,
+      "message": "Let\u0027s not land this yet. See https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1199104#c4 ; \nwe need to ensure that depot_tools is properly bootstrapped and python-bin/python3 actually exists before invoking it.",
+      "revId": "b8ebfb1463f629e584a0e6975ca428611ba78554",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

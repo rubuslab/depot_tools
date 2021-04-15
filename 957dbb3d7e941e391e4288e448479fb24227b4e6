@@ -50,6 +50,23 @@
       "message": "Thanks for fixing. Sorry for the inconvenience.",
       "revId": "957dbb3d7e941e391e4288e448479fb24227b4e6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f88df9b_41d9b4d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-15T15:32:45Z",
+      "side": 1,
+      "message": "Thanks for the fix!",
+      "revId": "957dbb3d7e941e391e4288e448479fb24227b4e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

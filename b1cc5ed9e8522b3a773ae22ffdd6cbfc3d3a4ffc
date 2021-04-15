@@ -34,6 +34,24 @@
       "parentUuid": "2580d897_84286250",
       "revId": "b1cc5ed9e8522b3a773ae22ffdd6cbfc3d3a4ffc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b37265c7_913d5f82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2021-04-15T00:47:36Z",
+      "side": 1,
+      "message": "Looks like the bots are green. Thanks for pushing the revert through.",
+      "parentUuid": "1bd5ca49_f797e08d",
+      "revId": "b1cc5ed9e8522b3a773ae22ffdd6cbfc3d3a4ffc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

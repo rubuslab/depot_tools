@@ -16,6 +16,24 @@
       "message": "Bots are still trying to use Python3, e.g. https://ci.chromium.org/ui/p/chromium/builders/ci/mac-archive-rel/20334/overview\n\nAny idea how to get bots to update their depot_tools? Is there a roll that needs to happen?",
       "revId": "b1cc5ed9e8522b3a773ae22ffdd6cbfc3d3a4ffc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bd5ca49_f797e08d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2021-04-15T00:42:53Z",
+      "side": 1,
+      "message": "e.g. Is https://chromium-review.googlesource.com/c/chromium/tools/build/+/2826698/ what should fix the bots?",
+      "parentUuid": "2580d897_84286250",
+      "revId": "b1cc5ed9e8522b3a773ae22ffdd6cbfc3d3a4ffc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

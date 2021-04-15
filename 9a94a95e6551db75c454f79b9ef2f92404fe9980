@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4041e78b_e4419ff6",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-04-15T20:56:13Z",
+      "side": 0,
+      "message": "This modifies refs argument, but it shouldn\u0027t because refs is being used later on to call gclient sync.\nIt should only remove it from the populate_cmd command, not the gclient sync command.\n\nrant:\nbot_update is very convoluted, so it\u0027s hard to follow along. Also, there is both with_tags and no_fetch_tags, and they can be used at the same time, which makes no sense.",
+      "range": {
+        "startLine": 714,
+        "startChar": 0,
+        "endLine": 716,
+        "endChar": 0
+      },
+      "revId": "9a94a95e6551db75c454f79b9ef2f92404fe9980",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

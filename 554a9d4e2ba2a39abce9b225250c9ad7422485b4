@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fed18c9e_f55a5fbd",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-04-16T21:56:06Z",
+      "side": 1,
+      "message": "is this supposed to be subprocess.check_call or something? since self.git_exe is in the args",
+      "range": {
+        "startLine": 456,
+        "startChar": 10,
+        "endLine": 456,
+        "endChar": 22
+      },
+      "revId": "554a9d4e2ba2a39abce9b225250c9ad7422485b4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d83a9d0_bf6acca7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-16T23:41:00Z",
+      "side": 1,
+      "message": "@sokcevic, @ehmaldonado - Please both review and let me know what you think?",
+      "revId": "38b71d1210e9608ebf54168bd2069a93370e371c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

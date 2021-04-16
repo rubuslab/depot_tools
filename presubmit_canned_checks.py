@@ -7,6 +7,8 @@
 from __future__ import print_function
 
 import os as _os
+import sys
+
 from warnings import warn
 _HERE = _os.path.dirname(_os.path.abspath(__file__))
 
@@ -1847,4 +1849,3 @@ def CheckInclusiveLanguage(input_api, output_api,
         output_api.PresubmitError('Banned non-inclusive language was used.\n' +
                                   '\n'.join(errors)))
   return result
-

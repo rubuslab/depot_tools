@@ -1321,6 +1321,22 @@ class Changelist(object):
     if all_files:
       args.append('--all_files')
 
+    if resultdb and  not realm:
+      # TODO (crbug.com/1113463): store realm somewhere and look it up so
+      # it is not required to pass the realm flag
+      print('Note: ResultDB reporting will NOT be performed because --realm'
+            ' was not specified. To enable ResultDB, please run the command'
+            ' again with the --realm argument to specify the LUCI realm.')
+
+    py2_results = self._RunPresubmit(args, resultdb, realm, description,
+                                     use_python3=False)
+    py3_results = self._RunPresubmit(args, resultdb, realm, description,
+                                     use_python3=True)
+    return self._MergePresubmitResults(py2_results, py3_results)
+
+  def _RunPresubmit(self, args, resultdb, realm, description, use_python3):
+    vpython = 'vpython3' if use_python3 else 'vpython'
+
     with gclient_utils.temporary_file() as description_file:
       with gclient_utils.temporary_file() as json_output:
         gclient_utils.FileWrite(description_file, description)
@@ -1328,15 +1344,9 @@ class Changelist(object):
         args.extend(['--description_file', description_file])
 
         start = time_time()
-        cmd = ['vpython', PRESUBMIT_SUPPORT] + args
+        cmd = [vpython, PRESUBMIT_SUPPORT] + args
         if resultdb and realm:
           cmd = ['rdb', 'stream', '-new', '-realm', realm, '--'] + cmd
-        elif resultdb:
-          # TODO (crbug.com/1113463): store realm somewhere and look it up so
-          # it is not required to pass the realm flag
-          print('Note: ResultDB reporting will NOT be performed because --realm'
-                ' was not specified. To enable ResultDB, please run the command'
-                ' again with the --realm argument to specify the LUCI realm.')
 
         p = subprocess2.Popen(cmd)
         exit_code = p.wait()
@@ -1352,6 +1362,9 @@ class Changelist(object):
 
         json_results = gclient_utils.FileRead(json_output)
         return json.loads(json_results)
+
+  def _MergePresubmitResults(self, py2_results, py3_results):
+    return { k: py2_results[k] + py3_results[k] for k in py2_results}
 
   def RunPostUploadHook(self, verbose, upstream, description):
     args = self._GetCommonPresubmitArgs(verbose, upstream)

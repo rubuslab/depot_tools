@@ -85,7 +85,7 @@ def _QueryString(params, first_param=None):
   https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#list-changes
   """
   q = [urllib.parse.quote(first_param)] if first_param else []
-  q.extend(['%s:%s' % (key, val) for key, val in params])
+  q.extend(['%s:%s' % (key, val.replace(" ", "+")) for key, val in params])
   return '+'.join(q)
 
 
@@ -523,6 +523,7 @@ def QueryChanges(host, params, first_param=None, limit=None, o_params=None,
   if not params and not first_param:
     raise RuntimeError('QueryChanges requires search parameters')
   path = 'changes/?q=%s' % _QueryString(params, first_param)
+  print(path)
   if start:
     path = '%s&start=%s' % (path, start)
   if limit:

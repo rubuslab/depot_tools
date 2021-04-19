@@ -16,6 +16,23 @@
       "message": "Edward or Dirk PTAL",
       "revId": "27416751fcf082958bf2ce57bfa0df8c5766d0ce",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2b5ed0d_4085fafa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2021-04-19T13:45:37Z",
+      "side": 1,
+      "message": "Or Andrii.. PTAL",
+      "revId": "27416751fcf082958bf2ce57bfa0df8c5766d0ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -18,6 +18,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2dfdea7_19ceaca1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-20T00:48:40Z",
+      "side": 1,
+      "message": "Thanks for the feedback! I think I\u0027ve addressed everything. Please take another look?",
+      "revId": "38b71d1210e9608ebf54168bd2069a93370e371c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be3d048b_4172a8e3",
@@ -31,6 +48,30 @@
       "writtenOn": "2021-04-19T22:32:04Z",
       "side": 1,
       "message": "This was as bit hard to read (as we expect exception in USE_PYTHON3 if is not defined).\n\nPerhaps we use this:\n\n  if \u0027USE_PYTHON3\u0027 in globals():\n    results.append(output_api.PresubmitError(\n        \u0027USE_PYTHON3 is defined; update the tests in //PRESUBMIT.py and \u0027\n        \u0027//tests/PRESUBMIT.py.\u0027))\n  elif sys.version_info.major !\u003d 2:\n      results.append(output_api.PresubmitError(\n          \u0027Did not use Python2 for //PRESUBMIT.py by default.\u0027))",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 64
+      },
+      "revId": "38b71d1210e9608ebf54168bd2069a93370e371c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d8c58ab_d394bd63",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-20T00:48:40Z",
+      "side": 1,
+      "message": "Ah, I didn\u0027t think about using `globals()` (I never think about globals ;).\n\nGood idea.",
+      "parentUuid": "be3d048b_4172a8e3",
       "range": {
         "startLine": 75,
         "startChar": 0,
@@ -64,6 +105,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "adf3bcca_2d1d8885",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1324,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-20T00:48:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7c06d3a_2d3b7eb2",
+      "range": {
+        "startLine": 1324,
+        "startChar": 20,
+        "endLine": 1324,
+        "endChar": 21
+      },
+      "revId": "38b71d1210e9608ebf54168bd2069a93370e371c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e4a78c56_0778237b",
@@ -77,6 +142,30 @@
       "writtenOn": "2021-04-19T23:07:24Z",
       "side": 1,
       "message": "Why is this needed?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 10
+      },
+      "revId": "38b71d1210e9608ebf54168bd2069a93370e371c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acab64c4_f4a2750a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-20T00:48:40Z",
+      "side": 1,
+      "message": "It\u0027s not. I think I needed it at some point during development, but good catch.",
+      "parentUuid": "e4a78c56_0778237b",
       "range": {
         "startLine": 10,
         "startChar": 0,
@@ -110,6 +199,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f03f094_14a7c22a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1569,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-20T00:48:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61e8b52f_7f4b072e",
+      "range": {
+        "startLine": 1569,
+        "startChar": 71,
+        "endLine": 1569,
+        "endChar": 72
+      },
+      "revId": "38b71d1210e9608ebf54168bd2069a93370e371c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8b514a82_6fca0cac",
@@ -127,6 +240,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "52d63f07_1794a5e6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1725,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-20T00:48:40Z",
+      "side": 1,
+      "message": "Good idea, done.",
+      "parentUuid": "8b514a82_6fca0cac",
+      "revId": "38b71d1210e9608ebf54168bd2069a93370e371c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c944dab0_1f94facd",
@@ -140,6 +271,24 @@
       "writtenOn": "2021-04-19T22:32:04Z",
       "side": 1,
       "message": "add\n\n  self.assertEqual(2, subprocess2.Popen.called_count)",
+      "revId": "38b71d1210e9608ebf54168bd2069a93370e371c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4e52a33_23b4fe0f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3084,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-20T00:48:40Z",
+      "side": 1,
+      "message": "I didn\u0027t really want to do that because it feels like over-specifying the test, but I can add that if you think it\u0027s critical for correctness.",
+      "parentUuid": "c944dab0_1f94facd",
       "revId": "38b71d1210e9608ebf54168bd2069a93370e371c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

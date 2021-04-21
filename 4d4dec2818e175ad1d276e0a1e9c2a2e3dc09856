@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "585a8cc4_3b21c6d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-04-21T15:31:06Z",
+      "side": 1,
+      "message": "I guess this is fine, but doesn\u0027t setting $VPYTHON_BYPASS work in this case?",
+      "revId": "4d4dec2818e175ad1d276e0a1e9c2a2e3dc09856",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "ping?",
       "revId": "de7eb20d357ea4ad5973c1e1031fb5d9d4e163d3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60951613_5482e523",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-04-22T16:24:26Z",
+      "side": 1,
+      "message": "Apologies for delay, missed your newest patchset somehow",
+      "revId": "de7eb20d357ea4ad5973c1e1031fb5d9d4e163d3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

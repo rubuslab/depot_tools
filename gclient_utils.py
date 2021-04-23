@@ -32,11 +32,13 @@ if sys.version_info.major == 2:
   import collections as collections_abc
   import Queue as queue
   import urlparse
+  from urllib import quote_plus
 else:
   from collections import abc as collections_abc
   from io import StringIO
   import queue
   import urllib.parse as urlparse
+  from urllib.parse import quote_plus
 
 
 RETRY_MAX = 3
@@ -109,6 +111,15 @@ def SplitUrlRevision(url):
     if len(components) == 1:
       components += [None]
   return tuple(components)
+
+
+def EncodeUrlPath(url):
+  """Encodes the path of url."""
+  parsed = urlparse.urlparse(url)
+  path = parsed.path
+  if path.startswith('/'):
+    path = path[1:]
+  return parsed._replace(path=quote_plus(path)).geturl()
 
 
 def IsGitSha(revision):

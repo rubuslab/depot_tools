@@ -870,8 +870,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
     It looks first for the URL of this dependency in the list of
     candidates. If it doesn't succeed, and the URL ends in '.git', it will try
-    looking for the URL minus '.git'. Finally it will try to look for the name
-    of the dependency.
+    looking for the URL minus '.git'. If neither succeeds, it does the previous
+    checks but with the URL path encoded. Finally it will try to look for the
+    name of the dependency.
 
     Args:
       candidates: list, dict. The list of candidates in which to look for this
@@ -881,18 +882,23 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     Returns:
       If this dependency is not found in the list of candidates, returns None.
       Otherwise, it returns under which name did we find this dependency:
-       - Its parsed url: "https://example.com/src.git'
-       - Its parsed url minus '.git': "https://example.com/src"
+       - Its parsed url: "https://example.com/src/foo.git'
+       - Its parsed url minus '.git': "https://example.com/src/foo"
+       - Its parsed, encoded url: "https://example.com/src%2Ffoo.git'
+       - Its parsed, encoded url minus '.git': "https://example.com/src%2Ffoo"
        - Its name: "src"
     """
     if self.url:
       origin, _ = gclient_utils.SplitUrlRevision(self.url)
-      if origin in candidates:
-        return origin
-      if origin.endswith('.git') and origin[:-len('.git')] in candidates:
-        return origin[:-len('.git')]
-      if origin + '.git' in candidates:
-        return origin + '.git'
+      origin_encoded = gclient_utils.EncodeUrlPath(origin)
+      candidate_set = set([origin, origin_encoded])
+      for c in candidate_set:
+        if c in candidates:
+          return c
+        if c.endswith('.git') and c[:-len('.git')] in candidates:
+          return c[:-len('.git')]
+        if c + '.git' in candidates:
+          return c + '.git'
     if self.name in candidates:
       return self.name
     return None

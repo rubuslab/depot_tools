@@ -1354,6 +1354,27 @@ class GclientTest(trial_dir.TestCase):
         foo_sol.FuzzyMatchUrl(['https://example.com/foo.git', 'foo'])
     )
 
+  def testFuzzyMatchUrlByURLEncoded(self):
+    write(
+        '.gclient',
+        'solutions = [\n'
+        '  { "name": "foo", "url": "https://example.com/foo/bar.git",\n'
+        '    "deps_file" : ".DEPS.git",\n'
+        '  },\n'
+          ']')
+    write(
+        os.path.join('foo', 'DEPS'),
+        'deps = {\n'
+        '  "bar": "https://example.com/bar.git@bar_version",\n'
+        '}')
+    options, _ = gclient.OptionParser().parse_args([])
+    obj = gclient.GClient.LoadCurrentConfig(options)
+    foo_sol = obj.dependencies[0]
+    self.assertEqual(
+        'https://example.com/foo%2Fbar.git',
+        foo_sol.FuzzyMatchUrl(['https://example.com/foo%2Fbar.git', 'foo'])
+    )
+
   def testFuzzyMatchUrlByURLNoGit(self):
     write(
         '.gclient',
@@ -1373,6 +1394,27 @@ class GclientTest(trial_dir.TestCase):
     self.assertEqual(
         'https://example.com/foo',
         foo_sol.FuzzyMatchUrl(['https://example.com/foo', 'foo'])
+    )
+
+  def testFuzzyMatchUrlByURLEncodedNoGit(self):
+    write(
+        '.gclient',
+        'solutions = [\n'
+        '  { "name": "foo", "url": "https://example.com/foo/bar.git",\n'
+        '    "deps_file" : ".DEPS.git",\n'
+        '  },\n'
+          ']')
+    write(
+        os.path.join('foo', 'DEPS'),
+        'deps = {\n'
+        '  "bar": "https://example.com/bar.git@bar_version",\n'
+        '}')
+    options, _ = gclient.OptionParser().parse_args([])
+    obj = gclient.GClient.LoadCurrentConfig(options)
+    foo_sol = obj.dependencies[0]
+    self.assertEqual(
+        'https://example.com/foo%2Fbar',
+        foo_sol.FuzzyMatchUrl(['https://example.com/foo%2Fbar', 'foo'])
     )
 
   def testFuzzyMatchUrlByName(self):

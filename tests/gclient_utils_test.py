@@ -290,6 +290,22 @@ class SplitUrlRevisionTestCase(unittest.TestCase):
     self.assertEqual(out_url, url)
 
 
+class EncodeUrlPathTestCase(unittest.TestCase):
+  def testUrl(self):
+    self.assertEqual(
+      gclient_utils.EncodeUrlPath("https://foo-bar.com/c/test-this/here.git"),
+      "https://foo-bar.com/c%2Ftest-this%2Fhere.git")
+    self.assertEqual(
+      gclient_utils.EncodeUrlPath("https://foo-bar.com/baz"),
+      "https://foo-bar.com/baz")
+    self.assertEqual(
+      gclient_utils.EncodeUrlPath("https://foo-bar.com"),
+      "https://foo-bar.com")
+    self.assertEqual(
+      gclient_utils.EncodeUrlPath("http://foo-bar.com"),
+      "http://foo-bar.com")
+
+
 class GClientUtilsTest(trial_dir.TestCase):
   def testHardToDelete(self):
     # Use the fact that tearDown will delete the directory to make it hard to do

@@ -34,6 +34,24 @@
       "parentUuid": "f40a9b3f_f22aa206",
       "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2147ac7b_fc3dc918",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-04-26T20:30:46Z",
+      "side": 1,
+      "message": "Here\u0027s one without changes in gclient/gclient_utils: https://luci-milo.appspot.com/raw/build/logs.chromium.org/infra/led/gavinmak_google.com/d5fb5ca82cfb49a67a31af7b885c511dc874ac984bbfeb58d47e3229788df337/+/build.proto\n\nThe issue is that in gclient, the patch_ref for the change in question needs to be applied otherwise bot_update fails. Somewhere along the way, the URL\n```\nhttps://chromium-review.googlesource.com/infra/gerrit-plugins/tricium.git\n```\nset in gclient/config.py becomes \n```\nhttps://chromium-review.googlesource.com/infra%2Fgerrit-plugins%2Ftricium.git\n```\ninside patch_refs here[1]. At this line, URL1 is used to look inside patch_refs but only URL2 is present, leading bot_update to fail with a \"patch_refs not applied\" error.\n\nI know that the --patch_ref URL passed in to bot_update is encoded, but I haven\u0027t been able to find where this step occurs.\n\n[1]https://source.chromium.org/chromium/chromium/src/+/master:third_party/depot_tools/gclient.py;l\u003d929;drc\u003df6b414c57847249036ae4e6ea15d8ffe37e14cbe",
+      "parentUuid": "10f84732_31b9cfe4",
+      "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -106,6 +106,24 @@
       "parentUuid": "2215267e_e5b94fc9",
       "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6074803a_a0d5d509",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-04-27T21:14:26Z",
+      "side": 1,
+      "message": "Turns out it was because of the checks ui, the choose tryjobs button is broken but should be ok after https://crrev.com/c/2855011\n\nThat run works without the gclient changes: https://luci-milo.appspot.com/raw/build/logs.chromium.org/infra/led/gavinmak_google.com/db8b6ef265d43946a852431ce47e6b69c18b2d7ebfa1af83871f51b03759e584/+/build.proto\n\nBTW this change should be good to move forward. I\u0027ll create followup changes in infra/infra to move off of the presubmit recipe in depot_tools",
+      "parentUuid": "86be7680_cb5c032f",
+      "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

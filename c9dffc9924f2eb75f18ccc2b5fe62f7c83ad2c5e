@@ -142,6 +142,24 @@
       "parentUuid": "6074803a_a0d5d509",
       "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "048623c5_a6e88e8f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-04-27T21:46:10Z",
+      "side": 1,
+      "message": "This change[1] configured the Gerrit Plugins Presubmit builder to use the presubmit recipe and presubmit_support.py in depot_tools[2]. I\u0027ll need to make some changes to the builder configs to use a new recipe in infra/infra for gerrit plugins instead\n\n[1]https://crrev.com/c/2845215\n[2]https://logs.chromium.org/logs/infra/led/gavinmak_google.com/5c6660b1f57cc8ff456277617b2edb46779c7629959c4cdfda367f8c1ecf26ed/+/u/presubmit/stdout",
+      "parentUuid": "b93e1309_2d0bb8aa",
+      "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

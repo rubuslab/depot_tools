@@ -124,6 +124,24 @@
       "parentUuid": "86be7680_cb5c032f",
       "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b93e1309_2d0bb8aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-04-27T21:36:30Z",
+      "side": 1,
+      "message": "I\u0027m curious, what do you mean with \"followup changes in infra/infra to move off of the presubmit recipe in depot_tools\"",
+      "parentUuid": "6074803a_a0d5d509",
+      "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -88,6 +88,24 @@
       "parentUuid": "cc240b74_cf6be3be",
       "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86be7680_cb5c032f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-04-27T03:18:07Z",
+      "side": 1,
+      "message": "I retrigger try job and it has correct project name this time:\n\nhttps://logs.chromium.org/logs/infra/buildbucket/cr-buildbucket.appspot.com/8848831941568098544/+/u/setup_build/run_recipe\n\nI don\u0027t know what caused it to be escaped in your attempt. Perhaps a bad LUCI deploy? Could you try led test without gclient change on build 8848831941568098544?",
+      "parentUuid": "2215267e_e5b94fc9",
+      "revId": "c9dffc9924f2eb75f18ccc2b5fe62f7c83ad2c5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -366,8 +366,7 @@ def call_gclient(*args, **kwargs):
   """
   cmd = [sys.executable, '-u', GCLIENT_PATH]
   cmd.extend(args)
-  # Disable metrics collection on bots, since it's not supported anyway.
-  kwargs.setdefault('env', {})['DEPOT_TOOLS_METRICS'] = '0'
+  kwargs.setdefault('env', {})['DEPOT_TOOLS_REPORT_BUILD'] = 'project/bucked/bulider/build'
   return call(*cmd, **kwargs)
 
 

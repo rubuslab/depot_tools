@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9308f284_86850ba0",
+        "filename": "upload_metrics.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-04-29T00:56:14Z",
+      "side": 1,
+      "message": "Is this the right way to do authentication?\nWhen I look at the log from https://chromium-review.googlesource.com/c/infra/infra/+/2851353 it says id is anonymous:anonymous.\n(From a led run http://shortn/_gP9O2ogNSU based off https://cr-buildbucket.appspot.com/build/8848672482150862128)\n\n(this gets a token from luci-auth, fyi https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:auth.py;l\u003d155)",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 20,
+        "endChar": 52
+      },
+      "revId": "c606bca76e7bb7ac7bc4971705c11cf3a0b4e440",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

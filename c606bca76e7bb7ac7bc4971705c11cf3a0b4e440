@@ -22,6 +22,30 @@
       },
       "revId": "c606bca76e7bb7ac7bc4971705c11cf3a0b4e440",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4767369d_5e8c620b",
+        "filename": "upload_metrics.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-04-29T20:13:02Z",
+      "side": 1,
+      "message": "getting token is correct.\nheaders look right to me.\n\nthere can be 2 reasons for anonymous:\n  a) swarming task was run w/o task service account configured.\n  b) your metrics server doesn\u0027t set up auth stack\n\n\nGiven that your led link contains a dump of some Bearer token, I think it\u0027s not (a).\n Btw, it\u0027s a good thing that these tokens are short lived, though in general prefer not to dump the token to stdout.\n\nSo, I think it\u0027s (b).\n\n\nBTW, you don\u0027t need to run this under led.\nYou can run simulate bot env like this:\n\n$ luci-auth context -- bash\n$ vpython send_metric.py ....",
+      "parentUuid": "9308f284_86850ba0",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 20,
+        "endChar": 52
+      },
+      "revId": "c606bca76e7bb7ac7bc4971705c11cf3a0b4e440",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

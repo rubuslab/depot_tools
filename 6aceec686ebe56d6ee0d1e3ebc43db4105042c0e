@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65ecc2ce_5960ff0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1176519
+      },
+      "writtenOn": "2021-04-30T11:13:32Z",
+      "side": 1,
+      "message": "could you add a test to tests/git_cl_test.py please?",
+      "revId": "6aceec686ebe56d6ee0d1e3ebc43db4105042c0e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

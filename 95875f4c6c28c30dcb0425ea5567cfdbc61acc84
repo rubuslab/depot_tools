@@ -16,6 +16,23 @@
       "message": "These files don\u0027t intentionally have windows line endings, right?",
       "revId": "95875f4c6c28c30dcb0425ea5567cfdbc61acc84",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01324659_3f7430e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-03T20:17:32Z",
+      "side": 1,
+      "message": "and another redirect 😊",
+      "revId": "95875f4c6c28c30dcb0425ea5567cfdbc61acc84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

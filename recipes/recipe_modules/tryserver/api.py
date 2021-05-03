@@ -305,6 +305,8 @@ class TryserverApi(recipe_api.RecipeApi):
 
   def _ensure_gerrit_commit_message(self):
     """Fetch full commit message for Gerrit change."""
+    if self._gerrit_commit_message is not None:
+      return
     self._ensure_gerrit_change_info()
     self._gerrit_commit_message = self.m.gerrit.get_change_description(
         'https://%s' % self.gerrit_change.host,

@@ -192,6 +192,13 @@ def GenTests(api):
       api.properties(gerrit_no_rebase_patch_ref=True)
   )
   yield (
+      api.test('tryjob_experimental_commit_msg') +
+      try_build() +
+      api.step_data(
+          'parse description',
+          api.json.output({'Bot-Update-Experimental': ['true']}))
+  )
+  yield (
       api.test('tryjob_v8') +
       try_build(git_repo='https://chromium.googlesource.com/v8/v8') +
        api.properties(revisions={'src/v8': 'abc'})

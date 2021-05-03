@@ -215,6 +215,7 @@ def rebase_branch(branch, parent, start_hash):
 
   git.remove_merge_base(branch)
   git.get_or_create_merge_base(branch)
+  git.run('gc', '--auto')
 
   return True
 

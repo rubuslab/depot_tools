@@ -35,6 +35,7 @@ class TryserverApi(recipe_api.RecipeApi):
     self._gerrit_change_fetch_ref = None
     self._gerrit_change_owner = None
     self._change_footers = None
+    self._change_footers_initialized = False
     self._gerrit_commit_message = None
 
   def initialize(self):
@@ -315,11 +316,12 @@ class TryserverApi(recipe_api.RecipeApi):
   def _get_footers(self, patch_text=None):
     if patch_text is not None:
       return self._get_footer_step(patch_text)
-    if self._change_footers:  #pragma: nocover
+    if self._change_footers_initialized:
       return self._change_footers
     if self.gerrit_change:
       self._ensure_gerrit_commit_message()
       self._change_footers = self._get_footer_step(self._gerrit_commit_message)
+      self._change_footers_initialized = True
       return self._change_footers
     raise "No patch text or associated changelist, cannot get footers"  #pragma: nocover
 

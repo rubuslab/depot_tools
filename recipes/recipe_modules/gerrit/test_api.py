@@ -8,9 +8,14 @@ from recipe_engine import recipe_test_api
 class GerritTestApi(recipe_test_api.RecipeTestApi):
 
   @staticmethod
-  def _gerrit_change_data(change_number=91827, patchset=1, **kwargs):
+  def _gerrit_change_data(
+      change_number=91827,
+      patchset=1,
+      commit_msg=None,
+      **kwargs):
     # Exemplary change. Note: This contains only a subset of the key/value pairs
     # present in production to limit recipe simulation output.
+    commit_msg = commit_msg or 'Change commit message'
     data = {
         'status': 'NEW',
         'created': '2017-01-30 13:11:20.000000000',
@@ -24,7 +29,7 @@ class GerritTestApi(recipe_test_api.RecipeTestApi):
             '184ebe53805e102605d11f6b143486d15c23a09c': {
                 '_number': str(patchset),
                 'commit': {
-                    'message': 'Change commit message',
+                    'message': commit_msg,
                 },
             },
         },

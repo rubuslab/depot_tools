@@ -327,7 +327,8 @@ class TryserverApi(recipe_api.RecipeApi):
     result = self.m.python(
         'parse description', self.repo_resource('git_footers.py'),
         args=['--json', self.m.json.output()],
-        stdin=self.m.raw_io.input(data=patch_text))
+        stdin=self.m.raw_io.input(data=patch_text),
+        step_test_data=None)
     return result.json.output
 
   def get_footer(self, tag, patch_text=None):

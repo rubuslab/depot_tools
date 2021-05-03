@@ -1028,6 +1028,7 @@ def parse_args():
   parse.add_option('--cleanup-dir',
                    help='Path to a cleanup directory that can be used for '
                         'deferred file cleanup.')
+  parse.add_option('--experimental', help='Enable experimental mode.')
   parse.add_option(
       '--disable-syntax-validation', action='store_true',
       help='Disable validation of .gclient and DEPS syntax.')

@@ -33,6 +33,23 @@
       "message": "and another redirect 😊",
       "revId": "95875f4c6c28c30dcb0425ea5567cfdbc61acc84",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "050b1cc3_1e0ed5f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-05-03T20:36:02Z",
+      "side": 1,
+      "message": "Should be fine?",
+      "revId": "95875f4c6c28c30dcb0425ea5567cfdbc61acc84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

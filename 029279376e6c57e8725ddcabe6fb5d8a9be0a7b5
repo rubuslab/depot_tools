@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92d5a29a_05b4361e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2021-05-04T12:31:14Z",
+      "side": 1,
+      "message": "This appears to break `gclient sync` (or any other command using vpython) on macOS (running on Intel hardware, under Big Sur). When updating to this version, the vpython commands fails with the following error:\n\n[E2021-05-04T14:22:33.374248+02:00 33297 0 venv.go:975] Command (cwd\u003d/var/folders/qs/_6gzsr0143jbzbwz0ts_pxbm004bvw/T/572234860): [/Users/sdefresne/.vpython-root/b8d324/bin/python -B -E -s -m pip install --isolated --compile --no-index --find-links /var/folders/qs/_6gzsr0143jbzbwz0ts_pxbm004bvw/T/vpython_bootstrap599140792/packages --requirement /var/folders/qs/_6gzsr0143jbzbwz0ts_pxbm004bvw/T/vpython_bootstrap599140792/requirements.txt --no-binary\u003d:none: --only-binary\u003d:all: --use-wheel]\nProcess output:\n...\nCollecting coverage\u003d\u003d4.3.4 (from -r /var/folders/qs/_6gzsr0143jbzbwz0ts_pxbm004bvw/T/vpython_bootstrap599140792/requirements.txt (line 8))\n  Could not find a version that satisfies the requirement coverage\u003d\u003d4.3.4 (from -r /var/folders/qs/_6gzsr0143jbzbwz0ts_pxbm004bvw/T/vpython_bootstrap599140792/requirements.txt (line 8)) (from versions: )\nNo matching distribution found for coverage\u003d\u003d4.3.4 (from -r /var/folders/qs/_6gzsr0143jbzbwz0ts_pxbm004bvw/T/vpython_bootstrap599140792/requirements.txt (line 8))\n\nReverting this locally (and purging all .cipd and .vpython files), then the command succeed. I\u0027ve checked that when the command fails, vpython version is `Python 2.7.18+chromium.32` while when it succeeed it is version `Python 2.7.17+chromium.22`.\n\nJust reverting this locally however was not enough as python was not rolled back from 2.7.18 to 2.7.17. I think the correct fix would be to upload a version of coverage 4.3.4 that works with vpython 2.7.18.\n\nSee https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1175200.",
+      "revId": "029279376e6c57e8725ddcabe6fb5d8a9be0a7b5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "could you add a test to tests/git_cl_test.py please?",
       "revId": "6aceec686ebe56d6ee0d1e3ebc43db4105042c0e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e084ade4_3d701297",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2021-05-05T05:26:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65ecc2ce_5960ff0a",
+      "revId": "6aceec686ebe56d6ee0d1e3ebc43db4105042c0e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

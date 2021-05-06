@@ -16,6 +16,24 @@
       "message": "Are we using very old libraries because of 2.7, or for other reasons?\n\nShould we be trying harder to upgrade to newer library versions on 2.7, or do you think\nthat time is better spent getting to python3 first?",
       "revId": "e4d53747e1a5d251c7292ad56e64799b10826371",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f49ee6b_1708b994",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-05-06T23:57:02Z",
+      "side": 1,
+      "message": "The issue here is that we pull in a very old version of virtualenv to use in vpython, which includes a very old version of pip that is not aware of macOS 11 compatibility.\n\nUpgrading to a modern virtualenv is something that we definitely need to do, but will require thorough testing. It\u0027s not related to 2.7 vs 3 per se, since the latest virtualenv is still 2.7-compatible.\n\nThe reason I wanted to do a quick workaround here is to not put us in a position where the virtualenv upgrade blocks us from producing any new cpython packages that work on Big Sur, since we are seeing many developers starting to upgrade.",
+      "parentUuid": "5100ca23_e3315e7c",
+      "revId": "e4d53747e1a5d251c7292ad56e64799b10826371",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5100ca23_e3315e7c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-06T23:48:27Z",
+      "side": 1,
+      "message": "Are we using very old libraries because of 2.7, or for other reasons?\n\nShould we be trying harder to upgrade to newer library versions on 2.7, or do you think\nthat time is better spent getting to python3 first?",
+      "revId": "e4d53747e1a5d251c7292ad56e64799b10826371",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1661,7 +1661,12 @@ class PresubmitExecuter(object):
       if sink:
         elapsed_time = time_time() - start_time
         sink.report(function_name, rdb_wrapper.STATUS_FAIL, elapsed_time)
-      raise type(e)('Evaluation of %s failed: %s' % (function_name, e))
+      try:
+        from future.utils import raise_from
+        raise_from(type(e)('Evaluation of %s failed: %s' % (function_name, e)),
+                   e)
+      except ImportError:
+        raise type(e)('Evaluation of %s failed: %s' % (function_name, e))
 
     if sink:
       elapsed_time = time_time() - start_time

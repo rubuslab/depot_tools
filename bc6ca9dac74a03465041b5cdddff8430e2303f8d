@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ff39d59_124e5d7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1265562
+      },
+      "writtenOn": "2021-05-07T20:33:41Z",
+      "side": 1,
+      "message": "This may not be land-able because of it being hacky, but I figured I would see what you all think.",
+      "revId": "bc6ca9dac74a03465041b5cdddff8430e2303f8d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e011a84_87beb359",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1265562
+      },
+      "writtenOn": "2021-05-07T20:33:41Z",
+      "side": 1,
+      "message": "This is a bit hacky but it makes the information much more actionable if future.utils is available with a fallback if it isn\u0027t.",
+      "revId": "bc6ca9dac74a03465041b5cdddff8430e2303f8d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f198261_7a15e361",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-07T17:50:30Z",
+      "side": 1,
+      "message": "This doesn\u0027t pull the new py3 since py3 currently works. I\u0027ll pull that in a separate CL, to reduce per-cl risk.",
+      "revId": "db539cf34965d1a59a15db89860d82b8319c628a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

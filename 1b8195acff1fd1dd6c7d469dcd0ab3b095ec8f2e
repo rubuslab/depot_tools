@@ -16,6 +16,23 @@
       "message": "Without:\nhttps://ci.chromium.org/ui/p/chromium/builders/try/win-angle-x86-try/1278/overview\n\nWith:\nhttps://luci-milo.appspot.com/raw/build/logs.chromium.org/chromium/led/ehmaldonado_google.com/1fd3d980627e721f5ba4cfa7e5f09f6c8fd3cdd9208284cbea1eb27f0282444b/+/annotations",
       "revId": "1b8195acff1fd1dd6c7d469dcd0ab3b095ec8f2e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08cf7385_10084f6c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2021-05-07T15:38:33Z",
+      "side": 1,
+      "message": "Ping reviewers, could we land this? ANGLE contributors are starting to get impatient and our CQ is down.",
+      "revId": "1b8195acff1fd1dd6c7d469dcd0ab3b095ec8f2e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

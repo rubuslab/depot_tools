@@ -421,10 +421,9 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
         ('running', self.root_dir),                 # pre-deps hook
         ('running', self.root_dir),                 # pre-deps hook (fails)
     ]
-    vpython = 'vpython.bat' if sys.platform == 'win32' else 'vpython'
-    expected_stderr = ("Error: Command '%s -c import sys; "
+    expected_stderr = ("Error: Command 'python -c import sys; "
                        "sys.exit(1)' returned non-zero exit status 1 in %s\n"
-                       % (vpython, self.root_dir))
+                       % self.root_dir)
     stdout, stderr, retcode = self.gclient(
         ['sync', '--deps', 'mac', '--jobs=1', '--revision',
          'src@' + self.githash('repo_5', 3)], error_ok=True)

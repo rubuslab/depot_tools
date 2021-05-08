@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27df9735_b17f2334",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-08T20:08:01Z",
+      "side": 1,
+      "message": "(This and https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2881917 is enough to make `gclient runhooks` succeed on mac/arm even without VPYHTON_BYPASS set :) )",
+      "revId": "498e4240d1492e092f48dd99bff973ff27178a6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

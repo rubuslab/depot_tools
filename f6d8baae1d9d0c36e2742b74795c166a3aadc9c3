@@ -16,6 +16,24 @@
       "message": "no bug?",
       "revId": "f6d8baae1d9d0c36e2742b74795c166a3aadc9c3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71a60e38_05c083b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-05-10T01:56:48Z",
+      "side": 1,
+      "message": "Attaching the bug for vpython 3.9, since that is what motivated deleting 32-bit Linux.",
+      "parentUuid": "0da97c6d_cdf98c05",
+      "revId": "f6d8baae1d9d0c36e2742b74795c166a3aadc9c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

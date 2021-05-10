@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d75af5fd_6d08b79b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-05-10T20:06:05Z",
+      "side": 1,
+      "message": "nit: i prefer to say version in title\n\nand notable change in the next paragraph.\n\n[lucicfg] release 1.24.4 version.\n\nNotable changes:\n  move the cipd pin for cloud logging params in logdog https://crrev.com/c/2879575\n\nBug: ...",
+      "revId": "6d7a577c6685ea50270bc897f1065f11ce9c9bc0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4a8469e_e9e39895",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-10T13:28:29Z",
+      "side": 1,
+      "message": "I\u0027ll wait with landing until after the 220 release.",
+      "revId": "0d6970c4a90ca7d4c9baac7bedb478ec2e9e4e2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

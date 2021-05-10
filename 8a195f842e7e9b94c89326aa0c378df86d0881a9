@@ -33,6 +33,23 @@
       "message": "the alternative is:\n\n1. add a toggle to pick the default to DEPS file\n2. add toggle to all DEPS files\n3. eventually, possibly, remove toggle\n\ndo you think the risk is high enough to justify that overhead?",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19253c29_cc001422",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-10T19:33:17Z",
+      "side": 1,
+      "message": "like, if anything breaks, it\u0027ll be obvious and this can be reverted then, right?",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

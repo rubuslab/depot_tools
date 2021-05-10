@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47bf7890_00893932",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-05-10T20:02:58Z",
+      "side": 0,
+      "message": "Maybe use sys.executable, so we use the same interpreter that was used to call gclient.py, instead of a random \u0027python\u0027 laying around?",
+      "range": {
+        "startLine": 244,
+        "startChar": 16,
+        "endLine": 244,
+        "endChar": 23
+      },
+      "revId": "b865acd3f2d8cd305f87215154351620354d075f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

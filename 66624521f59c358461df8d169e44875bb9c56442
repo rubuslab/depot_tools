@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "086e6d95_101767a6",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-05-10T19:29:52Z",
+      "side": 1,
+      "message": "maybe add tests",
+      "range": {
+        "startLine": 88,
+        "startChar": 2,
+        "endLine": 88,
+        "endChar": 75
+      },
+      "revId": "66624521f59c358461df8d169e44875bb9c56442",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5ab815c_94c8040f",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-05-10T19:29:52Z",
+      "side": 1,
+      "message": "is this intended?",
+      "range": {
+        "startLine": 526,
+        "startChar": 2,
+        "endLine": 526,
+        "endChar": 13
+      },
+      "revId": "66624521f59c358461df8d169e44875bb9c56442",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

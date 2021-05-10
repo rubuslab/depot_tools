@@ -33,6 +33,24 @@
       "message": "This is a bit hacky but it makes the information much more actionable if future.utils is available with a fallback if it isn\u0027t.",
       "revId": "bc6ca9dac74a03465041b5cdddff8430e2303f8d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e5ee96b_7c1893de",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1664,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-05-10T19:31:48Z",
+      "side": 1,
+      "message": "Indeed hacky, but should be okay. Could you add a comment:\n\n  TODO(crbug.com/953884): replace raise_from with native py3 raise .. from e",
+      "parentUuid": "8e011a84_87beb359",
+      "revId": "bc6ca9dac74a03465041b5cdddff8430e2303f8d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

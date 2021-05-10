@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24ac2174_69ec5d12",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-10T19:19:46Z",
+      "side": 1,
+      "message": "+ehmaldonado for a review as well.\n\nI\u0027m reluctant to change this, because it\u0027s not backwards-compatible (and we generally try to keep\ndepot_tools and gclient specifically backwards-compatible, even though it auto-updates).\n\nI agree that we should in general not rely on this logic, and it may have been a mistake to add it \nin the first place. \n",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

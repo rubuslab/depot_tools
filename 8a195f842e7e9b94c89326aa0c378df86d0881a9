@@ -67,6 +67,60 @@
       "message": "Using \u0027vpython\u0027 was the simplest way to execute hooks using python2 when running gclient using python3, and I like the idea of using vpython/vpython3 and having a known environment, but maybe that can wait.\n\nI think we can give it a try, what do you think?",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2933eb00_84595ec5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-10T20:28:11Z",
+      "side": 1,
+      "message": "I\u0027m not entirely sure that this change is worth it, but I don\u0027t understand how important this is to Mac ARM now. Don\u0027t we have a vpython2 that works on Mac ARM?",
+      "parentUuid": "e34446cb_1edc137b",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c732c9aa_b07dbc43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-10T20:28:11Z",
+      "side": 1,
+      "message": "Another alternative is to leave it the way it is and migrate all of the hooks to `python3` or `vpython3` so that we don\u0027t have to care.",
+      "parentUuid": "83701c68_65165540",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "237aba3e_5ae430e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-10T20:28:11Z",
+      "side": 1,
+      "message": "It won\u0027t be that obvious, insofar as people don\u0027t use tip-of-tree depot_tools + old checkouts that often (except when bisecting things), and breakages might lead to weird hard-to-debug errors.",
+      "parentUuid": "19253c29_cc001422",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

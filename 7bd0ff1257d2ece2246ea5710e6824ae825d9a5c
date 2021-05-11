@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe1a20a8_5ba7b55a",
+        "filename": "repo_launcher",
+        "patchSetId": 1
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 1005283
+      },
+      "writtenOn": "2021-05-11T15:03:10Z",
+      "side": 1,
+      "message": "Maybe a space after the colon?",
+      "range": {
+        "startLine": 1215,
+        "startChar": 21,
+        "endLine": 1215,
+        "endChar": 22
+      },
+      "revId": "7bd0ff1257d2ece2246ea5710e6824ae825d9a5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

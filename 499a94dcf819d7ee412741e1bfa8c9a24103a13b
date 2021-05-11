@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "721b3873_d27d5447",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-05-11T23:38:12Z",
+      "side": 1,
+      "message": "It looks like get_toolchain_if_necessary uses whatever python version vs_toolchain.py uses which I guess is still Python 2.",
+      "revId": "499a94dcf819d7ee412741e1bfa8c9a24103a13b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ebd6513_f6e140eb",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-05-11T23:38:12Z",
+      "side": 1,
+      "message": "The default encoding is \u0027utf-8\u0027 so I have been omitting it. Can we standardize on that?\n\nIf we do specify it should we specify \u0027utf-8\u0027 rather than \u0027utf8\u0027 so that we match the default? \u0027utf8\u0027 is just an alias name.\n\nConfusing enough, the default of \u0027utf-8\u0027 is itself just an alias for utf_8.\n\nSource: https://docs.python.org/3/library/stdtypes.html#bytes.decode",
+      "revId": "499a94dcf819d7ee412741e1bfa8c9a24103a13b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

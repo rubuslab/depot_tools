@@ -82,8 +82,6 @@
 
 from __future__ import print_function
 
-__version__ = '0.7'
-
 import collections
 import copy
 import json
@@ -3058,8 +3056,7 @@ class OptionParser(optparse.OptionParser):
   gclientfile_default = os.environ.get('GCLIENT_FILE', '.gclient')
 
   def __init__(self, **kwargs):
-    optparse.OptionParser.__init__(
-        self, version='%prog ' + __version__, **kwargs)
+    optparse.OptionParser.__init__(self, **kwargs)
 
     # Some arm boards have issues with parallel sync.
     if platform.machine().startswith('arm'):

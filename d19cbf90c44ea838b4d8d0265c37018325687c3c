@@ -16,6 +16,24 @@
       "message": "Hey Josip, looks like you\u0027re the best bet for getting a review. PTAL, thanks!",
       "revId": "d19cbf90c44ea838b4d8d0265c37018325687c3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4549044b_edaeae62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-05-11T17:04:59Z",
+      "side": 1,
+      "message": "I agree it can be misleading, but we need version information whenever there is a major feature / breaking change. The version may not be bumped often in gclient, but we do it in other scripts (e.g. presubmit support and git cl).\n\nInstead of deleting this, we should work on long term solution for depot_tools versioning.",
+      "parentUuid": "3687dfd3_0e584964",
+      "revId": "d19cbf90c44ea838b4d8d0265c37018325687c3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

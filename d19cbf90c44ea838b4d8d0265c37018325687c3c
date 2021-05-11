@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3687dfd3_0e584964",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1407840
+      },
+      "writtenOn": "2021-05-11T02:43:26Z",
+      "side": 1,
+      "message": "Hey Josip, looks like you\u0027re the best bet for getting a review. PTAL, thanks!",
+      "revId": "d19cbf90c44ea838b4d8d0265c37018325687c3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

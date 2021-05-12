@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0fe80b4_13ed605f",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-12T16:31:16Z",
+      "side": 1,
+      "message": "Maybe just use \u0027r\u0027 instead of \u0027rb\u0027? Then py3 gives you a string from read(), and py2 does too, and it doesn\u0027t look like the newline difference it also entails should matter here",
+      "revId": "3b9d2d8557f5a9b82a9acf240bd21668b477fa98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

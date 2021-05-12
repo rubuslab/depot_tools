@@ -135,8 +135,15 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
     upload_args.append('--send-mail')
   if enable_auto_submit:
     upload_args.append('--enable-auto-submit')
-  print('Uploading CL for ' + directory + '.')
-  cmd_upload(upload_args)
+  print('Uploading CL for ' + directory + '...')
+
+  ret = cmd_upload(upload_args)
+  if ret != 0:
+    print('Uploading failed for ' + directory + '.')
+    print('git cl split has built-in resume capabilities.')
+    print('Delete ' + git.current_branch() +
+          ' then run it again to resume uploading.')
+
   if comment:
     changelist().AddComment(FormatDescriptionOrComment(comment, directory),
                             publish=True)

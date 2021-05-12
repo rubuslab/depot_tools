@@ -17,7 +17,7 @@ import sys
 # in _CommonChecks in this file and the values and tests in
 # //tests/PRESUBMIT.py as well to keep the test coverage of all three cases
 # (true, false, and default/not specified).
-# USE_PYTHON3 = False
+USE_PYTHON3 = True
 
 # CIPD ensure manifest for checking CIPD client itself.
 CIPD_CLIENT_ENSURE_FILE_TEMPLATE = r'''
@@ -107,7 +107,7 @@ def CommonChecks(input_api, output_api, tests_to_skip_list):
       'tests',
       files_to_check=test_to_run_list,
       files_to_skip=tests_to_skip_list,
-      run_on_python3=False))
+      run_on_python3=True))
 
   # Validate CIPD manifests.
   root = input_api.os_path.normpath(

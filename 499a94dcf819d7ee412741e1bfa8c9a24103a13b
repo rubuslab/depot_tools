@@ -69,6 +69,24 @@
       "parentUuid": "4ebd6513_f6e140eb",
       "revId": "499a94dcf819d7ee412741e1bfa8c9a24103a13b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8423cbc_37680ffc",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-05-12T06:05:49Z",
+      "side": 1,
+      "message": "I did some queries of \u0027utf-8\u0027, \u0027utf_8\u0027, and \u0027utf8\u0027 (case-insensitive) in .py files and utf-8 is the most popular in Chromium, FWIW. I\u0027m still not clear on the benefits of specifying the encoding - what is the scenario where not specifying it will break?\n\nBut, no matter. More Py3 compatibility is good!",
+      "parentUuid": "5dc91777_db8b5391",
+      "revId": "499a94dcf819d7ee412741e1bfa8c9a24103a13b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

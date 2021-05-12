@@ -16,6 +16,23 @@
       "message": "ptal thanks.\nChromium builder roll has landed: https://chromium-review.googlesource.com/c/chromium/tools/build/+/2880615",
       "revId": "7c5cffb3cdce424d48c0958955446bbaa3faf48b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57c63adc_0d45be92",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1368332
+      },
+      "writtenOn": "2021-05-12T18:43:51Z",
+      "side": 1,
+      "message": "lgtm. might be worth sending out a note on Chrome Troopers re: the change in case they notice any failures due to this roll.",
+      "revId": "7c5cffb3cdce424d48c0958955446bbaa3faf48b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

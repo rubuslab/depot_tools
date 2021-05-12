@@ -5,9 +5,9 @@
 
 # TODO(hinoka): Use logging.
 
-from __future__ import print_function
 
-import cStringIO
+
+import io
 import codecs
 from contextlib import contextmanager
 import copy
@@ -25,8 +25,7 @@ import sys
 import tempfile
 import threading
 import time
-import urllib2
-import urlparse
+import urllib.parse
 import uuid
 
 import os.path as path
@@ -92,7 +91,7 @@ GCLIENT_PATH = path.join(DEPOT_TOOLS_DIR, 'gclient.py')
 
 class SubprocessFailed(Exception):
   def __init__(self, message, code, output):
-    Exception.__init__(self, message)
+    self.message = message
     self.code = code
     self.output = output
 
@@ -187,7 +186,7 @@ def call(*args, **kwargs):  # pragma: no cover
   stdin_data = kwargs.pop('stdin_data', None)
   if stdin_data:
     kwargs['stdin'] = subprocess.PIPE
-  out = cStringIO.StringIO()
+  out = io.BytesIO()
   new_env = kwargs.get('env', {})
   env = os.environ.copy()
   env.update(new_env)
@@ -221,22 +220,22 @@ def call(*args, **kwargs):  # pragma: no cover
     if not buf:
       break
     if hanging_cr:
-      buf = '\r' + buf
-    hanging_cr = buf.endswith('\r')
+      buf = b'\r' + buf
+    hanging_cr = buf.endswith(b'\r')
     if hanging_cr:
       buf = buf[:-1]
-    buf = buf.replace('\r\n', '\n').replace('\r', '\n')
-    sys.stdout.write(buf)
+    buf = buf.replace(b'\r\n', b'\n').replace(b'\r', b'\n')
+    sys.stdout.buffer.write(buf)
     out.write(buf)
   if hanging_cr:
-    sys.stdout.write('\n')
-    out.write('\n')
+    sys.stdout.buffer.write(b'\n')
+    out.write(b'\n')
   for observer in observers:
     observer.cancel()
 
   code = proc.wait()
   elapsed_time = ((time.time() - start_time) / 60.0)
-  outval = out.getvalue()
+  outval = out.getvalue().decode('utf-8')
   if code:
     print('%s ===Failed in %.1f mins of %s ===' %
           (datetime.now(), elapsed_time, ' '.join(args)))
@@ -320,7 +319,7 @@ def modify_solutions(input_solutions):
   solutions = copy.deepcopy(input_solutions)
   for solution in solutions:
     original_url = solution['url']
-    parsed_url = urlparse.urlparse(original_url)
+    parsed_url = urllib.parse.urlparse(original_url)
     parsed_path = parsed_url.path
 
     solution['managed'] = False
@@ -460,7 +459,7 @@ def normalize_git_url(url):
   * Do not contain /a/ in their path.
   """
   try:
-    p = urlparse.urlparse(url)
+    p = urllib.parse.urlparse(url)
   except Exception:
     # Not a url, just return it back.
     return url
@@ -574,7 +573,7 @@ def get_total_disk_space():
   if sys.platform.startswith('win'):
     _, total, free = (ctypes.c_ulonglong(), ctypes.c_ulonglong(), \
                       ctypes.c_ulonglong())
-    if sys.version_info >= (3,) or isinstance(cwd, unicode):
+    if sys.version_info >= (3,) or isinstance(cwd, str):
       fn = ctypes.windll.kernel32.GetDiskFreeSpaceExW
     else:
       fn = ctypes.windll.kernel32.GetDiskFreeSpaceExA
@@ -672,7 +671,7 @@ def _maybe_break_locks(checkout_path, tries=3):
             print('FAILED to break lock: %s: %s' % (to_break, ex))
             raise
 
-  for _ in xrange(tries):
+  for _ in range(tries):
     try:
       attempt()
       return
@@ -877,7 +876,7 @@ def emit_json(out_file, did_run, gclient_output=None, **kwargs):
   output.update({'did_run': did_run})
   output.update(kwargs)
   with open(out_file, 'wb') as f:
-    f.write(json.dumps(output, sort_keys=True))
+    f.write(json.dumps(output, sort_keys=True).encode('utf-8'))
 
 
 @_set_git_config
@@ -959,7 +958,7 @@ def parse_revisions(revisions, root):
       # This is an alt_root@revision argument.
       current_root, current_rev = split_revision
 
-      parsed_root = urlparse.urlparse(current_root)
+      parsed_root = urllib.parse.urlparse(current_root)
       if parsed_root.scheme in ['http', 'https']:
         # We want to normalize git urls into .git urls.
         normalized_root = 'https://' + parsed_root.netloc + parsed_root.path

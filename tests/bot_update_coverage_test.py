@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Copyright (c) 2015 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -262,7 +262,7 @@ class BotUpdateUnittests(unittest.TestCase):
     bot_update.ensure_checkout(**self.params)
     args = self.gclient.records[0]
     patch_refs = set(
-        args[i+1] for i in xrange(len(args))
+        args[i+1] for i in range(len(args))
         if args[i] == '--patch-ref' and i+1 < len(args))
     self.assertIn(self.params['patch_refs'][0], patch_refs)
     self.assertIn(self.params['patch_refs'][1], patch_refs)

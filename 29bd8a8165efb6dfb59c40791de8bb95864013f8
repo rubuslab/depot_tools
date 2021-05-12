@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4eee197_1ef40d4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2021-05-12T15:48:02Z",
+      "side": 1,
+      "message": "LGTM w/ comments, thanks!",
+      "revId": "29bd8a8165efb6dfb59c40791de8bb95864013f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3f7ae65_e78bc578",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2021-05-12T15:48:02Z",
+      "side": 1,
+      "message": "\u0027Note: git cl split has ...\u0027",
+      "revId": "29bd8a8165efb6dfb59c40791de8bb95864013f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "679fe890_68083330",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2021-05-12T15:48:02Z",
+      "side": 1,
+      "message": "s/it/git cl split/",
+      "range": {
+        "startLine": 145,
+        "startChar": 21,
+        "endLine": 145,
+        "endChar": 23
+      },
+      "revId": "29bd8a8165efb6dfb59c40791de8bb95864013f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6e8a211_63369d7e",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2021-05-12T15:48:02Z",
+      "side": 1,
+      "message": "s/the/that the/",
+      "range": {
+        "startLine": 250,
+        "startChar": 13,
+        "endLine": 250,
+        "endChar": 17
+      },
+      "revId": "29bd8a8165efb6dfb59c40791de8bb95864013f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "456e288a_96f8839b",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2021-05-12T15:48:02Z",
+      "side": 1,
+      "message": "re.MULTILINE\n\n(took me searching to figure out what M meant)",
+      "range": {
+        "startLine": 251,
+        "startChar": 45,
+        "endLine": 251,
+        "endChar": 49
+      },
+      "revId": "29bd8a8165efb6dfb59c40791de8bb95864013f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0d377c6_5a8b1c55",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2021-05-12T15:48:02Z",
+      "side": 1,
+      "message": "Add \\s* after \u0027:\u0027 too (there can be spaces between \"Bug:\" and bug id)",
+      "range": {
+        "startLine": 251,
+        "startChar": 35,
+        "endLine": 251,
+        "endChar": 36
+      },
+      "revId": "29bd8a8165efb6dfb59c40791de8bb95864013f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

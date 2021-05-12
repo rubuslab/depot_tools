@@ -690,14 +690,14 @@ def _set_git_config(fn):
   return wrapper
 
 
-def git_checkouts(solutions, revisions, refs, no_fetch_tags, git_cache_dir,
-                  cleanup_dir, enforce_fetch):
+def git_checkouts(solutions, revisions, refs, no_bootstrap, no_fetch_tags,
+                  git_cache_dir, cleanup_dir, enforce_fetch):
   build_dir = os.getcwd()
   first_solution = True
   for sln in solutions:
     sln_dir = path.join(build_dir, sln['name'])
-    _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
-                  cleanup_dir, enforce_fetch)
+    _git_checkout(sln, sln_dir, revisions, refs, no_bootstrap, no_fetch_tags,
+                  git_cache_dir, cleanup_dir, enforce_fetch)
     if first_solution:
       git_ref = git('log', '--format=%H', '--max-count=1',
                     cwd=path.join(build_dir, sln['name'])
@@ -706,8 +706,8 @@ def git_checkouts(solutions, revisions, refs, no_fetch_tags, git_cache_dir,
   return git_ref
 
 
-def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
-                  cleanup_dir, enforce_fetch):
+def _git_checkout(sln, sln_dir, revisions, refs, no_bootstrap, no_fetch_tags,
+                  git_cache_dir, cleanup_dir, enforce_fetch):
   name = sln['name']
   url = sln['url']
 
@@ -716,6 +716,8 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
 
   populate_cmd = (['cache', 'populate', '--ignore_locks', '-v',
                    '--cache-dir', git_cache_dir, url, '--reset-fetch-config'])
+  if no_bootstrap:
+    populate_cmd.extend(['--no_bootstrap'])
   if no_fetch_tags:
     populate_cmd.extend(['--no-fetch-tags'])
   if pin:
@@ -883,15 +885,15 @@ def emit_json(out_file, did_run, gclient_output=None, **kwargs):
 @_set_git_config
 def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
                     target_cpu, patch_root, patch_refs, gerrit_rebase_patch_ref,
-                    no_fetch_tags, refs, git_cache_dir, cleanup_dir,
+                    no_bootstrap, no_fetch_tags, refs, git_cache_dir, cleanup_dir,
                     gerrit_reset, disable_syntax_validation, enforce_fetch):
   # Get a checkout of each solution, without DEPS or hooks.
   # Calling git directly because there is no way to run Gclient without
   # invoking DEPS.
   print('Fetching Git checkout')
 
-  git_checkouts(solutions, revisions, refs, no_fetch_tags, git_cache_dir,
-                cleanup_dir, enforce_fetch)
+  git_checkouts(solutions, revisions, refs, no_bootstrap, no_fetch_tags,
+                git_cache_dir, cleanup_dir, enforce_fetch)
 
   # Ensure our build/ directory is set up with the correct .gclient file.
   gclient_configure(solutions, target_os, target_os_only, target_cpu,
@@ -999,6 +1001,10 @@ def parse_args():
                         'Can prepend root@<rev> to specify which repository, '
                         'where root is either a filesystem path or git https '
                         'url. To specify Tip of Tree, set rev to HEAD. ')
+  parse.add_option(
+      '--no_bootstrap', 
+      action='store_true',
+      help='Don\'t bootstrap git_cache from gsutil.')
   parse.add_option(
       '--no_fetch_tags',
       action='store_true',
@@ -1154,6 +1160,7 @@ def checkout(options, git_slns, specs, revisions, step_text):
           gerrit_rebase_patch_ref=not options.gerrit_no_rebase_patch_ref,
 
           # Control how the fetch step will occur.
+          no_bootstrap=options.no_bootstrap,
           no_fetch_tags=options.no_fetch_tags,
           enforce_fetch=options.enforce_fetch,
 

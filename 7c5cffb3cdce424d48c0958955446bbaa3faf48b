@@ -33,6 +33,23 @@
       "message": "lgtm. might be worth sending out a note on Chrome Troopers re: the change in case they notice any failures due to this roll.",
       "revId": "7c5cffb3cdce424d48c0958955446bbaa3faf48b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a0990ed_5e5afde1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1360310
+      },
+      "writtenOn": "2021-05-12T19:04:04Z",
+      "side": 1,
+      "message": "CC troopers for awareness. This might impact non-chromium mac / ios builders.\n\nThe same roll landed in Chromium yesterday: https://chromium-review.googlesource.com/c/chromium/tools/build/+/2880615",
+      "revId": "7c5cffb3cdce424d48c0958955446bbaa3faf48b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

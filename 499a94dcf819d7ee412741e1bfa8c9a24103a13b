@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7f0f2ab_1d5fe4e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-12T00:31:53Z",
+      "side": 1,
+      "message": "\u003e It looks like get_toolchain_if_necessary uses whatever python version vs_toolchain.py uses which I guess is still Python 2.\n\nYup. I tripped over this as part of updating the DEPS hooks to start using Python 3 in https://crrev.com/c/2889373",
+      "parentUuid": "721b3873_d27d5447",
+      "revId": "499a94dcf819d7ee412741e1bfa8c9a24103a13b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ebd6513_f6e140eb",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-05-11T23:38:12Z",
       "side": 1,
       "message": "The default encoding is \u0027utf-8\u0027 so I have been omitting it. Can we standardize on that?\n\nIf we do specify it should we specify \u0027utf-8\u0027 rather than \u0027utf8\u0027 so that we match the default? \u0027utf8\u0027 is just an alias name.\n\nConfusing enough, the default of \u0027utf-8\u0027 is itself just an alias for utf_8.\n\nSource: https://docs.python.org/3/library/stdtypes.html#bytes.decode",
+      "revId": "499a94dcf819d7ee412741e1bfa8c9a24103a13b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dc91777_db8b5391",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-12T00:31:53Z",
+      "side": 1,
+      "message": "I think the default encoding in later versions of Py3 is utf8, but it wasn\u0027t in Py2 (and I\u0027m not sure when it might\u0027ve changed in Py3).\n\nSo, I\u0027ve found it better to be explicit about it while we still have Py2-code lying around. I would be fine with dropping the utf8\u0027s once all of the 2 support is gone.\n\nAs for utf-8 vs. utf8, I don\u0027t have a strong opinion since they both work. The one I use is shorter :). I would be fine w/ trying to standardize on it, but I\u0027m not sure which is more common in the current codebase.",
+      "parentUuid": "4ebd6513_f6e140eb",
       "revId": "499a94dcf819d7ee412741e1bfa8c9a24103a13b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

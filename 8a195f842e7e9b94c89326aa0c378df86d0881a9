@@ -121,6 +121,24 @@
       "parentUuid": "19253c29_cc001422",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be34d15f_5c7f633b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-12T16:19:48Z",
+      "side": 1,
+      "message": "FYI, moving everything to python3 isn\u0027t that far off, hopefully: \nhttps://crrev.com/c/2889373 is the last in a chain of CLs to move everything in src //DEPS.",
+      "parentUuid": "c732c9aa_b07dbc43",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

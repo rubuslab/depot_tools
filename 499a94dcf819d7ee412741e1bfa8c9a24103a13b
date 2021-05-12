@@ -87,6 +87,24 @@
       "parentUuid": "5dc91777_db8b5391",
       "revId": "499a94dcf819d7ee412741e1bfa8c9a24103a13b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d1cf033_528486e2",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-12T16:00:22Z",
+      "side": 1,
+      "message": "Okay. I\u0027m happy to change to \u0027utf-8\u0027 if that\u0027s more common.\n\nin Python2, the default encoding is ASCII, though that can be changed in\nsite customization settings and via env vars. So, for any code that still\nhas to run in 2 and 3, relying on the default is a bad idea.\n\nEven if we think that code doesn\u0027t have to run in 2 any more, I still think\nit\u0027s better to specify the encoding explicitly for a while, just to be more\nconsistent with other code. Once 2 is totally gone, I\u0027d be happy to drop\nthis and just use the default.",
+      "parentUuid": "b8423cbc_37680ffc",
+      "revId": "499a94dcf819d7ee412741e1bfa8c9a24103a13b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

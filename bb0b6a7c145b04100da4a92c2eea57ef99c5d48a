@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b47a480_4c3956e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2021-05-12T02:13:08Z",
+      "side": 1,
+      "message": "Also, FYI, your review emails in Gerrit (which I use to know I need to do a review) are weirdly getting marked not important making me way slower to see them. If you need a faster review just ping me on chat.",
+      "revId": "bb0b6a7c145b04100da4a92c2eea57ef99c5d48a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

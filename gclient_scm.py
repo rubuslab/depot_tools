@@ -988,7 +988,6 @@ class GitWrapper(SCMWrapper):
     else:
       depth = None
     mirror.populate(verbose=options.verbose,
-                    bootstrap=not getattr(options, 'no_bootstrap', False),
                     depth=depth,
                     lock_timeout=getattr(options, 'lock_timeout', 0))
 

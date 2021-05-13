@@ -16,6 +16,92 @@
       "message": "I don\u0027t know how you feel about this, but this code has been bothering me for a few days so I figured I\u0027d do something about it",
       "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "176d6698_f6de825a",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-05-13T05:01:10Z",
+      "side": 1,
+      "message": "nit: I feel it\u0027s a bit misleading given there\u0027s reset function. Perhaps: Call a function every n seconds, unless reset is called",
+      "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6920aa35_84366b17",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-05-13T05:01:10Z",
+      "side": 1,
+      "message": "nit: don\u0027t pass anything and leave it at its default value (threading.Rlock)",
+      "range": {
+        "startLine": 125,
+        "startChar": 36,
+        "endLine": 125,
+        "endChar": 52
+      },
+      "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08b2216e_31c78fc3",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-05-13T05:01:10Z",
+      "side": 1,
+      "message": "not self.is_reset and not self.is_shutdown\n\notherwise, it may call function on shutdown. Alternative is to set is_reset \u003d True in shutdown method",
+      "range": {
+        "startLine": 144,
+        "startChar": 11,
+        "endLine": 144,
+        "endChar": 28
+      },
+      "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "189aa9ec_07f325fa",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-05-13T05:01:10Z",
+      "side": 1,
+      "message": "This should be\n\n  _terminate_process, [proc]",
+      "range": {
+        "startLine": 192,
+        "startChar": 50,
+        "endLine": 192,
+        "endChar": 74
+      },
+      "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

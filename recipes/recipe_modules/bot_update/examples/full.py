@@ -184,6 +184,10 @@ def GenTests(api):
       api.properties(root_solution_revision=api.bot_update.gen_revision('fake-revision'))
   )
   yield (
+      api.test('bot_update_experiments_no_sync') +
+      api.properties(bot_update_experiments={'no_sync': True})
+  )
+  yield (
       api.test('gerrit_no_reset') +
       api.properties(gerrit_no_reset=1)
   )

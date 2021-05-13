@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e647166d_77d3a043",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2021-05-13T17:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "176d6698_f6de825a",
+      "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6920aa35_84366b17",
@@ -48,6 +66,30 @@
       "writtenOn": "2021-05-13T05:01:10Z",
       "side": 1,
       "message": "nit: don\u0027t pass anything and leave it at its default value (threading.Rlock)",
+      "range": {
+        "startLine": 125,
+        "startChar": 36,
+        "endLine": 125,
+        "endChar": 52
+      },
+      "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66a58c9c_2e0cfe02",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2021-05-13T17:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6920aa35_84366b17",
       "range": {
         "startLine": 125,
         "startChar": 36,
@@ -81,6 +123,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "830cc425_b2a12731",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2021-05-13T17:03:39Z",
+      "side": 1,
+      "message": "eek! good catch",
+      "parentUuid": "08b2216e_31c78fc3",
+      "range": {
+        "startLine": 144,
+        "startChar": 11,
+        "endLine": 144,
+        "endChar": 28
+      },
+      "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "189aa9ec_07f325fa",
@@ -94,6 +160,30 @@
       "writtenOn": "2021-05-13T05:01:10Z",
       "side": 1,
       "message": "This should be\n\n  _terminate_process, [proc]",
+      "range": {
+        "startLine": 192,
+        "startChar": 50,
+        "endLine": 192,
+        "endChar": 74
+      },
+      "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e761470_d6dd4afa",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2021-05-13T17:03:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "189aa9ec_07f325fa",
       "range": {
         "startLine": 192,
         "startChar": 50,

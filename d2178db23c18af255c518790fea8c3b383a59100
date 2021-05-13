@@ -16,6 +16,46 @@
       "message": "led run with change: https://luci-milo.appspot.com/raw/build/logs.chromium.org/chromium/led/gavinmak_google.com/73a0bcb2cb4aa4e50de6770117037f71c5be5858232c8340fa4c6118cf5ab7ab/+/annotations\n\nwithout: https://ci.chromium.org/ui/p/chromium/builders/try/win_chromium_compile_dbg_ng/865694/overview",
       "revId": "d2178db23c18af255c518790fea8c3b383a59100",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b4bc0ec_6f2e83e0",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-05-13T16:29:27Z",
+      "side": 1,
+      "message": "How does it look if we move from the comment below to here?",
+      "revId": "d2178db23c18af255c518790fea8c3b383a59100",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eb5b25a_2fc835b5",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-05-13T16:29:27Z",
+      "side": 1,
+      "message": "How does it look if we move this above?\n\n  if result.get(\u0027failed_patch_body\u0027):\n    step_result.presentation.logs[\u0027patch error\u0027] \u003d (\n        result[\u0027failed_patch_body\u0027].splitlines())\n\nWill the link to the patch error be shown in Gerrit?",
+      "range": {
+        "startLine": 414,
+        "startChar": 0,
+        "endLine": 417,
+        "endChar": 0
+      },
+      "revId": "d2178db23c18af255c518790fea8c3b383a59100",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

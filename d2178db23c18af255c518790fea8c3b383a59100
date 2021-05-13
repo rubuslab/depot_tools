@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b43cee0_98afecac",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-05-13T19:56:47Z",
+      "side": 1,
+      "message": "I\u0027d like to make the step red (not purple) when it fails because of patch error.\n\nI think we could do that by keeping ok_ret(0, 88) and raising recipe_api.StepFailure if the exit code was 88.",
+      "parentUuid": "54d1b85a_fe2b8e44",
+      "revId": "d2178db23c18af255c518790fea8c3b383a59100",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9eb5b25a_2fc835b5",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 1

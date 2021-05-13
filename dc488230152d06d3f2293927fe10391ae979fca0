@@ -33,6 +33,24 @@
       "message": "in \"a\" rush",
       "revId": "dc488230152d06d3f2293927fe10391ae979fca0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4410e371_08fe7b51",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2021-05-13T23:09:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4aa93bd_5143b404",
+      "revId": "dc488230152d06d3f2293927fe10391ae979fca0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

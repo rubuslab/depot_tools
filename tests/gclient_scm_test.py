@@ -1038,6 +1038,7 @@ class BranchHeadsTest(fake_repos.FakeReposTestBase):
     self.assertEqual(self.githash('repo_1', 5), self.gitrevparse(self.root_dir))
 
   def testCheckoutUpdatedBranchHeads(self):
+    sys.stdout = sys.stderr
     # Travel back in time, and set refs/branch-heads/5 to its parent.
     subprocess2.check_call(
         ['git', 'update-ref', 'refs/branch-heads/5', self.githash('repo_1', 4)],
@@ -1046,7 +1047,10 @@ class BranchHeadsTest(fake_repos.FakeReposTestBase):
     # Sync to refs/branch-heads/5
     scm = gclient_scm.GitWrapper(self.url, self.root_dir, '.')
     self.options.revision = 'refs/branch-heads/5'
+    self.options.verbose = True
     scm.update(self.options, None, [])
+    scm.update(self.options, None, [])
+    print('\n\n\nDONE with first pass\n\n\n', file=sys.stderr)
 
     # Set refs/branch-heads/5 back to its original value.
     subprocess2.check_call(

@@ -988,7 +988,6 @@ class GitWrapper(SCMWrapper):
     else:
       depth = None
     mirror.populate(verbose=options.verbose,
-                    bootstrap=not getattr(options, 'no_bootstrap', False),
                     depth=depth,
                     lock_timeout=getattr(options, 'lock_timeout', 0))
 
@@ -1183,6 +1182,9 @@ class GitWrapper(SCMWrapper):
     # This manifests itself in current checkout having invalid HEAD commit on
     # most git operations. Since git cache is used, just deleted the .git
     # folder, and re-create it by cloning.
+    print('URL', file=sys.stderr)
+    self.Print(url)
+    self.Print(revision)
     try:
       self._Capture(['rev-list', '-n', '1', 'HEAD'])
     except subprocess2.CalledProcessError as e:

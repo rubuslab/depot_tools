@@ -174,6 +174,24 @@
       "parentUuid": "8d7dc164_f0ab4ca9",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32ca1dc1_27437b34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-13T20:06:25Z",
+      "side": 1,
+      "message": "Rewriting python3 with vpython3 is just as surprising. This is setting is up for long-term technical debt and confusion, and the cost to not do that seems very small to me: One if here, and one line in every DEPS file. Why is that controversial? What am I missing?",
+      "parentUuid": "90035cae_ee181956",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

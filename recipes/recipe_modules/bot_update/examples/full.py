@@ -167,13 +167,15 @@ def GenTests(api):
       api.test('tryjob_fail_patch') +
       try_build() +
       api.properties(fail_patch='apply') +
-      api.step_data('bot_update', retcode=88)
+      api.step_data('bot_update', retcode=88) +
+      api.expect_exception('AssertionError')
   )
   yield (
       api.test('tryjob_fail_patch_download') +
       try_build() +
       api.properties(fail_patch='download') +
-      api.step_data('bot_update', retcode=87)
+      api.step_data('bot_update', retcode=87) +
+      api.expect_exception('AssertionError')
   )
   yield (
       api.test('clobber') +

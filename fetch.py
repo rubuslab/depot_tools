@@ -144,6 +144,7 @@ class GclientGitCheckout(GclientCheckout, GitCheckout):
       sync_cmd.append('--no-history')
     if self.spec.get('with_branch_heads', False):
       sync_cmd.append('--with_branch_heads')
+    sync_cmd.append('--jobs=1')
     self.run_gclient(*sync_cmd)
 
     # Configure git.

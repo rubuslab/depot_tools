@@ -39,8 +39,8 @@ else:
   import urllib.parse as urlparse
 
 
-RETRY_MAX = 3
-RETRY_INITIAL_SLEEP = 0.5
+RETRY_MAX = 30
+RETRY_INITIAL_SLEEP = 5
 START = datetime.datetime.now()
 
 

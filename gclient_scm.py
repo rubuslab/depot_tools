@@ -1010,7 +1010,9 @@ class GitWrapper(SCMWrapper):
       clone_cmd.append('--shared')
     if options.verbose:
       clone_cmd.append('--verbose')
-    clone_cmd.append(url)
+    clone_cmd.append(url.replace(
+        'https://chromium.googlesource.com/external/gob/android/platform/frameworks/support/browser.git',
+        'sso://chromium.googlesource.com/external/gob/android/platform/frameworks/support/browser.git'))
     # If the parent directory does not exist, Git clone on Windows will not
     # create it, so we need to do it manually.
     parent_dir = os.path.dirname(self.checkout_path)

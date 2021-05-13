@@ -139,6 +139,23 @@
       "parentUuid": "c732c9aa_b07dbc43",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d7dc164_f0ab4ca9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-13T13:10:17Z",
+      "side": 1,
+      "message": "for mac/arm: the coverage\u003d\u003d4.3.4 bit in the 2nd half of https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1205263#c3 is due to runhooks\n\nBut independent of mac/arm, silently changing the behavior of programs is imho very surprising for people who don\u0027t know that this is happening. I have vivid memories of https://crbug.com/923062 taking me *weeks* because I didn\u0027t expect that \"git\" wasn\u0027t \"git\" on infra. The less we silently do these things, the better. Especially for python, where `python -m this` even says \"Explicit is better than implicit\" 😊\n\nHow about adding a DEPS file toplevel var \"rewrite_python_to_vpython: True/False\", and doing the rewriting if that\u0027s set to True? That way it\u0027s explicit in the DEPS file. We can make it default to True for now, but over time I\u0027d like to add it to all DEPS files and eventually not give it a default value. Just so that people who read a DEPS file have a chance to see it.",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

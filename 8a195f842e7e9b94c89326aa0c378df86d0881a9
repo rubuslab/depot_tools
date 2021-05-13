@@ -228,6 +228,23 @@
       "parentUuid": "0121a44c_f6ea5c8a",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06716d27_d6bbf0ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-13T23:18:31Z",
+      "side": 1,
+      "message": "...but at some point down the road just \"python\" will probably be python 3 everywhere and folks might use \"python\" again when they mean python 3 and then this code here will automatically silently turn vpython back on again. So could we remove this at some point before this happens?",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

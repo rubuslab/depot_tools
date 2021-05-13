@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6647253e_68c9241c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2021-05-13T03:49:49Z",
+      "side": 1,
+      "message": "I don\u0027t know how you feel about this, but this code has been bothering me for a few days so I figured I\u0027d do something about it",
+      "revId": "165dee6ee087177476ac7d9b3ee295ca9dad0ab5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

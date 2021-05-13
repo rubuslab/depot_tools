@@ -210,6 +210,24 @@
       "parentUuid": "32ca1dc1_27437b34",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "511fa5c3_b9248a91",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-13T23:11:16Z",
+      "side": 1,
+      "message": "Ah, great. If the plan is to _not_ rewrite \"python\" with \"python3\" or \"vpython\" then all\u0027s well. That wasn\u0027t clear to me, and that\u0027s what I was missing :) \n\nIs it ok if I s/python/python3/ for at least some of the DEPS in src.git?",
+      "parentUuid": "0121a44c_f6ea5c8a",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

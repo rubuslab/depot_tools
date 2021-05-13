@@ -192,6 +192,24 @@
       "parentUuid": "90035cae_ee181956",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0121a44c_f6ea5c8a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-13T20:43:16Z",
+      "side": 1,
+      "message": "Maybe I\u0027m confused. I thought we *don\u0027t* rewrite things w/ python3? \n\nThat\u0027s why I think moving to py3 solves the problem. I would agree that we\ndon\u0027t want to start rewriting py3.",
+      "parentUuid": "32ca1dc1_27437b34",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

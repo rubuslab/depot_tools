@@ -310,12 +310,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
     # Ah hah! Now that everything is in place, lets run bot_update!
     step_result = None
     try:
-      # 87 and 88 are the 'patch failure' codes for patch download and patch
-      # apply, respectively. We don't actually use the error codes, and instead
-      # rely on emitted json to determine cause of failure.
       step_result = self(
            name, cmd, step_test_data=step_test_data,
-           ok_ret=(0, 87, 88), **kwargs)
+           ok_ret=(0,), **kwargs)
     except self.m.step.StepFailure as f:
       step_result = f.result
       raise

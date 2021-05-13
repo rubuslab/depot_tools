@@ -33,6 +33,24 @@
       "message": "I think this also needs to say \"and then roll DEPS to update third_party\\depot_tools to pull in the revert.\" or something like that.\n\nAlternately, since it quickly becomes challenging to cover everything perfectly, perhaps a link to a short document that can then be updated as things change or as we understand what confuses people?",
       "revId": "490291e247ba418bcd4614979680f6a69a6654a6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29aa75c0_6a59302e",
+        "filename": "bb",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2021-05-13T21:58:37Z",
+      "side": 1,
+      "message": "Done, ptal",
+      "parentUuid": "06bf3400_2d58728c",
+      "revId": "490291e247ba418bcd4614979680f6a69a6654a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -24,7 +24,6 @@ try:
 except ImportError:  # For Py3 compatibility
   import urllib.parse as urlparse
 
-from download_from_google_storage import Gsutil
 import gclient_utils
 import lockfile
 import metrics
@@ -84,8 +83,6 @@ def exponential_backoff_retry(fn, excs=(Exception,), name=None, count=10,
 class Mirror(object):
 
   git_exe = 'git.bat' if sys.platform.startswith('win') else 'git'
-  gsutil_exe = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)), 'gsutil.py')
   cachepath_lock = threading.Lock()
 
   UNSET_CACHEPATH = object()
@@ -259,8 +256,7 @@ class Mirror(object):
     # Don't combine pack files into one big pack file.  It's really slow for
     # repositories, and there's no way to track progress and make sure it's
     # not stuck.
-    if self.supported_project():
-      self.RunGit(['config', 'gc.autopacklimit', '0'], cwd=cwd)
+    self.RunGit(['config', 'gc.autopacklimit', '0'], cwd=cwd)
 
     # Allocate more RAM for cache-ing delta chains, for better performance
     # of "Resolving deltas".
@@ -274,53 +270,6 @@ class Mirror(object):
       self.RunGit(
           ['config', '--replace-all', 'remote.origin.fetch', spec, value_regex],
           cwd=cwd)
-
-  def bootstrap_repo(self, directory):
-    """Bootstrap the repo from Google Storage if possible.
-
-    More apt-ly named bootstrap_repo_from_cloud_if_possible_else_do_nothing().
-    """
-    if not self.bootstrap_bucket:
-      return False
-
-    gsutil = Gsutil(self.gsutil_exe, boto_path=None)
-
-    # Get the most recent version of the directory.
-    # This is determined from the most recent version of a .ready file.
-    # The .ready file is only uploaded when an entire directory has been
-    # uploaded to GS.
-    _, ls_out, ls_err = gsutil.check_call('ls', self._gs_path)
-    ls_out_set = set(ls_out.strip().splitlines())
-    latest_dir = self._GetMostRecentCacheDirectory(ls_out_set)
-
-    if not latest_dir:
-      self.print('No bootstrap file for %s found in %s, stderr:\n  %s' %
-                 (self.mirror_path, self.bootstrap_bucket,
-                '  '.join((ls_err or '').splitlines(True))))
-      return False
-
-    try:
-      # create new temporary directory locally
-      tempdir = tempfile.mkdtemp(prefix='_cache_tmp', dir=self.GetCachePath())
-      self.RunGit(['init', '--bare'], cwd=tempdir)
-      self.print('Downloading files in %s/* into %s.' %
-                 (latest_dir, tempdir))
-      with self.print_duration_of('download'):
-        code = gsutil.call('-m', 'cp', '-r', latest_dir + "/*",
-                           tempdir)
-      if code:
-        return False
-      # A quick validation that all references are valid.
-      self.RunGit(['for-each-ref'], cwd=tempdir)
-    except Exception as e:
-      self.print('Encountered error: %s' % str(e), file=sys.stderr)
-      gclient_utils.rmtree(tempdir)
-      return False
-    # delete the old directory
-    if os.path.exists(directory):
-      gclient_utils.rmtree(directory)
-    self.Rename(tempdir, directory)
-    return True
 
   def contains_revision(self, revision):
     if not self.exists():
@@ -343,13 +292,6 @@ class Mirror(object):
   def exists(self):
     return os.path.isfile(os.path.join(self.mirror_path, 'config'))
 
-  def supported_project(self):
-    """Returns true if this repo is known to have a bootstrap zip file."""
-    u = urlparse.urlparse(self.url)
-    return u.netloc in [
-        'chromium.googlesource.com',
-        'chrome-internal.googlesource.com']
-
   def _preserve_fetchspec(self):
     """Read and preserve remote.origin.fetch from an existing mirror.
 
@@ -370,8 +312,7 @@ class Mirror(object):
           '%s and "git cache fetch" again.' %
           os.path.join(self.mirror_path, 'config'))
 
-  def _ensure_bootstrapped(
-      self, depth, bootstrap, reset_fetch_config, force=False):
+  def _clear_cache_if_needed(self, depth, reset_fetch_config, force=False):
     pack_dir = os.path.join(self.mirror_path, 'objects', 'pack')
     pack_files = []
     if os.path.isdir(pack_dir):
@@ -390,33 +331,15 @@ class Mirror(object):
             'Shallow fetch requested, but repo cache already exists.')
       return
 
-    if not self.exists():
-      if os.path.exists(self.mirror_path):
-        # If the mirror path exists but self.exists() returns false, we're
-        # in an unexpected state. Nuke the previous mirror directory and
-        # start fresh.
-        gclient_utils.rmtree(self.mirror_path)
-      os.mkdir(self.mirror_path)
-    elif not reset_fetch_config:
+    if not reset_fetch_config:
       # Re-bootstrapping an existing mirror; preserve existing fetch spec.
       self._preserve_fetchspec()
 
-    bootstrapped = (not depth and bootstrap and
-                    self.bootstrap_repo(self.mirror_path))
+    gclient_utils.rmtree(self.mirror_path)
+    os.mkdir(self.mirror_path)
 
-    if not bootstrapped:
-      if not self.exists() or not self.supported_project():
-        # Bootstrap failed due to:
-        # 1. No previous cache.
-        # 2. Project doesn't have a bootstrap folder.
-        # Start with a bare git dir.
-        self.RunGit(['init', '--bare'], cwd=self.mirror_path)
-      else:
-        # Bootstrap failed, previous cache exists; warn and continue.
-        logging.warning(
-            'Git cache has a lot of pack files (%d). Tried to re-bootstrap '
-            'but failed. Continuing with non-optimized repository.' %
-            len(pack_files))
+    # Start with a bare git dir.
+    self.RunGit(['init', '--bare'], cwd=self.mirror_path)
 
   def _fetch(self,
              rundir,
@@ -462,7 +385,6 @@ class Mirror(object):
                depth=None,
                no_fetch_tags=False,
                shallow=False,
-               bootstrap=False,
                verbose=False,
                lock_timeout=0,
                reset_fetch_config=False):
@@ -473,98 +395,16 @@ class Mirror(object):
 
     with lockfile.lock(self.mirror_path, lock_timeout):
       try:
-        self._ensure_bootstrapped(depth, bootstrap, reset_fetch_config)
+        self._clear_cache_if_needed(depth, reset_fetch_config)
         self._fetch(self.mirror_path, verbose, depth, no_fetch_tags,
                     reset_fetch_config)
       except ClobberNeeded:
         # This is a major failure, we need to clean and force a bootstrap.
         gclient_utils.rmtree(self.mirror_path)
         self.print(GIT_CACHE_CORRUPT_MESSAGE)
-        self._ensure_bootstrapped(depth,
-                                  bootstrap,
-                                  reset_fetch_config,
-                                  force=True)
+        self._clear_cache_if_needed(depth, reset_fetch_config, force=True)
         self._fetch(self.mirror_path, verbose, depth, no_fetch_tags,
                     reset_fetch_config)
-
-  def update_bootstrap(self, prune=False, gc_aggressive=False, branch='master'):
-    # The folder is <git number>
-    gen_number = subprocess.check_output(
-        [self.git_exe, 'number', branch],
-        cwd=self.mirror_path).decode('utf-8', 'ignore').strip()
-    gsutil = Gsutil(path=self.gsutil_exe, boto_path=None)
-
-    src_name = self.mirror_path
-    dest_prefix = '%s/%s' % (self._gs_path, gen_number)
-
-    # ls_out lists contents in the format: gs://blah/blah/123...
-    _, ls_out, _ = gsutil.check_call('ls', self._gs_path)
-
-    # Check to see if folder already exists in gs
-    ls_out_set = set(ls_out.strip().splitlines())
-    if (dest_prefix + '/' in ls_out_set and
-        dest_prefix + '.ready' in ls_out_set):
-      print('Cache %s already exists.' % dest_prefix)
-      return
-
-    # Reduce the number of individual files to download & write on disk.
-    self.RunGit(['pack-refs', '--all'])
-
-    # Run Garbage Collect to compress packfile.
-    gc_args = ['gc', '--prune=all']
-    if gc_aggressive:
-      # The default "gc --aggressive" is often too aggressive for some machines,
-      # since it attempts to create as many threads as there are CPU cores,
-      # while not limiting per-thread memory usage, which puts too much pressure
-      # on RAM on high-core machines, causing them to thrash. Using lower-level
-      # commands gives more control over those settings.
-
-      # This might not be strictly necessary, but it's fast and is normally run
-      # by 'gc --aggressive', so it shouldn't hurt.
-      self.RunGit(['reflog', 'expire', '--all'])
-
-      # These are the default repack settings for 'gc --aggressive'.
-      gc_args = ['repack', '-d', '-l', '-f', '--depth=50', '--window=250', '-A',
-                 '--unpack-unreachable=all']
-      # A 1G memory limit seems to provide comparable pack results as the
-      # default, even for our largest repos, while preventing runaway memory (at
-      # least on current Chromium builders which have about 4G RAM per core).
-      gc_args.append('--window-memory=1g')
-      # NOTE: It might also be possible to avoid thrashing with a larger window
-      # (e.g. "--window-memory=2g") by limiting the number of threads created
-      # (e.g. "--threads=[cores/2]"). Some limited testing didn't show much
-      # difference in outcomes on our current repos, but it might be worth
-      # trying if the repos grow much larger and the packs don't seem to be
-      # getting compressed enough.
-    self.RunGit(gc_args)
-
-    gsutil.call('-m', 'cp', '-r', src_name, dest_prefix)
-
-    # Create .ready file and upload
-    _, ready_file_name =  tempfile.mkstemp(suffix='.ready')
-    try:
-      gsutil.call('cp', ready_file_name, '%s.ready' % (dest_prefix))
-    finally:
-      os.remove(ready_file_name)
-
-    # remove all other directory/.ready files in the same gs_path
-    # except for the directory/.ready file previously created
-    # which can be used for bootstrapping while the current one is
-    # being uploaded
-    if not prune:
-      return
-    prev_dest_prefix = self._GetMostRecentCacheDirectory(ls_out_set)
-    if not prev_dest_prefix:
-      return
-    for path in ls_out_set:
-      if (path == prev_dest_prefix + '/' or
-          path == prev_dest_prefix + '.ready'):
-        continue
-      if path.endswith('.ready'):
-        gsutil.call('rm', path)
-        continue
-      gsutil.call('-m', 'rm', '-r', path)
-
 
   @staticmethod
   def DeleteTmpPackFiles(path):
@@ -595,41 +435,6 @@ def CMDexists(parser, args):
     print(mirror.mirror_path)
     return 0
   return 1
-
-
-@subcommand.usage('[url of repo to create a bootstrap zip file]')
-@metrics.collector.collect_metrics('git cache update-bootstrap')
-def CMDupdate_bootstrap(parser, args):
-  """Create and uploads a bootstrap tarball."""
-  # Lets just assert we can't do this on Windows.
-  if sys.platform.startswith('win'):
-    print('Sorry, update bootstrap will not work on Windows.', file=sys.stderr)
-    return 1
-
-  parser.add_option('--skip-populate', action='store_true',
-                    help='Skips "populate" step if mirror already exists.')
-  parser.add_option('--gc-aggressive', action='store_true',
-                    help='Run aggressive repacking of the repo.')
-  parser.add_option('--prune', action='store_true',
-                    help='Prune all other cached bundles of the same repo.')
-  parser.add_option('--branch', default='master',
-                    help='Branch to use for bootstrap. (Default \'master\')')
-
-  populate_args = args[:]
-  options, args = parser.parse_args(args)
-  url = args[0]
-  mirror = Mirror(url)
-  if not options.skip_populate or not mirror.exists():
-    CMDpopulate(parser, populate_args)
-  else:
-    print('Skipped populate step.')
-
-  # Get the repo directory.
-  _, args2 = parser.parse_args(args)
-  url = args2[0]
-  mirror = Mirror(url)
-  mirror.update_bootstrap(options.prune, options.gc_aggressive, options.branch)
-  return 0
 
 
 @subcommand.usage('[url of repo to add to or update in cache]')
@@ -676,7 +481,6 @@ def CMDpopulate(parser, args):
       'no_fetch_tags': options.no_fetch_tags,
       'verbose': options.verbose,
       'shallow': options.shallow,
-      'bootstrap': not options.no_bootstrap,
       'lock_timeout': options.timeout,
       'reset_fetch_config': options.reset_fetch_config,
   }

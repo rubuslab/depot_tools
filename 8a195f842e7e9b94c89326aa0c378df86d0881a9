@@ -245,6 +245,42 @@
       "message": "...but at some point down the road just \"python\" will probably be python 3 everywhere and folks might use \"python\" again when they mean python 3 and then this code here will automatically silently turn vpython back on again. So could we remove this at some point before this happens?",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bc621e0_444d563d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-13T23:41:22Z",
+      "side": 1,
+      "message": "Yes, at some point between \u0027everyone uses `python3` and python2 is gone\u0027 and \u0027python starts to refer to python3 across the board\u0027, we should get rid of this code, along with whatever other changes we might want to make for dropping support for a python2-based `python` in depot_tools.",
+      "parentUuid": "06716d27_d6bbf0ca",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e3eb15c_6dfb0492",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-13T23:41:22Z",
+      "side": 1,
+      "message": "\u003e Ah, great. If the plan is to _not_ rewrite \"python\" with \"python3\" or \"vpython\" then all\u0027s well. That wasn\u0027t clear to me, and that\u0027s what I was missing :) \n\u003e \n\u003e Is it ok if I s/python/python3/ for at least some of the DEPS in src.git?\n\nThat\u0027s what https://crrev.com/c/2889373 and https://crrev.com/c/2889373 do :).",
+      "parentUuid": "511fa5c3_b9248a91",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

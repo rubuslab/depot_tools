@@ -51,6 +51,24 @@
       "parentUuid": "98e1edee_901aba8d",
       "revId": "754a4c6f7385ac2d26a1f45e9a5ec9b0474aac05",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e085fe5_d6e24af1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-14T22:31:18Z",
+      "side": 1,
+      "message": "\"Hides\" in the sense that calling using `vpython` as a value for\n`python_executable` means that it may not be clear that you\u0027re not getting a regular python interpreter. If you want `vpython` to be invoked, you should\nprobably have to ask for it.\n\nA similar bit of code in gclient has caused some confusion in bringing up\nthe Mac/ARM port (where supposedly python-invoking runhooks actually need \nvpython to work).\n\nUsing vpython *as* vpython and specifying the dependencies is fine +/-\nwhatever level of dependency-sharing you\u0027re willing to tolerate.",
+      "parentUuid": "66d6e395_2c0efc52",
+      "revId": "754a4c6f7385ac2d26a1f45e9a5ec9b0474aac05",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -299,6 +299,23 @@
       "parentUuid": "9bc621e0_444d563d",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bb2c322_d86b86c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-14T19:22:49Z",
+      "side": 1,
+      "message": "\u003e Abandoned\n\u003e \n\u003e will remove this once we\u0027re on py3\n\nFor the record ... it appears that some of the hooks (the telemetry ones, at least) do rely\non this behavior; if you actually run them under python instead of vpython, they\u0027ll fail\ndue to packages not being found in sys.path.",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

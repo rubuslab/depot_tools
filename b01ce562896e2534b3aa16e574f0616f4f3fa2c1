@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7987f73_ca09d8ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-05-14T00:52:49Z",
+      "side": 1,
+      "message": "since all known bugs are on linux (...right?), can we do\n\ninfra/3pp/tools/cpython/${os\u003dlinux}-${arch} version:2.7.17.chromium.22\n\ninfra/3pp/tools/cpython/${os\u003dmac}-${arch} version:2@2.7.18.chromium.35\n\ninfra/3pp/tools/cpython/${os\u003dwin}-${arch} version:2@2.7.18.chromium.35\n\n\nto keep the new version on win and mac?",
+      "revId": "b01ce562896e2534b3aa16e574f0616f4f3fa2c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

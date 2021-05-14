@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4269a81_6e9b3135",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-05-14T19:08:44Z",
+      "side": 1,
+      "message": "lgtm, but i\u0027m not an OWNER of this file any more.",
+      "revId": "dca5d65ac913d11e2880cbaaa0614f08629de083",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

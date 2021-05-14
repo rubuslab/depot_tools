@@ -96,6 +96,30 @@
       },
       "revId": "a8302e93510fe5acd2d96bec1842205b37722e19",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1de507bd_7bb6b31c",
+        "filename": "gsutil.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-14T23:26:51Z",
+      "side": 1,
+      "message": "Apparently I inserted some spaces by accident. Fixed.",
+      "parentUuid": "8334ed15_a27c9b85",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 4
+      },
+      "revId": "a8302e93510fe5acd2d96bec1842205b37722e19",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

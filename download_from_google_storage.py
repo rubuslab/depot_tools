@@ -79,7 +79,7 @@ class Gsutil(object):
   VPYTHON3 = ('vpython3.bat'
               if GetNormalizedPlatform() == 'win32' else 'vpython3')
 
-  def __init__(self, path, boto_path=None, version='4.28'):
+  def __init__(self, path, boto_path=None, version='4.61'):
     if not os.path.exists(path):
       raise FileNotFoundError('GSUtil not found in %s' % path)
     self.path = path

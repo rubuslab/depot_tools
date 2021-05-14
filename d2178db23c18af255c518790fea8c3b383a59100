@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b15501c3_ecc619d3",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-05-14T19:01:34Z",
+      "side": 1,
+      "message": "Looks like keeping 88 in ok_ret still makes a patch failure green. AFAIK the only  way to make this step red instead of purple on fail is to change the infra_step \u003d True line at \n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:recipes/recipe_modules/bot_update/api.py;l\u003d26;drc\u003d68c71a34e1b1725396d01376f812be176f783ebc\n\nEven if this were changed, I\u0027m not sure there\u0027s a way to retroactively change this value, i.e. infra_step is only arg that determines whether a step is purple or red on failure. And since we don\u0027t know whether a failure is a patch failure (red) or infra failure (purple) until the step finishes running, we can\u0027t set purple/red arbitrarily.\n\nThis may be completely wrong, so please let me know if my logic isn\u0027t right.\n\nOtherwise, the best we can do is to infra fail bot_update and raise a StepFailure or InfraFailure step immediately after bot_update. Even though the step will be purple, the build will be purple/red depending on the Failure raised.",
+      "parentUuid": "2b43cee0_98afecac",
+      "revId": "d2178db23c18af255c518790fea8c3b383a59100",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9eb5b25a_2fc835b5",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 1

@@ -334,6 +334,24 @@
       "parentUuid": "2bb2c322_d86b86c2",
       "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c22b454f_3ae2a269",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-14T19:29:05Z",
+      "side": 1,
+      "message": "they should, but they don\u0027t, meaning that if we did change this code, we would definitely be making a backwards-incompatible change and bisecting would break.\n\nThough we should fix this going forward, of course, and I will do so as part of the Python3 move. We should perhaps take another look to see if the vpython dependency is really even needed, to, since I think catapult already vendors in the packages that are \"missing\".",
+      "parentUuid": "58290193_2a4673da",
+      "revId": "8a195f842e7e9b94c89326aa0c378df86d0881a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

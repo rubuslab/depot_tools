@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2099ea89_036cbc02",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-14T22:34:12Z",
+      "side": 1,
+      "message": "This is admittedly a pretty aggressive change, so I\u0027m adding more reviewers than I\nnormally would. \n\nI can break it up so that the upgrade to 4.61 is separate from the removal of vpython\n(though the gsutil.vpython spec refers to a bunch of wheels that aren\u0027t needed and\nthat we don\u0027t have py3 versions of, I htink) and is separate from the remove of the\nversion flags.\n\nBut I thought I\u0027d see what people thought, generally, first?",
+      "revId": "a8302e93510fe5acd2d96bec1842205b37722e19",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

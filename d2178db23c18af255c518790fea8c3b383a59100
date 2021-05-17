@@ -107,6 +107,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ecce813_3035ac98",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-05-17T23:11:48Z",
+      "side": 1,
+      "message": "Done\n\nStep/patch failure: https://luci-milo.appspot.com/raw/build/logs.chromium.org/chromium/led/gavinmak_google.com/f8881d54e5bebe87c07f189777cce4a1d23e68b10aeeb8076d980009a9e6beba/+/annotations\n\nInfra failure: https://luci-milo.appspot.com/raw/build/logs.chromium.org/chromium/led/gavinmak_google.com/22882bd6cb85153379c72340f92f18911588ee8a891c6897e35249df35902252/+/annotations",
+      "parentUuid": "05455529_74a53fb3",
+      "revId": "d2178db23c18af255c518790fea8c3b383a59100",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9eb5b25a_2fc835b5",

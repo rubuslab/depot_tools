@@ -33,6 +33,24 @@
       "message": "lgtm",
       "revId": "b6d73c7a7aef9d2b9c1d42d441e99c9d1f2645cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a03cea46_795d2f3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-17T18:18:47Z",
+      "side": 1,
+      "message": "That\u0027s understandable. I want us to get vpython working a bit better (mostly,\nresolving the performance issues) before we start using it unreservedly everywhere.",
+      "parentUuid": "86552e08_2ff71297",
+      "revId": "b6d73c7a7aef9d2b9c1d42d441e99c9d1f2645cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

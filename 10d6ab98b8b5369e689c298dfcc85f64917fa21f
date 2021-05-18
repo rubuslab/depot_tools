@@ -16,6 +16,23 @@
       "message": "Hello!\nThis is my first time uploading a change for depot_tools.\nI noticed that you reviewed a similar patch here, so I figured you would be a good reviewer for this: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2292962",
       "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "910cc0ea_72e41da7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-18T21:15:59Z",
+      "side": 1,
+      "message": "@ehmaldonado might be a better owner for this at this point ...",
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -29,6 +29,7 @@ import os  # Somewhat exposed through the API.
 import random
 import re  # Exposed through the API.
 import signal
+from six import raise_from
 import sys  # Parts exposed through API.
 import tempfile  # Exposed through the API.
 import threading
@@ -1665,14 +1666,8 @@ class PresubmitExecuter(object):
         sink.report(function_name, rdb_wrapper.STATUS_FAIL, elapsed_time)
       # TODO(crbug.com/953884): replace raise_from with native py3:
       #   raise .. from e
-      try:
-        from future.utils import raise_from
-        raise_from(type(e)('Evaluation of %s failed: %s' % (function_name, e)),
-                   e)
-      except ImportError:
-        if self.verbose:
-          traceback.print_exc()
-        raise type(e)('Evaluation of %s failed: %s' % (function_name, e))
+      raise_from(type(e)('Evaluation of %s failed: %s' % (function_name, e)),
+                 e)
 
     if sink:
       elapsed_time = time_time() - start_time

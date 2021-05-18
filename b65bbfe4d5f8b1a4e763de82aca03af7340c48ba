@@ -52,6 +52,24 @@
       "parentUuid": "1d75ab1b_34f46d84",
       "revId": "b65bbfe4d5f8b1a4e763de82aca03af7340c48ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ad79e48_62f56fcd",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-18T00:38:18Z",
+      "side": 1,
+      "message": "No, I mean I get the following:\n\n    $ python3\n    \u003e\u003e\u003e from future.utils import raise_from\n    Traceback (most recent call last):\n      File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n    ModuleNotFoundError: No module named \u0027future\u0027\n    \u003e\u003e\u003e\n\n`future.utils` isn\u0027t part of Python3 as far as I know. \n\nThere is a `future.utils` module on PyPI, and it looks like that has a raise_from; did you mean to add that to the .vpython spec? \n\nCan you use `six.reraise()` instead? That\u0027s in third_party/six in depot_tools.",
+      "parentUuid": "1d75ab1b_34f46d84",
+      "revId": "b65bbfe4d5f8b1a4e763de82aca03af7340c48ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

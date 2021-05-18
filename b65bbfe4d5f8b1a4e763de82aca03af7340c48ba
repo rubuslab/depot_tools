@@ -34,6 +34,24 @@
       "parentUuid": "24f0428a_0b262efa",
       "revId": "b65bbfe4d5f8b1a4e763de82aca03af7340c48ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "315847e6_473b549b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1265562
+      },
+      "writtenOn": "2021-05-18T00:36:44Z",
+      "side": 1,
+      "message": "I took a look at this and I think the problem is traceback.print_exc() is printing the ImportError instead of the traceback for e. I will just rip out the futures.utils part and leave the if self.verbose: traceback.print_exc() since that works for all versions of Python.",
+      "parentUuid": "1d75ab1b_34f46d84",
+      "revId": "b65bbfe4d5f8b1a4e763de82aca03af7340c48ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,24 @@
       "message": "What is `future.utils` supposed to be importing? That\u0027s neither something in the standard library nor anything checked into depot_tools nor vpython AFAIK.\n\nAnd this is causing errors as a result when checks fail.",
       "revId": "b65bbfe4d5f8b1a4e763de82aca03af7340c48ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d75ab1b_34f46d84",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1265562
+      },
+      "writtenOn": "2021-05-18T00:31:42Z",
+      "side": 1,
+      "message": "It is supposed to be importing an abstraction for wrapping an exception with another exception. Python 3 comes with this feature, but in Python 2 it takes some work and unfortunately the syntax is invalid in Python 3.\n\nWhat error is it causing? It is actually supposed to raise an exception, so what you are seeing may or may not be expected behavior. It would help to see an example. Previously, an unactionable exception was being raised.\n\nIt is intended to work if you use VPYTHON_BYPASS and fallback to just printing the traceback if verbose is set.",
+      "parentUuid": "24f0428a_0b262efa",
+      "revId": "b65bbfe4d5f8b1a4e763de82aca03af7340c48ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

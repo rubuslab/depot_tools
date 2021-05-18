@@ -33,6 +33,24 @@
       "message": "Nit: I\u0027d probably do `import six` here and `six.raise_from()` below.\n\nI prefer seeing the module qualification unless it\u0027s used very frequently.",
       "revId": "96ab8df7ad94834389fe852fadd2ce4880a86ed7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1718cb04_14572bc1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1265562
+      },
+      "writtenOn": "2021-05-18T01:16:35Z",
+      "side": 1,
+      "message": "I will change it.\n\nI triggered this code path and it looks like I do need to use reraise because python 2 does not actually include the original traceback.",
+      "parentUuid": "ef9a454f_c691dc4c",
+      "revId": "96ab8df7ad94834389fe852fadd2ce4880a86ed7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

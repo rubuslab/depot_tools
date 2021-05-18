@@ -447,7 +447,20 @@ def tint(c):
 
 @config_ctx()
 def gerrit_plugins(c):
-  s = c.solutions.add()
-  s.name = 'gerrit_plugins'
-  s.url = ChromiumGitURL(c, 'infra', 'gerrit-plugins', 'tricium.git')
-  c.got_revision_mapping['gerrit_plugins'] = 'got_revision'
+  plugins = [
+    'binary-size',
+    'buildbucket',
+    'chromium-behavior',
+    'chromium-binary-size',
+    'chromium-style',
+    'chumpdetector',
+    'code-coverage',
+    'git-numberer',
+    'landingwidget',
+    'tricium',
+  ]
+  for plugin in plugins:
+    s = c.solutions.add()
+    s.name = 'gerrit_plugins'
+    s.url = ChromiumGitURL(c, 'infra', 'gerrit-plugins', '%s.git' % plugin)
+    c.got_revision_mapping['gerrit_plugins'] = 'got_revision'

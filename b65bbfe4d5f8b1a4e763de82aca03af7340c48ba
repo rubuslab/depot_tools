@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24f0428a_0b262efa",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-18T00:21:36Z",
+      "side": 1,
+      "message": "What is `future.utils` supposed to be importing? That\u0027s neither something in the standard library nor anything checked into depot_tools nor vpython AFAIK.\n\nAnd this is causing errors as a result when checks fail.",
+      "revId": "b65bbfe4d5f8b1a4e763de82aca03af7340c48ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

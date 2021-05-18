@@ -70,6 +70,24 @@
       "parentUuid": "1d75ab1b_34f46d84",
       "revId": "b65bbfe4d5f8b1a4e763de82aca03af7340c48ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "838cbaed_206e8e78",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1265562
+      },
+      "writtenOn": "2021-05-18T00:41:57Z",
+      "side": 1,
+      "message": "Thanks. six also has `raise_from` which includes both stack traces. I am writing a follow up.",
+      "parentUuid": "4ad79e48_62f56fcd",
+      "revId": "b65bbfe4d5f8b1a4e763de82aca03af7340c48ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

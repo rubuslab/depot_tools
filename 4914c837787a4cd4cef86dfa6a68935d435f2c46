@@ -16,6 +16,24 @@
       "message": "Ack.  Interesting, since when I was doing the upload it did presubmit checks for both Python 2 and 3, and then passed with both.  I guess you\u0027re saying it can mess up a different upload part for older depot_tools.",
       "revId": "4914c837787a4cd4cef86dfa6a68935d435f2c46",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dd1b95c_3fb938fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-19T20:13:10Z",
+      "side": 1,
+      "message": "Yes, unfortunately, anyone who happened to be sync to a revision on main prior to 884028, or, more importantly, anyone on one of the release branches.\n\nThe fix is easy enough - either use io.open() instead, or open(..., \"r\"), or open(..., \"rb\") and explicitly .decode the binary.",
+      "parentUuid": "1f215e03_0ae6c904",
+      "revId": "4914c837787a4cd4cef86dfa6a68935d435f2c46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

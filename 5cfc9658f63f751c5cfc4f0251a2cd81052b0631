@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08451ee8_ade62ed4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1340678
+      },
+      "writtenOn": "2021-05-19T21:03:38Z",
+      "side": 1,
+      "message": "I tried cherry-picking this into my depot_tools and I got a different Python 3 error this time:\n\n\u003e git cl presubmit -u\nRunning Python 2 presubmit upload checks ...\nDone processing C:\\src\\chromium-ooppd\\src\\chrome\\browser\\printing\\print_backend_service_manager.cc\n\nPresubmit checks took 130.6s to calculate.\n\nPython 2 presubmit checks passed.\nRunning Python 3 presubmit upload checks ...\nTraceback (most recent call last):\n  File \"C:\\src\\depot_tools\\presubmit_support.py\", line 1661, in _run_check_function\n    result \u003d eval(function_name + \u0027(*__args)\u0027, context)\n  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n  File \"PRESUBMIT.py\", line 4254, in ChecksCommon\n    input_api.canned_checks.CheckAuthorizedAuthor(input_api, output_api))\n  File \"C:\\src\\depot_tools\\presubmit_canned_checks.py\", line 131, in CheckAuthorizedAuthor\n    for line in open(authors_path).decode(\u0027utf-8\u0027).splitlines())\nAttributeError: \u0027_io.TextIOWrapper\u0027 object has no attribute \u0027decode\u0027\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\src\\depot_tools\\presubmit_support.py\", line 2041, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"C:\\src\\depot_tools\\presubmit_support.py\", line 2022, in main\n    return DoPresubmitChecks(\n  File \"C:\\src\\depot_tools\\presubmit_support.py\", line 1760, in DoPresubmitChecks\n    results +\u003d executer.ExecPresubmitScript(presubmit_script, filename)\n  File \"C:\\src\\depot_tools\\presubmit_support.py\", line 1622, in ExecPresubmitScript\n    self._run_check_function(function_name, context, sink))\n  File \"C:\\src\\depot_tools\\presubmit_support.py\", line 1670, in _run_check_function\n    six.reraise(e_type, \u0027Evaluation of %s failed: %s\u0027 % (function_name,\n  File \"C:\\Users\\awscreen\\.vpython-root\\908550\\lib\\site-packages\\six.py\", line 684, in reraise\n    if value.__traceback__ is not tb:\nAttributeError: \u0027str\u0027 object has no attribute \u0027__traceback__\u0027\n+\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d+\n|      METRICS COLLECTION IS TAKING PLACE           |\n|                                                   |\n| To suppress this message opt in or out using:     |\n| $ gclient metrics [--opt-in] [--opt-out]          |\n| For more information please see metrics.README.md |\n| in your depot_tools checkout or visit             |\n| https://goo.gl/yNpRDV.                            |\n+\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d+",
+      "revId": "5cfc9658f63f751c5cfc4f0251a2cd81052b0631",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

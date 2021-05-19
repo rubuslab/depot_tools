@@ -240,9 +240,9 @@ class Hook(object):
 
     cmd = [arg for arg in self._action]
 
-    if cmd[0] == 'python':
-      cmd[0] = 'vpython'
-    if cmd[0] == 'vpython' and _detect_host_os() == 'win':
+    if cmd[0] in ('python', 'python3'):
+      cmd[0] = 'v' + cmd[0]
+    if cmd[0] in ('vpython', 'vpython3') and _detect_host_os() == 'win':
       cmd[0] += '.bat'
 
     try:

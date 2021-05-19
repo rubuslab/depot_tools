@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47e98e4d_644bc018",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2021-05-19T12:12:40Z",
+      "side": 1,
+      "message": "Please take a look.\n\nContext: https://crrev.com/i/3843691 (which changed a script from using `python` to `python3` and caused it to no longer be run via `vpython`).",
+      "revId": "1ae438cc4754a21901b0c90ac409e31f5d8d6998",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

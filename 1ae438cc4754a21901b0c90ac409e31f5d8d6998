@@ -34,6 +34,24 @@
       "parentUuid": "47e98e4d_644bc018",
       "revId": "1ae438cc4754a21901b0c90ac409e31f5d8d6998",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd0df44c_35d4ba7d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2021-05-19T17:30:16Z",
+      "side": 1,
+      "message": "Understood.\n\nNo, setup-gn.py does not need vpython but was run through vpython previously (due to the existence of the rewriting rule). I was unsure whether we wanted all hooks to run under vpython or not and this is why I made this change.\n\nGiven the discussion in https://crrev.com/c/2881916, I think we prefer when hooks explicitly opt in into vpython3, so it was probably not intended to run setup-gn.py via vpython.\n\nThank you for the quick answer.",
+      "parentUuid": "8149186d_00eff671",
+      "revId": "1ae438cc4754a21901b0c90ac409e31f5d8d6998",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

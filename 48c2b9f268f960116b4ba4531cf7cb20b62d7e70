@@ -34,6 +34,24 @@
       "parentUuid": "e74f5bd5_8f4a1572",
       "revId": "48c2b9f268f960116b4ba4531cf7cb20b62d7e70",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "648e76fe_71eaca6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-19T23:00:57Z",
+      "side": 1,
+      "message": "\u003e CheckAuthorizedAuthor\n\u003e    valid_authors.append(m.group(1)).lower()\n\u003e AttributeError: \u0027NoneType\u0027 object has no attribute \u0027lower\u0027\n\nWhoops, mismatched parens. I wonder why the presubmit checks didn\u0027t trip that ...",
+      "parentUuid": "a22d3b81_43dacd15",
+      "revId": "48c2b9f268f960116b4ba4531cf7cb20b62d7e70",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

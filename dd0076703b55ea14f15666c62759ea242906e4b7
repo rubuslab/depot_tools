@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3bdee4f_09d4b8e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-19T23:46:29Z",
+      "side": 1,
+      "message": "argh ... per the comment from awscreen, this change isn\u0027t even correct.\n\nReverting again.",
+      "revId": "dd0076703b55ea14f15666c62759ea242906e4b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

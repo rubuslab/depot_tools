@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9c071c2_3e4cbb28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-19T22:11:05Z",
+      "side": 1,
+      "message": "Ah, yeah, open defaults to \u0027r\u0027, not \u0027rb\u0027, so the decode is redundant (in Py3).\n\nBut, I\u0027ll switch this to ehmaldonado\u0027s approach anyway.",
+      "parentUuid": "08451ee8_ade62ed4",
+      "revId": "5cfc9658f63f751c5cfc4f0251a2cd81052b0631",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "30fdefc6_0a0300d8",

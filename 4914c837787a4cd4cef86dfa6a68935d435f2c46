@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f215e03_0ae6c904",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1340678
+      },
+      "writtenOn": "2021-05-19T20:04:29Z",
+      "side": 1,
+      "message": "Ack.  Interesting, since when I was doing the upload it did presubmit checks for both Python 2 and 3, and then passed with both.  I guess you\u0027re saying it can mess up a different upload part for older depot_tools.",
+      "revId": "4914c837787a4cd4cef86dfa6a68935d435f2c46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

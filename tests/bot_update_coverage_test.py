@@ -158,6 +158,7 @@ class BotUpdateUnittests(unittest.TestCase):
       'gerrit_reset': None,
       'disable_syntax_validation': False,
       'enforce_fetch': False,
+      'experiments': [],
   }
 
   def setUp(self):

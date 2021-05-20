@@ -16,6 +16,23 @@
       "message": "This is a revised version of the first attempt: it\u0027ll still use vpython (the prior one\ndidn\u0027t), but we get rid of the version-forcing.\n\nNote that this won\u0027t actually work until we get a python3-compatible crcmod wheel.",
       "revId": "3dd09cc2fb0c8146197d96699f32cb19e1412c93",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bf19262_ac41289d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2021-05-20T04:21:06Z",
+      "side": 1,
+      "message": "iiuc, this is fine because gsutil vendors everything it needs (other than compiled modules)",
+      "revId": "3dd09cc2fb0c8146197d96699f32cb19e1412c93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

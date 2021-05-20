@@ -77,6 +77,12 @@ GOT_REVISION_MAPPINGS = {
     }
 }
 
+# List of bot update experiments
+EXP_NO_SYNC = 'no_sync'  # Don't fetch/sync if current revision is recent enough
+
+# Don't sync if the difference between local and remote is less than 10 commits.
+NO_SYNC_MAX_DIFF = 10
+JSON_PREFIX = ')]}\''
 
 GCLIENT_TEMPLATE = """solutions = %(solutions)s
 
@@ -624,28 +630,50 @@ def _set_git_config(fn):
 
 
 def git_checkouts(solutions, revisions, refs, no_fetch_tags, git_cache_dir,
-                  cleanup_dir, enforce_fetch):
+                  cleanup_dir, enforce_fetch, experiments):
   build_dir = os.getcwd()
   first_solution = True
   for sln in solutions:
     sln_dir = path.join(build_dir, sln['name'])
     _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
-                  cleanup_dir, enforce_fetch)
+                  cleanup_dir, enforce_fetch, experiments)
     if first_solution:
-      git_ref = git('log', '--format=%H', '--max-count=1',
-                    cwd=path.join(build_dir, sln['name'])
-                ).strip()
+      git_ref = git('log', '--format=%H', '--max-count=1', cwd=sln_dir).strip()
     first_solution = False
   return git_ref
 
 
+def _git_checkout_needs_sync(sln_url, sln_dir, refs):
+  if not path.exists(sln_dir):
+    return True
+  for ref in refs:
+    try:
+      remote_ref = ref_to_remote_ref(ref)
+      local_hash = git('show', '-s', '--format=%H', remote_ref, cwd=sln_dir)
+    except SubprocessError:
+      return True
+    try:
+      response = urllib2.urlopen(sln_url + '/+log/' + local_hash + '..' + ref)
+      response = json.loads(response.read().decode('utf-8')[:len(JSON_PREFIX)])
+    except urllib2.URLError:
+      return True
+    if len(response['log']) > NO_SYNC_MAX_DIFF:
+      return True
+  return False
+
+
 def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
-                  cleanup_dir, enforce_fetch):
+                  cleanup_dir, enforce_fetch, experiments):
   name = sln['name']
   url = sln['url']
 
   branch, revision = get_target_branch_and_revision(name, url, revisions)
   pin = revision if COMMIT_HASH_RE.match(revision) else None
+
+  if (EXP_NO_SYNC in experiments
+      and not _git_checkout_needs_sync(sln['url'], sln_dir, refs)):
+    git('checkout', '--force', pin or branch, '--', cwd=sln_dir)
+    return
 
   populate_cmd = (['cache', 'populate', '--ignore_locks', '-v',
                    '--cache-dir', git_cache_dir, url, '--reset-fetch-config'])
@@ -816,14 +844,14 @@ def emit_json(out_file, did_run, **kwargs):
 def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
                     target_cpu, patch_root, patch_refs, gerrit_rebase_patch_ref,
                     no_fetch_tags, refs, git_cache_dir, cleanup_dir,
-                    gerrit_reset, enforce_fetch):
+                    gerrit_reset, enforce_fetch, experiments):
   # Get a checkout of each solution, without DEPS or hooks.
   # Calling git directly because there is no way to run Gclient without
   # invoking DEPS.
   print('Fetching Git checkout')
 
   git_checkouts(solutions, revisions, refs, no_fetch_tags, git_cache_dir,
-                cleanup_dir, enforce_fetch)
+                cleanup_dir, enforce_fetch, experiments)
 
   # Ensure our build/ directory is set up with the correct .gclient file.
   gclient_configure(solutions, target_os, target_os_only, target_cpu,
@@ -907,6 +935,8 @@ def parse_revisions(revisions, root):
 def parse_args():
   parse = optparse.OptionParser()
 
+  parse.add_option('--experiments',
+                   help='Comma separated list of experiments to enable')
   parse.add_option('--root', dest='patch_root',
                    help='DEPRECATED: Use --patch_root.')
   parse.add_option('--patch_root', help='Directory to patch on top of.')
@@ -1085,7 +1115,9 @@ def checkout(options, git_slns, specs, revisions, step_text):
           refs=options.refs,
           git_cache_dir=options.git_cache_dir,
           cleanup_dir=options.cleanup_dir,
-          gerrit_reset=not options.gerrit_no_reset)
+          gerrit_reset=not options.gerrit_no_reset,
+
+          experiments=(options.experiments or '').split(','))
       gclient_output = ensure_checkout(**checkout_parameters)
       should_delete_dirty_file = True
     except GclientSyncFailed:

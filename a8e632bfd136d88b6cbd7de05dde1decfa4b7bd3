@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8d9030b_38de23e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-20T00:07:51Z",
+      "side": 1,
+      "message": "Right, attempt #3, this time not auto-submitting (this is why I never auto-submit :).",
+      "revId": "a8e632bfd136d88b6cbd7de05dde1decfa4b7bd3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

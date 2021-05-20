@@ -50,6 +50,24 @@
       "message": "On second thought, if there was a fast way to detect that each branch only contains one commit, we could apply this optimization in that case without needing an option...\nI\u0027m not sure how to detect it though.",
       "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c9b0cdd_6a3553d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303398
+      },
+      "writtenOn": "2021-05-20T00:26:19Z",
+      "side": 1,
+      "message": "unresolving",
+      "parentUuid": "eab5b607_6d7e7413",
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

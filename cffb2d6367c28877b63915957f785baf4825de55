@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00e58230_e198feb2",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-05-20T19:50:51Z",
+      "side": 1,
+      "message": "Erik, do you think 10 revisions is a good number?",
+      "range": {
+        "startLine": 84,
+        "startChar": 19,
+        "endLine": 84,
+        "endChar": 21
+      },
+      "revId": "cffb2d6367c28877b63915957f785baf4825de55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

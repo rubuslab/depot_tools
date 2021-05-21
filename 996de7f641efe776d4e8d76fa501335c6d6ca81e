@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8722443_e6aa643b",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-05-21T23:34:16Z",
+      "side": 1,
+      "message": "Let me know if there\u0027s a better way to write all these with a list comprehension or something. I wasn\u0027t able to find a way to dedupe these",
+      "range": {
+        "startLine": 449,
+        "startChar": 0,
+        "endLine": 449,
+        "endChar": 34
+      },
+      "revId": "996de7f641efe776d4e8d76fa501335c6d6ca81e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

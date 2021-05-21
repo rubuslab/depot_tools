@@ -1617,9 +1617,13 @@ class PresubmitExecuter(object):
               continue
             if function_name.endswith('Upload') and self.committing:
               continue
+            start = time.time()
             logging.debug('Running %s in %s', function_name, presubmit_path)
             results.extend(
                 self._run_check_function(function_name, context, sink))
+            elapsed = time.time() - start
+            if elapsed > 10.0:
+              print('Warning: %s took %.1f to run.' % (function_name, elapsed))
             logging.debug('Running %s done.', function_name)
             self.more_cc.extend(output_api.more_cc)
 
@@ -1755,9 +1759,13 @@ def DoPresubmitChecks(change,
       filename = os.path.abspath(filename)
       if verbose:
         sys.stdout.write('Running %s\n' % filename)
+      start = time.time()
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename, 'rU')
       results += executer.ExecPresubmitScript(presubmit_script, filename)
+      elapsed = time.time() - start
+      if elapsed > 10.0:
+        print('Warning: %s took %.1f to run.' % (filename, elapsed))
     results += thread_pool.RunAsync()
 
     messages = {}

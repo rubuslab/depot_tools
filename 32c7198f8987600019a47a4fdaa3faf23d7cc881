@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "299d51b2_5b1a61e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-21T19:02:21Z",
+      "side": 1,
+      "message": "Note that this will only be useful on the files where we\u0027ve broken out the checks individually\n(like in //PRESUBMIT.py, which is probably where this will be most useful anyway).\n\nIn other presubmit files where we haven\u0027t done that, you\u0027ll just get the one time for all of the changes in the file (i.e., CheckChangesOnUpload()), though that\u0027ll still be useful to pinpoint the problematic file.\n\nWe can (and should) upgrade the other presubmit files to record the individual checks, but doing so hasn\u0027t been a priority.",
+      "revId": "32c7198f8987600019a47a4fdaa3faf23d7cc881",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

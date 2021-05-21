@@ -16,6 +16,23 @@
       "message": "I\u0027ve hit this problem a couple of times - it\u0027s quite confusing. Using text instead of binary should avoid it. PTAL. crrev.com/c/2910488 and crrev.com/c/2911914 fix the known bugs in Windows line-ending detection, but this should be fixed separately to avoid cryptic error messages.",
       "revId": "35ea71beac2dc5bcc54a242a77c6a43516cf4992",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3098953_c0835533",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-21T17:44:22Z",
+      "side": 1,
+      "message": "yup.",
+      "revId": "35ea71beac2dc5bcc54a242a77c6a43516cf4992",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

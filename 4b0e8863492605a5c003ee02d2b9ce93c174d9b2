@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "97cde78e_eda04545",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2021-05-24T22:49:29Z",
+      "side": 1,
+      "message": "Ok, I think time would be good since that can\u0027t fail and it\u0027s simpler. Can we try 6 hours?",
+      "parentUuid": "04fa3ba0_176ffea5",
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a4bfa06_019d7440",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 4

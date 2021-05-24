@@ -22,6 +22,30 @@
       },
       "revId": "cffb2d6367c28877b63915957f785baf4825de55",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e3b0a3f_e2971b79",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2021-05-24T20:12:58Z",
+      "side": 1,
+      "message": "Can we try more, like 20?",
+      "parentUuid": "00e58230_e198feb2",
+      "range": {
+        "startLine": 84,
+        "startChar": 19,
+        "endLine": 84,
+        "endChar": 21
+      },
+      "revId": "cffb2d6367c28877b63915957f785baf4825de55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

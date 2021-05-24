@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "22e2f8b1_a0df2ac3",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2021-05-24T20:12:58Z",
+      "side": 1,
+      "message": "Is this a reliable way to get the latest revision? Could something be done with the git protocol so that auth works correctly for non-public repos?",
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a4bfa06_019d7440",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 4
@@ -37,6 +54,63 @@
         "endLine": 640,
         "endChar": 78
       },
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34efd046_f1733fc2",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2021-05-24T20:12:58Z",
+      "side": 1,
+      "message": "just url",
+      "range": {
+        "startLine": 657,
+        "startChar": 39,
+        "endLine": 657,
+        "endChar": 49
+      },
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47f588e9_48b9343d",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2021-05-24T20:12:58Z",
+      "side": 1,
+      "message": "default\u003d\u0027\u0027? default\u003dNone?",
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c66c73b_4b4a600e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2021-05-24T20:12:58Z",
+      "side": 1,
+      "message": "You can drop the \u0027or ...\u0027 if you set a default above. But do you want to pass in a list with an empty string when nothing is set?\n\nMaybe better would be \"options.experiments.split(\u0027,\u0027) if options.experiments else []\" and set default to None above.",
       "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

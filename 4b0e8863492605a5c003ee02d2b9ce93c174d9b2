@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "04fa3ba0_176ffea5",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-05-24T21:13:02Z",
+      "side": 1,
+      "message": "We only do this for main solution (i.e. chromium/src) for now, so this is not an issue for us. If we want to do this for other repos in the future, then yes, we\u0027ll have to authenticate to Gitiles.\n\nI am not aware of a way to do this using the git protocol without fetching first, which would defeat the purpose.\n\nWe could also try a time-based approach. So instead of X revisions old, fetch again when the checkout is more than Y minutes old.",
+      "parentUuid": "22e2f8b1_a0df2ac3",
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a4bfa06_019d7440",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 4
@@ -94,6 +112,24 @@
       "writtenOn": "2021-05-24T20:12:58Z",
       "side": 1,
       "message": "default\u003d\u0027\u0027? default\u003dNone?",
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c57b9469_d1e0a3fe",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-05-24T21:13:02Z",
+      "side": 1,
+      "message": "default is None by default.",
+      "parentUuid": "47f588e9_48b9343d",
       "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

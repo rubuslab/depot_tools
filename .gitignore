@@ -35,7 +35,7 @@
 /bootstrap*_bin
 /python*_bin
 /python_bin_reldir.txt
-/python3_bin_reldir.txt
+/python3*_bin_reldir.txt
 /win_tools*_bin
 /git_bin
 /git-*_bin

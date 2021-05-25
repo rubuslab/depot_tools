@@ -219,8 +219,8 @@ def _safe_rmtree(path):
   shutil.rmtree(path, onerror=_on_error)
 
 
-def clean_up_old_installations(skip_dir):
-  """Removes Python installations other than |skip_dir|.
+def clean_up_old_installations(skip_dirs):
+  """Removes Python installations other than |skip_dirs|.
 
   This includes an "in-use" check against the "python.exe" in a given directory
   to avoid removing Python executables that are currently ruinning. We need
@@ -231,7 +231,7 @@ def clean_up_old_installations(skip_dir):
   for f in ('win_tools-*_bin', 'python27*_bin', 'git-*_bin', 'bootstrap-*_bin'):
     for entry in fnmatch.filter(root_contents, f):
       full_entry = os.path.join(ROOT_DIR, entry)
-      if full_entry == skip_dir or not os.path.isdir(full_entry):
+      if full_entry in skip_dirs or not os.path.isdir(full_entry):
         continue
 
       logging.info('Cleaning up old installation %r', entry)
@@ -297,25 +297,27 @@ def main(argv):
   parser.add_argument('--verbose', action='store_true')
   parser.add_argument('--bootstrap-name', required=True,
                       help='The directory of the Python installation.')
+  parser.add_argument('--skip-dirs', required=False,
+                      help='Bootstrap python directories *not* to remove')
   args = parser.parse_args(argv)
 
   logging.basicConfig(level=logging.DEBUG if args.verbose else logging.WARN)
 
+  bootstrap_name = args.bootstrap_name
   template = Template.empty()._replace(
-      PYTHON_RELDIR=os.path.join(args.bootstrap_name, 'python'),
-      PYTHON_BIN_RELDIR=os.path.join(args.bootstrap_name, 'python', 'bin'),
-      PYTHON_BIN_RELDIR_UNIX=posixpath.join(
-          args.bootstrap_name, 'python', 'bin'),
-      PYTHON3_BIN_RELDIR=os.path.join(args.bootstrap_name, 'python3', 'bin'),
-      PYTHON3_BIN_RELDIR_UNIX=posixpath.join(
-          args.bootstrap_name, 'python3', 'bin'),
-      GIT_BIN_RELDIR=os.path.join(args.bootstrap_name, 'git'),
-      GIT_BIN_RELDIR_UNIX=posixpath.join(args.bootstrap_name, 'git'))
-
-  bootstrap_dir = os.path.join(ROOT_DIR, args.bootstrap_name)
+      PYTHON_RELDIR=os.path.join(bootstrap_name, 'python'),
+      PYTHON_BIN_RELDIR=os.path.join(bootstrap_name, 'python', 'bin'),
+      PYTHON_BIN_RELDIR_UNIX=posixpath.join(bootstrap_name, 'python', 'bin'),
+      PYTHON3_BIN_RELDIR=os.path.join(bootstrap_name, 'python3', 'bin'),
+      PYTHON3_BIN_RELDIR_UNIX=posixpath.join(bootstrap_name, 'python3', 'bin'),
+      GIT_BIN_RELDIR=os.path.join(bootstrap_name, 'git'),
+      GIT_BIN_RELDIR_UNIX=posixpath.join(bootstrap_name, 'git'))
 
   # Clean up any old Python and Git installations.
-  clean_up_old_installations(bootstrap_dir)
+  clean_up_old_installations([
+      os.path.join(ROOT_DIR, b) for b in
+      args.skip_dirs.split(' ') or [args.bootstrap_name]
+  ])
 
   if IS_WIN:
     git_postprocess(template, os.path.join(bootstrap_dir, 'git'))
@@ -345,9 +347,19 @@ def main(argv):
       template.PYTHON_BIN_RELDIR,
       os.path.join(ROOT_DIR, 'python_bin_reldir.txt'))
 
-  maybe_update(
-      template.PYTHON3_BIN_RELDIR,
-      os.path.join(ROOT_DIR, 'python3_bin_reldir.txt'))
+
+  version = (sys.version_info.major, sys.version_info.minor)
+  if version == (3, 8):
+    maybe_update(
+        template.PYTHON3_BIN_RELDIR,
+        os.path.join(ROOT_DIR, 'python3_bin_reldir.txt'))
+    maybe_update(
+        template.PYTHON3_BIN_RELDIR,
+        os.path.join(ROOT_DIR, 'python3.8_bin_reldir.txt'))
+  if version == (3, 9):
+    maybe_update(
+        template.PYTHON3_BIN_RELDIR,
+        os.path.join(ROOT_DIR, 'python3.9_bin_reldir.txt'))
 
   return 0
 

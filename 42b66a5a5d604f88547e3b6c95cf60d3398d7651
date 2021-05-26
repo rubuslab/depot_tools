@@ -16,6 +16,24 @@
       "message": "I wonder if CIPD folks might be able to help with allowing multiple versions of the same package to live in the same manifest. It seems like it would simplify things. +iannucci, vadimsh any thoughts?",
       "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e56b618_712b450c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2021-05-26T04:59:14Z",
+      "side": 1,
+      "message": "What are you asking for exactly?\n\nThe following manifest should work fine right now:\n\n```\n@Subdir python3.8\ninfra/3pp/tools/cpython3/${platform} version:2@3.8.10.chromium.17\n@Subdir python3.9\ninfra/3pp/tools/cpython3/${platform} version:2@3.9.5.chromium.17\n```\n\nAnd the following manifest makes little sense (how would CIPD know what version to pick when installing stuff into \"python3\" directory?):\n\n```\n@Subdir python3\ninfra/3pp/tools/cpython3/${platform} version:2@3.8.10.chromium.17\n@Subdir python3\ninfra/3pp/tools/cpython3/${platform} version:2@3.9.5.chromium.17\n```\n\nDo you want to install them one over another at the same time? This will require significant changes to CIPD guts (since CIPD needs to track what files belong to what package, so it can clean them up when the package is removed or updated, this tracking currently assumes of version of a package per directory).",
+      "parentUuid": "375c2fe7_1b99f21d",
+      "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

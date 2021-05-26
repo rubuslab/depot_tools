@@ -70,6 +70,40 @@
       "parentUuid": "d4d5528d_7a9bde57",
       "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61414377_90bbda18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-26T20:20:52Z",
+      "side": 1,
+      "message": "I feel like it might be good to have some documentation (if not a design doc) somewhere about how we expect this to work.\n\nSpecifically, I\u0027m wondering things like ...\n\n- will we download both 3.8 and 3.9 packages all the time, or download one by default and only download the other when asked for by vpython?\n\n- how will we update from 3.8 to 3.9 in python-bin/ ?\n\n- will `python3.9` be exposed as an executable directly?\n\nhow will 3.10 be treated?\n\netc.",
+      "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afb645f0_30bf13b5",
+        "filename": "vpython3",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-05-26T20:20:52Z",
+      "side": 1,
+      "message": "It would be good to document somewhere (maybe here, in comments) why we \nneed these flags, as opposed to this being baked into vpython directly\nor via some sort of config file ...\n\nI don\u0027t really like the wrappers growing additional logic that isn\u0027t in the\nbase executable; it creates too much of dependency on depot_tools.",
+      "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

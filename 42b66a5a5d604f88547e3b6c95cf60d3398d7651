@@ -52,6 +52,24 @@
       "parentUuid": "2e56b618_712b450c",
       "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a69d9c2_0bca056e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-05-26T19:01:45Z",
+      "side": 1,
+      "message": "However... when we update minor versions of python, don\u0027t they just get written into the same directory right now? Are devs having issues with that?",
+      "parentUuid": "d4d5528d_7a9bde57",
+      "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

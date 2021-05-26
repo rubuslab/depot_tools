@@ -34,6 +34,24 @@
       "parentUuid": "375c2fe7_1b99f21d",
       "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4d5528d_7a9bde57",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1275796
+      },
+      "writtenOn": "2021-05-26T05:13:46Z",
+      "side": 1,
+      "message": "Ah, yeah I didn\u0027t think of this. It doesn\u0027t quite apply in depot_tools as is because depot_tools extracts the version from the manifest and uses that to name the directory via -root... perhaps we could reduce some of the complexity by just manually specifying the directory name in the manifest with @Subdir.\n\nI think depot_tools wants to use the full name of the package in the directory to avoid clobbering files used by currently running python processes.",
+      "parentUuid": "2e56b618_712b450c",
+      "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

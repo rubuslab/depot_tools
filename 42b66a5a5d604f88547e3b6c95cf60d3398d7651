@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "375c2fe7_1b99f21d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-05-26T04:31:45Z",
+      "side": 1,
+      "message": "I wonder if CIPD folks might be able to help with allowing multiple versions of the same package to live in the same manifest. It seems like it would simplify things. +iannucci, vadimsh any thoughts?",
+      "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

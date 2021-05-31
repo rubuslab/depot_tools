@@ -153,6 +153,22 @@ def CMDchanges(parser, args):
   write_result(result, opt)
 
 
+@subcommand.usage('[args ...')
+def CMDrelatedchanges(parser, args):
+  parser.add_option('-c', '--change', type=str, help='change id')
+  parser.add_option('-r', '--revision', type=str, help='revision id')
+
+  (opt, args) = parser.parse_args(args)
+
+  result = gerrit_util.GetRelatedChanges(
+      urlparse.urlparse(opt.host).netloc,
+      change=opt.change,
+      revision=opt.revision,
+  )
+  logging.info(result)
+  write_result(result, opt)
+
+
 @subcommand.usage('[args ...]')
 def CMDcreatechange(parser, args):
   parser.add_option('-s', '--subject', help='subject for change')

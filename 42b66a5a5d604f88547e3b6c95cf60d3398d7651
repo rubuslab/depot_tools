@@ -125,6 +125,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10567313_3b4340d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-01T20:50:33Z",
+      "side": 1,
+      "message": "Good question.\n\nWe should probably create a //docs directory in depot_tools, and start adding stuff to it, e.g., moving the *.html files from //man/html for starters.\n\nWe should also figure out what, if anything should be moved out of GDoc form from https://docs.google.com/document/d/19kEKsm769DwIhMhl78kVb0qE1S-9_v9OYDF43WmyPBI/edit#heading\u003dh.insyfkf0vu5m and https://docs.google.com/document/d/1a2H9tvWsNO8hXZVSp48T7QHwSMWvacoZjBqngDSk94M/edit#heading\u003dh.cdh3codmursa.\n\n//python-bin/ is the directory we recommend people put in $PATH if they don\u0027t have a system-provided python that is \u003e\u003d 3.8.\n\nI think we need *some* strategy for how we will roll forward python3 minor versions, both for internal (depot_tools-based) uses of Python and external (provided for users) uses, and I think we should re-review the discussion in the latter GDoc for why combining things in a single directory gets hard.\n\nI don\u0027t remember enough of that offhand to know whether we can realistically manage multiple directories and whether each should have just a `python3`, just a `python3.X`, or both.",
+      "parentUuid": "7394aafb_9aeb257b",
+      "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "afb645f0_30bf13b5",
@@ -156,6 +174,24 @@
       "side": 1,
       "message": "Not sure I understand. This is specific to the depot_tools checkout, how would we bake it into vpython? Is the idea to update the infra vpython binary to download and manage the Python packages itself?",
       "parentUuid": "afb645f0_30bf13b5",
+      "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57fde12e_d262d310",
+        "filename": "vpython3",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-01T20:50:33Z",
+      "side": 1,
+      "message": "Yes, or it could have some way to discover this based on the vpython specs, or something ...",
+      "parentUuid": "d6566766_fd247374",
       "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

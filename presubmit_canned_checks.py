@@ -974,7 +974,7 @@ def GetPylint(input_api,
       args.append('--jobs=%s' % input_api.cpu_count)
       description += ' on %d cores' % input_api.cpu_count
 
-    kwargs['stdin'] = '\n'.join(args + flist)
+    kwargs['stdin'] = '\n'.join(args + flist).encode('utf-8')
 
     return input_api.Command(
         name='Pylint (%s)' % description,

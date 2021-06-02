@@ -1,0 +1,2 @@
+@Subdir python3
+infra/3pp/tools/cpython3/${platform} version:2@3.9.5.chromium.17

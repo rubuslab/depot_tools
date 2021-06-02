@@ -48,8 +48,22 @@ elif [[ $DEPOT_TOOLS_BOOTSTRAP_PYTHON3 != 0 ]]; then
     source "$base_dir/bootstrap_python3"
     bootstrap_python3
   fi
-  PYTHON3_BIN_RELDIR="$base_dir/$(cat "$base_dir/python3_bin_reldir.txt" | xargs echo)"
-  exec "$base_dir/.cipd_bin/vpython3" -vpython-interpreter  "$PYTHON3_BIN_RELDIR/python3" "$@"
+
+  # We want vpython to use our vendored Python, not random Python binaries that
+  # may happen to be on the system. So we explicitly specify the Python binaries
+  # to use via the '-vpython-interpreter' flag. We specify one for each minor
+  # version we want to support. The earliest one in the list will be preferred
+  # by default, with others able to be selected via "python_version" in a
+  # .vpython spec file.
+  #
+  # This can't be baked into vpython itself without making vpython responsible
+  # for managing its own Python packages, which it isn't able to do.
+  interpreter_args=()
+  for reldir_file in "$base_dir"/python3.*_bin_reldir.txt; do
+    interpreter_args+=('-vpython-interpreter')
+    interpreter_args+=("$base_dir/$(cat "$reldir_file" | xargs echo)/python3")
+  done
+  exec "$base_dir/.cipd_bin/vpython3" "${interpreter_args[@]}" "$@"
 else
   exec "$base_dir/.cipd_bin/vpython3" "$@"
 fi

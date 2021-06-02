@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8975ca9d_84cd3f06",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-06-02T01:46:35Z",
+      "side": 1,
+      "message": "nit: .] (missing right bracket)",
+      "range": {
+        "startLine": 156,
+        "startChar": 27,
+        "endLine": 156,
+        "endChar": 28
+      },
+      "revId": "9ea59af2fc2ad2b8b44b19e23ae10430abba5438",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3749bdbe_a4420dab",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-06-02T01:46:35Z",
+      "side": 1,
+      "message": "replace with placeholders / example.com",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 51
+      },
+      "revId": "9ea59af2fc2ad2b8b44b19e23ae10430abba5438",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -194,6 +194,24 @@
       "parentUuid": "d6566766_fd247374",
       "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2490aa3f_3ddd8323",
+        "filename": "vpython3",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1275796
+      },
+      "writtenOn": "2021-06-02T07:02:34Z",
+      "side": 1,
+      "message": "Ok, got it. That sounds like something we might want to explore in the future. For now I\u0027ve just added some comments here explaining what\u0027s going on.",
+      "parentUuid": "57fde12e_d262d310",
+      "revId": "42b66a5a5d604f88547e3b6c95cf60d3398d7651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

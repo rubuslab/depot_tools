@@ -71,6 +71,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7783103a_1fba0113",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-02T21:19:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97cde78e_eda04545",
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a4bfa06_019d7440",
@@ -94,6 +112,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5caa2ea3_75eb05de",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-02T21:19:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a4bfa06_019d7440",
+      "range": {
+        "startLine": 640,
+        "startChar": 59,
+        "endLine": 640,
+        "endChar": 78
+      },
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "34efd046_f1733fc2",
@@ -107,6 +149,30 @@
       "writtenOn": "2021-05-24T20:12:58Z",
       "side": 1,
       "message": "just url",
+      "range": {
+        "startLine": 657,
+        "startChar": 39,
+        "endLine": 657,
+        "endChar": 49
+      },
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f07a2a5_0a3de56f",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-02T21:19:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34efd046_f1733fc2",
       "range": {
         "startLine": 657,
         "startChar": 39,
@@ -152,6 +218,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4ab1fb7_28cd0ce0",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-02T21:19:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c57b9469_d1e0a3fe",
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c66c73b_4b4a600e",
@@ -165,6 +249,24 @@
       "writtenOn": "2021-05-24T20:12:58Z",
       "side": 1,
       "message": "You can drop the \u0027or ...\u0027 if you set a default above. But do you want to pass in a list with an empty string when nothing is set?\n\nMaybe better would be \"options.experiments.split(\u0027,\u0027) if options.experiments else []\" and set default to None above.",
+      "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8d8a685_a80cf1f0",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-02T21:19:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c66c73b_4b4a600e",
       "revId": "4b0e8863492605a5c003ee02d2b9ce93c174d9b2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

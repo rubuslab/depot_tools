@@ -16,6 +16,63 @@
       "message": "Edward, this CL implements a way for users to trigger RTS-enabled Quick Runs from git cl. But Andrii correctly pointed out that RTS isn\u0027t relevant to all git cl users, since RTS / quick run is only set up for Chromium at the moment. He offered to set up a CQ API and call that from here to make this tool aware of the new Quick-Run label for any applicable CLs (ie all chromium/src CLs). This would come with its own set of tradeoffs. Wondering what your thoughts are.",
       "revId": "023f7c30c86e5eb499383e09a92a90e621e4984a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "632ed0d9_65476c54",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-06-03T17:59:54Z",
+      "side": 1,
+      "message": "Gregory, I think you should test this on playground/cq repo.",
+      "revId": "023f7c30c86e5eb499383e09a92a90e621e4984a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8b59403_73c6a9a9",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-06-03T17:59:54Z",
+      "side": 1,
+      "message": "isn\u0027t this on py3 now? If so, enum.Enum should be part of standard library now.",
+      "revId": "023f7c30c86e5eb499383e09a92a90e621e4984a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8d6ca96_8f2a2b05",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4865,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-06-03T17:59:54Z",
+      "side": 1,
+      "message": "this won\u0027t work. the CQ+1 and QDR+1 must be done at *the same time*.",
+      "range": {
+        "startLine": 4864,
+        "startChar": 0,
+        "endLine": 4865,
+        "endChar": 35
+      },
+      "revId": "023f7c30c86e5eb499383e09a92a90e621e4984a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ddf5c75_decb748b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2021-06-03T17:28:08Z",
+      "side": 1,
+      "message": "Edward, this CL implements a way for users to trigger RTS-enabled Quick Runs from git cl. But Andrii correctly pointed out that RTS isn\u0027t relevant to all git cl users, since RTS / quick run is only set up for Chromium at the moment. He offered to set up a CQ API and call that from here to make this tool aware of the new Quick-Run label for any applicable CLs (ie all chromium/src CLs). This would come with its own set of tradeoffs. Wondering what your thoughts are.",
+      "revId": "023f7c30c86e5eb499383e09a92a90e621e4984a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

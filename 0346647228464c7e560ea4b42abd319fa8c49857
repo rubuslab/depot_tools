@@ -33,6 +33,24 @@
       "message": "Can you emit whether or not a sync actually occurred? It will be helpful for gathering metrics.",
       "revId": "0346647228464c7e560ea4b42abd319fa8c49857",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "714baaeb_e1e75f7f",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1149,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-03T16:48:07Z",
+      "side": 1,
+      "message": "How do you query that, is it reported to buildbucket?",
+      "parentUuid": "52694a40_0b6032b5",
+      "revId": "0346647228464c7e560ea4b42abd319fa8c49857",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

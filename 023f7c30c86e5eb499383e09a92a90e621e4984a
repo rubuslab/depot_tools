@@ -52,6 +52,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31fa39ce_1a32a556",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2021-06-04T17:07:50Z",
+      "side": 1,
+      "message": "If this is used on an unsupported (non src.git) repo, it results in a pretty decent error along the lines of: \"Label Quick-Run is not supported on repo X\", so we should be good.",
+      "revId": "023f7c30c86e5eb499383e09a92a90e621e4984a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f8b59403_73c6a9a9",
@@ -65,6 +82,24 @@
       "writtenOn": "2021-06-03T17:59:54Z",
       "side": 1,
       "message": "isn\u0027t this on py3 now? If so, enum.Enum should be part of standard library now.",
+      "revId": "023f7c30c86e5eb499383e09a92a90e621e4984a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b168489b_b14ad5c4",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2021-06-04T17:07:50Z",
+      "side": 1,
+      "message": "The code is written in a way that\u0027s parallel with _CQState. Py3 refactoring is out of scope.",
+      "parentUuid": "f8b59403_73c6a9a9",
       "revId": "023f7c30c86e5eb499383e09a92a90e621e4984a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

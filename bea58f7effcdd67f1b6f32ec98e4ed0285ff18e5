@@ -22,6 +22,30 @@
       },
       "revId": "bea58f7effcdd67f1b6f32ec98e4ed0285ff18e5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "389a9f41_61279e41",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 1341865
+      },
+      "writtenOn": "2021-06-04T17:42:06Z",
+      "side": 1,
+      "message": "Yep, that works. Note that \u0027sys\u0027 wasn\u0027t imported yet. I imported it in this function, since it looks like there was some attempt to avoid imports at the top of the file.",
+      "parentUuid": "34b7614a_57c7dd1a",
+      "range": {
+        "startLine": 977,
+        "startChar": 39,
+        "endLine": 977,
+        "endChar": 44
+      },
+      "revId": "bea58f7effcdd67f1b6f32ec98e4ed0285ff18e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

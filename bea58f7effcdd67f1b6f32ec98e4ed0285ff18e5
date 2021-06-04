@@ -46,6 +46,30 @@
       },
       "revId": "bea58f7effcdd67f1b6f32ec98e4ed0285ff18e5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e043897b_e01a5886",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-06-04T17:48:22Z",
+      "side": 1,
+      "message": "Now I wonder why is that... Oh,well.",
+      "parentUuid": "389a9f41_61279e41",
+      "range": {
+        "startLine": 977,
+        "startChar": 39,
+        "endLine": 977,
+        "endChar": 44
+      },
+      "revId": "bea58f7effcdd67f1b6f32ec98e4ed0285ff18e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34b7614a_57c7dd1a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-06-04T17:26:42Z",
+      "side": 1,
+      "message": "if flist contains utf-8 characters (iirc, we have a few for testing prupose), encode using py2 will fail. \n\nperhaps do the following:\n\n  kwargs[\u0027stdin\u0027] \u003d \u0027\\n\u0027.join(args + flist)\n  if sys.version_info.major !\u003d 2:\n    kwargs[\u0027stdin\u0027] \u003d kwargs[\u0027stdin\u0027].encode(\u0027utf-8\u0027)",
+      "range": {
+        "startLine": 977,
+        "startChar": 39,
+        "endLine": 977,
+        "endChar": 44
+      },
+      "revId": "bea58f7effcdd67f1b6f32ec98e4ed0285ff18e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

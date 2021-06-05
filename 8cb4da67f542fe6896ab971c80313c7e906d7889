@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e9eaac8_c4b3e6fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-05T03:36:17Z",
+      "side": 1,
+      "message": "I\u0027m not sure what the state of this is at this point; are you planning to add more docs, or do you think this is good to go as-is?\n\nI\u0027m mostly OOO this week, so maybe sokcevic@ can also take a look?",
+      "revId": "8cb4da67f542fe6896ab971c80313c7e906d7889",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

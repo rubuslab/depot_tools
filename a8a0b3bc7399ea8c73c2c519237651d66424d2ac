@@ -33,6 +33,24 @@
       "message": "Perhaps wrap in try catch as it used to be?\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gclient_utils.py;l\u003d167;drc\u003d1b4c7e9f38442e4b43fd4092d719e9627028125c",
       "revId": "a8a0b3bc7399ea8c73c2c519237651d66424d2ac",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b11bfe0d_8bced55c",
+        "filename": "gclient_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-05T04:00:17Z",
+      "side": 1,
+      "message": "UnicodeDecodeError should never happen when you\u0027re using \u0027replace\u0027, and I don\u0027t know when AttributeError would\u0027ve ever happened, period, so these seem like bad errors to swallow.\n\nI\u0027d just as soon leave this out unless we know a reason for them to be there.",
+      "parentUuid": "2aea5f7a_14f87a74",
+      "revId": "a8a0b3bc7399ea8c73c2c519237651d66424d2ac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

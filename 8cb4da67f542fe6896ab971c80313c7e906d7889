@@ -33,6 +33,23 @@
       "message": "On the topic of documentation; I think it would be worth having a README.python in depot_tools here which explains how all of this stuff is meant to work... I probably should have written one of these years ago when I poked at this stuff last, but I guess better late than never?\n\nWho has the most up-to-date knowledge on this?",
       "revId": "8cb4da67f542fe6896ab971c80313c7e906d7889",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4709a600_34b6ff23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-06-07T20:34:24Z",
+      "side": 1,
+      "message": "I\u0027m concerned about having too many py3 versions available in depot tools. It could make things much harder to debug, and makes things more complex.\n\nCould we use bleeding edge for 3.9 once wheels are there? Once we are comfortable, we can drop 3.8 support altogether. ",
+      "revId": "8cb4da67f542fe6896ab971c80313c7e906d7889",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

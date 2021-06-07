@@ -16,6 +16,23 @@
       "message": "I\u0027m not sure what the state of this is at this point; are you planning to add more docs, or do you think this is good to go as-is?\n\nI\u0027m mostly OOO this week, so maybe sokcevic@ can also take a look?",
       "revId": "8cb4da67f542fe6896ab971c80313c7e906d7889",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dff708f9_95dd6011",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-06-07T19:56:57Z",
+      "side": 1,
+      "message": "On the topic of documentation; I think it would be worth having a README.python in depot_tools here which explains how all of this stuff is meant to work... I probably should have written one of these years ago when I poked at this stuff last, but I guess better late than never?\n\nWho has the most up-to-date knowledge on this?",
+      "revId": "8cb4da67f542fe6896ab971c80313c7e906d7889",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

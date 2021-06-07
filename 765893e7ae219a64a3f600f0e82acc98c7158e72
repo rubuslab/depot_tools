@@ -85,6 +85,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "daca2daa_7b45b7a3",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-07T17:43:11Z",
+      "side": 1,
+      "message": "I agree with Nodir. We shouldn\u0027t ever set QR+1 without setting CQ+1.\n\nProbably very disruptive, but nothing stops us from having CQ+1 (quick run), CQ+2 (dry run), CQ+3 (commit), and that\u0027d make even more sense.",
+      "parentUuid": "3b928fed_87ce99f7",
+      "revId": "765893e7ae219a64a3f600f0e82acc98c7158e72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "654fe2a6_cdbc3f53",
         "filename": "git_cl.py",
         "patchSetId": 5

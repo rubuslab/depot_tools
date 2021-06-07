@@ -2116,6 +2116,19 @@ class TestGitCl(unittest.TestCase):
           {'Commit-Queue': vote}, notify, None), ''),
     ]
 
+  def _cmd_set_quick_run_gerrit(self, notify=None):
+    self.mockGit.config['branch.master.gerritissue'] = '123'
+    self.mockGit.config['branch.master.gerritserver'] = (
+        'https://chromium-review.googlesource.com')
+    self.mockGit.config['remote.origin.url'] = (
+        'https://chromium.googlesource.com/infra/infra')
+    self.calls = [
+        (('SetReview', 'chromium-review.googlesource.com',
+          'infra%2Finfra~123', None,
+          {'Commit-Queue': 1, 'Quick-Run': 1}, notify, None), ''),
+    ]
+
+
   def test_cmd_set_commit_gerrit_clear(self):
     self._cmd_set_commit_gerrit_common(0)
     self.assertEqual(0, git_cl.main(['set-commit', '-c']))
@@ -2127,6 +2140,10 @@ class TestGitCl(unittest.TestCase):
   def test_cmd_set_commit_gerrit(self):
     self._cmd_set_commit_gerrit_common(2)
     self.assertEqual(0, git_cl.main(['set-commit']))
+
+  def test_cmd_set_quick_run_gerrit(self):
+    self._cmd_set_quick_run_gerrit(notify=False)
+    self.assertEqual(0, git_cl.main(['set-commit', '-q']))
 
   def test_description_display(self):
     mock.patch('git_cl.Changelist', ChangelistMock).start()
@@ -3568,14 +3585,25 @@ class CMDTryResultsTestCase(CMDTestCaseBase):
 
 class CMDTryTestCase(CMDTestCaseBase):
 
-  @mock.patch('git_cl.Changelist.SetCQState')
-  def testSetCQDryRunByDefault(self, mockSetCQState):
-    mockSetCQState.return_value = 0
+  @mock.patch('git_cl.Changelist.SetCQQRState')
+  def testSetCQDryRunByDefault(self, mockSetCQQRState):
+    mockSetCQQRState.return_value = 0
     self.assertEqual(0, git_cl.main(['try']))
-    git_cl.Changelist.SetCQState.assert_called_with(git_cl._CQState.DRY_RUN)
+    git_cl.Changelist.SetCQQRState.assert_called_with(git_cl._CQState.DRY_RUN)
     self.assertEqual(
         sys.stdout.getvalue(),
         'Scheduling CQ dry run on: '
+        'https://chromium-review.googlesource.com/123456\n')
+
+  @mock.patch('git_cl.Changelist.SetCQQRState')
+  def testSetCQQuickRunByDefault(self, mockSetCQQRState):
+    mockSetCQQRState.return_value = 0
+    self.assertEqual(0, git_cl.main(['try', '-q']))
+    git_cl.Changelist.SetCQQRState.assert_called_with(
+        git_cl._CQState.DRY_RUN, git_cl._QRState.QUICK_RUN)
+    self.assertEqual(
+        sys.stdout.getvalue(),
+        'Scheduling CQ quick run on: '
         'https://chromium-review.googlesource.com/123456\n')
 
   @mock.patch('git_cl._call_buildbucket')

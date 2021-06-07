@@ -842,6 +842,17 @@ class _CQState(object):
   ALL_STATES = [NONE, DRY_RUN, COMMIT]
 
 
+class _QRState(object):
+  """Enum for states of CL with respect to Quick-Run.
+
+  For more info about quick run, see
+  https://source.chromium.org/chromium/chromium/src/+/main:docs/cq_quick_run.md
+  """
+  NONE = 'none'
+  QUICK_RUN = 'quick_run'
+
+  ALL_STATES = [NONE, QUICK_RUN]
+
 class _ParsedIssueNumberArgument(object):
   def __init__(self, issue=None, patchset=None, hostname=None):
     self.issue = issue
@@ -1524,12 +1535,23 @@ class Changelist(object):
         ret = upload_branch_deps(self, orig_args, options.force)
     return ret
 
-  def SetCQState(self, new_state):
+  def SetQRLabels(self, labels, new_qr_state):
+    """Updates labels with Quick Run vote"""
+    assert new_qr_state in _QRState.ALL_STATES
+    vote_map = {
+      _QRState.NONE: 0,
+      _QRState.QUICK_RUN: 1,
+    }
+    labels['Quick-Run'] = vote_map[new_qr_state]
+    return labels
+
+  def SetCQQRState(self, new_cq_state, new_qr_state=None):
     """Updates the CQ state for the latest patchset.
 
-    Issue must have been already uploaded and known.
+    Issue must have been already uploaded and known. Optionally allows for
+    updating Quick-Run (QR) state.
     """
-    assert new_state in _CQState.ALL_STATES
+    assert new_cq_state in _CQState.ALL_STATES
     assert self.GetIssue()
     try:
       vote_map = {
@@ -1537,8 +1559,10 @@ class Changelist(object):
         _CQState.DRY_RUN: 1,
         _CQState.COMMIT: 2,
       }
-      labels = {'Commit-Queue': vote_map[new_state]}
-      notify = False if new_state == _CQState.DRY_RUN else None
+      labels = {'Commit-Queue': vote_map[new_cq_state]}
+      if new_qr_state is not None:
+        labels = self.SetQRLabels(labels, new_qr_state)
+      notify = False if new_cq_state == _CQState.DRY_RUN else None
       gerrit_util.SetReview(
           self.GetGerritHost(), self._GerritChangeIdentifier(),
           labels=labels, notify=notify)
@@ -1554,7 +1578,7 @@ class Changelist(object):
             'Consider specifying which bots to trigger manually or asking your '
             'project owners for permissions or contacting Chrome Infra at:\n'
             'https://www.chromium.org/infra\n\n' %
-            ('cancel CQ' if new_state == _CQState.NONE else 'trigger CQ'))
+            ('cancel CQ' if new_cq_state == _CQState.NONE else 'trigger CQ'))
       # Still raise exception so that stack trace is printed.
       raise
 
@@ -2460,6 +2484,9 @@ class Changelist(object):
       refspec_opts.append('l=Commit-Queue+2')
     elif options.cq_dry_run:
       refspec_opts.append('l=Commit-Queue+1')
+    elif options.cq_quick_run:
+      refspec_opts.append('l=Commit-Queue+1')
+      refspec_opts.append('l=Quick-Run+1')
 
     if change_desc.get_reviewers(tbr_only=True):
       score = gerrit_util.GetCodeReviewTbrScore(
@@ -4216,6 +4243,14 @@ def CMDupload(parser, args):
                     action='store_true', default=False,
                     help='Send the patchset to do a CQ dry run right after '
                          'upload.')
+  parser.add_option(
+      '-q',
+      '--cq-quick-run',
+      action='store_true',
+      default=False,
+      help='Send the patchset to do a CQ quick run right after '
+           'upload (https://source.chromium.org/chromium/chromium/src/+/main:docs/cq_quick_run.md) '
+           '(chromium only).')
   parser.add_option('--set-bot-commit', action='store_true',
                     help=optparse.SUPPRESS_HELP)
   parser.add_option('--preserve-tryjobs', action='store_true',
@@ -4293,6 +4328,7 @@ def CMDupload(parser, args):
     options.message = gclient_utils.FileRead(options.message_file)
 
   if ([options.cq_dry_run,
+       options.cq_quick_run,
        options.use_commit_queue,
        options.retry_failed].count(True) > 1):
     parser.error('Only one of --use-commit-queue, --cq-dry-run, or '
@@ -4572,6 +4608,14 @@ def CMDtry(parser, args):
       help='Force a clobber before building; that is don\'t do an '
            'incremental build')
   group.add_option(
+      '-q',
+      '--quick-run',
+      action='store_true',
+      default=False,
+      help='trigger in quick run mode '
+           '(https://source.chromium.org/chromium/chromium/src/+/main:docs/cq_quick_run.md) '
+           '(chromium only).')
+  group.add_option(
       '--category', default='git_cl_try', help='Specify custom build category.')
   group.add_option(
       '--project',
@@ -4652,11 +4696,16 @@ def CMDtry(parser, args):
     if num_builders > 10:
       confirm_or_exit('There are %d builders with failed builds.'
                       % num_builders, action='continue')
+  elif options.quick_run:
+    if options.verbose:
+      print('git cl try with no bots now defaults to CQ quick run.')
+    print('Scheduling CQ quick run on: %s' % cl.GetIssueURL())
+    return cl.SetCQQRState(_CQState.DRY_RUN, _QRState.QUICK_RUN)
   else:
     if options.verbose:
       print('git cl try with no bots now defaults to CQ dry run.')
     print('Scheduling CQ dry run on: %s' % cl.GetIssueURL())
-    return cl.SetCQState(_CQState.DRY_RUN)
+    return cl.SetCQQRState(_CQState.DRY_RUN)
 
   patchset = cl.GetMostRecentPatchset()
   try:
@@ -4774,6 +4823,13 @@ def CMDset_commit(parser, args):
   """Sets the commit bit to trigger the CQ."""
   parser.add_option('-d', '--dry-run', action='store_true',
                     help='trigger in dry run mode')
+  parser.add_option(
+      '-q',
+      '--quick-run',
+      action='store_true',
+      help='trigger in quick run mode '
+          '(https://source.chromium.org/chromium/chromium/src/+/main:docs/cq_quick_run.md) '
+          '(chromium only).')
   parser.add_option('-c', '--clear', action='store_true',
                     help='stop CQ run, if any')
   parser.add_option(
@@ -4783,19 +4839,23 @@ def CMDset_commit(parser, args):
   options, args = parser.parse_args(args)
   if args:
     parser.error('Unrecognized args: %s' % ' '.join(args))
-  if options.dry_run and options.clear:
-    parser.error('Only one of --dry-run and --clear are allowed.')
+  if [options.dry_run, options.quick_run, options.clear].count(True) > 1:
+    parser.error('Only one of --dry-run, --quick-run, and --clear are allowed.')
 
   cl = Changelist(issue=options.issue)
+  if not cl.GetIssue():
+    parser.error('Must upload the issue first.')
+
   if options.clear:
     state = _CQState.NONE
   elif options.dry_run:
     state = _CQState.DRY_RUN
   else:
     state = _CQState.COMMIT
-  if not cl.GetIssue():
-    parser.error('Must upload the issue first.')
-  cl.SetCQState(state)
+  if options.quick_run:
+    cl.SetCQQRState(_CQState.DRY_RUN, _QRState.QUICK_RUN)
+  else:
+    cl.SetCQQRState(state)
   return 0
 
 

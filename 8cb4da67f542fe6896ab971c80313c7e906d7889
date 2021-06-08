@@ -50,6 +50,24 @@
       "message": "I\u0027m concerned about having too many py3 versions available in depot tools. It could make things much harder to debug, and makes things more complex.\n\nCould we use bleeding edge for 3.9 once wheels are there? Once we are comfortable, we can drop 3.8 support altogether. ",
       "revId": "8cb4da67f542fe6896ab971c80313c7e906d7889",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7878459_0dcbb2bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-08T20:45:19Z",
+      "side": 1,
+      "message": "Probably Owen and I are the most up-to-date on this. I agree we should have some sort of docs.",
+      "parentUuid": "dff708f9_95dd6011",
+      "revId": "8cb4da67f542fe6896ab971c80313c7e906d7889",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,7 @@ The log will be used to analyze user side build performance.
 
 import argparse
 import gzip
+import http.client
 import io
 import json
 import logging
@@ -42,7 +43,7 @@ def IsGoogler(server):
   try:
     resp = request.urlopen('https://' + server + '/should-upload')
     return resp.read() == b'Success'
-  except error.URLError:
+  except (error.URLError, http.client.RemoteDisconnected):
     return False
 
 

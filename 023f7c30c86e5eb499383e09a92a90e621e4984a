@@ -104,6 +104,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e15548ef_78a98c78",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2021-06-09T15:54:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b168489b_b14ad5c4",
+      "revId": "023f7c30c86e5eb499383e09a92a90e621e4984a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b8d6ca96_8f2a2b05",

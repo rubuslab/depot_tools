@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "27d0fb3e_ee845514",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4334,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2021-06-09T15:54:26Z",
+      "side": 1,
+      "message": "Good catch.",
+      "parentUuid": "581a7500_e7872bfb",
+      "range": {
+        "startLine": 4334,
+        "startChar": 63,
+        "endLine": 4334,
+        "endChar": 64
+      },
+      "revId": "0529a6d5e0c5fc08efecd323acadba76fb51d18e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26451f16_69cc0b46",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-07T17:43:11Z",
       "side": 1,
       "message": "Not true, you have to specify --quick-run",
+      "range": {
+        "startLine": 4701,
+        "startChar": 13,
+        "endLine": 4701,
+        "endChar": 65
+      },
+      "revId": "0529a6d5e0c5fc08efecd323acadba76fb51d18e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "552000b8_0f9354b7",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4701,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2021-06-09T15:54:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26451f16_69cc0b46",
       "range": {
         "startLine": 4701,
         "startChar": 13,

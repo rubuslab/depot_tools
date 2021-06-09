@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56a7fd2f_b336f36d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-09T22:48:39Z",
+      "side": 1,
+      "message": "lgtm.\n\nconceivably at some point we might need to support binary output, but we can cross that bridge if/when it\u0027s needed.",
+      "revId": "16e45f03b0f63d0f37a4632e838f90e2aae0f998",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

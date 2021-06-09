@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc3e2e92_8f463dda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-09T20:46:47Z",
+      "side": 1,
+      "message": "lgtm after comment.",
+      "revId": "722ad504428971721aea50a7c85d9d66b1e38ba2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61e78d69_6548ad44",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-09T20:46:47Z",
+      "side": 1,
+      "message": "This needs to be vpython3, because gerrit_util imports httplib2.",
+      "range": {
+        "startLine": 1,
+        "startChar": 15,
+        "endLine": 1,
+        "endChar": 22
+      },
+      "revId": "722ad504428971721aea50a7c85d9d66b1e38ba2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

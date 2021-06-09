@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45494082_d32ca2dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-09T17:30:42Z",
+      "side": 1,
+      "message": "lgtm w/nit",
+      "revId": "e4b805c09bcf5cd49249b72f769bdb7686885fe7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cf58410_a0ebf0d1",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4319,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-06-09T17:30:42Z",
+      "side": 1,
+      "message": "--cq-quick-run",
+      "range": {
+        "startLine": 4319,
+        "startChar": 63,
+        "endLine": 4319,
+        "endChar": 64
+      },
+      "revId": "e4b805c09bcf5cd49249b72f769bdb7686885fe7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

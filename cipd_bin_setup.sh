@@ -20,3 +20,5 @@ function cipd_bin_setup {
         -ensure-file "$ENSURE" \
         -root "$ROOT"
 }
+
+cipd_bin_setup

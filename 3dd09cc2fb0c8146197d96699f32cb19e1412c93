@@ -50,6 +50,24 @@
       "message": "Is this one live?",
       "revId": "3dd09cc2fb0c8146197d96699f32cb19e1412c93",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d48cb68f_470e452b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-10T23:26:14Z",
+      "side": 1,
+      "message": "\u003e Is this one live?\n\nWhoops, sorry for the delay in replying. I had a draft I wrote on 6/7, but never clicked send ...\n\nI think I didn\u0027t land this right away because I was waiting for a python3 crcmod wheel to be available. And then I was OOO for a while.\n\nIt is now, so I\u0027ll give it a go.",
+      "parentUuid": "6706c20a_23d2d02f",
+      "revId": "3dd09cc2fb0c8146197d96699f32cb19e1412c93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

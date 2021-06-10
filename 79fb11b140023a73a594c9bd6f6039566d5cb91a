@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "624c4365_6e84a5fa",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2021-06-10T20:04:29Z",
+      "side": 1,
+      "message": "exit_code?",
+      "range": {
+        "startLine": 260,
+        "startChar": 15,
+        "endLine": 260,
+        "endChar": 16
+      },
+      "revId": "79fb11b140023a73a594c9bd6f6039566d5cb91a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -25,6 +25,7 @@ SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 t_specified = False
 j_specified = False
 offline = False
+start_reproxy = True
 output_dir = '.'
 input_args = sys.argv
 # On Windows the autoninja.bat script passes along the arguments enclosed in
@@ -53,6 +54,8 @@ for index, arg in enumerate(input_args[1:]):
     output_dir = arg[2:]
   elif arg == '-o' or arg == '--offline':
     offline = True
+  elif arg == '--nostart-reproxy':
+    start_reproxy = False
   elif arg == '-h':
     print('autoninja: Use -o/--offline to temporary disable goma.',
           file=sys.stderr)
@@ -60,6 +63,7 @@ for index, arg in enumerate(input_args[1:]):
 
 # Strip -o/--offline so ninja doesn't see them.
 input_args = [ arg for arg in input_args if arg != '-o' and arg != '--offline']
+input_args = [ arg for arg in input_args if arg != '--nostart-reproxy']
 
 use_goma = False
 use_rbe = False
@@ -196,7 +200,8 @@ if os.environ.get('NINJA_SUMMARIZE_BUILD', '0') == '1':
 
 # If using rbe and the necessary environment variables are set, also start
 # reproxy (via bootstrap) before running ninja.
-if (not offline and use_rbe and os.path.exists(reclient_bin_dir)
+if (not offline and use_rbe and start_reproxy
+    and os.path.exists(reclient_bin_dir)
     and os.path.exists(reclient_cfg)):
   bootstrap = os.path.join(reclient_bin_dir, 'bootstrap')
   setup_args = [

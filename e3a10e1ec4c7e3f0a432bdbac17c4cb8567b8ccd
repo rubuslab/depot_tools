@@ -16,6 +16,24 @@
       "message": "Presumably you\u0027re starting and stopping reproxy directly. Can\u0027t you just call ninja directly as well? Which autoninja logic do you really need that is too hard to duplicate by hand (perhaps the build summaries or logging)?\n\n",
       "revId": "e3a10e1ec4c7e3f0a432bdbac17c4cb8567b8ccd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb07193e_4614a4ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1107806
+      },
+      "writtenOn": "2021-06-14T02:38:23Z",
+      "side": 1,
+      "message": "That is true.\nLet me withdraw this because I currently do not use these logics.",
+      "parentUuid": "03a56d0e_960c46c9",
+      "revId": "e3a10e1ec4c7e3f0a432bdbac17c4cb8567b8ccd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

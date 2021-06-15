@@ -16,6 +16,24 @@
       "message": "shouldn\u0027t this unset Quick-Run label?",
       "revId": "be5fccd4dec38263e440fb03b52fc2f087e3cf60",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a0882ac_4753b7a6",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1549,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2021-06-15T16:13:31Z",
+      "side": 1,
+      "message": "The problem is with non chromium repos. We just assume the repo has Quick-Run, but only if the user consciously sets the -q flag. Without going through the trouble (via new CQ API, for example) to find out whether the current CL/Repo actually supports Quick-Run, we can\u0027t vote on Quick-Run: 0 in this case -- the request would fail.",
+      "parentUuid": "1eb76be0_f8faa9da",
+      "revId": "be5fccd4dec38263e440fb03b52fc2f087e3cf60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

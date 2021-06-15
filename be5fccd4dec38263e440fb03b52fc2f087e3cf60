@@ -34,6 +34,24 @@
       "parentUuid": "1eb76be0_f8faa9da",
       "revId": "be5fccd4dec38263e440fb03b52fc2f087e3cf60",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4050b633_48b73351",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1549,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2021-06-15T16:24:10Z",
+      "side": 1,
+      "message": "if CQ resets Quick-Run label, then not resetting it here should be fine",
+      "parentUuid": "8a0882ac_4753b7a6",
+      "revId": "be5fccd4dec38263e440fb03b52fc2f087e3cf60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

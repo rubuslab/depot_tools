@@ -33,6 +33,23 @@
       "message": "LGTM\n\nYou\u0027ll also need a review from a depot_tools owner.",
       "revId": "1b2d2f418945237de1e2f86f193c84156be166a1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a545433c_8e26a942",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1473224
+      },
+      "writtenOn": "2021-06-15T02:19:21Z",
+      "side": 1,
+      "message": "Hi, Jochen.\nPTAL, thanks!",
+      "revId": "1b2d2f418945237de1e2f86f193c84156be166a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

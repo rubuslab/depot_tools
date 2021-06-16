@@ -16,6 +16,23 @@
       "message": "Hi Dirk,\n\nThis hopefully can start the process of migrating to pylint2.6 and allowing python3 syntax in our code.\n\nThanks,\nPeter",
       "revId": "44d75a00e8aa3a5ff4ae4227e568757244c045c4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53f77d26_0e794d32",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-16T16:12:57Z",
+      "side": 1,
+      "message": "Thanks!",
+      "revId": "44d75a00e8aa3a5ff4ae4227e568757244c045c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

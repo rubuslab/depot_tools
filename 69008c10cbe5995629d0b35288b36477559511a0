@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "005c3259_86124f7f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-16T22:25:20Z",
+      "side": 1,
+      "message": "nit: typo.",
+      "range": {
+        "startLine": 10,
+        "startChar": 16,
+        "endLine": 10,
+        "endChar": 24
+      },
+      "revId": "69008c10cbe5995629d0b35288b36477559511a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "84f45869_c0cd72b3",

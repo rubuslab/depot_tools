@@ -620,14 +620,16 @@ def git_checkouts(solutions, revisions, refs, no_fetch_tags, git_cache_dir,
                   cleanup_dir, enforce_fetch, experiments):
   build_dir = os.getcwd()
   synced = []
+  deps_changed = False
   for sln in solutions:
     sln_dir = path.join(build_dir, sln['name'])
-    did_sync = _git_checkout(
+    did_sync, sln_deps_changed = _git_checkout(
         sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
         cleanup_dir, enforce_fetch, experiments)
+    deps_changed |= sln_deps_changed
     if did_sync:
       synced.append(sln['name'])
-  return synced
+  return synced, deps_changed
 
 
 def _git_checkout_needs_sync(sln_url, sln_dir, refs):
@@ -638,11 +640,19 @@ def _git_checkout_needs_sync(sln_url, sln_dir, refs):
       remote_ref = ref_to_remote_ref(ref)
       commit_time = git('show', '-s', '--format=%ct', remote_ref, cwd=sln_dir)
       commit_time = int(commit_time)
-    except SubprocessError:
+    except SubprocessFailed:
       return True
     if time.time() - commit_time >= NO_SYNC_MAX_DELAY_S:
       return True
   return False
+
+
+def _deps_changed(last_revision, sln_dir):
+  try:
+    git('diff', last_revision, '--quiet', '--', 'DEPS', cwd=sln_dir)
+    return False
+  except SubprocessFailed:
+    return True
 
 
 def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
@@ -653,10 +663,15 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
   branch, revision = get_target_branch_and_revision(name, url, revisions)
   pin = revision if COMMIT_HASH_RE.match(revision) else None
 
+  last_revision = None
+  if path.exists(sln_dir):
+    last_revision = git('show', '-s', '--format=%H', cwd=sln_dir).strip()
+
   if (EXP_NO_SYNC in experiments
       and not _git_checkout_needs_sync(url, sln_dir, refs)):
     git('checkout', '--force', pin or branch, '--', cwd=sln_dir)
-    return False
+    deps_changed = _deps_changed(last_revision, sln_dir)
+    return False, deps_changed
 
   populate_cmd = (['cache', 'populate', '-v', '--cache-dir', git_cache_dir, url,
                    '--reset-fetch-config'])
@@ -736,7 +751,7 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
       # happens to have the exact same name.
       git('checkout', '--force', pin or branch, '--', cwd=sln_dir)
       git('clean', '-dff', cwd=sln_dir)
-      return True
+      break
     except SubprocessFailed as e:
       # Exited abnormally, there's probably something wrong.
       print('Something failed: %s.' % str(e))
@@ -747,7 +762,10 @@ def _git_checkout(sln, sln_dir, revisions, refs, no_fetch_tags, git_cache_dir,
       else:
         raise
 
-  return True
+  deps_changed = True
+  if EXP_NO_SYNC in experiments:
+    deps_changed = _deps_changed(last_revision, sln_dir)
+  return True, deps_changed
 
 def _git_disable_gc(cwd):
   git('config', 'gc.auto', '0', cwd=cwd)
@@ -819,6 +837,14 @@ def emit_json(out_file, did_run, **kwargs):
     f.write(json.dumps(output, sort_keys=True))
 
 
+def _read_deps_file(sln_name):
+  deps_path = path.join(os.getcwd(), sln_name, 'DEPS')
+  if not path.exists(deps_path):
+    return None
+  with open(deps_path, 'r') as f:
+    return f.read()
+
+
 @_set_git_config
 def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
                     target_cpu, patch_root, patch_refs, gerrit_rebase_patch_ref,
@@ -829,7 +855,7 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
   # invoking DEPS.
   print('Fetching Git checkout')
 
-  synced_solutions = git_checkouts(
+  synced_solutions, deps_changed = git_checkouts(
       solutions, revisions, refs, no_fetch_tags, git_cache_dir, cleanup_dir,
       enforce_fetch, experiments)
 
@@ -848,16 +874,17 @@ def ensure_checkout(solutions, revisions, first_sln, target_os, target_os_only,
   for solution_name in list(solution_dirs):
     gc_revisions[solution_name] = 'unmanaged'
 
-  # Let gclient do the DEPS syncing.
-  # The branch-head refspec is a special case because it's possible Chrome
-  # src, which contains the branch-head refspecs, is DEPSed in.
-  gclient_sync(
-      BRANCH_HEADS_REFSPEC in refs,
-      TAGS_REFSPEC in refs,
-      gc_revisions,
-      patch_refs,
-      gerrit_reset,
-      gerrit_rebase_patch_ref)
+  if deps_changed:
+    # Let gclient do the DEPS syncing.
+    # The branch-head refspec is a special case because it's possible Chrome
+    # src, which contains the branch-head refspecs, is DEPSed in.
+    gclient_sync(
+        BRANCH_HEADS_REFSPEC in refs,
+        TAGS_REFSPEC in refs,
+        gc_revisions,
+        patch_refs,
+        gerrit_reset,
+        gerrit_rebase_patch_ref)
 
   # Now that gclient_sync has finished, we should revert any .DEPS.git so that
   # presubmit doesn't complain about it being modified.
@@ -1102,6 +1129,7 @@ def checkout(options, git_slns, specs, revisions, step_text):
           gerrit_reset=not options.gerrit_no_reset,
 
           experiments=experiments)
+      
       synced_solutions = ensure_checkout(**checkout_parameters)
       should_delete_dirty_file = True
     except GclientSyncFailed:

@@ -6,5 +6,5 @@
 :: See revert instructions in cipd_manifest.txt
 
 @call "%~dp0\cipd_bin_setup.bat" > nul 2>&1
-@call vpython.bat %~dp0\.cipd_bin\goma_ctl.py %*
+@call python3.bat %~dp0\.cipd_bin\goma_ctl.py %*
 exit /b

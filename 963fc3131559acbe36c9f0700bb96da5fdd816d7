@@ -33,6 +33,24 @@
       "message": "Nit: Please specify the units of the timeout. Is this seconds? Minutes? etc.",
       "revId": "963fc3131559acbe36c9f0700bb96da5fdd816d7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "377b87cd_2f7b91cc",
+        "filename": "recipes/recipe_modules/cipd/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1364448
+      },
+      "writtenOn": "2021-06-18T21:13:08Z",
+      "side": 1,
+      "message": "Ah thanks for pointing this out. The argument can actually be any valid DurationString in go: https://golang.org/pkg/time/. Updated the cl to change into str.",
+      "parentUuid": "9546a5e7_e2688b8a",
+      "revId": "963fc3131559acbe36c9f0700bb96da5fdd816d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

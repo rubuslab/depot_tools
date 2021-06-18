@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5018dbd3_d6104e04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-18T20:58:24Z",
+      "side": 1,
+      "message": "lgtm w/ comment addressed.",
+      "revId": "963fc3131559acbe36c9f0700bb96da5fdd816d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9546a5e7_e2688b8a",
+        "filename": "recipes/recipe_modules/cipd/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-18T20:58:24Z",
+      "side": 1,
+      "message": "Nit: Please specify the units of the timeout. Is this seconds? Minutes? etc.",
+      "revId": "963fc3131559acbe36c9f0700bb96da5fdd816d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

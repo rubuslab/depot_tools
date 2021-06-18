@@ -50,6 +50,23 @@
       "message": "Hi, Jochen.\nPTAL, thanks!",
       "revId": "1b2d2f418945237de1e2f86f193c84156be166a1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a11373e6_ab928b14",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1176519
+      },
+      "writtenOn": "2021-06-18T06:30:26Z",
+      "side": 1,
+      "message": "is it possible to add a test for this?",
+      "revId": "1b2d2f418945237de1e2f86f193c84156be166a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

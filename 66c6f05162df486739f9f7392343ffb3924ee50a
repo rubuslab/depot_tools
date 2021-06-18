@@ -22,6 +22,30 @@
       },
       "revId": "66c6f05162df486739f9f7392343ffb3924ee50a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c97e8908_44ac3991",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2021-06-18T00:05:04Z",
+      "side": 1,
+      "message": "It seems like the gerrit_change.host is not always equal to what would be returned by this because of the \u0027-review.googlesource.com\u0027 -\u003e \u0027%s.googlesource.com\u0027 in set_change()",
+      "parentUuid": "9352b526_cbb838e4",
+      "range": {
+        "startLine": 78,
+        "startChar": 16,
+        "endLine": 78,
+        "endChar": 40
+      },
+      "revId": "66c6f05162df486739f9f7392343ffb3924ee50a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

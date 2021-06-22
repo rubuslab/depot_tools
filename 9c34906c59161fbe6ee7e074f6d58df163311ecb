@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "638ba6db_38f8f80b",
+        "filename": "metrics_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1355298
+      },
+      "writtenOn": "2021-06-22T21:46:45Z",
+      "side": 1,
+      "message": "This is a new name, the old env var was: DEPOT_TOOLS_METRICS, so this breaks chromeos\u0027s usage of this to prevent access violations to metrics.cfg.",
+      "revId": "9c34906c59161fbe6ee7e074f6d58df163311ecb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

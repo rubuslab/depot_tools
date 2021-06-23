@@ -67,6 +67,24 @@
       "message": "is it possible to add a test for this?",
       "revId": "1b2d2f418945237de1e2f86f193c84156be166a1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "601e8ba6_a490b4fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1473224
+      },
+      "writtenOn": "2021-06-23T07:10:23Z",
+      "side": 1,
+      "message": "Test has been added.\nPTAL!",
+      "parentUuid": "a11373e6_ab928b14",
+      "revId": "1b2d2f418945237de1e2f86f193c84156be166a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

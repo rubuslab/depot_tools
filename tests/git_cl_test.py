@@ -489,7 +489,7 @@ class TestParseIssueURL(unittest.TestCase):
     self._test('123', 123)
     self._test('', fail=True)
     self._test('abc', fail=True)
-    self._test('123/1', fail=True)
+    self._test('123/1', 123, 1)
     self._test('123a', fail=True)
     self._test('ssh://chrome-review.source.com/#/c/123/4/', fail=True)
     self._test('ssh://chrome-review.source.com/c/123/1/', fail=True)
@@ -518,6 +518,11 @@ class TestParseIssueURL(unittest.TestCase):
 
   def test_short_urls(self):
     self._test('https://crrev.com/c/2151934', 2151934, None,
+               'chromium-review.googlesource.com')
+
+  def test_missing_scheme(self):
+    self._test('codereview.source.com/123', 123, None, 'codereview.source.com')
+    self._test('crrev.com/c/2151934', 2151934, None,
                'chromium-review.googlesource.com')
 
 

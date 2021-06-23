@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6072987f_4c5a718c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-23T16:14:27Z",
+      "side": 1,
+      "message": "This looks basically right to me, but please wait for approval from brucedawson@ as well.",
+      "revId": "dc8fc00cd274a35483b3c7a757003d5ec2a47e6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

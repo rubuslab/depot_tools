@@ -865,8 +865,6 @@ def ParseIssueNumberArgument(arg):
 
   if arg.isdigit():
     return _ParsedIssueNumberArgument(issue=int(arg))
-  if not arg.startswith('http'):
-    return fail_result
 
   url = gclient_utils.UpgradeToHttps(arg)
   for gerrit_url, short_url in _KNOWN_GERRIT_TO_SHORT_URLS.items():

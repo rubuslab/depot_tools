@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "908701ed_077e258f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116524
+      },
+      "writtenOn": "2021-06-24T21:41:31Z",
+      "side": 1,
+      "message": "PTAL\n\nUnfortunately, from a cursory glance at the issue, we cannot re-enable the tests in Chromium since they have been broken for some time. We are going to need to do a full pass on the presubmit python tests. This can be added to the code health rotation.",
+      "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -648,6 +648,7 @@ def GetUnitTestsInDirectory(input_api,
                             env=None,
                             run_on_python2=True,
                             run_on_python3=True,
+                            force_run_on_python3=False,
                             allowlist=None,
                             blocklist=None):
   """Lists all files in a directory and runs them. Doesn't recurse.
@@ -682,13 +683,17 @@ def GetUnitTestsInDirectory(input_api,
           'Out of %d files, found none that matched c=%r, s=%r in directory %s'
           % (found, files_to_check, files_to_skip, directory))
     ]
-  return GetUnitTests(
-      input_api, output_api, unit_tests, env, run_on_python2, run_on_python3)
+  return GetUnitTests(input_api, output_api, unit_tests, env, run_on_python2,
+                      run_on_python3, force_run_on_python3)
 
 
-def GetUnitTests(
-    input_api, output_api, unit_tests, env=None, run_on_python2=True,
-    run_on_python3=True):
+def GetUnitTests(input_api,
+                 output_api,
+                 unit_tests,
+                 env=None,
+                 run_on_python2=True,
+                 run_on_python3=True,
+                 force_run_on_python3=False):
   """Runs all unit tests in a directory.
 
   On Windows, sys.executable is used for unit tests ending with ".py".
@@ -721,7 +726,13 @@ def GetUnitTests(
           kwargs=kwargs,
           message=message_type))
     else:
-      if has_py3_shebang(unit_test) and run_on_python3:
+      # TODO(crbug.com/1223478): The intent for this line was to run the test
+      # on python3 if the file has a shebang OR if it was explicitly requested
+      # to run on python3. Since tests have been broken since this landed, we
+      # introduced the |force_run_on_python3| argument to work around the issue
+      # until every caller in Chromium has been fixed.
+      if force_run_on_python3 or (has_py3_shebang(unit_test)
+                                  and run_on_python3):
         results.append(input_api.Command(
             name=unit_test,
             cmd=cmd,
@@ -743,7 +754,8 @@ def GetUnitTestsRecursively(input_api,
                             files_to_check,
                             files_to_skip,
                             run_on_python2=True,
-                            run_on_python3=True):
+                            run_on_python3=True,
+                            force_run_on_python3=False):
   """Gets all files in the directory tree (git repo) that match files_to_check.
 
   Restricts itself to only find files within the Change's source repo, not
@@ -769,9 +781,12 @@ def GetUnitTestsRecursively(input_api,
           % (found, files_to_check, files_to_skip, directory))
     ]
 
-  return GetUnitTests(input_api, output_api, tests,
+  return GetUnitTests(input_api,
+                      output_api,
+                      tests,
                       run_on_python2=run_on_python2,
-                      run_on_python3=run_on_python3)
+                      run_on_python3=run_on_python3,
+                      force_run_on_python3=force_run_on_python3)
 
 
 def GetPythonUnitTests(input_api, output_api, unit_tests):

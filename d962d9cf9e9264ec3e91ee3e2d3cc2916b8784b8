@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d58b43dd_2802f6c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1116524
+      },
+      "writtenOn": "2021-06-24T22:38:17Z",
+      "side": 1,
+      "message": "Yes, that is the idea. Hopefully, we can kill 2 birds with one stone and get rid of python2 altogether.",
+      "parentUuid": "38dc0f56_d19b3553",
+      "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "908701ed_077e258f",

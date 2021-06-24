@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "38dc0f56_d19b3553",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2021-06-24T22:26:47Z",
+      "side": 1,
+      "message": "And then the intent is to eventually remove the force_run_on_python3 arg once everything in chromium has been fixed/re-fixed for py3?",
+      "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "908701ed_077e258f",
@@ -14,6 +31,23 @@
       "writtenOn": "2021-06-24T21:41:31Z",
       "side": 1,
       "message": "PTAL\n\nUnfortunately, from a cursory glance at the issue, we cannot re-enable the tests in Chromium since they have been broken for some time. We are going to need to do a full pass on the presubmit python tests. This can be added to the code health rotation.",
+      "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68aba803_99433165",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2021-06-24T22:26:47Z",
+      "side": 1,
+      "message": "Seems reasonable to me, since this immediately unblocks actual py3 migrations. But I\u0027m not strictly an OWNER here, so I defer to edward/dirk. ",
       "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

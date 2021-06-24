@@ -68,6 +68,23 @@
       "message": "Seems reasonable to me, since this immediately unblocks actual py3 migrations. But I\u0027m not strictly an OWNER here, so I defer to edward/dirk. ",
       "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7570153_1947af5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-24T23:30:54Z",
+      "side": 1,
+      "message": "oof, this is ugly :(.\n\nLet\u0027s sit on this for a day or so so I can consider whether or not we have any better options.\n\nWe have to worry to some extent about backwards-compatibility with depot_tools so I\u0027d rather\nnot grow such a hack if we can avoid it.\n\nOne alternative would be to just add shebangs incrementally to the test files, right?",
+      "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

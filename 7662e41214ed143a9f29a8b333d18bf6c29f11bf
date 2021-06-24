@@ -52,6 +52,24 @@
       "parentUuid": "1c13fed8_f91e7221",
       "revId": "7662e41214ed143a9f29a8b333d18bf6c29f11bf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe8b7aa2_b39c9b21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-06-24T04:42:28Z",
+      "side": 1,
+      "message": "That is strange.\n\nWhat happen if you run\n```\ngit cl patch -b py3 https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/2979560\ngoma_ctl.bat status\n```\nin depot_tools and run goma_ctl.bat from other dir?\n\nIf that doesn\u0027t work, I\u0027d like you to re-install depot_tools\nhttps://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up\nand see what happens.",
+      "parentUuid": "c34e8773_f9dd7105",
+      "revId": "7662e41214ed143a9f29a8b333d18bf6c29f11bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

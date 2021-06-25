@@ -85,6 +85,24 @@
       "message": "oof, this is ugly :(.\n\nLet\u0027s sit on this for a day or so so I can consider whether or not we have any better options.\n\nWe have to worry to some extent about backwards-compatibility with depot_tools so I\u0027d rather\nnot grow such a hack if we can avoid it.\n\nOne alternative would be to just add shebangs incrementally to the test files, right?",
       "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4716d684_1fde8c13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116524
+      },
+      "writtenOn": "2021-06-25T00:24:20Z",
+      "side": 1,
+      "message": "We could add shebangs to every test file yes, but that is much more work and we could very easily miss one considering the amount of globing we do when adding files for testing in presubmits.\n\nGiven the bad situation we are currently in, we can\u0027t just fix depot_tools by changing the test from an \"and\" to an \"or\" either as that would break presubmits in Chromium.",
+      "parentUuid": "c7570153_1947af5b",
+      "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

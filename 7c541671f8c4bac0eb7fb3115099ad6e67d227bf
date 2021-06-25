@@ -33,6 +33,23 @@
       "message": "I\u0027m not sure if anyone other than iannucci@ has tried to update the man pages. I don\u0027t think I have.\n\nlgtm otherwise.",
       "revId": "7c541671f8c4bac0eb7fb3115099ad6e67d227bf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e37b144b_4bc99950",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-06-25T23:30:54Z",
+      "side": 1,
+      "message": "The last time I touched this it was pretty rickety. It wouldn\u0027t surprise me that it\u0027s completely defunct at this point.  In theory \u0027make_docs\u0027 is supposed to be hermetic, but I don\u0027t think it was every terribly robust.\n\nIt\u0027s also possible that git itself (and also the various depot_tools git addon commands) has changed sufficiently so that the \u0027demo\u0027 scripts need touchup. If you want to rehabilitate this (and I think that would be great!) I\u0027d be happy to have a GVC and give a brain dump of how it\u0027s supposed to work and how it may be tuned up.\n\nIf not... you probably also want to just do a raw s/master/main in the generated pages for now :)",
+      "revId": "7c541671f8c4bac0eb7fb3115099ad6e67d227bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

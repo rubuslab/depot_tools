@@ -103,6 +103,24 @@
       "parentUuid": "c7570153_1947af5b",
       "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22b9f929_788fa435",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-06-25T16:39:01Z",
+      "side": 1,
+      "message": "Do you happen to know how many unit tests are we talking about? Perhaps we can revert use_python3 \u003d true for those, or even comment out unit tests and make it p0 to restore the tests.",
+      "parentUuid": "4716d684_1fde8c13",
+      "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

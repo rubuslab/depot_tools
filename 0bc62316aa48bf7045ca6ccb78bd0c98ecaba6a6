@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54b281fa_ad290536",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-06-25T21:56:26Z",
+      "side": 1,
+      "message": "PTAL. PS1 is original commit so PS1..PS2 contains actual changes",
+      "revId": "0bc62316aa48bf7045ca6ccb78bd0c98ecaba6a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

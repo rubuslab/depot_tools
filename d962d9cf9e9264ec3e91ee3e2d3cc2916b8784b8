@@ -121,6 +121,24 @@
       "parentUuid": "4716d684_1fde8c13",
       "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3aecc9f7_5dba7150",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116524
+      },
+      "writtenOn": "2021-06-25T17:12:00Z",
+      "side": 1,
+      "message": "This actually has nothing to do with the \"USE_PYTHON3 \u003d True\" command in presubmits, this is a separate toggle on the \"GetUnitTests*()\" methods.\n\nI am going to spend some time today digging into the issue on the Chromium side to have a better idea of how many presubmits are affected.",
+      "parentUuid": "22b9f929_788fa435",
+      "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

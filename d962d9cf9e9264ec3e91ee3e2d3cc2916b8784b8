@@ -139,6 +139,24 @@
       "parentUuid": "22b9f929_788fa435",
       "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c2418ab_af00fb62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-25T17:46:54Z",
+      "side": 1,
+      "message": "In chewing on this more, I\u0027ve come to the idea that this isn\u0027t so bad, if we update the parameter name and improve the docs a bit.\n\nI think I would change the parameter name to \u0027skip_shebang_check\u0027, and update the docs to say that `run_on_python3` only runs files with a python3 shebang by default.\n\nIt looks like there\u0027s \u003e700 test files in the repo, and about 250 have one shebang or another, so \u003e450 that don\u0027t, scattered across 140 directories.\n\nSo I agree that fixing them all manually w/o changing the presubmit code would be awkward, and having to add shebangs to \u003e450 files is not great, given that I mostly don\u0027t want the files to have shebangs :).",
+      "parentUuid": "3aecc9f7_5dba7150",
+      "revId": "d962d9cf9e9264ec3e91ee3e2d3cc2916b8784b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

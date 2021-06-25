@@ -16,6 +16,23 @@
       "message": "lgtm! thanks for waiting to let me think on this :).",
       "revId": "ea939a8def753525e76988b19f49dbf2d8d5f1ff",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b83da53_f11272ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-25T19:24:30Z",
+      "side": 1,
+      "message": "Let\u0027s wait to get a review from either sokcevic@ or ehmaldonado@ too, though.",
+      "revId": "ea939a8def753525e76988b19f49dbf2d8d5f1ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

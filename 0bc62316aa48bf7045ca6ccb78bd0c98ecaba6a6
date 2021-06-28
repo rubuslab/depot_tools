@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e5da13b_5b735bf0",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-06-28T10:52:56Z",
+      "side": 1,
+      "message": "Done.\n\nI feel we should use cipd so I filed https://crbug.com/1224333",
+      "parentUuid": "9dd91a61_b4e02b36",
+      "range": {
+        "startLine": 104,
+        "startChar": 27,
+        "endLine": 104,
+        "endChar": 34
+      },
+      "revId": "0bc62316aa48bf7045ca6ccb78bd0c98ecaba6a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9d207c3a_183091c4",
@@ -72,6 +96,24 @@
       "side": 1,
       "message": "It would be good to have a comment and/or bug for why this is here at least, so some future spelunker doesn\u0027t just remove it.",
       "parentUuid": "9d207c3a_183091c4",
+      "revId": "0bc62316aa48bf7045ca6ccb78bd0c98ecaba6a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86fa3044_6ca14778",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-06-28T10:52:56Z",
+      "side": 1,
+      "message": "Good callout, added a comment.\n\nAs for performance, I don\u0027t expect a significant degradation as gsutil will still use multithreading.\n\nWe should be able to compare bot_update times before the upgrade and after. If we notice a significant different, we can roll it back.",
+      "parentUuid": "45b3038b_7c32dcf1",
       "revId": "0bc62316aa48bf7045ca6ccb78bd0c98ecaba6a6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

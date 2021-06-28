@@ -16,6 +16,40 @@
       "message": "This broke goma for me. goma_ctl ensure_start just says \"The system cannot find the path specified.\" Going to the change before works. I\u0027m confused because I know I tested this on Windows.\n\nReverting while I investigate...",
       "revId": "2a6dffaf4bc5eae2f76b6e56704b63fbcda92c55",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e65ff8d_3a49f17a",
+        "filename": "goma_auth.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-06-28T17:55:08Z",
+      "side": 1,
+      "message": "scriptdir is not defined. I will fix and reland.",
+      "revId": "2a6dffaf4bc5eae2f76b6e56704b63fbcda92c55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7293bd1e_a946feac",
+        "filename": "goma_ctl.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-06-28T17:55:08Z",
+      "side": 1,
+      "message": "scriptdir is not defined. I will fix and reland.",
+      "revId": "2a6dffaf4bc5eae2f76b6e56704b63fbcda92c55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54051ba9_d6564540",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-06-28T17:47:12Z",
+      "side": 1,
+      "message": "This broke goma for me. goma_ctl ensure_start just says \"The system cannot find the path specified.\" Going to the change before works. I\u0027m confused because I know I tested this on Windows.\n\nReverting while I investigate...",
+      "revId": "2a6dffaf4bc5eae2f76b6e56704b63fbcda92c55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

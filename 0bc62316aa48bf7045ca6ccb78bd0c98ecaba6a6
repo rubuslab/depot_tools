@@ -116,6 +116,24 @@
       "parentUuid": "45b3038b_7c32dcf1",
       "revId": "0bc62316aa48bf7045ca6ccb78bd0c98ecaba6a6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b522811_8b297ec7",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-06-28T16:27:45Z",
+      "side": 1,
+      "message": "Okay.",
+      "parentUuid": "86fa3044_6ca14778",
+      "revId": "0bc62316aa48bf7045ca6ccb78bd0c98ecaba6a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

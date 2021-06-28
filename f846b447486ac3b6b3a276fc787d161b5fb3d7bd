@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "085fa384_0d36f2fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2021-06-28T18:07:05Z",
+      "side": 1,
+      "message": "Whoops! I guess we all tested the previous version of the batch files from the depot_tools directory, which is the only location where they will work.\n\nThis updated patch should be correct. No hurry, but PTAL when you get a chance.",
+      "revId": "f846b447486ac3b6b3a276fc787d161b5fb3d7bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

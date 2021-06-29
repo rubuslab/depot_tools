@@ -909,7 +909,8 @@ def GetPylint(input_api,
               files_to_skip=None,
               disabled_warnings=None,
               extra_paths_list=None,
-              pylintrc=None):
+              pylintrc=None,
+              use_pylint26=False):
   """Run pylint on python files.
 
   The default files_to_check enforces looking only at *.py files.
@@ -970,6 +971,8 @@ def GetPylint(input_api,
     # the interpreter to use. It also has limitations on the size of
     # the command-line, so we pass arguments via a pipe.
     tool = input_api.os_path.join(_HERE, 'pylint')
+    if use_pylint26:
+      tool += '-2.6'
     kwargs = {'env': env}
     if input_api.platform == 'win32':
       # On Windows, scripts on the current directory take precedence over PATH.

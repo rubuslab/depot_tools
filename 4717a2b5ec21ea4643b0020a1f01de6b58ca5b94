@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8345a557_e9e4a8bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2021-06-29T14:42:19Z",
+      "side": 1,
+      "message": "Hi Dirk,\n\nI tested this for build/android/PRESUBMIT.py. Although there were tons of new errors, it did run and use pylint-2.6 correctly. Lots to fix/suppress in the coming days.\n\nThanks,\nPeter",
+      "revId": "4717a2b5ec21ea4643b0020a1f01de6b58ca5b94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

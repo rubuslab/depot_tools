@@ -16,6 +16,23 @@
       "message": "PTAL\n\nI think I\u0027ll let it sit in depot_tools for a bit before updating Swarming etc.",
       "revId": "f275a6844a9fbaff075b6c5be9a3c8f2c04ef9de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e1a2072_3a00f1a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-06-29T18:32:58Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "f275a6844a9fbaff075b6c5be9a3c8f2c04ef9de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

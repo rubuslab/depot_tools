@@ -909,15 +909,23 @@ def GetPylint(input_api,
               files_to_skip=None,
               disabled_warnings=None,
               extra_paths_list=None,
-              pylintrc=None):
+              pylintrc=None,
+              pylint_version=None):
   """Run pylint on python files.
 
   The default files_to_check enforces looking only at *.py files.
+
+  The default version for pylint is currently 1.5. To use another version of
+  pylint, pass in pylint_version. Currently only '2.6' is supported, but other
+  versions may be added in the future to allow incremental pylint upgrades.
   """
 
   files_to_check = tuple(files_to_check or (r'.*\.py$', ))
   files_to_skip = tuple(files_to_skip or input_api.DEFAULT_FILES_TO_SKIP)
   extra_paths_list = extra_paths_list or []
+
+  if pylint_version is not None:
+    assert pylint_version in ['2.6'], "Only version 2.6 is supported for now."
 
   if input_api.is_committing:
     error_type = output_api.PresubmitError
@@ -970,6 +978,8 @@ def GetPylint(input_api,
     # the interpreter to use. It also has limitations on the size of
     # the command-line, so we pass arguments via a pipe.
     tool = input_api.os_path.join(_HERE, 'pylint')
+    if pylint_version is not None:
+      tool += '-' + pylint_version
     kwargs = {'env': env}
     if input_api.platform == 'win32':
       # On Windows, scripts on the current directory take precedence over PATH.

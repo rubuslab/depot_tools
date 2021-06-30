@@ -33,6 +33,24 @@
       "message": "Can we change this to a string value or an enum, rather than a bool? We\u0027ll almost certainly want additional versions in the future.",
       "revId": "4717a2b5ec21ea4643b0020a1f01de6b58ca5b94",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f4f7d44_bfe9dc62",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2021-06-30T12:24:19Z",
+      "side": 1,
+      "message": "Done, great idea! Changed to a string version and added an assert check.",
+      "parentUuid": "cea30e5d_8473fd6a",
+      "revId": "4717a2b5ec21ea4643b0020a1f01de6b58ca5b94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8bdb4a6_61e29553",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-07-01T23:00:57Z",
+      "side": 1,
+      "message": "wow, that was a smaller diff than I expected; lgtm\n\n(sidenote: ideally this could be run continuously on a builder or something, rather than manually when \u0027something changes\u0027. It\u0027s kind of awkward since the current builder output would have to be commits back into depot_tools (given the way depot_tools is both the source and distribution mechanism for the tools and docs). Maybe it would be possible to make the docs be a CIPD package which then gets unpacked at man/html and man/man1 though? Maybe?)",
+      "revId": "a2f8f22f71524f42017c2bf39c1ac8f26deb3f8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af512de4_cff989fa",
+        "filename": "man/html/depot_tools_tutorial.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-07-01T23:00:57Z",
+      "side": 1,
+      "message": "I assume you spot checked the html to make sure it\u0027s not gibberish now? :D",
+      "revId": "a2f8f22f71524f42017c2bf39c1ac8f26deb3f8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64bf7431_dcf58630",
+        "filename": "man/src/make_docs.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-07-01T23:00:57Z",
+      "side": 1,
+      "message": "tbh, surprised this still works...",
+      "revId": "a2f8f22f71524f42017c2bf39c1ac8f26deb3f8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

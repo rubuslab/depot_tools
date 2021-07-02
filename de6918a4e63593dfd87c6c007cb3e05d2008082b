@@ -16,6 +16,23 @@
       "message": "ehmaldonado@, could you PTAL? Thanks!",
       "revId": "de6918a4e63593dfd87c6c007cb3e05d2008082b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a504048_dcdad926",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1363998
+      },
+      "writtenOn": "2021-07-02T17:54:46Z",
+      "side": 1,
+      "message": "ehmaldonado@, friendly ping :)",
+      "revId": "de6918a4e63593dfd87c6c007cb3e05d2008082b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

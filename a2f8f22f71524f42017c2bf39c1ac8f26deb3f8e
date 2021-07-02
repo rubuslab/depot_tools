@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f00afc98_b1a19fc0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-07-02T13:34:05Z",
+      "side": 1,
+      "message": "Ack. Definitely we have ways to automate it, could be a good starter project. https://crbug.com/1226016",
+      "parentUuid": "c8bdb4a6_61e29553",
+      "revId": "a2f8f22f71524f42017c2bf39c1ac8f26deb3f8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af512de4_cff989fa",
@@ -37,6 +55,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e0ba80b9_48f37c41",
+        "filename": "man/html/depot_tools_tutorial.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-07-02T13:34:05Z",
+      "side": 1,
+      "message": "Yeah, browser renders it just fine:\nhttp://screen/9BznHEJevGXq4Xg\n\n(current docs: https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html)",
+      "parentUuid": "af512de4_cff989fa",
+      "revId": "a2f8f22f71524f42017c2bf39c1ac8f26deb3f8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "64bf7431_dcf58630",
         "filename": "man/src/make_docs.sh",
         "patchSetId": 1
@@ -48,6 +84,24 @@
       "writtenOn": "2021-07-01T23:00:57Z",
       "side": 1,
       "message": "tbh, surprised this still works...",
+      "revId": "a2f8f22f71524f42017c2bf39c1ac8f26deb3f8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f845f138_184aa0ca",
+        "filename": "man/src/make_docs.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-07-02T13:34:05Z",
+      "side": 1,
+      "message": "kudos to git team 😊",
+      "parentUuid": "64bf7431_dcf58630",
       "revId": "a2f8f22f71524f42017c2bf39c1ac8f26deb3f8e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

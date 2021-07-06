@@ -2813,6 +2813,7 @@ class ChangeDescription(object):
       '# Enter a description of the change.',
       '# This will be displayed on the codereview site.',
       '# The first line will also be used as the subject of the review.',
+      '# vim: ft=gitcommit',
       '#--------------------This line is 72 characters long'
       '--------------------',
     ] + self._description_lines)

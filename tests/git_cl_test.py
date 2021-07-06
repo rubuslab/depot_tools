@@ -2216,6 +2216,7 @@ class TestGitCl(unittest.TestCase):
           '# Enter a description of the change.\n'
           '# This will be displayed on the codereview site.\n'
           '# The first line will also be used as the subject of the review.\n'
+          '# vim: ft=gitcommit\n'
           '#--------------------This line is 72 characters long'
           '--------------------\n'
           'Some.\n\nChange-Id: xxx\nBug: ',
@@ -2243,6 +2244,7 @@ class TestGitCl(unittest.TestCase):
           '# Enter a description of the change.\n'
           '# This will be displayed on the codereview site.\n'
           '# The first line will also be used as the subject of the review.\n'
+          '# vim: ft=gitcommit\n'
           '#--------------------This line is 72 characters long'
           '--------------------\n'
           'Some.\n\nFixed: 123\nChange-Id: xxx',

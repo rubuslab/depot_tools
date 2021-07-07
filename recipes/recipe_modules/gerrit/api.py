@@ -119,7 +119,7 @@ class GerritApi(recipe_api.RecipeApi):
                            timeout=timeout,
                            step_test_data=step_test_data)
     cl = cls[0] if len(cls) == 1 else {'revisions': {}}
-    for ri in cl['revisions'].values():
+    for ri in list(cl['revisions'].values()):
       # TODO(tandrii): add support for patchset=='current'.
       if str(ri['_number']) == str(patchset):
         return ri

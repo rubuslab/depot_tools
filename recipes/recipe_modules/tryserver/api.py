@@ -121,7 +121,7 @@ class TryserverApi(recipe_api.RecipeApi):
       self._gerrit_change_target_ref = (
           'refs/heads/' + self._gerrit_change_target_ref)
 
-    for rev in res['revisions'].values():
+    for rev in list(res['revisions'].values()):
       if int(rev['_number']) == self.gerrit_change.patchset:
         self._gerrit_change_fetch_ref = rev['ref']
         break
@@ -321,7 +321,8 @@ class TryserverApi(recipe_api.RecipeApi):
       self._ensure_gerrit_commit_message()
       self._change_footers = self._get_footer_step(self._gerrit_commit_message)
       return self._change_footers
-    raise "No patch text or associated changelist, cannot get footers"  #pragma: nocover
+    raise Exception(
+        'No patch text or associated changelist, cannot get footers')  #pragma: nocover
 
   def _get_footer_step(self, patch_text):
     result = self.m.python(

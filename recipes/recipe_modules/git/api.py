@@ -2,8 +2,15 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+from __future__ import division
+
 import itertools
 import re
+
+try:
+  _INTEGER_TYPES = (int, long)
+except NameError:  # pragma: no cover
+  _INTEGER_TYPES = (int,)
 
 from recipe_engine import recipe_api
 
@@ -59,7 +66,8 @@ class GitApi(recipe_api.RecipeApi):
     """
     if previous_result:
       assert isinstance(previous_result, dict)
-      assert all(isinstance(v, long) for v in previous_result.values())
+      assert all(
+          isinstance(v, _INTEGER_TYPES) for v in previous_result.values())
       assert 'size' in previous_result
       assert 'size-pack' in previous_result
 
@@ -75,7 +83,7 @@ class GitApi(recipe_api.RecipeApi):
       result = {}
       for line in step_result.stdout.splitlines():
         name, value = line.split(':', 1)
-        result[name] = long(value.strip())
+        result[name] = int(value.strip())
 
       def results_to_text(results):
         return ['  %s: %s' % (k, v) for k, v in results.items()]

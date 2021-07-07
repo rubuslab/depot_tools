@@ -3,6 +3,13 @@
 # found in the LICENSE file.
 
 import re
+import sys
+
+if sys.version_info.major < 3:
+  _STRING_TYPE = basestring
+else:
+  _STRING_TYPE = str  # pragma: no cover
+
 from recipe_engine import recipe_api
 
 class DepsDiffException(Exception):
@@ -61,7 +68,7 @@ def jsonish_to_python(spec, is_top=False):
       ret += '['
       ret += ', '.join(jsonish_to_python(x) for x in spec)
       ret += ']'
-    elif isinstance(spec, basestring):
+    elif isinstance(spec, _STRING_TYPE):
       ret = repr(str(spec))
     else:
       ret = repr(spec)
@@ -145,7 +152,7 @@ class GclientApi(recipe_api.RecipeApi):
     rev_map = cfg.got_revision_mapping.as_jsonish()
     reverse_rev_map = cfg.got_revision_reverse_mapping.as_jsonish()
     combined_length = len(rev_map) + len(reverse_rev_map)
-    reverse_rev_map.update({v: k for k, v in rev_map.items()})
+    reverse_rev_map.update({v: k for k, v in list(rev_map.items())})
 
     # Make sure we never have duplicate values in the old map.
     assert combined_length == len(reverse_rev_map)
@@ -173,8 +180,9 @@ class GclientApi(recipe_api.RecipeApi):
       if fixed_revision:
         revisions.extend(['--revision', '%s@%s' % (name, fixed_revision)])
 
-    test_data_paths = set(self.got_revision_reverse_mapping(cfg).values() +
-                          [s.name for s in cfg.solutions])
+    test_data_paths = set(
+        list(self.got_revision_reverse_mapping(cfg).values()) +
+        [s.name for s in cfg.solutions])
     step_test_data = lambda: (
       self.test_api.output_json(test_data_paths))
     try:
@@ -207,7 +215,7 @@ class GclientApi(recipe_api.RecipeApi):
       if result.json.output is not None:
         solutions = result.json.output['solutions']
         for propname, path in sorted(
-            self.got_revision_reverse_mapping(cfg).items()):
+            list(self.got_revision_reverse_mapping(cfg).items())):
           # gclient json paths always end with a slash
           info = solutions.get(path + '/') or solutions.get(path)
           if info:
@@ -226,7 +234,7 @@ class GclientApi(recipe_api.RecipeApi):
     """
     cfg = gclient_config or self.c
 
-    for prop, custom_var in cfg.parent_got_revision_mapping.items():
+    for prop, custom_var in list(cfg.parent_got_revision_mapping.items()):
       val = str(self.m.properties.get(prop, ''))
       # TODO(infra): Fix coverage.
       if val:  # pragma: no cover
@@ -349,7 +357,7 @@ class GclientApi(recipe_api.RecipeApi):
       return rel_path
 
     # repo_path_map keys may be non-canonical.
-    for key, (rel_path, _) in cfg.repo_path_map.items():
+    for key, (rel_path, _) in list(cfg.repo_path_map.items()):
       if self._canonicalize_repo_url(key) == repo_url:
         return rel_path
 

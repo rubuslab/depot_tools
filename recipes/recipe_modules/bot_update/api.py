@@ -233,7 +233,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
       # Only update with non-empty values. Some recipe might otherwise
       # overwrite the HEAD default with an empty string.
       revisions.update(
-          (k, v) for k, v in cfg.revisions.items() if v)
+          (k, v) for k, v in list(cfg.revisions.items()) if v)
     if cfg.solutions and root_solution_revision:
       revisions[first_sol] = root_solution_revision
     # Allow for overrides required to bisect into rolls.
@@ -327,7 +327,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
         if update_presentation:
           # Set properties such as got_revision.
           for prop_name, prop_value in (
-              self.last_returned_properties.items()):
+              list(self.last_returned_properties.items())):
             step_result.presentation.properties[prop_name] = prop_value
 
         # Add helpful step description in the step UI.
@@ -524,7 +524,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
     rev_reverse_map = self.m.gclient.got_revision_reverse_mapping(cfg)
     return sorted(
         prop
-        for prop, project in rev_reverse_map.items()
+        for prop, project in list(rev_reverse_map.items())
         if project == project_name
     )
 

@@ -23,7 +23,7 @@ class BotUpdateTestApi(recipe_test_api.RecipeTestApi):
         for project_name in set(revision_mapping.values())
     }
     if fixed_revisions:
-      for project_name, revision in fixed_revisions.items():
+      for project_name, revision in list(fixed_revisions.items()):
         if revision == 'HEAD':
           revision = self.gen_revision(project_name)
         elif revision.startswith('refs/') or revision.startswith('origin/'):
@@ -32,13 +32,13 @@ class BotUpdateTestApi(recipe_test_api.RecipeTestApi):
 
     properties = {
         property_name: revisions[project_name]
-        for property_name, project_name in revision_mapping.items()
+        for property_name, project_name in list(revision_mapping.items())
     }
     if commit_positions:
       properties.update({
           '%s_cp' % property_name: ('refs/heads/master@{#%s}' %
                                     self.gen_commit_position(project_name))
-          for property_name, project_name in revision_mapping.items()
+          for property_name, project_name in list(revision_mapping.items())
       })
 
     output.update({
@@ -54,7 +54,7 @@ class BotUpdateTestApi(recipe_test_api.RecipeTestApi):
                 'repository': 'https://fake.org/%s.git' % project_name,
                 'revision': revision,
             }
-            for project_name, revision in revisions.items()
+            for project_name, revision in list(revisions.items())
         }
     })
 
@@ -68,7 +68,7 @@ class BotUpdateTestApi(recipe_test_api.RecipeTestApi):
                         'revision': revision
                     }
                 }
-                for project_name, revision in revisions.items()
+                for project_name, revision in list(revisions.items())
             }
         }
     })

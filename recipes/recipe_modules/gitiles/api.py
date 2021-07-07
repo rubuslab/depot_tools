@@ -3,7 +3,11 @@
 # found in the LICENSE file.
 
 import base64
-import urlparse
+
+try:
+  import urlparse
+except ImportError:  # pragma: no cover
+  import urllib.parse as urlparse
 
 from recipe_engine import recipe_api
 

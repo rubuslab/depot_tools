@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69684028_76906259",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2021-07-08T16:23:24Z",
+      "side": 1,
+      "message": "LGTM but if you want Edward\u0027s review you\u0027ll have to wait till he\u0027s back next week.",
+      "revId": "c22ffef22eede12e0940752ecc752abf2010ee7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

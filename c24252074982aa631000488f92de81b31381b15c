@@ -22,6 +22,30 @@
       },
       "revId": "c24252074982aa631000488f92de81b31381b15c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a883db5b_ef77f17d",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1420,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-07-08T14:11:28Z",
+      "side": 1,
+      "message": "(1) done. I also limited so branch name has to start with bug or fix",
+      "parentUuid": "12ab0932_24f4fb00",
+      "range": {
+        "startLine": 1420,
+        "startChar": 23,
+        "endLine": 1420,
+        "endChar": 73
+      },
+      "revId": "c24252074982aa631000488f92de81b31381b15c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

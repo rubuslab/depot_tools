@@ -16,6 +16,24 @@
       "message": "not: add a todo to clean it up once py2 is no longer supported.",
       "revId": "5b9559d1ede0bf3f68413093418e3972cec7e1a9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cccf98b5_b12631bc",
+        "filename": "recipes/recipe_modules/gclient/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-07-09T18:16:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "792ef907_733bc1d9",
+      "revId": "5b9559d1ede0bf3f68413093418e3972cec7e1a9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

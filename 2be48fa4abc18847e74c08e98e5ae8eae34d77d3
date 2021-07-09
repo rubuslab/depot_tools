@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "864d1918_fafc70a1",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-07-09T20:03:56Z",
+      "side": 1,
+      "message": "this isn\u0027t the \"correct\" translation, but I think this is the original author\u0027s intention. thoughts?",
+      "range": {
+        "startLine": 463,
+        "startChar": 2,
+        "endLine": 463,
+        "endChar": 40
+      },
+      "revId": "2be48fa4abc18847e74c08e98e5ae8eae34d77d3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "I think this should be wrapped with:\n\n  with metrics.collector.print_notice_and_exit():",
       "revId": "21fe7297f3b98b59010aaa0b7e691e4d860b7b38",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64ffc540_668a5145",
+        "filename": "git_reparent_branch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2021-07-09T18:54:08Z",
+      "side": 1,
+      "message": "whoops, fixed",
+      "parentUuid": "93feed4d_30754419",
+      "revId": "21fe7297f3b98b59010aaa0b7e691e4d860b7b38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fafbbde5_d8d2a7d9",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-07-09T11:04:24Z",
+      "side": 1,
+      "message": "nit: add comment to simplify this once fully on py3",
+      "revId": "4df0d05523e181a73792b48e0ad9f601d662c453",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c6aedb0_1fe82770",
         "filename": "recipes/recipe_modules/git/api.py",
         "patchSetId": 6

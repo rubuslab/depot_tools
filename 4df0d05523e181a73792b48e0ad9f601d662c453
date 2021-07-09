@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f46fdba_4472243d",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-07-09T18:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fafbbde5_d8d2a7d9",
+      "revId": "4df0d05523e181a73792b48e0ad9f601d662c453",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c6aedb0_1fe82770",

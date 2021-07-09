@@ -16,6 +16,24 @@
       "message": "won\u0027t this lose precision in v2?",
       "revId": "4df0d05523e181a73792b48e0ad9f601d662c453",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfa2a6dd_515c9c6b",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-07-09T11:03:58Z",
+      "side": 1,
+      "message": "Won\u0027t be a problem: int that\u0027s over max_int will become long. Glad they moved away from it 😊",
+      "parentUuid": "2c6aedb0_1fe82770",
+      "revId": "4df0d05523e181a73792b48e0ad9f601d662c453",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

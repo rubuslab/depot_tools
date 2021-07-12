@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# coding=utf-8
 # Copyright (c) 2015 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -285,6 +286,39 @@ class BotUpdateUnittests(unittest.TestCase):
     }
     actual_results = bot_update.parse_revisions(revisions, 'root')
     self.assertEqual(expected_results, actual_results)
+
+
+class BotUpdateCallUnittests(unittest.TestCase):
+  def testSmallOutput(self):
+    test_string = 'a' * (bot_update.BUF_SIZE // 2)
+    output = bot_update.call('echo', test_string)
+    self.assertEqual(output, test_string + '\n')
+
+  def testLargeOutput(self):
+    test_string = 'a' * int(bot_update.BUF_SIZE * 3.5)
+    output = bot_update.call('echo', test_string)
+    self.assertEqual(output, test_string + '\n')
+
+  def testTwoByteTruncatedOutput(self):
+    test_string = ('a' * (bot_update.BUF_SIZE - 1) + u'á').encode('utf-8')
+    self.assertEqual(bot_update.call('echo', test_string), test_string + '\n')
+
+  def testThreeByteTruncatedOutput(self):
+    test_string = ('a' * (bot_update.BUF_SIZE - 1) + u'ࠀ').encode('utf-8')
+    self.assertEqual(bot_update.call('echo', test_string), test_string + '\n')
+
+    test_string = ('a' * (bot_update.BUF_SIZE - 2) + u'ࠀ').encode('utf-8')
+    self.assertEqual(bot_update.call('echo', test_string), test_string + '\n')
+
+  def testFourByteTruncatedOutput(self):
+    test_string = ('a' * (bot_update.BUF_SIZE - 1) + u'𒀁').encode('utf-8')
+    self.assertEqual(bot_update.call('echo', test_string), test_string + '\n')
+
+    test_string = ('a' * (bot_update.BUF_SIZE - 2) + u'𒀁').encode('utf-8')
+    self.assertEqual(bot_update.call('echo', test_string), test_string + '\n')
+
+    test_string = ('a' * (bot_update.BUF_SIZE - 3) + u'𒀁').encode('utf-8')
+    self.assertEqual(bot_update.call('echo', test_string), test_string + '\n')
 
 
 if __name__ == '__main__':

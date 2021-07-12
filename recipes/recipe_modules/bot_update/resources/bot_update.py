@@ -5,9 +5,9 @@
 
 # TODO(hinoka): Use logging.
 
+from __future__ import division
 from __future__ import print_function
 
-import cStringIO
 import codecs
 from contextlib import contextmanager
 import copy
@@ -18,18 +18,23 @@ import json
 import optparse
 import os
 import pprint
-import random
 import re
 import subprocess
 import sys
 import tempfile
 import threading
 import time
-import urllib2
-import urlparse
 import uuid
 
 import os.path as path
+
+# TODO(crbug.com/1227140): Clean up when py2 is no longer supported.
+try:
+  from cStringIO import StringIO
+  import urlparse
+except ImportError:  # pragma: no cover
+  from io import StringIO
+  import urllib.parse as urlparse
 
 # How many bytes at a time to read from pipes.
 BUF_SIZE = 256
@@ -94,7 +99,7 @@ GCLIENT_PATH = path.join(DEPOT_TOOLS_DIR, 'gclient.py')
 
 class SubprocessFailed(Exception):
   def __init__(self, message, code, output):
-    Exception.__init__(self, message)
+    self.message = message
     self.code = code
     self.output = output
 
@@ -170,7 +175,7 @@ def call(*args, **kwargs):  # pragma: no cover
   stdin_data = kwargs.pop('stdin_data', None)
   if stdin_data:
     kwargs['stdin'] = subprocess.PIPE
-  out = cStringIO.StringIO()
+  out = StringIO()
   new_env = kwargs.get('env', {})
   env = os.environ.copy()
   env.update(new_env)
@@ -197,10 +202,15 @@ def call(*args, **kwargs):  # pragma: no cover
   # This is here because passing 'sys.stdout' into stdout for proc will
   # produce out of order output.
   hanging_cr = False
+  extra_bytes = b''
   while True:
     for observer in observers:
       observer.reset()
-    buf = proc.stdout.read(BUF_SIZE)
+    # Ensure that buf contains properly formatted characters.
+    raw_buf = extra_bytes + proc.stdout.read(BUF_SIZE)
+    buf = raw_buf.decode('utf-8', 'ignore')
+    trunc = len(raw_buf) - len(buf.encode('utf-8'))
+    extra_bytes = raw_buf[-trunc:] if trunc else b''
     if not buf:
       break
     if hanging_cr:
@@ -455,7 +465,7 @@ def create_manifest():
         for path, info in json.load(f).items()
         if info['rev'] is not None
       }
-  except ValueError, SubprocessFailed:
+  except (ValueError, SubprocessFailed):
     return {}
   finally:
     os.remove(fname)
@@ -598,7 +608,7 @@ def _maybe_break_locks(checkout_path, tries=3):
             print('FAILED to break lock: %s: %s' % (to_break, ex))
             raise
 
-  for _ in xrange(tries):
+  for _ in range(tries):
     try:
       attempt()
       return
@@ -816,7 +826,7 @@ def emit_json(out_file, did_run, **kwargs):
   output.update({'did_run': did_run})
   output.update(kwargs)
   with open(out_file, 'wb') as f:
-    f.write(json.dumps(output, sort_keys=True))
+    f.write(json.dumps(output, sort_keys=True).encode('utf-8'))
 
 
 @_set_git_config

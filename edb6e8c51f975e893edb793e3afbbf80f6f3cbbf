@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc5e435d_d616d562",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-12T20:27:23Z",
+      "side": 1,
+      "message": "Did you try this using led?",
+      "revId": "edb6e8c51f975e893edb793e3afbbf80f6f3cbbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9fe58e6_0fc662e2",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-12T20:27:23Z",
+      "side": 1,
+      "message": "Instead of this, we need to do\n\n  self.message \u003d message\n\nOtherwise, message field will not be set on Python 3, and accessing it will fail, e.g. on gclient_sync below.\n\n  except SubprocessFailed as e:\n    # If gclient sync is handling patching, parse the output for a patch error\n    # message.\n    if \u0027Failed to apply patch.\u0027 in e.output:\n      raise PatchFailed(e.message, e.code, e.output)\n    # Throw a GclientSyncFailed exception so we can catch this independently.\n    raise GclientSyncFailed(e.message, e.code, e.output)",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 37
+      },
+      "revId": "edb6e8c51f975e893edb793e3afbbf80f6f3cbbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31afe134_99f5ce50",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-12T20:27:23Z",
+      "side": 1,
+      "message": "On Python 3, this will return bytes.\nAlso, I think it wouldn\u0027t be safe to do \n\n  buf \u003d proc.stdout.read(BUF_SIZE).decode(\u0027utf-8\u0027)\n\nsince the buffer might cut an unicode character in half.",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 208,
+        "endChar": 36
+      },
+      "revId": "edb6e8c51f975e893edb793e3afbbf80f6f3cbbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "115fea05_e7bd8f53",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-12T20:27:23Z",
+      "side": 1,
+      "message": "`f` is open as binary file, but json.dumps returns a string.\n\n  f.write(json.dumps(output, sort_keys\u003dTrue).encode(\u0027utf-8\u0027))",
+      "revId": "edb6e8c51f975e893edb793e3afbbf80f6f3cbbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

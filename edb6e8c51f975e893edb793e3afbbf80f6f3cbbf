@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d02c91d_f51c9a26",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-07-13T19:11:12Z",
+      "side": 1,
+      "message": "These comments are all addressed in https://crrev.com/c/3022310/1..5",
+      "parentUuid": "f9fe58e6_0fc662e2",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 37
+      },
+      "revId": "edb6e8c51f975e893edb793e3afbbf80f6f3cbbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31afe134_99f5ce50",
@@ -64,6 +88,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbfa41fc_ad0b2b78",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-07-13T19:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31afe134_99f5ce50",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 208,
+        "endChar": 36
+      },
+      "revId": "edb6e8c51f975e893edb793e3afbbf80f6f3cbbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "115fea05_e7bd8f53",
@@ -77,6 +125,24 @@
       "writtenOn": "2021-07-12T20:27:23Z",
       "side": 1,
       "message": "`f` is open as binary file, but json.dumps returns a string.\n\n  f.write(json.dumps(output, sort_keys\u003dTrue).encode(\u0027utf-8\u0027))",
+      "revId": "edb6e8c51f975e893edb793e3afbbf80f6f3cbbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "172e55b5_41a6b693",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-07-13T19:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "115fea05_e7bd8f53",
       "revId": "edb6e8c51f975e893edb793e3afbbf80f6f3cbbf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

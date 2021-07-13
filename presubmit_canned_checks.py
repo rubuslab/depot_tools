@@ -140,8 +140,8 @@ def CheckAuthorizedAuthor(input_api, output_api, bot_allowlist=None):
     return [error_type(
         ('%s is not in AUTHORS file. If you are a new contributor, please visit'
         '\n'
-        'https://www.chromium.org/developers/contributing-code and read the '
-        '"Legal" section\n'
+        'https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/contributing.md#Legal-stuff \n'
+        'and read the "Legal stuff" section\n'
         'If you are a chromite, verify the contributor signed the CLA.') %
         author)]
   return []

@@ -16,6 +16,29 @@
       "message": "led run: https://luci-milo.appspot.com/raw/build/logs.chromium.org/infra/led/gavinmak_google.com/0d898fab56e9c2fd9648a55aff4b96e68301182a9b45201adb73b5c0cc7adb31/+/build.proto",
       "revId": "51cd3ecce4cb42668c24abcf870d243ccce06522",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d77fe25_01df887a",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-13T19:34:51Z",
+      "side": 1,
+      "message": "We should add tests for this.\n\nWe could consider making `out` a BytesIO instead of StringIO (and use sys.stdout.buffer in Python3 instead of sys.stdout).",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 61
+      },
+      "revId": "51cd3ecce4cb42668c24abcf870d243ccce06522",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

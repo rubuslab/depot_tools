@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "82aaa4f0_d8379f55",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 1363998
+      },
+      "writtenOn": "2021-07-13T20:52:25Z",
+      "side": 1,
+      "message": "This is tested already in test_basic (i.e. the \"ssh://\" tests). Happy to break it out into its own test, if you\u0027d prefer.",
+      "parentUuid": "791962d8_a4c2867d",
+      "range": {
+        "startLine": 870,
+        "startChar": 0,
+        "endLine": 870,
+        "endChar": 32
+      },
+      "revId": "c446a84f34578c655a90aa8f7e4b10b6f3d13b5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7c123305_98e46595",
         "filename": "git_cl.py",
         "patchSetId": 8
@@ -54,6 +78,30 @@
       "writtenOn": "2021-07-13T20:46:15Z",
       "side": 1,
       "message": "And this.",
+      "range": {
+        "startLine": 885,
+        "startChar": 0,
+        "endLine": 885,
+        "endChar": 22
+      },
+      "revId": "c446a84f34578c655a90aa8f7e4b10b6f3d13b5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75eeb6e8_fe154bef",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 1363998
+      },
+      "writtenOn": "2021-07-13T20:52:25Z",
+      "side": 1,
+      "message": "Ditto above, but with the \"123/1\" test",
+      "parentUuid": "7c123305_98e46595",
       "range": {
         "startLine": 885,
         "startChar": 0,

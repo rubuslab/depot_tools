@@ -16,6 +16,52 @@
       "message": "Ah, sorry for not running the tests before. I added some very basic \u0027hostname\u0027 validation to avoid e.g. \"123/1\" being parsed as a URL, but it\u0027s not the most elegant fix.\n\nCould you take another look? Thanks!",
       "revId": "c446a84f34578c655a90aa8f7e4b10b6f3d13b5a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "791962d8_a4c2867d",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-13T20:46:15Z",
+      "side": 1,
+      "message": "Please add tests for this.",
+      "range": {
+        "startLine": 870,
+        "startChar": 0,
+        "endLine": 870,
+        "endChar": 32
+      },
+      "revId": "c446a84f34578c655a90aa8f7e4b10b6f3d13b5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c123305_98e46595",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-13T20:46:15Z",
+      "side": 1,
+      "message": "And this.",
+      "range": {
+        "startLine": 885,
+        "startChar": 0,
+        "endLine": 885,
+        "endChar": 22
+      },
+      "revId": "c446a84f34578c655a90aa8f7e4b10b6f3d13b5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

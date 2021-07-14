@@ -137,13 +137,16 @@ def CheckAuthorizedAuthor(input_api, output_api, bot_allowlist=None):
   if not any(input_api.fnmatch.fnmatch(author.lower(), valid)
              for valid in valid_authors):
     input_api.logging.info('Valid authors are %s', ', '.join(valid_authors))
-    return [error_type(
-        ('%s is not in AUTHORS file. If you are a new contributor, please visit'
-        '\n'
-        'https://www.chromium.org/developers/contributing-code and read the '
-        '"Legal" section\n'
-        'If you are a chromite, verify the contributor signed the CLA.') %
-        author)]
+    return [
+        error_type((
+            '%s is not in AUTHORS file. If you are a new contributor, please visit'
+            '\n'
+            'https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/contributing.md#Legal-stuff'
+            '\n'
+            'and read the "Legal stuff" section\n'
+            'If you are a chromite, verify the contributor signed the CLA.') %
+                   author)
+    ]
   return []
 
 

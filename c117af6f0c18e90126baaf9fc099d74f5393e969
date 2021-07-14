@@ -16,6 +16,23 @@
       "message": "Now sure how to resolve owners for this for review. I used \"Suggest Owners\" and also CC\u0027ed Flutter folks.",
       "revId": "c117af6f0c18e90126baaf9fc099d74f5393e969",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5b11461_8d76609b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-07-14T22:57:52Z",
+      "side": 1,
+      "message": "I didn\u0027t realize Flutter used depot_tools; good to know.\n\nLGTM.",
+      "revId": "c117af6f0c18e90126baaf9fc099d74f5393e969",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

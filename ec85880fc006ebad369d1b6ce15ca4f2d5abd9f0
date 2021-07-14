@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53f09408_870e3db1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1117029
+      },
+      "writtenOn": "2021-07-14T02:26:47Z",
+      "side": 1,
+      "message": "I tried moving the \\n, but I don\u0027t think that will clear the error. Adding \u0027git cl format\u0027 seems to have made it worse (now 2 failing lines)",
+      "revId": "ec85880fc006ebad369d1b6ce15ca4f2d5abd9f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

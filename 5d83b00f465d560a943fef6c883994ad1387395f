@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46c2b267_6163908b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1117029
+      },
+      "writtenOn": "2021-07-14T03:17:54Z",
+      "side": 1,
+      "message": "It took me a while to find line-too-long because I don\u0027t usually use python. I think this is better now. I made a few more tweaks to the wording and the styling/etc, but I think it\u0027s better? Let me know if I should go back and just make the minimum change to update the URL",
+      "revId": "5d83b00f465d560a943fef6c883994ad1387395f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ca8fabe_33fec34f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1117029
+      },
+      "writtenOn": "2021-07-14T03:17:54Z",
+      "side": 1,
+      "message": "$ git cl format\nturned these into 4 space indents. Manually corrected those to 2 spaces to match the rest of the file.",
+      "range": {
+        "startLine": 141,
+        "startChar": 4,
+        "endLine": 141,
+        "endChar": 6
+      },
+      "revId": "5d83b00f465d560a943fef6c883994ad1387395f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ddfc2f8_76c6c899",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1117029
+      },
+      "writtenOn": "2021-07-14T03:17:54Z",
+      "side": 1,
+      "message": "If I\u0027m going to disable line-too-long for the URL, might as well do it for this line and move the \\n up too.",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 81
+      },
+      "revId": "5d83b00f465d560a943fef6c883994ad1387395f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42077913_7ba2feb0",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1117029
+      },
+      "writtenOn": "2021-07-14T03:17:54Z",
+      "side": 1,
+      "message": "$ git cl format\nalso did some weird things with this line. It moved it in 7 spaces, which seemed odd. The old code was at the same identation level. Some identation seemed appropriate, so used 2 spaces.",
+      "range": {
+        "startLine": 148,
+        "startChar": 8,
+        "endLine": 148,
+        "endChar": 10
+      },
+      "revId": "5d83b00f465d560a943fef6c883994ad1387395f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

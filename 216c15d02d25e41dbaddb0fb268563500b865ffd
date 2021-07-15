@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4db20487_aba7b05a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-07-15T13:35:28Z",
+      "side": 1,
+      "message": "Actually, I don\u0027t see an easy way to split this since it\u0027s all interconnected and may cause more problems if we have a mix of branches.",
+      "revId": "216c15d02d25e41dbaddb0fb268563500b865ffd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -316,7 +316,28 @@ class _PresubmitResult(object):
     """
     self._message = message
     self._items = items or []
-    self._long_text = long_text.rstrip()
+    self._long_text = _PresubmitResult._ensure_str(long_text.rstrip())
+
+  @staticmethod
+  def _ensure_str(val):
+    """
+    val: A "stringish" value. Can be any of str, unicode or bytes.
+    returns: A str after applying encoding/decoding as needed.
+    Assumes/uses UTF-8 for relevant inputs/outputs.
+
+    We'd prefer to use six.ensure_str but our copy of six is old :(
+    """
+    if isinstance(val, str):
+      return val
+    if six.PY2:
+      if isinstance(val, unicode):
+        return val.encode()
+    elif six.PY3:
+      if isinstance(val, bytes):
+        return val.decode()
+    else:
+      raise ValueError("six.PY2 nor six.PY3 were true!")
+    raise ValueError("Unknown string type %s" % type(val))
 
   def handle(self):
     sys.stdout.write(self._message)
@@ -331,7 +352,7 @@ class _PresubmitResult(object):
     if self._long_text:
       sys.stdout.write('\n***************\n')
       # Write separately in case it's unicode.
-      sys.stdout.write(str(self._long_text))
+      sys.stdout.write(self._long_text)
       sys.stdout.write('\n***************\n')
 
   def json_format(self):

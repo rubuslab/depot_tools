@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecf9209c_82497a2d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-07-19T18:49:34Z",
+      "side": 1,
+      "message": "I think this is overly cautious, I don\u0027t think you need to worry about neither six.PY2 or six.PY3.\n\nYou probably want to keep the cast to str(x) as the fallback, in case someone passes something that isn\u0027t a string but where str() does work (and the thing supports rstrip()), for compatibility with what it does today.",
+      "revId": "046a64a29108478d6f83330e51c97e46e6a5b156",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

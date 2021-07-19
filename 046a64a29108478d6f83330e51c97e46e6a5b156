@@ -16,6 +16,24 @@
       "message": "I think this is overly cautious, I don\u0027t think you need to worry about neither six.PY2 or six.PY3.\n\nYou probably want to keep the cast to str(x) as the fallback, in case someone passes something that isn\u0027t a string but where str() does work (and the thing supports rstrip()), for compatibility with what it does today.",
       "revId": "046a64a29108478d6f83330e51c97e46e6a5b156",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a67ce9e_c64c72c9",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1294958
+      },
+      "writtenOn": "2021-07-19T20:57:26Z",
+      "side": 1,
+      "message": "\u003e I think this is overly cautious, I don\u0027t think you need to worry about neither six.PY2 or six.PY3.\nI think you\u0027re right that `(not PY2) and (not PY3)` won\u0027t happen... I\u0027ll simplify that.\n\n\u003e ... keep the cast to str(x) as the fallback ...\nI think allowing things that aren\u0027t str/bytes/unicode would be more trouble than it\u0027s worth. If some other type is coming out of an rstrip() call, it\u0027s almost certainly some monkey-patching gone awry? I\u0027d much rather fail fast in that scenario.\n\n\u003e ... for compatibility with what it does today.\nIf presubmit_support.py is supposed to never-ever break backwards compat, I can see the reason for str()\u0027ing as a fallback. Is that the case? How conservative do we need to be here?\n\nSorry, I\u0027m not terribly familiar with depot_tools or what other projects expect of it... Happy to learn, though! 😊",
+      "parentUuid": "ecf9209c_82497a2d",
+      "revId": "046a64a29108478d6f83330e51c97e46e6a5b156",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

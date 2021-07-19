@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90dd6560_88236ee5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1294958
+      },
+      "writtenOn": "2021-07-19T12:03:43Z",
+      "side": 1,
+      "message": "Hi Dirk,\n\nI bumped into a failure to report a linter error (a regression of crbug.com/1225052). This patch should keep us from hitting similar errors moving forward.\n\nOne question I had, though... should we just update the version of `six` in depot_tools? Not sure how hard that would be compared to this patch.\n\nLMKWYT!",
+      "revId": "08a55d8dc4e97a042315be331a43278740b00087",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "This needs a docstring to make the subcommands show up properly in the help message (hint: if you rebase you\u0027ll get my change where I added that for all the other commands).",
       "revId": "5b4f5f827ec6d872e39a6d19b49d186d7c271a29",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abb055a8_54af7bab",
+        "filename": "gerrit_client.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-19T22:52:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fd1dd8d_f5961eb1",
+      "revId": "5b4f5f827ec6d872e39a6d19b49d186d7c271a29",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

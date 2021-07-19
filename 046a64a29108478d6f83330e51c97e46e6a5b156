@@ -34,6 +34,24 @@
       "parentUuid": "ecf9209c_82497a2d",
       "revId": "046a64a29108478d6f83330e51c97e46e6a5b156",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7299f7af_961e4eda",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-07-19T22:23:34Z",
+      "side": 1,
+      "message": "Generally we try to keep backwards compatibility as much as is easily possible. Since depot_tools normally auto-updates, we want to make sure you can still do bisects, run branch releases, etc. \n\nIt\u0027s probably not super-common here to get something that isn\u0027t either a byte string or a char string, so I don\u0027t feel too strongly about it. You can try to land this with the ValueError raised, and we can change things if we find errors (at the cost of a shortish period where things aren\u0027t backwards compatible). But, I\u0027m also not sure that raising an error will be that helpful, so you could just keep the old behavior to be safe.",
+      "parentUuid": "0a67ce9e_c64c72c9",
+      "revId": "046a64a29108478d6f83330e51c97e46e6a5b156",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

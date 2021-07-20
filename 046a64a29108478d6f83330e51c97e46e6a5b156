@@ -52,6 +52,24 @@
       "parentUuid": "0a67ce9e_c64c72c9",
       "revId": "046a64a29108478d6f83330e51c97e46e6a5b156",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62f1472d_cf47a550",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1294958
+      },
+      "writtenOn": "2021-07-20T11:47:23Z",
+      "side": 1,
+      "message": "\u003e Generally we try to keep backwards compatibility as much as is easily possible. Since depot_tools normally auto-updates, we want to make sure you can still do bisects, run branch releases, etc. \n\u003e \n\u003e It\u0027s probably not super-common here to get something that isn\u0027t either a byte string or a char string, so I don\u0027t feel too strongly about it. You can try to land this with the ValueError raised, and we can change things if we find errors (at the cost of a shortish period where things aren\u0027t backwards compatible). But, I\u0027m also not sure that raising an error will be that helpful, so you could just keep the old behavior to be safe.\n\nBetween the improbability of a not str-ish and the fact that breaking presubmits should still let folks build/bisect/cut-releases, I\u0027ll leave the error raising in. I\u0027ll definitely keep an eye on the waterfall today, though. 😊\n\nThanks for the guidance Dirk!",
+      "parentUuid": "7299f7af_961e4eda",
+      "revId": "046a64a29108478d6f83330e51c97e46e6a5b156",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

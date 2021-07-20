@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "794a1872_35e05bb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-07-20T19:46:02Z",
+      "side": 1,
+      "message": "I\u0027d tried it with ps8 successfully, here\u0027s a run for ps9: \n\nhttps://ci.chromium.org/raw/build/logs.chromium.org/infra/led/gavinmak_google.com/ab6cec6ef9c8ad30bf647ad94942c2b1e8d8f7f7fb5640fd8e6d3a75cd10704e/+/build.proto?server\u003dchromium-swarm.appspot.com",
+      "parentUuid": "8bdc937e_1ef4e571",
+      "revId": "a2e828f32e59d9c8745bfd699552c82c8355a253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b9d1f64_f37f6505",
@@ -43,6 +61,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8562ebae_005a8475",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-07-20T19:46:02Z",
+      "side": 1,
+      "message": "Some division on L1040 for example. Probably not strictly necessary here though",
+      "parentUuid": "3b9d1f64_f37f6505",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 31
+      },
+      "revId": "a2e828f32e59d9c8745bfd699552c82c8355a253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "45e394cb_dc3d024b",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 8
@@ -54,6 +96,30 @@
       "writtenOn": "2021-07-20T17:02:06Z",
       "side": 1,
       "message": "I believe this is bytes, so maybe do something like `out.getvalue().decode(\u0027utf-8\u0027)`.",
+      "range": {
+        "startLine": 234,
+        "startChar": 24,
+        "endLine": 234,
+        "endChar": 25
+      },
+      "revId": "a2e828f32e59d9c8745bfd699552c82c8355a253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9f6707a_81bc6176",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-07-20T19:46:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45e394cb_dc3d024b",
       "range": {
         "startLine": 234,
         "startChar": 24,

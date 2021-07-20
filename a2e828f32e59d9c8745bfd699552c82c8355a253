@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bdc937e_1ef4e571",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-20T17:02:06Z",
+      "side": 1,
+      "message": "Have you tried it with led (on Python 2)?\nI think as long as it works in Python 2 it\u0027s ok, and any problems with Python 3 can be addressed in followed CLs.",
+      "revId": "a2e828f32e59d9c8745bfd699552c82c8355a253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b9d1f64_f37f6505",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-20T17:02:06Z",
+      "side": 1,
+      "message": "What for?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 31
+      },
+      "revId": "a2e828f32e59d9c8745bfd699552c82c8355a253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45e394cb_dc3d024b",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1167909
+      },
+      "writtenOn": "2021-07-20T17:02:06Z",
+      "side": 1,
+      "message": "I believe this is bytes, so maybe do something like `out.getvalue().decode(\u0027utf-8\u0027)`.",
+      "range": {
+        "startLine": 234,
+        "startChar": 24,
+        "endLine": 234,
+        "endChar": 25
+      },
+      "revId": "a2e828f32e59d9c8745bfd699552c82c8355a253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

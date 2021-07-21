@@ -249,3 +249,62 @@ class GerritApi(recipe_api.RecipeApi):
         args,
         step_test_data=step_test_data,
     ).json.output
+
+  def update_files_by_gerrit(self,
+                             host,
+                             project,
+                             branch,
+                             new_contents_by_file_path,
+                             commit_msg,
+                             should_submit=False):
+    assert len(new_contents_by_file_path
+               ) > 0, 'The dict of file paths should not be empty.'
+    step_name = 'create change at (%s %s)' % (project, branch)
+    step_result = self(step_name, [
+        'createchange',
+        '--host',
+        host,
+        '--project',
+        project,
+        '--branch',
+        branch,
+        '--subject',
+        commit_msg,
+        '--json_file',
+        self.m.json.output(),
+    ])
+    change = step_result.json.output.get('_number')
+
+    with self.m.step.nest('reflect the new contents in CL %s' % change):
+      for path, content in new_contents_by_file_path.items():
+        step_name = 'edit file %s' % path
+        step_result = self(step_name, [
+            'changeedit',
+            '--host',
+            host,
+            '--change',
+            change,
+            '--path',
+            path,
+            '--file',
+            content,
+        ])
+
+    step_result = self('publish edit', [
+        'publishchangeedit',
+        '--host',
+        host,
+        '--change',
+        change,
+    ])
+
+    if should_submit:
+      step_name = 'Submit change %s' % change
+      step_result = self(step_name, [
+          'submitchange',
+          '--host',
+          host,
+          '--change',
+          change,
+      ])
+    return change

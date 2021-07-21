@@ -445,6 +445,8 @@ Returns:
       https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#list-changes
 
 &mdash; **def [move\_changes](/recipes/recipe_modules/gerrit/api.py#229)(self, host, project, from_branch, to_branch, step_test_data=None):**
+
+&mdash; **def [update\_files\_by\_gerrit](/recipes/recipe_modules/gerrit/api.py#253)(self, host, project, branch, new_contents_by_file_path, commit_msg, should_submit=False):**
 ### *recipe_modules* / [git](/recipes/recipe_modules/git)
 
 [DEPS](/recipes/recipe_modules/git/__init__.py#1): [recipe\_engine/buildbucket][recipe_engine/recipe_modules/buildbucket], [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/runtime][recipe_engine/recipe_modules/runtime], [recipe\_engine/step][recipe_engine/recipe_modules/step]

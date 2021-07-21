@@ -29,6 +29,71 @@ class GerritApi(recipe_api.RecipeApi):
                            venv=True,
                            **kwargs)
 
+  def change_edit(self, host, change, path, file, **kwargs):
+    """Puts content of a file into a change edit."""
+    args = [
+        'changeedit',
+        '--host',
+        host,
+        '--change',
+        change,
+        '--path',
+        path,
+        '--file',
+        file,
+    ]
+    step_name = 'edit file %s' % path
+    step_result = self(step_name, args, **kwargs)
+    return step_result
+
+  def publish_edit(self, host, change, **kwargs):
+    """Publish a Gerrit change edit."""
+    args = [
+        'publishchangeedit',
+        '--host',
+        host,
+        '--change',
+        change,
+    ]
+    step_result = self('publish edit', args, **kwargs)
+    return step_result
+
+  def create_change(self, host, project, branch, commit_msg, **kwargs):
+    """Creates a new gerrit change on the given project and branch
+
+    Returns:
+      The change number in str.
+    """
+    args = [
+        'createchange',
+        '--host',
+        host,
+        '--project',
+        project,
+        '--branch',
+        branch,
+        '--subject',
+        commit_msg,
+        '--json_file',
+        self.m.json.output(),
+    ]
+    step_name = 'create change at (%s %s)' % (project, branch)
+    step_result = self(step_name, args, **kwargs)
+    return step_result.json.output.get('_number')
+
+  def submit_change(self, host, change, **kwargs):
+    """Submit a gerrit change"""
+    args = [
+        'submitchange',
+        '--host',
+        host,
+        '--change',
+        change,
+    ]
+    step_name = 'Submit change %s' % change
+    step_result = self(step_name, args, **kwargs)
+    return step_result
+
   def create_gerrit_branch(self, host, project, branch, commit, **kwargs):
     """Creates a new branch from given project and commit
 

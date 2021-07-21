@@ -23,6 +23,13 @@ def RunSteps(api):
 
   api.gerrit.move_changes(host, project, 'master', 'main')
 
+  change = api.gerrit.create_change(host, project, 'main', 'Dummy CL.')
+  assert change == str(91827), change_number
+
+  api.gerrit.change_edit(host, change, 'chrome/version', 'new version')
+  api.gerrit.publish_edit(host, change)
+  api.gerrit.submit_change(host, change)
+
   # Query for changes in Chromium's CQ.
   api.gerrit.get_changes(
       host,
@@ -65,15 +72,16 @@ def RunSteps(api):
 
 
 def GenTests(api):
-  yield (
-      api.test('basic') +
-      api.step_data('gerrit create_gerrit_branch (v8/v8 test)',
-                    api.gerrit.make_gerrit_create_branch_response_data()) +
-      api.step_data('gerrit get_gerrit_branch (v8/v8 master)',
-                    api.gerrit.make_gerrit_get_branch_response_data()) +
-      api.step_data('gerrit move changes',
-                    api.gerrit.get_move_change_response_data(branch='main')) +
-      api.step_data('gerrit relatedchanges',
-                    api.gerrit.get_related_changes_response_data()) +
-      api.step_data('gerrit changes empty query',
-                    api.gerrit.get_empty_changes_response_data()))
+  yield (api.test('basic') +
+         api.step_data('gerrit create_gerrit_branch (v8/v8 test)',
+                       api.gerrit.make_gerrit_create_branch_response_data()) +
+         api.step_data('gerrit create change at (v8/v8 main)',
+                       api.gerrit.create_change_response_data()) +
+         api.step_data('gerrit get_gerrit_branch (v8/v8 master)',
+                       api.gerrit.make_gerrit_get_branch_response_data()) +
+         api.step_data('gerrit move changes',
+                       api.gerrit.get_move_change_response_data(branch='main'))
+         + api.step_data('gerrit relatedchanges',
+                         api.gerrit.get_related_changes_response_data()) +
+         api.step_data('gerrit changes empty query',
+                       api.gerrit.get_empty_changes_response_data()))

@@ -16,6 +16,24 @@
       "message": "Why are dedicated methods preferable to just calling these like api.gerrit([\u0027command\u0027, ...])? In most of the other methods here, they are doing extra work, like error checking or returning some sort of processed data, but that doesn\u0027t seem to be the case here. I guess it does avoid having to lookup the command-line flags, but that\u0027s not a huge advantage.\n\nIf you\u0027re really looking to simplify things for users, then it might be more interesting to provide a single method to create/edit/publish the change change all at once, maybe something like:\n\n  update_file_in_gerrit(host, project, branch, repo_file_path, new_file_contents, commit_msg)\n  \nor to support multiple files at once:\n\n  update_files_in_gerrit(host, project, branch, dict_of_file_paths_and_new_contents, commit_msg)\n\nWDYT?",
       "revId": "5b160b5ee921ffaa5b00268b495975ed6cf485a7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07f2c5cf_90c236b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-21T22:19:45Z",
+      "side": 1,
+      "message": "A module in recipe is easier to test and pass \"training\". But you are right, an API to submit the change can be more helpful. On it.",
+      "parentUuid": "379bcdf3_3457191d",
+      "revId": "5b160b5ee921ffaa5b00268b495975ed6cf485a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

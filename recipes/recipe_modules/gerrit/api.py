@@ -249,3 +249,76 @@ class GerritApi(recipe_api.RecipeApi):
         args,
         step_test_data=step_test_data,
     ).json.output
+
+  def update_files_by_gerrit(self,
+                             host,
+                             project,
+                             branch,
+                             new_contents_by_file_path,
+                             commit_msg,
+                             should_submit=False):
+    """Update a set of files via Gerrit API.
+
+    Args:
+      * host: URL of Gerrit host to name.
+      * project: Gerrit project name, e.g. chromium/src.
+      * branch: The branch to land the change, e.g. main
+      * new_contents_by_file_path: Dict of the new contents with file path as
+          the key.
+        commit_msg: Description to add to the CL.
+      * should_submit: Should land this CL instantly.
+
+    Returns:
+      Change number in str.
+    """
+    assert len(new_contents_by_file_path
+               ) > 0, 'The dict of file paths should not be empty.'
+    step_name = 'create change at (%s %s)' % (project, branch)
+    step_result = self(step_name, [
+        'createchange',
+        '--host',
+        host,
+        '--project',
+        project,
+        '--branch',
+        branch,
+        '--subject',
+        commit_msg,
+        '--json_file',
+        self.m.json.output(),
+    ])
+    change = step_result.json.output.get('_number')
+
+    with self.m.step.nest('reflect the new contents in CL %s' % change):
+      for path, content in new_contents_by_file_path.items():
+        step_name = 'edit file %s' % path
+        step_result = self(step_name, [
+            'changeedit',
+            '--host',
+            host,
+            '--change',
+            change,
+            '--path',
+            path,
+            '--file',
+            content,
+        ])
+
+    step_result = self('publish edit', [
+        'publishchangeedit',
+        '--host',
+        host,
+        '--change',
+        change,
+    ])
+
+    if should_submit:
+      step_name = 'Submit change %s' % change
+      step_result = self(step_name, [
+          'submitchange',
+          '--host',
+          host,
+          '--change',
+          change,
+      ])
+    return change

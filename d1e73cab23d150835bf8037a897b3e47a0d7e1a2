@@ -1,0 +1,193 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6af78ce_b53c91d1",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-22T11:35:02Z",
+      "side": 1,
+      "message": "nit: redundant",
+      "range": {
+        "startLine": 253,
+        "startChar": 18,
+        "endLine": 253,
+        "endChar": 28
+      },
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "259d1a78_c3ac3ef8",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-22T11:35:02Z",
+      "side": 1,
+      "message": "consider also taking a list of hashtags, perhaps with a non-empty default:\n  hashtags \u003d frozenset([\u0027recipe-gerrit\u0027])\n  \nThis can be very useful if builder / recipe malfunctions and creates a LOT of CLs by mistake and someone has to clean it up.",
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc2a76cd_2cf0464c",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-22T11:35:02Z",
+      "side": 1,
+      "message": "redundant.\n\nHow about:\n\"Update as set of files by creating and submitting a Gerrit CL\"\n?",
+      "range": {
+        "startLine": 260,
+        "startChar": 29,
+        "endLine": 260,
+        "endChar": 44
+      },
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6aa03852_4e8437f7",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-22T11:35:02Z",
+      "side": 1,
+      "message": "missing *",
+      "range": {
+        "startLine": 268,
+        "startChar": 6,
+        "endLine": 268,
+        "endChar": 7
+      },
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "871ee313_6b556cae",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-22T11:35:02Z",
+      "side": 1,
+      "message": "nit: submit\n\n\"should_\" only seeds doubt about why not \"must_\"",
+      "range": {
+        "startLine": 269,
+        "startChar": 8,
+        "endLine": 269,
+        "endChar": 21
+      },
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1f583c8_d89a9563",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-22T11:35:02Z",
+      "side": 1,
+      "message": "What does it mean? Smth like \"123123\"?\nIf so, make it an int.",
+      "range": {
+        "startLine": 272,
+        "startChar": 20,
+        "endLine": 272,
+        "endChar": 27
+      },
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f110a341_d0630464",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-22T11:35:02Z",
+      "side": 1,
+      "message": "nit-nit: i think it\u0027d be good to link to the created CL in presentation.",
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5be5bf50_7912a19d",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-22T11:35:02Z",
+      "side": 1,
+      "message": "When would this work? There are no CR+2/Bot-Commit+1 votes anywhere, so in most repos this call will result in HTTP 409 \"change not submittable\"",
+      "range": {
+        "startLine": 317,
+        "startChar": 5,
+        "endLine": 323,
+        "endChar": 8
+      },
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c571f365_dd8e9f10",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-22T11:35:02Z",
+      "side": 1,
+      "message": "shouldn\u0027t the update_files_by_gerrit_data as well for ease of use?",
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

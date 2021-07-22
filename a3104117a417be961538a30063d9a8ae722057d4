@@ -16,6 +16,23 @@
       "message": "As we use gerrit API, we need to get the branch list from a given commit hash. So that we could know if the commit is on the trunk or another minibranch.\nSeems yet the tool does not provide such utility for client(some method name is very confusing though).",
       "revId": "a3104117a417be961538a30063d9a8ae722057d4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1331c6c8_d247be39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-07-22T15:03:51Z",
+      "side": 1,
+      "message": "Is this actually needed for the minibranch stuff, or are you just adding it for API completeness?",
+      "revId": "a3104117a417be961538a30063d9a8ae722057d4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

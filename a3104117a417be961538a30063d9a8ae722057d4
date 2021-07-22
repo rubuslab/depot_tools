@@ -33,6 +33,23 @@
       "message": "Is this actually needed for the minibranch stuff, or are you just adding it for API completeness?",
       "revId": "a3104117a417be961538a30063d9a8ae722057d4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8a0106e_a602ddac",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-07-22T15:07:54Z",
+      "side": 1,
+      "message": "Most other methods here just return ReadHttpJsonResponse() directly, and let callers deal with bad responses. Should this do the same?",
+      "revId": "a3104117a417be961538a30063d9a8ae722057d4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

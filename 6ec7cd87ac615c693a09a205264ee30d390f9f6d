@@ -22,6 +22,30 @@
       },
       "revId": "6ec7cd87ac615c693a09a205264ee30d390f9f6d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "117da1a1_39edca20",
+        "filename": "gerrit_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-23T20:32:30Z",
+      "side": 1,
+      "message": "Continued in crrev.com/c/3049672",
+      "parentUuid": "ddfb6e7c_17393a4f",
+      "range": {
+        "startLine": 244,
+        "startChar": 2,
+        "endLine": 248,
+        "endChar": 0
+      },
+      "revId": "6ec7cd87ac615c693a09a205264ee30d390f9f6d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

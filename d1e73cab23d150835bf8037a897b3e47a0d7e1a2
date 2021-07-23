@@ -199,6 +199,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1b230215_76d9d34a",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-23T06:42:43Z",
+      "side": 1,
+      "message": "Seems the bot-commit+1 is added by gerrit. Currently, our recipe runs `git cl land`, and it eventually calls gerrit_util.SubmitChange()[1]. Is my understanding correct?\n\n[1] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d1966?q\u003dgit_cl.py",
+      "parentUuid": "2ec6125a_d2f8879e",
+      "range": {
+        "startLine": 317,
+        "startChar": 5,
+        "endLine": 323,
+        "endChar": 8
+      },
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c571f365_dd8e9f10",
         "filename": "recipes/recipe_modules/gerrit/test_api.py",
         "patchSetId": 6

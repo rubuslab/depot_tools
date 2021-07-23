@@ -175,6 +175,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2ec6125a_d2f8879e",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-23T01:22:09Z",
+      "side": 1,
+      "message": "I am not confident around this part, because I can not submit a change from a dry run. But our release builder should have the permission to submit a change, e.g. \n[1][2]. So we need to make `Bot-Commit+1` before submitchange?\n\n[1] https://chromium-review.googlesource.com/c/chromium/src/+/2890269\n[2] https://ci.chromium.org/ui/p/chrome/builders/official.infra/chrome-branch/779/overview",
+      "parentUuid": "5be5bf50_7912a19d",
+      "range": {
+        "startLine": 317,
+        "startChar": 5,
+        "endLine": 323,
+        "endChar": 8
+      },
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c571f365_dd8e9f10",
         "filename": "recipes/recipe_modules/gerrit/test_api.py",
         "patchSetId": 6

@@ -69,6 +69,30 @@
       },
       "revId": "2500ae15454603bacec423333fb8551364f29503",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0f11641_f7915ea5",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.expected/basic.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-23T20:08:52Z",
+      "side": 1,
+      "message": "Yes. The python module does not care the type of cmd input. I think we overwrite the type in recipe engine: https://source.chromium.org/chromium/infra/infra/+/main:recipes-py/recipe_engine/internal/engine_step.py;l\u003d68?q\u003dStepConfig\u0026ss\u003dchromium\n\nAnd also you may see in abandon_change(), we feed the change number by int().\nSo I think it is ok to leave int type here.",
+      "parentUuid": "954baa84_892d258c",
+      "range": {
+        "startLine": 185,
+        "startChar": 7,
+        "endLine": 185,
+        "endChar": 12
+      },
+      "revId": "2500ae15454603bacec423333fb8551364f29503",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

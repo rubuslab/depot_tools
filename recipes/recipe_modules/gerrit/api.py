@@ -249,3 +249,84 @@ class GerritApi(recipe_api.RecipeApi):
         args,
         step_test_data=step_test_data,
     ).json.output
+
+  def update_files(self,
+                   host,
+                   project,
+                   branch,
+                   new_contents_by_file_path,
+                   commit_msg,
+                   submit=False):
+    """Update as set of files by creating and submitting a Gerrit CL.
+
+    Args:
+      * host: URL of Gerrit host to name.
+      * project: Gerrit project name, e.g. chromium/src.
+      * branch: The branch to land the change, e.g. main
+      * new_contents_by_file_path: Dict of the new contents with file path as
+          the key.
+      * commit_msg: Description to add to the CL.
+      * submit: Should land this CL instantly.
+
+    Returns:
+      Integer change number.
+    """
+    assert len(new_contents_by_file_path
+               ) > 0, 'The dict of file paths should not be empty.'
+    step_name = 'create change at (%s %s)' % (project, branch)
+    step_result = self(step_name, [
+        'createchange',
+        '--host',
+        host,
+        '--project',
+        project,
+        '--branch',
+        branch,
+        '--subject',
+        commit_msg,
+        '--json_file',
+        self.m.json.output(),
+    ])
+    change = int(step_result.json.output.get('_number'))
+    step_result.presentation.links['change %d' %
+                                   change] = '%s/#/q/%d' % (host, change)
+
+    with self.m.step.nest('reflect the new contents in CL %d' % change):
+      for path, content in new_contents_by_file_path.items():
+        step_name = 'edit file %s' % path
+        step_result = self(step_name, [
+            'changeedit',
+            '--host',
+            host,
+            '--change',
+            change,
+            '--path',
+            path,
+            '--file',
+            content,
+        ])
+
+    step_result = self('publish edit', [
+        'publishchangeedit',
+        '--host',
+        host,
+        '--change',
+        change,
+    ])
+
+    if submit:
+      step_result = self('Set Bot-Commit+1 for change %d' % change, [
+          'setbotcommit',
+          '--host',
+          host,
+          '--change',
+          change,
+      ])
+      step_result = self('Submit change %d' % change, [
+          'submitchange',
+          '--host',
+          host,
+          '--change',
+          change,
+      ])
+    return change

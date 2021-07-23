@@ -134,6 +134,30 @@
       },
       "revId": "4395f3d9b2da6b97e815f50a750be57e81b8471f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cf0a801_204f8078",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-23T21:00:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0243ccc_142b8374",
+      "range": {
+        "startLine": 335,
+        "startChar": 10,
+        "endLine": 335,
+        "endChar": 29
+      },
+      "revId": "4395f3d9b2da6b97e815f50a750be57e81b8471f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

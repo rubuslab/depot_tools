@@ -16,6 +16,24 @@
       "message": "why me as reviewer? I\u0027m not a code owner here. Do you have specific question about gerrit?",
       "revId": "7d2976f5aa54210f9845d7472abb4ba3218bef54",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fecddae_f3beff01",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-23T19:45:23Z",
+      "side": 1,
+      "message": "Oops. I just realized depot_tools and depot_tools recipe have different owners. Sorry.",
+      "parentUuid": "55478da4_fdffcc35",
+      "revId": "7d2976f5aa54210f9845d7472abb4ba3218bef54",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

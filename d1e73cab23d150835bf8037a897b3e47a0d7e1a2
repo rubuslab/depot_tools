@@ -223,6 +223,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2082e7c1_75d3d55c",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-23T11:48:28Z",
+      "side": 1,
+      "message": "Gerrit doesn\u0027t add votes on its own. You have to set bot-commit+1 yourself.\n\ne.g. if you use git cl, you can specify --set-bot-commit flag.\nhttps://source.chromium.org/chromium/infra/infra/+/main:recipes/recipes/recipe_autoroller.expected/basic.json;l\u003d403;drc\u003df2827540988371c775d5116de70528d7945e7ff8\n\nif you use pure Gerrit API calls, you have to issue additional SetReview to vote Bot-Commit+1",
+      "parentUuid": "1b230215_76d9d34a",
+      "range": {
+        "startLine": 317,
+        "startChar": 5,
+        "endLine": 323,
+        "endChar": 8
+      },
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c571f365_dd8e9f10",
         "filename": "recipes/recipe_modules/gerrit/test_api.py",
         "patchSetId": 6

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddfb6e7c_17393a4f",
+        "filename": "gerrit_client.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-23T20:12:07Z",
+      "side": 1,
+      "message": "Remove it here for sure.\n\nAnd if possible, please remove from here, too: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gerrit_util.py;l\u003d739;drc\u003d9f6aa1ba78039346e31bd586fa4548c5965e5f39\n\nwait_for_merge is legacy relic, and likely ignored. Submit call is fully syncrhoneous now -- i don\u0027t see wait_for_merge even listed any more\nhttps://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#submit-input",
+      "range": {
+        "startLine": 244,
+        "startChar": 2,
+        "endLine": 248,
+        "endChar": 0
+      },
+      "revId": "6ec7cd87ac615c693a09a205264ee30d390f9f6d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

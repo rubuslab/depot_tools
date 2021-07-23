@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05e057e4_3fdf5a5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-23T01:23:33Z",
+      "side": 1,
+      "message": "AFAICT, this is needed by minibranch. From current client method we are unable to find out the branches at a given commit.",
+      "parentUuid": "1331c6c8_d247be39",
+      "revId": "a3104117a417be961538a30063d9a8ae722057d4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b8a0106e_a602ddac",

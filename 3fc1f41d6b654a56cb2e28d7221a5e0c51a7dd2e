@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0a7de7a_f7a1737e",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-07-23T20:24:51Z",
+      "side": 1,
+      "message": "I think \u0027changeedit\u0027 expects \"--file\" to be an actual file that it reads and then uploads, not the raw data to upload. You might need to write \u0027content\u0027 out to a temp file first, and then pass that as the \"--file\" arg.",
+      "revId": "3fc1f41d6b654a56cb2e28d7221a5e0c51a7dd2e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

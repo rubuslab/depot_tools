@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a759f19_864821f0",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-23T19:47:04Z",
+      "side": 1,
+      "message": "btw, here and elsewhere: i think you need str(change) now, since these are cmd args",
+      "range": {
+        "startLine": 327,
+        "startChar": 9,
+        "endLine": 327,
+        "endChar": 17
+      },
+      "revId": "2500ae15454603bacec423333fb8551364f29503",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0d3a574_df19e735",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-07-23T21:06:42Z",
+      "side": 1,
+      "message": "nit: maybe just \"update contents\", to be a little less wordy.",
+      "range": {
+        "startLine": 294,
+        "startChar": 27,
+        "endLine": 294,
+        "endChar": 51
+      },
+      "revId": "86dcae17efac58a21cfebb69204dd00ee0b302f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -22,6 +22,53 @@
       },
       "revId": "2500ae15454603bacec423333fb8551364f29503",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30e9a2cb_3198e4b2",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-23T19:48:04Z",
+      "side": 1,
+      "message": "nvm, i see in expectations that it actually becomes a string somehow, probably inside self() call.",
+      "parentUuid": "7a759f19_864821f0",
+      "range": {
+        "startLine": 327,
+        "startChar": 9,
+        "endLine": 327,
+        "endChar": 17
+      },
+      "revId": "2500ae15454603bacec423333fb8551364f29503",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "954baa84_892d258c",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.expected/basic.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-23T19:48:04Z",
+      "side": 1,
+      "message": "oh, wow, i guess something else does auto-conversion to string.",
+      "range": {
+        "startLine": 185,
+        "startChar": 7,
+        "endLine": 185,
+        "endChar": 12
+      },
+      "revId": "2500ae15454603bacec423333fb8551364f29503",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

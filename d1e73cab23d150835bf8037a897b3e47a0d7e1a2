@@ -85,6 +85,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "270d9a98_fe763658",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-07-23T19:46:18Z",
+      "side": 1,
+      "message": "Good find, and good thinking 👍\n\nTopics *today* in Gerrit are for submitting all changes in the same topic at the same time. So, we you shouldn\u0027t use it.\n(full details: actually, in current config on specifically *chromium* and *chrome-internal* gerrit hosts, topics might work like hashtags, but it\u0027s fragile and an abuse of the topic feature)\n\n\nBtw, one can probably fish out all these CLs when searching for CL owner, which I presume will likely use a very dedicated task service account.\nTherefore, I think we shouldn\u0027t bother with hashtags or topics. Sorry for noise.",
+      "parentUuid": "52e68a7c_170fd047",
+      "revId": "d1e73cab23d150835bf8037a897b3e47a0d7e1a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fc2a76cd_2cf0464c",
         "filename": "recipes/recipe_modules/gerrit/api.py",
         "patchSetId": 6

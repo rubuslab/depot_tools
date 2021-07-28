@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4703e3fd_141c6f44",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-07-28T00:28:52Z",
+      "side": 1,
+      "message": "As we remove wait-for-merge from gerrit_util, need to modify git-cl as well. Added some very basic change in git-cl and its test to pass the presubmit.",
+      "revId": "93a8dbb8f4bd69bfad149768aa88e131b9b2adc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

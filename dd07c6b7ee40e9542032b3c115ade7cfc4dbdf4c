@@ -16,6 +16,24 @@
       "message": "Sorry! Not sure why I thought this would work without checking that all the wheels are available natively.",
       "revId": "dd07c6b7ee40e9542032b3c115ade7cfc4dbdf4c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d549487_d193253e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000023
+      },
+      "writtenOn": "2021-07-29T21:30:14Z",
+      "side": 1,
+      "message": "If a working rollout is dependent on you manually verifying the existence of all the wheels, then we have a toil issue. Is there a process that can be established to gate the push of new vpythons on the existence of all the required wheels?",
+      "parentUuid": "2267706f_36c33f67",
+      "revId": "dd07c6b7ee40e9542032b3c115ade7cfc4dbdf4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

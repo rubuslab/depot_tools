@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1660badb_fa3a80ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-08-03T19:36:36Z",
+      "side": 1,
+      "message": "Verified at local: crrev.com/c/3069479",
+      "revId": "81b1fe29a8d83756e710e7c96450bb0dc6b431f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -33,6 +33,24 @@
       "message": "I\u0027m not sure this is right. The gerrit tool says:\n\n \u0027repeatable field value parameter, format: -p key\u003dvalue\u0027\n \nso should this do something like:\n\n command \u003d [...]\n for p in params:\n   command.extend([\u0027-p\u0027, p])",
       "revId": "81b1fe29a8d83756e710e7c96450bb0dc6b431f8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ada30a68_f69f38fb",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-08-03T21:14:52Z",
+      "side": 1,
+      "message": "Yeah, you are right. I should keep \u0027-p\u0027 for each item.",
+      "parentUuid": "7ea7fb5d_dac804c7",
+      "revId": "81b1fe29a8d83756e710e7c96450bb0dc6b431f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

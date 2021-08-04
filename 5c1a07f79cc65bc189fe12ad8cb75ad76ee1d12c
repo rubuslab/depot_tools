@@ -16,6 +16,24 @@
       "message": "lgtm, although when I ran it locally it worked fine as is, and I had python-is-python2 installed at the time, I guess something made presubmit run pylint with python3. Glad to have a less flaky explicit choice to run it with python3, thanks!",
       "revId": "5c1a07f79cc65bc189fe12ad8cb75ad76ee1d12c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84d37ab2_64cc4c60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-08-04T16:52:52Z",
+      "side": 1,
+      "message": "Strange. I see no reason to think that the code would\u0027ve ever run 2.6 under py3, but I also thought we had tested this, so I don\u0027t know what happened.",
+      "parentUuid": "c4bdd131_ce273d76",
+      "revId": "5c1a07f79cc65bc189fe12ad8cb75ad76ee1d12c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

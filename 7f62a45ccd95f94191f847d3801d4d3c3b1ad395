@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1ea3096_c30e06e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-08-05T19:36:53Z",
+      "side": 1,
+      "message": "Don\u0027t have much context about cit branch, but this change lgtm",
+      "revId": "7f62a45ccd95f94191f847d3801d4d3c3b1ad395",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

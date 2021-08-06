@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b08b0300_9b91d1ec",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-08-06T01:39:38Z",
+      "side": 0,
+      "message": "This is not true. This method does not accept commit.",
+      "range": {
+        "startLine": 1045,
+        "startChar": 42,
+        "endLine": 1045,
+        "endChar": 48
+      },
+      "revId": "bbf05997abfe41830bac8c9ef8350ddd85ff1fef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

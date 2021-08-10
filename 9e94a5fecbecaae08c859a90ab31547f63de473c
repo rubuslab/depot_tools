@@ -16,6 +16,24 @@
       "message": "lgtm for owners approval based on gbeaty\u0027s review, but I\u0027m a bit puzzled by why this is needed. Shouldn\u0027t this be handled via the normal bot configurations?\n\nOr is this some quirk of the presubmit recipes that we don\u0027t see on the normal chromium recipes?",
       "revId": "9e94a5fecbecaae08c859a90ab31547f63de473c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35efc39f_58c3f26d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1311766
+      },
+      "writtenOn": "2021-08-10T21:33:47Z",
+      "side": 1,
+      "message": "AFAIK, when the bot check out a milestone branch of clank/internal/apps.git it doesn\u0027t know how to checkout the same branch for chromium/src. I made this CL for presubmit checkouts and crrev.com/c/3011147 for chromium checkouts so that we can pass the src (root solution) revision as an input property for branch builders.",
+      "parentUuid": "9bc831b6_cefa6a4f",
+      "revId": "9e94a5fecbecaae08c859a90ab31547f63de473c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

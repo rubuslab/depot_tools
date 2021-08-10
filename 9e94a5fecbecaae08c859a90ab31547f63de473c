@@ -34,6 +34,24 @@
       "parentUuid": "9bc831b6_cefa6a4f",
       "revId": "9e94a5fecbecaae08c859a90ab31547f63de473c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51c487d3_12461b96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1311766
+      },
+      "writtenOn": "2021-08-10T21:34:41Z",
+      "side": 1,
+      "message": "... and the bot update step will checkout that revision.",
+      "parentUuid": "35efc39f_58c3f26d",
+      "revId": "9e94a5fecbecaae08c859a90ab31547f63de473c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

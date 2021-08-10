@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "508c9693_7b83e624",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1311766
+      },
+      "writtenOn": "2021-08-10T18:20:11Z",
+      "side": 1,
+      "message": "Hi\n\nThis CL adds the root revision solution to bot update step.\n\nPTAL\nRegards\nRakib",
+      "revId": "872a4ab0dc686491be559b9d2065ae65b5d1ce0e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

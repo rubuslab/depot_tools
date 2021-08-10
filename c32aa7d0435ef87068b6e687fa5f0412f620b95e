@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8798f4f4_80c82bd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1311766
+      },
+      "writtenOn": "2021-08-10T19:27:49Z",
+      "side": 1,
+      "message": "Hi Dirk\n\nThis CL adds the root solution revision as an argument that can be passed to the bot update step.\n\nPTAL\nRegards\nRakib Hasan",
+      "revId": "c32aa7d0435ef87068b6e687fa5f0412f620b95e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

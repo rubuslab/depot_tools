@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bc831b6_cefa6a4f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-08-10T21:28:52Z",
+      "side": 1,
+      "message": "lgtm for owners approval based on gbeaty\u0027s review, but I\u0027m a bit puzzled by why this is needed. Shouldn\u0027t this be handled via the normal bot configurations?\n\nOr is this some quirk of the presubmit recipes that we don\u0027t see on the normal chromium recipes?",
+      "revId": "9e94a5fecbecaae08c859a90ab31547f63de473c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

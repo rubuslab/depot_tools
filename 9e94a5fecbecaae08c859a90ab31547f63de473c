@@ -52,6 +52,24 @@
       "parentUuid": "35efc39f_58c3f26d",
       "revId": "9e94a5fecbecaae08c859a90ab31547f63de473c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ea7ba28_f7f763d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2021-08-10T22:00:49Z",
+      "side": 1,
+      "message": "So yeah, as Rakib said, this support was actually added to the chromium_tests API. The builders in the chromium project aren\u0027t impacted by this because they\u0027re not running against downstream CLs. The problem occurs for branched builders that build against downstream CLs. We only have one configuration object in the recipe that is shared between all branched versions and the gclient config doesn\u0027t provide the ability to set the chromium/src revision based on the revision of a CL for a downstream repo.",
+      "parentUuid": "51c487d3_12461b96",
+      "revId": "9e94a5fecbecaae08c859a90ab31547f63de473c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a076403b_683835c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1114299
+      },
+      "writtenOn": "2021-08-11T01:42:37Z",
+      "side": 1,
+      "message": "Hi Dirk and Robert PTAL. \n\nRobert, this fixes a P0 that affects all developers using Windows. The subst problem can be worked around by setting generate_location_tags gclient variable to false. See more in https://crbug.com/1223076#c12",
+      "revId": "995de38053da320bd977132220dada51790eda21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb26ea12_f002131a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003325
+      },
+      "writtenOn": "2021-08-11T19:34:39Z",
+      "side": 1,
+      "message": "Confirmed the \n  \"custom_vars\": {\n    \"generate_location_tags\": False,\n  },\n  \nIs working for me.",
+      "revId": "d76912e4d7e6e2ee0ed4d48a627f058ed6bc42ec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -78,7 +78,8 @@ def RunSteps(api):
   api.git.new_branch('refactor')  # Upstream is origin/main by default.
   # And use upstream kwarg to set up different upstream for tracking.
   api.git.new_branch('feature', upstream='refactor')
-
+  # A new branching tracking the current branch, which is 'feature'.
+  api.git.new_branch('track_current', upstream_current=True)
   # You can use api.git.rebase to rebase the current branch onto another one
   api.git.rebase(name_prefix='my repo', branch='origin/main',
                  dir_path=api.path['checkout'],

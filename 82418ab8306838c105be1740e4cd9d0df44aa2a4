@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "658ee308_a952a089",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-08-13T22:16:54Z",
+      "side": 1,
+      "message": "I filed https://crbug.com/1239764 for presubmit failure.",
+      "revId": "82418ab8306838c105be1740e4cd9d0df44aa2a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

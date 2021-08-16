@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86b5fedf_3467e86c",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-08-16T21:49:33Z",
+      "side": 1,
+      "message": "nit: I recommend\n\n  if not (condition):\n    raise ValueError(\"Description of what\u0027s wrong\")\n    \nWhich is a lot easier to debug than a bare assert (imo)",
+      "revId": "be52b408edf54cc51b0259252d691da34618e6c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

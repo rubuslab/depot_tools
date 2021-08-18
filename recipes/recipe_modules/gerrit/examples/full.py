@@ -4,6 +4,8 @@
 
 DEPS = [
     'gerrit',
+    'recipe_engine/file',
+    'recipe_engine/path',
     'recipe_engine/step',
 ]
 
@@ -23,12 +25,16 @@ def RunSteps(api):
 
   api.gerrit.move_changes(host, project, 'master', 'main')
 
+  temp_file = api.path.mkstemp()
   change = api.gerrit.update_files(host,
                                    project,
                                    'main', {'chrome/VERSION': '99.99.99.99'},
                                    'Dummy CL.',
+                                   submit_resp=temp_file,
                                    submit=True)
   assert change == 91827, change
+  submit_resp = api.file.read_json('read submit response', temp_file)
+  assert submit_resp['changes'][0]['status'] == 'MERGED'
 
   # Query for changes in Chromium's CQ.
   api.gerrit.get_changes(
@@ -72,17 +78,18 @@ def RunSteps(api):
 
 
 def GenTests(api):
-  yield (
-      api.test('basic') +
-      api.step_data('gerrit create_gerrit_branch (v8/v8 test)',
-                    api.gerrit.make_gerrit_create_branch_response_data()) +
-      api.step_data('gerrit create change at (v8/v8 main)',
-                    api.gerrit.update_files_response_data()) +
-      api.step_data('gerrit get_gerrit_branch (v8/v8 main)',
-                    api.gerrit.make_gerrit_get_branch_response_data()) +
-      api.step_data('gerrit move changes',
-                    api.gerrit.get_move_change_response_data(branch='main')) +
-      api.step_data('gerrit relatedchanges',
-                    api.gerrit.get_related_changes_response_data()) +
-      api.step_data('gerrit changes empty query',
-                    api.gerrit.get_empty_changes_response_data()))
+  yield (api.test('basic') +
+         api.step_data('gerrit create_gerrit_branch (v8/v8 test)',
+                       api.gerrit.make_gerrit_create_branch_response_data()) +
+         api.step_data('gerrit create change at (v8/v8 main)',
+                       api.gerrit.update_files_response_data()) +
+         api.step_data('gerrit get_gerrit_branch (v8/v8 main)',
+                       api.gerrit.make_gerrit_get_branch_response_data()) +
+         api.step_data('gerrit move changes',
+                       api.gerrit.get_move_change_response_data(branch='main'))
+         + api.step_data('gerrit relatedchanges',
+                         api.gerrit.get_related_changes_response_data()) +
+         api.step_data('gerrit changes empty query',
+                       api.gerrit.get_empty_changes_response_data()) +
+         api.step_data('read submit response',
+                       api.gerrit.submit_change_response_data()))

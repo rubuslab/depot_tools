@@ -446,7 +446,7 @@ Returns:
 
 &mdash; **def [move\_changes](/recipes/recipe_modules/gerrit/api.py#229)(self, host, project, from_branch, to_branch, step_test_data=None):**
 
-&mdash; **def [update\_files](/recipes/recipe_modules/gerrit/api.py#253)(self, host, project, branch, new_contents_by_file_path, commit_msg, params=frozenset(['status=NEW']), submit=False):**
+&mdash; **def [update\_files](/recipes/recipe_modules/gerrit/api.py#253)(self, host, project, branch, new_contents_by_file_path, commit_msg, params=frozenset(['status=NEW']), submit=False, submit_resp=None):**
 
 Update a set of files by creating and submitting a Gerrit CL.
 
@@ -460,6 +460,8 @@ Args:
   * params: A list of additional ChangeInput specifiers, with format
       'key=value'.
   * submit: Should land this CL instantly.
+  * submit_resp: Path of a file. If set, it stores the gerrit response of
+      the submitchange.
 
 Returns:
   Integer change number.
@@ -1082,9 +1084,9 @@ Raises:
 &mdash; **def [RunSteps](/recipes/recipe_modules/gclient/tests/sync_failure.py#13)(api):**
 ### *recipes* / [gerrit:examples/full](/recipes/recipe_modules/gerrit/examples/full.py)
 
-[DEPS](/recipes/recipe_modules/gerrit/examples/full.py#5): [gerrit](#recipe_modules-gerrit), [recipe\_engine/step][recipe_engine/recipe_modules/step]
+[DEPS](/recipes/recipe_modules/gerrit/examples/full.py#5): [gerrit](#recipe_modules-gerrit), [recipe\_engine/file][recipe_engine/recipe_modules/file], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/gerrit/examples/full.py#11)(api):**
+&mdash; **def [RunSteps](/recipes/recipe_modules/gerrit/examples/full.py#13)(api):**
 ### *recipes* / [git:examples/full](/recipes/recipe_modules/git/examples/full.py)
 
 [DEPS](/recipes/recipe_modules/git/examples/full.py#5): [git](#recipe_modules-git), [recipe\_engine/buildbucket][recipe_engine/recipe_modules/buildbucket], [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/step][recipe_engine/recipe_modules/step]

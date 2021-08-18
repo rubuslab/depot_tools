@@ -84,6 +84,30 @@ class GerritTestApi(recipe_test_api.RecipeTestApi):
     data.pop('revisions')
     return self._make_gerrit_response_json(data)
 
+  def submit_change_response_data(self, change_number=91827, **kwargs):
+    return self.m.file.read_json({
+        'changes': [{
+            'status':
+            'MERGED',
+            'created':
+            '2017-01-30 13:11:20.000000000',
+            'updated':
+            '2017-01-31 13:11:20.000000000',
+            'branch':
+            'main',
+            '_number':
+            str(change_number),
+            'change_id':
+            'Ideadbeef',
+            'project':
+            'chromium/src',
+            'subject':
+            'Dummy change.',
+            'current_revision':
+            '67ebf73496383c6777035e374d2d664009e2aa5c',
+        }]
+    })
+
   def get_empty_changes_response_data(self):
     return self._make_gerrit_response_json([])
 

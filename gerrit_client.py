@@ -284,6 +284,31 @@ def CMDsetbotcommit(parser, args):
   write_result(result, opt)
 
 
+@subcommand.usage('[args ...]')
+def CMDgetcommitincludedin(parser, args):
+  """Retrieves the branches and tags for a given commit."""
+  parser.add_option('--commit', dest='commit', help='commit hash')
+  (opt, args) = parser.parse_args(args)
+  result = gerrit_util.GetCommitIncludedIn(
+      urlparse.urlparse(opt.host).netloc, opt.project, opt.commit)
+  logging.info(result)
+  write_result(result, opt)
+
+
+@subcommand.usage('[args ...]')
+def CMDsetbotcommit(parser, args):
+  """Sets bot-commit+1 to a bot generated change."""
+  parser.add_option('-c', '--change', type=int, help='change number')
+  (opt, args) = parser.parse_args(args)
+  result = gerrit_util.SetReview(
+      urlparse.urlparse(opt.host).netloc,
+      opt.change,
+      labels={'Bot-Commit': 1},
+      ready=True)
+  logging.info(result)
+  write_result(result, opt)
+
+
 @subcommand.usage('')
 def CMDabandon(parser, args):
   """Abandons a Gerrit change."""

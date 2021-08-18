@@ -4,6 +4,7 @@
 
 DEPS = [
     'gerrit',
+    'recipe_engine/path',
     'recipe_engine/step',
 ]
 
@@ -27,6 +28,7 @@ def RunSteps(api):
                                    project,
                                    'main', {'chrome/VERSION': '99.99.99.99'},
                                    'Dummy CL.',
+                                   submit_resp=api.path.mkstemp(),
                                    submit=True)
   assert change == 91827, change
 

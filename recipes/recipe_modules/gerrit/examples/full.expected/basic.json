@@ -158,14 +158,14 @@
       "/path/to/tmp/json",
       "copy",
       "99.99.99.99",
-      "[CLEANUP]/tmp_tmp_1"
+      "[CLEANUP]/tmp_tmp_2"
     ],
     "infra_step": true,
     "name": "update contents in CL 91827.store the new content for chrome/VERSION",
     "~followup_annotations": [
       "@@@STEP_NEST_LEVEL@1@@@",
-      "@@@STEP_LOG_LINE@tmp_tmp_1@99.99.99.99@@@",
-      "@@@STEP_LOG_END@tmp_tmp_1@@@"
+      "@@@STEP_LOG_LINE@tmp_tmp_2@99.99.99.99@@@",
+      "@@@STEP_LOG_END@tmp_tmp_2@@@"
     ]
   },
   {
@@ -181,7 +181,7 @@
       "--path",
       "chrome/VERSION",
       "--file",
-      "[CLEANUP]/tmp_tmp_1"
+      "[CLEANUP]/tmp_tmp_2"
     ],
     "env": {
       "PATH": "<PATH>:RECIPE_REPO[depot_tools]"
@@ -235,7 +235,9 @@
       "--host",
       "https://chromium-review.googlesource.com",
       "--change",
-      "91827"
+      "91827",
+      "--json_file",
+      "[CLEANUP]/tmp_tmp_1"
     ],
     "env": {
       "PATH": "<PATH>:RECIPE_REPO[depot_tools]"

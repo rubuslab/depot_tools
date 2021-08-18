@@ -257,7 +257,8 @@ class GerritApi(recipe_api.RecipeApi):
                    new_contents_by_file_path,
                    commit_msg,
                    params=frozenset(['status=NEW']),
-                   submit=False):
+                   submit=False,
+                   submit_resp=None):
     """Update a set of files by creating and submitting a Gerrit CL.
 
     Args:
@@ -270,6 +271,8 @@ class GerritApi(recipe_api.RecipeApi):
       * params: A list of additional ChangeInput specifiers, with format
           'key=value'.
       * submit: Should land this CL instantly.
+      * submit_resp: Path of a file. If set, it stores the gerrit response of
+          the submitchange.
 
     Returns:
       Integer change number.
@@ -329,11 +332,14 @@ class GerritApi(recipe_api.RecipeApi):
           '--change',
           change,
       ])
-      self('submit change %d' % change, [
+      submit_cmd = [
           'submitchange',
           '--host',
           host,
           '--change',
           change,
-      ])
+      ]
+      if submit_resp:
+        submit_cmd.extend(['--json_file', submit_resp])
+      self('submit change %d' % change, submit_cmd)
     return change

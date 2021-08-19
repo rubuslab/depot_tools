@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a614705_af947238",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1315223
+      },
+      "writtenOn": "2021-08-19T16:57:32Z",
+      "side": 1,
+      "message": "Hey Gavin! could you help with the change?\n\nreason why I made it is: I use git hooks to run a lot of stuff on every commit (things like code formatting, static analysis, gn deps tracking, iwyu etc) so that I don\u0027t learn about these issues from presubmit (or don\u0027t have to do these manually). Sadly, this Windows hack is breaking it every time I sync.\n\nOptionally: do you know whether this hack is still needed? perhaps it could be removed. it\u0027s been 6 years..\n\nthank you for your help!",
+      "revId": "143139c895f71c1fc3113ad28e7a17192be4ef5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15854573_9152ef45",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-08-22T11:35:43Z",
+      "side": 1,
+      "message": "API via *file* is weird. I admit that this recipe module is a kitchen sink at this point, but still -- it\u0027s much more natural to receive entire ChangeInfo, as turned by gerrit, instead of just an integer.\n\nGiven that you\u0027ve only recently added this API, can you just change the output \u0026\u0026 modify your downstream recipe, thus keeping API easy to use?",
+      "range": {
+        "startLine": 261,
+        "startChar": 19,
+        "endLine": 261,
+        "endChar": 35
+      },
+      "revId": "4834d46dd42c599ee65e4e682f477eca37fd69fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

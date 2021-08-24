@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94656751_a7697749",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-08-24T17:16:20Z",
+      "side": 1,
+      "message": "Sorry. Uploaded a wrong patchset.",
+      "parentUuid": "7573d806_a39779c5",
+      "range": {
+        "startLine": 261,
+        "startChar": 19,
+        "endLine": 261,
+        "endChar": 35
+      },
+      "revId": "523174af3824efe80c74e39534b96b1688f0f342",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7137766b_55b873c2",
@@ -37,6 +61,24 @@
       "writtenOn": "2021-08-24T17:05:09Z",
       "side": 1,
       "message": "true, but I\u0027d warn here that very few of the fields will be set there\n(iiuc, it doesn\u0027t even set all the fields one would normally get if fetching details without any options)\n\nMaybe better to link to https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#submit-change which has an example of what is normally returned?",
+      "revId": "523174af3824efe80c74e39534b96b1688f0f342",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05a19b16_61f9960b",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-08-24T17:16:20Z",
+      "side": 1,
+      "message": "Understood. #change-info only documented the format but not the data Gerrit API returns.\nLet me make it clearer: return #create-change by default, if change submitted, return #submit-change.",
+      "parentUuid": "7137766b_55b873c2",
       "revId": "523174af3824efe80c74e39534b96b1688f0f342",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

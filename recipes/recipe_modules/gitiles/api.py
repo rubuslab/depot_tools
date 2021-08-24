@@ -157,7 +157,7 @@ class Gitiles(recipe_api.RecipeApi):
         **kwargs)
     if step_result.json.output['value'] is None:
       return None
-    return base64.b64decode(step_result.json.output['value'])
+    return base64.b64decode(step_result.json.output['value']).decode('utf-8')
 
   def download_archive(self, repository_url, destination,
                        revision='refs/heads/main'):

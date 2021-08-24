@@ -2,6 +2,8 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+PYTHON_VERSION_COMPATIBILITY = 'PY2+3'
+
 from recipe_engine import post_process
 from recipe_engine import recipe_api
 

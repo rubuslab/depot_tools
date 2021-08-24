@@ -405,7 +405,7 @@ class GclientApi(recipe_api.RecipeApi):
         paths = []
         # gclient recurse prepends a number and a > to each line
         # Let's take that out
-        for line in step_result.stdout.strip().splitlines():
+        for line in step_result.stdout.encode('utf-8').strip().splitlines():
           if 'fatal: bad object' in line:
             msg = "Couldn't checkout previous ref: %s" % line
             step_result.presentation.logs['DepsDiffException'] = msg

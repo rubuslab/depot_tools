@@ -81,6 +81,24 @@
       "parentUuid": "7137766b_55b873c2",
       "revId": "523174af3824efe80c74e39534b96b1688f0f342",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd45d773_84111993",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1114919
+      },
+      "writtenOn": "2021-08-24T17:51:46Z",
+      "side": 1,
+      "message": "oh, right, i forgot about submit vs create thing. Yeah, good enough.",
+      "parentUuid": "05a19b16_61f9960b",
+      "revId": "523174af3824efe80c74e39534b96b1688f0f342",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c882454_eebd9cca",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-08-24T17:00:33Z",
+      "side": 1,
+      "message": "You are right. Better update it now before it is widely used. Thanks.",
+      "parentUuid": "15854573_9152ef45",
+      "range": {
+        "startLine": 261,
+        "startChar": 19,
+        "endLine": 261,
+        "endChar": 35
+      },
+      "revId": "4834d46dd42c599ee65e4e682f477eca37fd69fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "799cd5be_3fb90a0d",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-08-22T11:36:35Z",
       "side": 1,
       "message": "to be clear: i\u0027m proposing that you return a change info dict here.",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 278,
+        "endChar": 28
+      },
+      "revId": "4834d46dd42c599ee65e4e682f477eca37fd69fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9745ab5_ee67214e",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-08-24T17:00:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "799cd5be_3fb90a0d",
       "range": {
         "startLine": 277,
         "startChar": 0,

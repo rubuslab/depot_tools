@@ -3,24 +3,24 @@
 ## Table of Contents
 
 **[Recipe Modules](#Recipe-Modules)**
-  * [bot_update](#recipe_modules-bot_update) &mdash; Recipe module to ensure a checkout is consistent on a bot.
+  * [bot_update](#recipe_modules-bot_update) (Python3 ✅) &mdash; Recipe module to ensure a checkout is consistent on a bot.
   * [cipd](#recipe_modules-cipd) &mdash; API for interacting with CIPD.
   * [depot_tools](#recipe_modules-depot_tools) &mdash; The `depot_tools` module provides safe functions to access paths within the depot_tools repo.
   * [gclient](#recipe_modules-gclient)
   * [gerrit](#recipe_modules-gerrit)
   * [git](#recipe_modules-git)
   * [git_cl](#recipe_modules-git_cl)
-  * [gitiles](#recipe_modules-gitiles)
+  * [gitiles](#recipe_modules-gitiles) (Python3 ✅)
   * [gsutil](#recipe_modules-gsutil)
   * [osx_sdk](#recipe_modules-osx_sdk) &mdash; The `osx_sdk` module provides safe functions to access a semi-hermetic XCode installation.
   * [presubmit](#recipe_modules-presubmit)
   * [tryserver](#recipe_modules-tryserver)
-  * [windows_sdk](#recipe_modules-windows_sdk) &mdash; The `windows_sdk` module provides safe functions to access a hermetic Microsoft Visual Studio installation.
+  * [windows_sdk](#recipe_modules-windows_sdk) (Python3 ✅) &mdash; The `windows_sdk` module provides safe functions to access a hermetic Microsoft Visual Studio installation.
 
 **[Recipes](#Recipes)**
-  * [bot_update:examples/full](#recipes-bot_update_examples_full)
-  * [bot_update:tests/do_not_retry_patch_failures_in_cq](#recipes-bot_update_tests_do_not_retry_patch_failures_in_cq)
-  * [bot_update:tests/ensure_checkout](#recipes-bot_update_tests_ensure_checkout)
+  * [bot_update:examples/full](#recipes-bot_update_examples_full) (Python3 ✅)
+  * [bot_update:tests/do_not_retry_patch_failures_in_cq](#recipes-bot_update_tests_do_not_retry_patch_failures_in_cq) (Python3 ✅)
+  * [bot_update:tests/ensure_checkout](#recipes-bot_update_tests_ensure_checkout) (Python3 ✅)
   * [cipd:examples/full](#recipes-cipd_examples_full)
   * [cipd:examples/platform_suffix](#recipes-cipd_examples_platform_suffix)
   * [depot_tools:examples/full](#recipes-depot_tools_examples_full)
@@ -32,8 +32,8 @@
   * [gerrit:examples/full](#recipes-gerrit_examples_full)
   * [git:examples/full](#recipes-git_examples_full)
   * [git_cl:examples/full](#recipes-git_cl_examples_full)
-  * [gitiles:examples/full](#recipes-gitiles_examples_full)
-  * [gitiles:tests/parse_repo_url](#recipes-gitiles_tests_parse_repo_url)
+  * [gitiles:examples/full](#recipes-gitiles_examples_full) (Python3 ✅)
+  * [gitiles:tests/parse_repo_url](#recipes-gitiles_tests_parse_repo_url) (Python3 ✅)
   * [gsutil:examples/full](#recipes-gsutil_examples_full)
   * [osx_sdk:examples/full](#recipes-osx_sdk_examples_full)
   * [presubmit:examples/full](#recipes-presubmit_examples_full)
@@ -43,14 +43,14 @@
   * [tryserver:tests/gerrit_change_fetch_ref_timeout](#recipes-tryserver_tests_gerrit_change_fetch_ref_timeout)
   * [tryserver:tests/gerrit_change_owner](#recipes-tryserver_tests_gerrit_change_owner)
   * [tryserver:tests/gerrit_change_target_ref](#recipes-tryserver_tests_gerrit_change_target_ref)
-  * [windows_sdk:examples/full](#recipes-windows_sdk_examples_full)
+  * [windows_sdk:examples/full](#recipes-windows_sdk_examples_full) (Python3 ✅)
 ## Recipe Modules
 
 ### *recipe_modules* / [bot\_update](/recipes/recipe_modules/bot_update)
 
 [DEPS](/recipes/recipe_modules/bot_update/__init__.py#3): [depot\_tools](#recipe_modules-depot_tools), [gclient](#recipe_modules-gclient), [gerrit](#recipe_modules-gerrit), [gitiles](#recipe_modules-gitiles), [tryserver](#recipe_modules-tryserver), [recipe\_engine/buildbucket][recipe_engine/recipe_modules/buildbucket], [recipe\_engine/commit\_position][recipe_engine/recipe_modules/commit_position], [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/cq][recipe_engine/recipe_modules/cq], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/milo][recipe_engine/recipe_modules/milo], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/runtime][recipe_engine/recipe_modules/runtime], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
-PYTHON_VERSION_COMPATIBILITY: PY2
+PYTHON_VERSION_COMPATIBILITY: PY2+3
 
 Recipe module to ensure a checkout is consistent on a bot.
 
@@ -624,7 +624,7 @@ DEPRECATED. Consider using gerrit.get_change_description instead.
 
 [DEPS](/recipes/recipe_modules/gitiles/__init__.py#7): [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/python][recipe_engine/recipe_modules/python], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/step][recipe_engine/recipe_modules/step], [recipe\_engine/url][recipe_engine/recipe_modules/url]
 
-PYTHON_VERSION_COMPATIBILITY: PY2
+PYTHON_VERSION_COMPATIBILITY: PY2+3
 
 #### **class [Gitiles](/recipes/recipe_modules/gitiles/api.py#17)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
 
@@ -1019,9 +1019,9 @@ timeout.
 &emsp; **@property**<br>&mdash; **def [valid\_footers](/recipes/recipe_modules/tryserver/api.py#47)(self):**
 ### *recipe_modules* / [windows\_sdk](/recipes/recipe_modules/windows_sdk)
 
-[DEPS](/recipes/recipe_modules/windows_sdk/__init__.py#5): [recipe\_engine/cipd][recipe_engine/recipe_modules/cipd], [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/step][recipe_engine/recipe_modules/step]
+[DEPS](/recipes/recipe_modules/windows_sdk/__init__.py#7): [recipe\_engine/cipd][recipe_engine/recipe_modules/cipd], [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
-PYTHON_VERSION_COMPATIBILITY: PY2
+PYTHON_VERSION_COMPATIBILITY: PY2+3
 
 The `windows_sdk` module provides safe functions to access a hermetic
 Microsoft Visual Studio installation.
@@ -1059,35 +1059,23 @@ Raises:
 
 [DEPS](/recipes/recipe_modules/bot_update/examples/full.py#7): [bot\_update](#recipe_modules-bot_update), [gclient](#recipe_modules-gclient), [gerrit](#recipe_modules-gerrit), [tryserver](#recipe_modules-tryserver), [recipe\_engine/buildbucket][recipe_engine/recipe_modules/buildbucket], [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/runtime][recipe_engine/recipe_modules/runtime]
 
-<<<<<<< HEAD
-PYTHON_VERSION_COMPATIBILITY: PY2
+PYTHON_VERSION_COMPATIBILITY: PY2+3
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/bot_update/examples/full.py#23)(api):**
-=======
 &mdash; **def [RunSteps](/recipes/recipe_modules/bot_update/examples/full.py#25)(api):**
->>>>>>> 9e6fba18 (Add PYTHON_VERSION_COMPATIBILITY to gitiles and bot_update)
 ### *recipes* / [bot\_update:tests/do\_not\_retry\_patch\_failures\_in\_cq](/recipes/recipe_modules/bot_update/tests/do_not_retry_patch_failures_in_cq.py)
 
 [DEPS](/recipes/recipe_modules/bot_update/tests/do_not_retry_patch_failures_in_cq.py#9): [bot\_update](#recipe_modules-bot_update), [gclient](#recipe_modules-gclient), [recipe\_engine/buildbucket][recipe_engine/recipe_modules/buildbucket], [recipe\_engine/cq][recipe_engine/recipe_modules/cq], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
-<<<<<<< HEAD
-PYTHON_VERSION_COMPATIBILITY: PY2
+PYTHON_VERSION_COMPATIBILITY: PY2+3
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/bot_update/tests/do_not_retry_patch_failures_in_cq.py#17)(api):**
-=======
 &mdash; **def [RunSteps](/recipes/recipe_modules/bot_update/tests/do_not_retry_patch_failures_in_cq.py#19)(api):**
->>>>>>> 9e6fba18 (Add PYTHON_VERSION_COMPATIBILITY to gitiles and bot_update)
 ### *recipes* / [bot\_update:tests/ensure\_checkout](/recipes/recipe_modules/bot_update/tests/ensure_checkout.py)
 
 [DEPS](/recipes/recipe_modules/bot_update/tests/ensure_checkout.py#9): [bot\_update](#recipe_modules-bot_update), [gclient](#recipe_modules-gclient), [recipe\_engine/json][recipe_engine/recipe_modules/json]
 
-<<<<<<< HEAD
-PYTHON_VERSION_COMPATIBILITY: PY2
+PYTHON_VERSION_COMPATIBILITY: PY2+3
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/bot_update/tests/ensure_checkout.py#14)(api):**
-=======
 &mdash; **def [RunSteps](/recipes/recipe_modules/bot_update/tests/ensure_checkout.py#16)(api):**
->>>>>>> 9e6fba18 (Add PYTHON_VERSION_COMPATIBILITY to gitiles and bot_update)
 ### *recipes* / [cipd:examples/full](/recipes/recipe_modules/cipd/examples/full.py)
 
 [DEPS](/recipes/recipe_modules/cipd/examples/full.py#8): [cipd](#recipe_modules-cipd), [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
@@ -1169,24 +1157,16 @@ PYTHON_VERSION_COMPATIBILITY: PY2
 
 [DEPS](/recipes/recipe_modules/gitiles/examples/full.py#7): [gitiles](#recipe_modules-gitiles), [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
-<<<<<<< HEAD
-PYTHON_VERSION_COMPATIBILITY: PY2
+PYTHON_VERSION_COMPATIBILITY: PY2+3
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/gitiles/examples/full.py#14)(api):**
-=======
 &mdash; **def [RunSteps](/recipes/recipe_modules/gitiles/examples/full.py#16)(api):**
->>>>>>> 9e6fba18 (Add PYTHON_VERSION_COMPATIBILITY to gitiles and bot_update)
 ### *recipes* / [gitiles:tests/parse\_repo\_url](/recipes/recipe_modules/gitiles/tests/parse_repo_url.py)
 
 [DEPS](/recipes/recipe_modules/gitiles/tests/parse_repo_url.py#7): [gitiles](#recipe_modules-gitiles), [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
-<<<<<<< HEAD
-PYTHON_VERSION_COMPATIBILITY: PY2
+PYTHON_VERSION_COMPATIBILITY: PY2+3
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/gitiles/tests/parse_repo_url.py#12)(api):**
-=======
 &mdash; **def [RunSteps](/recipes/recipe_modules/gitiles/tests/parse_repo_url.py#14)(api):**
->>>>>>> 9e6fba18 (Add PYTHON_VERSION_COMPATIBILITY to gitiles and bot_update)
 ### *recipes* / [gsutil:examples/full](/recipes/recipe_modules/gsutil/examples/full.py)
 
 [DEPS](/recipes/recipe_modules/gsutil/examples/full.py#5): [gsutil](#recipe_modules-gsutil), [recipe\_engine/path][recipe_engine/recipe_modules/path]
@@ -1254,11 +1234,11 @@ PYTHON_VERSION_COMPATIBILITY: PY2
 &mdash; **def [RunSteps](/recipes/recipe_modules/tryserver/tests/gerrit_change_target_ref.py#16)(api):**
 ### *recipes* / [windows\_sdk:examples/full](/recipes/recipe_modules/windows_sdk/examples/full.py)
 
-[DEPS](/recipes/recipe_modules/windows_sdk/examples/full.py#5): [windows\_sdk](#recipe_modules-windows_sdk), [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
+[DEPS](/recipes/recipe_modules/windows_sdk/examples/full.py#7): [windows\_sdk](#recipe_modules-windows_sdk), [recipe\_engine/platform][recipe_engine/recipe_modules/platform], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
-PYTHON_VERSION_COMPATIBILITY: PY2
+PYTHON_VERSION_COMPATIBILITY: PY2+3
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/windows_sdk/examples/full.py#13)(api):**
+&mdash; **def [RunSteps](/recipes/recipe_modules/windows_sdk/examples/full.py#15)(api):**
 
 [recipe_engine/recipe_modules/assertions]: https://chromium.googlesource.com/infra/luci/recipes-py.git/+/6fa3a72b54d422a6f0faea288a49b47e00ad9b3e/README.recipes.md#recipe_modules-assertions
 [recipe_engine/recipe_modules/buildbucket]: https://chromium.googlesource.com/infra/luci/recipes-py.git/+/6fa3a72b54d422a6f0faea288a49b47e00ad9b3e/README.recipes.md#recipe_modules-buildbucket

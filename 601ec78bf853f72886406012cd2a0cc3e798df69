@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a787822a_c42f04ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-08-25T23:13:08Z",
+      "side": 1,
+      "message": "starting with gitiles and bot_update first since the many/all of the other recipes rely on these two when supporting py2+3",
+      "revId": "601ec78bf853f72886406012cd2a0cc3e798df69",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -33,6 +33,24 @@
       "message": "is this something we can drop when we are on py3 only? If so, please add a comment",
       "revId": "601ec78bf853f72886406012cd2a0cc3e798df69",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b044853a_8129e5e8",
+        "filename": "recipes/recipe_modules/gitiles/test_api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-08-25T23:30:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b14c010e_5a498d3a",
+      "revId": "601ec78bf853f72886406012cd2a0cc3e798df69",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

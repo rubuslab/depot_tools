@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22b40c41_0aca73d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-08-26T20:28:08Z",
+      "side": 1,
+      "message": "I\u0027m confused about this.\n\nPlease see my comment https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1242737#c3 on the bug.",
+      "revId": "2a91e5b3c39a2f431eb42a9337f58afe7e105ec8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

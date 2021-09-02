@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c013e3fc_48ea96d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-09-02T21:42:40Z",
+      "side": 1,
+      "message": "I wonder if there\u0027s any way to keep PY3 support here. Yiwei, WDYT?\n",
+      "revId": "4846fa04b50d08b4f1e39b5cd9716eae63945da2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

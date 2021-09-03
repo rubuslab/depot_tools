@@ -52,6 +52,24 @@
       "parentUuid": "7674fb6b_72700e8e",
       "revId": "4846fa04b50d08b4f1e39b5cd9716eae63945da2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "606f3bc0_dd371250",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2021-09-03T18:47:02Z",
+      "side": 1,
+      "message": "The deletion change is actually out: https://crrev.com/c/3140892 currently waiting for https://crrev.com/i/4101848 to be reviewed which I believe is the last downstream usage of \"depot_tools/cipd\".\n\nI think if we can\u0027t get them landed within the next few hours or before EOD, we should just land this change to unblock the recipe work.",
+      "parentUuid": "4a4bf9a6_dbd6277c",
+      "revId": "4846fa04b50d08b4f1e39b5cd9716eae63945da2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

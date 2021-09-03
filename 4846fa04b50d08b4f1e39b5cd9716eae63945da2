@@ -88,6 +88,24 @@
       "parentUuid": "606f3bc0_dd371250",
       "revId": "4846fa04b50d08b4f1e39b5cd9716eae63945da2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62163170_a9606158",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1347995
+      },
+      "writtenOn": "2021-09-03T20:27:39Z",
+      "side": 1,
+      "message": "Thanks! I\u0027m going to submit this then since https://crrev.com/i/4101848 is still waiting for review, and this code will all be deleted anyway once both changes land.",
+      "parentUuid": "6ae12a56_8e5f15a6",
+      "revId": "4846fa04b50d08b4f1e39b5cd9716eae63945da2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

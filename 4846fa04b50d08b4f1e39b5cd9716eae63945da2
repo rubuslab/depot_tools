@@ -34,6 +34,24 @@
       "parentUuid": "c013e3fc_48ea96d9",
       "revId": "4846fa04b50d08b4f1e39b5cd9716eae63945da2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a4bf9a6_dbd6277c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1347995
+      },
+      "writtenOn": "2021-09-03T18:26:08Z",
+      "side": 1,
+      "message": "Bump, can we land this temporarily, just until the exception formatting issue is fixed? It looks like there are a bunch of downstream dependencies on this module so I suspect it will take some time to delete it. The incompatibility is now holding up crrev.com/c/3138638.",
+      "parentUuid": "7674fb6b_72700e8e",
+      "revId": "4846fa04b50d08b4f1e39b5cd9716eae63945da2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

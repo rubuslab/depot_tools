@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db48e69e_010ea8b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2021-09-03T18:42:51Z",
+      "side": 1,
+      "message": "It turns out depot_tools/cipd is still consumed by build_internal repo. The fix is uploaded: https://crrev.com/i/4101848, will land after the downstream change lands.",
+      "revId": "fe170828bc2ef95322b0caa9db3be466107d4f02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

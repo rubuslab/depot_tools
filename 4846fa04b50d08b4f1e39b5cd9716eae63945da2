@@ -70,6 +70,24 @@
       "parentUuid": "4a4bf9a6_dbd6277c",
       "revId": "4846fa04b50d08b4f1e39b5cd9716eae63945da2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ae12a56_8e5f15a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-09-03T18:59:57Z",
+      "side": 1,
+      "message": "That plan sounds good. Thanks!",
+      "parentUuid": "606f3bc0_dd371250",
+      "revId": "4846fa04b50d08b4f1e39b5cd9716eae63945da2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -33,6 +33,24 @@
       "message": "So the need for these tags is temporary, and it\u0027s not just easier to roll a vpython with a fix?",
       "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f28961e6_cfa39ede",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-09-07T20:47:52Z",
+      "side": 1,
+      "message": "I\u0027m not actually sure it makes sense for most users to rely on vpython\u0027s default verification. Different uses of vpython will have varying platform requirements, and it can be an unncessary burden if vpython attempts to ensure that every platform is covered in every spec.\n\nOn the other hand, if you are writing a presubmit that runs vpython verification, you should have a good idea of which platforms you care about, and can list them explicitly. For context see https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1229299#c13 and https://crbug.com/1231769\n\nIn any case, it would be difficult to roll this out as a change in vpython, for that same reason -- we know not all of our customers have updated their specs to only use mac-arm64 compatible wheels. But for those that have, we should keep that support from regressing.",
+      "parentUuid": "b32753e4_6ae5bf51",
+      "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

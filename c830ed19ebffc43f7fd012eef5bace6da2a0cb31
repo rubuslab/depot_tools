@@ -105,6 +105,24 @@
       "parentUuid": "b1934088_3b0b41fa",
       "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c10e0a2c_2d056b9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-09-07T22:19:15Z",
+      "side": 1,
+      "message": "Yeah, the pep425 tags are a little cumbersome to work with.\n\nAh so that ${vpython_platform} ... does expand to a string representation of the \"best\" PEP425 tag for the current interpreter (platform_python_abi I believe). (We choose the \"best\" tag to be the one that is approximately the most specific).",
+      "parentUuid": "cd60724b_f7f477c0",
+      "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

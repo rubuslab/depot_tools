@@ -51,6 +51,24 @@
       "parentUuid": "b32753e4_6ae5bf51",
       "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbad2e66_60730ddc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-09-07T21:24:52Z",
+      "side": 1,
+      "message": "I think (part of) the problem I\u0027m having here is that I don\u0027t know what this field does. Does this mean that any package specified here has to be available in\nall of these different configurations? Or just one of them?\n\nHow does this interact with the other parts of the specfication (e.g., vpython_platform, or match tags)?",
+      "parentUuid": "f28961e6_cfa39ede",
+      "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

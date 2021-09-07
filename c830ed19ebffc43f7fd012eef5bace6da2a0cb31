@@ -69,6 +69,24 @@
       "parentUuid": "f28961e6_cfa39ede",
       "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1934088_3b0b41fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-09-07T21:38:47Z",
+      "side": 1,
+      "message": "The canonical reference is https://source.chromium.org/chromium/_/chromium/infra/luci/luci-go/+/5ea822acab1fe2872f1665fc2dc113da5ca53ba3:vpython/api/vpython/spec.proto (and https://source.chromium.org/chromium/_/chromium/infra/luci/luci-go/+/5ea822acab1fe2872f1665fc2dc113da5ca53ba3:vpython/api/vpython/pep425.proto )\n\nI\u0027m not sure exactly what you mean by vpython_platform, that\u0027s not a field in the spec.\n\nBasically what this is does is ensures that for each listed pep tag, all of the wheels exist. If a wheel uses match tags, I believe it will be verified only if it matches. This is a replacement of the default tag set here: https://source.chromium.org/chromium/infra/infra/+/main:go/src/infra/tools/vpython/verification.go",
+      "parentUuid": "fbad2e66_60730ddc",
+      "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

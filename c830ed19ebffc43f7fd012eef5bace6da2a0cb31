@@ -87,6 +87,24 @@
       "parentUuid": "fbad2e66_60730ddc",
       "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd60724b_f7f477c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-09-07T21:55:24Z",
+      "side": 1,
+      "message": "\u003e The canonical reference is [1] ( and [2] )\n\nYeah, unfortunately the comments on lines 75-78 of [1] don\u0027t specify if the verification is \"all\" or \"any\". And [2] doesn\u0027t actually tell you what\nthe allowed values are. At least the code in verification.go *does* tell\nyou that. But, if memory serves, the actual mapping onto PEP-425 tags as\nreported from Python is kinda weird :(.\n\n\u003e I\u0027m not sure exactly what you mean by vpython_platform,\n\u003e that\u0027s not a field in the spec.\n\nI\u0027m referring to something like https://source.chromium.org/chromium/chromium/src/+/main:.vpython3;drc\u003d02442ef0cb33cdbf2c38a70f2ea10263c5f81204;l\u003d52 where `${vpython_platform}` is embedded in the name of the wheel. IIRC this also expands out to some appropriate set of PEP-425 tags in some weird way.",
+      "parentUuid": "b1934088_3b0b41fa",
+      "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

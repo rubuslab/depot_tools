@@ -16,6 +16,23 @@
       "message": "Added comments, PTAL",
       "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b32753e4_6ae5bf51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-09-07T20:33:31Z",
+      "side": 1,
+      "message": "So the need for these tags is temporary, and it\u0027s not just easier to roll a vpython with a fix?",
+      "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

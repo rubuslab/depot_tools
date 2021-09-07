@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10b6fc86_5bd33086",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-09-07T19:59:26Z",
+      "side": 1,
+      "message": "Can you add comments to the files (and perhaps also to this CL) explaining what this does? I don\u0027t know why they\u0027re necessary, and I suspect I won\u0027t be the only one.",
+      "revId": "2486acc2258f98cb5f53a1137ceca927542b7ad7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

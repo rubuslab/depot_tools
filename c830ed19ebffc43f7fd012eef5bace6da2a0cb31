@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "f774feda_fc741bb2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-09-08T15:28:40Z",
+      "side": 1,
+      "message": "I like that wording. I used it in the vpython specs as well.",
+      "parentUuid": "5ac3a925_aa789659",
+      "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "e0c0a9a3_6ef58488",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
@@ -138,6 +156,24 @@
       "side": 1,
       "message": "Yeah, the pep425 tags are a little cumbersome to work with.\n\nAh so that ${vpython_platform} ... does expand to a string representation of the \"best\" PEP425 tag for the current interpreter (platform_python_abi I believe). (We choose the \"best\" tag to be the one that is approximately the most specific).",
       "parentUuid": "cd60724b_f7f477c0",
+      "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bec5ce2_71bf3fc4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-09-08T15:28:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c10e0a2c_2d056b9b",
       "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

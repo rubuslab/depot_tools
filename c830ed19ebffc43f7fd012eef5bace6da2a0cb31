@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ac3a925_aa789659",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-09-08T00:52:09Z",
+      "side": 1,
+      "message": "Maybe change this second paragraph to\n\nThe default set of platforms vpython checks for does not yet include mac-arm64. Setting `verify_pep425_tag` to the list of\nplatforms we explicitly must support allows us to ensure that\nvpython specs stay mac-arm64-friendly?\n\nOr something like that?",
+      "revId": "c830ed19ebffc43f7fd012eef5bace6da2a0cb31",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "e0c0a9a3_6ef58488",

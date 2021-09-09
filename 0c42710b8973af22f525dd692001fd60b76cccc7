@@ -16,6 +16,24 @@
       "message": "Our Gerrit config is set to support: \"Bug:|BUG\u003d|Fixed:\". But all for standardizing to Bug: and Fixed:\n\nNote that this presubmit change is just framework support, we still need to call it in individual PRESUBMIT.py",
       "revId": "0c42710b8973af22f525dd692001fd60b76cccc7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e848a0d_65e61051",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-09-09T22:19:13Z",
+      "side": 1,
+      "message": "Chromiumos folks use BUG\u003d https://chromium.googlesource.com/chromiumos/docs/+/HEAD/contributing.md\n\nI still think it\u0027s okay to have this in chromium/src presubmit check, but just wanted to highlight the difference.",
+      "parentUuid": "c2283b4c_74fe4c0d",
+      "revId": "0c42710b8973af22f525dd692001fd60b76cccc7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -98,6 +98,24 @@
       "parentUuid": "2ac69196_5db6183d",
       "revId": "9d259000c87b757e46c8535eae9a8396edacb72b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df63edd1_c1735056",
+        "filename": "recipes/recipe_modules/git/examples/full.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2021-09-10T20:43:28Z",
+      "side": 1,
+      "message": "TIL, thanks",
+      "parentUuid": "43da8c85_6a94211f",
+      "revId": "9d259000c87b757e46c8535eae9a8396edacb72b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

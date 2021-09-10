@@ -88,7 +88,7 @@ class GitApi(recipe_api.RecipeApi):
         result[name] = int(value.strip())
 
       def results_to_text(results):
-        return ['  %s: %s' % (k, v) for k, v in results.items()]
+        return ['  %s: %s' % (k, v) for k, v in sorted(results.items())]
 
       step_result.presentation.logs['result'] = results_to_text(result)
 
@@ -113,7 +113,11 @@ class GitApi(recipe_api.RecipeApi):
       return result
     except Exception as ex:
       if step_result:
-        step_result.presentation.logs['exception'] = ['%r' % ex]
+        # Reformat the exception msg to keep it identical in py2 and py3.
+        step_result.presentation.logs['exception'] = [
+          "%s(%s)" % (type(ex).__name__,
+                      ', '.join("'%s'" % str(arg) for arg in ex.args))
+        ]
         step_result.presentation.status = self.m.step.WARNING
       if can_fail_build:
         raise recipe_api.InfraFailure('count-objects failed: %s' % ex)
@@ -292,13 +296,13 @@ class GitApi(recipe_api.RecipeApi):
 
       rev_parse_step = self('rev-parse', 'HEAD',
                            name='read revision',
-                           stdout=self.m.raw_io.output(),
+                           stdout=self.m.raw_io.output_text(),
                            can_fail_build=False,
                            step_test_data=lambda:
-                              self.m.raw_io.test_api.stream_output('deadbeef'))
+                              self.m.raw_io.test_api.stream_output_text('deadbeef'))
 
       if rev_parse_step.presentation.status == 'SUCCESS':
-        sha = rev_parse_step.stdout.strip().decode('utf-8')
+        sha = rev_parse_step.stdout.strip()
         retVal = sha
         rev_parse_step.presentation.step_text = "<br/>checked out %r<br/>" % sha
         if set_got_revision:

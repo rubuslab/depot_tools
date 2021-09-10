@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fe08039_c6950a89",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2021-09-10T20:11:58Z",
+      "side": 1,
+      "message": "Added in engine repo - https://crrev.com/c/3154350.\nWill wait until it roll to depot_tools to merge this CL.",
+      "parentUuid": "4eed8a92_2db201be",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 70
+      },
+      "revId": "9d259000c87b757e46c8535eae9a8396edacb72b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ac69196_5db6183d",
@@ -54,6 +78,24 @@
       "writtenOn": "2021-09-10T06:19:58Z",
       "side": 1,
       "message": "why making it single line? Is it changed by formatter?",
+      "revId": "9d259000c87b757e46c8535eae9a8396edacb72b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43da8c85_6a94211f",
+        "filename": "recipes/recipe_modules/git/examples/full.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2021-09-10T20:11:58Z",
+      "side": 1,
+      "message": "uh, forgot to mention. It\u0027s to solve expectation file diff of `full.expected/new_branch_failed.json`.\n```\n       \"Traceback (most recent call last):\",\n-      \"  File \\\"RECIPE_REPO[depot_tools]/recipes/recipe_modules/git/examples/full.py\\\", line 85, in RunSteps\",\n-      \"    upstream_current\u003dTrue)\",\n+      \"  File \\\"RECIPE_REPO[depot_tools]/recipes/recipe_modules/git/examples/full.py\\\", line 83, in RunSteps\",\n+      \"    api.git.new_branch(\u0027failed_new_branch\u0027,\",\n```\n\nIf a statement is thrown an exception and this statement is formatted to multi-line, the stacktrace in py2 points to its first line while py3 points to its last line of the statement.",
+      "parentUuid": "2ac69196_5db6183d",
       "revId": "9d259000c87b757e46c8535eae9a8396edacb72b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

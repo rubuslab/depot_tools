@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e27a81b_511a476b",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2021-09-10T06:19:58Z",
+      "side": 0,
+      "message": "👍",
+      "range": {
+        "startLine": 301,
+        "startChar": 43,
+        "endLine": 301,
+        "endChar": 59
+      },
+      "revId": "e1482c55484acb20a6383bd9e458a0e1574d0a10",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

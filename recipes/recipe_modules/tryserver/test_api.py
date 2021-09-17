@@ -12,3 +12,8 @@ class TryserverTestApi(recipe_test_api.RecipeTestApi):
   def gerrit_change_target_ref(target_ref):
     assert target_ref.startswith('refs/')
     return target_ref
+
+  @recipe_test_api.mod_test_data
+  @staticmethod
+  def gerrit_change_rev(rev):
+    return rev

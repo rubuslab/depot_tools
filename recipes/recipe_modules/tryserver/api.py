@@ -35,6 +35,7 @@ class TryserverApi(recipe_api.RecipeApi):
     self._gerrit_info_initialized = False
     self._gerrit_change_target_ref = None
     self._gerrit_change_fetch_ref = None
+    self._gerrit_change_rev = None
     self._gerrit_change_owner = None
     self._change_footers = None
     self._gerrit_commit_message = None
@@ -110,17 +111,22 @@ class TryserverApi(recipe_api.RecipeApi):
 
     td = self._test_data if self._test_data.enabled else {}
     mock_res = [{
-      'branch': td.get('gerrit_change_target_ref', 'main'),
-      'revisions': {
-        '184ebe53805e102605d11f6b143486d15c23a09c': {
-          '_number': str(cl.patchset),
-          'ref': 'refs/changes/%02d/%d/%d' % (
-              cl.change % 100, cl.change, cl.patchset),
+        'branch':
+        td.get('gerrit_change_target_ref', 'main'),
+        'current_revision':
+        td.get('gerrit_change_rev', '184ebe53805e102605d11f6b143486d15c23a09c'),
+        'revisions': {
+            '184ebe53805e102605d11f6b143486d15c23a09c': {
+                '_number':
+                str(cl.patchset),
+                'ref':
+                'refs/changes/%02d/%d/%d' %
+                (cl.change % 100, cl.change, cl.patchset),
+            },
         },
-      },
-      'owner': {
-          'name': 'John Doe',
-      },
+        'owner': {
+            'name': 'John Doe',
+        },
     }]
     res = self.m.gerrit.get_changes(
         host='https://' + cl.host,
@@ -135,6 +141,7 @@ class TryserverApi(recipe_api.RecipeApi):
         step_test_data=lambda: self.m.json.test_api.output(mock_res))[0]
 
     self._gerrit_change_target_ref = res['branch']
+    self._gerrit_change_rev = res['current_revision']
     if not self._gerrit_change_target_ref.startswith('refs/'):
       self._gerrit_change_target_ref = (
           'refs/heads/' + self._gerrit_change_target_ref)
@@ -163,6 +170,15 @@ class TryserverApi(recipe_api.RecipeApi):
     """
     self._ensure_gerrit_change_info()
     return self._gerrit_change_target_ref
+
+  @property
+  def gerrit_change_rev(self):
+    """Returns the gerrit change revision.
+
+    Populated iff gerrit_change is populated.
+    """
+    self._ensure_gerrit_change_info()
+    return self._gerrit_change_rev
 
   @property
   def gerrit_change_number(self):

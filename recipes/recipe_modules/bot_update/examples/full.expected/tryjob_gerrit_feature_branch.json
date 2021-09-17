@@ -28,6 +28,7 @@
       "@@@STEP_LOG_LINE@json.output@[@@@",
       "@@@STEP_LOG_LINE@json.output@  {@@@",
       "@@@STEP_LOG_LINE@json.output@    \"branch\": \"refs/heads/experimental/feature\", @@@",
+      "@@@STEP_LOG_LINE@json.output@    \"current_revision\": \"184ebe53805e102605d11f6b143486d15c23a09c\", @@@",
       "@@@STEP_LOG_LINE@json.output@    \"owner\": {@@@",
       "@@@STEP_LOG_LINE@json.output@      \"name\": \"John Doe\"@@@",
       "@@@STEP_LOG_LINE@json.output@    }, @@@",

@@ -41,6 +41,9 @@ def RunSteps(api):
     expected_target_ref = api.properties.get(
         'expected_target_ref', 'refs/heads/main')
     assert api.tryserver.gerrit_change_target_ref == expected_target_ref
+    if api.properties.get('expected_rev'):
+      assert api.tryserver.gerrit_change_rev == api.properties.get(
+          'expected_rev')
 
   if api.tryserver.is_gerrit_issue:
     api.tryserver.get_footers()
@@ -90,13 +93,15 @@ def GenTests(api):
 
   yield (api.test('with_gerrit_patch_and_target_ref') +
          api.buildbucket.try_build(
-            'chromium',
-            'linux',
-            git_repo='https://chromium.googlesource.com/chromium/src',
-            change_number=91827,
-            patch_set=1) +
-         api.properties(expected_target_ref='refs/heads/experiment') +
-         api.tryserver.gerrit_change_target_ref('refs/heads/experiment'))
+             'chromium',
+             'linux',
+             git_repo='https://chromium.googlesource.com/chromium/src',
+             change_number=91827,
+             patch_set=1) +
+         api.properties(expected_target_ref='refs/heads/experiment',
+                        expected_rev='deadbeef') +
+         api.tryserver.gerrit_change_target_ref('refs/heads/experiment') +
+         api.tryserver.gerrit_change_rev('deadbeef'))
 
   yield (api.test('with_wrong_patch_new') + api.platform('win', 32) +
          api.properties(test_patch_root='sub\\project'))

@@ -34,6 +34,24 @@
       "parentUuid": "36cb319c_1fc0eea3",
       "revId": "8f0043b77c92aeb17d4c4a05fe3908eb9f93767c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "717ea92c_b0326afc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-09-20T22:37:50Z",
+      "side": 1,
+      "message": "So, it indeed doesn\u0027t work, but only because ref should end with /1 not /01. I tested it with:\n\n  gclient sync --revision src@refs/changes/27/3162827/1\n\nand found no issues",
+      "parentUuid": "30186a89_aef9b559",
+      "revId": "8f0043b77c92aeb17d4c4a05fe3908eb9f93767c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

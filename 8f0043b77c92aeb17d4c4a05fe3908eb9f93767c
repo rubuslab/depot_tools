@@ -70,6 +70,24 @@
       "parentUuid": "717ea92c_b0326afc",
       "revId": "8f0043b77c92aeb17d4c4a05fe3908eb9f93767c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7403617e_a3d53bc5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-09-20T23:52:30Z",
+      "side": 1,
+      "message": "Yeah, looks it fetches the commit, but for some reason it doesn\u0027t check it out. That is very likely a bug in gclient sync.\n\nI\u0027m looking into it, but if you can file a bug, that be awesome. I suggest we hold on this cl until we know why it\u0027s a noop.",
+      "parentUuid": "4ed4710c_49199be1",
+      "revId": "8f0043b77c92aeb17d4c4a05fe3908eb9f93767c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

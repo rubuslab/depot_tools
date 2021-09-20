@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36cb319c_1fc0eea3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-09-20T21:08:09Z",
+      "side": 1,
+      "message": "I\u0027m curious: why won\u0027t this work?",
+      "revId": "8f0043b77c92aeb17d4c4a05fe3908eb9f93767c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

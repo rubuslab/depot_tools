@@ -52,6 +52,24 @@
       "parentUuid": "30186a89_aef9b559",
       "revId": "8f0043b77c92aeb17d4c4a05fe3908eb9f93767c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ed4710c_49199be1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2021-09-20T22:58:52Z",
+      "side": 1,
+      "message": "Strange. I can confirm that that avoids the error msg and quits with a zero exit code. But it doesn\u0027t appear to actually checkout the gerrit issue that that points to? \n\nUsing `--revision src@762f1d6089690f49a20203d7a888c14830122671` does at least check it out fully.",
+      "parentUuid": "717ea92c_b0326afc",
+      "revId": "8f0043b77c92aeb17d4c4a05fe3908eb9f93767c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

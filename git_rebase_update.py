@@ -343,6 +343,9 @@ def main(args=None):
     print()
     print("Running `git gc --auto` - Ctrl-C to abort is OK.")
     git.run('gc', '--auto')
+  elif not git.in_rebase():
+    git.run('checkout', return_branch)
+    git.thaw()
 
   return retcode
 

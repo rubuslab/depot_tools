@@ -285,6 +285,8 @@ class GitRebaseUpdateTest(git_test_utils.GitRepoReadWriteTestBase):
       f.write('L')
     self.origin.git('add', 'L')
     self.origin.git_commit('L')
+    with self.repo.open('L_untracked', 'w') as f:
+      f.write('L_untracked')
 
     # Add a commit to branch_K so that things fail
     self.repo.git('checkout', 'branch_K')
@@ -292,6 +294,8 @@ class GitRebaseUpdateTest(git_test_utils.GitRepoReadWriteTestBase):
       f.write('NOPE')
     self.repo.git('add', 'M')
     self.repo.git_commit('K NOPE')
+    with self.repo.open('K_untracked', 'w') as f:
+      f.write('K_untracked')
 
     # Add a commits to branch_L which will work when squashed
     self.repo.git('checkout', 'branch_L')
@@ -307,6 +311,8 @@ class GitRebaseUpdateTest(git_test_utils.GitRepoReadWriteTestBase):
 
     # start on a branch which will be deleted
     self.repo.git('checkout', 'branch_G')
+    with self.repo.open('G_untracked', 'w') as f:
+      f.write('G_untracked')
 
     self.repo.git('config', 'branch.branch_K.dormant', 'false')
     output, _ = self.repo.capture_stdio(self.reup.main, ['-k'])
@@ -314,6 +320,10 @@ class GitRebaseUpdateTest(git_test_utils.GitRepoReadWriteTestBase):
     self.assertIn('could not be cleanly rebased:', output)
     self.assertIn('  branch_K', output)
 
+    output = self.repo.git('status').stdout
+    self.assertIn('L_untracked', output)
+    self.assertIn('K_untracked', output)
+    self.assertIn('G_untracked', output)
 
   def testTrackTag(self):
     self.origin.git('tag', 'lkgr', self.origin['M'])

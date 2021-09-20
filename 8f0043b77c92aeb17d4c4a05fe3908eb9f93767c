@@ -16,6 +16,24 @@
       "message": "I\u0027m curious: why won\u0027t this work?",
       "revId": "8f0043b77c92aeb17d4c4a05fe3908eb9f93767c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30186a89_aef9b559",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2021-09-20T22:30:44Z",
+      "side": 1,
+      "message": "I see \"fatal: couldn\u0027t find remote ref refs/changes/27/3162827/01\" errors when I try it (both with and without the \"--with_tags\" arg to gclient). I might be holding it wrong though? LMK if there\u0027s some other incantation that would work.",
+      "parentUuid": "36cb319c_1fc0eea3",
+      "revId": "8f0043b77c92aeb17d4c4a05fe3908eb9f93767c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

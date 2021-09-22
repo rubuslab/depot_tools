@@ -16,6 +16,24 @@
       "message": "Given that freeze is called on git.current_branch(); thaw should be called always in that branch too. It gets more complicated with so many different scenarios, e.g. branch can be removed, etc.\n\nI would propose we just error if there are any local changes (untracked or tracked \u0026 modified).",
       "revId": "39331ccc1067adc6397dc6de642b83e17d335d5f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fcbd926_7e37491a",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-09-22T00:03:33Z",
+      "side": 1,
+      "message": "Makes sense, done",
+      "parentUuid": "a2bc3f0d_44d5a11d",
+      "revId": "39331ccc1067adc6397dc6de642b83e17d335d5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

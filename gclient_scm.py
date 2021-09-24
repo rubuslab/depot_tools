@@ -760,6 +760,7 @@ class GitWrapper(SCMWrapper):
         else:
           merge_args.append('--ff-only')
         merge_args.append(upstream_branch)
+        merge_args.append(revision)
         merge_output = self._Capture(merge_args)
       except subprocess2.CalledProcessError as e:
         rebase_files = []
@@ -781,7 +782,8 @@ class GitWrapper(SCMWrapper):
                 raise gclient_utils.Error('Invalid Character')
             if options.auto_rebase or re.match(r'yes|y', action, re.I):
               self._AttemptRebase(upstream_branch, rebase_files, options,
-                                  printed_path=printed_path, merge=False)
+                                  newbase=revision, printed_path=printed_path,
+                                  merge=options.merge)
               printed_path = True
               break
             elif re.match(r'quit|q', action, re.I):

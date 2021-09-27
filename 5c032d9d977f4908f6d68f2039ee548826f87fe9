@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b515c99_1d674b84",
+        "filename": "rust_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-27T18:10:44Z",
+      "side": 1,
+      "message": "This comment (and this file in general) are copied from (or at least based on) clang_format.py.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "5c032d9d977f4908f6d68f2039ee548826f87fe9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06af55b2_5f4ddeef",
+        "filename": "rust_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-27T18:10:44Z",
+      "side": 1,
+      "message": "Hmmm... I\u0027ve just realized that running `clang-format\u0027 makes some sense for `clang_format.py`, but maybe running `rustfmt` doesn\u0027t make as much sense for `rust_support.py`.  Maybe I should rename this file to `rustfmt.py`?",
+      "range": {
+        "startLine": 73,
+        "startChar": 2,
+        "endLine": 73,
+        "endChar": 39
+      },
+      "revId": "5c032d9d977f4908f6d68f2039ee548826f87fe9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

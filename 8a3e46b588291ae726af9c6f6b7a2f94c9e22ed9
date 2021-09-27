@@ -18,6 +18,41 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f9ec8f3_baa099e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-27T22:40:44Z",
+      "side": 1,
+      "message": "Thanks Adrian!  I\u0027ve replied-to and addressed some of your feedback.  Let\u0027s try to land https://chromium-review.googlesource.com/c/chromium/src/+/3188213 (to avoid having Rust version in the path), roll the DEPS and then we can pick-up this CL again.",
+      "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5622547b_e2387f93",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-27T22:40:44Z",
+      "side": 1,
+      "message": "\u003e I don\u0027t think we can hard code the version number but otherwise this looks good.\n\nAck.\n\n\u003e (I\u0027m assuming there is some sort of exception policy to avoid code in //third_party getting formatted with either clang-format or rustfmt. It would seem undesirable for us to inadvertently fork 3p Rust crates just by formatting their code with, for instance, a different version of rustfmt).\n\nRight - git_cl.py finds the changed files with the help of git:\n\n    changed_files_cmd \u003d BuildGitDiffCmd(\u0027--name-only\u0027, upstream_commit, args)\n    diff_output \u003d RunGit(changed_files_cmd)\n    \nand this is what we then feed to rustfmt:\n\n    rust_diff_files \u003d [x for x in diff_files if MatchingFileType(x, RUST_EXTS)]\n    ...\n    if opts.use_rust_fmt:\n      rust_fmt_return_value \u003d _RunRustFmt(\n          opts, rust_diff_files, top_dir, upstream_commit)\n      if rust_fmt_return_value \u003d\u003d 2:\n        return_value \u003d 2\n\nFWIW, I\u0027ve also tried editing/misformatting third_party/flatbuffers/src/samples/sample_binary.rs and `git cl presubmit` didn\u0027t complain.  OTOH, after editing/misformatting build/rust/tests/test_rust_source_set/main.rs I was told by `git cl presubmit` that \"The src directory requires source formatting. Please run: git cl format\"",
+      "parentUuid": "57ade982_82277491",
+      "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cb60209_0251d9b7",
@@ -35,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe3e7887_8bb4ec03",
+        "filename": "rustfmt.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-27T22:40:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cb60209_0251d9b7",
+      "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8f0e9ba_0a482a94",
@@ -48,6 +101,24 @@
       "writtenOn": "2021-09-27T21:31:27Z",
       "side": 1,
       "message": "I don\u0027t think this hard-coded version number is OK, even temporarily. I\u0027d expect us to roll the Rust version fairly often and we don\u0027t want to have to rev depot_tools each time.\n\nEither we need to fix the path to rustfmt (first step is https://chromium-review.googlesource.com/c/chromium/src/+/3188213) or, failing that, this CL needs to figure out the right version number. As we discussed, it\u0027s hard for depot_tools to rely on `gn` so - failing all else - I think this CL should list this directory and pick whatever version is found.\n\nAnother option would be to list the currently active version in a file within the Chromium source tree.",
+      "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2676a5cc_3f76c64b",
+        "filename": "rustfmt.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-27T22:40:44Z",
+      "side": 1,
+      "message": "\u003e I don\u0027t think this hard-coded version number is OK, even temporarily. I\u0027d expect us to roll the Rust version fairly often and we don\u0027t want to have to rev depot_tools each time.\n\nAck.\n\n\u003e Either we need to fix the path to rustfmt (first step is https://chromium-review.googlesource.com/c/chromium/src/+/3188213) or, failing that, this CL needs to figure out the right version number. As we discussed, it\u0027s hard for depot_tools to rely on `gn` so - failing all else - I think this CL should list this directory and pick whatever version is found.\n\u003e \n\u003e Another option would be to list the currently active version in a file within the Chromium source tree.\n\nThe options above sound good and seem to be listed in my order of preference, so let me wait for https://chromium-review.googlesource.com/c/chromium/src/+/3188213 to land.",
+      "parentUuid": "c8f0e9ba_0a482a94",
       "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8b1c161_2016d516",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 763,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-09-27T22:34:32Z",
+      "side": 1,
+      "message": "Tested this and I\u0027m getting the following error with your change:\n\n_____ src at refs/changes/27/3162827/1\n[0:00:04] Cannot fast-forward merge, attempt to rebase? (y)es / (q)uit / (s)kip :\n----------------------------------------\nError: 1\u003e Background task requires input. Rerun gclient with --jobs\u003d1 so that\n1\u003e interaction is possible.\n\nGiven that we would run this in builder, we can\u0027t have such interaction. \n\nPerhaps there\u0027s no easy fix here, maybe we need to step back and understand a bit better all the use cases for gclient sync.",
+      "revId": "71a532b742831db88dd83ac6e0383bb7716bc55b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

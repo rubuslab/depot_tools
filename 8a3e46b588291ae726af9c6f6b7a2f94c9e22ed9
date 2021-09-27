@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57ade982_82277491",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337473
+      },
+      "writtenOn": "2021-09-27T21:31:27Z",
+      "side": 1,
+      "message": "I don\u0027t think we can hard code the version number but otherwise this looks good.\n\n(I\u0027m assuming there is some sort of exception policy to avoid code in //third_party getting formatted with either clang-format or rustfmt. It would seem undesirable for us to inadvertently fork 3p Rust crates just by formatting their code with, for instance, a different version of rustfmt).",
+      "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cb60209_0251d9b7",
+        "filename": "rustfmt.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1337473
+      },
+      "writtenOn": "2021-09-27T21:31:27Z",
+      "side": 1,
+      "message": "Could you instead just check for the existence of `rustfmt` at the expected location? (I don\u0027t have strong views, but it would avoid one more hard-coded check).",
+      "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8f0e9ba_0a482a94",
+        "filename": "rustfmt.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1337473
+      },
+      "writtenOn": "2021-09-27T21:31:27Z",
+      "side": 1,
+      "message": "I don\u0027t think this hard-coded version number is OK, even temporarily. I\u0027d expect us to roll the Rust version fairly often and we don\u0027t want to have to rev depot_tools each time.\n\nEither we need to fix the path to rustfmt (first step is https://chromium-review.googlesource.com/c/chromium/src/+/3188213) or, failing that, this CL needs to figure out the right version number. As we discussed, it\u0027s hard for depot_tools to rely on `gn` so - failing all else - I think this CL should list this directory and pick whatever version is found.\n\nAnother option would be to list the currently active version in a file within the Chromium source tree.",
+      "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

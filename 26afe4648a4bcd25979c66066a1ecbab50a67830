@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75ccf228_c389250a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2021-09-28T15:12:29Z",
+      "side": 1,
+      "message": "Can you verify if this will correctly find a rustfmt.toml in chromium/src/?",
+      "revId": "26afe4648a4bcd25979c66066a1ecbab50a67830",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd59d3d8_a73f7dc0",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 5082,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2021-09-28T15:12:29Z",
+      "side": 1,
+      "message": "nit: TODO(crbug.com/XYZ): is the usual format for todos",
+      "range": {
+        "startLine": 5082,
+        "startChar": 4,
+        "endLine": 5082,
+        "endChar": 35
+      },
+      "revId": "26afe4648a4bcd25979c66066a1ecbab50a67830",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b624140a_29e7f837",
+        "filename": "rustfmt.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2021-09-28T15:12:29Z",
+      "side": 1,
+      "message": "Once we get a nightly compiler into our toolchain, I think we will move it to there, but otherwise this path shouldn\u0027t change. Not that sharing is bad but not sure if it\u0027s worth too much effort.",
+      "revId": "26afe4648a4bcd25979c66066a1ecbab50a67830",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

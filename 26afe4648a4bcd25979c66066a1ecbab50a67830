@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16ab0a5c_56fb94ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-28T17:25:34Z",
+      "side": 1,
+      "message": "Yes - it does take a top-level .rustfmt.toml file into account.  I\u0027ll add one to the Chromium CL here: https://chromium-review.googlesource.com/c/chromium/src/+/3187872",
+      "parentUuid": "6c9af2f0_87d71542",
+      "revId": "26afe4648a4bcd25979c66066a1ecbab50a67830",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd59d3d8_a73f7dc0",
@@ -59,6 +77,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "381318f2_2ac1c53e",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 5082,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-28T17:25:34Z",
+      "side": 1,
+      "message": "Done.  I think that at one point I was told (or decided myself?) to promote https (over http) by explicitly listing it in comments.  But it wasn\u0027t official and I don\u0027t remember the source of this guidance.  So let\u0027s just be consistent with *some* other TODO comments here (this file is not very consistent :-).",
+      "parentUuid": "cd59d3d8_a73f7dc0",
+      "range": {
+        "startLine": 5082,
+        "startChar": 4,
+        "endLine": 5082,
+        "endChar": 35
+      },
+      "revId": "26afe4648a4bcd25979c66066a1ecbab50a67830",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b624140a_29e7f837",
@@ -72,6 +114,24 @@
       "writtenOn": "2021-09-28T15:12:29Z",
       "side": 1,
       "message": "Once we get a nightly compiler into our toolchain, I think we will move it to there, but otherwise this path shouldn\u0027t change. Not that sharing is bad but not sure if it\u0027s worth too much effort.",
+      "revId": "26afe4648a4bcd25979c66066a1ecbab50a67830",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7ba89c0_de32dc13",
+        "filename": "rustfmt.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-28T17:25:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b624140a_29e7f837",
       "revId": "26afe4648a4bcd25979c66066a1ecbab50a67830",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

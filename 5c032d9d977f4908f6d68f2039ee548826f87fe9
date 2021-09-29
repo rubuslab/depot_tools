@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d19f0ba4_c4db9786",
+        "filename": "rust_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-29T00:07:13Z",
+      "side": 1,
+      "message": "Old file/comment - resolving...",
+      "parentUuid": "0b515c99_1d674b84",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "5c032d9d977f4908f6d68f2039ee548826f87fe9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "06af55b2_5f4ddeef",

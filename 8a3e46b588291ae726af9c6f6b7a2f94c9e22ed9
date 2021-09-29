@@ -175,6 +175,24 @@
       "parentUuid": "8e7d14c9_628108f2",
       "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05cf79bb_2774aa27",
+        "filename": "rustfmt.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-29T00:07:13Z",
+      "side": 1,
+      "message": "This has landed now (thanks Adrian!).",
+      "parentUuid": "2d2c7faf_3ba43c5a",
+      "revId": "8a3e46b588291ae726af9c6f6b7a2f94c9e22ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

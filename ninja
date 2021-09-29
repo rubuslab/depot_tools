@@ -12,7 +12,7 @@ cat <<-EOF
 No prebuilt ninja binary was found for this system.
 Try building your own binary by doing:
   cd ~
-  git clone https://github.com/ninja-build/ninja.git -b v1.8.2
+  git clone https://github.com/ninja-build/ninja.git -b v1.10.2
   cd ninja && ./configure.py --bootstrap
 Then add ~/ninja/ to your PATH.
 EOF
@@ -22,12 +22,8 @@ case "$OS" in
   Linux)
     MACHINE=$(uname -m)
     case "$MACHINE" in
-      i?86|x86_64)
-        LONG_BIT=$(getconf LONG_BIT)
-        # We know we are on x86 but we need to use getconf to determine
-        # bittage of the userspace install (e.g. when running 32-bit userspace
-        # on x86_64 kernel)
-        exec "${THIS_DIR}/ninja-linux${LONG_BIT}" "$@";;
+      x86_64)
+        exec "${THIS_DIR}/ninja-linux64" "$@";;
       *)
         echo Unknown architecture \($MACHINE\) -- unable to run ninja.
         print_help

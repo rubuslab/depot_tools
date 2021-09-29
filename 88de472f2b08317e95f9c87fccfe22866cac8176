@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "472505e4_671f0cad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2021-09-29T21:40:29Z",
+      "side": 1,
+      "message": "I think we don\u0027t want to commit binary anymore in this repository.\nAnd ninja update is tracked in https://bugs.chromium.org/p/chromium/issues/detail?id\u003d931218",
+      "revId": "88de472f2b08317e95f9c87fccfe22866cac8176",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1cff5b4_9560251e",
+        "filename": "rustfmt.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-29T14:04:17Z",
+      "side": 1,
+      "message": "depot_tools/rustfmt.py is mostly based on depot_tools/clang_format.py",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 1
+      },
+      "revId": "dac0d83ca54007ef50e89c30b009bbcb7985025e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9e2d31f_37a09dff",
+        "filename": "rustfmt.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2021-09-29T14:04:17Z",
+      "side": 1,
+      "message": "danakj@ points out that \"Once we get a nightly compiler into our toolchain, I think we will move it to there, but otherwise this path shouldn\u0027t change. Not that sharing is bad but not sure if it\u0027s worth too much effort.\"",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 78
+      },
+      "revId": "dac0d83ca54007ef50e89c30b009bbcb7985025e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

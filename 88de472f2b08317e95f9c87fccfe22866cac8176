@@ -16,6 +16,23 @@
       "message": "I think we don\u0027t want to commit binary anymore in this repository.\nAnd ninja update is tracked in https://bugs.chromium.org/p/chromium/issues/detail?id\u003d931218",
       "revId": "88de472f2b08317e95f9c87fccfe22866cac8176",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cf644d7_935633c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-09-30T20:41:25Z",
+      "side": 1,
+      "message": "So, ideally we\u0027d switch to using CIPD-provided binaries and stop checking in binaries, but I haven\u0027t figure out exactly how I want to do that, and trying to do that *at the same time* as upgrading the ninja version is probably a bad idea.\n\nGiven that the binaries aren\u0027t really that big, I\u0027m fine with adding in one more binary version for now, and then figuring out how to move to CIPD separately.\n\nSo, I\u0027m actually mostly okay with this. I\u0027d like to defer the actual review/approval to thakis@ to make sure we think this\u0027ll work with the current chromium builds and won\u0027t hit other weird timestamp issues.\n\n(we should probably take scottmg@ off the OWNERS list also, for what it\u0027s worth).",
+      "revId": "88de472f2b08317e95f9c87fccfe22866cac8176",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

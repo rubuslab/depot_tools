@@ -16,6 +16,24 @@
       "message": "lgtm % please update it in cr-buildbucket\u0027s settings.cfg too (infradata/config)",
       "revId": "a44f9b28406b6a008cb36d2ed3d8b9b950179dc0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5274031_e50ec1d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1178685
+      },
+      "writtenOn": "2021-09-30T00:12:22Z",
+      "side": 1,
+      "message": "will do.",
+      "parentUuid": "212bd9c3_d8707018",
+      "revId": "a44f9b28406b6a008cb36d2ed3d8b9b950179dc0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

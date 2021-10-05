@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb5f6811_a0533c04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-05T23:54:46Z",
+      "side": 1,
+      "message": "Nit: add a test in https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:tests/gerrit_client_test.py",
+      "revId": "0669bb07c8712169afc320be580dea521d7f1a78",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -86,6 +86,24 @@
       "message": "I agree with the revert to get people unblocked. Please file a bug to get depot_tools fixed and then re-land this change.",
       "revId": "1c856218065f84f6edb678f0564aceebe676745c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27513818_a40003e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-05T21:50:17Z",
+      "side": 1,
+      "message": "Thanks to the security team, we were able to fix the issue. Patch here: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3206906",
+      "parentUuid": "df7ac8b2_63fb14bf",
+      "revId": "1c856218065f84f6edb678f0564aceebe676745c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

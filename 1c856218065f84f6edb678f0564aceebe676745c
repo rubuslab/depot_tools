@@ -69,6 +69,23 @@
       "parentUuid": "5373ce22_bf369391",
       "revId": "1c856218065f84f6edb678f0564aceebe676745c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df7ac8b2_63fb14bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1331721
+      },
+      "writtenOn": "2021-10-05T20:47:56Z",
+      "side": 1,
+      "message": "I agree with the revert to get people unblocked. Please file a bug to get depot_tools fixed and then re-land this change.",
+      "revId": "1c856218065f84f6edb678f0564aceebe676745c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,24 @@
       "message": "I\u0027m curious about tests/my_activity_test.py, why is this file include in the CL if there is no diff? Or is there one?",
       "revId": "5cdc17a5064bf2d874a48c980072aadf99935a74",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1524c401_9f65b5e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-05T22:26:23Z",
+      "side": 1,
+      "message": "added exec permissions:\n\nold mode 100644\nnew mode 100755",
+      "parentUuid": "4bb5d788_b4dde1c5",
+      "revId": "5cdc17a5064bf2d874a48c980072aadf99935a74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

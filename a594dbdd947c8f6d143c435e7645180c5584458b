@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e50a4e60_1ae412dd",
+        "filename": "my_activity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-10-05T22:22:43Z",
+      "side": 0,
+      "message": "Should this be removed?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 37
+      },
+      "revId": "a594dbdd947c8f6d143c435e7645180c5584458b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

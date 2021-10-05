@@ -1342,7 +1342,7 @@ def ListRelevantPresubmitFiles(files, root):
   return results
 
 
-class GetTryMastersExecuter(object):
+class GetTryExecuter(object):
   @staticmethod
   def ExecPresubmitScript(script_text, presubmit_path, project, change):
     """Executes GetPreferredTryMasters() from a single presubmit script.
@@ -1366,11 +1366,11 @@ class GetTryMastersExecuter(object):
     function_name = 'GetPreferredTryMasters'
     if function_name not in context:
       return {}
-    get_preferred_try_masters = context[function_name]
-    if not len(inspect.getargspec(get_preferred_try_masters)[0]) == 2:
+    get_preferred_try_executer = context[function_name]
+    if not len(inspect.getargspec(get_preferred_try_executer)[0]) == 2:
       raise PresubmitFailure(
           'Expected function "GetPreferredTryMasters" to take two arguments.')
-    return get_preferred_try_masters(project, change)
+    return get_preferred_try_executer(project, change)
 
 
 class GetPostUploadExecuter(object):
@@ -1440,7 +1440,7 @@ def DoGetTryMasters(change,
   if not presubmit_files and verbose:
     output_stream.write('Warning, no PRESUBMIT.py found.\n')
   results = {}
-  executer = GetTryMastersExecuter()
+  executer = GetTryExecuter()
 
   if default_presubmit:
     if verbose:

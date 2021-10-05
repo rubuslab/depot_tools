@@ -893,10 +893,10 @@ def CheckChangeOnCommit(input_api, output_api):
           'on the file to figure out who to ask for help.\n')
       self.assertEqual(sys.stdout.getvalue(), text)
 
-  def testGetTryMastersExecuter(self):
+  def testGetTryExecuter(self):
     change = self.ExampleChange(
         extra_lines=['STORY=http://tracker.com/42', 'BUG=boo\n'])
-    executer = presubmit.GetTryMastersExecuter()
+    executer = presubmit.GetTryExecuter()
     self.assertEqual({}, executer.ExecPresubmitScript('', '', '', change))
     self.assertEqual({},
         executer.ExecPresubmitScript('def foo():\n  return\n', '', '', change))

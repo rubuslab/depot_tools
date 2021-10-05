@@ -51,6 +51,24 @@
       "message": "We should fix the issue at the client side (appears to be related to a cert from Let\u0027s Encrypt that expired on 1 Oct 2021) instead of reverting.",
       "revId": "1c856218065f84f6edb678f0564aceebe676745c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d32f7d54_d08a2c90",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-05T17:53:33Z",
+      "side": 1,
+      "message": "I agree we should fix, but folks can\u0027t use my_activity right now due to it. This revert is to buy us some time while we figure out what needs to change in depot_tools to handle it.\n\nRoot cause: https://letsencrypt.org/docs/dst-root-ca-x3-expiration-september-2021/",
+      "parentUuid": "5373ce22_bf369391",
+      "revId": "1c856218065f84f6edb678f0564aceebe676745c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

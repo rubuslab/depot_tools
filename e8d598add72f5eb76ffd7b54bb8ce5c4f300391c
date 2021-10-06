@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b1d9868_50ee3cef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-06T00:08:18Z",
+      "side": 1,
+      "message": "Actually, after thinking a bit more; this could be confusing. We should rename function name first and use that name, but that will require significant refactoring.",
+      "revId": "e8d598add72f5eb76ffd7b54bb8ce5c4f300391c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

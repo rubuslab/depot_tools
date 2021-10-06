@@ -16,6 +16,24 @@
       "message": "Nit: add a test in https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:tests/gerrit_client_test.py",
       "revId": "0669bb07c8712169afc320be580dea521d7f1a78",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34b04240_a7dcea0e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2021-10-06T00:31:06Z",
+      "side": 1,
+      "message": "Done. (Also ran `git cl format`)",
+      "parentUuid": "cb5f6811_a0533c04",
+      "revId": "0669bb07c8712169afc320be580dea521d7f1a78",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c28bc12_1e829bb7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-10-07T20:51:45Z",
+      "side": 1,
+      "message": "This seems like the right thing to do, though it may break chromium/src/.vpython3 at the moment since it no longer validates on mac-arm64. And I\u0027m not sure about any other broken specs. Any thoughts on how this should be rolled out?\n",
+      "revId": "51cde0fd75f900bac05d51c4fa45057869721c18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "This seems like the right thing to do, though it may break chromium/src/.vpython3 at the moment since it no longer validates on mac-arm64. And I\u0027m not sure about any other broken specs. Any thoughts on how this should be rolled out?\n",
       "revId": "51cde0fd75f900bac05d51c4fa45057869721c18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f89ab57_b5a99275",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-10-07T20:55:35Z",
+      "side": 1,
+      "message": "I would get things passing first, and then land this. \n\nOther possible alternatives: \n\n1) we could have an allowlist of repos that are allowed to fail temporarily, if you want to enable this for non-chromium/src repos ...\n\n2) we could add a \u0027check_vpython3_also\u0027 flag, default it to False, add an explicit call w/ the flag to chromium/src, then change the flag to default to True, etc ...\n\nAdd a separate check_vpython3_submit call that repos could add?",
+      "revId": "51cde0fd75f900bac05d51c4fa45057869721c18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1604,7 +1604,8 @@ def CheckVPythonSpec(input_api, output_api, file_filter=None):
   Returns:
     A list of input_api.Command objects containing verification commands.
   """
-  file_filter = file_filter or (lambda f: f.LocalPath().endswith('.vpython'))
+  file_filter = file_filter or (
+      lambda f: f.LocalPath().endswith(('.vpython', '.vpython3')))
   affected_files = input_api.AffectedTestableFiles(file_filter=file_filter)
   affected_files = map(lambda f: f.AbsoluteLocalPath(), affected_files)
 

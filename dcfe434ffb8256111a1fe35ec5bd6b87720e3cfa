@@ -22,6 +22,30 @@
       },
       "revId": "dcfe434ffb8256111a1fe35ec5bd6b87720e3cfa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c550dabd_d75a9117",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-14T21:55:20Z",
+      "side": 1,
+      "message": "See description of reland. lt;dr each gsutil process will spawn N(core) processes.",
+      "parentUuid": "bc4136e0_c30034e6",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 44
+      },
+      "revId": "dcfe434ffb8256111a1fe35ec5bd6b87720e3cfa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

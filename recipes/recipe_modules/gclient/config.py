@@ -456,6 +456,13 @@ def tint(c):
   c.got_revision_mapping['tint'] = 'got_revision'
 
 @config_ctx()
+def gerrit(c):
+  s = c.solutions.add()
+  s.name = 'gerrit'
+  s.url = 'https://gerrit.googlesource.com/gerrit.git'
+  c.got_revision_mapping['gerrit'] = 'got_revision'
+
+@config_ctx()
 def gerrit_plugins_binary_size(c):
   s = c.solutions.add()
   s.name = 'gerrit_plugins_binary_size'

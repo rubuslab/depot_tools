@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8dd3fc8_5e5f80bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-14T22:37:06Z",
+      "side": 1,
+      "message": "nit comment, to avoid having to bot_update calls.",
+      "revId": "72ab759dd1074fa3dfe316a837683cef7342e647",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93c9021b_b2325c8e",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-14T22:37:06Z",
+      "side": 1,
+      "message": "I think you should add:\n  @config_ctx(includes\u003d[\u0027gerrit\u0027])\n\nand for all other plugins too",
+      "revId": "72ab759dd1074fa3dfe316a837683cef7342e647",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

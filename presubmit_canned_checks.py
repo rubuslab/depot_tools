@@ -712,23 +712,31 @@ def GetUnitTestsInDirectory(input_api,
                       run_on_python3, skip_shebang_check)
 
 
+def _HasPy3Shebang(test):
+  with open(test) as f:
+    maybe_shebang = f.readline()
+  return maybe_shebang.startswith('#!') and 'python3' in maybe_shebang
+
+
 def GetUnitTests(input_api,
                  output_api,
                  unit_tests,
                  env=None,
                  run_on_python2=True,
                  run_on_python3=True,
-                 skip_shebang_check=False):
+                 skip_shebang_check=False,
+                 skip_python2_on_python3_shebangs=False):
   """Runs all unit tests in a directory.
 
   On Windows, sys.executable is used for unit tests ending with ".py".
   """
   assert run_on_python3 or run_on_python2, (
       'At least one of "run_on_python2" or "run_on_python3" must be set.')
-  def has_py3_shebang(test):
-    with open(test) as f:
-      maybe_shebang = f.readline()
-    return maybe_shebang.startswith('#!') and 'python3' in maybe_shebang
+
+  if skip_python2_on_python3_shebangs:
+    assert not skip_shebang_check, (
+        'Shebang checking must be enabled if skipping python2 tests is '
+        'requested.')
 
   # We don't want to hinder users from uploading incomplete patches.
   if input_api.is_committing:
@@ -751,28 +759,35 @@ def GetUnitTests(input_api,
           kwargs=kwargs,
           message=message_type))
     else:
-      test_run = False
       # TODO(crbug.com/1223478): The intent for this line was to run the test
       # on python3 if the file has a shebang OR if it was explicitly requested
       # to run on python3. Since tests have been broken since this landed, we
       # introduced the |skip_shebang_check| argument to work around the issue
       # until every caller in Chromium has been fixed.
-      if (skip_shebang_check or has_py3_shebang(unit_test)) and run_on_python3:
+      if skip_shebang_check:
+        run_py3 = run_on_python3
+        run_py2 = run_on_python2
+      elif run_on_python3 and _HasPy3Shebang(unit_test):
+        run_py3 = True
+        run_py2 = run_on_python2 and not skip_python2_on_python3_shebangs
+      else:
+        run_py3 = False
+        run_py2 = run_on_python2
+
+      if run_py3:
         results.append(input_api.Command(
             name=unit_test,
             cmd=cmd,
             kwargs=kwargs,
             message=message_type,
             python3=True))
-        test_run = True
-      if run_on_python2:
+      if run_py2:
         results.append(input_api.Command(
             name=unit_test,
             cmd=cmd,
             kwargs=kwargs,
             message=message_type))
-        test_run = True
-      if not test_run:
+      if not (run_py2 or run_py3):
         output_api.PresubmitPromptWarning(
             "Some python tests were not run. You may need to add\n"
             "skip_shebang_check=True for python3 tests.",

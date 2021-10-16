@@ -912,7 +912,10 @@ def RunPythonUnitTests(input_api, *args, **kwargs):
       GetPythonUnitTests(input_api, *args, **kwargs), False)
 
 
-def _FetchAllFiles(input_api, files_to_check, files_to_skip):
+def _FetchAllFiles(input_api,
+                   files_to_check,
+                   files_to_skip,
+                   python_version_filter):
   """Hack to fetch all files."""
   # We cannot use AffectedFiles here because we want to test every python
   # file on each single python change. It's because a change in a python file
@@ -925,6 +928,7 @@ def _FetchAllFiles(input_api, files_to_check, files_to_skip):
     for item in filters:
       if input_api.re.match(item, filepath):
         return True
+
     return False
 
   files = []
@@ -939,6 +943,10 @@ def _FetchAllFiles(input_api, files_to_check, files_to_skip):
     for item in filenames:
       filepath = input_api.os_path.join(dirpath, item)[path_len + 1:]
       if Find(filepath, files_to_check) and not Find(filepath, files_to_skip):
+        if python_version_filter is not None:
+          inferred_version = 3 if _HasPy3Shebang(filepath) else 2
+          if inferred_version != python_version_filter:
+            continue
         files.append(filepath)
   return files
 
@@ -950,12 +958,18 @@ def GetPylint(input_api,
               disabled_warnings=None,
               extra_paths_list=None,
               pylintrc=None,
-              version='1.5'):
+              version='1.5',
+              filter_python_version=None):
   """Run pylint on python files.
 
   The default files_to_check enforces looking only at *.py files.
 
   Currently only pylint version '1.5', '2.6' and '2.7' are supported.
+
+  Valid values for filter_python_version are any of any of (None, 2, 3). If
+  None is passed, pylint will be run on all files. If 2 is passed, only python2
+  files will be linted. If `3` is passed, only all python3 files will be
+  linted.
   """
 
   files_to_check = tuple(files_to_check or (r'.*\.py$', ))
@@ -964,7 +978,13 @@ def GetPylint(input_api,
 
   assert version in ('1.5', '2.6', '2.7'), \
       'Unsupported pylint version: ' + version
-  python2 = (version == '1.5')
+
+  if filter_python_version is None:
+    python2 = (version == '1.5')
+  else:
+    assert filter_python_version in (2, 3), \
+        'Unsupported python filter version: ' + str(filter_python_version)
+    python2 = filter_python_version == 2
 
   if input_api.is_committing:
     error_type = output_api.PresubmitError
@@ -1000,7 +1020,10 @@ def GetPylint(input_api,
   if disabled_warnings:
     extra_args.extend(['-d', ','.join(disabled_warnings)])
 
-  files = _FetchAllFiles(input_api, files_to_check, files_to_skip)
+  files = _FetchAllFiles(input_api,
+                         files_to_check,
+                         files_to_skip,
+                         filter_python_version)
   if not files:
     return []
   files.sort()

@@ -34,6 +34,24 @@
       "parentUuid": "35755b50_a0283e78",
       "revId": "00ce757ec1061e4be2a6885f201baafba983fc01",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c8b3463_8ff0a96f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 1158719
+      },
+      "writtenOn": "2021-10-18T20:32:50Z",
+      "side": 1,
+      "message": "swapping to an explicit python3-only allowlist SGTM. that\u0027d also obviate the need for the second patch in this series, so let me write that up and get comments. :)",
+      "parentUuid": "26f65f4f_f5a2b0cf",
+      "revId": "00ce757ec1061e4be2a6885f201baafba983fc01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

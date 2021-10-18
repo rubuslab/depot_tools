@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a411045_cf5f4db4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1158719
+      },
+      "writtenOn": "2021-10-18T17:55:56Z",
+      "side": 1,
+      "message": "hey,\n\ni\u0027m trying to land a few py2-\u003epy3 upgrades in build.git, which led me here. :) \n\nthese changes (mostly the linting one after this) tend toward simplicity+preservation of functionality over niceness, since i don\u0027t know all of the ways in which this code is used.\n\nPTAL :) ",
+      "revId": "8f2716b0ec64440cef9d8eabd89aa8b43ad158cf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

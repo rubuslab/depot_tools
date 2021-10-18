@@ -50,6 +50,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "504e11af_b58702b8",
+        "filename": "git-crrev-parse",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-18T20:45:13Z",
+      "side": 1,
+      "message": "All chromium repos migrated so it\u0027s safe",
+      "parentUuid": "2beb7207_1afe5fa5",
+      "range": {
+        "startLine": 38,
+        "startChar": 20,
+        "endLine": 38,
+        "endChar": 24
+      },
+      "revId": "455839fb1d68f38fce71cabc5901ed92ed004d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "2a4a6dc7_1440ea64",
         "filename": "git-crrev-parse",
         "patchSetId": 1
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "You sure you don\u0027t want this to be `refs/heads/(master|main)` instead?",
       "parentUuid": "2a4a6dc7_1440ea64",
+      "range": {
+        "startLine": 49,
+        "startChar": 35,
+        "endLine": 49,
+        "endChar": 37
+      },
+      "revId": "455839fb1d68f38fce71cabc5901ed92ed004d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efe6fd16_17670ece",
+        "filename": "git-crrev-parse",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-18T20:45:13Z",
+      "side": 1,
+      "message": "This will match branch heads too, e.g. refs/branch-heads/4664. Not sure if that\u0027s desirable, but based on the comments in this file - probably not.\n\nPerhaps what Dirk suggested, or:\n\n grep_str\u003d\"^Cr-Commit-Position: refs/heads/.*@{#$num}\"",
+      "parentUuid": "ed90ba32_8a38fa19",
       "range": {
         "startLine": 49,
         "startChar": 35,

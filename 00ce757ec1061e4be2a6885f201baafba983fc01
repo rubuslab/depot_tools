@@ -16,6 +16,24 @@
       "message": "Shebang shouldn\u0027t be used for non executable files, so I don\u0027t think this is a good way to solve linting based on py version. Also, 1.5 can\u0027t be used with py3.\n\nInstead, I would probably encourage use of 2.x version (probably 2.7) for py3 (or code that is py2 + py3 compatible, in case for libraries). PRESUBMIT can filter files based on allowlist / blocklist so users can set two GetPylint calls.",
       "revId": "00ce757ec1061e4be2a6885f201baafba983fc01",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26f65f4f_f5a2b0cf",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2021-10-18T18:50:19Z",
+      "side": 1,
+      "message": "I agree. I would prefer that we not add more stuff to the API and just be explicit about things for the next couple months. We should be able to drop all of this once the Py3 migration is done (likely in early Q1).",
+      "parentUuid": "35755b50_a0283e78",
+      "revId": "00ce757ec1061e4be2a6885f201baafba983fc01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

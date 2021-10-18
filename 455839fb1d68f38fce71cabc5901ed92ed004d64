@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7f678b8_240b4939",
+        "filename": "git-crrev-parse",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2021-10-18T20:25:01Z",
+      "side": 1,
+      "message": "is it safe to change this reference yet? Would presumably break on any repos that have not yet switched over.",
+      "range": {
+        "startLine": 38,
+        "startChar": 20,
+        "endLine": 38,
+        "endChar": 24
+      },
+      "revId": "455839fb1d68f38fce71cabc5901ed92ed004d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a4a6dc7_1440ea64",
+        "filename": "git-crrev-parse",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2021-10-18T20:25:01Z",
+      "side": 1,
+      "message": "This is the actual fix.",
+      "range": {
+        "startLine": 49,
+        "startChar": 35,
+        "endLine": 49,
+        "endChar": 37
+      },
+      "revId": "455839fb1d68f38fce71cabc5901ed92ed004d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -51,6 +51,23 @@
       "parentUuid": "5f89ab57_b5a99275",
       "revId": "51cde0fd75f900bac05d51c4fa45057869721c18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55999c55_e5c6db8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2021-10-19T02:56:16Z",
+      "side": 1,
+      "message": "It looks like chromium\u0027s .vpython3 files have a number of validation errors probably due to the fact it was never being run. I suppose we\u0027ll have to chase all of these down before we can turn on the presubmit.",
+      "revId": "51cde0fd75f900bac05d51c4fa45057869721c18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -63,6 +63,30 @@
       },
       "revId": "bce7835539b9f3b0954d43a1407393dffe3368b1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c25abc3_9a0284f0",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-10-20T04:24:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e7d7111_cacbe2c7",
+      "range": {
+        "startLine": 1032,
+        "startChar": 43,
+        "endLine": 1032,
+        "endChar": 56
+      },
+      "revId": "bce7835539b9f3b0954d43a1407393dffe3368b1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

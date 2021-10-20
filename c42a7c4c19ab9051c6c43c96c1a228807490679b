@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a49466b_8f2b1ebf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-10-20T18:15:30Z",
+      "side": 1,
+      "message": "Nit: This sounds like the intent is to only allow setting \"bot-commit\u0027 by calling update_files(). Maybe reword like:\n\n\"Add option to always \"set bot-commit+1\" in update_files() method.\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 27,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "c42a7c4c19ab9051c6c43c96c1a228807490679b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

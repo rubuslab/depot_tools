@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "054c3e99_3dc1adb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-10-20T01:39:40Z",
+      "side": 1,
+      "message": "LGTM % comment",
+      "revId": "bce7835539b9f3b0954d43a1407393dffe3368b1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5ddb691_97f33eec",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-10-20T01:39:40Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 1032,
+        "startChar": 43,
+        "endLine": 1032,
+        "endChar": 56
+      },
+      "revId": "bce7835539b9f3b0954d43a1407393dffe3368b1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

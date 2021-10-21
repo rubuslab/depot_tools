@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "760d314c_18d3f563",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-10-21T17:34:56Z",
+      "side": 1,
+      "message": "Ah, yeah, I was assuming anyone using this command would be pulling all that info straight from the gerrit REST API docs. Added a note about that.",
+      "parentUuid": "049b498d_1024dc31",
+      "range": {
+        "startLine": 86,
+        "startChar": 49,
+        "endLine": 86,
+        "endChar": 70
+      },
+      "revId": "82b47bbabb941dfaacae9e335775e7e7743bd3c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5a9d6f27_dcfb24ed",
@@ -54,6 +78,30 @@
       "writtenOn": "2021-10-21T17:16:02Z",
       "side": 1,
       "message": "Seems GET is the default method. Can we clarify it in the help message?",
+      "range": {
+        "startLine": 98,
+        "startChar": 2,
+        "endLine": 99,
+        "endChar": 42
+      },
+      "revId": "82b47bbabb941dfaacae9e335775e7e7743bd3c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88f2c5e9_075231a3",
+        "filename": "gerrit_client.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1002222
+      },
+      "writtenOn": "2021-10-21T17:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a9d6f27_dcfb24ed",
       "range": {
         "startLine": 98,
         "startChar": 2,

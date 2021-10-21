@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "649e7c38_c06455e4",
+        "filename": "yapf",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-10-21T19:55:44Z",
+      "side": 1,
+      "message": "Josip will know more, but I\u0027ve heard that shebangs aren\u0027t respected, i.e. this may still run with python2. If that\u0027s the case, I\u0027d wait until that\u0027s resolved and python2 is officially not supported.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "0ffb1005c33be1771b3a3ee1471e1f299d47a5ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

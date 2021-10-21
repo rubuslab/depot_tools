@@ -22,6 +22,30 @@
       },
       "revId": "0ffb1005c33be1771b3a3ee1471e1f299d47a5ca",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed7c2d1f_f08292c1",
+        "filename": "yapf",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-21T20:24:40Z",
+      "side": 1,
+      "message": "Yes, users and scripts may still call this file with py2 interpreter and this is indeed the case for yapf:\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d5264;drc\u003db4d3954db70ed8e34838cd95bec4da7189c80983\n\nSo we need to keep py2 until we officially drop the support.",
+      "parentUuid": "649e7c38_c06455e4",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "0ffb1005c33be1771b3a3ee1471e1f299d47a5ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

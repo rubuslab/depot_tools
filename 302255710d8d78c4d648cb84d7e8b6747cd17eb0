@@ -33,6 +33,23 @@
       "message": "+jochen for owners",
       "revId": "302255710d8d78c4d648cb84d7e8b6747cd17eb0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95d28a32_911a5f80",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2021-10-24T21:44:30Z",
+      "side": 1,
+      "message": "maybe you can list the whitespace checks that this keeps _enabled_ in the cl desc, so it\u0027s clear they\u0027re all intentional, and possibly why (it\u0027s clear with a careful reading of the bug, but might as well save future code archeologist the minute while we have it paged in.)",
+      "revId": "302255710d8d78c4d648cb84d7e8b6747cd17eb0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -33,6 +33,24 @@
       "message": "I would discourage using all those tags since there are more infrastructure pieces that need to be aware of those tags. For example, Gerrit itself (for indexing purposes and for creating links) would need to be updated, and there are likely many more things.\n\nBased on https://www.chromium.org/developers/contributing-code/-bug-syntax, we should support BUG and FIXED",
       "revId": "33793e9745adbc17a3e59830784035b38806e486",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66f85a34_bd3a2042",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1178,
+      "author": {
+        "id": 1396774
+      },
+      "writtenOn": "2021-10-25T17:38:18Z",
+      "side": 1,
+      "message": "Sounds good, done.",
+      "parentUuid": "2e589e66_a31f2a6d",
+      "revId": "33793e9745adbc17a3e59830784035b38806e486",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

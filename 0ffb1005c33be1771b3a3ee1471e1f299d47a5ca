@@ -46,6 +46,30 @@
       },
       "revId": "0ffb1005c33be1771b3a3ee1471e1f299d47a5ca",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c483bb7_6cd572cb",
+        "filename": "yapf",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1301133
+      },
+      "writtenOn": "2021-10-25T17:27:18Z",
+      "side": 1,
+      "message": "Done, keeping py2 support and just bumping the version.",
+      "parentUuid": "ed7c2d1f_f08292c1",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "0ffb1005c33be1771b3a3ee1471e1f299d47a5ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

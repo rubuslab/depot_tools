@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "ca291c69_07320154",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-26T21:13:21Z",
+      "side": 1,
+      "message": "presubmit only supports 1.5, 2.6 and 2.7, but users can still call it directly so we don\u0027t have a good way to check users. Let\u0027s ship this and see if something breaks.",
+      "parentUuid": "cb5d78e7_bbe4644d",
+      "revId": "e8c74128761cca852e1c1e89fdc06c6a6dbf5667",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "182450ac_8f0595b3",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -31,6 +49,24 @@
       "writtenOn": "2021-10-26T20:49:33Z",
       "side": 1,
       "message": "btw, running `git cl upload` for this on ToT took a ridiculous amount of time.  not sure how you guys tolerate this.\n\n $ time git cl upload\nreal    3m29.825s\nuser    14m16.214s\nsys     12m22.574s",
+      "revId": "e8c74128761cca852e1c1e89fdc06c6a6dbf5667",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a91a495f_ce1ffc7a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-26T21:13:21Z",
+      "side": 1,
+      "message": "Thanks for calling this out, I think we just got used to this long upload time. We could move many upload checks to cq.\n\nFiled: https://crbug.com/1263688",
+      "parentUuid": "182450ac_8f0595b3",
       "revId": "e8c74128761cca852e1c1e89fdc06c6a6dbf5667",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

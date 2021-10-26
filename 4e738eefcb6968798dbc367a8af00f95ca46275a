@@ -16,6 +16,23 @@
       "message": "LGTM for the purpose. quote_plus seems for HTML, while commit here is just plain string. \n\nLeave to source team, as they may have some context.",
       "revId": "4e738eefcb6968798dbc367a8af00f95ca46275a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04bc4fae_f7cf1bba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-10-26T16:46:22Z",
+      "side": 1,
+      "message": "I don\u0027t have context why it was used, probably just because other fields have to have it and only commit hash was used before.",
+      "revId": "4e738eefcb6968798dbc367a8af00f95ca46275a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

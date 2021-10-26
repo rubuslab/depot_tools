@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb5d78e7_bbe4644d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2021-10-26T20:49:33Z",
+      "side": 1,
+      "message": "not sure if there\u0027s a better way to check for users.  at least it\u0027ll be easy to revert.",
+      "revId": "e8c74128761cca852e1c1e89fdc06c6a6dbf5667",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "182450ac_8f0595b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2021-10-26T20:49:33Z",
+      "side": 1,
+      "message": "btw, running `git cl upload` for this on ToT took a ridiculous amount of time.  not sure how you guys tolerate this.\n\n $ time git cl upload\nreal    3m29.825s\nuser    14m16.214s\nsys     12m22.574s",
+      "revId": "e8c74128761cca852e1c1e89fdc06c6a6dbf5667",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

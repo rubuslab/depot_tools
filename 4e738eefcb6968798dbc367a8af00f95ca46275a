@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c20bf01_0107470d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2021-10-26T16:39:31Z",
+      "side": 1,
+      "message": "LGTM for the purpose. quote_plus seems for HTML, while commit here is just plain string. \n\nLeave to source team, as they may have some context.",
+      "revId": "4e738eefcb6968798dbc367a8af00f95ca46275a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

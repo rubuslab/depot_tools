@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cb625342_85400f1c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1368998
+      },
+      "writtenOn": "2021-11-02T15:40:37Z",
+      "side": 1,
+      "message": "I have tested this here ttps://crrev.com/i/4227983 . Without the second check we do not fail the presubmit on random whitespaces in main.star.",
+      "parentUuid": "3691e891_a0286689",
+      "revId": "7f7a225b2aae2c2830e063962fa94e2bddf33b2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f33ef71d_b38a84c4",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4

@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3691e891_a0286689",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2021-11-02T15:11:03Z",
+      "side": 1,
+      "message": "Doesn\u0027t CheckLucicfgGenOutput already check that the output is formatted? Why does there need to be a separate check?",
+      "revId": "7f7a225b2aae2c2830e063962fa94e2bddf33b2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f33ef71d_b38a84c4",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4

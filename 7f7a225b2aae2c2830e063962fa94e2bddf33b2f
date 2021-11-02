@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8db90cfd_5128f8aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2021-11-02T15:58:08Z",
+      "side": 1,
+      "message": "For a similar change in chromium/src, CheckLucicfgGenOutput caught it. If it\u0027s not being caught for you, that sounds like there\u0027s a bug in lucicfg validate that should be fixed rather than creating a separate check function.",
+      "parentUuid": "cb625342_85400f1c",
+      "revId": "7f7a225b2aae2c2830e063962fa94e2bddf33b2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f33ef71d_b38a84c4",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4

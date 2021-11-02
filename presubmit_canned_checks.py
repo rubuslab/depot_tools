@@ -1742,6 +1742,34 @@ def CheckChangedLUCIConfigs(input_api, output_api):
       outputs.append(out_f('Config validation: %s' % msg['text']))
   return outputs
 
+def CheckLucicfgFmtInput(input_api, output_api):
+  """Verifies if formating was applied on lucicfg Starlark files.
+
+  Runs the check unconditionally, regardless of what files are modified. Examine
+  input_api.AffectedFiles() yourself before using CheckLucicfgGenOutput if this
+  is a concern.
+
+  Assumes `lucicfg` binary is in PATH and the user is logged in.
+
+  Returns:
+    A list of input_api.Command objects containing verification commands.
+  """
+  return [
+      input_api.Command(
+        'lucicfg fmt',
+        [
+            'lucicfg' if not input_api.is_windows else 'lucicfg.bat',
+            'fmt', '-dry-run',
+            '-log-level', 'debug' if input_api.verbose else 'warning',
+        ],
+        {
+          'stderr': input_api.subprocess.STDOUT,
+          'shell': input_api.is_windows,  # to resolve *.bat
+          'cwd': input_api.PresubmitLocalPath(),
+        },
+        output_api.PresubmitError)
+  ]
+
 
 def CheckLucicfgGenOutput(input_api, output_api, entry_script):
   """Verifies configs produced by `lucicfg` are up-to-date and pass validation.

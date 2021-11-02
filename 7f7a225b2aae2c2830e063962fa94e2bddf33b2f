@@ -74,6 +74,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "73f73f4d_8a765b5e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1368998
+      },
+      "writtenOn": "2021-11-02T16:38:04Z",
+      "side": 1,
+      "message": "```\nlucicfg.config(\n...\n    lint_checks \u003d [\"none\", \"+formatting\"],\n```\nWas what what we were looking for. I\u0027ll be abandoning this CL then.",
+      "parentUuid": "27ca1889_bcaa3322",
+      "revId": "7f7a225b2aae2c2830e063962fa94e2bddf33b2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f33ef71d_b38a84c4",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4

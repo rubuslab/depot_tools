@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f33ef71d_b38a84c4",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1746,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2021-11-02T14:16:54Z",
+      "side": 1,
+      "message": "nit: formatting",
+      "range": {
+        "startLine": 1746,
+        "startChar": 17,
+        "endLine": 1746,
+        "endChar": 26
+      },
+      "revId": "7f7a225b2aae2c2830e063962fa94e2bddf33b2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74887970_9395b503",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1762,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2021-11-02T14:16:54Z",
+      "side": 1,
+      "message": "If reviewers find this useful, maybe share code with the function below, as there are just very few differences? E.g. a shared luci-command abstraction?",
+      "range": {
+        "startLine": 1762,
+        "startChar": 12,
+        "endLine": 1762,
+        "endChar": 30
+      },
+      "revId": "7f7a225b2aae2c2830e063962fa94e2bddf33b2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

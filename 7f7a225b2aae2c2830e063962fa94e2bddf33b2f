@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "27ca1889_bcaa3322",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1368998
+      },
+      "writtenOn": "2021-11-02T16:13:58Z",
+      "side": 1,
+      "message": "Strange. Reading the help messages for `luci validate` does not suggest at all that format for .star files is also checked ... I\u0027ll be testing this in Chromium ...",
+      "parentUuid": "8db90cfd_5128f8aa",
+      "revId": "7f7a225b2aae2c2830e063962fa94e2bddf33b2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f33ef71d_b38a84c4",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 4

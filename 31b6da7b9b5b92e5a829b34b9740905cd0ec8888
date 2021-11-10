@@ -16,6 +16,24 @@
       "message": "I think we need to update http://shortn/_oUkzXikSZa first.",
       "revId": "31b6da7b9b5b92e5a829b34b9740905cd0ec8888",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0dd59067_0bd93250",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1339017
+      },
+      "writtenOn": "2021-11-10T09:56:24Z",
+      "side": 1,
+      "message": "Can we land it now?",
+      "parentUuid": "9ef31894_86fda003",
+      "revId": "31b6da7b9b5b92e5a829b34b9740905cd0ec8888",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

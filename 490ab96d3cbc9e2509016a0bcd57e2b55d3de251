@@ -34,6 +34,24 @@
       "parentUuid": "f4af96dc_a2f8aec4",
       "revId": "490ab96d3cbc9e2509016a0bcd57e2b55d3de251",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61601837_79562f4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-11-13T01:40:40Z",
+      "side": 1,
+      "message": "Not as far as I know.\n\n\u003e The new merge-ort is likely to become the default strategy in a future version of Git\n\nFrom https://github.blog/2021-08-16-highlights-from-git-2-33/#merge-ort-a-new-merge-strategy\n\nSidenote: I wonder if there\u0027s a way to handle cases like this with a CL footer that tells the builder not to use cache?",
+      "parentUuid": "28579a12_aab6545d",
+      "revId": "490ab96d3cbc9e2509016a0bcd57e2b55d3de251",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

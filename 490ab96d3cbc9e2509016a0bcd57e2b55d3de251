@@ -16,6 +16,24 @@
       "message": "I don\u0027t think this is the right fix for the referenced bug.\n\nThe problem is that third_party/distributed_point_functions/src/ is populated by DEPS. User wanted to check additional code in chromium/src in that path, resulting in overriding files retrieved from DEPS.\n\nThe problem is that we don\u0027t know what the right order is (e.g. should DEPS override the files, or not). Our tooling shouldn\u0027t allow users to add custom files if the directory is managed by DEPS, but we also don\u0027t have that much control since DEPS is not natively supported by Git/Gerrit",
       "revId": "490ab96d3cbc9e2509016a0bcd57e2b55d3de251",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28579a12_aab6545d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-11-13T01:29:21Z",
+      "side": 1,
+      "message": "Ah, I see they are trying to remove DEPS in the same CL and we don\u0027t support that. This is fairly complex since we rely on previous build as cache. Maybe ort strategy worked this time for this particular case, but there could be where it fails.\n\nAre there any downsides to using ort?",
+      "parentUuid": "f4af96dc_a2f8aec4",
+      "revId": "490ab96d3cbc9e2509016a0bcd57e2b55d3de251",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

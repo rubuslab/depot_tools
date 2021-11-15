@@ -52,6 +52,24 @@
       "parentUuid": "28579a12_aab6545d",
       "revId": "490ab96d3cbc9e2509016a0bcd57e2b55d3de251",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74eb7efc_461722bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-11-15T23:06:33Z",
+      "side": 1,
+      "message": "Thanks for sharing the link, that was a good read. ort might be a good approach then, but I don\u0027t know if all builders run git 2.33 or higher. Have you tested this patch with led?\n\nAs for sidenote: Recipes are flexible enough so we can utilize a cl footer.",
+      "parentUuid": "61601837_79562f4a",
+      "revId": "490ab96d3cbc9e2509016a0bcd57e2b55d3de251",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

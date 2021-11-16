@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "06d1b8f4_27cb0cc2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-11-16T04:32:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ee237a4_cd7e46c1",
+      "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "e9ce5533_78e3ddf6",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -52,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4003aac_96dcb9f0",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-11-16T04:32:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d4e138cc_0452cbc6",
+      "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9074852_6607eb6d",
@@ -69,6 +105,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e03abd52_3e8dca57",
+        "filename": "recipes/recipe_modules/windows_sdk/resources/find_env_json.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-11-16T04:32:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9074852_6607eb6d",
+      "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7a1761aa_5c650269",
@@ -82,6 +136,24 @@
       "writtenOn": "2021-11-16T03:17:22Z",
       "side": 1,
       "message": "19041",
+      "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "622dc4b5_b48401a6",
+        "filename": "recipes/recipe_modules/windows_sdk/resources/find_env_json.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-11-16T04:32:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1761aa_5c650269",
       "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

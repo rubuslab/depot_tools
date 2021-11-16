@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16ebc1ab_7fbc45a0",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-11-16T05:53:33Z",
+      "side": 1,
+      "message": "Ah, oops; it is indeed ok, but not needed.\n\n(was previously `\"... %r\" % (target_arch,)` where I put the trailing , out of habit because otherwise if `target_arch` is somehow a tuple then all hell breaks loose...)",
+      "parentUuid": "86606bd1_bafea101",
+      "revId": "2df626f34a4bffeb0a5f2cc7b24444dbba408e66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "749b101a_d964ce2e",
@@ -48,6 +66,24 @@
       "writtenOn": "2021-11-16T04:57:52Z",
       "side": 1,
       "message": "Might be worth mentioning go/chromium-msvc-toolchain and go/windows-sdk-cipd-update here.",
+      "revId": "2df626f34a4bffeb0a5f2cc7b24444dbba408e66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e950de8d_84ed5462",
+        "filename": "recipes/recipe_modules/windows_sdk/resources/find_env_json.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2021-11-16T05:53:33Z",
+      "side": 1,
+      "message": "Done (though I put the mention in the module api.py)",
+      "parentUuid": "749b101a_d964ce2e",
       "revId": "2df626f34a4bffeb0a5f2cc7b24444dbba408e66",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

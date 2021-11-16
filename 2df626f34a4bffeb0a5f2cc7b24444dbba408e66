@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70c45717_536d4bb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1348151
+      },
+      "writtenOn": "2021-11-16T04:57:52Z",
+      "side": 1,
+      "message": "looks good - not a build/infra person though!",
+      "revId": "2df626f34a4bffeb0a5f2cc7b24444dbba408e66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86606bd1_bafea101",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1348151
+      },
+      "writtenOn": "2021-11-16T04:57:52Z",
+      "side": 1,
+      "message": "? (target_arch, ) # maybe this is ok but is the trailing , needed?",
+      "revId": "2df626f34a4bffeb0a5f2cc7b24444dbba408e66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "749b101a_d964ce2e",
+        "filename": "recipes/recipe_modules/windows_sdk/resources/find_env_json.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1348151
+      },
+      "writtenOn": "2021-11-16T04:57:52Z",
+      "side": 1,
+      "message": "Might be worth mentioning go/chromium-msvc-toolchain and go/windows-sdk-cipd-update here.",
+      "revId": "2df626f34a4bffeb0a5f2cc7b24444dbba408e66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

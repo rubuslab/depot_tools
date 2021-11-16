@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ee237a4_cd7e46c1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1348151
+      },
+      "writtenOn": "2021-11-16T03:17:22Z",
+      "side": 1,
+      "message": "bug: https://crbug.com/1250098",
+      "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9ce5533_78e3ddf6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1348151
+      },
+      "writtenOn": "2021-11-16T03:17:22Z",
+      "side": 1,
+      "message": "awesome!",
+      "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4e138cc_0452cbc6",
+        "filename": "recipes/recipe_modules/windows_sdk/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1348151
+      },
+      "writtenOn": "2021-11-16T03:17:22Z",
+      "side": 1,
+      "message": "I think in both cases it\u0027s rooted in win_sdk",
+      "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9074852_6607eb6d",
+        "filename": "recipes/recipe_modules/windows_sdk/resources/find_env_json.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1348151
+      },
+      "writtenOn": "2021-11-16T03:17:22Z",
+      "side": 1,
+      "message": "maybe just \u0027older\u0027 or something. I think it\u0027s partly an artifact of how we\u0027re packaging it.",
+      "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a1761aa_5c650269",
+        "filename": "recipes/recipe_modules/windows_sdk/resources/find_env_json.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1348151
+      },
+      "writtenOn": "2021-11-16T03:17:22Z",
+      "side": 1,
+      "message": "19041",
+      "revId": "c43b7d389d4fc53058d3b893e0e4bc7c3f8eb4eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -161,6 +161,72 @@ def CMDhead(parser, args):
   logging.info(result)
   write_result(result, opt)
 
+@subcommand.usage('[args ...]')
+def CMDdumpheads(parser, args):
+  (opt, args) = parser.parse_args(args)
+
+  host = urlparse.urlparse(opt.host).netloc
+  projects = gerrit_util.GetProjects(host)
+  for project in projects:
+    has_master = False
+    has_main = False
+    head = None
+    state = projects[project]['state']
+    last_master_commit = None
+    try:
+      branches = gerrit_util.GetBranches(host, project)
+      for branch in branches:
+        if branch['ref'] == 'HEAD':
+          head = branch['revision']
+        elif branch['ref'] == 'refs/heads/master':
+          has_master = True
+        elif branch['ref'] == 'refs/heads/main':
+          has_main = True
+    except Exception as e:
+      state =  ', '.join(str(e).split('\n'))
+    if has_master:
+      try:
+        reflog = gerrit_util.GetGerritRef(host, project, 'master', 1)
+        if len(reflog['log']) > 0:
+          last_master_commit = reflog['log'][0]['committer']['time']
+      except Exception as e:
+        last_master_commit = 'err'
+    print("%s\t%s\t%s\t%s\t%s\t%s" % (project, state, head, has_master, last_master_commit, has_main))
+
+
+@subcommand.usage('[args ...]')
+def CMDgitnumberer(parser, args):
+  (opt, args) = parser.parse_args(args)
+
+  host = urlparse.urlparse(opt.host).netloc
+  projects = gerrit_util.GetProjects(host)
+  for project in projects:
+    print(project, file=sys.stderr)
+    try:
+      content = gerrit_util.GetFile(host, project, 'refs/meta/config', 'project.config')
+      if 'git-numberer' in content:
+        print(project)
+    except Exception as e:
+      m = str(e)
+      print(project, m.split('\n')[0][:100], file=sys.stderr)
+
+
+@subcommand.usage('[args ...]')
+def CMDcodereviewlabel(parser, args):
+  (opt, args) = parser.parse_args(args)
+
+  host = urlparse.urlparse(opt.host).netloc
+  projects = gerrit_util.GetProjects(host)
+  for project in projects:
+    print(project, file=sys.stderr)
+    try:
+      content = gerrit_util.GetFile(host, project, 'refs/meta/config', 'project.config')
+      if '[label "Code-Review"]' in content:
+        print(project)
+    except Exception as e:
+      m = str(e)
+      print(project, m.split('\n')[0][:100], file=sys.stderr)
+
 
 @subcommand.usage('[args ...]')
 def CMDheadinfo(parser, args):
@@ -171,7 +237,7 @@ def CMDheadinfo(parser, args):
 
   project = quote_plus(opt.project)
   host = urlparse.urlparse(opt.host).netloc
-  result = gerrit_util.GetHead(host, project)
+  result = gerrit_util.GetProjectHead(host, project)
   logging.info(result)
   write_result(result, opt)
 

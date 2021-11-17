@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ece76902_a0d3ee6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1311766
+      },
+      "writtenOn": "2021-11-17T00:21:23Z",
+      "side": 1,
+      "message": "Hi Gavin\n\nThis CL updates the regex used for searching for ETag\u0027s in gsutil output. Please take a look.\n\nRegards\nRakib Hasan",
+      "revId": "c91c1b574ec2f480a003b7f337021a7be55bfa6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

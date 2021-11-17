@@ -88,6 +88,24 @@
       "parentUuid": "74eb7efc_461722bd",
       "revId": "490ab96d3cbc9e2509016a0bcd57e2b55d3de251",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2ff3316_491fda1d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-11-17T00:38:42Z",
+      "side": 1,
+      "message": "We print git version as part of bot_update, but you can also find it in swarming under more details -\u003e cipd version -\u003e infra/3pp/tools/git/\n\nhttps://chrome-internal.googlesource.com/infradata/config.git/+/HEAD/configs/cr-buildbucket/settings.cfg#29\n\nand\n\nhttps://chromium.googlesource.com/chromium/tools/depot_tools/+/main/bootstrap/manifest.txt\n\nindicate we should be good.\n\nI also tested locally what will happen with DEPS if is overridden and gclient sync can handle it (prints a warning and moves .git into special location, but doesn\u0027t interrupt user flow).\n\nSo, with that, I feel we should be good to land this change. Please give a heads up to troopers and in chops channel when this is merged. This should be merged in the morning.",
+      "parentUuid": "2eda8fed_6910c739",
+      "revId": "490ab96d3cbc9e2509016a0bcd57e2b55d3de251",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -69,6 +69,24 @@
       "parentUuid": "7ab47d38_c598c562",
       "revId": "acdcbd7c06e2dc7cb35ee57113bf645e513e07ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db8efaac_3798c710",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2021-11-18T00:30:11Z",
+      "side": 1,
+      "message": "hmmm... Where can I check the package build? linux-amd64 and mac-arm64 is still missing.",
+      "parentUuid": "42cde4be_97215e75",
+      "revId": "acdcbd7c06e2dc7cb35ee57113bf645e513e07ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

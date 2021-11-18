@@ -87,6 +87,24 @@
       "parentUuid": "42cde4be_97215e75",
       "revId": "acdcbd7c06e2dc7cb35ee57113bf645e513e07ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a1c9346_412baa41",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2021-11-18T00:39:55Z",
+      "side": 1,
+      "message": "https://ci.chromium.org/p/infra-internal/g/infra-packagers/console\n\nLooks like it one builder failed in bot_update :-/ Try using the next revision (9cd82fa49d8bac4bebea286936aecdc2d9347581).",
+      "parentUuid": "db8efaac_3798c710",
+      "revId": "acdcbd7c06e2dc7cb35ee57113bf645e513e07ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

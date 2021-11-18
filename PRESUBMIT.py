@@ -122,7 +122,10 @@ def CheckUnitTestsOnCommit(input_api, output_api):
       input_api,
       output_api,
       'tests',
-      files_to_check=[r'.*my_activity_test\.py'],
+      files_to_check=[
+          'my_activity_test.py',
+          'owners_finder_test.py',
+      ],
       run_on_python3=True))
 
   return input_api.RunTests(tests)

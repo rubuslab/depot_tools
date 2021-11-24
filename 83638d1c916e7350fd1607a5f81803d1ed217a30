@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c4da14d_81fd16b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-11-24T18:50:40Z",
+      "side": 1,
+      "message": "If line is bytes, then comparing string and bytes will fail with py3. So, I think we have to modify test data.\n\nGavin, could you review this? You added that line.\n\nAlso, let\u0027s submit this next week given the freeze",
+      "revId": "83638d1c916e7350fd1607a5f81803d1ed217a30",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

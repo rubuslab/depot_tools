@@ -16,6 +16,24 @@
       "message": "Josip, PTAL at this CL :) \nAdditionally, I am wondering whether I should have opened a bug before creating this CL (I didn\u0027t because this is just such a small change)?",
       "revId": "63878adc7f87ed6f6efa97ddfe6a851a4fa9b4cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1726618b_71447688",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-11-29T17:41:57Z",
+      "side": 1,
+      "message": "Nah, no need to file a bug for such small changes.\n\nThanks for improving depot_tools :)",
+      "parentUuid": "bd33006a_1f5b4a1f",
+      "revId": "63878adc7f87ed6f6efa97ddfe6a851a4fa9b4cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

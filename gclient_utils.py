@@ -160,6 +160,10 @@ class PrintableObject(object):
 
 
 def AskForData(message):
+  # Make sure that readline is loaded, so that "elaborate line editing" features
+  # such as backspace work for `raw_input` / `input`.
+  import readline
+
   # Use this so that it can be mocked in tests on Python 2 and 3.
   try:
     if sys.version_info.major == 2:

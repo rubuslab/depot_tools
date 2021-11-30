@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29453a69_f1e16e82",
+        "filename": "gclient_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1525163
+      },
+      "writtenOn": "2021-11-30T10:43:48Z",
+      "side": 1,
+      "message": "I had to add try/except around the readline import, because the readline module does not exist in some Python distributions (either because Python is compiled without readline support, or, probably more commonly, because Python on Windows does not support it). I only noticed that when the Windows trybot was failing.\nPTAL again.",
+      "revId": "6bcde0507fb793348ea1e36500bae8ac07c6d40e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

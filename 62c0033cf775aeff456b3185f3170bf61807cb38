@@ -33,6 +33,24 @@
       "message": "Interesting! I wouldn\u0027t have expected that to be that slow. There\u0027s probably significant room for improvement in gclient_eval.py, too.",
       "revId": "62c0033cf775aeff456b3185f3170bf61807cb38",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09b442b2_2f799d4d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2021-12-01T17:25:30Z",
+      "side": 1,
+      "message": "Yeah, there could be. With this patch, _deps_to_objects takes .75s for chromium/src DEPS. filed: https://crbug.com/1275625",
+      "parentUuid": "134543c3_8fdeca75",
+      "revId": "62c0033cf775aeff456b3185f3170bf61807cb38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecd6b41d_b1f4ac21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2021-12-07T19:20:18Z",
+      "side": 1,
+      "message": "(assuming that you will update the led pins in bb configs)",
+      "revId": "e1477abd2ad841e3c21584bd1b9a77f8dc86c6b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

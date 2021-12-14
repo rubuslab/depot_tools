@@ -1421,6 +1421,35 @@ class MergeVarsTest(unittest.TestCase):
     self.assertEqual(l, {'foo': 'bar', 'baz': True})
 
 
+class TestDependency(unittest.TestCase):
+  def setUp(self):
+    self.dependency = gclient.Dependency(
+        parent=None,
+        name='name',
+        url='https://example.com/foo',
+        managed=None,
+        custom_deps=None,
+        custom_vars=None,
+        custom_hooks=None,
+        deps_file='',
+        should_process=True,
+        should_recurse=False,
+        relative=False,
+        condition=None,
+        print_outbuf=True)
+
+  @mock.patch('gclient.os.name', 'nt')
+  def test_postprocess_deps_path_normalize(self):
+    deps = self.dependency._postprocess_deps({
+        'hello/world/foo.py': 'bar',
+        'foo\\bar\\baz.py': 'hello'
+    }, None)
+
+    if sys.version_info.major == 2:
+      self.assertItemsEqual(map(os.path.normpath, deps.keys()), deps.keys())
+    else:
+      self.assertCountEqual(map(os.path.normpath, deps.keys()), deps.keys())
+
 
 if __name__ == '__main__':
   sys.stdout = gclient_utils.MakeFileAutoFlush(sys.stdout)

@@ -616,7 +616,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # this line to the solution.
     for dep_name, dep_info in self.custom_deps.items():
       if dep_name not in deps:
-        deps[dep_name] = {'url': dep_info, 'dep_type': 'git'}
+        deps[os.path.normpath(dep_name)] = {'url': dep_info, 'dep_type': 'git'}
 
     # Make child deps conditional on any parent conditions. This ensures that,
     # when flattened, recursed entries have the correct restrictions, even if

@@ -612,6 +612,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # Make sure the dict is mutable, e.g. in case it's frozen.
     deps = dict(deps)
 
+    # Normalize paths based on operating system
+    deps = {os.path.normpath(dep_name): dep_info for dep_name, dep_info in \
+              deps.items()}
+
     # If a line is in custom_deps, but not in the solution, we want to append
     # this line to the solution.
     for dep_name, dep_info in self.custom_deps.items():

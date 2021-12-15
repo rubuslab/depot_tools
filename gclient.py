@@ -805,6 +805,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       self.local_target_os = local_scope['target_os']
 
     deps = local_scope.get('deps', {})
+    deps = {os.path.normpath(dep_name): dep_val \
+              for dep_name, dep_val in deps.items}
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)
 

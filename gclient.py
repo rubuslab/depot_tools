@@ -284,7 +284,7 @@ class DependencySettings(object):
     self._parent = parent
     self._deps_file = deps_file
     self._url = url
-    # The condition as string (or None). Useful to keep e.g. for flatten.
+    # The condition as string (or None). Useful to keep e.g._ for flatten.
     self._condition = condition
     # 'managed' determines whether or not this dependency is synced/updated by
     # gclient after gclient checks it out initially.  The difference between
@@ -307,6 +307,11 @@ class DependencySettings(object):
     self._custom_vars = custom_vars or {}
     self._custom_deps = custom_deps or {}
     self._custom_hooks = custom_hooks or []
+
+    # Update custom deps path format based on operating system.
+    if self._custom_deps:
+      self._custom_deps = {os.path.normpath(k): v for \
+        k, v in custom_deps.items()}
 
     # Post process the url to remove trailing slashes.
     if isinstance(self.url, basestring):
@@ -615,8 +620,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # If a line is in custom_deps, but not in the solution, we want to append
     # this line to the solution.
     for dep_name, dep_info in self.custom_deps.items():
-      if dep_name not in deps:
-        deps[dep_name] = {'url': dep_info, 'dep_type': 'git'}
+      if dep_name.replace(os.sep, '/') not in deps:
+        deps[dep_name.replace(os.sep, '/')] = \
+          {'url': dep_info, 'dep_type': 'git'}
 
     # Make child deps conditional on any parent conditions. This ensures that,
     # when flattened, recursed entries have the correct restrictions, even if

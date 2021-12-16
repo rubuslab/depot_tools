@@ -1421,7 +1421,6 @@ class MergeVarsTest(unittest.TestCase):
     self.assertEqual(l, {'foo': 'bar', 'baz': True})
 
 
-
 if __name__ == '__main__':
   sys.stdout = gclient_utils.MakeFileAutoFlush(sys.stdout)
   sys.stdout = gclient_utils.MakeFileAnnotated(sys.stdout)

@@ -783,9 +783,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     if 'recursedeps' in local_scope:
       for ent in local_scope['recursedeps']:
         if isinstance(ent, basestring):
-          self.recursedeps[ent] = self.deps_file
+          self.recursedeps[os.path.normpath(ent)] = self.deps_file
         else:  # (depname, depsfilename)
-          self.recursedeps[ent[0]] = ent[1]
+          self.recursedeps[os.path.normpath(ent[0])] = ent[1]
       logging.warning('Found recursedeps %r.', repr(self.recursedeps))
 
       if rel_prefix:

@@ -284,7 +284,7 @@ class DependencySettings(object):
     self._parent = parent
     self._deps_file = deps_file
     self._url = url
-    # The condition as string (or None). Useful to keep e.g. for flatten.
+    # The condition as string (or None). Useful to keep e.g._ for flatten.
     self._condition = condition
     # 'managed' determines whether or not this dependency is synced/updated by
     # gclient after gclient checks it out initially.  The difference between
@@ -388,7 +388,7 @@ class DependencySettings(object):
     if self.parent:
       url = self.parent.get_custom_deps(name, url)
     # None is a valid return value to disable a dependency.
-    return self.custom_deps.get(name, url)
+    return self.custom_deps.get(os.path.normpath(name) if name else name, url)
 
 
 class Dependency(gclient_utils.WorkItem, DependencySettings):

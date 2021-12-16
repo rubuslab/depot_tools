@@ -467,7 +467,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
   def _OverrideUrl(self):
     """Resolves the parsed url from the parent hierarchy."""
-    parsed_url = self.get_custom_deps(self._name, self.url)
+    parsed_url = self.get_custom_deps(self._name.replace(os.sep, '/') \
+        if self._name else self._name, self.url)
     if parsed_url != self.url:
       logging.info('Dependency(%s)._OverrideUrl(%s) -> %s', self._name,
                    self.url, parsed_url)
@@ -651,8 +652,6 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
       condition = dep_value.get('condition')
       dep_type = dep_value.get('dep_type')
-
-
       if condition and not self._get_option('process_all_deps', False):
         if condition not in cached_conditions:
           cached_conditions[condition] = gclient_eval.EvaluateCondition(

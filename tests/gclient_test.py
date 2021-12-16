@@ -651,20 +651,20 @@ class GclientTest(trial_dir.TestCase):
     sol = obj.dependencies[0]
     self.assertEqual([
         ('foo', 'svn://example.com/foo'),
-        ('foo/bar', 'svn://example.com/override'),
-        ('foo/baz', 'svn://example.com/baz'),
-        ('foo/new', 'svn://example.com/new'),
-        ('foo/rel', 'svn://example.com/rel'),
+        (os.path.normpath('foo/bar'), 'svn://example.com/override'),
+        (os.path.normpath('foo/baz'), 'svn://example.com/baz'),
+        (os.path.normpath('foo/new'), 'svn://example.com/new'),
+        (os.path.normpath('foo/rel'), 'svn://example.com/rel'),
     ], self._get_processed())
 
     self.assertEqual(6, len(sol.dependencies))
     self.assertEqual([
-        ('foo/bar', 'svn://example.com/override'),
-        ('foo/baz', 'svn://example.com/baz'),
-        ('foo/new', 'svn://example.com/new'),
-        ('foo/rel', 'svn://example.com/rel'),
-        ('foo/skip', None),
-        ('foo/skip2', None),
+        (os.path.normpath('foo/bar'), 'svn://example.com/override'),
+        (os.path.normpath('foo/baz'), 'svn://example.com/baz'),
+        (os.path.normpath('foo/new'), 'svn://example.com/new'),
+        (os.path.normpath('foo/rel'), 'svn://example.com/rel'),
+        (os.path.normpath('foo/skip'), None),
+        (os.path.normpath('foo/skip2'), None),
     ], [(dep.name, dep.url) for dep in sol.dependencies])
 
   def testVarOverrides(self):
@@ -1419,7 +1419,6 @@ class MergeVarsTest(unittest.TestCase):
     l = {'foo': 'bar'}
     merge_vars(l, {'baz': True})
     self.assertEqual(l, {'foo': 'bar', 'baz': True})
-
 
 
 if __name__ == '__main__':

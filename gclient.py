@@ -808,6 +808,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)
 
+    deps_to_add = {os.path.normpath(dep_name): dep_val \
+        for dep_name, dep_val in deps_to_add.items()}
+
     # compute which working directory should be used for hooks
     if local_scope.get('use_relative_hooks', False):
       print('use_relative_hooks is deprecated, please remove it from DEPS. ' +

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e336ed4_b415d9cd",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-12-21T19:48:44Z",
+      "side": 1,
+      "message": "does this test case fail on windows without the changes to gclient.py?",
+      "range": {
+        "startLine": 620,
+        "startChar": 2,
+        "endLine": 620,
+        "endChar": 25
+      },
+      "revId": "75085004422de98cf8804ffd709640a394fa137d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

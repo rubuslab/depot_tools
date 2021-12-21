@@ -628,6 +628,7 @@ class GclientTest(trial_dir.TestCase):
         '      "foo/bar": "svn://example.com/override",\n'
         '      "foo/skip2": None,\n'
         '      "foo/new": "svn://example.com/new",\n'
+        '      "third_party/angle/third_party/VK-GL-CTS/src": None,\n'
         '    },\n'
         '  },]\n')
     write(
@@ -641,7 +642,10 @@ class GclientTest(trial_dir.TestCase):
         '  "foo/baz": "{origin}/baz",\n'
         '  "foo/skip2": "{origin}/skip2",\n'
         '  "foo/rel": "/rel",\n'
-        '}')
+        '}\n'
+        'recursedeps = [\n'
+        '  "third_party/angle",\n'
+        ']\n')
     parser = gclient.OptionParser()
     options, _ = parser.parse_args(['--jobs', '1'])
 
@@ -657,7 +661,7 @@ class GclientTest(trial_dir.TestCase):
         ('foo/rel', 'svn://example.com/rel'),
     ], self._get_processed())
 
-    self.assertEqual(6, len(sol.dependencies))
+    self.assertEqual(7, len(sol.dependencies))
     self.assertEqual([
         ('foo/bar', 'svn://example.com/override'),
         ('foo/baz', 'svn://example.com/baz'),
@@ -665,6 +669,7 @@ class GclientTest(trial_dir.TestCase):
         ('foo/rel', 'svn://example.com/rel'),
         ('foo/skip', None),
         ('foo/skip2', None),
+        ('third_party/angle/third_party/VK-GL-CTS/src', None),
     ], [(dep.name, dep.url) for dep in sol.dependencies])
 
   def testVarOverrides(self):

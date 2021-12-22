@@ -628,6 +628,7 @@ class GclientTest(trial_dir.TestCase):
         '      "foo/bar": "svn://example.com/override",\n'
         '      "foo/skip2": None,\n'
         '      "foo/new": "svn://example.com/new",\n'
+        '      "foo/qux/world": "svn://example.com/override",\n'
         '    },\n'
         '  },]\n')
     write(
@@ -641,7 +642,23 @@ class GclientTest(trial_dir.TestCase):
         '  "foo/baz": "{origin}/baz",\n'
         '  "foo/skip2": "{origin}/skip2",\n'
         '  "foo/rel": "/rel",\n'
-        '}')
+        '  "foo/qux": "{origin}/qux",\n'
+        '}\n'
+        'recursedeps = [\n'
+        '  "foo/qux",\n'
+        ']'
+        )
+    write(
+      os.path.join('foo', 'qux', 'DEPS'),
+      'use_relative_paths = True\n'
+      'vars = {\n'
+      '  "origin": "svn://example.com",\n'
+      '}\n'
+      'deps = {\n'
+      '  "hello": "{origin}/qux/hello",\n'
+      '  "world": "{origin}/qux/world",\n'
+      '}\n'
+    )
     parser = gclient.OptionParser()
     options, _ = parser.parse_args(['--jobs', '1'])
 
@@ -654,14 +671,19 @@ class GclientTest(trial_dir.TestCase):
         ('foo/bar', 'svn://example.com/override'),
         ('foo/baz', 'svn://example.com/baz'),
         ('foo/new', 'svn://example.com/new'),
+        ('foo/qux', 'svn://example.com/qux'),
+        ('foo/qux/world', 'svn://example.com/override'),
         ('foo/rel', 'svn://example.com/rel'),
+        ('foo/qux/hello', 'svn://example.com/qux/hello')
     ], self._get_processed())
 
-    self.assertEqual(6, len(sol.dependencies))
+    self.assertEqual(8, len(sol.dependencies))
     self.assertEqual([
         ('foo/bar', 'svn://example.com/override'),
         ('foo/baz', 'svn://example.com/baz'),
         ('foo/new', 'svn://example.com/new'),
+        ('foo/qux', 'svn://example.com/qux'),
+        ('foo/qux/world', 'svn://example.com/override'),
         ('foo/rel', 'svn://example.com/rel'),
         ('foo/skip', None),
         ('foo/skip2', None),

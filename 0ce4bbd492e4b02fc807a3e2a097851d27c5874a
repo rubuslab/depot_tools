@@ -16,6 +16,24 @@
       "message": "When using custom deps with relative paths, gclient tries to override both the relative path and the combined path. This happens in https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main/gclient.py#617. I\u0027m assuming this is another separate bug as it doesn\u0027t seem like an intended behavior to me. Should I file another bug for this?",
       "revId": "0ce4bbd492e4b02fc807a3e2a097851d27c5874a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c324fb1a_f602eabb",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2021-12-22T18:53:19Z",
+      "side": 1,
+      "message": "Just clarified with Jossip. Seems like an intended behavior.",
+      "parentUuid": "be631599_4935eb97",
+      "revId": "0ce4bbd492e4b02fc807a3e2a097851d27c5874a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

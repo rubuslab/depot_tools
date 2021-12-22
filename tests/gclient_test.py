@@ -641,7 +641,8 @@ class GclientTest(trial_dir.TestCase):
         '  "foo/baz": "{origin}/baz",\n'
         '  "foo/skip2": "{origin}/skip2",\n'
         '  "foo/rel": "/rel",\n'
-        '}')
+        '}\n'
+        )
     parser = gclient.OptionParser()
     options, _ = parser.parse_args(['--jobs', '1'])
 

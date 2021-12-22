@@ -3,6 +3,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4586b8eb_d77e73b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 38
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-12-22T19:01:45Z",
+      "side": 1,
+      "message": "nit: use the imperative \"Fix\" instead and remove period\n\nUseful guide on writing commit messages: https://chromium.googlesource.com/chromiumos/docs/+/HEAD/contributing.md#commit-messages",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 64
+      },
+      "revId": "0ce4bbd492e4b02fc807a3e2a097851d27c5874a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79613f35_e68641a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 38
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2021-12-22T19:01:45Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "0ce4bbd492e4b02fc807a3e2a097851d27c5874a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "be631599_4935eb97",
         "filename": "tests/gclient_test.py",
         "patchSetId": 38

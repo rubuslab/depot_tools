@@ -467,7 +467,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
   def _OverrideUrl(self):
     """Resolves the parsed url from the parent hierarchy."""
-    parsed_url = self.get_custom_deps(self._name, self.url)
+    parsed_url = self.get_custom_deps(
+      self._name.replace(os.sep, posixpath.sep) \
+        if self._name else self._name, self.url)
     if parsed_url != self.url:
       logging.info('Dependency(%s)._OverrideUrl(%s) -> %s', self._name,
                    self.url, parsed_url)
@@ -615,8 +617,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # If a line is in custom_deps, but not in the solution, we want to append
     # this line to the solution.
     for dep_name, dep_info in self.custom_deps.items():
-      if dep_name not in deps:
-        deps[dep_name] = {'url': dep_info, 'dep_type': 'git'}
+      posix_dep_name = dep_name.replace(os.sep, posixpath.sep)
+      if posix_dep_name not in deps:
+        deps[posix_dep_name] = {'url': dep_info, 'dep_type': 'git'}
 
     # Make child deps conditional on any parent conditions. This ensures that,
     # when flattened, recursed entries have the correct restrictions, even if

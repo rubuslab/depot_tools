@@ -59,6 +59,27 @@ def CheckPylint(input_api, output_api):
   disabled_warnings = [
     'R0401',  # Cyclic import
     'W0613',  # Unused argument
+    # New checks in 2.6, temporarily disabled to allow incremental migration.
+    'C0415',  # import-outside-toplevel
+    'C1801',  # len-as-condition
+    'E1101',  # no-member
+    'E1120',  # no-value-for-parameter
+    'R1705',  # no-else-return
+    'R1708',  # stop-iteration-return
+    'R1710',  # inconsistent-return-statements
+    'R1720',  # no-else-raise
+    'R1723',  # no-else-break
+    'R1714',  # consider-using-in
+    'R1717',  # consider-using-dict-comprehension
+    'R1718',  # consider-using-set-comprehension
+    'R1721',  # unnecessary-comprehension
+    'W0107',  # unnecessary-pass
+    'W1404',  # implicit-str-concat
+    # Checks which should be re-enabled after migration to Python 3.
+    'R0205',  # useless-object-inheritance
+    'R1725',  # super-with-arguments
+    'W0707',  # raise-missing-from
+    'W1113',  # keyword-arg-before-vararg
   ]
   return input_api.RunTests(input_api.canned_checks.GetPylint(
       input_api,
@@ -177,4 +198,3 @@ def CheckOwnersOnUpload(input_api, output_api):
 
 def CheckDoNotSubmitOnCommit(input_api, output_api):
   return input_api.canned_checks.CheckDoNotSubmit(input_api, output_api)
-

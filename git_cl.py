@@ -4143,6 +4143,7 @@ def GetTargetRef(remote, remote_branch, target_branch):
       if not match:
         # This is a branch path but not one we recognize; use as-is.
         remote_branch = target_branch
+  # pylint:disable=consider-using-get      
   elif remote_branch in REFS_THAT_ALIAS_TO_OTHER_REFS:
     # Handle the refs that need to land in different refs.
     remote_branch = REFS_THAT_ALIAS_TO_OTHER_REFS[remote_branch]

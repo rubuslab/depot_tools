@@ -165,6 +165,7 @@ from :3
     return self.OptionsObject(*args, **kwargs)
 
   def checkstdout(self, expected):
+    # pylint: disable=no-member
     value = sys.stdout.getvalue()
     sys.stdout.close()
     # Check that the expected output appears.
@@ -597,6 +598,7 @@ class ManagedGitWrapperTestCaseMock(unittest.TestCase):
     return self.OptionsObject(*args, **kwargs)
 
   def checkstdout(self, expected):
+    # pylint: disable=no-member
     value = sys.stdout.getvalue()
     sys.stdout.close()
     # Check that the expected output appears.
@@ -711,12 +713,14 @@ class ManagedGitWrapperTestCaseMock(unittest.TestCase):
 
 class UnmanagedGitWrapperTestCase(BaseGitWrapperTestCase):
   def checkInStdout(self, expected):
+    # pylint: disable=no-member
     value = sys.stdout.getvalue()
     sys.stdout.close()
     # pylint: disable=no-member
     self.assertIn(expected, value)
 
   def checkNotInStdout(self, expected):
+    # pylint: disable=no-member
     value = sys.stdout.getvalue()
     sys.stdout.close()
     # pylint: disable=no-member

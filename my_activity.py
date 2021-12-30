@@ -68,7 +68,7 @@ try:
   from dateutil.relativedelta import relativedelta
 except ImportError:
   logging.error('python-dateutil package required')
-  exit(1)
+  sys.exit(1)
 
 
 class DefaultFormatter(Formatter):
@@ -76,10 +76,10 @@ class DefaultFormatter(Formatter):
     super(DefaultFormatter, self).__init__()
     self.default = default
 
-  def get_value(self, key, args, kwds):
-    if isinstance(key, str) and key not in kwds:
+  def get_value(self, key, args, kwargs):
+    if isinstance(key, str) and key not in kwargs:
       return self.default
-    return Formatter.get_value(self, key, args, kwds)
+    return Formatter.get_value(self, key, args, kwargs)
 
 gerrit_instances = [
   {
@@ -531,7 +531,7 @@ class MyActivity(object):
     return True
 
   def filter_modified(self, modified):
-    return self.modified_after < modified and modified < self.modified_before
+    return self.modified_after < modified < self.modified_before
 
   def auth_for_changes(self):
     #TODO(cjhopman): Move authentication check for getting changes here.
@@ -686,12 +686,12 @@ class MyActivity(object):
       return output
 
     class PythonObjectEncoder(json.JSONEncoder):
-      def default(self, obj):  # pylint: disable=method-hidden
-        if isinstance(obj, datetime):
-          return obj.isoformat()
-        if isinstance(obj, set):
-          return list(obj)
-        return json.JSONEncoder.default(self, obj)
+      def default(self, o):  # pylint: disable=method-hidden
+        if isinstance(o, datetime):
+          return o.isoformat()
+        if isinstance(o, set):
+          return list(o)
+        return json.JSONEncoder.default(self, o)
 
     output = {
       'reviews': format_for_json_dump(self.reviews),

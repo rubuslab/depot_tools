@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f4b8583_79945560",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1521372
+      },
+      "writtenOn": "2022-01-03T14:10:07Z",
+      "side": 1,
+      "message": "Hi Dirk, I picked up one of the Python subtasks (crbug.com/1262286) for a code health rotation day.\n\nCould I get you initial review here:\n1) Is this change taking the right approach (in particular I\u0027ve attempted to switch to 2.7 and make a relatively small set of changes to the Python code in this initial CL, disabling any new checks which aren\u0027t strictly required for migration to Python 3.  We could in subsequent CLs tackle fixing up instances of some of the disabled warnings to further tidy up the code.\n2) The presubmit now passes locally and in the Linux builders, however fails with a timeout on the Windows CQ builder.  Before I look into this in too much detail; have you seen similar problems before with the Windows runs - I can\u0027t see any logs giving any insight into what might be causing the issue here?\n\nCheers,\nJames",
+      "revId": "ad8a208b162e7d5b2499a1da9a9f30b83ebc9901",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

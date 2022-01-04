@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "067fa024_d534eab6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2022-01-04T23:42:55Z",
+      "side": 1,
+      "message": "This all looks basically good. If you can check my comment and let me know if you need to clean up anything else, then I think you\u0027ll be good to go.\n\nI think the approach is correct. I would not be too surprised if the windows presubmit was flaky, so I\u0027d try it again for a couple of runs and we can dig into it if it\u0027s still failing.\n\n@sokcevic - fyi.",
+      "revId": "fc34aab9869a082f39777fde8846d2f5013d1c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c712114_52bbaed2",
+        "filename": "clang_format_merge_driver.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2022-01-04T23:42:55Z",
+      "side": 1,
+      "message": "Normally when we disable checks we need to be careful to re-enable them after the code in question. It\u0027s not clear to me if you meant to leave the check disabled for all of main(), or just didn\u0027t know to re-enable things?",
+      "revId": "fc34aab9869a082f39777fde8846d2f5013d1c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

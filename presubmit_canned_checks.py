@@ -1059,7 +1059,7 @@ def GetPylint(input_api,
   # Leave this unreachable code in here so users can make
   # a quick local edit to diagnose pylint issues more
   # easily.
-  if True:
+  if False:
     # pylint's cycle detection doesn't work in parallel, so spawn a second,
     # single-threaded job for just that check.
 
@@ -1073,7 +1073,7 @@ def GetPylint(input_api,
       return [ GetPylintCmd(files, [], True) ]
 
   else:
-    return map(lambda x: GetPylintCmd([x], [], 1), files)
+    return map(lambda x: GetPylintCmd([x], [], False), files)
 
 
 def RunPylint(input_api, *args, **kwargs):

@@ -53,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a0dac51_f1e39557",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2022-01-12T21:48:37Z",
+      "side": 1,
+      "message": "Yeah, you are right. Gerrit does not return anything for the \"Publish Change Edit\". So in gerrit_client, there is no way to check which patchset is published. And it is not a good idea to mix multiple calls into a single cmd in gerrit_client.py. \n\nOverall, recipe is still the best place for this logic. Thanks for your information.",
+      "parentUuid": "4505e99c_626845cc",
+      "revId": "fec1a0722bc49fc0c785a01acb082dbb2707a5e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4314f71f_44783ef1",

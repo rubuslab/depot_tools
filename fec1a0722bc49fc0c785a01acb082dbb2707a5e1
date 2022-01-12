@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4505e99c_626845cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-12T21:37:27Z",
+      "side": 1,
+      "message": "That could work too, but you need to move existing logic from the recipe into gerrit_client, since it doesn\u0027t know what patchset is expected.",
+      "parentUuid": "a2404621_df82d7bb",
+      "revId": "fec1a0722bc49fc0c785a01acb082dbb2707a5e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4314f71f_44783ef1",

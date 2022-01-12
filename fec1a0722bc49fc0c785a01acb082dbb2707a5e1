@@ -33,6 +33,23 @@
       "message": "Sorry. Seems better to move it to gerrit_client.py rather than recipe. Will rework on this CL.",
       "revId": "fec1a0722bc49fc0c785a01acb082dbb2707a5e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4314f71f_44783ef1",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-12T21:32:06Z",
+      "side": 1,
+      "message": "add exponential back off, e.g. sleep(2**i) before this line",
+      "revId": "fec1a0722bc49fc0c785a01acb082dbb2707a5e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

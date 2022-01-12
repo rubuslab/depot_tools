@@ -140,6 +140,24 @@
       "parentUuid": "f9b5c8c9_427345cc",
       "revId": "fec1a0722bc49fc0c785a01acb082dbb2707a5e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bf673a5_8f3ab5ba",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-12T22:52:11Z",
+      "side": 1,
+      "message": "lgtm!",
+      "parentUuid": "94d91c8c_5b7c1c76",
+      "revId": "fec1a0722bc49fc0c785a01acb082dbb2707a5e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

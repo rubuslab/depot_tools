@@ -104,6 +104,24 @@
       "parentUuid": "4314f71f_44783ef1",
       "revId": "fec1a0722bc49fc0c785a01acb082dbb2707a5e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9b5c8c9_427345cc",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-12T22:07:52Z",
+      "side": 1,
+      "message": "You should swap retries**2 with 2**retries. 30s also seems a bit high for base, latency is usually seconds.",
+      "parentUuid": "80aba82f_840845c3",
+      "revId": "fec1a0722bc49fc0c785a01acb082dbb2707a5e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -99,12 +99,13 @@ function update_git_repo {
     fi
   fi
 
-  # depot_tools.zip archives generated before 2021-03-12 have instruction to
-  # fetch  only from old default git branch. Such branch won't be available
-  # evenutally, so fetch config needs to be updated.
-  git config --unset-all remote.origin.fetch
-  git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
-  git fetch -q origin &> /dev/null
+  git fetch -q origin main &> /dev/null
+  STATUS=$?
+  if [[ $STATUS -ne 0 ]]; then
+    echo "depot_tools update failed. Couldn't fetch main branch."
+    echo "Retry later or reclone depot_tools" >&2
+    echo "$CHECKOUT_TXT" >&2
+  fi
   local CHECKOUT_TXT STATUS
   CHECKOUT_TXT=$(git checkout -q origin/main 2>&1)
   STATUS=$?

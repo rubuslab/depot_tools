@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bee8acef_1493c95f",
+        "filename": "update_depot_tools",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-01-14T21:25:51Z",
+      "side": 1,
+      "message": "isn\u0027t CHECKOUT_TXT not set here?",
+      "range": {
+        "startLine": 107,
+        "startChar": 11,
+        "endLine": 107,
+        "endChar": 23
+      },
+      "revId": "6365b866d4877dfc57214c9d883cde2d6632074a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

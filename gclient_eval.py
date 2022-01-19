@@ -304,13 +304,14 @@ def _gclient_eval(node_or_string, filename='<unknown>', vars_dict=None):
         raise ValueError(
             '%s takes exactly one argument (file %r, line %s)' % (
                 node.func.id, filename, getattr(node, 'lineno', '<unknown>')))
+
       if node.func.id == 'Str':
         if isinstance(node.args[0], ast.Str):
           return ConstantString(node.args[0].s)
         raise ValueError('Passed a non-string to Str() (file %r, line%s)' % (
             filename, getattr(node, 'lineno', '<unknown>')))
-      else:
-        arg = _convert(node.args[0])
+
+      arg = _convert(node.args[0])
       if not isinstance(arg, basestring):
         raise ValueError(
             'Var\'s argument must be a variable name (file %r, line %s)' % (
@@ -547,7 +548,8 @@ def EvaluateCondition(condition, variables, referenced_variables=None):
         raise ValueError(
             'invalid cyclic reference to %r (inside %r)' % (
                 node.id, condition))
-      elif node.id in _allowed_names:
+
+      if node.id in _allowed_names:
         return _allowed_names[node.id]
       elif node.id in variables:
         value = variables[node.id]

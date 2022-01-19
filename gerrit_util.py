@@ -981,7 +981,8 @@ def ResetReviewLabels(host, change, label, value='0', message=None,
   if not jmsg:
     raise GerritError(
         200, 'Could not get review information for change "%s"' % change)
-  elif jmsg[0]['current_revision'] != revision:
+
+  if jmsg[0]['current_revision'] != revision:
     raise GerritError(200, 'While resetting labels on change "%s", '
                    'a new patchset was uploaded.' % change)
 
@@ -1000,7 +1001,7 @@ def CreateChange(host, project, branch='main', subject='', params=()):
   """
   path = 'changes/'
   body = {'project': project, 'branch': branch, 'subject': subject}
-  body.update({k: v for k, v in params})
+  body.update(dict(params))
   for key in 'project', 'branch', 'subject':
     if not body[key]:
       raise GerritError(200, '%s is required' % key.title())

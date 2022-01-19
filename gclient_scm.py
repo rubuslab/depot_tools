@@ -381,7 +381,8 @@ class GitWrapper(SCMWrapper):
 
     if not target_rev:
       raise gclient_utils.Error('A target revision for the patch must be given')
-    elif target_rev.startswith(('refs/heads/', 'refs/branch-heads')):
+
+    if target_rev.startswith(('refs/heads/', 'refs/branch-heads')):
       # If |target_rev| is in refs/heads/** or refs/branch-heads/**, try first
       # to find the corresponding remote ref for it, since |target_rev| might
       # point to a local ref which is not up to date with the corresponding
@@ -781,12 +782,14 @@ class GitWrapper(SCMWrapper):
                                   printed_path=printed_path, merge=False)
               printed_path = True
               break
-            elif re.match(r'quit|q', action, re.I):
+
+            if re.match(r'quit|q', action, re.I):
               raise gclient_utils.Error("Can't fast-forward, please merge or "
                                         "rebase manually.\n"
                                         "cd %s && git " % self.checkout_path
                                         + "rebase %s" % upstream_branch)
-            elif re.match(r'skip|s', action, re.I):
+
+            if re.match(r'skip|s', action, re.I):
               self.Print('Skipping %s' % self.relpath)
               return
             else:
@@ -1137,16 +1140,18 @@ class GitWrapper(SCMWrapper):
             # Should this be recursive?
             rebase_output = scm.GIT.Capture(rebase_cmd, cwd=self.checkout_path)
             break
-          elif re.match(r'quit|q', rebase_action, re.I):
+
+          if re.match(r'quit|q', rebase_action, re.I):
             raise gclient_utils.Error("Please merge or rebase manually\n"
                                       "cd %s && git " % self.checkout_path
                                       + "%s" % ' '.join(rebase_cmd))
-          elif re.match(r'show|s', rebase_action, re.I):
+
+          if re.match(r'show|s', rebase_action, re.I):
             self.Print('%s' % e.stderr.decode('utf-8').strip())
             continue
-          else:
-            gclient_utils.Error("Input not recognized")
-            continue
+
+          gclient_utils.Error("Input not recognized")
+          continue
       elif re.search(br'^CONFLICT', e.stdout, re.M):
         raise gclient_utils.Error("Conflict while rebasing this branch.\n"
                                   "Fix the conflict and run gclient again.\n"
@@ -1559,15 +1564,12 @@ class CipdWrapper(SCMWrapper):
     CIPD packages should be reverted at the root by running
     `CipdRoot.run('revert')`.
     """
-    pass
 
   def diff(self, options, args, file_list):
     """CIPD has no notion of diffing."""
-    pass
 
   def pack(self, options, args, file_list):
     """CIPD has no notion of diffing."""
-    pass
 
   def revinfo(self, options, args, file_list):
     """Grab the instance ID."""
@@ -1597,4 +1599,3 @@ class CipdWrapper(SCMWrapper):
     CIPD packages should be updated at the root by running
     `CipdRoot.run('update')`.
     """
-    pass

@@ -112,6 +112,8 @@ def CheckUnitTestsOnCommit(input_api, output_api):
       'recipes_test.py',
   ]
 
+  py3_only_tests = ['ninjalog_uploader_test.py']
+
   tests = input_api.canned_checks.GetUnitTestsInDirectory(
       input_api,
       output_api,
@@ -121,13 +123,14 @@ def CheckUnitTestsOnCommit(input_api, output_api):
       run_on_python3=True)
 
   # TODO: once py3 compatbile, remove those tests
-  tests.extend(input_api.canned_checks.GetUnitTestsInDirectory(
-      input_api,
-      output_api,
-      'tests',
-      files_to_check=py2_only_tests,
-      files_to_skip=tests_to_skip_list,
-      run_on_python3=False))
+  tests.extend(
+      input_api.canned_checks.GetUnitTestsInDirectory(
+          input_api,
+          output_api,
+          'tests',
+          files_to_check=py2_only_tests,
+          files_to_skip=tests_to_skip_list + py3_only_tests,
+          run_on_python3=False))
 
   return input_api.RunTests(tests)
 
@@ -177,4 +180,3 @@ def CheckOwnersOnUpload(input_api, output_api):
 
 def CheckDoNotSubmitOnCommit(input_api, output_api):
   return input_api.canned_checks.CheckDoNotSubmit(input_api, output_api)
-

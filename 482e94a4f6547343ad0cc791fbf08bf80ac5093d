@@ -33,6 +33,24 @@
       "message": "Thanks for sending this patch\n\nIs there a particular downside to this comment style? I don\u0027t have the history on why this was chosen over rem.\n\nLooking at the recent history of this file, maybe iannucci@ is a better reviewer for this change?",
       "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ce42183_c1ba7681",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1460877
+      },
+      "writtenOn": "2022-01-19T15:26:35Z",
+      "side": 1,
+      "message": "Hi. I found https://stackoverflow.com/a/16839602 explaining some of the downsides of using :: over rem. I\u0027m assuming :: was chosen because it looks nicer? :P",
+      "parentUuid": "cf461b3c_291b7433",
+      "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

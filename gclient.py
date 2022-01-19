@@ -1420,7 +1420,7 @@ solutions = %(solution_list)s
     if 'all' in enforced_os:
       enforced_os = self.DEPS_OS_CHOICES.values()
     self._enforced_os = tuple(set(enforced_os))
-    self._enforced_cpu = detect_host_arch.HostArch(),
+    self._enforced_cpu = (detect_host_arch.HostArch(), )
     self._root_dir = root_dir
     self._cipd_root = None
     self.config_content = None
@@ -1874,11 +1874,12 @@ it or fix the checkout.
         entries = {}
         def GrabDeps(dep):
           """Recursively grab dependencies."""
-          for d in dep.dependencies:
-            d.PinToActualRevision()
-            if ShouldPrintRevision(d):
-              entries[d.name] = d.url
-            GrabDeps(d)
+          for rec_d in dep.dependencies:
+            rec_d.PinToActualRevision()
+            if ShouldPrintRevision(rec_d):
+              entries[rec_d.name] = rec_d.url
+            GrabDeps(rec_d)
+
         GrabDeps(d)
         json_output.append({
             'name': d.name,
@@ -2275,7 +2276,7 @@ class Flattener(object):
       if key not in self._vars:
         continue
       # Don't "override" existing vars if it's actually the same value.
-      elif self._vars[key][1] == value:
+      if self._vars[key][1] == value:
         continue
       # Anything else is overriding a default value from the DEPS.
       self._vars[key] = (hierarchy + ' [custom_var override]', value)

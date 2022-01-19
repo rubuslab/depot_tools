@@ -95,31 +95,31 @@ class OwnersFinder(object):
 
       while True:
         inp = self.input_command(owner)
-        if inp == 'y' or inp == 'yes':
+        if inp in ('y', 'yes'):
           self.select_owner(owner)
           break
-        elif inp == 'n' or inp == 'no':
+        elif inp in ('n', 'no'):
           self.deselect_owner(owner)
           break
-        elif inp == '' or inp == 'd' or inp == 'defer':
+        elif inp in ('', 'd', 'defer'):
           self.owners_queue.append(self.owners_queue.pop(0))
           break
-        elif inp == 'f' or inp == 'files':
+        elif inp in ('f', 'files'):
           self.list_files()
           break
-        elif inp == 'o' or inp == 'owners':
+        elif inp in ('o', 'owners'):
           self.list_owners(self.owners_queue)
           break
-        elif inp == 'p' or inp == 'pick':
+        elif inp in ('p', 'pick'):
           self.pick_owner(gclient_utils.AskForData('Pick an owner: '))
           break
         elif inp.startswith('p ') or inp.startswith('pick '):
           self.pick_owner(inp.split(' ', 2)[1].strip())
           break
-        elif inp == 'r' or inp == 'restart':
+        elif inp in ('r', 'restart'):
           self.reset()
           break
-        elif inp == 'q' or inp == 'quit':
+        elif inp in ('q', 'quit'):
           # Exit with error
           return 1
 

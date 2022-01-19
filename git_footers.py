@@ -71,7 +71,8 @@ def split_footers(message):
   for line in reversed(message_lines):
     if line == '' or line.isspace():
       break
-    elif parse_footer(line):
+
+    if parse_footer(line):
       footer_lines.extend(maybe_footer_lines)
       maybe_footer_lines = []
       footer_lines.append(line)

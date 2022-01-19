@@ -781,7 +781,8 @@ class GitWrapper(SCMWrapper):
                                   printed_path=printed_path, merge=False)
               printed_path = True
               break
-            elif re.match(r'quit|q', action, re.I):
+
+            if re.match(r'quit|q', action, re.I):
               raise gclient_utils.Error("Can't fast-forward, please merge or "
                                         "rebase manually.\n"
                                         "cd %s && git " % self.checkout_path
@@ -1137,7 +1138,8 @@ class GitWrapper(SCMWrapper):
             # Should this be recursive?
             rebase_output = scm.GIT.Capture(rebase_cmd, cwd=self.checkout_path)
             break
-          elif re.match(r'quit|q', rebase_action, re.I):
+
+          if re.match(r'quit|q', rebase_action, re.I):
             raise gclient_utils.Error("Please merge or rebase manually\n"
                                       "cd %s && git " % self.checkout_path
                                       + "%s" % ' '.join(rebase_cmd))
@@ -1559,15 +1561,12 @@ class CipdWrapper(SCMWrapper):
     CIPD packages should be reverted at the root by running
     `CipdRoot.run('revert')`.
     """
-    pass
 
   def diff(self, options, args, file_list):
     """CIPD has no notion of diffing."""
-    pass
 
   def pack(self, options, args, file_list):
     """CIPD has no notion of diffing."""
-    pass
 
   def revinfo(self, options, args, file_list):
     """Grab the instance ID."""
@@ -1597,4 +1596,3 @@ class CipdWrapper(SCMWrapper):
     CIPD packages should be updated at the root by running
     `CipdRoot.run('update')`.
     """
-    pass

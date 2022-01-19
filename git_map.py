@@ -31,6 +31,7 @@ from third_party import colorama
 
 if sys.version_info.major == 2:
   # On Python 3, BrokenPipeError is raised instead.
+  # pylint:disable=redefined-builtin
   BrokenPipeError = IOError
 
 

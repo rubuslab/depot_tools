@@ -56,7 +56,6 @@ class Checkout(object):
 
   def exists(self):
     """Check does this checkout already exist on desired location"""
-    pass
 
   def init(self):
     pass

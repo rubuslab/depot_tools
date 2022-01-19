@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9712d70d_1d6ad39f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-01-19T17:55:36Z",
+      "side": 1,
+      "message": "I\u0027d say \"Changing from vpython2 to (non-v) python3 for consistency with the autoninja shell script.\"",
+      "revId": "d8c65abe2433b6f8b2e7f74f8ab9359d954b7584",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

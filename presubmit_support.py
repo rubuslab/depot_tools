@@ -379,7 +379,6 @@ class _PresubmitPromptWarning(_PresubmitResult):
 # Public access through OutputApi object.
 class _PresubmitNotifyResult(_PresubmitResult):
   """Just print something to the screen -- but it's not even a warning."""
-  pass
 
 
 # Top level object so multiprocessing can pickle
@@ -1313,7 +1312,7 @@ def ListRelevantPresubmitFiles(files, root):
   files = [normpath(os.path.join(root, f)) for f in files]
 
   # List all the individual directories containing files.
-  directories = set([os.path.dirname(f) for f in files])
+  directories = {os.path.dirname(f) for f in files}
 
   # Ignore root if inherit-review-settings-ok is present.
   if os.path.isfile(os.path.join(root, 'inherit-review-settings-ok')):

@@ -379,7 +379,6 @@ class _PresubmitPromptWarning(_PresubmitResult):
 # Public access through OutputApi object.
 class _PresubmitNotifyResult(_PresubmitResult):
   """Just print something to the screen -- but it's not even a warning."""
-  pass
 
 
 # Top level object so multiprocessing can pickle

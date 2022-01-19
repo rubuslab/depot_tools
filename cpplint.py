@@ -5264,7 +5264,7 @@ _re_pattern_headers_maybe_templates = []
 for _header, _templates in _HEADERS_MAYBE_TEMPLATES:
   for _template in _templates:
     # Match max<type>(..., ...), max(..., ...), but not foo->max, foo.max or
-    # type::max().
+    # type ::max().
     _re_pattern_headers_maybe_templates.append(
         (re.compile(r'[^>.]\b' + _template + r'(<.*?>)?\([^\)]'),
             _template,
@@ -5381,7 +5381,7 @@ def CheckForIncludeWhatYouUse(filename, clean_lines, include_state, error,
         injection.
   """
   required = {}  # A map of header name to linenumber and the template entity.
-                 # Example of required: { '<functional>': (1219, 'less<>') }
+  # Example of required: { '<functional>': (1219, 'less<>') }
 
   for linenum in range(clean_lines.NumLines()):
     line = clean_lines.elided[linenum]
@@ -5865,9 +5865,9 @@ def ProcessConfigOverrides(filename):
           elif name == 'linelength':
             global _line_length
             try:
-                _line_length = int(val)
+              _line_length = int(val)
             except ValueError:
-                sys.stderr.write('Line length must be numeric.')
+              sys.stderr.write('Line length must be numeric.')
           else:
             sys.stderr.write(
                 'Invalid configuration option (%s) in file %s\n' %
@@ -5881,7 +5881,7 @@ def ProcessConfigOverrides(filename):
   # Apply all the accumulated filters in reverse order (top-level directory
   # config options having the least priority).
   for filter in reversed(cfg_filters):
-     _AddFilters(filter)
+    _AddFilters(filter)
 
   return True
 
@@ -6053,15 +6053,15 @@ def ParseArguments(args):
     elif opt == '--linelength':
       global _line_length
       try:
-          _line_length = int(val)
+        _line_length = int(val)
       except ValueError:
-          PrintUsage('Line length must be digits.')
+        PrintUsage('Line length must be digits.')
     elif opt == '--extensions':
       global _valid_extensions
       try:
-          _valid_extensions = set(val.split(','))
+        _valid_extensions = set(val.split(','))
       except ValueError:
-          PrintUsage('Extensions must be comma separated list.')
+        PrintUsage('Extensions must be comma separated list.')
 
   if not filenames:
     PrintUsage('No files were specified.')

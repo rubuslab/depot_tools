@@ -1,4 +1,4 @@
-#!/usr/bin/env vpython
+#!/usr/bin/env python3
 # Copyright (c) 2017 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -10,8 +10,6 @@ large -j value, and otherwise it chooses a small one. This auto-adjustment
 makes using remote build acceleration simpler and safer, and avoids errors that
 can cause slow goma builds or swap-storms on unaccelerated builds.
 """
-
-from __future__ import print_function
 
 import multiprocessing
 import os

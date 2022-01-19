@@ -65,7 +65,8 @@ def CheckPylint(input_api, output_api):
       output_api,
       files_to_check=files_to_check,
       files_to_skip=files_to_skip,
-      disabled_warnings=disabled_warnings))
+      disabled_warnings=disabled_warnings,
+      version='2.7'))
 
 
 def CheckRecipes(input_api, output_api):
@@ -177,4 +178,3 @@ def CheckOwnersOnUpload(input_api, output_api):
 
 def CheckDoNotSubmitOnCommit(input_api, output_api):
   return input_api.canned_checks.CheckDoNotSubmit(input_api, output_api)
-

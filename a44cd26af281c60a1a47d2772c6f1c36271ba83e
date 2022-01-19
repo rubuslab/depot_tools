@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "909ae001_3ec41069",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-01-19T04:11:46Z",
+      "side": 1,
+      "message": "This also changes from vpython to python3. This seems like a good idea (vpython startup times are quite slow, I believe) but should be acknowledged in the commit message to make it clear whether it is intended or not.\n\nAlso, the commit message says what is being changed, but not why. A sentence of context would be good. In particular, I seem to remember that this has been tried before and failed. If so, why will it succeed this time?",
+      "revId": "a44cd26af281c60a1a47d2772c6f1c36271ba83e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

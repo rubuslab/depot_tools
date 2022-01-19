@@ -1559,15 +1559,12 @@ class CipdWrapper(SCMWrapper):
     CIPD packages should be reverted at the root by running
     `CipdRoot.run('revert')`.
     """
-    pass
 
   def diff(self, options, args, file_list):
     """CIPD has no notion of diffing."""
-    pass
 
   def pack(self, options, args, file_list):
     """CIPD has no notion of diffing."""
-    pass
 
   def revinfo(self, options, args, file_list):
     """Grab the instance ID."""
@@ -1597,4 +1594,3 @@ class CipdWrapper(SCMWrapper):
     CIPD packages should be updated at the root by running
     `CipdRoot.run('update')`.
     """
-    pass

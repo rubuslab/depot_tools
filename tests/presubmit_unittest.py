@@ -2449,14 +2449,14 @@ the current line as well!
     subprocess.Popen.return_value = process
     presubmit.sigint_handler.wait.return_value = (b'', None)
 
-    pylint = os.path.join(_ROOT, 'pylint-1.5')
+    pylint = os.path.join(_ROOT, 'pylint-2.7')
     pylintrc = os.path.join(_ROOT, 'pylintrc')
     env = {str('PYTHONPATH'): str('')}
     if sys.platform == 'win32':
       pylint += '.bat'
 
     results = presubmit_canned_checks.RunPylint(
-        input_api, presubmit.OutputApi)
+        input_api, presubmit.OutputApi, version='2.7')
 
     self.assertEqual([], results)
     self.assertEqual(subprocess.Popen.mock_calls, [
@@ -2464,19 +2464,10 @@ the current line as well!
             [pylint, '--args-on-stdin'], env=env,
             cwd='CWD', stderr=subprocess.STDOUT, stdout=subprocess.PIPE,
             stdin=subprocess.PIPE),
-        mock.call(
-            [pylint, '--args-on-stdin'], env=env,
-            cwd='CWD', stderr=subprocess.STDOUT, stdout=subprocess.PIPE,
-            stdin=subprocess.PIPE),
     ])
     self.assertEqual(presubmit.sigint_handler.wait.mock_calls, [
-        mock.call(
-            process,
-            ('--rcfile=%s\n--disable=all\n--enable=cyclic-import\nfile1.py' %
-             pylintrc).encode('utf-8')),
         mock.call(process,
-                  ('--rcfile=%s\n--disable=cyclic-import\n--jobs=2\nfile1.py' %
-                   pylintrc).encode('utf-8')),
+                  ('--rcfile=%s\nfile1.py' % pylintrc).encode('utf-8')),
     ])
 
     self.checkstdout('')

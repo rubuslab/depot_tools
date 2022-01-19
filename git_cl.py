@@ -638,7 +638,7 @@ def _FindYapfConfigFile(fpath, yapf_config_cache, top_dir=None):
     yapf_file = os.path.join(fpath, YAPF_CONFIG_FILENAME)
     if os.path.isfile(yapf_file):
       ret = yapf_file
-    elif fpath == top_dir or parent_dir == fpath:
+    elif fpath in (top_dir, parent_dir):
       # If we're at the top level directory, or if we're at root
       # there is no provided style.
       ret = None
@@ -1845,9 +1845,9 @@ class Changelist(object):
 
     data = self._GetChangeDetail(['ALL_REVISIONS'])
     patchset = data['revisions'][data['current_revision']]['_number']
-    dry_run = set([int(m['_revision_number'])
-        for m in data.get('messages', [])
-        if m.get('tag', '').endswith('dry-run')])
+    dry_run = {int(m['_revision_number'])
+               for m in data.get('messages', [])
+               if m.get('tag', '').endswith('dry-run')}
 
     for revision_info in sorted(data.get('revisions', {}).values(),
         key=lambda c: c['_number'], reverse=True):
@@ -4148,9 +4148,11 @@ def GetTargetRef(remote, remote_branch, target_branch):
       if not match:
         # This is a branch path but not one we recognize; use as-is.
         remote_branch = target_branch
+  # pylint: disable=consider-using-get
   elif remote_branch in REFS_THAT_ALIAS_TO_OTHER_REFS:
     # Handle the refs that need to land in different refs.
     remote_branch = REFS_THAT_ALIAS_TO_OTHER_REFS[remote_branch]
+  # pylint: enable=consider-using-get
 
   # Create the true path to the remote branch.
   # Does the following translation:

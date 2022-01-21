@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a07c5385_f2ecf08c",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-21T00:40:01Z",
+      "side": 1,
+      "message": "Why?",
+      "range": {
+        "startLine": 81,
+        "startChar": 28,
+        "endLine": 81,
+        "endChar": 42
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e585f465_0fa9a636",
+        "filename": "cpplint.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 5267,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-21T00:40:01Z",
+      "side": 1,
+      "message": "probably shouldn\u0027t be changed.",
+      "range": {
+        "startLine": 5267,
+        "startChar": 10,
+        "endLine": 5267,
+        "endChar": 11
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64120f81_dfa70598",
+        "filename": "cpplint.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 5384,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-21T00:40:01Z",
+      "side": 1,
+      "message": "move this above required \u003d {}",
+      "range": {
+        "startLine": 5383,
+        "startChar": 17,
+        "endLine": 5384,
+        "endChar": 61
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b68533e_1b9805df",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-21T00:40:01Z",
+      "side": 1,
+      "message": "Could you add a comment explaining why we do concat? Something like:\n# keyword is concatenated so presubmit doesn\u0027t reject this file",
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "923f61b8_2a0e6357",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-21T00:40:01Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

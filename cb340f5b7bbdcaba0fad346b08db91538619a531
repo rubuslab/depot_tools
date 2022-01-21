@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "667cce0d_1daff159",
+        "filename": "tests/bot_update_coverage_test.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-01-21T01:25:31Z",
+      "side": 0,
+      "message": "curious, do you know why this is here in the first place?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 16
+      },
+      "revId": "cb340f5b7bbdcaba0fad346b08db91538619a531",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

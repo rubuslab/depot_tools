@@ -68,6 +68,23 @@
       "message": "lgtm (+current chops source owner)",
       "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbd3cbbb_76e1cd53",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-01-21T23:23:58Z",
+      "side": 1,
+      "message": "I\u0027m guessing that some legacy thing like https://stackoverflow.com/questions/12407800/which-comment-style-should-i-use-in-batch-files was rationale (back in the winXP days)",
+      "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -73,19 +73,19 @@ For each of the following test scenarios, run these commands and verify that
 they are working:
 
 ```bash
-:: Assert that `gclient` invocation will update (and do the update).
+rem Assert that `gclient` invocation will update (and do the update).
 gclient version
 
-:: Assert that Python fundamentally works.
+rem Assert that Python fundamentally works.
 python -c "import Queue; print dir(Queue)"
 
-:: Assert that Python 3 fundamentally works.
+rem Assert that Python 3 fundamentally works.
 python3 -c "import queue; print(dir(queue))"
 
-:: Assert that Python scripts work from `cmd.exe`.
+rem Assert that Python scripts work from `cmd.exe`.
 git map-branches
 
-:: Assert that `git bash` works.
+rem Assert that `git bash` works.
 git bash
 
 ## (Within `git bash`) assert that Python fundamentally works.

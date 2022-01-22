@@ -102,6 +102,24 @@
       "message": "Thanks for suggestion. We have 38 .bat files that use \"::\", and only one that use \"rem\". Would you be interested in moving them too? I\u0027d like to avoid being inconsistent. It should be a straightforward find \u0026 replace.\n\n$ ag -G \"\\.bat\" \"\\:\\:\" -l | wc -l\n38\n$ ag -G \"\\.bat\" \"\\:\\:\" -l        \nyapf.bat\nclang_format_merge_driver.bat\nbootstrap/win_tools.bat\nbootstrap/python3.bat\nbootstrap/python27.bat\nfetch.bat\ncit.bat\ndownload_from_google_storage.bat\nupdate_depot_tools.bat\ngoma_ctl.bat\nbb.bat\npylint-1.5.bat\npinpoint.bat\ngn.bat\nautoninja.bat\nclang-format.bat\nroll-dep.bat\nrdb.bat\ndirmd.bat\ngsutil.py.bat\nprpc.bat\nled.bat\ngclient.bat\npylint-2.6.bat\nlucicfg.bat\ncompile_single_file.bat\npylint.bat\npython2-bin/python2.bat\nvpython3.bat\ntesting_support/cipd.bat\nluci-auth.bat\ncipd.bat\npylint-2.7.bat\npython-bin/python3.bat\ncpplint.bat\ncipd_bin_setup.bat\nvpython.bat\ngoma_auth.bat\n",
       "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebd8d1b5_bb7ce10a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1460877
+      },
+      "writtenOn": "2022-01-22T06:43:28Z",
+      "side": 1,
+      "message": "Yes, sure! I replaced all of them. I found a couple of them in markdown and python files too, PTAL.",
+      "parentUuid": "3fca309e_1a541c17",
+      "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

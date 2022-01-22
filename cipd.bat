@@ -1,7 +1,7 @@
 @echo off
-:: Copyright (c) 2016 The Chromium Authors. All rights reserved.
-:: Use of this source code is governed by a BSD-style license that can be
-:: found in the LICENSE file.
+rem Copyright (c) 2016 The Chromium Authors. All rights reserved.
+rem Use of this source code is governed by a BSD-style license that can be
+rem found in the LICENSE file.
 
 setlocal
 
@@ -35,17 +35,17 @@ endlocal & (
 exit /b %EXPORT_ERRORLEVEL%
 
 
-:: Functions below.
+rem Functions below.
 ::
-:: See http://steve-jansen.github.io/guides/windows-batch-scripting/part-7-functions.html
-:: if you are unfamiliar with this madness.
+rem See http://steve-jansen.github.io/guides/windows-batch-scripting/part-7-functions.html
+rem if you are unfamiliar with this madness.
 
 
 :CLEAN_BOOTSTRAP
-:: To allow this powershell script to run if it was a byproduct of downloading
-:: and unzipping the depot_tools.zip distribution, we clear the Zone.Identifier
-:: alternate data stream. This is equivalent to clicking the "Unblock" button
-:: in the file's properties dialog.
+rem To allow this powershell script to run if it was a byproduct of downloading
+rem and unzipping the depot_tools.zip distribution, we clear the Zone.Identifier
+rem alternate data stream. This is equivalent to clicking the "Unblock" button
+rem in the file's properties dialog.
 echo.>%~dp0.cipd_impl.ps1:Zone.Identifier
 powershell -NoProfile -ExecutionPolicy RemoteSigned ^
     -Command "%~dp0.cipd_impl.ps1" ^
@@ -54,7 +54,7 @@ powershell -NoProfile -ExecutionPolicy RemoteSigned ^
     -VersionFile "%VERSION_FILE%" ^
   <nul
 if %ERRORLEVEL% equ 0 (
-  :: Need to call SELF_UPDATE to setup .cipd_version file.
+  rem Need to call SELF_UPDATE to setup .cipd_version file.
   call :SELF_UPDATE
 )
 exit /B %ERRORLEVEL%

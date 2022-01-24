@@ -138,6 +138,24 @@
       "parentUuid": "bbd3cbbb_76e1cd53",
       "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e67cd7c6_249ac726",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-01-24T18:14:17Z",
+      "side": 1,
+      "message": "I wasn\u0027t aware of that, thanks for calling it out! Given that we use \u003c\u003e (e.g. in bootstrap/win_tools.bat), this change shouldn\u0027t be submitted. For consistency, we should stick to \"::\".",
+      "parentUuid": "64a2d465_298517d1",
+      "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

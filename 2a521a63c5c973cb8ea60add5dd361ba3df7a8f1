@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "72b92bf7_5a135601",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "Some of those changes come from the original CL. I did not pre-vet the original CL changes before posting this for CL, which I should have. I will fix this and look around if any others are present.",
+      "parentUuid": "a07c5385_f2ecf08c",
+      "range": {
+        "startLine": 81,
+        "startChar": 28,
+        "endLine": 81,
+        "endChar": 42
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ba90ba4_ad8bdb72",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-01-21T01:25:31Z",
       "side": 1,
       "message": "why not \n\n```\n# pylint: disable-next\u003dunbalanced-tuple-unpacking\n```",
+      "range": {
+        "startLine": 31,
+        "startChar": 2,
+        "endLine": 31,
+        "endChar": 46
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "422584fc_58dd59f5",
+        "filename": "clang_format_merge_driver.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "I don\u0027t think pylint 2.7 supports that. https://pylint.pycqa.org/en/2.7/user_guide/message-control.html",
+      "parentUuid": "7ba90ba4_ad8bdb72",
       "range": {
         "startLine": 31,
         "startChar": 2,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "128bf29d_850a24ee",
+        "filename": "cpplint.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 5267,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "That came from the original CL. I\u0027ll fix it asap.",
+      "parentUuid": "e585f465_0fa9a636",
+      "range": {
+        "startLine": 5267,
+        "startChar": 10,
+        "endLine": 5267,
+        "endChar": 11
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "64120f81_dfa70598",
@@ -83,6 +155,30 @@
       "writtenOn": "2022-01-21T00:40:01Z",
       "side": 1,
       "message": "move this above required \u003d {}",
+      "range": {
+        "startLine": 5383,
+        "startChar": 17,
+        "endLine": 5384,
+        "endChar": 61
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3c56f2c_f416a1b9",
+        "filename": "cpplint.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 5384,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64120f81_dfa70598",
       "range": {
         "startLine": 5383,
         "startChar": 17,
@@ -116,6 +212,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05082926_811865b4",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4acfb8c0_66003b0e",
+      "range": {
+        "startLine": 48,
+        "startChar": 2,
+        "endLine": 48,
+        "endChar": 36
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ccf1663_a2d8e0cd",
@@ -129,6 +249,30 @@
       "writtenOn": "2022-01-21T01:25:31Z",
       "side": 1,
       "message": "move this inside the elif block",
+      "range": {
+        "startLine": 4153,
+        "startChar": 2,
+        "endLine": 4153,
+        "endChar": 38
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4ebdabd_c2ad2acc",
+        "filename": "git_cl.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 4153,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "The warning is actual on line 4154, not 4156. It\u0027s a false positive. I will rescope the disable to just the `elif` statement.",
+      "parentUuid": "5ccf1663_a2d8e0cd",
       "range": {
         "startLine": 4153,
         "startChar": 2,
@@ -162,6 +306,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd2ebba4_e559b146",
+        "filename": "my_activity.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0fc55fc5_85146de9",
+      "range": {
+        "startLine": 175,
+        "startChar": 23,
+        "endLine": 175,
+        "endChar": 58
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b68533e_1b9805df",
@@ -175,6 +343,24 @@
       "writtenOn": "2022-01-21T00:40:01Z",
       "side": 1,
       "message": "Could you add a comment explaining why we do concat? Something like:\n# keyword is concatenated so presubmit doesn\u0027t reject this file",
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b5b59ec_c9be0d20",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b68533e_1b9805df",
       "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -196,6 +382,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76b615a2_79b52bf7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "923f61b8_2a0e6357",
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c46c6ad8_edd91864",
@@ -209,6 +413,30 @@
       "writtenOn": "2022-01-21T01:25:31Z",
       "side": 1,
       "message": "why flip this condition?",
+      "range": {
+        "startLine": 1062,
+        "startChar": 5,
+        "endLine": 1062,
+        "endChar": 10
+      },
+      "revId": "2a521a63c5c973cb8ea60add5dd361ba3df7a8f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cf0b2d9_896840b5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1062,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-01-24T04:15:29Z",
+      "side": 1,
+      "message": "I did not vet what the original CL had and those are the from the it. I\u0027m assuming they disabled it for quick testing. I will re-enable it.",
+      "parentUuid": "c46c6ad8_edd91864",
       "range": {
         "startLine": 1062,
         "startChar": 5,

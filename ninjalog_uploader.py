@@ -26,6 +26,8 @@ import subprocess
 import sys
 import time
 
+from third_party.six.moves import http_client
+from third_party.six.moves.urllib import error
 from third_party.six.moves.urllib import request
 
 # These build configs affect build performance.
@@ -37,17 +39,13 @@ ALLOWLISTED_CONFIGS = ('symbol_level', 'use_goma', 'is_debug',
                        'use_errorprone_java_compiler', 'incremental_install')
 
 
-def IsGoogler():
-  """Check whether this user is Googler or not."""
-  p = subprocess.run('goma_auth info',
-                     capture_output=True,
-                     text=True,
-                     shell=True)
-  if p.returncode != 0:
+def IsGoogler(server):
+  """Check whether this script run inside corp network."""
+  try:
+    resp = request.urlopen('https://' + server + '/should-upload')
+    return resp.read() == b'Success'
+  except (error.URLError, http_client.RemoteDisconnected):
     return False
-  l = p.stdout.splitlines()[0]
-  # |l| will be like 'Login as <user>@google.com' for googler using goma.
-  return l.startswith('Login as ') and l.endswith('@google.com')
 
 
 def ParseGNArgs(gn_args):
@@ -192,7 +190,7 @@ def main():
     # Disable logging.
     logging.disable(logging.CRITICAL)
 
-  if not IsGoogler():
+  if not IsGoogler(args.server):
     return 0
 
   ninjalog = args.ninjalog or GetNinjalog(args.cmdline)

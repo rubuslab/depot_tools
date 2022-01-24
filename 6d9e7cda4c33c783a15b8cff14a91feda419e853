@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bde13c09_46c214cc",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1356080
+      },
+      "writtenOn": "2022-01-24T04:48:50Z",
+      "side": 1,
+      "message": "This only captures stdout whereas the previous captured stderr too. I assume you don\u0027t need stderr?",
+      "revId": "6d9e7cda4c33c783a15b8cff14a91feda419e853",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e5b305b_93cd46e8",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1356080
+      },
+      "writtenOn": "2022-01-24T04:48:50Z",
+      "side": 1,
+      "message": "text is also \u003e\u003d3.7 only",
+      "revId": "6d9e7cda4c33c783a15b8cff14a91feda419e853",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

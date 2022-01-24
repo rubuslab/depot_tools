@@ -34,6 +34,24 @@
       "parentUuid": "eb60f9c7_89aff066",
       "revId": "383c85168f254c01344d67256c79a2a97d83318c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36b6138d_51d9fe6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1356080
+      },
+      "writtenOn": "2022-01-24T04:44:20Z",
+      "side": 1,
+      "message": "Conflicts should be fixed now. If you want to fix forward and it\u0027s quick go for it, otherwise I\u0027ll continue with this to unblcok the build.",
+      "parentUuid": "121c5e5d_22a13155",
+      "revId": "383c85168f254c01344d67256c79a2a97d83318c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

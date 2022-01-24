@@ -440,8 +440,8 @@ class Annotated(Wrapper):
 
       if cr_loc == -1 or (0 <= lf_loc < cr_loc):
         line, remaining = obj[0].split(b'\n', 1)
-      if line:
-        self._wrapped_write(b'%d>%s\n' % (index, line))
+        if line:
+          self._wrapped_write(b'%d>%s\n' % (index, line))
       elif lf_loc == -1 or (0 <= cr_loc < lf_loc):
         line, remaining = obj[0].split(b'\r', 1)
         if line:

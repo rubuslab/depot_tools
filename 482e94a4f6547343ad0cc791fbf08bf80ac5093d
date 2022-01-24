@@ -120,6 +120,24 @@
       "parentUuid": "3fca309e_1a541c17",
       "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64a2d465_298517d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2022-01-24T15:31:54Z",
+      "side": 1,
+      "message": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/rem#remarks still mentions that you cannot use \u003c, \u003e or | in comments.\n\nIs there a real reason for this change?",
+      "parentUuid": "bbd3cbbb_76e1cd53",
+      "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,29 @@
       "message": "Getting errors with \"gclient sync --with_branch_heads --with_tags -D\"\nTraceback (most recent call last):\n  File \"depot_tools/metrics.py\", line 291, in print_notice_and_exit\n    yield\n  File \"depot_tools/gclient.py\", line 3236, in \u003cmodule\u003e\n    sys.exit(main(sys.argv[1:]))\n  File \"depot_tools/gclient.py\", line 3222, in main\n    return dispatcher.execute(OptionParser(), argv)\n  File \"depot_tools/subcommand.py\", line 252, in execute\n    return command(parser, args[1:])\n  File \"depot_tools/metrics.py\", line 276, in _inner\n    return self._collect_metrics(func, command_name, *args, **kwargs)\n  File \"depot_tools/metrics.py\", line 261, in _collect_metrics\n    gclient_utils.reraise(exception[0], exception[1], exception[2])\n  File \"depot_tools/gclient_utils.py\", line 67, in reraise\n    raise value\n  File \"depot_tools/metrics.py\", line 230, in _collect_metrics\n    result \u003d func(*args, **kwargs)\n  File \"depot_tools/gclient.py\", line 2776, in CMDsync\n    ret \u003d client.RunOnDeps(\u0027update\u0027, args)\n  File \"depot_tools/gclient.py\", line 1814, in RunOnDeps\n    work_queue.flush(revision_overrides, command, args, options\u003dself._options,\n  File \"depot_tools/gclient_utils.py\", line 980, in flush\n    reraise(e[0], e[1], e[2])\n  File \"depot_tools/gclient_utils.py\", line 67, in reraise\n    raise value\n  File \"depot_tools/gclient_utils.py\", line 1057, in run\n    self.item.run(*self.args, **self.kwargs)\n  File \"depot_tools/gclient.py\", line 998, in run\n    work_queue.enqueue(s)\n  File \"depot_tools/gclient_utils.py\", line 868, in enqueue\n    self.progress.update(0)\n  File \"depot_tools/third_party/repo/progress.py\", line 54, in update\n    sys.stdout.write(\u0027%s%*s\\r\u0027 % (text, spaces, \u0027\u0027))\n  File \"depot_tools/gclient_utils.py\", line 443, in write\n    if line:\nUnboundLocalError: local variable \u0027line\u0027 referenced before assignment\n",
       "revId": "22bf605bb63f8ff01aa7c1a2841718e3489b43d6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d542fa86_6d7c5a2e",
+        "filename": "gclient_utils.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 1001921
+      },
+      "writtenOn": "2022-01-24T21:31:00Z",
+      "side": 1,
+      "message": "missing indent?",
+      "range": {
+        "startLine": 443,
+        "startChar": 0,
+        "endLine": 444,
+        "endChar": 55
+      },
+      "revId": "22bf605bb63f8ff01aa7c1a2841718e3489b43d6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

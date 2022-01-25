@@ -156,6 +156,24 @@
       "parentUuid": "64a2d465_298517d1",
       "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63d863eb_73736a29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1460877
+      },
+      "writtenOn": "2022-01-25T06:14:21Z",
+      "side": 1,
+      "message": "Interesting! What\u0027s weird is that the example in https://stackoverflow.com/a/12407934 suggests that using the \u003c operator works as expected. Should we run a try job to confirm? If it doesn\u0027t work, perhaps we can escape them with ^ characters?\n\nThe main reason why I\u0027m suggesting this change is that rem is the documented and supported way to embed comments in batch files and :: isn\u0027t.",
+      "parentUuid": "e67cd7c6_249ac726",
+      "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

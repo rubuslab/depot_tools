@@ -192,6 +192,24 @@
       "parentUuid": "63d863eb_73736a29",
       "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c077dfbb_aa970232",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1460877
+      },
+      "writtenOn": "2022-01-26T06:27:28Z",
+      "side": 1,
+      "message": "You said that you trust the Microsoft docs which mentions that rem is the way to write comments in batch files, however the docs have no mention of :: comments, which means that it is unsupported. Shouldn\u0027t we prefer using what the docs say instead of using something that\u0027s not even documented?",
+      "parentUuid": "d8ea84e2_1a7db476",
+      "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

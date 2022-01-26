@@ -210,6 +210,24 @@
       "parentUuid": "d8ea84e2_1a7db476",
       "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da4081cb_23a46417",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2022-01-26T15:04:41Z",
+      "side": 1,
+      "message": "Microsoft cares a lot about backward compatibility. I agree it\u0027s unfortunate that it is not properly documented and I agree there\u0027s some irony to this.\n\nI\u0027ve been using this form of comments in batch files since 1990 because I got bitten by the control characters more than once. That\u0027s the case where learning came from experience. As such I still consider this is not a desirable change unless proven safe.",
+      "parentUuid": "c077dfbb_aa970232",
+      "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

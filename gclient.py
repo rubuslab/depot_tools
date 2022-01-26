@@ -3231,6 +3231,7 @@ def main(argv):
 
 
 if '__main__' == __name__:
+  print("Hello World")
   with metrics.collector.print_notice_and_exit():
     sys.exit(main(sys.argv[1:]))
 

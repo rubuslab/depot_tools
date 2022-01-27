@@ -228,6 +228,24 @@
       "parentUuid": "c077dfbb_aa970232",
       "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83bcec21_5f779343",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1460877
+      },
+      "writtenOn": "2022-01-27T08:13:02Z",
+      "side": 1,
+      "message": "Thanks for the clarification, I\u0027ve updated the CL to use :: instead of rem for comments everywhere, PTAL.",
+      "parentUuid": "da4081cb_23a46417",
+      "revId": "482e94a4f6547343ad0cc791fbf08bf80ac5093d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

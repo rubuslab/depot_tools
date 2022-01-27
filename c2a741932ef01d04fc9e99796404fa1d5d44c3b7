@@ -16,6 +16,24 @@
       "message": "Gentle ping for another round of review",
       "revId": "c2a741932ef01d04fc9e99796404fa1d5d44c3b7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "280ae8ee_fab784dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1460877
+      },
+      "writtenOn": "2022-01-27T08:13:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6139e57_94101a43",
+      "revId": "c2a741932ef01d04fc9e99796404fa1d5d44c3b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -50,6 +50,24 @@
       "message": "Do you mind removing the trailing space while at it?",
       "revId": "be6b1cfe16600d1e7ba703204a4575aa73e16d98",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82eddf42_0516e729",
+        "filename": "autoninja.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1460877
+      },
+      "writtenOn": "2022-01-28T13:17:35Z",
+      "side": 1,
+      "message": "Thanks for catching that, done!",
+      "parentUuid": "9aa0e039_cbe4eb4a",
+      "revId": "be6b1cfe16600d1e7ba703204a4575aa73e16d98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

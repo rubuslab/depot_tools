@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c03646d0_362af7ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2022-01-31T17:51:35Z",
+      "side": 1,
+      "message": "Hi Takuto,\n\nCurrently android_fast_local_dev is being used and I am working on landing android_static_analysis. Would you prefer I wait until android_static_analysis lands in chromium before adding it to depot_tools?\n\nThanks,\nPeter",
+      "revId": "6e8b6d2c90aef32a678b67d7637864920356a6ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

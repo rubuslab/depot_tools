@@ -34,6 +34,24 @@
       "parentUuid": "c03646d0_362af7ad",
       "revId": "6e8b6d2c90aef32a678b67d7637864920356a6ad",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b59bc0d9_97e70c67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2022-02-01T19:13:45Z",
+      "side": 1,
+      "message": "Thanks Takuto! I\u0027ve simplified this CL and filed: https://crbug.com/1293097",
+      "parentUuid": "9ce776c7_fd7036d0",
+      "revId": "6e8b6d2c90aef32a678b67d7637864920356a6ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

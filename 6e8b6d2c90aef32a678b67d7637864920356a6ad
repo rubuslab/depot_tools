@@ -16,6 +16,24 @@
       "message": "Hi Takuto,\n\nCurrently android_fast_local_dev is being used and I am working on landing android_static_analysis. Would you prefer I wait until android_static_analysis lands in chromium before adding it to depot_tools?\n\nThanks,\nPeter",
       "revId": "6e8b6d2c90aef32a678b67d7637864920356a6ad",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ce776c7_fd7036d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-02-01T00:13:32Z",
+      "side": 1,
+      "message": "Could you file a bug specific to this change like https://crbug.com/1263441? We need to update PDD for this.",
+      "parentUuid": "c03646d0_362af7ad",
+      "revId": "6e8b6d2c90aef32a678b67d7637864920356a6ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

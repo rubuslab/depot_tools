@@ -16,6 +16,7 @@ from __future__ import print_function
 import multiprocessing
 import os
 import re
+import socket
 import subprocess
 import sys
 
@@ -63,6 +64,7 @@ input_args = [ arg for arg in input_args if arg not in ('-o', '--offline')]
 
 use_goma = False
 use_remoteexec = False
+use_buildserver = False
 
 # Currently get reclient binary and config dirs relative to output_dir.  If
 # they exist and using remoteexec, then automatically call bootstrap to start
@@ -76,8 +78,9 @@ reclient_cfg = os.path.join(
 # Attempt to auto-detect remote build acceleration. We support gn-based
 # builds, where we look for args.gn in the build tree, and cmake-based builds
 # where we look for rules.ninja.
-if os.path.exists(os.path.join(output_dir, 'args.gn')):
-  with open(os.path.join(output_dir, 'args.gn')) as file_handle:
+args_gn_path = os.path.join(output_dir, 'args.gn')
+if os.path.exists(args_gn_path):
+  with open(args_gn_path) as file_handle:
     for line in file_handle:
       # Either use_goma, use_remoteexec or use_rbe (in deprecation)
       # activate build acceleration.
@@ -88,6 +91,10 @@ if os.path.exists(os.path.join(output_dir, 'args.gn')):
       #
       # Anything after a comment is not consider a valid argument.
       line_without_comment = line.split('#')[0]
+      if re.search(
+          r'(^|\s)(android_static_analysis)\s*=\s*"build_server"($|\s)',
+          line_without_comment):
+        use_buildserver = True
       if re.search(r'(^|\s)(use_goma)\s*=\s*true($|\s)',
                    line_without_comment):
         use_goma = True
@@ -120,6 +127,15 @@ goma_disabled_env = os.environ.get('GOMA_DISABLED', '0').lower()
 if offline or goma_disabled_env in ['true', 't', 'yes', 'y', '1']:
   use_goma = False
 
+def sys_exit_failed():
+  if sys.platform.startswith('win'):
+    # Set an exit code of 1 in the batch file.
+    print('cmd "/c exit 1"')
+  else:
+    # Set an exit code of 1 by executing 'false' in the bash script.
+    print('false')
+  sys.exit(1)
+
 if use_goma:
   gomacc_file = 'gomacc.exe' if sys.platform.startswith('win') else 'gomacc'
   goma_dir = os.environ.get('GOMA_DIR', os.path.join(SCRIPT_DIR, '.cipd_bin'))
@@ -132,13 +148,30 @@ if use_goma:
     if status == 1:
       print('Goma is not running. Use "goma_ctl ensure_start" to start it.',
             file=sys.stderr)
-      if sys.platform.startswith('win'):
-        # Set an exit code of 1 in the batch file.
-        print('cmd "/c exit 1"')
-      else:
-        # Set an exit code of 1 by executing 'false' in the bash script.
-        print('false')
-      sys.exit(1)
+      sys_exit_failed()
+
+with socket.socket(socket.AF_UNIX) as s:
+  try:
+    s.connect('\0chromium_build_server_socket')
+  except socket.error as e:
+    is_buildserver_running = False
+  else:
+    is_buildserver_running = True
+if use_buildserver and not is_buildserver_running:
+  print(
+      'The GN arg android_static_analysis="build_server" is set but the build '
+      'server is not running.\nPlease run this in a separate terminal:\n\n  '
+      'build/android/fast_local_dev_server.py\n',
+      file=sys.stderr)
+  sys_exit_failed()
+elif not use_buildserver and is_buildserver_running:
+  print(
+      'The build server is running but the GN arg '
+      'android_static_analysis="build_server" is not set.\nPlease add this to '
+      f'your {args_gn_path} file:\n\n  '
+      'android_static_analysis="build_server"\n',
+      file=sys.stderr)
+  sys_exit_failed()
 
 # Specify ninja.exe on Windows so that ninja.bat can call autoninja and not
 # be called back.

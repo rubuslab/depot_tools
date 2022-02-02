@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6feee809_3ccdff85",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002869
+      },
+      "writtenOn": "2022-02-02T19:27:54Z",
+      "side": 1,
+      "message": "I\u0027m still not 100% sure whether we should fail for the second case. If the build server is running but the current output directory doesn\u0027t have `android_static_analysis\u003d\"build_server\"`. I guess if someone didn\u0027t want the build server running for this specific output dir, they can temporarily Ctrl-C the build server and then use autoninja. WDYT?",
+      "revId": "2eadc4358655c271a78ec53cfc022cc46e015962",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

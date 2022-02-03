@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3de50663_77dcaab6",
+        "filename": "cpplint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T21:41:40Z",
+      "side": 1,
+      "message": "change shebang\n\nalso a bit scary change (unicode / str), so maybe do that in a separate commit?",
+      "revId": "034d62127bb841844af250c4ccf5ab3a21559ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "385165d0_ca456603",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T21:41:40Z",
+      "side": 1,
+      "message": "revert the file to original (to make it py2 compatbile) + change to py3 shebang",
+      "revId": "034d62127bb841844af250c4ccf5ab3a21559ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72878fe1_09c070bf",
+        "filename": "git_footers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T21:41:40Z",
+      "side": 1,
+      "message": "good to keep",
+      "revId": "034d62127bb841844af250c4ccf5ab3a21559ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29db9f15_90c75f78",
+        "filename": "wtf",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T21:41:40Z",
+      "side": 1,
+      "message": "wtf script should be tested",
+      "revId": "034d62127bb841844af250c4ccf5ab3a21559ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

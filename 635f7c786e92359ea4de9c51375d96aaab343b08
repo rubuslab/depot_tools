@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b234fb6_a8578e93",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T21:56:15Z",
+      "side": 1,
+      "message": "just \"python3\"\n\nalso, modify the recipe:\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:recipes/recipe_modules/gclient/api.py;l\u003d295\n\n\nmaybe this too: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:recipes/recipe_modules/gclient/api.py;l\u003d401",
+      "range": {
+        "startLine": 1,
+        "startChar": 15,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "635f7c786e92359ea4de9c51375d96aaab343b08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

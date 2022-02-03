@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5bd28f88_df779bab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-02-03T21:56:57Z",
+      "side": 1,
+      "message": "update python3 here too: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:recipes/recipe_modules/gclient/api.py;l\u003d401;drc\u003ded6aa2b0e87048e0953e68f951437e97808e7339\n\n\nwhen you adjust recipes, you\u0027ll need to retrain expectation files by running `./recipes.py test train`",
+      "revId": "635f7c786e92359ea4de9c51375d96aaab343b08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b234fb6_a8578e93",
         "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
         "patchSetId": 5
@@ -19,6 +36,29 @@
         "startChar": 15,
         "endLine": 1,
         "endChar": 23
+      },
+      "revId": "635f7c786e92359ea4de9c51375d96aaab343b08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "643a2385_836ed981",
+        "filename": "recipes/recipe_modules/gclient/resources/diff_deps.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-02-03T21:56:57Z",
+      "side": 1,
+      "message": "I think use regular python3 instead?",
+      "range": {
+        "startLine": 1,
+        "startChar": 15,
+        "endLine": 1,
+        "endChar": 16
       },
       "revId": "635f7c786e92359ea4de9c51375d96aaab343b08",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

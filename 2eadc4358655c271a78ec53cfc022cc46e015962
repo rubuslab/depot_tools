@@ -16,6 +16,57 @@
       "message": "I\u0027m still not 100% sure whether we should fail for the second case. If the build server is running but the current output directory doesn\u0027t have `android_static_analysis\u003d\"build_server\"`. I guess if someone didn\u0027t want the build server running for this specific output dir, they can temporarily Ctrl-C the build server and then use autoninja. WDYT?",
       "revId": "2eadc4358655c271a78ec53cfc022cc46e015962",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d3ba81c_b1779f94",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2022-02-03T02:27:53Z",
+      "side": 1,
+      "message": "other branches have a \"continue\", although might be simpler to change them to use elif",
+      "revId": "2eadc4358655c271a78ec53cfc022cc46e015962",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e0e8ec7_903cbf30",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2022-02-03T02:27:53Z",
+      "side": 1,
+      "message": "Put method at the top of the file (above code)?",
+      "revId": "2eadc4358655c271a78ec53cfc022cc46e015962",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "200bc632_a2af66ae",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2022-02-03T02:27:53Z",
+      "side": 1,
+      "message": "I know it seems against the style of this script, but maybe put this into a function?\n\n\ncheck_android_build_server(use_buildserver)\n\nI think we\u0027d want to run it only when sys.platform.startswith(\u0027linux\u0027)",
+      "revId": "2eadc4358655c271a78ec53cfc022cc46e015962",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

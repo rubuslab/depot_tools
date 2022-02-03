@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f16656fd_a711db2d",
+        "filename": "cpplint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1905,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "probably should be reverted too",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16d21400_8a0e653c",
+        "filename": "cpplint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4163,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "revert this bit",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4d9e17c_94ea2a0a",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "should be reverted, and everything below",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dcbf2bc_95b2972d",
+        "filename": "git_retry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "good candidate to manually test, given this couldn\u0027t work on py3 ever",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a6d9e5c_1c15082e",
+        "filename": "man/src/filter_demo_output.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "this likely didn\u0027t work before, so we should test by running make_docs.sh (line 18)",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb92beee_4423fd2d",
+        "filename": "metrics.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "revert",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91e1bbc5_3910942b",
+        "filename": "metrics_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "revert and everything below",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c938a377_c3eff4df",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "we\u0027ve been running presubmit on py2 and py3, so I would just change shebang in this file, revert the rest",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20abc931_0c0827cd",
+        "filename": "upload_to_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "revert",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35f56d86_a7ed38de",
+        "filename": "win_toolchain/get_toolchain_if_necessary.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-03T22:07:58Z",
+      "side": 1,
+      "message": "revert, and everything below",
+      "revId": "8505dbe2d6b3c472ae56173cc508e7d0d364894f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

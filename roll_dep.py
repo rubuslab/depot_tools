@@ -9,7 +9,7 @@ Works only with git checkout and git dependencies. Currently this script will
 always roll to the tip of to origin/main.
 """
 
-from __future__ import print_function
+
 
 import argparse
 import os

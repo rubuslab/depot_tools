@@ -5,7 +5,7 @@
 
 """Splits a branch into smaller branches and uploads CLs."""
 
-from __future__ import print_function
+
 
 import collections
 import os
@@ -251,7 +251,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
       return 0
 
     for cl_index, (directory, files) in \
-        enumerate(files_split_by_owners.items(), 1):
+        enumerate(list(files_split_by_owners.items()), 1):
       # Use '/' as a path separator in the branch name and the CL description
       # and comment.
       directory = directory.replace(os.path.sep, '/')

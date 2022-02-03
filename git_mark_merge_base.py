@@ -11,7 +11,7 @@ purposes of the chromium depot_tools git extensions. Passing no arguments will
 just print the effective merge base for the current branch.
 """
 
-from __future__ import print_function
+
 
 import argparse
 import sys

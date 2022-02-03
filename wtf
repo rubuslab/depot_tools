@@ -5,7 +5,7 @@
 
 """Display active git branches and code changes in a chromiumos workspace."""
 
-from __future__ import print_function
+
 
 import gclient_utils
 import os
@@ -66,13 +66,13 @@ def main():
   root, entries = gclient_utils.GetGClientRootAndEntries()
 
   # which entries map to a git repos?
-  raw = [k for k, v in entries.items() if v and not re.search('svn', v)]
+  raw = [k for k, v in list(entries.items()) if v and not re.search('svn', v)]
   raw.sort()
 
   # We want to use the full path for testing, but we want to use the relative
   # path for display.
-  fulldirs = map(lambda(p): os.path.normpath(os.path.join(root, p)), raw)
-  reldirs = map(lambda(p): re.sub('^' + base, '.', p), raw)
+  fulldirs = [os.path.normpath(os.path.join(root, p)) for p in raw]
+  reldirs = [re.sub('^' + base, '.', p) for p in raw]
 
   for full_path, relative_path in zip(fulldirs, reldirs):
     show_dir(full_path, relative_path, color)

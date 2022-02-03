@@ -18,7 +18,7 @@ the toolchain. This is likely to be a poorly tested code path that probably
 won't be properly maintained. See http://crbug.com/323300.
 """
 
-from __future__ import print_function
+
 
 import argparse
 from contextlib import closing
@@ -33,8 +33,9 @@ import sys
 import tempfile
 import time
 if sys.version_info[0] < 3:
-  from urllib2 import urlopen, URLError
-  from urlparse import urljoin
+  from urllib.request import urlopen
+  from urllib.error import URLError
+  from urllib.parse import urljoin
 else:
   from urllib.request import urlopen
   from urllib.parse import urljoin
@@ -50,7 +51,7 @@ if sys.platform == "win32":
   try:
     import winreg
   except ImportError:
-    import _winreg as winreg
+    import winreg as winreg
 elif sys.platform == "cygwin":
   try:
     import cygwinreg as winreg

@@ -5,14 +5,14 @@
 
 """Uploads files to Google Storage content addressed."""
 
-from __future__ import print_function
+
 
 import hashlib
 import optparse
 import os
 
 try:
-  import Queue as queue
+  import queue as queue
 except ImportError:  # For Py3 compatibility
   import queue
 
@@ -234,17 +234,17 @@ def create_archives(dirs):
 
 def validate_archive_dirs(dirs):
   # We don't allow .. in paths in our archives.
-  if any(map(lambda x: '..' in x, dirs)):
+  if any(['..' in x for x in dirs]):
     return False
   # We only allow dirs.
-  if any(map(lambda x: not os.path.isdir(x), dirs)):
+  if any([not os.path.isdir(x) for x in dirs]):
     return False
   # We don't allow sym links in our archives.
   if any(map(os.path.islink, dirs)):
     return False
   # We required that the subdirectories we are archiving are all just below
   # cwd.
-  return not any(map(lambda x: x not in next(os.walk('.'))[1], dirs))
+  return not any([x not in next(os.walk('.'))[1] for x in dirs])
 
 
 def main():

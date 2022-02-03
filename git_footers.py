@@ -3,7 +3,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-from __future__ import print_function
+
 
 import argparse
 import json
@@ -248,7 +248,7 @@ def main(args):
     with open(opts.json, 'w') as f:
       json.dump(footers, f)
   else:
-    for k in footers.keys():
+    for k in list(footers.keys()):
       for v in footers[k]:
         print('%s: %s' % (k, v))
   return 0

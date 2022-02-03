@@ -7,7 +7,7 @@
 #    gclient-new-workdir.py [options] <repository> <new_workdir>
 #
 
-from __future__ import print_function
+
 
 import argparse
 import os

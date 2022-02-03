@@ -18,7 +18,7 @@ the watchers for files given on the command line. This is useful to verify
 changes to WATCHLISTS files.
 """
 
-from __future__ import print_function
+
 
 import logging
 import os
@@ -95,7 +95,7 @@ class Watchlists(object):
     # Compile the regular expressions ahead of time to avoid creating them
     # on-the-fly multiple times per file.
     self._path_regexps = {}
-    for name, rule in defns.items():
+    for name, rule in list(defns.items()):
       filepath = rule.get('filepath')
       if not filepath:
         continue
@@ -118,7 +118,7 @@ class Watchlists(object):
     watchers = set()  # A set, to avoid duplicates
     for path in paths:
       path = path.replace(os.sep, '/')
-      for name, rule in self._path_regexps.items():
+      for name, rule in list(self._path_regexps.items()):
         if name not in self._watchlists:
           continue
         if rule.search(path):

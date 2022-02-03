@@ -17,7 +17,7 @@ point to them. Items are colorized as follows:
   * Blue background - The currently checked out commit
 """
 
-from __future__ import unicode_literals
+
 
 import os
 import sys
@@ -59,7 +59,7 @@ def _print_help(outbuf):
   }
   msg = ''
   for line in __doc__.splitlines():
-    for name, color in names.items():
+    for name, color in list(names.items()):
       if name in line:
         msg += line.replace('* ' + name, color + '* ' + name + RESET) + '\n'
         break
@@ -129,7 +129,7 @@ def main(argv, outbuf):
     if merge_base:
       merge_base_map.setdefault(merge_base, set()).add(branch)
 
-  for merge_base, branches in merge_base_map.items():
+  for merge_base, branches in list(merge_base_map.items()):
     merge_base_map[merge_base] = ', '.join(branches)
 
   try:

@@ -3,7 +3,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-from __future__ import print_function
+
 
 import contextlib
 import functools
@@ -85,7 +85,7 @@ class _Config(object):
       # check if we can reach the page. An external developer would get access
       # denied.
       try:
-        req = urllib.urlopen(metrics_utils.APP_URL + '/should-upload')
+        req = urllib.request.urlopen(metrics_utils.APP_URL + '/should-upload')
         self._config['is-googler'] = req.getcode() == 200
       except (urllib.URLError, urllib.HTTPError):
         self._config['is-googler'] = False

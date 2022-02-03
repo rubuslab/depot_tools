@@ -6,7 +6,7 @@
 """Display log of checkins of one particular developer since a particular
 date. Only works on git dependencies at the moment."""
 
-from __future__ import print_function
+
 
 import gclient_utils
 import optparse
@@ -42,7 +42,7 @@ def main():
   root, entries = gclient_utils.GetGClientRootAndEntries()
 
   # which entries map to a git repos?
-  paths = [k for k, v in entries.items() if not re.search('svn', v)]
+  paths = [k for k, v in list(entries.items()) if not re.search('svn', v)]
   paths.sort()
 
   for path in paths:

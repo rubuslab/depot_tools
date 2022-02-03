@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Copyright (c) 2012 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -6,7 +6,7 @@
 """Enables directory-specific presubmit checks to run at upload and/or commit.
 """
 
-from __future__ import print_function
+
 
 __version__ = '2.0.0'
 
@@ -54,8 +54,8 @@ import subprocess2 as subprocess  # Exposed through the API.
 
 if sys.version_info.major == 2:
   # TODO(1009814): Expose urllib2 only through urllib_request and urllib_error
-  import urllib2  # Exposed through the API.
-  import urlparse
+  import urllib.request, urllib.error, urllib.parse  # Exposed through the API.
+  import urllib.parse
   import urllib2 as urllib_request
   import urllib2 as urllib_error
 else:
@@ -331,7 +331,7 @@ class _PresubmitResult(object):
     if isinstance(val, str):
       return val
 
-    if six.PY2 and isinstance(val, unicode):
+    if six.PY2 and isinstance(val, str):
       return val.encode()
 
     if six.PY3 and isinstance(val, bytes):
@@ -398,7 +398,7 @@ class GerritAccessor(object):
   """
 
   def __init__(self, url=None, project=None, branch=None):
-    self.host = urlparse.urlparse(url).netloc if url else None
+    self.host = urllib.parse.urlparse(url).netloc if url else None
     self.project = project
     self.branch = branch
     self.cache = {}
@@ -438,7 +438,7 @@ class GerritAccessor(object):
 
     # Find revision info for the patchset we want.
     if patchset is not None:
-      for rev, rev_info in info['revisions'].items():
+      for rev, rev_info in list(info['revisions'].items()):
         if str(rev_info['_number']) == str(patchset):
           break
       else:
@@ -461,7 +461,7 @@ class GerritAccessor(object):
   def _GetApproversForLabel(self, issue, label):
     change_info = self.GetChangeInfo(issue)
     label_info = change_info.get('labels', {}).get(label, {})
-    values = label_info.get('values', {}).keys()
+    values = list(label_info.get('values', {}).keys())
     if not values:
       return []
     max_value = max(int(v) for v in values)
@@ -689,9 +689,7 @@ class InputApi(object):
     if len(dir_with_slash) == 1:
       dir_with_slash = ''
 
-    return list(filter(
-        lambda x: normpath(x.AbsoluteLocalPath()).startswith(dir_with_slash),
-        self.change.AffectedFiles(include_deletes, file_filter)))
+    return list([x for x in self.change.AffectedFiles(include_deletes, file_filter) if normpath(x.AbsoluteLocalPath()).startswith(dir_with_slash)])
 
   def LocalPaths(self):
     """Returns local paths of input_api.AffectedFiles()."""
@@ -713,9 +711,7 @@ class InputApi(object):
                ' is deprecated and ignored' % str(include_deletes),
            category=DeprecationWarning,
            stacklevel=2)
-    return list(filter(
-        lambda x: x.IsTestableFile(),
-        self.AffectedFiles(include_deletes=False, **kwargs)))
+    return list([x for x in self.AffectedFiles(include_deletes=False, **kwargs) if x.IsTestableFile()])
 
   def AffectedTextFiles(self, include_deletes=None):
     """An alias to AffectedTestableFiles for backwards compatibility."""
@@ -901,7 +897,7 @@ class _GitDiffCache(_DiffCache):
           current_diff.append(x)
 
       self._diffs_by_file = dict(
-        (normpath(path), ''.join(diff)) for path, diff in diffs.items())
+        (normpath(path), ''.join(diff)) for path, diff in list(diffs.items()))
 
     if path not in self._diffs_by_file:
       raise PresubmitFailure(
@@ -1235,7 +1231,7 @@ class Change(object):
 
     if include_deletes:
       return affected
-    return list(filter(lambda x: x.Action() != 'D', affected))
+    return list([x for x in affected if x.Action() != 'D'])
 
   def AffectedTestableFiles(self, include_deletes=None, **kwargs):
     """Return a list of the existing text files in a change."""
@@ -1244,9 +1240,7 @@ class Change(object):
                ' is deprecated and ignored' % str(include_deletes),
            category=DeprecationWarning,
            stacklevel=2)
-    return list(filter(
-        lambda x: x.IsTestableFile(),
-        self.AffectedFiles(include_deletes=False, **kwargs)))
+    return list([x for x in self.AffectedFiles(include_deletes=False, **kwargs) if x.IsTestableFile()])
 
   def AffectedTextFiles(self, include_deletes=None):
     """An alias to AffectedTestableFiles for backwards compatibility."""
@@ -1386,10 +1380,10 @@ class GetPostUploadExecuter(object):
 def _MergeMasters(masters1, masters2):
   """Merges two master maps. Merges also the tests of each builder."""
   result = {}
-  for (master, builders) in itertools.chain(masters1.items(),
-                                            masters2.items()):
+  for (master, builders) in itertools.chain(list(masters1.items()),
+                                            list(masters2.items())):
     new_builders = result.setdefault(master, {})
-    for (builder, tests) in builders.items():
+    for (builder, tests) in list(builders.items()):
       new_builders.setdefault(builder, set([])).update(tests)
   return result
 
@@ -1706,7 +1700,7 @@ def DoPresubmitChecks(change,
         messages.setdefault('Messages', []).append(result)
 
     sys.stdout.write('\n')
-    for name, items in messages.items():
+    for name, items in list(messages.items()):
       sys.stdout.write('** Presubmit %s **\n' % name)
       for item in items:
         item.handle()
@@ -1872,7 +1866,7 @@ def canned_check_filter(method_names):
       setattr(presubmit_canned_checks, method_name, lambda *_a, **_kw: [])
     yield
   finally:
-    for name, method in filtered.items():
+    for name, method in list(filtered.items()):
       setattr(presubmit_canned_checks, name, method)
 
 

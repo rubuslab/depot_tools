@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Copyright 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 """A git command for managing a local cache of git repositories."""
 
-from __future__ import print_function
+
 
 import contextlib
 import errno
@@ -20,7 +20,7 @@ import threading
 import time
 
 try:
-  import urlparse
+  import urllib.parse
 except ImportError:  # For Py3 compatibility
   import urllib.parse as urlparse
 
@@ -142,7 +142,7 @@ class Mirror(object):
     b = os.getenv('OVERRIDE_BOOTSTRAP_BUCKET')
     if b:
       return b
-    u = urlparse.urlparse(self.url)
+    u = urllib.parse.urlparse(self.url)
     if u.netloc == 'chromium.googlesource.com':
       return 'chromium-git-cache'
     # Not recognized.
@@ -164,7 +164,7 @@ class Mirror(object):
       url = os.path.splitdrive(url)[1]
       return url.replace('-', '--').replace(os.sep, '-')
 
-    parsed = urlparse.urlparse(url)
+    parsed = urllib.parse.urlparse(url)
     norm_url = parsed.netloc + parsed.path
     if norm_url.endswith('.git'):
       norm_url = norm_url[:-len('.git')]
@@ -356,7 +356,7 @@ class Mirror(object):
 
   def supported_project(self):
     """Returns true if this repo is known to have a bootstrap zip file."""
-    u = urlparse.urlparse(self.url)
+    u = urllib.parse.urlparse(self.url)
     return u.netloc in [
         'chromium.googlesource.com',
         'chrome-internal.googlesource.com']

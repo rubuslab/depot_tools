@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7eda4ec4_aa8ada59",
+        "filename": "recipes/recipe_modules/gsutil/resources/gsutil_smart_retry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-04T21:58:19Z",
+      "side": 1,
+      "message": "Is this relevant? If yes, we should remove 2.7.3 reference. If not, we should remove since it\u0027s invoked with py3",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 9
+      },
+      "revId": "796fee5c10125e6015d497cd9da1d5de829ec0a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

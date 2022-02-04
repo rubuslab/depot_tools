@@ -51,6 +51,24 @@
       "message": "as discussed, let\u0027s keep this too",
       "revId": "f9b965f87e719209265f6c9adc6feb961bdc2e3e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33309469_2bba3bc1",
+        "filename": "git_hyper_blame.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2022-02-04T22:07:55Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "714b6eaf_084b8d05",
+      "revId": "f9b965f87e719209265f6c9adc6feb961bdc2e3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

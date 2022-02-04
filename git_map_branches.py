@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Copyright 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -24,7 +24,7 @@ Branches are colorized as follows:
     upstream, then you will see this.
 """
 
-from __future__ import print_function
+
 
 import argparse
 import collections
@@ -132,7 +132,7 @@ class BranchMapper(object):
       from git_cl import get_cl_statuses, color_for_status, Changelist
 
       change_cls = [Changelist(branchref='refs/heads/'+b)
-                    for b in self.__branches_info.keys() if b]
+                    for b in list(self.__branches_info.keys()) if b]
       status_info = get_cl_statuses(change_cls,
                                     fine_grained=self.verbosity > 2,
                                     max_processes=self.maxjobs)
@@ -146,7 +146,7 @@ class BranchMapper(object):
     roots = set()
 
     # A map of parents to a list of their children.
-    for branch, branch_info in self.__branches_info.items():
+    for branch, branch_info in list(self.__branches_info.items()):
       if not branch_info:
         continue
 

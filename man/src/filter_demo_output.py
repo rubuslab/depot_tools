@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Copyright 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -12,7 +12,7 @@ import sys
 
 from xml.sax.saxutils import escape
 
-from cStringIO import StringIO
+from io import StringIO
 
 if not os.path.exists('ansi2html'):
   print('You must run ./make_docs.sh once before running this script.')
@@ -39,7 +39,7 @@ def simpleXML(string):
     if not tok:
       continue
     if tok[0] == '\x1b':
-      codes = map(int, filter(bool, tok[2:].split(';')))
+      codes = list(map(int, list(filter(bool, tok[2:].split(';')))))
       if not codes:
         codes = [RESET]
       for code in codes:
@@ -102,7 +102,7 @@ def main():
           w(preamble)
           in_code = True
         ext = ''
-        for _ in xrange(callouts[i]):
+        for _ in range(callouts[i]):
           if not ext:
             ext += '</span>'
           ext += ' <b>&lt;%d&gt;</b>' % callout_counter
@@ -129,7 +129,7 @@ def main():
           w(preamble)
           in_code = True
         ext = ''
-        for _ in xrange(callouts[i]):
+        for _ in range(callouts[i]):
           ext += '  <emphasis role="strong">(%d)</emphasis>' % callout_counter
           callout_counter += 1
         w(line + ext + '\n')

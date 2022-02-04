@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df5e8ea6_201e69d4",
+        "filename": "repo_launcher",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-04T22:03:40Z",
+      "side": 1,
+      "message": "revert",
+      "revId": "ec9f06bfa829b151ad6790e5cf9bc0f28e20b7b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a55f8f2_9f30a583",
+        "filename": "gerrit_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-04T02:34:27Z",
+      "side": 1,
+      "message": "Function name is off, since it\u0027s parsing any string into json, not just dict. But, I think we can get rid of it - we can move this logic in create change function since it\u0027s very simple",
+      "range": {
+        "startLine": 224,
+        "startChar": 4,
+        "endLine": 224,
+        "endChar": 17
+      },
+      "revId": "d536e462072f672553f919bbe42b17bd9e742fae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fdf1fab_bcf79894",
+        "filename": "gerrit_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-04T02:34:27Z",
+      "side": 1,
+      "message": "Some existing functionality may break. For example \"true\" or numbers will be passed as int/bool instead of strings.\n\nInstead of hacking it, I would suggest just to introduce a new parameter called --notify-details",
+      "revId": "d536e462072f672553f919bbe42b17bd9e742fae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

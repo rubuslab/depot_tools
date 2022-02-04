@@ -39,6 +39,24 @@
       "message": "Some existing functionality may break. For example \"true\" or numbers will be passed as int/bool instead of strings.\n\nInstead of hacking it, I would suggest just to introduce a new parameter called --notify-details",
       "revId": "d536e462072f672553f919bbe42b17bd9e742fae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b20c86d_9ca25371",
+        "filename": "gerrit_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2022-02-04T07:01:06Z",
+      "side": 1,
+      "message": "\u003e For example \"true\" or numbers will be passed as int/bool instead of strings.\nI don\u0027t think so. In such case, users must pass v as a json string. If just a number or \"true\", json.loads() will raise an error and we don\u0027t change v.\n\n\u0027--notify-details\u0027 is an option, but we may have other field like AccountInput, which may face the same situation. WDYT?",
+      "parentUuid": "4fdf1fab_bcf79894",
+      "revId": "d536e462072f672553f919bbe42b17bd9e742fae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

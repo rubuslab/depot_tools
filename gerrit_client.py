@@ -221,6 +221,13 @@ def CMDrelatedchanges(parser, args):
   write_result(result, opt)
 
 
+def _json_to_dict(text):
+  try:
+    return json.loads(text)
+  except ValueError:
+    return None
+
+
 @subcommand.usage('[args ...]')
 def CMDcreatechange(parser, args):
   """Create a new change in gerrit."""
@@ -240,12 +247,18 @@ def CMDcreatechange(parser, args):
   for p in opt.params:
     assert '=' in p, '--param is key=value, not "%s"' % p
 
+  params = []
+  for p in opt.params:
+    k, v = p.split('=', 1)
+    v = _json_to_dict(v) or v
+    params.append((k, v))
+
   result = gerrit_util.CreateChange(
       urlparse.urlparse(opt.host).netloc,
       opt.project,
       branch=opt.branch,
       subject=opt.subject,
-      params=list(tuple(p.split('=', 1)) for p in opt.params),
+      params=params,
   )
   logging.info(result)
   write_result(result, opt)

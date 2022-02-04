@@ -16,6 +16,24 @@
       "message": "we should still keep print_function until we fully drop py2 from depot_tools",
       "revId": "f9b965f87e719209265f6c9adc6feb961bdc2e3e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24faa679_3459fae0",
+        "filename": "detect_host_arch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1367760
+      },
+      "writtenOn": "2022-02-04T21:17:18Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "f9856c81_5af47125",
+      "revId": "f9b965f87e719209265f6c9adc6feb961bdc2e3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

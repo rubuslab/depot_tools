@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7168450_1d85c241",
+        "filename": "metrics_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-04T22:10:01Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "2f35adcb7ab65af866d17528c9a4817276d76b15",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

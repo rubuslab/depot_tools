@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Copyright (c) 2018 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -262,17 +262,17 @@ def extract_http_metrics(request_uri, method, status, response_time):
   if method in KNOWN_HTTP_METHODS:
     http_metrics['method'] = method
 
-  parsed_url = urlparse.urlparse(request_uri)
+  parsed_url = urlpaarse.urlparse(request_uri)
 
   if parsed_url.netloc in KNOWN_HTTP_HOSTS:
     http_metrics['host'] = parsed_url.netloc
 
-  for name, path_re in KNOWN_HTTP_PATHS.items():
+  for name, path_re in list(KNOWN_HTTP_PATHS.items()):
     if path_re.match(parsed_url.path):
       http_metrics['path'] = name
       break
 
-  parsed_query = urlparse.parse_qs(parsed_url.query)
+  parsed_query = urlpaarse.parse_qs(parsed_url.query)
 
   # Collect o-parameters from the request.
   args = [

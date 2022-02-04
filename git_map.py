@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Copyright 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -59,7 +59,7 @@ def _print_help(outbuf):
   }
   msg = ''
   for line in __doc__.splitlines():
-    for name, color in names.items():
+    for name, color in list(names.items()):
       if name in line:
         msg += line.replace('* ' + name, color + '* ' + name + RESET) + '\n'
         break
@@ -129,7 +129,7 @@ def main(argv, outbuf):
     if merge_base:
       merge_base_map.setdefault(merge_base, set()).add(branch)
 
-  for merge_base, branches in merge_base_map.items():
+  for merge_base, branches in list(merge_base_map.items()):
     merge_base_map[merge_base] = ', '.join(branches)
 
   try:

@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5be1661f_62a9df39",
+        "filename": "gerrit_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2022-02-04T08:08:29Z",
+      "side": 1,
+      "message": "Not need this helper any more.",
+      "parentUuid": "1a55f8f2_9f30a583",
+      "range": {
+        "startLine": 224,
+        "startChar": 4,
+        "endLine": 224,
+        "endChar": 17
+      },
+      "revId": "d536e462072f672553f919bbe42b17bd9e742fae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4fdf1fab_bcf79894",
@@ -73,6 +97,24 @@
       "side": 1,
       "message": "Forget it. I got your point.\nI tried at my end, and int still works. Maybe Gerrit cast the values.\nHowever, I don\u0027t want to risk any corner cases for existing users. I will add \u0027--notify-details\u0027.",
       "parentUuid": "5b20c86d_9ca25371",
+      "revId": "d536e462072f672553f919bbe42b17bd9e742fae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91eb1d96_bd6273e7",
+        "filename": "gerrit_client.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2022-02-04T08:08:29Z",
+      "side": 1,
+      "message": "Turns out, I think we only need CC list. For TO, we can use \"Add Reviewer\" call and we don\u0027t need BCC at all. So instead of a complicated json string, let\u0027s just use\n--cc.",
+      "parentUuid": "e87a8646_d13d3c41",
       "revId": "d536e462072f672553f919bbe42b17bd9e742fae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

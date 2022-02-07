@@ -334,6 +334,7 @@ class GitWrapper(SCMWrapper):
               self.Print('FAILED to break lock: %s: %s' % (to_break, ex))
               raise
 
+  # TOPICS - this is what applies patch_ref.
   def apply_patch_ref(self, patch_repo, patch_rev, target_rev, options,
                       file_list):
     """Apply a patch on top of the revision we're synced at.
@@ -363,7 +364,7 @@ class GitWrapper(SCMWrapper):
       patch_repo: The patch origin.
           e.g. 'https://foo.googlesource.com/bar'
       patch_rev: The revision to patch.
-          e.g. 'refs/changes/1234/34/1'.
+          e.g. 'refs/changes/1234/34/1'. Can specify multiple revisions.
       target_rev: The revision to use when finding the merge base.
           Typically, the branch that the patch was uploaded against.
           e.g. 'refs/heads/main' or 'refs/heads/infra/config'.
@@ -404,12 +405,20 @@ class GitWrapper(SCMWrapper):
         self._UpdateMirrorIfNotContains(mirror, options, rev_type, target_rev)
       self._Fetch(options, refspec=target_rev)
 
+    # TOPICS
+    # Maybe better to do the multiple patch parsing at this level.
+
     self.Print('===Applying patch===')
     self.Print('Revision to patch is %r @ %r.' % (patch_repo, patch_rev))
     self.Print('Current dir is %r' % self.checkout_path)
+    # TOPICS
     self._Capture(['reset', '--hard'])
-    self._Capture(['fetch', '--no-tags', patch_repo, patch_rev])
-    patch_rev = self._Capture(['rev-parse', 'FETCH_HEAD'])
+    if ';' in patch_rev:
+      for pr in patch_rev.split(';'):
+        self._Capture(['fetch', '--no-tags', patch_repo, pr])
+    else:
+      self._Capture(['fetch', '--no-tags', patch_repo, patch_rev])
+      patch_rev = self._Capture(['rev-parse', 'FETCH_HEAD'])
 
     if not options.rebase_patch_ref:
       self._Capture(['checkout', patch_rev])
@@ -418,7 +427,12 @@ class GitWrapper(SCMWrapper):
       # correct file-list to programs which do `git diff --cached` expecting to
       # see the patch diff.
       base_rev = self._Capture(['rev-parse', patch_rev+'~'])
-
+    elif ';' in patch_rev:
+      self.Print('We have multiple patch_revs to pull')
+      self.Print(patch_rev)
+      for pr in patch_rev.split(';'):
+        self._Capture(['pull', patch_repo, pr])
+        # self._Capture(['pull', '--ff-only', patch_repo, pr])
     else:
       self.Print('Will cherrypick %r .. %r on top of %r.' % (
           target_rev, patch_rev, base_rev))

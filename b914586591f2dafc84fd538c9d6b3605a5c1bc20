@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "066c677b_4138a1b9",
+        "filename": "cpplint.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-02-07T17:33:39Z",
+      "side": 1,
+      "message": "Why convert to `list`?",
+      "revId": "b914586591f2dafc84fd538c9d6b3605a5c1bc20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "414ee815_f8e6135d",
+        "filename": "git_footers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-02-07T17:33:39Z",
+      "side": 1,
+      "message": "Why convert to `list`?",
+      "revId": "b914586591f2dafc84fd538c9d6b3605a5c1bc20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0a0c51f_81109d74",
+        "filename": "metrics_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-02-07T17:33:39Z",
+      "side": 1,
+      "message": "typo?",
+      "revId": "b914586591f2dafc84fd538c9d6b3605a5c1bc20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "519b54bb_7b5adcf1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-02-07T17:33:39Z",
+      "side": 1,
+      "message": "Is `list(...)` necessary?",
+      "revId": "b914586591f2dafc84fd538c9d6b3605a5c1bc20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

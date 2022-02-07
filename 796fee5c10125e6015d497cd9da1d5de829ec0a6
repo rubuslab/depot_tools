@@ -22,6 +22,30 @@
       },
       "revId": "796fee5c10125e6015d497cd9da1d5de829ec0a6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afd9a2dc_d7c47d59",
+        "filename": "recipes/recipe_modules/gsutil/resources/gsutil_smart_retry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-02-07T17:40:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7eda4ec4_aa8ada59",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 9
+      },
+      "revId": "796fee5c10125e6015d497cd9da1d5de829ec0a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -33,6 +33,41 @@
       "message": "This fails in chromium presubmit: https://logs.chromium.org/logs/chromium/led/infra-try-recipes-tester_chops-service-accounts.iam.gserviceaccount.com/37975c7c25aa47d062c486e0c1933b6cce49c5e99450ad9e006451e0a4d2f1bb/+/u/read_src_HEAD_revision_at_refs_heads_main/stdout\n\nhttps://ci.chromium.org/ui/p/infra/builders/try/Build%20Recipes%20Tester/b8822858136804620097/overview\n\nCan we revert this to fix the rolling and re-land with a fix for that issue?",
       "revId": "0faae1c8455edaed075218d5ebe0a62588ffed78",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f0cf564_bc075292",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2022-02-08T20:15:12Z",
+      "side": 1,
+      "message": "Oh nvm, missed that this was reverted already.",
+      "parentUuid": "bcd65fdc_b761511b",
+      "revId": "0faae1c8455edaed075218d5ebe0a62588ffed78",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8f8632e_04bb39c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2022-02-08T20:15:12Z",
+      "side": 1,
+      "message": "o",
+      "revId": "0faae1c8455edaed075218d5ebe0a62588ffed78",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -68,6 +68,24 @@
       "message": "o",
       "revId": "0faae1c8455edaed075218d5ebe0a62588ffed78",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3911c1bd_a5e4ed80",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-08T20:31:02Z",
+      "side": 1,
+      "message": "Note that I also submitted a reland: https://crrev.com/c/3445785",
+      "parentUuid": "d8f8632e_04bb39c4",
+      "revId": "0faae1c8455edaed075218d5ebe0a62588ffed78",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

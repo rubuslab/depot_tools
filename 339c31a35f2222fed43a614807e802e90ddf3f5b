@@ -33,6 +33,24 @@
       "message": "Oh dear, it looks like since you rebased you\u0027ve become an uploader and now your +1 doesn\u0027t count. Adding another OWNER.",
       "revId": "339c31a35f2222fed43a614807e802e90ddf3f5b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9875e8d_c7bbb942",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-09T17:54:14Z",
+      "side": 1,
+      "message": "ahh, bummer. If you rebase again, you might be good to go :)",
+      "parentUuid": "696f55be_032077d4",
+      "revId": "339c31a35f2222fed43a614807e802e90ddf3f5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

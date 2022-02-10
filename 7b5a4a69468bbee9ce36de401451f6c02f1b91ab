@@ -16,6 +16,24 @@
       "message": "You\u0027ll need to add a usage of this to one of the test recipes (probably examples/full.py) and retrain the recipe expectations (recipes.py test train)",
       "revId": "7b5a4a69468bbee9ce36de401451f6c02f1b91ab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "119cb1d4_befa7a43",
+        "filename": "recipes/recipe_modules/tryserver/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2022-02-10T02:44:35Z",
+      "side": 1,
+      "message": "Done. Thanks!",
+      "parentUuid": "d7d6cd74_c71069a2",
+      "revId": "7b5a4a69468bbee9ce36de401451f6c02f1b91ab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

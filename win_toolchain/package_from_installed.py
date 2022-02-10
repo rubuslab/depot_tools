@@ -43,6 +43,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import winreg
 import zipfile
 
 import get_toolchain_if_necessary
@@ -177,7 +178,11 @@ def BuildFileList(override_dir, include_arm):
           dest = final_from[len(vs_path) + 1:]
           result.append((final_from, dest))
 
-  sdk_path = r'C:\Program Files (x86)\Windows Kits\10'
+  registry = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
+  registry_key = winreg.OpenKey(registry,r'SOFTWARE\Microsoft\Windows Kits\Installed Roots')
+  sdk_path = winreg.QueryValueEx(registry_key, "KitsRoot10")[0]
+
+
   debuggers_path = os.path.join(sdk_path, 'Debuggers')
   if not os.path.exists(debuggers_path):
     raise Exception('Packaging failed. Missing %s.' % (debuggers_path))

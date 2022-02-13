@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "ebb138de60c42f7f92623fc190111faed97cd30e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91c1ce82_d537d231",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-02-13T00:31:26Z",
+      "side": 1,
+      "message": "Unfortunately the depot_tools version of Python doesn\u0027t ship with winreg. Is there another way to get this information? If not then we could probably run package_from_installed.py under vpython which would need to specify a \"wheel\" that says that it needs winreg. I\u0027m actually not clear on the details of how this works. See \"media\\tools\\constrained_network_server\\cns.py\" for examples.\n\nHere\u0027s the errors that I get:\n\nc:\\src\\depot_tools\u003ewhere python\nc:\\src\\depot_tools\\python.bat\nc:\\src\\depot_tools\u003epython win_toolchain\\package_from_installed.py\nTraceback (most recent call last):\n  File \"win_toolchain\\package_from_installed.py\", line 46, in \u003cmodule\u003e\n    import winreg\nImportError: No module named winreg\n",
+      "revId": "ebb138de60c42f7f92623fc190111faed97cd30e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

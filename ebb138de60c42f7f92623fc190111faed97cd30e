@@ -51,6 +51,24 @@
       "parentUuid": "91c1ce82_d537d231",
       "revId": "ebb138de60c42f7f92623fc190111faed97cd30e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f9b2742_ff7adfee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-02-13T21:37:49Z",
+      "side": 1,
+      "message": "I recommend making sure that the depot_tools python.bat is first in your path, and then never modifying that installation, for maximum compatibility.\n\nA subprocess of reg query is a bit messy but that should work, thanks.",
+      "parentUuid": "0ac93d09_ef15a42c",
+      "revId": "ebb138de60c42f7f92623fc190111faed97cd30e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

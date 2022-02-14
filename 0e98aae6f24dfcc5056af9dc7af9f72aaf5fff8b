@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "964e0927_6e152136",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-14T07:47:23Z",
+      "side": 1,
+      "message": "I see what you mean about limiting the size of the test matrix. It makes for a very strong case.\n\nI am not opposed to abandoning this change if you prefer that.\n\nMy situation is likely atypical. My intention is to dev on my Linux machine and additionally test on my Windows machine. Originally, I preferred to not buy an additional Windows license for a VM. But I do admit it would make for a cleaner dev situation. I was hoping after I got through setup it wouldn\u0027t be an issue.\n\n(As a side thought, VS 2022 isn\u0027t yet listed as supported. Is there anything in particular we should confirm before we can list support? https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:win_toolchain/package_from_installed.py;l\u003d54;drc\u003d399c5918bf47ff1fe8477f27b57fa0e8c67e438d )",
+      "parentUuid": "785d8edf_c0a57239",
+      "revId": "0e98aae6f24dfcc5056af9dc7af9f72aaf5fff8b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33ec63d6_6ccb65fb",
@@ -48,6 +66,24 @@
       "writtenOn": "2022-02-12T21:55:06Z",
       "side": 1,
       "message": "I\u0027m not sure what this conditional is for, and the variable that it tests doesn\u0027t seem to exist. Just raise if the loop doesn\u0027t return?",
+      "revId": "0e98aae6f24dfcc5056af9dc7af9f72aaf5fff8b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "601adfb7_20e6501d",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-14T07:47:23Z",
+      "side": 1,
+      "message": "I didn\u0027t mean to leave that in. It was part of my debugging / dev. Thank you for catching it.",
+      "parentUuid": "33ec63d6_6ccb65fb",
       "revId": "0e98aae6f24dfcc5056af9dc7af9f72aaf5fff8b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

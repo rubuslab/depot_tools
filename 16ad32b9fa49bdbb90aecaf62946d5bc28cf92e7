@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3abdae37_87b5724a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2022-02-14T21:34:14Z",
+      "side": 1,
+      "message": "Hey Josip, can you PTAL or send it to a more appropriate reviewer? I had to make one change to fetch.py to enable this to work with ANGLE that may prompt questions. ANGLE checks out into just /angle, not /angle/src. In prior conversations with Dirk  he\u0027d said this is intended to be a supported checkout directory.\n\nCheers.",
+      "revId": "16ad32b9fa49bdbb90aecaf62946d5bc28cf92e7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

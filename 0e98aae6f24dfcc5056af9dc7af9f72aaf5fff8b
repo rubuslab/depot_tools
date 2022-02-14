@@ -53,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a398749_0394c8e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-02-14T23:04:15Z",
+      "side": 1,
+      "message": "I think somebody would just have to confirm that Chromium builds fine with VS 2022 (with its header files and libraries) and then confirm that add 2022 to the list of supported versions works. I\u0027d be tempted to remove VS 2017 at the same time - I\u0027m not sure if it still works or not.\n\nOne important thing is making sure that VS 2019 is still the default. At some point we\u0027ll change the default to VS 2022, but we probably want to package up a new toolchain at that point.\n\nOne way to make this change more palatable would be to have a warning if multiple versions are detected, or perhaps require an extra switch to be thrown. As in:\n\nprint(\u0027Multiple VS installs detected. It is recommended that packaging be done on a clean VM with just one version installed. To proceed anyway add the --allow_dup_installs flag to this script\u0027)",
+      "parentUuid": "964e0927_6e152136",
+      "revId": "0e98aae6f24dfcc5056af9dc7af9f72aaf5fff8b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33ec63d6_6ccb65fb",

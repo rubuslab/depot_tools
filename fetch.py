@@ -219,6 +219,7 @@ def handle_args(argv):
   nohooks = False
   no_history = False
   force = False
+  sso = False
   while len(argv) >= 2:
     arg = argv[1]
     if not arg.startswith('-'):
@@ -232,6 +233,8 @@ def handle_args(argv):
       no_history = True
     elif arg == '--force':
       force = True
+    elif arg == '--sso':
+      sso = True
     else:
       usage('Invalid option %s.' % arg)
 
@@ -249,7 +252,8 @@ def handle_args(argv):
         'dry_run': dry_run,
         'nohooks': nohooks,
         'no_history': no_history,
-        'force': force}),
+        'force': force,
+        'sso': sso}),
       config,
       props)
 

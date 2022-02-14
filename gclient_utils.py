@@ -1003,6 +1003,7 @@ class ExecutionQueue(object):
         if not t.item.name in self.ran:
           self.ran.append(t.item.name)
 
+  # TOPICS args and kwargs end up here.
   def _run_one_task(self, task_item, args, kwargs):
     if self.jobs > 1:
       # Start the thread.
@@ -1036,6 +1037,7 @@ class ExecutionQueue(object):
         raise
 
 
+  # TOPICS - this is the indidivudal worker.
   class _Worker(threading.Thread):
     """One thread to execute one WorkItem."""
     def __init__(self, item, index, args, kwargs):
@@ -1054,6 +1056,7 @@ class ExecutionQueue(object):
       try:
         self.item.start = datetime.datetime.now()
         print('[%s] Started.' % Elapsed(self.item.start), file=self.item.outbuf)
+        # TOPICS - item is run here but what is an item.
         self.item.run(*self.args, **self.kwargs)
         self.item.finish = datetime.datetime.now()
         print(

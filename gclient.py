@@ -104,6 +104,7 @@ except ImportError:  # For Py3 compatibility
 
 import detect_host_arch
 import fix_encoding
+import gerrit_util
 import gclient_eval
 import gclient_scm
 import gclient_paths
@@ -917,6 +918,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
   # Arguments number differs from overridden method
   # pylint: disable=arguments-differ
+  # TOPICS - this is the dependency's run command.
   def run(self, revision_overrides, command, args, work_queue, options,
           patch_refs, target_branches):
     """Runs |command| then parse the DEPS file."""
@@ -961,6 +963,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
           })
 
       patch_repo = self.url.split('@')[0]
+      # TOPICS THIS IS WHERE PATCH_REFS ARE APPLIED
+      # HERE HERE
+      # WHY IS IT ONLY REMOVING ONE OUT HERE?
       patch_ref = patch_refs.pop(self.FuzzyMatchUrl(patch_refs), None)
       target_branch = target_branches.pop(
           self.FuzzyMatchUrl(target_branches), None)
@@ -1530,6 +1535,7 @@ it or fix the checkout.
         ]
     )
 
+    # TOPICS - this is where depdencneis are added to the class object.
     self.add_dependencies_and_close(deps_to_add, config_dict.get('hooks', []))
     logging.info('SetConfig() done')
 
@@ -1640,6 +1646,7 @@ it or fix the checkout.
       index += 1
     return revision_overrides
 
+  # TOPICS this stores it in a single diciontary.
   def _EnforcePatchRefsAndBranches(self):
     """Checks for patch refs."""
     patch_refs = {}
@@ -1773,6 +1780,7 @@ it or fix the checkout.
           gclient_utils.rmtree(e_dir)
     # record the current list of entries for next time
     self._SaveEntries()
+  # Don't think I care about this.
 
   def RunOnDeps(self, command, args, ignore_requirements=False, progress=True):
     """Runs a command on each dependency in a client and its dependencies.
@@ -1792,9 +1800,12 @@ it or fix the checkout.
     if command not in ('diff', 'recurse', 'runhooks', 'status', 'revert',
                        'validate'):
       self._CheckConfig()
+      # TOPICS enforce revisions is below. Does topics download need to happen
+      # over here?
       revision_overrides = self._EnforceRevisions()
 
     if command == 'update':
+      print('Found update command so now enforcing patch refs and branchs');
       patch_refs, target_branches = self._EnforcePatchRefsAndBranches()
     # Disable progress for non-tty stdout.
     should_show_progress = (
@@ -1811,6 +1822,11 @@ it or fix the checkout.
     for s in self.dependencies:
       if s.should_process:
         work_queue.enqueue(s)
+    # TOPICS this runs all enqueued items untill all are executed.
+    # HERE HERE
+    # Questions:
+    # * Where do the gerrit interractions happen? they might not happen at all here.
+    # * How does flush work below?
     work_queue.flush(revision_overrides, command, args, options=self._options,
                      patch_refs=patch_refs, target_branches=target_branches)
 
@@ -1825,6 +1841,7 @@ it or fix the checkout.
               patch_repo + '@' + patch_ref
               for patch_repo, patch_ref in patch_refs.items())))
 
+    # TOPICS need to be download and applied prior to this.
     # Once all the dependencies have been processed, it's now safe to write
     # out the gn_args_file and run the hooks.
     if command == 'update':
@@ -2687,12 +2704,18 @@ def CMDsync(parser, args):
                          'with URLs taking preference. '
                          '|patch-ref| will be applied to |dep|, rebased on top '
                          'of what |dep| was synced to, and a soft reset will '
-                         'be done. Use --no-rebase-patch-ref and '
+                         'be done. Can specify multiple patch-refs to apply '
+                         'on a single target-ref by using the |;| delimiter. '
+                         'Eg: dep@target-ref:patch-ref1;patch-ref2. Use '
+                         '--no-rebase-patch-ref and '
                          '--no-reset-patch-ref to disable this behavior. '
                          '|target-ref| is the target branch against which a '
                          'patch was created, it is used to determine which '
                          'commits from the |patch-ref| actually constitute a '
                          'patch.')
+  parser.add_option('-t', '--download-topics', action='store_true',
+                    help='Downloads and patches locally changes from all open '
+                         'Gerrit CLs that have the specified topic.')
   parser.add_option('--with_branch_heads', action='store_true',
                     help='Clone git "branch_heads" refspecs in addition to '
                          'the default refspecs. This adds about 1/2GB to a '
@@ -2755,6 +2778,8 @@ def CMDsync(parser, args):
                     dest='reset_patch_ref', default=True,
                     help='Bypass calling reset after patching the ref.')
   (options, args) = parser.parse_args(args)
+  # TOPICS-
+  # Finds and loads a .gclient file. THis also populates the dependencies class var.
   client = GClient.LoadCurrentConfig(options)
 
   if not client:
@@ -2773,6 +2798,27 @@ def CMDsync(parser, args):
 
   if options.verbose:
     client.PrintLocationAndContents()
+
+  # TOPICS. Call Gerrit here and add those changes to patch_refs manually.
+  # client may give you skia and revision part maybe?
+  # Abstract behind an interface.
+  # self._options.patch_refs
+  print('HERE HERE HERE')
+  print(client)
+  if options.download_topics:
+    # How do you find topic? how do you find the change we are interested in? maybe we pass it in here?
+    # OR parse it from the patch-ref - let's say that one is absolutely required and then we just append the rest to it??
+    #    add util to gerrit_util to return the CL number? from the patch-ref?
+    # How do we find the host? i.e. skia-review.googlesource.com
+
+    # Is authentication required? Might be required for internal hosts. But
+    # bots do not have authentication? Or add TODO saying there is no authentication?
+    changes_with_same_topic = gerrit_util.QueryChanges('skia-review.googlesource.com', [('topic', 'topics_test'), ('status', 'open')], o_params=['ALL_REVISIONS'])
+    print('changes_with_same_topic are:')
+    for c in changes_with_same_topic:
+      print(c['_number'])
+      # Will also need the latest patch set? (or does latest work? not sure).
+
   ret = client.RunOnDeps('update', args)
   if options.output_json:
     slns = {}
@@ -2787,7 +2833,6 @@ def CMDsync(parser, args):
     with open(options.output_json, 'w') as f:
       json.dump({'solutions': slns}, f)
   return ret
-
 
 CMDupdate = CMDsync
 

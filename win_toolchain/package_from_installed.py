@@ -60,13 +60,19 @@ def GetVSPath():
   # version is installed.
   command = (r'C:\Program Files (x86)\Microsoft Visual Studio\Installer'
              r'\vswhere.exe -prerelease')
-  marker = 'installationPath: '
+  vs_version_marker = 'catalog_productLineVersion: '
+  vs_path_marker = 'installationPath: '
   output = subprocess.check_output(command, universal_newlines=True)
+  vs_path = None
   for line in output.splitlines():
-    if line.startswith(marker):
-      return line[len(marker):]
+    if line.startswith(vs_path_marker):
+      # The path information comes first
+      vs_path = line[len(vs_path_marker):]
+    if line.startswith(vs_version_marker):
+      # The version for that path comes later
+      if line[len(vs_version_marker):] == VS_VERSION:
+        return vs_path
   raise Exception('VS %s path not found in vswhere output' % (VS_VERSION))
-
 
 def ExpandWildcards(root, sub_dir):
   # normpath is needed to change '/' to '\\' characters.

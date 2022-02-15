@@ -1358,6 +1358,11 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
     self.assertNotEqual(self.githash('repo_1', 4),
                         self.gitrevparse(self.root_dir))
 
+  # HERE HERE
+  # TODO(rmistry): Complete me.
+  def testDownloadsTopics(self):
+    pass
+
   def testRecoversAfterPatchFailure(self):
     scm = gclient_scm.GitWrapper(self.url, self.root_dir, '.')
     file_list = []

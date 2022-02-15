@@ -2693,12 +2693,15 @@ def CMDsync(parser, args):
                          'with URLs taking preference. '
                          '|patch-ref| will be applied to |dep|, rebased on top '
                          'of what |dep| was synced to, and a soft reset will '
-                         'be done. Use --no-rebase-patch-ref and '
+                         'be done. Can Use --no-rebase-patch-ref and '
                          '--no-reset-patch-ref to disable this behavior. '
                          '|target-ref| is the target branch against which a '
                          'patch was created, it is used to determine which '
                          'commits from the |patch-ref| actually constitute a '
                          'patch.')
+  parser.add_option('-t', '--download-topics', action='store_true',
+                    help='Downloads and patches locally changes from all open '
+                         'Gerrit CLs that have the specified topic.')
   parser.add_option('--with_branch_heads', action='store_true',
                     help='Clone git "branch_heads" refspecs in addition to '
                          'the default refspecs. This adds about 1/2GB to a '

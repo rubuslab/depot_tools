@@ -16,6 +16,23 @@
       "message": "It looks like the bot is failing independent of this CL. [1]\nI\u0027ll restart the review once that bot is green again.\n\n[1] https://ci.chromium.org/p/infra/builders/try/Depot%20Tools%20Presubmit%20%28win%29",
       "revId": "19c61da82decf92984d48f2e5b00e8e70c713d56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e8bf790_eb8400f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-15T08:25:01Z",
+      "side": 1,
+      "message": "The bot is green. I\u0027m switching back to review-ready. PTAL",
+      "revId": "19c61da82decf92984d48f2e5b00e8e70c713d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

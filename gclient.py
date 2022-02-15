@@ -104,6 +104,7 @@ except ImportError:  # For Py3 compatibility
 
 import detect_host_arch
 import fix_encoding
+import gerrit_util
 import gclient_eval
 import gclient_scm
 import gclient_paths
@@ -1779,6 +1780,7 @@ it or fix the checkout.
           gclient_utils.rmtree(e_dir)
     # record the current list of entries for next time
     self._SaveEntries()
+  # Don't think I care about this.
 
   def RunOnDeps(self, command, args, ignore_requirements=False, progress=True):
     """Runs a command on each dependency in a client and its dependencies.
@@ -1801,6 +1803,7 @@ it or fix the checkout.
       revision_overrides = self._EnforceRevisions()
 
     if command == 'update':
+      print('Found update command so now enforcing patch refs and branchs');
       patch_refs, target_branches = self._EnforcePatchRefsAndBranches()
     # Disable progress for non-tty stdout.
     should_show_progress = (
@@ -2693,12 +2696,18 @@ def CMDsync(parser, args):
                          'with URLs taking preference. '
                          '|patch-ref| will be applied to |dep|, rebased on top '
                          'of what |dep| was synced to, and a soft reset will '
-                         'be done. Use --no-rebase-patch-ref and '
+                         'be done. Can specify multiple patch-refs to apply '
+                         'on a single target-ref by using the |;| delimiter. '
+                         'Eg: dep@target-ref:patch-ref1;patch-ref2. Use '
+                         '--no-rebase-patch-ref and '
                          '--no-reset-patch-ref to disable this behavior. '
                          '|target-ref| is the target branch against which a '
                          'patch was created, it is used to determine which '
                          'commits from the |patch-ref| actually constitute a '
                          'patch.')
+  parser.add_option('-t', '--download-topics', action='store_true',
+                    help='Downloads and patches locally changes from all open '
+                         'Gerrit CLs that have the specified topic.')
   parser.add_option('--with_branch_heads', action='store_true',
                     help='Clone git "branch_heads" refspecs in addition to '
                          'the default refspecs. This adds about 1/2GB to a '
@@ -2761,6 +2770,7 @@ def CMDsync(parser, args):
                     dest='reset_patch_ref', default=True,
                     help='Bypass calling reset after patching the ref.')
   (options, args) = parser.parse_args(args)
+  # Finds and loads a .gclient file. THis also populates the dependencies class var.
   client = GClient.LoadCurrentConfig(options)
 
   if not client:
@@ -2779,6 +2789,7 @@ def CMDsync(parser, args):
 
   if options.verbose:
     client.PrintLocationAndContents()
+
   ret = client.RunOnDeps('update', args)
   if options.output_json:
     slns = {}

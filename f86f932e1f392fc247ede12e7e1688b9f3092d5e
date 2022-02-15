@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2b85a90_9d903229",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-15T09:49:08Z",
+      "side": 1,
+      "message": "The bot is green so I\u0027m putting the CL in review mode. PTAL",
+      "revId": "f86f932e1f392fc247ede12e7e1688b9f3092d5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

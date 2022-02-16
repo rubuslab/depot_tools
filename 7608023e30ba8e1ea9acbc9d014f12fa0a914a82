@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e0b0307_dc48c3d5",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-02-16T22:23:13Z",
+      "side": 1,
+      "message": "Nit: I\u0027m not sure what case this is exactly used for but this seems a bit restrictive. For example, `USE_PYTHON3\u003dTrue` wouldn\u0027t be caught by this regex and the user might spend a ton of time figuring out why.",
+      "revId": "7608023e30ba8e1ea9acbc9d014f12fa0a914a82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

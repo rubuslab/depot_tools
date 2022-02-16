@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09e30fb2_d6b6078a",
+        "filename": "gclient_scm.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2022-02-16T19:53:10Z",
+      "side": 1,
+      "message": "Note that the actual new changes are from lines 408 to 449. All the previous lines have only been indented (with a variable rename of patch_rev-\u003epr) but Gerrit\u0027s diffing makes the change look more daunting than it is.",
+      "revId": "2dc8222f34e6a0b59d86ed8bae35afe3a1d4a8bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

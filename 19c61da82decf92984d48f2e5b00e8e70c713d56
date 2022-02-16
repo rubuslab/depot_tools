@@ -33,6 +33,23 @@
       "message": "The bot is green. I\u0027m switching back to review-ready. PTAL",
       "revId": "19c61da82decf92984d48f2e5b00e8e70c713d56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c211899_26ba32bf",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-02-16T21:03:23Z",
+      "side": 1,
+      "message": "Should arguably be os.path.sep, perhaps?",
+      "revId": "19c61da82decf92984d48f2e5b00e8e70c713d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

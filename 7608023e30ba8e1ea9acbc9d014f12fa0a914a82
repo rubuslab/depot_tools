@@ -16,6 +16,24 @@
       "message": "Nit: I\u0027m not sure what case this is exactly used for but this seems a bit restrictive. For example, `USE_PYTHON3\u003dTrue` wouldn\u0027t be caught by this regex and the user might spend a ton of time figuring out why.",
       "revId": "7608023e30ba8e1ea9acbc9d014f12fa0a914a82",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18c22287_f00984a0",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-16T22:44:49Z",
+      "side": 1,
+      "message": "That\u0027s true, but our linter shouldn\u0027t allow such code to be checked in in the first place. Given that this existed as-is in different location, I\u0027m inclined to leave it as is. The code will be deleted once we drop py2 support.",
+      "parentUuid": "5e0b0307_dc48c3d5",
+      "revId": "7608023e30ba8e1ea9acbc9d014f12fa0a914a82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

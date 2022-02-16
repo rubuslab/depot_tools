@@ -16,6 +16,126 @@
       "message": "Note that the actual new changes are from lines 408 to 449. All the previous lines have only been indented (with a variable rename of patch_rev-\u003epr) but Gerrit\u0027s diffing makes the change look more daunting than it is.",
       "revId": "2dc8222f34e6a0b59d86ed8bae35afe3a1d4a8bf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17d03456_22269c44",
+        "filename": "gclient_scm.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-16T22:02:03Z",
+      "side": 1,
+      "message": "Please correct me if I\u0027m wrong, but I don\u0027t think it\u0027s true - gerrit_util has auth logic that is always used.",
+      "range": {
+        "startLine": 411,
+        "startChar": 0,
+        "endLine": 413,
+        "endChar": 69
+      },
+      "revId": "2dc8222f34e6a0b59d86ed8bae35afe3a1d4a8bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e0c80f3_231e08fd",
+        "filename": "gclient_scm.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-16T22:02:03Z",
+      "side": 1,
+      "message": "windows won\u0027t be happy",
+      "range": {
+        "startLine": 425,
+        "startChar": 28,
+        "endLine": 425,
+        "endChar": 39
+      },
+      "revId": "2dc8222f34e6a0b59d86ed8bae35afe3a1d4a8bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0bb1b57_59eeb632",
+        "filename": "gclient_scm.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-16T22:02:03Z",
+      "side": 1,
+      "message": "new_patch_rev \u003d c[\u0027revisions\u0027][-1][\u0027ref\u0027]",
+      "range": {
+        "startLine": 445,
+        "startChar": 10,
+        "endLine": 446,
+        "endChar": 68
+      },
+      "revId": "2dc8222f34e6a0b59d86ed8bae35afe3a1d4a8bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e41850da_6a5a3116",
+        "filename": "gclient_scm.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-16T22:02:03Z",
+      "side": 1,
+      "message": "Safe to move outside the for loop",
+      "revId": "2dc8222f34e6a0b59d86ed8bae35afe3a1d4a8bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7343709_53cd72a5",
+        "filename": "gclient_scm.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-16T22:02:03Z",
+      "side": 1,
+      "message": "This won\u0027t work; this effectively removes previous patch. I feel `not rebase_patch_ref` can\u0027t be used with download_topics flag",
+      "revId": "2dc8222f34e6a0b59d86ed8bae35afe3a1d4a8bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9806541_356043fb",
+        "filename": "gclient_scm.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-16T22:02:03Z",
+      "side": 1,
+      "message": "This is another edge case where we may invalidate previous patches. This may be extremely tricky to support with topics.\n\nMight be worth checking if we actually need this at all.",
+      "revId": "2dc8222f34e6a0b59d86ed8bae35afe3a1d4a8bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

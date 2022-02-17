@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68e13920_6a0a5f56",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-02-17T19:21:23Z",
+      "side": 1,
+      "message": "Whoops! If I\u0027m not mistaken that should be sdk_path[:-len(os.path.sep)] (negative sign needed)",
+      "revId": "1ba41357663bb27bead6f72f88eb9bf24ffce483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

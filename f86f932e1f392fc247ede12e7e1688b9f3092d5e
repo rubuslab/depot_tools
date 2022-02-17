@@ -50,6 +50,24 @@
       "message": "The Google Python coding standard (https://google.github.io/styleguide/pyguide.html) says that CAPS_WITH_UNDER is for constants:\n\nGlobal/Class Constants\tCAPS_WITH_UNDER\t_CAPS_WITH_UNDER\n\nIt should be allow_dup_installs, or perhaps _allow_dup_installs since it is internal (but nothing else is tagged that way).",
       "revId": "f86f932e1f392fc247ede12e7e1688b9f3092d5e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b277709a_1b8d38e2",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-17T12:19:50Z",
+      "side": 1,
+      "message": "Agreed. I\u0027ll use the leading underscore as well.\nAdditionally, the coding standard says \"do not abbreviate by deleting letters within a word\" so I\u0027m changing \"dup\" to \"duplicate\".\nFurther, I think it is more descriptive for the name to be \"_allow_duplicate_vs_installs\" instead of \"_allow_duplicate_installs\".\n\nI recognize the coding standard says not to use abbreviations, and \"vs\" violates that. But given how ubiquitous \"win\", \"vc\", and \"vs\" are in this file I think this is an acceptable exception.\n\nHappy to change if you have another preference.\n\n\n\n\"ALLOW_DUP_INSTALLS\" followed the style of the above lines, which are also globals set by the command line parser.\n\nPython is one of my weaker languages.\nIn Ruby, false is a special instance of FalseClass. In Java, common integer values (typically -128 to 127) are cached in boxed form such that Integer a \u003d 1; Integer b \u003d 1; assert(a\u003d\u003db);.\nIt looks like in Python, False is also a special instance.\n\nPerhaps those other lines should be changed to also follow _this_style. But maybe because they are initialized to None instead of a special instance, the constant guideline is different? I don\u0027t know enough to have a solid answer to that.\n\nI\u0027ll create a separate CL that changes them and we can weight out the idea there.",
+      "parentUuid": "1a181bf2_b020155e",
+      "revId": "f86f932e1f392fc247ede12e7e1688b9f3092d5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

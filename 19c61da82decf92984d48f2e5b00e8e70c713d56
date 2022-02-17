@@ -50,6 +50,24 @@
       "message": "Should arguably be os.path.sep, perhaps?",
       "revId": "19c61da82decf92984d48f2e5b00e8e70c713d56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68bc347d_dcceb346",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-17T11:20:15Z",
+      "side": 1,
+      "message": "Agreed. I had pulled that code from elsewhere in this file. I\u0027ll make a separate CL to update the other location.",
+      "parentUuid": "3c211899_26ba32bf",
+      "revId": "19c61da82decf92984d48f2e5b00e8e70c713d56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

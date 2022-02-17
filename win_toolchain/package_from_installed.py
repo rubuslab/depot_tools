@@ -52,6 +52,7 @@ VS_VERSION = None
 WIN_VERSION = None
 VC_TOOLS = None
 SUPPORTED_VS_VERSIONS = ['2017', '2019']
+_allow_duplicate_vs_installs = False
 
 
 def GetVSPath():
@@ -60,12 +61,34 @@ def GetVSPath():
   # version is installed.
   command = (r'C:\Program Files (x86)\Microsoft Visual Studio\Installer'
              r'\vswhere.exe -prerelease')
-  marker = 'installationPath: '
+  vs_version_marker = 'catalog_productLineVersion: '
+  vs_path_marker = 'installationPath: '
   output = subprocess.check_output(command, universal_newlines=True)
+  vs_path = None
+  vs_installs_count = 0
+  matching_vs_path = None
   for line in output.splitlines():
-    if line.startswith(marker):
-      return line[len(marker):]
-  raise Exception('VS %s path not found in vswhere output' % (VS_VERSION))
+    if line.startswith(vs_path_marker):
+      # The path information comes first
+      vs_path = line[len(vs_path_marker):]
+      vs_installs_count += 1
+    if line.startswith(vs_version_marker):
+      # The version for that path comes later
+      if line[len(vs_version_marker):] == VS_VERSION:
+        matching_vs_path = vs_path
+
+  if vs_installs_count == 0:
+    raise Exception('VS %s path not found in vswhere output' % (VS_VERSION))
+  if vs_installs_count > 1:
+    if not _allow_duplicate_vs_installs:
+      raise Exception('Multiple VS installs detected. This is unsupported. '
+                      'It is recommended that packaging be done on a clean VM '
+                      'with just one version installed. To proceed anyway add '
+                      'the --allow_dup_installs flag to this script')
+    else:
+      print('Multiple VS installs were detected. This is unsupported. '
+            'Proceeding anyway')
+  return matching_vs_path
 
 
 def ExpandWildcards(root, sub_dir):
@@ -465,6 +488,9 @@ def main():
   parser.add_option('--repackage', action='store', type='string',
                     dest='repackage_dir', default=None,
                     help='Specify raw directory to be packaged, for hot fixes.')
+  parser.add_option('--allow_duplicate_vs_installs', action='store_true',
+                    default=False, dest='allow_dup_installs',
+                    help='Specify if multiple VS installs are allowed.')
   (options, args) = parser.parse_args()
 
   if options.repackage_dir:
@@ -487,6 +513,8 @@ def main():
     global WIN_VERSION
     WIN_VERSION = options.winver
     global VC_TOOLS
+    global _allow_duplicate_vs_installs
+    _allow_duplicate_vs_installs = options.allow_duplicate_vs_installs
     vs_path = GetVSPath()
     temp_tools_path = ExpandWildcards(vs_path, 'VC/Tools/MSVC/14.*.*')
     # Strip off the leading vs_path characters and switch back to / separators.

@@ -704,6 +704,7 @@ def GetUnitTestsInDirectory(input_api,
     return any(True for i in filters if input_api.re.match(i, filename))
 
   to_run = found = 0
+  to_skip = 0
   for filename in input_api.os_listdir(test_path):
     found += 1
     fullpath = input_api.os_path.join(test_path, filename)
@@ -712,12 +713,13 @@ def GetUnitTestsInDirectory(input_api,
     if files_to_check and not check(filename, files_to_check):
       continue
     if files_to_skip and check(filename, files_to_skip):
+      to_skip +=1
       continue
     unit_tests.append(input_api.os_path.join(directory, filename))
     to_run += 1
   input_api.logging.debug('Found %d files, running %d unit tests'
                           % (found, to_run))
-  if not to_run:
+  if not to_run and not to_skip:
     return [
         output_api.PresubmitPromptWarning(
           'Out of %d files, found none that matched c=%r, s=%r in directory %s'

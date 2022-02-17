@@ -3246,7 +3246,6 @@ the current line as well!
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
             stdin=subprocess.PIPE),
     ])
-
     self.checkstdout('')
 
   def testCannedRunUnitTestsInDirectory(self):
@@ -3278,6 +3277,96 @@ the current line as well!
             [os.path.join('random_directory', 'b'), '--verbose'],
             cwd=self.fake_root_dir, stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT, stdin=subprocess.PIPE),
+    ])
+    self.checkstdout('')
+
+  def testCannedRunUnitTestsInDirectorySkipFilesToCheck(self):
+    change = presubmit.Change(
+        'foo1', 'description1', self.fake_root_dir, None, 0, 0, None)
+    input_api = self.MockInputApi(change, False)
+    input_api.verbose = True
+    input_api.logging = mock.MagicMock(logging)
+    input_api.PresubmitLocalPath.return_value = self.fake_root_dir
+    input_api.os_listdir.return_value = ['.', '..', 'a']
+    input_api.os_path.isfile = lambda x: not x.endswith('.')
+
+    process = mock.Mock()
+    process.returncode = 0
+    subprocess.Popen.return_value = process
+    presubmit.sigint_handler.wait.return_value = (b'', None)
+
+    results = presubmit_canned_checks.RunUnitTestsInDirectory(
+        input_api,
+        presubmit.OutputApi,
+        'random_directory',
+        files_to_check=['^a$'],
+        files_to_skip=['a'])
+    self.assertEqual(0, len(results))
+    subprocess.Popen.assert_not_called()
+    self.checkstdout('')
+
+  def testCannedRunUnitTestsInDirectoryFilesToCheckNotFoundSkippedFound(self):
+    change = presubmit.Change(
+        'foo1', 'description1', self.fake_root_dir, None, 0, 0, None)
+    input_api = self.MockInputApi(change, False)
+    input_api.verbose = True
+    input_api.logging = mock.MagicMock(logging)
+    input_api.PresubmitLocalPath.return_value = self.fake_root_dir
+    input_api.os_listdir.return_value = ['.', '..', 'a', 'b', 'c']
+    input_api.os_path.isfile = lambda x: not x.endswith('.')
+
+    process = mock.Mock()
+    process.returncode = 0
+    subprocess.Popen.return_value = process
+    presubmit.sigint_handler.wait.return_value = (b'', None)
+
+    results = presubmit_canned_checks.RunUnitTestsInDirectory(
+        input_api,
+        presubmit.OutputApi,
+        'random_directory',
+        files_to_check=['^d$', '^e$'],
+        files_to_skip=['a'])
+    self.assertEqual(1, len(results))
+    self.assertEqual(
+        presubmit.OutputApi.PresubmitPromptWarning, results[0].__class__)
+    subprocess.Popen.assert_not_called()
+    self.checkstdout('')
+
+  def testCannedRunUnitTestsInDirectorySkipFilesNotFound(self):
+    change = presubmit.Change(
+        'foo1', 'description1', self.fake_root_dir, None, 0, 0, None)
+    input_api = self.MockInputApi(change, False)
+    input_api.verbose = True
+    input_api.logging = mock.MagicMock(logging)
+    input_api.PresubmitLocalPath.return_value = self.fake_root_dir
+    input_api.os_listdir.return_value = ['.', '..', 'a', 'b', 'c']
+    input_api.os_path.isfile = lambda x: not x.endswith('.')
+
+    process = mock.Mock()
+    process.returncode = 0
+    subprocess.Popen.return_value = process
+    presubmit.sigint_handler.wait.return_value = (b'', None)
+
+    results = presubmit_canned_checks.RunUnitTestsInDirectory(
+        input_api,
+        presubmit.OutputApi,
+        'random_directory',
+        files_to_check=['^a$', '^b$'],
+        files_to_skip=['d'])
+    self.assertEqual(2, len(results))
+    self.assertEqual(
+        presubmit.OutputApi.PresubmitNotifyResult, results[0].__class__)
+    self.assertEqual(
+        presubmit.OutputApi.PresubmitNotifyResult, results[1].__class__)
+    self.assertEqual(subprocess.Popen.mock_calls, [
+        mock.call(
+            [os.path.join('random_directory', 'b'), '--verbose'],
+            cwd=self.fake_root_dir, stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT, stdin=subprocess.PIPE),
+        mock.call(
+            [os.path.join('random_directory', 'a'), '--verbose'],
+            cwd=self.fake_root_dir, stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
     ])
     self.checkstdout('')
 

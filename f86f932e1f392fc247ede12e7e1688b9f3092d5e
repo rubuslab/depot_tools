@@ -16,6 +16,40 @@
       "message": "The bot is green so I\u0027m putting the CL in review mode. PTAL",
       "revId": "f86f932e1f392fc247ede12e7e1688b9f3092d5e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a67e9cd_65ea34bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-02-17T00:20:40Z",
+      "side": 1,
+      "message": "This feels much better. One update needed:",
+      "revId": "f86f932e1f392fc247ede12e7e1688b9f3092d5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a181bf2_b020155e",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-02-17T00:20:40Z",
+      "side": 1,
+      "message": "The Google Python coding standard (https://google.github.io/styleguide/pyguide.html) says that CAPS_WITH_UNDER is for constants:\n\nGlobal/Class Constants\tCAPS_WITH_UNDER\t_CAPS_WITH_UNDER\n\nIt should be allow_dup_installs, or perhaps _allow_dup_installs since it is internal (but nothing else is tagged that way).",
+      "revId": "f86f932e1f392fc247ede12e7e1688b9f3092d5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

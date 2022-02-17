@@ -16,6 +16,24 @@
       "message": "This might be a little nitpick-y but do you think we should name it \"allow_multiple\" instead of \"allow_duplicate\"?\n\nDuplicate sort of sounds like multiple installs of the same version to me.",
       "revId": "a4dbe90f543d77dd0f8f029e358f5948a759fdb1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e28d188d_aad3777b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-02-17T20:59:15Z",
+      "side": 1,
+      "message": "That sounds good.",
+      "parentUuid": "32f29d5f_d6aa8142",
+      "revId": "a4dbe90f543d77dd0f8f029e358f5948a759fdb1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

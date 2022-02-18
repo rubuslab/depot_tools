@@ -16,6 +16,24 @@
       "message": "One of the roll recipe dependencies (https://chromium-review.googlesource.com/c/chromium/tools/build/+/3474455)\nfailed with:\n```\n In directory: /b/s/w/ir/cache/builder\n Traceback (most recent call last):\n   File \"/b/s/w/ir/x/w/exe/depot_tools/gclient.py\", line 108, in \u003cmodule\u003e\n     import gclient_scm\n   File \"/b/s/w/ir/x/w/exe/depot_tools/gclient_scm.py\", line 29, in \u003cmodule\u003e\n     import gerrit_util\n   File \"/b/s/w/ir/x/w/exe/depot_tools/gerrit_util.py\", line 16, in \u003cmodule\u003e\n     import httplib2\n ModuleNotFoundError: No module named \u0027httplib2\u0027\n```\n\nOther recipe rolls succeeded:\n* https://chromium-review.googlesource.com/c/chromiumos/infra/recipes/+/3475092\n* https://chromium-review.googlesource.com/c/infra/infra/+/3474936\n\nAny advice on how to proceed?\n\nThanks!",
       "revId": "0f13273f1f235a8a416e9ddd5f35c20bac268e55",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "849a969a_422bc5d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 37
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-18T17:32:41Z",
+      "side": 1,
+      "message": "let\u0027s rollback since this is affecting at least one prod builder: https://ci.chromium.org/ui/p/infra/builders/codesearch/codesearch-update-submodules-mirror-src/247653/overview\n\nFor the root cause, I think the library is not present in vpython; and there\u0027s some py2 vs py3 issues that needs to be investigated.",
+      "parentUuid": "ae153534_a55b15e2",
+      "revId": "0f13273f1f235a8a416e9ddd5f35c20bac268e55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

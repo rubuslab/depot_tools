@@ -34,6 +34,24 @@
       "parentUuid": "ae153534_a55b15e2",
       "revId": "0f13273f1f235a8a416e9ddd5f35c20bac268e55",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3439fa2_28d494dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 37
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2022-02-18T18:09:48Z",
+      "side": 1,
+      "message": "\u003e let\u0027s rollback since this is affecting at least one prod builder: https://ci.chromium.org/ui/p/infra/builders/codesearch/codesearch-update-submodules-mirror-src/247653/overview\n\u003e \n\nAck. Thanks for handling the various recipe rolls as well.\n\n\u003e For the root cause, I think the library is not present in vpython; and there\u0027s some py2 vs py3 issues that needs to be investigated.\n\nDisclaimer: I am not very familiar with how python2/python3 dependencies work in the various bots.\n\nI see httplib2-py3 listed in .vpython3 and .vpython in depot_tools.\n\nI also see that some of the failures were using the cipd python3 -\n`/b/s/w/ir/cipd_bin_packages/cpython3/bin/python3 -u /b/s/w/ir/kitchen-checkout/depot_tools/gclient.py sync ...`\n(from https://luci-milo.appspot.com/raw/build/logs.chromium.org/chromium/led/infra-try-recipes-tester_chops-service-accounts.iam.gserviceaccount.com/abe8052f6acd66d1ff6d3a002722de666c5d5a5f84d3e9eacef2006d8a28ae73/+/build.proto)\n\n\nWhenever you get a chance, would appreciate any recommendations on how to proceed.\nThanks!",
+      "parentUuid": "849a969a_422bc5d2",
+      "revId": "0f13273f1f235a8a416e9ddd5f35c20bac268e55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

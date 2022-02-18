@@ -16,6 +16,24 @@
       "message": "I actually think the current behavior is intentional - if there\u0027s nothing to run, we want to let user know that presubmit may need adjustments (ie - it\u0027s a noop, so maybe should be removed).",
       "revId": "3aeca6dc955d42176fb008d44b3202105058ad4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b95dc2c_2288cc15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002781
+      },
+      "writtenOn": "2022-02-18T07:30:57Z",
+      "side": 1,
+      "message": "Well we have a case where the folder only contains one test and we want to skip that test since it requires compilation first. Thus it will warn everyone-everytime that this file is skipped. I do get the intent but having it per folder, not sure that\u0027s a good idea.",
+      "parentUuid": "5060f3d3_e0ea1dd6",
+      "revId": "3aeca6dc955d42176fb008d44b3202105058ad4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

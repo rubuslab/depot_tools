@@ -52,6 +52,24 @@
       "parentUuid": "8b95dc2c_2288cc15",
       "revId": "3aeca6dc955d42176fb008d44b3202105058ad4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b897f20_a8424a34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-18T20:43:51Z",
+      "side": 1,
+      "message": "If we accept this patch, we will no longer notify users that there were no unit tests executed if skip argument is used. My concern is that a user may think unit tests are being executed, whereas they aren\u0027t. I\u0027m not sure how often we hit that case.\n\nWould it make more sense to patch https://source.chromium.org/chromium/chromium/src/+/main:third_party/webrtc/PRESUBMIT.py;l\u003d822; and make it ignore the perf directory where catapult_uploader_test is located?",
+      "parentUuid": "4fa15c2c_6c208bb1",
+      "revId": "3aeca6dc955d42176fb008d44b3202105058ad4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

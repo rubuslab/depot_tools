@@ -34,6 +34,24 @@
       "parentUuid": "5060f3d3_e0ea1dd6",
       "revId": "3aeca6dc955d42176fb008d44b3202105058ad4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fa15c2c_6c208bb1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002781
+      },
+      "writtenOn": "2022-02-18T07:32:17Z",
+      "side": 1,
+      "message": "https://source.chromium.org/chromium/chromium/src/+/main:third_party/webrtc/tools_webrtc/perf/catapult_uploader_test.py\n\nAnd rule to skip https://source.chromium.org/chromium/chromium/src/+/main:third_party/webrtc/PRESUBMIT.py;l\u003d835",
+      "parentUuid": "8b95dc2c_2288cc15",
+      "revId": "3aeca6dc955d42176fb008d44b3202105058ad4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

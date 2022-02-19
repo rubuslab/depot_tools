@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2c20ccc_08d2e954",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-19T11:30:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddf5b524_a9ce166b",
+      "revId": "92cc0eb12e32bc978be27b7959dd3fc3e9db2fd3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1e8af30_87562d18",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-02-17T19:31:15Z",
       "side": 1,
       "message": "The -1 in this case refers to the last component of the vc_tools_parts copy, not to anything related to the OS path separator.",
+      "revId": "92cc0eb12e32bc978be27b7959dd3fc3e9db2fd3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4130c6e_1ef1c902",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-19T11:30:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1e8af30_87562d18",
       "revId": "92cc0eb12e32bc978be27b7959dd3fc3e9db2fd3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

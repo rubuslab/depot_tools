@@ -86,6 +86,24 @@
       "parentUuid": "b277709a_1b8d38e2",
       "revId": "f86f932e1f392fc247ede12e7e1688b9f3092d5e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15718e18_7724022e",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-19T12:28:32Z",
+      "side": 1,
+      "message": "I\u0027ve updated those other globals in a separate CL: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3472135\n\nAlso, I agree @ \"sufficiently common\".",
+      "parentUuid": "327cb677_001476b6",
+      "revId": "f86f932e1f392fc247ede12e7e1688b9f3092d5e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

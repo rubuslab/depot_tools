@@ -16,6 +16,24 @@
       "message": "Huh. I\u0027m not sure why it thinks that I am the uploader. Go figure.",
       "revId": "bf7ea725c277c4ab44eb36ac2de03fad8bf2c972",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "233d54f9_7ede322f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-02-20T13:20:53Z",
+      "side": 1,
+      "message": "*shrugs* I guess because it has you marked as having rebased?\nI wonder if it is okay if I +1 as a non-owner. Let\u0027s find out.",
+      "parentUuid": "2225161b_50411f1e",
+      "revId": "bf7ea725c277c4ab44eb36ac2de03fad8bf2c972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

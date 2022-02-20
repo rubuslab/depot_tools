@@ -51,6 +51,23 @@
       "message": "gavinmak@, brucedawson@ gave a +1 but apparently rebased which prevents a self-approval.\n\nI am adding you as a separate owner to also review this.\n(I don\u0027t think we should rubber stamp +1. That goes against the point of preventing self-approval.)\n\nPTAL",
       "revId": "bf7ea725c277c4ab44eb36ac2de03fad8bf2c972",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81d500d4_abffb68a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-02-20T18:50:44Z",
+      "side": 1,
+      "message": "You\u0027ll have to fix the merge conflict (from your other CL) before this can be landed",
+      "revId": "bf7ea725c277c4ab44eb36ac2de03fad8bf2c972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

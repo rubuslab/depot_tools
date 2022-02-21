@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea42330d_18d275ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-02-21T21:56:39Z",
+      "side": 1,
+      "message": "lgtm, though I thought the whole point of crcmod was to have a C implementation?",
+      "revId": "5e237f11f669d7075ff405e5f28311ccc36bbcb8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

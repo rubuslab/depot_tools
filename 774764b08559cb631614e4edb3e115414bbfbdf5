@@ -22,6 +22,30 @@
       },
       "revId": "774764b08559cb631614e4edb3e115414bbfbdf5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99ed04ad_88684abb",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1511222
+      },
+      "writtenOn": "2022-02-23T21:59:36Z",
+      "side": 1,
+      "message": "Apologies. Copied SHA256 in the place of git hash. Corrected.",
+      "parentUuid": "f2ccab89_f9cdd5b6",
+      "range": {
+        "startLine": 41,
+        "startChar": 46,
+        "endLine": 41,
+        "endChar": 110
+      },
+      "revId": "774764b08559cb631614e4edb3e115414bbfbdf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

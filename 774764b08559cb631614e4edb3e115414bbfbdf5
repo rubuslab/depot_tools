@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2ccab89_f9cdd5b6",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2022-02-23T21:51:10Z",
+      "side": 1,
+      "message": "this doesn\u0027t look like a git hash",
+      "range": {
+        "startLine": 41,
+        "startChar": 46,
+        "endLine": 41,
+        "endChar": 110
+      },
+      "revId": "774764b08559cb631614e4edb3e115414bbfbdf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

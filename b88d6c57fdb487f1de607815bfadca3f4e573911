@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3acbe16f_0ed48976",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-02-23T19:12:55Z",
+      "side": 1,
+      "message": "I can\u0027t believe we still have this horrible thing :( ",
+      "revId": "b88d6c57fdb487f1de607815bfadca3f4e573911",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "ptal",
       "revId": "0c8c91775fe8ff02604f8782ae5a2b63d1457e22",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02dc6feb_5d1c93e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-02-23T01:00:03Z",
+      "side": 1,
+      "message": "lgtm if it works; Josip is a better OWNER than me though.",
+      "revId": "0c8c91775fe8ff02604f8782ae5a2b63d1457e22",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

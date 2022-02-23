@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8610e22e_74efdefa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2022-02-23T14:27:33Z",
+      "side": 1,
+      "message": "Reminder: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3480835 hopefully fixes the original issue.\n\nThere are still 2 pending recipe rolls for that change though:\n* https://chrome-internal-review.googlesource.com/c/chrome/tools/release/scripts/+/4569161\n* https://chromium-review.googlesource.com/c/chromiumos/infra/recipes/+/3482399\n\nAFAICT, the rest of the recipe rolls were fine.",
+      "revId": "dffd03d1b3415e916067025eba62ffff1edd4dc2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "Looks like this recipe roll is failing https://chromium-review.googlesource.com/c/chromium/tools/build/+/3488808.\n\nI\u0027m not sure why though. Maybe https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/32645dfee909a3cff9db2f98c25e3e5c0c305b0d did not roll out completely everywhere?",
       "revId": "fc9a40e3c62158938bbba7b4b497bcf352472385",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf120263_975172af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-24T18:47:55Z",
+      "side": 1,
+      "message": "Yes, it didn\u0027t roll everywhere:\n\nhttps://logs.chromium.org/logs/chromium/led/infra-try-recipes-tester_chops-service-accounts.iam.gserviceaccount.com/c244b3324f7fb0aaf590deec50b45acfe662780f16232d053ce2501dc2463493/+/u/bot_update/execution_details - it uses python3 instead of vpython3\n\nNot sure what\u0027s going on yet.",
+      "parentUuid": "8986bd3f_e52071b2",
+      "revId": "fc9a40e3c62158938bbba7b4b497bcf352472385",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

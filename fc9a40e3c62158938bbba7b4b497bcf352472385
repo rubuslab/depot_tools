@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8986bd3f_e52071b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2022-02-24T18:40:56Z",
+      "side": 1,
+      "message": "Looks like this recipe roll is failing https://chromium-review.googlesource.com/c/chromium/tools/build/+/3488808.\n\nI\u0027m not sure why though. Maybe https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/32645dfee909a3cff9db2f98c25e3e5c0c305b0d did not roll out completely everywhere?",
+      "revId": "fc9a40e3c62158938bbba7b4b497bcf352472385",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

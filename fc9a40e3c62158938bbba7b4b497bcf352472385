@@ -70,6 +70,24 @@
       "parentUuid": "ce1f9734_1c44dc95",
       "revId": "fc9a40e3c62158938bbba7b4b497bcf352472385",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b526d569_7ba20410",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-02-24T18:55:51Z",
+      "side": 1,
+      "message": "Thanks for debugging. That is correct, we will need to use vpython3 there too.\n\nI\u0027ll still move forward with the revert",
+      "parentUuid": "c45bc199_c12c4cd2",
+      "revId": "fc9a40e3c62158938bbba7b4b497bcf352472385",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

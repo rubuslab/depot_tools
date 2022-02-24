@@ -34,6 +34,24 @@
       "parentUuid": "2de8e854_5de85561",
       "revId": "5f1bcb356d4f9da28d8ddcb428536f15a8419c3d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfb6942c_99e6dcf3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2022-02-24T20:49:02Z",
+      "side": 1,
+      "message": "Looks like https://chromium-review.googlesource.com/c/chromium/tools/build/+/3489427 landed.",
+      "parentUuid": "81b553a6_329d1778",
+      "revId": "5f1bcb356d4f9da28d8ddcb428536f15a8419c3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -52,6 +52,24 @@
       "parentUuid": "bf120263_975172af",
       "revId": "fc9a40e3c62158938bbba7b4b497bcf352472385",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c45bc199_c12c4cd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2022-02-24T18:53:13Z",
+      "side": 1,
+      "message": ".. because call_gclient uses sys.executable here:\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:recipes/recipe_modules/bot_update/resources/bot_update.py;l\u003d383",
+      "parentUuid": "ce1f9734_1c44dc95",
+      "revId": "fc9a40e3c62158938bbba7b4b497bcf352472385",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

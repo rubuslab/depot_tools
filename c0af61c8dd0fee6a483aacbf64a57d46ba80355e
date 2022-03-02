@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b7970f4_e6a1bfcc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2022-03-02T22:42:47Z",
+      "side": 1,
+      "message": "This change has broken the gsutil recipe module used by Dart recipes:\n\nself.m.gsutil.upload(*args, name\u003d\u0027upload %s\u0027 % filename)\n\nThe gsutil command is now running with python2, apparently.\n\nhttps://dart.googlesource.com/recipes/+/refs/heads/main/recipe_modules/dart/api.py#546\n\nThe error is\n  File \"/b/s/w/ir/kitchen-checkout/depot_tools/external_bin/gsutil/gsutil_5.6/gsutil/gslib/__init__.py\", line 39, in \u003cmodule\u003e\n    raise gslib.exception.CommandException(err)\ngslib.exception.CommandException: CommandException: Gsutil does not support running under Python2\nWARNING:root:Command /b/s/w/ir/cache/vpython/0128d2/bin/python -u /b/s/w/ir/kitchen-checkout/depot_tools/gsutil.py -- cp /b/s/w/ir/x/t/tmpkib6bysm gs://dart-test-results/builders/vm-kernel-linux-release-simarm/14135/revision failed with retcode 1, try 1.1.\nhttps://ci.chromium.org/ui/p/dart/builders/ci.sandbox/vm-kernel-linux-release-simarm/14135/overview\nFailed build is at https://ci.chromium.org/ui/p/dart/builders/ci.sandbox/vm-kernel-linux-release-simarm/14135/overview\n",
+      "revId": "c0af61c8dd0fee6a483aacbf64a57d46ba80355e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

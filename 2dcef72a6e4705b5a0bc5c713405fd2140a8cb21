@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f58bcad1_f711ed21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2022-03-04T02:14:35Z",
+      "side": 1,
+      "message": "Sorry. Just found some bugs and updated the CL. ",
+      "revId": "2dcef72a6e4705b5a0bc5c713405fd2140a8cb21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a9fc61a_69e0c0e9",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2022-03-04T02:14:35Z",
+      "side": 1,
+      "message": "I should have use this method from test_api, because create_change or submit_change is getting response data not a list.",
+      "range": {
+        "startLine": 378,
+        "startChar": 30,
+        "endLine": 378,
+        "endChar": 56
+      },
+      "revId": "2dcef72a6e4705b5a0bc5c713405fd2140a8cb21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bfeb366_365c8256",
+        "filename": "recipes/recipe_modules/gerrit/test_api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2022-03-04T02:14:35Z",
+      "side": 1,
+      "message": "Gerrit resp body always has a full change ID, so I think it makes sense to add it in the mock resp too.",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 15,
+        "endChar": 41
+      },
+      "revId": "2dcef72a6e4705b5a0bc5c713405fd2140a8cb21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

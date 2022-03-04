@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76252f66_aa8c4275",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1403119
+      },
+      "writtenOn": "2022-03-04T22:43:27Z",
+      "side": 1,
+      "message": "Where is this VS_VERSION variable defined? I got an error when ran this script on Windows.",
+      "revId": "36d41ceff8f6955c1f69350ecd2d57316a203a18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

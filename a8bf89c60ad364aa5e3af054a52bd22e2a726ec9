@@ -33,6 +33,40 @@
       "message": "I don\u0027t understand this but when I patch in your change and run it on a machine without VS 2019 installed I get an internal error in os.fspath instead of an error message/exception:\n\nc:\\src\\depot_tools\\win_toolchain\u003egit checkout package\nPrevious HEAD position was 9ce8be33 Revert \"Support multiple VS installations\"\nSwitched to branch \u0027package\u0027\nYour branch is ahead of \u0027origin/main\u0027 by 1 commit.\n  (use \"git push\" to publish your local commits)\n\nc:\\src\\depot_tools\\win_toolchain\u003epython3 package_from_installed.py -d 2019\nTraceback (most recent call last):\n  File \"package_from_installed.py\", line 584, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"package_from_installed.py\", line 531, in main\n    temp_tools_path \u003d ExpandWildcards(vs_path, \u0027VC/Tools/MSVC/14.*.*\u0027)\n  File \"package_from_installed.py\", line 96, in ExpandWildcards\n    path \u003d os.path.normpath(os.path.join(root, sub_dir))\n  File \"c:\\src\\depot_tools\\bootstrap-2@3_8_10_chromium_23_bin\\python3\\bin\\lib\\ntpath.py\", line 78, in join\n    path \u003d os.fspath(path)\nTypeError: expected str, bytes or os.PathLike object, not NoneType\nc:\\src\\depot_tools\\win_toolchain\u003e\nc:\\src\\depot_tools\\win_toolchain\u003e\nc:\\src\\depot_tools\\win_toolchain\u003e\nc:\\src\\depot_tools\\win_toolchain\u003egit checkout origin/main\nHEAD is now at 9ce8be33 Revert \"Support multiple VS installations\"\n\nc:\\src\\depot_tools\\win_toolchain\u003epython3 package_from_installed.py -d 2019\nBuilding file list for VS 2019 Windows 10.0.18362.0...\nTraceback (most recent call last):\n  File \"package_from_installed.py\", line 556, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"package_from_installed.py\", line 508, in main\n    files \u003d BuildFileList(options.override_dir, options.arm)\n  File \"package_from_installed.py\", line 157, in BuildFileList\n    combined \u003d ExpandWildcards(vs_path, src)\n  File \"package_from_installed.py\", line 76, in ExpandWildcards\n    raise Exception(\u0027%s had %d matches - should be one\u0027 % (path, len(matches)))\nException: C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\redist\\MSVC\\14.*.*\\arm64\\Microsoft.VC*.CRT had 0 matches - should be one\n",
       "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63bdfb17_398b44ad",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-05T20:21:12Z",
+      "side": 1,
+      "message": "GetVSPath() is called a second time here.",
+      "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1bc6978_af51d5e9",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-05T20:21:12Z",
+      "side": 1,
+      "message": "GetVSPath() is called twice. That was previously not noticed but now the function has side effects (printing the \"Multiple VS installs were detected. This is unsupported. Proceeding anyway\" message) which makes it more obvious. It would be nice to avoid the second call, now that we know that it is happening, presumably by passing in vs_path as a parameter to BuildFlieList.\n\nThat is, I see this message when running it on a machine with multiple VS installs:\n\nc:\\src\\depot_tools\\win_toolchain\u003epython3 package_from_installed.py -d 2019 --allow_multiple_vs_installs\nMultiple VS installs were detected. This is unsupported. Proceeding anyway\nBuilding file list for VS 2019 Windows 10.0.18362.0...\nMultiple VS installs were detected. This is unsupported. Proceeding anyway\n6.522 GB of data in 12388 files, 7450 files for 10.0.18362.0.",
+      "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

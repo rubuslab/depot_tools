@@ -16,6 +16,24 @@
       "message": "Where is this VS_VERSION variable defined? I got an error when ran this script on Windows.",
       "revId": "36d41ceff8f6955c1f69350ecd2d57316a203a18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2f2ebae_66b5a035",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-05T00:01:04Z",
+      "side": 1,
+      "message": "Yep, that\u0027s a bug caused by having too many changes in flight and not testing the merges. The previous change renamed VS_VERSION to _vs_version but then this change landed with an old version of the new code. Probably this change should be reverted (it could be fixed forward but reverting seems more appropriate). I\u0027ll do that.",
+      "parentUuid": "76252f66_aa8c4275",
+      "revId": "36d41ceff8f6955c1f69350ecd2d57316a203a18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

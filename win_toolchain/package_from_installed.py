@@ -51,6 +51,7 @@ import get_toolchain_if_necessary
 _vs_version = None
 _win_version = None
 _vc_tools = None
+_vs_path = None
 SUPPORTED_VS_VERSIONS = ['2017', '2019']
 
 
@@ -149,12 +150,10 @@ def BuildFileList(override_dir, include_arm):
          'sysarm64'),
     ]
 
-  vs_path = GetVSPath()
-
   for path in paths:
     src = path[0] if isinstance(path, tuple) else path
     # Note that vs_path is ignored if src is an absolute path.
-    combined = ExpandWildcards(vs_path, src)
+    combined = ExpandWildcards(_vs_path, src)
     if not os.path.exists(combined):
       raise Exception('%s missing.' % combined)
     if not os.path.isdir(combined):
@@ -173,8 +172,8 @@ def BuildFileList(override_dir, include_arm):
           result.append(
               (final_from, os.path.normpath(os.path.join(path[1], dest))))
         else:
-          assert final_from.startswith(vs_path)
-          dest = final_from[len(vs_path) + 1:]
+          assert final_from.startswith(_vs_path)
+          dest = final_from[len(_vs_path) + 1:]
           result.append((final_from, dest))
 
   command = (r'reg query "HKLM\SOFTWARE\Microsoft\Windows Kits\Installed Roots"'
@@ -499,10 +498,11 @@ def main():
     global _win_version
     _win_version = options.winver
     global _vc_tools
-    vs_path = GetVSPath()
+    global _vs_path
+    GetVSPath()
     temp_tools_path = ExpandWildcards(vs_path, 'VC/Tools/MSVC/14.*.*')
-    # Strip off the leading vs_path characters and switch back to / separators.
-    _vc_tools = temp_tools_path[len(vs_path) + 1:].replace('\\', '/')
+    # Strip off the leading _vs_path characters and switch back to / separators.
+    _vc_tools = temp_tools_path[len(_vs_path) + 1:].replace('\\', '/')
 
     print('Building file list for VS %s Windows %s...' % (_vs_version, _win_version))
     files = BuildFileList(options.override_dir, options.arm)

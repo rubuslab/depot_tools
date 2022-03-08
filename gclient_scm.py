@@ -414,11 +414,13 @@ class GitWrapper(SCMWrapper):
       # 3. Append patch_rev of the changes with the same topic to the patch_revs
       #    to process.
 
-      # Parse the patch_Rev to extract the CL and patchset.
+      # Parse the patch_rev to extract the CL and patchset.
       patch_rev_tokens = patch_rev.split('/')
       change = patch_rev_tokens[-2]
-      # Parse the gerrit host out of self.url.
-      host = self.url.split(os.path.sep)[-1].rstrip('.git')
+      # Parse the gerrit host and repo out of self.url
+      print("self.url HERE HERE")
+      print(self.url)
+      host, repo = re.findall('//(.*).googlesource.com/(.*).git', self.url)[0]
       gerrit_host_url = '%s-review.googlesource.com' % host
 
       # 1. Find the topic of the Gerrit change specified in the patch_rev.
@@ -428,7 +430,7 @@ class GitWrapper(SCMWrapper):
         # 2. Find all changes with that topic.
         changes_with_same_topic = gerrit_util.QueryChanges(
             gerrit_host_url,
-            [('topic', topic), ('status', 'open'), ('repo', host)],
+            [('topic', topic), ('status', 'open'), ('repo', repo)],
             o_params=['ALL_REVISIONS'])
         for c in changes_with_same_topic:
           if str(c['_number']) == change:

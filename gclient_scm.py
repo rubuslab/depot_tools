@@ -414,33 +414,37 @@ class GitWrapper(SCMWrapper):
       # 3. Append patch_rev of the changes with the same topic to the patch_revs
       #    to process.
 
-      # Parse the patch_Rev to extract the CL and patchset.
+      # Parse the patch_rev to extract the CL and patchset.
       patch_rev_tokens = patch_rev.split('/')
       change = patch_rev_tokens[-2]
-      # Parse the gerrit host out of self.url.
-      host = self.url.split(os.path.sep)[-1].rstrip('.git')
-      gerrit_host_url = '%s-review.googlesource.com' % host
+      # Parse the self.url.
+      tokens = re.findall('//(.*).googlesource.com/(.*).git', self.url)
+      if len(tokens) > 0:
+        # self.url is in the expected googlesource format. Now parse the gerrit
+        # host and repo out of self.url.
+        host, repo = tokens[0]
+        gerrit_host_url = '%s-review.googlesource.com' % host
 
-      # 1. Find the topic of the Gerrit change specified in the patch_rev.
-      change_object = gerrit_util.GetChange(gerrit_host_url, change)
-      topic = change_object.get('topic')
-      if topic:
-        # 2. Find all changes with that topic.
-        changes_with_same_topic = gerrit_util.QueryChanges(
-            gerrit_host_url,
-            [('topic', topic), ('status', 'open'), ('repo', host)],
-            o_params=['ALL_REVISIONS'])
-        for c in changes_with_same_topic:
-          if str(c['_number']) == change:
-            # This change is already in the patch_rev.
-            continue
-          self.Print('Found CL %d with the topic name %s' % (
-              c['_number'], topic))
-          # 3. Append patch_rev of the changes with the same topic to the
-          #    patch_revs to process.
-          curr_rev = c['current_revision']
-          new_patch_rev = c['revisions'][curr_rev]['ref']
-          patch_revs_to_process.append(new_patch_rev)
+        # 1. Find the topic of the Gerrit change specified in the patch_rev.
+        change_object = gerrit_util.GetChange(gerrit_host_url, change)
+        topic = change_object.get('topic')
+        if topic:
+          # 2. Find all changes with that topic.
+          changes_with_same_topic = gerrit_util.QueryChanges(
+              gerrit_host_url,
+              [('topic', topic), ('status', 'open'), ('repo', repo)],
+              o_params=['ALL_REVISIONS'])
+          for c in changes_with_same_topic:
+            if str(c['_number']) == change:
+              # This change is already in the patch_rev.
+              continue
+            self.Print('Found CL %d with the topic name %s' % (
+                c['_number'], topic))
+            # 3. Append patch_rev of the changes with the same topic to the
+            #    patch_revs to process.
+            curr_rev = c['current_revision']
+            new_patch_rev = c['revisions'][curr_rev]['ref']
+            patch_revs_to_process.append(new_patch_rev)
 
     self._Capture(['reset', '--hard'])
     for pr in patch_revs_to_process:

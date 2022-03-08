@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bea42f44_7452ca97",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-03-08T18:30:59Z",
+      "side": 1,
+      "message": "I get this same error even with VS 2019 installed unless I specify --noarm.\n(You\u0027ll notice it is looking for \"...\\arm64\\...\".)\nAlternatively, you can install the ARM CRT.\n\nIf I checkout commit 234398a1536f68d61e81cbc7cba0fbed2de0634d (which is before I made any changes) the same behavior happens.\n\n(Note: I\u0027m testing with VS 2019 installed. I\u0027ll setup a VM to test without VS 2019 installed to see if the behavior changed.)\n\nI would be happy to make a separate CL that more gracefully explains the missing ARM CRT / --noarm.",
+      "parentUuid": "655c7ff3_ab33a1cf",
+      "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63bdfb17_398b44ad",
@@ -65,6 +83,24 @@
       "writtenOn": "2022-03-05T20:21:12Z",
       "side": 1,
       "message": "GetVSPath() is called twice. That was previously not noticed but now the function has side effects (printing the \"Multiple VS installs were detected. This is unsupported. Proceeding anyway\" message) which makes it more obvious. It would be nice to avoid the second call, now that we know that it is happening, presumably by passing in vs_path as a parameter to BuildFlieList.\n\nThat is, I see this message when running it on a machine with multiple VS installs:\n\nc:\\src\\depot_tools\\win_toolchain\u003epython3 package_from_installed.py -d 2019 --allow_multiple_vs_installs\nMultiple VS installs were detected. This is unsupported. Proceeding anyway\nBuilding file list for VS 2019 Windows 10.0.18362.0...\nMultiple VS installs were detected. This is unsupported. Proceeding anyway\n6.522 GB of data in 12388 files, 7450 files for 10.0.18362.0.",
+      "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24d91834_c0208dc3",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-03-08T18:30:59Z",
+      "side": 1,
+      "message": "I saw this, too.\n\nI started writing a CL to fix it but hadn\u0027t uploaded it.\nOn my setup (with multiple VS installs), testing is awkward. I was hoping to land this CL first so I could test better.\n(I\u0027ll setup a Windows VM soon which matches to my knowledge what Chromium builds ask.)\n\nThe approach I took was to embrace similar things, such as VC_TOOLS which stores a path in a global. But I prefer to pass parameters over using globals. So with your blessing, I did what you suggested.\n\nA CL for that is here: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3510528",
+      "parentUuid": "e1bc6978_af51d5e9",
       "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

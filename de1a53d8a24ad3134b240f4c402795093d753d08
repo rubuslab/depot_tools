@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42e29bc6_98ee1a19",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-09T23:13:42Z",
+      "side": 1,
+      "message": "WDYT to extract this into its own function? looks like we\u0027d need to pass self.url and patch_rev. It would make it easier to read due as we will be able to short-circuit it on under some conditions.",
+      "revId": "de1a53d8a24ad3134b240f4c402795093d753d08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cfb126f_a1d42e01",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-09T23:13:42Z",
+      "side": 1,
+      "message": "nit: search, since we need one element",
+      "range": {
+        "startLine": 421,
+        "startChar": 18,
+        "endLine": 421,
+        "endChar": 25
+      },
+      "revId": "de1a53d8a24ad3134b240f4c402795093d753d08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58f62b94_745847c4",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-09T23:13:42Z",
+      "side": 1,
+      "message": "replace .git with (?:git|)$ to support urls without .git (both are valid).",
+      "range": {
+        "startLine": 421,
+        "startChar": 55,
+        "endLine": 421,
+        "endChar": 60
+      },
+      "revId": "de1a53d8a24ad3134b240f4c402795093d753d08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4106c561_4a75f175",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-09T23:13:42Z",
+      "side": 1,
+      "message": "if re.search is used, host, repo \u003d tokens[1], tokens[2]",
+      "range": {
+        "startLine": 425,
+        "startChar": 21,
+        "endLine": 425,
+        "endChar": 30
+      },
+      "revId": "de1a53d8a24ad3134b240f4c402795093d753d08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

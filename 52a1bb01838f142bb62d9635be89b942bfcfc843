@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7842c3d0_e1967dc4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1414197
+      },
+      "writtenOn": "2022-03-10T00:14:57Z",
+      "side": 1,
+      "message": "I updated the version to be the one canaried.",
+      "revId": "52a1bb01838f142bb62d9635be89b942bfcfc843",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

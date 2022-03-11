@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9991d0a5_45abf717",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-11T02:50:52Z",
+      "side": 1,
+      "message": "Okay, I understand the issue. Before your change GetVSPath always returned a string, so ExpandWildcards runs without failing, and later on we have a chance to detect that we had zero matches and say that.\n\nWith your change GetVSPath returns None if it doesn\u0027t find a match. Probably the best way to avoid this regression is to have a check - either in GetVSPath or after it is called - for a None result, and translate it to a clear message. Failing cryptically inside os.fspath with \"TypeError: expected str, bytes or os.PathLike object, not NoneType\" is confusing.",
+      "parentUuid": "bea42f44_7452ca97",
+      "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "63bdfb17_398b44ad",
         "filename": "win_toolchain/package_from_installed.py",
         "patchSetId": 2
@@ -66,6 +84,24 @@
       "writtenOn": "2022-03-05T20:21:12Z",
       "side": 1,
       "message": "GetVSPath() is called a second time here.",
+      "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e11b1a89_7cfe7b04",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-11T02:50:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63bdfb17_398b44ad",
       "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "I saw this, too.\n\nI started writing a CL to fix it but hadn\u0027t uploaded it.\nOn my setup (with multiple VS installs), testing is awkward. I was hoping to land this CL first so I could test better.\n(I\u0027ll setup a Windows VM soon which matches to my knowledge what Chromium builds ask.)\n\nThe approach I took was to embrace similar things, such as VC_TOOLS which stores a path in a global. But I prefer to pass parameters over using globals. So with your blessing, I did what you suggested.\n\nA CL for that is here: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3510528",
       "parentUuid": "e1bc6978_af51d5e9",
+      "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d63e32a5_298b7d24",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-11T02:50:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24d91834_c0208dc3",
       "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

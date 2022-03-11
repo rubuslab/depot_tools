@@ -306,7 +306,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
       step_result = f.result
       raise
     finally:
-      if step_result and step_result.json.output:
+      # The step_result can be missing a json attribute if the build
+      # is shutting down and the bot_update script is not able to run.
+      # An AttributeError occuring here swallows any StepFailure that
+      # was bubbling up.
+      # See bugs.chromium.org/p/chromium/issues/detail?id=1305332
+      if step_result and hasattr(step_result, 'json') and step_result.json.output:
         result = step_result.json.output
         self._last_returned_properties = result.get('properties', {})
 

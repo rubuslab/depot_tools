@@ -2,6 +2,9 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+from recipe_engine.recipe_api import Property
+from recipe_engine import post_process
+
 PYTHON_VERSION_COMPATIBILITY = 'PY2+3'
 
 DEPS = [
@@ -22,7 +25,9 @@ from recipe_engine import engine_types
 from RECIPE_MODULES.depot_tools import gclient
 from PB.go.chromium.org.luci.buildbucket.proto.build import Build
 
-def RunSteps(api):
+PROPERTIES = {'remove_json_output': Property(default=False, kind=bool)}
+
+def RunSteps(api, remove_json_output):
   api.gclient.use_mirror = True
   commit = api.buildbucket.build.input.gitiles_commit
 
@@ -69,6 +74,7 @@ def RunSteps(api):
   bot_update_output = engine_types.thaw(api.properties.get('bot_update_output'))
   if bot_update_output:
     step_test_data = lambda: api.json.test_api.output(bot_update_output)
+
   bot_update_step = api.bot_update.ensure_checkout(
       patch=patch,
       with_branch_heads=with_branch_heads,
@@ -84,6 +90,7 @@ def RunSteps(api):
       set_output_commit=set_output_commit,
       step_test_data=step_test_data,
     )
+
   if patch:
     api.bot_update.deapply_patch(bot_update_step)
 
@@ -179,6 +186,15 @@ def GenTests(api):
       try_build() +
       api.properties(fail_patch='download') +
       api.step_data('bot_update', retcode=87)
+  )
+  yield (
+      api.test('tryjob_fail_missing_bot_update_json') +
+      try_build() +
+      api.properties(remove_json_output=True) +
+      api.override_step_data('bot_update', retcode=1) +
+      api.post_process(post_process.ResultReasonRE, 'Infra Failure.*') +
+      api.post_process(post_process.StatusException) +
+      api.post_process(post_process.DropExpectation)
   )
   yield (
       api.test('clobber') +

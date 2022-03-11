@@ -98,6 +98,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       add_blamelists=False,
                       set_output_commit=False,
                       step_test_data=None,
+                      step_test_missing_json=False,
                       enforce_fetch=False,
                       **kwargs):
     """
@@ -121,6 +122,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
         Requires falsy ignore_input_commit.
       * step_test_data: a null function that returns test bot_update.py output.
         Use test_api.output_json to generate test data.
+      * step_test_missing_json: a bool to wipe the json attribute from the
+        bot_update step. Used to simulate a scenario where the bot_update
+        script cannot be executed, so the bot_update step json is missing.
       * enforce_fetch: Enforce a new fetch to refresh the git cache, even if the
         solution revision passed in already exists in the current git cache.
       * assert_one_gerrit_change: if True, assert that there is at most one
@@ -306,7 +310,15 @@ class BotUpdateApi(recipe_api.RecipeApi):
       step_result = f.result
       raise
     finally:
-      if step_result and step_result.json.output:
+      if step_test_missing_json:
+        del step_result.json
+
+      # The step_result can be missing a json attribute if the build
+      # is shutting down and the bot_update script is not able to run.
+      # An AttributeError occuring here swallows any StepFailure that
+      # was bubbling up.
+      # See bugs.chromium.org/p/chromium/issues/detail?id=1305332
+      if step_result and hasattr(step_result, 'json') and step_result.json.output:
         result = step_result.json.output
         self._last_returned_properties = result.get('properties', {})
 

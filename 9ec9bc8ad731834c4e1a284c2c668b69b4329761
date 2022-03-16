@@ -16,6 +16,24 @@
       "message": "Why do we want this? We shouldn\u0027t allow users to bypass vpython if scripts require one.\n\nNote that one can always invoke python files with whatever python interpreter they want.",
       "revId": "9ec9bc8ad731834c4e1a284c2c668b69b4329761",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b08bb14_e933e3ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-03-16T18:59:55Z",
+      "side": 1,
+      "message": "I can\u0027t speak for Darshan here, but originally this envvar was made as a way for users on unsupported platforms to bypass vpython. In python2 there probably wasn\u0027t a reason to do this on windows (because everything was python2.7), but I could imagine if someone was using some fresh copy of python3 (like 3.10) which we don\u0027t have wheels for, then they could run into a situation where they just want to \"do it themselves\"\n\nThat said; the actual `vpython` and `vpython3` binaries should always work correctly on windows, and those binaries should respect this envvar already; The reason that we added additional bypass support in the .sh files for not-windows was because some platforms were SO unsupported that we didn\u0027t even have a working `vpython` binary for them.",
+      "parentUuid": "8689b592_af490c45",
+      "revId": "9ec9bc8ad731834c4e1a284c2c668b69b4329761",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

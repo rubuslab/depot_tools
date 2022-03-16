@@ -1,6 +1,57 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca819997_c6b390d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-03-16T17:18:00Z",
+      "side": 1,
+      "message": "r",
+      "revId": "e1a3416d0d34535efd35d365054d053a22fe19c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6be8ef60_86a02fc3",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-03-16T17:18:00Z",
+      "side": 1,
+      "message": "Both seem to be accomplishing similar task. Is there any reason for updating this?",
+      "revId": "e1a3416d0d34535efd35d365054d053a22fe19c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bd37774_5adb515f",
+        "filename": "upload_to_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-03-16T17:18:00Z",
+      "side": 1,
+      "message": "Same question here: Why not just use `map` and `any`?",
+      "revId": "e1a3416d0d34535efd35d365054d053a22fe19c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c41a5a4_dad06a44",

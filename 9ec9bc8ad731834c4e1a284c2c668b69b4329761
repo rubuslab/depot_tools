@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8689b592_af490c45",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-16T18:22:11Z",
+      "side": 1,
+      "message": "Why do we want this? We shouldn\u0027t allow users to bypass vpython if scripts require one.\n\nNote that one can always invoke python files with whatever python interpreter they want.",
+      "revId": "9ec9bc8ad731834c4e1a284c2c668b69b4329761",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

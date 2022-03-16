@@ -34,6 +34,24 @@
       "parentUuid": "8689b592_af490c45",
       "revId": "9ec9bc8ad731834c4e1a284c2c668b69b4329761",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16f9ae9b_102b3deb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-16T20:14:39Z",
+      "side": 1,
+      "message": "I see there\u0027s support in vpython bash file, I wasn\u0027t aware of one. Still, if there\u0027s no good reason for this (feature parity, imo, is not sufficient reason), we shouldn\u0027t be doing it.\n\nDarshan, if we need this, could you edit commit description and add reasoning for it?",
+      "parentUuid": "0b08bb14_e933e3ce",
+      "revId": "9ec9bc8ad731834c4e1a284c2c668b69b4329761",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

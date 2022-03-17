@@ -71,6 +71,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2bb9930_ca4af941",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1189229
+      },
+      "writtenOn": "2022-03-17T08:19:49Z",
+      "side": 1,
+      "message": "I previously misunderstood what you meant. I understand now.\n\nI struggled for a bit to recreate what you were seeing. When I uninstall VS it leaves parts of the VS installer, which includes vswhere.exe. On all 3 commits (origin/main, 234398a1, and this CL), I get the same behavior. But it is different from what you were seeing.\n\nI then tried renaming vswhere.exe to mimic a fresh VM with no VS uninstall leftovers. But that crashed elsewhere and didn\u0027t seem to be what we cared about.\n\nI then reinstalled only VS 2022 and not VS 2019 and I now see behavior like what you described.\n\n(Although the fix seems simple enough, I would like to have at least tested it locally. So recreating the behavior was important.)\n\nI fixed it by simply initializing the value being returned to \"\" instead of None.",
+      "parentUuid": "9991d0a5_45abf717",
+      "revId": "a8bf89c60ad364aa5e3af054a52bd22e2a726ec9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63bdfb17_398b44ad",

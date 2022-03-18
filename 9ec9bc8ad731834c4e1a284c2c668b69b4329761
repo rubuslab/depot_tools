@@ -70,6 +70,24 @@
       "parentUuid": "16f9ae9b_102b3deb",
       "revId": "9ec9bc8ad731834c4e1a284c2c668b69b4329761",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84049d12_c9c5c0d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-18T17:13:35Z",
+      "side": 1,
+      "message": "Thanks for updating it, Darshan. It would be great if you could provide answer to Brian\u0027s question - what are issues with chromium provided python? We want to make it work for everyone.",
+      "parentUuid": "bc385bf3_33bc54ff",
+      "revId": "9ec9bc8ad731834c4e1a284c2c668b69b4329761",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

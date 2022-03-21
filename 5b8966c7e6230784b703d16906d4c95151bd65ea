@@ -16,6 +16,24 @@
       "message": "Why is this a part of this CL?\n\nAlso, I think updating this to list comprehension fixes this issue.",
       "revId": "5b8966c7e6230784b703d16906d4c95151bd65ea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c43dc07_9a08ef1c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-03-21T22:01:53Z",
+      "side": 1,
+      "message": "```\nreturn [f for f in self.AffectedFiles(include_deletes\u003dFalse, **kwargs) if x.IsTestableFile()]\n```",
+      "parentUuid": "f82f9fc8_5f09b2ee",
+      "revId": "5b8966c7e6230784b703d16906d4c95151bd65ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

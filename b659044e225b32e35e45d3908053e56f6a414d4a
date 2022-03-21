@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "982a7995_4cd90d9d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1111085
+      },
+      "writtenOn": "2022-03-21T17:49:26Z",
+      "side": 1,
+      "message": "I was broken by Mac 12.3\u0027s remove of `python`.",
+      "revId": "b659044e225b32e35e45d3908053e56f6a414d4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

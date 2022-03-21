@@ -734,6 +734,7 @@ class InputApi(object):
                ' is deprecated and ignored' % str(include_deletes),
            category=DeprecationWarning,
            stacklevel=2)
+    # pylint: disable=consider-using-generator
     return list(filter(
         lambda x: x.IsTestableFile(),
         self.AffectedFiles(include_deletes=False, **kwargs)))
@@ -1988,8 +1989,11 @@ def main(argv=None):
           options.json_output,
           options.use_python3)
   except PresubmitFailure as e:
+    import utils
     print(e, file=sys.stderr)
     print('Maybe your depot_tools is out of date?', file=sys.stderr)
+    print('depot_tools version: %s' % utils.depot_tools_version(),
+          file=sys.stderr)
     return 2
 
 

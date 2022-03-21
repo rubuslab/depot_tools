@@ -4,7 +4,7 @@
 # found in the LICENSE file.
 
 
-"""Generic retry wrapper for Git operations. 
+"""Generic retry wrapper for Git operations.
 
 This is largely DEPRECATED in favor of the Infra Git wrapper:
 https://chromium.googlesource.com/infra/infra/+/HEAD/go/src/infra/tools/git

@@ -163,6 +163,40 @@ def CMDhead(parser, args):
 
 
 @subcommand.usage('[args ...]')
+def CMDgitnumberer(parser, args):
+  (opt, args) = parser.parse_args(args)
+
+  host = urlparse.urlparse(opt.host).netloc
+  projects = gerrit_util.GetProjects(host)
+  for project in projects:
+    print(project, file=sys.stderr)
+    try:
+      content = gerrit_util.GetFile(host, project, 'refs/meta/config', 'project.config')
+      if 'git-numberer' in content:
+        print(project)
+    except Exception as e:
+      m = str(e)
+      print(project, m.split('\n')[0][:100], file=sys.stderr)
+
+
+@subcommand.usage('[args ...]')
+def CMDproject_configs(parser, args):
+  (opt, args) = parser.parse_args(args)
+
+  host = urlparse.urlparse(opt.host).netloc
+  projects = gerrit_util.GetProjects(host)
+  for project in projects:
+    print(project, file=sys.stderr)
+    try:
+      content = gerrit_util.GetFile(host, project, 'refs/meta/config', 'project.config')
+      with open('%s' % (project.replace('/', '-SLASH-')), 'w') as f:
+        f.write(content)
+    except Exception as e:
+      m = str(e)
+      print(project, m.split('\n')[0][:100], file=sys.stderr)
+
+
+@subcommand.usage('[args ...]')
 def CMDheadinfo(parser, args):
   """Retrieves the current HEAD of the project."""
 

@@ -46,7 +46,7 @@ else:
 LOGGER = logging.getLogger()
 # With a starting sleep time of 10.0 seconds, x <= [1.8-2.2]x backoff, and five
 # total tries, the sleep time between the first and last tries will be ~7 min.
-TRY_LIMIT = 5
+TRY_LIMIT = 1
 SLEEP_TIME = 10.0
 MAX_BACKOFF = 2.2
 MIN_BACKOFF = 1.8
@@ -324,7 +324,7 @@ class GceAuthenticator(Authenticator):
         return (resp, contents)
 
       # Retry server error status codes.
-      LOGGER.warn('Encountered server error')
+      #LOGGER.warn('Encountered server error')
       if TRY_LIMIT - i > 1:
         LOGGER.info('Will retry in %d seconds (%d more times)...',
                     next_delay_sec, TRY_LIMIT - i - 1)
@@ -455,14 +455,14 @@ def ReadHttpResponse(conn, accept_statuses=frozenset([200])):
 
     # A status >=500 is assumed to be a possible transient error; retry.
     http_version = 'HTTP/%s' % ('1.1' if response.version == 11 else '1.0')
-    LOGGER.warn('A transient error occurred while querying %s:\n'
-                '%s %s %s\n'
-                '%s %d %s\n'
-                '%s',
-                conn.req_host, conn.req_params['method'],
-                conn.req_params['uri'],
-                http_version, http_version, response.status, response.reason,
-                contents)
+    # LOGGER.warn('A transient error occurred while querying %s:\n'
+    #             '%s %s %s\n'
+    #             '%s %d %s\n'
+    #             '%s',
+    #             conn.req_host, conn.req_params['method'],
+    #             conn.req_params['uri'],
+    #             http_version, http_version, response.status, response.reason,
+    #             contents)
 
     if idx < TRY_LIMIT - 1:
       LOGGER.info('Will retry in %d seconds (%d more times)...',
@@ -1096,6 +1096,54 @@ def GetProjectHead(host, project):
   conn = CreateHttpConn(host,
                         '/projects/%s/HEAD' % urllib.parse.quote(project, ''))
   return ReadHttpJsonResponse(conn, accept_statuses=[200])
+
+
+def GetBranches(host, project):
+  """Retrieves current HEAD of Gerrit project
+
+  https://gerrit-review.googlesource.com/Documentation/rest-api-projects.html#get-head
+
+  Returns:
+    A JSON object with 'ref' key.
+  """
+  conn = CreateHttpConn(host,
+                        '/projects/%s/branches' % urllib.parse.quote(project, ''))
+  return ReadHttpJsonResponse(conn, accept_statuses=[200])
+
+
+def GetGerritRef(host, project, branch, n=25):
+  """Gets a branch from given project and commit.
+
+  See:
+  https://gerrit-review.googlesource.com/Documentation/rest-api-projects.html#get-reflog
+
+  Returns:
+    A JSON object with 'revision' key.
+  """
+  path = 'a/%s/+log/%s?n=%d&format=json' % (urllib.parse.quote(project, ''), branch, n)
+  conn = CreateHttpConn(host.replace('-review', ''), path, reqtype='GET')
+  response = ReadHttpJsonResponse(conn)
+  if response:
+    return response
+  raise GerritError(200, 'Unable to get gerrit branch')
+
+
+def GetFile(host, project, branch, filename):
+  """Gets a branch from given project and commit.
+
+  See:
+  https://gerrit-review.googlesource.com/Documentation/rest-api-projects.html#get-reflog
+
+  Returns:
+    A JSON object with 'revision' key.
+  """
+  import base64
+
+  path = 'a/%s/+/%s/%s?format=text' % (project, branch, filename)
+  conn = CreateHttpConn(host.replace('-review', ''), path, reqtype='GET')
+  fh = ReadHttpResponse(conn, [200])
+  s = fh.read()
+  return base64.b64decode(s).decode('utf-8')
 
 
 def GetAccountDetails(host, account_id='self'):

@@ -438,6 +438,23 @@ class GerritUtilTest(unittest.TestCase):
   def testQueryChanges_NoParams(self):
     self.assertRaises(RuntimeError, gerrit_util.QueryChanges, 'host', [])
 
+  @mock.patch('gerrit_util.CreateHttpConn')
+  @mock.patch('gerrit_util.ReadHttpJsonResponse')
+  def testSubmitChange(self, mockJsonResponse, mockCreateHttpConn):
+    gerrit_util.SubmitChange('host', 'foobar')
+    mockCreateHttpConn.assert_called_once_with(
+        'host', 'changes/foobar/submit', reqtype='POST')
+
+  @mock.patch('gerrit_util.CreateHttpConn')
+  def testSubmitChange_AlreadySubmitted(self, mockCreateHttpConn):
+    conn = mock.Mock(req_params={'uri': 'uri', 'method': 'POST'})
+    conn.request.return_value = (mock.Mock(status=409), b'')
+    mockCreateHttpConn.return_value = conn
+
+    gerrit_util.SubmitChange('host', 'foobar')
+    mockCreateHttpConn.assert_called_once_with(
+        'host', 'changes/foobar/submit', reqtype='POST')
+
   @mock.patch('gerrit_util.QueryChanges')
   def testGenerateAllChanges(self, mockQueryChanges):
     mockQueryChanges.side_effect = [

@@ -752,7 +752,7 @@ def SubmitChange(host, change):
   """Submits a Gerrit change via Gerrit."""
   path = 'changes/%s/submit' % change
   conn = CreateHttpConn(host, path, reqtype='POST')
-  return ReadHttpJsonResponse(conn)
+  return ReadHttpJsonResponse(conn, accept_statuses=(200, 409))
 
 
 def GetChangesSubmittedTogether(host, change):

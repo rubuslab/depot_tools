@@ -16,6 +16,24 @@
       "message": "I want to jump in here and mention that we may be moving towards having the Python interpreter coupled more tightly into vpython, so I\u0027d like to understand better what the issues are with using the Chromium-provided python interpreter?\n",
       "revId": "f3ea19d8a77a19a4d55f30b532f337af7f98066e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40e6e17b_ab95705c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1460877
+      },
+      "writtenOn": "2022-03-21T12:09:30Z",
+      "side": 1,
+      "message": "At Postman, we rely on Chromium + other projects as well. To consolidate local development among developers and platforms, we have our own internal tooling that provides pre-packaged development environments for our developers. That packaged development environment has Python included for reasons other than Chromium. Because we have two Pythons in the picture (the depot_tools one and our own one), we got into cryptic problems due to accidental interoperability problems between those two Pythons. To solve that, we would like to force depot_tools scripts that execute their own Python scripts through vpython to NOT use vpython and rely on our Postman Python instead. We cannot easily use the depot_tools Python for our purposes given that we build Python from source with specific flags, for which we have no control with depot_tools.",
+      "parentUuid": "33f9af29_619fe6bf",
+      "revId": "f3ea19d8a77a19a4d55f30b532f337af7f98066e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

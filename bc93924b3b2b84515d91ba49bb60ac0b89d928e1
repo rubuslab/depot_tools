@@ -16,6 +16,24 @@
       "message": "This change causes https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1308393 unfortunately.",
       "revId": "bc93924b3b2b84515d91ba49bb60ac0b89d928e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91070349_6b3c9678",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1460877
+      },
+      "writtenOn": "2022-03-22T09:53:42Z",
+      "side": 1,
+      "message": "I\u0027m confused. Does that mean that existing code was already relying on the presence of the VPYTHON_BYPASS environment variable on Windows, when in reality it did not actually exist during the time the code was written? IIUC, reverting this CL just silences a much larger problem instead of fixing it.\n\nEDIT: Resolved in https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1308393#c7",
+      "parentUuid": "ea1d7ede_259114f0",
+      "revId": "bc93924b3b2b84515d91ba49bb60ac0b89d928e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

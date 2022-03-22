@@ -34,6 +34,24 @@
       "parentUuid": "ea1d7ede_259114f0",
       "revId": "bc93924b3b2b84515d91ba49bb60ac0b89d928e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff07f139_eda679c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1133169
+      },
+      "writtenOn": "2022-03-22T10:15:42Z",
+      "side": 1,
+      "message": "I\u0027m not familiar with Google infrastructure but it seems that there are some VPYTHON_BYPASS occurrences in code:\nhttps://source.chromium.org/search?q\u003dVPYTHON_BYPASS\u0026ss\u003dchromium\n\nIn case of https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1308393, passing argument that contained \")\" character was causing parse problem in vpython3.bat. Maybe there\u0027s a way to avoid using %* in script (because the problem was there).\n\nPlease note that running:\n\n  vpython3.bat -u -c \"print(\u0027PythonUtilsTest\u0027);\"\n\nfrom cmd.exe works correctly. It doesn\u0027t work when the command is run from Git Bash or from net_unittests.exe:\nhttps://source.chromium.org/chromium/chromium/src/+/main:net/test/python_utils_unittest.cc;l\u003d62;drc\u003d2a6845b58fa3f0955f49a930e537a93f8ad761fc",
+      "parentUuid": "91070349_6b3c9678",
+      "revId": "bc93924b3b2b84515d91ba49bb60ac0b89d928e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

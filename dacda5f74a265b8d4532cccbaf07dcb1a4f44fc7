@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99951526_2ecd20e3",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-03-23T06:16:34Z",
+      "side": 1,
+      "message": "Nit: I think `list()` is redundant here.",
+      "revId": "dacda5f74a265b8d4532cccbaf07dcb1a4f44fc7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

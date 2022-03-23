@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aae756e2_7c95c035",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-23T18:23:08Z",
+      "side": 1,
+      "message": "`fetch infra --nohooks`\n\nno longer works.\n\nTraceback (most recent call last):\n  File \"/usr/local/google/home/sokcevic/source/depot_tools/fetch.py\", line 268, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"/usr/local/google/home/sokcevic/source/depot_tools/fetch.py\", line 262, in main\n    spec, root \u003d run_config_fetch(args.config, args.props)\n  File \"/usr/local/google/home/sokcevic/source/depot_tools/fetch.py\", line 222, in run_config_fetch\n    spec \u003d json.loads(result.decode(\"utf-8\"))\n  File \"/usr/local/google/home/sokcevic/source/depot_tools/bootstrap-2@3.8.10.chromium.21_bin/python3/lib/python3.8/json/__init__.py\", line 357, in loads\n    return _default_decoder.decode(s)\n  File \"/usr/local/google/home/sokcevic/source/depot_tools/bootstrap-2@3.8.10.chromium.21_bin/python3/lib/python3.8/json/decoder.py\", line 337, in decode\n    obj, end \u003d self.raw_decode(s, idx\u003d_w(s, 0).end())\n  File \"/usr/local/google/home/sokcevic/source/depot_tools/bootstrap-2@3.8.10.chromium.21_bin/python3/lib/python3.8/json/decoder.py\", line 355, in raw_decode\n    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n",
+      "revId": "89391eff75f1dc3d13ddd00d188115fb096ebdbe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

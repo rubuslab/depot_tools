@@ -34,6 +34,24 @@
       "parentUuid": "aae756e2_7c95c035",
       "revId": "89391eff75f1dc3d13ddd00d188115fb096ebdbe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "255e2d9c_0f7ba417",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-23T18:39:45Z",
+      "side": 1,
+      "message": "Got it; that wasn\u0027t the case before. I think it makes sense to keep it as is (verified `fetch --nohook infra`), as long as we updated commit message to indicate this is new expected behavior.",
+      "parentUuid": "77ff2dd9_d94405ce",
+      "revId": "89391eff75f1dc3d13ddd00d188115fb096ebdbe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

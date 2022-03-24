@@ -70,3 +70,6 @@ infra/tools/dirmd/${platform} git_revision:94b7072314e9add48e9ee0b861d387a897280
 
 # Pinpoint CLI
 infra/chromeperf/pinpoint/${platform} git_revision:e92eb7168a9b780cc59ac7174c7d9526b19811fa
+
+# swift-format
+infra/3pp/tools/swift-format/${os=mac}-${arch} version:2@505.chromium.1

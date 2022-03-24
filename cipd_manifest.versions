@@ -5,6 +5,14 @@ chromiumos/infra/crosjobs/linux-amd64
 	git_revision:ed616d595eb7241d39d34907050d2949121d6ae8
 	_vAeU0Q9lAxn933K8vDhwGK40zKVvV-yXGpIy43ATXAC
 
+infra/3pp/tools/swift-format/mac-amd64
+        version:2@505.chromium.1
+        e9sSriUQiZW-hY-O04gO-yp48w3rdOpqP7_-PdZRHb8C
+
+infra/3pp/tools/swift-format/mac-arm64
+        version:2@505.chromium.1
+        -Erm8SuaIiB_ErZXLgHq_3RGIqWA09xbafZgvCOVgSUC
+
 infra/chromeperf/pinpoint/linux-386
 	git_revision:e92eb7168a9b780cc59ac7174c7d9526b19811fa
 	SFdbOzz44TgPkE8Aa3UR4nF3ijvgk8flgKqzZ-iO4CoC
@@ -496,3 +504,4 @@ infra/tools/rdb/mac-arm64
 infra/tools/rdb/windows-amd64
 	git_revision:2be056d01d3f8bab07915a1c2eca04f1937ad833
 	9r6QPQmkPAbvoCEAADMFk0OBP6kUSicxFQYgJMbUlysC
+

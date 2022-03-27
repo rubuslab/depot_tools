@@ -33,6 +33,23 @@
       "message": "Hi bryner,\n\nThis is really a request for comment at the moment.\nIs this the right way to add swift-format?\n\nI tried to check what has been done for other languages, but\nI noticed that yapf for python files has been added to depot_tools repo,\nand rust_format has been added to chromium repo.\n\nI am not sure what is preferred here.\n\nPlease let me know if there is a better way to do this.",
       "revId": "329989a5e7b2516822cd699ede5126cdcecef24e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "338fc82c_a72cfeec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-03-27T22:48:32Z",
+      "side": 1,
+      "message": "This looks reasonable as far as how to add it to depot_tools.  cc: sokcevic@ who may have more thoughts on that.\n\nCan you link to where rust_format is used? I\u0027m having trouble finding it. I\u0027m not sure how integration with \"git cl format\" would work without adding it to git_cl.py.\n\n",
+      "revId": "329989a5e7b2516822cd699ede5126cdcecef24e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

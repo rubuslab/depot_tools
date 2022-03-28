@@ -50,6 +50,24 @@
       "message": "This looks reasonable as far as how to add it to depot_tools.  cc: sokcevic@ who may have more thoughts on that.\n\nCan you link to where rust_format is used? I\u0027m having trouble finding it. I\u0027m not sure how integration with \"git cl format\" would work without adding it to git_cl.py.\n\n",
       "revId": "329989a5e7b2516822cd699ede5126cdcecef24e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ea614a5_007d8fe1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1144530
+      },
+      "writtenOn": "2022-03-28T13:00:11Z",
+      "side": 1,
+      "message": "Depot_tools looks for it in chromium tree.\nYou can find the reference here in git cl format\n\nhttps://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main/git_cl.py#5110\n\nand the library that looks for it here\nhttps://chromium.googlesource.com/chromium/tools/depot_tools.git/+/refs/heads/main/rustfmt.py#28\n\nIIUC, this only works if the git cl format is called from within the chromium tree.",
+      "parentUuid": "338fc82c_a72cfeec",
+      "revId": "329989a5e7b2516822cd699ede5126cdcecef24e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

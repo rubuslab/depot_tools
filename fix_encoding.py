@@ -216,6 +216,15 @@ class WinUnicodeConsoleOutput(WinUnicodeOutputBase):
 
   def write(self, text):
     try:
+      # Sometimes this function is invoked with a list of strings instead of a
+      # string. When this happens the _WriteConsoleW call fails with this
+      # exception:
+      #     ctypes.ArgumentError: argument 2: <class 'TypeError'>: wrong type
+      # This failure halts presubmits and therefore hides all future errors, so
+      # it is important to convert the list to text.
+      if isinstance(text, list):
+        text = ''.join(text)
+
       if sys.version_info.major == 2 and not isinstance(text, unicode):
         # Convert to unicode.
         text = str(text).decode(self.encoding, 'replace')

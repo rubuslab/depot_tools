@@ -16,6 +16,24 @@
       "message": "This seems related to some changes you made Raul - any thoughts on making this work perfectly?",
       "revId": "1229fbaf1a251e006d4bf0e295b2fcfccb5ff4f5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7084737d_5449b3a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2022-03-29T20:02:04Z",
+      "side": 1,
+      "message": "I seem to have only touched Python 3 support here. That said, this having to handle lists of strings seems dubious and I would expect other output wrappers to have failed on this before. Shouldn\u0027t only the final fully formatted output string end up here? What\u0027s passing in or creating the lists?",
+      "parentUuid": "c18a87ea_fff4f827",
+      "revId": "1229fbaf1a251e006d4bf0e295b2fcfccb5ff4f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

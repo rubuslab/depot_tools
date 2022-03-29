@@ -34,6 +34,24 @@
       "parentUuid": "c18a87ea_fff4f827",
       "revId": "1229fbaf1a251e006d4bf0e295b2fcfccb5ff4f5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fdcfa4f_bc35e826",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-29T20:30:32Z",
+      "side": 1,
+      "message": "The lists of strings are happening in Python 3 presubmits, but it\u0027s hard to tell which ones because the call stack was just generic printing of results. The arrays often have a half-dozen or so empty strings and then a string with an actual error message. I could grab some of those actual error messages to try to understand things better (but each run takes an hour or so :-)\nWhen I saw that the write function already handled bytes being passed I thought that maybe passing a list was also considered normal and appropriate. Note also that in the Python 2 case these lists would be handled by the str(text) expression. It may be that this bug has been latent for a long time and was then triggered by the switch to Python 3, which doesn\u0027t contain this conversion.",
+      "parentUuid": "7084737d_5449b3a1",
+      "revId": "1229fbaf1a251e006d4bf0e295b2fcfccb5ff4f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

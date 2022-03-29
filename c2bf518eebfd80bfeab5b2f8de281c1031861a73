@@ -33,6 +33,23 @@
       "message": "lgtm, though also +josip; I\u0027m not sure who truly owns this nowadays 😊",
       "revId": "c2bf518eebfd80bfeab5b2f8de281c1031861a73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb3ee3a5_3e10adb8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-29T01:47:54Z",
+      "side": 1,
+      "message": "I\u0027m happy to get a second (third?) opinion. The rough pattern will be replicated in a few places.",
+      "revId": "c2bf518eebfd80bfeab5b2f8de281c1031861a73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

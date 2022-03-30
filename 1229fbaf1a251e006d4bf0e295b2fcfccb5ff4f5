@@ -52,6 +52,24 @@
       "parentUuid": "7084737d_5449b3a1",
       "revId": "1229fbaf1a251e006d4bf0e295b2fcfccb5ff4f5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80d11d3a_93cd9d8b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1319240
+      },
+      "writtenOn": "2022-03-30T05:36:12Z",
+      "side": 1,
+      "message": "Looking at for example the Annotated wrapper in gclient_utils.py it doesn\u0027t seem like it\u0027d handle lists either, even on Python 2. This is probably worth merging to get things fixed, but should be followed up as an issue to investigate the root cause and if intended.",
+      "parentUuid": "5fdcfa4f_bc35e826",
+      "revId": "1229fbaf1a251e006d4bf0e295b2fcfccb5ff4f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

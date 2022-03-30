@@ -1831,12 +1831,21 @@ def _parse_change(parser, options):
     parser.error('<files> is not optional for unversioned directories.')
 
   if options.files:
-    change_files = _parse_files(options.files, options.recursive)
+    #change_files = _parse_files(options.files, options.recursive)
+    change_files = []
+    for name in scm.GIT.GetAllFiles(options.root):
+      for mask in options.files:
+        if fnmatch.fnmatch(name, mask):
+          change_files += ('M', name)
+          break
   elif options.all_files:
     change_files = [('M', f) for f in scm.GIT.GetAllFiles(options.root)]
   else:
     change_files = scm.GIT.CaptureStatus(
         options.root, options.upstream or None)
+  print('Found %d files, the first few are %s...' %
+        (len(change_files), change_files[:20]),
+        file=sys.stderr)
 
   logging.info('Found %d file(s).', len(change_files))
 

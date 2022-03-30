@@ -1831,7 +1831,12 @@ def _parse_change(parser, options):
     parser.error('<files> is not optional for unversioned directories.')
 
   if options.files:
-    change_files = _parse_files(options.files, options.recursive)
+    change_files = []
+    for name in scm.GIT.GetAllFiles(options.root):
+      for mask in options.files:
+        if fnmatch.fnmatch(name, mask):
+          change_files.append(('M', name))
+          break
   elif options.all_files:
     change_files = [('M', f) for f in scm.GIT.GetAllFiles(options.root)]
   else:

@@ -34,6 +34,24 @@
       "parentUuid": "94206dde_bd177c97",
       "revId": "f560d36bbaf8805dff797502b7f4c33c718b21e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33998982_2d78fb0c",
+        "filename": "update_depot_tools",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1115876
+      },
+      "writtenOn": "2022-03-30T18:06:09Z",
+      "side": 1,
+      "message": "PSA: not all users are thrilled to know this. This actually interferes with automated usage, e.g. when running git recurse. If you want to tell something to user while not messing up the scripts that rely on this, consider outputting to stderr, i.e. `echo \u003e\u00262`.",
+      "parentUuid": "7781d8b2_3ca3eb88",
+      "revId": "f560d36bbaf8805dff797502b7f4c33c718b21e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

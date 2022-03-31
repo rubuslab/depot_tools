@@ -181,6 +181,7 @@ class BranchMapper(object):
   def __check_cycle(self, branch):
     # Maximum length of the cycle is `num_branches`. This limit avoids running
     # into a cycle which does *not* contain `branch`.
+    assert self.__branches_info is not None
     num_branches = len(self.__branches_info)
     cycle = [branch]
     while len(cycle) < num_branches and self.__branches_info[cycle[-1]]:
@@ -202,12 +203,13 @@ class BranchMapper(object):
       color = Fore.BLUE
     elif self.__is_invalid_parent(branch) or branch in self.__tag_set:
       color = Fore.MAGENTA
-    elif self.__current_hash.startswith(branch_hash):
+    elif self.__current_hash and self.__current_hash.startswith(branch_hash):
       color = Fore.CYAN
     else:
       color = Fore.GREEN
 
-    if branch_hash and self.__current_hash.startswith(branch_hash):
+    if (branch_hash and self.__current_hash
+        and self.__current_hash.startswith(branch_hash)):
       color += Style.BRIGHT
     else:
       color += Style.NORMAL
@@ -217,6 +219,7 @@ class BranchMapper(object):
   def __append_branch(self, branch, depth=0):
     """Recurses through the tree structure and appends an OutputLine to the
     OutputManager for each branch."""
+    assert self.__branches_info is not None
     branch_info = self.__branches_info[branch]
     if branch_info:
       branch_hash = branch_info.hash
@@ -298,8 +301,9 @@ class BranchMapper(object):
     for child in sorted(self.__parent_map.pop(branch, ())):
       self.__append_branch(child, depth=depth + 1)
 
-
 def print_desc():
+  # The docstring for this file is always defined.
+  assert __doc__ is not None
   for line in __doc__.splitlines():
     starpos = line.find('* ')
     if starpos == -1 or '-' not in line:

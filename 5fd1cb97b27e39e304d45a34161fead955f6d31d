@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28343d1d_b271a16a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-31T03:41:24Z",
+      "side": 1,
+      "message": "I\u0027m hitting some presubmit failures that I don\u0027t understand. _parse_change is being called with options.source_controlled_only set to True, which invokes scm.GIT.GetAllFiles which then fails. I don\u0027t understand who is setting options.source_controlled_only set to True, and why scm.GIT.GetAllFiles is failing on the context of the tests. Any ideas?\n\nThis change is incredibly powerful for improving our presubmits so I\u0027d really like to land it.",
+      "revId": "5fd1cb97b27e39e304d45a34161fead955f6d31d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

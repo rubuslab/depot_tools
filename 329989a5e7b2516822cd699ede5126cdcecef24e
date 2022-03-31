@@ -86,6 +86,24 @@
       "parentUuid": "9ea614a5_007d8fe1",
       "revId": "329989a5e7b2516822cd699ede5126cdcecef24e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70f0303d_1ea0c715",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-03-31T20:36:25Z",
+      "side": 1,
+      "message": "I think it makes sense to move it to chromium tree. Only small set of mac developers will need this formatter. Moving to chromium/src DEPS allows to only download if ios vars are set.\n\nIf we find that swift-format is useful for other projects too, we can revisit this.",
+      "parentUuid": "d134d5dc_26498874",
+      "revId": "329989a5e7b2516822cd699ede5126cdcecef24e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

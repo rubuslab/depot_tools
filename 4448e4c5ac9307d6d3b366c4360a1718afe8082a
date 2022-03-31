@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "faf5231d_c61f3716",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-03-31T21:14:28Z",
+      "side": 1,
+      "message": "Thanks for the +1, but do either of you understand the presubmit failures? As far as I can tell the tests are calling the _parse_change with my new source_controlled_only flag set to True, and that doesn\u0027t work. I\u0027m not sure how it\u0027s getting set to True - the tests are a mystery to me.\n\nI tried printing the options object but it\u0027s just an opaque mock when the failure happens. I\u0027m finding lots of presubmit bugs using this new command so I\u0027d love to get it landed.",
+      "revId": "4448e4c5ac9307d6d3b366c4360a1718afe8082a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

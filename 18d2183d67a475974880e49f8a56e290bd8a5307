@@ -16,6 +16,24 @@
       "message": "lgtm in theory (but the roll trybots aren\u0027t happy about it)",
       "revId": "18d2183d67a475974880e49f8a56e290bd8a5307",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9429203d_80b34cee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-04-01T19:33:43Z",
+      "side": 1,
+      "message": "lgtm too; some manual changes in upstream repos will be required - please create those before submitting this one so autoroller pipeline is not halted.",
+      "parentUuid": "2d64d8e6_ad11ad38",
+      "revId": "18d2183d67a475974880e49f8a56e290bd8a5307",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

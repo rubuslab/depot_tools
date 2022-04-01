@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a74173a_dd7c45e1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-01T20:52:23Z",
+      "side": 1,
+      "message": "vpython3.bat will fail cryptically, eventually, if run \"too many times\" in the same command prompt. PTAL.",
+      "revId": "7d7d219fd41864ebac63baa9a49cadc25d364953",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

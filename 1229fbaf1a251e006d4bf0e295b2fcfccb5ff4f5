@@ -70,6 +70,24 @@
       "parentUuid": "5fdcfa4f_bc35e826",
       "revId": "1229fbaf1a251e006d4bf0e295b2fcfccb5ff4f5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b615e33e_7fcca11b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-02T17:30:05Z",
+      "side": 1,
+      "message": "I investigated some more and found that some of the errors were self inflicted, as I tried to work around crbug.com/1312309. The root cause ultimately is PresubmitError being called with a non-text message. We try to print the list-that-should-be-text on this stack:\n\nFile \"c:\\src\\depot_tools\\presubmit_support.py\", line 2023, in \u003cmodule\u003e\n    sys.exit(main())\nFile \"c:\\src\\depot_tools\\presubmit_support.py\", line 2000, in main\n    return DoPresubmitChecks(\nFile \"c:\\src\\depot_tools\\presubmit_support.py\", line 1746, in DoPresubmitChecks\n    item.handle()\nFile \"c:\\src\\depot_tools\\presubmit_support.py\", line 363, in handle\n    sys.stdout.write(self._message)\nFile \"c:\\src\\depot_tools\\fix_encoding.py\", line 307, in write\n    for line in traceback.format_stack():\n\nThe text comes from the _message member of the _PresubmitResult class. By the time we are printing it is impossible to tell where the lists came from. Therefore we need to do type checking in the _PresubmitResult constructor. I\u0027ll do that, and abandon this change.",
+      "parentUuid": "80d11d3a_93cd9d8b",
+      "revId": "1229fbaf1a251e006d4bf0e295b2fcfccb5ff4f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

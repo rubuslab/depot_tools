@@ -16,6 +16,23 @@
       "message": "vpython3.bat will fail cryptically, eventually, if run \"too many times\" in the same command prompt. PTAL.",
       "revId": "7d7d219fd41864ebac63baa9a49cadc25d364953",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f15ff58e_4b41552a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-04-03T23:33:31Z",
+      "side": 1,
+      "message": "Adding python3 to PATH is probably no longer needed, as we\u0027ve patched virtualenv to copy (I think) all of the necessary DLLs into the venv.",
+      "revId": "7d7d219fd41864ebac63baa9a49cadc25d364953",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

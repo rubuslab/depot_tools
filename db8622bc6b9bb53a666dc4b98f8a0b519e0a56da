@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8364986_49c5f2f4",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1002092
+      },
+      "writtenOn": "2022-04-04T01:11:32Z",
+      "side": 1,
+      "message": "I think this makes it not possible to upload/land webui changes currently due to js_checker.py passing a list at https://crsrc.org/c/tools/web_dev_style/js_checker.py;l\u003d84;bpv\u003d1\n\nexample error - https://ci.chromium.org/ui/p/chromium/builders/try/chromium_presubmit/1612791/overview\n\nI\u0027m having a crack at fixing this at https://crrev.com/c/3565521 because this is blocking my work. But if this is more widespread it may be better to revert this depot_tools CL.",
+      "revId": "db8622bc6b9bb53a666dc4b98f8a0b519e0a56da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

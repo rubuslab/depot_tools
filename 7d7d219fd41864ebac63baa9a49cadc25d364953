@@ -86,6 +86,24 @@
       "parentUuid": "d8a2dea9_d851e07a",
       "revId": "7d7d219fd41864ebac63baa9a49cadc25d364953",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23d9bcd0_c91b5f58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-04-04T23:19:07Z",
+      "side": 1,
+      "message": "fwiw, it\u0027s still necessary to use the for loop to set PYTHON3_BIN_RELDIR so that it can be used in the -vpython-interpreter flag. But it does not need to be added to PATH.\n\nI\u0027ll send a follow-up CL to clean this up.",
+      "parentUuid": "6201146f_2c018436",
+      "revId": "7d7d219fd41864ebac63baa9a49cadc25d364953",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

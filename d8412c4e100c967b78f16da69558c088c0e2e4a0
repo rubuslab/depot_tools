@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0936dcfa_a0e51aa0",
+        "filename": "fetch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-04-04T21:39:22Z",
+      "side": 1,
+      "message": "test comment",
+      "revId": "d8412c4e100c967b78f16da69558c088c0e2e4a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

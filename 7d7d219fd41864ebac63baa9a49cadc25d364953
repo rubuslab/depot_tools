@@ -33,6 +33,24 @@
       "message": "Adding python3 to PATH is probably no longer needed, as we\u0027ve patched virtualenv to copy (I think) all of the necessary DLLs into the venv.",
       "revId": "7d7d219fd41864ebac63baa9a49cadc25d364953",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8a2dea9_d851e07a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-04T20:52:18Z",
+      "side": 1,
+      "message": "I tried deleting the \"for\" loop and the adjustment of the path and python3.bat then fails.\n\n[E2022-04-04T13:50:41.508149-07:00 23360 0 annotate.go:273] goroutine 1:\n#0 go.chromium.org/luci/vpython/venv/config.go:309 - venv.(*Config).resolvePythonInterpreter()\n  reason: none of [c:\\src\\depot_tools\\\\\\python3.exe] matched specification 3.8.0",
+      "parentUuid": "f15ff58e_4b41552a",
+      "revId": "7d7d219fd41864ebac63baa9a49cadc25d364953",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

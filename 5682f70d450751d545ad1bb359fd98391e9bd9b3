@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52b3d8b7_34bff582",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1144530
+      },
+      "writtenOn": "2022-04-05T16:37:44Z",
+      "side": 1,
+      "message": "Thanks.\nI changed to put swift-format in the chromium tree.\nPTAL.",
+      "revId": "5682f70d450751d545ad1bb359fd98391e9bd9b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ede39b39_003e1de1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1499972
+      },
+      "writtenOn": "2022-04-06T23:51:35Z",
+      "side": 1,
+      "message": "LGTM, thanks! Once this lands, I can test it locally, if that would help.",
+      "revId": "69d00845522d92e49f8a2e7678a911b9fa788c12",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

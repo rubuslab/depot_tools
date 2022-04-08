@@ -16,6 +16,24 @@
       "message": "Is this rolled out in a way that it\u0027s not to change behavior? Note that the revert of the CL removed the output in V8:\nscreen/3g478gWkWBqAe9n",
       "revId": "ffeef9001edb33e16e6a72db746cdb8d2cf6c568",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a4c717e_b87fc0fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-04-08T15:39:41Z",
+      "side": 1,
+      "message": "No, this definitely changed behavior for jobs that don\u0027t set set_output_commit. This commits adds ref information, e.g. refs/heads/main@{#123}, and that\u0027s used as commit. This landed around 2022-04-05 10:30 PM (PDT) for v8 builder. However, the change was reverted due to issues with chromeos builders. That\u0027s why you see old behavior after 2022-04-07 7:59 PM (PDT).\n\nIf you would like refs/heads/main@{#123} as commit; then you can set set_output_commit\u003dTrue in v8 recipe.",
+      "parentUuid": "1a80ab82_471e9c26",
+      "revId": "ffeef9001edb33e16e6a72db746cdb8d2cf6c568",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

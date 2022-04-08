@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a80ab82_471e9c26",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2022-04-08T12:30:05Z",
+      "side": 1,
+      "message": "Is this rolled out in a way that it\u0027s not to change behavior? Note that the revert of the CL removed the output in V8:\nscreen/3g478gWkWBqAe9n",
+      "revId": "ffeef9001edb33e16e6a72db746cdb8d2cf6c568",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

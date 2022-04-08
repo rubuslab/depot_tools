@@ -34,6 +34,24 @@
       "parentUuid": "1a80ab82_471e9c26",
       "revId": "ffeef9001edb33e16e6a72db746cdb8d2cf6c568",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2a53128_a4570ac1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2022-04-08T15:42:14Z",
+      "side": 1,
+      "message": "In V8 the effect seems to be UI only. I think I like the commit position version better than the hash. I\u0027ll wait until this relands and the dust settles...",
+      "parentUuid": "5a4c717e_b87fc0fd",
+      "revId": "ffeef9001edb33e16e6a72db746cdb8d2cf6c568",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

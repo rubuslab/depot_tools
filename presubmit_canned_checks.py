@@ -604,17 +604,25 @@ def CheckLicense(input_api, output_api, license_re=None, project_name=None,
   allowed_years = (str(s) for s in reversed(range(2006, current_year + 1)))
   years_re = '(' + '|'.join(allowed_years) + '|2006-2008|2006-2009|2006-2010)'
 
+  # A file that lacks this line necessarily lacks a compatible license. Checking
+  # for this line lets us avoid the cost of a complex regex across a possibly
+  # large file. This has been seen to save 50+ seconds on a single file.
+  key_line = ('Use of this source code is governed by a BSD-style license that '
+             'can be')
   # The (c) is deprecated, but tolerate it until it's removed from all files.
-  license_re = license_re or (
-      r'.*? Copyright (\(c\) )?%(year)s The %(project)s Authors\. '
-        r'All rights reserved\.\r?\n'
-      r'.*? Use of this source code is governed by a BSD-style license that '
-        r'can be\r?\n'
-      r'.*? found in the LICENSE file\.(?: \*/)?\r?\n'
-  ) % {
-      'year': years_re,
-      'project': project_name,
-  }
+  if license_re:
+    key_line = None
+  else:
+    license_re = (
+        r'.*? Copyright (\(c\) )?%(year)s The %(project)s Authors\. '
+          r'All rights reserved\.\r?\n'
+        r'.*? %(key_line)s\r?\n'
+        r'.*? found in the LICENSE file\.(?: \*/)?\r?\n'
+    ) % {
+        'year': years_re,
+        'project': project_name,
+        'key_line' : key_line,
+    }
 
   license_re = input_api.re.compile(license_re, input_api.re.MULTILINE)
   bad_files = []
@@ -622,7 +630,10 @@ def CheckLicense(input_api, output_api, license_re=None, project_name=None,
     contents = input_api.ReadFile(f, 'r')
     if accept_empty_files and not contents:
       continue
-    if not license_re.search(contents):
+    # Search for key_line first to avoid fruitless and expensive regex searches.
+    if (key_line and not key_line in contents):
+      bad_files.append(f.LocalPath())
+    elif not license_re.search(contents):
       bad_files.append(f.LocalPath())
   if bad_files:
     return [output_api.PresubmitPromptWarning(

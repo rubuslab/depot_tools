@@ -795,7 +795,7 @@ def GetUnitTests(input_api,
             message=message_type,
             python3=True))
         test_run = True
-      if run_on_python2:
+      elif run_on_python2:
         results.append(input_api.Command(
             name=unit_test,
             cmd=cmd,

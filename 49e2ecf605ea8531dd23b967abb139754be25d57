@@ -16,6 +16,81 @@
       "message": "Gavin, PTAL. Erik - just an FYI because I thought you\u0027d like this. Unfortunately this is the last of the really low-hanging fruit.",
       "revId": "49e2ecf605ea8531dd23b967abb139754be25d57",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5236c07_7a60dc11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2022-04-13T16:14:10Z",
+      "side": 1,
+      "message": "non-owner lgtm",
+      "revId": "49e2ecf605ea8531dd23b967abb139754be25d57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40e54661_22218fea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2022-04-13T16:14:10Z",
+      "side": 1,
+      "message": "I do like this :) Thanks for sharing.",
+      "parentUuid": "048c97cc_8ea08f7a",
+      "revId": "49e2ecf605ea8531dd23b967abb139754be25d57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "625d467b_ec63d3b9",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2022-04-13T16:14:10Z",
+      "side": 1,
+      "message": "nit: it might be slightly nicer to make this \"if not license_re\" and unconditionally initialize key_line to None in case someone adds an elif later or something like that.",
+      "revId": "49e2ecf605ea8531dd23b967abb139754be25d57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c1148e9_7b9a3382",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2022-04-13T16:14:10Z",
+      "side": 1,
+      "message": "nit: missing space\n\n(also: 50 seconds, wow!)",
+      "range": {
+        "startLine": 616,
+        "startChar": 6,
+        "endLine": 616,
+        "endChar": 19
+      },
+      "revId": "49e2ecf605ea8531dd23b967abb139754be25d57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

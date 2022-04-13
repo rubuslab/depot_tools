@@ -16,6 +16,24 @@
       "message": "I can\u0027t tell how scary this change is, but it seems necessary, unless there is some alternate way to fix this. Thoughts?",
       "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce2b4255_40a00063",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116524
+      },
+      "writtenOn": "2022-04-13T23:58:10Z",
+      "side": 1,
+      "message": "Why not set `run_on_python2` to `False` in that PRESUBMIT? Does that not work?",
+      "parentUuid": "e15d17b5_54d7d126",
+      "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -3129,7 +3129,6 @@ the current line as well!
     self.assertEqual([result.__class__ for result in results], [
         presubmit.OutputApi.PresubmitPromptWarning,
         presubmit.OutputApi.PresubmitNotifyResult,
-        presubmit.OutputApi.PresubmitNotifyResult,
     ])
 
     cmd = ['bar.py', '--verbose']
@@ -3140,9 +3139,6 @@ the current line as well!
       vpython3 += '.bat'
 
     self.assertEqual(subprocess.Popen.mock_calls, [
-        mock.call(
-            [vpython] + cmd, cwd=self.fake_root_dir, stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT, stdin=subprocess.PIPE),
         mock.call(
             [vpython3] + cmd, cwd=self.fake_root_dir, stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT, stdin=subprocess.PIPE),
@@ -3155,7 +3151,6 @@ the current line as well!
     self.assertEqual(presubmit.sigint_handler.wait.mock_calls, [
         mock.call(subprocesses[0], None),
         mock.call(subprocesses[1], None),
-        mock.call(subprocesses[2], None),
     ])
 
     self.checkstdout('')

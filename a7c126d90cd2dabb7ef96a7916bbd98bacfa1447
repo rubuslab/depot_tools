@@ -52,6 +52,24 @@
       "parentUuid": "ce2b4255_40a00063",
       "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04a91bae_31c29884",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-14T20:51:26Z",
+      "side": 1,
+      "message": "Thinking about this some more...\n\nI think we want to make moving to Python 3 as easy as possible. Currently to switch generate_grd_test.py from Python 3 to Python 2 a developer has to set a Python 3 shebang _and_ set run_on_python2\u003dFalse, modifying two files, which is non-obvious and extra effort.\n\nAnd, if developers do that then when we finally succeed in getting rid of Python 2 we will be left with \"run_on_python2\u003dFalse\" parameters all throughout the code base that we\u0027ll want to remove.\n\nIf there is a compelling reason to run scripts under both Python 2 and 3 then this change should be abandoned, but I have not heard of such a reason. In fact, I think that running scripts on one _or_ the other is what developers expect.",
+      "parentUuid": "b3602986_b2663029",
+      "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

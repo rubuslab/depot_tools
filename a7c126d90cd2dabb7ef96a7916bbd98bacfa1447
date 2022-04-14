@@ -106,6 +106,24 @@
       "parentUuid": "1d5ffeab_aca59220",
       "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2c65c65_63c4d0c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116524
+      },
+      "writtenOn": "2022-04-14T23:18:12Z",
+      "side": 1,
+      "message": "tl;dr: For now, you should set skip_shebang_check\u003dTrue, run_on_python2\u003dFalse, run_on_python3\u003dTrue\n\nThe reason why skip_shebang_check exists is because of a bug in depot_tools where it was not running python 3 tests if the shebang line was not set. By the time this was discovered, we had many failing python 3 tests so we could not change the default depot_tools behavior.\n\nWe have a couple of bugs left open to set skip_shebang_check\u003dTrue everywhere in Chrome where we run python 3 tests: https://bugs.chromium.org/p/chromium/issues/list?q\u003dlabel%3Askip_shebang_check\nWhen these are closed, we *should* be able to remove that argument.\n\nI am not an owner here but I would be a bit reluctant to add yet another state to this method call for the time being.",
+      "parentUuid": "5bfb167f_803345c3",
+      "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

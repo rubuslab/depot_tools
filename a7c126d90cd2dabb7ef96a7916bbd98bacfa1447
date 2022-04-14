@@ -34,6 +34,24 @@
       "parentUuid": "e15d17b5_54d7d126",
       "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3602986_b2663029",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-14T00:13:17Z",
+      "side": 1,
+      "message": "I assume that that works, but I\u0027m unsure of how we are going to get off of Python 2 if it is the default, even when a script has a Python 3 shebang. The run_on_python2\u003dTrue argument is two functions removed from the call site, and it behaves differently from run_on_python3\u003dTrue (which requires a compatible shebang).\n\nI am not an expert in the area of this code, but I guess I am unclear as to why we would _ever_ want to run a script on both Python 3 and Python 2 at this point.",
+      "parentUuid": "ce2b4255_40a00063",
+      "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

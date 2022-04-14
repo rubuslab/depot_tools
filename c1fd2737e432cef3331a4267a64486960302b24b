@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2ce9f21_623407d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-14T22:20:20Z",
+      "side": 1,
+      "message": "Two checks for the same thing seems like a bad idea. This disables the header-guard check that is not Chrome specific. PTAL Jochen. FYI to Peter.",
+      "revId": "c1fd2737e432cef3331a4267a64486960302b24b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

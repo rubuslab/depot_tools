@@ -88,6 +88,24 @@
       "parentUuid": "04a91bae_31c29884",
       "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bfb167f_803345c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-14T21:37:08Z",
+      "side": 1,
+      "message": "Understood. Is it possible to make the both-versions behavior be opt-in instead of opt-out, to support catapult while making migration of individual scripts easier?\n\nFailing that: is it better to set skip_shebang_check\u003dTrue and run_on_python2\u003dFalse, or create a Python 3 shebang and set run_on_python2\u003dFalse. The former has the advantage of only touching one file, but I don\u0027t know which is better long-term.",
+      "parentUuid": "1d5ffeab_aca59220",
+      "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

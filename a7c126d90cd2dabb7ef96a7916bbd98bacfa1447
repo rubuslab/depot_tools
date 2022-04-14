@@ -70,6 +70,24 @@
       "parentUuid": "b3602986_b2663029",
       "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d5ffeab_aca59220",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116524
+      },
+      "writtenOn": "2022-04-14T21:11:17Z",
+      "side": 1,
+      "message": "Unfortunately, we do need to do that.\nMost of the catapult code is run under Python 2 and is slowly being migrated to be Python 3-compatible. When I was doing some of the changes here, I was making sure that the tests were running and passing under both Python 2 and Python 3.",
+      "parentUuid": "04a91bae_31c29884",
+      "revId": "a7c126d90cd2dabb7ef96a7916bbd98bacfa1447",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

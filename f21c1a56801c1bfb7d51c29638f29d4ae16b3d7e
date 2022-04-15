@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fca3546_a4009a62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-15T00:38:01Z",
+      "side": 1,
+      "message": "After staring at presubmit output too much I have opinions about what is good and bad. I think these will be nice improvements. PTAL.",
+      "revId": "f21c1a56801c1bfb7d51c29638f29d4ae16b3d7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

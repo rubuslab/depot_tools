@@ -74,6 +74,10 @@ def GenTests(api):
           api.gitiles.make_encoded_file('foobar')
       )
       + api.step_data(
+          'fetch main:OWNERS',
+          api.gitiles.make_encoded_file_from_bytes(b'\xab')
+      )
+      + api.step_data(
           'fetch main:NONEXISTENT',
           api.json.output({'value': None})
       )

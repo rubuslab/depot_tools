@@ -71,7 +71,7 @@ def GenTests(api):
       )
       + api.step_data(
           'fetch main:OWNERS',
-          api.gitiles.make_encoded_file('foobar')
+          api.gitiles.make_encoded_file('foobar'.encode())
       )
       + api.step_data(
           'fetch main:NONEXISTENT',

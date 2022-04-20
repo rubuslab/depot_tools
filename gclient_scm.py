@@ -304,17 +304,6 @@ class GitWrapper(SCMWrapper):
       file_list.extend(
           [os.path.join(self.checkout_path, f) for f in files])
 
-  def _DisableHooks(self):
-    hook_dir = os.path.join(self.checkout_path, '.git', 'hooks')
-    if not os.path.isdir(hook_dir):
-      return
-    for f in os.listdir(hook_dir):
-      if not f.endswith('.sample') and not f.endswith('.disabled'):
-        disabled_hook_path = os.path.join(hook_dir, f + '.disabled')
-        if os.path.exists(disabled_hook_path):
-          os.remove(disabled_hook_path)
-        os.rename(os.path.join(hook_dir, f), disabled_hook_path)
-
   def _maybe_break_locks(self, options):
     """This removes all .lock files from this repo's .git directory, if the
     user passed the --break_repo_locks command line flag.
@@ -556,9 +545,6 @@ class GitWrapper(SCMWrapper):
                                           self.remote)
     if revision.startswith('origin/'):
       revision = 'refs/remotes/' + revision
-
-    if managed and platform.system() == 'Windows':
-      self._DisableHooks()
 
     printed_path = False
     verbose = []

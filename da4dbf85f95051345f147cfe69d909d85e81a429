@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a704b0b_f609d67e",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-04-20T16:00:27Z",
+      "side": 0,
+      "message": "Doesn\u0027t the recent hardwares have any upper bound?",
+      "revId": "da4dbf85f95051345f147cfe69d909d85e81a429",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

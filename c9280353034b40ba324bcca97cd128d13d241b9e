@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c0286e0_dd2ba327",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-20T15:50:43Z",
+      "side": 1,
+      "message": "I don\u0027t think this should be done as a revert. Instead it should be done as a new change. That way the multiplier change and the limit change can be done simultaneously, and it just feels cleaner and clearer anyway.\n\nFrom the bug:\n\n\"With ulimits increased, as the goma installation suggests, a M1 Macbook can definitely take more than 500 jobs\"\n\nSo, it\u0027s not so much that new hardware can handle the higher values, it\u0027s that we now know how to configure the OS so that higher values don\u0027t cause failures.\n\nThere will inevitably be some developers who have not configured the OS properly so we should make sure that the failures are understandable. Good error messages can help. Failing that, having the necessary links in the commit message for the change would be nice.\n",
+      "revId": "c9280353034b40ba324bcca97cd128d13d241b9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

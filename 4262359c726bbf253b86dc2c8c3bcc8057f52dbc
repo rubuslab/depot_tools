@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "225d45d3_c0fe1590",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-04-20T23:49:17Z",
+      "side": 1,
+      "message": "Python2 doesn\u0027t distinguish between unicode text and bytes, where Python3 does and assumes str to be unicode by default. If value is not utf-8 encodable, say a serialized protobuf file, this would fail. This fallback would allow Python3 to act like Python2 by returning bytes directly the data is not utf-8 encodable.",
+      "revId": "4262359c726bbf253b86dc2c8c3bcc8057f52dbc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

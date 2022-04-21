@@ -22,6 +22,30 @@
       },
       "revId": "f341e26c885e92cfb6aba5d137b6a4b043f37611",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e813e48_4d1535b6",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-04-21T04:32:19Z",
+      "side": 1,
+      "message": "Actually, M1 is only supported architecture other than x86 by goma or reclient.\nSo I choose simpler condition here.",
+      "parentUuid": "c9d60db3_a3925a39",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 38
+      },
+      "revId": "f341e26c885e92cfb6aba5d137b6a4b043f37611",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

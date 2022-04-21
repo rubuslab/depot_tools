@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ed07776a_e23a8c9b",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-04-21T09:10:34Z",
+      "side": 1,
+      "message": "It just worked well when we set this.\nhttps://crrev.com/c/1457037",
+      "parentUuid": "ba252694_8a9d4bca",
+      "range": {
+        "startLine": 166,
+        "startChar": 30,
+        "endLine": 166,
+        "endChar": 32
+      },
+      "revId": "e81decc79d1440beb12df84fac0f94d988f99668",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d26f3c41_984303fb",
         "filename": "autoninja.py",
         "patchSetId": 3
@@ -37,6 +61,30 @@
       "writtenOn": "2022-04-21T08:45:46Z",
       "side": 1,
       "message": "nit: typo \"available\"",
+      "range": {
+        "startLine": 168,
+        "startChar": 31,
+        "endLine": 168,
+        "endChar": 39
+      },
+      "revId": "e81decc79d1440beb12df84fac0f94d988f99668",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90f818e9_9bb9f9f5",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-04-21T09:10:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d26f3c41_984303fb",
       "range": {
         "startLine": 168,
         "startChar": 31,

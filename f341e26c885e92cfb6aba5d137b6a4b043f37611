@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9d60db3_a3925a39",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-04-21T04:28:12Z",
+      "side": 1,
+      "message": "Is it fine to increase the multipiler on other than M1 Mac?\nThe condition could be `platform.machine() \u003d\u003d \u0027arm64\u0027 and sys.platform \u003d\u003d \u0027darwin\u0027`.",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 38
+      },
+      "revId": "f341e26c885e92cfb6aba5d137b6a4b043f37611",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba252694_8a9d4bca",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2022-04-21T08:45:46Z",
+      "side": 1,
+      "message": "Just curious - why 40 (even before this change)?",
+      "range": {
+        "startLine": 166,
+        "startChar": 30,
+        "endLine": 166,
+        "endChar": 32
+      },
+      "revId": "e81decc79d1440beb12df84fac0f94d988f99668",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d26f3c41_984303fb",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2022-04-21T08:45:46Z",
+      "side": 1,
+      "message": "nit: typo \"available\"",
+      "range": {
+        "startLine": 168,
+        "startChar": 31,
+        "endLine": 168,
+        "endChar": 39
+      },
+      "revId": "e81decc79d1440beb12df84fac0f94d988f99668",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

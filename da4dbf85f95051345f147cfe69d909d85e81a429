@@ -16,6 +16,24 @@
       "message": "Doesn\u0027t the recent hardwares have any upper bound?",
       "revId": "da4dbf85f95051345f147cfe69d909d85e81a429",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6b13cc9_2aeef028",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-04-21T03:17:25Z",
+      "side": 0,
+      "message": "Actually not sure as I don\u0027t have recent hardwares. But that might be possible as this was introduced in a few years ago.",
+      "parentUuid": "4a704b0b_f609d67e",
+      "revId": "da4dbf85f95051345f147cfe69d909d85e81a429",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

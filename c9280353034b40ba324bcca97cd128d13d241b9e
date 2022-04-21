@@ -33,6 +33,24 @@
       "message": "LGTM",
       "revId": "c9280353034b40ba324bcca97cd128d13d241b9e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46dcc471_d1e320c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-04-21T03:17:25Z",
+      "side": 1,
+      "message": "OK, I\u0027ll create a new CL.\n\nAnd I agree with you. I should ask reporter to configure their machine properly.\nBut depends on the place where error happens, it might not so easy to show appropriate instruction for autoninja user.",
+      "parentUuid": "9c0286e0_dd2ba327",
+      "revId": "c9280353034b40ba324bcca97cd128d13d241b9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

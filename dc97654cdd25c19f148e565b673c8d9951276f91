@@ -74,6 +74,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "29c4d484_42600912",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-04-21T19:58:05Z",
+      "side": 1,
+      "message": "Right, I understand that but what I\u0027m asking here is: how does this CL change the behavior? as in, pre-CL and post-CL behavior appear to be identical for this file. is there an edge case I\u0027m not seeing that would make sense for there to be a try/finally? the pre-CL version seems to do the same thing and is simpler",
+      "parentUuid": "8789e1f8_b5f7c1ea",
+      "range": {
+        "startLine": 163,
+        "startChar": 3,
+        "endLine": 169,
+        "endChar": 18
+      },
+      "revId": "dc97654cdd25c19f148e565b673c8d9951276f91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "74cec3e1_ce0eb6c1",
         "filename": "recipes/recipe_modules/gitiles/test_api.py",
         "patchSetId": 8

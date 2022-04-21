@@ -120,6 +120,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e44b7e17_5f9e713a",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-04-21T20:44:25Z",
+      "side": 1,
+      "message": "Ah okay, thanks for explaining",
+      "parentUuid": "a164e52c_afab5b92",
+      "range": {
+        "startLine": 163,
+        "startChar": 3,
+        "endLine": 169,
+        "endChar": 18
+      },
+      "revId": "dc97654cdd25c19f148e565b673c8d9951276f91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74cec3e1_ce0eb6c1",

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2cdba79_f5b32fd9",
+        "filename": "recipes/recipe_modules/gitiles/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-04-21T19:19:49Z",
+      "side": 1,
+      "message": "It\u0027s not clear to me what this change does, as in \n\nbase:\nif py2, return value\nif py3, return value.decode\n\nthis CL:\nif py2, return value\nif py3, return value.decode\n\nam I missing something?",
+      "range": {
+        "startLine": 163,
+        "startChar": 3,
+        "endLine": 169,
+        "endChar": 18
+      },
+      "revId": "dc97654cdd25c19f148e565b673c8d9951276f91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74cec3e1_ce0eb6c1",
+        "filename": "recipes/recipe_modules/gitiles/test_api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-04-21T19:19:49Z",
+      "side": 1,
+      "message": "nit: add periods here and below",
+      "range": {
+        "startLine": 93,
+        "startChar": 30,
+        "endLine": 93,
+        "endChar": 31
+      },
+      "revId": "dc97654cdd25c19f148e565b673c8d9951276f91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

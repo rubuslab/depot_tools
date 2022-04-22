@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d6ee0e7_eb6afef9",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-22T02:28:46Z",
+      "side": 1,
+      "message": "This is only a true statement in a non-meaningful way. IBM and AMD have both implemented simultaneous multithreading, which is just the generic name for hyper-threading.\n\nPerhaps:\n# Use this check to identify machines (ARM CPUs on OSX machines) that don\u0027t\n# support Simultaneous multithreading and use a higher per-logical-processor\n# multiplier for them because they have more physical cores.\n\nIt would be better if we could get the number of physical cores. Then we could just go:\n    default_core_multiplier \u003d 80\nand multiply that by the number of cores instead of the number of logical processors. However I can\u0027t find a way to do that so this (imperfect) method seems fine, it just needs a fixed comment.\n\nAlternately:\ndefault_core_multiplier \u003d 80\nif platform.machine() \u003d\u003d \u0027x86_64\u0027:\n  # Assume simultaneous multithreading and therefore half as many cores\n  # as logical processors.\n  num_cores /\u003d 2",
+      "revId": "668becde49ef7c62567358d93423b7369a65e020",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -99,6 +99,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       set_output_commit=False,
                       step_test_data=None,
                       enforce_fetch=False,
+                      download_topics=False,
                       **kwargs):
     """
     Args:
@@ -127,6 +128,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
         change in self.m.buildbucket.build.input.gerrit_changes, because
         bot_update module ONLY supports one change. Users may specify a change
         via tryserver.set_change() and explicitly set this flag False.
+      * download_topics: If True, ....
     """
     assert not (ignore_input_commit and set_output_commit)
     if assert_one_gerrit_change:
@@ -180,6 +182,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
         flags.extend(
             ['--patch_ref', patch_ref]
             for patch_ref in patch_refs)
+      if download_topics:
+        flags.extend(['--download_topics'])
+
 
     # Compute requested revisions.
     revisions = {}

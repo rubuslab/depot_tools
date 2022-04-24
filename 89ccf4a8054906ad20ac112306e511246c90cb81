@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "263f7250_2abf2909",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2022-04-24T15:39:49Z",
+      "side": 0,
+      "message": "Is it safe to remove this limit now? It seems like at least on my corp MacBook Pro M1 with macOS 12.3.1 the default limit of maximum open files is still 256. But maybe this is no longer an issue anyway?\n\n```\n$ launchctl limit maxfiles\n\tmaxfiles    256            unlimited\n```",
+      "revId": "89ccf4a8054906ad20ac112306e511246c90cb81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

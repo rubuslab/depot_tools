@@ -16,6 +16,23 @@
       "message": "Ravi you can start with Gavin as a reviewer, and if we feel like additional review is necessary we should pick someone on the foundation team that has familiarity with bot_update.",
       "revId": "89de1eae38ae6a6728fc71068d3eb3719a8ab40d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "843bc6e2_63bcef14",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2022-04-25T20:20:57Z",
+      "side": 1,
+      "message": "Thank you Andy and Gavin!",
+      "revId": "89de1eae38ae6a6728fc71068d3eb3719a8ab40d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

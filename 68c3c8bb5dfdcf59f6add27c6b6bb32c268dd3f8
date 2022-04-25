@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdf14e55_411f87b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163624
+      },
+      "writtenOn": "2022-04-25T16:49:45Z",
+      "side": 1,
+      "message": "Hi Andy,\n\nSince Josip is OOO, who can help review this?\n\nThanks!",
+      "revId": "68c3c8bb5dfdcf59f6add27c6b6bb32c268dd3f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

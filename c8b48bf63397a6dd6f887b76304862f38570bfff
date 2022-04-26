@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8961ce14_c7f656af",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1147,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-04-26T23:30:39Z",
+      "side": 1,
+      "message": "This is based on the `changed_id` passed in by test.\nBut the `actual` comes from _gerrit_base_calls() which sets a default if the test did not pass one in.\nBefore committing, add a note/TODO that this should be fixed.",
+      "range": {
+        "startLine": 1147,
+        "startChar": 14,
+        "endLine": 1147,
+        "endChar": 31
+      },
+      "revId": "c8b48bf63397a6dd6f887b76304862f38570bfff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

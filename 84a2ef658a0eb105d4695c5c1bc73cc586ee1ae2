@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5091288b_8cf57d7d",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2022-04-26T08:40:33Z",
+      "side": 1,
+      "message": "ninjalog_uploader_wrapper.py:28:6: W0702: No exception type(s) specified (bare-except)\n\n\nanyway, no need to handle differently for permission denied or so?",
+      "revId": "84a2ef658a0eb105d4695c5c1bc73cc586ee1ae2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

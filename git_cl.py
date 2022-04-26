@@ -1755,9 +1755,15 @@ class Changelist(object):
 
     status = self._GetChangeDetail()['status']
     if status in ('MERGED', 'ABANDONED'):
-      DieWithError('Change %s has been %s, new uploads are not allowed' %
-                   (self.GetIssueURL(),
-                    'submitted' if status == 'MERGED' else 'abandoned'))
+      answer = gclient_utils.AskForData(
+          'Change %s has been %s, new uploads are not allowed. '
+          'Would you like to start a new change (Y/n)?' %
+          (self.GetIssueURL(),
+           'submitted' if status == 'MERGED' else 'abandoned')).lower()
+      if answer not in ('y', ''):
+        DieWithError('New uploads are not allowed.')
+      self.SetIssue()
+      return
 
     # TODO(vadimsh): For some reason the chunk of code below was skipped if
     # 'is_gce' is True. I'm just refactoring it to be 'skip if not cookies'.

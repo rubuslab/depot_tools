@@ -34,6 +34,24 @@
       "parentUuid": "5091288b_8cf57d7d",
       "revId": "84a2ef658a0eb105d4695c5c1bc73cc586ee1ae2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8652839a_d58423d0",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1453083
+      },
+      "writtenOn": "2022-04-26T18:37:45Z",
+      "side": 1,
+      "message": "the config file actually broken in my environment while setting up my new develop environment along with the setup manual.\nI doubt that some error or manual abandonment results broken (actually empty) config file and showed uncommon error message.\nSo broken file will happen again in others in future but I don\u0027t expect that permission or disk-full will happen frequently as long as setting up along with the setup manual.\nAt least these (permission and other) should not be handled in this except clause (more problematic crash happen far before this line).",
+      "parentUuid": "9dcc0f31_9c379549",
+      "revId": "84a2ef658a0eb105d4695c5c1bc73cc586ee1ae2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

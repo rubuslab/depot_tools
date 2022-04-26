@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12ce7b12_0521c9ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-26T23:32:05Z",
+      "side": 1,
+      "message": "I was working on the presubmit project on the plane and I had to make these changes to be able to test. They aren\u0027t often needed, but allowing not-networked work seems like a win. PTAL.",
+      "revId": "bd491351e99104ca558f261fd0f13b068fad5ba9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "ninjalog_uploader_wrapper.py:28:6: W0702: No exception type(s) specified (bare-except)\n\n\nanyway, no need to handle differently for permission denied or so?",
       "revId": "84a2ef658a0eb105d4695c5c1bc73cc586ee1ae2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dcc0f31_9c379549",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-04-26T08:55:24Z",
+      "side": 1,
+      "message": "Let me ignore such case for now.\n\nThis is mainly for the case where this script is killed while running SaveConfig and config file becomes broken.",
+      "parentUuid": "5091288b_8cf57d7d",
+      "revId": "84a2ef658a0eb105d4695c5c1bc73cc586ee1ae2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

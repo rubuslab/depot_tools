@@ -50,6 +50,24 @@
       "message": "Sigh...\n\nI just checked and on Windows this is actually \u0027AMD64\u0027. I don\u0027t know why it\u0027s not standardized. I hit this somewhere else recently.",
       "revId": "d62e68f2a6e866790430082e1d1170f1a9f71627",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "295e7aaa_b66b8d63",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-04-27T00:40:59Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "bb6b3910_07fbf9c0",
+      "revId": "d62e68f2a6e866790430082e1d1170f1a9f71627",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

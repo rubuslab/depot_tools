@@ -70,3 +70,6 @@ infra/tools/dirmd/${platform} git_revision:9ae83cf95f396f93ff5002c4159746937cf93
 
 # Pinpoint CLI
 infra/chromeperf/pinpoint/${platform} git_revision:40b241eb67c2b9ada8a14eb633b8cb60a62782e6
+
+# ninja
+infra/3pp/tools/ninja/${platform} version:2@1.10.2

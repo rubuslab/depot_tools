@@ -496,3 +496,9 @@ infra/tools/rdb/mac-arm64
 infra/tools/rdb/windows-amd64
 	git_revision:2be056d01d3f8bab07915a1c2eca04f1937ad833
 	9r6QPQmkPAbvoCEAADMFk0OBP6kUSicxFQYgJMbUlysC
+
+infra/3pp/tools/ninja/linux-amd64
+ version:2@1.10.2
+ eUq0RC6weKHjbOXFRZ3ZFkIfpAYvagT38xtJ4QOmzwgC
+
+# TODO(jwata): add other ninja packages

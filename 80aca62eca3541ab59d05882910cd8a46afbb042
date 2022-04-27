@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fee5a4c_40165a13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-27T18:10:03Z",
+      "side": 1,
+      "message": "Do you have any thoughts on these test failures? I\u0027m calling cl.GetBranch() and it is failing because it\u0027s not a git repo, however the next line calls GetCommonAncestorWithUpstream() which calls GetUpstreamBranch() which calls GetBranch(). Is there some mocking going on which I\u0027m somehow subverting?\n\nAny thoughts on the CL are also appreciated.",
+      "revId": "80aca62eca3541ab59d05882910cd8a46afbb042",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

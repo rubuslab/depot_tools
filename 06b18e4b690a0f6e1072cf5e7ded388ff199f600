@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed83ee65_c9292598",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1335848
+      },
+      "writtenOn": "2022-04-27T01:52:47Z",
+      "side": 1,
+      "message": "Hi, I\u0027m getting\n\n```\n$ autoninja -C out/Default ...\nTraceback (most recent call last):\n  File \"/\u003csnip\u003e/depot_tools/autoninja.py\", line 167, in \u003cmodule\u003e\n    if platform.machine() in (\u0027x86_64\u0027, \u0027AMD64\u0027):\nNameError: name \u0027platform\u0027 is not defined\n```\n\nIs this missing an import statement? (or am I doing something wrong)",
+      "range": {
+        "startLine": 167,
+        "startChar": 7,
+        "endLine": 167,
+        "endChar": 15
+      },
+      "revId": "06b18e4b690a0f6e1072cf5e7ded388ff199f600",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

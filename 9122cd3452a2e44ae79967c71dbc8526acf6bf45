@@ -33,6 +33,24 @@
       "message": "do we want to keep `i?86|` here? i don\u0027t know if `uname -m` is always x86_64 for systems that can run 64-bit binaries",
       "revId": "9122cd3452a2e44ae79967c71dbc8526acf6bf45",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cbbc765_4a63cae3",
+        "filename": "ninja",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-04-27T13:47:40Z",
+      "side": 1,
+      "message": "made https://crrev.com/c/3611002",
+      "parentUuid": "ed0700fe_892c0f57",
+      "revId": "9122cd3452a2e44ae79967c71dbc8526acf6bf45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

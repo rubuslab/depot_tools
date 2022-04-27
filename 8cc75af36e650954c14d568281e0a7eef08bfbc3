@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2cda15b_f23ee775",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-27T23:17:30Z",
+      "side": 1,
+      "message": "Once this lands I can pass global_checks\u003dFalse from third_party/blink/PRESUBMIT.py and get rid of some redundant calls. This saves a tiny bit of time (a few seconds) and avoids redundant warnings. PTAL.",
+      "revId": "8cc75af36e650954c14d568281e0a7eef08bfbc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

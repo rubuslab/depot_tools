@@ -33,6 +33,24 @@
       "message": "oof, gross; It would have been better to make the local_paths all filesystem agnostic so that we didn\u0027t hit this (i.e. everything uses \u0027/\u0027 on all platforms). But I guess that ship sailed a while ago and there are probably regexes with only \u0027\\\\\u0027 in them somewhere now?",
       "revId": "57287435ec4fba777b469d49f6a58fb9e8803e05",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de213bf6_b8ef8f96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-27T23:15:44Z",
+      "side": 1,
+      "message": "Yeah. Having local paths use / on Windows would avoid a lot of problems, but making that change now is terrifying. I\u0027m not sure that there are any \\\\ regexes out there, but who can tell?\n\nIf/once I get presubmit --all running cleanly and a bot running it then maybe we could revisit and try to switch to / only. But that ship has sailed a long way...",
+      "parentUuid": "55134ea4_db3227f9",
+      "revId": "57287435ec4fba777b469d49f6a58fb9e8803e05",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

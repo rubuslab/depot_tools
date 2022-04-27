@@ -54,11 +54,12 @@ class TestUtilityFunctions(unittest.TestCase):
       no_history=False,
       force=False,
       config='foo',
+      protocol='https',
       props=[]), response)
 
     response = fetch.handle_args([
         'filename', '-n', '--dry-run', '--nohooks', '--no-history', '--force',
-        'foo', '--some-param=1', '--bar=2'
+        '--protocol', 'sso', 'foo', '--some-param=1', '--bar=2'
     ])
     self.assertEqual(argparse.Namespace(
       dry_run=True,
@@ -66,6 +67,7 @@ class TestUtilityFunctions(unittest.TestCase):
       no_history=True,
       force=True,
       config='foo',
+      protocol='sso',
       props=['--some-param=1', '--bar=2']), response)
 
   @mock.patch('os.path.exists', return_value=False)

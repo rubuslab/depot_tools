@@ -114,6 +114,7 @@ def CheckUnitTestsOnCommit(input_api, output_api):
     print('Warning: skipping most unit tests on Windows')
     tests_to_skip_list.extend([
         r'.*auth_test\.py$',
+        r'.*autoninja_test\.py$',
         r'.*git_common_test\.py$',
         r'.*git_hyper_blame_test\.py$',
         r'.*git_map_test\.py$',

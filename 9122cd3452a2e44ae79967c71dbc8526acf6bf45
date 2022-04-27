@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1af046ee_91e4a153",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-04-27T13:35:03Z",
+      "side": 1,
+      "message": "i think this is fine. we don\u0027t have 32-bit clang or gn binaries either.",
+      "revId": "9122cd3452a2e44ae79967c71dbc8526acf6bf45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

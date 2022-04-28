@@ -1409,9 +1409,6 @@ class GetPostUploadExecuter(object):
     Return:
       A list of results objects.
     """
-    if not _ShouldRunPresubmit(script_text, self.use_python3):
-      return {}
-
     context = {}
     try:
       exec(compile(script_text, 'PRESUBMIT.py', 'exec', dont_inherit=True),
@@ -1470,8 +1467,9 @@ def DoPostUploadExecuter(change, gerrit_obj, verbose, use_python3=False):
       sys.stdout.write('Running %s\n' % filename)
     # Accept CRLF presubmit script.
     presubmit_script = gclient_utils.FileRead(filename, 'rU')
-    results.extend(executer.ExecPresubmitScript(
-        presubmit_script, filename, gerrit_obj, change))
+    if _ShouldRunPresubmit(presubmit_script, use_python3):
+      results.extend(executer.ExecPresubmitScript(
+          presubmit_script, filename, gerrit_obj, change))
 
   if not results:
     return 0
@@ -1523,9 +1521,6 @@ class PresubmitExecuter(object):
     Return:
       A list of result objects, empty if no problems.
     """
-    if not _ShouldRunPresubmit(script_text, self.use_python3):
-      return []
-
     # Change to the presubmit file's directory to support local imports.
     main_path = os.getcwd()
     presubmit_dir = os.path.dirname(presubmit_path)
@@ -1717,18 +1712,26 @@ def DoPresubmitChecks(change,
     thread_pool = ThreadPool()
     executer = PresubmitExecuter(change, committing, verbose, gerrit_obj,
                                  dry_run, thread_pool, parallel, use_python3)
+    skipped_count = 0;
     if default_presubmit:
       if verbose:
         sys.stdout.write('Running default presubmit script.\n')
       fake_path = os.path.join(change.RepositoryRoot(), 'PRESUBMIT.py')
-      results += executer.ExecPresubmitScript(default_presubmit, fake_path)
+      if _ShouldRunPresubmit(default_presubmit, use_python3):
+        results += executer.ExecPresubmitScript(default_presubmit, fake_path)
+      else:
+        skipped_count += 1
     for filename in presubmit_files:
       filename = os.path.abspath(filename)
       if verbose:
         sys.stdout.write('Running %s\n' % filename)
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename, 'rU')
-      results += executer.ExecPresubmitScript(presubmit_script, filename)
+      if _ShouldRunPresubmit(presubmit_script, use_python3):
+        results += executer.ExecPresubmitScript(presubmit_script, filename)
+      else:
+        skipped_count += 1
+        
     results += thread_pool.RunAsync()
 
     messages = {}
@@ -1781,6 +1784,7 @@ def DoPresubmitChecks(change,
             for warning in messages.get('Warnings', [])
         ],
         'more_cc': executer.more_cc,
+        'skipped_presubmits': skipped_count,
       }
 
       gclient_utils.FileWrite(

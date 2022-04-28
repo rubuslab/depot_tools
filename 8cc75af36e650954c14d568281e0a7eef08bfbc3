@@ -16,6 +16,46 @@
       "message": "Once this lands I can pass global_checks\u003dFalse from third_party/blink/PRESUBMIT.py and get rid of some redundant calls. This saves a tiny bit of time (a few seconds) and avoids redundant warnings. PTAL.",
       "revId": "8cc75af36e650954c14d568281e0a7eef08bfbc3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d64c6c1_d3f72432",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2022-04-28T00:52:20Z",
+      "side": 1,
+      "message": "LGTM with some comment futzing",
+      "revId": "8cc75af36e650954c14d568281e0a7eef08bfbc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b8bab57_abd32cda",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1361,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2022-04-28T00:52:20Z",
+      "side": 1,
+      "message": "I think this comment could be fleshed out more to make it clearer why this would need to be used. How about something like:\n\n```\nIf true, run global checks, e.g., `CheckChangeHasDescription`. These are not file-specific, so if true the checks will run regardless of the PRESUBMIT.py script\u0027s location or filtering arguments like `excluded_paths`. Global checks are already run by the root directory\u0027s PRESUBMIT.py, so this is only needed for subdirectories that are excluded from the root directory\u0027s PRESUBMIT.py, to prevent running the same checks twice.\n```\n\nFeel free to push back if you think this is too much detail or if anything I wrote isn\u0027t quite accurate. I just personally find the situation a bit nuanced and hard to understand (as a presubmit outsider :)) so I\u0027d appreciate a longer doc comment if I were trying to use this.",
+      "range": {
+        "startLine": 1360,
+        "startChar": 19,
+        "endLine": 1361,
+        "endChar": 70
+      },
+      "revId": "8cc75af36e650954c14d568281e0a7eef08bfbc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

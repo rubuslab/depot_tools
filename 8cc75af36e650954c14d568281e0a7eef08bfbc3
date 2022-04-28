@@ -56,6 +56,30 @@
       },
       "revId": "8cc75af36e650954c14d568281e0a7eef08bfbc3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b691698e_5c7228d0",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1361,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-04-28T16:34:14Z",
+      "side": 1,
+      "message": "It\u0027s a balancing act to make it useful without becoming an essay. The others are all one line. I\u0027ve expanded it (and used indenting for clarity). Let me know what you think.",
+      "parentUuid": "3b8bab57_abd32cda",
+      "range": {
+        "startLine": 1360,
+        "startChar": 19,
+        "endLine": 1361,
+        "endChar": 70
+      },
+      "revId": "8cc75af36e650954c14d568281e0a7eef08bfbc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

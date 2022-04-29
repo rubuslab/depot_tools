@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d8e68e1_fc24f065",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-04-29T00:52:31Z",
+      "side": 1,
+      "message": "Setting Aravind as reviewer since he\u0027s been more in depot_tools recently than I have",
+      "revId": "b76fa60d597fbfa946d9cb6a6d4341fe73e6f4bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

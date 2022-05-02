@@ -5329,6 +5329,8 @@ def CMDformat(parser, args):
   if python_diff_files and not py_explicitly_disabled:
     depot_tools_path = os.path.dirname(os.path.abspath(__file__))
     yapf_tool = os.path.join(depot_tools_path, 'yapf')
+    isort_tool = os.path.join(depot_tools_path, 'isort')
+    isort_config = os.path.join(depot_tools_path, '.isort.cfg')
 
     # Used for caching.
     yapf_configs = {}
@@ -5371,6 +5373,7 @@ def CMDformat(parser, args):
           vpython_script = 'vpython3'
 
       cmd = [vpython_script, yapf_tool, '--style', yapf_style, f]
+      isort_cmd = [isort_tool, '--settings-file', isort_config, f]
 
       has_formattable_lines = False
       if not opts.full:
@@ -5398,9 +5401,25 @@ def CMDformat(parser, args):
           sys.stdout.write(stdout)
         elif len(stdout) > 0:
           return_value = 2
+
+        isort_cmd += ['--diff']
+        stdout = RunCommand(isort_cmd,
+                            error_ok=True,
+                            stderr=subprocess2.PIPE,
+                            cwd=top_dir,
+                            shell=sys.platform.startswith('win32'))
+        if opts.diff:
+          sys.stdout.write(stdout)
+        elif len(stdout) > 0:
+          return_value = 2
       else:
         cmd += ['-i']
         RunCommand(cmd, cwd=top_dir, shell=sys.platform.startswith('win32'))
+        # Make sure to run this after yapf so we override any changes yapf made
+        # that isort might disagree with.
+        RunCommand(isort_cmd,
+                   cwd=top_dir,
+                   shell=sys.platform.startswith('win32'))
 
   # Format GN build files. Always run on full build files for canonical form.
   if gn_diff_files:

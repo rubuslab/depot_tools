@@ -16,6 +16,23 @@
       "message": "Sorry about that, some accidental diffs made it in. It looks right now and still works and passes the tests. PTAL.",
       "revId": "dd4b746eb80489971cfa165751968b225abd384a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08a17180_54f530b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-03T21:55:39Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "dd4b746eb80489971cfa165751968b225abd384a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

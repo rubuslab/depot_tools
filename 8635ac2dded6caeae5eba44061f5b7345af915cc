@@ -33,6 +33,24 @@
       "message": "What does this call do?",
       "revId": "8635ac2dded6caeae5eba44061f5b7345af915cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbebc1e1_331724a1",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-03T21:52:57Z",
+      "side": 1,
+      "message": "That is an excellent question. I think I added those two calls while trying to understand the test failures. They aren\u0027t needed. I\u0027ve uploaded a new patchset without them.",
+      "parentUuid": "9804b3ed_e82a372d",
+      "revId": "8635ac2dded6caeae5eba44061f5b7345af915cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

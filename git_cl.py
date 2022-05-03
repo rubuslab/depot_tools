@@ -4659,7 +4659,8 @@ def CMDtry(parser, args):
             'available.'))
   group.add_option(
       '-B', '--bucket', default='',
-      help=('Buildbucket bucket to send the try requests.'))
+      help=('Buildbucket bucket to send the try requests. In the format '
+            '"luci.$LUCI_PROJECT.$LUCI_BUCKET". eg: "luci.chromium.try"'))
   group.add_option(
       '-r', '--revision',
       help='Revision to use for the tryjob; default: the revision will '

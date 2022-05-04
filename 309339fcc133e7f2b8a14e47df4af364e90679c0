@@ -16,6 +16,24 @@
       "message": "Nit: How about just `format: \"luci.$LUCI_PROJECT.$LUCI_BUCKET\". eg: \"luci.chromium.try\"` instead of `In the format`",
       "revId": "309339fcc133e7f2b8a14e47df4af364e90679c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bedccf46_a8b7543d",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4662,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2022-05-04T16:55:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0707263c_9521fc69",
+      "revId": "309339fcc133e7f2b8a14e47df4af364e90679c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0707263c_9521fc69",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4662,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-04T00:22:41Z",
+      "side": 1,
+      "message": "Nit: How about just `format: \"luci.$LUCI_PROJECT.$LUCI_BUCKET\". eg: \"luci.chromium.try\"` instead of `In the format`",
+      "revId": "309339fcc133e7f2b8a14e47df4af364e90679c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

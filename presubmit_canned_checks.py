@@ -310,6 +310,9 @@ def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
   """Checks that there are no gendered pronouns in any of the text files to be
   submitted.
   """
+  if input_api.no_diffs:
+    return []
+
   gendered_re = input_api.re.compile(
       r'(^|\s|\(|\[)([Hh]e|[Hh]is|[Hh]ers?|[Hh]im|[Ss]he|[Gg]uys?)\\b')
 
@@ -403,6 +406,8 @@ def _FindNewViolationsOfRule(callable_rule,
   Returns:
     A list of the newly-introduced violations reported by the rule.
   """
+  if input_api.no_diffs:
+    return []
   return _FindNewViolationsOfRuleForList(
       callable_rule, _GenerateAffectedFileExtList(
           input_api, source_file_filter), error_formatter)
@@ -459,6 +464,8 @@ def CheckLongLines(input_api, output_api, maxlen, source_file_filter=None):
   """Checks that there aren't any lines longer than maxlen characters in any of
   the text files to be submitted.
   """
+  if input_api.no_diffs:
+    return []
   maxlens = {
       'java': 100,
       # This is specifically for Android's handwritten makefiles (Android.mk).
@@ -1149,6 +1156,9 @@ def CheckDirMetadataFormat(input_api, output_api, dirmd_bin=None):
 
 def CheckNoNewMetadataInOwners(input_api, output_api):
   """Check that no metadata is added to OWNERS files."""
+  if input_api.no_diffs:
+    return []
+
   _METADATA_LINE_RE = input_api.re.compile(
       r'^#\s*(TEAM|COMPONENT|OS|WPT-NOTIFY)+\s*:\s*\S+$',
       input_api.re.MULTILINE | input_api.re.IGNORECASE)
@@ -1921,6 +1931,8 @@ def CheckInclusiveLanguage(input_api, output_api,
   # ANGLE), but this particular check only makes sense for changes to
   # chromium/src.
   if input_api.change.RepositoryRoot() != input_api.PresubmitLocalPath():
+    return []
+  if input_api.no_diffs:
     return []
 
   warnings = []

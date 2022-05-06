@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9f3c642_c206cc32",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-06T23:34:02Z",
+      "side": 1,
+      "message": "This fixes a _long_ standing bug in AffectedFiles (13 years!). I had one question about the fix, but the basics seem straightforward. PTAL.",
+      "revId": "fcbe0a204b52669485088935babca5e7fc260846",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e533067a_b62c7ceb",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-06T23:34:02Z",
+      "side": 1,
+      "message": "The old version of this that translated a single-character dir_with_slash to an empty string was, according to the tests, to support \u0027./PRESUBMIT.py\u0027. I\u0027m not sure we actually want to support that. And, maybe the appending of the path separator should be unconditional. Thoughts?",
+      "revId": "fcbe0a204b52669485088935babca5e7fc260846",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

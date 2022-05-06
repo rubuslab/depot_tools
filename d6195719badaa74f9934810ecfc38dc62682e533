@@ -72,6 +72,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9de02967_49bc3305",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-05-06T23:31:47Z",
+      "side": 1,
+      "message": "I believe that changes in other repos won\u0027t actually have an effect here? I\u0027m not sure though.\n\nI don\u0027t think anyone has context on this CL anymore.",
+      "parentUuid": "221c2473_8601a9f5",
+      "range": {
+        "startLine": 103,
+        "startChar": 16,
+        "endLine": 103,
+        "endChar": 35
+      },
+      "revId": "d6195719badaa74f9934810ecfc38dc62682e533",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b411d407_4e7b90a6",

@@ -113,6 +113,11 @@ gerrit_instances = [
   {
     'url': 'review.coreboot.org',
   },
+  {
+    'url': 'fuchsia-review.googlesource.com',
+    'shorturl': 'fxrev.dev/c',
+    'short_url_protocol': 'https',
+  },
 ]
 
 monorail_projects = {
@@ -125,6 +130,10 @@ monorail_projects = {
     'short_url_protocol': 'https',
   },
   'dawn': {},
+  'fuchsia': {
+    'shorturl': 'fxbug.dev',
+    'short_url_protocol': 'https',
+  },
   'google-breakpad': {},
   'gyp': {},
   'pdfium': {
@@ -355,7 +364,6 @@ class MyActivity(object):
     if not content:
       logging.error('Unable to parse %s response from monorail.', project)
       return []
-
     issues = []
     project_config = monorail_projects.get(project, {})
     for item in content.get('items', []):
@@ -387,7 +395,6 @@ class MyActivity(object):
       if 'components' in item:
         issue['components'] = item['components']
       issues.append(issue)
-
     return issues
 
   def monorail_issue_search(self, project):

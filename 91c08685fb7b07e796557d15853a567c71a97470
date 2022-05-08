@@ -16,6 +16,24 @@
       "message": "More context:\nPhaseScriptExecution Action\\ \\\"Compile\\ and\\ copy\\ chrome\\ via\\ ninja\\\" /Users/djean/Library/Developer/Xcode/DerivedData/all-chbgulvyofuiwtgscxhlnhcrvvbe/Build/Intermediates.noindex/all.build/Debug-iphonesimulator/chrome.build/Script-DE8678C1DADE678990341442.sh (in target \u0027chrome\u0027 from project \u0027all\u0027)\n    cd /Users/djean/bling/src/out/build\n    /bin/sh -c /Users/djean/Library/Developer/Xcode/DerivedData/all-chbgulvyofuiwtgscxhlnhcrvvbe/Build/Intermediates.noindex/all.build/Debug-iphonesimulator/chrome.build/Script-DE8678C1DADE678990341442.sh\n\nninja: Entering directory `../Debug-iphonesimulator\u0027\n[1/1] Regenerating ninja files\nninja: fatal: pipe: Too many open files\nCommand PhaseScriptExecution failed with a nonzero exit code",
       "revId": "91c08685fb7b07e796557d15853a567c71a97470",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "723e956f_a64f43e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2022-05-08T23:19:42Z",
+      "side": 1,
+      "message": "https://g3doc.corp.google.com/devtools/goma/g3doc/how-to-use-goma/how-to-install-goma-mac.md#relax-maxproc-and-maxfiles-limitations ?",
+      "parentUuid": "c4541603_4d085198",
+      "revId": "91c08685fb7b07e796557d15853a567c71a97470",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

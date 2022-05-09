@@ -33,6 +33,24 @@
       "message": "The old version of this that translated a single-character dir_with_slash to an empty string was, according to the tests, to support \u0027./PRESUBMIT.py\u0027. I\u0027m not sure we actually want to support that. And, maybe the appending of the path separator should be unconditional. Thoughts?",
       "revId": "fcbe0a204b52669485088935babca5e7fc260846",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "126004b3_1270aa79",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2022-05-09T13:51:53Z",
+      "side": 1,
+      "message": "No idea! I agree line 713 looks really bad and the new form looks better..",
+      "parentUuid": "e533067a_b62c7ceb",
+      "revId": "fcbe0a204b52669485088935babca5e7fc260846",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

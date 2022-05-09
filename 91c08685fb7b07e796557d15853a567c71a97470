@@ -34,6 +34,24 @@
       "parentUuid": "c4541603_4d085198",
       "revId": "91c08685fb7b07e796557d15853a567c71a97470",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5707d15_858d8a3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-09T22:39:59Z",
+      "side": 1,
+      "message": "Can we update ninja so that when it detects this error it prints an informative error message? Or updated autoninja for the same purpose?\nIt seems unavoidable that ninja/autoninja on OSX or going to keep hitting this issue, and each time it is going to be very difficult for the developer who hits this for the first time to understand the problem and the solution.\n\ncrrev.com/c/3632492 allows setting a global -j limit which gives OSX developers another way to control this but, again, this isn\u0027t discoverable, which makes raising the parallelism problematic.",
+      "parentUuid": "723e956f_a64f43e7",
+      "revId": "91c08685fb7b07e796557d15853a567c71a97470",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

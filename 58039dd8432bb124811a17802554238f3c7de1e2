@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e3ba568_a2982517",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2022-05-09T16:07:34Z",
+      "side": 1,
+      "message": "Hello iannucci,\n\nCould you review this? The limit of 500 jobs was recently removed and this causes build failures on some of my team members (surprisingly those with the most powerful Intel mac machines, 18-core iMacPro).\n\nI\u0027ve tested that a limit of 800 works on all machines I have access to, so it should be fine for people with those 18-cores iMacPro (even if this decreases the number of jobs per cpu).",
+      "revId": "58039dd8432bb124811a17802554238f3c7de1e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

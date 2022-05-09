@@ -16,6 +16,24 @@
       "message": "Seems reasonable. Do you have permissions to land this?",
       "revId": "fc3743b3d5a76bd0bd514d25790819f0df617224",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b300d643_7c57e179",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-05-09T19:28:40Z",
+      "side": 1,
+      "message": "\u003e Do you have permissions to land this?\nNo, I don\u0027t have a full committer permission yet, but I\u0027m looking forward to get it at some point.\nFor now I just kindly ask reviewers with CQ permission to merge my CLs.",
+      "parentUuid": "d840bcff_351fbccd",
+      "revId": "fc3743b3d5a76bd0bd514d25790819f0df617224",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

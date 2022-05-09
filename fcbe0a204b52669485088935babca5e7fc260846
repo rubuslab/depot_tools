@@ -51,6 +51,24 @@
       "parentUuid": "e533067a_b62c7ceb",
       "revId": "fcbe0a204b52669485088935babca5e7fc260846",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3e03df3_469e3795",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-09T15:16:33Z",
+      "side": 1,
+      "message": "After thinking about it more I think that the conditional adding of a path separator makes sense. If an empty string is passed then that would indicate that we want to match all paths, and appending a slash might break that. I\u0027m not sure if that is important, but it at least seems reasonable. But, we\u0027ll have to see what Josip thinks.",
+      "parentUuid": "126004b3_1270aa79",
+      "revId": "fcbe0a204b52669485088935babca5e7fc260846",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

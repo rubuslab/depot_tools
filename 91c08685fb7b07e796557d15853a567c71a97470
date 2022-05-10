@@ -52,6 +52,24 @@
       "parentUuid": "723e956f_a64f43e7",
       "revId": "91c08685fb7b07e796557d15853a567c71a97470",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f1a3636_660002a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2022-05-10T02:14:27Z",
+      "side": 1,
+      "message": "the error may happen in ninja, goma (compiler_proxy), or command invoked by ninja, so I think it is better to check resource.RLIMIT_NOFILE or RLIMIT_NPROC in autoninja and show warnings if the value is too small?",
+      "parentUuid": "d5707d15_858d8a3e",
+      "revId": "91c08685fb7b07e796557d15853a567c71a97470",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -67,6 +67,24 @@
       "message": "Let me allow this for a while, but I\u0027d like to show some warning to ask users to increase file descriptor limit when autoninja see build failure due to some reasons.",
       "revId": "f41ee81918cd644c4ce4d5fa0f03256cbeb27434",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ddecd0b_163c516f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2022-05-10T08:23:58Z",
+      "side": 1,
+      "message": "The team member that are reporting the issue have increased their file descriptor limit as described in the documentation, but still get the error because they have 18-core machines which causes -j to take the value 1440 and cause them to have their file descriptor limit to be reached.\n\nI think you should get in contact with the people that are affected to see with them whether they misconfigured something, or whether macOS limits cannot allow to run 1440 jobs concurrently, even when increasing the limits to their maximum.\n\nThe people with the 18-core machines that complained to me are gambard@, marq@ and jzw@.",
+      "parentUuid": "67718bb4_d9867b1a",
+      "revId": "f41ee81918cd644c4ce4d5fa0f03256cbeb27434",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -105,6 +105,24 @@
       "message": "The CL still needs to be reverted though. I\u0027ve applied the suggested fix https://g3doc.corp.google.com/devtools/goma/g3doc/how-to-use-goma/how-to-install-goma-mac.md?cl\u003dhead#relax-maxproc-and-maxfiles-limitations, rebooted and it now fails midway through building with the same issue:\n\nninja: fatal: pipe: Too many open files\n\nI\u0027ve had this mac for nearly two years without hitting this issue until the original CL was landed. I\u0027m happy to send you any logs you need.\n",
       "revId": "91c08685fb7b07e796557d15853a567c71a97470",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05b20459_9b2132ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-05-10T08:25:21Z",
+      "side": 1,
+      "message": "Does that happen even if you increased maxfiles more e.g. 400000 or 800000?\nAlso do you see the issue if you limit parallelism to 800 by specifying -j explicitly to autoninja?",
+      "parentUuid": "161bc300_f37f314c",
+      "revId": "91c08685fb7b07e796557d15853a567c71a97470",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

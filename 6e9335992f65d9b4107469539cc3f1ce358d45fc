@@ -50,6 +50,24 @@
       "message": "rerouting further to danakj. dana, upstream here is https://github.com/google/styleguide/blob/gh-pages/cpplint/cpplint.py , right? What\u0027s our process for making changes to this script? Change upstream, then sync back down? Something else?",
       "revId": "6e9335992f65d9b4107469539cc3f1ce358d45fc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4b7cfef_59fd6563",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1535927
+      },
+      "writtenOn": "2022-05-13T13:09:14Z",
+      "side": 1,
+      "message": "Hi. \n\nTwo relevant pieces of information:\n - cpplint.py is no longer maintained upstream, see this bug: https://bugs.chromium.org/p/chromium/issues/detail?id\u003d916550\n - [this page](https://chromium.googlesource.com/chromium/tools/depot_tools.git) says: \"If you want to update cpplint.py in depot_tools, just upload a patch to do so.\"\n \nStill, I\u0027m new here, so let me know if I need to do anything besides landing this CL :)",
+      "parentUuid": "c654cc00_0ab715ee",
+      "revId": "6e9335992f65d9b4107469539cc3f1ce358d45fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

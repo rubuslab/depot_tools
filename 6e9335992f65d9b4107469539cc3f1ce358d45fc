@@ -16,6 +16,23 @@
       "message": "can you make sure this is landed upstream plz?",
       "revId": "6e9335992f65d9b4107469539cc3f1ce358d45fc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44637d66_964ee5cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1176519
+      },
+      "writtenOn": "2022-05-13T12:54:27Z",
+      "side": 1,
+      "message": "also adding thakis who actually knows C++ in contrast to me",
+      "revId": "6e9335992f65d9b4107469539cc3f1ce358d45fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

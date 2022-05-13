@@ -45,6 +45,7 @@ class PresubmitApi(recipe_api.RecipeApi):
       # Run with vpython3 directly
       del (kwargs['venv'])
       presubmit_args = list(args) + [
+          '--use-python3',
           '--json_output',
           self.m.json.output(),
       ]

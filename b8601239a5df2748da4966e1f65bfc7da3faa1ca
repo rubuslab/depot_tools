@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "779862bd_dbe9813d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174395
+      },
+      "writtenOn": "2022-05-14T04:54:24Z",
+      "side": 1,
+      "message": "Picking up this improvement from https://github.com/cpplint/cpplint to fix an error I\u0027m seeing on Windows when using the `--root` flag: \"sre_constants.error: bogus escape (end of line)\"\n\nSeems to be because the existing cpplint.py code in depot_tools appends `os.sep` to the root path, which on Windows is \"\\\\\" and Python doesn\u0027t like having a regex pattern ending in a backslash like that.",
+      "revId": "b8601239a5df2748da4966e1f65bfc7da3faa1ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

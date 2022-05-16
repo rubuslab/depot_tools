@@ -25,7 +25,7 @@ IMapIterator.next = wrapper(IMapIterator.next)
 IMapIterator.__next__ = IMapIterator.next
 # TODO(iannucci): Monkeypatch all other 'wait' methods too.
 
-
+    
 import binascii
 import collections
 import contextlib

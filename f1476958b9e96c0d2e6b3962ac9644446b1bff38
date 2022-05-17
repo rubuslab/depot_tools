@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef21c42c_b1f1b421",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-17T00:00:10Z",
+      "side": 1,
+      "message": "This is not desired and it may break existing python2 presubmit checks. ie vpython3 presubmit support will be executed unless the file has explicit USE_PYTHON3 \u003d False. However, old presubmit checks don\u0027t have that line and therefore it\u0027s not safe.\n\nAs a workaround, I suggest to pass a new kwarg that will set this flag (make sure you kwarg.pop it before line 39, e.g. after line 32).",
+      "revId": "f1476958b9e96c0d2e6b3962ac9644446b1bff38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

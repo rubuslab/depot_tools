@@ -30,6 +30,7 @@ class PresubmitApi(recipe_api.RecipeApi):
 
     kwargs['venv'] = True
     name = kwargs.pop('name', 'presubmit')
+    use_python3 = kwargs.pop('use_python3', False)
     with self.m.depot_tools.on_path():
       presubmit_args = list(args) + [
           '--json_output', self.m.json.output(),
@@ -44,10 +45,13 @@ class PresubmitApi(recipe_api.RecipeApi):
 
       # Run with vpython3 directly
       del (kwargs['venv'])
-      presubmit_args = list(args) + [
+      additional_args = [
           '--json_output',
           self.m.json.output(),
       ]
+      if use_python3:
+        additional_args.insert(0, '--use-python3')
+      presubmit_args = list(args) + additional_args
       step_data = self.m.step(name + " py3",
                               ['vpython3', self.presubmit_support_path] +
                               presubmit_args, **kwargs)
@@ -107,12 +111,14 @@ class PresubmitApi(recipe_api.RecipeApi):
 
     return bot_update_step
 
-  def execute(self, bot_update_step, skip_owners=False):
+  def execute(self, bot_update_step, skip_owners=False, use_python3=False):
     """Runs presubmit and sets summary markdown if applicable.
 
     Args:
       * bot_update_step: the StepResult from a previously executed bot_update step.
       * skip_owners: a boolean indicating whether Owners checks should be skipped.
+      * use_python3: a boolean indicating whether to pass in --use-python3 to the
+          python3 invocation of presubmit.
 
     Returns:
       a RawResult object, suitable for being returned from RunSteps.
@@ -155,7 +161,8 @@ class PresubmitApi(recipe_api.RecipeApi):
         *presubmit_args,
         timeout=self._timeout_s,
         # ok_ret='any' causes all exceptions to be ignored in this step
-        ok_ret='any')
+        ok_ret='any',
+        use_python3=use_python3)
     # Set recipe result values
     if step_json:
       raw_result.summary_markdown = _createSummaryMarkdown(step_json)

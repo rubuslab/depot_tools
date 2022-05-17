@@ -755,18 +755,20 @@ PYTHON_VERSION_COMPATIBILITY: PY2+3
 
 Returns a presubmit step.
 
-&mdash; **def [execute](/recipes/recipe_modules/presubmit/api.py#110)(self, bot_update_step, skip_owners=False):**
+&mdash; **def [execute](/recipes/recipe_modules/presubmit/api.py#114)(self, bot_update_step, skip_owners=False, use_python3=False):**
 
 Runs presubmit and sets summary markdown if applicable.
 
 Args:
   * bot_update_step: the StepResult from a previously executed bot_update step.
   * skip_owners: a boolean indicating whether Owners checks should be skipped.
+  * use_python3: a boolean indicating whether to pass in --use-python3 to the
+      python3 invocation of presubmit.
 
 Returns:
   a RawResult object, suitable for being returned from RunSteps.
 
-&mdash; **def [prepare](/recipes/recipe_modules/presubmit/api.py#65)(self, root_solution_revision=None):**
+&mdash; **def [prepare](/recipes/recipe_modules/presubmit/api.py#69)(self, root_solution_revision=None):**
 
 Sets up a presubmit run.
 

@@ -27,7 +27,8 @@ def RunSteps(api):
   with api.context(cwd=api.path['cache'].join('builder')):
     bot_update_step = api.presubmit.prepare()
     skip_owners = api.properties.get('skip_owners', False)
-    return api.presubmit.execute(bot_update_step, skip_owners)
+    use_python3 = api.properties.get('use_python3', False)
+    return api.presubmit.execute(bot_update_step, skip_owners, use_python3=use_python3)
 
 
 def GenTests(api):
@@ -55,6 +56,14 @@ def GenTests(api):
          api.post_process(post_process.StatusSuccess) +
          api.post_process(post_process.StepCommandContains, 'presubmit',
                           ['--skip_canned', 'CheckOwners']) +
+         api.post_process(post_process.DropExpectation))
+
+  yield (api.test('use_python3') + api.runtime(is_experimental=False) +
+         api.buildbucket.try_build(project='infra') +
+         api.properties(use_python3=True) +
+         api.post_process(post_process.StatusSuccess) +
+         api.post_process(post_process.StepCommandContains, 'presubmit py3',
+                          ['--use-python3']) +
          api.post_process(post_process.DropExpectation))
 
   yield (

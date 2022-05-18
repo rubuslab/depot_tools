@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "719d170e_d13336c6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1401,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-18T17:05:22Z",
+      "side": 0,
+      "message": "nit: add a comment that this function doesn\u0027t check if presubmit should be executed and it\u0027s on caller to validate it.",
+      "revId": "13acea3645e16ad97bfbeaa77af93e10879a852b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61838999_fed565a8",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1516,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-18T17:05:22Z",
+      "side": 0,
+      "message": "nit: add the same comment here.",
+      "revId": "13acea3645e16ad97bfbeaa77af93e10879a852b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

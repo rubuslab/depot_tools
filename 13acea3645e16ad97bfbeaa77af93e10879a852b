@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b87ee031_438d741a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1401,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-18T17:24:19Z",
+      "side": 0,
+      "message": "Done. The function could also assert that _ShouldRunPresubmit returns True.",
+      "parentUuid": "719d170e_d13336c6",
+      "revId": "13acea3645e16ad97bfbeaa77af93e10879a852b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61838999_fed565a8",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-05-18T17:05:22Z",
       "side": 0,
       "message": "nit: add the same comment here.",
+      "revId": "13acea3645e16ad97bfbeaa77af93e10879a852b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a84db67_387e5775",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1516,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-18T17:24:19Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "61838999_fed565a8",
       "revId": "13acea3645e16ad97bfbeaa77af93e10879a852b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

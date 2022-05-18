@@ -1631,14 +1631,9 @@ class PresubmitExecuter(object):
       result = eval(function_name + '(*__args)', context)
       self._check_result_type(result)
     except Exception:
-      if sink:
-        elapsed_time = time_time() - start_time
-        sink.report(function_name, rdb_wrapper.STATUS_FAIL, elapsed_time)
-      # TODO(crbug.com/953884): replace reraise with native py3:
-      #   raise .. from e
       e_type, e_value, e_tb = sys.exc_info()
-      print('Evaluation of %s failed: %s' % (function_name, e_value))
-      six.reraise(e_type, e_value, e_tb)
+      track = traceback.format_exc()
+      result = [OutputApi.PresubmitError('Evaluation of %s failed: %s, %s' % (function_name, e_value, track))]
 
     elapsed_time = time_time() - start_time
     if elapsed_time > 10.0:

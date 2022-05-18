@@ -16,6 +16,24 @@
       "message": "Thanks for the review, but I still don\u0027t understand the test failures.\n\nThe failures happen if \"py3_results \u003d self._RunPresubmit...\" is run ahead of \"py2_results \u003d self._RunPresubmit\". Just rearranging those two statements is enough to cause the failures. I don\u0027t understand the failures. Any ideas?",
       "revId": "9085299b539e98b84d5a4c887d5b95e7d50f9837",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efb999ef_559af05c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-18T17:44:19Z",
+      "side": 1,
+      "message": "That may cause the issues, in addition to having less calls than expected (ie py2 may not be called at all).\n\nI can take a look later today and provide a patch.",
+      "parentUuid": "29400285_e188b168",
+      "revId": "9085299b539e98b84d5a4c887d5b95e7d50f9837",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

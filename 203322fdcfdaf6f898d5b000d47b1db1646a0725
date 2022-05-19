@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3a75790_f5af4534",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-19T23:07:56Z",
+      "side": 1,
+      "message": "It is clearly intentional for presubmits to halt when an exception escapes the presubmit function (there are even tests to confirm this) but I find it frustrating behavior. It means that when I start a presubmit --all run I don\u0027t know whether or not I will get complete results.\n\nWDYT? Is it okay to handle and report on these errors rather than halting presubmits?",
+      "revId": "203322fdcfdaf6f898d5b000d47b1db1646a0725",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

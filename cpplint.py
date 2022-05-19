@@ -840,7 +840,7 @@ class _CppLintState(object):
     # output format:
     # "emacs" - format that emacs can parse (default)
     # "vs7" - format that Microsoft Visual Studio 7 can parse
-    self.output_format = 'emacs'
+    self.output_format = 'vs7'
 
   def SetOutputFormat(self, output_format):
     """Sets the output format for errors."""

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e7903f5_e2884f4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-05-20T21:59:54Z",
+      "side": 1,
+      "message": "\\o/!\n\nI\u0027m happy to not be (already in too many OWNERS files.....), but if you need additional coverage again, feel free to ping again 😊",
+      "revId": "877d29c4a041ee4f4fa3f992bbb1ec6e181f1774",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c4f8cd7_caad1a82",
+        "filename": "gclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1542,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-24T21:10:16Z",
+      "side": 1,
+      "message": "The top-level solution[\u0027url\u0027]\u0027s protocol is passed down to all its children. In this design, if the `.gclient` file has two solutions, one with `https` url and another with `sso` url in the top-level, their child DEPS will recursively copy it from their parents and one set will be with `https` and the other with `sso`.",
+      "revId": "082753b17ae0cd99e91c9372d82a1c7f5751b0cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

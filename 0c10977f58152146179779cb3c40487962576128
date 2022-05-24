@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb546de7_90dbcc17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-24T18:50:11Z",
+      "side": 1,
+      "message": "ah, ",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ce39c7_86f5bbba",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-24T18:50:11Z",
+      "side": 1,
+      "message": "how about just adding this:\n\n    if self.m.platform.is_mac:\n      cmd_prefix.extend([\n          \u0027-o\u0027,\n          \u0027GSUtil:parallel_process_count\u003d1\u0027\n      ])",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fcbacdca_d2d509ff",
@@ -32,6 +66,24 @@
       "side": 1,
       "message": "Interesting, I hadn\u0027t seen that. Unfortunately though, chromium appears to use multiple gclients:\nhttps://source.chromium.org/search?q\u003df:gsutil.py\n\nThe specific one that we saw fail was:\nhttps://source.chromium.org/chromium/chromium/src/+/main:third_party/catapult/third_party/gsutil/gsutil.py\n\nSo we could insert this same arg tweak into that copy of gclient. But I figured it\u0027d be easier to fix it in one place in the recipe. WDYT?",
       "parentUuid": "fcbacdca_d2d509ff",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3880bd04_15892f8f",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-24T18:50:11Z",
+      "side": 1,
+      "message": "That\u0027s true, it\u0027s probably easier to do it in the recipe in that case. We don\u0027t need to create a dedicated file, so I left a suggestion how to simplify this cl.\n\nI also noticed that disable_multiprocessing_on_mac is not called anywhere.",
+      "parentUuid": "714b7649_9665754c",
       "revId": "0c10977f58152146179779cb3c40487962576128",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

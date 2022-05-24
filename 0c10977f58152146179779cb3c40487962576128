@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6044e6b3_cf74cb0d",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2022-05-24T19:08:02Z",
+      "side": 1,
+      "message": "Same problem: not every gsutil invocation is done via this recipe_module method.\n\nIn the original failures we saw, the gsutil cmd was built somewhere under the callstack of https://source.chromium.org/chromium/chromium/src/+/main:tools/perf/fetch_benchmark_deps.py\n\nThe nice thing about configuring it via the BOTO file is that it doesn\u0027t matter where or how the gsutil cmd is constructed and invoked, so long as it doesn\u0027t mess with that env var, it\u0027ll have parallelization disabled.",
+      "parentUuid": "f1ce39c7_86f5bbba",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fcbacdca_d2d509ff",
         "filename": "recipes/recipe_modules/gsutil/api.py",
         "patchSetId": 5
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "That\u0027s true, it\u0027s probably easier to do it in the recipe in that case. We don\u0027t need to create a dedicated file, so I left a suggestion how to simplify this cl.\n\nI also noticed that disable_multiprocessing_on_mac is not called anywhere.",
       "parentUuid": "714b7649_9665754c",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac62366c_1325f060",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2022-05-24T19:08:02Z",
+      "side": 1,
+      "message": "See the CL linked in the commit msg (http://crrev.com/c/3662023). Will send that out if/when this lands + rolls",
+      "parentUuid": "3880bd04_15892f8f",
       "revId": "0c10977f58152146179779cb3c40487962576128",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

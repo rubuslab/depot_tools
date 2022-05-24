@@ -122,6 +122,24 @@
       "parentUuid": "3880bd04_15892f8f",
       "revId": "0c10977f58152146179779cb3c40487962576128",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9b3fed6_bc7f1d7c",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-24T20:11:33Z",
+      "side": 1,
+      "message": "Thanks, I should have read that first.\n\nNit suggestion: we may be able to adjust some other boto parameters in the future too. Instead of calling it disable_multiprocessing_on_mac, should we pick some generic name, e.g. setup_gsutil",
+      "parentUuid": "ac62366c_1325f060",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

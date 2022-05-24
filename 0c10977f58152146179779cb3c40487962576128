@@ -53,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16324d22_0b15fea8",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-24T23:43:14Z",
+      "side": 1,
+      "message": "ack",
+      "parentUuid": "6044e6b3_cf74cb0d",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fcbacdca_d2d509ff",
@@ -156,6 +174,24 @@
       "side": 1,
       "message": "Done. Renamed it \"configure_gsutil()\" which now takes arbitrary keyword args and sets them in the Boto file. LMK what you think",
       "parentUuid": "b9b3fed6_bc7f1d7c",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "127a15e0_2b5c7616",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-24T23:43:14Z",
+      "side": 1,
+      "message": "Thank, but we should still have default values in configure_gsutil(). That is, we should disable multiprocesing on mac nodes. Otherwise, each client will have to configure it.",
+      "parentUuid": "8ceda240_1d4aab52",
       "revId": "0c10977f58152146179779cb3c40487962576128",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

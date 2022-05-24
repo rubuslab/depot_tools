@@ -16,6 +16,24 @@
       "message": "This is already done in gsutil.py, or at least should be. See:\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gsutil.py;l\u003d156;drc\u003d1909696991d3e1e689d6d8815bb44fb327527d52",
       "revId": "0c10977f58152146179779cb3c40487962576128",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "714b7649_9665754c",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2022-05-24T17:56:48Z",
+      "side": 1,
+      "message": "Interesting, I hadn\u0027t seen that. Unfortunately though, chromium appears to use multiple gclients:\nhttps://source.chromium.org/search?q\u003df:gsutil.py\n\nThe specific one that we saw fail was:\nhttps://source.chromium.org/chromium/chromium/src/+/main:third_party/catapult/third_party/gsutil/gsutil.py\n\nSo we could insert this same arg tweak into that copy of gclient. But I figured it\u0027d be easier to fix it in one place in the recipe. WDYT?",
+      "parentUuid": "fcbacdca_d2d509ff",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

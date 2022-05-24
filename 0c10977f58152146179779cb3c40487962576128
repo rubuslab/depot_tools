@@ -212,6 +212,24 @@
       "parentUuid": "127a15e0_2b5c7616",
       "revId": "0c10977f58152146179779cb3c40487962576128",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "918657d2_0fcef14d",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-05-24T23:58:39Z",
+      "side": 1,
+      "message": "Awesome, thanks!",
+      "parentUuid": "79b6f40f_b5efd80b",
+      "revId": "0c10977f58152146179779cb3c40487962576128",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2161be58_0b0ac5b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-25T20:40:08Z",
+      "side": 1,
+      "message": "What do you think about this change? It would avoid the problem where presubmit --all can\u0027t complete for over a week (as just happened), which would be long enough to let more presubmit errors sneak in unnoticed.",
+      "revId": "aa663e3c6916bc26a49bfb66e62b12b1bbdcaa82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

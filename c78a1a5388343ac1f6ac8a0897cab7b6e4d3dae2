@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e118265a_4e48af55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-25T17:39:18Z",
+      "side": 1,
+      "message": "I\u0027ve found the inconsistent ordering of messages/warnings/errors in presubmit output makes it harder to find the errors. I also found that the lack of a final line saying \"there are errors\" is odd and also makes it harder to tell whether there were errors. Does this look reasonable?",
+      "revId": "c78a1a5388343ac1f6ac8a0897cab7b6e4d3dae2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1754,11 +1754,15 @@ def DoPresubmitChecks(change,
       else:
         messages.setdefault('Messages', []).append(result)
 
-    for name, items in messages.items():
-      sys.stdout.write('** Presubmit %s **\n' % name)
-      for item in items:
-        item.handle()
-        sys.stdout.write('\n')
+    # Print the different message types in a consistent order. ERRORS go last
+    # so that they will be most visible in the local-presubmit output.
+    for name in ['Messages', 'Warnings', 'ERRORS']:
+      if name in messages:
+        items = messages[name]
+        sys.stdout.write('** Presubmit %s **\n' % name)
+        for item in items:
+          item.handle()
+          sys.stdout.write('\n')
 
     total_time = time_time() - start_time
     if total_time > 1.0:

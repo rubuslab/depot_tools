@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f906312_6a2c1f43",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1542,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-05-25T19:06:29Z",
+      "side": 1,
+      "message": "when would `s[\u0027url\u0027]` be falsy?",
+      "range": {
+        "startLine": 1542,
+        "startChar": 46,
+        "endLine": 1542,
+        "endChar": 71
+      },
+      "revId": "ee23c02e9b2ed06ed0f5b6dd1427fbeb6689c782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2527072_e31d8193",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1544,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-05-25T19:06:29Z",
+      "side": 1,
+      "message": "typo?",
+      "range": {
+        "startLine": 1544,
+        "startChar": 58,
+        "endLine": 1544,
+        "endChar": 67
+      },
+      "revId": "ee23c02e9b2ed06ed0f5b6dd1427fbeb6689c782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

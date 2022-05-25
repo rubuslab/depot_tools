@@ -904,6 +904,7 @@ def CheckChangeOnCommit(input_api, output_api):
           RUNNING_PY_CHECKS_TEXT + 'Warning, no PRESUBMIT.py found.\n'
           'Running default presubmit script.\n'
           '** Presubmit ERRORS **\n!!\n\n'
+          'There were Python 3 presubmit errors.\n'
           'Was the presubmit check useful? If not, run "git cl presubmit -v"\n'
           'to figure out which PRESUBMIT.py was run, then run git blame\n'
           'on the file to figure out who to ask for help.\n')

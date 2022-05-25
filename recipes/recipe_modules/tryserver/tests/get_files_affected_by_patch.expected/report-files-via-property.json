@@ -15,7 +15,7 @@
       "@@@STEP_LOG_LINE@files@test/patch/root/baz/shaz.cc@@@",
       "@@@STEP_LOG_LINE@files@test/patch/root/foo/bar.cc@@@",
       "@@@STEP_LOG_END@files@@@",
-      "@@@SET_BUILD_PROPERTY@affected-files@{\"first_100\": [\"test/patch/root/baz/shaz.cc\", \"test/patch/root/foo/bar.cc\"], \"total_count\": 2}@@@"
+      "@@@SET_BUILD_PROPERTY@affected-files@{\"first_50\": [\"test/patch/root/baz/shaz.cc\", \"test/patch/root/foo/bar.cc\"], \"total_count\": 2}@@@"
     ]
   },
   {

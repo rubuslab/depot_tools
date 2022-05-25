@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "386c473a_4285a43c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-25T23:28:12Z",
+      "side": 1,
+      "message": "This CL speeds up presubmits and also - for the first time ever - will let us have \"presubmit --all\" run with zero errors (on Linux and on Windows).",
+      "revId": "e7cf3cdd39c40c033dd885c0141dbe4cf74b5560",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

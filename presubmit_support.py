@@ -590,7 +590,8 @@ class InputApi(object):
   )
 
   def __init__(self, change, presubmit_path, is_committing,
-      verbose, gerrit_obj, dry_run=None, thread_pool=None, parallel=False):
+      verbose, gerrit_obj, dry_run=None, thread_pool=None, parallel=False,
+      no_diffs = False):
     """Builds an InputApi object.
 
     Args:
@@ -608,6 +609,7 @@ class InputApi(object):
     self.is_committing = is_committing
     self.gerrit = gerrit_obj
     self.dry_run = dry_run
+    self.no_diffs = no_diffs
 
     self.parallel = parallel
     self.thread_pool = thread_pool or ThreadPool()
@@ -1493,7 +1495,8 @@ def DoPostUploadExecuter(change, gerrit_obj, verbose, use_python3=False):
 
 class PresubmitExecuter(object):
   def __init__(self, change, committing, verbose, gerrit_obj, dry_run=None,
-               thread_pool=None, parallel=False, use_python3=False):
+               thread_pool=None, parallel=False, use_python3=False,
+               no_diffs=False):
     """
     Args:
       change: The Change object.
@@ -1514,6 +1517,7 @@ class PresubmitExecuter(object):
     self.thread_pool = thread_pool
     self.parallel = parallel
     self.use_python3 = use_python3
+    self.no_diffs = no_diffs
 
   def ExecPresubmitScript(self, script_text, presubmit_path):
     """Executes a single presubmit script.
@@ -1537,7 +1541,7 @@ class PresubmitExecuter(object):
     input_api = InputApi(self.change, presubmit_path, self.committing,
                          self.verbose, gerrit_obj=self.gerrit,
                          dry_run=self.dry_run, thread_pool=self.thread_pool,
-                         parallel=self.parallel)
+                         parallel=self.parallel, no_diffs=self.no_diffs)
     output_api = OutputApi(self.committing)
     context = {}
 
@@ -1671,7 +1675,8 @@ def DoPresubmitChecks(change,
                       dry_run=None,
                       parallel=False,
                       json_output=None,
-                      use_python3=False):
+                      use_python3=False,
+                      no_diffs=False):
   """Runs all presubmit checks that apply to the files in the change.
 
   This finds all PRESUBMIT.py files in directories enclosing the files in the
@@ -1718,7 +1723,8 @@ def DoPresubmitChecks(change,
     results = []
     thread_pool = ThreadPool()
     executer = PresubmitExecuter(change, committing, verbose, gerrit_obj,
-                                 dry_run, thread_pool, parallel, use_python3)
+                                 dry_run, thread_pool, parallel, use_python3,
+                                 no_diffs)
     skipped_count = 0;
     if default_presubmit:
       if verbose:
@@ -1983,6 +1989,7 @@ def main(argv=None):
                       help='Write presubmit errors to json output.')
   parser.add_argument('--all_files', action='store_true',
                       help='Mark all files under source control as modified.')
+  
   parser.add_argument('files', nargs='*',
                       help='List of files to be marked as modified when '
                       'executing presubmit or post-upload hooks. fnmatch '
@@ -1991,6 +1998,8 @@ def main(argv=None):
                       help='Constrain \'files\' to those in source control.')
   parser.add_argument('--use-python3', action='store_true',
                       help='Use python3 for presubmit checks by default')
+  parser.add_argument('--no_diffs', action='store_true',
+                      help='Assume that all "modified" files have no diffs.')
   options = parser.parse_args(argv)
 
   log_level = logging.ERROR
@@ -2022,7 +2031,8 @@ def main(argv=None):
           options.dry_run,
           options.parallel,
           options.json_output,
-          options.use_python3)
+          options.use_python3,
+          options.no_diffs)
   except PresubmitFailure as e:
     import utils
     print(e, file=sys.stderr)

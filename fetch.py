@@ -24,6 +24,7 @@ import json
 import argparse
 import os
 import pipes
+import re
 import subprocess
 import sys
 import textwrap
@@ -259,6 +260,13 @@ def run(options, spec, root):
   assert 'type' in spec
   checkout_type = spec['type']
   checkout_spec = spec['%s_spec' % checkout_type]
+
+  # Replace https using the protocol specified in --protocol-override
+  if options.protocol_override != 'https':
+    for solution in checkout_spec['solutions']:
+      solution['url'] = re.sub('^https', options.protocol_override,
+                               solution['url'])
+
   try:
     checkout = CheckoutFactory(checkout_type, options, checkout_spec, root)
   except KeyError:

@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9979c5c_1b9b382e",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-26T20:21:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fb4a9af_754f4f94",
+      "range": {
+        "startLine": 603,
+        "startChar": 6,
+        "endLine": 603,
+        "endChar": 14
+      },
+      "revId": "e7cf3cdd39c40c033dd885c0141dbe4cf74b5560",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f48dc3b_3bbb1cd0",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-05-26T19:03:40Z",
       "side": 1,
       "message": "same here and below",
+      "range": {
+        "startLine": 1508,
+        "startChar": 6,
+        "endLine": 1508,
+        "endChar": 17
+      },
+      "revId": "e7cf3cdd39c40c033dd885c0141dbe4cf74b5560",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f20b319_cab7fcf0",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-26T20:21:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f48dc3b_3bbb1cd0",
       "range": {
         "startLine": 1508,
         "startChar": 6,

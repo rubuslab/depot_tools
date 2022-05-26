@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f7a2390_ace7ec0e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-26T20:21:35Z",
+      "side": 1,
+      "message": "I added the requested comments and deleted some spurious spaces. No other changes.",
+      "revId": "b53c1e6d9110fa0bdd422aeb02cc579eca1afa83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -384,7 +384,7 @@ class GitWrapper(SCMWrapper):
       new_patch_rev = c['revisions'][curr_rev]['ref']
       patch_revs_to_process.append(new_patch_rev)
 
-     # 4. Return the new patch_revs to process.
+    # 4. Return the new patch_revs to process.
     return patch_revs_to_process
 
   def apply_patch_ref(self, patch_repo, patch_rev, target_rev, options,
@@ -1068,56 +1068,89 @@ class GitWrapper(SCMWrapper):
     leave HEAD detached as it makes future updates simpler -- in this case the
     user should first create a new branch or switch to an existing branch before
     making changes in the repo."""
+    in_cog_workspace = True  #self._is_env_cog
+    template_dir = None
+    tmp_dir = ''
     if not options.verbose:
       # git clone doesn't seem to insert a newline properly before printing
       # to stdout
       self.Print('')
-    cfg = gclient_utils.DefaultIndexPackConfig(url)
-    clone_cmd = cfg + ['clone', '--no-checkout', '--progress']
-    if self.cache_dir:
-      clone_cmd.append('--shared')
-    if options.verbose:
-      clone_cmd.append('--verbose')
-    clone_cmd.append(url)
+
     # If the parent directory does not exist, Git clone on Windows will not
     # create it, so we need to do it manually.
     parent_dir = os.path.dirname(self.checkout_path)
     gclient_utils.safe_makedirs(parent_dir)
 
-    template_dir = None
-    if hasattr(options, 'no_history') and options.no_history:
-      if gclient_utils.IsGitSha(revision):
-        # In the case of a subproject, the pinned sha is not necessarily the
-        # head of the remote branch (so we can't just use --depth=N). Instead,
-        # we tell git to fetch all the remote objects from SHA..HEAD by means of
-        # a template git dir which has a 'shallow' file pointing to the sha.
-        template_dir = tempfile.mkdtemp(
-            prefix='_gclient_gittmp_%s' % os.path.basename(self.checkout_path),
-            dir=parent_dir)
-        self._Run(['init', '--bare', template_dir], options, cwd=self._root_dir)
-        with open(os.path.join(template_dir, 'shallow'), 'w') as template_file:
-          template_file.write(revision)
-        clone_cmd.append('--template=' + template_dir)
+    if in_cog_workspace:
+      clone_cmd = ['citc', 'clone-repo', url, self.checkout_path]
+      m = re.compile(
+          r'^refs(\/.+)?\/((%s)|(heads)|(tags))\/(?P<branch_name>.+)' %
+          self.remote).match(revision)
+      if m:
+        clone_cmd.append(m.group('branch_name'))
       else:
-        # Otherwise, we're just interested in the HEAD. Just use --depth.
-        clone_cmd.append('--depth=1')
+        clone_cmd.append(revision)
 
-    tmp_dir = tempfile.mkdtemp(
-        prefix='_gclient_%s_' % os.path.basename(self.checkout_path),
-        dir=parent_dir)
-    try:
+    else:
+      cfg = gclient_utils.DefaultIndexPackConfig(url)
+      clone_cmd = cfg + ['clone', '--no-checkout', '--progress']
+      if self.cache_dir:
+        clone_cmd.append('--shared')
+      if options.verbose:
+        clone_cmd.append('--verbose')
+      clone_cmd.append(url)
+
+      if hasattr(options, 'no_history') and options.no_history:
+        if gclient_utils.IsGitSha(revision):
+          # In the case of a subproject, the pinned sha is not necessarily the
+          # head of the remote branch (so we can't just use --depth=N). Instead,
+          # we tell git to fetch all the remote objects from SHA..HEAD by means
+          # of a template git dir which has a 'shallow' file pointing to the
+          # sha.
+          template_dir = tempfile.mkdtemp(prefix='_gclient_gittmp_%s' %
+                                          os.path.basename(self.checkout_path),
+                                          dir=parent_dir)
+          self._Run(['init', '--bare', template_dir],
+                    options,
+                    cwd=self._root_dir)
+          with open(os.path.join(template_dir, 'shallow'),
+                    'w') as template_file:
+            template_file.write(revision)
+            clone_cmd.append('--template=' + template_dir)
+        else:
+          # Otherwise, we're just interested in the HEAD. Just use --depth.
+          clone_cmd.append('--depth=1')
+
+      tmp_dir = tempfile.mkdtemp(prefix='_gclient_%s_' %
+                                 os.path.basename(self.checkout_path),
+                                 dir=parent_dir)
       clone_cmd.append(tmp_dir)
+      clone_cmd.append(revision)
+
+    try:
       if self.print_outbuf:
         print_stdout = True
         filter_fn = None
       else:
         print_stdout = False
         filter_fn = self.filter
-      self._Run(clone_cmd, options, cwd=self._root_dir, retry=True,
-                print_stdout=print_stdout, filter_fn=filter_fn)
-      gclient_utils.safe_makedirs(self.checkout_path)
-      gclient_utils.safe_rename(os.path.join(tmp_dir, '.git'),
-                                os.path.join(self.checkout_path, '.git'))
+
+      try:
+        self._Run(clone_cmd,
+                  options,
+                  cwd=self._root_dir,
+                  retry=True,
+                  print_stdout=print_stdout,
+                  filter_fn=filter_fn)
+      except Exception as e:
+        print("ERROR!!!!! ", e, url)
+      if in_cog_workspace:
+        self._Run(['-C', self.checkout_path, 'sparse-checkout', 'reapply'],
+                  options,
+                  cwd=self._root_dir,
+                  retry=True,
+                  print_stdout=print_stdout,
+                  filter_fn=filter_fn)
       # TODO(https://github.com/git-for-windows/git/issues/2569): Remove once
       # fixed.
       if sys.platform.startswith('win'):
@@ -1130,7 +1163,7 @@ class GitWrapper(SCMWrapper):
       traceback.print_exc(file=self.out_fh)
       raise
     finally:
-      if os.listdir(tmp_dir):
+      if tmp_dir and os.listdir(tmp_dir):
         self.Print('_____ removing non-empty tmp dir %s' % tmp_dir)
       gclient_utils.rmtree(tmp_dir)
       if template_dir:

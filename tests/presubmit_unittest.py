@@ -1789,6 +1789,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
     input_api.subprocess.CalledProcessError = fake_CalledProcessError
     input_api.verbose = False
     input_api.is_windows = False
+    input_api.no_diffs = False
 
     input_api.change = change
     input_api.is_committing = committing

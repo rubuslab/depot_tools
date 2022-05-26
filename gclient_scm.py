@@ -227,6 +227,9 @@ class GitWrapper(SCMWrapper):
     self.filter = gclient_utils.GitFilter(**filter_kwargs)
     self._running_under_rosetta = None
 
+    # True if the execution environment is Cog.
+    self._isEnvCog = os.getcwd().startswith('/google/src/cloud')
+
   def GetCheckoutRoot(self):
     return scm.GIT.GetCheckoutRoot(self.checkout_path)
 

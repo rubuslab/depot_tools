@@ -242,12 +242,12 @@ def safe_rename(old, new):
   The only solution is to catch the exception and try again until it works.
   """
   # roughly 10s
-  retries = 100
+  retries = 2
   for i in range(retries):
     try:
       os.rename(old, new)
       break
-    except OSError:
+    except OSError as e:
       if i == (retries - 1):
         # Give up.
         raise

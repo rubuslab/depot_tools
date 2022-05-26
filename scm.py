@@ -197,6 +197,7 @@ class GIT(object):
   def GetRemoteHeadRef(cwd, url, remote):
     """Returns the full default remote branch reference, e.g.
     'refs/remotes/origin/main'."""
+    print("GETTING HEAD REF", url, remote)
     if os.path.exists(cwd):
       try:
         # Try using local git copy first

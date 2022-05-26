@@ -223,76 +223,72 @@ class GclientTest(trial_dir.TestCase):
     # Invalid urls causes pain when specifying requirements. Make sure it's
     # auto-fixed.
     url = 'proto://host/path/@revision'
-    d = gclient.Dependency(
-        parent=None,
-        name='name',
-        url=url,
-        managed=None,
-        custom_deps=None,
-        custom_vars=None,
-        custom_hooks=None,
-        deps_file='',
-        should_process=True,
-        should_recurse=False,
-        relative=False,
-        condition=None,
-        print_outbuf=True)
+    d = gclient.Dependency(parent=None,
+                           name='name',
+                           url=url,
+                           managed=None,
+                           custom_deps=None,
+                           custom_vars=None,
+                           custom_hooks=None,
+                           deps_file='',
+                           should_process=True,
+                           should_recurse=False,
+                           relative=False,
+                           condition=None,
+                           protocol='https',
+                           print_outbuf=True)
     self.assertEqual('proto://host/path@revision', d.url)
 
   def testStr(self):
     parser = gclient.OptionParser()
     options, _ = parser.parse_args([])
     obj = gclient.GClient('foo', options)
-    obj.add_dependencies_and_close(
-      [
-        gclient.Dependency(
-            parent=obj,
-            name='foo',
-            url='svn://example.com/foo',
-            managed=None,
-            custom_deps=None,
-            custom_vars=None,
-            custom_hooks=None,
-            deps_file='DEPS',
-            should_process=True,
-            should_recurse=True,
-            relative=False,
-            condition=None,
-            print_outbuf=True),
-        gclient.Dependency(
-            parent=obj,
-            name='bar',
-            url='svn://example.com/bar',
-            managed=None,
-            custom_deps=None,
-            custom_vars=None,
-            custom_hooks=None,
-            deps_file='DEPS',
-            should_process=True,
-            should_recurse=False,
-            relative=False,
-            condition=None,
-            print_outbuf=True),
-      ],
-      [])
-    obj.dependencies[0].add_dependencies_and_close(
-      [
-        gclient.Dependency(
-            parent=obj.dependencies[0],
-            name='foo/dir1',
-            url='svn://example.com/foo/dir1',
-            managed=None,
-            custom_deps=None,
-            custom_vars=None,
-            custom_hooks=None,
-            deps_file='DEPS',
-            should_process=True,
-            should_recurse=False,
-            relative=False,
-            condition=None,
-            print_outbuf=True),
-      ],
-      [])
+    obj.add_dependencies_and_close([
+        gclient.Dependency(parent=obj,
+                           name='foo',
+                           url='svn://example.com/foo',
+                           managed=None,
+                           custom_deps=None,
+                           custom_vars=None,
+                           custom_hooks=None,
+                           deps_file='DEPS',
+                           should_process=True,
+                           should_recurse=True,
+                           relative=False,
+                           condition=None,
+                           protocol='https',
+                           print_outbuf=True),
+        gclient.Dependency(parent=obj,
+                           name='bar',
+                           url='svn://example.com/bar',
+                           managed=None,
+                           custom_deps=None,
+                           custom_vars=None,
+                           custom_hooks=None,
+                           deps_file='DEPS',
+                           should_process=True,
+                           should_recurse=False,
+                           relative=False,
+                           condition=None,
+                           protocol='https',
+                           print_outbuf=True),
+    ], [])
+    obj.dependencies[0].add_dependencies_and_close([
+        gclient.Dependency(parent=obj.dependencies[0],
+                           name='foo/dir1',
+                           url='svn://example.com/foo/dir1',
+                           managed=None,
+                           custom_deps=None,
+                           custom_vars=None,
+                           custom_hooks=None,
+                           deps_file='DEPS',
+                           should_process=True,
+                           should_recurse=False,
+                           relative=False,
+                           condition=None,
+                           protocol='https',
+                           print_outbuf=True),
+    ], [])
     # TODO(ehmaldonado): Improve this test.
     # Make sure __str__() works fine.
     # pylint: disable=protected-access
@@ -1293,24 +1289,22 @@ class GclientTest(trial_dir.TestCase):
     obj = gclient.GClient('foo', options)
     cipd_root = gclient_scm.CipdRoot(
         os.path.join(self.root_dir, 'dir1'), 'https://example.com')
-    obj.add_dependencies_and_close(
-      [
-        gclient.Dependency(
-            parent=obj,
-            name='foo',
-            url='svn://example.com/foo',
-            managed=None,
-            custom_deps=None,
-            custom_vars=None,
-            custom_hooks=None,
-            deps_file='DEPS',
-            should_process=True,
-            should_recurse=True,
-            relative=False,
-            condition=None,
-            print_outbuf=True),
-      ],
-      [])
+    obj.add_dependencies_and_close([
+        gclient.Dependency(parent=obj,
+                           name='foo',
+                           url='svn://example.com/foo',
+                           managed=None,
+                           custom_deps=None,
+                           custom_vars=None,
+                           custom_hooks=None,
+                           deps_file='DEPS',
+                           should_process=True,
+                           should_recurse=True,
+                           relative=False,
+                           condition=None,
+                           protocol='https',
+                           print_outbuf=True),
+    ], [])
     obj.dependencies[0].add_dependencies_and_close(
       [
         gclient.CipdDependency(

@@ -1400,9 +1400,6 @@ solutions = %(solution_list)s
 """)
 
   def __init__(self, root_dir, options):
-    # Do not change previous behavior. Only solution level and immediate DEPS
-    # are processed.
-    self._recursion_limit = 2
     super(GClient, self).__init__(
         parent=None,
         name=None,

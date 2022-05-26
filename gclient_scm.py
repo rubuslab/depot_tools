@@ -9,6 +9,7 @@ from __future__ import print_function
 import collections
 import contextlib
 import errno
+from functools import cached_property
 import json
 import logging
 import os
@@ -214,6 +215,11 @@ class GitWrapper(SCMWrapper):
       return git_cache.Mirror.GetCachePath()
     except RuntimeError:
       return None
+
+  @cached_property
+  def _isEnvCog(self):
+    """Returns true if the execution environment is Cog."""
+    return os.getcwd().startswith('/google/src/cloud')
 
   def __init__(self, url=None, *args, **kwargs):
     """Removes 'git+' fake prefix from git URL."""

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4155326_28a3a963",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-05-26T20:48:41Z",
+      "side": 1,
+      "message": "iirc, we discussed that we wanted to auto update https -\u003e sso when we\u0027ve detected that we\u0027re in a cog workspace rather than requiring users to add `-p\u003dsso`.\n\nIs that still the plan? ",
+      "revId": "23f17ac09d7a5f00e55b15f4ee33c30bff87fda5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

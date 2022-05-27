@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2c41637d_dc1b9ccc",
+        "filename": "fetch.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T16:23:09Z",
+      "side": 1,
+      "message": "The design doc was written with the idea that `https` would be the default in the DEPS file to avoid confusion. I guess keeping it generic is fine too.",
+      "parentUuid": "fe014729_32f9a1c7",
+      "revId": "ee23c02e9b2ed06ed0f5b6dd1427fbeb6689c782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fef84c5d_37be4e88",
         "filename": "fetch.py",
         "patchSetId": 11
@@ -31,6 +49,30 @@
       "writtenOn": "2022-05-25T19:24:23Z",
       "side": 1,
       "message": "Should we make this generic? ie:\n\n   \u0027^([a-z]+]):\u0027, , options.protocol_override + \u0027:\u0027, solution[\u0027url\u0027]\n   \n\nor use split",
+      "range": {
+        "startLine": 268,
+        "startChar": 10,
+        "endLine": 268,
+        "endChar": 15
+      },
+      "revId": "ee23c02e9b2ed06ed0f5b6dd1427fbeb6689c782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3a2feaf_e40fc598",
+        "filename": "fetch.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T16:23:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fef84c5d_37be4e88",
       "range": {
         "startLine": 268,
         "startChar": 10,
@@ -58,6 +100,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45d8ae50_43f7fdba",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1357,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T16:23:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "831af9f7_8125c5ef",
+      "revId": "ee23c02e9b2ed06ed0f5b6dd1427fbeb6689c782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f906312_6a2c1f43",
@@ -81,6 +141,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff3df69e_9a819221",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1542,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T16:23:09Z",
+      "side": 1,
+      "message": "There were some cases in the integration tests where the URL can be set to None. I\u0027m not sure if this is a real-world use case though.",
+      "parentUuid": "4f906312_6a2c1f43",
+      "range": {
+        "startLine": 1542,
+        "startChar": 46,
+        "endLine": 1542,
+        "endChar": 71
+      },
+      "revId": "ee23c02e9b2ed06ed0f5b6dd1427fbeb6689c782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2527072_e31d8193",
@@ -94,6 +178,30 @@
       "writtenOn": "2022-05-25T19:06:29Z",
       "side": 1,
       "message": "typo?",
+      "range": {
+        "startLine": 1544,
+        "startChar": 58,
+        "endLine": 1544,
+        "endChar": 67
+      },
+      "revId": "ee23c02e9b2ed06ed0f5b6dd1427fbeb6689c782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb74ba0f_910cc53b",
+        "filename": "gclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1544,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T16:23:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2527072_e31d8193",
       "range": {
         "startLine": 1544,
         "startChar": 58,

@@ -16,6 +16,24 @@
       "message": "I\u0027m not sure what sink.report does here. Is there a reason to skip it?",
       "revId": "8d2d507a4974d20d4cac8a8486e31a27aca8b562",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "454a2af8_653151a2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1635,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-05-27T17:00:07Z",
+      "side": 0,
+      "message": "Because we aren\u0027t reraising the exception the execution flow will continue down and line 1648 will do the sink.report() call, I believe. Please check my logic here. I know that this change works for my use-case, but I am reliant on tests and code inspection for other cases.",
+      "parentUuid": "8442c1aa_b5e5692a",
+      "revId": "8d2d507a4974d20d4cac8a8486e31a27aca8b562",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

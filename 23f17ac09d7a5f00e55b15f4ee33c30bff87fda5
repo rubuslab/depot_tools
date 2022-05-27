@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "316bb42f_3ead5761",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T16:31:44Z",
+      "side": 1,
+      "message": "I didn\u0027t realize that was going to be a part of this.\n\nIs the defaulting part only for fetch. As in, if someone writes their own .gclient file and run gclient sync, would we still default to sso?",
+      "parentUuid": "3de4be9a_f36a65cf",
+      "revId": "23f17ac09d7a5f00e55b15f4ee33c30bff87fda5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b82b8250_5f89b085",
         "filename": "gclient_scm.py",
         "patchSetId": 5
@@ -49,6 +67,24 @@
       "writtenOn": "2022-05-26T21:03:57Z",
       "side": 1,
       "message": "nit: Might be useful to be its own function?",
+      "revId": "23f17ac09d7a5f00e55b15f4ee33c30bff87fda5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f519435_593f48ff",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T16:31:44Z",
+      "side": 1,
+      "message": "The previous patchset had this as its own function but given we are supporting py2, I couldn\u0027t use decorators like @cached_property. There is no point in checking this everytime and that\u0027s why I put this as a bool class variable.",
+      "parentUuid": "b82b8250_5f89b085",
       "revId": "23f17ac09d7a5f00e55b15f4ee33c30bff87fda5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

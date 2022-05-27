@@ -34,6 +34,24 @@
       "parentUuid": "8442c1aa_b5e5692a",
       "revId": "8d2d507a4974d20d4cac8a8486e31a27aca8b562",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6df46c6_971f4472",
+        "filename": "presubmit_support.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1635,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T17:09:39Z",
+      "side": 0,
+      "message": "ResultSink seems to report the status of the function to LUCI. I\u0027m not exactly sure on what happens when we skip the error reporting.",
+      "parentUuid": "454a2af8_653151a2",
+      "revId": "8d2d507a4974d20d4cac8a8486e31a27aca8b562",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

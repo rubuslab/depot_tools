@@ -34,6 +34,23 @@
       "parentUuid": "2161be58_0b0ac5b5",
       "revId": "aa663e3c6916bc26a49bfb66e62b12b1bbdcaa82",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efaf92e9_e4b1b3fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T17:09:39Z",
+      "side": 1,
+      "message": "Adding Josip to get a better idea on this.",
+      "revId": "aa663e3c6916bc26a49bfb66e62b12b1bbdcaa82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

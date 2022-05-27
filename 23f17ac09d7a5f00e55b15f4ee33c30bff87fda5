@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "90d74dac_09c03ff2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-05-27T17:05:30Z",
+      "side": 1,
+      "message": "sorry, it could be in a separate CL if it makes sense. i was just wondering about the overall plan. if we know we need to check \"isCog?\" in more than one place, if possible both places should be calling the same code? I wasn\u0027t sure if the plan was to call this from everywhere and if it\u0027s confirmed that scm.is_env_cog is reasonably accessible from everywhere that needs this info etc. \n\n\u003eAs in, if someone writes their own .gclient file and run gclient sync, would we still default to sso?\ni\u0027d vote for defaulting to sso with a warning.",
+      "parentUuid": "316bb42f_3ead5761",
+      "revId": "23f17ac09d7a5f00e55b15f4ee33c30bff87fda5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b82b8250_5f89b085",
         "filename": "gclient_scm.py",
         "patchSetId": 5

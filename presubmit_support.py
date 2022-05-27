@@ -189,6 +189,9 @@ class ThreadPool(object):
     elif cmd[0].endswith('.py'):
       cmd = [vpython] + cmd
 
+    if cmd[0].count('python') > 0 and cmd[0].count('python3') == 0:
+      print('Warning: Python 2 is being used to run %s' % ' '.join(cmd))
+
     # On Windows, scripts on the current directory take precedence over PATH, so
     # that when testing depot_tools on Windows, calling `vpython.bat` will
     # execute the copy of vpython of the depot_tools under test instead of the

@@ -16,6 +16,24 @@
       "message": "What do you think about this change? It would avoid the problem where presubmit --all can\u0027t complete for over a week (as just happened), which would be long enough to let more presubmit errors sneak in unnoticed.",
       "revId": "aa663e3c6916bc26a49bfb66e62b12b1bbdcaa82",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "322e128d_96446279",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-27T16:47:09Z",
+      "side": 1,
+      "message": "I agree, it is frustrating to find new errors every execution. I think this should be a part of the presubmit -all",
+      "parentUuid": "2161be58_0b0ac5b5",
+      "revId": "aa663e3c6916bc26a49bfb66e62b12b1bbdcaa82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

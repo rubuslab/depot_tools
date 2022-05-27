@@ -36,6 +36,8 @@ class GClientSmokeCipd(gclient_smoketest_base.GClientSmokeBase):
         '_cipd': '\n'.join([
             '$ParanoidMode CheckPresence',
             '',
+            '$OverrideInstallMode copy',
+            '',
             '@Subdir src/another_cipd_dep',
             'package1 1.1-cr0',
             'package2 1.13',
@@ -78,6 +80,8 @@ class GClientSmokeCipd(gclient_smoketest_base.GClientSmokeBase):
         '_cipd': '\n'.join([
             '$ParanoidMode CheckPresence',
             '',
+            '$OverrideInstallMode copy',
+            '',
             '@Subdir src/repo12',
             'foo 1.3',
             '',
@@ -100,6 +104,8 @@ class GClientSmokeCipd(gclient_smoketest_base.GClientSmokeBase):
         '_cipd': '\n'.join([
             '$ParanoidMode CheckPresence',
             '',
+            '$OverrideInstallMode copy',
+            '',
             '@Subdir src/repo12',
             'foo 1.3',
             '',
@@ -118,6 +124,8 @@ class GClientSmokeCipd(gclient_smoketest_base.GClientSmokeBase):
     tree.update({
         '_cipd': '\n'.join([
             '$ParanoidMode CheckPresence',
+            '',
+            '$OverrideInstallMode copy',
             '',
             '@Subdir src/repo12',
             'foo 1.3',

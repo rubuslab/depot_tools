@@ -16,6 +16,29 @@
       "message": "jojwang@ could you review this too?",
       "revId": "429f8107cad13af2898d01309996e10482716986",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a67ee0f8_14306708",
+        "filename": "gclient.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1542,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-05-28T01:04:52Z",
+      "side": 1,
+      "message": "I think it\u0027s a little confusing to read that when s[\u0027url\u0027] is falsy we set s[\u0027url\u0027] as the protocol. \nWould `else None` be better? or `https` as that seems to be the default protocol we want for the Dependency class based on line 399?",
+      "range": {
+        "startLine": 1542,
+        "startChar": 58,
+        "endLine": 1542,
+        "endChar": 71
+      },
+      "revId": "429f8107cad13af2898d01309996e10482716986",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

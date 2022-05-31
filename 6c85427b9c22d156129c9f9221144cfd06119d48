@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2078095_b2549174",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2022-05-31T18:39:16Z",
+      "side": 1,
+      "message": "Should this say they always run scripts using Python 2? It looks like the default is Python 2 and this adds the option to use Python 3, but please correct me if I\u0027m misunderstanding.",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 22
+      },
+      "revId": "6c85427b9c22d156129c9f9221144cfd06119d48",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f62e9f4_d6314160",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2022-05-31T18:39:16Z",
+      "side": 1,
+      "message": "LGTM with nit/question",
+      "revId": "6c85427b9c22d156129c9f9221144cfd06119d48",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

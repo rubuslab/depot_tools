@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bcdfd0fa_5771ebfb",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1496,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-05-31T17:29:49Z",
+      "side": 1,
+      "message": "Keeping this in on purpose.\nhttps://stackoverflow.com/questions/43842675/how-to-prevent-truncating-of-string-in-unit-test-python",
+      "range": {
+        "startLine": 1493,
+        "startChar": 0,
+        "endLine": 1496,
+        "endChar": 0
+      },
+      "revId": "7d5d8bfb35bfa5ebf12c398275e6b0618a1fc705",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc45758d_ff0107ed",
+        "filename": "gclient_scm.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-05-31T17:29:49Z",
+      "side": 1,
+      "message": "TODO: remove and replace with however we decide to check if in_cog_workspace.",
+      "range": {
+        "startLine": 1074,
+        "startChar": 23,
+        "endLine": 1074,
+        "endChar": 36
+      },
+      "revId": "1d3d1e8bc00ed00992503b290865adcba4e687cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

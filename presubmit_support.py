@@ -1586,6 +1586,8 @@ class PresubmitExecuter(object):
           # exception if checks add globals to context. E.g. sometimes the
           # Python runtime will add __warningregistry__.
           for function_name in list(context.keys()):
+            if not function_name.count('CheckNoStrCatRedefines') > 0:
+              continue
             if not function_name.startswith('Check'):
               continue
             if function_name.endswith('Commit') and not self.committing:
@@ -1599,7 +1601,7 @@ class PresubmitExecuter(object):
             logging.debug('Running %s done.', function_name)
             self.more_cc.extend(output_api.more_cc)
 
-        else:  # Old format
+        elif False:  # Old format
           if self.committing:
             function_name = 'CheckChangeOnCommit'
           else:
@@ -1739,6 +1741,8 @@ def DoPresubmitChecks(change,
       else:
         skipped_count += 1
     for filename in presubmit_files:
+      if filename != r'c:\src\chromium\src\PRESUBMIT.py':
+        continue
       filename = os.path.abspath(filename)
       if verbose:
         sys.stdout.write('Running %s\n' % filename)

@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3484d414_b5793f41",
+        "filename": "fetch.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-05-31T16:16:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c41637d_dc1b9ccc",
+      "revId": "ee23c02e9b2ed06ed0f5b6dd1427fbeb6689c782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fef84c5d_37be4e88",

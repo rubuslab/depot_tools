@@ -441,6 +441,14 @@ def diff(oldrev, newrev, *args):
   return run('diff', oldrev, newrev, *args)
 
 
+def extract_ref_name(remote, full_refs_str):
+  result = re.compile(r'^refs(\/.+)?\/((%s)|(heads)|(tags))\/(?P<ref_name>.+)' %
+                      remote).match(full_refs_str)
+  if result:
+    return result.group('ref_name')
+  return None
+
+
 def freeze():
   took_action = False
   key = 'depot-tools.freeze-size-limit'

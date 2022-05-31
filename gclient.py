@@ -394,9 +394,21 @@ class DependencySettings(object):
 class Dependency(gclient_utils.WorkItem, DependencySettings):
   """Object that represents a dependency checkout."""
 
-  def __init__(self, parent, name, url, managed, custom_deps,
-               custom_vars, custom_hooks, deps_file, should_process,
-               should_recurse, relative, condition, print_outbuf=False):
+  def __init__(self,
+               parent,
+               name,
+               url,
+               managed,
+               custom_deps,
+               custom_vars,
+               custom_hooks,
+               deps_file,
+               should_process,
+               should_recurse,
+               relative,
+               condition,
+               protocol='https',
+               print_outbuf=False):
     gclient_utils.WorkItem.__init__(self, name)
     DependencySettings.__init__(
         self, parent, url, managed, custom_deps, custom_vars,
@@ -461,6 +473,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # Controls whether we want to print git's output when we first clone the
     # dependency
     self.print_outbuf = print_outbuf
+
+    self.protocol = protocol
 
     if not self.name and self.parent:
       raise gclient_utils.Error('Dependency without name')
@@ -690,7 +704,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             GitDependency(
                 parent=self,
                 name=name,
-                url=url,
+                # Update URL with parent dep's protocol
+                url=GitDependency.updateProtocol(url, self.protocol),
                 managed=True,
                 custom_deps=None,
                 custom_vars=self.custom_vars,
@@ -699,7 +714,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                 should_process=should_process,
                 should_recurse=name in self.recursedeps,
                 relative=use_relative_paths,
-                condition=condition))
+                condition=condition,
+                protocol=self.protocol))
 
     deps_to_add.sort(key=lambda x: x.name)
     return deps_to_add
@@ -1342,6 +1358,15 @@ def _detect_host_os():
 class GitDependency(Dependency):
   """A Dependency object that represents a single git checkout."""
 
+  @staticmethod
+  def updateProtocol(url, protocol):
+    """Updates given URL from https:// to the given protocol"""
+    # only works on https:// url, skips local paths
+    if not url or not protocol or not url.startswith('https'):
+      return url
+
+    return re.sub('^https', protocol, url)
+
   #override
   def GetScmName(self):
     """Always 'git'."""
@@ -1510,22 +1535,25 @@ it or fix the checkout.
     deps_to_add = []
     for s in config_dict.get('solutions', []):
       try:
-        deps_to_add.append(GitDependency(
-            parent=self,
-            name=s['name'],
-            url=s['url'],
-            managed=s.get('managed', True),
-            custom_deps=s.get('custom_deps', {}),
-            custom_vars=s.get('custom_vars', {}),
-            custom_hooks=s.get('custom_hooks', []),
-            deps_file=s.get('deps_file', 'DEPS'),
-            should_process=True,
-            should_recurse=True,
-            relative=None,
-            condition=None,
-            print_outbuf=True))
+        deps_to_add.append(
+            GitDependency(
+                parent=self,
+                name=s['name'],
+                url=s['url'],
+                managed=s.get('managed', True),
+                custom_deps=s.get('custom_deps', {}),
+                custom_vars=s.get('custom_vars', {}),
+                custom_hooks=s.get('custom_hooks', []),
+                deps_file=s.get('deps_file', 'DEPS'),
+                should_process=True,
+                should_recurse=True,
+                relative=None,
+                condition=None,
+                print_outbuf=True,
+                # Pass parent URL protocol down the tree for child deps to use.
+                protocol=s['url'].split('://')[0] if s['url'] else s['url']))
       except KeyError:
-        raise gclient_utils.Error('Invalid .gclient file. Solution is '
+        raise gclient_utils.Error('Invalid .gclient file. Solutiong is '
                                   'incomplete: %s' % s)
     metrics.collector.add(
         'project_urls',
@@ -1752,7 +1780,8 @@ it or fix the checkout.
               GitDependency(
                   parent=self,
                   name=entry,
-                  url=prev_url,
+                  # Update URL with parent dep's protocol
+                  url=GitDependency.updateProtocol(prev_url, self.protocol),
                   managed=False,
                   custom_deps={},
                   custom_vars={},
@@ -1761,7 +1790,8 @@ it or fix the checkout.
                   should_process=True,
                   should_recurse=False,
                   relative=None,
-                  condition=None))
+                  condition=None,
+                  protocol=self.protocol))
           if modified_files and self._options.delete_unversioned_trees:
             print('\nWARNING: \'%s\' is no longer part of this client.\n'
                   'Despite running \'gclient sync -D\' no action was taken '

@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c252b72_5a5e1178",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-05-31T16:48:54Z",
+      "side": 1,
+      "message": "Let\u0027s separate the cipd + gclient changes; We need to roll the new cipd out everywhere (including on bots) before we should use the new setting. We can do that rollout today.",
+      "revId": "eb7500bdfbcd393a71209ce7ec96ffc7850d14b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff86d49a_7e26f8be",
+        "filename": "gclient_scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1547,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-05-31T16:48:54Z",
+      "side": 1,
+      "message": "nit: \"created in copy mode\"",
+      "range": {
+        "startLine": 1547,
+        "startChar": 32,
+        "endLine": 1547,
+        "endChar": 39
+      },
+      "revId": "eb7500bdfbcd393a71209ce7ec96ffc7850d14b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df4bb3bd_57b42f5c",
+        "filename": "tests/gclient_cipd_smoketest.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-05-31T16:48:54Z",
+      "side": 1,
+      "message": "note: you don\u0027t need the extra newlines here (though it doesn\u0027t make a difference)",
+      "revId": "eb7500bdfbcd393a71209ce7ec96ffc7850d14b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

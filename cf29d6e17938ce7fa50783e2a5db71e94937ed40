@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f72b52fc_36f3bd84",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1175774
+      },
+      "writtenOn": "2022-06-01T14:01:51Z",
+      "side": 1,
+      "message": "PTAL, hit this when implementing https://chromium-review.googlesource.com/c/v8/v8/+/3644609",
+      "revId": "cf29d6e17938ce7fa50783e2a5db71e94937ed40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

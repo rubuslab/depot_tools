@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "d532911a_d12a48d4",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1450,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-06-01T21:05:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6002f5f_defce2f3",
+      "range": {
+        "startLine": 1450,
+        "startChar": 6,
+        "endLine": 1450,
+        "endChar": 15
+      },
+      "revId": "0b52692e21f8dd1ea44fccbcae5d0563bc0e0772",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "b3c0e395_0874fe40",
         "filename": "gclient.py",
         "patchSetId": 3
@@ -54,6 +78,30 @@
       "writtenOn": "2022-06-01T20:17:04Z",
       "side": 1,
       "message": "nit: it should start with that, so replace \u0027 replace with \u0027^",
+      "range": {
+        "startLine": 1452,
+        "startChar": 31,
+        "endLine": 1452,
+        "endChar": 32
+      },
+      "revId": "0b52692e21f8dd1ea44fccbcae5d0563bc0e0772",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e342ad3_e0bf18c4",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1452,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-06-01T21:05:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6226eb2_e6fa1a2b",
       "range": {
         "startLine": 1452,
         "startChar": 31,

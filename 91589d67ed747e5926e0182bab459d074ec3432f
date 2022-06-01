@@ -33,6 +33,23 @@
       "message": "Hans, do you have Owners-Override?",
       "revId": "91589d67ed747e5926e0182bab459d074ec3432f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f5a1476_f3cc9a57",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002781
+      },
+      "writtenOn": "2022-06-01T16:48:52Z",
+      "side": 1,
+      "message": "Also to clarify, if the python script is py3 with the appropriate shebang they will work but it seems there are many scripts left to migrate.",
+      "revId": "91589d67ed747e5926e0182bab459d074ec3432f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

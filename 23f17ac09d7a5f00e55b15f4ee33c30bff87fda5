@@ -159,6 +159,24 @@
       "parentUuid": "6e6391ac_302a7f39",
       "revId": "23f17ac09d7a5f00e55b15f4ee33c30bff87fda5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa7b3c2d_f36f1200",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-06-01T17:57:46Z",
+      "side": 1,
+      "message": "Loading the file will result in making extra syscalls that may be unnecessary. It could make testing harder too. As I wrote, this is a nit comment.",
+      "parentUuid": "99151cfe_b47e84c6",
+      "revId": "23f17ac09d7a5f00e55b15f4ee33c30bff87fda5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

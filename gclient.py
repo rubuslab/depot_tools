@@ -1446,6 +1446,14 @@ solutions = %(solution_list)s
     self._cipd_root = None
     self.config_content = None
 
+  @staticmethod
+  def getScheme(url):
+    """Returns the scheme part of the given URL"""
+    if not url or not re.match('([a-z]+)://', url):
+      return None
+
+    return url.split('://')[0]
+
   def _CheckConfig(self):
     """Verify that the config matches the state of the existing checked-out
     solutions."""
@@ -1540,7 +1548,7 @@ it or fix the checkout.
             condition=None,
             print_outbuf=True,
             # Pass parent URL protocol down the tree for child deps to use.
-            protocol=s['url'].split('://')[0] if s['url'] else None))
+            protocol=GClient.getScheme(s['url'])))
       except KeyError:
         raise gclient_utils.Error('Invalid .gclient file. Solution is '
                                   'incomplete: %s' % s)

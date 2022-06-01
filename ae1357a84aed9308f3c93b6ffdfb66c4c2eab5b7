@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2d1ebe0_5aa66994",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1175774
+      },
+      "writtenOn": "2022-06-01T14:10:16Z",
+      "side": 1,
+      "message": "PTAL, I found myself needing these helpers in https://crrev.com/c/3644609",
+      "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

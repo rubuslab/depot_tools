@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "364c0c63_65630078",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-01T17:10:50Z",
+      "side": 1,
+      "message": "What presubmits is this breaking? It sounds like it is correctly detecting broken presubmits and I want to make sure that we can get those fixed. Depending on the severity of the problem it may make sense to fix the presubmits rather than the detection.\n\nAt the very least it would be great to get a link to the failing output.",
+      "revId": "44796c1ebe15804bed28a988d6bc6e4aec415a6f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

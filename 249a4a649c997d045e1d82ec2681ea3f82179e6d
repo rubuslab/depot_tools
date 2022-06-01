@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92d5b870_b0b89b6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-01T23:14:33Z",
+      "side": 1,
+      "message": "Reland this as a warning - it can be upgraded to an error after dependent repos have had time to fix any issues. Fabrice - PTAL.\n(aside: non-run scripts were found in webrtc and in infradata/config and are fixed or being fixed)",
+      "revId": "249a4a649c997d045e1d82ec2681ea3f82179e6d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -46,6 +46,30 @@
       },
       "revId": "1d3d1e8bc00ed00992503b290865adcba4e687cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97e3f3e6_18686435",
+        "filename": "gclient_scm.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-06-02T21:16:38Z",
+      "side": 1,
+      "message": "was just waiting to rebase on aravind\u0027s CL.",
+      "parentUuid": "2447129e_17541fd5",
+      "range": {
+        "startLine": 1074,
+        "startChar": 23,
+        "endLine": 1074,
+        "endChar": 36
+      },
+      "revId": "1d3d1e8bc00ed00992503b290865adcba4e687cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -51,6 +51,24 @@
       "message": "Do we have to warn users somehow that `--no-history` has no effect in cog? It might look like a bug otherwise.",
       "revId": "579043597fbb69cc43c45b4a3febbf941dcafc5c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "534bce5e_a7fdef7c",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1124,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-06-02T20:03:52Z",
+      "side": 1,
+      "message": "I don\u0027t think so; it will just be noise.",
+      "parentUuid": "31d4f6e6_05cd82a5",
+      "revId": "579043597fbb69cc43c45b4a3febbf941dcafc5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

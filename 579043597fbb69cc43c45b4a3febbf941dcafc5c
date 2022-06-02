@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44185a4e_85c8a736",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-06-02T20:12:47Z",
+      "side": 1,
+      "message": "My bad, I thought `self._SetFetchConfig(options)` is throwing the exception raised in 1113.",
+      "parentUuid": "9c1a3151_1dd59be3",
+      "revId": "579043597fbb69cc43c45b4a3febbf941dcafc5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31d4f6e6_05cd82a5",
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "I don\u0027t think so; it will just be noise.",
       "parentUuid": "31d4f6e6_05cd82a5",
+      "revId": "579043597fbb69cc43c45b4a3febbf941dcafc5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d8dac50_24d08588",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1124,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-06-02T20:12:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "534bce5e_a7fdef7c",
       "revId": "579043597fbb69cc43c45b4a3febbf941dcafc5c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

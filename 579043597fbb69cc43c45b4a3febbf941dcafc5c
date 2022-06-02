@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f2672e8_7dc89c5f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-06-02T16:56:17Z",
+      "side": 1,
+      "message": "Nit: fix formatting",
+      "revId": "579043597fbb69cc43c45b4a3febbf941dcafc5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31d4f6e6_05cd82a5",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1124,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-06-02T16:56:17Z",
+      "side": 1,
+      "message": "Do we have to warn users somehow that `--no-history` has no effect in cog? It might look like a bug otherwise.",
+      "revId": "579043597fbb69cc43c45b4a3febbf941dcafc5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

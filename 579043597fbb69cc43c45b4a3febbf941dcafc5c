@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9c1a3151_1dd59be3",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-06-02T17:12:50Z",
+      "side": 1,
+      "message": "can you specify what\u0027s missing with the formatting?",
+      "parentUuid": "7f2672e8_7dc89c5f",
+      "revId": "579043597fbb69cc43c45b4a3febbf941dcafc5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "31d4f6e6_05cd82a5",
         "filename": "gclient_scm.py",
         "patchSetId": 13

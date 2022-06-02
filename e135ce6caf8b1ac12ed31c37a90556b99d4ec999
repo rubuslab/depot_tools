@@ -16,6 +16,23 @@
       "message": "Hi Nico,\nCan you take a look?",
       "revId": "e135ce6caf8b1ac12ed31c37a90556b99d4ec999",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6612cab3_cd1ac8c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-06-02T17:01:20Z",
+      "side": 1,
+      "message": "Conceptually this seems fine to me. I don\u0027t know much about cipd internals though.",
+      "revId": "e135ce6caf8b1ac12ed31c37a90556b99d4ec999",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

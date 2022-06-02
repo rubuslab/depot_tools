@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e966113f_9d69b64c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-06-02T15:30:54Z",
+      "side": 1,
+      "message": "This variable actually exist, but was never set or used before.",
+      "range": {
+        "startLine": 810,
+        "startChar": 12,
+        "endLine": 810,
+        "endChar": 21
+      },
+      "revId": "86882f13fa49ed822f6976337119633e246ae08b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

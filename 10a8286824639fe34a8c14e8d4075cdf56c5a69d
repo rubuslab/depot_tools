@@ -16,6 +16,24 @@
       "message": "Is this issue fixed?",
       "revId": "10a8286824639fe34a8c14e8d4075cdf56c5a69d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d2b59a0_ccd73397",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-06-02T21:16:07Z",
+      "side": 0,
+      "message": "https://github.com/git-for-windows/git/issues/2569 looks fixed afaict",
+      "parentUuid": "9279f5f1_e57a9301",
+      "revId": "10a8286824639fe34a8c14e8d4075cdf56c5a69d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

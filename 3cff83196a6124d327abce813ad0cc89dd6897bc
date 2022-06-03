@@ -16,6 +16,23 @@
       "message": "No autosubmit. Will submit it on Monday.",
       "revId": "3cff83196a6124d327abce813ad0cc89dd6897bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2df33b80_b16c0cdb",
+        "filename": "ninja.bat",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-03T04:22:33Z",
+      "side": 1,
+      "message": "Need code like\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:autoninja.bat;l\u003d49;drc\u003d8798f68baba8214e2aa1d1a70fa14b09540c7de8\nto defer exit code to caller?",
+      "revId": "3cff83196a6124d327abce813ad0cc89dd6897bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

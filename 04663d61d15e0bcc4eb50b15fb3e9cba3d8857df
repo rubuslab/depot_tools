@@ -16,6 +16,24 @@
       "message": "I think removing this broke our builder.\nhttps://logs.chromium.org/logs/chromium/buildbucket/cr-buildbucket/8813221270011806961/+/u/compile__with_patch_/execution_details",
       "revId": "04663d61d15e0bcc4eb50b15fb3e9cba3d8857df",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7869aa7_18dd7e63",
+        "filename": "ninja.exe",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-03T06:42:34Z",
+      "side": 0,
+      "message": "Oh, good catch.\nAnd also autoninja, too\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:autoninja.py;l\u003d151?q\u003dninja.exe\u0026ss\u003dchromium",
+      "parentUuid": "d75b1319_e83f0a30",
+      "revId": "04663d61d15e0bcc4eb50b15fb3e9cba3d8857df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

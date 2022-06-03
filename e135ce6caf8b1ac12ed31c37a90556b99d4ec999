@@ -33,6 +33,24 @@
       "message": "Conceptually this seems fine to me. I don\u0027t know much about cipd internals though.",
       "revId": "e135ce6caf8b1ac12ed31c37a90556b99d4ec999",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b61378e3_2688d690",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-03T00:23:32Z",
+      "side": 1,
+      "message": "Thank you.\nI will land this to see if CIPD ninja packages can be deployed to each environment successfully.\nNote that this CL itself doesn\u0027t switch to CIPD ninja, yet.",
+      "parentUuid": "6612cab3_cd1ac8c6",
+      "revId": "e135ce6caf8b1ac12ed31c37a90556b99d4ec999",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

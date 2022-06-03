@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d75b1319_e83f0a30",
+        "filename": "ninja.exe",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-03T04:40:19Z",
+      "side": 0,
+      "message": "I think removing this broke our builder.\nhttps://logs.chromium.org/logs/chromium/buildbucket/cr-buildbucket/8813221270011806961/+/u/compile__with_patch_/execution_details",
+      "revId": "04663d61d15e0bcc4eb50b15fb3e9cba3d8857df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

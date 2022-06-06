@@ -16,6 +16,46 @@
       "message": "PTAL",
       "revId": "95644e482bbc5ccd3b89068f24a1c751069a76ad",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "110ec44d_411e504a",
+        "filename": "cipd_bin_setup.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-06T08:47:13Z",
+      "side": 1,
+      "message": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/copy#remarks\nsays \n\u003e /b is the default value for copy, unless copy combines files.\n\nSo no need to have this flag?",
+      "range": {
+        "startLine": 8,
+        "startChar": 5,
+        "endLine": 8,
+        "endChar": 7
+      },
+      "revId": "95644e482bbc5ccd3b89068f24a1c751069a76ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36426ac6_e7fe839b",
+        "filename": "ninja.bat",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-06T08:47:13Z",
+      "side": 1,
+      "message": "remove this?",
+      "revId": "95644e482bbc5ccd3b89068f24a1c751069a76ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

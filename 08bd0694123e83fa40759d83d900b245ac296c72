@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec10a038_156ad0b7",
+        "filename": "fetch.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-06-06T17:16:46Z",
+      "side": 1,
+      "message": "Replaced with uppercase `%ERRORLEVEL%` everywhere, because other files prefer it this way.",
+      "parentUuid": "e76b4f54_902eebbf",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1510a20_a207c632",
@@ -77,6 +101,24 @@
       "writtenOn": "2022-06-06T15:56:10Z",
       "side": 1,
       "message": "Why !ERRORLEVEL! instead of %ERRORLEVEL% in these two cases?",
+      "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2b90e17_04725196",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-06-06T17:16:46Z",
+      "side": 1,
+      "message": "That\u0027s a tricky one! `!var!` is \"delayed var expansion\", it\u0027s required sometimes, because:\n\u003e When the cmd parser reads a line or a block of lines (the code inside the parenthesis), all variable reads are replaced with the value inside the variable before starting to execute the code.\n\nWithout this change, `%ERRORLEVEL%` will be replaced with `0` no matter what was returned from `call ...` inside the IF block.\n\nhttps://stackoverflow.com/a/24866713",
+      "parentUuid": "1c7bc07c_3bf58b32",
       "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

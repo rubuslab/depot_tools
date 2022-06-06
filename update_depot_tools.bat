@@ -15,7 +15,7 @@ IF "%~nx0"=="update_depot_tools.bat" (
   if errorlevel 1 goto :EOF
   :: Use call/exit to avoid leaving an orphaned window title.
   call "%TEMP%\update_depot_tools_tmp.bat" "%~dp0" %*
-  exit /b %ERRORLEVEL%
+  goto :EOF
 )
 
 set DEPOT_TOOLS_DIR=%~1
@@ -25,6 +25,7 @@ SHIFT
 IF EXIST "%DEPOT_TOOLS_DIR%.disable_auto_update" GOTO :EOF
 IF "%DEPOT_TOOLS_UPDATE%" == "0" GOTO :EOF
 
+echo Updating depot_tools...
 set GIT_URL=https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
 :: Download git for the first time if it's not present.

@@ -121,6 +121,24 @@
       "parentUuid": "1c7bc07c_3bf58b32",
       "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4179619_23fb66b2",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-06T19:49:15Z",
+      "side": 1,
+      "message": "Got it. Can you put a comment before both usages saying that ! is being used in order to get delayed expansion? I\u0027m sure I won\u0027t be the only person to be confused by that.",
+      "parentUuid": "c2b90e17_04725196",
+      "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

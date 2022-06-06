@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41e3db50_1cf59c6e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-06T15:56:10Z",
+      "side": 1,
+      "message": "Thanks for these fixes. I found https://ss64.org/viewtopic.php?t\u003d16 which validates the general strategy for .bat files. I just have a couple of questions/comments about consistency, and I\u0027m not really qualified to review the non-.bat files.\n",
+      "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e76b4f54_902eebbf",
+        "filename": "fetch.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-06T15:56:10Z",
+      "side": 1,
+      "message": "It feels a bit weird using %errorlevel% and %ERRORLEVEL% on adjacent lines. Can we make it consistent?",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1510a20_a207c632",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-06T15:56:10Z",
+      "side": 1,
+      "message": "It\u0027s too bad that we are using \"if errorlevel 1\" here and comparing the value of %errorlevel% in other batch files, but I\u0027m also fine with not trying to solve all of the world\u0027s consistent problems in this change.",
+      "range": {
+        "startLine": 15,
+        "startChar": 5,
+        "endLine": 15,
+        "endChar": 16
+      },
+      "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c7bc07c_3bf58b32",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-06T15:56:10Z",
+      "side": 1,
+      "message": "Why !ERRORLEVEL! instead of %ERRORLEVEL% in these two cases?",
+      "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -11,7 +11,7 @@ IF "%DEPOT_TOOLS_UPDATE%" == "0" GOTO :CALL_GCLIENT
 call "%~dp0update_depot_tools.bat" %*
 :: Abort the script if we failed to update depot_tools.
 IF %errorlevel% NEQ 0 (
-  goto :EOF
+  exit /b %ERRORLEVEL%
 )
 
 :CALL_GCLIENT

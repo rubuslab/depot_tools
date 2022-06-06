@@ -8,7 +8,7 @@ setlocal
 call "%~dp0\update_depot_tools.bat"
 :: Abort the script if we failed to update depot_tools.
 IF %errorlevel% NEQ 0 (
-  goto :EOF
+  exit /b %ERRORLEVEL%
 )
 
 :: Ensure that "depot_tools" is somewhere in PATH so this tool can be used

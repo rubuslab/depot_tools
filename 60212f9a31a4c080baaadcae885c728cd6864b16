@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d9846ac_b50826d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-06-06T17:57:58Z",
+      "side": 1,
+      "message": "sparse-checkout reapply was added as part of git citc clone-repo after the clone call. we don\u0027t need to call it here.",
+      "revId": "60212f9a31a4c080baaadcae885c728cd6864b16",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

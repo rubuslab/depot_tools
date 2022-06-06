@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbe7c563_2748f5c7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-06T09:15:42Z",
+      "side": 1,
+      "message": "Windows",
+      "range": {
+        "startLine": 12,
+        "startChar": 3,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "2a6877a4ab30ea6ae3a05542ffef3f6c0da6b0af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "907b01ff_f1d4481e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-06T09:15:42Z",
+      "side": 1,
+      "message": "from?",
+      "range": {
+        "startLine": 13,
+        "startChar": 118,
+        "endLine": 13,
+        "endChar": 122
+      },
+      "revId": "2a6877a4ab30ea6ae3a05542ffef3f6c0da6b0af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

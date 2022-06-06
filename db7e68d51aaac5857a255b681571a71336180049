@@ -39,6 +39,29 @@
       },
       "revId": "db7e68d51aaac5857a255b681571a71336180049",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "850cab70_5236e0eb",
+        "filename": "ninja",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-06T09:14:06Z",
+      "side": 1,
+      "message": "I think removing this is fine by assuming user of depot_tools always make sure to run update_depot_tools.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "db7e68d51aaac5857a255b681571a71336180049",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

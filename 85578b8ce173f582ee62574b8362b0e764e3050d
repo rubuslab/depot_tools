@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b858afd_be24faf1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1339017
+      },
+      "writtenOn": "2022-06-06T17:44:19Z",
+      "side": 1,
+      "message": "Hi sky@, you reviewed crrev.com/c/2617579, is this change safe? There are also references in src/ crrev.com/c/3687702",
+      "revId": "85578b8ce173f582ee62574b8362b0e764e3050d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

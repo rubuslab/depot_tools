@@ -16,6 +16,24 @@
       "message": "There are some places that assume the existence of `depot_tools/ninja.exe`.\nBefore switching to CIPD ninja, I will fix the caller side first.",
       "revId": "7273b9b7bc5bbe684b39182d78234a2b69f54b4f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b89e3e6d_d92fc280",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-06T08:43:31Z",
+      "side": 1,
+      "message": "\u003e Before switching to CIPD ninja, I will fix the caller side first.\n\nI changed the plan to copy `depot_tools/.cipd_bin/ninja.exe` to `depot_tools/ninja.exe` in `cipd_bin_setup.bat`. \nThe cipd_bin_setup is called in update_depot_tools, too.",
+      "parentUuid": "5a543656_5040e267",
+      "revId": "7273b9b7bc5bbe684b39182d78234a2b69f54b4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

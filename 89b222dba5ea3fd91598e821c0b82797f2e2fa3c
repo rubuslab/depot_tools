@@ -22,6 +22,30 @@
       },
       "revId": "89b222dba5ea3fd91598e821c0b82797f2e2fa3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb834a6e_1e764c0f",
+        "filename": "ninja",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-06T12:11:55Z",
+      "side": 0,
+      "message": "I confirmed on cygwin and msys.\n\nOn cygwin, \n\n```\njwata@jwata-windows /cygdrive/c/src/depot_tools\n$ which ninja\n/cygdrive/c/src/depot_tools/ninja\n\njwata@jwata-windows /cygdrive/c/src/depot_tools\n$ ninja --version\n1.8.2\n```\n\nOn msys,\n```\njwata@jwata-windows MSYS /c/src/depot_tools\n$ ./ninja --version\n1.8.2\n```\n\n\"$OS\" is \"windows_NT\" for me on the both environments, though.\n\nAs this file was created in 2012, are the CYGWIN/MINGW/MSYS_NT cases old, maybe?\nDo you think those cases are still used?",
+      "parentUuid": "c47ae3ce_06bd14e6",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 38
+      },
+      "revId": "89b222dba5ea3fd91598e821c0b82797f2e2fa3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

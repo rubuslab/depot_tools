@@ -62,6 +62,30 @@
       },
       "revId": "db7e68d51aaac5857a255b681571a71336180049",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ea5286d_322d6a0b",
+        "filename": "ninja",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-06T12:11:55Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "850cab70_5236e0eb",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "db7e68d51aaac5857a255b681571a71336180049",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

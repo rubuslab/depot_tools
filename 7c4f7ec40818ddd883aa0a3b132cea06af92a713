@@ -22,6 +22,30 @@
       },
       "revId": "7c4f7ec40818ddd883aa0a3b132cea06af92a713",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa5a1bd7_cfc9b7bc",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1128437
+      },
+      "writtenOn": "2022-06-07T22:54:05Z",
+      "side": 1,
+      "message": "Also seeing this, we should probably revert since this just breaks gclient sync as of now.\n\nStackoverflow says this about :: and enabledelayedexpansion:\n\n\":: may also fail within setlocal ENABLEDELAYEDEXPANSION\"\n\nhttps://stackoverflow.com/questions/11269338/how-to-comment-out-add-comment-in-a-batch-cmd",
+      "parentUuid": "6f99cf6c_f13da68d",
+      "range": {
+        "startLine": 18,
+        "startChar": 54,
+        "endLine": 18,
+        "endChar": 66
+      },
+      "revId": "7c4f7ec40818ddd883aa0a3b132cea06af92a713",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

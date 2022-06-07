@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c404589c_6f9b0e1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-06-07T13:23:58Z",
+      "side": 1,
+      "message": "Woohoo!\n\nI\u0027d update the CL desc to say that cipd ninja at the moment is also 1.8.2 and I\u0027d explicitly say that this doesn\u0027t change the version of ninja, but only how ninja was built.",
+      "revId": "6126f79ed2d478d6d607c27b6b12ec9ebd462834",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6040d6f8_9771bb95",
+        "filename": "cipd_bin_setup.bat",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-06-07T13:23:58Z",
+      "side": 1,
+      "message": "(scottmg at some point made a thing that converts a bat file to an exe -- the exe basically just shelled out to cmd to call the bat file. That could work too, but I like your approach better. I also can\u0027t find scottmg\u0027s tool.)",
+      "revId": "6126f79ed2d478d6d607c27b6b12ec9ebd462834",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

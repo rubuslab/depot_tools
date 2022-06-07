@@ -33,6 +33,24 @@
       "message": "It seems to be not strictly necessary according to https://unix.stackexchange.com/questions/97560/are-quotes-needed-for-local-variable-assignment, but should we quote the right part of this assignment like it was in the older script just as a general practice?\n\n```\nMYPATH\u003d\"$(dirname ...)\"\n```",
       "revId": "ef4ccfe0a7e4ebf70c45507fce3273f270e96124",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91269ead_c2344ae1",
+        "filename": "ninja",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-07T04:55:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9a568c9_4e6e4618",
+      "revId": "ef4ccfe0a7e4ebf70c45507fce3273f270e96124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

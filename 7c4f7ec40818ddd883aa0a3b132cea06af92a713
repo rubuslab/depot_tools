@@ -46,6 +46,30 @@
       },
       "revId": "7c4f7ec40818ddd883aa0a3b132cea06af92a713",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdf394ab_67ebf7f7",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-06-07T22:58:01Z",
+      "side": 1,
+      "message": "Thanks for comments and pointing to the problem. I reverted this change.",
+      "parentUuid": "aa5a1bd7_cfc9b7bc",
+      "range": {
+        "startLine": 18,
+        "startChar": 54,
+        "endLine": 18,
+        "endChar": 66
+      },
+      "revId": "7c4f7ec40818ddd883aa0a3b132cea06af92a713",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

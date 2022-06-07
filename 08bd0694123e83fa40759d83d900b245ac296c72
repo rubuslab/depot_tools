@@ -139,6 +139,24 @@
       "parentUuid": "c2b90e17_04725196",
       "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0001560_d9b331ba",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-06-07T06:14:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4179619_23fb66b2",
+      "revId": "08bd0694123e83fa40759d83d900b245ac296c72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

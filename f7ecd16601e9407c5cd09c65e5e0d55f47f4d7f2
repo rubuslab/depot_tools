@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "396e71ec_00dc0ca2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-06-07T06:14:05Z",
+      "side": 1,
+      "message": "Added delayed expansion syntax reasoning.",
+      "revId": "f7ecd16601e9407c5cd09c65e5e0d55f47f4d7f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb740abe_1970789d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-07T02:36:20Z",
+      "side": 1,
+      "message": "Adding sokcevic@ to get an owner approval.\nPTAL",
+      "revId": "ef4ccfe0a7e4ebf70c45507fce3273f270e96124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

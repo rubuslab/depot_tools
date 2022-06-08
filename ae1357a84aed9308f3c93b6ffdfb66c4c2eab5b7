@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "acda4677_32ac30ec",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-06-08T17:06:32Z",
+      "side": 1,
+      "message": "Nit: Can you add a docstring for this?",
+      "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4b1bfc90_b4e63d8f",
         "filename": "gerrit_util.py",
         "patchSetId": 1
@@ -77,6 +94,23 @@
         "endLine": 788,
         "endChar": 66
       },
+      "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "550ee875_bde8035b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-06-08T17:06:32Z",
+      "side": 1,
+      "message": "Is there a reason to `read()` the `ReadHttpResponse` here? The other helpers here seem to directly return the stream.",
       "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

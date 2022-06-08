@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63fc87de_c0b2b696",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-06-08T06:19:56Z",
+      "side": 1,
+      "message": "That\u0027s unfortunate. I guess I should test even comments from now on!\nA reland with proper comments is created:\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3694973",
+      "revId": "7c4f7ec40818ddd883aa0a3b132cea06af92a713",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f99cf6c_f13da68d",

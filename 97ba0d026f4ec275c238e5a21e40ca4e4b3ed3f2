@@ -70,6 +70,23 @@
       "parentUuid": "cb1cc8a9_c8ff6919",
       "revId": "97ba0d026f4ec275c238e5a21e40ca4e4b3ed3f2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fe032be_f455078c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-08T18:19:53Z",
+      "side": 1,
+      "message": "I by patching it in and running gclient sync. Unfortunately update_depot_tools.bat checks out origin/main so the remainder of the test proceeds without the patch. I then remembered the hack way of preventing this which is to modify one of the files in the local branch so that checking out origin/main gives this error:\n  error: Your local changes to the following files would be overwritten by checkout:\nPreviously this error would occur and then \"gclient sync\" would continue. Now the process halts, because you\u0027re now returning exit codes.\nThat is, users cannot proceed without updating depot_tools.\nGiven the problems that have been reported lately by depot_tools not updating this seems like a good and desirable thing.",
+      "revId": "97ba0d026f4ec275c238e5a21e40ca4e4b3ed3f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,24 @@
       "message": "add recipes attribute?",
       "revId": "00f9b261917715f9cbe2ffd03c39f227543fa72d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e66d87d6_253dd127",
+        "filename": ".gitattributes",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-08T07:59:10Z",
+      "side": 1,
+      "message": "Sorry, forgot the most important part of this CL!",
+      "parentUuid": "efdb535b_4e76c4a9",
+      "revId": "00f9b261917715f9cbe2ffd03c39f227543fa72d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

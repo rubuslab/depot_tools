@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d3eb2ba_c6f38428",
+        "filename": "fetch_configs/chromium.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1339017
+      },
+      "writtenOn": "2022-06-08T15:47:40Z",
+      "side": 0,
+      "message": "Josip, is this field still relevant now? It\u0027s unclear to me",
+      "range": {
+        "startLine": 31,
+        "startChar": 18,
+        "endLine": 31,
+        "endChar": 29
+      },
+      "revId": "f5d3b1b68b6dc0eb8531fb274754ae5c3cfcbd2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

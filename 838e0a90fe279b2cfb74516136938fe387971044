@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a635fe6_07f6b2ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-08T04:09:40Z",
+      "side": 1,
+      "message": "This is good. However I have two suggestions for improvements:\n1) It would be nice if the message said what to do next, or explained why this matter. \"Consider deleting depot_tools and recreating based on the instructions at https://...\" or \"depot_tools will not be updated unless it is rebuilt as a git repo\"\n2) It would be nice if this worked on Windows as well, although that could reasonably be deemed out of scope.\n\nBut, this is certainly an improvement over silently doing nothing.",
+      "revId": "838e0a90fe279b2cfb74516136938fe387971044",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

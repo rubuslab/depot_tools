@@ -70,6 +70,30 @@
       },
       "revId": "7c4f7ec40818ddd883aa0a3b132cea06af92a713",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c20ccb8f_de43325e",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-08T04:32:30Z",
+      "side": 1,
+      "message": "This is one of those fun reverts where anybody who synced at the wrong time (after this change, before the revert) will no longer get depot_tools automatically updated and will have to manually update it to get past this. I hit this and knew to run \"git rebase-update\" in depot_tools, but others may not, FWIW.\n\nI\u0027m not sure where to share this information.",
+      "parentUuid": "bdf394ab_67ebf7f7",
+      "range": {
+        "startLine": 18,
+        "startChar": 54,
+        "endLine": 18,
+        "endChar": 66
+      },
+      "revId": "7c4f7ec40818ddd883aa0a3b132cea06af92a713",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

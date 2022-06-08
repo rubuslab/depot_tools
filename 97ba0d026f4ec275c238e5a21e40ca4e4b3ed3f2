@@ -34,6 +34,24 @@
       "parentUuid": "6ec62312_6dd9a8f6",
       "revId": "97ba0d026f4ec275c238e5a21e40ca4e4b3ed3f2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb1cc8a9_c8ff6919",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-06-08T16:17:07Z",
+      "side": 1,
+      "message": "Bruce Dawson mentioned that `REM` also has own flaws. A quick search revealed this thread [1] which has some interesting cases when `REM` may also fail in an unexpected way.\n\n1. https://superuser.com/questions/1610492/why-does-this-batch-file-fail-on-a-rem-line",
+      "parentUuid": "3040e07c_d9cd6def",
+      "revId": "97ba0d026f4ec275c238e5a21e40ca4e4b3ed3f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

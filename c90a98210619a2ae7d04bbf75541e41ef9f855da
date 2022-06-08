@@ -33,6 +33,24 @@
       "message": "Another different breakage on a one-off recipe of V8:\nhttp://shortn/_N7fwoPlzis",
       "revId": "c90a98210619a2ae7d04bbf75541e41ef9f855da",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51e67dd6_069efc51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-08T06:48:11Z",
+      "side": 1,
+      "message": "Sorry for the disruption.\nI didn\u0027t notice that `ninja` in recipe bundle is used.\nI will add a step to ensure `depot_tools/.cipd_bin` before calling ninja.",
+      "parentUuid": "1cd6fae6_1275d23d",
+      "revId": "c90a98210619a2ae7d04bbf75541e41ef9f855da",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

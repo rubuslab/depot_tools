@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a30bf003_41669d05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-06-08T19:31:26Z",
+      "side": 1,
+      "message": "lgtm (but as I mentioned in the bug, this is just the tip of the iceberg 😊)",
+      "revId": "b142c01ff2196c085f4ab0c4e19376afd0392e2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

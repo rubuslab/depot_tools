@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "657f081e_94fbc652",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-08T18:23:10Z",
+      "side": 1,
+      "message": "This is a follow-on to another CL that you reviewed, which should make error-free presubmit --all more reliable. PTAL.",
+      "revId": "431f6df8438ca9ec2a23261eaf2b597c52b92dd1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

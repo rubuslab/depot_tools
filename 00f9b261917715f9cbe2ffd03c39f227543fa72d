@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efdb535b_4e76c4a9",
+        "filename": ".gitattributes",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-08T07:32:39Z",
+      "side": 1,
+      "message": "add recipes attribute?",
+      "revId": "00f9b261917715f9cbe2ffd03c39f227543fa72d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

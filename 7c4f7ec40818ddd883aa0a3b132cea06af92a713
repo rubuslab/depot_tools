@@ -111,6 +111,30 @@
       },
       "revId": "7c4f7ec40818ddd883aa0a3b132cea06af92a713",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9c6e741_e072aba1",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-06-08T16:31:08Z",
+      "side": 1,
+      "message": "I don\u0027t think this warrants a PSA to a huge mailing lists (chromium eng or infra announce) given the revert was in after 4h and we haven\u0027t seen any reports in crbug.",
+      "parentUuid": "c20ccb8f_de43325e",
+      "range": {
+        "startLine": 18,
+        "startChar": 54,
+        "endLine": 18,
+        "endChar": 66
+      },
+      "revId": "7c4f7ec40818ddd883aa0a3b132cea06af92a713",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

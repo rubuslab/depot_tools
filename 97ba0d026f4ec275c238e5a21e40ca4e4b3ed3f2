@@ -52,6 +52,24 @@
       "parentUuid": "3040e07c_d9cd6def",
       "revId": "97ba0d026f4ec275c238e5a21e40ca4e4b3ed3f2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba1c3b68_5b91bdf4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-08T17:42:58Z",
+      "side": 1,
+      "message": "That is some interesting reading. I\u0027ve hit these issues before but never really investigated them. In particular, this will overwrite important_file. Yikes!\n\nREM some_command \u003e important_file",
+      "parentUuid": "cb1cc8a9_c8ff6919",
+      "revId": "97ba0d026f4ec275c238e5a21e40ca4e4b3ed3f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

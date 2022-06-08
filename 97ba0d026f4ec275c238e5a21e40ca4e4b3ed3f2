@@ -16,6 +16,24 @@
       "message": "This is a reland instead of a standalone CL as brucedawson@ suggested. I like this better, it will actually keep the full history.\n\nI\u0027ve disabled `delayedexpansion` after the required block to not break something down the road.\n\nAlso tested the issue a little. Turns out it is triggered even without  enabledelayedexpansion . When a multiline comment starting with  ::  is written inside an IF/FOR block with  ()  on the second line, CMD doesn\u0027t work well:\n```\n:: line 1 test\n:: line 2 () test    \u003c-- this is fine\n:: ()                \u003c-- this is also fine\nIF 1 \u003d\u003d 1 (\n  :: line 1 test\n  :: line 2 () test  \u003c-- this is bad\n)\nIF 1 \u003d\u003d 1 (\n  :: line 1\n  :: ()              \u003c-- this is also bad\n)\n```",
       "revId": "97ba0d026f4ec275c238e5a21e40ca4e4b3ed3f2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3040e07c_d9cd6def",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128437
+      },
+      "writtenOn": "2022-06-08T16:10:38Z",
+      "side": 1,
+      "message": "I would recommend replacing :: with REM - the latter seems to be the \"right\" way to comment in batch files.",
+      "parentUuid": "6ec62312_6dd9a8f6",
+      "revId": "97ba0d026f4ec275c238e5a21e40ca4e4b3ed3f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

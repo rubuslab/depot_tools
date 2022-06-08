@@ -94,6 +94,30 @@
       },
       "revId": "89b222dba5ea3fd91598e821c0b82797f2e2fa3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe44126a_a2644f42",
+        "filename": "ninja",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-08T02:50:52Z",
+      "side": 0,
+      "message": "Thank you for the suggestion. `autoninja` doesn\u0027t have issue on my cygwin/msys, too.\n\nOn msys\n\n```\njwata@jwata-windows MSYS /c/src/depot_tools\n$ ./autoninja --version\n1.8.2\n```\n\nOn cygwin\n\n```\njwata@jwata-windows ~\n$ which autoninja\n/cygdrive/c/src/depot_tools/autoninja\n\njwata@jwata-windows ~\n$ autoninja --version\n1.8.2\n```",
+      "parentUuid": "c4f638c6_dd29b7b1",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 38
+      },
+      "revId": "89b222dba5ea3fd91598e821c0b82797f2e2fa3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

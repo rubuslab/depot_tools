@@ -130,6 +130,8 @@ if [ "X$DEPOT_TOOLS_UPDATE" != "X0" ]; then
     cd "$base_dir"
     update_git_repo
     cd - > /dev/null
+  else
+    echo "Warning: Your depot_tools directory does not appear to be a git repository" 1>&2
   fi
 
   # Sync CIPD-boostrapped packages.

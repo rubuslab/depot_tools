@@ -22,6 +22,30 @@
       },
       "revId": "f5d3b1b68b6dc0eb8531fb274754ae5c3cfcbd2b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83b58df3_1a028ac2",
+        "filename": "fetch_configs/chromium.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-06-08T16:42:00Z",
+      "side": 0,
+      "message": "Yeah, it\u0027s used by some other projects, e.g. https://chromium.googlesource.com/devtools/devtools-frontend/+/37b00aeb4eca8b70354a62241fa0e1d601d130c1/docs/workflows.md#flavor-2_a-single-gclient-project",
+      "parentUuid": "6d3eb2ba_c6f38428",
+      "range": {
+        "startLine": 31,
+        "startChar": 18,
+        "endLine": 31,
+        "endChar": 29
+      },
+      "revId": "f5d3b1b68b6dc0eb8531fb274754ae5c3cfcbd2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

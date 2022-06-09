@@ -18,6 +18,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5322889d_11204779",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-09T12:50:39Z",
+      "side": 1,
+      "message": "Need to test with led.",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48311bd2_0facb7f8",
@@ -60,6 +77,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d02ded24_7c8987db",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-09T12:50:39Z",
+      "side": 1,
+      "message": "Would it make sense to call cipd_bin_setup() in __init__()?\nI\u0027m hesitating to call cipd ensure at every time when accessing ninja_path/autoninja_path properties.",
+      "parentUuid": "acd576be_af76757e",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a072f654_fcc5cb73",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7
@@ -83,6 +118,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7e895e93_88800054",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-09T12:50:39Z",
+      "side": 1,
+      "message": "I see. Indeed, I should check the behavior using led.",
+      "parentUuid": "a072f654_fcc5cb73",
+      "range": {
+        "startLine": 80,
+        "startChar": 48,
+        "endLine": 80,
+        "endChar": 54
+      },
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2245c8e0_2c57ddfb",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7
@@ -94,6 +153,30 @@
       "writtenOn": "2022-06-09T11:30:12Z",
       "side": 1,
       "message": "It might be better to call cipd_bin_setup.bat on Windows.\n\n+Robbie for .bat file execution on recipe.",
+      "range": {
+        "startLine": 81,
+        "startChar": 40,
+        "endLine": 81,
+        "endChar": 54
+      },
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b181ca3d_d30baae8",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-09T12:50:39Z",
+      "side": 1,
+      "message": "Will check the behavior with led.",
+      "parentUuid": "2245c8e0_2c57ddfb",
       "range": {
         "startLine": 81,
         "startChar": 40,

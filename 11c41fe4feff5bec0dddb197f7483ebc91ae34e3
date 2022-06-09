@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "721a1b3c_87b8bf39",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-09T05:47:40Z",
+      "side": 1,
+      "message": "Could you check this is sufficient by creating bundle?\n\nI think running `./recipes.py bundle` under recipes dir makes bundle dir and you can check cipd_bin_setup.{sh, bat} works fine there.",
+      "revId": "11c41fe4feff5bec0dddb197f7483ebc91ae34e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

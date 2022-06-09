@@ -16,6 +16,92 @@
       "message": "(Maybe not good idea too auto-submit)",
       "revId": "89f8f90db51925661d5332b289f49020675b0c94",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48311bd2_0facb7f8",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-09T11:30:12Z",
+      "side": 1,
+      "message": "make this private function?",
+      "range": {
+        "startLine": 76,
+        "startChar": 6,
+        "endLine": 76,
+        "endChar": 20
+      },
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "acd576be_af76757e",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-09T11:30:12Z",
+      "side": 1,
+      "message": "better to run this function only once",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a072f654_fcc5cb73",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-09T11:30:12Z",
+      "side": 1,
+      "message": "I feel it is better to run something like `bash -c \u0027source cipd_bin_setup.sh; cipd_bin_setup\u0027`.\n\nI\u0027m not sure `source` is effective to succeeding step in recipe.",
+      "range": {
+        "startLine": 80,
+        "startChar": 48,
+        "endLine": 80,
+        "endChar": 54
+      },
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2245c8e0_2c57ddfb",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-09T11:30:12Z",
+      "side": 1,
+      "message": "It might be better to call cipd_bin_setup.bat on Windows.\n\n+Robbie for .bat file execution on recipe.",
+      "range": {
+        "startLine": 81,
+        "startChar": 40,
+        "endLine": 81,
+        "endChar": 54
+      },
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

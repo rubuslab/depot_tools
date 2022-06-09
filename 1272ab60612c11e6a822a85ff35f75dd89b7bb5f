@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f82b31d8_8139ce2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-09T21:48:01Z",
+      "side": 1,
+      "message": "This makes usage of Python 2 during presubmits visible, finally, which will help those who are already working on fixing this, and should help recruit a few others who will suddenly realize what is happening.",
+      "revId": "1272ab60612c11e6a822a85ff35f75dd89b7bb5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

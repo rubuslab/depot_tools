@@ -8,4 +8,5 @@ DEPS = [
   'recipe_engine/context',
   'recipe_engine/platform',
   'recipe_engine/runtime',
+  'recipe_engine/step',
 ]

@@ -43,10 +43,22 @@
   },
   {
     "cmd": [
+      "cipd_bin_setup"
+    ],
+    "name": "run cipd_bin_setup"
+  },
+  {
+    "cmd": [
       "ls",
       "RECIPE_REPO[depot_tools]\\ninja.exe"
     ],
     "name": "ninja_path"
+  },
+  {
+    "cmd": [
+      "cipd_bin_setup"
+    ],
+    "name": "run cipd_bin_setup (2)"
   },
   {
     "cmd": [

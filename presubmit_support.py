@@ -1712,6 +1712,7 @@ def DoPresubmitChecks(change,
     os.environ = os.environ.copy()
     os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
 
+
     python_version = 'Python %s' % sys.version_info.major
     if committing:
       sys.stdout.write('Running %s presubmit commit checks ...\n' %
@@ -1725,6 +1726,10 @@ def DoPresubmitChecks(change,
     if not presubmit_files and verbose:
       sys.stdout.write('Warning, no PRESUBMIT.py found.\n')
     results = []
+    depot_tools = os.path.dirname(os.path.abspath(__file__))
+    python2_usage_log_file = os.path.join(depot_tools, 'python2_usage.txt')
+    if os.path.exists(python2_usage_log_file):
+      os.remove(python2_usage_log_file)
     thread_pool = ThreadPool()
     executer = PresubmitExecuter(change, committing, verbose, gerrit_obj,
                                  dry_run, thread_pool, parallel, use_python3,
@@ -1750,6 +1755,17 @@ def DoPresubmitChecks(change,
         skipped_count += 1
 
     results += thread_pool.RunAsync()
+
+    if os.path.exists(python2_usage_log_file):
+      with open(python2_usage_log_file) as f:
+        #python2_usage = list(map(strip, f.readlines()))
+        python2_usage = [x.strip() for x in f.readlines()]
+        results.append(
+            OutputApi(committing).PresubmitPromptWarning(
+                'Python 2 scripts were run during %s presubmits. Please ask '
+                '??? if help is needed in preventing this.'
+                % python_version,
+                items=python2_usage))
 
     messages = {}
     should_prompt = False

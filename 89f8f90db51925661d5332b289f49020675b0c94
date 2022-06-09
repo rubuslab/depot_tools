@@ -71,6 +71,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dfe0dafc_f287f27d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-09T20:57:04Z",
+      "side": 1,
+      "message": "Yeah... I agree that installing in a property is a bad idea.\nI myself was confused with that build tools are deployed in different ways. \ne.g. ninja, autoninja vs goma vs reclient\n\nI\u0027m actually not familiar with recipes in chromium (and other projects that use depot_tools). Would the steps be 1) adding ninja to DEPS in all projects that use depot_tools recipe. 2) modify recipes to switch to use ninja DEPS?\nIt\u0027s unclear how large the scope is for me.\n\nFor a short term to deploy a new ninja version,\nCan I setup depot_toole/.cipd_bin somewhere only once somehow?\nWould DepotToolsApi.__init__() be a place to do such things?\n\nAnother question,\nAre all tools installed by CIPD in depot_tools for developers that set depot_tools in PATH? \nhttps://source.chromium.org/chromium/chromium/src/+/main:third_party/depot_tools/cipd_manifest.txt",
+      "parentUuid": "4db2feca_f04d1d87",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48311bd2_0facb7f8",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7

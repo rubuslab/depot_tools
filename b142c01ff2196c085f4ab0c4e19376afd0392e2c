@@ -33,6 +33,24 @@
       "message": "(ah, I\u0027m not owner of the .py file)",
       "revId": "b142c01ff2196c085f4ab0c4e19376afd0392e2c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f6b4b67_e543af33",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1528988
+      },
+      "writtenOn": "2022-06-09T00:59:03Z",
+      "side": 1,
+      "message": "Noted, I am aware of that. Thanks for the summary, I will do some studies and try things out. :)",
+      "parentUuid": "a30bf003_41669d05",
+      "revId": "b142c01ff2196c085f4ab0c4e19376afd0392e2c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

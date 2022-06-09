@@ -16,6 +16,24 @@
       "message": "Sorry, we no longer accept binaries that weren\u0027t built on certain bots.\n\nSee also https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3674982 and the bug linked from there -- I don\u0027t know if 3pp supports building for risc-v.\n\nBut we don\u0027t even have a linux/arm ninja binary. I\u0027d guess we\u0027d add that before we\u0027d add a risc-v binary.",
       "revId": "d58e462595e91197e2307d25a5ac304368a4f848",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27c7701e_ac1d6677",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-09T02:17:52Z",
+      "side": 1,
+      "message": "I think building 3pp packages for rick-v are not supported, and don\u0027t know if that\u0027s in a roadmap.\nCC: bryner\n\n\u003e we don\u0027t even have a linux/arm ninja binary. \nlinux-arm64, linux-armv ninja packages are available.\nhttps://chrome-infra-packages.appspot.com/p/infra/3pp/tools/ninja/linux-arm64/+/\nhttps://chrome-infra-packages.appspot.com/p/infra/3pp/tools/ninja/linux-armv6l/+/",
+      "parentUuid": "aad40bd7_9a061750",
+      "revId": "d58e462595e91197e2307d25a5ac304368a4f848",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

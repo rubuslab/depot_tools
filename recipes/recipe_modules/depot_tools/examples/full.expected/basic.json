@@ -43,10 +43,36 @@
   },
   {
     "cmd": [
+      "source",
+      "RECIPE_REPO[depot_tools]/cipd_bin_setup.sh"
+    ],
+    "name": "source cipd_bin_setup.sh"
+  },
+  {
+    "cmd": [
+      "cipd_bin_setup"
+    ],
+    "name": "run cipd_bin_setup"
+  },
+  {
+    "cmd": [
       "ls",
       "RECIPE_REPO[depot_tools]/ninja"
     ],
     "name": "ninja_path"
+  },
+  {
+    "cmd": [
+      "source",
+      "RECIPE_REPO[depot_tools]/cipd_bin_setup.sh"
+    ],
+    "name": "source cipd_bin_setup.sh (2)"
+  },
+  {
+    "cmd": [
+      "cipd_bin_setup"
+    ],
+    "name": "run cipd_bin_setup (2)"
   },
   {
     "cmd": [

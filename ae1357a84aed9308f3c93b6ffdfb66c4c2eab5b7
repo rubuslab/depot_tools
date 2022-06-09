@@ -52,6 +52,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98e06ff9_a4c2a6ae",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 1175774
+      },
+      "writtenOn": "2022-06-09T07:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "acda4677_32ac30ec",
+      "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4b1bfc90_b4e63d8f",
@@ -65,6 +83,30 @@
       "writtenOn": "2022-06-08T17:04:42Z",
       "side": 1,
       "message": "nit: remove the parens since it\u0027s one item",
+      "range": {
+        "startLine": 785,
+        "startChar": 37,
+        "endLine": 785,
+        "endChar": 45
+      },
+      "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5d565cf_f2741f76",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 1175774
+      },
+      "writtenOn": "2022-06-09T07:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b1bfc90_b4e63d8f",
       "range": {
         "startLine": 785,
         "startChar": 37,
@@ -115,6 +157,48 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b59df11_3134a8f3",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 1175774
+      },
+      "writtenOn": "2022-06-09T07:59:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "372de220_fde5ec98",
+      "range": {
+        "startLine": 788,
+        "startChar": 59,
+        "endLine": 788,
+        "endChar": 66
+      },
+      "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46a493c7_348d4039",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 1175774
+      },
+      "writtenOn": "2022-06-09T07:59:26Z",
+      "side": 1,
+      "message": "No reason, happy to follow the other helpers here.",
+      "parentUuid": "550ee875_bde8035b",
+      "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c6ae48f_7708373a",
@@ -132,6 +216,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fd55396_0956a60b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 1175774
+      },
+      "writtenOn": "2022-06-09T07:59:26Z",
+      "side": 1,
+      "message": "Nice idea, done.",
+      "parentUuid": "2c6ae48f_7708373a",
+      "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d24156a_83203b90",
@@ -145,6 +247,30 @@
       "writtenOn": "2022-06-08T17:04:42Z",
       "side": 1,
       "message": "nit: same thing with parens as above",
+      "range": {
+        "startLine": 814,
+        "startChar": 53,
+        "endLine": 814,
+        "endChar": 61
+      },
+      "revId": "ae1357a84aed9308f3c93b6ffdfb66c4c2eab5b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e93b476_19d9c87e",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 1175774
+      },
+      "writtenOn": "2022-06-09T07:59:26Z",
+      "side": 1,
+      "message": "No longer the case (with extra revision arg).",
+      "parentUuid": "2d24156a_83203b90",
       "range": {
         "startLine": 814,
         "startChar": 53,

@@ -52,6 +52,24 @@
       "parentUuid": "1120a34e_350ede42",
       "revId": "11c41fe4feff5bec0dddb197f7483ebc91ae34e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5532e5f_3aa1332f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-09T06:04:19Z",
+      "side": 1,
+      "message": "The bundle looks fine.\n\nLinux\n\n```\n❯ ./recipes/recipes.py bundle\n[P827069 14:51:46.040 action_plan.go:160 I] In root:\n[P827069 14:51:46.041 action_plan.go:166 I]   to install:\n[P827069 14:51:46.041 action_plan.go:168 I]     infra/tools/protoc/linux-amd64:MBI_-faJFyaWAGV5JC_HgLwpBkJ5aFU5GB2BixsjtLEC\n[P827069 14:51:46.041 instancecache.go:187 I] Using temporary instance cache at /usr/local/google/home/jwata/depot_tools/recipes/.recipe_deps/_pb/protoc/.cipd/tmp/dl_1151187690\n • [fetch] Fetched infra/tools/protoc/linux-amd64:MBI_-faJFyaWAGV5JC_HgLwpBkJ5aFU5GB2BixsjtLEC in 0.7s\n • [unzip] Deployed infra/tools/protoc/linux-amd64:MBI_-faJFyaWAGV5JC_HgLwpBkJ5aFU5GB2BixsjtLEC in 0.1s\n[P827069 14:51:46.835 client.go:1866 I] All changes applied.\n\n❯ source cipd_bin_setup.sh \u0026\u0026 cipd_bin_setup\n❯ ./.cipd_bin/ninja --version\n1.8.2\n```\n\nWindows\n\n```\nPS C:\\src\\depot_tools\u003e python3 .\\recipes\\recipes.py bundle\n[P34896 22:58:51.821 action_plan.go:160 I] In root:\n[P34896 22:58:51.821 action_plan.go:166 I]   to install:\n[P34896 22:58:51.822 action_plan.go:168 I]     infra/tools/protoc/windows-amd64:R6Qf7GmaBKmVlLv9mGJYX5oMBzHjSbRrjEpNoixVSN0C\n[P34896 22:58:51.826 instancecache.go:187 I] Using temporary instance cache at C:\\src\\depot_tools\\recipes\\.recipe_deps\\_pb\\protoc\\.cipd\\tmp\\dl_1149956349\n • [fetch] Fetched infra/tools/protoc/windows-amd64:R6Qf7GmaBKmVlLv9mGJYX5oMBzHjSbRrjEpNoixVSN0C in 0.8s\n • [unzip] Deployed infra/tools/protoc/windows-amd64:R6Qf7GmaBKmVlLv9mGJYX5oMBzHjSbRrjEpNoixVSN0C in 0.0s\n[P34896 22:58:52.702 client.go:1866 I] All changes applied.\n\nPS C:\\src\\depot_tools\\bundle\\depot_tools\u003e .\\cipd_bin_setup\nDownloading CIPD client for windows-amd64 from https://chrome-infra-packages.appspot.com/client?platform\u003dwindows-amd64\u0026version\u003dgit_revision:673f5ee1931bc72a2b3d4ac712a7f7bc541f089b...\n\nPS C:\\src\\depot_tools\\bundle\\depot_tools\u003e .\\.cipd_bin\\ninja.exe --version\n1.8.2\n```",
+      "parentUuid": "1120a34e_350ede42",
+      "revId": "11c41fe4feff5bec0dddb197f7483ebc91ae34e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

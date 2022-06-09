@@ -52,6 +52,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f6ade77_0b8fa78a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-06-09T17:33:56Z",
+      "side": 1,
+      "message": "Maybe this _is_ how ninja is currently distributed, but this seems like a bad way to do it; Are you certain that _no recipes anywhere_ depend on ninja at the version it\u0027s currently set to?\n\nI would strongly consider moving the ninja pin into chromium/src itself, so that way you don\u0027t need to fix all downstream uses of ninja.",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48311bd2_0facb7f8",
@@ -194,6 +211,30 @@
       "side": 1,
       "message": "Will check the behavior with led.",
       "parentUuid": "2245c8e0_2c57ddfb",
+      "range": {
+        "startLine": 81,
+        "startChar": 40,
+        "endLine": 81,
+        "endChar": 54
+      },
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f897cf03_19e59ead",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-06-09T17:33:56Z",
+      "side": 1,
+      "message": "recipe engine will try \u0027.exe\u0027 and then \u0027.bat\u0027 in that order automatically",
+      "parentUuid": "b181ca3d_d30baae8",
       "range": {
         "startLine": 81,
         "startChar": 40,

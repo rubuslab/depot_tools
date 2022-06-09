@@ -35,6 +35,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4db2feca_f04d1d87",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-06-09T17:18:17Z",
+      "side": 1,
+      "message": "Are you sure this is how ninja is meant to be distributed in recipes? I don\u0027t think it\u0027s good for a property to possibly do a bunch of downloads. Shouldn\u0027t we pin ninja directly in chromium/src DEPS?",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48311bd2_0facb7f8",

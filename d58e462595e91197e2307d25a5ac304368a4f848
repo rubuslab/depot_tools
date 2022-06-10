@@ -34,6 +34,24 @@
       "parentUuid": "aad40bd7_9a061750",
       "revId": "d58e462595e91197e2307d25a5ac304368a4f848",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a5c78b5_afed1195",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1528988
+      },
+      "writtenOn": "2022-06-10T01:04:08Z",
+      "side": 1,
+      "message": "Can I contribute for 3pp packages? The reason is, I tried compiling ninja natively on a RISC-V development board and it works fine. If infra team needs hardware to do that, I can work with my employer (StarFive Tech) in providing hardware to Google.",
+      "parentUuid": "27c7701e_ac1d6677",
+      "revId": "d58e462595e91197e2307d25a5ac304368a4f848",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

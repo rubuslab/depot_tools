@@ -52,6 +52,24 @@
       "parentUuid": "27c7701e_ac1d6677",
       "revId": "d58e462595e91197e2307d25a5ac304368a4f848",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99b24063_d473c082",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-06-10T01:14:35Z",
+      "side": 1,
+      "message": "I think the easiest path forward for this would be to cross-compile for RISC-V, which is the approach we use for ARM64 and ARMv6 currently.\n\nThe code for this lives in https://source.chromium.org/chromium/infra/infra/+/main:infra/tools/dockerbuild/\n\nWe use the \u0027dockcross\u0027 project ( https://github.com/dockcross/dockcross ) which provides Linux docker images that include a cross compiling toolchain. It appears they have images for both 32-bit and 64-bit RISC-V.\n\ndockerbuild is run by the 3pp recipe: https://source.chromium.org/chromium/infra/infra/+/main:recipes/recipes/3pp.py\n\nThere is not currently a good doc describing how to add a new platform, so the 3pp team can help here as time allows. What would be the most useful at this point is probably to try the linux riscv docker image and verify that you can compile ninja inside the container.",
+      "parentUuid": "9a5c78b5_afed1195",
+      "revId": "d58e462595e91197e2307d25a5ac304368a4f848",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

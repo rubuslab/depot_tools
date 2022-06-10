@@ -89,6 +89,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b830bb2b_c4473ef9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-10T00:36:58Z",
+      "side": 1,
+      "message": "I think it is better to install ninja in depot_tools now as there are many repositories which uses ninja and we don\u0027t want to update those one by one.\nWe even don\u0027t have complete list of such repositories.\n\n\u003e Are all tools installed by CIPD in depot_tools for developers that set depot_tools in PATH? \n\nI don\u0027t understand your question, but developers are supposed to have depot_tools in their $PATH.",
+      "parentUuid": "dfe0dafc_f287f27d",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48311bd2_0facb7f8",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7
@@ -141,6 +159,24 @@
       "side": 1,
       "message": "Would it make sense to call cipd_bin_setup() in __init__()?\nI\u0027m hesitating to call cipd ensure at every time when accessing ninja_path/autoninja_path properties.",
       "parentUuid": "acd576be_af76757e",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b23312a5_8ae8e96d",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-10T00:36:58Z",
+      "side": 1,
+      "message": "No, we don\u0027t need to run cipd_bin_setup if ninja is not used.\n\nAlso, I think __init__() is not the place we can call other recipe module api.",
+      "parentUuid": "d02ded24_7c8987db",
       "revId": "89f8f90db51925661d5332b289f49020675b0c94",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

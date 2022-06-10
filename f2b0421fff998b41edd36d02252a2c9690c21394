@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "153aef13_157c7768",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-10T16:44:36Z",
+      "side": 1,
+      "message": "The first attempt to land this failed with a presubmit failure. After analyzing that I am reasonably certain that it is a race condition in the test. I filed crbug.com/1335450 but I think the failure is rare enough that we can ignore it.",
+      "revId": "f2b0421fff998b41edd36d02252a2c9690c21394",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

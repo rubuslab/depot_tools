@@ -107,6 +107,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d23186a0_f55933cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-06-10T02:14:39Z",
+      "side": 1,
+      "message": "\u003e I think it is better to install ninja in depot_tools now as there are many repositories which uses ninja and we don\u0027t want to update those one by one.\nWe even don\u0027t have complete list of such repositories.\n\nI guess my concern is that you may find that these unknown repositories break when you update ninja, and so it will be reverted here? Pulling it as part of chromium means that it would be self-contained in chromium (like gn, I think?)",
+      "parentUuid": "b830bb2b_c4473ef9",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48311bd2_0facb7f8",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7

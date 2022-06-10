@@ -179,6 +179,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "717c166b_d0a8baa9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-06-10T19:02:21Z",
+      "side": 1,
+      "message": "(note that gn in depot_tools actually does weird hacks (https://chromium.googlesource.com/chromium/tools/depot_tools.git/+/main/gn.py#39) to use the gn pin in chromium/src; maybe it would be appropriate for ninja to behave the same way?)",
+      "parentUuid": "087f42a9_f7bae529",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48311bd2_0facb7f8",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7

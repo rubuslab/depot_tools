@@ -143,6 +143,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2d49d5fc_be0e0a3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-10T06:52:21Z",
+      "side": 1,
+      "message": "I discussed with Takuto, but didn\u0027t get a conclusion, yet.\n\nOption1) Use DEPS to ninja \nPros: same way with how gn is installed. self contained in chromium.\nCons: need to specify ninja dependency, version on all ninja projects.\nneed to fix all recipes to use the ninja installed by DEPS.\n\nOption2) Include depot_tools/.cipd_bin to recipe bundle\nPros: self contained in depot_tools recipe bundle, no extra steps.\nCons: custom hooks are not supported by recipe engine at this moment.\n\nOption3) Add a recipe step to ensure depot_tools/.cipd_bin.\nPros: The change is minimal. and we already do similar things with cipd.ensure recipe module api.\nCons: calling cipd_bin_setup() in recipe properties may seem odd.\n\nTakuto supports (3), me supports (2)(3), Robbie suggested (1).\nWhat would be a mutual conclusion? \n(3) would be a reasonable considering the amount of work?",
+      "parentUuid": "c12cb0ff_b6fb482e",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48311bd2_0facb7f8",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7

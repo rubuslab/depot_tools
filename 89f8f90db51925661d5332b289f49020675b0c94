@@ -125,6 +125,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c12cb0ff_b6fb482e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-10T02:32:17Z",
+      "side": 1,
+      "message": "I think possibility of breakage for unknown repository is low if ninja works in chromium repository.\nAnd if that is problematic, I\u0027d like owner of such repository to pin ninja by themselves.",
+      "parentUuid": "d23186a0_f55933cd",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48311bd2_0facb7f8",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7

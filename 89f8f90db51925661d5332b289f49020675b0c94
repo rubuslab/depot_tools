@@ -161,6 +161,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "087f42a9_f7bae529",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-06-10T18:58:16Z",
+      "side": 1,
+      "message": "My point is that depot_tools (recipes) and chromium/src are not pinned together in any way; It\u0027s bad hygiene to have:\n\n* gn and ninja pinned in separate repos, because gn\u0027s output is somewhat coupled to ninja\u0027s input (so, mismatches could lead to errors or bugs, possibly subtle ones)\n* the chromium/src pin for ninja to live outside of chromium/src (the gn/ninja bubble is non-hermetic)\n* there are unknown quantities of other repos which are using the depot_tools ninja (unpinned) in conjunction with arbitrary subsets of chromium\u0027s build system, likely pinned at different versions.\n  \nUltimately this is your area of ownership though, so it\u0027s up to you how you want to maintain the ecosystem.",
+      "parentUuid": "c12cb0ff_b6fb482e",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48311bd2_0facb7f8",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7

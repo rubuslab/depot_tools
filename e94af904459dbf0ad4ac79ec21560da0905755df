@@ -16,6 +16,24 @@
       "message": "Can you share your .gclient file and specifics of how this breaks your project?",
       "revId": "e94af904459dbf0ad4ac79ec21560da0905755df",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "458c6e29_75f392f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1400694
+      },
+      "writtenOn": "2022-06-10T16:42:29Z",
+      "side": 1,
+      "message": "I\u0027m afraid I cannot share my gclient file. I can only say that in it I have a single solution with an url pointing to Meta\u0027s internal repo that uses ssh protocol.\n\nAll dependencies are downloaded from the usual servers (as defined in DEPS). We only allow https connection to those servers. Currently gclient tries to ssh into them to download dependencies and we block the connections.",
+      "parentUuid": "133db465_1dbcd2c2",
+      "revId": "e94af904459dbf0ad4ac79ec21560da0905755df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

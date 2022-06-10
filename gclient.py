@@ -1445,6 +1445,7 @@ solutions = %(solution_list)s
     self._root_dir = root_dir
     self._cipd_root = None
     self.config_content = None
+    self.no_protocol_override = options.no_protocol_override
 
   @staticmethod
   def _getScheme(url):
@@ -1548,7 +1549,8 @@ it or fix the checkout.
             condition=None,
             print_outbuf=True,
             # Pass parent URL protocol down the tree for child deps to use.
-            protocol=GClient._getScheme(s['url'])))
+            protocol=None if self.no_protocol_override
+                          else GClient._getScheme(s['url'])))
       except KeyError:
         raise gclient_utils.Error('Invalid .gclient file. Solution is '
                                   'incomplete: %s' % s)
@@ -2792,6 +2794,9 @@ def CMDsync(parser, args):
   parser.add_option('--no-reset-patch-ref', action='store_false',
                     dest='reset_patch_ref', default=True,
                     help='Bypass calling reset after patching the ref.')
+  parser.add_option('--no-protocol-override', action='store_true',
+                    help='Don\'t use protocol of url specified in solution for '
+                    'dependencies.')
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
 

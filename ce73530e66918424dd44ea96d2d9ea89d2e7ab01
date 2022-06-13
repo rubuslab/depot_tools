@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9eeee58e_602f59d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-13T09:20:24Z",
+      "side": 1,
+      "message": "(It seems the CQ jobs can\u0027t run on a chained CL.)",
+      "revId": "ce73530e66918424dd44ea96d2d9ea89d2e7ab01",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

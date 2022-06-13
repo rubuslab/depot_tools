@@ -16,6 +16,24 @@
       "message": "Are you sure you need to update the protocol here? The previous change worked without it. Now I think you will be replacing the protocol twice.",
       "revId": "104b3f3c3bb663a9ce1b6d6ae3e8d583b073d038",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11a40fc2_6cc6caf7",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1533,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-06-13T20:26:35Z",
+      "side": 1,
+      "message": "The changes here stop `fetch` from updating the solution URL completely and isolates this override feature to a separate .gclient entry.\n\nSo `fetch` sets `protocol_override` in .gclient and `gclient sync` updates all the URL using this.",
+      "parentUuid": "bc22e6e0_d507c3eb",
+      "revId": "104b3f3c3bb663a9ce1b6d6ae3e8d583b073d038",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -197,6 +197,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e22efcb9_ae11a0ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-13T02:14:26Z",
+      "side": 1,
+      "message": "\u003e depot_tools (recipes) and chromium/src are not pinned together\n\nYeah, we discussed these issues. \nPlease correct me if I\u0027m wrong, but ninja file format may be backward-compatible enough, and there are not many issues on unpinned gn/ninja versions.\n\nIf we have a situation where a new ninja has breaking changes, we need to consider pinning ninja version at DEPS as you are proposing for different ninja to be used in different projects.\n\n\u003e gn in depot_tools\nYes, I realized the tricky setup.",
+      "parentUuid": "717c166b_d0a8baa9",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48311bd2_0facb7f8",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7

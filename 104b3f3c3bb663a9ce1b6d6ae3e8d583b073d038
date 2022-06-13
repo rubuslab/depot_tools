@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc22e6e0_d507c3eb",
+        "filename": "gclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1533,
+      "author": {
+        "id": 1400694
+      },
+      "writtenOn": "2022-06-13T20:22:27Z",
+      "side": 1,
+      "message": "Are you sure you need to update the protocol here? The previous change worked without it. Now I think you will be replacing the protocol twice.",
+      "revId": "104b3f3c3bb663a9ce1b6d6ae3e8d583b073d038",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

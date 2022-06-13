@@ -33,6 +33,24 @@
       "message": "It is better to make this step run only once.",
       "revId": "b91107e9b455dcda67fcc00047cb0af6d07741b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b284a34_37fba60f",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-13T07:48:49Z",
+      "side": 1,
+      "message": "If you care about the overhead of calling this step multiple times,\nI think it would be relatively small since the first run takes only 5 sec on Windows. http://screen/6EG5tayKLr3kXoC\n\nI understand that having multiple steps may be noisy. e.g. \"ensure depot_tools/.cipd_bin (2)\"\nIt\u0027s probably possible to check the existence of .cipd_bin, but it would have another step. e.g. \"check depot_tools/.cipd_bin\"\n\nIt may be possible to store the state somewhere in the recipe module to not run extra steps? but not sure if it\u0027s worth doing.",
+      "parentUuid": "30019693_436f7612",
+      "revId": "b91107e9b455dcda67fcc00047cb0af6d07741b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

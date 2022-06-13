@@ -69,6 +69,24 @@
       "parentUuid": "3b284a34_37fba60f",
       "revId": "b91107e9b455dcda67fcc00047cb0af6d07741b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e3c805a_9cbfd98e",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-13T08:00:29Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "708f5bdc_ec3983a9",
+      "revId": "b91107e9b455dcda67fcc00047cb0af6d07741b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -51,6 +51,24 @@
       "parentUuid": "30019693_436f7612",
       "revId": "b91107e9b455dcda67fcc00047cb0af6d07741b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "708f5bdc_ec3983a9",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-13T07:54:49Z",
+      "side": 1,
+      "message": "You can do that like\n\n```\ndef __init__(self):\n  self._cipd_bin_setup_called \u003d False\n  \n...\n\ndef _cipd_bin_setup(self):\n  if self._cipd_bin_setup_called:\n    return\n  self._cipd_bin_setup_called \u003d True\n  \n  ...\n```\n\nAnd I think less steps provides bit better visibility in UI.",
+      "parentUuid": "3b284a34_37fba60f",
+      "revId": "b91107e9b455dcda67fcc00047cb0af6d07741b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

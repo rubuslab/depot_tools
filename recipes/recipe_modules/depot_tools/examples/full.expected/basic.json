@@ -43,24 +43,16 @@
   },
   {
     "cmd": [
-      "cipd",
-      "ensure",
-      "-root",
-      "RECIPE_REPO[depot_tools]/.cipd_bin",
-      "-ensure-file",
-      "RECIPE_REPO[depot_tools]/cipd_manifest.txt",
-      "-max-threads",
-      "0",
-      "-json-output",
-      "/path/to/tmp/json"
+      "source",
+      "RECIPE_REPO[depot_tools]/cipd_bin_setup.sh"
     ],
-    "name": "ensure depot_tools/.cipd_bin",
-    "~followup_annotations": [
-      "@@@STEP_LOG_LINE@json.output@{@@@",
-      "@@@STEP_LOG_LINE@json.output@  \"result\": {}@@@",
-      "@@@STEP_LOG_LINE@json.output@}@@@",
-      "@@@STEP_LOG_END@json.output@@@"
-    ]
+    "name": "source cipd_bin_setup.sh"
+  },
+  {
+    "cmd": [
+      "cipd_bin_setup"
+    ],
+    "name": "run cipd_bin_setup"
   },
   {
     "cmd": [
@@ -71,24 +63,16 @@
   },
   {
     "cmd": [
-      "cipd",
-      "ensure",
-      "-root",
-      "RECIPE_REPO[depot_tools]/.cipd_bin",
-      "-ensure-file",
-      "RECIPE_REPO[depot_tools]/cipd_manifest.txt",
-      "-max-threads",
-      "0",
-      "-json-output",
-      "/path/to/tmp/json"
+      "source",
+      "RECIPE_REPO[depot_tools]/cipd_bin_setup.sh"
     ],
-    "name": "ensure depot_tools/.cipd_bin (2)",
-    "~followup_annotations": [
-      "@@@STEP_LOG_LINE@json.output@{@@@",
-      "@@@STEP_LOG_LINE@json.output@  \"result\": {}@@@",
-      "@@@STEP_LOG_LINE@json.output@}@@@",
-      "@@@STEP_LOG_END@json.output@@@"
-    ]
+    "name": "source cipd_bin_setup.sh (2)"
+  },
+  {
+    "cmd": [
+      "cipd_bin_setup"
+    ],
+    "name": "run cipd_bin_setup (2)"
   },
   {
     "cmd": [

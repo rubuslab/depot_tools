@@ -215,6 +215,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "885620e1_3224bfee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-13T02:21:53Z",
+      "side": 1,
+      "message": "Yes, ninja file format is backward-compatible. And both GN and Ninja take care of that.\n\nSo I still prefer to have ninja in depot_tools for simpler update/distribution steps. I think ninja\u0027s stability is high and migration/update cost of per repository pinnned ninja is higher than risk of ninja in depot_tools.",
+      "parentUuid": "e22efcb9_ae11a0ab",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48311bd2_0facb7f8",
         "filename": "recipes/recipe_modules/depot_tools/api.py",
         "patchSetId": 7

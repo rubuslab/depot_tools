@@ -231,6 +231,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "deda3adc_20cd73ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-13T05:38:04Z",
+      "side": 1,
+      "message": "(Will change this CL to WIP)",
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48311bd2_0facb7f8",
@@ -344,6 +361,30 @@
       "side": 1,
       "message": "I see. Indeed, I should check the behavior using led.",
       "parentUuid": "a072f654_fcc5cb73",
+      "range": {
+        "startLine": 80,
+        "startChar": 48,
+        "endLine": 80,
+        "endChar": 54
+      },
+      "revId": "89f8f90db51925661d5332b289f49020675b0c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4aafb1a1_c0c7234e",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-13T05:38:04Z",
+      "side": 1,
+      "message": "`source` doesn\u0027t work on recipe.\nhttps://ci.chromium.org/raw/build/logs.chromium.org/chromium/led/jwata_google.com/794ecc4fce01d6c6cbeac0bd75c647a413e46e26145daf0917c1c6827dfe0aad/+/build.proto?server\u003dchromium-swarm.appspot.com\n\nSo I have to implement the same logic as a recipe module api.",
+      "parentUuid": "7e895e93_88800054",
       "range": {
         "startLine": 80,
         "startChar": 48,

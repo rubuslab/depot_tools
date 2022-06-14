@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c9f8d72_f2c68266",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2022-06-14T16:11:01Z",
+      "side": 1,
+      "message": "Hi Bruce. I wanted to add support to obtain the number of items in a PresubmitError so that I can assert the exact items in presubmit checks like this one: https://chromium-review.googlesource.com/c/chromium/src/+/3705538/1/PRESUBMIT_test.py#4567, in which the current assertion is not very good.\n\nWhen calling errors[0].num_items in the linked above, I\u0027m getting this error:: \"AttributeError: \u0027PresubmitError\u0027 object has no attribute \u0027num_items\u0027\". If you think this is a nice addition, I welcome any help to make this work.",
+      "revId": "2c8620f079eb738919f9b934fbe5e0302092785d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

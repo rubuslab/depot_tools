@@ -265,7 +265,7 @@ class TryserverApi(recipe_api.RecipeApi):
         'total_count': len(paths),
         # Do not report too many because it might violate build size limits,
         # and isn't very useful anyway.
-        'first_100': paths[:100],
+        'first_100': paths[:90],
       }
     return paths
 

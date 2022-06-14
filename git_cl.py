@@ -40,6 +40,7 @@ import gerrit_util
 import git_common
 import git_footers
 import git_new_branch
+import jsonfmt
 import metrics
 import metrics_utils
 import owners_client
@@ -1773,9 +1774,8 @@ class Changelist(object):
 
     status = self._GetChangeDetail()['status']
     if status == 'ABANDONED':
-       DieWithError(
-           'Change %s has been abandoned, new uploads are not allowed' %
-           (self.GetIssueURL()))
+      DieWithError('Change %s has been abandoned, new uploads are not allowed' %
+                   (self.GetIssueURL()))
     if status == 'MERGED':
       answer = gclient_utils.AskForData(
           'Change %s has been submitted, new uploads are not allowed. '
@@ -5154,6 +5154,35 @@ def _RunClangFormatDiff(opts, clang_diff_files, top_dir, upstream_commit):
   return return_value
 
 
+def _RunJSONFmt(opts, json_diff_files):
+  """Runs jsonfmt.  Just like _RunClangFormatDiff returns 2 to indicate that
+  presubmit checks have failed (and returns 0 otherwise)."""
+  if not json_diff_files:
+    return 0
+
+  # These are the directories to do JSON diff checks
+  # This is to help introduce this change instead of needing to
+  # update every JSON file immediately
+  json_fmt_allowed_dirs = [
+      os.path.join('android_webview', 'tools'),
+  ]
+
+  def shouldFmtFile(file):
+    return any(fmt_dir in file for fmt_dir in json_fmt_allowed_dirs)
+
+  json_files_to_format = [
+      file for file in json_diff_files if shouldFmtFile(file)
+  ]
+
+  if not json_files_to_format:
+    return 0
+
+  if jsonfmt.format_json(json_files_to_format, opts.dry_run):
+    return 0
+
+  return 2
+
+
 def _RunRustFmt(opts, rust_diff_files, top_dir, upstream_commit):
   """Runs rustfmt.  Just like _RunClangFormatDiff returns 2 to indicate that
   presubmit checks have failed (and returns 0 otherwise)."""
@@ -5220,6 +5249,7 @@ def CMDformat(parser, args):
   """Runs auto-formatting tools (clang-format etc.) on the diff."""
   CLANG_EXTS = ['.cc', '.cpp', '.h', '.m', '.mm', '.proto', '.java']
   GN_EXTS = ['.gn', '.gni', '.typemap']
+  JSON_EXTS = ['.json']
   RUST_EXTS = ['.rs']
   SWIFT_EXTS = ['.swift']
   parser.add_option('--full', action='store_true',
@@ -5329,6 +5359,7 @@ def CMDformat(parser, args):
         x for x in diff_files if MatchingFileType(x, CLANG_EXTS)
     ]
   python_diff_files = [x for x in diff_files if MatchingFileType(x, ['.py'])]
+  json_diff_files = [x for x in diff_files if MatchingFileType(x, JSON_EXTS)]
   rust_diff_files = [x for x in diff_files if MatchingFileType(x, RUST_EXTS)]
   swift_diff_files = [x for x in diff_files if MatchingFileType(x, SWIFT_EXTS)]
   gn_diff_files = [x for x in diff_files if MatchingFileType(x, GN_EXTS)]
@@ -5337,6 +5368,11 @@ def CMDformat(parser, args):
 
   return_value = _RunClangFormatDiff(opts, clang_diff_files, top_dir,
                                      upstream_commit)
+
+  json_fmt_return_value = _RunJSONFmt(opts, json_diff_files)
+
+  if json_fmt_return_value == 2:
+    return_value = 2
 
   if opts.use_rust_fmt:
     rust_fmt_return_value = _RunRustFmt(opts, rust_diff_files, top_dir,

@@ -16,6 +16,24 @@
       "message": "LGTM, although this wouldn\u0027t include the recommended change to the experiment (https://chromium-review.googlesource.com/c/infra/luci/luci-go/+/3705143) I think :-/\n\nMaybe just release this and then I\u0027ll make a version 1.31.2 to make that change?",
       "revId": "ba548ad2cccbcb935c00b2ad31d400dcc4b7dc2d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e911a17_86a235a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2022-06-14T21:38:12Z",
+      "side": 1,
+      "message": "We can wait, see luci-announce email. I want to give at least one day for folks to react. I\u0027ll update this CL once your stuff lands.",
+      "parentUuid": "105bb4dc_a3fb2a8a",
+      "revId": "ba548ad2cccbcb935c00b2ad31d400dcc4b7dc2d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -4115,9 +4115,16 @@ class CMDFormatTestCase(unittest.TestCase):
     shutil.rmtree(self._top_dir)
     super(CMDFormatTestCase, self).tearDown()
 
+  def _make_temp_dir(self, fpath):
+    gclient_utils.safe_makedirs(os.path.join(self._top_dir, fpath))
+
   def _make_temp_file(self, fname, contents):
     gclient_utils.FileWrite(os.path.join(self._top_dir, fname),
                             ('\n'.join(contents)))
+
+  def _read_temp_file(self, fname):
+    with open(os.path.join(self._top_dir, fname), mode='rU') as f:
+      return f.read()
 
   def _make_yapfignore(self, contents):
     self._make_temp_file('.yapfignore', contents)
@@ -4150,6 +4157,26 @@ class CMDFormatTestCase(unittest.TestCase):
     return_value = git_cl._RunClangFormatDiff(mock_opts, diff_file,
                                               self._top_dir, 'HEAD')
     self.assertEqual(0, return_value)
+
+  def testJSONformatDiff(self):
+    test_dir = os.path.join('android_webview', 'tools')
+    test_file = os.path.join(test_dir, 'test.json')
+    self._make_temp_dir(test_dir)
+    self._make_temp_file(test_file, ['{', '    "key": "too many spaces"', '}'])
+    diff_file = [os.path.join(self._top_dir, test_file)]
+    mock_opts = mock.Mock(dry_run=True)
+
+    # Dry run
+    return_value = git_cl._RunJSONFmt(mock_opts, diff_file)
+    self.assertEqual(2, return_value)
+
+    # Update files
+    mock_opts = mock.Mock(dry_run=False)
+    return_value = git_cl._RunJSONFmt(mock_opts, diff_file)
+    self.assertEqual(0, return_value)
+    self.assertEqual(
+        json.dumps({"key": "too many spaces"}, indent=2) + '\n',
+        self._read_temp_file(test_file))
 
   def testClangFormatDiff(self):
     git_cl.settings.GetFormatFullByDefault.return_value = False

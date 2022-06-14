@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0a0547c_2409d894",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-14T23:46:31Z",
+      "side": 1,
+      "message": "Josip,\nCan take a look?\nI need your approval since I changed .gitignore.",
+      "revId": "feca74910d785988a1303c67287c7ab3044b4887",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

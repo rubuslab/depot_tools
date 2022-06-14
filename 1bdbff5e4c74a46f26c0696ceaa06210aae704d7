@@ -69,6 +69,24 @@
       "parentUuid": "bb2b4ebe_0b9b2e66",
       "revId": "1bdbff5e4c74a46f26c0696ceaa06210aae704d7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba49eccd_56326b00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2022-06-14T17:00:23Z",
+      "side": 1,
+      "message": "`\u0027first_100\u0027: paths[:50]` is a hack and not a good solution.\n\nThis should be done properly:\n- apply both first_100 and first_50\n- find callsites/users of first_100, swap them over to first_50\n- remove first_100\n\nThat\u0027s assuming s/100/50/ is even the right approach, which I\u0027m not convinced it is. It\u0027s merely kicking the can down the road. Better to ask: what is \"first_100\" used for in the first place? Can we get rid of it all together? Is there some other mechanism that would let us report _all_ files?",
+      "parentUuid": "30efdada_f779811a",
+      "revId": "1bdbff5e4c74a46f26c0696ceaa06210aae704d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

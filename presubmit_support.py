@@ -359,6 +359,10 @@ class _PresubmitResult(object):
       return val.decode()
     raise ValueError("Unknown string type %s" % type(val))
 
+  @property
+  def num_items(self):
+    return len(self._items)
+
   def handle(self):
     sys.stdout.write(self._message)
     sys.stdout.write('\n')

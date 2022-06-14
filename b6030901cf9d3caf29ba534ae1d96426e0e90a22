@@ -16,6 +16,24 @@
       "message": "This doesn\u0027t seem rolled out to chromium/tools/build after 7 hours from the submit.\nhttps://chromium-review.googlesource.com/q/project:chromium%252Ftools%252Fbuild\n\nIt\u0027s not clean for me about the recipe rollout mechanism...",
       "revId": "b6030901cf9d3caf29ba534ae1d96426e0e90a22",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90e91d7e_0c67b3c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-06-14T09:18:35Z",
+      "side": 1,
+      "message": "I think that is blocked by https://crrev.com/c/3704759",
+      "parentUuid": "4ae90210_d00feb37",
+      "revId": "b6030901cf9d3caf29ba534ae1d96426e0e90a22",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

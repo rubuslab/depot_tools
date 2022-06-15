@@ -16,6 +16,24 @@
       "message": "I don\u0027t think this will work for all *.json files in chromium/src, e.g. https://crsrc.org/c/chromecast/common/extensions_api/accessibility_private.json\n\nWas there a discussion with wider chromium community about standardizing json formatting?  If not, can we have it before this gets reviewed?\n\nIn the meantime, you can have own presubmit checks, but it won\u0027t autoformat. We also have this feature request https://crbug.com/1300289 - please comment in the ticket if desired.",
       "revId": "f6e70a74a7edfd1c71d72e7589fa16248684f6e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5920bdf_233ab10b",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 5165,
+      "author": {
+        "id": 1539202
+      },
+      "writtenOn": "2022-06-15T07:47:48Z",
+      "side": 1,
+      "message": "Hah comments aren\u0027t supported by JSON so that\u0027s non standard. If we want to support that, I think heading with custom formatters might be appropriate.\n\nI\u0027ll close out this CL.",
+      "parentUuid": "cc470b2e_823ecc1b",
+      "revId": "f6e70a74a7edfd1c71d72e7589fa16248684f6e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

@@ -52,6 +52,23 @@
       "parentUuid": "90e91d7e_0c67b3c3",
       "revId": "b6030901cf9d3caf29ba534ae1d96426e0e90a22",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e270597c_f8f90382",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2022-06-15T15:06:49Z",
+      "side": 1,
+      "message": "We started seeing failing across the entire emscripten waterfall that looks like they could be related to this change:\n\nhttps://ci.chromium.org/p/emscripten-releases\n\nhttps://logs.chromium.org/logs/emscripten-releases/buildbucket/cr-buildbucket/8811315791446099329/+/u/Build_libcxx/stdout\n\n```\n  Running\n\n   \u0027/b/s/w/ir/kitchen-checkout/depot_tools/ninja\u0027 \u0027--version\u0027\n\n  failed with:\n\n   /b/s/w/ir/kitchen-checkout/depot_tools/ninja: line 11: /b/s/w/ir/kitchen-checkout/depot_tools/.cipd_bin/ninja: No such file or directory\n\n```\n\nI imagine there is something we need to update somewhere?",
+      "revId": "b6030901cf9d3caf29ba534ae1d96426e0e90a22",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -10,10 +10,6 @@ import contextlib
 from recipe_engine import recipe_api
 
 class DepotToolsApi(recipe_api.RecipeApi):
-  def __init__(self, **kwargs):
-    super(DepotToolsApi, self).__init__(**kwargs);
-    self._cipd_bin_setup_called = False
-
   @property
   def download_from_google_storage_path(self):
     return self.repo_resource('download_from_google_storage.py')
@@ -43,13 +39,11 @@ class DepotToolsApi(recipe_api.RecipeApi):
 
   @property
   def ninja_path(self):
-    self._cipd_bin_setup()
     ninja_exe = 'ninja.exe' if self.m.platform.is_win else 'ninja'
     return self.repo_resource(ninja_exe)
 
   @property
   def autoninja_path(self):
-    self._cipd_bin_setup()
     autoninja = 'autoninja.bat' if self.m.platform.is_win else 'autoninja'
     return self.repo_resource(autoninja)
 
@@ -68,29 +62,24 @@ class DepotToolsApi(recipe_api.RecipeApi):
       # run some steps
     ```
     """
-    # By default Depot Tools do not auto update on the bots.
-    # (crbug/1090603)
-    self._cipd_bin_setup()
+    # Depot Tools intentionally doesn't self-update on bots, because it's part
+    # of a recipe bundle (i.e. CIPD package). Attempting to do so will break
+    # because the bundle is unpacked onto disk (intentionally) in read-only
+    # mode.
+    #
+    # To add additional checked-in files to the recipe bundle, modify
+    # .gitattributes and notate the files/file patterns with the `recipes`
+    # attribute.
+    #
+    # If you need something more complicated than including checked-in files,
+    # pull those explicitly:
+    #   * (preferably) via dependencies in your project OR
+    #   * (less perferably) via new steps in your recipe.
+    #
+    # (crbug.com/1090603)
     with self.m.context(
         **{'env_suffixes': {
             'PATH': [self.root],
             'DEPOT_TOOLS_UPDATE': '0'
         }}):
       yield
-
-  def _cipd_bin_setup(self):
-    """Installs CIPD packages under .cipd_bin."""
-    if self._cipd_bin_setup_called:
-      return
-    self.m.cipd.ensure(
-      self.repo_resource('.cipd_bin'),
-      self.repo_resource('cipd_manifest.txt'),
-      'ensure depot_tools/.cipd_bin')
-    if self.m.platform.is_win:
-      # Copy ninja.exe from .cipd_bin to depot_tools root because there are
-      # many places that assume depot_tools/ninja.exe exists.
-      self.m.file.copy(
-        'copy depot_tools/.cipd_bin/ninja.exe to depot_tools/',
-        self.repo_resource('.cipd_bin', 'ninja.exe'),
-        self.repo_resource('ninja.exe'))
-    self._cipd_bin_setup_called = True

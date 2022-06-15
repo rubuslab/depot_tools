@@ -33,6 +33,24 @@
       "message": "An ANGLE recipe broke because it tries to run /depot_tools_dir/ninja.exe\n\nWhat should we change the path to now?",
       "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94ab0525_9514f7c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-06-15T14:44:04Z",
+      "side": 1,
+      "message": "i think that\u0027s supposed to work. https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3704921 is needed to make it actually work in all recipes. something like https://chromium-review.googlesource.com/c/chromium/tools/build/+/3707571 can work around until that\u0027s in.",
+      "parentUuid": "feec33f2_f7fea981",
+      "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

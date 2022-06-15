@@ -6,20 +6,20 @@ chromiumos/infra/crosjobs/linux-amd64
 	_vAeU0Q9lAxn933K8vDhwGK40zKVvV-yXGpIy43ATXAC
 
 infra/3pp/tools/ninja/linux-amd64
-	version:2@1.8.2.chromium.3
-	PUvdixKxFO_KVk9d6WFpXLVDMM0MHv86jyyySTMQ7KIC
+	version:2@1.11.0.chromium.4
+	W52E21Rq4pzH0sTOj1InvaRqmt7bXQuXaCgT7PTdaLwC
 
 infra/3pp/tools/ninja/mac-amd64
-	version:2@1.8.2.chromium.3
-	w-R-1UrTQJ2UPgSjcqXMayjE6pf76XpXE434rOY1EC8C
+	version:2@1.11.0.chromium.4
+	txBP7Y2XVLOvfTb3yBMnnc6qWjm7x9_Vj4x4EoY2hgYC
 
 infra/3pp/tools/ninja/mac-arm64
-	version:2@1.8.2.chromium.3
-	nVO-Kzyky9nfG4pRb3Qo7KdxyoEXjdwuOhVwy-h0rbMC
+	version:2@1.11.0.chromium.4
+	EIes683ruLLnes38SfkIvrrbIqZhflwR5F1C7PBa3lAC
 
 infra/3pp/tools/ninja/windows-amd64
-	version:2@1.8.2.chromium.3
-	HLdWFKyFMpFQO3VFSps1gevQGwY95hEBUFblIfDux5QC
+	version:2@1.11.0.chromium.4
+	DyUPh45918uD64VerWxj8wuUYBWdgIE7n0qOhHB0Nx0C
 
 infra/chromeperf/pinpoint/linux-386
 	git_revision:aaee924ce5e66f2c443dad58c4ed11693baeab2f

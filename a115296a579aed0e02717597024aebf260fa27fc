@@ -16,6 +16,23 @@
       "message": "Removing these also; If you really want to, it would be safe to add back cipd_manifest.txt and then use that to install the tools to some other path in the recipe",
       "revId": "a115296a579aed0e02717597024aebf260fa27fc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45f0398b_ac6aa115",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-06-15T23:24:46Z",
+      "side": 1,
+      "message": "here\u0027s an example failure: https://chromium-review.googlesource.com/c/infra/infra/+/3704181",
+      "revId": "a115296a579aed0e02717597024aebf260fa27fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

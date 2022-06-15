@@ -123,6 +123,24 @@
       "parentUuid": "02e49036_aef20eac",
       "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac57d4ef_c4868cd9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-15T17:56:00Z",
+      "side": 1,
+      "message": "I\u0027m committing ninja.exe binary to depot_tools as a workaround. https://crrev.com/c/3708571?tab\u003dcomments",
+      "parentUuid": "3ada738b_bbec89a4",
+      "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

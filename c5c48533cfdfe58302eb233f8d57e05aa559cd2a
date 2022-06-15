@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44c5ecab_6c0e94aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001921
+      },
+      "writtenOn": "2022-06-15T19:36:04Z",
+      "side": 1,
+      "message": "We still see failures on our bots\nhttps://logs.chromium.org/logs/angle/buildbucket/cr-buildbucket/8811263427675652641/+/u/GLES_2.0_trace_tests/stdout\nHow long does it take for this to roll to the bots?",
+      "revId": "c5c48533cfdfe58302eb233f8d57e05aa559cd2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

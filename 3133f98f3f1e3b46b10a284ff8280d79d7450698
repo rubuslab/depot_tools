@@ -51,6 +51,24 @@
       "parentUuid": "feec33f2_f7fea981",
       "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e9492c7_87a71cdc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2022-06-15T14:46:28Z",
+      "side": 1,
+      "message": "Thanks for the tips. Can you guess how long it will take to land the first one? Happy to wait up to a day for that.",
+      "parentUuid": "94ab0525_9514f7c0",
+      "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

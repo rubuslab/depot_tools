@@ -69,6 +69,24 @@
       "parentUuid": "94ab0525_9514f7c0",
       "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b989dbd_2a506c72",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-15T14:59:45Z",
+      "side": 1,
+      "message": "Sorry for the breakage on your side.\nI expect the owners will check https://crrev.com/c/3704921 in the US working hours which is coming in a few hours(?)\nFor my knowledge, could you share where angle recipes are?",
+      "parentUuid": "8e9492c7_87a71cdc",
+      "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

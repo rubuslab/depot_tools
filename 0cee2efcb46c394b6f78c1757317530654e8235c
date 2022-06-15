@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43d1866e_d4b142d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-06-15T16:45:15Z",
+      "side": 1,
+      "message": "hm, not sure this is a great idea. bat files don\u0027t work when invoked in a sell-less subprocess, and having both ninja.bat and ninja.exe in the same place feela like asking for trouble.\n\nmaybe we should just check in the 3pp binary again, at least for now? that\u0027s simply, low-tech, will fix all known problems, and at least buys us time to come up with something better.\n\n(but really, I\u0027d recommend a revert for now, given how many open issues there are)",
+      "revId": "0cee2efcb46c394b6f78c1757317530654e8235c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

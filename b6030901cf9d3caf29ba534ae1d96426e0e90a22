@@ -69,6 +69,24 @@
       "message": "We started seeing failing across the entire emscripten waterfall that looks like they could be related to this change:\n\nhttps://ci.chromium.org/p/emscripten-releases\n\nhttps://logs.chromium.org/logs/emscripten-releases/buildbucket/cr-buildbucket/8811315791446099329/+/u/Build_libcxx/stdout\n\n```\n  Running\n\n   \u0027/b/s/w/ir/kitchen-checkout/depot_tools/ninja\u0027 \u0027--version\u0027\n\n  failed with:\n\n   /b/s/w/ir/kitchen-checkout/depot_tools/ninja: line 11: /b/s/w/ir/kitchen-checkout/depot_tools/.cipd_bin/ninja: No such file or directory\n\n```\n\nI imagine there is something we need to update somewhere?",
       "revId": "b6030901cf9d3caf29ba534ae1d96426e0e90a22",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13bf1f12_8b715dc4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-15T16:11:59Z",
+      "side": 1,
+      "message": "Looking at recipe, ninja is called inside depot_tools.on_path() context.\nhttps://source.chromium.org/chromium/chromium/tools/build/+/main:recipes/recipes/emscripten_releases.py;l\u003d96;drc\u003d3831a2e847b417392aa8455fa2d77fbac9d41922\n\nI believe my fix https://crrev.com/c/3704921 will resolve your issue.\nCould you ensure the recipe change is rolled out to your side?",
+      "parentUuid": "e270597c_f8f90382",
+      "revId": "b6030901cf9d3caf29ba534ae1d96426e0e90a22",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

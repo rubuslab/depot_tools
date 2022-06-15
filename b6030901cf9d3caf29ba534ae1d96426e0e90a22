@@ -105,6 +105,24 @@
       "parentUuid": "13bf1f12_8b715dc4",
       "revId": "b6030901cf9d3caf29ba534ae1d96426e0e90a22",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b97be9f8_d47f9baf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-15T17:14:24Z",
+      "side": 1,
+      "message": "I think it\u0027s automated as the bug was rolled out automatically.",
+      "parentUuid": "c8c87827_8d9f2789",
+      "revId": "b6030901cf9d3caf29ba534ae1d96426e0e90a22",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

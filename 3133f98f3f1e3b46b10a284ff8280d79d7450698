@@ -16,6 +16,23 @@
       "message": "The CIPD ninja seems working well, this time.\n\nWin\nhttps://ci.chromium.org/ui/p/chromium/builders/ci/Win%20Builder/144349/overview\n\nLinux\nhttps://ci.chromium.org/ui/p/chromium/builders/ci/Linux%20Builder/156450/overview",
       "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "feec33f2_f7fea981",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1329751
+      },
+      "writtenOn": "2022-06-15T14:40:30Z",
+      "side": 1,
+      "message": "An ANGLE recipe broke because it tries to run /depot_tools_dir/ninja.exe\n\nWhat should we change the path to now?",
+      "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -29,9 +29,6 @@
 /roll-dep*                    recipes
 /yapf*                        recipes
 
-# Ensure depot_tools/.cipd_bin in a recipe step.
-/cipd_manifest* recipes
-
 # Symlinks
 /cbuildbot      recipes
 /cros*          recipes

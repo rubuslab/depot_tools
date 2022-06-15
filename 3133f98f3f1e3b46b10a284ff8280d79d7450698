@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2213667e_62158c4e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-15T05:34:26Z",
+      "side": 1,
+      "message": "The CIPD ninja seems working well, this time.\n\nWin\nhttps://ci.chromium.org/ui/p/chromium/builders/ci/Win%20Builder/144349/overview\n\nLinux\nhttps://ci.chromium.org/ui/p/chromium/builders/ci/Linux%20Builder/156450/overview",
+      "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

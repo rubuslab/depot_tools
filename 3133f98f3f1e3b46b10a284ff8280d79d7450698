@@ -105,6 +105,24 @@
       "parentUuid": "1b989dbd_2a506c72",
       "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ada738b_bbec89a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-15T15:16:51Z",
+      "side": 1,
+      "message": "Hmm, it seems a different failure pattern.\n\nhttps://crrev.com/c/3704921 runs a hook called `_cipd_bin_setup()` in depot_tools.on_path() context. \n\nBut the angle recipe directly generates the path to depot_tools/ninja.exe.\nhttps://source.chromium.org/chromium/chromium/src/+/main:third_party/angle/src/tests/capture_replay_tests.py;l\u003d134\n\nSo it wouldn\u0027t resolve the angle\u0027s breakage \nLet me make a workaround CL.",
+      "parentUuid": "02e49036_aef20eac",
+      "revId": "3133f98f3f1e3b46b10a284ff8280d79d7450698",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

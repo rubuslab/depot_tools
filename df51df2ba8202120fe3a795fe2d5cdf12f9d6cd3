@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ac0dc85_858a2d10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-06-15T17:51:52Z",
+      "side": 1,
+      "message": "Please say that this is the binary built by 3pp in the commit message.",
+      "revId": "df51df2ba8202120fe3a795fe2d5cdf12f9d6cd3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

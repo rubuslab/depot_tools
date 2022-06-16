@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f7e1b1d_5c742648",
+        "filename": "recipes/recipe_modules/depot_tools/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-16T01:22:08Z",
+      "side": 0,
+      "message": "This is currently required for non-Windows builders.",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 37
+      },
+      "revId": "c5c48533cfdfe58302eb233f8d57e05aa559cd2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

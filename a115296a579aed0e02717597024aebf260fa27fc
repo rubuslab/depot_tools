@@ -33,6 +33,23 @@
       "message": "here\u0027s an example failure: https://chromium-review.googlesource.com/c/infra/infra/+/3704181",
       "revId": "a115296a579aed0e02717597024aebf260fa27fc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2dd52190_e1e74796",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-06-16T01:22:08Z",
+      "side": 1,
+      "message": "Sorry for the breakage.\nReverting this will cause other failures.\nLet me handle the infra repo\u0027s failure.",
+      "revId": "a115296a579aed0e02717597024aebf260fa27fc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

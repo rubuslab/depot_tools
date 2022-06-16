@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4c4399a_36cb5d3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2022-06-16T20:27:42Z",
+      "side": 1,
+      "message": "Hi Vadim, just wanted to ask when you might land this; this week or next week?",
+      "revId": "dc9edafae6d5478a0b01d1b96f3a5c36c7b02165",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

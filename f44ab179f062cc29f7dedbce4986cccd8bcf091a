@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c1a52a9_006830d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-17T06:19:47Z",
+      "side": 1,
+      "message": "This is why they gave me a 96-core VM - using it wisely.\nI\u0027m only confused as to why nobody else has hit this, or reported it, since it looks like Pylint of a single .py file would trigger the bug. Hmmm.",
+      "revId": "f44ab179f062cc29f7dedbce4986cccd8bcf091a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

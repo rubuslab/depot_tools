@@ -22,6 +22,30 @@
       },
       "revId": "8254f06ba7acdb16e8aa5fa856462e4cc6eeca47",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bbf1682_ba0247b6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-21T17:12:50Z",
+      "side": 1,
+      "message": "It\u0027s not totally clear what is expected/best. I can see the advantages in raising an error if a user specifies too large a pool size so that they can fix their code. But, on the other hand, that would likely mean that somebody with a \"normal\" workstation would land some code and then somebody with a monster workstation would have to fix it.\n\nSo, pragmattically, especially in the closed-context of Chrome, I think that silently capping to 56 makes sense. And, 56 is plenty high enough that it is already probably beyond the point of diminishing returns.",
+      "parentUuid": "0b60ae91_29c76df2",
+      "range": {
+        "startLine": 169,
+        "startChar": 21,
+        "endLine": 169,
+        "endChar": 30
+      },
+      "revId": "8254f06ba7acdb16e8aa5fa856462e4cc6eeca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

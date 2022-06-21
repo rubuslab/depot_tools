@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b60ae91_29c76df2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1003325
+      },
+      "writtenOn": "2022-06-21T17:06:20Z",
+      "side": 1,
+      "message": "Is it worth triggering a warning or error if a caller specifies a larger than supported pool size (or is this already expected to be a recommendation rather than a directive)?",
+      "range": {
+        "startLine": 169,
+        "startChar": 21,
+        "endLine": 169,
+        "endChar": 30
+      },
+      "revId": "8254f06ba7acdb16e8aa5fa856462e4cc6eeca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

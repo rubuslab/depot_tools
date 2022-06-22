@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d4efa83_23f8ed3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1317711
+      },
+      "writtenOn": "2022-06-22T22:31:14Z",
+      "side": 1,
+      "message": "Hello, this CL updates the Windows script to do a similar check to the bash script. My CMD-foo isn\u0027t the best, so let me know if I made any horrible mistakes here. Thanks!",
+      "revId": "998a1ec6409857a06049f23d440a70c573644db4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

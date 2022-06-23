@@ -33,6 +33,23 @@
       "message": "My batch scripting capabilities are basically non-existent, so I\u0027ll let Bruce give the final say, but LGTM.",
       "revId": "998a1ec6409857a06049f23d440a70c573644db4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18e79ad6_befc6f34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-23T02:44:04Z",
+      "side": 1,
+      "message": "Nobody can tell whether a .bat file will work correctly just by reading it, but this change looks plausible and when I tested it and it works. lgtm.",
+      "revId": "998a1ec6409857a06049f23d440a70c573644db4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

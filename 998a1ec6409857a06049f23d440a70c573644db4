@@ -50,6 +50,23 @@
       "message": "Nobody can tell whether a .bat file will work correctly just by reading it, but this change looks plausible and when I tested it and it works. lgtm.",
       "revId": "998a1ec6409857a06049f23d440a70c573644db4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e552512d_927268c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1317711
+      },
+      "writtenOn": "2022-06-23T03:49:16Z",
+      "side": 1,
+      "message": "Agreed 😊\nThanks for the review!",
+      "revId": "998a1ec6409857a06049f23d440a70c573644db4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

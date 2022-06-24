@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e719b8cc_166e626f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-06-24T18:22:41Z",
+      "side": 1,
+      "message": "This should be merged on or after 2022-07-11. Gavin, I\u0027ll be OOO so please do that.",
+      "revId": "a49952c9890a464f68f2afeb78e802478647da46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

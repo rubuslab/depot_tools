@@ -6,4 +6,4 @@
 # pylint -- a shell wrapper for pylint.
 
 base_dir=$(dirname "$0")
-PYTHONDONTWRITEBYTECODE=1 exec "$base_dir/pylint-1.5" "$@"
+PYTHONDONTWRITEBYTECODE=1 exec "$base_dir/pylint-2.7" "$@"

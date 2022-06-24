@@ -930,7 +930,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
   # pylint: disable=arguments-differ
   def run(self, revision_overrides, command, args, work_queue, options,
           patch_refs, target_branches):
-    """Runs |command| then parse the DEPS file."""
+    """Runs |command| then parse the DEPS file.
+
+    Returns:
+      False if options.no_sync_commit is given and there are DEPS changes
+      between current the checked out DEPS and DEPS at `no_sync_commit`,
+      otherwise, True.
+    """
     logging.info('Dependency(%s).run()' % self.name)
     assert self._file_list == []
     # When running runhooks, there's no need to consult the SCM.
@@ -993,11 +999,18 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         while file_list[i].startswith(('\\', '/')):
           file_list[i] = file_list[i][1:]
 
-    if self.should_recurse:
+    # Whether or not we should run hooks and sync deps.
+    # We must check for diff AFTER any patch_refs have been applied.
+    should_sync = (not options.no_sync_commit or
+                   self._used_scm.deps_diff(options.no_sync_commit))
+    if self.should_recurse and should_sync:
       self.ParseDepsFile()
 
     self._run_is_done(file_list or [])
 
+    # TODO(crbug.com/1339471): If should_recurse is false, ParseDepsFile never
+    # gets called meaning we never fetch hooks and dependencies. So there's
+    # no need to check should_recurse again here.
     if self.should_recurse:
       if command in ('update', 'revert') and not options.noprehooks:
         self.RunPreDepsHooks()
@@ -1061,6 +1074,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
               raise
         else:
           print('Skipped missing %s' % cwd, file=sys.stderr)
+    return should_sync
 
   def GetScmName(self):
     raise NotImplementedError()

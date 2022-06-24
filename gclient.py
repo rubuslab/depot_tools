@@ -993,11 +993,20 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         while file_list[i].startswith(('\\', '/')):
           file_list[i] = file_list[i][1:]
 
-    if self.should_recurse:
+    # If there have not been any DEPS changes since `options.no_sync_commit`
+    # We can skip hooks, deps, and CIPD, so we don't need to parse the DEPS
+    # file.
+    # We must check for diffs AFTER any patch_refs have been applied.
+    should_sync = (not options.no_sync_commit or
+                   self._used_scm.deps_diff(options.no_sync_commit))
+    if self.should_recurse and should_sync:
       self.ParseDepsFile()
 
     self._run_is_done(file_list or [])
 
+    # TODO(crbug.com/1339471): If should_recurse is false, ParseDepsFile never
+    # gets called meaning we never fetch hooks and dependencies. So there's
+    # no need to check should_recurse again here.
     if self.should_recurse:
       if command in ('update', 'revert') and not options.noprehooks:
         self.RunPreDepsHooks()
@@ -2785,6 +2794,8 @@ def CMDsync(parser, args):
   parser.add_option('--no-reset-patch-ref', action='store_false',
                     dest='reset_patch_ref', default=True,
                     help='Bypass calling reset after patching the ref.')
+  parser.add_option('--no-sync-commit', help='skips DEPS processing if the '
+                    'checked out DEPS is identical to the given commit.')
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
 

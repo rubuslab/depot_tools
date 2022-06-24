@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb04055c_c9b7034e",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1003,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-06-24T22:35:09Z",
+      "side": 1,
+      "message": "This may result in not applying patches to recursed DEPS so please check that case.\n\nafaik, that functionality is heavily used in v8 and webrtc.",
+      "revId": "2d49880bef27f3c05bc3a129abfd4cfd68d76872",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

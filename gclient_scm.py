@@ -536,6 +536,19 @@ class GitWrapper(SCMWrapper):
     if options.reset_patch_ref:
       self._Capture(['reset', '--soft', base_rev])
 
+  def deps_diff(self, previous_commit):
+    # type: (str) -> bool
+    """Check if a diff exists between the current DEPS and `previous commit`."""
+    try:
+      self._Capture(['diff', previous_commit, '--quiet', '--', 'DEPS'])
+      return False
+    except subprocess2.CalledProcessError as e:
+      # git diff --quiet exits with 1 if there were diffs.
+      if e.returncode != 1:
+        self.Print('git returned non-zero exit status %s:\n%s' %
+                   (e.returncode, e.stderr.decode('utf-8')))
+      return True
+
   def update(self, options, args, file_list):
     """Runs git to update or transparently checkout the working copy.
 

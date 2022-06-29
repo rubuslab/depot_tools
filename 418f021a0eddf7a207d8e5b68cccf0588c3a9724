@@ -16,6 +16,24 @@
       "message": "FYI, this breaks down if depot_tools is checked out as a submodule since .git is then a file, not a directory.",
       "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d3cd759_49be3c66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-06-29T15:01:57Z",
+      "side": 1,
+      "message": "I\u0027m not clear on why that would matter since this check just checks for the existence of .git, not the type.\n\nAlso, we tend to be cautious about supporting non-standard (not according to the instructions) setups since it complicates things.\n\nIf you think there is a legitimate reason to change this check then I\u0027d recommend filing a bug with details (including what setup, why, and how this combination causes problems) and then perhaps creating a CL.",
+      "parentUuid": "000f6fbb_efab83c2",
+      "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

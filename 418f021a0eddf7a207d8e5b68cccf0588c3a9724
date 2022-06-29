@@ -52,6 +52,41 @@
       "parentUuid": "2d3cd759_49be3c66",
       "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e125cc62_ff59ac5e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1180999
+      },
+      "writtenOn": "2022-06-29T21:29:13Z",
+      "side": 1,
+      "message": "The check has a trailing backslash, which makes it succeed for directories but not files.\n\nI just encountered it in our build setup, where we use a helper repo that has depot_tools as a git submodule (and have for a long time, on multiple platforms). It is not super important since I can work around it, but I thought I should at least leave a record is someone else runs into the same problem. Also, the fix is rather easy, if you don\u0027t mind supporting a .git file too, since the trailing backslash can just be removed.\n\nI can certainly create a real ticket if you find it worthwhile. Thanks for the feedback!",
+      "parentUuid": "2d3cd759_49be3c66",
+      "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "863747b5_94d8fe77",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1180999
+      },
+      "writtenOn": "2022-06-29T21:29:13Z",
+      "side": 1,
+      "message": "Sorry, I wrote this earlier, in a hurry, and didn\u0027t realize it just ended up being a draft. Better late than never, I guess...",
+      "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

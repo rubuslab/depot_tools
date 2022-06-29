@@ -131,6 +131,9 @@ DEPOT_TOOLS_DIR = os.path.dirname(os.path.abspath(os.path.realpath(__file__)))
 UNSET_CACHE_DIR = object()
 
 
+PREVIOUS_CUSTOM_VARS = 'GCLIENT_PREVIOUS_CUSTOM_VARS'
+
+
 class GNException(Exception):
   pass
 
@@ -452,6 +455,14 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # Whether we should process this dependency's DEPS file.
     self._should_recurse = should_recurse
 
+    # Whether we should sync git/cipd dependencies and runhooks from the
+    # DEPS file.
+    # This is set based on options.skip_sync_revisions and must be done after
+    # patch refs are applied.
+    # If this is False, we will still run custom_hooks and process custom_deps,
+    # if any.
+    self._should_sync = True
+
     self._OverrideUrl()
     # This is inherited from WorkItem.  We want the URL to be a resource.
     if self.url and isinstance(self.url, basestring):
@@ -613,21 +624,37 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     return True
 
   def _postprocess_deps(self, deps, rel_prefix):
+    # type: (Mapping[str, Mapping[str,str]], str) ->
+    #     Mapping[str, Mapping[str, str]]
     """Performs post-processing of deps compared to what's in the DEPS file."""
-    # Make sure the dict is mutable, e.g. in case it's frozen.
-    deps = dict(deps)
+    # If we don't need to sync, only process custom_deps, if any.
+    if not self._should_sync:
+      if not self.custom_deps:
+        return {}
 
-    # If a line is in custom_deps, but not in the solution, we want to append
-    # this line to the solution.
-    for dep_name, dep_info in self.custom_deps.items():
-      if dep_name not in deps:
+      processed_deps = {}
+      for dep_name, dep_info in self.custom_deps.items():
+        if dep_info and not dep_info.endswith('@unmanaged'):
+          if dep_name in deps:
+            # custom_deps that should override an existing deps gets applied
+            # in the Dependency itself with _OverrideUrl().
+            processed_deps[dep_name] = deps[dep_name]
+          else:
+            processed_deps[dep_name] = {'url': dep_info, 'dep_type': 'git'}
+    else:
+      processed_deps = dict(deps)
+
+      # If a line is in custom_deps, but not in the solution, we want to append
+      # this line to the solution.
+      for dep_name, dep_info in self.custom_deps.items():
         # Don't add it to the solution for the values of "None" and "unmanaged"
         # in order to force these kinds of custom_deps to act as revision
         # overrides (via revision_overrides). Having them function as revision
         # overrides allows them to be applied to recursive dependencies.
         # https://crbug.com/1031185
-        if dep_info and not dep_info.endswith('@unmanaged'):
-          deps[dep_name] = {'url': dep_info, 'dep_type': 'git'}
+        if (dep_name not in processed_deps
+            and dep_info and not dep_info.endswith('@unmanaged')):
+          processed_deps[dep_name] = {'url': dep_info, 'dep_type': 'git'}
 
     # Make child deps conditional on any parent conditions. This ensures that,
     # when flattened, recursed entries have the correct restrictions, even if
@@ -636,23 +663,24 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # recursively included by "src/ios_foo/DEPS" should also require
     # "checkout_ios=True".
     if self.condition:
-      for value in deps.values():
+      for value in processed_deps.values():
         gclient_eval.UpdateCondition(value, 'and', self.condition)
 
     if rel_prefix:
       logging.warning('use_relative_paths enabled.')
       rel_deps = {}
-      for d, url in deps.items():
+      for d, url in processed_deps.items():
         # normpath is required to allow DEPS to use .. in their
         # dependency local path.
         rel_deps[os.path.normpath(os.path.join(rel_prefix, d))] = url
       logging.warning('Updating deps by prepending %s.', rel_prefix)
-      deps = rel_deps
+      return rel_deps
 
-    return deps
+    return processed_deps
 
   def _deps_to_objects(self, deps, use_relative_paths):
-    """Convert a deps dict to a dict of Dependency objects."""
+    # type: (Mapping[str, Mapping[str, str]], bool) -> Sequence[Dependency]
+    """Convert a deps dict to a list of Dependency objects."""
     deps_to_add = []
     cached_conditions = {}
     for name, dep_value in deps.items():
@@ -706,10 +734,12 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                 condition=condition,
                 protocol=self.protocol))
 
+    # TODO(gclient_clean_up): Why do we need to sort this?
     deps_to_add.sort(key=lambda x: x.name)
     return deps_to_add
 
   def ParseDepsFile(self):
+    # type: () -> None
     """Parses the DEPS file for this dependency."""
     assert not self.deps_parsed
     assert not self.dependencies
@@ -832,19 +862,21 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       logging.warning('Updating hook base working directory to %s.',
                       hooks_cwd)
 
+    # Only run all hooks if we should sync, otherwise just run custom hooks.
     # override named sets of hooks by the custom hooks
     hooks_to_run = []
-    hook_names_to_suppress = [c.get('name', '') for c in self.custom_hooks]
-    for hook in local_scope.get('hooks', []):
-      if hook.get('name', '') not in hook_names_to_suppress:
-        hooks_to_run.append(hook)
+    if self._should_sync:
+      hook_names_to_suppress = [c.get('name', '') for c in self.custom_hooks]
+      for hook in local_scope.get('hooks', []):
+        if hook.get('name', '') not in hook_names_to_suppress:
+          hooks_to_run.append(hook)
 
     # add the replacements and any additions
     for hook in self.custom_hooks:
       if 'action' in hook:
         hooks_to_run.append(hook)
 
-    if self.should_recurse:
+    if self.should_recurse and deps_to_add:
       self._pre_deps_hooks = [
           Hook.from_dict(hook, variables=self.get_vars(), verbose=True,
                          conditions=self.condition, cwd_base=hooks_cwd)
@@ -895,6 +927,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     return bad_deps
 
   def FuzzyMatchUrl(self, candidates):
+    # type: (Union[Mapping[str, str], Collection[str]) -> Optional[str]
     """Attempts to find this dependency in the list of candidates.
 
     It looks first for the URL of this dependency in the list of
@@ -916,20 +949,26 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     """
     if self.url:
       origin, _ = gclient_utils.SplitUrlRevision(self.url)
-      if origin in candidates:
-        return origin
-      if origin.endswith('.git') and origin[:-len('.git')] in candidates:
-        return origin[:-len('.git')]
-      if origin + '.git' in candidates:
-        return origin + '.git'
+      match = gclient_utils.FuzzyMatchRepo(origin, candidates)
+      if match:
+        return match
     if self.name in candidates:
       return self.name
     return None
 
   # Arguments number differs from overridden method
   # pylint: disable=arguments-differ
-  def run(self, revision_overrides, command, args, work_queue, options,
-          patch_refs, target_branches):
+  def run(self,
+          revision_overrides,   # type: Mapping[str, str]
+          command,              # type: str
+          args,                 # type: Sequence[args]
+          work_queue,           # ExecutionQueue
+          options,              # optparse.Values
+          patch_refs,           # Mapping[str, str]
+          target_branches,      # Mapping[str, str]
+          skip_sync_revisions   # Mapping[str, str]
+          ):
+    # type: () -> None
     """Runs |command| then parse the DEPS file."""
     logging.info('Dependency(%s).run()' % self.name)
     assert self._file_list == []
@@ -993,11 +1032,20 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         while file_list[i].startswith(('\\', '/')):
           file_list[i] = file_list[i][1:]
 
+    # We must check for diffs AFTER any patch_refs have been applied.
+    if skip_sync_revisions:
+      skip_sync_rev = skip_sync_revisions.pop(
+          self.FuzzyMatchUrl(skip_sync_revisions), None)
+      self._should_sync = (skip_sync_rev is None
+                     or self._used_scm.deps_diff(skip_sync_rev))
     if self.should_recurse:
       self.ParseDepsFile()
 
     self._run_is_done(file_list or [])
 
+    # TODO(crbug.com/1339471): If should_recurse is false, ParseDepsFile never
+    # gets called meaning we never fetch hooks and dependencies. So there's
+    # no need to check should_recurse again here.
     if self.should_recurse:
       if command in ('update', 'revert') and not options.noprehooks:
         self.RunPreDepsHooks()
@@ -1592,6 +1640,14 @@ it or fix the checkout.
               options.revisions[0],
               ', '.join(s.name for s in client.dependencies[1:])),
           file=sys.stderr)
+    if (options.skip_sync_revisions and len(client.dependencies) > 1
+        and any('@' not in r for r in options.skip_sync_revisions)):
+      print(('You must specify the full solution name like --revision %s%s\n'
+             'when you have multiple solutions set up in your .gclient file.\n'
+             'Other solutions present are: %s.') %
+            (client.dependencies[0].name, options.revisions[0], ', '.join(
+                s.name for s in client.dependencies[1:])),
+            file=sys.stderr)
     return client
 
   def SetDefaultConfig(self, solution_name, deps_file, solution_url,
@@ -1645,25 +1701,33 @@ it or fix the checkout.
       gclient_utils.SyntaxErrorToError(filename, e)
     return scope.get('entries', {})
 
+  def _EnforceSkipSyncRevisions(self):
+    """Checks for revisions for skipping deps syncing."""
+    return self._ParseRevisions(self._options.skip_sync_revisions)
+
   def _EnforceRevisions(self):
     """Checks for revision overrides."""
-    revision_overrides = {}
     if self._options.head:
-      return revision_overrides
-    if not self._options.revisions:
-      return revision_overrides
+      return {}
+    return self._ParseRevisions(self._options.revisions)
+
+  def _ParseRevisions(self, options_revisions):
+    # type: (Sequence[str]) -> Mapping[str, str]
+    """Parses revs in '{<sol_name>@}<rev>' form and returns a dict."""
+    revisions_dict = {}
+    if not options_revisions:
+      return {}
     solutions_names = [s.name for s in self.dependencies]
-    index = 0
-    for revision in self._options.revisions:
-      if not '@' in revision:
+    for i, revision in enumerate(options_revisions):
+      if '@' not in revision:
         # Support for --revision 123
-        revision = '%s@%s' % (solutions_names[index], revision)
+        revision = '%s@%s' % (solutions_names[i], revision)
       name, rev = revision.split('@', 1)
-      revision_overrides[name] = rev
-      index += 1
-    return revision_overrides
+      revisions_dict[name] = rev
+    return revisions_dict
 
   def _EnforcePatchRefsAndBranches(self):
+    # type: () -> Tuple[Mapping[str, str], Mapping[str, str]]
     """Checks for patch refs."""
     patch_refs = {}
     target_branches = {}
@@ -1812,6 +1876,7 @@ it or fix the checkout.
     revision_overrides = {}
     patch_refs = {}
     target_branches = {}
+    skip_sync_revisions = {}
     # It's unnecessary to check for revision overrides for 'recurse'.
     # Save a few seconds by not calling _EnforceRevisions() in that case.
     if command not in ('diff', 'recurse', 'runhooks', 'status', 'revert',
@@ -1821,6 +1886,44 @@ it or fix the checkout.
 
     if command == 'update':
       patch_refs, target_branches = self._EnforcePatchRefsAndBranches()
+      skip_sync_revisions = self._EnforceSkipSyncRevisions()
+      if skip_sync_revisions:
+        # Current `self.dependencies` only contain solutions. If a patch_ref is
+        # not for a solution, then it is for a solution's dependency or recursed
+        # dependency which we cannot support with skip_sync_revisions.
+        unclaimed_prs = []
+        candidates = []
+        for dep in self.dependencies:
+          origin, _ = gclient_utils.SplitUrlRevision(dep.url)
+          candidates.extend([origin, dep.name])
+        for patch_repo in patch_refs:
+          if not gclient_utils.FuzzyMatchRepo(patch_repo, candidates):
+            unclaimed_prs.append(path_repo)
+        if unclaimed_prs:
+          skip_sync_revisions = {}
+          print(
+              'Ignoring --skip-sync-revisions. It cannot be used when there '
+              'are --patch-refs flags for non-solution dependencies. To skip'
+              'syncing remove patch_refs for: \n%s' % '\n'.join(unclaimed_prs))
+
+      if skip_sync_revisions:
+        # We cannot skip syncing if there are custom_vars that differ from the
+        # previous run's custom_vars.
+        previous_custom_vars = json.loads(
+            os.environ.get(PREVIOUS_CUSTOM_VARS, '{}'))
+        for s in self.dependencies:
+          if s.name not in skip_sync_revisions:
+            continue
+          previous_vars = previous_custom_vars.get(s.name)
+          if previous_vars != s.custom_vars():
+            skip_sync_revisions.pop(s.name)
+            print(
+                '--skip-sync-revisions cannot be used for solutions where '
+                'custom_vars is different from custom_vars of the last run on '
+                'this machine.\nRemoving skip_sync_revision for:\n'
+                'soluion: %s, current: %r, previous: %r.' % (
+                    s.name, s.custom_vars(), previous_vars))
+
     # Disable progress for non-tty stdout.
     should_show_progress = (
         setup_color.IS_TTY and not self._options.verbose and progress)
@@ -1837,7 +1940,8 @@ it or fix the checkout.
       if s.should_process:
         work_queue.enqueue(s)
     work_queue.flush(revision_overrides, command, args, options=self._options,
-                     patch_refs=patch_refs, target_branches=target_branches)
+                     patch_refs=patch_refs, target_branches=target_branches,
+                     skip_sync_revisions=skip_sync_revisions)
 
     if revision_overrides:
       print('Please fix your script, having invalid --revision flags will soon '
@@ -1874,6 +1978,11 @@ it or fix the checkout.
         pm = Progress('Running hooks', 1)
       self.RunHooksRecursively(self._options, pm)
 
+    # Store custom_vars on disk to compare in the next run.
+    custom_vars = {}
+    for dep in self.dependencies:
+      custom_vars[dep.name] = dep.custom_vars()
+    os.environ[PREVIOUS_CUSTOM_VARS] = json.dumps(sorted(custom_vars))
 
     return 0
 
@@ -1887,7 +1996,7 @@ it or fix the checkout.
       if s.should_process:
         work_queue.enqueue(s)
     work_queue.flush({}, None, [], options=self._options, patch_refs=None,
-                     target_branches=None)
+                     target_branches=None, skip_sync_revisions=None)
 
     def ShouldPrintRevision(dep):
       return (not self._options.filter
@@ -2024,7 +2133,7 @@ class CipdDependency(Dependency):
 
   #override
   def run(self, revision_overrides, command, args, work_queue, options,
-          patch_refs, target_branches):
+          patch_refs, target_branches, skip_sync_revisions):
     """Runs |command| then parse the DEPS file."""
     logging.info('CipdDependency(%s).run()' % self.name)
     if not self.should_process:
@@ -2032,7 +2141,7 @@ class CipdDependency(Dependency):
     self._CreatePackageIfNecessary()
     super(CipdDependency, self).run(revision_overrides, command, args,
                                     work_queue, options, patch_refs,
-                                    target_branches)
+                                    target_branches, skip_sync_revisions)
 
   def _CreatePackageIfNecessary(self):
     # We lazily create the CIPD package to make sure that only packages
@@ -2785,6 +2894,15 @@ def CMDsync(parser, args):
   parser.add_option('--no-reset-patch-ref', action='store_false',
                     dest='reset_patch_ref', default=True,
                     help='Bypass calling reset after patching the ref.')
+  parser.add_option(
+      '--skip-sync-revisions',
+      dest='no_sync_revisions',
+      default=[],
+      help='skips syncing the dependencies in DEPS if the checked out DEPS is '
+      'identical the one in the given revision. The expected format is '
+      '<sol_name>@<rev> if there is more than on solution. Otherwise <rev> '
+      'will work. This cannot be used if patch_refs need to be applied on '
+      'recursed DEPS.')
   (options, args) = parser.parse_args(args)
   client = GClient.LoadCurrentConfig(options)
 
@@ -3192,6 +3310,8 @@ class OptionParser(optparse.OptionParser):
     if not hasattr(options, 'revisions'):
       # GClient.RunOnDeps expects it even if not applicable.
       options.revisions = []
+    if not hasattr(options, 'skip_sync_revisions'):
+      options.skip_sync_revisions = []
     if not hasattr(options, 'head'):
       options.head = None
     if not hasattr(options, 'nohooks'):

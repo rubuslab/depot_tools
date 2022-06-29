@@ -16,6 +16,23 @@
       "message": "Hey Bruce and Aravind, this is a follow-up to the issue pointed out in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3718926/comments/000f6fbb_efab83c2. Please take a look when you\u0027re free, thanks!",
       "revId": "dfbf2aa745e7596872ce1c1d7afce4c79ba8c9b5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0967ee25_1e898e29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1317711
+      },
+      "writtenOn": "2022-06-29T21:40:18Z",
+      "side": 1,
+      "message": "Thanks for the quick review!",
+      "revId": "dfbf2aa745e7596872ce1c1d7afce4c79ba8c9b5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

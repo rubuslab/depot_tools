@@ -215,7 +215,7 @@ class GclientTest(trial_dir.TestCase):
     for s in client.dependencies:
       work_queue.enqueue(s)
     work_queue.flush({}, None, [], options=options, patch_refs={},
-                     target_branches={})
+                     target_branches={}, skip_sync_revisions={})
 
     return client.GetHooks(options)
 

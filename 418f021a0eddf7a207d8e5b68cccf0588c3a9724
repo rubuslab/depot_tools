@@ -34,6 +34,24 @@
       "parentUuid": "000f6fbb_efab83c2",
       "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "676ea61b_67352898",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1317711
+      },
+      "writtenOn": "2022-06-29T18:30:59Z",
+      "side": 1,
+      "message": "I think the existence of the trailing backslash in the \"IF NOT EXISTS ...\" actually forces it to check for a directory. Since the bash version of this script checks for a directory OR a file, I\u0027ll just update this to do the same (if I can figure it out... 😊)",
+      "parentUuid": "2d3cd759_49be3c66",
+      "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

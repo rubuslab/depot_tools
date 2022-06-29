@@ -131,6 +131,9 @@ DEPOT_TOOLS_DIR = os.path.dirname(os.path.abspath(os.path.realpath(__file__)))
 UNSET_CACHE_DIR = object()
 
 
+PREVIOUS_CUSTOM_VARS = 'GCLIENT_PREVIOUS_CUSTOM_VARS'
+
+
 class GNException(Exception):
   pass
 
@@ -895,6 +898,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     return bad_deps
 
   def FuzzyMatchUrl(self, candidates):
+    # type: (Union[Mapping[str, str], Collection[str]]) -> Optional[str]
     """Attempts to find this dependency in the list of candidates.
 
     It looks first for the URL of this dependency in the list of
@@ -916,12 +920,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     """
     if self.url:
       origin, _ = gclient_utils.SplitUrlRevision(self.url)
-      if origin in candidates:
-        return origin
-      if origin.endswith('.git') and origin[:-len('.git')] in candidates:
-        return origin[:-len('.git')]
-      if origin + '.git' in candidates:
-        return origin + '.git'
+      match = gclient_utils.FuzzyMatchRepo(origin, candidates)
+      if match:
+        return match
     if self.name in candidates:
       return self.name
     return None
@@ -929,7 +930,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
   # Arguments number differs from overridden method
   # pylint: disable=arguments-differ
   def run(self, revision_overrides, command, args, work_queue, options,
-          patch_refs, target_branches):
+          patch_refs, target_branches, skip_sync_revisions):
     """Runs |command| then parse the DEPS file."""
     logging.info('Dependency(%s).run()' % self.name)
     assert self._file_list == []
@@ -1592,6 +1593,15 @@ it or fix the checkout.
               options.revisions[0],
               ', '.join(s.name for s in client.dependencies[1:])),
           file=sys.stderr)
+
+    if (options.skip_sync_revisions and len(client.dependencies) > 1
+        and any('@' not in r for r in options.skip_sync_revisions)):
+      print(('You must specify the full solution name like --revision %s%s\n'
+             'when you have multiple solutions set up in your .gclient file.\n'
+             'Other solutions present are: %s.') %
+            (client.dependencies[0].name, options.revisions[0], ', '.join(
+                s.name for s in client.dependencies[1:])),
+            file=sys.stderr)
     return client
 
   def SetDefaultConfig(self, solution_name, deps_file, solution_url,
@@ -1645,25 +1655,35 @@ it or fix the checkout.
       gclient_utils.SyntaxErrorToError(filename, e)
     return scope.get('entries', {})
 
+  def _EnforceSkipSyncRevisions(self):
+    # type: () -> Mapping[str, str]
+    """Checks for revisions for skipping deps syncing."""
+    return self._ParseRevisions(self._options.skip_sync_revisions)
+
   def _EnforceRevisions(self):
+    # type: () -> Mapping[str, str]
     """Checks for revision overrides."""
-    revision_overrides = {}
     if self._options.head:
-      return revision_overrides
-    if not self._options.revisions:
-      return revision_overrides
+      return {}
+    return self._ParseRevisions(self._options.revisions)
+
+  def _ParseRevisions(self, options_revisions):
+    # type: (Sequence[str]) -> Mapping[str, str]
+    """Parses revs in '{<sol_name>@}<rev>' form and returns a dict."""
+    revisions_dict = {}
+    if not options_revisions:
+      return {}
     solutions_names = [s.name for s in self.dependencies]
-    index = 0
-    for revision in self._options.revisions:
-      if not '@' in revision:
+    for i, revision in enumerate(options_revisions):
+      if '@' not in revision:
         # Support for --revision 123
-        revision = '%s@%s' % (solutions_names[index], revision)
+        revision = '%s@%s' % (solutions_names[i], revision)
       name, rev = revision.split('@', 1)
-      revision_overrides[name] = rev
-      index += 1
-    return revision_overrides
+      revisions_dict[name] = rev
+    return revisions_dict
 
   def _EnforcePatchRefsAndBranches(self):
+    # type: () -> Tuple[Mapping[str, str], Mapping[str, str]]
     """Checks for patch refs."""
     patch_refs = {}
     target_branches = {}
@@ -1812,6 +1832,7 @@ it or fix the checkout.
     revision_overrides = {}
     patch_refs = {}
     target_branches = {}
+    skip_sync_revisions = {}
     # It's unnecessary to check for revision overrides for 'recurse'.
     # Save a few seconds by not calling _EnforceRevisions() in that case.
     if command not in ('diff', 'recurse', 'runhooks', 'status', 'revert',
@@ -1821,6 +1842,44 @@ it or fix the checkout.
 
     if command == 'update':
       patch_refs, target_branches = self._EnforcePatchRefsAndBranches()
+      skip_sync_revisions = self._EnforceSkipSyncRevisions()
+      if skip_sync_revisions:
+        # Current `self.dependencies` only contain solutions. If a patch_ref is
+        # not for a solution, then it is for a solution's dependency or recursed
+        # dependency which we cannot support with skip_sync_revisions.
+        unclaimed_prs = []
+        candidates = []
+        for dep in self.dependencies:
+          origin, _ = gclient_utils.SplitUrlRevision(dep.url)
+          candidates.extend([origin, dep.name])
+        for patch_repo in patch_refs:
+          if not gclient_utils.FuzzyMatchRepo(patch_repo, candidates):
+            unclaimed_prs.append(path_repo)
+        if unclaimed_prs:
+          skip_sync_revisions = {}
+          print(
+              'Ignoring --skip-sync-revisions. It cannot be used when there '
+              'are --patch-refs flags for non-solution dependencies. To skip'
+              'syncing remove patch_refs for: \n%s' % '\n'.join(unclaimed_prs))
+
+      if skip_sync_revisions:
+        # We cannot skip syncing if there are custom_vars that differ from the
+        # previous run's custom_vars.
+        previous_custom_vars = json.loads(
+            os.environ.get(PREVIOUS_CUSTOM_VARS, '{}'))
+        for s in self.dependencies:
+          if s.name not in skip_sync_revisions:
+            continue
+          previous_vars = previous_custom_vars.get(s.name)
+          if previous_vars != s.custom_vars:
+            skip_sync_revisions.pop(s.name)
+            print(
+                '--skip-sync-revisions cannot be used for solutions where '
+                'custom_vars is different from custom_vars of the last run on '
+                'this machine.\nRemoving skip_sync_revision for:\n'
+                'soluion: %s, current: %r, previous: %r.' % (
+                    s.name, s.custom_vars, previous_vars))
+
     # Disable progress for non-tty stdout.
     should_show_progress = (
         setup_color.IS_TTY and not self._options.verbose and progress)
@@ -1837,7 +1896,8 @@ it or fix the checkout.
       if s.should_process:
         work_queue.enqueue(s)
     work_queue.flush(revision_overrides, command, args, options=self._options,
-                     patch_refs=patch_refs, target_branches=target_branches)
+                     patch_refs=patch_refs, target_branches=target_branches,
+                     skip_sync_revisions=skip_sync_revisions)
 
     if revision_overrides:
       print('Please fix your script, having invalid --revision flags will soon '
@@ -1874,6 +1934,11 @@ it or fix the checkout.
         pm = Progress('Running hooks', 1)
       self.RunHooksRecursively(self._options, pm)
 
+    # Store custom_vars on disk to compare in the next run.
+    custom_vars = {}
+    for dep in self.dependencies:
+      custom_vars[dep.name] = dep.custom_vars
+    os.environ[PREVIOUS_CUSTOM_VARS] = json.dumps(sorted(custom_vars))
 
     return 0
 
@@ -1887,7 +1952,7 @@ it or fix the checkout.
       if s.should_process:
         work_queue.enqueue(s)
     work_queue.flush({}, None, [], options=self._options, patch_refs=None,
-                     target_branches=None)
+                     target_branches=None, skip_sync_revisions=None)
 
     def ShouldPrintRevision(dep):
       return (not self._options.filter
@@ -2024,7 +2089,7 @@ class CipdDependency(Dependency):
 
   #override
   def run(self, revision_overrides, command, args, work_queue, options,
-          patch_refs, target_branches):
+          patch_refs, target_branches, skip_sync_revisions):
     """Runs |command| then parse the DEPS file."""
     logging.info('CipdDependency(%s).run()' % self.name)
     if not self.should_process:
@@ -2032,7 +2097,7 @@ class CipdDependency(Dependency):
     self._CreatePackageIfNecessary()
     super(CipdDependency, self).run(revision_overrides, command, args,
                                     work_queue, options, patch_refs,
-                                    target_branches)
+                                    target_branches, skip_sync_revisions)
 
   def _CreatePackageIfNecessary(self):
     # We lazily create the CIPD package to make sure that only packages
@@ -3192,6 +3257,8 @@ class OptionParser(optparse.OptionParser):
     if not hasattr(options, 'revisions'):
       # GClient.RunOnDeps expects it even if not applicable.
       options.revisions = []
+    if not hasattr(options, 'skip_sync_revisions'):
+      options.skip_sync_revisions = []
     if not hasattr(options, 'head'):
       options.head = None
     if not hasattr(options, 'nohooks'):

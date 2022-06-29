@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "000f6fbb_efab83c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1180999
+      },
+      "writtenOn": "2022-06-29T10:03:24Z",
+      "side": 1,
+      "message": "FYI, this breaks down if depot_tools is checked out as a submodule since .git is then a file, not a directory.",
+      "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

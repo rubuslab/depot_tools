@@ -1290,6 +1290,113 @@ class GclientTest(trial_dir.TestCase):
     self.assertIsInstance(dep, gclient.GitDependency)
     self.assertEqual('https://example.com/bar', dep.url)
 
+  def testParseDepsFile_FalseShouldSync_WithCustoms(self):
+    """Only process custom_deps/hooks when should_sync is False."""
+    solutions = [{
+        'name':
+        'chicken',
+        'url':
+        'https://example.com/chicken',
+        'deps_file':
+        '.DEPS.git',
+        'custom_deps': {
+            'override/foo': 'https://example.com/overridefoo@123',
+            'new/foo': 'https://example.come/newfoo@123'
+        },
+        'custom_hooks': [{
+            'name': 'overridehook',
+            'pattern': '.',
+            'action': ['echo', 'chicken']
+        }, {
+            'name': 'newhook',
+            'pattern': '.',
+            'action': ['echo', 'chick']
+        }],
+    }]
+    write('.gclient', 'solutions = %s' % repr(solutions))
+
+    deps = {
+        'override/foo': 'https://example.com/override.git@bar_version',
+        'notouch/foo': 'https://example.com/notouch.git@bar_version'
+    }
+    hooks = [{
+        'name': 'overridehook',
+        'pattern': '.',
+        'action': ['echo', 'cow']
+    }, {
+        'name': 'notouchhook',
+        'pattern': '.',
+        'action': ['echo', 'fail']
+    }]
+    pre_deps_hooks = [{
+        'name': 'runfirst',
+        'pattern': '.',
+        'action': ['echo', 'prehook']
+    }]
+    write(
+        os.path.join('chicken', 'DEPS'), 'deps = %s\n'
+        'hooks = %s\n'
+        'pre_deps_hooks = %s' % (repr(deps), repr(hooks), repr(pre_deps_hooks)))
+
+    expected_dep_names = ['override/foo', 'new/foo']
+    expected_hook_names = ['overridehook', 'newhook']
+
+    options, _ = gclient.OptionParser().parse_args([])
+    client = gclient.GClient.LoadCurrentConfig(options)
+    self.assertEqual(1, len(client.dependencies))
+    sol = client.dependencies[0]
+
+    sol._should_sync = False
+    sol.ParseDepsFile()
+    self.assertEqual(1, len(sol.pre_deps_hooks))
+    self.assertItemsEqual(expected_dep_names,
+                          [d.name for d in sol.dependencies])
+    self.assertItemsEqual(expected_hook_names,
+                          [h.name for h in sol._deps_hooks])
+
+  def testParseDepsFile_FalseShouldSync_NoCustoms(self):
+    """Parse DEPS when should_sync is False and no custom hooks/deps."""
+    solutions = [{
+        'name': 'chicken',
+        'url': 'https://example.com/chicken',
+        'deps_file': '.DEPS.git',
+    }]
+    write('.gclient', 'solutions = %s' % repr(solutions))
+
+    deps = {
+        'override/foo': 'https://example.com/override.git@bar_version',
+        'notouch/foo': 'https://example.com/notouch.git@bar_version'
+    }
+    hooks = [{
+        'name': 'overridehook',
+        'pattern': '.',
+        'action': ['echo', 'cow']
+    }, {
+        'name': 'notouchhook',
+        'pattern': '.',
+        'action': ['echo', 'fail']
+    }]
+    pre_deps_hooks = [{
+        'name': 'runfirst',
+        'pattern': '.',
+        'action': ['echo', 'prehook']
+    }]
+    write(
+        os.path.join('chicken', 'DEPS'), 'deps = %s\n'
+        'hooks = %s\n'
+        'pre_deps_hooks = %s' % (repr(deps), repr(hooks), repr(pre_deps_hooks)))
+
+    options, _ = gclient.OptionParser().parse_args([])
+    client = gclient.GClient.LoadCurrentConfig(options)
+    self.assertEqual(1, len(client.dependencies))
+    sol = client.dependencies[0]
+
+    sol._should_sync = False
+    sol.ParseDepsFile()
+    self.assertFalse(sol.pre_deps_hooks)
+    self.assertFalse(sol.dependencies)
+    self.assertFalse(sol._deps_hooks)
+
   def testSameDirAllowMultipleCipdDeps(self):
     """Verifies gclient allow multiple cipd deps under same directory."""
     parser = gclient.OptionParser()

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33fc868a_86fde991",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-06-30T23:15:30Z",
+      "side": 1,
+      "message": "nit: flip this -\u003e less indentation",
+      "range": {
+        "startLine": 666,
+        "startChar": 7,
+        "endLine": 666,
+        "endChar": 17
+      },
+      "revId": "e04f74873ed1bb07b30dc8dcfd6ac02c32a5adaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1c673ce_18ce07ac",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-06-30T23:15:30Z",
+      "side": 1,
+      "message": "is there a bug for this?",
+      "range": {
+        "startLine": 734,
+        "startChar": 11,
+        "endLine": 734,
+        "endChar": 27
+      },
+      "revId": "e04f74873ed1bb07b30dc8dcfd6ac02c32a5adaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -105,6 +105,24 @@
       "parentUuid": "863747b5_94d8fe77",
       "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3a6b4ba_8f917941",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1180999
+      },
+      "writtenOn": "2022-06-30T07:52:32Z",
+      "side": 1,
+      "message": "Yeah, I saw you added me to the CC. Thanks for the quick turnaround!",
+      "parentUuid": "0cd49eef_e134ebf5",
+      "revId": "418f021a0eddf7a207d8e5b68cccf0588c3a9724",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

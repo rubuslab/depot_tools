@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "da7c62ca_5e2f0656",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1256237
+      },
+      "writtenOn": "2022-07-01T17:28:22Z",
+      "side": 1,
+      "message": "If you convert `angle` to `angleproject` these should resolve.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 5
+      },
+      "revId": "8f9d4669520f126276479987e961baa289d99363",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "75ef5546_f54cbfa0",
@@ -14,6 +37,47 @@
       "writtenOn": "2022-07-01T03:43:17Z",
       "side": 1,
       "message": "This should fix the Python 2/3 issues reported in Angle. Can you tell me how to make the angle bug links work? The ones in the description do not work. Thanks.",
+      "revId": "8f9d4669520f126276479987e961baa289d99363",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "549b67a6_1a7e1adf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1256237
+      },
+      "writtenOn": "2022-07-01T17:28:22Z",
+      "side": 1,
+      "message": "Bruce, thanks for the quick fix.  I tested it out locally, had to make a change for it to work. See my other comment.",
+      "parentUuid": "75ef5546_f54cbfa0",
+      "revId": "8f9d4669520f126276479987e961baa289d99363",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d7e58e2_1e2fa9a2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1486,
+      "author": {
+        "id": 1256237
+      },
+      "writtenOn": "2022-07-01T17:28:22Z",
+      "side": 1,
+      "message": "I tested this locally and I believe it should be:\n```\n.replace(\u0027\\r\\n\u0027, \u0027\\n\u0027)\n```",
+      "range": {
+        "startLine": 1486,
+        "startChar": 55,
+        "endLine": 1486,
+        "endChar": 75
+      },
       "revId": "8f9d4669520f126276479987e961baa289d99363",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

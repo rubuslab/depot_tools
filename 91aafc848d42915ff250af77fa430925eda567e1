@@ -16,6 +16,23 @@
       "message": "this version includes assertitemsequal \u003c-\u003e assertcountequal",
       "revId": "91aafc848d42915ff250af77fa430925eda567e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee4b7784_e53481bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-07-01T16:57:12Z",
+      "side": 1,
+      "message": "also to match our vpython wheel six",
+      "revId": "91aafc848d42915ff250af77fa430925eda567e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

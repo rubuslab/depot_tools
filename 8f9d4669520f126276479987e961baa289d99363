@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75ef5546_f54cbfa0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-07-01T03:43:17Z",
+      "side": 1,
+      "message": "This should fix the Python 2/3 issues reported in Angle. Can you tell me how to make the angle bug links work? The ones in the description do not work. Thanks.",
+      "revId": "8f9d4669520f126276479987e961baa289d99363",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "71d8750b_c87f3e52",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-07-01T13:34:23Z",
+      "side": 1,
+      "message": "nice nit",
+      "parentUuid": "33fc868a_86fde991",
+      "range": {
+        "startLine": 666,
+        "startChar": 7,
+        "endLine": 666,
+        "endChar": 17
+      },
+      "revId": "e04f74873ed1bb07b30dc8dcfd6ac02c32a5adaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c1c673ce_18ce07ac",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-06-30T23:15:30Z",
       "side": 1,
       "message": "is there a bug for this?",
+      "range": {
+        "startLine": 734,
+        "startChar": 11,
+        "endLine": 734,
+        "endChar": 27
+      },
+      "revId": "e04f74873ed1bb07b30dc8dcfd6ac02c32a5adaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cf56ec1_8300c5f1",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-07-01T13:34:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c1c673ce_18ce07ac",
       "range": {
         "startLine": 734,
         "startChar": 11,

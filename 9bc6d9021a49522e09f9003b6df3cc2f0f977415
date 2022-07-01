@@ -34,6 +34,23 @@
       "parentUuid": "ea0919d7_d5f6df59",
       "revId": "9bc6d9021a49522e09f9003b6df3cc2f0f977415",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a06699f1_686d9fb1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-07-01T19:29:32Z",
+      "side": 1,
+      "message": "Happy to make this change. After this your PRESUBMIT.py files should start running on Python 3 if they are tagged correctly. You can then make sure that any child-scripts are running on Python 3 (you should get warnings if they aren\u0027t).\n\nThis could be a good time to do testing with \"git cl presubmit --all\"",
+      "revId": "9bc6d9021a49522e09f9003b6df3cc2f0f977415",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

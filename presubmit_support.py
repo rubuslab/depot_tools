@@ -343,6 +343,14 @@ class _PresubmitResult(object):
     self._message = _PresubmitResult._ensure_str(message)
     self._items = items or []
     self._long_text = _PresubmitResult._ensure_str(long_text.rstrip())
+    # This message happens for Windows command lines that are greater than 8191
+    # characters but less than 32768. Since no exception is thrown these errors
+    # are reported with no context. Recording a back trace is important to make
+    # them possible to investigate.
+    if 'The command line is too long.' in message or 'not recognized as an internal or external command' in message:
+      self._long_text += ' '.join(traceback.format_stack(None, 8))
+    elif 'Expected "Release" but got "Debug".' in message:
+      self._long_text += ' '.join(traceback.format_stack(None, 8))
 
   @staticmethod
   def _ensure_str(val):
@@ -1478,6 +1486,8 @@ def DoPostUploadExecuter(change, gerrit_obj, verbose, use_python3=False):
   # Thus, reverse the order provided by ListRelevantPresubmitFiles.
   presubmit_files.reverse()
 
+  if verbose:
+    sys.stdout.write('Running %d presubmit scripts\n' % len(presubmit_files))
   for filename in presubmit_files:
     filename = os.path.abspath(filename)
     if verbose:
@@ -1594,6 +1604,8 @@ class PresubmitExecuter(object):
           # exception if checks add globals to context. E.g. sometimes the
           # Python runtime will add __warningregistry__.
           for function_name in list(context.keys()):
+            #if not function_name.count('CheckAddedDepsHaveTargetApprovals') > 0:
+            #  continue
             if not function_name.startswith('Check'):
               continue
             if function_name.endswith('Commit') and not self.committing:
@@ -1654,9 +1666,9 @@ class PresubmitExecuter(object):
       ]
 
     elapsed_time = time_time() - start_time
-    if elapsed_time > 10.0:
-      sys.stdout.write('%s from %s took %.1fs to run.\n' %
-                       (function_name, presubmit_path, elapsed_time))
+    if elapsed_time > 1.0: # Restored to default
+      sys.stdout.write('%6.1fs to run %s from %s.\n' %
+                       (elapsed_time, function_name, presubmit_path))
     if sink:
       status = rdb_wrapper.STATUS_PASS
       if any(r.fatal for r in result):
@@ -1751,6 +1763,11 @@ def DoPresubmitChecks(change,
       else:
         skipped_count += 1
     for filename in presubmit_files:
+      #if filename != r'c:\src\chromium\src\PRESUBMIT.py':
+      #  continue
+      #if not filename.endswith(r'third_party/blink/web_tests/external/PRESUBMIT.py'.replace('/', '\\')):
+      #  continue
+      file_start_time = time_time()
       filename = os.path.abspath(filename)
       if verbose:
         sys.stdout.write('Running %s\n' % filename)
@@ -1760,6 +1777,9 @@ def DoPresubmitChecks(change,
         results += executer.ExecPresubmitScript(presubmit_script, filename)
       else:
         skipped_count += 1
+      elapsed_time = time_time() - file_start_time
+      #if elapsed_time > 1.0:
+      #  sys.stdout.write('%s took %.1fs to run.\n' % (filename, elapsed_time))
 
     results += thread_pool.RunAsync()
 

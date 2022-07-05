@@ -22,6 +22,30 @@
       },
       "revId": "41191c21187e6e60204db1fd0eabe563bb0a6685",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4a08027_f58fc3b3",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2022-07-05T08:23:42Z",
+      "side": 1,
+      "message": "Left for consistency with above",
+      "parentUuid": "e5cf9624_b98fdc37",
+      "range": {
+        "startLine": 97,
+        "startChar": 29,
+        "endLine": 97,
+        "endChar": 30
+      },
+      "revId": "41191c21187e6e60204db1fd0eabe563bb0a6685",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

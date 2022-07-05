@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5cf9624_b98fdc37",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-07-05T08:16:50Z",
+      "side": 1,
+      "message": "this paren is not necessary now?",
+      "range": {
+        "startLine": 97,
+        "startChar": 29,
+        "endLine": 97,
+        "endChar": 30
+      },
+      "revId": "41191c21187e6e60204db1fd0eabe563bb0a6685",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

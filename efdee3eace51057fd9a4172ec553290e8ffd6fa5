@@ -33,6 +33,24 @@
       "message": "activate -\u003e to activate",
       "revId": "efdee3eace51057fd9a4172ec553290e8ffd6fa5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d69abdf_7060a3c8",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2022-07-06T02:41:41Z",
+      "side": 1,
+      "message": "I thought I had to do that for a moment too, but on further reading this was \"Either X or Y activate build acceleration\", not \"Either use X or use Y to activate build acceleration\".\n\nHow about \"Either X or Y will activate build acceleration\"? I think that makes the sentence structure more apparent :)",
+      "parentUuid": "501ab2ff_f5e1decd",
+      "revId": "efdee3eace51057fd9a4172ec553290e8ffd6fa5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

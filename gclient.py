@@ -1010,13 +1010,16 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             'sync_status': sync_status,
           })
 
+      latest_commit = None
       patch_repo = self.url.split('@')[0]
       patch_ref = patch_refs.pop(self.FuzzyMatchUrl(patch_refs), None)
       target_branch = target_branches.pop(
           self.FuzzyMatchUrl(target_branches), None)
       if command == 'update' and patch_ref is not None:
-        self._used_scm.apply_patch_ref(patch_repo, patch_ref, target_branch,
-                                       options, file_list)
+        latest_commit = self._used_scm.apply_patch_ref(
+            patch_repo, patch_ref, target_branch, options, file_list)
+      if not latest_commit:
+        latest_commit = self._Capture(['rev-parse', 'HEAD'])
 
       if file_list:
         file_list = [os.path.join(self.name, f.strip()) for f in file_list]
@@ -1033,6 +1036,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         # Strip any leading path separators.
         while file_list[i].startswith(('\\', '/')):
           file_list[i] = file_list[i][1:]
+
+    os.environ[PREVIOUS_SYNC_COMMITS] += '%s:%s,' % (self.name, latest_commit)
 
     # TODO(crbug.com/1339472): Pass skip_sync_revisions into this run()
     # and check for DEPS diffs to set self._should_sync.

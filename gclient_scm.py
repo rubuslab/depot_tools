@@ -533,6 +533,7 @@ class GitWrapper(SCMWrapper):
       if file_list is not None:
         file_list.extend(self._GetDiffFilenames(base_rev))
 
+    os.environ[PREVIOUS_SYNC_COMMIT] = self._Capture(['rev-parse', 'HEAD'])
     if options.reset_patch_ref:
       self._Capture(['reset', '--soft', base_rev])
 

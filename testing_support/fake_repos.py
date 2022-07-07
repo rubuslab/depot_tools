@@ -810,6 +810,15 @@ class FakeRepoBlinkDEPS(FakeReposBase):
     raise NotImplementedError()
 
 
+class FakeRepoNoSyncDEPS(FakeReposeBase):
+  """Simulates a repo with some DEPS changes."""
+
+  def populateGit(self):
+    self._commit_git('repo_1', {
+        'DEPS': textwrap.dedent("""\
+"""), })
+
+
 class FakeReposTestBase(trial_dir.TestCase):
   """This is vaguely inspired by twisted."""
   # Static FakeRepos instances. Lazy loaded.

@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b83ba09_9e9e27ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-07-11T20:49:20Z",
+      "side": 1,
+      "message": "This seems good. I wonder if it would also be useful having a line at the bottom that summarizes all of the messages, warnings and errors (only printed if any of them are non-zero)? I can see that being handy for monitoring presubmit --all trends. The challenge would be making sure that this is not just added noise for \"normal\" presubmit runs, and I\u0027m happy to call this idea out-of-scope for this change.",
+      "revId": "4757fa48d3e4df4db57ab9b2528a1d50e0ec393a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a151db43_a41a40c7",
@@ -14,6 +31,30 @@
       "writtenOn": "2022-07-11T19:57:41Z",
       "side": 1,
       "message": "Bruce, in https://crbug.com/1341987#c2 you suggested the format `** %d Presubmit Errors **`. I think `** Presubmit Errors: %d **` is easier to read when the # of each presubmit type varies, e.g. 1 and 1000. But you\u0027re more familiar with presubmit, WDYT?",
+      "range": {
+        "startLine": 1795,
+        "startChar": 29,
+        "endLine": 1795,
+        "endChar": 45
+      },
+      "revId": "4757fa48d3e4df4db57ab9b2528a1d50e0ec393a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07db0fa1_35dbc3f7",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1795,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-07-11T20:49:20Z",
+      "side": 1,
+      "message": "I have no problem with putting the number afterwards.",
+      "parentUuid": "a151db43_a41a40c7",
       "range": {
         "startLine": 1795,
         "startChar": 29,

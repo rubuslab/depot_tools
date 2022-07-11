@@ -22,6 +22,30 @@
       },
       "revId": "6e70e86d6f8d3af7213d76146fdf8422d59b69bd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51b3595b_c6e050b2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1486,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-07-11T20:53:06Z",
+      "side": 1,
+      "message": "Mac used to use \\r line endings (not \\n\\r) although I don\u0027t know how those interacted with the way that we read these files. Luckily OSX switched line endings to \\n so that they are compatible with POSIX/Linux/Unix.\n\nhttps://superuser.com/questions/439440/did-mac-os-lion-switch-to-using-line-feeds-lf-n-for-line-breaks-instead-of\n\nIt is amazing that there can be so much non-standardization around such a simple thing. It\u0027s nice that Windows\u0027 support for \\n line endings is improving - notepad handles them now!",
+      "parentUuid": "564ac5ef_ef94d8b4",
+      "range": {
+        "startLine": 1486,
+        "startChar": 64,
+        "endLine": 1486,
+        "endChar": 76
+      },
+      "revId": "6e70e86d6f8d3af7213d76146fdf8422d59b69bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

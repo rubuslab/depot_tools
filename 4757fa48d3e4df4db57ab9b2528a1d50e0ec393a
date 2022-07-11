@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a151db43_a41a40c7",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1795,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-07-11T19:57:41Z",
+      "side": 1,
+      "message": "Bruce, in https://crbug.com/1341987#c2 you suggested the format `** %d Presubmit Errors **`. I think `** Presubmit Errors: %d **` is easier to read when the # of each presubmit type varies, e.g. 1 and 1000. But you\u0027re more familiar with presubmit, WDYT?",
+      "range": {
+        "startLine": 1795,
+        "startChar": 29,
+        "endLine": 1795,
+        "endChar": 45
+      },
+      "revId": "4757fa48d3e4df4db57ab9b2528a1d50e0ec393a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

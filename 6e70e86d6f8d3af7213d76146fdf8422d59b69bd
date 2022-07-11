@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "564ac5ef_ef94d8b4",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1486,
+      "author": {
+        "id": 1300114
+      },
+      "writtenOn": "2022-07-11T20:36:20Z",
+      "side": 1,
+      "message": "Drive by: I vaguely recall from the past that mac or some other platform uses `\\n\\r` or something. I recall that at the time I had found that simply dropping `\\r` and using `\\n` as the line ending afterwards worked everywhere.\n\nThis could have done the same; i.e. simply remove `\\r`, and don\u0027t pay attention to `\\n`.",
+      "range": {
+        "startLine": 1486,
+        "startChar": 64,
+        "endLine": 1486,
+        "endChar": 76
+      },
+      "revId": "6e70e86d6f8d3af7213d76146fdf8422d59b69bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

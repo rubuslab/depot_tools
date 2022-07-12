@@ -125,6 +125,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "325098d0_9dd10712",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-07-12T21:49:06Z",
+      "side": 1,
+      "message": "A slightly lighter-weight way to make it fail is with this command:\n\nvpython.bat depot_tools\\tests\\git_rebase_update_test.py --verbose\n\nMost of the tests fail, all with \"ValueError: I/O operation on closed file.\"\n\nIf --verbose is not specified when the failure seems to be avoided, presumably because it is a logging.debug call which is failing.",
+      "parentUuid": "23ef28d9_b16ba4f6",
+      "revId": "98ba0eb615c5e50b25444e2d8c6b1ade951cafa1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0601de96_832bc811",
         "filename": "fetch_configs/pdfium.py",
         "patchSetId": 3

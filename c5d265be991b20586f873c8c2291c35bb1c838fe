@@ -34,6 +34,23 @@
       "parentUuid": "2a7345ed_b4a01f26",
       "revId": "c5d265be991b20586f873c8c2291c35bb1c838fe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de711c64_f5d416e1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2022-07-12T21:14:03Z",
+      "side": 1,
+      "message": "Are the red try bots a KI? I\u0027m getting them on another CL as well: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3758798",
+      "revId": "c5d265be991b20586f873c8c2291c35bb1c838fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

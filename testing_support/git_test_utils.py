@@ -454,6 +454,10 @@ class GitRepo(object):
   def open(self, path, mode='rb'):
     return open(os.path.join(self.repo_path, path), mode)
 
+  def write_string(self, path, s):
+    with open(os.path.join(self.repo_path, path), 'w') as f:
+      f.write(s)
+
   def to_schema(self):
     lines = self.git('rev-list', '--parents', '--reverse', '--topo-order',
                      '--format=%s', *self.to_schema_refs).stdout.splitlines()

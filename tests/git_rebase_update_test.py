@@ -78,33 +78,28 @@ class GitRebaseUpdateTest(git_test_utils.GitRepoReadWriteTestBase):
     self.assertEqual(self.repo.git('rev-parse', 'HEAD').stdout,
                      self.repo.git('rev-parse', 'origin/main').stdout)
 
-    with self.repo.open('foobar', 'w') as f:
-      f.write('this is the foobar file')
+    self.repo.write_string('foobar', 'this is the foobar file')
     self.repo.git('add', 'foobar')
     self.repo.git_commit('foobar1')
 
-    with self.repo.open('foobar', 'w') as f:
-      f.write('totes the Foobar file')
+    self.repo.write_string('foobar', 'totes the Foobar file')
     self.repo.git_commit('foobar2')
 
     self.repo.run(self.nb.main, ['--upstream-current', 'int1_foobar'])
     self.repo.run(self.nb.main, ['--upstream-current', 'int2_foobar'])
     self.repo.run(self.nb.main, ['--upstream-current', 'sub_foobar'])
-    with self.repo.open('foobar', 'w') as f:
-        f.write('some more foobaring')
+    self.repo.write_string('foobar', 'some more foobaring')
     self.repo.git('add', 'foobar')
     self.repo.git_commit('foobar3')
 
     self.repo.git('checkout', 'branch_K')
     self.repo.run(self.nb.main, ['--upstream-current', 'sub_K'])
-    with self.repo.open('K', 'w') as f:
-      f.write('This depends on K')
+    self.repo.write_string('K', 'This depends on K')
     self.repo.git_commit('sub_K')
 
     self.repo.run(self.nb.main, ['old_branch'])
     self.repo.git('reset', '--hard', self.repo['A'])
-    with self.repo.open('old_file', 'w') as f:
-      f.write('old_files we want to keep around')
+    self.repo.write_string('old_file', 'old_files we want to keep around')
     self.repo.git('add', 'old_file')
     self.repo.git_commit('old_file')
     self.repo.git('config', 'branch.old_branch.dormant', 'true')
@@ -235,27 +230,23 @@ class GitRebaseUpdateTest(git_test_utils.GitRepoReadWriteTestBase):
   def testRebaseConflicts(self):
     # Pretend that branch_L landed
     self.origin.git('checkout', 'main')
-    with self.origin.open('L', 'w') as f:
-      f.write('L')
+    self.repo.write_string('L', 'L')
     self.origin.git('add', 'L')
     self.origin.git_commit('L')
 
     # Add a commit to branch_K so that things fail
     self.repo.git('checkout', 'branch_K')
-    with self.repo.open('M', 'w') as f:
-      f.write('NOPE')
+    self.repo.write_string('M', 'NOPE')
     self.repo.git('add', 'M')
     self.repo.git_commit('K NOPE')
 
     # Add a commits to branch_L which will work when squashed
     self.repo.git('checkout', 'branch_L')
     self.repo.git('reset', 'branch_L~')
-    with self.repo.open('L', 'w') as f:
-      f.write('NOPE')
+    self.repo.write_string('L', 'NOPE')
     self.repo.git('add', 'L')
     self.repo.git_commit('L NOPE')
-    with self.repo.open('L', 'w') as f:
-      f.write('L')
+    self.repo.write_string('L', 'L')
     self.repo.git('add', 'L')
     self.repo.git_commit('L YUP')
 
@@ -281,27 +272,23 @@ class GitRebaseUpdateTest(git_test_utils.GitRepoReadWriteTestBase):
   def testRebaseConflictsKeepGoing(self):
     # Pretend that branch_L landed
     self.origin.git('checkout', 'main')
-    with self.origin.open('L', 'w') as f:
-      f.write('L')
+    self.repo.write_string('L', 'L')
     self.origin.git('add', 'L')
     self.origin.git_commit('L')
 
     # Add a commit to branch_K so that things fail
     self.repo.git('checkout', 'branch_K')
-    with self.repo.open('M', 'w') as f:
-      f.write('NOPE')
+    self.repo.write_string('M', 'NOPE')
     self.repo.git('add', 'M')
     self.repo.git_commit('K NOPE')
 
     # Add a commits to branch_L which will work when squashed
     self.repo.git('checkout', 'branch_L')
     self.repo.git('reset', 'branch_L~')
-    with self.repo.open('L', 'w') as f:
-      f.write('NOPE')
+    self.repo.write_string('L', 'NOPE')
     self.repo.git('add', 'L')
     self.repo.git_commit('L NOPE')
-    with self.repo.open('L', 'w') as f:
-      f.write('L')
+    self.repo.write_string('L', 'L')
     self.repo.git('add', 'L')
     self.repo.git_commit('L YUP')
 
@@ -328,13 +315,11 @@ class GitRebaseUpdateTest(git_test_utils.GitRepoReadWriteTestBase):
 
     self.repo.run(self.nb.main, ['--lkgr', 'foobar'])
 
-    with self.repo.open('foobar', 'w') as f:
-      f.write('this is the foobar file')
+    self.repo.write_string('foobar', 'this is the foobar file')
     self.repo.git('add', 'foobar')
     self.repo.git_commit('foobar1')
 
-    with self.repo.open('foobar', 'w') as f:
-      f.write('totes the Foobar file')
+    self.repo.write_string('foobar', 'totes the Foobar file')
     self.repo.git_commit('foobar2')
 
     self.assertSchema("""

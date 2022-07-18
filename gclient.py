@@ -1016,6 +1016,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         if self.url:
           env['GCLIENT_URL'] = str(self.url)
         env['GCLIENT_DEP_PATH'] = str(self.name)
+        env['GCLIENT_ROOT_PATH'] = self.root.root_dir
         if options.prepend_dir and scm == 'git':
           print_stdout = False
           def filter_fn(line):
@@ -2094,6 +2095,8 @@ def CMDrecurse(parser, args):
   Runs a shell command on all entries.
   Sets GCLIENT_DEP_PATH environment variable as the dep's relative location to
   root directory of the checkout.
+  Sets GCLIENT_ROOT_PATH environment variable as the absolute location
+  of the root directory of the checkout.
   """
   # Stop parsing at the first non-arg so that these go through to the command
   parser.disable_interspersed_args()

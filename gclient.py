@@ -2091,9 +2091,10 @@ class CipdDependency(Dependency):
 def CMDrecurse(parser, args):
   """Operates [command args ...] on all the dependencies.
 
-  Runs a shell command on all entries.
-  Sets GCLIENT_DEP_PATH environment variable as the dep's relative location to
-  root directory of the checkout.
+  Change directory to each dependency’s directory, and call [command
+  args ...] there.  Sets GCLIENT_DEP_PATH environment variable as the
+  dep's relative location to root directory of the checkout.
+
   """
   # Stop parsing at the first non-arg so that these go through to the command
   parser.disable_interspersed_args()

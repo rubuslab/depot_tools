@@ -2094,6 +2094,8 @@ def CMDrecurse(parser, args):
   Runs a shell command on all entries.
   Sets GCLIENT_DEP_PATH environment variable as the dep's relative location to
   root directory of the checkout.
+  Sets GCLIENT_ROOT_PATH environment variable as the absolute location
+  of the root directory of the checkout.
   """
   # Stop parsing at the first non-arg so that these go through to the command
   parser.disable_interspersed_args()
@@ -2127,6 +2129,7 @@ def CMDrecurse(parser, args):
   client = GClient.LoadCurrentConfig(options)
   if not client:
     raise gclient_utils.Error('client not configured; see \'gclient config\'')
+  env['GCLIENT_ROOT_PATH'] = str(self.root.root_dir)
   return client.RunOnDeps('recurse', args, ignore_requirements=True,
                           progress=not options.no_progress)
 

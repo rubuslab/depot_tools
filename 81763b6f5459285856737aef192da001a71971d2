@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da922247_f5154492",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-07-19T15:07:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f7495fb_54b98ddc",
+      "revId": "81763b6f5459285856737aef192da001a71971d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8079a75_593805dc",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-07-19T00:23:33Z",
       "side": 1,
       "message": "Nit: `if patch_ref is not None:` can be `if patch_ref:`",
+      "revId": "81763b6f5459285856737aef192da001a71971d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c8df9a8_793d01bd",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-07-19T15:07:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8079a75_593805dc",
       "revId": "81763b6f5459285856737aef192da001a71971d2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

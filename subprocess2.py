@@ -153,6 +153,8 @@ class Popen(subprocess.Popen):
       tmp_str += ';  cwd=%s' % kwargs['cwd']
     logging.debug(tmp_str)
 
+    print(kwargs.get('env'))
+    print('HORSES')
     try:
       with self.popen_lock:
         super(Popen, self).__init__(args, **kwargs)

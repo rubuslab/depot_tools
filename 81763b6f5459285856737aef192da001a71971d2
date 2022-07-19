@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f7495fb_54b98ddc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-07-19T00:23:33Z",
+      "side": 1,
+      "message": "Nit: isn\u0027t `os.environ[PREVIOUS_CUSTOM_VARS]` stored in memory?",
+      "revId": "81763b6f5459285856737aef192da001a71971d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8079a75_593805dc",
+        "filename": "gclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-07-19T00:23:33Z",
+      "side": 1,
+      "message": "Nit: `if patch_ref is not None:` can be `if patch_ref:`",
+      "revId": "81763b6f5459285856737aef192da001a71971d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

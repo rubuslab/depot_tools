@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db70cda2_29624a5e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1528654
+      },
+      "writtenOn": "2022-07-21T21:57:30Z",
+      "side": 1,
+      "message": "Hi,\n\nThanks for adding the \"Fixed:\" to the message. Sorry for forgetting it.\nIf you approve of this change, can you also add a +1. Because right now there is no code owner approval",
+      "revId": "8b665e85e858d029bcca6c2a1033b3af82157290",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

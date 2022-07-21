@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02751e83_e735be39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-07-21T17:47:16Z",
+      "side": 1,
+      "message": "not sure if there\u0027s a way to tell if it\u0027s still used in the tree, or we just wait for someone to notice it\u0027s broken and either fix or revert so we can fix",
+      "revId": "995e3bdf4afe7ed8150cded3c80513fda9b13bc6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

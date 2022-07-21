@@ -16,6 +16,24 @@
       "message": "Why should gclient include this? If this is for a script, can\u0027t the script keep track on the root path?",
       "revId": "67ab852a27cdbccd282480bb7dff9eb836aeaafd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "beaecdf1_e1b5e833",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 1528654
+      },
+      "writtenOn": "2022-07-21T22:01:15Z",
+      "side": 1,
+      "message": "I’ve not found a proper way to do it that do not require the user to explicitly set it. \nThis is what my script does right now, so that it can run. But I find it not really nice since `gclient` already knows the value, and there is no easy way for the script to guess it, unless reimplementing the code allowing gclient to compute it.\n(Admittedly, if it’s simply checking ancestors to find the first one that contains a file named `.gclient` it may not be that hard. Still, that’s a lot of IO for something that can be already known)\n\nIf you’re interested, the script can be obtained from `git clone sso://user/arthurmilchior/clone-chromium`. Ideally, I hope it’s document enough to be understandable",
+      "parentUuid": "fadc1a5a_68b17029",
+      "revId": "67ab852a27cdbccd282480bb7dff9eb836aeaafd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

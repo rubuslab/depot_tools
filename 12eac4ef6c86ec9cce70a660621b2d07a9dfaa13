@@ -16,6 +16,23 @@
       "message": "Adding iannucci@ who introduced the original infra_internal commit.",
       "revId": "12eac4ef6c86ec9cce70a660621b2d07a9dfaa13",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b513a2c6_e0a63fa4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-07-21T21:17:52Z",
+      "side": 1,
+      "message": "FWIW, this lgtm; it doesn\u0027t expose anything that isn\u0027t already in chromium/src.",
+      "revId": "12eac4ef6c86ec9cce70a660621b2d07a9dfaa13",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

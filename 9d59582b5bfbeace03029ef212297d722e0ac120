@@ -33,6 +33,24 @@
       "message": "Did you try running this script?",
       "revId": "9d59582b5bfbeace03029ef212297d722e0ac120",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe9e53bb_11c9ee13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366833
+      },
+      "writtenOn": "2022-07-22T17:13:13Z",
+      "side": 1,
+      "message": "Yes. `fetch devtools-internal`, and it seemed to work as expected.",
+      "parentUuid": "3fd56ad7_9e7f1bd9",
+      "revId": "9d59582b5bfbeace03029ef212297d722e0ac120",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

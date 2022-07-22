@@ -33,6 +33,24 @@
       "message": "Is there a bug id for this? Or any context for this change?",
       "revId": "8e7f6289f75e3f422aa9fd4eb5bedcd66f7e2417",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5900708_f5037c5e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366833
+      },
+      "writtenOn": "2022-07-22T17:11:51Z",
+      "side": 1,
+      "message": "There\u0027s no bug, I was just browsing the depot_tools repo and found this seemingly unnecessary import. It was introduced since the first commit that added this file, but it doesn\u0027t seem to be used in any way.",
+      "parentUuid": "d8b2b65b_c826191f",
+      "revId": "8e7f6289f75e3f422aa9fd4eb5bedcd66f7e2417",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -43,9 +43,7 @@ import gclient_utils
 import git_cl
 import git_common as git
 import json
-import owners
 import owners_client
-import owners_finder
 import presubmit_support as presubmit
 import rdb_wrapper
 import scm
@@ -2571,7 +2569,6 @@ the current line as well!
     owners_file = StringIO(owners_content)
     fopen = lambda *args: owners_file
 
-    input_api.owners_db = owners.Database('', fopen, os.path)
     input_api.gerrit.IsCodeOwnersEnabledOnRepo = lambda: code_owners_enabled
 
     return input_api

@@ -34,6 +34,24 @@
       "parentUuid": "fadc1a5a_68b17029",
       "revId": "67ab852a27cdbccd282480bb7dff9eb836aeaafd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b36ea364_d39c722c",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-07-22T17:18:02Z",
+      "side": 1,
+      "message": "I see what you mean. iiuc, you are trying to run your script within `gclient recurse` and you do not have access to the gclient root path. I can see the use case for this.",
+      "parentUuid": "beaecdf1_e1b5e833",
+      "revId": "67ab852a27cdbccd282480bb7dff9eb836aeaafd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

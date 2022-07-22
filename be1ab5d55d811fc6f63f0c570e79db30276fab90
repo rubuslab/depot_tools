@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "654cf12a_fe873c05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-07-22T23:55:40Z",
+      "side": 1,
+      "message": "OWNERS files used to be parsed by depot_tools itself. last year, gerrit added a `code-owners` plugin that does this for us (among other benefits). this removes our old implementation of OWNERS stuff.",
+      "revId": "be1ab5d55d811fc6f63f0c570e79db30276fab90",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

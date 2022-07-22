@@ -50,6 +50,24 @@
       "message": "Did you try running this config?",
       "revId": "12eac4ef6c86ec9cce70a660621b2d07a9dfaa13",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a595cb35_40cbc6f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366833
+      },
+      "writtenOn": "2022-07-22T17:15:19Z",
+      "side": 1,
+      "message": "Yes. `fetch chrome`. It has correctly checked out both `src/` and `src-internal/`.\n\n`--internal\u003dTrue` translates to `\"checkout_src_internal\": True,` in `custom_vars` in `.gclient`.",
+      "parentUuid": "803b076d_c7914bb0",
+      "revId": "12eac4ef6c86ec9cce70a660621b2d07a9dfaa13",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

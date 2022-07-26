@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "601cd4ba_ad3d36bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-07-26T00:09:37Z",
+      "side": 1,
+      "message": "I think as-is, this may regress performance because it will probe multiple python executable names before finding the ones that exist in the bundled package. That should be wholly unnecessary here, so I\u0027ll work on fixing this in vpython.",
+      "revId": "4faa2d21557d571ab16ee190465eb7dd474f848a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4966a04_fda9cf78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2022-07-26T23:54:48Z",
+      "side": 1,
+      "message": "nit: please make the first line of the CL description 50 characters or less [1].\n\nHow about \"Treat UnitTests failures as presubmit --all errors\"?\n\n[1] https://chromium.googlesource.com/chromiumos/docs/+/master/contributing.md#commit-messages",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 55
+      },
+      "revId": "f362cb223c6df2516820065a3f05c7bf1be825d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62fd601b_ae0958e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2022-07-26T23:54:48Z",
+      "side": 1,
+      "message": "This makes sense to me. LGTM with minor nits",
+      "revId": "f362cb223c6df2516820065a3f05c7bf1be825d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81088af3_87f16dfe",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 1303352
+      },
+      "writtenOn": "2022-07-26T23:54:48Z",
+      "side": 1,
+      "message": "nit: this doesn\u0027t require hyphenation (unless this is an established term that I\u0027m just unfamiliar with)",
+      "range": {
+        "startLine": 800,
+        "startChar": 19,
+        "endLine": 800,
+        "endChar": 35
+      },
+      "revId": "f362cb223c6df2516820065a3f05c7bf1be825d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

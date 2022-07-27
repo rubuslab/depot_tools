@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7c1f7aa_dcedf428",
+        "filename": "gclient.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-07-27T00:32:04Z",
+      "side": 1,
+      "message": "maybe add something more descriptive when `skip_sync_rev` is None",
+      "range": {
+        "startLine": 1055,
+        "startChar": 21,
+        "endLine": 1056,
+        "endChar": 61
+      },
+      "revId": "ea14695356bee8fdbc5e3f1aaea5b83cf99c50ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

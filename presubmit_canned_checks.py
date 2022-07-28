@@ -152,7 +152,7 @@ def CheckAuthorizedAuthor(input_api, output_api, bot_allowlist=None):
   """For non-googler/chromites committers, verify the author's email address is
   in AUTHORS.
   """
-  if input_api.is_committing:
+  if input_api.is_committing or input_api.no_diffs:
     error_type = output_api.PresubmitError
   else:
     error_type = output_api.PresubmitPromptWarning
@@ -263,7 +263,7 @@ def CheckChangeLintsClean(input_api, output_api, source_file_filter=None,
     cpplint.ProcessFile(file_name, verbose_level)
 
   if cpplint._cpplint_state.error_count > 0:
-    if input_api.is_committing:
+    if input_api.is_committing or input_api.no_diffs:
       res_type = output_api.PresubmitError
     else:
       res_type = output_api.PresubmitPromptWarning
@@ -894,7 +894,7 @@ def GetPythonUnitTests(input_api, output_api, unit_tests, python3=False):
   DEPRECATED.
   """
   # We don't want to hinder users from uploading incomplete patches.
-  if input_api.is_committing:
+  if input_api.is_committing or input_api.no_diffs:
     message_type = output_api.PresubmitError
   else:
     message_type = output_api.PresubmitNotifyResult
@@ -1020,7 +1020,7 @@ def GetPylint(input_api,
       'Unsupported pylint version: %s' % version
   python2 = (version == '1.5')
 
-  if input_api.is_committing:
+  if input_api.is_committing or input_api.no_diffs:
     error_type = output_api.PresubmitError
   else:
     error_type = output_api.PresubmitPromptWarning

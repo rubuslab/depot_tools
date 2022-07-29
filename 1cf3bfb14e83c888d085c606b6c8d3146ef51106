@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6a5ab70_c2fb0c98",
+        "filename": "gclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-07-29T22:24:22Z",
+      "side": 1,
+      "message": "environ vars saved in python don\u0027t persist once the python program is finished. \nSo we write the values to files, stored in the same location as the .gclient file.\n\nStill using PREVIOUS_SYNC_COMMITS during the python process to save on writing to the file each time we process a dependency. \nSo we only write the value of PREVIOUS_SYNC_COMMITS to the file once.",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 55
+      },
+      "revId": "1cf3bfb14e83c888d085c606b6c8d3146ef51106",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1359,6 +1359,15 @@ def GetCodereviewOwnerAndReviewers(
   return owner_email, reviewers
 
 
+# def GetGerritCodeOwners(input_api, host, project, branch, paths):
+#   """Return the owner and reviewers of a change, if any.
+# 
+#   If approval_needed is True, only reviewers who have approved the change
+#   will be returned.
+#   """
+#   return input_api.gerrit.GetGerritCodeOwners(host, project, branch, paths)
+# 
+
 def _ReviewersFromChange(change):
   """Return the reviewers specified in the |change|, if any."""
   reviewers = set()

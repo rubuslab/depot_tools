@@ -519,6 +519,15 @@ class GerritAccessor(object):
           self.host, self.project)
     return self.code_owners_enabled
 
+  # def GetGerritCodeOwners(self, host, project, branch, paths):
+  #   """Query Gerrit directly for OWNERS.
+  #
+  #   code-owners plugin must be enabled on the host.
+  #   """
+  #   assert gerrit_util.IsCodeOwnersEnabledOnHost(host)
+  #   client = owners_client.GerritClient(host, project, branch)
+  #   return client.BatchListOwners(paths)
+
 
 class OutputApi(object):
   """An instance of OutputApi gets passed to presubmit scripts so that they

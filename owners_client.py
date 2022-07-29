@@ -40,23 +40,23 @@ class OwnersClient(object):
   PENDING = 'PENDING'
   INSUFFICIENT_REVIEWERS = 'INSUFFICIENT_REVIEWERS'
 
-  def ListOwners(self, path):
+  def ListOwners(self, _path, _project_override):
     """List all owners for a file.
 
     The returned list is sorted so that better owners appear first.
     """
     raise Exception('Not implemented')
 
-  def BatchListOwners(self, paths):
+  def BatchListOwners(self, paths, project_override=None):
     """List all owners for a group of files.
 
     Returns a dictionary {path: [owners]}.
     """
     with git_common.ScopedPool(kind='threads') as pool:
       return dict(pool.imap_unordered(
-          lambda p: (p, self.ListOwners(p)), paths))
+          lambda p: (p, self.ListOwners(p, project_override)), paths))
 
-  def GetFilesApprovalStatus(self, paths, approvers, reviewers):
+  def GetFilesApprovalStatus(self, paths, approvers, reviewers, project_override=None):
     """Check the approval status for the given paths.
 
     Utility method to check for approval status when a change has not yet been
@@ -71,7 +71,7 @@ class OwnersClient(object):
     if reviewers:
       reviewers.add(self.EVERYONE)
     status = {}
-    owners_by_path = self.BatchListOwners(paths)
+    owners_by_path = self.BatchListOwners(paths, project_override)
     for path, owners in owners_by_path.items():
       owners = set(owners)
       if owners.intersection(approvers):
@@ -82,32 +82,32 @@ class OwnersClient(object):
         status[path] = self.INSUFFICIENT_REVIEWERS
     return status
 
-  def ScoreOwners(self, paths, exclude=None):
+  def ScoreOwners(self, paths, exclude=None, project_override=None):
     """Get sorted list of owners for the given paths."""
     if not paths:
       return []
     exclude = exclude or []
     owners = []
-    queues = self.BatchListOwners(paths).values()
+    queues = self.BatchListOwners(paths, project_override).values()
     for i in range(max(len(q) for q in queues)):
       for q in queues:
         if i < len(q) and q[i] not in owners and q[i] not in exclude:
           owners.append(q[i])
     return owners
 
-  def SuggestOwners(self, paths, exclude=None):
+  def SuggestOwners(self, paths, exclude=None, project_override=None):
     """Suggest a set of owners for the given paths."""
     exclude = exclude or []
 
     paths_by_owner = {}
-    owners_by_path = self.BatchListOwners(paths)
+    owners_by_path = self.BatchListOwners(paths, project_override)
     for path, owners in owners_by_path.items():
       for owner in owners:
         paths_by_owner.setdefault(owner, set()).add(path)
 
     selected = []
     missing = set(paths)
-    for owner in self.ScoreOwners(paths, exclude=exclude):
+    for owner in self.ScoreOwners(paths, exclude=exclude, project_override=project_override):
       missing_len = len(missing)
       missing.difference_update(paths_by_owner[owner])
       if missing_len > len(missing):
@@ -143,7 +143,7 @@ class DepotToolsClient(OwnersClient):
       if os.path.basename(f) == 'OWNERS'
     }
 
-  def ListOwners(self, path):
+  def ListOwners(self, path, _project_override):
     # all_possible_owners is not thread safe.
     with self._db_lock:
       self._ensure_db()
@@ -174,7 +174,7 @@ class GerritClient(OwnersClient):
     # same code owners.
     self._seed = random.getrandbits(30)
 
-  def ListOwners(self, path):
+  def ListOwners(self, path, project_override=None):
     # Always use slashes as separators.
     path = path.replace(os.sep, '/')
     if path not in self._owners_cache:
@@ -182,7 +182,7 @@ class GerritClient(OwnersClient):
       # best reviewer for path. If owners have the same score, the order is
       # random, seeded by `self._seed`.
       data = gerrit_util.GetOwnersForFile(
-          self._host, self._project, self._branch, path,
+          self._host, project_override or self._project, self._branch, path,
           resolve_all_users=False, seed=self._seed)
       self._owners_cache[path] = [
         d['account']['email']

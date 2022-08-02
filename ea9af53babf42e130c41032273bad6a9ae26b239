@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6a1273b_2ae56fbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-08-02T18:45:20Z",
+      "side": 1,
+      "message": "I\u0027m not sure what `top-level` DEPS means here.\nBut this change allows \u0027noparent\u0027 to exist in any repo\u0027s DEPS file that gclient processes.\n\nCould `top-level` be removed to avoid confusion, assuming I didn\u0027t miss anything",
+      "range": {
+        "startLine": 7,
+        "startChar": 24,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "ea9af53babf42e130c41032273bad6a9ae26b239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "aea2c824_707a6ae7",

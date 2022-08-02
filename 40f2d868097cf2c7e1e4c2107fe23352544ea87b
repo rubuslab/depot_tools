@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "869838fe_11a34b78",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-02T18:09:06Z",
+      "side": 1,
+      "message": "This is a follow-on to the previous --upload presubmit change that you reviewed.\n\nUltimately I\u0027m finding that --all --upload is not a useful thing to test with because it is quite slow and it hits a lot of cppling warnings which make the output hard to read. But, this still moves things forward a bit. PTAL.\n",
+      "revId": "40f2d868097cf2c7e1e4c2107fe23352544ea87b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

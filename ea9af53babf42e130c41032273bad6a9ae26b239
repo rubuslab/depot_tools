@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "9c89ee15_b6c3469f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002507
+      },
+      "writtenOn": "2022-08-03T08:19:59Z",
+      "side": 1,
+      "message": "Done.  I\u0027ve removed all mentions about `top-level`.",
+      "parentUuid": "f6a1273b_2ae56fbc",
+      "range": {
+        "startLine": 7,
+        "startChar": 24,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "ea9af53babf42e130c41032273bad6a9ae26b239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "aea2c824_707a6ae7",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3

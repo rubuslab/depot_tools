@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f53cfc1_57235827",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002507
+      },
+      "writtenOn": "2022-08-03T08:19:59Z",
+      "side": 1,
+      "message": "+Gavin, would you review this patch as an owner?  I\u0027ve addressed Joanna\u0027s review comment.\n",
+      "revId": "d2855a5566aa70aae3816e9c66069424a4958483",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

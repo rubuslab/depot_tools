@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4be8a423_b444e0e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1157909
+      },
+      "writtenOn": "2022-08-03T19:12:50Z",
+      "side": 1,
+      "message": "Is the change at depot_tools side good enough? Do you need to update http://cs/chops_infra_internal/data/config/configs/cr-buildbucket/settings.cfg;l\u003d100;rcl\u003de18d6b29f9947252648307e1b1b0d2ceee672f97?",
+      "revId": "73da007d3bef09b570f4b8895b49253f19f73793",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

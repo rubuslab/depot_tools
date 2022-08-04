@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2d1adf8_fea881da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-08-04T05:22:15Z",
+      "side": 1,
+      "message": "Tested by removing the bootstrapped python and verifying that \"gclient runhooks\" followed by a chromium build succeeds, on Linux.",
+      "revId": "b9301e883ed02269d0b42598be42365be23637d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

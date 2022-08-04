@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13188e47_24a3bbf7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1157909
+      },
+      "writtenOn": "2022-08-04T21:18:52Z",
+      "side": 1,
+      "message": "I\u0027ll land this CL after https://chrome-internal-review.googlesource.com/c/infradata/config/+/4917137 is landed",
+      "revId": "97186d780ddcc9947e01ce7dfa59c892d51eba3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

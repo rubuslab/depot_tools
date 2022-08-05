@@ -16,6 +16,23 @@
       "message": "brucedawson: Please review this change. Thanks!",
       "revId": "1ea055ae1a7b028998db98fe4dd544154f04d468",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d143a449_08c11f82",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-08-05T20:06:01Z",
+      "side": 1,
+      "message": "it\u0027s not clear whether it will be removed.  the check we\u0027ve deployed in CrOS is ban it from files using a copyright year of 2023+.",
+      "revId": "1ea055ae1a7b028998db98fe4dd544154f04d468",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

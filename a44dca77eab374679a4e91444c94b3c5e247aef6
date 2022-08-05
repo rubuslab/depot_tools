@@ -16,6 +16,24 @@
       "message": "Does this seem worthwhile?\nI don\u0027t advertise the environment variable to skip the network tasks because I\u0027d hate to see it overused, but it could be handy.",
       "revId": "a44dca77eab374679a4e91444c94b3c5e247aef6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de5686e6_d457e460",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-08-05T21:50:59Z",
+      "side": 1,
+      "message": "I think this is reasonable given the recent gerrit outages, lgtm",
+      "parentUuid": "0a8d0788_c41bb2c5",
+      "revId": "a44dca77eab374679a4e91444c94b3c5e247aef6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

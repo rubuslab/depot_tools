@@ -18,6 +18,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6af33f2e_3cac7e28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-09T04:30:14Z",
+      "side": 1,
+      "message": "Sorry about the delay. See comment",
+      "revId": "1ea055ae1a7b028998db98fe4dd544154f04d468",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d143a449_08c11f82",
@@ -31,6 +48,24 @@
       "writtenOn": "2022-08-05T20:06:01Z",
       "side": 1,
       "message": "it\u0027s not clear whether it will be removed.  the check we\u0027ve deployed in CrOS is ban it from files using a copyright year of 2023+.",
+      "revId": "1ea055ae1a7b028998db98fe4dd544154f04d468",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a612f27b_ccdf523b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-09T04:30:14Z",
+      "side": 1,
+      "message": "Should we do the same here and disallow \"All rights reserved\" if the copyright year is 2023 or higher? Otherwise I know that copy/paste means that it will continue to show up in some new files.",
+      "parentUuid": "d143a449_08c11f82",
       "revId": "1ea055ae1a7b028998db98fe4dd544154f04d468",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

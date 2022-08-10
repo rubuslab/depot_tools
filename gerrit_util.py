@@ -875,13 +875,15 @@ def IsCodeOwnersEnabledOnRepo(host, repo):
 
 
 def GetOwnersForFile(host, project, branch, path, limit=100,
-                     resolve_all_users=True, seed=None, o_params=('DETAILS',)):
+                     resolve_all_users=True, highest_score_only=False, seed=None, o_params=('DETAILS',)):
   """Gets information about owners attached to a file."""
   path = 'projects/%s/branches/%s/code_owners/%s' % (
       urllib.parse.quote(project, ''),
       urllib.parse.quote(branch, ''),
       urllib.parse.quote(path, ''))
   q = ['resolve-all-users=%s' % json.dumps(resolve_all_users)]
+  if highest_score_only:
+    q.append('highest-score-only=%s' % json.dumps(highest_score_only))
   if seed:
     q.append('seed=%d' % seed)
   if limit:

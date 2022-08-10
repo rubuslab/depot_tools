@@ -16,6 +16,23 @@
       "message": "Please take a look.",
       "revId": "efd1b81e0da73b34587d6108a5c05082dd84402c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c47403ea_17275f3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-10T15:11:37Z",
+      "side": 1,
+      "message": "There is already an in-progress CL to do this. crrev.com/c/3823617",
+      "revId": "efd1b81e0da73b34587d6108a5c05082dd84402c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -68,6 +68,24 @@
       "parentUuid": "d143a449_08c11f82",
       "revId": "1ea055ae1a7b028998db98fe4dd544154f04d468",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4efda6c9_75bcaa30",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-10T15:42:35Z",
+      "side": 1,
+      "message": "That can be fixed later - this needs to be landed now to avoid conflicts with the already-made changes to boilerplate.py (https://crrev.com/c/3808222).",
+      "parentUuid": "a612f27b_ccdf523b",
+      "revId": "1ea055ae1a7b028998db98fe4dd544154f04d468",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

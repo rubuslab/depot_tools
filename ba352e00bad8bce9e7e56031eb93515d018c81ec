@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b7e74b0_4ff69f4e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-12T18:52:43Z",
+      "side": 1,
+      "message": "Unfortunately this breaks this command when run from a normal cmd.exe prompt:\n  autoninja ..\\..\\base\\win\\access_token.cc^^\nThe escaping of ^^ as it passes through batch files is very finicky, but important.",
+      "revId": "ba352e00bad8bce9e7e56031eb93515d018c81ec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

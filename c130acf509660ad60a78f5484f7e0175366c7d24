@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52534f1a_6f773109",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1115958
+      },
+      "writtenOn": "2022-08-12T08:59:53Z",
+      "side": 1,
+      "message": "This is incorrect; \"forbidden in Chromium\" is a significant overstatement.\n\nSpecifically in the ios/ subdirectory, it is *preferred* to only use #include in .mm files. The Chromium style guide merely says that we don\u0027t have to use #include for C++ headers, and the presubmit rule asks that newly added code (in //ios .mm files) just uses #import. \n\nThis is important because clang-format is used in many places both in and outside of Chromium where this guideline doesn\u0027t apply.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 9
+      },
+      "revId": "c130acf509660ad60a78f5484f7e0175366c7d24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b7b5162_e6039a12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1115958
+      },
+      "writtenOn": "2022-08-12T08:59:53Z",
+      "side": 1,
+      "message": "I would suggest that instead of making this a very broad \"objective-C\" option, instead it is a very specific option (maybe --use-import-in-objc-implementation-files, or something like that) that most people won\u0027t use.",
+      "range": {
+        "startLine": 15,
+        "startChar": 53,
+        "endLine": 15,
+        "endChar": 66
+      },
+      "revId": "c130acf509660ad60a78f5484f7e0175366c7d24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4c1fbad_c48c69a6",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5219,
+      "author": {
+        "id": 1115958
+      },
+      "writtenOn": "2022-08-12T08:59:53Z",
+      "side": 1,
+      "message": "I\u0027m not an expert on depot-tools, but I\u0027m pretty sure that this script isn\u0027t the place to do formatting changes; that\u0027s what clang-format and other similar tools are for. I would expect that code that transforms #imports to #includes would be in the same place as (for example) the code that alpha-orders the import statements.",
+      "revId": "c130acf509660ad60a78f5484f7e0175366c7d24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

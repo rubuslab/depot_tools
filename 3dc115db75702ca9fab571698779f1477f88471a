@@ -16,6 +16,23 @@
       "message": "This makes Python 2 more visible (again) and also fixes a bug in the --verbose printing logic. PTAL.",
       "revId": "3dc115db75702ca9fab571698779f1477f88471a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d263c52e_1e3148de",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-08-12T18:30:08Z",
+      "side": 1,
+      "message": "This prints even if verbose is not set. Is this intended?",
+      "revId": "3dc115db75702ca9fab571698779f1477f88471a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

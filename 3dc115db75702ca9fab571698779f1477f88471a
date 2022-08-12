@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "130168c4_26c6c2bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-12T16:18:11Z",
+      "side": 1,
+      "message": "This makes Python 2 more visible (again) and also fixes a bug in the --verbose printing logic. PTAL.",
+      "revId": "3dc115db75702ca9fab571698779f1477f88471a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

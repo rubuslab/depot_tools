@@ -41,6 +41,7 @@ Explanation:
 """
 
 import difflib
+from logging.config import valid_ident
 import sys
 import textwrap
 
@@ -71,6 +72,7 @@ def CMDhelp(parser, args):
   if not any(i in ('-h', '--help') for i in args):
     args = args + ['--help']
   parser.parse_args(args)
+  print("CMDHelp")
   # Never gets there.
   assert False
 
@@ -178,10 +180,11 @@ class CommandDispatcher(object):
             '  %s%-*s%s %s\n' % (green, length, cmd_name, reset, doc)
             for cmd_name, doc in docs))
 
-  def _add_command_usage(self, parser, command):
+  def _add_command_usage(self, parser, command, original_command):
     """Modifies an OptionParser object with the function's documentation."""
     cmd_name = _function_to_name(command.__name__)
-    if cmd_name == 'help':
+    valid_original_command = original_command in self.enumerate_commands()
+    if cmd_name == 'help' or not valid_original_command:
       cmd_name = '<command>'
       # Use the module's docstring as the description for the 'help' command if
       # available.
@@ -233,11 +236,13 @@ class CommandDispatcher(object):
     parser.format_description = lambda _: parser.description or ''
     parser.format_epilog = lambda _: parser.epilog or ''
 
+    original_command = None
     if args:
       if args[0] in ('-h', '--help') and len(args) > 1:
         # Reverse the argument order so 'tool --help cmd' is rewritten to
         # 'tool cmd --help'.
         args = [args[1], args[0]] + args[2:]
+      original_command = args[0]
       command = self.find_nearest_command(args[0])
       if command:
         if command.__name__ == 'CMDhelp' and len(args) > 1:
@@ -248,13 +253,13 @@ class CommandDispatcher(object):
           command = self.find_nearest_command(args[0]) or command
 
         # "fix" the usage and the description now that we know the subcommand.
-        self._add_command_usage(parser, command)
+        self._add_command_usage(parser, command, original_command)
         return command(parser, args[1:])
 
     cmdhelp = self.enumerate_commands().get('help')
     if cmdhelp:
       # Not a known command. Default to help.
-      self._add_command_usage(parser, cmdhelp)
+      self._add_command_usage(parser, cmdhelp, original_command)
       return cmdhelp(parser, args)
 
     # Nothing can be done.

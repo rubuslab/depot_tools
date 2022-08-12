@@ -5216,6 +5216,23 @@ def _RunSwiftFormat(opts, swift_diff_files, top_dir, upstream_commit):
   return 0
 
 
+def _RunObjectiveCFormat(opts, objective_c_diff_files, top_dir,
+                         upstream_commit):
+  """Run Objective-C specific format. For now,
+  it consists only in using only #import and no #include."""
+
+  if not objective_c_diff_files:
+    return 0
+
+  cmd = ["sed", "-i", "-e", "s/^#include /#import /"] + objective_c_diff_files
+  objective_c_format_exitcode = subprocess2.call(cmd)
+
+  if opts.presubmit and objective_c_format_exitcode != 0:
+    return 2
+
+  return 0
+
+
 def MatchingFileType(file_name, extensions):
   """Returns True if the file name ends with one of the given extensions."""
   return bool([ext for ext in extensions if file_name.lower().endswith(ext)])
@@ -5227,6 +5244,7 @@ def CMDformat(parser, args):
   """Runs auto-formatting tools (clang-format etc.) on the diff."""
   CLANG_EXTS = ['.cc', '.cpp', '.h', '.m', '.mm', '.proto', '.java']
   GN_EXTS = ['.gn', '.gni', '.typemap']
+  OBJECTIVE_C_EXTS = ['.mm']
   RUST_EXTS = ['.rs']
   SWIFT_EXTS = ['.swift']
   parser.add_option('--full', action='store_true',
@@ -5252,6 +5270,17 @@ def CMDformat(parser, args):
       help='Disables python formatting on all python files. '
       'If neither --python or --no-python are set, python files that have a '
       '.style.yapf file in an ancestor directory will be formatted. '
+      'It is an error to set both.')
+  parser.add_option(
+      '--objective-c',
+      action='store_true',
+      default=None,
+      help='Enables objective-c specific formatting on all .mm files.')
+  parser.add_option(
+      '--no-objective-c',
+      action='store_true',
+      default=False,
+      help='Disables objective-c specific formatting on all .mm files. '
       'It is an error to set both.')
   parser.add_option(
       '--js',
@@ -5293,6 +5322,12 @@ def CMDformat(parser, args):
     raise parser.error('Cannot set both --python and --no-python')
   if opts.no_python:
     opts.python = False
+
+  if opts.objective_c is not None and opts.no_objective_c:
+    raise parser.error('Cannot set both --objective-c and --no-objective-c')
+  if opts.no_objective_c:
+    opts.objective_c = False
+
 
   # Normalize any remaining args against the current path, so paths relative to
   # the current directory are still resolved as expected.
@@ -5339,6 +5374,9 @@ def CMDformat(parser, args):
   rust_diff_files = [x for x in diff_files if MatchingFileType(x, RUST_EXTS)]
   swift_diff_files = [x for x in diff_files if MatchingFileType(x, SWIFT_EXTS)]
   gn_diff_files = [x for x in diff_files if MatchingFileType(x, GN_EXTS)]
+  objective_c_diff_files = [
+      x for x in diff_files if MatchingFileType(x, OBJECTIVE_C_EXTS)
+  ]
 
   top_dir = settings.GetRoot()
 
@@ -5358,6 +5396,12 @@ def CMDformat(parser, args):
                                                 upstream_commit)
     if swift_format_return_value == 2:
       return_value = 2
+
+  if opts.objective_c:
+    objective_c_format_return_value = _RunObjectiveCFormat(
+        opts, objective_c_diff_files, top_dir, upstream_commit)
+    if objective_c_format_return_value == 2:
+      objective_c_format_return_value = 2
 
   # Similar code to above, but using yapf on .py files rather than clang-format
   # on C/C++ files

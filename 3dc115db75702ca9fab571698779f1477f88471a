@@ -33,6 +33,24 @@
       "message": "This prints even if verbose is not set. Is this intended?",
       "revId": "3dc115db75702ca9fab571698779f1477f88471a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a39c066a_6acd233a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-12T18:50:10Z",
+      "side": 1,
+      "message": "Yes. The idea is that we should not be running PRESUBMIT.py under Python 2 at this point and if we are then the presubmit system should be noisy about it.\nIt\u0027s similar to how the presubmit system warns if child scripts are run under Python 2.\nIn Chromium\u0027s main repo it\u0027s a NOP, but elsewhere it will make the Python 2 PRESUBMIT.py scripts more visible.",
+      "parentUuid": "d263c52e_1e3148de",
+      "revId": "3dc115db75702ca9fab571698779f1477f88471a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

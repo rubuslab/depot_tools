@@ -16,6 +16,24 @@
       "message": "I dug into the history to find out when and why these backslashes were added. The explanation is here:\n    https://codereview.chromium.org/552202\nI think the \\ character is Linux specific, so it makes no sense to print it on Windows. The equivalent on Windows would be ^. Any thoughts on this?",
       "revId": "3b5e74994c0f278be413edfd91524de649949cea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f35f8db8_726aa3a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-08-15T02:42:52Z",
+      "side": 1,
+      "message": "If it prints only file name per line, it makes sense to insert escape. But currently it shows more output than filename and we don\u0027t get much benefit with backslashes now?",
+      "parentUuid": "c73120b7_26c50c0b",
+      "revId": "3b5e74994c0f278be413edfd91524de649949cea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

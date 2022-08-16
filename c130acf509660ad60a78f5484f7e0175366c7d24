@@ -62,6 +62,24 @@
       "message": "I\u0027m not an expert on depot-tools, but I\u0027m pretty sure that this script isn\u0027t the place to do formatting changes; that\u0027s what clang-format and other similar tools are for. I would expect that code that transforms #imports to #includes would be in the same place as (for example) the code that alpha-orders the import statements.",
       "revId": "c130acf509660ad60a78f5484f7e0175366c7d24",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9a60f99_52b0a719",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5219,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-08-16T19:58:22Z",
+      "side": 1,
+      "message": "That\u0027s correct, formatting shouldn\u0027t be done in depot_tools itself and should be done by tools, e.g. https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d5114;drc\u003da9677a5e9b3b52ebe2623efecd9a3187a1ea8130",
+      "parentUuid": "b4c1fbad_c48c69a6",
+      "revId": "c130acf509660ad60a78f5484f7e0175366c7d24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

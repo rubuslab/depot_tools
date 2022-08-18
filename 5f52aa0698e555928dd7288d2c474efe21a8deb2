@@ -33,6 +33,24 @@
       "message": "nit: move it a bit higher, e.g. L114",
       "revId": "5f52aa0698e555928dd7288d2c474efe21a8deb2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17af68ec_2119d88f",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2022-08-18T19:20:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52a82e3f_10baf5f2",
+      "revId": "5f52aa0698e555928dd7288d2c474efe21a8deb2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

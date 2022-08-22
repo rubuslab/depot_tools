@@ -86,6 +86,24 @@
       "parentUuid": "82eddf42_0516e729",
       "revId": "be6b1cfe16600d1e7ba703204a4575aa73e16d98",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4602ab1_0474cc73",
+        "filename": "autoninja.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-08-22T17:44:29Z",
+      "side": 1,
+      "message": "Arg yeah... trailing whitespace is tricky, quotes sound good...",
+      "parentUuid": "84104bbb_6ff49f87",
+      "revId": "be6b1cfe16600d1e7ba703204a4575aa73e16d98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

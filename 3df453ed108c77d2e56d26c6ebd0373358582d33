@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c66dede_4613ce19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-22T17:22:45Z",
+      "side": 1,
+      "message": "lgtm. Having the quotes should make it easier to avoid having the trailing space accidentally deleted. I added a comment to the commit message to mention when the accidental delection happened. This changed the uploader to being me. If that prevents it from landing then do a trivial edit to the commit message and that should change the uploader back to you.",
+      "revId": "3df453ed108c77d2e56d26c6ebd0373358582d33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

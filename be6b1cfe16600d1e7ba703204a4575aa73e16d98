@@ -68,6 +68,24 @@
       "parentUuid": "9aa0e039_cbe4eb4a",
       "revId": "be6b1cfe16600d1e7ba703204a4575aa73e16d98",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84104bbb_6ff49f87",
+        "filename": "autoninja.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-08-22T17:20:41Z",
+      "side": 1,
+      "message": "Whoops! The trailing space was actually intentional (see the comment on the line above). Ah well.\nBut, clearly a comment is not sufficient so we\u0027ve got a new change that put quotes around the trailing space to make it more obviously intentional.\nFYI",
+      "parentUuid": "82eddf42_0516e729",
+      "revId": "be6b1cfe16600d1e7ba703204a4575aa73e16d98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

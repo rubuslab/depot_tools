@@ -69,6 +69,24 @@
       "parentUuid": "f35f8db8_726aa3a1",
       "revId": "3b5e74994c0f278be413edfd91524de649949cea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0495e33_2697b8ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115907
+      },
+      "writtenOn": "2022-08-22T19:36:41Z",
+      "side": 1,
+      "message": "I think it should be OK to delete. It really only makes sense in a very limited set of circumstances as you\u0027ve pointed out (not only that they must be filenames and on Linux (POSIX? Bash? Bash like shells?), but that the error message must be a command to be run on multiple filenames). For error messages that contains commands that must be split across multiple lines and are intended to be run in such an environment, the code that generates the message could add the escapes.\n\nFingers crossed there\u0027s not some script somewhere relying on this!",
+      "parentUuid": "d1ad5784_91195d4c",
+      "revId": "3b5e74994c0f278be413edfd91524de649949cea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -18,6 +18,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "400082ad_77705ae1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-08-23T00:31:42Z",
+      "side": 1,
+      "message": "to clarify, this is taking the repo tool from upstream and mirroring it here.  we can make changes to it upstream if we want.",
+      "revId": "0689b4762bf9af263f42be067a24ba03b17727f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "42607ded_f7da6a0d",
@@ -41,6 +58,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a65361bf_6ff59079",
+        "filename": "repo_launcher",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-08-23T00:31:42Z",
+      "side": 1,
+      "message": "this is a scalar value (an int) ...",
+      "parentUuid": "42607ded_f7da6a0d",
+      "range": {
+        "startLine": 321,
+        "startChar": 52,
+        "endLine": 321,
+        "endChar": 71
+      },
+      "revId": "0689b4762bf9af263f42be067a24ba03b17727f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9084f8f_f9047170",
@@ -54,6 +95,30 @@
       "writtenOn": "2022-08-23T00:28:05Z",
       "side": 1,
       "message": "here we do `(default)`",
+      "range": {
+        "startLine": 333,
+        "startChar": 72,
+        "endLine": 333,
+        "endChar": 81
+      },
+      "revId": "0689b4762bf9af263f42be067a24ba03b17727f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b41ad41_e0e4ecb0",
+        "filename": "repo_launcher",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-08-23T00:31:42Z",
+      "side": 1,
+      "message": "... here we have a bool.  so it would say \"(default: True)\".  i think \"(default)\" is more clear ?",
+      "parentUuid": "d9084f8f_f9047170",
       "range": {
         "startLine": 333,
         "startChar": 72,

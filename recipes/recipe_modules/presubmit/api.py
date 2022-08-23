@@ -10,7 +10,7 @@ from PB.go.chromium.org.luci.buildbucket.proto import common as common_pb2
 # 8 minutes seems like a reasonable upper bound on presubmit timings.
 # According to event mon data we have, it seems like anything longer than
 # this is a bug, and should just instant fail.
-_DEFAULT_TIMEOUT_S = 480
+_DEFAULT_TIMEOUT_S = 720
 
 
 class PresubmitApi(recipe_api.RecipeApi):

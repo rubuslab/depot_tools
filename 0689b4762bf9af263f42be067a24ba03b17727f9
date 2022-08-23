@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0aab5420_ea2354ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1474888
+      },
+      "writtenOn": "2022-08-23T00:28:05Z",
+      "side": 1,
+      "message": "1 nit",
+      "revId": "0689b4762bf9af263f42be067a24ba03b17727f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42607ded_f7da6a0d",
+        "filename": "repo_launcher",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1474888
+      },
+      "writtenOn": "2022-08-23T00:28:05Z",
+      "side": 1,
+      "message": "here we do `(default: %default)`",
+      "range": {
+        "startLine": 321,
+        "startChar": 52,
+        "endLine": 321,
+        "endChar": 71
+      },
+      "revId": "0689b4762bf9af263f42be067a24ba03b17727f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9084f8f_f9047170",
+        "filename": "repo_launcher",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1474888
+      },
+      "writtenOn": "2022-08-23T00:28:05Z",
+      "side": 1,
+      "message": "here we do `(default)`",
+      "range": {
+        "startLine": 333,
+        "startChar": 72,
+        "endLine": 333,
+        "endChar": 81
+      },
+      "revId": "0689b4762bf9af263f42be067a24ba03b17727f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

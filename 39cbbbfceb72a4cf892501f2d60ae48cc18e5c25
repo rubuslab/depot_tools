@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb88dd92_5d96bfdc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-08-23T23:05:28Z",
+      "side": 1,
+      "message": "nit: crrev/c/3840702",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 17
+      },
+      "revId": "39cbbbfceb72a4cf892501f2d60ae48cc18e5c25",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d80a56d1_46577b13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-08-23T23:05:28Z",
+      "side": 1,
+      "message": "the plan sgtm. Before this get merged, can you also upload CL that requires this change? The one linked in the commit message is abandoned. \n\nIdeally this is live only for a day or less.",
+      "revId": "39cbbbfceb72a4cf892501f2d60ae48cc18e5c25",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

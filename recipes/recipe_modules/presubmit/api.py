@@ -89,7 +89,8 @@ class PresubmitApi(recipe_api.RecipeApi):
         timeout=3600, no_fetch_tags=True,
         root_solution_revision=root_solution_revision)
 
-    relative_root = self.m.gclient.get_gerrit_patch_root().rstrip('/')
+    is_try = self.m.tryserver.is_tryserver
+    relative_root = self.m.gclient.get_gerrit_patch_root().rstrip('/') if is_try else self.m.gclient.c.solutions[0].name.rstrip('/')
 
     abs_root = self.m.context.cwd.join(relative_root)
     with self.m.context(cwd=abs_root):
@@ -117,7 +118,8 @@ class PresubmitApi(recipe_api.RecipeApi):
     Returns:
       a RawResult object, suitable for being returned from RunSteps.
     """
-    relative_root = self.m.gclient.get_gerrit_patch_root().rstrip('/')
+    is_try = self.m.tryserver.is_tryserver
+    relative_root = self.m.gclient.get_gerrit_patch_root().rstrip('/') if is_try else self.m.gclient.c.solutions[0].name.rstrip('/')
     abs_root = self.m.context.cwd.join(relative_root)
     got_revision_properties = self.m.bot_update.get_project_revision_properties(
         # Replace path.sep with '/', since most recipes are written assuming '/'
@@ -126,16 +128,19 @@ class PresubmitApi(recipe_api.RecipeApi):
     upstream = bot_update_step.json.output['properties'].get(
         got_revision_properties[0])
 
-    presubmit_args = [
-      '--issue', self.m.tryserver.gerrit_change.change,
-      '--patchset', self.m.tryserver.gerrit_change.patchset,
-      '--gerrit_url', 'https://%s' % self.m.tryserver.gerrit_change.host,
-      '--gerrit_project', self.m.tryserver.gerrit_change.project,
-      '--gerrit_branch', self.m.tryserver.gerrit_change_target_ref,
-      '--gerrit_fetch',
-    ]
-    if self.m.cq.active and self.m.cq.run_mode == self.m.cq.DRY_RUN:
-      presubmit_args.append('--dry_run')
+    if is_try:
+      presubmit_args = [
+        '--issue', self.m.tryserver.gerrit_change.change,
+        '--patchset', self.m.tryserver.gerrit_change.patchset,
+        '--gerrit_url', 'https://%s' % self.m.tryserver.gerrit_change.host,
+        '--gerrit_project', self.m.tryserver.gerrit_change.project,
+        '--gerrit_branch', self.m.tryserver.gerrit_change_target_ref,
+        '--gerrit_fetch',
+      ]
+      if self.m.cq.active and self.m.cq.run_mode == self.m.cq.DRY_RUN:
+        presubmit_args.append('--dry_run')
+    else:
+      presubmit_args = []
 
     presubmit_args.extend([
       '--root', abs_root,

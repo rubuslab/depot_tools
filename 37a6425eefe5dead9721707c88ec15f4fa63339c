@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8352815e_88645a0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1476473
+      },
+      "writtenOn": "2022-08-24T23:16:54Z",
+      "side": 1,
+      "message": "Thanks for review previously. We have found a different solution, so this CL is not needed now.",
+      "revId": "37a6425eefe5dead9721707c88ec15f4fa63339c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

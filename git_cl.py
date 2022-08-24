@@ -2508,9 +2508,9 @@ class Changelist(object):
     refspec_opts = []
 
     # By default, new changes are started in WIP mode, and subsequent patchsets
-    # don't send email. At any time, passing --send-mail will mark the change
-    # ready and send email for that particular patch.
-    if options.send_mail:
+    # don't send email. At any time, passing --send-mail or --send-email will
+    # mark the change ready and send email for that particular patch.
+    if options.send_mail or options.send_email:
       refspec_opts.append('ready')
       refspec_opts.append('notify=ALL')
     elif not self.GetIssue() and options.squash:
@@ -2518,8 +2518,9 @@ class Changelist(object):
     else:
       refspec_opts.append('notify=NONE')
 
-    # TODO(tandrii): options.message should be posted as a comment
-    # if --send-mail is set on non-initial upload as Rietveld used to do it.
+    # TODO(tandrii): options.message should be posted as a comment if
+    # --send-mail or --send-email is set on non-initial upload as Rietveld used
+    # to do it.
 
     # Set options.title in case user was prompted in _GetTitleForUpload and
     # _CMDUploadChange needs to be called again.
@@ -2613,7 +2614,7 @@ class Changelist(object):
           self.GetGerritHost(),
           self._GerritChangeIdentifier(),
           reviewers, cc,
-          notify=bool(options.send_mail))
+          notify=bool(options.send_mail or options.send_email))
 
     return 0
 
@@ -4313,7 +4314,7 @@ def CMDupload(parser, args):
                     action='append', default=[],
                     help=('Gerrit hashtag for new CL; '
                           'can be applied multiple times'))
-  parser.add_option('-s', '--send-mail', action='store_true',
+  parser.add_option('-s', '--send-mail', '--send-email', action='store_true',
                     help='send email to reviewer(s) and cc(s) immediately')
   parser.add_option('--target_branch',
                     '--target-branch',
@@ -4333,7 +4334,7 @@ def CMDupload(parser, args):
   parser.add_option('-c', '--use-commit-queue', action='store_true',
                     default=False,
                     help='tell the CQ to commit this patchset; '
-                         'implies --send-mail')
+                         'implies --send-mail / --send-email')
   parser.add_option('-d', '--cq-dry-run',
                     action='store_true', default=False,
                     help='Send the patchset to do a CQ dry run right after '
@@ -4433,7 +4434,7 @@ def CMDupload(parser, args):
     parser.error('Only one of --title and --skip-title allowed.')
 
   if options.use_commit_queue:
-    options.send_mail = True
+    options.send_mail = options.send_email = True
 
   if options.squash is None:
     # Load default for user, repo, squash=true, in this order.

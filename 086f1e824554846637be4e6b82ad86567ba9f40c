@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "202ef89d_d4058ae7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-08-25T20:00:01Z",
+      "side": 1,
+      "message": "Can we simply just set `send_mail` programmatically when `send_email` is passed instead of changing the flow? Also, is there already an `send_email` option? Is this code tested?",
+      "revId": "086f1e824554846637be4e6b82ad86567ba9f40c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f720579_12797a72",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2513,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-08-25T20:00:01Z",
+      "side": 1,
+      "message": "If `send_email` is just an alias for `send_mail`, is there a reason why these are only set during `send_mail`?",
+      "revId": "086f1e824554846637be4e6b82ad86567ba9f40c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

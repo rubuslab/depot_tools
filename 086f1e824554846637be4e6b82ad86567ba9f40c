@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00507a4a_953253b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1366833
+      },
+      "writtenOn": "2022-08-27T15:49:36Z",
+      "side": 1,
+      "message": "Yes, let\u0027s do that then.\n\nI am pushing a new patch with your suggestion. It needs to be tested. I will try to send a new CL with --send-email to see if it works.",
+      "parentUuid": "202ef89d_d4058ae7",
+      "revId": "086f1e824554846637be4e6b82ad86567ba9f40c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f720579_12797a72",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-08-25T20:00:01Z",
       "side": 1,
       "message": "If `send_email` is just an alias for `send_mail`, is there a reason why these are only set during `send_mail`?",
+      "revId": "086f1e824554846637be4e6b82ad86567ba9f40c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a233b18_4589cd8d",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2513,
+      "author": {
+        "id": 1366833
+      },
+      "writtenOn": "2022-08-27T15:49:36Z",
+      "side": 1,
+      "message": "Not applicable anymore given the previous comment. Resolving.",
+      "parentUuid": "2f720579_12797a72",
       "revId": "086f1e824554846637be4e6b82ad86567ba9f40c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

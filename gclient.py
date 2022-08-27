@@ -2953,6 +2953,14 @@ def CMDsync(parser, args):
   parser.add_option('--no-history', action='store_true',
                     help='GIT ONLY - Reduces the size/time of the checkout at '
                     'the cost of no history. Requires Git 1.9+')
+  parser.add_option('--blobless', action='store_true',
+                    help='GIT ONLY - Reduces the size/time of the checkout at '
+                    'the expense of fetching blobs when needed. '
+                    'Requires Git 2.33+')
+  parser.add_option('--treeless', action='store_true',
+                    help='GIT ONLY - Reduces the size/time of the checkout at '
+                    'the expense of fetching trees when needed. '
+                    'Requires Git 2.33+')
   parser.add_option('--shallow', action='store_true',
                     help='GIT ONLY - Do a shallow clone into the cache dir. '
                          'Requires Git 1.9+')

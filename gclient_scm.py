@@ -1167,6 +1167,12 @@ class GitWrapper(SCMWrapper):
           # Otherwise, we're just interested in the HEAD. Just use --depth.
           clone_cmd.append('--depth=1')
 
+      if hasattr(options, 'blobless') and options.blobless:
+        clone_cmd.append('--filter=blob:none')
+
+      if hasattr(options, 'treeless') and options.treeless:
+        clone_cmd.append('--filter=tree:0')
+
       tmp_dir = tempfile.mkdtemp(prefix='_gclient_%s_' %
                                  os.path.basename(self.checkout_path),
                                  dir=parent_dir)

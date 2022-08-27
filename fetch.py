@@ -142,6 +142,10 @@ class GclientGitCheckout(GclientCheckout, GitCheckout):
       sync_cmd.append('--nohooks')
     if self.options.no_history:
       sync_cmd.append('--no-history')
+    if self.options.blobless:
+      sync_cmd.append('--blobless')
+    if self.options.treeless:
+      sync_cmd.append('--treeless')
     if self.spec.get('with_branch_heads', False):
       sync_cmd.append('--with_branch_heads')
     self.run_gclient(*sync_cmd)
@@ -198,6 +202,10 @@ def handle_args(argv):
     help='Don\'t run hooks after checkout.')
   parser.add_argument('--no-history', action='store_true', default=False,
     help='Perform shallow clones, don\'t fetch the full git history.')
+  parser.add_argument('--blobless', action='store_true', default=False,
+    help='Perform blobless clones, fetch blobs only on demand.')
+  parser.add_argument('--treeless', action='store_true', default=False,
+    help='Perform treeless clones, fetch trees only on demand.')
   parser.add_argument('--force', action='store_true', default=False,
     help='(dangerous) Don\'t look for existing .gclient file.')
   parser.add_argument(

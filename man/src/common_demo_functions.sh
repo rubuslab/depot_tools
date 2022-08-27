@@ -35,9 +35,7 @@ praw() {
 
 # print a visible command (but don't run it)
 pcommand() {
-  praw "$(python -c '\
-    import sys, pipes; \
-    print(" ".join(map(pipes.quote, sys.argv[1:])))' "$@")"
+  praw "$(python3 -c 'import sys, pipes; print(" ".join(map(pipes.quote, sys.argv[1:])))' "$@")"
 }
 
 # run a visible command
@@ -70,8 +68,7 @@ add() {
   local CONTENT=$2
   if [[ ! $CONTENT ]]
   then
-    CONTENT=$(python -c 'import random, string; \
-      print("".join(random.sample(string.lowercase, 16)))')
+    CONTENT=$(python3 -c 'import random, string; print("".join(random.sample(string.ascii_lowercase, 16)))')
   fi
   echo "$CONTENT" > $1
   silent git add $1

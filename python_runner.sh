@@ -48,11 +48,13 @@ SCRIPT="${SCRIPT-${BASENAME//-/_}.py}"
 # standalone, but allow other PATH manipulations to take priority.
 PATH=$PATH:$DEPOT_TOOLS
 
+>&2 echo "$DEPOT_TOOLS/$SCRIPT"  "$@"
 if [[ $GCLIENT_PY3 = 1 ]]; then
   # Explicitly run on Python 3
   vpython3 "$DEPOT_TOOLS/$SCRIPT" "$@"
 elif [[ $GCLIENT_PY3 = 0 ]]; then
   # Explicitly run on Python 2
+  >&2 echo "$DEPOT_TOOLS/$SCRIPT"  "$@ VPYHON"
   vpython "$DEPOT_TOOLS/$SCRIPT" "$@"
 else
   # Run on Python 3, allows default to be flipped.

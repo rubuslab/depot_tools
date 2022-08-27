@@ -117,3 +117,5 @@ OPTIONS
 include::_footer.txt[]
 
 // vim: ft:asciidoc:
+foo
+foo

@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69233dcd_84f108a2",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-29T16:12:00Z",
+      "side": 1,
+      "message": "Please add parenetheses around this and run git cl format to reformat the code.",
+      "range": {
+        "startLine": 92,
+        "startChar": 20,
+        "endLine": 92,
+        "endChar": 132
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5af8432_1ebae092",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-29T16:12:00Z",
+      "side": 1,
+      "message": "Let\u0027s name this something like run_all instead, leave the fact that it sets a flag as an implementation detail. Also, please update the docstring with information about it.",
+      "range": {
+        "startLine": 111,
+        "startChar": 56,
+        "endLine": 111,
+        "endChar": 64
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d339b2fc_74e0c27c",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-29T16:12:00Z",
+      "side": 1,
+      "message": "This is a pretty big expression to repeat, can you add a property that returns this value?",
+      "range": {
+        "startLine": 122,
+        "startChar": 20,
+        "endLine": 122,
+        "endChar": 132
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

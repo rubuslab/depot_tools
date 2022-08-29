@@ -11,4 +11,6 @@ message InputProperties {
   // Timeout for presubmit execution, in seconds.
   // Defaults to 480s (8 minutes).
   int32 timeout_s = 2;
+  // Flag to determine if we run all presubmit checks
+  bool run_all = 3;
 }

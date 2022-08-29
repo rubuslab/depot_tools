@@ -73,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b041a3b_ca81f845",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-29T22:16:29Z",
+      "side": 1,
+      "message": "I think it should be kept as a parameter, this is something that a recipe should be able to force to happen and not have to rely on the builder setting the property correctly.",
+      "parentUuid": "ef227173_838e621e",
+      "range": {
+        "startLine": 111,
+        "startChar": 56,
+        "endLine": 111,
+        "endChar": 64
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d339b2fc_74e0c27c",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 1
@@ -108,6 +132,30 @@
       "side": 1,
       "message": "Hmmmm, I can\u0027t really think of a good way of injecting this somewhere. The best solution I have right now is creating a global variable and have a function that will either initialize it if the string is empty or return it if found. Were you thinking of a property somewhere else? I was thinking we could initialize it in Gclient API but it requires the tryserver is_try bool.",
       "parentUuid": "d339b2fc_74e0c27c",
+      "range": {
+        "startLine": 122,
+        "startChar": 20,
+        "endLine": 122,
+        "endChar": 132
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b928db4a_27edc1cd",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-29T22:16:29Z",
+      "side": 1,
+      "message": "You can just add a property: create a method and decorate it with @property:\n```\n@property\ndef _relative_root(self):\n  return self.m.gclient.get_gerrit_patch_root().rstrip(\u0027/\u0027) if is_try else self.m.gclient.c.solutions[0].name.rstrip(\u0027/\u0027)\n```",
+      "parentUuid": "ec4480ea_a2c78870",
       "range": {
         "startLine": 122,
         "startChar": 20,

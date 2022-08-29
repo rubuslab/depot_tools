@@ -47,6 +47,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef227173_838e621e",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1545642
+      },
+      "writtenOn": "2022-08-29T18:53:20Z",
+      "side": 1,
+      "message": "I removed this parameter all together and it will be a property of Presubmit proto so we can access it through that",
+      "parentUuid": "e5af8432_1ebae092",
+      "range": {
+        "startLine": 111,
+        "startChar": 56,
+        "endLine": 111,
+        "endChar": 64
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d339b2fc_74e0c27c",
@@ -60,6 +84,30 @@
       "writtenOn": "2022-08-29T16:12:00Z",
       "side": 1,
       "message": "This is a pretty big expression to repeat, can you add a property that returns this value?",
+      "range": {
+        "startLine": 122,
+        "startChar": 20,
+        "endLine": 122,
+        "endChar": 132
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec4480ea_a2c78870",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1545642
+      },
+      "writtenOn": "2022-08-29T18:53:20Z",
+      "side": 1,
+      "message": "Hmmmm, I can\u0027t really think of a good way of injecting this somewhere. The best solution I have right now is creating a global variable and have a function that will either initialize it if the string is empty or return it if found. Were you thinking of a property somewhere else? I was thinking we could initialize it in Gclient API but it requires the tryserver is_try bool.",
+      "parentUuid": "d339b2fc_74e0c27c",
       "range": {
         "startLine": 122,
         "startChar": 20,

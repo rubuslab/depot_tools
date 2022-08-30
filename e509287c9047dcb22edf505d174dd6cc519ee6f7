@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a43c70aa_c343b47c",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1545642
+      },
+      "writtenOn": "2022-08-30T19:59:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "69233dcd_84f108a2",
+      "range": {
+        "startLine": 92,
+        "startChar": 20,
+        "endLine": 92,
+        "endChar": 132
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e5af8432_1ebae092",
@@ -143,6 +167,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "560c585b_c4ca2059",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1545642
+      },
+      "writtenOn": "2022-08-30T19:59:12Z",
+      "side": 1,
+      "message": "Discussed with Garrett offline that this flag is not required and we should determine if --all is used based off if the build is a try or not",
+      "parentUuid": "0e8a6f08_ba37236d",
+      "range": {
+        "startLine": 111,
+        "startChar": 56,
+        "endLine": 111,
+        "endChar": 64
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d339b2fc_74e0c27c",
@@ -228,6 +276,30 @@
       "side": 1,
       "message": "Sorry, I realized the use of property is overloaded, I meant property in the python sense.",
       "parentUuid": "b928db4a_27edc1cd",
+      "range": {
+        "startLine": 122,
+        "startChar": 20,
+        "endLine": 122,
+        "endChar": 132
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdaecc9e_9229acdc",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1545642
+      },
+      "writtenOn": "2022-08-30T19:59:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0136e809_57e16e91",
       "range": {
         "startLine": 122,
         "startChar": 20,

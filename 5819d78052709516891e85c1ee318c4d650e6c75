@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0189a609_bf8b7d8d",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-30T21:22:08Z",
+      "side": 1,
+      "message": "This is repeated between here and execute, why not just make a property for this whole expression? Also, it isn\u0027t something that users of the API should be calling, so it should start with a _.",
+      "range": {
+        "startLine": 92,
+        "startChar": 4,
+        "endLine": 92,
+        "endChar": 81
+      },
+      "revId": "5819d78052709516891e85c1ee318c4d650e6c75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

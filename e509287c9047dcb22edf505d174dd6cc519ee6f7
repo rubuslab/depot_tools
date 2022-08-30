@@ -121,6 +121,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0e8a6f08_ba37236d",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-30T17:12:23Z",
+      "side": 1,
+      "message": "That is what would happen, but there\u0027s no reason to make it a property rather than an argument to the execute function. That then requires that someone set the properties on a builder when it\u0027s reasonable that a recipe would want to run all under some conditions.",
+      "parentUuid": "cc2150b2_98bdcd3b",
+      "range": {
+        "startLine": 111,
+        "startChar": 56,
+        "endLine": 111,
+        "endChar": 64
+      },
+      "revId": "e509287c9047dcb22edf505d174dd6cc519ee6f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d339b2fc_74e0c27c",
         "filename": "recipes/recipe_modules/presubmit/api.py",
         "patchSetId": 1

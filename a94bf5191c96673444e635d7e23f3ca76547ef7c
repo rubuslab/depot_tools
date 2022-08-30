@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc762ec3_a801b86f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-08-30T20:34:46Z",
+      "side": 1,
+      "message": "Have you done any testing? My concern is that some depot_tools script may not work well with partial clones (e.g git hyper-blame). There might be performance problems too.\n\nI also wonder if using this over regular check out has any long term benefits.",
+      "revId": "a94bf5191c96673444e635d7e23f3ca76547ef7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11acb682_00ec48a7",
+        "filename": "fetch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-08-30T20:34:46Z",
+      "side": 1,
+      "message": "Unifying in one argument is probably better, e.g. partial_clone",
+      "range": {
+        "startLine": 205,
+        "startChar": 0,
+        "endLine": 208,
+        "endChar": 64
+      },
+      "revId": "a94bf5191c96673444e635d7e23f3ca76547ef7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80a0a0be_f5a41e0b",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2963,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-08-30T20:34:46Z",
+      "side": 1,
+      "message": "I think it would make more sense to use parameters from fetch.",
+      "range": {
+        "startLine": 2956,
+        "startChar": 0,
+        "endLine": 2963,
+        "endChar": 41
+      },
+      "revId": "a94bf5191c96673444e635d7e23f3ca76547ef7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

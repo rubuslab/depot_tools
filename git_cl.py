@@ -5639,7 +5639,8 @@ class OptionParser(optparse.OptionParser):
 
 
 def main(argv):
-  if sys.hexversion < 0x02060000:
+  # Require Python 3.8 as a minimum (current depot_tools version of vpython3)
+  if sys.hexversion < 0x3080000:
     print('\nYour Python version %s is unsupported, please upgrade.\n' %
           (sys.version.split(' ', 1)[0],), file=sys.stderr)
     return 2

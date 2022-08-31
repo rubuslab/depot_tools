@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1e98960_169bef3e",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-31T18:23:58Z",
+      "side": 1,
+      "message": "This isn\u0027t needed.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 29
+      },
+      "revId": "29778f37cba590512599a12c858d3dd741985581",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e0dce85_1721fcb4",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-31T18:23:58Z",
+      "side": 1,
+      "message": "is_try is only being used once and it doesn\u0027t make the code clearer than the expression it\u0027s replacing, self.m.tryserver.is_tryserver can be used directly.",
+      "range": {
+        "startLine": 99,
+        "startChar": 4,
+        "endLine": 99,
+        "endChar": 42
+      },
+      "revId": "29778f37cba590512599a12c858d3dd741985581",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e7ff532_d92efc5a",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-31T18:23:58Z",
+      "side": 1,
+      "message": "Please remove the unnecessary added whitespace.",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 16
+      },
+      "revId": "29778f37cba590512599a12c858d3dd741985581",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4dc6403_c2fa68e8",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-08-31T18:23:58Z",
+      "side": 1,
+      "message": "This can just be self.m.tryserver.is_tryserver",
+      "range": {
+        "startLine": 139,
+        "startChar": 7,
+        "endLine": 139,
+        "endChar": 13
+      },
+      "revId": "29778f37cba590512599a12c858d3dd741985581",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

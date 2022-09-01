@@ -33,6 +33,24 @@
       "message": "-r is technically deprecated and is not recommended to use. Should it allowing updates to it? @Josip",
       "revId": "c35361fbd6a66f50958a90101560684b28c9c4bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a828b43_528cd671",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-09-01T23:24:27Z",
+      "side": 1,
+      "message": "My bad, I just noticed this is how git cl upload does it.",
+      "parentUuid": "243865ee_f678dafd",
+      "revId": "c35361fbd6a66f50958a90101560684b28c9c4bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

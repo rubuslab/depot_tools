@@ -51,6 +51,24 @@
       "parentUuid": "243865ee_f678dafd",
       "revId": "c35361fbd6a66f50958a90101560684b28c9c4bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc24161f_3153a475",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-09-01T23:24:59Z",
+      "side": 1,
+      "message": "R\u003d in commit message is deprecated, but we still require it. So, this change is totally ok.",
+      "parentUuid": "243865ee_f678dafd",
+      "revId": "c35361fbd6a66f50958a90101560684b28c9c4bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

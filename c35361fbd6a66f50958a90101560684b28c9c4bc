@@ -89,6 +89,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9664688c_ccc72ec7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-09-01T23:33:26Z",
+      "side": 1,
+      "message": "There\u0027s a unit test for roll_dep: https://crsrc.org/d/tests/roll_dep_test.py",
+      "parentUuid": "f0df4f28_d99ad1e8",
+      "revId": "c35361fbd6a66f50958a90101560684b28c9c4bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5ef5cf5_4e30162c",
@@ -102,6 +120,24 @@
       "writtenOn": "2022-09-01T23:27:01Z",
       "side": 1,
       "message": "Nit: can we import and reuse `cleanup_list` from git_cl.py (https://crsrc.org/d/git_cl.py;l\u003d4252) here? That\u0027s how git cl does it (https://crsrc.org/d/git_cl.py;l\u003d4420) so we can maintain consistency.",
+      "revId": "c35361fbd6a66f50958a90101560684b28c9c4bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e047fa8c_d564b12e",
+        "filename": "roll_dep.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-09-01T23:33:26Z",
+      "side": 1,
+      "message": "On second thoughts, I\u0027m not sure if that\u0027s possible given how the code is structured so ignore this.",
+      "parentUuid": "d5ef5cf5_4e30162c",
       "revId": "c35361fbd6a66f50958a90101560684b28c9c4bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

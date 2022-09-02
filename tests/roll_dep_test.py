@@ -114,6 +114,25 @@ class RollDepTest(fake_repos.FakeReposTestBase):
     self.assertIn(expected_message, stdout)
     self.assertIn(expected_message, commit_message)
 
+  def testRollsDepReviewers(self):
+    if not self.enabled:
+      return
+
+    stdout, stderr, returncode = self.call([
+        ROLL_DEP, 'src/foo', '-r', 'foo@example.com', '-r',
+        'bar@example.com,baz@example.com'
+    ])
+
+    self.assertEqual(stderr, '')
+    self.assertEqual(returncode, 0)
+
+    commit_message = self.call(['git', 'log', '-n', '1'])[0]
+
+    expected_message = 'R=foo@example.com,bar@example.com,baz@example.com'
+
+    self.assertIn(expected_message, stdout)
+    self.assertIn(expected_message, commit_message)
+
   def testRollsDepToSpecificRevision(self):
     if not self.enabled:
       return

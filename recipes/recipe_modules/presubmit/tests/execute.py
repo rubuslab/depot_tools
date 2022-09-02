@@ -29,8 +29,45 @@ def RunSteps(api):
     skip_owners = api.properties.get('skip_owners', False)
     return api.presubmit.execute(bot_update_step, skip_owners)
 
-
+#   yield api.test(
+#       'ci',
+#       api.buildbucket.ci_build(
+#           project='chromium',
+#           bucket='ci',
+#           builder='chromium_presubmit',
+#           git_repo='https://chromium.googlesource.com/chromium/src'),
+#       api.properties(
+#           repository_url='https://chromium.googlesource.com/chromium/src.git',),
+#       api.step_data('presubmit', api.json.output({})),
+#       api.step_data('presubmit py3', api.json.output({})),
+#       api.post_process(post_process.StatusSuccess),
+#       api.post_process(post_process.DropExpectation),
+#   )
 def GenTests(api):
+#   yield (api.test('success') + api.runtime(is_experimental=False) +
+#          api.buildbucket.ci_build(
+#             project='chromium',
+#             bucket='ci',
+#             builder='chromium_presubmit',
+#             git_repo='https://chromium.googlesource.com/chromium/src'),
+#         api.properties(
+#           repository_url='https://chromium.googlesource.com/chromium/src.git',),
+#         api.step_data('presubmit', api.json.output({})),
+#         api.step_data('presubmit py3', api.json.output({})))
+  yield (api.test('success_ci') 
+            # + api.runtime(is_experimental=False) 
+            + api.buildbucket.ci_build(
+                project='chromium',
+                bucket='ci',
+                builder='chromium_presubmit',
+                git_repo='https://chromium.googlesource.com/chromium/src'
+            ) 
+            + api.step_data('presubmit', api.json.output( {}))
+            + api.step_data('presubmit py3', api.json.output({})) 
+            + api.properties(repository_url='https://chromium.googlesource.com/chromium/src.git',) 
+            + api.post_process(post_process.StatusSuccess) 
+            + api.post_process(post_process.DropExpectation)
+         )
   yield (api.test('success') + api.runtime(is_experimental=False) +
          api.buildbucket.try_build(project='infra') + api.step_data(
              'presubmit',

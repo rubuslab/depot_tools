@@ -51,6 +51,24 @@
       "parentUuid": "50558f8b_2aae36f6",
       "revId": "eb16430cf94bfa6dc15cde1c21c0500539427540",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcf9a8cc_c1c7acf8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2022-09-02T23:49:04Z",
+      "side": 1,
+      "message": "https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1357152#c8 reports the same issue. Can we consider a revert please?",
+      "parentUuid": "6dc5d780_c9ec025d",
+      "revId": "eb16430cf94bfa6dc15cde1c21c0500539427540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

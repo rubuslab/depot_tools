@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df664b10_8dd62b1c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2022-09-02T23:41:20Z",
+      "side": 1,
+      "message": "nit: sort?",
+      "revId": "eb16430cf94bfa6dc15cde1c21c0500539427540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50558f8b_2aae36f6",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2022-09-02T23:41:20Z",
+      "side": 1,
+      "message": "I\u0027m seeing: `ValueError: binary mode doesn\u0027t take an encoding argument`\n\nHaven\u0027t figure out which python is triggering this.",
+      "revId": "eb16430cf94bfa6dc15cde1c21c0500539427540",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

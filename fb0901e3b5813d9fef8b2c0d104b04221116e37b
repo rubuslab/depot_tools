@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98f31cf8_49b30dd7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000487
+      },
+      "writtenOn": "2022-09-04T19:47:52Z",
+      "side": 1,
+      "message": "It reproduces for me with \"git retry foo\".",
+      "revId": "fb0901e3b5813d9fef8b2c0d104b04221116e37b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

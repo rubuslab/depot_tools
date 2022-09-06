@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1efb2351_73459bd6",
+        "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-09-06T16:50:13Z",
+      "side": 1,
+      "message": "This test doesn\u0027t need to be made more complicated. Instead, the test case doesn\u0027t need to set the repository_url attribute since the presubmit module doesn\u0027t consume that.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 74
+      },
+      "revId": "754852757e2772f4eb3bb681ca8c7aaf0e344cb9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73bc533f_8d868814",
+        "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-09-06T16:50:13Z",
+      "side": 1,
+      "message": "Using the + to create the test case is old-style, instead all of the things that are being added can simply be additional arguments to api.test:\n```\nyield api.test(\n    \u0027success_ci\u0027,\n    api.buildbucket.ci_build(...),\n    api.step_data(\u0027presubmit\u0027, api.json.output({})),\n    api.step_data(\u0027presubmit py3\u0027, api.json.output({})),\n    api.post_process(post_process.StatusSuccess),\n    api.post_process(post_process.DropExpectation),\n)\n```",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 53
+      },
+      "revId": "754852757e2772f4eb3bb681ca8c7aaf0e344cb9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "750320d2_e6c8e984",
+        "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-09-06T16:50:13Z",
+      "side": 1,
+      "message": "Please add a blank line between test cases.",
+      "range": {
+        "startLine": 54,
+        "startChar": 54,
+        "endLine": 55,
+        "endChar": 53
+      },
+      "revId": "754852757e2772f4eb3bb681ca8c7aaf0e344cb9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

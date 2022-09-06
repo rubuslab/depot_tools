@@ -16,6 +16,24 @@
       "message": "PTAL - tested CheckAuthorizedAuthor manually (broke last time.",
       "revId": "859fc4b822a7a4cfbbba9752a4fc45b0da87dcec",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "905038a2_58bdedb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-09-06T23:22:20Z",
+      "side": 1,
+      "message": "LGTM",
+      "parentUuid": "d6bc3a9d_f7f8ace1",
+      "revId": "859fc4b822a7a4cfbbba9752a4fc45b0da87dcec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

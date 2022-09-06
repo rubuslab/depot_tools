@@ -704,7 +704,8 @@ def upstream_default():
         pass
     return ret
   except subprocess2.CalledProcessError:
-    return 'origin/main'
+    ret = run('remote')
+    return ret + '/main'
 
 
 def root():

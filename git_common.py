@@ -691,20 +691,39 @@ def repo_root():
 
 
 def upstream_default():
-  """Returns the default branch name of the origin repository."""
-  try:
-    ret = run('rev-parse', '--abbrev-ref', 'origin/HEAD')
-    # Detect if the repository migrated to main branch
-    if ret == 'origin/master':
-      try:
-        ret = run('rev-parse', '--abbrev-ref', 'origin/main')
-        run('remote', 'set-head', '-a', 'origin')
-        ret = run('rev-parse', '--abbrev-ref', 'origin/HEAD')
-      except subprocess2.CalledProcessError:
-        pass
-    return ret
-  except subprocess2.CalledProcessError:
-    return 'origin/main'
+  """
+  Returns the default branch name of the origin repository.
+  1. Use `git remote` to determine the upstream repository name.
+  2. Use `git remote show [remote name]` to determine the default branch name.
+
+  If the above steps fail to build a good upstream default name, return
+  `origin/main` as a sensible default.
+  """
+  DEFAULT_UPSTREAM_BRANCH = 'origin/main'
+
+  remotes = run('remote').split('\n')
+  if len(remotes) == 0:
+    # Failed to get the head branch, so return a sensible default.
+    return DEFAULT_UPSTREAM_BRANCH
+
+  # Default to the first remote name.
+  remote = remotes[0]
+  # However, if 'origin' is listed use that.
+  for line in remotes:
+    if line == 'origin':
+      remote = line
+      break
+
+  remote_branches = run('remote', 'show', remote).split('\n')
+  head_branch = ''
+  for line in remote_branches:
+    if 'HEAD branch:' in line:
+      head_branch = line.split()[-1]
+  if len(head_branch) == 0:
+    # Failed to get the head branch, so return a sensible default.
+    return DEFAULT_UPSTREAM_BRANCH
+
+  return remote + '/' + head_branch
 
 
 def root():

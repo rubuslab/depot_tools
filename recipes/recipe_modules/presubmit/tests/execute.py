@@ -23,14 +23,36 @@ DEPS = [
 
 
 def RunSteps(api):
-  api.gclient.set_config('infra')
+  if not api.properties.get('repository_url'):
+    api.gclient.set_config('infra')
+  else:
+    gclient_config = api.gclient.make_config()
+    solution = gclient_config.solutions.add()
+    solution.url = api.properties.get('repository_url')
+    # Solution name shouldn't matter for most users, particularly if there is no
+    # DEPS file, but if someone wants to override it, fine.
+    solution.name = api.properties.get('solution_name', 's')
+    gclient_config.got_revision_mapping[solution.name] = 'got_revision'
+    api.gclient.c = gclient_config
   with api.context(cwd=api.path['cache'].join('builder')):
     bot_update_step = api.presubmit.prepare()
     skip_owners = api.properties.get('skip_owners', False)
-    return api.presubmit.execute(bot_update_step, skip_owners)
+    return api.presubmit.execute(bot_update_step, skip_owners,
+                                 not api.properties.get('repository_url'))
 
 
 def GenTests(api):
+  yield (
+      api.test('success_ci') + api.buildbucket.ci_build(
+          project='chromium',
+          bucket='ci',
+          builder='chromium_presubmit',
+          git_repo='https://chromium.googlesource.com/chromium/src') +
+      api.step_data('presubmit', api.json.output({})) +
+      api.step_data('presubmit py3', api.json.output({})) + api.properties(
+          repository_url='https://chromium.googlesource.com/chromium/src.git', )
+      + api.post_process(post_process.StatusSuccess) +
+      api.post_process(post_process.DropExpectation))
   yield (api.test('success') + api.runtime(is_experimental=False) +
          api.buildbucket.try_build(project='infra') + api.step_data(
              'presubmit',

@@ -1482,7 +1482,9 @@ def DoPostUploadExecuter(change, gerrit_obj, verbose, use_python3=False):
     presubmit_script = gclient_utils.FileRead(filename).replace('\r\n', '\n')
     if _ShouldRunPresubmit(presubmit_script, use_python3):
       if sys.version_info[0] == 2:
-        sys.stdout.write('Running %s under Python 2.\n' % filename)
+        sys.stdout.write(
+            'Running %s under Python 2. Add USE_PYTHON3 = True to prevent '
+            'this.\n' % filename)
       elif verbose:
         sys.stdout.write('Running %s\n' % filename)
       results.extend(executer.ExecPresubmitScript(
@@ -1756,7 +1758,9 @@ def DoPresubmitChecks(change,
       presubmit_script = gclient_utils.FileRead(filename).replace('\r\n', '\n')
       if _ShouldRunPresubmit(presubmit_script, use_python3):
         if sys.version_info[0] == 2:
-          sys.stdout.write('Running %s under Python 2.\n' % filename)
+          sys.stdout.write(
+              'Running %s under Python 2. Add USE_PYTHON3 = True to prevent '
+              'this.\n' % filename)
         elif verbose:
           sys.stdout.write('Running %s\n' % filename)
         results += executer.ExecPresubmitScript(presubmit_script, filename)

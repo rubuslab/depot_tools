@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50ccf543_b84c0344",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-09-07T21:00:01Z",
+      "side": 1,
+      "message": "We definitely don\u0027t want to ignore the input commit. Instead add `git_repo\u003d\u0027https://chromium.googlesource.com/infra/infra\u0027` to the ci_build call in the test case.",
+      "range": {
+        "startLine": 100,
+        "startChar": 8,
+        "endLine": 100,
+        "endChar": 61
+      },
+      "revId": "7bee518fa13aabbaefca32c46f4f69dbef3401ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

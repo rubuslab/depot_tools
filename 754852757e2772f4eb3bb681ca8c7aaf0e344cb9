@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eb0b0011_0f928b50",
+        "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1545642
+      },
+      "writtenOn": "2022-09-07T15:17:45Z",
+      "side": 1,
+      "message": "Doesn\u0027t the rest of bot_update need the repostiroy_url to know where the revisions are? Like here -https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:recipes/recipe_modules/bot_update/api.py;l\u003d206 so we need to provide a repository url",
+      "parentUuid": "1efb2351_73459bd6",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 74
+      },
+      "revId": "754852757e2772f4eb3bb681ca8c7aaf0e344cb9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "73bc533f_8d868814",
         "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
         "patchSetId": 14

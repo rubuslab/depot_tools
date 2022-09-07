@@ -24,13 +24,23 @@ DEPS = [
 
 def RunSteps(api):
   api.gclient.set_config('infra')
+
   with api.context(cwd=api.path['cache'].join('builder')):
     bot_update_step = api.presubmit.prepare()
     skip_owners = api.properties.get('skip_owners', False)
-    return api.presubmit.execute(bot_update_step, skip_owners)
+    return api.presubmit.execute(bot_update_step, skip_owners, not skip_owners)
 
 
 def GenTests(api):
+  yield api.test(
+      'success_ci',
+      api.buildbucket.ci_build(),
+      api.step_data('presubmit', api.json.output({})),
+      api.step_data('presubmit py3', api.json.output({})),
+      api.post_process(post_process.StatusSuccess),
+      api.post_process(post_process.DropExpectation),
+  )
+
   yield (api.test('success') + api.runtime(is_experimental=False) +
          api.buildbucket.try_build(project='infra') + api.step_data(
              'presubmit',

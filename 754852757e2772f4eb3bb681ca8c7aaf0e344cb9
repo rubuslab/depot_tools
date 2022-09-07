@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3a3f4368_93e84a2b",
+        "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-09-07T18:31:49Z",
+      "side": 1,
+      "message": "No, the presubmit module and bot_update don\u0027t read a repository_url property, that\u0027s only done in the presubmit recipe, so there\u0027s no need to complicate this test recipe with additional codepaths.",
+      "parentUuid": "eb0b0011_0f928b50",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 74
+      },
+      "revId": "754852757e2772f4eb3bb681ca8c7aaf0e344cb9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "73bc533f_8d868814",
         "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
         "patchSetId": 14

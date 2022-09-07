@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2888dfb3_2f449f3d",
+        "filename": "gsutil.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-09-07T19:55:53Z",
+      "side": 1,
+      "message": "shutil.move just overwrites if there\u0027s an existing directory \nso we don\u0027t need to catch the OSError and IOError, which means if a real problem occurs the error actually gets raised and debugging is faster.\n\nSee bug as well.",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "revId": "fb402b52c7583cc2cdc6b6ac4dc74eee68b407e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9496fbc9_aafb91f3",
+        "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-09-08T18:21:45Z",
+      "side": 1,
+      "message": "This should be run_all. Can you move the api.properties call into a separate expression like skip_owners does?",
+      "range": {
+        "startLine": 31,
+        "startChar": 53,
+        "endLine": 31,
+        "endChar": 64
+      },
+      "revId": "995fdccf01fc9509e754f8b7c1582204af0f48ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

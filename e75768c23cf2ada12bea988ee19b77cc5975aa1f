@@ -16,6 +16,24 @@
       "message": "Not sure why the commit queue set it back to +0",
       "revId": "e75768c23cf2ada12bea988ee19b77cc5975aa1f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f55cdde7_bdfa8ef0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2022-09-09T16:22:11Z",
+      "side": 1,
+      "message": "It sets it back to 0 when it\u0027s done with the CQ run.",
+      "parentUuid": "5e262505_21c85efe",
+      "revId": "e75768c23cf2ada12bea988ee19b77cc5975aa1f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

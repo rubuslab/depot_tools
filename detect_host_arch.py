@@ -35,6 +35,8 @@ def HostArch():
     host_arch = 's390'
   elif host_arch.startswith('riscv'):
     host_arch = 'riscv64'
+  elif host_arch.startswith('loongarch64'):
+    host_arch = 'loong64'
 
 
   # platform.machine is based on running kernel. It's possible to use 64-bit

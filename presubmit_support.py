@@ -766,8 +766,11 @@ class InputApi(object):
     If files_to_check or files_to_skip is None, InputApi.DEFAULT_FILES_TO_CHECK
     and InputApi.DEFAULT_FILES_TO_SKIP is used respectively.
 
-    The lists will be compiled as regular expression and
-    AffectedFile.LocalPath() needs to pass both list.
+    The lists will be compiled as regular expressions and
+    AffectedFile.LocalPath() needs to re.match an entry in the files_to_check
+    list and not re.match any entries in the files_to_skip list.
+    '/' separators can be used in the regular expressions and will work on
+    Windows as well as other platforms.
 
     Note: Copy-paste this function to suit your needs or use a lambda function.
     """

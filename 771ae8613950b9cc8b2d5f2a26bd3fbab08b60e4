@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ee126a5_bde9911d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-09-12T14:13:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47dc0c00_e8e63ca1",
+      "revId": "771ae8613950b9cc8b2d5f2a26bd3fbab08b60e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a773b56b_02a59256",
@@ -48,6 +66,24 @@
       "writtenOn": "2022-09-12T11:56:57Z",
       "side": 1,
       "message": "`can be used` -\u003e `should be used`?\n\nIt would be nice to replace `[\\\\/]` with `/` across all presubmits and then enforce `/` by ensuring the patterns passed here don\u0027t use `[\\\\/]`.\n\nThe current state of presubmits encourages `[\\\\/]` copy-pasting everywhere.",
+      "revId": "771ae8613950b9cc8b2d5f2a26bd3fbab08b60e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a56df79_2a011cc0",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-09-12T14:13:06Z",
+      "side": 1,
+      "message": "Agreed. I\u0027ll land a separate CL to get rid of as many [\\\\/] blobs as possible. Enforcing this may not be practical (getting all projects that use depot_tools updated is tough) but getting rid of 95% of the examples will fix copy/paste.",
+      "parentUuid": "a773b56b_02a59256",
       "revId": "771ae8613950b9cc8b2d5f2a26bd3fbab08b60e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

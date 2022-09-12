@@ -3046,29 +3046,37 @@ the current line as well!
   def testCannedCheckVPythonSpec(self):
     change = presubmit.Change('a', 'b', self.fake_root_dir, None, 0, 0, None)
     input_api = self.MockInputApi(change, False)
+    affected_filenames = ['/path1/to/.vpython', '/path1/to/.vpython3']
+    affected_files = []
 
-    affected_file = mock.MagicMock(presubmit.GitAffectedFile)
-    affected_file.AbsoluteLocalPath.return_value = '/path1/to/.vpython'
-    input_api.AffectedTestableFiles.return_value = [affected_file]
+    for filename in affected_filenames:
+      affected_file = mock.MagicMock(presubmit.GitAffectedFile)
+      affected_file.AbsoluteLocalPath.return_value = filename
+      affected_files.append(affected_file)
+    input_api.AffectedTestableFiles.return_value = affected_files
 
     commands = presubmit_canned_checks.CheckVPythonSpec(
         input_api, presubmit.OutputApi)
-    self.assertEqual(len(commands), 1)
-    self.assertEqual(commands[0].name, 'Verify /path1/to/.vpython')
-    self.assertEqual(commands[0].cmd, [
-      'vpython',
-      '-vpython-spec', '/path1/to/.vpython',
-      '-vpython-tool', 'verify'
-    ])
-    self.assertDictEqual(
-        commands[0].kwargs,
-        {
-            'stderr': input_api.subprocess.STDOUT,
-            'stdout': input_api.subprocess.PIPE,
-            'stdin': input_api.subprocess.PIPE,
-        })
-    self.assertEqual(commands[0].message, presubmit.OutputApi.PresubmitError)
-    self.assertIsNone(commands[0].info)
+
+    vpython3 = 'vpython3'
+    if input_api.platform == 'win32':
+      vpython3 += '.bat'
+
+    self.assertEqual(len(commands), len(affected_filenames))
+    for i in 0..len(commands):
+      self.assertEqual(commands[i].name, affected_filenames[i])
+      self.assertEqual(commands[i].cmd, [
+          vpython3, '-vpython-spec', affected_filenames[i], '-vpython-tool',
+          'verify'
+      ])
+      self.assertDictEqual(
+          commands[0].kwargs, {
+              'stderr': input_api.subprocess.STDOUT,
+              'stdout': input_api.subprocess.PIPE,
+              'stdin': input_api.subprocess.PIPE,
+          })
+      self.assertEqual(commands[0].message, presubmit.OutputApi.PresubmitError)
+      self.assertIsNone(commands[0].info)
 
 
 class ThreadPoolTest(unittest.TestCase):

@@ -16,6 +16,40 @@
       "message": "Do you think this would have helped?",
       "revId": "771ae8613950b9cc8b2d5f2a26bd3fbab08b60e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47dc0c00_e8e63ca1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-09-12T11:56:57Z",
+      "side": 1,
+      "message": "IMO this is mostly noise: `The lists will be compiled as regular expressions and`\n\nThis is important:\n```\naffected_file.LocalPath() needs to re.match() an entry in the files_to_check\nlist and not re.match() any entries in the files_to_skip list.\n```",
+      "revId": "771ae8613950b9cc8b2d5f2a26bd3fbab08b60e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a773b56b_02a59256",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-09-12T11:56:57Z",
+      "side": 1,
+      "message": "`can be used` -\u003e `should be used`?\n\nIt would be nice to replace `[\\\\/]` with `/` across all presubmits and then enforce `/` by ensuring the patterns passed here don\u0027t use `[\\\\/]`.\n\nThe current state of presubmits encourages `[\\\\/]` copy-pasting everywhere.",
+      "revId": "771ae8613950b9cc8b2d5f2a26bd3fbab08b60e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

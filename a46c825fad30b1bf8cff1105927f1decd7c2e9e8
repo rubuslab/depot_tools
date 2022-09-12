@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aebcf682_05944a29",
+        "filename": "cipd",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2022-09-12T21:21:56Z",
+      "side": 1,
+      "message": "Note: this won\u0027t cause any cipd packages (or cipd itself) to be built for this architecture. We currently don\u0027t have the ability to build Go for this due to version constraints.",
+      "revId": "a46c825fad30b1bf8cff1105927f1decd7c2e9e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -52,6 +52,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9922d81_13ca1f95",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-09-13T14:24:04Z",
+      "side": 1,
+      "message": "Indeed, I discovered that while testing a change to replace [\\\\/] with just /. I hit some new test failures because of that. I then searched for re.search and re.match and found a few other places. It will be a slightly risky change, but probably worth it.",
+      "parentUuid": "17dec30b_160bce93",
+      "revId": "20e0a37b894b08288206394b2d7d3e1cd96bea87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46bb4e60_b16d131a",
@@ -65,6 +83,30 @@
       "writtenOn": "2022-09-13T05:16:16Z",
       "side": 1,
       "message": "Final nit: what about changing `AffectedFile` -\u003e `affected_file`? Because this is the input argument and not some external class that somehow should be matched here.",
+      "range": {
+        "startLine": 769,
+        "startChar": 4,
+        "endLine": 769,
+        "endChar": 28
+      },
+      "revId": "20e0a37b894b08288206394b2d7d3e1cd96bea87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab7589ef_4053c750",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-09-13T14:24:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46bb4e60_b16d131a",
       "range": {
         "startLine": 769,
         "startChar": 4,

@@ -16,6 +16,24 @@
       "message": "nit: update description.",
       "revId": "6c0ab4e8cae07680dea154fe4b429a3d1a7170f9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12cfdfd3_ce6460e1",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 1116524
+      },
+      "writtenOn": "2022-09-13T21:12:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "308e0f68_a26fdfe7",
+      "revId": "6c0ab4e8cae07680dea154fe4b429a3d1a7170f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

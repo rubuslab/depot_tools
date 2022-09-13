@@ -16,6 +16,46 @@
       "message": "Thanks for the suggestions. That is much better. PTAL.",
       "revId": "20e0a37b894b08288206394b2d7d3e1cd96bea87",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "249aa708_bf1cac9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-09-13T05:16:16Z",
+      "side": 1,
+      "message": "My ephemeral +1 and a small nit.",
+      "revId": "20e0a37b894b08288206394b2d7d3e1cd96bea87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46bb4e60_b16d131a",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-09-13T05:16:16Z",
+      "side": 1,
+      "message": "Final nit: what about changing `AffectedFile` -\u003e `affected_file`? Because this is the input argument and not some external class that somehow should be matched here.",
+      "range": {
+        "startLine": 769,
+        "startChar": 4,
+        "endLine": 769,
+        "endChar": 28
+      },
+      "revId": "20e0a37b894b08288206394b2d7d3e1cd96bea87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

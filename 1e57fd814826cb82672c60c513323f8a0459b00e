@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "562f61c7_7e6edb4b",
+        "filename": "git_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 1297197
+      },
+      "writtenOn": "2022-09-15T19:52:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81307755_a1ed85f8",
+      "revId": "1e57fd814826cb82672c60c513323f8a0459b00e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9155bff_39c4881f",
@@ -41,6 +59,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcc49116_d100462d",
+        "filename": "git_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 1297197
+      },
+      "writtenOn": "2022-09-15T19:52:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9155bff_39c4881f",
+      "range": {
+        "startLine": 706,
+        "startChar": 2,
+        "endLine": 711,
+        "endChar": 11
+      },
+      "revId": "1e57fd814826cb82672c60c513323f8a0459b00e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e21100ef_bbada2ff",
@@ -54,6 +96,24 @@
       "writtenOn": "2022-09-06T19:37:37Z",
       "side": 1,
       "message": "This is extremely slow for chromium/src (takes 20s), so we shouldn\u0027t be doing this here. That\u0027s the main reason behind the current state (I should\u0027ve left a comment in this section).",
+      "revId": "1e57fd814826cb82672c60c513323f8a0459b00e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f8875ea_fd879272",
+        "filename": "git_common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 1297197
+      },
+      "writtenOn": "2022-09-15T19:52:36Z",
+      "side": 1,
+      "message": "I\u0027ve updated the CL to treat Chromium as a special case, with the ability to add more repos in the future that also use the default `origin/main` upstream branch.\n\nTesting this with a local checking out of Chromium, I don\u0027t see a regression in performance of `git rebase-update`.\n\nLet me know what you think.",
+      "parentUuid": "e21100ef_bbada2ff",
       "revId": "1e57fd814826cb82672c60c513323f8a0459b00e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

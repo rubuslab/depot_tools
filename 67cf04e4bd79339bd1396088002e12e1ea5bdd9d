@@ -34,6 +34,24 @@
       "parentUuid": "37fada9d_900939e7",
       "revId": "67cf04e4bd79339bd1396088002e12e1ea5bdd9d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d71f3446_3e97eb21",
+        "filename": "git_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1297197
+      },
+      "writtenOn": "2022-09-15T21:22:17Z",
+      "side": 1,
+      "message": "I\u0027m trying allow `git rebase-update` to work with arbitrary repos, not just repos like Chromium that have `origin/main` as the upstream branch, since it\u0027s a very useful command and works better than `repo rebase`.   I\u0027d like to upstream a fix, rather than maintaining a branch with these changes locally.\n\nI\u0027m far from a git expert, and I\u0027m certainly not a depot_tools expert, so I\u0027m open to suggestions for the best approach to achieve that.",
+      "parentUuid": "2db713f0_dd76fb70",
+      "revId": "67cf04e4bd79339bd1396088002e12e1ea5bdd9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

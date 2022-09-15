@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37fada9d_900939e7",
+        "filename": "git_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-09-15T20:03:22Z",
+      "side": 1,
+      "message": "I\u0027m not sure if it is a good idea to hardcode this in git_common given depot_tools is used outside google too. If this is the design we\u0027re going with, is there a reason to not use a config file or a flag?",
+      "revId": "67cf04e4bd79339bd1396088002e12e1ea5bdd9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

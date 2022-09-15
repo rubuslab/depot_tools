@@ -52,6 +52,24 @@
       "parentUuid": "2db713f0_dd76fb70",
       "revId": "67cf04e4bd79339bd1396088002e12e1ea5bdd9d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b60543e4_3498f094",
+        "filename": "git_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-09-15T22:02:13Z",
+      "side": 1,
+      "message": "@sokcevic I\u0027m thinking we could have an optional config within fetch_config where the user can store the default branch, which we could write to .gclient (similar to what we do with protocol_override) and if that\u0027s present, simply use that branch.\n\nThis doesn\u0027t seem like a case where we have to do this for all the repos to me. Especially not prominent enough to hard-code an exclude list. Wdyt?",
+      "parentUuid": "d71f3446_3e97eb21",
+      "revId": "67cf04e4bd79339bd1396088002e12e1ea5bdd9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

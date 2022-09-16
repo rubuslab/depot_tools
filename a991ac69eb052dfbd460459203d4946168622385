@@ -16,6 +16,24 @@
       "message": "We may want to use this path now like other third party tools?",
       "revId": "a991ac69eb052dfbd460459203d4946168622385",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1298e51_9e9276f7",
+        "filename": "gn.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-09-16T01:13:47Z",
+      "side": 0,
+      "message": "Yes. I will wait for dpranke\u0027s advice after his OOO.\nhttps://crbug.com/1364002#c6\n\nIn the mean time, I will abandon this.",
+      "parentUuid": "258b978c_7bcef79b",
+      "revId": "a991ac69eb052dfbd460459203d4946168622385",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

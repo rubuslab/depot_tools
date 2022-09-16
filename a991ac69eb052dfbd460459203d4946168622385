@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "258b978c_7bcef79b",
+        "filename": "gn.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-09-16T01:01:04Z",
+      "side": 0,
+      "message": "We may want to use this path now like other third party tools?",
+      "revId": "a991ac69eb052dfbd460459203d4946168622385",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

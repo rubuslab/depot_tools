@@ -70,6 +70,24 @@
       "parentUuid": "d71f3446_3e97eb21",
       "revId": "67cf04e4bd79339bd1396088002e12e1ea5bdd9d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "422c5fe2_5b08254e",
+        "filename": "git_common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1297197
+      },
+      "writtenOn": "2022-09-16T17:53:13Z",
+      "side": 1,
+      "message": "That\u0027s outside of my knowledge, but let me know if there\u0027s a CL you\u0027d like me to try.",
+      "parentUuid": "b60543e4_3498f094",
+      "revId": "67cf04e4bd79339bd1396088002e12e1ea5bdd9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

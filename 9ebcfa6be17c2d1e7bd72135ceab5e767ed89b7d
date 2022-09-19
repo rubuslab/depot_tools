@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "563c714d_8932a354",
+        "filename": "git_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-09-19T18:42:24Z",
+      "side": 0,
+      "message": "What if we get default remote and use that for all commands below?\n\nE.g. `\u0027origin/HEAD\u0027` would become `remote_name + /\u0027HEAD\u0027`",
+      "revId": "9ebcfa6be17c2d1e7bd72135ceab5e767ed89b7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

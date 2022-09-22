@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35b64daf_fe0156a4",
+        "filename": "project.config",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-09-22T02:14:36Z",
+      "side": 1,
+      "message": "https://gerrit.googlesource.com/plugins/uploadvalidator/+/refs/heads/master/src/main/resources/Documentation/config.md\n\nUpload Validator doesn\u0027t seem to have a straight-forward way to skip a project. I\u0027m simply skipping the check for all depot_tools refs to testing.",
+      "revId": "cef8074d260cd0995917d3d5cddac526360040c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

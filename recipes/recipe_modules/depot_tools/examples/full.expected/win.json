@@ -37,6 +37,13 @@
   {
     "cmd": [
       "ls",
+      "RECIPE_REPO[depot_tools]\\ninja.py"
+    ],
+    "name": "ninja_py_path"
+  },
+  {
+    "cmd": [
+      "ls",
       "RECIPE_REPO[depot_tools]\\gsutil.py"
     ],
     "name": "gsutil_py_path"

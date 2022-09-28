@@ -30,6 +30,9 @@ def RunSteps(api):
       'gn_py_path', ['ls', api.depot_tools.gn_py_path])
 
   api.step(
+      'ninja_py_path', ['ls', api.depot_tools.ninja_py_path])
+
+  api.step(
       'gsutil_py_path', ['ls', api.depot_tools.gsutil_py_path])
 
   api.step(

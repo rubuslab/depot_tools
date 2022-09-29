@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ddc320f_61f6c88b",
+        "filename": "ninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-09-29T08:07:04Z",
+      "side": 1,
+      "message": "better to leave bug link to reach out?",
+      "revId": "f0836760e600e30b6370e7f834cb62f0483af51d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "800c1a73_8ec0016f",
+        "filename": "ninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-09-29T08:07:04Z",
+      "side": 1,
+      "message": "assert for else case?",
+      "range": {
+        "startLine": 30,
+        "startChar": 2,
+        "endLine": 30,
+        "endChar": 6
+      },
+      "revId": "f0836760e600e30b6370e7f834cb62f0483af51d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

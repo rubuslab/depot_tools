@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80d8d02b_08f9243f",
+        "filename": "ninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-09-29T10:52:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ddc320f_61f6c88b",
+      "revId": "f0836760e600e30b6370e7f834cb62f0483af51d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "800c1a73_8ec0016f",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-09-29T08:07:04Z",
       "side": 1,
       "message": "assert for else case?",
+      "range": {
+        "startLine": 30,
+        "startChar": 2,
+        "endLine": 30,
+        "endChar": 6
+      },
+      "revId": "f0836760e600e30b6370e7f834cb62f0483af51d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5685d4c0_68c51667",
+        "filename": "ninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-09-29T10:52:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "800c1a73_8ec0016f",
       "range": {
         "startLine": 30,
         "startChar": 2,

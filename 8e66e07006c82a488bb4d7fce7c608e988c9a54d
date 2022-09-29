@@ -16,6 +16,24 @@
       "message": "Could you make similar change for other repositories which are currently using ninja?\n\nOr suppress warning until when we have per repository ninja in known repositories?",
       "revId": "8e66e07006c82a488bb4d7fce7c608e988c9a54d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cf4d4ed_65df34e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-09-29T13:24:10Z",
+      "side": 1,
+      "message": "Yes, will merge this CL after adding ninja to DEPS for known projects. \n(That\u0027s why no auto-submit on this CL)\n\nFor some projects, DEPS will be auto-rolled from chromium/src. http://screen/44Ajf6CRHU8qfYh\n\nFor others, I need to roll it out manually or make similar changes. http://screen/JSqDMGv6ZXMvYgh \n\nI will work on the manual rollout/changes after merging https://crrev.com/c/3869740\nto chromium/src.",
+      "parentUuid": "b2807756_39e10463",
+      "revId": "8e66e07006c82a488bb4d7fce7c608e988c9a54d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

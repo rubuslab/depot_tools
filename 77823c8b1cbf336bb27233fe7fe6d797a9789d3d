@@ -16,6 +16,57 @@
       "message": "In the case that cause the bug,\nexpected cmd update_bootstrap to end early with:\n\u0027Cache %s already exists`\n\nprinting gsutil command to see what `dest_prefix` is in cases where this happens again.",
       "revId": "77823c8b1cbf336bb27233fe7fe6d797a9789d3d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea1d2ec4_55a2d815",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-04T23:44:40Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "77823c8b1cbf336bb27233fe7fe6d797a9789d3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d936420_ff955a98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-04T23:44:40Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "77823c8b1cbf336bb27233fe7fe6d797a9789d3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df64273f_c279a12c",
+        "filename": "git_cache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-04T23:44:40Z",
+      "side": 1,
+      "message": "this is useful to print too",
+      "revId": "77823c8b1cbf336bb27233fe7fe6d797a9789d3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

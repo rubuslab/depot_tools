@@ -9,6 +9,7 @@ from __future__ import print_function
 
 import collections
 import os
+import pathlib
 import re
 import subprocess2
 import sys
@@ -140,7 +141,7 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
                             publish=True)
 
 
-def GetFilesSplitByOwners(files):
+def GetFilesSplitByOwners(files, max_depth):
   """Returns a map of files split by OWNERS file.
 
   Returns:
@@ -150,6 +151,9 @@ def GetFilesSplitByOwners(files):
   files_split_by_owners = {}
   for action, path in files:
     dir_with_owners = os.path.dirname(path)
+    if max_depth >= 1:
+      dir_with_owners = os.path.join(
+          *pathlib.PurePath(dir_with_owners).parts[:max_depth])
     # Find the closest parent directory with an OWNERS file.
     while (dir_with_owners not in files_split_by_owners
            and not os.path.isfile(os.path.join(dir_with_owners, 'OWNERS'))):
@@ -184,7 +188,7 @@ def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
 
 
 def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
-            cq_dry_run, enable_auto_submit, repository_root):
+            cq_dry_run, enable_auto_submit, max_depth, repository_root):
   """"Splits a branch into smaller branches and uploads CLs.
 
   Args:
@@ -224,7 +228,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
     assert refactor_branch_upstream, \
         "Branch %s must have an upstream." % refactor_branch
 
-    files_split_by_owners = GetFilesSplitByOwners(files)
+    files_split_by_owners = GetFilesSplitByOwners(files, max_depth)
 
     num_cls = len(files_split_by_owners)
     print('Will split current branch (' + refactor_branch + ') into ' +

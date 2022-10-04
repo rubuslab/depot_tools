@@ -528,6 +528,7 @@ class Mirror(object):
         dest_prefix + '.ready' in ls_out_set):
       print('Cache %s already exists.' % dest_prefix)
       return
+    print('Creating cache for %s' % dest_prefix)
 
     # Reduce the number of individual files to download & write on disk.
     self.RunGit(['pack-refs', '--all'])

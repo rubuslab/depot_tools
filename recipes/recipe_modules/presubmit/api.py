@@ -161,10 +161,14 @@ class PresubmitApi(recipe_api.RecipeApi):
     presubmit_args.extend([
       '--root', abs_root,
       '--commit',
-      '--verbose', '--verbose',
       '--skip_canned', 'CheckTreeIsOpen',
       '--upstream', upstream,  # '' if not in bot_update mode.
     ])
+    
+    if not run_all:
+      presubmit_args.extend([
+        '--verbose', '--verbose',
+      ])
 
     if skip_owners:
       presubmit_args.extend([

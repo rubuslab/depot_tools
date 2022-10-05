@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbfd2eb3_7060d69f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-05T22:00:03Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "c279b0c249919bdaf7bf12f9671a0889944eba74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ebc82b3_483e83bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-05T22:00:03Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "c279b0c249919bdaf7bf12f9671a0889944eba74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

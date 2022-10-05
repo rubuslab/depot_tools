@@ -16,6 +16,40 @@
       "message": "Actually I think the reviewers thing is WAI: owners_client.py\u0027s optimization function isn\u0027t strictly about minimizing reviewer count, but a score function based on how \u0027close\u0027 an OWNER is too. That works well for most cases, but can also somewhat defeat the point of --max-depth.\n\nI will look into adding another option (yes, I know) to minimize reviewers to owners_client.py and git_cl.py in a followup. In the meantime, this is still useful for providing a bit more control over the granularity of splits.",
       "revId": "a5a10c4020b98276f0e9b9fa88e6e69b1ec20466",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aad7b946_c371a816",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-05T20:30:36Z",
+      "side": 1,
+      "message": "The approach is sound.",
+      "revId": "a5a10c4020b98276f0e9b9fa88e6e69b1ec20466",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4aa7b501_7f49ab36",
+        "filename": "split_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-05T20:30:36Z",
+      "side": 1,
+      "message": "nit: add max_depth",
+      "revId": "a5a10c4020b98276f0e9b9fa88e6e69b1ec20466",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ca6acfa1_dd658d95",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-10-10T16:26:28Z",
+      "side": 1,
+      "message": "what is the goal?\nI thought we wanted to check for existence of the recursed dir/ on the bot and delete it before we upload the repo to GS.",
+      "parentUuid": "5cd88580_f5bcc60b",
+      "revId": "fc726a1d5e4f0f17ac7d4a87b4b7b572b983cd68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "eb47eb17_d1dec6b2",
         "filename": "git_cache.py",
         "patchSetId": 3

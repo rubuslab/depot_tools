@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c191612d_30501d77",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-10T16:34:48Z",
+      "side": 1,
+      "message": "Ah, you are absolutely right - I got confused by `\u003chost_url\u003e-\u003crepo\u003e/\u003cgen_number\u003e/\u003chost_url\u003e-\u003crepo\u003e/` comment.",
+      "parentUuid": "ca6acfa1_dd658d95",
+      "revId": "fc726a1d5e4f0f17ac7d4a87b4b7b572b983cd68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb47eb17_d1dec6b2",

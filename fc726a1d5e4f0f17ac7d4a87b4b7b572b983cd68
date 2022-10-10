@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cd88580_f5bcc60b",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-10T16:02:07Z",
+      "side": 1,
+      "message": "I might\u0027ve given a wrong asnwer last week, but this check should be done after dest_prefix (new line 530):\n\n    dest_prefix \u003d \u0027%s/%s\u0027 % (self._gs_path, gen_number)\n    recursed_dir \u003d \u0027%s/%s\u0027 % (dest_prefix, self._gs_path.split(os.path)[-1])\n    if so.path.exists...",
+      "revId": "fc726a1d5e4f0f17ac7d4a87b4b7b572b983cd68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb47eb17_d1dec6b2",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-10T16:02:07Z",
+      "side": 1,
+      "message": "add \u0027-d\u0027 parameter, to delete content on the remote",
+      "revId": "fc726a1d5e4f0f17ac7d4a87b4b7b572b983cd68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

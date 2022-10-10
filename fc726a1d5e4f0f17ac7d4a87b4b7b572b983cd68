@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "904524ef_5543d05a",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-10-10T16:49:21Z",
+      "side": 1,
+      "message": "updated comment",
+      "parentUuid": "c191612d_30501d77",
+      "revId": "fc726a1d5e4f0f17ac7d4a87b4b7b572b983cd68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb47eb17_d1dec6b2",
@@ -67,6 +85,24 @@
       "writtenOn": "2022-10-10T16:02:07Z",
       "side": 1,
       "message": "add \u0027-d\u0027 parameter, to delete content on the remote",
+      "revId": "fc726a1d5e4f0f17ac7d4a87b4b7b572b983cd68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb510dd5_1b0c857c",
+        "filename": "git_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-10-10T16:49:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb47eb17_d1dec6b2",
       "revId": "fc726a1d5e4f0f17ac7d4a87b4b7b572b983cd68",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -16,6 +16,24 @@
       "message": "Nit: use imperative mood, e.g.\n\nAdd --no_diff flag to presubmit recipe\n\nMute errors that ...",
       "revId": "6b208652f2a00bdc84a8f4db4645955cff4a7503",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f4160a3_1ba4ed6c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1545642
+      },
+      "writtenOn": "2022-10-11T20:11:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "536e8a2c_de99644b",
+      "revId": "6b208652f2a00bdc84a8f4db4645955cff4a7503",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

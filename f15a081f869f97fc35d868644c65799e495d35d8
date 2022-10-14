@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12c530a9_9a59d8a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-10-14T18:25:36Z",
+      "side": 1,
+      "message": "Since you\u0027re now the license expert I wanted your thoughts on this. I think that we want the license checks to be stricter on new files. That seems like a clearly good thing.\nI think the main questions are whether this is correct, and whether we want the stricter checks on new files to be warnings or errors.\nHaving them as warnings means that some people will ignore them, so old-style licenses will continue to be added. Having them as errors means that when people create new files by copying them they will be forced to update the license.\nThoughts?",
+      "revId": "f15a081f869f97fc35d868644c65799e495d35d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

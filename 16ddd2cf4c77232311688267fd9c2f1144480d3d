@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0322bb04_07f53759",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1521022
+      },
+      "writtenOn": "2022-10-14T20:21:49Z",
+      "side": 1,
+      "message": "based on this CL: https://chromium-review.googlesource.com/c/infra/infra/+/3954170",
+      "revId": "16ddd2cf4c77232311688267fd9c2f1144480d3d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

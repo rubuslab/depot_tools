@@ -2324,6 +2324,12 @@ the current line as well!
     )
     self._LicenseCheck(text, license_text, True, None, accept_empty_files=True)
 
+  def testCheckCorpLinks(self):
+    self.ContentTest(presubmit_canned_checks.CheckCorpLinks,
+                     "chromium.googlesource.com", None,
+                     "chromium.git.corp.google.com", None,
+                     presubmit.OutputApi.PresubmitPromptWarning)
+
   def testCannedCheckTreeIsOpenOpen(self):
     input_api = self.MockInputApi(None, True)
     input_api.urllib_request.urlopen().read.return_value = 'The tree is open'

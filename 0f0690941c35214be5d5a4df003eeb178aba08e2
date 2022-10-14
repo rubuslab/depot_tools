@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4c0db53_5c0beb4e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-10-14T02:58:19Z",
+      "side": 1,
+      "message": "It was pointed out that depot_tools shouldn\u0027t really be a dumping ground for random files, and in fact this broke chromeos. I hope that this hack will be irrelevant soon, but until then it should work correctly. PTAL.",
+      "revId": "0f0690941c35214be5d5a4df003eeb178aba08e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c652458_6888a29f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000023
+      },
+      "writtenOn": "2022-10-17T14:08:13Z",
+      "side": 1,
+      "message": "Tag with bug 1098010",
+      "revId": "b48fed803575627749f580ac09cfcdfe334a6b1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35554880_ff7bb259",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000023
+      },
+      "writtenOn": "2022-10-17T14:08:13Z",
+      "side": 1,
+      "message": "This is great.",
+      "revId": "b48fed803575627749f580ac09cfcdfe334a6b1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89e52b74_a75785a7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 1000023
+      },
+      "writtenOn": "2022-10-17T14:08:13Z",
+      "side": 1,
+      "message": "The old code has `not f.OldContents()` rather than `f.Action() \u003d\u003d \u0027A\u0027`. Is there a difference?",
+      "range": {
+        "startLine": 693,
+        "startChar": 7,
+        "endLine": 693,
+        "endChar": 25
+      },
+      "revId": "b48fed803575627749f580ac09cfcdfe334a6b1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "I hope that the stricter enforcement doesn\u0027t annoy people too much, but I think it\u0027s worth it.",
       "revId": "e5577406b67044d4a3adb2a32adcd0b48bcdcb8e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6db8e620_cf6624f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000023
+      },
+      "writtenOn": "2022-10-17T19:11:52Z",
+      "side": 1,
+      "message": "SLGTM, thanks again!",
+      "revId": "e5577406b67044d4a3adb2a32adcd0b48bcdcb8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

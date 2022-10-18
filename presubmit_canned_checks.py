@@ -108,6 +108,17 @@ def CheckDoNotSubmitInDescription(input_api, output_api):
   return []
 
 
+def CheckCorpLinksInDescription(input_api, output_api):
+  """Checks that the description doesn't contain corp links."""
+  if 'corp.google' in input_api.change.DescriptionText():
+    return [
+        output_api.PresubmitPromptWarning(
+            'Corp link is present in the changelist description.')
+    ]
+
+  return []
+
+
 def CheckChangeHasDescription(input_api, output_api):
   """Checks the CL description is not empty."""
   text = input_api.change.DescriptionText()
@@ -211,6 +222,16 @@ def CheckDoNotSubmitInFiles(input_api, output_api):
   text = '\n'.join('Found %s in %s' % (keyword, loc) for loc in errors)
   if text:
     return [output_api.PresubmitError(text)]
+  return []
+
+
+def CheckCorpLinksInFiles(input_api, output_api, source_file_filter=None):
+  """Checks that files do not contain a corp link."""
+  errors = _FindNewViolationsOfRule(lambda _, line: 'corp.google' not in line,
+                                    input_api, source_file_filter)
+  text = '\n'.join('Found corp link in %s' % loc for loc in errors)
+  if text:
+    return [output_api.PresubmitPromptWarning(text)]
   return []
 
 
@@ -1462,6 +1483,9 @@ def PanProjectChecks(input_api, output_api,
           input_api, output_api))
       results.extend(input_api.canned_checks.CheckDoNotSubmitInDescription(
           input_api, output_api))
+      results.extend(
+          input_api.canned_checks.CheckCorpLinksInDescription(
+              input_api, output_api))
       if input_api.change.scm == 'git':
         snapshot("checking for commit objects in tree")
         results.extend(input_api.canned_checks.CheckForCommitObjects(
@@ -1469,6 +1493,10 @@ def PanProjectChecks(input_api, output_api,
     snapshot("checking do not submit in files")
     results.extend(input_api.canned_checks.CheckDoNotSubmitInFiles(
         input_api, output_api))
+    snapshot("checking corp links in files")
+    results.extend(
+        input_api.canned_checks.CheckCorpLinksInFiles(
+            input_api, output_api, source_file_filter=sources))
   snapshot("done")
   return results
 

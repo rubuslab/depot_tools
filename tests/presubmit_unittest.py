@@ -1957,7 +1957,7 @@ class CannedChecksUnittest(PresubmitTestsBase):
     self.DescriptionTest(presubmit_canned_checks.CheckCorpLinksInDescription,
                          'chromium.googlesource.com',
                          'chromium.git.corp.google.com',
-                         presubmit.OutputApi.PresubmitPromptWarning, False)
+                         presubmit.OutputApi.PresubmitError, False)
 
   def testCannedCheckCorpLinksInFiles(self):
     self.ContentTest(presubmit_canned_checks.CheckCorpLinksInFiles,

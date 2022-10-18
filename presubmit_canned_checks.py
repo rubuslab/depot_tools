@@ -112,7 +112,7 @@ def CheckCorpLinksInDescription(input_api, output_api):
   """Checks that the description doesn't contain corp links."""
   if 'corp.google' in input_api.change.DescriptionText():
     return [
-        output_api.PresubmitPromptWarning(
+        output_api.PresubmitError(
             'Corp link is present in the changelist description.')
     ]
 

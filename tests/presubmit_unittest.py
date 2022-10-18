@@ -1953,6 +1953,18 @@ class CannedChecksUnittest(PresubmitTestsBase):
         'DO NOTSUBMIT', None, 'DO NOT ' + 'SUBMIT', None,
         presubmit.OutputApi.PresubmitError)
 
+  def testCannedCheckCorpLinksInDescription(self):
+    self.DescriptionTest(presubmit_canned_checks.CheckCorpLinksInDescription,
+                         'chromium.googlesource.com',
+                         'chromium.git.corp.google.com',
+                         presubmit.OutputApi.PresubmitPromptWarning, False)
+
+  def testCannedCheckCorpLinksInFiles(self):
+    self.ContentTest(presubmit_canned_checks.CheckCorpLinks,
+                     'chromium.googlesource.com', None,
+                     'chromium.git.corp.google.com', None,
+                     presubmit.OutputApi.PresubmitPromptWarning)
+
   def testCheckChangeHasNoStrayWhitespace(self):
     self.ContentTest(
         lambda x,y,z:
@@ -2323,6 +2335,12 @@ the current line as well!
         r".*? All Rights Reserved\.\n"
     )
     self._LicenseCheck(text, license_text, True, None, accept_empty_files=True)
+
+  def testCheckCorpLinks(self):
+    self.ContentTest(presubmit_canned_checks.CheckCorpLinks,
+                     'chromium.googlesource.com', None,
+                     'chromium.git.corp.google.com', None,
+                     presubmit.OutputApi.PresubmitPromptWarning)
 
   def testCannedCheckTreeIsOpenOpen(self):
     input_api = self.MockInputApi(None, True)

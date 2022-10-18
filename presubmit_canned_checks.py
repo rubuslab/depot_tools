@@ -712,6 +712,35 @@ def CheckLicense(input_api, output_api, license_re=None, project_name=None,
   return []
 
 
+def CheckCorpLinks(input_api, output_api, source_file_filter=None):
+  """Checks that no corp links are present in any files or in the description.
+  """
+  corp_re = input_api.re.compile(r'corp\.google')
+
+  desc_errors = []
+  text = input_api.change.DescriptionText()
+  if corp_re.search(text):
+    desc_errors.append(
+        output_api.PresubmitPromptWarning('Description contains corp link.'))
+
+  if input_api.no_diffs:
+    return desc_errors
+
+  file_errors = []
+  for f in input_api.AffectedFiles(include_deletes=False,
+                                   file_filter=source_file_filter):
+    for line_num, line in f.ChangedContents():
+      if corp_re.search(line):
+        file_errors.append('%s (%d): %s' % (f.LocalPath(), line_num, line))
+  if file_errors:
+    return [
+        output_api.PresubmitPromptWarning('Found corp link in:',
+                                          long_text='\n'.join(file_errors))
+    ] + desc_errors
+
+  return desc_errors
+
+
 ### Other checks
 
 def CheckDoNotSubmit(input_api, output_api):
@@ -1447,6 +1476,11 @@ def PanProjectChecks(input_api, output_api,
   results.extend(input_api.canned_checks.CheckLicense(
       input_api, output_api, license_header, project_name,
       source_file_filter=sources))
+  snapshot("checking corp links")
+  results.extend(
+      input_api.canned_checks.CheckCorpLinks(input_api,
+                                             output_api,
+                                             source_file_filter=sources))
 
   if input_api.is_committing:
     if global_checks:

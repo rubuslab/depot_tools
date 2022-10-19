@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "812ace26_35803d78",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-10-19T21:18:51Z",
+      "side": 1,
+      "message": "This should resolve the moved-file-year issue, while also improving the messages for actual new files (by not mixing new/not-new files in one error/warning).",
+      "revId": "d73fc4af9e3ed8a551fe978f01725eb4adee9370",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

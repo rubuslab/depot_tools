@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44c5626f_716b40c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163549
+      },
+      "writtenOn": "2022-10-21T18:36:22Z",
+      "side": 1,
+      "message": "Sample build where this was an issue https://ci.chromium.org/ui/p/chromium/builders/ci/GPU%20Flake%20Finder/10/overview and sample build with this CL applied https://ci.chromium.org/raw/build/logs.chromium.org/chromium/led/bsheedy_google.com/f38f46146e1cd57dc35f156c9079e9c51d62c668eb1deb08b4e25b3aeb3f67dd/+/build.proto?server\u003dchromium-swarm.appspot.com (Ignore the red step - that\u0027s expected since there were conflicts detected and the recipe handled it accordingly)",
+      "revId": "b36dd1a3e804e415377b835b8f1eab559e34bac9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

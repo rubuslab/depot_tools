@@ -117,6 +117,30 @@
       },
       "revId": "a7949c2545d46330ac4972ab169247a244da48e9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebf08834_72adfc2b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-10-21T05:24:13Z",
+      "side": 1,
+      "message": "My apologies for the error. There are a couple of dependent CLs now so it may be better to fix forward. This is the fix for this issue:\n\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3969027\n\nI will be creating tests to give better coverage for this function to avoid a repeat.",
+      "parentUuid": "b470d0a1_9546c987",
+      "range": {
+        "startLine": 700,
+        "startChar": 32,
+        "endLine": 700,
+        "endChar": 44
+      },
+      "revId": "a7949c2545d46330ac4972ab169247a244da48e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

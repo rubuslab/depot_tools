@@ -16,6 +16,41 @@
       "message": "sokcevic: how can I test this end to end?",
       "revId": "82e88cbdb9f4b1dd48ae53065f9d56a7992dfc5b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e341736a_a33eb67d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-24T20:44:11Z",
+      "side": 1,
+      "message": "Hmm",
+      "revId": "82e88cbdb9f4b1dd48ae53065f9d56a7992dfc5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1a81610_0dc5962d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1393469
+      },
+      "writtenOn": "2022-10-24T20:44:11Z",
+      "side": 1,
+      "message": "I\u0027m not 100% sure, but I think you can test with led:\n\nled get-build {some presubmit check} | led edit-recipe-bundle -O depot_tools\u003d/path/to/depot_tools | led launch",
+      "parentUuid": "45e19c01_db118a64",
+      "revId": "82e88cbdb9f4b1dd48ae53065f9d56a7992dfc5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

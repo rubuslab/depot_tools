@@ -22,6 +22,30 @@
       },
       "revId": "6f5e95d06d580b9cae33d13d4d2223ad8eea0bca",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edc434f8_2627b9b5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-10-24T22:10:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "633212d9_49aa1c53",
+      "range": {
+        "startLine": 113,
+        "startChar": 5,
+        "endLine": 113,
+        "endChar": 18
+      },
+      "revId": "6f5e95d06d580b9cae33d13d4d2223ad8eea0bca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

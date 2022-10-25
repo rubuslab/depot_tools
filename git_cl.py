@@ -1594,6 +1594,7 @@ class Changelist(object):
     print_stats(git_diff_args)
     ret = self.CMDUploadChange(
         options, git_diff_args, custom_cl_base, change_desc)
+    return
     if not ret:
       self._GitSetBranchConfigValue(
           'last-upload-hash', scm.GIT.ResolveCommit(settings.GetRoot(), 'HEAD'))
@@ -2407,8 +2408,10 @@ class Changelist(object):
     branch = GetTargetRef(remote, remote_branch, options.target_branch)
 
     try:
-      return self._CMDUploadChange(options, git_diff_args, custom_cl_base,
+      ret = self._CMDUploadChange(options, git_diff_args, custom_cl_base,
                                    change_desc, branch)
+      print(ret)
+      return ret
     except GitPushError as e:
       # Repository might be in the middle of transition to main branch as
       # default, and uploads to old default might be blocked.

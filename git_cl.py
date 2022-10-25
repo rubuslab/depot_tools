@@ -2333,7 +2333,8 @@ class Changelist(object):
       if git_push_options:
         for opt in git_push_options:
           push_cmd.extend(['-o', opt])
-
+      print("push_cmd")
+      print(push_cmd)
       push_stdout = gclient_utils.CheckCallAndFilter(
           push_cmd,
           env=env,
@@ -2403,8 +2404,14 @@ class Changelist(object):
                       change_desc):
     """Upload the current branch to Gerrit, retry if new remote HEAD is
     found. options and change_desc may be mutated."""
+    print('CMDUploadChange')
     remote, remote_branch = self.GetRemoteBranch()
+    print('remote, remote_branch')
+    print(remote, remote_branch)
     branch = GetTargetRef(remote, remote_branch, options.target_branch)
+    print('branch')
+    print(branch)
+    print()
 
     try:
       return self._CMDUploadChange(options, git_diff_args, custom_cl_base,
@@ -2437,7 +2444,9 @@ class Changelist(object):
     """Upload the current branch to Gerrit."""
     if options.squash:
       self._GerritCommitMsgHookCheck(offer_removal=not options.force)
-      if self.GetIssue():
+      if self.GetIssue(): # the issue exists
+        # CHECK EXTERNAL CHANGES HERE
+
         # User requested to change description
         if options.edit_description:
           change_desc.prompt()
@@ -2457,9 +2466,16 @@ class Changelist(object):
         change_desc.set_preserve_tryjobs()
 
       remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
+      print("remote, upstream_branch")
+      print(remote, upstream_branch)
+
       parent = self._ComputeParent(
           remote, upstream_branch, custom_cl_base, options.force, change_desc)
+      print("parent")
+      print(parent)
       tree = RunGit(['rev-parse', 'HEAD:']).strip()
+      print("rev-parse")
+      print(tree)
       with gclient_utils.temporary_file() as desc_tempfile:
         gclient_utils.FileWrite(desc_tempfile, change_desc.description)
         ref_to_push = RunGit(
@@ -2614,9 +2630,17 @@ class Changelist(object):
         'description': change_desc.description,
     }
 
+    print("_RunGitPushWithTraces args")
+    print(refspec)
+    print(refspec_opts)
+    print(git_push_metadata)
+    print(options.push_options)
+
     push_stdout = self._RunGitPushWithTraces(refspec, refspec_opts,
                                              git_push_metadata,
                                              options.push_options)
+    print("push_stdout")
+    print(push_stdout)
 
     if options.squash:
       regex = re.compile(r'remote:\s+https?://[\w\-\.\+\/#]*/(\d+)\s.*')

@@ -51,6 +51,24 @@
       "parentUuid": "45e19c01_db118a64",
       "revId": "82e88cbdb9f4b1dd48ae53065f9d56a7992dfc5b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30a24dfc_072a5517",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2022-10-25T18:13:20Z",
+      "side": 1,
+      "message": "Thanks! It seems to be working.\n\nBefore:\nrdb query -u -tr-fields failureReason build-8799324452294915265\n\nAfter:\nrdb query -u -tr-fields failureReason task-chromium-swarm.appspot.com-5e28b8e842a79411\n\nThe led build page doesn\u0027t have the new UI so I had to query it manually.",
+      "parentUuid": "e1a81610_0dc5962d",
+      "revId": "82e88cbdb9f4b1dd48ae53065f9d56a7992dfc5b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

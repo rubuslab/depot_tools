@@ -37,6 +37,16 @@ def fallbackToLegacyNinja(ninja_args):
   ninja_path = os.path.join(DEPOT_TOOLS_ROOT, exe_name)
   return subprocess.call([ninja_path] + ninja_args)
 
+def getPlatformSubdir():
+  subdir = ''
+  if sys.platform == 'linux':
+    subdir = 'linux'
+  elif sys.platform == 'darwin':
+    subdir = 'mac'
+  elif sys.platform in ['win32', 'cygwin']:
+    subdir = 'win'
+  return subdir
+
 
 def main(args):
   # Get gclient root + src.
@@ -47,13 +57,15 @@ def main(args):
         'current path. `ninja` must be run inside a checkout.',
         file=sys.stderr)
     return fallbackToLegacyNinja(args[1:])
-  ninja_path = os.path.join(primary_solution_path, 'third_party', 'ninja',
-                            'ninja' + gclient_paths.GetExeSuffix())
+  ninja_dir = os.path.join(primary_solution_path, 'third_party', 'ninja')
+  ninja_bin = 'ninja' + gclient_paths.GetExeSuffix()
+  ninja_path = os.path.join(ninja_dir, ninja_bin)
   if not os.path.exists(ninja_path):
-    print('depot_tools/ninja.py: Could not find ninja executable at: %s' %
-          ninja_path,
-          file=sys.stderr)
-    return fallbackToLegacyNinja(args[1:])
+    ninja_path = os.path.join(ninja_dir,  getPlatformSubdir(), ninja_bin)
+    if not os.path.exists(ninja_path):
+      print('depot_tools/ninja.py: Could not find ninja executable under: %s' %
+            ninja_dir, file=sys.stderr)
+      return fallbackToLegacyNinja(args[1:])
 
   return subprocess.call([ninja_path] + args[1:])
 

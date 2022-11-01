@@ -1,6 +1,9 @@
 # depot_tools
 
 Tools for working with Chromium development. It requires python 2.7 or 3.8 for python 3 support.
+Foo!
+bar
+bazz
 
 
 ## Tools
@@ -13,7 +16,7 @@ The most important tools are:
   [repo](https://source.android.com/source/using-repo.html) or [git
   submodules](https://git-scm.com/docs/git-submodule), except that it support
   OS-specific rules, e.g. do not checkout Windows only dependencies when
-  checking out for Android. Use `gclient help` for more details and
+  checking out for Android. Use `gclient help` for more details and sasdf
   [README.gclient.md](README.gclient.md).
 - `git cl`: A code review tool to interact with Rietveld or Gerrit. Use `git cl
   help` for more details and [README.git-cl.md](README.git-cl.md).

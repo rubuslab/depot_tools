@@ -27,11 +27,6 @@ except ImportError:  # pragma: no cover
   from urllib.parse import urlencode
   import urllib.parse as urlparse
 
-DEPOT_TOOLS = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), os.pardir, os.pardir, os.pardir,
-                 os.pardir))
-sys.path.insert(0, DEPOT_TOOLS)
-
 from gerrit_util import CreateHttpConn, ReadHttpResponse, ReadHttpJsonResponse
 
 

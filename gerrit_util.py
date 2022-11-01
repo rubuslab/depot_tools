@@ -668,10 +668,14 @@ def GetChange(host, change):
 
 def GetChangeDetail(host, change, o_params=None):
   """Queries a Gerrit server for extended information about a single change."""
+  print("GetChangeDetail")
   path = 'changes/%s/detail' % change
   if o_params:
     path += '?%s' % '&'.join(['o=%s' % p for p in o_params])
-  return ReadHttpJsonResponse(CreateHttpConn(host, path))
+  print(path)
+  ret = ReadHttpJsonResponse(CreateHttpConn(host, path))
+  print(ret)
+  return ret
 
 
 def GetChangeCommit(host, change, revision='current'):

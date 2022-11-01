@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8218b2fc_d80e7d13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163549
+      },
+      "writtenOn": "2022-11-01T22:23:46Z",
+      "side": 1,
+      "message": "PTAL\n\nExample failure where this occurs: https://logs.chromium.org/logs/chromium/buildbucket/cr-buildbucket/8798662977479332305/+/u/suppress_gpu_flakes/upload_cl__has_conflicts_/stdout",
+      "revId": "f9e87baec7228521d00b05dc843935ce4ef2f0bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

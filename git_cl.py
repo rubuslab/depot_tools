@@ -1455,17 +1455,19 @@ class Changelist(object):
             py2_results.get('warnings', []) + py3_results.get('warnings', []))
     }
 
-  def RunPostUploadHook(self, verbose, upstream, description):
+  def RunPostUploadHook(self, verbose, upstream, description, py3_only):
     args = self._GetCommonPresubmitArgs(verbose, upstream)
     args.append('--post_upload')
 
     with gclient_utils.temporary_file() as description_file:
       gclient_utils.FileWrite(description_file, description)
       args.extend(['--description_file', description_file])
-      p_py2 = subprocess2.Popen(['vpython', PRESUBMIT_SUPPORT] + args)
+      if not py3_only:
+        p_py2 = subprocess2.Popen(['vpython', PRESUBMIT_SUPPORT] + args)
       p_py3 = subprocess2.Popen(['vpython3', PRESUBMIT_SUPPORT] + args +
                                 ['--use-python3'])
-      p_py2.wait()
+      if not py3_only:
+        p_py2.wait()
       p_py3.wait()
 
   def _GetDescriptionForUpload(self, options, git_diff_args, files):
@@ -1599,8 +1601,9 @@ class Changelist(object):
           'last-upload-hash', scm.GIT.ResolveCommit(settings.GetRoot(), 'HEAD'))
       # Run post upload hooks, if specified.
       if settings.GetRunPostUploadHook():
-        self.RunPostUploadHook(
-            options.verbose, base_branch, change_desc.description)
+        self.RunPostUploadHook(options.verbose, base_branch,
+                               change_desc.description,
+                               options.no_python2_post_upload_hooks)
 
       # Upload all dependencies if specified.
       if options.dependencies:
@@ -1892,13 +1895,14 @@ class Changelist(object):
     # Somehow there are no messages even though there are reviewers.
     return 'unsent'
 
-  def GetMostRecentPatchset(self):
+  def GetMostRecentPatchset(self, update=True):
     if not self.GetIssue():
       return None
 
     data = self._GetChangeDetail(['CURRENT_REVISION'])
     patchset = data['revisions'][data['current_revision']]['_number']
-    self.SetPatchset(patchset)
+    if update:
+      self.SetPatchset(patchset)
     return patchset
 
   def GetMostRecentDryRunPatchset(self):
@@ -2333,7 +2337,6 @@ class Changelist(object):
       if git_push_options:
         for opt in git_push_options:
           push_cmd.extend(['-o', opt])
-
       push_stdout = gclient_utils.CheckCallAndFilter(
           push_cmd,
           env=env,
@@ -2437,11 +2440,73 @@ class Changelist(object):
     """Upload the current branch to Gerrit."""
     if options.squash:
       self._GerritCommitMsgHookCheck(offer_removal=not options.force)
-      if self.GetIssue():
+      issue = self.GetIssue()
+      latest_parent = None
+      if issue:  # the issue exists
+        change_id = self._GetChangeDetail()['change_id']
+        curr_ps = self.GetPatchset()
+        latest_ps = self.GetMostRecentPatchset(update=False)
+        if curr_ps is not None and curr_ps != latest_ps:
+          print('External changes have been published to %s.' %
+                self.GetIssueURL())
+          if ask_for_explicit_yes('Try rebasing on external changes?'):
+            # Handle rebases.
+            latest_commit = gerrit_util.GetChangeCommit(self.GetGerritHost(),
+                                                        change_id, latest_ps)
+            latest_parent = latest_commit['parents'][0]['commit']
+            code, _ = RunGitWithCode(
+                ['cat-file', '-e',
+                 '%s^{commit}' % latest_parent])
+            if code != 0:
+              remote, _ = self.GetRemoteBranch()
+              RunGit(['fetch', remote])
+
+            # Handle file changes.
+            with gclient_utils.temporary_file() as diff_tempfile:
+              # Query gitiles for the diff between curr_ps and latest_ps.
+              gitiles_client = os.path.join(DEPOT_TOOLS, 'gitiles_client.py')
+              cmd = [
+                  gitiles_client, '-j', diff_tempfile, '-f', 'text', '-u',
+                  'https://%s/a/%s/+/refs/changes/%d/%d/%d..refs/changes/%d/%d/%d'
+                  % (self._GetGitHost(), self.GetGerritProject(), issue % 100,
+                     issue, curr_ps, issue % 100, issue, latest_ps)
+              ]
+              RunCommand(cmd)
+              diff = json.loads(gclient_utils.FileRead(diff_tempfile))['value']
+
+              # Check file diffs. This can be None, e.g. for trivial rebases.
+              if diff is not None:
+                value = base64.b64decode(diff)
+                if sys.version_info >= (3, ):
+                  value = value.decode('utf-8')
+
+                # Create a commit inbetween this CL's commit and its parent that
+                # uses the diff between the latest and current patchsets.
+                with gclient_utils.temporary_file() as patch_tempfile:
+                  gclient_utils.FileWrite(patch_tempfile, value)
+                  branch = RunGit(['rev-parse', '--abbrev-ref', 'HEAD']).strip()
+                  latest_commit_parent = RunGit(['rev-parse', 'HEAD^']).strip()
+                  RunGit(['checkout', latest_commit_parent])
+                  RunGit(['apply', patch_tempfile])
+                  RunGit([
+                      'commit', '-am',
+                      'Incorporate external changes from patchsets %d to %d' %
+                      (curr_ps, latest_ps)
+                  ])
+                  insert_commit = RunGit(['rev-parse', 'HEAD']).strip()
+                  RunGit(['checkout', branch])
+                  RunGit([
+                      'rebase', '--onto', insert_commit, latest_commit_parent,
+                      branch
+                  ])
+                  curr_ps = latest_ps
+          else:
+            print('WARNING: Uploading will override any external changes.')
+            confirm_or_exit(action='continue')
+
         # User requested to change description
         if options.edit_description:
           change_desc.prompt()
-        change_id = self._GetChangeDetail()['change_id']
         change_desc.ensure_change_id(change_id)
       else:  # if not self.GetIssue()
         if not options.force and not options.message_file:
@@ -2457,7 +2522,8 @@ class Changelist(object):
         change_desc.set_preserve_tryjobs()
 
       remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
-      parent = self._ComputeParent(
+
+      parent = latest_parent or self._ComputeParent(
           remote, upstream_branch, custom_cl_base, options.force, change_desc)
       tree = RunGit(['rev-parse', 'HEAD:']).strip()
       with gclient_utils.temporary_file() as desc_tempfile:
@@ -2614,6 +2680,10 @@ class Changelist(object):
         'description': change_desc.description,
     }
 
+    # Gerrit may or may not update fast enough to return the correct patchset
+    # number after we push. Get the pre-upload patchset and increment later.
+    latest_ps = self.GetMostRecentPatchset() or 0
+
     push_stdout = self._RunGitPushWithTraces(refspec, refspec_opts,
                                              git_push_metadata,
                                              options.push_options)
@@ -2628,6 +2698,7 @@ class Changelist(object):
           ('Created|Updated %d issues on Gerrit, but only 1 expected.\n'
            'Change-Id: %s') % (len(change_numbers), change_id), change_desc)
       self.SetIssue(change_numbers[0])
+      self.SetPatchset(latest_ps + 1)
       self._GitSetBranchConfigValue('gerritsquashhash', ref_to_push)
 
     if self.GetIssue() and (reviewers or cc):
@@ -4402,6 +4473,9 @@ def CMDupload(parser, args):
                     action='store_true',
                     dest='no_add_changeid',
                     help='Do not add change-ids to messages.')
+  parser.add_option('--no-python2-post-upload-hooks',
+                    action='store_true',
+                    help='Only run post-upload hooks in Python 3.')
 
   orig_args = args
   (options, args) = parser.parse_args(args)
@@ -5320,6 +5394,8 @@ def CMDformat(parser, args):
   # branch when it was created or the last time it was rebased. This is
   # to cover the case where the user may have called "git fetch origin",
   # moving the origin branch to a newer commit, but hasn't rebased yet.
+
+  # THIS NEEDS TO BE UPDATED WITH REBASE STUFF 
   upstream_commit = None
   upstream_branch = opts.upstream
   if not upstream_branch:

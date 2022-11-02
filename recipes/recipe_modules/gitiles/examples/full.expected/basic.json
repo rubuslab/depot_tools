@@ -3,7 +3,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -29,7 +29,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -138,7 +138,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -248,7 +248,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -356,7 +356,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -464,7 +464,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -517,7 +517,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -533,7 +533,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -549,7 +549,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -567,7 +567,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",
@@ -586,7 +586,7 @@
     "cmd": [
       "vpython3",
       "-u",
-      "RECIPE_MODULE[depot_tools::gitiles]/resources/gerrit_client.py",
+      "RECIPE_REPO[depot_tools]/gitiles_client.py",
       "--json-file",
       "/path/to/tmp/json",
       "--url",

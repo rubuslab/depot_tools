@@ -1892,13 +1892,14 @@ class Changelist(object):
     # Somehow there are no messages even though there are reviewers.
     return 'unsent'
 
-  def GetMostRecentPatchset(self):
+  def GetMostRecentPatchset(self, update=True):
     if not self.GetIssue():
       return None
 
     data = self._GetChangeDetail(['CURRENT_REVISION'])
     patchset = data['revisions'][data['current_revision']]['_number']
-    self.SetPatchset(patchset)
+    if update:
+      self.SetPatchset(patchset)
     return patchset
 
   def GetMostRecentDryRunPatchset(self):
@@ -2333,7 +2334,8 @@ class Changelist(object):
       if git_push_options:
         for opt in git_push_options:
           push_cmd.extend(['-o', opt])
-
+      print("push_cmd")
+      print(push_cmd)
       push_stdout = gclient_utils.CheckCallAndFilter(
           push_cmd,
           env=env,
@@ -2403,8 +2405,14 @@ class Changelist(object):
                       change_desc):
     """Upload the current branch to Gerrit, retry if new remote HEAD is
     found. options and change_desc may be mutated."""
+    print('CMDUploadChange')
     remote, remote_branch = self.GetRemoteBranch()
+    print('remote, remote_branch')
+    print(remote, remote_branch)
     branch = GetTargetRef(remote, remote_branch, options.target_branch)
+    print('branch')
+    print(branch)
+    print()
 
     try:
       return self._CMDUploadChange(options, git_diff_args, custom_cl_base,
@@ -2437,11 +2445,74 @@ class Changelist(object):
     """Upload the current branch to Gerrit."""
     if options.squash:
       self._GerritCommitMsgHookCheck(offer_removal=not options.force)
-      if self.GetIssue():
+      if self.GetIssue():  # the issue exists
+        change_detail = self._GetChangeDetail()
+        change_id = change_detail['change_id']
+        # CHECK EXTERNAL CHANGES HERE
+        curr_ps = self.GetPatchset()
+        print('local curr_ps', curr_ps)
+        latest_ps = self.GetMostRecentPatchset(update=False)
+        print('latest actual ps', latest_ps)
+        if curr_ps is not None and curr_ps != latest_ps:
+          print('External changes have been published to %s.' %
+                self.GetIssueURL())
+          if ask_for_explicit_yes('Try rebasing on external changes?'):
+            # git cl patch tries patching hte whole PS, not diffs between curr/latest PS. wont work here
+            # print('Continue syncing with `git cl patch`.')
+            # self.CMDPatchWithParsedIssue(
+            #    ParseIssueNumberArgument(self.GetIssue()), False, False, False)
+            # pass  # instead actually download/apply
+            gitiles_client = os.path.join(DEPOT_TOOLS, 'gitiles_client.py')
+            # https://chromium.googlesource.com/a/chromium/tools/depot_tools/+/refs/changes/55/3975855/11..refs/changes/55/3975855/13
+            with gclient_utils.temporary_file() as diff_tempfile:
+              issue = self.GetIssue()
+              cmd = [gitiles_client, '-j', diff_tempfile, '-f', 'text', '-u',
+                  'https://%s/a/%s/+/refs/changes/%d/%d/%d..refs/changes/%d/%d/%d' % (
+                    self._GetGitHost(), self.GetGerritProject(),
+                    issue % 100, issue, curr_ps,
+                    issue % 100, issue, latest_ps
+                  )]
+              RunCommand(cmd)
+              json_res = json.loads(gclient_utils.FileRead(diff_tempfile))
+              value = base64.b64decode(json_res['value'])
+              if sys.version_info >= (3,):
+                value = value.decode('utf-8')
+
+              with gclient_utils.temporary_file() as patch_tempfile:
+                gclient_utils.FileWrite(patch_tempfile, value)
+                branch_name = RunGit(['rev-parse', '--abbrev-ref', 'HEAD']).strip()
+                # latest_commit = RunGit(['rev-parse', 'HEAD']).strip()
+                latest_commit_parent = RunGit(['rev-parse', 'HEAD^']).strip()
+                RunGit(['checkout', latest_commit_parent])
+                RunGit(['apply', patch_tempfile])
+                RunGit(['commit', '-am', 'Incorporate changes from external patchsets %d to %d' % (curr_ps, latest_ps)])
+                inserted_commit = RunGit(['rev-parse', 'HEAD']).strip()
+                RunGit(['checkout', branch_name])
+                RunGit(['rebase', '--onto', inserted_commit, latest_commit_parent, branch_name])
+
+                # if already committed, apply change needs to be committed again.
+                #
+                # do that for them? 
+                # or create commit with git am and rebase?
+                #67afa307cd4c88d57f13420548b2d7e372d1607b
+                # git rebase --onto third first second
+                # git rebase --onto 41dea620ce ed49e1542f77a94649fd374023ad92875c083575 67afa307cd4c88d57f13420548b2d7e372d1607b 
+                #41dea620cecbe86e38c8cf91d126232996270b3a
+                #     1. create commit "incorporate external changes <ps> to <ps>", parent = curr commit's parent
+                #     2. rebase current commit on top of new commit
+                # or create a "git cl incorporate" to get ext changes before any commits?
+                # if applied, update curr_ps
+                # 
+                # instead of having a single commit = all ext changes,
+                # have commit per new PS, rebase on top
+                curr_ps = latest_ps
+          else:
+            print('WARNING: Uploading will override any external changes.')
+            confirm_or_exit(action='continue')
+
         # User requested to change description
         if options.edit_description:
           change_desc.prompt()
-        change_id = self._GetChangeDetail()['change_id']
         change_desc.ensure_change_id(change_id)
       else:  # if not self.GetIssue()
         if not options.force and not options.message_file:
@@ -2457,13 +2528,23 @@ class Changelist(object):
         change_desc.set_preserve_tryjobs()
 
       remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
+      print("remote %s, upstream_branch %s" % (remote, upstream_branch))
+
       parent = self._ComputeParent(
           remote, upstream_branch, custom_cl_base, options.force, change_desc)
+      print("remote parent commit of this CL you're making", parent)
       tree = RunGit(['rev-parse', 'HEAD:']).strip()
       with gclient_utils.temporary_file() as desc_tempfile:
         gclient_utils.FileWrite(desc_tempfile, change_desc.description)
+
+        # This section (and above)
+        # 1. finds the parent of the original CL, e.g. where the CL in gerrit
+        #     is "based" onto
+        # 2. finds id of HEAD commit object
+        # 3. creates a new commit object, parent = HEAD, to be used to push to gerrit
         ref_to_push = RunGit(
             ['commit-tree', tree, '-p', parent, '-F', desc_tempfile]).strip()
+        print("ref_to_push", ref_to_push)
     else:  # if not options.squash
       if options.no_add_changeid:
         pass
@@ -2614,6 +2695,16 @@ class Changelist(object):
         'description': change_desc.description,
     }
 
+    print("_RunGitPushWithTraces args")
+    print(refspec)
+    print(refspec_opts)
+    print(git_push_metadata)
+    print(options.push_options)
+
+    # Gerrit may or may not update fast enough to return the correct patchset
+    # number after we push. Get the pre-upload patchset and increment later.
+    latest_ps = self.GetMostRecentPatchset() or 0
+
     push_stdout = self._RunGitPushWithTraces(refspec, refspec_opts,
                                              git_push_metadata,
                                              options.push_options)
@@ -2628,6 +2719,7 @@ class Changelist(object):
           ('Created|Updated %d issues on Gerrit, but only 1 expected.\n'
            'Change-Id: %s') % (len(change_numbers), change_id), change_desc)
       self.SetIssue(change_numbers[0])
+      self.SetPatchset(latest_ps + 1)
       self._GitSetBranchConfigValue('gerritsquashhash', ref_to_push)
 
     if self.GetIssue() and (reviewers or cc):

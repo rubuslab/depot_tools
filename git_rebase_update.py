@@ -288,6 +288,9 @@ def main(args=None):
   unrebased_branches = []
   # Rebase each branch starting with the root-most branches and working
   # towards the leaves.
+  # branch_tree = {
+  #   'test-outside-changes': 'origin/main',
+  #   'test-rebase-update': 'origin/main'}
   for branch, parent in git.topo_iter(branch_tree):
     # Only rebase specified branches, unless none specified.
     if branches_to_rebase and branch not in branches_to_rebase:
@@ -295,6 +298,12 @@ def main(args=None):
     if git.is_dormant(branch):
       print('Skipping dormant branch', branch)
     else:
+      # branch = test-outside-changes 
+      # parent = origin/main <<< this tracking is used to pull to find new base.
+      # merge_base = {
+      #   'test-outside-changes': 'b52683fa2e74087464d32a1a9c76bf1b5275e4fe',
+      #   'test-rebase-update': 'b52683fa2e74087464d32a1a9c76bf1b5275e4fe'}
+      # b52683fa2e74087464d32a1a9c76bf1b5275e4fe  <<< this is the current "base". we want this to be updated.
       ret = rebase_branch(branch, parent, merge_base[branch])
       if not ret:
         retcode = 1

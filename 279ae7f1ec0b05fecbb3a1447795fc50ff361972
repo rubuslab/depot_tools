@@ -22,6 +22,30 @@
       },
       "revId": "279ae7f1ec0b05fecbb3a1447795fc50ff361972",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a36a07c0_33f94358",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1560867
+      },
+      "writtenOn": "2022-11-04T20:28:35Z",
+      "side": 1,
+      "message": "Yeah, I think I understand the trickiness of this task. I think we can make due with the env variable as we call cipd from a script",
+      "parentUuid": "847d7d14_01a0eee3",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 0
+      },
+      "revId": "279ae7f1ec0b05fecbb3a1447795fc50ff361972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

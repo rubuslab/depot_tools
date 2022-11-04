@@ -11,6 +11,24 @@ CYGWIN=false
 
 # Make sure this starts empty
 ARCH=
+ARCH_FLAG=
+
+# Attempt to parse for arch override flag 
+# If found set ARCH_FLAG value and remove flag and value from args
+for ((i = 1, j = 2; i<= $#; i++, j++)); do
+    if [[ ${!i} == "--mac-arch-override" ]]; then
+        if [ -z "${!j}" ]; then
+          >&2 echo "No value passed in for flag --mac-arch-override"
+          exit 1
+        fi
+        ARCH_FLAG="${!j}"
+        break
+    fi
+done  
+if [ ! -z ARCH_FLAG ]; then
+  set -- "${@:1:i-1}" "${@:j+1}"
+fi
+
 
 UNAME=`uname -s | tr '[:upper:]' '[:lower:]'`
 case "${UNAME}" in
@@ -30,6 +48,12 @@ case "${UNAME}" in
     ;;
   darwin)
     OS=mac
+    # Allow mac users to override easily override arch detection
+    if [ ! -z "${ARCH_FLAG}" ]; then
+      ARCH="{$ARCH_FLAG}"
+    elif [ ! -z "${ARCH_MAC_OVERRIDE}" ]; then
+      ARCH="${ARCH_MAC_OVERRIDE}"
+    fi
     ;;
   *)
     >&2 echo "CIPD not supported on ${UNAME}"

@@ -2,7 +2,6 @@
 # Copyright 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-
 """Simple client for the Gerrit REST API.
 
 Example usage:
@@ -27,22 +26,16 @@ except ImportError:  # pragma: no cover
   from urllib.parse import urlencode
   import urllib.parse as urlparse
 
-DEPOT_TOOLS = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), os.pardir, os.pardir, os.pardir,
-                 os.pardir))
-sys.path.insert(0, DEPOT_TOOLS)
-
 from gerrit_util import CreateHttpConn, ReadHttpResponse, ReadHttpJsonResponse
 
 
 def reparse_url(parsed_url, query_params):
-  return urlparse.ParseResult(
-      scheme=parsed_url.scheme,
-      netloc=parsed_url.netloc,
-      path=parsed_url.path,
-      params=parsed_url.params,
-      fragment=parsed_url.fragment,
-      query=urlencode(query_params, doseq=True))
+  return urlparse.ParseResult(scheme=parsed_url.scheme,
+                              netloc=parsed_url.netloc,
+                              path=parsed_url.path,
+                              params=parsed_url.params,
+                              fragment=parsed_url.fragment,
+                              query=urlencode(query_params, doseq=True))
 
 
 def gitiles_get(parsed_url, handler, attempts):
@@ -98,9 +91,8 @@ def fetch_log_with_paging(query_params, limit, fetch):
   # from all the results. This essentially imitates paging with at least
   # `limit` page size.
   last_result['log'] = commits
-  logging.debug(
-      'fetched %d commits, next: %s.', len(commits),
-      last_result.get('next'))
+  logging.debug('fetched %d commits, next: %s.', len(commits),
+                last_result.get('next'))
   return last_result
 
 
@@ -138,6 +130,7 @@ def main(arguments):
 
   # Choose handler.
   if args.format == 'json':
+
     def handler(conn):
       return ReadHttpJsonResponse(conn, **kwargs)
   elif args.format == 'text':
@@ -145,7 +138,7 @@ def main(arguments):
     def handler(conn):
       # Wrap in a structured JSON for export to recipe module.
       return {
-        'value': ReadHttpResponse(conn, **kwargs).read() or None,
+          'value': ReadHttpResponse(conn, **kwargs).read() or None,
       }
   elif args.format == 'archive':
     # Archive fetching hooks result to tarfile extraction. This implementation
@@ -153,15 +146,15 @@ def main(arguments):
     # the entire tarfile.
     def handler(conn):
       ret = {
-        'extracted': {
-          'filecount': 0,
-          'bytes': 0,
-        },
-        'skipped': {
-          'filecount': 0,
-          'bytes': 0,
-          'names': [],
-        }
+          'extracted': {
+              'filecount': 0,
+              'bytes': 0,
+          },
+          'skipped': {
+              'filecount': 0,
+              'bytes': 0,
+              'names': [],
+          }
       }
       fileobj = ReadHttpResponse(conn, **kwargs)
       with tarfile.open(mode='r|*', fileobj=fileobj) as tf:
@@ -172,17 +165,19 @@ def main(arguments):
         # do random access over the file and would require buffering the whole
         # thing (!!).
         em = tf._extract_member
+
         def _extract_member(tarinfo, targetpath):
           if not os.path.abspath(targetpath).startswith(args.extract_to):
-            print('Skipping %s' % (tarinfo.name,))
+            print('Skipping %s' % (tarinfo.name, ))
             ret['skipped']['filecount'] += 1
             ret['skipped']['bytes'] += tarinfo.size
             ret['skipped']['names'].append(tarinfo.name)
             return
-          print('Extracting %s' % (tarinfo.name,))
+          print('Extracting %s' % (tarinfo.name, ))
           ret['extracted']['filecount'] += 1
           ret['extracted']['bytes'] += tarinfo.size
           return em(tarinfo, targetpath)
+
         tf._extract_member = _extract_member
         tf.extractall(args.extract_to)
       return ret
@@ -213,42 +208,50 @@ def main(arguments):
 
 def create_argparser():
   parser = argparse.ArgumentParser()
+  parser.add_argument('-j', '--json-file', help='Path to json file for output.')
+  parser.add_argument('--extract-to',
+                      help='Local path to extract archive url. Must not exist.')
+  parser.add_argument('-f',
+                      '--format',
+                      required=True,
+                      choices=('json', 'text', 'archive'))
+  parser.add_argument('-u',
+                      '--url',
+                      required=True,
+                      help='Url of gitiles. For example, '
+                      'https://chromium.googlesource.com/chromium/src/+refs. '
+                      'Insert a/ after domain for authenticated access.')
   parser.add_argument(
-      '-j', '--json-file',
-      help='Path to json file for output.')
-  parser.add_argument(
-      '--extract-to',
-      help='Local path to extract archive url. Must not exist.')
-  parser.add_argument(
-      '-f', '--format', required=True, choices=('json', 'text', 'archive'))
-  parser.add_argument(
-      '-u', '--url', required=True,
-      help='Url of gitiles. For example, '
-           'https://chromium.googlesource.com/chromium/src/+refs. '
-           'Insert a/ after domain for authenticated access.')
-  parser.add_argument(
-      '-a', '--attempts', type=int, default=1,
+      '-a',
+      '--attempts',
+      type=int,
+      default=1,
       help='The number of attempts to make (with exponential backoff) before '
-           'failing. If several requests are to be made, applies per each '
-           'request separately.')
+      'failing. If several requests are to be made, applies per each '
+      'request separately.')
+  parser.add_argument('-q',
+                      '--quiet',
+                      action='store_true',
+                      help='Suppress file contents logging output.')
   parser.add_argument(
-      '-q', '--quiet', action='store_true',
-      help='Suppress file contents logging output.')
-  parser.add_argument(
-      '--log-limit', type=int, default=None,
+      '--log-limit',
+      type=int,
+      default=None,
       help='Follow gitiles pages to fetch at least this many commits. By '
-           'default, first page with unspecified number of commits is fetched. '
-           'Only for https://<hostname>/<repo>/+log/... gitiles request.')
+      'default, first page with unspecified number of commits is fetched. '
+      'Only for https://<hostname>/<repo>/+log/... gitiles request.')
   parser.add_argument(
       '--log-start',
       help='If given, continue fetching log by paging from this commit hash. '
-           'This value can be typically be taken from json result of previous '
-           'call to log, which returns next page start commit as "next" key. '
-           'Only for https://<hostname>/<repo>/+log/... gitiles request.')
+      'This value can be typically be taken from json result of previous '
+      'call to log, which returns next page start commit as "next" key. '
+      'Only for https://<hostname>/<repo>/+log/... gitiles request.')
   parser.add_argument(
-      '--accept-statuses', type=str, default='200',
+      '--accept-statuses',
+      type=str,
+      default='200',
       help='Comma-separated list of Status codes to accept as "successful" '
-           'HTTP responses.')
+      'HTTP responses.')
   return parser
 
 

@@ -57,7 +57,7 @@ class Gitiles(recipe_api.RecipeApi):
       args.extend([
           '--accept-statuses',
           ','.join([str(s) for s in accept_statuses])])
-    cmd = ['vpython3', '-u', self.resource('gerrit_client.py')] + args
+    cmd = ['vpython3', '-u', self.repo_resource('gitiles_client.py')] + args
     return self.m.step(step_name, cmd, **kwargs)
 
   def refs(self, url, step_name='refs', attempts=None):

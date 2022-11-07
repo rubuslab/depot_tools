@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fe9b26d_59a7b5af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-07T23:41:57Z",
+      "side": 1,
+      "message": "FWIW, this triggered 19 IWYU warnings, seen here:\nhttps://logs.chromium.org/logs/chromium/buildbucket/cr-buildbucket/8798374075865639761/+/u/presubmit/stdout\n\nWhen making presubmit changes I recommend checking the presubmit bot a few hours later, just in case:\nhttps://ci.chromium.org/p/chromium/builders/ci/linux-presubmit\n\nThis is particularly important with depot_tools changes because the blamelist doesn\u0027t work in that case, and the failures can seem quite mysterious.",
+      "revId": "03b187d9c8d203b7171c294b71b44f549b392d83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

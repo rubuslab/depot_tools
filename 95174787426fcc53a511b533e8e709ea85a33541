@@ -34,6 +34,24 @@
       "parentUuid": "1b889020_c5a4f759",
       "revId": "95174787426fcc53a511b533e8e709ea85a33541",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f65210c_96f880d6",
+        "filename": "gcloud",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-08T06:02:12Z",
+      "side": 1,
+      "message": "Did you mean, we should have a `gcloud.py` instead? That should be more configurable for sure. I did this to keep the wrapper light.",
+      "parentUuid": "795f2838_dbfc00f0",
+      "revId": "95174787426fcc53a511b533e8e709ea85a33541",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

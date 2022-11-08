@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b889020_c5a4f759",
+        "filename": "gcloud",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1560602
+      },
+      "writtenOn": "2022-11-08T05:54:53Z",
+      "side": 1,
+      "message": "I would not add those bash files unless there\u0027s a compelling reasons to do so. gsutil.py was required as it had to fetch actual gsutil, but we didn\u0027t have gsutil / gsutil.bat",
+      "revId": "95174787426fcc53a511b533e8e709ea85a33541",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

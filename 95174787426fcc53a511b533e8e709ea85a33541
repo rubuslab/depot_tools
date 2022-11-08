@@ -52,6 +52,24 @@
       "parentUuid": "795f2838_dbfc00f0",
       "revId": "95174787426fcc53a511b533e8e709ea85a33541",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87877fc1_74f13756",
+        "filename": "gcloud",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1560602
+      },
+      "writtenOn": "2022-11-08T17:55:03Z",
+      "side": 1,
+      "message": "I don\u0027t think we need gcloud.py, and I think we also don\u0027t need gcloud/gcloud.bat; at least we shouldn\u0027t add it to user\u0027s PATH. My concern is that depot_tools already provides many scripts, and we should be careful adding more. If engineers start to rely on gcloud, it could make upgrades more complicated.\n\nI\u0027d rather focus on making gsutil.py work with `gcloud storage` without exposing gcloud directly.",
+      "parentUuid": "3f65210c_96f880d6",
+      "revId": "95174787426fcc53a511b533e8e709ea85a33541",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

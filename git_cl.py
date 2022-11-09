@@ -125,6 +125,13 @@ YAPF_CONFIG_FILENAME = '.style.yapf'
 ISSUE_CONFIG_KEY = 'gerritissue'
 PATCHSET_CONFIG_KEY = 'gerritpatchset'
 CODEREVIEW_SERVER_CONFIG_KEY = 'gerritserver'
+# When using squash workflow, _CMDUploadChange doesn't simply push the commit(s)
+# you make to Gerrit. Instead, it creates a new commit object that contains all
+# changes you've made, diffed against a parent/merge base.
+# This is the hash of the new squashed commit and you can find this on Gerrit.
+GERRIT_SQUASH_HASH_CONFIG_KEY = 'gerritsquashhash'
+# This is the latest uploaded local commit hash.
+LAST_UPLOAD_HASH_CONFIG_KEY = 'last-upload-hash'
 
 # Shortcut since it quickly becomes repetitive.
 Fore = colorama.Fore
@@ -1289,11 +1296,11 @@ class Changelist(object):
     else:
       # Reset all of these just to be clean.
       reset_suffixes = [
-          'last-upload-hash',
+          LAST_UPLOAD_HASH_CONFIG_KEY,
           ISSUE_CONFIG_KEY,
           PATCHSET_CONFIG_KEY,
           CODEREVIEW_SERVER_CONFIG_KEY,
-          'gerritsquashhash',
+          GERRIT_SQUASH_HASH_CONFIG_KEY,
       ]
       for prop in reset_suffixes:
         try:
@@ -1598,7 +1605,8 @@ class Changelist(object):
         options, git_diff_args, custom_cl_base, change_desc)
     if not ret:
       self._GitSetBranchConfigValue(
-          'last-upload-hash', scm.GIT.ResolveCommit(settings.GetRoot(), 'HEAD'))
+          LAST_UPLOAD_HASH_CONFIG_KEY,
+          scm.GIT.ResolveCommit(settings.GetRoot(), 'HEAD'))
       # Run post upload hooks, if specified.
       if settings.GetRunPostUploadHook():
         self.RunPostUploadHook(options.verbose, base_branch,
@@ -1895,13 +1903,14 @@ class Changelist(object):
     # Somehow there are no messages even though there are reviewers.
     return 'unsent'
 
-  def GetMostRecentPatchset(self):
+  def GetMostRecentPatchset(self, update=True):
     if not self.GetIssue():
       return None
 
     data = self._GetChangeDetail(['CURRENT_REVISION'])
     patchset = data['revisions'][data['current_revision']]['_number']
-    self.SetPatchset(patchset)
+    if update:
+      self.SetPatchset(patchset)
     return patchset
 
   def GetMostRecentDryRunPatchset(self):
@@ -2082,11 +2091,12 @@ class Changelist(object):
     self._detail_cache.setdefault(cache_key, []).append((options_set, data))
     return data
 
-  def _GetChangeCommit(self):
+  def _GetChangeCommit(self, revision='current'):
     assert self.GetIssue(), 'issue must be set to query Gerrit'
     try:
-      data = gerrit_util.GetChangeCommit(
-          self.GetGerritHost(), self._GerritChangeIdentifier())
+      data = gerrit_util.GetChangeCommit(self.GetGerritHost(),
+                                         self._GerritChangeIdentifier(),
+                                         revision)
     except gerrit_util.GerritError as e:
       if e.http_status == 404:
         raise GerritChangeNotExists(self.GetIssue(), self.GetCodereviewServer())
@@ -2108,7 +2118,7 @@ class Changelist(object):
                         'Are you sure you wish to bypass it?\n',
                         action='bypass CQ')
     differs = True
-    last_upload = self._GitGetBranchConfigValue('gerritsquashhash')
+    last_upload = self._GitGetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY)
     # Note: git diff outputs nothing if there is no diff.
     if not last_upload or RunGit(['diff', last_upload]).strip():
       print('WARNING: Some changes from local branch haven\'t been uploaded.')
@@ -2217,8 +2227,8 @@ class Changelist(object):
       self.SetIssue(parsed_issue_arg.issue)
       self.SetPatchset(patchset)
       fetched_hash = scm.GIT.ResolveCommit(settings.GetRoot(), 'FETCH_HEAD')
-      self._GitSetBranchConfigValue('last-upload-hash', fetched_hash)
-      self._GitSetBranchConfigValue('gerritsquashhash', fetched_hash)
+      self._GitSetBranchConfigValue(LAST_UPLOAD_HASH_CONFIG_KEY, fetched_hash)
+      self._GitSetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY, fetched_hash)
     else:
       print('WARNING: You are in detached HEAD state.\n'
             'The patch has been applied to your checkout, but you will not be '
@@ -2440,12 +2450,20 @@ class Changelist(object):
     """Upload the current branch to Gerrit."""
     if options.squash:
       self._GerritCommitMsgHookCheck(offer_removal=not options.force)
+      parent = None
       if self.GetIssue():
         # User requested to change description
         if options.edit_description:
           change_desc.prompt()
-        change_id = self._GetChangeDetail()['change_id']
+        change_detail = self._GetChangeDetail(['CURRENT_REVISION'])
+        change_id = change_detail['change_id']
         change_desc.ensure_change_id(change_id)
+
+        # Check if changes outside of this workspace have been uploaded.
+        current_rev = change_detail['current_revision']
+        last_uploaded_rev = self._GitGetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY)
+        if last_uploaded_rev and current_rev != last_uploaded_rev:
+          parent = self._RebaseOnExternalChanges()
       else:  # if not self.GetIssue()
         if not options.force and not options.message_file:
           change_desc.prompt()
@@ -2460,7 +2478,7 @@ class Changelist(object):
         change_desc.set_preserve_tryjobs()
 
       remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
-      parent = self._ComputeParent(
+      parent = parent or self._ComputeParent(
           remote, upstream_branch, custom_cl_base, options.force, change_desc)
       tree = RunGit(['rev-parse', 'HEAD:']).strip()
       with gclient_utils.temporary_file() as desc_tempfile:
@@ -2617,6 +2635,10 @@ class Changelist(object):
         'description': change_desc.description,
     }
 
+    # Gerrit may or may not update fast enough to return the correct patchset
+    # number after we push. Get the pre-upload patchset and increment later.
+    latest_ps = self.GetMostRecentPatchset() or 0
+
     push_stdout = self._RunGitPushWithTraces(refspec, refspec_opts,
                                              git_push_metadata,
                                              options.push_options)
@@ -2631,7 +2653,8 @@ class Changelist(object):
           ('Created|Updated %d issues on Gerrit, but only 1 expected.\n'
            'Change-Id: %s') % (len(change_numbers), change_id), change_desc)
       self.SetIssue(change_numbers[0])
-      self._GitSetBranchConfigValue('gerritsquashhash', ref_to_push)
+      self.SetPatchset(latest_ps + 1)
+      self._GitSetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY, ref_to_push)
 
     if self.GetIssue() and (reviewers or cc):
       # GetIssue() is not set in case of non-squash uploads according to tests.
@@ -2689,8 +2712,8 @@ class Changelist(object):
     # the tree hash of the parent branch. The upside is less likely bogus
     # requests to reupload parent change just because it's uploadhash is
     # missing, yet the downside likely exists, too (albeit unknown to me yet).
-    parent = scm.GIT.GetBranchConfig(
-        settings.GetRoot(), upstream_branch_name, 'gerritsquashhash')
+    parent = scm.GIT.GetBranchConfig(settings.GetRoot(), upstream_branch_name,
+                                     GERRIT_SQUASH_HASH_CONFIG_KEY)
     # Verify that the upstream branch has been uploaded too, otherwise
     # Gerrit will create additional CLs when uploading.
     if not parent or (RunGitSilent(['rev-parse', upstream_branch + ':']) !=
@@ -2704,6 +2727,94 @@ class Changelist(object):
           % upstream_branch_name,
           change_desc)
     return parent
+
+  def _RebaseOnExternalChanges(self):
+    """Updates workspace on top of upstream/external changes before upload.
+
+    Returns the commit hash of the latest upstream patchset's parent. None if
+    there are no external changes to incorporate (e.g. issue is new or user
+    doesn't want to rebase).
+    """
+    external_ps = self.GetMostRecentPatchset(update=False)
+    if external_ps is None:
+      return
+
+    local_ps = self.GetPatchset()
+    if local_ps is None or local_ps == external_ps:
+      return
+
+    num_changes = external_ps - local_ps
+    print('\n%d external change(s) have been published to %s.\n'
+          'Uploading as-is will override them.' %
+          (num_changes, self.GetIssueURL()))
+    if not ask_for_explicit_yes('Get the latest changes and apply?'):
+      return
+
+    # Get latest Gerrit merge base. Use the first parent even if multiple exist.
+    external_parent = self._GetChangeCommit(revision=external_ps)['parents'][0]
+    external_base = external_parent['commit']
+
+    branch = git_common.current_branch()
+    local_base = self.GetCommonAncestorWithUpstream()
+    if local_base != external_base:
+      print('\nLocal merge base %s is different from Gerrit %s.\n' %
+          (local_base, external_base))
+      if git_common.upstream(branch):
+        DieWithError('Upstream branch set. Consider running `git rebase-update`'
+                     'to make these the same.')
+      print('No upstream branch set. Consider setting it and running '
+            '`git rebase-update`.\nContinuing upload with Gerrit merge base.')
+
+    # Fetch Gerrit's CL base if it doesn't exist locally.
+    remote, _ = self.GetRemoteBranch()
+    if not scm.GIT.IsValidRevision(settings.GetRoot(), external_base):
+      RunGitSilent(['fetch', remote, external_base])
+
+    # Get the diff between local_ps and external_ps.
+    issue = self.GetIssue()
+    changes_ref = 'refs/changes/%d/%d/' % (issue % 100, issue)
+    RunGitSilent(['fetch', remote, changes_ref + str(local_ps)])
+    last_uploaded = RunGitSilent(['rev-parse', 'FETCH_HEAD']).strip()
+    RunGitSilent(['fetch', remote, changes_ref + str(external_ps)])
+    latest_external = RunGitSilent(['rev-parse', 'FETCH_HEAD']).strip()
+    diff = RunGitSilent(['diff', '%s..%s' % (last_uploaded, latest_external)])
+
+    print("diff")
+    print(diff)
+    # Diff can be empty in the case of trivial rebases.
+    if not diff:
+      return external_base
+
+    # Apply diff on top of this uploading commit.
+    # We can't just apply and commit since the patch may fail to apply. (is this true, or was that from the diff thing above?)
+    # Create a commit based off the last local commit and rebase all commits since then on top of that new commit.
+    #
+    # diagram?
+    #
+    with gclient_utils.temporary_file() as diff_tempfile:
+      gclient_utils.FileWrite(diff_tempfile, diff)
+      
+      # The last commit where the local workspace and Gerrit were synced.
+      last_uploaded_local_hash = self._GitGetBranchConfigValue(
+          LAST_UPLOAD_HASH_CONFIG_KEY)
+      RunGit(['checkout', last_uploaded_local_hash])
+      RunGit(['apply', diff_tempfile])
+
+      message = 'Incorporate external changes from '
+      if num_changes == 1:
+        message += 'patchset %d' % external_ps
+      else:
+        message += 'patchsets %d to %d' % (local_ps + 1, external_ps)
+      RunGit(['commit', '-am', message])
+      insert_commit = RunGit(['rev-parse', 'HEAD']).strip()
+
+      RunGit(['checkout', branch])
+      rebase = git_common.rebase(insert_commit, last_uploaded_local_hash, branch, abort=True)
+      if not rebase.success:
+        DieWithError('Failed to rebase on external changes: %s' %
+                      rebase.message)
+
+    return external_base
 
   def _AddChangeIdToCommitMessage(self, log_desc, args):
     """Re-commits using the current message, assumes the commit hook is in
@@ -5008,9 +5119,9 @@ def CMDdiff(parser, args):
   if not issue:
     DieWithError('No issue found for current branch (%s)' % branch)
 
-  base = cl._GitGetBranchConfigValue('last-upload-hash')
+  base = cl._GitGetBranchConfigValue(LAST_UPLOAD_HASH_CONFIG_KEY)
   if not base:
-    base = cl._GitGetBranchConfigValue('gerritsquashhash')
+    base = cl._GitGetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY)
   if not base:
     detail = cl._GetChangeDetail(['CURRENT_REVISION', 'CURRENT_COMMIT'])
     revision_info = detail['revisions'][detail['current_revision']]

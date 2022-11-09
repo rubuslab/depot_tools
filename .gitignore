@@ -5,6 +5,7 @@
 /.cipd_bin
 /.cipd_client*
 /.versions
+/.cros_cipd_bin
 
 # Ignore "disable auto update" sentinel file.
 .disable_auto_update

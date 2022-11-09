@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68afc479_500cbf8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-11-09T04:17:12Z",
+      "side": 1,
+      "message": "This is roughly what I had in mind for handling the long-term support vpython 2.7 for cros. However, I\u0027m not sure how to test it -- I followed https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md to get a chromiumos checkout, but nothing in the resulting repo is a symlink named \u0027vpython\u0027 that points to depot_tools/cros, so I\u0027m not sure if my assumptions are incorrect or I didn\u0027t go far enough into the build?",
+      "revId": "998bd988c922e9b8584511e0b4e302f45f391e24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

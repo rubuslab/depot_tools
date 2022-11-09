@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbacb363_750b1287",
+        "filename": "git_cl.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 2788,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-11-09T23:16:46Z",
+      "side": 1,
+      "message": "`git apply` is the simpler option that I opted for here but the alternative solution is to create a commit and rebase all local commits since last `upload` on top of it. (chain of all local non-uploaded commits is possible thru `LAST_UPLOAD_HASH_CONFIG_KEY`)",
+      "range": {
+        "startLine": 2788,
+        "startChar": 6,
+        "endLine": 2788,
+        "endChar": 14
+      },
+      "revId": "f9e2dbe7f4de19c9a1ae793b6c3ee631c750d8ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

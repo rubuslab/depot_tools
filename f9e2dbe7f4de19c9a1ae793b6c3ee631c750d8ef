@@ -22,6 +22,23 @@
       },
       "revId": "f9e2dbe7f4de19c9a1ae793b6c3ee631c750d8ef",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1eb18e2_3d92dc27",
+        "filename": "git_cl.py",
+        "patchSetId": 83
+      },
+      "lineNbr": 2789,
+      "author": {
+        "id": 1560602
+      },
+      "writtenOn": "2022-11-09T23:59:47Z",
+      "side": 1,
+      "message": "This is a bit dangerous to do silently - if it can\u0027t be applied cleanly, we should let user know they need to address those conflicts and exit. Otherwise, user will likely proceed with uploading CLs with conflict markers",
+      "revId": "f9e2dbe7f4de19c9a1ae793b6c3ee631c750d8ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

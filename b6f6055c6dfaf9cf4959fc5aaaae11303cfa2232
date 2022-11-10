@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8af800b5_5cb3fdfb",
+        "filename": "git_cl.py",
+        "patchSetId": 84
+      },
+      "lineNbr": 2798,
+      "author": {
+        "id": 1560602
+      },
+      "writtenOn": "2022-11-10T16:18:59Z",
+      "side": 1,
+      "message": "Let\u0027s do this only if there\u0027s no conflict, otherwise leave the tree modified. This is the behavior other git operations have (e.g. cherry-pick, merge) and we should be consistent with git.",
+      "revId": "b6f6055c6dfaf9cf4959fc5aaaae11303cfa2232",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

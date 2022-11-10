@@ -16,6 +16,40 @@
       "message": "With https://crrev.com/c/3975294; we effectively stopped running py2 presubmit checks, not just for chromium/src, but for all other projects.\n\nNot everyone migrated to py3, and this results in presubmit checks passing even if they shouldn\u0027t, e.g. https://crrev.com/c/4021805.\n\nSo, with that, we should rollback https://crrev.com/c/3975294",
       "revId": "328857b909e0927453abcee5f81c7af8076a9974",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b3eee73_7601bab8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-10T18:44:19Z",
+      "side": 1,
+      "message": "Josip\u0027s concerns certainly need discussion. There is some chatter in python@chromium.org about whether we should do this or do the revert.\n\nAlso, I saw one error in the change, and these errors in the builder output:\n\nhttps://luci-milo.appspot.com/raw/build/logs.chromium.org/chromium/led/rgw_google.com/f92526094e5e1f6d060d4e12a619a47e88b8254da36226762bf111e6ecedd5b3/+/build.proto\n\nlucicfg validate \"main.star\"\nlucicfg validate main.star -log-level debug (0.89s) failed\n[P13106 10:01:16.558 generate.go:94 I] Generating configs using lucicfg v1.32.1...\nTraceback (most recent call last):\n  //main.star:226:5: in \u003ctoplevel\u003e\nError in exec: exec //subprojects/chromium/subproject.star failed: Traceback (most recent call last):\n  //subprojects/chromium/subproject.star:16:5: in \u003ctoplevel\u003e",
+      "revId": "328857b909e0927453abcee5f81c7af8076a9974",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cb6885d_85316985",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-10T18:44:19Z",
+      "side": 1,
+      "message": "It looks like these two lines should be deleted - output isn\u0027t set yet.",
+      "revId": "328857b909e0927453abcee5f81c7af8076a9974",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -30,13 +30,8 @@ class PresubmitApi(recipe_api.RecipeApi):
 
     name = kwargs.pop('name', 'presubmit')
     with self.m.depot_tools.on_path():
-      cmd = ['vpython3', self.presubmit_support_path]
-      cmd.extend(args)
-      cmd.extend(['--json_output', self.m.json.output()])
       if self.m.resultdb.enabled:
         kwargs['wrapper'] = ('rdb', 'stream', '--')
-      step_data = self.m.step(name, cmd, **kwargs)
-      output = step_data.json.output or {}
       if self.m.step.active_result.retcode != 0:
         return output
 
@@ -47,15 +42,8 @@ class PresubmitApi(recipe_api.RecipeApi):
       step_data = self.m.step(name + " py3",
                               ['vpython3', self.presubmit_support_path] +
                               presubmit_args, **kwargs)
-      output2 = step_data.json.output or {}
+      output = step_data.json.output or {}
 
-      # combine outputs
-      for key in output:
-        if key in output2:
-          output[key] += output2[key]
-          del (output2[key])
-      for key in output2:
-        output[key] = output2[key]
       return output
 
   @property

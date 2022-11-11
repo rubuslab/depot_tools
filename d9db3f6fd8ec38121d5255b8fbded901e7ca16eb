@@ -16,6 +16,24 @@
       "message": "Note there is `.cipd_client_platform` file that could be used for the similar purpose (see this script below). E.g. \n\n```\necho mac-amd64 \u003e ~/depot_tools/.cipd_client_platform\n```",
       "revId": "d9db3f6fd8ec38121d5255b8fbded901e7ca16eb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88c64a64_811f639d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560867
+      },
+      "writtenOn": "2022-11-11T16:32:37Z",
+      "side": 1,
+      "message": "Thanks Vadim - we have folks who are switching back and forth with rosetta on M1 macs and so a flag/env variable seemed a bit more streamlined",
+      "parentUuid": "c8227531_bf2ed02f",
+      "revId": "d9db3f6fd8ec38121d5255b8fbded901e7ca16eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

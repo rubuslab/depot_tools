@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb71ad66_0eff58ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-12T19:52:09Z",
+      "side": 1,
+      "message": "Reverting this was probably correct, but it broke the presubmit-all builder because now it\u0027s trying to run Python 2 and it doesn\u0027t exist:\nhttps://ci.chromium.org/p/chromium/builders/ci/linux-presubmit",
+      "revId": "9d351f8b5aa6d0362eae0c6d32b4e9b6ef3207bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

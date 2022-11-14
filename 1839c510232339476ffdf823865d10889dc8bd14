@@ -16,6 +16,24 @@
       "message": "I tested script and in principle works okay. I managed to get patch failures that shouldn\u0027t result in one when rebase is done in the UI.\n\ne.g.\n\n2 external change(s) have been published to https://crrev.com/c/4023670. Uploading as-is will override them.\nGet the latest changes and apply? [Yes/No]: yes\nerror: patch failed: cipd:30\nerror: cipd: patch does not apply\nerror: patch failed: cipd_manifest.txt:41\nerror: cipd_manifest.txt: patch does not apply\nerror: patch failed: cipd_manifest.versions:74\nerror: cipd_manifest.versions: patch does not apply\nerror: patch failed: cpplint.py:5348\nerror: cpplint.py: patch does not apply\nerror: patch failed: git_cl.py:125\nerror: git_cl.py: patch does not apply\nerror: patch failed: git_common.py:922\nerror: git_common.py: patch does not apply\nerror: patch failed: infra/config/recipes.cfg:16\nerror: infra/config/recipes.cfg: patch does not apply\nwarning: post_build_ninja_summary.py has type 100755, expected 100644\nerror: patch failed: presubmit_support.py:1666\nerror: presubmit_support.py: patch does not apply\nerror: patch failed: rdb_wrapper.py:17\nerror: rdb_wrapper.py: patch does not apply\nerror: patch failed: recipes/README.recipes.md:1201\nerror: recipes/README.recipes.md: patch does not apply\nerror: patch failed: tests/git_cl_test.py:3315\nerror: tests/git_cl_test.py: patch does not apply\nerror: patch failed: tests/presubmit_unittest.py:568\nerror: tests/presubmit_unittest.py: patch does not apply\n\nPatch did not apply cleanly. Please resolve any conflicts and reupload.\n\nhowever, it successfully modified the right file (README.md) and the rest of files were untouched.\n\nI think this is still better than current situation and we can improve rebase handling as we get feedback.",
       "revId": "1839c510232339476ffdf823865d10889dc8bd14",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34b93c58_1231f4e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 85
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-11-14T19:58:05Z",
+      "side": 1,
+      "message": "Thanks for actually testing this. I\u0027m also hoping (based on my own workflow n\u003d1) that the majority of use cases is smaller/simpler patches (trivial rebases, desc changes). But absolutely +1 on iterating on the workflow, esp as we think about dependent CLs",
+      "parentUuid": "6f9f808f_1d840e08",
+      "revId": "1839c510232339476ffdf823865d10889dc8bd14",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "082c70c4_ad36199f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-11-15T15:16:09Z",
+      "side": 1,
+      "message": "Conceptually this lg, but all projects (v8, angle, pdfium, etc) need to add a hook to pull the binary from cipd. So I think it\u0027d be good if both the CL desc and the error message had more detailed instructions on what they need to do (i.e. add a hook to pull ninja off cipd).",
+      "revId": "640558b93eeab71f9b133e444bb3cc84c3f92921",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89d00d09_f9820895",
+        "filename": "ninja.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-11-15T15:16:09Z",
+      "side": 1,
+      "message": "AFAIK this is no longer needed with py3",
+      "revId": "640558b93eeab71f9b133e444bb3cc84c3f92921",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

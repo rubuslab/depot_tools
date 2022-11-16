@@ -87,6 +87,24 @@
       "parentUuid": "75da09ac_b21ac7bc",
       "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "428c438c_ffc69cc3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1238297
+      },
+      "writtenOn": "2022-11-16T19:37:44Z",
+      "side": 1,
+      "message": "Not sure what mirror_path is. But this is how I reproduced locally (based on the logs from bot_update):\n```\nmkdir ply\ncd ply\ngit init --bare\ngsutil.py cp \"gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/*\" .\ngit symbolic-ref refs/remotes/origin/HEAD\n```",
+      "parentUuid": "6d088704_c870537a",
+      "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

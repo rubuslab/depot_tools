@@ -69,6 +69,24 @@
       "parentUuid": "f2827a95_6cf8e652",
       "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d088704_c870537a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-16T18:06:34Z",
+      "side": 1,
+      "message": "It is weird that `git symbolic-ref refs/remotes/origin/HEAD` returns 128. Is there any chance `self.mirror_path` isn\u0027t a git repository?",
+      "parentUuid": "75da09ac_b21ac7bc",
+      "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -666,8 +666,10 @@ def CheckLicense(input_api, output_api, license_re=None, project_name=None,
   current_year = int(input_api.time.strftime('%Y'))
 
   if license_re:
+    harcoded_license = False
     new_license_re = license_re
   else:
+    harcoded_license = True
     project_name = project_name or 'Chromium'
 
     # Accept any year number from 2006 to the current year, or the special
@@ -693,7 +695,7 @@ def CheckLicense(input_api, output_api, license_re=None, project_name=None,
     # On new files don't tolerate any digression from the ideal.
     new_license_re = (r'.*? Copyright %(year)s The %(project)s Authors\n'
                       r'.*? %(key_line)s\n'
-                      r'.*? found in the LICENSE file\.\n') % {
+                      r'.*? found in the LICENSE file\.(?: \*/)?\n') % {
                           'year': years_re,
                           'project': project_name,
                           'key_line': key_line,
@@ -722,7 +724,7 @@ def CheckLicense(input_api, output_api, license_re=None, project_name=None,
       if not match:
         # License is totally wrong.
         bad_new_files.append(f.LocalPath())
-      elif match.groups()[0] != str(current_year):
+      elif harcoded_license and match.groups()[0] != str(current_year):
         # License does not list this year.
         wrong_year_new_files.append(f.LocalPath())
     elif not license_re.search(contents):

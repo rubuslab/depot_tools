@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4a26b9b_00aa21c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-11-16T15:14:55Z",
+      "side": 1,
+      "message": "In https://crrev.com/c/3925341/12..15, I added the following logics\n- Find ninja in PATH\n  This is necessary for the projects that don\u0027t use DEPS. e.g. gn, boringssl\n- Check {gclient_root}/third_party/ninja\n  Some projects have this layout.\n  \nPTAL",
+      "revId": "c59260951c6a1c4a557283f08d6466d6556e021c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

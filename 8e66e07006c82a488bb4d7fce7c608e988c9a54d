@@ -34,6 +34,24 @@
       "parentUuid": "b2807756_39e10463",
       "revId": "8e66e07006c82a488bb4d7fce7c608e988c9a54d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fc8d8f4_d8e424ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-11-16T15:14:55Z",
+      "side": 1,
+      "message": "\u003e I will work on the manual rollout/changes after merging https://crrev.com/c/3869740 to chromium/src.\n\nI completed installing CIPD ninja to the projects with DEPS. \nI may miss something. But it should be fine as we still keep ninja binaries.",
+      "parentUuid": "1cf4d4ed_65df34e8",
+      "revId": "8e66e07006c82a488bb4d7fce7c608e988c9a54d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

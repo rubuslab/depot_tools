@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc2190c3_38ba2e41",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-11-16T15:14:55Z",
+      "side": 1,
+      "message": "I elaborated the description and the deprecation message. \n\n\u003e all projects (v8, angle, pdfium, etc) need to add a hook to pull the binary from cipd.\n\nI already installed ninja to their DEPS. Here is the list http://screen/ZFDSDRytMSGEq8x",
+      "parentUuid": "082c70c4_ad36199f",
+      "revId": "640558b93eeab71f9b133e444bb3cc84c3f92921",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89d00d09_f9820895",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-11-15T15:16:09Z",
       "side": 1,
       "message": "AFAIK this is no longer needed with py3",
+      "revId": "640558b93eeab71f9b133e444bb3cc84c3f92921",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d400dc8a_ae28013c",
+        "filename": "ninja.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-11-16T15:14:55Z",
+      "side": 1,
+      "message": "I tried keyboard interruption with py2/py3. but, the both work similarly. http://go/paste/5167581945135104\n\nSo I removed the KeyboardInterrupt handling.\nWas this only for suppressing python trace?",
+      "parentUuid": "89d00d09_f9820895",
       "revId": "640558b93eeab71f9b133e444bb3cc84c3f92921",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

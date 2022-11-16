@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ac7eed4_19121682",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-16T17:52:37Z",
+      "side": 1,
+      "message": "I think that there is a bug but this is the wrong fix. group()[0] is the correct capture group for the year in the context of the default Chromium license regex. However it is an invalid assumption when a regex is passed in.\n\nI have another change (and some tests!) that correct this.\n\nPlease let me know if my assumptions about the failure mode are incorrect.",
+      "revId": "cf6681d724cec1777bfaea806c32ee74d6683115",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

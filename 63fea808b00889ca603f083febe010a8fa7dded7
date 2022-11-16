@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32e4a66e_c26f6514",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1238297
+      },
+      "writtenOn": "2022-11-16T13:12:05Z",
+      "side": 1,
+      "message": "We\u0027re seeing failures likely caused by this CL for some out-of-date dependencies:\nsubprocess.CalledProcessError: Command \u0027[\u0027git.bat\u0027, \u0027symbolic-ref\u0027, \u0027refs/remotes/origin/HEAD\u0027]\u0027 returned non-zero exit status 128.",
+      "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

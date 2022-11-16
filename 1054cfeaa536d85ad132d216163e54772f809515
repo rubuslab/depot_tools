@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fb24adc_a324c700",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-16T20:32:25Z",
+      "side": 1,
+      "message": "I had to introduce a new variable because license_re is overwritten, but I think it does help with clarity/intent.",
+      "parentUuid": "4f86af3b_3a315812",
+      "range": {
+        "startLine": 727,
+        "startChar": 11,
+        "endLine": 727,
+        "endChar": 27
+      },
+      "revId": "1054cfeaa536d85ad132d216163e54772f809515",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "164ae14c_c03b8826",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-11-16T18:35:38Z",
       "side": 1,
       "message": "nit: this is repetitive, consider moving to a helper method",
+      "range": {
+        "startLine": 2357,
+        "startChar": 0,
+        "endLine": 2364,
+        "endChar": 40
+      },
+      "revId": "1054cfeaa536d85ad132d216163e54772f809515",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2a4493f_3cafd4e0",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2364,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-16T20:32:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "164ae14c_c03b8826",
       "range": {
         "startLine": 2357,
         "startChar": 0,

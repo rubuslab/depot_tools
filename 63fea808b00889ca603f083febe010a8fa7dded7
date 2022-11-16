@@ -51,6 +51,24 @@
       "message": "The failure of the new git commands is also happening in gclient checkouts of Flutter, using bot_update.\n\nAn example failing run: https://ci.chromium.org/ui/p/dart/builders/ci.sandbox/flutter-engine-linux/18246/overview\n\n\nThe failure can be found in the log (stdout) by searching for:\n\n    CalledProcessError: Command \u0027[\u0027git\u0027, \u0027symbolic-ref\u0027, \u0027refs/remotes/origin/HEAD\u0027",
       "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75da09ac_b21ac7bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-11-16T17:20:40Z",
+      "side": 1,
+      "message": "FYI I approved the revert https://crrev.com/c/4030304 \n\nFeel free to submit any time",
+      "parentUuid": "f2827a95_6cf8e652",
+      "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

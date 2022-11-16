@@ -34,6 +34,23 @@
       "parentUuid": "32e4a66e_c26f6514",
       "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2827a95_6cf8e652",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2022-11-16T17:10:17Z",
+      "side": 1,
+      "message": "The failure of the new git commands is also happening in gclient checkouts of Flutter, using bot_update.\n\nAn example failing run: https://ci.chromium.org/ui/p/dart/builders/ci.sandbox/flutter-engine-linux/18246/overview\n\n\nThe failure can be found in the log (stdout) by searching for:\n\n    CalledProcessError: Command \u0027[\u0027git\u0027, \u0027symbolic-ref\u0027, \u0027refs/remotes/origin/HEAD\u0027",
+      "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

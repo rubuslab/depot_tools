@@ -105,6 +105,24 @@
       "parentUuid": "6d088704_c870537a",
       "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cbe48c9_d8d5eac1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-16T20:45:31Z",
+      "side": 1,
+      "message": "Thanks for the gsutil link. I tried replicating this and this is what I got:\n\n```\n➜  testbed mkdir ply \u0026\u0026 cd ply\n➜  ply git init --bare\nInitialized empty Git repository in /usr/local/google/home/aravindvasudev/Workspace/testbed/ply/\n➜  ply git:(main) gsutil.py cp \"gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/*\" .\nCopying gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/FETCH_HEAD...\nCopying gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/HEAD...\nCopying gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/config...\nCopying gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/description...\n/ [4 files][  940.0 B/  940.0 B]                                                \n\u003d\u003d\u003e NOTE: You are performing a sequence of gsutil operations that may\nrun significantly faster if you instead use gsutil -m cp ... Please\nsee the -m section under \"gsutil help options\" for further information\nabout when gsutil -m can be advantageous.\n\nCopying gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/number.idx...\nCopying gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/packed-refs...\nOmitting prefix \"gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/hooks/\". (Did you mean to do cp -r?)\nOmitting prefix \"gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/info/\". (Did you mean to do cp -r?)\nOmitting prefix \"gs://chromium-git-cache/v2/chromium.googlesource.com-chromium-src-third_party-ply/12/objects/\". (Did you mean to do cp -r?)\n\nOperation completed over 6 objects/2.4 KiB.                                      \n➜  ply git:(main) git show-ref\nfatal: git show-ref: bad ref refs/branch-heads/2311 (d2252a8ffe0e8f00317c60c10de4cd8146a53971)\n```\n\nIs this some special setup or is the cached repository broken? It doesn\u0027t seem to have refs.",
+      "parentUuid": "428c438c_ffc69cc3",
+      "revId": "63fea808b00889ca603f083febe010a8fa7dded7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

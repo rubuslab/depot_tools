@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01d8e629_5e878e42",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1920,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-17T05:00:51Z",
+      "side": 1,
+      "message": "Nit: If None and False mean the same here, why not just return False? It\u0027s slightly less confusing given the fn is expected to return a boolean.",
+      "revId": "bf62762c094cf3f7ac9fe2de4d77802d374e2c53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

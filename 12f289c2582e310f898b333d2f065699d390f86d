@@ -74,6 +74,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "16201985_c9ba055b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-17T08:14:42Z",
+      "side": 1,
+      "message": "Running `find . -type d -name \u0027.git\u0027 -print -exec cat \"{}/HEAD\" \\; \u003e heads.txt` on both copies and checking refs shows different refs two repos: `src/.git` and `src/third_party/angle/.git`. Not sure if this is intended.",
+      "parentUuid": "f6728da3_c24adf2e",
+      "revId": "12f289c2582e310f898b333d2f065699d390f86d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c353b90_113ac4a6",
         "filename": "gclient_scm.py",
         "patchSetId": 7

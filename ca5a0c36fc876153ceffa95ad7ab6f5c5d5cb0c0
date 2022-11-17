@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16e64aa0_8c7fac0d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-17T00:18:48Z",
+      "side": 1,
+      "message": "Thanks for the contribution.\nYou\u0027ll need to rebase this because another change to this function landed a few hours ago. There aren\u0027t any conflicts but it changed some related logic slightly.\nSpecifically, the other change adds license_re_param which can be used to detect when a custom license was passed in - your custom message is only applicable when that is not true.\nAlso, it seems like your message is not quite right, because some sort of comment characters are needed in addition to what you pass in. You could either try to infer that from the file extension, or maybe just acknowledge that that will be needed.",
+      "revId": "ca5a0c36fc876153ceffa95ad7ab6f5c5d5cb0c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

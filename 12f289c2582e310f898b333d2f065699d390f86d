@@ -128,6 +128,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e838399e_19e1584c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-17T22:15:07Z",
+      "side": 1,
+      "message": "There seems to be a discussion on using `git fetch \u003cremote\u003e \u003cSHA\u003e` when this was originally written[1]. From discussing with @iannucci, I\u0027m assuming the support issue is resolved now. I still have to confirm it from the gob team.\n\nThere might also be a performance implication. Apparently, gob used to take non-optimized paths on `--no-history` fetches and hence was slower than a full-fetch. I\u0027m not sure if this still applies. I\u0027m manually benchmarking a full-fetch against this change locally but we might have to check more than that.\n\nAnd then there\u0027s the whole correctness part -- ensuring all the tools work. It seems to be more work than simply approving the change. I will ensure I get the support question anwered and performance question partially answered but I might not have the bandwidth to check the impact of this change.\n\n[1] https://codereview.chromium.org/437903002/patch/1/10003",
+      "revId": "12f289c2582e310f898b333d2f065699d390f86d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c353b90_113ac4a6",
         "filename": "gclient_scm.py",
         "patchSetId": 7

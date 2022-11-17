@@ -699,6 +699,15 @@ def CheckLicense(input_api, output_api, license_re=None, project_name=None,
                           'key_line': key_line,
                       }
 
+    # Verbatim text that can be copy-pasted into new files.
+    new_license_text = ('Copyright %(year)s The %(project)s Authors\n'
+                        '%(key_line)s\n'
+                        'found in the LICENSE file.\n') % {
+                            'year': current_year,
+                            'project': project_name,
+                            'key_line': key_line,
+                        }
+
   license_re = input_api.re.compile(license_re, input_api.re.MULTILINE)
   new_license_re = input_api.re.compile(new_license_re, input_api.re.MULTILINE)
   bad_files = []
@@ -731,8 +740,8 @@ def CheckLicense(input_api, output_api, license_re=None, project_name=None,
   if bad_new_files:
     results.append(
         output_api.PresubmitError(
-            'License on new files must match:\n%s\n\n' % new_license_re.pattern
-            + 'Found a bad license header in these new files:',
+            'License on new files must be:\n\n%s\n' % new_license_text +
+            'Found a bad license header in these new files:',
             items=bad_new_files))
   if wrong_year_new_files:
     # We can't distinguish between new and moved files, so this has to be a

@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1e4cb9a_506fddea",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2364,
+      "author": {
+        "id": 1560602
+      },
+      "writtenOn": "2022-11-17T00:34:43Z",
+      "side": 1,
+      "message": "this could\u0027ve been replaced with\n\n    text \u003d _GetLicenseText(int(time.strftime(\u0027%Y\u0027)))",
+      "range": {
+        "startLine": 2357,
+        "startChar": 0,
+        "endLine": 2364,
+        "endChar": 40
+      },
+      "revId": "25cf78395cd77e11b13c1bd26124e0a586c19166",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8f93e64_bcb6b3c5",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2406,
+      "author": {
+        "id": 1560602
+      },
+      "writtenOn": "2022-11-17T00:34:43Z",
+      "side": 1,
+      "message": "This used to be using /* comment, and not #. Not sure if this change was intentional or not.",
+      "revId": "25cf78395cd77e11b13c1bd26124e0a586c19166",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

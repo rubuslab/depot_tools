@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6728da3_c24adf2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-17T06:24:11Z",
+      "side": 1,
+      "message": "There definitely is a significant argument to switch to this `--no-history` implementation. I\u0027m checking all `--no-history` usages to ensure this doesn\u0027t break anything else.\n\nI also need to go through `lastchange.py` to check this change\u0027s impact.",
+      "parentUuid": "47fc4bc2_9023b7e7",
+      "revId": "12f289c2582e310f898b333d2f065699d390f86d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c353b90_113ac4a6",

@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d50b4bf1_cb8a0578",
+        "filename": "presubmit_canned_checks_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560602
+      },
+      "writtenOn": "2022-11-17T04:38:16Z",
+      "side": 1,
+      "message": "No, they are not - only tests tests/ directory. We need to move it there.\n\nIf you\u0027d like to offload that to my team and not do it as part of this cl, mind filing a bug under Infra\u003eSDK component?",
+      "parentUuid": "7681b74d_4c94997e",
+      "revId": "c068ab145029f71d3465cc78c965dc2f1db6babb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5fbf28d3_012e9ba2",
         "filename": "presubmit_canned_checks_test_mocks.py",
         "patchSetId": 1

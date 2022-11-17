@@ -16,6 +16,29 @@
       "message": "In https://crrev.com/c/3925341/12..15, I added the following logics\n- Find ninja in PATH\n  This is necessary for the projects that don\u0027t use DEPS. e.g. gn, boringssl\n- Check {gclient_root}/third_party/ninja\n  Some projects have this layout.\n  \nPTAL",
       "revId": "c59260951c6a1c4a557283f08d6466d6556e021c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c1d2863_b56c2429",
+        "filename": "ninja.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2022-11-17T03:18:26Z",
+      "side": 1,
+      "message": "It is bit better to use isfile()?",
+      "range": {
+        "startLine": 55,
+        "startChar": 15,
+        "endLine": 55,
+        "endChar": 21
+      },
+      "revId": "c59260951c6a1c4a557283f08d6466d6556e021c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

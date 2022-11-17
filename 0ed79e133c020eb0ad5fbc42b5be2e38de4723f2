@@ -33,6 +33,24 @@
       "message": "No need to set error_message to None since it is set in both if/else branches",
       "revId": "0ed79e133c020eb0ad5fbc42b5be2e38de4723f2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76a12f92_cd3e6fc8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1001982
+      },
+      "writtenOn": "2022-11-17T05:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "606231e8_e736ce83",
+      "revId": "0ed79e133c020eb0ad5fbc42b5be2e38de4723f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

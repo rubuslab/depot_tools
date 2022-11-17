@@ -39,6 +39,30 @@
       },
       "revId": "c59260951c6a1c4a557283f08d6466d6556e021c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f85ead37_345ab88d",
+        "filename": "ninja.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-11-17T05:38:10Z",
+      "side": 1,
+      "message": "Good point. done.",
+      "parentUuid": "1c1d2863_b56c2429",
+      "range": {
+        "startLine": 55,
+        "startChar": 15,
+        "endLine": 55,
+        "endChar": 21
+      },
+      "revId": "c59260951c6a1c4a557283f08d6466d6556e021c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

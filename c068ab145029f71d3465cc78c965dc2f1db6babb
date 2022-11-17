@@ -18,6 +18,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff34e1d1_0575a0f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1339017
+      },
+      "writtenOn": "2022-11-17T10:46:42Z",
+      "side": 1,
+      "message": "Thanks!",
+      "revId": "c068ab145029f71d3465cc78c965dc2f1db6babb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7681b74d_4c94997e",
@@ -53,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64e4678a_92e1a435",
+        "filename": "presubmit_canned_checks_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1339017
+      },
+      "writtenOn": "2022-11-17T10:46:42Z",
+      "side": 1,
+      "message": "I\u0027d need to investigate the failing tests, that would require more cycles than I currently have, sadly. Filed crbug.com/1385693",
+      "parentUuid": "d50b4bf1_cb8a0578",
+      "revId": "c068ab145029f71d3465cc78c965dc2f1db6babb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5fbf28d3_012e9ba2",
@@ -66,6 +101,24 @@
       "writtenOn": "2022-11-16T06:21:45Z",
       "side": 1,
       "message": "\u003dFalse diverges from the production code and caused some tests to fail",
+      "revId": "c068ab145029f71d3465cc78c965dc2f1db6babb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56592339_18193bb1",
+        "filename": "presubmit_canned_checks_test_mocks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1339017
+      },
+      "writtenOn": "2022-11-17T10:46:42Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5fbf28d3_012e9ba2",
       "revId": "c068ab145029f71d3465cc78c965dc2f1db6babb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

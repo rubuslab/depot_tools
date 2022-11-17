@@ -92,6 +92,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "718009be_2bbf8847",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1508803
+      },
+      "writtenOn": "2022-11-17T15:39:09Z",
+      "side": 1,
+      "message": "Was `gclient sync --no-history` run with a specific ref or just HEAD? I\u0027m guessing something was committed to those repositories.",
+      "parentUuid": "16201985_c9ba055b",
+      "revId": "12f289c2582e310f898b333d2f065699d390f86d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c353b90_113ac4a6",
         "filename": "gclient_scm.py",
         "patchSetId": 7
@@ -103,6 +121,24 @@
       "writtenOn": "2022-11-17T05:29:33Z",
       "side": 1,
       "message": "I don\u0027t think it is a good idea to hardcode parameters like these in the middle of the code. It gets confusing.",
+      "revId": "12f289c2582e310f898b333d2f065699d390f86d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b21d41e5_eefb9337",
+        "filename": "gclient_scm.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1146,
+      "author": {
+        "id": 1508803
+      },
+      "writtenOn": "2022-11-17T15:39:09Z",
+      "side": 1,
+      "message": "Yeah, I\u0027m not really sure how best to handle this. I\u0027m also not a fan of url.endswith for finding chromium source. Someone could have their own mirror of the source with a different URL e.g. \"source.google.com/chromium.git\". I\u0027m open to options.\n\nI\u0027m thinking unconditionally take the last ~5 commits? It may make sense to make that number configurable with `--no-history-depth` or something. Although, that doesn\u0027t seem quite in spirit with `--no-history`.",
+      "parentUuid": "2c353b90_113ac4a6",
       "revId": "12f289c2582e310f898b333d2f065699d390f86d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

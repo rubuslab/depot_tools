@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c7a9dd8_c13c341d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-18T21:06:08Z",
+      "side": 1,
+      "message": "Everything lgtm. Let\u0027s merge this on Monday to ensure nothing fails over the weekend.",
+      "revId": "0dc85ccf244048bf00d829a554586faee85b74c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

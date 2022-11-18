@@ -5,11 +5,15 @@
 
 import os.path
 import subprocess
+import sys
 import unittest
 
-from presubmit_canned_checks_test_mocks import MockFile, MockAffectedFile
-from presubmit_canned_checks_test_mocks import MockInputApi, MockOutputApi
-from presubmit_canned_checks_test_mocks import MockChange
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT_DIR)
+
+from testing_support.presubmit_canned_checks_test_mocks import MockFile, MockAffectedFile
+from testing_support.presubmit_canned_checks_test_mocks import MockInputApi, MockOutputApi
+from testing_support.presubmit_canned_checks_test_mocks import MockChange
 
 import presubmit_canned_checks
 

@@ -48,6 +48,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "feca6479_dede6227",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2364,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-18T01:49:22Z",
+      "side": 1,
+      "message": "This will be fixed by crrev.com/c/4037103",
+      "parentUuid": "13238a48_1ac368a7",
+      "range": {
+        "startLine": 2357,
+        "startChar": 0,
+        "endLine": 2364,
+        "endChar": 40
+      },
+      "revId": "25cf78395cd77e11b13c1bd26124e0a586c19166",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f8f93e64_bcb6b3c5",
@@ -79,6 +103,24 @@
       "side": 1,
       "message": "Sigh... Good catch. That was untentional.",
       "parentUuid": "f8f93e64_bcb6b3c5",
+      "revId": "25cf78395cd77e11b13c1bd26124e0a586c19166",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40828ba5_451b8a30",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2406,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-11-18T01:49:22Z",
+      "side": 1,
+      "message": "This will be fixed by crrev.com/c/4037103",
+      "parentUuid": "f628d294_bb1c1766",
       "revId": "25cf78395cd77e11b13c1bd26124e0a586c19166",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

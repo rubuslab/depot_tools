@@ -145,6 +145,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "70c803b3_4f99b7ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-18T01:02:17Z",
+      "side": 1,
+      "message": "```\nfull fetch: fetch chromium  12330.34s user 1766.36s system 239% cpu 1:38:00.36 total\ncurrent --no-history: gclient sync --no-history  5221.56s user 827.79s system 592% cpu 17:00.74 total\nupdated: gclient sync --no-history  600.45s user 462.05s system 146% cpu 12:07.05 total\n```\n\nI didn\u0027t get back from gob yet but based on local runs, the update seems quicker too. I\u0027m not sure if this is true for all the builders.",
+      "parentUuid": "e838399e_19e1584c",
+      "revId": "12f289c2582e310f898b333d2f065699d390f86d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2c353b90_113ac4a6",
         "filename": "gclient_scm.py",
         "patchSetId": 7

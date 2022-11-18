@@ -161,6 +161,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5029ea05_a41b8493",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-18T04:18:19Z",
+      "side": 1,
+      "message": "There seems to be only few builders using this so I guess there isn\u0027t much to worry about the correctness part.",
+      "parentUuid": "70c803b3_4f99b7ed",
+      "revId": "12f289c2582e310f898b333d2f065699d390f86d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c353b90_113ac4a6",
@@ -228,6 +246,24 @@
       "side": 1,
       "message": "The `commit_filter` part of `lastchange.py` is the trouble. By default it ends up running `git log -1 --grep \"^Change-Id:\" --format\u003d\"%H %ct\"` which roughly means \"show me the most recent commit with a Change-Id\". It looks back at more than the HEAD commit.\n\nThis is really only an issue for Chromium build tags where the most recent commit is always a DEPS update. For example:\nhttps://chromium.googlesource.com/chromium/src.git/+/refs/tags/110.0.5424.1\n\nThe full content of the commit message at HEAD (`81eaf1347ec23bfd46e51629f9d6b829db9f2a36`) is `Publish DEPS for 110.0.5424.1`. No `Change-Id`, no `Cr-Commit-Position`. The parent commit (`83d1782600fe53bc05810b7be0e597a016f39cbc`) has both fields.\n\nThis causes builds at tags with `--depth\u003d1` to fail, as `lastchange.py` won\u0027t be able to find the last change. So for Chromium, it looks like we need a tiny bit of extra history.",
       "parentUuid": "d50da462_597238ea",
+      "revId": "12f289c2582e310f898b333d2f065699d390f86d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "812d955e_9d5a8956",
+        "filename": "gclient_scm.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1146,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-11-18T04:18:19Z",
+      "side": 1,
+      "message": "Is there a use case to do a `--no-history` checkout and use `lastchange.py` with it?  The spirit of `--no-history` is to have no-history so it sounds fine to me to not worry about this. Except for this part, I\u0027m fine with this implementation to be submitted.",
+      "parentUuid": "78b56170_c1764c27",
       "revId": "12f289c2582e310f898b333d2f065699d390f86d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

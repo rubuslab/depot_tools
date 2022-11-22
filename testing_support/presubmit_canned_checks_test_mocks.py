@@ -15,7 +15,9 @@ from presubmit_canned_checks import _ReportErrorFileAndLine
 
 
 class MockCannedChecks(object):
-  def _FindNewViolationsOfRule(self, callable_rule, input_api,
+  def _FindNewViolationsOfRule(self,
+                               callable_rule,
+                               input_api,
                                source_file_filter=None,
                                error_formatter=_ReportErrorFileAndLine):
     """Find all newly introduced violations of a per-line rule (a callable).
@@ -72,6 +74,7 @@ class MockInputApi(object):
     self.sys = sys
     self.files = []
     self.is_committing = False
+    self.no_diffs = False
     self.change = MockChange([])
     self.presubmit_local_path = os.path.dirname(__file__)
     self.logging = logging.getLogger('PRESUBMIT')
@@ -80,7 +83,7 @@ class MockInputApi(object):
     self.os_path.exists = lambda x: x in f_list
 
   def AffectedFiles(self, file_filter=None, include_deletes=True):
-    for file in self.files: # pylint: disable=redefined-builtin
+    for file in self.files:  # pylint: disable=redefined-builtin
       if file_filter and not file_filter(file):
         continue
       if not include_deletes and file.Action() == 'D':
@@ -90,8 +93,11 @@ class MockInputApi(object):
   def AffectedSourceFiles(self, file_filter=None):
     return self.AffectedFiles(file_filter=file_filter)
 
-  def FilterSourceFile(self, file, # pylint: disable=redefined-builtin
-                       files_to_check=(), files_to_skip=()):
+  def FilterSourceFile(
+      self,
+      file,  # pylint: disable=redefined-builtin
+      files_to_check=(),
+      files_to_skip=()):
     local_path = file.LocalPath()
     found_in_files_to_check = not files_to_check
     if files_to_check:
@@ -112,7 +118,7 @@ class MockInputApi(object):
     return found_in_files_to_check
 
   def LocalPaths(self):
-    return [file.LocalPath() for file in self.files] # pylint: disable=redefined-builtin
+    return [file.LocalPath() for file in self.files]  # pylint: disable=redefined-builtin
 
   def PresubmitLocalPath(self):
     return self.presubmit_local_path
@@ -177,7 +183,11 @@ class MockFile(object):
   MockInputApi for presubmit unittests.
   """
 
-  def __init__(self, local_path, new_contents, old_contents=None, action='A',
+  def __init__(self,
+               local_path,
+               new_contents,
+               old_contents=None,
+               action='A',
                scm_diff=None):
     self._local_path = local_path
     self._new_contents = new_contents
@@ -186,9 +196,8 @@ class MockFile(object):
     if scm_diff:
       self._scm_diff = scm_diff
     else:
-      self._scm_diff = (
-        "--- /dev/null\n+++ %s\n@@ -0,0 +1,%d @@\n" %
-            (local_path, len(new_contents)))
+      self._scm_diff = ("--- /dev/null\n+++ %s\n@@ -0,0 +1,%d @@\n" %
+                        (self._local_path, len(new_contents)))
       for l in new_contents:
         self._scm_diff += "+%s\n" % l
     self._old_contents = old_contents
@@ -251,7 +260,9 @@ class MockChange(object):
   def LocalPaths(self):
     return self._changed_files
 
-  def AffectedFiles(self, include_dirs=False, include_deletes=True,
+  def AffectedFiles(self,
+                    include_dirs=False,
+                    include_deletes=True,
                     file_filter=None):
     return self._changed_files
 

@@ -5,6 +5,26 @@ chromiumos/infra/crosjobs/linux-amd64
 	git_revision:ed616d595eb7241d39d34907050d2949121d6ae8
 	_vAeU0Q9lAxn933K8vDhwGK40zKVvV-yXGpIy43ATXAC
 
+infra/3pp/tools/gcloud/linux-amd64
+	version:2@410.0.0.chromium.2
+	489Rn8LXpUUwqJw4kHo4daibGH5j1SIEVlGGKgNW7wsC
+
+infra/3pp/tools/gcloud/linux-arm64
+	version:2@410.0.0.chromium.2
+	Aw9XSbQqPAAFuRaDShq5YKk7MfIj8OTVn9BbACCK0nAC
+
+infra/3pp/tools/gcloud/mac-amd64
+	version:2@410.0.0.chromium.2
+	c76oEEalHy8zzQUCQ10ec9iQ0ftwYKi8GwDy2IR_UooC
+
+infra/3pp/tools/gcloud/mac-arm64
+	version:2@410.0.0.chromium.2
+	NWd3VyGfZfHMkEBtltqPob3swBpciDlumoAZqoaGpFQC
+
+infra/3pp/tools/gcloud/windows-amd64
+	version:2@410.0.0.chromium.2
+	eBjVSiVqhNBIXQR45cVdDh_ZY2pLgbYqDB3-aCO0lD8C
+
 infra/3pp/tools/ninja/linux-amd64
 	version:2@1.8.2.chromium.3
 	PUvdixKxFO_KVk9d6WFpXLVDMM0MHv86jyyySTMQ7KIC

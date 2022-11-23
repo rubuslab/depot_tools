@@ -7,139 +7,26 @@
 
 
 import argparse
-import base64
-import contextlib
-import hashlib
-import json
 import os
-import shutil
 import subprocess
 import sys
-import tempfile
-import time
-
-try:
-  import urllib2 as urllib
-except ImportError:  # For Py3 compatibility
-  import urllib.request as urllib
-
-import zipfile
-
-
-GSUTIL_URL = 'https://storage.googleapis.com/pub/'
-API_URL = 'https://www.googleapis.com/storage/v1/b/pub/o/'
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_BIN_DIR = os.path.join(THIS_DIR, 'external_bin', 'gsutil')
-
 IS_WINDOWS = os.name == 'nt'
-
-VERSION = '4.68'
-
-
-class InvalidGsutilError(Exception):
-  pass
+DEFAULT_BIN_DIR = THIS_DIR + '/.cipd_bin/bin/'
+GSUTIL_SHIM_PATH = DEFAULT_BIN_DIR + 'gsutil'
+CIPD_BIN_SETUP = THIS_DIR + '/cipd_bin_setup.sh'  # TODO: Add windows support
 
 
-def download_gsutil(version, target_dir):
-  """Downloads gsutil into the target_dir."""
-  filename = 'gsutil_%s.zip' % version
-  target_filename = os.path.join(target_dir, filename)
+def ensure_gsutil():
+  # TODO: Call cipd_bin_setup here
 
-  # Check if the target exists already.
-  if os.path.exists(target_filename):
-    md5_calc = hashlib.md5()
-    with open(target_filename, 'rb') as f:
-      while True:
-        buf = f.read(4096)
-        if not buf:
-          break
-        md5_calc.update(buf)
-    local_md5 = md5_calc.hexdigest()
-
-    metadata_url = '%s%s' % (API_URL, filename)
-    metadata = json.load(urllib.urlopen(metadata_url))
-    remote_md5 = base64.b64decode(metadata['md5Hash']).decode('utf-8')
-
-    if local_md5 == remote_md5:
-      return target_filename
-    os.remove(target_filename)
-
-  # Do the download.
-  url = '%s%s' % (GSUTIL_URL, filename)
-  u = urllib.urlopen(url)
-  with open(target_filename, 'wb') as f:
-    while True:
-      buf = u.read(4096)
-      if not buf:
-        break
-      f.write(buf)
-  return target_filename
+  # TODO: Validate if gcloud binary exists and if not, throw exception here
+  return GSUTIL_SHIM_PATH
 
 
-@contextlib.contextmanager
-def temporary_directory(base):
-  tmpdir = tempfile.mkdtemp(prefix='t', dir=base)
-  try:
-    yield tmpdir
-  finally:
-    if os.path.isdir(tmpdir):
-      shutil.rmtree(tmpdir)
-
-
-def ensure_gsutil(version, target, clean):
-  bin_dir = os.path.join(target, 'gsutil_%s' % version)
-  gsutil_bin = os.path.join(bin_dir, 'gsutil', 'gsutil')
-  gsutil_flag = os.path.join(bin_dir, 'gsutil', 'install.flag')
-  # We assume that if gsutil_flag exists, then we have a good version
-  # of the gsutil package.
-  if not clean and os.path.isfile(gsutil_flag):
-    # Everything is awesome! we're all done here.
-    return gsutil_bin
-
-  if not os.path.exists(target):
-    try:
-      os.makedirs(target)
-    except FileExistsError:
-      # Another process is prepping workspace, so let's check if gsutil_bin is
-      # present.  If after several checks it's still not, continue with
-      # downloading gsutil.
-      delay = 2  # base delay, in seconds
-      for _ in range(3):  # make N attempts
-        # sleep first as it's not expected to have file ready just yet.
-        time.sleep(delay)
-        delay *= 1.5  # next delay increased by that factor
-        if os.path.isfile(gsutil_bin):
-          return gsutil_bin
-
-  with temporary_directory(target) as instance_dir:
-    # Clean up if we're redownloading a corrupted gsutil.
-    cleanup_path = os.path.join(instance_dir, 'clean')
-    try:
-      os.rename(bin_dir, cleanup_path)
-    except (OSError, IOError):
-      cleanup_path = None
-    if cleanup_path:
-      shutil.rmtree(cleanup_path)
-
-    download_dir = os.path.join(instance_dir, 'd')
-    target_zip_filename = download_gsutil(version, instance_dir)
-    with zipfile.ZipFile(target_zip_filename, 'r') as target_zip:
-      target_zip.extractall(download_dir)
-
-    shutil.move(download_dir, bin_dir)
-    # Final check that the gsutil bin exists.  This should never fail.
-    if not os.path.isfile(gsutil_bin):
-      raise InvalidGsutilError()
-    # Drop a flag file.
-    with open(gsutil_flag, 'w') as f:
-      f.write('This flag file is dropped by gsutil.py')
-
-  return gsutil_bin
-
-
-def run_gsutil(target, args, clean=False):
-  gsutil_bin = ensure_gsutil(VERSION, target, clean)
+def run_gsutil(args):
+  gsutil_bin = ensure_gsutil()
   args_opt = ['-o', 'GSUtil:software_update_check_period=0']
 
   if sys.platform == 'darwin':
@@ -162,9 +49,6 @@ def run_gsutil(target, args, clean=False):
   assert sys.platform != 'cygwin'
 
   cmd = [
-      'vpython3',
-      '-vpython-spec', os.path.join(THIS_DIR, 'gsutil.vpython3'),
-      '--',
       gsutil_bin
   ] + args_opt + args
   return subprocess.call(cmd, shell=IS_WINDOWS)
@@ -176,14 +60,16 @@ def parse_args():
   # Help is disabled as it conflicts with gsutil -h, which controls headers.
   parser = argparse.ArgumentParser(add_help=False)
 
-  parser.add_argument('--clean', action='store_true',
-      help='Clear any existing gsutil package, forcing a new download.')
-  parser.add_argument('--target', default=bin_dir,
+  # These four args exist for backwards-compatibility but are no-ops.
+  parser.add_argument('--clean',
+                      action='store_true',
+                      help='(deprecated, this flag has no effect)')
+  parser.add_argument(
+      '--target',
+      default=bin_dir,
       help='The target directory to download/store a gsutil version in. '
-           '(default is %(default)s).')
-
-  # These two args exist for backwards-compatibility but are no-ops.
-  parser.add_argument('--force-version', default=VERSION,
+      '(deprecated, this flag has no effect)')
+  parser.add_argument('--force-version',
                       help='(deprecated, this flag has no effect)')
   parser.add_argument('--fallback',
                       help='(deprecated, this flag has no effect)')
@@ -200,7 +86,7 @@ def parse_args():
 
 def main():
   args = parse_args()
-  return run_gsutil(args.target, args.args, clean=args.clean)
+  return run_gsutil(args.args)
 
 
 if __name__ == '__main__':

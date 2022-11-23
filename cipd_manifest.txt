@@ -74,3 +74,6 @@ infra/tools/dirmd/${platform} git_revision:6ccfc187ae31591c9ce32acb35334062530c5
 
 # Pinpoint CLI
 infra/chromeperf/pinpoint/${platform} git_revision:06230fdc34c20ba24a242db1daba3426704f61fc
+
+# gcloud
+infra/3pp/tools/gcloud/${os=linux,windows,mac}-${arch=amd64,arm64} version:2@410.0.0.chromium.2

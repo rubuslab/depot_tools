@@ -1616,12 +1616,15 @@ class Changelist(object):
       # Upload all dependencies if specified.
       if options.dependencies:
         print()
-        print('--dependencies has been specified.')
+        print('--dependencies/--all has been specified.')
         print('All dependent local branches will be re-uploaded.')
         print()
         # Remove the dependencies flag from args so that we do not end up in a
         # loop.
-        orig_args.remove('--dependencies')
+        if '--dependencies' in orig_args:
+          orig_args.remove('--dependencies')
+        if '--all' in orig_args:
+          orig_args.remove('--all')
         ret = upload_branch_deps(self, orig_args, options.force)
     return ret
 
@@ -3606,8 +3609,8 @@ def upload_branch_deps(cl, args, force=False):
                      -> test3.2
           -> test2.2 -> test3.3
 
-  and you run "git cl upload --dependencies" from test1 then "git cl upload" is
-  run on the dependent branches in this order:
+  and you run "git cl upload --dependencies/--all" from test1 then "git cl
+  upload" is run on the dependent branches in this order:
   test2.1, test3.1, test3.2, test2.2, test3.3
 
   Note: This function does not rebase your local dependent branches. Use it
@@ -4477,9 +4480,11 @@ def CMDupload(parser, args):
                     help='instruct the CQ to let tryjobs running even after '
                          'new patchsets are uploaded instead of canceling '
                          'prior patchset\' tryjobs')
-  parser.add_option('--dependencies', action='store_true',
+  parser.add_option('--dependencies',
+                    '--all',
+                    action='store_true',
                     help='Uploads CLs of all the local branches that depend on '
-                         'the current branch')
+                    'the current branch')
   parser.add_option('-a', '--enable-auto-submit', action='store_true',
                     help='Sends your change to the CQ after an approval. Only '
                          'works on repos that have the Auto-Submit label '

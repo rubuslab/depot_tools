@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6afc8a01_63cfe1b2",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2022-11-28T08:39:17Z",
+      "side": 1,
+      "message": "can\u0027t use sys.executable ?",
+      "revId": "6c6c07d8518883479b804dc6aafbee597422f4b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

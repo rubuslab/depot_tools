@@ -16,6 +16,24 @@
       "message": "Is there a reason for adding this check. I\u0027m assuming `orig_args.remove(\u0027--dependencies\u0027)` would be a noop if `--dependencies` don\u0027t exist.",
       "revId": "4cc59128556a5996b81cc709651299d41cce9ba0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37f27dec_5548a975",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 1366833
+      },
+      "writtenOn": "2022-11-28T20:14:29Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "58c757d1_e1664c6b",
+      "revId": "4cc59128556a5996b81cc709651299d41cce9ba0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

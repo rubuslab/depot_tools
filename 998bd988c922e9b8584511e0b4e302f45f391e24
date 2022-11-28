@@ -71,6 +71,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e0d195d8_39816be0",
+        "filename": "cros",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-11-28T23:49:54Z",
+      "side": 1,
+      "message": "This is my big question -- based on how this script works, it seems to assume the tools are symlinked to cros. Is this right? But I couldn\u0027t find anywhere currently where vpython is symlinked to cros. So, basically I am not completely sure what you had in mind when we were discussing putting the vpython27 bootstrapping here.",
+      "parentUuid": "54c38da9_9d8eb53f",
+      "revId": "998bd988c922e9b8584511e0b4e302f45f391e24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0292818c_fb029413",
         "filename": "cros",
         "patchSetId": 1

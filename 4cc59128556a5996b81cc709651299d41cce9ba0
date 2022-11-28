@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c5607b0_d325411c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-11-28T20:19:06Z",
+      "side": 1,
+      "message": "iiuc \u0027--all\u0027 in hg upload has a different behavior (uploads all CLs in the chain?).\n\nIf we were to add \u0027--all\u0027 i think we\u0027d want to have it behave similarly (called in any branch and upload all CLs in the stack not just the dependencies rather than just being an alias of --dependencies). \n\n\nWe\u0027re also in the early stages of improving the stacked changes experience. I think we\u0027d prefer holding off on this until we have a clearer idea of how we want to make the experience better. We don\u0027t want to add args and then remove them or change their behavior later on.",
+      "revId": "4cc59128556a5996b81cc709651299d41cce9ba0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58c757d1_e1664c6b",

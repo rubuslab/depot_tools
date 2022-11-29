@@ -16,6 +16,24 @@
       "message": "I\u0027m not sure if we can directly use python3 here. Is this fine or should we consider using vpython3? @gavinmak@google.com",
       "revId": "14f1784ee505183886e76149215bb3bfb84e10bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55a14b37_b8c04c07",
+        "filename": "compile_single_file.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-11-29T00:20:54Z",
+      "side": 1,
+      "message": "from what I can tell looking at https://crsrc.org/d/ninja.py, python3 should be fine\n\ncc @sokcevic@chromium.org in case i\u0027m wrong",
+      "parentUuid": "3440d5ed_f5e0ad2f",
+      "revId": "14f1784ee505183886e76149215bb3bfb84e10bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

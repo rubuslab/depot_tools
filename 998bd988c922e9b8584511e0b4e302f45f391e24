@@ -89,6 +89,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f78424bf_dca13ecc",
+        "filename": "cros",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-11-29T01:29:38Z",
+      "side": 1,
+      "message": "the cros script can open the target script and inspect its shebang to see if it needs to bootstrap vpython27\n\n```\nwith open(path, \u0027r\u0027) as fp:\n  shebang \u003d next(fp).strip()\n\nif shebang.split()[-1] in (\u0027python2\u0027, \u0027vpython\u0027):\n  ... bootstrap vpython27 ...\n```\n\nof course this depends on whether we\u0027ll be deleting `vpython` entirely and going only with `vpython3`, or keeping `vpython` and parsing out `python_version`.",
+      "parentUuid": "e0d195d8_39816be0",
+      "revId": "998bd988c922e9b8584511e0b4e302f45f391e24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0292818c_fb029413",
         "filename": "cros",
         "patchSetId": 1

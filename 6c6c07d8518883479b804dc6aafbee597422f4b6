@@ -16,6 +16,24 @@
       "message": "can\u0027t use sys.executable ?",
       "revId": "6c6c07d8518883479b804dc6aafbee597422f4b6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7299ed6d_fd5f8601",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-11-29T02:48:23Z",
+      "side": 1,
+      "message": "Actually \"python3\" failed on Windows.\nI changed it to sys.executable.",
+      "parentUuid": "6afc8a01_63cfe1b2",
+      "revId": "6c6c07d8518883479b804dc6aafbee597422f4b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

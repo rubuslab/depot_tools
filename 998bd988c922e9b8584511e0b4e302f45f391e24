@@ -125,6 +125,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eb4e1b9c_728c503d",
+        "filename": "cros",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-11-29T03:43:23Z",
+      "side": 1,
+      "message": "i don\u0027t think reading the shebang line out and doing a little parsing adds any noticeable overhead.  we\u0027re going to read it as soon as we execv() below, so it\u0027ll just be a minor pre-cache in the fs.",
+      "parentUuid": "8d7e2035_93a0d900",
+      "revId": "998bd988c922e9b8584511e0b4e302f45f391e24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0292818c_fb029413",
         "filename": "cros",
         "patchSetId": 1

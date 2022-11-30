@@ -40,6 +40,7 @@ import gerrit_util
 import git_common
 import git_footers
 import git_new_branch
+import git_reparent_branch
 import metrics
 import metrics_utils
 import owners_client
@@ -2771,21 +2772,24 @@ class Changelist(object):
     external_parent = self._GetChangeCommit(revision=external_ps)['parents'][0]
     external_base = external_parent['commit']
 
+    # Fetch Gerrit's CL base if it doesn't exist locally.
+    remote, _ = self.GetRemoteBranch()
+    if not scm.GIT.IsValidRevision(settings.GetRoot(), external_base):
+      RunGitSilent(['fetch', remote, external_base])
+
     branch = git_common.current_branch()
     local_base = self.GetCommonAncestorWithUpstream()
     if local_base != external_base:
       print('\nLocal merge base %s is different from Gerrit %s.\n' %
             (local_base, external_base))
       if git_common.upstream(branch):
-        DieWithError('Upstream branch set. Consider using `git rebase-update` '
-                     'to make these the same.')
+        print('Upstream branch set. Trying to reparent branch to match Gerrit.')
+        if git_reparent_branch.main([external_base]) != 0:
+          DieWithError('Failed to reparent branch. Consider using '
+                       '`git rebase-update` or `git reparent-branch` to fix '
+                       'the difference in merge bases.')
       print('No upstream branch set. Consider setting it and using '
             '`git rebase-update`.\nContinuing upload with Gerrit merge base.')
-
-    # Fetch Gerrit's CL base if it doesn't exist locally.
-    remote, _ = self.GetRemoteBranch()
-    if not scm.GIT.IsValidRevision(settings.GetRoot(), external_base):
-      RunGitSilent(['fetch', remote, external_base])
 
     # Get the diff between local_ps and external_ps.
     issue = self.GetIssue()

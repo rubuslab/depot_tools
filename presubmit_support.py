@@ -14,6 +14,9 @@ __version__ = '2.0.0'
 # caching (between all different invocations of presubmit scripts for a given
 # change). We should add it as our presubmit scripts start feeling slow.
 
+file_of_interest = r'C:\src\chromium\src\ppapi\PRESUBMIT.py'
+function_of_interest = 'CheckUpdatedNaClSDK'
+
 import argparse
 import ast  # Exposed through the API.
 import contextlib
@@ -1602,6 +1605,8 @@ class PresubmitExecuter(object):
           # exception if checks add globals to context. E.g. sometimes the
           # Python runtime will add __warningregistry__.
           for function_name in list(context.keys()):
+            if not function_name.count(function_of_interest) > 0:
+              continue
             if not function_name.startswith('Check'):
               continue
             if function_name.endswith('Commit') and not self.committing:
@@ -1615,7 +1620,7 @@ class PresubmitExecuter(object):
             logging.debug('Running %s done.', function_name)
             self.more_cc.extend(output_api.more_cc)
 
-        else:  # Old format
+        elif False:  # Old format
           if self.committing:
             function_name = 'CheckChangeOnCommit'
           else:
@@ -1771,6 +1776,8 @@ def DoPresubmitChecks(change,
       else:
         skipped_count += 1
     for filename in presubmit_files:
+      if filename != file_of_interest:
+        continue
       filename = os.path.abspath(filename)
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename).replace('\r\n', '\n')

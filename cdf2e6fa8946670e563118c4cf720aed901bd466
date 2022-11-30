@@ -16,6 +16,24 @@
       "message": "I tested this to make sure that this syntax is supported:\n\n  autoninja -C out\\release ..\\..\\base\\win\\access_token.cc^^\n\nIt should cause access_token.obj to be generated, and it does. lgtm.",
       "revId": "cdf2e6fa8946670e563118c4cf720aed901bd466",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "372fd0e5_4d973ab8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-11-30T02:34:29Z",
+      "side": 1,
+      "message": "Thank you for testing it!",
+      "parentUuid": "8a566f47_3c9280dc",
+      "revId": "cdf2e6fa8946670e563118c4cf720aed901bd466",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

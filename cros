@@ -13,6 +13,8 @@ It is intended to used strictly outside of the chroot.
 """
 
 import os
+import pathlib
+import subprocess
 import sys
 
 
@@ -20,6 +22,8 @@ import sys
 MIN_PYTHON_VER_SOFT = (3, 6)
 # Min version of Python that we *require*.  We abort for older versions.
 MIN_PYTHON_VER_HARD = (3, 6)
+
+DEPOT_TOOLS_DIR = pathlib.Path(__file__).resolve().parent
 
 
 def _FindChromite(path):
@@ -71,6 +75,15 @@ def _CheckPythonVersion():
         'maintain support.', file=sys.stderr)
 
 
+def _BootstrapVpython27():
+  subprocess.run([os.path.join(DEPOT_TOOLS_DIR, 'cipd'), 'ensure',
+                  '-log-level', 'warning',
+                  '-ensure-file',
+                  os.path.join(DEPOT_TOOLS_DIR, 'cros_cipd_manifest.txt'),
+                  '-root', os.path.join(DEPOT_TOOLS_DIR, '.cros_cipd_bin')],
+                 check=True)
+
+
 def main():
   _CheckPythonVersion()
 
@@ -80,7 +93,19 @@ def main():
     return _MissingErrorOut(target)
 
   path = os.path.join(chromite_dir, 'bin', target)
-  os.execv(path, [path] + sys.argv[1:])
+
+  # Check to see if this is a script requiring vpython2.7.
+  with open(path, 'r') as fp:
+    shebang = next(fp).strip()
+  if shebang.split()[-1] in ('python', 'python2', 'python2.7', 'vpython'):
+    _BootstrapVpython27()
+    vpython = os.path.join(DEPOT_TOOLS_DIR, '.cros_cipd_bin', 'vpython')
+    args = [vpython, path]
+    path = vpython
+  else:
+    args = [path]
+
+  os.execv(path, args + sys.argv[1:])
 
 
 if __name__ == '__main__':

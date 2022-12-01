@@ -161,6 +161,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9a243372_7080dbc1",
+        "filename": "cros",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-01T05:33:38Z",
+      "side": 1,
+      "message": "`cros` works inside of a Chromium source checkout too.  it\u0027ll detect the third_party/chromite/ path and use the programs in there.  so you don\u0027t need a CrOS checkout for it.  `cros help` would suffice to test the logic.",
+      "parentUuid": "41553b53_bb395dd2",
+      "revId": "998bd988c922e9b8584511e0b4e302f45f391e24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0292818c_fb029413",
         "filename": "cros",
         "patchSetId": 1

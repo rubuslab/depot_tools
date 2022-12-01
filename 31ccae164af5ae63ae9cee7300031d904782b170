@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4f15483_ad6af7ec",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-01T09:16:31Z",
+      "side": 1,
+      "message": "i guess we can\u0027t share cache dirs ?  is it normal to have a one-to-one mapping for manifest to cache dir ?",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a84e8a5e_f173bddf",
+        "filename": "cros",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-01T09:16:31Z",
+      "side": 1,
+      "message": "all funcs should have at least a one-line docstring",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05c528bd_ecabc896",
+        "filename": "cros",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-01T09:16:31Z",
+      "side": 1,
+      "message": "since you have a `Path` object, you can write `DEPOT_TOOLS_DIR / \u0027cipd\u0027`\n\ncomes up below too",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aba05a36_a4baa208",
+        "filename": "cros",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-01T09:16:31Z",
+      "side": 1,
+      "message": "this cache dir gets repeated.  seems like it should be hoisted to a module constant to make it clear.",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2068ef96_1df4f641",
+        "filename": "cros",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-01T09:16:31Z",
+      "side": 1,
+      "message": "i would open as `\u0027rb\u0027` to not worry about weird encoding issues",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1b194e1_2a8dcfe2",
+        "filename": "cros_cipd_manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-01T09:16:31Z",
+      "side": 1,
+      "message": "i think we\u0027d want to keep the manifest as a distinct name bound to \"it\u0027s for python2 needs\" rather than \"all cros things go in here\".  \"cros_python2_cipd_manifest.txt\" ?  not sure if there\u0027s a convention in here that we want to match.",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f84262e3_fef3caf8",
+        "filename": "cros_cipd_manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-01T09:16:31Z",
+      "side": 1,
+      "message": "should this file live in the top-dir ?  or would `bootstrap/` be better ?  i know depot_tools is already pretty busy with like ~250 things in it.",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "006d8879_fb0b616d",
+        "filename": "cros_cipd_manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-01T09:16:31Z",
+      "side": 1,
+      "message": "this style is outdated.  do the presubmits not catch this ?  i thought we locked that down.",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

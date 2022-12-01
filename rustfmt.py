@@ -25,6 +25,10 @@ class NotFoundError(Exception):
 
 def FindRustfmtToolInChromiumTree():
   """Return a path to the rustfmt executable, or die trying."""
+  rustfmt_executable_path = os.environ.get('RUSTFMT_EXECUTABLE_PATH')
+  if rustfmt_executable_path and os.path.exists(rustfmt_executable_path):
+    return rustfmt_executable_path
+
   chromium_src_path = gclient_paths.GetPrimarySolutionPath()
   if not chromium_src_path:
     raise NotFoundError(

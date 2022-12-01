@@ -20,6 +20,41 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1f68fff3_1353fbab",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-01T23:21:52Z",
+      "side": 1,
+      "message": "\u003e i guess we can\u0027t share cache dirs ?\n\nI don\u0027t think so, because each manifest is passed to \u0027cipd ensure\u0027, which ensures that the given directory contains (only) the specified packages.\n\n\u003e is it normal to have a one-to-one mapping for manifest to cache dir ?\n\nI\u0027m not sure there is a normal for this, since up to now we\u0027ve just had one manifest.",
+      "parentUuid": "b4f15483_ad6af7ec",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9536ceb5_cc71185d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-01T23:21:52Z",
+      "side": 1,
+      "message": "+sokcevic any thoughts on these questions?",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a84e8a5e_f173bddf",
         "filename": "cros",
         "patchSetId": 2
@@ -31,6 +66,24 @@
       "writtenOn": "2022-12-01T09:16:31Z",
       "side": 1,
       "message": "all funcs should have at least a one-line docstring",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "014dc037_e6311b49",
+        "filename": "cros",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-01T23:21:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a84e8a5e_f173bddf",
       "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -52,6 +105,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9216556a_825b4703",
+        "filename": "cros",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-01T23:21:52Z",
+      "side": 1,
+      "message": "neat, done.",
+      "parentUuid": "05c528bd_ecabc896",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aba05a36_a4baa208",
@@ -69,6 +140,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8e40c9b_d035658b",
+        "filename": "cros",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-01T23:21:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aba05a36_a4baa208",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2068ef96_1df4f641",
@@ -82,6 +171,24 @@
       "writtenOn": "2022-12-01T09:16:31Z",
       "side": 1,
       "message": "i would open as `\u0027rb\u0027` to not worry about weird encoding issues",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c0f5dcc_fcb008b7",
+        "filename": "cros",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-01T23:21:52Z",
+      "side": 1,
+      "message": "Done. I opted to make the comparison now be against byte literals, but let me know if you see a reason to prefer decoding to utf-8 instead.",
+      "parentUuid": "2068ef96_1df4f641",
       "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -120,6 +227,42 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "476e3aca_077e981d",
+        "filename": "cros_cipd_manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-01T23:21:52Z",
+      "side": 1,
+      "message": "Yeah, at first I was thinking that cros might sometime want to \u0027ensure\u0027 other CIPD packages so I named it generically. But this python2.7 package is only conditionally installed, so agree. Changed.",
+      "parentUuid": "e1b194e1_2a8dcfe2",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58e1c69c_f646bbc9",
+        "filename": "cros_cipd_manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-01T23:21:52Z",
+      "side": 1,
+      "message": "bootstrap/ is ... different. It is geared towards bootstrapping python and git and in particular generating windows batch file wrappers for these. It might be more confusing to put this there.",
+      "parentUuid": "f84262e3_fef3caf8",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "006d8879_fb0b616d",
@@ -133,6 +276,24 @@
       "writtenOn": "2022-12-01T09:16:31Z",
       "side": 1,
       "message": "this style is outdated.  do the presubmits not catch this ?  i thought we locked that down.",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c927665_ebed360b",
+        "filename": "cros_cipd_manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-01T23:21:52Z",
+      "side": 1,
+      "message": "Hm, usually it does reject it on new files. Perhaps txt files are excluded. Updated.",
+      "parentUuid": "006d8879_fb0b616d",
       "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

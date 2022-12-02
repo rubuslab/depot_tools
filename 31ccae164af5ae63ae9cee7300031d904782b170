@@ -72,6 +72,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0ddfe3c_435e9222",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2022-12-02T01:27:35Z",
+      "side": 1,
+      "message": "I like the idea of using `.cipd*` prefix, it\u0027s more organized. It\u0027s a nit, so won\u0027t block if you decide to keep as is.",
+      "parentUuid": "5cbc2aa3_a021317b",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "9536ceb5_cc71185d",

@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cbc2aa3_a021317b",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-02T01:06:00Z",
+      "side": 1,
+      "message": "@sokcevic@chromium.org I\u0027ll defer to you on the naming",
+      "parentUuid": "210084e2_f48ca66f",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "9536ceb5_cc71185d",

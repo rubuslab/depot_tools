@@ -134,6 +134,30 @@
       },
       "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e9d4cea_58b0f620",
+        "filename": "rustfmt.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2022-12-02T17:31:32Z",
+      "side": 1,
+      "message": "Ok, cool. Thank you",
+      "parentUuid": "53fba938_93ca6804",
+      "range": {
+        "startLine": 41,
+        "startChar": 28,
+        "endLine": 41,
+        "endChar": 50
+      },
+      "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

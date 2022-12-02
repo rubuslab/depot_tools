@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed10f896_0c56a6f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2022-12-02T01:14:55Z",
+      "side": 1,
+      "message": "I defer to danakj@ for this. Once @danakj approves it, ping me via this CL again and I\u0027ll either approve it or get someone else to (I\u0027m in the middle of getting re-added as an OWNER).",
+      "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "62044811_772a47bf",

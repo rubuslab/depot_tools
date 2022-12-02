@@ -110,6 +110,30 @@
       },
       "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53fba938_93ca6804",
+        "filename": "rustfmt.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-12-02T17:04:23Z",
+      "side": 1,
+      "message": "\u003e a) Change it to the built-by-us toolchain path because that will become available on Windows/Mac in the future.\n\nSure, we can do that.\n\n\u003e b) Carry a patch downstream in Brave to use the env var as you do here, which you can then stop carrying eventually.\n\nWell, we don\u0027t have to patch `depot_tools` before, so we don\u0027t have the patch machinery setup for it.\n\nI guess if I\u0027ll put the built-by-you toolchain path, then we can just put manually `rustfmt` at this location for now and be happy.",
+      "parentUuid": "88a18fd9_ab3a9e22",
+      "range": {
+        "startLine": 41,
+        "startChar": 28,
+        "endLine": 41,
+        "endChar": 50
+      },
+      "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

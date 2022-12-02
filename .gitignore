@@ -4,6 +4,7 @@
 # ignore cipd client files
 /.cipd_bin
 /.cipd_client*
+/.cros_python2_cipd_bin
 /.versions
 
 # Ignore "disable auto update" sentinel file.

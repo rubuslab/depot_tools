@@ -335,6 +335,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa31f144_db725512",
+        "filename": "cros_cipd_manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-02T01:46:57Z",
+      "side": 1,
+      "message": "resolved",
+      "parentUuid": "58e1c69c_f646bbc9",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "006d8879_fb0b616d",

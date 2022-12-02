@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "210084e2_f48ca66f",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-02T01:03:12Z",
+      "side": 1,
+      "message": "should we standardize on the prefix `.cipd_bin` ?  so use `.cipd_bin_cros_python2` here ?\n\ndoesn\u0027t super matter to me either way, just thinking outloud.",
+      "parentUuid": "1f68fff3_1353fbab",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "9536ceb5_cc71185d",

@@ -62,6 +62,30 @@
       },
       "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e315bc23_845a7823",
+        "filename": "rustfmt.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-12-02T05:30:44Z",
+      "side": 1,
+      "message": "It\u0027s not that simple. This toolchain is only available on Linux:\n```\n\u0027fetch_prebuilt_chromium_rust_toolchain\u0027: \u0027use_rust and host_os \u003d\u003d \"linux\"\u0027,\n...\n{\n  # Update prebuilt Rust toolchain.\n  \u0027name\u0027: \u0027rust-toolchain\u0027,\n  \u0027pattern\u0027: \u0027.\u0027,\n  \u0027condition\u0027: \u0027fetch_prebuilt_chromium_rust_toolchain\u0027,\n  \u0027action\u0027: [\u0027python3\u0027, \u0027src/tools/rust/update_rust.py\u0027],\n},\n```\n\n`android_rust_toolchain` is available on Linux even with `use_rust \u003d False`:\n```\n  \u0027src/third_party/android_rust_toolchain/toolchain\u0027: {\n    \u0027packages\u0027: [\n      {\n        \u0027package\u0027: \u0027chromium/third_party/android_rust_toolchain/linux-amd64\u0027,\n        \u0027version\u0027: \u0027rMU9JFlwRfB-5VEWgDPRFYme5sXSnsHPSE3uQXf1xBQC\u0027,\n      },\n    ],\n    \u0027dep_type\u0027: \u0027cipd\u0027,\n    # TODO(https://crbug.com/1292038): gate this on use_rust as well as host_os.\n    \u0027condition\u0027: \u0027host_os \u003d\u003d \"linux\"\u0027,\n  },\n```\n\nI don\u0027t think I\u0027m the right person to solve these inconsistencies.\n\nWe (Brave) use custom Rust integration and we would like to have `rustfmt` to work on all platforms (Linux, Mac, Windows) in presubmit checks. Currently this is not possible without a workaround.",
+      "parentUuid": "23d1d494_5bca5903",
+      "range": {
+        "startLine": 41,
+        "startChar": 28,
+        "endLine": 41,
+        "endChar": 50
+      },
+      "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

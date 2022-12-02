@@ -92,6 +92,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2715adc1_2f10830a",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-02T01:46:24Z",
+      "side": 1,
+      "message": "Done, and I renamed the manifest files to follow this convention as well.",
+      "parentUuid": "d0ddfe3c_435e9222",
+      "revId": "31ccae164af5ae63ae9cee7300031d904782b170",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "9536ceb5_cc71185d",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2

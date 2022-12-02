@@ -86,6 +86,30 @@
       },
       "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88a18fd9_ab3a9e22",
+        "filename": "rustfmt.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2022-12-02T16:04:44Z",
+      "side": 1,
+      "message": "Sounds like you\u0027re ahead of us a bit.\n\nI suggest\na) Change it to the built-by-us toolchain path because that will become available on Windows/Mac in the future.\nb) Carry a patch downstream in Brave to use the env var as you do here, which you can then stop carrying eventually.\n\nWDYT?",
+      "parentUuid": "e315bc23_845a7823",
+      "range": {
+        "startLine": 41,
+        "startChar": 28,
+        "endLine": 41,
+        "endChar": 50
+      },
+      "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -5236,8 +5236,36 @@ def BuildGitDiffCmd(diff_type, upstream_commit, args, allow_prefix=False):
 
 
 def _RunClangFormatDiff(opts, clang_diff_files, top_dir, upstream_commit):
-  """Runs clang-format-diff and sets a return value if necessary."""
+  """Runs clang-format-diff.
 
+  Returns: 0 if the diff is already formatted or 2 otherwise.
+  """
+  # TODO(dcheng): Use @functools.cache when 3.9 is available.
+  memoized_should_format = {}
+
+  def ShouldFormatFile(x: str):
+    if not x:
+      return True
+    if x in memoized_should_format:
+      return memoized_should_format[x]
+    path, _ = os.path.split(x)
+    try:
+      with open(os.path.join(path, '.clang-format-ignore')) as ignore_file:
+        print(f'Not formatting files in {path}/*: {ignore_file.read().strip()}')
+        memoized_should_format[x] = False
+        return False
+    except FileNotFoundError:
+      result = ShouldFormatFile(path)
+      memoized_should_format[x] = result
+      return result
+
+  clang_diff_files = [
+      file for file in clang_diff_files if ShouldFormatFile(file)
+  ]
+
+  # The early return here is important. Allowing execution to continue when the
+  # list of files is empty will generally result in the remaining tooling
+  # operating on the entire diff, which is the opposite of what's expected.
   if not clang_diff_files:
     return 0
 

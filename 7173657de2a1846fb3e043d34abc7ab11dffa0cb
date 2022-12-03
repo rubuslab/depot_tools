@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e4bcdc4_e961770a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2022-12-03T00:57:34Z",
+      "side": 1,
+      "message": "Before landing this, I\u0027d like to try to get a solid repro on the clang-format bug and understand if there\u0027s a chance we can address the runtime.\n\nIf not, I think we want to land something along these lines. Thoughts?",
+      "revId": "7173657de2a1846fb3e043d34abc7ab11dffa0cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -33,6 +33,24 @@
       "message": "I wouldn\u0027t actually expect \u0027/?\u0027 to work for either ninja or goma_ctl, but I\u0027m not opposed to supporting it if it\u0027s helpful for you.\n\nSo, your call. The code looks correct to me.",
       "revId": "818d1601c103ead7fd37bcdc6c70aa4d59a28283",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "961798a7_cc3706a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-12-05T22:54:13Z",
+      "side": 1,
+      "message": "Yeah, I briefly couldn\u0027t remember what the goma_ctl commands were, including the help command. I don\u0027t know if I\u0027ll make the mistake again but I think it\u0027s a safe enough change. Batch files are weird.",
+      "parentUuid": "d17e95b0_e89783a9",
+      "revId": "818d1601c103ead7fd37bcdc6c70aa4d59a28283",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13204b84_d187c65a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1545642
+      },
+      "writtenOn": "2022-12-05T15:44:08Z",
+      "side": 1,
+      "message": "Git Infra Roll for Reference - https://chromium.googlesource.com/infra/infra/+/dfa2751bee205e6a18786e09eafd1df61caf5da0",
+      "revId": "77a44648c9a8de61b6845f57bd8f88982bb12323",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

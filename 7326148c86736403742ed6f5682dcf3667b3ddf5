@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9ea28c1_77114202",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002871
+      },
+      "writtenOn": "2022-12-05T13:28:52Z",
+      "side": 1,
+      "message": "As per our discussion on the \"buildtools ninja wrapper advice\" discussion",
+      "revId": "7326148c86736403742ed6f5682dcf3667b3ddf5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

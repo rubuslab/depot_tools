@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0137f81b_517048ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-12-05T06:53:02Z",
+      "side": 1,
+      "message": "PTAL and CQ?",
+      "revId": "b33103ce13228c5cedce8a0feaa0d7b7d55506ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

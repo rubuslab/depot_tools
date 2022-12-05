@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5c3bd07_ec8f076a",
+        "filename": "rustfmt.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-12-05T06:53:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "62044811_772a47bf",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 0
+      },
+      "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23d1d494_5bca5903",
@@ -150,6 +174,30 @@
       "side": 1,
       "message": "Ok, cool. Thank you",
       "parentUuid": "53fba938_93ca6804",
+      "range": {
+        "startLine": 41,
+        "startChar": 28,
+        "endLine": 41,
+        "endChar": 50
+      },
+      "revId": "d5e810247fabc7c02ff1ede0a38f3148e6a66e84",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5442df8_df116c1f",
+        "filename": "rustfmt.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2022-12-05T06:53:02Z",
+      "side": 1,
+      "message": "Fixed as discussed in this thread.",
+      "parentUuid": "0e9d4cea_58b0f620",
       "range": {
         "startLine": 41,
         "startChar": 28,

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c26d6e7_de443f38",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2774,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2022-12-06T05:32:29Z",
+      "side": 1,
+      "message": "This is an API call to gerrit, and can be bundled with GetMostRecentPatchset. But, I suppose ALL_REVISIONS may return a lot more information (some CLs can have dozens of PS) - if there\u0027s concern about data, we should add a comment.\n\nAlternatively, we can just print PSX..Y and add link to Gerrit? E.g. https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4082289/1..2",
+      "revId": "9cff560d3ae9afecdc1f96dcc85feb69b1fb7f40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

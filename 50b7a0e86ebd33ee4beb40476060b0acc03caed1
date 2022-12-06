@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77f4cad0_3162a3c1",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2771,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-12-06T04:44:52Z",
+      "side": 1,
+      "message": "Example output:\n```\n2 external changes were published to https://crrev.com/c/4080593:\n\nPatchset 16 [30ad688c] Edit commit message\nPatchset 15 [82e6ae91] \n\nUploading as-is will override them. Get the latest changes and apply? [Yes/No]: y\n```",
+      "range": {
+        "startLine": 2771,
+        "startChar": 6,
+        "endLine": 2771,
+        "endChar": 11
+      },
+      "revId": "50b7a0e86ebd33ee4beb40476060b0acc03caed1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

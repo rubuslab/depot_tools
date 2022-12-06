@@ -21,6 +21,7 @@ import metrics
 
 @metrics.collector.collect_metrics('git reparent-branch')
 def main(args):
+  print('yes reparent-branch in main')
   root_ref = root()
 
   parser = argparse.ArgumentParser()
@@ -92,7 +93,11 @@ def main(args):
   for branch, parent in topo_iter(branch_tree):
     if parent in branches:
       branches.append(branch)
-  return git_rebase_update.main(['--no-fetch'] + branches)
+  cmd = ['-v', '--no-fetch', '--keep-empty'] + branches
+  print('before git_rebase_update', cmd)
+  ret = git_rebase_update.main(cmd)
+  print('rebase update got ', ret)
+  return ret
 
 
 if __name__ == '__main__':  # pragma: no cover

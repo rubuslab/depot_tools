@@ -221,6 +221,7 @@ def rebase_branch(branch, parent, start_hash):
 
 
 def main(args=None):
+  print('in git rebase update main')
   parser = argparse.ArgumentParser()
   parser.add_argument('--verbose', '-v', action='store_true')
   parser.add_argument('--keep-going', '-k', action='store_true',

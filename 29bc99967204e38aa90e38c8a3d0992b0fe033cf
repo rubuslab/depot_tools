@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1875d1d7_cf95cd29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2022-12-06T06:29:35Z",
+      "side": 1,
+      "message": "not cq+2 since it\u0027s late.",
+      "revId": "29bc99967204e38aa90e38c8a3d0992b0fe033cf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4b8297d_aa5d9507",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-12-06T16:06:29Z",
+      "side": 1,
+      "message": "Makes sense to me.\n\nI think `gn` still depends on buildtools too though.",
+      "revId": "75e23cda3b714ed8e9c68c24fc01aeee54b73b90",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

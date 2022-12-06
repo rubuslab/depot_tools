@@ -16,6 +16,24 @@
       "message": "Makes sense to me.\n\nI think `gn` still depends on buildtools too though.",
       "revId": "75e23cda3b714ed8e9c68c24fc01aeee54b73b90",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be339d65_6bb2c6ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1208984
+      },
+      "writtenOn": "2022-12-06T17:10:05Z",
+      "side": 1,
+      "message": "the gn wrapper looks at both places like I\u0027m doing here:\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gn.py;l\u003d50-62?q\u003df:gn%5C.py\u0026ss\u003dchromium",
+      "parentUuid": "d4b8297d_aa5d9507",
+      "revId": "75e23cda3b714ed8e9c68c24fc01aeee54b73b90",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

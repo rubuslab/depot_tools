@@ -34,6 +34,24 @@
       "parentUuid": "8c26d6e7_de443f38",
       "revId": "9cff560d3ae9afecdc1f96dcc85feb69b1fb7f40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18a2b169_76ebab56",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2774,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2022-12-07T01:10:20Z",
+      "side": 1,
+      "message": "fair points, sgtm. we should still look if we can reduce # of api calls.",
+      "parentUuid": "a25046c9_73d99da6",
+      "revId": "9cff560d3ae9afecdc1f96dcc85feb69b1fb7f40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

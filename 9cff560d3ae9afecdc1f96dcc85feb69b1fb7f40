@@ -16,6 +16,24 @@
       "message": "This is an API call to gerrit, and can be bundled with GetMostRecentPatchset. But, I suppose ALL_REVISIONS may return a lot more information (some CLs can have dozens of PS) - if there\u0027s concern about data, we should add a comment.\n\nAlternatively, we can just print PSX..Y and add link to Gerrit? E.g. https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4082289/1..2",
       "revId": "9cff560d3ae9afecdc1f96dcc85feb69b1fb7f40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a25046c9_73d99da6",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2774,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-12-07T01:08:55Z",
+      "side": 1,
+      "message": "I think it\u0027d be a bit annoying for users to have to switch to gerrit to be reminded on what the new patchsets are.\nand i think they\u0027ll need to be reminded often, because it\u0027s usually going to be \"Edit commit message\" or \"Rebase\" right now(?), not some big change. \n\nwould prefer showing/keeping the commit description somehow, so it\u0027s immediately known what the external changes are:\n```\nPatchset 4 [c6a8fc83] Edit commit message\nPatchset 3 [bede94cc] Rebase\n```",
+      "parentUuid": "8c26d6e7_de443f38",
+      "revId": "9cff560d3ae9afecdc1f96dcc85feb69b1fb7f40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

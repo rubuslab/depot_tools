@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c202219_4233faae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-12-08T13:35:43Z",
+      "side": 1,
+      "message": "This lg with the print() removed. Below is an additional suggestion that you may want to do in a follow-up. (But not doing it is fine too, 3.8 was released a while ago.)",
+      "revId": "8675c8e934cdbfd1ae616b80f9ab414f80edb5ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ac024ee_62ccea2e",
@@ -14,6 +31,24 @@
       "writtenOn": "2022-12-08T12:22:08Z",
       "side": 1,
       "message": "why print this?",
+      "revId": "8675c8e934cdbfd1ae616b80f9ab414f80edb5ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ecf6e38_33b8d6ae",
+        "filename": "ninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-12-08T13:35:43Z",
+      "side": 1,
+      "message": "Also, it might be nice to instead do\n\n```\n\t        s \u003d signal.signal(signal.SIGINT, signal.SIG_DFL)\n\t        assert s \u003d\u003d signal.default_int_handler\n\t        os.kill(os.getpid(), signal.SIGINT)\n```\n\nhere instead, for people who are on Python before version 3.8 and who call ninja from a script in a loop. See https://github.com/nico/hack/blob/main/sigint.sh for why.",
+      "parentUuid": "5ac024ee_62ccea2e",
       "revId": "8675c8e934cdbfd1ae616b80f9ab414f80edb5ef",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

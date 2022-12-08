@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ac024ee_62ccea2e",
+        "filename": "ninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-12-08T12:22:08Z",
+      "side": 1,
+      "message": "why print this?",
+      "revId": "8675c8e934cdbfd1ae616b80f9ab414f80edb5ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

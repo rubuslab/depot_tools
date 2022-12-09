@@ -51,6 +51,24 @@
       "parentUuid": "5ac024ee_62ccea2e",
       "revId": "8675c8e934cdbfd1ae616b80f9ab414f80edb5ef",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09a32b30_e6e122d8",
+        "filename": "ninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2022-12-09T01:54:15Z",
+      "side": 1,
+      "message": "Oh, that\u0027s an interesting issue.\n\nI changed the ninja/ninja.bat wrapper to use the python3 bootstrapped by depot_tools. \n\nPTAL.",
+      "parentUuid": "8ecf6e38_33b8d6ae",
+      "revId": "8675c8e934cdbfd1ae616b80f9ab414f80edb5ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

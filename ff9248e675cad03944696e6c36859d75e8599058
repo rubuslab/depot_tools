@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d0211a1_351072d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2022-12-09T02:02:40Z",
+      "side": 1,
+      "message": "do we always have that python3 around?\n\nI\u0027d land this as two changes, but lg if you think this is safe to land as one.",
+      "revId": "ff9248e675cad03944696e6c36859d75e8599058",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

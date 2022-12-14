@@ -138,7 +138,34 @@ def ensure_gsutil(version, target, clean):
   return gsutil_bin
 
 
+def luci_authenticate(args):
+  """
+  Redirects `gsutil.py config` calls to `luci-auth login`.
+  """
+  # TODO: Adjust permissions based on gsutil.py config args.
+  return subprocess.call(['luci-auth', 'login', '-scopes-context'],
+                         shell=IS_WINDOWS)
+
+
+def luci_auth_wrapper():
+  """
+  Returns luci-auth wrapper to be prepended to gsutil call
+  """
+
+  # TODO: Adjust context to be only revelant to gsutil.
+  if os.getenv('SWARMING_HEADLESS') == '1' or (
+      os.getenv('BOTO_CONFIG') == None
+      and os.getenv('AWS_CREDENTIAL_FILE') == None):
+    return ['luci-auth', 'context', '--']
+
+  return []
+
+
 def run_gsutil(target, args, clean=False):
+  # Redirect gsutil config calls to luci-auth.
+  if 'config' in args:
+    return luci_authenticate(args)
+
   gsutil_bin = ensure_gsutil(VERSION, target, clean)
   args_opt = ['-o', 'GSUtil:software_update_check_period=0']
 
@@ -167,6 +194,10 @@ def run_gsutil(target, args, clean=False):
       '--',
       gsutil_bin
   ] + args_opt + args
+
+  # Add luci-auth wrapper to the gsutil call.
+  cmd = luci_auth_wrapper() + cmd
+
   return subprocess.call(cmd, shell=IS_WINDOWS)
 
 

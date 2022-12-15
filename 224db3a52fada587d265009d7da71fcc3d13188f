@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "71262378_70b6517c",
+        "filename": "gsutil.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-12-15T18:35:23Z",
+      "side": 1,
+      "message": "nit: use `\u0027` single quotes here and below to match rest of file",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 52
+      },
+      "revId": "224db3a52fada587d265009d7da71fcc3d13188f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2b2af3ee_39a89548",
         "filename": "gsutil.py",
         "patchSetId": 4
@@ -19,6 +42,29 @@
         "startChar": 2,
         "endLine": 151,
         "endChar": 5
+      },
+      "revId": "224db3a52fada587d265009d7da71fcc3d13188f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8fc1335_225aa8dd",
+        "filename": "gsutil.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-12-15T18:35:23Z",
+      "side": 1,
+      "message": "delete `+ \\` since python will concatenate these strings anyway",
+      "range": {
+        "startLine": 154,
+        "startChar": 57,
+        "endLine": 154,
+        "endChar": 61
       },
       "revId": "224db3a52fada587d265009d7da71fcc3d13188f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

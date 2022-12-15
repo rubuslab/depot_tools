@@ -46,6 +46,53 @@
       },
       "revId": "86dfe0529f138f87e785e2ce2700e584273d3f4b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c489b34b_13b2e088",
+        "filename": "gsutil.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2022-12-15T22:45:49Z",
+      "side": 1,
+      "message": "The condition below seems wrong.\n\nOn workstations (if BOTO_CONFIG is unset, which it often is), all gsutil.py calls would be hitting luci_context(...) code path (since this is the only way to make authenticated calls).\n\nluci_context(...) just calls _luci_auth_cmd, which always prints the warning. Thus we\u0027ll always be printing the warning.",
+      "parentUuid": "2610ef94_49f98126",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 47
+      },
+      "revId": "86dfe0529f138f87e785e2ce2700e584273d3f4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f2a9465_3b982c27",
+        "filename": "gsutil.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2022-12-15T22:45:49Z",
+      "side": 1,
+      "message": "This seems incorrect. Just based on the comment it should be\n\n```\nif (os.getenv(\u0027SWARMING_HEADLESS\u0027) \u003d\u003d 1 or \n    os.getenv(\u0027BOTO_CONFIG\u0027) or \n    os.getenv(\u0027AWS_CREDENTIAL_FILE\u0027)):\n  return _run_subprocess(cmd)\nreturn luci_context(cmd)\n```\n\nAlso, as I mentioned in the doc, better to replace SWARMING_HEADLESS check with a check for `LUCI_CONFIG[\u0027local_auth\u0027]`.",
+      "range": {
+        "startLine": 211,
+        "startChar": 0,
+        "endLine": 217,
+        "endChar": 29
+      },
+      "revId": "86dfe0529f138f87e785e2ce2700e584273d3f4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

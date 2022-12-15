@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b2af3ee_39a89548",
+        "filename": "gsutil.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-12-15T02:12:57Z",
+      "side": 1,
+      "message": "nit: keep to one line? \nhttps://peps.python.org/pep-0008/#documentation-strings\n\nsame below",
+      "range": {
+        "startLine": 149,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 5
+      },
+      "revId": "224db3a52fada587d265009d7da71fcc3d13188f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eab474e_54c8c9b4",
+        "filename": "gsutil.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2022-12-15T02:12:57Z",
+      "side": 1,
+      "message": "Could we consider something like this\n\n```\ndef luci_wrapped_cmd(cmd):\n  return _luci_auth_cmd(\u0027context\u0027, wrapped_cmds \u003d cmd)\n  \n  \ndef luci_login():\n  return _luci_auth_cmd(\u0027login\u0027)\n\n\ndef _luci_auth_cmd(luci_cmd, wrapped_cmds \u003d None):\n  print(\"WARNING: OOB authentication flow has been deprecated.\")\n  print(\"Using luci-auth login instead.\")\n  print(\"Override luci-auth by setting `BOTO_CONFIG` or \" + \\\n    \"`AWS_CREDENTIAL_FILE` in your env.\\n\")\n\n  cmd \u003d [\u0027luci-auth\u0027, cmd, \u0027-scopes\u0027, \u0027 \u0027.join(LUCI_AUTH_SCOPES)]\n  if wrapped_cmds:\n    cmd +\u003d [\u0027--\u0027] + wrapped_cmds\n  \n  return subprocess.call(cmd, shell\u003dIS_WINDOWS)\n```\n\nthere may be a better way, but mainly it\u0027d be nice to reduce the repeated code and improve maintenance so it\u0027s harder to lose details like `shell\u003dIS_WINDOWS` if we ever move this code around.",
+      "revId": "224db3a52fada587d265009d7da71fcc3d13188f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

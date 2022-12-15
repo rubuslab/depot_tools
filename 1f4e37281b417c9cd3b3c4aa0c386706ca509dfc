@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99ed564e_ff7031bd",
+        "filename": "cros",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-15T20:24:17Z",
+      "side": 1,
+      "message": "is there a way we can skip this if it\u0027s already been bootstrapped ?\n\nthe first bootstrap is slow, so it\u0027d be good if we could post a message like \"Bootstrapping python2, this will take a little bit\" to let users know we aren\u0027t just hung.",
+      "revId": "1f4e37281b417c9cd3b3c4aa0c386706ca509dfc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

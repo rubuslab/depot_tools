@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "482c2d5c_aae897b4",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-12-15T01:03:46Z",
+      "side": 1,
+      "message": "`SWARMING_HEADLESS` ensures gsutil.py not be run in bots. `BOTO_CONFIG` and `AWS_CREDENTIAL_FILE` ensures the credentials aren\u0027t set in another way.",
+      "revId": "0cd8db866d9696365c83ea02ed9d1535fe51fa10",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

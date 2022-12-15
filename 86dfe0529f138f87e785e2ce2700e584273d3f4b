@@ -22,6 +22,30 @@
       },
       "revId": "86dfe0529f138f87e785e2ce2700e584273d3f4b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2610ef94_49f98126",
+        "filename": "gsutil.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-12-15T22:07:51Z",
+      "side": 1,
+      "message": "The `luci_context(cmd)` function is only called when these configs are not set[see line 212].\n\nIf gsutil.py is neither running on a bot nor have .boto config set, I figured it was safe to log what\u0027s happening underneath.",
+      "parentUuid": "6ec9447a_c85dc74a",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 47
+      },
+      "revId": "86dfe0529f138f87e785e2ce2700e584273d3f4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

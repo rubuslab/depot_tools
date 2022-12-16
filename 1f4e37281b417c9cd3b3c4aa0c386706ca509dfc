@@ -16,6 +16,24 @@
       "message": "is there a way we can skip this if it\u0027s already been bootstrapped ?\n\nthe first bootstrap is slow, so it\u0027d be good if we could post a message like \"Bootstrapping python2, this will take a little bit\" to let users know we aren\u0027t just hung.",
       "revId": "1f4e37281b417c9cd3b3c4aa0c386706ca509dfc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8b5dc48_9eea8e4f",
+        "filename": "cros",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-16T00:10:47Z",
+      "side": 1,
+      "message": "I think \u0027ensure\u0027 is supposed to be fairly fast after the first run?\n\nThe issue I see with trying to manually skip it if it\u0027s already been bootstrapped is that we then have to worry about whether the manifest has changed. Which is kind of what cipd is already doing.",
+      "parentUuid": "99ed564e_ff7031bd",
+      "revId": "1f4e37281b417c9cd3b3c4aa0c386706ca509dfc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

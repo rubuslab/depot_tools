@@ -16,6 +16,23 @@
       "message": "Hi -- is it OK to make one more lucicfg release this morning?\n\nThis would remove generation of the (unused) property triggered_by in cq configs.",
       "revId": "e8ee4b482727c035c80441ecf867c90aa78af3e6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0599fd58_32173c20",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003190
+      },
+      "writtenOn": "2022-12-16T17:49:47Z",
+      "side": 1,
+      "message": "Link to change in lucicfg:\nhttps://chromium-review.googlesource.com/c/infra/luci/luci-go/+/4109978",
+      "revId": "e8ee4b482727c035c80441ecf867c90aa78af3e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

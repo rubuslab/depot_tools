@@ -34,6 +34,24 @@
       "parentUuid": "99ed564e_ff7031bd",
       "revId": "1f4e37281b417c9cd3b3c4aa0c386706ca509dfc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a76e27b7_a20d9b92",
+        "filename": "cros",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-16T15:36:16Z",
+      "side": 1,
+      "message": "the point is to issue a message when things are going to be slow.  we aren\u0027t talking about a few extra milliseconds ... cipd bootstrap, on a good connection, adds over 2 seconds of silence.  on a bad connection, it will only be higher.",
+      "parentUuid": "d8b5dc48_9eea8e4f",
+      "revId": "1f4e37281b417c9cd3b3c4aa0c386706ca509dfc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

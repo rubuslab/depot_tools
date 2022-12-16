@@ -110,6 +110,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7fdafcf5_836369b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-16T15:36:16Z",
+      "side": 1,
+      "message": "we don\u0027t have vpython specs on all branches or all scripts.  if you see `python` or `python2`, there is no vpython spec.",
+      "parentUuid": "25f0a8aa_3b24f574",
+      "revId": "b517090f99c8478edea6cbffca2876e83d7a05fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5f9935b1_62e14165",
         "filename": "cros_python2_cipd_manifest.txt",
         "patchSetId": 3

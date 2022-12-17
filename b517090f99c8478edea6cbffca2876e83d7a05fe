@@ -128,6 +128,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a6e051d0_324c00ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-17T23:13:17Z",
+      "side": 1,
+      "message": "Ah, ok I understand now. I will add a default spec in depot_tools.",
+      "parentUuid": "7fdafcf5_836369b1",
+      "revId": "b517090f99c8478edea6cbffca2876e83d7a05fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5f9935b1_62e14165",
         "filename": "cros_python2_cipd_manifest.txt",
         "patchSetId": 3

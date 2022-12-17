@@ -52,6 +52,24 @@
       "parentUuid": "d8b5dc48_9eea8e4f",
       "revId": "1f4e37281b417c9cd3b3c4aa0c386706ca509dfc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc3e8cd6_7d47e88f",
+        "filename": "cros",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-17T23:13:17Z",
+      "side": 1,
+      "message": "I can change -log-level to info? Then when it has packages to install, you\u0027ll get some output like:\n\n[P14114 10:10:59.138 action_plan.go:163 I] In root:\n[P14114 10:10:59.138 action_plan.go:169 I]   to install:\n[P14114 10:10:59.138 action_plan.go:171 I]     infra/tools/luci/vpython2.7/linux-amd64:h5QtZVzDQhAOaO2jJnKQ9sNNf4nPRPAZp52owGNilzQC\n[P14114 10:10:59.138 instancecache.go:189 I] Using temporary instance cache at /usr/local/google/home/bryner/src/depot_tools/.cipd_bin_cros_python2/.cipd/tmp/dl_1549302109\n • [fetch] Fetched infra/tools/luci/vpython2.7/linux-amd64:h5QtZVzDQhAOaO2jJnKQ9sNNf4nPRPAZp52owGNilzQC in 2…\n • [unzip] Deployed infra/tools/luci/vpython2.7/linux-amd64:h5QtZVzDQhAOaO2jJnKQ9sNNf4nPRPAZp52owGNilzQC in …\n[P14114 10:11:02.491 client.go:2127 I] All changes applied.\n\nThere will be no extra output when there is no work to do.",
+      "parentUuid": "a76e27b7_a20d9b92",
+      "revId": "1f4e37281b417c9cd3b3c4aa0c386706ca509dfc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

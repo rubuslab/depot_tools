@@ -9,6 +9,7 @@ from __future__ import print_function
 
 import platform
 import re
+import sys
 
 
 def HostArch():
@@ -36,6 +37,12 @@ def HostArch():
   elif host_arch.startswith('riscv'):
     host_arch = 'riscv64'
 
+  if host_arch == "arm64" and platform.architecture()[1] == "WindowsPE":
+    # Special case for Windows on Arm: windows-386 packages no longer work
+    # so use the x64 emulation (this restricts us to Windows 11).
+    if sys.getwindowsversion().build <= 20000:
+      raise AssertionError("windows-386 is no longer supported")
+    return "x64"
 
   # platform.machine is based on running kernel. It's possible to use 64-bit
   # kernel with 32-bit userland, e.g. to give linker slightly more memory.

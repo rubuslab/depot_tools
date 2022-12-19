@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adb8d9e0_ae4f0519",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2022-12-19T18:57:45Z",
+      "side": 1,
+      "message": "1. This should not be landing during the production freeze.\n2. Even after the freeze, this should be preceded by PSA or something to let users of gsutil.py know what to expect, because they\u0027ll start seeing something they didn\u0027t see before. If it were me, I\u0027d made it conditional based on some env var, so it can be tested end-to-end in real scenarios (e.g. running Chromium gclient hooks) before becoming default.",
+      "revId": "cc037db5bdaa3fad4cfcc848d76bf7b025f7f0ec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b04f00d_806140ec",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2022-12-19T18:57:45Z",
+      "side": 1,
+      "message": "This still will be printed each time gsutil.py is invoked when used by a developer without LUCI_CONTEXT or BOTO_CONFIG. Is that intentional?",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 47
+      },
+      "revId": "cc037db5bdaa3fad4cfcc848d76bf7b025f7f0ec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

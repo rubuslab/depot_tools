@@ -50,6 +50,23 @@
       "message": "gavinmak@, can you take over as reviewer?",
       "revId": "b0bfcf99be504f5304462b99dbd5f649e9593f08",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "447fff65_44deb6f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-12-19T17:56:47Z",
+      "side": 1,
+      "message": "LGTM, but holding off on autosubmit until after prod freeze",
+      "revId": "b0bfcf99be504f5304462b99dbd5f649e9593f08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -39,6 +39,30 @@
       },
       "revId": "cc037db5bdaa3fad4cfcc848d76bf7b025f7f0ec",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14bb38d1_04874440",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2022-12-19T19:18:49Z",
+      "side": 1,
+      "message": "Yes, it is. This is to give the developer a heads-up on the internal redirection to luci-auth.",
+      "parentUuid": "8b04f00d_806140ec",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 47
+      },
+      "revId": "cc037db5bdaa3fad4cfcc848d76bf7b025f7f0ec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

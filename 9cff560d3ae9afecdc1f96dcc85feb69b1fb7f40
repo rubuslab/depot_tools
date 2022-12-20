@@ -52,6 +52,24 @@
       "parentUuid": "a25046c9_73d99da6",
       "revId": "9cff560d3ae9afecdc1f96dcc85feb69b1fb7f40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dd4617f_cfb03236",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2774,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2022-12-20T20:40:28Z",
+      "side": 1,
+      "message": "re # of api calls:\n\n`_GetChangeDetail` caches results from gerrit (assuming options are \"compatible\", see code for more)[1]. and since we call `_IsPatchsetRangeSignificant` which fetches `ALL_REVISIONS` already[2], L2774 should only use cached data.\n\nWe could bundle the `ALL_REVISIONS` option into `GetMostRecentPatchset` (or somewhere earlier) but I\u0027m not sure if the larger upfront fetch would benefit the majority of users w/o metrics.\n\nThoughts on leaving as-is and seeing if user feedback mentions long upload times?\n\n\n[1]https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d2077;drc\u003d591ebafe68938569983d94629901a44cd191cdfe\n[2]https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d1922;drc\u003d591ebafe68938569983d94629901a44cd191cdfe",
+      "parentUuid": "18a2b169_76ebab56",
+      "revId": "9cff560d3ae9afecdc1f96dcc85feb69b1fb7f40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

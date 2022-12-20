@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0da06158_8023d7c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1148599
+      },
+      "writtenOn": "2022-12-20T18:02:35Z",
+      "side": 1,
+      "message": "Hi Dirk,\n\nI\u0027m leaving Chrome, and I\u0027m going through and removing myself from OWNERS files.",
+      "revId": "6041c17c55ac8119612d1e3420f645faa4cfbb02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

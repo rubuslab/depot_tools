@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1723194_81bfa790",
+        "filename": "cros.vpython",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-21T00:07:01Z",
+      "side": 1,
+      "message": "i think naming this `cros.vpython` is very confusing.  will it get picked up by vpython3 usage ?  `cros_python2.vpython` instead ?",
+      "revId": "f9ea599ce4318f2102c1c3538934e95a75a288f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,40 @@
       "message": "i think naming this `cros.vpython` is very confusing.  will it get picked up by vpython3 usage ?  `cros_python2.vpython` instead ?",
       "revId": "f9ea599ce4318f2102c1c3538934e95a75a288f9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09aa342a_12a3e286",
+        "filename": "cros.vpython",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-21T00:17:44Z",
+      "side": 1,
+      "message": "testing this out on firmware-hatch-12672.B, we\u0027re going to need:\n\n```\nwheel: \u003c\n  name: \"infra/python/wheels/psutil/${vpython_platform}\"\n  version: \"version:5.8.0\"\n\u003e\nwheel: \u003c\n  name: \"infra/python/wheels/backports_functools_lru_cache-py2\"\n  version: \"version:1.5\"\n\u003e\nwheel: \u003c\n  name: \"infra/python/wheels/cheroot-py2\"\n  version: \"version:6.2.4\"\n\u003e\nwheel: \u003c\n  name: \"infra/python/wheels/cherrypy-py2\"\n  version: \"version:14.2.0\"\n\u003e\nwheel: \u003c\n  name: \"infra/python/wheels/more-itertools-py2_py3\"\n  version: \"version:4.1.0\"\n\u003e\nwheel: \u003c\n  name: \"infra/python/wheels/portend-py2\"\n  version: \"version:2.2\"\n\u003e\nwheel: \u003c\n  name: \"infra/python/wheels/pytz-py2_py3\"\n  version: \"version:2021.1\"\n\u003e\nwheel: \u003c\n  name: \"infra/python/wheels/tempora-py2\"\n  version: \"version:1.11\"\n\u003e\n```",
+      "revId": "f9ea599ce4318f2102c1c3538934e95a75a288f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89986999_dd48ad1e",
+        "filename": "cros.vpython",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2022-12-21T00:17:44Z",
+      "side": 1,
+      "message": "this will need downgrading to 1.5.2",
+      "revId": "f9ea599ce4318f2102c1c3538934e95a75a288f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

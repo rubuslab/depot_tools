@@ -35,6 +35,42 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60548616_bca8c19b",
+        "filename": "cros.vpython",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-21T00:31:54Z",
+      "side": 1,
+      "message": "I considered that, then thought it was redundant because .vpython implies python 2 (.vpython3 is used for python 3)\n\nBut, I think I agree it\u0027s still confusing, because having a file named \"foo.vpython\" has a special meaning; it\u0027s paired with \"foo\". Updated to use your suggestion.",
+      "parentUuid": "e1723194_81bfa790",
+      "revId": "f9ea599ce4318f2102c1c3538934e95a75a288f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d963b1ac_07885d8b",
+        "filename": "cros.vpython",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-21T00:31:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09aa342a_12a3e286",
+      "revId": "f9ea599ce4318f2102c1c3538934e95a75a288f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89986999_dd48ad1e",
@@ -48,6 +84,24 @@
       "writtenOn": "2022-12-21T00:17:44Z",
       "side": 1,
       "message": "this will need downgrading to 1.5.2",
+      "revId": "f9ea599ce4318f2102c1c3538934e95a75a288f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47e255ca_fb53ab0e",
+        "filename": "cros.vpython",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2022-12-21T00:31:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89986999_dd48ad1e",
       "revId": "f9ea599ce4318f2102c1c3538934e95a75a288f9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

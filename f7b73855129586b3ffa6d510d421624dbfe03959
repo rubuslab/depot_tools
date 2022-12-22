@@ -56,6 +56,30 @@
       },
       "revId": "f7b73855129586b3ffa6d510d421624dbfe03959",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8c8ccd0_9743191b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5029,
+      "author": {
+        "id": 1565647
+      },
+      "writtenOn": "2022-12-22T20:06:08Z",
+      "side": 1,
+      "message": "I completely agree. I couldn\u0027t quite think of what this should be, and was mimicking the --no-branch-color of `git cl status`, but I like \u0027--print-only\u0027 much better. Thanks!",
+      "parentUuid": "05ad6237_c025d55f",
+      "range": {
+        "startLine": 5028,
+        "startChar": 21,
+        "endLine": 5029,
+        "endChar": 33
+      },
+      "revId": "f7b73855129586b3ffa6d510d421624dbfe03959",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

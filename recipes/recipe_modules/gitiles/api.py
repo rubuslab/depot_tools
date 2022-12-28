@@ -5,7 +5,7 @@
 from __future__ import division
 
 import base64
-import sys
+import six
 
 try:
   import urlparse
@@ -136,7 +136,7 @@ class Gitiles(recipe_api.RecipeApi):
 
   def download_file(self, repository_url, file_path, branch='main',
                     step_name=None, attempts=None, **kwargs):
-    """Downloads raw file content from a Gitiles repository.
+    """Downloads raw binary file content from a Gitiles repository.
 
     Args:
       * repository_url (str): Full URL to the repository.
@@ -146,7 +146,7 @@ class Gitiles(recipe_api.RecipeApi):
       * attempts (int): Number of times to try the request before failing.
 
     Returns:
-      Raw file content.
+      Raw binary file content.
     """
     fetch_url = self.m.url.join(repository_url, '+/%s/%s' % (branch, file_path))
     step_result = self._fetch(
@@ -160,13 +160,8 @@ class Gitiles(recipe_api.RecipeApi):
       return None
 
     value = base64.b64decode(step_result.json.output['value'])
-    try:
-      # TODO(crbug.com/1227140): Clean up when py2 is no longer supported.
-      # If the file is not utf-8 encodable, return the bytes
-      if sys.version_info >= (3,):
-        value = value.decode('utf-8')
-    finally:
-      return value
+    # TODO(crbug.com/1227140): Clean up when py2 is no longer supported.
+    return six.ensure_binary(value)
 
   def download_archive(self, repository_url, destination,
                        revision='refs/heads/main'):

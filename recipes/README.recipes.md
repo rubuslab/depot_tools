@@ -554,7 +554,7 @@ PYTHON_VERSION_COMPATIBILITY: PY2+3
 
 Module for polling a git repository using the Gitiles web interface.
 
-&mdash; **def [canonicalize\_repo\_url](/recipes/recipe_modules/gitiles/api.py#231)(self, repo_url):**
+&mdash; **def [canonicalize\_repo\_url](/recipes/recipe_modules/gitiles/api.py#226)(self, repo_url):**
 
 Returns a canonical form of repo_url. If not recognized, returns as is.
     
@@ -569,7 +569,7 @@ Args:
   * step_name (str): If not None, override the step name.
   * attempts (int): Number of times to try the request before failing.
 
-&mdash; **def [download\_archive](/recipes/recipe_modules/gitiles/api.py#171)(self, repository_url, destination, revision='refs/heads/main'):**
+&mdash; **def [download\_archive](/recipes/recipe_modules/gitiles/api.py#166)(self, repository_url, destination, revision='refs/heads/main'):**
 
 Downloads an archive of the repo and extracts it to `destination`.
 
@@ -587,7 +587,7 @@ Args:
 
 &mdash; **def [download\_file](/recipes/recipe_modules/gitiles/api.py#137)(self, repository_url, file_path, branch='main', step_name=None, attempts=None, \*\*kwargs):**
 
-Downloads raw file content from a Gitiles repository.
+Downloads raw binary file content from a Gitiles repository.
 
 Args:
   * repository_url (str): Full URL to the repository.
@@ -597,7 +597,7 @@ Args:
   * attempts (int): Number of times to try the request before failing.
 
 Returns:
-  Raw file content.
+  Raw binary file content.
 
 &mdash; **def [log](/recipes/recipe_modules/gitiles/api.py#75)(self, url, ref, limit=0, cursor=None, step_name=None, attempts=None, \*\*kwargs):**
 
@@ -622,7 +622,7 @@ Returns:
   Cursor can be used for subsequent calls to log for paging. If None,
   signals that there are no more commits to fetch.
 
-&mdash; **def [parse\_repo\_url](/recipes/recipe_modules/gitiles/api.py#220)(self, repo_url):**
+&mdash; **def [parse\_repo\_url](/recipes/recipe_modules/gitiles/api.py#215)(self, repo_url):**
 
 Returns (host, project) pair.
 
@@ -632,7 +632,7 @@ Returns (None, None) if repo_url is not recognized.
 
 Returns a list of refs in the remote repository.
 
-&mdash; **def [unparse\_repo\_url](/recipes/recipe_modules/gitiles/api.py#227)(self, host, project):**
+&mdash; **def [unparse\_repo\_url](/recipes/recipe_modules/gitiles/api.py#222)(self, host, project):**
 
 Generates a Gitiles repo URL. See also parse_repo_url.
 ### *recipe_modules* / [gsutil](/recipes/recipe_modules/gsutil)

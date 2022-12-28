@@ -22,6 +22,7 @@ def RunSteps(api):
   api.gitiles.commit_log(url, api.properties['commit_log_hash'])
 
   data = api.gitiles.download_file(url, 'OWNERS', attempts=5)
+  data = data.decode('utf-8')
   assert data == 'foobar'
 
   data = api.gitiles.download_file(url, 'BYTES', attempts=5)

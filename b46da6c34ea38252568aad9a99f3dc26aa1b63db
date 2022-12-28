@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c338c8ca_6f2c2e88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2022-12-28T22:00:18Z",
+      "side": 1,
+      "message": "This fixes the issue. It triggers six new warnings which you should fix, but they\u0027re just warnings so they don\u0027t need to land first.",
+      "revId": "b46da6c34ea38252568aad9a99f3dc26aa1b63db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

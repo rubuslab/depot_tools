@@ -1430,9 +1430,23 @@ class GetPostUploadExecuter(object):
     Return:
       A list of results objects.
     """
+    # Change to the presubmit file's directory to support local imports.
+    presubmit_dir = os.path.dirname(presubmit_path)
+    main_path = os.getcwd()
+    try:
+      os.chdir(presubmit_dir)
+      return self._execute_with_local_working_directory(script_text,
+                                                        presubmit_dir,
+                                                        presubmit_path)
+    finally:
+      # Return the process to the original working directory.
+      os.chdir(main_path)
+
+  def _execute_with_local_working_directory(self, script_text, presubmit_dir,
+                                            presubmit_path):
     context = {}
     try:
-      exec(compile(script_text, 'PRESUBMIT.py', 'exec', dont_inherit=True),
+      exec(compile(script_text, presubmit_path, 'exec', dont_inherit=True),
            context)
     except Exception as e:
       raise PresubmitFailure('"%s" had an exception.\n%s'
@@ -1553,10 +1567,19 @@ class PresubmitExecuter(object):
       A list of result objects, empty if no problems.
     """
     # Change to the presubmit file's directory to support local imports.
-    main_path = os.getcwd()
     presubmit_dir = os.path.dirname(presubmit_path)
-    os.chdir(presubmit_dir)
+    main_path = os.getcwd()
+    try:
+      os.chdir(presubmit_dir)
+      return self._execute_with_local_working_directory(script_text,
+                                                        presubmit_dir,
+                                                        presubmit_path)
+    finally:
+      # Return the process to the original working directory.
+      os.chdir(main_path)
 
+  def _execute_with_local_working_directory(self, script_text, presubmit_dir,
+                                            presubmit_path):
     # Load the presubmit script into context.
     input_api = InputApi(self.change, presubmit_path, self.committing,
                          self.verbose, gerrit_obj=self.gerrit,
@@ -1632,8 +1655,6 @@ class PresubmitExecuter(object):
       for f in input_api._named_temporary_files:
         os.remove(f)
 
-    # Return the process to the original working directory.
-    os.chdir(main_path)
     return results
 
   def _run_check_function(self, function_name, context, sink, presubmit_path):

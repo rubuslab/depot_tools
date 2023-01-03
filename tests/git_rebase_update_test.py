@@ -118,7 +118,7 @@ class GitRebaseUpdateTest(git_test_utils.GitRepoReadWriteTestBase):
             E F G
     A old_file
     """)
-    self.assertEqual(self.repo['A'], self.origin['A'])
+    self.assertEqual(self.repo['A'], self.origin['B'])
     self.assertEqual(self.repo['E'], self.origin['E'])
 
     with self.repo.open('bob', 'wb') as f:

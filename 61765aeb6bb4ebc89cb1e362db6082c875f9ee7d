@@ -16,6 +16,24 @@
       "message": "LGTM. Is this tested?",
       "revId": "61765aeb6bb4ebc89cb1e362db6082c875f9ee7d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7221ff0c_561f06b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1175129
+      },
+      "writtenOn": "2023-01-04T16:30:22Z",
+      "side": 1,
+      "message": "Yup, tested that it fixed the issue of the \"spurious\" warning message for me :-)",
+      "parentUuid": "82658af0_fc0685bc",
+      "revId": "61765aeb6bb4ebc89cb1e362db6082c875f9ee7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

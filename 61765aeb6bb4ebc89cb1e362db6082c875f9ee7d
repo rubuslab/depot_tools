@@ -52,6 +52,24 @@
       "parentUuid": "7221ff0c_561f06b1",
       "revId": "61765aeb6bb4ebc89cb1e362db6082c875f9ee7d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "328d57ad_767e82bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1175129
+      },
+      "writtenOn": "2023-01-04T20:09:22Z",
+      "side": 1,
+      "message": "Do we have some tests we run manually for changes like this, or is \"using it locally for a few days and nothing broke\" a good enough regression test?",
+      "parentUuid": "7221ff0c_561f06b1",
+      "revId": "61765aeb6bb4ebc89cb1e362db6082c875f9ee7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

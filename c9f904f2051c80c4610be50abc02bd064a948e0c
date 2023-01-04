@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bee1e897_e79b7a5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1464828
+      },
+      "writtenOn": "2023-01-04T04:00:10Z",
+      "side": 1,
+      "message": "Hi Bruce \n\nI run git cl upload and encounter an error：\n\u0027\u0027\u0027\nluyahan@plct-dev-7:~/v8/v8 $ git cl upload\nRunning Python 3 presubmit upload checks ...\nTraceback (most recent call last):\n  File \"/home/luyahan/v8/depot_tools/presubmit_support.py\", line 2111, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"/home/luyahan/v8/depot_tools/presubmit_support.py\", line 2087, in main\n    return DoPresubmitChecks(\n  File \"/home/luyahan/v8/depot_tools/presubmit_support.py\", line 1759, in DoPresubmitChecks\n    os.remove(python2_usage_log_file)\nPermissionError: [Errno 1] Operation not permitted: \u0027/tmp/python2_usage.txt\u0027\n\u0027\u0027\u0027\n\nI run it in a server and have many people work on it.\n\nCan you help me? Thanks~",
+      "revId": "c9f904f2051c80c4610be50abc02bd064a948e0c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "I don\u0027t understand why this change is needed. Can you add examples (before/after) to the CL description so we can see what this is fixing?\n\nI.e., I would expect `\u0026\u0026` to work and I\u0027m not sure why you\u0027d need `;` instead",
       "revId": "38e9eb84362bd59fe7963c601f0cc34ba53f35b6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28ccbeb1_8cd8d6d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-05T15:22:37Z",
+      "side": 1,
+      "message": "The issue is that we catch the keyboard interrupt in ninja.py[1] and instead return a exit code of 1. This means that a string of `\u0026\u0026` will end if ninja returns a non zero exit code or is interrupted.\nSee my minimal repro here https://bit.googleplex.com/#/bentekkie/6137299328827392\nIf `and.sh` is killed via ctrl-C during the loop in `code.py`, after is not printed\nBut `always.sh` always prints after even if it is killed via ctrl-C during the loop in `code.py`\n\n[1] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:ninja.py;drc\u003d22bbba13ce1aab365a1f451faecdd0557580698c;l\u003d87",
+      "parentUuid": "814e52c3_8c38534f",
+      "revId": "38e9eb84362bd59fe7963c601f0cc34ba53f35b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

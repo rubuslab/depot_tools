@@ -70,6 +70,24 @@
       "parentUuid": "7221ff0c_561f06b1",
       "revId": "61765aeb6bb4ebc89cb1e362db6082c875f9ee7d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63d8f2fe_28ae786f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-05T01:52:03Z",
+      "side": 1,
+      "message": "We basically run checks but otherwise, \"using it locally for a few days and nothing broke\" is a good enough regression test.",
+      "parentUuid": "328d57ad_767e82bc",
+      "revId": "61765aeb6bb4ebc89cb1e362db6082c875f9ee7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

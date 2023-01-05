@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e09fd22e_f3fb631f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1175129
+      },
+      "writtenOn": "2023-01-05T10:35:27Z",
+      "side": 1,
+      "message": "So, turns out there were issues, which were probably hidden by the fact",
+      "revId": "766f9d7fe351a69509a5679d14c01adb85aa464a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c1ae413_f2a0c676",
+        "filename": "presubmit_support.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1422,
+      "author": {
+        "id": 1175129
+      },
+      "writtenOn": "2023-01-05T10:35:27Z",
+      "side": 1,
+      "message": "BTW I wasn\u0027t sure if this was called `ExecPresubmitScript` on purpose:\n\nIt actually executs the post-upload hook (so it could be called `ExecPostUploadHook` I guess)\n\nHowever that hook is in a PRESUBMIT.py file - so it is technically executing a part of a presubmit script.\n\nAlso, maybe the original author wnated this to be consistent with PresubmitExecutor in naming, so those could be treated as implementations of the same interface.\n\nI\u0027ve decided to not rename it, but WDYT?",
+      "range": {
+        "startLine": 1422,
+        "startChar": 6,
+        "endLine": 1422,
+        "endChar": 25
+      },
+      "revId": "766f9d7fe351a69509a5679d14c01adb85aa464a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

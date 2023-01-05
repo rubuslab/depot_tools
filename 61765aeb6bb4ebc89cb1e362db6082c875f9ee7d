@@ -88,6 +88,24 @@
       "parentUuid": "328d57ad_767e82bc",
       "revId": "61765aeb6bb4ebc89cb1e362db6082c875f9ee7d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf787ab7_e329fc94",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1175129
+      },
+      "writtenOn": "2023-01-05T10:35:27Z",
+      "side": 1,
+      "message": "So, turns out that there were issues - probably hidden by the fact that the PRESUBMIT files I was usually triggering in my \"daily usage\" testing didn\u0027t have any post-submit hooks.\n\nLuckily the unit tests (which I didn\u0027t know existed before hitting CQ+2 - didn\u0027t occur to me to look into a subdirectory, lol) caught them.\n\nSo I\u0027ve fixed the issues (I had forgotten to pass gerrit_obj) and for consistency I\u0027ve made the PresubmitExecuter and \"GetPostUploadExecuter\" more similar in their interface.\n\nAlso added unit tests for this.\n\nPTAL at the new version - thanks! :-)",
+      "parentUuid": "63d8f2fe_28ae786f",
+      "revId": "61765aeb6bb4ebc89cb1e362db6082c875f9ee7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

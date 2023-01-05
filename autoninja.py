@@ -71,10 +71,11 @@ def main(args):
   # they exist and using remoteexec, then automatically call bootstrap to start
   # reproxy.  This works under the current assumption that the output
   # directory is two levels up from chromium/src.
-  reclient_bin_dir = os.path.join(output_dir, '..', '..', 'buildtools',
-                                  'reclient')
-  reclient_cfg = os.path.join(output_dir, '..', '..', 'buildtools',
-                              'reclient_cfgs', 'reproxy.cfg')
+  reclient_bin_dir = os.path.normpath(
+      os.path.join(output_dir, '..', '..', 'buildtools', 'reclient'))
+  reclient_cfg = os.path.normpath(
+      os.path.join(output_dir, '..', '..', 'buildtools', 'reclient_cfgs',
+                   'reproxy.cfg'))
 
   # Attempt to auto-detect remote build acceleration. We support gn-based
   # builds, where we look for args.gn in the build tree, and cmake-based builds
@@ -179,8 +180,17 @@ def main(args):
 
   # Call ninja.py so that it can find ninja binary installed by DEPS or one in
   # PATH.
-  ninja_path = os.path.join(SCRIPT_DIR, 'ninja.py')
-  args = prefix_args + [sys.executable, ninja_path] + input_args[1:]
+  ninja_path = [os.path.join(SCRIPT_DIR, 'ninja.py')]
+  # If using remoteexec and the necessary environment variables are set,
+  # also start reproxy (via bootstrap) before running ninja.
+  if (not offline and use_remoteexec and os.path.exists(reclient_bin_dir)
+      and os.path.exists(reclient_cfg)):
+    ninja_path = [
+        os.path.join(SCRIPT_DIR,
+                     'ninja_reclient.py'), "--reclient_cfg=" + reclient_cfg,
+        "--reclient_bin_dir=" + reclient_bin_dir, "--"
+    ]
+  args = prefix_args + [sys.executable] + ninja_path + input_args[1:]
 
   num_cores = multiprocessing.cpu_count()
   if not j_specified and not t_specified:
@@ -228,21 +238,6 @@ def main(args):
 
   if os.environ.get('NINJA_SUMMARIZE_BUILD', '0') == '1':
     args += ['-d', 'stats']
-
-  # If using remoteexec and the necessary environment variables are set,
-  # also start reproxy (via bootstrap) before running ninja.
-  if (not offline and use_remoteexec and os.path.exists(reclient_bin_dir)
-      and os.path.exists(reclient_cfg)):
-    bootstrap = os.path.join(reclient_bin_dir, 'bootstrap')
-    setup_args = [
-        bootstrap, '--cfg=' + reclient_cfg,
-        '--re_proxy=' + os.path.join(reclient_bin_dir, 'reproxy')
-    ]
-
-    teardown_args = [bootstrap, '--cfg=' + reclient_cfg, '--shutdown']
-
-    cmd_sep = '\n' if sys.platform.startswith('win') else '&&'
-    args = setup_args + [cmd_sep] + args + [cmd_sep] + teardown_args
 
   if offline and not sys.platform.startswith('win'):
     # Tell goma or reclient to do local compiles. On Windows these environment

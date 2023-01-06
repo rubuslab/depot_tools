@@ -70,6 +70,24 @@
       "parentUuid": "18a2b169_76ebab56",
       "revId": "9cff560d3ae9afecdc1f96dcc85feb69b1fb7f40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8459e5d4_b94fc2f5",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2774,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-06T19:25:25Z",
+      "side": 1,
+      "message": "sgtm",
+      "parentUuid": "0dd4617f_cfb03236",
+      "revId": "9cff560d3ae9afecdc1f96dcc85feb69b1fb7f40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

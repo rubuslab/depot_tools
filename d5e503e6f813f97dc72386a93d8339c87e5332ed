@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47cb5ebf_ce16e929",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-06T20:09:54Z",
+      "side": 1,
+      "message": "add crbug/1405491 ?",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "revId": "d5e503e6f813f97dc72386a93d8339c87e5332ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

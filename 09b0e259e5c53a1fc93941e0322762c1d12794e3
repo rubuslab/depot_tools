@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b7e41c1_05571c08",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1160944
+      },
+      "writtenOn": "2023-01-06T23:57:22Z",
+      "side": 1,
+      "message": "Hi, Bruce! The Nest/Chromecast team noticed their builds using `autoninja` have been unusually slow recently, and I traced it to the fact that the script autodetects builds to accelerate by looking for `use_goma` and `use_remoteexec` in the gn flags. Our builds use a buildflag called `use_rbe` instead; if we add a regex matching this to this script, it speeds up our builds again.",
+      "revId": "09b0e259e5c53a1fc93941e0322762c1d12794e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -96,6 +96,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "707398be_af6d7e33",
+        "filename": "gsutil.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-06T01:46:14Z",
+      "side": 1,
+      "message": "\u003e Another alternative is to avoid luci-auth context and figure out how to use \"pluggable credentials\" with gsutil (see the comment I left in the doc).\n\nWhat\u0027s the advantage of doing this?\n\npluggable credentials expects an executable which gives formatted response for google auth to use[1]. The expected response is different from how luci-auth stores it[2], and hence would require depot_tools in maintaining an additional script which google auth can call.\n\nThis would still require us to redirect `gsutil.py config` calls to `luci-auth login`. For the `luci-auth context` part, we\u0027ll have to pretty much write a script that checks if luci-auth is set, do validations, and pass the credential as a formatted output file to pluggable credential. I see two issues with this:\n1. The script pretty much would do what `luci-auth context` already does.\n2. The script will break if anything within luci-auth changes and hence will need to manually sync.\n\nUnless there is a significant performance advantage for using pluggable credentials over `luci-auth context`, I find this to be more straight-forward and manageable for local development. \n\n\n[1] https://github.com/googleapis/google-auth-library-python/blob/6c1297c4d69ba40a8b9392775c17411253fcd73b/google/auth/pluggable.py#L23\n[2] https://github.com/googleapis/google-auth-library-python/blob/6c1297c4d69ba40a8b9392775c17411253fcd73b/google/auth/pluggable.py#L347-L375",
+      "parentUuid": "6db47246_4038143c",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 47
+      },
+      "revId": "86dfe0529f138f87e785e2ce2700e584273d3f4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f2a9465_3b982c27",

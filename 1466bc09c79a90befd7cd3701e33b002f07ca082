@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae209182_55feda0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-06T20:05:26Z",
+      "side": 1,
+      "message": "This is just a prototype, I am looking for feedback so see if this approach would be acceptable to ensure that the reproxy lifecycle is handled correctly for developers",
+      "revId": "1466bc09c79a90befd7cd3701e33b002f07ca082",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

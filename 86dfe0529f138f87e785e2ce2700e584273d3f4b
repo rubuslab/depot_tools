@@ -120,6 +120,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e5389a1_0187a37f",
+        "filename": "gsutil.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2023-01-09T21:50:28Z",
+      "side": 1,
+      "message": "Performance is the primary motivation. If it caches external credentials correctly (but I don\u0027t know if it does), then it will need to call `luci-auth token` once per hour instead of every time gsutil is called. It will also allow to use stock unwrapped (but sufficiently recent) gsutil. One just need to point it to a correct BOTO_CONFIG. This may matter if some version of gsutil is used outside of depot_tools.\n\n\u003e The expected response is different from how luci-auth stores it\n\nThis is relatively trivial to change in luci-auth code. No need for a wrapper script, can just add arguments to `luci-auth token` to indicate it is used as a pluggable credential provider.\n\n\u003e we\u0027ll have to pretty much write a script that checks if luci-auth is set\n\nI think if we choose pluggable credentials route (which is a mechanism supported by gsutil natively) we\u0027ll just document that \"You need to configure gsutil to use luci-auth as a credential provider by running this script\").",
+      "parentUuid": "707398be_af6d7e33",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 47
+      },
+      "revId": "86dfe0529f138f87e785e2ce2700e584273d3f4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f2a9465_3b982c27",

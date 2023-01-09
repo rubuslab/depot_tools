@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6256311a_2d3a5303",
+        "filename": "gsutil.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2023-01-09T21:50:28Z",
+      "side": 1,
+      "message": "nit: GSUTIL_ENABLE_LUCI_AUTH or something, to give a context what this variable affects.",
+      "range": {
+        "startLine": 41,
+        "startChar": 20,
+        "endLine": 41,
+        "endChar": 36
+      },
+      "revId": "51aabad15b50dd1264de4987ec862eb87cf302e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

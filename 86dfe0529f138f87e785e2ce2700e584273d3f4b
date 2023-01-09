@@ -144,6 +144,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "027754b5_3bae049f",
+        "filename": "gsutil.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-09T22:55:29Z",
+      "side": 1,
+      "message": "\u003e Performance is the primary motivation. If it caches external credentials correctly (but I don\u0027t know if it does)\n\nAt least from skimming through pluggable credentials implementation, I do not see them caching the credential[1]. I might be wrong though.\n\n[1] https://github.com/googleapis/google-auth-library-python/blob/6c1297c4d69ba40a8b9392775c17411253fcd73b/google/auth/pluggable.py#L214",
+      "parentUuid": "1e5389a1_0187a37f",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 47
+      },
+      "revId": "86dfe0529f138f87e785e2ce2700e584273d3f4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f2a9465_3b982c27",

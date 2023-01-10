@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0450fc9_c717ef58",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-10T02:19:54Z",
+      "side": 1,
+      "message": "add test",
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e9d9d14_ba822c4d",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-10T02:19:54Z",
+      "side": 1,
+      "message": "sort",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5140e926_5a0ce084",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-10T02:19:54Z",
+      "side": 1,
+      "message": "sort",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 0
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d690637_d0a3748c",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-10T02:19:54Z",
+      "side": 1,
+      "message": "Showing this everytime is noisy?",
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7711e71e_3492105f",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-10T02:19:54Z",
+      "side": 1,
+      "message": "reproxy is not stopped in normal exit case?",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 16
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b42392f_2fb60542",
+        "filename": "reclient_paths.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-10T02:19:54Z",
+      "side": 1,
+      "message": "add test",
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "216bd531_7199e392",
+        "filename": "reclient_paths.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-10T02:19:54Z",
+      "side": 1,
+      "message": "this can be None?",
+      "range": {
+        "startLine": 18,
+        "startChar": 9,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

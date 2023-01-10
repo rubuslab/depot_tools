@@ -41,6 +41,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbdb74b9_afe17826",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-10T19:18:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0450fc9_c717ef58",
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e9d9d14_ba822c4d",
@@ -54,6 +72,30 @@
       "writtenOn": "2023-01-10T02:19:54Z",
       "side": 1,
       "message": "sort",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cd744ba_5ff15e7b",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-10T19:18:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e9d9d14_ba822c4d",
       "range": {
         "startLine": 10,
         "startChar": 0,
@@ -87,6 +129,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94aa37b3_d0077a37",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-10T19:18:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5140e926_5a0ce084",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 0
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7d690637_d0a3748c",
@@ -100,6 +166,24 @@
       "writtenOn": "2023-01-10T02:19:54Z",
       "side": 1,
       "message": "Showing this everytime is noisy?",
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "372f81e2_987f7546",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-10T19:18:06Z",
+      "side": 1,
+      "message": "This is the current behaviour with autoninja, I assume to give developers confidence of what is being run. I have changed this to logging.info instead",
+      "parentUuid": "7d690637_d0a3748c",
       "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -150,6 +234,54 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3242ddc4_f895c74c",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-10T19:18:06Z",
+      "side": 1,
+      "message": "For that use case a developer should use ninja.py directly as they are responsible for that reproxy instance.",
+      "parentUuid": "ca7d4ddc_229eda73",
+      "range": {
+        "startLine": 52,
+        "startChar": 9,
+        "endLine": 53,
+        "endChar": 16
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1842d35f_43c7b04e",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-10T19:18:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7711e71e_3492105f",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 16
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5b42392f_2fb60542",
@@ -167,6 +299,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4dd2c43_15e4b3af",
+        "filename": "reclient_paths.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-10T19:18:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b42392f_2fb60542",
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "216bd531_7199e392",
@@ -180,6 +330,30 @@
       "writtenOn": "2023-01-10T02:19:54Z",
       "side": 1,
       "message": "this can be None?",
+      "range": {
+        "startLine": 18,
+        "startChar": 9,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d8cac80_2fce9486",
+        "filename": "reclient_paths.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-10T19:18:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "216bd531_7199e392",
       "range": {
         "startLine": 18,
         "startChar": 9,

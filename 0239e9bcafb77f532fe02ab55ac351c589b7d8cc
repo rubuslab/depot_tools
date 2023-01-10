@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "63ead722_710e5daf",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-10T06:11:14Z",
+      "side": 1,
+      "message": "I was wondering if autoninja executes ninja instead of printing the command, so that it can have a logic to shutdown reproxy gracefully.\n\n{autoninja.py, autoninja.bat, autoninja} were introduced in https://crrev.com/c/517662 in 2017. But, I couldn\u0027t find a reason for why autoninja.py needs to print the command. I guess it was for something related to Windows.\n\n\n@brucedawson@chromium.org @ukai@google.com\nDo you think it\u0027s fine to execute ninja command in autoninja.py?",
+      "range": {
+        "startLine": 247,
+        "startChar": 2,
+        "endLine": 247,
+        "endChar": 7
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d0450fc9_c717ef58",
         "filename": "ninja_reclient.py",
         "patchSetId": 5
@@ -97,6 +120,29 @@
       "range": {
         "startLine": 53,
         "startChar": 4,
+        "endLine": 53,
+        "endChar": 16
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca7d4ddc_229eda73",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-10T06:11:14Z",
+      "side": 1,
+      "message": "IIRC, this will break the workflow where a user launches a reproxy manually and keeps running it.\ngo/rbe/dev/x/internal/setup/chrome/linux#manual-startup-of-reproxy",
+      "range": {
+        "startLine": 52,
+        "startChar": 9,
         "endLine": 53,
         "endChar": 16
       },

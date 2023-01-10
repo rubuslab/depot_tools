@@ -36,6 +36,8 @@ class TestBase(unittest.TestCase):
     mock.patch('os.environ', {}).start()
     mock.patch('os.getcwd', self.getcwd).start()
     mock.patch('os.path.exists', self.exists).start()
+    mock.patch('os.path.isdir', self.isdir).start()
+    mock.patch('os.path.isfile', self.exists).start()
     mock.patch('os.path.realpath', side_effect=lambda path: path).start()
     mock.patch('subprocess2.check_output').start()
     mock.patch('sys.platform', '').start()
@@ -47,6 +49,9 @@ class TestBase(unittest.TestCase):
 
   def exists(self, path):
     return path in self.file_tree
+
+  def isdir(self, dir_path):
+    return any(path.startswith(dir_path + os.sep) for path in self.file_tree)
 
   def read(self, path):
     return self.file_tree[path]

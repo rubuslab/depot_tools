@@ -16,6 +16,29 @@
       "message": "Hi Gavin, could you take a look at this depot_tools CL (9 lines)?\n\nThanks in advance\nRichard",
       "revId": "5b66094487202ae476237370c4f02ea6e06c7ed5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fcc9428_0e5703d3",
+        "filename": "detect_host_arch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-10T17:55:11Z",
+      "side": 1,
+      "message": "nit: move to a variable and lowercase it to be consistent with host_arch and host_processor.",
+      "range": {
+        "startLine": 39,
+        "startChar": 11,
+        "endLine": 39,
+        "endChar": 36
+      },
+      "revId": "5b66094487202ae476237370c4f02ea6e06c7ed5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

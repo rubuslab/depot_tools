@@ -2496,13 +2496,20 @@ class Changelist(object):
         change_desc.set_preserve_tryjobs()
 
       remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
+      print('remote %s upstream_branch %s' % (remote, upstream_branch))
+      print('external_parent %s' % external_parent)
       parent = external_parent or self._ComputeParent(
           remote, upstream_branch, custom_cl_base, options.force, change_desc)
       tree = RunGit(['rev-parse', 'HEAD:']).strip()
+      print('parent %s' % parent)
+      print('tree %s' % tree)
+
       with gclient_utils.temporary_file() as desc_tempfile:
         gclient_utils.FileWrite(desc_tempfile, change_desc.description)
         ref_to_push = RunGit(
             ['commit-tree', tree, '-p', parent, '-F', desc_tempfile]).strip()
+      print('ref_to_push %s' % ref_to_push)
+      print('desc_tempfile %s' % desc_tempfile)
     else:  # if not options.squash
       if options.no_add_changeid:
         pass
@@ -2528,6 +2535,7 @@ class Changelist(object):
     SaveDescriptionBackup(change_desc)
     commits = RunGitSilent(['rev-list', '%s..%s' % (parent,
                                                     ref_to_push)]).splitlines()
+    print('commits %s' % commits)
     if len(commits) > 1:
       print('WARNING: This will upload %d commits. Run the following command '
             'to see which commits will be uploaded: ' % len(commits))
@@ -2734,16 +2742,16 @@ class Changelist(object):
                                      GERRIT_SQUASH_HASH_CONFIG_KEY)
     # Verify that the upstream branch has been uploaded too, otherwise
     # Gerrit will create additional CLs when uploading.
-    if not parent or (RunGitSilent(['rev-parse', upstream_branch + ':']) !=
-                      RunGitSilent(['rev-parse', parent + ':'])):
-      DieWithError(
-          '\nUpload upstream branch %s first.\n'
-          'It is likely that this branch has been rebased since its last '
-          'upload, so you just need to upload it again.\n'
-          '(If you uploaded it with --no-squash, then branch dependencies '
-          'are not supported, and you should reupload with --squash.)'
-          % upstream_branch_name,
-          change_desc)
+    #if not parent or (RunGitSilent(['rev-parse', upstream_branch + ':']) !=
+    #                  RunGitSilent(['rev-parse', parent + ':'])):
+    #  DieWithError(
+    #      '\nUpload upstream branch %s first.\n'
+    #      'It is likely that this branch has been rebased since its last '
+    #      'upload, so you just need to upload it again.\n'
+    #      '(If you uploaded it with --no-squash, then branch dependencies '
+    #      'are not supported, and you should reupload with --squash.)'
+    #      % upstream_branch_name,
+    #      change_desc)
     return parent
 
   def _UpdateWithExternalChanges(self):
@@ -4526,6 +4534,7 @@ def CMDupload(parser, args):
   parser.add_option('--no-python2-post-upload-hooks',
                     action='store_true',
                     help='Only run post-upload hooks in Python 3.')
+  parser.add_option('--stacked', action='store_true', help='remove later')
 
   orig_args = args
   (options, args) = parser.parse_args(args)
@@ -4567,6 +4576,12 @@ def CMDupload(parser, args):
     # Load default for user, repo, squash=true, in this order.
     options.squash = settings.GetSquashGerritUploads()
 
+  if options.stacked:
+    orig_args.remove('--stacked')
+
+    ret = UploadAll(options, args, orig_args)
+    sys.exit()
+
   cl = Changelist(branchref=options.target_branch)
   # Warm change details cache now to avoid RPCs later, reducing latency for
   # developers.
@@ -4600,6 +4615,84 @@ def CMDupload(parser, args):
     _trigger_tryjobs(cl, jobs, options, patchset + 1)
 
   return ret
+
+
+def UploadAll(options, args, orig_args):
+  """ """
+
+  upstream_branch_name = None
+  branch = options.target_branch
+  cls = []
+  branches_by_short_name = {}
+  while upstream_branch_name not in ('master', 'main'):
+    cl = Changelist(branchref=branch)
+    _, upstream_branch = cl.FetchUpstreamTuple(cl.GetBranch())
+    upstream_branch_name = scm.GIT.ShortBranchName(upstream_branch)
+    branches_by_short_name[upstream_branch_name] = upstream_branch
+    cls.append(cl)
+    branch = upstream_branch
+
+  parent = None
+  final_cl = None
+  for cl in reversed(cls):
+    if parent is None:
+      _, upstream_branch = cl.FetchUpstreamTuple(cl.GetBranch())
+      upstream_branch_name = scm.GIT.ShortBranchName(upstream_branch)
+      if upstream_branch_name == 'main':
+        parent = cl.GetCommonAncestorWithUpstream()
+      else:
+        parent = scm.GIT.GetBranchConfig(settings.GetRoot(),
+                                         upstream_branch_name,
+                                         GERRIT_SQUASH_HASH_CONFIG_KEY)
+
+    rev_to_commit = _GetSquashedCommit(cl, parent, options, orig_args)
+    print(rev_to_commit)
+    if rev_to_commit:
+      # Set paraent for next CL to newly created squashed commit.
+      parent = rev_to_commit
+      final_cl = cl
+    else:
+      parent = None
+
+  if rev_to_commit:
+    remote, remote_branch = final_cl.GetRemoteBranch()
+    branch = GetTargetRef(remote, remote_branch, options.target_branch)
+    refspec = '%s:refs/for/%s' % (rev_to_commit, branch)
+    print(refspec)
+    push_stdout = final_cl._RunGitPushWithTraces(refspec, [], {})
+  print(cls)
+  sys.exit()
+
+
+def _GetSquashedCommit(cl, parent, options, orig_args):
+  """."""
+  last_gerrit_commit = scm.GIT.GetBranchConfig(settings.GetRoot(), cl.branch,
+                                               GERRIT_SQUASH_HASH_CONFIG_KEY)
+  latest_tree = RunGit(['rev-parse', cl.branchref + ':']).strip()
+
+  if last_gerrit_commit and (RunGitSilent(
+      ['rev-parse', last_gerrit_commit + ':']).strip() == latest_tree):
+    # Nothing to commit since last time
+    return None
+
+  if not orig_args:
+    orig_args = [parent, latest_tree]
+  files = cl.GetAffectedFiles(cl.GetCommonAncestorWithUpstream())
+  change_desc = cl._GetDescriptionForUpload(options, orig_args, files)
+  if cl.GetIssue():
+    change_detail = cl._GetChangeDetail(['CURRENT_REVISION'])
+    change_id = change_detail['change_id']
+    change_desc.ensure_change_id(change_id)
+  else:
+    change_id = GenerateGerritChangeId(change_desc.description)
+    change_desc.ensure_change_id(change_id)
+
+  with gclient_utils.temporary_file() as desc_tempfile:
+    gclient_utils.FileWrite(desc_tempfile, change_desc.description)
+    commit_to_push = RunGit(
+        ['commit-tree', latest_tree, '-p', parent, '-F',
+         desc_tempfile]).strip()
+    return commit_to_push
 
 
 @subcommand.usage('--description=<description file>')

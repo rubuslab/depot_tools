@@ -130,6 +130,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2e071b0_2b5d554c",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-11T22:41:16Z",
+      "side": 1,
+      "message": "They seem to be returning `1` technically[1][2][3] but I get `2` at some cases. I guess reading stderr is fine.\n\n[1] https://chromium.googlesource.com/infra/luci/luci-go/+/refs/heads/main/auth/client/authcli/authcli.go#211\n[2] https://chromium.googlesource.com/infra/luci/luci-go/+/refs/heads/main/auth/client/authcli/authcli.go#516\n[3] https://chromium.googlesource.com/infra/luci/luci-go/+/refs/heads/main/auth/client/authcli/authcli.go#515",
+      "parentUuid": "96b76051_567a8c50",
+      "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8a09a9f_4c6c1f29",

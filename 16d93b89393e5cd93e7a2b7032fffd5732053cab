@@ -3,6 +3,69 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d1c6f76b_22a54474",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-11T22:19:30Z",
+      "side": 1,
+      "message": "nit: this message sounds like OOB is used, but that is not the case. Consider changing to something like:\n\n    print(\u0027Using luci-auth login since OOB is deprecated.\u0027)",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 181,
+        "endChar": 41
+      },
+      "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11df0986_62c38955",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-11T22:19:30Z",
+      "side": 1,
+      "message": "Maybe we just recommend BOTO_CONFIG?",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 47
+      },
+      "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68aed922_54f733b2",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-11T22:19:30Z",
+      "side": 1,
+      "message": "looks like returncode can be 1 too:\n\n```\nsokcevic@sokac ~/source/depot_tools\n % GSUTIL_ENABLE_LUCI_AUTH\u003d1 gsutil.py ls    \nWARNING: OOB authentication flow has been deprecated.\nUsing luci-auth login instead.\nOverride luci-auth by setting `BOTO_CONFIG` or `AWS_CREDENTIAL_FILE` in your env.\n\nNot logged in.\n\nLogin by running:\n   $ luci-auth login -scopes-context\n\nsokcevic@sokac ~/source/depot_tools\n % echo $?\n1\n```\n\nperhaps we need to use stderr after all...",
+      "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e8a09a9f_4c6c1f29",
         "filename": "gsutil.py",
         "patchSetId": 8
@@ -68,6 +131,23 @@
         "endLine": 215,
         "endChar": 69
       },
+      "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fe6f0e5_7ad88fdd",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-11T22:19:30Z",
+      "side": 1,
+      "message": "nit:\n\n    print(p.stderr, file\u003dsys.stderr)",
       "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bccb90cf_d245f61a",
+        "filename": "gsutil.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-11T17:35:12Z",
+      "side": 1,
+      "message": "nit: use optional argument `interactive` that decides if we use `call` or `run`. That way, we can avoid luci_cmd \u003d\u003d \u0027login\u0027",
+      "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "399d9a2b_fbbb5773",
+        "filename": "gsutil.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-11T17:35:12Z",
+      "side": 1,
+      "message": "nit: technically, we need stdin to support interactive login too; so maybe just simplify this to say it\u0027s interactive.",
+      "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cc02a03_7977562c",
+        "filename": "gsutil.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-11T17:35:12Z",
+      "side": 1,
+      "message": "Does `Not logged in` have its own exit code? If so, we could use that instead of parsing stderr.",
+      "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd9bf82e_17b6394a",
+        "filename": "gsutil.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-11T17:35:12Z",
+      "side": 1,
+      "message": "We shouldn\u0027t be modifying envvars; we should copy it and use that.\n\ne.g.\n\n    env \u003d os.environ.copy()\n    env[\u0027LUCI_AUTH_LOGIN_SESSIONS_HOST\u0027] \u003d \u0027ci.chromium.org\u0027\n    return env",
+      "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       },
       "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5784dbe4_daf9e94a",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-11T22:03:47Z",
+      "side": 1,
+      "message": "typo, I meant \"or can they be deduped\"",
+      "parentUuid": "e8a09a9f_4c6c1f29",
+      "range": {
+        "startLine": 214,
+        "startChar": 2,
+        "endLine": 215,
+        "endChar": 69
+      },
+      "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

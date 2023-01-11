@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8a09a9f_4c6c1f29",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-11T22:02:32Z",
+      "side": 1,
+      "message": "is `SubprocessResponse` + `subprocess.call` necessary or they be deduped with the `subprocess.run` on L225? `run` provides a `CompletedProcess` instance that contains all of these fields\n\nhttps://docs.python.org/3/library/subprocess.html#using-the-subprocess-module",
+      "range": {
+        "startLine": 214,
+        "startChar": 2,
+        "endLine": 215,
+        "endChar": 69
+      },
+      "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

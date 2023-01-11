@@ -169,10 +169,11 @@ def luci_context(cmd):
 
 def luci_login():
   """Helper to run `luci-auth login`."""
-  _luci_auth_cmd('login')
+  # luci-auth requires interactive shell.
+  return _luci_auth_cmd('login', interactive=True)
 
 
-def _luci_auth_cmd(luci_cmd, wrapped_cmds=None):
+def _luci_auth_cmd(luci_cmd, wrapped_cmds=None, interactive=False):
   """Helper to call luci-auth command."""
   print('WARNING: OOB authentication flow has been deprecated.')
   print('Using luci-auth login instead.')
@@ -183,18 +184,56 @@ def _luci_auth_cmd(luci_cmd, wrapped_cmds=None):
   if wrapped_cmds:
     cmd += ['--'] + wrapped_cmds
 
-  return _run_subprocess(cmd)
+  if interactive:
+    return _run_subprocess(cmd, interactive=True, env=_enable_luci_auth_ui())
+
+  p = _run_subprocess(cmd, env=_enable_luci_auth_ui())
+
+  # If luci-auth is not logged in.
+  if p.returncode == 2:
+    print('Not logged in.\n')
+    print('Login by running:')
+    print('\t$ gsutil.py config')
+  else:
+    _print_subprocess(p)
+
+  return p
 
 
-def _run_subprocess(cmd):
+def _enable_luci_auth_ui():
+  """Returns environment variables to enable luci-auth"""
+  # TODO(aravindvasudev): clean up after luci-auth UI is released.
+  return {'LUCI_AUTH_LOGIN_SESSIONS_HOST': 'ci.chromium.org'}
+
+
+def _run_subprocess(cmd, interactive=False, env=None):
   """Wrapper to run the given command within a subprocess."""
-  return subprocess.call(cmd, shell=IS_WINDOWS)
+  if not env:
+    env = {}
+
+  if interactive:
+    return subprocess.run(cmd, shell=IS_WINDOWS, env=dict(os.environ, **env))
+
+  return subprocess.run(cmd,
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE,
+                        shell=IS_WINDOWS,
+                        env=dict(os.environ, **env))
+
+
+def _print_subprocess(p):
+  """Prints subprocess response to console."""
+  if p.stdout:
+    print(p.stdout.decode("utf-8"))
+
+  if p.stderr:
+    print(p.stderr.decode("utf-8"))
 
 
 def run_gsutil(target, args, clean=False):
   # Redirect gsutil config calls to luci-auth.
   if os.getenv(GSUTIL_ENABLE_LUCI_AUTH) == '1' and 'config' in args:
-    return luci_login()
+    return luci_login().returncode
 
   gsutil_bin = ensure_gsutil(VERSION, target, clean)
   args_opt = ['-o', 'GSUtil:software_update_check_period=0']
@@ -229,9 +268,12 @@ def run_gsutil(target, args, clean=False):
   if (os.getenv(GSUTIL_ENABLE_LUCI_AUTH) != '1' or _is_luci_context()
       or os.getenv('SWARMING_HEADLESS') == '1' or os.getenv('BOTO_CONFIG')
       or os.getenv('AWS_CREDENTIAL_FILE')):
-    return _run_subprocess(cmd)
+    p = _run_subprocess(cmd)
+    _print_subprocess(p)
 
-  return luci_context(cmd)
+    return p.returncode
+
+  return luci_context(cmd).returncode
 
 
 def parse_args():

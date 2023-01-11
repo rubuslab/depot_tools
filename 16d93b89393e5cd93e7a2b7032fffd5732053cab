@@ -46,6 +46,30 @@
       },
       "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87f85151_e25b7490",
+        "filename": "gsutil.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-11T22:15:48Z",
+      "side": 1,
+      "message": "Ah, I didn\u0027t realize I could simply use subprocess.run without piping the output for interactive shell. Updated this.",
+      "parentUuid": "e8a09a9f_4c6c1f29",
+      "range": {
+        "startLine": 214,
+        "startChar": 2,
+        "endLine": 215,
+        "endChar": 69
+      },
+      "revId": "16d93b89393e5cd93e7a2b7032fffd5732053cab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

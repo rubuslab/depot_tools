@@ -169,7 +169,10 @@ def luci_context(cmd):
 
 def luci_login():
   """Helper to run `luci-auth login`."""
-  _luci_auth_cmd('login')
+  # luci-auth login is a special case. Since it runs an interactive login,
+  # the stdout is required to be attached to a terminal.
+  cmd = ['luci-auth', 'login', '-scopes', ' '.join(LUCI_AUTH_SCOPES)]
+  return subprocess.call(cmd, shell=IS_WINDOWS)
 
 
 def _luci_auth_cmd(luci_cmd, wrapped_cmds=None):
@@ -183,17 +186,38 @@ def _luci_auth_cmd(luci_cmd, wrapped_cmds=None):
   if wrapped_cmds:
     cmd += ['--'] + wrapped_cmds
 
-  return _run_subprocess(cmd)
+  p = _run_subprocess(cmd)
+
+  # If luci-auth is not logged in.
+  if 'Not logged in.' in p.stderr.decode("utf-8"):
+    print('Not logged in.\n')
+    print('Login by running:')
+    print('\t$ gsutil.py config')
+  else:
+    print(p.stdout.decode("utf-8"))
+    print(p.stderr.decode("utf-8"))
+
+  return p
+
+
+def _enable_luci_auth_ui():
+  """Enables luci-auth CI"""
+  # TODO(aravindvasudev): clean up after luci-auth UI is released.
+  os.environ['LUCI_AUTH_LOGIN_SESSIONS_HOST'] = 'ci.chromium.org'
 
 
 def _run_subprocess(cmd):
   """Wrapper to run the given command within a subprocess."""
-  return subprocess.call(cmd, shell=IS_WINDOWS)
+  return subprocess.run(cmd,
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE,
+                        shell=IS_WINDOWS)
 
 
 def run_gsutil(target, args, clean=False):
   # Redirect gsutil config calls to luci-auth.
   if os.getenv(GSUTIL_ENABLE_LUCI_AUTH) == '1' and 'config' in args:
+    _enable_luci_auth_ui()
     return luci_login()
 
   gsutil_bin = ensure_gsutil(VERSION, target, clean)
@@ -229,9 +253,13 @@ def run_gsutil(target, args, clean=False):
   if (os.getenv(GSUTIL_ENABLE_LUCI_AUTH) != '1' or _is_luci_context()
       or os.getenv('SWARMING_HEADLESS') == '1' or os.getenv('BOTO_CONFIG')
       or os.getenv('AWS_CREDENTIAL_FILE')):
-    return _run_subprocess(cmd)
+    p = _run_subprocess(cmd)
+    print(p.stdout.decode("utf-8"))
+    print(p.stderr.decode("utf-8"))
+    return p.returncode
 
-  return luci_context(cmd)
+  _enable_luci_auth_ui()
+  return luci_context(cmd).returncode
 
 
 def parse_args():

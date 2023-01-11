@@ -16,6 +16,24 @@
       "message": "Instead of printing `luci-auth login -scopes`, this update prints `gsutil.py config`. This helps with setting required login scopes.",
       "revId": "8d2f5fe770b5c60f322d48f214aaed6188ea5d27",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b04df300_df212b59",
+        "filename": "gsutil.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-11T08:07:42Z",
+      "side": 1,
+      "message": "```\n$ GSUTIL_ENABLE_LUCI_AUTH\u003d1 gsutil.py ls\nWARNING: OOB authentication flow has been deprecated.\nUsing luci-auth login instead.\nOverride luci-auth by setting `BOTO_CONFIG` or `AWS_CREDENTIAL_FILE` in your env.\n\nNot logged in.\n\nLogin by running:\n\t$ gsutil.py config\n```",
+      "parentUuid": "da873d9f_7a3f4d4a",
+      "revId": "8d2f5fe770b5c60f322d48f214aaed6188ea5d27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

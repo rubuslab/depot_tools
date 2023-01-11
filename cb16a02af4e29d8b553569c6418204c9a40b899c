@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00fc0b77_af6593d4",
+        "filename": "gsutil.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-11T21:33:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bccb90cf_d245f61a",
+      "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "399d9a2b_fbbb5773",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-01-11T17:35:12Z",
       "side": 1,
       "message": "nit: technically, we need stdin to support interactive login too; so maybe just simplify this to say it\u0027s interactive.",
+      "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f2515fa_20100059",
+        "filename": "gsutil.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-11T21:33:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "399d9a2b_fbbb5773",
       "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -52,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "11f6e4a7_9cca3e29",
+        "filename": "gsutil.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-11T21:33:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4cc02a03_7977562c",
+      "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd9bf82e_17b6394a",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-01-11T17:35:12Z",
       "side": 1,
       "message": "We shouldn\u0027t be modifying envvars; we should copy it and use that.\n\ne.g.\n\n    env \u003d os.environ.copy()\n    env[\u0027LUCI_AUTH_LOGIN_SESSIONS_HOST\u0027] \u003d \u0027ci.chromium.org\u0027\n    return env",
+      "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7eb890c_1cccea19",
+        "filename": "gsutil.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-11T21:33:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd9bf82e_17b6394a",
       "revId": "cb16a02af4e29d8b553569c6418204c9a40b899c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

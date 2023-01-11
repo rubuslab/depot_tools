@@ -1,5 +1,9 @@
 # gclient
 
+bar
+
+baz
+
 gclient is a tool for managing a modular checkout of source code from multiple
 source code repositories. It wraps underlying source code management commands
 to provide support for distributing tree updates, status commands, and diffs

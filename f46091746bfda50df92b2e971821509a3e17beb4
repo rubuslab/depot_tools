@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6233e919_8eef50b9",
+        "filename": "gsutil.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-12T19:05:49Z",
+      "side": 1,
+      "message": "maybe just use directly? since there\u0027s only once instance of `_print_subprocess`\n\nand if encoding is specified in `run` above, we can skip remove all the `decode`s, https://docs.python.org/3/library/subprocess.html#subprocess.run",
+      "range": {
+        "startLine": 222,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 21
+      },
+      "revId": "f46091746bfda50df92b2e971821509a3e17beb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

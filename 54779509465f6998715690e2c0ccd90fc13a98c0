@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aee4510b_d2bc83d3",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2023-01-12T19:10:31Z",
+      "side": 1,
+      "message": "btw does this already have arm64 cpython bundled with it?\n\nShould we also change https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/main/bootstrap/manifest.txt by adding windows-arm64 there?",
+      "range": {
+        "startLine": 39,
+        "startChar": 17,
+        "endLine": 39,
+        "endChar": 24
+      },
+      "revId": "54779509465f6998715690e2c0ccd90fc13a98c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

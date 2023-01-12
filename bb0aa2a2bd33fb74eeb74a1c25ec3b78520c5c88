@@ -16,6 +16,24 @@
       "message": "take this?",
       "revId": "bb0aa2a2bd33fb74eeb74a1c25ec3b78520c5c88",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8261c8eb_e55bda9d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-01-12T07:14:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b57ff41_9e82ff0a",
+      "revId": "bb0aa2a2bd33fb74eeb74a1c25ec3b78520c5c88",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

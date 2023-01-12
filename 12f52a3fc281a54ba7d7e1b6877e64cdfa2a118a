@@ -33,6 +33,24 @@
       "message": "this is fine with me, but no mention of bumping git version for all in the commit message.",
       "revId": "12f52a3fc281a54ba7d7e1b6877e64cdfa2a118a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00dad0cb_1862affd",
+        "filename": "bootstrap/manifest.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-01-12T23:14:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5bf0f0e3_177fd24d",
+      "revId": "12f52a3fc281a54ba7d7e1b6877e64cdfa2a118a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

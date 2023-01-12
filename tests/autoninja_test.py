@@ -20,20 +20,43 @@ class AutoninjaTest(unittest.TestCase):
   def test_autoninja(self):
     autoninja.main([])
 
-  def test_autoninja_goma(self):
+  @unittest.mock.patch('subprocess.call', return_value=0)
+  @unittest.mock.patch('os.path.exists', return_value=True)
+  def test_autoninja_goma(self, mock_exists, mock_call):
     with unittest.mock.patch(
-        'os.path.exists',
-        return_value=True) as mock_exists, unittest.mock.patch(
-            'autoninja.open', unittest.mock.mock_open(
-                read_data='use_goma=true')) as mock_open, unittest.mock.patch(
-                    'subprocess.call', return_value=0):
+        'autoninja.open',
+        unittest.mock.mock_open(read_data='use_goma=true')) as mock_open:
+      args = autoninja.main([]).split()
+
+      mock_exists.assert_called()
+      mock_open.assert_called_once()
+      self.assertIn('-j', args)
+      parallel_j = int(args[args.index('-j') + 1])
+      self.assertGreater(parallel_j, multiprocessing.cpu_count())
+      self.assertIn(os.path.join(autoninja.SCRIPT_DIR, 'ninja.py'), args)
+
+  @unittest.mock.patch('subprocess.call', return_value=0)
+  @unittest.mock.patch('reclient_paths.find_reclient_bin_dir',
+                       return_value="/path/to/bin/dir")
+  @unittest.mock.patch('reclient_paths.find_reclient_cfg',
+                       return_value="/path/to/reproxy.cfg")
+  @unittest.mock.patch('os.path.exists', return_value=True)
+  def test_autoninja_reclient(self, mock_exists, mock_reclient_cfg,
+                              mock_reclient_bin_dir, mock_call):
+    with unittest.mock.patch(
+        'autoninja.open',
+        unittest.mock.mock_open(read_data='use_remoteexec=true')) as mock_open:
       args = autoninja.main([]).split()
       mock_exists.assert_called()
       mock_open.assert_called_once()
-
-    self.assertIn('-j', args)
-    parallel_j = int(args[args.index('-j') + 1])
-    self.assertGreater(parallel_j, multiprocessing.cpu_count())
+      mock_reclient_cfg.assert_called_once()
+      mock_reclient_bin_dir.assert_called_once()
+      self.assertIn('-j', args)
+      parallel_j = int(args[args.index('-j') + 1])
+      self.assertGreater(parallel_j, multiprocessing.cpu_count())
+      self.assertNotIn(os.path.join(autoninja.SCRIPT_DIR, 'ninja.py'), args)
+      self.assertIn(os.path.join(autoninja.SCRIPT_DIR, 'ninja_reclient.py'),
+                    args)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21e69f73_8a92579d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-01-12T23:00:55Z",
+      "side": 1,
+      "message": "@sokcevic@chromium.org for bootstrap/manifest approval",
+      "revId": "12f52a3fc281a54ba7d7e1b6877e64cdfa2a118a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

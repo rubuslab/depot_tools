@@ -22,6 +22,30 @@
       },
       "revId": "54779509465f6998715690e2c0ccd90fc13a98c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "070224fc_370a4d75",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-01-12T23:00:55Z",
+      "side": 1,
+      "message": "It has amd64 cpython 3.8 bundled with it, which will run in emulated mode (and seems to work fine). windows-arm64 is only officially natively supported starting with Python 3.11.\n\nYes, that bootstrap manifest needs updated as well. Added.\n\nNote that in that file also, the -arm64 CIPD packages for cpython(3) are really the amd64 cpython(3), for the reason above.\n\nThe git package is also really an amd64 binary, because we currently don\u0027t build it from source on windows and they haven\u0027t released an arm64 binary yet. However, as of the 2.39 update, the amd64 binary appears to work ok via emulation.",
+      "parentUuid": "aee4510b_d2bc83d3",
+      "range": {
+        "startLine": 39,
+        "startChar": 17,
+        "endLine": 39,
+        "endChar": 24
+      },
+      "revId": "54779509465f6998715690e2c0ccd90fc13a98c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

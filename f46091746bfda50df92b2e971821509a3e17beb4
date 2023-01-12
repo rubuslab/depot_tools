@@ -22,6 +22,30 @@
       },
       "revId": "f46091746bfda50df92b2e971821509a3e17beb4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1421bf8_1e1ba8e4",
+        "filename": "gsutil.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-12T19:52:29Z",
+      "side": 1,
+      "message": "There are two instances initially and hence the function. Cleaned it up.",
+      "parentUuid": "6233e919_8eef50b9",
+      "range": {
+        "startLine": 222,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 21
+      },
+      "revId": "f46091746bfda50df92b2e971821509a3e17beb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

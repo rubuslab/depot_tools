@@ -74,6 +74,30 @@
       },
       "revId": "12f52a3fc281a54ba7d7e1b6877e64cdfa2a118a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d22eceb_7829d617",
+        "filename": "bootstrap/manifest_bleeding_edge.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-01-12T23:17:34Z",
+      "side": 1,
+      "message": "I don\u0027t have a particular opinion on this; all of the packages listed here are still being built for windows-386 (if we can stop doing _that_, please let me know!)\n\nJosip, any thoughts?",
+      "parentUuid": "89ba1625_72e1e724",
+      "range": {
+        "startLine": 18,
+        "startChar": 18,
+        "endLine": 18,
+        "endChar": 29
+      },
+      "revId": "12f52a3fc281a54ba7d7e1b6877e64cdfa2a118a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

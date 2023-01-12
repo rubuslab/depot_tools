@@ -146,6 +146,30 @@
       },
       "revId": "12f52a3fc281a54ba7d7e1b6877e64cdfa2a118a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0478f3fe_2568e6ca",
+        "filename": "bootstrap/manifest_bleeding_edge.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2023-01-12T23:25:58Z",
+      "side": 1,
+      "message": "windows-386 was removed from manifest.txt in https://chromium.googlesource.com/chromium/tools/depot_tools/+/6900c00a1a17d20e8667988d6a57abaabcc32971 I don\u0027t know how much discussion was done.",
+      "parentUuid": "3289bcfc_fcc94a64",
+      "range": {
+        "startLine": 18,
+        "startChar": 18,
+        "endLine": 18,
+        "endChar": 29
+      },
+      "revId": "12f52a3fc281a54ba7d7e1b6877e64cdfa2a118a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

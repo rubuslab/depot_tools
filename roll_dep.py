@@ -199,6 +199,7 @@ def finalize(commit_msg, current_dir, rolls):
 
   # Pull the dependency to the right revision. This is surprising to users
   # otherwise.
+  check_call(['git', 'submodule', 'update'], cwd=current_dir)
   for _head, roll_to, full_dir in sorted(rolls.values()):
     check_call(['git', 'checkout', '--quiet', roll_to], cwd=full_dir)
 

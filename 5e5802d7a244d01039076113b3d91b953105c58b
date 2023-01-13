@@ -118,6 +118,30 @@
       },
       "revId": "5e5802d7a244d01039076113b3d91b953105c58b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5460c03_66592e55",
+        "filename": "gsutil.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-13T17:08:06Z",
+      "side": 1,
+      "message": "Given google auth is deprecating OOB, we have a limited window to rollout this feature. I can push the reland to Monday for now. I will discuss with my team to see if pushing a bit later is possible.\n\nDo you have a date in mind when the servers will be updated?",
+      "parentUuid": "1e13a4a2_4932eb54",
+      "range": {
+        "startLine": 213,
+        "startChar": 31,
+        "endLine": 213,
+        "endChar": 53
+      },
+      "revId": "5e5802d7a244d01039076113b3d91b953105c58b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

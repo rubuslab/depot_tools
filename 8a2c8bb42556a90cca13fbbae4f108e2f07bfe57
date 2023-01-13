@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a00e553_01a1d162",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2023-01-13T16:36:51Z",
+      "side": 1,
+      "message": "I\u0027ve created the revert, so you can land it if you agree that depot_tools cannot require Python \u003e\u003d3.10 to run.\n\nIf I\u0027m mistaken, and this is a requirement, then the revert doesn\u0027t need to happen.\n\nThe 3.10 feature that is used is\nChanged in version 3.10: The keyword-only parameter encoding and errors are added.",
+      "revId": "8a2c8bb42556a90cca13fbbae4f108e2f07bfe57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {

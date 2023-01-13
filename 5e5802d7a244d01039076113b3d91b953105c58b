@@ -46,6 +46,30 @@
       },
       "revId": "5e5802d7a244d01039076113b3d91b953105c58b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93357be8_16045223",
+        "filename": "gsutil.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-13T16:48:32Z",
+      "side": 1,
+      "message": "\u003e This \u0027encoding\u0027 argument requires python version 3.10.\n\nThe argument is a part of py3.6[1].\n\n[1] https://docs.python.org/3.6/library/subprocess.html#subprocess.run",
+      "parentUuid": "6ef95b4c_e6519fe2",
+      "range": {
+        "startLine": 213,
+        "startChar": 31,
+        "endLine": 213,
+        "endChar": 53
+      },
+      "revId": "5e5802d7a244d01039076113b3d91b953105c58b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

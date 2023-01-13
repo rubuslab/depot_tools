@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a1e3222_e6db8c40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-13T19:33:01Z",
+      "side": 1,
+      "message": "removing args that were unused in the last 12 months\nhttp://shortn/_xtwfRhHLc4\n\nwant agreement on what we\u0027re removing first before i make major adjustments to code.\n\nNote:\ntbr-owners\u0027 and \u0027r-owners\u0027 both go into options.add_owners_to which has been used 3 times in the past 12 months, but 0 times in the past 6months.\nCould this also be something we remove?\n\nremove later:\n--dependencies was not used at all, but we\u0027re removing that soon anyways.\n--no-python2-post-upload-hooks, i assume we\u0027ll remove eventually\n\nmisc:\n--git-completion-helper, i don\u0027t understand the point of this when we have `git cl upload -help`. would also like to remove it, but it was used 12 times this year.",
+      "revId": "530c1715f8ffd5359b9ca8fda6b15fbe22d4c38d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

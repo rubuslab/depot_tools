@@ -94,6 +94,30 @@
       },
       "revId": "5e5802d7a244d01039076113b3d91b953105c58b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e13a4a2_4932eb54",
+        "filename": "gsutil.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2023-01-13T17:02:32Z",
+      "side": 1,
+      "message": "Our server is running on Google Cloud VM image from Ubuntu 16.04. We have had an issue filed to update it, so we will update it to 18 or 20 now.  Our workaround is just to use an earlier version of depot_tools right now, but we can update the server next week, since the Python requirement is 3.8.\n\nI see that the reference I found was for a different call, not subprocess, so yes, the reverted CL only requires 3.6, and should be accepted in depot_tools. We do have a workaround, but we will also no longer need the workaround next week, so waiting until then to reland would be helpful.",
+      "parentUuid": "6ef95b4c_e6519fe2",
+      "range": {
+        "startLine": 213,
+        "startChar": 31,
+        "endLine": 213,
+        "endChar": 53
+      },
+      "revId": "5e5802d7a244d01039076113b3d91b953105c58b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -70,6 +70,30 @@
       },
       "revId": "5e5802d7a244d01039076113b3d91b953105c58b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84d5a8ab_3a2f6d5b",
+        "filename": "gsutil.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-13T17:00:25Z",
+      "side": 1,
+      "message": "```\n#!/usr/bin/env python3\n```\n\nLooking into this, `gsutil.py` is set to run with py3 as default and the minimum requirement for py3 is 3.8, which supports this argument. Is there a reason for your utility to run in 3.5?",
+      "parentUuid": "93357be8_16045223",
+      "range": {
+        "startLine": 213,
+        "startChar": 31,
+        "endLine": 213,
+        "endChar": 53
+      },
+      "revId": "5e5802d7a244d01039076113b3d91b953105c58b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

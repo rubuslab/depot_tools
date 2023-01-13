@@ -16,6 +16,24 @@
       "message": "I\u0027ve created the revert, so you can land it if you agree that depot_tools cannot require Python \u003e\u003d3.10 to run.\n\nIf I\u0027m mistaken, and this is a requirement, then the revert doesn\u0027t need to happen.\n\nThe 3.10 feature that is used is\nChanged in version 3.10: The keyword-only parameter encoding and errors are added.",
       "revId": "8a2c8bb42556a90cca13fbbae4f108e2f07bfe57",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69be875a_c802b9d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-13T16:44:44Z",
+      "side": 1,
+      "message": "Copying my response from the original CL:\n\nI have approved the revert for now for fix the immediate issue.\n\n\u003e We are running this utility on python version 3.5\n\ndepot_tools requires python 3.8[1]. Is there a reason the utility still uses 3.5? On that note, subprocess.run is not a part of py 2.7 anyway so this needs a fix.\n\n[1] https://chromium.googlesource.com/chromium/tools/depot_tools/+/HEAD/README.md",
+      "parentUuid": "7a00e553_01a1d162",
+      "revId": "8a2c8bb42556a90cca13fbbae4f108e2f07bfe57",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

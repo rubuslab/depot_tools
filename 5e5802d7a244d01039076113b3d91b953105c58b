@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d43a499f_ce5f2652",
+        "filename": "gsutil.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2023-01-13T16:31:03Z",
+      "side": 1,
+      "message": "This \u0027encoding\u0027 argument requires python version 3.10.\nIs this a minimum requirement for depot_tools now?\nWe are running this utility on python version 3.5, and it is now failing.",
+      "range": {
+        "startLine": 213,
+        "startChar": 31,
+        "endLine": 213,
+        "endChar": 53
+      },
+      "revId": "5e5802d7a244d01039076113b3d91b953105c58b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

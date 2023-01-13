@@ -1529,8 +1529,8 @@ class Changelist(object):
         options.reviewers.extend(owners)
 
     # Set the reviewer list now so that presubmit checks can access it.
-    if options.reviewers or options.tbrs:
-      change_description.update_reviewers(options.reviewers, options.tbrs)
+    if options.reviewers:
+      change_description.update_reviewers(options.reviewers)
 
     return change_description
 
@@ -1595,9 +1595,7 @@ class Changelist(object):
           parallel=options.parallel,
           upstream=base_branch,
           description=change_desc.description,
-          all_files=False,
-          resultdb=options.resultdb,
-          realm=options.realm)
+          all_files=False)
       self.ExtendCC(hook_results['more_cc'])
 
     print_stats(git_diff_args)
@@ -2617,8 +2615,6 @@ class Changelist(object):
 
     if options.enable_auto_submit:
       refspec_opts.append('l=Auto-Submit+1')
-    if options.set_bot_commit:
-      refspec_opts.append('l=Bot-Commit+1')
     if options.use_commit_queue:
       refspec_opts.append('l=Commit-Queue+2')
     elif options.cq_dry_run:
@@ -4422,9 +4418,6 @@ def CMDupload(parser, args):
   parser.add_option('-r', '--reviewers',
                     action='append', default=[],
                     help='reviewer email addresses')
-  parser.add_option('--tbrs',
-                    action='append', default=[],
-                    help='TBR email addresses')
   parser.add_option('--cc',
                     action='append', default=[],
                     help='cc email addresses')
@@ -4471,8 +4464,6 @@ def CMDupload(parser, args):
       help='Send the patchset to do a CQ quick run right after '
            'upload (https://source.chromium.org/chromium/chromium/src/+/main:do'
            'cs/cq_quick_run.md) (chromium only).')
-  parser.add_option('--set-bot-commit', action='store_true',
-                    help=optparse.SUPPRESS_HELP)
   parser.add_option('--preserve-tryjobs', action='store_true',
                     help='instruct the CQ to let tryjobs running even after '
                          'new patchsets are uploaded instead of canceling '
@@ -4495,8 +4486,6 @@ def CMDupload(parser, args):
                     help='Retry failed tryjobs from old patchset immediately '
                          'after uploading new patchset. Cannot be used with '
                          '--use-commit-queue or --cq-dry-run.')
-  parser.add_option('--buildbucket-host', default='cr-buildbucket.appspot.com',
-                    help='Host of buildbucket. The default host is %default.')
   parser.add_option('--fixed', '-x',
                     help='List of bugs that will be commented on and marked '
                          'fixed (pre-populates "Fixed:" tag). Same format as '
@@ -4508,10 +4497,6 @@ def CMDupload(parser, args):
                          'or a new commit is created.')
   parser.add_option('--git-completion-helper', action="store_true",
                     help=optparse.SUPPRESS_HELP)
-  parser.add_option('--resultdb', action='store_true',
-                    help='Run presubmit checks in the ResultSink environment '
-                         'and send results to the ResultDB database.')
-  parser.add_option('--realm', help='LUCI realm if reporting to ResultDB')
   parser.add_option('-o',
                     '--push-options',
                     action='append',
@@ -4539,7 +4524,6 @@ def CMDupload(parser, args):
     return 1
 
   options.reviewers = cleanup_list(options.reviewers)
-  options.tbrs = cleanup_list(options.tbrs)
   options.cc = cleanup_list(options.cc)
 
   if options.edit_description and options.force:

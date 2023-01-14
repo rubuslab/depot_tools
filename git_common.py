@@ -521,6 +521,11 @@ def get_branch_tree():
   return skipped, branch_tree
 
 
+def is_ancestor(a, b):
+  """Returns true if commit a is an ancestor of commit b."""
+  return run_with_retcode('merge-base', '--is-ancestor', a, b) == 0
+
+
 def get_or_create_merge_base(branch, parent=None):
   """Finds the configured merge base for branch.
 
@@ -536,9 +541,6 @@ def get_or_create_merge_base(branch, parent=None):
   if base_upstream != parent:
     base = None
     base_upstream = None
-
-  def is_ancestor(a, b):
-    return run_with_retcode('merge-base', '--is-ancestor', a, b) == 0
 
   if base and base != actual_merge_base:
     if not is_ancestor(base, branch):

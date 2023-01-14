@@ -154,11 +154,25 @@ def generate_commit_message(
   return header + log_section
 
 
+def is_submodule(fullpath):
+  return os.path.isfile(os.path.join(fullpath, ".gitmodules"))
+
+
+def get_rev(submodule):
+  """Returns revision for the given submodule"""
+  res = check_output(['git', 'submodule', 'status', submodule])
+  rev = res.split(' ')[1]
+  return rev[1:]
+
+
 def calculate_roll(full_dir, dependency, roll_to):
   """Calculates the roll for a dependency by processing gclient_dict, and
   fetching the dependency via git.
   """
-  head = gclient(['getdep', '-r', dependency])
+  if is_submodule(full_dir):
+    head = get_rev(dependency)
+  else:
+    head = gclient(['getdep', '-r', dependency])
   if not head:
     raise Error('%s is unpinned.' % dependency)
   check_call(['git', 'fetch', 'origin', '--quiet'], cwd=full_dir)

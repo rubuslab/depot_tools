@@ -33,6 +33,24 @@
       "message": "swapping out reviewers because Bruce is OOO",
       "revId": "09b0e259e5c53a1fc93941e0322762c1d12794e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36f8d5cc_9b2de328",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-01-16T20:25:33Z",
+      "side": 1,
+      "message": "FWIW, when you run autoninja it prints out the command-line that it is going to run (well, on Windows anyway) so you can potentially notice if the -j value is slower than desired, making it easier to diagnose issues like this.\n\nI hope that you are able to reland this change.",
+      "parentUuid": "1b7e41c1_05571c08",
+      "revId": "09b0e259e5c53a1fc93941e0322762c1d12794e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

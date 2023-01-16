@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb83f452_c1f7bd2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-16T20:34:09Z",
+      "side": 1,
+      "message": "First cl splitting up https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4139060",
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

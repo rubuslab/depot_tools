@@ -16,6 +16,24 @@
       "message": "Hi Bruce \n\nI run git cl upload and encounter an error：\n\u0027\u0027\u0027\nluyahan@plct-dev-7:~/v8/v8 $ git cl upload\nRunning Python 3 presubmit upload checks ...\nTraceback (most recent call last):\n  File \"/home/luyahan/v8/depot_tools/presubmit_support.py\", line 2111, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"/home/luyahan/v8/depot_tools/presubmit_support.py\", line 2087, in main\n    return DoPresubmitChecks(\n  File \"/home/luyahan/v8/depot_tools/presubmit_support.py\", line 1759, in DoPresubmitChecks\n    os.remove(python2_usage_log_file)\nPermissionError: [Errno 1] Operation not permitted: \u0027/tmp/python2_usage.txt\u0027\n\u0027\u0027\u0027\n\nI run it in a server and have many people work on it.\n\nCan you help me? Thanks~",
       "revId": "c9f904f2051c80c4610be50abc02bd064a948e0c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e2a9214_fddbd196",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-01-16T23:57:01Z",
+      "side": 1,
+      "message": "That suggests that multiple builds or users are running simultaneously, or else the permissions for that file or directory are unusual. You should file a bug to track this issue (if it is still happening) but should also try things like \"ls /tmp/python2_usage.txt\" and \"echo test \u003e/tmp/python2_usage.txt\" to try to diagnose what is happening.",
+      "parentUuid": "bee1e897_e79b7a5a",
+      "revId": "c9f904f2051c80c4610be50abc02bd064a948e0c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

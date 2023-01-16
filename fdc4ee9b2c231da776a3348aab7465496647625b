@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ef6b36a_134c16dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-16T21:17:54Z",
+      "side": 1,
+      "message": "Broke this down into 2 changes https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4171505 and https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4171506/1",
+      "revId": "fdc4ee9b2c231da776a3348aab7465496647625b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

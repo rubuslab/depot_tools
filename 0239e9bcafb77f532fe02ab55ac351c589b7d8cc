@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4981a21d_504adddc",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-16T21:17:54Z",
+      "side": 1,
+      "message": "Maybe this should be a follow up change",
+      "parentUuid": "63ead722_710e5daf",
+      "range": {
+        "startLine": 247,
+        "startChar": 2,
+        "endLine": 247,
+        "endChar": 7
+      },
+      "revId": "0239e9bcafb77f532fe02ab55ac351c589b7d8cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d0450fc9_c717ef58",
         "filename": "ninja_reclient.py",
         "patchSetId": 5

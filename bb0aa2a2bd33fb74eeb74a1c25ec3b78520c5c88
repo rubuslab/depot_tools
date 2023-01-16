@@ -34,6 +34,40 @@
       "parentUuid": "8b57ff41_9e82ff0a",
       "revId": "bb0aa2a2bd33fb74eeb74a1c25ec3b78520c5c88",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61f13543_78417ac2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-01-16T19:21:37Z",
+      "side": 1,
+      "message": "How robust is update_hook? My experience has been that when it needs to perform an update it is slow and sometimes flaky. Has that been improved at all?",
+      "revId": "bb0aa2a2bd33fb74eeb74a1c25ec3b78520c5c88",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1bdbe61_9ec38b28",
+        "filename": "update_depot_tools.bat",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-01-16T19:21:37Z",
+      "side": 1,
+      "message": "The comment placement makes it look like it should apply to update_hook, but it doesn\u0027t. Maybe update the comment or put in a blank line? The same thing applies to the other file.",
+      "revId": "bb0aa2a2bd33fb74eeb74a1c25ec3b78520c5c88",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

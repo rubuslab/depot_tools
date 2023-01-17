@@ -16,6 +16,121 @@
       "message": "First cl splitting up https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4139060",
       "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1df1dad_a9b1a0d0",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-17T01:19:04Z",
+      "side": 1,
+      "message": "Can you explain bit more about how these env vars will be used in the CL description?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 0
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25255dd3_eef036dd",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-17T01:19:04Z",
+      "side": 1,
+      "message": "How about `if os.path.isdir(os.environ.get(BIN_DIR_ENV_KEY), \u0027\u0027):`?",
+      "range": {
+        "startLine": 27,
+        "startChar": 5,
+        "endLine": 28,
+        "endChar": 35
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd044c90_773e3880",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-17T01:19:04Z",
+      "side": 1,
+      "message": "Why do you need to set this env var?",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 50
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67cd8579_1fc853ba",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-17T01:19:04Z",
+      "side": 1,
+      "message": "How about if `os.path.isdir(os.environ.get(CFG_ENV_KEY), \u0027\u0027):`?",
+      "range": {
+        "startLine": 48,
+        "startChar": 5,
+        "endLine": 49,
+        "endChar": 30
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc1db401_30e296a8",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-17T01:19:04Z",
+      "side": 1,
+      "message": "ditto. \nWhy do you need to set this env var here?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 42
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

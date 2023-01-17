@@ -43,6 +43,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7fe405e6_23b6c902",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-17T01:26:16Z",
+      "side": 1,
+      "message": "why not use super()?",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 13
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "25255dd3_eef036dd",
         "filename": "reclient_paths.py",
         "patchSetId": 2
@@ -129,6 +152,46 @@
         "endLine": 60,
         "endChar": 42
       },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ff13736_bc3f7f27",
+        "filename": "tests/reclient_paths_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-17T01:26:16Z",
+      "side": 1,
+      "message": "why not python3?",
+      "range": {
+        "startLine": 1,
+        "startChar": 15,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca7a23f8_f2b4afe1",
+        "filename": "tests/reclient_paths_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-17T01:26:16Z",
+      "side": 1,
+      "message": "stop this in tearDown?",
       "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

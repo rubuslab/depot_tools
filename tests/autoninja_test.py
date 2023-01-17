@@ -50,6 +50,7 @@ class AutoninjaTest(trial_dir.TestCase):
     self.assertIn('-j', args)
     parallel_j = int(args[args.index('-j') + 1])
     self.assertGreater(parallel_j, multiprocessing.cpu_count())
+    self.assertIn(os.path.join(autoninja.SCRIPT_DIR, 'ninja.py'), args)
 
   def test_autoninja_reclient(self):
     out_dir = os.path.join('out', 'dir')
@@ -64,6 +65,7 @@ class AutoninjaTest(trial_dir.TestCase):
     self.assertIn('-j', args)
     parallel_j = int(args[args.index('-j') + 1])
     self.assertGreater(parallel_j, multiprocessing.cpu_count())
+    self.assertIn(os.path.join(autoninja.SCRIPT_DIR, 'ninja_reclient.py'), args)
 
 
 if __name__ == '__main__':

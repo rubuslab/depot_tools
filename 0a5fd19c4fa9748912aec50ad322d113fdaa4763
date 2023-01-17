@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2076190c_0ef53389",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-01-17T01:50:02Z",
+      "side": 1,
+      "message": "I know there have been discussions about restarting compiler_proxy being slow but I can\u0027t find them, and this is probably still worth landing.",
+      "revId": "0a5fd19c4fa9748912aec50ad322d113fdaa4763",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

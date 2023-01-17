@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b23d0bb_cb640d18",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:08:29Z",
+      "side": 1,
+      "message": "I decided to remove the env vars due to YAGNI (go/tott/438) and that the bin dir cannot be different due to it being already hardcoded into gni files",
+      "parentUuid": "a1df1dad_a9b1a0d0",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 0
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7fe405e6_23b6c902",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-01-17T01:26:16Z",
       "side": 1,
       "message": "why not use super()?",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 13
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0eab72e_c05a9893",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7fe405e6_23b6c902",
       "range": {
         "startLine": 20,
         "startChar": 4,
@@ -87,6 +135,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b13f609_e978643a",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:08:29Z",
+      "side": 1,
+      "message": "I also want to check if the path given exists. Added error here to make this explicit",
+      "parentUuid": "25255dd3_eef036dd",
+      "range": {
+        "startLine": 27,
+        "startChar": 5,
+        "endLine": 28,
+        "endChar": 35
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd044c90_773e3880",
@@ -100,6 +172,30 @@
       "writtenOn": "2023-01-17T01:19:04Z",
       "side": 1,
       "message": "Why do you need to set this env var?",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 50
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7650fad_a96f1528",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:08:29Z",
+      "side": 1,
+      "message": "I am using this as a memoization step to ensure we dont walk the chromium src tree more than once if we need this path more than once. Since I already have logic for getting the value from an environment variable this is the simplest way to implement memoization",
+      "parentUuid": "cd044c90_773e3880",
       "range": {
         "startLine": 39,
         "startChar": 0,
@@ -133,6 +229,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2be6980_366e8030",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:08:29Z",
+      "side": 1,
+      "message": "See above",
+      "parentUuid": "67cd8579_1fc853ba",
+      "range": {
+        "startLine": 48,
+        "startChar": 5,
+        "endLine": 49,
+        "endChar": 30
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc1db401_30e296a8",
@@ -146,6 +266,30 @@
       "writtenOn": "2023-01-17T01:19:04Z",
       "side": 1,
       "message": "ditto. \nWhy do you need to set this env var here?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 42
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b82d065_4b2643a7",
+        "filename": "reclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:08:29Z",
+      "side": 1,
+      "message": "See above",
+      "parentUuid": "bc1db401_30e296a8",
       "range": {
         "startLine": 60,
         "startChar": 0,
@@ -179,6 +323,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e7fb26d_9dfe6839",
+        "filename": "tests/reclient_paths_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:08:29Z",
+      "side": 1,
+      "message": "All other tests in this folder use vpython3 so thats what I used",
+      "parentUuid": "8ff13736_bc3f7f27",
+      "range": {
+        "startLine": 1,
+        "startChar": 15,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ca7a23f8_f2b4afe1",
@@ -192,6 +360,24 @@
       "writtenOn": "2023-01-17T01:26:16Z",
       "side": 1,
       "message": "stop this in tearDown?",
+      "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da8a3be5_c79b226c",
+        "filename": "tests/reclient_paths_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:08:29Z",
+      "side": 1,
+      "message": "`self.addCleanup(unittest.mock.patch.stopall)` does that",
+      "parentUuid": "ca7a23f8_f2b4afe1",
       "revId": "f6b9d70515297c31b000f957658d94eb93948f4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

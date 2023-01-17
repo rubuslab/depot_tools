@@ -16,6 +16,24 @@
       "message": "I was able to use gclient on FreeBSD using these minor changes since the code is basically portable in the first place, except these artificial limitations :)",
       "revId": "087f3090111dfb8eaece5f494b60f5e078a04d2e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e6f303a_44a0604e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-17T21:47:05Z",
+      "side": 1,
+      "message": "The checks are in place as we don\u0027t test nor provide binaries for unsupported systems. So, while `fetch` and `gclient` work when invoking with python installed on the system, it may not work with `vpython3 fetch` (ie not all cipd python wheels may be available for freebsd). I believe the decision to fail fast is made intentionally, but I don\u0027t have historical knowledge.\n\nSince I don\u0027t have FreeBSD, could you check if all unit tests pass under it (using vpython3)? If all is green, we could explicitly allow FreeBSD.",
+      "parentUuid": "f76f5a87_b0a8f4db",
+      "revId": "087f3090111dfb8eaece5f494b60f5e078a04d2e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

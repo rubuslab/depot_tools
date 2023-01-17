@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4fd37a3_f268fb44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-17T22:07:45Z",
+      "side": 1,
+      "message": "Are you expecting this module to be used by other scripts?\n\nIf so, can you please explain that here? The linked bug doesn\u0027t\ntell me anything.\n\nIf not, I\u0027m not sure I see the gain from this change, it seems like we\u0027re mostly adding indirection for no real advantage.",
+      "revId": "5df0c49ec8d723bc211e79ec198d1bd982b36f35",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd77bea2_aa8d9c54",
+        "filename": "reclient_paths.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-17T22:07:45Z",
+      "side": 1,
+      "message": "Nit: don\u0027t use caches unless you\u0027re sure they\u0027re in the hot path (i.e., we\u0027re calling this a lot). Otherwise it\u0027s just unnecessary overkill.",
+      "revId": "5df0c49ec8d723bc211e79ec198d1bd982b36f35",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

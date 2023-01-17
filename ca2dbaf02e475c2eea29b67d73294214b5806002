@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2aef545a_1569ff94",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:23:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51175c36_c1d3c28c",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 63
+      },
+      "revId": "ca2dbaf02e475c2eea29b67d73294214b5806002",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c477c14_f60382a7",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-17T01:34:29Z",
       "side": 1,
       "message": "why not python3?",
+      "range": {
+        "startLine": 1,
+        "startChar": 15,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "ca2dbaf02e475c2eea29b67d73294214b5806002",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c47e0035_da15b070",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-17T16:23:26Z",
+      "side": 1,
+      "message": "Most other test files in this use vpython3 so I just copied here. I can change if required",
+      "parentUuid": "4c477c14_f60382a7",
       "range": {
         "startLine": 1,
         "startChar": 15,

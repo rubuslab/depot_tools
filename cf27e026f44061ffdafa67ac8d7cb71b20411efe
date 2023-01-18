@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf46beb7_2da1a653",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-18T19:28:20Z",
+      "side": 1,
+      "message": "Right now autoninja.py just outputs a command as a string, which will contain either ninja.py or ninja_reclient.py, and the autoninja.bat runs the command. \nThis CL does not change anything about that. \nninja_reclient imports the logic from ninja.py and calls it directly on line 61 so only one subprocess.call is done for the ninja process.\n\nI can look at restructuring autoninja.py,autoninja.bat and autoninja(the sh script) in a followup to have autoninja directly start ninja instead of passing a command string back.\n\nAs I just added to the CL description we need to wrap the ninja invocation to ensure reproxy is shutdown when ninja is interrupted. Otherwise the next invocation of autoninja will need to shut down the old reproxy instance which will take longer.\n\nI will benchmark this solution compared to the status quo on windows",
+      "parentUuid": "5c6f1c75_2cb53ff8",
+      "revId": "cf27e026f44061ffdafa67ac8d7cb71b20411efe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d6d9623_1010a10d",
@@ -41,6 +59,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07aca397_3a4fdbc2",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-18T19:28:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d6d9623_1010a10d",
+      "range": {
+        "startLine": 19,
+        "startChar": 43,
+        "endLine": 19,
+        "endChar": 48
+      },
+      "revId": "cf27e026f44061ffdafa67ac8d7cb71b20411efe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b85fc8e7_541638ff",
@@ -54,6 +96,30 @@
       "writtenOn": "2023-01-18T07:20:17Z",
       "side": 1,
       "message": "This is interruptted rather than killed?",
+      "range": {
+        "startLine": 50,
+        "startChar": 32,
+        "endLine": 50,
+        "endChar": 38
+      },
+      "revId": "cf27e026f44061ffdafa67ac8d7cb71b20411efe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "baef03f2_36927a62",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-18T19:28:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b85fc8e7_541638ff",
       "range": {
         "startLine": 50,
         "startChar": 32,

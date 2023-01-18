@@ -16,6 +16,24 @@
       "message": "`os.path.expanduser(\u0027~\u0027)` expands differently for unix and windows. Doing it this way to be compatible with windows.",
       "revId": "23bf1fd1de49288db6f8a4e7f3f2ad432584e946",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9319d804_e0710fe1",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-18T02:47:08Z",
+      "side": 1,
+      "message": "expanduser: http://go/python-documentation/os.path.html#os.path.expanduser\n.boto default path: http://cloud/storage/docs/boto-gsutil#:~:text\u003dThe%20default%20location%20for%20the,%25%25HOMEPATH%25%2C%20for%20Windows.",
+      "parentUuid": "9a043685_48f74827",
+      "revId": "23bf1fd1de49288db6f8a4e7f3f2ad432584e946",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

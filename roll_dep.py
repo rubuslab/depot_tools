@@ -154,11 +154,31 @@ def generate_commit_message(
   return header + log_section
 
 
+def is_submoduled():
+  """Returns true if gclient root has submodules"""
+  # TODO(aravindvasudev): Update this to check .gclient file instead.
+  # TODO(aravindvasudev): Add a command to gclient to say which mode it is on.
+  return os.path.isfile(os.path.join(gclient(['root']), ".gitmodules"))
+
+
+def get_submodule_rev(submodule_path):
+  """Returns revision of the given submodule path"""
+  rev = check_output(['git', 'submodule', 'status', submodule])
+
+  # git submodule status <path> returns all submodules with its rev in the
+  # pattern: `(+|-)(<revision>) (submodule.path)`
+  return rev.split(' ')[0][1:]
+
+
 def calculate_roll(full_dir, dependency, roll_to):
   """Calculates the roll for a dependency by processing gclient_dict, and
   fetching the dependency via git.
   """
-  head = gclient(['getdep', '-r', dependency])
+  # if the super-project uses submodules, get rev directly using git.
+  if is_submoduled():
+    head = get_submodule_rev(submodule_path)
+  else:
+    head = gclient(['getdep', '-r', dependency])
   if not head:
     raise Error('%s is unpinned.' % dependency)
   check_call(['git', 'fetch', 'origin', '--quiet'], cwd=full_dir)
@@ -287,6 +307,7 @@ def main():
       logs.append(log)
       setdep_args.extend(['-r', '{}@{}'.format(dependency, roll_to)])
 
+    # DEPS is updated even if the repository uses submodules.
     gclient(['setdep'] + setdep_args)
 
     commit_msg = gen_commit_msg(logs, cmdline, reviewers, args.bug)

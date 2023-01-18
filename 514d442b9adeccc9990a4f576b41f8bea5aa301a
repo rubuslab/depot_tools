@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea463e9d_459d4971",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-18T23:21:24Z",
+      "side": 1,
+      "message": "@sokcevic@chromium.org I missed the `update-index` part from the design doc. Updated how roll_dep adds the submodule revision change.",
+      "revId": "514d442b9adeccc9990a4f576b41f8bea5aa301a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

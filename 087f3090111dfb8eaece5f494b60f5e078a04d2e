@@ -52,6 +52,23 @@
       "parentUuid": "4e6f303a_44a0604e",
       "revId": "087f3090111dfb8eaece5f494b60f5e078a04d2e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b55fc56c_c5be9391",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-18T20:01:42Z",
+      "side": 1,
+      "message": "I looked into the history when this was introduced, at turns out it was to error out on clang format and gn [0]. Both tools no longer need nor use this check, so I think it\u0027s fine to remove this artificial restriction.\n\nI\u0027ll create a section in README that covers what platforms are supported. \n\n[0] https://codereview.chromium.org/134313007/",
+      "revId": "087f3090111dfb8eaece5f494b60f5e078a04d2e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

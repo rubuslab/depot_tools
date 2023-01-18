@@ -34,6 +34,24 @@
       "parentUuid": "f76f5a87_b0a8f4db",
       "revId": "087f3090111dfb8eaece5f494b60f5e078a04d2e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8cb0f0f7_61001918",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1183500
+      },
+      "writtenOn": "2023-01-18T12:54:25Z",
+      "side": 1,
+      "message": "The point here is to empower users to port our open source project to platforms we don\u0027t officially support and potentially have them upstream the changes. To do so, they need to check out the source code in the first place using gclient. We cannot provide binaries for all platforms but we can avoid artificial barriers when they provide their own.\n\nThis particular check isn\u0027t to check if the platform is unsupported. This is handled in vpython and cipd. On an unsupported platform such as FreeBSD, a power user can install cipd via the go repository, and then either provide vpython themselves or bypass it and use the system python (after installing the needed packages).\n\nAt this point they\u0027re going to need to run the essentially platform independent gclient. Allowlisting operating systems in the checks here is pointless because they\u0027ve already explicitly entered unsupported territory. I picked FreeBSD as an example, but there\u0027s also OpenBSD, NetBSD, DragonflyBSD, Haiku, Hurd, Solaris, and so on. In general it does not scale to add a new operating system to countless lists of allowlisted operating systems in code that\u0027s basically portable in the first place. It\u0027s better to simply assume the best about an unknown operating system, perhaps emitting a warning, and let the user deal with any unsupported breakage. :)",
+      "parentUuid": "4e6f303a_44a0604e",
+      "revId": "087f3090111dfb8eaece5f494b60f5e078a04d2e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

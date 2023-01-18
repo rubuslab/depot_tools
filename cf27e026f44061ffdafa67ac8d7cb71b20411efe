@@ -16,6 +16,52 @@
       "message": "Process creating is expensive on windows, and we care a fair amount about the time it takes to do a low-op ninja invocation (i.e., when you\u0027re recompiling zero or only a few files). Creating these additional wrappers as processes that get invoked makes this slower.\n\nCan we restructure things so that autoninja.py can import the logic from ninja_reclient.py (which I\u0027m not convinced really should exist) and ninja.py, rather than getting it through exec()s?",
       "revId": "cf27e026f44061ffdafa67ac8d7cb71b20411efe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d6d9623_1010a10d",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-18T07:20:17Z",
+      "side": 1,
+      "message": "this is not necessary?",
+      "range": {
+        "startLine": 19,
+        "startChar": 43,
+        "endLine": 19,
+        "endChar": 48
+      },
+      "revId": "cf27e026f44061ffdafa67ac8d7cb71b20411efe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b85fc8e7_541638ff",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-18T07:20:17Z",
+      "side": 1,
+      "message": "This is interruptted rather than killed?",
+      "range": {
+        "startLine": 50,
+        "startChar": 32,
+        "endLine": 50,
+        "endChar": 38
+      },
+      "revId": "cf27e026f44061ffdafa67ac8d7cb71b20411efe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

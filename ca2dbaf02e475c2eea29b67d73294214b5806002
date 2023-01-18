@@ -93,6 +93,30 @@
       },
       "revId": "ca2dbaf02e475c2eea29b67d73294214b5806002",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5d52579_66e73431",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-18T07:20:17Z",
+      "side": 1,
+      "message": "It is better to use python3 if vpython3 is not necessary.",
+      "parentUuid": "c47e0035_da15b070",
+      "range": {
+        "startLine": 1,
+        "startChar": 15,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "ca2dbaf02e475c2eea29b67d73294214b5806002",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

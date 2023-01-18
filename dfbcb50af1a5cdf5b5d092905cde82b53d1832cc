@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b5d25f2_9574b12c",
+        "filename": "roll_dep.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-18T06:26:59Z",
+      "side": 1,
+      "message": "This change also assumes the path within DEPS file is same as the submodule path. This is at least not true for our currently generated codesearch repositories[1][2], but they differ because they are generated.\n\n[1] http://go/chromiumsrc/codesearch/infra/infra/+/refs/heads/main/DEPS\n[2] http://go/chromiumsrc/codesearch/infra/infra/+/refs/heads/main/.gitmodules",
+      "revId": "dfbcb50af1a5cdf5b5d092905cde82b53d1832cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

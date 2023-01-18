@@ -259,7 +259,7 @@ def run_gsutil(target, args, clean=False):
   # Bypass luci-auth when run within a bot or .boto file is set.
   if (os.getenv(GSUTIL_ENABLE_LUCI_AUTH) != '1' or _is_luci_context()
       or os.getenv('SWARMING_HEADLESS') == '1' or os.getenv('BOTO_CONFIG')
-      or os.getenv('AWS_CREDENTIAL_FILE')):
+      or os.getenv('AWS_CREDENTIAL_FILE') or os.path.isfile('~/.boto')):
     return _run_subprocess(cmd, interactive=True).returncode
 
   return luci_context(cmd).returncode

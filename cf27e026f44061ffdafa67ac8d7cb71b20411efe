@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "040f9239_59b911f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-18T22:20:04Z",
+      "side": 1,
+      "message": "Oh, I see. I\u0027m sorry, I had totally forgotten that was how autoninja worked. Sorry!\n\nThis approach seems reasonable to me, then.",
+      "parentUuid": "bf46beb7_2da1a653",
+      "revId": "cf27e026f44061ffdafa67ac8d7cb71b20411efe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d6d9623_1010a10d",

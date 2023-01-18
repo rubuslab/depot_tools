@@ -2255,7 +2255,10 @@ class Changelist(object):
 
     return 0
 
-  def _GerritCommitMsgHookCheck(self, offer_removal):
+  @staticmethod
+  def _GerritCommitMsgHookCheck(offer_removal):
+    # type: bool
+    """Checks for the gerrit's commit-msg hook and removes it if necessary."""
     hook = os.path.join(settings.GetRoot(), '.git', 'hooks', 'commit-msg')
     if not os.path.exists(hook):
       return
@@ -4545,6 +4548,9 @@ def CMDupload(parser, args):
   parser.add_option('--no-python2-post-upload-hooks',
                     action='store_true',
                     help='Only run post-upload hooks in Python 3.')
+  parser.add_option('--stacked-exp',
+                    action='store_true',
+                    help=optparse.SUPPRESS_HELP)
 
   orig_args = args
   (options, args) = parser.parse_args(args)
@@ -4586,6 +4592,12 @@ def CMDupload(parser, args):
     # Load default for user, repo, squash=true, in this order.
     options.squash = settings.GetSquashGerritUploads()
 
+  if options.stacked_exp:
+    orig_args.remove('--stacked')
+
+    UploadAllSquashed(options, orig_args)
+    sys.exit()
+
   cl = Changelist(branchref=options.target_branch)
   # Warm change details cache now to avoid RPCs later, reducing latency for
   # developers.
@@ -4619,6 +4631,93 @@ def CMDupload(parser, args):
     _trigger_tryjobs(cl, jobs, options, patchset + 1)
 
   return ret
+
+
+def UploadAllSquashed(options, orig_args):
+  # type: (optparse.Values, Sequence[str]) -> Tuple[Sequence[Changelist], bool]
+  """Uploads the current and upstream branches (if necessary."""
+  _cls, _cherry_pick_current = _UploadAllPrecheck(options, orig_args)
+
+  # TODO(b/265929888): parse cls and create commits.
+
+
+def _UploadAllPrecheck(options, orig_args):
+  # type: (optparse.Values, Sequence[str]) -> Tuple[Sequence[Changelist], bool]
+  """Does some prechecks before uploading CLs"""
+  branch_ref = None
+  cls = []
+  must_upload_upstream = False
+
+  Changelist._GerritCommitMsgHookCheck(offer_removal=not options.force)
+
+  while True:
+    cl = Changelist(branchref=branch_ref)
+    cls.append(cl)
+
+    _, upstream_branch_ref = Changelist.FetchUpstreamTuple(cl.GetBranch())
+    upstream_branch = scm.GIT.ShortBranchName(upstream_branch_ref)
+    branch_ref = upstream_branch_ref  # set branch for next run.
+
+    # Case 1: We've reached the beginning of the tree.
+    if upstream_branch in ('master', 'main'):
+      break
+
+    upstream_last_upload = scm.GIT.GetBranchConfig(settings.GetRoot(),
+                                                   upstream_branch,
+                                                   LAST_UPLOAD_HASH_CONFIG_KEY)
+
+    # Case 2: If any upstream branches have never been uploaded,
+    # the user MUST upload them.
+    if not upstream_last_upload:
+      must_upload_upstream = True
+      continue
+
+    base_commit = cl.GetCommonAncestorWithUpstream()
+
+    # Case 3: If upstream's last_upload == cl.base_commit we do
+    # not need to upload any more upstreams from this point on.
+    # (Even if there may be diverged branches higher up the tree)
+    if (base_commit == upstream_last_upload):
+      break
+
+    # Case 4: If upstream's last_upload < cl.base_commit we are
+    # uploading cl and upstream_cl.
+    # Continue up the tree to check other branch relations.
+    if scm.GIT.IsAncestor(None, upstream_last_upload, base_commit):
+      continue
+
+    # Case 5: If cl.base_commit < upstream's last_upload the user
+    # must rebase before uploading.
+    if scm.GIT.IsAncestor(None, base_commit, upstream_last_upload):
+      DieWithError(
+          'Please rebase the stack before uploading with `git rebase-update`')
+
+    print('Current and upstream branches are in an unexpected state.\n'
+          'Try `git map` to debug.')
+
+  # We assume all cls in the stack have the same auth requirements and only
+  # check this once.
+  cls[0].EnsureAuthenticated(force=options.force)
+
+  cherry_pick = False
+  if len(cls) > 1:
+    message = ''
+    if len(orig_args):
+      message = ('options %s will be used for all uploads.\n' % orig_args)
+    if must_upload_upstream:
+      gclient_utils.AskForData(
+          '\n' + message +
+          'There are upstream branches that must be uploaded.\n'
+          'Press enter to continue or Ctrl+C to abort')
+    else:
+      answer = gclient_utils.AskForData(
+          '\n' + message +
+          'Press enter to update branches %s.\nOr type `n` to upload only '
+          '`%s` cherry-picked on %s\'s last upload:' %
+          ([cl.branch for cl in cls], cls[0].branch, cls[1].branch))
+      if answer == 'n':
+        cherry_pick = True
+  return cls, cherry_pick
 
 
 @subcommand.usage('--description=<description file>')

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "314c55b4_98276168",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4595,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-18T20:06:58Z",
+      "side": 1,
+      "message": "would like to keep this in so i don\u0027t have to add it back between each change for testing.",
+      "range": {
+        "startLine": 4595,
+        "startChar": 2,
+        "endLine": 4595,
+        "endChar": 25
+      },
+      "revId": "0511630f79327e848f0ef347e64090c19353e8ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

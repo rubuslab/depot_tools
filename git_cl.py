@@ -4683,12 +4683,12 @@ def _UploadAllPrecheck(options, orig_args):
     # Case 4: If upstream's last_upload < cl.base_commit we are
     # uploading cl and upstream_cl.
     # Continue up the tree to check other branch relations.
-    if scm.GIT.IsAncestor(None, upstream_last_upload, base_commit):
+    if scm.GIT.IsAncestor(upstream_last_upload, base_commit):
       continue
 
     # Case 5: If cl.base_commit < upstream's last_upload the user
     # must rebase before uploading.
-    if scm.GIT.IsAncestor(None, base_commit, upstream_last_upload):
+    if scm.GIT.IsAncestor(base_commit, upstream_last_upload):
       DieWithError(
           'Please rebase the stack before uploading with `git rebase-update`')
 

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fc2ac51_9333e52e",
+        "filename": "roll_dep.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-18T05:34:46Z",
+      "side": 1,
+      "message": "I have decided to keep this check independent. Another approach would be to rely on a flag set on `.gclient`. That approach would tie in with our goal of \"depot_tools using submodules as SOT\". What do you think?",
+      "revId": "882e92076ebc7b12e5be03daaff0841b8edfe90b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5215efe8_1984ec90",
+        "filename": "roll_dep.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-18T05:34:46Z",
+      "side": 1,
+      "message": "I didn\u0027t want to extend `gclient` or `gclient getdep` because, given git does all the heavy lifting, this can be independent from gclient.",
+      "revId": "882e92076ebc7b12e5be03daaff0841b8edfe90b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

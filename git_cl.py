@@ -994,6 +994,11 @@ _CommentSummary = collections.namedtuple(
                         'approval', 'disapproval'])
 
 
+_NewUpload = collections.namedtuple(
+    'NewUpload', ['reviewers', 'ccs', 'commit_to_push',
+                  'last_uploaded_commit', 'parent', 'change_desc'])
+
+
 class Changelist(object):
   """Changelist works with one changelist in local branch.
 
@@ -1560,6 +1565,144 @@ class Changelist(object):
     if user_title.lower() == 'y':
       return title
     return user_title or title
+
+  def PrepareSquashedCommit(self, options, parent=None, end_commit=None):
+    """Prepare a commit for upload."""
+    if parent is None:
+      _, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
+      upstream_branch_name = scm.GIT.ShortBranchName(upstream_branch)
+      if upstream_branch_name in ('master', 'main'):
+        parent = self.GetCommonAncestorWithUpstream()
+      else:
+        parent = scm.GIT.GetBranchConfig(
+            settings.GetRoot(), upstream_branch_name,
+            GERRIT_SQUASH_HASH_CONFIG_KEY)
+    print('parent: %s' % parent)
+    print('chicken')
+    if end_commit is None:
+      end_commit = self.branchref
+    latest_tree = RunGit(['rev-parse', end_commit + ':']).strip()
+    print('latest_tree: %s' % latest_tree)
+
+    reviewers, ccs, change_desc = self._PrepareCommitDescription(
+        options, parent, latest_tree)
+    with gclient_utils.temporary_file() as desc_tempfile:
+      gclient_utils.FileWrite(desc_tempfile, change_desc.description)
+      commit_to_push = RunGit(
+          ['commit-tree', latest_tree, '-p', parent, '-F',
+           desc_tempfile]).strip()
+    print('commit_to_push %s' % commit_to_push)
+    return _NewUpload(reviewers, ccs, commit_to_push, end_commit, parent, change_desc)
+
+
+  def PrepareCherryPickSquashedCommit(self, options, parent):
+    """."""
+    # TODO get cherry-pick
+    parent = self.GetCommonAncestorWithUpstream()
+    latest_tree = RunGit(['rev-parse', self.branchref + ':']).strip()
+    print('latest_tree: %s' % latest_tree)
+    reviewers, ccs, change_desc = self._PrepareCommitDescription(
+        options, parent, latest_tree)
+    with gclient_utils.temporary_file() as desc_tempfile:
+      gclient_utils.FileWrite(desc_tempfile, change_desc.description)
+      commit_to_cp = RunGit(
+          ['commit-tree', latest_tree, '-p', parent, '-F',
+           desc_tempfile]).strip()
+
+    _, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
+    upstream_branch_name = scm.GIT.ShortBranchName(upstream_branch)
+    upstream_squashed_upload = scm.GIT.GetBranchConfig(
+        settings.GetRoot(), upstream_branch_name, GERRIT_SQUASH_HASH_CONFIG_KEY)
+
+    RunGit(['checkout', '-q', upstream_squashed_upload])
+    RunGit(['cherry-pick', commit_to_cp])
+    commit_to_push = RunGit(['rev-parse', 'HEAD'])
+    RunGit(['checkout', '-q', scm.GIT.ShortBranchName(self.branchref)])
+
+    print('commit_to_push %s' % commit_to_push)
+    return _NewUpload(reviewers, ccs, commit_to_push,
+                      RunGit(['rev-parse', self.branchref]).strip(), parent, change_desc)
+
+  def _PrepareCommitDescription(self, options, parent, latest_tree):
+    self.EnsureCanUploadPatchset(options.force)
+
+    # TODO confirm we can depreact git_diff_args from command args
+    files = self.GetAffectedFiles(parent)
+    print('parent %s' % parent)
+    print('latest_tree %s' % latest_tree)
+    change_desc = self._GetDescriptionForUpload(options, [parent, latest_tree],
+                                              files)
+
+    # TODO can this be shared?
+    watchlist = watchlists.Watchlists(settings.GetRoot())
+    # Get watchlist and presubmit ccs for all branches seperately
+
+    self.ExtendCC(watchlist.GetWatchersForPaths(files))
+    if not options.bypass_hooks:
+      hook_results = self.RunHook(committing=False,
+                                  may_prompt=not options.force,
+                                  verbose=options.verbose,
+                                  parallel=options.parallel,
+                                  # check if this is correct
+                                  upstream=parent,
+                                  description=change_desc.description,
+                                  all_files=False)
+      self.ExtendCC(hook_results['more_cc'])
+
+    # Update change description for each cl and ensure we have a Change Id.
+    if self.GetIssue():
+      if options.edit_description:
+        change_desc.prompt()
+      change_detail = self._GetChangeDetail(['CURRENT_REVISION'])
+      change_id = change_detail['change_id']
+      change_desc.ensure_change_id(change_id)
+
+      # TODO!Only do this for the current branch commit.
+      # Check if changes outside of this workspace have been uploaded.
+      current_rev = change_detail['current_revision']
+      last_uploaded_rev = self._GitGetBranchConfigValue(
+          GERRIT_SQUASH_HASH_CONFIG_KEY)
+      if last_uploaded_rev and current_rev != last_uploaded_rev:
+        external_parent = self._UpdateWithExternalChanges()
+    else:  # No change issue. First time uploading
+      if not options.force and not options.message_file:
+        change_desc.prompt()
+
+      # Check if user added a change_id in the descripiton.
+      change_ids = git_footers.get_footer_change_id(change_desc.description)
+      if len(change_ids) == 1:
+        change_id = change_ids[0]
+      else:
+        change_id = GenerateGerritChangeId(change_desc.description)
+        change_desc.ensure_change_id(change_id)
+
+    if options.preserve_tryjobs:
+      change_desc.set_preserve_tryjobs()
+
+    SaveDescriptionBackup(change_desc)
+
+    # Add ccs
+    cc = []
+    # Add default, watchlist, presubmit ccs unless this is the initial
+    # upload (WIP) the CL is private, or auto-CCing has been disabled.
+    if not (self.GetIssue() or options.private or options.no_autocc):
+      cc = self.GetCCList().split(',')
+      if len(cc) > 100:
+        lsc = ('https://chromium.googlesource.com/chromium/src/+/HEAD/docs/'
+               'process/lsc/lsc_workflow.md')
+        print('WARNING: This will auto-CC %s users.' % len(cc))
+        print('LSC may be more appropriate: %s' % lsc)
+        print('You can also use the --no-autocc flag to disable auto-CC.')
+        confirm_or_exit(action='continue')
+
+    # Add cc's from the --cc flag.
+    if options.cc:
+      cc.extend(options.cc)
+    cc = [email.strip() for email in cc if email.strip()]
+    if change_desc.get_cced():
+      cc.extend(change_desc.get_cced())
+
+    return change_desc.get_reviewers(), cc, change_desc
 
   def CMDUpload(self, options, git_diff_args, orig_args):
     """Uploads a change to codereview."""
@@ -4545,6 +4688,9 @@ def CMDupload(parser, args):
   parser.add_option('--no-python2-post-upload-hooks',
                     action='store_true',
                     help='Only run post-upload hooks in Python 3.')
+  parser.add_option('--stacked', action='store_true',
+                    help=optparse.SUPPRESS_HELP)
+
 
   orig_args = args
   (options, args) = parser.parse_args(args)
@@ -4586,6 +4732,12 @@ def CMDupload(parser, args):
     # Load default for user, repo, squash=true, in this order.
     options.squash = settings.GetSquashGerritUploads()
 
+  if options.stacked:
+    orig_args.remove('--stacked')
+
+    ret = UploadAll(options, args)
+    sys.exit()
+
   cl = Changelist(branchref=options.target_branch)
   # Warm change details cache now to avoid RPCs later, reducing latency for
   # developers.
@@ -4619,6 +4771,241 @@ def CMDupload(parser, args):
     _trigger_tryjobs(cl, jobs, options, patchset + 1)
 
   return ret
+
+def UploadAll(options, args):
+  """."""
+  cls, cherry_pick_current = _UploadAllPrecheck(options, args)
+
+  # TODO can this be shared?
+  #watchlist = watchlists.Watchlists(settings.GetRoot())
+
+  uploads_by_cl = []
+  commit_to_push = None
+  if cherry_pick_current:
+    parent = cls[1]._GitGetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY)
+    new_upload = cls[0].PrepareCherryPickSquashedCommit(
+        options, parent)
+    uploads_by_cl.append((cls[0], new_upload))
+  else:
+    parent = None
+    child_base_commit = None
+    ordered_cls = list(reversed(cls))
+    for i, cl in enumerate(ordered_cls):
+      new_upload = cl.PrepareSquashedCommit(
+          options, parent=parent, end_commit=child_base_commit)
+      uploads_by_cl.append((cl, new_upload))
+      parent = new_upload.commit_to_push
+      if i + 1 < len(ordered_cls):
+        child_base_commit = ordered_cls[i+1].GetCommonAncestorWithUpstream()
+      else:
+        child_base_commit = None
+
+
+  last_cl, (_, _, commit_to_push, _, _, change_desc) = uploads_by_cl[-1]
+  remote, remote_branch = last_cl.GetRemoteBranch()
+  branch = GetTargetRef(remote, remote_branch, options.target_branch)
+  refspec_opts = _GetRefSpecOptions(options)
+  if refspec_opts:
+      refspec_suffix = '%' + ','.join(refspec_opts)
+      assert ' ' not in refspec_suffix, (
+          'spaces not allowed in refspec: "%s"' % refspec_suffix)
+
+  refspec = '%s:refs/for/%s%s' % (commit_to_push, branch, refspec_suffix)
+
+  git_push_metadata = {
+        'gerrit_host': last_cl.GetGerritHost(),
+        'title': options.title or '<untitled>',
+        'change_id': git_footers.get_footer_change_id(
+            change_desc.description)[0],
+        'description': change_desc.description,
+    }
+  push_stdout = last_cl._RunGitPushWithTraces(
+      refspec, refspec_opts, git_push_metadata)
+
+  regex = re.compile(r'remote:\s+https?://[\w\-\.\+\/#]*/(\d+)\s.*')
+  change_numbers = [m.group(1)
+                    for m in map(regex.match, push_stdout.splitlines())
+                    if m]
+
+  for i, (cl, (reviewers, ccs, commit_to_push, last_upload_commit, parent, change_desc)
+          ) in enumerate(uploads_by_cl):
+    # Patchset is set every time cl.GetPatchset() is called.
+    cl._GitSetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY, commit_to_push)
+    cl._GitSetBranchConfigValue(LAST_UPLOAD_HASH_CONFIG_KEY, last_upload_commit)
+    cl.SetIssue(change_numbers[i])
+    gerrit_util.AddReviewers(
+        cl.GetGerritHost(), cl._GerritChangeIdentifier(),
+        reviewers, ccs, notify=bool(options.send_mail))
+    if settings.GetRunPostUploadHook():
+      cl.RunPostUploadHook(options.verbose, parent,
+                           change_desc.description,
+                           options.no_python2_post_upload_hooks)
+  sys.exit()
+  return 0
+
+
+def _UploadAllPrecheck(options, args):
+  """."""
+  branch = options.target_branch
+  cls = []
+  must_upload_upstream = False
+  # EnsureAuthenticated(force=options.force)
+  if options.squash:
+    _GerritCommitMsgHookCheck(offer_removal=not options.force)
+
+  while True:
+    cl = Changelist(branchref=branch)
+    cls.append(cl)
+
+    base_commit = cl.GetCommonAncestorWithUpstream()
+
+    _, upstream_branch = _FetchUpstreamTuple(cl.GetBranch())
+    print(upstream_branch)
+    branch = upstream_branch
+    upstream_branch_name = scm.GIT.ShortBranchName(upstream_branch)
+    print('upstream_branch_name %s' % upstream_branch_name)
+    if upstream_branch_name in ('master', 'main'):
+      break  # we've reached the beginning of the tree
+
+    upstream_last_upload = scm.GIT.GetBranchConfig(
+        settings.GetRoot(), upstream_branch_name, LAST_UPLOAD_HASH_CONFIG_KEY)
+
+    print('base_commit %s' % base_commit)
+    print('upstream_last_upload %s' % upstream_last_upload)
+    # check if upstream has been uploaded
+    if not upstream_last_upload:
+      must_upload_upstream = True
+      continue
+
+    # If upstream gerritsqaushedhash == cl.base_commit we do not need to
+    # upload any more upstreams from this point on. (Even if there may be
+    # diverged branches higher up the tree)
+    if (base_commit == upstream_last_upload):
+      break
+
+    # If upstream gerritsquashedhash < cl.base_commit we are uploading cl
+    # and upstream_cl. Continue up the tree to check other branch relations
+    if git_common.is_ancestor(upstream_last_upload, base_commit):
+      continue
+
+    # If upstream cl.base_commit < gerritsquashedhash the user must rebase
+    # before uploading.
+    if git_common.is_ancestor(base_commit, upstream_last_upload):
+      DieWithError(
+          'Please rebase the stack before uploading with `git rebase-update`')
+
+    print('weird state')
+
+  cherry_pick = False
+  if len(cls) > 1:
+    message = ''
+    if len(args):
+      message = ('options %s will be used for upstream branch uploads '
+                 'as well' % args)
+    if must_upload_upstream:
+      gclient_utils.AskForData(
+          message + 'TODO: upstream branches must be uploaded. '
+          'Press enter to continue or Ctrl+C to abort')
+    else:
+      answer = gclient_utils.AskForData(
+          'Press enter to update branches %s. Type `n` to upload only %s '
+          'cherry-picked on %s\'s last upload.' % (
+              [cl.branchref for cl in cls], cls[0].branchref, cls[1].branchref))
+      if answer == 'n':
+        cherry_pick = True
+  return cls, cherry_pick
+
+
+def _FetchUpstreamTuple(branch):
+  """Returns a tuple containing remote and remote ref,
+       e.g. 'origin', 'refs/heads/main'
+  """
+  remote, upstream_branch = scm.GIT.FetchUpstreamTuple(
+      settings.GetRoot(), branch)
+  if not remote or not upstream_branch:
+    DieWithError(
+        'Unable to determine default branch to diff against.\n'
+        'Verify this branch is set up to track another \n'
+        '(via the --track argument to "git checkout -b ..."). \n'
+        'or pass complete "git diff"-style arguments if supported, like\n'
+        '  git cl upload origin/main\n')
+
+  return remote, upstream_branch
+
+
+def _GetRefSpecOptions(options):
+  refspec_opts = []
+  # By default, new changes are started in WIP mode, and subsequent patchsets
+  # don't send email. At any time, passing --send-mail or --send-email will
+  # mark the change ready and send email for that particular patch.
+  if options.send_mail:
+    refspec_opts.append('ready')
+    refspec_opts.append('notify=ALL')
+  #elif not self.GetIssue() and options.squash:
+    refspec_opts.append('wip')
+  else:
+    refspec_opts.append('notify=NONE')
+
+  #  TODO
+  # TODO(tandrii): options.message should be posted as a comment if
+  # --send-mail or --send-email is set on non-initial upload as Rietveld used
+  # to do it.
+
+  # Set options.title in case user was prompted in _GetTitleForUpload and
+  # _CMDUploadChange needs to be called again.
+  #options.title = self._GetTitleForUpload(options)
+  #if options.title:
+    # Punctuation and whitespace in |title| must be percent-encoded.
+  #  refspec_opts.append('m=' +
+  #                      gerrit_util.PercentEncodeForGitRef(options.title))
+
+  if options.private:
+    refspec_opts.append('private')
+
+  if options.topic:
+    # Documentation on Gerrit topics is here:
+    # https://gerrit-review.googlesource.com/Documentation/user-upload.html#topic
+    refspec_opts.append('topic=%s' % options.topic)
+
+  if options.enable_auto_submit:
+    refspec_opts.append('l=Auto-Submit+1')
+  if options.set_bot_commit:
+    refspec_opts.append('l=Bot-Commit+1')
+  if options.use_commit_queue:
+    refspec_opts.append('l=Commit-Queue+2')
+  elif options.cq_dry_run:
+    refspec_opts.append('l=Commit-Queue+1')
+  elif options.cq_quick_run:
+    refspec_opts.append('l=Commit-Queue+1')
+    refspec_opts.append('l=Quick-Run+1')
+
+  # # Gerrit sorts hashtags, so order is not important.
+  #hashtags = {change_desc.sanitize_hash_tag(t) for t in options.hashtags}
+  #if not self.GetIssue():
+  #  hashtags.update(change_desc.get_hash_tags())
+  #refspec_opts += ['hashtag=%s' % t for t in sorted(hashtags)]
+  return refspec_opts
+
+
+def _GerritCommitMsgHookCheck(offer_removal):
+  hook = os.path.join(settings.GetRoot(), '.git', 'hooks', 'commit-msg')
+  if not os.path.exists(hook):
+    return
+  # Crude attempt to distinguish Gerrit Codereview hook from a potentially
+  # custom developer-made one.
+  data = gclient_utils.FileRead(hook)
+  if not('From Gerrit Code Review' in data and 'add_ChangeId()' in data):
+    return
+  print('WARNING: You have Gerrit commit-msg hook installed.\n'
+        'It is not necessary for uploading with git cl in squash mode, '
+        'and may interfere with it in subtle ways.\n'
+        'We recommend you remove the commit-msg hook.')
+  if offer_removal:
+    if ask_for_explicit_yes('Do you want to remove it now?'):
+      gclient_utils.rm_file_or_tree(hook)
+      print('Gerrit commit-msg hook removed.')
+    else:
+      print('OK, will keep Gerrit commit-msg hook in place.')
 
 
 @subcommand.usage('--description=<description file>')

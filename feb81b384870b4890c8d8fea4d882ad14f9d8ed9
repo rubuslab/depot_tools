@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ab454d5_e638bb06",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4647,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-19T15:16:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2944e07c_7eaeff99",
+      "revId": "feb81b384870b4890c8d8fea4d882ad14f9d8ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "174bcac0_0dfc7369",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-01-19T05:11:09Z",
       "side": 1,
       "message": "What about release branches? We may need different strategy here",
+      "revId": "feb81b384870b4890c8d8fea4d882ad14f9d8ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34c2b542_be77c377",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4656,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-19T15:16:03Z",
+      "side": 1,
+      "message": "modified to check `origin` from Changelist.FetchUpstreamTuple() is \".\" when upstream is a local branch.",
+      "parentUuid": "174bcac0_0dfc7369",
       "revId": "feb81b384870b4890c8d8fea4d882ad14f9d8ed9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -52,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "028c4a4c_0d737c39",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4687,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-19T15:16:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f984fb7e_0c44bf9e",
+      "revId": "feb81b384870b4890c8d8fea4d882ad14f9d8ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f0def9a_7bd2b4b9",
@@ -65,6 +119,30 @@
       "writtenOn": "2023-01-19T05:11:09Z",
       "side": 1,
       "message": "DieWithError? Otherwise, we will have an infinite loop",
+      "range": {
+        "startLine": 4689,
+        "startChar": 4,
+        "endLine": 4689,
+        "endChar": 9
+      },
+      "revId": "feb81b384870b4890c8d8fea4d882ad14f9d8ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f94b35e_a41254d2",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4689,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-19T15:16:03Z",
+      "side": 1,
+      "message": "This should have been deleted.\nThere\u0027s a case where after a rebase, none of the commits in the tree have any relation with what\u0027s saved in LAST_UPLOAD_HASH_CONFIG_KEY.\n\nSo we just continue up the tree until we reach an origin branch. Added comment in code.",
+      "parentUuid": "8f0def9a_7bd2b4b9",
       "range": {
         "startLine": 4689,
         "startChar": 4,

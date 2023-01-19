@@ -3267,8 +3267,11 @@ class ChangelistTest(unittest.TestCase):
     mock.patch('subprocess2.Popen').start()
     mock.patch(
         'git_cl.Changelist.GetGerritProject', return_value='project').start()
+    mock.patch('sys.exit', side_effect=SystemExitMock).start()
+
     self.addCleanup(mock.patch.stopall)
     self.temp_count = 0
+    self.mockGit = GitMocks()
 
   def testRunHook(self):
     expected_results = {
@@ -3611,6 +3614,78 @@ class ChangelistTest(unittest.TestCase):
 
     for user_title in ['not empty', 'yes', 'YES']:
       self.assertEqual(cl._GetTitleForUpload(options), user_title)
+
+  @mock.patch('git_cl.Changelist.FetchUpstreamTuple')
+  @mock.patch('git_cl.RunGitWithCode')
+  @mock.patch('git_cl.RunGit')
+  @mock.patch('git_cl.Changelist._PrepareChange')
+  @mock.patch('git_cl.Changelist.GetCommonAncestorWithUpstream')
+  def testPrepareCherryPickSquashedCommit(self,
+                                          mockGetCommonAncestorWithUpstream,
+                                          mockPrepareChange, mockRunGit,
+                                          mockRunGitWithCode,
+                                          mockFetchUpstreamTuple):
+    parent_hash = '1a2bparentcommit'
+    mockGetCommonAncestorWithUpstream.return_value = parent_hash
+
+    change_desc = git_cl.ChangeDescription('BOO!')
+    ccs = ['cc@review.cl']
+    reviewers = ['reviewer@review.cl']
+    mockPrepareChange.return_value = (reviewers, ccs, change_desc)
+
+    branchref = 'refs/heads/current-branch'
+    cl = git_cl.Changelist(branchref=branchref)
+    options = optparse.Values()
+
+    mockFetchUpstreamTuple.return_value = ('', 'refs/heads/upstream')
+
+    upstream_gerrit_hash = 'upstream-gerrit-hash'
+    self.mockGit.config['branch.upstream.%s' %
+                        git_cl.GERRIT_SQUASH_HASH_CONFIG_KEY] = (
+                            upstream_gerrit_hash)
+
+    latest_tree_hash = 'tree-hash'
+    hash_to_cp = 'squashed-hash'
+    hash_to_push = 'hash-to-push'
+    hash_to_save_as_last_upload = 'last-upload'
+
+    def mock_run_git(commands):
+      if commands == ['rev-parse', branchref]:
+        return hash_to_save_as_last_upload
+      if commands == ['rev-parse', branchref + ':']:
+        return latest_tree_hash
+      if {'commit-tree', latest_tree_hash, '-p', parent_hash,
+          '-F'}.issubset(set(commands)):
+        return hash_to_cp
+      if commands == ['rev-parse', 'HEAD']:
+        return hash_to_push
+
+    mockRunGit.side_effect = mock_run_git
+
+    def mock_run_git_with_code(commands):
+      if commands == ['cherry-pick', hash_to_cp]:
+        return 0, ''
+
+    mockRunGitWithCode.side_effect = mock_run_git_with_code
+
+    new_upload = cl.PrepareCherryPickSquashedCommit(options)
+    self.assertEqual(new_upload.reviewers, reviewers)
+    self.assertEqual(new_upload.ccs, ccs)
+    self.assertEqual(new_upload.commit_to_push, hash_to_push)
+    self.assertEqual(new_upload.new_last_uploaded_commit,
+                     hash_to_save_as_last_upload)
+    self.assertEqual(new_upload.change_desc, change_desc)
+
+    # Test failed cherry-pick
+
+    def mock_run_git_with_code(commands):
+      if commands == ['cherry-pick', hash_to_cp]:
+        return 1, ''
+
+    mockRunGitWithCode.side_effect = mock_run_git_with_code
+
+    with self.assertRaises(SystemExitMock):
+      cl.PrepareCherryPickSquashedCommit(options)
 
   @mock.patch('git_cl.Changelist.GetAffectedFiles', return_value=[])
   @mock.patch('git_cl.Changelist.GetIssue', return_value=None)

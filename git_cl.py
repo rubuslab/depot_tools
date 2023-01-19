@@ -996,6 +996,12 @@ _CommentSummary = collections.namedtuple(
                         'approval', 'disapproval'])
 
 
+_NewUpload = collections.namedtuple('NewUpload', [
+    'reviewers', 'ccs', 'commit_to_push', 'new_last_uploaded_commit',
+    'change_desc'
+])
+
+
 class Changelist(object):
   """Changelist works with one changelist in local branch.
 
@@ -1567,6 +1573,41 @@ class Changelist(object):
     if user_title.lower() == 'y':
       return title
     return user_title or title
+
+  def PrepareCherryPickSquashedCommit(self, options):
+    # type: (optparse.Values) -> _NewUpload()
+    """Create a commit cherry-picked on parent to push."""
+
+    parent = self.GetCommonAncestorWithUpstream()
+    reviewers, ccs, change_desc = self._PrepareChange(options, parent,
+                                                      self.branchref)
+
+    new_upload_hash = RunGit(['rev-parse', self.branchref]).strip()
+    latest_tree = RunGit(['rev-parse', self.branchref + ':']).strip()
+    with gclient_utils.temporary_file() as desc_tempfile:
+      gclient_utils.FileWrite(desc_tempfile, change_desc.description)
+      commit_to_cp = RunGit(
+          ['commit-tree', latest_tree, '-p', parent, '-F',
+           desc_tempfile]).strip()
+
+    _, upstream_branch_ref = self.FetchUpstreamTuple(self.GetBranch())
+
+    upstream_branch = scm.GIT.ShortBranchName(upstream_branch_ref)
+    upstream_squashed_upload = scm.GIT.GetBranchConfig(
+        settings.GetRoot(), upstream_branch, GERRIT_SQUASH_HASH_CONFIG_KEY)
+
+    RunGit(['checkout', '-q', upstream_squashed_upload])
+    ret, _out = RunGitWithCode(['cherry-pick', commit_to_cp])
+    if ret:
+      RunGit(['cherry-pick', '--abort'])
+      RunGit(['checkout', '-q', self.branch])
+      DieWithError('Could not cleanly cherry-pick')
+
+    commit_to_push = RunGit(['rev-parse', 'HEAD'])
+    RunGit(['checkout', '-q', self.branch])
+
+    return _NewUpload(reviewers, ccs, commit_to_push, new_upload_hash,
+                      change_desc)
 
   def _PrepareChange(self, options, parent, end_commit):
     # type: (optparse.Values, str, str) ->
@@ -4716,7 +4757,12 @@ def CMDupload(parser, args):
 def UploadAllSquashed(options, orig_args):
   # type: (optparse.Values, Sequence[str]) -> Tuple[Sequence[Changelist], bool]
   """Uploads the current and upstream branches (if necessary."""
-  _cls, _cherry_pick_current = _UploadAllPrecheck(options, orig_args)
+  cls, cherry_pick_current = _UploadAllPrecheck(options, orig_args)
+
+  uploads_by_cl = []
+  if cherry_pick_current:
+    new_upload = cls[0].PrepareCherryPickSquashedCommit(options)
+    uploads_by_cl.append((cls[0], new_upload))
 
   # TODO(b/265929888): parse cls and create commits.
 

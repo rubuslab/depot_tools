@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0924cff0_0fd50308",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T03:17:44Z",
+      "side": 1,
+      "message": "which environment variables?",
+      "range": {
+        "startLine": 151,
+        "startChar": 24,
+        "endLine": 151,
+        "endChar": 63
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "95f2b147_9352c5ac",
         "filename": "ninja_reclient.py",
         "patchSetId": 8

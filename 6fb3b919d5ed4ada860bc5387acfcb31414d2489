@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b8c007d_de41dad7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-19T17:11:08Z",
+      "side": 1,
+      "message": "CQ is failing because of a cherry-pick merge conflict on \"faf64f1f63a5cb3e37ed138d97aee953345ff7e9\" that i don\u0027t understand.\nbut tests are passing locally",
+      "revId": "6fb3b919d5ed4ada860bc5387acfcb31414d2489",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

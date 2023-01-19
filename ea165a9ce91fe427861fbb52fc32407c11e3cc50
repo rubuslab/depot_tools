@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "04854769_c82aac21",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T03:39:24Z",
+      "side": 1,
+      "message": "This text is moved from below, I guess there is no longer any environment variables required so I will remove this part.",
+      "parentUuid": "0924cff0_0fd50308",
+      "range": {
+        "startLine": 151,
+        "startChar": 24,
+        "endLine": 151,
+        "endChar": 63
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95f2b147_9352c5ac",
@@ -54,6 +78,24 @@
       "writtenOn": "2023-01-19T03:15:45Z",
       "side": 1,
       "message": "add OWNERS for this file?",
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09856f1a_b79b0573",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T03:39:24Z",
+      "side": 1,
+      "message": "Who do you suggest for owners? I am not sure if I should put you, myself or file://GOMA_OWNERS",
+      "parentUuid": "95f2b147_9352c5ac",
       "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -75,6 +117,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e17c704c_cac6de19",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T03:39:24Z",
+      "side": 1,
+      "message": "ninja.py does not use check\u003dTrue, IIUC check\u003dTrue just causes this to throw an exception which I would need to catch in main so that I can ensure reproxy is still shut down, therefore I dont think check\u003dTrue is helpful here as I may still want to continue if the command fails",
+      "parentUuid": "14db4e43_44e2c17b",
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6d7b4bd_95a55e15",
@@ -88,6 +148,30 @@
       "writtenOn": "2023-01-19T03:15:45Z",
       "side": 1,
       "message": "Why these are necessary for this test?",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c6d6b49_014e33ef",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T03:39:24Z",
+      "side": 1,
+      "message": "For here and below these are nessisary for gclient_paths to find the buildtools directory. It is simpler to create the required files than mock many file related functions see https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:tests/gclient_paths_test.py;drc\u003d84b5f9a21530e3df92bbc0c83c057e3532d58f00;l\u003d78 for where I got the idea",
+      "parentUuid": "d6d7b4bd_95a55e15",
       "range": {
         "startLine": 58,
         "startChar": 0,
@@ -138,6 +222,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3370cb89_46d2b73d",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T03:39:24Z",
+      "side": 1,
+      "message": "See other answer",
+      "parentUuid": "23d0e285_f1ec03f2",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c108f0c_0ede6225",
@@ -151,6 +259,30 @@
       "writtenOn": "2023-01-19T03:15:45Z",
       "side": 1,
       "message": "Why these are necessary for this test?",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b563b69b_378a6ccf",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T03:39:24Z",
+      "side": 1,
+      "message": "See other answer",
+      "parentUuid": "9c108f0c_0ede6225",
       "range": {
         "startLine": 73,
         "startChar": 0,
@@ -184,6 +316,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "100e5cf5_f030869a",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T03:39:24Z",
+      "side": 1,
+      "message": "See other answer",
+      "parentUuid": "c186e461_d07fd7ec",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d14b772e_95612643",
@@ -197,6 +353,30 @@
       "writtenOn": "2023-01-19T03:15:45Z",
       "side": 1,
       "message": "Why these are necessary for this test?",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "367662f5_d1f05e85",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T03:39:24Z",
+      "side": 1,
+      "message": "See other answer",
+      "parentUuid": "d14b772e_95612643",
       "range": {
         "startLine": 111,
         "startChar": 0,

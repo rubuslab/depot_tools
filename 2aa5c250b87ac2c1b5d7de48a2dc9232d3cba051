@@ -16,6 +16,46 @@
       "message": "lgtm",
       "revId": "2aa5c250b87ac2c1b5d7de48a2dc9232d3cba051",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16868e07_2dd6ff6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-19T01:25:19Z",
+      "side": 1,
+      "message": "fyi: Nico",
+      "revId": "2aa5c250b87ac2c1b5d7de48a2dc9232d3cba051",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc4b25b1_e033e3c0",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-19T01:25:19Z",
+      "side": 1,
+      "message": "nit: if you catch this exception here, maybe it\u0027s simpler to return None and check `if not reclient_bin_dir or not reclient_cfg:`.",
+      "range": {
+        "startLine": 87,
+        "startChar": 2,
+        "endLine": 87,
+        "endChar": 22
+      },
+      "revId": "2aa5c250b87ac2c1b5d7de48a2dc9232d3cba051",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

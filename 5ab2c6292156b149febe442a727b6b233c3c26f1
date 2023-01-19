@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33b0782c_5d01dcb8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-19T01:38:51Z",
+      "side": 1,
+      "message": "older squash code paths will be cleaned and combined wherever possible in later CL.\n\nThis change is equivalent to _PrepareCommitDescription() in the draft CL:\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4166282/5/git_cl.py",
+      "revId": "5ab2c6292156b149febe442a727b6b233c3c26f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dedce25c_804503ec",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1587,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-19T01:38:51Z",
+      "side": 1,
+      "message": "http://shortn/_cmbBWF1GT4",
+      "range": {
+        "startLine": 1576,
+        "startChar": 2,
+        "endLine": 1587,
+        "endChar": 0
+      },
+      "revId": "5ab2c6292156b149febe442a727b6b233c3c26f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb5af2f0_9c2cf1d4",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1588,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-19T01:38:51Z",
+      "side": 1,
+      "message": "Taken from http://shortn/_oQA0vv2Bt8\n\nrefspec_opts will be done later (one time for all changes we\u0027re uploading)",
+      "revId": "5ab2c6292156b149febe442a727b6b233c3c26f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

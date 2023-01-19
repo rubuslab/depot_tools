@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95f2b147_9352c5ac",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T03:15:45Z",
+      "side": 1,
+      "message": "add OWNERS for this file?",
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14db4e43_44e2c17b",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T03:15:45Z",
+      "side": 1,
+      "message": "Why not set check\u003dTrue?",
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6d7b4bd_95a55e15",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T03:15:45Z",
+      "side": 1,
+      "message": "Why these are necessary for this test?",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c0da43d_ec764df6",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T03:15:45Z",
+      "side": 1,
+      "message": "add OWNERS for this file",
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23d0e285_f1ec03f2",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T03:15:45Z",
+      "side": 1,
+      "message": "Why these are necessary for this test?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c108f0c_0ede6225",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T03:15:45Z",
+      "side": 1,
+      "message": "Why these are necessary for this test?",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c186e461_d07fd7ec",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T03:15:45Z",
+      "side": 1,
+      "message": "Why these are necessary for this test?",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d14b772e_95612643",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T03:15:45Z",
+      "side": 1,
+      "message": "Why these are necessary for this test?",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 64
+      },
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2944e07c_7eaeff99",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4647,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-19T05:11:09Z",
+      "side": 1,
+      "message": "maybe add a safeguard - can\u0027t upload more than N commits. This prevents long traversal in case of misconfiguration / unsupported state.",
+      "revId": "feb81b384870b4890c8d8fea4d882ad14f9d8ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "174bcac0_0dfc7369",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4656,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-19T05:11:09Z",
+      "side": 1,
+      "message": "What about release branches? We may need different strategy here",
+      "revId": "feb81b384870b4890c8d8fea4d882ad14f9d8ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f984fb7e_0c44bf9e",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4687,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-19T05:11:09Z",
+      "side": 1,
+      "message": "Maybe add more info why this happened - that way user knows why they are prompted to run this; and how to avoid this case in the future",
+      "revId": "feb81b384870b4890c8d8fea4d882ad14f9d8ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f0def9a_7bd2b4b9",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4689,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-19T05:11:09Z",
+      "side": 1,
+      "message": "DieWithError? Otherwise, we will have an infinite loop",
+      "range": {
+        "startLine": 4689,
+        "startChar": 4,
+        "endLine": 4689,
+        "endChar": 9
+      },
+      "revId": "feb81b384870b4890c8d8fea4d882ad14f9d8ed9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

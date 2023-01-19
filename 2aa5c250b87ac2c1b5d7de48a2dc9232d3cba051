@@ -56,6 +56,30 @@
       },
       "revId": "2aa5c250b87ac2c1b5d7de48a2dc9232d3cba051",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "065e903e_4219c82a",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T01:35:14Z",
+      "side": 1,
+      "message": "Good point. Done.",
+      "parentUuid": "bc4b25b1_e033e3c0",
+      "range": {
+        "startLine": 87,
+        "startChar": 2,
+        "endLine": 87,
+        "endChar": 22
+      },
+      "revId": "2aa5c250b87ac2c1b5d7de48a2dc9232d3cba051",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

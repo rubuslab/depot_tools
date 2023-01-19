@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4fd6389_7768d8cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-01-19T22:48:30Z",
+      "side": 1,
+      "message": "Please use crrev.com/c/4144469 syntax for CL links",
+      "revId": "59872ad079024cc5113b77108ac4a826667b9ee5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

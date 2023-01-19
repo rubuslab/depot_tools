@@ -154,6 +154,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d55d3521_e96d2f54",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T14:28:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18d0cd1b_29a49d76",
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "14db4e43_44e2c17b",
@@ -249,6 +267,24 @@
       "writtenOn": "2023-01-19T03:15:45Z",
       "side": 1,
       "message": "add OWNERS for this file",
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fb1d4c7_7ad9d2cf",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-01-19T14:28:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c0da43d_ec764df6",
       "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

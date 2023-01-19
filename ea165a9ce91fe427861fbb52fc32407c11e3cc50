@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d331c07_c06b2832",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T04:13:30Z",
+      "side": 1,
+      "message": "I meant description of http://b/264405266, but it seems fixed.\nThanks.",
+      "parentUuid": "4dd7f7d6_c6694d09",
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0924cff0_0fd50308",
@@ -114,6 +132,24 @@
       "side": 1,
       "message": "Who do you suggest for owners? I am not sure if I should put you, myself or file://GOMA_OWNERS",
       "parentUuid": "95f2b147_9352c5ac",
+      "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18d0cd1b_29a49d76",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-01-19T04:13:30Z",
+      "side": 1,
+      "message": "GOMA_OWNERS seems appropriate for now.",
+      "parentUuid": "09856f1a_b79b0573",
       "revId": "ea165a9ce91fe427861fbb52fc32407c11e3cc50",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

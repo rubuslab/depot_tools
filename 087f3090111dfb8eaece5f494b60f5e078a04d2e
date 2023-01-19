@@ -69,6 +69,24 @@
       "message": "I looked into the history when this was introduced, at turns out it was to error out on clang format and gn [0]. Both tools no longer need nor use this check, so I think it\u0027s fine to remove this artificial restriction.\n\nI\u0027ll create a section in README that covers what platforms are supported. \n\n[0] https://codereview.chromium.org/134313007/",
       "revId": "087f3090111dfb8eaece5f494b60f5e078a04d2e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ac7784d_3efca1bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1183500
+      },
+      "writtenOn": "2023-01-19T10:34:26Z",
+      "side": 1,
+      "message": "Ah that\u0027s really interesting, thanks for digging up the historic context. It\u0027s a fun day when I end up on our good ol\u0027 friend Rietveld haha. \n\nDoes that mean this CL can land then? Or what did you have in mind?",
+      "parentUuid": "b55fc56c_c5be9391",
+      "revId": "087f3090111dfb8eaece5f494b60f5e078a04d2e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fd9742c_6d8b5922",
+        "filename": "OWNERS",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-19T22:23:15Z",
+      "side": 1,
+      "message": "Typo, this should be ninja_reclient.py",
+      "revId": "fbb5bebccd522bf345a7da4812176b32fe21e94e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc8f82ef_2607878d",
+        "filename": "tests/OWNERS",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-19T22:23:15Z",
+      "side": 1,
+      "message": "same typo.",
+      "revId": "fbb5bebccd522bf345a7da4812176b32fe21e94e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

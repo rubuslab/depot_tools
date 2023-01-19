@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4aa55de6_f03d1399",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1614,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-19T20:31:29Z",
+      "side": 1,
+      "message": "dedupe with same else block in `_CMDUploadChange`?\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d2480;drc\u003d8c5174b5276efa6375b3ff2f97ce2dab66ee335f",
+      "range": {
+        "startLine": 1605,
+        "startChar": 0,
+        "endLine": 1614,
+        "endChar": 47
+      },
+      "revId": "3c86dafd8c494a9c924a341037ce9145299af23f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3ff9a37_8ebab473",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1627,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-19T20:31:29Z",
+      "side": 1,
+      "message": "is this indent intentional?\n\nalso dedupe with https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d2540;drc\u003d8c5174b5276efa6375b3ff2f97ce2dab66ee335f",
+      "range": {
+        "startLine": 1627,
+        "startChar": 6,
+        "endLine": 1627,
+        "endChar": 24
+      },
+      "revId": "3c86dafd8c494a9c924a341037ce9145299af23f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "6de03577_75abda08",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1599,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T19:44:19Z",
+      "side": 1,
+      "message": "*one solution is to do two git pushes",
+      "parentUuid": "6c5fb716_b7498404",
+      "range": {
+        "startLine": 1599,
+        "startChar": 53,
+        "endLine": 1599,
+        "endChar": 77
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "de34b325_8e67ddbf",
         "filename": "git_cl.py",
         "patchSetId": 2

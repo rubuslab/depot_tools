@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "103e12ab_c9df4cc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-01-20T00:31:05Z",
+      "side": 1,
+      "message": "BTW, if you revert the revert, then \"git cl patch\" it in to your local repo and then make the changes then the chain of events is even clearer, and reviewers can easily see what changes you needed to do to reland the change. Something to consider for next time.",
+      "revId": "5f8c6219591ed2977ae38fb2e4d53ad377238eff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

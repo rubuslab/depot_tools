@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "be7e8b65_2735c6a8",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1595,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-20T20:16:41Z",
+      "side": 1,
+      "message": "nit: clean up a bit",
+      "range": {
+        "startLine": 1594,
+        "startChar": 6,
+        "endLine": 1595,
+        "endChar": 44
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "6c5fb716_b7498404",
@@ -48,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb804c93_0e99e0b7",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1599,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-20T20:16:41Z",
+      "side": 1,
+      "message": "I think if the plan is to dogfood MCE, we should keep impact isolated from non MCE folks. So IMO two pushes for now is better until this launches (at which time we could send a PSA about changes to workflow/behavior).\n\n@sokcevic@chromium.org thoughts?",
+      "parentUuid": "6de03577_75abda08",
+      "range": {
+        "startLine": 1599,
+        "startChar": 53,
+        "endLine": 1599,
+        "endChar": 77
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "de34b325_8e67ddbf",
@@ -66,6 +113,29 @@
         "startChar": 2,
         "endLine": 2809,
         "endChar": 20
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7a08913_ae7eb8b0",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-20T20:16:41Z",
+      "side": 1,
+      "message": "are these comments intentional?",
+      "range": {
+        "startLine": 939,
+        "startChar": 4,
+        "endLine": 939,
+        "endChar": 5
       },
       "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

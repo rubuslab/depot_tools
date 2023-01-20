@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d036559f_636c75e7",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4637,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T00:15:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "82d09504_de083a56",
+      "range": {
+        "startLine": 4637,
+        "startChar": 59,
+        "endLine": 4637,
+        "endChar": 60
+      },
+      "revId": "dc31b469e6d2cba3e07ea4ced9e64c27cabda1f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "afc5380d_bde14e01",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-19T20:20:27Z",
       "side": 1,
       "message": "nit: more detail",
+      "range": {
+        "startLine": 4645,
+        "startChar": 10,
+        "endLine": 4645,
+        "endChar": 24
+      },
+      "revId": "dc31b469e6d2cba3e07ea4ced9e64c27cabda1f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "424746db_463f7de2",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4645,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T00:15:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "afc5380d_bde14e01",
       "range": {
         "startLine": 4645,
         "startChar": 10,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f4556b8_c4a78399",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4655,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T00:15:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "997d9ed8_c9771e7c",
+      "range": {
+        "startLine": 4655,
+        "startChar": 21,
+        "endLine": 4655,
+        "endChar": 23
+      },
+      "revId": "dc31b469e6d2cba3e07ea4ced9e64c27cabda1f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e006820d_2b262725",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-01-19T20:20:27Z",
       "side": 1,
       "message": "nit: remove parens",
+      "range": {
+        "startLine": 4685,
+        "startChar": 7,
+        "endLine": 4685,
+        "endChar": 8
+      },
+      "revId": "dc31b469e6d2cba3e07ea4ced9e64c27cabda1f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62cbaa48_cede9a03",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4685,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T00:15:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e006820d_2b262725",
       "range": {
         "startLine": 4685,
         "startChar": 7,
@@ -116,6 +212,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "333e3442_e0642415",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4716,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T00:15:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2333810_23cf7fce",
+      "range": {
+        "startLine": 4716,
+        "startChar": 6,
+        "endLine": 4716,
+        "endChar": 30
+      },
+      "revId": "dc31b469e6d2cba3e07ea4ced9e64c27cabda1f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15da5367_ded53262",
@@ -129,6 +249,30 @@
       "writtenOn": "2023-01-19T20:20:27Z",
       "side": 1,
       "message": "nit: maybe `ask_for_explicit_yes` would work here too? idk last time I tried working with this I was told to find a ux researcher",
+      "range": {
+        "startLine": 4721,
+        "startChar": 15,
+        "endLine": 4721,
+        "endChar": 39
+      },
+      "revId": "dc31b469e6d2cba3e07ea4ced9e64c27cabda1f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76a7eec0_5323342a",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 4721,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T00:15:02Z",
+      "side": 1,
+      "message": "Of their three options, i\u0027d like to give users one convenient \u0027enter\u0027 option. e.g. enter for people who don\u0027t really  care and just want the fastest option without thinking about it. Not sure if upload-all is the good default \u0027enter\u0027 option though.",
+      "parentUuid": "15da5367_ded53262",
       "range": {
         "startLine": 4721,
         "startChar": 15,

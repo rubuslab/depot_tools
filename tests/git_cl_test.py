@@ -897,6 +897,10 @@ class TestGitCl(unittest.TestCase):
       ref_suffix += ',m=' + gerrit_util.PercentEncodeForGitRef(title)
       metrics_arguments.append('m')
 
+    for k, v in sorted((labels or {}).items()):
+      ref_suffix += ',l=%s+%d' % (k, v)
+      metrics_arguments.append('l=%s+%d' % (k, v))
+
     if short_hostname == 'chromium':
       # All reviewers and ccs get into ref_suffix.
       for r in sorted(reviewers):
@@ -932,9 +936,9 @@ class TestGitCl(unittest.TestCase):
         if c in cc:
           cc.remove(c)
 
-    for k, v in sorted((labels or {}).items()):
-      ref_suffix += ',l=%s+%d' % (k, v)
-      metrics_arguments.append('l=%s+%d' % (k, v))
+    #for k, v in sorted((labels or {}).items()):
+    #  ref_suffix += ',l=%s+%d' % (k, v)
+    #  metrics_arguments.append('l=%s+%d' % (k, v))
 
     if tbr:
       calls += [

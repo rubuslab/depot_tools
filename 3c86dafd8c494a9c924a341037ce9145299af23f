@@ -48,6 +48,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3734a18b_f9766ced",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1614,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-20T19:41:07Z",
+      "side": 1,
+      "message": "Missed this, thanks",
+      "parentUuid": "99772060_ff17eeb2",
+      "range": {
+        "startLine": 1605,
+        "startChar": 0,
+        "endLine": 1614,
+        "endChar": 47
+      },
+      "revId": "3c86dafd8c494a9c924a341037ce9145299af23f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a3ff9a37_8ebab473",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "indent is intentional. \nccs is empty unless we go into this if statement.\n\nwhen i read this, i took a few moments to confirm if there was a reason it was not indented.\nthere\u0027s no reason and it doesn\u0027t matter, but future readers might spend some time wondering the same thing, so I indenting would be clearer/better.",
       "parentUuid": "a3ff9a37_8ebab473",
+      "range": {
+        "startLine": 1627,
+        "startChar": 6,
+        "endLine": 1627,
+        "endChar": 24
+      },
+      "revId": "3c86dafd8c494a9c924a341037ce9145299af23f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3fc17e0_9f3388d3",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1627,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-20T19:41:07Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "91e235fb_00703359",
       "range": {
         "startLine": 1627,
         "startChar": 6,

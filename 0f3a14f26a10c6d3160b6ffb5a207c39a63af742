@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b37cc58_56febd02",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1177474
+      },
+      "writtenOn": "2023-01-20T14:42:04Z",
+      "side": 1,
+      "message": "Thanks for the review Josip, see fixup. Pushing to CQ. \n\nBest\nRichard",
+      "revId": "0f3a14f26a10c6d3160b6ffb5a207c39a63af742",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

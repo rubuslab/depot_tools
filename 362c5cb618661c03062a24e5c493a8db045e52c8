@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b0a27fa_b669ff04",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1588,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-20T20:00:38Z",
+      "side": 1,
+      "message": "style nit: `\u0027.\u0027`",
+      "range": {
+        "startLine": 1588,
+        "startChar": 19,
+        "endLine": 1588,
+        "endChar": 22
+      },
+      "revId": "362c5cb618661c03062a24e5c493a8db045e52c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

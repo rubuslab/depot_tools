@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7db0c97f_26e0b416",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1558,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-20T22:14:26Z",
+      "side": 1,
+      "message": "This needs update. It explains exactly what the code does and not why so I think it\u0027s not useful and should be removed. Or something like:\n\n    # Getting titles for multiple commits is not supported, just return default.",
+      "range": {
+        "startLine": 1557,
+        "startChar": 6,
+        "endLine": 1558,
+        "endChar": 20
+      },
+      "revId": "096ccbf27cfaa9a4cfe15bd55d3917bfeb4c587d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -143,6 +143,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffebe6e8_5718e452",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1599,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-20T22:14:26Z",
+      "side": 1,
+      "message": "I actually like this. We should just rely on user\u0027s preference and not set wip / ready unless user uses options. By default, a new change is set to be ready. User can set default to be wip.\n\nhttps://gerrit-review.googlesource.com/Documentation/user-upload.html#push_options\n\nPerhaps we should add --wip option, but that would apply to all stack changes that have been modified.",
+      "parentUuid": "e3e047c9_8f73b770",
+      "range": {
+        "startLine": 1599,
+        "startChar": 53,
+        "endLine": 1599,
+        "endChar": 77
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "de34b325_8e67ddbf",

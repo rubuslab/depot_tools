@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac695451_1ebeb89d",
+        "filename": "git_cl.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-20T21:24:14Z",
+      "side": 1,
+      "message": "nit: maybe add `picked arbitrarily`.",
+      "revId": "bd4bbd6b75082e4c58906bc0bcecc7f355a52d07",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67538b26_1bbcad12",
+        "filename": "git_cl.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 4651,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-20T21:24:14Z",
+      "side": 1,
+      "message": "could you briefly add information about return value.",
+      "revId": "bd4bbd6b75082e4c58906bc0bcecc7f355a52d07",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a1ea780_35873a5c",
+        "filename": "git_cl.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 4731,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-20T21:24:14Z",
+      "side": 1,
+      "message": "nit: answer.lower()",
+      "range": {
+        "startLine": 4731,
+        "startChar": 9,
+        "endLine": 4731,
+        "endChar": 15
+      },
+      "revId": "bd4bbd6b75082e4c58906bc0bcecc7f355a52d07",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

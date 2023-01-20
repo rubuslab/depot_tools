@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c5fb716_b7498404",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1599,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T19:36:12Z",
+      "side": 1,
+      "message": "I think users might be annoyed by this. Previously only no-squash users (small percentage) had this behavior. but now we\u0027re forcing all stacked changes users to this. \n\ndoing this for now since it\u0027s simple. but if there\u0027s strong feedback from users:\none solution is to do git pushes\n- one for already uploaded CLs\n- one for new CLs.\nresulting output UX won\u0027t be as nice.\n\nBut this will be a problem again if we ever move to a no-squash workflow",
+      "range": {
+        "startLine": 1599,
+        "startChar": 53,
+        "endLine": 1599,
+        "endChar": 77
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de34b325_8e67ddbf",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2809,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T19:36:12Z",
+      "side": 1,
+      "message": "The plan for stacked changes is to add these later to each CL after the git push.\n\ntags and ccs/reviewers (e.g. the auto-added ccs from prehooks) are things I think should definitely not be shared for the changes.",
+      "range": {
+        "startLine": 2796,
+        "startChar": 2,
+        "endLine": 2809,
+        "endChar": 20
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

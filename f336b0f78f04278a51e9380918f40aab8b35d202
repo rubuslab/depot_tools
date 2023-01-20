@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cd92e45_28e03977",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3674,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-20T21:32:42Z",
+      "side": 1,
+      "message": "duped method / test name; rename it",
+      "range": {
+        "startLine": 3674,
+        "startChar": 6,
+        "endLine": 3674,
+        "endChar": 27
+      },
+      "revId": "f336b0f78f04278a51e9380918f40aab8b35d202",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -95,6 +95,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3e047c9_8f73b770",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1599,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T20:25:14Z",
+      "side": 1,
+      "message": "sorry, i wasn\u0027t clear before. \nDuring dogfood we would have \nnew_stacked_changes_path and old_stacked_changes_path. \nmulti_change_upload would only be `True` when new_stacked_changes_path.\n\nold_stacked_changes_path behavior would not change at all.",
+      "parentUuid": "cb804c93_0e99e0b7",
+      "range": {
+        "startLine": 1599,
+        "startChar": 53,
+        "endLine": 1599,
+        "endChar": 77
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "de34b325_8e67ddbf",

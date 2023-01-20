@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "4a5491f2_a165926c",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1595,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T20:29:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be7e8b65_2735c6a8",
+      "range": {
+        "startLine": 1594,
+        "startChar": 6,
+        "endLine": 1595,
+        "endChar": 44
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "6c5fb716_b7498404",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -155,6 +179,30 @@
       "writtenOn": "2023-01-20T20:16:41Z",
       "side": 1,
       "message": "are these comments intentional?",
+      "range": {
+        "startLine": 939,
+        "startChar": 4,
+        "endLine": 939,
+        "endChar": 5
+      },
+      "revId": "3a76f2bef8e358f5ce9989b6b70c89dc964de5ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d16c1768_dcf7644f",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T20:29:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7a08913_ae7eb8b0",
       "range": {
         "startLine": 939,
         "startChar": 4,

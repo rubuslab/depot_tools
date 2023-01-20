@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1802db4_42e5d4db",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4768,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-20T19:53:13Z",
+      "side": 1,
+      "message": "missing paren",
+      "revId": "52bf22b96eb431d75d7d7423204e5fc98ecafe38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

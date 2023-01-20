@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64dd307d_589cf5e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-20T22:08:53Z",
+      "side": 1,
+      "message": "asked chops chat they do have bots using git cl upload\nand did some codesearching.\n\n--set-bot-commit seems to be used:\nhttps://source.chromium.org/chromium/infra/infra/+/main:recipes/recipe_modules/recipe_autoroller/api.py;l\u003d387?q\u003d%22%27--set-bot-commit%27%22\n\ncould find cases of other flags being used. keeping --set-bot-commit and merging on Monday.\n\nalso tbr is being removed in another CL: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4185277",
+      "revId": "dd1c5e1f618f313a340139251d8b3053a0ef91f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

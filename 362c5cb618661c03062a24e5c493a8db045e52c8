@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f94fa75e_a313e45b",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1588,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-21T01:38:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b0a27fa_b669ff04",
+      "range": {
+        "startLine": 1588,
+        "startChar": 19,
+        "endLine": 1588,
+        "endChar": 22
+      },
+      "revId": "362c5cb618661c03062a24e5c493a8db045e52c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e52959e_41af093d",
@@ -37,6 +61,24 @@
       "writtenOn": "2023-01-20T21:58:15Z",
       "side": 1,
       "message": "Correct me if I\u0027m wrong, but if user creates a branch outside depot_tools, then this will be None. I think it makes sense to handle that particular case and throw exception",
+      "revId": "362c5cb618661c03062a24e5c493a8db045e52c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e397e20e_fa47cb75",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1591,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-21T01:38:35Z",
+      "side": 1,
+      "message": "added an assert check",
+      "parentUuid": "1e52959e_41af093d",
       "revId": "362c5cb618661c03062a24e5c493a8db045e52c8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

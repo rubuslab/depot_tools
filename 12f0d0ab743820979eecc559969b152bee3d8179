@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf359826_5f40bcdb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-23T21:34:50Z",
+      "side": 1,
+      "message": "lgtm. sokcevic@, jojwang@, fyi.",
+      "revId": "12f0d0ab743820979eecc559969b152bee3d8179",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe35f004_1a7eaa63",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-23T21:34:50Z",
+      "side": 1,
+      "message": "fascinating, I didn\u0027t know about this logic.",
+      "revId": "12f0d0ab743820979eecc559969b152bee3d8179",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

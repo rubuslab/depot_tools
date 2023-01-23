@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59ee93b5_84dfba66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-23T22:13:48Z",
+      "side": 1,
+      "message": "afaict, there\u0027s no 0.29 available in cipd - https://chrome-infra-packages.appspot.com/p/infra/python/wheels/yapf-py2_py3/+/",
+      "revId": "8787da2ab24a306b40576682baa922c6674cd872",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1665,7 +1665,7 @@ class Changelist(object):
     #    `not (self.GetIssue() and multi_change_upload)`
     # 3) Or enabled change description tags for multi and single changes
     #    by adding them post `git push`.
-    if not (self.GetIssue() and dogfood_path):
+    if not (self.GetIssue() and dogfood_path) and not options.bypass_hashtags:
       hashtags.update(change_desc.get_hash_tags())
     refspec_opts.extend(['hashtag=%s' % t for t in hashtags])
 
@@ -4629,6 +4629,11 @@ def CMDupload(parser, args):
   parser.add_option('--bypass-watchlists', action='store_true',
                     dest='bypass_watchlists',
                     help='bypass watchlists auto CC-ing reviewers')
+  parser.add_option('--bypass-hashtags',
+                    action='store_true',
+                    dest='bypass_hashtags',
+                    help=('bypass automatically adding hashtags for initial '
+                          'upload or --no-squash uploads'))
   parser.add_option('-f', '--force', action='store_true', dest='force',
                     help="force yes to questions (don't prompt)")
   parser.add_option('--message', '-m', dest='message',

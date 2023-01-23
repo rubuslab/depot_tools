@@ -34,6 +34,24 @@
       "parentUuid": "59ee93b5_84dfba66",
       "revId": "8787da2ab24a306b40576682baa922c6674cd872",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a28438c_f525ec58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-23T22:47:30Z",
+      "side": 1,
+      "message": "We don\u0027t have a good way to upgrade / coordinate updating multiple repos. It will need to be scoped and figured out what the best approach is. E.g. do we offer two versions and have complex migration path, or do we accept some repos may be broken until config has been updated.",
+      "parentUuid": "cbf7cb3f_9438934e",
+      "revId": "8787da2ab24a306b40576682baa922c6674cd872",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

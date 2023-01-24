@@ -52,6 +52,24 @@
       "parentUuid": "cbf7cb3f_9438934e",
       "revId": "8787da2ab24a306b40576682baa922c6674cd872",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0c092aa_a50ce3af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366833
+      },
+      "writtenOn": "2023-01-24T12:43:27Z",
+      "side": 1,
+      "message": "Ah, OK. I have some motivation to fix this because I hit a bug because of the old `yapf`. If you think it\u0027s worth the effort, let me know and I could try to coordinate this.\n\nWill abandon this CL for now.",
+      "parentUuid": "8a28438c_f525ec58",
+      "revId": "8787da2ab24a306b40576682baa922c6674cd872",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

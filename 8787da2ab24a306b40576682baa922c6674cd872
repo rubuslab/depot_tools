@@ -70,6 +70,24 @@
       "parentUuid": "8a28438c_f525ec58",
       "revId": "8787da2ab24a306b40576682baa922c6674cd872",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6cfcda2_751350f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-24T19:37:11Z",
+      "side": 1,
+      "message": "We will eventually have to upgrade yapf, and it might be less painful to do it sooner than later. If you\u0027d like to contribute, you are more than welcome! Let\u0027s move the conversation about upgrade to 0.30 in the bug itself.",
+      "parentUuid": "d0c092aa_a50ce3af",
+      "revId": "8787da2ab24a306b40576682baa922c6674cd872",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c475c90_4bfc187a",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4876,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-24T23:34:29Z",
+      "side": 1,
+      "message": "nit: skip if options.title is not set, let gerrit set the default.",
+      "range": {
+        "startLine": 4875,
+        "startChar": 0,
+        "endLine": 4876,
+        "endChar": 36
+      },
+      "revId": "3be8ea90d4581eed80631a304c9a3e6d882dd774",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

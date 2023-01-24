@@ -495,5 +495,19 @@ class GerritUtilTest(unittest.TestCase):
     mockJsonResponse.return_value = {'status': {}}
     self.assertTrue(gerrit_util.IsCodeOwnersEnabledOnRepo('host', 'repo'))
 
+  @mock.patch('gerrit_util.CreateHttpConn')
+  @mock.patch('gerrit_util.ReadHttpJsonResponse')
+  def testIsCodeOwnersEnabledOnRepo_Enabled(
+      self, mockJsonResponse, mockCreateHttpConn):
+
+    add = ['bok-bok', 'circus']
+    remove = ['culture']
+    gerrit_util.SetChangeHashTags(
+        'host', 'proj~123', add_hashtags=add, remove_hashtags=remove)
+    body = {'add': add, 'remove': remove}
+    mockCreateHttpConn.assert_called_once_with(
+        'host', 'changes/proj~123/hashtags', reqtype='POST', body=body)
+
+
 if __name__ == '__main__':
   unittest.main()

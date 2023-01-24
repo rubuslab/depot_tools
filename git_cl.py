@@ -1001,7 +1001,7 @@ _CommentSummary = collections.namedtuple(
 
 _NewUpload = collections.namedtuple('NewUpload', [
     'reviewers', 'ccs', 'commit_to_push', 'new_last_uploaded_commit',
-    'change_desc'
+    'parent', 'change_desc'
 ])
 
 
@@ -1575,6 +1575,103 @@ class Changelist(object):
       return title
     return user_title or title
 
+
+  def _GetRefSpecOptions(self, options, change_desc, multi_change_upload=False):
+    # type: (optparse.Values, Sequence[Changelist], Optional[bool]
+    #     ) -> Sequence[str]
+
+    # Extra options that can be specified at push time. Doc:
+    # https://gerrit-review.googlesource.com/Documentation/user-upload.html
+    refspec_opts = []
+
+    # By default, new changes are started in WIP mode, and subsequent patchsets
+    # don't send email. At any time, passing --send-mail or --send-email will
+    # mark the change ready and send email for that particular patch.
+    if options.send_mail:
+      refspec_opts.append('ready')
+      refspec_opts.append('notify=ALL')
+    elif (not self.GetIssue() and options.squash and not multi_change_upload):
+      refspec_opts.append('wip')
+    else:
+      refspec_opts.append('notify=NONE')
+
+    # TODO(tandrii): options.message should be posted as a comment if
+    # --send-mail or --send-email is set on non-initial upload as Rietveld used
+    # to do it.
+
+    # Set options.title in case user was prompted in _GetTitleForUpload and
+    # _CMDUploadChange needs to be called again.
+    options.title = self._GetTitleForUpload(
+        options, multi_change_upload=multi_change_upload)
+
+    if options.title:
+      # Punctuation and whitespace in |title| must be percent-encoded.
+      refspec_opts.append('m=' +
+                          gerrit_util.PercentEncodeForGitRef(options.title))
+
+    if options.private:
+      refspec_opts.append('private')
+
+    if options.topic:
+      # Documentation on Gerrit topics is here:
+      # https://gerrit-review.googlesource.com/Documentation/user-upload.html#topic
+      refspec_opts.append('topic=%s' % options.topic)
+
+    if options.enable_auto_submit:
+      refspec_opts.append('l=Auto-Submit+1')
+    if options.set_bot_commit:
+      refspec_opts.append('l=Bot-Commit+1')
+    if options.use_commit_queue:
+      refspec_opts.append('l=Commit-Queue+2')
+    elif options.cq_dry_run:
+      refspec_opts.append('l=Commit-Queue+1')
+    elif options.cq_quick_run:
+      refspec_opts.append('l=Commit-Queue+1')
+      refspec_opts.append('l=Quick-Run+1')
+
+    if change_desc.get_reviewers(tbr_only=True):
+      score = gerrit_util.GetCodeReviewTbrScore(self.GetGerritHost(),
+                                                self.GetGerritProject())
+      refspec_opts.append('l=Code-Review+%s' % score)
+
+    # Note: hashtags, reviewers, and ccs are handled individually for each
+    # branch/change.
+    return refspec_opts
+
+  def PrepareSquashedCommit(self, options, parent=None, end_commit=None):
+    # type: (optparse.Values, Optional[str], Optional[str]) -> _NewUpload()
+    """Create a squashed commit to upload."""
+    if parent is None:
+      origin, upstream_branch_ref = self.FetchUpstreamTuple(self.GetBranch())
+      upstream_branch = scm.GIT.ShortBranchName(upstream_branch_ref)
+      if origin == '.':
+        # upstream is another local branch.
+        # Assume we want to upload from upstream's last upload.
+        parent = scm.GIT.GetBranchConfig(settings.GetRoot(), upstream_branch,
+                                         GERRIT_SQUASH_HASH_CONFIG_KEY)
+        assert parent, ('upstream branch %s not configured correctly. '
+                        'Could not fetch latest gerrit upload from git '
+                        'config.')
+      else:
+        # upstream is the root of the tree.
+        parent = self.GetCommonAncestorWithUpstream()
+
+    if end_commit is None:
+      end_commit = RunGit(['rev-parse', self.branchref]).strip()
+
+    reviewers, ccs, change_desc = self._PrepareChange(options, parent,
+                                                      end_commit)
+    latest_tree = RunGit(['rev-parse', end_commit + ':']).strip()
+    with gclient_utils.temporary_file() as desc_tempfile:
+      gclient_utils.FileWrite(desc_tempfile, change_desc.description)
+      commit_to_push = RunGit(
+          ['commit-tree', latest_tree, '-p', parent, '-F',
+           desc_tempfile]).strip()
+
+    return _NewUpload(reviewers, ccs, commit_to_push, end_commit, parent,
+                      change_desc)
+
+
   def PrepareCherryPickSquashedCommit(self, options):
     # type: (optparse.Values) -> _NewUpload()
     """Create a commit cherry-picked on parent to push."""
@@ -1608,7 +1705,7 @@ class Changelist(object):
     RunGit(['checkout', '-q', self.branch])
 
     return _NewUpload(reviewers, ccs, commit_to_push, new_upload_hash,
-                      change_desc)
+                      parent, change_desc)
 
   def _PrepareChange(self, options, parent, end_commit):
     # type: (optparse.Values, str, str) ->
@@ -1683,6 +1780,35 @@ class Changelist(object):
       ccs.extend(change_desc.get_cced())
 
     return change_desc.get_reviewers(), ccs, change_desc
+
+  def PostUploadUpdates(self, options, new_upload, change_number):
+    # type: (optparse.Values, _NewUpload, change_number) -> None
+    """Makes necessary post upload changes to the local and remote cl."""
+    if not self.GetIssue():
+      self.SetIssue(change_number)
+
+    self._GitSetBranchConfigValue(
+        GERRIT_SQUASH_HASH_CONFIG_KEY, new_upload.commit_to_push)
+    self._GitSetBranchConfigValue(
+        LAST_UPLOAD_HASH_CONFIG_KEY, new_upload.new_last_uploaded_commit)
+
+    if settings.GetRunPostUploadHook():
+      self.RunPostUploadHook(options.verbose, new_upload.parent,
+                           new_upload.change_desc.description,
+                           options.no_python2_post_upload_hooks)
+
+    if new_upload.reviewers or new_upload.ccs:
+      gerrit_util.AddReviewers(
+          self.GetGerritHost(), self._GerritChangeIdentifier(),
+          reviewers=new_upload.reviewers, ccs=new_upload.ccs,
+          notify=bool(options.send_mail))
+
+    hashtags = {new_upload.change_desc.sanitize_hash_tag(t)
+                for t in options.hashtags}
+    hashtags.update(new_upload.change_desc.get_hash_tags())
+    gerrit_util.SetChangeHashTags(
+        self.GetGerritHost(), self._GerritChangeIdentifier(),
+        add_hashtags=hashtags)
 
   def CMDUpload(self, options, git_diff_args, orig_args):
     """Uploads a change to codereview."""

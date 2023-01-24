@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9be38387_0f9b8bed",
+        "filename": "git_cl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1662,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-01-24T20:04:31Z",
+      "side": 1,
+      "message": "`Gerrit sorts hashtags, so order is not important`\n\nwhy sort here then?",
+      "range": {
+        "startLine": 1662,
+        "startChar": 51,
+        "endLine": 1662,
+        "endChar": 57
+      },
+      "revId": "a347d805b3cde49ba939b1ad1f9208f9fe4b9f76",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

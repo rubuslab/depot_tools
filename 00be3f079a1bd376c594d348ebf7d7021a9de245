@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b40451e2_1a983263",
+        "filename": "gsutil.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-24T23:56:52Z",
+      "side": 0,
+      "message": "It still seems like this needs to be set, working with security to see if this is intentional.",
+      "revId": "00be3f079a1bd376c594d348ebf7d7021a9de245",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -118,6 +118,30 @@
       },
       "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "752394e0_e19a92f9",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2023-01-24T04:16:10Z",
+      "side": 1,
+      "message": "\u003e i assumed the hashtag from the change_desc was not that important\n\nWe have this in `git cl upload --help`:\n\n```\nIf subject contains text in square brackets or has \"\u003ctext\u003e: \" prefix, such\ntext(s) is treated as Gerrit hashtags. For example, CLs with subjects:\n  [git-cl] add support for hashtags\n  Foo bar: implement foo\nwill be hashtagged with \"git-cl\" and \"foo-bar\" respectively.\n```\n\nso this functionality of `git cl upload` was probably intentional.\n\nThis functionality is also referenced in https://chromium.googlesource.com/chromium/src/+/HEAD/docs/commit_checklist.md#13_upload-the-cl-to-gerrit, and judging by a random selection of CLs from https://chromium-review.googlesource.com/q/status:open+-is:wip, most CLs seem to have a \"hashtag\" in the title.",
+      "parentUuid": "fe50aad2_e3ced1b7",
+      "range": {
+        "startLine": 2640,
+        "startChar": 35,
+        "endLine": 2640,
+        "endChar": 59
+      },
+      "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

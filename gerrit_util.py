@@ -1028,6 +1028,25 @@ def ResetReviewLabels(host, change, label, value='0', message=None,
                    'a new patchset was uploaded.' % change)
 
 
+def SetChangeHashTags(host, change, add_hashtags=None, remove_hashtags=None):
+  # type(str, str, Sequence[str], Sequence[str]) -> Optional[Mapping[str, Any]]
+  """Sets the hashtags of a change in gerrit."""
+  if not (add_hashtags and remove_hashtags):
+    print('No hashtags given to modify')
+    return
+
+  path = 'changes/%s/hashtags' % change
+
+  body = {}
+  if add_hashtags:
+    body['add'] = add_hashtags
+  if remove_hashtags:
+    body['remove'] = remove_hashtags
+
+  conn = CreateHttpConn(host, path, reqtype='POST', body=body)
+  return ReadHttpJsonResponse(conn, accept_statuses=[200])
+
+
 def CreateChange(host, project, branch='main', subject='', params=()):
   """
   Creates a new change.

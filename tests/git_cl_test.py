@@ -3216,6 +3216,7 @@ class ChangelistTest(unittest.TestCase):
     self.temp_count = 0
     self.mockGit = GitMocks()
     mock.patch('scm.GIT.GetConfig', self.mockGit.GetConfig).start()
+    mock.patch('scm.GIT.SetConfig', self.mockGit.SetConfig).start()
 
   def testRunHook(self):
     expected_results = {
@@ -3807,6 +3808,42 @@ class ChangelistTest(unittest.TestCase):
         'AH!', 'CC=cow2@moo.farm', 'R=horse@apple.farm', '',
         'Change-Id: 123456789', 'Cq-Do-Not-Cancel-Tryjobs: true'
     ])
+
+  @mock.patch('git_cl.Changelist.GetGerritHost', return_value='chromium')
+  @mock.patch('git_cl.Settings.GetRunPostUploadHook', return_value=True)
+  @mock.patch('git_cl.Changelist.RunPostUploadHook')
+  @mock.patch('git_cl.gerrit_util.SetChangeHashTags')
+  @mock.patch('git_cl.gerrit_util.AddReviewers')
+  def testPostUploadUpdates(self, mockAddReviewers, mockSetHashTags,
+                            mockRunPostHook, *_mocks):
+
+    cl = git_cl.Changelist(branchref='refs/heads/curren-branch')
+    options = optparse.Values()
+    options.hashtags = ['bok-bok']
+    options.verbose = True
+    options.no_python2_post_upload_hooks = True
+    options.send_mail = False
+
+    reviewers = ['monkey@vp.circus']
+    ccs = ['cow@rds.corp']
+    change_desc = git_cl.ChangeDescription('[stonks] honk honk')
+    new_upload = git_cl._NewUpload(reviewers, ccs, 'pushed-commit',
+                                   'last-uploaded-commit', 'parent-commit',
+                                   change_desc)
+
+    cl.PostUploadUpdates(options, new_upload, '12345')
+    logging.warning(self.mockGit.config)
+
+    mockAddReviewers.assert_called_once_with('chromium',
+                                             'project~123456',
+                                             reviewers=reviewers,
+                                             ccs=ccs,
+                                             notify=False)
+    mockSetHashTags.assert_called_once_with('chromium',
+                                            'project~123456',
+                                            add_hashtags={'bok-bok', 'stonks'})
+    mockRunPostHook.assert_called_once_with(True, 'parent-commit',
+                                            change_desc.description, True)
 
 
 class CMDTestCaseBase(unittest.TestCase):

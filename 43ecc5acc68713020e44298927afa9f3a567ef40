@@ -214,6 +214,30 @@
       },
       "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f541c58c_fd685e62",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-24T22:05:14Z",
+      "side": 1,
+      "message": "Joanna, to clarify, do you want Michael to abandon this CL and wait for you to have a replacement?",
+      "parentUuid": "3d198945_231ab7f9",
+      "range": {
+        "startLine": 2640,
+        "startChar": 35,
+        "endLine": 2640,
+        "endChar": 59
+      },
+      "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

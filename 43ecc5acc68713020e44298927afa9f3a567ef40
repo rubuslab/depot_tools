@@ -142,6 +142,30 @@
       },
       "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5860fdc_424e36cc",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-24T05:18:50Z",
+      "side": 1,
+      "message": "I understand it was intentional when it was added. But that doesn\u0027t mean it\u0027s valuable.\nCould you help us understand the impact of not having hashtags from change descriptions and only having `options.hashtags`?",
+      "parentUuid": "752394e0_e19a92f9",
+      "range": {
+        "startLine": 2640,
+        "startChar": 35,
+        "endLine": 2640,
+        "endChar": 59
+      },
+      "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

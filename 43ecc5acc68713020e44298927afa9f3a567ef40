@@ -70,6 +70,30 @@
       },
       "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0822767_110df86c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2023-01-24T00:17:19Z",
+      "side": 1,
+      "message": "I believe there are three cases here. For the status quo (before this CL):\n\n- Squash mode (the de-facto workflow)\n  - Initial upload adds change desc hashtags.\n  - Further uploads does not add change desc hashtags.\n- No-squash mode without branch, with detached HEAD (similar to the internal Mercurial workflow)\n  - All uploads add change desc hashtags from the current commit to all CLs in the upload.\n- No-squash mode with branch\n  - I don\u0027t know, but I suspect this is identical to no-squash mode without a branch, as (from my understanding) `GetIssue()` returns None in no-squash mode.\n\nWith this CL, no-squash users can opt to use `--bypass-hashtags` to avoid adding hashtags after the initial upload.\n\nIf we always choose not to add change desc hashtags when using no-squash, then the hashtags will never be added. For example, this CL wouldn\u0027t have `git-cl` if that was the case. This is minor functionality (subsequent uploads for no-squash users do not add hashtags) for an extra flag, so if you are opposed to this I\u0027m happy to change this to use `options.squash` instead of `options.bypass_hashtags`. `--no-squash` users would need to manually add hashtags in that case.\n\nFWIW, we have a similar issue for watchlists, so my personal workflow is to use `git cl upload --no-squash HEAD^` for initial uploads, and `git cl upload --no-squash HEAD^ --bypass-watchlists --bypass-hashtags --bypass-hooks` for subsequent uploads (after running `git cl presubmit -u -f HEAD^` for each commit to be uploaded).",
+      "parentUuid": "245a48df_4d7e06d6",
+      "range": {
+        "startLine": 2640,
+        "startChar": 35,
+        "endLine": 2640,
+        "endChar": 59
+      },
+      "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -495,5 +495,6 @@ class GerritUtilTest(unittest.TestCase):
     mockJsonResponse.return_value = {'status': {}}
     self.assertTrue(gerrit_util.IsCodeOwnersEnabledOnRepo('host', 'repo'))
 
+
 if __name__ == '__main__':
   unittest.main()

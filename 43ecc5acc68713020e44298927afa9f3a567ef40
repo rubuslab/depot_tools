@@ -190,6 +190,30 @@
       },
       "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d198945_231ab7f9",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-24T15:52:52Z",
+      "side": 1,
+      "message": "Thanks! that\u0027s useful to know.\nWe\u0027re about to re-shuffle some of this code with another project.\nI don\u0027t want to have another `bypass_hashtags` flag added, but also don\u0027t want to take away this feature too hastily.\nAssuming this is also P3 like the bug. Do you mind if the team takes over addressing these issues?",
+      "parentUuid": "2c16e536_c6970e5e",
+      "range": {
+        "startLine": 2640,
+        "startChar": 35,
+        "endLine": 2640,
+        "endChar": 59
+      },
+      "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -166,6 +166,30 @@
       },
       "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c16e536_c6970e5e",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2023-01-24T05:55:36Z",
+      "side": 1,
+      "message": "Users would need to add hashtags manually.\n\nMy main concern was breaking existing functionality, but if the depot_tools team agrees to remove automatic hashtags I\u0027m personally not too fussed about it. I personally use hashtags for Perf/GRAD to have a link showing all my CLs relating to a feature - adding hashtags manually would be a bit tedious but should be OK.",
+      "parentUuid": "e5860fdc_424e36cc",
+      "range": {
+        "startLine": 2640,
+        "startChar": 35,
+        "endLine": 2640,
+        "endChar": 59
+      },
+      "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

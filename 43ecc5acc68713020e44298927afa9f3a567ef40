@@ -94,6 +94,30 @@
       },
       "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe50aad2_e3ced1b7",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-24T00:42:55Z",
+      "side": 1,
+      "message": "```\nIf we always choose not to add change desc hashtags when using no-squash, then the hashtags will never be added. \n```\niiuc, hashtags from options.hashtags will still be applied. \nand, i assumed the hashtag from the change_desc was not that important given:\n-  there\u0027s the options.hashtags alternative, \n-  change_desc hashtags isn\u0027t even \u0027fully implemented\u0027 in that, changing the description later doesn\u0027t change the hashtags that get applied.\n\nbut please lmk if your experience does not match this as a user. \n\nto simplify code, very ideally, for any workflow the only hashtags that get applied would be the options.hashtags and it would be applied to all changes that get uploaded with the single git push. We\u0027re not there yet, but at the very least it\u0027d be nice to avoid moving away from that direction and keep things simple.",
+      "parentUuid": "e0822767_110df86c",
+      "range": {
+        "startLine": 2640,
+        "startChar": 35,
+        "endLine": 2640,
+        "endChar": 59
+      },
+      "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

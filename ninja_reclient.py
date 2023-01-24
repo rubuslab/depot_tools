@@ -58,6 +58,38 @@ def stop_reproxy(reclient_cfg, reclient_bin_dir):
   ])
 
 
+def find_rel_ninja_out_dir(args):
+  # Ninja uses getopt_long, which allow to intermix non-option arguments.
+  # To leave non supported parameters untouched, we do not use getopt.
+  for index, arg in enumerate(args[1:]):
+    if arg == '-C':
+      # + 1 to get the next argument and +1 because we trimmed off args[0]
+      return args[index + 2]
+    if arg.startswith('-C'):
+      # Support -Cout/Default
+      return arg[2:]
+  return '.'
+
+
+def set_env_if_unset(key, val):
+  if os.environ.get(key) is None:
+    os.environ[key] = val
+
+
+def set_reproxy_path_flags(tmp_dir):
+  log_dir = os.path.join(tmp_dir, 'logs')
+  os.makedirs(log_dir, exist_ok=True)
+  set_env_if_unset("RBE_output_dir", log_dir)
+  set_env_if_unset("RBE_proxy_log_dir", log_dir)
+  cache_dir = os.path.join(tmp_dir, 'cache')
+  os.makedirs(cache_dir, exist_ok=True)
+  set_env_if_unset("RBE_cache_dir", cache_dir)
+  if sys.platform.startswith('win'):
+    set_env_if_unset("RBE_server_address", "pipe://%s/reproxy.sock" % tmp_dir)
+  else:
+    set_env_if_unset("RBE_server_address", "unix://%s/reproxy.ipc" % tmp_dir)
+
+
 def main(argv):
   # If use_remoteexec is set, but the reclient binaries or configs don't
   # exist, display an error message and stop.  Otherwise, the build will
@@ -74,6 +106,14 @@ def main(argv):
            "reclient are not yet supported.  Try regenerating your "
            "build with use_goma in place of use_remoteexec for now."),
           file=sys.stderr)
+    return 1
+  try:
+    tmp_dir = os.path.abspath(
+        os.path.join(find_rel_ninja_out_dir(argv), 'reproxy_tmp'))
+    os.makedirs(tmp_dir, exist_ok=True)
+    set_reproxy_path_flags(tmp_dir)
+  except OSError:
+    print("Error creating reproxy_tmp in output dir", file=sys.stderr)
     return 1
   reproxy_ret_code = start_reproxy(reclient_cfg, reclient_bin_dir)
   if reproxy_ret_code != 0:

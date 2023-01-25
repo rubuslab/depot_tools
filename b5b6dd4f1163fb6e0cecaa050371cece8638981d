@@ -16,6 +16,29 @@
       "message": "Comment removed by: Joanna Wang; Reason: redo",
       "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b22cfca_63a8b787",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5131,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-25T15:57:59Z",
+      "side": 1,
+      "message": "Is there a use-case for non-forced reapply? this could also just be `True` and save the users from typing `--force` every time they reapply.\n\nor we could save whether the initial patch was done with force in the git config, but only maybe only if users ask during dogfood.",
+      "range": {
+        "startLine": 5131,
+        "startChar": 38,
+        "endLine": 5131,
+        "endChar": 51
+      },
+      "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

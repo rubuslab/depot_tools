@@ -39,6 +39,29 @@
       },
       "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca0e9509_1405bd95",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5131,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-25T15:58:47Z",
+      "side": 1,
+      "message": "this works afaict git cl patch --reapply --force\n\nand even avoids the cherry-picking conflicts that often come up in\ngit cl patch --reapply\n\nIt was added here: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/538137\n\ni don\u0027t think there was any original reason for not using force with reapply.",
+      "range": {
+        "startLine": 5131,
+        "startChar": 38,
+        "endLine": 5131,
+        "endChar": 51
+      },
+      "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -62,6 +62,54 @@
       },
       "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d985c699_96cc6615",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5131,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-25T18:57:01Z",
+      "side": 1,
+      "message": "agreed; but let\u0027s remove git reset --hard since force will do that.",
+      "parentUuid": "ca0e9509_1405bd95",
+      "range": {
+        "startLine": 5131,
+        "startChar": 38,
+        "endLine": 5131,
+        "endChar": 51
+      },
+      "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12bcf85c_22bba640",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5131,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-25T18:57:01Z",
+      "side": 1,
+      "message": "Given that reapply may result in data loss already (as noted in its desc),  we can probably remove L5125 (git reset --hard) and just use force\u003dTrue.",
+      "parentUuid": "1b22cfca_63a8b787",
+      "range": {
+        "startLine": 5131,
+        "startChar": 38,
+        "endLine": 5131,
+        "endChar": 51
+      },
+      "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

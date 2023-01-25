@@ -22,6 +22,30 @@
       },
       "revId": "3be8ea90d4581eed80631a304c9a3e6d882dd774",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b89f2e99_17763a63",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4876,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-25T14:45:43Z",
+      "side": 1,
+      "message": "git_push_metadata never gets sent to gerrit, it\u0027s used to write the local git push traces\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d2568?q\u003dgit_cl.\u0026ss\u003dchromium%2Fchromium%2Ftools%2Fdepot_tools\n\nthe title we send to gerrit is in the refspec http://shortn/_DMt0heOzH3",
+      "parentUuid": "1c475c90_4bfc187a",
+      "range": {
+        "startLine": 4875,
+        "startChar": 0,
+        "endLine": 4876,
+        "endChar": 36
+      },
+      "revId": "3be8ea90d4581eed80631a304c9a3e6d882dd774",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

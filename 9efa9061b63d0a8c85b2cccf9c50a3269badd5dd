@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0e8ee4e1_b31bbc18",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1473902
+      },
+      "writtenOn": "2023-01-25T21:33:19Z",
+      "side": 1,
+      "message": "@jwata@google.com\n\nDo these need to be updated? Need to update all binaries that use go.chromium.org/luci/auth library.",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 89
+      },
+      "revId": "9efa9061b63d0a8c85b2cccf9c50a3269badd5dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29d0982a_c2099e33",
         "filename": "cipd_manifest.txt",
         "patchSetId": 3

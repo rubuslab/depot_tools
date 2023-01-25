@@ -110,6 +110,30 @@
       },
       "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "667a50fc_0122f0e1",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5131,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-25T20:04:33Z",
+      "side": 1,
+      "message": "Actually, a user may do `git cl patch \u003curl\u003e` without --force the first time, so the upstream would be w/e is the latest they\u0027ve fetched.\n\nIf we always force when they use --reapply, it would change the base commit for the above situation. \n\nand i think it might break support for these two: \n1) they may not have the base-commit locally (so they can\u0027t use --force)\n2) they may be continuing a change from a different workstation, in which case, they would not want/need to use force.\n\nDo we want to support the above?",
+      "parentUuid": "12bcf85c_22bba640",
+      "range": {
+        "startLine": 5131,
+        "startChar": 38,
+        "endLine": 5131,
+        "endChar": 51
+      },
+      "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

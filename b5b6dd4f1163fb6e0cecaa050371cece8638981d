@@ -206,6 +206,30 @@
       },
       "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9446eb5_e8514744",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5131,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-25T21:00:07Z",
+      "side": 1,
+      "message": "\u003e and if someone patches a coworkers CL without force, and then creates their own downstream branches, how will they be able to upload the downstream branches without uploading their coworkers CL as well?\n\n\nYeah, this looks correct - I think they would need to upload those patches and that\u0027s not desired.\n\nAnd yes - this change looks good; I forgot to +1 it.",
+      "parentUuid": "867253e6_7197fc82",
+      "range": {
+        "startLine": 5131,
+        "startChar": 38,
+        "endLine": 5131,
+        "endChar": 51
+      },
+      "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -134,6 +134,30 @@
       },
       "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50c05e1b_ddee8461",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5131,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-25T20:22:38Z",
+      "side": 1,
+      "message": "\u003e 1) they may not have the base-commit locally (so they can\u0027t use --force)\n\nWhat do you mean by this base-commit? Is it the parent of the CL? If so, it will be available locally since fetch will do that part [0]\n\n\u003e 2) they may be continuing a change from a different workstation, in which case, they would not want/need to use force.\n\nAfter giving a bit more thought, I believe --force just doesn\u0027t play nicely with how depot_tools tracks branches and commits. With it, it may break local relationship chain. Other option is to always use cherry-pick, which is force\u003dfalse.\n\nFor example, let\u0027s say we have CL_A, CL_B, and CL_C. If we try to reapply CL_B with force, we would be resetting it to CL_B\u0027 (squashed commit) that has CL_A\u0027 as its parent. What happens when you make a change in CL_A and try to rebase CL_B onto it? Also, rebasing CL_C may yield interesting conflicts too.\n\nSo, perhaps we shouldn\u0027t encourage users to use --force and not set it to default.\n\n[0] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d2490;drc\u003dc710e2d56a813d27d2368eb0e7e292bd2f59519f",
+      "parentUuid": "667a50fc_0122f0e1",
+      "range": {
+        "startLine": 5131,
+        "startChar": 38,
+        "endLine": 5131,
+        "endChar": 51
+      },
+      "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

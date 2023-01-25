@@ -158,6 +158,30 @@
       },
       "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd458ea9_8f57f9a0",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5131,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-25T20:28:23Z",
+      "side": 1,
+      "message": "not using force \u003d\u003d not using the gerrit cl\u0027s parent commit as the local parent commit when we patch it?\n\nso then wouldn\u0027t the resulting patched commit would be different from what is in gerrit?\n\nand if someone patches a coworkers CL without force, and then creates their own downstream branches, how will they be able to upload the downstream branches without uploading their coworkers CL as well?",
+      "parentUuid": "50c05e1b_ddee8461",
+      "range": {
+        "startLine": 5131,
+        "startChar": 38,
+        "endLine": 5131,
+        "endChar": 51
+      },
+      "revId": "b5b6dd4f1163fb6e0cecaa050371cece8638981d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

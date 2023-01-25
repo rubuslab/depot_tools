@@ -238,6 +238,30 @@
       },
       "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a473af37_0fcffb1f",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2023-01-25T00:54:22Z",
+      "side": 1,
+      "message": "Joanna: I don\u0027t mind if the team takes over addressing these issues. I\u0027ll keep this as a local patch for the time being. Thanks for your input!\n\nI see that the team has been working on stacked changes (https://chromium-review.googlesource.com/q/hashtag:%22stacked-changes%22+(status:open%20OR%20status:merged)) with a branch/squash-based workflow, so my only request is to keep a no-squash / Fig/Mercurial-like workflow available if possible :)",
+      "parentUuid": "3d198945_231ab7f9",
+      "range": {
+        "startLine": 2640,
+        "startChar": 35,
+        "endLine": 2640,
+        "endChar": 59
+      },
+      "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

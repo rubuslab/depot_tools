@@ -262,6 +262,30 @@
       },
       "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b64dbe39_755cfe9b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-26T20:16:36Z",
+      "side": 1,
+      "message": "no problem! we\u0027re not removing the no-squash workflow with this project",
+      "parentUuid": "a473af37_0fcffb1f",
+      "range": {
+        "startLine": 2640,
+        "startChar": 35,
+        "endLine": 2640,
+        "endChar": 59
+      },
+      "revId": "43ecc5acc68713020e44298927afa9f3a567ef40",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,24 @@
       "message": "It still seems like this needs to be set, working with security to see if this is intentional.",
       "revId": "00be3f079a1bd376c594d348ebf7d7021a9de245",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1f88c08_01b9b5b4",
+        "filename": "gsutil.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-26T18:24:27Z",
+      "side": 0,
+      "message": "security just merged their changes into depot_tools. A quick rebase fixed this.",
+      "parentUuid": "b40451e2_1a983263",
+      "revId": "00be3f079a1bd376c594d348ebf7d7021a9de245",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

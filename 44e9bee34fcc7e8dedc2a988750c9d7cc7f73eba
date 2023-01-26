@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55c118b1_2da9c315",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2494,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-26T01:13:46Z",
+      "side": 0,
+      "message": "newbranch only exists when we pass\n`git cl patch -b \u003cnew branch\u003e \u003cissue\u003e`\nif users create a new branch first and then do `git cl patch \u003cissue\u003e` , code never reaches this point.",
+      "revId": "44e9bee34fcc7e8dedc2a988750c9d7cc7f73eba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

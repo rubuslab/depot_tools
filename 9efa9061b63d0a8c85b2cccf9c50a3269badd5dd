@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e85b56b3_0e04df8c",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-26T01:03:35Z",
+      "side": 1,
+      "message": "goma/client is written in C++. So it doesn\u0027t use the Go library.",
+      "parentUuid": "0e8ee4e1_b31bbc18",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 89
+      },
+      "revId": "9efa9061b63d0a8c85b2cccf9c50a3269badd5dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29d0982a_c2099e33",

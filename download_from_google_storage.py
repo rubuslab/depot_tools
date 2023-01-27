@@ -80,11 +80,12 @@ class Gsutil(object):
   VPYTHON3 = ('vpython3.bat'
               if GetNormalizedPlatform() == 'win32' else 'vpython3')
 
-  def __init__(self, path, boto_path=None):
+  def __init__(self, path, boto_path=None, no_auth=False):
     if not os.path.exists(path):
       raise FileNotFoundError('GSUtil not found in %s' % path)
     self.path = path
     self.boto_path = boto_path
+    self.no_auth = no_auth
 
   def get_sub_env(self):
     env = os.environ.copy()
@@ -102,11 +103,15 @@ class Gsutil(object):
 
   def call(self, *args):
     cmd = [self.VPYTHON3, self.path]
+    if self.no_auth:
+      cmd.append('--no_auth')
     cmd.extend(args)
     return subprocess2.call(cmd, env=self.get_sub_env())
 
   def check_call(self, *args):
     cmd = [self.VPYTHON3, self.path]
+    if self.no_auth:
+      cmd.append('--no_auth')
     cmd.extend(args)
     ((out, err), code) = subprocess2.communicate(
         cmd,
@@ -238,6 +243,7 @@ def _validate_tar_file(tar, prefix):
       return False
     return True
   return all(map(_validate, tar.getmembers()))
+
 
 def _downloader_worker_thread(thread_num, q, force, base_url,
                               gsutil, out_q, ret_codes, verbose, extract,
@@ -445,10 +451,11 @@ def download_from_google_storage(
   ret_codes = queue.Queue()
   ret_codes.put((0, None))
   for thread_num in range(num_threads):
-    t = threading.Thread(
-        target=_downloader_worker_thread,
-        args=[thread_num, work_queue, force, base_url,
-              gsutil, stdout_queue, ret_codes, verbose, extract])
+    t = threading.Thread(target=_downloader_worker_thread,
+                         args=[
+                             thread_num, work_queue, force, base_url, gsutil,
+                             stdout_queue, ret_codes, verbose, extract
+                         ])
     t.daemon = True
     t.start()
     all_threads.append(t)
@@ -580,7 +587,8 @@ def main(args):
   # Make sure gsutil exists where we expect it to.
   if os.path.exists(GSUTIL_DEFAULT_PATH):
     gsutil = Gsutil(GSUTIL_DEFAULT_PATH,
-                    boto_path=options.boto)
+                    boto_path=options.boto,
+                    no_auth=options.no_auth)
   else:
     parser.error('gsutil not found in %s, bad depot_tools checkout?' %
                  GSUTIL_DEFAULT_PATH)
@@ -588,7 +596,7 @@ def main(args):
   # Passing in -g/--config will run our copy of GSUtil, then quit.
   if options.config:
     print('===Note from depot_tools===')
-    print('If you do not have a project ID, enter "0" when asked for one.')
+    print('gsutil config call is redirected to luci-auth.')
     print('===End note from depot_tools===')
     print()
     gsutil.check_call('version')

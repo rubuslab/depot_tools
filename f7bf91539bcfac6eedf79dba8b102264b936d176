@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "805b129c_9c3895b9",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3362,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-27T18:25:08Z",
+      "side": 1,
+      "message": "The comment on line 3358 doesn\u0027t make a lot of sense now, and it\u0027s not clear\nwhy we\u0027d actually want to use *more* cores on Arm than on other platforms.\n\nMaybe just delete lines 33580-3361 instead?",
+      "revId": "f7bf91539bcfac6eedf79dba8b102264b936d176",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

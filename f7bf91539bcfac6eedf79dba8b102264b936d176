@@ -34,6 +34,24 @@
       "parentUuid": "805b129c_9c3895b9",
       "revId": "f7bf91539bcfac6eedf79dba8b102264b936d176",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "892bb8d7_685595a2",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3362,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-27T18:43:22Z",
+      "side": 1,
+      "message": "Oh, whoops, I read that as `min`. I always get that backwards :).\n\nLooking at https://www.apple.com/mac/compare/?modelList\u003dMac-mini-2018,Mac-mini-M1,Mac-mini-M2, I think it says that the ARM-based Minis have always had at least 8 cores. Some (all?) of the x86-based minis might\u0027ve been fewer, I\u0027m not sure how old our machines are.\n\nI guess I\u0027m not sure why we\u0027re using a minimum of 8 cores. Why not just stick to `gclient_utils.NumLocalCpus()`?",
+      "parentUuid": "25a45ee9_1f2b4d9c",
+      "revId": "f7bf91539bcfac6eedf79dba8b102264b936d176",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

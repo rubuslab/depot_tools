@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b8e0854_26f781eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-27T19:30:02Z",
+      "side": 1,
+      "message": "I guess this should be relatively safe. Let\u0027s try it and see if anything falls over. Maybe we can try just NumLocalCPUs() in a separate patch to see what happens there.",
+      "revId": "f7bf91539bcfac6eedf79dba8b102264b936d176",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "805b129c_9c3895b9",
@@ -68,6 +85,24 @@
       "side": 1,
       "message": "That\u0027s a good question. https://codereview.chromium.org/8198010 doesn\u0027t say much.\n\nIf I were to guess, I\u0027d say using 8 jobs for 2 or 4 core machines has some benefits since gclient is also i/o heavy. I\u0027m just hesitant to use min of 8 for ARM given it was intentionally set to 1.",
       "parentUuid": "892bb8d7_685595a2",
+      "revId": "f7bf91539bcfac6eedf79dba8b102264b936d176",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4982815_5ff8dd4b",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3362,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-01-27T19:30:02Z",
+      "side": 1,
+      "message": "I have a vague memory of it needing to be 1 when we were bringing up the ARM port. I don\u0027t think we need it now, but I don\u0027t have a Mac ARM machine readily available to confirm.",
+      "parentUuid": "87855f4c_46b5834f",
       "revId": "f7bf91539bcfac6eedf79dba8b102264b936d176",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

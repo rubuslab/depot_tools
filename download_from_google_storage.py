@@ -239,8 +239,17 @@ def _validate_tar_file(tar, prefix):
     return True
   return all(map(_validate, tar.getmembers()))
 
-def _downloader_worker_thread(thread_num, q, force, base_url,
-                              gsutil, out_q, ret_codes, verbose, extract,
+
+def _downloader_worker_thread(thread_num,
+                              q,
+                              force,
+                              base_url,
+                              gsutil,
+                              out_q,
+                              ret_codes,
+                              verbose,
+                              extract,
+                              no_auth,
                               delete=True):
   while True:
     input_sha1_sum, output_filename = q.get()
@@ -286,7 +295,11 @@ def _downloader_worker_thread(thread_num, q, force, base_url,
     if verbose:
       out_q.put('%d> Downloading %s@%s...' % (
           thread_num, output_filename, input_sha1_sum))
-    code, _, err = gsutil.check_call('cp', file_url, output_filename)
+
+    kwargs = ['cp', file_url, output_filename]
+    if no_auth:
+      kwargs.append('--no_auth')
+    code, _, err = gsutil.check_call(*kwargs)
     if code != 0:
       if code == 404:
         out_q.put('%d> File %s for %s does not exist, skipping.' % (
@@ -415,9 +428,10 @@ def _data_exists(input_sha1_sum, output_filename, extract):
   return False
 
 
-def download_from_google_storage(
-    input_filename, base_url, gsutil, num_threads, directory, recursive,
-    force, output, ignore_errors, sha1_file, verbose, auto_platform, extract):
+def download_from_google_storage(input_filename, base_url, gsutil, num_threads,
+                                 directory, recursive, force, output,
+                                 ignore_errors, sha1_file, verbose,
+                                 auto_platform, extract, no_auth):
 
   # Tuples of sha1s and paths.
   input_data = list(enumerate_input(
@@ -445,10 +459,11 @@ def download_from_google_storage(
   ret_codes = queue.Queue()
   ret_codes.put((0, None))
   for thread_num in range(num_threads):
-    t = threading.Thread(
-        target=_downloader_worker_thread,
-        args=[thread_num, work_queue, force, base_url,
-              gsutil, stdout_queue, ret_codes, verbose, extract])
+    t = threading.Thread(target=_downloader_worker_thread,
+                         args=[
+                             thread_num, work_queue, force, base_url, gsutil,
+                             stdout_queue, ret_codes, verbose, extract, no_auth
+                         ])
     t.daemon = True
     t.start()
     all_threads.append(t)
@@ -634,10 +649,10 @@ def main(args):
 
   try:
     return download_from_google_storage(
-      input_filename, base_url, gsutil, options.num_threads, options.directory,
-      options.recursive, options.force, options.output, options.ignore_errors,
-      options.sha1_file, options.verbose, options.auto_platform,
-      options.extract)
+        input_filename, base_url, gsutil, options.num_threads,
+        options.directory, options.recursive, options.force, options.output,
+        options.ignore_errors, options.sha1_file, options.verbose,
+        options.auto_platform, options.extract, options.no_auth)
   except FileNotFoundError as e:
     print("Fatal error: {}".format(e))
     return 1

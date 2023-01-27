@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4166ba10_58396c66",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-27T22:54:54Z",
+      "side": 1,
+      "message": "Propagates `--no_auth` flag on all calls.",
+      "revId": "e3dffd193afc3e3bcd1cfc029a93afacead4ee9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff5a3f18_5240b123",
+        "filename": "gsutil.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-27T22:54:54Z",
+      "side": 1,
+      "message": "Logs error to stderr.",
+      "revId": "e3dffd193afc3e3bcd1cfc029a93afacead4ee9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "The comment on line 3358 doesn\u0027t make a lot of sense now, and it\u0027s not clear\nwhy we\u0027d actually want to use *more* cores on Arm than on other platforms.\n\nMaybe just delete lines 33580-3361 instead?",
       "revId": "f7bf91539bcfac6eedf79dba8b102264b936d176",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25a45ee9_1f2b4d9c",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3362,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-01-27T18:33:08Z",
+      "side": 1,
+      "message": "on the other platforms, we use a minimum of 8, and max number of cores. For the arm, it\u0027s always the number of cores.\n\nI\u0027m all for removing that if/else branch if you think ARM boards today can handle 8 as minimum",
+      "parentUuid": "805b129c_9c3895b9",
+      "revId": "f7bf91539bcfac6eedf79dba8b102264b936d176",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

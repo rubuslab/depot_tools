@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca949a44_90765f6b",
+        "filename": "gsutil.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-01-28T00:09:59Z",
+      "side": 1,
+      "message": "`luci-auth context --` reads cached credentials and if there are none, fails. Hence it makes no network calls when users aren\u0027t logged in.\n\nThis just fallbacks back to not using `luci-auth context` when there aren\u0027t cached credentials and hence works for public buckets.",
+      "revId": "8bc0eb5f00d242c73b97a08311cb5e3dc27dd3ec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

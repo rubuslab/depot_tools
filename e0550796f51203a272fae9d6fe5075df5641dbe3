@@ -1,6 +1,52 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ff88995_97c902a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-30T22:38:34Z",
+      "side": 1,
+      "message": "What about GN? GN has been in Chromium\u0027s buildtools directory for a long time.\nDoes depot_tools/gn wrapper still find it from Electron project?",
+      "range": {
+        "startLine": 9,
+        "startChar": 173,
+        "endLine": 9,
+        "endChar": 219
+      },
+      "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36781299_f9473959",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-01-30T22:38:34Z",
+      "side": 1,
+      "message": "Btw, how about specifying GN and Ninja in Electron\u0027s DEPS if that makes sense?\nhttps://github.com/electron/electron/blob/main/DEPS",
+      "range": {
+        "startLine": 9,
+        "startChar": 159,
+        "endLine": 9,
+        "endChar": 163
+      },
+      "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "7bfcf313_92667bd7",

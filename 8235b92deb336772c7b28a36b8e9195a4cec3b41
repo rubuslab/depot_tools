@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "215b68fb_a35d3320",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1798,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-31T04:34:16Z",
+      "side": 1,
+      "message": "revert this to the original behavior.\n\noriginal behavior was not wrong according to the original CL where it was added (https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1835016)\n\nit was the comment that incorrectly described the intended behavior.\noriginal comment says add auto-ccs unless it\u0027s the initial upload.\n\nintended behavior is actually add auto-ccs only on initial upload.",
+      "range": {
+        "startLine": 1796,
+        "startChar": 4,
+        "endLine": 1798,
+        "endChar": 77
+      },
+      "revId": "8235b92deb336772c7b28a36b8e9195a4cec3b41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

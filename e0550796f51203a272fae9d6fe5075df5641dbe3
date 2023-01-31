@@ -47,6 +47,54 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6d25e40_ea23f553",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1301934
+      },
+      "writtenOn": "2023-01-31T18:22:58Z",
+      "side": 1,
+      "message": "We considered that, but the primary issue is we explicitly don\u0027t want to pin to our own versions - we want to track Chromium.",
+      "parentUuid": "36781299_f9473959",
+      "range": {
+        "startLine": 9,
+        "startChar": 159,
+        "endLine": 9,
+        "endChar": 163
+      },
+      "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eea01ba3_028a279b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1301934
+      },
+      "writtenOn": "2023-01-31T18:22:58Z",
+      "side": 1,
+      "message": "The primary_solution_path similarly does not exist, but it finds it here: https://chromium.googlesource.com/chromium/tools/depot_tools/+/c5f0cbb8654b3c38dea5714e117c71bd7ab6136f/gn.py#64",
+      "parentUuid": "3ff88995_97c902a7",
+      "range": {
+        "startLine": 9,
+        "startChar": 173,
+        "endLine": 9,
+        "endChar": 219
+      },
+      "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "7bfcf313_92667bd7",

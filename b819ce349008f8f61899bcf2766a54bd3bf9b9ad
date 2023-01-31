@@ -22,6 +22,30 @@
       },
       "revId": "b819ce349008f8f61899bcf2766a54bd3bf9b9ad",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95ea40ad_98c28a73",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-01-31T15:04:52Z",
+      "side": 1,
+      "message": "tests at HEAD are passing again 😕\ncan\u0027t reproduce failing tests i saw yesterday",
+      "parentUuid": "11f443bf_859974a0",
+      "range": {
+        "startLine": 290,
+        "startChar": 4,
+        "endLine": 291,
+        "endChar": 43
+      },
+      "revId": "b819ce349008f8f61899bcf2766a54bd3bf9b9ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

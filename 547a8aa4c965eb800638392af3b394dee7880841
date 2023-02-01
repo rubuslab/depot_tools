@@ -63,6 +63,30 @@
       },
       "revId": "547a8aa4c965eb800638392af3b394dee7880841",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "798a41de_80d804e2",
+        "filename": "ninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-02-01T11:51:55Z",
+      "side": 1,
+      "message": "I should have shared that we use `git cl format` to apply code fix.\nI uploaded minor style changes.",
+      "parentUuid": "9fab8524_8d6c50e1",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 0
+      },
+      "revId": "547a8aa4c965eb800638392af3b394dee7880841",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

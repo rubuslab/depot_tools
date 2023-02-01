@@ -198,6 +198,30 @@
       },
       "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f67892f_96f42af2",
+        "filename": "ninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1301934
+      },
+      "writtenOn": "2023-02-01T08:57:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce8ea656_a82d1af7",
+      "range": {
+        "startLine": 71,
+        "startChar": 19,
+        "endLine": 71,
+        "endChar": 20
+      },
+      "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,29 @@
       "message": "Thank you!",
       "revId": "547a8aa4c965eb800638392af3b394dee7880841",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5b8fc95_5e9cd935",
+        "filename": "ninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-02-01T09:09:40Z",
+      "side": 1,
+      "message": "These lines exceed 80 chars.\nCan you make them shorter?",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 0
+      },
+      "revId": "547a8aa4c965eb800638392af3b394dee7880841",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

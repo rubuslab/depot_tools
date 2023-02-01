@@ -97,6 +97,54 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "709d5270_e94fdaf0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-02-01T02:18:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b6d25e40_ea23f553",
+      "range": {
+        "startLine": 9,
+        "startChar": 159,
+        "endLine": 9,
+        "endChar": 163
+      },
+      "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12360983_84efbf7c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-02-01T02:18:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "eea01ba3_028a279b",
+      "range": {
+        "startLine": 9,
+        "startChar": 173,
+        "endLine": 9,
+        "endChar": 219
+      },
+      "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "7bfcf313_92667bd7",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 6
@@ -108,6 +156,29 @@
       "writtenOn": "2023-01-30T20:55:46Z",
       "side": 1,
       "message": "I\u0027m not an appropriate reviewer for this.",
+      "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce8ea656_a82d1af7",
+        "filename": "ninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-02-01T02:18:11Z",
+      "side": 1,
+      "message": "nit: use `set([])` since `gclient_src_root_path` can be identical to `primary_solution_path`.",
+      "range": {
+        "startLine": 71,
+        "startChar": 19,
+        "endLine": 71,
+        "endChar": 20
+      },
       "revId": "e0550796f51203a272fae9d6fe5075df5641dbe3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

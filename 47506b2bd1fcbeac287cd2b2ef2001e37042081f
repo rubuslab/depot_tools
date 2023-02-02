@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e573622_aa1428c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-02-02T08:06:32Z",
+      "side": 1,
+      "message": "Thank you for finding this and proposing a fix.",
+      "revId": "47506b2bd1fcbeac287cd2b2ef2001e37042081f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c788a65_84cbb0a5",
+        "filename": "ninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-02-02T08:06:32Z",
+      "side": 1,
+      "message": "There is actually a simpler fix. If we simply omit the \u0027 \u0027 parameter then we get the desired behavior of treating multiple consecutive spaces as a single separator.",
+      "revId": "47506b2bd1fcbeac287cd2b2ef2001e37042081f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -33,6 +33,24 @@
       "message": "There is actually a simpler fix. If we simply omit the \u0027 \u0027 parameter then we get the desired behavior of treating multiple consecutive spaces as a single separator.",
       "revId": "47506b2bd1fcbeac287cd2b2ef2001e37042081f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f0ff51_12b2efd4",
+        "filename": "ninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-02-02T08:31:56Z",
+      "side": 1,
+      "message": "\u003e we simply omit the \u0027 \u0027 parameter\n\nAccording to the doc, `filter(None, iterable)` is equivalent to `(item for item in iterable if item)`\nhttps://docs.python.org/3/library/functions.html#filter",
+      "parentUuid": "0c788a65_84cbb0a5",
+      "revId": "47506b2bd1fcbeac287cd2b2ef2001e37042081f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

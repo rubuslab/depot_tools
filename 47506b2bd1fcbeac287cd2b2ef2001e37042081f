@@ -51,6 +51,24 @@
       "parentUuid": "0c788a65_84cbb0a5",
       "revId": "47506b2bd1fcbeac287cd2b2ef2001e37042081f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be65fd8c_653c3b5e",
+        "filename": "ninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-02-02T17:19:38Z",
+      "side": 1,
+      "message": "Sorry, I wasn\u0027t entirely clear. The split command defaults to splitting on spaces and if this default is used - instead of passing in \u0027 \u0027 explicitly - then split will treat runs of spaces as if they are one. Then the filter command is not needed. This change can be as simple as deleting the three characters in \u0027 \u0027. Here is an interactive Python test:\n\n\u003e\u003e\u003e \u0027asdf     aere\u0027.split(\u0027 \u0027)\n[\u0027asdf\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027aere\u0027]\n\u003e\u003e\u003e \u0027asdf     aere\u0027.split()\n[\u0027asdf\u0027, \u0027aere\u0027]",
+      "parentUuid": "f2f0ff51_12b2efd4",
+      "revId": "47506b2bd1fcbeac287cd2b2ef2001e37042081f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

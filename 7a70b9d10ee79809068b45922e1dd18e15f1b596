@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf815862_c2b4806b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-02-02T18:00:22Z",
+      "side": 1,
+      "message": "Great! Consider adding a brief explanation to the commit message, but this lgtm. However I am not an owner of this file so I think you\u0027ll need to wait for owner review.\n\nNote that this fixed pattern was already used in autoninja.py.",
+      "revId": "7a70b9d10ee79809068b45922e1dd18e15f1b596",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

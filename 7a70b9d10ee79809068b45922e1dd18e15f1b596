@@ -16,6 +16,24 @@
       "message": "Great! Consider adding a brief explanation to the commit message, but this lgtm. However I am not an owner of this file so I think you\u0027ll need to wait for owner review.\n\nNote that this fixed pattern was already used in autoninja.py.",
       "revId": "7a70b9d10ee79809068b45922e1dd18e15f1b596",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "818cae25_e1b7e5cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1556137
+      },
+      "writtenOn": "2023-02-02T18:06:55Z",
+      "side": 1,
+      "message": "Thanks for the feedback! I\u0027m more familiar with GitHub, I assumed Gerrit would also use the changelist\u0027s description as the final commit message. I updated the commit\u0027s message.",
+      "parentUuid": "bf815862_c2b4806b",
+      "revId": "7a70b9d10ee79809068b45922e1dd18e15f1b596",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

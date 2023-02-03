@@ -87,6 +87,24 @@
       "parentUuid": "be65fd8c_653c3b5e",
       "revId": "47506b2bd1fcbeac287cd2b2ef2001e37042081f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74d6115b_144e05c5",
+        "filename": "ninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-02-03T01:58:30Z",
+      "side": 1,
+      "message": "Oh, good point. Thank you for the suggestion!",
+      "parentUuid": "1af13faf_0689dbb5",
+      "revId": "47506b2bd1fcbeac287cd2b2ef2001e37042081f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

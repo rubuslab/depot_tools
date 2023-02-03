@@ -1676,6 +1676,7 @@ class Changelist(object):
   def PrepareSquashedCommit(self, options, parent=None, end_commit=None):
     # type: (optparse.Values, Optional[str], Optional[str]) -> _NewUpload()
     """Create a squashed commit to upload."""
+
     if parent is None:
       origin, upstream_branch_ref = self.FetchUpstreamTuple(self.GetBranch())
       upstream_branch = scm.GIT.ShortBranchName(upstream_branch_ref)
@@ -1684,15 +1685,20 @@ class Changelist(object):
         # Assume we want to upload from upstream's last upload.
         parent = scm.GIT.GetBranchConfig(settings.GetRoot(), upstream_branch,
                                          GERRIT_SQUASH_HASH_CONFIG_KEY)
-        assert parent, ('upstream branch %s not configured correctly. '
-                        'Could not fetch latest gerrit upload from git '
-                        'config.')
-      else:
-        # upstream is the root of the tree.
+        if parent is None:
+          print('upstream branch %s does not have a gerrit upload')
+
+      # If upstream is the root of the tree or upstream did not have a
+      # gerrit squash hash
+      if parent is None:
         parent = self.GetCommonAncestorWithUpstream()
 
     if end_commit is None:
       end_commit = RunGit(['rev-parse', self.branchref]).strip()
+
+    diff = RunGitSilent(['diff', '%s..%s' % (parent, end_commit)])
+    if not diff:
+      return None
 
     reviewers, ccs, change_desc = self._PrepareChange(options, parent,
                                                       end_commit)
@@ -4849,9 +4855,9 @@ def UploadAllSquashed(options, orig_args):
       new_upload = cl.PrepareSquashedCommit(options,
                                             parent=parent,
                                             end_commit=child_base_commit)
-      uploads_by_cl.append((cl, new_upload))
-
-      parent = new_upload.commit_to_push
+      if new_upload:
+        uploads_by_cl.append((cl, new_upload))
+        parent = new_upload.commit_to_push
 
   # Create refspec options
   cl, new_upload = uploads_by_cl[-1]

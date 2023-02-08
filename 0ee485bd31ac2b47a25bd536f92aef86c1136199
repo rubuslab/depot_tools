@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c65a113b_a2606e31",
+        "filename": "recipes/recipe_modules/gclient/examples/full.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-02-08T22:23:05Z",
+      "side": 1,
+      "message": "Maybe just leave as-is with 2 spaces?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 4
+      },
+      "revId": "0ee485bd31ac2b47a25bd536f92aef86c1136199",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

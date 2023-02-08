@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9de08e70_09353556",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1337,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-02-08T04:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17e19014_71393615",
+      "revId": "5f209fa166b89eb501a170a0d8a04f159b8fe7d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9b290bfc_222b42e6",
@@ -35,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "753b93a3_397d2268",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2317,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-02-08T04:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b290bfc_222b42e6",
+      "revId": "5f209fa166b89eb501a170a0d8a04f159b8fe7d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2587107_3f148245",
@@ -48,6 +84,30 @@
       "writtenOn": "2023-02-08T01:33:31Z",
       "side": 1,
       "message": "typo?",
+      "range": {
+        "startLine": 2493,
+        "startChar": 27,
+        "endLine": 2493,
+        "endChar": 29
+      },
+      "revId": "5f209fa166b89eb501a170a0d8a04f159b8fe7d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20e1ae71_f6093126",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2493,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-02-08T04:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2587107_3f148245",
       "range": {
         "startLine": 2493,
         "startChar": 27,

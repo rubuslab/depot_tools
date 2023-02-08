@@ -544,6 +544,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     self.set_url(url)
 
   def ToLines(self):
+    # () -> Tuple[Sequence[str], str]
+    """Returns strings representing the deps (info, graphviz line)"""
     s = []
     condition_part = (['    "condition": %r,' % self.condition]
                       if self.condition else [])
@@ -555,7 +557,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         '  },',
         '',
     ])
-    return s
+    return s, self.hierarchy(include_url=False)
 
   @property
   def requirements(self):
@@ -1327,7 +1329,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     def format_name(d):
       if include_url:
         return '%s(%s)' % (d.name, d.url)
-      return d.name
+      return '"%s"' % d.name  # quotes required for graph dot file.
+
     out = format_name(self)
     i = self.parent
     while i and i.name:
@@ -2279,6 +2282,7 @@ class CipdDependency(Dependency):
     return self.parent.hierarchy(include_url) + ' -> ' + self._cipd_subdir
 
   def ToLines(self):
+    # () -> Tuple[Sequence[str], Sequence[str]]
     """Return a list of lines representing this in a DEPS file."""
     def escape_cipd_var(package):
       return package.replace('{', '{{').replace('}', '}}')
@@ -2310,7 +2314,7 @@ class CipdDependency(Dependency):
           '  },',
           '',
       ])
-    return s
+    return s, []  # graphviz line not applicable to cipd deps.
 
 
 #### gclient commands.
@@ -2393,6 +2397,7 @@ class Flattener(object):
     self._client = client
 
     self._deps_string = None
+    self._deps_graph_lines = None
     self._deps_files = set()
 
     self._allowed_hosts = set()
@@ -2407,6 +2412,11 @@ class Flattener(object):
   def deps_string(self):
     assert self._deps_string is not None
     return self._deps_string
+
+  @property
+  def deps_graph_lines(self):
+    assert self._deps_graph_lines is not None
+    return self._deps_graph_lines
 
   @property
   def deps_files(self):
@@ -2464,16 +2474,27 @@ class Flattener(object):
 
     gn_args_dep = self._deps.get(self._client.dependencies[0]._gn_args_from,
                                  self._client.dependencies[0])
+
+    deps_lines, deps_graph_lines = _DepsToLines(self._deps)
+    self._deps_graph_lines = deps_graph_lines
     self._deps_string = '\n'.join(
         _GNSettingsToLines(gn_args_dep._gn_args_file, gn_args_dep._gn_args) +
-        _AllowedHostsToLines(self._allowed_hosts) +
-        _DepsToLines(self._deps) +
+        _AllowedHostsToLines(self._allowed_hosts) + deps_lines +
         _HooksToLines('hooks', self._hooks) +
         _HooksToLines('pre_deps_hooks', self._pre_deps_hooks) +
-        _VarsToLines(self._vars) +
-        ['# %s, %s' % (url, deps_file)
-         for url, deps_file, _ in sorted(self._deps_files)] +
-        [''])  # Ensure newline at end of file.
+        _VarsToLines(self._vars) + [
+            '# %s, %s' % (url, deps_file)
+            for url, deps_file, _ in sorted(self._deps_files)
+        ] + [''])  # Ensure newline at end of file.
+
+  def _create_dot_graph(self, file):
+    # type: (str) -> None
+    """Writes a graphviz dot file."""
+    graph_lines = ["digraph G {\n\trankdir=\"LR\";"]
+    graph_lines.extend("\t%s" % line for line in self.deps_graph_lines if line)
+    graph_lines.append("}")
+    with open(file, 'w') as f:
+      f.write('\n'.join(graph_lines))
 
   def _add_dep(self, dep):
     """Helper to add a dependency to flattened DEPS.
@@ -2546,6 +2567,8 @@ def CMDflatten(parser, args):
       '--pin-all-deps', action='store_true',
       help=('Pin all deps, even if not pinned in DEPS. CAVEAT: only does so '
             'for checked out deps, NOT deps_os.'))
+  parser.add_option('--deps-graph-file',
+                    help='Provide a path for the output graph file')
   options, args = parser.parse_args(args)
 
   options.nohooks = True
@@ -2567,6 +2590,9 @@ def CMDflatten(parser, args):
       f.write(flattener.deps_string)
   else:
     print(flattener.deps_string)
+
+  if options.deps_graph_file:
+    flattener._create_dot_graph(options.deps_graph_file)
 
   deps_files = [{'url': d[0], 'deps_file': d[1], 'hierarchy': d[2]}
                 for d in sorted(flattener.deps_files)]
@@ -2603,10 +2629,13 @@ def _DepsToLines(deps):
   if not deps:
     return []
   s = ['deps = {']
+  graph_lines = []
   for _, dep in sorted(deps.items()):
-    s.extend(dep.ToLines())
+    dep_lines, graph_line = dep.ToLines()
+    s.extend(dep_lines)
+    graph_lines.append(graph_line)
   s.extend(['}', ''])
-  return s
+  return s, graph_lines
 
 
 def _DepsOsToLines(deps_os):

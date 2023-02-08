@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17e19014_71393615",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1337,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-02-08T01:33:31Z",
+      "side": 1,
+      "message": "For graphviz, we probably want only the last tuples. otherwise, we would get many same edges.\n\nPerhaps accept yet another argument - graphviz.",
+      "revId": "5f209fa166b89eb501a170a0d8a04f159b8fe7d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b290bfc_222b42e6",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2317,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-02-08T01:33:31Z",
+      "side": 1,
+      "message": "nit: maybe better to say not implemented? we could technically use different style for cipd deps; but since we don\u0027t need it; let\u0027s not implement that.",
+      "revId": "5f209fa166b89eb501a170a0d8a04f159b8fe7d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2587107_3f148245",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2493,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-02-08T01:33:31Z",
+      "side": 1,
+      "message": "typo?",
+      "range": {
+        "startLine": 2493,
+        "startChar": 27,
+        "endLine": 2493,
+        "endChar": 29
+      },
+      "revId": "5f209fa166b89eb501a170a0d8a04f159b8fe7d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

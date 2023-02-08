@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c5da416_039e181a",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-02-08T22:28:24Z",
+      "side": 1,
+      "message": "nit: 1 newline for consistency",
+      "range": {
+        "startLine": 529,
+        "startChar": 0,
+        "endLine": 529,
+        "endChar": 0
+      },
+      "revId": "00f3a65c4d82a6d94fecb65b381b31c06094bf20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07d599e9_a31a528d",
+        "filename": "recipes/recipe_modules/gclient/examples/full.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-02-08T22:28:24Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 63,
+        "startChar": 14,
+        "endLine": 63,
+        "endChar": 16
+      },
+      "revId": "00f3a65c4d82a6d94fecb65b381b31c06094bf20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

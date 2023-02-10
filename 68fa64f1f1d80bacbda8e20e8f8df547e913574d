@@ -16,6 +16,24 @@
       "message": "use os.environ.setdefault?",
       "revId": "68fa64f1f1d80bacbda8e20e8f8df547e913574d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebbd8a5b_feaa59cf",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-02-10T01:21:01Z",
+      "side": 1,
+      "message": "Didnt know about that. Done.",
+      "parentUuid": "1ae6d228_9fd23527",
+      "revId": "68fa64f1f1d80bacbda8e20e8f8df547e913574d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

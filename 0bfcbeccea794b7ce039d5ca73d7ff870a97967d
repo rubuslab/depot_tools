@@ -18,6 +18,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c70799c_8d280d2f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-02-10T22:46:08Z",
+      "side": 1,
+      "message": "lgtm % yuanjun\u0027s comments 😊",
+      "revId": "0bfcbeccea794b7ce039d5ca73d7ff870a97967d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "212dfaad_dbd1c9bb",
@@ -77,6 +94,30 @@
       "writtenOn": "2023-02-10T21:29:40Z",
       "side": 1,
       "message": "nit: also include the max allowed size limit?",
+      "range": {
+        "startLine": 1910,
+        "startChar": 61,
+        "endLine": 1910,
+        "endChar": 62
+      },
+      "revId": "0bfcbeccea794b7ce039d5ca73d7ff870a97967d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac19b2a0_22b1ff80",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1910,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-02-10T22:46:08Z",
+      "side": 1,
+      "message": "👍",
+      "parentUuid": "1baf7966_cafc6e53",
       "range": {
         "startLine": 1910,
         "startChar": 61,

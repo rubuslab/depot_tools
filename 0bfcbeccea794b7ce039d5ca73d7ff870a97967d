@@ -58,6 +58,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "11e721b5_73eb60ba",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1884,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-02-10T23:21:20Z",
+      "side": 1,
+      "message": "Theoretically it should not pass empty files but I think it\u0027s never harmful to add a defensive check 😊",
+      "parentUuid": "212dfaad_dbd1c9bb",
+      "range": {
+        "startLine": 1884,
+        "startChar": 36,
+        "endLine": 1884,
+        "endChar": 41
+      },
+      "revId": "0bfcbeccea794b7ce039d5ca73d7ff870a97967d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7eeaa5bc_3dce8de4",
@@ -123,6 +147,54 @@
         "startChar": 61,
         "endLine": 1910,
         "endChar": 62
+      },
+      "revId": "0bfcbeccea794b7ce039d5ca73d7ff870a97967d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d9a376b_2d1e056b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1910,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-02-10T23:21:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac19b2a0_22b1ff80",
+      "range": {
+        "startLine": 1910,
+        "startChar": 61,
+        "endLine": 1910,
+        "endChar": 62
+      },
+      "revId": "0bfcbeccea794b7ce039d5ca73d7ff870a97967d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "346eb090_efa06855",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1910,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-02-10T23:21:20Z",
+      "side": 1,
+      "message": "oops, good catch. it used to be there.",
+      "parentUuid": "7eeaa5bc_3dce8de4",
+      "range": {
+        "startLine": 1910,
+        "startChar": 76,
+        "endLine": 1910,
+        "endChar": 78
       },
       "revId": "0bfcbeccea794b7ce039d5ca73d7ff870a97967d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

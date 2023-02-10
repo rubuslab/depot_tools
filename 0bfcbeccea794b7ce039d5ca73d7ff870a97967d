@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70cd978b_4b406c04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-02-10T19:12:58Z",
+      "side": 1,
+      "message": "PTAL, I tested locally against https://crrev.com/i/5425480 and the presubmit check now has passed.\n\n@gavinmak@google.com for owners vote.",
+      "revId": "0bfcbeccea794b7ce039d5ca73d7ff870a97967d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "With some complains about gsutil auth not working; and oob still functioning; lets keep if for a bit longer.",
       "revId": "eef8f0a89856cb4eec4c1cb590814a7db3d483b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c43a4a13_df0d68ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-13T18:54:59Z",
+      "side": 1,
+      "message": "https://crbug.com/1412249 seems to be fixed. They chose to update their docs instead of their authentication process. Can we merge this now?",
+      "parentUuid": "aa05e7b5_c6839168",
+      "revId": "eef8f0a89856cb4eec4c1cb590814a7db3d483b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

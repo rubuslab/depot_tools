@@ -69,6 +69,23 @@
       "message": "(and, specifically, setting py3_only to true here means that when the recipe tests run, it will not attempt to run them in python2 alongside python3 any more)",
       "revId": "044e32a4a738fdd589b8458c808dfd2ff14b3e7c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3ce3ee7_c4ad94eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-13T19:13:30Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "044e32a4a738fdd589b8458c808dfd2ff14b3e7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

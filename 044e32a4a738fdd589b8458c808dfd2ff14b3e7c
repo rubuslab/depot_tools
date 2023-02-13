@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb9a8bd3_db4ec10a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-13T18:50:43Z",
+      "side": 1,
+      "message": "What is the point of this repository since it has no recipe anyway?",
+      "revId": "044e32a4a738fdd589b8458c808dfd2ff14b3e7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "For some reason, adding \u0027utf-8\u0027 arg changes the output format a bit. Keeping it this way since commands like `ls` and `cat` require output in the similar format to when run without the wrapper.",
       "revId": "acb36325e67619981a0e9fecaa154dadf62dc0ee",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "023b2646_b625e191",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1543333
+      },
+      "writtenOn": "2023-02-14T23:30:21Z",
+      "side": 1,
+      "message": "While a better error message is a great improvement, could the script automate the flow when it detects the error instead of relying on manual steps from the user?",
+      "revId": "acb36325e67619981a0e9fecaa154dadf62dc0ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

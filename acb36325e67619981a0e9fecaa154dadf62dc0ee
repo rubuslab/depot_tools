@@ -33,6 +33,24 @@
       "message": "While a better error message is a great improvement, could the script automate the flow when it detects the error instead of relying on manual steps from the user?",
       "revId": "acb36325e67619981a0e9fecaa154dadf62dc0ee",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65bdc07b_4d471abb",
+        "filename": "gsutil.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-14T23:33:48Z",
+      "side": 1,
+      "message": "We don\u0027t want to go ahead and remove user\u0027s .boto file from the script. We want the user to make that decision. Also, since gsutil.py is usually running within scripts, prompting users to remove this is not an option.\n\nThis is definitely an inconvenience but it\u0027s a safer approach IMO.",
+      "parentUuid": "023b2646_b625e191",
+      "revId": "acb36325e67619981a0e9fecaa154dadf62dc0ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

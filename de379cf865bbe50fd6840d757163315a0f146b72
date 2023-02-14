@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39c85921_dc347387",
+        "filename": "gsutil.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-14T23:06:04Z",
+      "side": 1,
+      "message": "The error code is just `1` when the credentials are invalid. To distinguish between 403 and invalid credentials, I\u0027m checking the output and adding an warning.",
+      "revId": "de379cf865bbe50fd6840d757163315a0f146b72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

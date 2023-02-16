@@ -16,6 +16,24 @@
       "message": "The reland handles the case of the binary file returned through the stdout.",
       "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a6ca779_87692697",
+        "filename": "gsutil.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-02-16T22:41:01Z",
+      "side": 1,
+      "message": "why not just use sys.stdout.buffer.write for everything and get rid of try/except?",
+      "parentUuid": "4546e93b_c7b124e1",
+      "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

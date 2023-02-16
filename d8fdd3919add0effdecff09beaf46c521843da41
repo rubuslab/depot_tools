@@ -34,6 +34,24 @@
       "parentUuid": "4546e93b_c7b124e1",
       "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4a7d58e_89286f67",
+        "filename": "gsutil.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-16T22:42:38Z",
+      "side": 1,
+      "message": "```\n\u003e\u003e\u003e sys.stdout.buffer.write(\u0027hello\u0027)\nTraceback (most recent call last):\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\nTypeError: a bytes-like object is required, not \u0027str\u0027\n```\n\nThis only works for bytes.",
+      "parentUuid": "8a6ca779_87692697",
+      "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

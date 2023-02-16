@@ -88,6 +88,24 @@
       "parentUuid": "88bfb4ea_46201949",
       "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1ffd873_737af5ab",
+        "filename": "gsutil.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-02-16T22:54:24Z",
+      "side": 1,
+      "message": "Not really. In this particular case, it does, but only because you are using interactive shell. The return value of sys.stdout.buffer.write(b\u0027hello world\u0027) is 11, which gets printed to shell.\n\nI suppose if you do `_ \u003d sys.stdout.buffer.write(b\u0027hello world\u0027)` you won\u0027t see 11 appended.",
+      "parentUuid": "fb00429c_7d3c9284",
+      "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

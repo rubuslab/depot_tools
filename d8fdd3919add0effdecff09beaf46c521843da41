@@ -106,6 +106,24 @@
       "parentUuid": "fb00429c_7d3c9284",
       "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80ea4a1d_ef345713",
+        "filename": "gsutil.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-16T23:01:04Z",
+      "side": 1,
+      "message": "Ah, I didn\u0027t realize that. I will remove the try block.",
+      "parentUuid": "c1ffd873_737af5ab",
+      "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

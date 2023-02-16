@@ -70,6 +70,24 @@
       "parentUuid": "d4a7d58e_89286f67",
       "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb00429c_7d3c9284",
+        "filename": "gsutil.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-16T22:49:18Z",
+      "side": 1,
+      "message": "Technically yeah but we don\u0027t want that output to be printed like bytes.\n```\n\u003e\u003e\u003e sys.stdout.buffer.write(b\u0027hello world\u0027)\nhello world11\n```\n\npython writes the size of the byte string to the output. This seems okay with bytes but for standard log, I want to keep it just a standard utf-8 string.",
+      "parentUuid": "88bfb4ea_46201949",
+      "revId": "d8fdd3919add0effdecff09beaf46c521843da41",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

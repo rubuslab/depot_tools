@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "38a0b4dc_9ad2ee17",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1754,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-02-17T21:46:02Z",
+      "side": 1,
+      "message": "deps_entry is none if DEPS file is not in the repository at all.",
+      "parentUuid": "79ff5472_407c2696",
+      "revId": "8632578c3e12a536730fab8f5b70c5f212afc62b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb4e7728_51a6c05e",
@@ -35,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d19ec7d_b02f8425",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1767,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-02-17T21:46:02Z",
+      "side": 1,
+      "message": "There is if len(commit_tree_entries) \u003e 0 check on L1751. So, this would not be executed if there\u0027s no gitlink.\n\nside note: we are checking the current tree, not the current commit.",
+      "parentUuid": "cb4e7728_51a6c05e",
+      "revId": "8632578c3e12a536730fab8f5b70c5f212afc62b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5a053d04_5e473ac5",
@@ -48,6 +84,24 @@
       "writtenOn": "2023-02-17T21:34:06Z",
       "side": 1,
       "message": "Should we check both commit hash and if that is associated with the right project? Or is it unnecessary?",
+      "revId": "8632578c3e12a536730fab8f5b70c5f212afc62b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "177acbb1_99cdc984",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1781,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-02-17T21:46:02Z",
+      "side": 1,
+      "message": "If we want to check the right project, we would need to use gclient getdep (or something similar). That itself is fairly slow and expensive operation compared to the current implementation (there\u0027s already a note in the commit message, but I could add in this doc too).\n\nThis is fairly naive implementation, but it should be sufficient for the migration. The risk of diverged DEPS and git submodules due to a human error is fairly low and fixable.",
+      "parentUuid": "5a053d04_5e473ac5",
       "revId": "8632578c3e12a536730fab8f5b70c5f212afc62b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

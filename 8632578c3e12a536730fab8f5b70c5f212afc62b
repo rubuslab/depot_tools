@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79ff5472_407c2696",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1754,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-17T21:34:06Z",
+      "side": 1,
+      "message": "Is there a reason to allow gitlinks without changes in DEPS file? I\u0027m assuming we intend to keep them synced.",
+      "revId": "8632578c3e12a536730fab8f5b70c5f212afc62b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb4e7728_51a6c05e",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1767,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-17T21:34:06Z",
+      "side": 1,
+      "message": "Say there is no gitlink in the commit and DEPS file doesn\u0027t have `SUBMODULE_MIGRATION`. It seems like this error would still be thrown. Is this intentional?",
+      "revId": "8632578c3e12a536730fab8f5b70c5f212afc62b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a053d04_5e473ac5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1781,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-17T21:34:06Z",
+      "side": 1,
+      "message": "Should we check both commit hash and if that is associated with the right project? Or is it unnecessary?",
+      "revId": "8632578c3e12a536730fab8f5b70c5f212afc62b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

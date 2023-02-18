@@ -47,9 +47,9 @@ def CreateBranchForDirectory(prefix, directory, upstream):
   return True
 
 
-def FormatDescriptionOrComment(txt, directory):
+def FormatDescriptionOrComment(txt, directory, counter):
   """Replaces $directory with |directory| in |txt|."""
-  return txt.replace('$directory', '/' + directory)
+  return txt.replace('$directory', '/' + directory).replace('$counter', counter)
 
 
 def AddUploadedByGitClSplitToDescription(description):
@@ -177,8 +177,8 @@ def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
     description: The CL description.
     reviewers: A set of reviewers for this CL.
   """
-  description_lines = FormatDescriptionOrComment(description,
-                                                 directory).splitlines()
+  description_lines = FormatDescriptionOrComment(
+      description, directory, '{}/{}'.format(cl_index, num_cls)).splitlines()
   indented_description = '\n'.join(['    ' + l for l in description_lines])
 
   print('CL {}/{}'.format(cl_index, num_cls))

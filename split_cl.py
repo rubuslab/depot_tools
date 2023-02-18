@@ -47,9 +47,9 @@ def CreateBranchForDirectory(prefix, directory, upstream):
   return True
 
 
-def FormatDescriptionOrComment(txt, directory):
+def FormatDescriptionOrComment(txt, directory, counter):
   """Replaces $directory with |directory| in |txt|."""
-  return txt.replace('$directory', '/' + directory)
+  return txt.replace('$directory', '/' + directory).replace('$counter', counter)
 
 
 def AddUploadedByGitClSplitToDescription(description):
@@ -68,8 +68,8 @@ def AddUploadedByGitClSplitToDescription(description):
   return '\n'.join(lines)
 
 
-def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
-             description, comment, reviewers, changelist, cmd_upload,
+def UploadCl(refactor_branch, refactor_branch_upstream, counter, directory,
+             files, description, comment, reviewers, changelist, cmd_upload,
              cq_dry_run, enable_auto_submit, repository_root):
   """Uploads a CL with all changes to |files| in |refactor_branch|.
 
@@ -78,6 +78,7 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
     refactor_branch_upstream: Name of the upstream of |refactor_branch|.
     directory: Path to the directory that contains the OWNERS file for which
         to upload a CL.
+    counter: An index counter description for this CL in the list of CLs.
     files: List of AffectedFile instances to include in the uploaded CL.
     description: Description of the uploaded CL.
     comment: Comment to post on the uploaded CL.
@@ -113,7 +114,7 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
   # when it is closed.
   with gclient_utils.temporary_file() as tmp_file:
     gclient_utils.FileWrite(
-        tmp_file, FormatDescriptionOrComment(description, directory))
+        tmp_file, FormatDescriptionOrComment(description, directory, counter))
     git.run('commit', '-F', tmp_file)
 
   # Upload a CL.
@@ -136,7 +137,8 @@ def UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
           ' then run git cl split again to resume uploading.')
 
   if comment:
-    changelist().AddComment(FormatDescriptionOrComment(comment, directory),
+    changelist().AddComment(FormatDescriptionOrComment(comment, directory,
+                                                       counter),
                             publish=True)
 
 
@@ -164,24 +166,22 @@ def GetFilesSplitByOwners(files, max_depth):
   return files_split_by_owners
 
 
-def PrintClInfo(cl_index, num_cls, directory, file_paths, description,
-                reviewers):
+def PrintClInfo(counter, directory, file_paths, description, reviewers):
   """Prints info about a CL.
 
   Args:
-    cl_index: The index of this CL in the list of CLs to upload.
-    num_cls: The total number of CLs that will be uploaded.
+    counter: An index counter description for this CL in the list of CLs.
     directory: Path to the directory that contains the OWNERS file for which
         to upload a CL.
     file_paths: A list of files in this CL.
     description: The CL description.
     reviewers: A set of reviewers for this CL.
   """
-  description_lines = FormatDescriptionOrComment(description,
-                                                 directory).splitlines()
+  description_lines = FormatDescriptionOrComment(description, directory,
+                                                 counter).splitlines()
   indented_description = '\n'.join(['    ' + l for l in description_lines])
 
-  print('CL {}/{}'.format(cl_index, num_cls))
+  print('CL {}'.format(counter))
   print('Path: {}'.format(directory))
   print('Reviewers: {}'.format(', '.join(reviewers)))
   print('\n' + indented_description + '\n')
@@ -263,15 +263,15 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
       # Use '/' as a path separator in the branch name and the CL description
       # and comment.
       directory = directory.replace(os.path.sep, '/')
+      counter = '{}/{}'.format(cl_index, num_cls)
       file_paths = [f for _, f in files]
       reviewers = cl.owners_client.SuggestOwners(
           file_paths, exclude=[author, cl.owners_client.EVERYONE])
       if dry_run:
-        PrintClInfo(cl_index, num_cls, directory, file_paths, description,
-                    reviewers)
+        PrintClInfo(counter, directory, file_paths, description, reviewers)
       else:
-        UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
-                 description, comment, reviewers, changelist, cmd_upload,
+        UploadCl(refactor_branch, refactor_branch_upstream, counter, directory,
+                 files, description, comment, reviewers, changelist, cmd_upload,
                  cq_dry_run, enable_auto_submit, repository_root)
 
     # Go back to the original branch.

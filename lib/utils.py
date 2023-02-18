@@ -2,6 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+import codecs
 import logging
 import os
 import re
@@ -90,3 +91,18 @@ def ListRelevantFilesInSourceCheckout(files, root, match_re, exclude_re):
 
   logging.debug('Presubmit files: %s', ','.join(results))
   return results
+
+
+def FileRead(filename, mode='rbU'):
+  # mode is ignored now; we always return unicode strings.
+  with open(filename, mode='rb') as f:
+    s = f.read()
+  try:
+    return s.decode('utf-8', 'replace')
+  except (UnicodeDecodeError, AttributeError):
+    return s
+
+
+def FileWrite(filename, content, mode='w', encoding='utf-8'):
+  with codecs.open(filename, mode=mode, encoding=encoding) as f:
+    f.write(content)

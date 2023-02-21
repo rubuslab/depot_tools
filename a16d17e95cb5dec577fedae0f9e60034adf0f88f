@@ -22,6 +22,30 @@
       },
       "revId": "a16d17e95cb5dec577fedae0f9e60034adf0f88f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "075b237b_639bde5f",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1515645
+      },
+      "writtenOn": "2023-02-21T03:43:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0c24197_ab8848af",
+      "range": {
+        "startLine": 77,
+        "startChar": 16,
+        "endLine": 77,
+        "endChar": 25
+      },
+      "revId": "a16d17e95cb5dec577fedae0f9e60034adf0f88f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

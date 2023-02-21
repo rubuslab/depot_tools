@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0c24197_ab8848af",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-02-21T02:56:22Z",
+      "side": 1,
+      "message": "Add this to bug label in CL description?",
+      "range": {
+        "startLine": 77,
+        "startChar": 16,
+        "endLine": 77,
+        "endChar": 25
+      },
+      "revId": "a16d17e95cb5dec577fedae0f9e60034adf0f88f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

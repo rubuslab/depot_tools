@@ -14,6 +14,15 @@ __version__ = '2.0.0'
 # caching (between all different invocations of presubmit scripts for a given
 # change). We should add it as our presubmit scripts start feeling slow.
 
+# The file_of_interest doesn't need to match exactly, it just has to match the end.
+# Slash direction doesn't matter.
+file_of_interest = r'chromium\src\PRESUBMIT.py'
+# The function_of_interest is a sub-string check.
+function_of_interest = 'CheckForWindowsLineEndings'
+
+file_of_interest = r'chromium\src\chrome\browser\resources\PRESUBMIT.py'
+function_of_interest = 'CheckWebDevStyle'
+
 import argparse
 import ast  # Exposed through the API.
 import contextlib
@@ -1630,6 +1639,8 @@ class PresubmitExecuter(object):
           # exception if checks add globals to context. E.g. sometimes the
           # Python runtime will add __warningregistry__.
           for function_name in list(context.keys()):
+            if function_of_interest and not function_name.count(function_of_interest) > 0:
+              continue
             if not function_name.startswith('Check'):
               continue
             if function_name.endswith('Commit') and not self.committing:
@@ -1648,13 +1659,14 @@ class PresubmitExecuter(object):
             function_name = 'CheckChangeOnCommit'
           else:
             function_name = 'CheckChangeOnUpload'
-          if function_name in list(context.keys()):
-            logging.debug('Running %s in %s', function_name, presubmit_path)
-            results.extend(
-                self._run_check_function(function_name, context, sink,
-                                         presubmit_path))
-            logging.debug('Running %s done.', function_name)
-            self.more_cc.extend(output_api.more_cc)
+          if not function_of_interest or function_name.count(function_of_interest) > 0:
+            if function_name in list(context.keys()):
+              logging.debug('Running %s in %s', function_name, presubmit_path)
+              results.extend(
+                  self._run_check_function(function_name, context, sink,
+                                           presubmit_path))
+              logging.debug('Running %s done.', function_name)
+              self.more_cc.extend(output_api.more_cc)
 
     finally:
       for f in input_api._named_temporary_files:
@@ -1688,7 +1700,7 @@ class PresubmitExecuter(object):
       ]
 
     elapsed_time = time_time() - start_time
-    if elapsed_time > 10.0:
+    if elapsed_time > -0.1:
       sys.stdout.write('%6.1fs to run %s from %s.\n' %
                        (elapsed_time, function_name, presubmit_path))
     if sink:
@@ -1798,6 +1810,9 @@ def DoPresubmitChecks(change,
         skipped_count += 1
     for filename in presubmit_files:
       filename = os.path.abspath(filename)
+      if not filename.lower().replace('\\', '/').endswith(file_of_interest.lower().replace('\\', '/')):
+        continue
+      print('Processing %s' % filename)
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename).replace('\r\n', '\n')
       if _ShouldRunPresubmit(presubmit_script, use_python3):

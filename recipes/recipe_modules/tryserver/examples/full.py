@@ -21,12 +21,9 @@ from PB.go.chromium.org.luci.buildbucket.proto.common import GerritChange
 
 def RunSteps(api):
   api.path['checkout'] = api.path['start_dir']
-  if api.properties.get('patch_text'):
-    api.step('patch_text test', [
-        'echo', str(api.tryserver.get_footers(api.properties['patch_text']))])
-    api.step('patch_text test', [
-        'echo', str(api.tryserver.get_footer(
-            'Foo', api.properties['patch_text']))])
+  if api.properties.get('print_footers'):
+    api.step('get_footers test', ['echo', str(api.tryserver.get_footers())])
+    api.step('get_footer test', ['echo', str(api.tryserver.get_footer('Foo'))])
     return
 
   if api.tryserver.gerrit_change:
@@ -73,40 +70,50 @@ def GenTests(api):
   # The 'test_patch_root' property used below is just so that these
   # tests can avoid using the gclient module to calculate the
   # patch root. Normal users would use gclient.get_gerrit_patch_root().
-  yield (api.test('with_wrong_patch') +
-         api.platform('win', 32) +
-         api.properties(test_patch_root=''))
+  yield api.test(
+      'with_wrong_patch',
+      api.platform('win', 32),
+      api.properties(test_patch_root=''),
+  )
 
-  yield (api.test('with_gerrit_patch') +
-         api.buildbucket.try_build(
-            'chromium',
-            'linux',
-            git_repo='https://chromium.googlesource.com/chromium/src',
-            change_number=91827,
-            patch_set=1))
+  yield api.test(
+      'with_gerrit_patch',
+      api.buildbucket.try_build(
+          'chromium',
+          'linux',
+          git_repo='https://chromium.googlesource.com/chromium/src',
+          change_number=91827,
+          patch_set=1,
+      ),
+  )
 
-  yield (api.test('with_gerrit_patch_and_target_ref') +
-         api.buildbucket.try_build(
-            'chromium',
-            'linux',
-            git_repo='https://chromium.googlesource.com/chromium/src',
-            change_number=91827,
-            patch_set=1) +
-         api.properties(expected_target_ref='refs/heads/experiment') +
-         api.tryserver.gerrit_change_target_ref('refs/heads/experiment'))
+  yield api.test(
+      'with_gerrit_patch_and_target_ref',
+      api.buildbucket.try_build(
+          'chromium',
+          'linux',
+          git_repo='https://chromium.googlesource.com/chromium/src',
+          change_number=91827,
+          patch_set=1),
+      api.properties(expected_target_ref='refs/heads/experiment'),
+      api.tryserver.gerrit_change_target_ref('refs/heads/experiment'),
+  )
 
-  yield (api.test('with_wrong_patch_new') + api.platform('win', 32) +
-         api.properties(test_patch_root='sub\\project'))
+  yield api.test(
+      'with_wrong_patch_new',
+      api.platform('win', 32),
+      api.properties(test_patch_root='sub\\project'),
+  )
 
-  yield (api.test('basic_tags') +
-         api.properties(
-             patch_text='hihihi\nfoo:bar\nbam:baz',
-             footer='foo'
-         ) +
-         api.step_data(
-             'parse description',
-             api.json.output({'Foo': ['bar']})) +
-         api.step_data(
-             'parse description (2)',
-             api.json.output({'Foo': ['bar']}))
+  yield api.test(
+      'basic_tags',
+      api.properties(print_footers=True),
+      api.buildbucket.try_build(
+          'chromium',
+          'linux',
+      ),
+      api.tryserver.get_footers({
+          'Foo': ['bar'],
+          'Bam': ['baz']
+      }),
   )

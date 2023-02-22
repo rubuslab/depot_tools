@@ -332,15 +332,13 @@ class TryserverApi(recipe_api.RecipeApi):
     """
     self._set_failure_type('TEST_EXPIRED')
 
-  # TODO(crbug.com/1179039): switch the test in examples/full.py to not use
-  # patch_text, and drop the argument entirely from all the get_footer variants.
-  def get_footers(self, patch_text=None):
+  def get_footers(self):
     """Retrieves footers from the patch description.
 
     footers are machine readable tags embedded in commit messages. See
     git-footers documentation for more information.
     """
-    return self._get_footers(patch_text)
+    return self._get_footers()
 
   def _ensure_gerrit_commit_message(self):
     """Fetch full commit message for Gerrit change."""
@@ -351,30 +349,29 @@ class TryserverApi(recipe_api.RecipeApi):
         self.gerrit_patchset_number,
         timeout=60)
 
-  def _get_footers(self, patch_text=None):
-    if patch_text is not None:
-      return self._get_footer_step(patch_text)
+  def _get_footers(self):
     if self._change_footers:  #pragma: nocover
       return self._change_footers
     if self.gerrit_change:
       self._ensure_gerrit_commit_message()
-      self._change_footers = self._get_footer_step(self._gerrit_commit_message)
+      self._change_footers = self._get_footer_step()
       return self._change_footers
     raise Exception(
-        'No patch text or associated changelist, cannot get footers')  #pragma: nocover
+        'No associated changelist, cannot get footers')  #pragma: nocover
 
-  def _get_footer_step(self, patch_text):
-    result = self.m.step('parse description', [
-        'python3',
-        self.repo_resource('git_footers.py'), '--json',
-        self.m.json.output()
-    ],
-                         stdin=self.m.raw_io.input(data=patch_text))
+  def _get_footer_step(self):
+    result = self.m.step(
+        'parse description', [
+            'python3',
+            self.repo_resource('git_footers.py'), '--json',
+            self.m.json.output()
+        ],
+        stdin=self.m.raw_io.input(data=self._gerrit_commit_message))
     return result.json.output
 
-  def get_footer(self, tag, patch_text=None):
+  def get_footer(self, tag):
     """Gets a specific tag from a CL description"""
-    footers = self._get_footers(patch_text)
+    footers = self._get_footers()
     if footers is None:
       return []
 

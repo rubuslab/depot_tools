@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b030966_27967e4e",
+        "filename": "split_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001534
+      },
+      "writtenOn": "2023-02-23T16:52:37Z",
+      "side": 1,
+      "message": "Can use `re.sub` to do this in one pass. e.g. https://paste.googleplex.com/6014337817772032",
+      "revId": "60b08f2b21361f10a15c349e379a8f4ef9329923",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

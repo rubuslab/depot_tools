@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7287aa04_4b063db7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-02-23T00:45:34Z",
+      "side": 1,
+      "message": "This adds a handy option to this (optional) script. PTAL.",
+      "revId": "971ddd32ad1216a6e4fa41581264f6482675ecbe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

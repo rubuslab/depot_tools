@@ -6010,6 +6010,10 @@ def CMDformat(parser, args):
         DieWithError('gn format failed on ' + gn_diff_file +
                      '\nTry running `gn format` on this file manually.')
 
+  # execute custom formatter if FORMAT.py is present
+  utils.ListRelevantFilesInSourceCheckout(cl.LocalPaths(), cl.RepositoryRoot(),
+                                          r'FORMAT.py', None)
+
   # Skip the metrics formatting from the global presubmit hook. These files have
   # a separate presubmit hook that issues an error if the files need formatting,
   # whereas the top-level presubmit script merely issues a warning. Formatting

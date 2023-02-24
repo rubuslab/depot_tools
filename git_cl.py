@@ -55,6 +55,7 @@ import subprocess2
 import swift_format
 import watchlists
 
+from lib import utils
 from third_party import six
 from six.moves import urllib
 
@@ -6135,7 +6136,6 @@ def CMDlol(parser, args):
 
 
 def CMDversion(parser, args):
-  import utils
   print(utils.depot_tools_version())
 
 

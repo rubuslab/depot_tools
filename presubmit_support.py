@@ -8,6 +8,22 @@
 
 from __future__ import print_function
 
+import traceback
+old_open = open
+def open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None):
+  if not 'b' in mode and encoding == None:
+    raise Exception('No-encoding when opening %s with %s at:\n%s\n' % (file, mode, ''.join(traceback.format_stack(None, 8))))
+  return old_open(file, mode, buffering, encoding, errors, newline, closefd, opener)
+
+code_insert = r'''
+import traceback
+old_open = open
+def open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None):
+  if not 'b' in mode and encoding == None:
+    raise Exception('No-encoding when opening %s with %s at:\n%s\n' % (file, mode, ''.join(traceback.format_stack(None, 8))))
+  return old_open(file, mode, buffering, encoding, errors, newline, closefd, opener)
+'''
+
 __version__ = '2.0.0'
 
 # TODO(joi) Add caching where appropriate/needed. The API is designed to allow
@@ -1505,7 +1521,7 @@ def DoPostUploadExecuter(change, gerrit_obj, verbose, use_python3=False):
   for filename in presubmit_files:
     filename = os.path.abspath(filename)
     # Accept CRLF presubmit script.
-    presubmit_script = gclient_utils.FileRead(filename).replace('\r\n', '\n')
+    presubmit_script = code_insert + gclient_utils.FileRead(filename).replace('\r\n', '\n')
     if _ShouldRunPresubmit(presubmit_script, use_python3):
       if sys.version_info[0] == 2:
         sys.stdout.write(
@@ -1799,7 +1815,7 @@ def DoPresubmitChecks(change,
     for filename in presubmit_files:
       filename = os.path.abspath(filename)
       # Accept CRLF presubmit script.
-      presubmit_script = gclient_utils.FileRead(filename).replace('\r\n', '\n')
+      presubmit_script = code_insert + gclient_utils.FileRead(filename).replace('\r\n', '\n')
       if _ShouldRunPresubmit(presubmit_script, use_python3):
         if sys.version_info[0] == 2:
           sys.stdout.write(

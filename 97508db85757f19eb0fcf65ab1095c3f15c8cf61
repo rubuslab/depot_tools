@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ecaf9d7_ceaffbf0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-02-25T01:35:45Z",
+      "side": 1,
+      "message": "This was found by my PRESUBMIT.py auditing tool. I\u0027m not sure that non-ASCII characters in .gitignore files or .git/info/exclude files are very likely, but there is also value in normalizing the use of the encoding parameter.",
+      "revId": "97508db85757f19eb0fcf65ab1095c3f15c8cf61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

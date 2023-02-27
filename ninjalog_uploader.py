@@ -197,6 +197,9 @@ def main():
     # Disable logging.
     logging.disable(logging.CRITICAL)
 
+  # TODO(b/270907050): disable log collection temporarily.
+  return 0
+
   if not IsGoogler():
     return 0
 

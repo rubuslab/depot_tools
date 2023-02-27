@@ -16,6 +16,23 @@
       "message": "Setting `commit: false` for now, intending to submit sometime next week",
       "revId": "2b53c81a76eab2ec5aac849c9447ff8f2ad28266",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10461417_a554d858",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366833
+      },
+      "writtenOn": "2023-02-27T04:19:32Z",
+      "side": 1,
+      "message": "Side note: Investigate https://chromium-review.googlesource.com/c/infra/infra/+/4293073 before merging this.",
+      "revId": "2b53c81a76eab2ec5aac849c9447ff8f2ad28266",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

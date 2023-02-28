@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f12f28f0_76a8e69a",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-02-28T06:43:05Z",
+      "side": 1,
+      "message": "need to be in try ?",
+      "revId": "7d77ca9e95ffcc44b3db0b56076e4c55b048f73c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

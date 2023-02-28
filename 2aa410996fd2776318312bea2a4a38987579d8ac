@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5c763f7_0bd5a374",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1132414
+      },
+      "writtenOn": "2023-02-28T22:06:30Z",
+      "side": 1,
+      "message": "I can do this for more tools, if desired. I think we mainly care about vpython3 for this in CrOS.\n\nI\u0027m also not sure of the host system requirements here. e.g., can we assume a useful `realpath` on non-Linux? Notably, `readlink` doesn\u0027t really work, without the GNU `-f` extension.",
+      "revId": "2aa410996fd2776318312bea2a4a38987579d8ac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

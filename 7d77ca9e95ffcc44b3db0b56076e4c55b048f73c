@@ -16,6 +16,24 @@
       "message": "need to be in try ?",
       "revId": "7d77ca9e95ffcc44b3db0b56076e4c55b048f73c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "872d6886_10356b5d",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-02-28T06:51:15Z",
+      "side": 1,
+      "message": "I moved it out.",
+      "parentUuid": "f12f28f0_76a8e69a",
+      "revId": "7d77ca9e95ffcc44b3db0b56076e4c55b048f73c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

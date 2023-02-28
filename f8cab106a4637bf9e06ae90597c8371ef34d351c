@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c42db75_2b9e81c6",
+        "filename": "win_toolchain/package_from_installed.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-02-28T20:46:00Z",
+      "side": 0,
+      "message": "Either this line should be retained or else the entire sentence should be deleted. I vote to retain, but I don\u0027t feel strongly.",
+      "revId": "f8cab106a4637bf9e06ae90597c8371ef34d351c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

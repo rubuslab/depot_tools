@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "798c39de_39937953",
+        "filename": "git_cl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4844,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-03-01T20:24:09Z",
+      "side": 1,
+      "message": "nit:\n\n    parent \u003d cl._UpdateWithExternalChanges() if len(ordered_cls) \u003d\u003d\u003d 1 else None\n    \nand remove L4851-5852",
+      "range": {
+        "startLine": 4844,
+        "startChar": 13,
+        "endLine": 4844,
+        "endChar": 17
+      },
+      "revId": "6a3b442352480a79a3d804ceb7c022e89354862f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

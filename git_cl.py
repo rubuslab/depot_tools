@@ -1004,7 +1004,7 @@ _CommentSummary = collections.namedtuple(
 # TODO(b/265929888): Change `parent` to `pushed_commit_base`.
 _NewUpload = collections.namedtuple('NewUpload', [
     'reviewers', 'ccs', 'commit_to_push', 'new_last_uploaded_commit', 'parent',
-    'change_desc'
+    'change_desc', 'prev_patchset'
 ])
 
 
@@ -1690,8 +1690,11 @@ class Changelist(object):
           ['commit-tree', latest_tree, '-p', parent, '-F',
            desc_tempfile]).strip()
 
+    # Gerrit may or may not update fast enough to return the correct patchset
+    # number after we push. Get the pre-upload patchset and increment later.
+    prev_patchset = self.GetMostRecentPatchset(update=False) or 0
     return _NewUpload(reviewers, ccs, commit_to_push, end_commit, parent,
-                      change_desc)
+                      change_desc, prev_patchset)
 
   def PrepareCherryPickSquashedCommit(self, options, parent):
     # type: (optparse.Values, str) -> _NewUpload()
@@ -1723,8 +1726,11 @@ class Changelist(object):
     commit_to_push = RunGit(['rev-parse', 'HEAD']).strip()
     RunGit(['checkout', '-q', self.branch])
 
+    # Gerrit may or may not update fast enough to return the correct patchset
+    # number after we push. Get the pre-upload patchset and increment later.
+    prev_patchset = self.GetMostRecentPatchset(update=False) or 0
     return _NewUpload(reviewers, ccs, commit_to_push, new_upload_hash,
-                      cherry_pick_base, change_desc)
+                      cherry_pick_base, change_desc, prev_patchset)
 
   def _PrepareChange(self, options, parent, end_commit):
     # type: (optparse.Values, str, str) ->
@@ -1756,9 +1762,6 @@ class Changelist(object):
       change_id = change_detail['change_id']
       change_desc.ensure_change_id(change_id)
 
-      # TODO(b/265929888): Pull in external changes for the current branch
-      # only. No clear way to pull in external changes for upstream branches
-      # yet. Potentially offer a separate command to pull in external changes.
     else:  # No change issue. First time uploading
       if not options.force and not options.message_file:
         change_desc.prompt()
@@ -1805,6 +1808,8 @@ class Changelist(object):
     """Makes necessary post upload changes to the local and remote cl."""
     if not self.GetIssue():
       self.SetIssue(change_number)
+
+    self.SetPatchset(new_upload.prev_patchset + 1)
 
     self._GitSetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY,
                                   new_upload.commit_to_push)
@@ -4721,6 +4726,15 @@ def CMDupload(parser, args):
   parser.add_option('--no-python2-post-upload-hooks',
                     action='store_true',
                     help='Only run post-upload hooks in Python 3.')
+  parser.add_option('--cherry-pick-stacked',
+                    '--cp',
+                    dest='cherry_pick_stacked',
+                    action='store_true',
+                    help='If parent branch has un-uploaded updates, '
+                    'automatically skip parent branches and just upload '
+                    'the current branch cherry-pick on its parent\'s last '
+                    'uploaded commit. Allows users to skip the potential '
+                    'interactive confirmation step.')
   # TODO(b/265929888): Add --wip option of --cl-status option.
 
   orig_args = args
@@ -4766,8 +4780,16 @@ def CMDupload(parser, args):
     if options.dependencies:
       parser.error('--dependencies is not available for this workflow.')
 
+    if options.cherry_pick_stacked:
+      try:
+        orig_args.remove('--cherry-pick-stacked')
+      except ValueError:
+        orig_args.remove('--cp')
     UploadAllSquashed(options, orig_args)
     return 0
+
+  if options.cherry_pick_stacked:
+    parser.error('--cherry-pick-stacked is not available for this workflow.')
 
   cl = Changelist(branchref=options.target_branch)
   # Warm change details cache now to avoid RPCs later, reducing latency for
@@ -4819,25 +4841,35 @@ def UploadAllSquashed(options, orig_args):
   else:
     ordered_cls = list(reversed(cls))
 
-    parent = None
-    origin = '.'
     cl = ordered_cls[0]
-    branch = cl.GetBranch()
-    while origin == '.':
-      # Search for cl's closest ancestor with a gerrit hash.
-      origin, upstream_branch_ref = Changelist.FetchUpstreamTuple(branch)
-      if origin == '.':
-        upstream_branch = scm.GIT.ShortBranchName(upstream_branch_ref)
-        parent = scm.GIT.GetBranchConfig(settings.GetRoot(), upstream_branch,
-                                         GERRIT_SQUASH_HASH_CONFIG_KEY)
-        if parent:
-          break
-        branch = upstream_branch
-    else:
-      # Either the root of the tree is the cl's direct parent and the while
-      # loop above only found empty branches between cl and the root of the
-      # tree.
-      parent = cl.GetCommonAncestorWithUpstream()
+    # We can only support external changes when we're only uploading one
+    # branch.
+    parent = cl._UpdateWithExternalChanges() if len(ordered_cls) == 1 else None
+    if parent is None:
+      origin = '.'
+      branch = cl.GetBranch()
+
+      while origin == '.':
+        # Search for cl's closest ancestor with a gerrit hash.
+        origin, upstream_branch_ref = Changelist.FetchUpstreamTuple(branch)
+        if origin == '.':
+          upstream_branch = scm.GIT.ShortBranchName(upstream_branch_ref)
+
+          # Support the `git merge` and `git pull` workflow.
+          if upstream_branch in ['master', 'main']:
+            parent = cl.GetCommonAncestorWithUpstream()
+          else:
+            parent = scm.GIT.GetBranchConfig(settings.GetRoot(),
+                                             upstream_branch,
+                                             GERRIT_SQUASH_HASH_CONFIG_KEY)
+          if parent:
+            break
+          branch = upstream_branch
+      else:
+        # Either the root of the tree is the cl's direct parent and the while
+        # loop above only found empty branches between cl and the root of the
+        # tree.
+        parent = cl.GetCommonAncestorWithUpstream()
 
     for i, cl in enumerate(ordered_cls):
       # If we're in the middle of the stack, set end_commit to downstream's
@@ -4990,21 +5022,31 @@ def _UploadAllPrecheck(options, orig_args):
 
   cherry_pick = False
   if len(cls) > 1:
-    message = ''
+    opt_message = ''
     branches = ', '.join([cl.branch for cl in cls])
     if len(orig_args):
-      message = ('options %s will be used for all uploads.\n' % orig_args)
+      opt_message = ('options %s will be used for all uploads.\n' % orig_args)
     if must_upload_upstream:
-      confirm_or_exit('\n' + message +
-                      'Branches `%s` must be uploaded.\n' % branches)
+      msg = ('At least one parent branch in `%s` has never been uploaded '
+             'and must be uploaded before/with `%s`.\n' %
+             (branches, cls[1].branch))
+      if options.cherry_pick_stacked:
+        DieWithError(msg)
+      if not options.force:
+        confirm_or_exit('\n' + opt_message + msg)
     else:
-      answer = gclient_utils.AskForData(
-          '\n' + message +
-          'Press enter to update branches %s.\nOr type `n` to upload only '
-          '`%s` cherry-picked on %s\'s last upload:' %
-          (branches, cls[0].branch, cls[1].branch))
-      if answer.lower() == 'n':
+      if options.cherry_pick_stacked:
+        print('cherry-picking `%s` on %s\'s last upload' %
+              (cls[0].branch, cls[1].branch))
         cherry_pick = True
+      elif not options.force:
+        answer = gclient_utils.AskForData(
+            '\n' + opt_message +
+            'Press enter to update branches %s.\nOr type `n` to upload only '
+            '`%s` cherry-picked on %s\'s last upload:' %
+            (branches, cls[0].branch, cls[1].branch))
+        if answer.lower() == 'n':
+          cherry_pick = True
   return cls, cherry_pick
 
 

@@ -92,36 +92,6 @@ class NinjalogUploaderTest(unittest.TestCase):
         ['ninja', '-C', 'out/Release', '-C', 'out/Debug']),
         'out/Debug/.ninja_log')
 
-  def test_get_build_target_from_command_line(self):
-    self.assertEqual(
-        ninjalog_uploader.GetBuildTargetFromCommandLine(
-            ['python3', 'ninja.py', 'chrome']), ['chrome'])
-
-    self.assertEqual(
-        ninjalog_uploader.GetBuildTargetFromCommandLine(['python3',
-                                                         'ninja.py']), [])
-
-    self.assertEqual(
-        ninjalog_uploader.GetBuildTargetFromCommandLine(
-            ['python3', 'ninja.py', '-j', '1000', 'chrome']), ['chrome'])
-
-    self.assertEqual(
-        ninjalog_uploader.GetBuildTargetFromCommandLine(
-            ['python3', 'ninja.py', 'chrome', '-j', '1000']), ['chrome'])
-
-    self.assertEqual(
-        ninjalog_uploader.GetBuildTargetFromCommandLine(
-            ['python3', 'ninja.py', '-C', 'chrome']), [])
-
-    self.assertEqual(
-        ninjalog_uploader.GetBuildTargetFromCommandLine(
-            ['python3', 'ninja.py', '-Cout/Release', 'chrome']), ['chrome'])
-
-    self.assertEqual(
-        ninjalog_uploader.GetBuildTargetFromCommandLine(
-            ['python3', 'ninja.py', '-C', 'out/Release', 'chrome', 'all']),
-        ['chrome', 'all'])
-
   def test_get_j_flag(self):
     self.assertEqual(ninjalog_uploader.GetJflag(
         ['ninja']), None)

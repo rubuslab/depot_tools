@@ -72,34 +72,6 @@ def ParseGNArgs(gn_args):
   return build_configs
 
 
-def GetBuildTargetFromCommandLine(cmdline):
-  """Get build targets from commandline."""
-
-  # Skip argv0, argv1: ['/path/to/python3', '/path/to/depot_tools/ninja.py']
-  idx = 2
-
-  # Skipping all args that involve these flags, and taking all remaining args
-  # as targets.
-  onearg_flags = ('-C', '-f', '-j', '-k', '-l', '-d', '-t', '-w')
-  zeroarg_flags = ('--version', '-n', '-v')
-
-  targets = []
-
-  while idx < len(cmdline):
-    if cmdline[idx] in onearg_flags:
-      idx += 2
-      continue
-
-    if (cmdline[idx][:2] in onearg_flags or cmdline[idx] in zeroarg_flags):
-      idx += 1
-      continue
-
-    targets.append(cmdline[idx])
-    idx += 1
-
-  return targets
-
-
 def GetJflag(cmdline):
   """Parse cmdline to get flag value for -j"""
 
@@ -116,7 +88,7 @@ def GetMetadata(cmdline, ninjalog):
   """Get metadata for uploaded ninjalog.
 
     Returned metadata has schema defined in
-    https://cs.chromium.org?q="type+Metadata+struct+%7B"+file:%5Einfra/go/src/infra/appengine/chromium_build_stats/ninjalog/
+    https://source.chromium.org/chromium/infra/infra/+/main:go/src/infra/appengine/chromium_build_stats/ninjalog/ninjalog.go;l=87;drc=38a047b605dbeab2e0f246779e3276190f60ef27
 
     TODO(tikuta): Collect GOMA_* env var.
     """
@@ -145,7 +117,7 @@ def GetMetadata(cmdline, ninjalog):
       'platform': platform.system(),
       'cpu_core': multiprocessing.cpu_count(),
       'build_configs': build_configs,
-      'targets': GetBuildTargetFromCommandLine(cmdline),
+      'cmdline': cmdline,
   }
 
   jflag = GetJflag(cmdline)

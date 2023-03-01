@@ -52,6 +52,24 @@
       "parentUuid": "c346f894_92c3985b",
       "revId": "762ae7e2d1a71472b35c294ccc341aa20e116dc8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a30e1686_61790068",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-03-01T08:13:05Z",
+      "side": 1,
+      "message": "FWIU, the server code doesn\u0027t parse command line because the client uploads parsed `targets`. \nI think we are confused with parsing command line and filters.",
+      "parentUuid": "b2a14b37_0303c793",
+      "revId": "762ae7e2d1a71472b35c294ccc341aa20e116dc8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

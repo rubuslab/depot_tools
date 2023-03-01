@@ -16,6 +16,24 @@
       "message": "Maybe a one line description of this file?",
       "revId": "e48265d1a953e1af246f4005b8aeaed4561140a5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f6c0c4e_7ae87b54",
+        "filename": "lib/change.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-03-01T22:51:21Z",
+      "side": 1,
+      "message": "Oops, I missed this comment; I will do in a follow up CL.",
+      "parentUuid": "efa41fed_8af2b3ba",
+      "revId": "e48265d1a953e1af246f4005b8aeaed4561140a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

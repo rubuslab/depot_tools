@@ -1756,9 +1756,6 @@ class Changelist(object):
       change_id = change_detail['change_id']
       change_desc.ensure_change_id(change_id)
 
-      # TODO(b/265929888): Pull in external changes for the current branch
-      # only. No clear way to pull in external changes for upstream branches
-      # yet. Potentially offer a separate command to pull in external changes.
     else:  # No change issue. First time uploading
       if not options.force and not options.message_file:
         change_desc.prompt()
@@ -4840,26 +4837,33 @@ def UploadAllSquashed(options, orig_args):
     origin = '.'
     cl = ordered_cls[0]
     branch = cl.GetBranch()
-    while origin == '.':
-      # Search for cl's closest ancestor with a gerrit hash.
-      origin, upstream_branch_ref = Changelist.FetchUpstreamTuple(branch)
-      if origin == '.':
-        upstream_branch = scm.GIT.ShortBranchName(upstream_branch_ref)
 
-        # Support the `git merge` and `git pull` workflow.
-        if upstream_branch in ['master', 'main']:
-          parent = cl.GetCommonAncestorWithUpstream()
-        else:
-          parent = scm.GIT.GetBranchConfig(settings.GetRoot(), upstream_branch,
-                                           GERRIT_SQUASH_HASH_CONFIG_KEY)
-        if parent:
-          break
-        branch = upstream_branch
-    else:
-      # Either the root of the tree is the cl's direct parent and the while
-      # loop above only found empty branches between cl and the root of the
-      # tree.
-      parent = cl.GetCommonAncestorWithUpstream()
+    # We can only support external changes when we're only uploading one
+    # branch.
+    if len(ordered_cls) == 1:
+      parent = cl._UpdateWithExternalChanges()
+    if parent is None:
+      while origin == '.':
+        # Search for cl's closest ancestor with a gerrit hash.
+        origin, upstream_branch_ref = Changelist.FetchUpstreamTuple(branch)
+        if origin == '.':
+          upstream_branch = scm.GIT.ShortBranchName(upstream_branch_ref)
+
+          # Support the `git merge` and `git pull` workflow.
+          if upstream_branch in ['master', 'main']:
+            parent = cl.GetCommonAncestorWithUpstream()
+          else:
+            parent = scm.GIT.GetBranchConfig(settings.GetRoot(),
+                                             upstream_branch,
+                                             GERRIT_SQUASH_HASH_CONFIG_KEY)
+          if parent:
+            break
+          branch = upstream_branch
+      else:
+        # Either the root of the tree is the cl's direct parent and the while
+        # loop above only found empty branches between cl and the root of the
+        # tree.
+        parent = cl.GetCommonAncestorWithUpstream()
 
     for i, cl in enumerate(ordered_cls):
       # If we're in the middle of the stack, set end_commit to downstream's

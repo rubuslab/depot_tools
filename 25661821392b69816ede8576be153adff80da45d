@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02b4d5f0_2ca994fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-03-01T01:26:40Z",
+      "side": 1,
+      "message": "tested locally with large CrOS files, all works.",
+      "revId": "25661821392b69816ede8576be153adff80da45d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf7d8a9d_b2e44b5d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1833,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-03-01T01:26:40Z",
+      "side": 1,
+      "message": "tested it locally, it actually achieve almost 20:1. but to be conservative, I choose 5:1 here. It should leave enough room for chromeos config file to grow.",
+      "range": {
+        "startLine": 1833,
+        "startChar": 61,
+        "endLine": 1833,
+        "endChar": 64
+      },
+      "revId": "25661821392b69816ede8576be153adff80da45d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "Sorry, I think it is better to have filtering logic both in client and server side now, because it prevents accidential information leak to logs when it is uploaded to server.",
       "revId": "762ae7e2d1a71472b35c294ccc341aa20e116dc8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c346f894_92c3985b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-03-01T07:37:07Z",
+      "side": 1,
+      "message": "In that case, I would remove the command line parse logic on the server side. \nHow does it sound?",
+      "parentUuid": "cf742a8a_5545684e",
+      "revId": "762ae7e2d1a71472b35c294ccc341aa20e116dc8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

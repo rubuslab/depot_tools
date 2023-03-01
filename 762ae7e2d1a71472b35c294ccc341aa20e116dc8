@@ -34,6 +34,24 @@
       "parentUuid": "cf742a8a_5545684e",
       "revId": "762ae7e2d1a71472b35c294ccc341aa20e116dc8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2a14b37_0303c793",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-03-01T07:49:29Z",
+      "side": 1,
+      "message": "I still prefer to have that logic in server side too at least for a while. That can remove abs path from old depot_tools too.",
+      "parentUuid": "c346f894_92c3985b",
+      "revId": "762ae7e2d1a71472b35c294ccc341aa20e116dc8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

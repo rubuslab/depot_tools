@@ -39,6 +39,29 @@
       },
       "revId": "25661821392b69816ede8576be153adff80da45d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a81d301_f18b613f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1885,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-03-01T17:15:50Z",
+      "side": 1,
+      "message": "imo, we should do the compression regardless. The configurations are highly repetitive files so by doing compression, the validate check should transmit WAYYYY less data to LUCI Config on the wire.",
+      "range": {
+        "startLine": 1883,
+        "startChar": 0,
+        "endLine": 1885,
+        "endChar": 63
+      },
+      "revId": "25661821392b69816ede8576be153adff80da45d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

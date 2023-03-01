@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfadf583_c395ecfa",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1831,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-03-01T19:54:37Z",
+      "side": 1,
+      "message": "nit: remove `_UNCOMPRESSED` and just `_CONFIG_SIZE_LIMIT_PER_REQUEST` since we just have one limit now?",
+      "range": {
+        "startLine": 1831,
+        "startChar": 0,
+        "endLine": 1831,
+        "endChar": 43
+      },
+      "revId": "5a42ce50ae94ae30a983115a5e368d0e1b7b48b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1655,11 +1655,6 @@ class TestGitCl(unittest.TestCase):
     ])
 
     expected_refspec = ('commit-to-push:refs/for/refs/heads/main%notify=NONE,'
-                        'm=honk_stonk,topic=circus,hashtag=cow')
-    expected_refspec_opts = [
-        'notify=NONE', 'm=honk_stonk', 'topic=circus', 'hashtag=cow'
-    ]
-    expected_refspec = ('commit-to-push:refs/for/refs/heads/main%notify=NONE,'
                         'topic=circus,hashtag=cow')
     expected_refspec_opts = ['notify=NONE', 'topic=circus', 'hashtag=cow']
     mockRunGitPush.assert_called_once_with(expected_refspec,
@@ -1669,6 +1664,95 @@ class TestGitCl(unittest.TestCase):
         mock.call(options, new_upload_upstream, '1233'),
         mock.call(options, new_upload_current, '1234')
     ])
+
+  @mock.patch('git_cl.Changelist.GetGerritHost',
+              return_value='chromium-review.googlesource.com')
+  @mock.patch('git_cl.Changelist.GetRemoteBranch',
+              return_value=('origin', 'refs/remotes/origin/main'))
+  @mock.patch('git_cl.Changelist.GetCommonAncestorWithUpstream',
+              return_value='current-upstream-ancestor')
+  @mock.patch('git_cl.Changelist._UpdateWithExternalChanges')
+  @mock.patch('git_cl.Changelist.PostUploadUpdates')
+  @mock.patch('git_cl.Changelist._RunGitPushWithTraces')
+  @mock.patch('git_cl._UploadAllPrecheck')
+  @mock.patch('git_cl.Changelist.PrepareSquashedCommit')
+  def test_upload_all_squashed_external_changes(self, mockSquashedCommit,
+                                                mockUploadAllPrecheck,
+                                                mockRunGitPush,
+                                                mockPostUploadUpdates,
+                                                mockExternalChanges, *_mocks):
+    options = optparse.Values()
+    options.send_mail = options.private = False
+    options.squash = True
+    options.title = None
+    options.topic = 'circus'
+    options.message = 'honk stonk'
+    options.enable_auto_submit = False
+    options.set_bot_commit = False
+    options.cq_dry_run = False
+    options.use_commit_queue = options.cq_quick_run = False
+    options.hashtags = ['cow']
+    options.target_branch = None
+    orig_args = []
+
+    cls = [
+        git_cl.Changelist(branchref='refs/heads/current-branch', issue='12345')
+    ]
+    mockUploadAllPrecheck.return_value = (cls, False)
+    reviewers = []
+    ccs = []
+
+    # Test case: user wants to pull in external changes.
+    mockExternalChanges.reset_mock()
+    mockExternalChanges.return_value = None
+
+    current_commit_to_push = 'commit-to-push'
+    current_new_last_upload = 'new-last-upload'
+    change_desc = git_cl.ChangeDescription('stonks/nChange-Id:ec15e81197380')
+    new_upload_current = git_cl._NewUpload(reviewers, ccs,
+                                           current_commit_to_push,
+                                           current_new_last_upload,
+                                           'next-upstream-ancestor',
+                                           change_desc)
+    mockSquashedCommit.return_value = new_upload_current
+
+    mockRunGitPush.return_value = (
+        'remote:   https://chromium-review.'
+        'googlesource.com/c/chromium/circus/clown/+/1233 kwak')
+
+    # Test case: user wants to pull in external changes.
+    mockExternalChanges.reset_mock()
+    mockExternalChanges.return_value = 'external-commit'
+
+    # Call
+    git_cl.UploadAllSquashed(options, orig_args)
+
+    # Asserts
+    self.assertEqual(mockSquashedCommit.mock_calls,
+                     [mock.call(options, 'external-commit', end_commit=None)])
+
+    expected_refspec = ('commit-to-push:refs/for/refs/heads/main%notify=NONE,'
+                        'm=honk_stonk,topic=circus,hashtag=cow')
+    expected_refspec_opts = [
+        'notify=NONE', 'm=honk_stonk', 'topic=circus', 'hashtag=cow'
+    ]
+    mockRunGitPush.assert_called_once_with(expected_refspec,
+                                           expected_refspec_opts, mock.ANY)
+
+    self.assertEqual(mockPostUploadUpdates.mock_calls,
+                     [mock.call(options, new_upload_current, '1233')])
+
+    # Test case: user does not want external changes or there are none.
+    mockSquashedCommit.reset_mock()
+    mockExternalChanges.return_value = None
+
+    # Call
+    git_cl.UploadAllSquashed(options, orig_args)
+
+    # Asserts
+    self.assertEqual(
+        mockSquashedCommit.mock_calls,
+        [mock.call(options, 'current-upstream-ancestor', end_commit=None)])
 
   @mock.patch(
       'git_cl.Changelist._GerritCommitMsgHookCheck', lambda offer_removal: None)

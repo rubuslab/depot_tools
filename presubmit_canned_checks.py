@@ -9,6 +9,36 @@ from __future__ import print_function
 import io as _io
 import os as _os
 
+code_insert = r'''
+import os
+import traceback
+old_open = open
+def open(file, mode='r', buffering=- 1, encoding=None, errors=None, newline=None, closefd=True, opener=None):
+  if not 'b' in mode and encoding == None:
+    location = traceback.format_stack(None, 2)[:1][0].strip().split('\n')[0]
+    if not ':' in location:
+      location = os.getcwd() + " - " + location
+    message = 'No-encoding when opening a file with %s at %s' % (mode, location)
+    #raise Exception(message)
+    binary = False
+    if mode == 'r':
+      with open(file, 'rb') as f:
+        data = f.read()
+        for a in data:
+          if a < 0 or a > 127:
+            binary = True
+            break
+    if binary:
+      with open(r'c:\src\temp\missing_encoding.txt', 'a', encoding='utf-8') as f:
+        f.write('%s\tbinary data!\n' % location)
+    else:
+      with open(r'c:\src\temp\missing_encoding.txt', 'a', encoding='utf-8') as f:
+        f.write('%s\n' % location)
+  return old_open(file, mode, buffering, encoding, errors, newline, closefd, opener)
+import builtins
+builtins.open = open
+'''
+
 from warnings import warn
 _HERE = _os.path.dirname(_os.path.abspath(__file__))
 
@@ -915,6 +945,17 @@ def GetUnitTests(input_api,
       # to run on python3. Since tests have been broken since this landed, we
       # introduced the |skip_shebang_check| argument to work around the issue
       # until every caller in Chromium has been fixed.
+      with open(unit_test, 'r', encoding='utf-8') as f:
+        original_lines = f.readlines()
+      if original_lines[1] != 'import traceback\n':
+        lines = original_lines[:]
+        for i in range(len(lines)):
+          if lines[i].startswith('from __future__ import print_function'):
+            lines[i] = '# import removed'
+        with open(unit_test, 'w', encoding='utf-8') as f:
+          f.write(code_insert)
+          f.write(''.join(lines))
+      skip_shebang_check = True
       if (skip_shebang_check or has_py3_shebang(unit_test)) and run_on_python3:
         results.append(input_api.Command(
             name=unit_test,
@@ -930,6 +971,8 @@ def GetUnitTests(input_api,
             kwargs=kwargs,
             message=message_type))
         test_run = True
+      #with open(unit_test, 'w', encoding='utf-8', newline='') as f:
+      #  f.write(''.join(original_lines))
       if not test_run:
         results.append(output_api.PresubmitError(
             "The %s test was not run. You may need to add\n"

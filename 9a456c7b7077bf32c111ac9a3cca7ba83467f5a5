@@ -33,6 +33,24 @@
       "message": "one line description of file?",
       "revId": "9a456c7b7077bf32c111ac9a3cca7ba83467f5a5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4eb9153e_a1d84546",
+        "filename": "lib/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-03-01T20:54:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acf3414_5d1ad5e8",
+      "revId": "9a456c7b7077bf32c111ac9a3cca7ba83467f5a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

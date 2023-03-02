@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "32fab3ef_5035a8d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-03-02T01:47:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23e9fb2c_afdd6b42",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 15
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9dbbec3c_cb3c17c4",
@@ -70,6 +94,54 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "74c7a9f8_5b02808e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-03-02T01:47:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9dbbec3c_cb3c17c4",
+      "range": {
+        "startLine": 18,
+        "startChar": 14,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3d2bb3b_22f2b26f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-03-02T01:47:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6d428b3_df677afd",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 5
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8bd569d5_9bec482b",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-03-02T01:39:29Z",
       "side": 1,
       "message": "period?",
+      "range": {
+        "startLine": 20,
+        "startChar": 47,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "266e265a_f3ea850d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-03-02T01:47:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8bd569d5_9bec482b",
       "range": {
         "startLine": 20,
         "startChar": 47,
@@ -116,6 +212,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37dcd801_dea41c76",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-03-02T01:47:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bcb7c357_7919d4a5",
+      "range": {
+        "startLine": 105,
+        "startChar": 42,
+        "endLine": 105,
+        "endChar": 49
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b4ea2ecd_c127fc46",
@@ -129,6 +249,30 @@
       "writtenOn": "2023-03-02T01:39:29Z",
       "side": 1,
       "message": "This is redundant?",
+      "range": {
+        "startLine": 77,
+        "startChar": 50,
+        "endLine": 77,
+        "endChar": 57
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fffcb0d3_30a2768a",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-03-02T01:47:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b4ea2ecd_c127fc46",
       "range": {
         "startLine": 77,
         "startChar": 50,

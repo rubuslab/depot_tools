@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23e9fb2c_afdd6b42",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-03-02T01:39:29Z",
+      "side": 1,
+      "message": "period?",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 15
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9dbbec3c_cb3c17c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-03-02T01:39:29Z",
+      "side": 1,
+      "message": "doesn\u0027t?",
+      "range": {
+        "startLine": 18,
+        "startChar": 14,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6d428b3_df677afd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-03-02T01:39:29Z",
+      "side": 1,
+      "message": "Since?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 5
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8bd569d5_9bec482b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-03-02T01:39:29Z",
+      "side": 1,
+      "message": "period?",
+      "range": {
+        "startLine": 20,
+        "startChar": 47,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bcb7c357_7919d4a5",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-03-02T01:39:29Z",
+      "side": 1,
+      "message": "This is redundant?",
+      "range": {
+        "startLine": 105,
+        "startChar": 42,
+        "endLine": 105,
+        "endChar": 49
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4ea2ecd_c127fc46",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-03-02T01:39:29Z",
+      "side": 1,
+      "message": "This is redundant?",
+      "range": {
+        "startLine": 77,
+        "startChar": 50,
+        "endLine": 77,
+        "endChar": 57
+      },
+      "revId": "5fd71c8555b3ae9df6e12e36fca1a4be6a7aa0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

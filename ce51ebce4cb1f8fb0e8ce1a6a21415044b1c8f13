@@ -50,6 +50,24 @@
       "message": "```\n./gsutil.py cp \"gs://\u003cbucket\u003e\" .\n\n********************************************************************************Warning: You might have an outdated .boto file. If this issue persists after running `gsutil.py config`, try removing your .boto file.\n********************************************************************************\n\nYour credentials are invalid. For more help, see \"gsutil help creds\", or re-run the gsutil config command (see \"gsutil help config\").\n```\n\nNit: The line separator should be before the `separator` variable.",
       "revId": "ce51ebce4cb1f8fb0e8ce1a6a21415044b1c8f13",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad6b5ffc_c497e8df",
+        "filename": "gsutil.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-03-03T22:43:08Z",
+      "side": 1,
+      "message": "Whoops! My fake error message and real error message got out of sync. I added another \u0027\\n\u0027 to fix this (before and after the separator)",
+      "parentUuid": "8b8566b2_6c9c3b65",
+      "revId": "ce51ebce4cb1f8fb0e8ce1a6a21415044b1c8f13",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

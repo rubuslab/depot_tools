@@ -22,6 +22,30 @@
       },
       "revId": "08dbb1fc21482d833bdc6da4c9fcfc4a3ad7c173",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4411cdf7_a44183df",
+        "filename": "git_cache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-04T20:32:34Z",
+      "side": 1,
+      "message": "I meant to add that notes as TODO to remove this once we stop observing this behavior in bots, but makes sense why it is confusing.",
+      "parentUuid": "0e0be23f_d8c62062",
+      "range": {
+        "startLine": 393,
+        "startChar": 6,
+        "endLine": 393,
+        "endChar": 10
+      },
+      "revId": "08dbb1fc21482d833bdc6da4c9fcfc4a3ad7c173",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

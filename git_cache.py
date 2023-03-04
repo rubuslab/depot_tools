@@ -390,6 +390,19 @@ class Mirror(object):
       self.print('%s has %d .pack files, re-bootstrapping if >%d or ==0' %
                 (self.mirror_path, len(pack_files), GC_AUTOPACKLIMIT))
 
+    # TODO(crbug.com/1418866): mirror sometimes miss origin/HEAD ref. This
+    # causes bot_update to fail. If in this state, delete mirror, and
+    # force bootstrap.
+    origin_head_cmd = subprocess.run(
+        [Mirror.git_exe, 'rev-parse', '--verify', 'refs/remotes/origin/HEAD'])
+
+    if origin_head_cmd != 0:
+      # Remove mirror
+      gclient_utils.rmtree(self.mirror_path)
+
+      # force bootstrap
+      force = True
+
     should_bootstrap = (force or
                         not self.exists() or
                         len(pack_files) > GC_AUTOPACKLIMIT or

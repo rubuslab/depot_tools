@@ -390,6 +390,27 @@ class Mirror(object):
       self.print('%s has %d .pack files, re-bootstrapping if >%d or ==0' %
                 (self.mirror_path, len(pack_files), GC_AUTOPACKLIMIT))
 
+    # TODO(crbug.com/1418866): master->main branch migration left the cache in
+    # some builders to have its HEAD still pointing to refs/heads/master. This
+    # causes bot_update to fail. If in this state, delete the cache and force
+    # bootstrap.
+    with open(os.path.join(self.mirror_path, 'HEAD')) as f:
+      head_ref = f.read()
+
+    # Check only when HEAD points to master.
+    if 'master' in head_ref:
+      # Some repos could still have master so verify if the ref exists first.
+      show_ref_master_cmd = subprocess.run(
+          [Mirror.git_exe, 'show-ref', '--verify', 'refs/heads/master'],
+          cwd=self.mirror_path)
+
+      if show_ref_master_cmd.returncode != 0:
+        # Remove mirror
+        gclient_utils.rmtree(self.mirror_path)
+
+        # force bootstrap
+        force = True
+
     should_bootstrap = (force or
                         not self.exists() or
                         len(pack_files) > GC_AUTOPACKLIMIT or

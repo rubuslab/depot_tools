@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d97c2749_ee90ec33",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2023-03-04T04:54:38Z",
+      "side": 1,
+      "message": "Looks like this broke depot_tools on MacOS:\n```\nUpdating depot_tools...\n./cipd: line 9: realpath: command not found\n./update_depot_tools: line 147: goma_ctl: command not found\n./bootstrap_python3: line 28: cipd: command not found\n/Users/.../depot_tools/vpython3: line 37: realpath: command not found\n\necho $SHELL\n/bin/zsh\n```",
+      "revId": "c962e86f7bafddfc582922dec44cf7a843228abb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

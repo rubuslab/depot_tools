@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2016ee0_cfdcb2bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-04T04:12:32Z",
+      "side": 1,
+      "message": "Tested this on valid, invalid, and missing cache states: http://go/paste/6267795707789312.",
+      "revId": "83f286da8372aa9541c8ca823efcd733d7b4b1b5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

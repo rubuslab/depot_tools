@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e0be23f_d8c62062",
+        "filename": "git_cache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-03-04T16:04:14Z",
+      "side": 1,
+      "message": "nit: this is not a TODO, but context, so please remove TODO",
+      "range": {
+        "startLine": 393,
+        "startChar": 6,
+        "endLine": 393,
+        "endChar": 10
+      },
+      "revId": "08dbb1fc21482d833bdc6da4c9fcfc4a3ad7c173",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

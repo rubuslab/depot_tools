@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf6219c1_cc53738f",
+        "filename": "git_cache.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-03-05T23:38:19Z",
+      "side": 1,
+      "message": "don\u0027t we want to verify refs/heads/main exists, instead of refs/heads/master?\nif it failed to verify refs/heads/main, remove and force boot strap?\n\nor is it ok if refs/heads/master exists?",
+      "revId": "9a959c57c0f7f621221a8ccb0042bad0f6b15ae3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

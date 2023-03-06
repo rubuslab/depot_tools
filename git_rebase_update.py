@@ -321,7 +321,7 @@ def main(args=None):
       remove_empty_branches(branch_tree)
 
     # return_branch may not be there any more.
-    if return_branch in git.branches():
+    if return_branch in git.branches(use_limit=False):
       git.run('checkout', return_branch)
       git.thaw()
     else:

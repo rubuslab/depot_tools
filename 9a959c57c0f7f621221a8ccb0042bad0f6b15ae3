@@ -16,6 +16,24 @@
       "message": "don\u0027t we want to verify refs/heads/main exists, instead of refs/heads/master?\nif it failed to verify refs/heads/main, remove and force boot strap?\n\nor is it ok if refs/heads/master exists?",
       "revId": "9a959c57c0f7f621221a8ccb0042bad0f6b15ae3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e30d13c_554bc12b",
+        "filename": "git_cache.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-06T02:07:06Z",
+      "side": 1,
+      "message": "This snippet basically checks if `HEAD` points to `master` and if `master` doesn\u0027t exist, delete the cache and reclone. I\u0027m not sure why checking if `main` exist would help here. Also, I have tested this in failing cache and it works.",
+      "parentUuid": "cf6219c1_cc53738f",
+      "revId": "9a959c57c0f7f621221a8ccb0042bad0f6b15ae3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

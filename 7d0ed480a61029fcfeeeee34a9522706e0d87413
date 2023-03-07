@@ -52,6 +52,24 @@
       "parentUuid": "341ced0b_bedcef88",
       "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e5ea182_cb43aae8",
+        "filename": "cit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-03-07T20:57:34Z",
+      "side": 1,
+      "message": "\u003e what\u0027s the output if no args are provided\n\nIf you mean no args to `cit commit`, then this CL gives the same result as above. This CL was intended to handle cases where the user typos `$ cit\\n` and not `$ cit commit\\n`. The 2nd response in this thread was the output of running `$ cit\\n`",
+      "parentUuid": "9128ea70_81c584f0",
+      "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

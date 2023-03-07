@@ -34,6 +34,24 @@
       "parentUuid": "2a67f9a6_a8d86b69",
       "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9128ea70_81c584f0",
+        "filename": "cit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-03-07T20:44:50Z",
+      "side": 1,
+      "message": "The current is actually:\n\n```\n % cit commit                       \nUnknown tool \"commit\"\nusage: cit.py \u003cname of tool\u003e [args for tool]\n\n  Wrapper for maintaining and calling tools in:\n    \"infra.git, infra.tools.*\"\n    \"infra.git/cipd/*\"\n\n  Available infra tools are:\n  * bot_setup.start\n  * bucket\n  * dockerbuild\n  * flatten_buildbucket_cfg\n  * log\n  * new_tool\n  * rmtree\n  * send_ts_mon_values\n  * yapf\n  * zip_release_commits\n\n  Available cipd tools are:\n  * adb\n  * cloud_sql_proxy\n  * cloudbuildhelper\n  * crimson\n  * fastboot\n  * logdog\n\n```\n\nSo, it\u0027s more useful than this CL.",
+      "parentUuid": "341ced0b_bedcef88",
+      "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

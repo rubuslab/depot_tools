@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba9febf3_44e4ed30",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-03-07T21:00:54Z",
+      "side": 1,
+      "message": "WDYT? This ensures that all PRESUBMIT.py files are run with Python 3. If that sticks then I\u0027ll remove more code, and at some point I can remove all the Python 3 parameters and arguments.",
+      "revId": "0f180169455d96d86b4e5517cf13c4a6954b6972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

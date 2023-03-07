@@ -70,6 +70,24 @@
       "parentUuid": "9128ea70_81c584f0",
       "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cc6a423_836eb3b2",
+        "filename": "cit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-03-07T21:01:43Z",
+      "side": 1,
+      "message": "I get the same output from #3 minus the first line when using just `cit`.",
+      "parentUuid": "9e5ea182_cb43aae8",
+      "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

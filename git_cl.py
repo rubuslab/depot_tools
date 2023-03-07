@@ -1440,16 +1440,7 @@ class Changelist(object):
                                      use_python3=True,
                                      resultdb=resultdb,
                                      realm=realm)
-    if py3_results.get('skipped_presubmits', 1) == 0:
-      print('No more presubmits to run - skipping Python 2 presubmits.')
-      return py3_results
-
-    py2_results = self._RunPresubmit(args,
-                                     description,
-                                     use_python3=False,
-                                     resultdb=resultdb,
-                                     realm=realm)
-    return self._MergePresubmitResults(py2_results, py3_results)
+    return py3_results
 
   def _RunPresubmit(self,
                     args,

@@ -50,6 +50,24 @@
       "message": "I\u0027m not exactly sure how this json output is used but I\u0027m wondering if this is still necessary given there are no more skipped presubmits.",
       "revId": "0f180169455d96d86b4e5517cf13c4a6954b6972",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f23712c9_de14a8b5",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1786,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-03-07T22:08:49Z",
+      "side": 1,
+      "message": "It is not used anymore and is easy to remove, so I\u0027ve done that now.\nOn follow-up changes I\u0027ll be following the various sweater threads more thoroughly but this change is more about ensuring that we\u0027re not using Python 2 in various places.",
+      "parentUuid": "f774050b_56a5536e",
+      "revId": "0f180169455d96d86b4e5517cf13c4a6954b6972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

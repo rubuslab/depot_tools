@@ -102,28 +102,27 @@ def get_available_tools():
   return (sorted(infra_tools), sorted(cipd_tools))
 
 
-def usage():
-  infra_tools, cipd_tools = get_available_tools()
+def usage(print_available_tools=True):
   print("""usage: cit.py <name of tool> [args for tool]
 
   Wrapper for maintaining and calling tools in:
     "infra.git, infra.tools.*"
-    "infra.git/cipd/*"
+    "infra.git/cipd/*\"""")
 
-  Available infra tools are:""")
+  if not print_available_tools:
+    return
+
+  infra_tools, cipd_tools = get_available_tools()
+  print('Available infra tools are:')
   for tool in infra_tools:
     print('  * %s' % tool)
 
-  print("""
-  Available cipd tools are:""")
+  print('Available cipd tools are:')
   for tool in cipd_tools:
     print('  * %s' % tool)
 
 
 def run(args):
-  if not args:
-    return usage()
-
   env = os.environ
   tool_name = args[0]
   # Check to see if it is a infra tool first.
@@ -164,6 +163,9 @@ def main():
     args.args.pop(0)
   if extras:
     args.args = extras + args.args
+
+  if not args.args:
+    return usage(print_available_tools=False)
 
   if need_to_update(args.infra_branch):
     ensure_infra(args.infra_branch)

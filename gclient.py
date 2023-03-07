@@ -115,6 +115,7 @@ from third_party.repo.progress import Progress
 import subcommand
 import subprocess2
 import setup_color
+import git_cl
 
 from third_party import six
 
@@ -2549,6 +2550,27 @@ class Flattener(object):
       if d.should_recurse:
         self._flatten_dep(d)
 
+
+@metrics.collector.collect_metrics('gclient gitmodules')
+def CMDgitmodules(parser, args):
+  parser.add_option('--output-gitmodules', help='')
+  parser.add_option('--deps-file', help='')
+  options, args = parser.parse_args(args)
+
+  deps_content = gclient_utils.FileRead(options.deps_file)
+  ls = gclient_eval.Parse(
+      deps_content, options.deps_file, None, None)
+  with open(options.output_gitmodules, 'w') as f:
+    for path, dep in ls.get('deps').items():
+      if dep.get('dep_type') != 'cipd':
+        url = dep['url']
+        i = url.index('@')
+        commit = url[i+1:]
+        url = url[:i]
+        git_cl.RunGit(['update-index', '--add', '--cacheinfo', '160000', commit, path])
+        f.write(('[submodule "%s"]\n'
+             '\tpath = %s\n'
+             '\turl = %s\n' % (path, path, url)))
 
 @metrics.collector.collect_metrics('gclient flatten')
 def CMDflatten(parser, args):

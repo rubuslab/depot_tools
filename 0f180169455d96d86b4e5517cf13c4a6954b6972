@@ -16,6 +16,40 @@
       "message": "WDYT? This ensures that all PRESUBMIT.py files are run with Python 3. If that sticks then I\u0027ll remove more code, and at some point I can remove all the Python 3 parameters and arguments.",
       "revId": "0f180169455d96d86b4e5517cf13c4a6954b6972",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d6612ba_964a25c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-07T21:39:42Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "0f180169455d96d86b4e5517cf13c4a6954b6972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f774050b_56a5536e",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1786,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-07T21:39:42Z",
+      "side": 1,
+      "message": "I\u0027m not exactly sure how this json output is used but I\u0027m wondering if this is still necessary given there are no more skipped presubmits.",
+      "revId": "0f180169455d96d86b4e5517cf13c4a6954b6972",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

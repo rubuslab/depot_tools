@@ -165,6 +165,11 @@ def main():
   if extras:
     args.args = extras + args.args
 
+  if not args.args:
+    # We can't use usage() here because we don't know if infra has been checked
+    # out yet.
+    return parser.print_help()
+
   if need_to_update(args.infra_branch):
     ensure_infra(args.infra_branch)
   return run(args.args)

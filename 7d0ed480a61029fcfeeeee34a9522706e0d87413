@@ -88,6 +88,24 @@
       "parentUuid": "9e5ea182_cb43aae8",
       "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfd5789d_a2d8dfe4",
+        "filename": "cit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-03-07T21:27:29Z",
+      "side": 1,
+      "message": "replaced parser.print_help with [usage without listing tools]\n\n```\n$ cit\nusage: cit.py \u003cname of tool\u003e [args for tool]\n\n  Wrapper for maintaining and calling tools in:\n    \"infra.git, infra.tools.*\"\n    \"infra.git/cipd/*\"\n```",
+      "parentUuid": "2cc6a423_836eb3b2",
+      "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

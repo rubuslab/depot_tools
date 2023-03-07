@@ -16,6 +16,24 @@
       "message": "I don\u0027t think this is very useful either; what\u0027s the output if no args are provided?",
       "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "341ced0b_bedcef88",
+        "filename": "cit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-03-07T20:42:12Z",
+      "side": 1,
+      "message": "before: the same as in http://b/271878083, i.e. \"Fetching infra@cit into...\"\n\nnow: \n```\nusage: Chrome Infrastructure CLI. [-h] [-b INFRA_BRANCH] ...\n\npositional arguments:\n  args\n\noptions:\n  -h, --help            show this help message and exit\n  -b INFRA_BRANCH, --infra-branch INFRA_BRANCH\n                        The name of the \u0027infra\u0027 branch to use (default is cit).\n```",
+      "parentUuid": "2a67f9a6_a8d86b69",
+      "revId": "7d0ed480a61029fcfeeeee34a9522706e0d87413",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

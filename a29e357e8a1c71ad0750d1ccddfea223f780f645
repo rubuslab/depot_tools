@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "142b6652_d335de04",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1489,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-03-08T17:14:02Z",
+      "side": 1,
+      "message": "Looks good. Sorry for missing this the first time.",
+      "revId": "a29e357e8a1c71ad0750d1ccddfea223f780f645",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5c3acb1_6b69d910",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-03-08T17:14:02Z",
+      "side": 1,
+      "message": "Did the changes to this file accidentally get restored?",
+      "revId": "a29e357e8a1c71ad0750d1ccddfea223f780f645",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da70416c_508353b6",

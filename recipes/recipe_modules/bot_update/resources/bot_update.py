@@ -1125,11 +1125,8 @@ def checkout(options, git_slns, specs, revisions, step_text):
   got_revisions = parse_got_revision(manifest, revision_mapping)
 
   if not got_revisions:
-    # TODO(hinoka): We should probably bail out here, but in the interest
-    # of giving mis-configured bots some time to get fixed use a dummy
-    # revision here.
     got_revisions = { 'got_revision': 'BOT_UPDATE_NO_REV_FOUND' }
-    #raise Exception('No got_revision(s) found in gclient output')
+    raise Exception('No got_revision(s) found in gclient output')
 
   # Tell recipes information such as root, got_revision, etc.
   emit_json(options.output_json,

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0ff48a1_5a0387f9",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2023-03-09T17:13:01Z",
+      "side": 1,
+      "message": "This line has no effect if it\u0027s going to raise an exception in the next line.",
+      "range": {
+        "startLine": 1128,
+        "startChar": 4,
+        "endLine": 1128,
+        "endChar": 65
+      },
+      "revId": "8ffe332d4ea9c380d35c6858c931c0b2d0027b6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

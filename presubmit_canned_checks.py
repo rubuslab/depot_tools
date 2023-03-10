@@ -10,7 +10,6 @@ import io as _io
 import os as _os
 import zlib
 
-from warnings import warn
 _HERE = _os.path.dirname(_os.path.abspath(__file__))
 
 # These filters will be disabled if callers do not explicitly supply a
@@ -881,13 +880,11 @@ def GetUnitTests(input_api,
 
   On Windows, sys.executable is used for unit tests ending with ".py".
   """
-  assert run_on_python3 or run_on_python2, (
-      'At least one of "run_on_python2" or "run_on_python3" must be set.')
-  def has_py3_shebang(test):
-    with _io.open(test, encoding='utf-8') as f:
-      maybe_shebang = f.readline()
-    return maybe_shebang.startswith('#!') and 'python3' in maybe_shebang
-
+  # These parameters are no longer used but have to be retained because of the
+  # many callers in other repos that pass them in.
+  del run_on_python2
+  del run_on_python3
+  del skip_shebang_check
   # We don't want to hinder users from uploading incomplete patches, but we do
   # want to report errors as errors when doing presubmit --all testing.
   if input_api.is_committing or input_api.no_diffs:
@@ -910,31 +907,11 @@ def GetUnitTests(input_api,
           kwargs=kwargs,
           message=message_type))
     else:
-      test_run = False
-      # TODO(crbug.com/1223478): The intent for this line was to run the test
-      # on python3 if the file has a shebang OR if it was explicitly requested
-      # to run on python3. Since tests have been broken since this landed, we
-      # introduced the |skip_shebang_check| argument to work around the issue
-      # until every caller in Chromium has been fixed.
-      if (skip_shebang_check or has_py3_shebang(unit_test)) and run_on_python3:
-        results.append(input_api.Command(
-            name=unit_test,
-            cmd=cmd,
-            kwargs=kwargs,
-            message=message_type,
-            python3=True))
-        test_run = True
-      if run_on_python2:
-        results.append(input_api.Command(
-            name=unit_test,
-            cmd=cmd,
-            kwargs=kwargs,
-            message=message_type))
-        test_run = True
-      if not test_run:
-        results.append(output_api.PresubmitError(
-            "The %s test was not run. You may need to add\n"
-            "skip_shebang_check=True for python3 tests." % unit_test))
+      results.append(
+          input_api.Command(name=unit_test,
+                            cmd=cmd,
+                            kwargs=kwargs,
+                            message=message_type))
   return results
 
 
@@ -1018,10 +995,7 @@ def GetPythonUnitTests(input_api, output_api, unit_tests, python3=False):
         backpath.append(env.get('PYTHONPATH'))
       env['PYTHONPATH'] = input_api.os_path.pathsep.join((backpath))
       env.pop('VPYTHON_CLEAR_PYTHONPATH', None)
-    if python3:
-      cmd = [input_api.python3_executable, '-m', '%s' % unit_test]
-    else:
-      cmd = [input_api.python_executable, '-m', '%s' % unit_test]
+    cmd = [input_api.python3_executable, '-m', '%s' % unit_test]
     results.append(input_api.Command(
         name=unit_test_name,
         cmd=cmd,
@@ -1101,16 +1075,14 @@ def GetPylint(input_api,
 
   The default files_to_check enforces looking only at *.py files.
 
-  Currently only pylint version '1.5', '2.6' and '2.7' are supported.
+  Currently only pylint version '2.6' and '2.7' are supported.
   """
 
   files_to_check = tuple(files_to_check or (r'.*\.py$', ))
   files_to_skip = tuple(files_to_skip or input_api.DEFAULT_FILES_TO_SKIP)
   extra_paths_list = extra_paths_list or []
 
-  assert version in ('1.5', '2.6', '2.7'), \
-      'Unsupported pylint version: %s' % version
-  python2 = (version == '1.5')
+  assert version in ('2.6', '2.7'), 'Unsupported pylint version: %s' % version
 
   if input_api.is_committing or input_api.no_diffs:
     error_type = output_api.PresubmitError
@@ -1199,12 +1171,10 @@ def GetPylint(input_api,
     if input_api.sys.version_info.major != 2:
       kwargs['stdin'] = kwargs['stdin'].encode('utf-8')
 
-    return input_api.Command(
-        name='Pylint (%s)' % description,
-        cmd=cmd,
-        kwargs=kwargs,
-        message=error_type,
-        python3=not python2)
+    return input_api.Command(name='Pylint (%s)' % description,
+                             cmd=cmd,
+                             kwargs=kwargs,
+                             message=error_type)
 
   # pylint's cycle detection doesn't work in parallel, so spawn a second,
   # single-threaded job for just that check. However, only do this if there are

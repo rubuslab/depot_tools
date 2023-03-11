@@ -1896,40 +1896,6 @@ it or fix the checkout.
                           'checkout, so not removing.' % entry)
           continue
 
-        # This is to handle the case of third_party/WebKit migrating from
-        # being a DEPS entry to being part of the main project.
-        # If the subproject is a Git project, we need to remove its .git
-        # folder. Otherwise git operations on that folder will have different
-        # effects depending on the current working directory.
-        if os.path.abspath(scm_root) == os.path.abspath(e_dir):
-          e_par_dir = os.path.join(e_dir, os.pardir)
-          if gclient_scm.scm.GIT.IsInsideWorkTree(e_par_dir):
-            par_scm_root = gclient_scm.scm.GIT.GetCheckoutRoot(e_par_dir)
-            # rel_e_dir : relative path of entry w.r.t. its parent repo.
-            rel_e_dir = os.path.relpath(e_dir, par_scm_root)
-            if gclient_scm.scm.GIT.IsDirectoryVersioned(
-                par_scm_root, rel_e_dir):
-              save_dir = scm.GetGitBackupDirPath()
-              # Remove any eventual stale backup dir for the same project.
-              if os.path.exists(save_dir):
-                gclient_utils.rmtree(save_dir)
-              os.rename(os.path.join(e_dir, '.git'), save_dir)
-              # When switching between the two states (entry/ is a subproject
-              # -> entry/ is part of the outer project), it is very likely
-              # that some files are changed in the checkout, unless we are
-              # jumping *exactly* across the commit which changed just DEPS.
-              # In such case we want to cleanup any eventual stale files
-              # (coming from the old subproject) in order to end up with a
-              # clean checkout.
-              gclient_scm.scm.GIT.CleanupDir(par_scm_root, rel_e_dir)
-              assert not os.path.exists(os.path.join(e_dir, '.git'))
-              print('\nWARNING: \'%s\' has been moved from DEPS to a higher '
-                    'level checkout. The git folder containing all the local'
-                    ' branches has been saved to %s.\n'
-                    'If you don\'t care about its state you can safely '
-                    'remove that folder to free up space.' % (entry, save_dir))
-              continue
-
         if scm_root in full_entries:
           logging.info('%s is part of a higher level checkout, not removing',
                        scm.GetCheckoutRoot())

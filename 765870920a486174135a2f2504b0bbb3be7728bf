@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c575390a_0a6783de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-03-11T02:47:46Z",
+      "side": 1,
+      "message": "more context for why this was added at https://crbug.com/431469#c3",
+      "revId": "765870920a486174135a2f2504b0bbb3be7728bf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

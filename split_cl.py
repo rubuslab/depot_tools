@@ -236,7 +236,18 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
 
     num_cls = len(files_split_by_owners)
     print('Will split current branch (' + refactor_branch + ') into ' +
-          str(num_cls) + ' CLs.\n')
+          str(num_cls) + ' CLs:\n')
+    for i, key in enumerate(files_split_by_owners):
+      print("CL %d files for %s:" % (i + 1, key))
+      for f in files_split_by_owners[key]:
+        print("    %s" % f[1])
+      print()
+    print()
+
+    answer = gclient_utils.AskForData('Proceed? (y/n):')
+    if answer.lower() != 'y':
+      return 0
+
     if cq_dry_run and num_cls > CL_SPLIT_FORCE_LIMIT:
       print(
         'This will generate "%r" CLs. This many CLs can potentially generate'

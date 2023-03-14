@@ -4816,6 +4816,7 @@ def CMDupload(parser, args):
         orig_args.remove('--cherry-pick-stacked')
       except ValueError:
         orig_args.remove('--cp')
+
     UploadAllSquashed(options, orig_args)
     return 0
 
@@ -4934,7 +4935,8 @@ def UploadAllSquashed(options, orig_args):
       new_upload.change_desc.description,
   }
   push_stdout = cl._RunGitPushWithTraces(refspec, refspec_opts,
-                                         git_push_metadata)
+                                         git_push_metadata,
+                                         options.push_options)
 
   # Post push updates
   regex = re.compile(r'remote:\s+https?://[\w\-\.\+\/#]*/(\d+)\s.*')

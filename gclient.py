@@ -745,6 +745,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     deps_to_add.sort(key=lambda x: x.name)
     return deps_to_add
 
+  def is_submoduled(self):
+    """Returns true if the dependency uses git submodules."""
+    return True
+
   def ParseDepsFile(self):
     # type: () -> None
     """Parses the DEPS file for this dependency."""
@@ -854,7 +858,11 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     if 'target_os' in local_scope:
       self.local_target_os = local_scope['target_os']
 
-    deps = local_scope.get('deps', {})
+    if self.is_submoduled():
+      deps = self.ParseGitModules()
+    else:
+      deps = local_scope.get('deps', {})
+
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)
 
@@ -894,6 +902,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     self.add_dependencies_and_close(deps_to_add, hooks_to_run,
                                     hooks_cwd=hooks_cwd)
     logging.info('ParseDepsFile(%s) done' % self.name)
+
+  def ParseGitModules(self):
+    """Returns dependencies parsed from git submodules."""
+    return []
 
   def _get_option(self, attr, default):
     obj = self

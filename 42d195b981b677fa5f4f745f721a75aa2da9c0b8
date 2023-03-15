@@ -22,6 +22,30 @@
       },
       "revId": "42d195b981b677fa5f4f745f721a75aa2da9c0b8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7064a49f_c206f04a",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6226,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-03-15T20:21:36Z",
+      "side": 1,
+      "message": "?\n\nthere\u0027s no error at\n`return self._parse_args(args)` \n\nerror messages shows it\u0027s exiting successfully \n`SystemExit: 0`\nafaict?",
+      "parentUuid": "77a73502_e7d30b68",
+      "range": {
+        "startLine": 6226,
+        "startChar": 8,
+        "endLine": 6226,
+        "endChar": 45
+      },
+      "revId": "42d195b981b677fa5f4f745f721a75aa2da9c0b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

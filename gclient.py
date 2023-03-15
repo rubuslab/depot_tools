@@ -401,9 +401,21 @@ class DependencySettings(object):
 class Dependency(gclient_utils.WorkItem, DependencySettings):
   """Object that represents a dependency checkout."""
 
-  def __init__(self, parent, name, url, managed, custom_deps,
-               custom_vars, custom_hooks, deps_file, should_process,
-               should_recurse, relative, condition, protocol='https',
+  def __init__(self,
+               parent,
+               name,
+               url,
+               managed,
+               custom_deps,
+               custom_vars,
+               custom_hooks,
+               deps_file,
+               should_process,
+               should_recurse,
+               relative,
+               condition,
+               protocol='https',
+               use_submodules=False,
                print_outbuf=False):
     gclient_utils.WorkItem.__init__(self, name)
     DependencySettings.__init__(
@@ -479,6 +491,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     self.print_outbuf = print_outbuf
 
     self.protocol = protocol
+    self.use_submodules = use_submodules
 
     if not self.name and self.parent:
       raise gclient_utils.Error('Dependency without name')
@@ -738,12 +751,17 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                 should_recurse=name in self.recursedeps,
                 relative=use_relative_paths,
                 condition=condition,
-                protocol=self.protocol))
+                protocol=self.protocol,
+                use_submodules=self.use_submodules))
 
     # TODO(crbug.com/1341285): Understand why we need this and remove
     # it if we don't.
     deps_to_add.sort(key=lambda x: x.name)
     return deps_to_add
+
+  def is_submoduled(self):
+    """Returns true if the dependency uses git submodules."""
+    return True
 
   def ParseDepsFile(self):
     # type: () -> None
@@ -854,7 +872,11 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     if 'target_os' in local_scope:
       self.local_target_os = local_scope['target_os']
 
-    deps = local_scope.get('deps', {})
+    if self.is_submoduled():
+      deps = self.ParseGitModules()
+    else:
+      deps = local_scope.get('deps', {})
+
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)
 
@@ -894,6 +916,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     self.add_dependencies_and_close(deps_to_add, hooks_to_run,
                                     hooks_cwd=hooks_cwd)
     logging.info('ParseDepsFile(%s) done' % self.name)
+
+  def ParseGitModules(self):
+    """Returns dependencies parsed from git submodules."""
+    return []
 
   def _get_option(self, attr, default):
     obj = self
@@ -1606,24 +1632,26 @@ it or fix the checkout.
     deps_to_add = []
     for s in config_dict.get('solutions', []):
       try:
-        deps_to_add.append(GitDependency(
-            parent=self,
-            name=s['name'],
-            # Update URL with scheme in protocol_override
-            url=GitDependency.updateProtocol(
-              s['url'], s.get('protocol_override', None)),
-            managed=s.get('managed', True),
-            custom_deps=s.get('custom_deps', {}),
-            custom_vars=s.get('custom_vars', {}),
-            custom_hooks=s.get('custom_hooks', []),
-            deps_file=s.get('deps_file', 'DEPS'),
-            should_process=True,
-            should_recurse=True,
-            relative=None,
-            condition=None,
-            print_outbuf=True,
-            # Pass protocol_override down the tree for child deps to use.
-            protocol=s.get('protocol_override', None)))
+        deps_to_add.append(
+            GitDependency(
+                parent=self,
+                name=s['name'],
+                # Update URL with scheme in protocol_override
+                url=GitDependency.updateProtocol(
+                    s['url'], s.get('protocol_override', None)),
+                managed=s.get('managed', True),
+                custom_deps=s.get('custom_deps', {}),
+                custom_vars=s.get('custom_vars', {}),
+                custom_hooks=s.get('custom_hooks', []),
+                deps_file=s.get('deps_file', 'DEPS'),
+                should_process=True,
+                should_recurse=True,
+                relative=None,
+                condition=None,
+                print_outbuf=True,
+                # Pass protocol_override down the tree for child deps to use.
+                protocol=s.get('protocol_override', None),
+                use_submodules=s.get('enable_submodules', False)))
       except KeyError:
         raise gclient_utils.Error('Invalid .gclient file. Solution is '
                                   'incomplete: %s' % s)
@@ -1957,7 +1985,8 @@ it or fix the checkout.
                   should_recurse=False,
                   relative=None,
                   condition=None,
-                  protocol=self.protocol))
+                  protocol=self.protocol,
+                  use_submodules=self.use_submodules))
           if modified_files and self._options.delete_unversioned_trees:
             print('\nWARNING: \'%s\' is no longer part of this client.\n'
                   'Despite running \'gclient sync -D\' no action was taken '

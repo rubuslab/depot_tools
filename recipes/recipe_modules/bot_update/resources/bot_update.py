@@ -351,6 +351,8 @@ def remove(target, cleanup_dir):
     os.makedirs(cleanup_dir)
   dest = path.join(cleanup_dir, '%s_%s' % (
       path.basename(target), uuid.uuid4().hex))
+  print(path.basename(target))
+  print(path.basename('infra'))
   print('Marking for removal %s => %s' % (target, dest))
   try:
     os.rename(target, dest)

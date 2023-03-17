@@ -284,6 +284,24 @@ def expect_tests(c):
   soln.url = 'https://chromium.googlesource.com/infra/testing/expect_tests.git'
   c.got_revision_mapping['expect_tests'] = 'got_revision'
 
+
+@config_ctx()
+def infra_superproject(c):
+  soln = c.solutions.add()
+  soln.name = 'infra_superproject'
+  soln.url = 'https://chromium.googlesource.com/infra/infra_superproject.git'
+  c.repo_path_map.update({
+      'https://chromium.googlesource.com/infra/luci/gae':
+      ('infra/go/src/go.chromium.org/gae', 'HEAD'),
+      'https://chromium.googlesource.com/infra/luci/luci-py':
+      ('infra/luci', 'HEAD'),
+      'https://chromium.googlesource.com/infra/luci/luci-go':
+      ('infra/go/src/go.chromium.org/luci', 'HEAD'),
+      'https://chromium.googlesource.com/infra/luci/recipes-py':
+      ('infra/recipes-py', 'HEAD')
+  })
+
+
 @config_ctx()
 def infra(c):
   soln = c.solutions.add()

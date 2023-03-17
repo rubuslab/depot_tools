@@ -267,6 +267,10 @@ class Hook(object):
       sys.exit(exit_code)
     finally:
       elapsed_time = time.time() - start_time
+      print(self.effective_cwd)
+      print(self._cwd_base)
+      print(self)
+      print('COWS')
       metrics.collector.add_repeated('hooks', {
         'action': gclient_utils.CommandToStr(cmd),
         'name': self._name,
@@ -907,6 +911,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
   def add_dependencies_and_close(self, deps_to_add, hooks, hooks_cwd=None):
     """Adds the dependencies, hooks and mark the parsing as done."""
+    print('HORSE')
+    print(self.root.root_dir)
+    print(hooks)
+
     if hooks_cwd == None:
       hooks_cwd = self.root.root_dir
 

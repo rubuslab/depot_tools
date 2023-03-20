@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a9df77c0_72c30a66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2023-03-20T20:17:46Z",
+      "side": 1,
+      "message": "While the root cause may be fixed, it\u0027s not clear to me that the existing behavior here makes sense. If bot_update returns a 0 exit code, then it\u0027s expected that it will have checked out the configured solutions and produce a populated manifest.",
+      "parentUuid": "5738df0b_9751c18f",
+      "revId": "8ffe332d4ea9c380d35c6858c931c0b2d0027b6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d0ff48a1_5a0387f9",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 1

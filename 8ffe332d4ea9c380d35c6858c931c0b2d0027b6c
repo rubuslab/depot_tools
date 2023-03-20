@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5738df0b_9751c18f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-03-20T18:48:42Z",
+      "side": 1,
+      "message": "The root cause of https://crbug.com/1422665 was fixed by https://crrev.com/c/4348792",
+      "revId": "8ffe332d4ea9c380d35c6858c931c0b2d0027b6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d0ff48a1_5a0387f9",
         "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
         "patchSetId": 1

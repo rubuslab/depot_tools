@@ -137,6 +137,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
           'bot_update does not support more than one '
           'buildbucket.build.input.gerrit_changes')
 
+    #result = self.m.step('debug stuff', [])
+    #result.presentation.logs['debug info'] = [
+    #    self.m.path['start_dir'],
+    #    'more info'
+    #]
+
     refs = refs or []
     # We can re-use the gclient spec from the gclient module, since all the
     # data bot_update needs is already configured into the gclient spec.
@@ -422,7 +428,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
             and 'root' in result):
           co_root = result['root']
           cwd = self.m.context.cwd or self.m.path['start_dir']
-          self.m.path['checkout'] = cwd.join(*co_root.split(self.m.path.sep))
+          if co_root == '.':
+            self.m.path['checkout'] = cwd
+          else:
+            self.m.path['checkout'] = cwd.join(*co_root.split(self.m.path.sep))
 
     return step_result
 

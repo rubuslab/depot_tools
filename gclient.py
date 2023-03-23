@@ -1080,6 +1080,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         self.RunPreDepsHooks()
       # Parse the dependencies of this dependency.
       for s in self.dependencies:
+        print(s)
         if s.should_process:
           work_queue.enqueue(s)
 

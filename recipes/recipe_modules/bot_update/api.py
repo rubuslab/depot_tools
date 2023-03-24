@@ -422,7 +422,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
             and 'root' in result):
           co_root = result['root']
           cwd = self.m.context.cwd or self.m.path['start_dir']
-          self.m.path['checkout'] = cwd.join(*co_root.split(self.m.path.sep))
+          if co_root == '.':
+            self.m.path['checkout'] = cwd
+          else:
+            self.m.path['checkout'] = cwd.join(*co_root.split(self.m.path.sep))
 
     return step_result
 

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b975e65_37a34676",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-03-24T17:24:16Z",
+      "side": 0,
+      "message": "for solution.name \u003d \u0027.\u0027\nthe cache/builder/ is the gclient_root_dir AND root direcotry of the repo checkout\n\nif we add this temporary file, cloning infra_superproject into this non-empty dir will fail.",
+      "range": {
+        "startLine": 1042,
+        "startChar": 2,
+        "endLine": 1042,
+        "endChar": 34
+      },
+      "revId": "479e1e9055020c8d1351bf2194d0a606aeca93d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

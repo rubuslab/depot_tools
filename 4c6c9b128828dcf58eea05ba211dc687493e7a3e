@@ -16,6 +16,29 @@
       "message": "previously using \n`parent..end_commit` did not result in the correct change description because parent is not actually in the same tree as end_commit.",
       "revId": "4c6c9b128828dcf58eea05ba211dc687493e7a3e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae1a618e_d7e91692",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1703,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-03-24T21:53:23Z",
+      "side": 1,
+      "message": "format a bit",
+      "range": {
+        "startLine": 1702,
+        "startChar": 12,
+        "endLine": 1703,
+        "endChar": 20
+      },
+      "revId": "4c6c9b128828dcf58eea05ba211dc687493e7a3e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

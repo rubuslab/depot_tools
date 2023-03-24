@@ -5847,6 +5847,7 @@ def CMDformat(parser, args):
   """Runs auto-formatting tools (clang-format etc.) on the diff."""
   CLANG_EXTS = ['.cc', '.cpp', '.h', '.m', '.mm', '.proto', '.java']
   GN_EXTS = ['.gn', '.gni', '.typemap']
+  PY_EXTS = ['.py', '.pyl']
   RUST_EXTS = ['.rs']
   SWIFT_EXTS = ['.swift']
   parser.add_option('--full', action='store_true',
@@ -5955,7 +5956,7 @@ def CMDformat(parser, args):
     clang_diff_files = [
         x for x in diff_files if MatchingFileType(x, CLANG_EXTS)
     ]
-  python_diff_files = [x for x in diff_files if MatchingFileType(x, ['.py'])]
+  python_diff_files = [x for x in diff_files if MatchingFileType(x, PY_EXTS)]
   rust_diff_files = [x for x in diff_files if MatchingFileType(x, RUST_EXTS)]
   swift_diff_files = [x for x in diff_files if MatchingFileType(x, SWIFT_EXTS)]
   gn_diff_files = [x for x in diff_files if MatchingFileType(x, GN_EXTS)]

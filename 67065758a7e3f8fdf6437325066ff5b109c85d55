@@ -16,6 +16,29 @@
       "message": "PTAL",
       "revId": "67065758a7e3f8fdf6437325066ff5b109c85d55",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4703430_42a17e3e",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-03-24T17:46:32Z",
+      "side": 1,
+      "message": "content",
+      "range": {
+        "startLine": 363,
+        "startChar": 30,
+        "endLine": 363,
+        "endChar": 36
+      },
+      "revId": "67065758a7e3f8fdf6437325066ff5b109c85d55",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,23 @@
       "message": "WDWT? I recall seeing some mention of maybe switching to black as a formatter? This might complicate that",
       "revId": "caa70512b4da6b40d89e3c071388091b78f17665",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd4b89e3_176ab7db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2023-03-27T15:03:25Z",
+      "side": 1,
+      "message": "YAPF sometimes does unsatisfying things to nested dicts / lists. Assuming your test conversions don\u0027t look horrible, then this is a nice change :)",
+      "revId": "caa70512b4da6b40d89e3c071388091b78f17665",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

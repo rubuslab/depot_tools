@@ -16,6 +16,24 @@
       "message": "update `OWNERS` too",
       "revId": "70367ba2c5c9b9846410eccd20fc85835db7ce69",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "873a469f_ca747615",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1330845
+      },
+      "writtenOn": "2023-03-28T21:36:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07e64b00_8ddfdc5f",
+      "revId": "70367ba2c5c9b9846410eccd20fc85835db7ce69",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

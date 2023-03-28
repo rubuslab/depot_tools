@@ -33,6 +33,24 @@
       "message": "YAPF sometimes does unsatisfying things to nested dicts / lists. Assuming your test conversions don\u0027t look horrible, then this is a nice change :)",
       "revId": "caa70512b4da6b40d89e3c071388091b78f17665",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4061d87_41801dc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2023-03-28T17:10:07Z",
+      "side": 1,
+      "message": "\u003e YAPF sometimes does unsatisfying things to nested dicts / lists.\n\nIndeed it does 😞\n\nAnd I don\u0027t think we\u0027d want those unsatisfying things. I\u0027m able to tweak the .style.yapf files to prevent the weird dict formatting, but then that ends up applying to normal .py files right next to the .pyl files as well, which we wouldn\u0027t want either.\n\nSo I think I\u0027d have to create a separate git-cl-formatting hook for *.pyl file specifically. If I have the time, maybe I can explore that. But in the meantime, I\u0027ll just throw this CL away",
+      "parentUuid": "cd4b89e3_176ab7db",
+      "revId": "caa70512b4da6b40d89e3c071388091b78f17665",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -290,8 +290,7 @@ def infra_superproject(c):
   soln = c.solutions.add()
   soln.name = '.'
   soln.url = 'https://chromium.googlesource.com/infra/infra_superproject.git'
-  # TODO(crbug.com/1415507): When builders can checkout internal code, add
-  # soln.custom_vars = {'checkout_internal': True}
+  soln.custom_vars = {'checkout_internal': True}
   c.repo_path_map.update({
       'https://chromium.googlesource.com/infra/luci/gae':
       ('infra/go/src/go.chromium.org/gae', 'HEAD'),

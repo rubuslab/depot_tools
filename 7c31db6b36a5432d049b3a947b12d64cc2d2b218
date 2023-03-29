@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc7d9ecd_0ea62e55",
+        "filename": "recipes/recipe_modules/gsutil/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-03-29T21:34:30Z",
+      "side": 1,
+      "message": "nit: maybe rename to `dry_run`?",
+      "range": {
+        "startLine": 29,
+        "startChar": 15,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "7c31db6b36a5432d049b3a947b12d64cc2d2b218",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3edce29_ac778501",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-29T05:09:07Z",
+      "side": 1,
+      "message": "This is a little tricky to replicate. Check https://crbug.com/1428312#c13 for replication steps.",
+      "revId": "a26324e8811f13de6ea3afa4e59283c444d5f651",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f69e9894_69dfe082",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-30T21:46:49Z",
+      "side": 1,
+      "message": "Can you combine all the changes into a single CL? It\u0027d be easier to review that way.",
+      "revId": "84f1a006e1ae91ea4f08bf8ee77564171b0862df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f464965a_75ae96f8",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4221,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-30T21:46:49Z",
+      "side": 1,
+      "message": "Nit: Add a type annotation. eg: https://crsrc.org/d/git_cl.py;l\u003d4871",
+      "revId": "84f1a006e1ae91ea4f08bf8ee77564171b0862df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

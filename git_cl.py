@@ -4218,6 +4218,28 @@ def write_json(path, contents):
       json.dump(contents, f)
 
 
+def IssueBranchMap():
+  """Associate issues (as number) to the list of branches associated to this
+  issue."""
+  branches = RunGit(['for-each-ref', 'refs/heads',
+                     '--format=%(refname)']).splitlines()
+  # Reverse issue lookup.
+  issue_branch_map = {}
+
+  git_config = {}
+  for config in RunGit(['config', '--get-regexp',
+                        r'branch\..*issue']).splitlines():
+    name, _space, val = config.partition(' ')
+    git_config[name] = val
+
+  for branch in branches:
+    issue = git_config.get('branch.%s.%s' %
+                           (scm.GIT.ShortBranchName(branch), ISSUE_CONFIG_KEY))
+    if issue:
+      issue_branch_map.setdefault(int(issue), []).append(branch)
+  return issue_branch_map
+
+
 @subcommand.usage('[issue_number]')
 @metrics.collector.collect_metrics('git cl issue')
 def CMDissue(parser, args):
@@ -4234,22 +4256,9 @@ def CMDissue(parser, args):
   options, args = parser.parse_args(args)
 
   if options.reverse:
-    branches = RunGit(['for-each-ref', 'refs/heads',
-                       '--format=%(refname)']).splitlines()
     # Reverse issue lookup.
-    issue_branch_map = {}
+    issue_branch_map = IssueBranchMap()
 
-    git_config = {}
-    for config in RunGit(['config', '--get-regexp',
-                          r'branch\..*issue']).splitlines():
-      name, _space, val = config.partition(' ')
-      git_config[name] = val
-
-    for branch in branches:
-      issue = git_config.get(
-          'branch.%s.%s' % (scm.GIT.ShortBranchName(branch), ISSUE_CONFIG_KEY))
-      if issue:
-        issue_branch_map.setdefault(int(issue), []).append(branch)
     if not args:
       args = sorted(issue_branch_map.keys())
     result = {}

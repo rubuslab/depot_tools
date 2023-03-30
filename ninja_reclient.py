@@ -15,6 +15,8 @@ import sys
 import ninja
 import gclient_paths
 
+SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
+
 
 def find_reclient_bin_dir():
   tools_path = gclient_paths.GetBuildtoolsPath()
@@ -111,6 +113,9 @@ def set_reproxy_path_flags(out_dir):
 
 
 def main(argv):
+  if "LUCI_CONTEXT" not in os.environ:
+    os.execv(os.path.join(SCRIPT_DIR, "luci-auth"),
+             ["luci-auth", "context", "--", sys.executable] + sys.argv)
   # If use_remoteexec is set, but the reclient binaries or configs don't
   # exist, display an error message and stop.  Otherwise, the build will
   # attempt to run with rewrapper wrapping actions, but will fail with

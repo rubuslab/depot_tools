@@ -4240,6 +4240,30 @@ def IssueBranchMap():
   return issue_branch_map
 
 
+def IssueReverse(options, args):
+  """Print the name of the branch(es) associated to the issue.
+
+  If no issue is specified, print issue -> branch(es) for all known issues"""
+  # Reverse issue lookup.
+  issue_branch_map = IssueBranchMap()
+
+  if not args:
+    args = sorted(issue_branch_map.keys())
+  result = {}
+  for issue in args:
+    try:
+      issue_num = int(issue)
+    except ValueError:
+      print('ERROR cannot parse issue number: %s' % issue, file=sys.stderr)
+      continue
+    result[issue_num] = issue_branch_map.get(issue_num)
+    print('Branch for issue number %s: %s' %
+          (issue, ', '.join(issue_branch_map.get(issue_num) or ('None', ))))
+  if options.json:
+    write_json(options.json, result)
+  return 0
+
+
 @subcommand.usage('[issue_number]')
 @metrics.collector.collect_metrics('git cl issue')
 def CMDissue(parser, args):
@@ -4256,24 +4280,7 @@ def CMDissue(parser, args):
   options, args = parser.parse_args(args)
 
   if options.reverse:
-    # Reverse issue lookup.
-    issue_branch_map = IssueBranchMap()
-
-    if not args:
-      args = sorted(issue_branch_map.keys())
-    result = {}
-    for issue in args:
-      try:
-        issue_num = int(issue)
-      except ValueError:
-        print('ERROR cannot parse issue number: %s' % issue, file=sys.stderr)
-        continue
-      result[issue_num] = issue_branch_map.get(issue_num)
-      print('Branch for issue number %s: %s' % (
-          issue, ', '.join(issue_branch_map.get(issue_num) or ('None',))))
-    if options.json:
-      write_json(options.json, result)
-    return 0
+    return IssueReverse(options, args)
 
   if len(args) > 0:
     issue = ParseIssueNumberArgument(args[0])

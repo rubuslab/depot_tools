@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1df94ddf_8bb4f76a",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4259,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-30T22:11:26Z",
+      "side": 1,
+      "message": "In the spirit of extracting repeated code, extracting the reversing-part into a fn that maybe returns a map of issue-\u003e[branch] would be helpful?\n\nI\u0027m thinking more like:\n\n```\ndef GetAssociatedBranches(issues: List[int]) -\u003e Dict[int, List[str]]:\n  ...\n\n@metrics.collector.collect_metrics(\u0027git cl issue\u0027)\ndef CMDissue(parser, args):\n  ...\n  if options.reverse or options.switch:\n    issues \u003d args if args else sorted(issue_branch_map.keys())\n    branch_mappings \u003d GetAssociatedBranches(issues)\n    \n    if options.switch:\n      # do switching stuff\n      \n    if options.reverse:\n      # print branch_mappings\n```\n\nThat being said, this is hard to review given the refactoring is broken into three CLs.",
+      "revId": "9c1a5f65d34526eff45ff5254358c1d54bce25dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea3291e9_69c7daca",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4264,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-03-30T22:11:26Z",
+      "side": 1,
+      "message": "Nit: `ERROR` screams as if something broke. I think subtle message would make the UX feel less broken. I personally like the current reverse failure message:\n\n```\n$ git cl issue -r 123\nBranch for issue number 123: None\n```",
+      "revId": "9c1a5f65d34526eff45ff5254358c1d54bce25dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

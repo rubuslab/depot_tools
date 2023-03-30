@@ -152,12 +152,15 @@ def main(args):
 
   # Call ninja.py so that it can find ninja binary installed by DEPS or one in
   # PATH.
-  ninja_path = os.path.join(SCRIPT_DIR, 'ninja.py')
+  ninja_path = [sys.executable, os.path.join(SCRIPT_DIR, 'ninja.py')]
   # If using remoteexec, use ninja_reclient.py which wraps ninja.py with
   # starting and stopping reproxy.
   if not offline and use_remoteexec:
-    ninja_path = os.path.join(SCRIPT_DIR, 'ninja_reclient.py')
-  args = prefix_args + [sys.executable, ninja_path] + input_args[1:]
+    ninja_path = [
+        "luci-auth", "context", "--", sys.executable,
+        os.path.join(SCRIPT_DIR, 'ninja_reclient.py')
+    ]
+  args = prefix_args + ninja_path + input_args[1:]
 
   num_cores = multiprocessing.cpu_count()
   if not j_specified and not t_specified:

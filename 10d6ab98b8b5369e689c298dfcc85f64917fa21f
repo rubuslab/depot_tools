@@ -126,6 +126,24 @@
       "message": "This looks plausible but I didn\u0027t write this code and rebasing and merging have never been my strongest skills.\n\n@iannucci - what do you think of this?",
       "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d99ea72_51be0dd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-03-31T20:20:15Z",
+      "side": 1,
+      "message": "`git log --oneline \u003cbranch\u003e ^\u003cupstream_branch\u003e | wc -l` should give the number of commits in between.",
+      "parentUuid": "1c9b0cdd_6a3553d7",
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

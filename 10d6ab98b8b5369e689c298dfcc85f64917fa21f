@@ -68,6 +68,24 @@
       "parentUuid": "eab5b607_6d7e7413",
       "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "744bab54_4988ec71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303398
+      },
+      "writtenOn": "2023-03-31T15:33:39Z",
+      "side": 1,
+      "message": "It looks like @ehmaldonado isn\u0027t working here anymore, is there someone else who could review this?\n\nI\u0027ve been rebasing this change on top of my depot_tools checkout every time I fetch new commits for several years",
+      "parentUuid": "910cc0ea_72e41da7",
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

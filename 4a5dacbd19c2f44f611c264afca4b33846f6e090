@@ -33,6 +33,24 @@
       "message": "Maybe name this step \"presubmit py3\" just to make it clear? It might seem anachronistic in another six months, but it\u0027s harmless and sort of a happy/positive signal.",
       "revId": "4a5dacbd19c2f44f611c264afca4b33846f6e090",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d72e512_fadcf5b9",
+        "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-03-31T21:09:14Z",
+      "side": 1,
+      "message": "Unfortunately this would change the current vpython3 step names from \"presubmit\" to \"presubmit py3\". It looks like the states were:\n\nomit python2 -\u003e a \"presubmit\" step running vpython3\nnothing \u0026 py2 presubmit fails -\u003e \"presubmit\" step running vpython\nnothing \u0026 py2 presubmit succeeds -\u003e \"presubmit\" running vpython \u0026 \"presubmit py3\" step running vpython3\n\nThis CL effectively moves everything into the first state with (I think) minimal churn.",
+      "parentUuid": "6b29b63c_6824edf8",
+      "revId": "4a5dacbd19c2f44f611c264afca4b33846f6e090",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

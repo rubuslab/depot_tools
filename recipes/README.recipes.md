@@ -767,7 +767,7 @@ PYTHON_VERSION_COMPATIBILITY: PY3
 
 Returns a presubmit step.
 
-&mdash; **def [execute](/recipes/recipe_modules/presubmit/api.py#130)(self, bot_update_step, skip_owners=False, run_all=False):**
+&mdash; **def [execute](/recipes/recipe_modules/presubmit/api.py#101)(self, bot_update_step, skip_owners=False, run_all=False):**
 
 Runs presubmit and sets summary markdown if applicable.
 
@@ -778,7 +778,7 @@ Args:
 Returns:
   a RawResult object, suitable for being returned from RunSteps.
 
-&mdash; **def [prepare](/recipes/recipe_modules/presubmit/api.py#78)(self, root_solution_revision=None):**
+&mdash; **def [prepare](/recipes/recipe_modules/presubmit/api.py#49)(self, root_solution_revision=None):**
 
 Sets up a presubmit run.
 

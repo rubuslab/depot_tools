@@ -284,31 +284,11 @@ def expect_tests(c):
   soln.url = 'https://chromium.googlesource.com/infra/testing/expect_tests.git'
   c.got_revision_mapping['expect_tests'] = 'got_revision'
 
-
-@config_ctx()
-def infra_superproject(c):
-  soln = c.solutions.add()
-  soln.name = '.'
-  soln.url = 'https://chromium.googlesource.com/infra/infra_superproject.git'
-  # TODO(crbug.com/1415507): When builders can checkout internal code, add
-  # soln.custom_vars = {'checkout_internal': True}
-  c.repo_path_map.update({
-      'https://chromium.googlesource.com/infra/luci/gae':
-      ('infra/go/src/go.chromium.org/gae', 'HEAD'),
-      'https://chromium.googlesource.com/infra/luci/luci-py':
-      ('infra/luci', 'HEAD'),
-      'https://chromium.googlesource.com/infra/luci/luci-go':
-      ('infra/go/src/go.chromium.org/luci', 'HEAD'),
-      'https://chromium.googlesource.com/infra/luci/recipes-py':
-      ('infra/recipes-py', 'HEAD')
-  })
-
-
 @config_ctx()
 def infra(c):
   soln = c.solutions.add()
-  soln.name = 'infra'
-  soln.url = 'https://chromium.googlesource.com/infra/infra.git'
+  soln.name = '.'
+  soln.url = 'https://chromium.googlesource.com/infra/infra_superproject.git'
   c.got_revision_mapping['infra'] = 'got_revision'
   c.repo_path_map.update({
       'https://chromium.googlesource.com/infra/luci/gae': (
@@ -324,9 +304,12 @@ def infra(c):
 @config_ctx()
 def infra_internal(c):  # pragma: no cover
   soln = c.solutions.add()
-  soln.name = 'infra_internal'
-  soln.url = 'https://chrome-internal.googlesource.com/infra/infra_internal.git'
-  c.got_revision_mapping['infra_internal'] = 'got_revision'
+  soln.name = '.'
+  soln.custom_vars = {'checkout_internal': True}
+  soln.url = 'https://chromium.googlesource.com/infra/infra_superproject.git'
+  #c.got_revision_mapping['infra_internal'] = 'got_revision'
+  c.revisions['.'] = 'f7fc641c4a5cad5a9b9d5eb4b2464d516a2bf3a9'
+
 
 @config_ctx(includes=['infra'])
 def luci_gae(c):

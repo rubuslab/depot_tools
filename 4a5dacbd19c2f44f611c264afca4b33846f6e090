@@ -51,6 +51,24 @@
       "parentUuid": "6b29b63c_6824edf8",
       "revId": "4a5dacbd19c2f44f611c264afca4b33846f6e090",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "181dd091_ce992b21",
+        "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-03-31T21:13:24Z",
+      "side": 1,
+      "message": "Interesting. The presubmit --all bot used to have two presubmit steps: presubmit, and presubmit py3, using code similar to this, so I assumed that this change would be getting rid of one of them. Then again, the presubmit --all bots went to a single step called \"presubmit\" so your change is consistent with that.\n\nIf my suggestion would cause churn then it\u0027s not worth it.",
+      "parentUuid": "0d72e512_fadcf5b9",
+      "revId": "4a5dacbd19c2f44f611c264afca4b33846f6e090",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

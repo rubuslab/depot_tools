@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35effc59_1908d08a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-03-31T20:47:25Z",
+      "side": 1,
+      "message": "I\u0027m no expert but the api.py change looks solid and is greatly appreciated.",
+      "revId": "4a5dacbd19c2f44f611c264afca4b33846f6e090",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b29b63c_6824edf8",
+        "filename": "recipes/recipe_modules/presubmit/tests/execute.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-03-31T20:47:25Z",
+      "side": 1,
+      "message": "Maybe name this step \"presubmit py3\" just to make it clear? It might seem anachronistic in another six months, but it\u0027s harmless and sort of a happy/positive signal.",
+      "revId": "4a5dacbd19c2f44f611c264afca4b33846f6e090",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

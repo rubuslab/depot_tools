@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "75eaf4e7_d51a1c7b",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4259,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-03T08:49:07Z",
+      "side": 1,
+      "message": "I don’t really understand the difference with `IssueBranchMap`. Except the argument, that ensure the dict only contains issues we need to show. But that does not simplify the code itself.",
+      "parentUuid": "1df94ddf_8bb4f76a",
+      "revId": "9c1a5f65d34526eff45ff5254358c1d54bce25dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea3291e9_69c7daca",
         "filename": "git_cl.py",
         "patchSetId": 6
@@ -31,6 +49,24 @@
       "writtenOn": "2023-03-30T22:11:26Z",
       "side": 1,
       "message": "Nit: `ERROR` screams as if something broke. I think subtle message would make the UX feel less broken. I personally like the current reverse failure message:\n\n```\n$ git cl issue -r 123\nBranch for issue number 123: None\n```",
+      "revId": "9c1a5f65d34526eff45ff5254358c1d54bce25dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f8841e0_cab5235a",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4264,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-03T08:49:07Z",
+      "side": 1,
+      "message": "So, I removed the `Error: ` and the sys.stderr.\n\nBut since this was supposed to have a side effect, and it does not occur, I admit it seemed to make sense to have something showing it’s really not as expected.",
+      "parentUuid": "ea3291e9_69c7daca",
       "revId": "9c1a5f65d34526eff45ff5254358c1d54bce25dc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f823a0b_604d8d17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-03T02:13:50Z",
+      "side": 1,
+      "message": "(I\u0027m not the owner of the file. But looks reasonable change to me.)",
+      "revId": "07dd406e16c5161b2fe039e74761be5a9a5f2e6d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

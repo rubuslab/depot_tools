@@ -39,8 +39,8 @@ def fallback(ninja_args):
   print(
       'depot_tools/ninja.py: Could not find Ninja in the third_party of '
       'the current project, nor in your PATH.\n'
-      'Please take a following action to install Ninja.\n'
-      '- If your project has DEPS, Add a CIPD Ninja dependency to DEPS.\n'
+      'Please take one of the following actions to install Ninja:\n'
+      '- If your project has DEPS, add a CIPD Ninja dependency to DEPS.\n'
       '- Otherwise, add Ninja to your PATH *after* depot_tools.',
       file=sys.stderr)
   return 1
@@ -58,7 +58,7 @@ def main(args):
   # macOS's python sets CPATH, LIBRARY_PATH, SDKROOT implicitly.
   # https://openradar.appspot.com/radar?id=5608755232243712
   #
-  # Removing thoese environment variables to avoid affecting clang's behaviors.
+  # Removing those environment variables to avoid affecting clang's behaviors.
   if sys.platform == 'darwin':
     os.environ.pop("CPATH", None)
     os.environ.pop("LIBRARY_PATH", None)

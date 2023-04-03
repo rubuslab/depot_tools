@@ -16,6 +16,23 @@
       "message": "LGTM",
       "revId": "54ff52e32c5216b79c9b8a3279836883ae51b09c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2614a5f6_17f66ad8",
+        "filename": "recipes/recipe_modules/presubmit/examples/full.expected/basic.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-03T04:57:58Z",
+      "side": 1,
+      "message": "Is it possible to make this default?",
+      "revId": "54ff52e32c5216b79c9b8a3279836883ae51b09c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

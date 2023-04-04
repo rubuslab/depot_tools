@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dec7e472_4e25bdf0",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4259,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-04-04T17:42:39Z",
+      "side": 1,
+      "message": "IMO `IssueBranchMap` is fine",
+      "parentUuid": "75eaf4e7_d51a1c7b",
+      "revId": "9c1a5f65d34526eff45ff5254358c1d54bce25dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea3291e9_69c7daca",
         "filename": "git_cl.py",
         "patchSetId": 6

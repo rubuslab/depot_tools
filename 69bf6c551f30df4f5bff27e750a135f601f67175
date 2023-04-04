@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4652461e_24dff1ce",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4249,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-04-04T17:42:39Z",
+      "side": 1,
+      "message": "`r`?",
+      "range": {
+        "startLine": 4249,
+        "startChar": 17,
+        "endLine": 4249,
+        "endChar": 18
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b328e16_ee6c4771",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4254,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-04-04T17:42:39Z",
+      "side": 1,
+      "message": "maybe just `number`? (and below)",
+      "range": {
+        "startLine": 4254,
+        "startChar": 51,
+        "endLine": 4254,
+        "endChar": 69
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4151b6d_b12003e6",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4259,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-04-04T17:42:39Z",
+      "side": 1,
+      "message": "something like the `cannot parse issue number` message below would be simpler",
+      "range": {
+        "startLine": 4258,
+        "startChar": 44,
+        "endLine": 4259,
+        "endChar": 25
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5df7339_d5a80cb0",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4260,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-04-04T17:42:39Z",
+      "side": 1,
+      "message": "```\n$ git cl issue --switch 86\nTraceback (most recent call last):\n...\n  File \"/usr/local/google/home/gavinmak/depot_tools/git_cl.py\", line 4260, in IssueSwitch\n    branches \u003d issue_branch_map[issue_num]\nKeyError: 86\n````\ncan we handle this more gracefully?",
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc083261_93cccf00",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4267,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-04-04T17:42:39Z",
+      "side": 1,
+      "message": "style nit: prefer `\u0027` over `\"`",
+      "range": {
+        "startLine": 4267,
+        "startChar": 20,
+        "endLine": 4267,
+        "endChar": 21
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32d7d61d_2fac6860",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4312,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-04-04T17:42:39Z",
+      "side": 1,
+      "message": "I didn\u0027t fully understand this the first time I read this, maybe something like `If multiple branches are linked, list all of them`?",
+      "range": {
+        "startLine": 4312,
+        "startChar": 29,
+        "endLine": 4312,
+        "endChar": 66
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

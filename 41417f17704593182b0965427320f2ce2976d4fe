@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6665b914_7879afdf",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4221,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T20:20:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8db62a7_2bd248d6",
+      "range": {
+        "startLine": 4221,
+        "startChar": 4,
+        "endLine": 4221,
+        "endChar": 18
+      },
+      "revId": "41417f17704593182b0965427320f2ce2976d4fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cedff644_70330e6d",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-04-04T20:13:02Z",
       "side": 1,
       "message": "make an action like above, i.e. `SwitchIssue`",
+      "range": {
+        "startLine": 4244,
+        "startChar": 4,
+        "endLine": 4244,
+        "endChar": 15
+      },
+      "revId": "41417f17704593182b0965427320f2ce2976d4fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad80c33a_902209fc",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4244,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T20:20:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cedff644_70330e6d",
       "range": {
         "startLine": 4244,
         "startChar": 4,
@@ -110,6 +158,54 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fed02a7a_822fe61a",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4257,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T20:20:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24596ebd_566fce57",
+      "range": {
+        "startLine": 4257,
+        "startChar": 18,
+        "endLine": 4257,
+        "endChar": 23
+      },
+      "revId": "41417f17704593182b0965427320f2ce2976d4fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b155aaaf_646a3674",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4257,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T20:20:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "484c22ce_55658330",
+      "range": {
+        "startLine": 4257,
+        "startChar": 57,
+        "endLine": 4257,
+        "endChar": 62
+      },
+      "revId": "41417f17704593182b0965427320f2ce2976d4fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92e8316d_2702f7f6",
@@ -123,6 +219,24 @@
       "writtenOn": "2023-04-04T20:13:02Z",
       "side": 1,
       "message": "`ReverseIssue` maybe? this isn\u0027t as straightforward as the other ones but fine for now imo",
+      "revId": "41417f17704593182b0965427320f2ce2976d4fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6916905b_298311c5",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4270,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T20:20:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92e8316d_2702f7f6",
       "revId": "41417f17704593182b0965427320f2ce2976d4fe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

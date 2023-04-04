@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c00b4d8_2075ef9b",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4249,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T19:52:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4652461e_24dff1ce",
+      "range": {
+        "startLine": 4249,
+        "startChar": 17,
+        "endLine": 4249,
+        "endChar": 18
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b328e16_ee6c4771",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-04-04T17:42:39Z",
       "side": 1,
       "message": "maybe just `number`? (and below)",
+      "range": {
+        "startLine": 4254,
+        "startChar": 51,
+        "endLine": 4254,
+        "endChar": 69
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca7840af_7e8914f7",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4254,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T19:52:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b328e16_ee6c4771",
       "range": {
         "startLine": 4254,
         "startChar": 51,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3293213_fec10a54",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4259,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T19:52:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4151b6d_b12003e6",
+      "range": {
+        "startLine": 4258,
+        "startChar": 44,
+        "endLine": 4259,
+        "endChar": 25
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5df7339_d5a80cb0",
@@ -83,6 +155,24 @@
       "writtenOn": "2023-04-04T17:42:39Z",
       "side": 1,
       "message": "```\n$ git cl issue --switch 86\nTraceback (most recent call last):\n...\n  File \"/usr/local/google/home/gavinmak/depot_tools/git_cl.py\", line 4260, in IssueSwitch\n    branches \u003d issue_branch_map[issue_num]\nKeyError: 86\n````\ncan we handle this more gracefully?",
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef54b251_ac5b4c2e",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4260,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T19:52:06Z",
+      "side": 1,
+      "message": "Oh, I just understonod.\nI thought the problem was wit `DieWithError`. Now I get it. Clearly, I was not expecting just to throw on map. Of course we can, that was not my expected behavior.\n\nThanks",
+      "parentUuid": "a5df7339_d5a80cb0",
       "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -110,6 +200,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca66a66f_2f864d0e",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4267,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T19:52:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc083261_93cccf00",
+      "range": {
+        "startLine": 4267,
+        "startChar": 20,
+        "endLine": 4267,
+        "endChar": 21
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32d7d61d_2fac6860",
@@ -123,6 +237,30 @@
       "writtenOn": "2023-04-04T17:42:39Z",
       "side": 1,
       "message": "I didn\u0027t fully understand this the first time I read this, maybe something like `If multiple branches are linked, list all of them`?",
+      "range": {
+        "startLine": 4312,
+        "startChar": 29,
+        "endLine": 4312,
+        "endChar": 66
+      },
+      "revId": "69bf6c551f30df4f5bff27e750a135f601f67175",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "162d37b4_1d5741fa",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4312,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-04T19:52:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32d7d61d_2fac6860",
       "range": {
         "startLine": 4312,
         "startChar": 29,

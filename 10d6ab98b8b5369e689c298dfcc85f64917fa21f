@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b007fe5_aa56dcc6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002809
+      },
+      "writtenOn": "2023-04-05T01:57:40Z",
+      "side": 1,
+      "message": "Only for Joey\u0027s particular workflow. I\u0027d still like this new flag, and have wanted it for years, because I have some local branches that have many commits.",
+      "parentUuid": "6c20d51a_6e2c6a7a",
+      "range": {
+        "startLine": 11,
+        "startChar": 28,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "abca12de_e83c6b5b",

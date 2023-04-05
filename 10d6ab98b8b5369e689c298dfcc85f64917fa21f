@@ -120,6 +120,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7582c6d7_6d25283c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-05T18:58:05Z",
+      "side": 1,
+      "message": "maybe i misunderstood your first comment.\nit sounded like, even with the proposed default behavior, you\u0027d still want this flag so you can also skip the squash phase for branches with multiple commits.\ncould you clarify?",
+      "parentUuid": "414fef14_29dbbaec",
+      "range": {
+        "startLine": 11,
+        "startChar": 28,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "abca12de_e83c6b5b",

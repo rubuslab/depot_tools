@@ -72,6 +72,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7024d0db_34f6e0fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-05T16:59:44Z",
+      "side": 1,
+      "message": "i would also prefer\nthe \"single commit branch\" workflow to default to this behavior (i think it would benefit most users)\n\nand not adding the flag immediately (because i can\u0027t tell how many people actually want this). Has a bug been filed for this where we can see how many people have cc\u0027d or starred?",
+      "parentUuid": "9369041a_f2bf4e1f",
+      "range": {
+        "startLine": 11,
+        "startChar": 28,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "abca12de_e83c6b5b",
@@ -225,6 +249,29 @@
       "side": 1,
       "message": "Missed this comment thread when I posed my comment above, but yeah - I think there should be tools in git_common which allow doing this reasonably efficiently.",
       "parentUuid": "8d99ea72_51be0dd2",
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f49a3b4f_18e70be1",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-05T16:59:44Z",
+      "side": 1,
+      "message": "could this be \n`abort \u003d not no_squash`\nto make this easier to understand without readers having to check `rebase()` function to know what this arg actually is.",
+      "range": {
+        "startLine": 165,
+        "startChar": 56,
+        "endLine": 165,
+        "endChar": 69
+      },
       "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

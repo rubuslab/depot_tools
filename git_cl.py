@@ -4241,26 +4241,54 @@ def _GetIssueBranchMap():
   return issue_branch_map
 
 
-def SwitchToIssue(options, args):
+def CreateBranchForIssue(issue_num, branch_name=None):
+  # type(int, Optional[str]) -> str
+  """Create branch `branch_name` (default `change-issue_num`), with HEAD on
+  the last patchset of `issue_num`.
+
+  Undefined behavior if `issue_num` is not a valid issue number or
+  if `branch_name` is not a valid branch name.
+  Returns the branch name."""
+  cl = Changelist(issue=issue_num)
+
+  detail = cl._GetChangeDetail(['CURRENT_REVISION', 'CURRENT_COMMIT'])
+  revision_info = detail['revisions'][detail['current_revision']]
+  fetch_info = revision_info['fetch']['http']
+  RunGit(['fetch', fetch_info['url'], fetch_info['ref']])
+  if branch_name is None:
+    branch_name = 'change-%d' % issue_num
+  RunGit(['branch', branch_name, 'FETCH_HEAD'])
+  return branch_name
+
+
+def SwitchToIssue(options, issue_numbers):
   """Switch to the branch associated to issue args[0]
 
-  Fail if the first arg is not a number. Fail if there are 0 such branch.
+  Fail if the first arg is not a number.
+  If no such branch exists and the issue exists on gerit,
+  create a new branch and switch to it.
   If there are multiple such branch, warns and behaves as
   `git cl issue -r issue_number`.
   """
   issue_branch_map = _GetIssueBranchMap()
-  if not args:
+  if not issue_numbers:
     DieWithError('`git cl issue --switch` requires a number.')
+  elif len(issue_numbers) > 1:
+    print('Extra arguments %s are ignored.' % issue_numbers[1:])
   try:
-    issue_num = int(args[0])
+    issue_num = int(issue_numbers[0])
   except ValueError:
-    DieWithError('Cannot parse issue number: %s' % args[0])
+    DieWithError('Cannot parse issue number: %s' % issue_numbers[0])
   branches = issue_branch_map.get(issue_num, [])
   if not branches:
-    DieWithError('No branch associated to issue: %d' % issue_num)
+    print('No branch related to issue %d. Trying to fetch it.' % issue_num)
+    branch_name = CreateBranchForIssue(issue_num)
+    print('Last patchset of CL %d available on branch %s.' %
+          (issue_num, branch_name))
+    branches.append(branch_name)
   if len(branches) > 1:
     # Print the various branches
-    PrintIssueToBranches(options, args)
+    PrintIssueToBranches(options, [issue_num])
     DieWithError('Multiple branches associated to issue: %d' % issue_num)
   prefix_size = len('refs/heads/')
   RunGit(['switch', branches[0][prefix_size:]])
@@ -4306,8 +4334,11 @@ def CMDissue(parser, args):
   parser.add_option('-s',
                     '--switch',
                     action='store_true',
-                    help='Switch to the branch linked to the specified issue. '
-                    'If multiple branches are linked, list all of them.'
+                    help='Switch to the branch linked to the specified bug. '
+                    'If multiple branches are linked, list all of them. '
+                    'If no such branch exists, create a new branch set to '
+                    'the latest patchset according to gerrit, and switch to '
+                    'it. '
                     'Fail if `git switch` would fail in current state.')
   parser.add_option('--json',
                     help='Path to JSON output file, or "-" for stdout.')

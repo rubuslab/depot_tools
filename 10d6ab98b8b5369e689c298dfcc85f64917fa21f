@@ -96,6 +96,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "414fef14_29dbbaec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002809
+      },
+      "writtenOn": "2023-04-05T18:44:43Z",
+      "side": 1,
+      "message": "Yeah, totally agree that making this behavior the default when only one commit would benefit most users. That would be great.\n\nBut in the meantime, before that part is implemented, why not add this flag when it\u0027s a tiny change (little maintenance) that would benefit \u003e\u003d2 of us?",
+      "parentUuid": "7024d0db_34f6e0fb",
+      "range": {
+        "startLine": 11,
+        "startChar": 28,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "abca12de_e83c6b5b",

@@ -376,6 +376,11 @@ def CreateHttpConn(host, path, reqtype='GET', headers=None, body=None):
   headers = headers or {}
   bare_host = host.partition(':')[0]
 
+  # Convert sso hosts to normal host for gerrit API calls.
+  if '.' not in host:
+    host += '.googlesource.com'
+    bare_host += '.googlesource.com'
+
   a = Authenticator.get()
   # TODO(crbug.com/1059384): Automatically detect when running on cloudtop.
   if isinstance(a, GceAuthenticator):

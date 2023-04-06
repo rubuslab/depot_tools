@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88d01307_79edc72f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-04-06T02:20:12Z",
+      "side": 1,
+      "message": "I was reviewing this and realized that `git cl checkout` https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d6224;drc\u003d7f9b0231c460eae158c3d2fd231345ed6588f8dc already exists and has the same functionality as `git cl issue --switch` (plus branch selection). Admittedly `git cl` is very crowded and I apologize for missing this in https://crrev.com/c/4381562. WDYT about removing `--switch` and adding branch creation functionality to `git cl checkout`? (doesn\u0027t have to be this single CL)",
+      "revId": "60265ccd6e8fcc0abcbae06bd73dee911f9c8ba5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

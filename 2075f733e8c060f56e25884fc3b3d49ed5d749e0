@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "656114b5_704c0a09",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1965,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-04-06T23:06:37Z",
+      "side": 0,
+      "message": "Redundant check. For one, we shouldn\u0027t be warning users anymore when `sso://` is used. And `git push` support `sso://` URLs. And we have to update the URL within gerrit_util anyway for all the gerrit API calls to work.",
+      "revId": "2075f733e8c060f56e25884fc3b3d49ed5d749e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -374,7 +374,10 @@ class LuciContextAuthenticator(Authenticator):
 def CreateHttpConn(host, path, reqtype='GET', headers=None, body=None):
   """Opens an HTTPS connection to a Gerrit service, and sends a request."""
   headers = headers or {}
-  bare_host = host.partition(':')[0]
+
+  # Convert sso hosts to normal host for gerrit API calls.
+  if not host.endswith('.googlesource.com'):
+    host += '.googlesource.com'
 
   a = Authenticator.get()
   # TODO(crbug.com/1059384): Automatically detect when running on cloudtop.
@@ -382,11 +385,11 @@ def CreateHttpConn(host, path, reqtype='GET', headers=None, body=None):
     print('If you\'re on a cloudtop instance, export '
           'SKIP_GCE_AUTH_FOR_GIT=1 in your env.')
 
-  a = a.get_auth_header(bare_host)
+  a = a.get_auth_header(host)
   if a:
     headers.setdefault('Authorization', a)
   else:
-    LOGGER.debug('No authorization found for %s.' % bare_host)
+    LOGGER.debug('No authorization found for %s.' % host)
 
   url = path
   if not url.startswith('/'):

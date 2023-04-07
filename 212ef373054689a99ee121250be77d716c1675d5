@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d86a8f2_5645fed4",
+        "filename": "infra_to_superproject.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-07T14:41:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "401d16a9_1219435f",
+      "range": {
+        "startLine": 5,
+        "startChar": 61,
+        "endLine": 6,
+        "endChar": 24
+      },
+      "revId": "212ef373054689a99ee121250be77d716c1675d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cf35486_9447c369",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-04-07T00:40:13Z",
       "side": 1,
       "message": "`python3`",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 14
+      },
+      "revId": "212ef373054689a99ee121250be77d716c1675d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a0c1820_07d51a0e",
+        "filename": "infra_to_superproject.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-07T14:41:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cf35486_9447c369",
       "range": {
         "startLine": 9,
         "startChar": 8,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "68d23dae_a48c25d2",
+        "filename": "infra_to_superproject.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-07T14:41:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8a362d3_f61b9667",
+      "range": {
+        "startLine": 23,
+        "startChar": 31,
+        "endLine": 23,
+        "endChar": 36
+      },
+      "revId": "212ef373054689a99ee121250be77d716c1675d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a8350f4_dda6684d",
@@ -83,6 +155,24 @@
       "writtenOn": "2023-04-07T00:40:13Z",
       "side": 1,
       "message": "nit: del newline",
+      "revId": "212ef373054689a99ee121250be77d716c1675d5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5901cb5a_72ea70b7",
+        "filename": "infra_to_superproject.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-07T14:41:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a8350f4_dda6684d",
       "revId": "212ef373054689a99ee121250be77d716c1675d5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

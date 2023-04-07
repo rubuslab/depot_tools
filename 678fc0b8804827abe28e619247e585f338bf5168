@@ -16,6 +16,24 @@
       "message": "Would this make `git cl` stop working on non Google hosts? I wonder if this is missing a check for the URL scheme being `sso` (or, for example, we could check that the host doesn\u0027t contain a `.`).",
       "revId": "678fc0b8804827abe28e619247e585f338bf5168",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8144822d_6b841766",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 1374536
+      },
+      "writtenOn": "2023-04-07T23:05:01Z",
+      "side": 1,
+      "message": "In other words, I think this would work better as `if \u0027.\u0027 not in host:`, like the old git_cl.py code.",
+      "parentUuid": "0d85a6f9_5f5506bb",
+      "revId": "678fc0b8804827abe28e619247e585f338bf5168",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

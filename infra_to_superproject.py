@@ -51,9 +51,15 @@ def main(argv):
 
   Path(destination).mkdir(parents=True, exist_ok=True)
 
-  cp = subprocess.Popen(['cp', '-a', os.getcwd() + '/.', destination])
+  print(f'Copying {os.getcwd()} into {destination}')
+  cp = subprocess.Popen(
+      ['cp', '-a', os.path.join(os.getcwd(), '.'), destination],
+      stdout=subprocess.PIPE,
+      stderr=subprocess.PIPE)
   cp.wait()
+  print('Copying complete')
 
+  print(f'Deleting old {destination}/.gclient file')
   gclient_file = os.path.join(destination, '.gclient')
   with open(gclient_file, 'r') as file:
     data = file.read()
@@ -61,9 +67,11 @@ def main(argv):
 
   os.remove(gclient_file)
 
+  print('Migrating to infra/infra_superproject')
   cmds = ['fetch', '--force']
   if internal:
     cmds.append('infra_internal')
+    print('including internal code in checkout')
   else:
     cmds.append('infra')
   fetch = subprocess.Popen(cmds, cwd=destination)

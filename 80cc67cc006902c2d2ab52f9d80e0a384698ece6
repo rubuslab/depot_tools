@@ -16,6 +16,23 @@
       "message": "This seems like a hack that adds extra maintenance for us (the chops source team) as owners of depot_tools. While it is small, CLs like this add up quickly to a code-base that already has a lot of code debt and very low test coverage.\n\nFor the default no-squash behavior, we think that would be a good change that will definitely be beneficial to enough users. But given that it is not a p0, I don\u0027t think this hack is necessary over doing it properly with tests. \nI have filed a p3 crbug.com/1431969 for this that anyone can take if they have extra cycles. If you disagree with the priority please let us know.\n\nFor adding a --no-squash arg, afaik, there have been no other requests for it, and we want to be strict on what args we add to depot_tools commands to avoid having the codebase littered with args used by just ~1 developer each. Please file a bug, or let us know if there is already a bug that would help use gauge what its usage would be.\n\nIn the meantime, I\u0027m reverting this change.",
       "revId": "80cc67cc006902c2d2ab52f9d80e0a384698ece6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73e8138f_d1fdca60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-04-10T20:06:48Z",
+      "side": 1,
+      "message": "Sorry for not checking before approving it :(.",
+      "revId": "80cc67cc006902c2d2ab52f9d80e0a384698ece6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

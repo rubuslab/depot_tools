@@ -46,6 +46,30 @@
       },
       "revId": "69efaaea736ac9b5afe8fc5a2f9e1044c0cb0bf1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4198d9a7_44c0a88f",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-10T21:22:12Z",
+      "side": 1,
+      "message": "correction:\nsoln.name\u003dinfra, soln.name\u003dinfra_internal while url \u003d infra_superproject results in:\nchrome_infra/.gclient\nchrome_infra/infra/DEPS # infra_superproject\u0027s DEPS\nchrome_infra/infra/infra/\nOR\nchrome_infra/infra_internal/DEPS # infra_superproject\u0027s DEPS\nchrome_infra/infra_internal/infra_internal/",
+      "parentUuid": "77493ad6_b4220666",
+      "range": {
+        "startLine": 290,
+        "startChar": 15,
+        "endLine": 290,
+        "endChar": 16
+      },
+      "revId": "69efaaea736ac9b5afe8fc5a2f9e1044c0cb0bf1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

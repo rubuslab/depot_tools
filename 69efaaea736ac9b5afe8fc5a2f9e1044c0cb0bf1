@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b307122c_1f244e50",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-04-10T21:08:56Z",
+      "side": 1,
+      "message": "does `.` evaluate to `infra` or does it need to explicitly be named `infra`? (same below with `infra_internal`)",
+      "range": {
+        "startLine": 290,
+        "startChar": 15,
+        "endLine": 290,
+        "endChar": 16
+      },
+      "revId": "69efaaea736ac9b5afe8fc5a2f9e1044c0cb0bf1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

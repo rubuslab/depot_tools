@@ -22,6 +22,30 @@
       },
       "revId": "69efaaea736ac9b5afe8fc5a2f9e1044c0cb0bf1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77493ad6_b4220666",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-10T21:15:18Z",
+      "side": 1,
+      "message": "it just means\ninstead of creating some gclient root dir chrome_infra/ with soln.name \u003d infra or infra_internal, with dir structure:\nchrome_infra/.gclient\nchrome_infra/infra_superproject/infra\nchrome_infra/infra_superproject/infra_internal\n\nsoln.name \u003d \u0027.\u0027 will result in:\nchrome_infra/.gclient\nchrome_infra/infra\nchrome_infra/infra_internal\n\nso that the file structure does not change",
+      "parentUuid": "b307122c_1f244e50",
+      "range": {
+        "startLine": 290,
+        "startChar": 15,
+        "endLine": 290,
+        "endChar": 16
+      },
+      "revId": "69efaaea736ac9b5afe8fc5a2f9e1044c0cb0bf1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

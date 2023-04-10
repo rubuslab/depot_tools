@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4826a7e_4362217e",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-04-10T19:59:44Z",
+      "side": 0,
+      "message": "`bare_host` is used within the authenticator. Is there a use case for adding authorization for localhost? Updating it is necessary to make authenticated gerrit API calls. I\u0027m wondering if there is a list of hosts that I could exclude, say localhost.",
+      "parentUuid": "335d5145_13b272a4",
+      "revId": "2075f733e8c060f56e25884fc3b3d49ed5d749e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "656114b5_704c0a09",

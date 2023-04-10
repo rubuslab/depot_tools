@@ -168,6 +168,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "dac4aa0b_40fe7343",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1303398
+      },
+      "writtenOn": "2023-04-10T16:23:56Z",
+      "side": 1,
+      "message": "\u003e I\u0027d still like this new flag, and have wanted it for years, because I have some local branches that have many commits.\n\nSince this has 2 lgtms and both dgrogan and I want this behavior regardless of the default optimization, I\u0027m going to merge it.\n\n\u003e We probably should just not squash in that case\n\n\u003e Yeah, totally agree that making this behavior the default when only one commit would benefit most users. That would be great.\n\nJoanna, if you are still interested in this behavior you could do it in a follow up, right? I\u0027m not as familiar with depot_tools or the git log command you provided to figure this out.",
+      "parentUuid": "bb34ed47_065a35c8",
+      "range": {
+        "startLine": 11,
+        "startChar": 28,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "abca12de_e83c6b5b",
@@ -325,6 +349,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "edf3ee91_84b9e701",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303398
+      },
+      "writtenOn": "2023-04-10T16:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "744bab54_4988ec71",
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f49a3b4f_18e70be1",
@@ -338,6 +380,30 @@
       "writtenOn": "2023-04-05T16:59:44Z",
       "side": 1,
       "message": "could this be \n`abort \u003d not no_squash`\nto make this easier to understand without readers having to check `rebase()` function to know what this arg actually is.",
+      "range": {
+        "startLine": 165,
+        "startChar": 56,
+        "endLine": 165,
+        "endChar": 69
+      },
+      "revId": "10d6ab98b8b5369e689c298dfcc85f64917fa21f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "872d46ba_2585c428",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1303398
+      },
+      "writtenOn": "2023-04-10T16:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f49a3b4f_18e70be1",
       "range": {
         "startLine": 165,
         "startChar": 56,

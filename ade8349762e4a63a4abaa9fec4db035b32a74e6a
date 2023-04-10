@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a6ea955_37c12fba",
+        "filename": "LUCI_OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1157909
+      },
+      "writtenOn": "2023-04-10T23:55:20Z",
+      "side": 1,
+      "message": "nit: add newline",
+      "revId": "ade8349762e4a63a4abaa9fec4db035b32a74e6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

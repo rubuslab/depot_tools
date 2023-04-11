@@ -45,7 +45,6 @@ from pathlib import Path
 
 def main(argv):
   assert len(argv) == 1, 'One and only one arg expected.'
-  assert platform.system() == 'Linux', 'Non-linux OSs not supported yet.'
   destination = argv[0]
 
   # In case there is '~' in the destination string
@@ -54,8 +53,16 @@ def main(argv):
   Path(destination).mkdir(parents=True, exist_ok=True)
 
   print(f'Copying {os.getcwd()} into {destination}')
+  source = os.path.join(os.getcwd(), '.')
+  cmds = []
+  if platform.system() == 'Linux':
+    cmds = ['cp', '-a',  source, destination]
+  if platform.system() == 'Windows':
+    cmds = ['xcopy', source, destination, '/x']
+  if platform.system() == 'Darwin':
+    cmds = ['ditto', '--rsrc', source, destination]
   cp = subprocess.Popen(
-      ['cp', '-a', os.path.join(os.getcwd(), '.'), destination],
+      cmds,
       stdout=subprocess.PIPE,
       stderr=subprocess.PIPE)
   cp.wait()

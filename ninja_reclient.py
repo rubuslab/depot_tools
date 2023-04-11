@@ -14,6 +14,7 @@ import sys
 
 import ninja
 import gclient_paths
+import ninja_reclient_metrics
 
 
 def find_reclient_bin_dir():
@@ -110,6 +111,15 @@ def set_reproxy_path_flags(out_dir):
                           "unix://%s/reproxy.sock" % tmp_dir)
 
 
+def set_reproxy_metrics_flags():
+  """Helper to setup metrics collection flags for reproxy
+
+  The following env vars are set if not already set:
+    RBE_metrics_project=chromium-reclient-metrics
+  """
+  os.environ.setdefault("RBE_metrics_project", "chromium-reclient-metrics")
+
+
 def main(argv):
   # If use_remoteexec is set, but the reclient binaries or configs don't
   # exist, display an error message and stop.  Otherwise, the build will
@@ -132,6 +142,12 @@ def main(argv):
   except OSError:
     print("Error creating reproxy_tmp in output dir", file=sys.stderr)
     return 1
+
+  metrics_config = ninja_reclient_metrics.load_config()
+
+  if ninja_reclient_metrics.should_collect_metrics(metrics_config):
+    set_reproxy_metrics_flags()
+
   reproxy_ret_code = start_reproxy(reclient_cfg, reclient_bin_dir)
   if reproxy_ret_code != 0:
     return reproxy_ret_code
@@ -144,6 +160,7 @@ def main(argv):
   finally:
     print("Shutting down reproxy...", file=sys.stderr)
     stop_reproxy(reclient_cfg, reclient_bin_dir)
+    ninja_reclient_metrics.show_message(metrics_config)
 
 
 if __name__ == '__main__':

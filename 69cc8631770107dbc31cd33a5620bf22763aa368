@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fe3d5c0_c2567da6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-11T15:52:10Z",
+      "side": 1,
+      "message": "PTyet-anotherL\n\nI somehow missed that many more recipes other than the infra try jobs were using these infra configs.\n\nNew plan is to ask people to switch over to these infra_superproject configs and delete the old configs when the migration deadline is over.",
+      "revId": "69cc8631770107dbc31cd33a5620bf22763aa368",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

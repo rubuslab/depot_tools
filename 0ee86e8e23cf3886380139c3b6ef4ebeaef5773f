@@ -51,6 +51,24 @@
       "parentUuid": "bb795f12_500e159a",
       "revId": "0ee86e8e23cf3886380139c3b6ef4ebeaef5773f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49041444_7f8a87b5",
+        "filename": "infra_to_superproject.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-12T23:26:24Z",
+      "side": 1,
+      "message": "i\u0027m assuming the thing it cannot find is `fetch`?\nfrom windows chrome build instructions, afaik fetch on windows is also called with just `fetch \u003cconfig\u003e`\n\ndoes `fetch infra_internal` work via command line?",
+      "parentUuid": "bb0e43f4_210ae733",
+      "revId": "0ee86e8e23cf3886380139c3b6ef4ebeaef5773f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

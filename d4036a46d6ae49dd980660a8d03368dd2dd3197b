@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7f89d86_b2bd4fdb",
+        "filename": "OWNERS",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-04-12T14:05:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f84b70c_0a2f0e70",
+      "revId": "d4036a46d6ae49dd980660a8d03368dd2dd3197b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ed0c8e21_3a712767",
@@ -41,6 +59,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b089bb42_d89b9589",
+        "filename": "OWNERS",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-04-12T14:05:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed0c8e21_3a712767",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 61
+      },
+      "revId": "d4036a46d6ae49dd980660a8d03368dd2dd3197b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "69043bc0_046aab77",
@@ -54,6 +96,24 @@
       "writtenOn": "2023-04-12T07:17:12Z",
       "side": 1,
       "message": "I think it is fine to remove this and always create directories here.",
+      "revId": "d4036a46d6ae49dd980660a8d03368dd2dd3197b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b93b1789_16a97f9f",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-04-12T14:05:09Z",
+      "side": 1,
+      "message": "If the user specifies a non existant directory and we create it, then reclientreport will just package up the empty directory we just created.",
+      "parentUuid": "69043bc0_046aab77",
       "revId": "d4036a46d6ae49dd980660a8d03368dd2dd3197b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

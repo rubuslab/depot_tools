@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "355985e3_5c3a40b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-12T07:38:28Z",
+      "side": 1,
+      "message": "There is depot_tools/GOMA_OWNERS. \nWhat about renaming it to BUILD_OWNERS, and use it for siso/ninja/goma related files?",
+      "parentUuid": "a441679b_80c61c13",
+      "revId": "91fb7cd2145ae2722aa942188ce0ab5f4a67f344",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "605755a7_339c569b",
         "filename": "siso.py",
         "patchSetId": 1

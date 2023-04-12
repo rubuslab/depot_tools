@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ffd9593_ed23c780",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-12T13:28:11Z",
+      "side": 1,
+      "message": "thanks for sending in a fix\ni actually just saw and lgtm\u0027d \nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4414305\nalready",
+      "revId": "fd5ab74f4d6feab54fe25002628c731d0e384330",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f84b70c_0a2f0e70",
+        "filename": "OWNERS",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-12T07:17:12Z",
+      "side": 1,
+      "message": "I think this should be owned by reclient folks for now?",
+      "revId": "d4036a46d6ae49dd980660a8d03368dd2dd3197b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed0c8e21_3a712767",
+        "filename": "OWNERS",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-12T07:17:12Z",
+      "side": 1,
+      "message": "sort?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 61
+      },
+      "revId": "d4036a46d6ae49dd980660a8d03368dd2dd3197b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69043bc0_046aab77",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-12T07:17:12Z",
+      "side": 1,
+      "message": "I think it is fine to remove this and always create directories here.",
+      "revId": "d4036a46d6ae49dd980660a8d03368dd2dd3197b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

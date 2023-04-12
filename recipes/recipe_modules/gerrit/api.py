@@ -11,7 +11,7 @@ class GerritApi(recipe_api.RecipeApi):
     super(GerritApi, self).__init__(*args, **kwargs)
     self._changes_target_branch_cache = {}
 
-  def __call__(self, name, cmd, infra_step=True, **kwargs):
+  def __call__(self, name, cmd, infra_step=True, retries=2, **kwargs):
     """Wrapper for easy calling of gerrit_utils steps."""
     assert isinstance(cmd, (list, tuple))
     prefix = 'gerrit '
@@ -22,11 +22,17 @@ class GerritApi(recipe_api.RecipeApi):
         env['PATH'], str(self.repo_resource())])
 
     with self.m.context(env=env):
-      return self.m.step(
-          prefix + name,
-          ['vpython3', self.repo_resource('gerrit_client.py')] + cmd,
-          infra_step=infra_step,
-          **kwargs)
+      for attempt in range(retries+1):
+        try:
+          return self.m.step(
+              prefix + name,
+              ['vpython3', self.repo_resource('gerrit_client.py')] + cmd,
+              infra_step=infra_step,
+              **kwargs)
+        except self.m.step.InfraFailure:
+          if attempt == retries:
+            raise
+          self.m.time.sleep(2**attempt , with_step=True)
 
   def call_raw_api(self,
                    host,

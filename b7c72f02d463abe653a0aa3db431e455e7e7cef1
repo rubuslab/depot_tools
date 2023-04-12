@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d6a47ad_5a3c3e99",
+        "filename": "siso.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-12T07:36:21Z",
+      "side": 1,
+      "message": "Add this to bug label?",
+      "revId": "b7c72f02d463abe653a0aa3db431e455e7e7cef1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

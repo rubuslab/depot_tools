@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41927542_b95ad3eb",
+        "filename": "infra_to_superproject.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-12T23:57:46Z",
+      "side": 0,
+      "message": "don\u0027t want migration steps in multiple places, one place might diverge from the other.",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "8d19d8641bd11d0bf796fc2e3b7f3d9f6898d5d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

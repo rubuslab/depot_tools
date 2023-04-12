@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a441679b_80c61c13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-04-12T07:27:00Z",
+      "side": 1,
+      "message": "do we want to add SISO_OWNERS, or BUILDTOOL_OWNERS, or some other name?",
+      "parentUuid": "c24217c3_9a234833",
+      "revId": "91fb7cd2145ae2722aa942188ce0ab5f4a67f344",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "605755a7_339c569b",
         "filename": "siso.py",
         "patchSetId": 1
@@ -31,6 +49,30 @@
       "writtenOn": "2023-04-12T07:19:19Z",
       "side": 1,
       "message": "redundant paren?",
+      "range": {
+        "startLine": 23,
+        "startChar": 5,
+        "endLine": 23,
+        "endChar": 6
+      },
+      "revId": "91fb7cd2145ae2722aa942188ce0ab5f4a67f344",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f44a689b_e5bc1c7b",
+        "filename": "siso.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-04-12T07:27:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "605755a7_339c569b",
       "range": {
         "startLine": 23,
         "startChar": 5,
@@ -64,6 +106,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4dcc39f3_931f73dc",
+        "filename": "siso.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-04-12T07:27:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0d459f1_303c77bd",
+      "range": {
+        "startLine": 47,
+        "startChar": 6,
+        "endLine": 47,
+        "endChar": 7
+      },
+      "revId": "91fb7cd2145ae2722aa942188ce0ab5f4a67f344",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f817a1b1_9f40145c",
@@ -77,6 +143,30 @@
       "writtenOn": "2023-04-12T07:19:19Z",
       "side": 1,
       "message": "This is redundant?",
+      "range": {
+        "startLine": 55,
+        "startChar": 27,
+        "endLine": 55,
+        "endChar": 29
+      },
+      "revId": "91fb7cd2145ae2722aa942188ce0ab5f4a67f344",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8dab849_561b7e59",
+        "filename": "siso.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-04-12T07:27:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f817a1b1_9f40145c",
       "range": {
         "startLine": 55,
         "startChar": 27,

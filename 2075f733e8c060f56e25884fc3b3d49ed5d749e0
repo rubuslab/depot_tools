@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "49954f0e_18ed1c47",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1374536
+      },
+      "writtenOn": "2023-04-12T01:01:47Z",
+      "side": 0,
+      "message": "Thanks. Part of the reason I ask is that I don\u0027t understand what this part of the change does, so I\u0027d find it easier to review if the change didn\u0027t include that part. (Alas, I\u0027m probably not going to be able to spend much more time on this review, so what makes the review easy for me is moot, but presumably such things make review easy for others, too. 😊)\n\njojwang@, what do you think?",
+      "parentUuid": "d4826a7e_4362217e",
+      "revId": "2075f733e8c060f56e25884fc3b3d49ed5d749e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "656114b5_704c0a09",

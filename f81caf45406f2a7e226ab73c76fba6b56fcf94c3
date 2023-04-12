@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7b5f2420_495bbcdc",
+        "filename": "BUILD_OWNERS",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-12T08:03:55Z",
+      "side": 1,
+      "message": "please remove ex-member.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 0
+      },
+      "revId": "f81caf45406f2a7e226ab73c76fba6b56fcf94c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "02c075ee_1ab21023",
         "filename": "BUILD_OWNERS",
         "patchSetId": 4

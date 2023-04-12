@@ -39,34 +39,24 @@ import subprocess
 import os
 import platform
 import sys
+import shutil
 import json
 from pathlib import Path
 
 
-def main(argv):
-  assert len(argv) == 1, 'One and only one arg expected.'
-  assert platform.system() == 'Linux', 'Non-linux OSs not supported yet.'
-  destination = argv[0]
+def main():
+  source = os.getcwd()
+  backup = source + '_backup'
 
-  # In case there is '~' in the destination string
-  destination = os.path.expanduser(destination)
+  print(f'Creating backup in {backup}')
+  shutil.copytree(source, backup, symlinks=True, dirs_exist_ok=True)
+  print('backup complete')
 
-  Path(destination).mkdir(parents=True, exist_ok=True)
-
-  print(f'Copying {os.getcwd()} into {destination}')
-  cp = subprocess.Popen(
-      ['cp', '-a', os.path.join(os.getcwd(), '.'), destination],
-      stdout=subprocess.PIPE,
-      stderr=subprocess.PIPE)
-  cp.wait()
-  print('Copying complete')
-
-  print(f'Deleting old {destination}/.gclient file')
-  gclient_file = os.path.join(destination, '.gclient')
+  print(f'Deleting old {source}/.gclient file')
+  gclient_file = os.path.join(source, '.gclient')
   with open(gclient_file, 'r') as file:
     data = file.read()
     internal = "infra_internal" in data
-
   os.remove(gclient_file)
 
   print('Migrating to infra/infra_superproject')
@@ -76,9 +66,9 @@ def main(argv):
     print('including internal code in checkout')
   else:
     cmds.append('infra')
-  fetch = subprocess.Popen(cmds, cwd=destination)
+  fetch = subprocess.Popen(cmds, cwd=source)
   fetch.wait()
 
 
 if __name__ == '__main__':
-  sys.exit(main(sys.argv[1:]))
+  sys.exit(main())

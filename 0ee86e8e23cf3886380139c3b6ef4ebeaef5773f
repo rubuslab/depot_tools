@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb22a989_bf88bb16",
+        "filename": "infra_to_superproject.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-04-12T22:35:37Z",
+      "side": 1,
+      "message": "This is fairly slow on windows (~15 minutes) so we should let users know it can take a while.\n\nnit: We could also add a prompt asking users if they want to make a backup or not (with backup being strongly encouraged). Or a flag.",
+      "revId": "0ee86e8e23cf3886380139c3b6ef4ebeaef5773f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb795f12_500e159a",
+        "filename": "infra_to_superproject.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-04-12T22:35:37Z",
+      "side": 1,
+      "message": "latest on win machine:\n\nMigrating to infra/infra_superproject\nincluding internal code in checkout\nTraceback (most recent call last):\n  File \"C:\\depot_tools\\\\infra_to_superproject.py\", line 74, in \u003cmodule\u003e\n\n    sys.exit(main())\n  File \"C:\\depot_tools\\\\infra_to_superproject.py\", line 69, in main\n    fetch \u003d subprocess.Popen(cmds, cwd\u003dsource)\n  File \"C:\\depot_tools\\bootstrap-2@3_8_10_chromium_26_bin\\python3\\bin\\lib\\subprocess.py\",\nline 858, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"C:\\depot_tools\\bootstrap-2@3_8_10_chromium_26_bin\\python3\\bin\\lib\\subprocess.py\",\nline 1311, in _execute_child\n    hp, ht, pid, tid \u003d _winapi.CreateProcess(executable, args,\nFileNotFoundError: [WinError 2] The system cannot find the file specified",
+      "revId": "0ee86e8e23cf3886380139c3b6ef4ebeaef5773f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

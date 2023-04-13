@@ -538,6 +538,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       return
     url = None
     scm = self.CreateSCM()
+    if scm.name == 'cipd':
+      revision = scm.revinfo(None, None, None)
+      package = scm.GetPackage()
+      url = '%s/p/%s/+/%s' % (scm.GetActualRemoteURL(None), package, revision)
     if os.path.isdir(scm.checkout_path):
       revision = scm.revinfo(None, None, None)
       url = '%s@%s' % (gclient_utils.SplitUrlRevision(self.url)[0], revision)
@@ -2109,11 +2113,20 @@ it or fix the checkout.
                      target_branches=None,
                      skip_sync_revisions=None)
 
+    if not self._cipd_root:
+      self.GetCipdRoot()
+    print(detect_host_arch.HostArch())
+    print(_detect_host_os())
+    resolved_out = self._cipd_root.run('ensure-file-resolve')
+    installed_out = self._cipd_root.run('installed')
+    cipd_data = resolved_out
+
     def ShouldPrintRevision(dep):
       return (not self._options.filter
               or dep.FuzzyMatchUrl(self._options.filter))
 
     if self._options.snapshot:
+      cipd_data = installed_out
       json_output = []
       # First level at .gclient
       for d in self.dependencies:
@@ -2208,7 +2221,6 @@ it or fix the checkout.
   @property
   def target_cpu(self):
     return self._enforced_cpu
-
 
 class CipdDependency(Dependency):
   """A Dependency object that represents a single CIPD package."""

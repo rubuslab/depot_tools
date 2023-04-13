@@ -1553,6 +1553,8 @@ class CipdRoot(object):
     self._packages_by_subdir = collections.defaultdict(list)
     self._root_dir = root_dir
     self._service_url = service_url
+    self._installed_data = None
+    self._resolved_data = None
 
   def add_package(self, subdir, package, version):
     """Adds a package to this CIPD root.
@@ -1581,6 +1583,16 @@ class CipdRoot(object):
   def packages(self, subdir):
     """Get the list of configured packages for the given subdir."""
     return list(self._packages_by_subdir[subdir])
+
+  def Resolved(self):
+    if not self._resolved_data:
+      self._resolved_data = self.ensure_file_resolve()
+    return self._resolved_data
+
+  def Installed(self):
+    if not self._installed_data:
+      self._installed_data = self.installed()
+    return self._installed_data
 
   def clobber(self):
     """Remove the .cipd directory.
@@ -1617,6 +1629,32 @@ class CipdRoot(object):
       if ensure_file is not None and os.path.exists(ensure_file.name):
         os.remove(ensure_file.name)
 
+  @contextlib.contextmanager
+  def _create_ensure_file_for_resolve(self, verified_platform):
+    try:
+      contents = '$ResolvedVersions /dev/null\n'
+      contents += '$VerifiedPlatform %s\n\n' % verified_platform
+      for subdir, packages in sorted(self._packages_by_subdir.items()):
+        contents += '@Subdir %s\n' % subdir
+        for package in sorted(packages, key=lambda p: p.name):
+          contents += '%s %s\n' % (package.name, package.version)
+        contents += '\n'
+      ensure_file = None
+      with tempfile.NamedTemporaryFile(suffix='.ensure',
+                                       delete=False,
+                                       mode='wb') as ensure_file:
+        ensure_file.write(contents.encode('utf-8', 'replace'))
+      yield ensure_file.name
+    finally:
+      if ensure_file is not None and os.path.exists(ensure_file.name):
+        os.remove(ensure_file.name)
+
+  def _create_installed_file(self):
+    output_file = None
+    return tempfile.NamedTemporaryFile(suffix='.installed',
+                                       delete=False,
+                                       mode='wb')
+
   def ensure(self):
     """Run `cipd ensure`."""
     with self._mutator_lock:
@@ -1630,9 +1668,56 @@ class CipdRoot(object):
         gclient_utils.CheckCallAndFilter(
             cmd, print_stdout=True, show_header=True)
 
+  def installed(self):
+    """Run `cipd installed`."""
+    with self._mutator_lock:
+      with self._create_installed_file() as output_file:
+        cmd = [
+            'cipd',
+            'installed',
+            '-log-level',
+            'error',
+            '-root',
+            self.root_dir,
+            '-json-output',
+            output_file.name,
+        ]
+        gclient_utils.CheckCallAndFilter(cmd,
+                                         print_stdout=False,
+                                         show_header=False)
+        with open(output_file.name) as f:
+          output_json = json.load(f)
+          return output_json.get('result', {})
+
+  def ensure_file_resolve(self):
+    """Run `cipd ensure-file-resolve`."""
+    with self._mutator_lock:
+      with self._create_installed_file() as output_file:
+        with self._create_ensure_file_for_resolve("linux-amd64") as ensure_file:
+          cmd = [
+              'cipd',
+              'ensure-file-resolve',
+              '-log-level',
+              'error',
+              '-ensure-file',
+              ensure_file,
+              '-json-output',
+              output_file.name,
+          ]
+          gclient_utils.CheckCallAndFilter(cmd,
+                                           print_stdout=False,
+                                           show_header=False)
+          with open(output_file.name) as f:
+            output_json = json.load(f)
+            return output_json.get('result', {})
+
   def run(self, command):
     if command == 'update':
       self.ensure()
+    elif command == 'installed':
+      return self.installed()
+    elif command == 'ensure-file-resolve':
+      return self.ensure_file_resolve()
     elif command == 'revert':
       self.clobber()
       self.ensure()
@@ -1671,6 +1756,8 @@ class CipdWrapper(SCMWrapper):
     assert root.created_package(package)
     self._package = package
     self._root = root
+    print(self.relpath)
+    #print(package.name)
 
   #override
   def GetCacheMirror(self):
@@ -1684,6 +1771,12 @@ class CipdWrapper(SCMWrapper):
   def DoesRemoteURLMatch(self, options):
     del options
     return True
+
+  def GetSrcPath(self):
+    return self.relpath.split(":")[0]
+
+  def GetPackage(self):
+    return self.relpath.split(":")[1]
 
   def revert(self, options, args, file_list):
     """Does nothing.
@@ -1700,6 +1793,14 @@ class CipdWrapper(SCMWrapper):
 
   def revinfo(self, options, args, file_list):
     """Grab the instance ID."""
+    #print('%s:%s' % (platform.system(), platform.machine()))
+    # if self._root.Installed():
+    #   src_path = self.relpath.split(":")[0]
+    #   package  = self.relpath.split(":")[1]
+    #   if src_path in self._root.Installed():
+    #     for package in self._root.Installed()[src_path]:
+
+    #     return package.get('pin', {}).get('instance_id')
     try:
       tmpdir = tempfile.mkdtemp()
       describe_json_path = os.path.join(tmpdir, 'describe.json')
@@ -1713,6 +1814,9 @@ class CipdWrapper(SCMWrapper):
       gclient_utils.CheckCallAndFilter(cmd)
       with open(describe_json_path) as f:
         describe_json = json.load(f)
+        src_path = self.relpath.split(":")[0]
+        package = describe_json.get('result', {}).get('pin', {}).get('package')
+        self.relpath = src_path + ":" + package
       return describe_json.get('result', {}).get('pin', {}).get('instance_id')
     finally:
       gclient_utils.rmtree(tmpdir)

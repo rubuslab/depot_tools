@@ -18,6 +18,41 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "71cbac37_2c4d7ba8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-13T04:51:21Z",
+      "side": 1,
+      "message": "Andy, Aravind, \nWe need an approval from depot_tools OWNERS.\nPTAL\n\nI CCed other non-owners.",
+      "revId": "1c5e407c31bb2577c7153d2d0d59456e5aab252d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "628bddd5_425e74b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-13T04:51:21Z",
+      "side": 1,
+      "message": "We need an approval from",
+      "parentUuid": "8dd4b713_7d9d7600",
+      "revId": "1c5e407c31bb2577c7153d2d0d59456e5aab252d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9fb80448_0d402ae0",

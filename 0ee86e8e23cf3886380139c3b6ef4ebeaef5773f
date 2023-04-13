@@ -87,6 +87,24 @@
       "parentUuid": "bb0e43f4_210ae733",
       "revId": "0ee86e8e23cf3886380139c3b6ef4ebeaef5773f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6138a47a_7db545e3",
+        "filename": "infra_to_superproject.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-04-13T16:43:28Z",
+      "side": 1,
+      "message": "depot_tools is in PATH. In order for this to work on Win, you need to add shell\u003dTrue. Alternatively, you can just rely on subprocess2.py which handles different OS well.use",
+      "parentUuid": "49041444_7f8a87b5",
+      "revId": "0ee86e8e23cf3886380139c3b6ef4ebeaef5773f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -46,6 +46,30 @@
       },
       "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b7c27ab_5eba6006",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2023-04-14T17:22:15Z",
+      "side": 1,
+      "message": "\u003e This 10 sec is before retries right? So even if we exceed we\u0027ll get more attempts?\n\nCorrect. By default it\u0027ll try 4 more times.\n\nOn chrome\u0027s bots, the p99 for our runs of this query was under 1s. Then again, our queries are very simple. (I think they\u0027re mostly just \"get this one change by issue num\"). Can you pull up an example build with a more involved get-changes call? Can bump this above whatever its usual runtime is.",
+      "parentUuid": "9b21c17a_9a63d2d9",
+      "range": {
+        "startLine": 559,
+        "startChar": 65,
+        "endLine": 559,
+        "endChar": 69
+      },
+      "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

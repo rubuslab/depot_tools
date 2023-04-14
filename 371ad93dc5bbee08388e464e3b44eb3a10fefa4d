@@ -22,6 +22,30 @@
       },
       "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b21c17a_9a63d2d9",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 1355298
+      },
+      "writtenOn": "2023-04-14T17:18:24Z",
+      "side": 1,
+      "message": "I\u0027m not sure how to define \"really complex\" for gerrit though, would be nice to know the typical response times. This 10 sec is before retries right? So even if we exceed we\u0027ll get more attempts?",
+      "parentUuid": "b402d39c_ce3a0c61",
+      "range": {
+        "startLine": 559,
+        "startChar": 65,
+        "endLine": 559,
+        "endChar": 69
+      },
+      "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

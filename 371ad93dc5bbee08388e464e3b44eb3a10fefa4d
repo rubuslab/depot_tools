@@ -214,6 +214,30 @@
       },
       "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57a7cbbf_55eb7e3f",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 1516607
+      },
+      "writtenOn": "2023-04-14T21:09:31Z",
+      "side": 1,
+      "message": "IMO let\u0027s give 30s a shot and I\u0027ll let our oncaller know about this change so if they start seeing failures to get gerrit changes we can revisit.",
+      "parentUuid": "723c7e14_27507727",
+      "range": {
+        "startLine": 559,
+        "startChar": 65,
+        "endLine": 559,
+        "endChar": 69
+      },
+      "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

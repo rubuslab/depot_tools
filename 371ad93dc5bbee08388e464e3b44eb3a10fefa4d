@@ -190,6 +190,30 @@
       },
       "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "723c7e14_27507727",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2023-04-14T18:49:42Z",
+      "side": 1,
+      "message": "Thanks for checking that! If I were to guess, I\u0027d say that those massive long tails are just a gerrit fluke/flake? In fact, if it had timed out after 30s, slept for 10s, then retried, there\u0027s a good chance that the 2nd attempt would\u0027ve finished in the usual ~1s range.\n\nSo this might actually help reduce those times if I\u0027m right. But if I\u0027m wrong, then yeah those long tails would end up consistently failing. WDWT?",
+      "parentUuid": "1a41528b_a0ceb650",
+      "range": {
+        "startLine": 559,
+        "startChar": 65,
+        "endLine": 559,
+        "endChar": 69
+      },
+      "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

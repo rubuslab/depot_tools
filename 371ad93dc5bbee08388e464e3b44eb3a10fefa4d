@@ -166,6 +166,30 @@
       },
       "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a41528b_a0ceb650",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 1516607
+      },
+      "writtenOn": "2023-04-14T18:25:19Z",
+      "side": 1,
+      "message": "I poked around in the data a bit and found that 30 seconds covers us for the vast majority of cases (up to 90%ile) http://screen/8YUWicPU32oVKmE\n\nHowever, we have some long tail calls that can take several minutes, e.g. 3.5 minutes is the longest we\u0027ve seen in the last 90 days - http://screen/BoFCmztufaWgxhm",
+      "parentUuid": "34936662_e15fd14c",
+      "range": {
+        "startLine": 559,
+        "startChar": 65,
+        "endLine": 559,
+        "endChar": 69
+      },
+      "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

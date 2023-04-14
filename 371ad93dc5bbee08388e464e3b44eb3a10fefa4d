@@ -238,6 +238,30 @@
       },
       "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45441394_3de6433e",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2023-04-14T21:50:06Z",
+      "side": 1,
+      "message": "SG 🤞",
+      "parentUuid": "57a7cbbf_55eb7e3f",
+      "range": {
+        "startLine": 559,
+        "startChar": 65,
+        "endLine": 559,
+        "endChar": 69
+      },
+      "revId": "371ad93dc5bbee08388e464e3b44eb3a10fefa4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

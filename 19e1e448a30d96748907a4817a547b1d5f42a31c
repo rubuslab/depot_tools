@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a59c8ea9_ad589f9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-04-17T12:19:43Z",
+      "side": 1,
+      "message": "`_GetGitHost()` fails, because it returns null. I guess unit test don’t actually use the real gerrit, which makes sense.\nI’ll need help here to correct the unit test. Because I don’t see a proper way to mock receiving the data from gerrit. And this is needed to test the proper execution of the `git cl checkout 99999` command when no branch has gerritissue 9999.",
+      "revId": "19e1e448a30d96748907a4817a547b1d5f42a31c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

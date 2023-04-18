@@ -6,6 +6,7 @@ PYTHON_VERSION_COMPATIBILITY = 'PY2+3'
 
 DEPS = [
     'gerrit',
+    'recipe_engine/json',
     'recipe_engine/step',
 ]
 

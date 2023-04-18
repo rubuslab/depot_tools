@@ -3,6 +3,28 @@
     "cmd": [
       "vpython3",
       "RECIPE_REPO[depot_tools]/gerrit_client.py",
+      "rawapi",
+      "--host",
+      "https://chromium-review.googlesource.com",
+      "--path",
+      "projects/v8/v8/branches/test",
+      "--json_file",
+      "/path/to/tmp/json"
+    ],
+    "env": {
+      "PATH": "<PATH>:RECIPE_REPO[depot_tools]"
+    },
+    "infra_step": true,
+    "name": "gerrit Get branch ref",
+    "~followup_annotations": [
+      "@@@STEP_LOG_LINE@json.output@{}@@@",
+      "@@@STEP_LOG_END@json.output@@@"
+    ]
+  },
+  {
+    "cmd": [
+      "vpython3",
+      "RECIPE_REPO[depot_tools]/gerrit_client.py",
       "branch",
       "--host",
       "https://chromium-review.googlesource.com",

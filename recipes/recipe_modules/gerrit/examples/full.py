@@ -6,6 +6,7 @@ PYTHON_VERSION_COMPATIBILITY = 'PY2+3'
 
 DEPS = [
     'gerrit',
+    'recipe_engine/json',
     'recipe_engine/step',
 ]
 
@@ -94,7 +95,8 @@ def RunSteps(api):
 
 
 def GenTests(api):
-  yield (api.test('basic', status="INFRA_FAILURE") +
+  yield (api.test('basic', status="INFRA_FAILURE") + api.step_data(
+      'gerrit get_gerrit_branch (v8/v8 test)', api.json.output({})) +
          api.step_data('gerrit create_gerrit_branch (v8/v8 test)',
                        api.gerrit.make_gerrit_create_branch_response_data()) +
          api.step_data('gerrit create_gerrit_tag (v8/v8 1.0)',

@@ -72,9 +72,29 @@ class GerritApi(recipe_api.RecipeApi):
         '--json_file', self.m.json.output()
     ]
     step_name = 'create_gerrit_branch (%s %s)' % (project, branch)
-    step_result = self(step_name, args, **kwargs)
-    ref = step_result.json.output.get('ref')
-    return ref
+    try:
+      step_result = self(step_name, args, **kwargs)
+      ref = step_result.json.output.get('ref')
+      return ref
+    except Exception as e:
+      with self.m.step.nest(f'confirm ({project} {branch})') as s:
+        output = self.call_raw_api(
+            host,
+            f'projects/{project}/branches/{branch}',
+            name='Get branch ref',
+            step_test_data=lambda: self.m.json.test_api.output(
+                {
+                    'revision': commit,
+                    'ref': f'refs/heads/{branch}'
+                }),
+        )
+        if output.get('revision') == commit:
+          return output.get('ref')
+        elif output.get('revision') and output.get('revision') != commit:
+          s.step_text = f'{project}/{branch} was not cut at the {commit}. Abort!'
+        else:
+          s.step_text = str(e)
+        s.status = self.m.step.EXCEPTION
 
   def create_gerrit_tag(self, host, project, tag, commit, **kwargs):
     """Creates a new tag at the given commit.

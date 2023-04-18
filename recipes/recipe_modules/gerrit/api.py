@@ -3,6 +3,8 @@
 # found in the LICENSE file.
 
 from recipe_engine import recipe_api
+from recipe_engine.engine_types import FrozenDict
+
 
 class GerritApi(recipe_api.RecipeApi):
   """Module for interact with Gerrit endpoints"""
@@ -63,6 +65,20 @@ class GerritApi(recipe_api.RecipeApi):
     Returns:
       The ref of the branch created
     """
+    def _check_branch(test_data=FrozenDict()):
+      return self.call_raw_api(
+          host,
+          f'projects/{project}/branches/{branch}',
+          name='Get branch ref',
+          step_test_data=lambda: self.m.json.test_api.output(test_data),
+      )
+
+    allow_existent_branch = kwargs.pop('allow_existent_branch', False)
+    output = _check_branch(test_data={})
+    if output.get('ref'):
+      if allow_existent_branch and output.get('revision') == commit:
+        return output.get('ref')
+      raise self.m.step.InfraFailure(f'{project} {branch} was created. Abort.')
     args = [
         'branch',
         '--host', host,
@@ -72,9 +88,29 @@ class GerritApi(recipe_api.RecipeApi):
         '--json_file', self.m.json.output()
     ]
     step_name = 'create_gerrit_branch (%s %s)' % (project, branch)
-    step_result = self(step_name, args, **kwargs)
-    ref = step_result.json.output.get('ref')
-    return ref
+    try:
+      step_result = self(step_name, args, **kwargs)
+      return step_result.json.output.get('ref')
+    except Exception as e:
+      # Gerrit may have longer responding time. If that hits our timeout,
+      # gerrit_client will retry but may hit 409 error, which means the
+      # branch was created.
+      # Add a step to check whether the branch is created at the commit
+      # we requested. If yes, consider the call successful. Otherwise
+      # either we hit some infra issues or there is a real conflict
+      # with a branch created by other calls. Raise an infra failure.
+      with self.m.step.nest(f'confirm ({project} {branch})') as s:
+        output = _check_branch(test_data={
+            'revision': commit,
+            'ref': f'refs/heads/{branch}'
+        })
+        if output.get('revision') == commit:
+          return output.get('ref')
+        elif output.get('revision') and output.get('revision') != commit:
+          s.step_text = f'{project}/{branch} was not cut at {commit}. Abort!'
+        else:
+          s.step_text = str(e)
+        s.status = self.m.step.EXCEPTION
 
   def create_gerrit_tag(self, host, project, tag, commit, **kwargs):
     """Creates a new tag at the given commit.

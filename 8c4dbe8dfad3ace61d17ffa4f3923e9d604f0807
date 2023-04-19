@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8306cca6_6454f190",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-04-19T14:14:03Z",
+      "side": 1,
+      "message": "Can this be moved inside the build_context so that the behaviour is consistent for ninja and siso?",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 14
+      },
+      "revId": "8c4dbe8dfad3ace61d17ffa4f3923e9d604f0807",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

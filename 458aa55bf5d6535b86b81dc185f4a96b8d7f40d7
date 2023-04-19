@@ -48,6 +48,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d2623eb_4f4d51f3",
+        "filename": "gerrit_client.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2023-04-19T18:11:30Z",
+      "side": 1,
+      "message": "Didn\u0027t realize the situation with the 409, this makes sense.",
+      "parentUuid": "eb079c63_eb3f45ed",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 53
+      },
+      "revId": "458aa55bf5d6535b86b81dc185f4a96b8d7f40d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6eb5d299_b4bfa08c",
@@ -97,6 +121,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "072f6929_1bb3aefc",
+        "filename": "gerrit_client.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2023-04-19T18:11:30Z",
+      "side": 1,
+      "message": "No changes were made.",
+      "parentUuid": "cd29cc1e_a7c619a0",
+      "range": {
+        "startLine": 134,
+        "startChar": 4,
+        "endLine": 134,
+        "endChar": 50
+      },
+      "revId": "458aa55bf5d6535b86b81dc185f4a96b8d7f40d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9a59bb5e_906d0171",
         "filename": "gerrit_client.py",
         "patchSetId": 10
@@ -132,6 +180,30 @@
       "side": 1,
       "message": "I can extend the timeout but I think it does not solve the issue. I suspect this is from Gerrit backend. If you see the logs[1], seems sometimes, even without a timeout, we still got the 409 from the first attempt(i will update my CL description). \n\n[1] https://logs.chromium.org/logs/chrome/buildbucket/cr-buildbucket/8783603036772498481/+/u/Branch_DEPS_hierarchy/gerrit_create_gerrit_branch__angle_angle.git_refs_heads_chromium_5716_/stdout",
       "parentUuid": "9a59bb5e_906d0171",
+      "range": {
+        "startLine": 138,
+        "startChar": 6,
+        "endLine": 138,
+        "endChar": 65
+      },
+      "revId": "458aa55bf5d6535b86b81dc185f4a96b8d7f40d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "718ac029_0537c175",
+        "filename": "gerrit_client.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2023-04-19T18:11:30Z",
+      "side": 1,
+      "message": "Oh, I didn\u0027t realize that a 409 might be returned even if the branch didn\u0027t already exist, I thought the 409s were because the branch had been created by a previous failed run.",
+      "parentUuid": "6c38b696_b1eddb85",
       "range": {
         "startLine": 138,
         "startChar": 6,

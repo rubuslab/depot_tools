@@ -16,6 +16,24 @@
       "message": "I think it would make sense to push this logic change down into gerrit_client/gerrit_utils rather than the recipe.",
       "revId": "b7d4903a59fb5ea96a29e33cac3a6d2f5bd11708",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "415329e9_f00023fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2023-04-19T00:33:34Z",
+      "side": 1,
+      "message": "Uploaded the gerrit_client version of the change. I am a little unsure that we need this for all depot_tool users. That is the reason I committed to recipe first.",
+      "parentUuid": "dd7e521e_d97f469f",
+      "revId": "b7d4903a59fb5ea96a29e33cac3a6d2f5bd11708",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

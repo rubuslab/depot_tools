@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb41ecaf_7850f52b",
+        "filename": "autosiso.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T23:26:05Z",
+      "side": 1,
+      "message": "Thanks. I removed it.",
+      "parentUuid": "91620845_5a16b48d",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 39
+      },
+      "revId": "8c4dbe8dfad3ace61d17ffa4f3923e9d604f0807",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09ae94a7_af264240",
@@ -47,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "465442f1_84022282",
+        "filename": "autosiso.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T23:26:05Z",
+      "side": 1,
+      "message": "Good point!",
+      "parentUuid": "09ae94a7_af264240",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 44
+      },
+      "revId": "8c4dbe8dfad3ace61d17ffa4f3923e9d604f0807",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8306cca6_6454f190",
@@ -60,6 +108,30 @@
       "writtenOn": "2023-04-19T14:14:03Z",
       "side": 1,
       "message": "Can this be moved inside the build_context so that the behaviour is consistent for ninja and siso?",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 14
+      },
+      "revId": "8c4dbe8dfad3ace61d17ffa4f3923e9d604f0807",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3141da2_d65a957f",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T23:26:05Z",
+      "side": 1,
+      "message": "It seems to break some tests.\nLet me follow up it later in another CL.",
+      "parentUuid": "8306cca6_6454f190",
       "range": {
         "startLine": 22,
         "startChar": 4,

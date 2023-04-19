@@ -17,10 +17,7 @@ def main(argv):
   with reclient_helper.build_context(argv) as ret_code:
     if ret_code:
       return ret_code
-    try:
-      return ninja.main(argv)
-    except KeyboardInterrupt:
-      return 1
+    return ninja.main(argv)
 
 
 if __name__ == '__main__':

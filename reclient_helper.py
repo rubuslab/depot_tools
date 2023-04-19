@@ -138,6 +138,8 @@ def build_context(argv):
     return
   try:
     yield
+  except KeyboardInterrupt:
+    return
   finally:
     print("Shutting down reproxy...", file=sys.stderr)
     stop_reproxy(reclient_cfg, reclient_bin_dir)

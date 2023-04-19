@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d3b41ea_9142a156",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-04-19T17:45:43Z",
+      "side": 1,
+      "message": "Could you run a few led jobs against tryjobs with this change; and confirm patching on chromium/src works fine?\n\nThe CL looks good to me, but would like to be extra careful here.",
+      "revId": "93846873aa16591e1a71d391cca2dcfa88cf9122",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

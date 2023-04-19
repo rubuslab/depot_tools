@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e284f88_b6f4dec1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T23:27:13Z",
+      "side": 1,
+      "message": "Gavin, Aravind\n\nI also need an approval from depot_tools owners. \nPTAL.",
+      "revId": "0ba2a4ae628b331b4ddad69e69ddb8f0e250d6e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

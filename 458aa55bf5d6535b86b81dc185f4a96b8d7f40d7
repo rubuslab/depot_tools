@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eb079c63_eb3f45ed",
+        "filename": "gerrit_client.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2023-04-19T18:00:50Z",
+      "side": 1,
+      "message": "If so, we can not tell the users whether the branch already exists before this call or created by this call but just hit some edge 409 error.\n\nGet operation is usually fast and safe, I think if the branch is there we should avoid sending a CreateBranch request to Gerrit. It also saves the user time, not waiting for the CreateBranch request.\nWDYT?",
+      "parentUuid": "334b16f7_5ce9393d",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 53
+      },
+      "revId": "458aa55bf5d6535b86b81dc185f4a96b8d7f40d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6eb5d299_b4bfa08c",
         "filename": "gerrit_client.py",
         "patchSetId": 10
@@ -37,6 +61,30 @@
       "writtenOn": "2023-04-19T16:52:35Z",
       "side": 1,
       "message": "asserts should really only be used for validating inputs, not reporting errors in operations.",
+      "range": {
+        "startLine": 134,
+        "startChar": 4,
+        "endLine": 134,
+        "endChar": 50
+      },
+      "revId": "458aa55bf5d6535b86b81dc185f4a96b8d7f40d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd29cc1e_a7c619a0",
+        "filename": "gerrit_client.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2023-04-19T18:00:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6eb5d299_b4bfa08c",
       "range": {
         "startLine": 134,
         "startChar": 4,
@@ -60,6 +108,30 @@
       "writtenOn": "2023-04-19T16:52:35Z",
       "side": 1,
       "message": "Do we maybe just need a longer timeout on the create branch operation rather than having to issue another call to check if the previous one failed? If we need to do the get gerrit branch call, can we limit it to the case where the request timed out so that we\u0027re not issuing unnecessary calls if there was an actual error with the create branch call?",
+      "range": {
+        "startLine": 138,
+        "startChar": 6,
+        "endLine": 138,
+        "endChar": 65
+      },
+      "revId": "458aa55bf5d6535b86b81dc185f4a96b8d7f40d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c38b696_b1eddb85",
+        "filename": "gerrit_client.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2023-04-19T18:00:50Z",
+      "side": 1,
+      "message": "I can extend the timeout but I think it does not solve the issue. I suspect this is from Gerrit backend. If you see the logs[1], seems sometimes, even without a timeout, we still got the 409 from the first attempt(i will update my CL description). \n\n[1] https://logs.chromium.org/logs/chrome/buildbucket/cr-buildbucket/8783603036772498481/+/u/Branch_DEPS_hierarchy/gerrit_create_gerrit_branch__angle_angle.git_refs_heads_chromium_5716_/stdout",
+      "parentUuid": "9a59bb5e_906d0171",
       "range": {
         "startLine": 138,
         "startChar": 6,

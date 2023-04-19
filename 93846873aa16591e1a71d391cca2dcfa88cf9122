@@ -16,6 +16,24 @@
       "message": "Could you run a few led jobs against tryjobs with this change; and confirm patching on chromium/src works fine?\n\nThe CL looks good to me, but would like to be extra careful here.",
       "revId": "93846873aa16591e1a71d391cca2dcfa88cf9122",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f04f13d1_e2e16c37",
+        "filename": "recipes/recipe_modules/bot_update/resources/bot_update.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-19T19:20:28Z",
+      "side": 1,
+      "message": "infra try jobs ran last night:\nrecipes infra-try commits the patch\nhttps://logs.chromium.org/logs/infra/led/jojwang_google.com/3af541605bbff27202b15f15d72472adf4b045e7f7853e96359e010d49f392df/+/u/bot_update/stdout\nhttps://logs.chromium.org/logs/infra/led/jojwang_google.com/a5abfe4d0f31b58954d0dda6853c34fce22b1686edde4156d08f79000ab96684/+/u/bot_update/stdout\nwe use `git reset --hard refs/remotes/origin/main`\n\ninfra-try-frontend recipe never commits their patches:\nhttps://logs.chromium.org/logs/infra/led/jojwang_google.com/d3ff57a736e0ff719ec5a96ef330257d695fb3afcae49e500e7220133aea3f9d/+/u/bot_update/stdout\nno commit from previous patch, so no upstream, `git reset --hard HEAD` is used which should clean any uncommitted changes from previous run\u0027s applied patch.\n\n\nchormium_src led run (applying patch to chromium/src)\nhttps://logs.chromium.org/logs/chrome/led/jojwang_google.com/994832cfa47623c99426a1f25feab9482ed057e996c18b65a6499aeed4edd629/+/u/bot_update/stdout\n\nnot really impacted here because in all recipes i\u0027ve seen, root repo(chromium/src) is made unmanaged, which returns early here: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gclient_scm.py;l\u003d672?q\u003d%22unmanaged%20solution%22\u0026sq\u003d\u0026ss\u003dchromium%2Fchromium%2Ftools%2Fdepot_tools\n\nchromium_src project led run (applying patch to v8, chromium/src is still unmanaged)\nhttps://logs.chromium.org/logs/chrome/led/jojwang_google.com/0efab254eebdfc41babc549f9287737ceb6912c4eb03c38703d3bfe305599132/+/u/bot_update/stdout\nalso not impacted, HEAD is in a detached state (assuming previous runs create/handle patch commits differently), no upstream, we force checkout the revision from DEPS.",
+      "parentUuid": "8d3b41ea_9142a156",
+      "revId": "93846873aa16591e1a71d391cca2dcfa88cf9122",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -183,6 +183,40 @@
       },
       "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2dec18f5_ea2d8f08",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-04-19T03:53:47Z",
+      "side": 1,
+      "message": "better to check \u0027use_remoteexec\u003dtrue` in args.gn file?",
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7ac9b8a_5c2c9df3",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-04-19T03:53:47Z",
+      "side": 1,
+      "message": "no need to return after yield ?",
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

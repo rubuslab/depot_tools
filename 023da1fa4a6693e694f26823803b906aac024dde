@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7fbec5e_d892cdd9",
+        "filename": "reclient_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T23:59:40Z",
+      "side": 1,
+      "message": "@bentekkie@google.com\nIf it catches KeyboardInterrupt here, autosiso.py/ninja_reclient.py don\u0027t return exit code 1.",
+      "range": {
+        "startLine": 141,
+        "startChar": 2,
+        "endLine": 142,
+        "endChar": 10
+      },
+      "revId": "023da1fa4a6693e694f26823803b906aac024dde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

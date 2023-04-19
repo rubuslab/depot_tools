@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "09ae94a7_af264240",
+        "filename": "autosiso.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-04-19T16:01:32Z",
+      "side": 1,
+      "message": "You should rather call `siso.main(argv)` directly, like we call `ninja.main(argv)` in ninja_reclient.py to avoid another python process",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 44
+      },
+      "revId": "8c4dbe8dfad3ace61d17ffa4f3923e9d604f0807",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8306cca6_6454f190",
         "filename": "ninja_reclient.py",
         "patchSetId": 8

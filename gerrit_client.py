@@ -112,6 +112,10 @@ def CMDbranch(parser, args):
   """Create a branch in a gerrit project."""
   parser.add_option('--branch', dest='branch', help='branch name')
   parser.add_option('--commit', dest='commit', help='commit hash')
+  parser.add_option('--allow-existent-branch',
+                    action='store_true',
+                    help=('Accept that the branch alread exists as long as the'
+                          ' branch head points the given commit'))
 
   (opt, args) = parser.parse_args(args)
   assert opt.project, "--project not defined"
@@ -121,7 +125,24 @@ def CMDbranch(parser, args):
   project = quote_plus(opt.project)
   host = urlparse.urlparse(opt.host).netloc
   branch = quote_plus(opt.branch)
-  result = gerrit_util.CreateGerritBranch(host, project, branch, opt.commit)
+  result = gerrit_util.GetGerritBranch(host, project, branch)
+  if result and result.get('ref'):
+    logging.info('branch %s already exists', branch)
+    if opt.allow_existent_branch:
+      assert result.get('revision') == opt.commit, (
+          'Branch already exists but '
+          'the branch head is not at the given commit')
+  else:
+    try:
+      result = gerrit_util.CreateGerritBranch(host, project, branch, opt.commit)
+    except gerrit_util.GerritError as e:
+      result = gerrit_util.GetGerritBranch(host, project, branch)
+      assert result is not None, str(e)
+      # If reached here, we hit a real conflict error, because the
+      # branch just created is pointing a different commit.
+      assert result.get('revision') == opt.commit, (
+          'Conflict: branch already exists but '
+          'the branch head is not at the given commit')
   logging.info(result)
   write_result(result, opt)
 

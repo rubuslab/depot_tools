@@ -16,6 +16,24 @@
       "message": "So many flags :(... What\u0027s the status on making these behaviors default and/or integrating bot_update stuff directly into gclient? The only reason bot_update exists is due to legacy about how gclient was distributed on bots during the svn-\u003egit migration (almost 10 years ago now).",
       "revId": "fd9cea79c188187f3edb52d909c7a55a04f998c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b89e9e3_27e0f7a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-04-19T19:59:54Z",
+      "side": 1,
+      "message": "is this even on our backlog?\ni always saw it as a pipe dream atm",
+      "parentUuid": "29cb66e4_18ba4a1a",
+      "revId": "fd9cea79c188187f3edb52d909c7a55a04f998c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

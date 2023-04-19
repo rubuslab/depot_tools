@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca448800_49176d70",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56f2e985_32a3fbee",
+      "range": {
+        "startLine": 4,
+        "startChar": 15,
+        "endLine": 4,
+        "endChar": 21
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80140921_367e6f69",
@@ -93,6 +117,78 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7aab1aec_d1bde4e0",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80140921_367e6f69",
+      "range": {
+        "startLine": 7,
+        "startChar": 45,
+        "endLine": 7,
+        "endChar": 53
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9c4853a_9c6f15f1",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29f23d93_514dacf1",
+      "range": {
+        "startLine": 7,
+        "startChar": 25,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "326ac9f1_b7b6a510",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d27d160_cce70c4b",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 18
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21431148_ec938352",
@@ -106,6 +202,30 @@
       "writtenOn": "2023-04-19T02:16:14Z",
       "side": 1,
       "message": "relative?",
+      "range": {
+        "startLine": 61,
+        "startChar": 9,
+        "endLine": 61,
+        "endChar": 12
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dce8e231_c4d23414",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "Renamed it to just `find_ninja_out_dir`.",
+      "parentUuid": "21431148_ec938352",
       "range": {
         "startLine": 61,
         "startChar": 9,
@@ -139,6 +259,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa1a1b79_c053b0c7",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f060d786_e080a9a1",
+      "range": {
+        "startLine": 62,
+        "startChar": 34,
+        "endLine": 62,
+        "endChar": 39
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93eb490f_bc8cbe33",
@@ -152,6 +296,30 @@
       "writtenOn": "2023-04-19T02:16:14Z",
       "side": 1,
       "message": "period?",
+      "range": {
+        "startLine": 75,
+        "startChar": 56,
+        "endLine": 75,
+        "endChar": 64
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0765d914_ec49ca71",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93eb490f_bc8cbe33",
       "range": {
         "startLine": 75,
         "startChar": 56,
@@ -185,6 +353,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bbba02a_8298d116",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "As we are starting developer dogfooding, I will remove the comment.",
+      "parentUuid": "233b2b51_2f2c78c5",
+      "range": {
+        "startLine": 119,
+        "startChar": 10,
+        "endLine": 119,
+        "endChar": 17
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2dec18f5_ea2d8f08",
@@ -202,6 +394,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "54beec6f_6f84119a",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "Since this is reclient_helper, it\u0027s expected to have `use_remoteexec\u003dtrue`. \nI will add `use_remoteexec\u003dtrue` check at a higher layer.",
+      "parentUuid": "2dec18f5_ea2d8f08",
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b7ac9b8a_5c2c9df3",
@@ -215,6 +425,24 @@
       "writtenOn": "2023-04-19T03:53:47Z",
       "side": 1,
       "message": "no need to return after yield ?",
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6094b94f_58354748",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-19T04:23:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7ac9b8a_5c2c9df3",
       "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

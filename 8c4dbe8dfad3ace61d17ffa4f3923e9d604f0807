@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "91620845_5a16b48d",
+        "filename": "autosiso.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-04-19T14:18:15Z",
+      "side": 1,
+      "message": "Do you intend to keep this set to false even after we fix the performance issues and re-enable? If not then this is not required\nWe have already disabled this for now in reproxy.cfg.template https://chromium-review.googlesource.com/c/chromium/src/+/4443307.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 39
+      },
+      "revId": "8c4dbe8dfad3ace61d17ffa4f3923e9d604f0807",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8306cca6_6454f190",
         "filename": "ninja_reclient.py",
         "patchSetId": 8

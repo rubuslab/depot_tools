@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56f2e985_32a3fbee",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-19T02:16:14Z",
+      "side": 1,
+      "message": "provides?",
+      "range": {
+        "startLine": 4,
+        "startChar": 15,
+        "endLine": 4,
+        "endChar": 21
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80140921_367e6f69",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-19T02:16:14Z",
+      "side": 1,
+      "message": "interrupt",
+      "range": {
+        "startLine": 7,
+        "startChar": 45,
+        "endLine": 7,
+        "endChar": 53
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d27d160_cce70c4b",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-19T02:16:14Z",
+      "side": 1,
+      "message": "e.g.?",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 18
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29f23d93_514dacf1",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-19T02:16:14Z",
+      "side": 1,
+      "message": "completion?",
+      "range": {
+        "startLine": 7,
+        "startChar": 25,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21431148_ec938352",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-19T02:16:14Z",
+      "side": 1,
+      "message": "relative?",
+      "range": {
+        "startLine": 61,
+        "startChar": 9,
+        "endLine": 61,
+        "endChar": 12
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f060d786_e080a9a1",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-19T02:16:14Z",
+      "side": 1,
+      "message": "allows?",
+      "range": {
+        "startLine": 62,
+        "startChar": 34,
+        "endLine": 62,
+        "endChar": 39
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93eb490f_bc8cbe33",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-19T02:16:14Z",
+      "side": 1,
+      "message": "period?",
+      "range": {
+        "startLine": 75,
+        "startChar": 56,
+        "endLine": 75,
+        "endChar": 64
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "233b2b51_2f2c78c5",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-04-19T02:16:14Z",
+      "side": 1,
+      "message": "April or March?",
+      "range": {
+        "startLine": 119,
+        "startChar": 10,
+        "endLine": 119,
+        "endChar": 17
+      },
+      "revId": "4e06004fbf204bc6dc1612f3e32f03e0b7946d1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

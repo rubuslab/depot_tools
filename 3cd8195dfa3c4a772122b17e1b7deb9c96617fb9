@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "360e3728_bf49017e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-20T07:29:47Z",
+      "side": 1,
+      "message": "(No auto-submitting at the dogfooding start time...)",
+      "revId": "3cd8195dfa3c4a772122b17e1b7deb9c96617fb9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

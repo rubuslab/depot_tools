@@ -16,6 +16,23 @@
       "message": "Looks good, but I\u0027m not an owner in depot_tools.",
       "revId": "7ef626839205ca763eeed4d4a2b3c9412ffea87e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48d3f768_5c259718",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1554177
+      },
+      "writtenOn": "2023-04-20T17:17:22Z",
+      "side": 1,
+      "message": "thanks for the quick review!!!",
+      "revId": "7ef626839205ca763eeed4d4a2b3c9412ffea87e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

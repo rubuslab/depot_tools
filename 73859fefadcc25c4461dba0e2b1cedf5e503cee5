@@ -104,6 +104,24 @@
       "parentUuid": "fe42cc43_09ee1e84",
       "revId": "73859fefadcc25c4461dba0e2b1cedf5e503cee5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "963a15ac_acf3588d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-04-20T23:31:09Z",
+      "side": 1,
+      "message": "Thanks. Understood. I hope it drives the error and warning drive the error count to zero.",
+      "parentUuid": "b8f86d3a_24005dee",
+      "revId": "73859fefadcc25c4461dba0e2b1cedf5e503cee5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

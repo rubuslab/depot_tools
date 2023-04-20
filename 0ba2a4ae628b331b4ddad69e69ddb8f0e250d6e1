@@ -16,6 +16,23 @@
       "message": "Gavin, Aravind\n\nI also need an approval from depot_tools owners. \nPTAL.",
       "revId": "0ba2a4ae628b331b4ddad69e69ddb8f0e250d6e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6644d50d_9416a9f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-20T02:45:07Z",
+      "side": 1,
+      "message": "Hi Source team,\n\nCould anybody help unblock adding the new files to depot_tools?\nThis is a high priority task for Browser Build team.\n\nThanks,",
+      "revId": "0ba2a4ae628b331b4ddad69e69ddb8f0e250d6e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

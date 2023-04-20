@@ -86,6 +86,24 @@
       "parentUuid": "d3c3749b_d7d795c7",
       "revId": "73859fefadcc25c4461dba0e2b1cedf5e503cee5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8f86d3a_24005dee",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-04-20T23:22:30Z",
+      "side": 1,
+      "message": "\u003e We could try with just the updated warning for now if you\u0027d prefer, but I know that warnings often get ignored.\n\nI do agree that warnings get ignored a lot of times but I wasn\u0027t sure if it was a good idea to hardcode this specific case. What if I use `Fix:` or `Fixing:` instead of `Fixed:`? We shouldn\u0027t be hard coding all the cases right?\n\n\u003e \"Fixes: \" was used seven times in the last 10,000 commits\n\nDoesn\u0027t seem like much to be to hard code this specific case. However, I\u0027m not strongly against this so I\u0027ll go ahead and approve the CL.",
+      "parentUuid": "fe42cc43_09ee1e84",
+      "revId": "73859fefadcc25c4461dba0e2b1cedf5e503cee5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

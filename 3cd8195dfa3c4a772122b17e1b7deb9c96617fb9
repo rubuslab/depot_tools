@@ -16,6 +16,40 @@
       "message": "(No auto-submitting at the dogfooding start time...)",
       "revId": "3cd8195dfa3c4a772122b17e1b7deb9c96617fb9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd6f45c2_a746a085",
+        "filename": "autosiso.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-04-20T07:59:34Z",
+      "side": 1,
+      "message": "Siso/recient builds ?",
+      "revId": "3cd8195dfa3c4a772122b17e1b7deb9c96617fb9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46878fae_e9630712",
+        "filename": "autosiso.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-04-20T07:59:34Z",
+      "side": 1,
+      "message": "stderr ?",
+      "revId": "3cd8195dfa3c4a772122b17e1b7deb9c96617fb9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

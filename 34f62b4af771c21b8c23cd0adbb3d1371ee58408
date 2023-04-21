@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bdd785c_07e213a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2023-04-21T06:45:41Z",
+      "side": 1,
+      "message": "Does this description match the code? The code doesn\u0027t change the conditions under which vpython3 is executed at all (it was always used before and still is now). The code change makes the condition under which the additional vpython process is run, more restrictive.",
+      "range": {
+        "startLine": 9,
+        "startChar": 29,
+        "endLine": 9,
+        "endChar": 64
+      },
+      "revId": "34f62b4af771c21b8c23cd0adbb3d1371ee58408",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

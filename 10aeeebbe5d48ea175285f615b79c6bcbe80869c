@@ -16,6 +16,23 @@
       "message": "Instead of revert, maybe land the fix:\nhttps://crrev.com/c/4457528\n\nI can\u0027t land either due to owners.",
       "revId": "10aeeebbe5d48ea175285f615b79c6bcbe80869c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac723713_8aa9af5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2023-04-21T16:06:06Z",
+      "side": 1,
+      "message": "This can be abandoned since the fix was landed, right?",
+      "revId": "10aeeebbe5d48ea175285f615b79c6bcbe80869c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

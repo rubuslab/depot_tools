@@ -22,6 +22,30 @@
       },
       "revId": "49fcb707ab8aca99b6b1b7539c3dd446c60c5b1c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d57bdc5b_200cbd2a",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-04-21T16:41:24Z",
+      "side": 1,
+      "message": "Yes, this is because each reproxy instance is scoped to a single output directory as we do not support multiple reproxy instances using the same cache directory at the same time which could happen if we had a shared cache dir. The reproxy.creds file is very small so I dont think this is a problem",
+      "parentUuid": "f955281b_d247add3",
+      "range": {
+        "startLine": 101,
+        "startChar": 6,
+        "endLine": 101,
+        "endChar": 32
+      },
+      "revId": "49fcb707ab8aca99b6b1b7539c3dd446c60c5b1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

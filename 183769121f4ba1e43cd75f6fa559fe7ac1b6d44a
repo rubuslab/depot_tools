@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2a5dfcd_f9179739",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000175
+      },
+      "writtenOn": "2023-04-21T05:50:31Z",
+      "side": 1,
+      "message": "This roll causes https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1435227",
+      "revId": "183769121f4ba1e43cd75f6fa559fe7ac1b6d44a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

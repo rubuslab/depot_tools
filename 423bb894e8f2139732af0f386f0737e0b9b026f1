@@ -16,6 +16,23 @@
       "message": "Let me check if it is ok",
       "revId": "423bb894e8f2139732af0f386f0737e0b9b026f1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d841bd2_bad7faf4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000175
+      },
+      "writtenOn": "2023-04-21T06:03:40Z",
+      "side": 1,
+      "message": "Locally reverting the CL (and syncing cipd_bin) fixes the issue. Let me continue the revert.",
+      "revId": "423bb894e8f2139732af0f386f0737e0b9b026f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

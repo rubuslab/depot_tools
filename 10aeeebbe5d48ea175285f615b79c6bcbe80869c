@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee631d1a_181c858a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2023-04-21T06:42:05Z",
+      "side": 1,
+      "message": "Instead of revert, maybe land the fix:\nhttps://crrev.com/c/4457528\n\nI can\u0027t land either due to owners.",
+      "revId": "10aeeebbe5d48ea175285f615b79c6bcbe80869c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

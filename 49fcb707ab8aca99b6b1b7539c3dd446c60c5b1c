@@ -46,6 +46,30 @@
       },
       "revId": "49fcb707ab8aca99b6b1b7539c3dd446c60c5b1c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8b4c474_c2a0534c",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-04-24T00:52:51Z",
+      "side": 1,
+      "message": "I see. This means developers would have to authenticate for each build directory.\nIMO, developers should reuse the same `reproxy.creds`. \n(The size of `reproxy.creds` is not a problem. )\n\nCan only `reproxy.creds` be stored in another directory?\nWDYT?",
+      "parentUuid": "d57bdc5b_200cbd2a",
+      "range": {
+        "startLine": 101,
+        "startChar": 6,
+        "endLine": 101,
+        "endChar": 32
+      },
+      "revId": "49fcb707ab8aca99b6b1b7539c3dd446c60c5b1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

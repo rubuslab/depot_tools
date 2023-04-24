@@ -538,6 +538,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       return
     url = None
     scm = self.CreateSCM()
+    if scm.name == 'cipd':
+      revision = scm.revinfo(None, None, None)
+      package = self.name.split(":")[1]
+      url = '%s/p/%s/+/%s' % (scm.GetActualRemoteURL(None), package, revision)
     if os.path.isdir(scm.checkout_path):
       revision = scm.revinfo(None, None, None)
       url = '%s@%s' % (gclient_utils.SplitUrlRevision(self.url)[0], revision)

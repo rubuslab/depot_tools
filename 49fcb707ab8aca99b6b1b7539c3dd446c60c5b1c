@@ -70,6 +70,30 @@
       },
       "revId": "49fcb707ab8aca99b6b1b7539c3dd446c60c5b1c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f352c61_3c71bb70",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-04-24T12:51:52Z",
+      "side": 1,
+      "message": "`reproxy.creds` does not prevent users from having to reauthenticate. It just stores a token for up to 1 hour so that we dont have to call `gcloud auth print-access-token` or the loas cred exchange as often, this saves 1-5s on subsequent builds. \nIf the user is already logged in and their reauth has not expired `gcloud auth print-access-token` or the loas cred exchange will just return the access token with no auth flow.\nSo each for each build directory `gcloud auth print-access-token` or the loas cred exchange will need to be run once per hour. This should not be a problem. \nThe reauth flow is only triggered by gcloud when we call `gcloud auth print-access-token` AND reauth has already expired (so after 20h), for loas we call `gcert` only if the credential exchange returns an auth error.",
+      "parentUuid": "b8b4c474_c2a0534c",
+      "range": {
+        "startLine": 101,
+        "startChar": 6,
+        "endLine": 101,
+        "endChar": 32
+      },
+      "revId": "49fcb707ab8aca99b6b1b7539c3dd446c60c5b1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

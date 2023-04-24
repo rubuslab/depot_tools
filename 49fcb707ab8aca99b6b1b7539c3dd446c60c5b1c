@@ -94,6 +94,30 @@
       },
       "revId": "49fcb707ab8aca99b6b1b7539c3dd446c60c5b1c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef20949b_9cf20ea0",
+        "filename": "reclient_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-04-24T12:54:33Z",
+      "side": 1,
+      "message": "My concern with having `reproxy.creds` in another directory is that would require yet another flag for reproxy and yet another place where reproxy artifacts can be found. Also we would need to refactor our logic to use some file locks to ensure that multiple reproxy instances could read/write to the same `reproxy.creds` file\nI feel that is overkill.",
+      "parentUuid": "8f352c61_3c71bb70",
+      "range": {
+        "startLine": 101,
+        "startChar": 6,
+        "endLine": 101,
+        "endChar": 32
+      },
+      "revId": "49fcb707ab8aca99b6b1b7539c3dd446c60c5b1c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

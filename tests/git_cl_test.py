@@ -1518,6 +1518,16 @@ class TestGitCl(unittest.TestCase):
               return_value='chromium-review.googlesource.com')
   @mock.patch('git_cl.Changelist.GetRemoteBranch',
               return_value=('origin', 'refs/remotes/origin/main'))
+  @mock.patch('git_cl.UploadAllSquashed')
+  def test_upload_all_squashed_dependencies(self, mockUploadAllSquashed):
+    git_cl.UploadAllSquashedDependencies(current_cl, options, orig_args)
+
+    mockUploadAllSquashed
+
+  @mock.patch('git_cl.Changelist.GetGerritHost',
+              return_value='chromium-review.googlesource.com')
+  @mock.patch('git_cl.Changelist.GetRemoteBranch',
+              return_value=('origin', 'refs/remotes/origin/main'))
   @mock.patch('git_cl.Changelist.PostUploadUpdates')
   @mock.patch('git_cl.Changelist._RunGitPushWithTraces')
   @mock.patch('git_cl._UploadAllPrecheck')
@@ -1527,6 +1537,7 @@ class TestGitCl(unittest.TestCase):
                                            mockRunGitPush,
                                            mockPostUploadUpdates, *_mocks):
     # Set up
+    current_cl = git_cl.Changelist()  # Does not matter, not used, only passed.
     cls = [
         git_cl.Changelist(branchref='refs/heads/current-branch', issue='12345'),
         git_cl.Changelist(branchref='refs/heads/upstream-branch')
@@ -1568,7 +1579,7 @@ class TestGitCl(unittest.TestCase):
         'googlesource.com/c/chromium/circus/clown/+/1234 stonks')
 
     # Call
-    git_cl.UploadAllSquashed(options, orig_args)
+    git_cl.UploadAllSquashed(current_cl, options, orig_args)
 
     # Asserts
     mockCherryPickCommit.assert_called_once_with(options,
@@ -1597,6 +1608,7 @@ class TestGitCl(unittest.TestCase):
   def test_upload_all_squashed(self, mockSquashedCommit, mockUploadAllPrecheck,
                                mockRunGitPush, mockPostUploadUpdates, *_mocks):
     # Set up
+    current_cl = git_cl.Changelist()  # Does not matter, not used, only passed.
     cls = [
         git_cl.Changelist(branchref='refs/heads/current-branch', issue='12345'),
         git_cl.Changelist(branchref='refs/heads/upstream-branch')
@@ -1650,7 +1662,7 @@ class TestGitCl(unittest.TestCase):
         'googlesource.com/c/chromium/circus/clown/+/1234 stonks')
 
     # Call
-    git_cl.UploadAllSquashed(options, orig_args)
+    git_cl.UploadAllSquashed(current_cl, options, orig_args)
 
     # Asserts
     self.maxDiff = None
@@ -1693,6 +1705,7 @@ class TestGitCl(unittest.TestCase):
                                                 mockRunGitPush,
                                                 mockPostUploadUpdates,
                                                 mockExternalChanges, *_mocks):
+    current_cl = git_cl.Changelist()  # Does not matter, not used, only passed.
     options = optparse.Values()
     options.send_mail = options.private = False
     options.squash = True
@@ -1739,7 +1752,7 @@ class TestGitCl(unittest.TestCase):
     mockExternalChanges.return_value = 'external-commit'
 
     # Call
-    git_cl.UploadAllSquashed(options, orig_args)
+    git_cl.UploadAllSquashed(current_cl, options, orig_args)
 
     # Asserts
     self.assertEqual(mockSquashedCommit.mock_calls, [
@@ -1764,7 +1777,7 @@ class TestGitCl(unittest.TestCase):
     mockExternalChanges.return_value = None
 
     # Call
-    git_cl.UploadAllSquashed(options, orig_args)
+    git_cl.UploadAllSquashed(current_cl, options, orig_args)
 
     # Asserts
     self.assertEqual(mockSquashedCommit.mock_calls, [
@@ -1791,6 +1804,7 @@ class TestGitCl(unittest.TestCase):
       mockFetchUpstreamTuple, mockGitGetBranchConfigValue, mockRunGitSilent,
       mockRunGit, *_mocks):
 
+    current_cl = git_cl.Changelist()  # Does not matter, not used, only passed.
     mockGetRemoteBranch.return_value = ('origin', 'refs/remotes/origin/main')
     branches = [
         'current', 'upstream3', 'blank3', 'blank2', 'upstream2', 'blank1',
@@ -1846,7 +1860,7 @@ class TestGitCl(unittest.TestCase):
     self.mockGit.config['branch.upstream1.%s' %
                         git_cl.LAST_UPLOAD_HASH_CONFIG_KEY] = 'commit1.5'
 
-    cls, cherry_pick = git_cl._UploadAllPrecheck(options, orig_args)
+    cls, cherry_pick = git_cl._UploadAllPrecheck(current_cl, options, orig_args)
     self.assertFalse(cherry_pick)
     mockAskForData.assert_called_once_with(
         "\noptions ['--preserve-tryjobs', '--chicken'] will be used for all "
@@ -1872,6 +1886,7 @@ class TestGitCl(unittest.TestCase):
       mockFetchUpstreamTuple, mockGitGetBranchConfigValue, mockRunGitSilent,
       mockRunGit, *_mocks):
 
+    current_cl = git_cl.Changelist()  # Does not matter, not used, only passed.
     mockGetRemoteBranch.return_value = ('origin', 'refs/remotes/origin/main')
     branches = ['current', 'upstream3', 'main']
     mockGetBranchRef.side_effect = (
@@ -1896,7 +1911,7 @@ class TestGitCl(unittest.TestCase):
     options.cherry_pick_stacked = True
     orig_args = []
     with self.assertRaises(SystemExitMock):
-      git_cl._UploadAllPrecheck(options, orig_args)
+      git_cl._UploadAllPrecheck(current_cl, options, orig_args)
 
     # Test case: User does not require cherry picking
     options.cherry_pick_stacked = False
@@ -1908,7 +1923,7 @@ class TestGitCl(unittest.TestCase):
     mockFetchUpstreamTuple.side_effect = [('.', 'refs/heads/upstream3'),
                                           ('origin', 'refs/heads/main')]
 
-    cls, cherry_pick = git_cl._UploadAllPrecheck(options, orig_args)
+    cls, cherry_pick = git_cl._UploadAllPrecheck(current_cl, options, orig_args)
     self.assertFalse(cherry_pick)
     self.assertEqual(len(cls), 2)
     mockAskForData.assert_not_called()
@@ -1923,7 +1938,7 @@ class TestGitCl(unittest.TestCase):
     mockFetchUpstreamTuple.side_effect = [('.', 'refs/heads/upstream3'),
                                           ('origin', 'refs/heads/main')]
 
-    cls, cherry_pick = git_cl._UploadAllPrecheck(options, orig_args)
+    cls, cherry_pick = git_cl._UploadAllPrecheck(current_cl, options, orig_args)
     self.assertFalse(cherry_pick)
     self.assertEqual(len(cls), 2)
     mockAskForData.assert_called_once()
@@ -1942,6 +1957,7 @@ class TestGitCl(unittest.TestCase):
       self, mockAskForData, mockIsAncestor, mockGetBranchRef,
       mockGetCommonAncestorWithUpstream, mockFetchUpstreamTuple,
       mockGitGetBranchConfigValue, mockRunGitSilent, mockRunGit, *_mocks):
+    current_cl = git_cl.Changelist()  # Does not matter, not used, only passed.
     branches = ['current', 'upstream3']
     mockGetBranchRef.side_effect = ['refs/heads/%s' % b for b in branches]
     mockGetCommonAncestorWithUpstream.return_value = 'commit3.5'
@@ -1964,7 +1980,7 @@ class TestGitCl(unittest.TestCase):
       options = optparse.Values()
       options.force = False
       options.cherry_pick_stacked = False
-      git_cl._UploadAllPrecheck(options, [])
+      git_cl._UploadAllPrecheck(current_cl, options, [])
 
   @mock.patch(
       'git_cl.Changelist._GerritCommitMsgHookCheck', lambda offer_removal: None)
@@ -1984,6 +2000,7 @@ class TestGitCl(unittest.TestCase):
                                         mockGitGetBranchConfigValue,
                                         mockRunGitSilent, mockRunGit, *_mocks):
 
+    current_cl = git_cl.Changelist()  # Does not matter, not used, only passed.
     options = optparse.Values()
     options.force = False
     options.cherry_pick_stacked = False
@@ -2020,7 +2037,7 @@ class TestGitCl(unittest.TestCase):
     mockGetCommonAncestorWithUpstream.side_effect = ['commit3.5', 'commit0.5']
     mockFetchUpstreamTuple.side_effect = [('.', 'refs/heads/upstream3'),
                                           ('origin', 'refs/heads/main')]
-    cls, cherry_pick = git_cl._UploadAllPrecheck(options, orig_args)
+    cls, cherry_pick = git_cl._UploadAllPrecheck(current_cl, options, orig_args)
     self.assertTrue(cherry_pick)
     self.assertEqual(len(cls), 2)
     mockAskForData.assert_not_called()
@@ -2035,7 +2052,7 @@ class TestGitCl(unittest.TestCase):
     mockGetCommonAncestorWithUpstream.side_effect = ['commit3.5', 'commit0.5']
     mockFetchUpstreamTuple.side_effect = [('.', 'refs/heads/upstream3'),
                                           ('origin', 'refs/heads/main')]
-    cls, cherry_pick = git_cl._UploadAllPrecheck(options, orig_args)
+    cls, cherry_pick = git_cl._UploadAllPrecheck(current_cl, options, orig_args)
     self.assertFalse(cherry_pick)
     self.assertEqual(len(cls), 2)
     mockAskForData.assert_not_called()
@@ -2051,7 +2068,7 @@ class TestGitCl(unittest.TestCase):
     mockGetCommonAncestorWithUpstream.side_effect = ['commit3.5', 'commit0.5']
     mockFetchUpstreamTuple.side_effect = [('.', 'refs/heads/upstream3'),
                                           ('origin', 'refs/heads/main')]
-    cls, cherry_pick = git_cl._UploadAllPrecheck(options, orig_args)
+    cls, cherry_pick = git_cl._UploadAllPrecheck(current_cl, options, orig_args)
     self.assertTrue(cherry_pick)
     self.assertEqual(len(cls), 2)
     mockAskForData.assert_called_once_with(
@@ -2078,6 +2095,7 @@ class TestGitCl(unittest.TestCase):
       mockFetchUpstreamTuple, mockGitGetBranchConfigValue, mockRunGitSilent,
       mockRunGit, *_mocks):
 
+    current_cl = git_cl.Changelist()  # Does not matter, not used, only passed.
     options = optparse.Values()
     options.force = False
     options.cherry_pick_stacked = False
@@ -2103,7 +2121,7 @@ class TestGitCl(unittest.TestCase):
     mockGitGetBranchConfigValue.return_value = 'does not matter'
 
     # Case 1: We hit the main branch
-    cls, cherry_pick = git_cl._UploadAllPrecheck(options, orig_args)
+    cls, cherry_pick = git_cl._UploadAllPrecheck(current_cl, options, orig_args)
     self.assertFalse(cherry_pick)
     self.assertEqual(len(cls), 1)
 
@@ -2112,13 +2130,7 @@ class TestGitCl(unittest.TestCase):
     # No diff for current change
     mockRunGitSilent.return_value = ''
     with self.assertRaises(SystemExitMock):
-      git_cl._UploadAllPrecheck(options, orig_args)
-
-  @mock.patch('scm.GIT.GetBranchRef', return_value=None)
-  def test_upload_all_precheck_detached_HEAD(self, mockGetBranchRef):
-
-    with self.assertRaises(SystemExitMock):
-      git_cl._UploadAllPrecheck(optparse.Values(), [])
+      git_cl._UploadAllPrecheck(current_cl, options, orig_args)
 
   @mock.patch('git_cl.RunGit')
   @mock.patch('git_cl.CMDupload')

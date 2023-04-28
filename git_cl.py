@@ -4820,15 +4820,16 @@ def CMDupload(parser, args):
     print('Depot Tools no longer sets new uploads to "WIP". Please update the\n'
           '"Set new changes to "work in progress" by default" checkbox at\n'
           'https://<host>-review.googlesource.com/settings/')
-    if options.dependencies:
-      parser.error('--dependencies is not available for this workflow.')
 
     if options.cherry_pick_stacked:
       try:
         orig_args.remove('--cherry-pick-stacked')
       except ValueError:
         orig_args.remove('--cp')
-    UploadAllSquashed(options, orig_args)
+    if options.dependencies:
+      UploadAllSquashedDependencies(cl, options, orig_args)
+    else:
+      UploadAllSquashed(cl, options, orig_args)
     return 0
 
   if options.cherry_pick_stacked:
@@ -4859,10 +4860,11 @@ def CMDupload(parser, args):
   return ret
 
 
-def UploadAllSquashed(options, orig_args):
-  # type: (optparse.Values, Sequence[str]) -> Tuple[Sequence[Changelist], bool]
-  """Uploads the current and upstream branches (if necessary)."""
-  cls, cherry_pick_current = _UploadAllPrecheck(options, orig_args)
+def UploadAllSquashed(current_cl, options, orig_args):
+  # type: (ChangeList, optparse.Values, Sequence[str]) ->
+  #     Tuple[Sequence[Changelist], bool]
+  """Uploads the current branch and upstream branches (if necessary)."""
+  cls, cherry_pick_current = _UploadAllPrecheck(current_cl, options, orig_args)
 
   # Create commits.
   uploads_by_cl = []  #type: Sequence[Tuple[Changelist, _NewUpload]]
@@ -4969,19 +4971,68 @@ def UploadAllSquashed(options, orig_args):
   return 0
 
 
-def _UploadAllPrecheck(options, orig_args):
-  # type: (optparse.Values, Sequence[str]) -> Tuple[Sequence[Changelist], bool]
+def UploadAllSquashedDependencies(cl, options, orig_args):
+  cl = Changelist()
+  current_branch = cl.GetBranch()
+  if current_branch is None:
+    DieWithError('Can\'t upload from detached HEAD state. Get on a branch!')
+
+  if options.dependencies:
+    branches = RunGit([
+        'for-each-ref', '--format=%(refname:short) %(upstream:short)',
+        'refs/heads'
+    ])
+  if not branches:
+    print('No local branches found.')
+    return 0
+
+  # Create a dictionary of all local branches to the branches that are
+  # dependent on it.
+  tracked_to_dependents = collections.defaultdict(list)
+  for b in branches.splitlines():
+    tokens = b.split()
+    if len(tokens) == 2:
+      branch_name, tracked = tokens
+      tracked_to_dependents[tracked].append(branch_name)
+
+  print()
+  print('The dependent local branches of %s are:' % current_branch)
+  leaf_branches = []
+
+  def traverse_dependents_preorder(branch, padding=''):
+    dependents_to_process = tracked_to_dependents.get(branch, [])
+    if not dependents_to_process:
+      leaf_branches.append(branch)
+      return
+
+    padding += '  '
+    for dependent in dependents_to_process:
+      print('%s%s' % (padding, dependent))
+      traverse_dependents_preorder(dependent, padding)
+
+  traverse_dependents_preorder(current_branch)
+
+  try:
+    for branch in leaf_branches:
+      print('start %s' % branch)
+      RunGit(['checkout', '-q', branch])
+      cl = Changelist()
+      print(cl.GetBranch())
+      UploadAllSquashed(cl, options, orig_args)
+  finally:
+    RunGit(['checkout', '-q', current_branch])
+
+
+def _UploadAllPrecheck(cl, options, orig_args):
+  # type: (ChangeList, optparse.Values, Sequence[str]) ->
+  #     Tuple[Sequence[Changelist], bool]
   """Checks the state of the tree and gives the user uploading options
 
   Returns: A tuple of the ordered list of changes that have new commits
       since their last upload and a boolean of whether the user wants to
       cherry-pick and upload the current branch instead of uploading all cls.
   """
-  cl = Changelist()
-  if cl.GetBranch() is None:
-    DieWithError('Can\'t upload from detached HEAD state. Get on a branch!')
-
-  branch_ref = None
+  branch_ref = cl.GetBranchRef()
   cls = []
   must_upload_upstream = False
   first_pass = True

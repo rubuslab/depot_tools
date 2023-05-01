@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2507e9e_0350a677",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4821,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2023-05-01T18:46:53Z",
+      "side": 1,
+      "message": "If public users are also affected / opted-in should we put this documentation where they can review it too?",
+      "revId": "0700cdf18232febab11b7e17e0c7da1856111154",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

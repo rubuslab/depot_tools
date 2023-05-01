@@ -91,7 +91,12 @@ def _BootstrapVpython27():
 def main():
   _CheckPythonVersion()
 
-  chromite_dir = _FindChromite(os.getcwd())
+
+  try:
+      cwd = os.getcwd()
+  except FileNotFoundError:
+      cwd = os.getenv('PWD')
+  chromite_dir = _FindChromite(cwd)
   target = os.path.basename(sys.argv[0])
   if chromite_dir is None:
     return _MissingErrorOut(target)

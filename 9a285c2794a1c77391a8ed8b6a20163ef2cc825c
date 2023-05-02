@@ -22,6 +22,30 @@
       },
       "revId": "9a285c2794a1c77391a8ed8b6a20163ef2cc825c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "153940c3_49cf0699",
+        "filename": "gerrit_util.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2023-05-02T18:11:29Z",
+      "side": 0,
+      "message": "Feel free to implement that yourself.",
+      "parentUuid": "cbddd081_864c008d",
+      "range": {
+        "startLine": 383,
+        "startChar": 19,
+        "endLine": 383,
+        "endChar": 31
+      },
+      "revId": "9a285c2794a1c77391a8ed8b6a20163ef2cc825c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

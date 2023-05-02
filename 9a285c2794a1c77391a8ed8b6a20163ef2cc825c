@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbddd081_864c008d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2023-05-02T17:54:21Z",
+      "side": 0,
+      "message": "I think we still need a global timeout for all Gerrit calls, to avoid a build like this: https://ci.chromium.org/ui/p/chrome/builders/official/win64-clang/6233/overview\n\nFor whatever gerrit steps, it should not take 10+ hours....",
+      "range": {
+        "startLine": 383,
+        "startChar": 19,
+        "endLine": 383,
+        "endChar": 31
+      },
+      "revId": "9a285c2794a1c77391a8ed8b6a20163ef2cc825c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

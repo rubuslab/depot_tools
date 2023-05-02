@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "440a2843_220e5ce8",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1611,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-02T21:02:39Z",
+      "side": 1,
+      "message": "nit: maybe `.strip()`?",
+      "range": {
+        "startLine": 1611,
+        "startChar": 15,
+        "endLine": 1611,
+        "endChar": 32
+      },
+      "revId": "5bd13e5ea6fd4ad7c75a26d019eccfdcc3702fd3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

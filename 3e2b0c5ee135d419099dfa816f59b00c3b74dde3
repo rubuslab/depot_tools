@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c90650bd_3c8f86eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1157909
+      },
+      "writtenOn": "2023-05-02T20:29:01Z",
+      "side": 1,
+      "message": "lgtm.\n\nPlease keep an eye on https://ci.chromium.org/p/chromium/builders/ci/metadata-exporter after the release",
+      "revId": "3e2b0c5ee135d419099dfa816f59b00c3b74dde3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

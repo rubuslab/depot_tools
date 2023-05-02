@@ -22,6 +22,30 @@
       },
       "revId": "18543c714bf9bb1fecc7f9f4ffa09a5f658eafa7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50e79167_c5d17bd4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1336288
+      },
+      "writtenOn": "2023-05-02T21:11:53Z",
+      "side": 1,
+      "message": "10 sec is too short for non-idempotent calls, hence we have to roll it back in https://crrev.com/c/4423859. But 5 min should cover most of the cases. If a HTTP call can not make it in 5 min, we either should retry or fail the build. Otherwise it just wastes the builder\u0027s time.\n\nIf OS team has concerns, I can extend it, but all HTTP connections should have a timeout.",
+      "parentUuid": "f8412386_ae8a24c2",
+      "range": {
+        "startLine": 10,
+        "startChar": 52,
+        "endLine": 11,
+        "endChar": 7
+      },
+      "revId": "18543c714bf9bb1fecc7f9f4ffa09a5f658eafa7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21fd6651_de0bf5a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-02T20:44:44Z",
+      "side": 1,
+      "message": "as discussed, we should hold on working on this unless we see a strong signal this is desired.",
+      "revId": "fc0d6eaf75d7253e2084e12189b48cf904f760d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00e9d82c_0ea81913",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4988,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-02T20:44:44Z",
+      "side": 1,
+      "message": "Does this work if there\u0027s additional commit on branch A that is not rebased onto D, C2 and C22? e.g.\n\n```\n  A ... A\u0027\n   \\- B\n       \\- C\n           \\- D\n    \\- B2\n       \\- C2\n       \\- C22\n    \\- C3\n```",
+      "revId": "fc0d6eaf75d7253e2084e12189b48cf904f760d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

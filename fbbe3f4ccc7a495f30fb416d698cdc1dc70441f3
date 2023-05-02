@@ -16,6 +16,24 @@
       "message": "Suggest using snake case naming for consistency with other methods",
       "revId": "fbbe3f4ccc7a495f30fb416d698cdc1dc70441f3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d822889_af7a0248",
+        "filename": "gclient_scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1599,
+      "author": {
+        "id": 1559487
+      },
+      "writtenOn": "2023-05-02T06:22:42Z",
+      "side": 1,
+      "message": "good call. done",
+      "parentUuid": "967d7094_f04a0629",
+      "revId": "fbbe3f4ccc7a495f30fb416d698cdc1dc70441f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

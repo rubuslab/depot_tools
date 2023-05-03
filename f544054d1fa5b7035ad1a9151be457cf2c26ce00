@@ -33,6 +33,23 @@
       "message": "dpranke@, can you PTAL?",
       "revId": "f544054d1fa5b7035ad1a9151be457cf2c26ce00",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7488616_6ff029f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2023-05-03T17:11:25Z",
+      "side": 1,
+      "message": "Thanks for the review adetaylor@ and sokcevic@.",
+      "revId": "f544054d1fa5b7035ad1a9151be457cf2c26ce00",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -76,8 +76,7 @@ exit /b %EXPORT_ERRORLEVEL%
 :: alternate data stream. This is equivalent to clicking the "Unblock" button
 :: in the file's properties dialog.
 echo.>"%~dp0.cipd_impl.ps1:Zone.Identifier"
-powershell -NoProfile -ExecutionPolicy RemoteSigned ^
-    -File "%~dp0.cipd_impl.ps1" ^
+powershell "%~dp0.cipd_impl.ps1" ^
     -CipdBinary "%CIPD_BINARY%" ^
     -Platform "%CIPD_PLATFORM%" ^
     -BackendURL "%CIPD_BACKEND%" ^

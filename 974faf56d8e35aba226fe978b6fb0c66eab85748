@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dabedf29_3f0a86b2",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2222,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-05-04T01:38:51Z",
+      "side": 1,
+      "message": "nit: `if not package` is the more pythonic way if you know that your variable is a string",
+      "revId": "974faf56d8e35aba226fe978b6fb0c66eab85748",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

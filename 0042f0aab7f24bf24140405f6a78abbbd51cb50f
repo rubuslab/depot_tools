@@ -18,6 +18,29 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e853e6cc_0180049e",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1306133
+      },
+      "writtenOn": "2023-05-04T20:20:09Z",
+      "side": 1,
+      "message": "for long param definitions like this you should use \"splatting\". Its a Powershell technique in which you predefined a hash table and pass it into a command as a param using a modified syntax which uses an `@` instead of a `$` to reference the variable.\n\n```\n$invoke_webrequest_params \u003d @{\n  \u0027UserAgent\u0027 \u003d $UserAgent\n  \u0027Uri\u0027 \u003d $URL\n  \u0027OutFile\u0027 \u003d $TmpPath\n  \u0027MaximumRetryCount\u0027 \u003d 3\n  \u0027RetryIntervalSec\u0027 \u003d 5\n  \u0027SslProtocol\u0027 \u003d \u0027Tls12\u0027\n}\n\nInvoke-WebRequest @invoke_webrequest_params\n```",
+      "range": {
+        "startLine": 73,
+        "startChar": 2,
+        "endLine": 75,
+        "endChar": 38
+      },
+      "revId": "0042f0aab7f24bf24140405f6a78abbbd51cb50f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "e05c929d_e57d1081",

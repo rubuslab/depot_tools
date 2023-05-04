@@ -104,6 +104,30 @@
       },
       "revId": "9666f43a2a617fde29d915c9e93dac3188da5cca",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f470bd3_b6f40cde",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3032,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-04T23:53:07Z",
+      "side": 1,
+      "message": "It\u0027s different question; and additional information is acquired (ie can\u0027t apply patch).\n\n#1 \u0027Get the latest changes and apply?\n \n vs \n \n#2 \u0027Can\u0027t apply. Do you still want to push and override the changes?\u0027\n \nanswering no to the second will just exit and user will have to figure out what to do on their own.\n\nIn ideal scenario, we\u0027d get that information upfront and just ask user once; but it\u0027s not cheap - it would slow down git cl upload.",
+      "parentUuid": "b3cff239_4cd78b0f",
+      "range": {
+        "startLine": 3032,
+        "startChar": 8,
+        "endLine": 3032,
+        "endChar": 64
+      },
+      "revId": "9666f43a2a617fde29d915c9e93dac3188da5cca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

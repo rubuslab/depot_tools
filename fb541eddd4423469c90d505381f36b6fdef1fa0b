@@ -51,6 +51,24 @@
       "message": "I don\u0027t mind this change though, if it works; I was just testing the .ps1 script from my mac for now, but was going to get a windows cloudtop to be extra sure after I thought the ps1 file was in good shape.",
       "revId": "fb541eddd4423469c90d505381f36b6fdef1fa0b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "162153bc_b2e5066f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2023-05-04T17:28:49Z",
+      "side": 1,
+      "message": "My powershell knowledge about restricted modes is quite limited, but I just added a log statement after this line (177) and have been running the file directly including the log statement (Retrieved CIPD bootstrap lock...):\n\n```\n$ powershell -NoProfile -ExecutionPolicy RemoteSigned \".cipd_impl.ps1\" -CipdBinary _cipd.exe -BackendURL https://chrom\ne-infra-packages.appspot.com -VersionFile .\\cipd_client_version\nRetrieved CIPD bootstrap lock...\nDownloading CIPD client for windows-amd64 from https://chrome-infra- packages.appspot.com/client?platform\u003dwindows-amd64\u0026version\u003dgit_revision\n:35a6ab920175a20c85c405aa4b0849db18291cf3...\n```\n\nHowever, running `powershell \"[System.IO.File]::OpenWrite(\u0027.cipd_impl.ps1\u0027)\"` directly fails with the same error (maybe because I am in a globally scoped session?).",
+      "parentUuid": "f605746a_76e3ca7b",
+      "revId": "fb541eddd4423469c90d505381f36b6fdef1fa0b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac0b10f5_d03e75d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2023-05-04T15:29:44Z",
+      "side": 1,
+      "message": "ptal – this change is working for me but not sure if I missed something where global exposure is required.",
+      "revId": "1e1e94d94ace40a8c30d4021e1dc247ba3627159",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

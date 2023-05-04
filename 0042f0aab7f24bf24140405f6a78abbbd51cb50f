@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57fbdd07_62c23b64",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-05-04T19:48:27Z",
+      "side": 1,
+      "message": "hey, look, a builtin function that does everything we need...",
+      "revId": "0042f0aab7f24bf24140405f6a78abbbd51cb50f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e05c929d_e57d1081",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-05-04T19:48:27Z",
+      "side": 1,
+      "message": "note: string comparison is actually case insensitive by default (🤯) but when the exception happens we don\u0027t want folks to be confused by the case mismatch; hence the toLower() here.",
+      "revId": "0042f0aab7f24bf24140405f6a78abbbd51cb50f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54fde651_28056fb4",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-05-04T19:48:27Z",
+      "side": 1,
+      "message": "we now catch and rethrow; this removes the need for Delete-If-Possible",
+      "revId": "0042f0aab7f24bf24140405f6a78abbbd51cb50f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

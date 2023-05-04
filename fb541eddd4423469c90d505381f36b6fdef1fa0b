@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "536b28f2_58fd9354",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-05-04T16:49:43Z",
+      "side": 1,
+      "message": "Interesting... Are you sure that you\u0027re running this in a way where cipd is not using the cached binary?\n\nI thought that constrained language mode forbid things like `[System.IO.File]::*`. When I run the ps1 script locally w/ Constrained Language mode, I see:\n\n```\nLine |\n 177 |      $CipdLockFile \u003d [System.IO.File]::OpenWrite($CipdLockPath)\n     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n     | Cannot invoke method. Method invocation is supported only on core types in this language mode.\nInvalidOperation: /s/depot_tools/.cipd_impl.ps1:177\n```",
+      "revId": "fb541eddd4423469c90d505381f36b6fdef1fa0b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -43,6 +43,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "47379ba2_18487c06",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-05-04T20:35:54Z",
+      "side": 1,
+      "message": "In this patch there is actually no longer a need for continuation, so that\u0027s nice, but this is good to know 😊",
+      "parentUuid": "e853e6cc_0180049e",
+      "range": {
+        "startLine": 73,
+        "startChar": 2,
+        "endLine": 75,
+        "endChar": 38
+      },
+      "revId": "0042f0aab7f24bf24140405f6a78abbbd51cb50f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "e05c929d_e57d1081",
         "filename": ".cipd_impl.ps1",
         "patchSetId": 2

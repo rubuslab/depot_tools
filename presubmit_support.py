@@ -251,7 +251,12 @@ class ThreadPool(object):
       self._nonparallel_tests.extend(tests)
 
   def RunAsync(self):
+    global _SHOW_CALLSTACKS
     self._messages = []
+    # Callstacks are not useful for async calls, since information
+    # about PRESUBMIT.py is lost.
+    show_callstack = _SHOW_CALLSTACKS
+    _SHOW_CALLSTACKS = False
 
     def _WorkerFn():
       while True:
@@ -282,6 +287,7 @@ class ThreadPool(object):
       for worker in threads:
         worker.join()
 
+    _SHOW_CALLSTACKS = show_callstack
     return self._messages
 
 

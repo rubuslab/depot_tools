@@ -76,6 +76,15 @@ exit /b %EXPORT_ERRORLEVEL%
 :: alternate data stream. This is equivalent to clicking the "Unblock" button
 :: in the file's properties dialog.
 echo.>"%~dp0.cipd_impl.ps1:Zone.Identifier"
+:: If `cipd.bat` was called from a pwsh environment, pwsh's %PSModulePath% will
+:: contain the path to the pwsh modules. This conflicts with powershell's
+:: %PSModulePath% and causes .cipd_impl.ps1 to fail, since it won't be able to
+:: find 'Get-FileHash' cmdlet. As a workaround, we unset %PSModulePath% before
+:: calling .cipd_impl.ps1 which would force powershell to use its default
+:: %PSModulePath%. We later restore the original value once its done.
+:: See: https://github.com/PowerShell/PowerShell/issues/18108
+set ORIGINAL_PSMODULEPATH=%PSModulePath%
+set PSModulePath=
 powershell -NoProfile -ExecutionPolicy RemoteSigned ^
     "%~dp0.cipd_impl.ps1" ^
     -CipdBinary "%CIPD_BINARY%" ^
@@ -83,6 +92,7 @@ powershell -NoProfile -ExecutionPolicy RemoteSigned ^
     -BackendURL "%CIPD_BACKEND%" ^
     -VersionFile "%VERSION_FILE%" ^
   <nul
+set PSModulePath=%ORIGINAL_PSMODULEPATH%
 if %ERRORLEVEL% equ 0 (
   :: Need to call SELF_UPDATE to setup .cipd_version file.
   call :SELF_UPDATE

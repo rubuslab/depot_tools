@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0db51106_aac918fc",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-05-06T00:22:04Z",
+      "side": 1,
+      "message": "er... actually... is there not a better way to pass this around/mutate it?",
+      "revId": "fabf3c8cf6cd2df7680710a321a563cb35167754",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

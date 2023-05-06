@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57de5c96_67b6523d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-06T00:12:05Z",
+      "side": 1,
+      "message": "https://logs.chromium.org/logs/infra/buildbucket/cr-buildbucket/8781892789208826737/+/u/presubmit_py3/stdout?format\u003draw\n\nvs\n\nhttps://ci.chromium.org/raw/build/logs.chromium.org/infra/led/sokcevic_google.com/e4a9ae70365d7462fe4a66e36c7bd2df513e4e45e85ca610953594a04200fd4d/+/build.proto?server\u003dchromium-swarm.appspot.com",
+      "revId": "e9792adf57f3e1a310cbb5cf321da684ecceb8cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

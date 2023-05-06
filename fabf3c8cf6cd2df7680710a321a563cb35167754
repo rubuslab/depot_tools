@@ -34,6 +34,24 @@
       "parentUuid": "0db51106_aac918fc",
       "revId": "fabf3c8cf6cd2df7680710a321a563cb35167754",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b118253_b0ef9a11",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-05-06T00:31:38Z",
+      "side": 1,
+      "message": "In fact, I think if you do this then you could completely eliminate this global variable?",
+      "parentUuid": "baf56be2_e4655124",
+      "revId": "fabf3c8cf6cd2df7680710a321a563cb35167754",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

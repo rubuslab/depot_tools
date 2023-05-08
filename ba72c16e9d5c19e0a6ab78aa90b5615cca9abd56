@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86f345e2_880c5de3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-05-08T23:04:47Z",
+      "side": 1,
+      "message": "Do you know if the code in infra that invoked presubmit_support.py with Python 2 is gone now? That is, are there any recipes left that need this code? If Python 2 has been removed from the bots then this should be safe to land.",
+      "revId": "ba72c16e9d5c19e0a6ab78aa90b5615cca9abd56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -52,6 +52,24 @@
       "parentUuid": "baf56be2_e4655124",
       "revId": "fabf3c8cf6cd2df7680710a321a563cb35167754",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b45f59d_ad8c3838",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-08T21:22:43Z",
+      "side": 1,
+      "message": "Good suggestion, done.",
+      "parentUuid": "9b118253_b0ef9a11",
+      "revId": "fabf3c8cf6cd2df7680710a321a563cb35167754",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

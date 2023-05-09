@@ -2499,7 +2499,9 @@ class Changelist(object):
     fetch_info = revision_info['fetch']['http']
     fetch_info['url'] = fetch_info['url'].rstrip('/')
 
-    if remote_url != fetch_info['url']:
+    # The '://' split is to allow for remotes that are configured as sso://.
+    # `cl patch` will fetch the patch from gerrit REST APIs using https://.
+    if remote_url.split('://', 1)[-1] != fetch_info['url'].split('://', 1)[-1]:
       DieWithError('Trying to patch a change from %s but this repo appears '
                    'to be %s.' % (fetch_info['url'], remote_url))
 

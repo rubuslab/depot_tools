@@ -16,9 +16,11 @@ __version__ = '2.0.0'
 
 import argparse
 import ast  # Exposed through the API.
+import concurrent.futures
 import contextlib
 import cpplint
 import fnmatch  # Exposed through the API.
+import functools
 import glob
 import inspect
 import itertools
@@ -1626,22 +1628,23 @@ class PresubmitExecuter(object):
 
       with rdb_wrapper.client(prefix) as sink:
         if version >= [2, 0, 0]:
+          if self.committing:
+            filter_function = lambda x: x.startswith(
+                'Check') and not x.endswith('Upload')
+          else:
+            filter_function = lambda x: x.startswith(
+                'Check') and not x.endswith('Commit')
           # Copy the keys to prevent "dictionary changed size during iteration"
           # exception if checks add globals to context. E.g. sometimes the
           # Python runtime will add __warningregistry__.
-          for function_name in list(context.keys()):
-            if not function_name.startswith('Check'):
-              continue
-            if function_name.endswith('Commit') and not self.committing:
-              continue
-            if function_name.endswith('Upload') and self.committing:
-              continue
-            logging.debug('Running %s in %s', function_name, presubmit_path)
-            results.extend(
-                self._run_check_function(function_name, context, sink,
-                                         presubmit_path))
-            logging.debug('Running %s done.', function_name)
-            self.more_cc.extend(output_api.more_cc)
+          function_names = filter(filter_function, context.keys())
+          with concurrent.futures.ProcessPoolExecutor() as executor:
+            for check_results in executor.map(
+                functools.partial(_run_check_function, context, sink,
+                                  presubmit_path), function_names):
+              results.extend(check_results)
+            # XXX: Figure out CCs.
+            # self.more_cc.extend(output_api.more_cc)
 
         else:  # Old format
           if self.committing:
@@ -1649,11 +1652,9 @@ class PresubmitExecuter(object):
           else:
             function_name = 'CheckChangeOnUpload'
           if function_name in list(context.keys()):
-            logging.debug('Running %s in %s', function_name, presubmit_path)
             results.extend(
-                self._run_check_function(function_name, context, sink,
-                                         presubmit_path))
-            logging.debug('Running %s done.', function_name)
+                _run_check_function(context, sink, presubmit_path,
+                                    function_name))
             self.more_cc.extend(output_api.more_cc)
 
     finally:
@@ -1662,59 +1663,66 @@ class PresubmitExecuter(object):
 
     return results
 
-  def _run_check_function(self, function_name, context, sink, presubmit_path):
-    """Evaluates and returns the result of a given presubmit function.
 
-    If sink is given, the result of the presubmit function will be reported
-    to the ResultSink.
+def _run_check_function(self, context, sink, presubmit_path, function_name):
+  """Evaluates and returns the result of a given presubmit function.
 
-    Args:
-      function_name: the name of the presubmit function to evaluate
-      context: a context dictionary in which the function will be evaluated
-      sink: an instance of ResultSink. None, by default.
-    Returns:
-      the result of the presubmit function call.
-    """
-    start_time = time_time()
-    try:
-      result = eval(function_name + '(*__args)', context)
-      self._check_result_type(result)
-    except Exception:
-      _, e_value, _ = sys.exc_info()
-      result = [
-          OutputApi.PresubmitError(
-              'Evaluation of %s failed: %s, %s' %
-              (function_name, e_value, traceback.format_exc()))
-      ]
+  If sink is given, the result of the presubmit function will be reported
+  to the ResultSink.
 
-    elapsed_time = time_time() - start_time
-    if elapsed_time > 10.0:
-      sys.stdout.write('%6.1fs to run %s from %s.\n' %
-                       (elapsed_time, function_name, presubmit_path))
-    if sink:
-      failure_reason = None
-      status = rdb_wrapper.STATUS_PASS
-      if any(r.fatal for r in result):
-        status = rdb_wrapper.STATUS_FAIL
-        failure_reasons = []
-        for r in result:
-          fields = r.json_format()
-          message = fields['message']
-          items = '\n'.join('  %s' % item for item in fields['items'])
-          failure_reasons.append('\n'.join([message, items]))
-        if failure_reasons:
-          failure_reason = '\n'.join(failure_reasons)
-      sink.report(function_name, status, elapsed_time, failure_reason)
+  Args:
+    function_name: the name of the presubmit function to evaluate
+    context: a context dictionary in which the function will be evaluated
+    sink: an instance of ResultSink. None, by default.
+  Returns:
+    the result of the presubmit function call.
+  """
+  print('Running %s in %s' % (function_name, presubmit_path))
+  logging.debug('Running %s in %s', function_name, presubmit_path)
+  start_time = time_time()
+  try:
+    result = eval(function_name + '(*__args)', context)
+    _check_result_type(result)
+  except Exception:
+    _, e_value, _ = sys.exc_info()
+    result = [
+        OutputApi.PresubmitError(
+            'Evaluation of %s failed: %s, %s' %
+            (function_name, e_value, traceback.format_exc()))
+    ]
+  finally:
+    logging.debug('Running %s done.', function_name)
+    print('Running %s done' % (function_name))
 
-    return result
+  elapsed_time = time_time() - start_time
+  if elapsed_time > 10.0:
+    sys.stdout.write('%6.1fs to run %s from %s.\n' %
+                     (elapsed_time, function_name, presubmit_path))
+  if sink:
+    failure_reason = None
+    status = rdb_wrapper.STATUS_PASS
+    if any(r.fatal for r in result):
+      status = rdb_wrapper.STATUS_FAIL
+      failure_reasons = []
+      for r in result:
+        fields = r.json_format()
+        message = fields['message']
+        items = '\n'.join('  %s' % item for item in fields['items'])
+        failure_reasons.append('\n'.join([message, items]))
+      if failure_reasons:
+        failure_reason = '\n'.join(failure_reasons)
+    sink.report(function_name, status, elapsed_time, failure_reason)
 
-  def _check_result_type(self, result):
-    """Helper function which ensures result is a list, and all elements are
-    instances of OutputApi.PresubmitResult"""
-    if not isinstance(result, (tuple, list)):
-      raise PresubmitFailure('Presubmit functions must return a tuple or list')
-    if not all(isinstance(res, OutputApi.PresubmitResult) for res in result):
-      raise PresubmitFailure(
+  return result
+
+
+def _check_result_type(self, result):
+  """Helper function which ensures result is a list, and all elements are
+  instances of OutputApi.PresubmitResult"""
+  if not isinstance(result, (tuple, list)):
+    raise PresubmitFailure('Presubmit functions must return a tuple or list')
+  if not all(isinstance(res, OutputApi.PresubmitResult) for res in result):
+    raise PresubmitFailure(
         'All presubmit results must be of types derived from '
         'output_api.PresubmitResult')
 

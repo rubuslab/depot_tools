@@ -16,6 +16,24 @@
       "message": "(I still suspect this could be disappear\u0027d entirely 😊)",
       "revId": "4c2d767f2c85d8a2c4299e3b0a7add3b0d2d0a2a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cc82402_18ffd2f0",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-09T03:22:36Z",
+      "side": 1,
+      "message": "That one is more tricky; as a message can be generated using OutputApi static variables outside of presubmit_support. We could move _SHOW_CALLSTACKS to static variable in _PresubmitResult class, but the logic would remain more or less the same.",
+      "parentUuid": "0e0a6cad_c45ee671",
+      "revId": "4c2d767f2c85d8a2c4299e3b0a7add3b0d2d0a2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

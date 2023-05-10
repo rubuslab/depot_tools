@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c28e6a67_4a537871",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-10T21:12:52Z",
+      "side": 1,
+      "message": "I\u0027d prefer we don\u0027t use this: https://github.com/python/cpython/blob/4bb1dd3c5c14338c9d9cea5988431c858b3b76e0/Lib/subprocess.py#L66\n\nBut the alternate approach you mentioned in https://crbug.com/1444458 lgtm",
+      "range": {
+        "startLine": 60,
+        "startChar": 23,
+        "endLine": 60,
+        "endChar": 35
+      },
+      "revId": "2da2b782050c8da2141fae4c98cfaa46383e94c7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

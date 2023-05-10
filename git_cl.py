@@ -5072,7 +5072,9 @@ def _UploadAllPrecheck(options, orig_args):
     opt_message = ''
     branches = ', '.join([cl.branch for cl in cls])
     if len(orig_args):
-      opt_message = ('options %s will be used for all uploads.\n' % orig_args)
+      opt_message = (
+          'Options %s will be used for all uploads during this command'
+          ' execution.\n' % orig_args)
     if must_upload_upstream:
       msg = ('At least one parent branch in `%s` has never been uploaded '
              'and must be uploaded before/with `%s`.\n' %
@@ -5080,7 +5082,7 @@ def _UploadAllPrecheck(options, orig_args):
       if options.cherry_pick_stacked:
         DieWithError(msg)
       if not options.force:
-        confirm_or_exit('\n' + opt_message + msg)
+        confirm_or_exit('\n' + msg + opt_message)
     else:
       if options.cherry_pick_stacked:
         print('cherry-picking `%s` on %s\'s last upload' %
@@ -5088,10 +5090,10 @@ def _UploadAllPrecheck(options, orig_args):
         cherry_pick = True
       elif not options.force:
         answer = gclient_utils.AskForData(
-            '\n' + opt_message +
-            'Press enter to update branches %s.\nOr type `n` to upload only '
+            '\n' + 'Press enter to update branches %s. \n%s'
+            'Or type `n` to upload only '
             '`%s` cherry-picked on %s\'s last upload:' %
-            (branches, cls[0].branch, cls[1].branch))
+            (branches, opt_message, cls[0].branch, cls[1].branch))
         if answer.lower() == 'n':
           cherry_pick = True
   return cls, cherry_pick

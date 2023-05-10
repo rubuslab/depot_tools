@@ -2216,7 +2216,14 @@ class CipdDependency(Dependency):
   def __init__(
       self, parent, name, dep_value, cipd_root,
       custom_vars, should_process, relative, condition):
+
     package = dep_value['package']
+    if should_process:
+      expanded_package = cipd_root.expand_package_name(dep_value['package'])
+      # If package is not suitable for the platform an empty string will be
+      # returned. Just use original package name from DEPS file in that case.
+      if expanded_package != "":
+        package = expanded_package
     version = dep_value['version']
     url = urlparse.urljoin(
         cipd_root.service_url, '%s@%s' % (package, version))

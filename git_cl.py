@@ -1432,21 +1432,11 @@ class Changelist(object):
             ' was not specified. To enable ResultDB, please run the command'
             ' again with the --realm argument to specify the LUCI realm.')
 
-    py3_results = self._RunPresubmit(args,
-                                     description,
-                                     use_python3=True,
-                                     resultdb=resultdb,
-                                     realm=realm)
-    if py3_results.get('skipped_presubmits', 1) == 0:
-      print('No more presubmits to run - skipping Python 2 presubmits.')
-      return py3_results
-
-    py2_results = self._RunPresubmit(args,
-                                     description,
-                                     use_python3=False,
-                                     resultdb=resultdb,
-                                     realm=realm)
-    return self._MergePresubmitResults(py2_results, py3_results)
+    return self._RunPresubmit(args,
+                              description,
+                              use_python3=True,
+                              resultdb=resultdb,
+                              realm=realm)
 
   def _RunPresubmit(self,
                     args,
@@ -1506,13 +1496,8 @@ class Changelist(object):
     with gclient_utils.temporary_file() as description_file:
       gclient_utils.FileWrite(description_file, description)
       args.extend(['--description_file', description_file])
-      run_py2 = not py3_only and os.getenv('LUCI_OMIT_PYTHON2') != 'true'
-      if run_py2:
-        p_py2 = subprocess2.Popen(['vpython', PRESUBMIT_SUPPORT] + args)
       p_py3 = subprocess2.Popen(['vpython3', PRESUBMIT_SUPPORT] + args +
                                 ['--use-python3'])
-      if run_py2:
-        p_py2.wait()
       p_py3.wait()
 
   def _GetDescriptionForUpload(self, options, git_diff_args, files):

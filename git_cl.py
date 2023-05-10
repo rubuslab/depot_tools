@@ -57,6 +57,7 @@ import watchlists
 
 from third_party import six
 from six.moves import urllib
+from subprocess import list2cmdline
 
 
 if sys.version_info.major == 3:
@@ -5072,7 +5073,8 @@ def _UploadAllPrecheck(options, orig_args):
     opt_message = ''
     branches = ', '.join([cl.branch for cl in cls])
     if len(orig_args):
-      opt_message = ('options %s will be used for all uploads.\n' % orig_args)
+      opt_message = ('options `%s` will be used for all uploads.\n' %
+                     list2cmdline(orig_args))
     if must_upload_upstream:
       msg = ('At least one parent branch in `%s` has never been uploaded '
              'and must be uploaded before/with `%s`.\n' %

@@ -16,6 +16,24 @@
       "message": "I previously tried to fix this in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3957428. I did not succeed.\n\nBut maybe this time it will work!",
       "revId": "c4ef4dbcf1c0b480a9da550eea96e7195cb822c6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6794085f_7eb354bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-11T23:34:18Z",
+      "side": 1,
+      "message": "Tests for this are good too :) somewhere around here https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:tests/presubmit_unittest.py;l\u003d1633;drc\u003d3d6d2d2500a83102c0fae5d6ec9d51fff068b984 seems like a good place",
+      "parentUuid": "b5c2de61_61f4c3ac",
+      "revId": "c4ef4dbcf1c0b480a9da550eea96e7195cb822c6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

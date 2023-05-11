@@ -10,8 +10,14 @@ import re
 import shutil
 import sys
 
+ARCH_VAR = 'arch'
+OS_VAR = 'os'
+PLATFORM_VAR = 'platform'
 
 CIPD_SUBDIR_RE = '@Subdir (.*)'
+CIPD_ENSURE = 'ensure'
+CIPD_EXPAND_PKG = 'expand-package-name'
+CIPD_EXPORT = 'export'
 
 
 def parse_cipd(root, contents):
@@ -29,8 +35,28 @@ def parse_cipd(root, contents):
   return tree
 
 
+def expand_package_name_cmd(package_name):
+  suffix = package_name.split("/")[-1]
+  # Any use of var equality should return empty for testing.
+  if "=" in suffix:
+    return ""
+  for v in [ARCH_VAR, OS_VAR, PLATFORM_VAR]:
+    var = "${%s}" % v
+    if suffix == var:
+      package_name = package_name.replace(var, "%s-expanded-test-only" % v)
+  return package_name
+
+
 def main():
-  assert sys.argv[1] in ['ensure', 'export']
+  cmd = sys.argv[1]
+  assert cmd in [CIPD_ENSURE, CIPD_EXPAND_PKG, CIPD_EXPORT]
+  # Handle cipd expand-package-name
+  if cmd == CIPD_EXPAND_PKG:
+    # Expecting argument after cmd
+    assert len(sys.argv) == 3
+    # Write result to stdout
+    sys.stdout.write(expand_package_name_cmd(sys.argv[2]))
+    return 0
   parser = argparse.ArgumentParser()
   parser.add_argument('-ensure-file')
   parser.add_argument('-root')

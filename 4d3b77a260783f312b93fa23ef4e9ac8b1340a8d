@@ -16,6 +16,29 @@
       "message": "Adam can you advise here? This seems ok to me, but I\u0027m not sure if there are any bonus implications I\u0027m not aware of 😊",
       "revId": "4d3b77a260783f312b93fa23ef4e9ac8b1340a8d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c2d3f78_cf272dcd",
+        "filename": "cipd.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1306133
+      },
+      "writtenOn": "2023-05-11T16:13:00Z",
+      "side": 1,
+      "message": "I think we should first consider adding environment enumeration logic to determine which version of Get-Filehash to call instead of removing all powershell.exe module paths.",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 17
+      },
+      "revId": "4d3b77a260783f312b93fa23ef4e9ac8b1340a8d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

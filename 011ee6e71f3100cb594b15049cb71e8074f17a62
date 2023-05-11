@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e797127_ad0002b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-05-11T21:23:44Z",
+      "side": 1,
+      "message": "This is a follow-up change to remove some no longer needed test code. It might be worth waiting a couple of days before landing just in case crrev.com/c/4522480 doesn\u0027t stick.",
+      "revId": "011ee6e71f3100cb594b15049cb71e8074f17a62",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

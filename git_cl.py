@@ -1432,21 +1432,11 @@ class Changelist(object):
             ' was not specified. To enable ResultDB, please run the command'
             ' again with the --realm argument to specify the LUCI realm.')
 
-    py3_results = self._RunPresubmit(args,
-                                     description,
-                                     use_python3=True,
-                                     resultdb=resultdb,
-                                     realm=realm)
-    if py3_results.get('skipped_presubmits', 1) == 0:
-      print('No more presubmits to run - skipping Python 2 presubmits.')
-      return py3_results
-
-    py2_results = self._RunPresubmit(args,
-                                     description,
-                                     use_python3=False,
-                                     resultdb=resultdb,
-                                     realm=realm)
-    return self._MergePresubmitResults(py2_results, py3_results)
+    return self._RunPresubmit(args,
+                              description,
+                              use_python3=True,
+                              resultdb=resultdb,
+                              realm=realm)
 
   def _RunPresubmit(self,
                     args,
@@ -1486,34 +1476,15 @@ class Changelist(object):
         json_results = gclient_utils.FileRead(json_output)
         return json.loads(json_results)
 
-  def _MergePresubmitResults(self, py2_results, py3_results):
-    return {
-        'more_cc': sorted(set(py2_results.get('more_cc', []) +
-                              py3_results.get('more_cc', []))),
-        'errors': (
-            py2_results.get('errors', []) + py3_results.get('errors', [])),
-        'notifications': (
-            py2_results.get('notifications', []) +
-            py3_results.get('notifications', [])),
-        'warnings': (
-            py2_results.get('warnings', []) + py3_results.get('warnings', []))
-    }
-
-  def RunPostUploadHook(self, verbose, upstream, description, py3_only):
+  def RunPostUploadHook(self, verbose, upstream, description):
     args = self._GetCommonPresubmitArgs(verbose, upstream)
     args.append('--post_upload')
 
     with gclient_utils.temporary_file() as description_file:
       gclient_utils.FileWrite(description_file, description)
       args.extend(['--description_file', description_file])
-      run_py2 = not py3_only and os.getenv('LUCI_OMIT_PYTHON2') != 'true'
-      if run_py2:
-        p_py2 = subprocess2.Popen(['vpython', PRESUBMIT_SUPPORT] + args)
-      p_py3 = subprocess2.Popen(['vpython3', PRESUBMIT_SUPPORT] + args +
-                                ['--use-python3'])
-      if run_py2:
-        p_py2.wait()
-      p_py3.wait()
+      subprocess2.Popen(['vpython3', PRESUBMIT_SUPPORT] + args +
+                        ['--use-python3']).wait()
 
   def _GetDescriptionForUpload(self, options, git_diff_args, files):
     # type: (optparse.Values, Sequence[str], Sequence[str]
@@ -1839,8 +1810,7 @@ class Changelist(object):
 
     if settings.GetRunPostUploadHook():
       self.RunPostUploadHook(options.verbose, new_upload.parent,
-                             new_upload.change_desc.description,
-                             options.no_python2_post_upload_hooks)
+                             new_upload.change_desc.description)
 
     if new_upload.reviewers or new_upload.ccs:
       gerrit_util.AddReviewers(self.GetGerritHost(),
@@ -1896,8 +1866,7 @@ class Changelist(object):
       # Run post upload hooks, if specified.
       if settings.GetRunPostUploadHook():
         self.RunPostUploadHook(options.verbose, base_branch,
-                               change_desc.description,
-                               options.no_python2_post_upload_hooks)
+                               change_desc.description)
 
       # Upload all dependencies if specified.
       if options.dependencies:
@@ -4744,9 +4713,6 @@ def CMDupload(parser, args):
                     action='store_true',
                     dest='no_add_changeid',
                     help='Do not add change-ids to messages.')
-  parser.add_option('--no-python2-post-upload-hooks',
-                    action='store_true',
-                    help='Only run post-upload hooks in Python 3.')
   parser.add_option('--cherry-pick-stacked',
                     '--cp',
                     dest='cherry_pick_stacked',

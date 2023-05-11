@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68ab85da_e8beff09",
+        "filename": "tests/presubmit_unittest.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-11T20:43:33Z",
+      "side": 0,
+      "message": "we should still drop this; but I guess commit message should be renamed then. I can take it over if you\u0027d like",
+      "revId": "07e0961354dc55463257d11b9ca785a647fd1ea1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

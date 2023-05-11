@@ -91,9 +91,6 @@ class ChangelistMock(object):
   def GetRemoteBranch(self):
     return ('origin', 'refs/remotes/origin/main')
 
-  def GetUsePython3(self):
-    return self._use_python3
-
 class GitMocks(object):
   def __init__(self, config=None, branchref=None):
     self.branchref = branchref or 'refs/heads/main'
@@ -3642,7 +3639,6 @@ class ChangelistTest(unittest.TestCase):
     mock.patch('git_cl.Changelist.GetAuthor', return_value='author').start()
     mock.patch('git_cl.Changelist.GetIssue', return_value=123456).start()
     mock.patch('git_cl.Changelist.GetPatchset', return_value=7).start()
-    mock.patch('git_cl.Changelist.GetUsePython3', return_value=False).start()
     mock.patch(
         'git_cl.Changelist.GetRemoteBranch',
         return_value=('origin', 'refs/remotes/origin/main')).start()

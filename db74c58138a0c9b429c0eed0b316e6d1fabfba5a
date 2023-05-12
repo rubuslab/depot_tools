@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b55deb09_0c9523f3",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4747,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2023-05-12T07:04:36Z",
+      "side": 0,
+      "message": "Most usages of this flag are from V8. I\u0027m fixing those. Crossing fingers that this CL here doesn\u0027t get reverted as that\u0027d break us again... Another usage I see is from autosharder: https://source.chromium.org/search?q\u003d%22--no-python2-post-upload-hooks%22\u0026start\u003d1 - guess that\u0027ll break as well on its next run...",
+      "range": {
+        "startLine": 4747,
+        "startChar": 20,
+        "endLine": 4747,
+        "endChar": 52
+      },
+      "revId": "db74c58138a0c9b429c0eed0b316e6d1fabfba5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

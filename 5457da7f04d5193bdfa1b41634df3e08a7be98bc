@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e180754e_fe06a573",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1668,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-12T16:00:49Z",
+      "side": 1,
+      "message": "If this line is deduping anyway, does this CL work without the two above  `output_api.more_cc \u003d []`? FWIW `testAppendCCAndMultipleChecks` passes when I comment them out",
+      "range": {
+        "startLine": 1668,
+        "startChar": 4,
+        "endLine": 1668,
+        "endChar": 44
+      },
+      "revId": "5457da7f04d5193bdfa1b41634df3e08a7be98bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

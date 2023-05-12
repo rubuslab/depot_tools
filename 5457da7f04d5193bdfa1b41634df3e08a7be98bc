@@ -22,6 +22,30 @@
       },
       "revId": "5457da7f04d5193bdfa1b41634df3e08a7be98bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed0b9729_1e01ab7b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1668,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-05-12T17:45:53Z",
+      "side": 1,
+      "message": "It does work without it, but it\u0027s kind of leaky that AppendCC() in one Check has side effects in evaluating another Check function?",
+      "parentUuid": "e180754e_fe06a573",
+      "range": {
+        "startLine": 1668,
+        "startChar": 4,
+        "endLine": 1668,
+        "endChar": 44
+      },
+      "revId": "5457da7f04d5193bdfa1b41634df3e08a7be98bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

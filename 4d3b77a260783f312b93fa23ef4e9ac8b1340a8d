@@ -39,6 +39,30 @@
       },
       "revId": "4d3b77a260783f312b93fa23ef4e9ac8b1340a8d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c882018_4af476f5",
+        "filename": "cipd.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1566882
+      },
+      "writtenOn": "2023-05-13T15:03:34Z",
+      "side": 1,
+      "message": "Updated the patchset.",
+      "parentUuid": "4c2d3f78_cf272dcd",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 17
+      },
+      "revId": "4d3b77a260783f312b93fa23ef4e9ac8b1340a8d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

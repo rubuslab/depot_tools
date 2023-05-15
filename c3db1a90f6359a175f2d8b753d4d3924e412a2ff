@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de9ed31a_63e6f909",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-05-15T16:53:39Z",
+      "side": 1,
+      "message": "I have no idea why the \"unclosed file\" error suddenly started happening, but I fixed it so that this change can land. PTAL.",
+      "revId": "c3db1a90f6359a175f2d8b753d4d3924e412a2ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

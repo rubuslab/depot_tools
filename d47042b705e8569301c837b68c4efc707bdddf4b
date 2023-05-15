@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fd82ae5_d4948070",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-05-15T20:30:32Z",
+      "side": 1,
+      "message": "This removes the other level of Python 2 support from the presubmit system - now child scripts will always be run with Python 3. PTAL.",
+      "revId": "d47042b705e8569301c837b68c4efc707bdddf4b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

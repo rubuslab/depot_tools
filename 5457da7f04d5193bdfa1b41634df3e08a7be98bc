@@ -46,6 +46,30 @@
       },
       "revId": "5457da7f04d5193bdfa1b41634df3e08a7be98bc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfefd1cf_85faa0db",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1668,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-15T15:25:39Z",
+      "side": 1,
+      "message": "Yeah, good point. LGTM",
+      "parentUuid": "ed0b9729_1e01ab7b",
+      "range": {
+        "startLine": 1668,
+        "startChar": 4,
+        "endLine": 1668,
+        "endChar": 44
+      },
+      "revId": "5457da7f04d5193bdfa1b41634df3e08a7be98bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

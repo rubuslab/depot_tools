@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b9c8d08_7e19af19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-05-15T17:34:22Z",
+      "side": 1,
+      "message": "Didn\u0027t know this, but this lgtm",
+      "revId": "a3ae1747cdfa43dd17fd94606d22824e9f0baf54",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

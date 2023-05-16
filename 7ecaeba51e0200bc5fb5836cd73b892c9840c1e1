@@ -22,6 +22,30 @@
       },
       "revId": "7ecaeba51e0200bc5fb5836cd73b892c9840c1e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de7ff109_4305b578",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4772,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-05-16T17:26:43Z",
+      "side": 1,
+      "message": "didn\u0027t want some DOGFOOD_STACKED_CHANGES\u003d\u0027foo\u0027 to repress this message",
+      "parentUuid": "4dacf0b7_06a3e275",
+      "range": {
+        "startLine": 4771,
+        "startChar": 25,
+        "endLine": 4772,
+        "endChar": 45
+      },
+      "revId": "7ecaeba51e0200bc5fb5836cd73b892c9840c1e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

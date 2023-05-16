@@ -132,6 +132,30 @@ class GClientSmokeCipd(gclient_smoketest_base.GClientSmokeBase):
     })
     self.assertTree(tree)
 
+  def testRevInfo(self):
+    self.gclient(['config', self.git_base + 'repo_13', '--name', 'src'])
+    self.gclient(['sync'])
+    results = self.gclient(['revinfo'])
+    out = (
+        'src: %(base)srepo_13\n'
+        'src/repo12:foo: %(instance_url)s\n' % {
+            'base': self.git_base,
+            'instance_url': 'https://chrome-infra-packages.appspot.com/foo@1.3',
+        })
+    self.check((out, '', 0), results)
+
+  def testRevInfoActual(self):
+    self.gclient(['config', self.git_base + 'repo_13', '--name', 'src'])
+    self.gclient(['sync'])
+    results = self.gclient(['revinfo', '--actual'])
+    out = (
+        'src: %(base)srepo_13\n'
+        'src/repo12:foo: %(instance_url)s\n' % {
+            'base': self.git_base,
+            'instance_url': 'https://chrome-infra-packages.appspot.com/foo@1.3',
+        })
+    self.check((out, '', 0), results)
+
 
 if __name__ == '__main__':
   if '-v' in sys.argv:

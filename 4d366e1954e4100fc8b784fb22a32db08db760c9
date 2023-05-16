@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c19d2158_62b755c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2023-05-16T16:33:29Z",
+      "side": 1,
+      "message": "Sending over to the depot_tools author of SSO support as a better reviewer. Also if possible please add a test.",
+      "revId": "4d366e1954e4100fc8b784fb22a32db08db760c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

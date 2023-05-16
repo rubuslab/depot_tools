@@ -49,6 +49,13 @@ def expand_package_name_cmd(package_name):
       package_name = package_name.replace(var, "%s-expanded-test-only" % v)
   return package_name
 
+def describe_cmd():
+
+          #   'cipd', 'describe',
+          # self._package.name,
+          # '-log-level', 'error',
+          # '-version', self._package.version,
+          # '-json-output', describe_json_path
 
 def main():
   cmd = sys.argv[1]

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4dacf0b7_06a3e275",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4772,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-16T15:36:10Z",
+      "side": 1,
+      "message": "why not `DOGFOOD_STACKED_CHANGES_VAR not in os.environ`? seems confusing to have disable_dogfood and dogfood unless there\u0027ll be more than one option later down the road",
+      "range": {
+        "startLine": 4771,
+        "startChar": 25,
+        "endLine": 4772,
+        "endChar": 45
+      },
+      "revId": "7ecaeba51e0200bc5fb5836cd73b892c9840c1e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

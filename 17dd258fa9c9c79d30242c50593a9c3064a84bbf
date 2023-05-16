@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69568e5c_d38791fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1540893
+      },
+      "writtenOn": "2023-05-16T01:36:51Z",
+      "side": 1,
+      "message": "Hello owners, could someone ptal?\nThe new mac_toolchain has already been used on the swarming machines for a while https://chromium-review.googlesource.com/c/chromium/src/+/4503803",
+      "revId": "17dd258fa9c9c79d30242c50593a9c3064a84bbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "68420901_c5d8d697",
+        "filename": "testing_support/fake_cipd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1559487
+      },
+      "writtenOn": "2023-05-17T04:49:44Z",
+      "side": 1,
+      "message": "neat ! Done.",
+      "parentUuid": "91c7abe7_9b72039e",
+      "revId": "3a527d435b2b205eb8b98af7c97af14984e6bc7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "42362e49_357a33fb",
@@ -37,6 +55,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "7c43204f_8c9ffe6b",
+        "filename": "testing_support/fake_cipd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1559487
+      },
+      "writtenOn": "2023-05-17T04:49:44Z",
+      "side": 1,
+      "message": "Ah I should have been more clear what this file does. Im basically trying to imitate the cipd describe command behaviour for testing. The way this method behaves is the exact same way as cipd describe. In saying that I\u0027ve made the -json-output optional now as the cipd command behaves this way.",
+      "parentUuid": "42362e49_357a33fb",
+      "revId": "3a527d435b2b205eb8b98af7c97af14984e6bc7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "8f12c321_b8ba91b5",
         "filename": "testing_support/fake_cipd.py",
         "patchSetId": 5
@@ -48,6 +84,24 @@
       "writtenOn": "2023-05-17T04:27:44Z",
       "side": 1,
       "message": "Nit: I\u0027d include the package name in this error just for transparency.",
+      "revId": "3a527d435b2b205eb8b98af7c97af14984e6bc7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b20164d_8fc21e90",
+        "filename": "testing_support/fake_cipd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1559487
+      },
+      "writtenOn": "2023-05-17T04:49:44Z",
+      "side": 1,
+      "message": "As above, the cipd command returns this exact string.",
+      "parentUuid": "8f12c321_b8ba91b5",
       "revId": "3a527d435b2b205eb8b98af7c97af14984e6bc7d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

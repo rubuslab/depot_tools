@@ -1,0 +1,35 @@
+{
+    "result": {
+        "pin": {
+            "package": "gn/s",
+            "instance_id": "gn/s-fake-instance-id"
+        },
+        "registered_by": "user:fake-testing-support",
+        "registered_ts": 1683744835,
+        "refs": [
+            {
+                "ref": "gn/s-latest",
+                "instance_id": "gn/s-fake-instance-id",
+                "modified_by": "user:fake-testing-support",
+                "modified_ts": 1683744835
+            }
+        ],
+        "tags": [
+            {
+                "tag": "git_revision:gn/s-fake-git-revision",
+                "registered_by": "user:fake-testing-support",
+                "registered_ts": 1683744835
+            },
+            {
+                "tag": "gn/s-fake-tag:1.0",
+                "registered_by": "user:fake-testing-support",
+                "registered_ts": 1683744835
+            },
+            {
+                "tag": "gn/s-fake-tag:2.0",
+                "registered_by": "user:fake-testing-support",
+                "registered_ts": 1683744835
+            }
+        ]
+    }
+}

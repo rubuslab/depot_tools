@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91c7abe7_9b72039e",
+        "filename": "testing_support/fake_cipd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-05-17T04:27:44Z",
+      "side": 1,
+      "message": "you can make these args `required\u003dTrue` instead of using the `assert` statement below and argparse will complain if they\u0027re both not present",
+      "revId": "3a527d435b2b205eb8b98af7c97af14984e6bc7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42362e49_357a33fb",
+        "filename": "testing_support/fake_cipd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-05-17T04:27:44Z",
+      "side": 1,
+      "message": "When you run this cmd, it looks like you always have to specify the json output even though you also always get the other format on the CLI? Depending on how we want to use this cmd it might be helpful to be able to specify an optional file and a format instead of having to have both. Just thinking of how we want to use this in something like partybot where we probably want to use the JSON because it\u0027s more structured, but we\u0027d want to probably write that to stdout and load the result if possible.",
+      "revId": "3a527d435b2b205eb8b98af7c97af14984e6bc7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f12c321_b8ba91b5",
+        "filename": "testing_support/fake_cipd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-05-17T04:27:44Z",
+      "side": 1,
+      "message": "Nit: I\u0027d include the package name in this error just for transparency.",
+      "revId": "3a527d435b2b205eb8b98af7c97af14984e6bc7d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

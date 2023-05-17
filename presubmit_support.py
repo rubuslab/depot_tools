@@ -81,7 +81,7 @@ class PresubmitFailure(Exception):
 
 
 class CommandData(object):
-  def __init__(self, name, cmd, kwargs, message, python3=False):
+  def __init__(self, name, cmd, kwargs, message):
     self.name = name
     self.cmd = cmd
     self.stdin = kwargs.get('stdin', None)
@@ -91,7 +91,6 @@ class CommandData(object):
     self.kwargs['stdin'] = subprocess.PIPE
     self.message = message
     self.info = None
-    self.python3 = python3
 
 
 # Adapted from
@@ -184,9 +183,7 @@ class ThreadPool(object):
     self._nonparallel_tests = []
 
   def _GetCommand(self, test):
-    vpython = 'vpython'
-    if test.python3:
-      vpython += '3'
+    vpython = 'vpython3'
     if sys.platform == 'win32':
       vpython += '.bat'
 
@@ -611,9 +608,6 @@ class InputApi(object):
     self.cpplint = cpplint
     self.fnmatch = fnmatch
     self.gclient_paths = gclient_paths
-    # TODO(yyanagisawa): stop exposing this when python3 become default.
-    # Since python3's tempfile has TemporaryDirectory, we do not need this.
-    self.temporary_directory = gclient_utils.temporary_directory
     self.glob = glob.glob
     self.json = json
     self.logging = logging.getLogger('PRESUBMIT')

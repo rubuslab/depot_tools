@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5efb174a_7187b3fb",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2290,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-18T14:15:09Z",
+      "side": 1,
+      "message": "delete?",
+      "range": {
+        "startLine": 2290,
+        "startChar": 4,
+        "endLine": 2290,
+        "endChar": 24
+      },
+      "revId": "4422ef286a1a410faf79d1c6112bedf55cb59493",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

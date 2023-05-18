@@ -12,6 +12,12 @@ if [ "$(expr "$(uname -s)" : "^MINGW64_NT")" == "10" ]; then
     exit
 fi
 
+# Goma is not supported on the following platforms.
+PROCESSOR=$(uname -p)
+if [[ $PROCESSOR == "ppc64le" || $PROCESSOR == "powerpc" || $PROCESSOR == "s390x" ]]; then
+   exit
+fi
+
 MYPATH=$(dirname "${BASH_SOURCE[0]}")
 
 source "$MYPATH/cipd_bin_setup.sh"

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a8ddad9_76356b82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-05-18T15:16:27Z",
+      "side": 1,
+      "message": "fixes https://ci.chromium.org/p/infra-internal/builders/try/infra-internal-presubmit\nempty commit errors that started after switching the presubmit recipe to infra_superproject.\n\nwe saw the same thing happen when switching tryjobs to infra_superproject, which was fixed in the same way: https://chromium-review.googlesource.com/c/infra/infra/+/4436289",
+      "revId": "9cc4f94e5de38f1bb8e24a4610e233df7ffe857c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

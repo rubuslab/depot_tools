@@ -123,6 +123,24 @@
       "parentUuid": "e7bea195_13120169",
       "revId": "3681875719b23b6c9228a6815738a62af0876a3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "faa230f3_69b48956",
+        "filename": "goma_ctl",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-05-18T18:14:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c127170_c2380112",
+      "revId": "3681875719b23b6c9228a6815738a62af0876a3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

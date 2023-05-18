@@ -34,6 +34,24 @@
       "parentUuid": "e29e394d_44cf3b93",
       "revId": "7bc8e42bb234ed2b47ffef80cddf8866d6fccac3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9101603_69213baa",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-05-18T19:59:20Z",
+      "side": 1,
+      "message": "There is at least one use, in third_party/devtools-frontend-internal/PRESUBMIT.py. That has been upgraded in the remote repo (https://source.chromium.org/chromium/chromium/src/+/main:third_party/devtools-frontend/src/PRESUBMIT.py;l\u003d43;bpv\u003d1) but still references python_executable in the Chromium copy.\n\nIt looks like the original intent was for python3_executable to be temporary but I\u0027m not sure there\u0027s much benefit in renaming the 59+ uses of python3_executable back to python_executable.\n\nGiven how hard it has been to root out hidden use of Python 2, I\u0027m not sure there is any benefit in removing python_executable. Deleting it might cause breakages, and there is no real cost to leaving it.",
+      "parentUuid": "d5be7915_9a9e4f1a",
+      "revId": "7bc8e42bb234ed2b47ffef80cddf8866d6fccac3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

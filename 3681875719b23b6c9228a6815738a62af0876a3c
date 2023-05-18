@@ -159,6 +159,24 @@
       "parentUuid": "faa230f3_69b48956",
       "revId": "3681875719b23b6c9228a6815738a62af0876a3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7953edaa_b16e9cb5",
+        "filename": "goma_ctl",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2023-05-18T18:16:52Z",
+      "side": 1,
+      "message": "sorry for the noise, but seems like I don\u0027t have \"submit\" privileges on this repository, would appropriate your help on submitting it too.",
+      "parentUuid": "5cc8b01d_6759786e",
+      "revId": "3681875719b23b6c9228a6815738a62af0876a3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

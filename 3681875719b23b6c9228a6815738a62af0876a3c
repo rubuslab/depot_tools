@@ -51,6 +51,24 @@
       "parentUuid": "f04c985d_8aff6852",
       "revId": "3681875719b23b6c9228a6815738a62af0876a3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5ff1fe6_de4ca6aa",
+        "filename": "goma_ctl",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2023-05-18T17:48:13Z",
+      "side": 1,
+      "message": "On the topic of enumerating the platforms where goma *is* supported, would it suffice to just check if `goma_ctl.py` exists before running it? this way we don\u0027t have to duplicate any platform detection logic, i.e\n```\nGOMA\u003d\"$MYPATH/.cipd_bin/goma_ctl.py\"\nif [[ -f \"$GOMA\" ]]; then\n    PYTHONDONTWRITEBYTECODE\u003d1 exec python3 \"$GOMA\" \"$@\"\nfi\n```",
+      "parentUuid": "68990705_a0eedc4c",
+      "revId": "3681875719b23b6c9228a6815738a62af0876a3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

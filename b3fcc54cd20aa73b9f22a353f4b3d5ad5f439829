@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a13dd2b_165a5e86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2023-05-18T00:56:07Z",
+      "side": 1,
+      "message": "Hello,\n\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4532006 has changed the exit code of `update_depot_tools` on ppc/s390x platforms as Goma is not supported and `goma_ctl.py` does not exist. This causes an early crash of the entire process which fails `fetch v8`.\n\nThis CL is exiting the process when running on said platforms. List of available Goma binaries can be found here:\nhttps://chrome-infra-packages.appspot.com/p/infra/goma/client\nwhich also make me wonder, how is Linux on Arm64 passing this process?",
+      "revId": "b3fcc54cd20aa73b9f22a353f4b3d5ad5f439829",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

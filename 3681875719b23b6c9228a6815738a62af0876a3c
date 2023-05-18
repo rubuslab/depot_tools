@@ -33,6 +33,24 @@
       "message": "Would it make more sense to enumerate the platforms where goma _is_ supporte? I don\u0027t know, but it seems like the list of supported platforms is probably finite and enumerable, whereas the list of unsupported ones may actually grow over time.\n\nI guess we should match whatever logic determines whether goma_ctl.py gets downloaded. I looked in .cipd_bin/2.7/bin/Lib/platform.py and its uname() function is quite different. The Windows details aren\u0027t relevant here, but maybe some of the rest is?",
       "revId": "3681875719b23b6c9228a6815738a62af0876a3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68990705_a0eedc4c",
+        "filename": "goma_ctl",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1323125
+      },
+      "writtenOn": "2023-05-18T15:39:38Z",
+      "side": 1,
+      "message": "Would you be able to share where goma_ctl.py is being downloaded?",
+      "parentUuid": "f04c985d_8aff6852",
+      "revId": "3681875719b23b6c9228a6815738a62af0876a3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

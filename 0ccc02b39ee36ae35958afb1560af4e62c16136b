@@ -34,6 +34,23 @@
       "parentUuid": "2ba68006_08fff19b",
       "revId": "0ccc02b39ee36ae35958afb1560af4e62c16136b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0267a469_1c291a26",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-19T19:22:55Z",
+      "side": 1,
+      "message": "Let\u0027s keep py2 compatibility, there were some issues when I attempted to drop py3 earlier this week (see: https://crrev.com/c/4544429).\n\nWe should be able to drop py2 support later this quarter.",
+      "revId": "0ccc02b39ee36ae35958afb1560af4e62c16136b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

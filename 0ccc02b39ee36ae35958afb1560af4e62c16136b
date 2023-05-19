@@ -69,6 +69,24 @@
       "parentUuid": "0267a469_1c291a26",
       "revId": "0ccc02b39ee36ae35958afb1560af4e62c16136b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f59a2cd_3c2a25e9",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-19T20:10:13Z",
+      "side": 1,
+      "message": "Ah, I thought the current is compatible with both versions. In that case, carry on. If Nest faces new issues with those recent changes, they can always pin to a commit.",
+      "parentUuid": "d3d96e81_86da8d51",
+      "revId": "0ccc02b39ee36ae35958afb1560af4e62c16136b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

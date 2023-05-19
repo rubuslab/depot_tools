@@ -86,7 +86,6 @@ class PresubmitApi(recipe_api.RecipeApi):
                    '-c',
                    'user.name=The Commit Bot',
                    'commit',
-                   '--allow-empty',
                    '-a',
                    '-m',
                    'Committed patch',
@@ -116,7 +115,7 @@ class PresubmitApi(recipe_api.RecipeApi):
         self._relative_root.replace(self.m.path.sep, '/'),
         self.m.gclient.c)
     upstream = bot_update_step.json.output['properties'].get(
-        got_revision_properties[0])
+      got_revision_properties[0])
 
     presubmit_args = []
     if self.m.tryserver.is_tryserver:

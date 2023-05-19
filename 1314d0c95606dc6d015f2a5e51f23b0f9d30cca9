@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3522c643_ab9739f4",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-19T16:59:54Z",
+      "side": 1,
+      "message": "should we also add https://chromium.googlesource.com/infra/infra ?",
+      "revId": "1314d0c95606dc6d015f2a5e51f23b0f9d30cca9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

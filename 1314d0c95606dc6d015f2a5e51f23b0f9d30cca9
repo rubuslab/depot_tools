@@ -16,6 +16,24 @@
       "message": "should we also add https://chromium.googlesource.com/infra/infra ?",
       "revId": "1314d0c95606dc6d015f2a5e51f23b0f9d30cca9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2124a429_f418d5d3",
+        "filename": "recipes/recipe_modules/gclient/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-05-19T17:07:48Z",
+      "side": 1,
+      "message": "afaik, we don\u0027t need to? so i would rather not.\nif something is testing an infra/infra change it shouldn\u0027t be using the infra_internal_superproject anyways.\n\nand infra/infra\u0027s presubmit has not been converted to checkout infra_superproject (and technically it doesn\u0027t need to, in order to keep working, i think). So, currently we also don\u0027t need to add the path_map to the infra_superproject config.",
+      "parentUuid": "3522c643_ab9739f4",
+      "revId": "1314d0c95606dc6d015f2a5e51f23b0f9d30cca9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

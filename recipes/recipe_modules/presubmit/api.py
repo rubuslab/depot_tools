@@ -86,7 +86,6 @@ class PresubmitApi(recipe_api.RecipeApi):
                    '-c',
                    'user.name=The Commit Bot',
                    'commit',
-                   '--allow-empty',
                    '-a',
                    '-m',
                    'Committed patch',
@@ -110,13 +109,16 @@ class PresubmitApi(recipe_api.RecipeApi):
       a RawResult object, suitable for being returned from RunSteps.
     """
     abs_root = self.m.context.cwd.join(self._relative_root)
+    project_name = self._relative_root.replace(self.m.path.sep, '/')
     got_revision_properties = self.m.bot_update.get_project_revision_properties(
         # Replace path.sep with '/', since most recipes are written assuming '/'
         # as the delimiter. This breaks on windows otherwise.
-        self._relative_root.replace(self.m.path.sep, '/'),
+        project_name,
         self.m.gclient.c)
     upstream = bot_update_step.json.output['properties'].get(
-        got_revision_properties[0])
+      got_revision_properties[0])
+    
+      
 
     presubmit_args = []
     if self.m.tryserver.is_tryserver:

@@ -16,6 +16,24 @@
       "message": "WDYT? Is this a good idea? See the linked CL for how this could be used.",
       "revId": "0ccc02b39ee36ae35958afb1560af4e62c16136b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0dbe48bc_39c0da40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-19T19:04:33Z",
+      "side": 1,
+      "message": "I like this, but not sure if this would have any side effects. Adding sokcevic@ as a reviewer",
+      "parentUuid": "2ba68006_08fff19b",
+      "revId": "0ccc02b39ee36ae35958afb1560af4e62c16136b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

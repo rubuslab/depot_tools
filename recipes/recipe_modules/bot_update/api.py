@@ -520,9 +520,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
     # project, e.g. got_revision and got_webrtc_revision.
     rev_reverse_map = self.m.gclient.got_revision_reverse_mapping(cfg)
     return sorted(
-        prop
-        for prop, project in rev_reverse_map.items()
-        if project == project_name
+      prop
+      for prop, project in rev_reverse_map.items()
+      if project == project_name
     )
 
   def deapply_patch(self, bot_update_step):

@@ -16,6 +16,24 @@
       "message": "do we need to pass quoted args in autosiso.bat?\n\nautoninja.bat does tricky thing that it runs command printed by autoninja.py, so it would need to pass quoted args, but it\u0027s ok to pass args as is from autosiso.bat, as other *.py used in autoninja.bat?",
       "revId": "383d4e8c05fc1478725dcda94481b918a6b119d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fdf8742_4bc3cba2",
+        "filename": "autosiso.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-05-22T03:13:20Z",
+      "side": 1,
+      "message": "\u003e This prevents multiple levels of parsing of the special \u0027^\u0027 characters needed when compiling a single file \n\nI thought this is still applied. \nBtw, does siso support single file compilation?",
+      "parentUuid": "98eb30a3_c7d51e35",
+      "revId": "383d4e8c05fc1478725dcda94481b918a6b119d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

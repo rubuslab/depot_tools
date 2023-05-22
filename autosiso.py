@@ -32,6 +32,8 @@ def _use_remoteexec(argv):
 
 
 def main(argv):
+  # TODO(jwata): support single file compile with '^'.
+
   if not _use_remoteexec(argv):
     print(
         "`use_remoteexec=true` is not detected.\n"

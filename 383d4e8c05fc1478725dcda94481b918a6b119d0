@@ -52,6 +52,24 @@
       "parentUuid": "5fdf8742_4bc3cba2",
       "revId": "383d4e8c05fc1478725dcda94481b918a6b119d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7599faae_d572f63b",
+        "filename": "autosiso.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-05-22T04:32:27Z",
+      "side": 1,
+      "message": "I see. Let\u0027s not double quote the arguments on Windows for now.",
+      "parentUuid": "b2c5e514_bdd4e1b8",
+      "revId": "383d4e8c05fc1478725dcda94481b918a6b119d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

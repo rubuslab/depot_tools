@@ -17,8 +17,8 @@ import reclient_helper
 import siso
 
 
-def _use_remoteexec(argv):
-  out_dir = reclient_helper.find_ninja_out_dir(argv)
+def _use_remoteexec(args):
+  out_dir = reclient_helper.find_ninja_out_dir(args)
   gn_args_path = os.path.join(out_dir, 'args.gn')
   if not os.path.exists(gn_args_path):
     return False
@@ -32,24 +32,36 @@ def _use_remoteexec(argv):
 
 
 def main(argv):
-  if not _use_remoteexec(argv):
+  input_args = argv
+  # On Windows the autonsiso.bat script passes along the arguments enclosed in
+  # double quotes. This prevents multiple levels of parsing of the special '^'
+  # characters needed when compiling a single file but means that this script
+  # gets called with a single argument containing all of the actual arguments,
+  # separated by spaces. When this case is detected we need to do argument
+  # splitting ourselves. This means that arguments containing actual spaces are
+  # not supported by autoninja, but that is not a real limitation.
+  if (sys.platform.startswith('win') and len(input_args) == 2
+      and input_args[1].count(' ') > 0):
+    input_args = input_args[:1] + input_args[1].split()
+
+  if not _use_remoteexec(input_args):
     print(
         "`use_remoteexec=true` is not detected.\n"
         "Please run `siso` command directly.",
         file=sys.stderr)
     return 1
 
-  with reclient_helper.build_context(argv) as ret_code:
+  with reclient_helper.build_context(input_args) as ret_code:
     if ret_code:
       return ret_code
-    argv = [
-        argv[0],
+    siso_args = [
+        input_args[0],
         'ninja',
         # Do not authenticate when using Reproxy.
         '-project=',
         '-reapi_instance=',
-    ] + argv[1:]
-    return siso.main(argv)
+    ] + input_args[1:]
+    return siso.main(siso_args)
 
 
 if __name__ == '__main__':

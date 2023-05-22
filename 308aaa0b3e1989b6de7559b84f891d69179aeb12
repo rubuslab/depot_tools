@@ -34,6 +34,23 @@
       "parentUuid": "f4e8c1d1_b2ee6c26",
       "revId": "308aaa0b3e1989b6de7559b84f891d69179aeb12",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae2daaf9_f1ab1645",
+        "filename": "autosiso.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-05-22T04:45:44Z",
+      "side": 1,
+      "message": "autosiso.py:37:0: C0301: Line too long (149/80) (line-too-long)\n\n?",
+      "revId": "308aaa0b3e1989b6de7559b84f891d69179aeb12",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

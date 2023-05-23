@@ -2980,9 +2980,14 @@ class Changelist(object):
     external_parent = self._GetChangeCommit(revision=external_ps)['parents'][0]
     external_base = external_parent['commit']
 
+    external_parent_last_uploaded = self._GetChangeCommit(
+        revision=local_ps)['parents'][0]
+    external_base_last_uploaded = external_parent_last_uploaded['commit']
+
     branch = git_common.current_branch()
     local_base = self.GetCommonAncestorWithUpstream()
-    if local_base != external_base:
+    if local_base != external_base or \
+        external_base != external_base_last_uploaded:
       print('\nLocal merge base %s is different from Gerrit %s.\n' %
             (local_base, external_base))
       if git_common.upstream(branch):
@@ -3003,6 +3008,19 @@ class Changelist(object):
     last_uploaded = RunGitSilent(['rev-parse', 'FETCH_HEAD']).strip()
     RunGitSilent(['fetch', remote, changes_ref + str(external_ps)])
     latest_external = RunGitSilent(['rev-parse', 'FETCH_HEAD']).strip()
+
+    # If the commit parents are different, don't apply the diff as it very
+    # likely contains many more changes not relevant to this CL.
+    parents = RunGitSilent(
+        ['rev-parse',
+         '%s~1 %s~1' % (last_upload, latest_external)]).strip().split('\n')
+    assert len(parents) == 2, 'Expected two parents.'
+    if parents[0] != parents[1]:
+      confirm_or_exit(
+          'Can\'t apply the latest changes from Gerrit (parent mismatch).\n'
+          'Continue with upload and override the latest changes?')
+      return
+
     diff = RunGitSilent(['diff', '%s..%s' % (last_uploaded, latest_external)])
 
     # Diff can be empty in the case of trivial rebases.

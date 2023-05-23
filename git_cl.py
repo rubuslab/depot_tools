@@ -2991,6 +2991,17 @@ class Changelist(object):
         return
       print('No upstream branch set. Continuing upload with Gerrit merge base.')
 
+    external_parent_last_uploaded = self._GetChangeCommit(
+        revision=local_ps)['parents'][0]
+    external_base_last_uploaded = external_parent_last_uploaded['commit']
+
+    if external_base != external_base_last_uploaded:
+      print('\nPatch set merge bases are different (%s, %s).\n' %
+            (external_base_last_uploaded, external_base))
+      confirm_or_exit('Can\'t apply the latest changes from Gerrit.\n'
+                      'Continue with upload and override the latest changes?')
+      return
+
     # Fetch Gerrit's CL base if it doesn't exist locally.
     remote, _ = self.GetRemoteBranch()
     if not scm.GIT.IsValidRevision(settings.GetRoot(), external_base):
@@ -3003,6 +3014,19 @@ class Changelist(object):
     last_uploaded = RunGitSilent(['rev-parse', 'FETCH_HEAD']).strip()
     RunGitSilent(['fetch', remote, changes_ref + str(external_ps)])
     latest_external = RunGitSilent(['rev-parse', 'FETCH_HEAD']).strip()
+
+    # If the commit parents are different, don't apply the diff as it very
+    # likely contains many more changes not relevant to this CL.
+    parents = RunGitSilent(
+        ['rev-parse',
+         '%s~1 %s~1' % (last_upload, latest_external)]).strip().split('\n')
+    assert len(parents) == 2, 'Expected two parents.'
+    if parents[0] != parents[1]:
+      confirm_or_exit(
+          'Can\'t apply the latest changes from Gerrit (parent mismatch).\n'
+          'Continue with upload and override the latest changes?')
+      return
+
     diff = RunGitSilent(['diff', '%s..%s' % (last_uploaded, latest_external)])
 
     # Diff can be empty in the case of trivial rebases.

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d33c815f_0229ebf4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1566882
+      },
+      "writtenOn": "2023-05-23T03:37:39Z",
+      "side": 1,
+      "message": "Friendly ping, I don\u0027t know why the CL still not merged or someone still has to review it. @Adam Could you please help me here? Am I missing something or there\u0027s any changes required on this one?",
+      "revId": "284f08a68d47fe27968e9bba4df39137b0491c61",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

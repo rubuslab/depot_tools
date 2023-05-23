@@ -1,0 +1,2031 @@
+{
+    "result": {
+        "src/android_webview/tools/cts_archive": [
+            {
+                "package": "chromium/android_webview/tools/cts_archive",
+                "pin": {
+                    "package": "chromium/android_webview/tools/cts_archive",
+                    "instance_id": "chromium/android_webview/tools/cts_archive-fake-instance-id"
+                }
+            }
+        ],
+        "src/buildtools/linux64": [
+            {
+                "package": "gn/gn/linux-arch-expanded-test-only",
+                "pin": {
+                    "package": "gn/gn/linux-arch-expanded-test-only",
+                    "instance_id": "gn/gn/linux-arch-expanded-test-only-fake-instance-id"
+                }
+            }
+        ],
+        "src/buildtools/reclient": [
+            {
+                "package": "infra/rbe/client/platform-expanded-test-only",
+                "pin": {
+                    "package": "infra/rbe/client/platform-expanded-test-only",
+                    "instance_id": "infra/rbe/client/platform-expanded-test-only-fake-instance-id"
+                }
+            }
+        ],
+        "src/clank/android_webview/tools/cts_archive/arm64": [
+            {
+                "package": "chrome_internal/android_webview/tools/cts_archive/arm64",
+                "pin": {
+                    "package": "chrome_internal/android_webview/tools/cts_archive/arm64",
+                    "instance_id": "chrome_internal/android_webview/tools/cts_archive/arm64-fake-instance-id"
+                }
+            }
+        ],
+        "src/clank/android_webview/tools/cts_archive/x86": [
+            {
+                "package": "chrome_internal/android_webview/tools/cts_archive/x86",
+                "pin": {
+                    "package": "chrome_internal/android_webview/tools/cts_archive/x86",
+                    "instance_id": "chrome_internal/android_webview/tools/cts_archive/x86-fake-instance-id"
+                }
+            }
+        ],
+        "src/clank/third_party/android_lint": [
+            {
+                "package": "chromium/third_party/android_build_tools/lint",
+                "pin": {
+                    "package": "chromium/third_party/android_build_tools/lint",
+                    "instance_id": "chromium/third_party/android_build_tools/lint-fake-instance-id"
+                }
+            }
+        ],
+        "src/clank/third_party/android_mainline_modules/rubidium": [
+            {
+                "package": "chrome_internal/third_party/mainline_modules/rubidium",
+                "pin": {
+                    "package": "chrome_internal/third_party/mainline_modules/rubidium",
+                    "instance_id": "chrome_internal/third_party/mainline_modules/rubidium-fake-instance-id"
+                }
+            }
+        ],
+        "src/clank/third_party/android_sdk/u": [
+            {
+                "package": "chrome_internal/third_party/android_sdk/internal/u/android_sdk",
+                "pin": {
+                    "package": "chrome_internal/third_party/android_sdk/internal/u/android_sdk",
+                    "instance_id": "chrome_internal/third_party/android_sdk/internal/u/android_sdk-fake-instance-id"
+                }
+            }
+        ],
+        "src/clank/third_party/android_system_sdk/u": [
+            {
+                "package": "chrome_internal/third_party/android_sdk/internal/u/android_system_sdk",
+                "pin": {
+                    "package": "chrome_internal/third_party/android_sdk/internal/u/android_system_sdk",
+                    "instance_id": "chrome_internal/third_party/android_sdk/internal/u/android_system_sdk-fake-instance-id"
+                }
+            }
+        ],
+        "src/clank/third_party/google3": [
+            {
+                "package": "chrome_internal/third_party/google3",
+                "pin": {
+                    "package": "chrome_internal/third_party/google3",
+                    "instance_id": "chrome_internal/third_party/google3-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/accessibility_test_framework": [
+            {
+                "package": "chromium/third_party/accessibility-test-framework",
+                "pin": {
+                    "package": "chromium/third_party/accessibility-test-framework",
+                    "instance_id": "chromium/third_party/accessibility-test-framework-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_build_tools/aapt2": [
+            {
+                "package": "chromium/third_party/android_build_tools/aapt2",
+                "pin": {
+                    "package": "chromium/third_party/android_build_tools/aapt2",
+                    "instance_id": "chromium/third_party/android_build_tools/aapt2-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_build_tools/apkanalyzer": [
+            {
+                "package": "chromium/third_party/android_build_tools/apkanalyzer",
+                "pin": {
+                    "package": "chromium/third_party/android_build_tools/apkanalyzer",
+                    "instance_id": "chromium/third_party/android_build_tools/apkanalyzer-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_build_tools/bundletool": [
+            {
+                "package": "chromium/third_party/android_build_tools/bundletool",
+                "pin": {
+                    "package": "chromium/third_party/android_build_tools/bundletool",
+                    "instance_id": "chromium/third_party/android_build_tools/bundletool-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_build_tools/lint": [
+            {
+                "package": "chromium/third_party/android_build_tools/lint",
+                "pin": {
+                    "package": "chromium/third_party/android_build_tools/lint",
+                    "instance_id": "chromium/third_party/android_build_tools/lint-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_build_tools/manifest_merger": [
+            {
+                "package": "chromium/third_party/android_build_tools/manifest_merger",
+                "pin": {
+                    "package": "chromium/third_party/android_build_tools/manifest_merger",
+                    "instance_id": "chromium/third_party/android_build_tools/manifest_merger-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/android_arch_core_common": [
+            {
+                "package": "chromium/third_party/android_deps/libs/android_arch_core_common",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/android_arch_core_common",
+                    "instance_id": "chromium/third_party/android_deps/libs/android_arch_core_common-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/android_arch_core_runtime": [
+            {
+                "package": "chromium/third_party/android_deps/libs/android_arch_core_runtime",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/android_arch_core_runtime",
+                    "instance_id": "chromium/third_party/android_deps/libs/android_arch_core_runtime-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/android_arch_lifecycle_common": [
+            {
+                "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_common",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_common",
+                    "instance_id": "chromium/third_party/android_deps/libs/android_arch_lifecycle_common-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/android_arch_lifecycle_common_java8": [
+            {
+                "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_common_java8",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_common_java8",
+                    "instance_id": "chromium/third_party/android_deps/libs/android_arch_lifecycle_common_java8-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/android_arch_lifecycle_livedata": [
+            {
+                "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_livedata",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_livedata",
+                    "instance_id": "chromium/third_party/android_deps/libs/android_arch_lifecycle_livedata-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/android_arch_lifecycle_livedata_core": [
+            {
+                "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_livedata_core",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_livedata_core",
+                    "instance_id": "chromium/third_party/android_deps/libs/android_arch_lifecycle_livedata_core-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/android_arch_lifecycle_runtime": [
+            {
+                "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_runtime",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_runtime",
+                    "instance_id": "chromium/third_party/android_deps/libs/android_arch_lifecycle_runtime-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/android_arch_lifecycle_viewmodel": [
+            {
+                "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_viewmodel",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/android_arch_lifecycle_viewmodel",
+                    "instance_id": "chromium/third_party/android_deps/libs/android_arch_lifecycle_viewmodel-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_animated_vector_drawable": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_animated_vector_drawable",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_animated_vector_drawable",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_animated_vector_drawable-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_appcompat_v7": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_appcompat_v7",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_appcompat_v7",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_appcompat_v7-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_asynclayoutinflater": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_asynclayoutinflater",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_asynclayoutinflater",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_asynclayoutinflater-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_cardview_v7": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_cardview_v7",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_cardview_v7",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_cardview_v7-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_collections": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_collections",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_collections",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_collections-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_coordinatorlayout": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_coordinatorlayout",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_coordinatorlayout",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_coordinatorlayout-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_cursoradapter": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_cursoradapter",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_cursoradapter",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_cursoradapter-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_customview": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_customview",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_customview",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_customview-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_design": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_design",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_design",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_design-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_documentfile": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_documentfile",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_documentfile",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_documentfile-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_drawerlayout": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_drawerlayout",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_drawerlayout",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_drawerlayout-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_interpolator": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_interpolator",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_interpolator",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_interpolator-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_loader": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_loader",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_loader",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_loader-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_localbroadcastmanager": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_localbroadcastmanager",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_localbroadcastmanager",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_localbroadcastmanager-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_multidex": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_multidex",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_multidex",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_multidex-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_print": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_print",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_print",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_print-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_recyclerview_v7": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_recyclerview_v7",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_recyclerview_v7",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_recyclerview_v7-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_slidingpanelayout": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_slidingpanelayout",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_slidingpanelayout",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_slidingpanelayout-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_support_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_support_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_support_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_support_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_support_compat": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_support_compat",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_support_compat",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_support_compat-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_support_core_ui": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_support_core_ui",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_support_core_ui",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_support_core_ui-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_support_core_utils": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_support_core_utils",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_support_core_utils",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_support_core_utils-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_support_fragment": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_support_fragment",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_support_fragment",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_support_fragment-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_support_media_compat": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_support_media_compat",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_support_media_compat",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_support_media_compat-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_support_v4": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_support_v4",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_support_v4",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_support_v4-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_support_vector_drawable": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_support_vector_drawable",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_support_vector_drawable",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_support_vector_drawable-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_swiperefreshlayout": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_swiperefreshlayout",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_swiperefreshlayout",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_swiperefreshlayout-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_transition": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_transition",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_transition",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_transition-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_versionedparcelable": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_versionedparcelable",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_versionedparcelable",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_versionedparcelable-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_support_viewpager": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_support_viewpager",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_support_viewpager",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_support_viewpager-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_tools_common": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_tools_common",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_tools_common",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_tools_common-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_tools_layoutlib_layoutlib_api": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_tools_layoutlib_layoutlib_api",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_tools_layoutlib_layoutlib_api",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_tools_layoutlib_layoutlib_api-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_android_tools_sdk_common": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_android_tools_sdk_common",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_android_tools_sdk_common",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_android_tools_sdk_common-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_github_ben_manes_caffeine_caffeine": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_github_ben_manes_caffeine_caffeine",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_github_ben_manes_caffeine_caffeine",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_github_ben_manes_caffeine_caffeine-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_github_kevinstern_software_and_algorithms": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_github_kevinstern_software_and_algorithms",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_github_kevinstern_software_and_algorithms",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_github_kevinstern_software_and_algorithms-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_apps_common_testing_accessibility_framework_accessibility_test_framework": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_apps_common_testing_accessibility_framework_accessibility_test_framework",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_apps_common_testing_accessibility_framework_accessibility_test_framework",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_apps_common_testing_accessibility_framework_accessibility_test_framework-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_datatransport_transport_api": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_datatransport_transport_api",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_datatransport_transport_api",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_datatransport_transport_api-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_auth": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_auth",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_auth",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_auth-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_auth_api_phone": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_auth_api_phone",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_auth_api_phone",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_auth_api_phone-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_auth_base": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_auth_base",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_auth_base",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_auth_base-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_base": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_base",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_base",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_base-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_basement": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_basement",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_basement",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_basement-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_cast": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_cast",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_cast",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_cast-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_cast_framework": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_cast_framework",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_cast_framework",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_cast_framework-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_clearcut": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_clearcut",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_clearcut",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_clearcut-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_cloud_messaging": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_cloud_messaging",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_cloud_messaging",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_cloud_messaging-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_flags": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_flags",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_flags",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_flags-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_gcm": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_gcm",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_gcm",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_gcm-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_iid": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_iid",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_iid",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_iid-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_instantapps": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_instantapps",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_instantapps",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_instantapps-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_location": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_location",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_location",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_location-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_phenotype": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_phenotype",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_phenotype",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_phenotype-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_places_placereport": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_places_placereport",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_places_placereport",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_places_placereport-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_stats": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_stats",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_stats",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_stats-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_tasks": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_tasks",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_tasks",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_tasks-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_vision": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_vision",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_vision",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_vision-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_gms_play_services_vision_common": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_vision_common",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_vision_common",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_gms_play_services_vision_common-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_material_material": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_material_material",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_material_material",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_material_material-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_play_core_common": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_play_core_common",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_play_core_common",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_play_core_common-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_android_play_feature_delivery": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_android_play_feature_delivery",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_android_play_feature_delivery",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_android_play_feature_delivery-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_auto_auto_common": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_auto_auto_common",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_auto_auto_common",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_auto_auto_common-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_auto_service_auto_service": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_auto_service_auto_service",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_auto_service_auto_service",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_auto_service_auto_service-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_auto_service_auto_service_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_auto_service_auto_service_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_auto_service_auto_service_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_auto_service_auto_service_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_auto_value_auto_value_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_auto_value_auto_value_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_auto_value_auto_value_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_auto_value_auto_value_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_code_findbugs_jsr305": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_code_findbugs_jsr305",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_code_findbugs_jsr305",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_code_findbugs_jsr305-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_code_gson_gson": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_code_gson_gson",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_code_gson_gson",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_code_gson_gson-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_dagger_dagger": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_dagger_dagger",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_dagger_dagger",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_dagger_dagger-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_dagger_dagger_compiler": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_dagger_dagger_compiler",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_dagger_dagger_compiler",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_dagger_dagger_compiler-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_dagger_dagger_producers": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_dagger_dagger_producers",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_dagger_dagger_producers",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_dagger_dagger_producers-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_dagger_dagger_spi": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_dagger_dagger_spi",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_dagger_dagger_spi",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_dagger_dagger_spi-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_errorprone_error_prone_annotation": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_annotation",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_annotation",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_annotation-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_errorprone_error_prone_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_errorprone_error_prone_check_api": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_check_api",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_check_api",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_check_api-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_errorprone_error_prone_core": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_core",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_core",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_core-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_errorprone_error_prone_type_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_type_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_type_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_errorprone_error_prone_type_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_errorprone_javac": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_errorprone_javac",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_errorprone_javac",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_errorprone_javac-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_errorprone_javac_shaded": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_errorprone_javac_shaded",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_errorprone_javac_shaded",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_errorprone_javac_shaded-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_common": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_common",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_common",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_common-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_components": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_components",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_components",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_components-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_encoders": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_encoders",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_encoders",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_encoders-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_encoders_json": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_encoders_json",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_encoders_json",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_encoders_json-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_iid": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_iid",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_iid",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_iid-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_iid_interop": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_iid_interop",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_iid_interop",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_iid_interop-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_installations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_installations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_installations",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_installations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_installations_interop": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_installations_interop",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_installations_interop",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_installations_interop-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_measurement_connector": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_measurement_connector",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_measurement_connector",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_measurement_connector-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_firebase_firebase_messaging": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_messaging",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_messaging",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_firebase_firebase_messaging-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_googlejavaformat_google_java_format": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_googlejavaformat_google_java_format",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_googlejavaformat_google_java_format",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_googlejavaformat_google_java_format-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_guava_failureaccess": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_guava_failureaccess",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_guava_failureaccess",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_guava_failureaccess-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_guava_guava": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_guava_guava",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_guava_guava",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_guava_guava-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_guava_guava_android": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_guava_guava_android",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_guava_guava_android",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_guava_guava_android-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_guava_listenablefuture": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_guava_listenablefuture",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_guava_listenablefuture",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_guava_listenablefuture-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_j2objc_j2objc_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_j2objc_j2objc_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_j2objc_j2objc_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_j2objc_j2objc_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_protobuf_protobuf_java": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_protobuf_protobuf_java",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_protobuf_protobuf_java",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_protobuf_protobuf_java-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_google_protobuf_protobuf_javalite": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_google_protobuf_protobuf_javalite",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_google_protobuf_protobuf_javalite",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_google_protobuf_protobuf_javalite-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_googlecode_java_diff_utils_diffutils": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_googlecode_java_diff_utils_diffutils",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_googlecode_java_diff_utils_diffutils",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_googlecode_java_diff_utils_diffutils-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_squareup_javapoet": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_squareup_javapoet",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_squareup_javapoet",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_squareup_javapoet-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_squareup_javawriter": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_squareup_javawriter",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_squareup_javawriter",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_squareup_javawriter-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_squareup_okio_okio_jvm": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_squareup_okio_okio_jvm",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_squareup_okio_okio_jvm",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_squareup_okio_okio_jvm-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/com_squareup_wire_wire_runtime_jvm": [
+            {
+                "package": "chromium/third_party/android_deps/libs/com_squareup_wire_wire_runtime_jvm",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/com_squareup_wire_wire_runtime_jvm",
+                    "instance_id": "chromium/third_party/android_deps/libs/com_squareup_wire_wire_runtime_jvm-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/io_github_java_diff_utils_java_diff_utils": [
+            {
+                "package": "chromium/third_party/android_deps/libs/io_github_java_diff_utils_java_diff_utils",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/io_github_java_diff_utils_java_diff_utils",
+                    "instance_id": "chromium/third_party/android_deps/libs/io_github_java_diff_utils_java_diff_utils-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/io_grpc_grpc_api": [
+            {
+                "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_api",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_api",
+                    "instance_id": "chromium/third_party/android_deps/libs/io_grpc_grpc_api-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/io_grpc_grpc_binder": [
+            {
+                "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_binder",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_binder",
+                    "instance_id": "chromium/third_party/android_deps/libs/io_grpc_grpc_binder-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/io_grpc_grpc_context": [
+            {
+                "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_context",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_context",
+                    "instance_id": "chromium/third_party/android_deps/libs/io_grpc_grpc_context-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/io_grpc_grpc_core": [
+            {
+                "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_core",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_core",
+                    "instance_id": "chromium/third_party/android_deps/libs/io_grpc_grpc_core-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/io_grpc_grpc_protobuf_lite": [
+            {
+                "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_protobuf_lite",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_protobuf_lite",
+                    "instance_id": "chromium/third_party/android_deps/libs/io_grpc_grpc_protobuf_lite-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/io_grpc_grpc_stub": [
+            {
+                "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_stub",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/io_grpc_grpc_stub",
+                    "instance_id": "chromium/third_party/android_deps/libs/io_grpc_grpc_stub-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/io_perfmark_perfmark_api": [
+            {
+                "package": "chromium/third_party/android_deps/libs/io_perfmark_perfmark_api",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/io_perfmark_perfmark_api",
+                    "instance_id": "chromium/third_party/android_deps/libs/io_perfmark_perfmark_api-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/javax_annotation_javax_annotation_api": [
+            {
+                "package": "chromium/third_party/android_deps/libs/javax_annotation_javax_annotation_api",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/javax_annotation_javax_annotation_api",
+                    "instance_id": "chromium/third_party/android_deps/libs/javax_annotation_javax_annotation_api-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/javax_annotation_jsr250_api": [
+            {
+                "package": "chromium/third_party/android_deps/libs/javax_annotation_jsr250_api",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/javax_annotation_jsr250_api",
+                    "instance_id": "chromium/third_party/android_deps/libs/javax_annotation_jsr250_api-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/javax_inject_javax_inject": [
+            {
+                "package": "chromium/third_party/android_deps/libs/javax_inject_javax_inject",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/javax_inject_javax_inject",
+                    "instance_id": "chromium/third_party/android_deps/libs/javax_inject_javax_inject-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/net_bytebuddy_byte_buddy": [
+            {
+                "package": "chromium/third_party/android_deps/libs/net_bytebuddy_byte_buddy",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/net_bytebuddy_byte_buddy",
+                    "instance_id": "chromium/third_party/android_deps/libs/net_bytebuddy_byte_buddy-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/net_bytebuddy_byte_buddy_agent": [
+            {
+                "package": "chromium/third_party/android_deps/libs/net_bytebuddy_byte_buddy_agent",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/net_bytebuddy_byte_buddy_agent",
+                    "instance_id": "chromium/third_party/android_deps/libs/net_bytebuddy_byte_buddy_agent-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/net_ltgt_gradle_incap_incap": [
+            {
+                "package": "chromium/third_party/android_deps/libs/net_ltgt_gradle_incap_incap",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/net_ltgt_gradle_incap_incap",
+                    "instance_id": "chromium/third_party/android_deps/libs/net_ltgt_gradle_incap_incap-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_bouncycastle_bcprov_jdk18on": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_bouncycastle_bcprov_jdk18on",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_bouncycastle_bcprov_jdk18on",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_bouncycastle_bcprov_jdk18on-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_ccil_cowan_tagsoup_tagsoup": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_ccil_cowan_tagsoup_tagsoup",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_ccil_cowan_tagsoup_tagsoup",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_ccil_cowan_tagsoup_tagsoup-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_checkerframework_checker_compat_qual": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_checkerframework_checker_compat_qual",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_checkerframework_checker_compat_qual",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_checkerframework_checker_compat_qual-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_checkerframework_checker_qual": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_checkerframework_checker_qual",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_checkerframework_checker_qual",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_checkerframework_checker_qual-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_checkerframework_checker_util": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_checkerframework_checker_util",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_checkerframework_checker_util",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_checkerframework_checker_util-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_checkerframework_dataflow_errorprone": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_checkerframework_dataflow_errorprone",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_checkerframework_dataflow_errorprone",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_checkerframework_dataflow_errorprone-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_codehaus_mojo_animal_sniffer_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_codehaus_mojo_animal_sniffer_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_codehaus_mojo_animal_sniffer_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_codehaus_mojo_animal_sniffer_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_conscrypt_conscrypt_openjdk_uber": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_conscrypt_conscrypt_openjdk_uber",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_conscrypt_conscrypt_openjdk_uber",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_conscrypt_conscrypt_openjdk_uber-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_eclipse_jgit_org_eclipse_jgit": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_eclipse_jgit_org_eclipse_jgit",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_eclipse_jgit_org_eclipse_jgit",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_eclipse_jgit_org_eclipse_jgit-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_hamcrest_hamcrest": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_hamcrest_hamcrest",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_hamcrest_hamcrest",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_hamcrest_hamcrest-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_jetbrains_kotlin_kotlin_stdlib_jdk7": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlin_kotlin_stdlib_jdk7",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlin_kotlin_stdlib_jdk7",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_jetbrains_kotlin_kotlin_stdlib_jdk7-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_jetbrains_kotlin_kotlin_stdlib_jdk8": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlin_kotlin_stdlib_jdk8",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlin_kotlin_stdlib_jdk8",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_jetbrains_kotlin_kotlin_stdlib_jdk8-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_android": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_android",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_android",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_android-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_core_jvm": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_core_jvm",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_core_jvm",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_core_jvm-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_guava": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_guava",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_guava",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_coroutines_guava-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_metadata_jvm": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_metadata_jvm",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_metadata_jvm",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_jetbrains_kotlinx_kotlinx_metadata_jvm-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_jsoup_jsoup": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_jsoup_jsoup",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_jsoup_jsoup",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_jsoup_jsoup-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_mockito_mockito_android": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_mockito_mockito_android",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_mockito_mockito_android",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_mockito_mockito_android-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_mockito_mockito_core": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_mockito_mockito_core",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_mockito_mockito_core",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_mockito_mockito_core-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_mockito_mockito_subclass": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_mockito_mockito_subclass",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_mockito_mockito_subclass",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_mockito_mockito_subclass-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_objenesis_objenesis": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_objenesis_objenesis",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_objenesis_objenesis",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_objenesis_objenesis-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_ow2_asm_asm": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_ow2_asm_asm-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_ow2_asm_asm_analysis": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_analysis",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_analysis",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_analysis-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_ow2_asm_asm_commons": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_commons",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_commons",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_commons-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_ow2_asm_asm_tree": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_tree",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_tree",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_tree-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_ow2_asm_asm_util": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_util",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_util",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_ow2_asm_asm_util-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_pcollections_pcollections": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_pcollections_pcollections",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_pcollections_pcollections",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_pcollections_pcollections-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_annotations": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_annotations",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_annotations",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_annotations-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_junit": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_junit",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_junit",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_junit-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_nativeruntime": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_nativeruntime",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_nativeruntime",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_nativeruntime-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_nativeruntime_dist_compat": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_nativeruntime_dist_compat",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_nativeruntime_dist_compat",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_nativeruntime_dist_compat-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_pluginapi": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_pluginapi",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_pluginapi",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_pluginapi-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_plugins_maven_dependency_resolver": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_plugins_maven_dependency_resolver",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_plugins_maven_dependency_resolver",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_plugins_maven_dependency_resolver-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_resources": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_resources",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_resources",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_resources-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_robolectric": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_robolectric",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_robolectric",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_robolectric-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_sandbox": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_sandbox",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_sandbox",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_sandbox-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_shadowapi": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_shadowapi",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_shadowapi",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_shadowapi-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_shadows_framework": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_shadows_framework",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_shadows_framework",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_shadows_framework-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_shadows_playservices": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_shadows_playservices",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_shadows_playservices",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_shadows_playservices-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_utils": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_utils",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_utils",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_utils-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_deps/libs/org_robolectric_utils_reflector": [
+            {
+                "package": "chromium/third_party/android_deps/libs/org_robolectric_utils_reflector",
+                "pin": {
+                    "package": "chromium/third_party/android_deps/libs/org_robolectric_utils_reflector",
+                    "instance_id": "chromium/third_party/android_deps/libs/org_robolectric_utils_reflector-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_protoc": [
+            {
+                "package": "chromium/third_party/android_protoc",
+                "pin": {
+                    "package": "chromium/third_party/android_protoc",
+                    "instance_id": "chromium/third_party/android_protoc-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_sdk/public": [
+            {
+                "package": "chromium/third_party/android_sdk/public/build-tools/33.0.0",
+                "pin": {
+                    "package": "chromium/third_party/android_sdk/public/build-tools/33.0.0",
+                    "instance_id": "chromium/third_party/android_sdk/public/build-tools/33.0.0-fake-instance-id"
+                }
+            },
+            {
+                "package": "chromium/third_party/android_sdk/public/cmdline-tools",
+                "pin": {
+                    "package": "chromium/third_party/android_sdk/public/cmdline-tools",
+                    "instance_id": "chromium/third_party/android_sdk/public/cmdline-tools-fake-instance-id"
+                }
+            },
+            {
+                "package": "chromium/third_party/android_sdk/public/emulator",
+                "pin": {
+                    "package": "chromium/third_party/android_sdk/public/emulator",
+                    "instance_id": "chromium/third_party/android_sdk/public/emulator-fake-instance-id"
+                }
+            },
+            {
+                "package": "chromium/third_party/android_sdk/public/patcher",
+                "pin": {
+                    "package": "chromium/third_party/android_sdk/public/patcher",
+                    "instance_id": "chromium/third_party/android_sdk/public/patcher-fake-instance-id"
+                }
+            },
+            {
+                "package": "chromium/third_party/android_sdk/public/platform-tools",
+                "pin": {
+                    "package": "chromium/third_party/android_sdk/public/platform-tools",
+                    "instance_id": "chromium/third_party/android_sdk/public/platform-tools-fake-instance-id"
+                }
+            },
+            {
+                "package": "chromium/third_party/android_sdk/public/platforms/android-33",
+                "pin": {
+                    "package": "chromium/third_party/android_sdk/public/platforms/android-33",
+                    "instance_id": "chromium/third_party/android_sdk/public/platforms/android-33-fake-instance-id"
+                }
+            },
+            {
+                "package": "chromium/third_party/android_sdk/public/platforms/android-tiramisuprivacysandbox",
+                "pin": {
+                    "package": "chromium/third_party/android_sdk/public/platforms/android-tiramisuprivacysandbox",
+                    "instance_id": "chromium/third_party/android_sdk/public/platforms/android-tiramisuprivacysandbox-fake-instance-id"
+                }
+            },
+            {
+                "package": "chromium/third_party/android_sdk/public/sources/android-31",
+                "pin": {
+                    "package": "chromium/third_party/android_sdk/public/sources/android-31",
+                    "instance_id": "chromium/third_party/android_sdk/public/sources/android-31-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/android_system_sdk": [
+            {
+                "package": "chromium/third_party/android_system_sdk/public",
+                "pin": {
+                    "package": "chromium/third_party/android_system_sdk/public",
+                    "instance_id": "chromium/third_party/android_system_sdk/public-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/androidx": [
+            {
+                "package": "chromium/third_party/androidx",
+                "pin": {
+                    "package": "chromium/third_party/androidx",
+                    "instance_id": "chromium/third_party/androidx-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/aosp_dalvik": [
+            {
+                "package": "chromium/third_party/aosp_dalvik/linux-amd64",
+                "pin": {
+                    "package": "chromium/third_party/aosp_dalvik/linux-amd64",
+                    "instance_id": "chromium/third_party/aosp_dalvik/linux-amd64-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/apache-linux": [
+            {
+                "package": "infra/3pp/tools/httpd-php/linux-amd64",
+                "pin": {
+                    "package": "infra/3pp/tools/httpd-php/linux-amd64",
+                    "instance_id": "infra/3pp/tools/httpd-php/linux-amd64-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/arcore-android-sdk-client": [
+            {
+                "package": "chromium/third_party/arcore-android-sdk-client",
+                "pin": {
+                    "package": "chromium/third_party/arcore-android-sdk-client",
+                    "instance_id": "chromium/third_party/arcore-android-sdk-client-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/byte_buddy": [
+            {
+                "package": "chromium/third_party/byte_buddy",
+                "pin": {
+                    "package": "chromium/third_party/byte_buddy",
+                    "instance_id": "chromium/third_party/byte_buddy-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/byte_buddy/android_sdk_build_tools_25_0_2": [
+            {
+                "package": "chromium/third_party/android_sdk/public/build-tools",
+                "pin": {
+                    "package": "chromium/third_party/android_sdk/public/build-tools",
+                    "instance_id": "chromium/third_party/android_sdk/public/build-tools-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/checkstyle": [
+            {
+                "package": "chromium/third_party/checkstyle",
+                "pin": {
+                    "package": "chromium/third_party/checkstyle",
+                    "instance_id": "chromium/third_party/checkstyle-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/dawn/third_party/ninja": [
+            {
+                "package": "infra/3pp/tools/ninja/platform-expanded-test-only",
+                "pin": {
+                    "package": "infra/3pp/tools/ninja/platform-expanded-test-only",
+                    "instance_id": "infra/3pp/tools/ninja/platform-expanded-test-only-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/dawn/tools/golang": [
+            {
+                "package": "infra/3pp/tools/go/platform-expanded-test-only",
+                "pin": {
+                    "package": "infra/3pp/tools/go/platform-expanded-test-only",
+                    "instance_id": "infra/3pp/tools/go/platform-expanded-test-only-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/devtools-frontend-internal/buildtools/linux64": [
+            {
+                "package": "gn/gn/linux-amd64",
+                "pin": {
+                    "package": "gn/gn/linux-amd64",
+                    "instance_id": "gn/gn/linux-amd64-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/devtools-frontend-internal/devtools-frontend/third_party/esbuild": [
+            {
+                "package": "infra/3pp/tools/esbuild/platform-expanded-test-only",
+                "pin": {
+                    "package": "infra/3pp/tools/esbuild/platform-expanded-test-only",
+                    "instance_id": "infra/3pp/tools/esbuild/platform-expanded-test-only-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/devtools-frontend/src/third_party/esbuild": [
+            {
+                "package": "infra/3pp/tools/esbuild/platform-expanded-test-only",
+                "pin": {
+                    "package": "infra/3pp/tools/esbuild/platform-expanded-test-only",
+                    "instance_id": "infra/3pp/tools/esbuild/platform-expanded-test-only-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/espresso": [
+            {
+                "package": "chromium/third_party/espresso",
+                "pin": {
+                    "package": "chromium/third_party/espresso",
+                    "instance_id": "chromium/third_party/espresso-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/google-truth": [
+            {
+                "package": "chromium/third_party/google-truth",
+                "pin": {
+                    "package": "chromium/third_party/google-truth",
+                    "instance_id": "chromium/third_party/google-truth-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/hamcrest": [
+            {
+                "package": "chromium/third_party/hamcrest",
+                "pin": {
+                    "package": "chromium/third_party/hamcrest",
+                    "instance_id": "chromium/third_party/hamcrest-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/icu4j": [
+            {
+                "package": "chromium/third_party/icu4j",
+                "pin": {
+                    "package": "chromium/third_party/icu4j",
+                    "instance_id": "chromium/third_party/icu4j-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/jacoco": [
+            {
+                "package": "chromium/third_party/jacoco",
+                "pin": {
+                    "package": "chromium/third_party/jacoco",
+                    "instance_id": "chromium/third_party/jacoco-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/jdk": [
+            {
+                "package": "chromium/third_party/jdk",
+                "pin": {
+                    "package": "chromium/third_party/jdk",
+                    "instance_id": "chromium/third_party/jdk-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/jdk11": [
+            {
+                "package": "chromium/third_party/jdk",
+                "pin": {
+                    "package": "chromium/third_party/jdk",
+                    "instance_id": "chromium/third_party/jdk-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/kotlin_stdlib": [
+            {
+                "package": "chromium/third_party/kotlin_stdlib",
+                "pin": {
+                    "package": "chromium/third_party/kotlin_stdlib",
+                    "instance_id": "chromium/third_party/kotlin_stdlib-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/kotlinc/current": [
+            {
+                "package": "chromium/third_party/kotlinc",
+                "pin": {
+                    "package": "chromium/third_party/kotlinc",
+                    "instance_id": "chromium/third_party/kotlinc-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/libei": [
+            {
+                "package": "chromium/third_party/libei/linux-amd64",
+                "pin": {
+                    "package": "chromium/third_party/libei/linux-amd64",
+                    "instance_id": "chromium/third_party/libei/linux-amd64-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/ninja": [
+            {
+                "package": "infra/3pp/tools/ninja/platform-expanded-test-only",
+                "pin": {
+                    "package": "infra/3pp/tools/ninja/platform-expanded-test-only",
+                    "instance_id": "infra/3pp/tools/ninja/platform-expanded-test-only-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/objenesis": [
+            {
+                "package": "chromium/third_party/objenesis",
+                "pin": {
+                    "package": "chromium/third_party/objenesis",
+                    "instance_id": "chromium/third_party/objenesis-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/r8": [
+            {
+                "package": "chromium/third_party/r8",
+                "pin": {
+                    "package": "chromium/third_party/r8",
+                    "instance_id": "chromium/third_party/r8-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/r8/d8": [
+            {
+                "package": "chromium/third_party/r8",
+                "pin": {
+                    "package": "chromium/third_party/r8",
+                    "instance_id": "chromium/third_party/r8-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/robolectric": [
+            {
+                "package": "chromium/third_party/robolectric",
+                "pin": {
+                    "package": "chromium/third_party/robolectric",
+                    "instance_id": "chromium/third_party/robolectric-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/sqlite4java": [
+            {
+                "package": "chromium/third_party/sqlite4java",
+                "pin": {
+                    "package": "chromium/third_party/sqlite4java",
+                    "instance_id": "chromium/third_party/sqlite4java-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/turbine": [
+            {
+                "package": "chromium/third_party/turbine",
+                "pin": {
+                    "package": "chromium/third_party/turbine",
+                    "instance_id": "chromium/third_party/turbine-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/updater/chrome_linux64": [
+            {
+                "package": "chromium/third_party/updater/chrome_linux64",
+                "pin": {
+                    "package": "chromium/third_party/updater/chrome_linux64",
+                    "instance_id": "chromium/third_party/updater/chrome_linux64-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/updater/chromium_linux64": [
+            {
+                "package": "chromium/third_party/updater/chromium_linux64",
+                "pin": {
+                    "package": "chromium/third_party/updater/chromium_linux64",
+                    "instance_id": "chromium/third_party/updater/chromium_linux64-fake-instance-id"
+                }
+            }
+        ],
+        "src/third_party/webpagereplay": [
+            {
+                "package": "infra/tools/wpr/linux_x86_64",
+                "pin": {
+                    "package": "infra/tools/wpr/linux_x86_64",
+                    "instance_id": "infra/tools/wpr/linux_x86_64-fake-instance-id"
+                }
+            }
+        ],
+        "src/tools/luci-go": [
+            {
+                "package": "infra/tools/luci/isolate/platform-expanded-test-only",
+                "pin": {
+                    "package": "infra/tools/luci/isolate/platform-expanded-test-only",
+                    "instance_id": "infra/tools/luci/isolate/platform-expanded-test-only-fake-instance-id"
+                }
+            },
+            {
+                "package": "infra/tools/luci/swarming/platform-expanded-test-only",
+                "pin": {
+                    "package": "infra/tools/luci/swarming/platform-expanded-test-only",
+                    "instance_id": "infra/tools/luci/swarming/platform-expanded-test-only-fake-instance-id"
+                }
+            }
+        ],
+        "src/tools/resultdb": [
+            {
+                "package": "infra/tools/result_adapter/platform-expanded-test-only",
+                "pin": {
+                    "package": "infra/tools/result_adapter/platform-expanded-test-only",
+                    "instance_id": "infra/tools/result_adapter/platform-expanded-test-only-fake-instance-id"
+                }
+            }
+        ],
+        "src/tools/skia_goldctl/linux": [
+            {
+                "package": "skia/tools/goldctl/linux-amd64",
+                "pin": {
+                    "package": "skia/tools/goldctl/linux-amd64",
+                    "instance_id": "skia/tools/goldctl/linux-amd64-fake-instance-id"
+                }
+            }
+        ]
+    }
+}

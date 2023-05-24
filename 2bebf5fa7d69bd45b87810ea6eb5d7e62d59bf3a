@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af2bffcd_7626531b",
+        "filename": "reclient_helper.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "```\nmetrics_prefix is the same domain as is being used by CI/CQ and was used by Goma, this will make integrating with existing alerts easier\n```\n\nAs per go/re-client-chromium-developer-metric-collection-op#heading\u003dh.oh0ozwgordj5",
+      "parentUuid": "e2239468_f93fa652",
+      "range": {
+        "startLine": 108,
+        "startChar": 47,
+        "endLine": 108,
+        "endChar": 62
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3bf4ee8c_4626706b",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-05-24T01:07:42Z",
       "side": 1,
       "message": "Is it ok to return the default config without subtracting 1?",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 17
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57916317_3c7e328f",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "Subtracting 1 is the correct behaviour you can see in the unit test that this results in 10 messages being shown and the 11th run collects metrics",
+      "parentUuid": "3bf4ee8c_4626706b",
       "range": {
         "startLine": 25,
         "startChar": 8,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0363330_c305ff24",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12386735_ca1174bc",
+      "range": {
+        "startLine": 25,
+        "startChar": 17,
+        "endLine": 30,
+        "endChar": 0
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f4b39b5_372c8889",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-05-24T01:07:42Z",
       "side": 1,
       "message": "nit:\nYou can use named parameters.\nhttps://www.programiz.com/python-programming/string-interpolation",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 4
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b41ff618_5bc17e3c",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f4b39b5_372c8889",
       "range": {
         "startLine": 75,
         "startChar": 4,
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cc37c31b_1f17b77d",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "At this stage reclient is not logged in as it has not started yet.\nAlso determining googler status is probably something best left to a chrome specific solution rather than built into the reproxy binary.\nI think `cipd auth-info` or `luci-auth info` are potentially good options.\nI chose `cipd auth-info` because the auth info seems to the long lasting so reauth doesn\u0027t seem to affect it. Also it is required for downloading rewrapper configs which will happen every time that the nacl or clang toolchains have a roll.",
+      "parentUuid": "ecc62b68_08507b9d",
+      "range": {
+        "startLine": 91,
+        "startChar": 22,
+        "endLine": 91,
+        "endChar": 36
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ae1294e2_6962c549",
         "filename": "reclient_metrics.py",
         "patchSetId": 9
@@ -129,6 +249,30 @@
       "writtenOn": "2023-05-24T01:09:56Z",
       "side": 1,
       "message": "text?",
+      "range": {
+        "startLine": 94,
+        "startChar": 21,
+        "endLine": 94,
+        "endChar": 39
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1044aa7e_d61d7ff6",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae1294e2_6962c549",
       "range": {
         "startLine": 94,
         "startChar": 21,
@@ -162,6 +306,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2635283_6a6d012c",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae5ca446_dfe6cf25",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 21
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ec72c37_c83d641d",
@@ -175,6 +343,30 @@
       "writtenOn": "2023-05-24T01:09:56Z",
       "side": 1,
       "message": "sort",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 54
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "711bdbbe_98c3448d",
+        "filename": "tests/OWNERS",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ec72c37_c83d641d",
       "range": {
         "startLine": 3,
         "startChar": 0,
@@ -208,6 +400,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4396fbfd_ab5fcd44",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a859a033_5e26aed9",
+      "range": {
+        "startLine": 104,
+        "startChar": 26,
+        "endLine": 104,
+        "endChar": 35
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fb22a83e_579112e2",
@@ -221,6 +437,30 @@
       "writtenOn": "2023-05-24T00:39:28Z",
       "side": 1,
       "message": "same here.",
+      "range": {
+        "startLine": 109,
+        "startChar": 59,
+        "endLine": 109,
+        "endChar": 68
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09258944_a15bbba7",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-24T15:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb22a83e_579112e2",
       "range": {
         "startLine": 109,
         "startChar": 59,

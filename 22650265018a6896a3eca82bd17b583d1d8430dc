@@ -16,6 +16,23 @@
       "message": "pairing with https://chromium-review.googlesource.com/c/infra/infra/+/4562295",
       "revId": "22650265018a6896a3eca82bd17b583d1d8430dc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9773c5e_a9581238",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-05-24T20:14:30Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "22650265018a6896a3eca82bd17b583d1d8430dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

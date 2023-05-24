@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdbdcce1_7df5c8a9",
+        "filename": "gclient_scm.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1782,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-24T15:09:37Z",
+      "side": 1,
+      "message": "nit: could also use `src_path, package \u003d path_split`",
+      "range": {
+        "startLine": 1781,
+        "startChar": 10,
+        "endLine": 1782,
+        "endChar": 33
+      },
+      "revId": "e32de17665094a30a167009921125da0e110e0eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

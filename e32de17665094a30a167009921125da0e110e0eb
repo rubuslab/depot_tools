@@ -22,6 +22,30 @@
       },
       "revId": "e32de17665094a30a167009921125da0e110e0eb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b64b20dd_91ff65a6",
+        "filename": "gclient_scm.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1782,
+      "author": {
+        "id": 1559487
+      },
+      "writtenOn": "2023-05-24T23:31:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdbdcce1_7df5c8a9",
+      "range": {
+        "startLine": 1781,
+        "startChar": 10,
+        "endLine": 1782,
+        "endChar": 33
+      },
+      "revId": "e32de17665094a30a167009921125da0e110e0eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

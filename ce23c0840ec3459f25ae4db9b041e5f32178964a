@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e13f91a_930690db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1540893
+      },
+      "writtenOn": "2023-05-25T18:19:25Z",
+      "side": 1,
+      "message": "Hi Jeff or Garrett, could you please take a look for the mac_toolchain roll? The roll has already been done for a few weeks in the main waterfall, but trying to tighten up a few loose ends on some places where mac_toolchain is also used...",
+      "revId": "ce23c0840ec3459f25ae4db9b041e5f32178964a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "556c98fd_0654e682",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-05-25T15:31:52Z",
+      "side": 1,
+      "message": "Is it possible to opt-in quicker than that? For example, I\u0027m fine with collecting my metrics, I don\u0027t want to see the message 10 times and delay the collection. 😊 We could also likely ask the invited dogfooders to turn on metrics collection explicitly.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 112
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f534a09c_d6a984f5",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-05-25T15:31:52Z",
+      "side": 1,
+      "message": "s/out/opt-out/?",
+      "range": {
+        "startLine": 39,
+        "startChar": 15,
+        "endLine": 39,
+        "endChar": 18
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dac11212_1ac2443a",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-05-25T15:31:52Z",
+      "side": 1,
+      "message": "For Google employees only, can we try to expand the scope to collect usernames and hostnames? In my experience from working on Blaze, this is critical to being able to diagnose and fix rare / long-tail bugs.",
+      "range": {
+        "startLine": 54,
+        "startChar": 6,
+        "endLine": 54,
+        "endChar": 14
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "576a69b3_7d6de700",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-05-25T15:31:52Z",
+      "side": 1,
+      "message": "s/chrome/Chrome/",
+      "range": {
+        "startLine": 58,
+        "startChar": 4,
+        "endLine": 58,
+        "endChar": 21
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e7f4b60_881f3d48",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-05-25T15:31:52Z",
+      "side": 1,
+      "message": "s/chrome/Chrome/",
+      "range": {
+        "startLine": 58,
+        "startChar": 240,
+        "endLine": 58,
+        "endChar": 246
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1fa377f_ab1e47ef",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-05-25T15:31:52Z",
+      "side": 1,
+      "message": "s/this/these/",
+      "range": {
+        "startLine": 58,
+        "startChar": 299,
+        "endLine": 58,
+        "endChar": 303
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f94c6f67_610cbc74",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-05-25T15:31:52Z",
+      "side": 1,
+      "message": "\"developer machines\"",
+      "range": {
+        "startLine": 58,
+        "startChar": 372,
+        "endLine": 58,
+        "endChar": 391
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

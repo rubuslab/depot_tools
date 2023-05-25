@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35a11a99_5366ca11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-05-25T20:31:11Z",
+      "side": 1,
+      "message": "same reasons as here:\nhttps://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4545587",
+      "revId": "ef84665b29756cb4a0aad3111cbd3ebfec763831",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

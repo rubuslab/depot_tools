@@ -1044,6 +1044,9 @@ def checkout(options, git_slns, specs, revisions, step_text):
   ver = git('version').strip()
   print('Using %s' % ver)
 
+  cache_age = os.stat(options.git_cache_dir).st_mtime
+  print('git_cache age: {}'.format(datetime.datetime.fromtimestamp(cache_age)))
+
   try:
     protocol = git('config', '--get', 'protocol.version')
     print('Using git protocol version %s' % protocol)

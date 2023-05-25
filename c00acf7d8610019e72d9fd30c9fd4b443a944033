@@ -72,6 +72,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a2fa657_177961fd",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-25T15:57:05Z",
+      "side": 1,
+      "message": "Added below and it is shown in the message",
+      "parentUuid": "b8065277_98139aee",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 112
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f534a09c_d6a984f5",

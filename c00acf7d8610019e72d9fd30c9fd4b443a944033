@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c99f57c2_8b8b46c5",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-25T15:40:21Z",
+      "side": 1,
+      "message": "This was a request from privacy and is inline with the ninja uploader logic. If users opt in explicitly they will no longer be shown the message",
+      "parentUuid": "556c98fd_0654e682",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 112
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f534a09c_d6a984f5",
@@ -47,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7619e5d_394ebe83",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-25T15:40:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f534a09c_d6a984f5",
+      "range": {
+        "startLine": 39,
+        "startChar": 15,
+        "endLine": 39,
+        "endChar": 18
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dac11212_1ac2443a",
@@ -60,6 +108,30 @@
       "writtenOn": "2023-05-25T15:31:52Z",
       "side": 1,
       "message": "For Google employees only, can we try to expand the scope to collect usernames and hostnames? In my experience from working on Blaze, this is critical to being able to diagnose and fix rare / long-tail bugs.",
+      "range": {
+        "startLine": 54,
+        "startChar": 6,
+        "endLine": 54,
+        "endChar": 14
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33313347_882d6606",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-25T15:40:21Z",
+      "side": 1,
+      "message": "I can add that to the pdd and update the logic here once that is approved, I dont want to block initial metric collection on that though",
+      "parentUuid": "dac11212_1ac2443a",
       "range": {
         "startLine": 54,
         "startChar": 6,
@@ -152,6 +224,102 @@
       "writtenOn": "2023-05-25T15:31:52Z",
       "side": 1,
       "message": "\"developer machines\"",
+      "range": {
+        "startLine": 58,
+        "startChar": 372,
+        "endLine": 58,
+        "endChar": 391
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3fd41f8_bbed351b",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-25T15:40:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "576a69b3_7d6de700",
+      "range": {
+        "startLine": 58,
+        "startChar": 4,
+        "endLine": 58,
+        "endChar": 21
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52542b77_d367d4de",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-25T15:40:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b1fa377f_ab1e47ef",
+      "range": {
+        "startLine": 58,
+        "startChar": 299,
+        "endLine": 58,
+        "endChar": 303
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "974dbace_f100cb38",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-25T15:40:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e7f4b60_881f3d48",
+      "range": {
+        "startLine": 58,
+        "startChar": 240,
+        "endLine": 58,
+        "endChar": 246
+      },
+      "revId": "c00acf7d8610019e72d9fd30c9fd4b443a944033",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8881a624_0c155927",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-05-25T15:40:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f94c6f67_610cbc74",
       "range": {
         "startLine": 58,
         "startChar": 372,

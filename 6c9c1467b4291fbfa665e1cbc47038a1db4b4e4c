@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36710cea_060176c6",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-05-25T04:21:22Z",
+      "side": 1,
+      "message": "last nit: \nYou can just skip here, and initialize config if it\u0027s None.\n\n```\nconfig \u003d None\nif os.path.isfile(CONFIG):\n  with open(...) as f:\n    try:\n      config \u003d json.load(f)\n      ...\n    except Exception:\n      pass\n      \nif not config:\n  config \u003d default_config()\n...\n```\n\nOr even this work?\n```\nconfig \u003d None\ntry:\n  # Open error will be caught by \"except\" anyway?\n  with open(CONFIG, \u0027r\u0027) as f:\n    config \u003d json.load(f)\n    ...\nexcept:\n  pass\nif not config:\n  config \u003d default_config()\n```",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 33
+      },
+      "revId": "6c9c1467b4291fbfa665e1cbc47038a1db4b4e4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

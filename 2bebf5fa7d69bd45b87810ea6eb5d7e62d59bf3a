@@ -48,6 +48,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9546930_4f904aeb",
+        "filename": "reclient_helper.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-05-25T04:21:22Z",
+      "side": 1,
+      "message": "Ack.",
+      "parentUuid": "af2bffcd_7626531b",
+      "range": {
+        "startLine": 108,
+        "startChar": 47,
+        "endLine": 108,
+        "endChar": 62
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3bf4ee8c_4626706b",
@@ -226,6 +250,30 @@
       "side": 1,
       "message": "At this stage reclient is not logged in as it has not started yet.\nAlso determining googler status is probably something best left to a chrome specific solution rather than built into the reproxy binary.\nI think `cipd auth-info` or `luci-auth info` are potentially good options.\nI chose `cipd auth-info` because the auth info seems to the long lasting so reauth doesn\u0027t seem to affect it. Also it is required for downloading rewrapper configs which will happen every time that the nacl or clang toolchains have a roll.",
       "parentUuid": "ecc62b68_08507b9d",
+      "range": {
+        "startLine": 91,
+        "startChar": 22,
+        "endLine": 91,
+        "endChar": 36
+      },
+      "revId": "2bebf5fa7d69bd45b87810ea6eb5d7e62d59bf3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ec12256_e2604429",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-05-25T04:21:22Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "cc37c31b_1f17b77d",
       "range": {
         "startLine": 91,
         "startChar": 22,

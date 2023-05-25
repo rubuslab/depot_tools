@@ -16,6 +16,24 @@
       "message": "IMO, we should be guessing if we are using sso or not here. Instead, we should pass appropriate Gerrit host when calling this function. \n\nWe do have information about the protocol somewhere higher in the stack. For example, we can modify git_cl.py, methods GetCodereviewServer and GetGerritHost.",
       "revId": "34845baa9e789f6e5ee6c6d0354ce3a7068fe113",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72759a5c_efa0ba3b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-05-25T22:27:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f2a36c5_c426739f",
+      "revId": "34845baa9e789f6e5ee6c6d0354ce3a7068fe113",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

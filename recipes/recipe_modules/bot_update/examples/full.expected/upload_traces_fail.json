@@ -230,7 +230,11 @@
   },
   {
     "cmd": [],
-    "name": "upload git traces"
+    "name": "upload git traces",
+    "~followup_annotations": [
+      "@@@STEP_TEXT@Failed to upload traces. File a bug under Infra>SDK to adjust ACLs.@@@",
+      "@@@STEP_EXCEPTION@@@"
+    ]
   },
   {
     "cmd": [
@@ -283,7 +287,8 @@
     },
     "name": "upload git traces.gsutil upload",
     "~followup_annotations": [
-      "@@@STEP_NEST_LEVEL@1@@@"
+      "@@@STEP_NEST_LEVEL@1@@@",
+      "@@@STEP_EXCEPTION@@@"
     ]
   },
   {

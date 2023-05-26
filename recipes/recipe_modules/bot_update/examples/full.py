@@ -257,6 +257,15 @@ def GenTests(api):
   )
 
   yield (
+      api.test('upload_traces', status="INFRA_FAILURE") +
+      ci_build() +
+      api.step_data(
+          'bot_update (without patch)', api.json.invalid(None), retcode=1,
+          cancel=True,
+      )
+  )
+
+  yield (
       api.test('revision_specifying_ref') +
       ci_build() +
       api.properties(

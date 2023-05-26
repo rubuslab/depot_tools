@@ -5,6 +5,8 @@ DEPS = [
     'gclient',
     'gerrit',
     'gitiles',
+    'gsutil',
+    'recipe_engine/archive',
     'recipe_engine/buildbucket',
     'recipe_engine/context',
     'recipe_engine/commit_position',

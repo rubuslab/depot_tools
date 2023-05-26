@@ -80,11 +80,6 @@
       "--refs",
       "refs/heads/main"
     ],
-    "env": {
-      "DEPOT_TOOLS_REPORT_BUILD": "chromium/src/try/linux/8945511751514863184",
-      "GIT_HTTP_LOW_SPEED_LIMIT": "102400",
-      "GIT_HTTP_LOW_SPEED_TIME": "1800"
-    },
     "env_suffixes": {
       "DEPOT_TOOLS_UPDATE": [
         "0"

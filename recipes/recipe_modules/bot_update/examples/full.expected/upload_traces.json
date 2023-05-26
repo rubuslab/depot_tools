@@ -18,8 +18,6 @@
       "infra@HEAD",
       "--revision",
       "src@2d72510e447ab60a9728aeea2362d8be2cbd7789",
-      "--revision",
-      "src/v8@HEAD",
       "--refs",
       "refs/heads/main"
     ],
@@ -58,13 +56,16 @@
     },
     "name": "bot_update (without patch)",
     "~followup_annotations": [
-      "@@@STEP_LOG_LINE@json.output@{@@@",
-      "@@@STEP_LOG_LINE@json.output@  \"did_run\": true@@@",
-      "@@@STEP_LOG_LINE@json.output@}@@@",
-      "@@@STEP_LOG_END@json.output@@@"
+      "@@@STEP_LOG_END@json.output (invalid)@@@",
+      "@@@STEP_LOG_LINE@json.output (exception)@No JSON object could be decoded@@@",
+      "@@@STEP_LOG_END@json.output (exception)@@@",
+      "@@@STEP_EXCEPTION@@@"
     ]
   },
   {
+    "failure": {
+      "humanReason": "Infra Failure: Step('bot_update (without patch)') (canceled) (retcode: None)"
+    },
     "name": "$result"
   }
 ]

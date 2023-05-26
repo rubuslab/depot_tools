@@ -19,27 +19,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
     self._last_returned_properties = {}
     super(BotUpdateApi, self).__init__(*args, **kwargs)
 
-  def __call__(self, name, cmd, **kwargs):
+  def __call__(self, name, cmd, env, **kwargs):
     """Wrapper for easy calling of bot_update."""
     assert isinstance(cmd, (list, tuple))
     bot_update_path = self.resource('bot_update.py')
     kwargs.setdefault('infra_step', True)
 
-    # If a Git HTTP request is constantly below GIT_HTTP_LOW_SPEED_LIMIT
-    # bytes/second for GIT_HTTP_LOW_SPEED_TIME seconds then such request will be
-    # aborted. Otherwise, it would wait for global timeout to be reached.
-    env = {
-        'GIT_HTTP_LOW_SPEED_LIMIT': '102400',  # in bytes
-        'GIT_HTTP_LOW_SPEED_TIME': 1800,  # in seconds
-    }
-    if self.m.buildbucket.build.id == 0:
-      env['DEPOT_TOOLS_COLLECT_METRICS'] = '0'
-    else:
-      env['DEPOT_TOOLS_REPORT_BUILD'] = '%s/%s/%s/%s' % (
-          self.m.buildbucket.build.builder.project,
-          self.m.buildbucket.build.builder.bucket,
-          self.m.buildbucket.build.builder.builder,
-          self.m.buildbucket.build.id)
     with self.m.context(env=env):
       with self.m.depot_tools.on_path():
         return self.m.step(name,
@@ -77,6 +62,33 @@ class BotUpdateApi(recipe_api.RecipeApi):
               commit.host, commit.project))
 
     return repo_path
+
+  def _get_bot_update_env(self, trace_dir):
+    # If a Git HTTP request is constantly below GIT_HTTP_LOW_SPEED_LIMIT
+    # bytes/second for GIT_HTTP_LOW_SPEED_TIME seconds then such request will be
+    # aborted. Otherwise, it would wait for global timeout to be reached.
+    env = {
+        'GIT_HTTP_LOW_SPEED_LIMIT': '102400',  # in bytes
+        'GIT_HTTP_LOW_SPEED_TIME': 1800,  # in seconds
+        'GIT_TRACE2_EVENT': self.m.path.join(trace_dir, 'trace2-event'),
+        'GIT_TRACE_CURL': self.m.path.join(trace_dir, 'trace-curl'),
+        'GIT_TRACE_CURL_NO_DATA': 1,
+        'GIT_TRACE_PACKET': self.m.path.join(trace_dir, 'trace-packet'),
+        'GIT_BACKENDINFO': 1,
+        'GIT_DAPPER_TRACE': 1,
+        'GIT_SSH_COMMAND': 'ssh -o SendEnv=GIT_DAPPER_TRACE -o SendEnv=GIT_BACKENDINFO'
+    }
+
+    if self.m.buildbucket.build.id == 0:
+      env['DEPOT_TOOLS_COLLECT_METRICS'] = '0'
+    else:
+      env['DEPOT_TOOLS_REPORT_BUILD'] = '%s/%s/%s/%s' % (
+          self.m.buildbucket.build.builder.project,
+          self.m.buildbucket.build.builder.bucket,
+          self.m.buildbucket.build.builder.builder,
+          self.m.buildbucket.build.id)
+
+    return env
 
   def ensure_checkout(self,
                       gclient_config=None,
@@ -312,15 +324,24 @@ class BotUpdateApi(recipe_api.RecipeApi):
       name += ' - %s' % suffix
 
     # Ah hah! Now that everything is in place, lets run bot_update!
+    trace_dir = self.m.path.mkdtemp()
     step_result = None
     try:
       # Error code 88 is the 'patch failure' code for patch apply failure.
-      step_result = self(name, cmd, step_test_data=step_test_data,
-                         ok_ret=(0, 88), **kwargs)
-    except self.m.step.StepFailure as f:
-      step_result = f.result
-      raise
+      step_result = self(name, cmd, env=self._get_bot_update_env(trace_dir),
+                         step_test_data=step_test_data, ok_ret=(0, 88),
+                         **kwargs)
     finally:
+      step_result = self.m.step.active_result
+      if step_result.exc_result.was_cancelled:
+        # Upload git traces from bot_update.
+        zip_path = (
+          self.m.archive.package(trace_dir).
+          archive('compress git traces',
+                  self.m.path.join('bot_update_traces.zip'))
+        )
+        self.m.gsutil.upload(zip_path, 'bucket', 'path_to_thing.zip')
+
       # The step_result can be missing the json attribute if the build
       # is shutting down and the bot_update script is not able to finish
       # writing the json output.

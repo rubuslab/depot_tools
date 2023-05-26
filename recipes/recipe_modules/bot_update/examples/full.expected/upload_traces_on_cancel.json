@@ -18,8 +18,6 @@
       "infra@HEAD",
       "--revision",
       "src@2d72510e447ab60a9728aeea2362d8be2cbd7789",
-      "--revision",
-      "src/v8@HEAD",
       "--refs",
       "refs/heads/main"
     ],
@@ -58,13 +56,67 @@
     },
     "name": "bot_update (without patch)",
     "~followup_annotations": [
-      "@@@STEP_LOG_LINE@json.output@{@@@",
-      "@@@STEP_LOG_LINE@json.output@  \"did_run\": true@@@",
-      "@@@STEP_LOG_LINE@json.output@}@@@",
-      "@@@STEP_LOG_END@json.output@@@"
+      "@@@STEP_LOG_END@json.output (invalid)@@@",
+      "@@@STEP_LOG_LINE@json.output (exception)@No JSON object could be decoded@@@",
+      "@@@STEP_LOG_END@json.output (exception)@@@",
+      "@@@STEP_EXCEPTION@@@"
     ]
   },
   {
+    "cmd": [
+      "vpython3",
+      "-u",
+      "RECIPE_MODULE[recipe_engine::archive]/resources/archive.py"
+    ],
+    "luci_context": {
+      "realm": {
+        "name": "chromium/src:ci"
+      },
+      "resultdb": {
+        "current_invocation": {
+          "name": "invocations/build:8945511751514863184",
+          "update_token": "token"
+        },
+        "hostname": "rdbhost"
+      }
+    },
+    "name": "compress git traces",
+    "stdin": "{\"archive_type\": \"zip\", \"entries\": [{\"path\": \"[CLEANUP]/tmp_tmp_1\", \"type\": \"dir\"}], \"output\": \"bot_update_traces.zip\", \"root\": \"[CLEANUP]/tmp_tmp_1\"}"
+  },
+  {
+    "cmd": [
+      "python3",
+      "-u",
+      "RECIPE_MODULE[depot_tools::gsutil]/resources/gsutil_smart_retry.py",
+      "--",
+      "RECIPE_REPO[depot_tools]/gsutil.py",
+      "----",
+      "cp",
+      "bot_update_traces.zip",
+      "gs://bucket/path_to_thing.zip"
+    ],
+    "infra_step": true,
+    "luci_context": {
+      "realm": {
+        "name": "chromium/src:ci"
+      },
+      "resultdb": {
+        "current_invocation": {
+          "name": "invocations/build:8945511751514863184",
+          "update_token": "token"
+        },
+        "hostname": "rdbhost"
+      }
+    },
+    "name": "gsutil upload",
+    "~followup_annotations": [
+      "@@@STEP_LINK@gsutil.upload@https://storage.cloud.google.com/bucket/path_to_thing.zip@@@"
+    ]
+  },
+  {
+    "failure": {
+      "humanReason": "Infra Failure: Step('bot_update (without patch)') (canceled) (retcode: None)"
+    },
     "name": "$result"
   }
 ]

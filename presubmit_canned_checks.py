@@ -1775,7 +1775,7 @@ def CheckForCommitObjects(input_api, output_api):
               'DEPS file indicates git submodule migration is in progress,\n'
               'but the commit objects do not match DEPS entries.\n'
               'Update the following commit objects with:\n'
-              '`git update-index --add --cacheinfo 160000,<commit_rev>,<path>`'
+              '`git update-index --cacheinfo 160000,<commit_rev>,<path>`'
               '\n'
               'or DEPS entries:\n', mismatch_entries)
       ]

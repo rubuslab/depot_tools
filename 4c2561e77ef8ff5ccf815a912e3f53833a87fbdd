@@ -16,6 +16,24 @@
       "message": "```suggestion\n              \u0027`git update-index --add --cacheinfo 160000,\u003ccommit_rev\u003e,\u003cpath\u003e`\\n\u0027\n```",
       "revId": "4c2561e77ef8ff5ccf815a912e3f53833a87fbdd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10e29843_114d2e2d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1778,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-05-30T17:18:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58eb6239_0ed2f55e",
+      "revId": "4c2561e77ef8ff5ccf815a912e3f53833a87fbdd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

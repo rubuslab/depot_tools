@@ -1044,6 +1044,10 @@ def checkout(options, git_slns, specs, revisions, step_text):
   ver = git('version').strip()
   print('Using %s' % ver)
 
+  cache_epoch = git('cache', 'epoch', '--quiet', '--cache-dir',
+                    options.git_cache_dir).strip()
+  print('git_cache age: {}'.format(datetime.fromtimestamp(cache_epoch)))
+
   try:
     protocol = git('config', '--get', 'protocol.version')
     print('Using git protocol version %s' % protocol)
@@ -1133,14 +1137,17 @@ def checkout(options, git_slns, specs, revisions, step_text):
     revision_mapping['got_revision'] = first_sln
 
   manifest = create_manifest()
-  got_revisions = parse_got_revision(manifest, revision_mapping)
+  properties = parse_got_revision(manifest, revision_mapping)
 
-  if not got_revisions:
+  if not properties:
     # TODO(hinoka): We should probably bail out here, but in the interest
     # of giving mis-configured bots some time to get fixed use a dummy
     # revision here.
-    got_revisions = { 'got_revision': 'BOT_UPDATE_NO_REV_FOUND' }
+    properties = {'got_revision': 'BOT_UPDATE_NO_REV_FOUND'}
     #raise Exception('No got_revision(s) found in gclient output')
+
+  # Add git cache age to the output.properties
+  properties['git_cache_epoch'] = cache_epoch
 
   # Tell recipes information such as root, got_revision, etc.
   emit_json(options.output_json,
@@ -1149,7 +1156,7 @@ def checkout(options, git_slns, specs, revisions, step_text):
             patch_root=options.patch_root,
             step_text=step_text,
             fixed_revisions=revisions,
-            properties=got_revisions,
+            properties=properties,
             manifest=manifest)
 
 

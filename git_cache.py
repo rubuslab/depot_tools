@@ -126,6 +126,8 @@ class Mirror(object):
     else:
       self.print = print
 
+    self.cache_age = 0
+
   def print_without_file(self, message, **_kwargs):
     self.print_func(message)
 
@@ -661,6 +663,33 @@ def CMDexists(parser, args):
     print(mirror.mirror_path)
     return 0
   return 1
+
+
+@subcommand.usage('Creation time of the given cache directory')
+@metrics.collector.collect_metrics('git cache epoch')
+def CMDexists(parser, args):
+  """
+  Check the creation time of the existing cache.
+
+  This command reads the cache age marker file within cache_dir and writes one
+  if it does not exist.
+  """
+  parser.parse_args(args)  # Sets cache_path within Mirror.
+  cache_age_marker_path = os.path.join(Mirror.GetCachePath(), '.cache_age')
+
+  # Print epoch if marker already exists.
+  if os.path.isfile(cache_age_marker_path):
+    with open(cache_age_marker_path) as f:
+      print(f.readline())
+    return 0
+
+  # If the marker doesn't exist, create one with the current timestamp as cache
+  # epoch.
+  with open(cache_age_marker_path, 'w') as f:
+    epoch = int(time.time())
+    print(epoch, file=f)
+    print(epoch)
+    return 1
 
 
 @subcommand.usage('[url of repo to create a bootstrap zip file]')

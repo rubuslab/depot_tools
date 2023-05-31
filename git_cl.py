@@ -6164,6 +6164,33 @@ def GetMetricsDir(diff_xml):
   return None
 
 
+def CreateBranchForIssue(issue):
+  # type(str, Optional[str]) -> str
+  """
+  Fetch issue `issue` and switch to it.
+
+  If this issue exists, this issue is added in branch `change-issue`.
+  Returns the branch name.
+  Otherwise, return None"""
+  cl = Changelist(issue=issue)
+  try:
+    gerrit_util.QueryChanges(cl.GetGerritHost(), [('change', '%s' % issue)])
+  except gerrit_util.GerritError:
+    # No issue with this issue number
+    return None
+  try:
+    detail = cl._GetChangeDetail(['CURRENT_REVISION', 'CURRENT_COMMIT'])
+  except GerritChangeNotExists:
+    return None
+  revision_info = detail['revisions'][detail['current_revision']]
+  fetch_info = revision_info['fetch']['http']
+  RunGit(['fetch', fetch_info['url'], fetch_info['ref']])
+  branch_name = 'change-%s' % issue
+  RunGit(['branch', branch_name, 'FETCH_HEAD'])
+  RunGit(['config', 'branch.%s.%s' % (branch_name, ISSUE_CONFIG_KEY), issue])
+  return branch_name
+
+
 @subcommand.usage('<codereview url or issue id>')
 @metrics.collector.collect_metrics('git cl checkout')
 def CMDcheckout(parser, args):
@@ -6190,8 +6217,14 @@ def CMDcheckout(parser, args):
       branches.append(re.sub(r'branch\.(.*)\.' + ISSUE_CONFIG_KEY, r'\1', key))
 
   if len(branches) == 0:
-    print('No branch found for issue %s.' % target_issue)
-    return 1
+    print('No branch found for issue %s. Trying to fetch it.' % target_issue)
+    branch_name = CreateBranchForIssue(target_issue)
+    if not branch_name:
+      print('Issue %s not found on gerrit.' % target_issue)
+      return 1
+    print('Last patchset of CL %s available on branch %s.' %
+          (target_issue, branch_name))
+    branches.append(branch_name)
   if len(branches) == 1:
     RunGit(['checkout', branches[0]])
   else:

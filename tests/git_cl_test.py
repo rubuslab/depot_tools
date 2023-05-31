@@ -1844,10 +1844,11 @@ class TestGitCl(unittest.TestCase):
     cls, cherry_pick = git_cl._UploadAllPrecheck(options, orig_args)
     self.assertFalse(cherry_pick)
     mockAskForData.assert_called_once_with(
-        "\noptions ['--preserve-tryjobs', '--chicken'] will be used for all "
-        "uploads.\nAt least one parent branch in `current, upstream3, "
-        "upstream2` has never been uploaded and must be uploaded before/with "
-        "`upstream3`.\nPress Enter to confirm, or Ctrl+C to abort")
+        "\nOptions ['--preserve-tryjobs', '--chicken'] will be used for all "
+        "uploads during this command execution.\nAt least one parent branch"
+        " in `current, upstream3, upstream2` has never been uploaded and must"
+        " be uploaded before/with `upstream3`.\nPress Enter to confirm, or "
+        "Ctrl+C to abort")
     self.assertEqual(len(cls), 3)
 
   @mock.patch('git_cl.Changelist._GerritCommitMsgHookCheck',
@@ -2050,8 +2051,8 @@ class TestGitCl(unittest.TestCase):
     self.assertTrue(cherry_pick)
     self.assertEqual(len(cls), 2)
     mockAskForData.assert_called_once_with(
-        "\noptions ['--preserve-tryjobs', '--chicken'] will be used for all "
-        "uploads.\n"
+        "\nOptions ['--preserve-tryjobs', '--chicken'] will be used for all "
+        "uploads during this command execution.\n"
         "Press enter to update branches current, upstream3.\n"
         "Or type `n` to upload only `current` cherry-picked on upstream3's "
         "last upload:")

@@ -2576,18 +2576,127 @@ class TestGitCl(unittest.TestCase):
     self.calls += [((['git', 'checkout', 'ger-branch'], ), '')]
     self.assertEqual(0, git_cl.main(['checkout', '123456']))
 
-  def test_checkout_not_found(self):
-    """Tests git cl checkout <issue>."""
+  @mock.patch('git_cl.Changelist.GetRemoteUrl',
+              return_value='https://chromium.googlesource.com/depot_tools')
+  # Time is saved in a Http response. We mock it to have deterministic,
+  # even if impossible, time
+  @mock.patch('time.time', return_value=0)
+  @mock.patch('gerrit_util.QueryChanges', return_value=["Some issue"])
+  @mock.patch('git_cl.Changelist._GetChangeDetail',
+              return_value={
+                  'current_revision': 1,
+                  'revisions': {
+                      1: {
+                          'fetch': {
+                              'http': {
+                                  'url': 'my_url',
+                                  'ref': 'my_ref'
+                              }
+                          }
+                      }
+                  }
+              })
+  def test_checkout_not_found_locally_fetch(self, *_mocks):
+    """Tests git cl checkout <issue>, for non-local existing issue.
+    
+    Some branch exists locally for some gerrit issues."""
     self.calls = self._checkout_calls()
-    self.assertEqual(1, git_cl.main(['checkout', '99999']))
+    # subprocess call
+    self.calls.append(((['git', 'fetch', 'my_url', 'my_ref'], ), ''))
+    self.calls.append(((['git', 'branch', 'change-99999', 'FETCH_HEAD'], ), ''))
+    self.calls.append(
+        ((['git', 'config', 'branch.change-99999.gerritissue', '99999'], ), ''))
+    self.calls.append(((['git', 'checkout', 'change-99999'], ), ''))
+    self.assertEqual(0, git_cl.main(['checkout', '99999']))
 
-  def test_checkout_no_branch_issues(self):
-    """Tests git cl checkout <issue>."""
-    self.calls = [
-        ((['git', 'config', '--local', '--get-regexp',
-           'branch\\..*\\.gerritissue'], ), CERR1),
-    ]
-    self.assertEqual(1, git_cl.main(['checkout', '99999']))
+  @mock.patch('git_cl.Changelist.GetRemoteUrl',
+              return_value='https://chromium.googlesource.com/depot_tools')
+  def test_checkout_not_found_no_internet(self, *_mocks):
+    """Tests git cl checkout <issue> for non existing issue.
+    
+    Some branch exists corresponding to gerrit issues."""
+    mock.patch('gerrit_util.QueryChanges',
+               side_effect=gerrit_util.GerritError(400,
+                                                   'issue not found')).start()
+    self.calls = self._checkout_calls()
+    # subprocess call
+    self.assertEqual(1, git_cl.main(['checkout', '888']))
+
+  @mock.patch('git_cl.Changelist.GetRemoteUrl',
+              return_value='https://chromium.googlesource.com/depot_tools')
+  @mock.patch('gerrit_util.QueryChanges', return_value=[])
+  def test_checkout_not_found(self, *_mocks):
+    """Tests git cl checkout <issue> for non existing issue.
+    
+    Some branch exists corresponding to gerrit issues."""
+    self.calls = self._checkout_calls()
+    # subprocess call
+    self.assertEqual(1, git_cl.main(['checkout', '888']))
+
+  @mock.patch('git_cl.Changelist.GetRemoteUrl',
+              return_value='https://chromium.googlesource.com/depot_tools')
+  # Time is saved in a Http response. We mock it to have deterministic,
+  # even if impossible, time
+  @mock.patch('time.time', return_value=0)
+  @mock.patch('gerrit_util.QueryChanges', return_value=["Some issue"])
+  @mock.patch('git_cl.Changelist._GetChangeDetail',
+              return_value={
+                  'current_revision': 1,
+                  'revisions': {
+                      1: {
+                          'fetch': {
+                              'http': {
+                                  'url': 'my_url',
+                                  'ref': 'my_ref'
+                              }
+                          }
+                      }
+                  }
+              })
+  def test_checkout_no_branch_issues_fetch(self, *_mocks):
+    """Tests git cl checkout <issue>, for gerrit issue.
+    
+    There are no geritissue branch.
+    """
+    self.calls = []
+    self.calls.append((([
+        'git', 'config', '--local', '--get-regexp', 'branch\\..*\\.gerritissue'
+    ], ), CERR1))
+    self.calls.append(((['git', 'fetch', 'my_url', 'my_ref'], ), ''))
+    self.calls.append(((['git', 'branch', 'change-99999', 'FETCH_HEAD'], ), ''))
+    self.calls.append(
+        ((['git', 'config', 'branch.change-99999.gerritissue', '99999'], ), ''))
+    self.calls.append(((['git', 'checkout', 'change-99999'], ), ''))
+
+    self.assertEqual(0, git_cl.main(['checkout', '99999']))
+
+  @mock.patch('git_cl.Changelist.GetRemoteUrl',
+              return_value='https://chromium.googlesource.com/depot_tools')
+  @mock.patch('gerrit_util.QueryChanges', return_value=[])
+  def test_checkout_no_branch_issues_not_on_gerrit(self, *_mocks):
+    """Tests git cl checkout <issue>, for non existing issue.
+    
+    There are no local branch linked to gerrit issue."""
+    self.calls = [(([
+        'git', 'config', '--local', '--get-regexp', 'branch\\..*\\.gerritissue'
+    ], ), CERR1)]
+
+    self.assertEqual(1, git_cl.main(['checkout', '888']))
+
+  @mock.patch('git_cl.Changelist.GetRemoteUrl',
+              return_value='https://chromium.googlesource.com/depot_tools')
+  def test_checkout_no_branch_issues_no_internet(self, *_mocks):
+    """Tests git cl checkout <issue>, for non existing issue.
+    
+    There are no local branch linked to gerrit issue."""
+    mock.patch('gerrit_util.QueryChanges',
+               side_effect=gerrit_util.GerritError(400,
+                                                   'issue not found')).start()
+    self.calls = [(([
+        'git', 'config', '--local', '--get-regexp', 'branch\\..*\\.gerritissue'
+    ], ), CERR1)]
+
+    self.assertEqual(1, git_cl.main(['checkout', '888']))
 
   def _test_gerrit_ensure_authenticated_common(self, auth):
     mock.patch(

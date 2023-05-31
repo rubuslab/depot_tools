@@ -217,6 +217,24 @@
       "parentUuid": "f890129b_fa0cfab8",
       "revId": "19e1e448a30d96748907a4817a547b1d5f42a31c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8e45e06_db2f6ee2",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 6182,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-05-31T14:53:57Z",
+      "side": 1,
+      "message": "Never mind, it’s `(\"change\", issue)` I needed",
+      "parentUuid": "3e1e0113_7d00241b",
+      "revId": "19e1e448a30d96748907a4817a547b1d5f42a31c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

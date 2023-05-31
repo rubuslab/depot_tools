@@ -59,6 +59,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "210052f4_0042bd7f",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 6174,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-05-31T09:58:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fdc485c3_bd3dd723",
+      "range": {
+        "startLine": 6174,
+        "startChar": 44,
+        "endLine": 6174,
+        "endChar": 48
+      },
+      "revId": "19e1e448a30d96748907a4817a547b1d5f42a31c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36282f42_3bd08d56",
@@ -82,6 +106,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d339fb2f_bb160444",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 6176,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-05-31T09:58:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36282f42_3bd08d56",
+      "range": {
+        "startLine": 6176,
+        "startChar": 5,
+        "endLine": 6176,
+        "endChar": 11
+      },
+      "revId": "19e1e448a30d96748907a4817a547b1d5f42a31c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f890129b_fa0cfab8",
@@ -95,6 +143,24 @@
       "writtenOn": "2023-04-17T20:41:36Z",
       "side": 1,
       "message": "before creating a `ChangeList`, we can probably use `QueryChanges` to check if a change exists with that issue number: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gerrit_util.py;l\u003d531;drc\u003d97dadd025f541f67af48417cc12ebdc00c1ad29c\n\nso we don\u0027t have `Undefined behavior if issue is not a valid issue number`",
+      "revId": "19e1e448a30d96748907a4817a547b1d5f42a31c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e1e0113_7d00241b",
+        "filename": "git_cl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 6182,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-05-31T09:58:12Z",
+      "side": 1,
+      "message": "Yes and now. If I use it with `(\"issue\", issue)`, I get a 400 error. Not an empty list as I’d have hoped. That’s fine-ish, but not ideal.\nBiggest trouble is that it leads to two request instead of one.\n\nI thought about adding the try/except around `GetChangeDetail`, but on 404 this function retries until 300s timeout, and I can’t change that behaviour, unless I’m passing a parameter in plenty of function, which I certainly don’t want to do for such a small change",
+      "parentUuid": "f890129b_fa0cfab8",
       "revId": "19e1e448a30d96748907a4817a547b1d5f42a31c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

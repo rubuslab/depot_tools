@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6029ae1a_99f4f060",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-05-31T09:58:12Z",
+      "side": 1,
+      "message": "I applied your remark to the best of my capacity. I’m sending the CL now because one point is not clear, whether I am using QueryChanges the way you expected.\nI’ll try to figure out how to correct test now",
+      "revId": "6030fa86b9407b4f3049823c02d76ce931eb9fb8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

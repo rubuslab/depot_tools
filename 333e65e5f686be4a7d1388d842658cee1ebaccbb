@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9f62997_09c05989",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-31T22:13:45Z",
+      "side": 1,
+      "message": "`git cl checkout`",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "333e65e5f686be4a7d1388d842658cee1ebaccbb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d865f44a_ba861594",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 6174,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-31T22:13:45Z",
+      "side": 1,
+      "message": "formatting nit:\n\n```\n\"\"\"Fetch issue `issue` and switch to it.\n\nIf this issue exists, this issue is added in branch `change-issue`.\nReturns the branch name.\nOtherwise, return None\n\"\"\"\n```",
+      "range": {
+        "startLine": 6169,
+        "startChar": 2,
+        "endLine": 6174,
+        "endChar": 27
+      },
+      "revId": "333e65e5f686be4a7d1388d842658cee1ebaccbb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d477bb36_15341d66",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 6177,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-31T22:13:45Z",
+      "side": 1,
+      "message": "add a bug number or username e.g. `TODO(crbug/123)`",
+      "range": {
+        "startLine": 6177,
+        "startChar": 6,
+        "endLine": 6177,
+        "endChar": 10
+      },
+      "revId": "333e65e5f686be4a7d1388d842658cee1ebaccbb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a210c740_51fab9c6",
+        "filename": "git_cl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 6180,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-31T22:13:45Z",
+      "side": 1,
+      "message": "Why have this try/except block to query changes? `_GetChangeDetail` should raise a `GerritChangeNotExists` if there\u0027s no issue with that number: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d2356;drc\u003d0e3589eaf822ae60f8804ae43a94daaaa42e9f5b",
+      "range": {
+        "startLine": 6180,
+        "startChar": 14,
+        "endLine": 6180,
+        "endChar": 38
+      },
+      "revId": "333e65e5f686be4a7d1388d842658cee1ebaccbb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d240800_52d368b4",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2616,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-05-31T22:13:45Z",
+      "side": 1,
+      "message": "delete whitespaces",
+      "range": {
+        "startLine": 2616,
+        "startChar": 0,
+        "endLine": 2616,
+        "endChar": 4
+      },
+      "revId": "333e65e5f686be4a7d1388d842658cee1ebaccbb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "80ab1613_1051ce75",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-05-31T10:53:19Z",
+      "side": 1,
+      "message": "My bad. Time is actually measured locally, at https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gerrit_util.py;l\u003d441;drc\u003ddbcecc90179a25159dc62f6ed00ae244360297e8\nSo I actually should mock time instead of request.",
+      "parentUuid": "376676e3_0f395ce2",
+      "revId": "19e1e448a30d96748907a4817a547b1d5f42a31c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fdc485c3_bd3dd723",
         "filename": "git_cl.py",
         "patchSetId": 7

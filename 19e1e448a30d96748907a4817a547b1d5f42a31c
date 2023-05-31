@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "376676e3_0f395ce2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2023-05-31T10:50:03Z",
+      "side": 1,
+      "message": "The trouble is that this lead to testing with the real server.\nWhich not only may means flaky test in case of internet connectivity, but I guess you may be okay with that.\nIt also means that the field `response_time` of http request result is unpredictable.\nAnd this is important, because https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gerrit_util.py;l\u003d452;drc\u003ddbcecc90179a25159dc62f6ed00ae244360297e8 sends the entire response to metrics collection with `add_repeated`.\nAnd this function is mocked at https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:tests/git_cl_test.py;l\u003d578;drc\u003d3d6d2d2500a83102c0fae5d6ec9d51fff068b984\nwhich means that the test expects to know exactly which call is going to be made, with which argument.\n\nI assume this means I should not actually use real call to the server, but mock the server in some way; and I admit I don’t know how to do it.",
+      "parentUuid": "092c2390_7cdde8ed",
+      "revId": "19e1e448a30d96748907a4817a547b1d5f42a31c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fdc485c3_bd3dd723",
         "filename": "git_cl.py",
         "patchSetId": 7

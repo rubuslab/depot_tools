@@ -33,6 +33,24 @@
       "message": "autoninja?",
       "revId": "cb6f3c884523deebb3c9959bcd340e9bd0cb1e06",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81f68379_e413c520",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-06-01T02:47:12Z",
+      "side": 1,
+      "message": "I specifically chose ninja_reclient as that is the name of the file that this call is in and technically you can use this without autoninja to run a build, like you would use ninja",
+      "parentUuid": "14a3728e_3a35779e",
+      "revId": "cb6f3c884523deebb3c9959bcd340e9bd0cb1e06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1814,10 +1814,12 @@ def CheckVPythonSpec(input_api, output_api, file_filter=None):
   return commands
 
 
-# Use this limit to decide whether to split one request into multiple requests.
-# It preemptively prevents configs are too large even after the compression.
-# The GFE limit is 32 MiB and assume the compression ratio > 5:1.
-_CONFIG_SIZE_LIMIT_PER_REQUEST = 5 * 32 * 1024 * 1024
+# The GFE limit is 32 MiB. Use this limit to decide whether to split one request
+# into multiple requests.
+_CONFIG_SIZE_LIMIT_PER_REQUEST = 32 * 1024 * 1024
+
+# Maximum single config file size which Luci-config can support.
+_SINGLE_CONFIG_MAX_SIZE = 100 * 1024 * 1024
 
 
 def CheckChangedLUCIConfigs(input_api, output_api):
@@ -1937,13 +1939,13 @@ def CheckChangedLUCIConfigs(input_api, output_api):
     # make the first pass to ensure none of the config standalone exceeds the
     # size limit.
     for f in files:
-      if len(f['content']) > _CONFIG_SIZE_LIMIT_PER_REQUEST:
+      if len(f['content']) > _SINGLE_CONFIG_MAX_SIZE:
         return [
             output_api.PresubmitError(
                 ('File %s grows too large, it is now ~%.2f MiB. '
                  'The limit is %.2f MiB') %
                 (f['path'], len(f['content']) /
-                 (1024 * 1024), _CONFIG_SIZE_LIMIT_PER_REQUEST / (1024 * 1024)))
+                 (1024 * 1024), _SINGLE_CONFIG_MAX_SIZE / (1024 * 1024)))
         ]
 
     # Split the request for the same config set into smaller requests so that

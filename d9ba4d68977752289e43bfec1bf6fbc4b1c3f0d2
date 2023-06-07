@@ -33,6 +33,23 @@
       "message": "+@sokcevic@chromium.org for OWNERS review.",
       "revId": "d9ba4d68977752289e43bfec1bf6fbc4b1c3f0d2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e58dd86c_9bf5df84",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-06-07T18:59:06Z",
+      "side": 1,
+      "message": "+sokcevic@chromium.org for real this time.",
+      "revId": "d9ba4d68977752289e43bfec1bf6fbc4b1c3f0d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

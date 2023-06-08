@@ -16,6 +16,23 @@
       "message": "lgtm",
       "revId": "587ad89e79ff7b02a34048e497c725a7794f5e81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fba170e7_4d50c57c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1949,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-06-08T21:21:09Z",
+      "side": 1,
+      "message": "maybe just count them and emit a single result `Found X additional warnings in files not modified by this CL, run \"....\" to see them`",
+      "revId": "587ad89e79ff7b02a34048e497c725a7794f5e81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -159,7 +159,7 @@ _GCLIENT_SCHEMA = schema.Schema(
         # Current state of the git submodule migration.
         # git_dependencies = [DEPS (default) | SUBMODULES | SYNC]
         schema.Optional('git_dependencies'):
-        schema.Or('DEPS', 'SUBMODULES', 'SYNC'),
+        basestring,
 
         # List of host names from which dependencies are allowed (allowlist).
         # NOTE: when not present, all hosts are allowed.
@@ -433,6 +433,13 @@ def Exec(content, filename='<unknown>', vars_override=None, builtin_vars=None):
   for name, node in statements.items():
     value = _gclient_eval(node, filename, vars_dict)
     local_scope.SetNode(name, value, node)
+
+  git_dependencies_values = ['DEPS', 'SUBMODULES', 'SYNC']
+  if 'git_dependencies' in local_scope and local_scope[
+      'git_dependencies'] not in git_dependencies_values:
+    raise ValueError(
+        'git_dependencies should take one of the following values: ',
+        git_dependencies_values)
 
   try:
     return _GCLIENT_SCHEMA.validate(local_scope)

@@ -90,6 +90,30 @@
       },
       "revId": "d9ba4d68977752289e43bfec1bf6fbc4b1c3f0d2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73f3d7ca_f8d6588d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1962,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-06-08T20:53:03Z",
+      "side": 1,
+      "message": "ah yes. I just blindly copied the [example here](https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:presubmit_support.py;l\u003d840;drc\u003d05ebc9e3e027a80272f84fd1b02763aa8c883418). Fixed the example and now I need the stamp again.",
+      "parentUuid": "649ab703_2cad08e6",
+      "range": {
+        "startLine": 1961,
+        "startChar": 0,
+        "endLine": 1962,
+        "endChar": 17
+      },
+      "revId": "d9ba4d68977752289e43bfec1bf6fbc4b1c3f0d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

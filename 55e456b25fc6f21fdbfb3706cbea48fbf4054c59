@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a7b8809_eade3d5d",
+        "filename": "gclient_eval.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-08T21:34:54Z",
+      "side": 1,
+      "message": "the formatting looks off; is that what formatter wants? If so, could you update L167 to match the style of others",
+      "revId": "55e456b25fc6f21fdbfb3706cbea48fbf4054c59",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6be9142_0ebd4ff0",
+        "filename": "gclient_eval.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-08T21:34:54Z",
+      "side": 1,
+      "message": "nit: use the following so validation in Exec can be removed:\n\n    schema.Or(\u0027DEPS\u0027, \u0027SUBMODULES\u0027, \u0027SYNC\u0027)",
+      "range": {
+        "startLine": 162,
+        "startChar": 8,
+        "endLine": 162,
+        "endChar": 18
+      },
+      "revId": "55e456b25fc6f21fdbfb3706cbea48fbf4054c59",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

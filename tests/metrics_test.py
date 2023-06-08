@@ -108,6 +108,7 @@ class MetricsCollectorTest(unittest.TestCase):
         self.config_file,
         {'is-googler': True, 'countdown': 10, 'opt-in': None, 'version': 0})
 
+  @mock.patch('socket.getfqdn', lambda: 'nongoogler.host.org')
   def test_writes_config_if_not_exists_non_googler(self):
     self.FileRead.side_effect = [IOError(2, "No such file or directory")]
     mock_response = mock.Mock()

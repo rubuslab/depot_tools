@@ -9,6 +9,7 @@ import contextlib
 import functools
 import json
 import os
+import socket
 import sys
 import tempfile
 import threading
@@ -84,14 +85,17 @@ class _Config(object):
     self._config = config.copy()
 
     if 'is-googler' not in self._config:
-      # /should-upload is only accessible from Google IPs, so we only need to
-      # check if we can reach the page. An external developer would get access
-      # denied.
-      try:
-        req = urllib.urlopen(metrics_utils.APP_URL + '/should-upload')
-        self._config['is-googler'] = req.getcode() == 200
-      except (urllib.URLError, urllib.HTTPError):
-        self._config['is-googler'] = False
+      if socket.getfqdn().endswith(('.corp.google.com', '.c.googlers.com')):
+        self._config['is-googler'] = True
+      else:
+        # /should-upload is only accessible from Google IPs, so we only need to
+        # check if we can reach the page. An external developer would get access
+        # denied.
+        try:
+          req = urllib.urlopen(metrics_utils.APP_URL + '/should-upload')
+          self._config['is-googler'] = req.getcode() == 200
+        except (urllib.URLError, urllib.HTTPError):
+          self._config['is-googler'] = False
 
     # Make sure the config variables we need are present, and initialize them to
     # safe values otherwise.

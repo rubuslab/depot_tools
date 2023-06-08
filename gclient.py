@@ -881,6 +881,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       self.local_target_os = local_scope['target_os']
 
     deps = local_scope.get('deps', {})
+
+    # If dependencies are configured within git submodules, add them to DEPS.
+    if self.git_dependencies_state == 'SUBMODULES' or \
+      self.git_dependencies_state == 'SYNC':
+      print(self.ParseGitSubmodules())
+      # deps.update(self.ParseGitSubmodules())
+
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)
 
@@ -920,6 +927,32 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     self.add_dependencies_and_close(deps_to_add, hooks_to_run,
                                     hooks_cwd=hooks_cwd)
     logging.info('ParseDepsFile(%s) done' % self.name)
+
+  def ParseGitSubmodules(self):
+    filepath = os.path.join(self.root.root_dir, self.name, '.gitmodules')
+    if not os.path.isfile(filepath):
+      logging.warning('ParseGitSubmodules(): No .gitmodules found at %s',
+                      filepath)
+      return {}
+
+    # eg: [submodule "foo"].
+    submodules_line_pattern = re.compile(r'^\[submodule \"(.*)\"]')
+    submodule = {}
+    submodules = {}
+
+    with open(filepath) as f:
+      for line in f:
+        m = submodules_line_pattern.findall(line)
+        if m:
+          submodule = {}
+          submodule['name'] = m[0]
+          submodules[m[0]] = submodule
+        else:
+          # submodule config. eg: `url = "https://foo.com/bar.git"`
+          key, value = line.split('=', 1)
+          submodule[key.strip()] = value.strip()
+
+    return submodules
 
   def _get_option(self, attr, default):
     obj = self

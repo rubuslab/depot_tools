@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d459e8b6_5e1d93cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-06-08T23:03:09Z",
+      "side": 1,
+      "message": "example patch failure case: https://ci.chromium.org/raw/build/logs.chromium.org/infra/led/gavinmak_google.com/7b224c5d6a100fcd1851a739cb2833509c8e7db3fc0e973c92d070ed09c0d499/+/build.proto?server\u003dchromium-swarm.appspot.com\n\nif no ACLs to upload: https://ci.chromium.org/raw/build/logs.chromium.org/infra/led/gavinmak_google.com/ef727cf61833e1e9499ea12166863f029b9f1abee1824ba7df2aa575e0838ea2/+/build.proto?server\u003dchromium-swarm.appspot.com",
+      "revId": "82e177f6b076cac4703c7550696ec701e56350c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

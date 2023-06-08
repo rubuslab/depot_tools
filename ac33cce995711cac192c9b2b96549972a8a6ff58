@@ -16,6 +16,24 @@
       "message": "did you run ./recipes.py test train? just making sure",
       "revId": "ac33cce995711cac192c9b2b96549972a8a6ff58",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b850ca9f_30c21952",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1401232
+      },
+      "writtenOn": "2023-06-08T17:51:22Z",
+      "side": 1,
+      "message": "just ran it, it passes",
+      "parentUuid": "cfb5c2db_571126a0",
+      "revId": "ac33cce995711cac192c9b2b96549972a8a6ff58",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

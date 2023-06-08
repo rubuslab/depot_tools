@@ -3340,6 +3340,12 @@ def CMDsetdep(parser, args):
   local_scope = gclient_eval.Exec(contents, options.deps_file,
                                   builtin_vars=builtin_vars)
 
+  if os.path.isfile('.gitmodules'):
+    with open('.gitmodules') as f:
+      git_modules = f.read()
+  else:
+    git_modules = ""
+
   for var in options.vars:
     name, _, value = var.partition('=')
     if not name or not value:
@@ -3363,10 +3369,28 @@ def CMDsetdep(parser, args):
             % (name, package))
       gclient_eval.SetCIPD(local_scope, name, package, value)
     else:
-      gclient_eval.SetRevision(local_scope, name, value)
+      if 'git_dependencies' not in local_scope or local_scope[
+          'git_dependencies'] == 'DEPS' or local_scope[
+              'git_dependencies'] == 'SYNC':
+        gclient_eval.SetRevision(local_scope, name, value)
+
+      if 'git_dependencies' in local_scope and (
+          local_scope['git_dependencies'] == 'SUBMODULES'
+          or local_scope['git_dependencies'] == 'SYNC'):
+        if name not in git_modules:
+          git_modules += f'[submodule "{name}"]\n'
+          git_modules += f'\tpath = {name}\n'
+
+        subprocess2.call([
+            'git', 'update-index', '--add', '--cacheinfo',
+            f'160000,{value},{name}'
+        ])
 
   with open(options.deps_file, 'wb') as f:
     f.write(gclient_eval.RenderDEPSFile(local_scope).encode('utf-8'))
+
+  with open('.gitmodules', 'w') as f:
+    f.write(git_modules)
 
 
 @metrics.collector.collect_metrics('gclient verify')

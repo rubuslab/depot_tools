@@ -70,6 +70,7 @@ class MetricsCollectorTest(unittest.TestCase):
                lambda _: 1234).start()
     mock.patch('metrics_utils.get_git_version',
                lambda: '2.18.1').start()
+    mock.patch('socket.getfqdn', lambda: 'nongoogler.host.org').start()
 
     self.maxDiff = None
     self.default_metrics = {
@@ -121,6 +122,21 @@ class MetricsCollectorTest(unittest.TestCase):
     self.assert_writes_file(
         self.config_file,
         {'is-googler': False, 'countdown': 10, 'opt-in': None, 'version': 0})
+
+  @mock.patch('socket.getfqdn', lambda: 'foo.c.googlers.com')
+  def test_writes_config_if_not_exists_googler_off_corp(self):
+    self.FileRead.side_effect = [IOError(2, "No such file or directory")]
+    mock_response = mock.Mock()
+    self.urllib.urlopen.side_effect = [mock_response]
+    mock_response.getcode.side_effect = [403]
+
+    self.assertTrue(self.collector.config.is_googler)
+    self.assertIsNone(self.collector.config.opted_in)
+    self.assertEqual(self.collector.config.countdown, 10)
+
+    self.assert_writes_file(
+        self.config_file,
+        {'is-googler': True, 'countdown': 10, 'opt-in': None, 'version': 0})
 
   def test_disables_metrics_if_cant_write_config(self):
     self.FileRead.side_effect = [IOError(2, 'No such file or directory')]

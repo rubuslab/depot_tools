@@ -16,6 +16,24 @@
       "message": "I\u0027m pretty sure this will fail (you won\u0027t see the error due to nature how we call it, but metrics will be rejected by the server).",
       "revId": "c7b8d610cc3227246198b585b812226834d18049",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e9f765a_289a15da",
+        "filename": "metrics.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-06-09T21:18:26Z",
+      "side": 1,
+      "message": "Comment removed by: Josip Sokcevic; Reason: .",
+      "parentUuid": "72e6e57f_83b9200d",
+      "revId": "c7b8d610cc3227246198b585b812226834d18049",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

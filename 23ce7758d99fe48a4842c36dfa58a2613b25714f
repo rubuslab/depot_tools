@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70c7e638_c9e3d0dd",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-09T00:01:20Z",
+      "side": 1,
+      "message": "auto-delete set for those uploads? keeping 30-60 days should be totally okay.",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 53
+      },
+      "revId": "23ce7758d99fe48a4842c36dfa58a2613b25714f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa200715_14e3338b",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-09T00:01:20Z",
+      "side": 1,
+      "message": "can we grant access to all known chromium-related service accounts?",
+      "revId": "23ce7758d99fe48a4842c36dfa58a2613b25714f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

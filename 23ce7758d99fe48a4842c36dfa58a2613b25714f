@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0108fbf4_d7ebe983",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-06-09T15:51:34Z",
+      "side": 1,
+      "message": "https://crbug.com/1453642",
+      "parentUuid": "70c7e638_c9e3d0dd",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 53
+      },
+      "revId": "23ce7758d99fe48a4842c36dfa58a2613b25714f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aa200715_14e3338b",
         "filename": "recipes/recipe_modules/bot_update/api.py",
         "patchSetId": 17
@@ -37,6 +61,24 @@
       "writtenOn": "2023-06-09T00:01:20Z",
       "side": 1,
       "message": "can we grant access to all known chromium-related service accounts?",
+      "revId": "23ce7758d99fe48a4842c36dfa58a2613b25714f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffff81ed_ce7f429a",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-06-09T15:51:34Z",
+      "side": 1,
+      "message": "See https://crbug.com/1450987#c7 for discussion, this line is for accounts not caught in http://cl/538806705",
+      "parentUuid": "aa200715_14e3338b",
       "revId": "23ce7758d99fe48a4842c36dfa58a2613b25714f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

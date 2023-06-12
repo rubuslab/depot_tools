@@ -51,6 +51,24 @@
       "parentUuid": "fba170e7_4d50c57c",
       "revId": "587ad89e79ff7b02a34048e497c725a7794f5e81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b83a7e31_e3a073d9",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1949,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-06-12T15:54:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e837b4ee_22ee28d4",
+      "revId": "587ad89e79ff7b02a34048e497c725a7794f5e81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

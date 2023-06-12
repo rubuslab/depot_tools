@@ -3346,6 +3346,8 @@ def CMDsetdep(parser, args):
 
   local_scope = gclient_eval.Exec(contents, options.deps_file,
                                   builtin_vars=builtin_vars)
+  git_modules = gclient_utils.FileRead('.gitmodules') if os.path.isfile(
+      '.gitmodules') else ""
 
   for var in options.vars:
     name, _, value = var.partition('=')
@@ -3370,10 +3372,38 @@ def CMDsetdep(parser, args):
             % (name, package))
       gclient_eval.SetCIPD(local_scope, name, package, value)
     else:
-      gclient_eval.SetRevision(local_scope, name, value)
+      # Update DEPS only when `git_dependencies` == DEPS or SYNC.
+      # git_dependencies is defaulted to DEPS when not set.
+      if 'git_dependencies' not in local_scope or local_scope[
+          'git_dependencies'] == 'DEPS' or local_scope[
+              'git_dependencies'] == 'SYNC':
+        gclient_eval.SetRevision(local_scope, name, value)
+
+      # Update git submodules when `git_dependencies` == SYNC or SUBMODULES.
+      if 'git_dependencies' in local_scope and (
+          local_scope['git_dependencies'] == 'SUBMODULES'
+          or local_scope['git_dependencies'] == 'SYNC'):
+        # Add .gitmodules entry if not present already. Since `setdep` doesn't
+        # change the path of a dependency, this file is only appended to, not
+        # updated.
+        if name not in git_modules:
+          if not git_modules.endswith('\n'):
+            git_modules += '\n'
+
+          git_modules += '[submodule "{}"]\n'.format(name)
+          git_modules += '\tpath = {}\n'.format(name)
+
+        # Add/Update the gitlink for the submodule.
+        subprocess2.call([
+            'git', 'update-index', '--add', '--cacheinfo',
+            f'160000,{value},{name}'
+        ])
 
   with open(options.deps_file, 'wb') as f:
     f.write(gclient_eval.RenderDEPSFile(local_scope).encode('utf-8'))
+
+  with open('.gitmodules', 'w') as f:
+    f.write(git_modules)
 
 
 @metrics.collector.collect_metrics('gclient verify')

@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4dc94af_93f497c6",
+        "filename": "gclient.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-06-13T14:36:11Z",
+      "side": 1,
+      "message": "I see some existing setdep tests.\ncould we add some tests for the new code?",
+      "revId": "ab41dea1ee9f6f1c8155a4645deba7552b78e648",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f31dcbde_47c5b4fc",
+        "filename": "gclient.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 3378,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-06-13T14:36:11Z",
+      "side": 1,
+      "message": "nit: here and above could do\n`local_scope[\u0027git_dependencies\u0027] in (\u0027SUBMODULES\u0027, \u0027SYNC\u0027)`\nfor less code, readability.",
+      "range": {
+        "startLine": 3377,
+        "startChar": 10,
+        "endLine": 3378,
+        "endChar": 55
+      },
+      "revId": "ab41dea1ee9f6f1c8155a4645deba7552b78e648",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ddd8d09_3c51e6a4",
+        "filename": "gclient.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-06-13T15:17:31Z",
+      "side": 1,
+      "message": "If we\u0027re referencing these strings in several places, would be good practice to create global variables at the top of this file, to use instead so we can have comments explaining the vars.",
+      "range": {
+        "startLine": 886,
+        "startChar": 39,
+        "endLine": 886,
+        "endChar": 49
+      },
+      "revId": "a47517b9ca947084653972c79d143e42a1c18e8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7235473b_c83c66ea",
+        "filename": "gclient.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-06-13T15:17:31Z",
+      "side": 1,
+      "message": "nit: `if self.git_dependencies_state in (....)`",
+      "range": {
+        "startLine": 886,
+        "startChar": 4,
+        "endLine": 887,
+        "endChar": 44
+      },
+      "revId": "a47517b9ca947084653972c79d143e42a1c18e8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70c9bce7_4a405583",
+        "filename": "gclient.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-06-13T15:17:31Z",
+      "side": 1,
+      "message": "it\u0027s not immediately clear from this docstring alone if submodules here is some object of just a string.\n\nAdding type hints would also speed up readability.\nhttps://peps.python.org/pep-0484/#suggested-syntax-for-python-2-7-and-straddling-code\n\nconsider:\n\n```suggestion\n  def ParseGitSubmodules(self):\n    # type: () -\u003e Mapping[str, str]\n    \"\"\"\n    Parses git submodules and returns a dict of path to DEPS git url entries.\n\n    e.g {\u003cpath\u003e: \u003curl\u003e@\u003ccommit_hash\u003e}\n    \"\"\"\n```\n\nfor immediate understanding of shape",
+      "range": {
+        "startLine": 930,
+        "startChar": 1,
+        "endLine": 936,
+        "endChar": 0
+      },
+      "revId": "a47517b9ca947084653972c79d143e42a1c18e8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25ab5717_3c9e4fcd",
+        "filename": "gclient.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-06-13T15:17:31Z",
+      "side": 1,
+      "message": "is it guaranteed that every line will have \"\u003d\"? \ncould .gitmodules have comment lines? does this loop handle empty lines?",
+      "range": {
+        "startLine": 968,
+        "startChar": 10,
+        "endLine": 968,
+        "endChar": 41
+      },
+      "revId": "a47517b9ca947084653972c79d143e42a1c18e8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

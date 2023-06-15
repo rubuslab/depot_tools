@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "458200cb_a26918ce",
+        "filename": "reclient_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2023-06-15T03:44:19Z",
+      "side": 1,
+      "message": "```suggestion\n    print(\u0027WARNING: Using RBE_instance\u003d%s\\n\u0027 % os.environ.get(\u0027RBE_instance\u0027, \u0027\u0027))\n```",
+      "range": {
+        "startLine": 194,
+        "startChar": 20,
+        "endLine": 194,
+        "endChar": 23
+      },
+      "revId": "bd6bf59c092f13510b642bc20d4551116c6a9df8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

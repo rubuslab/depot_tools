@@ -3,6 +3,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "c5f0e60d_ff7508d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-15T17:35:31Z",
+      "side": 1,
+      "message": "abandon?",
+      "revId": "c7b8d610cc3227246198b585b812226834d18049",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "72e6e57f_83b9200d",
         "filename": "metrics.py",
         "patchSetId": 2

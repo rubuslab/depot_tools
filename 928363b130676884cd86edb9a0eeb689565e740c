@@ -16,6 +16,24 @@
       "message": "I believe there is a off-by-one bug; the log shows 4 tries. Also, bump this to 6; that way we will get over 5 minutes. \n\nJust bumping sleep time from 10 to 12s will increase retry time by ~30 seconds.",
       "revId": "928363b130676884cd86edb9a0eeb689565e740c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddcbbc49_44215695",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-06-16T21:18:23Z",
+      "side": 1,
+      "message": "I had initially thought there was an OBOE too, but I couldn\u0027t repro it. Maybe the reporter left it out or canceled early? Either way, bumped to 6 tries",
+      "parentUuid": "3800fe32_7ad56932",
+      "revId": "928363b130676884cd86edb9a0eeb689565e740c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

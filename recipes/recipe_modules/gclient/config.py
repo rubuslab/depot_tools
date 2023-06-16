@@ -345,6 +345,14 @@ def infra_internal(c):  # pragma: no cover
   soln.url = 'https://chrome-internal.googlesource.com/infra/infra_internal.git'
   c.got_revision_mapping['infra_internal'] = 'got_revision'
 
+@config_ctx()
+def infra_internal_docker(c):  # pragma: no cover
+  soln = c.solutions.add()
+  soln.name = 'infra_internal'
+  soln.custom_vars = {'docker_image_build': True}
+  soln.url = 'https://chrome-internal.googlesource.com/infra/infra_internal.git'
+  c.got_revision_mapping['infra_internal'] = 'got_revision'
+
 @config_ctx(includes=['infra'])
 def luci_gae(c):
   # luci/gae is checked out as a part of infra.git solution at HEAD.

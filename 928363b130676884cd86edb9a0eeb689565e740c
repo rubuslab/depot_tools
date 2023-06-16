@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3800fe32_7ad56932",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-16T18:02:00Z",
+      "side": 1,
+      "message": "I believe there is a off-by-one bug; the log shows 4 tries. Also, bump this to 6; that way we will get over 5 minutes. \n\nJust bumping sleep time from 10 to 12s will increase retry time by ~30 seconds.",
+      "revId": "928363b130676884cd86edb9a0eeb689565e740c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

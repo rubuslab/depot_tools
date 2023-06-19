@@ -53,15 +53,21 @@ def main(args):
         for line in f.readlines():
           k, v = line.rstrip().split('=', 1)
           env[k] = v
-    siso_path = os.path.join(base_path, 'third_party', 'siso',
-                             'siso' + gclient_paths.GetExeSuffix())
+    siso_path = os.environ.get(
+        'SISO_PATH',
+        os.path.join(base_path, 'third_party', 'siso',
+                     'siso' + gclient_paths.GetExeSuffix()))
     if os.path.isfile(siso_path):
       return subprocess.call([siso_path] + args[1:], env=env)
 
-  print(
-      'depot_tools/siso.py: Could not find Siso in the third_party of '
-      'the current project.',
-      file=sys.stderr)
+  if os.environ.get('SISO_PATH'):
+    print('depot_tools/siso.py: Could not find Siso at %s.' % siso_path,
+          file=sys.stderr)
+  else:
+    print(
+        'depot_tools/siso.py: Could not find Siso in the third_party of '
+        'the current project.',
+        file=sys.stderr)
   return 1
 
 

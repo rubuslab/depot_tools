@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "431d387b_8af5883f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-06-19T06:20:44Z",
+      "side": 1,
+      "message": "Nice!! Thank you :)",
+      "revId": "e7ca272b0e073c2515b65d9c51091c33dbd1d8ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ce54d00_3915a794",
+        "filename": "siso.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-06-19T06:20:44Z",
+      "side": 1,
+      "message": "I wonder if we should let autosiso print a message that it\u0027s using Siso from the SISO_PATH variable - this would reassure me that I didn\u0027t forget to set (or unset) it when running tests.\n\nWhat about something like:\n\n```\nsiso_path_override \u003d os.environ.get(\u0027SISO_PATH\u0027)\nif siso_path_override:\n  print(\u0027depot_tools/siso.py: Using Siso binary from SISO_PATH: %s.\u0027 % siso_path_override)\n```\n\nand then below:\n\n```\nsiso_path \u003d siso_path_override or os.path.join(base_path, ...\n```\n\nWDYT?",
+      "revId": "e7ca272b0e073c2515b65d9c51091c33dbd1d8ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

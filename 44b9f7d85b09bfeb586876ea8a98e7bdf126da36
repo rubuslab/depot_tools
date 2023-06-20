@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cdb1e27_706be1bd",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-06-20T23:20:46Z",
+      "side": 1,
+      "message": "This `fuzzy_match` here doesn\u0027t match the `self.FuzzyMatchUrl(target_branches)` that used to be used on `target_branches`. Is that intentional?",
+      "range": {
+        "startLine": 1034,
+        "startChar": 40,
+        "endLine": 1034,
+        "endChar": 51
+      },
+      "revId": "44b9f7d85b09bfeb586876ea8a98e7bdf126da36",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

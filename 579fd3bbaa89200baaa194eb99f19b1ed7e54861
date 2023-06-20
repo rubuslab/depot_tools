@@ -16,6 +16,24 @@
       "message": "ah.\nwhy it uses set??",
       "revId": "579fd3bbaa89200baaa194eb99f19b1ed7e54861",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f6079a2_051b96e1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-06-20T05:05:26Z",
+      "side": 1,
+      "message": "Maybe just as a \"performance optimization\" to reduce duplicate look-ups in case some of the paths are actually the same? 🤔",
+      "parentUuid": "7870c0fa_69ab1ffb",
+      "revId": "579fd3bbaa89200baaa194eb99f19b1ed7e54861",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

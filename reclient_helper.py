@@ -9,6 +9,7 @@ for any reason e.g. build completion, keyboard interrupt etc."""
 import contextlib
 import hashlib
 import os
+import shutil
 import subprocess
 import sys
 
@@ -141,6 +142,9 @@ def set_reproxy_path_flags(out_dir, make_dirs=True):
   tmp_dir = os.path.abspath(os.path.join(out_dir, '.reproxy_tmp'))
   log_dir = os.path.join(tmp_dir, 'logs')
   cache_dir = find_cache_dir(tmp_dir)
+  if os.path.exists(log_dir):
+    # Clear log dir before each build to ensure correct metric aggregation
+    shutil.rmtree(log_dir)
   if make_dirs:
     os.makedirs(tmp_dir, exist_ok=True)
     os.makedirs(log_dir, exist_ok=True)

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7870c0fa_69ab1ffb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-06-20T05:04:19Z",
+      "side": 1,
+      "message": "ah.\nwhy it uses set??",
+      "revId": "579fd3bbaa89200baaa194eb99f19b1ed7e54861",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

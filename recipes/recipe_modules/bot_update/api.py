@@ -64,7 +64,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
     return repo_path
 
   def _get_bot_update_env(self):
-    self._trace_dir = self.m.path['cleanup'].join('traces')
+    self._trace_dir = self.m.path.mkdtemp('traces')
 
     # If a Git HTTP request is constantly below GIT_HTTP_LOW_SPEED_LIMIT
     # bytes/second for GIT_HTTP_LOW_SPEED_TIME seconds then such request will be

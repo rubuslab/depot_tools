@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39252402_8e25a76a",
+        "filename": "reclient_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-06-21T02:23:35Z",
+      "side": 1,
+      "message": "append period?",
+      "range": {
+        "startLine": 147,
+        "startChar": 65,
+        "endLine": 147,
+        "endChar": 76
+      },
+      "revId": "77f69d41ac97b05a67d1187e685d497c9df1adf4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

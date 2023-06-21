@@ -345,7 +345,7 @@ def infra_internal(c):  # pragma: no cover
   soln.url = 'https://chrome-internal.googlesource.com/infra/infra_internal.git'
   c.got_revision_mapping['infra_internal'] = 'got_revision'
 
-@config_ctx(includes=['infra'])
+@config_ctx(includes=['infra_superproject'])
 def luci_gae(c):
   # luci/gae is checked out as a part of infra.git solution at HEAD.
   c.revisions['infra'] = 'refs/heads/main'
@@ -357,7 +357,7 @@ def luci_gae(c):
   del m['infra']
   m['infra/go/src/go.chromium.org/gae'] = 'got_revision'
 
-@config_ctx(includes=['infra'])
+@config_ctx(includes=['infra_superproject'])
 def luci_go(c):
   # luci-go is checked out as a part of infra.git solution at HEAD.
   c.revisions['infra'] = 'refs/heads/main'
@@ -367,7 +367,7 @@ def luci_go(c):
   del m['infra']
   m['infra/go/src/go.chromium.org/luci'] = 'got_revision'
 
-@config_ctx(includes=['infra'])
+@config_ctx(includes=['infra_superproject'])
 def luci_py(c):
   # luci-py is checked out as part of infra just to have appengine
   # pre-installed, as that's what luci-py PRESUBMIT relies on.
@@ -378,7 +378,7 @@ def luci_py(c):
   del m['infra']
   m['infra/luci'] = 'got_revision'
 
-@config_ctx(includes=['infra'])
+@config_ctx(includes=['infra_superproject'])
 def recipes_py(c):
   c.revisions['infra'] = 'refs/heads/main'
   c.revisions['infra/recipes-py'] = (

@@ -22,6 +22,30 @@
       },
       "revId": "44b9f7d85b09bfeb586876ea8a98e7bdf126da36",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49961b74_b8f3e904",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-21T01:42:41Z",
+      "side": 1,
+      "message": "It doesn\u0027t matter since both target_branches and patch_ref are generated from the same data sources and they have the same keys.\n\nBut, happy to change if you insist :)",
+      "parentUuid": "7cdb1e27_706be1bd",
+      "range": {
+        "startLine": 1034,
+        "startChar": 40,
+        "endLine": 1034,
+        "endChar": 51
+      },
+      "revId": "44b9f7d85b09bfeb586876ea8a98e7bdf126da36",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

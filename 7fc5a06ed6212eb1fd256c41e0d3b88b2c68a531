@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "614ca9a4_eb5b20d2",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 1001982
+      },
+      "writtenOn": "2023-06-23T20:02:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b673221f_74cdd829",
+      "revId": "7fc5a06ed6212eb1fd256c41e0d3b88b2c68a531",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92defad5_dea58209",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-06-23T19:31:04Z",
       "side": 1,
       "message": "Good fix that.",
+      "revId": "7fc5a06ed6212eb1fd256c41e0d3b88b2c68a531",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad7ffacd_7d43bb0d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 1001982
+      },
+      "writtenOn": "2023-06-23T20:02:14Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "92defad5_dea58209",
       "revId": "7fc5a06ed6212eb1fd256c41e0d3b88b2c68a531",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

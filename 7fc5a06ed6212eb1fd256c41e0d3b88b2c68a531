@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "907445e3_dcede633",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001982
+      },
+      "writtenOn": "2023-06-23T18:25:45Z",
+      "side": 1,
+      "message": "The new message looks like:\n\nRunning Python 3 presubmit upload checks ...\n** Presubmit ERRORS: 1 **\nLicense on new files must be:\n\n// Copyright 2023 The Chromium Authors\n// Use of this source code is governed by a BSD-style license that can be\n// found in the LICENSE file.\n\n(adjusting the comment delimiter accordingly).\n\nLicense on moved files must match the text, but do not update the year.\n\nFound a bad license header in these new or moved files:\n  ash/system/holding_space/holding_space_ash_test_base_foo.cc\n\nPresubmit checks took 3.1s to calculate.\nThere were Python 3 presubmit errors.",
+      "revId": "7fc5a06ed6212eb1fd256c41e0d3b88b2c68a531",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

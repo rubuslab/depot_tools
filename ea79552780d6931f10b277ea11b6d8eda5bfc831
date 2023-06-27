@@ -16,6 +16,24 @@
       "message": "https://chromium.googlesource.com/infra/luci/luci-py/+/HEAD/client/LUCI_CONTEXT.md mentions that \"Most applications SHOULD only reserve time from grace_period\" but with https://crbug.com/1305422 still open, is there a better alternative?",
       "revId": "ea79552780d6931f10b277ea11b6d8eda5bfc831",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "410800d4_71024984",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-06-27T22:19:12Z",
+      "side": 1,
+      "message": "led with deadline: https://ci.chromium.org/raw/build/logs.chromium.org/infra/led/gavinmak_google.com/f294ed534a0c6ef2dc4a7af031e44d6c98612620c6aff32bea078bbf94a9e144/+/build.proto?server\u003dchromium-swarm.appspot.com\n\nand without: https://ci.chromium.org/raw/build/logs.chromium.org/infra/led/gavinmak_google.com/2330a970764eab3fddec7912a38a9143579077753551a0e9d45e1cd3ee04cb42/+/build.proto?server\u003dchromium-swarm.appspot.com",
+      "parentUuid": "9c56a94f_7543c10e",
+      "revId": "ea79552780d6931f10b277ea11b6d8eda5bfc831",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

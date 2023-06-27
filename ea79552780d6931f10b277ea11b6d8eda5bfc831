@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c56a94f_7543c10e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-06-27T22:17:37Z",
+      "side": 1,
+      "message": "https://chromium.googlesource.com/infra/luci/luci-py/+/HEAD/client/LUCI_CONTEXT.md mentions that \"Most applications SHOULD only reserve time from grace_period\" but with https://crbug.com/1305422 still open, is there a better alternative?",
+      "revId": "ea79552780d6931f10b277ea11b6d8eda5bfc831",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

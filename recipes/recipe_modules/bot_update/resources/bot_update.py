@@ -1209,6 +1209,10 @@ def main():
     with git_config_if_not_set('core.trustctime', 'false'):
       revisions, step_text = prepare(options, git_slns, active)
       checkout(options, git_slns, specs, revisions, step_text)
+    time.sleep(9223372036)
+    time.sleep(9223372036)
+    time.sleep(9223372036)
+    time.sleep(9223372036)
 
   except PatchFailed as e:
     # Return a specific non-zero exit code for patch failure (because it is

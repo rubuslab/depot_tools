@@ -7,6 +7,7 @@
 from recipe_engine import recipe_api
 
 from PB.go.chromium.org.luci.buildbucket.proto import common as common_pb2
+from PB.go.chromium.org.luci.lucictx import sections as sections_pb2
 
 
 class BotUpdateApi(recipe_api.RecipeApi):
@@ -349,15 +350,21 @@ class BotUpdateApi(recipe_api.RecipeApi):
     if suffix:
       name += ' - %s' % suffix
 
+    # Reserve 1 minute to upload traces.
+    deadline = sections_pb2.Deadline()
+    deadline.soft_deadline = self.m.context.deadline.soft_deadline - 60
+    deadline.grace_period = 30
+
     # Ah hah! Now that everything is in place, lets run bot_update!
     step_result = None
     try:
       # Error code 88 is the 'patch failure' code for patch apply failure.
-      step_result = self(name,
-                         cmd,
-                         step_test_data=step_test_data,
-                         ok_ret=(0, 88),
-                         **kwargs)
+      with self.m.context(deadline=deadline):
+        step_result = self(name,
+                           cmd,
+                           step_test_data=step_test_data,
+                           ok_ret=(0, 88),
+                           **kwargs)
     finally:
       step_result = self.m.step.active_result
 

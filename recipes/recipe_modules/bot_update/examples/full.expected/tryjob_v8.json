@@ -102,6 +102,10 @@
     },
     "infra_step": true,
     "luci_context": {
+      "deadline": {
+        "grace_period": 30.0,
+        "soft_deadline": -60.0
+      },
       "realm": {
         "name": "chromium/src:try"
       },
@@ -248,6 +252,10 @@
     },
     "infra_step": true,
     "luci_context": {
+      "deadline": {
+        "grace_period": 30.0,
+        "soft_deadline": -60.0
+      },
       "realm": {
         "name": "chromium/src:try"
       },

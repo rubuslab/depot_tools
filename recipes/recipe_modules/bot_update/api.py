@@ -7,6 +7,7 @@
 from recipe_engine import recipe_api
 
 from PB.go.chromium.org.luci.buildbucket.proto import common as common_pb2
+from PB.go.chromium.org.luci.lucictx import sections as sections_pb2
 
 
 class BotUpdateApi(recipe_api.RecipeApi):
@@ -25,7 +26,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
     bot_update_path = self.resource('bot_update.py')
     kwargs.setdefault('infra_step', True)
 
-    with self.m.context(env=self._get_bot_update_env()):
+    # Reserve 1 minute to upload traces.
+    deadline = sections_pb2.Deadline()
+    deadline.soft_deadline = self.m.context.deadline.soft_deadline - 60
+    deadline.grace_period = 30
+
+    with self.m.context(env=self._get_bot_update_env(), deadline=deadline):
       with self.m.depot_tools.on_path():
         return self.m.step(name,
                            ['vpython3', '-u', bot_update_path] + cmd,

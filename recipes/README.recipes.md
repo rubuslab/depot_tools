@@ -62,12 +62,20 @@ Recipe module to ensure a checkout is consistent on a bot.
 
 Wrapper for easy calling of bot_update.
 
+<<<<<<< PATCH SET (23323f Reserve time from soft_deadline to upload traces if bot_upda)
+&mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#587)(self, bot_update_step):**
+=======
 &mdash; **def [deapply\_patch](/recipes/recipe_modules/bot_update/api.py#586)(self, bot_update_step):**
+>>>>>>> BASE      (94761e Fix bot_update _trace_dir)
 
 Deapplies a patch, taking care of DEPS and solution revisions properly.
     
 
+<<<<<<< PATCH SET (23323f Reserve time from soft_deadline to upload traces if bot_upda)
+&mdash; **def [ensure\_checkout](/recipes/recipe_modules/bot_update/api.py#124)(self, gclient_config=None, suffix=None, patch=True, update_presentation=True, patch_root=None, with_branch_heads=False, with_tags=False, no_fetch_tags=False, refs=None, clobber=False, root_solution_revision=None, gerrit_no_reset=False, gerrit_no_rebase_patch_ref=False, assert_one_gerrit_change=True, patch_refs=None, ignore_input_commit=False, add_blamelists=False, set_output_commit=False, step_test_data=None, enforce_fetch=False, download_topics=False, recipe_revision_overrides=None, \*\*kwargs):**
+=======
 &mdash; **def [ensure\_checkout](/recipes/recipe_modules/bot_update/api.py#123)(self, gclient_config=None, suffix=None, patch=True, update_presentation=True, patch_root=None, with_branch_heads=False, with_tags=False, no_fetch_tags=False, refs=None, clobber=False, root_solution_revision=None, gerrit_no_reset=False, gerrit_no_rebase_patch_ref=False, assert_one_gerrit_change=True, patch_refs=None, ignore_input_commit=False, add_blamelists=False, set_output_commit=False, step_test_data=None, enforce_fetch=False, download_topics=False, recipe_revision_overrides=None, \*\*kwargs):**
+>>>>>>> BASE      (94761e Fix bot_update _trace_dir)
 
 Args:
   * gclient_config: The gclient configuration to use when running bot_update.
@@ -103,7 +111,11 @@ Args:
     change's commit message to get this revision override requested by the
     author.
 
+<<<<<<< PATCH SET (23323f Reserve time from soft_deadline to upload traces if bot_upda)
+&mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#564)(self, project_name, gclient_config=None):**
+=======
 &mdash; **def [get\_project\_revision\_properties](/recipes/recipe_modules/bot_update/api.py#563)(self, project_name, gclient_config=None):**
+>>>>>>> BASE      (94761e Fix bot_update _trace_dir)
 
 Returns all property names used for storing the checked-out revision of
 a given project.
@@ -117,9 +129,13 @@ Args:
 Returns (list of str): All properties that'll hold the checked-out revision
     of the given project. An empty list if no such properties exist.
 
-&emsp; **@property**<br>&mdash; **def [last\_returned\_properties](/recipes/recipe_modules/bot_update/api.py#34)(self):**
+&emsp; **@property**<br>&mdash; **def [last\_returned\_properties](/recipes/recipe_modules/bot_update/api.py#39)(self):**
 
+<<<<<<< PATCH SET (23323f Reserve time from soft_deadline to upload traces if bot_upda)
+&mdash; **def [resolve\_fixed\_revision](/recipes/recipe_modules/bot_update/api.py#515)(self, bot_update_json, name):**
+=======
 &mdash; **def [resolve\_fixed\_revision](/recipes/recipe_modules/bot_update/api.py#514)(self, bot_update_json, name):**
+>>>>>>> BASE      (94761e Fix bot_update _trace_dir)
 
 Sets a fixed revision for a single dependency using project revision
 properties.

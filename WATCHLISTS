@@ -14,12 +14,18 @@
     'depot_tools': {
       'filepath': '.+',
     },
+    'reclient': {
+      'filepath': '.*reclient.*',
+    },
   },
 
   'WATCHLISTS': {
     'this_file': [],
     'depot_tools': [
       'chops-source-team-auto+depot_tools@google.com',
+    ],
+    'reclient': [
+      'chrome-build-team@google.com',
     ],
   },
 

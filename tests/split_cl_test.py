@@ -32,6 +32,19 @@ class SplitClTest(unittest.TestCase):
                                                       self._footers),
         self._description + added_line + '\n\n' + self._footers)
 
+  def testClSplitWithTopic(self):
+    added_line = 'This CL was uploaded by git cl split.'
+
+    # Description without footers
+    self.assertEqual(
+        split_cl.AddUploadedByGitClSplitToDescription(self._description),
+        self._description + added_line)
+    # Description with footers
+    self.assertEqual(
+        split_cl.AddUploadedByGitClSplitToDescription(self._description +
+                                                      self._footers),
+        self._description + added_line + '\n\n' + self._footers)
+
 
 if __name__ == '__main__':
   unittest.main()

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39eabd5f_1e274f0b",
+        "filename": "gclient.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 3391,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-06-28T23:48:17Z",
+      "side": 1,
+      "message": "Given the test setup here doesn\u0027t seem to have a git repository, I\u0027m not sure if validating if `update-index` worked would be straight-forward. I might be wrong though.",
+      "revId": "fbf9bca99e3f8ad054eba611df0fe0cfc3895aa5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37040502_87c487b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-28T17:14:48Z",
+      "side": 1,
+      "message": "Thanks for adding it!",
+      "revId": "69216fbae54d674ac4c845b00846437f0a2f010d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eed59c37_16e1f825",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5149,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-28T17:14:48Z",
+      "side": 1,
+      "message": "Instead of passing args to already overloaded split_cl.SplitCl; I believe the following would\u0027ve worked:\n\n```\n    def WrappedCMDupload(args):\n      if options.topic:\n        args.append(\u0027--topic\u0027, options.topic)\n      return CMDupload(OptionParser(), args)\n```\n\nbut totally okay to keep this as is.",
+      "range": {
+        "startLine": 5147,
+        "startChar": 0,
+        "endLine": 5149,
+        "endChar": 0
+      },
+      "revId": "69216fbae54d674ac4c845b00846437f0a2f010d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

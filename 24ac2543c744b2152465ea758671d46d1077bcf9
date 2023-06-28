@@ -16,6 +16,24 @@
       "message": "@tikuta@chromium.org Could we make sure somehow that these CLs touching stuff that we own also get cc\u0027d automatically to chrome-build-team@?\n\nIt seems like again it\u0027s not even possible to cc the team manually, because when I input it into the \"CC\" field of the form in Gerrit, it just turns red and doesn\u0027t allow me to do it.",
       "revId": "24ac2543c744b2152465ea758671d46d1077bcf9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed4cd3bd_bf29c1ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-06-28T04:14:22Z",
+      "side": 1,
+      "message": "Made https://crrev.com/c/4653532 for that.",
+      "parentUuid": "598ca9e1_f1c815b4",
+      "revId": "24ac2543c744b2152465ea758671d46d1077bcf9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "165843cf_fb92fe2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-06-28T15:17:08Z",
+      "side": 1,
+      "message": "Thank you!",
+      "revId": "4450d892bf3219cb1a743546087b4e8ced96bcbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "212c1689_8b93b09a",
+        "filename": "WATCHLISTS",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-06-28T15:17:08Z",
+      "side": 1,
+      "message": "Do we want to also trigger on changes to other files that are interesting for us?\n\nMaybe something like `\u0027.*(ninja|reclient|siso).*\u0027` would work?",
+      "range": {
+        "startLine": 18,
+        "startChar": 21,
+        "endLine": 18,
+        "endChar": 29
+      },
+      "revId": "4450d892bf3219cb1a743546087b4e8ced96bcbf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

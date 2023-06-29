@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63929457_dbb57b61",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1473902
+      },
+      "writtenOn": "2023-06-29T17:24:19Z",
+      "side": 1,
+      "message": "I didn\u0027t manually change these, did these get changed by the self-update command?",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 89
+      },
+      "revId": "8c619d5d7a107bfe9adb4c8320db450d05b67fce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

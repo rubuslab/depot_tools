@@ -881,6 +881,12 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       self.local_target_os = local_scope['target_os']
 
     deps = local_scope.get('deps', {})
+
+    # If dependencies are configured within git submodules, add them to DEPS.
+    if self.git_dependencies_state in (gclient_eval.SUBMODULES,
+                                       gclient_eval.SYNC):
+      deps.update(self.ParseGitSubmodules())
+
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)
 
@@ -920,6 +926,55 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     self.add_dependencies_and_close(deps_to_add, hooks_to_run,
                                     hooks_cwd=hooks_cwd)
     logging.info('ParseDepsFile(%s) done' % self.name)
+
+  def ParseGitSubmodules(self):
+    # type: () -> Mapping[str, str]
+    """
+    Parses git submodules and returns a dict of path to DEPS git url entries.
+
+    e.g {<path>: <url>@<commit_hash>}
+    """
+    filepath = os.path.join(self.root.root_dir, self.name, '.gitmodules')
+    if not os.path.isfile(filepath):
+      logging.warning('ParseGitSubmodules(): No .gitmodules found at %s',
+                      filepath)
+      return {}
+
+    # Get submodule commit hashes
+    result = subprocess2.check_output(['git', 'submodule',
+                                       'status']).decode('utf-8')
+    commit_hashes = {}
+    for record in result.splitlines():
+      commit, module = record.split(maxsplit=1)
+      commit_hashes[module] = commit[1:]
+
+    # eg: [submodule "foo"].
+    submodules_line_pattern = re.compile(r'^\[submodule \"(.*)\"]')
+    submodules = {}
+
+    cur_submodule = {}
+    cur_submodule_name = ""
+    with open(filepath) as f:
+      for line in f:
+        m = submodules_line_pattern.findall(line)
+        if m:
+          # If line is a submodule section (eg: [submodule "foo"]), create a
+          # new submodule.
+          cur_submodule = {'dep_type': 'git'}
+          cur_submodule_name = m[0]
+          submodules[m[0]] = cur_submodule
+        else:
+          # submodule config. eg: `url = "https://foo.com/bar.git"`
+          key, value = line.split('=', 1)
+          key = key.strip()
+
+          if key == 'url':
+            cur_submodule[key] = '{}@{}'.format(
+                value.strip(), commit_hashes[cur_submodule_name])
+          elif key == 'condition':
+            cur_submodule[key] = value.strip()
+
+    return submodules
 
   def _get_option(self, attr, default):
     obj = self

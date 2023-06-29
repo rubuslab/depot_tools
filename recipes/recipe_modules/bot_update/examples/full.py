@@ -7,16 +7,17 @@ from recipe_engine import post_process
 PYTHON_VERSION_COMPATIBILITY = 'PY2+3'
 
 DEPS = [
-  'bot_update',
-  'gclient',
-  'gerrit',
-  'tryserver',
-  'recipe_engine/buildbucket',
-  'recipe_engine/json',
-  'recipe_engine/path',
-  'recipe_engine/platform',
-  'recipe_engine/properties',
-  'recipe_engine/runtime',
+    'bot_update',
+    'gclient',
+    'gerrit',
+    'tryserver',
+    'recipe_engine/buildbucket',
+    'recipe_engine/json',
+    'recipe_engine/path',
+    'recipe_engine/platform',
+    'recipe_engine/properties',
+    'recipe_engine/raw_io',
+    'recipe_engine/runtime',
 ]
 
 from recipe_engine import engine_types
@@ -261,8 +262,9 @@ def GenTests(api):
          api.step_data('bot_update', retcode=88))
 
   yield (api.test('upload_traces_fail', status="FAILURE") + try_build() +
-         api.properties(fail_patch='apply') +
-         api.step_data('bot_update', retcode=88) + api.step_data(
+         api.properties(fail_patch='apply') + api.step_data(
+             'bot_update', retcode=88, stderr=api.raw_io.output_text("err")) +
+         api.step_data(
              'upload git traces.gsutil upload',
              retcode=1,
          ))

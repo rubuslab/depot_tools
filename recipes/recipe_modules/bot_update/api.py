@@ -19,13 +19,13 @@ class BotUpdateApi(recipe_api.RecipeApi):
     self._last_returned_properties = {}
     super(BotUpdateApi, self).__init__(*args, **kwargs)
 
-  def __call__(self, name, cmd, **kwargs):
+  def __call__(self, name, cmd, env, **kwargs):
     """Wrapper for easy calling of bot_update."""
     assert isinstance(cmd, (list, tuple))
     bot_update_path = self.resource('bot_update.py')
     kwargs.setdefault('infra_step', True)
 
-    with self.m.context(env=self._get_bot_update_env()):
+    with self.m.context(env=env):
       with self.m.depot_tools.on_path():
         return self.m.step(name,
                            ['vpython3', '-u', bot_update_path] + cmd,
@@ -63,9 +63,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
     return repo_path
 
-  def _get_bot_update_env(self):
-    self._trace_dir = self.m.path['cleanup'].join('traces')
-
+  def _get_bot_update_env(self, traces):
     # If a Git HTTP request is constantly below GIT_HTTP_LOW_SPEED_LIMIT
     # bytes/second for GIT_HTTP_LOW_SPEED_TIME seconds then such request will be
     # aborted. Otherwise, it would wait for global timeout to be reached.
@@ -75,13 +73,13 @@ class BotUpdateApi(recipe_api.RecipeApi):
         'GIT_HTTP_LOW_SPEED_TIME':
         1800,  # in seconds
         'GIT_TRACE2_EVENT':
-        self.m.path.join(self._trace_dir, 'trace2-event'),
+        traces,
         'GIT_TRACE_CURL':
-        self.m.path.join(self._trace_dir, 'trace-curl'),
+        traces,
         'GIT_TRACE_CURL_NO_DATA':
         1,
         'GIT_TRACE_PACKET':
-        self.m.path.join(self._trace_dir, 'trace-packet'),
+        traces,
         'GIT_BACKENDINFO':
         1,
         'GIT_DAPPER_TRACE':
@@ -100,17 +98,20 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
     return env
 
-  def _upload_traces(self):
+  def _upload_traces(self, stderr):
+    if not stderr:
+      return
+
     with self.m.step.nest('upload git traces') as presentation:
       id = str(self.m.buildbucket.build.id
                or self.m.led.run_id.replace('/', '_'))
-      zip_path = (self.m.archive.package(self._trace_dir).archive(
-          'compress traces', self.m.path.join(self._trace_dir, '%s.zip' % id),
-          'zip'))
+      traces_file = self.m.path['cleanup'].join(id + '.txt')
+      self.m.file.write_text('write traces file', traces_file, stderr)
       try:
         # Don't upload with a destination path, otherwise we have to grant bots
         # storage.objects.list permisson on this bucket.
-        self.m.gsutil(['cp', zip_path, 'gs://chrome-bot-traces'], name='upload')
+        self.m.gsutil(['cp', '-Z', traces_file, 'gs://chrome-bot-traces'],
+                      name='upload')
       except self.m.step.StepFailure:
         presentation.status = self.m.step.INFRA_FAILURE
         presentation.step_text = ('Failed to upload traces. '
@@ -349,15 +350,24 @@ class BotUpdateApi(recipe_api.RecipeApi):
     if suffix:
       name += ' - %s' % suffix
 
+    # TODO(gavinmak): Use mkdtemp for simpler traces implementation when
+    # crbug.com/1457059 is fixed.
+    traces = False
+    # Don't log traces to stderr if it's already set.
+    if 'stderr' not in kwargs:
+      traces = True
+      kwargs['stderr'] = self.m.raw_io.output_text(add_output_log=False)
+
     # Ah hah! Now that everything is in place, lets run bot_update!
     step_result = None
     try:
       # Error code 88 is the 'patch failure' code for patch apply failure.
-      step_result = self(name,
-                         cmd,
-                         step_test_data=step_test_data,
-                         ok_ret=(0, 88),
-                         **kwargs)
+      self(name,
+           cmd,
+           env=self._get_bot_update_env(traces),
+           step_test_data=step_test_data,
+           ok_ret=(0, 88),
+           **kwargs)
     finally:
       step_result = self.m.step.active_result
 
@@ -390,7 +400,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
           if result.get('patch_apply_return_code') == 3:
             # This is download failure, hence an infra failure.
-            self._upload_traces()
+            traces and self._upload_traces(step_result.stderr)
             raise self.m.step.InfraFailure(
                 'Patch failure: Git reported a download failure')
           else:
@@ -400,14 +410,14 @@ class BotUpdateApi(recipe_api.RecipeApi):
             # This is actual patch failure.
             self.m.tryserver.set_patch_failure_tryjob_result()
             self.m.cq.set_do_not_retry_build()
-            self._upload_traces()
+            traces and self._upload_traces(step_result.stderr)
             raise self.m.step.StepFailure(
                 'Patch failure: See patch error log attached to bot_update. '
                 'Try rebasing?')
 
         if (step_result.exc_result.was_cancelled
             or step_result.exc_result.had_timeout):
-          self._upload_traces()
+          traces and self._upload_traces(step_result.stderr)
 
         if add_blamelists and 'manifest' in result:
           blamelist_pins = []

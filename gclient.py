@@ -881,6 +881,11 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       self.local_target_os = local_scope['target_os']
 
     deps = local_scope.get('deps', {})
+
+    # If dependencies are configured within git submodules, add them to DEPS.
+    if self.git_dependencies_state in ('SUBMODULES', 'SYNC'):
+      deps.update(self.ParseGitSubmodules())
+
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)
 
@@ -920,6 +925,55 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     self.add_dependencies_and_close(deps_to_add, hooks_to_run,
                                     hooks_cwd=hooks_cwd)
     logging.info('ParseDepsFile(%s) done' % self.name)
+
+  def ParseGitSubmodules(self):
+    # type: () -> Mapping[str, str]
+    """
+    Parses git submodules and returns a dict of path to DEPS git url entries.
+
+    e.g {<path>: <url>@<commit_hash>}
+    """
+    filepath = os.path.join(self.root.root_dir, self.name, '.gitmodules')
+    if not os.path.isfile(filepath):
+      logging.warning('ParseGitSubmodules(): No .gitmodules found at %s',
+                      filepath)
+      return {}
+
+    # Get submodule commit hashes
+    result = subprocess2.check_output(['git', 'submodule',
+                                       'status']).decode('utf-8')
+    commit_hashes = {}
+    for record in result.splitlines():
+      commit, module = record.split(maxsplit=1)
+      commit_hashes[module] = commit[1:]
+
+    # eg: [submodule "foo"].
+    submodules_line_pattern = re.compile(r'^\[submodule \"(.*)\"]')
+    submodules = {}
+
+    cur_submodule = {}
+    cur_submodule_name = ""
+    with open(filepath) as f:
+      for line in f:
+        m = submodules_line_pattern.findall(line)
+        if m:
+          # If line is a submodule section (eg: [submodule "foo"]), create a
+          # new submodule.
+          cur_submodule = {'dep_type': 'git'}
+          cur_submodule_name = m[0]
+          submodules[m[0]] = cur_submodule
+        else:
+          # submodule config. eg: `url = "https://foo.com/bar.git"`
+          key, value = line.split('=', 1)
+          key = key.strip()
+
+          if key == 'url':
+            cur_submodule[key] = '{}@{}'.format(
+                value.strip(), commit_hashes[cur_submodule_name])
+          elif key == 'condition':
+            cur_submodule[key] = value.strip()
+
+    return submodules
 
   def _get_option(self, attr, default):
     obj = self
@@ -3375,18 +3429,25 @@ def CMDsetdep(parser, args):
       # Update DEPS only when `git_dependencies` == DEPS or SYNC.
       # git_dependencies is defaulted to DEPS when not set.
       if 'git_dependencies' not in local_scope or local_scope[
-          'git_dependencies'] in ('DEPS', 'SYNC'):
+          'git_dependencies'] == 'DEPS' or local_scope[
+              'git_dependencies'] == 'SYNC':
         gclient_eval.SetRevision(local_scope, name, value)
 
       # Update git submodules when `git_dependencies` == SYNC or SUBMODULES.
-      if 'git_dependencies' in local_scope and local_scope[
-          'git_dependencies'] in ('SUBMODULES', 'SYNC'):
-        # gclient setdep should update the revision, i.e., the gitlink only
-        # when the submodule entry is already present within .gitmodules.
+      if 'git_dependencies' in local_scope and (
+          local_scope['git_dependencies'] == 'SUBMODULES'
+          or local_scope['git_dependencies'] == 'SYNC'):
+        # Add .gitmodules entry if not present already. Since `setdep` doesn't
+        # change the path of a dependency, this file is only appended to, not
+        # updated.
         if name not in git_modules:
-          raise KeyError('Could not find any dependency called %s.' % name)
+          if not git_modules.endswith('\n'):
+            git_modules += '\n'
 
-        # Update the gitlink for the submodule.
+          git_modules += '[submodule "{}"]\n'.format(name)
+          git_modules += '\tpath = {}\n'.format(name)
+
+        # Add/Update the gitlink for the submodule.
         subprocess2.call([
             'git', 'update-index', '--add', '--cacheinfo',
             f'160000,{value},{name}'
@@ -3394,6 +3455,9 @@ def CMDsetdep(parser, args):
 
   with open(options.deps_file, 'wb') as f:
     f.write(gclient_eval.RenderDEPSFile(local_scope).encode('utf-8'))
+
+  with open('.gitmodules', 'w') as f:
+    f.write(git_modules)
 
 
 @metrics.collector.collect_metrics('gclient verify')

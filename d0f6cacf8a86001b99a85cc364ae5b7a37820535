@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f0f53a9_79e4bf8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1473902
+      },
+      "writtenOn": "2023-06-29T17:35:09Z",
+      "side": 1,
+      "message": "Couldn\u0027t fix the state so just made another CL.",
+      "revId": "d0f6cacf8a86001b99a85cc364ae5b7a37820535",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

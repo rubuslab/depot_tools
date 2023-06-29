@@ -166,7 +166,7 @@ _GCLIENT_SCHEMA = schema.Schema(
         # Current state of the git submodule migration.
         # git_dependencies = [DEPS (default) | SUBMODULES | SYNC]
         schema.Optional('git_dependencies'):
-        schema.Or(DEPS, SYNC, SUBMODULES),
+        schema.Or(DEPS, SUBMODULES, SYNC),
 
         # List of host names from which dependencies are allowed (allowlist).
         # NOTE: when not present, all hosts are allowed.

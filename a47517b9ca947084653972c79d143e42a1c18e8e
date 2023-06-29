@@ -47,6 +47,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "32eb11f9_46f5138c",
+        "filename": "gclient.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-06-29T00:13:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7235473b_c83c66ea",
+      "range": {
+        "startLine": 886,
+        "startChar": 4,
+        "endLine": 887,
+        "endChar": 44
+      },
+      "revId": "a47517b9ca947084653972c79d143e42a1c18e8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "70c9bce7_4a405583",
@@ -70,6 +94,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e58950ef_74ae3af4",
+        "filename": "gclient.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-06-29T00:13:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70c9bce7_4a405583",
+      "range": {
+        "startLine": 930,
+        "startChar": 1,
+        "endLine": 936,
+        "endChar": 0
+      },
+      "revId": "a47517b9ca947084653972c79d143e42a1c18e8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25ab5717_3c9e4fcd",
@@ -83,6 +131,30 @@
       "writtenOn": "2023-06-13T15:17:31Z",
       "side": 1,
       "message": "is it guaranteed that every line will have \"\u003d\"? \ncould .gitmodules have comment lines? does this loop handle empty lines?",
+      "range": {
+        "startLine": 968,
+        "startChar": 10,
+        "endLine": 968,
+        "endChar": 41
+      },
+      "revId": "a47517b9ca947084653972c79d143e42a1c18e8e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "daaa30a5_c75d5391",
+        "filename": "gclient.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-06-29T00:13:41Z",
+      "side": 1,
+      "message": "From the git documentation, .gitmodules should [match the git-config syntax](https://git-scm.com/docs/gitmodules#_description). So, all lines that are not the subsection, empty line, or comment should contain an \"\u003d\" sign.\n\nThe above regex matcher handles `[submodule \"foo\"]` line. For the properties, we only handle lines with `url \u003d *` or `condition \u003d *`. All the other cases are ignored including comments and empty lines.",
+      "parentUuid": "25ab5717_3c9e4fcd",
       "range": {
         "startLine": 968,
         "startChar": 10,

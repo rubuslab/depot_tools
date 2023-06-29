@@ -415,7 +415,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                relative,
                condition,
                protocol='https',
-               git_dependencies_state=gclient_eval.DEPS,
+               git_dependencies_state='DEPS',
                print_outbuf=False):
     gclient_utils.WorkItem.__init__(self, name)
     DependencySettings.__init__(
@@ -3346,6 +3346,8 @@ def CMDsetdep(parser, args):
 
   local_scope = gclient_eval.Exec(contents, options.deps_file,
                                   builtin_vars=builtin_vars)
+  git_modules = gclient_utils.FileRead('.gitmodules') if os.path.isfile(
+      '.gitmodules') else ""
 
   for var in options.vars:
     name, _, value = var.partition('=')
@@ -3370,7 +3372,25 @@ def CMDsetdep(parser, args):
             % (name, package))
       gclient_eval.SetCIPD(local_scope, name, package, value)
     else:
-      gclient_eval.SetRevision(local_scope, name, value)
+      # Update DEPS only when `git_dependencies` == DEPS or SYNC.
+      # git_dependencies is defaulted to DEPS when not set.
+      if 'git_dependencies' not in local_scope or local_scope[
+          'git_dependencies'] in (gclient_eval.DEPS, gclient_eval.SYNC):
+        gclient_eval.SetRevision(local_scope, name, value)
+
+      # Update git submodules when `git_dependencies` == SYNC or SUBMODULES.
+      if 'git_dependencies' in local_scope and local_scope[
+          'git_dependencies'] in (gclient_eval.SUBMODULES, gclient_eval.SYNC):
+        # gclient setdep should update the revision, i.e., the gitlink only
+        # when the submodule entry is already present within .gitmodules.
+        if name not in git_modules:
+          raise KeyError('Could not find any dependency called %s.' % name)
+
+        # Update the gitlink for the submodule.
+        subprocess2.call([
+            'git', 'update-index', '--add', '--cacheinfo',
+            f'160000,{value},{name}'
+        ])
 
   with open(options.deps_file, 'wb') as f:
     f.write(gclient_eval.RenderDEPSFile(local_scope).encode('utf-8'))

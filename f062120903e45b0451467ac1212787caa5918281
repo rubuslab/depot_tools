@@ -33,6 +33,24 @@
       "message": "nit: this is a bit hard to read, maybe align all `with_file` calls if linter allows.",
       "revId": "f062120903e45b0451467ac1212787caa5918281",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48d108d8_86542016",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-06-30T16:59:53Z",
+      "side": 1,
+      "message": "got around the formatter",
+      "parentUuid": "7277dd92_571867b1",
+      "revId": "f062120903e45b0451467ac1212787caa5918281",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

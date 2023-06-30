@@ -16,6 +16,23 @@
       "message": "https://ci.chromium.org/raw/build/logs.chromium.org/infra/led/gavinmak_google.com/fe2bf93975b189ac3a17f6b17d176a77d6e61c5e7b9281c40848bccb3bb29401/+/build.proto?server\u003dchromium-swarm.appspot.com",
       "revId": "f062120903e45b0451467ac1212787caa5918281",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7277dd92_571867b1",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-06-30T16:20:24Z",
+      "side": 1,
+      "message": "nit: this is a bit hard to read, maybe align all `with_file` calls if linter allows.",
+      "revId": "f062120903e45b0451467ac1212787caa5918281",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

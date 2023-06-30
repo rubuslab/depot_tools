@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb2a1439_81026388",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1565647
+      },
+      "writtenOn": "2023-06-30T12:42:26Z",
+      "side": 1,
+      "message": "I do not. This was just something I noticed as I kept marking more branches dormant, and they\u0027d fill up my \u0027git bmap\u0027. It\u0027ll likely be this one commit, and mostly repeat the same context as the commit description. Should I still create one?",
+      "parentUuid": "e7b9b5e2_ce2f48a6",
+      "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "59740080_c9de87de",
@@ -52,6 +70,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4502ff1c_5689db9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1565647
+      },
+      "writtenOn": "2023-06-30T12:42:26Z",
+      "side": 1,
+      "message": "Thanks!",
+      "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "54329873_b62939c3",
@@ -65,6 +100,24 @@
       "writtenOn": "2023-06-29T22:32:58Z",
       "side": 1,
       "message": "Why not simply catch that error and return `False` when that happens?",
+      "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d423e75_dc512c38",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1565647
+      },
+      "writtenOn": "2023-06-30T12:42:26Z",
+      "side": 1,
+      "message": "I had thought about that, but wanted to be able to distinguish between the \"I got return code 1 because the branch is not dormant\" and \"I got return code 1 because of a real error in the execution\". If you think it\u0027s not worth the resulting complexity, I\u0027m happy to replace this with \"git config --get branch.{}.dormant\" and just catch the CalledProcessError.",
+      "parentUuid": "54329873_b62939c3",
       "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

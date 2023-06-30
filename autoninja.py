@@ -155,7 +155,7 @@ def main(args):
   ninja_path = os.path.join(SCRIPT_DIR, 'ninja.py')
   # If using remoteexec, use ninja_reclient.py which wraps ninja.py with
   # starting and stopping reproxy.
-  if not offline and use_remoteexec:
+  if use_remoteexec:
     ninja_path = os.path.join(SCRIPT_DIR, 'ninja_reclient.py')
   args = prefix_args + [sys.executable, ninja_path] + input_args[1:]
 

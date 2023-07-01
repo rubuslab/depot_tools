@@ -61,6 +61,7 @@
       "echo",
       "hey"
     ],
+    "cwd": "[CLEANUP]/fakerepo_tmp_1",
     "name": "echo (2)"
   },
   {
@@ -90,6 +91,7 @@
       "echo",
       "new description woo"
     ],
+    "cwd": "[CLEANUP]/fakerepo_tmp_1",
     "name": "echo (3)"
   },
   {

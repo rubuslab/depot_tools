@@ -530,17 +530,17 @@ Args:
 
 #### **class [GitClApi](/recipes/recipe_modules/git_cl/api.py#9)([RecipeApi][recipe_engine/wkt/RecipeApi]):**
 
-&mdash; **def [get\_description](/recipes/recipe_modules/git_cl/api.py#23)(self, patch_url=None, \*\*kwargs):**
+&mdash; **def [get\_description](/recipes/recipe_modules/git_cl/api.py#21)(self, patch_url=None, \*\*kwargs):**
 
 *** note
 **DEPRECATED**. Consider using gerrit.get_change_description instead.
 ***
 
-&mdash; **def [issue](/recipes/recipe_modules/git_cl/api.py#48)(self, \*\*kwargs):**
+&mdash; **def [issue](/recipes/recipe_modules/git_cl/api.py#46)(self, \*\*kwargs):**
 
-&mdash; **def [set\_description](/recipes/recipe_modules/git_cl/api.py#31)(self, description, patch_url=None, \*\*kwargs):**
+&mdash; **def [set\_description](/recipes/recipe_modules/git_cl/api.py#29)(self, description, patch_url=None, \*\*kwargs):**
 
-&mdash; **def [upload](/recipes/recipe_modules/git_cl/api.py#41)(self, message, upload_args=None, \*\*kwargs):**
+&mdash; **def [upload](/recipes/recipe_modules/git_cl/api.py#39)(self, message, upload_args=None, \*\*kwargs):**
 ### *recipe_modules* / [gitiles](/recipes/recipe_modules/gitiles)
 
 [DEPS](/recipes/recipe_modules/gitiles/__init__.py#7): [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/step][recipe_engine/recipe_modules/step], [recipe\_engine/url][recipe_engine/recipe_modules/url]
@@ -1073,10 +1073,10 @@ Raises:
 &mdash; **def [RunSteps](/recipes/recipe_modules/git/tests/number.py#16)(api):**
 ### *recipes* / [git\_cl:examples/full](/recipes/recipe_modules/git_cl/examples/full.py)
 
-[DEPS](/recipes/recipe_modules/git_cl/examples/full.py#11): [git\_cl](#recipe_modules-git_cl), [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/step][recipe_engine/recipe_modules/step]
+[DEPS](/recipes/recipe_modules/git_cl/examples/full.py#7): [git\_cl](#recipe_modules-git_cl), [recipe\_engine/context][recipe_engine/recipe_modules/context], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/raw\_io][recipe_engine/recipe_modules/raw_io], [recipe\_engine/step][recipe_engine/recipe_modules/step]
 
 
-&mdash; **def [RunSteps](/recipes/recipe_modules/git_cl/examples/full.py#19)(api):**
+&mdash; **def [RunSteps](/recipes/recipe_modules/git_cl/examples/full.py#16)(api):**
 ### *recipes* / [gitiles:examples/full](/recipes/recipe_modules/gitiles/examples/full.py)
 
 [DEPS](/recipes/recipe_modules/gitiles/examples/full.py#7): [gitiles](#recipe_modules-gitiles), [recipe\_engine/json][recipe_engine/recipe_modules/json], [recipe\_engine/path][recipe_engine/recipe_modules/path], [recipe\_engine/properties][recipe_engine/recipe_modules/properties], [recipe\_engine/step][recipe_engine/recipe_modules/step]

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8730396_44212382",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1386944
+      },
+      "writtenOn": "2023-07-03T01:48:42Z",
+      "side": 1,
+      "message": "https://chromium.googlesource.com/infra/infra/+/2ed07b3775e71f9a84743290144c52f43d0899ec LGTM",
+      "range": {
+        "startLine": 60,
+        "startChar": 41,
+        "endLine": 60,
+        "endChar": 81
+      },
+      "revId": "9af086efffeec327a5d6069b19aac525553f834f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

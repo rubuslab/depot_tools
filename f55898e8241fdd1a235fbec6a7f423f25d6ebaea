@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75177288_84088425",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-07-03T05:31:42Z",
+      "side": 1,
+      "message": "Hi Josip,\n\nI noticed when using `git cl split` recently that the default for the `enable-auto-submit` flag is `True`, and the action is `store_true`. With that, I believe there is no way to disable `Auto-Submit` when using `git cl split`.\n\nI am proposing this change to instead have a `disable-auto-submit` flag for `git cl split`, so by default auto submit is enabled as before, but there will now be a way to disable it. What do you think?",
+      "revId": "f55898e8241fdd1a235fbec6a7f423f25d6ebaea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

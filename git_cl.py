@@ -5123,11 +5123,12 @@ def CMDsplit(parser, args):
                          'infrastructure. Try to upload these not during high '
                          'load times (usually 11-3 Mountain View time). Email '
                          'infra-dev@chromium.org with any questions.')
-  parser.add_option('-a', '--enable-auto-submit', action='store_true',
-                    default=True,
-                    help='Sends your change to the CQ after an approval. Only '
-                         'works on repos that have the Auto-Submit label '
-                         'enabled')
+  parser.add_option('--disable-auto-submit',
+                    action='store_true',
+                    default=False,
+                    help='Disables automatic sending of the changes to the CQ '
+                    'after approval. Note that auto-submit only works for '
+                    'repos that have the Auto-Submit label enabled.')
   parser.add_option('--max-depth',
                     type='int',
                     default=0,
@@ -5147,9 +5148,10 @@ def CMDsplit(parser, args):
   def WrappedCMDupload(args):
     return CMDupload(OptionParser(), args)
 
+  enable_auto_submit = not options.disable_auto_submit
   return split_cl.SplitCl(options.description_file, options.comment_file,
                           Changelist, WrappedCMDupload, options.dry_run,
-                          options.cq_dry_run, options.enable_auto_submit,
+                          options.cq_dry_run, enable_auto_submit,
                           options.max_depth, options.topic, settings.GetRoot())
 
 

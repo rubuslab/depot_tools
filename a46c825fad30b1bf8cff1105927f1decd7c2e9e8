@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76d81b35_1028f979",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1549607
+      },
+      "writtenOn": "2023-07-04T05:59:55Z",
+      "side": 1,
+      "message": "Hi, friendly ping from the LoongArch community porters; is there anything remaining for this CL to get merged? It seems there\u0027s a \"missing Code-Owners\" note from the bot but I\u0027m not entirely familiar with the development process here. Maybe the author will push this forward.",
+      "revId": "a46c825fad30b1bf8cff1105927f1decd7c2e9e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aebcf682_05944a29",

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fd2e5e1_a6743068",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5126,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-05T12:44:48Z",
+      "side": 0,
+      "message": "It\u0027s possible this flag is already used, so we shouldn\u0027t just replace it. If we do that, git cl split will fail on -a/--auto-submit. Instead, we should introduce --disable-auto-submit and use different destination (ie the same as auto-submit).\n\nsee: https://docs.python.org/3/library/optparse.html#default-values",
+      "revId": "60c4b8810bdc3107a9a0c7046b79ee3a95df47fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

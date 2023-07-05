@@ -16,6 +16,23 @@
       "message": "It looks like these changes should not be needed in light of the attached bug? Maybe a subset of them are still needed, but probably it should just be carried as a downstream patch?",
       "revId": "68c56dc3fb6e658f4209a3821c0b1733d1e763c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58b5bef3_be7b838c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-05T18:51:28Z",
+      "side": 1,
+      "message": "(but at the very least, I think the cipd change is not needed)",
+      "revId": "68c56dc3fb6e658f4209a3821c0b1733d1e763c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

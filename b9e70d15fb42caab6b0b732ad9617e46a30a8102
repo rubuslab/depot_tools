@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28fd0af0_09275d67",
+        "filename": "gclient.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 3349,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-05T15:37:56Z",
+      "side": 1,
+      "message": "I suggest to use `git config --file .gitmodules --name-only -l` or `git submodule status`. The ladder one is probably more robust, and it will fail if gitlink exists, but .gitmodule doesn\u0027t.",
+      "range": {
+        "startLine": 3349,
+        "startChar": 16,
+        "endLine": 3349,
+        "endChar": 53
+      },
+      "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9102792a_88b9141a",
+        "filename": "gclient.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 3386,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-05T15:37:56Z",
+      "side": 1,
+      "message": "This is fragile. Let\u0027s say we have two DEPS entries, one \"foo\" and other one \"foobar\". gitmodule only has \"foobar\". when name is foo, this will be true; but we don\u0027t want that.",
+      "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe9d87c8_92389bd6",
+        "filename": "gclient.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 3387,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-05T15:37:56Z",
+      "side": 1,
+      "message": "add: in .gitmodules",
+      "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6aad105d_8562803b",
+        "filename": "gclient.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 3395,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-05T15:37:56Z",
+      "side": 1,
+      "message": "if git_modules is set, run `git submodule status` and check if exit code is 0.",
+      "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2a16ca3_72555422",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-05T17:25:52Z",
+      "side": 1,
+      "message": "It is actually approved, that note was from an older submit attempt 😊. I\u0027m CQ\u0027ing it now.",
+      "parentUuid": "76d81b35_1028f979",
+      "revId": "a46c825fad30b1bf8cff1105927f1decd7c2e9e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aebcf682_05944a29",

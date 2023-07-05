@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbd65857_26c08392",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-05T18:47:34Z",
+      "side": 1,
+      "message": "Actually I just saw the attached bug? I think in light of that, this isn\u0027t needed?",
+      "revId": "0648830632e1426bc7d760c83307665307bb241a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -33,6 +33,23 @@
       "message": "(but at the very least, I think the cipd change is not needed)",
       "revId": "68c56dc3fb6e658f4209a3821c0b1733d1e763c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6d18fe9_6a39edfd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-05T19:02:37Z",
+      "side": 1,
+      "message": "Reverting until we have clarity on exactly what\u0027s necessary here... I suspect that just the gcliet.py change and detect_host_arch are needed? I don\u0027t think cipd will he helpful much (because IIUC there aren\u0027t plans to add any meaningful dependencies there like python, or wheels, etc, so having a fake `vpython` in $PATH which points to a virtualenv is probably a better approach)",
+      "revId": "68c56dc3fb6e658f4209a3821c0b1733d1e763c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

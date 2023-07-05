@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d5f140f_9b7081d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-05T19:17:44Z",
+      "side": 1,
+      "message": "Actually, I think that the gclient change may also not be necessary, since I think you can override the host arch as a gclient variable, too, in the .gclient file.",
+      "revId": "3db327648966d48b5bd7b35a1f26ecbde3df74a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

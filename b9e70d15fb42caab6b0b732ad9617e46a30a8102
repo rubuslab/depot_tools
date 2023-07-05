@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddfbcef1_e77e3918",
+        "filename": "gclient.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 3349,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-05T21:22:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28fd0af0_09275d67",
+      "range": {
+        "startLine": 3349,
+        "startChar": 16,
+        "endLine": 3349,
+        "endChar": 53
+      },
+      "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9102792a_88b9141a",
@@ -37,6 +61,24 @@
       "writtenOn": "2023-07-05T15:37:56Z",
       "side": 1,
       "message": "This is fragile. Let\u0027s say we have two DEPS entries, one \"foo\" and other one \"foobar\". gitmodule only has \"foobar\". when name is foo, this will be true; but we don\u0027t want that.",
+      "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a518f8e_d6f39f24",
+        "filename": "gclient.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 3386,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-05T21:22:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9102792a_88b9141a",
       "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -58,6 +100,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1663d26b_6bf13a2e",
+        "filename": "gclient.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 3387,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-05T21:22:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe9d87c8_92389bd6",
+      "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6aad105d_8562803b",
@@ -71,6 +131,24 @@
       "writtenOn": "2023-07-05T15:37:56Z",
       "side": 1,
       "message": "if git_modules is set, run `git submodule status` and check if exit code is 0.",
+      "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c8c26b0_2e31f427",
+        "filename": "gclient.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 3395,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-05T21:22:23Z",
+      "side": 1,
+      "message": "I don\u0027t understand why this would help. I tried running `git submodule status` with arbitrary commit hash set to a dependency and it just works. Also, running `git update-index --add --cacheinfo` with non-hash fails so that should take care of validating if the given value after `@` is a hash.\n\nDoes `git submodule status` validate anything else?",
+      "parentUuid": "6aad105d_8562803b",
       "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

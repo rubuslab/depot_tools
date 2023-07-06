@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0ce6391_99cf17ce",
+        "filename": "gclient.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-06T11:03:29Z",
+      "side": 1,
+      "message": "use `git config --file .gitmodules -l` instead of parsing the file. For each gitsubmodule entries, you will have at least two lines: ...path\u003d.. and ...url\u003d.... I suggest to split by \u0027\u003d\u0027, maxsplit\u003d1, and then split the first bit by \u0027.\u0027",
+      "revId": "de8165357dc91bd36a75eb64408e342dc9b31f8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

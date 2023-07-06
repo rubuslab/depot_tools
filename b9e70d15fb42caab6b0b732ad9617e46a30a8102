@@ -151,6 +151,24 @@
       "parentUuid": "6aad105d_8562803b",
       "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6201a87a_e89a064a",
+        "filename": "gclient.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 3395,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-06T10:53:19Z",
+      "side": 1,
+      "message": "it validates that .gitmodule file is also properly set (ie entry exists). Since we are not modifying .gitmodules, we can skip this step since git submodule status is called in line 3351",
+      "parentUuid": "7c8c26b0_2e31f427",
+      "revId": "b9e70d15fb42caab6b0b732ad9617e46a30a8102",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

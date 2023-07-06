@@ -70,6 +70,30 @@
       },
       "revId": "3cab14110ad2426cba7d60ca41aaf582cfe649db",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36d0dade_45a11301",
+        "filename": "gclient.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 3380,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-06T18:27:57Z",
+      "side": 1,
+      "message": "For dep_type, the default value is set there: https://crsrc.org/d/gclient_eval.py;l\u003d445;drc\u003d03af44a5163e9448e375a6bbe7bef1fc0e2bb205\n\nAdding default to the schema only affects how the schema is validated and doesn\u0027t seem to change the local_scope value. Given this is only used at two places now and will be removed in the future post migration, I feel this is a simpler design.",
+      "parentUuid": "6b6d6d06_fdb707c7",
+      "range": {
+        "startLine": 3380,
+        "startChar": 10,
+        "endLine": 3380,
+        "endChar": 46
+      },
+      "revId": "3cab14110ad2426cba7d60ca41aaf582cfe649db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

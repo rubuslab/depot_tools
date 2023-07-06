@@ -34,6 +34,24 @@
       "parentUuid": "e475d923_bcfed450",
       "revId": "31048249f0125b359ac089b0fc362ae1457aa87c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d37f4041_bbb68596",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-07-06T23:35:54Z",
+      "side": 1,
+      "message": "Thanks - updated this to `Shipped: no` and added the license file field too.",
+      "parentUuid": "f1ec1737_80623f00",
+      "revId": "31048249f0125b359ac089b0fc362ae1457aa87c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

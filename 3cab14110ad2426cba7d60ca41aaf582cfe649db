@@ -22,6 +22,30 @@
       },
       "revId": "3cab14110ad2426cba7d60ca41aaf582cfe649db",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1b8ff6f_eef81f5f",
+        "filename": "gclient.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 3380,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-06T17:09:57Z",
+      "side": 1,
+      "message": "The schema here is just used to validate the DEPS file, not set values to it. So it makes that no value was added to the `local_scope`. One option is for me to set this within `gclient_eval.py` but I don\u0027t think there is a huge benefit to that, for we know `git_dependencies` is an optional value.\n\nref: https://github.com/keleshev/schema/tree/v0.6.6#dictionaries",
+      "parentUuid": "419250e8_4e2e5ed3",
+      "range": {
+        "startLine": 3380,
+        "startChar": 10,
+        "endLine": 3380,
+        "endChar": 46
+      },
+      "revId": "3cab14110ad2426cba7d60ca41aaf582cfe649db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

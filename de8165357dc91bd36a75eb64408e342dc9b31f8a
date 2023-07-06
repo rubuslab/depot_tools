@@ -34,6 +34,47 @@
       "parentUuid": "e0ce6391_99cf17ce",
       "revId": "de8165357dc91bd36a75eb64408e342dc9b31f8a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c878542_ab447c74",
+        "filename": "gclient.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-06T17:49:09Z",
+      "side": 1,
+      "message": "IMO, ideally we would use git submodule command to get information what we need. However, afaict, there\u0027s no such option. The second best option is to rely on git config parser instead of ours.\n\nhttps://git-scm.com/docs/git-config#_configuration_file specific what is possible in a git config file; and https://git-scm.com/docs/gitmodules outlines what is possible.\n\nWe can have some expectations of config file, but that may not hold true for all repos. For example, this code assumes that submodule name is path; which is incorrect - submodule name can be anything. There might be some other edge cases where our simple config parser will yield different result than git\u0027s one.\n\nWith all that, it\u0027s totally doable to make line-by-line parser - I will let you decide which way to go.",
+      "parentUuid": "db49b0e8_cbc5a1c4",
+      "revId": "de8165357dc91bd36a75eb64408e342dc9b31f8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "932e1745_cc6e56c2",
+        "filename": "gclient.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-06T17:49:09Z",
+      "side": 1,
+      "message": "this should be path key, not submodule name.",
+      "range": {
+        "startLine": 964,
+        "startChar": 31,
+        "endLine": 964,
+        "endChar": 35
+      },
+      "revId": "de8165357dc91bd36a75eb64408e342dc9b31f8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

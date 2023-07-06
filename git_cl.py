@@ -2588,6 +2588,27 @@ class Changelist(object):
 
     gclient_utils.rmtree(git_info_dir)
 
+  @metrics.collector.collect_metrics('gclient gitmodules')
+  def CMDgitmodules(parser, args):
+    parser.add_option('--output-gitmodules', help='')
+    parser.add_option('--deps-file', help='')
+    options, args = parser.parse_args(args)
+
+    deps_content = gclient_utils.FileRead(options.deps_file)
+    ls = gclient_eval.Parse(
+      deps_content, options.deps_file, None, None)
+    with open(options.output_gitmodules, 'w') as f:
+      for path, dep in ls.get('deps').items():
+        if dep.get('dep_type') != 'cipd':
+          url = dep['url']
+          i = url.index('@')
+          commit = url[i+1:]
+          url = url[:i]
+          git_cl.RunGit(['update-index', '--add', '--cacheinfo', '160000', commit, path])
+          f.write(('[submodule "%s"]\n'
+                   '\tpath = %s\n'
+                   '\turl = %s\n' % (path, path, url)))
+
   def _RunGitPushWithTraces(self,
                             refspec,
                             refspec_opts,

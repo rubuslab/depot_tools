@@ -887,6 +887,9 @@ def IsCodeOwnersEnabledOnRepo(host, repo):
   repo = PercentEncodeForGitRef(repo)
   path = '/projects/%s/code_owners.project_config' % repo
   config = ReadHttpJsonResponse(CreateHttpConn(host, path))
+  print(config)
+  print(repo)
+  print(path)
   return not config['status'].get('disabled', False)
 
 

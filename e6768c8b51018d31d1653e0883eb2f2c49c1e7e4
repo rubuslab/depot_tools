@@ -38,6 +38,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "31c9bf5f_479aacd6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-06T00:20:39Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "cb2a1439_81026388",
+      "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "59740080_c9de87de",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "I had thought about that, but wanted to be able to distinguish between the \"I got return code 1 because the branch is not dormant\" and \"I got return code 1 because of a real error in the execution\". If you think it\u0027s not worth the resulting complexity, I\u0027m happy to replace this with \"git config --get branch.{}.dormant\" and just catch the CalledProcessError.",
       "parentUuid": "54329873_b62939c3",
+      "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "256bc86b_838b901f",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-06T00:20:39Z",
+      "side": 1,
+      "message": "\u003e If you think it\u0027s not worth the resulting complexity\n\nI\u0027m thinking more in the lines of what else could make `git config --get branch.{}.dormant` fail. If there is some other issue such as reading the config file itself, those issues will break the other parts of this script which rely on config being formatted and readable. So I think it\u0027s okay to not distinguish between the errors. Am I missing something?",
+      "parentUuid": "3d423e75_dc512c38",
       "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -16,6 +16,24 @@
       "message": "I don\u0027t think we ship any of these",
       "revId": "31048249f0125b359ac089b0fc362ae1457aa87c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ec1737_80623f00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-06T12:45:46Z",
+      "side": 1,
+      "message": "+1 - if shipped means packaged with chromium/chrome - then this is not shipped.",
+      "parentUuid": "e475d923_bcfed450",
+      "revId": "31048249f0125b359ac089b0fc362ae1457aa87c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

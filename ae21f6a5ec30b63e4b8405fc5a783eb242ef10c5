@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05f7dc47_25dc2a47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1476797
+      },
+      "writtenOn": "2023-07-06T08:50:43Z",
+      "side": 1,
+      "message": "Hi, it seems that this CL causes gclient sync error on Windows.\n\n\u003egclient sync -D\nUpdating depot_tools...\n[E2023-07-06T17:37:27.824604+09:00 55928 0 application.go:361] Detected CIPD client platform change to windows-amd64.\nDeleting the existing client to trigger the bootstrap...\n\u0027powershell\u0027 is not recognized as an internal or external command,\noperable program or batch file.\nFailed to bootstrap or update CIPD client\n[E2023-07-06T17:37:27.825110+09:00 55928 0 application.go:144] fatal error: failed to build venv: failed to build package : cipkg.Derivation{Name:\"virtualenv\", Platform:\"\", Builder:\"builtin:cipdExport\", Args:[]string{\"infra/3pp/tools/virtualenv  version:2@16.7.12.chromium.7\\n\"}, Env:[]string(nil), Inputs:[]string(nil)}: failed to build derivation: failed to export packages: exit status 9009",
+      "revId": "ae21f6a5ec30b63e4b8405fc5a783eb242ef10c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

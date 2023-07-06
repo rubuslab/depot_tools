@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdf88a56_6bfe9a66",
+        "filename": "gclient.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-06T18:25:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c878542_ab447c74",
+      "revId": "de8165357dc91bd36a75eb64408e342dc9b31f8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "932e1745_cc6e56c2",
@@ -67,6 +85,30 @@
       "writtenOn": "2023-07-06T17:49:09Z",
       "side": 1,
       "message": "this should be path key, not submodule name.",
+      "range": {
+        "startLine": 964,
+        "startChar": 31,
+        "endLine": 964,
+        "endChar": 35
+      },
+      "revId": "de8165357dc91bd36a75eb64408e342dc9b31f8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57ff13af_ab13e682",
+        "filename": "gclient.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-06T18:25:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "932e1745_cc6e56c2",
       "range": {
         "startLine": 964,
         "startChar": 31,

@@ -34,6 +34,24 @@
       "parentUuid": "8d5f140f_9b7081d8",
       "revId": "3db327648966d48b5bd7b35a1f26ecbde3df74a2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "235f5216_5e574815",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1230571
+      },
+      "writtenOn": "2023-07-06T01:17:35Z",
+      "side": 1,
+      "message": "First of all, thanks for your explanation.\n\nWe are actively promoting the Chromium community to support Loongarch.\nV8 and many third-party libraries, including built-in llvm, libvpx, ffmpeg, etc., which have been integrated into the support of the Loongarch architecture.\n\nSo we hope to depot_tools can be add support for Loongarch.\n\nThanks!",
+      "parentUuid": "6a57a364_b6442690",
+      "revId": "3db327648966d48b5bd7b35a1f26ecbde3df74a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

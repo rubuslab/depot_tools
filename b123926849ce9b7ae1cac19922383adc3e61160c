@@ -22,6 +22,30 @@
       },
       "revId": "b123926849ce9b7ae1cac19922383adc3e61160c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d760819b_b1d30ba9",
+        "filename": "third_party/colorama/README.chromium",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-07-07T07:47:06Z",
+      "side": 1,
+      "message": "`colorama/LICENSE.txt` is actually a `BSD` license - I\u0027ve added the field into the `README.chromium` file now.",
+      "parentUuid": "ecf58499_b48a4dda",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 25
+      },
+      "revId": "b123926849ce9b7ae1cac19922383adc3e61160c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

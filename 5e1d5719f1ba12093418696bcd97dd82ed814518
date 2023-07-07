@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffa198d2_32284040",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-07T00:02:35Z",
+      "side": 1,
+      "message": "Build fix is landed, https://chrome-internal-review.googlesource.com/c/chrome/tools/build_limited/scripts/slave/+/6134124 will fix build_internal.",
+      "revId": "5e1d5719f1ba12093418696bcd97dd82ed814518",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

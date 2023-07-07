@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecf58499_b48a4dda",
+        "filename": "third_party/colorama/README.chromium",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-07-07T00:23:50Z",
+      "side": 1,
+      "message": "does this also need a `License: MIT` line?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 25
+      },
+      "revId": "b123926849ce9b7ae1cac19922383adc3e61160c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

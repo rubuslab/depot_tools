@@ -174,6 +174,24 @@
       "parentUuid": "256bc86b_838b901f",
       "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7155bc9_bd555c88",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-10T18:55:29Z",
+      "side": 1,
+      "message": "Why not just handle the exception?\n\n```\ntry:\n  is_dormant \u003d run(\u0027config\u0027, \u0027--get\u0027, \u0027branch.{}.dormant\u0027.format(branch))\n  return is_dormant \u003d\u003d \u0027true\u0027\nexcept CalledProcessError:\n  return False\n```",
+      "parentUuid": "001e9d87_86e92576",
+      "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

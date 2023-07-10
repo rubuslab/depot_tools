@@ -16,6 +16,23 @@
       "message": "Hi Jeff or Garrett, please take a look. The rolls has already been done on the general recipes https://chromium-review.googlesource.com/c/chromium/tools/build/+/4665728",
       "revId": "a17c103dc7170fe9d818c4a6283aac90ee276bf8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c20b801_786686df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1368332
+      },
+      "writtenOn": "2023-07-10T22:37:58Z",
+      "side": 1,
+      "message": "q: do we at some point want to start dropping those expectations? (as long as we\u0027re asserting the correct version in those calls)",
+      "revId": "a17c103dc7170fe9d818c4a6283aac90ee276bf8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

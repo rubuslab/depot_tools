@@ -33,6 +33,24 @@
       "message": "q: do we at some point want to start dropping those expectations? (as long as we\u0027re asserting the correct version in those calls)",
       "revId": "a17c103dc7170fe9d818c4a6283aac90ee276bf8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9de4e74f_075d1806",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1540893
+      },
+      "writtenOn": "2023-07-10T22:59:27Z",
+      "side": 1,
+      "message": "I just realized recently that we aren\u0027t supposed to generate more expectation files. But I will make a note such that I can delete those expectation files change in future mac_toolchain rolls",
+      "parentUuid": "0c20b801_786686df",
+      "revId": "a17c103dc7170fe9d818c4a6283aac90ee276bf8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

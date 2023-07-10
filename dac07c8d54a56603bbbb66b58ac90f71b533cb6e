@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69065322_3345ffde",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1540893
+      },
+      "writtenOn": "2023-07-10T22:52:10Z",
+      "side": 1,
+      "message": "Hi Chan, please take a look if possible.\n\nThe roll has been applied to the bots for a week. https://chromium-review.googlesource.com/c/chromium/src/+/4666041\nhttps://chromium-review.googlesource.com/c/chromium/tools/build/+/4665728\n\nRolling this to depot_tools as well because some commands need to be run manually",
+      "revId": "dac07c8d54a56603bbbb66b58ac90f71b533cb6e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

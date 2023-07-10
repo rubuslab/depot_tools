@@ -156,6 +156,24 @@
       "parentUuid": "3d423e75_dc512c38",
       "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "001e9d87_86e92576",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1565647
+      },
+      "writtenOn": "2023-07-10T16:53:07Z",
+      "side": 1,
+      "message": "You make a strong argument. I\u0027ve changed the code here to call `git config --get branch.{}.dormant`, and added a new kwarg to git_common.py\u0027s run_with_stderr - accepted_retcodes - which we use here to indicate that a retcode of 1 is entirely valid. Thanks!",
+      "parentUuid": "256bc86b_838b901f",
+      "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

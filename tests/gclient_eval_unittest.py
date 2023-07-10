@@ -366,6 +366,91 @@ class EvaluateConditionTest(unittest.TestCase):
         's_var in ("baz", "quux")',
         {'s_var': Str("foo")}))
 
+
+class DEPSTest(unittest.TestCase):
+  def assert_removal(self, dep, before, after):
+    local_scope = gclient_eval.Exec(before)
+    deps_content = gclient_eval.RemoveFromDeps(local_scope, dep)
+    self.assertEqual(deps_content, after)
+    return deps_content
+
+  def test_remove_oneliner(self):
+    before = '''
+deps = {
+  "foo": "oof",
+  "bar": "rab",
+}'''
+    after = '''
+deps = {
+  "bar": "rab",
+}'''
+    self.assert_removal('foo', before, after)
+
+  def test_remove_all(self):
+    before = '''
+deps = {
+  "foo": "oof",
+  "bar": "rab",
+}'''
+    intermediate = '''
+deps = {
+  "bar": "rab",
+}'''
+    after = '''
+deps = {
+  "bar": "rab",
+}'''
+    intermediate = self.assert_removal('foo', before, intermediate)
+    self.assert_removal('foo', intermediate, after)
+
+  def test_remove_noop(self):
+    before = '''
+deps = {
+  "foo": "oof",
+  "bar": "rab",
+}'''
+    after = '''
+deps = {
+  "foo": "oof",
+  "bar": "rab",
+}'''
+    self.assert_removal('baz', before, after)
+
+  def test_remove_multiline(self):
+    before = '''
+deps = {
+  "foo": "oof" + "@" +
+     "hash",
+  "bar": "rab",
+}'''
+    after = '''
+deps = {
+  "bar": "rab",
+}'''
+    self.assert_removal('foo', before, after)
+
+  def test_remove_multiline_object(self):
+    before = '''
+deps = {
+  "foo": {
+    "dep_type": "cipd",
+    "condition": "checkout_win",
+    "packages": [
+      {
+        "package": "chromium/third_party/updater/chrome_win_x86",
+        "version": "zvfjrCzT9GNDVHymDY88NGn2IrVKA_tYd-V_QmTqt28C",
+      }
+    ],
+  },
+  "bar": "rab",
+}'''
+    after = '''
+deps = {
+  "bar": "rab",
+}'''
+    self.assert_removal('foo', before, after)
+
+
 class VarTest(unittest.TestCase):
   def assert_adds_var(self, before, after):
     local_scope = gclient_eval.Exec('\n'.join(before))

@@ -693,6 +693,35 @@ def _ShiftLinesInTokens(tokens, delta, start):
   return new_tokens
 
 
+def RemoveFromDeps(gclient_dict, dep_name):
+  """Remove dependency from gclient_dict. Returns rendered DEPS file."""
+  if 'deps' not in gclient_dict:
+    raise KeyError("deps dict is not defined.")
+
+  deps = gclient_dict.GetNode('deps')
+  for i in range(len(deps.keys)):
+    key = deps.keys[i]
+    if (key.value != dep_name):
+      continue
+
+    start_line = key.lineno
+    end_line = deps.values[i].end_lineno
+    delta = start_line - end_line - 1
+
+    new_tokens = {}
+    for token in gclient_dict.tokens.values():
+      if token[2][0] >= start_line and token[2][0] <= end_line:
+        continue
+      if token[2][0] > end_line:
+        token[2] = token[2][0] + delta, token[2][1]
+        token[3] = token[3][0] + delta, token[3][1]
+      new_tokens[token[2]] = token
+
+    gclient_dict.tokens = new_tokens
+    break
+  return RenderDEPSFile(gclient_dict)
+
+
 def AddVar(gclient_dict, var_name, value):
   if not isinstance(gclient_dict, _NodeDict) or gclient_dict.tokens is None:
     raise ValueError(

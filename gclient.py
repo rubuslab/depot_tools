@@ -3465,6 +3465,25 @@ def CMDsetdep(parser, args):
     f.write(gclient_eval.RenderDEPSFile(local_scope).encode('utf-8'))
 
 
+def CMDremovedep(parser, args):
+  parser.add_option('--dep', help='Dependency name to be removed.')
+  parser.add_option('--deps-file', default='DEPS')
+  (options, args) = parser.parse_args(args)
+  if args:
+    parser.error('Unused arguments: "%s"' % '" "'.join(args))
+  if not options.dep:
+    parser.error('--dep is required')
+
+  contents = gclient_utils.FileRead(options.deps_file)
+
+  local_scope = gclient_eval.Exec(contents, options.deps_file)
+
+  new_content = gclient_eval.RemoveFromDeps(local_scope, options.dep)
+
+  with open(options.deps_file, 'wb') as f:
+    f.write(new_content.encode('utf-8'))
+
+
 @metrics.collector.collect_metrics('gclient verify')
 def CMDverify(parser, args):
   """Verifies the DEPS file deps are only from allowed_hosts."""

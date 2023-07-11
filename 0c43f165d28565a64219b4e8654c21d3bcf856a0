@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f89906d1_78806076",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1160,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-07-11T03:48:07Z",
+      "side": 1,
+      "message": "Can this be `\u0027vi\u0027 \u003d\u003d editor or \u0027vim\u0027 in editor`?\n\nhttps://chromium.googlesource.com/chromium/tools/depot_tools/+/0c43f165d28565a64219b4e8654c21d3bcf856a0/gclient_utils.py#1138\n\nGetEditor() returns \"vi\" by default for non-windows env. Technically, vi isn\u0027t necessarily vim, but if it\u0027s probably ok to assume that vi is an alias for vim in virtually all chromium devs\u0027 workstation.",
+      "range": {
+        "startLine": 1160,
+        "startChar": 5,
+        "endLine": 1160,
+        "endChar": 20
+      },
+      "revId": "0c43f165d28565a64219b4e8654c21d3bcf856a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -70,6 +70,30 @@
       },
       "revId": "0c43f165d28565a64219b4e8654c21d3bcf856a0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc7e2ec9_5db11083",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1160,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-07-11T17:20:52Z",
+      "side": 1,
+      "message": "\u003e\u003e except that most vims, when invoked as vi, explicitly turn off most vim features, including filetype detection.\n\nOn my workstation, vi enables most features including filetype detection. For example, I locally tested and verified that # vim: ft:gitcommit works as intended. Also, I have always used `vi` instead of `vim` in Gentoo and gLinux. They have been working fine for me.\n\nThat said, the alternatives sound good to me.",
+      "parentUuid": "7b88d577_01989237",
+      "range": {
+        "startLine": 1160,
+        "startChar": 5,
+        "endLine": 1160,
+        "endChar": 20
+      },
+      "revId": "0c43f165d28565a64219b4e8654c21d3bcf856a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

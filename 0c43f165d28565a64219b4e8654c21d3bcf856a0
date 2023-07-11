@@ -46,6 +46,30 @@
       },
       "revId": "0c43f165d28565a64219b4e8654c21d3bcf856a0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b88d577_01989237",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1160,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-11T16:50:10Z",
+      "side": 1,
+      "message": "Poking at this more - it seems like it would be very unusual to have a `vi` which actually responds to a modeline indicating the `gitcommit` filetype. `gitcommit` is effectively a community convention for this type of file, and vim, by default, doesn\u0027t define any behavior for such a file type (you need to install extensions).\n\nI think requiring users to set `VISUAL \u003d vim` or similar in their environment is fine. Otherwise I would be tempted to change GetEditor to return `vim` if it\u0027s in $PATH, but then it changes the documented behavior (it is supposed to match `git`\u0027s default behavior).",
+      "parentUuid": "52499f30_d7362fea",
+      "range": {
+        "startLine": 1160,
+        "startChar": 5,
+        "endLine": 1160,
+        "endChar": 20
+      },
+      "revId": "0c43f165d28565a64219b4e8654c21d3bcf856a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

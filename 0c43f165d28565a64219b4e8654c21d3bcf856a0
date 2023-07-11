@@ -22,6 +22,30 @@
       },
       "revId": "0c43f165d28565a64219b4e8654c21d3bcf856a0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52499f30_d7362fea",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1160,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-11T16:38:18Z",
+      "side": 1,
+      "message": "Well, yes, except that most vims, when invoked as `vi`, explicitly turn off most vim features, including filetype detection. I didn\u0027t want to add the modeline for editors which will ignore it.\n\nThough maybe configuring `vi` to behave in non-compat mode is a common thing I don\u0027t know about?",
+      "parentUuid": "f89906d1_78806076",
+      "range": {
+        "startLine": 1160,
+        "startChar": 5,
+        "endLine": 1160,
+        "endChar": 20
+      },
+      "revId": "0c43f165d28565a64219b4e8654c21d3bcf856a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

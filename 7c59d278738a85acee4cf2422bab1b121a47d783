@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d06a35c_e872c958",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-12T20:45:43Z",
+      "side": 0,
+      "message": "py3-only changes: was in the neighborhood",
+      "revId": "7c59d278738a85acee4cf2422bab1b121a47d783",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a012448f_3f3cda96",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-12T20:45:43Z",
+      "side": 0,
+      "message": "same",
+      "revId": "7c59d278738a85acee4cf2422bab1b121a47d783",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

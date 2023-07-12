@@ -115,6 +115,7 @@ from third_party.repo.progress import Progress
 import subcommand
 import subprocess2
 import setup_color
+import git_cl
 
 from third_party import six
 
@@ -2647,6 +2648,53 @@ class Flattener(object):
     for d in dep.dependencies:
       if d.should_recurse:
         self._flatten_dep(d)
+
+
+@metrics.collector.collect_metrics('gclient gitmodules')
+def CMDgitmodules(parser, args):
+  parser.add_option('--output-gitmodules', help='')
+  parser.add_option('--deps-file', help='')
+  parser.add_option('--skip-dep',
+                    action="append",
+                    help='skip dependency',
+                    default=[])
+  options, args = parser.parse_args(args)
+
+  deps_content = gclient_utils.FileRead(options.deps_file)
+  ls = gclient_eval.Parse(deps_content, options.deps_file, None, None)
+
+  prefix_length = 0
+  if not 'use_relative_paths' in ls or ls['use_relative_paths'] != True:
+    deps_dir = os.path.dirname(os.path.abspath(options.deps_file))
+    gclient_path = gclient_paths.FindGclientRoot(deps_dir)
+    if not gclient_path:
+      logging.error(
+          'use_relative_paths is set to true, but .gclient not found.\n'
+          'Run this script from gclient workspace.')
+      sys.exit(1)
+    delta_path = os.path.relpath(deps_dir, os.path.abspath(gclient_path))
+    if delta_path:
+      prefix_length = len(delta_path.replace(os.path.sep, '/')) + 1
+
+  with open(options.output_gitmodules, 'w') as f:
+    for path, dep in ls.get('deps').items():
+      if path in options.skip_dep:
+        continue
+      if dep.get('dep_type') == 'cipd':
+        continue
+      try:
+        url, commit = dep['url'].split('@', maxsplit=1)
+      except ValueError:
+        logging.error('error on %s; %s, not adding it', path, dep["url"])
+        continue
+      if prefix_length:
+        path = path[prefix_length:]
+
+      git_cl.RunGit(
+          ['update-index', '--add', '--cacheinfo', '160000', commit, path])
+      f.write(f'[submodule "{path}"]\n\tpath = {path}\n\turl = {url}\n')
+      if 'condition' in dep:
+        f.write(f'\tgclient-condition = {dep["condition"]}\n')
 
 
 @metrics.collector.collect_metrics('gclient flatten')

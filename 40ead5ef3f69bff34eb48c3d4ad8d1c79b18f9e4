@@ -16,6 +16,24 @@
       "message": "This is already handled within post processing logic: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gclient.py;l\u003d694-704;drc\u003d9d18c9eb653a451af1fc8b345729bad60721146b",
       "revId": "40ead5ef3f69bff34eb48c3d4ad8d1c79b18f9e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d448c1fb_2aa260ec",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-12T17:53:06Z",
+      "side": 1,
+      "message": "That\u0027s correct when use_relative_paths is used. But not when it\u0027s not. Updated commit message.",
+      "parentUuid": "8674abe9_ab7e8028",
+      "revId": "40ead5ef3f69bff34eb48c3d4ad8d1c79b18f9e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

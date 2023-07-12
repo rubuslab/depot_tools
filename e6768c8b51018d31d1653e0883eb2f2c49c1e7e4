@@ -192,6 +192,24 @@
       "parentUuid": "001e9d87_86e92576",
       "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9f2e02f_4318bf01",
+        "filename": "git_map_branches.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1565647
+      },
+      "writtenOn": "2023-07-12T16:16:28Z",
+      "side": 1,
+      "message": "This was me trying again to distinguish between this expected \"error\" scenario (retcode \u003d\u003d 1 because it\u0027s not dormant) versus a real error. Do you think this adds unnecessary complexity to run_with_stderr that I should avoid by just catching the thrown exception? I\u0027m fine with either option, just wanted to clarify the motivation behind not throwing the error. Thanks!",
+      "parentUuid": "d7155bc9_bd555c88",
+      "revId": "e6768c8b51018d31d1653e0883eb2f2c49c1e7e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

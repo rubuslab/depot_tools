@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11e6ee36_d84d5ac8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-12T18:09:32Z",
+      "side": 1,
+      "message": "I realized there is one more change we need to make this work, I think, which is to make `git freeze` ignore submodule changes",
+      "revId": "c5dab1505083037964c61f513db6940bcf2f1cc0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

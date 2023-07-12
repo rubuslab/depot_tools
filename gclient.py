@@ -974,13 +974,14 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # Structure git submodules into a dict of DEPS git url entries.
     submodules = {}
     for name, module in gitmodules.items():
-      submodules[module['path']] = {
+      path = f'{self.name}/{module["path"]}'
+      submodules[path] = {
           'dep_type': 'git',
           'url': '{}@{}'.format(module['url'], commit_hashes[name])
       }
 
       if 'gclient-condition' in module:
-        submodules[module['path']]['condition'] = module['gclient-condition']
+        submodules[path]['condition'] = module['gclient-condition']
 
     return submodules
 

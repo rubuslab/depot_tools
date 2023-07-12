@@ -39,6 +39,30 @@
       },
       "revId": "4ac1ce0ade5dedd3c6a3e23810f31d1742277d6a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e35f6043_e1d648aa",
+        "filename": "gclient_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1152,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-07-12T21:01:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4c71b13_1ba68bc7",
+      "range": {
+        "startLine": 1152,
+        "startChar": 22,
+        "endLine": 1152,
+        "endChar": 29
+      },
+      "revId": "4ac1ce0ade5dedd3c6a3e23810f31d1742277d6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

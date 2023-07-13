@@ -16,6 +16,24 @@
       "message": "Sorry to putting this comment here but as I had tried to reach out but couldn\u0027t. So just putting the doubt over here. \n\nI’m Sumitra Dawn from AIX India team, recently while running fetch v8 or gclient sync we encountered some error like this: depot_tools/.cipd_bin/luci-auth: No such file or directory. \nwasm-spec-tests/tests.tar.gz is not being downloaded on AIX due to not having the luci-auth binary file and luci-auth is needed to download packages from Google Storage (GS).\n\nWe have tried to compile luci-auth on AIX and able to generate the executable file. Also we have tested it and added the binary to the specific location that is- depot_tools/cipd_bin directory and  changed the path in the luci-auth script from /.cipd_bin/luci-auth to /./cipd_bin/luci-auth.\n\nSo, I request you if you can cross compile luci-auth for AIX and added the binary to the specific location then we will be able to resolve this issue. \n\nIf anyone can help in this or if anyone knows whom to reach out that would be really great.",
       "revId": "7af61698522568680b74698751325044e6b10736",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9140dd56_219f3620",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-13T17:35:28Z",
+      "side": 1,
+      "message": "Just to confirm, do you use gsutil to download any objects that requires authentication? If yes, a quick fix would be setting up a .boto file using gcloud and if no, setting `SWARMING_HEADLESS \u003d 1` env would help.\n\nAs for the actual request, @vadimsh@chromium.org Do you have any insights on this?",
+      "parentUuid": "cdbcaaf3_2c5da360",
+      "revId": "7af61698522568680b74698751325044e6b10736",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

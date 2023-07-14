@@ -37,6 +37,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b0a284f4_dadac0ad",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000680
+      },
+      "writtenOn": "2023-07-14T14:57:13Z",
+      "side": 1,
+      "message": "Can this function avoid uploading multiple CLs with the same set of code reviewers (regardless of how many OWNERS files there are)?\n\nThus if there are 3 files which were changed\n- a/f1.cc\n- b/f2.cc\n- c/f3.cc\n\nOWNERS files:\n- a/OWNERS\n  OWNERS: o1, o2\n- b/OWNERS\n  OWNERS: o1, o2\n- c/OWNERS\n  OWNERS: o1\n   \nSplitCl() would upload only 2 CLs\n- CL #1: a/f1.cc a/f2.cc\n- CL #2: c/f3.cc\n\n- I think that the change that I am suggesting would have prevented \"git cl split\" from uploading 150 different CLs for changes to subdirectories of //third_party/android_deps/libs/\n- I think that it is fine if \"git cl split\" select OWNER o1 for both CL#1 and CL#2.",
+      "range": {
+        "startLine": 290,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 72
+      },
+      "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "320da703_c3d1453a",
         "filename": "split_cl.py",
         "patchSetId": 1

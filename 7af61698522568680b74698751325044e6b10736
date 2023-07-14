@@ -34,6 +34,24 @@
       "parentUuid": "cdbcaaf3_2c5da360",
       "revId": "7af61698522568680b74698751325044e6b10736",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98aa3d1c_8a9deb03",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1568297
+      },
+      "writtenOn": "2023-07-14T15:44:56Z",
+      "side": 1,
+      "message": "Although There are other workarounds as we are using gsutil.py but considering that in a longer run the binary of luci-auth should be there for AIX or else may be in future we can hit other issues.\nAs of now wasm-spec-tests/tests.tar.gz is not being downloaded on AIX due to not having the luci-auth binary file and luci-auth is needed to download packages from Google Storage (GS).\nAns also we have done the compilation of luci-auth in our environment and tested it, it is working quite fine.\n\nSo, requesting you if you can cross-compile luci-auth on AIX and add the executable  to the correct location that is  /./cipd_bin/luci-auth.",
+      "parentUuid": "9140dd56_219f3620",
+      "revId": "7af61698522568680b74698751325044e6b10736",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

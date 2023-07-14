@@ -33,6 +33,40 @@
       "message": "Arbitrarily chosen limit, open to suggestions.",
       "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "320da703_c3d1453a",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-14T09:34:58Z",
+      "side": 1,
+      "message": "the line below can be reduced to following:\n\n    overselected_reviewers \u003d [(v, k) for k, v in cls_per_reviewer.items() if v \u003e CL_SPLIT_SAME_REVIEWER_LIMIT]\n    if overselected_reviewers:\n      print(\u0027Warning: these users will need to review a lot of CLs as a \u0027\n            \u0027result of this split:\u0027)\n      for (votes, reviewer) in sorted(overselected_reviewers, reverse\u003dTrue):\n        print(f\u0027    {reviewer}: {votes} CLs\u0027)",
+      "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9aedcb67_9054cc64",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-14T09:34:58Z",
+      "side": 1,
+      "message": "nit: what if you print top N reviewers; that way we don\u0027t have an arbitrary number. But up to you.",
+      "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

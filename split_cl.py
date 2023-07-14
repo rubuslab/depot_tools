@@ -27,6 +27,10 @@ import git_common as git
 # in the past.
 CL_SPLIT_FORCE_LIMIT = 10
 
+# If a call to `git cl split` will send more than this number of CLs to the
+# same reviewer, a warning message will be printed.
+CL_SPLIT_SAME_REVIEWER_LIMIT = 20
+
 
 def EnsureInGitRepository():
   """Throws an exception if the current directory is not a git repository."""
@@ -268,6 +272,7 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
     if answer.lower() != 'y':
       return 0
 
+    cls_per_reviewer = collections.defaultdict(int)
     for cl_index, (directory, files) in \
         enumerate(files_split_by_owners.items(), 1):
       # Use '/' as a path separator in the branch name and the CL description
@@ -283,6 +288,21 @@ def SplitCl(description_file, comment_file, changelist, cmd_upload, dry_run,
         UploadCl(refactor_branch, refactor_branch_upstream, directory, files,
                  description, comment, reviewers, changelist, cmd_upload,
                  cq_dry_run, enable_auto_submit, topic, repository_root)
+
+      for reviewer in reviewers:
+        cls_per_reviewer[reviewer] += 1
+
+    # Print a warning message if any reviewers will be sent lots of CLs as a
+    # result of the split.
+    overselected_reviewers = {}
+    for reviewer, cl_count in cls_per_reviewer.items():
+      if cl_count > CL_SPLIT_SAME_REVIEWER_LIMIT:
+        overselected_reviewers[reviewer] = cl_count
+    if overselected_reviewers:
+      print('Warning: these users will need to review a lot of CLs as a '
+            'result of this split:')
+      for reviewer in sorted(overselected_reviewers.keys()):
+        print(f'    {reviewer}: {overselected_reviewers[reviewer]} CLs')
 
     # Go back to the original branch.
     git.run('checkout', refactor_branch)

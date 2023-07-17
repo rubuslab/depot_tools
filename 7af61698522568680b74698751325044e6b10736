@@ -52,6 +52,24 @@
       "parentUuid": "9140dd56_219f3620",
       "revId": "7af61698522568680b74698751325044e6b10736",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9912bed1_b97339fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-07-17T20:36:43Z",
+      "side": 1,
+      "message": "Can you file a bug [here](https://bugs.chromium.org/p/chromium/issues/entry) under the `Infra\u003eSDK` component? It\u0027s easier to track and follow up that way.",
+      "parentUuid": "98aa3d1c_8a9deb03",
+      "revId": "7af61698522568680b74698751325044e6b10736",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

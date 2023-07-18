@@ -88,6 +88,24 @@
       "parentUuid": "9912bed1_b97339fc",
       "revId": "7af61698522568680b74698751325044e6b10736",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d75e49fa_4fda4cda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1568297
+      },
+      "writtenOn": "2023-07-18T09:42:06Z",
+      "side": 1,
+      "message": "I have tried to submit the issue here- \"https://bugs.chromium.org/p/chromium/issues/entry\" under Infra-codereview template but couldn\u0027t able to submit it and also I\u0027m not able to get the Infra\u003eSDK section here.Can you please help me with this.",
+      "parentUuid": "073f426c_bda24a8c",
+      "revId": "7af61698522568680b74698751325044e6b10736",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

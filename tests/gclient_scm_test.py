@@ -325,6 +325,23 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
                      'a7142dc9f0009350b96a11f372b6ea658592aa95')
     sys.stdout.close()
 
+  def testStatusRef(self):
+    if not self.enabled:
+      return
+    options = self.Options()
+    file_path = join(self.base_path, 'a')
+    with open(file_path, 'a') as f:
+      f.writelines('touched\n')
+    scm = gclient_scm.GitWrapper(self.url + '@refs/heads/foo/123',
+                                 self.root_dir, self.relpath)
+    file_list = []
+    scm.status(options, self.args, file_list)
+    self.assertEqual(file_list, [file_path])
+    self.checkstdout(
+        ('\n________ running \'git -c core.quotePath=false diff --name-status '
+         'refs/remotes/origin/foo/123\' in \'%s\'\n\nM\ta\n') %
+        join(self.root_dir, '.'))
+
   def testStatusNew(self):
     if not self.enabled:
       return

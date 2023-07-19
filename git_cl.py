@@ -878,17 +878,14 @@ class Settings(object):
   def GetFormatFullByDefault(self):
     if self.format_full_by_default is None:
       self._LazyUpdateIfNeeded()
-      result = (
-          RunGit(['config', '--bool', 'rietveld.format-full-by-default'],
-                 error_ok=True).strip())
-      self.format_full_by_default = (result == 'true')
+      self.format_full_by_default = scm.GIT.GetConfigBool(
+          self.GetRoot(), 'rietveld.format-full-by-default')
     return self.format_full_by_default
 
   def IsStatusCommitOrderByDate(self):
     if self.is_status_commit_order_by_date is None:
-      result = (RunGit(['config', '--bool', 'cl.date-order'],
-                       error_ok=True).strip())
-      self.is_status_commit_order_by_date = (result == 'true')
+      self.is_status_commit_order_by_date = scm.GIT.GetConfigBool(
+          self.GetRoot(), 'cl.date-order')
     return self.is_status_commit_order_by_date
 
   def _GetConfig(self, key, default=''):
@@ -3401,14 +3398,20 @@ def FindCodereviewSettingsFile(filename='codereview.settings'):
 
 def LoadCodereviewSettingsFromFile(fileobj):
   """Parses a codereview.settings file and updates hooks."""
+  cwd = os.getcwd()
+
   keyvals = gclient_utils.ParseCodereviewSettingsContent(fileobj.read())
 
   def SetProperty(name, setting, unset_error_ok=False):
     fullname = 'rietveld.' + name
     if setting in keyvals:
-      RunGit(['config', fullname, keyvals[setting]])
+      scm.GIT.SetConfig(cwd, fullname, keyvals[setting])
     else:
-      RunGit(['config', '--unset-all', fullname], error_ok=unset_error_ok)
+      try:
+        scm.GIT.SetConfig(cwd, fullname, None, all=True)
+      except subprocess2.CalledProcessError:
+        if not unset_error_ok:
+          raise
 
   if not keyvals.get('GERRIT_HOST', False):
     SetProperty('server', 'CODE_REVIEW_SERVER')
@@ -3426,22 +3429,22 @@ def LoadCodereviewSettingsFromFile(fileobj):
       'format-full-by-default', 'FORMAT_FULL_BY_DEFAULT', unset_error_ok=True)
 
   if 'GERRIT_HOST' in keyvals:
-    RunGit(['config', 'gerrit.host', keyvals['GERRIT_HOST']])
+    scm.GIT.SetConfig(cwd, 'gerrit.host', keyvals['GERRIT_HOST'])
 
   if 'GERRIT_SQUASH_UPLOADS' in keyvals:
-    RunGit(['config', 'gerrit.squash-uploads',
-            keyvals['GERRIT_SQUASH_UPLOADS']])
+    scm.GIT.SetConfig(cwd, 'gerrit.squash-uploads',
+                      keyvals['GERRIT_SQUASH_UPLOADS'])
 
   if 'GERRIT_SKIP_ENSURE_AUTHENTICATED' in keyvals:
-    RunGit(['config', 'gerrit.skip-ensure-authenticated',
-            keyvals['GERRIT_SKIP_ENSURE_AUTHENTICATED']])
+    scm.GIT.SetConfig(cwd, 'gerrit.skip-ensure-authenticated',
+                      keyvals['GERRIT_SKIP_ENSURE_AUTHENTICATED'])
 
   if 'PUSH_URL_CONFIG' in keyvals and 'ORIGIN_URL_CONFIG' in keyvals:
     # should be of the form
     # PUSH_URL_CONFIG: url.ssh://gitrw.chromium.org.pushinsteadof
     # ORIGIN_URL_CONFIG: http://src.chromium.org/git
-    RunGit(['config', keyvals['PUSH_URL_CONFIG'],
-            keyvals['ORIGIN_URL_CONFIG']])
+    scm.GIT.SetConfig(cwd, keyvals['PUSH_URL_CONFIG'],
+                      keyvals['ORIGIN_URL_CONFIG'])
 
 
 def urlretrieve(source, destination):
@@ -3745,12 +3748,10 @@ def CMDbaseurl(parser, args):
   branch = scm.GIT.ShortBranchName(branchref)
   if not args:
     print('Current base-url:')
-    return RunGit(['config', 'branch.%s.base-url' % branch],
-                  error_ok=False).strip()
+    return scm.GIT.GetBranchConfig(os.getcwd(), branch, 'base-url')
 
   print('Setting base-url to %s' % args[0])
-  return RunGit(['config', 'branch.%s.base-url' % branch, args[0]],
-                error_ok=False).strip()
+  return scm.GIT.SetBranchConfig(os.getcwd(), branch, 'base-url', args[0])
 
 
 def color_for_status(status):
@@ -4228,9 +4229,7 @@ def CMDissue(parser, args):
     issue_branch_map = {}
 
     git_config = {}
-    for config in RunGit(['config', '--get-regexp',
-                          r'branch\..*issue']).splitlines():
-      name, _space, val = config.partition(' ')
+    for name, val in scm.GIT.YieldConfigRegexp(os.getcwd(), r'branch\..*issue'):
       git_config[name] = val
 
     for branch in branches:
@@ -6192,12 +6191,11 @@ def CMDcheckout(parser, args):
 
   target_issue = str(issue_arg.issue)
 
-  output = RunGit(['config', '--local', '--get-regexp',
-                   r'branch\..*\.' + ISSUE_CONFIG_KEY],
-                   error_ok=True)
+  branch_issues = scm.GIT.YieldConfigRegexp(os.getcwd(),
+                                            r'branch\..*\.' + ISSUE_CONFIG_KEY)
 
   branches = []
-  for key, issue in [x.split() for x in output.splitlines()]:
+  for key, issue in branch_issues:
     if issue == target_issue:
       branches.append(re.sub(r'branch\.(.*)\.' + ISSUE_CONFIG_KEY, r'\1', key))
 

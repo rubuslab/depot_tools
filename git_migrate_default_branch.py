@@ -4,6 +4,7 @@
 # found in the LICENSE file.
 """Migrate local repository onto new default branch."""
 
+import os
 import fix_encoding
 import gerrit_util
 import git_common
@@ -55,17 +56,17 @@ def main():
     raise RuntimeError("The repository is not migrated yet.")
 
   # User may have set to fetch only old default branch. Ensure fetch is tracking
-  # main too.
-  git_common.run('config', '--unset-all',
-                 'remote.origin.fetch', 'refs/heads/*')
-  git_common.run('config', '--add',
-                 'remote.origin.fetch', '+refs/heads/*:refs/remotes/origin/*')
+  # main too by replacing all `refs/heads/*` fetch entries.
+  scm.GIT.SetConfig(
+      os.getcwd(), 'remote.origin.fetch', '+refs/heads/*:refs/remotes/origin/*',
+      value_pattern='refs/heads/*', all=True)
+
   logging.info("Running fetch...")
   git_common.run('fetch', remote)
   logging.info("Updating remote HEAD...")
   git_common.run('remote', 'set-head', '-a', remote)
 
-  branches = git_common.get_branches_info(True)
+  branches = git_common.get_branches_info()
 
   if 'master' in branches:
     logging.info("Migrating master branch...")

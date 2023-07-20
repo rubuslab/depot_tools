@@ -53,8 +53,7 @@ This contains
 * OS (e.g. Win, Mac or Linux)
 * Number of cpu cores and the amount of RAM of the building machine
 
-We don't collect personally identifiable information
-(e.g. username, ip address).
+We will collect googler hostnames to help diagnose long tail issues.
 
 ## Why are reproxy metrics collected? / How are the metrics collected?
 

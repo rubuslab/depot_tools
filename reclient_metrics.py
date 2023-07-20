@@ -57,7 +57,8 @@ This contains
 * OS (e.g. Win, Mac or Linux)
 * Number of cpu cores and the amount of RAM of the building machine
 
-Uploading reclient metrics will be started after you run autoninja another {config_count} time(s).
+Reclient metrics will be uploaded for this build.
+This message will be shown when you run autoninja another {config_count} time(s).
 
 If you don't want to upload reclient metrics, please run following command.
 $ python3 {file_path} opt-out
@@ -114,7 +115,7 @@ def check_status(ninja_out):
     return config['opt-in']
   if config.get("countdown", 0) > 0:
     show_message(config, ninja_out)
-    return False
+  #  return False
   return True
 
 

@@ -16,6 +16,24 @@
       "message": "I\u0027m not an expert (Privacy folks might have strong opinions) but if this is the _only_ potentially identifiable information you collect it could be nice to make that clear? E.g. still saying that we don\u0027t collect username, email, ip address, etc.",
       "revId": "583bab6fe8e4e8cd74de2a917c271a661c608a4f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61e1038e_b0e8bd8c",
+        "filename": "reclient_metrics.README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-07-20T16:49:22Z",
+      "side": 1,
+      "message": "Good idea, thanks",
+      "parentUuid": "29615726_be93e384",
+      "revId": "583bab6fe8e4e8cd74de2a917c271a661c608a4f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

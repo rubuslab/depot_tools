@@ -174,6 +174,10 @@ def enable_racing():
   os.environ.setdefault("RBE_racing_bias", "0.95")
 
 
+def str2bool(v):
+  return v.lower() in ("yes", "true", "t", "1")
+
+
 @contextlib.contextmanager
 def build_context(argv, tool):
   # If use_remoteexec is set, but the reclient binaries or configs don't
@@ -207,7 +211,8 @@ def build_context(argv, tool):
     print('WARNING: Using RBE_instance=%s\n' %
           os.environ.get('RBE_instance', ''))
 
-  enable_racing()
+  if str2bool(os.environ.get('RBE_racing', '')):
+    enable_racing()
 
   reproxy_ret_code = start_reproxy(reclient_cfg, reclient_bin_dir)
   if reproxy_ret_code != 0:

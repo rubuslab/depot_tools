@@ -22,6 +22,30 @@
       },
       "revId": "ee0a01c3edef6eb7638424533aec018a2150720b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce1a7b77_b711583a",
+        "filename": "reclient_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-07-21T17:40:23Z",
+      "side": 1,
+      "message": "Yes, I will look at addressing that as a followup, but this is a better than the current state that wont let us start the build if the previous instance of reproxy is holding some log files open",
+      "parentUuid": "759f3449_45900748",
+      "range": {
+        "startLine": 148,
+        "startChar": 45,
+        "endLine": 148,
+        "endChar": 78
+      },
+      "revId": "ee0a01c3edef6eb7638424533aec018a2150720b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

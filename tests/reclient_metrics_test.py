@@ -78,7 +78,7 @@ class ReclientMetricsTest(unittest.TestCase):
         run_mock.return_value.stdout = 'Logged in as abc@google.com.'
         with unittest.mock.patch('sys.stdout',
                                  new=io.StringIO()) as stdout_mock:
-          self.assertFalse(reclient_metrics.check_status("outdir"))
+          self.assertTrue(reclient_metrics.check_status("outdir"))
           self.assertIn("Your reclient metrics will", stdout_mock.getvalue())
           self.assertIn(
               os.path.join("outdir", ".reproxy_tmp", "logs", "rbe_metrics.txt"),
@@ -93,7 +93,7 @@ class ReclientMetricsTest(unittest.TestCase):
         for i in range(10):
           with unittest.mock.patch('sys.stdout',
                                    new=io.StringIO()) as stdout_mock:
-            self.assertFalse(reclient_metrics.check_status("outdir"))
+            self.assertTrue(reclient_metrics.check_status("outdir"))
             self.assertIn("Your reclient metrics will", stdout_mock.getvalue())
             self.assertIn(
                 os.path.join("outdir", ".reproxy_tmp", "logs",
@@ -160,7 +160,7 @@ class ReclientMetricsTest(unittest.TestCase):
         for i in range(3):
           with unittest.mock.patch('sys.stdout',
                                    new=io.StringIO()) as stdout_mock:
-            self.assertFalse(reclient_metrics.check_status("outdir"))
+            self.assertTrue(reclient_metrics.check_status("outdir"))
             self.assertIn("Your reclient metrics will", stdout_mock.getvalue())
             self.assertIn(
                 os.path.join("outdir", ".reproxy_tmp", "logs",
@@ -207,7 +207,7 @@ class ReclientMetricsTest(unittest.TestCase):
         for i in range(3):
           with unittest.mock.patch('sys.stdout',
                                    new=io.StringIO()) as stdout_mock:
-            self.assertFalse(reclient_metrics.check_status("outdir"))
+            self.assertTrue(reclient_metrics.check_status("outdir"))
             self.assertIn("Your reclient metrics will", stdout_mock.getvalue())
             self.assertIn(
                 os.path.join("outdir", ".reproxy_tmp", "logs",

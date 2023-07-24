@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d594d609_55cffae1",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-07-24T02:27:44Z",
+      "side": 1,
+      "message": "Why we cannot wait 10 runs?",
+      "revId": "8a213eb29ba401bdc984a6899e2c21d3d6dd7832",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

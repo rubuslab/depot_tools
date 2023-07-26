@@ -119,6 +119,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "81410d13_a10afbb7",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-26T13:30:38Z",
+      "side": 1,
+      "message": "git-cl-split is community maintained so I\u0027m not sure either. There is a potential problem with overloading individuals. A parameter for fine tuning may be needed. In any case, I think it\u0027s only tangential to this CL and we should discuss this somewhere else.",
+      "parentUuid": "e9f76656_86045a3f",
+      "range": {
+        "startLine": 290,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 72
+      },
+      "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "320da703_c3d1453a",
         "filename": "split_cl.py",
         "patchSetId": 1

@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ea51270_a639ec15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1118346
+      },
+      "writtenOn": "2023-07-26T00:29:34Z",
+      "side": 1,
+      "message": "All my comments are minor. Nice solid code :)",
+      "revId": "a57e32e42b71c6469c548b20aa554f51f4a1782a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1e18375_63cb2197",
+        "filename": "bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1118346
+      },
+      "writtenOn": "2023-07-26T00:29:34Z",
+      "side": 1,
+      "message": "nit\u0026optional: I\u0027d recommend inlining this to main(), i.e.\n\n```\nbazel \u003d _find_bazel_cros() or _find_next_bazel_in_path()\n```\n\nDefining a list here doesn\u0027t help readability too much because there are only two items here, and OTOH indirect function calls make static code analysis harder.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 17
+      },
+      "revId": "a57e32e42b71c6469c548b20aa554f51f4a1782a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11c43e5f_62ab43b1",
+        "filename": "bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1118346
+      },
+      "writtenOn": "2023-07-26T00:29:34Z",
+      "side": 1,
+      "message": "This is a good point. Thanks for being friendly to users :)",
+      "range": {
+        "startLine": 67,
+        "startChar": 62,
+        "endLine": 68,
+        "endChar": 67
+      },
+      "revId": "a57e32e42b71c6469c548b20aa554f51f4a1782a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33d5aa28_422f5752",
+        "filename": "bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1118346
+      },
+      "writtenOn": "2023-07-26T00:29:34Z",
+      "side": 1,
+      "message": "nit: Can we make this non-optional and always pass `List[str]`? There\u0027s no caller passing None actually, and then we can remove `if not argv` branch below.",
+      "range": {
+        "startLine": 75,
+        "startChar": 15,
+        "endLine": 75,
+        "endChar": 23
+      },
+      "revId": "a57e32e42b71c6469c548b20aa554f51f4a1782a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0919b3ad_71325b1d",
+        "filename": "bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1118346
+      },
+      "writtenOn": "2023-07-26T00:29:34Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 75,
+        "startChar": 46,
+        "endLine": 75,
+        "endChar": 54
+      },
+      "revId": "a57e32e42b71c6469c548b20aa554f51f4a1782a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -50,6 +50,24 @@
       "message": "Oh, wait, I\u0027m not a depot_tools owner anymore ...\n\n+sokcevic, can you stamp this?",
       "revId": "7b8a4aed03b73a4f145c5a3be1d79f911b9f36e7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bfb3d4f_a4f50e3c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-07-26T22:48:24Z",
+      "side": 1,
+      "message": "Oh, never mind, I am still an owner for autoninja. Forgot.",
+      "parentUuid": "93248216_a5fdfd2f",
+      "revId": "7b8a4aed03b73a4f145c5a3be1d79f911b9f36e7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

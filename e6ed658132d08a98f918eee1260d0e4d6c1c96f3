@@ -95,6 +95,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e9f76656_86045a3f",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-07-26T00:12:33Z",
+      "side": 1,
+      "message": "To avoid uploading multiple CLs with the same set of code reviewers, I believe we would need to update `GetFilesSplitByOwners`. The number of CLs is based on the result of `GetFilesSplitByOwners`, and this currently splits by `OWNERS` file, not the set of owners listed in the file.\n\nThis is not my domain here, but one solution would be to modify this method to parse the content of the `OWNERS` file, and split based on unique sets of owners. This will no doubt slow down the splitting process, but I believe this would address the issue. @sokcevic, any thoughts/objections/alternative suggestions to this?",
+      "parentUuid": "b0a284f4_dadac0ad",
+      "range": {
+        "startLine": 290,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 72
+      },
+      "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "320da703_c3d1453a",
         "filename": "split_cl.py",
         "patchSetId": 1
@@ -106,6 +130,24 @@
       "writtenOn": "2023-07-14T09:34:58Z",
       "side": 1,
       "message": "the line below can be reduced to following:\n\n    overselected_reviewers \u003d [(v, k) for k, v in cls_per_reviewer.items() if v \u003e CL_SPLIT_SAME_REVIEWER_LIMIT]\n    if overselected_reviewers:\n      print(\u0027Warning: these users will need to review a lot of CLs as a \u0027\n            \u0027result of this split:\u0027)\n      for (votes, reviewer) in sorted(overselected_reviewers, reverse\u003dTrue):\n        print(f\u0027    {reviewer}: {votes} CLs\u0027)",
+      "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85f0ec6e_76d65d5c",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-07-26T00:12:33Z",
+      "side": 1,
+      "message": "Thanks. I have switched to listing the top reviewers, and use `sorted` on `cls_per_reviewer.items()` to make the reviewer rankings.",
+      "parentUuid": "320da703_c3d1453a",
       "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -123,6 +165,24 @@
       "writtenOn": "2023-07-14T09:34:58Z",
       "side": 1,
       "message": "nit: what if you print top N reviewers; that way we don\u0027t have an arbitrary number. But up to you.",
+      "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80552faa_fa3e75f2",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-07-26T00:12:33Z",
+      "side": 1,
+      "message": "Thanks for the suggestion. I like this more, and have updated to do this instead.",
+      "parentUuid": "9aedcb67_9054cc64",
       "revId": "e6ed658132d08a98f918eee1260d0e4d6c1c96f3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

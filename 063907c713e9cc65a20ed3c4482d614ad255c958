@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ab7df06_45061c0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000680
+      },
+      "writtenOn": "2023-07-26T14:16:33Z",
+      "side": 1,
+      "message": "Can this CL at least prompt the user if a reviewer is going to be sent \u003e 100 CLs?\n\nRight now this CL is not useful and would not prevent the incorrect usage of \"git cl split\" which sent \u003e 150 code reviews my way.",
+      "revId": "063907c713e9cc65a20ed3c4482d614ad255c958",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

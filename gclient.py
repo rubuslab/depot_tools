@@ -3147,6 +3147,9 @@ def CMDsync(parser, args):
                     default=[],
                     help='Which experiments should be enabled.')
   (options, args) = parser.parse_args(args)
+  if options.pdb:
+    import pdb
+    pdb.set_trace()
   client = GClient.LoadCurrentConfig(options)
 
   if not client:
@@ -3552,6 +3555,10 @@ class OptionParser(optparse.OptionParser):
     self.add_option(
         '--no-nag-max', default=False, action='store_true',
         help='Ignored for backwards compatibility.')
+    self.add_option('--pdb',
+                    default=False,
+                    action='store_true',
+                    help='Run gclient under the debugger pdb.')
 
   def parse_args(self, args=None, _values=None):
     """Integrates standard options processing."""

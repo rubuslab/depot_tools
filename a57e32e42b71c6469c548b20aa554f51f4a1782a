@@ -43,6 +43,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "a201432c_dbc9acad",
+        "filename": "bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1330845
+      },
+      "writtenOn": "2023-07-26T03:18:54Z",
+      "side": 1,
+      "message": "Going to keep as is.  `mypy` had no trouble with this for static analysis, and I expect some other `depot_tools` user is going to want to plop in another function here down the road ;)",
+      "parentUuid": "f1e18375_63cb2197",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 17
+      },
+      "revId": "a57e32e42b71c6469c548b20aa554f51f4a1782a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "11c43e5f_62ab43b1",
         "filename": "bazel",
         "patchSetId": 1
@@ -105,6 +129,54 @@
         "startChar": 46,
         "endLine": 75,
         "endChar": 54
+      },
+      "revId": "a57e32e42b71c6469c548b20aa554f51f4a1782a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f115e1d_1a92a830",
+        "filename": "bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1330845
+      },
+      "writtenOn": "2023-07-26T03:18:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0919b3ad_71325b1d",
+      "range": {
+        "startLine": 75,
+        "startChar": 46,
+        "endLine": 75,
+        "endChar": 54
+      },
+      "revId": "a57e32e42b71c6469c548b20aa554f51f4a1782a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2adddd4_03f6c33b",
+        "filename": "bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1330845
+      },
+      "writtenOn": "2023-07-26T03:18:54Z",
+      "side": 1,
+      "message": "Updated.  Technically it violates our style guide (https://chromium.googlesource.com/chromiumos/docs/+/HEAD/styleguide/python.md#main), but I think it makes more sense for a little wrapper like this that doesn\u0027t even use `argparse`.",
+      "parentUuid": "33d5aa28_422f5752",
+      "range": {
+        "startLine": 75,
+        "startChar": 15,
+        "endLine": 75,
+        "endChar": 23
       },
       "revId": "a57e32e42b71c6469c548b20aa554f51f4a1782a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

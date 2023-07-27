@@ -34,6 +34,24 @@
       "parentUuid": "6ab7df06_45061c0a",
       "revId": "063907c713e9cc65a20ed3c4482d614ad255c958",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8811d662_656fa9ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-07-27T01:17:24Z",
+      "side": 1,
+      "message": "Hopefully the number of CLs for each reviewer would help when people run `git cl split` with `--dry-run`. But as it\u0027s currently written, the number of CLs is determined by the `OWNERS` file split, and a reviewer being sent many CLs won\u0027t be known until at least a few CLs are made (unless in `--dry-run` mode), so prompting the user didn\u0027t really make sense there.\n\nOut of interest, could you CC me on your CL @pkotwicz@chromium.org? I will submit this one to keep its scope limited.",
+      "parentUuid": "e3c4c097_820d88f1",
+      "revId": "063907c713e9cc65a20ed3c4482d614ad255c958",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

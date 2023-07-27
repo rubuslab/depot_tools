@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "def93b19_8dfa5b65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-07-27T15:04:06Z",
+      "side": 1,
+      "message": "hopefully you\u0027ve tested this on MacOS \u003c 13.5 ...",
+      "revId": "a971610a98bdd7e510cd2768d582b6cc2fbbff45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ced6939_7b612554",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-07-27T15:04:06Z",
+      "side": 1,
+      "message": "Add a comment for the 200000 magic number?",
+      "revId": "a971610a98bdd7e510cd2768d582b6cc2fbbff45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5f97af6_5c7a5729",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-07-27T15:04:06Z",
+      "side": 1,
+      "message": "Is FD_SETSIZE 800?",
+      "revId": "a971610a98bdd7e510cd2768d582b6cc2fbbff45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

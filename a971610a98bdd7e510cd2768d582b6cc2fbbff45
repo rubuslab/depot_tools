@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6542ba1a_e9450b41",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2023-07-27T15:45:15Z",
+      "side": 1,
+      "message": "I don\u0027t have access to a machine running old version of macOS :-/",
+      "parentUuid": "def93b19_8dfa5b65",
+      "revId": "a971610a98bdd7e510cd2768d582b6cc2fbbff45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ced6939_7b612554",

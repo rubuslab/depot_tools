@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "963efbbd_a6221b42",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-07-27T00:18:56Z",
+      "side": 1,
+      "message": "Siso(Ninja alternative) skips gomacc warpper invocations, and communicates with the remote build server directly. So it will be less affected.",
+      "revId": "4d992437eba9252a96235418c1c8564876f952d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -18,6 +18,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "42a316cf_e520b330",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2023-07-27T15:38:33Z",
+      "side": 1,
+      "message": "Please take another look.",
+      "revId": "a971610a98bdd7e510cd2768d582b6cc2fbbff45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ced6939_7b612554",
@@ -35,6 +52,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a8856ad_b87415e7",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2023-07-27T15:38:33Z",
+      "side": 1,
+      "message": "This is the value coming from the goma documentation. I don\u0027t really know why they used this value. I can say this is a sufficiently large value to avoid any problem with file descriptor count when spawning jobs.",
+      "parentUuid": "3ced6939_7b612554",
+      "revId": "a971610a98bdd7e510cd2768d582b6cc2fbbff45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f5f97af6_5c7a5729",
@@ -48,6 +83,24 @@
       "writtenOn": "2023-07-27T15:04:06Z",
       "side": 1,
       "message": "Is FD_SETSIZE 800?",
+      "revId": "a971610a98bdd7e510cd2768d582b6cc2fbbff45",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30ef4135_462e63f4",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2023-07-27T15:38:33Z",
+      "side": 1,
+      "message": "I think it is 1024. I am able to use -j 1000 (this leave a bit of padding if some fd are used for other things than pipe to jobs), but the limit of 800 was pre-existing and I didn\u0027t want to alter it. I can raise it to 1000 if you want.",
+      "parentUuid": "f5f97af6_5c7a5729",
       "revId": "a971610a98bdd7e510cd2768d582b6cc2fbbff45",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

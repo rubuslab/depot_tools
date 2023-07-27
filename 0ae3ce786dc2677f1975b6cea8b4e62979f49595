@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "195f760e_b5a0ff9c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2023-07-27T13:08:20Z",
+      "side": 1,
+      "message": "This is a followup to https://crrev.com/c/4720227 which instead check whether it is possible to raise the fileno limit and if so, inserts a call to `ulimit -n xxxx`.\n\nI\u0027ve tested locally and this allow me to run on macOS Ventura 13.5 (which has a limit of 256) and to get a command that looks like this:\n\n    $ ulimit -n\n    256\n    $ ps -axf | grep \u0027[^o][n]inja\u0027\n    143228 63275 63266   0  2:54PM ttys003    0:00.06 /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python /Users/sdefresne/Tools/depot_tools/ninja.py -C out/Debug-iphoneos -j 640\n    143228 63276 63275   0  2:54PM ttys003    1:23.86 /Users/sdefresne/Developer/chromium/src/third_party/ninja/ninja -C out/Debug-iphoneos -j 640",
+      "revId": "0ae3ce786dc2677f1975b6cea8b4e62979f49595",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

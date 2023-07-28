@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19c09c98_183dc104",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-28T16:57:42Z",
+      "side": 1,
+      "message": "What\u0027s the rationale to add this? Why not just invoke gclient with pdb module, e.g. `vpython3 -m pdb gclient.py`?",
+      "revId": "15ea6a6ca5bab22853c6ce3ba3c2fbccf777cb5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

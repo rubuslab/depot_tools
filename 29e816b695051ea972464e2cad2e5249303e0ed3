@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fe68ca2_17517f8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-28T17:05:41Z",
+      "side": 1,
+      "message": "Looks promising, thanks for working on it.",
+      "revId": "29e816b695051ea972464e2cad2e5249303e0ed3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "185e014d_015f5a63",
+        "filename": "git_map_branches.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-28T17:05:41Z",
+      "side": 1,
+      "message": "```suggestion\n      default\u003dos.cpu_count() * 2,\n```\n\nyou\u0027ll also need to remove `multiprocessing` import, and add back `os`.",
+      "revId": "29e816b695051ea972464e2cad2e5249303e0ed3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45119665_608d2f7d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-07-28T23:08:27Z",
+      "side": 1,
+      "message": "I\u0027m surprised there was a test already for the old behavior, which implies old behavior was on purpose/expected? But this change would make hooks path behavior match deps path behavior, which I think is better.\n\ntested with infra_superproject solution.name \u003d \".\" and solution.name \u003d \"foo\"\n\nalso testing with a fresh `fetch chrome`. it\u0027s still running and taking awhile. will not merge this CL if it encounters any issues.",
+      "revId": "e29d8f65ebd8a327fe216d72beb823e1a227c7b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "Josip can you please take a look?",
       "revId": "84b471f15f480acaa1a98ba903cc7d192b707775",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffa4d91f_e75fccd9",
+        "filename": "split_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-28T20:07:29Z",
+      "side": 1,
+      "message": "nit: This is a bit redundant and, if directories is big enough, hard to read. Maybe we just print \u0027Upload failed.\u0027",
+      "revId": "84b471f15f480acaa1a98ba903cc7d192b707775",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

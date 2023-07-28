@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51cdd76d_ab5a026f",
+        "filename": "bazel.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-28T20:26:52Z",
+      "side": 1,
+      "message": "the code lgtm. Could you create tests for _find_bazel_cros and _find_next_bazel_in_path? Tests are stored in ./tests/",
+      "revId": "773c6f2e5a3df3f7bdbcfaef5419689480768f2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

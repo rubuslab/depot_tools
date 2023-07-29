@@ -34,6 +34,24 @@
       "parentUuid": "d0531c66_5cf50a15",
       "revId": "8424103c4ef3e26254343f8045fa359087cdb596",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "810b8c05_ad991ac6",
+        "filename": "tests/gclient_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-07-29T00:22:43Z",
+      "side": 0,
+      "message": "Thanks. I now wonder what happens if we have a longer chain of DEPS with first being use_relative_paths \u003d True and others to False... But, I also don\u0027t want to know  :D",
+      "parentUuid": "a1bcafa3_452f7740",
+      "revId": "8424103c4ef3e26254343f8045fa359087cdb596",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

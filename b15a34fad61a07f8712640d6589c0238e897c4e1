@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b13728c_dbeb13bb",
+        "filename": "tests/bazel_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1330845
+      },
+      "writtenOn": "2023-07-31T17:25:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac962fe4_871f8f7c",
+      "revId": "b15a34fad61a07f8712640d6589c0238e897c4e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9cecc58a_eaf0d86e",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-07-31T03:37:42Z",
       "side": 1,
       "message": "It might be interesting to check the case where depot_tools appears twice in $PATH.",
+      "revId": "b15a34fad61a07f8712640d6589c0238e897c4e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48a5a16a_75fba0b8",
+        "filename": "tests/bazel_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1330845
+      },
+      "writtenOn": "2023-07-31T17:25:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9cecc58a_eaf0d86e",
       "revId": "b15a34fad61a07f8712640d6589c0238e897c4e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

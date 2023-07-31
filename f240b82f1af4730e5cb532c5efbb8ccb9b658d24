@@ -16,6 +16,24 @@
       "message": "Is there a tracking bug / additional context on why these are being removed?",
       "revId": "f240b82f1af4730e5cb532c5efbb8ccb9b658d24",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7ac3085_6ca59a77",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2023-07-31T18:54:44Z",
+      "side": 1,
+      "message": "Added both to the CL description",
+      "parentUuid": "9cd4f2d8_aaad8ffa",
+      "revId": "f240b82f1af4730e5cb532c5efbb8ccb9b658d24",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4afda848_5d6c3ae3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000680
+      },
+      "writtenOn": "2023-08-02T21:59:09Z",
+      "side": 1,
+      "message": "Josip can you please take a look?\n\nThis is the nit that you requested in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4726781",
+      "revId": "a729e2d78dd1c05fcd42e3deb40bc9b3426a14ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

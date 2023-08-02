@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49227622_28b6ca26",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2023-08-02T05:31:00Z",
+      "side": 1,
+      "message": "Hi Vadim! Robbie is OOO this week. Do you mind take a look?",
+      "revId": "d63b2fe5843b30ccd3cd9be6b80327f08a5061bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

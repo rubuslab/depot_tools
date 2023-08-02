@@ -34,6 +34,24 @@
       "parentUuid": "96b4b51f_8cb90065",
       "revId": "12b5b99ffa1ce57339ee2ccdd77e631aae7b7621",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b074479_b910c70b",
+        "filename": "bazel.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1118346
+      },
+      "writtenOn": "2023-08-02T01:41:42Z",
+      "side": 1,
+      "message": "Please remember that depot_tools is shared among multiple projects, not only ChromeOS. For example, Chrome developers have depot_tools in their $PATH. I guess they don\u0027t use Bazel for Chrome developments, but they may use Bazel to work on other projects on the same machine. If we submit this change, it changes what they actually run by `bazel` if both Bazel and Bazelisk are installed, and may cause build breakages due to version differences.\n\nEven if you believe that Bazelisk is better than bare Bazel, it does not justify breaking workflows of random developers who don\u0027t work on ChromeOS.\n\nIf you prefer always running Bazelisk as `bazel`, you can create a symlink to Bazelisk as `bazel` somewhere in your $PATH. Then this bazel launcher script will transparently fallback to Bazelisk.\n\nIn other words, it is users who decide which to run for `bazel`, Bazel or Bazelisk. It is not us. And the bazel launcher here is designed not to interfere with users\u0027 decision.",
+      "parentUuid": "82b4d117_ee1346ef",
+      "revId": "12b5b99ffa1ce57339ee2ccdd77e631aae7b7621",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

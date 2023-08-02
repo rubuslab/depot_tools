@@ -16,6 +16,23 @@
       "message": "Josip can you please take a look?\n\nThis is the nit that you requested in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4726781",
       "revId": "a729e2d78dd1c05fcd42e3deb40bc9b3426a14ce",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8554f7f3_ef1c6d73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-02T22:57:51Z",
+      "side": 1,
+      "message": "lgtm, thanks",
+      "revId": "a729e2d78dd1c05fcd42e3deb40bc9b3426a14ce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

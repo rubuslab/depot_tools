@@ -44,6 +44,9 @@ def _find_next_bazel_in_path() -> Optional[Path]:
     if Path(path).resolve() != depot_tools:
       search_paths.append(path)
   new_path_env = os.pathsep.join(search_paths)
+  bazelisk = shutil.which("bazelisk", path=new_path_env)
+  if bazelisk:
+    return Path(bazelisk)
   bazel = shutil.which("bazel", path=new_path_env)
   if bazel:
     return Path(bazel)

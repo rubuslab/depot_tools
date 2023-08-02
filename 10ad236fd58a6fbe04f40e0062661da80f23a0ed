@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b791fbc5_19fbbd7f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000680
+      },
+      "writtenOn": "2023-08-02T21:51:30Z",
+      "side": 1,
+      "message": "Josip can you please take a look?\n\nMy motivation for writing this CL is almost breaking the script - and none of the tests failing - due to a typo from a bad local merge",
+      "revId": "10ad236fd58a6fbe04f40e0062661da80f23a0ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

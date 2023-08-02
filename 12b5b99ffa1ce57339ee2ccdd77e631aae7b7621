@@ -52,6 +52,24 @@
       "parentUuid": "82b4d117_ee1346ef",
       "revId": "12b5b99ffa1ce57339ee2ccdd77e631aae7b7621",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2039d3fc_63ede889",
+        "filename": "bazel.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1450817
+      },
+      "writtenOn": "2023-08-02T01:44:49Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "9b074479_b910c70b",
+      "revId": "12b5b99ffa1ce57339ee2ccdd77e631aae7b7621",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

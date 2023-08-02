@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96b4b51f_8cb90065",
+        "filename": "bazel.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1118346
+      },
+      "writtenOn": "2023-08-02T01:00:24Z",
+      "side": 1,
+      "message": "This function is run only when `_find_bazel_cros` cannot find the bazel wrapper in chromite. I\u0027m afraid we don\u0027t want to fallback to bazelisk in this case.",
+      "revId": "12b5b99ffa1ce57339ee2ccdd77e631aae7b7621",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

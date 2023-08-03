@@ -218,7 +218,8 @@ def build_context(argv, tool):
     print('WARNING: Using RBE_instance=%s\n' %
           os.environ.get('RBE_instance', ''))
 
-  set_racing_defaults()
+  if int(os.environ.get('RBE_remote_disabled', '0')) != 1:
+    set_racing_defaults()
 
   # TODO(b/292523514) remove this once a fix is landed in reproxy
   remove_mdproxy_from_path()

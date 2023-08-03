@@ -52,6 +52,24 @@
       "parentUuid": "5b058185_a5f7eab1",
       "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f60ef256_24f6af9c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2023-08-03T15:36:19Z",
+      "side": 1,
+      "message": "Can you try relplace `echo \"./depot_tools\" \u003e\u003e $GITHUB_PATH` with `echo \"$(pwd)/depot_tools\" \u003e\u003e $GITHUB_PATH` or something like that?\n\nContext: My understanding is we are hitting a limitation from Go os/exec which effectively rejects all relative path in PATH: https://github.com/golang/go/issues/43724.",
+      "parentUuid": "7006fd76_02027a8b",
+      "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

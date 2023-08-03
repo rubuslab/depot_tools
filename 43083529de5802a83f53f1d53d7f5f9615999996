@@ -105,6 +105,24 @@
       "message": "FYI, this CL seems to cause vpython to fail, at least on my workstation. When I run `repo sync` or `gclient sync`, I get the following error message:\n\n    AssertionError: Filename /usr/local/google/home/gredelston/.local/lib/python3.8/site-packages/setuptools/_distutils does not start with any of these prefixes: [\u0027/usr/local/google/home/gredelston/.vpython-root/store/cpython-n8umfpv0s1ufm2q1s4irhb59jc/contents\u0027, \u0027/usr/local/google/home/gredelston/.vpython-root/store/cpython-n8umfpv0s1ufm2q1s4i\nrhb59jc/contents\u0027]\n\nWhen I roll back my `depot_tools` checkout to the commit before this (`70d971a1359e7c596fa0aef0371ad76b89b36e4a`), the issue goes away. (Except `gclient sync` starts by running `update_depot_tools`, which clobbers my checked-out commit.)\n\nI\u0027m not sure how universal this problem is, nor why, but it is a regression.\n\nSee luci-users-chat thread: https://chat.google.com/room/AAAAXGgrwSo/NR1TQIfIj-E",
       "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7afb42b4_82631848",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1326157
+      },
+      "writtenOn": "2023-08-03T23:17:12Z",
+      "side": 1,
+      "message": "Based on the other comment thread here, it might be helpful to know that my $PATH does include depot_tools:\n\n    λ echo $PATH\n    /usr/local/google/home/gredelston/.cargo/bin:/usr/local/google/home/gredelston/depot_tools:/usr/local/google/home/gredelston/.fzf/bin:/usr/local/google/home/gredelston/.local/bin:/usr/lib/google-golang/bin:/usr/local/buildtools/java/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/usr/local/google/home/gredelston/scripts:/usr/local/google/home/gredelston/bin:/usr/local/google/home/gredelston/.local/bin:/usr/local/go/bin",
+      "parentUuid": "c6c94899_d23d5189",
+      "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

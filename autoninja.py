@@ -62,12 +62,10 @@ def main(args):
             file=sys.stderr)
       print(file=sys.stderr)
 
-  # Strip -o/--offline so ninja doesn't see them.
-  input_args = [arg for arg in input_args if arg not in ('-o', '--offline')]
-
   use_goma = False
   use_remoteexec = False
   use_rbe = False
+  use_siso = False
 
   # Attempt to auto-detect remote build acceleration. We support gn-based
   # builds, where we look for args.gn in the build tree, and cmake-based builds
@@ -94,6 +92,16 @@ def main(args):
         if re.search(r'(^|\s)(use_rbe)\s*=\s*true($|\s)', line_without_comment):
           use_rbe = True
           continue
+        if re.search(r'(^|\s)(use_siso)\s*=\s*true($|\s)',
+                     line_without_comment):
+          use_siso = True
+          continue
+
+    if use_siso:
+      siso = 'autosiso' if use_remoteexec else 'siso'
+      if sys.platform.startswith('win'):
+        siso += '.bat'
+      return ' '.join([siso] + input_args[1:])
 
   else:
     for relative_path in [
@@ -107,6 +115,9 @@ def main(args):
             if re.match(r'^\s*command\s*=\s*\S+gomacc', line):
               use_goma = True
               break
+
+  # Strip -o/--offline so ninja doesn't see them.
+  input_args = [arg for arg in input_args if arg not in ('-o', '--offline')]
 
   # If GOMA_DISABLED is set to "true", "t", "yes", "y", or "1"
   # (case-insensitive) then gomacc will use the local compiler instead of doing

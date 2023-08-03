@@ -16,6 +16,24 @@
       "message": "We use depot_tools `roll-dep` in our GitHub workflows and are seeing failures since this change:\n\n```\nfatal error: failed to build venv: failed to build package : cipkg.Derivation{Name:\"virtualenv\", Platform:\"\", Builder:\"builtin:cipdExport\", Args:[]string{\"infra/3pp/tools/virtualenv  version:2@16.7.12.chromium.7\\n\"}, Env:[]string(nil), Inputs:[]string(nil)}: failed to build derivation: failed to export packages: exec: \"cipd\": cannot run executable found relative to current directory\n```",
       "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b058185_a5f7eab1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2023-08-03T14:56:13Z",
+      "side": 1,
+      "message": "Do you mind provide more information? Is depot_tools added to the PATH?\n\n\u003e 9. vpython now requires the cipd binary to be present in PATH, which is true already when using Swarming or depot_tools.\n\nSeems like the error is caused by not able to find `cipd` command in the PATH.",
+      "parentUuid": "9380f9f9_5525226e",
+      "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

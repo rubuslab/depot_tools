@@ -34,6 +34,24 @@
       "parentUuid": "9380f9f9_5525226e",
       "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7006fd76_02027a8b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1313890
+      },
+      "writtenOn": "2023-08-03T15:15:08Z",
+      "side": 1,
+      "message": "Yes, depot_tools is added to the PATH here: https://github.com/KhronosGroup/SPIRV-Tools/blob/1d14d84f291805ce845a0e5b9775e5e0ab11995b/.github/workflows/autoroll.yml#L22-L26\n\nThere\u0027s been no recent changes to that script and reverting this commit on a fork fixes the issue: https://github.com/sudonatalie/SPIRV-Tools/blob/3c460ea132497a2e91391c339ac195238c9e1bba/.github/workflows/autoroll.yml#L22-L32",
+      "parentUuid": "5b058185_a5f7eab1",
+      "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

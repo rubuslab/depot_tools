@@ -7,6 +7,10 @@ function cipd_bin_setup {
     local ENSURE="$MYPATH/cipd_manifest.txt"
     local ROOT="$MYPATH/.cipd_bin"
 
+    if cmp -s "$ENSURE" "$ROOT/cipd_manifest.txt"; then
+      return
+    fi
+
     UNAME=`uname -s | tr '[:upper:]' '[:lower:]'`
     case $UNAME in
       cygwin*)
@@ -18,5 +22,6 @@ function cipd_bin_setup {
     "$MYPATH/cipd" ensure \
         -log-level warning \
         -ensure-file "$ENSURE" \
-        -root "$ROOT"
+        -root "$ROOT" && \
+    cp "$ENSURE" "$ROOT/cipd_manifest.txt"
 }

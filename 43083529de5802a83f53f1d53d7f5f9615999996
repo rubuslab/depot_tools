@@ -88,6 +88,23 @@
       "parentUuid": "f60ef256_24f6af9c",
       "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6c94899_d23d5189",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1326157
+      },
+      "writtenOn": "2023-08-03T23:13:17Z",
+      "side": 1,
+      "message": "FYI, this CL seems to cause vpython to fail, at least on my workstation. When I run `repo sync` or `gclient sync`, I get the following error message:\n\n    AssertionError: Filename /usr/local/google/home/gredelston/.local/lib/python3.8/site-packages/setuptools/_distutils does not start with any of these prefixes: [\u0027/usr/local/google/home/gredelston/.vpython-root/store/cpython-n8umfpv0s1ufm2q1s4irhb59jc/contents\u0027, \u0027/usr/local/google/home/gredelston/.vpython-root/store/cpython-n8umfpv0s1ufm2q1s4i\nrhb59jc/contents\u0027]\n\nWhen I roll back my `depot_tools` checkout to the commit before this (`70d971a1359e7c596fa0aef0371ad76b89b36e4a`), the issue goes away. (Except `gclient sync` starts by running `update_depot_tools`, which clobbers my checked-out commit.)\n\nI\u0027m not sure how universal this problem is, nor why, but it is a regression.\n\nSee luci-users-chat thread: https://chat.google.com/room/AAAAXGgrwSo/NR1TQIfIj-E",
+      "revId": "43083529de5802a83f53f1d53d7f5f9615999996",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

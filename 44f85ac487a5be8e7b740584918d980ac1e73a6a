@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d02b111e_0b20c5f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2023-08-04T06:57:00Z",
+      "side": 1,
+      "message": "Hi Robbie, this is a test CL for measuring the possible overhead reduction if we avoid running `cipd ensure` in happy path.",
+      "revId": "44f85ac487a5be8e7b740584918d980ac1e73a6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -85,6 +85,93 @@ class SplitClTest(unittest.TestCase):
     self.assertEqual(info3.files, [("M", "baz/owner3/e.txt")])
     self.assertEqual(info3.owners_directories, ["baz/owner3"])
 
+  class UploadClTester:
+    """Sets up test environment for testing split_cl.UploadCl()"""
+    def __init__(self, test):
+      self.mock_git_branches = self.StartPatcher("git_common.branches", test)
+      self.mock_git_branches.return_value = []
+      self.mock_git_current_branch = self.StartPatcher(
+          "git_common.current_branch", test)
+      self.mock_git_current_branch.return_value = "branch_to_upload"
+      self.mock_git_run = self.StartPatcher("git_common.run", test)
+      self.mock_temporary_file = self.StartPatcher(
+          "gclient_utils.temporary_file", test)
+      self.mock_temporary_file().__enter__.return_value = "temporary_file0"
+      self.mock_file_writer = self.StartPatcher("gclient_utils.FileWrite", test)
+
+    def StartPatcher(self, target, test):
+      patcher = mock.patch(target)
+      test.addCleanup(patcher.stop)
+      return patcher.start()
+
+    def DoUploadCl(self, directories, files, reviewers, cmd_upload):
+      split_cl.UploadCl("branch_to_upload", "upstream_branch",
+                        directories, files, "description", None, reviewers,
+                        mock.Mock(), cmd_upload, True, True, "topic", "/")
+
+  def testUploadCl(self):
+    """Tests commands run by UploadCl."""
+
+    upload_cl_tester = self.UploadClTester(self)
+
+    directories = ["dir0"]
+    files = [("M", "bar/a.cc"), ("D", "foo/b.cc")]
+    reviewers = {"reviewer1@gmail.com", "reviewer2@gmail.com"}
+    mock_cmd_upload = mock.Mock()
+    upload_cl_tester.DoUploadCl(directories, files, reviewers, mock_cmd_upload)
+
+    mock_git_run = upload_cl_tester.mock_git_run
+    self.assertEqual(mock_git_run.call_count, 4)
+    mock_git_run.assert_has_calls([
+        mock.call("checkout", "-t", "upstream_branch", "-b",
+                  "branch_to_upload_dir0_split"),
+        mock.call("rm", "/foo/b.cc"),
+        mock.call("checkout", "branch_to_upload", "--", "/bar/a.cc"),
+        mock.call("commit", "-F", "temporary_file0")
+    ])
+
+    expected_upload_args = [
+        "-f", "-r", "reviewer1@gmail.com,reviewer2@gmail.com", "--cq-dry-run",
+        "--send-mail", "--enable-auto-submit", "--topic=topic"
+    ]
+    mock_cmd_upload.assert_called_once_with(expected_upload_args)
+
+  def testDontUploadClIfBranchAlreadyExists(self):
+    """Tests that a CL is not uploaded if split branch already exists"""
+
+    upload_cl_tester = self.UploadClTester(self)
+    upload_cl_tester.mock_git_branches.return_value = [
+        "branch0", "branch_to_upload_dir0_split"
+    ]
+
+    directories = ["dir0"]
+    files = [("M", "bar/a.cc"), ("D", "foo/b.cc")]
+    reviewers = {"reviewer1@gmail.com"}
+    mock_cmd_upload = mock.Mock()
+    upload_cl_tester.DoUploadCl(directories, files, reviewers, mock_cmd_upload)
+
+    upload_cl_tester.mock_git_run.assert_not_called()
+    mock_cmd_upload.assert_not_called()
+
+  @mock.patch("gclient_utils.AskForData")
+  def testCheckDescriptionBugLink(self, mock_ask_for_data):
+    # Description contains bug link.
+    self.assertTrue(split_cl.CheckDescriptionBugLink("Bug:1234"))
+    self.assertEqual(mock_ask_for_data.call_count, 0)
+
+    # Description does not contain bug link. User does not enter 'y' when
+    # prompted.
+    mock_ask_for_data.reset_mock()
+    mock_ask_for_data.return_value = "m"
+    self.assertFalse(split_cl.CheckDescriptionBugLink("Description"))
+    self.assertEqual(mock_ask_for_data.call_count, 1)
+
+    # Description does not contain bug link. User enters 'y' when prompted.
+    mock_ask_for_data.reset_mock()
+    mock_ask_for_data.return_value = "y"
+    self.assertTrue(split_cl.CheckDescriptionBugLink("Description"))
+    self.assertEqual(mock_ask_for_data.call_count, 1)
+
 
 if __name__ == '__main__':
   unittest.main()

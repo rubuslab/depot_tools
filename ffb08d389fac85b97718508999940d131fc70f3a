@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "df6abbb9_f324b171",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-08-04T09:14:41Z",
+      "side": 1,
+      "message": "As written in the description, this CL shows the concept.\n\n\u003e To make this work a dummy use_siso gn arg needs to be added to one of\nthe gn files in Chromium\u0027s build directory.\n\nI agree with handling `enable_precompiled_headers` by `use_siso`.",
+      "parentUuid": "a88331b3_1ed32264",
+      "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6dd105b4_4abd931c",
         "filename": "autoninja.py",
         "patchSetId": 3
@@ -48,6 +66,29 @@
       "writtenOn": "2023-08-04T08:57:00Z",
       "side": 1,
       "message": "`autosiso` is equivalent to `siso ninja` not `siso`.",
+      "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0c75bc5_8ae15bd6",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-08-04T09:14:41Z",
+      "side": 1,
+      "message": "`autosiso` itself can be removed by directly calling `siso`. \nHowever, it requires handling reproxy using `reclient_helper.build_context()` like\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:autosiso.py;l\u003d53;drc\u003dce3e8194651709d8cb6a71d9441cad37ef918934",
+      "range": {
+        "startLine": 105,
+        "startChar": 15,
+        "endLine": 105,
+        "endChar": 23
+      },
       "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

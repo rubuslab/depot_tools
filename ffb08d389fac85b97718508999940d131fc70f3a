@@ -71,6 +71,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a3a7adf_d7e29ed0",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-04T17:01:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "158751bf_899b558e",
+      "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6dd105b4_4abd931c",
@@ -149,6 +167,24 @@
       "side": 1,
       "message": "I don\u0027t understand this comment. What is needed here?",
       "parentUuid": "6dd105b4_4abd931c",
+      "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "816bef83_8765c82b",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-04T17:01:30Z",
+      "side": 1,
+      "message": "Oh wait, I understand. Fixed.",
+      "parentUuid": "32fdbb50_1063b3b0",
       "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

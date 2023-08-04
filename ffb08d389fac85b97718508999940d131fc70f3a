@@ -16,6 +16,40 @@
       "message": "WDYT, of the concept and the execution?",
       "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a88331b3_1ed32264",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-08-04T08:57:00Z",
+      "side": 1,
+      "message": "use_siso is not valid args for gn yet, so if it has `use_siso\u003dtrue`, `gn gen` will fail\n\n```\n % gn gen out/siso\nWARNING at build arg file (use \"gn args \u003cout_dir\u003e\" to edit):2:12: Build argument has no effect.\nuse_siso \u003d true\n           ^---\nDid you mean \"use_gio\"?\n```\n\nthat said, we might want to introduce `use_siso` as siso would require\n`enable_precompiled_headers\u003dfalse` (which is false when use_goma/use_remoteexec\u003dtrue).\n\nor can we make `enable_precompiled_headers\u003dfalse` by default\n(i.e. user need to set `enable_precompiled_hedaers\u003dtrue` if they want) ?",
+      "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dd105b4_4abd931c",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-08-04T08:57:00Z",
+      "side": 1,
+      "message": "`autosiso` is equivalent to `siso ninja` not `siso`.",
+      "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

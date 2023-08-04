@@ -16,6 +16,24 @@
       "message": "need to use ^^ ?",
       "revId": "57552131edaad59cd0c8a893ccbf24c58d431091",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "193cb276_0086edc7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-08-04T06:51:52Z",
+      "side": 1,
+      "message": "Yes.\nUnlike on Linux, it requires ^^ on Windows.\n\nSee the request of http://b/289309062. \n\n\u003e I can normally use something like `ninja -C out/Debug ../../foo.cc^` (or, on Windows, ^^ instead of ^) to compile a single source file and its dependencies.",
+      "parentUuid": "708265e2_65b37383",
+      "revId": "57552131edaad59cd0c8a893ccbf24c58d431091",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

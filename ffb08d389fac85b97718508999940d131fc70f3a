@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "158751bf_899b558e",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-04T16:26:47Z",
+      "side": 1,
+      "message": "See crrev.com/c/4753433 to implement this. We would want to land it first.",
+      "parentUuid": "df6abbb9_f324b171",
+      "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6dd105b4_4abd931c",
         "filename": "autoninja.py",
         "patchSetId": 3
@@ -89,6 +107,48 @@
         "endLine": 105,
         "endChar": 23
       },
+      "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3322c4cc_0abe281f",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-04T16:26:47Z",
+      "side": 1,
+      "message": "Removing autosiso would be preferable. I propose that we land this and train developers to invoke autoninja, and then integrate autosiso into autoninja, and then delete autosiso*",
+      "parentUuid": "c0c75bc5_8ae15bd6",
+      "range": {
+        "startLine": 105,
+        "startChar": 15,
+        "endLine": 105,
+        "endChar": 23
+      },
+      "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32fdbb50_1063b3b0",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-04T16:26:47Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment. What is needed here?",
+      "parentUuid": "6dd105b4_4abd931c",
       "revId": "ffb08d389fac85b97718508999940d131fc70f3a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

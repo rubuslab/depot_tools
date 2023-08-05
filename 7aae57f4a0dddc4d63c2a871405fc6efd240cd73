@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e09aaee_f0c616c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-08-05T13:34:35Z",
+      "side": 1,
+      "message": "I think it\u0027s a good idea to make this more visible, even though it\u0027s supposed to become much faster with the next reclient version. It\u0027s still helpful to see the impact (positive or negative) of future changes or different reproxy flags, such as enabling / disabling the deps cache.",
+      "revId": "7aae57f4a0dddc4d63c2a871405fc6efd240cd73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

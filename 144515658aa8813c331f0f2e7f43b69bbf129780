@@ -16,6 +16,23 @@
       "message": "Thank you so much Bruce. This looks great. The behavior is exactly how I think it should be done.",
       "revId": "144515658aa8813c331f0f2e7f43b69bbf129780",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4844c91b_b8d33573",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-08-07T02:45:59Z",
+      "side": 1,
+      "message": "I tested this on my Linux workstation for the following cases, all of which work fine.\n\n- Ninja+Goma: use_goma\u003dtrue\n- Ninja+Reclient: use_remoteexec\u003dtrue\n- Siso+Reclient: use_siso\u003dtrue, use_remoteexec\u003dtrue\n- Siso: use_siso\u003dtrue",
+      "revId": "144515658aa8813c331f0f2e7f43b69bbf129780",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

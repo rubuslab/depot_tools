@@ -33,6 +33,29 @@
       "message": "Reassigning to the current trooper.",
       "revId": "f71e312c354e2c8c8528a250b9754e5f2b3d9eab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab77b462_93f7d6fa",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-07T21:47:29Z",
+      "side": 1,
+      "message": "could you add a quick test just to cover this behavior?\ncan live right next to this one: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4699021 \n(or can just add on to that test)",
+      "range": {
+        "startLine": 411,
+        "startChar": 4,
+        "endLine": 415,
+        "endChar": 27
+      },
+      "revId": "f71e312c354e2c8c8528a250b9754e5f2b3d9eab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

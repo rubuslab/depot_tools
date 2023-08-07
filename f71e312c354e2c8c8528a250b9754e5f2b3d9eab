@@ -16,6 +16,23 @@
       "message": "Joanna, Aravind: please review. This probably broke in a654ff36bb3dba91a3d4f1ac8a2c6e2055e1f2df .",
       "revId": "f71e312c354e2c8c8528a250b9754e5f2b3d9eab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "932f528b_1c6f1e73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-07T21:46:27Z",
+      "side": 1,
+      "message": "Reassigning to the current trooper.",
+      "revId": "f71e312c354e2c8c8528a250b9754e5f2b3d9eab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

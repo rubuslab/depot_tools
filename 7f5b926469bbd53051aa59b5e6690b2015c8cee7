@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cb542cc_09a41d38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1103654
+      },
+      "writtenOn": "2023-08-08T19:28:53Z",
+      "side": 1,
+      "message": "Sorry, deleting this one in favor of: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4762087\n\n(I was editing through codesearch/gerrit and it didn\u0027t let me update.)",
+      "revId": "7f5b926469bbd53051aa59b5e6690b2015c8cee7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

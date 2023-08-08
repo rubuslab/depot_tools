@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f76e5c21_6697d3b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-08-08T02:39:10Z",
+      "side": 1,
+      "message": "I removed \"now\". Thank you for the reference.",
+      "parentUuid": "c3832dda_8c40596e",
+      "revId": "da04568e382baf57c0ff4015ffcdf4a4ce93626b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "03bce089_a28607d4",
@@ -67,6 +85,24 @@
       "writtenOn": "2023-08-08T02:33:32Z",
       "side": 1,
       "message": "no need to mention that it\u0027s only for googlers now?\n\nbtw, need to fix find_reclient_cfg to check `rbe_cfg_dir` settings for \nhttps://chromium-review.googlesource.com/c/chromium/src/+/4756110/4/docs/linux/build_instructions.md#181\n\n?",
+      "revId": "da04568e382baf57c0ff4015ffcdf4a4ce93626b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "946ee687_1744994d",
+        "filename": "reclient_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-08-08T02:39:10Z",
+      "side": 1,
+      "message": "I feel it\u0027s better to mention Googlers only in `find_reclient_cfg` or `autoninja`.",
+      "parentUuid": "03bce089_a28607d4",
       "revId": "da04568e382baf57c0ff4015ffcdf4a4ce93626b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

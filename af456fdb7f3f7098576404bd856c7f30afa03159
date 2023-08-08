@@ -22,6 +22,30 @@
       },
       "revId": "af456fdb7f3f7098576404bd856c7f30afa03159",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f971442c_f1fcc17e",
+        "filename": "gclient.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 950,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-08T22:30:12Z",
+      "side": 1,
+      "message": "\u003e what was the reason for `maxsplit\u003d```, and commit[1:]?\nThe `maxsplit` part was added because submodule paths can contain spaces iirc. `git submodule status` adds a `+/-` in the front of each line to show if the submodule is initialized. `commit[1:]` was added to trim that.\n\nI missed the `git describe` part. I should update the parsing logic here.",
+      "parentUuid": "69a50b98_8e9dbf87",
+      "range": {
+        "startLine": 949,
+        "startChar": 6,
+        "endLine": 950,
+        "endChar": 40
+      },
+      "revId": "af456fdb7f3f7098576404bd856c7f30afa03159",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

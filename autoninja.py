@@ -97,6 +97,15 @@ def main(args):
           use_siso = True
           continue
 
+    if use_remoteexec:
+      gcloud_exists = False
+      gcloud = 'gcloud.cmd' if sys.platform.startswith('win') else 'gcloud'
+      for dir_name in os.environ['PATH'].split(';'):
+        if os.path.exists(os.path.join(dir_name, gcloud)):
+          gcloud_exists = True
+      if not gcloud_exists:
+        return ('echo gcloud not in the path. Install the gcloud CLI tools')
+
     if use_siso:
       ninja_marker = os.path.join(output_dir, '.ninja_deps')
       if os.path.exists(ninja_marker):

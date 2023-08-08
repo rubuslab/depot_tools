@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80f35462_797f56b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1103379
+      },
+      "writtenOn": "2023-08-08T22:37:06Z",
+      "side": 1,
+      "message": "Yay for tech debt reduction!",
+      "revId": "fdf3151e52a92c275db777be7e3703159922a14c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "Follow\nhttps://chromium.googlesource.com/chromium/src/+/main/docs/contributing.md#Uploading-a-change-for-review:~:text\u003dLong%20lines%20should%20be%20wrapped%20to%2072%20columns%20for%20easier%20log%20message%0Aviewing%20in%20terminals.",
       "revId": "da04568e382baf57c0ff4015ffcdf4a4ce93626b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27651563_61ff3f8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-08-08T02:27:43Z",
+      "side": 1,
+      "message": "How strict is it? The dot isn\u0027t acceptable in this case?",
+      "parentUuid": "56b0ddca_aa0ed984",
+      "revId": "da04568e382baf57c0ff4015ffcdf4a4ce93626b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

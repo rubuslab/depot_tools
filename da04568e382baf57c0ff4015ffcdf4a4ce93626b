@@ -34,6 +34,24 @@
       "parentUuid": "56b0ddca_aa0ed984",
       "revId": "da04568e382baf57c0ff4015ffcdf4a4ce93626b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3832dda_8c40596e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-08-08T02:31:20Z",
+      "side": 1,
+      "message": "I feel dot is included in the last word in this case as it is shown like https://screenshot.googleplex.com/AnNJ4hsBXnWa5Gn\nAlso I interpret the \u0027should\u0027 in the doc like https://datatracker.ietf.org/doc/html/rfc2119#section-3",
+      "parentUuid": "27651563_61ff3f8d",
+      "revId": "da04568e382baf57c0ff4015ffcdf4a4ce93626b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

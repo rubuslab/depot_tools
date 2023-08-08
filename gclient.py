@@ -941,12 +941,16 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       return {}
 
     # Get submodule commit hashes
+    # `git submodule status` returns submodules in the format:
+    # `+/-<commit_hash> <path> (<ref>)`
+    status_pattern = re.compile(r'[+-]?([0-9a-f]{5,40}) (.+)( \(.*\))?')
     result = subprocess2.check_output(['git', 'submodule', 'status'],
                                       cwd=cwd).decode('utf-8')
     commit_hashes = {}
     for record in result.splitlines():
-      commit, module = record.split(maxsplit=1)
-      commit_hashes[module] = commit[1:]
+      # m[0]: commit_hash | m[1]: path
+      m = status_pattern.findall(record.strip())[0]
+      commit_hashes[m[1]] = m[0]
 
     # Get .gitmodules fields
     gitmodules_entries = subprocess2.check_output(

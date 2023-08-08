@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69a50b98_8e9dbf87",
+        "filename": "gclient.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 950,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-08-08T21:47:04Z",
+      "side": 1,
+      "message": "what was the reason for `maxsplit\u003d```, and commit[1:]?\n\nhttps://git-scm.com/docs/git-submodule\n```\nThis will print the SHA-1 ..., along with the submodule path and the output of git describe for the SHA-1\n```\n\nIf `git describe` produces an empty string for a given SHA-1, which infra/luci-go is the case at least, this can work. Otherwise, this wouldn\u0027t work. What\u0027s the intent of `maxsplit\u003d1`? If the intent was to extract the path, then I think a different parsing function should be used.\n\ncrbug.com/1471241 reports an issue due to this issue. The output of `git submitmodule status` is like below.\n```\n5885d3c24833ad72845a52a1b913a2b8bc651b56 build (heads/main-2124-g5885d3c24)\n```\n \nIt results in `commit_hashes[\"build (heads/main-21214-abc)\"] \u003d \"...\"` at L950, and causes the exception at L981, the submodule name, from the output of `git config -l` does not contain the description.",
+      "range": {
+        "startLine": 949,
+        "startChar": 6,
+        "endLine": 950,
+        "endChar": 40
+      },
+      "revId": "af456fdb7f3f7098576404bd856c7f30afa03159",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

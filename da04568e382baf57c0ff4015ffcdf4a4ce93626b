@@ -52,6 +52,23 @@
       "parentUuid": "27651563_61ff3f8d",
       "revId": "da04568e382baf57c0ff4015ffcdf4a4ce93626b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03bce089_a28607d4",
+        "filename": "reclient_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-08-08T02:33:32Z",
+      "side": 1,
+      "message": "no need to mention that it\u0027s only for googlers now?\n\nbtw, need to fix find_reclient_cfg to check `rbe_cfg_dir` settings for \nhttps://chromium-review.googlesource.com/c/chromium/src/+/4756110/4/docs/linux/build_instructions.md#181\n\n?",
+      "revId": "da04568e382baf57c0ff4015ffcdf4a4ce93626b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

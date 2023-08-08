@@ -13,6 +13,7 @@ can cause slow goma builds or swap-storms on unaccelerated builds.
 
 import multiprocessing
 import os
+import pathlib
 import platform
 import re
 import subprocess
@@ -96,6 +97,22 @@ def main(args):
                      line_without_comment):
           use_siso = True
           continue
+
+    # Assume the src directory is two levels above the args.gn file.
+    src_dir = pathlib.Path(output_dir).absolute().parent.parent
+    if use_remoteexec:
+      if not src_dir.joinpath(
+          pathlib.Path('buildtools/reclient_cfgs/reproxy.cfg')).exists():
+        return (
+            'echo No reproxy.cfg found. Add "download_remoteexec_cfg": True, '
+            'to customvars in ../.gclient and run gclient sync')
+      gcloud_exists = False
+      gcloud = 'gcloud.cmd' if sys.platform.startswith('win') else 'gcloud'
+      for dir_name in os.environ['PATH'].split(';'):
+        if pathlib.Path(dir_name).joinpath(gcloud).exists():
+          gcloud_exists = True
+      if not gcloud_exists:
+        return ('echo gcloud not in the path. Install the gcloud CLI tools')
 
     if use_siso:
       ninja_marker = os.path.join(output_dir, '.ninja_deps')

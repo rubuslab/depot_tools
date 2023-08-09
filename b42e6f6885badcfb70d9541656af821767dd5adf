@@ -51,6 +51,24 @@
       "parentUuid": "6f5be761_ff817b1e",
       "revId": "b42e6f6885badcfb70d9541656af821767dd5adf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88c63e33_1581fa43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-09T17:51:24Z",
+      "side": 1,
+      "message": "The linked bug is closed as fixed and seems unrelated, and I can\u0027t reproduce any problems. I think this needs more explanation of what this actually fixes.\nI thought maybe that building with/without -o would force a rebuild, but that doesn\u0027t seem to happen. -o just stubbornly works, even without this change.",
+      "parentUuid": "67f7fa2e_27c8ff24",
+      "revId": "b42e6f6885badcfb70d9541656af821767dd5adf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

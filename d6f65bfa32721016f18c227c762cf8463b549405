@@ -52,6 +52,24 @@
       "parentUuid": "19303715_cc7cc80b",
       "revId": "d6f65bfa32721016f18c227c762cf8463b549405",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54530687_8c645caa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1103379
+      },
+      "writtenOn": "2023-08-09T00:34:31Z",
+      "side": 1,
+      "message": "\u003e I don\u0027t know how that binary is deployed, but I could at least imagine that someone updates their depot_tools faster than getting that binary push, given how recent it is.\n\nInternal to Google, everyone is on the new version (updates happen within hours and this one happened in the past).\n\n\u003e And independent of the internal git binary, this seems like something that can save someone on a non-managed mac a bunch of time.\n\nIf we know of a source of git binaries that people are likely to use that would cause them to run into this, I\u0027d be in favor of adding this back, but I\u0027m not aware of any. The main places I\u0027d expect people to get git is either using the Apple-supplied copy or using a packaging system such as homebrew.\n\nIn other words, I\u0027m in favor of moving forward with this and just keeping in mind that we can roll back if we need to. Little bits of complexity add up, and the complexity reduction is appreciated.",
+      "parentUuid": "cf4deafb_5fd0d3e4",
+      "revId": "d6f65bfa32721016f18c227c762cf8463b549405",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

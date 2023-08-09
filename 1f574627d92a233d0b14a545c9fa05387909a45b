@@ -88,6 +88,24 @@
       "parentUuid": "a14efadc_3e43ba92",
       "revId": "1f574627d92a233d0b14a545c9fa05387909a45b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5912426d_5494b045",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-09T22:46:12Z",
+      "side": 1,
+      "message": "git submodule status is problematic when submodules are initialized. Running git status will tell where submodules are now pointing to (`+{HASH} name)`) and not where they should point. If we rely on that, gclient won\u0027t know how to update dependencies.\n\nI think we\u0027ll need to rely on ls-tree + diff-index to get staged changes. Or we just commit staged changes during bot_update.",
+      "parentUuid": "a14efadc_3e43ba92",
+      "revId": "1f574627d92a233d0b14a545c9fa05387909a45b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

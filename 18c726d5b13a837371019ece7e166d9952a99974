@@ -16,6 +16,24 @@
       "message": "Hi, this broke gclient sync on Ubuntu jammy.\n\nAccording to the git repo, the --format option was introduced in https://github.com/git/git/commit/455923e0a152420054ad74f1af36336d5fa7be75. \n\nthe \"git tag --contains 455923e0a152420054ad74f1af36336d5fa7be75\" showed that this commit is started to be part the git releases since v2.36.0.\n\nAccording to https://packages.ubuntu.com/search?keywords\u003dgit, focal LTS has git 2.25 and yammi has git 2.34. It basically breaks usage of gclient on stable versions of Ubuntu (maybe other distros as well) unless one has git installed outside the Ubuntu\u0027s packaging system (or they use somehting newer than LTS versions)",
       "revId": "18c726d5b13a837371019ece7e166d9952a99974",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac540f88_f689561f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-09T16:11:46Z",
+      "side": 1,
+      "message": "My bad, I will fix this right away.",
+      "parentUuid": "5afae496_edcd7dbe",
+      "revId": "18c726d5b13a837371019ece7e166d9952a99974",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

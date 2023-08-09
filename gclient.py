@@ -884,7 +884,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
     # If dependencies are configured within git submodules, add them to DEPS.
     if self.git_dependencies_state in (gclient_eval.SUBMODULES,
                                        gclient_eval.SYNC):
-      deps.update(self.ParseGitSubmodules())
+      gitsubmodules = self.ParseGitSubmodules()
+      if self.git_dependencies_state == gclient_eval.SYNC:
+        for sub in gitsubmodules:
+          if sub not in deps:
+            deps[sub] = gitsubmodules[sub]
+      elif self.git_dependencies_state == gclient_eval.SUBMODULES:
+        deps.update(gitsubmodules)
 
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)

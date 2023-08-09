@@ -1432,11 +1432,11 @@ class GclientTest(trial_dir.TestCase):
     }]
     write('.gclient', 'solutions = %s' % repr(solutions))
 
-    ls_tree = """160000 be8c5114d606692dc783b60cf256690b62fbad17 foo/bar
-    123456 daf2de9caad4a70e6bb1047a6b50c412066f68b1 README.txt
-    160000 3ad3b564f8ae456f286446d091709f5a09fa4a93 aaaaaa
-    160000 956df937508b65b5e72a4cf02696255be3631b78 a.a.a/a
-    160000 b9f77763f0fab67eeeb6371492166567a8b7a3d2 a_b/c"""
+    ls_tree = """160000 commit be8c5114d606692dc783b60cf256690b62fbad17\tfoo/bar
+    100644 blob daf2de9caad4a70e6bb1047a6b50c412066f68b1\tREADME.txt
+    160000 commit 3ad3b564f8ae456f286446d091709f5a09fa4a93\taaaaaa
+    160000 commit 956df937508b65b5e72a4cf02696255be3631b78\ta.a.a/a
+    160000 commit b9f77763f0fab67eeeb6371492166567a8b7a3d2\ta_b/c"""
 
     git_config = """submodule.foo/bar.path=foo/bar
     submodule.foo/bar.url=http://example.com/foo/bar
@@ -1500,11 +1500,11 @@ class GclientTest(trial_dir.TestCase):
     }]
     write('.gclient', 'solutions = %s' % repr(solutions))
 
-    ls_tree = """160000 be8c5114d606692dc783b60cf256690b62fbad17 foo/bar
-    123456 daf2de9caad4a70e6bb1047a6b50c412066f68b1 README.txt
-    160000 3ad3b564f8ae456f286446d091709f5a09fa4a93 aaaaaa
-    160000 956df937508b65b5e72a4cf02696255be3631b78 a.a.a/a
-    160000 b9f77763f0fab67eeeb6371492166567a8b7a3d2 a_b/c"""
+    ls_tree = """160000 commit be8c5114d606692dc783b60cf256690b62fbad17\tfoo/bar
+    100644 blob daf2de9caad4a70e6bb1047a6b50c412066f68b1\tREADME.txt
+    160000 commit 3ad3b564f8ae456f286446d091709f5a09fa4a93\taaaaaa
+    160000 commit 956df937508b65b5e72a4cf02696255be3631b78\ta.a.a/a
+    160000 commit b9f77763f0fab67eeeb6371492166567a8b7a3d2\ta_b/c"""
 
     git_config = """submodule.foo/bar.path=foo/bar
     submodule.foo/bar.url=http://example.com/foo/bar

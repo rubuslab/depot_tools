@@ -16,6 +16,23 @@
       "message": "Sorry, still testing.",
       "revId": "b42e6f6885badcfb70d9541656af821767dd5adf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f5be761_ff817b1e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-09T17:37:53Z",
+      "side": 1,
+      "message": "Can you explain what this actually does? I can\u0027t tell through inspection, and in my testing I found that -o worked fine without this change. My test was:\n\ntouch base\\version.cc \u0026\u0026 autoninja -C out\\release_siso -o ..\\..\\base\\version.cc^^",
+      "revId": "b42e6f6885badcfb70d9541656af821767dd5adf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

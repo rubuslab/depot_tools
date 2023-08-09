@@ -69,6 +69,24 @@
       "parentUuid": "67f7fa2e_27c8ff24",
       "revId": "b42e6f6885badcfb70d9541656af821767dd5adf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb86bd1e_a18b0d3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-08-09T18:08:35Z",
+      "side": 1,
+      "message": "Linked the wrong bug, not sure how that happened and I cant find the original bug now. I filed a new one with repro steps.\n\nEssentially, this command will hang without this change `gn clean out/reclient; gn gen out/reclient --args\u003d\"use_remoteexec\u003dtrue\"; autoninja -o -C out/reclient`",
+      "parentUuid": "88c63e33_1581fa43",
+      "revId": "b42e6f6885badcfb70d9541656af821767dd5adf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

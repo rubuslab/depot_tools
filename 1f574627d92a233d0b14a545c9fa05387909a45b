@@ -70,6 +70,24 @@
       "parentUuid": "e65e512a_3561025e",
       "revId": "1f574627d92a233d0b14a545c9fa05387909a45b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ae52809_486207bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-09T22:44:09Z",
+      "side": 1,
+      "message": "Ok idk how many potential `git submodule status` output formats there are, but if it\u0027s possible to predict and parse all of them seems like we could use `git submodule status`.\n\nJosip, any thoughts?",
+      "parentUuid": "a14efadc_3e43ba92",
+      "revId": "1f574627d92a233d0b14a545c9fa05387909a45b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -106,6 +106,24 @@
       "parentUuid": "a14efadc_3e43ba92",
       "revId": "1f574627d92a233d0b14a545c9fa05387909a45b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5003008d_78aeb475",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-09T23:15:13Z",
+      "side": 1,
+      "message": "merging to unblock dawn rolls",
+      "parentUuid": "5912426d_5494b045",
+      "revId": "1f574627d92a233d0b14a545c9fa05387909a45b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

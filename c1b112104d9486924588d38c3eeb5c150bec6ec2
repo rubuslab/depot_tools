@@ -16,6 +16,24 @@
       "message": "nit: check if len is not 4 and print warning and skip the line if so.",
       "revId": "c1b112104d9486924588d38c3eeb5c150bec6ec2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1de70ef_e2f4b3b4",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 951,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-09T18:47:43Z",
+      "side": 1,
+      "message": "On second thoughts, git allows path with spaces so I shouldn\u0027t even be splitting this in more than 4 parts. I\u0027ve added a test case for this and updated the code.",
+      "parentUuid": "060fad57_f3f4b58c",
+      "revId": "c1b112104d9486924588d38c3eeb5c150bec6ec2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

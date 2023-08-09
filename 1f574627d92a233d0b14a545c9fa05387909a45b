@@ -34,6 +34,24 @@
       "parentUuid": "6d379f50_6f341e17",
       "revId": "1f574627d92a233d0b14a545c9fa05387909a45b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e65e512a_3561025e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-09T22:36:20Z",
+      "side": 1,
+      "message": "Using `git submodule status` wasn\u0027t the issue but how my code assumed it\u0027s output format was. Josip suggested switching to `git ls-tree` to make the fix more simpler and I missed this case. I\u0027m assuming `git submodule status` should take in staged files too, let me confirm this now.",
+      "parentUuid": "43c98928_b0599cfc",
+      "revId": "1f574627d92a233d0b14a545c9fa05387909a45b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

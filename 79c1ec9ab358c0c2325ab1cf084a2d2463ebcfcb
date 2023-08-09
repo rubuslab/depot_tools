@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d6db98d_d199a00d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-09T23:18:09Z",
+      "side": 1,
+      "message": "https://git-scm.com/docs/git-config#Documentation/git-config.txt-false\n\noff is accepted as boolean argument.. as well as \u0027no\u0027",
+      "parentUuid": "c6ae85d4_f8ccde0d",
+      "revId": "79c1ec9ab358c0c2325ab1cf084a2d2463ebcfcb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3753e579_8832fc16",

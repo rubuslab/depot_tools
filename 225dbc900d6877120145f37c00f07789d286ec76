@@ -50,6 +50,24 @@
       "message": "I suggest we use git ls-tree instead of git submodule status. It\u0027s more machine friendly, and much faster if submodules are initialized.\n\ncmd:\n\n```\ngit ls-tree -r HEAD | grep \"^160000\"\n```\n\nlists all submodules",
       "revId": "225dbc900d6877120145f37c00f07789d286ec76",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d93200f9_a0dea5bb",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-09T02:09:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee5078d4_50a0caa0",
+      "revId": "225dbc900d6877120145f37c00f07789d286ec76",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

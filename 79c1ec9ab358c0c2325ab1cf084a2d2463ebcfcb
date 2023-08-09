@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c6ae85d4_f8ccde0d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-09T23:12:43Z",
+      "side": 1,
+      "message": "if \u0027off\u0027 is correct, lgtm",
+      "revId": "79c1ec9ab358c0c2325ab1cf084a2d2463ebcfcb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3753e579_8832fc16",
         "filename": "gclient_scm.py",
         "patchSetId": 1

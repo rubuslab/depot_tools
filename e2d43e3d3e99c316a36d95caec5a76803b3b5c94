@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b10c93d8_333d126a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-09T18:43:31Z",
+      "side": 1,
+      "message": "Okay, that makes sense. Thanks for the bug.\n\nNote that this seems to specifically be for the ninja case. The siso case is totally different (and doesn\u0027t hang).\n\nOne thing this gets wrong is the -j value. It gives me -j 640 even in -o mode, which is incorrect. In the goma case it avoids this by setting goma \u003d false. In the reclient case it will need to be handled separately. I think that should be handled at the same time.",
+      "revId": "e2d43e3d3e99c316a36d95caec5a76803b3b5c94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

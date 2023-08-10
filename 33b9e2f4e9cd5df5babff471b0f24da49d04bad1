@@ -34,6 +34,24 @@
       "parentUuid": "1a525289_4b85f1db",
       "revId": "33b9e2f4e9cd5df5babff471b0f24da49d04bad1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b763a668_1c540b65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T23:16:26Z",
+      "side": 1,
+      "message": "Oh I see. You set the tracking branch under the hood to some kind of representation of a CL that\u0027s uploaded but not landed.",
+      "parentUuid": "affbd9f1_d3c0f8d0",
+      "revId": "33b9e2f4e9cd5df5babff471b0f24da49d04bad1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

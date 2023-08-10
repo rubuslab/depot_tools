@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08637102_68bbdabb",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-10T00:42:48Z",
+      "side": 1,
+      "message": "```suggestion\n        if \u0027diff.ignoresubmodules\u003dall\u0027 in config:\n          subprocess2.capture(\n              [\u0027git\u0027, \u0027config\u0027, \u0027--unset\u0027, \u0027diff.ignoreSubmodules\u0027],\n              cwd\u003dargs[0].checkout_path)\n```",
+      "range": {
+        "startLine": 586,
+        "startChar": 0,
+        "endLine": 589,
+        "endChar": 48
+      },
+      "revId": "7d44e87b1450b197b70d6a2b881db880c936bdd6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef171dd0_7aa214dc",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-10T00:42:48Z",
+      "side": 1,
+      "message": "nit: not related, but we can remove this.",
+      "range": {
+        "startLine": 593,
+        "startChar": 40,
+        "endLine": 593,
+        "endChar": 48
+      },
+      "revId": "7d44e87b1450b197b70d6a2b881db880c936bdd6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "I guess... I wonder if this makes sense vs having users (or gclient?) set the ignore submodules settings correct in .git/config?",
       "revId": "923bcf8635a3fbe7a8aa4e4bdcfa90bb037526df",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7c88cdf_ad9a2d64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T23:25:22Z",
+      "side": 1,
+      "message": "Random question: is there ever a time when you\u0027d want a more elaborate ignore submodule setting than \u0027all\u0027 or \u0027none\u0027?\n\nOr is there a time when you\u0027d specifically want to inherit the settings from the environment instead of overriding it?",
+      "parentUuid": "f6051324_34aa7a8b",
+      "revId": "923bcf8635a3fbe7a8aa4e4bdcfa90bb037526df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

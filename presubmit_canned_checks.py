@@ -10,6 +10,8 @@ import io as _io
 import os as _os
 import zlib
 
+import metadata.validate
+
 _HERE = _os.path.dirname(_os.path.abspath(__file__))
 
 # These filters will be disabled if callers do not explicitly supply a
@@ -397,6 +399,40 @@ def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
                                               long_text='\n'.join(errors))]
   return []
 
+
+def CheckMetadataFiles(input_api, output_api):
+  file_filter = lambda f: f.LocalPath().endswith(('README.chromium'))
+  chromium_src_dir = input_api.change.RepositoryRoot()
+
+  results = []
+  for f in input_api.AffectedFiles(file_filter=file_filter):
+    validation_results = metadata.validate.validate_file(
+        filepath=f.AbsoluteLocalPath(),
+        chromium_src_dir=chromium_src_dir,
+    )
+
+    warnings = []
+    errors = []
+    for result in validation_results:
+      problem_desc = f"  * {result.get_message()}"
+      if result.is_fatal():
+        errors.append(problem_desc)
+      else:
+        warnings.append(problem_desc)
+
+    if warnings:
+      message = ("Third party README warnings found.\n"
+                 "Check README.chromium.template for details.\n{}".format(
+                     "\n".join(warnings)))
+      results.append(output_api.PresubmitPromptWarning(message, [f]))
+
+    if errors:
+      message = ("Third party README errors found.\n"
+                 "Check README.chromium.template for details.\n{}".format(
+                     "\n".join(errors)))
+      results.append(output_api.PresubmitError(message, [f]))
+
+  return results
 
 
 def _ReportErrorFileAndLine(filename, line_num, dummy_line):

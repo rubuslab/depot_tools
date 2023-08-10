@@ -120,6 +120,13 @@ def CheckUnitTestsOnCommit(input_api, output_api):
       'tests',
       files_to_check=test_to_run_list,
       files_to_skip=tests_to_skip_list)
+  tests.extend(
+      input_api.canned_checks.GetUnitTestsInDirectory(
+          input_api,
+          output_api,
+          os.path.join('metadata', 'tests'),
+          files_to_check=test_to_run_list,
+          files_to_skip=tests_to_skip_list))
 
   return input_api.RunTests(tests)
 

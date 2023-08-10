@@ -909,7 +909,8 @@ def status():
         src = dest
       yield (dest, stat_entry(lstat, rstat, src))
 
-  return parser(tokenizer(run_stream('status', '-z', bufsize=-1)))
+  return parser(tokenizer(run_stream('status', '--porcelain', '-z',
+                                     bufsize=-1)))
 
 
 def squash_current_branch(header=None, merge_base=None):

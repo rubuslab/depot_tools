@@ -16,6 +16,24 @@
       "message": "This thing needs a `.bat` file for Windows, probably.",
       "revId": "2d109056fb63be098b5a63d29210b616db35e7ed",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bc03258_496fbc0f",
+        "filename": "git-addf",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-10T17:59:12Z",
+      "side": 0,
+      "message": "+1",
+      "parentUuid": "53035ef9_d38c6294",
+      "revId": "2d109056fb63be098b5a63d29210b616db35e7ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

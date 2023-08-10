@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53035ef9_d38c6294",
+        "filename": "git-addf",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T17:37:16Z",
+      "side": 0,
+      "message": "This thing needs a `.bat` file for Windows, probably.",
+      "revId": "2d109056fb63be098b5a63d29210b616db35e7ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

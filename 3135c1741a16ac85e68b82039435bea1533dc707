@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e98a4b25_fe3b573d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-10T19:04:44Z",
+      "side": 1,
+      "message": "for all new code changes, we started to require tests. Could you add them in tests/ directory?",
+      "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69de340a_c14243ac",
+        "filename": "git_addf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-10T19:04:44Z",
+      "side": 1,
+      "message": "I think, by default, we should add only modified files. We can then have \u0027-a\u0027 that will add all files (both new aka \"??\" and modified aka \"M\").",
+      "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

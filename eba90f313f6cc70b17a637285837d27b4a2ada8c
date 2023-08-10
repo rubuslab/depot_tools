@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64c79e63_889e8ad1",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-10T22:03:57Z",
+      "side": 1,
+      "message": "```suggestion\n  ignore_submodules \u003d ignore_submodules or \u0027none\u0027\n  assert ignore_submodules in (\n      \u0027all\u0027, \u0027none\u0027), f\u0027ignore_submodules value {ignore_submodules} is invalid\u0027\n```",
+      "range": {
+        "startLine": 889,
+        "startChar": 0,
+        "endLine": 891,
+        "endChar": 49
+      },
+      "revId": "eba90f313f6cc70b17a637285837d27b4a2ada8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "321a1759_db58d37f",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-10T22:03:57Z",
+      "side": 1,
+      "message": "This actually changes current behavior - gclient currently sets `diff.ignoreSubmodules\u003dall` config.\n\nI believe this is OK change tho",
+      "revId": "eba90f313f6cc70b17a637285837d27b4a2ada8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

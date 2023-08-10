@@ -445,6 +445,8 @@ def freeze():
   # the `FREEZE.unindexed` commit.
   unindexed = []
 
+  stashed_gitlinks = {}
+
   # will be set to true if there are any indexed files to commit.
   have_indexed_files = False
 
@@ -458,10 +460,16 @@ def freeze():
       # lstat = '?' means that the file is untracked.
       have_indexed_files = True
     else:
-      unindexed.append(f.encode('utf-8'))
+      if run('ls-files', '-s', f).startswith('160000'):
+        # gitlink
+        stashed_gitlinks[f] = run('diff', f).splitlines()[-1].split()[-1]
+        #import pdb; pdb.set_trace()
+      else:
+        unindexed.append(f.encode('utf-8'))
     if s.lstat == '?' and limit_mb > 0:
       untracked_bytes += os.lstat(os.path.join(root_path, f)).st_size
 
+  #import pdb; pdb.set_trace()
   if limit_mb > 0 and untracked_bytes > limit_mb * MB:
     die("""\
       You appear to have too much untracked+unignored data in your git
@@ -488,6 +496,7 @@ def freeze():
       took_action = True
     except subprocess2.CalledProcessError:
       pass
+  #import pdb; pdb.set_trace()
 
   add_errors = False
   if unindexed:

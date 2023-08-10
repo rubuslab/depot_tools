@@ -457,7 +457,7 @@ def freeze():
       # added yet.
       # lstat = '?' means that the file is untracked.
       have_indexed_files = True
-    else:
+    elif not run('ls-files', '-s', f).startswith('160000'):
       unindexed.append(f.encode('utf-8'))
     if s.lstat == '?' and limit_mb > 0:
       untracked_bytes += os.lstat(os.path.join(root_path, f)).st_size

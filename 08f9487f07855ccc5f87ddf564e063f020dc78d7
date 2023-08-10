@@ -33,6 +33,24 @@
       "message": "lgtm if it works though (I guess this answers my other question in the previous CL, too)",
       "revId": "08f9487f07855ccc5f87ddf564e063f020dc78d7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbf7f968_025fd5e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-10T23:19:49Z",
+      "side": 1,
+      "message": "https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4767516",
+      "parentUuid": "51d3d6f1_ff569c8b",
+      "revId": "08f9487f07855ccc5f87ddf564e063f020dc78d7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

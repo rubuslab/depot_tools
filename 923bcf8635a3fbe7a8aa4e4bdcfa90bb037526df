@@ -34,6 +34,24 @@
       "parentUuid": "f6051324_34aa7a8b",
       "revId": "923bcf8635a3fbe7a8aa4e4bdcfa90bb037526df",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f12f9592_de5a1137",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-08-10T23:33:52Z",
+      "side": 1,
+      "message": "I think in my ideal world, I would be able to mark individual git subrepos as \"I don\u0027t care, keep them up to date, don\u0027t try to commit changes to these\" and \"I do care, I\u0027m hacking on this submodule, don\u0027t screw with it\"",
+      "parentUuid": "a7c88cdf_ad9a2d64",
+      "revId": "923bcf8635a3fbe7a8aa4e4bdcfa90bb037526df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

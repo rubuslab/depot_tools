@@ -16,6 +16,24 @@
       "message": "from git-status man: \"...-This implies the --porcelain\u003dv1\". With that, I don\u0027t think we need this.",
       "revId": "e0790f1428f9ab050492f68cac2adc8d326a7d05",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21a180f6_86d2f0d3",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T22:31:24Z",
+      "side": 0,
+      "message": "That does make sense. `-z` would only really be useful for scripts. Abandoning CL.",
+      "parentUuid": "152b8066_06acc425",
+      "revId": "e0790f1428f9ab050492f68cac2adc8d326a7d05",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

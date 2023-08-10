@@ -871,8 +871,12 @@ def is_dirty_git_tree(cmd):
   return False
 
 
-def status():
+def status(ignore_submodules=None):
   """Returns a parsed version of git-status.
+
+  Args:
+   ignore_submodules (str|None): "all", "none", or None.
+                                 None is equivalent to "none".
 
   Returns a generator of (current_name, (lstat, rstat, src)) pairs where:
     * current_name is the name of the file
@@ -881,6 +885,10 @@ def status():
     * src is the current name of the file, or the original name of the file
       if lstat == 'R'
   """
+
+  assert ignore_submodules is None or ignore_submodules in (
+      'all', 'none'), f'ignore_submodules value {ignore_submodules} is invalid'
+
   stat_entry = collections.namedtuple('stat_entry', 'lstat rstat src')
 
   def tokenizer(stream):

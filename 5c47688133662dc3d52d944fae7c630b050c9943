@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c83bcb5_56b884a0",
+        "filename": "git_addf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T17:13:02Z",
+      "side": 1,
+      "message": "Does `git` use utf-8 for output on Windows too?",
+      "revId": "5c47688133662dc3d52d944fae7c630b050c9943",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

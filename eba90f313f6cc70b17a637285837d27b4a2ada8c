@@ -63,6 +63,24 @@
       "message": "This actually changes current behavior - gclient currently sets `diff.ignoreSubmodules\u003dall` config.\n\nI believe this is OK change tho",
       "revId": "eba90f313f6cc70b17a637285837d27b4a2ada8c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2199369d_fed1a4af",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T22:41:36Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "321a1759_db58d37f",
+      "revId": "eba90f313f6cc70b17a637285837d27b4a2ada8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb731e9b_21982738",
+        "filename": "git-addf",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T17:44:21Z",
+      "side": 1,
+      "message": "So, this might be a bad idea or might be inconsistent with the plans for submodules, I started a discussion about it in a group.",
+      "revId": "044effc02891d87945ba935fb4229cfbc7985502",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

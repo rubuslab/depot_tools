@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d88d234_8c0547c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-10T09:51:57Z",
+      "side": 1,
+      "message": "For context: go/chromium-readme-validator-design and go/chromium-readme-validation-rules.\n\nThis CL defines the acceptable value in fields.",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

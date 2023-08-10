@@ -34,6 +34,24 @@
       "parentUuid": "53035ef9_d38c6294",
       "revId": "2d109056fb63be098b5a63d29210b616db35e7ed",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6af553ae_36a5c6ca",
+        "filename": "git-addf",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T18:20:13Z",
+      "side": 0,
+      "message": "Done. I copied the `cpplint.bat`. The logic looks simple enough but this is completely untested and I don\u0027t have a windows machine.",
+      "parentUuid": "3bc03258_496fbc0f",
+      "revId": "2d109056fb63be098b5a63d29210b616db35e7ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

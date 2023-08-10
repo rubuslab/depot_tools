@@ -16,6 +16,24 @@
       "message": "How did you base this on my CL that hasn\u0027t landed yet?",
       "revId": "33b9e2f4e9cd5df5babff471b0f24da49d04bad1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "affbd9f1_d3c0f8d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-10T23:09:28Z",
+      "side": 1,
+      "message": "git new-branch \u003csome branch name\u003e\ngit cl patch \u003cyour cl url\u003e\ngit new-branch --upstream-current \u003csome other branch name\u003e\nmake changes in  \u003csome other branch name\u003e and upload from there",
+      "parentUuid": "1a525289_4b85f1db",
+      "revId": "33b9e2f4e9cd5df5babff471b0f24da49d04bad1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

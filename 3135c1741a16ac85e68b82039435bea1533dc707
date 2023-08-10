@@ -33,6 +33,24 @@
       "message": "I think, by default, we should add only modified files. We can then have \u0027-a\u0027 that will add all files (both new aka \"??\" and modified aka \"M\").",
       "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f1adc74_f7f5a545",
+        "filename": "git_addf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T19:52:04Z",
+      "side": 1,
+      "message": "Can do.\n\nQuick question. Do you want integration tests (creating a local git repo, adding some stuff to it, making a commit, dropping it) or just unit tests?\n\nAlso, for unit tests what is the standard for mocking out subprocess for new code?",
+      "parentUuid": "69de340a_c14243ac",
+      "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

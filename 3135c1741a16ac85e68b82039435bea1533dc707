@@ -51,6 +51,41 @@
       "parentUuid": "69de340a_c14243ac",
       "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8b34a9f_a137ddd5",
+        "filename": "git_addf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-10T19:56:53Z",
+      "side": 1,
+      "message": "We tend to do integration tests (see examples in tests/); but unit tests are welcome too - subprocess mocking is what we usually do.",
+      "parentUuid": "4f1adc74_f7f5a545",
+      "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38971f33_f544ae2d",
+        "filename": "git_addf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-10T19:56:53Z",
+      "side": 1,
+      "message": "We have subprocess2.py which solves many os-related problems. Or even better, use git_common.py",
+      "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

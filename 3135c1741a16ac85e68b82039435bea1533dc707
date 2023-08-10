@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d4f81221_c838382b",
+        "filename": "git_addf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T22:43:27Z",
+      "side": 1,
+      "message": "I added some unit tests, it has okay coverage of the nontrivial code.\n\nIdeally, I want an integration test that makes a temporary repo in a temporary directory and then just runs commands and stuff (like a cram test or similar), but I don\u0027t know how to do that with the test helpers that we have now.",
+      "parentUuid": "a8b34a9f_a137ddd5",
+      "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "38971f33_f544ae2d",
         "filename": "git_addf.py",
         "patchSetId": 5
@@ -84,6 +102,24 @@
       "writtenOn": "2023-08-10T19:56:53Z",
       "side": 1,
       "message": "We have subprocess2.py which solves many os-related problems. Or even better, use git_common.py",
+      "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a94ed80_c5c1daa7",
+        "filename": "git_addf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-10T22:43:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38971f33_f544ae2d",
       "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

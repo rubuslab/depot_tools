@@ -89,6 +89,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e2b21db_7a2f2432",
+        "filename": "git_addf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-11T16:15:12Z",
+      "side": 1,
+      "message": "there can be found a few examples in tests/, e.g. https://chromium.googlesource.com/chromium/tools/depot_tools/+/6344ddd9b4b47ea827b24b266c387b6ca0a5f0e9/tests/git_cache_test.py#72\n\nI think, given that unit tests cover critical code, it\u0027s okay to keep this as is.",
+      "parentUuid": "d4f81221_c838382b",
+      "revId": "3135c1741a16ac85e68b82039435bea1533dc707",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38971f33_f544ae2d",

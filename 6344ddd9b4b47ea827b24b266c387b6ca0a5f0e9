@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a54d644_8dd48e75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-11T16:15:12Z",
+      "side": 1,
+      "message": "We need a man page for git addf.\n\nhttps://chromium.googlesource.com/chromium/tools/depot_tools/+/6344ddd9b4b47ea827b24b266c387b6ca0a5f0e9/man/src/git-freeze.txt\n\nTo generate man and html pages, there is make_docs.sh script in man/src.",
+      "revId": "6344ddd9b4b47ea827b24b266c387b6ca0a5f0e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ec2e1b0_04925962",
+        "filename": "git_addf.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-11T16:15:12Z",
+      "side": 1,
+      "message": "We should use subcommand.CommandDispatcher\n\nexample: https://chromium.googlesource.com/chromium/tools/depot_tools/+/6344ddd9b4b47ea827b24b266c387b6ca0a5f0e9/git_freezer.py\n\nThat way, we get parsing, and --help",
+      "revId": "6344ddd9b4b47ea827b24b266c387b6ca0a5f0e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

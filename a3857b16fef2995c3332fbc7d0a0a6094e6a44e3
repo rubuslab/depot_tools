@@ -16,6 +16,261 @@
       "message": "For context: go/chromium-readme-validator-design and go/chromium-readme-validation-rules.\n\nThis CL defines the acceptable value in fields.",
       "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a9ae24e_d304c020",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "Some of my comments are style related and even though we\u0027re not in g3 their Python style guidelines are pretty decent as a base. It\u0027s always tough when you start something \"new\" (in an existing project)",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bdff022_94f40f96",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "Same as comment in other file, probably prefer importing the module and using the classes from there.",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebde71ba_01ceb3c8",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "Did you decide to leave this as a `,` even with the licenses which might contain this? If you want to change to something else I don\u0027t think there would be issues.",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bf492d7_cd309b98",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "Typo check",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7aefab65_2ae49130",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "Might be worth a comment saying where these came from so we can try to ensure they remain in sync.",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba53e30e_4c89bfdb",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "Do these `staticmethod`s and classmethod`s give a clear advantage over not using them?\ngo/pystyle#decorators",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48c90756_22a3bf4f",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "Do you think doing this adds a lot of value? \n\nTo me there\u0027s no real difference between `Yes`, `yes`, `YES` etc. We can just `.lower()` all of them and validate off that. It does look nicer if they are all the same, but if everything else in a file is good are we going to make a CL to change `Yes` to `yes`?",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1de79d92_23f5b0f4",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "nit: I think its nicer to have the first line as a single sentence and drop the Note: down.\ngo/pystyle#function-docs\n\n```\n\"\"\"Checks the given value is acceptable. \n\nMultiple fields are supported with comma separation.\n```",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd061ffc_7147ff2a",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "\u003e Each license must be in the allowlist\n\nThis is a bit confusing. The `License Android Compatible` field exists to support non standard entries in this field. Should we issue a warning if the value is non standard and ask for the `License Android Compatible` field to be filled in instead?",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5063de91_b819a752",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "We might want to consider warning here if it\u0027s a relative path from the readme but its also `../../LICENSE`",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0cb98fe_75cafc55",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "Assume we\u0027re going to continue working on each field going forward so this is so I don\u0027t forget later. \n\nI think Suma has made some discoveries working on CPESuggest that it might be worth discussing. I think AutoVM might prefer just the base address with no version and it joins them itself?",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3266ac7_a8aa646b",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "nit: Can we move these to the top with the other constants?",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "666eb259_b9784e86",
+        "filename": "metadata/tests/fields_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "Stylistically I think it\u0027s recommended not to import classes for readability.\nhttps://engdoc.corp.google.com/eng/doc/devguide/py/style/index.md?cl\u003dhead#imports",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53aa827d_7e68cb6c",
+        "filename": "metadata/tests/fields_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "What indenting style is this? Is this what the rest of depot_tools uses?",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "297a2a34_c69e8b81",
+        "filename": "metadata/validation_result.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-11T02:13:08Z",
+      "side": 1,
+      "message": "nit: you don\u0027t need `object` in Python3. \n```\nValidationResult:\n```",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

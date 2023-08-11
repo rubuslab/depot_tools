@@ -50,6 +50,24 @@
       "message": "nit: remove",
       "revId": "e8fb9ee673246c4a864bda1929ffeb1ba81a0026",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1dbb3c92_55f974db",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-11T19:14:25Z",
+      "side": 1,
+      "message": "🤡",
+      "parentUuid": "9db31306_31238cbe",
+      "revId": "e8fb9ee673246c4a864bda1929ffeb1ba81a0026",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -52,6 +52,24 @@
       "parentUuid": "a7c88cdf_ad9a2d64",
       "revId": "923bcf8635a3fbe7a8aa4e4bdcfa90bb037526df",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af12446c_c1e51fad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1351748
+      },
+      "writtenOn": "2023-08-11T01:11:06Z",
+      "side": 1,
+      "message": "So, it\u0027s not too late to change the behavior of this thing to be like:\n\n```\n\"default\" --\u003e explicitly do not specify whether to ignore submodules or not.\n\"all\"     --\u003e ignore all submodules\n\"none\"    --\u003e don\u0027t ignore any submodules\n```\n\nNone, the Python None, can either be like a mistake that we reject because it\u0027s a mistake or it can be \"none\". Having it be \"default\" just seems weird.\n\nI\u0027m curious though, in what situations would we want to \"decide not to decide\" and explicitly use the builtin `git` logic for determining exactly which submodules to look at or not. I thought the consensus was that the default logic was not very good or at least counterintuitive.",
+      "parentUuid": "f12f9592_de5a1137",
+      "revId": "923bcf8635a3fbe7a8aa4e4bdcfa90bb037526df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

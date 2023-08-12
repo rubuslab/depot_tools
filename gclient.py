@@ -3503,10 +3503,14 @@ def CMDsetdep(parser, args):
                                   builtin_vars=builtin_vars)
 
   # Create a set of all git submodules.
+  cwd = os.path.dirname(options.deps_file) or os.getcwd()
   if 'git_dependencies' in local_scope and local_scope['git_dependencies'] in (
       gclient_eval.SUBMODULES, gclient_eval.SYNC):
-    submodule_status = subprocess2.check_output(['git', 'submodule',
-                                                 'status']).decode('utf-8')
+    try:
+      submodule_status = subprocess2.check_output(
+          ['git', 'submodule', 'status'], cwd=cwd).decode('utf-8')
+    except subprocess2.CalledProcessError as e:
+      print('Warning: gitlinks won\'t be updated: ', e)
     git_modules = {l.split()[1] for l in submodule_status.splitlines()}
 
   for var in options.vars:
@@ -3551,7 +3555,8 @@ def CMDsetdep(parser, args):
         subprocess2.call([
             'git', 'update-index', '--add', '--cacheinfo',
             f'160000,{value},{name}'
-        ])
+        ],
+                         cwd=cwd)
 
   with open(options.deps_file, 'wb') as f:
     f.write(gclient_eval.RenderDEPSFile(local_scope).encode('utf-8'))

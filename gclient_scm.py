@@ -679,6 +679,7 @@ class GitWrapper(SCMWrapper):
          not os.path.exists(os.path.join(self.checkout_path, '.git')))):
       if mirror:
         self._UpdateMirrorIfNotContains(mirror, options, rev_type, revision)
+      import pdb; pdb.set_trace()
       try:
         self._Clone(revision, url, options)
       except subprocess2.CalledProcessError as e:
@@ -1137,6 +1138,7 @@ class GitWrapper(SCMWrapper):
       depth = 10000
     else:
       depth = None
+    import pdb; pdb.set_trace()
     mirror.populate(verbose=options.verbose,
                     bootstrap=not getattr(options, 'no_bootstrap', False),
                     depth=depth,
@@ -1549,6 +1551,7 @@ class GitWrapper(SCMWrapper):
     kwargs.setdefault('show_header', True)
     env = scm.GIT.ApplyEnvVars(kwargs)
 
+    #cmd = ['git'] + ['--git-dir', kwargs['cwd']] + args
     cmd = ['git'] + args
     gclient_utils.CheckCallAndFilter(cmd, env=env, **kwargs)
 

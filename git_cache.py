@@ -234,6 +234,8 @@ class Mirror(object):
   def RunGit(self, cmd, print_stdout=True, **kwargs):
     """Run git in a subprocess."""
     cwd = kwargs.setdefault('cwd', self.mirror_path)
+    if "--git-dir" not in cmd:
+      cmd = ['--git-dir', cwd] + cmd
     kwargs.setdefault('print_stdout', False)
     if print_stdout:
       kwargs.setdefault('filter_fn', self.print)
@@ -247,6 +249,7 @@ class Mirror(object):
     if cwd is None:
       cwd = self.mirror_path
 
+    import pdb; pdb.set_trace()
     if reset_fetch_config:
       try:
         self.RunGit(['config', '--unset-all', 'remote.origin.fetch'], cwd=cwd)
@@ -256,6 +259,7 @@ class Mirror(object):
         if e.returncode != 5:
           raise
 
+    import pdb; pdb.set_trace()
     # Don't run git-gc in a daemon.  Bad things can happen if it gets killed.
     try:
       self.RunGit(['config', 'gc.autodetach', '0'], cwd=cwd)
@@ -263,20 +267,25 @@ class Mirror(object):
       # Hard error, need to clobber.
       raise ClobberNeeded()
 
+    import pdb; pdb.set_trace()
     # Don't combine pack files into one big pack file.  It's really slow for
     # repositories, and there's no way to track progress and make sure it's
     # not stuck.
     if self.supported_project():
       self.RunGit(['config', 'gc.autopacklimit', '0'], cwd=cwd)
 
+    import pdb; pdb.set_trace()
     # Allocate more RAM for cache-ing delta chains, for better performance
     # of "Resolving deltas".
     self.RunGit(['config', 'core.deltaBaseCacheLimit',
                  gclient_utils.DefaultDeltaBaseCacheLimit()], cwd=cwd)
 
+    import pdb; pdb.set_trace()
     self.RunGit(['config', 'remote.origin.url', self.url], cwd=cwd)
+    import pdb; pdb.set_trace()
     self.RunGit(['config', '--replace-all', 'remote.origin.fetch',
                  '+refs/heads/*:refs/heads/*', r'\+refs/heads/\*:.*'], cwd=cwd)
+    import pdb; pdb.set_trace()
     for spec, value_regex in self.fetch_specs:
       self.RunGit(
           ['config', '--replace-all', 'remote.origin.fetch', spec, value_regex],
@@ -448,7 +457,7 @@ class Mirror(object):
         # Set appropriate symbolic-ref
         remote_info = exponential_backoff_retry(
             lambda: subprocess.check_output(
-                [self.git_exe, 'remote', 'show', self.url],
+                [self.git_exe, '--git-dir', self.mirror_path, 'remote', 'show', self.url],
                 cwd=self.mirror_path).decode('utf-8', 'ignore').strip()
         )
         default_branch_regexp = re.compile(r'HEAD branch: (.*)$')
@@ -470,8 +479,8 @@ class Mirror(object):
              no_fetch_tags,
              reset_fetch_config,
              prune=True):
+    import pdb; pdb.set_trace()
     self.config(rundir, reset_fetch_config)
-
     fetch_cmd = ['fetch']
     if verbose:
       fetch_cmd.extend(['-v', '--progress'])
@@ -482,10 +491,11 @@ class Mirror(object):
     if prune:
       fetch_cmd.append('--prune')
     fetch_cmd.append('origin')
-
+    import pdb; pdb.set_trace()
     fetch_specs = subprocess.check_output(
-        [self.git_exe, 'config', '--get-all', 'remote.origin.fetch'],
+        [self.git_exe,'--git-dir', rundir, 'config', '--get-all', 'remote.origin.fetch'],
         cwd=rundir).decode('utf-8', 'ignore').strip().splitlines()
+    import pdb; pdb.set_trace()
     for spec in fetch_specs:
       try:
         self.print('Fetching %s' % spec)
@@ -495,6 +505,7 @@ class Mirror(object):
         if spec == '+refs/heads/*:refs/heads/*':
           raise ClobberNeeded()  # Corrupted cache.
         logging.warning('Fetch of %s failed' % spec)
+    import pdb; pdb.set_trace()
     for commit in self.fetch_commits:
       self.print('Fetching %s' % commit)
       try:
@@ -502,6 +513,8 @@ class Mirror(object):
           self.RunGit(['fetch', 'origin', commit], cwd=rundir, retry=True)
       except subprocess.CalledProcessError:
         logging.warning('Fetch of %s failed' % commit)
+    import pdb; pdb.set_trace()
+    return
 
   def populate(self,
                depth=None,

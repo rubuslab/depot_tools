@@ -234,6 +234,8 @@ class Mirror(object):
   def RunGit(self, cmd, print_stdout=True, **kwargs):
     """Run git in a subprocess."""
     cwd = kwargs.setdefault('cwd', self.mirror_path)
+    if "--git-dir" not in cmd:
+      cmd = ['--git-dir', cwd] + cmd
     kwargs.setdefault('print_stdout', False)
     if print_stdout:
       kwargs.setdefault('filter_fn', self.print)
@@ -446,11 +448,12 @@ class Mirror(object):
         # Start with a bare git dir.
         self.RunGit(['init', '--bare'], cwd=self.mirror_path)
         # Set appropriate symbolic-ref
-        remote_info = exponential_backoff_retry(
-            lambda: subprocess.check_output(
-                [self.git_exe, 'remote', 'show', self.url],
-                cwd=self.mirror_path).decode('utf-8', 'ignore').strip()
-        )
+        remote_info = exponential_backoff_retry(lambda: subprocess.check_output(
+            [
+                self.git_exe, '--git-dir', self.mirror_path, 'remote', 'show',
+                self.url
+            ],
+            cwd=self.mirror_path).decode('utf-8', 'ignore').strip())
         default_branch_regexp = re.compile(r'HEAD branch: (.*)$')
         m = default_branch_regexp.search(remote_info, re.MULTILINE)
         if m:
@@ -471,7 +474,6 @@ class Mirror(object):
              reset_fetch_config,
              prune=True):
     self.config(rundir, reset_fetch_config)
-
     fetch_cmd = ['fetch']
     if verbose:
       fetch_cmd.extend(['-v', '--progress'])
@@ -482,9 +484,11 @@ class Mirror(object):
     if prune:
       fetch_cmd.append('--prune')
     fetch_cmd.append('origin')
-
     fetch_specs = subprocess.check_output(
-        [self.git_exe, 'config', '--get-all', 'remote.origin.fetch'],
+        [
+            self.git_exe, '--git-dir', rundir, 'config', '--get-all',
+            'remote.origin.fetch'
+        ],
         cwd=rundir).decode('utf-8', 'ignore').strip().splitlines()
     for spec in fetch_specs:
       try:

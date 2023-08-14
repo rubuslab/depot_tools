@@ -35,6 +35,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c3d8c37_191b2b53",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Replying to comments, but will abandon this CL in favor of these: https://chromium-review.googlesource.com/q/topic:%22chromium-metadata-validator%22\n\nIn the above CLs, I refactored metadata fields to have a simpler model, and use instances of metadata fields, instead of constantly calling class methods. The metadata field types are defined, and chained CLs after the first one add a custom metadata field. Hopefully that\u0027s easier to review, field-by-field.",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bdff022_94f40f96",
@@ -48,6 +65,24 @@
       "writtenOn": "2023-08-11T02:13:08Z",
       "side": 1,
       "message": "Same as comment in other file, probably prefer importing the module and using the classes from there.",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83ca8e2a_d388829f",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Done in subsequent chained CLs in https://chromium-review.googlesource.com/q/topic:%22chromium-metadata-validator%22.",
+      "parentUuid": "6bdff022_94f40f96",
       "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -69,6 +104,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ee7b934_59aa3221",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Good point, I have changed this to `;` in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4776734",
+      "parentUuid": "ebde71ba_01ceb3c8",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9bf492d7_cd309b98",
@@ -82,6 +135,24 @@
       "writtenOn": "2023-08-11T02:13:08Z",
       "side": 1,
       "message": "Typo check",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd9fcc37_b7231eb3",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Ack - Comment was refactored in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4776728/2/metadata/fields/util.py",
+      "parentUuid": "9bf492d7_cd309b98",
       "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -105,6 +176,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "0701d645_744f8d7d",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Done in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4776734/2/metadata/fields/custom/license.py",
+      "parentUuid": "7aefab65_2ae49130",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ba53e30e_4c89bfdb",
         "filename": "metadata/fields.py",
         "patchSetId": 2
@@ -116,6 +205,24 @@
       "writtenOn": "2023-08-11T02:13:08Z",
       "side": 1,
       "message": "Do these `staticmethod`s and classmethod`s give a clear advantage over not using them?\ngo/pystyle#decorators",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2853858_4105a4e7",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "No, and the refactoring of metadata fields means there are no longer class methods.",
+      "parentUuid": "ba53e30e_4c89bfdb",
       "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -133,6 +240,24 @@
       "writtenOn": "2023-08-11T02:13:08Z",
       "side": 1,
       "message": "Do you think doing this adds a lot of value? \n\nTo me there\u0027s no real difference between `Yes`, `yes`, `YES` etc. We can just `.lower()` all of them and validate off that. It does look nicer if they are all the same, but if everything else in a file is good are we going to make a CL to change `Yes` to `yes`?",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e69d93cb_d2b7e16d",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Good point. I have made this case-insensitive in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4776728/2/metadata/fields/types.py\n\nFor values that are more than `yes` or `no`, e.g. `Probably yes?`, `no (data only)`, I have set it to return a warning.",
+      "parentUuid": "48c90756_22a3bf4f",
       "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -171,6 +296,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c85bbf92_b489a6ca",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Agreed. Relaxed in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4776734/2\n\nI have relaxed this check to return a warning if the license type is not in the allowlist. The requirement for `License Android Compatible` will be checked later, when all the fields are parsed as a whole.",
+      "parentUuid": "fd061ffc_7147ff2a",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5063de91_b819a752",
@@ -184,6 +327,24 @@
       "writtenOn": "2023-08-11T02:13:08Z",
       "side": 1,
       "message": "We might want to consider warning here if it\u0027s a relative path from the readme but its also `../../LICENSE`",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fa4a5fa_38cda257",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Good catch, I forgot to check this. I have updated the value validation to check for `../` in the paths: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4776733/2",
+      "parentUuid": "5063de91_b819a752",
       "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -222,6 +383,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f52ac42_37ea65a0",
+        "filename": "metadata/fields.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "As a result of refactoring, known fields can be found in `//metadata/fields/known.py`, which basically consists of only these constants.",
+      "parentUuid": "b3266ac7_a8aa646b",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "666eb259_b9784e86",
@@ -235,6 +414,24 @@
       "writtenOn": "2023-08-11T02:13:08Z",
       "side": 1,
       "message": "Stylistically I think it\u0027s recommended not to import classes for readability.\nhttps://engdoc.corp.google.com/eng/doc/devguide/py/style/index.md?cl\u003dhead#imports",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e5e7dba_377fa980",
+        "filename": "metadata/tests/fields_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "666eb259_b9784e86",
       "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -258,6 +455,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "c92ede9c_0093b013",
+        "filename": "metadata/tests/fields_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Not sure, a weird result of `git cl format` on a very long type annotation. Fortunately moot after I refactored.",
+      "parentUuid": "53aa827d_7e68cb6c",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "297a2a34_c69e8b81",
         "filename": "metadata/validation_result.py",
         "patchSetId": 2
@@ -269,6 +484,24 @@
       "writtenOn": "2023-08-11T02:13:08Z",
       "side": 1,
       "message": "nit: you don\u0027t need `object` in Python3. \n```\nValidationResult:\n```",
+      "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de904ce0_1122ea7a",
+        "filename": "metadata/validation_result.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-14T10:17:05Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "297a2a34_c69e8b81",
       "revId": "a3857b16fef2995c3332fbc7d0a0a6094e6a44e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

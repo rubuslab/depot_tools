@@ -12,6 +12,7 @@ _ROOT_DIR = os.path.abspath(os.path.join(_THIS_DIR, "..", ".."))
 
 sys.path.insert(0, _ROOT_DIR)
 
+import metadata.fields.custom.cpe_prefix
 import metadata.fields.custom.date
 import metadata.fields.types as field_types
 
@@ -30,6 +31,7 @@ LICENSE_ANDROID_COMPATIBLE = field_types.YesNoField(
     "License Android Compatible")
 
 # Custom fields.
+CPE_PREFIX = metadata.fields.custom.cpe_prefix.CPEPrefixField()
 DATE = metadata.fields.custom.date.DateField()
 
 ALL_FIELDS = (
@@ -40,6 +42,7 @@ ALL_FIELDS = (
     SECURITY_CRITICAL,
     SHIPPED,
     LICENSE_ANDROID_COMPATIBLE,
+    CPE_PREFIX,
     DESCRIPTION,
     LOCAL_MODIFICATIONS,
 )

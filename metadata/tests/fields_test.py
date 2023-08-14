@@ -64,6 +64,13 @@ class FieldValidationTest(unittest.TestCase):
         warning_values=["Yes?", "not"],
     )
 
+  def test_date_validation(self):
+    self._run_field_validation(
+        field=known_fields.DATE,
+        valid_values=["2012-03-04"],
+        error_values=["", "\n", "April 3, 2012", "2012/03/04"],
+    )
+
 
 if __name__ == "__main__":
   unittest.main()

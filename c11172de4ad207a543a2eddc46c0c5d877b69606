@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dde99311_b2f5ef0e",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-14T23:25:41Z",
+      "side": 1,
+      "message": "I know this was semi discussed on the abandoned CL but I think the delimiter should be consistent across all fields. People might be confused if URLs are `,` delimited but licenses are `;` delimited.\n\nIf you think the check for the full license is likely to work out okay and there\u0027s no instances where it would blow up if we had multiple licenses which were `Apache License, Version 2.0, MIT` we could disregard this change. WDYT?",
+      "revId": "c11172de4ad207a543a2eddc46c0c5d877b69606",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc462a16_dc86eab6",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-14T23:25:41Z",
+      "side": 1,
+      "message": "You\u0027re probably already on this, and I know it was done prior to the discovery of `,` in some licenses but we will need to update this guy as well.\n\nhttps://source.chromium.org/chromium/chromium/src/+/main:tools/licenses/licenses.py;l\u003d442",
+      "revId": "c11172de4ad207a543a2eddc46c0c5d877b69606",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a84db88e_1b153c95",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-14T23:25:41Z",
+      "side": 1,
+      "message": "This comment no longer makes sense with the change to the delimiter which is no longer a comma.",
+      "revId": "c11172de4ad207a543a2eddc46c0c5d877b69606",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7330d92_5f50e1c8",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-14T23:25:41Z",
+      "side": 1,
+      "message": "If we\u0027re going all in with the change to delimiter should we have a check for the `,` and warn?",
+      "revId": "c11172de4ad207a543a2eddc46c0c5d877b69606",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

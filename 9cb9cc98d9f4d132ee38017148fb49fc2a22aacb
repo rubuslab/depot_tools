@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "fa76d47d_01d10f78",
+        "filename": "metadata/fields/types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-15T01:00:33Z",
+      "side": 1,
+      "message": "Done - added explanatory comments. The later CLs add a file in `//metadata/fields/custom`, so the repo\u0027s root dir is three directories up.",
+      "parentUuid": "beda6f6e_b513ea31",
+      "revId": "9cb9cc98d9f4d132ee38017148fb49fc2a22aacb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "a57bdb0d_2c6dbd94",
         "filename": "metadata/fields/types.py",
         "patchSetId": 2
@@ -31,6 +49,24 @@
       "writtenOn": "2023-08-14T22:42:50Z",
       "side": 1,
       "message": "nit: Instead of this comment about what these are, it might be helpful to add some why context. These are relatively straightforward patterns but some of the others aren\u0027t and regex is hard to read.",
+      "revId": "9cb9cc98d9f4d132ee38017148fb49fc2a22aacb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4045102_6846444d",
+        "filename": "metadata/fields/types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-15T01:00:33Z",
+      "side": 1,
+      "message": "Thanks. Added explanatory comments for each, and renamed to `_PATTERN_STARTS_WITH_YES_OR_NO` to reduce confusion.",
+      "parentUuid": "a57bdb0d_2c6dbd94",
       "revId": "9cb9cc98d9f4d132ee38017148fb49fc2a22aacb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -52,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f67b6d8_4bf5a61e",
+        "filename": "metadata/fields/types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-15T01:00:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "544edb85_baa5c3ce",
+      "revId": "9cb9cc98d9f4d132ee38017148fb49fc2a22aacb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ee565cb_9b19e7f1",
@@ -69,6 +123,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1318d376_37d35343",
+        "filename": "metadata/fields/types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-15T01:00:33Z",
+      "side": 1,
+      "message": "Okay, agreed. I\u0027ve removed `CustomField` as that was the main difference. Not `MetadataField.validate` raises `NotImplementedError`",
+      "parentUuid": "2ee565cb_9b19e7f1",
+      "revId": "9cb9cc98d9f4d132ee38017148fb49fc2a22aacb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "04df8510_b226b78d",
@@ -82,6 +154,24 @@
       "writtenOn": "2023-08-14T22:42:50Z",
       "side": 1,
       "message": "```suggestion\n          f\"{self._name} is \u0027{value}\u0027 - should be only {util.YES} or {util.NO}.\"\n```",
+      "revId": "9cb9cc98d9f4d132ee38017148fb49fc2a22aacb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "280ce379_696c9f5c",
+        "filename": "metadata/fields/types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-15T01:00:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04df8510_b226b78d",
       "revId": "9cb9cc98d9f4d132ee38017148fb49fc2a22aacb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

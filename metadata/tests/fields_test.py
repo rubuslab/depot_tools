@@ -82,6 +82,17 @@ class FieldValidationTest(unittest.TestCase):
         error_values=["", "\n", "April 3, 2012", "2012/03/04"],
     )
 
+  def test_license_validation(self):
+    self._run_field_validation(
+        field=known_fields.LICENSE,
+        valid_values=[
+            "Apache, 2.0", "MIT", "LGPL 2.1", "Public Domain, MPL 2",
+            "APSL 2 and the MIT license"
+        ],
+        error_values=["", "\n", ","],
+        warning_values=["Custom license"],
+    )
+
   def test_license_file_validation(self):
     self._run_field_validation(
         field=known_fields.LICENSE_FILE,

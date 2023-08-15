@@ -6,6 +6,9 @@
 import re
 from typing import List
 
+# The delimiter used to separate multiple values for a single field.
+VALUE_DELIMITER = ","
+
 # Preferred values for yes/no fields (i.e. all lowercase).
 YES = "yes"
 NO = "no"

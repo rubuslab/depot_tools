@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "964e422e_8a06f023",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-16T20:51:31Z",
+      "side": 1,
+      "message": "added tests that set and unset a temporary --global safe.bareRepository.\nthe tests  only create/init a parent repo meant to \u0027hold\u0027 things. bare repos only get created and init\u0027d by the code we\u0027re testing, so it would be difficult to set the worktree scoped config.",
+      "parentUuid": "6e0f1924_38f7ed0f",
+      "revId": "bd82025fa8e053af29b8647426623ed7cd2b1e17",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59f3463f_19d27e8e",

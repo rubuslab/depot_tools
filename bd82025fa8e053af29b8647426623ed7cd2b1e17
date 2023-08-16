@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efa7e0aa_b2d88a27",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1589012
+      },
+      "writtenOn": "2023-08-16T17:10:14Z",
+      "side": 1,
+      "message": "I\u0027m worried that this might not \"stick\" - that is, a new Git command could be called and not use --git-dir. We could cover for that by making sure the test suite configures safe.bareRepository\u003dexplicit during setup. Is that an option?",
+      "revId": "bd82025fa8e053af29b8647426623ed7cd2b1e17",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59f3463f_19d27e8e",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1589012
+      },
+      "writtenOn": "2023-08-16T17:10:14Z",
+      "side": 1,
+      "message": "Are we sure this is always the root of the bare gitdir? That is, are we sure cwd is never inside of objects/ or refs/ or whatever?",
+      "revId": "bd82025fa8e053af29b8647426623ed7cd2b1e17",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e0f1924_38f7ed0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1589012
+      },
+      "writtenOn": "2023-08-16T19:04:10Z",
+      "side": 1,
+      "message": "yes, it will be turned on for everyone - but i do think it could be more robust to include that in the per-repo config if you\u0027re setting up tempdirs as repos already. for example, if someone has shut off that switch in ~/.gitconfig it will override the setting we ship in /etc/gitconfig.",
+      "parentUuid": "326e4ab7_ddc5b913",
+      "revId": "bd82025fa8e053af29b8647426623ed7cd2b1e17",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59f3463f_19d27e8e",

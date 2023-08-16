@@ -34,6 +34,24 @@
       "parentUuid": "c9f98f7a_2bc6b2fd",
       "revId": "fae94296a90b2b18ffefe8d88db2485cd9f315d3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "251914ab_31dcfebd",
+        "filename": "tests/git_cache_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-16T21:50:45Z",
+      "side": 1,
+      "message": "thanks! this is much better",
+      "parentUuid": "a13153f9_394b2531",
+      "revId": "fae94296a90b2b18ffefe8d88db2485cd9f315d3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

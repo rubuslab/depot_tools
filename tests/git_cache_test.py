@@ -34,10 +34,27 @@ class GitCacheTest(unittest.TestCase):
     self.addCleanup(shutil.rmtree, self.origin_dir, ignore_errors=True)
     git_cache.Mirror.SetCachePath(self.cache_dir)
 
-  def git(self, cmd, cwd=None):
+    # Ensure git_cache works with safe.bareRepository.
+    # Fine to run, even if user does not have 'safe' in their global config.
+    self.git(['config', '--global', '--rename-section', 'safe', 'safeoriginal'],
+             check=False)
+    self.git(['config', '--global', '--add', 'safe.bareRepository', 'explicit'],
+             check=False)
+    # cleanup is done in reverse order
+    self.addCleanup(self.git,
+                    ['config', '--global', '--rename', 'safeoriginal', 'safe'],
+                    check=False)
+    self.addCleanup(self.git,
+                    ['config', '--global', '--remove-section', 'safe'],
+                    check=False)
+
+  def git(self, cmd, cwd=None, check=True):
     cwd = cwd or self.origin_dir
     git = 'git.bat' if sys.platform == 'win32' else 'git'
-    subprocess.check_call([git] + cmd, cwd=cwd)
+    if check:
+      subprocess.check_call([git] + cmd, cwd=cwd)
+    else:
+      subprocess.run([git] + cmd, cwd=cwd)
 
   def testParseFetchSpec(self):
     testData = [
@@ -92,8 +109,10 @@ class GitCacheTest(unittest.TestCase):
     # Add a bad refspec to the cache's fetch config.
     cache_dir = os.path.join(
         self.cache_dir, mirror.UrlToCacheDir(self.origin_dir))
-    self.git(['config', '--add', 'remote.origin.fetch',
-              '+refs/heads/foo:refs/heads/foo'],
+    self.git([
+        '--git-dir', cache_dir, 'config', '--add', 'remote.origin.fetch',
+        '+refs/heads/foo:refs/heads/foo'
+    ],
              cwd=cache_dir)
 
     mirror.populate(reset_fetch_config=True)

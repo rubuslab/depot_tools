@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e55bab31_dcc7b84d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1103379
+      },
+      "writtenOn": "2023-08-16T18:18:04Z",
+      "side": 1,
+      "message": "More details:\n\n```\nrunning \"git --git-dir ../chrome_cache/_cache_tmpf5jvuxbe init --bare\" in \"../chrome_cache/_cache_tmpf5jvuxbe\"\nfatal: Invalid path \u0027/b/s/w/ir/x/w/chrome/chrome_cache/chrome_cache\u0027: No such file or directory\n```\n\nIn other words, the broken case is relative paths.",
+      "revId": "1c4052d88ac510a3db4351e52c088cac524c726c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

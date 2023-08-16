@@ -115,6 +115,7 @@ from third_party.repo.progress import Progress
 import subcommand
 import subprocess2
 import setup_color
+import git_cl
 
 from third_party import six
 
@@ -880,10 +881,21 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
     deps = local_scope.get('deps', {})
 
-    # If dependencies are configured within git submodules, add them to DEPS.
+    # If dependencies are configured within git submodules, add them to deps.
     if self.git_dependencies_state in (gclient_eval.SUBMODULES,
                                        gclient_eval.SYNC):
-      deps.update(self.ParseGitSubmodules())
+      gitsubmodules = self.ParseGitSubmodules()
+      # TODO(crbug.com/1471685): Temporary hack. In case of applied patches
+      # where the changes are staged but not committed, any gitlinks from
+      # the patch are not returned in ParseGitSubmodules. In these cases,
+      # DEPS does have the commits from the patch, so we use those commits
+      # instead.
+      if self.git_dependencies_state == gclient_eval.SYNC:
+        for sub in gitsubmodules:
+          if sub not in deps:
+            deps[sub] = gitsubmodules[sub]
+      elif self.git_dependencies_state == gclient_eval.SUBMODULES:
+        deps.update(gitsubmodules)
 
     deps_to_add = self._deps_to_objects(
         self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)
@@ -941,12 +953,16 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       return {}
 
     # Get submodule commit hashes
-    result = subprocess2.check_output(['git', 'submodule', 'status'],
+    #  Output Format: `<mode> SP <type> SP <object> TAB <file>`.
+    result = subprocess2.check_output(['git', 'ls-tree', '-r', 'HEAD'],
                                       cwd=cwd).decode('utf-8')
+
     commit_hashes = {}
-    for record in result.splitlines():
-      commit, module = record.split(maxsplit=1)
-      commit_hashes[module] = commit[1:]
+    for r in result.splitlines():
+      # ['<mode>', '<type>', '<commit_hash>', '<path>'].
+      record = r.strip().split(maxsplit=3)  # path can contain spaces.
+      if record[0] == '160000':  # Only add gitlinks
+        commit_hashes[record[3]] = record[2]
 
     # Get .gitmodules fields
     gitmodules_entries = subprocess2.check_output(
@@ -960,7 +976,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
       section, submodule_key = key.split('.', maxsplit=1)
 
       # Only parse [submodule "foo"] sections from .gitmodules.
-      if section != 'submodule':
+      if section.strip() != 'submodule':
         continue
 
       # The name of the submodule can contain '.', hence split from the back.
@@ -974,14 +990,22 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
     # Structure git submodules into a dict of DEPS git url entries.
     submodules = {}
-    for name, module in gitmodules.items():
+    for module in gitmodules.values():
       if self._use_relative_paths:
         path = module['path']
       else:
         path = f'{self.name}/{module["path"]}'
+      # TODO(crbug.com/1471685): Temporary hack. In case of applied patches
+      # where the changes are staged but not committed, any gitlinks from
+      # the patch are not returned by `git ls-tree`. The path won't be found
+      # in commit_hashes. Use a temporary '0000000' value that will be replaced
+      # with w/e is found in DEPS later.
       submodules[path] = {
-          'dep_type': 'git',
-          'url': '{}@{}'.format(module['url'], commit_hashes[name])
+          'dep_type':
+          'git',
+          'url':
+          '{}@{}'.format(module['url'],
+                         commit_hashes.get(module['path'], '0000000'))
       }
 
       if 'gclient-condition' in module:
@@ -2654,6 +2678,69 @@ class Flattener(object):
         self._flatten_dep(d)
 
 
+@metrics.collector.collect_metrics('gclient gitmodules')
+def CMDgitmodules(parser, args):
+  """Adds or updates Git Submodules based on the contents of the DEPS file.
+
+  This command should be run in the root director of the repo.
+  It will create or update the .gitmodules file and include
+  `gclient-condition` values. Commits in gitlinks will also be updated.
+  """
+  parser.add_option('--output-gitmodules',
+                    help='name of the .gitmodules file to write to',
+                    default='.gitmodules')
+  parser.add_option(
+      '--deps-file',
+      help=
+      'name of the deps file to parse for git dependency paths and commits.',
+      default='DEPS')
+  parser.add_option(
+      '--skip-dep',
+      action="append",
+      help='skip adding gitmodules for the git dependency at the given path',
+      default=[])
+  options, args = parser.parse_args(args)
+
+  deps_dir = os.path.dirname(os.path.abspath(options.deps_file))
+  gclient_path = gclient_paths.FindGclientRoot(deps_dir)
+  if not gclient_path:
+    logging.error(
+        '.gclient not found\n'
+        'Make sure you are running this script from a gclient workspace.')
+    sys.exit(1)
+
+  deps_content = gclient_utils.FileRead(options.deps_file)
+  ls = gclient_eval.Parse(deps_content, options.deps_file, None, None)
+
+  prefix_length = 0
+  if not 'use_relative_paths' in ls or ls['use_relative_paths'] != True:
+    delta_path = os.path.relpath(deps_dir, os.path.abspath(gclient_path))
+    if delta_path:
+      prefix_length = len(delta_path.replace(os.path.sep, '/')) + 1
+
+  with open(options.output_gitmodules, 'w') as f:
+    for path, dep in ls.get('deps').items():
+      if path in options.skip_dep:
+        continue
+      if dep.get('dep_type') == 'cipd':
+        continue
+      try:
+        url, commit = dep['url'].split('@', maxsplit=1)
+      except ValueError:
+        logging.error('error on %s; %s, not adding it', path, dep["url"])
+        continue
+      if prefix_length:
+        path = path[prefix_length:]
+
+      git_cl.RunGit(
+          ['update-index', '--add', '--cacheinfo', '160000', commit, path])
+      f.write(f'[submodule "{path}"]\n\tpath = {path}\n\turl = {url}\n')
+      if 'condition' in dep:
+        f.write(f'\tgclient-condition = {dep["condition"]}\n')
+  print('.gitmodules and gitlinks updated. Please check git diff and '
+        'commit changes.')
+
+
 @metrics.collector.collect_metrics('gclient flatten')
 def CMDflatten(parser, args):
   """Flattens the solutions into a single DEPS file."""
@@ -3416,11 +3503,16 @@ def CMDsetdep(parser, args):
                                   builtin_vars=builtin_vars)
 
   # Create a set of all git submodules.
+  cwd = os.path.dirname(options.deps_file) or os.getcwd()
+  git_modules = None
   if 'git_dependencies' in local_scope and local_scope['git_dependencies'] in (
       gclient_eval.SUBMODULES, gclient_eval.SYNC):
-    submodule_status = subprocess2.check_output(['git', 'submodule',
-                                                 'status']).decode('utf-8')
-    git_modules = {l.split()[1] for l in submodule_status.splitlines()}
+    try:
+      submodule_status = subprocess2.check_output(
+          ['git', 'submodule', 'status'], cwd=cwd).decode('utf-8')
+      git_modules = {l.split()[1] for l in submodule_status.splitlines()}
+    except subprocess2.CalledProcessError as e:
+      print('Warning: gitlinks won\'t be updated: ', e)
 
   for var in options.vars:
     name, _, value = var.partition('=')
@@ -3452,7 +3544,7 @@ def CMDsetdep(parser, args):
         gclient_eval.SetRevision(local_scope, name, value)
 
       # Update git submodules when `git_dependencies` == SYNC or SUBMODULES.
-      if 'git_dependencies' in local_scope and local_scope[
+      if git_modules and 'git_dependencies' in local_scope and local_scope[
           'git_dependencies'] in (gclient_eval.SUBMODULES, gclient_eval.SYNC):
         # gclient setdep should update the revision, i.e., the gitlink only
         # when the submodule entry is already present within .gitmodules.
@@ -3464,7 +3556,8 @@ def CMDsetdep(parser, args):
         subprocess2.call([
             'git', 'update-index', '--add', '--cacheinfo',
             f'160000,{value},{name}'
-        ])
+        ],
+                         cwd=cwd)
 
   with open(options.deps_file, 'wb') as f:
     f.write(gclient_eval.RenderDEPSFile(local_scope).encode('utf-8'))

@@ -1406,6 +1406,175 @@ class GclientTest(trial_dir.TestCase):
     self.assertFalse(sol.dependencies)
     self.assertFalse(sol._deps_hooks)
 
+  def testParseGitSubmodules_NoSubmodules(self):
+    """ParseGitSubmodules should return {} when the dep doesn't have
+       submodules."""
+    solutions = [{
+        'name': 'foobar',
+        'url': 'https://example.com/foobar',
+        'deps_file': '.DEPS.git',
+    }]
+    write('.gclient', 'solutions = %s' % repr(solutions))
+
+    options, _ = gclient.OptionParser().parse_args([])
+    client = gclient.GClient.LoadCurrentConfig(options)
+    self.assertEqual(1, len(client.dependencies))
+    sol = client.dependencies[0]
+
+    self.assertEqual(sol.ParseGitSubmodules(), {})
+
+  def testParseGitSubmodules_ParsesSubmodules(self):
+    """ParseGitSubmodules returns submodules when present. """
+    solutions = [{
+        'name': 'foobar',
+        'url': 'https://example.com/foobar',
+        'deps_file': '.DEPS.git',
+    }]
+    write('.gclient', 'solutions = %s' % repr(solutions))
+
+    ls_tree = """160000 commit be8c5114d606692dc783b60cf256690b62fbad17\tfoo/bar
+    100644 blob daf2de9caad4a70e6bb1047a6b50c412066f68b1\tREADME.txt
+    160000 commit 3ad3b564f8ae456f286446d091709f5a09fa4a93\taaaaaa
+    160000 commit 956df937508b65b5e72a4cf02696255be3631b78\ta.a.a/a
+    160000 commit b9f77763f0fab67eeeb6371492166567a8b7a3d2\ta_b/c
+    160000 commit b9f77763f0fab67eeeb6371492166567a8b7a3d2\ta b/c"""
+
+    git_config = """submodule.foo/bar.path=foo/bar
+    submodule.foo/bar.url=http://example.com/foo/bar
+    submodule.foo/bar.gclient-condition=checkout_linux
+    submodule.aaaaaa.path=aaaaaa
+    submodule.aaaaaa.url=http://example.com/aaaaaa
+    submodule.a.a.a/a.path=a.a.a/a
+    submodule.a.a.a/a.url=http://example.com/a.a.a/a
+    submodule.a_b/c.path=a_b/c
+    submodule.a_b/c.url=http://example.com/a_b/c
+    submodule.a b/c.path=a b/c
+    submodule.a b/c.url=http://example.com/a%20b/c"""
+
+    os_path_isfile_mock = mock.MagicMock(return_value=True)
+    subprocess2_check_output_mock = mock.MagicMock(
+        side_effect=[ls_tree.encode(), git_config.encode()])
+
+    options, _ = gclient.OptionParser().parse_args([])
+    client = gclient.GClient.LoadCurrentConfig(options)
+    self.assertEqual(1, len(client.dependencies))
+    sol = client.dependencies[0]
+    sol._use_relative_paths = True
+
+    with mock.patch('os.path.isfile', os_path_isfile_mock), mock.patch(
+        'subprocess2.check_output', subprocess2_check_output_mock):
+      self.assertEqual(
+          sol.ParseGitSubmodules(), {
+              'foo/bar': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/foo/bar@' +
+                          'be8c5114d606692dc783b60cf256690b62fbad17'),
+                  'condition':
+                  'checkout_linux',
+              },
+              'aaaaaa': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/aaaaaa@' +
+                          '3ad3b564f8ae456f286446d091709f5a09fa4a93'),
+              },
+              'a.a.a/a': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/a.a.a/a@' +
+                          '956df937508b65b5e72a4cf02696255be3631b78'),
+              },
+              'a_b/c': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/a_b/c@' +
+                          'b9f77763f0fab67eeeb6371492166567a8b7a3d2')
+              },
+              'a b/c': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/a%20b/c@' +
+                          'b9f77763f0fab67eeeb6371492166567a8b7a3d2'),
+              }
+          })
+
+  def testParseGitSubmodules_UsesAbsolutePath(self):
+    """ParseGitSubmodules uses absolute path when use_relative_path is not
+       set."""
+    solutions = [{
+        'name': 'foobar',
+        'url': 'https://example.com/foobar',
+        'deps_file': '.DEPS.git',
+    }]
+    write('.gclient', 'solutions = %s' % repr(solutions))
+
+    ls_tree = """160000 commit be8c5114d606692dc783b60cf256690b62fbad17\tfoo/bar
+    100644 blob daf2de9caad4a70e6bb1047a6b50c412066f68b1\tREADME.txt
+    160000 commit 3ad3b564f8ae456f286446d091709f5a09fa4a93\taaaaaa
+    160000 commit 956df937508b65b5e72a4cf02696255be3631b78\ta.a.a/a
+    160000 commit b9f77763f0fab67eeeb6371492166567a8b7a3d2\ta_b/c
+    160000 commit b9f77763f0fab67eeeb6371492166567a8b7a3d2\ta b/c"""
+
+    git_config = """submodule.foo/bar.path=foo/bar
+    submodule.foo/bar.url=http://example.com/foo/bar
+    submodule.foo/bar.gclient-condition=checkout_linux
+    submodule.aaaaaa.path=aaaaaa
+    submodule.aaaaaa.url=http://example.com/aaaaaa
+    submodule.a.a.a/a.path=a.a.a/a
+    submodule.a.a.a/a.url=http://example.com/a.a.a/a
+    submodule.a_b/c.path=a_b/c
+    submodule.a_b/c.url=http://example.com/a_b/c
+    submodule.a b/c.path=a b/c
+    submodule.a b/c.url=http://example.com/a%20b/c"""
+
+    os_path_isfile_mock = mock.MagicMock(return_value=True)
+    subprocess2_check_output_mock = mock.MagicMock(
+        side_effect=[ls_tree.encode(), git_config.encode()])
+
+    options, _ = gclient.OptionParser().parse_args([])
+    client = gclient.GClient.LoadCurrentConfig(options)
+    self.assertEqual(1, len(client.dependencies))
+    sol = client.dependencies[0]
+
+    with mock.patch('os.path.isfile', os_path_isfile_mock), mock.patch(
+        'subprocess2.check_output', subprocess2_check_output_mock):
+      self.assertEqual(
+          sol.ParseGitSubmodules(), {
+              'foobar/foo/bar': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/foo/bar@' +
+                          'be8c5114d606692dc783b60cf256690b62fbad17'),
+                  'condition':
+                  'checkout_linux',
+              },
+              'foobar/aaaaaa': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/aaaaaa@' +
+                          '3ad3b564f8ae456f286446d091709f5a09fa4a93'),
+              },
+              'foobar/a.a.a/a': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/a.a.a/a@' +
+                          '956df937508b65b5e72a4cf02696255be3631b78'),
+              },
+              'foobar/a_b/c': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/a_b/c@' +
+                          'b9f77763f0fab67eeeb6371492166567a8b7a3d2')
+              },
+              'foobar/a b/c': {
+                  'dep_type':
+                  'git',
+                  'url': ('http://example.com/a%20b/c@' +
+                          'b9f77763f0fab67eeeb6371492166567a8b7a3d2'),
+              }
+          })
+
   def testSameDirAllowMultipleCipdDeps(self):
     """Verifies gclient allow multiple cipd deps under same directory."""
     parser = gclient.OptionParser()

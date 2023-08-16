@@ -12,6 +12,7 @@ import os
 import shutil
 import subprocess
 import sys
+import time
 
 import gclient_paths
 import reclient_metrics
@@ -194,10 +195,10 @@ def build_context(argv, tool):
   reclient_bin_dir = find_reclient_bin_dir()
   reclient_cfg = find_reclient_cfg()
   if reclient_bin_dir is None or reclient_cfg is None:
-    print(("Build is configured to use reclient but necessary binaries "
-           "or config files can't be found.  Developer builds with "
-           "reclient are not yet supported.  Try regenerating your "
-           "build with use_goma in place of use_remoteexec for now."),
+    print(('Build is configured to use reclient but necessary binaries '
+           "or config files can't be found.\n"
+           'Please check if `"download_remoteexec_cfg": True` custom var is set'
+           ' in `.gclient`, and run `gclient sync`.'),
           file=sys.stderr)
     yield 1
     return
@@ -225,7 +226,10 @@ def build_context(argv, tool):
   # TODO(b/292523514) remove this once a fix is landed in reproxy
   remove_mdproxy_from_path()
 
+  start = time.time()
   reproxy_ret_code = start_reproxy(reclient_cfg, reclient_bin_dir)
+  elapsed = time.time() - start
+  print('%1.3f s to start reproxy' % elapsed)
   if reproxy_ret_code != 0:
     yield reproxy_ret_code
     return
@@ -233,4 +237,7 @@ def build_context(argv, tool):
     yield
   finally:
     print("Shutting down reproxy...", file=sys.stderr)
+    start = time.time()
     stop_reproxy(reclient_cfg, reclient_bin_dir)
+    elapsed = time.time() - start
+    print('%1.3f s to stop reproxy' % elapsed)

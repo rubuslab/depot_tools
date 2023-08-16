@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9f98f7a_2bc6b2fd",
+        "filename": "tests/git_cache_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1589012
+      },
+      "writtenOn": "2023-08-16T21:17:01Z",
+      "side": 1,
+      "message": "FWIW you could also use a dummy global or system for the test run with $GIT_CONFIG_GLOBAL or $GIT_CONFIG_SYSTEM envvar. With this setup as is I\u0027d be worried about mid-test-suite run corrupting user\u0027s regular config, which I think is why you were resistant to add it in the first place",
+      "revId": "fae94296a90b2b18ffefe8d88db2485cd9f315d3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

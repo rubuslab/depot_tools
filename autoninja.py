@@ -98,7 +98,7 @@ def main(args):
           continue
 
     if use_siso:
-      ninja_marker = os.path.join(output_dir, '.ninja_deps')
+      ninja_marker = os.path.join(output_dir, '.ninja_log')
       if os.path.exists(ninja_marker):
         return ('echo Run gn clean before switching from ninja to siso in %s' %
                 output_dir)

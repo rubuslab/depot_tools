@@ -35,6 +35,42 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b04cc93_0c42ece5",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-16T03:59:54Z",
+      "side": 1,
+      "message": "Acknowledged.\n\nThat was `License File` specific, though, so no immediate changes are necessary I think.",
+      "parentUuid": "fc462a16_dc86eab6",
+      "revId": "c11172de4ad207a543a2eddc46c0c5d877b69606",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f681f8d3_fc54f194",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-16T03:59:54Z",
+      "side": 1,
+      "message": "Agreed, it would be confusing to change the delimiter between fields.\n\nAlso, there are some existing READMEs that currently use a `,`, and exactly 0 that use a `;`.\n\nI did not find any instances like the case you\u0027ve pointed out - the closest was `Apache License, Version 2 and the MIT License` or similar. I have updated `process_license_value` to handle such cases.",
+      "parentUuid": "dde99311_b2f5ef0e",
+      "revId": "c11172de4ad207a543a2eddc46c0c5d877b69606",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a84db88e_1b153c95",
@@ -52,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd808a33_bf2540de",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-16T03:59:54Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a84db88e_1b153c95",
+      "revId": "c11172de4ad207a543a2eddc46c0c5d877b69606",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b7330d92_5f50e1c8",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-08-14T23:25:41Z",
       "side": 1,
       "message": "If we\u0027re going all in with the change to delimiter should we have a check for the `,` and warn?",
+      "revId": "c11172de4ad207a543a2eddc46c0c5d877b69606",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d71c9956_636d2926",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-16T03:59:54Z",
+      "side": 1,
+      "message": "Done. For the values where the standard delimiter could be easily used, I have returned a warning.",
+      "parentUuid": "b7330d92_5f50e1c8",
       "revId": "c11172de4ad207a543a2eddc46c0c5d877b69606",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

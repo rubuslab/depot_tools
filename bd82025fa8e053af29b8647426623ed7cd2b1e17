@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "326e4ab7_ddc5b913",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-16T18:58:41Z",
+      "side": 1,
+      "message": "our test suite is just using local git and creating temp directories as repos. I was trying to avoid actually setting the users\u0027 --global git config. I can do that, and just unset things after the test.\nbut i originally did not because my understanding is that this requirement will be turned on for everyone? so anyone running these tests would validate things?",
+      "parentUuid": "efa7e0aa_b2d88a27",
+      "revId": "bd82025fa8e053af29b8647426623ed7cd2b1e17",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59f3463f_19d27e8e",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-08-16T17:10:14Z",
       "side": 1,
       "message": "Are we sure this is always the root of the bare gitdir? That is, are we sure cwd is never inside of objects/ or refs/ or whatever?",
+      "revId": "bd82025fa8e053af29b8647426623ed7cd2b1e17",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20a7f908_24679ef5",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-16T18:58:41Z",
+      "side": 1,
+      "message": "yes, cwd will always be in root of a git. I\u0027ve removed parts where we unnecessarily pass in `cwd \u003d self.mirror_path` to make it more obvious.\n\ncwd of RunGit() is always either self.mirror_path the directory of where the mirror_repo should live, or a temporary dir of a repo where we bootstrap things.",
+      "parentUuid": "59f3463f_19d27e8e",
       "revId": "bd82025fa8e053af29b8647426623ed7cd2b1e17",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

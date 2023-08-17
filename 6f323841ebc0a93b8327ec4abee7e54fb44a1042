@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d1abf5b_edfe85c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-17T18:11:07Z",
+      "side": 1,
+      "message": "TODO: will unchain from  ignoresubmodules CL, or just wait to submit it.",
+      "revId": "6f323841ebc0a93b8327ec4abee7e54fb44a1042",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

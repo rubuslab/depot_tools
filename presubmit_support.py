@@ -14,6 +14,9 @@ __version__ = '2.0.0'
 # caching (between all different invocations of presubmit scripts for a given
 # change). We should add it as our presubmit scripts start feeling slow.
 
+file_of_interest = r'/usr/local/google/home/brucedawson/src/chromium/src/ppapi/PRESUBMIT.py'
+function_of_interest = 'CheckChangeOnCommit'
+
 import argparse
 import ast  # Exposed through the API.
 import contextlib
@@ -1593,6 +1596,8 @@ class PresubmitExecuter(object):
           # exception if checks add globals to context. E.g. sometimes the
           # Python runtime will add __warningregistry__.
           for function_name in list(context.keys()):
+            if not function_name.count(function_of_interest) > 0:
+              continue
             if not function_name.startswith('Check'):
               continue
             if function_name.endswith('Commit') and not self.committing:
@@ -1609,18 +1614,19 @@ class PresubmitExecuter(object):
             # CCs from being repeatedly appended.
             output_api.more_cc = []
 
-        else:  # Old format
+        else:
           if self.committing:
             function_name = 'CheckChangeOnCommit'
           else:
             function_name = 'CheckChangeOnUpload'
-          if function_name in list(context.keys()):
-            logging.debug('Running %s in %s', function_name, presubmit_path)
-            results.extend(
-                self._run_check_function(function_name, context, sink,
-                                         presubmit_path))
-            logging.debug('Running %s done.', function_name)
-            self.more_cc.extend(output_api.more_cc)
+          if function_name == function_of_interest:
+            if function_name in list(context.keys()):
+              logging.debug('Running %s in %s', function_name, presubmit_path)
+              results.extend(
+                  self._run_check_function(function_name, context, sink,
+                                           presubmit_path))
+              logging.debug('Running %s done.', function_name)
+              self.more_cc.extend(output_api.more_cc)
             # Clear the CC list between running each presubmit check to prevent
             # CCs from being repeatedly appended.
             output_api.more_cc = []
@@ -1754,6 +1760,9 @@ def DoPresubmitChecks(change,
       results += executer.ExecPresubmitScript(default_presubmit, fake_path)
     for filename in presubmit_files:
       filename = os.path.abspath(filename)
+      #print(filename)
+      if filename != file_of_interest:
+        continue
       # Accept CRLF presubmit script.
       presubmit_script = gclient_utils.FileRead(filename).replace('\r\n', '\n')
       if verbose:

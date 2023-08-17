@@ -16,6 +16,23 @@
       "message": "never mind, this was already reverted in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4791811",
       "revId": "b326bcaa3cebdde9b7805d884eac9f59fe9f3b76",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4ee622d_a5e3b7c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-17T21:33:49Z",
+      "side": 1,
+      "message": "This has been reverted in https://crrev.com/c/4791811, sorry for the breakage.",
+      "revId": "b326bcaa3cebdde9b7805d884eac9f59fe9f3b76",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

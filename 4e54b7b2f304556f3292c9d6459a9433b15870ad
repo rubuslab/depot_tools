@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f710316_3d8a57f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1541237
+      },
+      "writtenOn": "2023-08-17T12:56:20Z",
+      "side": 1,
+      "message": "I wonder if it\u0027s worth providing a link to this documentation?\nhttps://chromium.googlesource.com/chromiumos/docs/+/HEAD/gsutil.md",
+      "revId": "4e54b7b2f304556f3292c9d6459a9433b15870ad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

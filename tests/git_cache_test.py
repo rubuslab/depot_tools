@@ -34,6 +34,18 @@ class GitCacheTest(unittest.TestCase):
     self.addCleanup(shutil.rmtree, self.origin_dir, ignore_errors=True)
     git_cache.Mirror.SetCachePath(self.cache_dir)
 
+    # Ensure git_cache works with safe.bareRepository.
+    mock.patch.dict(
+        'os.environ', {
+            'GIT_CONFIG_GLOBAL': os.path.join(self.cache_dir, '.gitconfig'),
+        }).start()
+    self.addCleanup(mock.patch.stopall)
+    self.git([
+        'config', '--file',
+        os.path.join(self.cache_dir, '.gitconfig'), '--add',
+        'safe.bareRepository', 'explicit'
+    ])
+
   def git(self, cmd, cwd=None):
     cwd = cwd or self.origin_dir
     git = 'git.bat' if sys.platform == 'win32' else 'git'
@@ -92,8 +104,10 @@ class GitCacheTest(unittest.TestCase):
     # Add a bad refspec to the cache's fetch config.
     cache_dir = os.path.join(
         self.cache_dir, mirror.UrlToCacheDir(self.origin_dir))
-    self.git(['config', '--add', 'remote.origin.fetch',
-              '+refs/heads/foo:refs/heads/foo'],
+    self.git([
+        '--git-dir', cache_dir, 'config', '--add', 'remote.origin.fetch',
+        '+refs/heads/foo:refs/heads/foo'
+    ],
              cwd=cache_dir)
 
     mirror.populate(reset_fetch_config=True)

@@ -51,6 +51,24 @@
       "parentUuid": "dc668fe3_a6f9be03",
       "revId": "c7b9446d9dca529b14ca17f6169149004e08aeab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c66fce98_96d4ec88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-18T22:28:16Z",
+      "side": 1,
+      "message": "Ack. I created crrev.com/c/4794713 to fix this.",
+      "parentUuid": "d6be1a3c_fc5cb310",
+      "revId": "c7b9446d9dca529b14ca17f6169149004e08aeab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

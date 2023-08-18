@@ -16,6 +16,23 @@
       "message": "This makes the ninja to siso detection work - previously it was often not noticing this change. PTAL.",
       "revId": "55d317d124d75786fd88e1b1919f53e147f60e44",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c21201db_6f476dfa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-08-18T05:17:29Z",
+      "side": 1,
+      "message": "Sorry for the late reply here. I\u0027ve been thinking about the right way to do this.\n\nFor the short-term, this LGTM. 😊\n\nBut as we\u0027re improving Siso to be more and more compatible with Ninja and existing developer workflows / tools, I want to let it generate a valid .ninja_log file, too.\n\nI\u0027ve been thinking of a few possible conditions to catch it, but I think it might be easiest if we just write explicit marker files from autoninja and check for them. What do you think about this idea?",
+      "revId": "55d317d124d75786fd88e1b1919f53e147f60e44",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

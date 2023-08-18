@@ -22,10 +22,29 @@
     "cmd": [
       "vpython3",
       "-u",
+      "RECIPE_MODULE[recipe_engine::file]/resources/fileutil.py",
+      "--json-output",
+      "/path/to/tmp/json",
+      "copy",
+      "\ngit_dependencies = 'SYNC'\n",
+      "[CLEANUP]/tmp_tmp_1/DEPS"
+    ],
+    "infra_step": true,
+    "name": "Write to [CLEANUP]/tmp_tmp_1/DEPS",
+    "~followup_annotations": [
+      "@@@STEP_LOG_LINE@DEPS@@@@",
+      "@@@STEP_LOG_LINE@DEPS@git_dependencies = 'SYNC'@@@",
+      "@@@STEP_LOG_END@DEPS@@@"
+    ]
+  },
+  {
+    "cmd": [
+      "vpython3",
+      "-u",
       "RECIPE_REPO[depot_tools]/gclient.py",
       "setdep",
       "--deps-file",
-      "foo",
+      "[CLEANUP]/tmp_tmp_1/DEPS",
       "-r",
       "foo@2222222222222222222222222222222222222222"
     ],
@@ -36,6 +55,91 @@
     },
     "infra_step": true,
     "name": "gclient setdep"
+  },
+  {
+    "cmd": [
+      "vpython3",
+      "-u",
+      "RECIPE_MODULE[recipe_engine::file]/resources/fileutil.py",
+      "--json-output",
+      "/path/to/tmp/json",
+      "copy",
+      "[CLEANUP]/tmp_tmp_1/DEPS",
+      "/path/to/tmp/"
+    ],
+    "infra_step": true,
+    "name": "Read modified DEPS"
+  },
+  {
+    "cmd": [
+      "vpython3",
+      "-u",
+      "RECIPE_MODULE[recipe_engine::file]/resources/fileutil.py",
+      "--json-output",
+      "/path/to/tmp/json",
+      "copy",
+      "\ngit_dependencies = 'SYNC'\n",
+      "/path/to/tmp/"
+    ],
+    "infra_step": true,
+    "name": "Read DEPS file (2)",
+    "~followup_annotations": [
+      "@@@STEP_LOG_LINE@\ngit_dependencies = 'SYNC'\n@@@@",
+      "@@@STEP_LOG_LINE@\ngit_dependencies = 'SYNC'\n@git_dependencies = 'SYNC'@@@",
+      "@@@STEP_LOG_END@\ngit_dependencies = 'SYNC'\n@@@"
+    ]
+  },
+  {
+    "cmd": [
+      "vpython3",
+      "-u",
+      "RECIPE_MODULE[recipe_engine::file]/resources/fileutil.py",
+      "--json-output",
+      "/path/to/tmp/json",
+      "copy",
+      "\ngit_dependencies = 'SYNC'\n",
+      "[CLEANUP]/tmp_tmp_2/DEPS"
+    ],
+    "infra_step": true,
+    "name": "Write to [CLEANUP]/tmp_tmp_2/DEPS",
+    "~followup_annotations": [
+      "@@@STEP_LOG_LINE@DEPS@@@@",
+      "@@@STEP_LOG_LINE@DEPS@git_dependencies = 'SYNC'@@@",
+      "@@@STEP_LOG_END@DEPS@@@"
+    ]
+  },
+  {
+    "cmd": [
+      "vpython3",
+      "-u",
+      "RECIPE_REPO[depot_tools]/gclient.py",
+      "setdep",
+      "--deps-file",
+      "[CLEANUP]/tmp_tmp_2/DEPS",
+      "-r",
+      "src/bar@2222222222222222222222222222222222222222"
+    ],
+    "env_suffixes": {
+      "PATH": [
+        "RECIPE_REPO[depot_tools]"
+      ]
+    },
+    "infra_step": true,
+    "name": "gclient setdep (2)"
+  },
+  {
+    "cmd": [
+      "vpython3",
+      "-u",
+      "RECIPE_MODULE[recipe_engine::file]/resources/fileutil.py",
+      "--json-output",
+      "/path/to/tmp/json",
+      "copy",
+      "[CLEANUP]/tmp_tmp_2/DEPS",
+      "/path/to/tmp/"
+    ],
+    "infra_step": true,
+    "name": "Read modified DEPS (2)"
   },
   {
     "cmd": [

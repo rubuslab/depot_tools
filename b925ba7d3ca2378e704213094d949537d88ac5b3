@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "932d27f4_553d9ba0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-21T16:23:01Z",
+      "side": 1,
+      "message": "I change the algorithm so that it will work if siso starts creating non-empty .ninja_log files. PTAL.",
+      "revId": "b925ba7d3ca2378e704213094d949537d88ac5b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

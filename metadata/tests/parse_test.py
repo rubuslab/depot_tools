@@ -19,7 +19,8 @@ import metadata.parse
 
 class ParseTest(unittest.TestCase):
   def test_parse(self):
-    filepath = os.path.join(_THIS_DIR, "data", "README.chromium.test")
+    filepath = os.path.join(_THIS_DIR, "data",
+                            "README.chromium.test.multi-invalid")
     all_metadata = metadata.parse.parse_file(filepath)
 
     # Dependency metadata with no entries at all are ignored.
@@ -29,7 +30,8 @@ class ParseTest(unittest.TestCase):
     self.assertListEqual(
         all_metadata[0].get_entries(),
         [
-            ("Name", "Test-A README for Chromium metadata"),
+            ("Name",
+             "Test-A README for Chromium metadata (0 errors, 0 warnings)"),
             ("Short Name", "metadata-test-valid"),
             ("URL", "https://www.example.com/metadata,\n"
              "     https://www.example.com/parser"),
@@ -51,7 +53,8 @@ class ParseTest(unittest.TestCase):
     self.assertListEqual(
         all_metadata[1].get_entries(),
         [
-            ("Name", "Test-B README for Chromium metadata"),
+            ("Name",
+             "Test-B README for Chromium metadata (4 errors, 1 warning)"),
             ("SHORT NAME", "metadata-test-invalid"),
             ("URL", "file://home/drive/chromium/src/metadata"),
             ("Version", "0"),
@@ -68,7 +71,8 @@ class ParseTest(unittest.TestCase):
     self.assertListEqual(
         all_metadata[2].get_entries(),
         [
-            ("Name", "Test-C README for Chromium metadata"),
+            ("Name",
+             "Test-C README for Chromium metadata (5 errors, 1 warning)"),
             ("URL", "https://www.example.com/first"),
             ("URL", "https://www.example.com/second"),
             ("Version", "N/A"),

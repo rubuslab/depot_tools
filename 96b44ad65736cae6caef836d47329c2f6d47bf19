@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57af813d_eee92366",
+        "filename": "metadata/tests/parse_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2023-08-22T01:56:13Z",
+      "side": 1,
+      "message": "Don\u0027t we also still want some tests for a single one in a single file or are you comfortable thats fully covered in the multi?",
+      "revId": "96b44ad65736cae6caef836d47329c2f6d47bf19",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

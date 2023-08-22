@@ -16,6 +16,23 @@
       "message": "I change the algorithm so that it will work if siso starts creating non-empty .ninja_log files. PTAL.",
       "revId": "b925ba7d3ca2378e704213094d949537d88ac5b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bda2014f_63bdde15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-08-22T00:40:36Z",
+      "side": 1,
+      "message": "Thank you, that looks good to me!",
+      "revId": "b925ba7d3ca2378e704213094d949537d88ac5b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

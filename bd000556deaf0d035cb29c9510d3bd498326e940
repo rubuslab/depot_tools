@@ -70,6 +70,24 @@
       "parentUuid": "2e22adb9_2d1ca672",
       "revId": "bd000556deaf0d035cb29c9510d3bd498326e940",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "773b9f03_964bff5c",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2731,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-23T19:08:22Z",
+      "side": 1,
+      "message": "How 50 paths? From the code, we are running this when `len(cache_info) \u003e\u003d 100`, shouldn\u0027t it be 100 hundred paths? Am I missing something?",
+      "parentUuid": "b84bacb9_21bfda16",
+      "revId": "bd000556deaf0d035cb29c9510d3bd498326e940",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

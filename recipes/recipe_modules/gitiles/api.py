@@ -161,10 +161,8 @@ class Gitiles(recipe_api.RecipeApi):
 
     value = base64.b64decode(step_result.json.output['value'])
     try:
-      # TODO(crbug.com/1227140): Clean up when py2 is no longer supported.
       # If the file is not utf-8 encodable, return the bytes
-      if sys.version_info >= (3,):
-        value = value.decode('utf-8')
+      value = value.decode('utf-8')
     finally:
       return value
 

@@ -28,18 +28,8 @@ import uuid
 
 import os.path as path
 
-# TODO(crbug.com/1227140): Clean up when py2 is no longer supported.
 from io import BytesIO
-try:
-  import urlparse
-except ImportError:  # pragma: no cover
-  import urllib.parse as urlparse
-
-# Cache the string-escape codec to ensure subprocess can find it later.
-# See crbug.com/912292#c2 for context.
-# TODO(crbug.com/1227140): Clean up when py2 is no longer supported.
-if sys.version_info.major == 2:
-  codecs.lookup('string-escape')
+import urllib.parse as urlparse
 
 # How many bytes at a time to read from pipes.
 BUF_SIZE = 256
@@ -169,13 +159,6 @@ def _kill_process(proc):
   proc.kill()
 
 
-# TODO(crbug.com/1227140): Clean up when py2 is no longer supported.
-def _stdout_write(buf):
-  try:
-    sys.stdout.buffer.write(buf)
-  except AttributeError:
-    sys.stdout.write(buf)
-
 
 def call(*args, **kwargs):  # pragma: no cover
   """Interactive subprocess call."""
@@ -235,10 +218,10 @@ def call(*args, **kwargs):  # pragma: no cover
       if hanging_cr:
         buf = buf[:-1]
       buf = buf.replace(b'\r\n', b'\n').replace(b'\r', b'\n')
-      _stdout_write(buf)
+      sys.stdout.buffer.write(buf)
       out.write(buf)
     if hanging_cr:
-      _stdout_write(b'\n')
+      sys.stdout.buffer.write(b'\n')
       out.write(b'\n')
 
     code = proc.wait()

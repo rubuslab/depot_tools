@@ -52,6 +52,24 @@
       "parentUuid": "97ca3bfa_b97b62ae",
       "revId": "bd000556deaf0d035cb29c9510d3bd498326e940",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b84bacb9_21bfda16",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2731,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-23T19:04:55Z",
+      "side": 1,
+      "message": "each submodule has two items in that array. \u0027cacheinfo\u0027 is fixed at 550; leaving ~7.5k for 50 x \u0027160000,{commit},{path}\u0027. Fixed len of that is 800 char; so about 6.7k remains for 50 paths. That\u0027s end up being 135 chars per path on average, and we are well below that.",
+      "parentUuid": "2e22adb9_2d1ca672",
+      "revId": "bd000556deaf0d035cb29c9510d3bd498326e940",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

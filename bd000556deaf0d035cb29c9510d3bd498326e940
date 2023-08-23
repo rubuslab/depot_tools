@@ -106,6 +106,24 @@
       "parentUuid": "773b9f03_964bff5c",
       "revId": "bd000556deaf0d035cb29c9510d3bd498326e940",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40aafbd4_46980a3d",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2731,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-23T19:12:21Z",
+      "side": 1,
+      "message": "That makes sense, I misunderstood this, thanks for the explanation.",
+      "parentUuid": "d563a20b_0416419f",
+      "revId": "bd000556deaf0d035cb29c9510d3bd498326e940",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

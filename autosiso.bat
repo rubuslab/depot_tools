@@ -8,7 +8,10 @@ setlocal
 :: standalone, but allow other PATH manipulations to take priority.
 set PATH=%PATH%;%~dp0
 
+
+set scriptdir=%~dp0
+
 :: Defer control.
 :: Add double quotes to the arguments to preserve the special '^' character.
 :: See autosiso.py for more information.
-python3 "%~dp0\autosiso.py" "%*"
+%scriptdir%python-bin\python3.bat "%~dp0\autosiso.py" "%*"

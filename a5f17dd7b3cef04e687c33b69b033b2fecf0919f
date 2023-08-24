@@ -22,6 +22,30 @@
       },
       "revId": "a5f17dd7b3cef04e687c33b69b033b2fecf0919f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bfbf1d7e_dcfcf232",
+        "filename": "gclient_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-08-24T22:31:24Z",
+      "side": 0,
+      "message": "(the cl that added this for reference: https://crrev.com/c/3306613)",
+      "parentUuid": "d62bfc36_63566629",
+      "range": {
+        "startLine": 182,
+        "startChar": 2,
+        "endLine": 183,
+        "endChar": 53
+      },
+      "revId": "a5f17dd7b3cef04e687c33b69b033b2fecf0919f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

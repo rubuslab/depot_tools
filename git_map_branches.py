@@ -27,7 +27,6 @@ Branches are colorized as follows:
 import argparse
 import collections
 import metrics
-import os
 import subprocess2
 import sys
 

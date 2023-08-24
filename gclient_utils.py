@@ -179,15 +179,6 @@ class PrintableObject(object):
 
 
 def AskForData(message):
-  # Try to load the readline module, so that "elaborate line editing" features
-  # such as backspace work for `raw_input` / `input`.
-  try:
-    import readline
-  except ImportError:
-    # The readline module does not exist in all Python distributions, e.g. on
-    # Windows. Fall back to simple input handling.
-    pass
-
   # Use this so that it can be mocked in tests.
   try:
     return input(message)

@@ -37,6 +37,10 @@
 
 /lib/* recipes
 
+# Metadata validation, without its tests.
+/metadata/**.py     recipes
+/metadata/tests/**  -recipes
+
 # TODO: There are some really junky dependencies in here that we should probably
 # move to vpython/cipd.
 /third_party/**                     recipes

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba0139ce_cd560695",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-24T20:54:14Z",
+      "side": 1,
+      "message": "unused attribute; validated all calls within depot_tools.",
+      "revId": "6e2558bdb76af3ed916d10e37ab584a99f9a4afd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff9b58e8_7f38fa3f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1362,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-24T20:54:14Z",
+      "side": 1,
+      "message": "unused attribute; validated all calls within depot_tools.",
+      "revId": "6e2558bdb76af3ed916d10e37ab584a99f9a4afd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

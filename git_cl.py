@@ -55,12 +55,7 @@ import subprocess2
 import swift_format
 import watchlists
 
-from third_party import six
 from six.moves import urllib
-
-
-if sys.version_info.major == 3:
-  basestring = (str,)  # pylint: disable=redefined-builtin
 
 
 __version__ = '2.0'
@@ -922,7 +917,7 @@ def ParseIssueNumberArgument(arg):
 
   if isinstance(arg, int):
     return _ParsedIssueNumberArgument(issue=arg)
-  if not isinstance(arg, basestring):
+  if not isinstance(arg, str):
     return fail_result
 
   if arg.isdigit():
@@ -3179,7 +3174,7 @@ class ChangeDescription(object):
     return '\n'.join(self._description_lines)
 
   def set_description(self, desc):
-    if isinstance(desc, basestring):
+    if isinstance(desc, str):
       lines = desc.splitlines()
     else:
       lines = [line.rstrip() for line in desc]

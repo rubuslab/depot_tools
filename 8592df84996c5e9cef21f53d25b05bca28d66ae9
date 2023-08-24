@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcbf058a_33a16b8b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-08-24T22:37:08Z",
+      "side": 1,
+      "message": "diff of original CL and reland: https://chromium.googlesource.com/chromium/tools/depot_tools/+diff/5819c303f04cc0cba126c6de4286e3e2b9595d0c..8592df84996c5e9cef21f53d25b05bca28d66ae9/recipes",
+      "revId": "8592df84996c5e9cef21f53d25b05bca28d66ae9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

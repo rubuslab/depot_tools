@@ -20,11 +20,6 @@ import tempfile
 import threading
 import traceback
 
-try:
-  import urlparse
-except ImportError:  # For Py3 compatibility
-  import urllib.parse as urlparse
-
 import gclient_utils
 import gerrit_util
 import git_cache

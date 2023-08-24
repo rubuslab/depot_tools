@@ -16,6 +16,23 @@
       "message": "🎉🎉🎉",
       "revId": "52e24eb57997afc109c1ed450525e1aa6f75beb2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cac3f81_3a4d3994",
+        "filename": "tests/gclient_smoketest_base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-24T03:57:08Z",
+      "side": 1,
+      "message": "remove, looks like it\u0027s not used, this is an old env var in bash/batch files.",
+      "revId": "52e24eb57997afc109c1ed450525e1aa6f75beb2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

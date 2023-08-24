@@ -375,6 +375,7 @@ def CheckChangeHasNoCrAndHasOnlyOneEol(input_api, output_api,
       items=eof_files))
   return outputs
 
+
 def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
   """Checks that there are no gendered pronouns in any of the text files to be
   submitted.

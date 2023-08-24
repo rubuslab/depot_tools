@@ -33,6 +33,24 @@
       "message": "@gavinmak@google.com, do you know if there\u0027s a way to test a recipe with a different `depot_tools` recipe bundle? I had a read of go/luci-how-to-led, but I couldn\u0027t figure out how to do it.",
       "revId": "481cb9d1bf5f56abd03e7d6d82fec117ed8559db",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cc02103_bfde9817",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-08-24T17:15:03Z",
+      "side": 1,
+      "message": "Sure, you can:\n\n1. find a build/builder running a recipe that uses depot_tools\n2. cd into a local checkout of the repo containing the recipe\n3. run `led get-build $buildid | led edit-recipe-bundle -O depot_tools\u003d/path/to/depot_tools | led launch`. `led get-builder $builder` also works",
+      "parentUuid": "9ab8b114_f7439fd2",
+      "revId": "481cb9d1bf5f56abd03e7d6d82fec117ed8559db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

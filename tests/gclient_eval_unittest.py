@@ -10,11 +10,13 @@ import os
 import sys
 import unittest
 
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+import metrics_utils
 from third_party import schema
 
-import metrics_utils
+
 # We have to disable monitoring before importing gclient.
 metrics_utils.COLLECT_METRICS = False
 

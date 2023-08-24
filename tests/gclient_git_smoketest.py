@@ -16,11 +16,13 @@ import unittest
 
 import gclient_smoketest_base
 
+
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT_DIR)
 
 import subprocess2
-from testing_support.fake_repos import join, write
+from testing_support.fake_repos import join
+from testing_support.fake_repos import write
 
 
 class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):

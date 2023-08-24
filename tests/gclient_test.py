@@ -8,7 +8,6 @@
 See gclient_smoketest.py for integration tests.
 """
 
-import copy
 import json
 import logging
 import ntpath
@@ -17,12 +16,8 @@ import sys
 import six
 import unittest
 
-if sys.version_info.major == 2:
-  import mock
-  import Queue
-else:
-  from unittest import mock
-  import queue as Queue
+from unittest import mock
+import queue
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -84,7 +79,7 @@ class SCMMock(object):
 class GclientTest(trial_dir.TestCase):
   def setUp(self):
     super(GclientTest, self).setUp()
-    self.processed = Queue.Queue()
+    self.processed = queue.Queue()
     self.previous_dir = os.getcwd()
     os.chdir(self.root_dir)
     # Manual mocks.
@@ -216,7 +211,7 @@ class GclientTest(trial_dir.TestCase):
     try:
       while True:
         items.append(self.processed.get_nowait())
-    except Queue.Empty:
+    except queue.Empty:
       pass
     return items
 

@@ -78,8 +78,7 @@ def GetPrimarySolutionPath():
   try:
     top_dir = subprocess2.check_output(['git', 'rev-parse', '--show-toplevel'],
                                        stderr=subprocess2.DEVNULL)
-    if sys.version_info.major == 3:
-      top_dir = top_dir.decode('utf-8', 'replace')
+    top_dir = top_dir.decode('utf-8', 'replace')
     top_dir = os.path.normpath(top_dir.strip())
   except subprocess2.CalledProcessError:
     pass

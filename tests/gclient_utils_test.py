@@ -10,16 +10,8 @@ from __future__ import unicode_literals
 import io
 import os
 import sys
-import tempfile
-import time
 import unittest
-
-if sys.version_info.major == 2:
-  from StringIO import StringIO
-  import mock
-else:
-  from io import StringIO
-  from unittest import mock
+from unittest import mock
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 

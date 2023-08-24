@@ -60,10 +60,7 @@ def pathlify(hash_prefix):
   >>> pathlify('\xDE\xAD')
   'de/ad'
   """
-  if sys.version_info.major == 3:
-    return '/'.join('%02x' % b for b in hash_prefix)
-
-  return '/'.join('%02x' % ord(b) for b in hash_prefix)
+  return '/'.join('%02x' % b for b in hash_prefix)
 
 
 @git.memoize_one(threadsafe=False)
@@ -184,10 +181,7 @@ def preload_tree(prefix):
 
 
 def all_prefixes(depth=PREFIX_LEN):
-  if sys.version_info.major == 3:
-    prefixes = [bytes([i]) for i in range(255)]
-  else:
-    prefixes = [chr(i) for i in range(255)]
+  prefixes = [bytes([i]) for i in range(255)]
   for x in prefixes:
     # This isn't covered because PREFIX_LEN currently == 1
     if depth > 1:  # pragma: no cover

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86ef009f_fcbb69b1",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-25T06:55:46Z",
+      "side": 0,
+      "message": "Left over from the original impl: https://codereview.chromium.org/164823002",
+      "revId": "c7aca34c8e5fff27dd8424b55ef520de960d0bff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1270aa0_62ab4172",
+        "filename": "subprocess2.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-25T06:55:46Z",
+      "side": 0,
+      "message": "Implemented in https://codereview.chromium.org/8749015/patch/9001/9002. Not used anymore.",
+      "revId": "c7aca34c8e5fff27dd8424b55ef520de960d0bff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

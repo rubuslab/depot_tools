@@ -328,6 +328,31 @@ class DescriptionChecksTest(unittest.TestCase):
     self.assertEqual(0, len(errors))
 
 
+class ChromiumDependencyMetadataCheckTest(unittest.TestCase):
+  def testNoWarningForOtherFiles(self):
+    input_api = MockInputApi()
+    input_api.change.RepositoryRoot = lambda: ''
+    input_api.files = [
+        MockFile(os.path.normpath('foo/README.md'), ['Name: foo dep']),
+        MockFile(os.path.normpath('foo/main.py'), ['Shipped: unknown']),
+    ]
+    results = presubmit_canned_checks.CheckChromiumDependencyMetadata(
+        input_api, MockOutputApi())
+    self.assertEqual(len(results), 0)
+
+  def testShowWarningsForEmptyFile(self):
+    input_api = MockInputApi()
+    input_api.change.RepositoryRoot = lambda: ''
+    input_api.files = [
+        MockFile(os.path.normpath('foo/README.chromium'), ['']),
+    ]
+    results = presubmit_canned_checks.CheckChromiumDependencyMetadata(
+        input_api, MockOutputApi())
+    self.assertEqual(len(results), 1)
+    self.assertEqual(results[0].type, 'warning')
+    self.assertEqual(len(results[0].items), 1)
+
+
 class CheckUpdateOwnersFileReferences(unittest.TestCase):
   def testShowsWarningIfDeleting(self):
     input_api = MockInputApi()

@@ -29,8 +29,13 @@ def validate_file(filepath: str,
   # Get the directory the metadata file is in.
   parent_dir = os.path.dirname(filepath)
 
-  results = []
   dependencies = metadata.parse.parse_file(filepath)
+  if not dependencies:
+    result = vr.ValidationWarning(f"No metadata found in '{filepath}'.")
+    result.set_tag(tag="reason", value="metadata not found")
+    return [result]
+
+  results = []
   for dependency in dependencies:
     results.extend(
         dependency.validate(

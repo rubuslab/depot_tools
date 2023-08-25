@@ -10,6 +10,9 @@ import io as _io
 import os as _os
 import zlib
 
+import metadata.discover
+import metadata.validate
+
 _HERE = _os.path.dirname(_os.path.abspath(__file__))
 
 # These filters will be disabled if callers do not explicitly supply a
@@ -375,6 +378,7 @@ def CheckChangeHasNoCrAndHasOnlyOneEol(input_api, output_api,
       items=eof_files))
   return outputs
 
+
 def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
   """Checks that there are no gendered pronouns in any of the text files to be
   submitted.
@@ -396,7 +400,6 @@ def CheckGenderNeutral(input_api, output_api, source_file_filter=None):
     return [output_api.PresubmitPromptWarning('Found a gendered pronoun in:',
                                               long_text='\n'.join(errors))]
   return []
-
 
 
 def _ReportErrorFileAndLine(filename, line_num, dummy_line):
@@ -789,6 +792,31 @@ def CheckLicense(input_api, output_api, license_re_param=None,
   return results
 
 
+def CheckChromiumDependencyMetadata(input_api, output_api, file_filter=None):
+  """Check affected files for Chromium dependency metadata are valid."""
+  # If the file filter is unspecified, filter to known Chromium metadata files.
+  if file_filter is None:
+    file_filter = lambda f: metadata.discover.is_metadata_file(f.LocalPath())
+
+  # The repo's root directory is required to check license files.
+  repo_root_dir = input_api.change.RepositoryRoot()
+
+  outputs = []
+  for f in input_api.AffectedFiles(file_filter=file_filter):
+    errors, warnings = metadata.validate.check_file(
+        filepath=f.AbsoluteLocalPath(),
+        repo_root_dir=repo_root_dir,
+    )
+
+    for warning in warnings:
+      outputs.append(output_api.PresubmitPromptWarning(warning, [f]))
+
+    for error in errors:
+      outputs.append(output_api.PresubmitError(error, [f]))
+
+  return outputs
+
+
 ### Other checks
 
 def CheckDoNotSubmit(input_api, output_api):
@@ -842,6 +870,7 @@ def CheckTreeIsOpen(input_api, output_api,
     return [output_api.PresubmitError('Error fetching tree status.',
                                       long_text=str(e))]
   return []
+
 
 def GetUnitTestsInDirectory(input_api,
                             output_api,

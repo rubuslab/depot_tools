@@ -31,20 +31,26 @@ CIPD_CACHE_DIR = DEPOT_TOOLS_DIR / '.cipd_bin_cros_python2'
 
 def _FindChromite(path):
   """Find the chromite dir in a repo, gclient, or submodule checkout."""
+
+  # Special case: standalone chromite checkout.  Your mileage may vary.
+  chromite = os.getenv('CHROMITE_DIR')
+  if chromite:
+    return chromite
+
   path = os.path.abspath(path)
   # Depending on the checkout type (whether repo chromeos or gclient chrome)
   # Chromite lives in a different location.
-  roots = (
+  checkout_descriptors = (
       ('.repo', 'chromite/.git'),
       ('.gclient', 'src/third_party/chromite/.git'),
       ('src/.gitmodules', 'src/third_party/chromite/.git'),
   )
 
   while path != '/':
-    for root, chromite_git_dir in roots:
-      if all(os.path.exists(os.path.join(path, x))
-             for x in [root, chromite_git_dir]):
-        return os.path.dirname(os.path.join(path, chromite_git_dir))
+    for desc in checkout_descriptors:
+      # A checkout type is found if all directories exist.
+      if all(os.path.isdir(os.path.join(path, x)) for x in desc):
+        return os.path.dirname(os.path.join(path, desc[1]))
     path = os.path.dirname(path)
   return None
 

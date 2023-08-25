@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b8025e5_8b6268a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1330845
+      },
+      "writtenOn": "2023-08-25T21:22:58Z",
+      "side": 1,
+      "message": "`cros` already works with a standalone checkout if you execute `chromite/bin/cros` directly.  Any reason you\u0027re not just doing that?",
+      "revId": "ec435ba0ca46f37fbe2046b4fbdcae94e00f9fac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -51,6 +51,23 @@
       "parentUuid": "9ab8b114_f7439fd2",
       "revId": "481cb9d1bf5f56abd03e7d6d82fec117ed8559db",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "886f9db5_77121107",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-25T01:02:00Z",
+      "side": 1,
+      "message": "Tested with:\n```\nled get-build 8771904733171392129 | \\\nled edit-recipe-bundle -O depot_tools\u003d~/src/depot_tools | \\\nled edit-cr-cl https://chromium-review.googlesource.com/c/infra/luci/luci-go/+/4653538/1 | \\\nled launch\n```",
+      "revId": "481cb9d1bf5f56abd03e7d6d82fec117ed8559db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

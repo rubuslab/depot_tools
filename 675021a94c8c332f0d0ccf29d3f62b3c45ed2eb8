@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "de6b9059_56c0d354",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2150,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-25T20:06:31Z",
+      "side": 1,
+      "message": "That would be unexpected since setdep won\u0027t work well. Let\u0027s assume that if there are git submodules, then it set to either SYNC or SUBMODULES.",
+      "parentUuid": "af7866d6_fe263637",
+      "range": {
+        "startLine": 2145,
+        "startChar": 0,
+        "endLine": 2150,
+        "endChar": 71
+      },
+      "revId": "675021a94c8c332f0d0ccf29d3f62b3c45ed2eb8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fc5e1ce1_e497cf93",
         "filename": "git_cl.py",
         "patchSetId": 2

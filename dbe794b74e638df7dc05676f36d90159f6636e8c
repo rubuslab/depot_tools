@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0cfb875_f670fa5c",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2149,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-25T19:39:58Z",
+      "side": 1,
+      "message": "Run at the end of sync to ensure the warning is only printed once and at the end of the execution.",
+      "revId": "dbe794b74e638df7dc05676f36d90159f6636e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14623a91_c3424f18",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2154,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-25T19:39:58Z",
+      "side": 1,
+      "message": "Added tests for `is_fsmonitor_enabled`, skipped these lines since they are temp logs and hard to test.",
+      "revId": "dbe794b74e638df7dc05676f36d90159f6636e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

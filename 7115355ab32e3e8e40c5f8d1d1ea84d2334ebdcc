@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c32d59b3_df3f037c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-25T20:08:23Z",
+      "side": 1,
+      "message": "i\u0027t a nit comment, mostly to simplify codebase. We can leave this as is. it\u0027s fine to keep .gitmodule check in git_cl.",
+      "revId": "7115355ab32e3e8e40c5f8d1d1ea84d2334ebdcc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

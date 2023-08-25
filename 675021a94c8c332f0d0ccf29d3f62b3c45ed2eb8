@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "af7866d6_fe263637",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2150,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-25T20:03:01Z",
+      "side": 1,
+      "message": "Not sure if I understand correctly. I can check `git_dependencies_state` here but a repo could have it set to `DEPS` and still have submodules. If we aren\u0027t considered about that, I can change it here.",
+      "parentUuid": "436ff4e8_515adb9f",
+      "range": {
+        "startLine": 2145,
+        "startChar": 0,
+        "endLine": 2150,
+        "endChar": 71
+      },
+      "revId": "675021a94c8c332f0d0ccf29d3f62b3c45ed2eb8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fc5e1ce1_e497cf93",
         "filename": "git_cl.py",
         "patchSetId": 2
@@ -37,6 +61,24 @@
       "writtenOn": "2023-08-25T19:49:48Z",
       "side": 1,
       "message": "nit: this is duplicated; consider moving this to git_commit.py as a function\n\ne.g.\n\n```\n  def warningSubmodule():\n    if not is_fsmonitor_enabled:\n      return\n    print(...)\n```\n\nso this becomes\nif submodule:\n  warningSubmodule()",
+      "revId": "675021a94c8c332f0d0ccf29d3f62b3c45ed2eb8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eba708a4_9e9e33d9",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4744,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-25T20:03:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc5e1ce1_e497cf93",
       "revId": "675021a94c8c332f0d0ccf29d3f62b3c45ed2eb8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -54,6 +96,24 @@
       "writtenOn": "2023-08-25T19:49:48Z",
       "side": 1,
       "message": "nit: add a few spaces before git to improve readability.\n\n\n```suggestion\n    print(\u0027    git config --global core.fsmonitor false\u0027)\n```",
+      "revId": "675021a94c8c332f0d0ccf29d3f62b3c45ed2eb8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fd6f528_18e96310",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4748,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-08-25T20:03:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6546fb7_f3a400a0",
       "revId": "675021a94c8c332f0d0ccf29d3f62b3c45ed2eb8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

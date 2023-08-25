@@ -410,6 +410,12 @@ def get_config_regexp(pattern):
   return run('config', '--get-regexp', pattern).splitlines()
 
 
+def is_fsmonitor_enabled():
+  """Returns true if core.fsmonitor is enabled in git config."""
+  fsmonitor = get_config('core.fsmonitor', False)
+  return fsmonitor.strip().lower() == 'true'
+
+
 def current_branch():
   try:
     return run('rev-parse', '--abbrev-ref', 'HEAD')

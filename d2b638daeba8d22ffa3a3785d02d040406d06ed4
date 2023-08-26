@@ -16,6 +16,24 @@
       "message": "I believe we can remove this variable altogether and that\u0027s what that TODO was about.",
       "revId": "d2b638daeba8d22ffa3a3785d02d040406d06ed4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "687ad7ef_0a498d92",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-08-26T00:28:33Z",
+      "side": 1,
+      "message": "There\u0027s still at least 3 uses of temporary_directory: https://source.chromium.org/search?q\u003d%22input_api.temporary_directory%22\n\nShould we remove those as well?",
+      "parentUuid": "d949474d_0be4c740",
+      "revId": "d2b638daeba8d22ffa3a3785d02d040406d06ed4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

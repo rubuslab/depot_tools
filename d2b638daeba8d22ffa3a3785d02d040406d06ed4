@@ -34,6 +34,24 @@
       "parentUuid": "d949474d_0be4c740",
       "revId": "d2b638daeba8d22ffa3a3785d02d040406d06ed4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4bba82b_db0de789",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-26T02:58:10Z",
+      "side": 1,
+      "message": "Thanks for catching that. We either remove those three references, or keep the comment.",
+      "parentUuid": "687ad7ef_0a498d92",
+      "revId": "d2b638daeba8d22ffa3a3785d02d040406d06ed4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

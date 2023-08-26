@@ -16,6 +16,29 @@
       "message": "Merging monday.",
       "revId": "f7c18be436a3a123fb4b016c544de30adc844218",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b2eec65_402a8b93",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-08-26T00:26:32Z",
+      "side": 1,
+      "message": "elif",
+      "range": {
+        "startLine": 877,
+        "startChar": 0,
+        "endLine": 878,
+        "endChar": 30
+      },
+      "revId": "f7c18be436a3a123fb4b016c544de30adc844218",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

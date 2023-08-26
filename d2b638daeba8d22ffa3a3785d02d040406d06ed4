@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d949474d_0be4c740",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-26T00:05:10Z",
+      "side": 1,
+      "message": "I believe we can remove this variable altogether and that\u0027s what that TODO was about.",
+      "revId": "d2b638daeba8d22ffa3a3785d02d040406d06ed4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

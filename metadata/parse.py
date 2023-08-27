@@ -31,23 +31,29 @@ _PATTERN_FIELD_DECLARATION = re.compile(
 )
 
 
-def parse_file(filepath: str) -> List[dm.DependencyMetadata]:
-  """Reads and parses the metadata in the given file.
+def read_file(filepath: str) -> str:
+  """Returns the content of the file."""
+  with open(filepath, mode="r", encoding="utf-8") as f:
+    content = f.read()
+
+  return content
+
+
+def parse_content(content: str) -> List[dm.DependencyMetadata]:
+  """Reads and parses the metadata from the given string.
 
     Args:
-        filepath: path to metadata file.
+        content: the string to parse metadata from.
 
     Returns:
-        each dependency's metadata described in the file.
+        all the metadata, which may be for zero or more dependencies, from the
+        given string.
   """
-  with open(filepath, "r", encoding="utf-8") as f:
-    lines = f.readlines()
-
   dependencies = []
   current_metadata = dm.DependencyMetadata()
   current_field_name = None
   current_field_value = ""
-  for line in lines:
+  for line in content.split(os.linesep):
     # Check if a new dependency is being described.
     if DEPENDENCY_DIVIDER.match(line):
       if current_field_name:
@@ -77,7 +83,7 @@ def parse_file(filepath: str) -> List[dm.DependencyMetadata]:
 
     elif current_field_name:
       # The field is on multiple lines, so add this line to the field value.
-      current_field_value += line
+      current_field_value = f"{current_field_value}{os.linesep}{line}"
 
   # At this point, the end of the file has been reached. Save any remaining
   # field data and metadata.

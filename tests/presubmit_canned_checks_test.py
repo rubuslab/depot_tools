@@ -328,6 +328,66 @@ class DescriptionChecksTest(unittest.TestCase):
     self.assertEqual(0, len(errors))
 
 
+class ChromiumDependencyMetadataCheckTest(unittest.TestCase):
+  def testNoWarningForOtherFiles(self):
+    input_api = MockInputApi()
+    input_api.change.RepositoryRoot = lambda: ''
+    input_api.files = [
+        MockFile(os.path.normpath('foo/README.md'), ['Name: foo dep']),
+        MockFile(os.path.normpath('foo/main.py'), ['Shipped: unknown']),
+    ]
+    results = presubmit_canned_checks.CheckChromiumDependencyMetadata(
+        input_api, MockOutputApi())
+    self.assertEqual(len(results), 0)
+
+  def testShowWarningForEmptyFile(self):
+    input_api = MockInputApi()
+    input_api.change.RepositoryRoot = lambda: ''
+    input_api.files = [
+        MockFile(os.path.normpath('foo/README.chromium'), ['']),
+    ]
+    results = presubmit_canned_checks.CheckChromiumDependencyMetadata(
+        input_api, MockOutputApi())
+    self.assertEqual(len(results), 1)
+    self.assertEqual(results[0].type, 'warning')
+    self.assertEqual(len(results[0].items), 1)
+
+  def testShowWarningsForInvalidMetadata(self):
+    input_api = MockInputApi()
+    input_api.change.RepositoryRoot = lambda: ''
+    test_file = MockFile(os.path.normpath('foo/README.chromium'),
+                         ['Shipped: yes (probably?)'])
+    input_api.files = [test_file]
+
+    results = presubmit_canned_checks.CheckChromiumDependencyMetadata(
+        input_api, MockOutputApi())
+    # There should be 10 results due to
+    # - missing 5 mandatory fields: Name, URL, Version, License, and
+    #                               Security Critical
+    # - missing 4 required fields: Date, Revision, License File, and
+    #                              License Android Compatible
+    # - Shipped should be only 'yes' or 'no'.
+    self.assertEqual(len(results), 10)
+    error_count = 0
+    warning_count = 0
+    for result in results:
+      # Check the presubmit result is associated with the test file.
+      self.assertEqual(len(result.items), 1)
+      self.assertEqual(result.items[0], test_file)
+      if result.type == 'error':
+        error_count += 1
+      elif result.type == 'warning':
+        warning_count += 1
+
+    # TODO(aredulla): update this test once validation warnings and errors can
+    # be appropriately distinguished. For now, all results should be warnings
+    # only. Bug: b/285453019.
+    # self.assertEqual(error_count, 9)
+    # self.assertEqual(warning_count, 1)
+    self.assertEqual(error_count, 0)
+    self.assertEqual(warning_count, 10)
+
+
 class CheckUpdateOwnersFileReferences(unittest.TestCase):
   def testShowsWarningIfDeleting(self):
     input_api = MockInputApi()

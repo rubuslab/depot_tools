@@ -18,37 +18,44 @@ import metadata.parse
 import metadata.validation_result as vr
 
 
-def validate_file(filepath: str,
-                  repo_root_dir: str) -> List[vr.ValidationResult]:
-  """Validate the metadata file."""
-  if not os.path.exists(filepath):
-    result = vr.ValidationError(f"'{filepath}' not found.")
-    result.set_tag(tag="reason", value="file not found")
+def validate_content(content: str, source_file_dir: str,
+                     repo_root_dir: str) -> List[vr.ValidationResult]:
+  """Validate the content as a metadata file.
+
+  Args:
+    content: the entire content of a file to be validated as a metadata file.
+    source_file_dir: the directory of the metadata file that the license file
+                     value is from; this is needed to construct file paths to
+                     license files.
+    repo_root_dir: the repository's root directory; this is needed to construct
+                   file paths to license files.
+
+  Returns: the validation results.
+  """
+  results = []
+  dependencies = metadata.parse.parse_content(content)
+  if not dependencies:
+    result = vr.ValidationWarning("No dependency metadata found")
+    result.set_tag("reason", "no metadata")
     return [result]
 
-  # Get the directory the metadata file is in.
-  parent_dir = os.path.dirname(filepath)
-
-  results = []
-  dependencies = metadata.parse.parse_file(filepath)
   for dependency in dependencies:
-    results.extend(
-        dependency.validate(
-            source_file_dir=parent_dir,
-            repo_root_dir=repo_root_dir,
-        ))
-
+    dependency_results = dependency.validate(source_file_dir=source_file_dir,
+                                             repo_root_dir=repo_root_dir)
+    results.extend(dependency_results)
   return results
 
 
-def check_file(filepath: str,
-               repo_root_dir: str) -> Tuple[List[str], List[str]]:
-  """Run metadata validation on the given file, and return all validation
+def check_content(content: str, source_file_dir: str,
+                  repo_root_dir: str) -> Tuple[List[str], List[str]]:
+  """Run metadata validation on the given content, and return all validation
   errors and validation warnings.
 
   Args:
-    filepath: the path to a metadata file,
-              e.g. "/chromium/src/third_party/libname/README.chromium"
+    content: the entire content of a file to be validated as a metadata file.
+    source_file_dir: the directory of the metadata file that the license file
+                     value is from; this is needed to construct file paths to
+                     license files.
     repo_root_dir: the repository's root directory; this is needed to construct
                    file paths to license files.
 
@@ -58,23 +65,43 @@ def check_file(filepath: str,
     warning_messages: the non-fatal validation issues present in the file;
                       i.e. presubmit should still pass.
   """
+  results = validate_content(content=content,
+                             source_file_dir=source_file_dir,
+                             repo_root_dir=repo_root_dir)
+
   error_messages = []
   warning_messages = []
-  for result in validate_file(filepath, repo_root_dir):
-    # Construct the message.
-    if result.get_tag("reason") == "file not found":
-      message = result.get_message(postscript="", width=60)
-    else:
-      message = result.get_message(width=60)
+  for result in results:
+    message = result.get_message(width=60)
 
     # TODO(aredulla): Actually distinguish between validation errors and
     # warnings. The quality of metadata is currently being uplifted, but is not
     # yet guaranteed to pass validation. So for now, all validation results will
     # be returned as warnings so CLs are not blocked by invalid metadata in
-    # presubmits yet.
+    # presubmits yet. Bug: b/285453019.
     # if result.is_fatal():
     #   error_messages.append(message)
     # else:
     warning_messages.append(message)
 
   return error_messages, warning_messages
+
+
+def validate_file(filepath: str,
+                  repo_root_dir: str) -> List[vr.ValidationResult]:
+  """Validate the file
+
+  Args:
+    filepath: the path to a metadata file,
+              e.g. "/chromium/src/third_party/libname/README.chromium"
+    repo_root_dir: the repository's root directory; this is needed to construct
+                   file paths to license files.
+  """
+  content = metadata.parse.read_file(filepath)
+
+  # Get the directory the metadata file is in.
+  source_file_dir = os.path.dirname(filepath)
+
+  return validate_content(content=content,
+                          source_file_dir=source_file_dir,
+                          repo_root_dir=repo_root_dir)

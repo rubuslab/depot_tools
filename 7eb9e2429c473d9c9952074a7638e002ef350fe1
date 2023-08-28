@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f11827b_0c32de69",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1771,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-28T20:12:07Z",
+      "side": 1,
+      "message": "I think this should be SUBMODULES?",
+      "range": {
+        "startLine": 1771,
+        "startChar": 36,
+        "endLine": 1771,
+        "endChar": 46
+      },
+      "revId": "7eb9e2429c473d9c9952074a7638e002ef350fe1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

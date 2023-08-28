@@ -16,6 +16,24 @@
       "message": "this might be unbound if you can\u0027t read the file for some reason and the calling method doesn\u0027t handle errors either.",
       "revId": "7e25f66732d74d69ae214471c692176a77b024e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "200e45d3_533c179f",
+        "filename": "metadata/parse.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-28T06:48:41Z",
+      "side": 1,
+      "message": "This is a good point. I\u0027ve refactored `metadata/validate.py` so that file reading errors are handled in `validate_file`.\n\nTo avoid having to repeat the file reading error handling, `check_file` calls `validate_file`. The optional `reader` arg from `check_file` is passed to `validate_file`, so that the mocks in `presubmit_canned_checks_test.py` still work.",
+      "parentUuid": "4b18f6d9_9ad1d17d",
+      "revId": "7e25f66732d74d69ae214471c692176a77b024e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

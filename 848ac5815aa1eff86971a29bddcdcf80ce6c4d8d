@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b1af661_95c2a9f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-08-28T21:29:08Z",
+      "side": 1,
+      "message": "lgtm again (pressed \"Submit to cq\" on accident earlier when i meant to cr+1)",
+      "revId": "848ac5815aa1eff86971a29bddcdcf80ce6c4d8d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

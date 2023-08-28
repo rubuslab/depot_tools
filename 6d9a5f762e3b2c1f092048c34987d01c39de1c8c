@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eea573d0_19d24002",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-28T18:15:14Z",
+      "side": 1,
+      "message": "Can we get some more explanation of what this change is doing, what remains to be done, how this will affect the many repos that use depot_tools presubmits?\n\nIn particular note that the bug link is not accessible to all so the commit message will, for many Chromium contributors, be the only explanation of what this CL is attempting to do.",
+      "revId": "6d9a5f762e3b2c1f092048c34987d01c39de1c8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fbc65d7_dfeb7a4e",
+        "filename": "metadata/discover.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-08-28T18:15:14Z",
+      "side": 1,
+      "message": "The preferred copyright line starting line is:\n\n  Copyright 2011 The Chromium Authors\n\nThis isn\u0027t enforced in depot_tools but it is still preferred.",
+      "revId": "6d9a5f762e3b2c1f092048c34987d01c39de1c8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -22,6 +22,30 @@
       },
       "revId": "7eb9e2429c473d9c9952074a7638e002ef350fe1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20f8f463_8fed4dfa",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1771,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-28T21:12:38Z",
+      "side": 1,
+      "message": "Yup, fixed.\n\nI also optimized the check a bit since _ParseDeps adds additional ~0.05s and tips the check over alerting threshold.",
+      "parentUuid": "5f11827b_0c32de69",
+      "range": {
+        "startLine": 1771,
+        "startChar": 36,
+        "endLine": 1771,
+        "endChar": 46
+      },
+      "revId": "7eb9e2429c473d9c9952074a7638e002ef350fe1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

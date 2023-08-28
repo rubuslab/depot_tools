@@ -1754,12 +1754,9 @@ def CheckForCommitObjects(input_api, output_api):
     deps_content = input_api.subprocess.check_output(
         ['git', 'cat-file', 'blob', deps_entry[2]],
         cwd=input_api.PresubmitLocalPath()).decode('utf8')
+    deps = _ParseDeps(deps_content)
 
-    if 'use_git_submodules' in deps_content:
-      # git submodule is source of truth, so no further action needed.
-      return []
-
-    if not 'SUBMODULE_MIGRATION' in deps_content:
+    if not 'git_dependencies' in deps or deps['git_dependencies'] == 'DEPS':
       commit_tree_entries = [x[3] for x in commit_tree_entries]
       return [
           output_api.PresubmitError(
@@ -1770,6 +1767,12 @@ def CheckForCommitObjects(input_api, output_api):
               'Remove these commit entries and validate your changeset '
               'again:\n', commit_tree_entries)
       ]
+
+    if deps['git_dependencies'] == 'GITMODULES':
+      # git submodule is source of truth, so no further action needed.
+      return []
+
+    assert deps['git_dependencies'] == 'SYNC', 'unexpected git_dependencies.'
 
     mismatch_entries = []
     deps_msg = ""
@@ -1792,6 +1795,31 @@ def CheckForCommitObjects(input_api, output_api):
       ]
 
   return []
+
+
+def _ParseDeps(contents):
+  """Simple helper for parsing DEPS files."""
+
+  # Stubs for handling special syntax in the root DEPS file.
+  class _VarImpl:
+    def __init__(self, local_scope):
+      self._local_scope = local_scope
+
+    def Lookup(self, var_name):
+      """Implements the Var syntax."""
+      try:
+        return self._local_scope['vars'][var_name]
+      except KeyError:
+        raise Exception('Var is not defined: %s' % var_name)
+
+  local_scope = {}
+  global_scope = {
+      'Var': _VarImpl(local_scope).Lookup,
+      'Str': str,
+  }
+
+  exec(contents, global_scope, local_scope)
+  return local_scope
 
 
 def CheckVPythonSpec(input_api, output_api, file_filter=None):

@@ -481,6 +481,11 @@ def freeze():
       have_indexed_files = True
     else:
       unindexed.append(f.encode('utf-8'))
+
+    # If the file has both indexed and unindexed changes.
+    if s.lstat == s.rstat == 'M':
+      unindexed.append(f.encode('utf-8'))
+
     if s.lstat == '?' and limit_mb > 0:
       untracked_bytes += os.lstat(os.path.join(root_path, f)).st_size
 

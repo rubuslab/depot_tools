@@ -84,47 +84,6 @@ def fix_win_sys_argv(encoding):
   if _SYS_ARGV_PROCESSED:
     return False
 
-  if sys.version_info.major == 3:
-    _SYS_ARGV_PROCESSED = True
-    return True
-
-  # These types are available on linux but not Mac.
-  # pylint: disable=no-name-in-module,F0401
-  from ctypes import byref, c_int, POINTER, windll, WINFUNCTYPE
-  from ctypes.wintypes import LPCWSTR, LPWSTR
-
-  # <http://msdn.microsoft.com/en-us/library/ms683156.aspx>
-  GetCommandLineW = WINFUNCTYPE(LPWSTR)(('GetCommandLineW', windll.kernel32))
-  # <http://msdn.microsoft.com/en-us/library/bb776391.aspx>
-  CommandLineToArgvW = WINFUNCTYPE(POINTER(LPWSTR), LPCWSTR, POINTER(c_int))(
-      ('CommandLineToArgvW', windll.shell32))
-
-  argc = c_int(0)
-  argv_unicode = CommandLineToArgvW(GetCommandLineW(), byref(argc))
-  argv = [
-      argv_unicode[i].encode(encoding, 'replace') for i in range(0, argc.value)
-  ]
-
-  if not hasattr(sys, 'frozen'):
-    # If this is an executable produced by py2exe or bbfreeze, then it
-    # will have been invoked directly. Otherwise, unicode_argv[0] is the
-    # Python interpreter, so skip that.
-    argv = argv[1:]
-
-    # Also skip option arguments to the Python interpreter.
-    while len(argv) > 0:
-      arg = argv[0]
-      if not arg.startswith(b'-') or arg == b'-':
-        break
-      argv = argv[1:]
-      if arg == u'-m':
-        # sys.argv[0] should really be the absolute path of the
-        # module source, but never mind.
-        break
-      if arg == u'-c':
-        argv[0] = u'-c'
-        break
-  sys.argv = argv
   _SYS_ARGV_PROCESSED = True
   return True
 
@@ -216,10 +175,7 @@ class WinUnicodeConsoleOutput(WinUnicodeOutputBase):
 
   def write(self, text):
     try:
-      if sys.version_info.major == 2 and not isinstance(text, unicode):
-        # Convert to unicode.
-        text = str(text).decode(self.encoding, 'replace')
-      elif sys.version_info.major == 3 and isinstance(text, bytes):
+      if isinstance(text, bytes):
         # Bytestrings need to be decoded to a string before being passed to
         # Windows.
         text = text.decode(self.encoding, 'replace')
@@ -270,10 +226,7 @@ class WinUnicodeOutput(WinUnicodeOutputBase):
 
   def write(self, text):
     try:
-      if sys.version_info.major == 2 and isinstance(text, unicode):
-        # Replace characters that cannot be printed instead of failing.
-        text = text.encode(self.encoding, 'replace')
-      if sys.version_info.major == 3 and isinstance(text, bytes):
+      if isinstance(text, bytes):
         # Replace characters that cannot be printed instead of failing.
         text = text.decode(self.encoding, 'replace')
       # When redirecting to a file or process any \n characters will be replaced

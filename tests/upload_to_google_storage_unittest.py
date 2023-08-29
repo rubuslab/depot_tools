@@ -8,11 +8,7 @@
 import optparse
 import os
 import posixpath
-
-try:
-  import Queue as queue
-except ImportError:  # For Py3 compatibility
-  import queue
+import queue
 
 import shutil
 import sys
@@ -20,18 +16,13 @@ import tarfile
 import tempfile
 import threading
 import unittest
+from io import StringIO
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import upload_to_google_storage
 from download_from_google_storage_unittest import GsutilMock
 from download_from_google_storage_unittest import ChangedWorkingDirectory
-from third_party import six
-
-if six.PY2:
-  from cStringIO import StringIO
-else:
-  from io import StringIO
 
 
 # ../third_party/gsutil/gsutil

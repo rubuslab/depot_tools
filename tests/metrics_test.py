@@ -7,11 +7,7 @@ import json
 import os
 import sys
 import unittest
-
-if sys.version_info.major == 2:
-  import mock
-else:
-  from unittest import mock
+from unittest import mock
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT_DIR)

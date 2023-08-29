@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7e1f949_e8d9ed1b",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-08-29T22:32:05Z",
+      "side": 1,
+      "message": "right?",
+      "range": {
+        "startLine": 914,
+        "startChar": 19,
+        "endLine": 914,
+        "endChar": 23
+      },
+      "revId": "bc216e8eaedd019904e2e33c7a599abc2226d47a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

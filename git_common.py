@@ -479,8 +479,16 @@ def freeze():
       # added yet.
       # lstat = '?' means that the file is untracked.
       have_indexed_files = True
+
+      # If the file has both indexed and unindexed changes.
+      # rstat shows the status of the working tree. If the file also has changes
+      # in the working tree, it should be tracked both in indexed and unindexed
+      # changes.
+      if s.rstat != ' ':
+        unindexed.append(f.encode('utf-8'))
     else:
       unindexed.append(f.encode('utf-8'))
+
     if s.lstat == '?' and limit_mb > 0:
       untracked_bytes += os.lstat(os.path.join(root_path, f)).st_size
 

@@ -3,6 +3,29 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "ec70a73e_2c8d5d6a",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 750,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-08-29T22:27:16Z",
+      "side": 1,
+      "message": "nice",
+      "range": {
+        "startLine": 750,
+        "startChar": 26,
+        "endLine": 750,
+        "endChar": 40
+      },
+      "revId": "ee751f1b1da9254bc4345a5b5c98094e3aebf97c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "3a919b40_4505ad04",
         "filename": "tests/git_cl_test.py",
         "patchSetId": 6
@@ -14,6 +37,24 @@
       "writtenOn": "2023-08-29T21:23:59Z",
       "side": 1,
       "message": "I am about 99% certain that this test and its mocks aren\u0027t quite testing the right thing, but I\u0027ve done the most straightforward translation for the time being.\n\nWhen I was trying to fix this test, I logged what was actually being passed to rev-list:\n\n```\n[\u0027rev-list\u0027, \u0027--count\u0027, \u0027commit3.5..commit4\u0027]\nFound change with 80 commits...\n[\u0027rev-list\u0027, \u0027--count\u0027, \u0027commit3.5..commit3.5\u0027]\nFound change with 81 commits...\n[\u0027rev-list\u0027, \u0027--count\u0027, \u0027commit3.5..commit3.5\u0027]\n[\u0027rev-list\u0027, \u0027--count\u0027, \u0027commit2.5..commit2\u0027]\n[\u0027rev-list\u0027, \u0027--count\u0027, \u0027commit1.5..commit1.5\u0027]\nFound change with 82 commits...\n[\u0027rev-list\u0027, \u0027--count\u0027, \u0027commit1.5..commit1\u0027]\n```\n\nThe first `rev-list` looks fine.\nThe second line and fifth don\u0027t look quite right: there should be 0 commits in those ranges (since they specify the same begin and end commit).\nThe fourth and the sixth should have commits (but don\u0027t).\n\nFinally, while there are seven entries passed to this, only six are consumed.\n\nI will revisit this in later CLs, but it already seems pretty busted :)",
+      "revId": "ee751f1b1da9254bc4345a5b5c98094e3aebf97c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "031b9891_83e59c95",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1819,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-08-29T22:27:16Z",
+      "side": 1,
+      "message": "Hm, that definitely seems off. Feel free to file a bug under `Infra\u003eSDK`, and thanks for taking a look!",
+      "parentUuid": "3a919b40_4505ad04",
       "revId": "ee751f1b1da9254bc4345a5b5c98094e3aebf97c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

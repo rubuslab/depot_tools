@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b5a48d9_ce141ecc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-29T06:16:31Z",
+      "side": 1,
+      "message": "Done. I have updated the docstring for `CheckChromiumDependencyMetadata`, as well as the commit message for this CL.",
+      "parentUuid": "eea573d0_19d24002",
+      "revId": "6d9a5f762e3b2c1f092048c34987d01c39de1c8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1fbc65d7_dfeb7a4e",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-08-28T18:15:14Z",
       "side": 1,
       "message": "The preferred copyright line starting line is:\n\n  Copyright 2011 The Chromium Authors\n\nThis isn\u0027t enforced in depot_tools but it is still preferred.",
+      "revId": "6d9a5f762e3b2c1f092048c34987d01c39de1c8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01755f21_8f2b9afc",
+        "filename": "metadata/discover.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-29T06:16:31Z",
+      "side": 1,
+      "message": "Ack. I will keep this as-is; the majority of the files in `//depot_tools` have this starting line.",
+      "parentUuid": "1fbc65d7_dfeb7a4e",
       "revId": "6d9a5f762e3b2c1f092048c34987d01c39de1c8c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -97,6 +97,10 @@ def GetBuildtoolsPath():
   if override is not None:
     return override
 
+  gclient_configured_buildtools = GetGClientConfiguredBuildtoolsPath()
+  if gclient_configured_buildtools is not None:
+    return gclient_configured_buildtools
+
   primary_solution = GetPrimarySolutionPath()
   if not primary_solution:
     return None
@@ -147,4 +151,19 @@ def GetGClientPrimarySolutionName(gclient_root_dir_path):
   solutions = env.get('solutions', [])
   if solutions:
     return solutions[0].get('name')
+  return None
+
+
+def GetGClientConfiguredBuildtoolsPath():
+  """Returns the buildtools path configured in the root .gclient file."""
+  gclient_root = FindGclientRoot(os.getcwd())
+  if gclient_root is None:
+    return None
+
+  gclient_config_file = os.path.join(gclient_root, '.gclient')
+  gclient_config_contents = gclient_utils.FileRead(gclient_config_file)
+  env = {}
+  exec(gclient_config_contents, env)
+  if 'chromium_buildtools_path' in env:
+    return os.path.join(gclient_root, env['chromium_buildtools_path'])
   return None

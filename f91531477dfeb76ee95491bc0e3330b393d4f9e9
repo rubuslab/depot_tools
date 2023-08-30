@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f7ec656_4e44d232",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-30T20:25:09Z",
+      "side": 1,
+      "message": "\u0027--\u0027 to indicate optional arguments are over and only list of files is following.\n\n```suggestion\n    result \u003d subprocess2.check_output([\u0027git\u0027, \u0027ls-files\u0027, \u0027-s\u0027, \u0027--\u0027] + submodules,\n```",
+      "revId": "f91531477dfeb76ee95491bc0e3330b393d4f9e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

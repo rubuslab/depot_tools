@@ -175,6 +175,36 @@ class GetBuildtoolsPathTest(TestBase):
         os.path.join(self.root, 'src', 'buildtools'),
         gclient_paths.GetBuildtoolsPath())
 
+  def testGclientRootConfiguredBuildTools(self):
+    self.make_file_tree({
+        '.gclient': "solutions = [ {\"name\": 'src/foo',} ]" +
+        "\nchromium_buildtools_path = \"src/buildtools\"",
+        os.path.join('src', 'buildtools'): '',
+    })
+    self.cwd = os.path.join(self.root, 'src', 'foo')
+
+    self.assertEqual(os.path.join(self.root, 'src', 'buildtools'),
+                     gclient_paths.GetBuildtoolsPath())
+
+  def testNoGclientRootConfiguredBuildTools(self):
+    self.make_file_tree({
+        '.gclient': "solutions = [ {\"name\": 'src/foo',} ]",
+        os.path.join('src', 'buildtools'): '',
+    })
+    self.cwd = os.path.join(self.root, 'src', 'foo')
+
+    self.assertIsNone(gclient_paths.GetBuildtoolsPath())
+
+  def testGclientRootConfiguredBuildToolsEnvOverride(self):
+    self.make_file_tree({
+        '.gclient': "solutions = [ {\"name\": 'src/foo',} ]" +
+        "\nchromium_buildtools_path = \"src/buildtools\"",
+        os.path.join('src', 'buildtools'): '',
+    })
+    self.cwd = os.path.join(self.root, 'src', 'foo')
+    os.environ = {'CHROMIUM_BUILDTOOLS_PATH': 'foo'}
+    self.assertEqual('foo', gclient_paths.GetBuildtoolsPath())
+
   def testBuildtoolsInGclientRoot(self):
     self.make_file_tree({'.gclient': '', 'buildtools': ''})
     self.cwd = os.path.join(self.root, 'src', 'foo')

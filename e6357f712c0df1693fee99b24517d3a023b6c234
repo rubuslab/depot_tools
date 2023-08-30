@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "607d7cf8_a538daeb",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2834,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-08-30T01:50:20Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be needed but it seems to confuse pytype.",
+      "revId": "e6357f712c0df1693fee99b24517d3a023b6c234",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

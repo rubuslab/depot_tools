@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab8e4fa9_f8ff383f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-08-30T10:21:44Z",
+      "side": 1,
+      "message": "Main changes:\n1. Reformatted `ValidationResult` so it would be easier to group issues together.\n2. Added `metadata/scan.py` to search and run on all `README.chromium` files.\n3. Fleshed out `metadata/README.md` to explain how to run the `scan.py` script.",
+      "revId": "091b920c4e959ebe82ad008deadd753ae3e68256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

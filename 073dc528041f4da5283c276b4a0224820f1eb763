@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b63572d2_47b13570",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-08-31T04:47:26Z",
+      "side": 1,
+      "message": "There are a few problems that I can see\n1) Implementation is very chromium specific. While chromium is our primary focus, depot_tools is used by other projects too. Adding chromium specific bits to .gclient seems excessive\n2) We now have depot_tools AND chromium being aware of the CHROMIUM_BUILDTOOLS_PATH. If we ever need to update this, we have to coordinate between two repositories.\n3) There is very limited benefit to this. Setting environment variable globally, or in tooling (such as in electron build scripts) should require the same amount of effort.\n\nWith that said, I believe we shouldn\u0027t accept this CL unless there is a good counter-argument.",
+      "revId": "073dc528041f4da5283c276b4a0224820f1eb763",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

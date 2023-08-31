@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "227c2510_8c49a62e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1540893
+      },
+      "writtenOn": "2023-08-31T19:31:42Z",
+      "side": 1,
+      "message": "PTAL. the same change has already been rolled to the bots. E.G. https://chromium-review.googlesource.com/c/chromium/tools/build/+/4803943\n\nThanks!",
+      "revId": "d3de0018ea36377a8e53f9ad240de83d81c991a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

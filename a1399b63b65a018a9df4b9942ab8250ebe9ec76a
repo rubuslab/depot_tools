@@ -34,6 +34,24 @@
       "parentUuid": "462f7139_2e7d182d",
       "revId": "a1399b63b65a018a9df4b9942ab8250ebe9ec76a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22d1f21c_a6286e05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-01T16:07:42Z",
+      "side": 1,
+      "message": "The Chromium preference is definitely four-space indents. I last dealt with this in crrev.com/c/4240735 when I migrated tools/win/*.py to four-space indents after moving a four-space indent file there. The alternative was to move that one file to two-space indents and python@chromium.org did not like that idea.\n\nSo, reformatting as four-space indents consistently would be great. Sorry for the inconsistency.",
+      "parentUuid": "04b3f250_db0b0c3d",
+      "revId": "a1399b63b65a018a9df4b9942ab8250ebe9ec76a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

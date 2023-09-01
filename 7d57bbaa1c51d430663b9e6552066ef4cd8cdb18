@@ -52,6 +52,24 @@
       "parentUuid": "47f81f80_85986246",
       "revId": "7d57bbaa1c51d430663b9e6552066ef4cd8cdb18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8ee0063_a2499d67",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-01T21:55:26Z",
+      "side": 1,
+      "message": "Hmm. So I had missed that the presubmit (still) complained due to the various \"line too long\" warnings.\n\nThat is something we\u0027d have to resolve. My assumptions here:\n- we probably don\u0027t want to reformat more often than necessary (it looks like there\u0027s about a -8000/+10800 delta between pyink and yapf)\n- we will probably eventually support newer version of Python which yapf won\u0027t necessarily support\n\nBut while poking at this, I realized there\u0027s actually a third option for the short-term. Originally, I had thought it wasn\u0027t very practical to dynamically configure indents for yapf due to the complexity of searching for the config file. But it turns out we /already/ encapsulate that in git cl format here: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d665;drc\u003dabf4847b0412cac3617c231af35f998eb9141748\n\nSo we could read the contents of .style.yapf and dynamically set it to 2 space indents if we detect preexisting 2 space indents in a file.",
+      "parentUuid": "6df869fc_0bf4c677",
+      "revId": "7d57bbaa1c51d430663b9e6552066ef4cd8cdb18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

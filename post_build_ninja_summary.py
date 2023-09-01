@@ -335,6 +335,14 @@ def main():
     log_file = os.path.join(args.build_directory, log_file)
   if args.log_file:
     log_file = args.log_file
+
+  # check for .siso_deps to see if this is a genuine ninja build, or siso
+  # masquerading as ninja.
+  siso_deps = os.path.join(os.path.dirname(log_file), '.siso_deps')
+  if os.path.exists(siso_deps):
+    print('skipping ninja log summary for siso build')
+    return
+
   if not args.step_types:
     # Offer a convenient way to add extra step types automatically, including
     # when this script is run by autoninja. get() returns None if the variable

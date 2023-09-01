@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e86142aa_9876569e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-01T18:49:46Z",
+      "side": 1,
+      "message": "Can you add an explanation of how you did the switch? i.e.; what command line?\n\nAlso, was there any manual fixup, such as dealing with too-long lines that reformatting sometimes triggers?",
+      "revId": "e11849240a8d41719b867b1a82b58e0d300ca18c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "d9fc6c4f_b0e44c16",
@@ -14,6 +31,23 @@
       "writtenOn": "2023-09-01T18:17:31Z",
       "side": 1,
       "message": "FWIW, I also sent out https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4836475",
+      "revId": "e11849240a8d41719b867b1a82b58e0d300ca18c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41f7feb7_75156544",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-01T18:49:46Z",
+      "side": 1,
+      "message": "I wish the diff tool would more consistently display indent changes as such - it gets it right about 75% of the time. Anyway, the files I own lgtm",
       "revId": "e11849240a8d41719b867b1a82b58e0d300ca18c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

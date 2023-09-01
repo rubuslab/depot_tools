@@ -16,6 +16,24 @@
       "message": "This seems to be going from four-space to two-space indentation. When I asked about this a while ago I was told that we were trying to go in the opposite direction. Unfortunately we don\u0027t have a great migration plan. When I last hit this I had to reformat an entire directory (as four-space indentation) to make things work cleanly, and that doesn\u0027t seem practical here. Maybe ask on python@chromium.org?",
       "revId": "a1399b63b65a018a9df4b9942ab8250ebe9ec76a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04b3f250_db0b0c3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-01T15:55:14Z",
+      "side": 1,
+      "message": "Hm... I was going to revert the spacing changes.\n\nBut it seems this file actually uses a mix of 4 space indents and 2 space indents (?!). 4 is for the top-level indent, and 2 for conditionals and such.\n\n... I kind of don\u0027t really want to block the followup CL on this discussion indefinitely, and it seems like we\u0027re going to be reformatting this file completely either way. If you prefer I drop this, I guess I can format the followup CL to be consistent with the existing file (four spaces at the top level and two spaces for conditionals) but that\u0027s kind of ick too 😊\n\nPlease let me know what you\u0027d prefer.",
+      "parentUuid": "462f7139_2e7d182d",
+      "revId": "a1399b63b65a018a9df4b9942ab8250ebe9ec76a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -19,7 +19,7 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #   cipd selfupdate-roll -version-file tmp \
 #        -version git_revision:ea6c07cfcb596be6b63a1e6deb95bba79524b0c8
 #   cat tmp.digests
-OLD_VERSION = 'git_revision:ea6c07cfcb596be6b63a1e6deb95bba79524b0c8'
+OLD_VERSION = "git_revision:ea6c07cfcb596be6b63a1e6deb95bba79524b0c8"
 OLD_DIGESTS = """
 linux-386       sha256  ee90bd655b90baf7586ab80c289c00233b96bfac3fa70e64cc5c48feb1998971
 linux-amd64     sha256  73bd62cb72cde6f12d9b42cda12941c53e1e21686f6f2b1cd98db5c6718b7bed
@@ -38,72 +38,80 @@ windows-amd64   sha256  3e21561b45acb2845c309a04cbedb2ce1e0567b7b24bf89857e76736
 
 
 class CipdBootstrapTest(unittest.TestCase):
-  """Tests that CIPD client can bootstrap from scratch and self-update from some
-  old version to a most recent one.
+    """Tests that CIPD client can bootstrap from scratch and self-update from some
+    old version to a most recent one.
 
-  WARNING: This integration test touches real network and real CIPD backend and
-  downloads several megabytes of stuff.
-  """
-
-  def setUp(self):
-    self.tempdir = tempfile.mkdtemp('depot_tools_cipd')
-
-  def tearDown(self):
-    shutil.rmtree(self.tempdir)
-
-  def stage_files(self, cipd_version=None, digests=None):
-    """Copies files needed for cipd bootstrap into the temp dir.
-
-    Args:
-      cipd_version: if not None, a value to put into cipd_client_version file.
+    WARNING: This integration test touches real network and real CIPD backend and
+    downloads several megabytes of stuff.
     """
-    names = (
-      '.cipd_impl.ps1',
-      'cipd',
-      'cipd.bat',
-      'cipd_client_version',
-      'cipd_client_version.digests',
-    )
-    for f in names:
-      shutil.copy2(os.path.join(ROOT_DIR, f), os.path.join(self.tempdir, f))
-    if cipd_version is not None:
-      with open(os.path.join(self.tempdir, 'cipd_client_version'), 'wt') as f:
-        f.write(cipd_version+'\n')
-    if digests is not None:
-      p = os.path.join(self.tempdir, 'cipd_client_version.digests')
-      with open(p, 'wt') as f:
-        f.write(digests+'\n')
 
-  def call_cipd_help(self):
-    """Calls 'cipd help' bootstrapping the client in tempdir.
+    def setUp(self):
+        self.tempdir = tempfile.mkdtemp("depot_tools_cipd")
 
-    Returns (exit code, merged stdout and stderr).
-    """
-    exe = 'cipd.bat' if sys.platform == 'win32' else 'cipd'
-    p = subprocess.Popen(
-        [os.path.join(self.tempdir, exe), 'help'],
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    out, _ = p.communicate()
-    return p.returncode, out
+    def tearDown(self):
+        shutil.rmtree(self.tempdir)
 
-  def test_new_bootstrap(self):
-    """Bootstrapping the client from scratch."""
-    self.stage_files()
-    ret, out = self.call_cipd_help()
-    if ret:
-      self.fail('Bootstrap from scratch failed:\n%s' % out)
+    def stage_files(self, cipd_version=None, digests=None):
+        """Copies files needed for cipd bootstrap into the temp dir.
 
-  def test_self_update(self):
-    """Updating the existing client in-place."""
-    self.stage_files(cipd_version=OLD_VERSION, digests=OLD_DIGESTS)
-    ret, out = self.call_cipd_help()
-    if ret:
-      self.fail('Update to %s fails:\n%s' % (OLD_VERSION, out))
-    self.stage_files()
-    ret, out = self.call_cipd_help()
-    if ret:
-      self.fail('Update from %s to the tip fails:\n%s' % (OLD_VERSION, out))
+        Args:
+          cipd_version: if not None, a value to put into cipd_client_version file.
+        """
+        names = (
+            ".cipd_impl.ps1",
+            "cipd",
+            "cipd.bat",
+            "cipd_client_version",
+            "cipd_client_version.digests",
+        )
+        for f in names:
+            shutil.copy2(
+                os.path.join(ROOT_DIR, f), os.path.join(self.tempdir, f)
+            )
+        if cipd_version is not None:
+            with open(
+                os.path.join(self.tempdir, "cipd_client_version"), "wt"
+            ) as f:
+                f.write(cipd_version + "\n")
+        if digests is not None:
+            p = os.path.join(self.tempdir, "cipd_client_version.digests")
+            with open(p, "wt") as f:
+                f.write(digests + "\n")
+
+    def call_cipd_help(self):
+        """Calls 'cipd help' bootstrapping the client in tempdir.
+
+        Returns (exit code, merged stdout and stderr).
+        """
+        exe = "cipd.bat" if sys.platform == "win32" else "cipd"
+        p = subprocess.Popen(
+            [os.path.join(self.tempdir, exe), "help"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        out, _ = p.communicate()
+        return p.returncode, out
+
+    def test_new_bootstrap(self):
+        """Bootstrapping the client from scratch."""
+        self.stage_files()
+        ret, out = self.call_cipd_help()
+        if ret:
+            self.fail("Bootstrap from scratch failed:\n%s" % out)
+
+    def test_self_update(self):
+        """Updating the existing client in-place."""
+        self.stage_files(cipd_version=OLD_VERSION, digests=OLD_DIGESTS)
+        ret, out = self.call_cipd_help()
+        if ret:
+            self.fail("Update to %s fails:\n%s" % (OLD_VERSION, out))
+        self.stage_files()
+        ret, out = self.call_cipd_help()
+        if ret:
+            self.fail(
+                "Update from %s to the tip fails:\n%s" % (OLD_VERSION, out)
+            )
 
 
-if __name__ == '__main__':
-  unittest.main()
+if __name__ == "__main__":
+    unittest.main()

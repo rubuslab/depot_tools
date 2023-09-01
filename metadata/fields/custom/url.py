@@ -21,35 +21,38 @@ import metadata.validation_result as vr
 
 _PATTERN_URL_ALLOWED = re.compile(r"^(https?|ftp|git):\/\/\S+$")
 _PATTERN_URL_CANONICAL_REPO = re.compile(
-    r"^This is the canonical (public )?repo(sitory)?\.?$", re.IGNORECASE)
+    r"^This is the canonical (public )?repo(sitory)?\.?$", re.IGNORECASE
+)
 
 
 class URLField(field_types.MetadataField):
-  """Custom field for the package URL(s)."""
-  def __init__(self):
-    super().__init__(name="URL", one_liner=False)
+    """Custom field for the package URL(s)."""
 
-  def validate(self, value: str) -> Union[vr.ValidationResult, None]:
-    """Checks the given value has acceptable URL values only.
+    def __init__(self):
+        super().__init__(name="URL", one_liner=False)
 
-    Note: this field supports multiple values.
-    """
-    if util.matches(_PATTERN_URL_CANONICAL_REPO, value):
-      return None
+    def validate(self, value: str) -> Union[vr.ValidationResult, None]:
+        """Checks the given value has acceptable URL values only.
 
-    invalid_values = []
-    for url in value.split(self.VALUE_DELIMITER):
-      url = url.strip()
-      if not util.matches(_PATTERN_URL_ALLOWED, url):
-        invalid_values.append(url)
+        Note: this field supports multiple values.
+        """
+        if util.matches(_PATTERN_URL_CANONICAL_REPO, value):
+            return None
 
-    if invalid_values:
-      return vr.ValidationError(
-          reason=f"{self._name} is invalid.",
-          additional=[
-              "URLs must use a protocol scheme in [http, https, ftp, git].",
-              f"Separate URLs using a '{self.VALUE_DELIMITER}'.",
-              f"Invalid values: {util.quoted(invalid_values)}.",
-          ])
+        invalid_values = []
+        for url in value.split(self.VALUE_DELIMITER):
+            url = url.strip()
+            if not util.matches(_PATTERN_URL_ALLOWED, url):
+                invalid_values.append(url)
 
-    return None
+        if invalid_values:
+            return vr.ValidationError(
+                reason=f"{self._name} is invalid.",
+                additional=[
+                    "URLs must use a protocol scheme in [http, https, ftp, git].",
+                    f"Separate URLs using a '{self.VALUE_DELIMITER}'.",
+                    f"Invalid values: {util.quoted(invalid_values)}.",
+                ],
+            )
+
+        return None

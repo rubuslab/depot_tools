@@ -25,34 +25,34 @@ _PATTERN_STARTS_WITH_NO = re.compile(r"^no", re.IGNORECASE)
 
 
 def matches(pattern: re.Pattern, value: str) -> bool:
-  """Returns whether the value matches the pattern."""
-  return pattern.match(value) is not None
+    """Returns whether the value matches the pattern."""
+    return pattern.match(value) is not None
 
 
 def is_empty(value: str) -> bool:
-  """Returns whether the value is functionally empty."""
-  return matches(_PATTERN_ONLY_WHITESPACE, value)
+    """Returns whether the value is functionally empty."""
+    return matches(_PATTERN_ONLY_WHITESPACE, value)
 
 
 def is_unknown(value: str) -> bool:
-  """Returns whether the value is 'unknown' (case insensitive)."""
-  return matches(_PATTERN_UNKNOWN, value)
+    """Returns whether the value is 'unknown' (case insensitive)."""
+    return matches(_PATTERN_UNKNOWN, value)
 
 
 def quoted(values: List[str]) -> str:
-  """Returns a string of the given values, each being individually quoted."""
-  return ", ".join([f"'{entry}'" for entry in values])
+    """Returns a string of the given values, each being individually quoted."""
+    return ", ".join([f"'{entry}'" for entry in values])
 
 
 def infer_as_boolean(value: str, default: bool = True) -> bool:
-  """Attempts to infer the value as a boolean, where:
+    """Attempts to infer the value as a boolean, where:
     - "yes"-ish values return True;
     - "no"-ish values return False; and
     - default is returned otherwise.
-  """
-  if matches(_PATTERN_STARTS_WITH_YES, value):
-    return True
-  elif matches(_PATTERN_STARTS_WITH_NO, value):
-    return False
-  else:
-    return default
+    """
+    if matches(_PATTERN_STARTS_WITH_YES, value):
+        return True
+    elif matches(_PATTERN_STARTS_WITH_NO, value):
+        return False
+    else:
+        return default

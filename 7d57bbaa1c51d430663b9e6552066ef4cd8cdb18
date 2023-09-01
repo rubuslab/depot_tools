@@ -34,6 +34,24 @@
       "parentUuid": "cee276cb_3fe89a2d",
       "revId": "7d57bbaa1c51d430663b9e6552066ef4cd8cdb18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6df869fc_0bf4c677",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-09-01T21:26:13Z",
+      "side": 1,
+      "message": "pyink is basically black.  i don\u0027t think that\u0027ll work as long as presubmit and such are using yapf ?  we\u0027d have to kill off yapf entirely and get people to use black ?",
+      "parentUuid": "47f81f80_85986246",
+      "revId": "7d57bbaa1c51d430663b9e6552066ef4cd8cdb18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

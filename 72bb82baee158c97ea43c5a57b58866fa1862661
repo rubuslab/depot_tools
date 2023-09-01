@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ea0820f_647af360",
+        "filename": ".style.yapf",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-09-01T18:22:19Z",
+      "side": 1,
+      "message": "you can delete the line as it\u0027s redundant now",
+      "revId": "72bb82baee158c97ea43c5a57b58866fa1862661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "fda9a46c_cd7709a0",
@@ -14,6 +31,40 @@
       "writtenOn": "2023-09-01T17:58:56Z",
       "side": 1,
       "message": "Hello top-level depot_tools OWNERS!\n\nI am here because I would like to stop having debates on depot_tools CLs about whether to use 2 spaces or 4 spaces.\n\nThe Chrome Python style guide is currently (mostly) aligned with the external Google Python style guide which says to use 4 spaces. The Chrome style guide allows an exception for legacy files that use 2 spaces. The internal Google style guide specifies 2 spaces.\n\nAs noted in the CL description, depot_tools statically configures a 2 space indent, so in practice, all new files use 2 space indents, which is technically in violation of the Chrome style guide. I have received push back in reviews about using 2 space indents. I briefly investigated if it was possible to try to dynamically configure an indent level for presubmit checks, but to me, it seems like more trouble than it\u0027s worth.\n\nNote that this CL also introduces some 80 column violations. *If* we decide to proceed with a 4 space indent, I will address those in followups: these are generally in comments, which Pyink does not reflow. Given the size of this proposed CL, I do not want to mix up completely automated changes with manual fixes.\n\nThe outcome I\u0027m hoping for is either:\n- we decide on 2 spaces for \u003creasons\u003e for all files and we document this in .style.yapf so it can be referenced in the future\n- we decide on 4 spaces and reformat all files\n\nEither way, I hope this means that code reviews in the future will have fewer questions about indentation :)",
+      "revId": "72bb82baee158c97ea43c5a57b58866fa1862661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1c821cc_5bc77f8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-09-01T18:22:19Z",
+      "side": 1,
+      "message": "this seems to only reformat .py files.  it\u0027s missing standalone programs.",
+      "revId": "72bb82baee158c97ea43c5a57b58866fa1862661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e69bb609_ad487edb",
+        "filename": "recipes/recipe_modules/bot_update/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-09-01T18:22:19Z",
+      "side": 1,
+      "message": "i would keep recipes/ at 2 space since all the other recipe projects are still that way.  you can just copy the old style file under here.",
       "revId": "72bb82baee158c97ea43c5a57b58866fa1862661",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

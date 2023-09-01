@@ -9,54 +9,63 @@ from typing import Optional
 
 
 class GitClApi(recipe_api.RecipeApi):
-  def __init__(self, *args, **kwargs):
-    super().__init__(*args, **kwargs)
-    self._default_repo_location: Optional[Path] = None
 
-  def __call__(self, subcmd, args, name=None, **kwargs):
-    if not name:
-      name = 'git_cl ' + subcmd
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._default_repo_location: Optional[Path] = None
 
-    if kwargs.get('suffix'):
-      name = name + ' (%s)' % kwargs.pop('suffix')
+    def __call__(self, subcmd, args, name=None, **kwargs):
+        if not name:
+            name = "git_cl " + subcmd
 
-    my_loc = self._default_repo_location
-    cmd = ['vpython3', self.repo_resource('git_cl.py'), subcmd] + args
-    with self.m.context(cwd=self.m.context.cwd or my_loc):
-      return self.m.step(name, cmd, **kwargs)
+        if kwargs.get("suffix"):
+            name = name + " (%s)" % kwargs.pop("suffix")
 
-  def set_default_repo_location(self, path: Optional[Path]):
-    """Sets the working directory where `git cl` will run, unless `cwd` from the
-    context module has been set.
+        my_loc = self._default_repo_location
+        cmd = ["vpython3", self.repo_resource("git_cl.py"), subcmd] + args
+        with self.m.context(cwd=self.m.context.cwd or my_loc):
+            return self.m.step(name, cmd, **kwargs)
 
-    If you set `path` to None, this will remove the default.
-    """
-    self._default_repo_location = path
+    def set_default_repo_location(self, path: Optional[Path]):
+        """Sets the working directory where `git cl` will run, unless `cwd` from the
+        context module has been set.
 
-  def get_description(self, patch_url=None, **kwargs):
-    """DEPRECATED. Consider using gerrit.get_change_description instead."""
-    args = ['-d']
-    if patch_url:
-      args.append(patch_url)
+        If you set `path` to None, this will remove the default.
+        """
+        self._default_repo_location = path
 
-    return self('description', args, stdout=self.m.raw_io.output(), **kwargs)
+    def get_description(self, patch_url=None, **kwargs):
+        """DEPRECATED. Consider using gerrit.get_change_description instead."""
+        args = ["-d"]
+        if patch_url:
+            args.append(patch_url)
 
-  def set_description(self, description, patch_url=None, **kwargs):
-    args = ['-n', '-']
-    if patch_url:
-      args.append(patch_url)
+        return self(
+            "description", args, stdout=self.m.raw_io.output(), **kwargs
+        )
 
-    return self(
-        'description', args, stdout=self.m.raw_io.output(),
-        stdin=self.m.raw_io.input_text(description),
-        name='git_cl set description', **kwargs)
+    def set_description(self, description, patch_url=None, **kwargs):
+        args = ["-n", "-"]
+        if patch_url:
+            args.append(patch_url)
 
-  def upload(self, message, upload_args=None, **kwargs):
-    upload_args = upload_args or []
+        return self(
+            "description",
+            args,
+            stdout=self.m.raw_io.output(),
+            stdin=self.m.raw_io.input_text(description),
+            name="git_cl set description",
+            **kwargs
+        )
 
-    upload_args.extend(['--message-file', self.m.raw_io.input_text(message)])
+    def upload(self, message, upload_args=None, **kwargs):
+        upload_args = upload_args or []
 
-    return self('upload', upload_args, **kwargs)
+        upload_args.extend(
+            ["--message-file", self.m.raw_io.input_text(message)]
+        )
 
-  def issue(self, **kwargs):
-    return self('issue', [], stdout=self.m.raw_io.output(), **kwargs)
+        return self("upload", upload_args, **kwargs)
+
+    def issue(self, **kwargs):
+        return self("issue", [], stdout=self.m.raw_io.output(), **kwargs)

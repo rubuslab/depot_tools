@@ -27,91 +27,101 @@ _NOT_SHIPPED = "NOT_SHIPPED"
 
 
 class LicenseFileField(field_types.MetadataField):
-  """Custom field for the paths to the package's license file(s)."""
-  def __init__(self):
-    super().__init__(name="License File", one_liner=True)
+    """Custom field for the paths to the package's license file(s)."""
 
-  def validate(self, value: str) -> Union[vr.ValidationResult, None]:
-    """Checks the given value consists of non-empty paths with no backward
-    directory navigation (i.e. no "../").
+    def __init__(self):
+        super().__init__(name="License File", one_liner=True)
 
-    This validation is rudimentary. To check if the license file(s) exist on
-    disk, see the `LicenseFileField.validate_on_disk` method.
+    def validate(self, value: str) -> Union[vr.ValidationResult, None]:
+        """Checks the given value consists of non-empty paths with no backward
+        directory navigation (i.e. no "../").
 
-    Note: this field supports multiple values.
-    """
-    if value == _NOT_SHIPPED:
-      return vr.ValidationWarning(
-          reason=f"{self._name} uses deprecated value '{_NOT_SHIPPED}'.",
-          additional=[
-              f"Remove this field and use 'Shipped: {util.NO}' instead.",
-          ])
+        This validation is rudimentary. To check if the license file(s) exist on
+        disk, see the `LicenseFileField.validate_on_disk` method.
 
-    invalid_values = []
-    for path in value.split(self.VALUE_DELIMITER):
-      path = path.strip()
-      if util.is_empty(path) or util.matches(_PATTERN_PATH_BACKWARD, path):
-        invalid_values.append(path)
+        Note: this field supports multiple values.
+        """
+        if value == _NOT_SHIPPED:
+            return vr.ValidationWarning(
+                reason=f"{self._name} uses deprecated value '{_NOT_SHIPPED}'.",
+                additional=[
+                    f"Remove this field and use 'Shipped: {util.NO}' instead.",
+                ],
+            )
 
-    if invalid_values:
-      return vr.ValidationError(
-          reason=f"{self._name} is invalid.",
-          additional=[
-              "File paths cannot be empty, or include '../'.",
-              f"Separate license files using a '{self.VALUE_DELIMITER}'.",
-              f"Invalid values: {util.quoted(invalid_values)}.",
-          ])
+        invalid_values = []
+        for path in value.split(self.VALUE_DELIMITER):
+            path = path.strip()
+            if util.is_empty(path) or util.matches(
+                _PATTERN_PATH_BACKWARD, path
+            ):
+                invalid_values.append(path)
 
-    return None
+        if invalid_values:
+            return vr.ValidationError(
+                reason=f"{self._name} is invalid.",
+                additional=[
+                    "File paths cannot be empty, or include '../'.",
+                    f"Separate license files using a '{self.VALUE_DELIMITER}'.",
+                    f"Invalid values: {util.quoted(invalid_values)}.",
+                ],
+            )
 
-  def validate_on_disk(
-      self,
-      value: str,
-      source_file_dir: str,
-      repo_root_dir: str,
-  ) -> Union[vr.ValidationResult, None]:
-    """Checks the given value consists of file paths which exist on disk.
+        return None
 
-    Note: this field supports multiple values.
+    def validate_on_disk(
+        self,
+        value: str,
+        source_file_dir: str,
+        repo_root_dir: str,
+    ) -> Union[vr.ValidationResult, None]:
+        """Checks the given value consists of file paths which exist on disk.
 
-    Args:
-      value: the value to validate.
-      source_file_dir: the directory of the metadata file that the license file
-                       value is from; this is needed to construct file paths to
-                       license files.
-      repo_root_dir: the repository's root directory; this is needed to
-                     construct file paths to license files.
+        Note: this field supports multiple values.
 
-    Returns: a validation result based on the license file value, and whether
-             the license file(s) exist on disk, otherwise None.
-    """
-    if value == _NOT_SHIPPED:
-      return vr.ValidationWarning(
-          reason=f"{self._name} uses deprecated value '{_NOT_SHIPPED}'.",
-          additional=[
-              f"Remove this field and use 'Shipped: {util.NO}' instead.",
-          ])
+        Args:
+          value: the value to validate.
+          source_file_dir: the directory of the metadata file that the license file
+                           value is from; this is needed to construct file paths to
+                           license files.
+          repo_root_dir: the repository's root directory; this is needed to
+                         construct file paths to license files.
 
-    invalid_values = []
-    for license_filename in value.split(self.VALUE_DELIMITER):
-      license_filename = license_filename.strip()
-      if license_filename.startswith("/"):
-        license_filepath = os.path.join(
-            repo_root_dir, os.path.normpath(license_filename.lstrip("/")))
-      else:
-        license_filepath = os.path.join(source_file_dir,
-                                        os.path.normpath(license_filename))
+        Returns: a validation result based on the license file value, and whether
+                 the license file(s) exist on disk, otherwise None.
+        """
+        if value == _NOT_SHIPPED:
+            return vr.ValidationWarning(
+                reason=f"{self._name} uses deprecated value '{_NOT_SHIPPED}'.",
+                additional=[
+                    f"Remove this field and use 'Shipped: {util.NO}' instead.",
+                ],
+            )
 
-      if not os.path.exists(license_filepath):
-        invalid_values.append(license_filepath)
+        invalid_values = []
+        for license_filename in value.split(self.VALUE_DELIMITER):
+            license_filename = license_filename.strip()
+            if license_filename.startswith("/"):
+                license_filepath = os.path.join(
+                    repo_root_dir,
+                    os.path.normpath(license_filename.lstrip("/")),
+                )
+            else:
+                license_filepath = os.path.join(
+                    source_file_dir, os.path.normpath(license_filename)
+                )
 
-    if invalid_values:
-      missing = ", ".join(invalid_values)
-      return vr.ValidationError(
-          reason=f"{self._name} is invalid.",
-          additional=[
-              "Failed to find all license files on local disk.",
-              f"Missing files:{missing}.",
-          ])
+            if not os.path.exists(license_filepath):
+                invalid_values.append(license_filepath)
 
-    return None
+        if invalid_values:
+            missing = ", ".join(invalid_values)
+            return vr.ValidationError(
+                reason=f"{self._name} is invalid.",
+                additional=[
+                    "Failed to find all license files on local disk.",
+                    f"Missing files:{missing}.",
+                ],
+            )
+
+        return None

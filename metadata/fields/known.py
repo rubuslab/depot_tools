@@ -27,14 +27,16 @@ NAME = field_types.FreeformTextField("Name")
 SHORT_NAME = field_types.FreeformTextField("Short Name")
 REVISION = field_types.FreeformTextField("Revision")
 DESCRIPTION = field_types.FreeformTextField("Description", one_liner=False)
-LOCAL_MODIFICATIONS = field_types.FreeformTextField("Local Modifications",
-                                                    one_liner=False)
+LOCAL_MODIFICATIONS = field_types.FreeformTextField(
+    "Local Modifications", one_liner=False
+)
 
 # Yes/no fields.
 SECURITY_CRITICAL = field_types.YesNoField("Security Critical")
 SHIPPED = field_types.YesNoField("Shipped")
 LICENSE_ANDROID_COMPATIBLE = field_types.YesNoField(
-    "License Android Compatible")
+    "License Android Compatible"
+)
 
 # Custom fields.
 CPE_PREFIX = metadata.fields.custom.cpe_prefix.CPEPrefixField()
@@ -65,4 +67,4 @@ _FIELD_MAPPING = {field.get_name().lower(): field for field in ALL_FIELDS}
 
 
 def get_field(label: str) -> Union[field_types.MetadataField, None]:
-  return _FIELD_MAPPING.get(label.lower())
+    return _FIELD_MAPPING.get(label.lower())

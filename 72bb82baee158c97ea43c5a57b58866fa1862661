@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "df5489d7_1c96c489",
+        "filename": ".style.yapf",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-01T18:48:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ea0820f_647af360",
+      "revId": "72bb82baee158c97ea43c5a57b58866fa1862661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "fda9a46c_cd7709a0",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -52,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b54e2527_d019a8bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-01T18:48:53Z",
+      "side": 1,
+      "message": "Ah thanks, done. I found the remaining standalone programs using:\n\n```\npyink --line-length\u003d80 $(git grep --name-only \u0027#!/usr/bin/env python$\u0027  | grep -v \u0027.\\py$\u0027)\npyink --line-length\u003d80 $(git grep --name-only \u0027#!/usr/bin/env python3$\u0027  | grep -v \u0027.\\py$\u0027)\n```",
+      "parentUuid": "f1c821cc_5bc77f8e",
+      "revId": "72bb82baee158c97ea43c5a57b58866fa1862661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e69bb609_ad487edb",
@@ -65,6 +101,24 @@
       "writtenOn": "2023-09-01T18:22:19Z",
       "side": 1,
       "message": "i would keep recipes/ at 2 space since all the other recipe projects are still that way.  you can just copy the old style file under here.",
+      "revId": "72bb82baee158c97ea43c5a57b58866fa1862661",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8e90d0d_668e9958",
+        "filename": "recipes/recipe_modules/bot_update/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-01T18:48:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e69bb609_ad487edb",
       "revId": "72bb82baee158c97ea43c5a57b58866fa1862661",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

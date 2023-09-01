@@ -68,6 +68,24 @@
       "message": "Could you leave TODO with b/298594790 to remove this check?",
       "revId": "17047e84b1b8cf5166e68981d17fdd9d554a2b02",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7d6324d_626e511b",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-01T08:16:45Z",
+      "side": 1,
+      "message": "If you prefer, I can just revert the changes to this file. Uploading an empty ninja log is pretty harmless in the end, and that way it will just start working later.\n\nFor the post-build summary, it\u0027s still useful to skip for now, since it otherwise errors out.",
+      "parentUuid": "9b3adf7e_3c66495f",
+      "revId": "17047e84b1b8cf5166e68981d17fdd9d554a2b02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -50,6 +50,23 @@
       "message": "I wish the diff tool would more consistently display indent changes as such - it gets it right about 75% of the time. Anyway, the files I own lgtm",
       "revId": "e11849240a8d41719b867b1a82b58e0d300ca18c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca2a0c6f_7745dc17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-01T19:44:01Z",
+      "side": 1,
+      "message": "rip git blame",
+      "revId": "e11849240a8d41719b867b1a82b58e0d300ca18c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

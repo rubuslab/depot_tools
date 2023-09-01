@@ -70,6 +70,24 @@
       "parentUuid": "f4bba82b_db0de789",
       "revId": "d2b638daeba8d22ffa3a3785d02d040406d06ed4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "324ec780_84311ba3",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-01T18:13:55Z",
+      "side": 1,
+      "message": "https://crrev.com/c/4818069 submitted",
+      "parentUuid": "de96e738_97cf2814",
+      "revId": "d2b638daeba8d22ffa3a3785d02d040406d06ed4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

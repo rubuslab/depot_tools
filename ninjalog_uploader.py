@@ -225,8 +225,15 @@ def main():
   output = io.BytesIO()
 
   with open(ninjalog) as f:
+    log_contents = f.read()
+    if not log_contents:
+      # check for .siso_deps to see if this is a genuine ninja build, or siso
+      # masquerading as ninja. No point in uploading an empty ninja log for
+      # every siso build.
+      if os.path.exists(os.path.join(os.path.dirname(ninjalog), '.siso_deps')):
+        return 0
     with gzip.GzipFile(fileobj=output, mode='wb') as g:
-      g.write(f.read().encode())
+      g.write(log_contents.encode())
       g.write(b'# end of ninja log\n')
 
       metadata = GetMetadata(args.cmdline, ninjalog)

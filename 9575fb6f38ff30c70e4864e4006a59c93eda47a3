@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75a7345e_698e8f2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-01T17:09:00Z",
+      "side": 1,
+      "message": "I reformatted with pyink (which is apparently the preferred formatter now), but I think the 4 space vs 2 space question is still unresolved. I\u0027ll ask around internally to see what the preference is.",
+      "revId": "9575fb6f38ff30c70e4864e4006a59c93eda47a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

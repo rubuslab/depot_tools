@@ -8,55 +8,57 @@ import datetime
 
 
 def timestamp_offset_to_datetime(timestamp, offset):
-  """Converts a timestamp + offset into a datetime.datetime.
+    """Converts a timestamp + offset into a datetime.datetime.
 
-  Useful for dealing with the output of porcelain commands, which provide times
-  as timestamp and offset strings.
+    Useful for dealing with the output of porcelain commands, which provide times
+    as timestamp and offset strings.
 
-  Args:
-    timestamp: An int UTC timestamp, or a string containing decimal digits.
-    offset: A str timezone offset. e.g., '-0800'.
+    Args:
+      timestamp: An int UTC timestamp, or a string containing decimal digits.
+      offset: A str timezone offset. e.g., '-0800'.
 
-  Returns:
-    A tz-aware datetime.datetime for this timestamp.
-  """
-  timestamp = int(timestamp)
-  tz = FixedOffsetTZ.from_offset_string(offset)
-  return datetime.datetime.fromtimestamp(timestamp, tz)
+    Returns:
+      A tz-aware datetime.datetime for this timestamp.
+    """
+    timestamp = int(timestamp)
+    tz = FixedOffsetTZ.from_offset_string(offset)
+    return datetime.datetime.fromtimestamp(timestamp, tz)
 
 
 def datetime_string(dt):
-  """Converts a tz-aware datetime.datetime into a string in git format."""
-  return dt.strftime('%Y-%m-%d %H:%M:%S %z')
+    """Converts a tz-aware datetime.datetime into a string in git format."""
+    return dt.strftime("%Y-%m-%d %H:%M:%S %z")
 
 
 # Adapted from: https://docs.python.org/2/library/datetime.html#tzinfo-objects
 class FixedOffsetTZ(datetime.tzinfo):
-  def __init__(self, offset, name):
-    datetime.tzinfo.__init__(self)
-    self.__offset = offset
-    self.__name = name
 
-  def __repr__(self):  # pragma: no cover
-    return '{}({!r}, {!r})'.format(type(self).__name__, self.__offset,
-                                   self.__name)
+    def __init__(self, offset, name):
+        datetime.tzinfo.__init__(self)
+        self.__offset = offset
+        self.__name = name
 
-  @classmethod
-  def from_offset_string(cls, offset):
-    try:
-      hours = int(offset[:-2])
-      minutes = int(offset[-2:])
-    except ValueError:
-      return cls(datetime.timedelta(0), 'UTC')
+    def __repr__(self):  # pragma: no cover
+        return "{}({!r}, {!r})".format(
+            type(self).__name__, self.__offset, self.__name
+        )
 
-    delta = datetime.timedelta(hours=hours, minutes=minutes)
-    return cls(delta, offset)
+    @classmethod
+    def from_offset_string(cls, offset):
+        try:
+            hours = int(offset[:-2])
+            minutes = int(offset[-2:])
+        except ValueError:
+            return cls(datetime.timedelta(0), "UTC")
 
-  def utcoffset(self, dt):
-    return self.__offset
+        delta = datetime.timedelta(hours=hours, minutes=minutes)
+        return cls(delta, offset)
 
-  def tzname(self, dt):
-    return self.__name
+    def utcoffset(self, dt):
+        return self.__offset
 
-  def dst(self, dt):
-    return datetime.timedelta(0)
+    def tzname(self, dt):
+        return self.__name
+
+    def dst(self, dt):
+        return datetime.timedelta(0)

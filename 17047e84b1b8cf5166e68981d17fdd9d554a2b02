@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d4e39bc_7a9115aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-01T08:00:07Z",
+      "side": 1,
+      "message": "Could you add b/298594790 too?",
+      "parentUuid": "e3797270_32c2769b",
+      "revId": "17047e84b1b8cf5166e68981d17fdd9d554a2b02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "5c5119e2_612a58f6",
@@ -31,6 +49,23 @@
       "writtenOn": "2023-09-01T07:52:50Z",
       "side": 1,
       "message": "I /think/ the CQ failures are because https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4834499/ is not yet merged.",
+      "revId": "17047e84b1b8cf5166e68981d17fdd9d554a2b02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b3adf7e_3c66495f",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-01T08:00:07Z",
+      "side": 1,
+      "message": "Could you leave TODO with b/298594790 to remove this check?",
       "revId": "17047e84b1b8cf5166e68981d17fdd9d554a2b02",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

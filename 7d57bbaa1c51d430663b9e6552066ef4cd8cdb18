@@ -16,6 +16,24 @@
       "message": "i see a lot of quote changes in here.  all i ran was `./yapf -i` on the files.  it didn\u0027t do this for me.  did you run black or something ?",
       "revId": "7d57bbaa1c51d430663b9e6552066ef4cd8cdb18",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47f81f80_85986246",
+        "filename": "auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-01T21:25:07Z",
+      "side": 1,
+      "message": "I used pyink, since that\u0027s what Google internally seems to be migrating towards (since it sounds like yapf is behind on changes for supporting syntax in newer Pythons)",
+      "parentUuid": "cee276cb_3fe89a2d",
+      "revId": "7d57bbaa1c51d430663b9e6552066ef4cd8cdb18",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

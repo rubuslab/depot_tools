@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "3cd9ef65_07e0b60a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-09-03T00:27:50Z",
+      "side": 1,
+      "message": "sure.  i wanted to take a temp check first :).",
+      "parentUuid": "e86142aa_9876569e",
+      "revId": "e11849240a8d41719b867b1a82b58e0d300ca18c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d9fc6c4f_b0e44c16",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -65,6 +83,41 @@
       "writtenOn": "2023-09-01T19:44:01Z",
       "side": 1,
       "message": "rip git blame",
+      "revId": "e11849240a8d41719b867b1a82b58e0d300ca18c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ab58347_e074b41a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-09-03T00:27:50Z",
+      "side": 1,
+      "message": "there is unofficial support for `.git-blame-ignore-revs`, but you have to manually specify it when running blame :(.  we can add it anyways, but we\u0027d have to merge this CL first to get the final commit id.",
+      "parentUuid": "ca2a0c6f_7745dc17",
+      "revId": "e11849240a8d41719b867b1a82b58e0d300ca18c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f935d15_f4a98b85",
+        "filename": "cpplint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-09-03T00:27:50Z",
+      "side": 1,
+      "message": "this one is a little funky because it\u0027s an upstream project, but considering the public open source Google upstream project hasn\u0027t changed in years, and Chromium has already forked \u0026 customized, i don\u0027t think syncing is ever going to happen.",
       "revId": "e11849240a8d41719b867b1a82b58e0d300ca18c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

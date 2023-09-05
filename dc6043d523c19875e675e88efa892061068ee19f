@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "168562b5_2fc72dce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-09-05T16:53:04Z",
+      "side": 1,
+      "message": "hmm, the winbot failed, but it seems the presubmit logic is broken ?  it tried to print something, but the caller can only handle JSON, and it isn\u0027t parsing :/.",
+      "revId": "dc6043d523c19875e675e88efa892061068ee19f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

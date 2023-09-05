@@ -33,6 +33,24 @@
       "message": "Upper-case S would look better. Maybe a period, although I\u0027m not sure that matters.\n\nWhy not check to see whether the .ninja_log file is empty? For siso builds it should be. I suspect the reason is that you have a leftover .ninja_log file, but the question then is why? autoninja checks for that and will not let you do a siso build without doing a gn clean because that isn\u0027t supported.\n\nWhich is to say, I guess checking for .siso_deps is fine, but it is revealing of something weird happening in your setup.",
       "revId": "5e08dfaed2e7642777965385cd634b2347656217",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b7b55ce_f36c97c5",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-05T01:26:05Z",
+      "side": 1,
+      "message": "The error happens when checking the Ninja log header. So .ninja_log empty check would be more a straight forward fix. http://b/297349353 \n\nActually, I made Siso generate an empty .ninja_log for CI/CQ recipe to work. \nIf empty .ninja_log is problematic, I will fix the recipe, and stop generating empty .ninja_log.",
+      "parentUuid": "5cb36b92_bcce8548",
+      "revId": "5e08dfaed2e7642777965385cd634b2347656217",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

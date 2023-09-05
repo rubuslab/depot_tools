@@ -51,6 +51,24 @@
       "parentUuid": "5cb36b92_bcce8548",
       "revId": "5e08dfaed2e7642777965385cd634b2347656217",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0348676_78d7ec4b",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-05T19:34:49Z",
+      "side": 1,
+      "message": "We can handle an empty .ninja_log fine. If the long-term plan is to generate an actual .ninja_log file then an empty one as an interim step makes sense. If siso is never going to generate an actual .ninja_log file then we should probably get rid of it and fix whatever breaks because it seems sloppy to generate an empty .ninja_log file forever.",
+      "parentUuid": "7b7b55ce_f36c97c5",
+      "revId": "5e08dfaed2e7642777965385cd634b2347656217",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

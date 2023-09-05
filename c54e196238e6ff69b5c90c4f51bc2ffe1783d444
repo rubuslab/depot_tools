@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0be59e9b_a4ef94e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-09-05T16:38:16Z",
+      "side": 1,
+      "message": "ok, i think this should be ready for merging.  i didn\u0027t fix all the strings that exceeded our limits, but it\u0027s spread across files, and seems like something we can fix as we go.  i\u0027ll note that many of these scripts are already not pylint-clean, so i\u0027m not exactly breaking things completely ;).\n\nif you want, i could suppress the long-line warnings via pylint entirely, or in the specific files, and just leave it to yapf to manage ?  or for someone with lots of disposable time to clean up later ?",
+      "revId": "c54e196238e6ff69b5c90c4f51bc2ffe1783d444",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

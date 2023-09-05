@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bc9f2d7_0cef0bb2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-05T23:47:03Z",
+      "side": 1,
+      "message": "PTAL, this is my current theory and I\u0027m not confident with the consequence of changing the log level because that means bot_update/gclient would be more spammy. Another way I could do is dynamically adjust the log-level based on the verbose option of gclient (i.e. \u0027info\u0027 if option.verbose else \u0027error\u0027). Please kindly advise",
+      "revId": "24839198cee36a5a4b1fc9741f7618dfe741d530",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

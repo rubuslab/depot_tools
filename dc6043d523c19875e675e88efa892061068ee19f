@@ -16,6 +16,24 @@
       "message": "hmm, the winbot failed, but it seems the presubmit logic is broken ?  it tried to print something, but the caller can only handle JSON, and it isn\u0027t parsing :/.",
       "revId": "dc6043d523c19875e675e88efa892061068ee19f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bfe9107_b60ebd60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-05T19:05:01Z",
+      "side": 1,
+      "message": "The regular and Windows presubmit bots failed. And there\u0027s a merge conflict, so I\u0027m not sure how much investigation is worth doing before that is resolved.\n\nThe one presubmit error (on the Linux bot) is from Pylint. It is purely line-length errors so I\u0027m not sure why that is fatal. The error messages printed cleanly, if not in the most friendly way:\n\n** Presubmit ERRORS: 1 **\nPylint (145 files on 8 processes)\n/b/s/w/ir/kitchen-checkout/depot_tools/pylint-2.7 --args-on-stdin (42.64s) failed\n************* Module clang_format\nclang_format.py:42:0: C0301: Line too long (81/80) (line-too-long)\nclang_format.py:65:0: C0301: Line too long (81/80) (line-too-long)\n...\n\nIt looks like the Windows presubmit timed out for some reason:\n\nStep had exit code: 3221225786 (a.k.a. 0xC000013A)\nStep timed out.",
+      "parentUuid": "168562b5_2fc72dce",
+      "revId": "dc6043d523c19875e675e88efa892061068ee19f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

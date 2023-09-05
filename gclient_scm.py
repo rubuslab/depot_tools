@@ -1677,7 +1677,7 @@ class CipdRoot(object):
       with self._create_ensure_file() as ensure_file:
         cmd = [
             'cipd', 'ensure',
-            '-log-level', 'error',
+            '-log-level', 'info',
             '-root', self.root_dir,
             '-ensure-file', ensure_file,
         ]
@@ -1717,7 +1717,7 @@ class CipdRoot(object):
               'cipd',
               'ensure-file-resolve',
               '-log-level',
-              'error',
+              'info',
               '-ensure-file',
               ensure_file,
               '-json-output',

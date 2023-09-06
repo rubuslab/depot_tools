@@ -43,7 +43,7 @@ class FakeRepos(fake_repos.FakeReposBase):
                     '}',
                     'hooks = [',
                     '  {"action": ["foo", "--android", "{checkout_android}"]}',
-                    ']',
+                    ']\n',
                 ]) % {
                     'git_base': self.git_base.replace('\\', '\\\\'),
                     'repo_2_revision': self.git_hashes['repo_2'][1][0],

@@ -618,7 +618,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                 '    "url": "url@{foo_rev}",',
                 '  },',
                 '  "bar": "url@bar_rev",',
-                '}',
+                '}\n',
             ]))
 
         self.gclient([
@@ -660,7 +660,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                 'deps = { ',
                 '  "repo_1/foo": "https://foo" + Var("foo_rev"),',
                 '  "repo_1/bar": "https://bar@barrev",',
-                '}',
+                '}\n',
             ]))
 
         with open(gitmodules, 'w') as f:
@@ -718,7 +718,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                 'vars = { ',
                 '  "foo_var": "foo_val",',
                 '  "foo_rev": "foo_rev",',
-                '}',
+                '}\n',
             ]))
 
         with open(gitmodules, 'w') as f:
@@ -771,7 +771,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                 '  "pattern": ".",',
                 '  "action": ["python3", "fake.py",',
                 '             "--with-android={checkout_android}"],',
-                '}]',
+                '}]\n',
             ]))
 
         self.gclient([
@@ -815,7 +815,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                 '    "url": "url@{foo_rev}",',
                 '  },',
                 '  "bar": "url@bar_rev",',
-                '}',
+                '}\n',
             ]))
 
         results = self.gclient([
@@ -867,7 +867,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                 '  "pattern": ".",',
                 '  "action": ["python3", "fake.py",',
                 '             "--with-android={checkout_android}"],',
-                '}]',
+                '}]\n',
             ]))
 
         results = self.gclient([

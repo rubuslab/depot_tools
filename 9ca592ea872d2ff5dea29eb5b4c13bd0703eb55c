@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b282709c_1eb6e448",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-06T03:58:08Z",
+      "side": 1,
+      "message": "I tested it locally. It looks good.\nI will enable it for Siso after testing it.\n\n```\n❯ autoninja -C out/ninja-rbe all\nProxy started successfully.\n5.066 s to start reproxy\nninja: Entering directory `out/ninja-rbe\u0027\n[0/1] Regenerating ninja files\n[48566/48566] STAMP obj/gn_all.stamp\nShutting down reproxy...\nRBE Stats: ↓ 7.88 GB, ↑ 16.62 MB, 18796 cache hits, 696 racing locals, 16138 racing remotes\n1.892 s to stop reproxy\n```",
+      "revId": "9ca592ea872d2ff5dea29eb5b4c13bd0703eb55c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

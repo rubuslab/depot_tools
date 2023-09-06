@@ -94,6 +94,22 @@ def find_cache_dir(tmp_dir):
     return os.path.join(tmp_dir, 'cache')
 
 
+def auth_cache_status():
+    cred_file = os.path.join(os.environ["RBE_cache_dir"], "reproxy.creds")
+    if not os.path.isfile(cred_file):
+        return "missing"
+    try:
+        with open(cred_file) as f:
+            for line in f.readlines():
+                if "seconds:" in line:
+                    exp = int(line.strip().removeprefix("seconds:").strip())
+                    if exp > (time.time() + 5 * 60):
+                        return "valid"
+                    return "expired"
+    except OSError:
+        return "missing"
+
+
 def set_reproxy_metrics_flags(tool):
     """Helper to setup metrics collection flags for reproxy.
 
@@ -109,7 +125,9 @@ def set_reproxy_metrics_flags(tool):
         os.environ.setdefault("RBE_invocation_id", autoninja_id)
     os.environ.setdefault("RBE_metrics_project", "chromium-reclient-metrics")
     os.environ.setdefault("RBE_metrics_table", "rbe_metrics.builds")
-    os.environ.setdefault("RBE_metrics_labels", "source=developer,tool=" + tool)
+    os.environ.setdefault(
+        "RBE_metrics_labels",
+        "source=developer,tool=" + tool + ",credscache=" + auth_cache_status())
     os.environ.setdefault("RBE_metrics_prefix", "go.chromium.org")
 
 

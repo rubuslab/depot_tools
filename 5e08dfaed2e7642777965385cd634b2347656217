@@ -69,6 +69,24 @@
       "parentUuid": "7b7b55ce_f36c97c5",
       "revId": "5e08dfaed2e7642777965385cd634b2347656217",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0ca9057_96444106",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-06T03:47:06Z",
+      "side": 1,
+      "message": "We want Siso to generate .ninja_log to reuse the existing ecosystem and seamless transition from Ninja to Siso. Just don\u0027t have time to do it at the highest priority.",
+      "parentUuid": "e0348676_78d7ec4b",
+      "revId": "5e08dfaed2e7642777965385cd634b2347656217",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

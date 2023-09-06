@@ -412,7 +412,7 @@ def Exec(content, filename='<unknown>', vars_override=None, builtin_vars=None):
     # In other cases a newline token is always generated during tokenization so
     # this has no effect.
     # TODO: Remove this workaround after migrating to Python 3.
-    content += '\n'
+    # content += '\n'
     tokens = {
         token[2]: list(token)
         for token in tokenize.generate_tokens(StringIO(content).readline)

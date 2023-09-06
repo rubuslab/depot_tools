@@ -447,7 +447,7 @@ class VarTest(unittest.TestCase):
         before = [
             'vars = {',
             '  "foo": "bar",',
-            '}',
+            '}\n',
         ]
         after = [
             'vars = {',
@@ -461,7 +461,7 @@ class VarTest(unittest.TestCase):
         local_scope = gclient_eval.Exec('\n'.join([
             'vars = {',
             '  "foo": "bar",',
-            '}',
+            '}\n',
         ]))
 
         gclient_eval.AddVar(local_scope, 'baz', 'lemur')
@@ -482,7 +482,7 @@ class VarTest(unittest.TestCase):
             'vars = {',
             '  "foo": "bar",',
             '  "quux": Str("quuz")',
-            '}',
+            '}\n',
         ]))
 
         self.assertEqual(gclient_eval.GetVar(local_scope, 'foo'), "bar")
@@ -504,7 +504,7 @@ class VarTest(unittest.TestCase):
         local_scope = gclient_eval.Exec('\n'.join([
             'vars = {',
             '  "foo": True,',
-            '}',
+            '}\n',
         ]))
 
         result = gclient_eval.GetVar(local_scope, 'foo')
@@ -533,7 +533,7 @@ class VarTest(unittest.TestCase):
             '  "v8_revision":   ',
             '       "deadbeef",',
             ' # Someone formatted this wrong',
-            '}',
+            '}\n',
         ]
         after = [
             '# Copyright stuff',
@@ -558,7 +558,7 @@ class VarTest(unittest.TestCase):
             'vars = {',
             '   # Comment with trailing space ',
             ' "foo": \'bar\',',
-            '}',
+            '}\n',
         ]))
 
         gclient_eval.SetVar(local_scope, 'foo', 'baz')
@@ -591,7 +591,7 @@ class CipdTest(unittest.TestCase):
             '        "condition": "checkout_android",',
             '        "dep_type": "cipd",',
             '    },',
-            '}',
+            '}\n',
         ]))
 
         self.assertEqual(
@@ -649,7 +649,7 @@ class CipdTest(unittest.TestCase):
             '        "condition": "checkout_android",',
             '        "dep_type": "cipd",',
             '    },',
-            '}',
+            '}\n',
         ]))
 
         self.assertEqual(
@@ -702,7 +702,7 @@ class CipdTest(unittest.TestCase):
             '        ],',
             '        "dep_type": "cipd",',
             '    },',
-            '}',
+            '}\n',
         ]))
 
         gclient_eval.SetCIPD(local_scope, 'src/cipd/package',
@@ -730,7 +730,7 @@ class RevisionTest(unittest.TestCase):
                                       before,
                                       after,
                                       rev_before='deadbeef'):
-        local_scope = gclient_eval.Exec('\n'.join(before))
+        local_scope = gclient_eval.Exec('\n'.join(before) + '\n')
 
         result = gclient_eval.GetRevision(local_scope, 'src/dep')
         self.assertEqual(result, rev_before)

@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "edcb21b0002a2c0cb89e53d1de73340301eae351",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85eb95b7_670e193e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-06T18:16:09Z",
+      "side": 1,
+      "message": "I don\u0027t think we should be updating the checks without confirming with the chromium devs if they are okay with the new styleguide.\n\nWe should at least have a patch for https://chromium.googlesource.com/chromium/src/+/main/styleguide/c++/c++-dos-and-donts.md#comment-style",
+      "revId": "edcb21b0002a2c0cb89e53d1de73340301eae351",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

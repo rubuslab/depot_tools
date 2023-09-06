@@ -105,6 +105,24 @@
       "parentUuid": "e0ca9057_96444106",
       "revId": "5e08dfaed2e7642777965385cd634b2347656217",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c717eef6_312ca64f",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-06T17:05:43Z",
+      "side": 1,
+      "message": "I did try something like that originally; ideally though, I wanted to use the file we already open in ReadTargets(), but there\u0027s not a great way to do that elegantly because the file descriptor doesn\u0027t know its own size until its hits eof.\n\nSo I guess I can stat the file; however, the reason i chose to use .siso_deps is because that\u0027s what the autoninja script does. I don\u0027t really want one script to do things one way and one script to do things another way, and I also want us to actively delete this code when it\u0027s no longer needed so...",
+      "parentUuid": "00d09b23_82f3a616",
+      "revId": "5e08dfaed2e7642777965385cd634b2347656217",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

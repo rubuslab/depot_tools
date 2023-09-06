@@ -140,6 +140,24 @@
       "parentUuid": "00d09b23_82f3a616",
       "revId": "5e08dfaed2e7642777965385cd634b2347656217",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d867e385_5d445f22",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-06T18:39:03Z",
+      "side": 1,
+      "message": "It\u0027s actually appropriate that autoninja and this script use different checks, because they are checking for different things:\nautoninja - is checking whether it is a ninja or siso build\nthis script - is checking whether there this script has data that it can use to give a post-build summary.\n\nIf this script checks for .siso_deps then that will work for now, but it will need updating when siso is updated and starts generating a .ninja_log file.",
+      "parentUuid": "c717eef6_312ca64f",
+      "revId": "5e08dfaed2e7642777965385cd634b2347656217",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

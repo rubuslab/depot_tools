@@ -39,7 +39,8 @@ class NinjaReclientTest(trial_dir.TestCase):
         os.chdir(self.previous_dir)
         super(NinjaReclientTest, self).tearDown()
 
-    @unittest.mock.patch.dict(os.environ, {})
+    @unittest.mock.patch.dict(os.environ,
+                              {'AUTONINJA_BUILD_ID': "SOME_RANDOM_ID"})
     @unittest.mock.patch('subprocess.call', return_value=0)
     @unittest.mock.patch('ninja.main', return_value=0)
     @unittest.mock.patch('reclient_metrics.check_status', return_value=True)
@@ -83,6 +84,7 @@ class NinjaReclientTest(trial_dir.TestCase):
                 hashlib.md5(
                     os.path.join(self.root_dir, "out", "a",
                                  ".reproxy_tmp").encode()).hexdigest()))
+        self.assertIn("/SOME_RANDOM_ID", os.environ["RBE_invocation_id"])
         if sys.platform.startswith('win'):
             self.assertEqual(
                 os.environ.get('RBE_server_address'),
@@ -125,7 +127,8 @@ class NinjaReclientTest(trial_dir.TestCase):
             ]),
         ])
 
-    @unittest.mock.patch.dict(os.environ, {})
+    @unittest.mock.patch.dict(os.environ,
+                              {'AUTONINJA_BUILD_ID': "SOME_RANDOM_ID"})
     @unittest.mock.patch('subprocess.call', return_value=0)
     @unittest.mock.patch('ninja.main', return_value=0)
     @unittest.mock.patch('reclient_metrics.check_status', return_value=True)
@@ -169,6 +172,7 @@ expiry:  {
             os.environ.get('RBE_proxy_log_dir'),
             os.path.join(self.root_dir, "out", "a", ".reproxy_tmp", "logs"))
         self.assertEqual(os.environ.get('RBE_cache_dir'), cache_dir)
+        self.assertIn("/SOME_RANDOM_ID", os.environ["RBE_invocation_id"])
         if sys.platform.startswith('win'):
             self.assertEqual(
                 os.environ.get('RBE_server_address'),
@@ -211,7 +215,8 @@ expiry:  {
             ]),
         ])
 
-    @unittest.mock.patch.dict(os.environ, {})
+    @unittest.mock.patch.dict(os.environ,
+                              {'AUTONINJA_BUILD_ID': "SOME_RANDOM_ID"})
     @unittest.mock.patch('subprocess.call', return_value=0)
     @unittest.mock.patch('ninja.main', return_value=0)
     @unittest.mock.patch('reclient_metrics.check_status', return_value=True)
@@ -254,6 +259,7 @@ expiry:  {
             os.environ.get('RBE_proxy_log_dir'),
             os.path.join(self.root_dir, "out", "a", ".reproxy_tmp", "logs"))
         self.assertEqual(os.environ.get('RBE_cache_dir'), cache_dir)
+        self.assertIn("/SOME_RANDOM_ID", os.environ["RBE_invocation_id"])
         if sys.platform.startswith('win'):
             self.assertEqual(
                 os.environ.get('RBE_server_address'),

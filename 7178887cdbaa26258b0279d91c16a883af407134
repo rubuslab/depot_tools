@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbda217e_0d0107b7",
+        "filename": "reclient_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-07T06:41:45Z",
+      "side": 1,
+      "message": "Can this also return `mechanism`?",
+      "range": {
+        "startLine": 97,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 21
+      },
+      "revId": "7178887cdbaa26258b0279d91c16a883af407134",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5b170f8_4f69f03b",
+        "filename": "reclient_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-07T06:41:45Z",
+      "side": 1,
+      "message": "nit: `auth_cache_status`, `creds_cache_status` may be more self-descriptive name.",
+      "range": {
+        "startLine": 130,
+        "startChar": 44,
+        "endLine": 130,
+        "endChar": 54
+      },
+      "revId": "7178887cdbaa26258b0279d91c16a883af407134",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

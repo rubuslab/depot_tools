@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "770d9b04_747fa478",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-07T05:54:47Z",
+      "side": 1,
+      "message": "follow http://go/todo-style?",
+      "range": {
+        "startLine": 119,
+        "startChar": 6,
+        "endLine": 119,
+        "endChar": 17
+      },
+      "revId": "d9f01dc5c68220adf8c17954ab95d7c6be6cf254",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

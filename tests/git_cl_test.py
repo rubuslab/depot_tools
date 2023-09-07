@@ -802,6 +802,22 @@ class TestGitCl(unittest.TestCase):
                       'Press Enter to upload, or Ctrl+C to abort'), ''),
                 ]
 
+    metrics_arguments = []
+
+    ref_suffix_list = []
+    if notify:
+      ref_suffix_list.append('ready,notify=ALL')
+      metrics_arguments += ['ready', 'notify=ALL']
+    elif not issue and squash:
+      ref_suffix_list.append('wip')
+      metrics_arguments.append('wip')
+
+    # If issue is given, then description is fetched from Gerrit instead.
+    if not title:
+      if issue is None:
+        if squash:
+          title = 'Initial upload'
+      else:
         calls += [
             ((['git', 'rev-list', '--count'] +
               ([f'{custom_cl_base}..HEAD']

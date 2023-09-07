@@ -34,6 +34,24 @@
       "parentUuid": "b282709c_1eb6e448",
       "revId": "9ca592ea872d2ff5dea29eb5b4c13bd0703eb55c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eedaca0f_cadbc105",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-09-07T21:16:03Z",
+      "side": 1,
+      "message": "For developer builds this was intentional to bring the behaviour in line with goma as goma had racing enabled for all actions.\nI figured out a way to enable this in the cfg files for us, I will revert this change once I can land https://chromium-review.googlesource.com/c/chromium/src/+/4851332",
+      "parentUuid": "5da300f2_b9338db2",
+      "revId": "9ca592ea872d2ff5dea29eb5b4c13bd0703eb55c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

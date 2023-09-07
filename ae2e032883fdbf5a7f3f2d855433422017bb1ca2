@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f890878c_e67c4860",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-07T01:17:40Z",
+      "side": 1,
+      "message": "Please add a tracking bug http://b/298594790",
+      "range": {
+        "startLine": 119,
+        "startChar": 21,
+        "endLine": 119,
+        "endChar": 48
+      },
+      "revId": "ae2e032883fdbf5a7f3f2d855433422017bb1ca2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

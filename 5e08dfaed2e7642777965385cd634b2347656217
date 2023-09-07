@@ -158,6 +158,24 @@
       "parentUuid": "c717eef6_312ca64f",
       "revId": "5e08dfaed2e7642777965385cd634b2347656217",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "421eb885_9dadb980",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-07T00:58:21Z",
+      "side": 1,
+      "message": "Sorry, I didn\u0027t see that this is already in progress, and because b/297349353 was assigned to me, I now also made a fix. What about this one? I think it implements what\u0027s asked here (reacting to an empty file instead of Siso-specific logic) in a very simple way: crrev.com/c/4846349",
+      "parentUuid": "d867e385_5d445f22",
+      "revId": "5e08dfaed2e7642777965385cd634b2347656217",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

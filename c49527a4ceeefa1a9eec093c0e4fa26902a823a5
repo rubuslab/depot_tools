@@ -22,6 +22,30 @@
       },
       "revId": "c49527a4ceeefa1a9eec093c0e4fa26902a823a5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9386c2bb_483fbd31",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-07T05:27:34Z",
+      "side": 1,
+      "message": "Yeah, please put b/298594790 instead.",
+      "parentUuid": "3bbff082_5492c043",
+      "range": {
+        "startLine": 119,
+        "startChar": 8,
+        "endLine": 119,
+        "endChar": 17
+      },
+      "revId": "c49527a4ceeefa1a9eec093c0e4fa26902a823a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

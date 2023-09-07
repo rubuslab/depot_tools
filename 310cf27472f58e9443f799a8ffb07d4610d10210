@@ -22,6 +22,30 @@
       },
       "revId": "310cf27472f58e9443f799a8ffb07d4610d10210",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33eee9cf_485074cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-07T09:00:17Z",
+      "side": 1,
+      "message": "You know what we should do? Make the Gerrit parser more flexible to support \"Bug\" and \"Bugs\" as well as \"Fixed\" and \"Fixes\", like it works on GitHub ...\n\nAnyway, I changed it. Thanks.",
+      "parentUuid": "c746b0a9_6d3dee2b",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 4
+      },
+      "revId": "310cf27472f58e9443f799a8ffb07d4610d10210",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

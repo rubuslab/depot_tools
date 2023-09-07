@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "364272cb_213c45a6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-07T07:11:19Z",
+      "side": 1,
+      "message": "Ah, nice. Thank you.",
+      "parentUuid": "08c392e6_eeadecdc",
+      "revId": "2d4398e38f2b47af3250de4aa35f2af4b4f6381f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6f08a7e_984bc9a7",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-09-07T06:51:29Z",
       "side": 1,
       "message": "Add this to bug label in cl description?",
+      "range": {
+        "startLine": 119,
+        "startChar": 14,
+        "endLine": 119,
+        "endChar": 23
+      },
+      "revId": "2d4398e38f2b47af3250de4aa35f2af4b4f6381f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91d990de_b68011e4",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-07T07:11:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6f08a7e_984bc9a7",
       "range": {
         "startLine": 119,
         "startChar": 14,

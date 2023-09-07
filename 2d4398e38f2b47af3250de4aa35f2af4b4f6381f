@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08c392e6_eeadecdc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-07T06:51:29Z",
+      "side": 1,
+      "message": "Fixed?\nhttps://www.chromium.org/developers/contributing-code/-bug-syntax/#:~:text\u003dtheir%20project%20name.-,Fixed%3A,-The%20same%20as",
+      "revId": "2d4398e38f2b47af3250de4aa35f2af4b4f6381f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6f08a7e_984bc9a7",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-07T06:51:29Z",
+      "side": 1,
+      "message": "Add this to bug label in cl description?",
+      "range": {
+        "startLine": 119,
+        "startChar": 14,
+        "endLine": 119,
+        "endChar": 23
+      },
+      "revId": "2d4398e38f2b47af3250de4aa35f2af4b4f6381f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

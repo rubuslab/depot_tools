@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c746b0a9_6d3dee2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-07T08:15:05Z",
+      "side": 1,
+      "message": "Bug?\nhttps://www.chromium.org/developers/contributing-code/-bug-syntax/#:~:text\u003dand%20their%20formats%3A-,Bug%3A,-A%20comma%2Dseparated",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 4
+      },
+      "revId": "310cf27472f58e9443f799a8ffb07d4610d10210",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

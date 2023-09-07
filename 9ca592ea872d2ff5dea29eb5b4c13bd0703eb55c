@@ -16,6 +16,24 @@
       "message": "I tested it locally. It looks good.\nI will enable it for Siso after testing it.\n\n```\n❯ autoninja -C out/ninja-rbe all\nProxy started successfully.\n5.066 s to start reproxy\nninja: Entering directory `out/ninja-rbe\u0027\n[0/1] Regenerating ninja files\n[48566/48566] STAMP obj/gn_all.stamp\nShutting down reproxy...\nRBE Stats: ↓ 7.88 GB, ↑ 16.62 MB, 18796 cache hits, 696 racing locals, 16138 racing remotes\n1.892 s to stop reproxy\n```",
       "revId": "9ca592ea872d2ff5dea29eb5b4c13bd0703eb55c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5da300f2_b9338db2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1555572
+      },
+      "writtenOn": "2023-09-07T19:36:45Z",
+      "side": 1,
+      "message": "Problem with this CL: https://github.com/bazelbuild/reclient/blob/main/internal/pkg/rbeflag/rbeflag.go#L52 means that flags defined on the environment take precedence over those set in the cfg files. Which means that after this PR the exec_strategy will always be racing, with no way to override it in the particular buildtools/reclient_cfgs/... files. This will affect anyone who builds Chromium anywhere. Was that the intention? It seems to me that changing the strategy in the config files is the safer way to go.",
+      "parentUuid": "b282709c_1eb6e448",
+      "revId": "9ca592ea872d2ff5dea29eb5b4c13bd0703eb55c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

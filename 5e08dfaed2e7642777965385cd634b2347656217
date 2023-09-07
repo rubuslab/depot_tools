@@ -176,6 +176,24 @@
       "parentUuid": "d867e385_5d445f22",
       "revId": "5e08dfaed2e7642777965385cd634b2347656217",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc2554e7_db8145af",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-09-07T03:06:23Z",
+      "side": 1,
+      "message": "Technically, it only checks that the first line is an empty string :)\n\nI don\u0027t feel strongly I guess. Either way is fine with me.",
+      "parentUuid": "421eb885_9dadb980",
+      "revId": "5e08dfaed2e7642777965385cd634b2347656217",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

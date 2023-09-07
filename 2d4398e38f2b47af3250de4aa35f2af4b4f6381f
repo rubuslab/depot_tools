@@ -105,6 +105,30 @@
       },
       "revId": "2d4398e38f2b47af3250de4aa35f2af4b4f6381f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da26c548_679c140c",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-07T07:18:01Z",
+      "side": 1,
+      "message": "I already mentioned it in the text, buf if it helps, I can also add another \"Bugs: b/298594790\" line. Done",
+      "parentUuid": "f8f3b855_8c3a7ed5",
+      "range": {
+        "startLine": 119,
+        "startChar": 14,
+        "endLine": 119,
+        "endChar": 23
+      },
+      "revId": "2d4398e38f2b47af3250de4aa35f2af4b4f6381f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

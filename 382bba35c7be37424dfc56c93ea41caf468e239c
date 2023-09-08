@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0e6025f_9463d6f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2023-09-08T09:12:40Z",
+      "side": 1,
+      "message": "A quick Google search shows that most distributions have 1024 as a fileno soft limit. That was my case, at least.\n\n`default_core_multiplier` is 80, and we have relatively recently started to see widespread usage of \u003e12 core laptops. I assume that is the reason, as it\u0027s exactly what I experienced when I upgraded my laptop last year.\n\nI\u0027ll also push a new PS trying to improve the usage of hardcoded values (200, 1000, 200000).",
+      "parentUuid": "36c1d980_8d228ea8",
+      "revId": "382bba35c7be37424dfc56c93ea41caf468e239c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d63d26b_229434a8",
@@ -52,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "453cf97a_211ed540",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2023-09-08T09:12:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d63d26b_229434a8",
+      "revId": "382bba35c7be37424dfc56c93ea41caf468e239c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6398d891_e70f99c0",
@@ -65,6 +101,24 @@
       "writtenOn": "2023-09-08T01:25:22Z",
       "side": 1,
       "message": "Is there some reason you needed to change things from the \u0027prefix_args\u0027 approach to the \u0027prepend_command\u0027 approach? \n\nI wouldn\u0027t have thought your changes made any difference.",
+      "revId": "382bba35c7be37424dfc56c93ea41caf468e239c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6501214c_c21f4818",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2023-09-08T09:12:40Z",
+      "side": 1,
+      "message": "On Linux, `prefix_args` might be `[\u0027nice\u0027, \u0027-10\u0027]`, see line 190. I think this makes things clearer.",
+      "parentUuid": "6398d891_e70f99c0",
       "revId": "382bba35c7be37424dfc56c93ea41caf468e239c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

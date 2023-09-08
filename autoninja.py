@@ -17,7 +17,7 @@ import re
 import subprocess
 import sys
 
-if sys.platform == 'darwin':
+if sys.platform in ['darwin', 'linux']:
     import resource
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -194,12 +194,14 @@ def main(args):
     offline_env = ['RBE_remote_disabled=1', 'GOMA_DISABLED=1'
                    ] if offline and not sys.platform.startswith('win') else []
 
-    # On macOS, the default limit of open file descriptors is too low (256).
+    # On macOS and most Linux distributions, the default limit of open file
+    # descriptors is too low (256 and 1024, respectively).
     # This causes a large j value to result in 'Too many open files' errors.
     # Check whether the limit can be raised to a large enough value. If yes,
     # use `ulimit -n .... &&` as a prefix to increase the limit when running
     # ninja.
-    if sys.platform == 'darwin':
+    prepend_command = []
+    if sys.platform in ['darwin', 'linux']:
         wanted_limit = 200000  # Large enough to avoid any risk of exhaustion.
         fileno_limit, hard_limit = resource.getrlimit(resource.RLIMIT_NOFILE)
         if fileno_limit <= wanted_limit:
@@ -211,9 +213,7 @@ def main(args):
             fileno_limit, hard_limit = resource.getrlimit(
                 resource.RLIMIT_NOFILE)
             if fileno_limit >= wanted_limit:
-                prefix_args = ['ulimit', '-n', f'{wanted_limit}', '&&'
-                               ] + offline_env
-                offline_env = []
+                prepend_command = ['ulimit', '-n', f'{wanted_limit}']
 
     # Call ninja.py so that it can find ninja binary installed by DEPS or one in
     # PATH.
@@ -223,8 +223,9 @@ def main(args):
     if use_remoteexec:
         ninja_path = os.path.join(SCRIPT_DIR, 'ninja_reclient.py')
 
-    args = offline_env + prefix_args + [sys.executable, ninja_path
-                                        ] + input_args[1:]
+    args = prepend_command + ['&&'] + offline_env + prefix_args + [
+        sys.executable, ninja_path
+    ] + input_args[1:]
 
     num_cores = multiprocessing.cpu_count()
     if not j_specified and not t_specified:
@@ -248,7 +249,7 @@ def main(args):
                 # On windows, j value higher than 1000 does not improve build
                 # performance.
                 j_value = min(j_value, 1000)
-            elif sys.platform == 'darwin':
+            elif sys.platform in ['darwin', 'linux']:
                 # If the number of open file descriptors is large enough (or it
                 # can be raised to a large enough value), then set j value to
                 # 1000. This limit comes from ninja which is limited to at most

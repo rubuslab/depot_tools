@@ -25,14 +25,17 @@ def callError(code=1, cmd='', cwd='', stdout=b'', stderr=b''):
 class GitWrapperTestCase(unittest.TestCase):
     def setUp(self):
         super(GitWrapperTestCase, self).setUp()
+        # Ensure the _CONFIG_CACHE is empty between test cases.
+        scm.GIT._CONFIG_CACHE = {}
         self.root_dir = '/foo/bar'
 
     @mock.patch('scm.GIT.Capture')
     def testGetEmail(self, mockCapture):
-        mockCapture.return_value = 'mini@me.com'
+        mockCapture.return_value = 'option=unrelated\nuser.email=mini@me.com\n'
         self.assertEqual(scm.GIT.GetEmail(self.root_dir), 'mini@me.com')
-        mockCapture.assert_called_with(['config', 'user.email'],
-                                       cwd=self.root_dir)
+        mockCapture.assert_called_with(['config', '--list'],
+                                       cwd=self.root_dir,
+                                       strip_out=False)
 
     @mock.patch('scm.GIT.Capture')
     def testAssertVersion(self, mockCapture):

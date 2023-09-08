@@ -102,7 +102,14 @@ class GitMocks(object):
             key = '%s:%s' % (root, key)
         return self.config.get(key, default)
 
-    def SetConfig(self, root, key, value=None):
+    def SetConfig(self,
+                  root,
+                  key,
+                  value=None,
+                  *,
+                  value_pattern=None,
+                  all=False,
+                  scope='local'):
         if root != '':
             key = '%s:%s' % (root, key)
         if value:
@@ -735,7 +742,7 @@ class TestGitCl(unittest.TestCase):
                 'git', 'config', '--unset-all',
                 'rietveld.format-full-by-default'
             ], ), CERR1),
-            ((['git', 'config', 'gerrit.host', 'true'], ), ''),
+            ((['git', 'config', '--list'], ), ''),
         ]
         self.assertIsNone(
             git_cl.LoadCodereviewSettingsFromFile(codereview_file))

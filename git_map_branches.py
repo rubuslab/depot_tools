@@ -29,13 +29,15 @@ import metrics
 import subprocess2
 import sys
 
-from git_common import current_branch, upstream, tags, get_branches_info
-from git_common import get_git_version, MIN_UPSTREAM_TRACK_GIT_VERSION, hash_one
-from git_common import run
+from typing import Dict, Tuple
+
+from git_common import current_branch, multiprocessing, tags, get_branches_info
+from git_common import hash_one, run
 
 import setup_color
 
 from third_party.colorama import Fore, Style
+from third_party.colorama.ansi import AnsiFore
 
 DEFAULT_SEPARATOR = ' ' * 4
 
@@ -122,11 +124,10 @@ class BranchMapper(object):
         self.__current_branch = None
         self.__current_hash = None
         self.__tag_set = None
-        self.__status_info = {}
+        self.__status_info: Dict[str, Tuple[str, AnsiFore, str]] = {}
 
     def start(self):
-        self.__branches_info = get_branches_info(
-            include_tracking_status=self.verbosity >= 1)
+        self.__branches_info = get_branches_info()
         if (self.verbosity >= 2):
             # Avoid heavy import unless necessary.
             from git_cl import get_cl_statuses, color_for_status, Changelist
@@ -138,7 +139,6 @@ class BranchMapper(object):
             status_info = get_cl_statuses(change_cls,
                                           fine_grained=self.verbosity > 2,
                                           max_processes=self.maxjobs)
-
             # This is a blocking get which waits for the remote CL status to be
             # retrieved.
             for cl, status in status_info:
@@ -155,15 +155,13 @@ class BranchMapper(object):
             parent = branch_info.upstream
             if self.__check_cycle(branch):
                 continue
+
             if not self.__branches_info[parent]:
-                branch_upstream = upstream(branch)
-                # If git can't find the upstream, mark the upstream as gone.
-                if branch_upstream:
-                    parent = branch_upstream
-                else:
-                    self.__gone_branches.add(parent)
                 # A parent that isn't in the branches info is a root.
                 roots.add(parent)
+
+            if branch_info.upstream_gone:
+                self.__gone_branches.add(parent)
 
             self.__parent_map[parent].append(branch)
 
@@ -305,9 +303,10 @@ class BranchMapper(object):
 
         # The Rietveld issue associated with the branch.
         if self.verbosity >= 2:
-            (url, color,
-             status) = (('', '', '') if self.__is_invalid_parent(branch) else
-                        self.__status_info[branch])
+            url, color, status = '', '', ''
+            if not self.__is_invalid_parent(branch):
+              url, color, status = self.__status_info[branch]
+
             if self.verbosity > 2:
                 line.append('{} ({})'.format(url, status) if url else '',
                             color=color)
@@ -344,13 +343,6 @@ def print_desc():
 @metrics.collector.collect_metrics('git map-branches')
 def main(argv):
     setup_color.init()
-    if get_git_version() < MIN_UPSTREAM_TRACK_GIT_VERSION:
-        print(
-            'This tool will not show all tracking information for git version '
-            'earlier than ' +
-            '.'.join(str(x) for x in MIN_UPSTREAM_TRACK_GIT_VERSION) +
-            '. Please consider upgrading.',
-            file=sys.stderr)
 
     if '-h' in argv:
         print_desc()
@@ -372,6 +364,7 @@ def main(argv):
         '--maxjobs',
         action='store',
         type=int,
+        default=multiprocessing.cpu_count() * 2,
         help='The number of jobs to use when retrieving review status')
     parser.add_argument('--show-subject',
                         action='store_true',

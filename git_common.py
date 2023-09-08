@@ -39,6 +39,7 @@ import tempfile
 import textwrap
 
 import subprocess2
+import scm
 
 from io import BytesIO
 
@@ -122,10 +123,6 @@ GIT_TRANSIENT_ERRORS = (
 GIT_TRANSIENT_ERRORS_RE = re.compile('|'.join(GIT_TRANSIENT_ERRORS),
                                      re.IGNORECASE)
 
-# git's for-each-ref command first supported the upstream:track token in its
-# format string in version 1.9.0, but some usages were broken until 2.3.0.
-# See git commit b6160d95 for more information.
-MIN_UPSTREAM_TRACK_GIT_VERSION = (2, 3)
 
 
 class BadCommitRefException(Exception):
@@ -347,8 +344,8 @@ def branch_config_map(option):
     """Return {branch: <|option| value>} for all branches."""
     try:
         reg = re.compile(r'^branch\.(.*)\.%s$' % option)
-        lines = get_config_regexp(reg.pattern)
-        return {reg.match(k).group(1): v for k, v in (l.split() for l in lines)}
+        pairs = get_config_regexp(reg.pattern)
+        return {reg.match(k).group(1): v for k, v in pairs}
     except subprocess2.CalledProcessError:
         return {}
 
@@ -382,10 +379,7 @@ def branches(use_limit=True, *args):
 
 
 def get_config(option, default=None):
-    try:
-        return run('config', '--get', option) or default
-    except subprocess2.CalledProcessError:
-        return default
+    return scm.GIT.GetConfig(os.getcwd(), option, default)
 
 
 def get_config_int(option, default=0):
@@ -397,19 +391,11 @@ def get_config_int(option, default=0):
 
 
 def get_config_list(option):
-    try:
-        return run('config', '--get-all', option).split()
-    except subprocess2.CalledProcessError:
-        return []
+    return scm.GIT.GetConfigList(os.getcwd(), option)
 
 
 def get_config_regexp(pattern):
-    if IS_WIN:  # pragma: no cover
-        # this madness is because we call git.bat which calls git.exe which
-        # calls bash.exe (or something to that effect). Each layer divides the
-        # number of ^'s by 2.
-        pattern = pattern.replace('^', '^' * 8)
-    return run('config', '--get-regexp', pattern).splitlines()
+    yield from scm.GIT.YieldConfigRegexp(os.getcwd(), pattern)
 
 
 def is_fsmonitor_enabled():
@@ -445,10 +431,7 @@ def del_branch_config(branch, option, scope='local'):
 
 
 def del_config(option, scope='local'):
-    try:
-        run('config', '--' + scope, '--unset', option)
-    except subprocess2.CalledProcessError:
-        pass
+    scm.GIT.SetConfig(os.getcwd(), option, scope=scope)
 
 
 def diff(oldrev, newrev, *args):
@@ -477,7 +460,9 @@ def freeze():
         if s.lstat not in ' ?':
             # This covers all changes to indexed files.
             # lstat = ' ' means that the file is tracked and modified, but
-            # wasn't added yet. lstat = '?' means that the file is untracked.
+            # wasn't added yet.
+            #
+            # lstat = '?' means that the file is untracked.
             have_indexed_files = True
 
             # If the file has both indexed and unindexed changes.
@@ -884,7 +869,7 @@ def set_branch_config(branch, option, value, scope='local'):
 
 
 def set_config(option, value, scope='local'):
-    run('config', '--' + scope, option, value)
+    scm.GIT.SetConfig(os.getcwd(), option, value, scope=scope)
 
 
 def get_dirty_files():
@@ -1097,10 +1082,7 @@ def tree(treeref, recurse=False):
 
 
 def get_remote_url(remote='origin'):
-    try:
-        return run('config', 'remote.%s.url' % remote)
-    except subprocess2.CalledProcessError:
-        return None
+    return get_config('remote.%s.url' % remote)
 
 
 def upstream(branch):
@@ -1121,45 +1103,46 @@ def get_git_version():
     return tuple(int(x) for x in version.split('.'))
 
 
-def get_branches_info(include_tracking_status):
-    format_string = (
-        '--format=%(refname:short):%(objectname:short):%(upstream:short):')
+_UPSTREAM_TRACK_RE = re.compile(
+    r'(?:ahead (?P<ahead>\d+))?(?:, )?(?:behind (?P<behind>\d+))?')
 
-    # This is not covered by the depot_tools CQ which only has git version 1.8.
-    if (include_tracking_status and get_git_version() >=
-            MIN_UPSTREAM_TRACK_GIT_VERSION):  # pragma: no cover
-        format_string += '%(upstream:track)'
+
+def get_branches_info():
+    format_string = (
+        '--format=%(refname:short):%(objectname:short):%(upstream:short):%(upstream:track,nobracket)'
+    )
 
     info_map = {}
-    data = run('for-each-ref', format_string, 'refs/heads')
-    BranchesInfo = collections.namedtuple('BranchesInfo',
-                                          'hash upstream commits behind')
-    for line in data.splitlines():
-        (branch, branch_hash, upstream_branch,
-         tracking_status) = line.split(':')
+    BranchesInfo = collections.namedtuple(
+        'BranchesInfo', 'hash upstream commits behind upstream_gone')
+    with run_stream('for-each-ref', format_string, 'refs/heads',
+                    text=True) as eachRef:
+        for line in eachRef:
+            (branch, branch_hash, upstream_branch,
+             tracking_status) = line.strip().split(':')
+            commits = None
+            behind_commits = None
 
-        commits = None
-        if include_tracking_status:
-            base = get_or_create_merge_base(branch)
-            if base:
-                commits_list = run('rev-list', '--count', branch, '^%s' % base,
-                                   '--')
-                commits = int(commits_list) or None
+            upstream_gone = False
+            if tracking_status == 'gone':
+                upstream_gone = True
+            elif (m := _UPSTREAM_TRACK_RE.match(tracking_status)):
+                if (ahead := m.group('ahead')):
+                    commits = int(ahead)
+                if (behind := m.group('behind')):
+                    behind_commits = int(behind)
 
-        behind_match = re.search(r'behind (\d+)', tracking_status)
-        behind = int(behind_match.group(1)) if behind_match else None
-
-        info_map[branch] = BranchesInfo(hash=branch_hash,
-                                        upstream=upstream_branch,
-                                        commits=commits,
-                                        behind=behind)
+            info_map[branch] = BranchesInfo(hash=branch_hash,
+                                            upstream=upstream_branch,
+                                            commits=commits,
+                                            behind=behind_commits,
+                                            upstream_gone=upstream_gone)
 
     # Set None for upstreams which are not branches (e.g empty upstream, remotes
     # and deleted upstream branches).
     missing_upstreams = {}
     for info in info_map.values():
-        if (info.upstream not in info_map
-                and info.upstream not in missing_upstreams):
+        if info.upstream not in info_map and info.upstream not in missing_upstreams:
             missing_upstreams[info.upstream] = None
 
     result = info_map.copy()

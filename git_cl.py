@@ -912,17 +912,14 @@ class Settings(object):
     def GetFormatFullByDefault(self):
         if self.format_full_by_default is None:
             self._LazyUpdateIfNeeded()
-            result = (RunGit(
-                ['config', '--bool', 'rietveld.format-full-by-default'],
-                error_ok=True).strip())
-            self.format_full_by_default = (result == 'true')
+            self.format_full_by_default = scm.GIT.GetConfigBool(
+                self.GetRoot(), 'rietveld.format-full-by-default')
         return self.format_full_by_default
 
     def IsStatusCommitOrderByDate(self):
         if self.is_status_commit_order_by_date is None:
-            result = (RunGit(['config', '--bool', 'cl.date-order'],
-                             error_ok=True).strip())
-            self.is_status_commit_order_by_date = (result == 'true')
+            self.is_status_commit_order_by_date = scm.GIT.GetConfigBool(
+                self.GetRoot(), 'cl.date-order')
         return self.is_status_commit_order_by_date
 
     def _GetConfig(self, key, default=''):
@@ -1785,9 +1782,15 @@ class Changelist(object):
         if not self.GetIssue():
             # Extract bug number from branch name, but only if issue is being
             # created. It must start with bug or fix, followed by _ or - and
-            # number. Optionally, it may contain _ or - after number with
-            # arbitrary text. Examples: bug-123 bug_123 fix-123
-            # fix-123-some-description
+            # number.
+            #
+            # Optionally, it may contain _ or - after number with arbitrary text.
+            #
+            # Examples:
+            #   bug-123
+            #   bug_123
+            #   fix-123
+            #   fix-123-some-description
             branch = self.GetBranch()
             if branch is not None:
                 match = re.match(
@@ -2258,11 +2261,15 @@ class Changelist(object):
         project = urllib.parse.urlparse(remote_url).path.strip('/')
         if project.endswith('.git'):
             project = project[:-len('.git')]
-        # *.googlesource.com hosts ensure that Git/Gerrit projects don't start
-        # with 'a/' prefix, because 'a/' prefix is used to force authentication
-        # in gitiles/git-over-https protocol. E.g.,
-        # https://chromium.googlesource.com/a/v8/v8 refers to the same
-        # repo/project as https://chromium.googlesource.com/v8/v8
+        # *.googlesource.com hosts ensure that Git/Gerrit projects don't start with
+        # 'a/' prefix, because 'a/' prefix is used to force authentication in
+        # gitiles/git-over-https protocol. E.g.,
+        #
+        #   https://chromium.googlesource.com/a/v8/v8
+        #
+        # refers to the same repo/project as
+        #
+        #   https://chromium.googlesource.com/v8/v8
         if project.startswith('a/'):
             project = project[len('a/'):]
         return project
@@ -3533,14 +3540,20 @@ def FindCodereviewSettingsFile(filename='codereview.settings'):
 
 def LoadCodereviewSettingsFromFile(fileobj):
     """Parses a codereview.settings file and updates hooks."""
+    cwd = os.getcwd()
+
     keyvals = gclient_utils.ParseCodereviewSettingsContent(fileobj.read())
 
     def SetProperty(name, setting, unset_error_ok=False):
         fullname = 'rietveld.' + name
         if setting in keyvals:
-            RunGit(['config', fullname, keyvals[setting]])
+            scm.GIT.SetConfig(cwd, fullname, keyvals[setting])
         else:
-            RunGit(['config', '--unset-all', fullname], error_ok=unset_error_ok)
+            try:
+                scm.GIT.SetConfig(cwd, fullname, None, all=True)
+            except subprocess2.CalledProcessError:
+                if not unset_error_ok:
+                    raise
 
     if not keyvals.get('GERRIT_HOST', False):
         SetProperty('server', 'CODE_REVIEW_SERVER')
@@ -3562,26 +3575,22 @@ def LoadCodereviewSettingsFromFile(fileobj):
                 unset_error_ok=True)
 
     if 'GERRIT_HOST' in keyvals:
-        RunGit(['config', 'gerrit.host', keyvals['GERRIT_HOST']])
+        scm.GIT.SetConfig(cwd, 'gerrit.host', keyvals['GERRIT_HOST'])
 
     if 'GERRIT_SQUASH_UPLOADS' in keyvals:
-        RunGit([
-            'config', 'gerrit.squash-uploads', keyvals['GERRIT_SQUASH_UPLOADS']
-        ])
+        scm.GIT.SetConfig(cwd, 'gerrit.squash-uploads',
+                          keyvals['GERRIT_SQUASH_UPLOADS'])
 
     if 'GERRIT_SKIP_ENSURE_AUTHENTICATED' in keyvals:
-        RunGit([
-            'config', 'gerrit.skip-ensure-authenticated',
-            keyvals['GERRIT_SKIP_ENSURE_AUTHENTICATED']
-        ])
+        scm.GIT.SetConfig(cwd, 'gerrit.skip-ensure-authenticated',
+                          keyvals['GERRIT_SKIP_ENSURE_AUTHENTICATED'])
 
     if 'PUSH_URL_CONFIG' in keyvals and 'ORIGIN_URL_CONFIG' in keyvals:
         # should be of the form
         # PUSH_URL_CONFIG: url.ssh://gitrw.chromium.org.pushinsteadof
         # ORIGIN_URL_CONFIG: http://src.chromium.org/git
-        RunGit([
-            'config', keyvals['PUSH_URL_CONFIG'], keyvals['ORIGIN_URL_CONFIG']
-        ])
+        scm.GIT.SetConfig(cwd, keyvals['PUSH_URL_CONFIG'],
+                          keyvals['ORIGIN_URL_CONFIG'])
 
 
 def urlretrieve(source, destination):
@@ -3890,12 +3899,10 @@ def CMDbaseurl(parser, args):
     branch = scm.GIT.ShortBranchName(branchref)
     if not args:
         print('Current base-url:')
-        return RunGit(['config', 'branch.%s.base-url' % branch],
-                      error_ok=False).strip()
+        return scm.GIT.GetBranchConfig(os.getcwd(), branch, 'base-url')
 
     print('Setting base-url to %s' % args[0])
-    return RunGit(['config', 'branch.%s.base-url' % branch, args[0]],
-                  error_ok=False).strip()
+    return scm.GIT.SetBranchConfig(os.getcwd(), branch, 'base-url', args[0])
 
 
 def color_for_status(status):
@@ -4395,9 +4402,8 @@ def CMDissue(parser, args):
         issue_branch_map = {}
 
         git_config = {}
-        for config in RunGit(['config', '--get-regexp',
-                              r'branch\..*issue']).splitlines():
-            name, _space, val = config.partition(' ')
+        for name, val in scm.GIT.YieldConfigRegexp(os.getcwd(),
+                                                   r'branch\..*issue'):
             git_config[name] = val
 
         for branch in branches:
@@ -5229,9 +5235,7 @@ def UploadAllSquashed(options: optparse.Values,
     return 0
 
 
-def _UploadAllPrecheck(options, orig_args):
-    # type: (optparse.Values, Sequence[str]) -> Tuple[Sequence[Changelist],
-    # bool]
+def _UploadAllPrecheck(options: optparse.Values, orig_args: Sequence[str]) -> Tuple[Sequence[Changelist], bool]:
     """Checks the state of the tree and gives the user uploading options
 
   Returns: A tuple of the ordered list of changes that have new commits
@@ -5269,14 +5273,12 @@ def _UploadAllPrecheck(options, orig_args):
             if (not first_pass and
                     cl._GitGetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY)
                     is None):
-                # We are mid-stack and the user must upload their upstream
-                # branches.
+                # We are mid-stack and the user must upload their upstream branches.
                 must_upload_upstream = True
             print(f'Found change with {commit_summary}...')
         elif first_pass:  # The current branch has nothing to commit. Exit.
             DieWithError('Branch %s has nothing to commit' % cl.GetBranch())
-        # Else: A mid-stack branch has nothing to commit. We do not add it to
-        # cls.
+        # Else: A mid-stack branch has nothing to commit. We do not add it to cls.
         first_pass = False
 
         # Cases below determine if we should continue to traverse up the tree.
@@ -5319,9 +5321,9 @@ def _UploadAllPrecheck(options, orig_args):
                 'Please rebase the stack with `git rebase-update` before uploading.'
             )
 
-        # The tree went through a rebase. LAST_UPLOAD_HASH_CONFIG_KEY no longer
-        # has any relation to commits in the tree. Continue up the tree until we
-        # hit the root.
+        # The tree went through a rebase. LAST_UPLOAD_HASH_CONFIG_KEY no longer has
+        # any relation to commits in the tree. Continue up the tree until we hit
+        # the root.
 
     # We assume all cls in the stack have the same auth requirements and only
     # check this once.
@@ -6253,8 +6255,8 @@ def CMDformat(parser, args):
     if opts.no_python:
         opts.python = False
 
-    # Normalize any remaining args against the current path, so paths relative
-    # to the current directory are still resolved as expected.
+    # Normalize any remaining args against the current path, so paths relative to
+    # the current directory are still resolved as expected.
     args = [os.path.join(os.getcwd(), arg) for arg in args]
 
     # git diff generates paths against the root of the repository.  Change
@@ -6320,8 +6322,8 @@ def CMDformat(parser, args):
         if swift_format_return_value == 2:
             return_value = 2
 
-    # Similar code to above, but using yapf on .py files rather than
-    # clang-format on C/C++ files
+    # Similar code to above, but using yapf on .py files rather than clang-format
+    # on C/C++ files
     py_explicitly_disabled = opts.python is not None and not opts.python
     if python_diff_files and not py_explicitly_disabled:
         depot_tools_path = os.path.dirname(os.path.abspath(__file__))
@@ -6442,11 +6444,15 @@ def CMDformat(parser, args):
             # to the command as histograms/pretty_print.py now needs a relative
             # path argument after splitting the histograms into multiple
             # directories. For example, in tools/metrics/ukm, pretty-print could
-            # be run using: $ python pretty_print.py But in
-            # tools/metrics/histogrmas, pretty-print should be run with an
-            # additional relative path argument, like: $ python pretty_print.py
-            # metadata/UMA/histograms.xml $ python pretty_print.py enums.xml
-
+            # be run using:
+            #
+            #     $ python pretty_print.py
+            #
+            # But in tools/metrics/histogrmas, pretty-print should be run with an
+            # additional relative path argument, like:
+            #
+            #     $ python pretty_print.py metadata/UMA/histograms.xml
+            #     $ python pretty_print.py enums.xml
             if xml_dir == os.path.join('tools', 'metrics', 'histograms'):
                 if os.path.basename(diff_xml) not in (
                         'histograms.xml', 'enums.xml',
@@ -6508,13 +6514,11 @@ def CMDcheckout(parser, args):
 
     target_issue = str(issue_arg.issue)
 
-    output = RunGit([
-        'config', '--local', '--get-regexp', r'branch\..*\.' + ISSUE_CONFIG_KEY
-    ],
-                    error_ok=True)
+    branch_issues = scm.GIT.YieldConfigRegexp(
+        os.getcwd(), r'branch\..*\.' + ISSUE_CONFIG_KEY)
 
     branches = []
-    for key, issue in [x.split() for x in output.splitlines()]:
+    for key, issue in branch_issues:
         if issue == target_issue:
             branches.append(
                 re.sub(r'branch\.(.*)\.' + ISSUE_CONFIG_KEY, r'\1', key))

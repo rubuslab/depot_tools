@@ -26,7 +26,7 @@ class CMDFormatTestCase(unittest.TestCase):
             self.fail('did not expect such run git command: %s' % args[0])
 
         mock.patch('git_migrate_default_branch.git_common.run', RunMock).start()
-        with self.assertRaisesRegexp(RuntimeError, 'Could not find any remote'):
+        with self.assertRaisesRegex(RuntimeError, 'Could not find any remote'):
             git_migrate_default_branch.main()
 
     def test_migration_not_ready(self):
@@ -42,7 +42,7 @@ class CMDFormatTestCase(unittest.TestCase):
                    return_value='https://chromium.googlesource.com').start()
         mock.patch('git_migrate_default_branch.gerrit_util.GetProjectHead',
                    return_value=None).start()
-        with self.assertRaisesRegexp(RuntimeError, 'not migrated yet'):
+        with self.assertRaisesRegex(RuntimeError, 'not migrated yet'):
             git_migrate_default_branch.main()
 
     def test_migration_no_master(self):

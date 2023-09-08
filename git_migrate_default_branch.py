@@ -44,7 +44,10 @@ def main():
     remote = remote.split("\n")[0]
     if not remote:
         raise RuntimeError('Could not find any remote')
-    url = scm.GIT.GetConfig(git_common.repo_root(), 'remote.%s.url' % remote)
+
+    repo_root = git_common.repo_root()
+
+    url = scm.GIT.GetConfig(repo_root, 'remote.%s.url' % remote)
     host = urllib.parse.urlparse(url).netloc
     if not host:
         raise RuntimeError('Could not find remote host')
@@ -54,18 +57,20 @@ def main():
     if project_head != 'refs/heads/main':
         raise RuntimeError("The repository is not migrated yet.")
 
-    # User may have set to fetch only old default branch. Ensure fetch is
-    # tracking main too.
-    git_common.run('config', '--unset-all', 'remote.origin.fetch',
-                   'refs/heads/*')
-    git_common.run('config', '--add', 'remote.origin.fetch',
-                   '+refs/heads/*:refs/remotes/origin/*')
+    # User may have set to fetch only old default branch. Ensure fetch is tracking
+    # main too by replacing all `refs/heads/*` fetch entries.
+    scm.GIT.SetConfig(repo_root,
+                      'remote.origin.fetch',
+                      '+refs/heads/*:refs/remotes/origin/*',
+                      value_pattern='refs/heads/*',
+                      all=True)
+
     logging.info("Running fetch...")
     git_common.run('fetch', remote)
     logging.info("Updating remote HEAD...")
     git_common.run('remote', 'set-head', '-a', remote)
 
-    branches = git_common.get_branches_info(True)
+    branches = git_common.get_branches_info()
 
     if 'master' in branches:
         logging.info("Migrating master branch...")

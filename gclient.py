@@ -94,6 +94,8 @@ import sys
 import time
 import urllib.parse
 
+import zipfile
+import datetime
 import detect_host_arch
 import fix_encoding
 import git_common
@@ -3429,7 +3431,7 @@ def CMDsync(parser, args):
         for d in client.subtree(True):
             normed = d.name.replace('\\', '/').rstrip('/') + '/'
             slns[normed] = {
-                'revision': d.got_revision,
+                'drevision': d.got_revision,
                 'scm': d.used_scm.name if d.used_scm else None,
                 'url': str(d.url) if d.url else None,
                 'was_processed': d.should_process,
@@ -3875,6 +3877,28 @@ def CMDmetrics(parser, args):
     else:
         print("You have opted out. Please consider opting in.")
     return 0
+
+
+def CMDparse(parser, args):
+    fmt_time = '%Y-%m-%dT%H:%M:%S.%fZ'
+    parser.add_option('--file', dest='trace_file')
+    options, args = parser.parse_args(args)
+    start_time = None
+    with zipfile.ZipFile(options.trace_file) as zip_f:
+        trace = zip_f.extract('tr2-event')
+        with open(trace, 'r') as trace_f:
+            lines = trace_f.readlines()
+            with open(options.trace_file[:-4] + '_parsed', 'w',
+                      newline='') as parsed:
+                print(options.trace_file[:-4] + '_parsed')
+                for line in lines:
+                    item = json.loads(line)
+                    if start_time is None:
+                        start_time = datetime.datetime.strptime(
+                            item["time"], fmt_time)
+                    parsed.write(
+                        f'{datetime.datetime.strptime(item["time"], fmt_time)-start_time}: {line}\n'
+                    )
 
 
 class OptionParser(optparse.OptionParser):

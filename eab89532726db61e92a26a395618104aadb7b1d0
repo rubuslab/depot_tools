@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "176855b5_21e69652",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1172797
+      },
+      "writtenOn": "2023-09-11T21:28:40Z",
+      "side": 1,
+      "message": "Testing cross-timezone fix",
+      "revId": "eab89532726db61e92a26a395618104aadb7b1d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

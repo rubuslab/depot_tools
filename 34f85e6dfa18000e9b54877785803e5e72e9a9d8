@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab24c020_8cdf5808",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-11T02:13:25Z",
+      "side": 1,
+      "message": "This wo",
+      "revId": "34f85e6dfa18000e9b54877785803e5e72e9a9d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c139c0d_20584fb9",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-11T02:13:25Z",
+      "side": 1,
+      "message": "FYI: I want to support sharing the same build dir between Ninja and Siso. \nIn that case, it would print siso metrics summary unexpectedly after Ninja build. \n\nLet\u0027s revisit how to handle this, then.",
+      "range": {
+        "startLine": 357,
+        "startChar": 0,
+        "endLine": 357,
+        "endChar": 36
+      },
+      "revId": "34f85e6dfa18000e9b54877785803e5e72e9a9d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

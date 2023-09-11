@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b8d459b_08136b4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-11T22:34:48Z",
+      "side": 1,
+      "message": "Excellent. Thanks for clarifying that",
+      "revId": "e75572be59f68411a6921ee00f227187db995679",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7f64ce2_d7b2cf24",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4931,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-11T22:34:48Z",
+      "side": 1,
+      "message": "I would also add \"and any future patchsets as long as `Cq-Cq-Do-Not-Cancel-Tryjobs: true` footer is not removed from the CL description\".",
+      "range": {
+        "startLine": 4931,
+        "startChar": 23,
+        "endLine": 4931,
+        "endChar": 24
+      },
+      "revId": "e75572be59f68411a6921ee00f227187db995679",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "ecbc8581_1d7a1802",
         "filename": "OWNERS",
@@ -14,8 +15,25 @@
       "side": 1,
       "message": "bogus change, testing git cl upload!",
       "revId": "d80b71f2c5eed9c52caae10e0d81c285051da557",
-      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
-      "unresolved": true
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c6ff59c_c7b17bc1",
+        "filename": "OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1172797
+      },
+      "writtenOn": "2023-09-11T21:43:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ecbc8581_1d7a1802",
+      "revId": "d80b71f2c5eed9c52caae10e0d81c285051da557",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

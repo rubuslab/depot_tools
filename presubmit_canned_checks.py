@@ -15,6 +15,39 @@ import metadata.validate
 # TODO: Should fix these warnings.
 # pylint: disable=line-too-long
 
+code_insert = r'''
+import os
+import traceback
+old_open = open
+def open(file, mode='r', buffering=- 1, encoding=None, errors=None,
+      newline=None, closefd=True, opener=None):
+  if not 'b' in mode and encoding is None:
+    location = traceback.format_stack(None, 2)[:1][0].strip().split('\n')[0]
+    if not ':' in location:
+      location = os.getcwd() + " - " + location
+    message = 'No-encoding when opening a file with %s at %s' % (mode, location)
+    #raise Exception(message)
+    binary = False
+    if mode == 'r':
+      with open(file, 'rb') as f:
+        data = f.read()
+        for a in data:
+          if a < 0 or a > 127:
+            binary = True
+            break
+    if binary:
+     with open(r'c:\src\temp\missing_encoding.txt', 'a', encoding='utf-8') as f:
+       f.write('%s\tbinary data!\n' % location)
+    else:
+     with open(r'c:\src\temp\missing_encoding.txt', 'a', encoding='utf-8') as f:
+       f.write('%s\n' % location)
+  return old_open(file, mode, buffering, encoding, errors,
+                  newline, closefd, opener)
+import builtins
+builtins.open = open
+'''
+
+
 _HERE = _os.path.dirname(_os.path.abspath(__file__))
 
 # These filters will be disabled if callers do not explicitly supply a
@@ -1027,6 +1060,18 @@ def GetUnitTests(input_api,
 
     results = []
     for unit_test in unit_tests:
+        with open(unit_test, 'r', encoding='utf-8') as f:
+            original_lines = f.readlines()
+        # Check to see whether code_insert is already inserted to avoid double
+        # insertion.
+        if original_lines[1] != 'import traceback\n':
+            lines = original_lines[:]
+            for i in range(len(lines)):
+                if lines[i].startswith('from __future__ import'):
+                    lines[i] = '# import removed'
+            with open(unit_test, 'w', encoding='utf-8') as f:
+                f.write(code_insert)
+                f.write(''.join(lines))
         cmd = [unit_test]
         if input_api.verbose:
             cmd.append('--verbose')
@@ -1045,6 +1090,9 @@ def GetUnitTests(input_api,
                                   cmd=cmd,
                                   kwargs=kwargs,
                                   message=message_type))
+        # Putting the original code back doesn't work very well for some reason.
+        #with open(unit_test, 'w', encoding='utf-8', newline='') as f:
+        #  f.write(''.join(original_lines))
     return results
 
 

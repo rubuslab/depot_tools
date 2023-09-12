@@ -63,6 +63,30 @@
       },
       "revId": "e75572be59f68411a6921ee00f227187db995679",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71befe04_8ce5b5ea",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4931,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-09-12T14:49:57Z",
+      "side": 1,
+      "message": "adjusted wording PTAL",
+      "parentUuid": "a20d1bc0_1d7e11f1",
+      "range": {
+        "startLine": 4931,
+        "startChar": 23,
+        "endLine": 4931,
+        "endChar": 24
+      },
+      "revId": "e75572be59f68411a6921ee00f227187db995679",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

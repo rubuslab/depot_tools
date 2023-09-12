@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "545542cb_1a07114c",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4932,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-12T15:49:03Z",
+      "side": 1,
+      "message": "```suggestion\n        \u0027patchsets where the footer is carried over in the commit message. \u0027\n```",
+      "range": {
+        "startLine": 4932,
+        "startChar": 29,
+        "endLine": 4932,
+        "endChar": 32
+      },
+      "revId": "6bfd36685565fb9947c85b56825a18a474a3c5c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

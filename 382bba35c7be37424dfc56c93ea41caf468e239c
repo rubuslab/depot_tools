@@ -71,6 +71,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "15317bb0_6a9aa0ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2023-09-13T13:30:17Z",
+      "side": 1,
+      "message": "I\u0027m using my own laptop with Fedora Linux. I also checked Ubuntu, and both of them have a soft limit of 1024.",
+      "parentUuid": "0a779643_62ee5ae9",
+      "revId": "382bba35c7be37424dfc56c93ea41caf468e239c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d63d26b_229434a8",

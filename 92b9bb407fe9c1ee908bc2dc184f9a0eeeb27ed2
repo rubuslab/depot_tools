@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fe34d22_6a49d68d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2023-09-13T13:30:17Z",
+      "side": 1,
+      "message": "As promised, I pushed a new PS with changes that try to be more generic, instead of using random values for the limits. PTAL.",
+      "revId": "92b9bb407fe9c1ee908bc2dc184f9a0eeeb27ed2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

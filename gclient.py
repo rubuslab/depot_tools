@@ -127,6 +127,9 @@ PREVIOUS_SYNC_COMMITS = 'GCLIENT_PREVIOUS_SYNC_COMMITS'
 NO_SYNC_EXPERIMENT = 'no-sync'
 
 
+PRECOMMIT_HOOK_VAR = 'GCLIENT_PRECOMMIT'
+
+
 class GNException(Exception):
     pass
 
@@ -1980,6 +1983,39 @@ it or fix the checkout.
             patch_refs[patch_repo] = patch_ref
         return patch_refs, target_branches
 
+    def _InstallPreCommitHook(self):
+        gclient_hook_path = os.path.join(DEPOT_TOOLS_DIR, 'hooks',
+                                         'pre-commit.py')
+        gclient_hook_content = '\n'.join((
+            f'{PRECOMMIT_HOOK_VAR}={gclient_hook_path}',
+            f'if [ -f "${PRECOMMIT_HOOK_VAR}" ]; then',
+            f'    python3 "${PRECOMMIT_HOOK_VAR}"',
+            'fi',
+        ))
+        for dep in self.dependencies:
+            git_dir = os.path.join(self.root.root_dir, dep.name, '.git')
+            if not os.path.exists(git_dir):
+                continue
+
+            hook = os.path.join(git_dir, 'hooks', 'pre-commit')
+            if os.path.exists(hook):
+                with open(hook, 'r') as f:
+                    content = f.read()
+                if PRECOMMIT_HOOK_VAR in content:
+                    print(
+                        f'{hook} already contains the gclient pre-commit hook.')
+                else:
+                    print(f'A pre-commit hook already exists at {hook}.\n'
+                          f'Please append the following lines to the hook:\n\n'
+                          f'{gclient_hook_content}')
+                continue
+
+            print(f'Creating a pre-commit hook at {hook}.')
+            with open(hook, 'w') as f:
+                f.write('#!/bin/sh\n')
+                f.write(f'{gclient_hook_content}\n')
+            os.chmod(hook, 0o755)
+
     def _RemoveUnversionedGitDirs(self):
         """Remove directories that are no longer part of the checkout.
 
@@ -3547,6 +3583,23 @@ def CMDrunhooks(parser, args):
     options.force = True
     options.nohooks = False
     return client.RunOnDeps('runhooks', args)
+
+
+# TODO(crbug.com/1481266): Collect merics for installhooks.
+def CMDinstallhooks(parser, args):
+    """Installs gclient git hooks.
+
+    Currently only installs a pre-commit hook to drop staged gitlinks. To
+    bypass this pre-commit hook once it's installed, set the environment
+    variable SKIP_GITLINK_PRECOMMIT=1.
+    """
+    (options, args) = parser.parse_args(args)
+    client = GClient.LoadCurrentConfig(options)
+    if not client:
+        raise gclient_utils.Error(
+            'client not configured; see \'gclient config\'')
+    client._InstallPreCommitHook()
+    return 0
 
 
 @metrics.collector.collect_metrics('gclient revinfo')

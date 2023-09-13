@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee7ea63f_bb8b4f7c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-09-13T23:01:56Z",
+      "side": 1,
+      "message": "Reassigning to the current trooper.",
+      "revId": "471accfd1aa1a79a89ae864d06879337ca8bd405",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

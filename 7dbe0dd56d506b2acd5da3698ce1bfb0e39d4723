@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79bcb46b_65ebf6cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002543
+      },
+      "writtenOn": "2023-09-13T09:22:47Z",
+      "side": 1,
+      "message": "Hi Gavin,\n\nwould you be a good person to review this? I picked you at random from the OWNERS file.\n\nBest regards,\nDominic",
+      "revId": "7dbe0dd56d506b2acd5da3698ce1bfb0e39d4723",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

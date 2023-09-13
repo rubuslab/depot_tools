@@ -2139,6 +2139,39 @@ it or fix the checkout.
         self._SaveEntries()
         return removed_cipd_entries
 
+    def InstallPreCommitHook(self, dir):
+        """Adds a pre-commit hook to cwd to drop accidental gitlink commits."""
+        try:
+            git_dir = gclient_scm.scm.GIT.GetGitDir(dir)
+        except subprocess2.CalledProcessError:
+            print('.git not found in the current directory.')
+            return
+
+        gclient_keyword = 'GCLIENT_PRECOMMIT'
+        gclient_hook_path = os.path.join(DEPOT_TOOLS_DIR, 'hooks',
+                                         'pre-commit.py')
+        gclient_hook_content = (f'{gclient_keyword}={gclient_hook_path}\n'
+                                f'if [ -f "${gclient_keyword}" ]; then\n'
+                                f'    python3 "${gclient_keyword}"\n'
+                                'fi')
+        hook = os.path.join(git_dir, 'hooks', 'pre-commit')
+        if os.path.exists(hook):
+            with open(hook, 'r') as f:
+                content = f.read()
+            if gclient_keyword in content:
+                print(f'{hook} already contains the gclient pre-commit hook.')
+            else:
+                print(f'A pre-commit hook already exists at {hook}.\n'
+                      f'Please append the following lines to the hook:\n\n'
+                      f'{gclient_hook_content}')
+            return
+
+        print(f'Creating a pre-commit hook at {hook}.')
+        with open(hook, 'w') as f:
+            f.write('#!/usr/bin/env bash\n')
+            f.write(f'{gclient_hook_content}\n')
+        os.chmod(hook, 0o755)
+
     def RunOnDeps(self,
                   command,
                   args,
@@ -3547,6 +3580,21 @@ def CMDrunhooks(parser, args):
     options.force = True
     options.nohooks = False
     return client.RunOnDeps('runhooks', args)
+
+
+# TODO(crbug.com/1481266): Collect merics for installhooks.
+def CMDinstallhooks(parser, args):
+    """Installs gclient git hooks.
+
+    Currently only installs a pre-commit hook to drop staged gitlinks.
+    """
+    (options, args) = parser.parse_args(args)
+    client = GClient.LoadCurrentConfig(options)
+    if not client:
+        raise gclient_utils.Error(
+            'client not configured; see \'gclient config\'')
+    client.InstallPreCommitHook(os.getcwd())
+    return 0
 
 
 @metrics.collector.collect_metrics('gclient revinfo')

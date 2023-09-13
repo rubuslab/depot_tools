@@ -3549,6 +3549,44 @@ def CMDrunhooks(parser, args):
     return client.RunOnDeps('runhooks', args)
 
 
+# TODO(crbug.com/1481266): Collect merics for installhooks.
+def CMDinstallhooks(_parser, _args):
+    """Installs gclient git hooks in the current working directory.
+
+    Currently only installs a pre-commit hook to drop staged gitlinks.
+    """
+    try:
+        git_dir = gclient_scm.scm.GIT.GetGitDir(os.getcwd())
+    except subprocess2.CalledProcessError:
+        print('.git not found in the current directory.')
+        return 1
+
+    gclient_keyword = 'GCLIENT_PRECOMMIT'
+    gclient_hook_path = os.path.join(DEPOT_TOOLS_DIR, 'hooks', 'pre-commit.py')
+    gclient_hook_content = (f'{gclient_keyword}={gclient_hook_path}\n'
+                            f'if [ -f "${gclient_keyword}" ]; then\n'
+                            f'    python3 "${gclient_keyword}"\n'
+                            'fi')
+    hook = os.path.join(git_dir, 'hooks', 'pre-commit')
+    if os.path.exists(hook):
+        with open(hook, 'r') as f:
+            content = f.read()
+        if gclient_keyword in content:
+            print(f'{hook} already contains the gclient pre-commit hook.')
+        else:
+            print(f'A pre-commit hook already exists at {hook}.\n'
+                  f'Please append the following lines to the hook:\n\n'
+                  f'{gclient_hook_content}')
+        return 0
+
+    print(f'Creating a pre-commit hook at {hook}.')
+    with open(hook, 'w') as f:
+        f.write('#!/bin/sh\n')
+        f.write(f'{gclient_hook_content}\n')
+    os.chmod(hook, 0o755)
+    return 0
+
+
 @metrics.collector.collect_metrics('gclient revinfo')
 def CMDrevinfo(parser, args):
     """Outputs revision info mapping for the client and its dependencies.

@@ -46,6 +46,30 @@
       },
       "revId": "60a59fabd7a2a5b896619ea3aee72c1abeb95467",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e7987ed_2f98a0da",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1420,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-13T17:23:45Z",
+      "side": 1,
+      "message": "pls fix",
+      "parentUuid": "1d4886d7_dfa2f9f1",
+      "range": {
+        "startLine": 1420,
+        "startChar": 76,
+        "endLine": 1420,
+        "endChar": 80
+      },
+      "revId": "60a59fabd7a2a5b896619ea3aee72c1abeb95467",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

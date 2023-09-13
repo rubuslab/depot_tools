@@ -70,6 +70,30 @@
       },
       "revId": "60a59fabd7a2a5b896619ea3aee72c1abeb95467",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f74bd1d0_23af24d9",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1420,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-09-13T17:27:00Z",
+      "side": 1,
+      "message": "sry the incompetence is staggering.",
+      "parentUuid": "7e7987ed_2f98a0da",
+      "range": {
+        "startLine": 1420,
+        "startChar": 76,
+        "endLine": 1420,
+        "endChar": 80
+      },
+      "revId": "60a59fabd7a2a5b896619ea3aee72c1abeb95467",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

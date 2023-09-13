@@ -1,0 +1,192 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "925fbe36_7e59dabe",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3559,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "rely on .gclient, e.g. solutions instead of cwd?",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eea45e6b_c6092b9d",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "let\u0027s add test for pre-commit too; this can\u0027t break.",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2462b4c_fd0781d8",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "This should be a fast script so I\u0027m adding many optimization comments.",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "227df3ba_51282692",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "nit: staged_gitlinks",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 6
+      },
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6db6dcb2_b5a541c3",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "maybe we should just use an env var instead and document it?",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3289e28e_58db2132",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "instead of invoking this again, you can get that information form command at line 16.",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02fad06b_373c6d95",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "IMO: no need to print",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be4999df_02d61605",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "we need to know if DEPS and git modules are in sync (git_dependencies)",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5827a0a7_193983e0",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "you already have `diff`, that cn be printed",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 2
+      },
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0770640c_51b1651a",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-13T20:27:28Z",
+      "side": 1,
+      "message": "You can check: len(staged) \u003d\u003d len(diff.splitlines()",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 46
+      },
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -84,6 +84,24 @@
       "message": "At this point we\u0027d have three different versions of this logic (at least), here, in chromium/src //build/gn_helpers.py (FromGNArgs), and in chromium/src //tools/mb/mb.py (MetaBuildWrapper.GNArgsFromDir).\n\nWe should consolidate things. I might try to move //build/gn_helpers.py to depot_tools, update mb.py, and refactor things in mb.py and mb_unittest.py to fix the complaint raised in GNArgsFromDir. But it\u0027d take a bit of experimenting if that was the best outcome. Cloning gn_helpers.py into depot_tools might also work. Fetching gn_helpers.py from a chromium/src checkout via gclient_paths (like gn.py does) is a third option.",
       "revId": "69877e63819cae1cda37cf1e4b3c88a6f54f91ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea0af5cf_573461d2",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-14T20:37:47Z",
+      "side": 1,
+      "message": "Indeed. I looked at move the tools/mb/mb.py logic over but it is a lot of code and it has some assumptions (about how to find the out directory) that don\u0027t work in depot_tools.\nI also want to add a test, and perhaps add support for nested import statements (I don\u0027t know if mb.py supports them, my first version doesn\u0027t).\nI\u0027ll add a test as well. No hurry - this has been broken for years.",
+      "parentUuid": "dc95e5d6_29e8b5b7",
+      "revId": "69877e63819cae1cda37cf1e4b3c88a6f54f91ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

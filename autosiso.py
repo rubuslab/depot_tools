@@ -14,22 +14,10 @@ import re
 import sys
 import uuid
 
+import autoninja
 import reclient_helper
 import siso
 
-
-def _use_remoteexec(argv):
-    out_dir = reclient_helper.find_ninja_out_dir(argv)
-    gn_args_path = os.path.join(out_dir, 'args.gn')
-    if not os.path.exists(gn_args_path):
-        return False
-    with open(gn_args_path) as f:
-        for line in f:
-            line_without_comment = line.split('#')[0]
-            if re.search(r'(^|\s)use_remoteexec\s*=\s*true($|\s)',
-                         line_without_comment):
-                return True
-    return False
 
 
 def main(argv):
@@ -44,7 +32,10 @@ def main(argv):
             and argv[1].count(' ') > 0):
         argv = argv[:1] + argv[1].split()
 
-    if not _use_remoteexec(argv):
+    out_dir = reclient_helper.find_ninja_out_dir(argv)
+    gn_args_path = os.path.join(out_dir, 'args.gn')
+    if not os.path.exists(gn_args_path) or not autoninja.read_gn_args(
+            gn_args_path).use_remoteexec:
         print(
             "`use_remoteexec=true` is not detected.\n"
             "Please run `siso` command directly.",

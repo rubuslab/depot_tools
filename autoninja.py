@@ -10,6 +10,7 @@ makes using remote build acceleration simpler and safer, and avoids errors that
 can cause slow goma builds or swap-storms on unaccelerated builds.
 """
 
+import collections
 import multiprocessing
 import os
 import platform
@@ -21,6 +22,44 @@ if sys.platform == 'darwin':
     import resource
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
+
+GnArgs = collections.namedtuple(
+    'GnArgs', ['use_goma', 'use_remoteexec', 'use_rbe', 'use_siso'])
+
+
+def read_gn_args(gn_args_file_path):
+    use_goma = False
+    use_remoteexec = False
+    use_rbe = False
+    use_siso = False
+    with open(gn_args_file_path) as file_handle:
+        for line in file_handle:
+            # use_goma, use_remoteexec, or use_rbe will activate build
+            # acceleration.
+            #
+            # This test can match multi-argument lines. Examples of this
+            # are: is_debug=false use_goma=true is_official_build=false
+            # use_goma=false# use_goma=true This comment is ignored
+            #
+            # Anything after a comment is not consider a valid argument.
+            line_without_comment = line.split('#')[0]
+            if re.search(r'(^|\s)(use_goma)\s*=\s*true($|\s)',
+                         line_without_comment):
+                use_goma = True
+                continue
+            if re.search(r'(^|\s)(use_remoteexec)\s*=\s*true($|\s)',
+                         line_without_comment):
+                use_remoteexec = True
+                continue
+            if re.search(r'(^|\s)(use_rbe)\s*=\s*true($|\s)',
+                         line_without_comment):
+                use_rbe = True
+                continue
+            if re.search(r'(^|\s)(use_siso)\s*=\s*true($|\s)',
+                         line_without_comment):
+                use_siso = True
+                continue
+    return GnArgs(use_goma, use_remoteexec, use_rbe, use_siso)
 
 
 def main(args):
@@ -71,33 +110,8 @@ def main(args):
     # builds, where we look for args.gn in the build tree, and cmake-based
     # builds where we look for rules.ninja.
     if os.path.exists(os.path.join(output_dir, 'args.gn')):
-        with open(os.path.join(output_dir, 'args.gn')) as file_handle:
-            for line in file_handle:
-                # use_goma, use_remoteexec, or use_rbe will activate build
-                # acceleration.
-                #
-                # This test can match multi-argument lines. Examples of this
-                # are: is_debug=false use_goma=true is_official_build=false
-                # use_goma=false# use_goma=true This comment is ignored
-                #
-                # Anything after a comment is not consider a valid argument.
-                line_without_comment = line.split('#')[0]
-                if re.search(r'(^|\s)(use_goma)\s*=\s*true($|\s)',
-                             line_without_comment):
-                    use_goma = True
-                    continue
-                if re.search(r'(^|\s)(use_remoteexec)\s*=\s*true($|\s)',
-                             line_without_comment):
-                    use_remoteexec = True
-                    continue
-                if re.search(r'(^|\s)(use_rbe)\s*=\s*true($|\s)',
-                             line_without_comment):
-                    use_rbe = True
-                    continue
-                if re.search(r'(^|\s)(use_siso)\s*=\s*true($|\s)',
-                             line_without_comment):
-                    use_siso = True
-                    continue
+        use_goma, use_remoteexec, use_rbe, use_siso = detect_gn_args(
+            os.path.join(output_dir, 'args.gn'))
 
         siso_marker = os.path.join(output_dir, '.siso_deps')
         if use_siso:

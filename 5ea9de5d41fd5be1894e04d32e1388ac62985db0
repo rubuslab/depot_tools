@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "451ae0ef_db5d5a58",
+        "filename": "verify_remoteexec_setup.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-09-14T20:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9338f3ec_49c1f1ea",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ff132da_0339a94e",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-09-14T19:37:34Z",
       "side": 1,
       "message": "We should share this code with whatever gets written for autoninja.py/autosiso.py. We don\u0027t want to have to maintain multiple versions of this if we can afford it.",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53fd899c_6111f5dd",
+        "filename": "verify_remoteexec_setup.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-09-14T20:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ff132da_0339a94e",
       "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -69,6 +105,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ab8ece9_bbe5e27f",
+        "filename": "verify_remoteexec_setup.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-09-14T20:03:44Z",
+      "side": 1,
+      "message": "We do need it or we need to run the command from the output directory as we need to get the value of the rbe_py_cfg_file for this output directory, this may be overridden by the user via their args.gn file.",
+      "parentUuid": "88325905_c17a2378",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d784c070_318aa101",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-09-14T19:37:34Z",
       "side": 1,
       "message": "Can you add a comment about what this command is doing? I\u0027m guessing it\u0027s running a bash script remotely? What does `--labels\u003dtype\u003dtool` do?",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06627151_0ca10f1a",
+        "filename": "verify_remoteexec_setup.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-09-14T20:03:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d784c070_318aa101",
       "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

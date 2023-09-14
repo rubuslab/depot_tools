@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6b56b78_d3ba9fa5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-09-14T22:13:21Z",
+      "side": 1,
+      "message": "Please harmonize this with brucedawson@\u0027s autoninja change in https://crrev.com/c/4864898 ; this is one too many GN parsers for my comfort, though presumably we\u0027d only have one of these two.",
+      "revId": "bc122240cf6caaaafcbbcebcabedfb19785de9aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

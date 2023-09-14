@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c88933e_62955b2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-09-14T19:37:34Z",
+      "side": 1,
+      "message": "lgtm, with a few minor comments.",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9338f3ec_49c1f1ea",
+        "filename": "verify_remoteexec_setup.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-09-14T19:37:34Z",
+      "side": 1,
+      "message": "Nit: I\u0027d probably capitalize \"Googler\".",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ff132da_0339a94e",
+        "filename": "verify_remoteexec_setup.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-09-14T19:37:34Z",
+      "side": 1,
+      "message": "We should share this code with whatever gets written for autoninja.py/autosiso.py. We don\u0027t want to have to maintain multiple versions of this if we can afford it.",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88325905_c17a2378",
+        "filename": "verify_remoteexec_setup.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-09-14T19:37:34Z",
+      "side": 1,
+      "message": "You don\u0027t need the `-C` flag. It\u0027s just being ignored by GN\u0027s arg parsing.",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d784c070_318aa101",
+        "filename": "verify_remoteexec_setup.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-09-14T19:37:34Z",
+      "side": 1,
+      "message": "Can you add a comment about what this command is doing? I\u0027m guessing it\u0027s running a bash script remotely? What does `--labels\u003dtype\u003dtool` do?",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -123,6 +123,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "08c25039_8885bc43",
+        "filename": "verify_remoteexec_setup.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2023-09-14T20:11:44Z",
+      "side": 1,
+      "message": "No, what I was trying to say is that while you need the out dir, you don\u0027t actually need the \"-C\" in front of it. That is an unrecognized flag that is being ignored during arg parsing. The out dir is the first positional argument, not the value of an argument with a flag.\n\nI.e., \n\n    gn -C out/dir\n    gn out/dir\n    gn --unrecognized-argument out/dir\n\nare all equivalent. The \u0027-C out_dir\u0027 thing is ninja syntax, not GN syntax.",
+      "parentUuid": "6ab8ece9_bbe5e27f",
+      "revId": "5ea9de5d41fd5be1894e04d32e1388ac62985db0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d784c070_318aa101",

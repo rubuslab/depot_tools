@@ -33,6 +33,23 @@
       "message": "Actually adding a reviewer this time, and Avi for FYI/testing if he wants (it works for me)",
       "revId": "69877e63819cae1cda37cf1e4b3c88a6f54f91ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65417848_a12a50b4",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-14T06:45:55Z",
+      "side": 1,
+      "message": "Is it possible to have test for this?",
+      "revId": "69877e63819cae1cda37cf1e4b3c88a6f54f91ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

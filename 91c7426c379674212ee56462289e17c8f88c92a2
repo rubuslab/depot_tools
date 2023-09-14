@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2406d776_b9646c86",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T20:27:25Z",
+      "side": 1,
+      "message": "strip includes `\"`",
+      "parentUuid": "0d2132d2_21b2097e",
+      "revId": "91c7426c379674212ee56462289e17c8f88c92a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "47b59c2e_933c5e61",
@@ -48,6 +66,30 @@
       "writtenOn": "2023-09-14T20:22:41Z",
       "side": 1,
       "message": "No need for for loop, this should do it:\n\n    git_common.run(\u0027restore\u0027, \u0027--staged\u0027, \u0027--\u0027, *staged_gitlinks)",
+      "range": {
+        "startLine": 60,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 56
+      },
+      "revId": "91c7426c379674212ee56462289e17c8f88c92a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56cec556_f907f856",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T20:27:25Z",
+      "side": 1,
+      "message": "neat",
+      "parentUuid": "47b59c2e_933c5e61",
       "range": {
         "startLine": 60,
         "startChar": 3,

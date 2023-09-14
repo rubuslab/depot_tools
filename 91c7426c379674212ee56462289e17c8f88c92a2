@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "892dd327_0c8b4cdd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-14T20:22:41Z",
+      "side": 1,
+      "message": "jojwang@, could you also take a look?",
+      "revId": "91c7426c379674212ee56462289e17c8f88c92a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d2132d2_21b2097e",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-14T20:22:41Z",
+      "side": 1,
+      "message": "This won\u0027t work if \" is used.\n\nMaybe:\n\n    global_scope \u003d {}\n    exec(l, global_scope)\n    state \u003d global_scope[\u0027git_dependencies\u0027]",
+      "revId": "91c7426c379674212ee56462289e17c8f88c92a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47b59c2e_933c5e61",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-14T20:22:41Z",
+      "side": 1,
+      "message": "No need for for loop, this should do it:\n\n    git_common.run(\u0027restore\u0027, \u0027--staged\u0027, \u0027--\u0027, *staged_gitlinks)",
+      "range": {
+        "startLine": 60,
+        "startChar": 3,
+        "endLine": 61,
+        "endChar": 56
+      },
+      "revId": "91c7426c379674212ee56462289e17c8f88c92a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

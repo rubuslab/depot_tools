@@ -25,6 +25,7 @@ per-file reclient_helper.py=file://RECLIENT_OWNERS
 per-file reclient_metrics*=file://BUILD_OWNERS
 per-file reclient_metrics*=file://RECLIENT_OWNERS
 per-file reclientreport*=file://RECLIENT_OWNERS
+per-file verify_remoteexec_setup*=file://RECLIENT_OWNERS
 
 per-file presubmit*.py=brucedawson@chromium.org
 

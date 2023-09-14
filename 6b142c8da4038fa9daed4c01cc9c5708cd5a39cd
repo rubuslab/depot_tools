@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "326f4e84_da37e875",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3559,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "925fbe36_7e59dabe",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eea45e6b_c6092b9d",
@@ -35,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b6debb7_fe766bbb",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eea45e6b_c6092b9d",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2462b4c_fd0781d8",
@@ -48,6 +84,24 @@
       "writtenOn": "2023-09-13T20:27:28Z",
       "side": 1,
       "message": "This should be a fast script so I\u0027m adding many optimization comments.",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdcea869_05349b53",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e2462b4c_fd0781d8",
       "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -75,6 +129,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c07fa066_dcf98086",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "227df3ba_51282692",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 6
+      },
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6db6dcb2_b5a541c3",
@@ -88,6 +166,24 @@
       "writtenOn": "2023-09-13T20:27:28Z",
       "side": 1,
       "message": "maybe we should just use an env var instead and document it?",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbeaaa79_a05da95f",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6db6dcb2_b5a541c3",
       "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -109,6 +205,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d134f2e_93369ee4",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3289e28e_58db2132",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02fad06b_373c6d95",
@@ -126,6 +240,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0acb00b8_6f076ecc",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02fad06b_373c6d95",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be4999df_02d61605",
@@ -139,6 +271,24 @@
       "writtenOn": "2023-09-13T20:27:28Z",
       "side": 1,
       "message": "we need to know if DEPS and git modules are in sync (git_dependencies)",
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3d50318_80e8d388",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be4999df_02d61605",
       "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -166,6 +316,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55721271_b0b0b367",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5827a0a7_193983e0",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 2
+      },
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0770640c_51b1651a",
@@ -179,6 +353,30 @@
       "writtenOn": "2023-09-13T20:27:28Z",
       "side": 1,
       "message": "You can check: len(staged) \u003d\u003d len(diff.splitlines()",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 46
+      },
+      "revId": "6b142c8da4038fa9daed4c01cc9c5708cd5a39cd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d66ab58e_92719f7d",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-14T19:53:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0770640c_51b1651a",
       "range": {
         "startLine": 51,
         "startChar": 0,

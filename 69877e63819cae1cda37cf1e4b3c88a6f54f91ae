@@ -69,6 +69,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "51e3669a_3633441b",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-15T17:32:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65417848_a12a50b4",
+      "revId": "69877e63819cae1cda37cf1e4b3c88a6f54f91ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc95e5d6_29e8b5b7",
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "Yes, the other two variants should handle nested imports, but I\u0027ve never\nseen anything do that except for some proof-of-concept things long ago.",
       "parentUuid": "ea0af5cf_573461d2",
+      "revId": "69877e63819cae1cda37cf1e4b3c88a6f54f91ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd2eaa9e_b05c871a",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-15T17:32:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b456f261_972009c3",
       "revId": "69877e63819cae1cda37cf1e4b3c88a6f54f91ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

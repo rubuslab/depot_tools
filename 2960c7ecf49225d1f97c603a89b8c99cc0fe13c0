@@ -22,6 +22,30 @@
       },
       "revId": "2960c7ecf49225d1f97c603a89b8c99cc0fe13c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a0d7bc0_0621db98",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-15T17:32:14Z",
+      "side": 1,
+      "message": "True, but then we\u0027d have a global variable which seems worse to me. I\u0027m happy to be overruled, but I don\u0027t think the cost of a second re.compile is big enough to justify a global.",
+      "parentUuid": "ad139798_12f4ca2b",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 50
+      },
+      "revId": "2960c7ecf49225d1f97c603a89b8c99cc0fe13c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,24 @@
       "message": "Please harmonize this with brucedawson@\u0027s autoninja change in https://crrev.com/c/4864898 ; this is one too many GN parsers for my comfort, though presumably we\u0027d only have one of these two.",
       "revId": "bc122240cf6caaaafcbbcebcabedfb19785de9aa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1181adb_ea0eafd9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-15T16:45:22Z",
+      "side": 1,
+      "message": "If we want to land both of these we should definitely decide which of these changes should land first and integrate their features.\n\nHowever I do wonder if a manually-run verify script is the best way to do this. It seems like the reclient tools have all the information about misconfiguration problems and they should just print robust error messages. For the conditions around availability of the reclient tools we should just get autoninja to do the checking (assuming it is cheap enough). Then the instructions will just be as simple as:\n\n  run autoninja. Do what the error messages tell you.",
+      "parentUuid": "c6b56b78_d3ba9fa5",
+      "revId": "bc122240cf6caaaafcbbcebcabedfb19785de9aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

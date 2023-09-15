@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d54be7c_56517018",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-15T18:14:05Z",
+      "side": 1,
+      "message": "After discussion with bentekkie@ it was decided to land this one. Conflicts with crrev.com/c/4864378 should easily be resolved, and no new args.gn parser will be added.",
+      "revId": "2960c7ecf49225d1f97c603a89b8c99cc0fe13c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ad139798_12f4ca2b",

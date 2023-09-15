@@ -16,6 +16,23 @@
       "message": "PTAL.",
       "revId": "651bf6369702d5a7980f598e3d2a37264cbd8356",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a37ca6d3_754786fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115935
+      },
+      "writtenOn": "2023-09-15T14:36:02Z",
+      "side": 1,
+      "message": "Ack, thanks. Looks good (but I\u0027m not an OWNER in this repository).",
+      "revId": "651bf6369702d5a7980f598e3d2a37264cbd8356",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

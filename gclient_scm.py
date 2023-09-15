@@ -1778,7 +1778,6 @@ class CipdRoot(object):
                     ensure_file,
                 ]
                 gclient_utils.CheckCallAndFilter(cmd,
-                                                 print_stdout=True,
                                                  show_header=True)
 
     @contextlib.contextmanager

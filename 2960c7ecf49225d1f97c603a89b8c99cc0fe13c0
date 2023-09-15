@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad139798_12f4ca2b",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-09-15T16:59:38Z",
+      "side": 1,
+      "message": "It would be more performant to move this out of the function so that each recursive call doesnt make its own",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 50
+      },
+      "revId": "2960c7ecf49225d1f97c603a89b8c99cc0fe13c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

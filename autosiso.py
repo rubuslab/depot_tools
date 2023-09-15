@@ -62,11 +62,13 @@ def main(argv):
             '-project=',
             '-reapi_instance=',
         ] + argv[1:]
-        return siso.main(argv)
+        try:
+            sys.exit(siso.main(argv))
+        except KeyboardInterrupt:
+            if os.environ.get('NINJA_SUMMARIZE_BUILD') == '1':
+                print("Shutting down reproxy...", file=sys.stderr)
+            return 1
 
 
 if __name__ == '__main__':
-    try:
-        sys.exit(main(sys.argv))
-    except KeyboardInterrupt:
-        sys.exit(1)
+    sys.exit(main(sys.argv))

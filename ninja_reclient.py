@@ -22,6 +22,8 @@ def main(argv):
         try:
             return ninja.main(argv)
         except KeyboardInterrupt:
+            if os.environ.get('NINJA_SUMMARIZE_BUILD') == '1':
+                print("Shutting down reproxy...", file=sys.stderr)
             return 1
 
 

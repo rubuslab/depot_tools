@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef7312d5_f6e923ad",
+        "filename": "gclient.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1997,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-15T17:59:22Z",
+      "side": 1,
+      "message": "from what I\u0027ve tested it doesn\u0027t, but `gclient_paths.GetPrimarySolutionPath` is better, replaced",
+      "parentUuid": "1bc3eaee_84e1b4f9",
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae293e8d_bc93e6b0",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-09-15T01:11:20Z",
       "side": 1,
       "message": "```suggestion\nTo disable or bypass this hook, set SKIP_GITLINK_PRECOMMIT\u003d1.\n```",
+      "range": {
+        "startLine": 7,
+        "startChar": 3,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb3cee01_bafea583",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-15T17:59:22Z",
+      "side": 1,
+      "message": "should\u0027ve been one or the other, i\u0027ll just use bypass",
+      "parentUuid": "ae293e8d_bc93e6b0",
       "range": {
         "startLine": 7,
         "startChar": 3,
@@ -66,6 +108,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "61c4defe_abc4064b",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-15T17:59:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52c84a6e_1c3b6bbd",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 24,
+        "endChar": 45
+      },
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "858fcb1a_e19f0ed7",
         "filename": "hooks/pre-commit.py",
         "patchSetId": 13
@@ -77,6 +143,30 @@
       "writtenOn": "2023-09-15T14:56:43Z",
       "side": 1,
       "message": "I think imperfect since users could make unrelated DEPS changes? but assuming this is a \u0027best-effort\u0027 hook ? and making it perfect would be too bad for performance?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 25
+      },
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0457829_aea4f9be",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-15T17:59:22Z",
+      "side": 1,
+      "message": "yeah, the hook would keep gitlinks even if DEPS had a whitespace change but if we were to properly test revs (at least using gclient parse) it\u0027d be several hundred times slower. I\u0027m pretty sure this should cover most cases though, and if this isn\u0027t sufficient we can revisit this",
+      "parentUuid": "858fcb1a_e19f0ed7",
       "range": {
         "startLine": 45,
         "startChar": 0,

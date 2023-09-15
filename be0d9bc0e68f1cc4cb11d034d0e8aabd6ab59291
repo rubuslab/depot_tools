@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1bc3eaee_84e1b4f9",
+        "filename": "gclient.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1997,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-15T17:35:26Z",
+      "side": 1,
+      "message": "does this install the hook on all dependencies? Maybe we just use ones in .gclient solutions, e.g. primary solution path - gclient_paths.GetPrimarySolutionPath",
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ae293e8d_bc93e6b0",
         "filename": "hooks/pre-commit.py",
         "patchSetId": 13

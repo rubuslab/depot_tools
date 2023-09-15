@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae293e8d_bc93e6b0",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-09-15T01:11:20Z",
+      "side": 1,
+      "message": "```suggestion\nTo disable or bypass this hook, set SKIP_GITLINK_PRECOMMIT\u003d1.\n```",
+      "range": {
+        "startLine": 7,
+        "startChar": 3,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52c84a6e_1c3b6bbd",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-09-15T01:11:20Z",
+      "side": 1,
+      "message": "```suggestion\n        print(f\u0027{SKIP_VAR} is set, committing gitlinks, if any.\u0027)\n```\n?",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 24,
+        "endChar": 45
+      },
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

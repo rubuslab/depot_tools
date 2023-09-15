@@ -16,6 +16,23 @@
       "message": "Will something be printed if the command fails?",
       "revId": "f27489180b8b8cfb7aaf2e9bf53f4b69e1056db9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5ef4d86_39936f98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-15T22:21:06Z",
+      "side": 1,
+      "message": "I\u0027m not sure if cipd error will still be available in stdout after this change. I attempted another fix in https://crrev.com/c/4869692",
+      "revId": "f27489180b8b8cfb7aaf2e9bf53f4b69e1056db9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

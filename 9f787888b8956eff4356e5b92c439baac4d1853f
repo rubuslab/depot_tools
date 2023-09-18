@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f699a814_d9bd6256",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-18T04:50:37Z",
+      "side": 1,
+      "message": "Perhaps clarify that until recently autoninja would silently ignore import directives. Now it parses them and fails when it can\u0027t find them. That would help explain the problem that this solves.",
+      "revId": "9f787888b8956eff4356e5b92c439baac4d1853f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

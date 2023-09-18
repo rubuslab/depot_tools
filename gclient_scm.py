@@ -1673,14 +1673,13 @@ class CipdPackage(object):
 
 class CipdRoot(object):
     """A representation of a single CIPD root."""
-    def __init__(self, root_dir, service_url, log_level=None):
+    def __init__(self, root_dir, service_url):
         self._all_packages = set()
         self._mutator_lock = threading.Lock()
         self._packages_by_subdir = collections.defaultdict(list)
         self._root_dir = root_dir
         self._service_url = service_url
         self._resolved_packages = None
-        self._log_level = log_level or 'error'
 
     def add_package(self, subdir, package, version):
         """Adds a package to this CIPD root.
@@ -1772,7 +1771,7 @@ class CipdRoot(object):
                     'cipd',
                     'ensure',
                     '-log-level',
-                    self._log_level,
+                    'info',
                     '-root',
                     self.root_dir,
                     '-ensure-file',
@@ -1815,7 +1814,7 @@ class CipdRoot(object):
                         'cipd',
                         'ensure-file-resolve',
                         '-log-level',
-                        self._log_level,
+                        'info',
                         '-ensure-file',
                         ensure_file,
                         '-json-output',

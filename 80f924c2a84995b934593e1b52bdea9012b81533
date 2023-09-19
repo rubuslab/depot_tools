@@ -16,6 +16,24 @@
       "message": "no change for https://g3doc.corp.google.com/devtools/goma/g3doc/client-release-notes/SITEMAP.md?cl\u003dhead ?",
       "revId": "80f924c2a84995b934593e1b52bdea9012b81533",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69bbeb87_47f3675b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-19T06:58:30Z",
+      "side": 1,
+      "message": "I\u0027m waiting for http://cl/566519344.",
+      "parentUuid": "f800d8b1_4f31c44d",
+      "revId": "80f924c2a84995b934593e1b52bdea9012b81533",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e23e8f8_fa9da39c",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1994,
+      "author": {
+        "id": 1244442
+      },
+      "writtenOn": "2023-09-19T20:24:46Z",
+      "side": 1,
+      "message": "This is not robust against subsequent additions to this hook file. I think we need `|| exit 1` at the end of this line, or something like that.",
+      "range": {
+        "startLine": 1994,
+        "startChar": 47,
+        "endLine": 1994,
+        "endChar": 50
+      },
+      "revId": "dee59a023c091e2cd9fc4ea44deefe0ac90e50fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6eea0d99_92b83239",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1244442
+      },
+      "writtenOn": "2023-09-19T20:24:46Z",
+      "side": 1,
+      "message": "I think it\u0027s safer to tell the user what commands to run instead of running it for them. The end of https://stackoverflow.com/a/16832764 explains my concerns well (although I haven\u0027t verified whether the concerns are valid, and if yes, how severe they are).",
+      "range": {
+        "startLine": 60,
+        "startChar": 15,
+        "endLine": 60,
+        "endChar": 18
+      },
+      "revId": "dee59a023c091e2cd9fc4ea44deefe0ac90e50fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57c7710d_84cd9a83",
+        "filename": "tests/hooks_test.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1244442
+      },
+      "writtenOn": "2023-09-19T20:24:46Z",
+      "side": 1,
+      "message": "I believe one of the reasons for this hook is when \"git commit --all\" (or \"git commit -a\") is invoked. Can there be a test for that?",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 15
+      },
+      "revId": "dee59a023c091e2cd9fc4ea44deefe0ac90e50fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

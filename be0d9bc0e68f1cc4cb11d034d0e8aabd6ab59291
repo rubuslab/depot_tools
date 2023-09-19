@@ -223,6 +223,30 @@
       },
       "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1b7fff7_31e83ae5",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-09-19T19:44:50Z",
+      "side": 1,
+      "message": "do we wanna merge this now and improve on this stuff later?",
+      "parentUuid": "cd50cf95_7b14a593",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 25
+      },
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

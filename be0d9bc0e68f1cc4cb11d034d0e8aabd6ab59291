@@ -175,6 +175,30 @@
       },
       "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92ac7331_dac26d5b",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-09-19T00:50:55Z",
+      "side": 1,
+      "message": "given a few responses we heard from folks it sounds like they \n1) don\u0027t mind getting asked to confirm their changes \n2) spend a lot of effort undoing accidental gitlink commits.\n\nWDYT about being even more \"accidental git commits\"-averse.\n\ne.g.\nIf no DEPS change:\n- we automatically revert things\nIf DEPS change:\n- we ask users if they intend to commit gitlinks.",
+      "parentUuid": "b0457829_aea4f9be",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 25
+      },
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

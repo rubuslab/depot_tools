@@ -33,6 +33,24 @@
       "message": "I\u0027m not sure if cipd error will still be available in stdout after this change. I attempted another fix in https://crrev.com/c/4869692",
       "revId": "f27489180b8b8cfb7aaf2e9bf53f4b69e1056db9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0862e273_62ce89f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-19T00:38:24Z",
+      "side": 1,
+      "message": "Thanks.",
+      "parentUuid": "c5ef4d86_39936f98",
+      "revId": "f27489180b8b8cfb7aaf2e9bf53f4b69e1056db9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

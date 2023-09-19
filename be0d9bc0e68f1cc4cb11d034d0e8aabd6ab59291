@@ -199,6 +199,30 @@
       },
       "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd50cf95_7b14a593",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-19T04:07:53Z",
+      "side": 1,
+      "message": "There is some trade-off that we can do, we already have it in presubmit_canned_check:\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:presubmit_canned_checks.py;l\u003d1926;drc\u003d7a69b031d58081d51c9e8e89557b343bba8518b1\n\nWe are talking about microseconds in that case. I\u0027d rather do a proper check and auto-commit than do to prompt.",
+      "parentUuid": "92ac7331_dac26d5b",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 25
+      },
+      "revId": "be0d9bc0e68f1cc4cb11d034d0e8aabd6ab59291",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

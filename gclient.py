@@ -1093,6 +1093,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             skip_sync_revisions,  # type: Mapping[str, str]
     ):
         # type: () -> None
+        if 'angle' in self.name:
+            import pdb; pdb.set_trace()
         """Runs |command| then parse the DEPS file."""
         logging.info('Dependency(%s).run()' % self.name)
         assert self._file_list == []
@@ -1106,6 +1108,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             self.FuzzyMatchUrl(revision_overrides), None)
         if not revision_override and not self.managed:
             revision_override = 'unmanaged'
+        if 'angle' in self.url:
+            import pdb; pdb.set_trace()
         if run_scm and self.url:
             # Create a shallow copy to mutate revision.
             options = copy.copy(options)

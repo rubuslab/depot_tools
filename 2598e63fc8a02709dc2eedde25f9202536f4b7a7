@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "555efcfa_c739e409",
+        "filename": "tests/hooks_test.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1244442
+      },
+      "writtenOn": "2023-09-19T22:07:21Z",
+      "side": 1,
+      "message": "Ah, the `--all` needs to have an effect (actually add a file). To do this, you can replicate one of the earlier tests, but instead of running \"git add\" and then \"git commit\", just do \"git commit --all\".",
+      "range": {
+        "startLine": 178,
+        "startChar": 38,
+        "endLine": 178,
+        "endChar": 41
+      },
+      "revId": "2598e63fc8a02709dc2eedde25f9202536f4b7a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

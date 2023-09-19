@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75c7ee6a_5701eb0b",
+        "filename": "autosiso.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-19T02:33:17Z",
+      "side": 1,
+      "message": "Why not return?",
+      "range": {
+        "startLine": 66,
+        "startChar": 12,
+        "endLine": 66,
+        "endChar": 21
+      },
+      "revId": "25c0763a4bd103335b2975020a0968d31d1a53e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

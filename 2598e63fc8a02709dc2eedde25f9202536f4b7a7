@@ -22,6 +22,30 @@
       },
       "revId": "2598e63fc8a02709dc2eedde25f9202536f4b7a7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8d80371_048c513c",
+        "filename": "tests/hooks_test.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-19T22:35:34Z",
+      "side": 1,
+      "message": "`foo` is modified in L166",
+      "parentUuid": "555efcfa_c739e409",
+      "range": {
+        "startLine": 178,
+        "startChar": 38,
+        "endLine": 178,
+        "endChar": 41
+      },
+      "revId": "2598e63fc8a02709dc2eedde25f9202536f4b7a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

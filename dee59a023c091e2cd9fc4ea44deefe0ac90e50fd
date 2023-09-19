@@ -95,6 +95,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a475baa_3e550046",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-19T22:02:11Z",
+      "side": 1,
+      "message": "I\u0027m fairly confident a majority wants us to just drop gitlink and not ask them to run another command + git commit again. So, I say we keep this as-is.",
+      "parentUuid": "11cd6ced_2b231e3b",
+      "range": {
+        "startLine": 60,
+        "startChar": 15,
+        "endLine": 60,
+        "endChar": 18
+      },
+      "revId": "dee59a023c091e2cd9fc4ea44deefe0ac90e50fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "57c7710d_84cd9a83",

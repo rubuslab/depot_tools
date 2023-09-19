@@ -16,6 +16,24 @@
       "message": "Are we intending to surface the existence of the `Shipped in Chromium` field in the docs somewhere. If so, we should definitely clarify this overwrite alias behaviour somewhere. Also happy if your decision is to keep it secret!",
       "revId": "f9eb9eef8de0b2de29e0ce38f6e540c155a8bca8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b72d03af_84a99406",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-09-19T02:45:02Z",
+      "side": 1,
+      "message": "Given this is the only alias field, I would like to keep it as a hidden feature, as it\u0027s not the preferred method for setting shipped info. If we get any other alias fields (literally 1 other alias field would be my threshold), then we should add it to docs.",
+      "parentUuid": "676d4b71_07f8c433",
+      "revId": "f9eb9eef8de0b2de29e0ce38f6e540c155a8bca8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "690039c3_0b5d9d39",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1994,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-19T22:00:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e23e8f8_fa9da39c",
+      "range": {
+        "startLine": 1994,
+        "startChar": 47,
+        "endLine": 1994,
+        "endChar": 50
+      },
+      "revId": "dee59a023c091e2cd9fc4ea44deefe0ac90e50fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6eea0d99_92b83239",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "11cd6ced_2b231e3b",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-19T22:00:19Z",
+      "side": 1,
+      "message": "I agree, though it seems like most people just want this hook to take care of submodules and not have to run any other commands themselves. @sokcevic@chromium.org WDYT users would prefer?",
+      "parentUuid": "6eea0d99_92b83239",
+      "range": {
+        "startLine": 60,
+        "startChar": 15,
+        "endLine": 60,
+        "endChar": 18
+      },
+      "revId": "dee59a023c091e2cd9fc4ea44deefe0ac90e50fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "57c7710d_84cd9a83",
         "filename": "tests/hooks_test.py",
         "patchSetId": 14
@@ -60,6 +108,30 @@
       "writtenOn": "2023-09-19T20:24:46Z",
       "side": 1,
       "message": "I believe one of the reasons for this hook is when \"git commit --all\" (or \"git commit -a\") is invoked. Can there be a test for that?",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 15
+      },
+      "revId": "dee59a023c091e2cd9fc4ea44deefe0ac90e50fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "213004c2_8f2fe94a",
+        "filename": "tests/hooks_test.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-19T22:00:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57c7710d_84cd9a83",
       "range": {
         "startLine": 22,
         "startChar": 6,

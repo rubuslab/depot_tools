@@ -33,6 +33,23 @@
       "message": "Ack, thanks. Looks good (but I\u0027m not an OWNER in this repository).",
       "revId": "651bf6369702d5a7980f598e3d2a37264cbd8356",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d3a73dc_094218d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1244248
+      },
+      "writtenOn": "2023-09-20T09:10:37Z",
+      "side": 1,
+      "message": "Dirk: PTAL.",
+      "revId": "651bf6369702d5a7980f598e3d2a37264cbd8356",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -52,6 +52,24 @@
       "parentUuid": "a63a0f14_4440244a",
       "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b22f5f5e_f18d7bf2",
+        "filename": "OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-20T08:25:28Z",
+      "side": 1,
+      "message": "The cost in complexity and mental load of having OWNER rules down to individual files is much higher than having to review a CL for that script (there was exactly one CL in the time since August 1, when it was added, which was a trivial formatting change).\n\nI want to simplify and set everything up so that we can work efficiently, instead of always having to work through tiny little things before we can do something.\n\nIt is in our team\u0027s mission to own and maintain the build tooling used by Chromium. I would like to set this up now once and then not have to deal or think about it anymore.\n\n(I just realized we didn\u0027t even have ownership of the goma* files here...)",
+      "parentUuid": "238c685c_cd683714",
+      "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

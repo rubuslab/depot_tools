@@ -88,6 +88,24 @@
       "parentUuid": "b22f5f5e_f18d7bf2",
       "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d84dd206_caa95696",
+        "filename": "OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1330845
+      },
+      "writtenOn": "2023-09-20T14:31:45Z",
+      "side": 1,
+      "message": "`bazel.py` was meant to have shared owners with everyone needing to tap into the launcher:\n\n```\nThis script starts Bazel appropriate for the project you\u0027re working in.  It\u0027s\ncurrently used by ChromiumOS, but is intended for use and to be updated by any\ndepot_tools users who are using Bazel.\n```",
+      "parentUuid": "5892456a_20d36c8d",
+      "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

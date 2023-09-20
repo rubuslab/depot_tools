@@ -34,6 +34,24 @@
       "parentUuid": "293f5c08_84fedc0d",
       "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "238c685c_cd683714",
+        "filename": "OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-20T08:18:32Z",
+      "side": 1,
+      "message": "I still don\u0027t think owning https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:bazel.py by ourselvs is good idea as it seems specific to ChromiumOS and we currently have no plan to use the script.\nIf one of us were asked to review the script now, I think that is not appropriate usage of our time.\n\nSo it is better to update owners when it is necessary and we can do that easily at that time?",
+      "parentUuid": "a63a0f14_4440244a",
+      "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

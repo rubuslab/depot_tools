@@ -59,6 +59,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a02adce3_26987927",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-09-20T19:05:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6763516f_09281b49",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 37
+      },
+      "revId": "cf333a960c6c72e018f25c0f28974309af979621",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "85406948_1ea53f72",

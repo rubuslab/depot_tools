@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "293f5c08_84fedc0d",
+        "filename": "OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-20T08:08:29Z",
+      "side": 1,
+      "message": "I think we are not sure about bazel related files in depot_tools?",
+      "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

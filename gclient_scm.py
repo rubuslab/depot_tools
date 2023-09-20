@@ -686,7 +686,8 @@ class GitWrapper(SCMWrapper):
         else:
             # hash is also a tag, only make a distinction at checkout
             rev_type = "hash"
-
+        if 'angle' in self.url:
+            import pdb; pdb.set_trace()
         # If we are going to introduce a new project, there is a possibility
         # that we are syncing back to a state where the project was originally a
         # sub-project rolled by DEPS (realistic case: crossing the Blink merge
@@ -751,7 +752,7 @@ class GitWrapper(SCMWrapper):
         # Skip url auto-correction if remote.origin.gclient-auto-fix-url is set.
         # This allows devs to use experimental repos which have a different url
         # but whose branch(s) are the same as official repos.
-        if (current_url.rstrip('/') != url.rstrip('/') and url != 'git://foo'
+        if (current_url.rstrip('/').rstrip('.git') != url.rstrip('/').rstrip('.git') and url != 'git://foo'
                 and
                 subprocess2.capture([
                     'git', 'config',
@@ -791,6 +792,9 @@ class GitWrapper(SCMWrapper):
             return_early = True
         else:
             self._EnsureValidHeadObjectOrCheckout(revision, options, url)
+
+        if 'angle' in self.url:
+            import pdb; pdb.set_trace()
 
         if return_early:
             return self._Capture(['rev-parse', '--verify', 'HEAD'])
@@ -862,6 +866,8 @@ class GitWrapper(SCMWrapper):
                 target = upstream_branch
             self._Scrub(target, options)
 
+        if 'angle' in url:
+            import pdb; pdb.set_trace()
         if current_type == 'detached':
             # case 0
             # We just did a Scrub, this is as clean as it's going to get. In
@@ -887,6 +893,8 @@ class GitWrapper(SCMWrapper):
             if not printed_path:
                 self.Print('_____ %s at %s' % (self.relpath, revision),
                            timestamp=False)
+            if 'angle' in url:
+                import pdb; pdb.set_trace()
         elif current_type == 'hash':
             # case 1
             # Can't find a merge-base since we don't know our upstream. That

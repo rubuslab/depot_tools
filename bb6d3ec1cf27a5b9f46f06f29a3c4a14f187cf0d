@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb742f42_d279751e",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-20T19:42:55Z",
+      "side": 1,
+      "message": "wrap this in try / catch - if CON is not available either, the process will crash preventing users from being able to submit the change (bypass should still work).\n\nThe catch can just print: \"Unable to acquire input handle, proceeding without any modifications\"",
+      "revId": "bb6d3ec1cf27a5b9f46f06f29a3c4a14f187cf0d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

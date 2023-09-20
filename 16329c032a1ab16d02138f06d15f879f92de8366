@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94e81270_7962b149",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-20T17:29:15Z",
+      "side": 1,
+      "message": "Maybe elaborate what unstage means:\n\n```suggestion\n        \u0027or \"n\" to unstage (exclude from commit) them: \u0027)\n```",
+      "range": {
+        "startLine": 62,
+        "startChar": 19,
+        "endLine": 62,
+        "endChar": 26
+      },
+      "revId": "16329c032a1ab16d02138f06d15f879f92de8366",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

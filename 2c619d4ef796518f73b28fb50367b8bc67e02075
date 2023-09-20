@@ -16,6 +16,24 @@
       "message": "I think we are not sure about bazel related files in depot_tools?",
       "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a63a0f14_4440244a",
+        "filename": "OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-20T08:12:23Z",
+      "side": 1,
+      "message": "Our team is responsible for Chromium build tools, and now that we are starting to look more and more into Bazel as part of our experiments, I would us to be able to make changes to these scripts if required (of course knowing that these are shared with CrOS, so we should still coordinate and ask for reviews for anything that changes the behavior in an incompatible way!).\n\nThe scripts themselves say that it\u0027s fine for others to use and make edits to them as required: \"It\u0027s currently used by ChromiumOS, but is intended for use and to be updated by any depot_tools users who are using Bazel.\"\n\n@jrosenth@chromium.org As the author of the current scripts, is that OK with you?",
+      "parentUuid": "293f5c08_84fedc0d",
+      "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

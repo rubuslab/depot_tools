@@ -55,15 +55,24 @@ def main():
         # DEPS only has to be in sync with gitlinks when state is SYNC.
         exit(0)
 
-    print(f'Found no change to DEPS, unstaging {len(staged_gitlinks)} '
-          f'staged gitlink(s) found in diff:\n{diff}')
-    git_common.run('restore', '--staged', '--', *staged_gitlinks)
-
     disable_msg = f'To disable this hook, set {SKIP_VAR}=1'
-    if len(staged_gitlinks) == len(diff.splitlines()):
-        print('Found no changes after unstaging gitlinks, aborting commit.')
-        print(disable_msg)
-        exit(1)
+    prompt = (
+        f'Found no change to DEPS, but found staged gitlink(s) in diff:\n{diff}\n'
+        'Press Enter/Return to continue if you intended to include the gitlink(s)'
+        'or "n" to unstage (exclude from commit) them: ')
+    sys.stdin = open("/dev/tty", "r")
+    answer = input(prompt)
+    if answer.lower() == 'n':
+        print(
+            f'\nunstaging {len(staged_gitlinks)} staged gitlink(s) found in diff'
+        )
+        git_common.run('restore', '--staged', '--', *staged_gitlinks)
+        if len(staged_gitlinks) == len(diff.splitlines()):
+            print(
+                '\nFound no changes after unstaging gitlinks, aborting commit.')
+            print(disable_msg)
+            exit(1)
+
     print(disable_msg)
 
 

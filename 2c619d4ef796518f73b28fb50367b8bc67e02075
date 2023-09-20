@@ -70,6 +70,24 @@
       "parentUuid": "238c685c_cd683714",
       "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5892456a_20d36c8d",
+        "filename": "OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-20T09:11:10Z",
+      "side": 1,
+      "message": "Hmm, if you really want to own the script in our team, I\u0027m fine with that. But I still feel strangeness/inappropriateness to do that for now.\n\n(What I\u0027m afraid is that many of tiny little things become techdebt which is difficult to remove and harms our productivity everywhen.\n\nAlso I think there is still high probability that chromium build won\u0027t use this script after all.\nSee https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)",
+      "parentUuid": "b22f5f5e_f18d7bf2",
+      "revId": "2c619d4ef796518f73b28fb50367b8bc67e02075",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

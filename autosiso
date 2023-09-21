@@ -4,5 +4,14 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-base_dir=$(dirname "$0")
-PYTHONDONTWRITEBYTECODE=1 exec python3 "$base_dir/autosiso.py" "$@"
+# In git bash on Windows, invoke the batch file.
+if [ "$(expr "$(uname -s)" : "^MINGW64_NT")" == "10" ]; then
+    autosiso.bat "$@"
+    exit
+fi
+
+echo "FYI: autosiso has been merged into autoninja, which will now"
+echo "     automatically delegate to the right tool depending on your"
+echo "     GN args. Please run autoninja going forward."
+
+exec python3 "$(dirname -- "$0")/autoninja.py" "$@"

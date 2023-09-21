@@ -16,6 +16,29 @@
       "message": "I know this is a rather big change on the first look, but I did my best to ensure that it is very readable and easy to understand.\n\nI have also extensively tested this change on Linux, macOS and Windows for all use cases that I could think of.\n\nThanks :)\n\n```\n## On Linux and macOS\n\n# Test all combinations of configs with autoninja.\nfor outdir in out/*; do\n    for summarize in 0 1; do\n        echo \"\u003d\u003d\u003d NINJA_SUMMARIZE_BUILD\u003d$summarize autoninja -C $outdir base \u003d\u003d\u003d\"\n        NINJA_SUMMARIZE_BUILD\u003d$summarize autoninja -C \"$outdir\" base\n        echo\n    done\ndone\n\n# Test that autosiso still works.\nautosiso -C out/fastbuild-siso-reclient base\n\n## On Windows\n\n# Test that autoninja.bat works.\nset NINJA_SUMMARIZE_BUILD\u003d1\nautoninja.bat -C out/broken base\nautoninja.bat -C out/fastbuild-ninja-local base\nautoninja.bat -C out/fastbuild-ninja-goma base\nautoninja.bat -C out/fastbuild-ninja-reclient base\nautoninja.bat -C out/fastbuild-siso-local base\nautoninja.bat -C out/fastbuild-siso-goma base\nautoninja.bat -C out/fastbuild-siso-reclient base\n\n# Test that autosiso still works.\nautosiso.bat -C out/fastbuild-siso-reclient base\n\n# Test ninja.bat / siso.bat\nninja.bat help\nsiso.bat help\nninja.bat /?\nsiso.bat /?\n```\n\nHere are the configs in my outdirs:\n\n```\n$ for i in out/*/args.gn; do echo $i; cat $i; echo; done\nout/fastbuild-ninja-goma/args.gn\nis_debug \u003d false\nenable_nacl \u003d false\nsymbol_level \u003d 0\nis_component_build \u003d true\nenable_precompiled_headers \u003d false\nuse_goma \u003d true\n\nout/fastbuild-ninja-local/args.gn\nis_debug \u003d false\nenable_nacl \u003d false\nsymbol_level \u003d 0\nis_component_build \u003d true\nenable_precompiled_headers \u003d false\n\nout/fastbuild-ninja-reclient/args.gn\nis_debug \u003d false\nenable_nacl \u003d false\nsymbol_level \u003d 0\nis_component_build \u003d true\nenable_precompiled_headers \u003d false\nuse_remoteexec \u003d true\n\nout/fastbuild-siso-goma/args.gn\nis_debug \u003d false\nenable_nacl \u003d false\nsymbol_level \u003d 0\nis_component_build \u003d true\nenable_precompiled_headers \u003d false\nuse_goma \u003d true\nuse_siso \u003d true\n\nout/fastbuild-siso-local/args.gn\nis_debug \u003d false\nenable_nacl \u003d false\nsymbol_level \u003d 0\nis_component_build \u003d true\nenable_precompiled_headers \u003d false\nuse_siso \u003d true\n\nout/fastbuild-siso-reclient/args.gn\nis_debug \u003d false\nenable_nacl \u003d false\nsymbol_level \u003d 0\nis_component_build \u003d true\nenable_precompiled_headers \u003d false\nuse_remoteexec \u003d true\nuse_siso \u003d true\n```",
       "revId": "a57ec54702ebe41274dc747924224a444a624141",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ce80fd8_424b3ff2",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-09-21T15:07:29Z",
+      "side": 1,
+      "message": "Why not avoid the additional subprocess to python here and just call ninja.main() or siso.main()?",
+      "range": {
+        "startLine": 358,
+        "startChar": 16,
+        "endLine": 359,
+        "endChar": 72
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

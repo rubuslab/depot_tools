@@ -18,6 +18,108 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "59a40170_8d69e4d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-21T16:12:08Z",
+      "side": 1,
+      "message": "Just a couple of comments...\n\nAre there any more tests that can be added to cover this?",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89424301_0ea88493",
+        "filename": "autoninja",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-21T16:12:08Z",
+      "side": 1,
+      "message": "I worry about this aspect of the change - it seems orthogonal to the goal of moving autosiso into autoninja. Thus, it increases the risk and might be better done separately.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "528a3d7e_17929a66",
+        "filename": "autoninja.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-21T16:12:08Z",
+      "side": 1,
+      "message": "I have the same concerns here with the changes to the autoninja shell script. Additionally there are a lot of subtleties around .bat files. Extra things to check would be:\n- handling of the ^^ suffix (build the targets of this file)\n- handling of error codes - i.e.; making sure \"autoninja base_unittests \u0026\u0026 base_unittests.exe\" behaves properly in the success/failure case\n- make sure the command prompt title is reliably reset on exit\n\nIf this can be moved to a separate change that would reduce the risk.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df5e6f31_98fed7a1",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-21T16:12:08Z",
+      "side": 1,
+      "message": "Why the reformat? My counting shows that the previous line was exactly 80 characters? Not important, just wondering.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd0d834c_4b408900",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-21T16:12:08Z",
+      "side": 1,
+      "message": "Same thing here - previously line was exactly 80. No warning should have been triggered. Curious.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c46b3e53_8d716628",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-21T16:12:08Z",
+      "side": 1,
+      "message": "Was exactly 80 characters.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ce80fd8_424b3ff2",
@@ -37,6 +139,57 @@
         "endLine": 359,
         "endChar": 72
       },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e100754_98ac29a1",
+        "filename": "autosiso",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-21T16:12:08Z",
+      "side": 1,
+      "message": "Does this work? If somebody is using autosiso then they probably don\u0027t have use_siso\u003dtrue set which means that autoninja.py will invoke ninja instead of siso.\nOne way to handle this would be to just fail out. If so we should specifically print the required gn arg: \"use_siso \u003d true\"",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7350b15b_40c9d034",
+        "filename": "autosiso.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-21T16:12:08Z",
+      "side": 1,
+      "message": "See previous comments. Note that getting the redirection from autosiso.bat to autoninja.bat is particularly challenging on Windows, especially for special characters like the ^^ suffix.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb02ef1a_40fd2142",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-21T16:12:08Z",
+      "side": 1,
+      "message": "I 100% support the changes to this file but they are orthogonal so I\u0027d separate them out to a different CL. Smaller is better.",
       "revId": "a57ec54702ebe41274dc747924224a444a624141",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

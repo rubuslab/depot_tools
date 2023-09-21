@@ -65,19 +65,6 @@ def stop_reproxy(reclient_cfg, reclient_bin_dir):
     ])
 
 
-def find_ninja_out_dir(args):
-    # Ninja uses getopt_long, which allows to intermix non-option arguments.
-    # To leave non supported parameters untouched, we do not use getopt.
-    for index, arg in enumerate(args[1:]):
-        if arg == '-C':
-            # + 1 to get the next argument and +1 because we trimmed off args[0]
-            return args[index + 2]
-        if arg.startswith('-C'):
-            # Support -Cout/Default
-            return arg[2:]
-    return '.'
-
-
 def find_cache_dir(tmp_dir):
     """Helper to find the correct cache directory for a build.
 
@@ -223,7 +210,7 @@ def set_racing_defaults():
 
 
 @contextlib.contextmanager
-def build_context(argv, tool):
+def build_context(ninja_out, tool):
     # If use_remoteexec is set, but the reclient binaries or configs don't
     # exist, display an error message and stop.  Otherwise, the build will
     # attempt to run with rewrapper wrapping actions, but will fail with
@@ -239,8 +226,6 @@ def build_context(argv, tool):
             file=sys.stderr)
         yield 1
         return
-
-    ninja_out = find_ninja_out_dir(argv)
 
     try:
         set_reproxy_path_flags(ninja_out)

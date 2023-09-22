@@ -9,9 +9,9 @@ large -j value, and otherwise it chooses a small one. This auto-adjustment
 makes using remote build acceleration simpler and safer, and avoids errors that
 can cause slow goma builds or swap-storms on unaccelerated builds.
 
-autoninja tries to detect relevant build settings such as use_remoteexec, and it
-does handle import statements, but it can't handle conditional setting of build
-settings.
+autoninja tries to detect relevant build settings such as use_remoteexec, and
+it does handle import statements, but it can't handle conditional setting of
+build settings.
 """
 
 import multiprocessing
@@ -20,6 +20,7 @@ import platform
 import re
 import subprocess
 import sys
+from typing import Iterator
 
 if sys.platform in ['darwin', 'linux']:
     import resource
@@ -27,7 +28,7 @@ if sys.platform in ['darwin', 'linux']:
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
-def _gn_lines(output_dir, path):
+def gn_lines(output_dir: str, path: str) -> Iterator[str]:
     """
     Generator function that returns args.gn lines one at a time, following
     import directives as needed.
@@ -45,7 +46,7 @@ def _gn_lines(output_dir, path):
                 else:
                     import_path = os.path.normpath(
                         os.path.join(os.path.dirname(path), raw_import_path))
-                for import_line in _gn_lines(output_dir, import_path):
+                for import_line in gn_lines(output_dir, import_path):
                     yield import_line
             else:
                 yield line
@@ -58,13 +59,14 @@ def main(args):
     offline = False
     output_dir = '.'
     input_args = args
-    # On Windows the autoninja.bat script passes along the arguments enclosed in
-    # double quotes. This prevents multiple levels of parsing of the special '^'
-    # characters needed when compiling a single file but means that this script
-    # gets called with a single argument containing all of the actual arguments,
-    # separated by spaces. When this case is detected we need to do argument
-    # splitting ourselves. This means that arguments containing actual spaces
-    # are not supported by autoninja, but that is not a real limitation.
+    # On Windows the autoninja.bat script passes along the arguments enclosed
+    # in double quotes. This prevents multiple levels of parsing of the
+    # special '^' characters needed when compiling a single file but means
+    # that this script gets called with a single argument containing all of
+    # the actual arguments, separated by spaces. When this case is detected we
+    # need to do argument splitting ourselves. This means that arguments
+    # containing actual spaces are not supported by autoninja, but that is not
+    # a real limitation.
     if (sys.platform.startswith('win') and len(args) == 2
             and input_args[1].count(' ') > 0):
         input_args = args[:1] + args[1].split()
@@ -99,7 +101,7 @@ def main(args):
     # builds, where we look for args.gn in the build tree, and cmake-based
     # builds where we look for rules.ninja.
     if os.path.exists(os.path.join(output_dir, 'args.gn')):
-        for line in _gn_lines(output_dir, os.path.join(output_dir, 'args.gn')):
+        for line in gn_lines(output_dir, os.path.join(output_dir, 'args.gn')):
             # use_goma, use_remoteexec, or use_rbe will activate build
             # acceleration.
             #

@@ -847,7 +847,8 @@ class TestGitCl(unittest.TestCase):
             self.mockGit.config['gerrit.override-squash-uploads'] = (
                 'true' if squash_mode == 'override_squash' else 'false')
 
-        if not git_footers.get_footer_change_id(description) and not squash:
+        has_change_id = git_footers.get_footer_change_id(description)
+        if not squash and (not has_change_id or not issue):
             calls += [
                 (('DownloadGerritHook', False), ''),
             ]
@@ -1340,6 +1341,8 @@ class TestGitCl(unittest.TestCase):
         self._run_gerrit_upload_test(
             ['-r', 'foo@example.com', '--send-mail'],
             'desc ✔\n\nBUG=\n\nChange-Id: I123456789',
+            post_amend_description=
+            'desc ✔\n\nBUG=\nR=foo@example.com\n\nChange-Id: I123456789',
             reviewers=['foo@example.com'],
             squash=False,
             squash_mode='override_nosquash',
@@ -1352,6 +1355,8 @@ class TestGitCl(unittest.TestCase):
         self._run_gerrit_upload_test(
             ['-r', 'foo@example.com', '--send-email'],
             'desc ✔\n\nBUG=\n\nChange-Id: I123456789',
+            post_amend_description=
+            'desc ✔\n\nBUG=\nR=foo@example.com\n\nChange-Id: I123456789',
             reviewers=['foo@example.com'],
             squash=False,
             squash_mode='override_nosquash',

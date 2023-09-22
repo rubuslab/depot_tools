@@ -72,6 +72,75 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "52a2a129_60a0bbb1",
+        "filename": "autoninja.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T09:57:00Z",
+      "side": 1,
+      "message": "nit: \nI think you don\u0027t need to change the year in the copyrights.",
+      "range": {
+        "startLine": 2,
+        "startChar": 13,
+        "endLine": 2,
+        "endChar": 17
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48e6a9c8_7f52bb19",
+        "filename": "autoninja.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T09:57:00Z",
+      "side": 1,
+      "message": "Is there any reason why it changed from ninja.py to autoninja.py?",
+      "range": {
+        "startLine": 16,
+        "startChar": 53,
+        "endLine": 16,
+        "endChar": 72
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d740d42_0f5fde78",
+        "filename": "autoninja.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T09:57:00Z",
+      "side": 1,
+      "message": "Is this comment obsolete?",
+      "range": {
+        "startLine": 21,
+        "startChar": 3,
+        "endLine": 21,
+        "endChar": 20
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "528a3d7e_17929a66",
         "filename": "autoninja.bat",
         "patchSetId": 8
@@ -124,6 +193,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f6b91392_dc916a3f",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T09:57:00Z",
+      "side": 1,
+      "message": "You can move this to where it\u0027s used. maybe before L275?",
+      "range": {
+        "startLine": 96,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 73
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cd0d834c_4b408900",
         "filename": "autoninja.py",
         "patchSetId": 8
@@ -159,6 +251,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "67420f88_b925a2f5",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T09:57:00Z",
+      "side": 1,
+      "message": "Why did you move these logics from the previous place?",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 207,
+        "endChar": 16
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c46b3e53_8d716628",
         "filename": "autoninja.py",
         "patchSetId": 8
@@ -170,6 +285,29 @@
       "writtenOn": "2023-09-21T16:12:08Z",
       "side": 1,
       "message": "Was exactly 80 characters.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "361b53d3_e08fc13e",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T09:57:00Z",
+      "side": 1,
+      "message": "It doesn\u0027t make Siso fail with `-d stats` now. So, you can pass it to siso.",
+      "range": {
+        "startLine": 347,
+        "startChar": 49,
+        "endLine": 348,
+        "endChar": 21
+      },
       "revId": "a57ec54702ebe41274dc747924224a444a624141",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -216,6 +354,52 @@
         "startChar": 16,
         "endLine": 359,
         "endChar": 72
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "213794c3_91cdfd90",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T09:57:00Z",
+      "side": 1,
+      "message": "Is this exception handling necessary in addition to L393?",
+      "range": {
+        "startLine": 365,
+        "startChar": 0,
+        "endLine": 365,
+        "endChar": 29
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d057e15e_3951f8f3",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T09:57:00Z",
+      "side": 1,
+      "message": "Probably, it can call `ninjalog_uploader_wrapper.main()` now with a small modification. But, it can be done separately.",
+      "range": {
+        "startLine": 375,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 70
       },
       "revId": "a57ec54702ebe41274dc747924224a444a624141",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

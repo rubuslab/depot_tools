@@ -145,6 +145,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "38319962_d2142b87",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T05:54:36Z",
+      "side": 1,
+      "message": "+1 to avoid additional subprocess.",
+      "parentUuid": "9ce80fd8_424b3ff2",
+      "range": {
+        "startLine": 358,
+        "startChar": 16,
+        "endLine": 359,
+        "endChar": 72
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3e100754_98ac29a1",
         "filename": "autosiso",
         "patchSetId": 8

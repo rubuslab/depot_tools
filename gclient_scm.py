@@ -759,8 +759,13 @@ class GitWrapper(SCMWrapper):
         # Skip url auto-correction if remote.origin.gclient-auto-fix-url is set.
         # This allows devs to use experimental repos which have a different url
         # but whose branch(s) are the same as official repos.
-        if (current_url.rstrip('/') != url.rstrip('/') and url != 'git://foo'
-                and
+        strp_url = url.rstrip('/')
+        strp_current_url = current_url.rstrip('/')
+        strp_url = strp_url[:-4] if strp_url.endswith('.git') else strp_url
+        strp_current_url = strp_current_url[:-4] if strp_current_url.endswith(
+            '.git') else strp_current_url
+        if (strp_current_url.rstrip('/') != strp_url.rstrip('/')
+                and url != 'git://foo' and
                 subprocess2.capture([
                     'git', 'config',
                     'remote.%s.gclient-auto-fix-url' % self.remote

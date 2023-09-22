@@ -81,6 +81,30 @@
       },
       "revId": "46e65a0d2a19a1d0bfc6c8d8f5197639ce904d12",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "567a7def_6950f7b8",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-22T07:46:28Z",
+      "side": 1,
+      "message": "@philwo@google.com why did you change the function name?",
+      "parentUuid": "0a89efd1_c12a18d8",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 12
+      },
+      "revId": "46e65a0d2a19a1d0bfc6c8d8f5197639ce904d12",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -52,6 +52,7 @@ def main(argv):
         return 1
 
     os.environ.setdefault("AUTONINJA_BUILD_ID", str(uuid.uuid4()))
+    os.environ.setdefault("RBE_exec_strategy", "racing")
     with reclient_helper.build_context(argv, 'autosiso') as ret_code:
         if ret_code:
             return ret_code

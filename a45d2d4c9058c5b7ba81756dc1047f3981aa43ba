@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1be54645_2504e795",
+        "filename": "ninja_reclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T05:07:06Z",
+      "side": 0,
+      "message": "Hmm, that\u0027s unfortunate...\nIs it not supported to run Reproxy in background for that use case?",
+      "parentUuid": "5bc769db_44d8f986",
+      "range": {
+        "startLine": 1,
+        "startChar": 1,
+        "endLine": 1,
+        "endChar": 22
+      },
+      "revId": "a45d2d4c9058c5b7ba81756dc1047f3981aa43ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1c845e9f_47ca4b42",
         "filename": "ninjalog_uploader.py",
         "patchSetId": 8

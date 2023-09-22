@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97080f70_1bb58724",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-22T05:53:14Z",
+      "side": 1,
+      "message": "Is it fine to change author?",
+      "revId": "46e65a0d2a19a1d0bfc6c8d8f5197639ce904d12",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c3c81f4_b78abfe0",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-09-22T05:53:14Z",
+      "side": 1,
+      "message": "This is not necessary to be public in original CL?\nhttps://google.github.io/styleguide/pyguide.html#3164-guidelines-derived-from-guidos-recommendations",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 12
+      },
+      "revId": "46e65a0d2a19a1d0bfc6c8d8f5197639ce904d12",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

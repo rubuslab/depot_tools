@@ -95,6 +95,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "05d4f450_526c44e1",
+        "filename": "autoninja.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-22T17:01:58Z",
+      "side": 1,
+      "message": "Good catch. To be more precise, you are not _supposed_ to change the year. Removing the \". All rights reserved.\" is good though.",
+      "parentUuid": "52a2a129_60a0bbb1",
+      "range": {
+        "startLine": 2,
+        "startChar": 13,
+        "endLine": 2,
+        "endChar": 17
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48e6a9c8_7f52bb19",
         "filename": "autoninja.bat",
         "patchSetId": 8

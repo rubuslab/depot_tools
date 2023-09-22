@@ -110,6 +110,24 @@
       "message": "I\u0027d skip this change just to reduce the number of files modified.",
       "revId": "a45d2d4c9058c5b7ba81756dc1047f3981aa43ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05221779_68b6953b",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T06:31:06Z",
+      "side": 0,
+      "message": "extracted the change https://crrev.com/c/4886532",
+      "parentUuid": "1c845e9f_47ca4b42",
+      "revId": "a45d2d4c9058c5b7ba81756dc1047f3981aa43ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

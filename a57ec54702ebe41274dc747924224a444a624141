@@ -54,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "831e1165_14a442f2",
+        "filename": "autoninja",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T06:31:06Z",
+      "side": 1,
+      "message": "Discussed in the team chat.\nThe CL would be like these.\n- Execute the ninja command from autoninja.py, instead of printing it.\n- Remove ninja_reclient.py\n- Move NINJA_SUMMARIZE_BUILD logic to autoninja.py\n- Move ninjalog_uploader call to auotninja.py\n- Better Windows /? support\n\nThe first one is important to be done first, so that others can be done independently.",
+      "parentUuid": "89424301_0ea88493",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "528a3d7e_17929a66",
         "filename": "autoninja.bat",
         "patchSetId": 8
@@ -86,6 +104,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e26985d2_d8d1cc8d",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T06:31:06Z",
+      "side": 1,
+      "message": "extracted https://crrev.com/c/4886413",
+      "parentUuid": "df5e6f31_98fed7a1",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd0d834c_4b408900",
@@ -99,6 +135,24 @@
       "writtenOn": "2023-09-21T16:12:08Z",
       "side": 1,
       "message": "Same thing here - previously line was exactly 80. No warning should have been triggered. Curious.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2b85877_e156cda9",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T06:31:06Z",
+      "side": 1,
+      "message": "extracted the change. https://crrev.com/c/4886413",
+      "parentUuid": "cd0d834c_4b408900",
       "revId": "a57ec54702ebe41274dc747924224a444a624141",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -186,6 +240,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a2fc8b2b_a3390180",
+        "filename": "autosiso",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T06:31:06Z",
+      "side": 1,
+      "message": "Yeah, this should fail with a message to put `use_siso\u003dtrue` and run `autoninja`.",
+      "parentUuid": "3e100754_98ac29a1",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7350b15b_40c9d034",
         "filename": "autosiso.bat",
         "patchSetId": 8
@@ -214,6 +286,24 @@
       "writtenOn": "2023-09-21T16:12:08Z",
       "side": 1,
       "message": "I 100% support the changes to this file but they are orthogonal so I\u0027d separate them out to a different CL. Smaller is better.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2855e994_c31cca4c",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-22T06:31:06Z",
+      "side": 1,
+      "message": "extracted the change https://crrev.com/c/4886532",
+      "parentUuid": "fb02ef1a_40fd2142",
       "revId": "a57ec54702ebe41274dc747924224a444a624141",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

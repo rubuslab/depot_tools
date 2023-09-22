@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ec6f0ec_ac93b040",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-22T17:00:12Z",
+      "side": 1,
+      "message": "I\u0027m confused as to why this reformat is needed. The old line was short enough. What is triggering the reformat?",
+      "revId": "a9248f6c2b165eba95f21f2fff82872352a00654",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

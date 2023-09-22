@@ -694,7 +694,6 @@ class GitWrapper(SCMWrapper):
         else:
             # hash is also a tag, only make a distinction at checkout
             rev_type = "hash"
-
         # If we are going to introduce a new project, there is a possibility
         # that we are syncing back to a state where the project was originally a
         # sub-project rolled by DEPS (realistic case: crossing the Blink merge
@@ -759,8 +758,8 @@ class GitWrapper(SCMWrapper):
         # Skip url auto-correction if remote.origin.gclient-auto-fix-url is set.
         # This allows devs to use experimental repos which have a different url
         # but whose branch(s) are the same as official repos.
-        if (current_url.rstrip('/') != url.rstrip('/') and url != 'git://foo'
-                and
+        if (current_url.rstrip('/').rstrip('.git') !=
+                url.rstrip('/').rstrip('.git') and url != 'git://foo' and
                 subprocess2.capture([
                     'git', 'config',
                     'remote.%s.gclient-auto-fix-url' % self.remote

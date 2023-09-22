@@ -46,6 +46,30 @@
       },
       "revId": "bcee6092aacaba3f2c0536831f0ac4dd1478c335",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "557696a4_e6784b7c",
+        "filename": "gclient_scm.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 763,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-09-22T18:00:00Z",
+      "side": 1,
+      "message": "nvm, only supporting \nhttps://chromium.googlesource.com/infra/experimental\nhttps://chromium.googlesource.com/infra/experimental/\nhttps://chromium.googlesource.com/infra/experimental.git",
+      "parentUuid": "ebccb4c8_f71fd4bd",
+      "range": {
+        "startLine": 763,
+        "startChar": 31,
+        "endLine": 763,
+        "endChar": 46
+      },
+      "revId": "bcee6092aacaba3f2c0536831f0ac4dd1478c335",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -580,6 +580,7 @@ def CheckLongLines(input_api, output_api, maxlen, source_file_filter=None):
         # This is specifically for Android's handwritten makefiles (Android.mk).
         'mk': 200,
         'rs': 100,
+        'py': 79, # PEP-8
         '': maxlen,
     }
 

@@ -16,6 +16,24 @@
       "message": "I\u0027m confused as to why this reformat is needed. The old line was short enough. What is triggering the reformat?",
       "revId": "a9248f6c2b165eba95f21f2fff82872352a00654",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2b82b6c_94ef9d21",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-25T01:41:02Z",
+      "side": 1,
+      "message": "I think this is for 79 chars in PEP. Technically, we don\u0027t need to fix the old code according to the style guide. Or, should we keep using the previous style in old files?\nhttps://chromium.googlesource.com/chromium/src/+/HEAD/styleguide/python/python.md#our-previous-python-style",
+      "parentUuid": "7ec6f0ec_ac93b040",
+      "revId": "a9248f6c2b165eba95f21f2fff82872352a00654",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

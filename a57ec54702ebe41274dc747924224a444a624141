@@ -35,6 +35,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6145f14_3e4ebf05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-25T07:00:39Z",
+      "side": 1,
+      "message": "Thank you for all the comments.\n\nI\u0027ll try to extract functional parts from this CL and send them as smaller separate CLs, if possible. I\u0027ll resolve the comments once the changes have been made.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89424301_0ea88493",
@@ -206,6 +223,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4d079ac5_d8620df3",
+        "filename": "autoninja.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-25T07:00:39Z",
+      "side": 1,
+      "message": "Thank you for suggesting these additional test cases. Indeed, the handling of ^^ on Windows got lost by the changes - I\u0027ll fix that and test it to make sure that it works.\n\n\u003e If this can be moved to a separate change that would reduce the risk.\nMoving logic from the .bat / .sh files into the .py code requires modifying both in one CL. But I\u0027ll try to split this up so that the functional changes don\u0027t also contain refactoring changes.",
+      "parentUuid": "528a3d7e_17929a66",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "df5e6f31_98fed7a1",
         "filename": "autoninja.py",
         "patchSetId": 8
@@ -235,6 +270,24 @@
       "side": 1,
       "message": "extracted https://crrev.com/c/4886413",
       "parentUuid": "df5e6f31_98fed7a1",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0b43ab9_9654e81f",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-25T07:00:39Z",
+      "side": 1,
+      "message": "I was just following our style guide, which says that we should use 79 character line length for new code: https://chromium.googlesource.com/chromium/src/+/HEAD/styleguide/python/python.md#our-previous-python-style\n\nI don\u0027t believe in keeping around a mix of old code and new code, because that\u0027s just additional mental load for each edit one makes, so I just fixed this script up to conform to the new style while I was working on it.\n\nHowever, it seems like depot_tools in general sticks to 80 character line length, so I\u0027ll revert these changes and use 80 chars consistently in my code.",
+      "parentUuid": "e26985d2_d8d1cc8d",
       "revId": "a57ec54702ebe41274dc747924224a444a624141",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -361,6 +414,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ed2492b_e1a85558",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-25T07:00:39Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c46b3e53_8d716628",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "361b53d3_e08fc13e",
@@ -408,6 +479,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "47cd8c0f_5a8767e1",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-25T07:00:39Z",
+      "side": 1,
+      "message": "I tried that and even though it didn\u0027t cause any failures or issues, Siso printed a warning message that \"-d stats is still unsupported\" (or similar). So I figured it might confuse users and it\u0027s better to make it conditional on Ninja for now.",
+      "parentUuid": "34e2dbc8_c42af210",
+      "range": {
+        "startLine": 347,
+        "startChar": 49,
+        "endLine": 348,
+        "endChar": 21
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ce80fd8_424b3ff2",
@@ -445,6 +540,30 @@
       "side": 1,
       "message": "+1 to avoid additional subprocess.",
       "parentUuid": "9ce80fd8_424b3ff2",
+      "range": {
+        "startLine": 358,
+        "startChar": 16,
+        "endLine": 359,
+        "endChar": 72
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65446786_b24db859",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-25T07:00:39Z",
+      "side": 1,
+      "message": "Good idea, I\u0027ll give that a try.",
+      "parentUuid": "38319962_d2142b87",
       "range": {
         "startLine": 358,
         "startChar": 16,
@@ -525,6 +644,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ebf1d68_8b4e7cb0",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-25T07:00:39Z",
+      "side": 1,
+      "message": "Thank you, that\u0027s a good idea. I\u0027ll send it in a follow-up CL.",
+      "parentUuid": "89564ca1_3f5eda4d",
+      "range": {
+        "startLine": 375,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 70
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e100754_98ac29a1",
@@ -562,6 +705,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4438cb5b_4c03766a",
+        "filename": "autosiso",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-25T07:00:39Z",
+      "side": 1,
+      "message": "If you\u0027re OK with printing the message and failing, I\u0027d also prefer that. :) I\u0027ll change that in the next patchset.",
+      "parentUuid": "a2fc8b2b_a3390180",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7350b15b_40c9d034",
         "filename": "autosiso.bat",
         "patchSetId": 8
@@ -573,6 +734,24 @@
       "writtenOn": "2023-09-21T16:12:08Z",
       "side": 1,
       "message": "See previous comments. Note that getting the redirection from autosiso.bat to autoninja.bat is particularly challenging on Windows, especially for special characters like the ^^ suffix.",
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "835d6dce_e93270bd",
+        "filename": "autosiso.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1158025
+      },
+      "writtenOn": "2023-09-25T07:00:39Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7350b15b_40c9d034",
       "revId": "a57ec54702ebe41274dc747924224a444a624141",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

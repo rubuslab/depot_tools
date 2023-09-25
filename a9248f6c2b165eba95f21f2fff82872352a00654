@@ -34,6 +34,24 @@
       "parentUuid": "7ec6f0ec_ac93b040",
       "revId": "a9248f6c2b165eba95f21f2fff82872352a00654",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d63106ec_c7a04b64",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-25T05:09:25Z",
+      "side": 1,
+      "message": "We have a presubmit (PanProjectChecks which calls CheckLongLines) which enforces a maximum length of 80. A change to 79 would be a change. The 80 character line limit is also documented in the style guide:\n\nhttps://chromium.googlesource.com/chromium/src/+/main/styleguide/python/python.md\n\nSo, lines that are 80 characters should be left alone, and the presubmits will tell us when lines are too long.",
+      "parentUuid": "c2b82b6c_94ef9d21",
+      "revId": "a9248f6c2b165eba95f21f2fff82872352a00654",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

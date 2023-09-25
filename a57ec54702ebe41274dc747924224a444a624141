@@ -163,6 +163,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13aa615d_a370cde3",
+        "filename": "autoninja.bat",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-25T04:30:07Z",
+      "side": 1,
+      "message": "Closing nit comment.",
+      "parentUuid": "2d740d42_0f5fde78",
+      "range": {
+        "startLine": 21,
+        "startChar": 3,
+        "endLine": 21,
+        "endChar": 20
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "528a3d7e_17929a66",
@@ -296,6 +320,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc229e1c_ed19a854",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-25T04:30:07Z",
+      "side": 1,
+      "message": "I guess this was to have `use_ninja` in this scope. \nClosing nit comment.",
+      "parentUuid": "67420f88_b925a2f5",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 207,
+        "endChar": 16
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c46b3e53_8d716628",
@@ -326,6 +374,30 @@
       "writtenOn": "2023-09-22T09:57:00Z",
       "side": 1,
       "message": "It doesn\u0027t make Siso fail with `-d stats` now. So, you can pass it to siso.",
+      "range": {
+        "startLine": 347,
+        "startChar": 49,
+        "endLine": 348,
+        "endChar": 21
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34e2dbc8_c42af210",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-25T04:30:07Z",
+      "side": 1,
+      "message": "This is nit.",
+      "parentUuid": "361b53d3_e08fc13e",
       "range": {
         "startLine": 347,
         "startChar": 49,
@@ -419,6 +491,30 @@
       "writtenOn": "2023-09-22T09:57:00Z",
       "side": 1,
       "message": "Probably, it can call `ninjalog_uploader_wrapper.main()` now with a small modification. But, it can be done separately.",
+      "range": {
+        "startLine": 375,
+        "startChar": 0,
+        "endLine": 375,
+        "endChar": 70
+      },
+      "revId": "a57ec54702ebe41274dc747924224a444a624141",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89564ca1_3f5eda4d",
+        "filename": "autoninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-25T04:30:07Z",
+      "side": 1,
+      "message": "This is nit.",
+      "parentUuid": "d057e15e_3951f8f3",
       "range": {
         "startLine": 375,
         "startChar": 0,

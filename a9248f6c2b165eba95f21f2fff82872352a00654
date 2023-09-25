@@ -70,6 +70,24 @@
       "parentUuid": "d63106ec_c7a04b64",
       "revId": "a9248f6c2b165eba95f21f2fff82872352a00654",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61bf8348_1dbd2191",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-25T06:00:52Z",
+      "side": 1,
+      "message": "\u003e I will try to make a CL to get feedback from others.\n\nMade https://crrev.com/c/4886040",
+      "parentUuid": "c9fe2087_26e99951",
+      "revId": "a9248f6c2b165eba95f21f2fff82872352a00654",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

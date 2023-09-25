@@ -52,6 +52,24 @@
       "parentUuid": "c2b82b6c_94ef9d21",
       "revId": "a9248f6c2b165eba95f21f2fff82872352a00654",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9fe2087_26e99951",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-25T05:50:47Z",
+      "side": 1,
+      "message": "https://chromium.googlesource.com/chromium/src/+/main/styleguide/python/python.md\n\u003e New scripts should not follow these deviations\n\nHmm...\nAlthough the document saids the new code should not follow 80 chars, the presubmit checks all changes with 80 chars... \n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:presubmit_canned_checks.py;l\u003d1547;drc\u003d7a69b031d58081d51c9e8e89557b343bba8518b1\n\nI will try to make a CL to get feedback from others.",
+      "parentUuid": "d63106ec_c7a04b64",
+      "revId": "a9248f6c2b165eba95f21f2fff82872352a00654",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

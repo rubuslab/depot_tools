@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33b092d2_27c45905",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1969,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-09-25T18:57:54Z",
+      "side": 1,
+      "message": "should we say use git commit without -a? That\u0027s instruction that gclient gitmodules prints.",
+      "revId": "25bc18b82b4826f60d65d6fcf1ce47e49d62542e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

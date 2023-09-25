@@ -50,6 +50,23 @@
       "message": "(No auto-submit because I just want to get feedback.)",
       "revId": "66db32733673a9d3e5868eaf2341d101872e9e96",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b383bd4e_8a7927f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-25T16:18:43Z",
+      "side": 1,
+      "message": "This probably deserves a thread in python@chromium.org to allow for a group decision.\n\nIf we change the presubmit then we also need to change \"git cl format\" to match it and we need to think about what this means for when existing code is changed. I\u0027m not convinced the churn is worth it.",
+      "revId": "66db32733673a9d3e5868eaf2341d101872e9e96",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

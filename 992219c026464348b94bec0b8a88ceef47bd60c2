@@ -16,6 +16,41 @@
       "message": "have to head out for evening and tbh have no idea what the etiquette or best practice is for reverting another teams code, so please merge/handle as appropriate. opening this revert to signal the issue",
       "revId": "992219c026464348b94bec0b8a88ceef47bd60c2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f27b4ca2_7d9d5749",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-26T22:32:58Z",
+      "side": 1,
+      "message": "thanks the revert",
+      "revId": "992219c026464348b94bec0b8a88ceef47bd60c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bb917cb_e47b82b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-09-26T22:32:58Z",
+      "side": 1,
+      "message": "this is fine, thanks for the revert",
+      "parentUuid": "249d6131_9b915996",
+      "revId": "992219c026464348b94bec0b8a88ceef47bd60c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

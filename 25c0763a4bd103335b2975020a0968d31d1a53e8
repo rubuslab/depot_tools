@@ -22,6 +22,30 @@
       },
       "revId": "25c0763a4bd103335b2975020a0968d31d1a53e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6fe29ac_6035352f",
+        "filename": "autosiso.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-09-26T13:32:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75c7ee6a_5701eb0b",
+      "range": {
+        "startLine": 66,
+        "startChar": 12,
+        "endLine": 66,
+        "endChar": 21
+      },
+      "revId": "25c0763a4bd103335b2975020a0968d31d1a53e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

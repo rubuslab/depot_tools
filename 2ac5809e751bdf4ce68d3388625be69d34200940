@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b474ff30_2aea529e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366833
+      },
+      "writtenOn": "2023-09-26T17:08:01Z",
+      "side": 1,
+      "message": "The new flag alias was tested in this very same CL (see that auto-submit was initially enabled).",
+      "revId": "2ac5809e751bdf4ce68d3388625be69d34200940",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

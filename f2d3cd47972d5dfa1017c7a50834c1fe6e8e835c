@@ -70,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d89c09f8_69fea4be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-27T17:10:33Z",
+      "side": 1,
+      "message": "From the test failure output I can see that the failing test is in tests/presubmit_unittest.py. That can be run with:\n\n  vpython3 tests/presubmit_unittest.py\n\nThat shows that testCheckLicenseNewFileFail is failing because it expects an error. The minimal fix is shown below, but the comment should be updated, and perhaps the test name as well.\n\ndiff --git a/tests/presubmit_unittest.py b/tests/presubmit_unittest.py\nindex dcccff39..2f303558 100755\n--- a/tests/presubmit_unittest.py\n+++ b/tests/presubmit_unittest.py\n@@ -2557,7 +2557,7 @@ the current line as well!\n         self._LicenseCheck(text,\n                            license_text,\n                            False,\n-                           presubmit.OutputApi.PresubmitError,\n+                           presubmit.OutputApi.PresubmitPromptWarning,\n                            new_file\u003dTrue)\n\n     def _GetLicenseText(self, current_year):",
+      "parentUuid": "0f5852c8_86b94bb1",
+      "revId": "f2d3cd47972d5dfa1017c7a50834c1fe6e8e835c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "90f15241_7a7457d8",

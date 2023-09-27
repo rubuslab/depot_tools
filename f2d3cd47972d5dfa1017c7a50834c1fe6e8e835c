@@ -52,6 +52,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f5852c8_86b94bb1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1273562
+      },
+      "writtenOn": "2023-09-27T17:03:47Z",
+      "side": 1,
+      "message": "Could you give me a pointer on how to fix the test.Thanks.",
+      "parentUuid": "beb7e398_a69f3d43",
+      "revId": "f2d3cd47972d5dfa1017c7a50834c1fe6e8e835c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "90f15241_7a7457d8",

@@ -30,11 +30,10 @@ def datetime_now():
 
 
 # OAuth access token with its expiration time (UTC datetime or None if unknown).
-class AccessToken(
-        collections.namedtuple('AccessToken', [
-            'token',
-            'expires_at',
-        ])):
+class Token(collections.namedtuple('Token', [
+        'token',
+        'expires_at',
+])):
     def needs_refresh(self):
         """True if this AccessToken should be refreshed."""
         if self.expires_at is not None:
@@ -148,7 +147,7 @@ class Authenticator(object):
         subprocess2.check_call(['luci-auth', 'login', '-scopes', self._scopes])
         return self._get_luci_auth_token()
 
-    def _get_luci_auth_token(self):
+    def _get_luci_auth_token(self, use_id_token=False, audience=None):
         logging.debug('Running luci-auth token')
         try:
             out, err = subprocess2.check_call_out([
@@ -159,7 +158,7 @@ class Authenticator(object):
                                                   stderr=subprocess2.PIPE)
             logging.debug('luci-auth token stderr:\n%s', err)
             token_info = json.loads(out)
-            return AccessToken(
+            return Token(
                 token_info['token'],
                 datetime.datetime.utcfromtimestamp(token_info['expiry']))
         except subprocess2.CalledProcessError as e:

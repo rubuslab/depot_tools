@@ -52,8 +52,8 @@ class AuthenticatorTest(unittest.TestCase):
 
     def testGetAccessToken_CachedToken(self):
         authenticator = auth.Authenticator()
-        authenticator._access_token = auth.AccessToken('token', None)
-        self.assertEqual(auth.AccessToken('token', None),
+        authenticator._access_token = auth.Token('token', None)
+        self.assertEqual(auth.Token('token', None),
                          authenticator.get_access_token())
         subprocess2.check_call_out.assert_not_called()
 
@@ -63,7 +63,7 @@ class AuthenticatorTest(unittest.TestCase):
             'token': 'token',
             'expiry': expiry
         }), '')
-        self.assertEqual(auth.AccessToken('token', VALID_EXPIRY),
+        self.assertEqual(auth.Token('token', VALID_EXPIRY),
                          auth.Authenticator().get_access_token())
         subprocess2.check_call_out.assert_called_with([
             'luci-auth', 'token', '-scopes', auth.OAUTH_SCOPE_EMAIL,
@@ -78,7 +78,7 @@ class AuthenticatorTest(unittest.TestCase):
             'token': 'token',
             'expiry': expiry
         }), '')
-        self.assertEqual(auth.AccessToken('token', VALID_EXPIRY),
+        self.assertEqual(auth.Token('token', VALID_EXPIRY),
                          auth.Authenticator('custom scopes').get_access_token())
         subprocess2.check_call_out.assert_called_with([
             'luci-auth', 'token', '-scopes', 'custom scopes', '-json-output',
@@ -93,7 +93,7 @@ class AuthenticatorTest(unittest.TestCase):
         http_request.__name__ = '__name__'
 
         authenticator = auth.Authenticator()
-        authenticator._access_token = auth.AccessToken('token', None)
+        authenticator._access_token = auth.Token('token', None)
 
         authorized = authenticator.authorize(http)
         authorized.request('https://example.com',
@@ -113,15 +113,14 @@ class AccessTokenTest(unittest.TestCase):
         self.addCleanup(mock.patch.stopall)
 
     def testNeedsRefresh_NoExpiry(self):
-        self.assertFalse(auth.AccessToken('token', None).needs_refresh())
+        self.assertFalse(auth.Token('token', None).needs_refresh())
 
     def testNeedsRefresh_Expired(self):
         expired = NOW + datetime.timedelta(seconds=30)
-        self.assertTrue(auth.AccessToken('token', expired).needs_refresh())
+        self.assertTrue(auth.Token('token', expired).needs_refresh())
 
     def testNeedsRefresh_Valid(self):
-        self.assertFalse(
-            auth.AccessToken('token', VALID_EXPIRY).needs_refresh())
+        self.assertFalse(auth.Token('token', VALID_EXPIRY).needs_refresh())
 
 
 class HasLuciContextLocalAuthTest(unittest.TestCase):

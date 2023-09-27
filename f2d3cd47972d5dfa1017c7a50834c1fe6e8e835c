@@ -33,6 +33,23 @@
       "message": "Resend this message so it\u0027s un-resolved.\n\nThere is presubmit error when I try to move `third_party/blink/renderer/platform/image-decoders/*` to\n`components/image_decoders/*`.\nThe following files have a header from a third-party company.\n\n```\nFound a bad license header in these new or moved files:\n  components/image_decoders/exif_reader.cc\n  components/image_decoders/exif_reader.h\n  components/image_decoders/gif/gif_image_decoder.cc\n  components/image_decoders/gif/gif_image_decoder.h\n  components/image_decoders/image_decoder.cc\n  components/image_decoders/image_decoder.h\n  components/image_decoders/image_frame.cc\n  components/image_decoders/image_frame.h\n  components/image_decoders/jpeg/jpeg_image_decoder.cc\n  components/image_decoders/jpeg/jpeg_image_decoder.h\n  components/image_decoders/png/png_image_decoder.cc\n  components/image_decoders/png/png_image_decoder.h\n  components/image_decoders/png/png_image_reader.cc\n  components/image_decoders/png/png_image_reader.h  \n```\n\nSee my CL4889026: Move image_decoders to components/ | https://chromium-review.googlesource.com/c/chromium/src/+/4889026",
       "revId": "f2d3cd47972d5dfa1017c7a50834c1fe6e8e835c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90f15241_7a7457d8",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-09-27T16:51:02Z",
+      "side": 1,
+      "message": "Can you rename this to warning_message?",
+      "revId": "f2d3cd47972d5dfa1017c7a50834c1fe6e8e835c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

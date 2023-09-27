@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d1d019c_f9bb415f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 1273562
+      },
+      "writtenOn": "2023-09-27T16:13:29Z",
+      "side": 1,
+      "message": "There is presubmit error when I try to move `third_party/blink/renderer/platform/image-decoders/*` to \n`components/image_decoders/*`.\nThe following files have a header from a third-party company.\n\n```\nFound a bad license header in these new or moved files:\n  components/image_decoders/exif_reader.cc\n  components/image_decoders/exif_reader.h\n  components/image_decoders/gif/gif_image_decoder.cc\n  components/image_decoders/gif/gif_image_decoder.h\n  components/image_decoders/image_decoder.cc\n  components/image_decoders/image_decoder.h\n  components/image_decoders/image_frame.cc\n  components/image_decoders/image_frame.h\n  components/image_decoders/jpeg/jpeg_image_decoder.cc\n  components/image_decoders/jpeg/jpeg_image_decoder.h\n  components/image_decoders/png/png_image_decoder.cc\n  components/image_decoders/png/png_image_decoder.h\n  components/image_decoders/png/png_image_reader.cc\n  components/image_decoders/png/png_image_reader.h\n```  \n  \n See my CL4889026: Move image_decoders to components/ | https://chromium-review.googlesource.com/c/chromium/src/+/4889026",
+      "range": {
+        "startLine": 808,
+        "startChar": 10,
+        "endLine": 808,
+        "endChar": 68
+      },
+      "revId": "cf600e497d13a4c64ded47065a470ba32b18954f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

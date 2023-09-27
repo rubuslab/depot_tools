@@ -16,6 +16,23 @@
       "message": "The new flag alias was tested in this very same CL (see that auto-submit was initially enabled).",
       "revId": "2ac5809e751bdf4ce68d3388625be69d34200940",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7880fa86_9babbb7f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-27T13:35:54Z",
+      "side": 1,
+      "message": "+current trooper @jojwang@chromium.org",
+      "revId": "2ac5809e751bdf4ce68d3388625be69d34200940",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

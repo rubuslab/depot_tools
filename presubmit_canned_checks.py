@@ -805,6 +805,8 @@ def CheckLicense(input_api,
             bad_files.append(f.LocalPath())
     results = []
     if bad_new_files:
+        # We can't distinguish between Google and thirty-party files, so this has to be a
+        # warning rather than an error.
         if license_re_param:
             error_message = ('License on new files must match:\n\n%s\n' %
                              license_re_param)
@@ -823,10 +825,12 @@ def CheckLicense(input_api,
                 'License on new files must be:\n\n%s\n' % new_license_text +
                 '(adjusting the comment delimiter accordingly).\n\n' +
                 'If this is a moved file, then update the license but do not ' +
-                'update the year.\n\n')
+                'update the year.\n\n' +
+                'If this is a third-party file then ignore this warning.\n\n')
         error_message += 'Found a bad license header in these new or moved files:'
         results.append(
-            output_api.PresubmitError(error_message, items=bad_new_files))
+            output_api.PresubmitPromptWarning(error_message,
+                                              items=bad_new_files))
     if wrong_year_new_files:
         # We can't distinguish between new and moved files, so this has to be a
         # warning rather than an error.

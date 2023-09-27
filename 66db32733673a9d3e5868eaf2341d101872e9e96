@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2cc2b99_22d85c78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-27T07:43:10Z",
+      "side": 1,
+      "message": "Yeah, that sounds more problematic because it will mix two styles.",
+      "parentUuid": "aae278d9_329c21c0",
+      "revId": "66db32733673a9d3e5868eaf2341d101872e9e96",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "18f81806_7e37a700",
@@ -65,6 +83,41 @@
       "writtenOn": "2023-09-25T16:18:43Z",
       "side": 1,
       "message": "This probably deserves a thread in python@chromium.org to allow for a group decision.\n\nIf we change the presubmit then we also need to change \"git cl format\" to match it and we need to think about what this means for when existing code is changed. I\u0027m not convinced the churn is worth it.",
+      "revId": "66db32733673a9d3e5868eaf2341d101872e9e96",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86864499_0b2c35d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-27T07:43:10Z",
+      "side": 1,
+      "message": "Thank you for the feedback.\nI\u0027m leaning to abandon this CL.",
+      "revId": "66db32733673a9d3e5868eaf2341d101872e9e96",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85e60ecb_67442bc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-09-27T07:43:10Z",
+      "side": 1,
+      "message": "This CL might be problematic because two styles can exist on old files. I also didn\u0027t know that `git cl format` is configured in a different place...",
+      "parentUuid": "b383bd4e_8a7927f5",
       "revId": "66db32733673a9d3e5868eaf2341d101872e9e96",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

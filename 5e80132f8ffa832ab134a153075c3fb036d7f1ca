@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45a5a7d3_e086d1ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1273562
+      },
+      "writtenOn": "2023-09-27T17:34:10Z",
+      "side": 1,
+      "message": "Hi Bruce. I need your LGTM for the new uploaded file. Thanks.\nDo you know when the change will be push to the depot_tool server?",
+      "revId": "5e80132f8ffa832ab134a153075c3fb036d7f1ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

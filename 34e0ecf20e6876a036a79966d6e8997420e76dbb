@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53dcd950_73662fa3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1273562
+      },
+      "writtenOn": "2023-09-28T23:09:12Z",
+      "side": 1,
+      "message": "Hi Bruce and Yiwei, This CL was landed yesterday, but it seems CQ builds have not picked up the change yet. The presubmit for 4889026: Move image_decoders from thirty_party/blink to components/ | https://chromium-review.googlesource.com/c/chromium/src/+/4889026 still fails.\n\nDo you know when the BUILD bots will pick up the change? Thanks.",
+      "revId": "34e0ecf20e6876a036a79966d6e8997420e76dbb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

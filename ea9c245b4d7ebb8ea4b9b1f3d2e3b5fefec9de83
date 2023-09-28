@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "25956404_20bb7f79",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-09-28T21:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed5f8079_1ceb11de",
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1fa5f99a_864728cd",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-09-28T15:00:06Z",
       "side": 1,
       "message": "```suggestion\n        \"\"\"True if this Token should be refreshed.\"\"\"\n```",
+      "range": {
+        "startLine": 38,
+        "startChar": 24,
+        "endLine": 38,
+        "endChar": 35
+      },
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4809f864_9ad6d539",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-09-28T21:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fa5f99a_864728cd",
       "range": {
         "startLine": 38,
         "startChar": 24,
@@ -58,6 +100,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97fef33c_3cbf5a60",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-09-28T21:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "939a2ad2_646e663d",
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c3a8f8e0_6caf9143",
@@ -81,6 +141,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ff625b9_03791e00",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-09-28T21:29:42Z",
+      "side": 1,
+      "message": "Done. good suggestion. It\u0027s better to pass into the constructor.",
+      "parentUuid": "c3a8f8e0_6caf9143",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 29
+      },
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "291d947b_a7e5580d",
@@ -94,6 +178,30 @@
       "writtenOn": "2023-09-28T15:00:06Z",
       "side": 1,
       "message": "This method doesn\u0027t seem to work well with get_id_token() as it will ask for oauth access token every time.",
+      "range": {
+        "startLine": 83,
+        "startChar": 41,
+        "endLine": 83,
+        "endChar": 59
+      },
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "323c4e96_828df2d7",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-09-28T21:29:42Z",
+      "side": 1,
+      "message": "This method is to check if it has cached credentials. From the help msg from `luci-auth`, the credentials are the same for access_tokens and id_token. \n`bool(self._get_luci_auth_token())` underlyingly runs `luci-auth token -scopes xxx` . But it just to  check if it has **logged in**. So doesn\u0027t really matter if it runs ``luci-auth token -use_id_token`. Because the outcome for both is the same.",
+      "parentUuid": "291d947b_a7e5580d",
       "range": {
         "startLine": 83,
         "startChar": 41,

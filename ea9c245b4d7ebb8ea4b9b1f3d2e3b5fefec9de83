@@ -210,6 +210,30 @@
       },
       "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5687c22_72e612b1",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-28T21:41:37Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "323c4e96_828df2d7",
+      "range": {
+        "startLine": 83,
+        "startChar": 41,
+        "endLine": 83,
+        "endChar": 59
+      },
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

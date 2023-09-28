@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed5f8079_1ceb11de",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-28T15:00:06Z",
+      "side": 1,
+      "message": "Please update the doc.",
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fa5f99a_864728cd",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-28T15:00:06Z",
+      "side": 1,
+      "message": "```suggestion\n        \"\"\"True if this Token should be refreshed.\"\"\"\n```",
+      "range": {
+        "startLine": 38,
+        "startChar": 24,
+        "endLine": 38,
+        "endChar": 35
+      },
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "939a2ad2_646e663d",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-28T15:00:06Z",
+      "side": 1,
+      "message": "Please update the doc",
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3a8f8e0_6caf9143",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-28T15:00:06Z",
+      "side": 1,
+      "message": "This structure may get messed up when the Authenticator is asked for idtoken with 2 different audience at the same time. I suggest either we pass audience through __init__ like scopes or we can use a dict where the key is audience and value is id_token. I personally prefer the first one though as the presence of audience can be used as a hint on whether to use id_token or not.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 29
+      },
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "291d947b_a7e5580d",
+        "filename": "auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-28T15:00:06Z",
+      "side": 1,
+      "message": "This method doesn\u0027t seem to work well with get_id_token() as it will ask for oauth access token every time.",
+      "range": {
+        "startLine": 83,
+        "startChar": 41,
+        "endLine": 83,
+        "endChar": 59
+      },
+      "revId": "ea9c245b4d7ebb8ea4b9b1f3d2e3b5fefec9de83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

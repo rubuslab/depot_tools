@@ -30,11 +30,10 @@ def datetime_now():
 
 
 # OAuth access token with its expiration time (UTC datetime or None if unknown).
-class AccessToken(
-        collections.namedtuple('AccessToken', [
-            'token',
-            'expires_at',
-        ])):
+class Token(collections.namedtuple('Token', [
+        'token',
+        'expires_at',
+])):
     def needs_refresh(self):
         """True if this AccessToken should be refreshed."""
         if self.expires_at is not None:
@@ -75,14 +74,17 @@ class Authenticator(object):
     def __init__(self, scopes=OAUTH_SCOPE_EMAIL):
         self._access_token = None
         self._scopes = scopes
+        self._id_token = None
+        self._audience = None
 
     def has_cached_credentials(self):
         """Returns True if credentials can be obtained.
 
-    If returns False, get_access_token() later will probably ask for interactive
-    login by raising LoginRequiredError.
+    If returns False, get_access_token() or get_id_token() later will probably
+    ask for interactive login by raising LoginRequiredError.
 
-    If returns True, get_access_token() won't ask for interactive login.
+    If returns True, get_access_token() or get_id_token() won't ask for
+    interactive login.
     """
         return bool(self._get_luci_auth_token())
 
@@ -105,7 +107,30 @@ class Authenticator(object):
         logging.error('Failed to create access token')
         raise LoginRequiredError(self._scopes)
 
-    def authorize(self, http):
+    def get_id_token(self, audience=None):
+        """Returns id token, refreshing it if necessary.
+
+    Returns:
+       A Token object.
+
+    Raises:
+      LoginRequiredError if user interaction is required.
+    """
+        if (self._id_token and self._audience == audience
+                and not self._id_token.needs_refresh()):
+            return self._id_token
+
+        self._id_token = self._get_luci_auth_token(use_id_token=True,
+                                                   audience=audience)
+        self._audience = audience
+        if self._id_token and not self._id_token.needs_refresh():
+            return self._id_token
+
+        # Nope, still expired. Needs user interaction.
+        logging.error('Failed to create id token')
+        raise LoginRequiredError()
+
+    def authorize(self, http, use_id_token=False):
         """Monkey patches authentication logic of httplib2.Http instance.
 
     The modified http.request method will add authentication headers to each
@@ -128,8 +153,9 @@ class Authenticator(object):
                         redirections=httplib2.DEFAULT_MAX_REDIRECTS,
                         connection_type=None):
             headers = (headers or {}).copy()
-            headers['Authorization'] = 'Bearer %s' % self.get_access_token(
-            ).token
+            auth_token = self.get_access_token(
+            ) if not use_id_token else self.get_id_token()
+            headers['Authorization'] = 'Bearer %s' % auth_token.token
             return request_orig(uri, method, body, headers, redirections,
                                 connection_type)
 
@@ -148,18 +174,21 @@ class Authenticator(object):
         subprocess2.check_call(['luci-auth', 'login', '-scopes', self._scopes])
         return self._get_luci_auth_token()
 
-    def _get_luci_auth_token(self):
+    def _get_luci_auth_token(self, use_id_token=False, audience=None):
         logging.debug('Running luci-auth token')
+        if use_id_token:
+            args = ['-use-id-token'] + ['-audience', audience
+                                        ] if audience else []
+        else:
+            args = ['-scopes', self._scopes]
         try:
-            out, err = subprocess2.check_call_out([
-                'luci-auth', 'token', '-scopes', self._scopes, '-json-output',
-                '-'
-            ],
+            out, err = subprocess2.check_call_out(['luci-auth', 'token'] +
+                                                  args + ['-json-output', '-'],
                                                   stdout=subprocess2.PIPE,
                                                   stderr=subprocess2.PIPE)
             logging.debug('luci-auth token stderr:\n%s', err)
             token_info = json.loads(out)
-            return AccessToken(
+            return Token(
                 token_info['token'],
                 datetime.datetime.utcfromtimestamp(token_info['expiry']))
         except subprocess2.CalledProcessError as e:

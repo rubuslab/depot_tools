@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e79929b5_f1d75487",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2073,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-29T04:27:37Z",
+      "side": 1,
+      "message": "I guess you mean `https://%s` here?",
+      "range": {
+        "startLine": 2073,
+        "startChar": 30,
+        "endLine": 2073,
+        "endChar": 51
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "21253d52_d97b6de7",
@@ -19,6 +42,53 @@
         "startChar": 30,
         "endLine": 2082,
         "endChar": 61
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24eedbfe_8d0e8448",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2082,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-29T04:27:37Z",
+      "side": 1,
+      "message": "I just come to realize depot tools also distribute prpc command. Do you think it would be better to invoke `prpc call -use-id-token -audience https://config.luci.app config.luci.app config.service.v2.Configs.ListConfigSets` to get the response back? It should save you all the work to do retry and stripping XSSI protection prefix. Since ListConfigSets is now the only usage, we can just delete the this whole request method.",
+      "parentUuid": "21253d52_d97b6de7",
+      "range": {
+        "startLine": 2082,
+        "startChar": 30,
+        "endLine": 2082,
+        "endChar": 61
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "062dbd1c_317dfb2b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2125,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-09-29T04:27:37Z",
+      "side": 1,
+      "message": "not sure if it\u0027s worth converting to v1 data. I think we only need to fix L2142 to L2157 to access the corresponding field in the new message format. Is there any more data depending on the v1 message format that I\u0027m not aware of?",
+      "range": {
+        "startLine": 2113,
+        "startChar": 0,
+        "endLine": 2125,
+        "endChar": 9
       },
       "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

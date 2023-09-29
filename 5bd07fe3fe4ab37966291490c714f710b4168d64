@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21253d52_d97b6de7",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2082,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-09-29T00:56:55Z",
+      "side": 1,
+      "message": "In depot_tools, it\u0027s their practice to make http calls for prpc endpoint[1] directly. I guess the reason is it doesn\u0027t import prpc lib and any pb2_py files\n\n[1]https://screenshot.googleplex.com/3WQMzZKvyp4FU3e",
+      "range": {
+        "startLine": 2082,
+        "startChar": 30,
+        "endLine": 2082,
+        "endChar": 61
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

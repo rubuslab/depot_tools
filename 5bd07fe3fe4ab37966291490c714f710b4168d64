@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "31981cc5_6989dc8b",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2073,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-10-02T19:18:41Z",
+      "side": 1,
+      "message": "thanks for catching it.",
+      "parentUuid": "e79929b5_f1d75487",
+      "range": {
+        "startLine": 2073,
+        "startChar": 30,
+        "endLine": 2073,
+        "endChar": 51
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "21253d52_d97b6de7",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 2
@@ -73,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8f7c8b64_c64e8cee",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2082,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-10-02T19:18:41Z",
+      "side": 1,
+      "message": "In depot_tools code, they all use http related libs to make prpc calls. I\u0027d like to follow this practice. No code uses `prpc` command. Also there is a chance that `prpc` happens to no in $PATH. I don\u0027t want to be the first one to use it, in case when it rolls into downstreams and find some dependencies missing.",
+      "parentUuid": "24eedbfe_8d0e8448",
+      "range": {
+        "startLine": 2082,
+        "startChar": 30,
+        "endLine": 2082,
+        "endChar": 61
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "062dbd1c_317dfb2b",
         "filename": "presubmit_canned_checks.py",
         "patchSetId": 2
@@ -84,6 +132,30 @@
       "writtenOn": "2023-09-29T04:27:37Z",
       "side": 1,
       "message": "not sure if it\u0027s worth converting to v1 data. I think we only need to fix L2142 to L2157 to access the corresponding field in the new message format. Is there any more data depending on the v1 message format that I\u0027m not aware of?",
+      "range": {
+        "startLine": 2113,
+        "startChar": 0,
+        "endLine": 2125,
+        "endChar": 9
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af41ec16_07860809",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2125,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-10-02T19:18:41Z",
+      "side": 1,
+      "message": "It may mostly scatter between L2142 to L2157. But I\u0027m not really confident to change them. It\u0027s prone to be error. Converting to old format can avoid changing it everywhere. It\u0027s easy to compare diff in CL. Also it\u0027s less risk since the code below is untouched.",
+      "parentUuid": "062dbd1c_317dfb2b",
       "range": {
         "startLine": 2113,
         "startChar": 0,

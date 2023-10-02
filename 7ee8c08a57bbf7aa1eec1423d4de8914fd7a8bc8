@@ -16,6 +16,23 @@
       "message": "Will wait until Monday to submit.",
       "revId": "7ee8c08a57bbf7aa1eec1423d4de8914fd7a8bc8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "832a6aae_599405db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2023-10-02T19:08:49Z",
+      "side": 1,
+      "message": "post-weekend ping",
+      "revId": "7ee8c08a57bbf7aa1eec1423d4de8914fd7a8bc8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

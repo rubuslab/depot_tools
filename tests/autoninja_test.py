@@ -67,6 +67,10 @@ class AutoninjaTest(trial_dir.TestCase):
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join('buildtools', 'reclient_cfgs', 'reproxy.cfg'),
               'RBE_v=2')
+        write(
+            os.path.join('buildtools', 'reclient_cfgs',
+                         'chromium-browser-clang', 'rewrapper_linux.cfg'),
+            'RBE_v=2')
         write(os.path.join('buildtools', 'reclient', 'version.txt'), '0.0')
 
         args = autoninja.main(['autoninja.py', '-C', out_dir]).split()
@@ -90,6 +94,10 @@ class AutoninjaTest(trial_dir.TestCase):
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join('buildtools', 'reclient_cfgs', 'reproxy.cfg'),
               'RBE_v=2')
+        write(
+            os.path.join('buildtools', 'reclient_cfgs',
+                         'chromium-browser-clang', 'rewrapper_linux.cfg'),
+            'RBE_v=2')
         write(os.path.join('buildtools', 'reclient', 'version.txt'), '0.0')
 
         args = autoninja.main(['autoninja.py', '-C', out_dir]).split()

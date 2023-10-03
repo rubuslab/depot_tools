@@ -143,6 +143,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bdb4c29_60ae680a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2082,
+      "author": {
+        "id": 1398165
+      },
+      "writtenOn": "2023-10-03T22:16:38Z",
+      "side": 1,
+      "message": "uh, right. Being able to use \u0027lucicfg\u0027 cmd has kind of proved it. \n\nYeah, I\u0027m open to the cleanup for Buildbucket and luci-config related code in future, (except the one in `rdb_wrapper.py` which I\u0027m not familiar with)",
+      "parentUuid": "eff00a15_db3e6d36",
+      "range": {
+        "startLine": 2082,
+        "startChar": 30,
+        "endLine": 2082,
+        "endChar": 61
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "062dbd1c_317dfb2b",

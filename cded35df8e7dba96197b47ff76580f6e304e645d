@@ -46,6 +46,30 @@
       },
       "revId": "cded35df8e7dba96197b47ff76580f6e304e645d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "037ebeb6_1676301e",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-10-03T08:43:53Z",
+      "side": 1,
+      "message": "Does it make sense to move the wrapper config check to reclient_helper.py?",
+      "parentUuid": "b12a8101_5f3a0fa3",
+      "range": {
+        "startLine": 256,
+        "startChar": 0,
+        "endLine": 263,
+        "endChar": 0
+      },
+      "revId": "cded35df8e7dba96197b47ff76580f6e304e645d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

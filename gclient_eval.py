@@ -554,6 +554,8 @@ def Parse(content, filename, vars_override=None, builtin_vars=None):
 
 def EvaluateCondition(condition, variables, referenced_variables=None):
     """Safely evaluates a boolean condition. Returns the result."""
+
+    #import pdb; pdb.set_trace()
     if not referenced_variables:
         referenced_variables = set()
     _allowed_names = {'None': None, 'True': True, 'False': False}

@@ -1964,6 +1964,9 @@ def CheckForCommitObjects(input_api, output_api):
                 'To reset all git submodule git entries to match DEPS, run\n'
                 'the following command in the root of this repository:\n'
                 '    gclient gitmodules'
+                'Then create a new commit or amend the existing commit to\n'
+                'with these changes to unset the previous unintentional\n'
+                'changes.'
                 '\n\n'
                 'The following entries diverged: ' + deps_msg)
         ]

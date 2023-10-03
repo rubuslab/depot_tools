@@ -51,6 +51,18 @@ def _gn_lines(output_dir, path):
                 yield line
 
 
+def _exit_with_failure():
+    """Exit the script with failure command output for caller scripts."""
+    if sys.platform.startswith('win'):
+        # Set an exit code of 1 in the batch file.
+        print('cmd "/c exit 1"')
+    else:
+        # Set an exit code of 1 by executing 'false' in the bash
+        # script.
+        print('false')
+    sys.exit(1)
+
+
 def main(args):
     # The -t tools are incompatible with -j
     t_specified = False
@@ -197,14 +209,7 @@ def main(args):
                     'Goma is not running. Use "goma_ctl ensure_start" to start '
                     'it.',
                     file=sys.stderr)
-                if sys.platform.startswith('win'):
-                    # Set an exit code of 1 in the batch file.
-                    print('cmd "/c exit 1"')
-                else:
-                    # Set an exit code of 1 by executing 'false' in the bash
-                    # script.
-                    print('false')
-                sys.exit(1)
+                _exit_with_failure()
 
     # A large build (with or without goma) tends to hog all system resources.
     # Launching the ninja process with 'nice' priorities improves this
@@ -248,6 +253,14 @@ def main(args):
     # If using remoteexec, use ninja_reclient.py which wraps ninja.py with
     # starting and stopping reproxy.
     if use_remoteexec:
+        if not os.path.isfile(
+                os.path.join(output_dir, '..', '..', 'buildtools',
+                             'reclient_cfgs', 'reproxy.cfg')):
+            print(
+                "Did you set 'download_remoteexec_cfg: True' in .gclient and"
+                " run `gclient sync`?",
+                file=sys.stderr)
+            _exit_with_failure()
         ninja_path = os.path.join(SCRIPT_DIR, 'ninja_reclient.py')
 
     args = prepend_command + offline_env + prefix_args + [

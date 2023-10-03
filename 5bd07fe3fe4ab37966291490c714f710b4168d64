@@ -119,6 +119,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eff00a15_db3e6d36",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2082,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-10-03T18:54:09Z",
+      "side": 1,
+      "message": "\u003e Also there is a chance that prpc happens to no in $PATH\n\nhmmm.. it\u0027s very unlikely cause otherwise, the subsequent lucifg validate invocation would fail as well since it is distributed the same way. \n\n\u003e  I\u0027d like to follow this practice. No code uses prpc command. I don\u0027t want to be the first one to use it, in case when it rolls into downstreams and find some dependencies missing.\n\nThat\u0027s fair for this launch. And would you open to we change all implementation to use prpc command as part of depot_tools cleanup effort to reduce code redundancy?",
+      "parentUuid": "8f7c8b64_c64e8cee",
+      "range": {
+        "startLine": 2082,
+        "startChar": 30,
+        "endLine": 2082,
+        "endChar": 61
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "062dbd1c_317dfb2b",
@@ -156,6 +180,30 @@
       "side": 1,
       "message": "It may mostly scatter between L2142 to L2157. But I\u0027m not really confident to change them. It\u0027s prone to be error. Converting to old format can avoid changing it everywhere. It\u0027s easy to compare diff in CL. Also it\u0027s less risk since the code below is untouched.",
       "parentUuid": "062dbd1c_317dfb2b",
+      "range": {
+        "startLine": 2113,
+        "startChar": 0,
+        "endLine": 2125,
+        "endChar": 9
+      },
+      "revId": "5bd07fe3fe4ab37966291490c714f710b4168d64",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b46c5bf0_84c9ff75",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2125,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-10-03T18:54:09Z",
+      "side": 1,
+      "message": "I mean if there\u0027s something wrong with the data returned v2 service. Converting to the old format would probably hit the error in the same way. But good point for code diff.",
+      "parentUuid": "af41ec16_07860809",
       "range": {
         "startLine": 2113,
         "startChar": 0,

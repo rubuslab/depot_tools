@@ -16,6 +16,69 @@
       "message": "friendly ping again",
       "revId": "195c48c23c352766153737bc2bddd1effd785e8a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "032ec2cb_54335ed6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-10-03T18:54:09Z",
+      "side": 1,
+      "message": "Have you tried testing this locally?",
+      "revId": "195c48c23c352766153737bc2bddd1effd785e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d42735d_3b364330",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2080,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-10-03T18:54:09Z",
+      "side": 1,
+      "message": "I\u0027m okay with adding this but I\u0027m also curious what\u0027s the reason behind introducing retry here. Did the LUCI Config call turns out to be flaky?",
+      "range": {
+        "startLine": 2080,
+        "startChar": 30,
+        "endLine": 2080,
+        "endChar": 44
+      },
+      "revId": "195c48c23c352766153737bc2bddd1effd785e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8aac20dd_a830159a",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2111,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-10-03T18:54:09Z",
+      "side": 1,
+      "message": "while this will do the work, I would change it to `[len(\")]}\u0027\"):].strip()` because lstrip is removing any leading characters that are in the character set rather than removing the given prefix (i.e. `)))))))))))))){\"a\": \"b\"}` could become a valid response)",
+      "range": {
+        "startLine": 2111,
+        "startChar": 53,
+        "endLine": 2111,
+        "endChar": 59
+      },
+      "revId": "195c48c23c352766153737bc2bddd1effd785e8a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

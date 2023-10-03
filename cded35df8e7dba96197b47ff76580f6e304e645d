@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0925e0ef_b1042c25",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-10-03T07:28:24Z",
+      "side": 1,
+      "message": "reproxy.cfg is already checked in reclient_helper.py?\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:reclient_helper.py;l\u003d38;drc\u003d1077fbe08a1c03ef7f7fa8eb925edd18688357ae",
+      "range": {
+        "startLine": 256,
+        "startChar": 0,
+        "endLine": 263,
+        "endChar": 0
+      },
+      "revId": "cded35df8e7dba96197b47ff76580f6e304e645d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -33,6 +33,24 @@
       "message": "Can you add an unit test for this?",
       "revId": "46bb268e9ccef35edc9701bb2a253f25bb517611",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90c45f1c_b12ab4de",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6475,
+      "author": {
+        "id": 1401232
+      },
+      "writtenOn": "2023-10-04T17:33:21Z",
+      "side": 1,
+      "message": "how would you add a unit test for this? I feel like the only way to test this is to setup a whole git repository and see if we don\u0027t format a moved file",
+      "parentUuid": "2baaf5af_19c7303a",
+      "revId": "46bb268e9ccef35edc9701bb2a253f25bb517611",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

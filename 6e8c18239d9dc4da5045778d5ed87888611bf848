@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aaaedbfc_6de805f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1603102
+      },
+      "writtenOn": "2023-10-04T21:06:59Z",
+      "side": 1,
+      "message": "We\u0027re seeing this change cause a failure on our linux builders?  (We build a fork of Flutter stable on GitHub Actions).\n\nMaybe our builders are configured somehow wrong.\n\n```\nTraceback (most recent call last):\n  File \"/home/gha/.engine_checkout/depot_tools/ninja.py\", line 14, in \u003cmodule\u003e\n    import gclient_paths\n  File \"/home/gha/.engine_checkout/depot_tools/gclient_paths.py\", line 24, in \u003cmodule\u003e\n    def FindGclientRoot(from_dir, filename\u003d\u0027.gclient\u0027):\n  File \"/usr/lib/python3.6/functools.py\", line 477, in lru_cache\n    raise TypeError(\u0027Expected maxsize to be an integer or None\u0027)\nTypeError: Expected maxsize to be an integer or None\nError: Process completed with exit code 1.\n```\n\nThe failing line is new as of this change: https://chromium.googlesource.com/chromium/tools/depot_tools.git/+blame/refs/heads/main/gclient_paths.py#23\nand is failing on our bots: https://github.com/shorebirdtech/build_engine/actions/runs/6411268480/job/17406323501\n\nThanks!",
+      "revId": "6e8c18239d9dc4da5045778d5ed87888611bf848",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

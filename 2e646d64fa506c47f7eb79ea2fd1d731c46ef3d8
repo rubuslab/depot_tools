@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57674cf6_bab3936d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-10-04T01:47:20Z",
+      "side": 1,
+      "message": "led test: http://shortn/_NVZwpYTaly\nled test where a new gitlink is added for the first time and does not match DEPS: http://shortn/_PUvkSdYMxB",
+      "revId": "2e646d64fa506c47f7eb79ea2fd1d731c46ef3d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

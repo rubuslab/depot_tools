@@ -22,6 +22,30 @@
       },
       "revId": "3587abc12ee03e59e9e2867c6b30b4164b4fe3bb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b2f9514_b7f19fed",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2193,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-10-05T03:52:24Z",
+      "side": 1,
+      "message": "This would also solve crbug.com/1454643 without having to catch the two OSError errors below.",
+      "parentUuid": "7b83579c_b5886a70",
+      "range": {
+        "startLine": 2173,
+        "startChar": 14,
+        "endLine": 2193,
+        "endChar": 75
+      },
+      "revId": "3587abc12ee03e59e9e2867c6b30b4164b4fe3bb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b83579c_b5886a70",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2193,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-10-05T03:48:36Z",
+      "side": 1,
+      "message": ".",
+      "range": {
+        "startLine": 2173,
+        "startChar": 14,
+        "endLine": 2193,
+        "endChar": 75
+      },
+      "revId": "3587abc12ee03e59e9e2867c6b30b4164b4fe3bb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

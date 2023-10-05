@@ -6122,6 +6122,18 @@ def _RunClangFormatDiff(opts, clang_diff_files, top_dir, upstream_commit):
     return return_value
 
 
+def _ShouldUseGoogleJavaFormat():
+    primary_solution_path = gclient_paths.GetPrimarySolutionPath()
+    if primary_solution_path:
+        expected_dep = 'src/third_party/google-java-format'
+        deps_path = os.path.join(gclient_paths.GetPrimarySolutionPath(), 'DEPS')
+        deps_content = gclient_utils.FileRead(deps_path)
+        deps = gclient_eval.Parse(deps_content, deps_path)
+        return 'deps' in deps and expected_dep in deps['deps']
+
+    return True
+
+
 def _FindGoogleJavaFormat():
     primary_solution_path = gclient_paths.GetPrimarySolutionPath()
     if primary_solution_path:
@@ -6474,6 +6486,10 @@ def CMDformat(parser, args):
 
     if opts.js:
         clang_exts.extend(['.js', '.ts'])
+
+    if not opts.no_java and not _ShouldUseGoogleJavaFormat():
+        clang_exts.extend(['.java'])
+        opts.no_java = True
 
     formatters = [
         (GN_EXTS, _RunGnFormat),

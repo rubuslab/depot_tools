@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "54106bb3_ff81dec3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-10-05T05:41:45Z",
+      "side": 1,
+      "message": "sauron",
+      "parentUuid": "6c809c77_3c10d171",
+      "revId": "95d417ab8e248d9ee28618401f4af0729a45d4c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74edad3e_769232f4",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-10-05T04:56:30Z",
       "side": 1,
       "message": "```suggestion\n                        gclient_scm.scm.GIT.Capture([\u0027restore\u0027, \u0027--\u0027, rel_e_dir],\n```",
+      "range": {
+        "startLine": 2194,
+        "startChar": 53,
+        "endLine": 2194,
+        "endChar": 73
+      },
+      "revId": "95d417ab8e248d9ee28618401f4af0729a45d4c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed74de3d_40dccb65",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2194,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-10-05T05:41:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "74edad3e_769232f4",
       "range": {
         "startLine": 2194,
         "startChar": 53,
@@ -64,6 +106,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe81ee29_fa45c6f5",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-10-05T05:41:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d5bff16_87c8dcc3",
+      "range": {
+        "startLine": 445,
+        "startChar": 30,
+        "endLine": 445,
+        "endChar": 61
+      },
+      "revId": "95d417ab8e248d9ee28618401f4af0729a45d4c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8b328c28_1749aa2c",
@@ -77,6 +143,30 @@
       "writtenOn": "2023-10-05T04:56:30Z",
       "side": 1,
       "message": "instead of returning tuple, consider using ternary, e.g.\n\n```\nVERSIONED_NO \u003d 0 # not version\nVERSIONED_DIR \u003d 1 # versioned, directory\nVERSIONED_SUBMODULE \u003d 2 # versioned, submodule\n```",
+      "range": {
+        "startLine": 447,
+        "startChar": 12,
+        "endLine": 447,
+        "endChar": 31
+      },
+      "revId": "95d417ab8e248d9ee28618401f4af0729a45d4c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d015b9ff_6ab06ab3",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-10-05T05:41:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b328c28_1749aa2c",
       "range": {
         "startLine": 447,
         "startChar": 12,

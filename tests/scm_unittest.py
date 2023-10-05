@@ -135,6 +135,31 @@ class GitWrapperTestCase(unittest.TestCase):
             scm.GIT.GetRemoteHeadRef('foo', 'proto://url', 'origin'))
         self.assertEqual(mockCapture.call_count, 2)
 
+    @mock.patch('scm.GIT.Capture')
+    def testtIsDirectoryVersionedOrSubmodule(self, mockCapture):
+        mockCapture.return_value = (
+            '160000 blob 423dc77d2182cb2687c53598a1dcef62ea2804ae   dir')
+        (actual_versioned,
+         actual_submodule) = scm.GIT.IsDirectoryVersionedOrSubmodule(
+             'cwd', 'dir')
+        self.assertTrue(actual_versioned)
+        self.assertTrue(actual_submodule)
+
+        mockCapture.return_value = ''
+        (actual_versioned,
+         actual_submodule) = scm.GIT.IsDirectoryVersionedOrSubmodule(
+             'cwd', 'dir')
+        self.assertFalse(actual_versioned)
+        self.assertFalse(actual_submodule)
+
+        mockCapture.return_value = (
+            '040000 tree ef016abffb316e47a02af447bc51342dcef6f3ca       dir')
+        (actual_versioned,
+         actual_submodule) = scm.GIT.IsDirectoryVersionedOrSubmodule(
+             'cwd', 'dir')
+        self.assertTrue(actual_versioned)
+        self.assertFalse(actual_submodule)
+
 
 class RealGitTest(fake_repos.FakeReposTestBase):
     def setUp(self):

@@ -440,9 +440,19 @@ class GIT(object):
             return False
 
     @staticmethod
-    def IsDirectoryVersioned(cwd, relative_dir):
-        """Checks whether the given |relative_dir| is part of cwd's repo."""
-        return bool(GIT.Capture(['ls-tree', 'HEAD', relative_dir], cwd=cwd))
+    def IsDirectoryVersionedOrSubmodule(cwd, relative_dir):
+        # type: (str, str) -> Tuple[bool, bool]
+        """Checks whether the given |relative_dir| is part of cwd's repo.
+
+        Returns two booleans. The first one is true if `relative_dir` is
+        versioned, the second one is true if it is a submodule directory.
+        """
+        output = GIT.Capture(['ls-tree', 'HEAD', relative_dir], cwd=cwd)
+        if not output:
+            return False, False
+        if output.startswith('160000'):
+            return True, True
+        return True, False
 
     @staticmethod
     def CleanupDir(cwd, relative_dir):

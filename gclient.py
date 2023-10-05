@@ -2052,7 +2052,9 @@ it or fix the checkout.
         ]
 
         removed_cipd_entries = []
-        for entry, prev_url in self._ReadEntries().items():
+        read_entries = self._ReadEntries()
+        for entry in sorted(read_entries, reverse=True):
+            prev_url = read_entries[entry]
             if not prev_url:
                 # entry must have been overridden via .gclient custom_deps
                 continue
@@ -2092,11 +2094,8 @@ it or fix the checkout.
                         'checkout, so not removing.' % entry)
                     continue
 
-                # This is to handle the case of third_party/WebKit migrating
-                # from being a DEPS entry to being part of the main project. If
-                # the subproject is a Git project, we need to remove its .git
-                # folder. Otherwise git operations on that folder will have
-                # different effects depending on the current working directory.
+                is_submodule = False
+                # Check if this is a submodule or versioned directory.
                 if os.path.abspath(scm_root) == os.path.abspath(e_dir):
                     e_par_dir = os.path.join(e_dir, os.pardir)
                     if gclient_scm.scm.GIT.IsInsideWorkTree(e_par_dir):
@@ -2105,8 +2104,16 @@ it or fix the checkout.
                         # rel_e_dir : relative path of entry w.r.t. its parent
                         # repo.
                         rel_e_dir = os.path.relpath(e_dir, par_scm_root)
-                        if gclient_scm.scm.GIT.IsDirectoryVersioned(
-                                par_scm_root, rel_e_dir):
+                        (
+                            versioned, is_submodule
+                        ) = gclient_scm.scm.GIT.IsDirectoryVersionedOrSubmodule(
+                            par_scm_root, rel_e_dir)
+                        # This is to handle the case of third_party/WebKit migrating
+                        # from being a DEPS entry to being part of the main project. If
+                        # the subproject is a Git project, we need to remove its .git
+                        # folder. Otherwise git operations on that folder will have
+                        # different effects depending on the current working directory.
+                        if versioned and not is_submodule:
                             save_dir = scm.GetGitBackupDirPath()
                             # Remove any eventual stale backup dir for the same
                             # project.
@@ -2182,6 +2189,10 @@ it or fix the checkout.
                     print('\n________ deleting \'%s\' in \'%s\'' %
                           (entry_fixed, self.root_dir))
                     gclient_utils.rmtree(e_dir)
+                    # We restore empty directories of submodule paths.
+                    if is_submodule:
+                        gclient_scm.scm.GIT.Capture(['restore', rel_e_dir],
+                                                    cwd=par_scm_root)
         # record the current list of entries for next time
         self._SaveEntries()
         return removed_cipd_entries
@@ -2308,7 +2319,8 @@ it or fix the checkout.
                         try:
                             gclient_scm.scm.GIT.Capture(['checkout', tail],
                                                         cwd=cwd)
-                        except subprocess2.CalledProcessError:
+                        except (subprocess2.CalledProcessError, OSError):
+                            # repo of the deleted cipd may also have been deleted.
                             pass
 
         if not self._options.nohooks:

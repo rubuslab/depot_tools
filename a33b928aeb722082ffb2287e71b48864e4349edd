@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2737771e_fb53d634",
+        "filename": "scm.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-10-05T20:03:08Z",
+      "side": 1,
+      "message": "nit: `IsVersioned` is probably better name",
+      "range": {
+        "startLine": 448,
+        "startChar": 8,
+        "endLine": 448,
+        "endChar": 39
+      },
+      "revId": "a33b928aeb722082ffb2287e71b48864e4349edd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

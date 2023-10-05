@@ -69,6 +69,24 @@
       "parentUuid": "90c45f1c_b12ab4de",
       "revId": "46bb268e9ccef35edc9701bb2a253f25bb517611",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d16731f7_b48709b4",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6475,
+      "author": {
+        "id": 1401232
+      },
+      "writtenOn": "2023-10-05T18:27:43Z",
+      "side": 1,
+      "message": "spent some time trying to write tests for this and am having trouble. since we mock calls to git, the test will basically just end up just checking that we call git with the proper arguments, which is pretty pointless. wdyt?\n\nI did manually make a change that only copies/moves a file and made sure that formatting worked fwiw",
+      "parentUuid": "2b9af1ff_bb8bcfaa",
+      "revId": "46bb268e9ccef35edc9701bb2a253f25bb517611",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

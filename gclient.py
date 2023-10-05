@@ -2053,6 +2053,7 @@ it or fix the checkout.
 
         removed_cipd_entries = []
         for entry, prev_url in self._ReadEntries().items():
+            is_submodule = False
             if not prev_url:
                 # entry must have been overridden via .gclient custom_deps
                 continue
@@ -2092,11 +2093,6 @@ it or fix the checkout.
                         'checkout, so not removing.' % entry)
                     continue
 
-                # This is to handle the case of third_party/WebKit migrating
-                # from being a DEPS entry to being part of the main project. If
-                # the subproject is a Git project, we need to remove its .git
-                # folder. Otherwise git operations on that folder will have
-                # different effects depending on the current working directory.
                 if os.path.abspath(scm_root) == os.path.abspath(e_dir):
                     e_par_dir = os.path.join(e_dir, os.pardir)
                     if gclient_scm.scm.GIT.IsInsideWorkTree(e_par_dir):
@@ -2105,8 +2101,16 @@ it or fix the checkout.
                         # rel_e_dir : relative path of entry w.r.t. its parent
                         # repo.
                         rel_e_dir = os.path.relpath(e_dir, par_scm_root)
-                        if gclient_scm.scm.GIT.IsDirectoryVersioned(
-                                par_scm_root, rel_e_dir):
+                        (
+                            versioned, is_submodule
+                        ) = gclient_scm.scm.GIT.IsDirectoryVersionedOrSubmodule(
+                            par_scm_root, rel_e_dir)
+                        # This is to handle the case of third_party/WebKit migrating
+                        # from being a DEPS entry to being part of the main project. If
+                        # the subproject is a Git project, we need to remove its .git
+                        # folder. Otherwise git operations on that folder will have
+                        # different effects depending on the current working directory.
+                        if versioned and not is_submodule:
                             save_dir = scm.GetGitBackupDirPath()
                             # Remove any eventual stale backup dir for the same
                             # project.
@@ -2166,6 +2170,27 @@ it or fix the checkout.
                             protocol=self.protocol,
                             git_dependencies_state=self.git_dependencies_state))
                     if modified_files and self._options.delete_unversioned_trees:
+                        # TODO(crbug.com/1486677): Consider, ordering this loop
+                        # from longest dir to shortest dir so child submodules are
+                        # always cleared first.
+                        # Currenlty, if all of the following cases are met:
+                        # 1) This submodule contains another submodule with its
+                        # pinned revision overwritten by a var in a higher level DEPS.
+                        # 2) There are no other changes to the child submodule made by
+                        # the user
+                        # 3) that child submodule has not been deleted here yet (but will
+                        # get deleted later in this for loop).
+                        #
+                        # Then this parent submodule will not be cleared here, because
+                        # it thinks there are modifications here (new commits for the
+                        # child submodule), when it should be (because the new commits
+                        # for the child submodule are not real modifications). However
+                        # it is impossible to tell the difference between real user
+                        # locally committed modifications vs vars overwritets.
+                        # Since the child will get deleted later in the loop, this parent
+                        # submodule will be cleared in another run of `gclient sync -D`.
+                        # Consider, ordering this for loop from longest dir to shortest
+                        # dir so child submodules are always cleared first.
                         print(
                             '\nWARNING: \'%s\' is no longer part of this client.\n'
                             'Despite running \'gclient sync -D\' no action was taken '
@@ -2181,7 +2206,15 @@ it or fix the checkout.
                     # Delete the entry
                     print('\n________ deleting \'%s\' in \'%s\'' %
                           (entry_fixed, self.root_dir))
-                    gclient_utils.rmtree(e_dir)
+                    try:
+                        gclient_utils.rmtree(e_dir)
+                        # We restore empty directories of submodule paths.
+                        if is_submodule:
+                            gclient_scm.scm.GIT.Capture(['restore', rel_e_dir],
+                                                        cwd=par_scm_root)
+                    except OSError:
+                        print('\nWARNING: failed to delete \'%s\'' %
+                              entry_fixed)
         # record the current list of entries for next time
         self._SaveEntries()
         return removed_cipd_entries
@@ -2308,7 +2341,8 @@ it or fix the checkout.
                         try:
                             gclient_scm.scm.GIT.Capture(['checkout', tail],
                                                         cwd=cwd)
-                        except subprocess2.CalledProcessError:
+                        except (subprocess2.CalledProcessError, OSError):
+                            # repo of the deleted cipd may also have been deleted.
                             pass
 
         if not self._options.nohooks:

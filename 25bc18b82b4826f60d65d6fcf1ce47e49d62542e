@@ -52,6 +52,24 @@
       "parentUuid": "4bf4f3ff_724037ba",
       "revId": "25bc18b82b4826f60d65d6fcf1ce47e49d62542e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35add13a_a97e8ab9",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1969,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-10-06T18:18:49Z",
+      "side": 1,
+      "message": "gclient gitmodules stages gitlinks produced from DEPS file. It doesn\u0027t perform checkout on those submodules.\n\nSo, it\u0027s may look like\nStaged:\n v8 (gitlink) # matches DEPS, but may not match local checkout\n \nModified / unstaged:\n v8 # (current checkout, which may be outdated)\n\nSo, if git commit -a is used, then it may pick \"modified\" git submodules.\n\nI\u0027d say, when gclient gitmodules is used, we don\u0027t want users to run git commit -a (or git add). Since all changes are staged, they can just run git commit -m \"update gitlinks\" or git commit --amend.",
+      "parentUuid": "4bf4f3ff_724037ba",
+      "revId": "25bc18b82b4826f60d65d6fcf1ce47e49d62542e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -87,6 +87,24 @@
       "parentUuid": "2b9af1ff_bb8bcfaa",
       "revId": "46bb268e9ccef35edc9701bb2a253f25bb517611",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a40a4069_510b1e87",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6475,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-10-06T03:45:46Z",
+      "side": 1,
+      "message": "\u003e test will basically just end up just checking that we call git with the proper arguments, which is pretty pointless\n\nThe test is not to check if this code works but to have validation tests in depot_tools\u0027s test suite. depot_tools has poor coverage now so our team is focused on not making it worse while adding new code.\n\n\u003e spent some time trying to write tests for this and am having trouble.\n\nThe intention here was not to waste your time. I will take a look now and if it is too complex, we can skip this.",
+      "parentUuid": "d16731f7_b48709b4",
+      "revId": "46bb268e9ccef35edc9701bb2a253f25bb517611",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

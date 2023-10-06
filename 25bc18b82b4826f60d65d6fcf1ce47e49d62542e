@@ -70,6 +70,24 @@
       "parentUuid": "4bf4f3ff_724037ba",
       "revId": "25bc18b82b4826f60d65d6fcf1ce47e49d62542e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73191449_708ccc73",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1969,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2023-10-06T18:55:56Z",
+      "side": 1,
+      "message": "yup you right\nfixed.\nAlso see changes in gclient command i just added.",
+      "parentUuid": "35add13a_a97e8ab9",
+      "revId": "25bc18b82b4826f60d65d6fcf1ce47e49d62542e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

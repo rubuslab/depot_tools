@@ -105,6 +105,24 @@
       "parentUuid": "d16731f7_b48709b4",
       "revId": "46bb268e9ccef35edc9701bb2a253f25bb517611",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8a8c814_65b2c306",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6475,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-10-06T04:12:46Z",
+      "side": 1,
+      "message": "\u003e spent some time trying to write tests for this and am having trouble.\n\nLooking at `git_cl_test.py`, there doesn\u0027t seem to be any existing unit test for `CMDformat` or even `BuildGitDiffCmd`. Setting up everything for this is too complex. Let\u0027s skip tests.",
+      "parentUuid": "a40a4069_510b1e87",
+      "revId": "46bb268e9ccef35edc9701bb2a253f25bb517611",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

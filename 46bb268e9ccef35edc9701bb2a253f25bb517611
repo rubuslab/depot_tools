@@ -18,6 +18,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07d09bc3_9e75ce04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002927
+      },
+      "writtenOn": "2023-10-09T18:11:58Z",
+      "side": 1,
+      "message": "Looks great, thanks for fixing!\n\n(TIL about --diff-filter\u003d)",
+      "revId": "46bb268e9ccef35edc9701bb2a253f25bb517611",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2baaf5af_19c7303a",

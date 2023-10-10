@@ -52,6 +52,24 @@
       "parentUuid": "819d813f_350e85c5",
       "revId": "6e8c18239d9dc4da5045778d5ed87888611bf848",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ee6a210_e0923b5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2023-10-10T13:38:02Z",
+      "side": 1,
+      "message": "It\u0027s actually 3.8 that\u0027s required (can use the one in `depot_tools/python-bin` if needed).",
+      "parentUuid": "d1e90b91_7d34013e",
+      "revId": "6e8c18239d9dc4da5045778d5ed87888611bf848",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

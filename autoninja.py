@@ -27,7 +27,7 @@ if sys.platform in ['darwin', 'linux']:
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
-def _gn_lines(output_dir, path):
+def gn_lines(output_dir, path):
     """
     Generator function that returns args.gn lines one at a time, following
     import directives as needed.
@@ -45,7 +45,7 @@ def _gn_lines(output_dir, path):
                 else:
                     import_path = os.path.normpath(
                         os.path.join(os.path.dirname(path), raw_import_path))
-                for import_line in _gn_lines(output_dir, import_path):
+                for import_line in gn_lines(output_dir, import_path):
                     yield import_line
             else:
                 yield line
@@ -99,7 +99,7 @@ def main(args):
     # builds, where we look for args.gn in the build tree, and cmake-based
     # builds where we look for rules.ninja.
     if os.path.exists(os.path.join(output_dir, 'args.gn')):
-        for line in _gn_lines(output_dir, os.path.join(output_dir, 'args.gn')):
+        for line in gn_lines(output_dir, os.path.join(output_dir, 'args.gn')):
             # use_goma, use_remoteexec, or use_rbe will activate build
             # acceleration.
             #

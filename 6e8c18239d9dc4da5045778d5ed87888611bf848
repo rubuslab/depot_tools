@@ -34,6 +34,24 @@
       "parentUuid": "aaaedbfc_6de805f9",
       "revId": "6e8c18239d9dc4da5045778d5ed87888611bf848",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1e90b91_7d34013e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1532693
+      },
+      "writtenOn": "2023-10-10T13:36:14Z",
+      "side": 1,
+      "message": "I\u0027m also seeing this error on my MBP.\n`python3 --version` returns `Python 3.7.9`",
+      "parentUuid": "819d813f_350e85c5",
+      "revId": "6e8c18239d9dc4da5045778d5ed87888611bf848",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

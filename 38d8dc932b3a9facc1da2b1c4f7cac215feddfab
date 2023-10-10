@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e646cd96_1ae279b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-10-10T19:52:48Z",
+      "side": 1,
+      "message": "+1 after Takuto\u0027s comment is resolved",
+      "revId": "38d8dc932b3a9facc1da2b1c4f7cac215feddfab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46c85bb6_9d1ad6e5",

@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "35d28399_e5f9bc22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-10-11T22:00:10Z",
+      "side": 1,
+      "message": "afaik, we don\u0027t use DEPS file in git cl, so I wouldn\u0027t want to introduce that dependency (there might be projects without DEPS/gclient that use git cl).\n\nWith that said, I don\u0027t think we have a good way to specify what formatters should be used.",
+      "parentUuid": "711679da_59861e81",
+      "revId": "a777e99bb951c2d65105bc66c2388ea08a0fcc02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "898e5a90_214baca0",

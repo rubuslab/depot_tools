@@ -69,6 +69,24 @@
       "parentUuid": "7e11f7f0_b6fe1d66",
       "revId": "38d8dc932b3a9facc1da2b1c4f7cac215feddfab",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "910ac2ac_5949191f",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-10-11T03:33:37Z",
+      "side": 1,
+      "message": "Sorry, I\u0027m just not used to explicitly marking functions as private or public in such small scripts / repositories, but I\u0027m OK with following whatever style we use here.\n\nI reverted the rename.",
+      "parentUuid": "46c85bb6_9d1ad6e5",
+      "revId": "38d8dc932b3a9facc1da2b1c4f7cac215feddfab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

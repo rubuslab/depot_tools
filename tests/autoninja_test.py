@@ -52,7 +52,7 @@ class AutoninjaTest(trial_dir.TestCase):
                 os.path.join(
                     'goma_dir', 'gomacc.exe'
                     if sys.platform.startswith('win') else 'gomacc'), 'content')
-            args = autoninja.main(['autoninja.py', '-C', out_dir]).split()
+            args = autoninja.main(['autoninja.py', '-C', out_dir])
             mock_call.assert_called_once()
 
         self.assertIn('-j', args)
@@ -67,7 +67,7 @@ class AutoninjaTest(trial_dir.TestCase):
               'RBE_v=2')
         write(os.path.join('buildtools', 'reclient', 'version.txt'), '0.0')
 
-        args = autoninja.main(['autoninja.py', '-C', out_dir]).split()
+        args = autoninja.main(['autoninja.py', '-C', out_dir])
 
         self.assertIn('-j', args)
         parallel_j = int(args[args.index('-j') + 1])

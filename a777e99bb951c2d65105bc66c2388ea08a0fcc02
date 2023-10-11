@@ -16,6 +16,23 @@
       "message": "Curious if you have thoughts on this. E.g. could also use .gclient or DEPS rather than env to define formatter settings.",
       "revId": "a777e99bb951c2d65105bc66c2388ea08a0fcc02",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "898e5a90_214baca0",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6150,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-10-11T21:58:27Z",
+      "side": 1,
+      "message": "Nit: print notice/warning that java formatter is not found\n```suggestion\n        # it is a non-chromium project. https://crbug.com/1491627\n        print(\u0027google-java-format not found, skipping java formatting.\u0027)\n```",
+      "revId": "a777e99bb951c2d65105bc66c2388ea08a0fcc02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -39,13 +39,13 @@ IF NOT "%1"=="" (
     GOTO :loop
 )
 
-:: Execute whatever is printed by autoninja.py.
-:: Also print it to reassure that the right settings are being used.
+:: Execute autoninja.py and pass all arguments to it.
 :: Don't use vpython - it is too slow to start.
 :: Don't use python3 because it doesn't work in git bash on Windows and we
 :: should be consistent between autoninja.bat and the autoninja script used by
 :: git bash.
-FOR /f "usebackq tokens=*" %%a in (`%scriptdir%python-bin\python3.bat %scriptdir%autoninja.py "%*"`) do echo %%a & %%a
+
+@call %scriptdir%python-bin\python3.bat %scriptdir%autoninja.py "%%*"
 @if errorlevel 1 goto buildfailure
 
 :: Use call to invoke python script here, because we use python via python3.bat.

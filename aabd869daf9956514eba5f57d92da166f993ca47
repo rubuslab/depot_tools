@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99985452_618d5da5",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-10-11T07:54:57Z",
+      "side": 0,
+      "message": "This is necessary, because we now directly call the `main` functions of autosiso, ninja, ninja_reclient and siso, instead of going through the shell. This means that we can\u0027t prefix it with an externally invoked \"nice\", but instead just have to set the nice value ourselves using `os.nice` here, which will then be inherited by the child process later.",
+      "range": {
+        "startLine": 210,
+        "startChar": 0,
+        "endLine": 217,
+        "endChar": 40
+      },
+      "revId": "aabd869daf9956514eba5f57d92da166f993ca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1370c53_3e2ab75d",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-10-11T07:54:57Z",
+      "side": 0,
+      "message": "Same thing here - we can\u0027t set environment variables by prefixing `args` with them, instead we need to set them in our own `os.environ`, which will then be inherited by the child processes invoked by autosiso, ninja, ninja_reclient and siso later.",
+      "range": {
+        "startLine": 221,
+        "startChar": 0,
+        "endLine": 222,
+        "endChar": 78
+      },
+      "revId": "aabd869daf9956514eba5f57d92da166f993ca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c780fe96_3afeeb20",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-10-11T07:54:57Z",
+      "side": 0,
+      "message": "This is necessary in this CL, because ... you guessed it - we can no longer set the ulimit by prefixing the args with an external \"ulimit\" invocation, instead we set them here for our current process and then they\u0027re inherited later by the child process.",
+      "range": {
+        "startLine": 242,
+        "startChar": 0,
+        "endLine": 243,
+        "endChar": 75
+      },
+      "revId": "aabd869daf9956514eba5f57d92da166f993ca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23ef7286_e978b987",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-10-11T07:54:57Z",
+      "side": 0,
+      "message": "Yay, all of the quoting, unquoting, splitting, unsplitting ... goes away and instead we can just pass a list with args :)\n\nThe only reason why we still have a quoting function in this script is so that we can print a nice and correct command-line when NINJA_SUMMARIZE_BUILD is set.",
+      "range": {
+        "startLine": 294,
+        "startChar": 0,
+        "endLine": 306,
+        "endChar": 25
+      },
+      "revId": "aabd869daf9956514eba5f57d92da166f993ca47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a9d9522_ec090068",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-10-11T09:02:57Z",
+      "side": 1,
+      "message": "I had to update this CL one more time, because it turned out that the Siso support was broken when trying to invoke it via subprocess.run().\n\nTo fix it cleanly, I changed this CL to invoke ninja, ninja_reclient, siso, autosiso by directly calling their main methods instead of invoking yet another Python interpreter.\n\nI added a description of all tests that I ran in the CL, too.\n\nConsidering that the code changed again, could you please take another look whether it\u0027s still fine? Then I\u0027d like to submit it tomorrow if everything is still good. Thank you!",
+      "revId": "1bef0e8a09c5f81478cec70809b954cbf7caf1b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

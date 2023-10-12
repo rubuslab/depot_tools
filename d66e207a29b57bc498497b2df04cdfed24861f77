@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3db273d5_6e3e5d64",
+        "filename": "reclient_helper.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-12T18:23:53Z",
+      "side": 1,
+      "message": "`datetime.datetime` is immutable so mocking it causes an error.",
+      "parentUuid": "4fb0f1b1_15125b46",
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b8c21cd_67d396b4",
@@ -35,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3625c2be_7631c1b5",
+        "filename": "reclient_helper.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-12T18:23:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b8c21cd_67d396b4",
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "85e3d256_19418a17",
@@ -48,6 +84,30 @@
       "writtenOn": "2023-10-10T06:54:08Z",
       "side": 1,
       "message": "use subprocess.run?",
+      "range": {
+        "startLine": 171,
+        "startChar": 19,
+        "endLine": 171,
+        "endChar": 24
+      },
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4bb3891_da22d308",
+        "filename": "reclient_helper.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-12T18:23:53Z",
+      "side": 1,
+      "message": "I want this to be a background call",
+      "parentUuid": "85e3d256_19418a17",
       "range": {
         "startLine": 171,
         "startChar": 19,
@@ -81,6 +141,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc16c2d4_a9df093c",
+        "filename": "reclient_helper.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-12T18:23:53Z",
+      "side": 1,
+      "message": "creation flag is the same as ninjalog_uploader_wrapper when it starts the background process for ninjalog_uploader\nWithout shell\u003dTrue the rmdir command did not work on windows",
+      "parentUuid": "28eb5474_c25f1719",
+      "range": {
+        "startLine": 174,
+        "startChar": 25,
+        "endLine": 175,
+        "endChar": 74
+      },
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0011402a_07cbac22",
@@ -94,6 +178,30 @@
       "writtenOn": "2023-10-10T06:54:08Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 178,
+        "startChar": 19,
+        "endLine": 178,
+        "endChar": 24
+      },
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec574851_abcc82d3",
+        "filename": "reclient_helper.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-12T18:23:53Z",
+      "side": 1,
+      "message": "I want this to be a background detached process so that deleting a large log dir doesnt block the user",
+      "parentUuid": "0011402a_07cbac22",
       "range": {
         "startLine": 178,
         "startChar": 19,
@@ -127,6 +235,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a36b885a_724742db",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-12T18:23:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c11485c2_731ea2d3",
+      "range": {
+        "startLine": 398,
+        "startChar": 25,
+        "endLine": 399,
+        "endChar": 58
+      },
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7a8d2a1b_9b7c5eac",
@@ -140,6 +272,30 @@
       "writtenOn": "2023-10-10T06:54:08Z",
       "side": 1,
       "message": "This is not used?",
+      "range": {
+        "startLine": 453,
+        "startChar": 46,
+        "endLine": 453,
+        "endChar": 54
+      },
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72c180c0_8910528b",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-12T18:23:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8d2a1b_9b7c5eac",
       "range": {
         "startLine": 453,
         "startChar": 46,
@@ -173,6 +329,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92b1b079_b449dbcc",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-12T18:23:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22a5f318_d5b980dd",
+      "range": {
+        "startLine": 489,
+        "startChar": 42,
+        "endLine": 489,
+        "endChar": 50
+      },
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a9da2edd_58fc9021",
@@ -186,6 +366,30 @@
       "writtenOn": "2023-10-10T06:54:08Z",
       "side": 1,
       "message": "This is not used?",
+      "range": {
+        "startLine": 507,
+        "startChar": 43,
+        "endLine": 507,
+        "endChar": 51
+      },
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f471604b_f5366adc",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-12T18:23:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9da2edd_58fc9021",
       "range": {
         "startLine": 507,
         "startChar": 43,

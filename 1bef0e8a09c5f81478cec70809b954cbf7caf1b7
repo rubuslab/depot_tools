@@ -58,6 +58,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5daba75b_785a3484",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-10-12T05:19:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7919e57_84dcfdac",
+      "range": {
+        "startLine": 247,
+        "startChar": 49,
+        "endLine": 247,
+        "endChar": 54
+      },
+      "revId": "1bef0e8a09c5f81478cec70809b954cbf7caf1b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3226db66_431a0c8a",
@@ -71,6 +95,30 @@
       "writtenOn": "2023-10-12T01:04:51Z",
       "side": 1,
       "message": "You can remove the environment variables from the batch file, now?",
+      "range": {
+        "startLine": 255,
+        "startChar": 50,
+        "endLine": 256,
+        "endChar": 50
+      },
+      "revId": "1bef0e8a09c5f81478cec70809b954cbf7caf1b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e384b14_b47600e1",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-10-12T05:19:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3226db66_431a0c8a",
       "range": {
         "startLine": 255,
         "startChar": 50,

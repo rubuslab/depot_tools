@@ -16,6 +16,24 @@
       "message": "is it ok when rbe_cfg_dir is set as explained in\nhttps://chromium.googlesource.com/chromium/src/+/main/docs/linux/build_instructions.md#use-reclient",
       "revId": "d627ed787d1a09b77dc61817e995b4475d657842",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49e13454_4e014ca2",
+        "filename": "autoninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-12T07:36:02Z",
+      "side": 1,
+      "message": "Maybe https://crrev.com/c/4930333 is better for this.",
+      "parentUuid": "e60732a0_6f62c8c5",
+      "revId": "d627ed787d1a09b77dc61817e995b4475d657842",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

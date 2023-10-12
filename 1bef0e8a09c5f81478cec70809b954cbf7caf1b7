@@ -37,6 +37,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d7919e57_84dcfdac",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-12T01:58:00Z",
+      "side": 1,
+      "message": "This is redundant?",
+      "range": {
+        "startLine": 247,
+        "startChar": 49,
+        "endLine": 247,
+        "endChar": 54
+      },
+      "revId": "1bef0e8a09c5f81478cec70809b954cbf7caf1b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3226db66_431a0c8a",
         "filename": "autoninja.py",
         "patchSetId": 7

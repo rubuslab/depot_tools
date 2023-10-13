@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84c37a65_dfa895b9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-10-13T21:50:17Z",
+      "side": 1,
+      "message": "It sounds like post_build_ninja_summary.py will start failing if run on a siso build directory with a cryptic error message. Can we make it a non-cryptic error message instead? I sometimes run this script manually and I\u0027d rather it say \"siso not supported, please use \u003cblah\u003e instead\" rather than just firing an assert.",
+      "revId": "c51829968b91a150c73150b56fdf89e4bb34b695",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eb704137_a30d3c03",
+        "filename": "reclient_helper.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T02:32:48Z",
+      "side": 1,
+      "message": "I think you can do like\nhttps://docs.python.org/3/library/unittest.mock-examples.html#partial-mocking\nto remove this function?",
+      "parentUuid": "3db273d5_6e3e5d64",
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1b8c21cd_67d396b4",
         "filename": "reclient_helper.py",
         "patchSetId": 5

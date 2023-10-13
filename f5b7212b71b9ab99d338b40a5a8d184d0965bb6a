@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5b5e70e_32b03bf6",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T02:32:48Z",
+      "side": 1,
+      "message": "I don\u0027t think we need to have these check in multiple test cases?",
+      "range": {
+        "startLine": 348,
+        "startChar": 0,
+        "endLine": 349,
+        "endChar": 74
+      },
+      "revId": "f5b7212b71b9ab99d338b40a5a8d184d0965bb6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cd6609e_0fcd2e0a",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T02:32:48Z",
+      "side": 1,
+      "message": "This is not necessary?",
+      "range": {
+        "startLine": 444,
+        "startChar": 0,
+        "endLine": 446,
+        "endChar": 59
+      },
+      "revId": "f5b7212b71b9ab99d338b40a5a8d184d0965bb6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47745c19_c6a4c18b",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T02:32:48Z",
+      "side": 1,
+      "message": "This is not necessary?",
+      "revId": "f5b7212b71b9ab99d338b40a5a8d184d0965bb6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "588a5fd5_22796b5f",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T02:32:48Z",
+      "side": 1,
+      "message": "This is not necessary?",
+      "revId": "f5b7212b71b9ab99d338b40a5a8d184d0965bb6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

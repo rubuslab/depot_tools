@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e89668da_87b254c0",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "This is not used?",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 71
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bae5085_8fb6c352",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "This is not used?",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a3c13a0_96ce0241",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "This is not used?",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1f029c6_acf567d2",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "You don\u0027t need to have this check in multiple test cases?",
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b148f96_c62e1625",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "This is not used?",
+      "range": {
+        "startLine": 177,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d067dc6f_ee085f63",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "This is tno used?",
+      "range": {
+        "startLine": 225,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76df776c_e9b9f47f",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "This is not used?",
+      "range": {
+        "startLine": 272,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e76aadd8_21578dbd",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "Could you get popen object and wait instead of sleep here?",
+      "range": {
+        "startLine": 339,
+        "startChar": 13,
+        "endLine": 339,
+        "endChar": 18
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b9dbb77_a271a73f",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "I think you can use https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertCountEqual\nwithout `set(...)`?",
+      "range": {
+        "startLine": 340,
+        "startChar": 13,
+        "endLine": 340,
+        "endChar": 27
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7685855d_5be20b0c",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-13T04:26:07Z",
+      "side": 1,
+      "message": "Why do you need this?",
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

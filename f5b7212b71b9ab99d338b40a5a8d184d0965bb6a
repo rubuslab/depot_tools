@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94c71ff4_5c4a9c96",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T03:49:47Z",
+      "side": 1,
+      "message": "Refactored tests to reduce duplication",
+      "parentUuid": "b5b5e70e_32b03bf6",
+      "range": {
+        "startLine": 348,
+        "startChar": 0,
+        "endLine": 349,
+        "endChar": 74
+      },
+      "revId": "f5b7212b71b9ab99d338b40a5a8d184d0965bb6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cd6609e_0fcd2e0a",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-10-13T02:32:48Z",
       "side": 1,
       "message": "This is not necessary?",
+      "range": {
+        "startLine": 444,
+        "startChar": 0,
+        "endLine": 446,
+        "endChar": 59
+      },
+      "revId": "f5b7212b71b9ab99d338b40a5a8d184d0965bb6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5ef8679_bd8ae201",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T03:49:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cd6609e_0fcd2e0a",
       "range": {
         "startLine": 444,
         "startChar": 0,
@@ -64,6 +112,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "986921d0_cc73c498",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T03:49:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47745c19_c6a4c18b",
+      "revId": "f5b7212b71b9ab99d338b40a5a8d184d0965bb6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "588a5fd5_22796b5f",
@@ -77,6 +143,24 @@
       "writtenOn": "2023-10-13T02:32:48Z",
       "side": 1,
       "message": "This is not necessary?",
+      "revId": "f5b7212b71b9ab99d338b40a5a8d184d0965bb6a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5edf06a0_6ee7aa95",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T03:49:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "588a5fd5_22796b5f",
       "revId": "f5b7212b71b9ab99d338b40a5a8d184d0965bb6a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

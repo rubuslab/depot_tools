@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a4b27af_6a7bb4ad",
+        "filename": "reclient_helper.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T03:49:47Z",
+      "side": 1,
+      "message": "both auth_test.py and git_cl_test.py already use this pattern. I think using a fake datetime class would be overkill for this one method anyways",
+      "parentUuid": "eb704137_a30d3c03",
+      "revId": "d66e207a29b57bc498497b2df04cdfed24861f77",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b8c21cd_67d396b4",

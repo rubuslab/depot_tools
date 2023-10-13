@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "27e6f312_56b03dac",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e89668da_87b254c0",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 71
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3bae5085_8fb6c352",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-10-13T04:26:07Z",
       "side": 1,
       "message": "This is not used?",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d9e22be_13f91c59",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bae5085_8fb6c352",
       "range": {
         "startLine": 102,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f6330bf_62539182",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a3c13a0_96ce0241",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1f029c6_acf567d2",
@@ -87,6 +159,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e527da4_98f82f15",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "Since this is set in the metrics function I think it is best to assert its value in all of the metrics test cases",
+      "parentUuid": "a1f029c6_acf567d2",
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b148f96_c62e1625",
@@ -100,6 +190,30 @@
       "writtenOn": "2023-10-13T04:26:07Z",
       "side": 1,
       "message": "This is not used?",
+      "range": {
+        "startLine": 177,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ce4169f_60424b5f",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b148f96_c62e1625",
       "range": {
         "startLine": 177,
         "startChar": 0,
@@ -133,6 +247,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "38cb693d_81fc276b",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d067dc6f_ee085f63",
+      "range": {
+        "startLine": 225,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "76df776c_e9b9f47f",
@@ -146,6 +284,30 @@
       "writtenOn": "2023-10-13T04:26:07Z",
       "side": 1,
       "message": "This is not used?",
+      "range": {
+        "startLine": 272,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 59
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51dd6a39_e4d7cea9",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76df776c_e9b9f47f",
       "range": {
         "startLine": 272,
         "startChar": 0,
@@ -179,6 +341,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fea7216d_5514e0c1",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e76aadd8_21578dbd",
+      "range": {
+        "startLine": 339,
+        "startChar": 13,
+        "endLine": 339,
+        "endChar": 18
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4b9dbb77_a271a73f",
@@ -202,6 +388,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc731ac6_54b19b98",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b9dbb77_a271a73f",
+      "range": {
+        "startLine": 340,
+        "startChar": 13,
+        "endLine": 340,
+        "endChar": 27
+      },
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7685855d_5be20b0c",
@@ -215,6 +425,24 @@
       "writtenOn": "2023-10-13T04:26:07Z",
       "side": 1,
       "message": "Why do you need this?",
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d9f907b_a9851df4",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2023-10-13T13:58:18Z",
+      "side": 1,
+      "message": "This is to ensure that os.environ is hermetic between test cases so that they cannot affect each other.",
+      "parentUuid": "7685855d_5be20b0c",
       "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

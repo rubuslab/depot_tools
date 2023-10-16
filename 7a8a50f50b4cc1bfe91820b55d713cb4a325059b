@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a197b85_a2192825",
+        "filename": "reclient_helper.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-16T05:58:02Z",
+      "side": 1,
+      "message": "This is not necessary?",
+      "range": {
+        "startLine": 177,
+        "startChar": 29,
+        "endLine": 177,
+        "endChar": 40
+      },
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06a0e7a4_63f63b91",
+        "filename": "reclient_helper.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-16T05:58:02Z",
+      "side": 1,
+      "message": "This is not necessary if this uses `-rf`?",
+      "range": {
+        "startLine": 182,
+        "startChar": 29,
+        "endLine": 183,
+        "endChar": 54
+      },
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef62e5ff_ea4ff87b",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-16T05:58:02Z",
+      "side": 1,
+      "message": "This is not necessary?",
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -338,6 +338,11 @@ def main():
         help='Sort output by elapsed time instead of weighted time')
     parser.add_argument('--log-file',
                         help="specific ninja log file to analyze.")
+    parser.add_argument('--no_siso_metrics',
+                        dest='use_siso_metrics',
+                        default=True,
+                        action='store_false',
+                        help="use ninja log even siso metrics file exists")
     args, _extra_args = parser.parse_known_args()
     if args.build_directory:
         log_file = os.path.join(args.build_directory, log_file)
@@ -354,7 +359,7 @@ def main():
         global long_ext_count
         long_ext_count += len(args.step_types.split(';'))
 
-    if os.path.exists(metrics_file):
+    if os.path.exists(metrics_file) and args.use_siso_metrics:
         # Automatically handle summarizing siso builds.
         cmd = ['siso.bat' if 'win32' in sys.platform else 'siso']
         cmd.extend(['metrics', 'summary'])

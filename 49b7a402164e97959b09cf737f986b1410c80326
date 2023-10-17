@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ca40945_c08f484c",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-17T05:13:58Z",
+      "side": 1,
+      "message": "Better to follow http://go/tott/685?",
+      "range": {
+        "startLine": 341,
+        "startChar": 27,
+        "endLine": 341,
+        "endChar": 42
+      },
+      "revId": "49b7a402164e97959b09cf737f986b1410c80326",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

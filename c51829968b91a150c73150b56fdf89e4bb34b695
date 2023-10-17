@@ -52,6 +52,24 @@
       "parentUuid": "09e9022c_5c889f83",
       "revId": "c51829968b91a150c73150b56fdf89e4bb34b695",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cefa2d0_89b313ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-10-17T03:33:31Z",
+      "side": 1,
+      "message": "Ah, I forgot that the post build summary script is already integrated with siso metrics.\n\nWith https://crrev.com/c/4945330, the script can switch between .ninja_log and siso_metrics.json\n\n```\n\u003e post_build_ninja_summary.py -C out/rbe --no_siso_metrics\n    Longest build steps:\n           0.6 weighted s to build out/rbe/obj/base/base/work_queue.o (12.4 s elapsed time)\n           0.6 weighted s to build out/rbe/obj/base/base/user_metrics.o (12.4 s elapsed time)\n           0.7 weighted s to build out/rbe/obj/base/base/job_task_source.o (12.5 s elapsed time)\n           0.7 weighted s to build out/rbe/obj/base/base/thread_controller_with_message_pump_impl.o (12.7 s elapsed time)\n           0.7 weighted s to build out/rbe/obj/base/base/message_pump_epoll.o (12.6 s elapsed time)\n           0.7 weighted s to build out/rbe/obj/base/base/thread_group_impl.o (12.7 s elapsed time)\n           0.7 weighted s to build out/rbe/obj/base/base/worker_thread.o (12.9 s elapsed time)\n           0.8 weighted s to build out/rbe/obj/base/base/stack_sampling_profiler.o (13.0 s elapsed time)\n           0.9 weighted s to build out/rbe/obj/base/base/thread.o (13.2 s elapsed time)\n           1.7 weighted s to build out/rbe/obj/base/base/sequence_manager_impl.o (14.1 s elapsed time)\n    Time by build-step type:\n           0.4 s weighted time to generate 1 .so (linking) files (0.4 s elapsed time sum)\n          14.1 s weighted time to generate 20 .o files (246.5 s elapsed time sum)\n    14.5 s weighted time (246.9 s elapsed time sum, 17.1x parallelism)\n    21 build steps completed, average of 1.45/s\n```\n\nFor some reasons, the summary looks different from one with siso metrics. \nWe will check what makes the difference.",
+      "parentUuid": "0cb77645_e387784c",
+      "revId": "c51829968b91a150c73150b56fdf89e4bb34b695",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -118,6 +118,30 @@
       },
       "revId": "49b7a402164e97959b09cf737f986b1410c80326",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdbf5b88_35393bf6",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-10-17T15:40:37Z",
+      "side": 1,
+      "message": "I\u0027m not clear on why this flag is needed. Is the idea that our builds are now generating two types of metrics and we need to select which one to create our build summary from? Why can\u0027t the tool just select whichever one works?\n\nThat is, if the .ninja_log version works let\u0027s just use it always. If it doesn\u0027t, let\u0027s never use it. If it kinda sorta works then it seems like we\u0027re going to have a lot of confusion and we need to discuss the tradeoffs and limitations.\n\nIt sounds like this is needed to handle the case where post_build_ninja_summary.py is invoked both explicitly by users and implicitly by the build. Potentially this behavior is going to mean that those two invocations give different results (well, in one case the siso results will be seen instead and those will be different). That seems bad. And also, it doesn\u0027t seem to make sense for autoninja to invoke this script when it knows it will do nothing, does it? Why not just skip invoking it?",
+      "parentUuid": "b64d8255_4afb5056",
+      "range": {
+        "startLine": 341,
+        "startChar": 27,
+        "endLine": 341,
+        "endChar": 42
+      },
+      "revId": "49b7a402164e97959b09cf737f986b1410c80326",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

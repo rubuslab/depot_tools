@@ -46,6 +46,30 @@
       },
       "revId": "49b7a402164e97959b09cf737f986b1410c80326",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2a77054_08f47d69",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-17T05:44:56Z",
+      "side": 1,
+      "message": "Why not use something like `use_ninja_log`?",
+      "parentUuid": "5e2136d5_a19172a1",
+      "range": {
+        "startLine": 341,
+        "startChar": 27,
+        "endLine": 341,
+        "endChar": 42
+      },
+      "revId": "49b7a402164e97959b09cf737f986b1410c80326",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

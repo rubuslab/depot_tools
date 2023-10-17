@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f7fe6ff_67f3ae0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-10-17T03:18:38Z",
+      "side": 1,
+      "message": "Ah, we may want `--use_siso_metrics` by default for Siso builds. Let me update this CL.",
+      "revId": "b0f8b2d8ff79f399956387acb5e25d13beef2902",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

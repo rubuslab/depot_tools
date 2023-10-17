@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7720bec8_ba2d3457",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-10-17T02:50:12Z",
+      "side": 1,
+      "message": "Context: https://groups.google.com/a/chromium.org/g/rust-dev/c/za1S66-bfWg/m/qkkCsOXPBQAJ",
+      "revId": "d2af25281e25d17c421ac8d51d1fa8b58bca5272",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

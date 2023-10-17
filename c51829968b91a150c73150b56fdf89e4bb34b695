@@ -34,6 +34,24 @@
       "parentUuid": "84c37a65_dfa895b9",
       "revId": "c51829968b91a150c73150b56fdf89e4bb34b695",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cb77645_e387784c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-10-17T02:20:13Z",
+      "side": 1,
+      "message": "That command/output sequence doesn\u0027t demonstrate what you say it does. It shows that autoninja respects the NINJA_SUMMARIZE_BUILD variable for siso builds, but it turns out it does this by asking siso to print the summary. If you run post_build_ninja_summary.py after a siso build it just says \"Error: no metrics data?\"\n\nIt would be great if post_build_ninja_summary.py could work after a siso build. I hope we get there.",
+      "parentUuid": "09e9022c_5c889f83",
+      "revId": "c51829968b91a150c73150b56fdf89e4bb34b695",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

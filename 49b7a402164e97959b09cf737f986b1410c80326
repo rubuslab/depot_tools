@@ -166,6 +166,30 @@
       },
       "revId": "49b7a402164e97959b09cf737f986b1410c80326",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bec38edf_00c56c81",
+        "filename": "post_build_ninja_summary.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-10-18T06:39:39Z",
+      "side": 1,
+      "message": "\u003e Is the idea that our builds are now generating two types of metrics and we need to select which one to create our build summary from? \n\nYes, Siso generates both siso_metrics.json and .ninja_log from the next version. \n\n\u003e Why can\u0027t the tool just select whichever one works?\n\nThe two summaries are different at this point. and it\u0027s not clear which one is trustworthy, yet. I also think that we should remove this flag soon and only stick with either one.\n\n\u003e argparse.BooleanOptionalAction\n\nYeah, I wanted to use it. But it\u0027s available from Python 3.9 while depot_tools bundles Python 3.8.10+chromium.26.",
+      "parentUuid": "6911b3a9_92ecacb1",
+      "range": {
+        "startLine": 341,
+        "startChar": 27,
+        "endLine": 341,
+        "endChar": 42
+      },
+      "revId": "49b7a402164e97959b09cf737f986b1410c80326",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

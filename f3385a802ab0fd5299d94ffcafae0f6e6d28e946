@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c63430cc_ee44b25a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-20T07:44:18Z",
+      "side": 1,
+      "message": "By the way, who wants to use this?",
+      "revId": "f3385a802ab0fd5299d94ffcafae0f6e6d28e946",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "By the way, who wants to use this?",
       "revId": "f3385a802ab0fd5299d94ffcafae0f6e6d28e946",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adc2fbc2_42804e3c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-10-20T15:52:53Z",
+      "side": 1,
+      "message": "The request was that we should (eventually?) be able to manually invoke post_build_ninja_summary.py on siso build directories. Currently it may be invoked by autoninja.bat during a build so I think the goal was to give it some way to know that it should do nothing in that situation because siso was printing out build stats.\nThe simplest solution would be for post_build_ninja_summary.py to always print the build stats, or always invoke siso to print them. Mixing and matching is both weird and complicated.",
+      "parentUuid": "c63430cc_ee44b25a",
+      "revId": "f3385a802ab0fd5299d94ffcafae0f6e6d28e946",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

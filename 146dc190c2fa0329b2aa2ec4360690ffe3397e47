@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c968b45a_3ba1b880",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-10-20T16:43:22Z",
+      "side": 1,
+      "message": "Thanks for patching it!\n\nSince I\u0027m uploader due to commit message edit, I need someone else to CR+1. Aravind, could you review and CQ+2? Thanks!",
+      "revId": "146dc190c2fa0329b2aa2ec4360690ffe3397e47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

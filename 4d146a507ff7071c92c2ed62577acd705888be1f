@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb1689d4_757c4b78",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1602583
+      },
+      "writtenOn": "2023-10-20T06:50:17Z",
+      "side": 1,
+      "message": "See https://bugs.chromium.org/p/chromium/issues/detail?id\u003d1488385 for initial bug report",
+      "revId": "4d146a507ff7071c92c2ed62577acd705888be1f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

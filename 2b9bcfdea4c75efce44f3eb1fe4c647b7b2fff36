@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "517b7afb_94789c24",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2023-10-21T05:53:51Z",
+      "side": 1,
+      "message": "Expansion on date validation that was bugging me, as the error messages in linux-presubmit didn\u0027t seem helpful.",
+      "revId": "2b9bcfdea4c75efce44f3eb1fe4c647b7b2fff36",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

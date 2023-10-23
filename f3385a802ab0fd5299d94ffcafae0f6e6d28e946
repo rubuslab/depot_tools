@@ -52,6 +52,24 @@
       "parentUuid": "adc2fbc2_42804e3c",
       "revId": "f3385a802ab0fd5299d94ffcafae0f6e6d28e946",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0f0ef87_cb208f0e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-10-23T06:26:40Z",
+      "side": 1,
+      "message": "I thought it\u0027s useful for people to check/compare the metrics by themselves. \nBut if nobody wants to do that, I will keep this change locally until I find trustworthy summary from either metrics.",
+      "parentUuid": "42f97f0c_1fbaab2c",
+      "revId": "f3385a802ab0fd5299d94ffcafae0f6e6d28e946",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

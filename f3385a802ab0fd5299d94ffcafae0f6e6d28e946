@@ -34,6 +34,24 @@
       "parentUuid": "c63430cc_ee44b25a",
       "revId": "f3385a802ab0fd5299d94ffcafae0f6e6d28e946",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42f97f0c_1fbaab2c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-23T06:22:34Z",
+      "side": 1,
+      "message": "Then this CL is not necessary and we can keep using current script?",
+      "parentUuid": "adc2fbc2_42804e3c",
+      "revId": "f3385a802ab0fd5299d94ffcafae0f6e6d28e946",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

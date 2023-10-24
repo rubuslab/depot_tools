@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "654c70f2_1205a8bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2023-10-24T15:54:07Z",
+      "side": 1,
+      "message": "I replied to your comments, and I am going to submit this as it currently is.  I think I have provided reasonable reasons for leaving the code as-is in the few comments Ben didn\u0027t resolve before going on leave.",
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3a197b85_a2192825",
@@ -14,6 +31,30 @@
       "writtenOn": "2023-10-16T05:58:02Z",
       "side": 1,
       "message": "This is not necessary?",
+      "range": {
+        "startLine": 177,
+        "startChar": 29,
+        "endLine": 177,
+        "endChar": 40
+      },
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ca706ae_7ad92d42",
+        "filename": "reclient_helper.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2023-10-24T15:54:07Z",
+      "side": 1,
+      "message": "If it is possible that log_dir contains a shell variable that needs expansion then it should stay.  I don\u0027t think that is the case at the moment but I think keeping it this way might make it more future-proof.",
+      "parentUuid": "3a197b85_a2192825",
       "range": {
         "startLine": 177,
         "startChar": 29,
@@ -47,6 +88,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f36077c2_74494e71",
+        "filename": "reclient_helper.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2023-10-24T15:54:07Z",
+      "side": 1,
+      "message": "I\u0027m not 100% certain if it is possible for rm -rf to produce output to stderr or stdout, but I think having these two extra lines shows to the reader that output is not expected nor wanted.  As such, I think leaving them for that purpose is fine.",
+      "parentUuid": "06a0e7a4_63f63b91",
+      "range": {
+        "startLine": 182,
+        "startChar": 29,
+        "endLine": 183,
+        "endChar": 54
+      },
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef62e5ff_ea4ff87b",
@@ -60,6 +125,24 @@
       "writtenOn": "2023-10-16T05:58:02Z",
       "side": 1,
       "message": "This is not necessary?",
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fbc75af_8cafd6ba",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2023-10-24T15:54:07Z",
+      "side": 1,
+      "message": "Having the environment be empty seems cleaner than not, I\u0027m inclined to leave this as-is.",
+      "parentUuid": "ef62e5ff_ea4ff87b",
       "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

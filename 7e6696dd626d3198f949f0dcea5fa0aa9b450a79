@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11c1f398_d9ed5e8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-10-24T14:34:29Z",
+      "side": 1,
+      "message": "fyi - we plan to drop the old experience soon.",
+      "revId": "7e6696dd626d3198f949f0dcea5fa0aa9b450a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

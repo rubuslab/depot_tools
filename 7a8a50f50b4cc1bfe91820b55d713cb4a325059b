@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1527e862_10f8f99e",
+        "filename": "reclient_helper.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-25T05:55:56Z",
+      "side": 1,
+      "message": "If we don\u0027t know why we need to use this *now*, I think not using this is always better.\nSee https://docs.python.org/3/library/subprocess.html#security-considerations",
+      "parentUuid": "6ca706ae_7ad92d42",
+      "range": {
+        "startLine": 177,
+        "startChar": 29,
+        "endLine": 177,
+        "endChar": 40
+      },
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "06a0e7a4_63f63b91",
         "filename": "reclient_helper.py",
         "patchSetId": 8
@@ -143,6 +167,24 @@
       "side": 1,
       "message": "Having the environment be empty seems cleaner than not, I\u0027m inclined to leave this as-is.",
       "parentUuid": "ef62e5ff_ea4ff87b",
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d387691a_ec45bd4a",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-25T05:55:56Z",
+      "side": 1,
+      "message": "I think that doesn\u0027t explain the necessity of this well as I think this test doesn\u0027t change behavior w/ or w/o this.\nAlso why not add this to every other test case then?",
+      "parentUuid": "1fbc75af_8cafd6ba",
       "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

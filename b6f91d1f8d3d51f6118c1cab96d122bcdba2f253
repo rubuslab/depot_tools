@@ -481,6 +481,24 @@
       "parentUuid": "8c10e6f1_6ca087d7",
       "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28b8936a_0a3f496d",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-25T05:55:56Z",
+      "side": 1,
+      "message": "I think test in the statement means each test function instead of entire test class.\nSee https://github.com/python/cpython/blob/8b44f3c54bb4f99445c108bc0240c458adae9c6f/Lib/unittest/mock.py#L1865-L1874",
+      "parentUuid": "41fc12b6_dec7517d",
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

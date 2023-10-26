@@ -89,6 +89,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8a043f8_c1e6f67e",
+        "filename": "reclient_helper.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-26T07:56:46Z",
+      "side": 1,
+      "message": "Made https://crrev.com/c/4975086.",
+      "parentUuid": "1527e862_10f8f99e",
+      "range": {
+        "startLine": 177,
+        "startChar": 29,
+        "endLine": 177,
+        "endChar": 40
+      },
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "06a0e7a4_63f63b91",
@@ -185,6 +209,24 @@
       "side": 1,
       "message": "I think that doesn\u0027t explain the necessity of this well as I think this test doesn\u0027t change behavior w/ or w/o this.\nAlso why not add this to every other test case then?",
       "parentUuid": "1fbc75af_8cafd6ba",
+      "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25011820_fb4a256c",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-26T07:56:46Z",
+      "side": 1,
+      "message": "Made https://crrev.com/c/4975086.",
+      "parentUuid": "d387691a_ec45bd4a",
       "revId": "7a8a50f50b4cc1bfe91820b55d713cb4a325059b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

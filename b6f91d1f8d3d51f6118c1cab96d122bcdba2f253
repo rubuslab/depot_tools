@@ -499,6 +499,24 @@
       "parentUuid": "41fc12b6_dec7517d",
       "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e2613d0_e23b8112",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-26T07:56:46Z",
+      "side": 1,
+      "message": "Made https://crrev.com/c/4975086.",
+      "parentUuid": "28b8936a_0a3f496d",
+      "revId": "b6f91d1f8d3d51f6118c1cab96d122bcdba2f253",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

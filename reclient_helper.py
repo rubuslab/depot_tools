@@ -174,7 +174,6 @@ def cleanup_logdir(log_dir):
             subprocess.Popen(["rmdir", "/s/q", log_dir],
                              stdout=subprocess.DEVNULL,
                              stderr=subprocess.DEVNULL,
-                             shell=True,
                              creationflags=subprocess.CREATE_NEW_PROCESS_GROUP))
     else:
         _test_only_cleanup_logdir_handles.append(

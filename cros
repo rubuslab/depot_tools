@@ -103,8 +103,50 @@ def _BootstrapVpython27():
                    check=True)
 
 
-def main():
+def _drop_root() -> None:
+    """If currently running ss root, drop back down.
+
+    But hold onto the root saved uid so we can switch back later.
+    """
+    if os.geteuid():
+        return
+
+    # NB: This assumes HOME was already initialized to the sudo user's home.
+    # See commandline.RunAsRootUser that handles this.
+    gid = int(os.environ.pop("SUDO_GID"))
+    uid = int(os.environ.pop("SUDO_UID"))
+    user = os.environ.pop("SUDO_USER")
+    os.initgroups(user, gid)
+    os.setresgid(gid, gid, -1)
+    os.setresuid(uid, uid, -1)
+    os.environ["USER"] = user
+
+
+def _gain_root(argv: List) -> None:
+    """Gain root via sudo if we don't have it yet.
+
+    If we don't have access to the current CrOS checkout as root, we need to
+    gain privs via depot_tools, and then switch back before handing off.
+    """
+    if os.getresuid()[2] == 0:
+        # Merge the outside PATH setting if we re-execed ourselves.
+        if "CHROMEOS_SUDO_PATH" in os.environ:
+            os.environ["PATH"] = "%s:%s" % (
+                os.environ.pop("CHROMEOS_SUDO_PATH"),
+                os.environ["PATH"],
+            )
+
+        return
+
+    # See chromite/scripts/cros_sdk.py for the PATH logic.
+    cmd = ["sudo", f"CHROMEOS_SUDO_PATH={os.environ.get('PATH', '')}"]
+    cmd += [sys.executable] + argv
+    os.execvp(cmd[0], cmd)
+
+
+def main(argv: List[str]) -> Optional[int]:
     _CheckPythonVersion()
+    _drop_root()
 
     result = _FindChromite(Path.cwd())
     target = os.path.basename(sys.argv[0])
@@ -116,6 +158,9 @@ def main():
     if is_citc:
         # citc workspaces don't like dirty files like pyc.
         os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
+
+        if target == "cros_sdk":
+            _gain_root([sys.argv[0]] + argv)
 
     path = chromite_dir / "bin" / target
 
@@ -135,8 +180,8 @@ def main():
     else:
         args = [path]
 
-    os.execv(path, args + sys.argv[1:])
+    os.execv(path, args + argv[1:])
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))

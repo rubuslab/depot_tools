@@ -34,6 +34,24 @@
       "parentUuid": "2620e472_c4ed2f5d",
       "revId": "34f7742bc7efee8b601ccf44b5fea6696822939d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c573391_e0a61074",
+        "filename": "cros",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-10-27T17:37:49Z",
+      "side": 1,
+      "message": "if you like it so much, you should put a CR+1 on it",
+      "parentUuid": "e6e9032a_3d7ceb1f",
+      "revId": "34f7742bc7efee8b601ccf44b5fea6696822939d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cafa3bd_f342b566",
+        "filename": "recipes/recipe_modules/gerrit/examples/full.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2023-10-27T18:21:54Z",
+      "side": 0,
+      "message": "🤔",
+      "revId": "0b210c1f6690e27054a1f593149e000c55c9389c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

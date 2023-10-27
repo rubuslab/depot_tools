@@ -16,6 +16,24 @@
       "message": "i\u0027m on the fence wrt exporting a var vs passing the CLI option.  the var will leak into children, but that\u0027s prob what we want at this point when chromite tools might fork+exec other chromite tools.",
       "revId": "34f7742bc7efee8b601ccf44b5fea6696822939d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6e9032a_3d7ceb1f",
+        "filename": "cros",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1355298
+      },
+      "writtenOn": "2023-10-27T17:35:42Z",
+      "side": 1,
+      "message": "I like the idea of the var leaking for that reason too.",
+      "parentUuid": "2620e472_c4ed2f5d",
+      "revId": "34f7742bc7efee8b601ccf44b5fea6696822939d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

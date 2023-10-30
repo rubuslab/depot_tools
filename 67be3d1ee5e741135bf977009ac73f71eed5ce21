@@ -16,6 +16,24 @@
       "message": "CQ is failing?",
       "revId": "67be3d1ee5e741135bf977009ac73f71eed5ce21",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b2f6fc1_1b5b25ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-10-30T08:47:19Z",
+      "side": 1,
+      "message": "fixed.",
+      "parentUuid": "f0178fa7_525c8045",
+      "revId": "67be3d1ee5e741135bf977009ac73f71eed5ce21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

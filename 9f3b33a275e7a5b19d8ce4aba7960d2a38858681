@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "730e3667_e5c45b62",
+        "filename": "reclient_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-10-30T07:40:00Z",
+      "side": 0,
+      "message": "Do you know why this was necessary before?",
+      "range": {
+        "startLine": 177,
+        "startChar": 29,
+        "endLine": 177,
+        "endChar": 39
+      },
+      "revId": "9f3b33a275e7a5b19d8ce4aba7960d2a38858681",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

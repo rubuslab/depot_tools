@@ -93,6 +93,30 @@
       },
       "revId": "9f3b33a275e7a5b19d8ce4aba7960d2a38858681",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18c62d6b_899b7c23",
+        "filename": "reclient_helper.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2023-10-30T15:19:05Z",
+      "side": 0,
+      "message": "I think Ben had a concern that it was going to be slow on Windows...\n\nI\u0027m ok to remove it, but we should keep an eye on things and be willing to re-add it if there is a performance impact with this being synchronous instead of asynchronous.",
+      "parentUuid": "ab59fdc7_1ccf942e",
+      "range": {
+        "startLine": 171,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 44
+      },
+      "revId": "9f3b33a275e7a5b19d8ce4aba7960d2a38858681",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

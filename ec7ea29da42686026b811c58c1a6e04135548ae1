@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc350261_e174da2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-10-30T09:10:50Z",
+      "side": 1,
+      "message": "Usually, there is only one directory to delete? In that case, I think the optimization isn\u0027t necessary.",
+      "range": {
+        "startLine": 12,
+        "startChar": 11,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "ec7ea29da42686026b811c58c1a6e04135548ae1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "005b9cc0_21fd3b57",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-10-30T09:10:50Z",
+      "side": 1,
+      "message": "The change looks good to me.\nBut, I will let Michael to decide as an owner of the code.",
+      "revId": "ec7ea29da42686026b811c58c1a6e04135548ae1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

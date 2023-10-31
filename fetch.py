@@ -149,7 +149,7 @@ class GclientGitCheckout(GclientCheckout, GitCheckout):
         self.run_git(
             'submodule',
             'foreach',
-            'git config -f $toplevel/.git/config submodule.$name.ignore all',
+            'git config -f $toplevel/.git/config submodule.$name.ignore dirty',
             cwd=wd)
         if not self.options.nohistory:
             self.run_git('config',

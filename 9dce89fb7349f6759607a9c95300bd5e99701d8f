@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d1f3bb7_3271240a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2023-10-31T17:20:15Z",
+      "side": 1,
+      "message": "we\u0027ll want to update the manifest pin too",
+      "revId": "9dce89fb7349f6759607a9c95300bd5e99701d8f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

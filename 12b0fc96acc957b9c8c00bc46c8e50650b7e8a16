@@ -39,6 +39,30 @@
       },
       "revId": "12b0fc96acc957b9c8c00bc46c8e50650b7e8a16",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7f2fc3d_77886ca5",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-10-31T20:25:30Z",
+      "side": 1,
+      "message": "Yep. Good point. Fix applied.",
+      "parentUuid": "6a32d319_ccd5e22f",
+      "range": {
+        "startLine": 30,
+        "startChar": 73,
+        "endLine": 30,
+        "endChar": 77
+      },
+      "revId": "12b0fc96acc957b9c8c00bc46c8e50650b7e8a16",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

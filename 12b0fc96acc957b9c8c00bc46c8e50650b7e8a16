@@ -16,6 +16,29 @@
       "message": "PTAL",
       "revId": "12b0fc96acc957b9c8c00bc46c8e50650b7e8a16",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a32d319_ccd5e22f",
+        "filename": "hooks/pre-commit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-10-31T17:20:33Z",
+      "side": 1,
+      "message": "```suggestion\n    diff \u003d git_common.run(\u0027diff-index\u0027, \u0027--cached\u0027, \u0027--ignore-submodules\u003ddirty\u0027,\n```\n\nignore-submodules\u003dall is fairly slow (since it needs to scan each repository to check for modified files). dirty only checks if commits differ.",
+      "range": {
+        "startLine": 30,
+        "startChar": 73,
+        "endLine": 30,
+        "endChar": 77
+      },
+      "revId": "12b0fc96acc957b9c8c00bc46c8e50650b7e8a16",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -34,6 +34,24 @@
       "parentUuid": "b5e99187_4e38a3c1",
       "revId": "00777b41d5586db1212514f19809791277e367e5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc3650f0_23c8757b",
+        "filename": "autosiso.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-11-01T09:02:37Z",
+      "side": 0,
+      "message": "not sure...\nthen, we don\u0027t need to have this print in ninja_reclient.py too?",
+      "parentUuid": "23311b20_ff6c48c4",
+      "revId": "00777b41d5586db1212514f19809791277e367e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

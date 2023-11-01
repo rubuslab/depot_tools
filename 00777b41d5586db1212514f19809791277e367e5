@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5e99187_4e38a3c1",
+        "filename": "autosiso.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-11-01T08:50:35Z",
+      "side": 0,
+      "message": "should this print in reclient_helper.build_context ?",
+      "revId": "00777b41d5586db1212514f19809791277e367e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

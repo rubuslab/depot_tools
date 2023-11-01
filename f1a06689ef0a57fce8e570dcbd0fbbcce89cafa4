@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90ab7e8a_fbadfb4c",
+        "filename": "fetch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-01T16:37:03Z",
+      "side": 1,
+      "message": "I suggest we just remove this line - we are not relying on submodule config today. Instead, we are putting configs directly into .git of individual repositories.",
+      "revId": "f1a06689ef0a57fce8e570dcbd0fbbcce89cafa4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

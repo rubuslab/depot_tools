@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30652068_05334192",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-11-01T19:48:36Z",
+      "side": 1,
+      "message": "Can you stamp again @sokcevic@chromium.org ?",
+      "revId": "ad7f7c8112abc63af025843ffb200ee3679a2cca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,29 @@
       "message": "ping?",
       "revId": "c8f457d1187d52537d544937ebe8b6e71fc13594",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b1c7a3e_902c4d7e",
+        "filename": "tests/ninja_reclient_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-11-01T01:22:08Z",
+      "side": 1,
+      "message": "Does this need `clear\u003dTrue`?",
+      "range": {
+        "startLine": 306,
+        "startChar": 63,
+        "endLine": 306,
+        "endChar": 64
+      },
+      "revId": "c8f457d1187d52537d544937ebe8b6e71fc13594",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

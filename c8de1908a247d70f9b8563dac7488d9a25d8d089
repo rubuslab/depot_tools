@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a01be706_7b841864",
+        "filename": "siso.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-11-01T08:38:54Z",
+      "side": 1,
+      "message": "I think we need to propagate other signals, too?\nOn Unix, SIGINT, SIGTERM.\nOn Windows, SIGINT.\n\nhttps://chromium.googlesource.com/infra/luci/luci-go/+/2be5d921710f/common/system/signals/signals_unix.go\nhttps://chromium.googlesource.com/infra/luci/luci-go/+/2be5d921710f/common/system/signals/signals_windows.go",
+      "range": {
+        "startLine": 19,
+        "startChar": 18,
+        "endLine": 19,
+        "endChar": 31
+      },
+      "revId": "c8de1908a247d70f9b8563dac7488d9a25d8d089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -52,6 +52,24 @@
       "parentUuid": "23311b20_ff6c48c4",
       "revId": "00777b41d5586db1212514f19809791277e367e5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54767013_564cfe2c",
+        "filename": "autosiso.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-11-01T09:06:26Z",
+      "side": 0,
+      "message": "Yeah, let\u0027s omit this print for now.",
+      "parentUuid": "bc3650f0_23c8757b",
+      "revId": "00777b41d5586db1212514f19809791277e367e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

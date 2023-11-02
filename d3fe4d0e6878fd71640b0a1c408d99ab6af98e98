@@ -16,6 +16,24 @@
       "message": "better to show it to stderr?",
       "revId": "d3fe4d0e6878fd71640b0a1c408d99ab6af98e98",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b87c4227_f2c4c751",
+        "filename": "autosiso",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-02T08:54:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "86d16842_e85597c5",
+      "revId": "d3fe4d0e6878fd71640b0a1c408d99ab6af98e98",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

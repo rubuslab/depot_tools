@@ -16,6 +16,40 @@
       "message": "It\u0027s probably better to submit this on Monday, and not on the evening before a long weekend in Tokyo, so I\u0027ll leave it until then :)",
       "revId": "8859f538c596a39df2fafa93204406f137599470",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47af0c2f_49826c14",
+        "filename": "autosiso",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-11-02T23:18:52Z",
+      "side": 1,
+      "message": "I\u0027d just san \"the \u0027use_siso\u0027 GN arg.\" - adding \"in your output folder\" just seems more confusing.",
+      "revId": "8859f538c596a39df2fafa93204406f137599470",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae96da77_34b08561",
+        "filename": "autosiso.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2023-11-02T23:18:52Z",
+      "side": 1,
+      "message": "Same comment as elsewhere.",
+      "revId": "8859f538c596a39df2fafa93204406f137599470",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

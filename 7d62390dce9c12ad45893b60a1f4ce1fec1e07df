@@ -50,6 +50,24 @@
       "message": "```\ndot_git_pattern \u003d re.compile(\u0027url(\\s?)\u003d(\\s?).*\\.git\u0027)\nif os.path.exists(options.output_gitmodules):\n  with open(options.output_gitmodules) as f:\n    strip_git_suffix \u003d not any(dot_git_pattern.match(l) for l in f)\n```\n\nNit: What do you think about using a regex?",
       "revId": "7d62390dce9c12ad45893b60a1f4ce1fec1e07df",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "864d0a44_b60fd1a0",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2887,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-11-07T03:17:07Z",
+      "side": 1,
+      "message": "Edit: The snippet should use `search` or have a pattern that covers that, and maybe a tighter URL pattern.",
+      "parentUuid": "df173965_4117c897",
+      "revId": "7d62390dce9c12ad45893b60a1f4ce1fec1e07df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

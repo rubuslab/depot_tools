@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a7b8d2f_1cfe8c32",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-11-07T03:08:31Z",
+      "side": 1,
+      "message": "LGTM otherwise.",
+      "revId": "7d62390dce9c12ad45893b60a1f4ce1fec1e07df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12b10a01_024f22a5",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2885,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-11-07T03:08:31Z",
+      "side": 1,
+      "message": "```suggestion\n        with open(options.output_gitmodules) as f:\n```\n\nNit: `r` is [default in python3](https://docs.python.org/3.0/library/functions.html#open).",
+      "revId": "7d62390dce9c12ad45893b60a1f4ce1fec1e07df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df173965_4117c897",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2887,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2023-11-07T03:08:31Z",
+      "side": 1,
+      "message": "```\ndot_git_pattern \u003d re.compile(\u0027url(\\s?)\u003d(\\s?).*\\.git\u0027)\nif os.path.exists(options.output_gitmodules):\n  with open(options.output_gitmodules) as f:\n    strip_git_suffix \u003d not any(dot_git_pattern.match(l) for l in f)\n```\n\nNit: What do you think about using a regex?",
+      "revId": "7d62390dce9c12ad45893b60a1f4ce1fec1e07df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

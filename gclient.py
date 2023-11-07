@@ -2874,6 +2874,21 @@ def CMDgitmodules(parser, args):
             prefix_length = len(delta_path.replace(os.path.sep, '/')) + 1
 
     cache_info = []
+
+    # Git submodules shouldn't use .git suffix since it's not well supported.
+    # However, we can't update .gitmodules files since there is no guarantee
+    # that user has the latest version of depot_tools, and also they are not on
+    # some old branch which contains already contains submodules with .git.
+    # This check makes the transition easier.
+    strip_git_suffix = True
+    if os.path.exists(options.output_gitmodules):
+        with open(options.output_gitmodules, 'r') as f:
+            for l in f:
+                l = l.strip()
+                if l.startswith('url') and l.endswith('.git'):
+                    strip_git_suffix = False
+                    break
+
     with open(options.output_gitmodules, 'w', newline='') as f:
         for path, dep in ls.get('deps').items():
             if path in options.skip_dep:
@@ -2888,6 +2903,11 @@ def CMDgitmodules(parser, args):
                 continue
             if prefix_length:
                 path = path[prefix_length:]
+
+            if strip_git_suffix:
+                if url.endswith('.git'):
+                    url = url[:-4]  # strip .git
+                url = url.rstrip('/')  # remove trailing slash for consistency
 
             cache_info += ['--cacheinfo', f'160000,{commit},{path}']
             f.write(f'[submodule "{path}"]\n\tpath = {path}\n\turl = {url}\n')

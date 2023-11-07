@@ -16,6 +16,24 @@
       "message": "```suggestion\n        dot_git_pattern \u003d re.compile(\u0027(\\s*)url(\\s*)\u003d.*\\.git\u0027)\n```\n\nNit: `re.match` already searches from the [beginning of the string](https://docs.python.org/3.2/library/re.html#search-vs-match). Also, having `$` makes it too restrictive that it doesn\u0027t allow trailing spaces, i.e., `dot_git_pattern.match(\"url \u003d foo.git \") \u003d\u003d None`.",
       "revId": "ac08c53f378922aef654f5fc9e80c2a5437b8ef7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3ed826b_1653ea56",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2885,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-07T19:55:11Z",
+      "side": 1,
+      "message": "Thanks. Given that we only need this temporarily, I\u0027m okay keeping it as is since it covers the cases we care about.",
+      "parentUuid": "a24f046b_cc3cf92b",
+      "revId": "ac08c53f378922aef654f5fc9e80c2a5437b8ef7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

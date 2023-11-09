@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18cc8fe1_002a6973",
+        "filename": "autosiso",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-09T10:43:35Z",
+      "side": 1,
+      "message": "Thank you, that\u0027s indeed much better. Done.",
+      "parentUuid": "47af0c2f_49826c14",
+      "revId": "8859f538c596a39df2fafa93204406f137599470",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae96da77_34b08561",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-11-02T23:18:52Z",
       "side": 1,
       "message": "Same comment as elsewhere.",
+      "revId": "8859f538c596a39df2fafa93204406f137599470",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fa73b55_64aab4af",
+        "filename": "autosiso.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-09T10:43:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae96da77_34b08561",
       "revId": "8859f538c596a39df2fafa93204406f137599470",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

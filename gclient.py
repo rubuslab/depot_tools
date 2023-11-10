@@ -1562,6 +1562,16 @@ def _detect_host_os():
 
 
 class GitDependency(Dependency):
+    _is_env_cog = None
+
+    @staticmethod
+    def _IsCog():
+        """Returns true if the env is cog"""
+        if not GitWrapper._is_env_cog:
+            GitWrapper._is_env_cog = os.getcwd().startswith('/google/cog/cloud')
+
+        return GitWrapper._is_env_cog
+
     """A Dependency object that represents a single git checkout."""
     @staticmethod
     def updateProtocol(url, protocol):
@@ -1581,6 +1591,9 @@ class GitDependency(Dependency):
     #override
     def CreateSCM(self, out_cb=None):
         """Create a Wrapper instance suitable for handling this git dependency."""
+        if self._IsCog():
+            return gclient_scm.CogWrapper()
+
         return gclient_scm.GitWrapper(self.url,
                                       self.root.root_dir,
                                       self.name,

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85944710_13ca4dfd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2023-11-10T09:29:21Z",
+      "side": 1,
+      "message": "having a file `HEAD` crashes the scripts.\n\nsome git commands work by using `--` but not all (submodule diff)\n\nusing `HEAD@{0}` is the appropriate alternative.",
+      "revId": "368511f7e1fac63e779309f24d3e6c5ca5b190ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

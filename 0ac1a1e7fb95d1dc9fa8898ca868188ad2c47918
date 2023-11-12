@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ad91b0d_02c7ac48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-12T23:54:00Z",
+      "side": 1,
+      "message": "Hi Josip,\n\nI\u0027m working on making it possible to build Chromium inside a CoG workspace. While CoG automatically ensures that all Git submodules are already present and consistent, I still need to run `gclient sync` to install CIPD packages and run the hooks.\n\nI noticed that you *just* removed CoG detection in crrev.com/c/5014581 :D So I guess we should talk to coordinate about this anyway, but in the meantime, if this would be acceptable for you, or you have any other suggestion how to do this, it would help me get my prototype working a lot.\n\nThanks,\nPhilipp",
+      "revId": "0ac1a1e7fb95d1dc9fa8898ca868188ad2c47918",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

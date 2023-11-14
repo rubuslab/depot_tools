@@ -16,6 +16,24 @@
       "message": "no such issue. Typo?",
       "revId": "c2f83647aae7c2377cf4ee4c8662a1d189c17a1a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "982fa150_d1a356e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-14T23:15:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea190d41_f34040a1",
+      "revId": "c2f83647aae7c2377cf4ee4c8662a1d189c17a1a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

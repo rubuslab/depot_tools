@@ -22,6 +22,30 @@
       },
       "revId": "fd093f908d3950889dd22cb767bafadb66e03c06",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d948532d_1604bd2d",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-11-14T21:49:05Z",
+      "side": 1,
+      "message": "Or,\n```\n\u003e\u003e\u003e \"2.43.0\".split() \u003c \"2.8.0\".split()\nTrue\n\u003e\u003e\u003e\n\n```",
+      "parentUuid": "6af1d297_22d971bc",
+      "range": {
+        "startLine": 502,
+        "startChar": 8,
+        "endLine": 502,
+        "endChar": 77
+      },
+      "revId": "fd093f908d3950889dd22cb767bafadb66e03c06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

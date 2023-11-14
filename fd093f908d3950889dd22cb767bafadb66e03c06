@@ -46,6 +46,30 @@
       },
       "revId": "fd093f908d3950889dd22cb767bafadb66e03c06",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6114bcb9_cc4faada",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-14T22:36:45Z",
+      "side": 1,
+      "message": "Yeah, this is not sufficient. I\u0027ll increase the test coverage and see if we can use something out of shelf",
+      "parentUuid": "d948532d_1604bd2d",
+      "range": {
+        "startLine": 502,
+        "startChar": 8,
+        "endLine": 502,
+        "endChar": 77
+      },
+      "revId": "fd093f908d3950889dd22cb767bafadb66e03c06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

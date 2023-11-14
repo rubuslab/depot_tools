@@ -3,7 +3,6 @@
 # found in the LICENSE file.
 """SCM-specific utility classes."""
 
-import distutils.version
 import glob
 import io
 import os
@@ -495,8 +494,10 @@ class GIT(object):
         """Asserts git's version is at least min_version."""
         if cls.current_version is None:
             current_version = cls.Capture(['--version'], '.')
-            matched = re.search(r'git version (.+)', current_version)
-            cls.current_version = distutils.version.LooseVersion(
-                matched.group(1))
-        min_version = distutils.version.LooseVersion(min_version)
+            matched = re.search(r'git version (\d+)\.(\d+)\.(\d+)',
+                                current_version)
+            cls.current_version = matched.groups()
+        m = re.search(r'(\d+)\.(\d+)\.(\d+)', min_version)
+        assert m, 'Invalid min_version provided, expected fromat: X.Y.Z'
+        min_version = m.groups()
         return (min_version <= cls.current_version, cls.current_version)

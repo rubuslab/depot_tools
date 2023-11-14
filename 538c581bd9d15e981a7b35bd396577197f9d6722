@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e60a5eff_ddaf575d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-14T23:00:26Z",
+      "side": 1,
+      "message": "1.6.6 is the only asserted check, and it\u0027s over 12 years old. We have submodules that require at least 1.7. So, I don\u0027t think there\u0027s any value of having this check.",
+      "revId": "538c581bd9d15e981a7b35bd396577197f9d6722",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

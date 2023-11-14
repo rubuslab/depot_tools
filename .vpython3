@@ -1,4 +1,4 @@
-python_version: "3.8"
+python_version: "3.11"
 
 # The default set of platforms vpython checks for does not yet include mac-arm64.
 # Setting `verify_pep425_tag` to the list of platforms we explicitly must support

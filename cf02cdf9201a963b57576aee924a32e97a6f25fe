@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fc58eb3_ce92906a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1103379
+      },
+      "writtenOn": "2023-11-14T23:08:33Z",
+      "side": 1,
+      "message": "Yay! We may want to get back some feature testing later, but it wouldn\u0027t have to use `git version` should we need that - it\u0027s better to have a blank slate and to use whatever feature testing approach seems appropriate when the time comes (version string, grepping `-h` output, trying a command that uses a new feature and seeing what happens, etc).",
+      "revId": "cf02cdf9201a963b57576aee924a32e97a6f25fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

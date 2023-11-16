@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc3ffa5a_da91368c",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2023-11-16T06:51:00Z",
+      "side": 1,
+      "message": "I think siso can use offline mode for this case?",
+      "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

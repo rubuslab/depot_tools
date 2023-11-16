@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc3b76ab_81a5a44f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-16T01:10:11Z",
+      "side": 1,
+      "message": "Nice!! I just tried this change in a Cog workspace, and am happy to report that `gclient sync` now \"just works\", and my `--experiment\u003dskip-git` seems to be no longer required. That\u0027s amazing. :)",
+      "revId": "8fb358e5b6a1ac33e0bf75c3ad2d71785d9ef581",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

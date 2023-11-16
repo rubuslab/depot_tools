@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed737b90_f0014e46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-16T07:00:08Z",
+      "side": 1,
+      "message": "Thank you so much, this is a great improvement to prevent people from accidentally using the wrong account!\n\nCould you please test that this code works correctly both when using `gcloud auth login` as well as when using `gcloud auth application-default login`?\n\nIs there anything we need to do for luci-auth as well?",
+      "revId": "22cf19d146d08669997dc4bb8cde2fbb8df9cc05",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

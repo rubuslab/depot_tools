@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "22d9a6ca_c3eaa9bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-16T06:58:09Z",
+      "side": 1,
+      "message": "I added a suggested edit for the error message, because I think some people log in with `gcloud auth login` and others use `gcloud auth application-default login`.",
+      "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc3ffa5a_da91368c",
@@ -32,6 +49,29 @@
       "side": 1,
       "message": "I think it\u0027s probably better to fail hard and visibly, because the user expects the build to be using remote execution. And it should also be easy to fix (just gcloud auth logout and gcloud auth login with the correct account). WDYT?",
       "parentUuid": "dc3ffa5a_da91368c",
+      "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd4933e8_20606ccc",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-16T06:58:09Z",
+      "side": 1,
+      "message": "```suggestion\n                \"You shouldn\u0027t use a non-@google.com account on a corp machine.\\n\"\n                \"Please login to `gcloud auth` with your @google.com account\\n\"\n                \"instead.\\n\",\n                file\u003dsys.stderr,\n```",
+      "range": {
+        "startLine": 259,
+        "startChar": 0,
+        "endLine": 262,
+        "endChar": 0
+      },
       "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8ec6f04_e11f59f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-16T07:56:42Z",
+      "side": 1,
+      "message": "OK, but currently reclient can also use the credentials from `gcloud auth login`, so it is possible that Googlers are logged into their @chromium.org account there and this check will not catch it.\n\nI think we can disable this feature via an environment variable, though, so that it only uses gcert or gcloud ADC.",
+      "parentUuid": "4375f2e8_43c985e0",
+      "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc3ffa5a_da91368c",
@@ -85,6 +103,24 @@
       "side": 1,
       "message": "\u003e I think siso can use offline mode for this case?\n\nEven for offline mode case, I think googler shouldn\u0027t authenticate with non-Google account on corp machine.\n\n\u003e And it should also be easy to fix (just gcloud auth logout and gcloud auth login with the correct account). WDYT?\n\nThis instruction is already easy enough to follow?",
       "parentUuid": "a8717a70_6764d58a",
+      "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e94bbb58_0da63032",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-16T07:56:42Z",
+      "side": 1,
+      "message": "@tikuta@chromium.org Yes, I was basically just agreeing with / supporting you in my comment - the current behavior is fine for me. :)",
+      "parentUuid": "2d351a8d_daeebcd3",
       "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

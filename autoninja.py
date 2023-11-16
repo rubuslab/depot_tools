@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env vpython3
 # Copyright (c) 2017 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -21,6 +21,10 @@ import re
 import shlex
 import subprocess
 import sys
+import warnings
+
+import google.auth
+from google.auth.transport.requests import AuthorizedSession
 
 import autosiso
 import ninja
@@ -41,6 +45,46 @@ SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 # [2] https://web.archive.org/web/20150815000000*/https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/set.mspx # noqa
 _UNSAFE_FOR_CMD = set("^<>&|()%")
 _ALL_META_CHARS = _UNSAFE_FOR_CMD.union(set('"'))
+
+
+def _account():
+    """Returns account used to authenticate with GCP."""
+
+    try:
+        # Suppress warnings from google.auth.default.
+        # https://github.com/googleapis/google-auth-library-python/issues/271
+        warnings.filterwarnings(
+            "ignore",
+            "Your application has authenticated using end user credentials from"
+            " Google Cloud SDK without a quota project.",
+        )
+        credentials, _ = google.auth.default()
+    except google.auth.exceptions.DefaultCredentialsError:
+        # Application Default Crendetials is not configured.
+        return None
+    finally:
+        warnings.resetwarnings()
+
+    authed_session = AuthorizedSession(credentials)
+    response = authed_session.get(
+        "https://www.googleapis.com/oauth2/v1/userinfo")
+    return response.json().get("email")
+
+
+def _is_corp():
+    """This assumes that corp machine has gcert binary in known location."""
+    return (os.path.isfile("C:\\gnubby\\bin\\gcert.exe")
+            or os.path.isfile("/usr/bin/gcert")
+            or os.path.isfile("/usr/local/bin/gcert"))
+
+
+def _is_corp_machine_using_external_account():
+    if not _is_corp():
+        return False
+    account = _account()
+    if not account:
+        return False
+    return not account.endswith("@google.com")
 
 
 def _quote_for_cmd(arg):
@@ -208,6 +252,16 @@ def main(args):
                         if re.match(r"^\s*command\s*=\s*\S+gomacc", line):
                             use_goma = True
                             break
+
+    if use_remoteexec or use_siso:
+        if _is_corp_machine_using_external_account():
+            print(
+                "You shouldn't use non-google account in corp machine.\n"
+                "Use @google.com instead via `gcloud auth application-default "
+                "login`.\n",
+                file=sys.stderr,
+            )
+            return 1
 
     # Strip -o/--offline so ninja doesn't see them.
     input_args = [arg for arg in input_args if arg not in ("-o", "--offline")]

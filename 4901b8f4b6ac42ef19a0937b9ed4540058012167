@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4375f2e8_43c985e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-16T07:51:33Z",
+      "side": 1,
+      "message": "Per http://cl/582913592, I think `gcloud auth application-default login` is correct way to authenticate for siso/reclient.",
+      "parentUuid": "22d9a6ca_c3eaa9bb",
+      "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc3ffa5a_da91368c",
@@ -55,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2d351a8d_daeebcd3",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-16T07:51:33Z",
+      "side": 1,
+      "message": "\u003e I think siso can use offline mode for this case?\n\nEven for offline mode case, I think googler shouldn\u0027t authenticate with non-Google account on corp machine.\n\n\u003e And it should also be easy to fix (just gcloud auth logout and gcloud auth login with the correct account). WDYT?\n\nThis instruction is already easy enough to follow?",
+      "parentUuid": "a8717a70_6764d58a",
+      "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dd4933e8_20606ccc",
         "filename": "autoninja.py",
         "patchSetId": 4
@@ -66,6 +102,30 @@
       "writtenOn": "2023-11-16T06:58:09Z",
       "side": 1,
       "message": "```suggestion\n                \"You shouldn\u0027t use a non-@google.com account on a corp machine.\\n\"\n                \"Please login to `gcloud auth` with your @google.com account\\n\"\n                \"instead.\\n\",\n                file\u003dsys.stderr,\n```",
+      "range": {
+        "startLine": 259,
+        "startChar": 0,
+        "endLine": 262,
+        "endChar": 0
+      },
+      "revId": "4901b8f4b6ac42ef19a0937b9ed4540058012167",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62c349b3_ee487269",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-16T07:51:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd4933e8_20606ccc",
       "range": {
         "startLine": 259,
         "startChar": 0,

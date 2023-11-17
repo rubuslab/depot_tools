@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e3e8154_2a231f1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-17T04:19:18Z",
+      "side": 1,
+      "message": "I added support for `gcloud auth`, ptal again.",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

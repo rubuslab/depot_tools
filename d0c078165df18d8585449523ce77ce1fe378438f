@@ -88,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37385e72_d992afdc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-17T19:05:57Z",
+      "side": 1,
+      "message": "drive-by review. The output is a bit confusing, but actual failure is:\n\n```\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nFAIL: test_ninja_reclient_clears_log_dir (__main__.NinjaReclientTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/b/s/w/ir/cache/vpython/store/cpython-n8umfpv0s1ufm2q1s4irhb59jc/contents/lib/python3.8/unittest/mock.py\", line 1325, in patched\n    return func(*newargs, **newkeywargs)\n  File \"depot_tools/tests/ninja_reclient_test.py\", line 328, in test_ninja_reclient_clears_log_dir\n    self.assertCountEqual(os.listdir(log_dir), want_remaining_dirs)\nAssertionError: Element counts were not equal:\nFirst has 1, Second has 0:  \u002720170316T200041.000000_SOME_RANDOM_ID_1\u0027\nFirst has 1, Second has 0:  \u002720170316T200040.000000_SOME_RANDOM_ID_0\u0027\n```\n\nIt\u0027s relevant to your change in reclient_helper.py",
+      "parentUuid": "bbc672a7_70014772",
+      "revId": "d0c078165df18d8585449523ce77ce1fe378438f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d67b20ae_b75a5e8d",

@@ -106,6 +106,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8db4826d_645f54e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2023-11-17T19:24:37Z",
+      "side": 1,
+      "message": "The CL I posted in the previous comment has the fix for both the code and the test itself.  Once that CL is reviewed and submitted, this one will be abandoned.",
+      "parentUuid": "37385e72_d992afdc",
+      "revId": "d0c078165df18d8585449523ce77ce1fe378438f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d67b20ae_b75a5e8d",

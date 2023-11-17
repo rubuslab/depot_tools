@@ -35,6 +35,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b95c919_9b728dac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2023-11-17T12:21:34Z",
+      "side": 1,
+      "message": "Can someone help with the CQ failure? They appear to be unrelated to my changes:\n\n    test_ninja_reclient_bins_not_found (__main__.NinjaReclientTest) ... Build is configured to use reclient but necessary binaries or config files can\u0027t be found.\n    Please check if `\"download_remoteexec_cfg\": True` custom var is set in `.gclient`, and run `gclient sync`.\n    ok",
+      "revId": "d0c078165df18d8585449523ce77ce1fe378438f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d67b20ae_b75a5e8d",

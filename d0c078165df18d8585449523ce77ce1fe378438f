@@ -70,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbc672a7_70014772",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2023-11-17T18:39:13Z",
+      "side": 1,
+      "message": "I\u0027ve got https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5038467, which is based on this CL but has an update to the unit test which should address the problem.  Waiting on a dry run to finish before putting up for review.",
+      "parentUuid": "3ab821e1_3e4d050f",
+      "revId": "d0c078165df18d8585449523ce77ce1fe378438f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d67b20ae_b75a5e8d",

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env vpython3
 # Copyright (c) 2022 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -151,6 +151,30 @@ class AutoninjaTest(trial_dir.TestCase):
             args = autosiso_main.call_args.args[0]
         self.assertIn('-C', args)
         self.assertEqual(args[args.index('-C') + 1], out_dir)
+
+    def test_is_corp_machine_using_external_account(self):
+        with mock.patch('autoninja._is_corp_machine', return_value=False):
+            self.assertFalse(
+                autoninja._is_corp_machine_using_external_account())
+
+        with mock.patch('autoninja._is_corp_machine', return_value=True):
+
+            with mock.patch('autoninja._adc_account',
+                            return_value='foo@chromium.org'):
+                self.assertTrue(
+                    autoninja._is_corp_machine_using_external_account())
+
+            with mock.patch('autoninja._adc_account',
+                            return_value='foo@google.com'):
+                with mock.patch('autoninja._gcloud_auth_account',
+                                return_value='foo@google.com'):
+                    self.assertFalse(
+                        autoninja._is_corp_machine_using_external_account())
+
+                with mock.patch('autoninja._gcloud_auth_account',
+                                return_value='foo@chromium.org'):
+                    self.assertTrue(
+                        autoninja._is_corp_machine_using_external_account())
 
     def test_gn_lines(self):
         out_dir = os.path.join('out', 'dir')

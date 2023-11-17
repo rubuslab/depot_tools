@@ -162,10 +162,6 @@ assert len(_KNOWN_GERRIT_TO_SHORT_URLS) == len(
 # at once. Picked arbitrarily.
 _MAX_STACKED_BRANCHES_UPLOAD = 20
 
-# Environment variable to indicate if user is participating in the stcked
-# changes dogfood.
-DOGFOOD_STACKED_CHANGES_VAR = 'DOGFOOD_STACKED_CHANGES'
-
 
 class GitPushError(Exception):
     pass
@@ -3042,70 +3038,27 @@ class Changelist(object):
 
     def _CMDUploadChange(self, options, git_diff_args, custom_cl_base,
                          change_desc, branch):
-        """Upload the current branch to Gerrit."""
-        if options.squash:
-            Changelist._GerritCommitMsgHookCheck(
-                offer_removal=not options.force)
-            external_parent = None
-            if self.GetIssue():
-                # User requested to change description
-                if options.edit_description:
-                    change_desc.prompt()
-                change_detail = self._GetChangeDetail(['CURRENT_REVISION'])
-                change_id = change_detail['change_id']
-                change_desc.ensure_change_id(change_id)
-
-                # Check if changes outside of this workspace have been uploaded.
-                current_rev = change_detail['current_revision']
-                last_uploaded_rev = self._GitGetBranchConfigValue(
-                    GERRIT_SQUASH_HASH_CONFIG_KEY)
-                if last_uploaded_rev and current_rev != last_uploaded_rev:
-                    external_parent = self._UpdateWithExternalChanges()
-            else:  # if not self.GetIssue()
-                if not options.force and not options.message_file:
-                    change_desc.prompt()
-                change_ids = git_footers.get_footer_change_id(
-                    change_desc.description)
-                if len(change_ids) == 1:
-                    change_id = change_ids[0]
-                else:
-                    change_id = GenerateGerritChangeId(change_desc.description)
-                    change_desc.ensure_change_id(change_id)
-
-            if options.preserve_tryjobs:
-                change_desc.set_preserve_tryjobs()
-
-            remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
-            parent = external_parent or self._ComputeParent(
-                remote, upstream_branch, custom_cl_base, options.force,
-                change_desc)
-            tree = RunGit(['rev-parse', 'HEAD:']).strip()
-            with gclient_utils.temporary_file() as desc_tempfile:
-                gclient_utils.FileWrite(desc_tempfile, change_desc.description)
-                ref_to_push = RunGit(
-                    ['commit-tree', tree, '-p', parent, '-F',
-                     desc_tempfile]).strip()
-        else:  # if not options.squash
-            if options.no_add_changeid:
-                pass
-            else:  # adding Change-Ids is okay.
-                if not git_footers.get_footer_change_id(
-                        change_desc.description):
-                    DownloadGerritHook(False)
-                    change_desc.set_description(
-                        self._AddChangeIdToCommitMessage(
-                            change_desc.description, git_diff_args))
-            ref_to_push = 'HEAD'
-            # For no-squash mode, we assume the remote called "origin" is the
-            # one we want. It is not worthwhile to support different workflows
-            # for no-squash mode.
-            parent = 'origin/%s' % branch
-            # attempt to extract the changeid from the current description
-            # fail informatively if not possible.
-            change_id_candidates = git_footers.get_footer_change_id(
-                change_desc.description)
-            if not change_id_candidates:
-                DieWithError("Unable to extract change-id from message.")
+        """Upload the branch's commits to Gerrit (non-squash mode only)."""
+        if options.no_add_changeid:
+            pass
+        else:  # adding Change-Ids is okay.
+            if not git_footers.get_footer_change_id(
+                    change_desc.description):
+                DownloadGerritHook(False)
+                change_desc.set_description(
+                    self._AddChangeIdToCommitMessage(
+                        change_desc.description, git_diff_args))
+        ref_to_push = 'HEAD'
+        # For no-squash mode, we assume the remote called "origin" is the
+        # one we want. It is not worthwhile to support different workflows
+        # for no-squash mode.
+        parent = 'origin/%s' % branch
+        # attempt to extract the changeid from the current description
+        # fail informatively if not possible.
+        change_id_candidates = git_footers.get_footer_change_id(
+            change_desc.description)
+        if not change_id_candidates:
+            DieWithError("Unable to extract change-id from message.")
             change_id = change_id_candidates[0]
 
         SaveDescriptionBackup(change_desc)
@@ -3193,22 +3146,6 @@ class Changelist(object):
         push_stdout = self._RunGitPushWithTraces(refspec, refspec_opts,
                                                  git_push_metadata,
                                                  options.push_options)
-
-        if options.squash:
-            regex = re.compile(r'remote:\s+https?://[\w\-\.\+\/#]*/(\d+)\s.*')
-            change_numbers = [
-                m.group(1) for m in map(regex.match, push_stdout.splitlines())
-                if m
-            ]
-            if len(change_numbers) != 1:
-                DieWithError((
-                    'Created|Updated %d issues on Gerrit, but only 1 expected.\n'
-                    'Change-Id: %s') % (len(change_numbers), change_id),
-                             change_desc)
-            self.SetIssue(change_numbers[0])
-            self.SetPatchset(latest_ps + 1)
-            self._GitSetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY,
-                                          ref_to_push)
 
         if self.GetIssue() and (reviewers or cc):
             # GetIssue() is not set in case of non-squash uploads according to
@@ -5061,34 +4998,10 @@ def CMDupload(parser, args):
         print('No previous patchsets, so --retry-failed has no effect.')
         options.retry_failed = False
 
-    disable_dogfood_stacked_changes = os.environ.get(
-        DOGFOOD_STACKED_CHANGES_VAR) == '0'
-    dogfood_stacked_changes = os.environ.get(DOGFOOD_STACKED_CHANGES_VAR) == '1'
-
-    # Only print message for folks who don't have DOGFOOD_STACKED_CHANGES set
-    # to an expected value.
-    if (options.squash and not dogfood_stacked_changes
-            and not disable_dogfood_stacked_changes):
-        print(
-            'This repo has been enrolled in the stacked changes dogfood.\n'
-            '`git cl upload` now uploads the current branch and all upstream '
-            'branches that have un-uploaded updates.\n'
-            'Patches can now be reapplied with --force:\n'
-            '`git cl patch --reapply --force`.\n'
-            'Googlers may visit http://go/stacked-changes-dogfood for more information.\n'
-            '\n'
-            'Depot Tools no longer sets new uploads to "WIP". Please update the\n'
-            '"Set new changes to "work in progress" by default" checkbox at\n'
-            'https://%s/settings/\n'
-            '\n'
-            'To opt-out use `export DOGFOOD_STACKED_CHANGES=0`.\n'
-            'To hide this message use `export DOGFOOD_STACKED_CHANGES=1`.\n'
-            'File bugs at https://bit.ly/3Y6opoI\n' % cl.GetGerritHost())
-
-    if options.squash and not disable_dogfood_stacked_changes:
+    if options.squash:
         if options.dependencies:
             parser.error(
-                '--dependencies is not available for this dogfood workflow.')
+                '--dependencies is no longer available for this workflow.')
 
         if options.cherry_pick_stacked:
             try:

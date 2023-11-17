@@ -1458,21 +1458,6 @@ class TestGitCl(unittest.TestCase):
                                      issue=123456,
                                      change_id='123456789')
 
-    @mock.patch('sys.stderr', StringIO())
-    def test_gerrit_upload_squash_reupload_to_abandoned(self):
-        self.skipTest("flaky test - depends on DOGFOOD_STACKED_CHANGES=0")
-        description = 'desc ✔\nBUG=\n\nChange-Id: 123456789'
-        with self.assertRaises(SystemExitMock):
-            self._run_gerrit_upload_test(['--squash'],
-                                         description, [],
-                                         squash=True,
-                                         issue=123456,
-                                         fetched_status='ABANDONED',
-                                         change_id='123456789')
-        self.assertEqual(
-            'Change https://chromium-review.googlesource.com/123456 has been '
-            'abandoned, new uploads are not allowed\n', sys.stderr.getvalue())
-
     @mock.patch('gerrit_util.GetAccountDetails',
                 return_value={'email': 'yet-another@example.com'})
     def test_gerrit_upload_squash_reupload_to_not_owned(self, _mock):
@@ -1490,59 +1475,56 @@ class TestGitCl(unittest.TestCase):
             'Uploading may fail due to lack of permissions',
             sys.stdout.getvalue())
 
-    @mock.patch('sys.stderr', StringIO())
-    def test_gerrit_upload_for_merged(self):
-        self.skipTest("flaky test - depends on DOGFOOD_STACKED_CHANGES=0")
-        with self.assertRaises(SystemExitMock):
-            self._run_gerrit_upload_test(
-                [],
-                'desc ✔\n\nBUG=\n\nChange-Id: I123456789', [],
-                issue=123456,
-                fetched_status='MERGED',
-                change_id='I123456789',
-                reset_issue=False)
         self.assertEqual('New uploads are not allowed.\n',
                          sys.stderr.getvalue())
 
-    def test_gerrit_upload_new_issue_for_merged(self):
-        self.skipTest("flaky test - depends on DOGFOOD_STACKED_CHANGES=0")
-        self._run_gerrit_upload_test([],
-                                     'desc ✔\n\nBUG=\n\nChange-Id: I123456789',
-                                     [],
-                                     issue=123456,
-                                     fetched_status='MERGED',
-                                     change_id='I123456789',
-                                     reset_issue=True)
+    @mock.patch('git_cl.Changelist.GetGerritHost', return_value='chromium')
+    @mock.patch('git_cl.Changelist.GetIssue', return_value=123456)
+    @mock.patch('git_cl.Changelist.GetIssueURL', return_value='cl-url')
+    @mock.patch('gerrit_util.GetChangeDetail')
+    @mock.patch('gclient_utils.AskForData')
+    @mock.patch('git_cl.Changelist.SetIssue')
+    def test_offer_new_issue_for_merged(
+        self, mockSetIssue, mockAskForData, mockGetChangeDetail, *mock):
 
-    def test_upload_change_description_editor(self):
-        self.skipTest("flaky test - depends on DOGFOOD_STACKED_CHANGES=0")
-        fetched_description = 'foo\n\nChange-Id: 123456789'
-        description = 'bar\n\nChange-Id: 123456789'
-        self._run_gerrit_upload_test(['--squash', '--edit-description'],
-                                     description, [],
-                                     fetched_description=fetched_description,
-                                     squash=True,
-                                     issue=123456,
-                                     change_id='123456789',
-                                     edit_description=description)
+        branchref = 'refs/heads/chicken'
+        cl = git_cl.Changelist(branchref=branchref)
 
-    @mock.patch('git_cl.Changelist._UpdateWithExternalChanges',
-                return_value='newparent')
-    def test_upload_change_uses_external_base(self, *_mocks):
-        self.skipTest("flaky test - depends on DOGFOOD_STACKED_CHANGES=0")
-        squash_hash = 'branch.main.' + git_cl.GERRIT_SQUASH_HASH_CONFIG_KEY
-        self.mockGit.config[squash_hash] = 'beef2'
+        # Merged change
+        mockGetChangeDetail.return_value = {
+            'change_id': ('123456'),
+            'status': 'MERGED',
+        }
+        mockAskForData.side_effect = ['n', 'y']
 
-        self._run_gerrit_upload_test(
-            ['--squash'],
-            'desc ✔\n\nBUG=\n\nChange-Id: 123456789',
-            [],
-            squash=True,
-            issue=123456,
-            change_id='123456789',
-            ref_to_push='beef2',
-            external_parent='newparent',
-        )
+        with self.assertRaises(SystemExitMock):
+            cl.EnsureCanUploadPatchset(False)
+        mockAskForData.assert_called_once()
+        mockAskForData.reset_mock()
+
+        cl.EnsureCanUploadPatchset(False)
+        mockAskForData.assert_called_once()
+        mockSetIssue.assert_called_once()
+
+    @mock.patch('git_cl.Changelist.GetGerritHost', return_value='chromium')
+    @mock.patch('git_cl.Changelist.GetIssue', return_value=123456)
+    @mock.patch('git_cl.Changelist.GetIssueURL', return_value='cl-url')
+    @mock.patch('gerrit_util.GetChangeDetail')
+    @mock.patch('git_cl.Changelist.SetIssue')
+    def test_offer_new_issue_for_abandoned(
+        self, mockSetIssue, mockGetChangeDetail, *mock):
+
+        branchref = 'refs/heads/chicken'
+        cl = git_cl.Changelist(branchref=branchref)
+
+        # Merged change
+        mockGetChangeDetail.return_value = {
+            'change_id': ('123456'),
+            'status': 'ABANDONED',
+        }
+
+        with self.assertRaises(SystemExitMock):
+            cl.EnsureCanUploadPatchset(False)
 
     @mock.patch('git_cl.Changelist.GetGerritHost',
                 return_value='chromium-review.googlesource.com')

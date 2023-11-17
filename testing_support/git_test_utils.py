@@ -29,7 +29,7 @@ def git_hash_data(data, typ='blob'):
     return hashlib.sha1(b'blob %d\0%s' % (len(data), data)).hexdigest()
 
 
-class OrderedSet(collections.MutableSet):
+class OrderedSet(collections.abc.MutableSet):
     # from http://code.activestate.com/recipes/576694/
     def __init__(self, iterable=None):
         self.end = end = []

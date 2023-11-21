@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "cce08b0b_f0eb9b68",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-21T04:15:43Z",
+      "side": 1,
+      "message": "My concern is adding this level of dependency into autoninja and coupling it with reclient/siso. Would it be possible to move that information into those tools instead? e.g. I\u0027d expect that Siso would already information about user.",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "3e3e8154_2a231f1b",
@@ -14,6 +31,74 @@
       "writtenOn": "2023-11-17T04:19:18Z",
       "side": 1,
       "message": "I added support for `gcloud auth`, ptal again.",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87933196_5833117e",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-21T04:15:43Z",
+      "side": 1,
+      "message": "nit: vpython3 is significantly slower to start than python3. I suppose this is not a concern for autoninja command, but want to check if it is. \n\n```\nhyperfine -N \"vpython3 --version\" \"python3 --version\"\nBenchmark 1: vpython3 --version\n  Time (mean ± σ):     229.3 ms ±   9.0 ms    [User: 246.5 ms, System: 106.6 ms]\n  Range (min … max):   212.8 ms … 240.9 ms    12 runs\n \nBenchmark 2: python3 --version\n  Time (mean ± σ):       4.1 ms ±   0.1 ms    [User: 0.9 ms, System: 3.0 ms]\n  Range (min … max):     3.8 ms …   4.5 ms    706 runs\n \nSummary\n  python3 --version ran\n   56.10 ± 2.62 times faster than vpython3 --version\n```",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c67c695_1d74a43e",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-21T04:15:43Z",
+      "side": 1,
+      "message": "What if user doesn\u0027t have gcloud installed?",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "922414fa_30c57c96",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-21T04:15:43Z",
+      "side": 1,
+      "message": "This is very google specific. At least we should include `google` in name.\n```suggestion\ndef _is_google_corp_machine():\n```",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "370b3a0c_d2e3d7b2",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-21T04:15:43Z",
+      "side": 1,
+      "message": "can we use shutil.which(\u0027gcert\u0027) here? It will check for .exe on Win machine.",
       "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -36,6 +121,52 @@
         "startChar": 3,
         "endLine": 91,
         "endChar": 54
+      },
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45981ca4_c553a02a",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-21T04:15:43Z",
+      "side": 1,
+      "message": "same here, we should include `google` in name.",
+      "range": {
+        "startLine": 94,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 43
+      },
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aba2e388_288249f3",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-21T04:15:43Z",
+      "side": 1,
+      "message": "since we are returning early here, it should be `You can\u0027t use`\n```suggestion\n                \"You can\u0027t use a non-@google.com account (%s and/or %s) on\"\n```",
+      "range": {
+        "startLine": 275,
+        "startChar": 21,
+        "endLine": 275,
+        "endChar": 30
       },
       "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

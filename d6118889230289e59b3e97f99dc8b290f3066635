@@ -16,6 +16,29 @@
       "message": "I added support for `gcloud auth`, ptal again.",
       "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4a608e1_7d8a83fd",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-11-21T04:15:33Z",
+      "side": 1,
+      "message": "I guess there is no better way, detecting the corp machine, but it makes me feel hesitant to see he gcert binary paths hard-coded in depot_tools, which is an open source tool. Would you be able to answer b/309720176#comment3 first? If requests from non-googler-accounts are automatically sent to rbe-chromium-untrusted, then this may not be necessary?\n\n+sokcevic@google.com for a second opinion.",
+      "range": {
+        "startLine": 89,
+        "startChar": 3,
+        "endLine": 91,
+        "endChar": 54
+      },
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -29,6 +29,7 @@ import gclient_utils
 import metrics
 import metrics_utils
 import subprocess2
+import scm
 
 import http.cookiejar
 from io import StringIO
@@ -213,12 +214,12 @@ class CookiesAuthenticator(Authenticator):
     def get_gitcookies_path(cls):
         if os.getenv('GIT_COOKIES_PATH'):
             return os.getenv('GIT_COOKIES_PATH')
-        try:
-            path = subprocess2.check_output(
-                ['git', 'config', '--path', 'http.cookiefile'])
-            return path.decode('utf-8', 'ignore').strip()
-        except subprocess2.CalledProcessError:
+
+        path = scm.GIT.GetConfig(os.getcwd(), 'http.cookiefile')
+        if path is None:
             return os.path.expanduser(os.path.join('~', '.gitcookies'))
+
+        return path.decode('utf-8', 'ignore').strip()
 
     @classmethod
     def _get_gitcookies(cls):

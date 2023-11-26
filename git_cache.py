@@ -21,6 +21,7 @@ import gclient_utils
 import lockfile
 import metrics
 import subcommand
+import scm
 
 # Analogous to gc.autopacklimit git config.
 GC_AUTOPACKLIMIT = 50
@@ -189,13 +190,10 @@ class Mirror(object):
     def GetCachePath(cls):
         with cls.cachepath_lock:
             if not hasattr(cls, 'cachepath'):
-                try:
-                    cachepath = subprocess.check_output(
-                        [cls.git_exe, 'config'] + cls._GIT_CONFIG_LOCATION +
-                        ['cache.cachepath']).decode('utf-8', 'ignore').strip()
-                except subprocess.CalledProcessError:
-                    cachepath = os.environ.get('GIT_CACHE_PATH',
-                                               cls.UNSET_CACHEPATH)
+                cachepath = scm.GIT.GetConfig(os.getcwd(), 'cache.cachepath')
+                if cachepath is None:
+                        cachepath = os.environ.get('GIT_CACHE_PATH',
+                                                cls.UNSET_CACHEPATH)
                 setattr(cls, 'cachepath', cachepath)
 
             ret = getattr(cls, 'cachepath')
@@ -248,7 +246,7 @@ class Mirror(object):
     def config(self, reset_fetch_config=False):
         if reset_fetch_config:
             try:
-                self.RunGit(['config', '--unset-all', 'remote.origin.fetch'])
+                scm.GIT.SetConfig(os.getcwd(), 'remote.origin.fetch')
             except subprocess.CalledProcessError as e:
                 # If exit code was 5, it means we attempted to unset a config
                 # that didn't exist. Ignore it.
@@ -258,7 +256,8 @@ class Mirror(object):
         # Don't run git-gc in a daemon.  Bad things can happen if it gets
         # killed.
         try:
-            self.RunGit(['config', 'gc.autodetach', '0'])
+            scm.GIT.SetConfig(os.getcwd(), 'gc.autodetach', '0')
+            # This doesn't throw error. Needs to be fixed in actual impl.
         except subprocess.CalledProcessError:
             # Hard error, need to clobber.
             raise ClobberNeeded()
@@ -267,25 +266,16 @@ class Mirror(object):
         # repositories, and there's no way to track progress and make sure it's
         # not stuck.
         if self.supported_project():
-            self.RunGit(['config', 'gc.autopacklimit', '0'])
+            scm.GIT.SetConfig(os.getcwd(), 'gc.autopacklimit', '0')
 
         # Allocate more RAM for cache-ing delta chains, for better performance
         # of "Resolving deltas".
-        self.RunGit([
-            'config', 'core.deltaBaseCacheLimit',
-            gclient_utils.DefaultDeltaBaseCacheLimit()
-        ])
+        scm.GIT.SetConfig(os.getcwd(), 'core.deltaBaseCacheLimit', gclient_utils.DefaultDeltaBaseCacheLimit())
+        scm.GIT.SetConfig(os.getcwd(), 'remote.origin.url', self.url)
+        scm.GIT.SetConfig(os.getcwd(), 'remote.origin.fetch', '+refs/heads/*:refs/heads/*', r'\+refs/heads/\*:.*', all=True)
 
-        self.RunGit(['config', 'remote.origin.url', self.url])
-        self.RunGit([
-            'config', '--replace-all', 'remote.origin.fetch',
-            '+refs/heads/*:refs/heads/*', r'\+refs/heads/\*:.*'
-        ])
         for spec, value_regex in self.fetch_specs:
-            self.RunGit([
-                'config', '--replace-all', 'remote.origin.fetch', spec,
-                value_regex
-            ])
+            scm.GIT.SetConfig(os.getcwd(), 'remote.origin.fetch', spec, value_regex, all=True)
 
     def bootstrap_repo(self, directory):
         """Bootstrap the repo from Google Storage if possible.
@@ -374,12 +364,10 @@ class Mirror(object):
         if not self.exists():
             return
         try:
-            config_fetchspecs = subprocess.check_output(
-                [self.git_exe, 'config', '--get-all', 'remote.origin.fetch'],
-                cwd=self.mirror_path).decode('utf-8', 'ignore')
-            for fetchspec in config_fetchspecs.splitlines():
+            config_fetchspecs = scm.GIT.GetConfigList(self.mirror_path, 'remote.origin.fetch')
+            for fetchspec in config_fetchspecs:
                 self.fetch_specs.add(self.parse_fetch_spec(fetchspec))
-        except subprocess.CalledProcessError:
+        except Exception:
             logging.warning(
                 'Tried and failed to preserve remote.origin.fetch from the '
                 'existing cache directory.  You may need to manually edit '
@@ -496,14 +484,7 @@ class Mirror(object):
             fetch_cmd.append('--prune')
         fetch_cmd.append('origin')
 
-        fetch_specs = subprocess.check_output(
-            [
-                self.git_exe, '--git-dir',
-                os.path.abspath(self.mirror_path), 'config', '--get-all',
-                'remote.origin.fetch'
-            ],
-            cwd=self.mirror_path).decode('utf-8',
-                                         'ignore').strip().splitlines()
+        fetch_specs = scm.GIT.GetConfigList(self.mirror_path, 'remote.origin.fetch')
         for spec in fetch_specs:
             try:
                 self.print('Fetching %s' % spec)
@@ -816,9 +797,7 @@ def CMDfetch(parser, args):
             [Mirror.git_exe, 'rev-parse', '--abbrev-ref', 'HEAD'])
         current_branch = current_branch.decode('utf-8', 'ignore').strip()
         if current_branch != 'HEAD':
-            upstream = subprocess.check_output(
-                [Mirror.git_exe, 'config',
-                 'branch.%s.remote' % current_branch])
+            upstream = scm.GIT.GetConfig('branch.%s.remote' % current_branch)
             upstream = upstream.decode('utf-8', 'ignore').strip()
             if upstream and upstream != '.':
                 remotes = [upstream]
@@ -837,10 +816,7 @@ def CMDfetch(parser, args):
                         lock_timeout=options.timeout)
         return 0
     for remote in remotes:
-        remote_url = subprocess.check_output(
-            [Mirror.git_exe, 'config',
-             'remote.%s.url' % remote])
-        remote_url = remote_url.decode('utf-8', 'ignore').strip()
+        remote_url = scm.GIT.GetConfig('remote.%s.url' % remote)
         if remote_url.startswith(cachepath):
             mirror = Mirror.FromPath(remote_url)
             mirror.print = lambda *args: None

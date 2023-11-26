@@ -97,6 +97,31 @@ def only_int(val):
 class GIT(object):
     current_version = None
 
+    _CONFIG_CACHE = {}
+
+    @staticmethod
+    def _load_config(cwd):
+        cached = GIT._CONFIG_CACHE.get(cwd, None)
+        if cached is None:
+            cached = {}
+            try:
+                allConfig = GIT.Capture(['config', '--list'],
+                                        cwd=cwd,
+                                        strip_out=False)
+            except subprocess2.CalledProcessError:
+                return {}
+
+            for line in allConfig.splitlines():
+                key, value = line.strip().split('=', 1)
+                cached.setdefault(key, []).append(value)
+            GIT._CONFIG_CACHE[cwd] = cached
+
+        return cached
+
+    @staticmethod
+    def _clear_cache(cwd):
+        GIT._CONFIG_CACHE.pop(cwd, None)
+
     @staticmethod
     def ApplyEnvVars(kwargs):
         env = kwargs.pop('env', None) or os.environ.copy()
@@ -159,10 +184,32 @@ class GIT(object):
 
     @staticmethod
     def GetConfig(cwd, key, default=None):
-        try:
-            return GIT.Capture(['config', key], cwd=cwd)
-        except subprocess2.CalledProcessError:
+        values = GIT._load_config(cwd).get(key, None)
+        if not values:
             return default
+
+        return values[0]
+
+    @staticmethod
+    def GetAllConfig(cwd):
+        return GIT._load_config(cwd)
+
+    @staticmethod
+    def GetConfigBool(cwd, key):
+        return GIT.GetConfig(cwd, key) == 'true'
+
+    @staticmethod
+    def GetConfigList(cwd, key):
+        return GIT._load_config(cwd).get(key, [])
+
+    @staticmethod
+    def YieldConfigRegexp(cwd, pattern):
+        """Yields (key, value) pairs for any config keys matching `pattern`."""
+        p = re.compile(pattern)
+        for name, values in GIT._load_config(cwd).items():
+            if p.match(name):
+                for value in values:
+                    yield name, value
 
     @staticmethod
     def GetBranchConfig(cwd, branch, key, default=None):
@@ -171,11 +218,39 @@ class GIT(object):
         return GIT.GetConfig(cwd, key, default)
 
     @staticmethod
-    def SetConfig(cwd, key, value=None):
+    def SetConfig(cwd,
+                  key,
+                  value=None,
+                  *,
+                  value_pattern=None,
+                  all=False,
+                  scope='local'):
+        """Sets or unsets one or more config values.
+
+    Args:
+      * key - The specific config key to affect.
+      * value - The value to set. If this is None, `key` will be unset.
+      * value_pattern - For use with `all=True`, allows further filtering of the
+        set or unset operation based on the currently configured value. Ignored
+        for `all=False`.
+      * all - If True, this will change a set operation to `--replace-all`, and
+        will change an unset operation to `--unset-all`.
+      * scope - By default this is the local scope, but could be `system`,
+        `global`, or `worktree`, depending on which config scope you want to
+        affect.
+    """
+        GIT._clear_cache(cwd)
         if value is None:
-            args = ['config', '--unset', key]
+            args = [
+                'config', f'--{scope}', '--unset' + ('-all' if all else ''), key
+            ]
         else:
-            args = ['config', key, value]
+            args = ['config', f'--{scope}', key, value]
+            if all:
+                args.insert(2, '--replace-all')
+
+        if all and value_pattern:
+            args.append(value_pattern)
         GIT.Capture(args, cwd=cwd)
 
     @staticmethod

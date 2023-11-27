@@ -3534,6 +3534,8 @@ def CMDsync(parser, args):
             }
         with open(options.output_json, 'w') as f:
             json.dump({'solutions': slns}, f)
+
+    print("git config calls: {} | cache hits: {}".format(scm_git.GIT.calls, scm_git.GIT.cached_hits))
     return ret
 
 

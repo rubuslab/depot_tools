@@ -39,6 +39,7 @@ import tempfile
 import textwrap
 
 import subprocess2
+import scm
 
 from io import BytesIO
 
@@ -382,10 +383,7 @@ def branches(use_limit=True, *args):
 
 
 def get_config(option, default=None):
-    try:
-        return run('config', '--get', option) or default
-    except subprocess2.CalledProcessError:
-        return default
+    return scm.GIT.GetConfig(os.getcwd(), option, default)
 
 
 def get_config_int(option, default=0):
@@ -397,10 +395,7 @@ def get_config_int(option, default=0):
 
 
 def get_config_list(option):
-    try:
-        return run('config', '--get-all', option).split()
-    except subprocess2.CalledProcessError:
-        return []
+    return scm.GIT.GetConfigList(os.getcwd(), option)
 
 
 def get_config_regexp(pattern):
@@ -409,7 +404,8 @@ def get_config_regexp(pattern):
         # calls bash.exe (or something to that effect). Each layer divides the
         # number of ^'s by 2.
         pattern = pattern.replace('^', '^' * 8)
-    return run('config', '--get-regexp', pattern).splitlines()
+
+    return scm.GIT.YieldConfigRegexp(os.getcwd(), pattern)
 
 
 def is_fsmonitor_enabled():
@@ -452,10 +448,7 @@ def del_branch_config(branch, option, scope='local'):
 
 
 def del_config(option, scope='local'):
-    try:
-        run('config', '--' + scope, '--unset', option)
-    except subprocess2.CalledProcessError:
-        pass
+    scm.GIT.SetConfig(os.getcwd(), option, option)
 
 
 def diff(oldrev, newrev, *args):
@@ -891,7 +884,7 @@ def set_branch_config(branch, option, value, scope='local'):
 
 
 def set_config(option, value, scope='local'):
-    run('config', '--' + scope, option, value)
+    scm.GIT.SetConfig(os.getcwd(), option, value)
 
 
 def get_dirty_files():
@@ -1108,10 +1101,7 @@ def tree(treeref, recurse=False):
 
 
 def get_remote_url(remote='origin'):
-    try:
-        return run('config', 'remote.%s.url' % remote)
-    except subprocess2.CalledProcessError:
-        return None
+    return scm.GIT.GetConfig(os.getcwd(), 'remote.%s.url' % remote)
 
 
 def upstream(branch):

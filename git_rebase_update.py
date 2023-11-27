@@ -161,8 +161,20 @@ def rebase_branch(branch, parent, start_hash):
     if git.hash_one(parent) != start_hash:
         # Try a plain rebase first
         print('Rebasing:', branch)
-        rebase_ret = git.rebase(parent, start_hash, branch, abort=True)
+        consider_squashing = git.get_num_commits(branch) == 1
+        rebase_ret = git.rebase(parent, start_hash, branch, abort=consider_squashing)
         if not rebase_ret.success:
+            if not consider_squashing:
+                print(
+                    textwrap.dedent("""\
+                Your working copy is in mid-rebase. Either:
+                 * completely resolve like a normal git-rebase; OR
+                 * abort the rebase and mark this branch as dormant:
+                       git config branch.%s.dormant true
+
+                And then run `git rebase-update` again to resume.
+                """ % branch))
+                return False
             # TODO(iannucci): Find collapsible branches in a smarter way?
             print("Failed! Attempting to squash", branch, "...", end=' ')
             sys.stdout.flush()

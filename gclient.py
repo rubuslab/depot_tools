@@ -93,6 +93,7 @@ import re
 import sys
 import time
 import urllib.parse
+from concurrent.futures import ThreadPoolExecutor
 
 from collections.abc import Collection, Mapping, Sequence
 
@@ -2220,7 +2221,6 @@ it or fix the checkout.
     def RunOnDeps(self,
                   command,
                   args,
-                  ignore_requirements=False,
                   progress=True):
         """Runs a command on each dependency in a client and its dependencies.
 
@@ -2267,21 +2267,36 @@ it or fix the checkout.
                 pm = Progress('Syncing projects', 1)
             elif command in ('recurse', 'validate'):
                 pm = Progress(' '.join(args), 1)
-        work_queue = gclient_utils.ExecutionQueue(
-            self._options.jobs,
-            pm,
-            ignore_requirements=ignore_requirements,
-            verbose=self._options.verbose)
-        for s in self.dependencies:
-            if s.should_process:
-                work_queue.enqueue(s)
-        work_queue.flush(revision_overrides,
-                         command,
-                         args,
-                         options=self._options,
-                         patch_refs=patch_refs,
-                         target_branches=target_branches,
-                         skip_sync_revisions=skip_sync_revisions)
+
+
+        # TEST IMPLEMENTATION; DOESN'T RESPECT REQUIREMENTS. THIS IMPL DOESN'T
+        # SUPPORT PROGRESS BAR.
+        with ThreadPoolExecutor(max_workers=self._options.jobs) as executor:
+            for s in self.dependencies:
+                executor.submit(s.run,
+                                revision_overrides,
+                                command,
+                                args,
+                                options=self._options,
+                                patch_refs=patch_refs,
+                                target_branches=target_branches,
+                                skip_sync_revisions=skip_sync_revisions)
+
+        # work_queue = gclient_utils.ExecutionQueue(
+        #     self._options.jobs,
+        #     pm,
+        #     # ignore_requirements=ignore_requirements,
+        #     verbose=self._options.verbose)
+        # for s in self.dependencies:
+        #     if s.should_process:
+        #         work_queue.enqueue(s)
+        # work_queue.flush(revision_overrides,
+        #                  command,
+        #                  args,
+        #                  options=self._options,
+        #                  patch_refs=patch_refs,
+        #                  target_branches=target_branches,
+        #                  skip_sync_revisions=skip_sync_revisions)
 
         if revision_overrides:
             print(

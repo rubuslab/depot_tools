@@ -16,6 +16,23 @@
       "message": "Not in this CL, but we should also clean-up this `IsGoogler` check to ensure it works correctly:\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:ninjalog_uploader.py;l\u003d51-67;drc\u003ddf3e5778557e37881e503ec0047bf64c826e5d93",
       "revId": "c28c87073887fe9bb04fa698ca548b17373d9169",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a944abc4_b47aea30",
+        "filename": "autoninja.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-27T09:55:00Z",
+      "side": 1,
+      "message": "I think this check is not correct. If we can\u0027t find `gcloud` on the PATH, then we should assume that the user is not logged in.\n\nOn gLinux we rely on gcert instead of gcloud or ADC for authentication, so it\u0027s fine if the user doesn\u0027t have `gcloud` installed and we shouldn\u0027t fail with an error in that case.",
+      "revId": "c28c87073887fe9bb04fa698ca548b17373d9169",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
